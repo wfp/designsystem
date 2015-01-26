@@ -1,83 +1,88 @@
-/*
-    Breadcrumbs
+// Component: Navigation
+// Project: WFPUI
+// Author: Matthew Morek (me@matthewmorek.com)
+// URL: http://matthewmorek.com
+
+/**
+  Breadcrumbs
 */
 .breadcrumbs {
-    list-style: none;
-    margin: 1em 0;
-    padding: 0;
-    display: table;
-    height: 28px;
+  list-style: none;
+  margin: 1em 0;
+  padding: 0;
+  display: table;
+  height: 28px;
 }
 .breadcrumbs li {
-    display: table-cell;
-    border: 1px solid lighten($grey-1, 10%);
-    border-left: none;
-    position: relative;
-    z-index: 1;
-    max-height: 28px;
-    font-size: 0.875em;
-    line-height: 1.5;
+  display: table-cell;
+  border: 1px solid lighten($grey-1, 10%);
+  border-left: none;
+  position: relative;
+  z-index: 1;
+  max-height: 28px;
+  font-size: 0.875em;
+  line-height: 1.5;
 }
 .breadcrumbs li:after {
-    display: block;
-    position: absolute;
-    content: " ";
-    background: #fff;
-    width: 8px;
-    height: 8px;
-    border-right: 1px solid lighten($grey-1, 10%);
-    border-top: 1px solid lighten($grey-1, 10%);
-    right: -5px;
-    top: 9px;
-    -webkit-transform: rotate(45deg);
-    -moz-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    -o-transform: rotate(45deg);
-    transform: rotate(45deg);
-    z-index: 10;
+  display: block;
+  position: absolute;
+  content: " ";
+  background: #fff;
+  width: 8px;
+  height: 8px;
+  border-right: 1px solid lighten($grey-1, 10%);
+  border-top: 1px solid lighten($grey-1, 10%);
+  right: -5px;
+  top: 9px;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+  z-index: 10;
 
 }
 .breadcrumbs li:first-child {
-    border-radius: 2px 0 0 2px;
-    border-left: 1px solid lighten($grey-1, 10%);
+  border-radius: 2px 0 0 2px;
+  border-left: 1px solid lighten($grey-1, 10%);
 }
 .breadcrumbs li:last-child {
-    border-radius: 0 2px 2px 0;
-    padding: 0.15em 0.5em 0.2em 0.75em;
-    color: $grey-2;
-    cursor: default;
+  border-radius: 0 2px 2px 0;
+  padding: 0.15em 0.5em 0.2em 0.75em;
+  color: $grey-2;
+  cursor: default;
 }
 .breadcrumbs li:last-child:after {
-    display: none;
+  display: none;
 }
 .breadcrumbs li a {
-    padding: 0.5em 0.5em 0.5em 0.75em;
-    width: auto;
-    border: none;
-    color: $grey-3;
+  padding: 0.5em 0.5em 0.5em 0.75em;
+  width: auto;
+  border: none;
+  color: $grey-3;
 }
 .breadcrumbs li a:hover {color: $primary;}
 .breadcrumbs li a.home {
-    padding-left: 0.6em;
+  padding-left: 0.6em;
 }
 .breadcrumbs li a.home img {
-    vertical-align: baseline;
+  vertical-align: baseline;
 }
 
 /*
-    Dark Side Of The Breadcrumbs
+  Dark Side Of The Breadcrumbs
 */
 .splash .breadcrumbs {
-    background-color: $grey-4;
-    margin: 0;
+  background-color: $grey-4;
+  margin: 0;
 }
 .splash .breadcrumbs li {
-    border-color: $grey-3;
+  border-color: $grey-3;
 }
 .splash .breadcrumbs li:after {
-    background-color: $grey-4;
-    border-right-color: $grey-3;
-    border-top-color: $grey-3;
+  background-color: $grey-4;
+  border-right-color: $grey-3;
+  border-top-color: $grey-3;
 }
 .splash .breadcrumbs li:first-child {border-left-color: $grey-3;}
 .splash .breadcrumbs li:last-child,
@@ -85,183 +90,183 @@
 .splash .breadcrumbs li a:hover {color: $primary;}
 
 
-/*
-    Sidebar Navigation
+/**
+  Sidebar Navigation
 */
 .side-nav {
-    margin: 1em 0;
-    text-align: left;
+  margin: 1em 0;
+  text-align: left;
 }
 .side-nav .title {
-    margin: 0;
-    margin-bottom: 0.5em;
+  margin: 0;
+  margin-bottom: 0.5em;
 }
 .side-nav ul {
-    display: block;
-    width: 100%;
-    list-style: none;
-    margin: 0;
-    padding: 0;
+  display: block;
+  width: 100%;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 .side-nav ul li {
-    position: relative;
-    display: block;
-    margin: 0;
-    padding: 0;
-    border: 1px solid $grey-1;
+  position: relative;
+  display: block;
+  margin: 0;
+  padding: 0;
+  border: 1px solid $grey-1;
 }
 .side-nav ul li a {
-    display: block;
-    white-space: nowrap;
-    overflow: hidden;
-    text-transform: uppercase;
-    padding: 0.5em 0.75em;
-    color: $grey-3;
-    line-height: 1.125em;
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-transform: uppercase;
+  padding: 0.5em 0.75em;
+  color: $grey-3;
+  line-height: 1.125em;
 }
 .side-nav ul.level-0 > li {
-    border: none;
+  border: none;
 }
 .side-nav ul.level-0 > li > a {
-    font-size: 1.25em;
-    padding: 0.25em 0;
-    font-weight: bold;
+  font-size: 1.25em;
+  padding: 0.25em 0;
+  font-weight: bold;
 }
 .side-nav ul.level-0 > li > a:hover {
-    color: $primary;
-    background-color: transparent;
+  color: $primary;
+  background-color: transparent;
 }
 .side-nav ul.level-0 > li > a.active {
-    color: $text-color;
-    background-color: transparent;
-    border-bottom-color: $blue-2;
-    box-shadow: none;
+  color: $text-color;
+  background-color: transparent;
+  border-bottom-color: $blue-2;
+  box-shadow: none;
 }
 .side-nav ul.level-1 .menu-group,
 .side-nav ul.level-1 a.menu-group {
-    font-weight: bold;
-    color: $grey-3;
-    text-transform: uppercase;
-    margin-top: 0.5em;
-    margin-bottom: 0;
-    padding: 0.25em 0.75em;
+  font-weight: bold;
+  color: $grey-3;
+  text-transform: uppercase;
+  margin-top: 0.5em;
+  margin-bottom: 0;
+  padding: 0.25em 0.75em;
 }
 .side-nav ul.level-1 a.menu-group:hover {
-    background-color: transparent;
-    color: inherit;
-    cursor: default;
+  background-color: transparent;
+  color: inherit;
+  cursor: default;
 }
 .side-nav ul.level-1 {
-    position: relative;
-    padding: 0;
+  position: relative;
+  padding: 0;
 }
 .side-nav ul.level-1 li {
-    margin-top: -1px;
+  margin-top: -1px;
 }
 .side-nav ul.level-1 a {
-    font-weight: normal;
-    box-shadow: none;
-    border: none;
-    text-transform: none;
+  font-weight: normal;
+  box-shadow: none;
+  border: none;
+  text-transform: none;
 }
 .side-nav ul.level-2 li {
-    border: none;
-    /*border-top: 1px solid #dfdfdf;*/
+  border: none;
+  /*border-top: 1px solid #dfdfdf;*/
 }
 .side-nav ul.level-2 a {
-    box-shadow: none;
-    font-size: 0.875em;
+  box-shadow: none;
+  font-size: 0.875em;
 }
 .side-nav ul.level-2 a:before {
-    display: inline-block;
-    width: 16px;
-    content: '■';
+  display: inline-block;
+  width: 16px;
+  content: '■';
 }
 .side-nav li a.active {
-    background-color: $grey-light;
+  background-color: $grey-light;
 }
 .side-nav li a:active,
 .side-nav li a:hover {
-    background-color: $grey-light;
+  background-color: $grey-light;
 }
 
 /*
-    Generic Navigation
+  Generic Navigation
 */
 .sub-nav {
-    background-color: #fff;
-    top: 1em;
-    width: 100%;
-    text-align: left;
+  background-color: #fff;
+  top: 1em;
+  width: 100%;
+  text-align: left;
 }
 .sub-nav .pure-menu {
-    margin-bottom: 1em;
+  margin-bottom: 1em;
+  border: none;
+  & ul li {
     border: none;
-    & ul li {
-        border: none;
-    }
-    & ul li a {
-        color: $grey;
-        border: 1px solid transparent;
-        border-left: 0;
-        border-right: 0;
-        padding: 0.25em 1em;
-        text-transform: none;
-    }
-    & .current a,
-    & li a:hover {
-        background-color: $grey-light;
-    }
+  }
+  & ul li a {
+    color: $grey;
+    border: 1px solid transparent;
+    border-left: 0;
+    border-right: 0;
+    padding: 0.25em 1em;
+    text-transform: none;
+  }
+  & .current a,
+  & li a:hover {
+    background-color: $grey-light;
+  }
 }
 .sub-nav .pure-menu-heading {
-    color: $grey;
-    padding: ($spacing-unit / 8) ($spacing-unit / 2);
-    margin-bottom: 0;
+  color: $grey;
+  padding: ($spacing-unit / 8) ($spacing-unit / 2);
+  margin-bottom: 0;
 }
 
 /*
-    Edit Menu
+  Edit Menu
 */
 .edit-menu {}
 .edit-menu .tabs {
-    list-style: none;
-    margin: 1em 0;
-    padding: 0;
-    display: table;
-    height: 28px;
-    float: right;
-    text-align: center;
+  list-style: none;
+  margin: 1em 0;
+  padding: 0;
+  display: table;
+  height: 28px;
+  float: right;
+  text-align: center;
 }
 .edit-menu .tabs li {
-    display: table-cell;
-    border: 1px solid #e5e7e9;
-    border-left: none;
-    position: relative;
-    z-index: 1;
-    line-height: 2em;
-    font-size: 0.875em;
+  display: table-cell;
+  border: 1px solid #e5e7e9;
+  border-left: none;
+  position: relative;
+  z-index: 1;
+  line-height: 2em;
+  font-size: 0.875em;
 }
 .edit-menu .tabs li.active {
-    background-color: #ECF0F1;
+  background-color: #ECF0F1;
 }
 .edit-menu .tabs li:first-child {
-    border-radius: 2px 0 0 2px;
-    border-left: 1px solid #e5e7e9;
+  border-radius: 2px 0 0 2px;
+  border-left: 1px solid #e5e7e9;
 }
 .edit-menu .tabs li:last-child {
-    border-radius: 0 2px 2px 0;
+  border-radius: 0 2px 2px 0;
 }
 .edit-menu .tabs li a {
-    padding: 0.4em 0.8em;
-    width: auto;
-    border: none;
-    color: #898989;
+  padding: 0.4em 0.8em;
+  width: auto;
+  border: none;
+  color: #898989;
 }
 .edit-menu .tabs li a:hover {color: #4AA8FD;}
 
 
 @media only screen and (min-width: 35em) {
-    .side-nav {
-        margin: 1em 0;
-    }
+  .side-nav {
+    margin: 1em 0;
+  }
 }
