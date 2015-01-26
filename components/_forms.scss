@@ -1,0 +1,474 @@
+.pure-form input[type="text"],
+.pure-form input[type="password"],
+.pure-form input[type="email"],
+.pure-form input[type="url"],
+.pure-form input[type="date"],
+.pure-form input[type="month"],
+.pure-form input[type="time"],
+.pure-form input[type="datetime"],
+.pure-form input[type="datetime-local"],
+.pure-form input[type="week"],
+.pure-form input[type="number"],
+.pure-form input[type="search"],
+.pure-form input[type="tel"],
+.pure-form input[type="color"],
+.pure-form select,
+.pure-form textarea {
+  padding: 0.5em;
+  display: inline-block;
+  border: 1px solid $grey-1;
+  font-size: 100%;
+  line-height: 1.5;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+  border-radius: 1px;
+  -webkit-transition: 0.3s linear border;
+  -moz-transition: 0.3s linear border;
+  -ms-transition: 0.3s linear border;
+  -o-transition: 0.3s linear border;
+  transition: 0.3s linear border;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: inherit;
+  vertical-align: baseline;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  box-shadow: none;
+}
+
+.pure-form input:not([type]) {
+  padding: 0.5em;
+  display: inline-block;
+  border: 1px solid $grey-1;
+  font-size: 100%;
+  line-height: 1.5;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+  border-radius: 1px;
+  -webkit-transition: 0.3s linear border;
+  -moz-transition: 0.3s linear border;
+  -ms-transition: 0.3s linear border;
+  -o-transition: 0.3s linear border;
+  transition: 0.3s linear border;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: inherit;
+  vertical-align: baseline;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  box-shadow: none;
+}
+
+.pure-form input[type="text"]:focus,
+.pure-form input[type="password"]:focus,
+.pure-form input[type="email"]:focus,
+.pure-form input[type="url"]:focus,
+.pure-form input[type="date"]:focus,
+.pure-form input[type="month"]:focus,
+.pure-form input[type="time"]:focus,
+.pure-form input[type="datetime"]:focus,
+.pure-form input[type="datetime-local"]:focus,
+.pure-form input[type="week"]:focus,
+.pure-form input[type="number"]:focus,
+.pure-form input[type="search"]:focus,
+.pure-form input[type="tel"]:focus,
+.pure-form input[type="color"]:focus,
+.pure-form select:focus,
+.pure-form textarea:focus {
+  outline: 0;
+  outline: thin dotted \9; /* IE6-9 */
+  border-color: #7DB8FA;
+}
+
+.pure-form input[type="file"]:focus,
+.pure-form input[type="radio"]:focus,
+.pure-form input[type="checkbox"]:focus {
+  outline: thin dotted $grey-2;
+  outline: 1px auto $blue-2;
+}
+.pure-form .checkbox,
+.pure-form .radio {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-style: solid;
+  border-width: 1px;
+  border-color: $grey-2;
+}
+.pure-form .checkbox:disabled,
+.pure-form .radio:disabled {
+  opacity: 0.4;
+}
+.pure-form .checkbox {
+  width: 16px;
+  height: 16px;
+  background-color: #fff;
+  border-radius: 2px;
+  padding: 3px;
+  margin-bottom: 4px;
+}
+.pure-form .radio {
+  width: 16px;
+  height: 16px;
+  border-radius: 16px;
+  background-color: #fff;
+  padding: 2px;
+  margin-bottom: 4px;
+}
+.pure-form .checkbox:checked {
+  border-color: $blue-4;
+  background-color: $primary;
+  background-image: url(../img/icons/checkmark.png);
+  background-repeat: no-repeat;
+  background-size: 10px;
+  background-position: center center;
+}
+.pure-form .radio:checked {
+  border-color: $primary;
+  border-width: 4px;
+  background-color: #fff;
+}
+
+
+.pure-form input[type="text"][disabled],
+.pure-form input[type="password"][disabled],
+.pure-form input[type="email"][disabled],
+.pure-form input[type="url"][disabled],
+.pure-form input[type="date"][disabled],
+.pure-form input[type="month"][disabled],
+.pure-form input[type="time"][disabled],
+.pure-form input[type="datetime"][disabled],
+.pure-form input[type="datetime-local"][disabled],
+.pure-form input[type="week"][disabled],
+.pure-form input[type="number"][disabled],
+.pure-form input[type="search"][disabled],
+.pure-form input[type="tel"][disabled],
+.pure-form input[type="color"][disabled],
+.pure-form select[disabled],
+.pure-form textarea[disabled] {
+  cursor: not-allowed;
+  background-color: #eaeded;
+  color: #cad2d3;
+}
+.pure-form input[readonly],
+.pure-form select[readonly],
+.pure-form textarea[readonly] {
+  background: #eee; /* menu hover bg color */
+  color: #777; /* menu text color */
+  border-color: #ccc;
+}
+
+.pure-form input:focus:invalid,
+.pure-form textarea:focus:invalid,
+.pure-form select:focus:invalid,
+.pure-form input.invalid,
+.pure-form textarea.invalid,
+.pure-form select.invalid {
+  color: #3a1a2a;
+  border-color: $orange;
+}
+.pure-form input:focus:invalid:focus,
+.pure-form textarea:focus:invalid:focus,
+.pure-form select:focus:invalid:focus {
+  border-color: $orange;
+}
+.pure-form input[type="file"]:focus:invalid:focus,
+.pure-form input[type="radio"]:focus:invalid:focus,
+.pure-form input[type="checkbox"]:focus:invalid:focus {
+  outline-color: $orange;
+}
+.pure-form select[multiple] {
+  height: auto;
+}
+.pure-form label {
+  display: block;
+  margin: 0.25em 0;
+  font-size: 100%;
+  line-height: 1.5;
+  vertical-align: baseline;
+}
+.pure-form label > input[type="checkbox"],
+.pure-form label > input[type="radio"] {
+  margin-right: 0.25em;
+  font-size: 110%;
+}
+.pure-form fieldset {
+  margin: 0;
+  padding: 0.35em 0 0.75em;
+  border: 0;
+}
+.pure-form legend {
+  display: block;
+  width: 100%;
+  padding: 0.3em 0;
+  margin-bottom: 0.3em;
+  font-size: 125%;
+  color: #333;
+  border-bottom: 1px solid $grey-light;
+}
+
+.pure-form-stacked input[type="text"],
+.pure-form-stacked input[type="password"],
+.pure-form-stacked input[type="email"],
+.pure-form-stacked input[type="url"],
+.pure-form-stacked input[type="date"],
+.pure-form-stacked input[type="month"],
+.pure-form-stacked input[type="time"],
+.pure-form-stacked input[type="datetime"],
+.pure-form-stacked input[type="datetime-local"],
+.pure-form-stacked input[type="week"],
+.pure-form-stacked input[type="number"],
+.pure-form-stacked input[type="search"],
+.pure-form-stacked input[type="tel"],
+.pure-form-stacked input[type="color"],
+.pure-form-stacked select,
+.pure-form-stacked label,
+.pure-form-stacked textarea {
+  display: block;
+  margin: 0.25em 0;
+}
+
+.pure-form-aligned input,
+.pure-form-aligned textarea,
+.pure-form-aligned select,
+/* NOTE: pure-help-inline is deprecated. Use .pure-form-message-inline instead. */
+.pure-form-aligned .pure-form-help-inline,
+.pure-form-message-inline {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  vertical-align: middle;
+}
+
+/* Aligned Forms */
+.pure-form-aligned .pure-form-control-group {
+  margin-bottom: 0.5em;
+}
+.pure-form-aligned .pure-form-control-group label {
+  text-align: right;
+  display: inline-block;
+  vertical-align: middle;
+  width: 10em;
+  margin: 0 1em 0 0;
+}
+.pure-form-aligned .pure-form-controls {
+  margin: 1.5em 0 0 10em;
+}
+
+/* Rounded Inputs */
+.pure-form input.pure-form-input-rounded,
+.pure-form .pure-form-input-rounded {
+  border-radius: 2em;
+  padding: 0.5em 1em;
+}
+
+/* Grouped Inputs */
+.pure-form .pure-form-group fieldset {
+  margin-bottom: 10px;
+}
+.pure-form .pure-form-group input {
+  display: block;
+  padding: 10px;
+  margin: 0;
+  border-radius: 0;
+  position: relative;
+  top: -1px;
+}
+.pure-form .pure-form-group input:focus {
+  z-index: 2;
+}
+.pure-form .pure-form-group input:first-child {
+  top: 1px;
+  border-radius: 4px 4px 0 0;
+}
+.pure-form .pure-form-group input:last-child {
+  top: -2px;
+  border-radius: 0 0 4px 4px;
+}
+.pure-form .pure-form-group button {
+  margin: 0.35em 0;
+}
+
+.pure-form div[class*="pure-form-input-"] {
+  margin-bottom: 1em;
+  margin-right: 2%;
+  display: block;
+  float: left;
+}
+.pure-form div[class*="pure-form-input-"]:last-child {
+  margin-right: 0;
+}
+.pure-form .pure-form-input-1 {
+  width: 100%;
+}
+.pure-form .pure-form-input-2-3 {
+  width: 65%;
+}
+.pure-form .pure-form-input-1-2 {
+  width: 49%;
+}
+.pure-form .pure-form-input-1-3 {
+  width: 32%;
+}
+.pure-form .pure-form-input-1-4 {
+  width: 24%;
+}
+
+.pure-form div[class*="pure-form-input-"] input,
+.pure-form div[class*="pure-form-input-"] select,
+.pure-form div[class*="pure-form-input-"] .error {
+  width: 100%;
+}
+
+/* Form Validation */
+.pure-form input.invalid {
+  margin-bottom: -1px;
+}
+.pure-form input.valid {
+  border-color: $green;
+}
+.pure-form .error {
+  color: darken($orange, 40%);
+  display: inline-block;
+  background-color: $orange;
+  padding: 0.25em 0.5em;
+  margin-bottom: 0;
+  font-size: 0.875em;
+}
+.pure-form input.invalid + .error {
+  border-radius: 0 0 2px 2px;
+}
+
+/* Inline help for forms */
+.pure-form .pure-form-help-inline,
+.pure-form-message-inline {
+  display: inline-block;
+  padding-left: 0.3em;
+  color: $grey-3;
+  vertical-align: middle;
+  font-size: 90%;
+}
+
+/* Block help for forms */
+.pure-form-message {
+  display: block;
+  color: $grey-3;
+  font-size: 90%;
+}
+
+%input-tip {
+  position: absolute;
+  z-index: 1;
+  right: 10px;
+  top: 23%;
+  display: block;
+  height: 16px;
+  pointer-events: none;
+  font-size: 0.75em;
+  color: $grey-2;
+  text-align: right;
+}
+
+.pure-form {
+  .input-select {
+    position: relative;
+    background: $grey-light;
+    border-radius: 1px;
+    border-color: transparent;
+    @include box-shadow(0px 1px 1px 0px rgba(0,0,0,0.20));
+    &::after {
+      content: "";
+      position: absolute;
+      z-index: 1;
+      right: 10px;
+      top: 30%;
+      display: block;
+      width: 16px;
+      height: 16px;
+      background: url("../img/icons/ic_arrow_drop_down_24px.svg") no-repeat center center;
+      pointer-events: none;
+    }
+    select {
+      cursor: pointer;
+      background: $grey-light;
+      border-radius: 1px;
+      border-color: transparent;
+    }
+  }
+
+  .input-text {
+    position: relative;
+    &::after {
+      @extend %input-tip;
+      content: "ABC";
+    }
+  }
+  .input-number {
+    position: relative;
+    &::after {
+      @extend %input-tip;
+      content: "123";
+    }
+  }
+  .input-autocomplete {
+    position: relative;
+    .ui-autocomplete-input {
+      width: 100%;
+    }
+    &::after {
+      @extend %input-tip;
+      content: "•••";
+    }
+  }
+
+  input[type="text"],
+  input[type="password"],
+  input[type="email"],
+  input[type="url"],
+  input[type="date"],
+  input[type="month"],
+  input[type="time"],
+  input[type="datetime"],
+  input[type="datetime-local"],
+  input[type="week"],
+  input[type="number"],
+  input[type="search"],
+  input[type="tel"],
+  input[type="color"],
+  select,
+  .input-text,
+  .input-number,
+  .input-autocomplete {
+    &.small {
+      padding: 0.25em 0.5em;
+    }
+    &.xsmall {
+      font-size: 0.875em;
+      line-height: 1;
+      padding: 0.45em;
+    }
+    &.large {
+      font-size: 1.125em;
+    }
+    &.xlarge {
+      font-size: 1.25em;
+    }
+    &.wide {
+      width: 100%;
+    }
+  }
+}
+
+.pure-form textarea {width: 100%;}
+.pure-form textarea.small {max-width: 262px; min-height: 6em;}
+.pure-form textarea.medium {max-width: 326px; min-height: 8em;}
+.pure-form textarea.large {max-width: 424px; min-height: 10em;}
+.pure-form textarea.full {max-width: 100%; min-height: 12em;}

@@ -1,0 +1,269 @@
+%masthead {
+  position: relative;
+  background-color: $primary;
+  color: #ffffff;
+  box-shadow: rgba(0,0,0,0.2) 0 1px 3px;
+  min-height: 48px;
+  max-height: 94px;
+  .wrapper {
+    position: relative;
+  }
+}
+
+.masthead-full {
+  @extend %masthead;
+  .wfp-logo {
+    margin: 0;
+    display: inline-block;
+    a {
+      border: none;
+      color: #fff;
+      text-decoration: none;
+      font-size: $base-font-size;
+    }
+    .wfp-logo-img {
+      display: inline-block;
+      max-width: 100%;
+      width: auto;
+      margin: 0;
+    }
+  }
+  .sub-logo {
+    padding: 0;
+    margin: -1em 0;
+    .heading {
+      background-color: $secondary;
+      box-shadow: rgba(0,0,0,0.2) 0 2px 0;
+      margin: 0;
+      padding: 1.5em 1em;
+      display: inline-block;
+      color: #fff;
+    }
+  }
+  .additional {
+    display: block;
+    width: 100%;
+    text-align: right;
+    margin-top: -1em;
+    > .component {
+      display: inline-block;
+      vertical-align: top;
+      margin-right: 1em;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  /* Masthead Language Switcher */
+  .header-lang {
+    font-size: 0.875em;
+    ul {
+      margin: 0;
+      padding: 0;
+      li {
+        display: inline-block;
+        padding: 0.25em 0.5em;
+        a {
+          color: #fff;
+          padding: 0.125em 0;
+          border-bottom-color: transparent;
+        }
+        &:hover {
+          border-bottom-color: #fff;
+        }
+      }
+    }
+  }
+
+  /* Masthead CTA Button */
+  .header-cta .pure-button {
+    padding: 0.35em 0.7em;
+    border-radius: 0 0 2px 2px;
+    border: none;
+  }
+
+  /* Masthead Search */
+  .header-search {
+    position: relative;
+  }
+  .pure-form .input-search {
+    border: none;
+    border-radius: 0 0 2px 2px;
+    background-color: $secondary;
+    color: #ffffff;
+    -webkit-box-shadow: 0px 1px 2px 0px rgba(255,255,255,0.25);
+    -moz-box-shadow:    0px 1px 2px 0px rgba(255,255,255,0.25);
+    box-shadow:         0px 1px 2px 0px rgba(255,255,255,0.25);
+    -webkit-transition: 0.2s all ease-in-out;
+    -moz-transition:    0.2s all ease-in-out;
+    transition:         0.2s all ease-in-out;
+    &:focus {
+      outline: none;
+      background-color: #414243;
+      border-color: rgba(0,0,0,0.1);
+      -webkit-box-shadow: 0px 1px 6px 0px rgba(255,255,255,0.5), inset 0 1px 3px rgba(0,0,0,0.2);
+      -moz-box-shadow:    0px 1px 6px 0px rgba(255,255,255,0.5), inset 0 1px 3px rgba(0,0,0,0.2);
+      box-shadow:         0px 1px 6px 0px rgba(255,255,255,0.5), inset 0 1px 3px rgba(0,0,0,0.2);
+    }
+    &::-webkit-input-placeholder {
+      color: rgba(255,255,255,0.75);
+    }
+    &:-ms-input-placeholder {
+      color: rgba(255,255,255,0.75);
+    }
+    &::-moz-placeholder {
+      color: rgba(255,255,255,0.75);
+    }
+    &:-moz-placeholder {
+      color: rgba(255,255,255,0.75);
+    }
+    & + .pure-button {
+      position: absolute;
+      color: #fff;
+      right: 0;
+      top: 0;
+    }
+  }
+  .pure-form .input-search-inline {
+    @extend .input-search;
+    border-radius: 2px;
+    margin-left: 0.5em;
+  }
+}
+
+
+
+
+/*
+  Masthead Narrow
+*/
+.masthead-narrow {
+  @extend %masthead;
+  .wrapper {
+    padding: 0;
+  }
+  .logo-container {
+    padding: 1em;
+    .logo {
+      line-height: 1;
+      font-size: 1em;
+      margin: 0;
+      a {
+        color: #fff;
+        border: none;
+        font-weight: bold;
+        text-decoration: none;
+      }
+    }
+  }
+  .navigation {
+    padding: 0 1em;
+    .nav-toggle-wrapper {
+      padding: 1em 0;
+      text-align: right;
+      @include media-query(438px) {
+        padding: 0.45em 0;
+      }
+      @include media-query($md-screen){
+        display: none;
+      }
+    }
+    .main-nav {
+      display: block;
+      width: 100%;
+      text-align: right;
+      ul {
+        margin: 0;
+        li {
+          display: inline-block;
+          margin: 0;
+          padding: 0;
+          &:last-child {
+            margin-right: 0;
+          }
+          a {
+            padding: 1em 0.75em;
+            font-size: 0.875em;
+            line-height: 1.45em;
+            display: block;
+            color: #fff;
+            border: none;
+            &:hover {
+              box-shadow: rgba(0,0,0,0.2) 0 -3px 0 inset;
+            }
+            &.active,
+            &:active {
+              box-shadow: rgba(0,0,0,0.5) 0 -3px 0 inset;
+            }
+          }
+          .pure-button {
+            padding: 0.35em 0.75em 0.4em;
+            color: $text-color;
+            margin-left: 0.5em;
+            display: inline-block;
+            vertical-align: baseline;
+            &:hover {
+              color: inherit;
+              background-color: $grey-light;
+              -webkit-box-shadow: rgba(0,0,0,0.2) 0 1px 6px, inset rgba(255,255,255,0.3) 0 1px 3px;
+              -moz-box-shadow:    rgba(0,0,0,0.2) 0 1px 6px, inset rgba(255,255,255,0.3) 0 1px 3px;
+              box-shadow:         rgba(0,0,0,0.2) 0 1px 6px, inset rgba(255,255,255,0.3) 0 1px 3px;
+            }
+          }
+          .input-search-inline {
+            display: inline-block;
+            vertical-align: baseline;
+            line-height: 1.5;
+          }
+          &.profile-wrapper {
+            max-height: 48px;
+            background-color: $blue-3;
+            box-shadow: #4e98e3 0 2px 0 0;
+          }
+        }
+      }
+      &.closed {
+        right: -320px;
+        display: none;
+        @include media-query($md-screen){
+          display: block;
+          max-height: none;
+          max-width: none;
+          right: auto;
+        }
+      }
+      &.opened {
+        // @extend %flex-center;
+        clip: auto;
+        top: 0;
+        right: 0px;
+        min-height: 100vh;
+        max-height: 100%;
+        max-width: 320px;
+        padding-top: 1.5em;
+        -webkit-align-items: flex-start;
+        align-items: flex-start;
+        background-color: rgba(0,0,0,0.85);
+        z-index: 100;
+        text-align: left;
+        ul {
+          width: 100%;
+          li {
+            display: block;
+            a {
+              font-size: 1.25em;
+              padding: 0.5em 1em;
+              display: inline-block;
+              &:hover {
+                background-color: transparent;
+                border-bottom: none;
+                box-shadow: none;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

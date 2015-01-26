@@ -1,0 +1,48 @@
+/*
+  Project Variables
+  Project: WFPUI
+  Author: Matthew Morek (me@matthewmorek.com)
+  URL: http://matthewmorek.com
+*/
+
+$sans-serif-stack:    "lato", sans-serif;
+$serif-stack:         "aleo", serif;
+$mono-stack:          "Source Code Pro", "Consolas", "Lucida Console", monospace;
+$base-font-size:      16px;
+$small-font-size:     $base-font-size * 0.875;
+$base-line-height:    1.5em;
+
+$spacing-unit:        32px;
+
+$text-color:          #404040;
+$background-color:    #ffffff;
+
+$primary:             #2A93FC;
+$secondary:           #1F6EBC;
+
+$grey:                #404040;
+$grey-light:          #f3f3f3;
+$grey-lighter:        #fafafa;
+$grey-1:              #CCCCCC;
+$grey-2:              #8C8C8C;
+$grey-3:              #4D4D4D;
+$grey-4:              #333333;
+
+$white:               #ffffff;
+$red:                 #FF5252; //#F97449;
+$orange:              #FFC759;//#FFC158;
+$yellow:              #FCDC5D;
+$green:               #B3DE62;
+
+$blue-1:              lighten($primary, 36%);
+$blue-2:              lighten($primary, 18%);
+$blue-3:              lighten($primary, 9%);
+$blue-4:              darken($primary, 9%);
+
+// Width of the content area
+$content-width:       1000px;
+
+$sm-screen:           568px;
+$md-screen:           768px;
+$lg-screen:           1024px;
+$xl-screen:           1280px;

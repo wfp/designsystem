@@ -1,0 +1,14 @@
+// Import SCSS mixins, variables, modules, etc.
+@import "init";
+@import "mixins";
+@import "base";
+
+// Import components
+@import "components/forms";
+@import "components/buttons";
+@import "components/navigation";
+
+// Import layouts
+@import "layouts/layout";
+@import "layouts/header";
+@import "layouts/footer";

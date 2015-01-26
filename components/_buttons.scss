@@ -1,0 +1,142 @@
+.pure-button,
+a.pure-button,
+a.pure-button:visited {
+  padding: 0.5em 1em;
+  color: $grey-3;
+  background-color: $grey-light;
+  font-family: inherit;
+  font-weight: bold;
+  font-size: 100%;
+  line-height: 1.5;
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 2px;
+  -webkit-box-shadow: rgba(0,0,0,0.1) 0 1px 3px, inset rgba(255,255,255,0.2) 0 1px 3px;
+  -moz-box-shadow:    rgba(0,0,0,0.1) 0 1px 3px, inset rgba(255,255,255,0.2) 0 1px 3px;
+  box-shadow:         rgba(0,0,0,0.1) 0 1px 3px, inset rgba(255,255,255,0.2) 0 1px 3px;
+  -webkit-transition: all 0.1s ease-in;
+  -moz-transition:    all 0.1s ease-in;
+  transition:         all 0.1s ease-in;
+  vertical-align: baseline;
+}
+
+.pure-button:hover,
+.pure-button:focus,
+a.pure-button:hover,
+a.pure-button:focus {
+  border-color: rgba(0,0,0,0.2);
+  color: inherit;
+  background-image: none;
+  -webkit-box-shadow: rgba(0,0,0,0.2) 0 1px 6px, inset rgba(255,255,255,0.3) 0 1px 3px;
+  -moz-box-shadow:    rgba(0,0,0,0.2) 0 1px 6px, inset rgba(255,255,255,0.3) 0 1px 3px;
+  box-shadow:         rgba(0,0,0,0.2) 0 1px 6px, inset rgba(255,255,255,0.3) 0 1px 3px;
+}
+
+.pure-button.primary,
+.pure-button.selected,
+a.pure-button.primary,
+a.pure-button.selected {
+  background-color: $secondary;
+  text-shadow: rgba(0,0,0,0.2) 0 1px 1px;
+  color: $white;
+}
+
+.pure-button.warning,
+a.pure-button.warning,
+a.pure-button.warning:hover,
+a.pure-button.warning:visited {
+  background-color: $red;
+  color: lighten($red, 35%);
+}
+
+.pure-button.attention,
+a.pure-button.attention,
+a.pure-button.attention:hover,
+a.pure-button.attention:visited {
+  background-color: $orange;
+  color: darken($orange, 40%);
+}
+
+.pure-button.safe,
+a.pure-button.safe,
+a.pure-button.safe:hover,
+a.pure-button.safe:visited {
+  background-color: $green;
+  color: darken($green, 35%);
+}
+
+.pure-button.active,
+.pure-button.pure-button:active,
+a.pure-button.pure-button:active {
+  -webkit-box-shadow: rgba(0,0,0,0.1) 0 0 10px inset;
+  -moz-box-shadow:    rgba(0,0,0,0.1) 0 0 10px inset;
+  box-shadow:         rgba(0,0,0,0.1) 0 0 10px inset;
+}
+
+.pure-button.active:hover,
+.pure-button.active:active,
+.pure-button.active:focus,
+a.pure-button.active:hover,
+a.pure-button.active:active,
+a.pure-button.active:focus {
+  -webkit-box-shadow: rgba(0,0,0,0.1) 0 0 10px inset;
+  -moz-box-shadow:    rgba(0,0,0,0.1) 0 0 10px inset;
+  box-shadow:         rgba(0,0,0,0.1) 0 0 10px inset;
+}
+
+.pure-button.pure-button[disabled],
+.pure-button.disabled,
+.pure-button.disabled:hover,
+.pure-button.disabled:focus,
+.pure-button.disabled:active {
+  background-image: none;
+  -khtml-opacity: 0.40;
+  -moz-opacity: 0.40;
+  opacity: 0.40;
+  cursor: not-allowed;
+  box-shadow: none;
+  border: none;
+}
+
+.pure-button + .pure-button {
+  margin: 0 0.5em;
+}
+
+.pure-button.transparent,
+.pure-button.transparent:hover,
+.pure-button.transparent:focus,
+.pure-button.transparent:active {
+  border: none;
+  box-shadow: none;
+  background-color: transparent;
+}
+
+/**
+  Extra sizes and modes for buttons.
+ */
+.pure-button {
+  &.xsmall {
+    font-size: 0.875em;
+    font-weight: normal;
+    padding: 0.5em 0.75em;
+    line-height: 1;
+  }
+  &.small {
+    font-size: 1em;
+    font-weight: normal;
+    padding: 0.25em 0.75em;
+  }
+  &.large {
+    font-size: 1.125em;
+  }
+  &.xlarge {
+    font-size: 1.25em;
+  }
+  &.block {
+    display: block;
+    width: 100%;
+  }
+  &.flat {
+    border: none;
+    box-shadow: none;
+  }
+}
