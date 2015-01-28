@@ -1,0 +1,246 @@
+// Basic Style Reset / Defaults
+// Project: WFPUI
+// Author: Matthew Morek (me@matthewmorek.com)
+// URL: http://matthewmorek.com
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  overflow-y: scroll;
+}
+
+html,
+button,
+input,
+select,
+textarea {
+  color: $text-color;
+}
+
+body, p, blockquote, pre, hr,
+dl, dd, ol, ul, figure {
+  margin: 0;
+  padding: 0;
+}
+
+/*
+ * Remove text-shadow in selection highlight: h5bp.com/i
+ * These selection rule sets have to be separate.
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+  resize: vertical;
+}
+
+
+
+/**
+ * Basic styling
+ */
+body {
+  font-family: $sans-serif-stack;
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+  font-weight: normal;
+  color: $text-color;
+  background-color: $background-color;
+}
+
+
+
+/**
+ * Set `margin-bottom` to maintain vertical rhythm
+ */
+p, blockquote, pre,
+ul, ol, dl, figure,
+%vertical-rhythm {
+  margin: 1em 0;
+}
+
+li {
+  margin: 0.25em 0;
+}
+
+
+h5 {
+  font-size: $base-font-size * 0.875;
+}
+h6 {
+  color: $grey-2;
+  font-size: $small-font-size;
+  text-transform: uppercase;
+  margin-top: $spacing-unit;
+  margin-bottom: $spacing-unit / 4;
+}
+
+
+
+/**
+ * Images
+ */
+img {
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+
+
+/**
+ * Figures
+ */
+figure > img {
+  display: block;
+}
+
+figcaption {
+  font-size: $small-font-size;
+}
+
+
+
+/**
+ * Lists
+ */
+ul {
+  list-style: square;
+}
+menu, ol, ul {
+  padding: 0 0 0 $spacing-unit * 0.75;
+}
+
+
+
+/**
+ * Links
+ */
+a {
+  color: $primary;
+  text-decoration: none;
+  border-bottom: 1px solid lighten($grey, 60%);
+
+  &:visited {
+    color: $primary;//darken($secondary, 15%);
+  }
+
+  &:hover {
+    color: $primary;
+    border-bottom-color: $orange;
+  }
+}
+
+
+
+/**
+ * Blockquotes
+ */
+blockquote {
+  color: $grey-2;
+  border-left: 6px solid $grey-1;
+  border-radius: 2px;
+  padding: 0.25em 0;
+  padding-left: $spacing-unit * 0.75;
+  font-size: 1em;
+  font-style: italic;
+}
+
+
+
+/**
+ * Code formatting
+ */
+pre,
+code {
+  font-size: $base-font-size * 0.875;
+  font-style: normal;
+  font-family: $mono-stack;
+  background-color: $grey-lighter;
+  border-radius: 2px;
+  padding: 0.125em 0.25em;
+  line-height: 1.4;
+}
+
+pre {
+  padding: 8px 12px;
+  overflow-x: scroll;
+  border-left: 6px solid $blue-2;
+  word-wrap: normal;
+  > code {
+    border: 0;
+    padding-right: 0;
+    padding-left: 0;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+  }
+}
+
+
+/**
+ * Clearfix
+ */
+.clearfix {
+
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+
+/**
+ * Text Manipulation
+ */
+.text {
+  &-left {text-align: left;}
+  &-center {text-align: center;}
+  &-right {text-align: right;}
+}
+.caps {
+  text-transform: capitalize;
+}
+.all-caps {
+  text-transform: uppercase;
+}
