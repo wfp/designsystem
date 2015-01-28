@@ -4,13 +4,21 @@
 // URL: http://matthewmorek.com
 
 @mixin media-query($device) {
-    @media screen and (min-width: $device) {
-        @content;
-    }
+  @media screen and (min-width: $device) {
+    @content;
+  }
 }
 
 @mixin box-shadow($shadows...) {
   -webkit-box-shadow: $shadows;
-  -moz-box-shadow:    $shadows;
-  box-shadow:         $shadows;
+     -moz-box-shadow: $shadows;
+          box-shadow: $shadows;
+}
+
+@mixin transform($property...) {
+  -webkit-transform: $property;
+     -moz-transform: $property;
+      -ms-transform: $property;
+       -o-transform: $property;
+          transform: $property;
 }

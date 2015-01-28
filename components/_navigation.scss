@@ -12,62 +12,60 @@
   padding: 0;
   display: table;
   height: 28px;
+  li {
+    display: table-cell;
+    border: 1px solid lighten($grey-1, 10%);
+    border-left: none;
+    position: relative;
+    z-index: 1;
+    max-height: 28px;
+    font-size: 0.875em;
+    line-height: 1.5;
+    &:after {
+      display: block;
+      position: absolute;
+      content: " ";
+      background: #fff;
+      width: 8px;
+      height: 8px;
+      border-right: 1px solid lighten($grey-1, 10%);
+      border-top: 1px solid lighten($grey-1, 10%);
+      right: -5px;
+      top: 9px;
+      @include transform(rotate(45deg));
+      z-index: 10;
+    }
+    &:first-child {
+      border-radius: 2px 0 0 2px;
+      border-left: 1px solid lighten($grey-1, 10%);
+    }
+    &:last-child {
+      border-radius: 0 2px 2px 0;
+      padding: 0.15em 0.5em 0.2em 0.75em;
+      color: $grey-2;
+      cursor: default;
+      &:after {
+        display: none;
+      }
+    }
+    a {
+      padding: 0.5em 0.5em 0.5em 0.75em;
+      width: auto;
+      border: none;
+      color: $grey-3;
+      &:hover {
+        color: $primary;
+      }
+      &.home {
+        padding-left: 0.6em;
+        img {
+          vertical-align: baseline;
+        }
+      }
+    }
+  }
 }
-.breadcrumbs li {
-  display: table-cell;
-  border: 1px solid lighten($grey-1, 10%);
-  border-left: none;
-  position: relative;
-  z-index: 1;
-  max-height: 28px;
-  font-size: 0.875em;
-  line-height: 1.5;
-}
-.breadcrumbs li:after {
-  display: block;
-  position: absolute;
-  content: " ";
-  background: #fff;
-  width: 8px;
-  height: 8px;
-  border-right: 1px solid lighten($grey-1, 10%);
-  border-top: 1px solid lighten($grey-1, 10%);
-  right: -5px;
-  top: 9px;
-  -webkit-transform: rotate(45deg);
-  -moz-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  -o-transform: rotate(45deg);
-  transform: rotate(45deg);
-  z-index: 10;
 
-}
-.breadcrumbs li:first-child {
-  border-radius: 2px 0 0 2px;
-  border-left: 1px solid lighten($grey-1, 10%);
-}
-.breadcrumbs li:last-child {
-  border-radius: 0 2px 2px 0;
-  padding: 0.15em 0.5em 0.2em 0.75em;
-  color: $grey-2;
-  cursor: default;
-}
-.breadcrumbs li:last-child:after {
-  display: none;
-}
-.breadcrumbs li a {
-  padding: 0.5em 0.5em 0.5em 0.75em;
-  width: auto;
-  border: none;
-  color: $grey-3;
-}
-.breadcrumbs li a:hover {color: $primary;}
-.breadcrumbs li a.home {
-  padding-left: 0.6em;
-}
-.breadcrumbs li a.home img {
-  vertical-align: baseline;
-}
 
 /*
   Dark Side Of The Breadcrumbs

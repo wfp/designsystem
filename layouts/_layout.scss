@@ -1,7 +1,30 @@
+// ---
 // Layouts: Primer
 // Project: WFPUI
 // Author: Matthew Morek (me@matthewmorek.com)
 // URL: http://matthewmorek.com
+// ---
+
+/**
+ * Wrapper
+ */
+.wrapper,
+%wrapper {
+  margin: 0 auto;
+  max-width: $content-width;
+  padding: 1em;
+  @include media-query($content-width){
+    padding: 1em 0;
+  }
+}
+
+.wrapper-tight {
+  @extend %wrapper;
+  padding: 0 1em;
+  @include media-query($content-width){
+    padding: 0;
+  }
+}
 
 .pure-g {
   text-rendering: optimizelegibility;
@@ -48,6 +71,24 @@
   }
   > p + .inline-grid {
     margin: 2em 0;
+  }
+}
+
+
+/**
+  Lists
+*/
+.inline-list,
+%inline-list {
+  list-style: none;
+  padding: 0;
+  margin: 0.5em 0;
+  li {
+    display: inline;
+    margin-right: 1em;
+    &:last-child {
+      margin-right: 0;
+    }
   }
 }
 

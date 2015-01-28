@@ -4,26 +4,43 @@
 // URL: http://matthewmorek.com
 
 .footer {
-    border-top: 4px solid $grey-light;
-    font-size: 0.875em;
-    text-align: center;
-}
-.footer .copyrights h4,
-.footer .site-owner h4  {
-    margin: 0.5em;
+  border-top: 4px solid $grey-light;
+  font-size: 0.875em;
+  text-align: center;
+
+  .panel {
+    &-left,
+    &-right {
+      h4, ul {
+        margin: 0;
+      }
+    }
+    &-left {
+      text-align: center;
+      @include media-query($md-screen){
+        text-align: left;
+      }
+    }
+    &-right {
+      text-align: center;
+      @include media-query($md-screen){
+        text-align: right;
+      }
+    }
+  }
 }
 .footer-top {padding: 1em 0 0.25em;}
 .footer-minimal h4,
 .footer-minimal p {margin: 0.5em 0;}
 .footer-minimal h4 {margin-bottom: 1em;}
 .footer-bottom {
-    border-top: 1px solid $grey-light;
-    padding: 1em 0;
+  border-top: 1px solid $grey-light;
+  padding: 1em 0;
 }
 .social-media {
-    margin: 0.75em 0;
-    text-align: center;
-    overflow: hidden;
+  margin: 0.75em 0;
+  text-align: center;
+  overflow: hidden;
 }
 .social-media .title {margin: 0.5em 0;}
 .social-block {vertical-align: baseline;}
@@ -35,22 +52,22 @@
 
 .footer-top .logo, .site-links {text-align: center;}
 .site-links .inline-list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 .site-links .inline-list li {display: inline; margin-left: 1em;}
 
 
 @media only screen and (min-width: 48em) {
-    .footer,
-    .social-media,
-    .footer .copyrights {
-        text-align: inherit;
-    }
-    .footer-top .logo,
-    .site-links,
-    .footer .site-owner {
-        text-align: right;
-    }
+  .footer,
+  .social-media,
+  .footer .copyrights {
+    text-align: inherit;
+  }
+  .footer-top .logo,
+  .site-links,
+  .footer .site-owner {
+    text-align: right;
+  }
 }

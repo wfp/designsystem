@@ -4,13 +4,13 @@
 // URL: http://matthewmorek.com
 
 * {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html {
-    overflow-y: scroll;
+  overflow-y: scroll;
 }
 
 html,
@@ -18,13 +18,13 @@ button,
 input,
 select,
 textarea {
-    color: $text-color;
+  color: $text-color;
 }
 
 body, p, blockquote, pre, hr,
 dl, dd, ol, ul, figure {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 /*
@@ -34,13 +34,13 @@ dl, dd, ol, ul, figure {
  */
 
 ::-moz-selection {
-    background: #b3d4fc;
-    text-shadow: none;
+  background: #b3d4fc;
+  text-shadow: none;
 }
 
 ::selection {
-    background: #b3d4fc;
-    text-shadow: none;
+  background: #b3d4fc;
+  text-shadow: none;
 }
 
 /*
@@ -48,12 +48,12 @@ dl, dd, ol, ul, figure {
  */
 
 hr {
-    display: block;
-    height: 1px;
-    border: 0;
-    border-top: 1px solid #ccc;
-    margin: 1em 0;
-    padding: 0;
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
 }
 
 /*
@@ -61,9 +61,9 @@ hr {
  */
 
 fieldset {
-    border: 0;
-    margin: 0;
-    padding: 0;
+  border: 0;
+  margin: 0;
+  padding: 0;
 }
 
 /*
@@ -71,7 +71,7 @@ fieldset {
  */
 
 textarea {
-    resize: vertical;
+  resize: vertical;
 }
 
 
@@ -80,12 +80,12 @@ textarea {
  * Basic styling
  */
 body {
-    font-family: $sans-serif-stack;
-    font-size: $base-font-size;
-    line-height: $base-line-height;
-    font-weight: normal;
-    color: $text-color;
-    background-color: $background-color;
+  font-family: $sans-serif-stack;
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+  font-weight: normal;
+  color: $text-color;
+  background-color: $background-color;
 }
 
 
@@ -96,23 +96,23 @@ body {
 p, blockquote, pre,
 ul, ol, dl, figure,
 %vertical-rhythm {
-    margin: 1em 0;
+  margin: 1em 0;
 }
 
 li {
-    margin: 0.25em 0;
+  margin: 0.25em 0;
 }
 
 
 h5 {
-    font-size: $base-font-size * 0.875;
+  font-size: $base-font-size * 0.875;
 }
 h6 {
-    color: $grey-2;
-    font-size: $small-font-size;
-    text-transform: uppercase;
-    margin-top: $spacing-unit;
-    margin-bottom: $spacing-unit / 4;
+  color: $grey-2;
+  font-size: $small-font-size;
+  text-transform: uppercase;
+  margin-top: $spacing-unit;
+  margin-bottom: $spacing-unit / 4;
 }
 
 
@@ -121,8 +121,8 @@ h6 {
  * Images
  */
 img {
-    max-width: 100%;
-    vertical-align: middle;
+  max-width: 100%;
+  vertical-align: middle;
 }
 
 
@@ -131,11 +131,11 @@ img {
  * Figures
  */
 figure > img {
-    display: block;
+  display: block;
 }
 
 figcaption {
-    font-size: $small-font-size;
+  font-size: $small-font-size;
 }
 
 
@@ -144,10 +144,10 @@ figcaption {
  * Lists
  */
 ul {
-    list-style: square;
+  list-style: square;
 }
 menu, ol, ul {
-    padding: 0 0 0 $spacing-unit * 0.75;
+  padding: 0 0 0 $spacing-unit * 0.75;
 }
 
 
@@ -156,18 +156,18 @@ menu, ol, ul {
  * Links
  */
 a {
+  color: $primary;
+  text-decoration: none;
+  border-bottom: 1px solid lighten($grey, 60%);
+
+  &:visited {
+    color: $primary;//darken($secondary, 15%);
+  }
+
+  &:hover {
     color: $primary;
-    text-decoration: none;
-    border-bottom: 1px solid lighten($grey, 60%);
-
-    &:visited {
-        color: $primary;//darken($secondary, 15%);
-    }
-
-    &:hover {
-        color: $primary;
-        border-bottom-color: $orange;
-    }
+    border-bottom-color: $orange;
+  }
 }
 
 
@@ -176,13 +176,13 @@ a {
  * Blockquotes
  */
 blockquote {
-    color: $grey-2;
-    border-left: 6px solid $grey-1;
-    border-radius: 2px;
-    padding: 0.25em 0;
-    padding-left: $spacing-unit * 0.75;
-    font-size: 1em;
-    font-style: italic;
+  color: $grey-2;
+  border-left: 6px solid $grey-1;
+  border-radius: 2px;
+  padding: 0.25em 0;
+  padding-left: $spacing-unit * 0.75;
+  font-size: 1em;
+  font-style: italic;
 }
 
 
@@ -192,41 +192,29 @@ blockquote {
  */
 pre,
 code {
-    font-size: $base-font-size * 0.875;
-    font-style: normal;
-    font-family: $mono-stack;
-    background-color: $grey-lighter;
-    border-radius: 2px;
-    padding: 0.125em 0.25em;
-    line-height: 1.4;
+  font-size: $base-font-size * 0.875;
+  font-style: normal;
+  font-family: $mono-stack;
+  background-color: $grey-lighter;
+  border-radius: 2px;
+  padding: 0.125em 0.25em;
+  line-height: 1.4;
 }
 
 pre {
-    padding: 8px 12px;
-    overflow-x: scroll;
-    border-left: 6px solid $blue-2;
-    word-wrap: normal;
-    > code {
-        border: 0;
-        padding-right: 0;
-        padding-left: 0;
-        white-space: pre;
-        word-spacing: normal;
-        word-break: normal;
-    }
+  padding: 8px 12px;
+  overflow-x: scroll;
+  border-left: 6px solid $blue-2;
+  word-wrap: normal;
+  > code {
+    border: 0;
+    padding-right: 0;
+    padding-left: 0;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+  }
 }
-
-
-
-/**
- * Wrapper
- */
-.wrapper {
-    margin: 0 auto;
-    max-width: 1000px;
-    padding: 1em;
-}
-
 
 
 /**
@@ -234,11 +222,11 @@ pre {
  */
 .clearfix {
 
-    &:after {
-        content: "";
-        display: table;
-        clear: both;
-    }
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
 }
 
 
@@ -246,13 +234,13 @@ pre {
  * Text Manipulation
  */
 .text {
-    &-left {text-align: left;}
-    &-center {text-align: center;}
-    &-right {text-align: right;}
+  &-left {text-align: left;}
+  &-center {text-align: center;}
+  &-right {text-align: right;}
 }
 .caps {
-    text-transform: capitalize;
+  text-transform: capitalize;
 }
 .all-caps {
-    text-transform: uppercase;
+  text-transform: uppercase;
 }

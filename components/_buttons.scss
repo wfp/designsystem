@@ -4,7 +4,8 @@
 // URL: http://matthewmorek.com
 
 %pure-button,
-.pure-button {
+.pure-button,
+a.pure-button {
   padding: 0.5em 1em;
   color: $grey-3;
   background-color: $grey-light;
