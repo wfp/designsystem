@@ -74,7 +74,8 @@ a.pure-button {
   &.active:hover,
   &.active:active,
   &.active:focus {
-    @include box-shadow(rgba(0,0,0,0.1) 0 0 10px inset);
+    border-color: $grey-2;
+    @include box-shadow(rgba(0,0,0,0.15) 0 0 8px inset);
   }
 
   /* Disabled Button */
@@ -89,15 +90,15 @@ a.pure-button {
     opacity: 0.40;
     cursor: not-allowed;
     box-shadow: none;
-    border: 1px solid transparent;
+    border: 1px solid $grey-1;
   }
 
   /* Transparent Button */
-  &.transaprent,
-  &.transaprent:hover,
+  &.transparent,
+  &.transparent:hover,
   &.transparent:focus,
   &.transparent:active {
-    border: none;
+    // border: none;
     box-shadow: none;
     background-color: transparent;
   }

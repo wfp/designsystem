@@ -7,7 +7,7 @@
   position: relative;
   background-color: $primary;
   color: #ffffff;
-  box-shadow: rgba(0,0,0,0.2) 0 1px 3px;
+  @include box-shadow(rgba(0,0,0,0.2) 0 1px 3px);
   min-height: 48px;
   max-height: 94px;
   .wrapper {
@@ -189,7 +189,7 @@
             margin-right: 0;
           }
           a {
-            padding: 1em 0.75em;
+            padding: 0.5em 0.75em;
             font-size: 0.875em;
             line-height: 1.45em;
             display: block;
@@ -271,6 +271,8 @@
         }
       }
 
+
+
       // .dropdown {
       //   position: relative;
       //   .dropdown-menu {
@@ -308,6 +310,30 @@
       //     }
       //   }
       // }
+    }
+  }
+  &.img {
+    .wrapper {
+      padding: 0;
+    }
+    .logo-container {
+      padding: 0.25em 0;
+      height: auto;
+      .wfp-logo {
+        line-height: 1;
+        font-size: 1;
+        margin: 0;
+        padding: 0;
+        a {
+          color: #fff;
+          border: none;
+          font-weight: bold;
+          text-decoration: none;
+        }
+      }
+    }
+    .navigation {
+      padding: 1em 0;
     }
   }
 }

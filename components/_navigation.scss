@@ -263,6 +263,21 @@
 .edit-menu .tabs li a:hover {color: #4AA8FD;}
 
 
+/**
+ *  Pagination
+ */
+.pagination {
+  text-align: center;
+  margin: 1em 0;
+  &-wrapper {
+    display: inline;
+    list-style: none;
+    .item {
+      display: inline-block;
+    }
+  }
+}
+
 @media only screen and (min-width: 35em) {
   .side-nav {
     margin: 1em 0;
