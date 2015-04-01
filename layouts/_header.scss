@@ -17,11 +17,12 @@
 
 .masthead-full {
   @extend %masthead;
+  @include box-shadow(none);
   .wrapper {
     padding: 0;
   }
   .wfp-logo {
-    margin: 0.25em 0;
+    margin: 0.25em;
     display: inline-block;
     a.wfp-logo-wrapper {
       display: inline-block;
@@ -48,126 +49,6 @@
       display: inline-block;
       color: #fff;
     }
-  }
-  .additional {
-    display: block;
-    width: 100%;
-    text-align: right;
-    margin-top: -1em;
-    > .component {
-      display: inline-block;
-      vertical-align: top;
-      margin-right: 1em;
-      &:last-child {
-        margin-right: 0;
-      }
-    }
-    + .main-nav {
-      margin: 1.25em 0 0 0;
-    }
-  }
-
-  /* Main Navigation */
-  .main-nav {
-    display: block;
-    width: 100%;
-    margin: 0.65em 0;
-    text-align: right;
-    ul {
-      margin: 0;
-      padding: 0;
-      li {
-        display: inline-block;
-        margin-right: 1em;
-        &:last-child {
-          margin-right: 0;
-        }
-        a {
-          color: #fff;
-          padding: 0.5em 0.25em;
-          border-bottom: 3px solid transparent;
-          &:hover {
-            border-bottom-color: #fff;
-          }
-        }
-      }
-    }
-  }
-
-  /* Masthead Language Switcher */
-  .header-lang {
-    font-size: 0.875em;
-    ul {
-      margin: 0;
-      padding: 0;
-      li {
-        display: inline-block;
-        padding: 0.25em 0.5em;
-        a {
-          color: #fff;
-          padding: 0.125em 0;
-          border-bottom-color: transparent;
-        }
-        &:hover {
-          border-bottom-color: #fff;
-        }
-      }
-    }
-  }
-
-  /* Masthead CTA Button */
-  .header-cta .pure-button {
-    padding: 0.35em 0.7em;
-    border-radius: 0 0 2px 2px;
-    border: none;
-  }
-
-  /* Masthead Search */
-  .header-search {
-    position: relative;
-  }
-  .pure-form .input-search {
-    border: none;
-    border-radius: 0 0 2px 2px;
-    background-color: $secondary;
-    color: #ffffff;
-    -webkit-box-shadow: 0px 1px 2px 0px rgba(255,255,255,0.25);
-    -moz-box-shadow:    0px 1px 2px 0px rgba(255,255,255,0.25);
-    box-shadow:         0px 1px 2px 0px rgba(255,255,255,0.25);
-    -webkit-transition: 0.2s all ease-in-out;
-    -moz-transition:    0.2s all ease-in-out;
-    transition:         0.2s all ease-in-out;
-    &:focus {
-      outline: none;
-      background-color: #414243;
-      border-color: rgba(0,0,0,0.1);
-      -webkit-box-shadow: 0px 1px 6px 0px rgba(255,255,255,0.5), inset 0 1px 3px rgba(0,0,0,0.2);
-      -moz-box-shadow:    0px 1px 6px 0px rgba(255,255,255,0.5), inset 0 1px 3px rgba(0,0,0,0.2);
-      box-shadow:         0px 1px 6px 0px rgba(255,255,255,0.5), inset 0 1px 3px rgba(0,0,0,0.2);
-    }
-    &::-webkit-input-placeholder {
-      color: rgba(255,255,255,0.75);
-    }
-    &:-ms-input-placeholder {
-      color: rgba(255,255,255,0.75);
-    }
-    &::-moz-placeholder {
-      color: rgba(255,255,255,0.75);
-    }
-    &:-moz-placeholder {
-      color: rgba(255,255,255,0.75);
-    }
-    & + .pure-button {
-      position: absolute;
-      color: #fff;
-      right: 0;
-      top: 0;
-    }
-  }
-  .pure-form .input-search-inline {
-    @extend .input-search;
-    border-radius: 2px;
-    margin-left: 0.5em;
   }
 }
 
@@ -374,6 +255,6 @@
 
 .band {
   background: $white;
-  border-bottom: 1px solid $grey-light;
+  border-bottom: 1px solid $grey-contrast;
   @include box-shadow(0px 1px 3px 0px rgba(0,0,0,0.10));
 }

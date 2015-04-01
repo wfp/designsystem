@@ -244,3 +244,10 @@ pre {
 .all-caps {
   text-transform: uppercase;
 }
+
+%no-list,
+.no-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
