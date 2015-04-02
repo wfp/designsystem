@@ -1,25 +1,26 @@
-/*
-  SCSS Mixins
-  Project: WFPUI
-  Author: Matthew Morek (me@matthewmorek.com)
-  URL: http://matthewmorek.com
-*/
+// Project Mixins
+// Project: WFPUI
+// Author: Matthew Morek (me@matthewmorek.com)
+// URL: http://matthewmorek.com
 
-// Using media queries with like this:
-// @include media-query($sm-screen) {
-//     .wrapper {
-//         padding-right: $spacing-unit / 2;
-//         padding-left: $spacing-unit / 2;
-//     }
-// }
+@import "mixins/_flexbox";
+
 @mixin media-query($device) {
-    @media screen and (min-width: $device) {
-        @content;
-    }
+  @media screen and (min-width: $device) {
+    @content;
+  }
 }
 
 @mixin box-shadow($shadows...) {
   -webkit-box-shadow: $shadows;
-  -moz-box-shadow:    $shadows;
-  box-shadow:         $shadows;
+     -moz-box-shadow: $shadows;
+          box-shadow: $shadows;
+}
+
+@mixin transform($property...) {
+  -webkit-transform: $property;
+     -moz-transform: $property;
+      -ms-transform: $property;
+       -o-transform: $property;
+          transform: $property;
 }

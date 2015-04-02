@@ -1,3 +1,8 @@
+// Component: Forms
+// Project: WFPUI
+// Author: Matthew Morek (me@matthewmorek.com)
+// URL: http://matthewmorek.com
+
 .pure-form input[type="text"],
 .pure-form input[type="password"],
 .pure-form input[type="email"],
@@ -340,7 +345,7 @@
   display: inline-block;
   background-color: $orange;
   padding: 0.25em 0.5em;
-  margin-bottom: 0;
+  margin: 0;
   font-size: 0.875em;
 }
 .pure-form input.invalid + .error {
@@ -368,7 +373,7 @@
   position: absolute;
   z-index: 1;
   right: 10px;
-  top: 23%;
+  top: 0.875em;
   display: block;
   height: 16px;
   pointer-events: none;
@@ -426,6 +431,16 @@
     &::after {
       @extend %input-tip;
       content: "•••";
+    }
+  }
+  .input-date {
+    position: relative;
+    &::after {
+      @extend %input-tip;
+      font-family: "wfpui";
+      font-size: 1.25em;
+      top: 0.5em;
+      content: "\e60d";
     }
   }
 
