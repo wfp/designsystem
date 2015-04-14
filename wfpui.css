@@ -694,6 +694,7 @@ pre > code {
 .pure-form input[type="search"].small,
 .pure-form input[type="tel"].small,
 .pure-form input[type="color"].small,
+.pure-form input:not([type]).small,
 .pure-form select.small,
 .pure-form .input-text.small,
 .pure-form .input-number.small,
@@ -714,6 +715,7 @@ pre > code {
 .pure-form input[type="search"].xsmall,
 .pure-form input[type="tel"].xsmall,
 .pure-form input[type="color"].xsmall,
+.pure-form input:not([type]).xsmall,
 .pure-form select.xsmall,
 .pure-form .input-text.xsmall,
 .pure-form .input-number.xsmall,
@@ -736,6 +738,7 @@ pre > code {
 .pure-form input[type="search"].large,
 .pure-form input[type="tel"].large,
 .pure-form input[type="color"].large,
+.pure-form input:not([type]).large,
 .pure-form select.large,
 .pure-form .input-text.large,
 .pure-form .input-number.large,
@@ -756,6 +759,7 @@ pre > code {
 .pure-form input[type="search"].xlarge,
 .pure-form input[type="tel"].xlarge,
 .pure-form input[type="color"].xlarge,
+.pure-form input:not([type]).xlarge,
 .pure-form select.xlarge,
 .pure-form .input-text.xlarge,
 .pure-form .input-number.xlarge,
@@ -776,6 +780,7 @@ pre > code {
 .pure-form input[type="search"].wide,
 .pure-form input[type="tel"].wide,
 .pure-form input[type="color"].wide,
+.pure-form input:not([type]).wide,
 .pure-form select.wide,
 .pure-form .input-text.wide,
 .pure-form .input-number.wide,
@@ -888,7 +893,7 @@ a.pure-button:active,
 a.pure-button.active:hover,
 a.pure-button.active:active,
 a.pure-button.active:focus {
-  border-color: #8C8C8C;
+  border-color: rgba(0, 0, 0, 0.25);
   box-shadow: rgba(0, 0, 0, 0.15) 0 0 8px inset;
 }
 .pure-button[disabled],
@@ -907,7 +912,7 @@ a.pure-button.disabled:active {
   opacity: 0.40;
   cursor: not-allowed;
   box-shadow: none;
-  border: 1px solid #CCCCCC;
+  border: 1px solid rgba(0, 0, 0, 0.15);
 }
 .pure-button.transparent,
 .pure-button.transparent:hover,
