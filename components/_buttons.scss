@@ -15,7 +15,6 @@ a.pure-button {
   line-height: 1.5;
   border: 1px solid rgba(0,0,0,0.15);
   border-radius: 2px;
-  // @include box-shadow(rgba(0,0,0,0.1) 0 1px 3px, inset rgba(255,255,255,0.25) 0 1px 1px);
   -webkit-transition: all 0.1s ease-in;
   -moz-transition:    all 0.1s ease-in;
   transition:         all 0.1s ease-in;
@@ -25,23 +24,21 @@ a.pure-button {
     border-color: rgba(0,0,0,0.25);
     color: inherit;
     background-image: none;
-    // @include box-shadow(rgba(0,0,0,0.15) 0 1px 8px, inset rgba(255,255,255,0.25) 0 1px 1px);
   }
   &:active {
     background-color: darken($grey-light, 5%);
   }
 
-  /* Primary Button */
+  // Primary Button
   &.primary {
     background-color: $primary;
     color: $white;
-    // text-shadow: rgba(0,0,0,0.2) 0 1px 1px;
     &:active {
       background-color: darken($primary, 5%);
     }
   }
 
-  /* Warning Button */
+  // Warning Button
   &.warning {
     background-color: $red;
     color: lighten($red, 35%);
@@ -50,7 +47,7 @@ a.pure-button {
     }
   }
 
-  /* Attention Button */
+  // Attention Button
   &.attention {
     background-color: $orange;
     color: darken($orange, 40%);
@@ -59,7 +56,7 @@ a.pure-button {
     }
   }
 
-  /* Safe Button */
+  // Safe Button
   &.safe {
     background-color: $green;
     color: darken($green, 35%);
@@ -68,7 +65,7 @@ a.pure-button {
     }
   }
 
-  /* Active Button */
+  // Active Button
   &.active,
   &:active,
   &.active:hover,
@@ -78,7 +75,7 @@ a.pure-button {
     @include box-shadow(rgba(0,0,0,0.15) 0 0 8px inset);
   }
 
-  /* Disabled Button */
+  // Disabled Button
   &[disabled],
   &.disabled,
   &.disabled:hover,
@@ -93,17 +90,16 @@ a.pure-button {
     border: 1px solid rgba(0,0,0,0.15);
   }
 
-  /* Transparent Button */
+  // Transparent Button
   &.transparent,
   &.transparent:hover,
   &.transparent:focus,
   &.transparent:active {
-    // border: none;
     box-shadow: none;
     background-color: transparent;
   }
 
-  /* Extra sizes and modes for buttons */
+  // Extra sizes and modes for buttons
   &.xsmall {
     font-size: 0.875em;
     font-weight: normal;

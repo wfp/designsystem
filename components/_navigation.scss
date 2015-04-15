@@ -3,101 +3,6 @@
 // Author: Matthew Morek (me@matthewmorek.com)
 // URL: http://matthewmorek.com
 
-// ------------
-// Breadcrumbs
-// http://cdn.wfp.org/brand/ui/patterns/breadcrumbs/
-// ------------
-.breadcrumbs {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: table;
-
-  li {
-    display: table-cell;
-    border: 1px solid lighten($grey-1, 10%);
-    border-left: none;
-    position: relative;
-    z-index: 1;
-    font-size: 0.875em;
-
-    &:after {
-      display: block;
-      position: absolute;
-      content: " ";
-      background: #fff;
-      width: 8px;
-      height: 8px;
-      border-right: 1px solid lighten($grey-1, 10%);
-      border-top: 1px solid lighten($grey-1, 10%);
-      right: -5px;
-      top: 9px;
-      @include transform(rotate(45deg));
-      z-index: 10;
-    }
-    &:first-child {
-      border-radius: 2px 0 0 2px;
-      border-left: 1px solid lighten($grey-1, 10%);
-    }
-    &:last-child {
-      border-radius: 0 2px 2px 0;
-      padding: 0.25em 0.5em 0.25em 0.75em;
-      color: $grey-2;
-      cursor: default;
-      &:after {
-        display: none;
-      }
-    }
-    a {
-      padding: 0.5em 0.5em 0.5em 0.75em;
-      width: auto;
-      border: none;
-      color: $grey-3;
-      &:hover {
-        color: $primary;
-      }
-      &.home {
-        padding-left: 0.6em 0.75em;
-        img {
-          vertical-align: baseline;
-        }
-      }
-    }
-  }
-}
-
-// -----------------------------
-// Dark Side Of The Breadcrumbs
-// http://cdn.wfp.org/brand/ui/patterns/breadcrumbs/
-// -----------------------------
-.splash {
-  .breadcrumbs {
-    background-color: $grey-4;
-    margin: 0;
-    li {
-      border-color: $grey-3;
-      &:after {
-        background-color: $grey-4;
-        border-right-color: $grey-3;
-        border-top-color: $grey-3;
-      }
-      &:first-child {
-        border-left-color: $grey-3;
-      }
-      &:last-child {
-        color: $grey-light;
-      }
-      a {
-        color: $grey-light;
-        &:hover {
-          color: $primary;
-        }
-      }
-    }
-  }
-}
-
-
 // -------------------
 // Section Navigation (Sidebar)
 // http://cdn.wfp.org/brand/ui/patterns/navigation/#section-nav
@@ -296,23 +201,6 @@
           color: $primary;
         }
       }
-    }
-  }
-}
-
-// -----------
-// Pagination
-// http://cdn.wfp.org/brand/ui/patterns/navigation/#pagination
-// -----------
-.pagination {
-  text-align: center;
-  margin: 1em 0;
-  &-wrapper {
-    display: inline;
-    list-style: none;
-    padding: 0;
-    .item {
-      display: inline-block;
     }
   }
 }
