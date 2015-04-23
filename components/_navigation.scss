@@ -3,6 +3,11 @@
 // Author: Matthew Morek (me@matthewmorek.com)
 // URL: http://matthewmorek.com
 
+.pure-menu.pure-menu-open, .pure-menu.pure-menu-horizontal li .pure-menu-children {
+  background-color: transparent;
+  border: none;
+}
+
 // -------------------
 // Section Navigation (Sidebar)
 // http://cdn.wfp.org/brand/ui/patterns/navigation/#section-nav

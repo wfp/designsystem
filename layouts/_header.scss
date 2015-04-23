@@ -3,6 +3,17 @@
 // Author: Matthew Morek (me@matthewmorek.com)
 // URL: http://matthewmorek.com
 
+
+// -----------------------------------------------------------------------------
+// Add spacing to the body tag, to compensate for a fixed masthead
+// -----------------------------------------------------------------------------
+.space-around {
+  &-narrow {
+    overflow: hidden;
+    padding-top: 4em;
+  }
+}
+
 %masthead {
   position: relative;
   background-color: $primary;
@@ -15,6 +26,10 @@
   }
 }
 
+
+// -----------------------------------------------------------------------------
+// Masthead: Full
+// -----------------------------------------------------------------------------
 .masthead-full {
   @extend %masthead;
   @include box-shadow(none);
@@ -55,14 +70,18 @@
 
 
 
-/*
-  Masthead Narrow
-*/
+// -----------------------------------------------------------------------------
+// Masthead: Narrow
+// -----------------------------------------------------------------------------
 .masthead-narrow {
   @extend %masthead;
+  top: 0;
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+
   .logo-container {
-    padding: 0.4em 0;
-    height: 16px;
+    padding: 0.5em 0;
 
     .logo {
       line-height: 1;
@@ -80,151 +99,12 @@
   .navigation {
     padding: 0;
     position: relative;
-    a { text-decoration: none; }
-
-    .nav-toggle {
-      padding: 0.5em 0;
-      text-align: right;
-      &-click {
-        border-color: transparent;
-      }
+    text-align: right;
+    a {
+      text-decoration: none;
     }
-
-    .main-nav {
-      display: block;
-      width: 100%;
-      text-align: right;
-      ul {
-        margin: 0;
-        li {
-          display: inline-block;
-          margin: 0;
-          padding: 0;
-          &:last-child {
-            margin-right: 0;
-          }
-          a {
-            padding: 0.5em 0.75em;
-            font-size: 0.875em;
-            line-height: 1.45em;
-            display: block;
-            color: #fff;
-            border: none;
-            &:hover {
-              box-shadow: rgba(0,0,0,0.2) 0 -3px 0 inset;
-            }
-            &.active,
-            &:active {
-              box-shadow: rgba(0,0,0,0.5) 0 -3px 0 inset;
-            }
-          }
-          .pure-button {
-            padding: 0.35em 0.75em 0.4em;
-            color: $text-color;
-            margin-left: 0.5em;
-            display: inline-block;
-            vertical-align: baseline;
-            &:hover {
-              color: inherit;
-              background-color: $grey-light;
-              -webkit-box-shadow: rgba(0,0,0,0.2) 0 1px 6px, inset rgba(255,255,255,0.3) 0 1px 3px;
-              -moz-box-shadow:    rgba(0,0,0,0.2) 0 1px 6px, inset rgba(255,255,255,0.3) 0 1px 3px;
-              box-shadow:         rgba(0,0,0,0.2) 0 1px 6px, inset rgba(255,255,255,0.3) 0 1px 3px;
-            }
-          }
-          .input-search-inline {
-            display: inline-block;
-            vertical-align: baseline;
-            line-height: 1.5;
-          }
-          &.profile-wrapper {
-            max-height: 48px;
-            background-color: $blue-3;
-            box-shadow: #4e98e3 0 2px 0 0;
-          }
-        }
-      }
-      &.closed {
-        right: -320px;
-        display: none;
-        @include media-query($md-screen){
-          display: block;
-          max-height: none;
-          max-width: none;
-          right: auto;
-        }
-      }
-      &.opened {
-        // @extend %flex-center;
-        clip: auto;
-        top: 0;
-        right: 0px;
-        min-height: 100vh;
-        max-height: 100%;
-        max-width: 320px;
-        padding-top: 1.5em;
-        -webkit-align-items: flex-start;
-        align-items: flex-start;
-        background-color: rgba(0,0,0,0.85);
-        z-index: 100;
-        text-align: left;
-        ul {
-          width: 100%;
-          li {
-            display: block;
-            a {
-              font-size: 1.25em;
-              padding: 0.5em 1em;
-              display: inline-block;
-              &:hover {
-                background-color: transparent;
-                border-bottom: none;
-                box-shadow: none;
-              }
-            }
-          }
-        }
-      }
-
-
-
-      // .dropdown {
-      //   position: relative;
-      //   .dropdown-menu {
-      //     overflow: hidden;
-      //     z-index: 10;
-      //     background-color: transparent;
-      //     position: static;
-      //     margin-left: 1em;
-      //     @include media-query($md-screen) {
-      //       padding: 0.4em 0;
-      //       border-radius: 0 0 3px 3px;
-      //       background-color: $grey;
-      //       position: absolute;
-      //       margin-left: 0;
-      //       top: 3.5em;
-      //       li {
-      //         display: block;
-      //         a,
-      //         a:active,
-      //         a.active {
-      //           padding: 0.75em 1em;
-      //           box-shadow: none;
-      //           &:hover {
-      //             border: none;
-      //             box-shadow: none;
-      //             background-color: $grey-2;
-      //           }
-      //         }
-      //       }
-      //     }
-      //   }
-      //   &.lang {
-      //     @include media-query($md-screen) {
-      //       border-left: 1px solid $secondary;
-      //     }
-      //   }
-      // }
+    .pure-button {
+      border: none;
     }
   }
   &.img {
@@ -253,8 +133,177 @@
   }
 }
 
+
+// -----------------------------------------------------------------------------
+// Utility Band (for pagination, etc.)
+// -----------------------------------------------------------------------------
 .band {
   background: $white;
   border-bottom: 1px solid $grey-contrast;
   @include box-shadow(0px 1px 3px 0px rgba(0,0,0,0.10));
+}
+
+
+// -----------------------------------------------------------------------------
+// Responsive Navigation
+// -----------------------------------------------------------------------------
+.nav-trigger {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  @include media-query($md-screen) {
+    display: none;
+  }
+}
+
+.main-nav {
+  position: absolute;
+  width: 100%;
+  clip: auto;
+  top: 0;
+  right: 0;
+  min-height: 100vh;
+  max-height: 100%;
+  max-width: 320px;
+  padding-top: 1em;
+  z-index: 100;
+  background-color: $grey;
+
+  @include media-query($md-screen) {
+    position: static;
+    min-height: none;
+    max-width: none;
+    width: 100%;
+    padding-top: 0;
+    background-color: transparent;
+  }
+
+  .nav-close {
+    display: block;
+    position: absolute;
+    top: 0.25em;
+    right: 0.25em;
+    background-color: transparent;
+    border: none;
+    color: $white;
+    font-size: 1.25em;
+    padding: 0.25em;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    @include media-query($md-screen) {
+      display: none;
+    }
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: block;
+    list-style: none;
+    text-align: left;
+
+    @include media-query($md-screen) {
+      text-align: right;
+    }
+
+    li {
+      display: block;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+
+      @include media-query($md-screen) {
+        display: inline-block;
+        width: auto;
+      }
+
+      a {
+        font-size: 1.125em;
+        padding: 0.5em 1.75em;
+        display: inline-block;
+        color: $white;
+        border: none;
+        &:hover {
+          background-color: transparent;
+          border-bottom: none;
+          box-shadow: none;
+        }
+
+        @include media-query($md-screen) {
+          padding: 0.25em 0.5em;
+          font-size: 0.875em;
+          // line-height: 1.45em;
+          display: block;
+          &:hover {
+            @include box-shadow(rgba(0,0,0,0.2) 0 -3px 0 inset);
+          }
+          &.active,
+          &:active {
+            @include box-shadow(rgba(0,0,0,0.5) 0 -3px 0 inset);
+          }
+        }
+      }
+      // .pure-button {
+      //   padding: 0.4em 0.75em 0.4em;
+      //   color: $text-color;
+      //   margin-left: 0.5em;
+      //   display: inline-block;
+      //   vertical-align: baseline;
+      //   &:hover {
+      //     color: inherit;
+      //     background-color: $grey-light;
+      //     -webkit-box-shadow: rgba(0,0,0,0.2) 0 1px 6px, inset rgba(255,255,255,0.3) 0 1px 3px;
+      //     -moz-box-shadow:    rgba(0,0,0,0.2) 0 1px 6px, inset rgba(255,255,255,0.3) 0 1px 3px;
+      //     box-shadow:         rgba(0,0,0,0.2) 0 1px 6px, inset rgba(255,255,255,0.3) 0 1px 3px;
+      //   }
+      // }
+      // .input-search-inline {
+      //   display: inline-block;
+      //   vertical-align: baseline;
+      //   line-height: 1.5;
+      // }
+      // &.profile-wrapper {
+      //   max-height: 48px;
+      //   background-color: $blue-3;
+      //   box-shadow: #4e98e3 0 2px 0 0;
+      // }
+    }
+  }
+  &.closed {
+    transform: translate3d(320px,0,0);
+    transition: transform 0.25s cubic-bezier(0.4, 0, 1, 1);
+  }
+  &.opened {
+    transform: translate3d(0,0,0);
+    transition: transform 0.4s cubic-bezier(0.15, 1.23, 0.84, 1.04);
+  }
+}
+
+.js {
+  .main-nav {
+    &.closed,
+    &.opened {
+      @include media-query($md-screen) {
+        position: static;
+        display: block;
+        width: 100%;
+        min-height: 0;
+        max-height: none;
+        max-width: none;
+        right: auto;
+        transform: none;
+        line-height: 1.65;
+      }
+    }
+  }
 }
