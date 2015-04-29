@@ -17,7 +17,7 @@
     position: relative;
     z-index: 1;
     font-size: 0.875em;
-    line-height: 1;
+    line-height: 1.6;
 
     &:after {
       display: block;
@@ -29,7 +29,7 @@
       border-right: 1px solid lighten($grey-1, 10%);
       border-top: 1px solid lighten($grey-1, 10%);
       right: -5px;
-      top: 9px;
+      top: 10px;
       @include transform(rotate(45deg));
       z-index: 10;
     }
