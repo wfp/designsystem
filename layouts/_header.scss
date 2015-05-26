@@ -175,7 +175,7 @@
 
   @include media-query($md-screen) {
     position: static;
-    min-height: none;
+    min-height: 0;
     max-width: none;
     width: 100%;
     padding-top: 0;

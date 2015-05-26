@@ -65,3 +65,19 @@
     }
   }
 }
+
+//  Specificity Wars II™: The Dark Side of the Breadcrumb
+.splash .breadcrumbs {
+  li {
+    border-color: rgba(0,0,0,0.8);
+    background-color: rgba(0,0,0,0.75);
+    color: $grey-contrast;
+    a {
+      color: $grey-contrast;
+      &:hover,
+      &:active {
+        color: $primary;
+      }
+    }
+  }
+}
