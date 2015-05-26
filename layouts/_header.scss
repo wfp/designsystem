@@ -35,6 +35,9 @@
   @include box-shadow(none);
   .wrapper {
     padding: 0;
+    @include media-query($md-screen) {
+      padding: 0 1em;
+    }
   }
   .wfp-logo {
     margin: 0.25em;

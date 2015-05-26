@@ -19,20 +19,6 @@
     font-size: 0.875em;
     line-height: 1.6;
 
-    // &:after {
-    //   display: block;
-    //   position: absolute;
-    //   content: " ";
-    //   background: #fff;
-    //   width: 8px;
-    //   height: 8px;
-    //   border-right: 1px solid lighten($grey-1, 10%);
-    //   border-top: 1px solid lighten($grey-1, 10%);
-    //   right: -5px;
-    //   top: 10px;
-    //   @include transform(rotate(45deg));
-    //   z-index: 10;
-    // }
     &:first-child {
       border-radius: 2px 0 0 2px;
       border-left: 1px solid lighten($grey-1, 10%);
@@ -69,8 +55,8 @@
 //  Specificity Wars II™: The Dark Side of the Breadcrumb
 .splash .breadcrumbs {
   li {
-    border-color: rgba(0,0,0,0.8);
-    background-color: rgba(0,0,0,0.75);
+    border-color: $grey;
+    background-color: $grey-4;
     color: $grey-contrast;
     a {
       color: $grey-contrast;

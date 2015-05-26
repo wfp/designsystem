@@ -1183,8 +1183,8 @@ a.pure-button + .pure-button:last-child {
 }
 
 .splash .breadcrumbs li {
-  border-color: rgba(0, 0, 0, 0.8);
-  background-color: rgba(0, 0, 0, 0.75);
+  border-color: #404040;
+  background-color: #333333;
   color: #EAEAEA;
 }
 .splash .breadcrumbs li a {
@@ -1390,6 +1390,11 @@ a.pure-button + .pure-button:last-child {
 }
 .masthead-full .wrapper {
   padding: 0;
+}
+@media screen and (min-width: 768px) {
+  .masthead-full .wrapper {
+    padding: 0 1em;
+  }
 }
 .masthead-full .wfp-logo {
   margin: 0.25em;
@@ -1613,7 +1618,12 @@ a.pure-button + .pure-button:last-child {
 }
 
 .footer-top {
-  padding: 0.25em 0;
+  padding: 0.25em 1em;
+}
+@media screen and (min-width: 1024px) {
+  .footer-top {
+    padding: 0.25em 0;
+  }
 }
 .footer-top .social-media {
   margin: 0.75em 0;

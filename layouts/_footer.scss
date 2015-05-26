@@ -36,7 +36,11 @@
 }
 
 .footer-top {
-  padding: 0.25em 0;
+  padding: 0.25em 1em;
+  @include media-query($lg-screen) {
+    padding: 0.25em 0;
+  }
+
   .social-media {
     margin: 0.75em 0;
     text-align: center;
