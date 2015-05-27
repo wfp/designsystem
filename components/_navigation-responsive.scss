@@ -134,12 +134,12 @@
     }
   }
   &.closed {
-    transform: translate3d(320px,0,0);
-    transition: transform 0.25s cubic-bezier(0.4, 0, 1, 1);
+    @include transform(translate3d(320px,0,0));
+    @include transition(transform 0.25s cubic-bezier(0.4, 0, 1, 1));
   }
   &.opened {
-    transform: translate3d(0,0,0);
-    transition: transform 0.4s cubic-bezier(0.15, 1.23, 0.84, 1.04);
+    @include transform(translate3d(0,0,0));
+    @include transition(transform 0.4s cubic-bezier(0.15, 1.23, 0.84, 1.04));
   }
 }
 
