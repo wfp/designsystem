@@ -36,7 +36,11 @@
 }
 
 .footer-top {
-  padding: 0.25em 0;
+  padding: 0.25em 1em;
+  @include media-query($lg-screen) {
+    padding: 0.25em 0;
+  }
+
   .social-media {
     margin: 0.75em 0;
     text-align: center;
@@ -90,26 +94,26 @@
 .footer-bottom {
   border-top: 1px solid $grey-light;
   padding: 0;
+}
 
-  .copyrights {
-    @include media-query($md-screen) {
-      text-align: inherit;
+.copyrights {
+  @include media-query($md-screen) {
+    text-align: inherit;
+  }
+}
+
+.site-links {
+  text-align: center;
+
+  .inline-list {
+    @extend %no-list;
+    li {
+      display: inline;
+      margin: 0;
+      margin-left: 1em;
     }
   }
-
-  .site-links {
-    text-align: center;
-
-    .inline-list {
-      @extend %no-list;
-      li {
-        display: inline;
-        margin: 0;
-        margin-left: 1em;
-      }
-    }
-    @include media-query($md-screen) {
-      text-align: right;
-    }
+  @include media-query($md-screen) {
+    text-align: right;
   }
 }

@@ -1,0 +1,18 @@
+// Component: Pagination
+// Project: WFPUI
+// Author: Matthew Morek (me@matthewmorek.com)
+// URL: http://matthewmorek.com
+// Ref: http://cdn.wfp.org/brand/ui/patterns/pagination/
+
+.pagination {
+  text-align: center;
+  margin: 1em 0;
+  &-wrapper {
+    display: inline;
+    list-style: none;
+    padding: 0;
+    .item {
+      display: inline-block;
+    }
+  }
+}

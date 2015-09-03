@@ -3,6 +3,17 @@
 // Author: Matthew Morek (me@matthewmorek.com)
 // URL: http://matthewmorek.com
 
+
+// -----------------------------------------------------------------------------
+// Add spacing to the body tag, to compensate for a fixed masthead
+// -----------------------------------------------------------------------------
+.space-around {
+  &-narrow {
+    overflow: hidden;
+    padding-top: 4em;
+  }
+}
+
 %masthead {
   position: relative;
   background-color: $primary;
@@ -15,11 +26,18 @@
   }
 }
 
+
+// -----------------------------------------------------------------------------
+// Masthead: Full
+// -----------------------------------------------------------------------------
 .masthead-full {
   @extend %masthead;
   @include box-shadow(none);
   .wrapper {
     padding: 0;
+    @include media-query($md-screen) {
+      padding: 0 1em;
+    }
   }
   .wfp-logo {
     margin: 0.25em;
@@ -55,13 +73,18 @@
 
 
 
-/*
-  Masthead Narrow
-*/
+// -----------------------------------------------------------------------------
+// Masthead: Narrow
+// -----------------------------------------------------------------------------
 .masthead-narrow {
   @extend %masthead;
+  top: 0;
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+
   .logo-container {
-    padding: 0.4em 0;
+    padding: 0.5em 0;
     height: 16px;
 
     .logo {
@@ -185,46 +208,6 @@
           }
         }
       }
-
-
-
-      // .dropdown {
-      //   position: relative;
-      //   .dropdown-menu {
-      //     overflow: hidden;
-      //     z-index: 10;
-      //     background-color: transparent;
-      //     position: static;
-      //     margin-left: 1em;
-      //     @include media-query($md-screen) {
-      //       padding: 0.4em 0;
-      //       border-radius: 0 0 3px 3px;
-      //       background-color: $grey;
-      //       position: absolute;
-      //       margin-left: 0;
-      //       top: 3.5em;
-      //       li {
-      //         display: block;
-      //         a,
-      //         a:active,
-      //         a.active {
-      //           padding: 0.75em 1em;
-      //           box-shadow: none;
-      //           &:hover {
-      //             border: none;
-      //             box-shadow: none;
-      //             background-color: $grey-2;
-      //           }
-      //         }
-      //       }
-      //     }
-      //   }
-      //   &.lang {
-      //     @include media-query($md-screen) {
-      //       border-left: 1px solid $secondary;
-      //     }
-      //   }
-      // }
     }
   }
   &.img {
@@ -253,6 +236,10 @@
   }
 }
 
+
+// -----------------------------------------------------------------------------
+// Utility Band (for pagination, etc.)
+// -----------------------------------------------------------------------------
 .band {
   background: $white;
   border-bottom: 1px solid $grey-contrast;
