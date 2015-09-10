@@ -167,45 +167,44 @@
 
 
 // ----------
-// Edit Menu
+// Edit/Tab Menu
 // http://cdn.wfp.org/brand/ui/patterns/navigation/#edit-menu
 // ----------
-.edit-menu {
-  .tabs {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: table;
-    height: 32px;
-    float: right;
-    text-align: center;
-    li {
-      display: table-cell;
-      border: 1px solid $grey-contrast;
-      border-left: none;
-      position: relative;
-      z-index: 1;
-      &.active {
-        background-color: $grey-light;
-      }
-      &:first-child {
-        border-radius: 2px 0 0 2px;
-        border-left: 1px solid $grey-contrast;
-      }
-      &:last-child {
-        border-radius: 0 2px 2px 0;
-      }
-      a {
-        padding: 0.25em 0.75em;
-        width: auto;
-        border: none;
-        color: $grey-2;
-        font-size: 0.875em;
-        display: block;
-        &:hover {
-          color: $primary;
-        }
+%inline-menu {
+  @extend %no-list;
+  display: table;
+  height: 32px;
+  text-align: center;
+  li {
+    display: table-cell;
+    border: 1px solid $grey-contrast;
+    border-left: none;
+    position: relative;
+    z-index: 1;
+    &.active {
+      background-color: $grey-light;
+    }
+    &:first-child {
+      border-radius: 2px 0 0 2px;
+      border-left: 1px solid $grey-contrast;
+    }
+    &:last-child {
+      border-radius: 0 2px 2px 0;
+    }
+    a {
+      padding: 0.25rem 0.75rem;
+      width: auto;
+      border: none;
+      color: $grey-2;
+      font-size: 0.875rem;
+      display: block;
+      &:hover {
+        color: $primary;
       }
     }
   }
+}
+
+.inline-menu {
+  @extend %inline-menu;
 }
