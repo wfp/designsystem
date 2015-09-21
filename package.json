@@ -1,6 +1,5 @@
 {
   "name": "wfp-ui-kit",
-  "version": "0.2.1",
   "description": "WFP UI Kit",
   "main": "wfpui.scss",
   "author": "WFP COM",
@@ -8,11 +7,12 @@
   "man": "readme.md",
   "private": true,
   "dependencies": {
-    "autoprefixer-core": "^5.1.11",
+    "autoprefixer": "^6.0.3",
     "bower": "^1.4.1",
+    "cssnano": "^3.1.0",
     "grunt": "^0.4.5",
     "grunt-cli": "^0.1.13",
-    "grunt-postcss": "^0.4.0",
+    "grunt-postcss": "^0.6.0",
     "grunt-sass": "^1.0.0",
     "node-sass": "^3.1.2"
   },
