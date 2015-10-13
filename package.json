@@ -1,20 +1,20 @@
 {
-  "name": "wfp-ui-kit",
+  "name": "wfp-ui",
   "description": "WFP UI Kit",
-  "main": "wfpui.scss",
+  "main": "dist/wfpui.css",
   "author": "WFP COM",
   "license": "MIT",
   "man": "readme.md",
   "private": true,
   "dependencies": {
     "autoprefixer": "^6.0.3",
-    "bower": "^1.4.1",
-    "cssnano": "^3.1.0",
+    "bower": "^1.5.3",
+    "cssnano": "^3.3.1",
     "grunt": "^0.4.5",
     "grunt-cli": "^0.1.13",
     "grunt-postcss": "^0.6.0",
     "grunt-sass": "^1.0.0",
-    "node-sass": "^3.1.2"
+    "node-sass": "^3.3.3"
   },
   "devDependencies": {
     "grunt-contrib-jshint": "^0.11.2",
