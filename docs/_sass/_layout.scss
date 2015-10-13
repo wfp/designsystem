@@ -1,0 +1,18 @@
+.side-nav {
+    margin-top: 0;
+}
+.page-header {
+    margin-bottom: 2em;
+}
+.page-content {
+    > h3 {
+        padding-bottom: $spacing-unit / 4;
+        margin-bottom: $spacing-unit / 4;
+        margin-top: $spacing-unit;
+        border-bottom: 1px solid $grey-light;
+    }
+    > p + .inline-grid {
+        margin: 2em 0;
+    }
+}
+

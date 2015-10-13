@@ -1,0 +1,20 @@
+  <nav class="sub-nav" id="sidebar">
+  {% for category in site.category-list %}
+    <div class="pure-menu pure-menu-open">
+      <h6 class="pure-menu-heading">{{ category }}</h6>
+      <ul>
+      {% for link in site.pages %}
+      {% if link.resource == true %}
+        {% for cat in link.categories %}
+        {% if cat == category %}
+        {% assign current = nil %}
+        {% if page.url == link.url %}{% assign current = ' class="current"' %}{% endif %}
+        <li{{current}}><a href="{{ site.baseurl }}{{ link.url }}">{{ link.title }}</a></li>
+        {% endif %}
+        {% endfor %}
+      {% endif %}
+      {% endfor %}
+      </ul>
+    </div>
+  {% endfor %}
+  </nav>
