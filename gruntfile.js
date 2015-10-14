@@ -20,7 +20,8 @@ module.exports = function(grunt) {
       },
       dev: {
         files: {
-          "dist/wfpui.css" : "scss/wfpui.scss"
+          "dist/wfpui.css" : "scss/wfpui.scss",
+          "dist/bootstrap-theme.css" : "scss/bootstrap-theme.scss"
         }
       },
       dist: {
@@ -28,7 +29,8 @@ module.exports = function(grunt) {
           sourceMap: false
         },
         files: {
-          "dist/wfpui.css" : "scss/wfpui.scss"
+          "dist/wfpui.css" : "scss/wfpui.scss",
+          "dist/bootstrap-theme.css" : "scss/bootstrap-theme.scss"
         }
       }
     },
