@@ -31,18 +31,18 @@ Or, you can reference the precompiled and minified library directly in your HTML
 <link rel="stylesheet" href="bower_components/wfp-ui/dist/wfpui.css">
 ```
 
-We recommend you to copy `dist/wfpui.css` into your own `css` directory, if you plan on simply linking it from HTML.
+We recommend you copy `dist/wfpui.css` into your own `css` directory, if you plan on simply linking it from HTML.
 
 > It's best to compile `wfp-ui` directly to your SASS main file, in order to benefit from a **smaller overall file size**, and **having a single CSS file to load and render by the web browser**.
 > This is because CSS is considered as a [_render blocking resource_](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/render-blocking-css).
 
-#### Authors:
-- [Matthew Morek](github.com/matthewmorek)
-- [James Home](github.com/jrah)
+## Authors
+- [Matthew Morek](https://github.com/matthewmorek)
+- [James Home](https://github.com/jrah)
 
-#### Attributions:
+## Attributions
 
-###### Fonts
+##### Fonts
 Fonts files located in `fonts` directory contain two type families:
 
 - [*Lato*](https://www.google.com/fonts/specimen/Lato), designed by Łukasz Dziedzic;
@@ -50,5 +50,5 @@ Fonts files located in `fonts` directory contain two type families:
 
 Both type families are licensed under [SIL Open Font License 1.1](http://scripts.sil.org/OFL).
 
-###### PureCSS
+##### PureCSS
 The entire framework is based on [PureCSS](http://purecss.io) by Yahoo! Inc., and distributed under [Yahoo BSD License](https://github.com/yahoo/pure-site/blob/master/LICENSE.md).
