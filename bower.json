@@ -1,14 +1,17 @@
 {
-  "name": "wfp-ui-kit",
+  "name": "wfp-ui",
   "authors": [
-    "Matthew Morek <me@matthewmorek.com> (http://matthewmorek.com)"
+    "Matthew Morek <me@matthewmorek.com> (http://matthewmorek.com)",
+    "James Home <james@jameshome.co> (http://jrah.github.io)"
   ],
   "description": "World Food Programme UI Kit",
-  "main": "wfpui.scss",
+  "main": [
+    "dist/wfpui.css",
+    "scss/wfpui.scss"
+  ],
   "keywords": [
-    "wfp-ui",
-    "ui-kit",
     "ui",
+    "interface",
     "toolkit",
     "wfp"
   ],
