@@ -52,6 +52,19 @@ module.exports = function(grunt) {
         src: 'dist/*.css'
       }
     },
+    datauri: {
+      default: {
+        options: {
+          classPrefix: 'icon-ui-'
+        },
+        src: [
+          "icons/ui/svg/*.svg"
+        ],
+        dest: [
+          "scss/components/_icons.scss"
+        ]
+      }
+    },
     jshint: {
       options: {
         globals: {
@@ -67,12 +80,13 @@ module.exports = function(grunt) {
     }
   });
 
-  grunt.loadNpmTasks("grunt-contrib-watch");
-  grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.loadNpmTasks('grunt-datauri');
   grunt.loadNpmTasks('grunt-postcss');
   grunt.loadNpmTasks("grunt-sass");
+  grunt.loadNpmTasks("grunt-contrib-watch");
+  grunt.loadNpmTasks('grunt-contrib-jshint');
 
-  grunt.registerTask("build", ["sass:dev", "postcss:dev"]);
-  grunt.registerTask("dist", ["jshint", "sass:dist", "postcss:dist"]);
+  grunt.registerTask("build", ["jshint", "datauri", "sass:dev", "postcss:dev"]);
+  grunt.registerTask("dist", ["datauri", "sass:dist", "postcss:dist"]);
   grunt.registerTask("default", ["dist"]);
 };
