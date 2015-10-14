@@ -22,7 +22,7 @@ $ bower install wfp-ui --save
 Now, add `wfp-ui` as a dependency to your main SCSS file:
 
 ```
-@include "bower_components/wfp-ui/scss/wfpui";
+@import "bower_components/wfp-ui/scss/wfpui";
 ```
 
 Or, you can reference the precompiled and minified library directly in your HTML:
