@@ -31,5 +31,8 @@
     "tests",
     "package.json",
     "gruntfile.js"
-  ]
+  ],
+  "devDependencies": {
+    "bootstrap-sass": "~3.3.5"
+  }
 }
