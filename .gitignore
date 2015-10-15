@@ -1,0 +1,4 @@
+node_modules
+_components
+dist/docs
+*.map

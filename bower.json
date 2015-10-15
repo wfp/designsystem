@@ -1,21 +1,38 @@
 {
-  "name": "wfp-ui-kit",
-  "version": "0.2.1",
+  "name": "wfp-ui",
   "authors": [
-    "Matthew Morek <me@matthewmorek.com>"
+    "Matthew Morek <me@matthewmorek.com> (http://matthewmorek.com)",
+    "James Home <james@jameshome.co> (http://jrah.github.io)"
   ],
-  "description": "WFP UI Kit",
-  "main": "wfpui.scss",
+  "description": "World Food Programme UI Kit",
+  "main": [
+    "dist/wfpui.css",
+    "scss/wfpui.scss"
+  ],
   "keywords": [
-    "wfpui"
+    "ui",
+    "interface",
+    "toolkit",
+    "wfp"
   ],
   "license": "MIT",
-  "homepage": "http://matthewmorek.com",
+  "homepage": "http://cdn.wfp.org/guides/ui",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/wfp/ui.git"
+  },
   "ignore": [
     "**/.*",
     "node_modules",
     "bower_components",
+    "_components",
+    "docs",
     "test",
-    "tests"
-  ]
+    "tests",
+    "package.json",
+    "gruntfile.js"
+  ],
+  "devDependencies": {
+    "bootstrap-sass": "~3.3.5"
+  }
 }
