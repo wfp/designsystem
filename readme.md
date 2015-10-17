@@ -1,4 +1,10 @@
 # World Food Programme UI (WFP UI)
+
+Branch  | Build Status
+--------|-------------
+master  | [![Build Status](https://travis-ci.org/wfp/ui.svg?branch=master)](https://travis-ci.org/wfp/ui)
+develop | [![Build Status](https://travis-ci.org/wfp/ui.svg?branch=develop)](https://travis-ci.org/wfp/ui)
+
 WFP UI is a library of components, patterns, and a style guide for WFP-branded websites and web applications.
 
 The purpose of this project is to create a unified toolkit that could be used by designers and developers alike on their projects, by following our design and implementation guidelines, to ensure all WFP-branded projects are accessible, beautiful, and have a consistent look and feel across the board.
