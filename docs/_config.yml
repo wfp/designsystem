@@ -1,9 +1,10 @@
 # Site settings
-title: "WFP UI Guide"
+title: "WFP UI Docs"
 email: "me@matthewmorek.com"
 description: ""
 baseurl: "/brand/ui" # WFP CDN
 url: "https://cdn.wfp.org/" # WFP CDN
+version: "v0.3.0"
 
 exclude: ["*.sublime-*", "*.sh", "*.yml", "*.DS_*"]
 

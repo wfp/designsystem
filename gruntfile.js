@@ -92,8 +92,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks("grunt-sass");
 
   // Build WFP UI Docs
-  grunt.registerTask("build-docs", ["jekyll:dev"]);
-  grunt.registerTask("dist-docs", ["jekyll:dist"]);
+  grunt.registerTask("docs-build", ["jekyll:dev"]);
+  grunt.registerTask("docs-dist", ["jekyll:dist"]);
   // Build WFP UI
   grunt.registerTask("build", ["jshint", "sass:dev", "postcss:dev"]);
   // Build a dist-ready WFP UI
