@@ -10,6 +10,10 @@ module.exports = function(grunt) {
       jshint: {
         files: "js/*.js",
         tasks: ["jshint"]
+      },
+      jekyll: {
+        files: ["docs/**/*.*", "scss/**/*.scss"],
+        tasks: ['jekyll:dev']
       }
     },
     sass: {
