@@ -7,20 +7,20 @@
     </div>
     <div class="pure-u-2-5 pure-u-md-2-3 navigation">
       <button class="nav-trigger pure-button small" id="js-nav-trigger">Menu</button>
-      <nav class="main-nav flyout">
-        <button class="nav-close icon icon-clear" id="js-nav-close"></button>
-        <ul>
+      <div class="main-nav flyout">
+        <button class="nav-close icon icon-clear" id="js-nav-close"><span class="close-icon">&#x2715;</span>Close</button>
+        <nav class="menu-inverse">
         {% for category in site.category-list %}
-          <div class="pure-menu pure-menu-open">
-            <h6 class="pure-menu-heading">{{ category }}</h6>
-            <ul>
+          <div class="menu--group">
+            <h6 class="menu--heading">{{ category }}</h6>
+            <ul class="menu--wrapper">
             {% for link in site.pages %}
             {% if link.resource == true %}
               {% for cat in link.categories %}
               {% if cat == category %}
               {% assign current = nil %}
               {% if page.url == link.url %}{% assign current = ' class="current"' %}{% endif %}
-              <li><a href="{{ site.baseurl }}{{ link.url }}"{{current}}>{{ link.title }}</a></li>
+              <li><a class="menu--link" href="{{ site.baseurl }}{{ link.url }}"{{current}}>{{ link.title }}</a></li>
               {% endif %}
               {% endfor %}
             {% endif %}
@@ -28,8 +28,8 @@
             </ul>
           </div>
         {% endfor %}
-        </ul>
-      </nav>
+        </nav>
+      </div>
     </div>
   </div>
 </header>

@@ -4,44 +4,45 @@
 // URL: http://matthewmorek.com
 
 // -----------------------------------------------------------------------------
-// Inline Navigation
-// http://cdn.wfp.org/brand/ui/patterns/navigation/#inline-navigation
+// Segmented Controls
+// http://cdn.wfp.org/brand/ui/patterns/navigation/#segmented-controls
 // -----------------------------------------------------------------------------
-%inline-nav {
+%segmented-control {
   @extend %no-list;
   display: table;
   height: 32px;
   text-align: center;
-  .inline-nav--item {
+  .segmented-control--item {
     display: table-cell;
-    border: 1px solid $grey-contrast;
+    border: 1px solid $primary;
     border-left: none;
     position: relative;
     z-index: 1;
-    &.active {
-      background-color: $grey-light;
-    }
     &:first-child {
       border-radius: 2px 0 0 2px;
-      border-left: 1px solid $grey-contrast;
+      border-left: 1px solid $primary;
     }
     &:last-child {
       border-radius: 0 2px 2px 0;
     }
   }
-  .inline-nav--link {
+  .segmented-control--link {
     padding: 0.25rem 0.75rem;
     width: auto;
     border: none;
-    color: $grey-2;
+    color: $primary;
     font-size: 0.875rem;
     display: block;
     &:hover {
-      color: $primary;
+      color: $grey;
+    }
+    &.active {
+      background-color: $primary;
+      color: $white;
     }
   }
 }
 
-.inline-nav {
-  @extend %inline-nav;
+.segmented-control {
+  @extend %segmented-control;
 }
