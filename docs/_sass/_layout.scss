@@ -2,17 +2,22 @@
     margin-top: 0;
 }
 .page-header {
-    margin-bottom: 2em;
+    margin-bottom: 2rem;
 }
 .page-content {
     > h3 {
         padding-bottom: $spacing-unit / 4;
         margin-bottom: $spacing-unit / 4;
         margin-top: $spacing-unit;
-        border-bottom: 1px solid $grey-light;
+        border-bottom: 1px solid $grey-contrast;
+    }
+    > h6 {
+        border-bottom: 1px solid $grey-contrast;
+        padding-bottom: 0.5rem;
+        margin-bottom: 1rem;
     }
     > p + .inline-grid {
-        margin: 2em 0;
+        margin: 2rem 0;
     }
 }
 
