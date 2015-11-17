@@ -4,7 +4,7 @@ email: "me@matthewmorek.com"
 description: ""
 baseurl: "/brand/ui" # WFP CDN
 url: "https://cdn.wfp.org/" # WFP CDN
-version: "v0.4.0"
+version: "v0.4.0-dev"
 
 exclude: ["*.sublime-*", "*.sh", "*.yml", "*.DS_*"]
 
