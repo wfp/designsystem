@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Introduction
+title: WFP UI Style Guide
 ---
 
 The World Food Programme’s [Branding Guidance](http://documents.wfp.org/stellent/groups/communications_content/documents/communications/wfp211867.pdf) (PDF, 4.7MB) was published in 2009 and has now been effectively implemented across our organization, strengthening our brand image through consistent representation.
