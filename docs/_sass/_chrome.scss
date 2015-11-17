@@ -1,6 +1,15 @@
 // ==========================================================================
 // WFP UI Docs Styles
 // ==========================================================================
+code {
+  color: $grey-3;
+  background-color: $yellow;
+  padding: 0.125rem 0.25rem;
+}
+
+pre > code {
+  background-color: initial;
+}
 
 .sub-nav {
   display: none;
@@ -277,14 +286,14 @@
 
 .preview {
   background-color: $grey-lighter;
-  padding: ($spacing-unit * 1.5) $spacing-unit;
+  padding: 2rem 1rem;
   text-align: center;
   border-top: 2px solid $grey-light;
   border-bottom: 2px solid $grey-light;
-  margin: ($spacing-unit / 2) 0;
+  margin: 0.5rem 0;
   max-width: 100%;
   &.paragraph {
-    padding: ($spacing-unit / 2) $spacing-unit;
+    padding: 0.5rem 1rem;
     text-align: left;
   }
   &.plain {
