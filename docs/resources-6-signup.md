@@ -3,7 +3,7 @@ layout: page
 title: Newsletter Widget
 permalink: /resources/signup/
 resource: true
-categories: Resources
+categories: 
 ---
 
 If you require a lightweight and robust newsletter sign-up widget, which you can place on any web page, paste the code below into the `body` of your page.
