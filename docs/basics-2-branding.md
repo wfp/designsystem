@@ -1,9 +1,9 @@
 ---
 layout: page
-title: Colours
-permalink: /design/colours/
+title: Branding
+permalink: /basics/branding/
 resource: true
-categories: Design
+categories: Basics
 ---
 
 ### Primary Colours

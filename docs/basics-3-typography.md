@@ -1,23 +1,15 @@
 ---
 layout: page
 title: Typography
-permalink: /design/typography/
+permalink: /basics/typography/
 resource: true
-categories: Design
+categories: Basics
+nav: nav/typography.html
 ---
 
-<div class="content-nav">
-  <h4>Contents</h4>
-  <ol>
-    <li><a href="#typefaces">Typefaces</a></li>
-    <li><a href="#sizing">Sizing</a></li>
-    <li><a href="#dos-and-donts">Dos and Don'ts</a></li>
-  </ol>
-</div>
+Typography plays a critical role in any design; in fact, it accounts for as much as 95% of everything we see on the Web. When done well, it adds personality to content, becomes its voice. When established poorly, typographic elements become unreadable, thus reducing the impact a given piece of content will have on the reader.
 
-Typography plays a critical role in any design. It adds personality to content, becomes its voice. When established poorly, typographic elements become unreadable, thus reducing the impact a given piece of content will have on the reader.
-
-In some cases, it will lead to problems with processing text, and thus increasing cognitive load on the user. The bigger the congnitive load is, the harder it is for the user to complete her tasks.
+In some cases, it will lead to problems with processing text, and thus increasing cognitive load on the user. The bigger the congnitive load is, the harder it is for users to complete their tasks.
 
 ### Typefaces
 __Lato__ is the primary typeface for user interfaces; it's a round, humanist sans-serif, with incredibly warm appeal. It can be used for both headlines and paragraphs alike, as well as for interface elements.

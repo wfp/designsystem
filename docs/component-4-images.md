@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Images
-permalink: /design/images/
+permalink: /component/images/
 resource: true
 categories: Design
 ---

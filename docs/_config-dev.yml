@@ -19,7 +19,7 @@ highlighter: pygments
 kramdown:
   input: GFM
 
-category-list: [Design, Components, Patterns, Resources, Info]
+category-list: ["Basics", "Components", "Patterns", "Resources", "Info"]
 
 # Defaults
 defaults:

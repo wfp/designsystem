@@ -1,36 +1,21 @@
 ---
 layout: page
 title: Content
-permalink: /components/content/
+permalink: /basics/content/
 resource: true
-categories: Components
+categories: Basics
+nav: nav/content.html
 ---
-
-<div class="content-nav">
-  <h4>Contents</h4>
-  <ol>
-    <li><a href="#headings">Headings</a></li>
-    <li><a href="#links">Links</a></li>
-    <li><a href="#blockquotes">Blockquotes</a></li>
-    <li><a href="#lists">Lists</a></li>
-  </ol>
-</div>
 
 ### Headings
 Headings are a useful tool to markup important sections of a given page, such as headlines, chapters, etc. Any heading elements may include links or anchors.
 
 <div class="type-sizes headings">
-  <h4 class="label">H1</h4>
   <h1 class="example">The quick brown fox jumps over the lazy dog.</h1>
-  <h4 class="label">H2</h4>
   <h2 class="example">The quick brown fox jumps over the lazy dog.</h2>
-  <h4 class="label">H3</h4>
   <h3 class="example">The quick brown fox jumps over the lazy dog.</h3>
-  <h4 class="label">H4</h4>
   <h4 class="example">The quick brown fox jumps over the lazy dog.</h4>
-  <h4 class="label">H5</h4>
   <h5 class="example">The quick brown fox jumps over the lazy dog.</h5>
-  <h4 class="label">H6</h4>
   <h6 class="example">The quick brown fox jumps over the lazy dog.</h6>
 </div>
 
