@@ -5,44 +5,52 @@
 
 // -----------------------------------------------------------------------------
 // Segmented Controls
-// http://cdn.wfp.org/brand/ui/patterns/navigation/#segmented-controls
+// [docs-url]/components/navigation/#segmented-controls
 // -----------------------------------------------------------------------------
 %segmented-control {
   @extend %no-list;
-  display: table;
+  display: inline-block;
   height: 32px;
   text-align: center;
-  .segmented-control--item {
-    display: table-cell;
-    border: 1px solid $primary;
-    border-left: none;
-    position: relative;
-    z-index: 1;
-    &:first-child {
-      border-radius: 2px 0 0 2px;
-      border-left: 1px solid $primary;
-    }
-    &:last-child {
-      border-radius: 0 2px 2px 0;
-    }
+}
+
+%segmented-control--item {
+  display: table-cell;
+  border: 1px solid $primary;
+  border-left: none;
+  position: relative;
+  z-index: 1;
+  &:first-child {
+    border-radius: 2px 0 0 2px;
+    border-left: 1px solid $primary;
   }
-  .segmented-control--link {
-    padding: 0.25rem 0.75rem;
-    width: auto;
-    border: none;
-    color: $primary;
-    font-size: 0.875rem;
-    display: block;
-    &:hover {
-      color: $grey;
-    }
-    &.active {
-      background-color: $primary;
-      color: $white;
-    }
+  &:last-child {
+    border-radius: 0 2px 2px 0;
+  }
+}
+
+%segmented-control--link {
+  padding: 0.25rem 0.75rem;
+  width: auto;
+  border: none;
+  color: $primary;
+  font-size: 0.875rem;
+  display: block;
+  &:hover {
+    color: $grey;
+  }
+  &.active {
+    background-color: $primary;
+    color: $white;
   }
 }
 
 .segmented-control {
   @extend %segmented-control;
+  .segmented-control--item {
+    @extend %segmented-control--item;
+  }
+  .segmented-control--link {
+    @extend %segmented-control--link;
+  }
 }
