@@ -4,16 +4,8 @@ title: Form Validation
 permalink: /patterns/validation/
 resource: true
 categories: Patterns
+nav: nav/validation.html
 ---
-
-<div class="content-nav">
-  <h4>Contents</h4>
-  <ol>
-    <li><a href="#requirements">Requirements</a></li>
-    <li><a href="#invalid-pattern">"Invalid" Pattern</a></li>
-    <li><a href="#valid-pattern">"Valid" Pattern</a></li>
-  </ol>
-</div>
 
 When designing forms, you should not forget to apply inline validation to them. This will ensure that whoever is asked to fill it in, will be instantly prompted to correct a mistake, should it occur, before submitting the form.
 
