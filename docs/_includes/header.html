@@ -20,7 +20,7 @@
               {% if cat == category %}
               {% assign current = nil %}
               {% if page.url == link.url %}{% assign current = ' class="current"' %}{% endif %}
-              <li><a class="menu--link" href="{{ site.baseurl }}{{ link.url }}"{{current}}>{{ link.title }}</a></li>
+              <li><a class="menu--item" href="{{ site.baseurl }}{{ link.url }}"{{current}}>{{ link.title }}</a></li>
               {% endif %}
               {% endfor %}
             {% endif %}

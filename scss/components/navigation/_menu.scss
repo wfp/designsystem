@@ -18,7 +18,7 @@
   padding: 0.25rem 0;
 }
 
-%menu--link {
+%menu--item {
   font-size: 1rem;
   padding: 0 1rem;
   margin: 0;
@@ -37,8 +37,8 @@
   .menu--group {
     @extend %menu--group;
   }
-  .menu--link {
-    @extend %menu--link;
+  .menu--item {
+    @extend %menu--item;
   }
 }
 
@@ -67,7 +67,7 @@
     border-bottom-color: $grey-3;
     padding: 0.75rem 1.5rem;
   }
-  .menu--link {
+  .menu--item {
     color: $white;
     padding: 0.25rem 1.5rem;
     &:visited {
