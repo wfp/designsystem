@@ -4,7 +4,7 @@ email: "me@matthewmorek.com"
 description: ""
 baseurl: "/brand/ui" # WFP CDN
 url: "https://cdn.wfp.org/" # WFP CDN
-version: "v0.3.0"
+version: "v0.4.0"
 
 exclude: ["*.sublime-*", "*.sh", "*.yml", "*.DS_*"]
 
@@ -15,7 +15,7 @@ highlighter: pygments
 kramdown:
   input: GFM
 
-category-list: [Design, Components, Patterns, Resources, Info]
+category-list: ["Basics", "Components", "Patterns", "Resources", "Info"]
 
 # Defaults
 defaults:

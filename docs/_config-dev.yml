@@ -8,7 +8,7 @@ baseurl: "" # the subpath of your site, e.g. /blog
 # url: "https://cdn.wfp.org/" # WFP CDN
 # url: "https://matthewmorek.com/" # matthewmorek.com
 url: "" # the base hostname & protocol for your site
-version: "v0.3.0"
+version: "v0.4.0"
 
 exclude: ["*.sublime-*", "*.sh", "*.yml", "*.DS_*"]
 
