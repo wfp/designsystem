@@ -1,21 +1,11 @@
 ---
 layout: page
-title: Form Elements
+title: Forms
 permalink: /components/forms/
 resource: true
 categories: Components
+nav: nav/forms.html
 ---
-
-<div class="content-nav">
-  <h4>Contents</h4>
-  <ol>
-    <li><a href="#checkboxes">Checkboxes</a></li>
-    <li><a href="#radio-buttons">Radio Buttons</a></li>
-    <li><a href="#select-box">Select Box</a></li>
-    <li><a href="#input-fields">Input Fields</a></li>
-    <li><a href="#textarea">Textarea</a></li>
-  </ol>
-</div>
 
 Forms are an important part of pages which ask users for input. They should be simple, clear and accessible for all audiences. Below you can find several important components from which the forms are assembled.
 
