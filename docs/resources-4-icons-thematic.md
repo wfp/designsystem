@@ -14,25 +14,30 @@ Each icon is available in either a positive (transparent) or a negative (solid) 
   <p>Need a Thematic icon not listed here? Send us a request via <a href="mailto:WFP.PUBLICATIONS@wfp.org?subject=Thematic%20icon%20request">wfp.publications@wfp.org</a>.</p>
 </div>
 
+
 <div class="pure-g">
   <div class="pure-u-3-4"></div>
-  <div class="pure-u-1-4 edit-menu">
-    <ul class="tabs">
-      <li><a href="#" id="js-view-grid" class="active">Grid</a></li>
-      <li><a href="#" id="js-view-list">List</a></li>
+  <div class="pure-u-1-4 text-right">
+    <ul class="segmented-control" id="js-view-control">
+      <li class="segmented-control--item">
+        <a href="#" id="js-view-list" class="segmented-control--link active">List</a>
+      </li>
+      <li class="segmented-control--item">
+        <a href="#" id="js-view-grid" class="segmented-control--link">Grid</a>
+      </li>
     </ul>
   </div>
 </div>
 
-<ul class="pure-g inline-grid icons" id="js-view">
-{% loop_directory directory:img/ocha/svg iterator:image filter:*.svg sort:ascending %}
-  <li class="item pure-u-1-4 pure-u-md-1-8">
+<ul class="pure-g list-view icons" id="js-view">
+{% directory path:img/ocha/svg %}
+  <li class="item pure-u-1-2">
     <div class="desc">
-      <div class="desc-img"><img src="{{ site.baseurl }}/img/ocha/svg/{{ image }}.svg"></div>
-      <div class="desc-label">{{ image }}</div>
+      <div class="desc-img"><img src="{{ site.baseurl }}/img/ocha/svg/{{ file.name }}"></div>
+      <div class="desc-label">{{ file.slug }}</div>
     </div>
   </li>
-{% endloop_directory %}
+{% enddirectory %}
 </ul>
 
 <div class="pure-g preview plain">
