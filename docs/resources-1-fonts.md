@@ -25,16 +25,5 @@ font-family: "lato", sans-serif;
 font-family: "aleo", serif;
 {% endhighlight %}
 
-If your application or website is not able to connect to the Internet, you can use our webfonts offline kit to host fonts locally. Download the ZIP file, unpack it and place its contents in the root of your site.
-
-<div class="preview plain">
-  <p>
-    <a class="pure-button" href="http://cdn.wfp.org/libraries/webfonts/wfp-ui-fonts.zip" download>Download web fonts (zip, ~1 MB)</a>
-  </p>
-</div>
-
-<div class="notice">
-  <h6 class="title">TIP</h6>
-  <p>Please read the [Typography page]({{site.baseurl}}/design/typography/) as well.</p>
-</div>
+Our webfonts are also available for offline use, and come bundled with WFP UI, which you can [download from GitHub](https://github.com/wfp/ui/releases). You can reference them from `dist` directory.
 
