@@ -1,9 +1,9 @@
 ---
 layout: page
 title: Masthead
-permalink: /patterns/masthead/
+permalink: /component/masthead/
 resource: true
-categories: Patterns
+categories: Components
 ---
 
 This pattern is the single, most important way to indicate to your visitors that they are browsing WFP's online property. Below, you will find most commonly used patterns for your masthead.
