@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Toolkit
-permalink: /basics/toolkit/
+title: Getting Started
+permalink: /basics/getting-started/
 resource: true
 categories: Basics
 ---
@@ -13,7 +13,7 @@ You can easily install _WFP UI_ using [Bower](http://bower.io/). Our Bower packa
 
 <div class="notice">
   <h6 class="title">Notice</h6>
-  <p>Bower is our recommended method of inlcuding WFP UI in your projects.</p>
+  <p>It's best to compile <i>WFP UI</i> directly to your SCSS main file, in order to benefit from <b>a smaller overall CSS file size</b>, and <b>having a single file to load and render by the web browser</b>. This is because CSS is considered a <a href="https://developers.google.com/web/fundamentals/performance/critical-rendering-path/render-blocking-css">render blocking resource</a>.</p>
 </div>
 
 {% highlight bash %}
@@ -46,5 +46,5 @@ You can also download any particular release of [WFP UI from GitHub](https://git
 
 <div class="notice">
   <h6 class="title">Notice</h6>
-  <p>The WFP UI is intended to be plug &amp; play, and integrate seamlessly with any front-end framework unobtrusively. Whether you use <i>BootStrap</i>, <i>Foundation</i>, <i>Skeleton</i>, or any other framework, you should easily be able to apply WFP UI styles to your projects.</p>
+  <p>The <i>WFP UI</i> is intended to be plug &amp; play, and integrate seamlessly with any front-end framework unobtrusively. Whether you use <i>BootStrap</i>, <i>Foundation</i>, <i>Skeleton</i>, or any other framework, you should easily be able to apply WFP UI styles to your projects.</p>
 </div>
