@@ -11,10 +11,11 @@
 // Import components
 @import "components/forms";
 @import "components/buttons";
-@import "components/navigation";
-@import "components/navigation-responsive";
-@import "components/breadcrumbs";
-@import "components/pagination";
+@import "components/navigation/menu";
+@import "components/navigation/flyout";
+@import "components/navigation/segmented-control";
+@import "components/navigation/breadcrumbs";
+@import "components/navigation/pagination";
 
 // Import layouts
 @import "layouts/layout";

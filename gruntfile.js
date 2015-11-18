@@ -10,6 +10,10 @@ module.exports = function(grunt) {
       jshint: {
         files: "js/*.js",
         tasks: ["jshint"]
+      },
+      jekyll: {
+        files: ["docs/**/*.*", "scss/**/*.scss"],
+        tasks: ['jekyll:dev']
       }
     },
     sass: {
@@ -54,6 +58,22 @@ module.exports = function(grunt) {
         src: 'dist/*.css'
       }
     },
+    jekyll: {
+      dev: {
+        options: {
+          src: "./docs",
+          config: './docs/_config-dev.yml',
+          dest: "./dist/docs"
+        }
+      },
+      dist: {
+        options: {
+          src: "./docs",
+          config: './docs/_config.yml',
+          dest: "./dist/docs"
+        }
+      }
+    },
     jshint: {
       options: {
         globals: {
@@ -69,12 +89,18 @@ module.exports = function(grunt) {
     }
   });
 
-  grunt.loadNpmTasks('grunt-postcss');
-  grunt.loadNpmTasks("grunt-sass");
   grunt.loadNpmTasks("grunt-contrib-watch");
   grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.loadNpmTasks('grunt-jekyll');
+  grunt.loadNpmTasks('grunt-postcss');
+  grunt.loadNpmTasks("grunt-sass");
 
+  // Build WFP UI Docs
+  grunt.registerTask("docs-build", ["jekyll:dev"]);
+  grunt.registerTask("docs-dist", ["jekyll:dist"]);
+  // Build WFP UI
   grunt.registerTask("build", ["jshint", "sass:dev", "postcss:dev"]);
+  // Build a dist-ready WFP UI
   grunt.registerTask("dist", ["sass:dist", "postcss:dist"]);
   grunt.registerTask("default", ["dist"]);
 };

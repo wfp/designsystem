@@ -1,0 +1,57 @@
+// Component: Breadcrumbs
+// Project: WFPUI
+// Author: Matthew Morek (me@matthewmorek.com)
+// URL: http://matthewmorek.com
+
+.breadcrumbs {
+  @extend %segmented-control;
+  .breadcrumbs--item {
+    @extend %segmented-control--item;
+    border-color: $grey-1;
+    &:first-child {
+      border-color: $grey-1;
+    }
+  }
+  .breadcrumbs--link {
+    @extend %segmented-control--link;
+    color: $primary;
+  }
+  .breadcrumbs--last {
+    @extend %segmented-control--link;
+    color: $grey-2;
+    cursor: default;
+    &:hover {
+      color: $grey-2;
+    }
+  }
+}
+
+// Specificity Wars II™: The Dark Side of the Breadcrumb
+.breadcrumbs-inverse {
+  @extend %segmented-control;
+  .breadcrumbs--item {
+    @extend %segmented-control--item;
+    border-color: $grey;
+    background-color: $grey-4;
+    color: $grey-contrast;
+    &:first-child {
+      border-color: $grey;
+    }
+  }
+  .breadcrumbs--link {
+    @extend %segmented-control--link;
+    color: $grey-contrast;
+    &:hover,
+    &:active {
+      color: $primary;
+    }
+  }
+  .breadcrumbs--last {
+    @extend %segmented-control--link;
+    color: $grey-1;
+    cursor: default;
+    &:hover {
+      color: $grey-1;
+    }
+  }
+}

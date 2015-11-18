@@ -1,0 +1,85 @@
+%menu--group {
+  margin-bottom: 0.5rem;
+  padding: 0;
+}
+
+%menu--heading {
+  border-bottom: 1px solid $grey-1;
+  padding: 0.25rem 1rem;
+  line-height: 1.6rem;
+  margin: 0.25rem 0;
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+%menu--wrapper {
+  @extend %no-list;
+  padding: 0.25rem 0;
+}
+
+%menu--item {
+  font-size: 1rem;
+  padding: 0 1rem;
+  margin: 0;
+  display: block;
+  border: none;
+}
+
+%menu {
+  @extend %no-list;
+  .menu--wrapper {
+    @extend %menu--wrapper;
+  }
+  .menu--heading {
+    @extend %menu--heading;
+  }
+  .menu--group {
+    @extend %menu--group;
+  }
+  .menu--item {
+    @extend %menu--item;
+  }
+}
+
+.menu {
+  @extend %menu;
+  border-left: 1px solid $grey-1;
+  border-right: 1px solid $grey-1;
+  border-bottom: 1px solid $grey-1;
+  margin: 1rem 0;
+  .menu--heading {
+    border-top: 1px solid $grey-1;
+  }
+}
+
+.menu-plain {
+  @extend %menu;
+  margin: 1rem 0;
+}
+
+
+// Inversed menu for dark backgrounds
+.menu-inverse {
+  @extend %menu;
+  .menu--heading {
+    border-top: none;
+    border-bottom-color: $grey-3;
+    padding: 0.75rem 1.5rem;
+  }
+  .menu--item {
+    color: $white;
+    padding: 0.25rem 1.5rem;
+    &:visited {
+      color: $grey-1;
+    }
+    &:hover {
+      border-bottom: none;
+      color: $white;
+    }
+    @include media-query($md-screen) {
+      font-size: 1rem;
+      padding: 0.25rem 1.5rem;
+    }
+  }
+}
