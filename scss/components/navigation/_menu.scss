@@ -2,7 +2,6 @@
   margin-bottom: 0.5rem;
   padding: 0;
 }
-
 %menu--heading {
   border-bottom: 1px solid $grey-1;
   padding: 0.25rem 1rem;
@@ -12,12 +11,10 @@
     margin-top: 0;
   }
 }
-
 %menu--wrapper {
   @extend %no-list;
   padding: 0.25rem 0;
 }
-
 %menu--item {
   font-size: 1rem;
   padding: 0 1rem;
@@ -25,8 +22,14 @@
   display: block;
   border: none;
 }
+%menu--link {
+  color: $primary;
+  &:hover {
+    color: $secondary;
+  }
+}
 
-%menu {
+@mixin menu {
   @extend %no-list;
   .menu--wrapper {
     @extend %menu--wrapper;
@@ -40,10 +43,46 @@
   .menu--item {
     @extend %menu--item;
   }
+  .menu--link {
+    @extend %menu--link;
+  }
+}
+
+@mixin menu-flat {
+  @extend %no-list;
+  display: inline-block;
+  margin: 0.25rem 1rem;
+  .menu--group {
+    @extend %menu--group;
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+  }
+  .menu--item {
+    @extend %menu--item;
+    display: inline-block;
+    padding: 0;
+    margin: 0 0.25rem;
+    border-bottom: none;
+  }
+  .menu--link {
+    @extend %menu--link;
+    display: block;
+    color: $white;
+    border-bottom-color: transparent;
+    &.active {
+      color: $white;
+      border-bottom-color: $grey-light;
+    }
+    &:hover {
+      color: $white;
+      border-bottom-color: $yellow;
+    }
+  }
 }
 
 .menu {
-  @extend %menu;
+  @include menu;
   border-left: 1px solid $grey-1;
   border-right: 1px solid $grey-1;
   border-bottom: 1px solid $grey-1;
@@ -52,16 +91,17 @@
     border-top: 1px solid $grey-1;
   }
 }
-
 .menu-plain {
-  @extend %menu;
+  @include menu;
   margin: 1rem 0;
 }
-
+.menu-flat {
+  @include menu-flat;
+}
 
 // Inversed menu for dark backgrounds
 .menu-inverse {
-  @extend %menu;
+  @include menu;
   .menu--heading {
     border-top: none;
     border-bottom-color: $grey-3;
