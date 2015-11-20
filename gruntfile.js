@@ -13,7 +13,7 @@ module.exports = function(grunt) {
       },
       jekyll: {
         files: ["docs/**/*.*", "scss/**/*.scss"],
-        tasks: ['jekyll:dev']
+        tasks: ["docs-build"]
       }
     },
     sass: {
@@ -36,6 +36,11 @@ module.exports = function(grunt) {
           "dist/wfpui.css" : "scss/wfpui.scss",
           "dist/bootstrap-theme.css" : "scss/bootstrap-theme.scss"
         }
+      },
+      docs: {
+        files: {
+          "docs/css/main.css": "docs/_sass/main.scss"
+        }
       }
     },
     postcss: {
@@ -56,6 +61,9 @@ module.exports = function(grunt) {
       },
       dev: {
         src: 'dist/*.css'
+      },
+      docs: {
+        src: 'docs/css/*.css'
       }
     },
     jekyll: {
@@ -96,8 +104,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks("grunt-sass");
 
   // Build WFP UI Docs
-  grunt.registerTask("docs-build", ["jekyll:dev"]);
-  grunt.registerTask("docs-dist", ["jekyll:dist"]);
+  grunt.registerTask("docs-build", ["sass:docs", "postcss:docs", "jekyll:dev"]);
+  grunt.registerTask("docs-dist", ["sass:docs", "postcss:docs", "jekyll:dist"]);
   // Build WFP UI
   grunt.registerTask("build", ["jshint", "sass:dev", "postcss:dev"]);
   // Build a dist-ready WFP UI

@@ -14,8 +14,8 @@
     "grunt-cli": "^0.1.13",
     "grunt-jekyll": "^0.4.2",
     "grunt-postcss": "^0.6.0",
-    "grunt-sass": "^1.0.0",
-    "node-sass": "^3.3.3"
+    "grunt-sass": "^1.1.0",
+    "node-sass": "^3.4.2"
   },
   "devDependencies": {
     "grunt-contrib-jshint": "^0.11.2",
