@@ -10,13 +10,6 @@ $(document).ready(function(){
     closedPos: "static"
   });
 
-  var navExample = responsiveNav('#js-example-menu', {
-    customToggle: "js-example-menu-trigger",
-    navClass: "masthead--menu",
-    openPos: "absolute",
-    closedPos: "static"
-  });
-
   var closeBtn = document.getElementById("js-nav-close");
   closeBtn.onclick = function(){ nav.close(); return false; }
 

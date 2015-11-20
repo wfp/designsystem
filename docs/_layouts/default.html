@@ -26,5 +26,15 @@
     <script src="{{ "/js/lib/responsive-nav.js" | prepend: site.baseurl }}"></script>
     <script src="{{ "/js/plugins.js" | prepend: site.baseurl }}"></script>
     <script src="{{ "/js/main.js" | prepend: site.baseurl }}"></script>
+    {% if page.path == 'component-1-masthead.md' %}
+    <script>
+      var navExample = responsiveNav('#js-example-menu', {
+        customToggle: "js-example-menu-trigger",
+        navClass: "masthead--menu",
+        openPos: "absolute",
+        closedPos: "static"
+      });
+    </script>
+    {% endif %}
   </body>
 </html>
