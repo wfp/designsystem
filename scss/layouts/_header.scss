@@ -140,6 +140,7 @@
     }
     .menu--item {
       display: block;
+      padding: 0;
       border-bottom: 1px solid $grey-3;
       &:last-child {
         border-bottom: none;

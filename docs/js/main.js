@@ -10,7 +10,13 @@ $(document).ready(function(){
     closedPos: "static"
   });
 
-  // $('#js-nav-close').click(function(){ nav.close(); });
+  var navExample = responsiveNav('#js-example-menu', {
+    customToggle: "js-example-menu-trigger",
+    navClass: "masthead--menu",
+    openPos: "absolute",
+    closedPos: "static"
+  });
+
   var closeBtn = document.getElementById("js-nav-close");
   closeBtn.onclick = function(){ nav.close(); return false; }
 
@@ -39,14 +45,4 @@ $(document).ready(function(){
     $tabs.removeClass('active');
     $(this).addClass('active');
   });
-
-  // $('.inline-item', '.inline-grid.icons').click(function(){
-  //   var desc = $(this).siblings('.desc'),
-  //       icons = $('ul.icons .inline-item').siblings('.desc');
-
-  //   icons.fadeOut(100);
-  //   desc.fadeToggle(100).one('click', function(){
-  //     $(this).fadeOut(100);
-  //   });
-  // });
 });
