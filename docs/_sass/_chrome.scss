@@ -16,11 +16,11 @@ pre > code {
   position: absolute;
   top: 64px;
   left: 0;
-  @include box-shadow(rgba(0,0,0,0.3) 0 1px 6px);
+  box-shadow: rgba(0,0,0,0.3) 0 1px 6px;
   @include media-query($md-screen) {
     position: static;
     display: block;
-    @include box-shadow(none);
+    box-shadow: none;
   }
   .pure-menu {
     width: initial;
@@ -243,11 +243,11 @@ pre > code {
   .tabs {
     border-radius: 2px;
     background-color: $grey-light;
-    @include box-shadow(inset rgba(0,0,0,0.1) 0 1px 4px);
+    box-shadow: inset rgba(0,0,0,0.1) 0 1px 4px;
 
     .active {
       background-color: $white;
-      @include box-shadow(rgba(0,0,0,0.1) 0 1px 3px);
+      box-shadow: rgba(0,0,0,0.1) 0 1px 3px;
       outline: none;
     }
   }
