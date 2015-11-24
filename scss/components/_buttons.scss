@@ -15,9 +15,7 @@ a.pure-button {
   line-height: 1.5;
   border: 1px solid rgba(0,0,0,0.15);
   border-radius: 2px;
-  -webkit-transition: all 0.1s ease-in;
-  -moz-transition:    all 0.1s ease-in;
-  transition:         all 0.1s ease-in;
+  transition: all 0.1s ease-in;
   vertical-align: baseline;
   &:hover,
   &:focus {
@@ -72,7 +70,7 @@ a.pure-button {
   &.active:active,
   &.active:focus {
     border-color: rgba(0,0,0,0.25);
-    @include box-shadow(rgba(0,0,0,0.15) 0 0 8px inset);
+    box-shadow: rgba(0,0,0,0.15) 0 0 8px inset;
   }
 
   // Disabled Button

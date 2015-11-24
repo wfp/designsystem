@@ -1,15 +1,8 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-
+<html>
   {% include head.html %}
-
   <body class="space-around-narrow">
-
     {% include header.html %}
-
     <section class="pure-g wrapper">
       <div class="pure-u-1 pure-u-md-1-4 l-box">
         {% include sidebar.html %}
@@ -26,5 +19,15 @@
     <script src="{{ "/js/lib/responsive-nav.js" | prepend: site.baseurl }}"></script>
     <script src="{{ "/js/plugins.js" | prepend: site.baseurl }}"></script>
     <script src="{{ "/js/main.js" | prepend: site.baseurl }}"></script>
+    {% if page.path == 'component-1-masthead.md' %}
+    <script>
+      var navExample = responsiveNav('#js-example-menu', {
+        customToggle: "js-example-menu-trigger",
+        navClass: "masthead--menu",
+        openPos: "absolute",
+        closedPos: "static"
+      });
+    </script>
+    {% endif %}
   </body>
 </html>

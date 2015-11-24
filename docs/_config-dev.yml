@@ -10,7 +10,7 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site
 version: "v0.4.0-dev"
 
-exclude: ["*.sublime-*", "*.sh", "*.yml", "*.DS_*"]
+exclude: ["*.sublime-*", "*.yml", "*.DS_*", "_scss"]
 
 # Build settings
 markdown: kramdown
