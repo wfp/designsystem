@@ -3,7 +3,7 @@
 // ==========================================================================
 code {
   color: $grey-3;
-  background-color: $yellow;
+  background-color: lighten($yellow, 10%);
   padding: 0.125rem 0.25rem;
 }
 
