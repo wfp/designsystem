@@ -1,5 +1,10 @@
 .side-nav {
-  margin-top: 0;
+  display: none;
+  visibility: hidden;
+  @include media-query($md-screen){
+    display: inline-block;
+    visibility: visible;
+  }
 }
 .page-header {
   margin-bottom: 2rem;
