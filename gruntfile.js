@@ -41,6 +41,14 @@ module.exports = function(grunt) {
         files: {
           "docs/css/main.css": "docs/_sass/main.scss"
         }
+      },
+      docsDist: {
+        options: {
+          sourceMap: false
+        },
+        files: {
+          "docs/css/main.css": "docs/_sass/main.scss"
+        }
       }
     },
     postcss: {
@@ -63,6 +71,12 @@ module.exports = function(grunt) {
         src: 'dist/*.css'
       },
       docs: {
+        src: 'docs/css/*.css'
+      },
+      docsDist: {
+        options: {
+          map: false
+        },
         src: 'docs/css/*.css'
       }
     },
@@ -105,7 +119,7 @@ module.exports = function(grunt) {
 
   // Build WFP UI Docs
   grunt.registerTask("docs-build", ["sass:docs", "postcss:docs", "jekyll:dev"]);
-  grunt.registerTask("docs-dist", ["sass:docs", "postcss:docs", "jekyll:dist"]);
+  grunt.registerTask("docs-dist", ["sass:docsDist", "postcss:docsDist", "jekyll:dist"]);
   // Build WFP UI
   grunt.registerTask("build", ["jshint", "sass:dev", "postcss:dev"]);
   // Build a dist-ready WFP UI
