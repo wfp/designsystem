@@ -11,6 +11,12 @@
     margin-top: $spacing-unit;
     border-bottom: 1px solid $grey-contrast;
   }
+  > h4 {
+    margin-bottom: 0.25rem;
+    + p {
+      margin-top: 0.25rem;
+    }
+  }
   > h6 {
     border-bottom: none;
     padding-bottom: 0;
