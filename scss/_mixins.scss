@@ -3,7 +3,7 @@
 // Author: Matthew Morek (me@matthewmorek.com)
 // URL: http://matthewmorek.com
 
-@import "mixins/_flexbox";
+@import "modules/_flexbox";
 
 @mixin media-query($device) {
   @media screen and (min-width: $device) {
