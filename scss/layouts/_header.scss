@@ -7,11 +7,9 @@
 // -----------------------------------------------------------------------------
 // Add spacing to the body tag, to compensate for a fixed masthead
 // -----------------------------------------------------------------------------
-.space-around {
-  &-narrow {
-    overflow: hidden;
-    padding-top: 4em;
-  }
+.masthead-spacer--narrow {
+  overflow: auto;
+  padding-top: 4rem;
 }
 
 %masthead {
