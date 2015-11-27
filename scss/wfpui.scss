@@ -13,10 +13,12 @@
 // Import SCSS mixins, variables, modules, etc.
 @import "init";
 
-// Import components
+// Import modules
 @import "modules/mixins";
 @import "modules/base";
 @import "modules/utility";
+
+// Import components
 @import "components/forms";
 @import "components/buttons";
 @import "components/tables";

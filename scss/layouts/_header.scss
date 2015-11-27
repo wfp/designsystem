@@ -34,6 +34,7 @@
 %masthead--title {
   line-height: 1rem;
   font-size: 1rem;
+  letter-spacing: initial;
   margin: 0;
   @include media-query($md-screen) {
     margin: 0 1rem;
@@ -47,7 +48,6 @@
 }
 %masthead--nav {
   padding: 0;
-  // position: relative;
   text-align: right;
 }
 %masthead--btn {
