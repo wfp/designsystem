@@ -7,14 +7,19 @@
 
 @charset "UTF-8";
 
+// Normalize.css
+@import "../_components/modularized-normalize-scss/normalize";
+
 // Import SCSS mixins, variables, modules, etc.
 @import "init";
 @import "mixins";
-@import "defaults";
+// @import "defaults";
 
 // Import components
+@import "components/base";
 @import "components/forms";
 @import "components/buttons";
+@import "components/tables";
 @import "components/navigation/menu";
 @import "components/navigation/flyout";
 @import "components/navigation/segmented-control";
