@@ -1,7 +1,11 @@
-// Master SCSS File
-// Project: WFPUI
-// Author: Matthew Morek (me@matthewmorek.com)
-// URL: http://matthewmorek.com
+/*!
+  WFP UI v0.4.0
+  URL:      https://github.com/wfp/ui
+  Author:   Matthew Morek (me@matthewmorek.com)
+  License:  MIT (https://github.com/wfp/ui/blob/master/LICENSE)
+*/
+
+@charset "UTF-8";
 
 // Import SCSS mixins, variables, modules, etc.
 @import "init";

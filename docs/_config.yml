@@ -2,15 +2,16 @@
 title: "WFP UI Docs"
 email: "me@matthewmorek.com"
 description: ""
-baseurl: "/brand/ui" # WFP CDN
-url: "https://cdn.wfp.org/" # WFP CDN
-version: "v0.4.0-dev"
+baseurl: "/brand/ui/v0.4.0" # WFP CDN
+url: "https://cdn.wfp.org" # WFP CDN
+version: "v0.4.0"
+quiet: true
 
 exclude: ["*.sublime-*", "*.sh", "*.yml", "*.DS_*"]
 
 # Build settings
 markdown: kramdown
-highlighter: pygments
+highlighter: rouge
 
 kramdown:
   input: GFM
