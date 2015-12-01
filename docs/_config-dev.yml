@@ -2,19 +2,16 @@
 title: "WFP UI Docs"
 email: "me@matthewmorek.com"
 description: ""
-# baseurl: "/brand/ui" # WFP CDN
-# baseurl: "/content/wfp/guide" # matthewmorek.com
 baseurl: "" # the subpath of your site, e.g. /blog
-# url: "https://cdn.wfp.org/" # WFP CDN
-# url: "https://matthewmorek.com/" # matthewmorek.com
 url: "" # the base hostname & protocol for your site
-version: "v0.4.0-dev"
+version: "v0.4.0"
+quiet: false
 
 exclude: ["*.sublime-*", "*.yml", "*.DS_*", "_scss"]
 
 # Build settings
 markdown: kramdown
-highlighter: pygments
+highlighter: rouge
 
 kramdown:
   input: GFM
@@ -29,6 +26,3 @@ defaults:
       type: "pages"
     values:
       layout: "default"
-
-sass:
-  style: expanded
