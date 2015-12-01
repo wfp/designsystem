@@ -29,10 +29,10 @@ Now, add `wfp-ui` as a dependency to your main SCSS file:
 Or, you can reference the precompiled and minified library directly in your HTML:
 
 ```
-<link rel="stylesheet" href="bower_components/wfp-ui/dist/wfpui.css">
+<link rel="stylesheet" href="bower_components/wfp-ui/dist/css/wfpui.css">
 ```
 
-We recommend you copy `dist/wfpui.css` into your own `css` directory, if you plan on simply linking it from HTML.
+We recommend you copy `dist/css/wfpui.css` into your own `css` directory, if you plan on simply linking it from HTML.
 
 > It's best to compile `wfp-ui` directly to your SASS main file, in order to benefit from a **smaller overall file size**, and **having a single CSS file to load and render by the web browser**.
 > This is because CSS is considered as a [_render blocking resource_](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/render-blocking-css).
