@@ -24,8 +24,8 @@ module.exports = function(grunt) {
       },
       dev: {
         files: {
-          "dist/ui/wfpui.css" : "scss/wfpui.scss",
-          "dist/ui/bootstrap-theme.css" : "scss/bootstrap-theme.scss"
+          "dist/css/wfpui.css" : "scss/wfpui.scss",
+          "dist/css/bootstrap-theme.css" : "scss/bootstrap-theme.scss"
         }
       },
       dist: {
@@ -33,8 +33,8 @@ module.exports = function(grunt) {
           sourceMap: false
         },
         files: {
-          "dist/ui/wfpui.css" : "scss/wfpui.scss",
-          "dist/ui/bootstrap-theme.css" : "scss/bootstrap-theme.scss"
+          "dist/css/wfpui.css" : "scss/wfpui.scss",
+          "dist/css/bootstrap-theme.css" : "scss/bootstrap-theme.scss"
         }
       },
       docs: {
@@ -65,10 +65,10 @@ module.exports = function(grunt) {
         options: {
           map: false
         },
-        src: 'dist/ui/*.css'
+        src: 'dist/css/*.css'
       },
       dev: {
-        src: 'dist/ui/*.css'
+        src: 'dist/css/*.css'
       },
       docs: {
         src: 'docs/css/*.css'
