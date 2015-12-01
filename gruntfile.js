@@ -11,6 +11,10 @@ module.exports = function(grunt) {
         files: "js/*.js",
         tasks: ["jshint"]
       },
+      eslint: {
+        files: "js/*.js",
+        tasks: ["eslint"]
+      },
       jekyll: {
         files: ["docs/**/*.*", "scss/**/**/*.scss"],
         tasks: ["docs-build"]
@@ -133,6 +137,12 @@ module.exports = function(grunt) {
       },
       all: ['js/*.js', 'test/*.js']
     }
+    eslint: {
+    options: {
+        config: 'eslint.json',
+        reset: true
+    },
+      target: ['js/*.js']
   });
 
   grunt.loadNpmTasks("grunt-contrib-watch");
@@ -141,6 +151,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks("grunt-postcss");
   grunt.loadNpmTasks("grunt-sass");
   grunt.loadNpmTasks("grunt-pure-grids");
+  grunt.loadNpmTasks("grunt-eslint");
+  grunt.loadNpmTasks("eslint");
 
   // Build WFP UI Docs
   grunt.registerTask("docs-build", ["sass:docs", "postcss:docs", "jekyll:dev"]);
