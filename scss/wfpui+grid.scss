@@ -1,0 +1,31 @@
+// Master SCSS File
+// Project: WFPUI
+// Author: Matthew Morek (me@matthewmorek.com)
+// URL: http://matthewmorek.com
+
+// Normalize.css
+@import "../_components/modularized-normalize-scss/normalize";
+
+// Import SCSS mixins, variables, modules, etc.
+@import "init";
+
+// Import modules
+@import "modules/mixins";
+@import "modules/grid";
+@import "modules/base";
+@import "modules/utility";
+
+// Import components
+@import "components/buttons";
+@import "components/forms";
+@import "components/tables";
+@import "components/navigation/menu";
+@import "components/navigation/flyout";
+@import "components/navigation/segmented-control";
+@import "components/navigation/breadcrumbs";
+@import "components/navigation/pagination";
+
+// Import layouts
+@import "layouts/layout";
+@import "layouts/header";
+@import "layouts/footer";

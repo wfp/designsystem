@@ -1,0 +1,47 @@
+// Module: Grids
+// Project: WFP UI
+// Author: Matthew Morek (me@matthewmorek.com)
+// URL: http://matthewmorek.com
+
+/*csslint regex-selectors:false, known-properties:false, duplicate-properties:false*/
+
+@import "grid-units";
+
+@mixin grid {
+  letter-spacing: -0.31em; // Webkit: collapse white-space between units
+  *letter-spacing: normal; // reset IE < 8
+  *word-spacing: -0.43em; // IE < 8: collapse white-space between units
+  text-rendering: optimizespeed; // Webkit: fixes text-rendering: optimizeLegibility
+  font-family: FreeSans, Arimo, "Droid Sans", Helvetica, Arial, sans-serif;
+  display: -webkit-flex;
+
+  // IE10 uses display: flexbox
+  display: -ms-flexbox;
+  
+  // Prevents distributing space between rows
+  align-content: flex-start;
+}
+
+.opera-only :-o-prefocus, .grid {
+  word-spacing: -0.43em;
+}
+
+@mixin grid--unit {
+  display: inline-block;
+  zoom: 1;
+  letter-spacing: normal;
+  word-spacing: normal;
+  vertical-align: top;
+  text-rendering: auto;
+}
+
+.grid {
+  @include grid;
+  & [class *= "unit"] {
+    font-family: sans-serif;
+  }
+}
+
+[class *= "unit"] {
+  @include grid--unit;
+}
