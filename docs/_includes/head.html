@@ -1,0 +1,25 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>{% if page.title %}{{ site.title }} &mdash; {{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <link rel="apple-touch-icon-precomposed" sizes="http://cdn.wfp.org/apple-touch-icon-152x152-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="http://cdn.wfp.org/apple-touch-icon-144x144-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="http://cdn.wfp.org/apple-touch-icon-120x120-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="http://cdn.wfp.org/apple-touch-icon-114x114-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="http://cdn.wfp.org/apple-touch-icon-76x76-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="http://cdn.wfp.org/apple-touch-icon-72x72-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" href="http://cdn.wfp.org/apple-touch-icon-precomposed.png">
+  <link rel="shortcut icon" href="http://cdn.wfp.org/favicon.ico">
+  <!-- <link rel="stylesheet" href="{{ "/assets/webfonts/lato/lato.css" | prepend: site.baseurl }}"> -->
+  <!-- <link rel="stylesheet" href="http://cdn.wfp.org.s3.amazonaws.com/libraries/webfonts/lato/lato.css"> -->
+  <link rel="stylesheet" href="http://cdn.wfp.org/libraries/webfonts/lato/lato.css">
+  <!-- <link rel="stylesheet" href="{{ "/assets/webfonts/aleo/aleo.css" | prepend: site.baseurl }}"> -->
+  <!-- <link rel="stylesheet" href="http://cdn.wfp.org.s3.amazonaws.com/libraries/webfonts/aleo/aleo.css"> -->
+  <link rel="stylesheet" href="http://cdn.wfp.org/libraries/webfonts/aleo/aleo.css">
+  <link href="http://cdn.wfp.org/libraries/wfpui/master/pure/pure-min.css" rel="stylesheet">
+  <link href="http://cdn.wfp.org/libraries/wfpui/master/pure/grids-responsive-min.css" rel="stylesheet">
+  <link href="{{ "/css/main.css" | prepend: site.baseurl }}" rel="stylesheet">
+  <script src="{{ "/js/lib/html5shiv.min.js" | prepend: site.baseurl }}"></script>
+</head>

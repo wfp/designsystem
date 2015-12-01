@@ -1,7 +1,11 @@
-// Master SCSS File
-// Project: WFPUI
-// Author: Matthew Morek (me@matthewmorek.com)
-// URL: http://matthewmorek.com
+/*!
+  WFP UI v0.4.0
+  URL:      https://github.com/wfp/ui
+  Author:   Matthew Morek (me@matthewmorek.com)
+  License:  MIT (https://github.com/wfp/ui/blob/master/LICENSE)
+*/
+
+@charset "UTF-8";
 
 // Import SCSS mixins, variables, modules, etc.
 @import "init";
@@ -9,13 +13,13 @@
 @import "defaults";
 
 // Import components
-@import "components/icons";
 @import "components/forms";
 @import "components/buttons";
-@import "components/navigation";
-@import "components/navigation-responsive";
-@import "components/breadcrumbs";
-@import "components/pagination";
+@import "components/navigation/menu";
+@import "components/navigation/flyout";
+@import "components/navigation/segmented-control";
+@import "components/navigation/breadcrumbs";
+@import "components/navigation/pagination";
 
 // Import layouts
 @import "layouts/layout";

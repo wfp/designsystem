@@ -1,0 +1,326 @@
+// ==========================================================================
+// WFP UI Docs Styles
+// ==========================================================================
+code {
+  color: $grey-3;
+  background-color: lighten($yellow, 10%);
+  padding: 0.125rem 0.25rem;
+}
+
+pre > code {
+  background-color: initial;
+}
+
+.sub-nav {
+  display: none;
+  position: absolute;
+  top: 64px;
+  left: 0;
+  box-shadow: rgba(0,0,0,0.3) 0 1px 6px;
+  @include media-query($md-screen) {
+    position: static;
+    display: block;
+    box-shadow: none;
+  }
+  .pure-menu {
+    width: initial;
+    ul {
+      li {
+        margin: 0;
+      }
+    }
+  }
+}
+
+
+.content-nav {
+  width: 100%;
+  margin-bottom: 1em;
+  padding: 0.75em 1em;
+  background-color: #fafafa;
+  border-left: 6px solid #dedede;
+  border-radius: 2px;
+
+  h4 {
+    margin: 0;
+    margin-bottom: 0.25em;
+    padding-bottom: 0.25em;
+    border-bottom: 1px solid #eaeaea;
+  }
+
+  ol {
+    margin: 0;
+    padding: 0 0 0 1.25em;
+  }
+
+  li {
+    margin: 0;
+  }
+}
+
+.section-title {
+  margin-bottom: $spacing-unit / 4;
+  padding-bottom: $spacing-unit / 4;
+  border-bottom: 1px solid #dedede;
+}
+
+.footer {
+  .copyrights {
+    h4 {
+      font-weight: normal;
+    }
+  }
+  .site-owner {
+    h4 {
+      text-align: center;
+      @include media-query($md-screen) {
+        text-align: right;
+      }
+    }
+  }
+}
+
+/**
+ * Custom Colour & Typography Grids
+ */
+.inline-grid {
+  padding: 0;
+  list-style: none;
+  width: 100%;
+  overflow: hidden;
+
+  > li {
+    text-align: center;
+    overflow: hidden;
+    margin-bottom: 0;
+    background-color: #ffffff;
+  }
+
+  .inline-item {
+    width: 100%;
+    height: 152px;
+    line-height: 128px;
+    font-size: 48px;
+    border-bottom: 1px solid #f0f0f0;
+
+    &.c- {
+      &primary { background-color: $primary; }
+      &secondary { background-color: $secondary; }
+      &text { background-color: $grey; }
+      &background { background-color: $white; }
+
+      &blue-1 { background-color: $blue-1; }
+      &blue-2 { background-color: $blue-2; }
+      &blue-3 { background-color: $blue-3; }
+      &blue-4 { background-color: $blue-4; }
+
+      &grey-1 { background-color: $grey-light; }
+      &grey-2 { background-color: $grey-1; }
+      &grey-3 { background-color: $grey-2; }
+      &grey-4 { background-color: $grey-3; }
+      &grey-5 { background-color: $grey-4; }
+
+      &red { background-color: $red; }
+      &orange { background-color: $orange; }
+      &yellow { background-color: $yellow; }
+      &green { background-color: $green; }
+    }
+  }
+
+  &.colours {
+    .inline-item {
+      height: 52px;
+      border-bottom: 12px solid rgba(0,0,0,0.1);
+    }
+  }
+
+  &.long {
+    .inline-item {
+      height: 112px;
+    }
+  }
+
+  &.normal {
+    border-radius: 3px;
+    background-color: $grey-light;
+
+    .block {
+      text-align: left;
+      overflow: visible;
+      background-color: transparent;
+      padding: ($spacing-unit / 3) ($spacing-unit / 2);
+      > h6 {
+        margin: 0;
+      }
+      > ul {
+        list-style: square;
+        margin: 0;
+        > li {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  &.icons {
+    position: relative;
+    > li {
+      position: relative;
+      overflow: visible;
+      margin: 0;
+      .desc {
+        height: auto;
+        padding: 1em;
+        line-height: 1em;
+        font-size: 1em;
+        cursor: default;
+        border-bottom: none;
+        border-top: 2px solid $grey-light;
+        &.exposed {
+          border-top: 2px solid $primary;
+          position: absolute;
+          background-color: $grey-light;
+          width: 176px;
+          top: 0;
+          left: 0;
+          padding: 1em;
+          z-index: 1000;
+          text-align: left;
+        }
+        img {
+          width: 100%;
+          max-width: 64px;
+          margin-bottom: 1em;
+        }
+        > p {
+          line-height: 1;
+          text-transform: lowercase;
+          margin-bottom: 0
+        }
+      }
+    }
+  }
+
+  .desc {
+    padding: 0.75em 0;
+    > h4, p {
+      font-size: 0.875em;
+      margin: 0;
+      color: #838485;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+    > h4 {
+      font-weight: bold;
+    }
+    .desc-label {
+      font-size: 0.875em;
+      text-transform: lowercase;
+    }
+  }
+}
+
+.list-view {
+  padding: 0;
+  .item {
+    margin: 0;
+  }
+  .desc {
+    border-top: 2px solid $grey-light;
+    .desc-img {
+      display: inline-block;
+      padding: 1em;
+    }
+    .desc-label {
+      display: inline-block;
+      font-size: 0.875em;
+      text-transform: lowercase;
+    }
+  }
+}
+
+.edit-menu {
+  .tabs {
+    border-radius: 2px;
+    background-color: $grey-light;
+    box-shadow: inset rgba(0,0,0,0.1) 0 1px 4px;
+
+    .active {
+      background-color: $white;
+      box-shadow: rgba(0,0,0,0.1) 0 1px 3px;
+      outline: none;
+    }
+  }
+}
+
+/**
+ * Typography
+ */
+.sans {font-family: $sans-serif-stack;}
+.serif {font-family: $serif-stack;}
+
+.type-light {font-weight: 300;}
+.type-medium {font-weight: 400;}
+.type-medium-i {font-weight: 400; font-style: italic;}
+.type-semi {font-weight: 600;}
+.type-semi-i {font-weight: 600; font-style: italic;}
+.type-bold {font-weight: 700;}
+.type-bold-i {font-weight: 700; font-style: italic;}
+.type-black {font-weight: 900;}
+.type-black-i {font-weight: 900; font-style: italic;}
+
+.type-sizes {
+  margin: 2em 0;
+  > .label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #184679;
+    margin-bottom: 0;
+  }
+  > .example {
+    margin-top: 0;
+    margin-bottom: 0.5em;
+  }
+}
+
+
+.preview {
+  background-color: $grey-lighter;
+  padding: 2rem 1rem;
+  text-align: center;
+  border-top: 2px solid $grey-light;
+  border-bottom: 2px solid $grey-light;
+  margin: 0.5rem 0;
+  max-width: 100%;
+  &.paragraph {
+    padding: 0.5rem 1rem;
+    text-align: left;
+  }
+  &.plain {
+    background-color: #fff;
+  }
+  &.simple {
+    background-color: #fff;
+    text-align: left;
+  }
+  &.image {
+    padding: 0;
+    border: none;
+    > img {
+      max-width: 100%;
+    }
+  }
+}
+
+.notice {
+  background-color: #fafafa;
+  padding: 0.5em 1em;
+  border-left: 6px solid #FFBA3A;
+  border-radius: 2px;
+  font-size: 0.875em;
+  line-height: 1.4;
+  margin: 1em 0;
+  > * {
+    margin: 0.25em 0;
+  }
+}

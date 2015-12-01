@@ -1,0 +1,34 @@
+.side-nav {
+  display: none;
+  visibility: hidden;
+  @include media-query($md-screen){
+    display: inline-block;
+    visibility: visible;
+  }
+}
+.page-header {
+  margin-bottom: 2rem;
+}
+.page-content {
+  > h3 {
+    padding-bottom: $spacing-unit / 4;
+    margin-bottom: $spacing-unit / 4;
+    margin-top: $spacing-unit;
+    border-bottom: 1px solid $grey-contrast;
+  }
+  > h4 {
+    margin-bottom: 0.25rem;
+    + p {
+      margin-top: 0.25rem;
+    }
+  }
+  > h6 {
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+  > p + .inline-grid {
+    margin: 2rem 0;
+  }
+}
+

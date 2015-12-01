@@ -10,6 +10,10 @@ module.exports = function(grunt) {
       jshint: {
         files: "js/*.js",
         tasks: ["jshint"]
+      },
+      jekyll: {
+        files: ["docs/**/*.*", "scss/**/*.scss"],
+        tasks: ["docs-build"]
       }
     },
     sass: {
@@ -20,8 +24,8 @@ module.exports = function(grunt) {
       },
       dev: {
         files: {
-          "dist/wfpui.css" : "scss/wfpui.scss",
-          "dist/bootstrap-theme.css" : "scss/bootstrap-theme.scss"
+          "dist/css/wfpui.css" : "scss/wfpui.scss",
+          "dist/css/bootstrap-theme.css" : "scss/bootstrap-theme.scss"
         }
       },
       dist: {
@@ -29,8 +33,21 @@ module.exports = function(grunt) {
           sourceMap: false
         },
         files: {
-          "dist/wfpui.css" : "scss/wfpui.scss",
-          "dist/bootstrap-theme.css" : "scss/bootstrap-theme.scss"
+          "dist/css/wfpui.css" : "scss/wfpui.scss",
+          "dist/css/bootstrap-theme.css" : "scss/bootstrap-theme.scss"
+        }
+      },
+      docs: {
+        files: {
+          "docs/css/main.css": "docs/_sass/main.scss"
+        }
+      },
+      docsDist: {
+        options: {
+          sourceMap: false
+        },
+        files: {
+          "docs/css/main.css": "docs/_sass/main.scss"
         }
       }
     },
@@ -48,23 +65,35 @@ module.exports = function(grunt) {
         options: {
           map: false
         },
-        src: 'dist/*.css'
+        src: 'dist/css/*.css'
       },
       dev: {
-        src: 'dist/*.css'
+        src: 'dist/css/*.css'
+      },
+      docs: {
+        src: 'docs/css/*.css'
+      },
+      docsDist: {
+        options: {
+          map: false
+        },
+        src: 'docs/css/*.css'
       }
     },
-    datauri: {
-      default: {
+    jekyll: {
+      dev: {
         options: {
-          classPrefix: 'icon-ui-'
-        },
-        src: [
-          "icons/ui/svg/*.svg"
-        ],
-        dest: [
-          "scss/components/_icons.scss"
-        ]
+          src: "./docs",
+          config: './docs/_config-dev.yml',
+          dest: "./dist/docs"
+        }
+      },
+      dist: {
+        options: {
+          src: "./docs",
+          config: './docs/_config.yml',
+          dest: "./dist/docs"
+        }
       }
     },
     jshint: {
@@ -82,13 +111,18 @@ module.exports = function(grunt) {
     }
   });
 
-  grunt.loadNpmTasks('grunt-datauri');
-  grunt.loadNpmTasks('grunt-postcss');
-  grunt.loadNpmTasks("grunt-sass");
   grunt.loadNpmTasks("grunt-contrib-watch");
   grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.loadNpmTasks('grunt-jekyll');
+  grunt.loadNpmTasks('grunt-postcss');
+  grunt.loadNpmTasks("grunt-sass");
 
-  grunt.registerTask("build", ["jshint", "datauri", "sass:dev", "postcss:dev"]);
-  grunt.registerTask("dist", ["datauri", "sass:dist", "postcss:dist"]);
+  // Build WFP UI Docs
+  grunt.registerTask("docs-build", ["sass:docs", "postcss:docs", "jekyll:dev"]);
+  grunt.registerTask("docs-dist", ["sass:docsDist", "postcss:docsDist", "jekyll:dist"]);
+  // Build WFP UI
+  grunt.registerTask("build", ["jshint", "sass:dev", "postcss:dev"]);
+  // Build a dist-ready WFP UI
+  grunt.registerTask("dist", ["sass:dist", "postcss:dist"]);
   grunt.registerTask("default", ["dist"]);
 };

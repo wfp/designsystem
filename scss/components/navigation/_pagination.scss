@@ -1,0 +1,58 @@
+// Component: Navigation
+// Project: WFPUI
+// Author: Matthew Morek (me@matthewmorek.com)
+// URL: http://matthewmorek.com
+
+// -----------------------------------------------------------------------------
+// Segmented Controls
+// [docs-url]/components/navigation/#pagination
+// -----------------------------------------------------------------------------
+%pagination {
+  text-align: center;
+  margin: 1em 0;
+}
+
+%pagination--wrapper {
+  display: inline;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+%pagination--item {
+  display: inline-block;
+  border: 1px solid $primary;
+  border-radius: 2px;
+  text-decoration: none;
+}
+
+%pagination--btn {
+  display: block;
+  padding: 0.125rem 0.75rem;
+  width: auto;
+  border: none;
+  color: $primary;
+  font-size: 0.875rem;
+  display: block;
+  &:hover {
+    color: $grey;
+  }
+  &.active {
+    background-color: $primary;
+    color: $white;
+    cursor: default;
+  }
+}
+
+.pagination {
+  @extend %pagination;
+  .pagination--wrapper {
+    @extend %pagination--wrapper;
+  }
+  .pagination--item {
+    @extend %pagination--item;
+  }
+  .pagination--btn {
+    @extend %pagination--btn;
+  }
+}

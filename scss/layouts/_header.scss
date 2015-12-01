@@ -18,7 +18,7 @@
   position: relative;
   background-color: $primary;
   color: #ffffff;
-  @include box-shadow(rgba(0,0,0,0.2) 0 1px 3px);
+  box-shadow: rgba(0,0,0,0.2) 0 1px 3px;
   min-height: 48px;
   max-height: 94px;
   .wrapper {
@@ -26,13 +26,150 @@
   }
 }
 
+// -----------------------------------------------------------------------------
+// Masthead: Narrow
+// -----------------------------------------------------------------------------
+%masthead--container {
+  padding: 0.5rem 0;
+  // height: 1rem;
+}
+%masthead--title {
+  line-height: 1rem;
+  font-size: 1rem;
+  margin: 0;
+  @include media-query($md-screen) {
+    margin: 0 1rem;
+  }
+}
+%masthead--logo {
+  color: #fff;
+  border: none;
+  font-weight: bold;
+  text-decoration: none;
+}
+%masthead--nav {
+  padding: 0;
+  // position: relative;
+  text-align: right;
+}
+%masthead--btn {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-touch-callout: none;
+  user-select: none;
+  border: 1px solid $white;
+  background-color: transparent;
+  color: $white;
+  border-radius: 3px;
+}
+%masthead--toggle {
+  @extend %masthead--btn;
+  display: inline-block;
+  visibility: visible;
+  @include media-query($md-screen) {
+    display: none;
+    visibility: hidden;
+  }
+}
+
+.masthead-internal {
+  @extend %masthead;
+  width: 100%;
+  &.fixed {
+    top: 0;
+    position: fixed;
+    z-index: 100;
+  }
+  .masthead--container {
+    @extend %masthead--container;
+  }
+  .masthead--title {
+    @extend %masthead--title;
+  }
+  .masthead--logo {
+    @extend %masthead--logo;
+  }
+  .masthead--nav {
+    @extend %masthead--nav;
+  }
+  .masthead--btn {
+    @extend %masthead--btn;
+  }
+  .masthead--toggle {
+    @extend %masthead--toggle;
+  }
+  .masthead--menu {
+    position: absolute;
+    right: 0;
+    top: 64px;
+    width: 100%;
+    margin: 0;
+    &.closed {
+      z-index: 0;
+      visibility: hidden;
+      opacity: 0;
+      transform: translate3d(0,-64px,0);
+      @include transition-property(transform, opacity, visibility, z-index);
+      @include transition-duration(0.2s, 0.2s, 0s, 0s);
+      @include transition-delay(0s, 0s, 0.2s, 0.2s);
+      @include transition-timing-function(cubic-bezier(0.4, 0, 1, 1));
+      @include media-query($md-screen) {
+        transition: unset;
+        transform: none;
+        z-index: auto;
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+    &.opened {
+      z-index: 5;
+      visibility: visible;
+      opacity: 1;
+      transform: translate3d(0,0,0);
+      @include transition-property(transform, opacity, visibility, z-index);
+      @include transition-duration(0.25s, 0.25s, 0s, 0s);
+      @include transition-delay(0s, 0s, 0s, 0.25s);
+      @include transition-timing-function(cubic-bezier(0.15, 1.23, 0.84, 1.04));
+      @include media-query($md-screen) {
+        transition: unset;
+      }
+    }
+    .menu--group {
+      @extend %no-list;
+      text-align: initial;
+      background-color: $grey;
+    }
+    .menu--item {
+      display: block;
+      padding: 0;
+      border-bottom: 1px solid $grey-3;
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+    .menu--link {
+      display: block;
+      border-bottom-color: transparent;
+      color: $grey-light;
+      padding: 0.5rem 1rem;
+    }
+    @include media-query($md-screen) {
+      @include menu-flat;
+      background-color: transparent;
+      position: static;
+      width: auto;
+      .menu--link {
+        padding: 0;
+      }
+    }
+  }
+}
 
 // -----------------------------------------------------------------------------
 // Masthead: Full
 // -----------------------------------------------------------------------------
 .masthead-full {
   @extend %masthead;
-  @include box-shadow(none);
+  box-shadow: none;
   .wrapper {
     padding: 0;
     @include media-query($md-screen) {
@@ -71,177 +208,11 @@
 }
 
 
-
-
-// -----------------------------------------------------------------------------
-// Masthead: Narrow
-// -----------------------------------------------------------------------------
-.masthead-narrow {
-  @extend %masthead;
-  top: 0;
-  position: fixed;
-  z-index: 100;
-  width: 100%;
-
-  .logo-container {
-    padding: 0.5em 0;
-    height: 16px;
-
-    .logo {
-      line-height: 1;
-      font-size: 1em;
-      margin: 0;
-      a {
-        color: #fff;
-        border: none;
-        font-weight: bold;
-        text-decoration: none;
-      }
-    }
-  }
-
-  .navigation {
-    padding: 0;
-    position: relative;
-    a { text-decoration: none; }
-
-    .nav-toggle {
-      padding: 0.5em 0;
-      text-align: right;
-      &-click {
-        border-color: transparent;
-      }
-    }
-
-    .main-nav {
-      display: block;
-      width: 100%;
-      text-align: right;
-      ul {
-        margin: 0;
-        li {
-          display: inline-block;
-          margin: 0;
-          padding: 0;
-          &:last-child {
-            margin-right: 0;
-          }
-          a {
-            padding: 0.5em 0.75em;
-            font-size: 0.875em;
-            line-height: 1.45em;
-            display: block;
-            color: #fff;
-            border: none;
-            &:hover {
-              box-shadow: rgba(0,0,0,0.2) 0 -3px 0 inset;
-            }
-            &.active,
-            &:active {
-              box-shadow: rgba(0,0,0,0.5) 0 -3px 0 inset;
-            }
-          }
-          .pure-button {
-            padding: 0.35em 0.75em 0.4em;
-            color: $text-color;
-            margin-left: 0.5em;
-            display: inline-block;
-            vertical-align: baseline;
-            &:hover {
-              color: inherit;
-              background-color: $grey-light;
-              -webkit-box-shadow: rgba(0,0,0,0.2) 0 1px 6px, inset rgba(255,255,255,0.3) 0 1px 3px;
-              -moz-box-shadow:    rgba(0,0,0,0.2) 0 1px 6px, inset rgba(255,255,255,0.3) 0 1px 3px;
-              box-shadow:         rgba(0,0,0,0.2) 0 1px 6px, inset rgba(255,255,255,0.3) 0 1px 3px;
-            }
-          }
-          .input-search-inline {
-            display: inline-block;
-            vertical-align: baseline;
-            line-height: 1.5;
-          }
-          &.profile-wrapper {
-            max-height: 48px;
-            background-color: $blue-3;
-            box-shadow: #4e98e3 0 2px 0 0;
-          }
-        }
-      }
-      &.closed {
-        right: -320px;
-        display: none;
-        @include media-query($md-screen){
-          display: block;
-          max-height: none;
-          max-width: none;
-          right: auto;
-        }
-      }
-      &.opened {
-        // @extend %flex-center;
-        clip: auto;
-        top: 0;
-        right: 0px;
-        min-height: 100vh;
-        max-height: 100%;
-        max-width: 320px;
-        padding-top: 1.5em;
-        -webkit-align-items: flex-start;
-        align-items: flex-start;
-        background-color: rgba(0,0,0,0.85);
-        z-index: 100;
-        text-align: left;
-        ul {
-          width: 100%;
-          li {
-            display: block;
-            a {
-              font-size: 1.25em;
-              padding: 0.5em 1em;
-              display: inline-block;
-              &:hover {
-                background-color: transparent;
-                border-bottom: none;
-                box-shadow: none;
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-  &.img {
-    .wrapper {
-      padding: 0;
-    }
-    .logo-container {
-      padding: 0.25em 0;
-      height: auto;
-      .wfp-logo {
-        line-height: 1;
-        font-size: 1;
-        margin: 0;
-        padding: 0;
-        a {
-          color: #fff;
-          border: none;
-          font-weight: bold;
-          text-decoration: none;
-        }
-      }
-    }
-    .navigation {
-      padding: 1em 0;
-    }
-  }
-}
-
-
 // -----------------------------------------------------------------------------
 // Utility Band (for pagination, etc.)
 // -----------------------------------------------------------------------------
 .band {
   background: $white;
   border-bottom: 1px solid $grey-contrast;
-  @include box-shadow(0px 1px 3px 0px rgba(0,0,0,0.10));
+  box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.10);
 }
