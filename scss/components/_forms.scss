@@ -3,166 +3,116 @@
 // Author: Matthew Morek (me@matthewmorek.com)
 // URL: http://matthewmorek.com
 
-.pure-form input[type="text"],
-.pure-form input[type="password"],
-.pure-form input[type="email"],
-.pure-form input[type="url"],
-.pure-form input[type="date"],
-.pure-form input[type="month"],
-.pure-form input[type="time"],
-.pure-form input[type="datetime"],
-.pure-form input[type="datetime-local"],
-.pure-form input[type="week"],
-.pure-form input[type="number"],
-.pure-form input[type="search"],
-.pure-form input[type="tel"],
-.pure-form input[type="color"],
-.pure-form select,
-.pure-form textarea {
-  padding: 0.5em;
+%inputbox {
   display: inline-block;
-  border: 1px solid $grey-1;
-  font-size: 100%;
-  line-height: 1.5;
-  box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
-  border-radius: 1px;
-  -webkit-transition: 0.3s linear border;
-  -moz-transition: 0.3s linear border;
-  -ms-transition: 0.3s linear border;
-  -o-transition: 0.3s linear border;
-  transition: 0.3s linear border;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  font-family: inherit;
-  vertical-align: baseline;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  -ms-appearance: none;
-  -o-appearance: none;
   appearance: none;
-  box-shadow: none;
-}
-
-.pure-form input:not([type]) {
-  padding: 0.5em;
-  display: inline-block;
-  border: 1px solid $grey-1;
-  font-size: 100%;
-  line-height: 1.5;
-  box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
-  border-radius: 1px;
-  -webkit-transition: 0.3s linear border;
-  -moz-transition: 0.3s linear border;
-  -ms-transition: 0.3s linear border;
-  -o-transition: 0.3s linear border;
-  transition: 0.3s linear border;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  font-family: inherit;
-  vertical-align: baseline;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  -ms-appearance: none;
-  -o-appearance: none;
-  appearance: none;
-  box-shadow: none;
-}
-
-.pure-form input[type="text"]:focus,
-.pure-form input[type="password"]:focus,
-.pure-form input[type="email"]:focus,
-.pure-form input[type="url"]:focus,
-.pure-form input[type="date"]:focus,
-.pure-form input[type="month"]:focus,
-.pure-form input[type="time"]:focus,
-.pure-form input[type="datetime"]:focus,
-.pure-form input[type="datetime-local"]:focus,
-.pure-form input[type="week"]:focus,
-.pure-form input[type="number"]:focus,
-.pure-form input[type="search"]:focus,
-.pure-form input[type="tel"]:focus,
-.pure-form input[type="color"]:focus,
-.pure-form select:focus,
-.pure-form textarea:focus {
-  outline: 0;
-  outline: thin dotted \9; /* IE6-9 */
-  border-color: #7DB8FA;
-}
-
-.pure-form input[type="file"]:focus,
-.pure-form input[type="radio"]:focus,
-.pure-form input[type="checkbox"]:focus {
-  outline: thin dotted $grey-2;
-  outline: 1px auto $blue-2;
-}
-.pure-form .checkbox,
-.pure-form .radio {
-  display: inline-block;
   vertical-align: middle;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  border-style: solid;
-  border-width: 1px;
-  border-color: $grey-2;
-}
-.pure-form .checkbox:disabled,
-.pure-form .radio:disabled {
-  opacity: 0.4;
-}
-.pure-form .checkbox {
-  width: 16px;
-  height: 16px;
+  border: 1px solid $grey-2;
   background-color: #fff;
-  border-radius: 2px;
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
+  margin-bottom: 4px;
+  width: 18px;
+  height: 18px;
   padding: 3px;
-  margin-bottom: 4px;
+  &.disabled,
+  &:disabled
+  &[disabled] {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+  &:focus {
+    outline: thin dotted $grey-2;
+    outline: 1px auto $blue-2;
+  }
 }
-.pure-form .radio {
-  width: 16px;
-  height: 16px;
-  border-radius: 16px;
-  background-color: #fff;
-  padding: 2px;
-  margin-bottom: 4px;
+
+@mixin input($type) {
+  @if $type == common {
+    appearance: none;
+    display: inline-block;
+    padding: 0.5rem;
+    font-family: $sans-serif-stack;
+    border: 1px solid $grey-1;
+    border-radius: 1px;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+    font-size: 100%;
+    line-height: 1.5;
+    vertical-align: baseline;
+    transition: 0.3s linear border;
+    &:focus {
+      outline: 0;
+      outline: thin dotted \9; /* IE6-9 */
+      border-color: $blue-2;
+    }
+    &[disabled],
+    &:disabled {
+      cursor: not-allowed;
+      opacity: 0.4;
+    }
+  } @else if $type == checkbox {
+    @extend %inputbox;
+    border-radius: 2px;
+    &:checked {
+      border-color: $secondary;
+      background-color: $primary;
+    }
+  } @else if $type == radio {
+    @extend %inputbox;
+    border-radius: 32px;
+    &:checked {
+      background-color: $white;
+      border-color: $primary;
+      border-width: 4px;
+      background-color: $white;
+    }
+  } @else if $type == label {
+    display: block;
+    margin: 0.25rem 0;
+    font-size: 100%;
+    line-height: 1.5;
+    vertical-align: baseline;
+  }
 }
-.pure-form .checkbox:checked {
-  border-color: $blue-4;
-  background-color: $primary;
-  background-image: url(../img/icons/checkmark.png);
-  background-repeat: no-repeat;
-  background-size: 10px;
-  background-position: center center;
+
+.wfp-form {
+  input[type="text"],
+  input[type="password"],
+  input[type="email"],
+  input[type="url"],
+  input[type="date"],
+  input[type="month"],
+  input[type="time"],
+  input[type="datetime"],
+  input[type="datetime-local"],
+  input[type="week"],
+  input[type="number"],
+  input[type="search"],
+  input[type="tel"],
+  input[type="color"],
+  input:not([type]),
+  select,
+  textarea {
+    @include input(common);
+  }
 }
-.pure-form .radio:checked {
-  border-color: $primary;
-  border-width: 4px;
-  background-color: #fff;
+
+.wfp-form {
+  .input--label {
+    @include input(label);
+  }
+  .input--common {
+    @include input(common);
+  }
+  .input--checkbox {
+    @include input(checkbox);
+  }
+  .input--radio {
+    @include input(radio);
+  }
 }
 
 
-.pure-form input[type="text"][disabled],
-.pure-form input[type="password"][disabled],
-.pure-form input[type="email"][disabled],
-.pure-form input[type="url"][disabled],
-.pure-form input[type="date"][disabled],
-.pure-form input[type="month"][disabled],
-.pure-form input[type="time"][disabled],
-.pure-form input[type="datetime"][disabled],
-.pure-form input[type="datetime-local"][disabled],
-.pure-form input[type="week"][disabled],
-.pure-form input[type="number"][disabled],
-.pure-form input[type="search"][disabled],
-.pure-form input[type="tel"][disabled],
-.pure-form input[type="color"][disabled],
-.pure-form select[disabled],
-.pure-form textarea[disabled] {
-  cursor: not-allowed;
-  background-color: #eaeded;
-  color: #cad2d3;
-}
 .pure-form input[readonly],
 .pure-form select[readonly],
 .pure-form textarea[readonly] {

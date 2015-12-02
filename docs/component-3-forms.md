@@ -19,9 +19,9 @@ To see how these elements work together, you can have a look at some of the form
 ### Checkboxes
 Checkboxes are used to represent a boolean field, where the value is either true or false. Checkbox is always wrapped around a label.
 
-<div class="preview plain pure-form">
-  <label class="input-checkbox" for="sample-1">
-    <input type="checkbox" class="checkbox" id="sample-1">Sample Checkbox
+<div class="preview plain input">
+  <label class="input--label" for="sample-1">
+    <input type="checkbox" class="input--checkbox" id="sample-1">Sample Checkbox
   </label>
 </div>
 
@@ -34,9 +34,13 @@ Checkboxes are used to represent a boolean field, where the value is either true
 ### Radio Buttons
 Radios are used to allow the user to choose between several options.
 
-<div class="preview plain pure-form">
-  <label for="option-one" class="input-radio"><input id="option-one" class="radio" type="radio" name="options">Option #1</label>
-  <label for="option-two" class="input-radio"><input id="option-two" class="radio" type="radio" name="options">Option #2</label>
+<div class="preview plain input">
+  <label for="option-one" class="input--label">
+    <input id="option-one" class="input--radio" type="radio" name="options">Option #1
+  </label>
+  <label for="option-two" class="input--label">
+    <input id="option-two" class="input--radio" type="radio" name="options">Option #2
+  </label>
 </div>
 
 {% highlight html %}
@@ -68,7 +72,7 @@ This box should only be used for picking an option from a collection of no more 
 ### Input Fields
 There are several types of input fields: _text_, _num_, _tel_, _email_, _password_, etc. Each of them serves a different purpose and should be used according to this purpose, by specifying a proper input type. Placeholder attribute is totally optional.
 
-<div class="preview plain pure-form">
+<div class="preview plain wfp-form">
   <label for="name">Your name:</label>
   <input id="name" type="text" placeholder="Your Name">
 </div>
