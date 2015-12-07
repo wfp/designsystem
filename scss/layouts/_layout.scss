@@ -26,80 +26,26 @@
   }
 }
 
-.pure-g {
-  text-rendering: optimizelegibility;
-  font-family: $sans-serif-stack;
-  display: -webkit-flex;
-  -webkit-flex-flow: row wrap;
-  display: -ms-flexbox;
-  -ms-flex-flow: row wrap;
-}
-.pure-g [class*="pure-u"] {
-  font-family: $sans-serif-stack;
-  font-size: 100%;
-  line-height: $base-line-height;
-  color: $text-color;
-}
 
 @include media-query($md-screen) {
-  .l-box {
-    padding: $spacing-unit / 2;
+  .wfp-box {
+    padding: 1rem;
   }
-  .l-box:first-child {
-    padding-left: 0;
-  }
-  .l-box:last-child {
-    padding-right: 0;
-  }
-}
-
-/**
-  Page Content
-*/
-.side-nav {
-  margin-top: 0;
-}
-.page-header {
-  margin-bottom: 2em;
-}
-.page-content {
-  > h3 {
-    padding-bottom: $spacing-unit / 4;
-    margin-bottom: $spacing-unit / 4;
-    margin-top: $spacing-unit;
-    border-bottom: 1px solid $grey-light;
-  }
-  > p + .inline-grid {
-    margin: 2em 0;
+  .wfp-box--flat {
+    padding: 0 1rem;
   }
 }
 
 
-/**
-  Lists
-*/
-.inline-list,
-%inline-list {
-  list-style: none;
-  padding: 0;
-  margin: 0.5em 0;
-  li {
-    display: inline;
-    margin-right: 1em;
-    &:last-child {
-      margin-right: 0;
-    }
-  }
-}
 
-/**
-  Print styles.
-  Inlined to avoid required HTTP connection: h5bp.com/r
-*/
+// -----------------------------------------------------------------------------
+// Print styles.
+// Inlined to avoid required HTTP connection
+// -----------------------------------------------------------------------------
 @media print {
   * {
     background: transparent !important;
-    color: #000 !important; /* Black prints faster: h5bp.com/s */
+    color: #000 !important;
     box-shadow: none !important;
     text-shadow: none !important;
   }
