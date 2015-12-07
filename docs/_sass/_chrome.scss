@@ -67,11 +67,13 @@ pre > code {
 .footer {
   .copyrights {
     h4 {
+      font-size: 0.875rem;
       font-weight: normal;
     }
   }
   .site-owner {
     h4 {
+      font-size: 0.875rem;
       text-align: center;
       @include media-query($md-screen) {
         text-align: right;

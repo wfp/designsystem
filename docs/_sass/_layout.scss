@@ -11,6 +11,9 @@
   margin-bottom: 2rem;
 }
 .page-content {
+  > h1, h2, h3, h4, h5, h6 {
+    + p { margin-top: 0.25rem; }
+  }
   > h3 {
     padding-bottom: $spacing-unit / 4;
     margin-bottom: $spacing-unit / 4;
@@ -19,14 +22,14 @@
   }
   > h4 {
     margin-bottom: 0.25rem;
-    + p {
-      margin-top: 0.25rem;
-    }
+  }
+  > h5 {
+    margin-bottom: 0.25rem;
   }
   > h6 {
+    font-weight: bold;
     border-bottom: none;
-    padding-bottom: 0;
-    margin-bottom: 0;
+    margin: 1rem 0 0.25rem 0;
   }
   > p + .inline-grid {
     margin: 2rem 0;
