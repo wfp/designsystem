@@ -72,7 +72,7 @@ hr {
   display: block;
   height: 1px;
   border: 0;
-  border-top: 1px solid #ccc;
+  border-top: 1px solid $grey-lighter;
   margin: 1rem 0;
   padding: 0;
 }
@@ -121,9 +121,9 @@ figcaption {
 // Links
 // -----------------------------------------------------------------------------
 a {
-  color: $primary;
+  color: $blue;
   text-decoration: none;
-  border-bottom: 1px solid lighten($grey, 60%);
+  border-bottom: 1px solid $grey-lighter;
 
   &:visited {
     color: darken($primary, 25%);
@@ -139,8 +139,8 @@ a {
 // Blockquotes
 // -----------------------------------------------------------------------------
 blockquote {
-  color: $grey-2;
-  border-left: 6px solid $grey-1;
+  color: $grey-dark;
+  border-left: 6px solid $grey-light;
   border-radius: 2px;
   padding: 0.25rem 0;
   padding-left: $spacing-unit * 0.75;
@@ -157,7 +157,7 @@ samp {
   font-size: 0.875rem;
   font-style: normal;
   font-family: $mono-stack;
-  background-color: $grey-lighter;
+  background-color: $grey-lightest;
   border-radius: 2px;
   padding: 0.125rem 0.25rem;
   line-height: 1.4;
@@ -166,7 +166,7 @@ samp {
 pre {
   padding: 0.5rem 0.75rem;
   overflow-x: scroll;
-  border-left: 6px solid $blue-2;
+  border-left: 6px solid $blue-light;
   word-wrap: normal;
   > code {
     border: 0;

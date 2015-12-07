@@ -7,9 +7,9 @@
   @extend %segmented-control;
   .breadcrumbs--item {
     @extend %segmented-control--item;
-    border-color: $grey-1;
+    border-color: $grey-lighter;
     &:first-child {
-      border-color: $grey-1;
+      border-color: $grey-lighter;
     }
   }
   .breadcrumbs--link {
@@ -18,10 +18,10 @@
   }
   .breadcrumbs--last {
     @extend %segmented-control--link;
-    color: $grey-2;
+    color: $grey-light;
     cursor: default;
     &:hover {
-      color: $grey-2;
+      color: $grey-light;
     }
   }
 }
@@ -32,7 +32,7 @@
   .breadcrumbs--item {
     @extend %segmented-control--item;
     border-color: $grey;
-    background-color: $grey-4;
+    background-color: $grey-dark;
     color: $grey-contrast;
     &:first-child {
       border-color: $grey;
@@ -48,10 +48,10 @@
   }
   .breadcrumbs--last {
     @extend %segmented-control--link;
-    color: $grey-1;
+    color: $grey-lighter;
     cursor: default;
     &:hover {
-      color: $grey-1;
+      color: $grey-lighter;
     }
   }
 }
