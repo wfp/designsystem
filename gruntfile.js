@@ -12,7 +12,7 @@ module.exports = function(grunt) {
         tasks: ["jshint"]
       },
       jekyll: {
-        files: ["docs/**/*.*", "scss/**/*.scss"],
+        files: ["docs/**/*.*", "scss/**/**/*.scss"],
         tasks: ["docs-build"]
       }
     },
