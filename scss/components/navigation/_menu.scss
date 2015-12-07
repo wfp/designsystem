@@ -108,7 +108,7 @@
     @extend %all-caps;
     color: $grey-light;
     border-top: none;
-    border-bottom-color: $grey;
+    border-bottom-color: $grey-dark;
     padding: 0.5rem 1.5rem;
     &:first-child {
       margin-top: 0.5rem;
