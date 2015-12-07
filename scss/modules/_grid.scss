@@ -14,11 +14,13 @@
   text-rendering: optimizespeed; // Webkit: fixes text-rendering: optimizeLegibility
   font-family: FreeSans, Arimo, "Droid Sans", Helvetica, Arial, sans-serif;
   display: -webkit-flex;
-
-  // IE10 uses display: flexbox
+  -webkit-flex-flow: row wrap;
+  /* IE10 uses display: flexbox */
   display: -ms-flexbox;
-  
-  // Prevents distributing space between rows
+  -ms-flex-flow: row wrap;
+  /* Prevents distributing space between rows */
+  -ms-align-content: flex-start;
+  -webkit-align-content: flex-start;
   align-content: flex-start;
 }
 
