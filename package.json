@@ -20,7 +20,6 @@
   },
   "devDependencies": {
     "eslint": "^1.10.2",
-    "grunt-contrib-jshint": "^0.11.2",
     "grunt-contrib-watch": "^0.6.1",
     "grunt-eslint": "^17.3.1"
   }
