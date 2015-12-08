@@ -136,13 +136,14 @@ module.exports = function(grunt) {
         multistr: true
       },
       all: ['js/*.js', 'test/*.js']
-    }
+    },
     eslint: {
     options: {
-        config: 'eslint.json',
+        configFile: '.eslintrc.json',
         reset: true
-    },
+      },
       target: ['js/*.js']
+    }
   });
 
   grunt.loadNpmTasks("grunt-contrib-watch");
