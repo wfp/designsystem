@@ -8,7 +8,7 @@ module.exports = function(grunt) {
         tasks: ["build"]
       },
       eslint: {
-        files: "js/*.js",
+        files: "js/**/*.js",
         tasks: ["eslint"]
       },
       jekyll: {
@@ -119,23 +119,22 @@ module.exports = function(grunt) {
           dest: "./dist/docs"
         }
       }
-      },
+    },
     eslint: {
-    options: {
-        configFile: '.eslintrc.json',
-        reset: true
+      options: {
+        config: '.eslintrc.json',
+        force: true
       },
-      target: ['js/*.js']
+      all: ['js/**/*.js']
     }
   });
 
   grunt.loadNpmTasks("grunt-contrib-watch");
-  grunt.loadNpmTasks("grunt-contrib-jshint");
   grunt.loadNpmTasks("grunt-jekyll");
   grunt.loadNpmTasks("grunt-postcss");
   grunt.loadNpmTasks("grunt-sass");
   grunt.loadNpmTasks("grunt-pure-grids");
-  grunt.loadNpmTasks("grunt-eslint");
+  grunt.loadNpmTasks("eslint-grunt");
 
   // Build WFP UI Docs
   grunt.registerTask("docs-build", ["sass:docs", "postcss:docs", "jekyll:dev"]);

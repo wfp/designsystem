@@ -19,8 +19,8 @@
     "node-sass": "^3.4.2"
   },
   "devDependencies": {
-    "eslint": "^1.10.2",
-    "grunt-contrib-watch": "^0.6.1",
-    "grunt-eslint": "^17.3.1"
+    "eslint": "^1.10.3",
+    "eslint-grunt": "^1.0.0",
+    "grunt-contrib-watch": "^0.6.1"
   }
 }
