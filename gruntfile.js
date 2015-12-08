@@ -153,7 +153,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks("grunt-sass");
   grunt.loadNpmTasks("grunt-pure-grids");
   grunt.loadNpmTasks("grunt-eslint");
-  grunt.loadNpmTasks("eslint");
 
   // Build WFP UI Docs
   grunt.registerTask("docs-build", ["sass:docs", "postcss:docs", "jekyll:dev"]);
