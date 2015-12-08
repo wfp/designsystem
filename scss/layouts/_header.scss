@@ -7,11 +7,9 @@
 // -----------------------------------------------------------------------------
 // Add spacing to the body tag, to compensate for a fixed masthead
 // -----------------------------------------------------------------------------
-.space-around {
-  &-narrow {
-    overflow: hidden;
-    padding-top: 4em;
-  }
+.masthead-spacer--narrow {
+  overflow: auto;
+  padding-top: 4rem;
 }
 
 %masthead {
@@ -36,6 +34,7 @@
 %masthead--title {
   line-height: 1rem;
   font-size: 1rem;
+  letter-spacing: initial;
   margin: 0;
   @include media-query($md-screen) {
     margin: 0 1rem;
@@ -49,7 +48,6 @@
 }
 %masthead--nav {
   padding: 0;
-  // position: relative;
   text-align: right;
 }
 %masthead--btn {
@@ -141,7 +139,7 @@
     .menu--item {
       display: block;
       padding: 0;
-      border-bottom: 1px solid $grey-3;
+      border-bottom: 1px solid $grey;
       &:last-child {
         border-bottom: none;
       }
@@ -197,7 +195,7 @@
     padding: 0;
     margin: -1em 0;
     .heading {
-      background-color: $secondary;
+      background-color: $accent;
       box-shadow: rgba(0,0,0,0.2) 0 2px 0;
       margin: 0;
       padding: 1.5em 1em;

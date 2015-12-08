@@ -14,6 +14,7 @@
     "grunt-cli": "^0.1.13",
     "grunt-jekyll": "^0.4.2",
     "grunt-postcss": "^0.6.0",
+    "grunt-pure-grids": "^1.0.2",
     "grunt-sass": "^1.1.0",
     "node-sass": "^3.4.2"
   },

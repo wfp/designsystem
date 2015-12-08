@@ -1,0 +1,47 @@
+// Module: Tables
+// Project: WFP UI
+// Author: Matthew Morek (me@matthewmorek.com)
+// URL: http://matthewmorek.com
+
+@mixin table {
+  // Remove spacing between table cells
+  border-collapse: collapse;
+  border-spacing: 0;
+  empty-cells: show;
+  border: none;
+  width: 100%;
+  margin: 1rem 0;
+
+  caption {
+    color: $text-color;
+    font: italic 85%/1 "lato", sans-serif;
+    padding: 1rem 0;
+    text-align: center;
+  }
+
+  td, th {
+    border-bottom: 1px solid $grey-lighter;
+    border-width: 0 0 1px 0;
+    font-size: inherit;
+    margin: 0;
+    overflow: visible;
+    padding: 0.5rem 1rem;
+  }
+
+  thead {
+    background-color: none;
+    color: $text-color;
+    text-align: left;
+    vertical-align: bottom;
+  }
+}
+
+.wfp-table {
+  @include table;
+}
+.wfp-table--striped {
+  @include table;
+  tr:nth-child(2n-1) td {
+    background-color: $blue-lightest;
+  }
+}

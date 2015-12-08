@@ -39,13 +39,13 @@ For more information about available HTML5 `input` attributes, visit [Mozilla De
 To correctly show an invalid field, add class `invalid` to an input element. Next, insert error description using `span` with a class `error` just below the input.
 
 ###### Example
-<div class="preview simple pure-form pure-form-stacked clearfix">
-  <div class="pure-form-input-1-2">
+<div class="preview simple wfp-form--stacked grid">
+  <div class="unit-1-2 wfp-box">
     <label for="full-name">Full name:</label>
     <input class="invalid" id="full-name" type="text" placeholder="e.g.: John Doe" required>
     <span class="error">Please, enter your full name.</span>
   </div>
-  <div class="pure-form-input-1-2">
+  <div class="unit-1-2 wfp-box">
     <label for="email">Email address:</label>
     <input class="invalid" id="email" type="email" placeholder="e.g.: john@doe.com" value="incorrect@email" required>
     <span class="error">Please, use a correct email address.</span>
@@ -54,15 +54,15 @@ To correctly show an invalid field, add class `invalid` to an input element. Nex
 
 ###### Sample Markup
 {% highlight html %}
-<form class="pure-form pure-form-stacked clearfix">
-  <div class="pure-form-input-1-2">
+<form class="wfp-form--stacked grid">
+  <div class="unit-1-2 wfp-box">
     <label for="full-name">Full name:</label>
     <input class="invalid" id="full-name" type="text" placeholder="e.g.: John Doe" required>
     <span class="error">Please, enter your full name.</span>
   </div>
-  <div class="pure-form-input-1-2">
+  <div class="unit-1-2 wfp-box">
     <label for="email">Email address:</label>
-    <input class="invalid" id="email" type="email" placeholder="e.g.: john@doe.com" required>
+    <input class="invalid" id="email" type="email" placeholder="e.g.: john@doe.com" value="incorrect@email" required>
     <span class="error">Please, use a correct email address.</span>
   </div>
 </form>
@@ -72,31 +72,27 @@ To correctly show an invalid field, add class `invalid` to an input element. Nex
 When inputs are validated successfuly, you should replace their `invalid` class with `valid` and remove or hide the error description.
 
 ###### Example
-<div class="preview simple pure-form pure-form-stacked clearfix">
-  <div class="pure-form-input-1-2">
+<div class="preview simple wfp-form--stacked grid">
+  <div class="unit-1-2 wfp-box">
     <label for="full-name">Full name:</label>
-    <input class="valid" id="full-name" type="text" placeholder="e.g.: John Doe" value="John Doe" required>
-    <span class="error" style="display: none">Please, enter your full name.</span>
+    <input class="valid" id="full-name" type="text" placeholder="e.g.: John Doe" value="John Doe">
   </div>
-  <div class="pure-form-input-1-2">
+  <div class="unit-1-2 wfp-box">
     <label for="email">Email address:</label>
-    <input class="valid" id="email" type="email" placeholder="e.g.: john@doe.com" value="john@doe.com" required>
-    <span class="error" style="display: none">Please, use a correct email address.</span>
+    <input class="valid" id="email" type="email" placeholder="e.g.: john@doe.com" value="correct@email.com" required>
   </div>
 </div>
 
 ###### Sample Markup
 {% highlight html %}
-<form class="pure-form pure-form-stacked clearfix">
-  <div class="pure-form-input-1-2">
+<form class="wfp-form--stacked grid">
+  <div class="unit-1-2 wfp-box">
     <label for="full-name">Full name:</label>
-    <input class="valid" id="full-name" type="text" placeholder="e.g.: John Doe" value="John Doe" required>
-    <span class="error" style="display: none">Please, enter your full name.</span>
+    <input class="valid" id="full-name" type="text" placeholder="e.g.: John Doe" value="John Doe">
   </div>
-  <div class="pure-form-input-1-2">
+  <div class="unit-1-2 wfp-box">
     <label for="email">Email address:</label>
-    <input class="valid" id="email" type="email" placeholder="e.g.: john@doe.com" value="john@doe.com" required>
-    <span class="error" style="display: none">Please, use a correct email address.</span>
+    <input class="valid" id="email" type="email" placeholder="e.g.: john@doe.com" value="correct@email.com" required>
   </div>
 </form>
 {% endhighlight %}

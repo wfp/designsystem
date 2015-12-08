@@ -11,82 +11,72 @@ Forms are an important part of pages which ask users for input. They should be s
 
 <div class="notice">
   <h6>Notice</h6>
-  <p>To ensure that WFP UI styles are correctly applied to your form elements, please add a class <code>pure-form</code> to your form wrappers.</p>
+  <p>To ensure that WFP UI styles are correctly applied to your form elements, please add a class <code>wfp-form</code> to your form wrappers.</p>
 </div>
 
-To see how these elements work together, you can have a look at some of the form patterns we use for WFP.
+To see how different form elements work together with our flexible grid system, have a look at one of the form patterns below.
 
-### Checkboxes
-Checkboxes are used to represent a boolean field, where the value is either true or false. Checkbox is always wrapped around a label.
-
-<div class="preview plain pure-form">
-  <label class="input-checkbox" for="sample-1">
-    <input type="checkbox" class="checkbox" id="sample-1">Sample Checkbox
-  </label>
-</div>
-
-{% highlight html %}
-<label class="input-checkbox" for="sample-1">
-  <input type="checkbox" id="sample-1">Sample Checkbox
-</label>
-{% endhighlight %}
-
-### Radio Buttons
-Radios are used to allow the user to choose between several options.
-
-<div class="preview plain pure-form">
-  <label for="option-one" class="input-radio"><input id="option-one" class="radio" type="radio" name="options">Option #1</label>
-  <label for="option-two" class="input-radio"><input id="option-two" class="radio" type="radio" name="options">Option #2</label>
-</div>
-
-{% highlight html %}
-<label for="option-one" class="input-radio"><input id="option-one" class="radio" type="radio" name="options">Option #1</label>
-<label for="option-two" class="input-radio"><input id="option-two" class="radio" type="radio" name="options">Option #2</label>
-{% endhighlight %}
-
-### Select Box
-This box should only be used for picking an option from a collection of no more than 5-8 items.
-
-<div class="preview plain pure-form">
-  <label for="state">Select an option:</label>
-  <select id="select" class="select">
-    <option>Option 1</option>
-    <option>Option 2</option>
-    <option>Option 3</option>
-  </select>
+###### Preview
+<div class="preview simple wfp-form--stacked grid">
+  <div class="unit-1-2 wfp-box--flat">
+    <label for="first-name">First name:</label>
+    <input type="text" id="first-name" name="first-name">
+  </div>
+  <div class="unit-1-2 wfp-box--flat">
+    <label for="email">Email address:</label>
+    <input type="email" id="email" name="email">
+  </div>
+  <div class="unit-1 wfp-box--flat">
+    <label for="message">Your message:</label>
+    <textarea name="message" id="message"></textarea>
+    <label for="sample-1">
+      <input type="checkbox" id="sample-1">I would like to be contacted, if necessary.
+    </label>
+  </div>
+  <div class="unit-1 wfp-box--flat">
+    <div class="wfp-form--actions">
+      <button class="btn--primary">Send message</button>
+      <button class="btn">Cancel</button>
+      <span class="wfp-form--msg">By sending this form you agree to our <a href="#">privacy policy</a>.</span>
+    </div>
+  </div>
 </div>
 
 {% highlight html %}
-<label for="state">Select an option:</label>
-<select id="select" class="select">
-  <option>Option 1</option>
-  <option>Option 2</option>
-  <option>Option 3</option>
-</select>
+<form class="wfp-form--stacked grid">
+  <div class="unit-1-2 wfp-box--flat">
+    <label for="first-name">First name:</label>
+    <input type="text" id="first-name" name="first-name">
+  </div>
+  <div class="unit-1-2 wfp-box--flat">
+    <label for="email">Email address:</label>
+    <input type="email" id="email" name="email">
+  </div>
+  <div class="unit-1 wfp-box--flat">
+    <label for="message">Your message:</label>
+    <textarea name="message" id="message"></textarea>
+    <label for="sample-1">
+      <input type="checkbox" id="sample-1">I would like to be contacted, if necessary.
+    </label>
+  </div>
+  <div class="unit-1 wfp-box--flat">
+    <div class="wfp-form--actions">
+      <button class="btn--primary">Send message</button>
+      <button class="btn">Cancel</button>
+      <span class="wfp-form--msg">By sending this form you agree to our <a href="#">privacy policy</a>.</span>
+    </div>
+  </div>
+</form>
 {% endhighlight %}
 
-### Input Fields
-There are several types of input fields: _text_, _num_, _tel_, _email_, _password_, etc. Each of them serves a different purpose and should be used according to this purpose, by specifying a proper input type. Placeholder attribute is totally optional.
+### Special Classes
+If you want to push your forms to their limit, you can use our special classes, which can help you create more eye-friendly layouts.
 
-<div class="preview plain pure-form">
-  <label for="name">Your name:</label>
-  <input id="name" type="text" placeholder="Your Name">
-</div>
+`wfp-form--group`  
+Group contained form elements by giving them extra vertical padding.
 
-{% highlight html %}
-<label for="name">Your name:</label>
-<input id="name" type="text" placeholder="Your Name">
-{% endhighlight %}
+`wfp-form--actions`
+Wrapper designated to contain all actionable elements, such as buttons. Gives them extra padding and margins, to ensure they stand out from other elements.
 
-### Textarea
-Text areas are large inputs where users can type and view larger blocks of text. They can also have buttons attached to the bottom.
-
-<div class="preview plain pure-form">
-  <label for="big-text">Type in your bio:</label>
-  <textarea id="big-text" placeholder="This is a text area." class="textarea size-large"></textarea>
-</div>
-
-{% highlight html %}
-<label for="big-text">Type in your bio:</label>
-<textarea id="big-text" placeholder="This is a text area." class="textarea size-large"></textarea>
-{% endhighlight %}
+`wfp-form--msg`
+Small inline messages, that are best used for notices, or inline tips.

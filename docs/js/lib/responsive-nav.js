@@ -15,7 +15,7 @@
   var responsiveNav = function (el, options) {
 
     var computed = !!window.getComputedStyle;
-    
+
     /**
      * getComputedStyle polyfill for old browsers
      */
@@ -38,7 +38,7 @@
       };
     }
     /* exported addEvent, removeEvent, getChildren, setAttributes, addClass, removeClass, forEach */
-    
+
     /**
      * Add Event
      * fn arg can be an object or a function, thanks to handleEvent
@@ -76,7 +76,7 @@
           }
         }
       },
-    
+
       /**
        * Remove Event
        *
@@ -108,7 +108,7 @@
           }
         }
       },
-    
+
       /**
        * Get the children of any element
        *
@@ -129,7 +129,7 @@
         }
         return children;
       },
-    
+
       /**
        * Sets multiple attributes at once
        *
@@ -141,7 +141,7 @@
           el.setAttribute(key, attrs[key]);
         }
       },
-    
+
       /**
        * Adds a class to any element
        *
@@ -154,7 +154,7 @@
           el.className = el.className.replace(/(^\s*)|(\s*$)/g,"");
         }
       },
-    
+
       /**
        * Remove a class from any element
        *
@@ -165,7 +165,7 @@
         var reg = new RegExp("(\\s|^)" + cls + "(\\s|$)");
         el.className = el.className.replace(reg, " ").replace(/(^\s*)|(\s*$)/g,"");
       },
-    
+
       /**
        * forEach method that passes back the stuff we need
        *
@@ -406,6 +406,7 @@
       _init: function () {
         this.index = index++;
 
+        removeClass(nav, "closed");
         addClass(nav, opts.navClass);
         addClass(nav, opts.navClass + "-" + this.index);
         addClass(nav, "closed");

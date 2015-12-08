@@ -20,6 +20,7 @@
   border-left: none;
   position: relative;
   z-index: 1;
+  vertical-align: middle;
   &:first-child {
     border-radius: 2px 0 0 2px;
     border-left: 1px solid $primary;
@@ -30,7 +31,7 @@
 }
 
 %segmented-control--link {
-  padding: 0.25rem 0.75rem;
+  padding: 0.35rem 0.75rem;
   width: auto;
   border: none;
   color: $primary;

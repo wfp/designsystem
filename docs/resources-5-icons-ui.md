@@ -16,9 +16,9 @@ Each icon is available in either a positive (transparent) or a negative (solid) 
   <p>Need a User Interface icon not listed here? Send us a request via <a href="mailto:WFP.PUBLICATIONS@wfp.org?subject=UI%20icon%20request">wfp.publications@wfp.org</a>.</p>
 </div>
 
-<div class="pure-g">
-  <div class="pure-u-3-4"></div>
-  <div class="pure-u-1-4 text-right">
+<div class="grid">
+  <div class="unit-3-4"></div>
+  <div class="unit-1-4 text-right">
     <ul class="segmented-control" id="js-view-control">
       <li class="segmented-control--item">
         <a href="#" id="js-view-list" class="segmented-control--link active">List</a>
@@ -30,9 +30,9 @@ Each icon is available in either a positive (transparent) or a negative (solid) 
   </div>
 </div>
 
-<ul class="pure-g list-view icons" id="js-view">
+<ul class="grid list-view icons" id="js-view">
 {% directory path:img/ui/svg %}
-  <li class="item pure-u-1-2">
+  <li class="item unit-1-2">
     <div class="desc">
       <div class="desc-img"><img src="{{ site.baseurl }}/img/ui/svg/{{ file.name }}"></div>
       <div class="desc-label">{{ file.slug }}</div>
@@ -41,11 +41,11 @@ Each icon is available in either a positive (transparent) or a negative (solid) 
 {% enddirectory %}
 </ul>
 
-<div class="pure-g preview plain">
-  <div class="pure-u-1 pure-u-md-1-2">
+<div class="grid preview plain">
+  <div class="unit-1 unit-md-1-2">
     <a class="pure-button" href="{{ site.baseurl }}/assets/ui-icons-png.zip">PNG (zip, ~48 KB)</a>
   </div>
-  <div class="pure-u-1 pure-u-md-1-2">
+  <div class="unit-1 unit-md-1-2">
     <a class="pure-button" href="{{ site.baseurl }}/assets/ui-icons-svg.zip">SVG (zip, ~41 KB)</a>
   </div>
 </div>
