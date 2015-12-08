@@ -4,6 +4,10 @@
             2,
             2
         ],
+        "quotes": [
+            2,
+            "double"
+        ],
         "semi": [
             2,
             "always"
