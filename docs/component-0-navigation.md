@@ -54,8 +54,8 @@ The same menu as in previous example, but used together with grids, to create mo
 </div>
 
 ###### Preview
-<nav class="menu pure-g">
-  <div class="menu--group pure-u-1 pure-u-md-1-3">
+<nav class="menu grid">
+  <div class="menu--group unit-1 unit-md-1-3">
     <h6 class="menu--heading">Our Programmes</h6>
     <ul class="menu--wrapper">
       <li class="menu--item"><a href="#">Cash and Vouchers</a></li>
@@ -64,7 +64,7 @@ The same menu as in previous example, but used together with grids, to create mo
       <li class="menu--item"><a href="#">Purchase for Progress</a></li>
     </ul>
   </div>
-  <div class="menu--group pure-u-1 pure-u-md-1-3">
+  <div class="menu--group unit-1 unit-md-1-3">
     <h6 class="menu--heading">Our Expertise</h6>
     <ul class="menu--wrapper">
       <li class="menu--item"><a href="#">Preparedness: Being Ready</a></li>
@@ -73,7 +73,7 @@ The same menu as in previous example, but used together with grids, to create mo
       <li class="menu--item"><a href="#">Buying the Food</a></li>
     </ul>
   </div>
-  <div class="menu--group pure-u-1 pure-u-md-1-3">
+  <div class="menu--group unit-1 unit-md-1-3">
     <h6 class="menu--heading">Our Operations</h6>
     <ul class="menu--wrapper">
       <li class="menu--item"><a href="#">Current Emergencies</a></li>
@@ -86,8 +86,8 @@ The same menu as in previous example, but used together with grids, to create mo
 
 ###### Markup
 {% highlight html %}
-<nav class="menu pure-g">
-  <div class="menu--group pure-u-1 pure-u-md-1-3">
+<nav class="menu grid">
+  <div class="menu--group unit-1 unit-md-1-3">
     <h6 class="menu--heading">Our Programmes</h6>
     <ul class="menu--wrapper">
       <li class="menu--item"><a href="#">Cash and Vouchers</a></li>
@@ -96,7 +96,7 @@ The same menu as in previous example, but used together with grids, to create mo
       <li class="menu--item"><a href="#">Purchase for Progress</a></li>
     </ul>
   </div>
-  <div class="menu--group pure-u-1 pure-u-md-1-3">
+  <div class="menu--group unit-1 unit-md-1-3">
     <h6 class="menu--heading">Our Expertise</h6>
     <ul class="menu--wrapper">
       <li class="menu--item"><a href="#">Preparedness: Being Ready</a></li>
@@ -105,7 +105,7 @@ The same menu as in previous example, but used together with grids, to create mo
       <li class="menu--item"><a href="#">Buying the Food</a></li>
     </ul>
   </div>
-  <div class="menu--group pure-u-1 pure-u-md-1-3">
+  <div class="menu--group unit-1 unit-md-1-3">
     <h6 class="menu--heading">Our Operations</h6>
     <ul class="menu--wrapper">
       <li class="menu--item"><a href="#">Current Emergencies</a></li>

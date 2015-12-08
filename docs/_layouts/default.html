@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html>
   {% include head.html %}
-  <body class="space-around-narrow">
+  <body class="masthead-spacer--narrow">
 
     {% include header.html %}
 
-    <section class="pure-g wrapper">
-      <div class="pure-u-1 pure-u-md-1-4 l-box side-nav">
+    <section class="grid wrapper">
+      <div class="unit-1 unit-md-1-4 wfp-box side-nav">
         {% include sidebar.html %}
       </div>
-      <div class="pure-u-1 pure-u-md-3-4 l-box">
+      <div class="unit-1 unit-md-3-4 wfp-box">
         {{ content }}
       </div>
     </section>

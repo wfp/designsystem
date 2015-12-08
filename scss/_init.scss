@@ -5,10 +5,10 @@
 
 $sans-serif-stack:    "lato", sans-serif;
 $serif-stack:         "aleo", serif;
-$mono-stack:          "Source Code Pro", "Consolas", "Lucida Console", monospace;
+$mono-stack:          monospace;
 $base-font-size:      16px;
+$base-line-height:    1.562;
 $small-font-size:     $base-font-size * 0.875;
-$base-line-height:    1.625em;
 
 $spacing-unit:        32px;
 
@@ -16,27 +16,33 @@ $text-color:          #404040;
 $background-color:    #ffffff;
 
 $primary:             #2A93FC;
-$secondary:           #1F6EBC;
+$accent:              #1F6EBC;
 
-$grey:                #404040;
+// Greys gradation
+$grey:                #8c8c8c;
+$grey-darkest:        darken($grey, 42%);
+$grey-darker:         darken($grey, 36%);
+$grey-dark:           darken($grey, 18%);
+$grey-light:          lighten($grey, 18%);
+$grey-lighter:        lighten($grey, 36%);
+$grey-lightest:       lighten($grey, 42%);
+
+// Blue gradation
+$blue:                lighten($primary, 9%);
+$blue-darkest:        darken($blue, 36%);
+$blue-darker:         darken($blue, 18%);
+$blue-dark:           darken($blue, 9%);
+$blue-light:          lighten($blue, 9%);
+$blue-lighter:        lighten($blue, 18%);
+$blue-lightest:       lighten($blue, 30%);
+
 $grey-contrast:       #EAEAEA;
-$grey-light:          #f3f3f3;
-$grey-lighter:        #fafafa;
-$grey-1:              #CCCCCC;
-$grey-2:              #8C8C8C;
-$grey-3:              #4D4D4D;
-$grey-4:              #333333;
 
 $white:               #ffffff;
 $red:                 #FF5252;
 $orange:              #FFC759;
 $yellow:              #FCDC5D;
-$green:               #B3DE62;
-
-$blue-1:              lighten($primary, 36%);
-$blue-2:              lighten($primary, 18%);
-$blue-3:              lighten($primary, 9%);
-$blue-4:              darken($primary, 9%);
+$green:               #00A878;
 
 // Width of the content area
 $content-width:       1000px;
