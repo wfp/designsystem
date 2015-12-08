@@ -154,6 +154,7 @@ blockquote {
 pre,
 code,
 samp {
+  color: $blue-light;
   font-size: 0.875rem;
   font-style: normal;
   font-family: $mono-stack;
@@ -161,6 +162,13 @@ samp {
   border-radius: 2px;
   padding: 0.125rem 0.25rem;
   line-height: 1.4;
+  white-space: nowrap;
+}
+
+code {
+  color: $text-color;
+  background-color: lighten($yellow, 15%);
+  padding: 0.125rem 0.25rem;
 }
 
 pre {
