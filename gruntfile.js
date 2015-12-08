@@ -7,9 +7,9 @@ module.exports = function(grunt) {
         files: "scss/**/*.scss",
         tasks: ["build"]
       },
-      jshint: {
-        files: "js/*.js",
-        tasks: ["jshint"]
+      eslint: {
+        files: "js/**/*.js",
+        tasks: ["eslint"]
       },
       jekyll: {
         files: ["docs/**/*.*", "scss/**/**/*.scss"],
@@ -120,33 +120,27 @@ module.exports = function(grunt) {
         }
       }
     },
-    jshint: {
+    eslint: {
       options: {
-        globals: {
-          jQuery: true
-        },
-        immed: true,
-        indent: 2,
-        latedef: true,
-        newcap: true,
-        multistr: true
+        config: '.eslintrc.json',
+        force: true
       },
-      all: ['js/*.js', 'test/*.js']
+      all: ['js/**/*.js']
     }
   });
 
   grunt.loadNpmTasks("grunt-contrib-watch");
-  grunt.loadNpmTasks("grunt-contrib-jshint");
   grunt.loadNpmTasks("grunt-jekyll");
   grunt.loadNpmTasks("grunt-postcss");
   grunt.loadNpmTasks("grunt-sass");
   grunt.loadNpmTasks("grunt-pure-grids");
+  grunt.loadNpmTasks("eslint-grunt");
 
   // Build WFP UI Docs
   grunt.registerTask("docs-build", ["sass:docs", "postcss:docs", "jekyll:dev"]);
   grunt.registerTask("docs-dist", ["sass:docsDist", "postcss:docsDist", "jekyll:dist"]);
   // Build WFP UI
-  grunt.registerTask("build", ["jshint", "pure_grids", "sass:dev", "postcss:dev"]);
+  grunt.registerTask("build", ["eslint", "sass:dev", "postcss:dev"]);
   // Build a dist-ready WFP UI
   grunt.registerTask("dist", ["sass:dist", "postcss:dist"]);
   grunt.registerTask("default", ["dist"]);
