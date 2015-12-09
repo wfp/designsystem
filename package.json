@@ -22,6 +22,7 @@
     "eslint": "^1.10.3",
     "eslint-grunt": "^1.0.0",
     "grunt-contrib-watch": "^0.6.1",
+    "grunt-grunticon": "^2.2.2",
     "grunt-sass-lint": "0.1.0-beta.4"
   }
 }
