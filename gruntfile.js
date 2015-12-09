@@ -118,6 +118,9 @@ module.exports = function(grunt) {
             neg: "#ffffff",
             pos: "#000000"
           },
+          datasvgcss: "ui-icons.svg.css",
+          datapngcss: "ui-icons.png.css",
+          urlpngcss: "ui-icons.fallback.css"
         }
       },
       thematic: {
@@ -127,7 +130,12 @@ module.exports = function(grunt) {
           src: ["*.svg", "*.png"],
           dest: "dist/assets/icons/thematic"
         }],
-        options: {}
+        options: {
+          datasvgcss: "thematic-icons.svg.css",
+          datapngcss: "thematic-icons.png.css",
+          urlpngcss: "thematic-icons.fallback.css",
+          cssprefix: "thema-"
+        }
       }
     },
     jekyll: {
