@@ -204,6 +204,7 @@ pre > code {
 }
 
 .list-view {
+  @extend %no-list;
   padding: 0;
   .item {
     margin: 0;
@@ -275,10 +276,10 @@ pre > code {
     text-align: left;
   }
   &.plain {
-    background-color: #fff;
+    background-color: $white;
   }
   &.simple {
-    background-color: #fff;
+    background-color: $white;
     text-align: left;
   }
   &.image {
@@ -291,14 +292,14 @@ pre > code {
 }
 
 .notice {
-  background-color: #fafafa;
-  padding: 0.5em 1em;
-  border-left: 6px solid #FFBA3A;
+  background-color: $grey-lightest;
+  padding: 0.5rem 1rem;
+  border-left: 6px solid $orange;
   border-radius: 2px;
-  font-size: 0.875em;
+  font-size: 1rem;
   line-height: 1.4;
-  margin: 1em 0;
+  margin: 1rem 0;
   > * {
-    margin: 0.25em 0;
+    margin: 0.25rem 0;
   }
 }
