@@ -19,13 +19,17 @@
 }
 %menu--item {
   font-size: 1rem;
-  padding: 0 1rem;
+  padding: 0;
   margin: 0;
   display: block;
   border: none;
 }
 %menu--link {
+  display: block;
+  padding: 0.25rem 1rem;
+  line-height: 1;
   color: $primary;
+  border-bottom: none;
   &:hover {
     color: $accent;
   }
