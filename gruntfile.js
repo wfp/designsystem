@@ -170,10 +170,12 @@ module.exports = function(grunt) {
 
   // Build WFP UI Docs
   grunt.registerTask("docs-build", ["sasslint", "sass:docs", "postcss:docs", "grunticon", "jekyll:dev"]);
+  // Build dist-ready WFP UI Docs
   grunt.registerTask("docs-dist", ["sasslint", "sass:docsDist", "postcss:docsDist", "grunticon", "jekyll:dist"]);
   // Build WFP UI
   grunt.registerTask("build", ["eslint", "sasslint", "sass:dev", "postcss:dev", "grunticon"]);
   // Build a dist-ready WFP UI
   grunt.registerTask("dist", ["sass:dist", "postcss:dist", "grunticon"]);
+  // Set default grunt task to `dist`
   grunt.registerTask("default", ["dist"]);
 };
