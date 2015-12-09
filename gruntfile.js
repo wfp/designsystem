@@ -22,7 +22,7 @@ module.exports = function(grunt) {
         options: {
           units: [5,12,24],
           mediaQueries: {
-              sm: 'screen and (min-width: 32em)', //512px
+              sm: 'screen and (min-width: 36.5em)', //584px
               md: 'screen and (min-width: 48em)', //768px
               lg: 'screen and (min-width: 64em)', //1024px
               xl: 'screen and (min-width: 75em)'  //1200px
@@ -37,14 +37,14 @@ module.exports = function(grunt) {
         sourceMap: true,
         indentedSyntax: true,
         sassDir: 'scss',
-        cssDir: 'dist/ui'
+        cssDir: 'dist/css'
       },
       dev: {
         files: [{
           expand: true,
           cwd: "scss/",
           src: ["*.scss"],
-          dest: "dist/ui/",
+          dest: "dist/css/",
           ext: ".css"
         }]
       },
@@ -56,7 +56,7 @@ module.exports = function(grunt) {
           expand: true,
           cwd: "scss/",
           src: ["*.scss"],
-          dest: "dist/ui/",
+          dest: "dist/css/",
           ext: ".css"
         }]
       },
