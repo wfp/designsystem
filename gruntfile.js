@@ -116,7 +116,6 @@ module.exports = function(grunt) {
           colors: {
             white: "#ffffff"
           },
-          previewTemplate:
         }
       },
       thematic: {
@@ -170,11 +169,11 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks("grunt-sass-lint");
 
   // Build WFP UI Docs
-  grunt.registerTask("docs-build", ["sass:docs",  "sasslint", "postcss:docs","jekyll:dev"]);
-  grunt.registerTask("docs-dist", ["sass:docsDist",  "sasslint", "postcss:docsDist", "jekyll:dist"]);
+  grunt.registerTask("docs-build", ["sasslint", "sass:docs", "postcss:docs", "grunticon", "jekyll:dev"]);
+  grunt.registerTask("docs-dist", ["sasslint", "sass:docsDist", "postcss:docsDist", "grunticon", "jekyll:dist"]);
   // Build WFP UI
-  grunt.registerTask("build", ["eslint", "sasslint", "sass:dev", "postcss:dev", "grunticon:ui", "grunticon:thematic"]);
+  grunt.registerTask("build", ["eslint", "sasslint", "sass:dev", "postcss:dev", "grunticon"]);
   // Build a dist-ready WFP UI
-  grunt.registerTask("dist", ["sass:dist", "postcss:dist", "grunticon:ui"]);
+  grunt.registerTask("dist", ["sass:dist", "postcss:dist", "grunticon"]);
   grunt.registerTask("default", ["dist"]);
 };
