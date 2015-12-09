@@ -104,6 +104,31 @@ module.exports = function(grunt) {
         src: 'docs/css/*.css'
       }
     },
+    grunticon: {
+      ui: {
+        files: [{
+          expand: true,
+          cwd: "icons/ui",
+          src: ["*.svg", "*.png"],
+          dest: "dist/assets/icons/ui"
+        }],
+        options: {
+          colors: {
+            white: "#ffffff"
+          },
+          previewTemplate:
+        }
+      },
+      thematic: {
+        files: [{
+          expand: true,
+          cwd: "icons/thematic",
+          src: ["*.svg", "*.png"],
+          dest: "dist/assets/icons/thematic"
+        }],
+        options: {}
+      }
+    },
     jekyll: {
       dev: {
         options: {
@@ -148,8 +173,8 @@ module.exports = function(grunt) {
   grunt.registerTask("docs-build", ["sass:docs",  "sasslint", "postcss:docs","jekyll:dev"]);
   grunt.registerTask("docs-dist", ["sass:docsDist",  "sasslint", "postcss:docsDist", "jekyll:dist"]);
   // Build WFP UI
-  grunt.registerTask("build", ["eslint", "sasslint", "sass:dev", "postcss:dev"]);
+  grunt.registerTask("build", ["eslint", "sasslint", "sass:dev", "postcss:dev", "grunticon:ui", "grunticon:thematic"]);
   // Build a dist-ready WFP UI
-  grunt.registerTask("dist", ["sass:dist", "postcss:dist"]);
+  grunt.registerTask("dist", ["sass:dist", "postcss:dist", "grunticon:ui"]);
   grunt.registerTask("default", ["dist"]);
 };
