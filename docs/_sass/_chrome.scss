@@ -6,27 +6,6 @@ pre > code {
   background-color: initial;
 }
 
-.sub-nav {
-  display: none;
-  position: absolute;
-  top: 64px;
-  left: 0;
-  box-shadow: rgba(0,0,0,0.3) 0 1px 6px;
-  @include media-query($md-screen) {
-    position: static;
-    display: block;
-    box-shadow: none;
-  }
-  .pure-menu {
-    width: initial;
-    ul {
-      li {
-        margin: 0;
-      }
-    }
-  }
-}
-
 
 .content-nav {
   width: 100%;
@@ -230,29 +209,24 @@ pre > code {
     margin: 0;
   }
   .desc {
-    border-top: 2px solid $grey-light;
     .desc-img {
       display: inline-block;
       padding: 1em;
+      vertical-align: top;
+      &.light {
+        background-color: $grey-lightest;
+      }
+      &.dark {
+        background-color: $grey-dark;
+      }
     }
     .desc-label {
       display: inline-block;
+      padding: 1rem;
       font-size: 0.875em;
+      line-height: 1.5;
       text-transform: lowercase;
-    }
-  }
-}
-
-.edit-menu {
-  .tabs {
-    border-radius: 2px;
-    background-color: $grey-light;
-    box-shadow: inset rgba(0,0,0,0.1) 0 1px 4px;
-
-    .active {
-      background-color: $white;
-      box-shadow: rgba(0,0,0,0.1) 0 1px 3px;
-      outline: none;
+      vertical-align: top;
     }
   }
 }
