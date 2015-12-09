@@ -113,8 +113,10 @@ module.exports = function(grunt) {
           dest: "dist/assets/icons/ui"
         }],
         options: {
+          dynamicColorOnly: true,
           colors: {
-            white: "#ffffff"
+            neg: "#ffffff",
+            pos: "#000000"
           },
         }
       },
