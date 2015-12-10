@@ -188,11 +188,11 @@ _Breadcrumbs_ are a special kind of _segmented control_ component; a simple and 
 </div>
 
 ### Pagination
-_Pagination_ is very useful pattern that allows users to browse through available content when it is grouped into manageble chunks: pages. You can use any size available for the buttons.
+_Pagination_ is very useful pattern that allows users to browse through available content when it is grouped into manageable chunks: pages. You can use any size available for the buttons.
 
 ###### Preview
 <div class="preview plain">
-  <div class="pagination">
+  <div class="wfp-pagination">
     <ol class="pagination--wrapper">
       <li class="pagination--item">
         <a href="#" class="pagination--btn">Previous</a>
@@ -215,7 +215,7 @@ _Pagination_ is very useful pattern that allows users to browse through availabl
 
 ###### Markup
 {% highlight html %}
-<div class="pagination">
+<div class="wfp-pagination">
   <ol class="pagination--wrapper">
     <li class="pagination--item">
       <a href="#" class="pagination--btn">Previous</a>
