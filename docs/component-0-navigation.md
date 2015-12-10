@@ -166,8 +166,8 @@ _Breadcrumbs_ are a special kind of _segmented control_ component; a simple and 
 
 ###### Preview
 <div class="preview plain">
-  <ul class="breadcrumbs">
-    <li class="breadcrumbs--item"><a href="#" class="breadcrumbs--link"><img src="{{site.baseurl}}/img/ui/svg/home.svg" width="16" height="16"></a></li>
+  <ul class="wfp-breadcrumbs">
+    <li class="breadcrumbs--item"><a href="#" class="breadcrumbs--link"><i class="icon-home-dark xsmall"></i></a></li>
     <li class="breadcrumbs--item"><a href="#" class="breadcrumbs--link">Our Work</a></li>
     <li class="breadcrumbs--item"><span class="breadcrumbs--last">Procurement</span></li>
   </ul>
@@ -175,8 +175,8 @@ _Breadcrumbs_ are a special kind of _segmented control_ component; a simple and 
 
 ###### Markup
 {% highlight html %}
-<ul class="breadcrumbs">
-  <li class="breadcrumbs--item"><a href="#" class="breadcrumbs--link"><img src="{{site.baseurl}}/img/ui/svg/home.svg" width="16" height="16"></a></li>
+<ul class="wfp-breadcrumbs">
+  <li class="breadcrumbs--item"><a href="#" class="breadcrumbs--link"></a></li>
   <li class="breadcrumbs--item"><a href="#" class="breadcrumbs--link">Our Work</a></li>
   <li class="breadcrumbs--item"><span class="breadcrumbs--last">Procurement</span></li>
 </ul>
