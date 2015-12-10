@@ -25,6 +25,7 @@ module.exports = function(grunt) {
         dest: 'scss/modules/_grid-units.scss',
         options: {
           units: [5,12,24],
+          includeOldIEWidths: false,
           mediaQueries: {
             sm: 'screen and (min-width: 36.5em)', //584px
             md: 'screen and (min-width: 48em)', //768px
