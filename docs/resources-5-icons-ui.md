@@ -112,7 +112,7 @@ By default, all UI icons are displayed in `24 x 24px` size. You can easily adjus
   <p>Need a User Interface icon not listed here? Send us a request via <a href="mailto:WFP.PUBLICATIONS@wfp.org?subject=UI%20icon%20request">wfp.publications@wfp.org</a>.</p>
 </div>
 
-<ul class="grid list-view icons" id="js-view">
+<ul class="grid list-view icons">
 {% directory path:img/icons/ui/png %}
   <li class="item unit-1-2">
     <div class="desc">
