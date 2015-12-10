@@ -122,36 +122,36 @@ This pattern is useful for when you need to display a set of controls with an in
 
 ###### Preview
 <div class="preview plain">
-  <ul class="segmented-control">
-    <li class="segmented-control--item">
-      <span class="segmented-control--link active">Home</span>
+  <ul class="wfp-seg-control">
+    <li class="seg-control--item">
+      <span class="seg-control--link active">Home</span>
     </li>
-    <li class="segmented-control--item">
-      <a class="segmented-control--link" href="#">Blog</a>
+    <li class="seg-control--item">
+      <a class="seg-control--link" href="#">Blog</a>
     </li>
-    <li class="segmented-control--item">
-      <a class="segmented-control--link" href="#">About us</a>
+    <li class="seg-control--item">
+      <a class="seg-control--link" href="#">About us</a>
     </li>
-    <li class="segmented-control--item">
-      <a class="segmented-control--link" href="#">Contact us</a>
+    <li class="seg-control--item">
+      <a class="seg-control--link" href="#">Contact us</a>
     </li>
   </ul>
 </div>
 
 ###### Markup
 {% highlight html %}
-<ul class="segmented-control">
-  <li class="segmented-control--item">
-    <a class="segmented-control--link" href="#">Home</a>
+<ul class="wfp-seg-control">
+  <li class="seg-control--item">
+    <a class="seg-control--link" href="#">Home</a>
   </li>
-  <li class="segmented-control--item">
-    <a class="segmented-control--link" href="#">Blog</a>
+  <li class="seg-control--item">
+    <a class="seg-control--link" href="#">Blog</a>
   </li>
-  <li class="segmented-control--item">
-    <a class="segmented-control--link" href="#">About us</a>
+  <li class="seg-control--item">
+    <a class="seg-control--link" href="#">About us</a>
   </li>
-  <li class="segmented-control--item">
-    <a class="segmented-control--link" href="#">Contact us</a>
+  <li class="seg-control--item">
+    <a class="seg-control--link" href="#">Contact us</a>
   </li>
 </ul>
 {% endhighlight %}
