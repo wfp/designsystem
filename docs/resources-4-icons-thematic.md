@@ -8,46 +8,44 @@ categories: Resources
 
 The _Office for the Coordination of Humanitarian Affairs_ (OCHA) has established icons to represent humanitarian assistance and to ensure consistency in use, these have been shared widely with UN agencies and NGOs. On this section we have listed those OCHA icons that WFP uses most frequently in addition to a few WFP-specific ones.
 
-Each icon is available in either a positive (transparent) or a negative (solid) background, to suit your needs. You can download the whole icon set in a PNG format or the EPS source file below:
+Each icon is available in either a positive (transparent) or a negative (solid) background, to suit your needs.
+
+### Usage
+First thing to do, is to load the icons to your web site or application, by referencing it in `<head>` section. There are three stylesheets to choose from, depending on what browsers you intend on supporting. Two primary files use `base64` encoded SVGs and PNGs, while the third file relies on old-school `background-image: url()` fallback to PNGs available from the filesystem.
+
+You can check [support for `base64`](http://caniuse.com/#feat=atob-btoa) and [SVG in CSS support](http://caniuse.com/#feat=svg-css) on [caniuse.com](caniuse.com).
+
+{% highlight html %}
+<!-- For modern browsers with SVG support -->
+<link rel="stylesheet" href="bower_components/wfp-ui/dist/assets/icons/thematic/thematic-icons.svg.css">
+<!-- For browsers without SVG support -->
+<link rel="stylesheet" href="bower_components/wfp-ui/dist/assets/icons/thematic/thematic-icons.png.css">
+<!-- IE8-9 Fallback -->
+<link rel="stylesheet" href="bower_components/wfp-ui/dist/assets/icons/thematic/thematic-icons.fallback.css">
+{% endhighlight %}
+
+Add thematic icons to your website using `<i>` element with a class `thematic-{icon-name}`, where `{icon-name}` means a corresponding name of an icon, listed in a preview below (or in the package).
+
+###### Example
+{% highlight html %}
+<i class="thematic-affected-population-pos"></i>
+<i class="thematic-affected-population-neg"></i>
+{% endhighlight %}
+
+###### Preview
+<i class="thematic-affected-population-pos"></i><i class="thematic-affected-population-neg"></i>
 
 <div class="notice">
   <p>Need a Thematic icon not listed here? Send us a request via <a href="mailto:WFP.PUBLICATIONS@wfp.org?subject=Thematic%20icon%20request">wfp.publications@wfp.org</a>.</p>
 </div>
 
-
-<div class="grid">
-  <div class="unit-3-4"></div>
-  <div class="unit-1-4 text-right">
-    <ul class="segmented-control" id="js-view-control">
-      <li class="segmented-control--item">
-        <a href="#" id="js-view-list" class="segmented-control--link active">List</a>
-      </li>
-      <li class="segmented-control--item">
-        <a href="#" id="js-view-grid" class="segmented-control--link">Grid</a>
-      </li>
-    </ul>
-  </div>
-</div>
-
-<ul class="grid list-view icons" id="js-view">
-{% directory path:img/ocha/svg %}
+<ul class="grid list-view icons">
+{% directory path:img/icons/thematic/png %}
   <li class="item unit-1-2">
     <div class="desc">
-      <div class="desc-img"><img src="{{ site.baseurl }}/img/ocha/svg/{{ file.name }}"></div>
+      <div class="desc-img light"><img src="{{ site.baseurl }}/img/icons/thematic/png/{{ file.name }}"></div>
       <div class="desc-label">{{ file.slug }}</div>
     </div>
   </li>
 {% enddirectory %}
 </ul>
-
-<div class="grid preview plain">
-  <div class="unit-1 unit-md-1-3">
-    <a class="pure-button" href="http://documents.wfp.org/stellent/groups/public/documents/communications/wfp263183.zip">PNG (ZIP, ~360 KB)</a>
-  </div>
-  <div class="unit-1 unit-md-1-3">
-    <a class="pure-button" href="http://documents.wfp.org/stellent/groups/public/documents/communications/wfp263185.zip">EPS (ZIP, ~1.5 MB)</a>
-  </div>
-  <div class="unit-1 unit-md-1-3">
-    <a class="pure-button" href="#">SVG (ZIP, ~200 KB)</a>
-  </div>
-</div>

@@ -1,0 +1,55 @@
+// Module: Icons
+// Project: WFPUI
+// Author: Matthew Morek (me@matthewmorek.com)
+// URL: http://matthewmorek.com
+
+@import "icons/_icons-light.scss";
+@import "icons/_icons-dark.scss";
+@import "icons/_icons-primary.scss";
+
+@mixin icon {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background-position: center;
+  vertical-align: middle;
+  margin-bottom: 0.25rem;
+  margin-right: 0.25rem;
+  &.xsmall {
+    width: 16px;
+    height: 16px;
+    background-size: 16px;
+  }
+  &.small {
+    width: 24px;
+    height: 24px;
+    background-size: 24px;
+  }
+  &.medium {
+    width: 32px;
+    height: 32px;
+    background-size: 32px;
+  }
+  &.large {
+    width: 48px;
+    height: 48px;
+    background-size: 48px;
+  }
+  &.xlarge {
+    width: 64px;
+    height: 64px;
+    background-size: 64px;
+  }
+}
+
+i[class*="icon-"] {
+  @include icon;
+  width: 24px;
+  height: 24px;
+}
+
+i[class*="thema-"] {
+  @include icon;
+  width: 64px;
+  height: 64px;
+}
