@@ -4,17 +4,21 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
     watch: {
       sass: {
-        files: "scss/**/*.scss",
-        tasks: ["build"]
+        files: 'scss/**/*.scss',
+        tasks: ['build']
       },
       eslint: {
-        files: "js/**/*.js",
-        tasks: ["eslint"]
+        files: 'js/**/*.js',
+        tasks: ['eslint']
       },
       jekyll: {
-        files: ["docs/**/*.*", "scss/**/**/*.scss"],
-        tasks: ["docs-build"]
+        files: ['docs/**/*.*', 'scss/**/**/*.scss'],
+        tasks: ['docs-build']
       }
+    },
+    clean: {
+      grunticon: ['dist/assets/icons/ui', 'dist/assets/icons/thematic'],
+      svg: ['icons/ui/dist']
     },
     pure_grids: {
       responsive: {
@@ -22,10 +26,10 @@ module.exports = function(grunt) {
         options: {
           units: [5,12,24],
           mediaQueries: {
-              sm: 'screen and (min-width: 36.5em)', //584px
-              md: 'screen and (min-width: 48em)', //768px
-              lg: 'screen and (min-width: 64em)', //1024px
-              xl: 'screen and (min-width: 75em)'  //1200px
+            sm: 'screen and (min-width: 36.5em)', //584px
+            md: 'screen and (min-width: 48em)', //768px
+            lg: 'screen and (min-width: 64em)', //1024px
+            xl: 'screen and (min-width: 75em)'  //1200px
           },
           selectorPrefix: '.unit-'
         }
@@ -33,7 +37,7 @@ module.exports = function(grunt) {
     },
     sass: {
       options: {
-        outputStyle: "expanded",
+        outputStyle: 'expanded',
         sourceMap: true,
         indentedSyntax: true,
         sassDir: 'scss',
@@ -42,10 +46,10 @@ module.exports = function(grunt) {
       dev: {
         files: [{
           expand: true,
-          cwd: "scss/",
-          src: ["*.scss"],
-          dest: "dist/css/",
-          ext: ".css"
+          cwd: 'scss/',
+          src: ['*.scss'],
+          dest: 'dist/css/',
+          ext: '.css'
         }]
       },
       dist: {
@@ -54,15 +58,15 @@ module.exports = function(grunt) {
         },
         files: [{
           expand: true,
-          cwd: "scss/",
-          src: ["*.scss"],
-          dest: "dist/css/",
-          ext: ".css"
+          cwd: 'scss/',
+          src: ['*.scss'],
+          dest: 'dist/css/',
+          ext: '.css'
         }]
       },
       docs: {
         files: {
-          "docs/css/main.css": "docs/_sass/main.scss"
+          'docs/css/main.css': 'docs/_sass/main.scss'
         }
       },
       docsDist: {
@@ -70,7 +74,7 @@ module.exports = function(grunt) {
           sourceMap: false
         },
         files: {
-          "docs/css/main.css": "docs/_sass/main.scss"
+          'docs/css/main.css': 'docs/_sass/main.scss'
         }
       }
     },
@@ -108,49 +112,119 @@ module.exports = function(grunt) {
       ui: {
         files: [{
           expand: true,
-          cwd: "icons/ui",
-          src: ["*.svg"],
-          dest: "dist/assets/icons/ui"
+          cwd: 'icons/ui/src',
+          src: ['*.svg'],
+          dest: 'dist/assets/icons/ui'
         }],
         options: {
           dynamicColorOnly: true,
           colors: {
-            neg: "#ffffff",
-            pos: "#000000"
+            light: '#ffffff',
+            dark: '#000000'
           },
-          datasvgcss: "ui-icons.svg.css",
-          datapngcss: "ui-icons.png.css",
-          urlpngcss: "ui-icons.fallback.css"
+          datasvgcss: 'ui-icons.svg.css',
+          datapngcss: 'ui-icons.png.css',
+          urlpngcss: 'ui-icons.fallback.css'
         }
       },
       thematic: {
         files: [{
           expand: true,
-          cwd: "icons/thematic",
-          src: ["*.svg"],
-          dest: "dist/assets/icons/thematic"
+          cwd: 'icons/thematic',
+          src: ['*.svg'],
+          dest: 'dist/assets/icons/thematic'
         }],
         options: {
-          datasvgcss: "thematic-icons.svg.css",
-          datapngcss: "thematic-icons.png.css",
-          urlpngcss: "thematic-icons.fallback.css",
-          cssprefix: "thema-"
+          datasvgcss: 'thematic-icons.svg.css',
+          datapngcss: 'thematic-icons.png.css',
+          urlpngcss: 'thematic-icons.fallback.css',
+          cssprefix: 'thema-'
         }
+      }
+    },
+    svgtoolkit: {
+      light: {
+        options: {
+          generatePNGs: false,
+          colorize: '#ffffff'
+        },
+        files: [{
+          expand: true,
+          cwd: 'icons/ui/src',
+          src: '*.svg',
+          dest: 'icons/ui/dist/light'
+        }]
+      },
+      dark: {
+        options: {
+          generatePNGs: false,
+          colorize: '#232323'
+        },
+        files: [{
+          expand: true,
+          cwd: 'icons/ui/src',
+          src: '*.svg',
+          dest: 'icons/ui/dist/dark'
+        }]
+      },
+      primary: {
+        options: {
+          generatePNGs: false,
+          colorize: '#2A93FC'
+        },
+        files: [{
+          expand: true,
+          cwd: 'icons/ui/src',
+          src: '*.svg',
+          dest: 'icons/ui/dist/primary'
+        }]
+      }
+    },
+    datauri: {
+      light: {
+        options: {
+          classPrefix: 'icon-light-',
+          usePlaceholder: true
+        },
+        files: [{
+          src: 'icons/ui/dist/light/**/*.svg',
+          dest: 'scss/modules/icons/_icons-light.scss'
+        }]
+      },
+      dark: {
+        options: {
+          classPrefix: 'icon-dark-',
+          usePlaceholder: true
+        },
+        files: [{
+          src: 'icons/ui/dist/dark/**/*.svg',
+          dest: 'scss/modules/icons/_icons-dark.scss'
+        }]
+      },
+      primary: {
+        options: {
+          classPrefix: 'icon-primary-',
+          usePlaceholder: true
+        },
+        files: [{
+          src: 'icons/ui/dist/primary/**/*.svg',
+          dest: 'scss/modules/icons/_icons-primary.scss'
+        }]
       }
     },
     jekyll: {
       dev: {
         options: {
-          src: "./docs",
+          src: './docs',
           config: './docs/_config-dev.yml',
-          dest: "./dist/docs"
+          dest: './dist/docs'
         }
       },
       dist: {
         options: {
-          src: "./docs",
+          src: './docs',
           config: './docs/_config.yml',
-          dest: "./dist/docs"
+          dest: './dist/docs'
         }
       }
     },
@@ -169,23 +243,29 @@ module.exports = function(grunt) {
       }
   });
 
-  grunt.loadNpmTasks("grunt-contrib-watch");
-  grunt.loadNpmTasks("grunt-grunticon");
-  grunt.loadNpmTasks("grunt-jekyll");
-  grunt.loadNpmTasks("grunt-postcss");
-  grunt.loadNpmTasks("grunt-sass");
-  grunt.loadNpmTasks("grunt-pure-grids");
-  grunt.loadNpmTasks("eslint-grunt");
-  grunt.loadNpmTasks("grunt-sass-lint");
+  grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-clean');
+  grunt.loadNpmTasks('grunt-grunticon');
+  grunt.loadNpmTasks('grunt-datauri');
+  grunt.loadNpmTasks('grunt-jekyll');
+  grunt.loadNpmTasks('grunt-postcss');
+  grunt.loadNpmTasks('grunt-sass');
+  grunt.loadNpmTasks('grunt-svg-toolkit');
+  grunt.loadNpmTasks('grunt-pure-grids');
+  grunt.loadNpmTasks('eslint-grunt');
 
+  // Build SVGs and SCSS
+  grunt.registerTask('gen-svg', ['clean:svg', 'svgtoolkit', 'datauri', 'clean:svg']);
+  // Build Grunticon Icons
+  grunt.registerTask('gen-icons', ['clean:grunticon', 'grunticon']);
   // Build WFP UI Docs
-  grunt.registerTask("docs-build", ["sasslint", "sass:docs", "postcss:docs", "grunticon", "jekyll:dev"]);
+  grunt.registerTask('docs-build', ['sasslint', 'sass:docs', 'postcss:docs', 'jekyll:dev']);
   // Build dist-ready WFP UI Docs
-  grunt.registerTask("docs-dist", ["sasslint", "sass:docsDist", "postcss:docsDist", "grunticon", "jekyll:dist"]);
+  grunt.registerTask('docs-dist', ['sasslint', 'sass:docsDist', 'postcss:docsDist', 'gen-icons', 'jekyll:dist']);
   // Build WFP UI
-  grunt.registerTask("build", ["eslint", "sasslint", "sass:dev", "postcss:dev", "grunticon"]);
+  grunt.registerTask('build', ['eslint', 'gen-svg', 'sasslint', 'sass:dev', 'postcss:dev']);
   // Build a dist-ready WFP UI
-  grunt.registerTask("dist", ["sass:dist", "postcss:dist", "grunticon"]);
+  grunt.registerTask('dist', ['gen-svg', 'gen-icons', 'sass:dist', 'postcss:dist']);
   // Set default grunt task to `dist`
-  grunt.registerTask("default", ["dist"]);
+  grunt.registerTask('default', ['dist']);
 };
