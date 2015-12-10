@@ -14,32 +14,32 @@ This menu is very versatile and can use groups. You can use this menu to create 
 
 <div class="notice">
   <h6 class="title">Notice</h6>
-  <p>This menu can be displayed without surrounding borders by using <code>menu-plain</code> class, instead of <code>menu</code>.</p>
+  <p>This menu can be displayed without surrounding borders by using <code>wfp-menu-plain</code> class, instead of <code>wfp-menu</code>.</p>
 </div>
 
 ###### Preview
-<nav class="menu">
+<nav class="wfp-menu">
   <div class="menu--group">
     <h6 class="menu--heading">About</h6>
     <ul class="menu--wrapper">
-      <li class="menu--item"><a href="#">Executive Director</a></li>
-      <li class="menu--item"><a href="#">Senior Leadership</a></li>
-      <li class="menu--item"><a href="#">Corporate Information</a></li>
-      <li class="menu--item"><a href="#">Funding</a></li>
+      <li class="menu--item"><a href="#" class="menu--link">Executive Director</a></li>
+      <li class="menu--item"><a href="#" class="menu--link">Senior Leadership</a></li>
+      <li class="menu--item"><a href="#" class="menu--link">Corporate Information</a></li>
+      <li class="menu--item"><a href="#" class="menu--link">Funding</a></li>
     </ul>
   </div>
 </nav>
 
 ###### Markup
 {% highlight html %}
-<nav class="menu">
+<nav class="wfp-menu">
   <div class="menu--group">
     <h6 class="menu--heading">About</h6>
     <ul class="menu--wrapper">
-      <li class="menu--item"><a href="#">Executive Director</a></li>
-      <li class="menu--item"><a href="#">Senior Leadership</a></li>
-      <li class="menu--item"><a href="#">Corporate Information</a></li>
-      <li class="menu--item"><a href="#">Funding</a></li>
+      <li class="menu--item"><a href="#" class="menu--link">Executive Director</a></li>
+      <li class="menu--item"><a href="#" class="menu--link">Senior Leadership</a></li>
+      <li class="menu--item"><a href="#" class="menu--link">Corporate Information</a></li>
+      <li class="menu--item"><a href="#" class="menu--link">Funding</a></li>
     </ul>
   </div>
 </nav>
@@ -50,43 +50,43 @@ The same menu as in previous example, but used together with grids, to create mo
 
 <div class="notice">
   <h6 class="title">Notice</h6>
-  <p>This menu can be displayed without surrounding borders by using <code>menu-plain</code> class, instead of <code>menu</code>.</p>
+  <p>This menu can be displayed without surrounding borders by using <code>wfp-menu-plain</code> class, instead of <code>wfp-menu</code>.</p>
 </div>
 
 ###### Preview
-<nav class="menu grid">
+<nav class="wfp-menu grid">
   <div class="menu--group unit-1 unit-md-1-3">
     <h6 class="menu--heading">Our Programmes</h6>
     <ul class="menu--wrapper">
-      <li class="menu--item"><a href="#">Cash and Vouchers</a></li>
-      <li class="menu--item"><a href="#">Foods for Assets</a></li>
-      <li class="menu--item"><a href="#">HIV / AIDS</a></li>
-      <li class="menu--item"><a href="#">Purchase for Progress</a></li>
+      <li class="menu--item"><a href="#" class="menu--link">Cash and Vouchers</a></li>
+      <li class="menu--item"><a href="#" class="menu--link">Foods for Assets</a></li>
+      <li class="menu--item"><a href="#" class="menu--link">HIV / AIDS</a></li>
+      <li class="menu--item"><a href="#" class="menu--link">Purchase for Progress</a></li>
     </ul>
   </div>
   <div class="menu--group unit-1 unit-md-1-3">
     <h6 class="menu--heading">Our Expertise</h6>
     <ul class="menu--wrapper">
-      <li class="menu--item"><a href="#">Preparedness: Being Ready</a></li>
-      <li class="menu--item"><a href="#">Responding to Emergencies</a></li>
-      <li class="menu--item"><a href="#">Food Security Analysis</a></li>
-      <li class="menu--item"><a href="#">Buying the Food</a></li>
+      <li class="menu--item"><a href="#" class="menu--link">Preparedness: Being Ready</a></li>
+      <li class="menu--item"><a href="#" class="menu--link">Responding to Emergencies</a></li>
+      <li class="menu--item"><a href="#" class="menu--link">Food Security Analysis</a></li>
+      <li class="menu--item"><a href="#" class="menu--link">Buying the Food</a></li>
     </ul>
   </div>
   <div class="menu--group unit-1 unit-md-1-3">
     <h6 class="menu--heading">Our Operations</h6>
     <ul class="menu--wrapper">
-      <li class="menu--item"><a href="#">Current Emergencies</a></li>
-      <li class="menu--item"><a href="#">Emergency Operations</a></li>
-      <li class="menu--item"><a href="#">Relief & Recovery Operations</a></li>
-      <li class="menu--item"><a href="#">Special Operations</a></li>
+      <li class="menu--item"><a href="#" class="menu--link">Current Emergencies</a></li>
+      <li class="menu--item"><a href="#" class="menu--link">Emergency Operations</a></li>
+      <li class="menu--item"><a href="#" class="menu--link">Relief & Recovery Operations</a></li>
+      <li class="menu--item"><a href="#" class="menu--link">Special Operations</a></li>
     </ul>
   </div>
 </nav>
 
 ###### Markup
 {% highlight html %}
-<nav class="menu grid">
+<nav class="wfp-menu grid">
   <div class="menu--group unit-1 unit-md-1-3">
     <h6 class="menu--heading">Our Programmes</h6>
     <ul class="menu--wrapper">

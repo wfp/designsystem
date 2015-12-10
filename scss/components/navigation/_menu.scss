@@ -87,7 +87,7 @@
   }
 }
 
-.menu {
+.wfp-menu {
   @include menu;
   border-left: 1px solid $grey-lighter;
   border-right: 1px solid $grey-lighter;
@@ -97,16 +97,16 @@
     border-top: 1px solid $grey-lighter;
   }
 }
-.menu-plain {
+.wfp-menu-plain {
   @include menu;
   margin: 1rem 0;
 }
-.menu-flat {
+.wfp-menu-flat {
   @include menu-flat;
 }
 
 // Inversed menu for dark backgrounds
-.menu-inverse {
+.wfp-menu-inverse {
   @include menu;
   .menu--heading {
     @extend %all-caps;
