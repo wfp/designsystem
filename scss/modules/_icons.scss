@@ -3,6 +3,10 @@
 // Author: Matthew Morek (me@matthewmorek.com)
 // URL: http://matthewmorek.com
 
+@import "icons/_icons-light.scss";
+@import "icons/_icons-dark.scss";
+@import "icons/_icons-primary.scss";
+
 i[class*="icon-"] {
   display: inline-block;
   width: 24px;

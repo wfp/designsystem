@@ -12,7 +12,7 @@
 @import "../_components/bootstrap-sass/assets/stylesheets/bootstrap/mixins";
 @import "init";
 @import "modules/mixins";
-@import "modules/icons";
+@import "modules/icons/icons-dark";
 
 //
 // Base styles
@@ -144,7 +144,7 @@ textarea {
 
 select.form-control {
   @extend %input;
-  @extend %data-arrow-drop-down;
+  @extend %icon-dark-arrow-drop-down;
   background-position: right center;
   background-repeat: no-repeat;
 }
@@ -335,7 +335,7 @@ a.btn-info {
   margin-left: -2em;
   margin-right: 0.5em;
   position: relative;
-  @extend %data-check-box-outline-blank;
+  @extend %icon-dark-checkbox-unchecked;
   background-position: center;
 
   &:checked {
@@ -345,7 +345,7 @@ a.btn-info {
       width: 20px;
       height: 20px;
       content: " ";
-      @extend %data-check-box;
+      @extend %icon-dark-checkbox-checked;
       background-position: center;
     }
   }

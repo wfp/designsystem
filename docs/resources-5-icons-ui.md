@@ -29,7 +29,7 @@ You can check [support for `base64`](http://caniuse.com/#feat=atob-btoa) and [SV
 Add UI icons to your interfaces using `<i>` element with a class `icon-{icon-name}`, where `{icon-name}` means a corresponding name of the icon listed in a preview below (or in the package).
 
 {% highlight html %}
-<i class="icon-account-circle-pos"></i>
+<i class="icon-account-circle-dark"></i>
 {% endhighlight %}
 
 UI icons can be used alongside other UI elements; within menus, buttons, etc. Here's an example of bundling UI icons with menus.
@@ -39,13 +39,13 @@ UI icons can be used alongside other UI elements; within menus, buttons, etc. He
   <h6 class="menu--heading">Navigation</h6>
   <ul class="menu--wrapper">
     <li class="menu--item">
-      <a href="#" class="menu--link"><i class="icon-email-pos"></i> Inbox</a>
+      <a href="#" class="menu--link"><i class="icon-email-dark"></i> Inbox</a>
     </li>
     <li class="menu--item">
-      <a href="#" class="menu--link"><i class="icon-account-circle-pos"></i> Account</a>
+      <a href="#" class="menu--link"><i class="icon-account-circle-dark"></i> Account</a>
     </li>
     <li class="menu--item">
-      <a href="#" class="menu--link"><i class="icon-exit-to-app-pos"></i> Sign Out</a>
+      <a href="#" class="menu--link"><i class="icon-exit-to-app-dark"></i> Sign Out</a>
     </li>
   </ul>
 </nav>
@@ -55,13 +55,13 @@ UI icons can be used alongside other UI elements; within menus, buttons, etc. He
   <h6 class="menu--heading">Navigation</h6>
   <ul class="menu--wrapper">
     <li class="menu--item">
-      <a href="#" class="menu--link"><i class="icon-email-pos"></i> Inbox</a>
+      <a href="#" class="menu--link"><i class="icon-email-dark"></i> Inbox</a>
     </li>
     <li class="menu--item">
-      <a href="#" class="menu--link"><i class="icon-account-circle-pos"></i> Account</a>
+      <a href="#" class="menu--link"><i class="icon-account-circle-dark"></i> Account</a>
     </li>
     <li class="menu--item">
-      <a href="#" class="menu--link"><i class="icon-exit-to-app-pos"></i> Sign Out</a>
+      <a href="#" class="menu--link"><i class="icon-exit-to-app-dark"></i> Sign Out</a>
     </li>
   </ul>
 </nav>
@@ -78,27 +78,27 @@ By default, all UI icons are displayed in `24 x 24px` size. You can easily adjus
   </thead>
   <tbody>
     <tr>
-      <td><i class="icon-account-circle-pos xsmall"></i></td>
+      <td><i class="icon-account-circle-dark xsmall"></i></td>
       <td>16px</td>
       <td><code>xsmall</code></td>
     </tr>
     <tr>
-      <td><i class="icon-account-circle-pos small"></i></td>
+      <td><i class="icon-account-circle-dark small"></i></td>
       <td><strong>24px (default)</strong></td>
       <td><code>small</code></td>
     </tr>
     <tr>
-      <td><i class="icon-account-circle-pos medium"></i></td>
+      <td><i class="icon-account-circle-dark medium"></i></td>
       <td>32px</td>
       <td><code>medium</code></td>
     </tr>
     <tr>
-      <td><i class="icon-account-circle-pos large"></i></td>
+      <td><i class="icon-account-circle-dark large"></i></td>
       <td>48px</td>
       <td><code>large</code></td>
     </tr>
     <tr>
-      <td><i class="icon-account-circle-pos xlarge"></i></td>
+      <td><i class="icon-account-circle-dark xlarge"></i></td>
       <td>64px</td>
       <td><code>xlarge</code></td>
     </tr>
@@ -116,7 +116,7 @@ By default, all UI icons are displayed in `24 x 24px` size. You can easily adjus
 {% directory path:img/icons/ui/png %}
   <li class="item unit-1-2">
     <div class="desc">
-      <div class="desc-img {% cycle 'dark', 'light' %}"><img src="{{ site.baseurl }}/img/icons/ui/png/{{ file.name }}"></div>
+      <div class="desc-img {% cycle 'light', 'dark' %}"><img src="{{ site.baseurl }}/img/icons/ui/png/{{ file.name }}"></div>
       <div class="desc-label">{{ file.slug }}</div>
     </div>
   </li>
