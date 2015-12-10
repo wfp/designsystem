@@ -240,8 +240,8 @@ module.exports = function(grunt) {
       options: {
         config: '.sass-lint.yml',
       },
-      target: ['scss/**/*.scss'] 
-      }
+      target: ['scss/**/*.scss']
+    }
   });
 
   grunt.loadNpmTasks('grunt-contrib-watch');
@@ -251,6 +251,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-jekyll');
   grunt.loadNpmTasks('grunt-postcss');
   grunt.loadNpmTasks('grunt-sass');
+  grunt.loadNpmTasks('grunt-sass-lint');
   grunt.loadNpmTasks('grunt-svg-toolkit');
   grunt.loadNpmTasks('grunt-pure-grids');
   grunt.loadNpmTasks('eslint-grunt');
@@ -260,7 +261,7 @@ module.exports = function(grunt) {
   // Build Grunticon Icons
   grunt.registerTask('gen-icons', ['clean:grunticon', 'grunticon']);
   // Build WFP UI Docs
-  grunt.registerTask('docs-build', ['sasslint', 'sass:docs', 'postcss:docs', 'jekyll:dev']);
+  grunt.registerTask('docs-build', ['sasslint', 'sass:docs', 'postcss:docs', 'gen-icons', 'jekyll:dev']);
   // Build dist-ready WFP UI Docs
   grunt.registerTask('docs-dist', ['sasslint', 'sass:docsDist', 'postcss:docsDist', 'gen-icons', 'jekyll:dist']);
   // Build WFP UI
