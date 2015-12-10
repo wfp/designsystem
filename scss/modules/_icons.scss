@@ -7,7 +7,7 @@
 @import "icons/_icons-dark.scss";
 @import "icons/_icons-primary.scss";
 
-i[class*="icon-"] {
+@mixin icon {
   display: inline-block;
   width: 24px;
   height: 24px;
@@ -40,4 +40,16 @@ i[class*="icon-"] {
     height: 64px;
     background-size: 64px;
   }
+}
+
+i[class*="icon-"] {
+  @include icon;
+  width: 24px;
+  height: 24px;
+}
+
+i[class*="thema-"] {
+  @include icon;
+  width: 64px;
+  height: 64px;
 }
