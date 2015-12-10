@@ -126,7 +126,13 @@ module.exports = function(grunt) {
         force: true
       },
       all: ['js/**/*.js']
-    }
+    },
+    sasslint: {
+      options: {
+        config: '.sass-lint.yml',
+      },
+      target: ['scss/**/*.scss'] 
+      }
   });
 
   grunt.loadNpmTasks("grunt-contrib-watch");
@@ -135,12 +141,13 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks("grunt-sass");
   grunt.loadNpmTasks("grunt-pure-grids");
   grunt.loadNpmTasks("eslint-grunt");
+  grunt.loadNpmTasks("grunt-sass-lint");
 
   // Build WFP UI Docs
-  grunt.registerTask("docs-build", ["sass:docs", "postcss:docs", "jekyll:dev"]);
-  grunt.registerTask("docs-dist", ["sass:docsDist", "postcss:docsDist", "jekyll:dist"]);
+  grunt.registerTask("docs-build", ["sass:docs",  "sasslint", "postcss:docs","jekyll:dev"]);
+  grunt.registerTask("docs-dist", ["sass:docsDist",  "sasslint", "postcss:docsDist", "jekyll:dist"]);
   // Build WFP UI
-  grunt.registerTask("build", ["eslint", "sass:dev", "postcss:dev"]);
+  grunt.registerTask("build", ["eslint", "sasslint", "sass:dev", "postcss:dev"]);
   // Build a dist-ready WFP UI
   grunt.registerTask("dist", ["sass:dist", "postcss:dist"]);
   grunt.registerTask("default", ["dist"]);
