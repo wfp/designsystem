@@ -139,7 +139,7 @@ module.exports = function(grunt) {
           datasvgcss: 'thematic-icons.svg.css',
           datapngcss: 'thematic-icons.png.css',
           urlpngcss: 'thematic-icons.fallback.css',
-          cssprefix: '.thema-'
+          cssprefix: '.thematic-'
         }
       }
     },
