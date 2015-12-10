@@ -109,7 +109,7 @@ module.exports = function(grunt) {
         files: [{
           expand: true,
           cwd: "icons/ui",
-          src: ["*.svg", "*.png"],
+          src: ["*.svg"],
           dest: "dist/assets/icons/ui"
         }],
         options: {
@@ -127,7 +127,7 @@ module.exports = function(grunt) {
         files: [{
           expand: true,
           cwd: "icons/thematic",
-          src: ["*.svg", "*.png"],
+          src: ["*.svg"],
           dest: "dist/assets/icons/thematic"
         }],
         options: {
