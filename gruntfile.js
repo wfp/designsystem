@@ -32,7 +32,7 @@ module.exports = function(grunt) {
             lg: 'screen and (min-width: 64em)', //1024px
             xl: 'screen and (min-width: 75em)'  //1200px
           },
-          selectorPrefix: '.unit-'
+          selectorPrefix: '.wfp-u-'
         }
       }
     },

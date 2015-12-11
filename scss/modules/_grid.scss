@@ -24,7 +24,7 @@
   align-content: flex-start;
 }
 
-.opera-only :-o-prefocus, .grid {
+.opera-only :-o-prefocus, .wfp-grid {
   word-spacing: -0.43em;
 }
 
@@ -37,13 +37,13 @@
   text-rendering: auto;
 }
 
-.grid {
+.wfp-grid {
   @include grid;
-  & [class *= "unit"] {
-    font-family: sans-serif;
+  & [class *= "wfp-u-"] {
+    font-family: $sans-serif-stack;
   }
 }
 
-[class *= "unit"] {
+[class *= "wfp-u-"] {
   @include grid--unit;
 }
