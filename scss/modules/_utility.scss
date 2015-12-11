@@ -6,33 +6,40 @@
 // -----------------------------------------------------------------------------
 // Text manipulation
 // -----------------------------------------------------------------------------
-%text-left,
-.text-left {
+%text-left {
   text-align: left;
 }
-%text-center,
-.text-center {
+%text-center {
   text-align: center;
 }
-%text-right,
-.text-right {
+%text-right {
   text-align: right;
 }
 
 // Transformations
-%caps,
-.caps {
+%caps {
   text-transform: capitalize;
 }
-%all-caps,
-.all-caps {
+%allcaps {
   text-transform: uppercase;
 }
 
-%no-list {
+// -----------------------------------------------------------------------------
+// Reset Lists
+// -----------------------------------------------------------------------------
+%nolist {
   list-style: none;
   padding: 0;
   margin: 0;
+}
+
+// -----------------------------------------------------------------------------
+// Utility Band (for breadcrumbs, etc.)
+// -----------------------------------------------------------------------------
+%band {
+  background: $white;
+  border-bottom: 1px solid $grey-contrast;
+  box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.10);
 }
 
 // -----------------------------------------------------------------------------
@@ -45,4 +52,29 @@
     display: table;
     clear: both;
   }
+}
+
+// -----------------------------------------------------------------------------
+// CSS Declarations
+// -----------------------------------------------------------------------------
+.wfp-text-left {
+  @extend text-left;
+}
+.wfp-text-right {
+  @extend text-right;
+}
+.wfp-text-center {
+  @extend text-center;
+}
+.wfp-caps {
+  @extend %caps;
+}
+.wfp-allcaps {
+  @extend %allcaps;
+}
+.wfp-nolist {
+  @extend %nolist;
+}
+.wfp-band {
+  @extend %band;
 }
