@@ -22,7 +22,6 @@
         "no-multi-str": [
             2
         ]
-
     },
     "env": {
         "es6": true,
@@ -31,5 +30,5 @@
     "globals": {
         "$": true
     },
-    "extends": "eslint:recommended"
+    "extends": "node-style-guide"
 }
