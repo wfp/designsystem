@@ -7,7 +7,7 @@
 // -----------------------------------------------------------------------------
 // Add spacing to the body tag, to compensate for a fixed masthead
 // -----------------------------------------------------------------------------
-.masthead-spacer--narrow {
+.wfp-masthead-spacer--narrow {
   overflow: auto;
   padding-top: 4rem;
 }
@@ -69,7 +69,7 @@
   }
 }
 
-.masthead-internal {
+.wfp-masthead-internal {
   @extend %masthead;
   width: 100%;
   &.fixed {
@@ -156,7 +156,14 @@
       position: static;
       width: auto;
       .menu--link {
-        padding: 0;
+        padding: 0.25rem 0;
+        &:active,
+        &.active {
+          border-bottom: 1px solid $orange;
+        }
+        &:hover {
+          border-bottom: 1px solid $white;
+        }
       }
     }
   }
@@ -165,52 +172,42 @@
 // -----------------------------------------------------------------------------
 // Masthead: Full
 // -----------------------------------------------------------------------------
-.masthead-full {
-  @extend %masthead;
-  box-shadow: none;
-  .wrapper {
-    padding: 0;
-    @include media-query($md-screen) {
-      padding: 0 1em;
-    }
-  }
-  .wfp-logo {
-    margin: 0.25em;
-    display: inline-block;
-    a.wfp-logo-wrapper {
-      display: inline-block;
-      max-width: 100%;
-      width: auto;
-      margin: 0;
-      border: none;
-      color: #fff;
-      text-decoration: none;
-      font-size: $base-font-size;
-      .logo-img {
-        max-width: 256px;
-      }
-    }
-  }
-  .sub-logo {
-    padding: 0;
-    margin: -1em 0;
-    .heading {
-      background-color: $accent;
-      box-shadow: rgba(0,0,0,0.2) 0 2px 0;
-      margin: 0;
-      padding: 1.5em 1em;
-      display: inline-block;
-      color: #fff;
-    }
-  }
-}
-
-
-// -----------------------------------------------------------------------------
-// Utility Band (for pagination, etc.)
-// -----------------------------------------------------------------------------
-.band {
-  background: $white;
-  border-bottom: 1px solid $grey-contrast;
-  box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.10);
-}
+// .masthead-full {
+//   @extend %masthead;
+//   box-shadow: none;
+//   .wrapper {
+//     padding: 0;
+//     @include media-query($md-screen) {
+//       padding: 0 1em;
+//     }
+//   }
+//   .wfp-logo {
+//     margin: 0.25em;
+//     display: inline-block;
+//     a.wfp-logo-wrapper {
+//       display: inline-block;
+//       max-width: 100%;
+//       width: auto;
+//       margin: 0;
+//       border: none;
+//       color: #fff;
+//       text-decoration: none;
+//       font-size: $base-font-size;
+//       .logo-img {
+//         max-width: 256px;
+//       }
+//     }
+//   }
+//   .sub-logo {
+//     padding: 0;
+//     margin: -1em 0;
+//     .heading {
+//       background-color: $accent;
+//       box-shadow: rgba(0,0,0,0.2) 0 2px 0;
+//       margin: 0;
+//       padding: 1.5em 1em;
+//       display: inline-block;
+//       color: #fff;
+//     }
+//   }
+// }

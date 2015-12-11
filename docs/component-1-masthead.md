@@ -76,7 +76,7 @@ It has been designed specifically for use with Intranet sites and apps, which do
 Internal masthead features a simple navigation, which works on both smaller and bigger screens. To implement it correctly, use the examples below.
 
 ###### Preview
-<header class="masthead-internal">
+<header class="wfp-masthead-internal">
   <div class="grid wrapper">
     <div class="unit-3-5 unit-md-1-3 masthead--container">
       <h1 class="masthead--title">
@@ -98,7 +98,7 @@ Internal masthead features a simple navigation, which works on both smaller and 
 
 ###### Markup
 {% highlight html %}
-<header class="masthead-internal">
+<header class="wfp-masthead-internal">
   <div class="grid wrapper">
     <div class="unit-3-5 unit-md-1-3 masthead--container">
       <h1 class="masthead--title">
