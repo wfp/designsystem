@@ -55,6 +55,39 @@
 }
 
 // -----------------------------------------------------------------------------
+// Wrappers
+// -----------------------------------------------------------------------------
+%wrapper {
+  margin: 0 auto;
+  max-width: $content-width;
+  padding: 1em;
+  @include media-query($content-width){
+    padding: 1em 0;
+  }
+}
+
+.wfp-wrapper {
+  @extend %wrapper;
+}
+
+.wfp-wrapper-tight {
+  @extend %wrapper;
+  padding: 0 1em;
+  @include media-query($content-width){
+    padding: 0;
+  }
+}
+
+@include media-query($md-screen) {
+  .wfp-box {
+    padding: 1rem;
+  }
+  .wfp-box--flat {
+    padding: 0 1rem;
+  }
+}
+
+// -----------------------------------------------------------------------------
 // CSS Declarations
 // -----------------------------------------------------------------------------
 .wfp-text-left {
