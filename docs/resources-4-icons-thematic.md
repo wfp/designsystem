@@ -39,9 +39,9 @@ Add thematic icons to your website using `<i>` element with a class `thematic-{i
   <p>Need a Thematic icon not listed here? Send us a request via <a href="mailto:WFP.PUBLICATIONS@wfp.org?subject=Thematic%20icon%20request">wfp.publications@wfp.org</a>.</p>
 </div>
 
-<ul class="grid list-view icons">
+<ul class="wfp-grid list-view icons">
 {% directory path:img/icons/thematic/png %}
-  <li class="item unit-1-2">
+  <li class="item wfp-u-1-2">
     <div class="desc">
       <div class="desc-img light"><img src="{{ site.baseurl }}/img/icons/thematic/png/{{ file.name }}"></div>
       <div class="desc-label">{{ file.slug }}</div>

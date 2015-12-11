@@ -77,13 +77,13 @@ Internal masthead features a simple navigation, which works on both smaller and 
 
 ###### Preview
 <header class="wfp-masthead-internal">
-  <div class="grid wrapper">
-    <div class="unit-3-5 unit-md-1-3 masthead--container">
+  <div class="wfp-grid wfp-wrapper">
+    <div class="wfp-u-3-5 wfp-u-md-1-3 masthead--container">
       <h1 class="masthead--title">
         <a href="#" class="masthead--logo">Site Title</a>
       </h1>
     </div>
-    <div class="unit-2-5 unit-md-2-3 masthead--nav">
+    <div class="wfp-u-2-5 wfp-u-md-2-3 masthead--nav">
       <button class="masthead--toggle pure-button small" id="js-example-menu-trigger">Menu</button>
       <nav class="masthead--menu" id="js-example-menu">
         <ul class="menu--group">
@@ -99,13 +99,13 @@ Internal masthead features a simple navigation, which works on both smaller and 
 ###### Markup
 {% highlight html %}
 <header class="wfp-masthead-internal">
-  <div class="grid wrapper">
-    <div class="unit-3-5 unit-md-1-3 masthead--container">
+  <div class="wfp-grid wfp-wrapper">
+    <div class="wfp-u-3-5 wfp-u-md-1-3 masthead--container">
       <h1 class="masthead--title">
         <a href="#" class="masthead--logo">Site Title</a>
       </h1>
     </div>
-    <div class="unit-2-5 unit-md-2-3 masthead--nav">
+    <div class="wfp-u-2-5 wfp-u-md-2-3 masthead--nav">
       <button class="masthead--toggle pure-button small" id="js-nav-trigger">Menu</button>
       <nav class="masthead--menu" id="js-nav">
         <ul class="menu--group">

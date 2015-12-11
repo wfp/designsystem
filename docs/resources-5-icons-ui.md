@@ -35,7 +35,7 @@ Add UI icons to your interfaces using `<i>` element with a class `icon-{icon-nam
 UI icons can be used alongside other UI elements; within menus, buttons, etc. Here's an example of bundling UI icons with menus.
 
 ###### Preview
-<nav class="menu">
+<nav class="wfp-menu">
   <h6 class="menu--heading">Navigation</h6>
   <ul class="menu--wrapper">
     <li class="menu--item">
@@ -51,7 +51,7 @@ UI icons can be used alongside other UI elements; within menus, buttons, etc. He
 </nav>
 
 {% highlight html %}
-<nav class="menu">
+<nav class="wfp-menu">
   <h6 class="menu--heading">Navigation</h6>
   <ul class="menu--wrapper">
     <li class="menu--item">
@@ -112,9 +112,9 @@ By default, all UI icons are displayed in `24 x 24px` size. You can easily adjus
   <p>Need a User Interface icon not listed here? Send us a request via <a href="mailto:WFP.PUBLICATIONS@wfp.org?subject=UI%20icon%20request">wfp.publications@wfp.org</a>.</p>
 </div>
 
-<ul class="grid list-view icons">
+<ul class="wfp-grid list-view icons">
 {% directory path:img/icons/ui/png %}
-  <li class="item unit-1-2">
+  <li class="item wfp-u-1-2">
     <div class="desc">
       <div class="desc-img {% cycle 'light', 'dark' %}"><img src="{{ site.baseurl }}/img/icons/ui/png/{{ file.name }}"></div>
       <div class="desc-label">{{ file.slug }}</div>
