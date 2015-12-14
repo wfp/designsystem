@@ -4,7 +4,7 @@ email: "me@matthewmorek.com"
 description: ""
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site
-version: "v0.4.0"
+version: "v0.5.0"
 quiet: false
 
 exclude: ["*.sublime-*", "*.yml", "*.DS_*", "_scss"]
