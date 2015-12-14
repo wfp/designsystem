@@ -28,7 +28,7 @@
 
 %pagination--btn {
   display: block;
-  padding: 0.125rem 0.75rem;
+  padding: 0.35rem 0.75rem;
   width: auto;
   border: none;
   color: $primary;
@@ -44,7 +44,7 @@
   }
 }
 
-.pagination {
+.wfp-pagination {
   @extend %pagination;
   .pagination--wrapper {
     @extend %pagination--wrapper;

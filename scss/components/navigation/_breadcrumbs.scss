@@ -3,43 +3,43 @@
 // Author: Matthew Morek (me@matthewmorek.com)
 // URL: http://matthewmorek.com
 
-.breadcrumbs {
-  @extend %segmented-control;
+.wfp-breadcrumbs {
+  @extend %seg-control;
   .breadcrumbs--item {
-    @extend %segmented-control--item;
-    border-color: $grey-1;
+    @extend %seg-control--item;
+    border-color: $grey-lighter;
     &:first-child {
-      border-color: $grey-1;
+      border-color: $grey-lighter;
     }
   }
   .breadcrumbs--link {
-    @extend %segmented-control--link;
+    @extend %seg-control--link;
     color: $primary;
   }
   .breadcrumbs--last {
-    @extend %segmented-control--link;
-    color: $grey-2;
+    @extend %seg-control--link;
+    color: $grey-light;
     cursor: default;
     &:hover {
-      color: $grey-2;
+      color: $grey-light;
     }
   }
 }
 
 // Specificity Wars II™: The Dark Side of the Breadcrumb
-.breadcrumbs-inverse {
-  @extend %segmented-control;
+.wfp-breadcrumbs-inverse {
+  @extend %seg-control;
   .breadcrumbs--item {
-    @extend %segmented-control--item;
+    @extend %seg-control--item;
     border-color: $grey;
-    background-color: $grey-4;
+    background-color: $grey-dark;
     color: $grey-contrast;
     &:first-child {
       border-color: $grey;
     }
   }
   .breadcrumbs--link {
-    @extend %segmented-control--link;
+    @extend %seg-control--link;
     color: $grey-contrast;
     &:hover,
     &:active {
@@ -47,11 +47,11 @@
     }
   }
   .breadcrumbs--last {
-    @extend %segmented-control--link;
-    color: $grey-1;
+    @extend %seg-control--link;
+    color: $grey-lighter;
     cursor: default;
     &:hover {
-      color: $grey-1;
+      color: $grey-lighter;
     }
   }
 }

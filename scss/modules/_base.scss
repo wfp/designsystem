@@ -1,0 +1,255 @@
+// Module: Base
+// Project: WFP UI
+// Author: Matthew Morek (me@matthewmorek.com)
+// URL: http://matthewmorek.com
+
+// Always hide an element when it has the `hidden` HTML attribute.
+%hidden,
+.hidden,
+[hidden] {
+  display: none !important;
+}
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+// If using grids, reset font-stack for all affected elements
+html, button, input, select, textarea,
+.grid [class *= "unit"] {
+  font-family: $sans-serif-stack;
+}
+
+// -----------------------------------------------------------------------------
+// Typography
+// -----------------------------------------------------------------------------
+body {
+  margin: 0;
+  font-family: $sans-serif-stack;
+  font-size: $base-font-size;
+  font-weight: normal;
+  line-height: $base-line-height;
+  background-color: $background-color;
+  color: $text-color;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: $sans-serif-stack;
+  font-weight: normal;
+  color: $text-color;
+  line-height: 1em;
+  margin: 0.5rem 0;
+}
+h1 {
+  font-size: 3rem;
+  letter-spacing: -0.05rem;
+}
+h2 {
+  font-size: 2.5rem;
+  letter-spacing: -0.025rem;
+}
+h3 { font-size: 2rem; }
+h4 { font-size: 1.75rem; }
+h5 { font-size: 1.5rem; }
+h6 { font-size: 1.25rem; }
+p {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+// Fluid image to fit a lfuid parent container while maintaining aspect ratio
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  vertical-align: middle;
+}
+
+// A better looking horizontal rule
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid $grey-lighter;
+  margin: 1rem 0;
+  padding: 0;
+}
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+// Allow only vertical resizing of textareas
+textarea {
+  resize: vertical;
+}
+
+// -----------------------------------------------------------------------------
+// Vertical rhythm
+// -----------------------------------------------------------------------------
+p, blockquote, pre,
+ul, ol, dl, figure,
+%vertical-rhythm {
+  margin: 1rem 0;
+}
+
+// -----------------------------------------------------------------------------
+// Lists
+// -----------------------------------------------------------------------------
+menu, ol, ul, dl {
+  padding: 0 0 0 $spacing-unit * 0.75;
+}
+li {
+  margin: 0.25rem 0;
+}
+
+// -----------------------------------------------------------------------------
+// Figures
+// -----------------------------------------------------------------------------
+figure > img {
+  display: block;
+}
+figcaption {
+  font-size: $small-font-size;
+}
+
+// -----------------------------------------------------------------------------
+// Links
+// -----------------------------------------------------------------------------
+a {
+  color: $blue;
+  text-decoration: none;
+  border-bottom: 1px solid $grey-lighter;
+
+  &:visited {
+    color: darken($primary, 25%);
+  }
+
+  &:hover {
+    color: $primary;
+    border-bottom-color: $orange;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Blockquotes
+// -----------------------------------------------------------------------------
+blockquote {
+  color: $grey-dark;
+  border-left: 6px solid $grey-light;
+  border-radius: 2px;
+  padding: 0.25rem 0;
+  padding-left: $spacing-unit * 0.75;
+  font-size: 1rem;
+  font-style: italic;
+}
+
+// -----------------------------------------------------------------------------
+// Code formatting
+// -----------------------------------------------------------------------------
+pre,
+code,
+samp {
+  color: $blue-light;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-family: $mono-stack;
+  background-color: $grey-lightest;
+  border-radius: 2px;
+  padding: 0.125rem 0.25rem;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+code {
+  color: $text-color;
+  background-color: lighten($yellow, 15%);
+  padding: 0.125rem 0.25rem;
+}
+
+pre {
+  padding: 0.5rem 0.75rem;
+  overflow-x: scroll;
+  border-left: 6px solid $blue-light;
+  word-wrap: normal;
+  > code {
+    border: 0;
+    padding-right: 0;
+    padding-left: 0;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Print styles.
+// Inlined to avoid required HTTP connection
+// -----------------------------------------------------------------------------
+@media print {
+  * {
+    background: transparent !important;
+    color: #000 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+
+  // Don't show links for images, or javascript/internal links
+  .ir a:after,
+  a[href^="javascript:"]:after,
+  a[href^="#"]:after {
+    content: "";
+  }
+
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+
+  thead {
+    display: table-header-group; /* h5bp.com/t */
+  }
+
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+
+  img {
+    max-width: 100% !important;
+  }
+
+  @page {
+    margin: 0.5cm;
+  }
+
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}

@@ -3,34 +3,40 @@
   padding: 0;
 }
 %menu--heading {
-  border-bottom: 1px solid $grey-1;
-  padding: 0.25rem 1rem;
-  line-height: 1.6rem;
+  @extend %allcaps;
+  border-bottom: 1px solid $grey-lighter;
+  padding: 0.5rem 1rem;
+  line-height: 1.5rem;
   margin: 0.25rem 0;
+  font-size: $small-font-size;
   &:first-child {
     margin-top: 0;
   }
 }
 %menu--wrapper {
-  @extend %no-list;
+  @extend %nolist;
   padding: 0.25rem 0;
 }
 %menu--item {
   font-size: 1rem;
-  padding: 0 1rem;
+  padding: 0;
   margin: 0;
   display: block;
   border: none;
 }
 %menu--link {
+  display: block;
+  padding: 0.25rem 1rem;
+  line-height: 1;
   color: $primary;
+  border-bottom: none;
   &:hover {
-    color: $secondary;
+    color: $accent;
   }
 }
 
 @mixin menu {
-  @extend %no-list;
+  @extend %nolist;
   .menu--wrapper {
     @extend %menu--wrapper;
   }
@@ -49,7 +55,7 @@
 }
 
 @mixin menu-flat {
-  @extend %no-list;
+  @extend %nolist;
   display: inline-block;
   margin: 0.25rem 1rem;
   .menu--group {
@@ -81,37 +87,42 @@
   }
 }
 
-.menu {
+.wfp-menu {
   @include menu;
-  border-left: 1px solid $grey-1;
-  border-right: 1px solid $grey-1;
-  border-bottom: 1px solid $grey-1;
+  border-left: 1px solid $grey-lighter;
+  border-right: 1px solid $grey-lighter;
+  border-bottom: 1px solid $grey-lighter;
   margin: 1rem 0;
   .menu--heading {
-    border-top: 1px solid $grey-1;
+    border-top: 1px solid $grey-lighter;
   }
 }
-.menu-plain {
+.wfp-menu-plain {
   @include menu;
   margin: 1rem 0;
 }
-.menu-flat {
+.wfp-menu-flat {
   @include menu-flat;
 }
 
 // Inversed menu for dark backgrounds
-.menu-inverse {
+.wfp-menu-inverse {
   @include menu;
   .menu--heading {
+    @extend %allcaps;
+    color: $grey-light;
     border-top: none;
-    border-bottom-color: $grey-3;
-    padding: 0.75rem 1.5rem;
+    border-bottom-color: $grey-dark;
+    padding: 0.5rem 1.5rem;
+    &:first-child {
+      margin-top: 0.5rem;
+    }
   }
   .menu--item {
     color: $white;
     padding: 0.25rem 1.5rem;
     &:visited {
-      color: $grey-1;
+      color: $grey-lighter;
     }
     &:hover {
       border-bottom: none;

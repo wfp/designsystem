@@ -24,13 +24,13 @@ If the vertical space is limited, you can substitute the logo with a "WFP.org" c
 ###### Sample Markup
 {% highlight html %}
 <header class="masthead-full">
-  <div class="pure-g wrapper">
-    <div class="pure-u-2-3 pure-u-sm-1-3">
+  <div class="grid wrapper">
+    <div class="unit-2-3 unit-sm-1-3">
       <h1 class="wfp-logo">
         <a href="#" class="wfp-logo-img"><img src="{{site.baseurl}}/img/logos/wfp_logo_full@256w.png" class="logo-dark" alt="UN World Food Programme"></a>
       </h1>
     </div>
-    <div class="pure-u-1-3 pure-u-sm-2-3">
+    <div class="unit-1-3 unit-sm-2-3">
       <div class="additional">
         <nav class="component header-lang">
           <ul>
@@ -68,7 +68,7 @@ If the vertical space is limited, you can substitute the logo with a "WFP.org" c
 
 -->
 
-## Internal
+### Internal
 When you are building a website or an application that works on your local network (e.g.: on Intranet), you can implement a simplified version of the WFP masthead.
 
 It has been designed specifically for use with Intranet sites and apps, which don't require any extensive branding, since its users are already familiar with the WFP.
@@ -76,14 +76,14 @@ It has been designed specifically for use with Intranet sites and apps, which do
 Internal masthead features a simple navigation, which works on both smaller and bigger screens. To implement it correctly, use the examples below.
 
 ###### Preview
-<header class="masthead-internal">
-  <div class="pure-g wrapper">
-    <div class="pure-u-3-5 pure-u-md-1-3 masthead--container">
+<header class="wfp-masthead-internal">
+  <div class="wfp-grid wfp-wrapper">
+    <div class="wfp-u-3-5 wfp-u-md-1-3 masthead--container">
       <h1 class="masthead--title">
         <a href="#" class="masthead--logo">Site Title</a>
       </h1>
     </div>
-    <div class="pure-u-2-5 pure-u-md-2-3 masthead--nav">
+    <div class="wfp-u-2-5 wfp-u-md-2-3 masthead--nav">
       <button class="masthead--toggle pure-button small" id="js-example-menu-trigger">Menu</button>
       <nav class="masthead--menu" id="js-example-menu">
         <ul class="menu--group">
@@ -98,14 +98,14 @@ Internal masthead features a simple navigation, which works on both smaller and 
 
 ###### Markup
 {% highlight html %}
-<header class="masthead-internal">
-  <div class="pure-g wrapper">
-    <div class="pure-u-3-5 pure-u-md-1-3 masthead--container">
+<header class="wfp-masthead-internal">
+  <div class="wfp-grid wfp-wrapper">
+    <div class="wfp-u-3-5 wfp-u-md-1-3 masthead--container">
       <h1 class="masthead--title">
         <a href="#" class="masthead--logo">Site Title</a>
       </h1>
     </div>
-    <div class="pure-u-2-5 pure-u-md-2-3 masthead--nav">
+    <div class="wfp-u-2-5 wfp-u-md-2-3 masthead--nav">
       <button class="masthead--toggle pure-button small" id="js-nav-trigger">Menu</button>
       <nav class="masthead--menu" id="js-nav">
         <ul class="menu--group">

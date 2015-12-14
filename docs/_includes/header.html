@@ -1,13 +1,13 @@
-<header class="masthead-internal fixed">
-  <div class="pure-g wrapper">
-    <div class="pure-u-3-5 pure-u-md-1-3 masthead--container">
+<header class="wfp-masthead-internal fixed">
+  <div class="wfp-grid wfp-wrapper">
+    <div class="wfp-u-3-5 wfp-u-md-1-3 masthead--container">
       <h1 class="masthead--title"><a href="{{ site.baseurl }}/" class="masthead--logo">{{ site.title }} {{ site.version }}</a></h1>
     </div>
-    <div class="pure-u-2-5 pure-u-md-2-3 masthead--nav">
+    <div class="wfp-u-2-5 wfp-u-md-2-3 masthead--nav">
       <button class="masthead--btn pure-button small" id="js-nav-trigger">Menu</button>
-      <div class="main-nav flyout">
-        <button class="nav-close icon icon-clear" id="js-nav-close"><span class="close-icon">&#x2715;</span>Close</button>
-        <nav class="menu-inverse">
+      <div class="main-nav flyout closed">
+        <button class="nav-close" id="js-nav-close"><span class="close-icon">&#x2715;</span>Close</button>
+        <nav class="wfp-menu-inverse">
         {% for category in site.category-list %}
           <div class="menu--group">
             <h6 class="menu--heading">{{ category }}</h6>
@@ -31,4 +31,3 @@
     </div>
   </div>
 </header>
-

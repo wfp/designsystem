@@ -1,5 +1,5 @@
 /*!
-  WFP UI v0.4.0
+  WFP UI v0.5.0
   URL:      https://github.com/wfp/ui
   Author:   Matthew Morek (me@matthewmorek.com)
   License:  MIT (https://github.com/wfp/ui/blob/master/LICENSE)
@@ -7,14 +7,22 @@
 
 @charset "UTF-8";
 
+// Normalize.css
+@import "../_components/modularized-normalize-scss/normalize";
+
 // Import SCSS mixins, variables, modules, etc.
 @import "init";
-@import "mixins";
-@import "defaults";
+
+// Import modules
+@import "modules/mixins";
+@import "modules/base";
+@import "modules/utility";
+@import "modules/icons";
 
 // Import components
-@import "components/forms";
 @import "components/buttons";
+@import "components/forms";
+@import "components/tables";
 @import "components/navigation/menu";
 @import "components/navigation/flyout";
 @import "components/navigation/segmented-control";
@@ -22,6 +30,6 @@
 @import "components/navigation/pagination";
 
 // Import layouts
-@import "layouts/layout";
+@import "layouts/primer";
 @import "layouts/header";
 @import "layouts/footer";

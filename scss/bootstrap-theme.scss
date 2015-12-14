@@ -1,5 +1,5 @@
 /*!
- * WFP UI Bootstrap Theme v0.1.3
+ * WFP UI Bootstrap Theme v0.1.4
  * Copyright 2015 Matthew Morek
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
@@ -11,8 +11,8 @@
 @import "../_components/bootstrap-sass/assets/stylesheets/bootstrap/variables";
 @import "../_components/bootstrap-sass/assets/stylesheets/bootstrap/mixins";
 @import "init";
-@import "mixins";
-@import "icons";
+@import "modules/mixins";
+@import "modules/icons/icons-dark";
 
 //
 // Base styles
@@ -66,7 +66,7 @@ h5 {
   font-size: $base-font-size * 0.875;
 }
 h6 {
-  color: $grey-2;
+  color: $grey-light;
   font-size: $small-font-size;
   text-transform: uppercase;
   margin-top: $spacing-unit;
@@ -103,7 +103,7 @@ input[type="color"],
 textarea {
   padding: 0.5em 0.75em;
   display: inline-block;
-  border: 1px solid $grey-1;
+  border: 1px solid $grey-lighter;
   font-size: 100%;
   line-height: 1.5;
   box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
@@ -144,7 +144,7 @@ textarea {
 
 select.form-control {
   @extend %input;
-  @extend %data-arrow-drop-down;
+  @extend %icon-dark-arrow-drop-down;
   background-position: right center;
   background-repeat: no-repeat;
 }
@@ -159,7 +159,7 @@ a.btn,
 a.btn-default,
 a.btn-info {
   padding: 0.5em 1em;
-  color: $grey-3;
+  color: $grey;
   background-image: none;
   background-color: $grey-light;
   font-family: inherit;
@@ -171,14 +171,14 @@ a.btn-info {
   transition: all 0.1s ease-in;
   vertical-align: baseline;
   &:visited {
-    color: $grey-3;
+    color: $grey;
   }
   &:hover,
   &:focus,
   &:active,
   &:active:focus {
     border-color: rgba(0,0,0,0.25);
-    color: darken($grey-3, 5%);
+    color: darken($grey, 5%);
     background-image: none;
     background-color: inherit;
   }
@@ -193,7 +193,7 @@ a.btn-info {
   &-active:focus,
   &-active:active:focus {
     background-color: darken($grey-light, 5%);
-    color: darken($grey-3, 5%);
+    color: darken($grey, 5%);
     border-color: rgba(0,0,0,0.25);
     box-shadow: rgba(0,0,0,0.15) 0 0 8px inset;
   }
@@ -304,10 +304,10 @@ a.btn-info {
 // --------------------------------------------------
 .btn-group {
   .btn {
-    border-color: $grey-1;
+    border-color: $grey-lighter;
     background-color: $white;
     &.active {
-      border-color: $secondary;
+      border-color: $accent;
       background-color: $primary;
       box-shadow: none;
       color: $white;
@@ -335,7 +335,7 @@ a.btn-info {
   margin-left: -2em;
   margin-right: 0.5em;
   position: relative;
-  @extend %data-check-box-outline-blank;
+  @extend %icon-dark-checkbox-unchecked;
   background-position: center;
 
   &:checked {
@@ -345,7 +345,7 @@ a.btn-info {
       width: 20px;
       height: 20px;
       content: " ";
-      @extend %data-check-box;
+      @extend %icon-dark-checkbox-checked;
       background-position: center;
     }
   }
@@ -372,7 +372,7 @@ a.btn-info {
 .label {
   border-radius: 1px;
   &-default {
-    background-color: $grey-3;
+    background-color: $grey;
   }
   &-primary {
     background-color: $primary;
@@ -393,7 +393,7 @@ a.btn-info {
 }
 
 .badge {
-  background-color: $grey-3;
+  background-color: $grey;
   vertical-align: text-bottom;
 }
 
@@ -549,7 +549,7 @@ a.btn-info {
 
   li {
     display: table-cell;
-    border: 1px solid lighten($grey-1, 10%);
+    border: 1px solid lighten($grey-lighter, 10%);
     border-left: none;
     position: relative;
     z-index: 1;
@@ -562,12 +562,12 @@ a.btn-info {
 
     &:first-child {
       border-radius: 2px 0 0 2px;
-      border-left: 1px solid lighten($grey-1, 10%);
+      border-left: 1px solid lighten($grey-lighter, 10%);
     }
     &:last-child {
       border-radius: 0 2px 2px 0;
       padding: 0.25em 0.5em 0.25em 0.75em;
-      color: $grey-2;
+      color: $grey-light;
       cursor: default;
       &:after {
         display: none;
@@ -577,7 +577,7 @@ a.btn-info {
       padding: 0.5em 0.5em 0.5em 0.75em;
       width: auto;
       border: none;
-      color: $grey-3;
+      color: $grey;
       line-height: 1;
       &:hover {
         color: $primary;
@@ -627,7 +627,7 @@ a.btn-info {
 // Apply the mixin to the progress bars
 .progress-bar            { background-color: $primary; }
 .progress-bar-success    { background-color: darken($green, 20%); }
-.progress-bar-info       { background-color: $grey-2; }
+.progress-bar-info       { background-color: $grey-light; }
 .progress-bar-warning    { background-color: darken($orange, 10%); }
 .progress-bar-danger     { background-color: $red; }
 
@@ -661,7 +661,7 @@ a.btn-info {
     &.active:hover,
     &.active:focus, {
       background-image: none;
-      background-color: $secondary;
+      background-color: $accent;
     }
   }
   .badge {
@@ -688,16 +688,16 @@ a.btn-info {
     border-top-right-radius: 1px;
   }
 }
-.panel-default  { @include wfp-border-color($grey-1); }
+.panel-default  { @include wfp-border-color($grey-lighter); }
 .panel-primary  { @include wfp-border-color($primary); }
 .panel-success  { @include wfp-border-color($green); }
-.panel-info     { @include wfp-border-color($grey-2); }
+.panel-info     { @include wfp-border-color($grey-light); }
 .panel-warning  { @include wfp-border-color($orange); }
 .panel-danger   { @include wfp-border-color($red); }
 // Apply the mixin to the panel headings only
 .panel-default > .panel-heading   {
   background-color: $grey-lighter;
-  @include wfp-border-color($grey-1);
+  @include wfp-border-color($grey-lighter);
 }
 .panel-primary > .panel-heading   {
   background-color: lighten($primary, 25%);
@@ -711,8 +711,8 @@ a.btn-info {
 }
 .panel-info > .panel-heading   {
   background-color: $grey-light;
-  color: darken($grey-2, 35%);
-  @include wfp-border-color($grey-2);
+  color: darken($grey-light, 35%);
+  @include wfp-border-color($grey-light);
 }
 .panel-warning > .panel-heading   {
   background-color: lighten($orange, 25%);

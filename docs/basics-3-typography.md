@@ -14,38 +14,38 @@ In some cases, it will lead to problems with processing text, and thus increasin
 ### Typefaces
 __Lato__ is the primary typeface for user interfaces; it's a round, humanist sans-serif, with incredibly warm appeal. It can be used for both headlines and paragraphs alike, as well as for interface elements.
 
-<ul class="pure-g inline-grid short">
-  <li class="pure-u-1-2 pure-u-md-1-6">
+<ul class="wfp-grid inline-grid short">
+  <li class="wfp-u-1-2 wfp-u-md-1-6">
     <div class="inline-item type-medium sans">Aa</div>
     <div class="desc">
       <p>Regular</p>
     </div>
   </li>
-  <li class="pure-u-1-2 pure-u-md-1-6">
+  <li class="wfp-u-1-2 wfp-u-md-1-6">
     <div class="inline-item type-medium-i sans">Aa</div>
     <div class="desc">
       <p>Italic</p>
     </div>
   </li>
-  <li class="pure-u-1-2 pure-u-md-1-6">
+  <li class="wfp-u-1-2 wfp-u-md-1-6">
     <div class="inline-item type-bold sans">Aa</div>
     <div class="desc">
       <p>Bold</p>
     </div>
   </li>
-  <li class="pure-u-1-2 pure-u-md-1-6">
+  <li class="wfp-u-1-2 wfp-u-md-1-6">
     <div class="inline-item type-bold-i sans">Aa</div>
     <div class="desc">
       <p>Bold Italic</p>
     </div>
   </li>
-  <li class="pure-u-1-2 pure-u-md-1-6">
+  <li class="wfp-u-1-2 wfp-u-md-1-6">
     <div class="inline-item type-black-i sans">Aa</div>
     <div class="desc">
       <p>Black</p>
     </div>
   </li>
-  <li class="pure-u-1-2 pure-u-md-1-6">
+  <li class="wfp-u-1-2 wfp-u-md-1-6">
     <div class="inline-item type-black-i sans">Aa</div>
     <div class="desc">
       <p>Black Italic</p>
@@ -55,26 +55,26 @@ __Lato__ is the primary typeface for user interfaces; it's a round, humanist san
 
 __Aleo__ was designed as a slab-serif counterpart to _Lato_. It looks great in both paragraphs and headlines, although it should be used sparingly where a slight emphasis is required, such as main article intros or pull-out quotes.
 
-<ul class="pure-g inline-grid short">
-  <li class="pure-u-1-2 pure-u-md-1-4">
+<ul class="wfp-grid inline-grid short">
+  <li class="wfp-u-1-2 wfp-u-md-1-4">
     <div class="inline-item type-medium serif">Aa</div>
     <div class="desc">
       <p>Regular</p>
     </div>
   </li>
-  <li class="pure-u-1-2 pure-u-md-1-4">
+  <li class="wfp-u-1-2 wfp-u-md-1-4">
     <div class="inline-item type-medium-i serif">Aa</div>
     <div class="desc">
       <p>Italic</p>
     </div>
   </li>
-  <li class="pure-u-1-2 pure-u-md-1-4">
+  <li class="wfp-u-1-2 wfp-u-md-1-4">
     <div class="inline-item type-bold serif">Aa</div>
     <div class="desc">
       <p>Bold</p>
     </div>
   </li>
-  <li class="pure-u-1-2 pure-u-md-1-4">
+  <li class="wfp-u-1-2 wfp-u-md-1-4">
     <div class="inline-item type-bold-i serif">Aa</div>
     <div class="desc">
       <p>Bold Italic</p>
@@ -91,8 +91,8 @@ The size of your text is as important for your message, as your WFP colours are 
 
 To make your text legible and readable follow the guidelines below to setting your type:
 
-<ul class="pure-g inline-grid normal">
-  <li class="pure-u-1 pure-u-md-1-2 block">
+<ul class="wfp-grid inline-grid normal">
+  <li class="wfp-u-1 wfp-u-md-1-2 block">
     <h6>Sans-serif</h6>
     <ul>
       <li>Base font-size: <b>16px</b>;</li>
@@ -100,7 +100,7 @@ To make your text legible and readable follow the guidelines below to setting yo
       <li>Line-height: <b>1.5em</b>;</li>
     </ul>
   </li>
-  <li class="pure-u-1 pure-u-md-1-2 block">
+  <li class="wfp-u-1 wfp-u-md-1-2 block">
     <h6>Slab-serif</h6>
     <ul>
       <li>Base font-size: <b>16px</b>;</li>

@@ -3,3 +3,4 @@ _components
 dist/docs
 *.map
 docs/css
+icons/ui/dist
