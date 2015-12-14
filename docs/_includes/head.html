@@ -1,4 +1,10 @@
 <head>
+  {% assign base = '.' %}
+  {% assign depth = page.url | split: '/' | size | minus: 1 %}
+  {% if    depth == 1 %}{% assign base = '..' %}
+  {% elsif depth == 2 %}{% assign base = '../..' %}
+  {% elsif depth == 3 %}{% assign base = '../../..' %}
+  {% elsif depth == 4 %}{% assign base = '../../../..' %}{% endif %}
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <title>{% if page.title %}{{ site.title }} &mdash; {{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
