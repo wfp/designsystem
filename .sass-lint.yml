@@ -5,6 +5,8 @@
 options:
   formatter: compact
   merge-default-rules: false
+  # Output file instead of logging results
+  output-file: '_tmp/sass-lint.html'
 # File Options
 files:
   include: 'sass/**/*.s+(a|c)ss'
