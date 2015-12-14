@@ -11,9 +11,9 @@ module.exports = function(grunt) {
         files: 'js/**/*.js',
         tasks: ['eslint']
       },
-      jekyll: {
+      docs: {
         files: ['docs/**/*.*', 'scss/**/**/*.scss'],
-        tasks: ['docs-build']
+        tasks: ['docs']
       }
     },
     clean: {
@@ -32,7 +32,7 @@ module.exports = function(grunt) {
             lg: 'screen and (min-width: 64em)', //1024px
             xl: 'screen and (min-width: 75em)'  //1200px
           },
-          selectorPrefix: '.unit-'
+          selectorPrefix: '.wfp-u-'
         }
       }
     },
@@ -260,6 +260,8 @@ module.exports = function(grunt) {
   grunt.registerTask('gen-svg', ['clean:svg', 'svgtoolkit', 'datauri', 'clean:svg']);
   // Build Grunticon Icons
   grunt.registerTask('gen-icons', ['clean:grunticon', 'grunticon']);
+  // Build WFP UI Docs locally
+  grunt.registerTask('docs', ['sasslint', 'sass:docs', 'postcss:docs', 'jekyll:dev']);
   // Build WFP UI Docs
   grunt.registerTask('docs-build', ['sasslint', 'sass:docs', 'postcss:docs', 'gen-icons', 'jekyll:dev']);
   // Build dist-ready WFP UI Docs

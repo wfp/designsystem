@@ -21,10 +21,4 @@ Add the following lines to the `<head>` section of your page:
 <link rel="shortcut icon" href="http://cdn.wfp.org/favicon.ico" />
 {% endhighlight %}
 
-If your application or website is not able to connect to the Internet, you can use the favicon offline kit to host favicons locally. Download the ZIP file, unpack it and place its contents in the root of your site.
-
-<div class="preview plain">
-  <p>
-    <a class="pure-button" href="{{site.baseurl}}/assets/favicon.zip" download>Download WFP Favicons (zip)</a>
-  </p>
-</div>
+<!-- If your application or website is not able to connect to the Internet, you can use the favicon offline kit to host favicons locally. Download the ZIP file, unpack it and place its contents in the root of your site. -->

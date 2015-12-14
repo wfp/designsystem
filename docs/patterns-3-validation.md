@@ -39,13 +39,13 @@ For more information about available HTML5 `input` attributes, visit [Mozilla De
 To correctly show an invalid field, add class `invalid` to an input element. Next, insert error description using `span` with a class `error` just below the input.
 
 ###### Example
-<div class="preview simple wfp-form--stacked grid">
-  <div class="unit-1-2 wfp-box">
+<div class="preview simple wfp-form--stacked wfp-grid">
+  <div class="wfp-u-1-2 wfp-box">
     <label for="full-name">Full name:</label>
     <input class="invalid" id="full-name" type="text" placeholder="e.g.: John Doe" required>
     <span class="error">Please, enter your full name.</span>
   </div>
-  <div class="unit-1-2 wfp-box">
+  <div class="wfp-u-1-2 wfp-box">
     <label for="email">Email address:</label>
     <input class="invalid" id="email" type="email" placeholder="e.g.: john@doe.com" value="incorrect@email" required>
     <span class="error">Please, use a correct email address.</span>
@@ -54,13 +54,13 @@ To correctly show an invalid field, add class `invalid` to an input element. Nex
 
 ###### Sample Markup
 {% highlight html %}
-<form class="wfp-form--stacked grid">
-  <div class="unit-1-2 wfp-box">
+<form class="wfp-form--stacked wfp-grid">
+  <div class="wfp-u-1-2 wfp-box">
     <label for="full-name">Full name:</label>
     <input class="invalid" id="full-name" type="text" placeholder="e.g.: John Doe" required>
     <span class="error">Please, enter your full name.</span>
   </div>
-  <div class="unit-1-2 wfp-box">
+  <div class="wfp-u-1-2 wfp-box">
     <label for="email">Email address:</label>
     <input class="invalid" id="email" type="email" placeholder="e.g.: john@doe.com" value="incorrect@email" required>
     <span class="error">Please, use a correct email address.</span>
@@ -72,12 +72,12 @@ To correctly show an invalid field, add class `invalid` to an input element. Nex
 When inputs are validated successfuly, you should replace their `invalid` class with `valid` and remove or hide the error description.
 
 ###### Example
-<div class="preview simple wfp-form--stacked grid">
-  <div class="unit-1-2 wfp-box">
+<div class="preview simple wfp-form--stacked wfp-grid">
+  <div class="wfp-u-1-2 wfp-box">
     <label for="full-name">Full name:</label>
     <input class="valid" id="full-name" type="text" placeholder="e.g.: John Doe" value="John Doe">
   </div>
-  <div class="unit-1-2 wfp-box">
+  <div class="wfp-u-1-2 wfp-box">
     <label for="email">Email address:</label>
     <input class="valid" id="email" type="email" placeholder="e.g.: john@doe.com" value="correct@email.com" required>
   </div>
@@ -85,12 +85,12 @@ When inputs are validated successfuly, you should replace their `invalid` class 
 
 ###### Sample Markup
 {% highlight html %}
-<form class="wfp-form--stacked grid">
-  <div class="unit-1-2 wfp-box">
+<form class="wfp-form--stacked wfp-grid">
+  <div class="wfp-u-1-2 wfp-box">
     <label for="full-name">Full name:</label>
     <input class="valid" id="full-name" type="text" placeholder="e.g.: John Doe" value="John Doe">
   </div>
-  <div class="unit-1-2 wfp-box">
+  <div class="wfp-u-1-2 wfp-box">
     <label for="email">Email address:</label>
     <input class="valid" id="email" type="email" placeholder="e.g.: john@doe.com" value="correct@email.com" required>
   </div>

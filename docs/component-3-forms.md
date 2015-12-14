@@ -17,52 +17,52 @@ Forms are an important part of pages which ask users for input. They should be s
 To see how different form elements work together with our flexible grid system, have a look at one of the form patterns below.
 
 ###### Preview
-<div class="preview simple wfp-form--stacked grid">
-  <div class="unit-1-2 wfp-box--flat">
+<div class="preview simple wfp-form--stacked wfp-grid">
+  <div class="wfp-u-1-2 wfp-box--flat">
     <label for="first-name">First name:</label>
     <input type="text" id="first-name" name="first-name">
   </div>
-  <div class="unit-1-2 wfp-box--flat">
+  <div class="wfp-u-1-2 wfp-box--flat">
     <label for="email">Email address:</label>
     <input type="email" id="email" name="email">
   </div>
-  <div class="unit-1 wfp-box--flat">
+  <div class="wfp-u-1 wfp-box--flat">
     <label for="message">Your message:</label>
     <textarea name="message" id="message"></textarea>
     <label for="sample-1">
       <input type="checkbox" id="sample-1">I would like to be contacted, if necessary.
     </label>
   </div>
-  <div class="unit-1 wfp-box--flat">
+  <div class="wfp-u-1 wfp-box--flat">
     <div class="wfp-form--actions">
-      <button class="btn--primary">Send message</button>
-      <button class="btn">Cancel</button>
+      <button class="wfp-btn--primary">Send message</button>
+      <button class="wfp-btn">Cancel</button>
       <span class="wfp-form--msg">By sending this form you agree to our <a href="#">privacy policy</a>.</span>
     </div>
   </div>
 </div>
 
 {% highlight html %}
-<form class="wfp-form--stacked grid">
-  <div class="unit-1-2 wfp-box--flat">
+<form class="wfp-form--stacked wfp-grid">
+  <div class="wfp-u-1-2 wfp-box--flat">
     <label for="first-name">First name:</label>
     <input type="text" id="first-name" name="first-name">
   </div>
-  <div class="unit-1-2 wfp-box--flat">
+  <div class="wfp-u-1-2 wfp-box--flat">
     <label for="email">Email address:</label>
     <input type="email" id="email" name="email">
   </div>
-  <div class="unit-1 wfp-box--flat">
+  <div class="wfp-u-1 wfp-box--flat">
     <label for="message">Your message:</label>
     <textarea name="message" id="message"></textarea>
     <label for="sample-1">
       <input type="checkbox" id="sample-1">I would like to be contacted, if necessary.
     </label>
   </div>
-  <div class="unit-1 wfp-box--flat">
+  <div class="wfp-u-1 wfp-box--flat">
     <div class="wfp-form--actions">
-      <button class="btn--primary">Send message</button>
-      <button class="btn">Cancel</button>
+      <button class="wfp-btn--primary">Send message</button>
+      <button class="wfp-btn">Cancel</button>
       <span class="wfp-form--msg">By sending this form you agree to our <a href="#">privacy policy</a>.</span>
     </div>
   </div>
@@ -72,7 +72,7 @@ To see how different form elements work together with our flexible grid system, 
 ### Special Classes
 If you want to push your forms to their limit, you can use our special classes, which can help you create more eye-friendly layouts.
 
-`wfp-form--group`  
+`wfp-form--group`
 Group contained form elements by giving them extra vertical padding.
 
 `wfp-form--actions`

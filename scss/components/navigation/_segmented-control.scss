@@ -7,14 +7,14 @@
 // Segmented Controls
 // [docs-url]/components/navigation/#segmented-controls
 // -----------------------------------------------------------------------------
-%segmented-control {
+%seg-control {
   @extend %no-list;
   display: inline-block;
   height: 32px;
   text-align: center;
 }
 
-%segmented-control--item {
+%seg-control--item {
   display: table-cell;
   border: 1px solid $primary;
   border-left: none;
@@ -30,7 +30,7 @@
   }
 }
 
-%segmented-control--link {
+%seg-control--link {
   padding: 0.35rem 0.75rem;
   width: auto;
   border: none;
@@ -46,12 +46,12 @@
   }
 }
 
-.segmented-control {
-  @extend %segmented-control;
-  .segmented-control--item {
-    @extend %segmented-control--item;
+.wfp-seg-control {
+  @extend %seg-control;
+  .seg-control--item {
+    @extend %seg-control--item;
   }
-  .segmented-control--link {
-    @extend %segmented-control--link;
+  .seg-control--link {
+    @extend %seg-control--link;
   }
 }

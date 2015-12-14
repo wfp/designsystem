@@ -14,32 +14,32 @@ This menu is very versatile and can use groups. You can use this menu to create 
 
 <div class="notice">
   <h6 class="title">Notice</h6>
-  <p>This menu can be displayed without surrounding borders by using <code>menu-plain</code> class, instead of <code>menu</code>.</p>
+  <p>This menu can be displayed without surrounding borders by using <code>wfp-menu-plain</code> class, instead of <code>wfp-menu</code>.</p>
 </div>
 
 ###### Preview
-<nav class="menu">
+<nav class="wfp-menu">
   <div class="menu--group">
     <h6 class="menu--heading">About</h6>
     <ul class="menu--wrapper">
-      <li class="menu--item"><a href="#">Executive Director</a></li>
-      <li class="menu--item"><a href="#">Senior Leadership</a></li>
-      <li class="menu--item"><a href="#">Corporate Information</a></li>
-      <li class="menu--item"><a href="#">Funding</a></li>
+      <li class="menu--item"><a href="#" class="menu--link">Executive Director</a></li>
+      <li class="menu--item"><a href="#" class="menu--link">Senior Leadership</a></li>
+      <li class="menu--item"><a href="#" class="menu--link">Corporate Information</a></li>
+      <li class="menu--item"><a href="#" class="menu--link">Funding</a></li>
     </ul>
   </div>
 </nav>
 
 ###### Markup
 {% highlight html %}
-<nav class="menu">
+<nav class="wfp-menu">
   <div class="menu--group">
     <h6 class="menu--heading">About</h6>
     <ul class="menu--wrapper">
-      <li class="menu--item"><a href="#">Executive Director</a></li>
-      <li class="menu--item"><a href="#">Senior Leadership</a></li>
-      <li class="menu--item"><a href="#">Corporate Information</a></li>
-      <li class="menu--item"><a href="#">Funding</a></li>
+      <li class="menu--item"><a href="#" class="menu--link">Executive Director</a></li>
+      <li class="menu--item"><a href="#" class="menu--link">Senior Leadership</a></li>
+      <li class="menu--item"><a href="#" class="menu--link">Corporate Information</a></li>
+      <li class="menu--item"><a href="#" class="menu--link">Funding</a></li>
     </ul>
   </div>
 </nav>
@@ -50,44 +50,44 @@ The same menu as in previous example, but used together with grids, to create mo
 
 <div class="notice">
   <h6 class="title">Notice</h6>
-  <p>This menu can be displayed without surrounding borders by using <code>menu-plain</code> class, instead of <code>menu</code>.</p>
+  <p>This menu can be displayed without surrounding borders by using <code>wfp-menu-plain</code> class, instead of <code>wfp-menu</code>.</p>
 </div>
 
 ###### Preview
-<nav class="menu grid">
-  <div class="menu--group unit-1 unit-md-1-3">
+<nav class="wfp-menu wfp-grid">
+  <div class="menu--group wfp-u-1 wfp-u-md-1-3">
     <h6 class="menu--heading">Our Programmes</h6>
     <ul class="menu--wrapper">
-      <li class="menu--item"><a href="#">Cash and Vouchers</a></li>
-      <li class="menu--item"><a href="#">Foods for Assets</a></li>
-      <li class="menu--item"><a href="#">HIV / AIDS</a></li>
-      <li class="menu--item"><a href="#">Purchase for Progress</a></li>
+      <li class="menu--item"><a href="#" class="menu--link">Cash and Vouchers</a></li>
+      <li class="menu--item"><a href="#" class="menu--link">Foods for Assets</a></li>
+      <li class="menu--item"><a href="#" class="menu--link">HIV / AIDS</a></li>
+      <li class="menu--item"><a href="#" class="menu--link">Purchase for Progress</a></li>
     </ul>
   </div>
-  <div class="menu--group unit-1 unit-md-1-3">
+  <div class="menu--group wfp-u-1 wfp-u-md-1-3">
     <h6 class="menu--heading">Our Expertise</h6>
     <ul class="menu--wrapper">
-      <li class="menu--item"><a href="#">Preparedness: Being Ready</a></li>
-      <li class="menu--item"><a href="#">Responding to Emergencies</a></li>
-      <li class="menu--item"><a href="#">Food Security Analysis</a></li>
-      <li class="menu--item"><a href="#">Buying the Food</a></li>
+      <li class="menu--item"><a href="#" class="menu--link">Preparedness: Being Ready</a></li>
+      <li class="menu--item"><a href="#" class="menu--link">Responding to Emergencies</a></li>
+      <li class="menu--item"><a href="#" class="menu--link">Food Security Analysis</a></li>
+      <li class="menu--item"><a href="#" class="menu--link">Buying the Food</a></li>
     </ul>
   </div>
-  <div class="menu--group unit-1 unit-md-1-3">
+  <div class="menu--group wfp-u-1 wfp-u-md-1-3">
     <h6 class="menu--heading">Our Operations</h6>
     <ul class="menu--wrapper">
-      <li class="menu--item"><a href="#">Current Emergencies</a></li>
-      <li class="menu--item"><a href="#">Emergency Operations</a></li>
-      <li class="menu--item"><a href="#">Relief & Recovery Operations</a></li>
-      <li class="menu--item"><a href="#">Special Operations</a></li>
+      <li class="menu--item"><a href="#" class="menu--link">Current Emergencies</a></li>
+      <li class="menu--item"><a href="#" class="menu--link">Emergency Operations</a></li>
+      <li class="menu--item"><a href="#" class="menu--link">Relief & Recovery Operations</a></li>
+      <li class="menu--item"><a href="#" class="menu--link">Special Operations</a></li>
     </ul>
   </div>
 </nav>
 
 ###### Markup
 {% highlight html %}
-<nav class="menu grid">
-  <div class="menu--group unit-1 unit-md-1-3">
+<nav class="wfp-menu wfp-grid">
+  <div class="menu--group wfp-u-1 wfp-u-md-1-3">
     <h6 class="menu--heading">Our Programmes</h6>
     <ul class="menu--wrapper">
       <li class="menu--item"><a href="#">Cash and Vouchers</a></li>
@@ -96,7 +96,7 @@ The same menu as in previous example, but used together with grids, to create mo
       <li class="menu--item"><a href="#">Purchase for Progress</a></li>
     </ul>
   </div>
-  <div class="menu--group unit-1 unit-md-1-3">
+  <div class="menu--group wfp-u-1 wfp-u-md-1-3">
     <h6 class="menu--heading">Our Expertise</h6>
     <ul class="menu--wrapper">
       <li class="menu--item"><a href="#">Preparedness: Being Ready</a></li>
@@ -105,7 +105,7 @@ The same menu as in previous example, but used together with grids, to create mo
       <li class="menu--item"><a href="#">Buying the Food</a></li>
     </ul>
   </div>
-  <div class="menu--group unit-1 unit-md-1-3">
+  <div class="menu--group wfp-u-1 wfp-u-md-1-3">
     <h6 class="menu--heading">Our Operations</h6>
     <ul class="menu--wrapper">
       <li class="menu--item"><a href="#">Current Emergencies</a></li>
@@ -122,36 +122,36 @@ This pattern is useful for when you need to display a set of controls with an in
 
 ###### Preview
 <div class="preview plain">
-  <ul class="segmented-control">
-    <li class="segmented-control--item">
-      <span class="segmented-control--link active">Home</span>
+  <ul class="wfp-seg-control">
+    <li class="seg-control--item">
+      <span class="seg-control--link active">Home</span>
     </li>
-    <li class="segmented-control--item">
-      <a class="segmented-control--link" href="#">Blog</a>
+    <li class="seg-control--item">
+      <a class="seg-control--link" href="#">Blog</a>
     </li>
-    <li class="segmented-control--item">
-      <a class="segmented-control--link" href="#">About us</a>
+    <li class="seg-control--item">
+      <a class="seg-control--link" href="#">About us</a>
     </li>
-    <li class="segmented-control--item">
-      <a class="segmented-control--link" href="#">Contact us</a>
+    <li class="seg-control--item">
+      <a class="seg-control--link" href="#">Contact us</a>
     </li>
   </ul>
 </div>
 
 ###### Markup
 {% highlight html %}
-<ul class="segmented-control">
-  <li class="segmented-control--item">
-    <a class="segmented-control--link" href="#">Home</a>
+<ul class="wfp-seg-control">
+  <li class="seg-control--item">
+    <a class="seg-control--link" href="#">Home</a>
   </li>
-  <li class="segmented-control--item">
-    <a class="segmented-control--link" href="#">Blog</a>
+  <li class="seg-control--item">
+    <a class="seg-control--link" href="#">Blog</a>
   </li>
-  <li class="segmented-control--item">
-    <a class="segmented-control--link" href="#">About us</a>
+  <li class="seg-control--item">
+    <a class="seg-control--link" href="#">About us</a>
   </li>
-  <li class="segmented-control--item">
-    <a class="segmented-control--link" href="#">Contact us</a>
+  <li class="seg-control--item">
+    <a class="seg-control--link" href="#">Contact us</a>
   </li>
 </ul>
 {% endhighlight %}
@@ -166,8 +166,8 @@ _Breadcrumbs_ are a special kind of _segmented control_ component; a simple and 
 
 ###### Preview
 <div class="preview plain">
-  <ul class="breadcrumbs">
-    <li class="breadcrumbs--item"><a href="#" class="breadcrumbs--link"><img src="{{site.baseurl}}/img/ui/svg/home.svg" width="16" height="16"></a></li>
+  <ul class="wfp-breadcrumbs">
+    <li class="breadcrumbs--item"><a href="#" class="breadcrumbs--link"><i class="icon-home-dark xsmall"></i></a></li>
     <li class="breadcrumbs--item"><a href="#" class="breadcrumbs--link">Our Work</a></li>
     <li class="breadcrumbs--item"><span class="breadcrumbs--last">Procurement</span></li>
   </ul>
@@ -175,8 +175,8 @@ _Breadcrumbs_ are a special kind of _segmented control_ component; a simple and 
 
 ###### Markup
 {% highlight html %}
-<ul class="breadcrumbs">
-  <li class="breadcrumbs--item"><a href="#" class="breadcrumbs--link"><img src="{{site.baseurl}}/img/ui/svg/home.svg" width="16" height="16"></a></li>
+<ul class="wfp-breadcrumbs">
+  <li class="breadcrumbs--item"><a href="#" class="breadcrumbs--link"></a></li>
   <li class="breadcrumbs--item"><a href="#" class="breadcrumbs--link">Our Work</a></li>
   <li class="breadcrumbs--item"><span class="breadcrumbs--last">Procurement</span></li>
 </ul>
@@ -188,11 +188,11 @@ _Breadcrumbs_ are a special kind of _segmented control_ component; a simple and 
 </div>
 
 ### Pagination
-_Pagination_ is very useful pattern that allows users to browse through available content when it is grouped into manageble chunks: pages. You can use any size available for the buttons.
+_Pagination_ is very useful pattern that allows users to browse through available content when it is grouped into manageable chunks: pages. You can use any size available for the buttons.
 
 ###### Preview
 <div class="preview plain">
-  <div class="pagination">
+  <div class="wfp-pagination">
     <ol class="pagination--wrapper">
       <li class="pagination--item">
         <a href="#" class="pagination--btn">Previous</a>
@@ -215,7 +215,7 @@ _Pagination_ is very useful pattern that allows users to browse through availabl
 
 ###### Markup
 {% highlight html %}
-<div class="pagination">
+<div class="wfp-pagination">
   <ol class="pagination--wrapper">
     <li class="pagination--item">
       <a href="#" class="pagination--btn">Previous</a>

@@ -3,7 +3,7 @@
   padding: 0;
 }
 %menu--heading {
-  @extend %all-caps;
+  @extend %allcaps;
   border-bottom: 1px solid $grey-lighter;
   padding: 0.5rem 1rem;
   line-height: 1.5rem;
@@ -14,7 +14,7 @@
   }
 }
 %menu--wrapper {
-  @extend %no-list;
+  @extend %nolist;
   padding: 0.25rem 0;
 }
 %menu--item {
@@ -36,7 +36,7 @@
 }
 
 @mixin menu {
-  @extend %no-list;
+  @extend %nolist;
   .menu--wrapper {
     @extend %menu--wrapper;
   }
@@ -55,7 +55,7 @@
 }
 
 @mixin menu-flat {
-  @extend %no-list;
+  @extend %nolist;
   display: inline-block;
   margin: 0.25rem 1rem;
   .menu--group {
@@ -87,7 +87,7 @@
   }
 }
 
-.menu {
+.wfp-menu {
   @include menu;
   border-left: 1px solid $grey-lighter;
   border-right: 1px solid $grey-lighter;
@@ -97,19 +97,19 @@
     border-top: 1px solid $grey-lighter;
   }
 }
-.menu-plain {
+.wfp-menu-plain {
   @include menu;
   margin: 1rem 0;
 }
-.menu-flat {
+.wfp-menu-flat {
   @include menu-flat;
 }
 
 // Inversed menu for dark backgrounds
-.menu-inverse {
+.wfp-menu-inverse {
   @include menu;
   .menu--heading {
-    @extend %all-caps;
+    @extend %allcaps;
     color: $grey-light;
     border-top: none;
     border-bottom-color: $grey-dark;

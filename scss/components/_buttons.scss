@@ -115,18 +115,18 @@
   }
 }
 
-.btn {
+.wfp-btn {
   @include button;
 }
-.btn--primary {
+.wfp-btn--primary {
   @include button(primary);
 }
-.btn--negative {
+.wfp-btn--negative {
   @include button(negative);
 }
-.btn--positive {
+.wfp-btn--positive {
   @include button(positive);
 }
-.btn--warning {
+.wfp-btn--warning {
   @include button(warning);
 }
