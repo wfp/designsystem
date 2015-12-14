@@ -88,11 +88,29 @@
       border-color: $grey-lighter;
     }
   } @else if $type == checkbox {
-    @extend %inputbox;
-    border-radius: 2px;
+    // @extend %inputbox;
+    @extend %icon-dark-checkbox-unchecked;
+    appearance: none;
+    display: inline-block;
+    border: none;
+    margin-right: 0.25rem;
+    margin-bottom: 3px;
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    vertical-align: middle;
+    transition: 0.15s background ease-in;
+    &.disabled,
+    &:disabled
+    &[disabled] {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+    &:focus {
+      outline: 1px auto $blue-light;
+    }
     &:checked {
-      border-color: $accent;
-      background-color: $primary;
+      @extend %icon-primary-checkbox-checked;
     }
   } @else if $type == radio {
     @extend %inputbox;

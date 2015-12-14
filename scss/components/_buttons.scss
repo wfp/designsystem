@@ -17,7 +17,7 @@
 
   @if $type == default {
     color: $grey-dark;
-    background-color: $grey-lighter;
+    background-color: $grey-lightest;
     &:hover,
     &:focus {
       border-color: rgba(0,0,0,0.25);
