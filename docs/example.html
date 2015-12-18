@@ -154,5 +154,19 @@
       </div>
     </footer>
 
+    <script src="js/lib/jquery.js"></script>
+    <script src="js/lib/fastclick.js"></script>
+    <script src="js/lib/responsive-nav.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+      var navExample = responsiveNav('#js-example-menu', {
+        customToggle: "js-example-menu-trigger",
+        navClass: "masthead--menu",
+        openPos: "absolute",
+        closedPos: "static"
+      });
+    </script>
+
   </body>
 </html>
