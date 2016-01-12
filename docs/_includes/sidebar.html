@@ -9,7 +9,7 @@
       {% if cat == category %}
       {% assign current = nil %}
       {% if page.url == link.url %}{% assign current = ' class="current"' %}{% endif %}
-      <li class="menu--item"><a class="menu--link" href="{{ site.baseurl }}{{ link.url }}"{{current}}>{{ link.title }}</a></li>
+      <li class="menu--item"><a class="menu--link" href="{{ base }}{{ link.url }}"{{current}}>{{ link.title }}</a></li>
       {% endif %}
       {% endfor %}
     {% endif %}

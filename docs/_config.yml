@@ -2,7 +2,7 @@
 title: "WFP UI Docs"
 email: "me@matthewmorek.com"
 description: ""
-baseurl: "/guides/ui/v0.5.0" # WFP CDN
+# baseurl: "/guides/ui/v0.5.0" # WFP CDN
 url: "https://cdn.wfp.org" # WFP CDN
 version: "v0.5.0"
 quiet: true
