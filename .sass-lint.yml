@@ -36,7 +36,7 @@ rules:
   no-empty-rulesets: 1
   no-extends: 0
   no-ids: 1
-  no-important: 1
+  no-important: 2
   no-invalid-hex: 1
   no-mergeable-selectors: 1
   no-misspelled-properties: 1
@@ -94,5 +94,3 @@ rules:
     - 1
     -
       size: 2
-  no-important:
-    -  2
