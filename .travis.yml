@@ -15,7 +15,6 @@ before_script:
   - rvm rubygems current
   - gem update
   - ruby --version
-  - gem install pygments.rb --no-rdoc --no-ri
   - gem install jekyll --no-rdoc --no-ri --pre
   - jekyll --version
   - node_modules/.bin/grunt --version
