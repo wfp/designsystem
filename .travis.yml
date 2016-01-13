@@ -5,16 +5,19 @@ node_js:
   - "4.0"
 install: npm install
 before_script:
-  - rvm implode --force
-  - sudo rm ~/.rvmrc
-  - sudo apt-get -y purge ruby
-  - gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
-  - \curl -sSL https://get.rvm.io | bash -s stable --ruby
-  - source /home/travis/.rvm/scripts/rvm
-  - rvm reload
+  # - rvm implode --force
+  # - sudo rm ~/.rvmrc
+  # - sudo apt-get -y purge ruby
+  # - gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
+  # - \curl -sSL https://get.rvm.io | bash -s stable --ruby
+  # - source /home/travis/.rvm/scripts/rvm
+  # - rvm reload
+  # - rvm rubygems current
+  - rvm install 2.1.1
+  - rvm use 2.1.1
+  - ruby --version
   - rvm rubygems current
   - gem update
-  - ruby --version
   - gem install jekyll --no-rdoc --no-ri --pre
   - jekyll --version
   - node_modules/.bin/grunt --version
