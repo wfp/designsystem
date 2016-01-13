@@ -13,8 +13,8 @@ before_script:
   # - source /home/travis/.rvm/scripts/rvm
   # - rvm reload
   # - rvm rubygems current
-  - rvm install 2.1.1
-  - rvm use 2.1.1
+  - rvm install 2.2.3
+  - rvm use 2.2.3
   - ruby --version
   - rvm rubygems current
   - gem update

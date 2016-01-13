@@ -71,7 +71,10 @@ rules:
   indentation: 1
   leading-zero: 1
   nesting-depth: 1
-  property-sort-order: 1
+  property-sort-order:
+    - 0
+    -
+      ignore-custom-properties: true
   quotes: 1
   shorthand-values: 1
   url-quotes: 1
