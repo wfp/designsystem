@@ -90,28 +90,28 @@ The same menu as in previous example, but used together with grids, to create mo
   <div class="menu--group wfp-u-1 wfp-u-md-1-3">
     <h6 class="menu--heading">Our Programmes</h6>
     <ul class="menu--wrapper">
-      <li class="menu--item"><a href="#">Cash and Vouchers</a></li>
-      <li class="menu--item"><a href="#">Foods for Assets</a></li>
-      <li class="menu--item"><a href="#">HIV / AIDS</a></li>
-      <li class="menu--item"><a href="#">Purchase for Progress</a></li>
+      <li class="menu--item"><a href="#" class="menu--link">Cash and Vouchers</a></li>
+      <li class="menu--item"><a href="#" class="menu--link">Foods for Assets</a></li>
+      <li class="menu--item"><a href="#" class="menu--link">HIV / AIDS</a></li>
+      <li class="menu--item"><a href="#" class="menu--link">Purchase for Progress</a></li>
     </ul>
   </div>
   <div class="menu--group wfp-u-1 wfp-u-md-1-3">
     <h6 class="menu--heading">Our Expertise</h6>
     <ul class="menu--wrapper">
-      <li class="menu--item"><a href="#">Preparedness: Being Ready</a></li>
-      <li class="menu--item"><a href="#">Responding to Emergencies</a></li>
-      <li class="menu--item"><a href="#">Food Security Analysis</a></li>
-      <li class="menu--item"><a href="#">Buying the Food</a></li>
+      <li class="menu--item"><a href="#" class="menu--link">Preparedness: Being Ready</a></li>
+      <li class="menu--item"><a href="#" class="menu--link">Responding to Emergencies</a></li>
+      <li class="menu--item"><a href="#" class="menu--link">Food Security Analysis</a></li>
+      <li class="menu--item"><a href="#" class="menu--link">Buying the Food</a></li>
     </ul>
   </div>
   <div class="menu--group wfp-u-1 wfp-u-md-1-3">
     <h6 class="menu--heading">Our Operations</h6>
     <ul class="menu--wrapper">
-      <li class="menu--item"><a href="#">Current Emergencies</a></li>
-      <li class="menu--item"><a href="#">Emergency Operations</a></li>
-      <li class="menu--item"><a href="#">Relief & Recovery Operations</a></li>
-      <li class="menu--item"><a href="#">Special Operations</a></li>
+      <li class="menu--item"><a href="#" class="menu--link">Current Emergencies</a></li>
+      <li class="menu--item"><a href="#" class="menu--link">Emergency Operations</a></li>
+      <li class="menu--item"><a href="#" class="menu--link">Relief & Recovery Operations</a></li>
+      <li class="menu--item"><a href="#" class="menu--link">Special Operations</a></li>
     </ul>
   </div>
 </nav>
