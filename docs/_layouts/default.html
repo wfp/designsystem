@@ -16,11 +16,11 @@
 
     {% include footer.html %}
 
-    <script src="{{ "/js/lib/jquery.js" | prepend: site.baseurl }}"></script>
-    <script src="{{ "/js/lib/fastclick.js" | prepend: site.baseurl }}"></script>
-    <script src="{{ "/js/lib/responsive-nav.js" | prepend: site.baseurl }}"></script>
-    <script src="{{ "/js/plugins.js" | prepend: site.baseurl }}"></script>
-    <script src="{{ "/js/main.js" | prepend: site.baseurl }}"></script>
+    <script src="{{base}}/js/lib/jquery.js"></script>
+    <script src="{{base}}/js/lib/fastclick.js"></script>
+    <script src="{{base}}/js/lib/responsive-nav.js"></script>
+    <script src="{{base}}/js/plugins.js"></script>
+    <script src="{{base}}/js/main.js"></script>
     {% if page.path == 'component-1-masthead.md' %}
     <script>
       var navExample = responsiveNav('#js-example-menu', {

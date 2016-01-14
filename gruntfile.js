@@ -214,13 +214,7 @@ module.exports = function(grunt) {
       }
     },
     jekyll: {
-      dev: {
-        options: {
-          src: './docs',
-          config: './docs/_config-dev.yml',
-          dest: './dist/docs'
-        }
-      },
+
       dist: {
         options: {
           src: './docs',
@@ -261,11 +255,11 @@ module.exports = function(grunt) {
   // Build Grunticon Icons
   grunt.registerTask('gen-icons', ['clean:grunticon', 'grunticon']);
   // Build WFP UI Docs locally
-  grunt.registerTask('docs', ['sasslint', 'sass:docs', 'postcss:docs', 'jekyll:dev']);
+  grunt.registerTask('docs', ['sasslint', 'sass:docs', 'postcss:docs', 'jekyll']);
   // Build WFP UI Docs
-  grunt.registerTask('docs-build', ['sasslint', 'sass:docs', 'postcss:docs', 'gen-icons', 'jekyll:dev']);
+  grunt.registerTask('docs-build', ['sasslint', 'sass:docs', 'postcss:docs', 'gen-icons', 'jekyll']);
   // Build dist-ready WFP UI Docs
-  grunt.registerTask('docs-dist', ['sasslint', 'sass:docsDist', 'postcss:docsDist', 'gen-icons', 'jekyll:dist']);
+  grunt.registerTask('docs-dist', ['sasslint', 'sass:docsDist', 'postcss:docsDist', 'gen-icons', 'jekyll']);
   // Build WFP UI
   grunt.registerTask('build', ['eslint', 'gen-svg', 'sasslint', 'sass:dev', 'postcss:dev']);
   // Build a dist-ready WFP UI
