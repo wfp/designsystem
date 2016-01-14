@@ -3,15 +3,13 @@
 #########################
 # Linter Options
 options:
-  formatter: compact
+  formatter: stylish
   merge-default-rules: false
   # Output file instead of logging results
-  output-file: '_tmp/sass-lint.html'
+  # output-file: '_tmp/sass-lint.html'
 # File Options
-files:
-  include: 'sass/**/*.s+(a|c)ss'
-  ignore:
-    - 'sass/vendor/**/*.*'
+# files:
+  # include: 'scss/**/*.s+(a|c)ss'
 # Rule Configuration
 rules:
   # Extends
@@ -70,9 +68,8 @@ rules:
   brace-style: 1
   clean-import-paths: 1
   empty-args: 1
-  hex-length: 1
+  hex-length: 0
   hex-notation: 1
-  indentation: 1
   leading-zero: 0
   nesting-depth: 1
   property-sort-order:
