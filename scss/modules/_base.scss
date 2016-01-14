@@ -7,7 +7,7 @@
 %hidden,
 .hidden,
 [hidden] {
-  display: none !important;
+  display: none;
 }
 
 html {
@@ -192,10 +192,10 @@ pre {
 // -----------------------------------------------------------------------------
 @media print {
   * {
-    background: transparent !important;
-    color: #000 !important;
-    box-shadow: none !important;
-    text-shadow: none !important;
+    background: transparent;
+    color: #000;
+    box-shadow: none;
+    text-shadow: none;
   }
 
   a,
@@ -234,7 +234,7 @@ pre {
   }
 
   img {
-    max-width: 100% !important;
+    max-width: 100%;
   }
 
   @page {
