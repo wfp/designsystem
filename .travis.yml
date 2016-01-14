@@ -15,9 +15,8 @@ before_script:
   # - rvm rubygems current
   - rvm install 2.2.3
   - rvm use 2.2.3
+  - rvm rubygems 2.2.3
   - ruby --version
-  - rvm rubygems current
-  - gem update
   - gem install jekyll --no-rdoc --no-ri --pre
   - jekyll --version
   - node_modules/.bin/grunt --version
