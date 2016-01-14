@@ -8,6 +8,12 @@
   <link href="img/icons/ui/ui-icons.svg.css" rel="stylesheet">
   <link href="img/icons/thematic/thematic-icons.svg.css" rel="stylesheet">
   <link href="css/main.css" rel="stylesheet">
+  <style>
+    .block {
+      display: block;
+      margin: 1em 0;
+    }
+  </style>
 </head>
 <body class="wfp-masthead-spacer--narrow">
 
@@ -101,182 +107,202 @@
     <section class="wfp-box  wfp-u-1">
       <form class="wfp-form--stacked">
 
-        <button class="wfp-btn">Button</button>
-        <button class="wfp-btn--primary">Button</button>
-        <button class="wfp-btn--primary active">Button</button>
-        <button class="wfp-btn--primary disabled">Button</button>
-        <button class="wfp-btn--negative">Button</button>
-        <button class="wfp-btn--positive">Button</button>
-        <button class="wfp-btn--warning">Button</button>
-
-        <label for="state">Select an option:</label>
-        <select id="select" class="select">
-          <option>Option 1</option>
-          <option>Option 2</option>
-          <option>Option 3</option>
-        </select>
-        <label for="option-one" class="input-radio"><input id="option-one" class="radio" type="radio" name="options">Option #1</label>
-        <label for="option-two" class="input-radio"><input id="option-two" class="radio" type="radio" name="options">Option #2</label>
-
-        <div class="wfp-u-1 wfp-box  wfp-u-1--flat">
-          <label for="message">Your message:</label>
-          <textarea name="message" id="message"></textarea>
-          <label for="sample-1">
-            <input type="checkbox" id="sample-1">I would like to be contacted, if necessary.
-          </label>
+        <div class="block">
+          <button class="wfp-btn">Button</button>
         </div>
-
-      </form>
-
-    </section>
-
-    <section class="wfp-box  wfp-u-1">
-      <nav class="wfp-menu">
-        <div class="menu--group">
-          <h6 class="menu--heading">About</h6>
-          <ul class="menu--wrapper">
-            <li class="menu--item"><a href="#" class="menu--link">Executive Director</a></li>
-            <li class="menu--item"><a href="#" class="menu--link">Senior Leadership</a></li>
-            <li class="menu--item"><a href="#" class="menu--link">Corporate Information</a></li>
-            <li class="menu--item"><a href="#" class="menu--link">Funding</a></li>
-          </ul>
+        <div class="block">
+          <button class="wfp-btn active">Button</button>
+          <button class="wfp-btn disabled">Button</button>
         </div>
-      </nav>
-
-      <nav class="wfp-menu wfp-grid">
-        <div class="menu--group wfp-u-1 wfp-u-md-1-3">
-          <h6 class="menu--heading">Our Programmes</h6>
-          <ul class="menu--wrapper">
-            <li class="menu--item"><a class="menu--link" href="#">Cash and Vouchers</a></li>
-            <li class="menu--item"><a class="menu--link"  href="#">Foods for Assets</a></li>
-            <li class="menu--item"><a class="menu--link"  href="#">HIV / AIDS</a></li>
-            <li class="menu--item"><a class="menu--link"  href="#">Purchase for Progress</a></li>
-          </ul>
+        <div class="block">
+          <button class="wfp-btn--negative">Button</button>
+          <button class="wfp-btn--positive">Button</button>
+          <button class="wfp-btn--warning">Button</button>
         </div>
-        <div class="menu--group wfp-u-1 wfp-u-md-1-3">
-          <h6 class="menu--heading">Our Expertise</h6>
-          <ul class="menu--wrapper">
-            <li class="menu--item"><a class="menu--link"  href="#">Preparedness: Being Ready</a></li>
-            <li class="menu--item"><a class="menu--link"  href="#">Responding to Emergencies</a></li>
-            <li class="menu--item"><a class="menu--link"  href="#">Food Security Analysis</a></li>
-            <li class="menu--item"><a class="menu--link"  href="#">Buying the Food</a></li>
-          </ul>
+        <div class="block">
+          <button class="wfp-btn xsmall">Button</button>
+          <button class="wfp-btn small">Button</button>
+          <button class="wfp-btn">Button</button>
+          <button class="wfp-btn large">Button</button>
+          <button class="wfp-btn xlarge">Button</button>
         </div>
-        <div class="menu--group wfp-u-1 wfp-u-md-1-3">
-          <h6 class="menu--heading">Our Operations</h6>
-          <ul class="menu--wrapper">
-            <li class="menu--item"><a class="menu--link"  href="#">Current Emergencies</a></li>
-            <li class="menu--item"><a class="menu--link"  href="#">Emergency Operations</a></li>
-            <li class="menu--item"><a class="menu--link"  href="#">Relief & Recovery Operations</a></li>
-            <li class="menu--item"><a class="menu--link"  href="#">Special Operations</a></li>
-          </ul>
-        </div>
-      </nav>
+        <div class="block">
+         <button class="wfp-btn--primary">Button</button>
+         <button class="wfp-btn--primary active">Button</button>
+         <button class="wfp-btn--primary disabled">Button</button>
+         <button class="wfp-btn--negative">Button</button>
+         <button class="wfp-btn--positive">Button</button>
+         <button class="wfp-btn--warning">Button</button>
+       </div>
 
-      <ul class="wfp-seg-control">
-        <li class="seg-control--item">
-          <a class="seg-control--link" href="#">Home</a>
-        </li>
-        <li class="seg-control--item">
-          <a class="seg-control--link" href="#">Blog</a>
-        </li>
-        <li class="seg-control--item">
-          <a class="seg-control--link" href="#">About us</a>
-        </li>
-        <li class="seg-control--item">
-          <a class="seg-control--link" href="#">Contact us</a>
-        </li>
-      </ul>
+       <label for="state">Select an option:</label>
+       <select id="select" class="select">
+        <option>Option 1</option>
+        <option>Option 2</option>
+        <option>Option 3</option>
+      </select>
+      <label for="option-one" class="input-radio"><input id="option-one" class="radio" type="radio" name="options">Option #1</label>
+      <label for="option-two" class="input-radio"><input id="option-two" class="radio" type="radio" name="options">Option #2</label>
 
-    </section>
-
-    <section class="wfp-box  wfp-u-1">
-
-      <table class="wfp-table">
-        <thead>
-          <th>#</th>
-          <th>Name</th>
-          <th>Origin</th>
-          <th>Age</th>
-        </thead>
-        <tbody>
-          <tr>
-            <td>1</td>
-            <td>John Williams</td>
-            <td>New York, USA</td>
-            <td>83</td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>Thomas Newman</td>
-            <td>Los Angeles, USA</td>
-            <td>60</td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>Hans Zimmer</td>
-            <td>Frankfurt, Germany</td>
-            <td>58</td>
-          </tr>
-        </tbody>
-      </table>
-
-      <table class="wfp-table--striped">
-        <thead>
-          <th>#</th>
-          <th>Name</th>
-          <th>Origin</th>
-          <th>Age</th>
-        </thead>
-        <tbody>
-          <tr>
-            <td>1</td>
-            <td>John Williams</td>
-            <td>New York, USA</td>
-            <td>83</td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>Thomas Newman</td>
-            <td>Los Angeles, USA</td>
-            <td>60</td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>Hans Zimmer</td>
-            <td>Frankfurt, Germany</td>
-            <td>58</td>
-          </tr>
-        </tbody>
-      </table>
-
-    </section>
-  </article>
-
-  <footer class="footer">
-    <div class="wfp-grid wfp-wrapper">
-      <div class="wfp-u-1 wfp-u-md-2-3 copyrights">
-        <h4>2015 &copy; World Food Programme. All Rights Reserved.</h4>
+      <div class="wfp-u-1 wfp-box  wfp-u-1--flat">
+        <label for="message">Your message:</label>
+        <textarea name="message" id="message"></textarea>
+        <label for="sample-1">
+          <input type="checkbox" id="sample-1">I would like to be contacted, if necessary.
+        </label>
       </div>
-      <div class="wfp-u-1 wfp-u-md-1-3 site-owner">
-        <h4>WFP UI &amp; UX</h4>
+
+    </form>
+
+  </section>
+
+  <section class="wfp-box  wfp-u-1">
+    <nav class="wfp-menu">
+      <div class="menu--group">
+        <h6 class="menu--heading">About</h6>
+        <ul class="menu--wrapper">
+          <li class="menu--item"><a href="#" class="menu--link">Executive Director</a></li>
+          <li class="menu--item"><a href="#" class="menu--link">Senior Leadership</a></li>
+          <li class="menu--item"><a href="#" class="menu--link">Corporate Information</a></li>
+          <li class="menu--item"><a href="#" class="menu--link">Funding</a></li>
+        </ul>
       </div>
+    </nav>
+
+    <nav class="wfp-menu wfp-grid">
+      <div class="menu--group wfp-u-1 wfp-u-md-1-3">
+        <h6 class="menu--heading">Our Programmes</h6>
+        <ul class="menu--wrapper">
+          <li class="menu--item"><a class="menu--link" href="#">Cash and Vouchers</a></li>
+          <li class="menu--item"><a class="menu--link"  href="#">Foods for Assets</a></li>
+          <li class="menu--item"><a class="menu--link"  href="#">HIV / AIDS</a></li>
+          <li class="menu--item"><a class="menu--link"  href="#">Purchase for Progress</a></li>
+        </ul>
+      </div>
+      <div class="menu--group wfp-u-1 wfp-u-md-1-3">
+        <h6 class="menu--heading">Our Expertise</h6>
+        <ul class="menu--wrapper">
+          <li class="menu--item"><a class="menu--link"  href="#">Preparedness: Being Ready</a></li>
+          <li class="menu--item"><a class="menu--link"  href="#">Responding to Emergencies</a></li>
+          <li class="menu--item"><a class="menu--link"  href="#">Food Security Analysis</a></li>
+          <li class="menu--item"><a class="menu--link"  href="#">Buying the Food</a></li>
+        </ul>
+      </div>
+      <div class="menu--group wfp-u-1 wfp-u-md-1-3">
+        <h6 class="menu--heading">Our Operations</h6>
+        <ul class="menu--wrapper">
+          <li class="menu--item"><a class="menu--link"  href="#">Current Emergencies</a></li>
+          <li class="menu--item"><a class="menu--link"  href="#">Emergency Operations</a></li>
+          <li class="menu--item"><a class="menu--link"  href="#">Relief & Recovery Operations</a></li>
+          <li class="menu--item"><a class="menu--link"  href="#">Special Operations</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <ul class="wfp-seg-control">
+      <li class="seg-control--item">
+        <a class="seg-control--link" href="#">Home</a>
+      </li>
+      <li class="seg-control--item">
+        <a class="seg-control--link" href="#">Blog</a>
+      </li>
+      <li class="seg-control--item">
+        <a class="seg-control--link" href="#">About us</a>
+      </li>
+      <li class="seg-control--item">
+        <a class="seg-control--link" href="#">Contact us</a>
+      </li>
+    </ul>
+
+  </section>
+
+  <section class="wfp-box  wfp-u-1">
+
+    <table class="wfp-table">
+      <thead>
+        <th>#</th>
+        <th>Name</th>
+        <th>Origin</th>
+        <th>Age</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>John Williams</td>
+          <td>New York, USA</td>
+          <td>83</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Thomas Newman</td>
+          <td>Los Angeles, USA</td>
+          <td>60</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Hans Zimmer</td>
+          <td>Frankfurt, Germany</td>
+          <td>58</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <table class="wfp-table--striped">
+      <thead>
+        <th>#</th>
+        <th>Name</th>
+        <th>Origin</th>
+        <th>Age</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>John Williams</td>
+          <td>New York, USA</td>
+          <td>83</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Thomas Newman</td>
+          <td>Los Angeles, USA</td>
+          <td>60</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Hans Zimmer</td>
+          <td>Frankfurt, Germany</td>
+          <td>58</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </section>
+</article>
+
+<footer class="footer">
+  <div class="wfp-grid wfp-wrapper">
+    <div class="wfp-u-1 wfp-u-md-2-3 copyrights">
+      <h4>2015 &copy; World Food Programme. All Rights Reserved.</h4>
     </div>
-  </footer>
+    <div class="wfp-u-1 wfp-u-md-1-3 site-owner">
+      <h4>WFP UI &amp; UX</h4>
+    </div>
+  </div>
+</footer>
 
-  <script src="js/lib/jquery.js"></script>
-  <script src="js/lib/fastclick.js"></script>
-  <script src="js/lib/responsive-nav.js"></script>
-  <script src="js/plugins.js"></script>
-  <script src="js/main.js"></script>
-  <script>
-    var navExample = responsiveNav('#js-example-menu', {
-      customToggle: "js-example-menu-trigger",
-      navClass: "masthead--menu",
-      openPos: "absolute",
-      closedPos: "static"
-    });
-  </script>
+<script src="js/lib/jquery.js"></script>
+<script src="js/lib/fastclick.js"></script>
+<script src="js/lib/responsive-nav.js"></script>
+<script src="js/plugins.js"></script>
+<script src="js/main.js"></script>
+<script>
+  var navExample = responsiveNav('#js-example-menu', {
+    customToggle: "js-example-menu-trigger",
+    navClass: "masthead--menu",
+    openPos: "absolute",
+    closedPos: "static"
+  });
+</script>
 
 </body>
 </html>
