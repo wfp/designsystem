@@ -46,7 +46,7 @@ rules:
   no-trailing-zero: 0
   no-transition-all: 1
   no-url-protocols: 1
-  no-vendor-prefixes: 1
+  no-vendor-prefixes: 0
   no-warn: 1
   property-units: 0
 
