@@ -14,12 +14,6 @@
 @import "modules/mixins";
 @import "modules/icons/icons-dark";
 
-$shadow-lightest: rgba(0, 0, 0, 0.05);
-$shadow-lighter: rgba(0, 0, 0, 0.1);
-$shadow-light: rgba(0, 0, 0, 0.25);
-$shadow-mid: rgba(0, 0, 0, 0.5);
-$shadow-strong: rgba(0, 0, 0, 0.75);
-
 //
 // Base styles
 // --------------------------------------------------
@@ -39,7 +33,6 @@ ul, ol, dl, figure {
   &:last-child {
     margin: 0;
   }
-
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -88,18 +81,18 @@ ul {
 // Forms
 // --------------------------------------------------
 %input-generic {
-  appearance: none;
   padding: 0.5em 0.75em;
   display: inline-block;
   border: 1px solid $grey-lighter;
   font-size: 100%;
   line-height: 1.5;
-  box-shadow: inset 0 1px 3px $shadow-light;
+  box-shadow: inset 0 1px 3px rgba($black, 0.1);
   border-radius: 1px;
   transition: 0.3s linear border;
   box-sizing: border-box;
   font-family: inherit;
   vertical-align: baseline;
+  appearance: none;
   height: initial;
 
   &:focus {
@@ -127,20 +120,20 @@ textarea {
 
 %input,
 input {
-  [type="text"],
-  [type="password"],
-  [type="email"],
-  [type="url"],
-  [type="date"],
-  [type="month"],
-  [type="time"],
-  [type="datetime"],
-  [type="datetime-local"],
-  [type="week"],
-  [type="number"],
-  [type="search"],
-  [type="tel"],
-  [type="color"] {
+  &[type="text"],
+  &[type="password"],
+  &[type="email"],
+  &[type="url"],
+  &[type="date"],
+  &[type="month"],
+  &[type="time"],
+  &[type="datetime"],
+  &[type="datetime-local"],
+  &[type="week"],
+  &[type="number"],
+  &[type="search"],
+  &[type="tel"],
+  &[type="color"] {
     @extend %input-generic;
   }
 }
@@ -173,9 +166,11 @@ select {
   font-weight: bold;
   font-size: 100%;
   line-height: 1.5;
-  border: 1px solid $shadow-lighter;
+  border: 1px solid rgba($black, 0.15);
   border-radius: 2px;
-  transition: border 0.1s ease-in;
+  transition-property: border, background, color;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in;
   vertical-align: baseline;
 
   &:visited {
@@ -186,7 +181,7 @@ select {
   &:focus,
   &:active,
   &:active:focus {
-    border-color: $shadow-light;
+    border-color: rgba($black, 0.25);
     color: darken($grey, 5%);
     background-image: none;
     background-color: inherit;
@@ -203,8 +198,8 @@ select {
   &-active:active:focus {
     background-color: darken($grey-light, 5%);
     color: darken($grey, 5%);
-    border-color: $shadow-light;
-    box-shadow: $shadow-lighter 0 0 8px inset;
+    border-color: rgba($black, 0.25);
+    box-shadow: rgba($black, 0.15) 0 0 8px inset;
   }
 
   // Disabled Button
@@ -218,7 +213,7 @@ select {
     opacity: 0.4;
     cursor: not-allowed;
     box-shadow: none;
-    border: 1px solid $shadow-lighter;
+    border: 1px solid rgba($black, 0.15);
   }
 
   &-primary {
@@ -234,7 +229,7 @@ select {
     &:active:focus {
       color: $white;
       background-color: darken($primary, 5%);
-      box-shadow: $shadow-light 0 0 16px inset;
+      box-shadow: rgba($black, 0.25) 0 0 16px inset;
     }
 
     &:hover {
@@ -252,7 +247,7 @@ select {
     &:active:focus {
       color: darken($orange, 40%);
       background-color: darken($orange, 5%);
-      box-shadow: $shadow-light 0 0 16px inset;
+      box-shadow: rgba($black, 0.25) 0 0 16px inset;
     }
 
     &:hover {
@@ -270,7 +265,7 @@ select {
     &:active:focus {
       color: darken($green, 35%);
       background-color: darken($green, 5%);
-      box-shadow: $shadow-light 0 0 16px inset;
+      box-shadow: rgba($black, 0.25) 0 0 16px inset;
     }
 
     &:hover {
@@ -288,7 +283,7 @@ select {
     &:active:focus {
       color: lighten($red, 35%);
       background-color: darken($red, 5%);
-      box-shadow: $shadow-light 0 0 16px inset;
+      box-shadow: rgba($black, 0.25) 0 0 16px inset;
     }
 
     &:hover {
@@ -338,7 +333,6 @@ a {
 // Button Group
 // --------------------------------------------------
 .btn-group {
-
   .btn {
     border-color: $grey-lighter;
     background-color: $white;
@@ -388,7 +382,9 @@ a {
       }
     }
   }
+}
 
+.checkbox {
   &:only-child {
     margin-top: 0;
     margin-bottom: 0;
@@ -412,29 +408,15 @@ a {
 .label {
   border-radius: 1px;
 
-  &-default {
-    background-color: $grey;
-  }
-
-  &-primary {
-    background-color: $primary;
-  }
-
-  &-success {
-    background-color: darken($green, 20%);
-  }
+  &-default { background-color: $grey; }
+  &-primary { background-color: $primary; }
+  &-success { background-color: darken($green, 20%); }
+  &-warning { background-color: darken($orange, 10%); }
+  &-danger { background-color: darken($red, 5%); }
 
   &-info {
     background-color: $grey-contrast;
     color: $grey;
-  }
-
-  &-warning {
-    background-color: darken($orange, 10%);
-  }
-
-  &-danger {
-    background-color: darken($red, 5%);
   }
 }
 
@@ -451,7 +433,7 @@ a {
 .thumbnail,
 .img-thumbnail {
   border-radius: 1px;
-  box-shadow: 0 1px 3px $shadow-strong;
+  box-shadow: 0 1px 3px rgba($black, .075);
 }
 
 
@@ -485,13 +467,8 @@ a {
   color: $white;
   border: 0;
   background-color: $primary;
-  box-shadow: $shadow-light 0 1px 3px;
+  box-shadow: rgba($black, 0.2) 0 1px 3px;
 }
-
-$overlay-light: $overlay-light;
-$overlay-mid: $overlay-mid;
-$overlay-strong: $overlay-strong;
-$overlay-full: $overlay-full;
 
 // Default navbar
 .navbar-default {
@@ -499,26 +476,26 @@ $overlay-full: $overlay-full;
 
   .navbar-brand,
   .navbar-nav > li > a {
-    color: $overlay-strong;
+    color: rgba($white, 0.75);
 
     &:focus,
     &:active,
     &:hover {
-      color: $overlay-full;
+      color: rgba($white, 1);
     }
   }
 
   // .navbar-nav > .open > a,
   .navbar-nav > .active > a {
-    color: $overlay-full;
+    color: rgba($white, 1);
     background-color: transparent;
-    box-shadow: inset 0 -3px 0 $overlay-mid;
+    box-shadow: inset 0 -3px 0 rgba($white, 0.5);
 
     &:hover,
     &:active {
-      color: $overlay-full;
+      color: rgba($white, 1);
       background-color: transparent;
-      box-shadow: inset 0 -3px 0 $overlay-full;
+      box-shadow: inset 0 -3px 0 rgba($white, 1);
     }
   }
 
@@ -584,7 +561,6 @@ $overlay-full: $overlay-full;
 
 .nav-tabs {
   li {
-
     a {
       color: $primary;
       border-radius: 1px 1px 0 0;
@@ -665,22 +641,21 @@ $overlay-full: $overlay-full;
 
 // Common styles
 .alert {
-  box-shadow: inset 0 1px 0 $overlay-light, 0 1px 2px $shadow-lighter;
+  box-shadow: inset 0 1px 0 rgba($white, .25), 0 1px 2px rgba($black, .05);
   border-radius: 1px;
-  border: 1px solid $shadow-light;
-  color: $shadow-strong;
+  border: 1px solid rgba($black, 0.25);
+  color: rgba($black, 0.75);
 }
 
 // Apply the mixin to the alerts
 .alert-success    { background-color: lighten($green, 15%); }
-
-.alert-info       {
-  background-color: $grey-lighter;
-  color: $grey;
-}
 .alert-warning    { background-color: lighten($orange, 15%); }
 .alert-danger     { background-color: lighten($red, 15%); }
 
+.alert-info {
+  background-color: $grey-lighter;
+  color: $grey;
+}
 
 //
 // Progress bars
@@ -689,7 +664,7 @@ $overlay-full: $overlay-full;
 // Give the progress background some depth
 .progress {
   background-color: $grey-lighter;
-  box-shadow: $shadow-lighter 0 1px 2px 0 inset;
+  box-shadow: rgba($black, 0.15) 0 1px 2px 0 inset;
   border-radius: 1px;
 }
 
@@ -712,10 +687,10 @@ $overlay-full: $overlay-full;
 // --------------------------------------------------
 
 .list-group {
-  box-shadow: 0 1px 2px $shadow-lighter;
+  box-shadow: 0 1px 2px rgba($black, .075);
 
   &-item {
-    border-color: $shadow-ligher;
+    border-color: rgba($black, 0.15);
 
     &:first-child {
       border-top-right-radius: 1px;
@@ -755,8 +730,8 @@ $overlay-full: $overlay-full;
 
 // Common styles
 .panel {
-  box-shadow: 0 1px 2px $shadow-lightest;
-  border-color: $shadow-lighter;
+  box-shadow: 0 1px 2px rgba($black, .05);
+  border-color: rgba($black, 0.1);
   border-radius: 1px;
 
   &-heading {
@@ -817,7 +792,7 @@ $overlay-full: $overlay-full;
   background-color: $grey-lighter;
   border-color: darken($well-bg, 10%);
   border-radius: 1px;
-  box-shadow: inset 0 1px 3px $shadow-lightest, 0 1px 0 $overlay-light;
+  box-shadow: inset 0 1px 3px rgba($black, .05), 0 1px 0 rgba($white, .1);
 
   p:last-child,
   p:only-child {
