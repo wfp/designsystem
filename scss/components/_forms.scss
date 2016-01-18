@@ -97,6 +97,7 @@
   } @else if $type == checkbox {
     // @extend %inputbox;
     @extend %icon-dark-checkbox-unchecked;
+    -moz-appearance: checkbox;
     appearance: none;
     display: inline-block;
     border: none;
