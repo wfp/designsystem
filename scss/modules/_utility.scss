@@ -9,9 +9,11 @@
 %text-left {
   text-align: left;
 }
+
 %text-center {
   text-align: center;
 }
+
 %text-right {
   text-align: right;
 }
@@ -20,6 +22,7 @@
 %caps {
   text-transform: capitalize;
 }
+
 %allcaps {
   text-transform: uppercase;
 }
@@ -39,7 +42,7 @@
 %band {
   background: $white;
   border-bottom: 1px solid $grey-contrast;
-  box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.10);
+  box-shadow: 0 1px 3px 0 rgba($black, 0.1);
 }
 
 // -----------------------------------------------------------------------------
@@ -61,7 +64,8 @@
   margin: 0 auto;
   max-width: $content-width;
   padding: 1em;
-  @include media-query($content-width){
+
+  @include media-query($content-width) {
     padding: 1em 0;
   }
 }
@@ -73,7 +77,8 @@
 .wfp-wrapper-tight {
   @extend %wrapper;
   padding: 0 1em;
-  @include media-query($content-width){
+
+  @include media-query($content-width) {
     padding: 0;
   }
 }
@@ -82,6 +87,7 @@
   .wfp-box {
     padding: 1rem;
   }
+
   .wfp-box--flat {
     padding: 0 1rem;
   }
@@ -91,23 +97,29 @@
 // CSS Declarations
 // -----------------------------------------------------------------------------
 .wfp-text-left {
-  @extend text-left;
+  @extend %text-left;
 }
+
 .wfp-text-right {
-  @extend text-right;
+  @extend %text-right;
 }
+
 .wfp-text-center {
-  @extend text-center;
+  @extend %text-center;
 }
+
 .wfp-caps {
   @extend %caps;
 }
+
 .wfp-allcaps {
   @extend %allcaps;
 }
+
 .wfp-nolist {
   @extend %nolist;
 }
+
 .wfp-band {
   @extend %band;
 }

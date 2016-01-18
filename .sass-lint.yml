@@ -18,26 +18,51 @@ rules:
   placeholder-in-extend: 1
 
   # Mixins
-  mixins-before-declarations: 1
+  mixins-before-declarations:
+    - 1
+    -
+      exclude: ['media-query']
 
   # Line Spacing
   one-declaration-per-line: 1
   empty-line-between-blocks: 1
-  single-line-per-selector: 1
+  single-line-per-selector: 0
 
   # Disallows
   no-color-keywords: 1
-  no-color-literals: 1
+  no-color-literals:
+    - 1
+    -
+      allow-rgba: true
   no-css-comments: 1
   no-debug: 1
-  no-duplicate-properties: 1
+  no-duplicate-properties:
+    - 1
+    -
+      exclude: ['display']
+
   no-empty-rulesets: 1
   no-extends: 0
   no-ids: 1
   no-important: 2
   no-invalid-hex: 1
-  no-mergeable-selectors: 1
-  no-misspelled-properties: 1
+  no-mergeable-selectors: 0
+  no-misspelled-properties:
+  - 1
+  -
+    extra-properties:
+      - 'tap-highlight-color'
+      - 'touch-callout'
+      - 'overflow-scrolling'
+      - 'flex-order'
+      - 'flex-positive'
+      - 'flex-negative'
+      - 'flex-preferred-size'
+      - 'flex-pack'
+      - 'flex-align'
+      - 'flex-item-align'
+      - 'flex-line-pack'
+
   no-qualifying-elements:
     - 1
     -
@@ -51,9 +76,9 @@ rules:
   property-units: 0
 
   # Nesting
-  force-attribute-nesting: 1
+  force-attribute-nesting: 0
   force-element-nesting: 1
-  force-pseudo-nesting: 1
+  force-pseudo-nesting: 0
 
   # Name Formats
   function-name-format: 1
@@ -71,7 +96,10 @@ rules:
   hex-length: 0
   hex-notation: 1
   leading-zero: 0
-  nesting-depth: 1
+  nesting-depth:
+    - 1
+    -
+      max-depth: 3
   property-sort-order:
     - 0
     -

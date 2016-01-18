@@ -10,43 +10,51 @@
   font-weight: bold;
   font-size: 100%;
   line-height: 1.5;
-  border: 1px solid rgba(0,0,0,0.15);
+  border: 1px solid transparentize($black, 0.85);
   border-radius: 3px;
-  transition: all 0.1s ease-in;
+  transition-property: border, background;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in;
   vertical-align: baseline;
 
   @if $type == default {
     color: $grey-dark;
     background-color: $grey-lightest;
+
     &:hover,
     &:focus {
-      border-color: rgba(0,0,0,0.25);
+      border-color: transparentize($black, 0.75);
       color: inherit;
     }
+
     &:active {
       background-color: darken($grey-lighter, 5%);
     }
   } @else if $type == primary {
     color: $white;
     background-color: $primary;
+
     &:active {
       background-color: darken($primary, 5%);
     }
   } @else if $type == negative {
     color: lighten($red, 35%);
     background-color: $red;
+
     &:active {
       background-color: darken($red, 5%);
     }
   } @else if $type == warning {
     color: darken($orange, 40%);
     background-color: $orange;
+
     &:active {
       background-color: darken($orange, 5%);
     }
   } @else if $type == positive {
     color: lighten($green, 60%);
     background-color: $green;
+
     &:active {
       background-color: darken($green, 5%);
     }
@@ -58,8 +66,8 @@
   &.active:hover,
   &.active:active,
   &.active:focus {
-    border-color: rgba(0,0,0,0.25);
-    box-shadow: rgba(0,0,0,0.15) 0 0 8px inset;
+    border-color: transparentize($black, 0.75);
+    box-shadow: transparentize($black, 0.85) 0 0 8px inset;
   }
 
   // Disabled Button
@@ -72,7 +80,7 @@
     opacity: 0.4;
     cursor: not-allowed;
     box-shadow: none;
-    border: 1px solid rgba(0,0,0,0.15);
+    border: 1px solid transparentize($black, 0.85);
   }
 
   // Extra sizes and modes for buttons
@@ -82,33 +90,40 @@
     padding: 0.5rem 0.75rem;
     line-height: 1;
   }
+
   &.small {
     font-size: 1rem;
     font-weight: normal;
     padding: 0.33rem 0.75rem;
   }
+
   &.large {
     font-size: 1.125rem;
     padding: 0.66rem 1rem;
   }
+
   &.xlarge {
     font-size: 1.25rem;
     padding: 0.75rem 1.25rem;
   }
+
   &.block {
     display: block;
     width: 100%;
   }
+
   &.flat {
-    border: none;
+    border: 0;
     box-shadow: none;
   }
 
   & + [class*="btn"] {
     margin: 0 0.5rem;
+
     &:first-child {
       margin-left: 0;
     }
+
     &:last-child {
       margin-right: 0;
     }
@@ -118,15 +133,19 @@
 .wfp-btn {
   @include button;
 }
+
 .wfp-btn--primary {
   @include button(primary);
 }
+
 .wfp-btn--negative {
   @include button(negative);
 }
+
 .wfp-btn--positive {
   @include button(positive);
 }
+
 .wfp-btn--warning {
   @include button(warning);
 }

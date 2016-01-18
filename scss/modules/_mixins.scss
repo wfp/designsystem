@@ -3,7 +3,7 @@
 // Author: Matthew Morek (me@matthewmorek.com)
 // URL: http://matthewmorek.com
 
-@import "_flexbox";
+@import "flexbox";
 
 @mixin media-query($device) {
   @media screen and (min-width: $device) {
@@ -15,15 +15,19 @@
 @mixin transition-property($property...) {
   transition-property: $property;
 }
+
 @mixin transition-duration($duration...) {
   transition-duration: $duration;
 }
+
 @mixin transition-delay($delay...) {
   transition-delay: $delay;
 }
+
 @mixin transition-timing-function($timing...) {
   transition-timing-function: $timing;
 }
+
 @mixin transition($properties...) {
   transition: $properties;
 }

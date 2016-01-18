@@ -16,15 +16,19 @@
         margin: 0;
       }
     }
+
     &-left {
       text-align: center;
-      @include media-query($md-screen){
+
+      @include media-query($md-screen) {
         text-align: left;
       }
     }
+
     &-right {
       text-align: center;
-      @include media-query($md-screen){
+
+      @include media-query($md-screen) {
         text-align: right;
       }
     }
@@ -37,11 +41,15 @@
 
 .footer-top {
   padding: 0.25em 1em;
+
   @include media-query($lg-screen) {
     padding: 0.25em 0;
   }
 
   .social-media {
+    @include media-query($md-screen) {
+      text-align: inherit;
+    }
     margin: 0.75em 0;
     text-align: center;
     overflow: hidden;
@@ -53,32 +61,32 @@
     .social-block {
       display: inline-block;
       vertical-align: baseline;
+
       &.twitter {
         max-width: 108px;
       }
+
       &.facebook {
         max-width: 64px;
       }
+
       &.google-plus {
         max-width: 85px;
       }
     }
-
-    @include media-query($md-screen) {
-      text-align: inherit;
-    }
   }
 
   .logo {
+    @include media-query($md-screen) {
+      text-align: right;
+    }
+
     text-align: center;
 
     img {
       max-width: 208px;
     }
 
-    @include media-query($md-screen) {
-      text-align: right;
-    }
   }
 }
 
@@ -86,6 +94,7 @@
   h4, p {
     margin: 0.5em 0;
   }
+
   h4 {
     margin-bottom: 1em;
   }
@@ -107,12 +116,14 @@
 
   .inline-list {
     @extend %no-list;
+
     li {
       display: inline;
       margin: 0;
       margin-left: 1em;
     }
   }
+
   @include media-query($md-screen) {
     text-align: right;
   }

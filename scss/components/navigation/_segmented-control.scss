@@ -18,14 +18,16 @@
 %seg-control--item {
   display: table-cell;
   border: 1px solid $primary;
-  border-left: none;
+  border-left: 0;
   position: relative;
   z-index: 1;
   vertical-align: middle;
+
   &:first-child {
     border-radius: 2px 0 0 2px;
     border-left: 1px solid $primary;
   }
+
   &:last-child {
     border-radius: 0 2px 2px 0;
   }
@@ -34,13 +36,15 @@
 %seg-control--link {
   padding: 0.35rem 0.75rem;
   width: auto;
-  border: none;
+  border: 0;
   color: $primary;
   font-size: 0.875rem;
   display: block;
+
   &:hover {
     color: $grey;
   }
+
   &.active {
     background-color: $primary;
     color: $white;
@@ -49,9 +53,11 @@
 
 .wfp-seg-control {
   @extend %seg-control;
+
   .seg-control--item {
     @extend %seg-control--item;
   }
+
   .seg-control--link {
     @extend %seg-control--link;
   }

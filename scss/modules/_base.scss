@@ -13,6 +13,7 @@
 html {
   box-sizing: border-box;
 }
+
 *, *:before, *:after {
   box-sizing: inherit;
 }
@@ -35,6 +36,7 @@ body {
   background-color: $background-color;
   color: $text-color;
 }
+
 h1, h2, h3, h4, h5, h6 {
   font-family: $sans-serif-stack;
   font-weight: normal;
@@ -42,18 +44,22 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1em;
   margin: 0.5rem 0;
 }
+
 h1 {
   font-size: 3rem;
   letter-spacing: -0.05rem;
 }
+
 h2 {
   font-size: 2.5rem;
   letter-spacing: -0.025rem;
 }
+
 h3 { font-size: 2rem; }
 h4 { font-size: 1.75rem; }
 h5 { font-size: 1.5rem; }
 h6 { font-size: 1.25rem; }
+
 p {
   margin-top: 1rem;
   margin-bottom: 1rem;
@@ -103,6 +109,7 @@ ul, ol, dl, figure,
 menu, ol, ul, dl {
   padding: 0 0 0 $spacing-unit * 0.75;
 }
+
 li {
   margin: 0.25rem 0;
 }
@@ -113,6 +120,7 @@ li {
 figure > img {
   display: block;
 }
+
 figcaption {
   font-size: $small-font-size;
 }
@@ -176,6 +184,7 @@ pre {
   overflow-x: scroll;
   border-left: 6px solid $blue-light;
   word-wrap: normal;
+
   > code {
     border: 0;
     padding-right: 0;
@@ -193,7 +202,7 @@ pre {
 @media print {
   * {
     background: transparent;
-    color: #000;
+    color: $black;
     box-shadow: none;
     text-shadow: none;
   }
@@ -212,20 +221,22 @@ pre {
   }
 
   // Don't show links for images, or javascript/internal links
-  .ir a:after,
-  a[href^="javascript:"]:after,
-  a[href^="#"]:after {
-    content: "";
+  .ir {
+    a:after,
+    a[href^="javascript:"]:after,
+    a[href^="#"]:after {
+      content: "";
+    }
   }
 
   pre,
   blockquote {
-    border: 1px solid #999;
+    border: 1px solid $grey-light;
     page-break-inside: avoid;
   }
 
   thead {
-    display: table-header-group; /* h5bp.com/t */
+    display: table-header-group; // h5bp.com/t
   }
 
   tr,
