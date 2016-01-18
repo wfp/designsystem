@@ -41,6 +41,13 @@
   }
 }
 
+%select-arrow {
+  @extend %icon-dark-arrow-drop-down;
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-color: $grey-lightest;
+}
+
 @mixin input($type) {
   @if $type == common {
     appearance: none;
@@ -128,6 +135,7 @@
     line-height: 1.5;
     vertical-align: baseline;
   } @else if $type == select {
+    @extend %select-arrow;
     appearance: none;
     display: inline-block;
     padding: 0.4rem 0.75rem;
