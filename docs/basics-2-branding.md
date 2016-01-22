@@ -6,8 +6,30 @@ resource: true
 categories: Basics
 ---
 
+### Logo
+WFP logo is available in three versions: _emblem_, _standard_, and _full_. Each has its own purpose and should be used appropriately, as per [official branding guidelines](wfp.org/branding), depending on available screen space and target audience.
+
+<figure class="picture">
+  <img src="{{ base }}/img/logo-versions.png" srcset="{{ base }}/img/logo-versions.png 1x, {{ base }}/img/logo-versions@2x.png 2x">
+  <figcaption>Fig 1. Different versions of WFP logo.</figcaption>
+</figure>
+
+To implement the logo properly, give it enough spacing to ensure it stands out on its own. The minimum required spacing is calculated using a simple formula displayed on Fig. 2.
+
+<figure class="picture">
+  <img src="{{ base }}/img/logo-usage.png" srcset="{{ base }}/img/logo-usage.png 1x, {{ base }}/img/logo-usage@2x.png 2x">
+  <figcaption>Fig 2. How to calculate minimum spacing around the logo.</figcaption>
+</figure>
+
+Making sure WFP logo looks sharp and crisp on different screens is equally important. To achieve this, make sure to use HTML5 image `srcset` attribute, to target displays with different pixel density.
+
+###### Markup
+{% highlight html %}
+<img src="logo-std.png" srcset="logo-std.png 1x, logo-std@2x.png 2x">
+{% endhighlight %}
+
 ### Primary Colours
-The following palette is comprised of basic colours for everyday use. The primary blue is an enhanced version of the corporate _WFP Blue_, designed to work well in digital colour space (RGB).
+The following palette is comprised of basic colours for everyday use. The primary blue is an enhanced version of the corporate _WFP Blue_, designed to work well within digital colour space (RGB).
 
 <ul class="wfp-grid inline-grid colours">
   <li class="wfp-u-1-2 wfp-u-md-1-4">
