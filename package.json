@@ -19,6 +19,7 @@
     "node-sass": "^3.4.2"
   },
   "devDependencies": {
+    "autoprefixer": "^6.3.1",
     "eslint": "^1.10.3",
     "eslint-config-node-style-guide": "^3.0.0",
     "eslint-grunt": "^1.0.0",

@@ -214,7 +214,6 @@ module.exports = function(grunt) {
       }
     },
     jekyll: {
-
       dist: {
         options: {
           src: './docs',
