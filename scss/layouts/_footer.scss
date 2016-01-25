@@ -30,11 +30,28 @@
   }
 }
 
+%footer--top {
+  padding: 0.25rem 1rem;
+
+  @include media-query($lg-screen) {
+    padding: 0.25rem 0;
+  }
+}
+
+%footer--heading {
+  font-size: 0.875rem;
+  margin: 0.25rem 0;
+}
+
 %footer--label {
   font-size: 0.875rem;
   margin: 0;
 }
 
+
+// -----------------------------------------------------------------------------
+// Actual implementation
+// -----------------------------------------------------------------------------
 .footer-minimal {
   @extend %footer;
 

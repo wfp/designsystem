@@ -179,6 +179,30 @@ module.exports = function(grunt) {
           src: '*.svg',
           dest: 'icons/ui/dist/primary'
         }]
+      },
+      logos_dark: {
+        options: {
+          generatePNGs: true,
+          colorize: '#000000'
+        },
+        files: [{
+          expand: true,
+          cwd: 'logos/src',
+          src: '*.svg',
+          dest: 'logos/dist/dark'
+        }]
+      },
+      logos_light: {
+        options: {
+          generatePNGs: true,
+          colorize: false
+        },
+        files: [{
+          expand: true,
+          cwd: 'logos/src',
+          src: '*.svg',
+          dest: 'logos/dist/light'
+        }]
       }
     },
     datauri: {
