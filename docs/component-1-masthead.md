@@ -121,7 +121,7 @@ Internal masthead features a simple navigation, which works on both smaller and 
 
 <div class="notice">
   <h6 class="title">Masthead Position</h6>
-  <p>You can also set masthead component to stay fixed to the top of your page, by adding <code>space-around-narrow</code> class to your <code>body</code> tag (for extra spacing), and class <code>fixed</code> to <code>masthead-internal</code> element.</p>
+  <p>You can also set masthead component to stay fixed to the top of your page, by adding <code>wfp-masthead-spacer--narrow</code> class to your <code>body</code> tag (for extra spacing), and class <code>fixed</code> to <code>masthead-internal</code> element.</p>
 </div>
 
 To ensure the navigation works correctly, download and add the following Javascript library to the bottom of your page, before the closing `body` tag.
