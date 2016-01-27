@@ -82,15 +82,15 @@ This type of footer forms a simple layout containing social links, WFP logo, a c
 <footer class="footer-compact">
   <div class="footer--top">
     <div class="wfp-grid wfp-wrapper">
-      <div class="wfp-u-1 wfp-u-md-1-3 footer--panel left">
+      <div class="wfp-u-1 wfp-u-md-1-2 footer--panel left">
         <h5 class="footer--heading">Follow WFP on social networks</h5>
         <ul class="footer--links">
-          <li class="link"><a href="#">Twitter</a></li>
-          <li class="link"><a href="#">Facebook</a></li>
-          <li class="link"><a href="#">Google+</a></li>
+          <li class="link"><a href="#" class="wfp-btn--twitter xsmall">Twitter</a></li>
+          <li class="link"><a href="#" class="wfp-btn--facebook xsmall">Facebook</a></li>
+          <li class="link"><a href="#" class="wfp-btn--gplus xsmall">Google+</a></li>
         </ul>
       </div>
-      <div class="wfp-u-1 wfp-u-md-2-3 footer--panel right">
+      <div class="wfp-u-1 wfp-u-md-1-2 footer--panel right">
         <img src="{{ base }}/img/logos/dark/png/1x/en-full.png" srcset="{{ base }}/img/logos/dark/png/1x/en-full.png 1x, {{ base }}/img/logos/dark/png/2x/en-full.png 2x" class="footer--logo">
       </div>
     </div>
