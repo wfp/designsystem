@@ -38,16 +38,40 @@
   }
 }
 
+%footer--bottom {
+  @extend %footer--top;
+  padding: 0;
+  border-top: 1px solid $grey-lighter;
+
+  .footer--panel {
+    padding: 0;
+  }
+}
+
 %footer--heading {
-  font-size: 0.875rem;
-  margin: 0.25rem 0;
+  font-size: 1rem;
+  font-weight: bold;
+  margin: 0.5rem 0;
 }
 
 %footer--label {
   font-size: 0.875rem;
-  margin: 0;
+  margin: 0.5rem 0;
 }
 
+%footer--links {
+  @extend %nolist;
+  line-height: 1;
+
+  .link {
+    display: inline-block;
+    margin: 0.5rem 0.5rem 0.5rem 0;
+  }
+}
+
+%footer--logo {
+  display: inline-block;
+}
 
 // -----------------------------------------------------------------------------
 // Actual implementation
@@ -64,7 +88,37 @@
   }
 }
 
+.footer-compact {
+  @extend %footer;
 
+  .footer--top {
+    @extend %footer-top;
+  }
+
+  .footer--bottom {
+    @extend %footer--bottom;
+  }
+
+  .footer--panel {
+    @extend %footer--panel;
+  }
+
+  .footer--label {
+    @extend %footer--label;
+  }
+
+  .footer--heading {
+    @extend %footer--heading;
+  }
+
+  .footer--links {
+    @extend %footer--links;
+  }
+
+  .footer--logo {
+    @extend %footer--logo;
+  }
+}
 
 // .footer {
 //   border-top: 4px solid $grey-contrast;
