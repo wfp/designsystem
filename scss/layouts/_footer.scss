@@ -11,8 +11,6 @@
 }
 
 %footer--panel {
-  padding: 0.5rem 0;
-
   &.left {
     text-align: center;
 
@@ -31,11 +29,7 @@
 }
 
 %footer--top {
-  padding: 0.25rem 1rem;
-
-  @include media-query($lg-screen) {
-    padding: 0.25rem 0;
-  }
+  padding: 0.25rem 0;
 }
 
 %footer--bottom {
@@ -92,7 +86,11 @@
   @extend %footer;
 
   .footer--top {
-    @extend %footer-top;
+    @extend %footer--top;
+
+    .wfp-wrapper {
+      padding: 1rem 0;
+    }
   }
 
   .footer--bottom {
