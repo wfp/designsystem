@@ -11,7 +11,7 @@ $(document).ready(function(){
   });
 
   var closeBtn = document.getElementById("js-nav-close");
-  closeBtn.onclick = function(){ nav.close(); return false; }
+  closeBtn.click = function(){ nav.close(); return false; }
 
   $('#js-view-grid').click(function(e){
     e.preventDefault();
