@@ -70,6 +70,18 @@
   }
 }
 
+%content-wrapper {
+  display: block;
+  padding: 0.125rem;
+  text-align: center;
+}
+
+%logo-wrapper {
+  display: block;
+  padding: 1rem;
+  text-align: center;
+}
+
 .wfp-wrapper {
   @extend %wrapper;
 }
@@ -81,6 +93,14 @@
   @include media-query($content-width) {
     padding: 0;
   }
+}
+
+.wfp-logo-wrapper {
+  @extend %logo-wrapper;
+}
+
+.wfp-content-wrapper {
+  @extend %content-wrapper;
 }
 
 @include media-query($md-screen) {
