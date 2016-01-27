@@ -3,7 +3,12 @@
 // Author: Matthew Morek (me@matthewmorek.com)
 // URL: http://matthewmorek.com
 
-@mixin button($type: default) {
+// Additional colours
+$color-twitter: #55acee;
+$color-facebook: #3b5998;
+$color-gplus: #dc4e41;
+
+@mixin button($type: default, $color: $grey-dark, $bg-color: $grey-lightest) {
   display: inline-block;
   padding: 0.5rem 1rem;
   font-family: inherit;
@@ -58,6 +63,21 @@
     &:active {
       background-color: darken($green, 5%);
     }
+  } @else if $type == social {
+    color: $color;
+    background-color: $bg-color;
+
+    &:hover,
+    &:active {
+      background-color: darken($bg-color, 5%);
+      color: $color;
+    }
+  }
+
+  // Hover button
+  &.hover,
+  &:hover {
+    border-bottom-color: transparentize($black, 0.85);
   }
 
   // Active Button
@@ -117,7 +137,7 @@
     box-shadow: none;
   }
 
-  & + [class*="btn"] {
+  & + [class*="wfp-btn"] {
     margin: 0 0.5rem;
 
     &:first-child {
@@ -128,6 +148,10 @@
       margin-right: 0;
     }
   }
+}
+
+a[class*="wfp-btn"] {
+ //
 }
 
 .wfp-btn {
@@ -148,4 +172,16 @@
 
 .wfp-btn--warning {
   @include button(warning);
+}
+
+.wfp-btn--twitter {
+  @include button(social, $white, $color-twitter);
+}
+
+.wfp-btn--facebook {
+  @include button(social, $white, $color-facebook);
+}
+
+.wfp-btn--gplus {
+  @include button(social, $white, $color-gplus);
 }
