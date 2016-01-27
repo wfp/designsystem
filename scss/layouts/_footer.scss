@@ -51,11 +51,12 @@
 %footer--label {
   font-size: 0.875rem;
   margin: 0.5rem 0;
+  line-height: 1.4;
 }
 
 %footer--links {
   @extend %nolist;
-  line-height: 1;
+  line-height: 1.4;
 
   .link {
     display: inline-block;
@@ -70,7 +71,7 @@
 // -----------------------------------------------------------------------------
 // Actual implementation
 // -----------------------------------------------------------------------------
-.footer-minimal {
+@mixin footer-mini {
   @extend %footer;
 
   .footer--panel {
@@ -82,7 +83,7 @@
   }
 }
 
-.footer-compact {
+@mixin footer-compact {
   @extend %footer;
 
   .footer--top {
@@ -116,6 +117,34 @@
   .footer--logo {
     @extend %footer--logo;
   }
+}
+
+@mixin footer-std {
+  @include footer-compact;
+
+  .footer--top {
+    .wfp-wrapper {
+      padding: 0.25rem 0;
+    }
+
+    .wfp-menu-plain {
+      margin: 0;
+    }
+  }
+}
+
+// Actualo implementation
+
+.wfp-footer--mini {
+  @include footer-mini;
+}
+
+.wfp-footer--compact {
+  @include footer-compact;
+}
+
+.wfp-footer--std {
+  @include footer-std;
 }
 
 // .footer {
