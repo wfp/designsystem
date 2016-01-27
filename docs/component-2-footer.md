@@ -128,7 +128,7 @@ This flagship footer variant, builds up on top of `wfp-footer-compact` pattern, 
             <h6 class="menu--heading">Get Involved</h6>
             <ul class="menu--wrapper">
               <li class="menu--item"><a href="#" class="menu--link">Make a donation</a></li>
-              <li class="menu--item"><a href="#" class="menu--link">Join "One Future" community</a></li>
+              <li class="menu--item"><a href="#" class="menu--link">Join the community</a></li>
               <li class="menu--item"><a href="#" class="menu--link">Spread the word</a></li>
               <li class="menu--item"><a href="#" class="menu--link">Careers at WFP</a></li>
             </ul>

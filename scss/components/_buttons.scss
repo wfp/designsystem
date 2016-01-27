@@ -70,9 +70,8 @@ $color-gplus: #dc4e41;
 
     &:hover,
     &:active {
-      border-color: darken($color, 5%);
-      border-bottom-color: darken($color, 10%);
-      color: $color;
+      border-color: darken($color, 10%);
+      color: darken($color, 10%);
     }
   }
 
