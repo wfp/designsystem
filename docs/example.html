@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
   <link rel="shortcut icon" href="http://cdn.wfp.org/favicon.ico">
   <link rel="stylesheet" href="http://cdn.wfp.org/libraries/webfonts/lato/lato.css">
   <link rel="stylesheet" href="http://cdn.wfp.org/libraries/webfonts/aleo/aleo.css">
@@ -481,12 +482,18 @@
 <script src="js/plugins.js"></script>
 <script src="js/main.js"></script>
 <script>
-  var navExample = responsiveNav('#js-example-menu', {
-    customToggle: "js-example-menu-trigger",
-    navClass: "masthead--menu",
-    openPos: "absolute",
+  //  Instantiate FastClick
+  $(function() { FastClick.attach(document.body); });
+
+  var nav = responsiveNav(".main-nav", {
+    customToggle: "js-nav-trigger",
+    navClass: "main-nav",
+    openPos: "fixed",
     closedPos: "static"
   });
+
+  var closeBtn = document.getElementById("js-nav-close");
+  closeBtn.click = function(){ nav.close(); return false; }
 </script>
 
 </body>
