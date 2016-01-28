@@ -6,10 +6,8 @@ node_js:
 before_install: npm set progress=false
 install: npm install
 before_script:
-  - apt-get install curl
   - rvm install 2.2.3
   - rvm use 2.2.3
-  - rvm rubygems 2.2.3
   # - ruby --version
   - gem install jekyll --no-rdoc --no-ri --pre
   # - jekyll --version
