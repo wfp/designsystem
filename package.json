@@ -26,7 +26,8 @@
     "grunt-contrib-watch": "^0.6.1",
     "grunt-datauri": "^0.4.0",
     "grunt-grunticon": "^2.2.2",
-    "grunt-sass-lint": "^0.1.0",
-    "grunt-svg-toolkit": "^0.1.1"
+    "grunt-sass-lint": "0.1.0-beta.4",
+    "grunt-svg-toolkit": "^0.1.1",
+    "time-grunt": "^1.3.0"
   }
 }
