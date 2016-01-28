@@ -63,23 +63,21 @@
 %wrapper {
   margin: 0 auto;
   max-width: $content-width;
-  padding: 1em;
+  padding: 1rem;
 
   @include media-query($content-width) {
-    padding: 1em 0;
+    padding: 1rem 0;
   }
 }
 
 %content-wrapper {
   display: block;
   padding: 0.125rem;
-  text-align: center;
 }
 
 %logo-wrapper {
   display: block;
   padding: 1rem;
-  text-align: center;
 }
 
 .wfp-wrapper {
@@ -88,7 +86,7 @@
 
 .wfp-wrapper-tight {
   @extend %wrapper;
-  padding: 0 1em;
+  padding: 0 1rem;
 
   @include media-query($content-width) {
     padding: 0;
