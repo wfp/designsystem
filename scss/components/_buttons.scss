@@ -17,7 +17,7 @@ $color-gplus: #dc4e41;
   line-height: 1.5;
   border: 1px solid transparentize($black, 0.85);
   border-radius: 3px;
-  transition-property: border, background;
+  transition-property: border, background, color;
   transition-duration: 0.1s;
   transition-timing-function: ease-in;
   vertical-align: baseline;
@@ -72,6 +72,16 @@ $color-gplus: #dc4e41;
     &:active {
       border-color: darken($color, 10%);
       color: darken($color, 10%);
+    }
+  } @else if $type == head {
+    color: $white;
+    background-color: transparent;
+    border-color: $white;
+
+    &:hover,
+    &:active {
+      border-color: $orange;
+      color: $orange;
     }
   }
 
@@ -170,6 +180,7 @@ a[class*="wfp-btn"] {
   @include button(warning);
 }
 
+// Social buttons
 .wfp-btn--twitter {
   @include button(social, $color-twitter);
 }
@@ -180,4 +191,9 @@ a[class*="wfp-btn"] {
 
 .wfp-btn--gplus {
   @include button(social, $color-gplus);
+}
+
+// Header buttons
+.wfp-btn--head {
+  @include button(head);
 }

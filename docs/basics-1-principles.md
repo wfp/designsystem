@@ -15,7 +15,7 @@ Before you start composing the layout of your page, please make sure you have yo
 When creating a landing page, you need context that would back up the content and make it more prominent. This will help focus user's attention on that particular section, whether it's a title or an image, or maybe something else you have in mind.
 
 ###### Frame The Page
-Use our masthead pattern to frame your page. It doesn't have to be exactly the same, as it refers to your own content structure, but it will indicate that your content belongs to the same network/brand, by using our primary branding colours.
+Use our header pattern to frame your page. It doesn't have to be exactly the same, as it refers to your own content structure, but it will indicate that your content belongs to the same network/brand, by using our primary branding colours.
 
 ###### Left-align Content
 Most of the content should be aligned to the left, unless it's intended for Arabic languages or a fly-out. This will help with making dense content structures less intimidating and easier to read.
