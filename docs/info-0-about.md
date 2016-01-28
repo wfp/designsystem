@@ -31,5 +31,3 @@ Fonts files located in `fonts` directory contain two type families:
 - [*Aleo*](http://www.fontfabric.com/aleo-free-font/) designed by Alessio Laiso.
 
 Both type families are licensed under [SIL Open Font License 1.1](http://scripts.sil.org/OFL).
-
-The entire framework is based on [PureCSS](http://purecss.io) by Yahoo! Inc., and distributed under [Yahoo BSD License](https://github.com/yahoo/pure-site/blob/master/LICENSE.md).
