@@ -517,14 +517,8 @@
   </div>
 </footer>
 
-<script src="js/lib/jquery.js"></script>
-<script src="js/lib/fastclick.js"></script>
 <script src="js/lib/responsive-nav.js"></script>
-<script src="js/plugins.js"></script>
-<script src="js/main.js"></script>
 <script>
-  //  Instantiate FastClick
-  $(function() { FastClick.attach(document.body); });
 
   var nav = responsiveNav(".main-nav", {
     customToggle: "js-nav-trigger",
@@ -534,7 +528,7 @@
   });
 
   var closeBtn = document.getElementById("js-nav-close");
-  closeBtn.click = function(){ nav.close(); return false; }
+  closeBtn.onclick = function(){ nav.close(); return false; }
 </script>
 
 </body>

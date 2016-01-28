@@ -1,8 +1,5 @@
 $(document).ready(function(){
 
-  //  Instantiate FastClick
-  $(function() { FastClick.attach(document.body); });
-
   var nav = responsiveNav(".main-nav", {
     customToggle: "js-nav-trigger",
     navClass: "main-nav",
@@ -11,7 +8,7 @@ $(document).ready(function(){
   });
 
   var closeBtn = document.getElementById("js-nav-close");
-  closeBtn.click = function(){ nav.close(); return false; }
+  closeBtn.onclick = function(){ nav.close(); return false; }
 
   $('#js-view-grid').click(function(e){
     e.preventDefault();
