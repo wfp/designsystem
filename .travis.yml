@@ -3,6 +3,7 @@ node_js:
   - "4.2"
   - "4.1"
   - "4.0"
+before_install: npm set progress=false
 install: npm install
 before_script:
   - rvm install 2.2.3
