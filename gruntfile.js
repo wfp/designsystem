@@ -256,11 +256,11 @@ module.exports = function(grunt) {
   // Build WFP UI Docs locally
   grunt.registerTask('docs', ['sasslint', 'sass:docs', 'postcss:docs', 'jekyll']);
   // Build WFP UI Docs
-  grunt.registerTask('docs-build', ['sasslint', 'sass:docs', 'postcss:docs', 'gen-icons', 'jekyll']);
+  grunt.registerTask('docs-build', ['sasslint', 'sass:docs', 'postcss:docs', 'jekyll']);
   // Build dist-ready WFP UI Docs
   grunt.registerTask('docs-dist', ['sasslint', 'sass:docsDist', 'postcss:docsDist', 'gen-icons', 'jekyll']);
   // Build WFP UI
-  grunt.registerTask('build', ['eslint', 'gen-svg', 'sasslint', 'sass:dev', 'postcss:dev']);
+  grunt.registerTask('build', ['eslint', 'sasslint', 'sass:dev', 'postcss:dev']);
   // Build a dist-ready WFP UI
   grunt.registerTask('dist', ['gen-svg', 'gen-icons', 'sass:dist', 'postcss:dist']);
   // Set default grunt task to `dist`

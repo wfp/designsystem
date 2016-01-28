@@ -1,15 +1,10 @@
-#########################
-## Sample Sass Lint File
-#########################
+#-------------------------------------------------------------------------------
+# WFP UI Sass Linter Configuration
+#-------------------------------------------------------------------------------
 # Linter Options
 options:
   formatter: stylish
   merge-default-rules: false
-  # Output file instead of logging results
-  # output-file: '_tmp/sass-lint.html'
-# File Options
-# files:
-  # include: 'scss/**/*.s+(a|c)ss'
 # Rule Configuration
 rules:
   # Extends
