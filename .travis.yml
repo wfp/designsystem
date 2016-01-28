@@ -3,7 +3,9 @@ node_js:
   - "5.5"
   - "5.0"
   - "4.2"
-before_install: npm set progress=false
+before_install:
+  - npm set progress=false
+  - export PATH=$(python -c 'from sys import argv;from collections import OrderedDict as od;print(":".join(od((p,None) for p in argv[1].split(":") if p.startswith("/")).keys()))' "$PATH")
 install: npm install
 before_script:
   - rvm install 2.2.3
