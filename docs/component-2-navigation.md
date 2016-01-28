@@ -157,7 +157,7 @@ This pattern is useful for when you need to display a set of controls with an in
 {% endhighlight %}
 
 ### Breadcrumbs
-_Breadcrumbs_ are a special kind of _segmented control_ component; a simple and minimal way to give users a hint at your site or application's structure. They also provide an important context in relation to user's current location within your content. Breadcrumbs should be displayed just below the masthead, possibly on their own, with appropriate spacing to stay visible.
+_Breadcrumbs_ are a special kind of _segmented control_ component; a simple and minimal way to give users a hint at your site or application's structure. They also provide an important context in relation to user's current location within your content. Breadcrumbs should be displayed just below the header, possibly on their own, with appropriate spacing to stay visible.
 
 <!-- <div class="notice">
   <h6 class="title">Note</h6>

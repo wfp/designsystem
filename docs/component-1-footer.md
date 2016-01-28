@@ -116,6 +116,11 @@ This type of footer forms a simple layout containing social links, WFP logo, a c
 ### Standard
 This flagship footer variant, builds up on top of `wfp-footer--compact` pattern. The addition of `wfp-menu-plain` allows to group links and add other useful information. Using `wfp-grid`, you can flexibly adjust your navigation, but we recommend including between 2 and 3 groups of links, to give every other component a bit of a breathing room.
 
+<div class="notice">
+  <h6 class="title">Languages</h6>
+  <p>If your website or application is multilingual, it is necessary to <strong>include a language switcher as part of your footer</strong>, even if you already have included one in your header, to improve its usability.</p>
+</div>
+
 ###### Preview
 <footer class="wfp-footer--std">
   <div class="footer--top">

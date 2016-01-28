@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   {% include head.html %}
-  <body class="wfp-masthead-spacer--narrow">
+  <body class="wfp-header-spacer--narrow">
 
     {% include header.html %}
 
@@ -21,11 +21,11 @@
     <script src="{{base}}/js/lib/responsive-nav.js"></script>
     <script src="{{base}}/js/plugins.js"></script>
     <script src="{{base}}/js/main.js"></script>
-    {% if page.path == 'component-1-masthead.md' %}
+    {% if page.path == 'component-1-header.md' %}
     <script>
       var navExample = responsiveNav('#js-example-menu', {
         customToggle: "js-example-menu-trigger",
-        navClass: "masthead--menu",
+        navClass: "header--menu",
         openPos: "absolute",
         closedPos: "static"
       });
