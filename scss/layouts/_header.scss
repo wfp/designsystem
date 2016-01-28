@@ -7,7 +7,7 @@
 // -----------------------------------------------------------------------------
 // Add spacing to the body tag, to compensate for a fixed masthead
 // -----------------------------------------------------------------------------
-.wfp-masthead-spacer--narrow {
+.wfp-header-spacer--narrow {
   overflow: auto;
   padding-top: 4rem;
 }
@@ -28,12 +28,12 @@
 // -----------------------------------------------------------------------------
 // Masthead: Narrow
 // -----------------------------------------------------------------------------
-%masthead--container {
+%header--container {
   padding: 0.5rem 0;
   // height: 1rem;
 }
 
-%masthead--title {
+%header--title {
   line-height: 1.2;
   font-size: 1rem;
   letter-spacing: initial;
@@ -44,19 +44,19 @@
   }
 }
 
-%masthead--logo {
+%header--logo {
   color: $white;
   border: 0;
   font-weight: bold;
   text-decoration: none;
 }
 
-%masthead--nav {
+%header--nav {
   padding: 0;
   text-align: right;
 }
 
-%masthead--btn {
+%header--btn {
   -webkit-tap-highlight-color: $black;
   -webkit-touch-callout: none;
   user-select: none;
@@ -74,7 +74,7 @@
   }
 }
 
-%masthead--search {
+%header--search {
   display: inline-block;
   position: relative;
 
@@ -93,12 +93,12 @@
     z-index: 1;
   }
 
-  .masthead--input {
+  .header--input {
     padding: 0.5rem 0.75rem 0.5rem 2rem;
   }
 }
 
-%masthead--input {
+%header--input {
   -webkit-tap-highlight-color: $black;
   -webkit-touch-callout: none;
   transition: width 0.15s ease-in-out;
@@ -152,8 +152,8 @@
   }
 }
 
-%masthead--toggle {
-  @extend %masthead--btn;
+%header--toggle {
+  @extend %header--btn;
   display: inline-block;
   visibility: visible;
 
@@ -163,14 +163,14 @@
   }
 }
 
-%masthead--misc {
+%header--misc {
   @include media-query($md-screen) {
     display: inline-block;
     min-height: 72px;
   };
 }
 
-%masthead--menu {
+%header--menu {
   position: absolute;
   right: 0;
   top: 64px;
@@ -259,7 +259,7 @@
 // -----------------------------------------------------------------------------
 // Masthead: Internal
 // -----------------------------------------------------------------------------
-.wfp-masthead-internal {
+.wfp-header-int {
   @extend %masthead;
   width: 100%;
 
@@ -269,47 +269,47 @@
     z-index: 100;
   }
 
-  .masthead--container {
-    @extend %masthead--container;
+  .header--container {
+    @extend %header--container;
   }
 
-  .masthead--title {
-    @extend %masthead--title;
+  .header--title {
+    @extend %header--title;
   }
 
-  .masthead--logo {
-    @extend %masthead--logo;
+  .header--logo {
+    @extend %header--logo;
   }
 
-  .masthead--nav {
-    @extend %masthead--nav;
+  .header--nav {
+    @extend %header--nav;
   }
 
-  .masthead--search {
-    @extend %masthead--search;
+  .header--search {
+    @extend %header--search;
   }
 
-  .masthead--input {
-    @extend %masthead--input;
+  .header--input {
+    @extend %header--input;
   }
 
-  .masthead--btn {
-    @extend %masthead--btn;
+  .header--btn {
+    @extend %header--btn;
   }
 
-  .masthead--toggle {
-    @extend %masthead--toggle;
+  .header--toggle {
+    @extend %header--toggle;
   }
 
-  .masthead--menu {
-    @extend %masthead--menu;
+  .header--menu {
+    @extend %header--menu;
   }
 }
 
 // -----------------------------------------------------------------------------
 // Masthead: External
 // -----------------------------------------------------------------------------
-.wfp-masthead-external {
+.wfp-header-ext {
   @extend %masthead;
   width: 100%;
 
@@ -319,52 +319,52 @@
     z-index: 100;
   }
 
-  .masthead--container {
-    @extend %masthead--container;
+  .header--container {
+    @extend %header--container;
     padding: 0;
   }
 
-  .masthead--title {
-    @extend %masthead--title;
+  .header--title {
+    @extend %header--title;
     margin: 0;
   }
 
-  .masthead--logo {
-    @extend %masthead--logo;
+  .header--logo {
+    @extend %header--logo;
   }
 
-  .masthead--nav {
-    @extend %masthead--nav;
+  .header--nav {
+    @extend %header--nav;
     @include media-query($md-screen) {
       min-height: 72px;
       text-align: right;
     }
   }
 
-  .masthead--btn {
-    @extend %masthead--btn;
+  .header--btn {
+    @extend %header--btn;
   }
 
-  .masthead--search {
-    @extend %masthead--search;
+  .header--search {
+    @extend %header--search;
   }
 
-  .masthead--input {
-    @extend %masthead--input;
+  .header--input {
+    @extend %header--input;
   }
 
-  .masthead--toggle {
-    @extend %masthead--toggle;
+  .header--toggle {
+    @extend %header--toggle;
   }
 
-  .masthead--menu {
-    @extend %masthead--menu;
+  .header--menu {
+    @extend %header--menu;
     @include media-query($md-screen) {
       margin: 1.5rem 1rem;
     };
   }
 
-  .masthead--misc {
-    @extend %masthead--misc;
+  .header--misc {
+    @extend %header--misc;
   }
 }
