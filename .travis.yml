@@ -9,11 +9,11 @@ before_script:
   - rvm install 2.2.3
   - rvm use 2.2.3
   - rvm rubygems 2.2.3
-  - ruby --version
+  # - ruby --version
   - gem install jekyll --no-rdoc --no-ri --pre
-  - jekyll --version
-  - node_modules/.bin/grunt --version
-  - node_modules/.bin/bower --version
+  # - jekyll --version
+  # - node_modules/.bin/grunt --version
+  # - node_modules/.bin/bower --version
   - node_modules/.bin/bower install --config.interactive=false
   - node_modules/.bin/grunt build
   - node_modules/.bin/grunt docs-build
