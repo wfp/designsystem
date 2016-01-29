@@ -5,7 +5,7 @@ Branch  | Build Status
 master  | [![Build Status](https://travis-ci.org/wfp/ui.svg?branch=master)](https://travis-ci.org/wfp/ui)
 develop | [![Build Status](https://travis-ci.org/wfp/ui.svg?branch=develop)](https://travis-ci.org/wfp/ui)
 
-WFP UI is a library of components, patterns, and a style guide for WFP-branded websites and web applications.
+_WFP UI_ is a library of components, patterns, and a style guide for WFP-branded websites and web applications.
 
 The purpose of this project is to create a unified toolkit that could be used by designers and developers alike on their projects, by following our design and implementation guidelines, to ensure all WFP-branded projects are accessible, beautiful, and have a consistent look and feel across the board.
 
@@ -38,12 +38,12 @@ We recommend you copy `dist/css/wfpui.css` into your own `css` directory, if you
 > This is because CSS is considered as a [_render blocking resource_](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/render-blocking-css).
 
 ## Documentation
-WFP UI documentation can be found on our CDN: [http://cdn.wfp.org/brand/ui](http://cdn.wfp.org/brand/ui).
+WFP UI documentation can be found on our CDN: [http://www.wfp.org/uiguide](http://www.wfp.org/uiguide).
 
-Full docs are also available from this repository, as an uncompiled [Jekyll](https://github.com/jekyll/jekyll) site. To compile it yourself, clone the repository to your file system, install NPM dependencies, then run:
+Full docs are also available from this repository, as a ready-to-compile [Jekyll](https://github.com/jekyll/jekyll) site. To compile it yourself, clone the repository to your file system, install NPM dependencies, then run:
 
 ```
-$ grunt docs-build
+$ grunt docs-dist
 ```
 
 Documentation will be compiled to your `dist/docs` directory, where you can browse it using Python SimpleHTTPServer like so:
@@ -57,7 +57,7 @@ sudo python -m SimpleHTTPServer 80
 - [Matthew Morek](https://github.com/matthewmorek)
 - [James Home](https://github.com/jrah)
 
-Special thanks to [Andrew Holgate](https://github.com/andrewholgate), for prepraring a Travis CI build for us.
+Special thanks to [Andrew Holgate](https://github.com/andrewholgate), for preparing Travis CI integration for us.
 
 ## Attributions
 
@@ -68,6 +68,3 @@ Fonts files located in `fonts` directory contain two type families:
 - [*Aleo*](http://www.fontfabric.com/aleo-free-font/) designed by Alessio Laiso.
 
 Both type families are licensed under [SIL Open Font License 1.1](http://scripts.sil.org/OFL).
-
-##### PureCSS
-The entire framework is based on [PureCSS](http://purecss.io) by Yahoo! Inc., and distributed under [Yahoo BSD License](https://github.com/yahoo/pure-site/blob/master/LICENSE.md).

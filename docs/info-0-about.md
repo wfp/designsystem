@@ -6,18 +6,17 @@ resource: true
 categories: Info
 ---
 
-The World Food Programme’s [Branding Guidance](http://documents.wfp.org/stellent/groups/communications_content/documents/communications/wfp211867.pdf) (PDF, 4.7MB) was published in 2009 and has now been effectively implemented across our organization, strengthening our brand image through consistent representation.
+### Project Versioning
+_WFP UI_ uses _Semantic Versioning_ (SemVer) philosophy, but adjusted for this project specifically. The following rules take precedence over SemVer:
 
-Building on this initiative, the World Food Programme’s _User Interface Style Guide_ emphasizes WFP’s commitment and potential to establish and build our brand.
+###### Major update
+The look & feel of any part of WFP UI changes significantly, affecting the overall user experience, along with the markup and/or CSS classes, i.e.: a bunch of new components are added, or modified in a backward-incompatible way.
 
-Defined to help create, in an easy way, consistent and attractive user interfaces for WFP's properties, the guidelines contained in this guide are to be applied to all WFP digital products (such as: websites, web applications, internal systems and other).
+###### Minor update
+The look & feel significantly changes, not affecting the way corresponding markup and/or classes are structured and applied, i.e.: when we change the way a component looks like, without changing its structure/classes.
 
-The Guide is a living document created to meet the needs of WFP's front-end developers and designers. If there is a _Component_ or _Pattern_ that you need, or you have any other feedback, question or comment please contact us via [wfp.publications@wfp.org](mailto:WFP.PUBLICATIONS@wfp.org?subject=UI%20Style%20Guide).
-
-<div class="notice">
-  <h6 class="title">Notice</h6>
-  <p>Resources should not be spent trying to modify legacy systems, 3rd party applications or other user interfaces which cannot easily be customised.</p>
-</div>
+###### Patch update
+The look & feel changes are insignificant, or only fix a specific problem with the WFP UI, i.e.: adding a missing icon, correcting a spelling mistake, or enhancing a buttons with drop-shadows.
 
 ### Authors
 - [Matthew Morek](https://github.com/matthewmorek)
@@ -31,5 +30,3 @@ Fonts files located in `fonts` directory contain two type families:
 - [*Aleo*](http://www.fontfabric.com/aleo-free-font/) designed by Alessio Laiso.
 
 Both type families are licensed under [SIL Open Font License 1.1](http://scripts.sil.org/OFL).
-
-The entire framework is based on [PureCSS](http://purecss.io) by Yahoo! Inc., and distributed under [Yahoo BSD License](https://github.com/yahoo/pure-site/blob/master/LICENSE.md).
