@@ -1,5 +1,6 @@
 // Gruntfile.js
 module.exports = function(grunt) {
+  require('time-grunt')(grunt);
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     watch: {
@@ -214,13 +215,6 @@ module.exports = function(grunt) {
       }
     },
     jekyll: {
-      dev: {
-        options: {
-          src: './docs',
-          config: './docs/_config-dev.yml',
-          dest: './dist/docs'
-        }
-      },
       dist: {
         options: {
           src: './docs',
@@ -261,15 +255,17 @@ module.exports = function(grunt) {
   // Build Grunticon Icons
   grunt.registerTask('gen-icons', ['clean:grunticon', 'grunticon']);
   // Build WFP UI Docs locally
-  grunt.registerTask('docs', ['sasslint', 'sass:docs', 'postcss:docs', 'jekyll:dev']);
+  grunt.registerTask('docs', ['sasslint', 'sass:docs', 'postcss:docs', 'jekyll']);
   // Build WFP UI Docs
-  grunt.registerTask('docs-build', ['sasslint', 'sass:docs', 'postcss:docs', 'gen-icons', 'jekyll:dev']);
+  grunt.registerTask('docs-build', ['sasslint', 'sass:docs', 'postcss:docs', 'jekyll']);
   // Build dist-ready WFP UI Docs
-  grunt.registerTask('docs-dist', ['sasslint', 'sass:docsDist', 'postcss:docsDist', 'gen-icons', 'jekyll:dist']);
+  grunt.registerTask('docs-dist', ['sass:docsDist', 'postcss:docsDist', 'jekyll']);
   // Build WFP UI
-  grunt.registerTask('build', ['eslint', 'gen-svg', 'sasslint', 'sass:dev', 'postcss:dev']);
+  grunt.registerTask('build', ['eslint', 'sasslint', 'sass:dev', 'postcss:dev']);
   // Build a dist-ready WFP UI
   grunt.registerTask('dist', ['gen-svg', 'gen-icons', 'sass:dist', 'postcss:dist']);
+  // Run build and dist task in sequence (for Travis CI)
+  grunt.registerTask('test', ['build', 'docs-build', 'dist', 'docs-dist']);
   // Set default grunt task to `dist`
   grunt.registerTask('default', ['dist']);
 };

@@ -5,21 +5,26 @@
 
 .wfp-breadcrumbs {
   @extend %seg-control;
+
   .breadcrumbs--item {
     @extend %seg-control--item;
     border-color: $grey-lighter;
+
     &:first-child {
       border-color: $grey-lighter;
     }
   }
+
   .breadcrumbs--link {
     @extend %seg-control--link;
     color: $primary;
   }
+
   .breadcrumbs--last {
     @extend %seg-control--link;
     color: $grey-light;
     cursor: default;
+
     &:hover {
       color: $grey-light;
     }
@@ -29,27 +34,33 @@
 // Specificity Wars II™: The Dark Side of the Breadcrumb
 .wfp-breadcrumbs-inverse {
   @extend %seg-control;
+
   .breadcrumbs--item {
     @extend %seg-control--item;
     border-color: $grey;
     background-color: $grey-dark;
     color: $grey-contrast;
+
     &:first-child {
       border-color: $grey;
     }
   }
+
   .breadcrumbs--link {
     @extend %seg-control--link;
     color: $grey-contrast;
+
     &:hover,
     &:active {
       color: $primary;
     }
   }
+
   .breadcrumbs--last {
     @extend %seg-control--link;
     color: $grey-lighter;
     cursor: default;
+
     &:hover {
       color: $grey-lighter;
     }

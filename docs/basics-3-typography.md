@@ -84,7 +84,7 @@ __Aleo__ was designed as a slab-serif counterpart to _Lato_. It looks great in b
 
 ### Example
 
-![Typography]({{ site.baseurl }}/img/typography.png)
+![Typography]({{ base }}/img/typography.png)
 
 ### Sizing
 The size of your text is as important for your message, as your WFP colours are to its branding. When the type is too small or too large, it becomes illegible, thus increasing the strain on the reader's eyes, making reading uncomfortable.

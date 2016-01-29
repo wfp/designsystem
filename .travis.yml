@@ -1,28 +1,20 @@
 language: node_js
 node_js:
+  - "5.5"
+  - "5.0"
   - "4.2"
-  - "4.1"
-  - "4.0"
+before_install:
+  - npm set progress=false
+  - export PATH=$(python -c 'from sys import argv;from collections import OrderedDict as od;print(":".join(od((p,None) for p in argv[1].split(":") if p.startswith("/")).keys()))' "$PATH")
 install: npm install
 before_script:
-  - rvm implode --force
-  - sudo rm ~/.rvmrc
-  - sudo apt-get -y purge ruby
-  - gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
-  - \curl -sSL https://get.rvm.io | bash -s stable --ruby
-  - source /home/travis/.rvm/scripts/rvm
-  - rvm reload
-  - rvm rubygems current
-  - gem update
-  - ruby --version
-  - gem install pygments.rb --no-rdoc --no-ri
+  - rvm install 2.2.3
+  - rvm use 2.2.3
+  # - ruby --version
   - gem install jekyll --no-rdoc --no-ri --pre
-  - jekyll --version
-  - node_modules/.bin/grunt --version
-  - node_modules/.bin/bower --version
+  # - jekyll --version
+  # - node_modules/.bin/grunt --version
+  # - node_modules/.bin/bower --version
   - node_modules/.bin/bower install --config.interactive=false
-  - node_modules/.bin/grunt build
-  - node_modules/.bin/grunt docs-build
-  - node_modules/.bin/grunt dist
-  - node_modules/.bin/grunt docs-dist
+  - node_modules/.bin/grunt test
 script: echo "Done!"

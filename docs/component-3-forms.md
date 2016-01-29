@@ -27,6 +27,14 @@ To see how different form elements work together with our flexible grid system, 
     <input type="email" id="email" name="email">
   </div>
   <div class="wfp-u-1 wfp-box--flat">
+    <label for="selection">Pick a subject:</label>
+    <select id="selection">
+      <option value="1">Option #1</option>
+      <option value="2">Option #2</option>
+      <option value="3">Option #3</option>
+    </select>
+  </div>
+  <div class="wfp-u-1 wfp-box--flat">
     <label for="message">Your message:</label>
     <textarea name="message" id="message"></textarea>
     <label for="sample-1">

@@ -14,6 +14,14 @@
 
 .icon-archive-light { background-image: url('png/archive-light.png'); background-repeat: no-repeat; }
 
+.icon-arrow-drop-down-dark { background-image: url('png/arrow-drop-down-dark.png'); background-repeat: no-repeat; }
+
+.icon-arrow-drop-down-light { background-image: url('png/arrow-drop-down-light.png'); background-repeat: no-repeat; }
+
+.icon-arrow-drop-up-dark { background-image: url('png/arrow-drop-up-dark.png'); background-repeat: no-repeat; }
+
+.icon-arrow-drop-up-light { background-image: url('png/arrow-drop-up-light.png'); background-repeat: no-repeat; }
+
 .icon-attach-file-dark { background-image: url('png/attach-file-dark.png'); background-repeat: no-repeat; }
 
 .icon-attach-file-light { background-image: url('png/attach-file-light.png'); background-repeat: no-repeat; }

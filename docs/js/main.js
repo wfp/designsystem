@@ -1,8 +1,5 @@
 $(document).ready(function(){
 
-  //  Instantiate FastClick
-  $(function() { FastClick.attach(document.body); });
-
   var nav = responsiveNav(".main-nav", {
     customToggle: "js-nav-trigger",
     navClass: "main-nav",

@@ -6,25 +6,36 @@ pre > code {
   background-color: initial;
 }
 
+figure {
+  margin: 1rem 0;
+
+  img {
+    display: inline-block;
+  }
+
+  &.picture {
+    text-align: center;
+  }
+}
 
 .content-nav {
   width: 100%;
   margin-bottom: 1em;
-  padding: 0.75em 1em;
+  padding: 0.75rem 1rem;
   background-color: $grey-lightest;
   border-left: 6px solid $grey-light;
   border-radius: 2px;
 
   h4 {
     margin: 0;
-    margin-bottom: 0.25em;
-    padding-bottom: 0.25em;
+    margin-bottom: 0.25rem;
+    padding-bottom: 0.25rem;
     border-bottom: 1px solid $grey-lighter;
   }
 
   ol {
     margin: 0;
-    padding: 0 0 0 1.25em;
+    padding: 0 0 0 1.25rem;
   }
 
   li {

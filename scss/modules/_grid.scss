@@ -3,22 +3,18 @@
 // Author: Matthew Morek (me@matthewmorek.com)
 // URL: http://matthewmorek.com
 
-/*csslint regex-selectors:false, known-properties:false, duplicate-properties:false*/
-
 @import "grid-units";
 
 @mixin grid {
   letter-spacing: -0.31em; // Webkit: collapse white-space between units
-  *letter-spacing: normal; // reset IE < 8
-  *word-spacing: -0.43em; // IE < 8: collapse white-space between units
   text-rendering: optimizespeed; // Webkit: fixes text-rendering: optimizeLegibility
   font-family: FreeSans, Arimo, "Droid Sans", Helvetica, Arial, sans-serif;
   display: -webkit-flex;
-  -webkit-flex-flow: row wrap;
-  /* IE10 uses display: flexbox */
+  // IE10 uses display: flexbox
   display: -ms-flexbox;
+  -webkit-flex-flow: row wrap;
   -ms-flex-flow: row wrap;
-  /* Prevents distributing space between rows */
+  // Prevents distributing space between rows
   -ms-align-content: flex-start;
   -webkit-align-content: flex-start;
   align-content: flex-start;
@@ -39,6 +35,7 @@
 
 .wfp-grid {
   @include grid;
+
   & [class *= "wfp-u-"] {
     font-family: $sans-serif-stack;
   }

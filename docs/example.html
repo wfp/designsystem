@@ -1,0 +1,535 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <link rel="shortcut icon" href="http://cdn.wfp.org/favicon.ico">
+  <link rel="stylesheet" href="http://cdn.wfp.org/libraries/webfonts/lato/lato.css">
+  <link rel="stylesheet" href="http://cdn.wfp.org/libraries/webfonts/aleo/aleo.css">
+  <link href="img/icons/ui/ui-icons.svg.css" rel="stylesheet">
+  <link href="img/icons/thematic/thematic-icons.svg.css" rel="stylesheet">
+  <link href="css/main.css" rel="stylesheet">
+  <style>
+    .section-title {
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      padding-bottom: 0;
+      border-bottom: 1px solid #fdeca8;
+    }
+    .block {
+      display: block;
+      margin: 1rem 0;
+    }
+  </style>
+</head>
+<body class="wfp-header-spacer--narrow">
+
+  <header class="wfp-header-int fixed">
+    <div class="wfp-grid wfp-wrapper">
+      <div class="wfp-u-3-5 wfp-u-md-1-3 header--container">
+        <h1 class="header--title"><a href="/" class="header--logo">Test Project</a></h1>
+      </div>
+      <div class="wfp-u-2-5 wfp-u-md-2-3 header--nav">
+        <button class="header--btn pure-button small" id="js-nav-trigger">Menu</button>
+        <div class="main-nav flyout closed">
+          <button class="nav-close" id="js-nav-close"><span class="close-icon">&#x2715;</span>Close</button>
+          <nav class="wfp-menu-inverse">
+            <div class="menu--group">
+              <h6 class="menu--heading">Menu</h6>
+              <ul class="menu--wrapper">
+                <li><a class="menu--item" href="./basics/principles/">Menu 1</a></li>
+                <li><a class="menu--item" href="./basics/branding/">Menu 2</a></li>
+                <li><a class="menu--item" href="./basics/typography/">Menu 3</a></li>
+                <li><a class="menu--item" href="./basics/content/">Menu 4</a></li>
+                <li><a class="menu--item" href="./basics/getting-started/">Menu 5</a></li>
+              </ul>
+            </div>
+            <div class="menu--group">
+              <h6 class="menu--heading">Menu</h6>
+              <ul class="menu--wrapper">
+                <li><a class="menu--item" href="./about/">Menu 1</a></li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <article class="wfp-wrapper">
+
+    <section class="wfp-box">
+
+      <h1>Header One</h1>
+      <h2>Header Two</h2>
+      <h3>Header Three</h3>
+      <h4>Header Four</h4>
+      <h5>Header Five</h5>
+      <h6>Header Six</h6>
+      <p>The Zero Hunger Challenge, launched by UN Secretary General Ban Ki-moon, encourages everyone - whether in government, business or civil society - to focus their energies on ending hunger in our lifetimes. By <a href="#">partnering with WFP</a> and supporting its work, major global companies such as Unilever, DSM and MasterCard have already started to do this, joining with governments and civil society in the quest for zero hunger.</p>
+
+      <blockquote>The Zero Hunger Challenge, launched by UN Secretary General Ban Ki-moon, encourages everyone - whether in government, business or civil society - to focus their energies on ending hunger in our lifetimes. By partnering with WFP and supporting its work, major global companies such as Unilever, DSM and MasterCard have already started to do this, joining with governments and civil society in the quest for zero hunger.</blockquote>
+
+      <ol>
+        <li>First list item.</li>
+        <li>Second list item.</li>
+        <li>Third list item.</li>
+      </ol>
+
+      <ul>
+        <li>First list item.</li>
+        <li>Second list item.</li>
+        <li>Third list item.</li>
+      </ul>
+    </section>
+
+    <section class="wfp-box">
+
+      <h3 class="section-title"><code>.wfp-btn</code></h3>
+
+      <div class="wfp-box">
+        <button class="wfp-btn xlarge">Button</button>
+        <button class="wfp-btn large">Button</button>
+        <button class="wfp-btn">Button</button>
+        <button class="wfp-btn small">Button</button>
+        <button class="wfp-btn xsmall">Button</button>
+      </div>
+      <div class="wfp-box">
+        <button class="wfp-btn--primary xlarge">Button</button>
+        <button class="wfp-btn--primary large">Button</button>
+        <button class="wfp-btn--primary">Button</button>
+        <button class="wfp-btn--primary small">Button</button>
+        <button class="wfp-btn--primary xsmall">Button</button>
+      </div>
+      <div class="wfp-box">
+        <button class="wfp-btn--negative xlarge">Button</button>
+        <button class="wfp-btn--negative large">Button</button>
+        <button class="wfp-btn--negative">Button</button>
+        <button class="wfp-btn--negative small">Button</button>
+        <button class="wfp-btn--negative xsmall">Button</button>
+      </div>
+      <div class="wfp-box">
+        <button class="wfp-btn--positive xlarge">Button</button>
+        <button class="wfp-btn--positive large">Button</button>
+        <button class="wfp-btn--positive">Button</button>
+        <button class="wfp-btn--positive small">Button</button>
+        <button class="wfp-btn--positive xsmall">Button</button>
+      </div>
+      <div class="wfp-box">
+        <button class="wfp-btn--warning xlarge">Button</button>
+        <button class="wfp-btn--warning large">Button</button>
+        <button class="wfp-btn--warning">Button</button>
+        <button class="wfp-btn--warning small">Button</button>
+        <button class="wfp-btn--warning xsmall">Button</button>
+      </div>
+
+      <h3 class="section-title"><code>.wfp-form</code></h3>
+
+      <form class="wfp-form--stacked">
+
+        <label for="state">Select an option:</label>
+        <select id="select" class="select">
+          <option>Option 1</option>
+          <option>Option 2</option>
+          <option>Option 3</option>
+        </select>
+      <label for="option-one" class="input-radio"><input id="option-one" class="radio" type="radio" name="options">Option #1</label>
+      <label for="option-two" class="input-radio"><input id="option-two" class="radio" type="radio" name="options">Option #2</label>
+
+      <div class="wfp-u-1">
+        <label for="message">Your message:</label>
+        <textarea name="message" id="message"></textarea>
+        <label for="sample-1">
+          <input type="checkbox" id="sample-1">I would like to be contacted, if necessary.
+        </label>
+      </div>
+
+    </form>
+
+    <h3 class="section-title"><code>.invalid</code></h3>
+
+    <form class="wfp-form--stacked wfp-grid">
+      <div class="wfp-u-1-2 wfp-box">
+        <label for="full-name">Full name:</label>
+        <input class="invalid" id="full-name" type="text" placeholder="e.g.: John Doe" required>
+        <span class="error">Please, enter your full name.</span>
+      </div>
+      <div class="wfp-u-1-2 wfp-box">
+        <label for="email">Email address:</label>
+        <input class="invalid" id="email" type="email" placeholder="e.g.: john@doe.com" value="incorrect@email" required>
+        <span class="error">Please, use a correct email address.</span>
+      </div>
+    </form>
+
+    <h3 class="section-title"><code>.valid</code></h3>
+
+    <form class="wfp-form--stacked wfp-grid">
+      <div class="wfp-u-1-2 wfp-box">
+        <label for="full-name">Full name:</label>
+        <input class="valid" id="full-name" type="text" placeholder="e.g.: John Doe" value="John Doe">
+      </div>
+      <div class="wfp-u-1-2 wfp-box">
+        <label for="email">Email address:</label>
+        <input class="valid" id="email" type="email" placeholder="e.g.: john@doe.com" value="correct@email.com" required>
+      </div>
+    </form>
+  </section>
+
+  <section class="wfp-box">
+    <h3 class="section-title"><code>.wfp-menu</code></h3>
+
+    <nav class="wfp-menu">
+      <h6 class="menu--heading">Navigation</h6>
+      <ul class="menu--wrapper">
+        <li class="menu--item">
+          <a href="#" class="menu--link"><i class="icon-email-dark"></i> Inbox</a>
+        </li>
+        <li class="menu--item">
+          <a href="#" class="menu--link"><i class="icon-account-circle-dark"></i> Account</a>
+        </li>
+        <li class="menu--item">
+          <a href="#" class="menu--link"><i class="icon-exit-to-app-dark"></i> Sign Out</a>
+        </li>
+      </ul>
+    </nav>
+
+    <nav class="wfp-menu">
+      <div class="menu--group">
+        <h6 class="menu--heading">About</h6>
+        <ul class="menu--wrapper">
+          <li class="menu--item"><a href="#" class="menu--link">Executive Director</a></li>
+          <li class="menu--item"><a href="#" class="menu--link">Senior Leadership</a></li>
+          <li class="menu--item"><a href="#" class="menu--link">Corporate Information</a></li>
+          <li class="menu--item"><a href="#" class="menu--link">Funding</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <nav class="wfp-menu wfp-grid">
+      <div class="menu--group wfp-u-1 wfp-u-md-1-3">
+        <h6 class="menu--heading">Our Programmes</h6>
+        <ul class="menu--wrapper">
+          <li class="menu--item"><a class="menu--link" href="#">Cash and Vouchers</a></li>
+          <li class="menu--item"><a class="menu--link"  href="#">Foods for Assets</a></li>
+          <li class="menu--item"><a class="menu--link"  href="#">HIV / AIDS</a></li>
+          <li class="menu--item"><a class="menu--link"  href="#">Purchase for Progress</a></li>
+        </ul>
+      </div>
+      <div class="menu--group wfp-u-1 wfp-u-md-1-3">
+        <h6 class="menu--heading">Our Expertise</h6>
+        <ul class="menu--wrapper">
+          <li class="menu--item"><a class="menu--link"  href="#">Preparedness: Being Ready</a></li>
+          <li class="menu--item"><a class="menu--link"  href="#">Responding to Emergencies</a></li>
+          <li class="menu--item"><a class="menu--link"  href="#">Food Security Analysis</a></li>
+          <li class="menu--item"><a class="menu--link"  href="#">Buying the Food</a></li>
+        </ul>
+      </div>
+      <div class="menu--group wfp-u-1 wfp-u-md-1-3">
+        <h6 class="menu--heading">Our Operations</h6>
+        <ul class="menu--wrapper">
+          <li class="menu--item"><a class="menu--link"  href="#">Current Emergencies</a></li>
+          <li class="menu--item"><a class="menu--link"  href="#">Emergency Operations</a></li>
+          <li class="menu--item"><a class="menu--link"  href="#">Relief & Recovery Operations</a></li>
+          <li class="menu--item"><a class="menu--link"  href="#">Special Operations</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <h3 class="section-title"><code>.wfp-seg-control</code></h3>
+
+    <div class="wfp-content-wrapper wfp-text-center">
+      <ul class="wfp-seg-control">
+        <li class="seg-control--item">
+          <a class="seg-control--link" href="#">Home</a>
+        </li>
+        <li class="seg-control--item">
+          <a class="seg-control--link" href="#">Blog</a>
+        </li>
+        <li class="seg-control--item">
+          <a class="seg-control--link" href="#">About us</a>
+        </li>
+        <li class="seg-control--item">
+          <a class="seg-control--link" href="#">Contact us</a>
+        </li>
+      </ul>
+    </div>
+
+    <h3 class="section-title"><code>.wfp-breadcrumbs</code></h3>
+
+    <div class="wfp-content-wrapper wfp-text-center">
+      <ul class="wfp-breadcrumbs">
+        <li class="breadcrumbs--item"><a href="#" class="breadcrumbs--link"><i class="icon-home-dark xsmall"></i></a></li>
+        <li class="breadcrumbs--item"><a href="#" class="breadcrumbs--link">Careers</a></li>
+        <li class="breadcrumbs--item"><span class="breadcrumbs--last">Internships</span></li>
+      </ul>
+    </div>
+
+    <h3 class="section-title"><code>.wfp-pagination</code></h3>
+
+    <div class="wfp-pagination">
+      <ol class="pagination--wrapper">
+        <li class="pagination--item">
+          <a href="#" class="pagination--btn">Previous</a>
+        </li>
+        <li class="pagination--item">
+          <span class="pagination--btn active">1</span>
+        </li>
+        <li class="pagination--item">
+          <a href="#" class="pagination--btn">2</a>
+        </li>
+        <li class="pagination--item">
+          <a href="#" class="pagination--btn">3</a>
+        </li>
+        <li class="pagination--item">
+          <a href="#" class="pagination--btn">Next</a>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="wfp-box">
+
+    <h3 class="section-title"><code>.wfp-table</code></h3>
+
+    <table class="wfp-table">
+      <thead>
+        <th>#</th>
+        <th>Name</th>
+        <th>Origin</th>
+        <th>Age</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>John Williams</td>
+          <td>New York, USA</td>
+          <td>83</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Thomas Newman</td>
+          <td>Los Angeles, USA</td>
+          <td>60</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Hans Zimmer</td>
+          <td>Frankfurt, Germany</td>
+          <td>58</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <table class="wfp-table--striped">
+      <thead>
+        <th>#</th>
+        <th>Name</th>
+        <th>Origin</th>
+        <th>Age</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>John Williams</td>
+          <td>New York, USA</td>
+          <td>83</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Thomas Newman</td>
+          <td>Los Angeles, USA</td>
+          <td>60</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Hans Zimmer</td>
+          <td>Frankfurt, Germany</td>
+          <td>58</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </section>
+
+</article>
+
+<h3 class="section-title"><code>.wfp-header--internal</code></h3>
+
+<header class="wfp-header-int">
+  <div class="wfp-grid wfp-wrapper">
+    <div class="wfp-u-3-5 wfp-u-md-1-3 header--container">
+      <h1 class="header--title">
+        <a href="#" class="header--logo">WFP.org</a>
+      </h1>
+    </div>
+    <div class="wfp-u-2-5 wfp-u-md-2-3 header--nav">
+      <button class="header--toggle pure-button small">Menu</button>
+      <nav class="header--menu">
+        <ul class="menu--group">
+          <li class="menu--item"><a href="#" class="menu--link active">Navlink #1</a></li>
+          <li class="menu--item"><a href="#" class="menu--link">Navlink #2</a></li>
+          <li class="menu--item"><a href="#" class="menu--link">Navlink #3</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<h3 class="section-title"><code>.wfp-header--external</code></h3>
+
+<header class="wfp-header-ext">
+  <div class="wfp-grid wfp-wrapper">
+    <div class="wfp-u-2-3 wfp-u-sm-1-4 header--container">
+      <h1 class="header--title">
+        <a href="#" class="header--logo">
+          <img src="img/logos/light/png/1x/en-full.png" srcset="img/logos/light/png/1x/en-full.png 1x, img/logos/light/png/2x/en-full.png 2x" alt="UN World Food Programme">
+        </a>
+      </h1>
+    </div>
+    <div class="wfp-u-1-3 wfp-u-sm-3-4 header--nav">
+      <button class="header--toggle pure-button small" id="js-example-menu-trigger">Menu</button>
+      <nav class="header--menu" id="js-example-menu">
+        <ul class="menu--group">
+          <li class="menu--item"><a href="#" class="menu--link active">Navlink #1</a></li>
+          <li class="menu--item"><a href="#" class="menu--link">Navlink #2</a></li>
+          <li class="menu--item"><a href="#" class="menu--link">Navlink #3</a></li>
+          <li class="menu--item"><a href="#" class="menu--link">Navlink #4</a></li>
+          <li class="menu--item"><a href="#" class="menu--link">Navlink #5</a></li>
+        </ul>
+      </nav>
+      <div class="header--misc">
+        <div class="header--search">
+          <input type="search" class="header--input" placeholder="Search">
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<h3 class="section-title"><code>.wfp-footer--mini</code></h3>
+
+<footer class="wfp-footer--mini">
+  <div class="wfp-grid wfp-wrapper">
+    <div class="wfp-u-1 wfp-u-md-2-3 footer--panel left">
+      <h4 class="footer--label">2016 &copy; World Food Programme</h4>
+    </div>
+    <div class="wfp-u-1 wfp-u-md-1-3 footer--panel right">
+      <h4 class="footer--label">WFP UI &amp; UX</h4>
+    </div>
+  </div>
+</footer>
+
+<h3 class="section-title"><code>.wfp-footer--compact</code></h3>
+
+<footer class="wfp-footer--compact">
+  <div class="footer--top">
+    <div class="wfp-grid wfp-wrapper">
+      <div class="wfp-u-1 wfp-u-md-1-2 footer--panel left">
+        <h5 class="footer--heading">Follow WFP on social networks</h5>
+        <ul class="footer--links">
+          <li class="link"><a href="#" class="wfp-btn--twitter xsmall">Twitter</a></li>
+          <li class="link"><a href="#" class="wfp-btn--facebook xsmall">Facebook</a></li>
+          <li class="link"><a href="#" class="wfp-btn--gplus xsmall">Google+</a></li>
+        </ul>
+      </div>
+      <div class="wfp-u-1 wfp-u-md-1-2 footer--panel right">
+        <img src="img/logos/dark/png/1x/en-full.png" srcset="img/logos/dark/png/1x/en-full.png 1x, img/logos/dark/png/2x/en-full.png 2x" class="footer--logo">
+      </div>
+    </div>
+  </div>
+  <div class="footer--bottom">
+    <div class="wfp-grid wfp-wrapper">
+      <div class="wfp-u-1 wfp-u-md-1-3 footer--panel left">
+        <h4 class="footer--label">2016 &copy; World Food Programme</h4>
+      </div>
+      <div class="wfp-u-1 wfp-u-md-2-3 footer--panel right">
+        <ul class="footer--links">
+          <li class="link"><a href="#">Donate</a></li>
+          <li class="link"><a href="#">Privacy</a></li>
+          <li class="link"><a href="#">Terms of Use</a></li>
+          <li class="link"><a href="#">Executive Board</a></li>
+          <li class="link"><a href="#">WFP Alumni</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<h3 class="section-title"><code>.wfp-footer--std</code></h3>
+
+<footer class="wfp-footer--std">
+  <div class="footer--top">
+    <div class="wfp-grid wfp-wrapper">
+      <div class="wfp-u-1 wfp-u-md-2-3 footer--panel left">
+        <nav class="wfp-menu-plain wfp-grid">
+          <div class="menu--group wfp-u-1 wfp-u-md-1-3">
+            <h6 class="menu--heading">Get Involved</h6>
+            <ul class="menu--wrapper">
+              <li class="menu--item"><a href="#" class="menu--link">Make a donation</a></li>
+              <li class="menu--item"><a href="#" class="menu--link">Join the community</a></li>
+              <li class="menu--item"><a href="#" class="menu--link">Spread the word</a></li>
+              <li class="menu--item"><a href="#" class="menu--link">Careers at WFP</a></li>
+            </ul>
+          </div>
+          <div class="menu--group wfp-u-1 wfp-u-md-1-3">
+            <h6 class="menu--heading">Media &amp; Library</h6>
+            <ul class="menu--wrapper">
+              <li class="menu--item"><a href="#" class="menu--link">Newsroom</a></li>
+              <li class="menu--item"><a href="#" class="menu--link">Publications</a></li>
+              <li class="menu--item"><a href="#" class="menu--link">Data and statistics</a></li>
+              <li class="menu--item"><a href="#" class="menu--link">Social media</a></li>
+            </ul>
+          </div>
+          <div class="menu--group wfp-u-1 wfp-u-md-1-3">
+            <h6 class="menu--heading">Get Involved</h6>
+            <ul class="menu--wrapper">
+              <li class="menu--item"><a href="#" class="menu--link">Make a donation</a></li>
+              <li class="menu--item"><a href="#" class="menu--link">Join the community</a></li>
+              <li class="menu--item"><a href="#" class="menu--link">Spread the word</a></li>
+              <li class="menu--item"><a href="#" class="menu--link">Careers at WFP</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+      <div class="wfp-u-1 wfp-u-md-1-3 footer--panel right">
+        <div class="wfp-logo-wrapper text-right">
+          <img src="img/logos/dark/png/1x/en-full.png" srcset="img/logos/dark/png/1x/en-full.png 1x, img/logos/dark/png/2x/en-full.png 2x" class="footer--logo">
+        </div>
+        <div class="wfp-content-wrapper">
+          <ul class="footer--links">
+            <li class="link"><a href="#" class="wfp-btn--twitter xsmall">Twitter</a></li>
+            <li class="link"><a href="#" class="wfp-btn--facebook xsmall">Facebook</a></li>
+            <li class="link"><a href="#" class="wfp-btn--gplus xsmall">Google+</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer--bottom">
+    <div class="wfp-grid wfp-wrapper">
+      <div class="wfp-u-1 wfp-u-md-1-3 footer--panel left">
+        <h4 class="footer--label">2016 &copy; World Food Programme</h4>
+      </div>
+      <div class="wfp-u-1 wfp-u-md-2-3 footer--panel right">
+        <h4 class="footer--label">Via Cesare Giulio Viola 68-70, 00148 Rome, Italy</h4>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/lib/responsive-nav.js"></script>
+<script>
+
+  var nav = responsiveNav(".main-nav", {
+    customToggle: "js-nav-trigger",
+    navClass: "main-nav",
+    openPos: "fixed",
+    closedPos: "static"
+  });
+
+  var closeBtn = document.getElementById("js-nav-close");
+  closeBtn.onclick = function(){ nav.close(); return false; }
+</script>
+
+</body>
+</html>

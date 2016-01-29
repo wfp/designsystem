@@ -8,7 +8,7 @@
   border-collapse: collapse;
   border-spacing: 0;
   empty-cells: show;
-  border: none;
+  border: 0;
   width: 100%;
   margin: 1rem 0;
 
@@ -21,7 +21,7 @@
 
   td, th {
     border-bottom: 1px solid $grey-lighter;
-    border-width: 0 0 1px 0;
+    border-width: 0 0 1px;
     font-size: inherit;
     margin: 0;
     overflow: visible;
@@ -39,9 +39,13 @@
 .wfp-table {
   @include table;
 }
+
 .wfp-table--striped {
   @include table;
-  tr:nth-child(2n-1) td {
-    background-color: $blue-lightest;
+
+  tr:nth-child(2n-1) {
+    td {
+      background-color: $blue-lightest;
+    }
   }
 }

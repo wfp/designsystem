@@ -4,9 +4,9 @@
     "Matthew Morek <me@matthewmorek.com> (http://matthewmorek.com)",
     "James Home <james@jameshome.co> (http://jrah.github.io)"
   ],
-  "description": "World Food Programme UI Kit",
+  "description": "WFP UI",
   "main": [
-    "dist/wfpui.css",
+    "dist/css/wfpui.css",
     "scss/wfpui.scss"
   ],
   "keywords": [
@@ -16,7 +16,7 @@
     "wfp"
   ],
   "license": "MIT",
-  "homepage": "http://cdn.wfp.org/guides/ui",
+  "homepage": "www.wfp.org/uiguide",
   "repository": {
     "type": "git",
     "url": "git://github.com/wfp/ui.git"

@@ -7,7 +7,7 @@
 // -----------------------------------------------------------------------------
 // Add spacing to the body tag, to compensate for a fixed masthead
 // -----------------------------------------------------------------------------
-.wfp-masthead-spacer--narrow {
+.wfp-header-spacer--narrow {
   overflow: auto;
   padding-top: 4rem;
 }
@@ -15,10 +15,11 @@
 %masthead {
   position: relative;
   background-color: $primary;
-  color: #ffffff;
-  box-shadow: rgba(0,0,0,0.2) 0 1px 3px;
+  color: $white;
+  box-shadow: rgba($black, 0.25) 0 1px 3px;
   min-height: 48px;
-  max-height: 94px;
+  max-height: 104px;
+
   .wrapper {
     position: relative;
   }
@@ -27,187 +28,343 @@
 // -----------------------------------------------------------------------------
 // Masthead: Narrow
 // -----------------------------------------------------------------------------
-%masthead--container {
+%header--container {
   padding: 0.5rem 0;
   // height: 1rem;
 }
-%masthead--title {
-  line-height: 1rem;
+
+%header--title {
+  line-height: 1.2;
   font-size: 1rem;
   letter-spacing: initial;
   margin: 0;
+
   @include media-query($md-screen) {
     margin: 0 1rem;
   }
 }
-%masthead--logo {
-  color: #fff;
-  border: none;
+
+%header--logo {
+  color: $white;
+  border: 0;
   font-weight: bold;
   text-decoration: none;
 }
-%masthead--nav {
+
+%header--nav {
   padding: 0;
   text-align: right;
 }
-%masthead--btn {
-  -webkit-tap-highlight-color: rgba(0,0,0,0);
+
+%header--btn {
+  -webkit-tap-highlight-color: $black;
   -webkit-touch-callout: none;
   user-select: none;
   border: 1px solid $white;
+  border-radius: 3px;
   background-color: transparent;
   color: $white;
-  border-radius: 3px;
+  transition-property: border, background, color, width;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in;
+
+  &:hover {
+    color: $orange;
+    border-color: $orange;
+  }
 }
-%masthead--toggle {
-  @extend %masthead--btn;
+
+%header--search {
+  display: inline-block;
+  position: relative;
+
+  &::before {
+    @extend %icon-light-search;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 36px;
+    height: 38px;
+    content: "";
+    color: $white;
+    z-index: 1;
+  }
+
+  .header--input {
+    padding: 0.5rem 0.75rem 0.5rem 2rem;
+  }
+}
+
+%header--input {
+  -webkit-tap-highlight-color: $black;
+  -webkit-touch-callout: none;
+  transition: width 0.15s ease-in-out;
+  user-select: none;
+  border: 1px solid $white;
+  border-radius: 3px;
+  background-color: transparent;
+  color: $white;
+  width: 56px;
+  text-align: center;
+  padding: 0.5rem 0.75rem;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+
+  &::-webkit-input-placeholder {
+    opacity: 1;
+    color: $white;
+  }
+
+  &::-moz-placeholder {
+    opacity: 1;
+    color: $white;
+  }
+
+  &:-ms-input-placeholder {
+    opacity: 1;
+    color: $white;
+  }
+
+  &:hover {
+    border-color: $orange;
+  }
+
+  &:focus {
+    width: 156px;
+    text-align: left;
+    color: $white;
+
+    &::-webkit-input-placeholder {
+      opacity: 0;
+    }
+
+    &::-moz-placeholder {
+      opacity: 0;
+    }
+
+    &:-ms-input-placeholder {
+      opacity: 0;
+    }
+  }
+}
+
+%header--toggle {
+  @extend %header--btn;
   display: inline-block;
   visibility: visible;
+
   @include media-query($md-screen) {
     display: none;
     visibility: hidden;
   }
 }
 
-.wfp-masthead-internal {
-  @extend %masthead;
+%header--misc {
+  @include media-query($md-screen) {
+    display: inline-block;
+    min-height: 72px;
+  };
+}
+
+%header--menu {
+  position: absolute;
+  right: 0;
+  top: 64px;
   width: 100%;
-  &.fixed {
-    top: 0;
-    position: fixed;
-    z-index: 100;
-  }
-  .masthead--container {
-    @extend %masthead--container;
-  }
-  .masthead--title {
-    @extend %masthead--title;
-  }
-  .masthead--logo {
-    @extend %masthead--logo;
-  }
-  .masthead--nav {
-    @extend %masthead--nav;
-  }
-  .masthead--btn {
-    @extend %masthead--btn;
-  }
-  .masthead--toggle {
-    @extend %masthead--toggle;
-  }
-  .masthead--menu {
-    position: absolute;
-    right: 0;
-    top: 64px;
-    width: 100%;
-    margin: 0;
-    &.closed {
-      z-index: 0;
-      visibility: hidden;
-      opacity: 0;
-      transform: translate3d(0,-64px,0);
-      @include transition-property(transform, opacity, visibility, z-index);
-      @include transition-duration(0.2s, 0.2s, 0s, 0s);
-      @include transition-delay(0s, 0s, 0.2s, 0.2s);
-      @include transition-timing-function(cubic-bezier(0.4, 0, 1, 1));
-      @include media-query($md-screen) {
-        transition: unset;
-        transform: none;
-        z-index: auto;
-        visibility: visible;
-        opacity: 1;
-      }
-    }
-    &.opened {
-      z-index: 5;
+  margin: 0;
+
+  &.closed {
+    @include transition-property(transform, opacity, visibility, z-index);
+    @include transition-duration(0.2s, 0.2s, 0s, 0s);
+    @include transition-delay(0s, 0s, 0.2s, 0.2s);
+    @include transition-timing-function(cubic-bezier(0.4, 0, 1, 1));
+    z-index: 0;
+    visibility: hidden;
+    opacity: 0;
+    transform: translate3d(0, -64px, 0);
+
+    @include media-query($md-screen) {
+      transition: unset;
+      transform: none;
+      z-index: auto;
       visibility: visible;
       opacity: 1;
-      transform: translate3d(0,0,0);
-      @include transition-property(transform, opacity, visibility, z-index);
-      @include transition-duration(0.25s, 0.25s, 0s, 0s);
-      @include transition-delay(0s, 0s, 0s, 0.25s);
-      @include transition-timing-function(cubic-bezier(0.15, 1.23, 0.84, 1.04));
-      @include media-query($md-screen) {
-        transition: unset;
-      }
     }
-    .menu--group {
-      @extend %no-list;
-      text-align: initial;
-      background-color: $grey;
-    }
-    .menu--item {
-      display: block;
-      padding: 0;
-      border-bottom: 1px solid $grey;
-      &:last-child {
-        border-bottom: none;
-      }
-    }
-    .menu--link {
-      display: block;
-      border-bottom-color: transparent;
-      color: $grey-light;
-      padding: 0.5rem 1rem;
-    }
+  }
+
+  &.opened {
+    @include transition-property(transform, opacity, visibility, z-index);
+    @include transition-duration(0.25s, 0.25s, 0s, 0s);
+    @include transition-delay(0s, 0s, 0s, 0.25s);
+    @include transition-timing-function(cubic-bezier(0.15, 1.23, 0.84, 1.04));
+    z-index: 5;
+    visibility: visible;
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+
     @include media-query($md-screen) {
-      @include menu-flat;
-      background-color: transparent;
-      position: static;
-      width: auto;
-      .menu--link {
-        padding: 0.25rem 0;
-        &:active,
-        &.active {
-          border-bottom: 1px solid $orange;
-        }
-        &:hover {
-          border-bottom: 1px solid $white;
-        }
+      transition: unset;
+    }
+  }
+
+  .menu--group {
+    @extend %no-list;
+    text-align: initial;
+    background-color: $grey;
+  }
+
+  .menu--item {
+    display: block;
+    padding: 0;
+    border-bottom: 1px solid $grey;
+
+    &:last-child {
+      border-bottom: 0;
+    }
+  }
+
+  .menu--link {
+    display: block;
+    border-bottom-color: transparent;
+    color: $grey-light;
+    padding: 0.5rem 1rem;
+    line-height: 1.2;
+  }
+
+  @include media-query($md-screen) {
+    @include menu-flat;
+    background-color: transparent;
+    position: static;
+    width: auto;
+
+    .menu--link {
+      padding: 0.25rem 0;
+
+      &:active,
+      &.active {
+        border-bottom: 1px solid $orange;
+      }
+
+      &:hover {
+        border-bottom: 1px solid $white;
       }
     }
   }
 }
 
 // -----------------------------------------------------------------------------
-// Masthead: Full
+// Masthead: Internal
 // -----------------------------------------------------------------------------
-// .masthead-full {
-//   @extend %masthead;
-//   box-shadow: none;
-//   .wrapper {
-//     padding: 0;
-//     @include media-query($md-screen) {
-//       padding: 0 1em;
-//     }
-//   }
-//   .wfp-logo {
-//     margin: 0.25em;
-//     display: inline-block;
-//     a.wfp-logo-wrapper {
-//       display: inline-block;
-//       max-width: 100%;
-//       width: auto;
-//       margin: 0;
-//       border: none;
-//       color: #fff;
-//       text-decoration: none;
-//       font-size: $base-font-size;
-//       .logo-img {
-//         max-width: 256px;
-//       }
-//     }
-//   }
-//   .sub-logo {
-//     padding: 0;
-//     margin: -1em 0;
-//     .heading {
-//       background-color: $accent;
-//       box-shadow: rgba(0,0,0,0.2) 0 2px 0;
-//       margin: 0;
-//       padding: 1.5em 1em;
-//       display: inline-block;
-//       color: #fff;
-//     }
-//   }
-// }
+.wfp-header-int {
+  @extend %masthead;
+  width: 100%;
+
+  &.fixed {
+    top: 0;
+    position: fixed;
+    z-index: 100;
+  }
+
+  .header--container {
+    @extend %header--container;
+  }
+
+  .header--title {
+    @extend %header--title;
+  }
+
+  .header--logo {
+    @extend %header--logo;
+  }
+
+  .header--nav {
+    @extend %header--nav;
+  }
+
+  .header--search {
+    @extend %header--search;
+  }
+
+  .header--input {
+    @extend %header--input;
+  }
+
+  .header--btn {
+    @extend %header--btn;
+  }
+
+  .header--toggle {
+    @extend %header--toggle;
+  }
+
+  .header--menu {
+    @extend %header--menu;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Masthead: External
+// -----------------------------------------------------------------------------
+.wfp-header-ext {
+  @extend %masthead;
+  width: 100%;
+
+  &.fixed {
+    top: 0;
+    position: fixed;
+    z-index: 100;
+  }
+
+  .header--container {
+    @extend %header--container;
+    padding: 0;
+  }
+
+  .header--title {
+    @extend %header--title;
+    margin: 0;
+  }
+
+  .header--logo {
+    @extend %header--logo;
+  }
+
+  .header--nav {
+    @extend %header--nav;
+    @include media-query($md-screen) {
+      min-height: 72px;
+      text-align: right;
+    }
+  }
+
+  .header--btn {
+    @extend %header--btn;
+  }
+
+  .header--search {
+    @extend %header--search;
+  }
+
+  .header--input {
+    @extend %header--input;
+  }
+
+  .header--toggle {
+    @extend %header--toggle;
+  }
+
+  .header--menu {
+    @extend %header--menu;
+    @include media-query($md-screen) {
+      margin: 1.5rem 1rem;
+    };
+  }
+
+  .header--misc {
+    @extend %header--misc;
+  }
+}

@@ -3,8 +3,8 @@
 // Author: Matthew Morek (me@matthewmorek.com)
 // URL: http://matthewmorek.com
 
-.masthead--btn {
-  -webkit-tap-highlight-color: rgba(0,0,0,0);
+.header--btn {
+  -webkit-tap-highlight-color: $black;
   -webkit-touch-callout: none;
   user-select: none;
   border: 1px solid $white;
@@ -24,7 +24,7 @@
   padding-bottom: 2rem;
   z-index: 10;
   text-align: left;
-  box-shadow: rgba(0,0,0,0.3) 0 1px 16px;
+  box-shadow: rgba($black, 0.3) 0 1px 16px;
   background-color: $grey-darker;
   right: 0;
   top: 0;
@@ -48,18 +48,20 @@
     text-transform: uppercase;
     line-height: 1.562rem;
     padding: 0.125rem 0.5rem;
-    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color: $black;
+
     .close-icon {
       margin-right: 0.5rem;
     }
   }
 
   &.closed {
-    transform: translate3d(320px,0,0);
     @include transition(transform, 0.25s, 0s, cubic-bezier(0.4, 0, 1, 1));
+    transform: translate3d(320px, 0, 0);
   }
+
   &.opened {
-    transform: translate3d(0,0,0);
     @include transition(transform, 0.25s, 0s, cubic-bezier(0.15, 1.23, 0.84, 1.04));
+    transform: translate3d(0, 0, 0);
   }
 }

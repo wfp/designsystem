@@ -3,78 +3,24 @@
 // Author: Matthew Morek (me@matthewmorek.com)
 // URL: http://matthewmorek.com
 
-.footer {
-  border-top: 4px solid $grey-contrast;
-  font-size: 0.875em;
+%footer {
+  border-top: 4px solid $grey-lighter;
+  font-size: 0.875rem;
   text-align: center;
-  margin-top: 2em;
-
-  .panel {
-    &-left,
-    &-right {
-      h4, ul {
-        margin: 0;
-      }
-    }
-    &-left {
-      text-align: center;
-      @include media-query($md-screen){
-        text-align: left;
-      }
-    }
-    &-right {
-      text-align: center;
-      @include media-query($md-screen){
-        text-align: right;
-      }
-    }
-  }
-
-  @include media-query($md-screen) {
-    text-align: inherit;
-  }
+  margin-top: 2rem;
 }
 
-.footer-top {
-  padding: 0.25em 1em;
-  @include media-query($lg-screen) {
-    padding: 0.25em 0;
-  }
-
-  .social-media {
-    margin: 0.75em 0;
+%footer--panel {
+  &.left {
     text-align: center;
-    overflow: hidden;
-
-    .title {
-      margin: 0.5em 0;
-    }
-
-    .social-block {
-      display: inline-block;
-      vertical-align: baseline;
-      &.twitter {
-        max-width: 108px;
-      }
-      &.facebook {
-        max-width: 64px;
-      }
-      &.google-plus {
-        max-width: 85px;
-      }
-    }
 
     @include media-query($md-screen) {
-      text-align: inherit;
+      text-align: left;
     }
   }
 
-  .logo {
+  &.right {
     text-align: center;
-
-    img {
-      max-width: 208px;
-    }
 
     @include media-query($md-screen) {
       text-align: right;
@@ -82,38 +28,248 @@
   }
 }
 
-.footer-minimal {
-  h4, p {
-    margin: 0.5em 0;
-  }
-  h4 {
-    margin-bottom: 1em;
-  }
+%footer--top {
+  padding: 0.25rem 0;
 }
 
-.footer-bottom {
-  border-top: 1px solid $grey-light;
+%footer--bottom {
+  @extend %footer--top;
   padding: 0;
-}
+  border-top: 1px solid $grey-lighter;
 
-.copyrights {
-  @include media-query($md-screen) {
-    text-align: inherit;
+  .footer--panel {
+    padding: 0;
   }
 }
 
-.site-links {
-  text-align: center;
+%footer--heading {
+  font-size: 1rem;
+  font-weight: bold;
+  margin: 0.25rem 0;
+}
 
-  .inline-list {
-    @extend %no-list;
-    li {
-      display: inline;
-      margin: 0;
-      margin-left: 1em;
+%footer--label {
+  font-size: 0.875rem;
+  margin: 0.5rem 0;
+  line-height: 1.4;
+}
+
+%footer--links {
+  @extend %nolist;
+  line-height: 1;
+
+  .link {
+    display: inline-block;
+    margin: 0.5rem 0.5rem 0.5rem 0;
+  }
+}
+
+%footer--logo {
+  display: inline-block;
+}
+
+// -----------------------------------------------------------------------------
+// Actual implementation
+// -----------------------------------------------------------------------------
+@mixin footer-mini {
+  @extend %footer;
+
+  .footer--panel {
+    @extend %footer--panel;
+  }
+
+  .footer--label {
+    @extend %footer--label;
+  }
+}
+
+@mixin footer-compact {
+  @extend %footer;
+
+  .footer--top {
+    @extend %footer--top;
+
+    .wfp-wrapper {
+      padding: 1rem 0;
     }
   }
-  @include media-query($md-screen) {
-    text-align: right;
+
+  .footer--bottom {
+    @extend %footer--bottom;
+  }
+
+  .footer--panel {
+    @extend %footer--panel;
+  }
+
+  .footer--label {
+    @extend %footer--label;
+  }
+
+  .footer--heading {
+    @extend %footer--heading;
+  }
+
+  .footer--links {
+    @extend %footer--links;
+  }
+
+  .footer--logo {
+    @extend %footer--logo;
   }
 }
+
+@mixin footer-std {
+  @include footer-compact;
+
+  .footer--top {
+    .wfp-wrapper {
+      padding: 0.75rem 0;
+    }
+
+    .wfp-menu-plain {
+      @extend %text-left;
+      margin: 0 0 1rem;
+    }
+  }
+}
+
+// Actualo implementation
+
+.wfp-footer--mini {
+  @include footer-mini;
+}
+
+.wfp-footer--compact {
+  @include footer-compact;
+}
+
+.wfp-footer--std {
+  @include footer-std;
+}
+
+// .footer {
+//   border-top: 4px solid $grey-contrast;
+//   font-size: 0.875em;
+//   text-align: center;
+//   margin-top: 2em;
+//
+//   .panel {
+//     &-left,
+//     &-right {
+//       h4, ul {
+//         margin: 0;
+//       }
+//     }
+//
+//     &-left {
+//       text-align: center;
+//
+//       @include media-query($md-screen) {
+//         text-align: left;
+//       }
+//     }
+//
+//     &-right {
+//       text-align: center;
+//
+//       @include media-query($md-screen) {
+//         text-align: right;
+//       }
+//     }
+//   }
+//
+//   @include media-query($md-screen) {
+//     text-align: inherit;
+//   }
+// }
+//
+// .footer-top {
+//   padding: 0.25em 1em;
+//
+//   @include media-query($lg-screen) {
+//     padding: 0.25em 0;
+//   }
+//
+//   .social-media {
+//     @include media-query($md-screen) {
+//       text-align: inherit;
+//     }
+//     margin: 0.75em 0;
+//     text-align: center;
+//     overflow: hidden;
+//
+//     .title {
+//       margin: 0.5em 0;
+//     }
+//
+//     .social-block {
+//       display: inline-block;
+//       vertical-align: baseline;
+//
+//       &.twitter {
+//         max-width: 108px;
+//       }
+//
+//       &.facebook {
+//         max-width: 64px;
+//       }
+//
+//       &.google-plus {
+//         max-width: 85px;
+//       }
+//     }
+//   }
+//
+//   .logo {
+//     @include media-query($md-screen) {
+//       text-align: right;
+//     }
+//
+//     text-align: center;
+//
+//     img {
+//       max-width: 208px;
+//     }
+//
+//   }
+// }
+//
+// .footer-minimal {
+//   h4, p {
+//     margin: 0.5em 0;
+//   }
+//
+//   h4 {
+//     margin-bottom: 1em;
+//   }
+// }
+//
+// .footer-bottom {
+//   border-top: 1px solid $grey-light;
+//   padding: 0;
+// }
+//
+// .copyrights {
+//   @include media-query($md-screen) {
+//     text-align: inherit;
+//   }
+// }
+//
+// .site-links {
+//   text-align: center;
+//
+//   .inline-list {
+//     @extend %no-list;
+//
+//     li {
+//       display: inline;
+//       margin: 0;
+//       margin-left: 1em;
+//     }
+//   }
+//
+//   @include media-query($md-screen) {
+//     text-align: right;
+//   }
+// }

@@ -23,22 +23,30 @@
   appearance: none;
   vertical-align: middle;
   border: 1px solid $grey-light;
-  background-color: #fff;
+  background-color: $white;
   margin-right: 0.5rem;
   margin-bottom: 4px;
   width: 18px;
   height: 18px;
   padding: 3px;
+
   &.disabled,
   &:disabled
   &[disabled] {
     opacity: 0.4;
     cursor: not-allowed;
   }
+
   &:focus {
-    outline: thin dotted $grey-light;
     outline: 1px auto $blue-lighter;
   }
+}
+
+%select-arrow {
+  @extend %icon-dark-arrow-drop-down;
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-color: $grey-lightest;
 }
 
 @mixin input($type) {
@@ -49,38 +57,45 @@
     font-family: $sans-serif-stack;
     border: 1px solid $grey-light;
     border-radius: 1px;
-    box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+    box-shadow: inset 0 1px 3px rgba($black, 0.1);
     font-size: 100%;
     line-height: 1.5;
     vertical-align: baseline;
     transition: 0.3s linear border;
+
     &:focus {
       outline: 0;
-      outline: thin dotted \9; /* IE6-9 */
       border-color: $blue-light;
+
       &:invalid {
         border-color: $orange;
+
         &:focus {
           border-color: $orange;
         }
       }
     }
+
     &:required:invalid,
     &.invalid {
       margin-bottom: -1px;
       border-color: $orange;
+
       + .error {
         border-radius: 0 0 2px 2px;
       }
     }
+
     &.valid {
       border-color: $green;
     }
+
     &[disabled],
     &:disabled {
       cursor: not-allowed;
       opacity: 0.4;
     }
+
     &[readonly] {
       // Read-only state
       background: $grey-lightest;
@@ -90,9 +105,10 @@
   } @else if $type == checkbox {
     // @extend %inputbox;
     @extend %icon-dark-checkbox-unchecked;
+    -moz-appearance: checkbox;
     appearance: none;
     display: inline-block;
-    border: none;
+    border: 0;
     margin-right: 0.25rem;
     margin-bottom: 3px;
     width: 24px;
@@ -100,26 +116,29 @@
     padding: 0;
     vertical-align: middle;
     transition: 0.15s background ease-in;
+
     &.disabled,
     &:disabled
     &[disabled] {
       opacity: 0.4;
       cursor: not-allowed;
     }
+
     &:focus {
       outline: 1px auto $blue-light;
     }
+
     &:checked {
       @extend %icon-primary-checkbox-checked;
     }
   } @else if $type == radio {
     @extend %inputbox;
     border-radius: 32px;
+
     &:checked {
       background-color: $white;
       border-color: $primary;
       border-width: 4px;
-      background-color: $white;
     }
   } @else if $type == label {
     display: block;
@@ -128,6 +147,7 @@
     line-height: 1.5;
     vertical-align: baseline;
   } @else if $type == select {
+    @extend %select-arrow;
     appearance: none;
     display: inline-block;
     padding: 0.4rem 0.75rem;
@@ -135,28 +155,31 @@
     font-family: $sans-serif-stack;
     border: 1px solid $grey-light;
     border-radius: 3px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    box-shadow: 0 1px 3px rgba($black, 0.1);
     font-size: 100%;
     line-height: 1.5;
     vertical-align: baseline;
     transition: 0.3s linear border;
     position: relative;
+
     &:focus {
       outline: 0;
-      outline: thin dotted \9; /* IE6-9 */
       border-color: $blue-light;
     }
+
     &[disabled],
     &:disabled {
       cursor: not-allowed;
       opacity: 0.4;
     }
+
     &[readonly] {
       // Read-only state
       background: $grey-light;
       color: $grey-light;
       border-color: $grey-light;
     }
+
     &[multiple] {
       height: auto;
     }
@@ -170,43 +193,54 @@
     font-family: $sans-serif-stack;
     border: 1px solid $grey-light;
     border-radius: 1px;
-    box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+    box-shadow: inset 0 1px 3px rgba($black, 0.1);
     line-height: 1.562;
     vertical-align: baseline;
     transition: 0.3s linear border;
+
     &.small {
-      max-width: 262px; min-height: 6em;
+      max-width: 262px;
+      min-height: 6em;
     }
+
     &.large {
-      max-width: 424px; min-height: 10em;
+      max-width: 424px;
+      min-height: 10em;
     }
+
     &:focus {
       outline: 0;
-      outline: thin dotted \9; /* IE6-9 */
       border-color: $blue-light;
+
       &:invalid {
         border-color: $orange;
+
         &:focus {
           border-color: $orange;
         }
       }
     }
+
     &:required:invalid,
     &.invalid {
       margin-bottom: -1px;
       border-color: $orange;
+
       + .error {
         border-radius: 0 0 2px 2px;
       }
     }
+
     &.valid {
       border-color: $green;
     }
+
     &[disabled],
     &:disabled {
       cursor: not-allowed;
       opacity: 0.4;
     }
+
     &[readonly] {
       // Read-only state
       background: $grey-lightest;
@@ -219,6 +253,7 @@
 %wfp-form,
 .wfp-form {
   margin: 1rem 0;
+
   // All common elements
   input[type="text"],
   input[type="password"],
@@ -235,12 +270,14 @@
   input[type="tel"],
   input[type="color"],
   input:not([type]) { @include input(common); }
+
   // Fieldset
   fieldset {
     margin: 0;
     padding: 0.25rem 0 0.75rem;
     border: 0;
   }
+
   legend {
     display: block;
     width: 100%;
@@ -249,20 +286,25 @@
     color: $text-color;
     border-bottom: 1px solid $grey-light;
   }
+
   // Labels
   label {
     @include input(label);
+
     ~ label {
       margin: 0.25rem 0;
     }
   }
+
   // Select boxes
   select { @include input(select); }
+
   // Checkboxes and radios
   input {
     &[type="checkbox"] { @include input(checkbox); }
     &[type="radio"] { @include input(radio); }
   }
+
   // Textarea
   textarea {
     @include input(textarea);
@@ -280,6 +322,7 @@
 
 .wfp-form--stacked {
   @extend %wfp-form;
+
   input[type="text"],
   input[type="password"],
   input[type="email"],
@@ -306,9 +349,11 @@
 .wfp-form--group {
   padding: 1rem 0;
 }
+
 .wfp-form--actions {
   padding: 1rem 0;
 }
+
 .wfp-form--msg {
   display: inline-block;
   margin: 0.25rem 1rem;

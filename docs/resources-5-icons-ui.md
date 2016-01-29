@@ -1,6 +1,6 @@
 ---
 layout: page
-title: User Interface icons
+title: UI Icons
 permalink: /resources/ui-icons/
 resource: true
 categories: Resources

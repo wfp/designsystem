@@ -1,5 +1,5 @@
 /*!
- * WFP UI Bootstrap Theme v0.1.4
+ * WFP UI Bootstrap Theme v0.2.0
  * Copyright 2015 Matthew Morek
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
@@ -29,10 +29,12 @@ body {
 p, blockquote, pre,
 ul, ol, dl, figure {
   margin: 0 0 1em;
+
   &:last-child {
     margin: 0;
   }
 }
+
 h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
   margin: 0.75em 0;
@@ -55,16 +57,9 @@ h4 {
 }
 
 h5 {
-  font-size: 0.875em;
-}
-
-h6 {
-  font-size: 0.75em;
-}
-
-h5 {
   font-size: $base-font-size * 0.875;
 }
+
 h6 {
   color: $grey-light;
   font-size: $small-font-size;
@@ -85,40 +80,23 @@ ul {
 //
 // Forms
 // --------------------------------------------------
-%input,
-input[type="text"],
-input[type="password"],
-input[type="email"],
-input[type="url"],
-input[type="date"],
-input[type="month"],
-input[type="time"],
-input[type="datetime"],
-input[type="datetime-local"],
-input[type="week"],
-input[type="number"],
-input[type="search"],
-input[type="tel"],
-input[type="color"],
-textarea {
+%input-generic {
   padding: 0.5em 0.75em;
   display: inline-block;
   border: 1px solid $grey-lighter;
   font-size: 100%;
   line-height: 1.5;
-  box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+  box-shadow: inset 0 1px 3px rgba($black, 0.1);
   border-radius: 1px;
   transition: 0.3s linear border;
   box-sizing: border-box;
   font-family: inherit;
   vertical-align: baseline;
   appearance: none;
-  box-shadow: none;
   height: initial;
 
   &:focus {
     outline: 0;
-    outline: thin dotted \9; /* IE6-9 */
     border-color: $primary;
   }
 
@@ -130,8 +108,33 @@ textarea {
   &.block {
     width: 100%;
   }
+
   &.error {
     border-color: $red;
+  }
+}
+
+textarea {
+  @extend %input-generic;
+}
+
+%input,
+input {
+  &[type="text"],
+  &[type="password"],
+  &[type="email"],
+  &[type="url"],
+  &[type="date"],
+  &[type="month"],
+  &[type="time"],
+  &[type="datetime"],
+  &[type="datetime-local"],
+  &[type="week"],
+  &[type="number"],
+  &[type="search"],
+  &[type="tel"],
+  &[type="color"] {
+    @extend %input-generic;
   }
 }
 
@@ -142,22 +145,19 @@ textarea {
   @extend %input;
 }
 
-select.form-control {
-  @extend %input;
-  @extend %icon-dark-arrow-drop-down;
-  background-position: right center;
-  background-repeat: no-repeat;
+select {
+  &.form-control {
+    @extend %input;
+    @extend %icon-dark-arrow-drop-down;
+    background-position: right center;
+    background-repeat: no-repeat;
+  }
 }
 
 //
 // Buttons
 // --------------------------------------------------
-.btn,
-.btn-default,
-.btn-info,
-a.btn,
-a.btn-default,
-a.btn-info {
+%btn {
   padding: 0.5em 1em;
   color: $grey;
   background-image: none;
@@ -166,18 +166,22 @@ a.btn-info {
   font-weight: bold;
   font-size: 100%;
   line-height: 1.5;
-  border: 1px solid rgba(0,0,0,0.15);
+  border: 1px solid rgba($black, 0.15);
   border-radius: 2px;
-  transition: all 0.1s ease-in;
+  transition-property: border, background, color;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in;
   vertical-align: baseline;
+
   &:visited {
     color: $grey;
   }
+
   &:hover,
   &:focus,
   &:active,
   &:active:focus {
-    border-color: rgba(0,0,0,0.25);
+    border-color: rgba($black, 0.25);
     color: darken($grey, 5%);
     background-image: none;
     background-color: inherit;
@@ -194,8 +198,8 @@ a.btn-info {
   &-active:active:focus {
     background-color: darken($grey-light, 5%);
     color: darken($grey, 5%);
-    border-color: rgba(0,0,0,0.25);
-    box-shadow: rgba(0,0,0,0.15) 0 0 8px inset;
+    border-color: rgba($black, 0.25);
+    box-shadow: rgba($black, 0.15) 0 0 8px inset;
   }
 
   // Disabled Button
@@ -209,22 +213,25 @@ a.btn-info {
     opacity: 0.4;
     cursor: not-allowed;
     box-shadow: none;
-    border: 1px solid rgba(0,0,0,0.15);
+    border: 1px solid rgba($black, 0.15);
   }
 
   &-primary {
     background-color: $primary;
     color: $white;
+
     &:visited {
       color: $white;
     }
+
     &:active,
     &:focus,
     &:active:focus {
       color: $white;
       background-color: darken($primary, 5%);
-      box-shadow: rgba(0,0,0,0.25) 0 0 16px inset;
+      box-shadow: rgba($black, 0.25) 0 0 16px inset;
     }
+
     &:hover {
       color: $white;
       background-color: darken($primary, 5%);
@@ -234,13 +241,15 @@ a.btn-info {
   &-warning {
     background-color: $orange;
     color: darken($orange, 40%);
+
     &:active,
     &:focus,
     &:active:focus {
       color: darken($orange, 40%);
       background-color: darken($orange, 5%);
-      box-shadow: rgba(0,0,0,0.25) 0 0 16px inset;
+      box-shadow: rgba($black, 0.25) 0 0 16px inset;
     }
+
     &:hover {
       color: darken($orange, 40%);
       background-color: darken($orange, 5%);
@@ -250,13 +259,15 @@ a.btn-info {
   &-success {
     background-color: $green;
     color: darken($green, 35%);
+
     &:active,
     &:focus,
     &:active:focus {
       color: darken($green, 35%);
       background-color: darken($green, 5%);
-      box-shadow: rgba(0,0,0,0.25) 0 0 16px inset;
+      box-shadow: rgba($black, 0.25) 0 0 16px inset;
     }
+
     &:hover {
       color: darken($green, 35%);
       background-color: darken($green, 5%);
@@ -266,13 +277,15 @@ a.btn-info {
   &-danger {
     background-color: $red;
     color: lighten($red, 35%);
+
     &:active,
     &:focus,
     &:active:focus {
       color: lighten($red, 35%);
       background-color: darken($red, 5%);
-      box-shadow: rgba(0,0,0,0.25) 0 0 16px inset;
+      box-shadow: rgba($black, 0.25) 0 0 16px inset;
     }
+
     &:hover {
       color: lighten($red, 35%);
       background-color: darken($red, 5%);
@@ -286,16 +299,33 @@ a.btn-info {
     padding: 0.5em 0.75em;
     line-height: 1;
   }
+
   &-sm {
     font-size: 1em;
     font-weight: normal;
     padding: 0.25em 0.75em;
   }
+
   &-lg {
     font-size: 1.125em;
   }
+
   &-xl {
     font-size: 1.25em;
+  }
+}
+
+.btn,
+.btn-default,
+.btn-info {
+  @extend %btn;
+}
+
+a {
+  &.btn,
+  &.btn-default,
+  &.btn-info {
+    @extend %btn;
   }
 }
 
@@ -306,6 +336,7 @@ a.btn-info {
   .btn {
     border-color: $grey-lighter;
     background-color: $white;
+
     &.active {
       border-color: $accent;
       background-color: $primary;
@@ -322,43 +353,48 @@ a.btn-info {
   display: inline-block;
   vertical-align: bottom;
   appearance: none;
-  border: none;
+  border: 0;
 }
 
-.checkbox input[type="checkbox"] {
-  @extend %checkbox;
-  width: 20px;
-  height: 20px;
-  background-color: $white;
-  padding: 0;
-  border-radius: 2px;
-  margin-left: -2em;
-  margin-right: 0.5em;
-  position: relative;
-  @extend %icon-dark-checkbox-unchecked;
-  background-position: center;
+.checkbox {
+  input[type="checkbox"] {
+    @extend %checkbox;
+    @extend %icon-dark-checkbox-unchecked;
+    width: 20px;
+    height: 20px;
+    background-color: $white;
+    padding: 0;
+    border-radius: 2px;
+    margin-left: -2em;
+    margin-right: 0.5em;
+    position: relative;
+    background-position: center;
 
-  &:checked {
-    &:before {
-      display: block;
-      position: absolute;
-      width: 20px;
-      height: 20px;
-      content: " ";
-      @extend %icon-dark-checkbox-checked;
-      background-position: center;
+    &:checked {
+      &:before {
+        @extend %icon-dark-checkbox-checked;
+        display: block;
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        content: " ";
+        background-position: center;
+      }
     }
   }
 }
+
 .checkbox {
   &:only-child {
     margin-top: 0;
     margin-bottom: 0;
   }
+
   label {
     margin-left: 0;
     padding-left: 2em;
     line-height: 1.25;
+
     &.longform {
       line-height: 1.5;
       font-size: 0.875em;
@@ -371,24 +407,16 @@ a.btn-info {
 // --------------------------------------------------
 .label {
   border-radius: 1px;
-  &-default {
-    background-color: $grey;
-  }
-  &-primary {
-    background-color: $primary;
-  }
-  &-success {
-    background-color: darken($green, 20%);
-  }
+
+  &-default { background-color: $grey; }
+  &-primary { background-color: $primary; }
+  &-success { background-color: darken($green, 20%); }
+  &-warning { background-color: darken($orange, 10%); }
+  &-danger { background-color: darken($red, 5%); }
+
   &-info {
     background-color: $grey-contrast;
     color: $grey;
-  }
-  &-warning {
-    background-color: darken($orange, 10%);
-  }
-  &-danger {
-    background-color: darken($red, 5%);
   }
 }
 
@@ -405,7 +433,7 @@ a.btn-info {
 .thumbnail,
 .img-thumbnail {
   border-radius: 1px;
-  box-shadow: 0 1px 3px rgba(0,0,0,.075);
+  box-shadow: 0 1px 3px rgba($black, .075);
 }
 
 
@@ -414,19 +442,19 @@ a.btn-info {
 // --------------------------------------------------
 .dropdown-menu {
   border-radius: 1px;
-  border: none;
+  border: 0;
   border-bottom: 2px solid $primary;
 }
+
 .dropdown-menu > li > a:hover,
 .dropdown-menu > li > a:focus {
-  // @include gradient-vertical($start-color: $dropdown-link-hover-bg, $end-color: darken($dropdown-link-hover-bg, 5%));
   background-color: darken($primary, 5%);
   color: $white;
 }
+
 .dropdown-menu > .active > a,
 .dropdown-menu > .active > a:hover,
 .dropdown-menu > .active > a:focus {
-  // @include gradient-vertical($start-color: $dropdown-link-active-bg, $end-color: darken($dropdown-link-active-bg, 5%));
   background-color: darken($primary, 5%);
 }
 
@@ -437,9 +465,9 @@ a.btn-info {
 
 %masthead {
   color: $white;
-  border: none;
+  border: 0;
   background-color: $primary;
-  box-shadow: rgba(0,0,0,0.2) 0 1px 3px;
+  box-shadow: rgba($black, 0.2) 0 1px 3px;
 }
 
 // Default navbar
@@ -449,6 +477,7 @@ a.btn-info {
   .navbar-brand,
   .navbar-nav > li > a {
     color: rgba($white, 0.75);
+
     &:focus,
     &:active,
     &:hover {
@@ -461,6 +490,7 @@ a.btn-info {
     color: rgba($white, 1);
     background-color: transparent;
     box-shadow: inset 0 -3px 0 rgba($white, 0.5);
+
     &:hover,
     &:active {
       color: rgba($white, 1);
@@ -485,11 +515,14 @@ a.btn-info {
   .navbar-toggle {
     color: $white;
     border-color: $white;
+
     .icon-bar {
       background-color: $white;
     }
+
     &:hover {
       background-color: $white;
+
       .icon-bar {
         background-color: $primary;
       }
@@ -517,6 +550,7 @@ a.btn-info {
       border-radius: 1px;
       color: $primary;
     }
+
     &.active {
       a {
         background-color: $primary;
@@ -530,6 +564,7 @@ a.btn-info {
     a {
       color: $primary;
       border-radius: 1px 1px 0 0;
+
       &:hover {
         background-color: $grey-light;
       }
@@ -550,11 +585,12 @@ a.btn-info {
   li {
     display: table-cell;
     border: 1px solid lighten($grey-lighter, 10%);
-    border-left: none;
+    border-left: 0;
     position: relative;
     z-index: 1;
     font-size: 0.875em;
     line-height: 1.6;
+
     + li:before {
       padding: 0;
       content: "";
@@ -564,30 +600,36 @@ a.btn-info {
       border-radius: 2px 0 0 2px;
       border-left: 1px solid lighten($grey-lighter, 10%);
     }
+
     &:last-child {
       border-radius: 0 2px 2px 0;
       padding: 0.25em 0.5em 0.25em 0.75em;
       color: $grey-light;
       cursor: default;
+
       &:after {
         display: none;
       }
     }
-    a {
-      padding: 0.5em 0.5em 0.5em 0.75em;
-      width: auto;
-      border: none;
-      color: $grey;
-      line-height: 1;
-      &:hover {
-        color: $primary;
-      }
-      &.home {
-        padding-left: 0.25em 0.25em;
-        img {
-          width: 12px;
-          height: 12px;
-        }
+  }
+
+  a {
+    padding: 0.5em 0.5em 0.5em 0.75em;
+    width: auto;
+    border: 0;
+    color: $grey;
+    line-height: 1;
+
+    &:hover {
+      color: $primary;
+    }
+
+    &.home {
+      padding-left: 0.25em 0.25em;
+
+      img {
+        width: 12px;
+        height: 12px;
       }
     }
   }
@@ -599,19 +641,21 @@ a.btn-info {
 
 // Common styles
 .alert {
-  // text-shadow: 0 1px 0 rgba(255,255,255,.2);
-  box-shadow: inset 0 1px 0 rgba(255,255,255,.25), 0 1px 2px rgba(0,0,0,.05);
+  box-shadow: inset 0 1px 0 rgba($white, .25), 0 1px 2px rgba($black, .05);
   border-radius: 1px;
-  border: 1px solid rgba(0,0,0,0.25);
-  color: rgba(0,0,0,0.75);
+  border: 1px solid rgba($black, 0.25);
+  color: rgba($black, 0.75);
 }
 
 // Apply the mixin to the alerts
 .alert-success    { background-color: lighten($green, 15%); }
-.alert-info       { background-color: $grey-lighter; color: $grey; }
 .alert-warning    { background-color: lighten($orange, 15%); }
 .alert-danger     { background-color: lighten($red, 15%); }
 
+.alert-info {
+  background-color: $grey-lighter;
+  color: $grey;
+}
 
 //
 // Progress bars
@@ -620,7 +664,7 @@ a.btn-info {
 // Give the progress background some depth
 .progress {
   background-color: $grey-lighter;
-  box-shadow: rgba(0,0,0,0.15) 0 1px 2px 0 inset;
+  box-shadow: rgba($black, 0.15) 0 1px 2px 0 inset;
   border-radius: 1px;
 }
 
@@ -643,20 +687,25 @@ a.btn-info {
 // --------------------------------------------------
 
 .list-group {
-  box-shadow: 0 1px 2px rgba(0,0,0,.075);
+  box-shadow: 0 1px 2px rgba($black, .075);
+
   &-item {
-    border-color: rgba(0,0,0,0.15);
+    border-color: rgba($black, 0.15);
+
     &:first-child {
       border-top-right-radius: 1px;
       border-top-left-radius: 1px;
     }
+
     &:last-child {
       border-bottom-right-radius: 1px;
       border-bottom-left-radius: 1px;
     }
+
     &:hover {
       background-color: $grey-lighter;
     }
+
     &.active,
     &.active:hover,
     &.active:focus, {
@@ -664,6 +713,7 @@ a.btn-info {
       background-color: $accent;
     }
   }
+
   .badge {
     text-shadow: none;
   }
@@ -680,49 +730,57 @@ a.btn-info {
 
 // Common styles
 .panel {
-  box-shadow: 0 1px 2px rgba(0,0,0,.05);
-  border-color: rgba(0,0,0,0.1);
+  box-shadow: 0 1px 2px rgba($black, .05);
+  border-color: rgba($black, 0.1);
   border-radius: 1px;
+
   &-heading {
     border-top-left-radius: 1px;
     border-top-right-radius: 1px;
   }
 }
+
 .panel-default  { @include wfp-border-color($grey-lighter); }
 .panel-primary  { @include wfp-border-color($primary); }
 .panel-success  { @include wfp-border-color($green); }
 .panel-info     { @include wfp-border-color($grey-light); }
 .panel-warning  { @include wfp-border-color($orange); }
 .panel-danger   { @include wfp-border-color($red); }
+
 // Apply the mixin to the panel headings only
-.panel-default > .panel-heading   {
-  background-color: $grey-lighter;
+.panel-default > .panel-heading {
   @include wfp-border-color($grey-lighter);
+  background-color: $grey-lighter;
 }
-.panel-primary > .panel-heading   {
+
+.panel-primary > .panel-heading {
+  @include wfp-border-color($primary);
   background-color: lighten($primary, 25%);
   color: darken($primary, 35%);
-  @include wfp-border-color($primary);
 }
-.panel-success > .panel-heading   {
+
+.panel-success > .panel-heading {
+  @include wfp-border-color($green);
   background-color: lighten($green, 25%);
   color: darken($green, 35%);
-  @include wfp-border-color($green);
 }
-.panel-info > .panel-heading   {
+
+.panel-info > .panel-heading {
+  @include wfp-border-color($grey-light);
   background-color: $grey-light;
   color: darken($grey-light, 35%);
-  @include wfp-border-color($grey-light);
 }
-.panel-warning > .panel-heading   {
+
+.panel-warning > .panel-heading {
+  @include wfp-border-color($orange);
   background-color: lighten($orange, 25%);
   color: darken($orange, 35%);
-  @include wfp-border-color($orange);
 }
-.panel-danger > .panel-heading   {
+
+.panel-danger > .panel-heading {
+  @include wfp-border-color($red);
   background-color: lighten($red, 25%);
   color: darken($red, 35%);
-  @include wfp-border-color($red);
 }
 
 
@@ -734,7 +792,8 @@ a.btn-info {
   background-color: $grey-lighter;
   border-color: darken($well-bg, 10%);
   border-radius: 1px;
-  box-shadow: inset 0 1px 3px rgba(0,0,0,.05), 0 1px 0 rgba(255,255,255,.1);
+  box-shadow: inset 0 1px 3px rgba($black, .05), 0 1px 0 rgba($white, .1);
+
   p:last-child,
   p:only-child {
     margin: 0;

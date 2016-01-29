@@ -1,5 +1,5 @@
 // Project Variables
-// Project: WFPUI
+// Project: WFP UI
 // Author: Matthew Morek (me@matthewmorek.com)
 // URL: http://matthewmorek.com
 
@@ -15,8 +15,10 @@ $spacing-unit:        32px;
 $text-color:          #404040;
 $background-color:    #ffffff;
 
-$primary:             #2A93FC;
-$accent:              #1F6EBC;
+$primary:             #2a93fc;
+$accent:              #1f6ebc;
+
+$black:               #000000;
 
 // Greys gradation
 $grey:                #8c8c8c;
@@ -36,13 +38,13 @@ $blue-light:          lighten($blue, 9%);
 $blue-lighter:        lighten($blue, 18%);
 $blue-lightest:       lighten($blue, 30%);
 
-$grey-contrast:       #EAEAEA;
+$grey-contrast:       #eaeaea;
 
 $white:               #ffffff;
-$red:                 #FF5252;
-$orange:              #FFC759;
-$yellow:              #FCDC5D;
-$green:               #00A878;
+$red:                 #ff5252;
+$orange:              #ffc759;
+$yellow:              #fcdc5d;
+$green:               #00a878;
 
 // Width of the content area
 $content-width:       1000px;
