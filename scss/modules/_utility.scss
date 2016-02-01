@@ -80,6 +80,13 @@
   padding: 1rem;
 }
 
+%overflow-wrapper {
+  overflow: auto;
+  overflow-x: scroll;
+  white-space: nowrap;
+  word-wrap: normal;
+}
+
 .wfp-wrapper {
   @extend %wrapper;
 }
@@ -99,6 +106,10 @@
 
 .wfp-content-wrapper {
   @extend %content-wrapper;
+}
+
+.wfp-overflow-wrapper {
+  @extend %overflow-wrapper;
 }
 
 @include media-query($md-screen) {
