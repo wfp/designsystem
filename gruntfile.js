@@ -255,7 +255,7 @@ module.exports = function(grunt) {
   // Build Grunticon Icons
   grunt.registerTask('gen-icons', ['clean:grunticon', 'grunticon']);
   // Build WFP UI Docs locally
-  grunt.registerTask('docs', ['sasslint', 'sass:docs', 'postcss:docs', 'jekyll']);
+  grunt.registerTask('docs', ['sass:docs', 'postcss:docs', 'jekyll']);
   // Build WFP UI Docs
   grunt.registerTask('docs-build', ['sasslint', 'sass:docs', 'postcss:docs', 'jekyll']);
   // Build dist-ready WFP UI Docs
