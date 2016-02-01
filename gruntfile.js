@@ -31,7 +31,7 @@ module.exports = function(grunt) {
             sm: 'screen and (min-width: 36.5em)', //584px
             md: 'screen and (min-width: 48em)', //768px
             lg: 'screen and (min-width: 64em)', //1024px
-            xl: 'screen and (min-width: 75em)'  //1200px
+            xl: 'screen and (min-width: 80em)'  //1200px
           },
           selectorPrefix: '.wfp-u-'
         }
