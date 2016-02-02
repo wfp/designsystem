@@ -6,6 +6,7 @@ resource: true
 categories: Basics
 nav: nav/typography.html
 ---
+{% include base.html %}
 
 Typography plays a critical role in any design; in fact, it accounts for as much as 95% of everything we see on the Web. When done well, it adds personality to content, becomes its voice. When established poorly, typographic elements become unreadable, thus reducing the impact a given piece of content will have on the reader.
 

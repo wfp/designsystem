@@ -5,6 +5,7 @@ permalink: /resources/fonts/
 resource: true
 categories: Resources
 ---
+{% include base.html %}
 
 Fonts should be loaded from WFP's Content Delivery Network:
 
@@ -26,4 +27,3 @@ font-family: "aleo", serif;
 {% endhighlight %}
 
 Our webfonts are also available for offline use, and come bundled with WFP UI, which you can [download from GitHub](https://github.com/wfp/ui/releases). You can reference them from `dist` directory.
-

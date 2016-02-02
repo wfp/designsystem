@@ -5,6 +5,7 @@ permalink: /components/tables/
 resource: true
 categories: Components
 ---
+{% include base.html %}
 
 ### Standard
 Tables should use a `wfp-table` class, and be properly structured, using `<thead>` and `<tbody>`, in order to achieve best results.
