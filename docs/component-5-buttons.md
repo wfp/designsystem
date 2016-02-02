@@ -6,6 +6,7 @@ resource: true
 categories: Components
 nav: nav/buttons.html
 ---
+{% include base.html %}
 
 We use several buttons for you to choose from, make sure you apply only styles intended for a given element, to make sure it doesn't stand out too much or doesn't bear a different meaning.
 

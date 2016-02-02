@@ -1,10 +1,4 @@
 <head>
-  {% assign base = '.' %}
-  {% assign depth = page.url | split: '/' | size | minus: 0 %}
-  {% if    depth == 1 %}{% assign base = '.' %}
-  {% elsif depth == 2 %}{% assign base = '..' %}
-  {% elsif depth == 3 %}{% assign base = '../..' %}
-  {% elsif depth == 4 %}{% assign base = '../../..' %}{% endif %}
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <title>{% if page.title %}{{ site.title }} {{ site.version }} &mdash; {{ page.title }}{% else %}{{ site.title }} {{ site.version }}{% endif %}</title>
@@ -20,7 +14,7 @@
   <link rel="shortcut icon" href="http://cdn.wfp.org/favicon.ico">
   <link rel="stylesheet" href="http://cdn.wfp.org/libraries/webfonts/lato/lato.css">
   <link rel="stylesheet" href="http://cdn.wfp.org/libraries/webfonts/aleo/aleo.css">
-  <link href="{{base}}/img/icons/ui/ui-icons.svg.css" rel="stylesheet">
-  <link href="{{base}}/img/icons/thematic/thematic-icons.svg.css" rel="stylesheet">
-  <link href="{{base}}/css/main.css" rel="stylesheet">
+  <link href="{{ base }}/img/icons/ui/ui-icons.svg.css" rel="stylesheet">
+  <link href="{{ base }}/img/icons/thematic/thematic-icons.svg.css" rel="stylesheet">
+  <link href="{{ base }}/css/main.css" rel="stylesheet">
 </head>

@@ -6,6 +6,7 @@ resource: true
 categories: Components
 nav: nav/forms.html
 ---
+{% include base.html %}
 
 Forms are an important part of pages which ask users for input. They should be simple, clear and accessible for all audiences. Below you can find several important components from which the forms are assembled.
 

@@ -5,6 +5,7 @@ permalink: /component/header/
 resource: true
 categories: Components
 ---
+{% include base.html %}
 
 This pattern is the single, most important way to indicate to your visitors that they are browsing WFP's online property. Below, you will find most commonly used patterns for your header.
 

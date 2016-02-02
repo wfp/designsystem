@@ -6,6 +6,7 @@ resource: true
 categories: Components
 nav: nav/navigation.html
 ---
+{% include base.html %}
 
 This is one of the most important components for all websites and applications. Without good navigation the content cannot be discovered by the user, nor the user will be able to navigate between your pages with ease. WFP UI offers several navigation patterns, depending on the use case.
 

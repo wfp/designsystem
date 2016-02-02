@@ -5,6 +5,7 @@ permalink: /basics/principles/
 resource: true
 categories: Basics
 ---
+{% include base.html %}
 
 To create a great User Interface you have to keep a few things in mind. Those things are: *hierarchy*, *alignment* and *simplicity*. It's easy to do if you adhere to the following guidelines:
 

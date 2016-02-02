@@ -5,6 +5,7 @@ permalink: /about/
 resource: true
 categories: Info
 ---
+{% include base.html %}
 
 ### Project Versioning
 _WFP UI_ uses _Semantic Versioning_ (SemVer) philosophy, but adjusted for this project specifically. The following rules take precedence over SemVer:
