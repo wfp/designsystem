@@ -117,7 +117,7 @@ By default, all UI icons are displayed in `24 x 24px` size. You can easily adjus
 {% directory path:img/icons/ui/png %}
   <li class="item wfp-u-1-2">
     <div class="desc">
-      <div class="desc-img {% cycle 'light', 'dark' %}"><img src="{{ site.baseurl }}/img/icons/ui/png/{{ file.name }}"></div>
+      <div class="desc-img {% cycle 'light', 'dark' %}"><img src="{{ base }}/img/icons/ui/png/{{ file.name }}"></div>
       <div class="desc-label">{{ file.slug }}</div>
     </div>
   </li>
