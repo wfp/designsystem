@@ -6,6 +6,7 @@ resource: true
 categories: Patterns
 nav: nav/validation.html
 ---
+{% include base.html %}
 
 When designing forms, you should not forget to apply inline validation to them. This will ensure that whoever is asked to fill it in, will be instantly prompted to correct a mistake, should it occur, before submitting the form.
 

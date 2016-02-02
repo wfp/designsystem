@@ -5,6 +5,7 @@ permalink: /component/footer/
 resource: true
 categories: Components
 ---
+{% include base.html %}
 
 Footer is the second most important place where your basic site information and links should live. Users turn often to the footer to look for important information, such as contact details, or links to less prominent sections of the website (privacy policy, terms of use, etc).
 

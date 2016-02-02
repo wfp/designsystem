@@ -6,6 +6,7 @@ resource: true
 categories: Basics
 nav: nav/content.html
 ---
+{% include base.html %}
 
 ### Headings
 Headings are a useful tool to markup important sections of a given page, such as headlines, chapters, etc. Any heading elements may include links or anchors.

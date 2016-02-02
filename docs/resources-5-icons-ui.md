@@ -5,6 +5,7 @@ permalink: /resources/ui-icons/
 resource: true
 categories: Resources
 ---
+{% include base.html %}
 
 User Interface Icons should be used to strengthen visual cues; use them wisely and do not overload the interface with icons.
 
