@@ -5,6 +5,7 @@ permalink: /basics/getting-started/
 resource: true
 categories: Basics
 ---
+{% include base.html %}
 
 To make sure your interface follows WFP guidelines with ease, you should use the provided UI kit in your web pages and applications. We offer a number of ways to include WFP UI in your projects.
 
