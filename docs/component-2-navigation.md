@@ -185,7 +185,7 @@ _Breadcrumbs_ are a special kind of _segmented control_ component; a simple and 
 
 <div class="notice">
   <h6 class="title">TIP</h6>
-  <p>Breacrumbs use the <code>home</code> icon from the WFP UI icon set. See the <a href="{{site.baseurl}}/resources/ui-icons/">User Interface icons</a> page for more information.</p>
+  <p>Breacrumbs use the <code>home</code> icon from the WFP UI icon set. See the <a href="{{ base }}/resources/ui-icons/">User Interface icons</a> page for more information.</p>
 </div>
 
 ### Pagination

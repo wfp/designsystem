@@ -44,7 +44,7 @@ Add thematic icons to your website using `<i>` element with a class `thematic-{i
 {% directory path:img/icons/thematic/png %}
   <li class="item wfp-u-1-2">
     <div class="desc">
-      <div class="desc-img light"><img src="{{ site.baseurl }}/img/icons/thematic/png/{{ file.name }}"></div>
+      <div class="desc-img light"><img src="{{ base }}/img/icons/thematic/png/{{ file.name }}"></div>
       <div class="desc-label">{{ file.slug }}</div>
     </div>
   </li>
