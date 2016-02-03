@@ -10,7 +10,7 @@ $color-gplus: #dc4e41;
 
 @mixin button($type: default, $color: $grey-dark) {
   display: inline-block;
-  padding: 0.5rem 1rem;
+  padding: 0.5em 1em;
   font-family: inherit;
   font-weight: bold;
   font-size: 100%;
@@ -111,26 +111,26 @@ $color-gplus: #dc4e41;
 
   // Extra sizes and modes for buttons
   &.xsmall {
-    font-size: 0.875rem;
+    font-size: 0.875em;
     font-weight: normal;
-    padding: 0.5rem 0.75rem;
+    padding: 0.5em 0.75em;
     line-height: 1;
   }
 
   &.small {
-    font-size: 1rem;
+    font-size: 1em;
     font-weight: normal;
-    padding: 0.33rem 0.75rem;
+    padding: 0.33em 0.75em;
   }
 
   &.large {
-    font-size: 1.125rem;
-    padding: 0.66rem 1rem;
+    font-size: 1.125em;
+    padding: 0.66em 1em;
   }
 
   &.xlarge {
-    font-size: 1.25rem;
-    padding: 0.75rem 1.25rem;
+    font-size: 1.25em;
+    padding: 0.75em 1.25em;
   }
 
   &.block {
@@ -143,8 +143,8 @@ $color-gplus: #dc4e41;
     box-shadow: none;
   }
 
-  & + [class*="wfp-btn"] {
-    margin: 0 0.5rem;
+  &[class*="wfp-btn"]:nth-of-type(1n+0) {
+    margin: 0 0.5em;
 
     &:first-child {
       margin-left: 0;

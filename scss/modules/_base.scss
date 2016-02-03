@@ -35,6 +35,10 @@ body {
   line-height: $base-line-height;
   background-color: $background-color;
   color: $text-color;
+
+  @include media-query($xl-screen) {
+    font-size: 1.125rem;
+  };
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -42,27 +46,27 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: normal;
   color: $text-color;
   line-height: 1em;
-  margin: 0.5rem 0;
+  margin: 0.5em 0;
 }
 
 h1 {
-  font-size: 3rem;
+  font-size: 3em;
   letter-spacing: -0.05rem;
 }
 
 h2 {
-  font-size: 2.5rem;
+  font-size: 2.5em;
   letter-spacing: -0.025rem;
 }
 
-h3 { font-size: 2rem; }
-h4 { font-size: 1.75rem; }
-h5 { font-size: 1.5rem; }
-h6 { font-size: 1.25rem; }
+h3 { font-size: 2em; }
+h4 { font-size: 1.75em; }
+h5 { font-size: 1.5em; }
+h6 { font-size: 1.25em; }
 
 p {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
 
 // Fluid image to fit a lfuid parent container while maintaining aspect ratio
@@ -79,7 +83,7 @@ hr {
   height: 1px;
   border: 0;
   border-top: 1px solid $grey-lighter;
-  margin: 1rem 0;
+  margin: 1em 0;
   padding: 0;
 }
 
@@ -100,7 +104,7 @@ textarea {
 p, blockquote, pre,
 ul, ol, dl, figure,
 %vertical-rhythm {
-  margin: 1rem 0;
+  margin: 1em 0;
 }
 
 // -----------------------------------------------------------------------------
@@ -111,7 +115,7 @@ menu, ol, ul, dl {
 }
 
 li {
-  margin: 0.25rem 0;
+  margin: 0.25em 0;
 }
 
 // -----------------------------------------------------------------------------
@@ -150,9 +154,9 @@ blockquote {
   color: $grey-dark;
   border-left: 6px solid $grey-light;
   border-radius: 2px;
-  padding: 0.25rem 0;
+  padding: 0.25em 0;
   padding-left: $spacing-unit * 0.75;
-  font-size: 1rem;
+  font-size: 1em;
   font-style: italic;
 }
 
@@ -163,12 +167,12 @@ pre,
 code,
 samp {
   color: $blue-light;
-  font-size: 0.875rem;
+  font-size: 1em;
   font-style: normal;
   font-family: $mono-stack;
   background-color: $grey-lightest;
   border-radius: 2px;
-  padding: 0.125rem 0.25rem;
+  padding: 0.125em 0.25em;
   line-height: 1.4;
   white-space: nowrap;
 }
@@ -176,11 +180,11 @@ samp {
 code {
   color: $text-color;
   background-color: lighten($yellow, 15%);
-  padding: 0.125rem 0.25rem;
+  padding: 0.125em 0.25em;
 }
 
 pre {
-  padding: 0.5rem 0.75rem;
+  padding: 0.5em 0.75em;
   overflow-x: scroll;
   border-left: 6px solid $blue-light;
   word-wrap: normal;
