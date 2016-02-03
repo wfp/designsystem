@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Header
-permalink: /component/header/
+permalink: /components/header/
 resource: true
 categories: Components
 ---

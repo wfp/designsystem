@@ -14,7 +14,7 @@ Each icon is available in either a positive (transparent) or a negative (solid) 
 ### Usage
 First thing to do, is to load the icons to your web site or application, by referencing it in `<head>` section. There are three stylesheets to choose from, depending on what browsers you intend on supporting. Two primary files use `base64` encoded SVGs and PNGs, while the third file relies on old-school `background-image: url()` fallback to PNGs available from the filesystem.
 
-You can check [support for `base64`](http://caniuse.com/#feat=atob-btoa) and [SVG in CSS support](http://caniuse.com/#feat=svg-css) on [caniuse.com](caniuse.com).
+You can check [support for `base64`](http://caniuse.com/#feat=atob-btoa) and [SVG in CSS support](http://caniuse.com/#feat=svg-css) on [caniuse.com](http://caniuse.com).
 
 {% highlight html %}
 <!-- For modern browsers with SVG support -->
