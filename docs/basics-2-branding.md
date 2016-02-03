@@ -5,11 +5,10 @@ permalink: /basics/branding/
 resource: true
 categories: Basics
 ---
-
 {% include base.html %}
 
 ### Logo
-WFP logo is available in three versions: _emblem_, _standard_, and _full_. Each has its own purpose and should be used appropriately, as per [official branding guidelines](wfp.org/branding), depending on available screen space and target audience.
+WFP logo is available in three versions: _emblem_, _standard_, and _full_. Each has its own purpose and should be used appropriately, as per [official branding guidelines](http://wfp.org/branding), depending on available screen space and target audience.
 
 <figure class="picture">
   <img src="{{ base }}/img/logo-versions.png" srcset="{{ base }}/img/logo-versions.png 1x, {{ base }}/img/logo-versions@2x.png 2x">

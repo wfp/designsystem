@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Footer
-permalink: /component/footer/
+permalink: /components/footer/
 resource: true
 categories: Components
 ---
