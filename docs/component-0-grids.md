@@ -381,38 +381,39 @@ The following code sample shows how to use grids to build a responsive layout fo
 </div>
 
 ###### Preview
-<div class="wfp-grid">
-  <div class="wfp-u-1 wfp-u-md-1-3 wfp-box">
-    <nav class="wfp-menu">
-      <h6 class="menu--heading">Menu</h6>
-      <ul class="menu--wrapper">
-        <li class="menu--item"><a href="#" class="menu--link">Home</a></li>
-        <li class="menu--item"><a href="#" class="menu--link">About</a></li>
-        <li class="menu--item"><a href="#" class="menu--link">Contact</a></li>
-      </ul>
-    </nav>
-  </div>
-  <div class="wfp-u-1 wfp-u-md-2-3 wfp-box">
-    <h3>Title</h3>
-    <p>This is a sample paragraph, written to showcase how you can arrange your content. It's not very long and you didn't have to read it anyway.</p>
-    <div class="wfp-grid">
-      <div class="wfp-u-1 wfp-u-md-1-2 wfp-box grid-unit-sample wfp-text-center">
-        <h6>Label #1</h6>
-      </div>
-      <div class="wfp-u-1 wfp-u-md-1-2 wfp-box grid-unit-sample wfp-text-center">
-        <h6>Label #2</h6>
-      </div>
+<div class="preview plain paragraph">
+  <div class="wfp-grid">
+    <div class="wfp-u-1 wfp-u-md-1-3 wfp-box--flat">
+      <nav class="wfp-menu">
+        <h6 class="menu--heading">Menu</h6>
+        <ul class="menu--wrapper">
+          <li class="menu--item"><a href="#" class="menu--link">Home</a></li>
+          <li class="menu--item"><a href="#" class="menu--link">About</a></li>
+          <li class="menu--item"><a href="#" class="menu--link">Contact</a></li>
+        </ul>
+      </nav>
     </div>
-    <hr>
-    <div class="wfp-grid">
-      <div class="wfp-u-1 wfp-u-md-1-3 wfp-box grid-unit-sample wfp-text-center">
-        <h6>Label #1</h6>
+    <div class="wfp-u-1 wfp-u-md-2-3 wfp-box--flat">
+      <h3>Title</h3>
+      <p>This is a sample paragraph, written to showcase how you can arrange your content. It's not very long and you didn't have to read it anyway.</p>
+      <div class="wfp-grid">
+        <div class="wfp-u-1 wfp-u-md-1-2 wfp-box grid-unit-sample wfp-text-center">
+          <h6>Label #1</h6>
+        </div>
+        <div class="wfp-u-1 wfp-u-md-1-2 wfp-box grid-unit-sample wfp-text-center">
+          <h6>Label #2</h6>
+        </div>
       </div>
-      <div class="wfp-u-1 wfp-u-md-1-3 wfp-box grid-unit-sample wfp-text-center">
-        <h6>Label #2</h6>
-      </div>
-      <div class="wfp-u-1 wfp-u-md-1-3 wfp-box grid-unit-sample wfp-text-center">
-        <h6>Label #3</h6>
+      <div class="wfp-grid">
+        <div class="wfp-u-1 wfp-u-md-1-3 wfp-box grid-unit-sample wfp-text-center">
+          <h6>Label #1</h6>
+        </div>
+        <div class="wfp-u-1 wfp-u-md-1-3 wfp-box grid-unit-sample wfp-text-center">
+          <h6>Label #2</h6>
+        </div>
+        <div class="wfp-u-1 wfp-u-md-1-3 wfp-box grid-unit-sample wfp-text-center">
+          <h6>Label #3</h6>
+        </div>
       </div>
     </div>
   </div>

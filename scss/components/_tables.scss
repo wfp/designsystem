@@ -10,12 +10,12 @@
   empty-cells: show;
   border: 0;
   width: 100%;
-  margin: 1rem 0;
+  margin: 1em 0;
 
   caption {
     color: $text-color;
     font: italic 85%/1 "lato", sans-serif;
-    padding: 1rem 0;
+    padding: 1em 0;
     text-align: center;
   }
 
@@ -25,7 +25,7 @@
     font-size: inherit;
     margin: 0;
     overflow: visible;
-    padding: 0.5rem 1rem;
+    padding: 0.5em 1em;
   }
 
   thead {
@@ -33,6 +33,10 @@
     color: $text-color;
     text-align: left;
     vertical-align: bottom;
+
+    th {
+      border-bottom: 2px solid $grey-lighter;
+    }
   }
 }
 

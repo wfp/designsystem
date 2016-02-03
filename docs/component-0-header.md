@@ -157,7 +157,7 @@ To ensure the navigation works correctly, download and add the following Javascr
 ### Subcomponents
 In addition to default navigation bundled with each header variant, you can make use of special subcomponents, to add more functionality.
 
-#### `header--btn`
+###### `header--btn`
 Designed specifically for use with our mastheads, as far as contrast and accessibility goes. It's a general-purpose element, so it can be used for just about anything.
 
 {% highlight html %}
@@ -166,7 +166,7 @@ Designed specifically for use with our mastheads, as far as contrast and accessi
 </div>
 {% endhighlight %}
 
-#### `header--input`
+###### `header--input`
 General purpose alphanumerical input, adjusted for use with our header. Adjust input type attribute based on the intended use of your element.
 
 {% highlight html %}
@@ -175,7 +175,7 @@ General purpose alphanumerical input, adjusted for use with our header. Adjust i
 </div>
 {% endhighlight %}
 
-#### `header--search`
+###### `header--search`
 Text input designated for entering search queries, adjusted for use with our header.
 
 {% highlight html %}
