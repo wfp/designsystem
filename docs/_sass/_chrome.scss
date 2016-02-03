@@ -116,8 +116,8 @@ figure {
 
   &.colours {
     .inline-item {
-      height: 3.25em;
-      border-bottom: 12px solid transparentize($black, 0.9);
+      height: 2em;
+      border-bottom: 0.5em solid transparentize($black, 0.9);
     }
   }
 
@@ -343,11 +343,15 @@ figure {
   padding: 0.5em 1em;
   border-left: 6px solid $orange;
   border-radius: 2px;
-  font-size: 1em;
   line-height: 1.4;
   margin: 1em 0;
 
   > * {
     margin: 0.25em 0;
+    font-size: 0.875em;
+  }
+
+  > .title {
+    font-size: 1.25em;
   }
 }

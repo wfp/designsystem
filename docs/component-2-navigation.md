@@ -14,7 +14,7 @@ This is one of the most important components for all websites and applications. 
 This menu is very versatile and can use groups. You can use this menu to create blocks of links, i.e.: for the sidebar.
 
 <div class="notice">
-  <h6 class="title">Notice</h6>
+  <h2 class="title">Notice</h2>
   <p>This menu can be displayed without surrounding borders by using <code>wfp-menu-plain</code> class, instead of <code>wfp-menu</code>.</p>
 </div>
 
@@ -50,7 +50,7 @@ This menu is very versatile and can use groups. You can use this menu to create 
 The same menu as in previous example, but used together with grids, to create more complex designs, such as horizontal groups of links for the footer.
 
 <div class="notice">
-  <h6 class="title">Notice</h6>
+  <h2 class="title">Notice</h2>
   <p>This menu can be displayed without surrounding borders by using <code>wfp-menu-plain</code> class, instead of <code>wfp-menu</code>.</p>
 </div>
 
@@ -184,7 +184,7 @@ _Breadcrumbs_ are a special kind of _segmented control_ component; a simple and 
 {% endhighlight %}
 
 <div class="notice">
-  <h6 class="title">TIP</h6>
+  <h2 class="title">TIP</h2>
   <p>Breacrumbs use the <code>home</code> icon from the WFP UI icon set. See the <a href="{{ base }}/resources/ui-icons/">User Interface icons</a> page for more information.</p>
 </div>
 

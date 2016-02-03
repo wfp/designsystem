@@ -36,10 +36,7 @@
 
   .nav-close {
     display: block;
-    position: absolute;
-    top: 0.5em;
-    right: 0.5em;
-    background-color: transparent;
+    background-color: $grey-darker;
     border: 1px solid $grey-lighter;
     border-radius: 3px;
     color: $white;
@@ -48,10 +45,19 @@
     text-transform: uppercase;
     line-height: 1.562em;
     padding: 0.125em 0.5em;
+    float: right;
+    margin-top: 0.5em;
+    margin-right: 0.5em;
     -webkit-tap-highlight-color: $black;
 
     .close-icon {
       margin-right: 0.5em;
+      background-color: $grey-darker;
+    }
+
+    &:hover {
+      background-color: $white;
+      color: $grey-darker;
     }
   }
 

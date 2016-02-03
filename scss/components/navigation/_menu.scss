@@ -33,11 +33,21 @@
   display: block;
   padding: 0.25em 1em;
   line-height: 1;
-  color: $primary;
-  border-bottom: 0;
+  color: darken($blue-darker, 5%);
+  border-bottom-color: transparent;
 
   &:hover {
-    color: $accent;
+    &:after {
+      margin-left: 0.25em;
+      content: "›";
+    }
+  }
+
+  &.active {
+    &:before {
+      margin-right: 0.25em;
+      content: "›";
+    }
   }
 }
 

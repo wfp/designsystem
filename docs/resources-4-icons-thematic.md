@@ -37,6 +37,7 @@ Add thematic icons to your website using `<i>` element with a class `thematic-{i
 <i class="thematic-affected-population-pos"></i><i class="thematic-affected-population-neg"></i>
 
 <div class="notice">
+  <h2 class="title">Notice</h2>
   <p>Need a Thematic icon not listed here? Send us a request via <a href="mailto:WFP.PUBLICATIONS@wfp.org?subject=Thematic%20icon%20request">wfp.publications@wfp.org</a>.</p>
 </div>
 

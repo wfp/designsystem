@@ -7,7 +7,7 @@ categories: Resources
 ---
 {% include base.html %}
 
-Favicons are small icons that are being often displayed in the browser address bar, stored with bookmarked pages, etc. You should only use the officialy approved favicons.
+Favicons are small icons that are being often displayed in the browser address bar, stored with bookmarked pages, etc. You should only use the officially approved favicons.
 
 Add the following lines to the `<head>` section of your page:
 

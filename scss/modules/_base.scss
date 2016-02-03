@@ -133,17 +133,20 @@ figcaption {
 // Links
 // -----------------------------------------------------------------------------
 a {
-  color: $blue;
+  color: darken($blue-darker, 5%);
   text-decoration: none;
   border-bottom: 1px solid $grey-lighter;
 
   &:visited {
-    color: darken($primary, 25%);
+    color: $blue-darkest;
   }
 
   &:hover {
-    color: $primary;
     border-bottom-color: $orange;
+  }
+
+  &:focus {
+    outline: thin dotted;
   }
 }
 

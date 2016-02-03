@@ -13,7 +13,7 @@ When designing forms, you should not forget to apply inline validation to them. 
 This will ensure that the experience is smooth and the probablility of the data loss is reduced to a minimum.
 
 <div class="notice">
-  <h6 class="title">Notice</h6>
+  <h2 class="title">Notice</h2>
   <p>Inline validation should not be used on its own. Please, make sure there is always server-side validation in place, to minimise the risk of processing invalid data.</p>
 </div>
 
@@ -23,7 +23,7 @@ By default, WFP recommends a [jQuery Validation Plugin](http://jqueryvalidation.
 To properly mark up your forms, follow the examples below. Make sure to load `forms.css` stylesheet to have all required styles applied to your forms automatically.
 
 <div class="notice">
-  <h6 class="title">NOTE</h6>
+  <h2 class="title">NOTE</h2>
   <p>You are free to use your own validator script as long as the validation can be done according to the general guidelines and uses the UI styles showcased below.</p>
 </div>
 

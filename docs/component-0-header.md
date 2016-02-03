@@ -19,7 +19,7 @@ Public pages should always use a logo with a caption "World Food Programme". For
 If the vertical space is limited (i.e.: on smaller viewports), you can substitute the logo with a "WFP.org" caption (using strictly white text `#ffffff` on a blue background `#2A93FC`), as per the official guidelines. Refer to the examples below.
 
 <div class="notice">
-  <h6 class="title">Subcomponents</h6>
+  <h2 class="title">Subcomponents</h2>
   <p>When implementing mastheads you can make use of <a href="#subcomponents">subcomponents</a>, such as <code>header--search</code>, or <code>header--btn</code>, to add call to actions, or a search input.</p>
 </div>
 
@@ -135,7 +135,7 @@ Internal header features a simple navigation, which works on both smaller and bi
 {% endhighlight %}
 
 <div class="notice">
-  <h6 class="title">Header Position</h6>
+  <h2 class="title">Header Position</h2>
   <p>You can also set header component to stay fixed to the top of your page, by adding <code>wfp-header-spacer--narrow</code> class to your <code>body</code> tag (for extra spacing), and class <code>fixed</code> to <code>header-int</code> element.</p>
 </div>
 

@@ -109,7 +109,7 @@ By default, all UI icons are displayed in `24 x 24px` size. You can easily adjus
 ### Available Icons
 
 <div class="notice">
-  <h6 class="title">Notice</h6>
+  <h2 class="title">Notice</h2>
   <p>Need a User Interface icon not listed here? Send us a request via <a href="mailto:WFP.PUBLICATIONS@wfp.org?subject=UI%20icon%20request">wfp.publications@wfp.org</a>.</p>
 </div>
 
