@@ -21,9 +21,23 @@
 
 %pagination--item {
   display: inline-block;
-  border: 1px solid $primary;
+  border: 1px solid darken($grey-lighter, 10%);
   border-radius: 2px;
   text-decoration: none;
+
+  &:hover {
+    border-color: darken($primary, 12%);
+  }
+
+  &.active {
+    border-color: darken($primary, 15%);
+    cursor: default;
+
+    .pagination--btn {
+      background-color: darken($primary, 12%);
+      color: $white;
+    }
+  }
 }
 
 %pagination--btn {
@@ -31,18 +45,9 @@
   padding: 0.35em 0.75em;
   width: auto;
   border: 0;
-  color: $primary;
+  color: darken($primary, 12%);
   font-size: 0.875em;
-
-  &:hover {
-    color: $grey;
-  }
-
-  &.active {
-    background-color: $primary;
-    color: $white;
-    cursor: default;
-  }
+  font-weight: bold;
 }
 
 .wfp-pagination {

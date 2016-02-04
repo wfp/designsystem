@@ -17,7 +17,7 @@
 
 %seg-control--item {
   display: table-cell;
-  border: 1px solid $primary;
+  border: 1px solid darken($primary, 12%);
   border-left: 0;
   position: relative;
   z-index: 1;
@@ -25,7 +25,7 @@
 
   &:first-child {
     border-radius: 2px 0 0 2px;
-    border-left: 1px solid $primary;
+    border-left: 1px solid darken($primary, 12%);
   }
 
   &:last-child {
@@ -37,16 +37,14 @@
   padding: 0.35em 0.75em;
   width: auto;
   border: 0;
-  color: $primary;
+  color: darken($primary, 12%);
   font-size: 0.875em;
+  font-weight: bold;
   display: block;
 
+  &.active,
   &:hover {
-    color: $grey;
-  }
-
-  &.active {
-    background-color: $primary;
+    background-color: darken($primary, 12%);
     color: $white;
   }
 }

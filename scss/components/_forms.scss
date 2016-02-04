@@ -8,12 +8,12 @@
   position: absolute;
   z-index: 1;
   right: 10px;
-  top: 0.875rem;
+  top: 0.875em;
   display: block;
   height: 16px;
   pointer-events: none;
-  font-size: 0.75rem;
-  color: $grey-light;
+  font-size: 0.75em;
+  color: $grey;
   text-align: right;
 }
 
@@ -24,7 +24,7 @@
   vertical-align: middle;
   border: 1px solid $grey-light;
   background-color: $white;
-  margin-right: 0.5rem;
+  margin-right: 0.5em;
   margin-bottom: 4px;
   width: 18px;
   height: 18px;
@@ -38,7 +38,7 @@
   }
 
   &:focus {
-    outline: 1px auto $blue-lighter;
+    outline: 1px auto $blue-dark;
   }
 }
 
@@ -53,7 +53,7 @@
   @if $type == common {
     appearance: none;
     display: inline-block;
-    padding: 0.5rem;
+    padding: 0.5em;
     font-family: $sans-serif-stack;
     border: 1px solid $grey-light;
     border-radius: 1px;
@@ -87,7 +87,7 @@
     }
 
     &.valid {
-      border-color: $green;
+      border-color: desaturate(lighten($green, 25%), 55%);
     }
 
     &[disabled],
@@ -109,7 +109,7 @@
     appearance: none;
     display: inline-block;
     border: 0;
-    margin-right: 0.25rem;
+    margin-right: 0.25em;
     margin-bottom: 3px;
     width: 24px;
     height: 24px;
@@ -125,7 +125,7 @@
     }
 
     &:focus {
-      outline: 1px auto $blue-light;
+      outline: 1px auto $blue-dark;
     }
 
     &:checked {
@@ -142,16 +142,20 @@
     }
   } @else if $type == label {
     display: block;
-    margin: 0.75rem 0 0.25rem;
+    margin: 0.25em 0;
     font-size: 100%;
     line-height: 1.5;
     vertical-align: baseline;
+
+    &.checkbox {
+      margin: 0.5em 0;
+    }
   } @else if $type == select {
     @extend %select-arrow;
     appearance: none;
     display: inline-block;
-    padding: 0.4rem 0.75rem;
-    padding-right: 2.25rem;
+    padding: 0.4em 0.75em;
+    padding-right: 2.25em;
     font-family: $sans-serif-stack;
     border: 1px solid $grey-light;
     border-radius: 3px;
@@ -188,7 +192,7 @@
     display: block;
     width: 100%;
     min-height: 8em;
-    padding: 0.5rem 0.75rem;
+    padding: 0.5em;
     font-size: 100%;
     font-family: $sans-serif-stack;
     border: 1px solid $grey-light;
@@ -273,16 +277,17 @@
 
   // Fieldset
   fieldset {
-    margin: 0;
-    padding: 0.25rem 0 0.75rem;
+    margin: 0.25em 0;
+    padding: 0;
     border: 0;
+    display: block;
   }
 
   legend {
     display: block;
     width: 100%;
-    padding: 0.5rem 0;
-    margin-bottom: 0.25rem;
+    padding: 0.5em 0;
+    margin-bottom: 0.25em;
     color: $text-color;
     border-bottom: 1px solid $grey-light;
   }
@@ -292,7 +297,7 @@
     @include input(label);
 
     ~ label {
-      margin: 0.25rem 0;
+      margin: 0.25em 0;
     }
   }
 
@@ -314,9 +319,9 @@
     color: darken($orange, 40%);
     display: inline-block;
     background-color: $orange;
-    padding: 0.25rem 0.5rem;
+    padding: 0.25em 0.5em;
     margin: 0;
-    font-size: 0.875rem;
+    font-size: 0.875em;
   }
 }
 
@@ -341,7 +346,7 @@
   textarea,
   select {
     display: block;
-    margin: 0.25rem 0 0.75rem;
+    margin: 0.25em 0;
     width: 100%;
   }
 }

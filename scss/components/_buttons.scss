@@ -37,14 +37,14 @@ $color-gplus: #dc4e41;
     }
   } @else if $type == primary {
     color: $white;
-    background-color: $primary;
+    background-color: darken($primary, 12%);
 
     &:active {
-      background-color: darken($primary, 5%);
+      background-color: darken($primary, 15%);
     }
   } @else if $type == negative {
-    color: lighten($red, 35%);
-    background-color: $red;
+    color: $white;
+    background-color: desaturate(darken($red, 15%), 40%);
 
     &:active {
       background-color: darken($red, 5%);
@@ -57,11 +57,11 @@ $color-gplus: #dc4e41;
       background-color: darken($orange, 5%);
     }
   } @else if $type == positive {
-    color: lighten($green, 60%);
-    background-color: $green;
+    color: $white;
+    background-color: darken($green, 7%);
 
     &:active {
-      background-color: darken($green, 5%);
+      background-color: darken($green, 10%);
     }
   } @else if $type == social {
     color: $color;

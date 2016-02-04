@@ -14,9 +14,10 @@
 
   caption {
     color: $text-color;
-    font: italic 85%/1 "lato", sans-serif;
     padding: 1em 0;
     text-align: center;
+    font-size: 1em;
+    font-style: italic;
   }
 
   td, th {
