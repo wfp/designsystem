@@ -58,7 +58,7 @@
     </div>
   </header>
 
-  <article class="wfp-wrapper">
+  <div class="wfp-wrapper">
 
     <section class="wfp-box">
 
@@ -89,35 +89,35 @@
 
       <h3 class="section-title"><code>.wfp-btn</code></h3>
 
-      <div class="wfp-box">
+      <div class="wfp-content-wrapper">
         <button class="wfp-btn xlarge">Button</button>
         <button class="wfp-btn large">Button</button>
         <button class="wfp-btn">Button</button>
         <button class="wfp-btn small">Button</button>
         <button class="wfp-btn xsmall">Button</button>
       </div>
-      <div class="wfp-box">
+      <div class="wfp-content-wrapper">
         <button class="wfp-btn--primary xlarge">Button</button>
         <button class="wfp-btn--primary large">Button</button>
         <button class="wfp-btn--primary">Button</button>
         <button class="wfp-btn--primary small">Button</button>
         <button class="wfp-btn--primary xsmall">Button</button>
       </div>
-      <div class="wfp-box">
+      <div class="wfp-content-wrapper">
         <button class="wfp-btn--negative xlarge">Button</button>
         <button class="wfp-btn--negative large">Button</button>
         <button class="wfp-btn--negative">Button</button>
         <button class="wfp-btn--negative small">Button</button>
         <button class="wfp-btn--negative xsmall">Button</button>
       </div>
-      <div class="wfp-box">
+      <div class="wfp-content-wrapper">
         <button class="wfp-btn--positive xlarge">Button</button>
         <button class="wfp-btn--positive large">Button</button>
         <button class="wfp-btn--positive">Button</button>
         <button class="wfp-btn--positive small">Button</button>
         <button class="wfp-btn--positive xsmall">Button</button>
       </div>
-      <div class="wfp-box">
+      <div class="wfp-content-wrapper">
         <button class="wfp-btn--warning xlarge">Button</button>
         <button class="wfp-btn--warning large">Button</button>
         <button class="wfp-btn--warning">Button</button>
@@ -138,19 +138,25 @@
             <input type="email" id="email" name="email">
           </div>
         </div>
-
+        <div class="wfp-form--group">
+          <label for="selection">Pick a subject:</label>
+          <select id="selection">
+            <option value="1" selected>Option #1</option>
+            <option value="2">Option #2</option>
+            <option value="3">Option #3</option>
+          </select>
+        </div>
+        <div class="wfp-form--group">
           <label for="message">Your message:</label>
           <textarea name="message" id="message"></textarea>
-          <label for="sample-1" class="checkbox">
+          <label class="checkbox" for="sample-1">
             <input type="checkbox" id="sample-1">I would like to be contacted, if necessary.
           </label>
         </div>
-        <div class="wfp-box--flat">
-          <div class="wfp-form--actions">
-            <button class="wfp-btn--primary" type="submit">Send message</button>
-            <button class="wfp-btn">Cancel</button>
-            <span class="wfp-form--msg">By sending this form you agree to our <a href="#">privacy policy</a>.</span>
-          </div>
+        <div class="wfp-form--actions">
+          <button class="wfp-btn--primary">Send message</button>
+          <button class="wfp-btn">Cancel</button>
+          <span class="wfp-form--msg">By sending this form you agree to our <a href="#">privacy policy</a>.</span>
         </div>
       </form>
 
@@ -266,7 +272,7 @@
 
     <div class="wfp-content-wrapper wfp-text-center">
       <ul class="wfp-breadcrumbs">
-        <li class="breadcrumbs--item"><a href="#home" class="breadcrumbs--link"><span class="icon-home-dark xsmall" alt="Home icon"></span><span class="screen-text">Home</span></a></li>
+        <li class="breadcrumbs--item"><a href="#home" class="breadcrumbs--link home"><span class="icon-home-dark" alt="Home icon"></span><span>Home</span></a></li>
         <li class="breadcrumbs--item"><a href="#email" class="breadcrumbs--link">Careers</a></li>
         <li class="breadcrumbs--item"><span class="breadcrumbs--last">Internships</span></li>
       </ul>
@@ -365,7 +371,7 @@
 
   </section>
 
-</article>
+</div>
 
 <h2 class="section-title"><code>.wfp-header--internal</code></h2>
 

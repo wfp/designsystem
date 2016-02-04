@@ -125,10 +125,10 @@ This pattern is useful for when you need to display a set of controls with an in
 <div class="preview plain">
   <ul class="wfp-seg-control">
     <li class="seg-control--item">
-      <span class="seg-control--link active">Home</span>
+      <a class="seg-control--link" href="#">Home</a>
     </li>
     <li class="seg-control--item">
-      <a class="seg-control--link" href="#">Blog</a>
+      <a class="seg-control--link active" href="#">Blog</a>
     </li>
     <li class="seg-control--item">
       <a class="seg-control--link" href="#">About us</a>
@@ -146,7 +146,7 @@ This pattern is useful for when you need to display a set of controls with an in
     <a class="seg-control--link" href="#">Home</a>
   </li>
   <li class="seg-control--item">
-    <a class="seg-control--link" href="#">Blog</a>
+    <a class="seg-control--link active" href="#">Blog</a>
   </li>
   <li class="seg-control--item">
     <a class="seg-control--link" href="#">About us</a>
@@ -168,18 +168,18 @@ _Breadcrumbs_ are a special kind of _segmented control_ component; a simple and 
 ###### Preview
 <div class="preview plain">
   <ul class="wfp-breadcrumbs">
-    <li class="breadcrumbs--item"><a href="#" class="breadcrumbs--link"><i class="icon-home-dark xsmall"></i></a></li>
-    <li class="breadcrumbs--item"><a href="#" class="breadcrumbs--link">Our Work</a></li>
-    <li class="breadcrumbs--item"><span class="breadcrumbs--last">Procurement</span></li>
+    <li class="breadcrumbs--item"><a href="#home" class="breadcrumbs--link home"><span class="icon-home-dark" alt="Home icon"></span><span>Home</span></a></li>
+    <li class="breadcrumbs--item"><a href="#email" class="breadcrumbs--link">Careers</a></li>
+    <li class="breadcrumbs--item"><span class="breadcrumbs--last">Internships</span></li>
   </ul>
 </div>
 
 ###### Markup
 {% highlight html %}
 <ul class="wfp-breadcrumbs">
-  <li class="breadcrumbs--item"><a href="#" class="breadcrumbs--link"></a></li>
-  <li class="breadcrumbs--item"><a href="#" class="breadcrumbs--link">Our Work</a></li>
-  <li class="breadcrumbs--item"><span class="breadcrumbs--last">Procurement</span></li>
+  <li class="breadcrumbs--item"><a href="#" class="breadcrumbs--link home"><span class="icon-home-dark" alt="Home icon"></span><span>Home</span></a></li>
+  <li class="breadcrumbs--item"><a href="#" class="breadcrumbs--link">Careers</a></li>
+  <li class="breadcrumbs--item"><span class="breadcrumbs--last">Internships</span></li>
 </ul>
 {% endhighlight %}
 
@@ -198,8 +198,8 @@ _Pagination_ is very useful pattern that allows users to browse through availabl
       <li class="pagination--item">
         <a href="#" class="pagination--btn">Previous</a>
       </li>
-      <li class="pagination--item">
-        <span class="pagination--btn active">1</span>
+      <li class="pagination--item active">
+        <span class="pagination--btn">1</span>
       </li>
       <li class="pagination--item">
         <a href="#" class="pagination--btn">2</a>
