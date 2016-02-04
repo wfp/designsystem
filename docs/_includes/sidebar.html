@@ -1,15 +1,15 @@
 <nav class="wfp-menu">
 {% for category in site.category-list %}
   <div class="menu--group">
-    <h6 class="menu--heading">{{ category }}</h6>
+    <h2 class="menu--heading">{{ category }}</h2>
     <ul class="menu--wrapper">
     {% for link in site.pages %}
     {% if link.resource == true %}
       {% for cat in link.categories %}
       {% if cat == category %}
       {% assign current = nil %}
-      {% if page.url == link.url %}{% assign current = ' class="current"' %}{% endif %}
-      <li class="menu--item"><a class="menu--link" href="{{ base }}{{ link.url }}"{{current}}>{{ link.title }}</a></li>
+      {% if page.url == link.url %}{% assign current = ' current' %}{% endif %}
+      <li class="menu--item"><a class="menu--link{{current}}" href="{{ base }}{{ link.url }}">{{ link.title }}</a></li>
       {% endif %}
       {% endfor %}
     {% endif %}

@@ -63,21 +63,25 @@
 %wrapper {
   margin: 0 auto;
   max-width: $content-width;
-  padding: 1rem;
+  padding: 1em;
 
   @include media-query($content-width) {
-    padding: 1rem 0;
+    padding: 1em 0;
+  }
+
+  @include media-query($xl-screen) {
+    max-width: $max-content-width;
   }
 }
 
 %content-wrapper {
   display: block;
-  padding: 0.125rem;
+  padding: 0.25em 0;
 }
 
 %logo-wrapper {
   display: block;
-  padding: 1rem;
+  padding: 1em;
 }
 
 %overflow-wrapper {
@@ -93,7 +97,7 @@
 
 .wfp-wrapper-tight {
   @extend %wrapper;
-  padding: 0 1rem;
+  padding: 0 1em;
 
   @include media-query($content-width) {
     padding: 0;
@@ -114,7 +118,7 @@
 
 @include media-query($md-screen) {
   .wfp-box {
-    padding: 1rem;
+    padding: 1em;
 
     &:only-child {
       padding-left: 0;
@@ -131,7 +135,20 @@
   }
 
   .wfp-box--flat {
-    padding: 0 1rem;
+    padding: 0 1em;
+
+    &:only-child {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    &:first-child {
+      padding-left: 0;
+    }
+
+    &:last-child {
+      padding-right: 0;
+    }
   }
 }
 

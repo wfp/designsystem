@@ -11,14 +11,14 @@ categories: Basics
 WFP logo is available in three versions: _emblem_, _standard_, and _full_. Each has its own purpose and should be used appropriately, as per [official branding guidelines](http://wfp.org/branding), depending on available screen space and target audience.
 
 <figure class="picture">
-  <img src="{{ base }}/img/logo-versions.png" srcset="{{ base }}/img/logo-versions.png 1x, {{ base }}/img/logo-versions@2x.png 2x">
+  <img src="{{ base }}/img/logo-versions.png" srcset="{{ base }}/img/logo-versions.png 1x, {{ base }}/img/logo-versions@2x.png 2x" alt="WFP Logo Variants">
   <figcaption>Fig 1. Different versions of WFP logo.</figcaption>
 </figure>
 
 To implement the logo properly, give it enough spacing to ensure it stands out on its own. The minimum required spacing is calculated using a simple formula displayed on Fig. 2.
 
 <figure class="picture">
-  <img src="{{ base }}/img/logo-usage.png" srcset="{{ base }}/img/logo-usage.png 1x, {{ base }}/img/logo-usage@2x.png 2x">
+  <img src="{{ base }}/img/logo-usage.png" srcset="{{ base }}/img/logo-usage.png 1x, {{ base }}/img/logo-usage@2x.png 2x" alt="WFP Logo Spacing">
   <figcaption>Fig 2. How to calculate minimum spacing around the logo.</figcaption>
 </figure>
 

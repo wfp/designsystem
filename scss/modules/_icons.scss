@@ -47,14 +47,23 @@
   }
 }
 
-i[class*="icon-"] {
+[class*="icon-"] {
   @include icon;
   width: 24px;
   height: 24px;
 }
 
-i[class*="thema-"] {
+[class*="thema-"] {
   @include icon;
   width: 64px;
   height: 64px;
+}
+
+// Make icon-only links accessible (i.e.: breadcrumb "home" link)
+.screen-text {
+  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
 }

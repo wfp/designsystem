@@ -1,15 +1,15 @@
 %menu--group {
-  margin-bottom: 0.5rem;
+  margin: 0;
   padding: 0;
 }
 
 %menu--heading {
   @extend %allcaps;
   border-bottom: 1px solid $grey-lighter;
-  padding: 0.5rem 1rem;
-  line-height: 1.5rem;
-  margin: 0.25rem 0;
-  font-size: $small-font-size;
+  padding: 0.5em 1em;
+  line-height: 1.5em;
+  margin: 0.25em 0;
+  font-size: 1em;
 
   &:first-child {
     margin-top: 0;
@@ -18,11 +18,12 @@
 
 %menu--wrapper {
   @extend %nolist;
-  padding: 0.25rem 0;
+  padding: 0.25em 0;
+  margin-bottom: 0.25em;
 }
 
 %menu--item {
-  font-size: 1rem;
+  font-size: 1em;
   padding: 0;
   margin: 0;
   display: block;
@@ -31,14 +32,10 @@
 
 %menu--link {
   display: block;
-  padding: 0.25rem 1rem;
+  padding: 0.33em 1em;
   line-height: 1;
-  color: $primary;
-  border-bottom: 0;
-
-  &:hover {
-    color: $accent;
-  }
+  color: darken($primary, 12%);
+  border-bottom-color: transparent;
 }
 
 @mixin menu {
@@ -68,7 +65,7 @@
 @mixin menu-flat {
   @extend %nolist;
   display: inline-block;
-  margin: 0.25rem 1rem;
+  margin: 0.25em 1em;
 
   .menu--group {
     @extend %menu--group;
@@ -81,7 +78,7 @@
     @extend %menu--item;
     display: inline-block;
     padding: 0;
-    margin: 0 0.25rem;
+    margin: 0 0.25em;
     border-bottom: 0;
   }
 
@@ -108,16 +105,54 @@
   border-left: 1px solid $grey-lighter;
   border-right: 1px solid $grey-lighter;
   border-bottom: 1px solid $grey-lighter;
-  margin: 1rem 0;
+  margin: 1em 0;
 
   .menu--heading {
     border-top: 1px solid $grey-lighter;
+  }
+
+  .menu--link {
+    &:visited {
+      color: desaturate(darken($blue-darkest, 5%), 25%);
+    }
+
+    &:hover {
+      &:after {
+        margin-left: 0.25em;
+        content: "›";
+      }
+    }
+
+    &.current {
+      box-shadow: inset 0.25em 0 0 0 darken($primary, 12%);
+      color: $grey-darker;
+    }
   }
 }
 
 .wfp-menu-plain {
   @include menu;
-  margin: 1rem 0;
+  margin: 1em 0;
+
+  .menu--heading,
+  .menu--link {
+    padding: 0.25em 0;
+  }
+
+  .menu--heading {
+    font-size: 0.875em;
+    padding-bottom: 0.5em;
+  }
+
+  .menu--link {
+    display: inline-block;
+    font-size: 0.875em;
+    color: darken($primary, 12%);
+
+    &:hover {
+      border-bottom-color: $orange;
+    }
+  }
 }
 
 .wfp-menu-flat {
@@ -133,16 +168,16 @@
     color: $grey-light;
     border-top: 0;
     border-bottom-color: $grey-dark;
-    padding: 0.5rem 1.5rem;
+    padding: 0.5em 1.5em;
 
     &:first-child {
-      margin-top: 0.5rem;
+      margin-top: 0.5em;
     }
   }
 
   .menu--item {
     color: $white;
-    padding: 0.25rem 1.5rem;
+    padding: 0.25em 1.5em;
 
     &:visited {
       color: $grey-lighter;
@@ -154,8 +189,8 @@
     }
 
     @include media-query($md-screen) {
-      font-size: 1rem;
-      padding: 0.25rem 1.5rem;
+      font-size: 1em;
+      padding: 0.25em 1.5em;
     }
   }
 }

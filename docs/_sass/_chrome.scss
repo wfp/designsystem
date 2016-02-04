@@ -16,11 +16,15 @@ figure {
   &.picture {
     text-align: center;
   }
+
+  &.highlight {
+    font-size: 0.875em;
+  }
 }
 
 .grid-unit-width {
   &[class*="wfp-u-"] {
-    padding-right: 0.5rem;
+    padding-right: 0.5em;
     font-family: $mono-stack;
     text-align: right;
   }
@@ -28,8 +32,8 @@ figure {
 
 .grid-unit-sample {
   background-color: $grey-lightest;
-  min-height: 1.5rem;
-  margin-bottom: 0.25rem;
+  min-height: 1.5em;
+  margin-bottom: 0.25em;
 
   [class*="wfp-u-"] {
     background-color: $grey-light;
@@ -40,21 +44,21 @@ figure {
 .content-nav {
   width: 100%;
   margin-bottom: 1em;
-  padding: 0.75rem 1rem;
+  padding: 0.75em 1em;
   background-color: $grey-lightest;
   border-left: 6px solid $grey-light;
   border-radius: 2px;
 
   h4 {
     margin: 0;
-    margin-bottom: 0.25rem;
-    padding-bottom: 0.25rem;
+    margin-bottom: 0.25em;
+    padding-bottom: 0.25em;
     border-bottom: 1px solid $grey-lighter;
   }
 
   ol {
     margin: 0;
-    padding: 0 0 0 1.25rem;
+    padding: 0 0 0 1.25em;
   }
 
   li {
@@ -66,25 +70,6 @@ figure {
   margin-bottom: $spacing-unit / 4;
   padding-bottom: $spacing-unit / 4;
   border-bottom: 1px solid $grey;
-}
-
-.footer {
-  .copyrights {
-    h4 {
-      font-size: 0.875rem;
-      font-weight: normal;
-    }
-  }
-
-  .site-owner {
-    h4 {
-      font-size: 0.875rem;
-      text-align: center;
-      @include media-query($md-screen) {
-        text-align: right;
-      }
-    }
-  }
 }
 
 // Custom Colour & Typography Grids
@@ -103,9 +88,9 @@ figure {
 
   .inline-item {
     width: 100%;
-    height: 152px;
-    line-height: 128px;
-    font-size: 48px;
+    height: 2.5em;
+    line-height: 3em;
+    font-size: 3em;
     border-bottom: 1px solid $grey-lightest;
 
     &.c- {
@@ -135,14 +120,14 @@ figure {
 
   &.colours {
     .inline-item {
-      height: 52px;
-      border-bottom: 12px solid transparentize($black, 0.9);
+      height: 2em;
+      border-bottom: 0.5em solid transparentize($black, 0.9);
     }
   }
 
   &.long {
     .inline-item {
-      height: 112px;
+      height: 7;
     }
   }
 
@@ -154,7 +139,7 @@ figure {
       text-align: left;
       overflow: visible;
       background-color: transparent;
-      padding: ($spacing-unit / 3) ($spacing-unit / 2);
+      padding: 0.75em 1em;
 
       > h6 {
         margin: 0;
@@ -192,7 +177,7 @@ figure {
           border-top: 2px solid $primary;
           position: absolute;
           background-color: $grey-light;
-          width: 176px;
+          width: 10em;
           top: 0;
           left: 0;
           padding: 1em;
@@ -202,7 +187,7 @@ figure {
 
         img {
           width: 100%;
-          max-width: 64px;
+          max-width: 4em;
           margin-bottom: 1em;
         }
 
@@ -221,12 +206,12 @@ figure {
     > h4, p {
       font-size: 0.875em;
       margin: 0;
-      color: $grey;
+      color: $grey-dark;
       line-height: 1.4;
 
       code {
         background-color: transparent;
-        color: $grey;
+        color: $grey-dark;
         padding: 0;
       }
     }
@@ -269,9 +254,9 @@ figure {
 
     .desc-label {
       display: inline-block;
-      padding: 1rem;
+      padding: 1em;
       font-size: 0.875em;
-      line-height: 1.5;
+      line-height: 1.5em;
       text-transform: lowercase;
       vertical-align: top;
     }
@@ -312,9 +297,9 @@ figure {
   margin: 2em 0;
 
   > .label {
-    font-size: 16px;
+    font-size: 1em;
     font-weight: bold;
-    color: #184679;
+    color: $accent;
     margin-bottom: 0;
   }
 
@@ -327,15 +312,14 @@ figure {
 
 .preview {
   background-color: $grey-lightest;
-  padding: 2rem 1rem;
+  padding: 2em;
   text-align: center;
-  border-top: 2px solid $grey-lighter;
-  border-bottom: 2px solid $grey-lighter;
-  margin: 0.5rem 0;
+  border: 1px solid $grey-lighter;
+  margin: 0.5em 0;
   max-width: 100%;
 
   &.paragraph {
-    padding: 0.5rem 1rem;
+    padding: 0.5em 1.5em;
     text-align: left;
   }
 
@@ -360,14 +344,18 @@ figure {
 
 .notice {
   background-color: $grey-lightest;
-  padding: 0.5rem 1rem;
+  padding: 0.5em 1em;
   border-left: 6px solid $orange;
   border-radius: 2px;
-  font-size: 1rem;
   line-height: 1.4;
-  margin: 1rem 0;
+  margin: 1em 0;
 
   > * {
-    margin: 0.25rem 0;
+    margin: 0.25em 0;
+    font-size: 0.875em;
+  }
+
+  > .title {
+    font-size: 1.25em;
   }
 }
