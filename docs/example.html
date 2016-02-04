@@ -141,9 +141,11 @@
         <div class="wfp-form--group">
           <label for="selection">Pick a subject:</label>
           <select id="selection">
-            <option value="1" selected>Option #1</option>
-            <option value="2">Option #2</option>
-            <option value="3">Option #3</option>
+            <optgroup label="Tropical Fruits">
+              <option value="1" selected>Oranges</option>
+              <option value="2">Bananas</option>
+              <option value="3">Grapefruits</option>
+            </optgroup>
           </select>
         </div>
         <div class="wfp-form--group">
@@ -154,7 +156,7 @@
           </label>
         </div>
         <div class="wfp-form--actions">
-          <button class="wfp-btn--primary">Send message</button>
+          <button class="wfp-btn--primary" type="submit">Send message</button>
           <button class="wfp-btn">Cancel</button>
           <span class="wfp-form--msg">By sending this form you agree to our <a href="#">privacy policy</a>.</span>
         </div>
@@ -196,13 +198,13 @@
       <h2 class="menu--heading">Navigation</h2>
       <ul class="menu--wrapper">
         <li class="menu--item">
-          <a href="#" class="menu--link"><span class="icon-email-dark" alt="Email icon"></span> Inbox</a>
+          <a href="#" class="menu--link"><span class="icon-email-dark"></span> Inbox</a>
         </li>
         <li class="menu--item">
-          <a href="#" class="menu--link"><span class="icon-account-circle-dark" alt="Account icon"></span> Account</a>
+          <a href="#" class="menu--link"><span class="icon-account-circle-dark"></span> Account</a>
         </li>
         <li class="menu--item">
-          <a href="#" class="menu--link"><span class="icon-exit-to-app-dark" alt="Exit icon"></span> Sign Out</a>
+          <a href="#" class="menu--link"><span class="icon-exit-to-app-dark"></span> Sign Out</a>
         </li>
       </ul>
     </nav>
@@ -272,7 +274,7 @@
 
     <div class="wfp-content-wrapper wfp-text-center">
       <ul class="wfp-breadcrumbs">
-        <li class="breadcrumbs--item"><a href="#home" class="breadcrumbs--link home"><span class="icon-home-dark" alt="Home icon"></span><span>Home</span></a></li>
+        <li class="breadcrumbs--item"><a href="#home" class="breadcrumbs--link home"><span class="icon-home-dark"></span><span>Home</span></a></li>
         <li class="breadcrumbs--item"><a href="#email" class="breadcrumbs--link">Careers</a></li>
         <li class="breadcrumbs--item"><span class="breadcrumbs--last">Internships</span></li>
       </ul>

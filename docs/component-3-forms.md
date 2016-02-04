@@ -32,9 +32,11 @@ To see how different form elements work together with our flexible grid system, 
   <div class="wfp-form--group">
     <label for="selection">Pick a subject:</label>
     <select id="selection">
-      <option value="1" selected>Option #1</option>
-      <option value="2">Option #2</option>
-      <option value="3">Option #3</option>
+      <optgroup label="Tropical Fruits">
+        <option value="1" selected>Oranges</option>
+        <option value="2">Bananas</option>
+        <option value="3">Grapefruits</option>
+      </optgroup>
     </select>
   </div>
   <div class="wfp-form--group">
@@ -45,7 +47,7 @@ To see how different form elements work together with our flexible grid system, 
     </label>
   </div>
   <div class="wfp-form--actions">
-    <button class="wfp-btn--primary">Send message</button>
+    <button class="wfp-btn--primary" type="submit">Send message</button>
     <button class="wfp-btn">Cancel</button>
     <span class="wfp-form--msg">By sending this form you agree to our <a href="#">privacy policy</a>.</span>
   </div>
@@ -79,7 +81,7 @@ To see how different form elements work together with our flexible grid system, 
     </label>
   </div>
   <div class="wfp-form--actions">
-    <button class="wfp-btn--primary">Send message</button>
+    <button class="wfp-btn--primary" type="submit">Send message</button>
     <button class="wfp-btn">Cancel</button>
     <span class="wfp-form--msg">By sending this form you agree to our <a href="#">privacy policy</a>.</span>
   </div>
