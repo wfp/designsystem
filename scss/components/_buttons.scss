@@ -22,44 +22,64 @@ $color-gplus: #dc4e41;
   transition-timing-function: ease-in;
   vertical-align: baseline;
 
-  @if $type == default {
-    color: $grey-dark;
-    background-color: $grey-lightest;
+  // Active Button
+  &.active,
+  &:active,
+  &.active:hover,
+  &.active:active,
+  &.active:focus {
+    border-color: transparentize($black, 0.75);
+    box-shadow: transparentize($black, 0.9) 0 0 8px inset;
+  }
 
-    &:hover,
-    &:focus {
-      border-color: transparentize($black, 0.75);
-      color: inherit;
+  @if $type == default {
+    color: darken($primary, 12%);
+    background-color: $white;
+    border-color: darken($primary, 12%);
+
+    &:hover {
+      background-color: $blue-lightest;
+      border-color: darken($primary, 20%);
+      color: darken($primary, 20%);
     }
 
-    &:active {
-      background-color: darken($grey-lighter, 5%);
+    &.active,
+    &:active,
+    &.active:hover,
+    &.active:active,
+    &.active:focus {
+      border-color: darken($blue-darker, 20%);
+      color: darken($blue-darker, 20%);
     }
   } @else if $type == primary {
     color: $white;
     background-color: darken($primary, 12%);
 
+    &:hover,
     &:active {
-      background-color: darken($primary, 15%);
+      background-color: darken($primary, 20%);
     }
   } @else if $type == negative {
     color: $white;
     background-color: desaturate(darken($red, 15%), 40%);
 
+    &:hover,
     &:active {
-      background-color: darken($red, 5%);
+      background-color: desaturate(darken($red, 20%), 40%);
     }
   } @else if $type == warning {
-    color: darken($orange, 40%);
+    color: darken($orange, 50%);
     background-color: $orange;
 
+    &:hover,
     &:active {
-      background-color: darken($orange, 5%);
+      background-color: darken($orange, 10%);
     }
   } @else if $type == positive {
     color: $white;
     background-color: darken($green, 7%);
 
+    &:hover,
     &:active {
       background-color: darken($green, 10%);
     }
@@ -85,17 +105,6 @@ $color-gplus: #dc4e41;
     }
   }
 
-
-  // Active Button
-  &.active,
-  &:active,
-  &.active:hover,
-  &.active:active,
-  &.active:focus {
-    border-color: transparentize($black, 0.75);
-    box-shadow: transparentize($black, 0.85) 0 0 8px inset;
-  }
-
   // Disabled Button
   &[disabled],
   &.disabled,
@@ -103,7 +112,7 @@ $color-gplus: #dc4e41;
   &.disabled:focus,
   &.disabled:active {
     background-image: none;
-    opacity: 0.4;
+    opacity: 0.3;
     cursor: not-allowed;
     box-shadow: none;
     border: 1px solid transparentize($black, 0.85);
