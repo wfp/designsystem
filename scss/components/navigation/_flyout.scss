@@ -41,13 +41,14 @@
     border-radius: 3px;
     color: $white;
     font-size: 0.875em;
+    font-weight: bold;
     font-family: $sans-serif-stack;
     text-transform: uppercase;
-    line-height: 1.562em;
-    padding: 0.125em 0.5em;
+    line-height: 1em;
+    padding: 0.5em 0.5em;
     float: right;
-    margin-top: 0.5em;
-    margin-right: 0.5em;
+    margin-top: 0.66em;
+    margin-right: 0.66em;
     -webkit-tap-highlight-color: $black;
 
     .close-icon {
@@ -57,7 +58,12 @@
 
     &:hover {
       background-color: $white;
+      border-color: $white;
       color: $grey-darker;
+
+      .close-icon {
+        background-color: $white;
+      }
     }
   }
 
