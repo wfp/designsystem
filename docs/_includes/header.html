@@ -17,8 +17,8 @@
               {% for cat in link.categories %}
               {% if cat == category %}
               {% assign current = nil %}
-              {% if page.url == link.url %}{% assign current = ' class="current"' %}{% endif %}
-              <li><a class="menu--item" href="{{ base }}{{ link.url }}"{{current}}>{{ link.title }}</a></li>
+              {% if page.url == link.url %}{% assign current = ' current' %}{% endif %}
+              <li><a class="menu--item{{current}}" href="{{ base }}{{ link.url }}">{{ link.title }}</a></li>
               {% endif %}
               {% endfor %}
             {% endif %}

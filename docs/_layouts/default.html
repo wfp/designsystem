@@ -6,14 +6,14 @@
 
     {% include header.html %}
 
-    <section class="wfp-grid wfp-wrapper">
-      <div class="wfp-u-1 wfp-u-md-1-4 wfp-u-xl-1-4 wfp-box--flat side-nav">
+    <div class="wfp-grid wfp-wrapper" role="main">
+      <aside class="wfp-u-1 wfp-u-md-1-4 wfp-u-xl-1-4 wfp-box--flat side-nav">
         {% include sidebar.html %}
-      </div>
-      <div class="wfp-u-1 wfp-u-md-3-4 wfp-u-xl-5-8 wfp-box--flat">
+      </aside>
+      <article class="wfp-u-1 wfp-u-md-3-4 wfp-u-xl-5-8 wfp-box--flat">
         {{ content }}
-      </div>
-    </section>
+      </article>
+    </div>
 
     {% include footer.html %}
 

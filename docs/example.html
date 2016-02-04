@@ -1,8 +1,9 @@
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <title>WFP UI Testing Grounds</title>
   <link rel="shortcut icon" href="http://cdn.wfp.org/favicon.ico">
   <link rel="stylesheet" href="http://cdn.wfp.org/libraries/webfonts/lato/lato.css">
   <link rel="stylesheet" href="http://cdn.wfp.org/libraries/webfonts/aleo/aleo.css">
@@ -15,6 +16,7 @@
       margin-bottom: 1rem;
       padding-bottom: 0;
       border-bottom: 1px solid #fdeca8;
+      font-size: 0.875em;
     }
     .block {
       display: block;
@@ -128,13 +130,13 @@
       <form class="wfp-form--stacked">
 
         <label for="state">Select an option:</label>
-        <select id="select" class="select">
+        <select id="state" class="select">
           <option>Option 1</option>
           <option>Option 2</option>
           <option>Option 3</option>
         </select>
-      <label for="option-one" class="input-radio"><input id="option-one" class="radio" type="radio" name="options">Option #1</label>
-      <label for="option-two" class="input-radio"><input id="option-two" class="radio" type="radio" name="options">Option #2</label>
+        <label for="option-one" class="input-radio"><input id="option-one" class="radio" type="radio" name="options">Option #1</label>
+        <label for="option-two" class="input-radio"><input id="option-two" class="radio" type="radio" name="options">Option #2</label>
 
       <div class="wfp-u-1">
         <label for="message">Your message:</label>
@@ -165,12 +167,12 @@
 
     <form class="wfp-form--stacked wfp-grid">
       <div class="wfp-u-1-2 wfp-box">
-        <label for="full-name">Full name:</label>
-        <input class="valid" id="full-name" type="text" placeholder="e.g.: John Doe" value="John Doe">
+        <label for="full-name-2">Full name:</label>
+        <input class="valid" id="full-name-2" type="text" placeholder="e.g.: John Doe" value="John Doe">
       </div>
       <div class="wfp-u-1-2 wfp-box">
-        <label for="email">Email address:</label>
-        <input class="valid" id="email" type="email" placeholder="e.g.: john@doe.com" value="correct@email.com" required>
+        <label for="email-2">Email address:</label>
+        <input class="valid" id="email-2" type="email" placeholder="e.g.: john@doe.com" value="correct@email.com" required>
       </div>
     </form>
   </section>
@@ -293,10 +295,12 @@
 
     <table class="wfp-table">
       <thead>
-        <th>#</th>
-        <th>Name</th>
-        <th>Origin</th>
-        <th>Age</th>
+        <tr>
+          <th>#</th>
+          <th>Name</th>
+          <th>Origin</th>
+          <th>Age</th>
+        </tr>
       </thead>
       <tbody>
         <tr>
@@ -322,10 +326,12 @@
 
     <table class="wfp-table--striped">
       <thead>
-        <th>#</th>
-        <th>Name</th>
-        <th>Origin</th>
-        <th>Age</th>
+        <tr>
+          <th>#</th>
+          <th>Name</th>
+          <th>Origin</th>
+          <th>Age</th>
+        </tr>
       </thead>
       <tbody>
         <tr>
@@ -433,7 +439,7 @@
         </ul>
       </div>
       <div class="wfp-u-1 wfp-u-md-1-2 footer--panel right">
-        <img src="img/logos/dark/png/1x/en-full.png" srcset="img/logos/dark/png/1x/en-full.png 1x, img/logos/dark/png/2x/en-full.png 2x" class="footer--logo">
+        <img src="img/logos/dark/png/1x/en-full.png" srcset="img/logos/dark/png/1x/en-full.png 1x, img/logos/dark/png/2x/en-full.png 2x" class="footer--logo" alt="WFP Logo Dark">
       </div>
     </div>
   </div>
@@ -493,7 +499,7 @@
       </div>
       <div class="wfp-u-1 wfp-u-md-1-3 footer--panel right">
         <div class="wfp-logo-wrapper text-right">
-          <img src="img/logos/dark/png/1x/en-full.png" srcset="img/logos/dark/png/1x/en-full.png 1x, img/logos/dark/png/2x/en-full.png 2x" class="footer--logo">
+          <img src="img/logos/dark/png/1x/en-full.png" srcset="img/logos/dark/png/1x/en-full.png 1x, img/logos/dark/png/2x/en-full.png 2x" class="footer--logo" alt="WFP Logo Dark">
         </div>
         <div class="wfp-content-wrapper">
           <ul class="footer--links">

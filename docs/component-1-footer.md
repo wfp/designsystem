@@ -54,7 +54,7 @@ This type of footer forms a simple layout containing social links, WFP logo, a c
         </ul>
       </div>
       <div class="wfp-u-1 wfp-u-md-1-2 footer--panel right">
-        <img src="{{ base }}/img/logos/dark/png/1x/en-full.png" srcset="{{ base }}/img/logos/dark/png/1x/en-full.png 1x, {{ base }}/img/logos/dark/png/2x/en-full.png 2x" class="footer--logo">
+        <img src="{{ base }}/img/logos/dark/png/1x/en-full.png" srcset="{{ base }}/img/logos/dark/png/1x/en-full.png 1x, {{ base }}/img/logos/dark/png/2x/en-full.png 2x" class="footer--logo" alt="WFP Logo">
       </div>
     </div>
   </div>
@@ -90,7 +90,7 @@ This type of footer forms a simple layout containing social links, WFP logo, a c
         </ul>
       </div>
       <div class="wfp-u-1 wfp-u-md-1-2 footer--panel right">
-        <img src="{{ base }}/img/logos/dark/png/1x/en-full.png" srcset="{{ base }}/img/logos/dark/png/1x/en-full.png 1x, {{ base }}/img/logos/dark/png/2x/en-full.png 2x" class="footer--logo">
+        <img src="{{ base }}/img/logos/dark/png/1x/en-full.png" srcset="{{ base }}/img/logos/dark/png/1x/en-full.png 1x, {{ base }}/img/logos/dark/png/2x/en-full.png 2x" class="footer--logo" alt="WFP Logo">
       </div>
     </div>
   </div>
@@ -150,7 +150,7 @@ This flagship footer variant, builds up on top of `wfp-footer--compact` pattern.
       </div>
       <div class="wfp-u-1 wfp-u-md-2-5 footer--panel right">
         <div class="wfp-logo-wrapper">
-          <img src="{{ base }}/img/logos/dark/png/1x/en-standard.png" srcset="{{ base }}/img/logos/dark/png/1x/en-standard.png 1x, {{ base }}/img/logos/dark/png/2x/en-standard.png 2x" class="footer--logo">
+          <img src="{{ base }}/img/logos/dark/png/1x/en-standard.png" srcset="{{ base }}/img/logos/dark/png/1x/en-standard.png 1x, {{ base }}/img/logos/dark/png/2x/en-standard.png 2x" class="footer--logo" alt="WFP Logo">
         </div>
         <div class="wfp-content-wrapper">
           <ul class="footer--links">
@@ -203,7 +203,7 @@ This flagship footer variant, builds up on top of `wfp-footer--compact` pattern.
       </div>
       <div class="wfp-u-1 wfp-u-md-2-5 footer--panel right">
         <div class="wfp-logo-wrapper">
-          <img src="{{ base }}/img/logos/dark/png/1x/en-standard.png" srcset="{{ base }}/img/logos/dark/png/1x/en-standard.png 1x, {{ base }}/img/logos/dark/png/2x/en-standard.png 2x" class="footer--logo">
+          <img src="{{ base }}/img/logos/dark/png/1x/en-standard.png" srcset="{{ base }}/img/logos/dark/png/1x/en-standard.png 1x, {{ base }}/img/logos/dark/png/2x/en-standard.png 2x" class="footer--logo" alt="WFP Logo">
         </div>
         <div class="wfp-content-wrapper">
           <ul class="footer--links">
