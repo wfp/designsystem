@@ -31,10 +31,14 @@
 
 %menu--link {
   display: block;
-  padding: 0.25em 1em;
+  padding: 0.33em 1em;
   line-height: 1;
   color: darken($blue-darker, 5%);
   border-bottom-color: transparent;
+
+  &:visited {
+    color: desaturate(darken($blue-darkest, 5%), 25%);
+  }
 
   &:hover {
     &:after {
@@ -43,11 +47,10 @@
     }
   }
 
-  &.active {
-    &:before {
-      margin-right: 0.25em;
-      content: "›";
-    }
+  &.current {
+    box-shadow: inset 0.25em 0 0 0 darken($blue-darker, 5%);
+    color: $grey-darker;
+    // font-weight: bold;
   }
 }
 
@@ -128,6 +131,11 @@
 .wfp-menu-plain {
   @include menu;
   margin: 1em 0;
+
+  .menu--heading,
+  .menu--link {
+    padding: 0.33em 0;
+  }
 }
 
 .wfp-menu-flat {
