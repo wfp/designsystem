@@ -9,12 +9,8 @@
 
 @mixin icon {
   display: inline-block;
-  width: 24px;
-  height: 24px;
   background-position: center;
   vertical-align: middle;
-  // margin-bottom: 0.25rem;
-  // margin-right: 0.25rem;
 
   &.xsmall {
     width: 16px;
@@ -53,7 +49,7 @@
   height: 24px;
 }
 
-[class*="thema-"] {
+[class*="thematic-"] {
   @include icon;
   width: 64px;
   height: 64px;
