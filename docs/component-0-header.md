@@ -34,7 +34,7 @@ If the vertical space is limited (i.e.: on smaller viewports), you can substitut
       </h1>
     </div>
     <div class="wfp-u-1-3 wfp-u-sm-3-4 header--nav">
-      <button class="header--btn" id="js-example-menu-trigger">Menu</button>
+      <button class="header--toggle" id="js-example-menu-trigger">Menu</button>
       <nav class="header--menu" id="js-example-menu">
         <ul class="menu--group">
           <li class="menu--item"><a href="#" class="menu--link active">Navlink #1</a></li>
@@ -63,7 +63,7 @@ If the vertical space is limited (i.e.: on smaller viewports), you can substitut
       </h1>
     </div>
     <div class="wfp-u-1-3 wfp-u-sm-3-4 header--nav">
-      <button class="header--btn" id="js-example-menu-trigger">Menu</button>
+      <button class="header--toggle" id="js-example-menu-trigger">Menu</button>
       <nav class="header--menu" id="js-example-menu">
         <ul class="menu--group">
           <li class="menu--item"><a href="#" class="menu--link active">Navlink #1</a></li>
@@ -99,7 +99,7 @@ Internal header features a simple navigation, which works on both smaller and bi
       </h1>
     </div>
     <div class="wfp-u-2-5 wfp-u-md-2-3 header--nav">
-      <button class="header--btn" id="js-example-menu-trigger">Menu</button>
+      <button class="header--toggle" id="js-example-menu-trigger">Menu</button>
       <nav class="header--menu" id="js-example-menu">
         <ul class="menu--group">
           <li class="menu--item"><a href="#" class="menu--link active">Navlink #1</a></li>
@@ -121,7 +121,7 @@ Internal header features a simple navigation, which works on both smaller and bi
       </h1>
     </div>
     <div class="wfp-u-2-5 wfp-u-md-2-3 header--nav">
-      <button class="header--btn" id="js-nav-trigger">Menu</button>
+      <button class="header--toggle" id="js-nav-trigger">Menu</button>
       <nav class="header--menu" id="js-nav">
         <ul class="menu--group">
           <li class="menu--item"><a href="#" class="menu--link active">Navlink #1</a></li>

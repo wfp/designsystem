@@ -4,7 +4,7 @@
 // URL: http://matthewmorek.com
 
 .header--btn {
-  -webkit-tap-highlight-color: $black;
+  // -webkit-tap-highlight-color: $black;
   -webkit-touch-callout: none;
   user-select: none;
   border: 1px solid $white;
@@ -49,7 +49,7 @@
     float: right;
     margin-top: 0.66em;
     margin-right: 0.66em;
-    -webkit-tap-highlight-color: $black;
+    // -webkit-tap-highlight-color: $black;
 
     .close-icon {
       margin-right: 0.5em;
