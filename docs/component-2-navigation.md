@@ -177,7 +177,7 @@ _Breadcrumbs_ are a special kind of _segmented control_ component; a simple and 
 ###### Markup
 {% highlight html %}
 <ul class="wfp-breadcrumbs">
-  <li class="breadcrumbs--item"><a href="#" class="breadcrumbs--link home"><span class="icon-home-dark" alt="Home icon"></span><span>Home</span></a></li>
+  <li class="breadcrumbs--item"><a href="#" class="breadcrumbs--link home"><span class="icon-home-dark"></span><span>Home</span></a></li>
   <li class="breadcrumbs--item"><a href="#" class="breadcrumbs--link">Careers</a></li>
   <li class="breadcrumbs--item"><span class="breadcrumbs--last">Internships</span></li>
 </ul>
