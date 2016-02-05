@@ -20,11 +20,11 @@ To see how different form elements work together with our flexible grid system, 
 ###### Preview
 <div class="preview simple wfp-form--stacked">
   <div class="wfp-grid">
-    <div class="wfp-u-1-2 wfp-box--flat">
+    <div class="wfp-u-1 wfp-u-md-1-2 wfp-box--flat">
       <label for="first-name">First name:</label>
       <input type="text" id="first-name" name="first-name">
     </div>
-    <div class="wfp-u-1-2 wfp-box--flat">
+    <div class="wfp-u-1 wfp-u-md-1-2 wfp-box--flat">
       <label for="email">Email address:</label>
       <input type="email" id="email" name="email">
     </div>

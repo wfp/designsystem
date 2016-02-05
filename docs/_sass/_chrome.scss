@@ -312,7 +312,7 @@ figure {
 
 .preview {
   background-color: $grey-lightest;
-  padding: 2em;
+  padding: 1em;
   text-align: center;
   border: 1px solid $grey-lighter;
   margin: 0.5em 0;
@@ -340,6 +340,10 @@ figure {
       max-width: 100%;
     }
   }
+
+  @include media-query($md-screen) {
+    padding: 2em;
+  };
 }
 
 .notice {
