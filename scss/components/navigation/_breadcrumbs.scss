@@ -8,25 +8,43 @@
 
   .breadcrumbs--item {
     @extend %seg-control--item;
-    border-color: $grey-lighter;
+    border-color: darken($grey-lighter, 10%);
 
     &:first-child {
-      border-color: $grey-lighter;
+      border-color: darken($grey-lighter, 10%);
     }
   }
 
   .breadcrumbs--link {
     @extend %seg-control--link;
-    color: $primary;
+    color: darken($primary, 12%);
+
+    &.home {
+      padding-left: 0.25em;
+
+      [class*="icon-"] {
+        margin: 0 0.25em;
+      }
+    }
+
+    &:visited {
+      color: $blue-darkest;
+    }
+
+    &:hover {
+      background-color: inherit;
+      color: $primary;
+    }
   }
 
   .breadcrumbs--last {
     @extend %seg-control--link;
-    color: $grey-light;
+    color: $grey-darker;
     cursor: default;
 
     &:hover {
-      color: $grey-light;
+      background-color: inherit;
+      color: inherit;
     }
   }
 }
@@ -52,7 +70,7 @@
 
     &:hover,
     &:active {
-      color: $primary;
+      color: darken($primary, 12%);
     }
   }
 

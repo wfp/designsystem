@@ -4,21 +4,21 @@
       <h1 class="header--title"><a href="{{ base }}/" class="header--logo">{{ site.title }}</a></h1>
     </div>
     <div class="wfp-u-2-5 wfp-u-md-2-3 header--nav">
-      <button class="header--btn pure-button small" id="js-nav-trigger">Menu</button>
+      <button class="header--btn small" id="js-nav-trigger">Menu</button>
       <div class="main-nav flyout closed">
         <button class="nav-close" id="js-nav-close"><span class="close-icon">&#x2715;</span>Close</button>
         <nav class="wfp-menu-inverse">
         {% for category in site.category-list %}
           <div class="menu--group">
-            <h6 class="menu--heading">{{ category }}</h6>
+            <h2 class="menu--heading">{{ category }}</h2>
             <ul class="menu--wrapper">
             {% for link in site.pages %}
             {% if link.resource == true %}
               {% for cat in link.categories %}
               {% if cat == category %}
               {% assign current = nil %}
-              {% if page.url == link.url %}{% assign current = ' class="current"' %}{% endif %}
-              <li><a class="menu--item" href="{{ base }}{{ link.url }}"{{current}}>{{ link.title }}</a></li>
+              {% if page.url == link.url %}{% assign current = ' current' %}{% endif %}
+              <li><a class="menu--item{{current}}" href="{{ base }}{{ link.url }}">{{ link.title }}</a></li>
               {% endif %}
               {% endfor %}
             {% endif %}

@@ -10,7 +10,7 @@ $color-gplus: #dc4e41;
 
 @mixin button($type: default, $color: $grey-dark) {
   display: inline-block;
-  padding: 0.5rem 1rem;
+  padding: 0.5em 1em;
   font-family: inherit;
   font-weight: bold;
   font-size: 100%;
@@ -22,46 +22,66 @@ $color-gplus: #dc4e41;
   transition-timing-function: ease-in;
   vertical-align: baseline;
 
-  @if $type == default {
-    color: $grey-dark;
-    background-color: $grey-lightest;
+  // Active Button
+  &.active,
+  &:active,
+  &.active:hover,
+  &.active:active,
+  &.active:focus {
+    border-color: transparentize($black, 0.75);
+    box-shadow: transparentize($black, 0.9) 0 0 8px inset;
+  }
 
-    &:hover,
-    &:focus {
-      border-color: transparentize($black, 0.75);
-      color: inherit;
+  @if $type == default {
+    color: darken($primary, 12%);
+    background-color: $white;
+    border-color: darken($primary, 12%);
+
+    &:hover {
+      background-color: $blue-lightest;
+      border-color: darken($primary, 20%);
+      color: darken($primary, 20%);
     }
 
-    &:active {
-      background-color: darken($grey-lighter, 5%);
+    &.active,
+    &:active,
+    &.active:hover,
+    &.active:active,
+    &.active:focus {
+      border-color: darken($blue-darker, 20%);
+      color: darken($blue-darker, 20%);
     }
   } @else if $type == primary {
     color: $white;
-    background-color: $primary;
+    background-color: darken($primary, 12%);
 
+    &:hover,
     &:active {
-      background-color: darken($primary, 5%);
+      background-color: darken($primary, 20%);
     }
   } @else if $type == negative {
-    color: lighten($red, 35%);
-    background-color: $red;
+    color: $white;
+    background-color: desaturate(darken($red, 15%), 40%);
 
+    &:hover,
     &:active {
-      background-color: darken($red, 5%);
+      background-color: desaturate(darken($red, 20%), 40%);
     }
   } @else if $type == warning {
-    color: darken($orange, 40%);
+    color: darken($orange, 50%);
     background-color: $orange;
 
+    &:hover,
     &:active {
-      background-color: darken($orange, 5%);
+      background-color: darken($orange, 10%);
     }
   } @else if $type == positive {
-    color: lighten($green, 60%);
-    background-color: $green;
+    color: $white;
+    background-color: darken($green, 7%);
 
+    &:hover,
     &:active {
-      background-color: darken($green, 5%);
+      background-color: darken($green, 10%);
     }
   } @else if $type == social {
     color: $color;
@@ -85,17 +105,6 @@ $color-gplus: #dc4e41;
     }
   }
 
-
-  // Active Button
-  &.active,
-  &:active,
-  &.active:hover,
-  &.active:active,
-  &.active:focus {
-    border-color: transparentize($black, 0.75);
-    box-shadow: transparentize($black, 0.85) 0 0 8px inset;
-  }
-
   // Disabled Button
   &[disabled],
   &.disabled,
@@ -103,7 +112,7 @@ $color-gplus: #dc4e41;
   &.disabled:focus,
   &.disabled:active {
     background-image: none;
-    opacity: 0.4;
+    opacity: 0.3;
     cursor: not-allowed;
     box-shadow: none;
     border: 1px solid transparentize($black, 0.85);
@@ -111,26 +120,26 @@ $color-gplus: #dc4e41;
 
   // Extra sizes and modes for buttons
   &.xsmall {
-    font-size: 0.875rem;
+    font-size: 0.875em;
     font-weight: normal;
-    padding: 0.5rem 0.75rem;
+    padding: 0.5em 0.75em;
     line-height: 1;
   }
 
   &.small {
-    font-size: 1rem;
+    font-size: 1em;
     font-weight: normal;
-    padding: 0.33rem 0.75rem;
+    padding: 0.33em 0.75em;
   }
 
   &.large {
-    font-size: 1.125rem;
-    padding: 0.66rem 1rem;
+    font-size: 1.125em;
+    padding: 0.66em 1em;
   }
 
   &.xlarge {
-    font-size: 1.25rem;
-    padding: 0.75rem 1.25rem;
+    font-size: 1.25em;
+    padding: 0.75em 1.25em;
   }
 
   &.block {
@@ -143,8 +152,8 @@ $color-gplus: #dc4e41;
     box-shadow: none;
   }
 
-  & + [class*="wfp-btn"] {
-    margin: 0 0.5rem;
+  &[class*="wfp-btn"]:nth-of-type(1n+0) {
+    margin: 0 0.5em;
 
     &:first-child {
       margin-left: 0;

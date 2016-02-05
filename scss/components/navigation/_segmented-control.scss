@@ -10,14 +10,14 @@
 %seg-control {
   @extend %no-list;
   display: inline-block;
-  height: 32px;
+  height: 2em;
   padding: 0;
   text-align: center;
 }
 
 %seg-control--item {
   display: table-cell;
-  border: 1px solid $primary;
+  border: 1px solid darken($primary, 12%);
   border-left: 0;
   position: relative;
   z-index: 1;
@@ -25,7 +25,7 @@
 
   &:first-child {
     border-radius: 2px 0 0 2px;
-    border-left: 1px solid $primary;
+    border-left: 1px solid darken($primary, 12%);
   }
 
   &:last-child {
@@ -34,19 +34,25 @@
 }
 
 %seg-control--link {
-  padding: 0.35rem 0.75rem;
+  padding: 0.33em 0.75em;
   width: auto;
   border: 0;
-  color: $primary;
-  font-size: 0.875rem;
+  color: darken($primary, 12%);
+  font-size: 0.875em;
+  font-weight: bold;
   display: block;
 
-  &:hover {
-    color: $grey;
+  [class*="icon-"] {
+    width: 16px;
+    height: 16px;
+    background-size: 16px;
+    vertical-align: text-bottom;
+    margin: 0 0.25em;
   }
 
-  &.active {
-    background-color: $primary;
+  &.active,
+  &:hover {
+    background-color: darken($primary, 12%);
     color: $white;
   }
 }

@@ -25,18 +25,19 @@ You can check [support for `base64`](http://caniuse.com/#feat=atob-btoa) and [SV
 <link rel="stylesheet" href="bower_components/wfp-ui/dist/assets/icons/thematic/thematic-icons.fallback.css">
 {% endhighlight %}
 
-Add thematic icons to your website using `<i>` element with a class `thematic-{icon-name}`, where `{icon-name}` means a corresponding name of an icon, listed in a preview below (or in the package).
+Add thematic icons to your website using `<span>` element with a class `thematic-{icon-name}`, where `{icon-name}` means a corresponding name of an icon, listed in a preview below (or in the package).
 
 ###### Example
 {% highlight html %}
-<i class="thematic-affected-population-pos"></i>
-<i class="thematic-affected-population-neg"></i>
+<span class="thematic-affected-population-pos"></span>
+<span class="thematic-affected-population-neg"></span>
 {% endhighlight %}
 
 ###### Preview
-<i class="thematic-affected-population-pos"></i><i class="thematic-affected-population-neg"></i>
+<span class="thematic-affected-population-pos"></span><span class="thematic-affected-population-neg"></span>
 
 <div class="notice">
+  <h2 class="title">Notice</h2>
   <p>Need a Thematic icon not listed here? Send us a request via <a href="mailto:WFP.PUBLICATIONS@wfp.org?subject=Thematic%20icon%20request">wfp.publications@wfp.org</a>.</p>
 </div>
 

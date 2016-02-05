@@ -15,6 +15,6 @@ The guidelines contained in this guide are to be applied to all WFP digital prod
 The Guide is a living document created to meet the needs of WFP’s front-end developers and designers. If there is a _Component_ or _Pattern_ that you need, or you have any other feedback, question or comment please contact [wfp.publications@wfp.org](mailto:WFP.PUBLICATIONS@wfp.org?subject=UI%20Style%20Guide).
 
 <div class="notice">
-  <h6 class="title">Notice</h6>
+  <h2 class="title">Notice</h2>
   <p>Resources should not be spent trying to modify legacy systems, 3rd party applications or other user interfaces which cannot easily be customised.</p>
 </div>

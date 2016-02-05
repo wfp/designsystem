@@ -31,7 +31,7 @@ module.exports = function(grunt) {
             sm: 'screen and (min-width: 36.5em)', //584px
             md: 'screen and (min-width: 48em)', //768px
             lg: 'screen and (min-width: 64em)', //1024px
-            xl: 'screen and (min-width: 75em)'  //1200px
+            xl: 'screen and (min-width: 80em)'  //1200px
           },
           selectorPrefix: '.wfp-u-'
         }
@@ -91,7 +91,10 @@ module.exports = function(grunt) {
       },
       dist: {
         options: {
-          processors: [ require('cssnano')() ],
+          processors: [
+            require('autoprefixer')({ browsers: ['last 2 version'] }),
+            require('cssnano')()
+          ],
           map: false
         },
         src: 'dist/css/*.css'
@@ -104,7 +107,10 @@ module.exports = function(grunt) {
       },
       docsDist: {
         options: {
-          processors: [ require('cssnano')() ],
+          processors: [
+            require('autoprefixer')({ browsers: ['last 2 version'] }),
+            require('cssnano')()
+          ],
           map: false
         },
         src: 'docs/css/*.css'
@@ -255,7 +261,7 @@ module.exports = function(grunt) {
   // Build Grunticon Icons
   grunt.registerTask('gen-icons', ['clean:grunticon', 'grunticon']);
   // Build WFP UI Docs locally
-  grunt.registerTask('docs', ['sasslint', 'sass:docs', 'postcss:docs', 'jekyll']);
+  grunt.registerTask('docs', ['sass:docs', 'postcss:docs', 'jekyll']);
   // Build WFP UI Docs
   grunt.registerTask('docs-build', ['sasslint', 'sass:docs', 'postcss:docs', 'jekyll']);
   // Build dist-ready WFP UI Docs

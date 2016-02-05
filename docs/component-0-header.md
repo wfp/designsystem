@@ -19,7 +19,7 @@ Public pages should always use a logo with a caption "World Food Programme". For
 If the vertical space is limited (i.e.: on smaller viewports), you can substitute the logo with a "WFP.org" caption (using strictly white text `#ffffff` on a blue background `#2A93FC`), as per the official guidelines. Refer to the examples below.
 
 <div class="notice">
-  <h6 class="title">Subcomponents</h6>
+  <h2 class="title">Subcomponents</h2>
   <p>When implementing mastheads you can make use of <a href="#subcomponents">subcomponents</a>, such as <code>header--search</code>, or <code>header--btn</code>, to add call to actions, or a search input.</p>
 </div>
 
@@ -34,7 +34,7 @@ If the vertical space is limited (i.e.: on smaller viewports), you can substitut
       </h1>
     </div>
     <div class="wfp-u-1-3 wfp-u-sm-3-4 header--nav">
-      <button class="header--toggle pure-button small" id="js-example-menu-trigger">Menu</button>
+      <button class="header--toggle" id="js-example-menu-trigger">Menu</button>
       <nav class="header--menu" id="js-example-menu">
         <ul class="menu--group">
           <li class="menu--item"><a href="#" class="menu--link active">Navlink #1</a></li>
@@ -63,7 +63,7 @@ If the vertical space is limited (i.e.: on smaller viewports), you can substitut
       </h1>
     </div>
     <div class="wfp-u-1-3 wfp-u-sm-3-4 header--nav">
-      <button class="header--toggle pure-button small" id="js-example-menu-trigger">Menu</button>
+      <button class="header--toggle" id="js-example-menu-trigger">Menu</button>
       <nav class="header--menu" id="js-example-menu">
         <ul class="menu--group">
           <li class="menu--item"><a href="#" class="menu--link active">Navlink #1</a></li>
@@ -99,7 +99,7 @@ Internal header features a simple navigation, which works on both smaller and bi
       </h1>
     </div>
     <div class="wfp-u-2-5 wfp-u-md-2-3 header--nav">
-      <button class="header--toggle pure-button small" id="js-example-menu-trigger">Menu</button>
+      <button class="header--toggle" id="js-example-menu-trigger">Menu</button>
       <nav class="header--menu" id="js-example-menu">
         <ul class="menu--group">
           <li class="menu--item"><a href="#" class="menu--link active">Navlink #1</a></li>
@@ -121,7 +121,7 @@ Internal header features a simple navigation, which works on both smaller and bi
       </h1>
     </div>
     <div class="wfp-u-2-5 wfp-u-md-2-3 header--nav">
-      <button class="header--toggle pure-button small" id="js-nav-trigger">Menu</button>
+      <button class="header--toggle" id="js-nav-trigger">Menu</button>
       <nav class="header--menu" id="js-nav">
         <ul class="menu--group">
           <li class="menu--item"><a href="#" class="menu--link active">Navlink #1</a></li>
@@ -135,7 +135,7 @@ Internal header features a simple navigation, which works on both smaller and bi
 {% endhighlight %}
 
 <div class="notice">
-  <h6 class="title">Header Position</h6>
+  <h2 class="title">Header Position</h2>
   <p>You can also set header component to stay fixed to the top of your page, by adding <code>wfp-header-spacer--narrow</code> class to your <code>body</code> tag (for extra spacing), and class <code>fixed</code> to <code>header-int</code> element.</p>
 </div>
 
@@ -157,7 +157,7 @@ To ensure the navigation works correctly, download and add the following Javascr
 ### Subcomponents
 In addition to default navigation bundled with each header variant, you can make use of special subcomponents, to add more functionality.
 
-#### `header--btn`
+###### `header--btn`
 Designed specifically for use with our mastheads, as far as contrast and accessibility goes. It's a general-purpose element, so it can be used for just about anything.
 
 {% highlight html %}
@@ -166,7 +166,7 @@ Designed specifically for use with our mastheads, as far as contrast and accessi
 </div>
 {% endhighlight %}
 
-#### `header--input`
+###### `header--input`
 General purpose alphanumerical input, adjusted for use with our header. Adjust input type attribute based on the intended use of your element.
 
 {% highlight html %}
@@ -175,7 +175,7 @@ General purpose alphanumerical input, adjusted for use with our header. Adjust i
 </div>
 {% endhighlight %}
 
-#### `header--search`
+###### `header--search`
 Text input designated for entering search queries, adjusted for use with our header.
 
 {% highlight html %}

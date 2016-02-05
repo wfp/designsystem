@@ -4,14 +4,14 @@
 // URL: http://matthewmorek.com
 
 .header--btn {
-  -webkit-tap-highlight-color: $black;
+  // -webkit-tap-highlight-color: $black;
   -webkit-touch-callout: none;
   user-select: none;
   border: 1px solid $white;
   background-color: transparent;
   color: $white;
   border-radius: 3px;
-  padding: 0.25rem 0.66rem;
+  padding: 0.25em 0.66em;
 }
 
 .flyout {
@@ -21,7 +21,7 @@
   max-height: 100%;
   max-width: 320px;
   padding: 0;
-  padding-bottom: 2rem;
+  padding-bottom: 2em;
   z-index: 10;
   text-align: left;
   box-shadow: rgba($black, 0.3) 0 1px 16px;
@@ -36,22 +36,34 @@
 
   .nav-close {
     display: block;
-    position: absolute;
-    top: 0.5rem;
-    right: 0.5rem;
-    background-color: transparent;
+    background-color: $grey-darker;
     border: 1px solid $grey-lighter;
     border-radius: 3px;
     color: $white;
-    font-size: 0.875rem;
+    font-size: 0.875em;
+    font-weight: bold;
     font-family: $sans-serif-stack;
     text-transform: uppercase;
-    line-height: 1.562rem;
-    padding: 0.125rem 0.5rem;
-    -webkit-tap-highlight-color: $black;
+    line-height: 1em;
+    padding: 0.5em;
+    float: right;
+    margin-top: 0.66em;
+    margin-right: 0.66em;
+    // -webkit-tap-highlight-color: $black;
 
     .close-icon {
-      margin-right: 0.5rem;
+      margin-right: 0.5em;
+      background-color: $grey-darker;
+    }
+
+    &:hover {
+      background-color: $white;
+      border-color: $white;
+      color: $grey-darker;
+
+      .close-icon {
+        background-color: $white;
+      }
     }
   }
 

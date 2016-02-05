@@ -1,5 +1,5 @@
 /*!
- * WFP UI Bootstrap Theme v0.2.0
+ * WFP UI Bootstrap Theme v0.3.0
  * Copyright 2015 Matthew Morek
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
@@ -159,9 +159,9 @@ select {
 // --------------------------------------------------
 %btn {
   padding: 0.5em 1em;
-  color: $grey;
+  color: $grey-dark;
   background-image: none;
-  background-color: $grey-light;
+  background-color: $grey-lightest;
   font-family: inherit;
   font-weight: bold;
   font-size: 100%;
@@ -188,14 +188,14 @@ select {
   }
 
   // Active Button
-  &-active,
+  &.btn-active,
   &:active,
   &:active:focus,
   &:focus,
-  &-active:hover,
-  &-active:active,
-  &-active:focus,
-  &-active:active:focus {
+  &.btn-active:hover,
+  &.btn-active:active,
+  &.btn-active:focus,
+  &.btn-active:active:focus {
     background-color: darken($grey-light, 5%);
     color: darken($grey, 5%);
     border-color: rgba($black, 0.25);
@@ -204,11 +204,11 @@ select {
 
   // Disabled Button
   &[disabled],
-  &-disabled,
-  &-disabled:hover,
-  &-disabled:focus,
-  &-disabled:active,
-  &-disabled:active:focus {
+  &.btn-disabled,
+  &.btn-disabled:hover,
+  &.btn-disabled:focus,
+  &.btn-disabled:active,
+  &.btn-disabled:active:focus {
     background-image: none;
     opacity: 0.4;
     cursor: not-allowed;
@@ -216,7 +216,7 @@ select {
     border: 1px solid rgba($black, 0.15);
   }
 
-  &-primary {
+  &.btn-primary {
     background-color: $primary;
     color: $white;
 
@@ -238,7 +238,7 @@ select {
     }
   }
 
-  &-warning {
+  &.btn-warning {
     background-color: $orange;
     color: darken($orange, 40%);
 
@@ -256,25 +256,25 @@ select {
     }
   }
 
-  &-success {
+  &.btn-success {
     background-color: $green;
-    color: darken($green, 35%);
+    color: $white;
 
     &:active,
     &:focus,
     &:active:focus {
-      color: darken($green, 35%);
+      color: $white;
       background-color: darken($green, 5%);
       box-shadow: rgba($black, 0.25) 0 0 16px inset;
     }
 
     &:hover {
-      color: darken($green, 35%);
+      color: $white;
       background-color: darken($green, 5%);
     }
   }
 
-  &-danger {
+  &.btn-danger {
     background-color: $red;
     color: lighten($red, 35%);
 
@@ -293,25 +293,27 @@ select {
   }
 
   // Extra sizes and modes for buttons
-  &-xs {
+  &.btn-xs {
     font-size: 0.875em;
     font-weight: normal;
     padding: 0.5em 0.75em;
     line-height: 1;
   }
 
-  &-sm {
+  &.btn-sm {
     font-size: 1em;
     font-weight: normal;
-    padding: 0.25em 0.75em;
+    padding: 0.33em 0.75em;
   }
 
-  &-lg {
+  &.btn-lg {
     font-size: 1.125em;
+    padding: 0.66em 1em;
   }
 
-  &-xl {
+  &.btn-xl {
     font-size: 1.25em;
+    padding: 0.75em 1.25em;
   }
 }
 
@@ -408,20 +410,23 @@ a {
 .label {
   border-radius: 1px;
 
-  &-default { background-color: $grey; }
-  &-primary { background-color: $primary; }
-  &-success { background-color: darken($green, 20%); }
-  &-warning { background-color: darken($orange, 10%); }
-  &-danger { background-color: darken($red, 5%); }
+  &.label-default {
+    background-color: $grey;
+    color: $white;
+  }
+  &.label-primary { background-color: $primary; }
+  &.label-success { background-color: darken($green, 10%); }
+  &.label-warning { background-color: desaturate(darken($orange, 10%), 10%); }
+  &.label-danger { background-color: darken($red, 5%); }
 
-  &-info {
+  &.label-info {
     background-color: $grey-contrast;
-    color: $grey;
+    color: $grey-dark;
   }
 }
 
 .badge {
-  background-color: $grey;
+  background-color: $grey-light;
   vertical-align: text-bottom;
 }
 
@@ -648,13 +653,13 @@ a {
 }
 
 // Apply the mixin to the alerts
-.alert-success    { background-color: lighten($green, 15%); }
+.alert-success    { background-color: desaturate(lighten($green, 40%), 50%); }
 .alert-warning    { background-color: lighten($orange, 15%); }
 .alert-danger     { background-color: lighten($red, 15%); }
 
 .alert-info {
   background-color: $grey-lighter;
-  color: $grey;
+  color: $grey-dark;
 }
 
 //
@@ -663,16 +668,16 @@ a {
 
 // Give the progress background some depth
 .progress {
-  background-color: $grey-lighter;
+  background-color: $grey-lightest;
   box-shadow: rgba($black, 0.15) 0 1px 2px 0 inset;
   border-radius: 1px;
 }
 
 // Apply the mixin to the progress bars
 .progress-bar            { background-color: $primary; }
-.progress-bar-success    { background-color: darken($green, 20%); }
-.progress-bar-info       { background-color: $grey-light; }
-.progress-bar-warning    { background-color: darken($orange, 10%); }
+.progress-bar-success    { background-color: $green; }
+.progress-bar-info       { background-color: $grey-lighter; }
+.progress-bar-warning    { background-color: $orange; }
 .progress-bar-danger     { background-color: $red; }
 
 // Reset the striped class because our mixins don't do multiple gradients and
@@ -703,7 +708,7 @@ a {
     }
 
     &:hover {
-      background-color: $grey-lighter;
+      background-color: $grey-lightest;
     }
 
     &.active,
@@ -761,14 +766,14 @@ a {
 
 .panel-success > .panel-heading {
   @include wfp-border-color($green);
-  background-color: lighten($green, 25%);
-  color: darken($green, 35%);
+  background-color: desaturate(lighten($green, 25%), 50%);
+  color: desaturate(darken($green, 25%), 50%);
 }
 
 .panel-info > .panel-heading {
   @include wfp-border-color($grey-light);
-  background-color: $grey-light;
-  color: darken($grey-light, 35%);
+  background-color: $grey-lighter;
+  color: $grey-dark;
 }
 
 .panel-warning > .panel-heading {
@@ -789,8 +794,8 @@ a {
 // --------------------------------------------------
 
 .well {
-  background-color: $grey-lighter;
-  border-color: darken($well-bg, 10%);
+  background-color: $grey-lightest;
+  border-color: $grey-lighter;
   border-radius: 1px;
   box-shadow: inset 0 1px 3px rgba($black, .05), 0 1px 0 rgba($white, .1);
 

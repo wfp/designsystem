@@ -27,26 +27,30 @@ You can check [support for `base64`](http://caniuse.com/#feat=atob-btoa) and [SV
 <link rel="stylesheet" href="bower_components/wfp-ui/dist/assets/icons/ui/ui-icons.fallback.css">
 {% endhighlight %}
 
-Add UI icons to your interfaces using `<i>` element with a class `icon-{icon-name}`, where `{icon-name}` means a corresponding name of the icon listed in a preview below (or in the package).
+Add UI icons to your interfaces using `<span>` element with a class `icon-{icon-name}`, where `{icon-name}` means a corresponding name of the icon listed in a preview below (or in the package).
 
 {% highlight html %}
-<i class="icon-account-circle-dark"></i>
+<span class="icon-account-circle-dark"></span>
 {% endhighlight %}
 
-UI icons can be used alongside other UI elements; within menus, buttons, etc. Here's an example of bundling UI icons with menus.
+<div class="notice">
+  <h3 class="title">Notice</h3>
+  <p>UI icons can be used alongside other UI elements; within menus, buttons, etc, as long as there is a descriptive label next to it. <strong>Do not use icons on their own on actionable UI elements, such as links or buttons.</strong></p>
+</div>
+
 
 ###### Preview
 <nav class="wfp-menu">
   <h6 class="menu--heading">Navigation</h6>
   <ul class="menu--wrapper">
     <li class="menu--item">
-      <a href="#" class="menu--link"><i class="icon-email-dark"></i> Inbox</a>
+      <a href="#" class="menu--link"><span class="icon-email-dark"></span> Inbox</a>
     </li>
     <li class="menu--item">
-      <a href="#" class="menu--link"><i class="icon-account-circle-dark"></i> Account</a>
+      <a href="#" class="menu--link"><span class="icon-account-circle-dark"></span> Account</a>
     </li>
     <li class="menu--item">
-      <a href="#" class="menu--link"><i class="icon-exit-to-app-dark"></i> Sign Out</a>
+      <a href="#" class="menu--link"><span class="icon-exit-to-app-dark"></span> Sign Out</a>
     </li>
   </ul>
 </nav>
@@ -109,7 +113,7 @@ By default, all UI icons are displayed in `24 x 24px` size. You can easily adjus
 ### Available Icons
 
 <div class="notice">
-  <h6 class="title">Notice</h6>
+  <h2 class="title">Notice</h2>
   <p>Need a User Interface icon not listed here? Send us a request via <a href="mailto:WFP.PUBLICATIONS@wfp.org?subject=UI%20icon%20request">wfp.publications@wfp.org</a>.</p>
 </div>
 
