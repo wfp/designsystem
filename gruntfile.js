@@ -91,7 +91,10 @@ module.exports = function(grunt) {
       },
       dist: {
         options: {
-          processors: [ require('cssnano')() ],
+          processors: [
+            require('autoprefixer')({ browsers: ['last 2 version'] }),
+            require('cssnano')()
+          ],
           map: false
         },
         src: 'dist/css/*.css'
@@ -104,7 +107,10 @@ module.exports = function(grunt) {
       },
       docsDist: {
         options: {
-          processors: [ require('cssnano')() ],
+          processors: [
+            require('autoprefixer')({ browsers: ['last 2 version'] }),
+            require('cssnano')()
+          ],
           map: false
         },
         src: 'docs/css/*.css'
