@@ -132,6 +132,7 @@
 
 .wfp-menu-plain {
   @include menu;
+  padding: 0 1em;
   margin: 1em 0;
 
   .menu--heading,
@@ -153,6 +154,10 @@
       border-bottom-color: $orange;
     }
   }
+
+  @include media-query($md-screen) {
+    padding: 0;
+  };
 }
 
 .wfp-menu-flat {
