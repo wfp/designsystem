@@ -96,3 +96,6 @@ Fonts files located in `fonts` directory contain two type families:
 - [*Aleo*](http://www.fontfabric.com/aleo-free-font/) designed by Alessio Laiso.
 
 Both type families are licensed under [SIL Open Font License 1.1](http://scripts.sil.org/OFL).
+
+#### Icons
+UI icons have been sourced from [Google Material Design Icons](https://github.com/google/material-design-icons), which are licensed under the [Creative Common Attribution 4.0 International License (CC-BY 4.0)](http://creativecommons.org/licenses/by/4.0/).
