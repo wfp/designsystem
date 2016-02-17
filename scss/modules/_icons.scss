@@ -43,13 +43,13 @@
   }
 }
 
-[class*="icon-"] {
+[class^="icon-"] {
   @include icon;
   width: 24px;
   height: 24px;
 }
 
-[class*="thematic-"] {
+[class^="thematic-"] {
   @include icon;
   width: 64px;
   height: 64px;
