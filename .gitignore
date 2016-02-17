@@ -4,3 +4,4 @@ dist/docs
 *.map
 docs/css
 icons/ui/dist
+docs/js/lib/responsive-nav.js
