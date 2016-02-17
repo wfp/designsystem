@@ -19,6 +19,10 @@ figure {
 
   &.highlight {
     font-size: 0.875em;
+
+    pre {
+      max-height: 24em;
+    }
   }
 }
 

@@ -17,19 +17,12 @@
 
     {% include footer.html %}
 
-    <script src="{{ base }}/js/lib/jquery.js"></script>
-    <script src="{{ base }}/js/lib/responsive-nav.js"></script>
-    <script src="{{ base }}/js/plugins.js"></script>
-    <script src="{{ base }}/js/main.js"></script>
-    {% if page.path == 'component-1-header.md' %}
-    <script>
-      var navExample = responsiveNav('#js-example-menu', {
-        customToggle: "js-example-menu-trigger",
-        navClass: "header--menu",
-        openPos: "absolute",
-        closedPos: "static"
-      });
-    </script>
+    <script src="{{ base }}/js/lib/jquery.js" defer></script>
+    <script src="{{ base }}/js/lib/responsive-nav.js" defer></script>
+    <script src="{{ base }}/js/plugins.js" defer></script>
+    <script src="{{ base }}/js/main.js" defer></script>
+    {% if page.path == 'component-0-header.md' %}
+    <script src="{{ base }}/js/ex-header.js" defer></script>
     {% endif %}
   </body>
 </html>

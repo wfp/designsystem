@@ -82,6 +82,10 @@
   .footer--label {
     @extend %footer--label;
   }
+
+  .footer--links {
+    @extend %footer--links;
+  }
 }
 
 @mixin footer-compact {

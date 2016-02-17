@@ -42,10 +42,28 @@ To see how different form elements work together with our flexible grid system, 
   <div class="wfp-form--group">
     <label for="message">Your message:</label>
     <textarea name="message" id="message"></textarea>
-    <label class="checkbox" for="sample-1">
-      <input type="checkbox" id="sample-1">I would like to be contacted, if necessary.
-    </label>
   </div>
+  <div class="wfp-form--group">
+    <div class="wfp-checkbox">
+      <input type="checkbox" id="sample-1">
+      <label for="sample-1">I would like to be contacted, if necessary.</label>
+    </div>
+  </div>
+  <fieldset class="wfp-form--group">
+    <legend>Please select preferred contact method:</legend>
+    <div class="wfp-radio">
+      <input type="radio" id="sample-2" name="radio-grp" checked>
+      <label for="sample-2">by email</label>
+    </div>
+    <div class="wfp-radio">
+      <input type="radio" id="sample-3" name="radio-grp">
+      <label for="sample-3">by fax (if you still have one)</label>
+    </div>
+    <div class="wfp-radio">
+      <input type="radio" id="sample-4" name="radio-grp">
+      <label for="sample-4">by pigeon (may take a few days to reach you)</label>
+    </div>
+  </fieldset>
   <div class="wfp-form--actions">
     <button class="wfp-btn--primary" type="submit">Send message</button>
     <button class="wfp-btn">Cancel</button>
@@ -76,10 +94,28 @@ To see how different form elements work together with our flexible grid system, 
   <div class="wfp-form--group">
     <label for="message">Your message:</label>
     <textarea name="message" id="message"></textarea>
-    <label class="checkbox" for="sample-1">
-      <input type="checkbox" id="sample-1">I would like to be contacted, if necessary.
-    </label>
   </div>
+  <div class="wfp-form--group">
+    <div class="wfp-checkbox">
+      <input type="checkbox" id="sample-1">
+      <label for="sample-1">I would like to be contacted, if necessary.</label>
+    </div>
+  </div>
+  <fieldset class="wfp-form--group">
+    <legend>Please select preferred contact method:</legend>
+    <div class="wfp-radio">
+      <input type="radio" id="sample-2" name="radio-grp" checked>
+      <label for="sample-2">by email</label>
+    </div>
+    <div class="wfp-radio">
+      <input type="radio" id="sample-3" name="radio-grp">
+      <label for="sample-3">by fax (if you still have one)</label>
+    </div>
+    <div class="wfp-radio">
+      <input type="radio" id="sample-4" name="radio-grp">
+      <label for="sample-4">by pigeon (may take a few days to reach you)</label>
+    </div>
+  </fieldset>
   <div class="wfp-form--actions">
     <button class="wfp-btn--primary" type="submit">Send message</button>
     <button class="wfp-btn">Cancel</button>

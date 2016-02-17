@@ -19,7 +19,11 @@ Not every footer needs to be extensive. Sometimes a very simple footer is all yo
       <h3 class="footer--label">{{ site.time | date: '%Y' }} &copy; World Food Programme</h3>
     </div>
     <div class="wfp-u-1 wfp-u-md-1-3 footer--panel right">
-      <h3 class="footer--label">WFP UI &amp; UX</h3>
+      <ul class="footer--links">
+        <li class="link"><a href="#">Donate</a></li>
+        <li class="link"><a href="#">Privacy</a></li>
+        <li class="link"><a href="#">Terms of Use</a></li>
+      </ul>
     </div>
   </div>
 </footer>
@@ -32,7 +36,11 @@ Not every footer needs to be extensive. Sometimes a very simple footer is all yo
       <h3 class="footer--label">{{ site.time | date: '%Y' }} &copy; World Food Programme</h3>
     </div>
     <div class="wfp-u-1 wfp-u-md-1-3 footer--panel right">
-      <h3 class="footer--label">WFP UI &amp; UX</h3>
+      <ul class="footer--links">
+        <li class="link"><a href="#">Donate</a></li>
+        <li class="link"><a href="#">Privacy</a></li>
+        <li class="link"><a href="#">Terms of Use</a></li>
+      </ul>
     </div>
   </div>
 </footer>

@@ -11,6 +11,94 @@ The purpose of this project is to create a unified toolkit that could be used by
 
 These components and patterns follow industry-standard accessibility guidelines for websites and web applications, and are maintained by WFP Communications Division (WFP COM).
 
+## Directory Structure
+We bundle some static assets with _WFP UI_, and to help you navigate the directory structure both, locally and on CDN, here is how the directory structure for assets looks like:
+
+```
+dist
+├── assets
+│   ├── favicons
+│   │   ├── 192x192.png
+│   │   ├── apple-touch-icon-120x120-precomposed.png
+│   │   ├── apple-touch-icon-152-precomposed.png
+│   │   ├── apple-touch-icon-180-precomposed.png
+│   │   ├── apple-touch-icon-76-precomposed.png
+│   │   └── favicon.ico
+│   ├── fonts
+│   │   ├── aleo
+│   │   │   ├── aleo-bold.eot
+│   │   │   ├── aleo-bold.ttf
+│   │   │   ├── aleo-bold.woff
+│   │   │   ├── aleo-bold.woff2
+│   │   │   ├── aleo-bolditalic.eot
+│   │   │   ├── aleo-bolditalic.ttf
+│   │   │   ├── aleo-bolditalic.woff
+│   │   │   ├── aleo-bolditalic.woff2
+│   │   │   ├── aleo-italic.eot
+│   │   │   ├── aleo-italic.ttf
+│   │   │   ├── aleo-italic.woff
+│   │   │   ├── aleo-italic.woff2
+│   │   │   ├── aleo-regular.eot
+│   │   │   ├── aleo-regular.ttf
+│   │   │   ├── aleo-regular.woff
+│   │   │   ├── aleo-regular.woff2
+│   │   │   └── aleo.css
+│   │   └── lato
+│   │       ├── lato-black.eot
+│   │       ├── lato-black.ttf
+│   │       ├── lato-black.woff
+│   │       ├── lato-black.woff2
+│   │       ├── lato-blackitalic.eot
+│   │       ├── lato-blackitalic.ttf
+│   │       ├── lato-blackitalic.woff
+│   │       ├── lato-blackitalic.woff2
+│   │       ├── lato-bold.eot
+│   │       ├── lato-bold.ttf
+│   │       ├── lato-bold.woff
+│   │       ├── lato-bold.woff2
+│   │       ├── lato-bolditalic.eot
+│   │       ├── lato-bolditalic.ttf
+│   │       ├── lato-bolditalic.woff
+│   │       ├── lato-bolditalic.woff2
+│   │       ├── lato-italic.eot
+│   │       ├── lato-italic.ttf
+│   │       ├── lato-italic.woff
+│   │       ├── lato-italic.woff2
+│   │       ├── lato-regular.eot
+│   │       ├── lato-regular.ttf
+│   │       ├── lato-regular.woff
+│   │       ├── lato-regular.woff2
+│   │       └── lato.css
+│   ├── icons
+│   │   ├── thematic
+│   │   │   ├── png
+│   │   │   ├── grunticon.loader.js
+│   │   │   ├── preview.html
+│   │   │   ├── thematic-icons.fallback.css
+│   │   │   ├── thematic-icons.png.css
+│   │   │   └── thematic-icons.svg.css
+│   │   └── ui
+│   │       ├── png
+│   │       ├── grunticon.loader.js
+│   │       ├── preview.html
+│   │       ├── ui-icons.fallback.css
+│   │       ├── ui-icons.png.css
+│   │       └── ui-icons.svg.css
+│   └── logos
+│       ├── dark
+│       │   ├── png
+│       │   └── svg
+│       └── light
+│           ├── png
+│           └── svg
+├── css
+│   ├── bootstrap-theme.css
+│   ├── wfpui+grid.css
+│   └── wfpui.css
+└── js
+    └── responsive-nav.min.js
+```
+
 ## Getting Started
 WFP UI provides a complete set of tool to help you either quickly tap into the library of user interface components and patterns available in this repo, by extending your project via Bower package.
 
@@ -68,3 +156,6 @@ Fonts files located in `fonts` directory contain two type families:
 - [*Aleo*](http://www.fontfabric.com/aleo-free-font/) designed by Alessio Laiso.
 
 Both type families are licensed under [SIL Open Font License 1.1](http://scripts.sil.org/OFL).
+
+#### Icons
+UI icons have been sourced from [Google Material Design Icons](https://github.com/google/material-design-icons), which are licensed under the [Creative Common Attribution 4.0 International License (CC-BY 4.0)](http://creativecommons.org/licenses/by/4.0/).
