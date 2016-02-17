@@ -19,16 +19,17 @@
 
 // Box-like input template for radios and checkboxes
 %inputbox {
-  display: inline-block;
+  -moz-appearance: checkbox;
   appearance: none;
+  display: inline-block;
+  border: 0;
+  margin-right: 0.25em;
+  margin-bottom: 3px;
+  width: 24px;
+  height: 24px;
+  padding: 0;
   vertical-align: middle;
-  border: 1px solid $grey-light;
-  background-color: $white;
-  margin-right: 0.5em;
-  margin-bottom: 4px;
-  width: 18px;
-  height: 18px;
-  padding: 3px;
+  transition: 0.15s background ease-in;
 
   &.disabled,
   &:disabled
@@ -39,6 +40,10 @@
 
   &:focus {
     outline: 1px auto $blue-dark;
+  }
+
+  & + label {
+    display: inline-block;
   }
 }
 
@@ -103,42 +108,18 @@
       border-color: $grey-lighter;
     }
   } @else if $type == checkbox {
-    // @extend %inputbox;
+    @extend %inputbox;
     @extend %icon-dark-checkbox-unchecked;
-    -moz-appearance: checkbox;
-    appearance: none;
-    display: inline-block;
-    border: 0;
-    margin-right: 0.25em;
-    margin-bottom: 3px;
-    width: 24px;
-    height: 24px;
-    padding: 0;
-    vertical-align: middle;
-    transition: 0.15s background ease-in;
-
-    &.disabled,
-    &:disabled
-    &[disabled] {
-      opacity: 0.4;
-      cursor: not-allowed;
-    }
-
-    &:focus {
-      outline: 1px auto $blue-dark;
-    }
 
     &:checked {
       @extend %icon-primary-checkbox-checked;
     }
   } @else if $type == radio {
     @extend %inputbox;
-    border-radius: 32px;
+    @extend %icon-dark-radio-button-off;
 
     &:checked {
-      background-color: $white;
-      border-color: $primary;
-      border-width: 4px;
+      @extend %icon-primary-radio-button-on;
     }
   } @else if $type == label {
     display: block;
@@ -146,10 +127,6 @@
     font-size: 100%;
     line-height: 1.5;
     vertical-align: baseline;
-
-    &.checkbox {
-      margin: 0.5em 0;
-    }
   } @else if $type == select {
     @extend %select-arrow;
     appearance: none;
@@ -313,6 +290,11 @@
   // Textarea
   textarea {
     @include input(textarea);
+  }
+
+  &.wfp-checkbox,
+  &.wfp-radio {
+    margin: 0.5em 0;
   }
 
   .error {
