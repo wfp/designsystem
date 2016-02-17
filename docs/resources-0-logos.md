@@ -133,9 +133,9 @@ Loading logos from a Content Delivery Network can be done easily by referencing 
 
 {% highlight html %}
 <!-- SVG  -->
-<img src="http://cdn.wfp.org/libraries/wfpui/v0.7.1/assets/logos/dark/svg/en-standard.svg" alt="WFP Logo (English)">
+<img src="http://cdn.wfp.org/libraries/wfpui/v0.8.0/assets/logos/dark/svg/en-standard.svg" alt="WFP Logo (English)">
 <!-- PNG -->
-<img src="http://cdn.wfp.org/libraries/wfpui/v0.7.1/assets/logos/dark/png/1x/en-full.png" alt="WFP Logo (English)">
+<img src="http://cdn.wfp.org/libraries/wfpui/v0.8.0/assets/logos/dark/png/1x/en-full.png" alt="WFP Logo (English)">
 {% endhighlight %}
 
 <div class="notice">

@@ -46,12 +46,12 @@ You can also reference a preprocessed _WFP UI_ library directly in your markup:
 </div>
 
 ### Content Delivery Network
-Alternatively, you can load _WFP UI_ from our CDN, denoting a version number (i.e.: `v0.7.0`) in the URL:
+Alternatively, you can load _WFP UI_ from our CDN, denoting a version number (i.e.: `v0.8.0`) in the URL:
 {% highlight html %}
 <!-- WFP UI -->
-<link href="http://cdn.wfp.org/libraries/wfpui/v0.7.0/css/wfpui.css" rel="stylesheet">
+<link href="http://cdn.wfp.org/libraries/wfpui/v0.8.0/css/wfpui.css" rel="stylesheet">
 <!-- WFP UI + Grid System -->
-<link href="http://cdn.wfp.org/libraries/wfpui/v0.7.0/css/wfpui+grid.css" rel="stylesheet">
+<link href="http://cdn.wfp.org/libraries/wfpui/v0.8.0/css/wfpui+grid.css" rel="stylesheet">
 {% endhighlight %}
 
 ### Offline Use
