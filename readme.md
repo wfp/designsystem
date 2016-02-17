@@ -11,6 +11,34 @@ The purpose of this project is to create a unified toolkit that could be used by
 
 These components and patterns follow industry-standard accessibility guidelines for websites and web applications, and are maintained by WFP Communications Division (WFP COM).
 
+## Directory Structure
+We bundle some static assets with _WFP UI_, and to help you navigate the directory structure both, locally and on CDN, here is how the directory structure for assets looks like:
+
+```
+dist
+├── assets
+│   ├── favicons
+│   │   ├── 192x192.png
+│   │   ├── apple-touch-icon-120x120-precomposed.png
+│   │   ├── apple-touch-icon-152-precomposed.png
+│   │   ├── apple-touch-icon-180-precomposed.png
+│   │   ├── apple-touch-icon-76-precomposed.png
+│   │   └── favicon.ico
+│   ├── fonts
+│   │   ├── aleo
+│   │   └── lato
+│   ├── icons
+│   │   ├── thematic
+│   │   └── ui
+│   └── logos
+│       ├── dark
+│       └── light
+└── css
+    ├── bootstrap-theme.css
+    ├── wfpui+grid.css
+    └── wfpui.css
+```
+
 ## Getting Started
 WFP UI provides a complete set of tool to help you either quickly tap into the library of user interface components and patterns available in this repo, by extending your project via Bower package.
 
