@@ -221,8 +221,8 @@ _Pagination_ is very useful pattern that allows users to browse through availabl
     <li class="pagination--item">
       <a href="#" class="pagination--btn">Previous</a>
     </li>
-    <li class="pagination--item">
-      <span class="pagination--btn active">1</span>
+    <li class="pagination--item active">
+      <span class="pagination--btn">1</span>
     </li>
     <li class="pagination--item">
       <a href="#" class="pagination--btn">2</a>
