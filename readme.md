@@ -26,17 +26,77 @@ dist
 │   │   └── favicon.ico
 │   ├── fonts
 │   │   ├── aleo
+│   │   │   ├── aleo-bold.eot
+│   │   │   ├── aleo-bold.ttf
+│   │   │   ├── aleo-bold.woff
+│   │   │   ├── aleo-bold.woff2
+│   │   │   ├── aleo-bolditalic.eot
+│   │   │   ├── aleo-bolditalic.ttf
+│   │   │   ├── aleo-bolditalic.woff
+│   │   │   ├── aleo-bolditalic.woff2
+│   │   │   ├── aleo-italic.eot
+│   │   │   ├── aleo-italic.ttf
+│   │   │   ├── aleo-italic.woff
+│   │   │   ├── aleo-italic.woff2
+│   │   │   ├── aleo-regular.eot
+│   │   │   ├── aleo-regular.ttf
+│   │   │   ├── aleo-regular.woff
+│   │   │   ├── aleo-regular.woff2
+│   │   │   └── aleo.css
 │   │   └── lato
+│   │       ├── lato-black.eot
+│   │       ├── lato-black.ttf
+│   │       ├── lato-black.woff
+│   │       ├── lato-black.woff2
+│   │       ├── lato-blackitalic.eot
+│   │       ├── lato-blackitalic.ttf
+│   │       ├── lato-blackitalic.woff
+│   │       ├── lato-blackitalic.woff2
+│   │       ├── lato-bold.eot
+│   │       ├── lato-bold.ttf
+│   │       ├── lato-bold.woff
+│   │       ├── lato-bold.woff2
+│   │       ├── lato-bolditalic.eot
+│   │       ├── lato-bolditalic.ttf
+│   │       ├── lato-bolditalic.woff
+│   │       ├── lato-bolditalic.woff2
+│   │       ├── lato-italic.eot
+│   │       ├── lato-italic.ttf
+│   │       ├── lato-italic.woff
+│   │       ├── lato-italic.woff2
+│   │       ├── lato-regular.eot
+│   │       ├── lato-regular.ttf
+│   │       ├── lato-regular.woff
+│   │       ├── lato-regular.woff2
+│   │       └── lato.css
 │   ├── icons
 │   │   ├── thematic
+│   │   │   ├── png
+│   │   │   ├── grunticon.loader.js
+│   │   │   ├── preview.html
+│   │   │   ├── thematic-icons.fallback.css
+│   │   │   ├── thematic-icons.png.css
+│   │   │   └── thematic-icons.svg.css
 │   │   └── ui
+│   │       ├── png
+│   │       ├── grunticon.loader.js
+│   │       ├── preview.html
+│   │       ├── ui-icons.fallback.css
+│   │       ├── ui-icons.png.css
+│   │       └── ui-icons.svg.css
 │   └── logos
 │       ├── dark
+│       │   ├── png
+│       │   └── svg
 │       └── light
-└── css
-    ├── bootstrap-theme.css
-    ├── wfpui+grid.css
-    └── wfpui.css
+│           ├── png
+│           └── svg
+├── css
+│   ├── bootstrap-theme.css
+│   ├── wfpui+grid.css
+│   └── wfpui.css
+└── js
+    └── responsive-nav.min.js
 ```
 
 ## Getting Started
