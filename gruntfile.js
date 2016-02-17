@@ -241,11 +241,38 @@ module.exports = function(grunt) {
         config: '.sass-lint.yml',
       },
       target: ['scss/**/*.scss']
+    },
+    uglify: {
+      options: {
+        mangle: false,
+        wrap: false,
+        screwIE8: true
+      },
+      dist: {
+        files: {
+          'dist/js/responsive-nav.min.js': ['js/responsive-nav.js']
+        }
+      },
+      docs: {
+        options: {
+          compress: false,
+          beautify: {
+            beautify: true,
+            indent_level: 2
+          },
+          preserveComments: 'all',
+          screwIE8: true
+        },
+        files: {
+          'docs/js/lib/responsive-nav.js': ['js/responsive-nav.js']
+        }
+      }
     }
   });
 
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-clean');
+  grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-grunticon');
   grunt.loadNpmTasks('grunt-datauri');
   grunt.loadNpmTasks('grunt-jekyll');
@@ -261,15 +288,15 @@ module.exports = function(grunt) {
   // Build Grunticon Icons
   grunt.registerTask('gen-icons', ['clean:grunticon', 'grunticon']);
   // Build WFP UI Docs locally
-  grunt.registerTask('docs', ['sass:docs', 'postcss:docs', 'jekyll']);
+  grunt.registerTask('docs', ['sass:docs', 'postcss:docs', 'uglify:docs', 'jekyll']);
   // Build WFP UI Docs
-  grunt.registerTask('docs-build', ['sasslint', 'sass:docs', 'postcss:docs', 'jekyll']);
+  grunt.registerTask('docs-build', ['sasslint', 'sass:docs', 'uglify:docs', 'postcss:docs', 'jekyll']);
   // Build dist-ready WFP UI Docs
-  grunt.registerTask('docs-dist', ['sass:docsDist', 'postcss:docsDist', 'jekyll']);
+  grunt.registerTask('docs-dist', ['sass:docsDist', 'postcss:docsDist', 'uglify:docs', 'jekyll']);
   // Build WFP UI
   grunt.registerTask('build', ['eslint', 'sasslint', 'sass:dev', 'postcss:dev']);
   // Build a dist-ready WFP UI
-  grunt.registerTask('dist', ['gen-svg', 'gen-icons', 'sass:dist', 'postcss:dist']);
+  grunt.registerTask('dist', ['gen-svg', 'gen-icons', 'sass:dist', 'postcss:dist', 'uglify:dist']);
   // Run build and dist task in sequence (for Travis CI)
   grunt.registerTask('test', ['build', 'docs-build', 'dist', 'docs-dist']);
   // Set default grunt task to `dist`

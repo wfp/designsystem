@@ -34,8 +34,8 @@ If the vertical space is limited (i.e.: on smaller viewports), you can substitut
       </h1>
     </div>
     <div class="wfp-u-1-3 wfp-u-sm-3-4 header--nav">
-      <button class="header--toggle" id="js-example-menu-trigger">Menu</button>
-      <nav class="header--menu" id="js-example-menu">
+      <button class="header--toggle" id="js-menu-ext-trigger">Menu</button>
+      <nav class="header--menu" id="js-menu-ext">
         <ul class="menu--group">
           <li class="menu--item"><a href="#" class="menu--link active">Navlink #1</a></li>
           <li class="menu--item"><a href="#" class="menu--link">Navlink #2</a></li>
@@ -99,8 +99,8 @@ Internal header features a simple navigation, which works on both smaller and bi
       </h1>
     </div>
     <div class="wfp-u-2-5 wfp-u-md-2-3 header--nav">
-      <button class="header--toggle" id="js-example-menu-trigger">Menu</button>
-      <nav class="header--menu" id="js-example-menu">
+      <button class="header--toggle" id="js-menu-int-trigger">Menu</button>
+      <nav class="header--menu" id="js-menu-int">
         <ul class="menu--group">
           <li class="menu--item"><a href="#" class="menu--link active">Navlink #1</a></li>
           <li class="menu--item"><a href="#" class="menu--link">Navlink #2</a></li>
@@ -139,14 +139,14 @@ Internal header features a simple navigation, which works on both smaller and bi
   <p>You can also set header component to stay fixed to the top of your page, by adding <code>wfp-header-spacer--narrow</code> class to your <code>body</code> tag (for extra spacing), and class <code>fixed</code> to <code>header-int</code> element.</p>
 </div>
 
-To ensure the navigation works correctly, download and add the following Javascript library to the bottom of your page, before the closing `body` tag.
+To ensure the navigation works correctly, include our fork of `responsive-nav` library to the bottom of your page, before the closing `body` tag. You can load it locally, from WFP UI `dist` directory, or from our CDN:
 
 {% highlight html %}
-<script src="/js/lib/responsive-nav.min.js"></script>
+<script src="http://cdn.wfp.org/libraries/wfpui/v0.7.1/js/responsive-nav.min.js" defer></script>
 <script>
   var nav = responsiveNav("#js-nav", {
-    customToggle: "js-nav-trigger",
-    navClass: "header--menu",
+    customToggle: "js-nav-trigger", // menu toggle
+    navClass: "header--menu", // menu class
     openPos: "fixed", // `absolute`, or `fixed`
     closedPos: "static"
   });
