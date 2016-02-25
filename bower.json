@@ -6,7 +6,6 @@
   ],
   "description": "WFP UI",
   "main": [
-    "dist/css/wfpui.css",
     "scss/wfpui.scss"
   ],
   "keywords": [
@@ -33,7 +32,9 @@
     "gruntfile.js"
   ],
   "devDependencies": {
-    "bootstrap-sass": "~3.3.5",
-    "modularized-normalize-scss": "~3.0.3"
+    "bootstrap-sass": "~3.3.5"
+  },
+  "dependencies": {
+    "normalize-scss": "^3.0.3"
   }
 }
