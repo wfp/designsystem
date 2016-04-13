@@ -8,16 +8,28 @@
 
   .breadcrumbs--item {
     @extend %seg-control--item;
+    display: block;
+    float: left;
+    margin: -1px 0 0 -1px;
+    border-left: 1px solid darken($grey-lighter, 10%);
+    background-color: $white;
+    white-space: nowrap;
+
     border-color: darken($grey-lighter, 10%);
 
     &:first-child {
       border-color: darken($grey-lighter, 10%);
+    }
+
+    &:only-child {
+      border-radius: 2px;
     }
   }
 
   .breadcrumbs--link {
     @extend %seg-control--link;
     color: darken($primary, 12%);
+    white-space: nowrap;
 
     &.home {
       padding-left: 0.25em;
