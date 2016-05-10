@@ -250,7 +250,9 @@
   input[type="search"],
   input[type="tel"],
   input[type="color"],
-  input:not([type]) { @include input(common); }
+  input:not([type]) {
+    @include input(common);
+  }
 
   // Fieldset
   fieldset {
