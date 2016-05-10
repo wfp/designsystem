@@ -6,31 +6,31 @@
 // -----------------------------------------------------------------------------
 // Text manipulation
 // -----------------------------------------------------------------------------
-%text-left {
+@mixin text-left {
   text-align: left;
 }
 
-%text-center {
+@mixin text-center {
   text-align: center;
 }
 
-%text-right {
+@mixin text-right {
   text-align: right;
 }
 
 // Transformations
-%caps {
+@mixin caps {
   text-transform: capitalize;
 }
 
-%allcaps {
+@mixin allcaps {
   text-transform: uppercase;
 }
 
 // -----------------------------------------------------------------------------
 // Reset Lists
 // -----------------------------------------------------------------------------
-%nolist {
+@mixin nolist {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -39,7 +39,7 @@
 // -----------------------------------------------------------------------------
 // Utility Band (for breadcrumbs, etc.)
 // -----------------------------------------------------------------------------
-%band {
+@mixin band {
   background: $white;
   border-bottom: 1px solid $grey-contrast;
   box-shadow: 0 1px 3px 0 rgba($black, 0.1);
@@ -48,8 +48,7 @@
 // -----------------------------------------------------------------------------
 // Clearfix
 // -----------------------------------------------------------------------------
-%clearfix,
-.clearfix {
+@mixin clearfix {
   &:after {
     content: "";
     display: table;
@@ -60,7 +59,7 @@
 // -----------------------------------------------------------------------------
 // Wrappers
 // -----------------------------------------------------------------------------
-%wrapper {
+@mixin wrapper {
   margin: 0 auto;
   max-width: $content-width;
   padding: 1em;
@@ -74,17 +73,17 @@
   }
 }
 
-%content-wrapper {
+@mixin content-wrapper {
   display: block;
   padding: 0.25em 0;
 }
 
-%logo-wrapper {
+@mixin logo-wrapper {
   display: block;
   padding: 1em;
 }
 
-%overflow-wrapper {
+@mixin overflow-wrapper {
   overflow: auto;
   overflow-x: scroll;
   white-space: nowrap;
@@ -92,11 +91,11 @@
 }
 
 .wfp-wrapper {
-  @extend %wrapper;
+  @include wrapper;
 }
 
 .wfp-wrapper-tight {
-  @extend %wrapper;
+  @include wrapper;
   padding: 0 1em;
 
   @include media-query($content-width) {
@@ -105,15 +104,15 @@
 }
 
 .wfp-logo-wrapper {
-  @extend %logo-wrapper;
+  @include logo-wrapper;
 }
 
 .wfp-content-wrapper {
-  @extend %content-wrapper;
+  @include content-wrapper;
 }
 
 .wfp-overflow-wrapper {
-  @extend %overflow-wrapper;
+  @include overflow-wrapper;
 }
 
 @include media-query($md-screen) {
@@ -155,32 +154,36 @@
 // -----------------------------------------------------------------------------
 // CSS Declarations
 // -----------------------------------------------------------------------------
+.clearfix {
+  @include clearfix;
+}
+
 .wfp-text-left {
-  @extend %text-left;
+  @include text-left;
 }
 
 .wfp-text-right {
-  @extend %text-right;
+  @include text-right;
 }
 
 .wfp-text-center {
-  @extend %text-center;
+  @include text-center;
 }
 
 .wfp-caps {
-  @extend %caps;
+  @include caps;
 }
 
 .wfp-allcaps {
-  @extend %allcaps;
+  @include allcaps;
 }
 
 .wfp-nolist {
-  @extend %nolist;
+  @include nolist;
 }
 
 .wfp-band {
-  @extend %band;
+  @include band;
 
   nav[role="navigation"] {
     margin: 0;

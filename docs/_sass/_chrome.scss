@@ -234,7 +234,7 @@ figure {
 }
 
 .list-view {
-  @extend %no-list;
+  @include nolist;
   padding: 0;
 
   .item {
