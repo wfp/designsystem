@@ -233,11 +233,10 @@ module.exports = function(grunt) {
       }
     },
     eslint: {
+      target: ['js/**/*.js'],
       options: {
-        config: '.eslintrc.json',
-        force: true
-      },
-      all: ['js/**/*.js']
+        ignorePattern: ['js/lib/**/*.js']
+      }
     },
     sasslint: {
       options: {
@@ -276,15 +275,15 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-uglify');
-  grunt.loadNpmTasks('grunt-grunticon');
   grunt.loadNpmTasks('grunt-datauri');
+  grunt.loadNpmTasks('grunt-eslint');
+  grunt.loadNpmTasks('grunt-grunticon');
   grunt.loadNpmTasks('grunt-jekyll');
   grunt.loadNpmTasks('grunt-postcss');
   grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-sass-lint');
   grunt.loadNpmTasks('grunt-svg-toolkit');
   grunt.loadNpmTasks('grunt-pure-grids');
-  grunt.loadNpmTasks('eslint-grunt');
 
   // Build SVGs and SCSS
   grunt.registerTask('gen-svg', ['clean:svg', 'svgtoolkit', 'datauri', 'clean:svg']);
