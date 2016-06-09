@@ -1,46 +1,18 @@
-// Module: Grids
+// Module: Grid
 // Project: WFP UI
-// Author: Matthew Morek (me@matthewmorek.com)
-// URL: http://matthewmorek.com
+// Author: MADBIT Co.
+// Note:s Based on PureCSS Grid
 
 @import "grid-units";
-
-@mixin grid {
-  letter-spacing: -0.31em; // Webkit: collapse white-space between units
-  text-rendering: optimizespeed; // Webkit: fixes text-rendering: optimizeLegibility
-  font-family: FreeSans, Arimo, "Droid Sans", Helvetica, Arial, sans-serif;
-  display: -webkit-flex;
-  // IE10 uses display: flexbox
-  display: -ms-flexbox;
-  -webkit-flex-flow: row wrap;
-  -ms-flex-flow: row wrap;
-  // Prevents distributing space between rows
-  -ms-align-content: flex-start;
-  -webkit-align-content: flex-start;
-  align-content: flex-start;
-}
 
 .opera-only :-o-prefocus, .wfp-grid {
   word-spacing: -0.43em;
 }
 
-@mixin grid--unit {
-  display: inline-block;
-  zoom: 1;
-  letter-spacing: normal;
-  word-spacing: normal;
-  vertical-align: top;
-  text-rendering: auto;
-}
-
 .wfp-grid {
-  @include grid;
+  @include wfp-grid;
 
-  & [class *= "wfp-u-"] {
-    font-family: $sans-serif-stack;
+  [class*="wfp-u-"] {
+    @include grid--unit;
   }
-}
-
-[class *= "wfp-u-"] {
-  @include grid--unit;
 }
