@@ -10,7 +10,7 @@
 }
 
 .wfp-grid {
-  @include wfp-grid;
+  @include grid;
 
   [class*="wfp-u-"] {
     @include grid--unit;
