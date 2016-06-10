@@ -44,9 +44,9 @@ $color-gplus: #dc4e41;
     border-color: darken($primary, 12%);
 
     &:hover {
-      background-color: $blue-lightest;
+      background-color: darken($primary, 20%);
       border-color: darken($primary, 20%);
-      color: darken($primary, 20%);
+      color: $white;
     }
 
     &.active,
@@ -54,8 +54,8 @@ $color-gplus: #dc4e41;
     &.active:hover,
     &.active:active,
     &.active:focus {
+      background-color: darken($blue-darker, 20%);
       border-color: darken($blue-darker, 20%);
-      color: darken($blue-darker, 20%);
     }
   } @else if $type == primary {
     color: $white;
