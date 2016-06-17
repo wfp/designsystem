@@ -23,7 +23,7 @@ This menu is very versatile and can use groups. You can use this menu to create 
   <div class="menu--group">
     <h6 class="menu--heading">About</h6>
     <ul class="menu--wrapper">
-      <li class="menu--item"><a href="#" class="menu--link">Executive Director</a></li>
+      <li class="menu--item"><a href="#" class="menu--link current">Executive Director</a></li>
       <li class="menu--item"><a href="#" class="menu--link">Senior Leadership</a></li>
       <li class="menu--item"><a href="#" class="menu--link">Corporate Information</a></li>
       <li class="menu--item"><a href="#" class="menu--link">Funding</a></li>
@@ -37,7 +37,7 @@ This menu is very versatile and can use groups. You can use this menu to create 
   <div class="menu--group">
     <h6 class="menu--heading">About</h6>
     <ul class="menu--wrapper">
-      <li class="menu--item"><a href="#" class="menu--link">Executive Director</a></li>
+      <li class="menu--item"><a href="#" class="menu--link current">Executive Director</a></li>
       <li class="menu--item"><a href="#" class="menu--link">Senior Leadership</a></li>
       <li class="menu--item"><a href="#" class="menu--link">Corporate Information</a></li>
       <li class="menu--item"><a href="#" class="menu--link">Funding</a></li>
@@ -61,7 +61,7 @@ The same menu as in previous example, but used together with grids, to create mo
     <ul class="menu--wrapper">
       <li class="menu--item"><a href="#" class="menu--link">Cash and Vouchers</a></li>
       <li class="menu--item"><a href="#" class="menu--link">Foods for Assets</a></li>
-      <li class="menu--item"><a href="#" class="menu--link">HIV / AIDS</a></li>
+      <li class="menu--item"><a href="#" class="menu--link current">HIV / AIDS</a></li>
       <li class="menu--item"><a href="#" class="menu--link">Purchase for Progress</a></li>
     </ul>
   </div>
@@ -93,7 +93,7 @@ The same menu as in previous example, but used together with grids, to create mo
     <ul class="menu--wrapper">
       <li class="menu--item"><a href="#" class="menu--link">Cash and Vouchers</a></li>
       <li class="menu--item"><a href="#" class="menu--link">Foods for Assets</a></li>
-      <li class="menu--item"><a href="#" class="menu--link">HIV / AIDS</a></li>
+      <li class="menu--item"><a href="#" class="menu--link active">HIV / AIDS</a></li>
       <li class="menu--item"><a href="#" class="menu--link">Purchase for Progress</a></li>
     </ul>
   </div>
