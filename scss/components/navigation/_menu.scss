@@ -50,7 +50,7 @@
   }
 
   .menu--group {
-    @include menu--heading;
+    @include menu--group;
   }
 
   .menu--item {
