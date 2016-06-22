@@ -1,5 +1,5 @@
 node_modules
-_components
+bower_components
 dist/docs
 *.map
 docs/css

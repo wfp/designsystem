@@ -8,8 +8,8 @@
 // Load core variables and mixins
 // --------------------------------------------------
 
-@import "../_components/bootstrap-sass/assets/stylesheets/bootstrap/variables";
-@import "../_components/bootstrap-sass/assets/stylesheets/bootstrap/mixins";
+@import "../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/variables";
+@import "../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/mixins";
 @import "init";
 @import "modules/mixins";
 @import "modules/icons/icons-dark";
