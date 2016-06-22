@@ -45,7 +45,7 @@ module.exports = function(grunt) {
         sassDir: 'scss',
         cssDir: 'dist/css',
         includePaths: [
-          './_components/normalize-scss'
+          'bower_components/normalize-scss'
         ]
       },
       dev: {
