@@ -4,20 +4,32 @@
 // URL: http://matthewmorek.com
 
 .wfp-breadcrumbs {
-  @extend %seg-control;
+  @include seg-control;
 
   .breadcrumbs--item {
-    @extend %seg-control--item;
+    @include seg-control--item;
+    display: block;
+    float: left;
+    margin: -1px 0 0 -1px;
+    border-left: 1px solid darken($grey-lighter, 10%);
+    background-color: $white;
+    white-space: nowrap;
+
     border-color: darken($grey-lighter, 10%);
 
     &:first-child {
       border-color: darken($grey-lighter, 10%);
     }
+
+    &:only-child {
+      border-radius: 2px;
+    }
   }
 
   .breadcrumbs--link {
-    @extend %seg-control--link;
+    @include seg-control--link;
     color: darken($primary, 12%);
+    white-space: nowrap;
 
     &.home {
       padding-left: 0.25em;
@@ -38,7 +50,7 @@
   }
 
   .breadcrumbs--last {
-    @extend %seg-control--link;
+    @include seg-control--link;
     color: $grey-darker;
     cursor: default;
 
@@ -51,10 +63,10 @@
 
 // Specificity Wars II™: The Dark Side of the Breadcrumb
 .wfp-breadcrumbs-inverse {
-  @extend %seg-control;
+  @include seg-control;
 
   .breadcrumbs--item {
-    @extend %seg-control--item;
+    @include seg-control--item;
     border-color: $grey;
     background-color: $grey-dark;
     color: $grey-contrast;
@@ -65,7 +77,7 @@
   }
 
   .breadcrumbs--link {
-    @extend %seg-control--link;
+    @include seg-control--link;
     color: $grey-contrast;
 
     &:hover,
@@ -75,7 +87,7 @@
   }
 
   .breadcrumbs--last {
-    @extend %seg-control--link;
+    @include seg-control--link;
     color: $grey-lighter;
     cursor: default;
 

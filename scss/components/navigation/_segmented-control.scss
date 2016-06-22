@@ -7,15 +7,16 @@
 // Segmented Controls
 // [docs-url]/components/navigation/#segmented-controls
 // -----------------------------------------------------------------------------
-%seg-control {
-  @extend %no-list;
+@mixin seg-control {
+  @include nolist;
   display: inline-block;
   height: 2em;
   padding: 0;
+  margin: 0;
   text-align: center;
 }
 
-%seg-control--item {
+@mixin seg-control--item {
   display: table-cell;
   border: 1px solid darken($primary, 12%);
   border-left: 0;
@@ -33,7 +34,7 @@
   }
 }
 
-%seg-control--link {
+@mixin seg-control--link {
   padding: 0.33em 0.75em;
   width: auto;
   border: 0;
@@ -58,13 +59,13 @@
 }
 
 .wfp-seg-control {
-  @extend %seg-control;
+  @include seg-control;
 
   .seg-control--item {
-    @extend %seg-control--item;
+    @include seg-control--item;
   }
 
   .seg-control--link {
-    @extend %seg-control--link;
+    @include seg-control--link;
   }
 }

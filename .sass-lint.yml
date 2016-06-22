@@ -10,7 +10,7 @@ rules:
   # Extends
   extends-before-mixins: 1
   extends-before-declarations: 1
-  placeholder-in-extend: 1
+  placeholder-in-extend: 0
 
   # Mixins
   mixins-before-declarations:
@@ -86,7 +86,7 @@ rules:
   bem-depth: 0
   border-zero: 1
   brace-style: 1
-  clean-import-paths: 1
+  clean-import-paths: 0
   empty-args: 1
   hex-length: 0
   hex-notation: 1

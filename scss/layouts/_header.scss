@@ -9,7 +9,7 @@
 // -----------------------------------------------------------------------------
 .wfp-header-spacer--narrow {
   overflow: auto;
-  padding-top: 4em;
+  padding-top: 4.25em;
 }
 
 %masthead {
@@ -217,7 +217,7 @@
   }
 
   .menu--group {
-    @extend %no-list;
+    @include nolist;
     text-align: initial;
     background-color: $grey-darker;
   }

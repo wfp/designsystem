@@ -43,8 +43,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: $sans-serif-stack;
-  font-weight: normal;
-  color: $text-color;
+  font-weight: bold;
   line-height: 1em;
   margin: 0.5em 0;
 }
@@ -63,11 +62,6 @@ h3 { font-size: 2em; }
 h4 { font-size: 1.75em; }
 h5 { font-size: 1.5em; }
 h6 { font-size: 1.25em; }
-
-p {
-  margin-top: 1em;
-  margin-bottom: 1em;
-}
 
 // Fluid image to fit a lfuid parent container while maintaining aspect ratio
 img {
@@ -104,7 +98,7 @@ textarea {
 p, blockquote, pre,
 ul, ol, dl, figure,
 %vertical-rhythm {
-  margin: 1em 0;
+  margin: 0.5em 0;
 }
 
 // -----------------------------------------------------------------------------
@@ -169,15 +163,15 @@ blockquote {
 pre,
 code,
 samp {
-  color: $blue-light;
-  font-size: 1em;
+  color: $grey-dark;
+  font-size: 0.875em;
   font-style: normal;
   font-family: $mono-stack;
   background-color: $grey-lightest;
   border-radius: 2px;
   padding: 0.125em 0.25em;
   line-height: 1.4;
-  white-space: nowrap;
+  // white-space: nowrap;
 }
 
 code {

@@ -1,10 +1,10 @@
-%menu--group {
+@mixin menu--group {
   margin: 0;
   padding: 0;
 }
 
-%menu--heading {
-  @extend %allcaps;
+@mixin menu--heading {
+  @include allcaps;
   border-bottom: 1px solid $grey-lighter;
   padding: 0.5em 1em;
   line-height: 1.5em;
@@ -16,13 +16,13 @@
   }
 }
 
-%menu--wrapper {
-  @extend %nolist;
+@mixin menu--wrapper {
+  @include nolist;
   padding: 0.25em 0;
   margin-bottom: 0.25em;
 }
 
-%menu--item {
+@mixin menu--item {
   font-size: 1em;
   padding: 0;
   margin: 0;
@@ -30,7 +30,7 @@
   border: 0;
 }
 
-%menu--link {
+@mixin menu--link {
   display: block;
   padding: 0.33em 1em;
   line-height: 1;
@@ -39,43 +39,43 @@
 }
 
 @mixin menu {
-  @extend %nolist;
+  @include nolist;
 
   .menu--wrapper {
-    @extend %menu--wrapper;
+    @include menu--wrapper;
   }
 
   .menu--heading {
-    @extend %menu--heading;
+    @include menu--heading;
   }
 
   .menu--group {
-    @extend %menu--group;
+    @include menu--group;
   }
 
   .menu--item {
-    @extend %menu--item;
+    @include menu--item;
   }
 
   .menu--link {
-    @extend %menu--link;
+    @include menu--link;
   }
 }
 
 @mixin menu-flat {
-  @extend %nolist;
+  @include nolist;
   display: inline-block;
   margin: 0.25em 1em;
 
   .menu--group {
-    @extend %menu--group;
+    @include menu--heading;
     margin: 0;
     padding: 0;
     background-color: transparent;
   }
 
   .menu--item {
-    @extend %menu--item;
+    @include menu--item;
     display: inline-block;
     padding: 0;
     margin: 0 0.25em;
@@ -83,7 +83,7 @@
   }
 
   .menu--link {
-    @extend %menu--link;
+    @include menu--link;
     display: block;
     color: $white;
     border-bottom-color: transparent;
@@ -169,7 +169,7 @@
   @include menu;
 
   .menu--heading {
-    @extend %allcaps;
+    @include allcaps;
     color: $grey-light;
     border-top: 0;
     border-bottom-color: $grey-dark;
