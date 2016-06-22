@@ -32,6 +32,12 @@ $color-gplus: #dc4e41;
     box-shadow: transparentize($black, 0.9) 0 0 8px inset;
   }
 
+  > [class^="icon-"] {
+    vertical-align: bottom;
+    margin-right: 0.25em;
+    margin-left: -0.25em;
+  }
+
   @if $type == default {
     color: darken($primary, 12%);
     background-color: $white;
@@ -166,7 +172,7 @@ $color-gplus: #dc4e41;
 }
 
 a[class*="wfp-btn"] {
- //
+ border-bottom: inherit;
 }
 
 .wfp-btn {

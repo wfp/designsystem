@@ -43,7 +43,10 @@ module.exports = function(grunt) {
         sourceMap: true,
         indentedSyntax: true,
         sassDir: 'scss',
-        cssDir: 'dist/css'
+        cssDir: 'dist/css',
+        includePaths: [
+          'bower_components/normalize-scss'
+        ]
       },
       dev: {
         files: [{

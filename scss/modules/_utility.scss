@@ -181,4 +181,10 @@
 
 .wfp-band {
   @extend %band;
+
+  nav[role="navigation"] {
+    margin: 0;
+    padding: 0;
+    height: 2em;
+  }
 }

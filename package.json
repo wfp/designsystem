@@ -16,7 +16,8 @@
     "grunt-postcss": "^0.7.1",
     "grunt-pure-grids": "^1.0.2",
     "grunt-sass": "^1.1.0",
-    "node-sass": "^3.4.2"
+    "node-sass": "^3.4.2",
+    "time-grunt": "^1.3.0"
   },
   "devDependencies": {
     "eslint": "^2.1.0",
@@ -28,7 +29,6 @@
     "grunt-datauri": "^0.4.0",
     "grunt-grunticon": "^2.2.2",
     "grunt-sass-lint": "0.1.0",
-    "grunt-svg-toolkit": "github:matthewmorek/grunt-svg-toolkit",
-    "time-grunt": "^1.3.0"
+    "grunt-svg-toolkit": "github:matthewmorek/grunt-svg-toolkit"
   }
 }

@@ -86,7 +86,7 @@ rules:
   bem-depth: 0
   border-zero: 1
   brace-style: 1
-  clean-import-paths: 1
+  clean-import-paths: 0
   empty-args: 1
   hex-length: 0
   hex-notation: 1

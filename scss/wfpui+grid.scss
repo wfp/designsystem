@@ -4,8 +4,7 @@
  * License: https://github.com/wfp/ui/blob/master/LICENSE
  */
 
-// Normalize.css
-@import "../_components/modularized-normalize-scss/normalize";
+@import "normalize.scss";
 
 // Import SCSS mixins, variables, modules, etc.
 @import "init";
