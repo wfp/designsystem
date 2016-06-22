@@ -713,7 +713,7 @@ a {
 
     &.active,
     &.active:hover,
-    &.active:focus, {
+    &.active:focus {
       background-image: none;
       background-color: $accent;
     }

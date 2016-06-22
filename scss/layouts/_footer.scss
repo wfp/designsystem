@@ -55,7 +55,7 @@
 }
 
 %footer--links {
-  @extend %nolist;
+  @include nolist;
   line-height: 1;
   font-size: 0.875em;
 
@@ -133,7 +133,7 @@
     }
 
     .wfp-menu-plain {
-      @extend %text-left;
+      @include text-left;
       margin: 0 0 1em;
     }
   }

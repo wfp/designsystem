@@ -25,6 +25,11 @@
   border-radius: 2px;
   text-decoration: none;
 
+  &.ellipsis {
+    border: 0;
+    cursor: default;
+  }
+
   &:hover {
     border-color: darken($primary, 12%);
   }

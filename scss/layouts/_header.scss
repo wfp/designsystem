@@ -217,7 +217,7 @@
   }
 
   .menu--group {
-    @extend %no-list;
+    @include nolist;
     text-align: initial;
     background-color: $grey-darker;
   }
