@@ -70,9 +70,17 @@
 
 .icon-done-light { background-image: url('png/done-light.png'); background-repeat: no-repeat; }
 
+.icon-download-dark { background-image: url('png/download-dark.png'); background-repeat: no-repeat; }
+
+.icon-download-light { background-image: url('png/download-light.png'); background-repeat: no-repeat; }
+
 .icon-drafts-dark { background-image: url('png/drafts-dark.png'); background-repeat: no-repeat; }
 
 .icon-drafts-light { background-image: url('png/drafts-light.png'); background-repeat: no-repeat; }
+
+.icon-edit-dark { background-image: url('png/edit-dark.png'); background-repeat: no-repeat; }
+
+.icon-edit-light { background-image: url('png/edit-light.png'); background-repeat: no-repeat; }
 
 .icon-email-dark { background-image: url('png/email-dark.png'); background-repeat: no-repeat; }
 
@@ -85,6 +93,10 @@
 .icon-exit-to-app-dark { background-image: url('png/exit-to-app-dark.png'); background-repeat: no-repeat; }
 
 .icon-exit-to-app-light { background-image: url('png/exit-to-app-light.png'); background-repeat: no-repeat; }
+
+.icon-external-link-dark { background-image: url('png/external-link-dark.png'); background-repeat: no-repeat; }
+
+.icon-external-link-light { background-image: url('png/external-link-light.png'); background-repeat: no-repeat; }
 
 .icon-favorite-false-dark { background-image: url('png/favorite-false-dark.png'); background-repeat: no-repeat; }
 
@@ -129,6 +141,10 @@
 .icon-insert-emoticon-dark { background-image: url('png/insert-emoticon-dark.png'); background-repeat: no-repeat; }
 
 .icon-insert-emoticon-light { background-image: url('png/insert-emoticon-light.png'); background-repeat: no-repeat; }
+
+.icon-link-dark { background-image: url('png/link-dark.png'); background-repeat: no-repeat; }
+
+.icon-link-light { background-image: url('png/link-light.png'); background-repeat: no-repeat; }
 
 .icon-live-help-dark { background-image: url('png/live-help-dark.png'); background-repeat: no-repeat; }
 
@@ -209,6 +225,10 @@
 .icon-translate-dark { background-image: url('png/translate-dark.png'); background-repeat: no-repeat; }
 
 .icon-translate-light { background-image: url('png/translate-light.png'); background-repeat: no-repeat; }
+
+.icon-upload-dark { background-image: url('png/upload-dark.png'); background-repeat: no-repeat; }
+
+.icon-upload-light { background-image: url('png/upload-light.png'); background-repeat: no-repeat; }
 
 .icon-visibility-dark { background-image: url('png/visibility-dark.png'); background-repeat: no-repeat; }
 
