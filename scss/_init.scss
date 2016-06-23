@@ -12,8 +12,8 @@ $small-font-size:     $base-font-size * 0.875;
 
 $spacing-unit:        32px;
 
-$text-color:          #404040;
-$background-color:    #ffffff;
+$text-color:          #404040 !default;
+$background-color:    #ffffff !default;
 
 $primary:             #2a93fc;
 $accent:              #1f6ebc;
@@ -47,8 +47,8 @@ $yellow:              #fcdc5d;
 $green:               #00a878;
 
 // Width of the content area
-$content-width:       1000px;
-$max-content-width:   1200px;
+$content-width:       1000px !default;
+$max-content-width:   1200px !default;
 
 $sm-screen:           568px;
 $md-screen:           768px;
