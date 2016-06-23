@@ -1,6 +1,7 @@
 .side-nav {
   display: none;
-  visibility: hidden;
+  // @todo: Confirm removal: Creates invisible page break
+  // visibility: hidden;
 
   @include media-query($md-screen) {
     display: inline-block;
