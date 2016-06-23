@@ -3,13 +3,19 @@
   padding: 0;
 }
 
+@mixin menu--item {
+  font-size: 1em;
+  padding: 0;
+  margin: 0;
+  display: block;
+  border: 0;
+}
+
 @mixin menu--heading {
+  @include menu--item;
   @include allcaps;
   border-bottom: 1px solid $grey-lighter;
-  padding: 0.5em 1em;
-  line-height: 1.5em;
   margin: 0.25em 0;
-  font-size: 1em;
 
   &:first-child {
     margin-top: 0;
@@ -20,14 +26,6 @@
   @include nolist;
   padding: 0.25em 0;
   margin-bottom: 0.25em;
-}
-
-@mixin menu--item {
-  font-size: 1em;
-  padding: 0;
-  margin: 0;
-  display: block;
-  border: 0;
 }
 
 @mixin menu--link {
@@ -47,6 +45,12 @@
 
   .menu--heading {
     @include menu--heading;
+
+    .menu--item,
+    .menu--link {
+      padding: 0.5em 1em;
+      line-height: 1.5em;
+    }
   }
 
   .menu--group {
@@ -173,7 +177,7 @@
     color: $grey-light;
     border-top: 0;
     border-bottom-color: $grey-dark;
-    padding: 0.5em 1.5em;
+    padding: 0 0.5em;
 
     &:first-child {
       margin-top: 0.5em;
