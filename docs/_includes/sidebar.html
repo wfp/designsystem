@@ -1,7 +1,7 @@
 <nav class="wfp-menu">
 {% for category in site.category-list %}
   <div class="menu--group">
-    <h2 class="menu--heading">{{ category }}</h2>
+    <h2 class="menu--heading"><span class="menu--item">{{ category }}</span></h2>
     <ul class="menu--wrapper">
     {% for link in site.pages %}
     {% if link.resource == true %}
