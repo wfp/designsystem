@@ -85,8 +85,10 @@ module.exports = function(grunt) {
     },
     postcss: {
       options: {
+        syntax: require('postcss-scss'),
         processors: [
-          require('autoprefixer')({ browsers: ['last 2 version'] })
+          require('autoprefixer')({ browsers: ['last 2 version'] }),
+          require('postcss-wcag-contrast')()
         ],
         map: {
           inline: false,
@@ -96,6 +98,7 @@ module.exports = function(grunt) {
         options: {
           processors: [
             require('autoprefixer')({ browsers: ['last 2 version'] }),
+            require('postcss-wcag-contrast')(),
             require('cssnano')()
           ],
           map: false
