@@ -8,6 +8,7 @@ pre > code {
 
 figure {
   margin: 1rem 0;
+  // font-size: 1rem;
 
   img {
     display: inline-block;
@@ -18,9 +19,8 @@ figure {
   }
 
   &.highlight {
-    font-size: 0.875em;
-
     pre {
+      // font-size: 1em;
       max-height: 24em;
     }
   }
@@ -308,8 +308,8 @@ figure {
   }
 
   > .example {
-    margin-top: 0;
-    margin-bottom: 0.5em;
+    // margin-top: 0;
+    // margin-bottom: 0.5em;
   }
 }
 
