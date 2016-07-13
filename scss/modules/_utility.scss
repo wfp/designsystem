@@ -62,10 +62,10 @@
 @mixin wrapper {
   margin: 0 auto;
   max-width: $content-width;
-  padding: 1em;
+  padding: 1rem;
 
   @include media-query($content-width) {
-    padding: 1em 0;
+    padding: 1rem 0;
   }
 
   @include media-query($xl-screen) {
@@ -75,12 +75,12 @@
 
 @mixin content-wrapper {
   display: block;
-  padding: 0.25em 0;
+  padding: 0.25rem 0;
 }
 
 @mixin logo-wrapper {
   display: block;
-  padding: 1em;
+  padding: 1rem;
 }
 
 @mixin overflow-wrapper {
@@ -90,17 +90,35 @@
   word-wrap: normal;
 }
 
+@mixin wrapper--narrow {
+  margin: 0 auto;
+  max-width: $md-screen;
+  padding: 1rem 0;
+
+  @include media-query($md-screen) {
+    padding: 2rem 0;
+  }
+
+  @include media-query($lg-screen) {
+    padding: 3rem 0;
+  }
+}
+
 .wfp-wrapper {
   @include wrapper;
 }
 
 .wfp-wrapper-tight {
   @include wrapper;
-  padding: 0 1em;
+  padding: 0 1rem;
 
   @include media-query($content-width) {
     padding: 0;
   }
+}
+
+.wfp-wrapper--narrow {
+  @include wrapper--narrow;
 }
 
 .wfp-logo-wrapper {
@@ -117,7 +135,7 @@
 
 @include media-query($md-screen) {
   .wfp-box {
-    padding: 1em;
+    padding: 1rem;
 
     &:only-child {
       padding-left: 0;
@@ -134,7 +152,7 @@
   }
 
   .wfp-box--flat {
-    padding: 0 1em;
+    padding: 0 1rem;
 
     &:only-child {
       padding-left: 0;
@@ -188,7 +206,7 @@
   nav[role="navigation"] {
     margin: 0;
     padding: 0;
-    height: 2em;
+    height: 2rem;
   }
 }
 
