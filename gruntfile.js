@@ -88,6 +88,7 @@ module.exports = function(grunt) {
         syntax: require('postcss-scss'),
         processors: [
           require('autoprefixer')({ browsers: ['last 2 version'] }),
+          require('pixrem')(),
           require('postcss-wcag-contrast')()
         ],
         map: {
@@ -98,6 +99,7 @@ module.exports = function(grunt) {
         options: {
           processors: [
             require('autoprefixer')({ browsers: ['last 2 version'] }),
+            require('pixrem')(),
             require('postcss-wcag-contrast')(),
             require('cssnano')()
           ],
@@ -115,6 +117,7 @@ module.exports = function(grunt) {
         options: {
           processors: [
             require('autoprefixer')({ browsers: ['last 2 version'] }),
+            require('pixrem')(),
             require('cssnano')()
           ],
           map: false
