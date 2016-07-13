@@ -18,12 +18,16 @@ Once the fonts are loaded, you can use them in your CSS:
 
 ###### Sans-serif
 {% highlight css %}
-font-family: "lato", sans-serif;
+body {
+  font-family: "lato", sans-serif;
+}
 {% endhighlight %}
 
 ###### Slab-serif
 {% highlight css %}
-font-family: "aleo", serif;
+body {
+  font-family: "aleo", sans-serif;
+}
 {% endhighlight %}
 
 Our webfonts are also available for offline use, and come bundled with WFP UI, which you can [download from GitHub](https://github.com/wfp/ui/releases). You can reference them from `dist` directory.

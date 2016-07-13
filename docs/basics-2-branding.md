@@ -177,7 +177,7 @@ Slightly desaturated, to make sure they are easy on the eye, these colours are r
   <li class="wfp-u-1-2 wfp-u-md-1-4">
     <div class="inline-item c-green"></div>
     <div class="desc">
-      <p><code>#b3de62</code></p>
+      <p><code>#00a878</code></p>
       <p><code>$green</code></p>
     </div>
   </li>

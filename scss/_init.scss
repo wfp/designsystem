@@ -3,17 +3,17 @@
 // Author: Matthew Morek (me@matthewmorek.com)
 // URL: http://matthewmorek.com
 
-$sans-serif-stack:    "lato", sans-serif;
-$serif-stack:         "aleo", serif;
+$sans-serif-stack:    "lato", -apple-system, BlinkMacSystemFont, system, sans-serif;
+$serif-stack:         "aleo", -apple-system, BlinkMacSystemFont, system, serif;
 $mono-stack:          monospace;
-$base-font-size:      16px;
-$base-line-height:    1.562;
-$small-font-size:     $base-font-size * 0.875;
+$base-font-size:      1rem; // 16px
+$base-line-height:    1.500; // 21px
+$small-font-size:     $base-font-size * 0.875; // 14px
 
-$spacing-unit:        32px;
+$spacing-unit:        2rem;
 
-$text-color:          #404040;
-$background-color:    #ffffff;
+$text-color:          #404040 !default;
+$background-color:    #ffffff !default;
 
 $primary:             #2a93fc;
 $accent:              #1f6ebc;
@@ -47,8 +47,8 @@ $yellow:              #fcdc5d;
 $green:               #00a878;
 
 // Width of the content area
-$content-width:       1000px;
-$max-content-width:   1200px;
+$content-width:       1000px !default;
+$max-content-width:   1200px !default;
 
 $sm-screen:           568px;
 $md-screen:           768px;

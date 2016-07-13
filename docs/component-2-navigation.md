@@ -15,15 +15,19 @@ This menu is very versatile and can use groups. You can use this menu to create 
 
 <div class="notice">
   <h2 class="title">Notice</h2>
-  <p>This menu can be displayed without surrounding borders by using <code>wfp-menu-plain</code> class, instead of <code>wfp-menu</code>.</p>
+  <ul>
+    <li>Menus can be displayed without surrounding borders, using <code>wfp-menu-plain</code> class instead of <code>wfp-menu</code>.</li>
+    <li>Menu headings can be also displayed as a link, using <code>a.menu--link</code> element instead of <code>span.menu--item</code>.</li>
+    <li>To highlight active menu items, add <code>current</code> class to <code>a.menu--link</code> nodes.</li>
+  </ul>
 </div>
 
 ###### Preview
 <nav class="wfp-menu">
   <div class="menu--group">
-    <h6 class="menu--heading">About</h6>
+    <h6 class="menu--heading"><span class="menu--item">About</span></h6>
     <ul class="menu--wrapper">
-      <li class="menu--item"><a href="#" class="menu--link">Executive Director</a></li>
+      <li class="menu--item"><a href="#" class="menu--link current">Executive Director</a></li>
       <li class="menu--item"><a href="#" class="menu--link">Senior Leadership</a></li>
       <li class="menu--item"><a href="#" class="menu--link">Corporate Information</a></li>
       <li class="menu--item"><a href="#" class="menu--link">Funding</a></li>
@@ -35,9 +39,9 @@ This menu is very versatile and can use groups. You can use this menu to create 
 {% highlight html %}
 <nav class="wfp-menu">
   <div class="menu--group">
-    <h6 class="menu--heading">About</h6>
+    <h6 class="menu--heading"><span class="menu--item">About</span></h6>
     <ul class="menu--wrapper">
-      <li class="menu--item"><a href="#" class="menu--link">Executive Director</a></li>
+      <li class="menu--item"><a href="#" class="menu--link current">Executive Director</a></li>
       <li class="menu--item"><a href="#" class="menu--link">Senior Leadership</a></li>
       <li class="menu--item"><a href="#" class="menu--link">Corporate Information</a></li>
       <li class="menu--item"><a href="#" class="menu--link">Funding</a></li>
@@ -57,16 +61,16 @@ The same menu as in previous example, but used together with grids, to create mo
 ###### Preview
 <nav class="wfp-menu wfp-grid">
   <div class="menu--group wfp-u-1 wfp-u-md-1-3">
-    <h6 class="menu--heading">Our Programmes</h6>
+    <h6 class="menu--heading"><span class="menu--item">Our Programmes</span></h6>
     <ul class="menu--wrapper">
       <li class="menu--item"><a href="#" class="menu--link">Cash and Vouchers</a></li>
       <li class="menu--item"><a href="#" class="menu--link">Foods for Assets</a></li>
-      <li class="menu--item"><a href="#" class="menu--link">HIV / AIDS</a></li>
+      <li class="menu--item"><a href="#" class="menu--link current">HIV / AIDS</a></li>
       <li class="menu--item"><a href="#" class="menu--link">Purchase for Progress</a></li>
     </ul>
   </div>
   <div class="menu--group wfp-u-1 wfp-u-md-1-3">
-    <h6 class="menu--heading">Our Expertise</h6>
+    <h6 class="menu--heading"><span class="menu--item">Our Expertise</span></h6>
     <ul class="menu--wrapper">
       <li class="menu--item"><a href="#" class="menu--link">Preparedness: Being Ready</a></li>
       <li class="menu--item"><a href="#" class="menu--link">Responding to Emergencies</a></li>
@@ -75,7 +79,7 @@ The same menu as in previous example, but used together with grids, to create mo
     </ul>
   </div>
   <div class="menu--group wfp-u-1 wfp-u-md-1-3">
-    <h6 class="menu--heading">Our Operations</h6>
+    <h6 class="menu--heading"><span class="menu--item">Our Operations</span></h6>
     <ul class="menu--wrapper">
       <li class="menu--item"><a href="#" class="menu--link">Current Emergencies</a></li>
       <li class="menu--item"><a href="#" class="menu--link">Emergency Operations</a></li>
@@ -89,16 +93,16 @@ The same menu as in previous example, but used together with grids, to create mo
 {% highlight html %}
 <nav class="wfp-menu wfp-grid">
   <div class="menu--group wfp-u-1 wfp-u-md-1-3">
-    <h6 class="menu--heading">Our Programmes</h6>
+    <h6 class="menu--heading"><span class="menu--item">Our Programmes</span></h6>
     <ul class="menu--wrapper">
       <li class="menu--item"><a href="#" class="menu--link">Cash and Vouchers</a></li>
       <li class="menu--item"><a href="#" class="menu--link">Foods for Assets</a></li>
-      <li class="menu--item"><a href="#" class="menu--link">HIV / AIDS</a></li>
+      <li class="menu--item"><a href="#" class="menu--link current">HIV / AIDS</a></li>
       <li class="menu--item"><a href="#" class="menu--link">Purchase for Progress</a></li>
     </ul>
   </div>
   <div class="menu--group wfp-u-1 wfp-u-md-1-3">
-    <h6 class="menu--heading">Our Expertise</h6>
+    <h6 class="menu--heading"><span class="menu--item">Our Expertise</span></h6>
     <ul class="menu--wrapper">
       <li class="menu--item"><a href="#" class="menu--link">Preparedness: Being Ready</a></li>
       <li class="menu--item"><a href="#" class="menu--link">Responding to Emergencies</a></li>
@@ -107,7 +111,7 @@ The same menu as in previous example, but used together with grids, to create mo
     </ul>
   </div>
   <div class="menu--group wfp-u-1 wfp-u-md-1-3">
-    <h6 class="menu--heading">Our Operations</h6>
+    <h6 class="menu--heading"><span class="menu--item">Our Operations</span></h6>
     <ul class="menu--wrapper">
       <li class="menu--item"><a href="#" class="menu--link">Current Emergencies</a></li>
       <li class="menu--item"><a href="#" class="menu--link">Emergency Operations</a></li>
@@ -207,6 +211,9 @@ _Pagination_ is very useful pattern that allows users to browse through availabl
       <li class="pagination--item">
         <a href="#" class="pagination--btn">3</a>
       </li>
+      <li class="pagination--item ellipsis">
+        <span class="pagination--btn ">&hellip;</span>
+      </li>
       <li class="pagination--item">
         <a href="#" class="pagination--btn">Next</a>
       </li>
@@ -229,6 +236,9 @@ _Pagination_ is very useful pattern that allows users to browse through availabl
     </li>
     <li class="pagination--item">
       <a href="#" class="pagination--btn">3</a>
+    </li>
+    <li class="pagination--item ellipsis">
+      <span class="pagination--btn ">&hellip;</span>
     </li>
     <li class="pagination--item">
       <a href="#" class="pagination--btn">Next</a>

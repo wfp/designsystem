@@ -1,6 +1,6 @@
 /*!
- * WFP UI Bootstrap Theme, v0.8.0
- * Copyright 2016 WFP/Matthew Morek
+ * WFP UI Bootstrap Theme, v0.9.0
+ * Copyright 2016 WFP/MADBIT Co.
  * License: https://github.com/wfp/ui/blob/master/LICENSE
  */
 
@@ -8,8 +8,8 @@
 // Load core variables and mixins
 // --------------------------------------------------
 
-@import "../_components/bootstrap-sass/assets/stylesheets/bootstrap/variables";
-@import "../_components/bootstrap-sass/assets/stylesheets/bootstrap/mixins";
+@import "../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/variables";
+@import "../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/mixins";
 @import "init";
 @import "modules/mixins";
 @import "modules/icons/icons-dark";
@@ -713,7 +713,7 @@ a {
 
     &.active,
     &.active:hover,
-    &.active:focus, {
+    &.active:focus {
       background-image: none;
       background-color: $accent;
     }

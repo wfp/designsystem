@@ -18,17 +18,15 @@ figure {
   }
 
   &.highlight {
-    font-size: 0.875em;
-
     pre {
-      max-height: 24em;
+      max-height: 24rem;
     }
   }
 }
 
 .grid-unit-width {
   &[class*="wfp-u-"] {
-    padding-right: 0.5em;
+    padding-right: 0.5rem;
     font-family: $mono-stack;
     text-align: right;
   }
@@ -36,8 +34,8 @@ figure {
 
 .grid-unit-sample {
   background-color: $grey-lightest;
-  min-height: 1.5em;
-  margin-bottom: 0.25em;
+  min-height: 1.5rem;
+  margin-bottom: 0.25rem;
 
   [class*="wfp-u-"] {
     background-color: $grey-light;
@@ -47,22 +45,22 @@ figure {
 
 .content-nav {
   width: 100%;
-  margin-bottom: 1em;
-  padding: 0.75em 1em;
+  margin-bottom: 1rem;
+  padding: 0.75rem 1rem;
   background-color: $grey-lightest;
   border-left: 6px solid $grey-light;
   border-radius: 2px;
 
   h4 {
     margin: 0;
-    margin-bottom: 0.25em;
-    padding-bottom: 0.25em;
+    margin-bottom: 0.25rem;
+    padding-bottom: 0.25rem;
     border-bottom: 1px solid $grey-lighter;
   }
 
   ol {
     margin: 0;
-    padding: 0 0 0 1.25em;
+    padding: 0 0 0 1.25rem;
   }
 
   li {
@@ -92,9 +90,9 @@ figure {
 
   .inline-item {
     width: 100%;
-    height: 2.5em;
-    line-height: 3em;
-    font-size: 3em;
+    height: 2.5rem;
+    line-height: 3rem;
+    font-size: 3rem;
     border-bottom: 1px solid $grey-lightest;
 
     &.c- {
@@ -124,8 +122,8 @@ figure {
 
   &.colours {
     .inline-item {
-      height: 2em;
-      border-bottom: 0.5em solid transparentize($black, 0.9);
+      height: 8rem;
+      border-bottom: 2rem solid transparentize($black, 0.9);
     }
   }
 
@@ -143,7 +141,7 @@ figure {
       text-align: left;
       overflow: visible;
       background-color: transparent;
-      padding: 0.75em 1em;
+      padding: 0.75rem 1rem;
 
       > h6 {
         margin: 0;
@@ -170,9 +168,9 @@ figure {
 
       .desc {
         height: auto;
-        padding: 1em;
-        line-height: 1em;
-        font-size: 1em;
+        padding: 1rem;
+        line-height: 1rem;
+        font-size: 1rem;
         cursor: default;
         border-bottom: 0;
         border-top: 2px solid $grey-light;
@@ -181,18 +179,18 @@ figure {
           border-top: 2px solid $primary;
           position: absolute;
           background-color: $grey-light;
-          width: 10em;
+          width: 10rem;
           top: 0;
           left: 0;
-          padding: 1em;
+          padding: 1rem;
           z-index: 1000;
           text-align: left;
         }
 
         img {
           width: 100%;
-          max-width: 4em;
-          margin-bottom: 1em;
+          max-width: 4rem;
+          margin-bottom: 1rem;
         }
 
         > p {
@@ -205,10 +203,10 @@ figure {
   }
 
   .desc {
-    padding: 0.75em 0;
+    padding: 0.75rem 0;
 
     > h4, p {
-      font-size: 0.875em;
+      font-size: 1rem;
       margin: 0;
       color: $grey-dark;
       line-height: 1.4;
@@ -227,14 +225,14 @@ figure {
     }
 
     .desc-label {
-      font-size: 0.875em;
+      font-size: 0.875rem;
       text-transform: lowercase;
     }
   }
 }
 
 .list-view {
-  @extend %no-list;
+  @include nolist;
   padding: 0;
 
   .item {
@@ -244,7 +242,7 @@ figure {
   .desc {
     .desc-img {
       display: inline-block;
-      padding: 1em;
+      padding: 1rem;
       vertical-align: top;
 
       &.light {
@@ -258,9 +256,9 @@ figure {
 
     .desc-label {
       display: inline-block;
-      padding: 1em;
-      font-size: 0.875em;
-      line-height: 1.5em;
+      padding: 1rem;
+      font-size: 0.875rem;
+      line-height: 1.5rem;
       text-transform: lowercase;
       vertical-align: top;
     }
@@ -298,32 +296,32 @@ figure {
 }
 
 .type-sizes {
-  margin: 2em 0;
+  margin: 2rem 0;
 
   > .label {
-    font-size: 1em;
+    font-size: 1rem;
     font-weight: bold;
     color: $accent;
     margin-bottom: 0;
   }
 
   > .example {
-    margin-top: 0;
-    margin-bottom: 0.5em;
+    // margin-top: 0;
+    // margin-bottom: 0.5em;
   }
 }
 
 
 .preview {
   background-color: $grey-lightest;
-  padding: 1em;
+  padding: 1rem;
   text-align: center;
   border: 1px solid $grey-lighter;
-  margin: 0.5em 0;
+  margin: 0.5rem 0;
   max-width: 100%;
 
   &.paragraph {
-    padding: 0.5em 1.5em;
+    padding: 0.5rem 1.5rem;
     text-align: left;
   }
 
@@ -346,24 +344,24 @@ figure {
   }
 
   @include media-query($md-screen) {
-    padding: 2em;
+    padding: 2rem;
   };
 }
 
 .notice {
   background-color: $grey-lightest;
-  padding: 0.5em 1em;
+  padding: 0.5rem 1rem;
   border-left: 6px solid $orange;
   border-radius: 2px;
   line-height: 1.4;
-  margin: 1em 0;
+  margin: 1rem 0;
 
   > * {
-    margin: 0.25em 0;
-    font-size: 0.875em;
+    margin: 0.25rem 0;
+    font-size: 0.875rem;
   }
 
   > .title {
-    font-size: 1.25em;
+    font-size: 1.25rem;
   }
 }

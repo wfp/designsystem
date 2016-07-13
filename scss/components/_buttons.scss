@@ -9,18 +9,18 @@ $color-facebook: #3b5998;
 $color-gplus: #dc4e41;
 
 @mixin button($type: default, $color: $grey-dark) {
+  @include transition(0.1s border ease-in-out, 0.1s background ease-in-out, 0.1s color ease-in-out);
   display: inline-block;
-  padding: 0.5em 1em;
+  padding: 0.5rem 1rem;
+  margin: 0 0.25rem;
   font-family: inherit;
   font-weight: bold;
   font-size: 100%;
-  line-height: 1.5;
+  line-height: 1.5rem;
   border: 1px solid transparentize($black, 0.85);
   border-radius: 3px;
-  transition-property: border, background, color;
-  transition-duration: 0.1s;
-  transition-timing-function: ease-in;
   vertical-align: baseline;
+  box-shadow: rgba($black, 0.20) 0 1px 3px;
 
   // Active Button
   &.active,
@@ -32,15 +32,21 @@ $color-gplus: #dc4e41;
     box-shadow: transparentize($black, 0.9) 0 0 8px inset;
   }
 
+  > [class^="icon-"] {
+    vertical-align: bottom;
+    margin-right: 0.25rem;
+    margin-left: -0.25rem;
+  }
+
   @if $type == default {
     color: darken($primary, 12%);
     background-color: $white;
     border-color: darken($primary, 12%);
 
     &:hover {
-      background-color: $blue-lightest;
-      border-color: darken($primary, 20%);
-      color: darken($primary, 20%);
+      background-color: darken($primary, 12%);
+      border-color: darken($primary, 12%);
+      color: $white;
     }
 
     &.active,
@@ -48,17 +54,33 @@ $color-gplus: #dc4e41;
     &.active:hover,
     &.active:active,
     &.active:focus {
-      border-color: darken($blue-darker, 20%);
-      color: darken($blue-darker, 20%);
+      background-color: darken($blue-darker, 15%);
+      border-color: darken($blue-darker, 15%);
+      color: $white;
     }
+
+    &.disabled:hover {
+      background-color: $white;
+      color: darken($primary, 12%);
+    }
+
   } @else if $type == primary {
     color: $white;
     background-color: darken($primary, 12%);
 
-    &:hover,
-    &:active {
+    &:hover {
       background-color: darken($primary, 20%);
     }
+
+    &.active,
+    &:active,
+    &.active:hover,
+    &.active:active,
+    &.active:focus {
+      background-color: darken($blue-darker, 15%);
+      border-color: darken($blue-darker, 15%);
+    }
+
   } @else if $type == negative {
     color: $white;
     background-color: desaturate(darken($red, 15%), 40%);
@@ -120,26 +142,29 @@ $color-gplus: #dc4e41;
 
   // Extra sizes and modes for buttons
   &.xsmall {
-    font-size: 0.875em;
+    font-size: 0.875rem;
     font-weight: normal;
-    padding: 0.5em 0.75em;
+    padding: 0.5rem 0.75rem;
     line-height: 1;
   }
 
   &.small {
-    font-size: 1em;
+    font-size: 1rem;
     font-weight: normal;
-    padding: 0.33em 0.75em;
+    padding: 0.35rem 0.75rem;
+    line-height: 1.5;
   }
 
   &.large {
-    font-size: 1.125em;
-    padding: 0.66em 1em;
+    font-size: 1.125rem;
+    padding: 0.65rem 1rem;
+    line-height: 1.5;
   }
 
   &.xlarge {
-    font-size: 1.25em;
-    padding: 0.75em 1.25em;
+    font-size: 1.25rem;
+    padding: 0.75rem 1.25rem;
+    line-height: 1.5;
   }
 
   &.block {
@@ -152,21 +177,13 @@ $color-gplus: #dc4e41;
     box-shadow: none;
   }
 
-  &[class*="wfp-btn"]:nth-of-type(1n+0) {
-    margin: 0 0.5em;
-
-    &:first-child {
-      margin-left: 0;
-    }
-
-    &:last-child {
-      margin-right: 0;
-    }
+  &:only-child {
+    margin: 0;
   }
 }
 
 a[class*="wfp-btn"] {
- //
+ border-bottom-color: inherit;
 }
 
 .wfp-btn {
