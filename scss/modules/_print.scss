@@ -5,15 +5,16 @@
 
 @media print {
   * {
-    background: transparent;
     color: $black;
     box-shadow: none;
     text-shadow: none;
+    -webkit-print-color-adjust: exact;
   }
 
   a,
   a:visited {
     text-decoration: underline;
+    color: darken($primary, 12%);
   }
 
   a[href]:after {
@@ -35,36 +36,75 @@
 
   pre,
   blockquote {
-    border: 1px solid $grey-light;
+    border-left: 6px solid $grey-light;
+    page-break-before: auto;
     page-break-inside: avoid;
+    white-space: pre-wrap;
+    word-wrap: break-word;
   }
 
   thead {
-    display: table-header-group; // h5bp.com/t
+    display: table-header-group;
   }
 
   tr,
-  img {
+  img,
+  figure {
+    display: block;
+    page-break-before: auto;
+    page-break-after: auto;
     page-break-inside: avoid;
+  }
+
+  figure {
+    &.picture {
+      margin: 0 auto;
+    }
   }
 
   img {
     max-width: 100%;
+    vertical-align: bottom;
   }
 
   @page {
-    margin: 0.5cm;
+    size: A4 portrait;
+    margin: 1cm;
   }
 
   p,
+  h1,
   h2,
-  h3 {
+  h3,
+  h4 {
     orphans: 3;
     widows: 3;
   }
 
+  h1,
   h2,
-  h3 {
+  h3,
+  h4 {
+    page-break-before: always;
     page-break-after: avoid;
+    page-break-inside: avoid;
+  }
+
+  .wfp-header-spacer--narrow {
+    padding: 0;
+    overflow: visible;
+  }
+
+  // Hide certain UI components
+  .wfp-header-int,
+  .wfp-header-ext,
+  .wfp-footer--mini {
+    display: none;
+    visibility: hidden;
+  }
+
+  .wfp-menu {
+    display: none;
+    visibility: hidden;
   }
 }
