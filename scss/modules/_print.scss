@@ -100,11 +100,14 @@
   .wfp-header-ext,
   .wfp-footer--mini {
     display: none;
-    visibility: hidden;
   }
 
   .wfp-menu {
     display: none;
-    visibility: hidden;
+  }
+
+  // Manually select which elements to hide for printing
+  .dont-print {
+    display: none;
   }
 }
