@@ -24,12 +24,13 @@
   },
   "devDependencies": {
     "eslint": "~2.1.0",
-    "grunt-eslint": "~18.1.0",
     "grunt-contrib-clean": "^1.0.0",
     "grunt-contrib-uglify": "^1.0.1",
     "grunt-contrib-watch": "^1.0.0",
     "grunt-datauri": "^0.4.0",
+    "grunt-eslint": "~18.1.0",
     "grunt-grunticon": "^2.2.2",
+    "grunt-html-auditor": "~1.0.0",
     "grunt-sass-lint": "^0.2.0",
     "grunt-svg-toolkit": "github:matthewmorek/grunt-svg-toolkit"
   },

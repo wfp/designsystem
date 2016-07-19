@@ -275,6 +275,28 @@ module.exports = function(grunt) {
           'docs/js/lib/responsive-nav.js': ['js/responsive-nav.js']
         }
       }
+    },
+    htmlaudit: {
+      default: {
+        options: {
+          baseUri: 'http://cdn.wfp.org/guides/ui/v0.8.0/'
+        },
+        src: './dist/docs/**/*.html'
+      },
+      travis: {
+        options: {
+          tests: {
+            a11y: true,
+            html5: true,
+            link: false
+          },
+          baseUri: 'http://cdn.wfp.org/guides/ui/v0.8.0/',
+          showNotices: false,
+          showDetails: false,
+          showSummaryOnly: true
+        },
+        src: './dist/docs/**/*.html'
+      }
     }
   });
 
@@ -284,6 +306,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-datauri');
   grunt.loadNpmTasks('grunt-eslint');
   grunt.loadNpmTasks('grunt-grunticon');
+  grunt.loadNpmTasks('grunt-html-auditor');
   grunt.loadNpmTasks('grunt-jekyll');
   grunt.loadNpmTasks('grunt-postcss');
   grunt.loadNpmTasks('grunt-sass');
@@ -306,7 +329,7 @@ module.exports = function(grunt) {
   // Build a dist-ready WFP UI
   grunt.registerTask('dist', ['gen-svg', 'gen-icons', 'sass:dist', 'postcss:dist', 'uglify:dist']);
   // Run build and dist task in sequence (for Travis CI)
-  grunt.registerTask('test', ['build', 'docs-build', 'dist', 'docs-dist']);
+  grunt.registerTask('test', ['dist', 'docs-dist', 'htmlaudit:travis']);
   // Set default grunt task to `dist`
   grunt.registerTask('default', ['dist']);
 };
