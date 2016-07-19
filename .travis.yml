@@ -25,5 +25,5 @@ before_script:
   # - node_modules/.bin/grunt --version
   # - node_modules/.bin/bower --version
   - bower install --config.interactive=false
-  - test
+  - grunt test
 script: echo "Done!"
