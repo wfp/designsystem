@@ -30,3 +30,7 @@
 @import "layouts/primer";
 @import "layouts/header";
 @import "layouts/footer";
+
+// Print styles
+// Inlined to avoid additional http requests
+@import "modules/print";
