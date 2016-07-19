@@ -3,6 +3,14 @@ node_js:
   - "5.9"
   - "5.0"
   - "4.4"
+env:
+  - CXX=g++-4.9
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - g++-4.9
 before_install:
   - npm set progress=false
   - npm install -g grunt-cli bower
