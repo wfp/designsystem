@@ -283,19 +283,16 @@ module.exports = function(grunt) {
         },
         src: './dist/docs/**/*.html'
       },
-      travis: {
+      ci: {
         options: {
           tests: {
             a11y: true,
             html5: true,
             link: false
           },
-          baseUri: 'http://cdn.wfp.org/guides/ui/v0.8.0/',
-          showNotices: false,
-          showDetails: false,
           showSummaryOnly: true
         },
-        src: './dist/docs/**/*.html'
+        src: './dist/docs/*.html'
       }
     }
   });
@@ -329,7 +326,7 @@ module.exports = function(grunt) {
   // Build a dist-ready WFP UI
   grunt.registerTask('dist', ['gen-svg', 'gen-icons', 'sass:dist', 'postcss:dist', 'uglify:dist']);
   // Run build and dist task in sequence (for Travis CI)
-  grunt.registerTask('test', ['dist', 'docs-dist', 'htmlaudit:travis']);
+  grunt.registerTask('test', ['dist', 'docs-dist', 'htmlaudit:ci']);
   // Set default grunt task to `dist`
   grunt.registerTask('default', ['dist']);
 };
