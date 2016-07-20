@@ -12,7 +12,7 @@ addons:
       - g++-4.8
 before_install:
   - npm set progress=false
-  - npm install -g grunt-cli bower
+  - npm install -g grunt-cli bower html-auditor
   - export PATH=$(python -c 'from sys import argv;from collections import OrderedDict as od;print(":".join(od((p,None) for p in argv[1].split(":") if p.startswith("/")).keys()))' "$PATH")
 install: npm install
 before_script:
