@@ -30,7 +30,7 @@
     "grunt-datauri": "^0.4.0",
     "grunt-eslint": "~18.1.0",
     "grunt-grunticon": "^2.2.2",
-    "grunt-html-auditor": "~1.1.0",
+    "grunt-html-auditor": "github:matthewmorek/grunt-html-auditor#develop",
     "grunt-sass-lint": "^0.2.0",
     "grunt-svg-toolkit": "github:matthewmorek/grunt-svg-toolkit"
   },
