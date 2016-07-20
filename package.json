@@ -36,5 +36,8 @@
   },
   "peerDependencies": {
     "grunt": "~0.4.5"
+  },
+  "scripts": {
+    "postinstall": "npm rebuild html-auditor"
   }
 }
