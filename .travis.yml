@@ -1,20 +1,24 @@
 language: node_js
 node_js:
-  - "5.5"
-  - "5.0"
+  - "5.12"
   - "4.4"
+env:
+  - CXX=g++-4.8
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - g++-4.8
 before_install:
   - npm set progress=false
+  - npm install -g grunt-cli bower html-auditor
   - export PATH=$(python -c 'from sys import argv;from collections import OrderedDict as od;print(":".join(od((p,None) for p in argv[1].split(":") if p.startswith("/")).keys()))' "$PATH")
 install: npm install
 before_script:
   - rvm install 2.2.3
   - rvm use 2.2.3
-  # - ruby --version
   - gem install jekyll --no-rdoc --no-ri --pre
-  # - jekyll --version
-  # - node_modules/.bin/grunt --version
-  # - node_modules/.bin/bower --version
-  - node_modules/.bin/bower install --config.interactive=false
-  - node_modules/.bin/grunt test
+  - bower install --config.interactive=false
+  - grunt test
 script: echo "Done!"

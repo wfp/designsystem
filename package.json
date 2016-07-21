@@ -11,7 +11,7 @@
     "bower": "^1.7.7",
     "cssnano": "^3.4.0",
     "grunt": "~0.4.5",
-    "grunt-cli": "^1.2.0",
+    "grunt-cli": "~1.2.0",
     "grunt-jekyll": "^0.4.3",
     "grunt-postcss": "^0.8.0",
     "grunt-pure-grids": "^1.0.2",
@@ -24,12 +24,13 @@
   },
   "devDependencies": {
     "eslint": "~2.1.0",
-    "grunt-eslint": "~18.1.0",
     "grunt-contrib-clean": "^1.0.0",
     "grunt-contrib-uglify": "^1.0.1",
     "grunt-contrib-watch": "^1.0.0",
     "grunt-datauri": "^0.4.0",
+    "grunt-eslint": "~18.1.0",
     "grunt-grunticon": "^2.2.2",
+    "grunt-html-auditor": "~1.1.1",
     "grunt-sass-lint": "^0.2.0",
     "grunt-svg-toolkit": "github:matthewmorek/grunt-svg-toolkit"
   },
