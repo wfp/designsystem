@@ -13,12 +13,12 @@ addons:
 before_install:
   - npm set progress=false
   - npm install -g grunt-cli bower html-auditor
-  - export PATH=$(python -c 'from sys import argv;from collections import OrderedDict as od;print(":".join(od((p,None) for p in argv[1].split(":") if p.startswith("/")).keys()))' "$PATH")
+  # - export PATH=$(python -c 'from sys import argv;from collections import OrderedDict as od;print(":".join(od((p,None) for p in argv[1].split(":") if p.startswith("/")).keys()))' "$PATH")
 install: npm install
 before_script:
-  - rvm install 2.2.3
-  - rvm use 2.2.3
-  - gem install jekyll --no-rdoc --no-ri --pre
+  # - rvm install 2.2.3
+  # - rvm use 2.2.3
+  # - gem install jekyll --no-rdoc --no-ri --pre
   - bower install --config.interactive=false
   - grunt test
 script: echo "Done!"
