@@ -373,7 +373,7 @@ a {
     background-position: center;
 
     &:checked {
-      &:before {
+      &::before {
         @extend %icon-dark-checkbox-checked;
         display: block;
         position: absolute;
@@ -596,7 +596,7 @@ a {
     font-size: 0.875em;
     line-height: 1.6;
 
-    + li:before {
+    + li::before {
       padding: 0;
       content: "";
     }
@@ -612,7 +612,7 @@ a {
       color: $grey-light;
       cursor: default;
 
-      &:after {
+      &::after {
         display: none;
       }
     }

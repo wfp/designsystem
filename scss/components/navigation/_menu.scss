@@ -121,7 +121,7 @@
     }
 
     &:hover {
-      &:after {
+      &::after {
         margin-left: 0.25em;
         content: "›";
       }

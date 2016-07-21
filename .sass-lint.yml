@@ -4,7 +4,7 @@
 # Linter Options
 options:
   formatter: stylish
-  merge-default-rules: false
+  merge-default-rules: true
 # Rule Configuration
 rules:
   # Extends
