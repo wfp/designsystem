@@ -238,18 +238,6 @@ module.exports = function(grunt) {
         }
       }
     },
-    eslint: {
-      target: ['js/**/*.js'],
-      options: {
-        ignorePattern: ['js/lib/**/*.js']
-      }
-    },
-    sasslint: {
-      options: {
-        config: '.sass-lint.yml',
-      },
-      target: ['scss/**/*.scss']
-    },
     uglify: {
       options: {
         mangle: false,
@@ -275,6 +263,18 @@ module.exports = function(grunt) {
           'docs/js/lib/responsive-nav.js': ['js/responsive-nav.js']
         }
       }
+    },
+    eslint: {
+      target: ['js/**/*.js'],
+      options: {
+        ignorePattern: ['js/lib/**/*.js']
+      }
+    },
+    sasslint: {
+      options: {
+        config: '.sass-lint.yml',
+      },
+      target: ['scss/**/*.scss']
     },
     htmlaudit: {
       default: {
