@@ -116,10 +116,10 @@
     }
   } @else if $type == radio {
     @extend %inputbox;
-    @extend %icon-dark-radio-button-off;
+    @extend %icon-dark-radio-btn-off;
 
     &:checked {
-      @extend %icon-primary-radio-button-on;
+      @extend %icon-primary-radio-btn-on;
     }
   } @else if $type == label {
     display: block;
