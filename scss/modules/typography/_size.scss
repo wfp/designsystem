@@ -1,0 +1,35 @@
+// Typography: Sizes
+// Project: WFP UI
+// Author: Matthew Morek (me@matthewmorek.com)
+// URL: http://matthewmorek.com
+
+@mixin t-f1 {
+  font-size: 3rem;
+}
+
+@mixin t-f2 {
+  font-size: 2.25rem;
+}
+
+@mixin t-f3 {
+  font-size: 1.5rem;
+}
+
+@mixin t-f4 {
+  font-size: 1.25rem;
+}
+
+@mixin t-f5 {
+  font-size: 1rem;
+}
+
+@mixin t-f6 {
+  font-size: 0.875rem;
+}
+
+.t-f1 { @include t-f1; }
+.t-f2 { @include t-f2; }
+.t-f3 { @include t-f3; }
+.t-f4 { @include t-f4; }
+.t-f5 { @include t-f5; }
+.t-f6 { @include t-f6; }

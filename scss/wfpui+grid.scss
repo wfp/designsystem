@@ -17,7 +17,13 @@
 @import "modules/utility";
 @import "modules/icons";
 
-// Import components
+// Typography
+@import "modules/typography/alignment";
+@import "modules/typography/colour";
+@import "modules/typography/transform";
+@import "modules/typography/size";
+@import "modules/typography/weight";
+@import "modules/typography/headings";
 @import "components/buttons";
 @import "components/forms";
 @import "components/tables";

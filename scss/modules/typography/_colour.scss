@@ -1,0 +1,20 @@
+// Typography: Colour
+// Project: WFP UI
+// Author: Matthew Morek (me@matthewmorek.com)
+// URL: http://matthewmorek.com
+
+@mixin color--light {
+  color: $white;
+}
+
+@mixin color--dark {
+  color: $text-color;
+}
+
+@mixin color--primary {
+  color: darken($primary, 12%);
+}
+
+.color-light    { @include color--light; }
+.color-dark     { @include color--dark; }
+.color-primary  { @include color--primary; }

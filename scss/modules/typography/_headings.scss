@@ -1,0 +1,75 @@
+// Typography: Headings
+// Project: WFP UI
+// Author: Matthew Morek (me@matthewmorek.com)
+// URL: http://matthewmorek.com
+
+@mixin h--headline {
+  font-size: 1.75rem;
+  line-height: $base-line-height;
+  margin: 0.5rem 0;
+
+  @include media-query($md-screen) {
+    font-size: 3rem;
+    letter-spacing: -0.05rem;
+    line-height: $base-line-height * 0.5;
+    margin: 1rem 0;
+  }
+}
+
+@mixin h--tagline {
+  font-size: 0.875rem;
+  line-height: $base-line-height;
+  margin: 0.5rem 0;
+
+  @include media-query($md-screen) {
+    font-size: 1.25rem;
+    margin: 0.25rem 0;
+  }
+}
+
+@mixin h1 {
+  font-size: 3rem;
+  letter-spacing: -0.05rem;
+  line-height: $base-line-height * 0.5;
+  margin: 0.5rem 0;
+}
+
+@mixin h2 {
+  font-size: 2.5rem;
+  letter-spacing: -0.025rem;
+  line-height: $base-line-height * 0.75;
+  margin: 0.25rem 0;
+}
+
+@mixin h3 {
+  font-size: 2rem;
+  line-height: $base-line-height * 0.875;
+  margin: 0.25rem 0;
+}
+
+@mixin h4 {
+  font-size: 1.75rem;
+  line-height: $base-line-height;
+  margin: 0.25rem 0;
+}
+
+@mixin h5 {
+  font-size: 1.5rem;
+  line-height: $base-line-height;
+  margin: 0.25rem 0;
+}
+
+@mixin h6 {
+  font-size: 1.25rem;
+  line-height: $base-line-height;
+  margin: 0.25rem 0;
+}
+
+.h--headline    { @include h--headline; }
+.h--tagline     { @include h--tagline; }
+.h1             { @include h1; }
+.h2             { @include h2; }
+.h3             { @include h3; }
+.h4             { @include h4; }
+.h5             { @include h5; }
+.h6             { @include h6; }

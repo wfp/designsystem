@@ -1,0 +1,20 @@
+// Typography: Alignment
+// Project: WFP UI
+// Author: Matthew Morek (me@matthewmorek.com)
+// URL: http://matthewmorek.com
+
+@mixin t-left {
+  text-align: left;
+}
+
+@mixin t-center {
+  text-align: center;
+}
+
+@mixin t-right {
+  text-align: right;
+}
+
+.t-left   { @include t-left; }
+.t-right  { @include t-right; }
+.t-center { @include t-center; }
