@@ -4,7 +4,7 @@
 }
 
 @mixin menu--item {
-  font-size: 1em;
+  @include t-f5;
   padding: 0;
   margin: 0;
   display: block;
@@ -13,7 +13,7 @@
 
 @mixin menu--heading {
   @include menu--item;
-  @include allcaps;
+  @include t-allcaps;
   border-bottom: 1px solid $grey-lighter;
   margin: 0.25em 0;
 
@@ -173,7 +173,7 @@
   @include menu;
 
   .menu--heading {
-    @include allcaps;
+    @include t-allcaps;
     color: $grey-light;
     border-top: 0;
     border-bottom-color: $grey-dark;
@@ -198,7 +198,7 @@
     }
 
     @include media-query($md-screen) {
-      font-size: 1em;
+      @include t-f5;
       padding: 0.25em 1.5em;
     }
   }
