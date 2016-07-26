@@ -1,0 +1,129 @@
+// Module: Layout/Spacing
+// Project: WFP UI
+// Author: Matthew Morek (me@matthewmorek.com)
+// URL: http://matthewmorek.com
+
+// -----------------------------------------------------------------------------
+// Sizes
+// -----------------------------------------------------------------------------
+
+$spacer: (
+  0: 0,
+  1: $spacing-unit,
+  2: $spacing-unit * pow(2, 1),
+  3: $spacing-unit * pow(2, 2),
+  4: $spacing-unit * pow(2, 3),
+  5: $spacing-unit * pow(2, 4),
+  6: $spacing-unit * pow(2, 5),
+  7: $spacing-unit * pow(2, 6)
+);
+
+// -----------------------------------------------------------------------------
+// Padding
+// -----------------------------------------------------------------------------
+
+// padding (all)
+@for $i from 0 through 7 {
+  .pa-#{$i} {
+    padding: map-get($spacer, $i);
+  }
+}
+
+// padding-left
+@for $i from 0 through 7 {
+  .pl-#{$i} {
+    padding-left: map-get($spacer, $i);
+  }
+}
+
+// padding-right
+@for $i from 0 through 7 {
+  .pr-#{$i} {
+    padding-right: map-get($spacer, $i);
+  }
+}
+
+// padding-top
+@for $i from 0 through 7 {
+  .pt-#{$i} {
+    padding-top: map-get($spacer, $i);
+  }
+}
+
+// padding-bottom
+@for $i from 0 through 7 {
+  .pb-#{$i} {
+    padding-bottom: map-get($spacer, $i);
+  }
+}
+
+// horizontal padding
+@for $i from 0 through 7 {
+  .ph-#{$i} {
+    padding-left: map-get($spacer, $i);
+    padding-right: map-get($spacer, $i);
+  }
+}
+
+// vertical padding
+@for $i from 0 through 7 {
+  .pv-#{$i} {
+    padding-top: map-get($spacer, $i);
+    padding-bottom: map-get($spacer, $i);
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Margins
+// -----------------------------------------------------------------------------
+
+// margin (all)
+@for $i from 0 through 7 {
+  .ma-#{$i} {
+    margin: map-get($spacer, $i);
+  }
+}
+
+// margin-left
+@for $i from 0 through 7 {
+  .ml-#{$i} {
+    margin-left: map-get($spacer, $i);
+  }
+}
+
+// margin-right
+@for $i from 0 through 7 {
+  .mr-#{$i} {
+    margin-right: map-get($spacer, $i);
+  }
+}
+
+// margin-top
+@for $i from 0 through 7 {
+  .mt-#{$i} {
+    margin-top: map-get($spacer, $i);
+  }
+}
+
+// margin-bottom
+@for $i from 0 through 7 {
+  .mb-#{$i} {
+    margin-bottom: map-get($spacer, $i);
+  }
+}
+
+// horizontal margin
+@for $i from 0 through 7 {
+  .mh-#{$i} {
+    margin-left: map-get($spacer, $i);
+    margin-right: map-get($spacer, $i);
+  }
+}
+
+// vertical margin
+@for $i from 0 through 7 {
+  .mv-#{$i} {
+    margin-top: map-get($spacer, $i);
+    margin-bottom: map-get($spacer, $i);
+  }
+}
