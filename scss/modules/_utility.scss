@@ -176,26 +176,6 @@
   @include clearfix;
 }
 
-.wfp-text-left {
-  @include text-left;
-}
-
-.wfp-text-right {
-  @include text-right;
-}
-
-.wfp-text-center {
-  @include text-center;
-}
-
-.wfp-caps {
-  @include caps;
-}
-
-.wfp-allcaps {
-  @include allcaps;
-}
-
 .wfp-nolist {
   @include nolist;
 }
