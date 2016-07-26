@@ -4,27 +4,19 @@
 // URL: http://matthewmorek.com
 
 // -----------------------------------------------------------------------------
-// Text manipulation
+// Tints
 // -----------------------------------------------------------------------------
-@mixin text-left {
-  text-align: left;
+@mixin tint--static {
+  @extend .bg-black-50;
+  width: 100%;
 }
 
-@mixin text-center {
-  text-align: center;
-}
+@mixin tint--dynamic {
+  @include tint--static;
 
-@mixin text-right {
-  text-align: right;
-}
-
-// Transformations
-@mixin caps {
-  text-transform: capitalize;
-}
-
-@mixin allcaps {
-  text-transform: uppercase;
+  &:hover {
+    @extend .bg-black-80;
+  }
 }
 
 // -----------------------------------------------------------------------------
@@ -103,6 +95,9 @@
     padding: 3rem 0;
   }
 }
+
+.tint-static  { @include tint--static; }
+.tint-dynamic { @include tint--dynamic; }
 
 .wfp-wrapper {
   @include wrapper;

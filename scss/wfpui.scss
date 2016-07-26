@@ -13,7 +13,6 @@
 // Import modules
 @import "modules/mixins";
 @import "modules/base";
-@import "modules/utility";
 @import "modules/icons";
 
 // Typography
@@ -23,6 +22,9 @@
 @import "modules/typography/size";
 @import "modules/typography/weight";
 @import "modules/typography/headings";
+@import "modules/bg-colour";
+@import "modules/utility";
+
 @import "components/buttons";
 @import "components/forms";
 @import "components/tables";

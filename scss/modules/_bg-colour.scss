@@ -1,0 +1,35 @@
+// Modules: Colours
+// Project: WFP UI
+// Author: Matthew Morek (me@matthewmorek.com)
+// URL: http://matthewmorek.com
+
+@mixin bg-color($color, $fallback, $opacity) {
+  background-color: $fallback;
+  background-color: rgba($color, $opacity);
+}
+
+// Dark
+.bg-black-0   { @include bg-color($black, transparent, 0); }
+.bg-black-10  { @include bg-color($black, $black, 0.1); }
+.bg-black-20  { @include bg-color($black, $black, 0.2); }
+.bg-black-30  { @include bg-color($black, $black, 0.3); }
+.bg-black-40  { @include bg-color($black, $black, 0.4); }
+.bg-black-50  { @include bg-color($black, $black, 0.5); }
+.bg-black-60  { @include bg-color($black, $black, 0.6); }
+.bg-black-70  { @include bg-color($black, $black, 0.7); }
+.bg-black-80  { @include bg-color($black, $black, 0.8); }
+.bg-black-90  { @include bg-color($black, $black, 0.9); }
+.bg-black-100 { @include bg-color($black, $black, 1); }
+
+// Light
+.bg-white-0   { @include bg-color($white, transparent, 0); }
+.bg-white-10  { @include bg-color($white, $white, 0.1); }
+.bg-white-20  { @include bg-color($white, $white, 0.2); }
+.bg-white-30  { @include bg-color($white, $white, 0.3); }
+.bg-white-40  { @include bg-color($white, $white, 0.4); }
+.bg-white-50  { @include bg-color($white, $white, 0.5); }
+.bg-white-60  { @include bg-color($white, $white, 0.6); }
+.bg-white-70  { @include bg-color($white, $white, 0.7); }
+.bg-white-80  { @include bg-color($white, $white, 0.8); }
+.bg-white-90  { @include bg-color($white, $white, 0.9); }
+.bg-white-100 { @include bg-color($white, $white, 1); }
