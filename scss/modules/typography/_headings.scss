@@ -4,64 +4,64 @@
 // URL: http://matthewmorek.com
 
 @mixin h--headline {
+  @include lh-scale(0.75);
   font-size: 1.75rem;
-  line-height: $base-line-height;
-  margin: 0.5rem 0;
+  margin: 0.25rem 0;
 
   @include media-query($md-screen) {
+    // @include lh-scale(0.5);
     font-size: 3rem;
     letter-spacing: -0.05rem;
-    line-height: $base-line-height * 0.5;
-    margin: 1rem 0;
+    margin: 0.5rem 0;
   }
 }
 
 @mixin h--tagline {
+  @include lh-scale(0.875);
   font-size: 0.875rem;
-  line-height: $base-line-height;
-  margin: 0.5rem 0;
+  margin: 0.25rem 0;
 
   @include media-query($md-screen) {
+    // @include lh-scale(1);
     font-size: 1.25rem;
-    margin: 0.25rem 0;
   }
 }
 
 @mixin h1 {
+  @include lh-scale(0.5);
   font-size: 3rem;
   letter-spacing: -0.05rem;
-  line-height: $base-line-height * 0.5;
   margin: 0.5rem 0;
 }
 
 @mixin h2 {
+  @include lh-scale(0.75);
   font-size: 2.5rem;
   letter-spacing: -0.025rem;
-  line-height: $base-line-height * 0.75;
   margin: 0.25rem 0;
 }
 
 @mixin h3 {
+  @include lh-scale(0.875);
   font-size: 2rem;
-  line-height: $base-line-height * 0.875;
   margin: 0.25rem 0;
 }
 
 @mixin h4 {
+  @include lh-scale;
   font-size: 1.75rem;
-  line-height: $base-line-height;
   margin: 0.25rem 0;
 }
 
 @mixin h5 {
+  @include lh-scale;
   font-size: 1.5rem;
-  line-height: $base-line-height;
   margin: 0.25rem 0;
 }
 
 @mixin h6 {
+  @include lh-scale;
   font-size: 1.25rem;
-  line-height: $base-line-height;
   margin: 0.25rem 0;
 }
 
