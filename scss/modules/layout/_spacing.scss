@@ -38,8 +38,8 @@ $spacer: (
   padding-bottom: map-get($spacer, $scale);
 }
 
-@mixin padding($vspace, $hspace) {
-  padding: map-get($spacer, $vspace) map-get($spacer, $hspace);
+@mixin padding($values...) {
+  padding: $values;
 }
 
 // padding (all)
@@ -113,8 +113,8 @@ $spacer: (
   margin-bottom: map-get($spacer, $scale);
 }
 
-@mixin margin($vspace, $hspace) {
-  margin: map-get($spacer, $vspace) map-get($spacer, $hspace);
+@mixin margin($values...) {
+  margin: $values;
 }
 
 // margin (all)
