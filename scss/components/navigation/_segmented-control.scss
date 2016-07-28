@@ -34,8 +34,7 @@
 }
 
 @mixin seg-control--link {
-  @include pv(2);
-  @include ph(3);
+  @include padding(0.4rem 0.75rem);
   @include fs(6);
   @include fw(700);
   width: auto;

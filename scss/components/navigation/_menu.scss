@@ -1,12 +1,12 @@
 @mixin menu--group {
-  @include ma(0);
-  @include pa(0);
+  @include margin(0);
+  @include padding(0);
 }
 
 @mixin menu--item {
   @include fs(5);
-  @include ma(0);
-  @include pa(0);
+  @include margin(0);
+  @include padding(0);
   display: block;
   border: 0;
 }
@@ -14,7 +14,7 @@
 @mixin menu--heading {
   @include menu--item;
   @include t-allcaps;
-  @include margin(1, 0);
+  @include margin(0.25rem 0);
   border-bottom: 1px solid $grey-lighter;
 
   &:first-child {
@@ -24,15 +24,14 @@
 
 @mixin menu--wrapper {
   @include nolist;
-  @include padding(1, 0);
+  @include padding(0.33rem 0);
   @include mb(1);
 }
 
 @mixin menu--link {
   @include lh-default;
-  @include padding(1, 3);
+  @include padding(0.33rem 1rem);
   display: block;
-  // padding: 0.33em 1em;
   color: darken($primary, 12%);
   border-bottom-color: transparent;
 }
@@ -49,7 +48,7 @@
 
     .menu--item,
     .menu--link {
-      @include padding(1, 3);
+      @include padding(0.5rem 1rem);
       @include lh-body;
     }
   }
@@ -82,7 +81,7 @@
 
   .menu--item {
     @include menu--item;
-    @include margin(0, 3);
+    @include margin(0 1rem);
     @include pa(0);
     display: inline-block;
     border-bottom: 0;
@@ -108,7 +107,7 @@
 
 .wfp-menu {
   @include menu;
-  @include margin(3, 0);
+  @include margin(1rem 0);
   border-left: 1px solid $grey-lighter;
   border-right: 1px solid $grey-lighter;
   border-bottom: 1px solid $grey-lighter;
@@ -130,7 +129,7 @@
     }
 
     &.current {
-      box-shadow: inset 0.25em 0 0 0 darken($primary, 12%);
+      box-shadow: inset 0.25rem 0 0 0 darken($primary, 12%);
       color: $grey-darker;
     }
   }
@@ -138,12 +137,12 @@
 
 .wfp-menu-plain {
   @include menu;
-  @include padding(0, 3);
-  @include padding(3, 0);
+  @include padding(0 1rem);
+  @include margin(1rem 0);
 
   .menu--heading,
   .menu--link {
-    @include padding(1, 0);
+    @include padding(0.25rem 0);
   }
 
   .menu--heading {
@@ -176,7 +175,7 @@
 
   .menu--heading {
     @include t-allcaps;
-    @include padding(0, 2);
+    @include padding(0);
     color: $grey-light;
     border-top: 0;
     border-bottom-color: $grey-dark;
@@ -187,7 +186,7 @@
   }
 
   .menu--item {
-    @include padding(1, 4);
+    @include padding(0.25rem 1rem);
     color: $white;
     // padding: 0.25em 1.5em;
 
@@ -202,7 +201,7 @@
 
     @include media-query($md-screen) {
       @include fs(5);
-      @include padding(1, 4);
+      @include padding(0.25rem 1rem);
     }
   }
 }

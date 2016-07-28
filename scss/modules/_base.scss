@@ -32,6 +32,7 @@ body {
   font-family: $sans-serif-stack;
   font-size: $base-font-size;
   font-weight: normal;
+  line-height: 1.500;
   background-color: $background-color;
   color: $text-color;
 
@@ -126,11 +127,12 @@ ul, ol, dl, figure,
 // Lists
 // -----------------------------------------------------------------------------
 menu, ol, ul, dl {
-  padding: 0 0 0 $spacing-unit * 0.75;
+  padding: 0 0 0 $spacing-unit * 4;
 }
 
 li {
   margin: 0.25rem 0;
+  line-height: 1.250;
 }
 
 // -----------------------------------------------------------------------------
@@ -172,9 +174,7 @@ blockquote {
   color: $grey-dark;
   border-left: 6px solid $grey-light;
   border-radius: 2px;
-  padding: 0.25rem 0;
-  padding-left: $spacing-unit * 0.75;
-  // font-size: 1em;
+  padding: 0.25rem 0 0.25rem 1rem;
   font-style: italic;
 }
 
