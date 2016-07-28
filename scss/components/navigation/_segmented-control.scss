@@ -9,11 +9,10 @@
 // -----------------------------------------------------------------------------
 @mixin seg-control {
   @include nolist;
+  @include t-center;
+  @include pa(0);
   display: inline-block;
-  height: 2em;
-  padding: 0;
-  margin: 0;
-  text-align: center;
+  height: 2rem;
 }
 
 @mixin seg-control--item {
@@ -35,20 +34,22 @@
 }
 
 @mixin seg-control--link {
-  padding: 0.33em 0.75em;
+  @include pv(2);
+  @include ph(3);
+  @include fs(6);
+  @include fw(700);
   width: auto;
   border: 0;
   color: darken($primary, 12%);
-  font-size: 0.875em;
-  font-weight: bold;
   display: block;
 
   [class*="icon-"] {
+    @include mv(0);
+    @include mh(1);
     width: 16px;
     height: 16px;
     background-size: 16px;
     vertical-align: text-bottom;
-    margin: 0 0.25em;
   }
 
   &.active,

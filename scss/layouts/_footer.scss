@@ -4,7 +4,7 @@
 // URL: http://matthewmorek.com
 
 %footer {
-  @extend .t-f5;
+  @include fs(5);
   @include t-center;
   border-top: 4px solid $grey-lighter;
 }
@@ -28,40 +28,40 @@
 }
 
 %footer--top {
-  @extend .pv-1;
-  // padding: 0.25rem 0;
+  @include padding(1, 0);
 }
 
 %footer--bottom {
   @extend %footer--top;
-  @extend .pv-0;
+  @include pv(0);
   border-top: 1px solid $grey-lighter;
 
   .footer--panel {
-    @extend .pv-0;
+    @include pv(0);
   }
 }
 
 %footer--heading {
-  @extend .t-f5;
-  @extend .mv-1;
-  @extend .bold;
+  @include fs(5);
+  @include fw(700);
+  @include mv(1);
 }
 
 %footer--label {
-  @extend .t-f6;
-  @extend .mv-1;
-  line-height: 1.4;
+  @include fs(6);
+  @include lh-heading;
+  @include mv(1);
 }
 
 %footer--links {
-  @extend .t-f6;
+  @include fs(6);
+  @include lh-default;
   @include nolist;
-  line-height: 1;
 
   .link {
+    @include ma(2);
+    @include ml(0);
     display: inline-block;
-    margin: 0.5em 0.5em 0.5em 0;
   }
 }
 
@@ -95,7 +95,7 @@
     @extend %footer--top;
 
     .wfp-wrapper {
-      @extend .pv-1;
+      @include pv(1);
     }
   }
 
@@ -129,18 +129,18 @@
 
   .footer--top {
     .wfp-wrapper {
-      @extend .pv-2;
+      @include pv(2);
     }
 
     .wfp-menu-plain {
-      @extend .ma-0;
-      @extend .ml-2;
+      @include ma(0);
+      @include ml(2);
       @include t-left;
     }
   }
 }
 
-// Actualo implementation
+// Actual implementation
 
 .wfp-footer--mini {
   @include footer-mini;
