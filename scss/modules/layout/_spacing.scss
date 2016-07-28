@@ -22,6 +22,26 @@ $spacer: (
 // Padding
 // -----------------------------------------------------------------------------
 
+@mixin pa($scale) { padding: map-get($spacer, $scale); }
+@mixin pl($scale) { padding-left: map-get($spacer, $scale); }
+@mixin pr($scale) { padding-right: map-get($spacer, $scale); }
+@mixin pt($scale) { padding-top: map-get($spacer, $scale); }
+@mixin pb($scale) { padding-bottom: map-get($spacer, $scale); }
+
+@mixin ph($scale) {
+  padding-left: map-get($spacer, $scale);
+  padding-right: map-get($spacer, $scale);
+}
+
+@mixin pv($scale) {
+  padding-top: map-get($spacer, $scale);
+  padding-bottom: map-get($spacer, $scale);
+}
+
+@mixin padding($vspace, $hspace) {
+  padding: map-get($spacer, $vspace) map-get($spacer, $hspace);
+}
+
 // padding (all)
 @for $i from 0 through 7 {
   .pa-#{$i} {
@@ -76,6 +96,26 @@ $spacer: (
 // -----------------------------------------------------------------------------
 // Margins
 // -----------------------------------------------------------------------------
+
+@mixin ma($scale) { margin: map-get($spacer, $scale); }
+@mixin ml($scale) { margin-left: map-get($spacer, $scale); }
+@mixin mr($scale) { margin-right: map-get($spacer, $scale); }
+@mixin mt($scale) { margin-top: map-get($spacer, $scale); }
+@mixin mb($scale) { margin-bottom: map-get($spacer, $scale); }
+
+@mixin mh($scale) {
+  margin-left: map-get($spacer, $scale);
+  margin-right: map-get($spacer, $scale);
+}
+
+@mixin mv($scale) {
+  margin-top: map-get($spacer, $scale);
+  margin-bottom: map-get($spacer, $scale);
+}
+
+@mixin margin($vspace, $hspace) {
+  margin: map-get($spacer, $vspace) map-get($spacer, $hspace);
+}
 
 // margin (all)
 @for $i from 0 through 7 {

@@ -3,33 +3,22 @@
 // Author: Matthew Morek (me@matthewmorek.com)
 // URL: http://matthewmorek.com
 
-@mixin t-f1 {
-  font-size: 3rem;
+$fs: (
+  1: 3rem,
+  2: 2.25rem,
+  3: 1.5rem,
+  4: 1.25rem,
+  5: 1rem,
+  6: 0.875rem
+);
+
+@mixin fs($size) {
+  font-size: map-get($fs, $size);
 }
 
-@mixin t-f2 {
-  font-size: 2.25rem;
-}
-
-@mixin t-f3 {
-  font-size: 1.5rem;
-}
-
-@mixin t-f4 {
-  font-size: 1.25rem;
-}
-
-@mixin t-f5 {
-  font-size: 1rem;
-}
-
-@mixin t-f6 {
-  font-size: 0.875rem;
-}
-
-.t-f1 { @include t-f1; }
-.t-f2 { @include t-f2; }
-.t-f3 { @include t-f3; }
-.t-f4 { @include t-f4; }
-.t-f5 { @include t-f5; }
-.t-f6 { @include t-f6; }
+.fs1 { @include fs(1); }
+.fs2 { @include fs(2); }
+.fs3 { @include fs(3); }
+.fs4 { @include fs(4); }
+.fs5 { @include fs(5); }
+.fs6 { @include fs(6); }
