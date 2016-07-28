@@ -30,7 +30,7 @@
 
 @mixin menu--link {
   @include lh-default;
-  @include padding(0.33rem 1rem);
+  @include padding(0.33rem 0.5rem);
   display: block;
   color: darken($primary, 12%);
   border-bottom-color: transparent;
@@ -48,7 +48,7 @@
 
     .menu--item,
     .menu--link {
-      @include padding(0.5rem 1rem);
+      @include padding(0.5rem);
       @include lh-body;
     }
   }
@@ -81,7 +81,7 @@
 
   .menu--item {
     @include menu--item;
-    @include margin(0 1rem);
+    @include margin(0 0.5rem);
     @include pa(0);
     display: inline-block;
     border-bottom: 0;
