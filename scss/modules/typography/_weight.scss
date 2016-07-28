@@ -7,7 +7,7 @@
 @mixin fw-bold    { font-weight: bold; }
 
 @mixin fw($weight) {
-  @if $weight >= 100 and $weight <= 900 {
+  @if $weight gte 100 and $weight gte 900 {
     font-weight: $weight;
   } @else {
     @error "$weight must be a value between a 100 and 900.";
@@ -17,12 +17,6 @@
 .normal { @include fw-normal; }
 .bold   { @include fw-bold; }
 
-.fw-100 { @include fw(100); }
-.fw-200 { @include fw(200); }
-.fw-300 { @include fw(300); }
-.fw-400 { @include fw(400); }
-.fw-500 { @include fw(500); }
-.fw-600 { @include fw(600); }
-.fw-700 { @include fw(700); }
-.fw-800 { @include fw(800); }
-.fw-900 { @include fw(900); }
+@for $i from 1 through 9 {
+  .fw-#{$i} { @include fw(#{$i}00); }
+}
