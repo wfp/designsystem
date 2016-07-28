@@ -3,18 +3,10 @@
 // Author: Matthew Morek (me@matthewmorek.com)
 // URL: http://matthewmorek.com
 
-@mixin t-left {
-  text-align: left;
+@mixin ta($alignment) {
+  text-align: $alignment;
 }
 
-@mixin t-center {
-  text-align: center;
-}
-
-@mixin t-right {
-  text-align: right;
-}
-
-.t-left   { @include t-left; }
-.t-right  { @include t-right; }
-.t-center { @include t-center; }
+.ta-left   { @include ta(left); }
+.ta-right  { @include ta(right); }
+.ta-center { @include ta(center); }

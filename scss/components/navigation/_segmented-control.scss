@@ -9,7 +9,7 @@
 // -----------------------------------------------------------------------------
 @mixin seg-control {
   @include nolist;
-  @include t-center;
+  @include ta(center);
   @include pa(0);
   display: inline-block;
   height: 2rem;
@@ -34,7 +34,7 @@
 }
 
 @mixin seg-control--link {
-  @include padding(0.4rem 0.75rem);
+  @include padding(0.5rem 0.75rem);
   @include fs(6);
   @include fw(700);
   width: auto;

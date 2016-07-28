@@ -5,30 +5,30 @@
 
 %footer {
   @include fs(5);
-  @include t-center;
+  @include ta(center);
   border-top: 4px solid $grey-lighter;
 }
 
 %footer--panel {
   &.left {
-    @include t-center;
+    @include ta(center);
 
     @include media-query($md-screen) {
-      @include t-left;
+      @include ta(left);
     }
   }
 
   &.right {
-    @include t-center;
+    @include ta(center);
 
     @include media-query($md-screen) {
-      @include t-right;
+      @include ta(right);
     }
   }
 }
 
 %footer--top {
-  @include padding(1, 0);
+  @include padding(0.25rem 0);
 }
 
 %footer--bottom {
@@ -135,7 +135,7 @@
     .wfp-menu-plain {
       @include ma(0);
       @include ml(2);
-      @include t-left;
+      @include ta(left);
     }
   }
 }
