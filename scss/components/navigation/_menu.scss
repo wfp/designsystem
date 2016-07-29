@@ -30,7 +30,7 @@
 
 @mixin menu--link {
   @include lh-default;
-  @include padding(0.33rem 0.5rem);
+  @include padding(0.33rem 0.75rem);
   display: block;
   color: darken($primary, 12%);
   border-bottom-color: transparent;
@@ -48,7 +48,7 @@
 
     .menu--item,
     .menu--link {
-      @include padding(0.5rem);
+      @include padding(0.5rem 0.75rem);
       @include lh-body;
     }
   }
@@ -183,25 +183,35 @@
     &:first-child {
       @include mt(2);
     }
+
+    .menu--item {
+      @include padding(0.25rem 1rem);
+      @include media-query($md-screen) {
+        @include padding(0.5rem 1.25rem);
+      }
+    }
   }
 
-  .menu--item {
+  .menu--link {
     @include padding(0.25rem 1rem);
     color: $white;
-    // padding: 0.25em 1.5em;
+
+    &.current {
+      background-color: $grey-dark;
+      color: $white;
+    }
 
     &:visited {
       color: $grey-lighter;
     }
 
     &:hover {
-      border-bottom: 0;
+      background-color: darken($primary, 12%);
       color: $white;
     }
 
     @include media-query($md-screen) {
-      @include fs(5);
-      @include padding(0.25rem 1rem);
+      @include padding(0.5rem 1.25rem);
     }
   }
 }
