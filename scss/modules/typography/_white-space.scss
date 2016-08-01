@@ -1,0 +1,18 @@
+// Typography: White Space
+// Project: WFP UI
+// Author: Matthew Morek (me@matthewmorek.com)
+// URL: http://matthewmorek.com
+
+$ws: (
+  normal: normal,
+  nowrap: nowrap,
+  pre: pre
+);
+
+@mixin ws($wspace: normal) {
+  white-space: map-get($ws, $wspace);
+}
+
+.ws-normal  { @include ws(normal); }
+.ws-nowrap  { @include ws(nowrap); }
+.ws-pre     { @include ws(pre); }
