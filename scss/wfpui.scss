@@ -17,7 +17,6 @@
 
 // Typography
 @import "modules/typography/alignment";
-@import "modules/typography/colour";
 @import "modules/typography/transform";
 @import "modules/typography/size";
 @import "modules/typography/weight";
@@ -28,7 +27,9 @@
 @import "modules/layout/position";
 @import "modules/layout/spacing";
 
-@import "modules/bg-colour";
+
+// Theme
+@import "modules/theme/colours";
 @import "modules/utility";
 
 @import "components/buttons";
