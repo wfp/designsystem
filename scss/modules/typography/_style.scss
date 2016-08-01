@@ -1,0 +1,10 @@
+// Typography: Style
+// Project: WFP UI
+// Author: Matthew Morek (me@matthewmorek.com)
+// URL: http://matthewmorek.com
+
+@mixin fst-normal  { font-style: normal; }
+@mixin fst-italic  { font-style: italic; }
+
+.fst-normal { @include fst-normal; }
+.fst-i      { @include fst-italic; }
