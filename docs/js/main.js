@@ -36,3 +36,19 @@ $(document).ready(function(){
     $(this).addClass('active');
   });
 });
+
+/**
+ * AnchorJS v1.1.1 options and selector
+ */
+
+(function () {
+  'use strict';
+  anchors.options = {
+    visible: "always",
+    class: "wfp-bookmark",
+    placement: "left",
+    icon: ''
+  };
+  anchors.add('.page-title, .page-content > h2, .page-content > h3, .page-content > h4');
+
+})();
