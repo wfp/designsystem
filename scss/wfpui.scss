@@ -10,10 +10,11 @@
 // Import SCSS mixins, variables, modules, etc.
 @import "init";
 
-// Import modules
+// Base modules
 @import "modules/mixins";
 @import "modules/base";
 @import "modules/icons";
+
 
 // Typography
 @import "modules/typography/alignment";
@@ -22,16 +23,20 @@
 @import "modules/typography/weight";
 @import "modules/typography/leading";
 
-@import "modules/typography/headings";
-
+// Layout
 @import "modules/layout/position";
 @import "modules/layout/spacing";
 
+// Elements
+@import "modules/elements/headings";
 
 // Theme
 @import "modules/theme/colours";
+
+// Other
 @import "modules/utility";
 
+// Components
 @import "components/buttons";
 @import "components/forms";
 @import "components/tables";
