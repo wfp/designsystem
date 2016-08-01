@@ -10,12 +10,39 @@
   display: none;
 }
 
-html {
+// Reset box-sizing
+html,
+body,
+div,
+article,
+section,
+main,
+footer,
+header,
+form,
+fieldset,
+pre,
+code,
+p,
+ul,
+ol,
+li,
+dl,
+dt,
+dd,
+textarea,
+input[type="email"],
+input[type="number"],
+input[type="password"],
+input[type="tel"],
+input[type="text"],
+input[type="url"] {
   box-sizing: border-box;
-}
 
-*, *::before, *::after {
-  box-sizing: inherit;
+  &::before,
+  &::after {
+    box-sizing: inherit;
+  }
 }
 
 // If using grids, reset font-stack for all affected elements

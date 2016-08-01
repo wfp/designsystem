@@ -1,0 +1,10 @@
+// Module: Box Sizing
+// Project: WFP UI
+// Author: Matthew Morek (me@matthewmorek.com)
+// URL: http://matthewmorek.com
+
+@mixin box-sizing {
+  box-sizing: border-box;
+}
+
+.border-box { @include box-sizing; }
