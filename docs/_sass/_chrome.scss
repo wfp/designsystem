@@ -368,7 +368,9 @@ figure {
 
 .wfp-bookmark {
     border: 0;
-    background: no-repeat center/90% url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%3E%20%20%20%20%3Cpath%20d%3D%22M0%200h24v24H0z%22%20fill%3D%22none%22%3E%3C%2Fpath%3E%20%20%20%20%3Cpath%20d%3D%22M3.9%2012c0-1.71%201.39-3.1%203.1-3.1h4V7H7c-2.76%200-5%202.24-5%205s2.24%205%205%205h4v-1.9H7c-1.71%200-3.1-1.39-3.1-3.1zM8%2013h8v-2H8v2zm9-6h-4v1.9h4c1.71%200%203.1%201.39%203.1%203.1s-1.39%203.1-3.1%203.1h-4V17h4c2.76%200%205-2.24%205-5s-2.24-5-5-5z%22%20fill%3D%22%23000000%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E");
+    @extend %icon-primary-link;
+    background-repeat: no-repeat;
+    background-position: center;
     width: 23px;
     height: 32px;
     margin-left: -2.25% !important;
