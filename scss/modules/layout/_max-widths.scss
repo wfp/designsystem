@@ -1,0 +1,43 @@
+// Module: Max Widths
+// Project: WFP UI
+// Author: Matthew Morek (me@matthewmorek.com)
+// URL: http://matthewmorek.com
+
+$max-widths: (
+  1: 1rem,
+  2: 2rem,
+  3: 4rem,
+  4: 8rem,
+  5: 16rem,
+  6: 32rem,
+  7: 48rem,
+  8: 64rem,
+  9: 96rem,
+  10: 100%
+);
+
+// Scale steps
+@mixin mw($width) {
+  max-width: map-get($max-widths, $width);
+}
+
+// Literal percentage values
+@mixin max-width($width: none) {
+  @if $width neq "none" {
+    max-width: $width + %;
+  } @else {
+    max-width: $width;
+  }
+}
+
+// Define width scale steps
+// E.g.: .w1 { width: 1rem; }
+@for $i from 1 through 9 {
+  .mw#{$i} { @include mw($i); }
+}
+
+// Full width
+.mw-100  { @include mw(10); }
+
+// Disable max-width
+.mw-none { @include max-width(none); }
