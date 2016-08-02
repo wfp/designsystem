@@ -373,4 +373,8 @@ figure {
     height: 32px;
     margin-left: -2.25% !important;
     padding: 0 !important;
+    right: 10%;
+    @include media-query($md-screen) {
+      right: inherit;
+    }
 }
