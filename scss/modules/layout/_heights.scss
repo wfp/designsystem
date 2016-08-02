@@ -1,0 +1,40 @@
+// Module: Heights
+// Project: WFP UI
+// Author: Matthew Morek (me@matthewmorek.com)
+// URL: http://matthewmorek.com
+
+$heights: (
+  1: 1rem,
+  2: 2rem,
+  3: 4rem,
+  4: 8rem,
+  5: 16rem
+);
+
+// Scale steps
+@mixin h($scale) {
+  max-width: map-get($heights, $scale);
+}
+
+// Literal percentage values
+@mixin height($height: 0) {
+  @if $height neq "auto" and $height neq "inherit" {
+    height: $height + %;
+  } @else {
+    height: $height;
+  }
+}
+
+// Define height scale steps
+// E.g.: .h-1 { height: 1rem; }
+@for $i from 1 through 5 {
+  .h-#{$i} { @include h($i); }
+}
+
+// CSS heights
+.h-25       { @include height(25); }
+.h-50       { @include height(50); }
+.h-75       { @include height(75); }
+.h-100      { @include height(100); }
+.h-auto     { @include height(auto); }
+.h-inherit  { @include height(inherit); }

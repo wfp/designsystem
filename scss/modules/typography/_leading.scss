@@ -1,0 +1,16 @@
+// Typography: Leading/Line-height
+// Project: WFP UI
+// Author: Matthew Morek (me@matthewmorek.com)
+// URL: http://matthewmorek.com
+
+@mixin lh-default { line-height: 1; }
+@mixin lh-heading { line-height: 1.250; }
+@mixin lh-body    { line-height: 1.500; }
+
+@mixin lh-scale($ratio: 1)   {
+  line-height: $base-line-height * $ratio;
+}
+
+.lh-default { @include lh-default; }
+.lh-heading { @include lh-heading; }
+.lh-body    { @include lh-body; }

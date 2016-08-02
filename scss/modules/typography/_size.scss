@@ -1,0 +1,24 @@
+// Typography: Sizes
+// Project: WFP UI
+// Author: Matthew Morek (me@matthewmorek.com)
+// URL: http://matthewmorek.com
+
+$fs: (
+  1: 3rem,
+  2: 2.25rem,
+  3: 1.5rem,
+  4: 1.25rem,
+  5: 1rem,
+  6: 0.875rem
+);
+
+@mixin fs($size) {
+  font-size: map-get($fs, $size);
+}
+
+.fs1 { @include fs(1); }
+.fs2 { @include fs(2); }
+.fs3 { @include fs(3); }
+.fs4 { @include fs(4); }
+.fs5 { @include fs(5); }
+.fs6 { @include fs(6); }

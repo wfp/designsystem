@@ -1,0 +1,34 @@
+// Module: Widths
+// Project: WFP UI
+// Author: Matthew Morek (me@matthewmorek.com)
+// URL: http://matthewmorek.com
+
+$widths: (
+  1: 1rem,
+  2: 2rem,
+  3: 4rem,
+  4: 8rem,
+  5: 16rem
+);
+
+// Width steps
+@mixin width-scale($width) {
+  width: map-get($widths, $width);
+}
+
+// Literal percentage values
+@mixin width($width: auto) {
+  @if $width neq "auto" {
+    width: $width + %;
+  } @else {
+    width: $width;
+  }
+}
+
+// Define width scale steps
+// E.g.: .w1 { width: 1rem; }
+@for $i from 1 through 5 {
+  .w#{$i} { @include width-scale($i); }
+}
+
+.w-auto { @include width-scale(auto);}

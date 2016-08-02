@@ -1,37 +1,37 @@
 @mixin menu--group {
-  margin: 0;
-  padding: 0;
+  @include margin(0);
+  @include padding(0);
 }
 
 @mixin menu--item {
-  font-size: 1em;
-  padding: 0;
-  margin: 0;
+  @include fs(5);
+  @include margin(0);
+  @include padding(0);
   display: block;
   border: 0;
 }
 
 @mixin menu--heading {
   @include menu--item;
-  @include allcaps;
+  @include t-allcaps;
+  @include margin(0.25rem 0);
   border-bottom: 1px solid $grey-lighter;
-  margin: 0.25em 0;
 
   &:first-child {
-    margin-top: 0;
+    @include mt(0);
   }
 }
 
 @mixin menu--wrapper {
   @include nolist;
-  padding: 0.25em 0;
-  margin-bottom: 0.25em;
+  @include padding(0.33rem 0);
+  @include mb(1);
 }
 
 @mixin menu--link {
+  @include lh-default;
+  @include padding(0.33rem 0.75rem);
   display: block;
-  padding: 0.33em 1em;
-  line-height: 1;
   color: darken($primary, 12%);
   border-bottom-color: transparent;
 }
@@ -48,8 +48,8 @@
 
     .menu--item,
     .menu--link {
-      padding: 0.5em 1em;
-      line-height: 1.5em;
+      @include padding(0.5rem 0.75rem);
+      @include lh-body;
     }
   }
 
@@ -68,21 +68,22 @@
 
 @mixin menu-flat {
   @include nolist;
+  @include mv(1);
+  @include mh(3);
   display: inline-block;
-  margin: 0.25em 1em;
 
   .menu--group {
     @include menu--heading;
-    margin: 0;
-    padding: 0;
+    @include ma(0);
+    @include pa(0);
     background-color: transparent;
   }
 
   .menu--item {
     @include menu--item;
+    @include margin(0 0.5rem);
+    @include pa(0);
     display: inline-block;
-    padding: 0;
-    margin: 0 0.25em;
     border-bottom: 0;
   }
 
@@ -106,10 +107,10 @@
 
 .wfp-menu {
   @include menu;
+  @include margin(1rem 0);
   border-left: 1px solid $grey-lighter;
   border-right: 1px solid $grey-lighter;
   border-bottom: 1px solid $grey-lighter;
-  margin: 1em 0;
 
   .menu--heading {
     border-top: 1px solid $grey-lighter;
@@ -122,13 +123,13 @@
 
     &:hover {
       &::after {
-        margin-left: 0.25em;
+        @include ml(1);
         content: "›";
       }
     }
 
     &.current {
-      box-shadow: inset 0.25em 0 0 0 darken($primary, 12%);
+      box-shadow: inset 0.25rem 0 0 0 darken($primary, 12%);
       color: $grey-darker;
     }
   }
@@ -136,22 +137,22 @@
 
 .wfp-menu-plain {
   @include menu;
-  padding: 0 1em;
-  margin: 1em 0;
+  @include padding(0 1rem);
+  @include margin(1rem 0);
 
   .menu--heading,
   .menu--link {
-    padding: 0.25em 0;
+    @include padding(0.25rem 0);
   }
 
   .menu--heading {
-    font-size: 0.875em;
-    padding-bottom: 0.5em;
+    @include fs(6);
+    @include pb(2);
   }
 
   .menu--link {
+    @include fs(6);
     display: inline-block;
-    font-size: 0.875em;
     color: darken($primary, 12%);
 
     &:hover {
@@ -160,7 +161,7 @@
   }
 
   @include media-query($md-screen) {
-    padding: 0;
+    @include pa(0);
   };
 }
 
@@ -173,33 +174,44 @@
   @include menu;
 
   .menu--heading {
-    @include allcaps;
+    @include t-allcaps;
+    @include padding(0);
     color: $grey-light;
     border-top: 0;
     border-bottom-color: $grey-dark;
-    padding: 0 0.5em;
 
     &:first-child {
-      margin-top: 0.5em;
+      @include mt(2);
+    }
+
+    .menu--item {
+      @include padding(0.25rem 1rem);
+      @include media-query($md-screen) {
+        @include padding(0.5rem 1.25rem);
+      }
     }
   }
 
-  .menu--item {
+  .menu--link {
+    @include padding(0.25rem 1rem);
     color: $white;
-    padding: 0.25em 1.5em;
+
+    &.current {
+      background-color: $grey-dark;
+      color: $white;
+    }
 
     &:visited {
       color: $grey-lighter;
     }
 
     &:hover {
-      border-bottom: 0;
+      background-color: darken($primary, 12%);
       color: $white;
     }
 
     @include media-query($md-screen) {
-      font-size: 1em;
-      padding: 0.25em 1.5em;
+      @include padding(0.5rem 1.25rem);
     }
   }
 }

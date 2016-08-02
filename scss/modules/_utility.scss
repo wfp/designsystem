@@ -4,27 +4,19 @@
 // URL: http://matthewmorek.com
 
 // -----------------------------------------------------------------------------
-// Text manipulation
+// Tints
 // -----------------------------------------------------------------------------
-@mixin text-left {
-  text-align: left;
+@mixin tint--static {
+  @extend .bg-black-50;
+  width: 100%;
 }
 
-@mixin text-center {
-  text-align: center;
-}
+@mixin tint--dynamic {
+  @include tint--static;
 
-@mixin text-right {
-  text-align: right;
-}
-
-// Transformations
-@mixin caps {
-  text-transform: capitalize;
-}
-
-@mixin allcaps {
-  text-transform: uppercase;
+  &:hover {
+    @extend .bg-black-80;
+  }
 }
 
 // -----------------------------------------------------------------------------
@@ -43,17 +35,6 @@
   background: $white;
   border-bottom: 1px solid $grey-contrast;
   box-shadow: 0 1px 3px 0 rgba($black, 0.1);
-}
-
-// -----------------------------------------------------------------------------
-// Clearfix
-// -----------------------------------------------------------------------------
-@mixin clearfix {
-  &::after {
-    content: "";
-    display: table;
-    clear: both;
-  }
 }
 
 // -----------------------------------------------------------------------------
@@ -103,6 +84,9 @@
     padding: 3rem 0;
   }
 }
+
+.tint-static  { @include tint--static; }
+.tint-dynamic { @include tint--dynamic; }
 
 .wfp-wrapper {
   @include wrapper;
@@ -174,26 +158,6 @@
 // -----------------------------------------------------------------------------
 .clearfix {
   @include clearfix;
-}
-
-.wfp-text-left {
-  @include text-left;
-}
-
-.wfp-text-right {
-  @include text-right;
-}
-
-.wfp-text-center {
-  @include text-center;
-}
-
-.wfp-caps {
-  @include caps;
-}
-
-.wfp-allcaps {
-  @include allcaps;
 }
 
 .wfp-nolist {

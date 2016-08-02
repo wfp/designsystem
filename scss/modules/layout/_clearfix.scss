@@ -1,0 +1,21 @@
+// Module: Clearfix
+// Project: WFP UI
+// Author: Matthew Morek (me@matthewmorek.com)
+// URL: http://matthewmorek.com
+
+// Nicolas Gallaghers Clearfix solution
+// Ref: http://nicolasgallagher.com/micro-clearfix-hack/
+
+@mixin clearfix {
+  &::before,
+  &::after {
+    content: " ";
+    display: table;
+  }
+
+  &::after {
+    clear: both;
+  }
+}
+
+.cf { @include clearfix; }

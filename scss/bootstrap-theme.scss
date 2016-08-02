@@ -64,8 +64,8 @@ h6 {
   color: $grey-light;
   font-size: $small-font-size;
   text-transform: uppercase;
-  margin-top: $spacing-unit;
-  margin-bottom: $spacing-unit / 4;
+  margin-top: $spacing-unit * 4;
+  margin-bottom: $spacing-unit;
 }
 
 ul {

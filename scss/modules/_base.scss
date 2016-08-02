@@ -10,12 +10,39 @@
   display: none;
 }
 
-html {
+// Reset box-sizing
+html,
+body,
+div,
+article,
+section,
+main,
+footer,
+header,
+form,
+fieldset,
+pre,
+code,
+p,
+ul,
+ol,
+li,
+dl,
+dt,
+dd,
+textarea,
+input[type="email"],
+input[type="number"],
+input[type="password"],
+input[type="tel"],
+input[type="text"],
+input[type="url"] {
   box-sizing: border-box;
-}
 
-*, *::before, *::after {
-  box-sizing: inherit;
+  &::before,
+  &::after {
+    box-sizing: inherit;
+  }
 }
 
 // If using grids, reset font-stack for all affected elements
@@ -32,7 +59,7 @@ body {
   font-family: $sans-serif-stack;
   font-size: $base-font-size;
   font-weight: normal;
-  line-height: $base-line-height;
+  line-height: 1.500;
   background-color: $background-color;
   color: $text-color;
 
@@ -127,11 +154,12 @@ ul, ol, dl, figure,
 // Lists
 // -----------------------------------------------------------------------------
 menu, ol, ul, dl {
-  padding: 0 0 0 $spacing-unit * 0.75;
+  padding: 0 0 0 $spacing-unit * 4;
 }
 
 li {
   margin: 0.25rem 0;
+  line-height: 1.250;
 }
 
 // -----------------------------------------------------------------------------
@@ -173,9 +201,7 @@ blockquote {
   color: $grey-dark;
   border-left: 6px solid $grey-light;
   border-radius: 2px;
-  padding: 0.25rem 0;
-  padding-left: $spacing-unit * 0.75;
-  // font-size: 1em;
+  padding: 0.25rem 0 0.25rem 1rem;
   font-style: italic;
 }
 

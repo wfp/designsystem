@@ -34,7 +34,7 @@ rules:
   no-duplicate-properties:
     - 1
     -
-      exclude: ['display']
+      exclude: ['display', 'background-color']
 
   no-empty-rulesets: 1
   no-extends: 0

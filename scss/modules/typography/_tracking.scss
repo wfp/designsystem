@@ -1,0 +1,18 @@
+// Typography: Tracking
+// Project: WFP UI
+// Author: Matthew Morek (me@matthewmorek.com)
+// URL: http://matthewmorek.com
+
+$spaces: (
+  tight: -0.05em,
+  loose:  0.16em,
+  xloose: 0.32em
+);
+
+@mixin tracking($spacing) {
+  letter-spacing: map-get($spaces, $spacing);
+}
+
+.tr-tight  { @include tracking(tight); }
+.tr-loose  { @include tracking(loose); }
+.tr-xloose { @include tracking(xloose); }
