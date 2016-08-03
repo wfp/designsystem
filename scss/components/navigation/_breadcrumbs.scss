@@ -28,6 +28,7 @@
 
   .breadcrumbs--link {
     @include seg-control--link;
+    font-weight: normal;
     color: darken($primary, 12%);
     white-space: nowrap;
 
@@ -51,12 +52,13 @@
 
   .breadcrumbs--last {
     @include seg-control--link;
+    font-weight: normal;
     color: $grey-darker;
     cursor: default;
 
     &:hover {
-      background-color: inherit;
-      color: inherit;
+      background-color: initial;
+      color: initial;
     }
   }
 }
