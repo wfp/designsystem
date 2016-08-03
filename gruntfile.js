@@ -6,7 +6,7 @@ module.exports = function(grunt) {
     watch: {
       sass: {
         files: 'scss/**/*.scss',
-        tasks: ['build']
+        tasks: ['build', 'docs']
       },
       eslint: {
         files: 'js/**/*.js',
