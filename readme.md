@@ -18,30 +18,12 @@ We bundle some static assets with _WFP UI_, and to help you navigate the directo
 dist
 ├── assets
 │   ├── favicons
-│   │   ├── 192x192.png
-│   │   ├── apple-touch-icon-120x120-precomposed.png
-│   │   ├── apple-touch-icon-152-precomposed.png
-│   │   ├── apple-touch-icon-180-precomposed.png
-│   │   ├── apple-touch-icon-76-precomposed.png
-│   │   └── favicon.ico
 │   ├── fonts
 │   │   ├── aleo
 │   │   └── lato
 │   ├── icons
 │   │   ├── thematic
-│   │   │   ├── png
-│   │   │   ├── grunticon.loader.js
-│   │   │   ├── preview.html
-│   │   │   ├── thematic-icons.fallback.css
-│   │   │   ├── thematic-icons.png.css
-│   │   │   └── thematic-icons.svg.css
 │   │   └── ui
-│   │       ├── png
-│   │       ├── grunticon.loader.js
-│   │       ├── preview.html
-│   │       ├── ui-icons.fallback.css
-│   │       ├── ui-icons.png.css
-│   │       └── ui-icons.svg.css
 │   └── logos
 │       ├── dark
 │       │   ├── png
@@ -54,7 +36,6 @@ dist
 │   ├── wfpui+grid.css
 │   └── wfpui.css
 └── js
-    └── responsive-nav.min.js
 ```
 
 ## Getting Started
