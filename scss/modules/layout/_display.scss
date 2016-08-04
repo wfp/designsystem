@@ -1,0 +1,26 @@
+// Module: Display
+// Project: WFP UI
+// Author: Matthew Morek (me@matthewmorek.com)
+// URL: http://matthewmorek.com
+
+@mixin display($mode) {
+  display: $mode;
+}
+
+.dn           { @include display(none); }
+.di           { @include display(inline); }
+.db           { @include display(block); }
+.dib          { @include display(inline-block); }
+.dit          { @include display(inline-table); }
+.dt           { @include display(table); }
+.dtc          { @include display(table-cell); }
+.dt-row       { @include display(table-row); }
+.dt-row-group { @include display(table-row-group); }
+.dt-col       { @include display(table-column); }
+.dt-col-group { @include display(table-column-group); }
+
+// Sets table to 100% width and all cells to equal width
+.dt--fixed {
+  width: 100%;
+  table-layout: fixed;
+}

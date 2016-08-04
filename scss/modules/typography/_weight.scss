@@ -1,0 +1,22 @@
+// Typography: Weights
+// Project: WFP UI
+// Author: Matthew Morek (me@matthewmorek.com)
+// URL: http://matthewmorek.com
+
+@mixin fw-normal  { font-weight: normal; }
+@mixin fw-bold    { font-weight: bold; }
+
+@mixin fw($weight) {
+  @if $weight gte 100 and $weight gte 900 {
+    font-weight: $weight;
+  } @else {
+    @error "$weight must be a value between a 100 and 900.";
+  }
+}
+
+.normal { @include fw-normal; }
+.bold   { @include fw-bold; }
+
+@for $i from 1 through 9 {
+  .fw-#{$i} { @include fw(#{$i}00); }
+}

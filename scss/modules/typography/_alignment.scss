@@ -1,0 +1,12 @@
+// Typography: Alignment
+// Project: WFP UI
+// Author: Matthew Morek (me@matthewmorek.com)
+// URL: http://matthewmorek.com
+
+@mixin ta($alignment) {
+  text-align: $alignment;
+}
+
+.ta-left   { @include ta(left); }
+.ta-right  { @include ta(right); }
+.ta-center { @include ta(center); }

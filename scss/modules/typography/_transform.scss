@@ -1,0 +1,20 @@
+// Typography: Transforms
+// Project: WFP UI
+// Author: Matthew Morek (me@matthewmorek.com)
+// URL: http://matthewmorek.com
+
+@mixin t-caps {
+  text-transform: capitalize;
+}
+
+@mixin t-allcaps {
+  text-transform: uppercase;
+}
+
+@mixin t-lowcase {
+  text-transform: lowercase;
+}
+
+.t-caps     { @include t-caps; }
+.t-allcaps  { @include t-allcaps; }
+.t-lowcase  { @include t-lowcase; }

@@ -1,0 +1,15 @@
+// Module: Floats
+// Project: WFP UI
+// Author: Matthew Morek (me@matthewmorek.com)
+// URL: http://matthewmorek.com
+
+@mixin float($dir) {
+  float: $dir;
+  @if $dir neq "none" {
+    display: inline;
+  }
+}
+
+.fl { @include float(left); }
+.fr { @include float(right); }
+.fn { @include float(none); }

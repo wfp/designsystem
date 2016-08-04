@@ -69,8 +69,8 @@ figure {
 }
 
 .section-title {
-  margin-bottom: $spacing-unit / 4;
-  padding-bottom: $spacing-unit / 4;
+  margin-bottom: $spacing-unit;
+  padding-bottom: $spacing-unit;
   border-bottom: 1px solid $grey;
 }
 
@@ -364,4 +364,19 @@ figure {
   > .title {
     font-size: 1.25rem;
   }
+}
+
+.wfp-bookmark {
+    border: 0;
+    @extend %icon-primary-link;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 23px;
+    height: 32px;
+    margin-left: -2.25% !important;
+    padding: 0 !important;
+    right: 10%;
+    @include media-query($md-screen) {
+      right: inherit;
+    }
 }

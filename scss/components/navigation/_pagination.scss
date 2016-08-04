@@ -8,15 +8,15 @@
 // [docs-url]/components/navigation/#pagination
 // -----------------------------------------------------------------------------
 %pagination {
-  text-align: center;
-  margin: 1em 0;
+  @include margin(1rem 0);
+  @include ta(center);
 }
 
 %pagination--wrapper {
+  @include padding(0);
+  @include margin(0);
   display: inline;
   list-style: none;
-  padding: 0;
-  margin: 0;
 }
 
 %pagination--item {
@@ -46,13 +46,13 @@
 }
 
 %pagination--btn {
+  @include fs(6);
+  @include fw(700);
+  @include padding(0.5rem 0.75rem);
   display: block;
-  padding: 0.35em 0.75em;
   width: auto;
   border: 0;
   color: darken($primary, 12%);
-  font-size: 0.875em;
-  font-weight: bold;
 }
 
 .wfp-pagination {

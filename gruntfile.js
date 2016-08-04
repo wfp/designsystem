@@ -6,7 +6,7 @@ module.exports = function(grunt) {
     watch: {
       sass: {
         files: 'scss/**/*.scss',
-        tasks: ['build']
+        tasks: ['build', 'docs']
       },
       eslint: {
         files: 'js/**/*.js',
@@ -45,7 +45,8 @@ module.exports = function(grunt) {
         sassDir: 'scss',
         cssDir: 'dist/css',
         includePaths: [
-          'bower_components/normalize-scss'
+          'bower_components/normalize-scss',
+          'bower_components/mathsass/dist'
         ]
       },
       dev: {
@@ -238,18 +239,6 @@ module.exports = function(grunt) {
         }
       }
     },
-    eslint: {
-      target: ['js/**/*.js'],
-      options: {
-        ignorePattern: ['js/lib/**/*.js']
-      }
-    },
-    sasslint: {
-      options: {
-        config: '.sass-lint.yml',
-      },
-      target: ['scss/**/*.scss']
-    },
     uglify: {
       options: {
         mangle: false,
@@ -275,6 +264,37 @@ module.exports = function(grunt) {
           'docs/js/lib/responsive-nav.js': ['js/responsive-nav.js']
         }
       }
+    },
+    eslint: {
+      target: ['js/**/*.js'],
+      options: {
+        ignorePattern: ['js/lib/**/*.js']
+      }
+    },
+    sasslint: {
+      options: {
+        config: '.sass-lint.yml',
+      },
+      target: ['scss/**/*.scss']
+    },
+    htmlaudit: {
+      default: {
+        options: {
+          baseUri: 'http://cdn.wfp.org/guides/ui/v0.8.0/'
+        },
+        src: './dist/docs/**/*.html'
+      },
+      ci: {
+        options: {
+          tests: {
+            a11y: true,
+            html5: true,
+            link: false
+          },
+          showSummaryOnly: true
+        },
+        src: './dist/docs/*.html'
+      }
     }
   });
 
@@ -284,6 +304,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-datauri');
   grunt.loadNpmTasks('grunt-eslint');
   grunt.loadNpmTasks('grunt-grunticon');
+  grunt.loadNpmTasks('grunt-html-auditor');
   grunt.loadNpmTasks('grunt-jekyll');
   grunt.loadNpmTasks('grunt-postcss');
   grunt.loadNpmTasks('grunt-sass');
@@ -303,10 +324,10 @@ module.exports = function(grunt) {
   grunt.registerTask('docs-dist', ['sass:docsDist', 'postcss:docsDist', 'uglify:docs', 'jekyll']);
   // Build WFP UI
   grunt.registerTask('build', ['eslint', 'sasslint', 'sass:dev', 'postcss:dev']);
-  // Build a dist-ready WFP UI
+  // Build a dist-ready WFP UI with all stati resources
   grunt.registerTask('dist', ['gen-svg', 'gen-icons', 'sass:dist', 'postcss:dist', 'uglify:dist']);
   // Run build and dist task in sequence (for Travis CI)
-  grunt.registerTask('test', ['build', 'docs-build', 'dist', 'docs-dist']);
+  grunt.registerTask('test', ['eslint', 'sasslint', 'htmlaudit:ci']);
   // Set default grunt task to `dist`
   grunt.registerTask('default', ['dist']);
 };

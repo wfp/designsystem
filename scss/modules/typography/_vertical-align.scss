@@ -1,0 +1,20 @@
+// Typography: Vertical Align
+// Project: WFP UI
+// Author: Matthew Morek (me@matthewmorek.com)
+// URL: http://matthewmorek.com
+
+@mixin v-align($alignment) {
+  vertical-align: $alignment;
+}
+
+// Inline alignment
+.v-base { @include v-align("baseline"); }
+.v-base { @include v-align("sub"); }
+.v-base { @include v-align("super"); }
+.v-base { @include v-align("text-top"); }
+.v-base { @include v-align("text-bottom"); }
+
+// Table alignment
+.v-base { @include v-align("middle"); }
+.v-base { @include v-align("top"); }
+.v-base { @include v-align("bottom"); }

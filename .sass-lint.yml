@@ -4,7 +4,7 @@
 # Linter Options
 options:
   formatter: stylish
-  merge-default-rules: false
+  merge-default-rules: true
 # Rule Configuration
 rules:
   # Extends
@@ -34,7 +34,7 @@ rules:
   no-duplicate-properties:
     - 1
     -
-      exclude: ['display']
+      exclude: ['display', 'background-color']
 
   no-empty-rulesets: 1
   no-extends: 0

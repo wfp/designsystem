@@ -4,64 +4,64 @@
 // URL: http://matthewmorek.com
 
 %footer {
+  @include fs(5);
+  @include ta(center);
   border-top: 4px solid $grey-lighter;
-  font-size: 1rem;
-  text-align: center;
-  margin-top: 2em;
 }
 
 %footer--panel {
   &.left {
-    text-align: center;
+    @include ta(center);
 
     @include media-query($md-screen) {
-      text-align: left;
+      @include ta(left);
     }
   }
 
   &.right {
-    text-align: center;
+    @include ta(center);
 
     @include media-query($md-screen) {
-      text-align: right;
+      @include ta(right);
     }
   }
 }
 
 %footer--top {
-  padding: 0.25em 0;
+  @include padding(0.25rem 0);
 }
 
 %footer--bottom {
   @extend %footer--top;
-  padding: 0;
+  @include pv(0);
   border-top: 1px solid $grey-lighter;
 
   .footer--panel {
-    padding: 0;
+    @include pv(0);
   }
 }
 
 %footer--heading {
-  font-size: 1em;
-  font-weight: bold;
-  margin: 0.25em 0;
+  @include fs(5);
+  @include fw(700);
+  @include mv(1);
 }
 
 %footer--label {
-  font-size: 0.875em;
-  margin: 0.25em 0;
-  line-height: 1.4;
+  @include fs(6);
+  @include lh-heading;
+  @include mv(2);
 }
 
 %footer--links {
+  @include fs(6);
+  @include lh-default;
   @include nolist;
-  line-height: 1;
-  font-size: 0.875em;
 
   .link {
+    @include ma(2);
+    @include ml(0);
     display: inline-block;
-    margin: 0.5em 0.5em 0.5em 0;
   }
 }
 
@@ -95,7 +95,7 @@
     @extend %footer--top;
 
     .wfp-wrapper {
-      padding: 1em 0;
+      @include pv(1);
     }
   }
 
@@ -129,17 +129,18 @@
 
   .footer--top {
     .wfp-wrapper {
-      padding: 0.75em 0;
+      @include pv(2);
     }
 
     .wfp-menu-plain {
-      @include text-left;
-      margin: 0 0 1em;
+      @include ma(0);
+      @include ml(2);
+      @include ta(left);
     }
   }
 }
 
-// Actualo implementation
+// Actual implementation
 
 .wfp-footer--mini {
   @include footer-mini;

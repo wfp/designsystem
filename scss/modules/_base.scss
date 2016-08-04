@@ -10,12 +10,39 @@
   display: none;
 }
 
-html {
+// Reset box-sizing
+html,
+body,
+div,
+article,
+section,
+main,
+footer,
+header,
+form,
+fieldset,
+pre,
+code,
+p,
+ul,
+ol,
+li,
+dl,
+dt,
+dd,
+textarea,
+input[type="email"],
+input[type="number"],
+input[type="password"],
+input[type="tel"],
+input[type="text"],
+input[type="url"] {
   box-sizing: border-box;
-}
 
-*, *:before, *:after {
-  box-sizing: inherit;
+  &::before,
+  &::after {
+    box-sizing: inherit;
+  }
 }
 
 // If using grids, reset font-stack for all affected elements
@@ -32,7 +59,7 @@ body {
   font-family: $sans-serif-stack;
   font-size: $base-font-size;
   font-weight: normal;
-  line-height: $base-line-height;
+  line-height: 1.500;
   background-color: $background-color;
   color: $text-color;
 
@@ -127,7 +154,7 @@ ul, ol, dl, figure,
 // Lists
 // -----------------------------------------------------------------------------
 menu, ol, ul, dl {
-  padding: 0 0 0 $spacing-unit * 0.75;
+  padding: 0 0 0 $spacing-unit * 4;
 }
 
 li {
@@ -173,9 +200,7 @@ blockquote {
   color: $grey-dark;
   border-left: 6px solid $grey-light;
   border-radius: 2px;
-  padding: 0.25rem 0;
-  padding-left: $spacing-unit * 0.75;
-  // font-size: 1em;
+  padding: 0.25rem 0 0.25rem 1rem;
   font-style: italic;
 }
 
@@ -214,75 +239,5 @@ pre {
     white-space: pre;
     word-spacing: normal;
     word-break: normal;
-  }
-}
-
-// -----------------------------------------------------------------------------
-// Print styles.
-// Inlined to avoid required HTTP connection
-// -----------------------------------------------------------------------------
-@media print {
-  * {
-    background: transparent;
-    color: $black;
-    box-shadow: none;
-    text-shadow: none;
-  }
-
-  a,
-  a:visited {
-    text-decoration: underline;
-  }
-
-  a[href]:after {
-    content: " (" attr(href) ")";
-  }
-
-  abbr[title]:after {
-    content: " (" attr(title) ")";
-  }
-
-  // Don't show links for images, or javascript/internal links
-  .ir {
-    a:after,
-    a[href^="javascript:"]:after,
-    a[href^="#"]:after {
-      content: "";
-    }
-  }
-
-  pre,
-  blockquote {
-    border: 1px solid $grey-light;
-    page-break-inside: avoid;
-  }
-
-  thead {
-    display: table-header-group; // h5bp.com/t
-  }
-
-  tr,
-  img {
-    page-break-inside: avoid;
-  }
-
-  img {
-    max-width: 100%;
-  }
-
-  @page {
-    margin: 0.5cm;
-  }
-
-  p,
-  h2,
-  h3 {
-    orphans: 3;
-    widows: 3;
-  }
-
-  h2,
-  h3 {
-    page-break-after: avoid;
   }
 }
