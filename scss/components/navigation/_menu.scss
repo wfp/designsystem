@@ -73,7 +73,7 @@
   display: inline-block;
 
   .menu--group {
-    @include menu--heading;
+    @include menu--group;
     @include ma(0);
     @include pa(0);
     background-color: transparent;
