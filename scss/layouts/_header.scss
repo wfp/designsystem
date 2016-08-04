@@ -9,7 +9,7 @@
 // -----------------------------------------------------------------------------
 .wfp-header-spacer--narrow {
   overflow: auto;
-  padding-top: 4.25em;
+  padding-top: 4.125rem;
 }
 
 %masthead {
@@ -18,8 +18,8 @@
   background-color: $primary;
   color: $white;
   box-shadow: rgba($black, 0.25) 0 1px 3px;
-  min-height: 3em;
-  max-height: 6.5em;
+  min-height: 3rem;
+  max-height: 6.5rem;
 
   .wrapper {
     position: relative;
@@ -30,12 +30,12 @@
 // Masthead: Narrow
 // -----------------------------------------------------------------------------
 %header--container {
-  padding: 0.5em 0;
+  padding: 0.5rem 0;
 }
 
 %header--title {
   line-height: 1.2;
-  font-size: 1em;
+  font-size: 1rem;
   letter-spacing: initial;
   margin: 0;
 
@@ -51,7 +51,7 @@
   text-decoration: none;
 
   img {
-    height: 4.5em;
+    height: 4.5rem;
   }
 }
 
@@ -66,7 +66,7 @@
   transition-property: border, background, color, width;
   transition-duration: 0.1s;
   transition-timing-function: ease-in;
-  padding: 0.25em 0.66em;
+  padding: 0.25rem 0.66rem;
 
   &:hover {
     color: $orange;
@@ -86,15 +86,15 @@
     position: absolute;
     left: 0;
     top: 0;
-    width: 2.25em;
-    height: 2.25em;
+    width: 2.25rem;
+    height: 2.25rem;
     content: "";
     color: $white;
     z-index: 1;
   }
 
   .header--input {
-    padding: 0.5em 0.75em 0.5em 2em;
+    padding: 0.5rem 0.75rem 0.5rem 2rem;
   }
 }
 
