@@ -16,6 +16,10 @@ $fs: (
   font-size: map-get($fs, $size);
 }
 
+@mixin font-size($size) {
+  font-size: #{$size}rem;
+}
+
 .fs1 { @include fs(1); }
 .fs2 { @include fs(2); }
 .fs3 { @include fs(3); }

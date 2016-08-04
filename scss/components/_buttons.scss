@@ -182,10 +182,6 @@ $color-gplus: #dc4e41;
   }
 }
 
-a[class*="wfp-btn"] {
- border-bottom-color: inherit;
-}
-
 .wfp-btn {
   @include button;
 }
