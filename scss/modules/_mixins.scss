@@ -36,18 +36,16 @@
 // Grid
 // -----------------------------------------------------------------------------
 @mixin grid--wrapper {
-  letter-spacing: -0.31em; // Webkit: collapse white-space between units
-  text-rendering: optimizespeed; // Webkit: fixes text-rendering: optimizeLegibility
+  letter-spacing: -0.31em;
+  text-rendering: optimizespeed;
   font-family: FreeSans, Arimo, "Droid Sans", Helvetica, Arial, sans-serif;
-  display: -webkit-flex;
-  // IE10 uses display: flexbox
   display: -ms-flexbox;
-  -webkit-flex-flow: row wrap;
+  display: -webkit-flex;
   -ms-flex-flow: row wrap;
-  // Prevents distributing space between rows
   -ms-align-content: flex-start;
-  -webkit-align-content: flex-start;
-  align-content: flex-start;
+  -webkit-flex-flow: row wrap;
+	-webkit-align-content: flex-start;
+	align-content: flex-start;
 }
 
 @mixin grid--unit {
@@ -58,6 +56,7 @@
   vertical-align: top;
   text-rendering: auto;
   font-family: $sans-serif-stack;
+  box-sizing: border-box;
 }
 
 @mixin grid {
