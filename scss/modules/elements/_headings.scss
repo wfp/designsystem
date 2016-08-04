@@ -5,64 +5,63 @@
 
 @mixin h--headline {
   @include lh-scale(0.75);
-  font-size: 1.75rem;
-  margin: 0.25rem 0;
+  @include margin(0.25rem 0);
+  @include fs(3);
 
   @include media-query($md-screen) {
-    // @include lh-scale(0.5);
-    font-size: 3rem;
-    letter-spacing: -0.05rem;
-    margin: 0.5rem 0;
+    @include lh-scale(0.75);
+    @include fs(1);
+    @include tracking(tight);
   }
 }
 
 @mixin h--tagline {
   @include lh-scale(0.875);
-  font-size: 0.875rem;
-  margin: 0.25rem 0;
+  @include margin(0.25rem 0);
+  @include fs(6);
 
   @include media-query($md-screen) {
-    // @include lh-scale(1);
-    font-size: 1.25rem;
+    @include mv(2);
+    @include fs(4);
   }
 }
 
 @mixin h1 {
   @include lh-scale(0.5);
-  font-size: 3rem;
-  letter-spacing: -0.05rem;
-  margin: 0.5rem 0;
+  @include fs(1);
+  @include tracking(tight);
+  @include margin(0.5rem 0);
 }
 
 @mixin h2 {
+  @include margin(0.25rem 0);
   @include lh-scale(0.75);
   font-size: 2.5rem;
   letter-spacing: -0.025rem;
-  margin: 0.25rem 0;
 }
 
 @mixin h3 {
   @include lh-scale(0.875);
+  @include margin(0.25rem 0);
   font-size: 2rem;
-  margin: 0.25rem 0;
 }
 
 @mixin h4 {
+  @include margin(0.25rem 0);
   @include lh-scale;
   font-size: 1.75rem;
-  margin: 0.25rem 0;
 }
 
 @mixin h5 {
+  @include margin(0.25rem 0);
   @include lh-scale;
   font-size: 1.5rem;
-  margin: 0.25rem 0;
 }
 
 @mixin h6 {
+  @include margin(0.25rem 0);
   @include lh-scale;
   font-size: 1.25rem;
-  margin: 0.25rem 0;
 }
 
 .h--headline    { @include h--headline; }
