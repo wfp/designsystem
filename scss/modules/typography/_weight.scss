@@ -13,10 +13,3 @@
     @error "$weight must be a value between a 100 and 900.";
   }
 }
-
-.normal { @include fw-normal; }
-.bold   { @include fw-bold; }
-
-@for $i from 1 through 9 {
-  .fw-#{$i} { @include fw(#{$i}00); }
-}

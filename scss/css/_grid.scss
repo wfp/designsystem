@@ -1,0 +1,27 @@
+// CSS: Grid
+// Project: WFPUI
+// Author: Matthew Morek (me@matthewmorek.com)
+// URL: http://matthewmorek.com
+
+@import "../modules/grid";
+@import "grid-units";
+
+@mixin grid {
+  @include grid--wrapper;
+
+  &[class*="wfp-u-"] {
+    font-family: $sans-serif-stack;
+  }
+}
+
+.opera-only :-o-prefocus, .wfp-grid {
+  word-spacing: -0.43em;
+}
+
+.wfp-grid {
+  @include grid;
+
+  [class*="wfp-u-"] {
+    @include grid--unit;
+  }
+}

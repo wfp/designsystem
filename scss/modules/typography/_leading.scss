@@ -10,7 +10,3 @@
 @mixin lh-scale($ratio: 1)   {
   line-height: $base-line-height * $ratio;
 }
-
-.lh-default { @include lh-default; }
-.lh-heading { @include lh-heading; }
-.lh-body    { @include lh-body; }

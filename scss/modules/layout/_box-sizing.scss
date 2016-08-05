@@ -6,5 +6,3 @@
 @mixin box-sizing {
   box-sizing: border-box;
 }
-
-.border-box { @include box-sizing; }

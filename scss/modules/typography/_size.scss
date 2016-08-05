@@ -19,10 +19,3 @@ $fs: (
 @mixin font-size($size) {
   font-size: #{$size}rem;
 }
-
-.fs1 { @include fs(1); }
-.fs2 { @include fs(2); }
-.fs3 { @include fs(3); }
-.fs4 { @include fs(4); }
-.fs5 { @include fs(5); }
-.fs6 { @include fs(6); }

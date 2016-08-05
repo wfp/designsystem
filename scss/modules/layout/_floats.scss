@@ -9,7 +9,3 @@
     display: inline;
   }
 }
-
-.fl { @include float(left); }
-.fr { @include float(right); }
-.fn { @include float(none); }

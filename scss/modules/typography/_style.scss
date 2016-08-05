@@ -5,6 +5,3 @@
 
 @mixin fst-normal  { font-style: normal; }
 @mixin fst-italic  { font-style: italic; }
-
-.fst-normal { @include fst-normal; }
-.fst-i      { @include fst-italic; }
