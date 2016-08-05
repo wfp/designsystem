@@ -295,11 +295,18 @@ module.exports = function(grunt) {
         },
         src: './dist/docs/*.html'
       }
+    },
+    copy: {
+      docs: {
+        src: './js/lib/responsive-nav.js',
+        dest: './docs/js/lib/responsive-nav.js'
+      }
     }
   });
 
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-clean');
+  grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-datauri');
   grunt.loadNpmTasks('grunt-eslint');
@@ -319,9 +326,9 @@ module.exports = function(grunt) {
   // Build WFP UI Docs locally
   grunt.registerTask('docs', ['sass:docs', 'postcss:docs', 'uglify:docs', 'jekyll']);
   // Build WFP UI Docs
-  grunt.registerTask('docs-build', ['sasslint', 'sass:docs', 'uglify:docs', 'postcss:docs', 'jekyll']);
+  grunt.registerTask('docs-build', ['sasslint', 'sass:docs', 'copy:docs', 'uglify:docs', 'postcss:docs', 'jekyll']);
   // Build dist-ready WFP UI Docs
-  grunt.registerTask('docs-dist', ['sass:docsDist', 'postcss:docsDist', 'uglify:docs', 'jekyll']);
+  grunt.registerTask('docs-dist', ['sass:docsDist', 'copy:docs', 'postcss:docsDist', 'uglify:docs', 'jekyll']);
   // Build WFP UI
   grunt.registerTask('build', ['eslint', 'sasslint', 'sass:dev', 'postcss:dev']);
   // Build a dist-ready WFP UI with all stati resources
