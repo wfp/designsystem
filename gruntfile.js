@@ -5,7 +5,7 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
     watch: {
       sass: {
-        files: 'scss/**/*.scss',
+        files: 'scss/**/**/*.scss',
         tasks: ['build', 'docs']
       },
       eslint: {
@@ -23,7 +23,7 @@ module.exports = function(grunt) {
     },
     pure_grids: {
       responsive: {
-        dest: 'scss/modules/_grid-units.scss',
+        dest: 'scss/css/_grid-units.scss',
         options: {
           units: [5,12,24],
           includeOldIEWidths: false,
@@ -206,7 +206,7 @@ module.exports = function(grunt) {
         },
         files: [{
           src: 'icons/ui/dist/light/**/*.svg',
-          dest: 'scss/modules/icons/_icons-light.scss'
+          dest: 'scss/icons/_icons-light.scss'
         }]
       },
       dark: {
@@ -216,7 +216,7 @@ module.exports = function(grunt) {
         },
         files: [{
           src: 'icons/ui/dist/dark/**/*.svg',
-          dest: 'scss/modules/icons/_icons-dark.scss'
+          dest: 'scss/icons/_icons-dark.scss'
         }]
       },
       primary: {
@@ -226,7 +226,7 @@ module.exports = function(grunt) {
         },
         files: [{
           src: 'icons/ui/dist/primary/**/*.svg',
-          dest: 'scss/modules/icons/_icons-primary.scss'
+          dest: 'scss/icons/_icons-primary.scss'
         }]
       }
     },
@@ -266,7 +266,7 @@ module.exports = function(grunt) {
       }
     },
     eslint: {
-      target: ['js/**/*.js'],
+      target: ['js/**/**/*.js'],
       options: {
         ignorePattern: ['js/lib/**/*.js']
       }
@@ -275,7 +275,7 @@ module.exports = function(grunt) {
       options: {
         config: '.sass-lint.yml',
       },
-      target: ['scss/**/*.scss']
+      target: ['scss/**/**/*.scss']
     },
     htmlaudit: {
       default: {
