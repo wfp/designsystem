@@ -56,6 +56,7 @@
 }
 
 %header--btn {
+  @include fs(5);
   // -webkit-tap-highlight-color: $black;
   -webkit-touch-callout: none;
   user-select: none;
@@ -99,6 +100,7 @@
 }
 
 %header--input {
+  @include fs(6);
   -webkit-tap-highlight-color: $black;
   -webkit-touch-callout: none;
   transition: width 0.15s ease-in-out;
@@ -107,9 +109,9 @@
   border-radius: 3px;
   background-color: transparent;
   color: $white;
-  width: 3.5em;
+  width: 3.5rem;
   text-align: center;
-  padding: 0.5em 0.75em;
+  padding: 0.5rem 0.75rem;
   cursor: pointer;
   position: relative;
   z-index: 2;
@@ -134,7 +136,7 @@
   }
 
   &:focus {
-    width: 8em;
+    width: 8rem;
     text-align: left;
     color: $white;
 
@@ -166,7 +168,7 @@
 %header--misc {
   @include media-query($md-screen) {
     display: inline-block;
-    min-height: 4.5em;
+    min-height: 4.5rem;
   };
 }
 
@@ -178,7 +180,7 @@
 %header--menu {
   position: absolute;
   right: 0;
-  top: 4em;
+  top: 4rem;
   width: 100%;
   margin: 0;
 
@@ -236,7 +238,7 @@
     display: block;
     border-bottom-color: transparent;
     color: $grey-light;
-    padding: 0.5em 1em;
+    padding: 0.5rem 1rem;
     line-height: 1.2;
   }
 
@@ -251,7 +253,7 @@
     }
 
     .menu--link {
-      padding: 0.25em 0;
+      padding: 0.25rem 0;
 
       &:active,
       &.active {
@@ -345,7 +347,7 @@
   .header--nav {
     @extend %header--nav;
     @include media-query($md-screen) {
-      min-height: 4.5em;
+      min-height: 4rem;
       text-align: right;
     }
   }
@@ -368,14 +370,14 @@
 
   .header--menu {
     @extend %header--menu;
-    top: 6.5em;
+    top: 6.5rem;
 
     &.closed {
-      transform: translate3d(0, -6.5em, 0);
+      transform: translate3d(0, -6.5rem, 0);
     }
 
     @include media-query($md-screen) {
-      margin: 1.5em 1em;
+      margin: 1.33rem 1rem;
       top: auto;
 
       &.closed {

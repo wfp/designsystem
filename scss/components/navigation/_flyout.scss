@@ -40,19 +40,19 @@
     border: 1px solid $grey-lighter;
     border-radius: 3px;
     color: $white;
-    font-size: 0.875em;
+    font-size: 0.875rem;
     font-weight: bold;
     font-family: $sans-serif-stack;
     text-transform: uppercase;
-    line-height: 1em;
-    padding: 0.5em;
+    line-height: 1;
+    padding: 0.33rem 0.5rem;
     float: right;
-    margin-top: 0.66em;
-    margin-right: 0.66em;
+    margin-top: 0.66rem;
+    margin-right: 0.66rem;
     // -webkit-tap-highlight-color: $black;
 
     .close-icon {
-      margin-right: 0.5em;
+      margin-right: 0.5rem;
       background-color: $grey-darker;
     }
 
