@@ -29,15 +29,3 @@ $max-widths: (
     max-width: $width;
   }
 }
-
-// Define width scale steps
-// E.g.: .w1 { width: 1rem; }
-@for $i from 1 through 9 {
-  .mw#{$i} { @include mw($i); }
-}
-
-// Full width
-.mw-100  { @include mw(10); }
-
-// Disable max-width
-.mw-none { @include max-width(none); }

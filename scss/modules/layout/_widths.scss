@@ -24,11 +24,3 @@ $widths: (
     width: $width;
   }
 }
-
-// Define width scale steps
-// E.g.: .w1 { width: 1rem; }
-@for $i from 1 through 5 {
-  .w#{$i} { @include width-scale($i); }
-}
-
-.w-auto { @include width-scale(auto);}

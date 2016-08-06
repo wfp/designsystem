@@ -14,7 +14,3 @@
 @mixin t-lowcase {
   text-transform: lowercase;
 }
-
-.t-caps     { @include t-caps; }
-.t-allcaps  { @include t-allcaps; }
-.t-lowcase  { @include t-lowcase; }

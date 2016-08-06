@@ -6,7 +6,3 @@
 @mixin t-decor($decoration) {
   text-decoration: $decoration;
 }
-
-.strike     { @include t-decor(line-through); }
-.underline  { @include t-decor(underline); }
-.no-decor   { @include t-decor(none); }

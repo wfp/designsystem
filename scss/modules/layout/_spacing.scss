@@ -42,57 +42,6 @@ $spacer: (
   padding: $values;
 }
 
-// padding (all)
-@for $i from 0 through 7 {
-  .pa-#{$i} {
-    padding: map-get($spacer, $i);
-  }
-}
-
-// padding-left
-@for $i from 0 through 7 {
-  .pl-#{$i} {
-    padding-left: map-get($spacer, $i);
-  }
-}
-
-// padding-right
-@for $i from 0 through 7 {
-  .pr-#{$i} {
-    padding-right: map-get($spacer, $i);
-  }
-}
-
-// padding-top
-@for $i from 0 through 7 {
-  .pt-#{$i} {
-    padding-top: map-get($spacer, $i);
-  }
-}
-
-// padding-bottom
-@for $i from 0 through 7 {
-  .pb-#{$i} {
-    padding-bottom: map-get($spacer, $i);
-  }
-}
-
-// horizontal padding
-@for $i from 0 through 7 {
-  .ph-#{$i} {
-    padding-left: map-get($spacer, $i);
-    padding-right: map-get($spacer, $i);
-  }
-}
-
-// vertical padding
-@for $i from 0 through 7 {
-  .pv-#{$i} {
-    padding-top: map-get($spacer, $i);
-    padding-bottom: map-get($spacer, $i);
-  }
-}
-
 // -----------------------------------------------------------------------------
 // Margins
 // -----------------------------------------------------------------------------
@@ -115,55 +64,4 @@ $spacer: (
 
 @mixin margin($values...) {
   margin: $values;
-}
-
-// margin (all)
-@for $i from 0 through 7 {
-  .ma-#{$i} {
-    margin: map-get($spacer, $i);
-  }
-}
-
-// margin-left
-@for $i from 0 through 7 {
-  .ml-#{$i} {
-    margin-left: map-get($spacer, $i);
-  }
-}
-
-// margin-right
-@for $i from 0 through 7 {
-  .mr-#{$i} {
-    margin-right: map-get($spacer, $i);
-  }
-}
-
-// margin-top
-@for $i from 0 through 7 {
-  .mt-#{$i} {
-    margin-top: map-get($spacer, $i);
-  }
-}
-
-// margin-bottom
-@for $i from 0 through 7 {
-  .mb-#{$i} {
-    margin-bottom: map-get($spacer, $i);
-  }
-}
-
-// horizontal margin
-@for $i from 0 through 7 {
-  .mh-#{$i} {
-    margin-left: map-get($spacer, $i);
-    margin-right: map-get($spacer, $i);
-  }
-}
-
-// vertical margin
-@for $i from 0 through 7 {
-  .mv-#{$i} {
-    margin-top: map-get($spacer, $i);
-    margin-bottom: map-get($spacer, $i);
-  }
 }

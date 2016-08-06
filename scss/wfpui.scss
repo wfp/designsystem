@@ -5,47 +5,11 @@
  */
 
 @import "normalize.scss";
-@import "math.scss";
 
-// Import SCSS mixins, variables, modules, etc.
-@import "init";
+// Import Core CSS
+@import "css-core";
 
-// Base modules
-@import "modules/mixins";
-@import "modules/base";
-@import "modules/icons";
-
-
-// Typography
-@import "modules/typography/alignment";
-@import "modules/typography/transform";
-@import "modules/typography/size";
-@import "modules/typography/weight";
-@import "modules/typography/leading";
-@import "modules/typography/white-space";
-@import "modules/typography/tracking";
-
-// Layout
-@import "modules/layout/box-sizing";
-@import "modules/layout/clearfix";
-@import "modules/layout/floats";
-@import "modules/layout/position";
-@import "modules/layout/spacing";
-@import "modules/layout/display";
-@import "modules/layout/widths";
-@import "modules/layout/max-widths";
-@import "modules/layout/heights";
-
-// Elements
-@import "modules/elements/headings";
-
-// Theme
-@import "modules/theme/colours";
-
-// Other
-@import "modules/utility";
-
-// Components
+// Import Components
 @import "components/buttons";
 @import "components/forms";
 @import "components/tables";
@@ -59,7 +23,3 @@
 @import "layouts/primer";
 @import "layouts/header";
 @import "layouts/footer";
-
-// Print styles
-// Inlined to avoid additional http requests
-@import "modules/print";

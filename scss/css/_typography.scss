@@ -1,0 +1,89 @@
+// CSS: Typography
+// Project: WFP UI
+// Author: Matthew Morek (me@matthewmorek.com)
+// URL: http://matthewmorek.com
+
+// ----------------------------------------------------------------------------
+// Alignment
+// ----------------------------------------------------------------------------
+.ta-left   { @include ta(left); }
+.ta-right  { @include ta(right); }
+.ta-center { @include ta(center); }
+
+// ----------------------------------------------------------------------------
+// Decoration
+// ----------------------------------------------------------------------------
+.strike     { @include t-decor(line-through); }
+.underline  { @include t-decor(underline); }
+.no-decor   { @include t-decor(none); }
+
+// ----------------------------------------------------------------------------
+// Leading
+// ----------------------------------------------------------------------------
+.lh-default { @include lh-default; }
+.lh-heading { @include lh-heading; }
+.lh-body    { @include lh-body; }
+
+// ----------------------------------------------------------------------------
+// Type Scale
+// ----------------------------------------------------------------------------
+.fs1 { @include fs(1); }
+.fs2 { @include fs(2); }
+.fs3 { @include fs(3); }
+.fs4 { @include fs(4); }
+.fs5 { @include fs(5); }
+.fs6 { @include fs(6); }
+
+// ----------------------------------------------------------------------------
+// Style
+// ----------------------------------------------------------------------------
+.fst-normal { @include fst-normal; }
+.fst-i      { @include fst-italic; }
+
+// ----------------------------------------------------------------------------
+// Tracking
+// ----------------------------------------------------------------------------
+.tr-tight  { @include tracking(tight); }
+.tr-loose  { @include tracking(loose); }
+.tr-xloose { @include tracking(xloose); }
+
+// ----------------------------------------------------------------------------
+// Transform
+// ----------------------------------------------------------------------------
+.t-caps     { @include t-caps; }
+.t-allcaps  { @include t-allcaps; }
+.t-lowcase  { @include t-lowcase; }
+
+// ----------------------------------------------------------------------------
+// Vertical Align
+// ----------------------------------------------------------------------------
+// Inline alignment
+.v-base { @include v-align("baseline"); }
+.v-base { @include v-align("sub"); }
+.v-base { @include v-align("super"); }
+.v-base { @include v-align("text-top"); }
+.v-base { @include v-align("text-bottom"); }
+
+// ----------------------------------------------------------------------------
+// Table alignment
+// ----------------------------------------------------------------------------
+.v-base { @include v-align("middle"); }
+.v-base { @include v-align("top"); }
+.v-base { @include v-align("bottom"); }
+
+// ----------------------------------------------------------------------------
+// Weight
+// ----------------------------------------------------------------------------
+.normal { @include fw-normal; }
+.bold   { @include fw-bold; }
+
+@for $i from 1 through 9 {
+  .fw-#{$i} { @include fw(#{$i}00); }
+}
+
+// ----------------------------------------------------------------------------
+// White Space
+// ----------------------------------------------------------------------------
+.ws-normal  { @include ws(normal); }
+.ws-nowrap  { @include ws(nowrap); }
+.ws-pre     { @include ws(pre); }
