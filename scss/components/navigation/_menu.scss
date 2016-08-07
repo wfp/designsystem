@@ -138,23 +138,18 @@
 
 .wfp-menu-plain {
   @include menu;
-  // @include padding(0 1rem);
   @include margin(1rem 0);
 
   .menu--heading,
   .menu--link {
     @include padding(0);
-    // @include height(1rem);
   }
 
   .menu--heading {
-    // @include fs(6);
     @include pv(1);
-    // @include mb(0);
   }
 
   .menu--link {
-    // @include fs(6);
     display: inline-block;
     color: darken($primary, 12%);
 
