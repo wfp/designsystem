@@ -31,15 +31,16 @@
     @include pv(1);
     @include ph(2);
     @include lh-scale(1.083);
+    @include height(auto);
     font-weight: normal;
     color: darken($primary, 12%);
     white-space: nowrap;
 
     &.home {
-      padding-left: 0.25em;
+      padding-left: 0.25rem;
 
       [class*="icon-"] {
-        margin: 0 0.25em;
+        margin: 0 0.25rem;
       }
     }
 
@@ -58,6 +59,7 @@
     @include pv(1);
     @include ph(2);
     @include lh-scale(1.083);
+    @include height(auto);
     font-weight: normal;
     color: $grey-darker;
     cursor: default;
