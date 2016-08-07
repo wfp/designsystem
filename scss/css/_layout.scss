@@ -51,10 +51,10 @@
 }
 
 // CSS heights
-.h-25       { @include height(25); }
-.h-50       { @include height(50); }
-.h-75       { @include height(75); }
-.h-100      { @include height(100); }
+.h-25       { @include height(25%); }
+.h-50       { @include height(50%); }
+.h-75       { @include height(75%); }
+.h-100      { @include height(100%); }
 .h-auto     { @include height(auto); }
 .h-inherit  { @include height(inherit); }
 

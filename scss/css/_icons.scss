@@ -28,6 +28,7 @@
 [class^="icon-"] {
   @include icon;
   @include icon-sizes;
+  @include mb(1);
   width: 24px;
   height: 24px;
 }

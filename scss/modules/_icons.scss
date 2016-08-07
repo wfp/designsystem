@@ -17,7 +17,7 @@ $icon-sizes: (
 
 @mixin icon {
   @include display(inline-block);
-  @include v-align(center);
+  @include v-align(middle);
   background-position: center;
 }
 

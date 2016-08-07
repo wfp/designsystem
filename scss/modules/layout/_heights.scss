@@ -18,9 +18,5 @@ $heights: (
 
 // Literal percentage values
 @mixin height($height: 0) {
-  @if $height neq "auto" and $height neq "inherit" {
-    height: $height + %;
-  } @else {
-    height: $height;
-  }
+  height: $height;
 }
