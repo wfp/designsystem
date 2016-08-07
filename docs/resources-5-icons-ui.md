@@ -49,37 +49,40 @@ Add UI icons to your interfaces using `<span>` element with a class `icon-{icon-
   <p>UI icons can be used alongside other UI elements; within menus, buttons, etc, as long as there is a descriptive label next to it. <strong>Do not use icons on their own on actionable UI elements, such as links or buttons.</strong></p>
 </div>
 
+<nav class="wfp-menu">
+  <div class="menu--group">
+    <h6 class="menu--heading"><span class="menu--item">About</span></h6>
+    <ul class="menu--wrapper">
+      <li class="menu--item"><a href="#" class="menu--link current">Executive Director</a></li>
+      <li class="menu--item"><a href="#" class="menu--link">Senior Leadership</a></li>
+      <li class="menu--item"><a href="#" class="menu--link">Corporate Information</a></li>
+      <li class="menu--item"><a href="#" class="menu--link">Funding</a></li>
+    </ul>
+  </div>
+</nav>
 
 ###### Preview
 <nav class="wfp-menu">
-  <h6 class="menu--heading">Navigation</h6>
-  <ul class="menu--wrapper">
-    <li class="menu--item">
-      <a href="#" class="menu--link"><span class="icon-email-dark"></span> Inbox</a>
-    </li>
-    <li class="menu--item">
-      <a href="#" class="menu--link"><span class="icon-account-circle-dark"></span> Account</a>
-    </li>
-    <li class="menu--item">
-      <a href="#" class="menu--link"><span class="icon-exit-to-app-dark"></span> Sign Out</a>
-    </li>
-  </ul>
+  <div class="menu--group">
+    <h6 class="menu--heading"><span class="menu--item">Navigation</span></h6>
+    <ul class="menu--wrapper">
+      <li class="menu--item"><a href="#" class="menu--link"><span class="icon-email-closed-dark"></span> Inbox</a></li>
+      <li class="menu--item"><a href="#" class="menu--link"><span class="icon-account-circle-dark"></span> Account</a></li>
+      <li class="menu--item"><a href="#" class="menu--link"><span class="icon-close-circle-dark"></span> Sign Out</a></li>
+    </ul>
+  </div>
 </nav>
 
 {% highlight html %}
 <nav class="wfp-menu">
-  <h6 class="menu--heading">Navigation</h6>
-  <ul class="menu--wrapper">
-    <li class="menu--item">
-      <a href="#" class="menu--link"><i class="icon-email-dark"></i> Inbox</a>
-    </li>
-    <li class="menu--item">
-      <a href="#" class="menu--link"><i class="icon-account-circle-dark"></i> Account</a>
-    </li>
-    <li class="menu--item">
-      <a href="#" class="menu--link"><i class="icon-exit-to-app-dark"></i> Sign Out</a>
-    </li>
-  </ul>
+  <div class="menu--group">
+    <h6 class="menu--heading"><span class="menu--item">Navigation</span></h6>
+    <ul class="menu--wrapper">
+      <li class="menu--item"><a href="#" class="menu--link"><span class="icon-email-closed-dark"></span> Inbox</a></li>
+      <li class="menu--item"><a href="#" class="menu--link"><span class="icon-account-circle-dark"></span> Account</a></li>
+      <li class="menu--item"><a href="#" class="menu--link"><span class="icon-close-circle-dark"></span> Sign Out</a></li>
+    </ul>
+  </div>
 </nav>
 {% endhighlight %}
 

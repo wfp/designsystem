@@ -3,63 +3,26 @@
 // Author: Matthew Morek (me@matthewmorek.com)
 // URL: http://matthewmorek.com
 
-@import "icons/icons-light";
-@import "icons/icons-dark";
-@import "icons/icons-primary";
+@import "../icons/icons-light";
+@import "../icons/icons-dark";
+@import "../icons/icons-primary";
+
+$icon-sizes: (
+  xsmall:   1rem,
+  small:    1.5rem,
+  medium:   2rem,
+  large:    3rem,
+  xlarge:   4rem
+);
 
 @mixin icon {
-  display: inline-block;
+  @include display(inline-block);
+  @include v-align(middle);
   background-position: center;
-  vertical-align: middle;
-
-  &.xsmall {
-    width: 16px;
-    height: 16px;
-    background-size: 16px;
-  }
-
-  &.small {
-    width: 24px;
-    height: 24px;
-    background-size: 24px;
-  }
-
-  &.medium {
-    width: 32px;
-    height: 32px;
-    background-size: 32px;
-  }
-
-  &.large {
-    width: 48px;
-    height: 48px;
-    background-size: 48px;
-  }
-
-  &.xlarge {
-    width: 64px;
-    height: 64px;
-    background-size: 64px;
-  }
 }
 
-[class^="icon-"] {
-  @include icon;
-  width: 24px;
-  height: 24px;
-}
-
-[class^="thematic-"] {
-  @include icon;
-  width: 64px;
-  height: 64px;
-}
-
-// Make icon-only links accessible (i.e.: breadcrumb "home" link)
-.screen-text {
-  clip: rect(1px, 1px, 1px, 1px);
-  position: absolute;
-  height: 1px;
-  width: 1px;
-  overflow: hidden;
+@mixin icon-size($size: xsmall) {
+  width: map-get($icon-sizes, $size);
+  height: map-get($icon-sizes, $size);
+  background-size: map-get($icon-sizes, $size);
 }

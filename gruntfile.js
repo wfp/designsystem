@@ -5,7 +5,7 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
     watch: {
       sass: {
-        files: 'scss/**/*.scss',
+        files: 'scss/**/**/*.scss',
         tasks: ['build', 'docs']
       },
       eslint: {
@@ -23,7 +23,7 @@ module.exports = function(grunt) {
     },
     pure_grids: {
       responsive: {
-        dest: 'scss/modules/_grid-units.scss',
+        dest: 'scss/css/_grid-units.scss',
         options: {
           units: [5,12,24],
           includeOldIEWidths: false,
@@ -206,7 +206,7 @@ module.exports = function(grunt) {
         },
         files: [{
           src: 'icons/ui/dist/light/**/*.svg',
-          dest: 'scss/modules/icons/_icons-light.scss'
+          dest: 'scss/icons/_icons-light.scss'
         }]
       },
       dark: {
@@ -216,7 +216,7 @@ module.exports = function(grunt) {
         },
         files: [{
           src: 'icons/ui/dist/dark/**/*.svg',
-          dest: 'scss/modules/icons/_icons-dark.scss'
+          dest: 'scss/icons/_icons-dark.scss'
         }]
       },
       primary: {
@@ -226,7 +226,7 @@ module.exports = function(grunt) {
         },
         files: [{
           src: 'icons/ui/dist/primary/**/*.svg',
-          dest: 'scss/modules/icons/_icons-primary.scss'
+          dest: 'scss/icons/_icons-primary.scss'
         }]
       }
     },
@@ -266,7 +266,7 @@ module.exports = function(grunt) {
       }
     },
     eslint: {
-      target: ['js/**/*.js'],
+      target: ['js/**/**/*.js'],
       options: {
         ignorePattern: ['js/lib/**/*.js']
       }
@@ -275,7 +275,7 @@ module.exports = function(grunt) {
       options: {
         config: '.sass-lint.yml',
       },
-      target: ['scss/**/*.scss']
+      target: ['scss/**/**/*.scss']
     },
     htmlaudit: {
       default: {
@@ -295,11 +295,18 @@ module.exports = function(grunt) {
         },
         src: './dist/docs/*.html'
       }
+    },
+    copy: {
+      docs: {
+        src: './js/lib/responsive-nav.js',
+        dest: './docs/js/lib/responsive-nav.js'
+      }
     }
   });
 
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-clean');
+  grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-datauri');
   grunt.loadNpmTasks('grunt-eslint');
@@ -319,9 +326,9 @@ module.exports = function(grunt) {
   // Build WFP UI Docs locally
   grunt.registerTask('docs', ['sass:docs', 'postcss:docs', 'uglify:docs', 'jekyll']);
   // Build WFP UI Docs
-  grunt.registerTask('docs-build', ['sasslint', 'sass:docs', 'uglify:docs', 'postcss:docs', 'jekyll']);
+  grunt.registerTask('docs-build', ['sasslint', 'sass:docs', 'copy:docs', 'uglify:docs', 'postcss:docs', 'jekyll']);
   // Build dist-ready WFP UI Docs
-  grunt.registerTask('docs-dist', ['sass:docsDist', 'postcss:docsDist', 'uglify:docs', 'jekyll']);
+  grunt.registerTask('docs-dist', ['sass:docsDist', 'copy:docs', 'postcss:docsDist', 'uglify:docs', 'jekyll']);
   // Build WFP UI
   grunt.registerTask('build', ['eslint', 'sasslint', 'sass:dev', 'postcss:dev']);
   // Build a dist-ready WFP UI with all stati resources

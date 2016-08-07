@@ -12,7 +12,3 @@ $ws: (
 @mixin ws($wspace: normal) {
   white-space: map-get($ws, $wspace);
 }
-
-.ws-normal  { @include ws(normal); }
-.ws-nowrap  { @include ws(nowrap); }
-.ws-pre     { @include ws(pre); }

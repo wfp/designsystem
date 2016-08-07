@@ -12,7 +12,3 @@ $spaces: (
 @mixin tracking($spacing) {
   letter-spacing: map-get($spaces, $spacing);
 }
-
-.tr-tight  { @include tracking(tight); }
-.tr-loose  { @include tracking(loose); }
-.tr-xloose { @include tracking(xloose); }

@@ -29,8 +29,9 @@
 }
 
 @mixin menu--link {
-  @include lh-default;
-  @include padding(0.33rem 0.75rem);
+  @include lh-body;
+  @include padding(0 0.75rem);
+  @include height(1.5rem);
   display: block;
   color: darken($primary, 12%);
   border-bottom-color: transparent;
@@ -137,21 +138,23 @@
 
 .wfp-menu-plain {
   @include menu;
-  @include padding(0 1rem);
+  // @include padding(0 1rem);
   @include margin(1rem 0);
 
   .menu--heading,
   .menu--link {
-    @include padding(0.25rem 0);
+    @include padding(0);
+    // @include height(1rem);
   }
 
   .menu--heading {
-    @include fs(6);
-    @include pb(2);
+    // @include fs(6);
+    @include pv(1);
+    // @include mb(0);
   }
 
   .menu--link {
-    @include fs(6);
+    // @include fs(6);
     display: inline-block;
     color: darken($primary, 12%);
 
@@ -161,7 +164,7 @@
   }
 
   @include media-query($md-screen) {
-    @include pa(0);
+    // @include pa(0);
   };
 }
 

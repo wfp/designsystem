@@ -1,5 +1,5 @@
 /*!
- * WFP UI Bootstrap Theme, v0.10.1
+ * WFP UI Bootstrap Theme, v0.11.0
  * Copyright 2016 WFP/MADBIT Co.
  * License: https://github.com/wfp/ui/blob/master/LICENSE
  */
@@ -10,9 +10,7 @@
 
 @import "../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/variables";
 @import "../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/mixins";
-@import "init";
-@import "modules/mixins";
-@import "modules/icons/icons-dark";
+@import "core";
 
 //
 // Base styles

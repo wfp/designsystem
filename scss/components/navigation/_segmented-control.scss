@@ -34,15 +34,17 @@
 }
 
 @mixin seg-control--link {
-  @include padding(0.5rem 0.75rem);
+  @include padding(0 0.75rem);
   @include fs(6);
   @include fw(700);
+  @include height(1.75rem);
+  @include lh-scale(1.333333333);
   width: auto;
   border: 0;
   color: darken($primary, 12%);
   display: block;
 
-  [class*="icon-"] {
+  [class^="icon-"] {
     @include mv(0);
     @include mh(1);
     width: 16px;
