@@ -1,97 +1,78 @@
+// ---------------------------------------------------------------------------
 // Component: Breadcrumbs
-// Project: WFPUI
-// Author: Matthew Morek (me@matthewmorek.com) / nuvole
-// URL: http://matthewmorek.com
+// ---------------------------------------------------------------------------
 
 .wfp-breadcrumbs {
-  @include seg-control;
+  display: inline-block;
   height: auto;
-  margin: .25em 0;
-  text-align: left;
+  margin: 0.25rem 0;
+  padding: 0.25rem 0;
+  font-size: 0.875rem;
+  font-weight: bold;
+  line-height: 1.75;
+
+  .breadcrumbs--wrapper {
+    @include nolist;
+  }
 
   .breadcrumbs--item {
-    @include seg-control--item;
     display: inline-block;
     border: 0;
     margin: 0;
+    line-height: 1.25;
 
     &::after {
       content: "\203A";
-      color: $grey;
-      font-size: 1.125em;
-      margin-left: .5em;
+      color: transparentize($grey, 0.1);
+      font-size: 1.125rem;
+      margin-left: 0.25rem;
+      margin-right: 0.25rem;
       display: inline-block;
     }
 
-    &:first-child {
-      border-left: 0;
+    &:last-child {
+      &::after {
+        content: "";
+        margin: 0;
+      }
     }
   }
 
   .breadcrumbs--link {
-    @include seg-control--link;
     padding: 0;
-    font-weight: normal;
     display: inline-block;
     color: darken($primary, 12%);
+    border: 0;
 
-    &.home {
-      [class*="icon-"] {
-        margin: 0;
-      }
-
-      svg {
-        path {
-          fill: $blue-dark;
-        }
-      }
-
-      &:hover {
-        background-color: inherit;
-        color: $primary;
-        border: 0;
-      }
-
-      &::after {
-        margin-left: .25em;
-      }
+    [class^="icon-"] {
+      // Uncomment post-merge to `develop`
+      // @include icon-size(xsmall);
+      vertical-align: text-bottom;
+      margin-right: 0.25rem;
     }
 
     &:hover {
       background-color: inherit;
       color: $primary;
-      border: 1px solid $blue;
+      border-bottom: 1px solid $orange;
     }
   }
 
-.breadcrumbs--item.last {
-
-  &::after {
-    content: "";
-  }
-
-  span {
-    @include seg-control--link;
-    display: inline-block;
-    padding: 0 0.4em 0 0;
-    font-weight: normal;
-    color: $grey-dark;
-    cursor: default;
-
-    &:hover {
-      background-color: inherit;
-      color: inherit;
-    }
-  }
-}
-
-  &-dark {
-    @extend .wfp-breadcrumbs;
-    background-color: transparentize($black, 0.5);
+  &.dark {
+    background-color: transparentize($black, 0.25);
     border-radius: 4px;
+    color: $white;
 
-    .breadcrumbs--last {
-      color: $white;
+    .breadcrumbs--wrapper {
+      padding: 0.25rem 0.5rem;
+    }
+
+    .breadcrumbs--link {
+      color: transparentize(lighten($primary, 0.25), 0.1);
+
+      &:hover {
+        color: transparentize(lighten($primary, 0.4), 0.1);
+      }
     }
   }
 }
