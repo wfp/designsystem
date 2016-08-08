@@ -57,22 +57,23 @@
       border-bottom: 1px solid $orange;
     }
   }
+}
 
-  &.dark {
-    background-color: transparentize($black, 0.25);
-    border-radius: 4px;
-    color: $white;
+.wfp-breadcrumbs--dark {
+  @extend .wfp-breadcrumbs;
+  background-color: transparentize($black, 0.25);
+  border-radius: 4px;
+  color: $white;
 
-    .breadcrumbs--wrapper {
-      padding: 0.25rem 0.5rem;
-    }
+  .breadcrumbs--wrapper {
+    padding: 0.25rem 0.5rem;
+  }
 
-    .breadcrumbs--link {
-      color: transparentize(lighten($primary, 0.25), 0.1);
+  .breadcrumbs--link {
+    color: transparentize(lighten($primary, 0.25), 0.1);
 
-      &:hover {
-        color: transparentize(lighten($primary, 0.4), 0.1);
-      }
+    &:hover {
+      color: transparentize(lighten($primary, 0.4), 0.1);
     }
   }
 }
