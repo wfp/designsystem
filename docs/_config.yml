@@ -3,7 +3,7 @@ title: "WFP UI Guidelines"
 email: "me@matthewmorek.com"
 description: ""
 url: "https://cdn.wfp.org" # WFP CDN
-version: "v0.11.0"
+version: "v0.12.0"
 quiet: true
 
 exclude: ["*.sublime-*", "*.sh", "*.yml", "*.DS_*"]
