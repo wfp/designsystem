@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
   <title>WFP UI Testing Grounds</title>
   <link rel="shortcut icon" href="http://cdn.wfp.org/favicon.ico">
-  <link rel="stylesheet" href="http://cdn.wfp.org/libraries/webfonts/lato/lato.css">
-  <link rel="stylesheet" href="http://cdn.wfp.org/libraries/webfonts/aleo/aleo.css">
+  <!-- <link rel="stylesheet" href="http://cdn.wfp.org/libraries/webfonts/lato/lato.css">
+  <link rel="stylesheet" href="http://cdn.wfp.org/libraries/webfonts/aleo/aleo.css"> -->
   <link href="img/icons/ui/ui-icons.svg.css" rel="stylesheet">
   <link href="img/icons/thematic/thematic-icons.svg.css" rel="stylesheet">
   <link href="css/main.css" rel="stylesheet">
@@ -270,14 +270,44 @@
       </ul>
     </div>
 
-    <h2 class="section-title"><code>.wfp-breadcrumbs</code></h2>
+    <h2 class="section-title"><code>.wfp-breadcrumbs-light</code></h2>
 
     <div class="wfp-content-wrapper wfp-text-center">
-      <ul class="wfp-breadcrumbs">
-        <li class="breadcrumbs--item"><a href="#home" class="breadcrumbs--link home"><span class="icon-home-dark"></span><span>Home</span></a></li>
-        <li class="breadcrumbs--item"><a href="#email" class="breadcrumbs--link">Careers</a></li>
-        <li class="breadcrumbs--item"><span class="breadcrumbs--last">Internships</span></li>
-      </ul>
+      <nav class="wfp-breadcrumbs">
+        <ol class="breadcrumbs--wrapper">
+          <li class="breadcrumbs--item">
+            <a href="#home" class="breadcrumbs--link home">
+              <span class="icon-home-dark xsmall"></span><span>Home</span>
+            </a>
+          </li>
+          <li class="breadcrumbs--item">
+            <a href="#email" class="breadcrumbs--link">Careers</a>
+          </li>
+          <li class="breadcrumbs--item">
+            <span class="breadcrumbs--last">Internships</span>
+          </li>
+        </ol>
+      </nav>
+    </div>
+
+    <h2 class="section-title"><code>.wfp-breadcrumbs-dark</code></h2>
+
+    <div class="wfp-content-wrapper wfp-text-center">
+      <nav class="wfp-breadcrumbs--dark">
+        <ol class="breadcrumbs--wrapper">
+          <li class="breadcrumbs--item">
+            <a href="#home" class="breadcrumbs--link home">
+              <span class="icon-home-light xsmall"></span><span>Home</span>
+            </a>
+          </li>
+          <li class="breadcrumbs--item">
+            <a href="#email" class="breadcrumbs--link">Careers</a>
+          </li>
+          <li class="breadcrumbs--item">
+            <span class="breadcrumbs--last">Internships</span>
+          </li>
+        </ol>
+      </nav>
     </div>
 
     <h2 class="section-title"><code>.wfp-pagination</code></h2>

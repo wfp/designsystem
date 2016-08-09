@@ -1,108 +1,79 @@
+// ---------------------------------------------------------------------------
 // Component: Breadcrumbs
-// Project: WFPUI
-// Author: Matthew Morek (me@matthewmorek.com)
-// URL: http://matthewmorek.com
+// ---------------------------------------------------------------------------
 
 .wfp-breadcrumbs {
-  @include seg-control;
+  display: inline-block;
+  height: auto;
+  margin: 0.25rem 0;
+  padding: 0.25rem 0;
+  font-size: 0.875rem;
+  font-weight: bold;
+  line-height: 1.75;
+
+  .breadcrumbs--wrapper {
+    @include nolist;
+  }
 
   .breadcrumbs--item {
-    @include seg-control--item;
-    display: block;
-    float: left;
-    margin: -1px 0 0 -1px;
-    border-left: 1px solid darken($grey-lighter, 10%);
-    background-color: $white;
-    white-space: nowrap;
+    display: inline-block;
+    border: 0;
+    margin: 0;
+    line-height: 1.25;
 
-    border-color: darken($grey-lighter, 10%);
-
-    &:first-child {
-      border-color: darken($grey-lighter, 10%);
+    &::after {
+      content: "\203A";
+      color: transparentize($grey, 0.1);
+      font-size: 1.125rem;
+      margin-left: 0.25rem;
+      margin-right: 0.25rem;
+      display: inline-block;
     }
 
-    &:only-child {
-      border-radius: 2px;
+    &:last-child {
+      &::after {
+        content: "";
+        margin: 0;
+      }
     }
   }
 
   .breadcrumbs--link {
-    @include seg-control--link;
-    @include pv(1);
-    @include ph(2);
-    @include lh-scale(1.083);
-    @include height(auto);
-    font-weight: normal;
+    padding: 0;
+    display: inline-block;
     color: darken($primary, 12%);
-    white-space: nowrap;
+    border: 0;
 
-    &.home {
-      padding-left: 0.25rem;
-
-      [class*="icon-"] {
-        margin: 0 0.25rem;
-      }
-    }
-
-    &:visited {
-      color: $blue-darkest;
+    [class^="icon-"] {
+      // Uncomment post-merge to `develop`
+      // @include icon-size(xsmall);
+      vertical-align: text-bottom;
+      margin-right: 0.25rem;
     }
 
     &:hover {
       background-color: inherit;
       color: $primary;
-    }
-  }
-
-  .breadcrumbs--last {
-    @include seg-control--link;
-    @include pv(1);
-    @include ph(2);
-    @include lh-scale(1.083);
-    @include height(auto);
-    font-weight: normal;
-    color: $grey-darker;
-    cursor: default;
-
-    &:hover {
-      background-color: initial;
-      color: initial;
+      border-bottom: 1px solid $orange;
     }
   }
 }
 
-// Specificity Wars II™: The Dark Side of the Breadcrumb
-.wfp-breadcrumbs-inverse {
-  @include seg-control;
+.wfp-breadcrumbs--dark {
+  @extend .wfp-breadcrumbs;
+  background-color: transparentize($black, 0.25);
+  border-radius: 4px;
+  color: $white;
 
-  .breadcrumbs--item {
-    @include seg-control--item;
-    border-color: $grey;
-    background-color: $grey-dark;
-    color: $grey-contrast;
-
-    &:first-child {
-      border-color: $grey;
-    }
+  .breadcrumbs--wrapper {
+    padding: 0.25rem 0.5rem;
   }
 
   .breadcrumbs--link {
-    @include seg-control--link;
-    color: $grey-contrast;
-
-    &:hover,
-    &:active {
-      color: darken($primary, 12%);
-    }
-  }
-
-  .breadcrumbs--last {
-    @include seg-control--link;
-    color: $grey-lighter;
-    cursor: default;
+    color: transparentize(lighten($primary, 0.25), 0.1);
 
     &:hover {
-      color: $grey-lighter;
+      color: transparentize(lighten($primary, 0.4), 0.1);
     }
   }
 }
