@@ -1,7 +1,5 @@
 // Project Variables
 // Project: WFP UI
-// Author: Matthew Morek (me@matthewmorek.com)
-// URL: http://matthewmorek.com
 
 $sans-serif-stack:    "lato", -apple-system, BlinkMacSystemFont, system, sans-serif;
 $serif-stack:         "aleo", -apple-system, BlinkMacSystemFont, system, serif;
@@ -12,13 +10,8 @@ $small-font-size:     $base-font-size * 0.875; // 14px
 
 $spacing-unit:        0.25rem;
 
-$text-color:          #404040 !default;
-$background-color:    #ffffff !default;
-
 $primary:             #2a93fc;
 $accent:              #1f6ebc;
-
-$black:               #000000;
 
 // Greys gradation
 $grey:                #8c8c8c;
@@ -40,11 +33,15 @@ $blue-lightest:       lighten($blue, 30%);
 
 $grey-contrast:       #eaeaea;
 
+$black:               #000000;
 $white:               #ffffff;
 $red:                 #ff5252;
 $orange:              #ffc759;
 $yellow:              #fcdc5d;
 $green:               #00a878;
+
+$text-color:          transparentize($grey-darkest, 0.1) !default;
+$background-color:    transparentize($white, 0.1) !default;
 
 // Width of the content area
 $content-width:       1000px !default;

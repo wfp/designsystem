@@ -72,7 +72,8 @@ module.exports = function(grunt) {
       },
       docs: {
         files: {
-          'docs/css/main.css': 'docs/_sass/main.scss'
+          'docs/css/main.css': 'docs/_sass/main.scss',
+          'docs/css/bootstrap-theme.css': 'scss/bootstrap-theme.scss'
         }
       },
       docsDist: {
@@ -80,7 +81,8 @@ module.exports = function(grunt) {
           sourceMap: false
         },
         files: {
-          'docs/css/main.css': 'docs/_sass/main.scss'
+          'docs/css/main.css': 'docs/_sass/main.scss',
+          'docs/css/bootstrap-theme.css': 'scss/bootstrap-theme.scss'
         }
       }
     },
@@ -112,6 +114,12 @@ module.exports = function(grunt) {
         src: 'dist/css/*.css'
       },
       docs: {
+        options: {
+          processors: [
+            require('autoprefixer')({ browsers: ['last 2 version'] }),
+            require('pixrem')()
+          ]
+        },
         src: 'docs/css/*.css'
       },
       docsDist: {
@@ -280,9 +288,9 @@ module.exports = function(grunt) {
     htmlaudit: {
       default: {
         options: {
-          baseUri: 'http://cdn.wfp.org/guides/ui/v0.8.0/'
+          baseUri: 'http://cdn.wfp.org/guides/ui/v0.11.0/'
         },
-        src: './dist/docs/**/*.html'
+        src: './dist/docs/*.html'
       },
       ci: {
         options: {
@@ -297,9 +305,9 @@ module.exports = function(grunt) {
       }
     },
     copy: {
-      docs: {
-        src: './js/lib/responsive-nav.js',
-        dest: './docs/js/lib/responsive-nav.js'
+      docsJS: {
+        src: './dist/js/responsive-nav.min.js',
+        dest: './docs/js/lib/responsive-nav.min.js'
       }
     }
   });
@@ -324,11 +332,11 @@ module.exports = function(grunt) {
   // Build Grunticon Icons
   grunt.registerTask('gen-icons', ['clean:grunticon', 'grunticon']);
   // Build WFP UI Docs locally
-  grunt.registerTask('docs', ['sass:docs', 'postcss:docs', 'uglify:docs', 'jekyll']);
+  grunt.registerTask('docs', ['sass:docs', 'copy', 'postcss:docs', 'uglify:docs', 'jekyll']);
   // Build WFP UI Docs
-  grunt.registerTask('docs-build', ['sasslint', 'sass:docs', 'copy:docs', 'uglify:docs', 'postcss:docs', 'jekyll']);
+  grunt.registerTask('docs-build', ['sasslint', 'sass:docs', 'copy', 'uglify:docs', 'postcss:docs', 'jekyll']);
   // Build dist-ready WFP UI Docs
-  grunt.registerTask('docs-dist', ['sass:docsDist', 'copy:docs', 'postcss:docsDist', 'uglify:docs', 'jekyll']);
+  grunt.registerTask('docs-dist', ['sass:docsDist', 'copy', 'postcss:docsDist', 'uglify:docs', 'jekyll']);
   // Build WFP UI
   grunt.registerTask('build', ['eslint', 'sasslint', 'sass:dev', 'postcss:dev']);
   // Build a dist-ready WFP UI with all stati resources

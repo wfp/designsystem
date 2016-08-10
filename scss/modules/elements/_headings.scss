@@ -1,7 +1,5 @@
 // Typography: Headings
 // Project: WFP UI
-// Author: Matthew Morek (me@matthewmorek.com)
-// URL: http://matthewmorek.com
 
 @mixin h--headline {
   @include lh-scale(0.75);
@@ -27,39 +25,69 @@
 }
 
 @mixin h1 {
-  @include lh-scale(0.5);
-  @include fs(1);
-  @include tracking(tight);
+  @include lh-scale(0.75);
+  @include font-size(2.25);
   @include margin(0.5rem 0);
+
+  @include media-query($md-screen) {
+    @include font-size(3);
+    @include tracking(tight);
+    @include lh-scale(0.66);
+  }
 }
 
 @mixin h2 {
-  @include margin(0.25rem 0);
+  @include font-size(2);
   @include lh-scale(0.75);
-  font-size: 2.5rem;
-  letter-spacing: -0.025rem;
+  @include margin(0.5rem 0);
+
+  @include media-query($md-screen) {
+    @include margin(0.25rem 0);
+    @include lh-scale(0.875);
+    @include font-size(2.5);
+    letter-spacing: -0.025rem;
+  }
 }
 
 @mixin h3 {
-  @include lh-scale(0.875);
-  @include margin(0.25rem 0);
-  font-size: 2rem;
+  @include font-size(1.75);
+  @include margin(0.5rem 0);
+  @include lh-scale(0.75);
+
+  @include media-query($md-screen) {
+    @include margin(0.25rem 0);
+    @include lh-scale(0.875);
+    @include font-size(2.25);
+    letter-spacing: -0.025rem;
+  }
 }
 
 @mixin h4 {
   @include margin(0.25rem 0);
-  @include lh-scale;
-  font-size: 1.75rem;
+  @include font-size(1.5);
+  @include lh-scale(0.875);
+
+  @include media-query($md-screen) {
+    @include font-size(2);
+  }
 }
 
 @mixin h5 {
   @include margin(0.25rem 0);
-  @include lh-scale;
-  font-size: 1.5rem;
+  @include font-size(1.33);
+  @include lh-body;
+
+  @include media-query($md-screen) {
+    @include font-size(1.75);
+  }
 }
 
 @mixin h6 {
   @include margin(0.25rem 0);
-  @include lh-scale;
-  font-size: 1.25rem;
+  @include font-size(1.125);
+  @include lh-body;
+
+  @include media-query($md-screen) {
+    @include font-size(1.5);
+  }
 }

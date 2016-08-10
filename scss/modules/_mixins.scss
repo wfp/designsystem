@@ -1,7 +1,5 @@
 // Module: Mixins
 // Project: WFPUI
-// Author: Matthew Morek (me@matthewmorek.com)
-// URL: http://matthewmorek.com
 
 @mixin media-query($device) {
   @media screen and (min-width: $device) {
