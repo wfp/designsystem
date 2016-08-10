@@ -15,9 +15,9 @@
 //
 // Base styles
 // --------------------------------------------------
-body {
+html, body {
   font-family: $sans-serif-stack;
-  font-size: $base-font-size;
+  font-size: 16px;
   line-height: $base-line-height;
   font-weight: normal;
   color: $text-color;
@@ -26,7 +26,7 @@ body {
 
 p, blockquote, pre,
 ul, ol, dl, figure {
-  margin: 0 0 1em;
+  margin: 0 0 1rem;
 
   &:last-child {
     margin: 0;
@@ -35,40 +35,36 @@ ul, ol, dl, figure {
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
-  margin: 0.75em 0;
+  margin: 0.5rem 0;
 }
 
 h1 {
-  font-size: 2.5em;
+  @include h1;
 }
 
 h2 {
-  font-size: 2em;
+  @include h2;
 }
 
 h3 {
-  font-size: 1.5em;
+  @include h3;
 }
 
 h4 {
-  font-size: 1em;
+  @include h4;
 }
 
 h5 {
-  font-size: $base-font-size * 0.875;
+  @include h5;
 }
 
 h6 {
-  color: $grey-light;
-  font-size: $small-font-size;
-  text-transform: uppercase;
-  margin-top: $spacing-unit * 4;
-  margin-bottom: $spacing-unit;
+  @include h6;
 }
 
 ul {
   list-style: square;
-  padding-left: 1.25em;
+  padding-left: 1.25rem;
 }
 
 .footer {
@@ -79,10 +75,10 @@ ul {
 // Forms
 // --------------------------------------------------
 %input-generic {
-  padding: 0.5em 0.75em;
+  padding: 0.5rem 0.75rem;
   display: inline-block;
   border: 1px solid $grey-lighter;
-  font-size: 100%;
+  font-size: 1rem;
   line-height: 1.5;
   box-shadow: inset 0 1px 3px rgba($black, 0.1);
   border-radius: 1px;
@@ -156,13 +152,13 @@ select {
 // Buttons
 // --------------------------------------------------
 %btn {
-  padding: 0.5em 1em;
+  padding: 0.5rem 1rem;
   color: $grey-dark;
   background-image: none;
   background-color: $grey-lightest;
   font-family: inherit;
   font-weight: bold;
-  font-size: 100%;
+  font-size: 1rem;
   line-height: 1.5;
   border: 1px solid rgba($black, 0.15);
   border-radius: 2px;
@@ -292,26 +288,26 @@ select {
 
   // Extra sizes and modes for buttons
   &.btn-xs {
-    font-size: 0.875em;
+    font-size: 0.875rem;
     font-weight: normal;
-    padding: 0.5em 0.75em;
+    padding: 0.5rem 0.75rem;
     line-height: 1;
   }
 
   &.btn-sm {
-    font-size: 1em;
+    font-size: 1rem;
     font-weight: normal;
-    padding: 0.33em 0.75em;
+    padding: 0.33rem 0.75rem;
   }
 
   &.btn-lg {
-    font-size: 1.125em;
-    padding: 0.66em 1em;
+    font-size: 1.125rem;
+    padding: 0.66rem 1rem;
   }
 
   &.btn-xl {
-    font-size: 1.25em;
-    padding: 0.75em 1.25em;
+    font-size: 1.25rem;
+    padding: 0.75rem 1.25rem;
   }
 }
 
@@ -365,8 +361,8 @@ a {
     background-color: $white;
     padding: 0;
     border-radius: 2px;
-    margin-left: -2em;
-    margin-right: 0.5em;
+    margin-left: -2rem;
+    margin-right: 0.5rem;
     position: relative;
     background-position: center;
 
@@ -392,12 +388,12 @@ a {
 
   label {
     margin-left: 0;
-    padding-left: 2em;
+    padding-left: 2rem;
     line-height: 1.25;
 
     &.longform {
       line-height: 1.5;
-      font-size: 0.875em;
+      font-size: 0.875rem;
     }
   }
 }
@@ -591,7 +587,7 @@ a {
     border-left: 0;
     position: relative;
     z-index: 1;
-    font-size: 0.875em;
+    font-size: 0.875rem;
     line-height: 1.6;
 
     + li::before {
