@@ -56,18 +56,18 @@
 // Vertical Align
 // ----------------------------------------------------------------------------
 // Inline alignment
-.v-base { @include v-align("baseline"); }
-.v-base { @include v-align("sub"); }
-.v-base { @include v-align("super"); }
-.v-base { @include v-align("text-top"); }
-.v-base { @include v-align("text-bottom"); }
+.va-base { @include v-align("baseline"); }
+.va-sub { @include v-align("sub"); }
+.va-sup { @include v-align("super"); }
+.va-texttop { @include v-align("text-top"); }
+.va-textbottom { @include v-align("text-bottom"); }
 
 // ----------------------------------------------------------------------------
 // Table alignment
 // ----------------------------------------------------------------------------
-.v-base { @include v-align("middle"); }
-.v-base { @include v-align("top"); }
-.v-base { @include v-align("bottom"); }
+.va-mid { @include v-align("middle"); }
+.va-top { @include v-align("top"); }
+.va-bottom { @include v-align("bottom"); }
 
 // ----------------------------------------------------------------------------
 // Weight
