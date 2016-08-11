@@ -164,27 +164,52 @@ This pattern is useful for when you need to display a set of controls with an in
 ### Breadcrumbs
 _Breadcrumbs_ are a special kind of _segmented control_ component; a simple and minimal way to give users a hint at your site or application's structure. They also provide an important context in relation to user's current location within your content. Breadcrumbs should be displayed just below the header, possibly on their own, with appropriate spacing to stay visible.
 
-<!-- <div class="notice">
-  <h6 class="title">Note</h6>
-  <p>You can use a inversed breadcrumbs, by replacing class <code>breadcrumbs</code> with <code>breadcrumbs-inverse</code>. Inversed breadcrumbs should only ever be used against dark, or unpredictable backgrounds, such as splash screens, etc.</p>
-</div> -->
+<div class="notice">
+  <p>You can use a dark variant of breadcrumbs, by replacing class <code>wfp-breadcrumbs</code> with <code>wfp-breadcrumbs--dark</code>. Dark breadcrumbs should only ever be used against unpredictable backgrounds, such as splash screens, etc.</p>
+</div>
 
 ###### Preview
 <div class="preview plain">
-  <ul class="wfp-breadcrumbs">
-    <li class="breadcrumbs--item"><a href="#home" class="breadcrumbs--link home"><span class="icon-home-dark" alt="Home icon"></span><span>Home</span></a></li>
-    <li class="breadcrumbs--item"><a href="#email" class="breadcrumbs--link">Careers</a></li>
-    <li class="breadcrumbs--item"><span class="breadcrumbs--last">Internships</span></li>
-  </ul>
+  <nav class="wfp-breadcrumbs">
+    <ol class="breadcrumbs--wrapper">
+      <li class="breadcrumbs--item"><a href="#home" class="breadcrumbs--link home"><span class="icon-home-dark xsmall"></span><span>Home</span></a></li>
+      <li class="breadcrumbs--item"><a href="#email" class="breadcrumbs--link">Careers</a></li>
+      <li class="breadcrumbs--item"><span class="breadcrumbs--last">Internships</span></li>
+    </ol>
+  </nav>
 </div>
 
 ###### Markup
 {% highlight html %}
-<ul class="wfp-breadcrumbs">
-  <li class="breadcrumbs--item"><a href="#" class="breadcrumbs--link home"><span class="icon-home-dark"></span><span>Home</span></a></li>
-  <li class="breadcrumbs--item"><a href="#" class="breadcrumbs--link">Careers</a></li>
-  <li class="breadcrumbs--item"><span class="breadcrumbs--last">Internships</span></li>
-</ul>
+<nav class="wfp-breadcrumbs">
+  <ol class="breadcrumbs--wrapper">
+    <li class="breadcrumbs--item"><a href="#home" class="breadcrumbs--link home"><span class="icon-home-dark xsmall"></span><span>Home</span></a></li>
+    <li class="breadcrumbs--item"><a href="#email" class="breadcrumbs--link">Careers</a></li>
+    <li class="breadcrumbs--item"><span class="breadcrumbs--last">Internships</span></li>
+  </ol>
+</nav>
+{% endhighlight %}
+
+###### Preview
+<div class="preview plain">
+  <nav class="wfp-breadcrumbs--dark">
+    <ol class="breadcrumbs--wrapper">
+      <li class="breadcrumbs--item"><a href="#home" class="breadcrumbs--link home"><span class="icon-home-light xsmall"></span><span>Home</span></a></li>
+      <li class="breadcrumbs--item"><a href="#email" class="breadcrumbs--link">Careers</a></li>
+      <li class="breadcrumbs--item"><span class="breadcrumbs--last">Internships</span></li>
+    </ol>
+  </nav>
+</div>
+
+###### Markup
+{% highlight html %}
+<nav class="wfp-breadcrumbs--dark">
+  <ol class="breadcrumbs--wrapper">
+    <li class="breadcrumbs--item"><a href="#home" class="breadcrumbs--link home"><span class="icon-home-light xsmall"></span><span>Home</span></a></li>
+    <li class="breadcrumbs--item"><a href="#email" class="breadcrumbs--link">Careers</a></li>
+    <li class="breadcrumbs--item"><span class="breadcrumbs--last">Internships</span></li>
+  </ol>
+</nav>
 {% endhighlight %}
 
 <div class="notice">
