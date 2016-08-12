@@ -11,7 +11,7 @@ $heights: (
 
 // Scale steps
 @mixin h($scale) {
-  max-width: map-get($heights, $scale);
+  height: map-get($heights, $scale);
 }
 
 // Literal percentage values
