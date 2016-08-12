@@ -38,3 +38,16 @@
 .bg-white-80  { @include bg-color($white, $white, 0.8); }
 .bg-white-90  { @include bg-color($white, $white, 0.9); }
 .bg-white-100 { @include bg-color($white, $white, 1); }
+
+// Primary
+.bg-blue-0   { @include bg-color($primary, transparent, 0); }
+.bg-blue-10  { @include bg-color($primary, $primary, 0.1); }
+.bg-blue-20  { @include bg-color($primary, $primary, 0.2); }
+.bg-blue-30  { @include bg-color($primary, $primary, 0.3); }
+.bg-blue-40  { @include bg-color($primary, $primary, 0.4); }
+.bg-blue-50  { @include bg-color($primary, $primary, 0.5); }
+.bg-blue-60  { @include bg-color($primary, $primary, 0.6); }
+.bg-blue-70  { @include bg-color($primary, $primary, 0.7); }
+.bg-blue-80  { @include bg-color($primary, $primary, 0.8); }
+.bg-blue-90  { @include bg-color($primary, $primary, 0.9); }
+.bg-blue-100 { @include bg-color($primary, $primary, 1); }
