@@ -35,10 +35,6 @@
   font-size: 1rem;
   letter-spacing: initial;
   margin: 0;
-
-  @include media-query($md-screen) {
-    margin: 0 1em;
-  }
 }
 
 %header--logo {
@@ -241,6 +237,8 @@
 
   @include media-query($md-screen) {
     @include menu-flat;
+    // @include mh(0);
+    @include margin(0.33rem 0);
     background-color: transparent;
     position: static;
     width: auto;
@@ -250,7 +248,7 @@
     }
 
     .menu--link {
-      padding: 0.25rem 0;
+      padding: 0;
 
       &:active,
       &.active {
