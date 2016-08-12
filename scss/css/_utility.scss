@@ -6,11 +6,6 @@
 
 .wfp-wrapper {
   @include wrapper;
-  padding: 1rem;
-
-  @include media-query($content-width) {
-    padding: 1rem 0;
-  }
 }
 
 .wfp-wrapper--tight {
