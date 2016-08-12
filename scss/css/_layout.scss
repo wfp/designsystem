@@ -74,7 +74,7 @@
 // Define width scale steps
 // E.g.: .w1 { width: 1rem; }
 @for $i from 1 through 9 {
-  .mw#{$i} { @include mw($i); }
+  .mw-#{$i} { @include mw($i); }
 }
 
 // Full width
@@ -138,7 +138,7 @@
 }
 
 // ----------------------------------------------------------------------------
-// Spacing (Padding)
+// Spacing (Margins)
 // ----------------------------------------------------------------------------
 // margin (all)
 @for $i from 0 through 7 {
@@ -189,6 +189,10 @@
     margin-top: map-get($spacer, $i);
     margin-bottom: map-get($spacer, $i);
   }
+}
+
+.mc {
+  @include margin(0 auto);
 }
 
 // ----------------------------------------------------------------------------
