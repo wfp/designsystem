@@ -6,15 +6,15 @@
 
 .wfp-wrapper {
   @include wrapper;
-}
-
-.wfp-wrapper-tight {
-  @include wrapper;
-  padding: 0 1rem;
+  padding: 1rem;
 
   @include media-query($content-width) {
-    padding: 0;
+    padding: 1rem 0;
   }
+}
+
+.wfp-wrapper--tight {
+  @include wrapper;
 }
 
 .wfp-wrapper--narrow {
@@ -82,12 +82,6 @@
 
 .wfp-band {
   @include band;
-
-  nav[role="navigation"] {
-    margin: 0;
-    padding: 0;
-    height: 2rem;
-  }
 }
 
 // -----------------------------------------------------------------------------

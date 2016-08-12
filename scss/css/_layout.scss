@@ -65,7 +65,8 @@
   .w#{$i} { @include width-scale($i); }
 }
 
-.w-auto { @include width-scale(auto);}
+.w-100  { @include width(100);}
+.w-auto { @include width(auto);}
 
 // ----------------------------------------------------------------------------
 // Max Widths
