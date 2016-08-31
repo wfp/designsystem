@@ -51,3 +51,10 @@ $sm-screen:           35.5em;
 $md-screen:           48em;
 $lg-screen:           64em;
 $xl-screen:           80em;
+
+$mqs: (
+  sm: 35.5em,
+  md: 48em,
+  lg: 64em,
+  xl: 80em
+);
