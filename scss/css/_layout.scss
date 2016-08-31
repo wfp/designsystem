@@ -15,101 +15,30 @@
 // Display
 // ----------------------------------------------------------------------------
 .dn { @include display(none); }
-@each $mq, $viewport in $mqs {
-  .dn-#{$mq} {
-    @include media-query($viewport) {
-      @include display(none);
-    }
-  }
-}
-
 .di { @include display(inline); }
-@each $mq, $viewport in $mqs {
-  .di-#{$mq} {
-    @include media-query($viewport) {
-      @include display(inline);
-    }
-  }
-}
-
 .db { @include display(block); }
-@each $mq, $viewport in $mqs {
-  .db-#{$mq} {
-    @include media-query($viewport) {
-      @include display(block);
-    }
-  }
-}
-
 .dib { @include display(inline-block); }
-@each $mq, $viewport in $mqs {
-  .dib-#{$mq} {
-    @include media-query($viewport) {
-      @include display(inline-block);
-    }
-  }
-}
-
 .dit { @include display(inline-table); }
-@each $mq, $viewport in $mqs {
-  .dit-#{$mq} {
-    @include media-query($viewport) {
-      @include display(inline-table);
-    }
-  }
-}
-
 .dt { @include display(table); }
-@each $mq, $viewport in $mqs {
-  .dt-#{$mq} {
-    @include media-query($viewport) {
-      @include display(table);
-    }
-  }
-}
-
 .dtc { @include display(table-cell); }
-@each $mq, $viewport in $mqs {
-  .dtc-#{$mq} {
-    @include media-query($viewport) {
-      @include display(table-cell);
-    }
-  }
-}
-
 .dt-row { @include display(table-row); }
-@each $mq, $viewport in $mqs {
-  .dt-row-#{$mq} {
-    @include media-query($viewport) {
-      @include display(table-row);
-    }
-  }
-}
-
 .dt-row-group { @include display(table-row-group); }
-@each $mq, $viewport in $mqs {
-  .dt-row-group-#{$mq} {
-    @include media-query($viewport) {
-      @include display(table-row-group);
-    }
-  }
-}
-
 .dt-col { @include display(table-column); }
-@each $mq, $viewport in $mqs {
-  .dt-col-#{$mq} {
-    @include media-query($viewport) {
-      @include display(table-column);
-    }
-  }
-}
-
 .dt-col-group { @include display(table-column-group); }
+
 @each $mq, $viewport in $mqs {
-  .dt-col-group-#{$mq} {
-    @include media-query($viewport) {
-      @include display(table-column-group);
-    }
+  @include media-query($viewport) {
+    .dn-#{$mq} { @include display(none); }
+    .di-#{$mq} { @include display(inline); }
+    .db-#{$mq} { @include display(block); }
+    .dib-#{$mq} { @include display(inline-block); }
+    .dit-#{$mq} { @include display(inline-table); }
+    .dt-#{$mq} { @include display(table); }
+    .dtc-#{$mq} { @include display(table-cell); }
+    .dt-row-#{$mq} { @include display(table-row); }
+    .dt-row-group-#{$mq} { @include display(table-row-group); }
+    .dt-col-#{$mq} { @include display(table-column); }
+    .dt-col-group-#{$mq} { @include display(table-column-group); }
   }
 }
 
@@ -123,29 +52,14 @@
 // Floats
 // ----------------------------------------------------------------------------
 .fl { @include float(left); }
-@each $mq, $viewport in $mqs {
-  .fl-#{$mq} {
-    @include media-query($viewport) {
-      @include float(left);
-    }
-  }
-}
-
 .fr { @include float(right); }
-@each $mq, $viewport in $mqs {
-  .fr-#{$mq} {
-    @include media-query($viewport) {
-      @include float(right);
-    }
-  }
-}
-
 .fn { @include float(none); }
+
 @each $mq, $viewport in $mqs {
-  .fn-#{$mq} {
-    @include media-query($viewport) {
-      @include float(none);
-    }
+  @include media-query($viewport) {
+    .fl-#{$mq} { @include float(left); }
+    .fr-#{$mq} { @include float(right); }
+    .fn-#{$mq} { @include float(none); }
   }
 }
 
@@ -310,38 +224,16 @@
 // ----------------------------------------------------------------------------
 
 .absolute { @include pos--absolute; }
-@each $mq, $viewport in $mqs {
-  .absolute-#{$mq} {
-    @include media-query($viewport) {
-      @include pos--absolute;
-    }
-  }
-}
-
 .relative { @include pos--relative; }
-@each $mq, $viewport in $mqs {
-  .relative-#{$mq} {
-    @include media-query($viewport) {
-      @include pos--relative;
-    }
-  }
-}
-
 .static { @include pos--static; }
-@each $mq, $viewport in $mqs {
-  .static-#{$mq} {
-    @include media-query($viewport) {
-      @include pos--static;
-    }
-  }
-}
-
 .fixed { @include pos--fixed; }
+
 @each $mq, $viewport in $mqs {
-  .fixed-#{$mq} {
-    @include media-query($viewport) {
-      @include pos--fixed;
-    }
+  @include media-query($viewport) {
+    .absolute-#{$mq} { @include pos--absolute; }
+    .relative-#{$mq} { @include pos--relative; }
+    .static-#{$mq} { @include pos--static; }
+    .fixed-#{$mq} { @include pos--fixed; }
   }
 }
 
