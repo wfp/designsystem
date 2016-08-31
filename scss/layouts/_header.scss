@@ -6,7 +6,7 @@
 // -----------------------------------------------------------------------------
 .wfp-header-spacer--narrow {
   overflow: auto;
-  padding-top: 4.125rem;
+  padding-top: 3.875rem;
 }
 
 %masthead {
@@ -27,11 +27,17 @@
 // Masthead: Narrow
 // -----------------------------------------------------------------------------
 %header--container {
-  padding: 0.5rem 0;
+  padding-top: 1.33rem;
+  padding-bottom: 1rem;
+  padding-left: 1.33rem;
+
+  @include media-query($md-screen) {
+    padding: 1.33rem 0;
+  }
 }
 
 %header--title {
-  line-height: 1.2;
+  line-height: 1.33;
   font-size: 1rem;
   letter-spacing: initial;
   margin: 0;
@@ -60,7 +66,10 @@
   transition-property: border, background, color, width;
   transition-duration: 0.1s;
   transition-timing-function: ease-in;
-  padding: 0.25rem 0.66rem;
+  padding: 0.5rem 0.66rem 0.4rem;
+  line-height: 1;
+  font-size: 0.875rem;
+  text-transform: uppercase;
 
   &:hover {
     color: $orange;
@@ -166,14 +175,18 @@
 }
 
 %header--nav {
-  padding: 0;
+  padding: 1rem;
   text-align: right;
+
+  @include media-query($md-screen) {
+    padding: 0.875rem 0;
+  }
 }
 
 %header--menu {
   position: absolute;
   right: 0;
-  top: 4rem;
+  top: 3.875rem;
   width: 100%;
   margin: 0;
 
@@ -220,6 +233,7 @@
   .menu--item {
     display: block;
     padding: 0;
+    margin: 0;
     border-bottom: 1px solid lighten($grey-darker, 5%);
 
     &:last-child {
