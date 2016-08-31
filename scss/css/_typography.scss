@@ -32,6 +32,17 @@
 .fs5 { @include fs(5); }
 .fs6 { @include fs(6); }
 
+@each $mq, $viewport in $mqs {
+  @include media-query($viewport) {
+    .fs1-#{$mq} { @include fs(1); }
+    .fs2-#{$mq} { @include fs(2); }
+    .fs3-#{$mq} { @include fs(3); }
+    .fs4-#{$mq} { @include fs(4); }
+    .fs5-#{$mq} { @include fs(5); }
+    .fs6-#{$mq} { @include fs(6); }
+  }
+}
+
 // ----------------------------------------------------------------------------
 // Style
 // ----------------------------------------------------------------------------
