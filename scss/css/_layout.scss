@@ -1,6 +1,9 @@
 // CSS: Layout
 // Project: WFP UI
 
+// Sass bug: https://github.com/sass/sass/issues/2131
+$hyphen: unquote("-");
+
 // ----------------------------------------------------------------------------
 // Box Sizing
 // ----------------------------------------------------------------------------
@@ -67,9 +70,17 @@
 // Heights
 // ----------------------------------------------------------------------------
 // Define height scale steps
-// E.g.: .h-1 { height: 1rem; }
+// E.g.: .h1 { height: 1rem; }
 @for $i from 1 through 5 {
   .h#{$i} { @include h($i); }
+}
+
+@each $mq, $viewport in $mqs {
+  @include media-query($viewport) {
+    @for $i from 1 through length($heights) {
+      .h#{$i}#{$hyphen}#{$mq} { @include h($i); }
+    }
+  }
 }
 
 // CSS heights
@@ -80,32 +91,72 @@
 .h-auto     { @include height(auto); }
 .h-inherit  { @include height(inherit); }
 
+@each $mq, $viewport in $mqs {
+  @include media-query($viewport) {
+    .h-25-#{$mq}       { @include height(25%); }
+    .h-50-#{$mq}       { @include height(50%); }
+    .h-75-#{$mq}       { @include height(75%); }
+    .h-100-#{$mq}      { @include height(100%); }
+    .h-auto-#{$mq}     { @include height(auto); }
+    .h-inherit-#{$mq}  { @include height(inherit); }
+  }
+}
+
 // ----------------------------------------------------------------------------
 // Widths
 // ----------------------------------------------------------------------------
 // Define width scale steps
 // E.g.: .w1 { width: 1rem; }
-@for $i from 1 through 5 {
+@for $i from 1 through length($widths) {
   .w#{$i} { @include width-scale($i); }
+}
+
+@each $mq, $viewport in $mqs {
+  @include media-query($viewport) {
+    @for $i from 1 through length($widths) {
+      .w#{$i}#{$hyphen}#{$mq} { @include width-scale($i); }
+    }
+  }
 }
 
 .w-100  { @include width(100);}
 .w-auto { @include width(auto);}
 
+@each $mq, $viewport in $mqs {
+  @include media-query($viewport) {
+    .w-100-#{$mq}  { @include width(100);}
+    .w-auto-#{$mq} { @include width(auto);}
+  }
+}
+
 // ----------------------------------------------------------------------------
 // Max Widths
 // ----------------------------------------------------------------------------
 // Define width scale steps
-// E.g.: .w1 { width: 1rem; }
-@for $i from 1 through 9 {
-  .mw-#{$i} { @include mw($i); }
+// E.g.: .mw1 { max-width: 1rem; }
+@for $i from 1 through length($max-widths) {
+  .mw#{$i} { @include mw($i); }
+}
+
+@each $mq, $viewport in $mqs {
+  @include media-query($viewport) {
+    @for $i from 1 through length($max-widths) {
+      .mw#{$i}#{$hyphen}#{$mq} { @include mw($i); }
+    }
+  }
 }
 
 // Full width
 .mw-100  { @include mw(10); }
-
 // Disable max-width
 .mw-none { @include max-width(none); }
+
+@each $mq, $viewport in $mqs {
+  @include media-query($viewport) {
+    .mw-100-#{mq}  { @include mw(10); }
+    .mw-none-#{mq} { @include max-width(none); }
+  }
+}
 
 // ----------------------------------------------------------------------------
 // Spacing (Padding)
