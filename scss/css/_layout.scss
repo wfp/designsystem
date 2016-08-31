@@ -69,7 +69,7 @@
 // Define height scale steps
 // E.g.: .h-1 { height: 1rem; }
 @for $i from 1 through 5 {
-  .h-#{$i} { @include h($i); }
+  .h#{$i} { @include h($i); }
 }
 
 // CSS heights
