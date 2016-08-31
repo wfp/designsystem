@@ -339,8 +339,10 @@ module.exports = function(grunt) {
   grunt.registerTask('docs-dist', ['sass:docsDist', 'copy', 'postcss:docsDist', 'uglify:docs', 'jekyll']);
   // Build WFP UI
   grunt.registerTask('build', ['eslint', 'sasslint', 'sass:dev', 'postcss:dev']);
+  // Build all assets for distribution
+  grunt.registerTask('dist-assets', ['gen-svg', 'gen-icons']);
   // Build a dist-ready WFP UI with all stati resources
-  grunt.registerTask('dist', ['gen-svg', 'gen-icons', 'sass:dist', 'postcss:dist', 'uglify:dist']);
+  grunt.registerTask('dist', ['sass:dist', 'postcss:dist', 'uglify:dist']);
   // Run build and dist task in sequence (for Travis CI)
   grunt.registerTask('test', ['eslint', 'sasslint', 'htmlaudit:ci']);
   // Set default grunt task to `dist`
