@@ -71,16 +71,8 @@ $hyphen: unquote("-");
 // ----------------------------------------------------------------------------
 // Define height scale steps
 // E.g.: .h1 { height: 1rem; }
-@for $i from 1 through 5 {
+@for $i from 1 through length($heights) {
   .h#{$i} { @include h($i); }
-}
-
-@each $mq, $viewport in $mqs {
-  @include media-query($viewport) {
-    @for $i from 1 through length($heights) {
-      .h#{$i}#{$hyphen}#{$mq} { @include h($i); }
-    }
-  }
 }
 
 // CSS heights
@@ -93,6 +85,9 @@ $hyphen: unquote("-");
 
 @each $mq, $viewport in $mqs {
   @include media-query($viewport) {
+    @for $i from 1 through length($heights) {
+      .h#{$i}#{$hyphen}#{$mq} { @include h($i); }
+    }
     .h-25-#{$mq}       { @include height(25%); }
     .h-50-#{$mq}       { @include height(50%); }
     .h-75-#{$mq}       { @include height(75%); }
@@ -111,19 +106,14 @@ $hyphen: unquote("-");
   .w#{$i} { @include width-scale($i); }
 }
 
-@each $mq, $viewport in $mqs {
-  @include media-query($viewport) {
-    @for $i from 1 through length($widths) {
-      .w#{$i}#{$hyphen}#{$mq} { @include width-scale($i); }
-    }
-  }
-}
-
 .w-100  { @include width(100);}
 .w-auto { @include width(auto);}
 
 @each $mq, $viewport in $mqs {
   @include media-query($viewport) {
+    @for $i from 1 through length($widths) {
+      .w#{$i}#{$hyphen}#{$mq} { @include width-scale($i); }
+    }
     .w-100-#{$mq}  { @include width(100);}
     .w-auto-#{$mq} { @include width(auto);}
   }
@@ -138,14 +128,6 @@ $hyphen: unquote("-");
   .mw#{$i} { @include mw($i); }
 }
 
-@each $mq, $viewport in $mqs {
-  @include media-query($viewport) {
-    @for $i from 1 through length($max-widths) {
-      .mw#{$i}#{$hyphen}#{$mq} { @include mw($i); }
-    }
-  }
-}
-
 // Full width
 .mw-100  { @include mw(10); }
 // Disable max-width
@@ -153,6 +135,9 @@ $hyphen: unquote("-");
 
 @each $mq, $viewport in $mqs {
   @include media-query($viewport) {
+    @for $i from 1 through length($max-widths) {
+      .mw#{$i}#{$hyphen}#{$mq} { @include mw($i); }
+    }
     .mw-100-#{mq}  { @include mw(10); }
     .mw-none-#{mq} { @include max-width(none); }
   }
@@ -162,53 +147,75 @@ $hyphen: unquote("-");
 // Spacing (Padding)
 // ----------------------------------------------------------------------------
 // padding (all)
-@for $i from 0 through 7 {
-  .pa-#{$i} {
+@for $i from 0 through length($spacer) {
+  .pa#{$i} {
     padding: map-get($spacer, $i);
   }
 }
 
 // padding-left
-@for $i from 0 through 7 {
-  .pl-#{$i} {
+@for $i from 0 through length($spacer) {
+  .pl#{$i} {
     padding-left: map-get($spacer, $i);
   }
 }
 
 // padding-right
-@for $i from 0 through 7 {
-  .pr-#{$i} {
+@for $i from 0 through length($spacer) {
+  .pr#{$i} {
     padding-right: map-get($spacer, $i);
   }
 }
 
 // padding-top
-@for $i from 0 through 7 {
-  .pt-#{$i} {
+@for $i from 0 through length($spacer) {
+  .pt#{$i} {
     padding-top: map-get($spacer, $i);
   }
 }
 
 // padding-bottom
-@for $i from 0 through 7 {
-  .pb-#{$i} {
+@for $i from 0 through length($spacer) {
+  .pb#{$i} {
     padding-bottom: map-get($spacer, $i);
   }
 }
 
 // horizontal padding
-@for $i from 0 through 7 {
-  .ph-#{$i} {
+@for $i from 0 through length($spacer) {
+  .ph#{$i} {
     padding-left: map-get($spacer, $i);
     padding-right: map-get($spacer, $i);
   }
 }
 
 // vertical padding
-@for $i from 0 through 7 {
-  .pv-#{$i} {
+@for $i from 0 through length($spacer) {
+  .pv#{$i} {
     padding-top: map-get($spacer, $i);
     padding-bottom: map-get($spacer, $i);
+  }
+}
+
+@each $mq, $viewport in $mqs {
+  @include media-query($viewport) {
+    @for $i from 1 through length($spacer) {
+      .pa#{$i}#{$hyphen}#{$mq} { padding: map-get($spacer, $i); }
+      .pl#{$i}#{$hyphen}#{$mq} { padding-left: map-get($spacer, $i); }
+      .pr#{$i}#{$hyphen}#{$mq} { padding-right: map-get($spacer, $i); }
+      .pt#{$i}#{$hyphen}#{$mq} { padding-top: map-get($spacer, $i); }
+      .pb#{$i}#{$hyphen}#{$mq} { padding-bottom: map-get($spacer, $i); }
+
+      .ph#{$i}#{$hyphen}#{$mq} {
+        padding-left: map-get($spacer, $i);
+        padding-right: map-get($spacer, $i);
+      }
+
+      .pv#{$i}#{$hyphen}#{$mq} {
+        padding-top: map-get($spacer, $i);
+        padding-bottom: map-get($spacer, $i);
+      }
+    }
   }
 }
 
