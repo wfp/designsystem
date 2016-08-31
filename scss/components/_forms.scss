@@ -143,6 +143,11 @@
     transition: 0.3s linear border;
     position: relative;
 
+    // Hide redundant select expand button in IE11
+    &::-ms-expand {
+      display: none;
+    }
+
     &:focus {
       outline: 0;
       border-color: $blue-light;
