@@ -309,10 +309,41 @@
 // Position
 // ----------------------------------------------------------------------------
 
-.absolute  { @include pos--absolute; }
-.relative  { @include pos--relative; }
-.static    { @include pos--static; }
-.fixed     { @include pos--fixed; }
+.absolute { @include pos--absolute; }
+@each $mq, $viewport in $mqs {
+  .absolute-#{$mq} {
+    @include media-query($viewport) {
+      @include pos--absolute;
+    }
+  }
+}
+
+.relative { @include pos--relative; }
+@each $mq, $viewport in $mqs {
+  .relative-#{$mq} {
+    @include media-query($viewport) {
+      @include pos--relative;
+    }
+  }
+}
+
+.static { @include pos--static; }
+@each $mq, $viewport in $mqs {
+  .static-#{$mq} {
+    @include media-query($viewport) {
+      @include pos--static;
+    }
+  }
+}
+
+.fixed { @include pos--fixed; }
+@each $mq, $viewport in $mqs {
+  .fixed-#{$mq} {
+    @include media-query($viewport) {
+      @include pos--fixed;
+    }
+  }
+}
 
 // ----------------------------------------------------------------------------
 // Coordinates
