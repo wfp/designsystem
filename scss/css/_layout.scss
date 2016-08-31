@@ -224,42 +224,42 @@ $hyphen: unquote("-");
 // ----------------------------------------------------------------------------
 // margin (all)
 @for $i from 0 through 7 {
-  .ma-#{$i} {
+  .ma#{$i} {
     margin: map-get($spacer, $i);
   }
 }
 
 // margin-left
 @for $i from 0 through 7 {
-  .ml-#{$i} {
+  .ml#{$i} {
     margin-left: map-get($spacer, $i);
   }
 }
 
 // margin-right
 @for $i from 0 through 7 {
-  .mr-#{$i} {
+  .mr#{$i} {
     margin-right: map-get($spacer, $i);
   }
 }
 
 // margin-top
 @for $i from 0 through 7 {
-  .mt-#{$i} {
+  .mt#{$i} {
     margin-top: map-get($spacer, $i);
   }
 }
 
 // margin-bottom
 @for $i from 0 through 7 {
-  .mb-#{$i} {
+  .mb#{$i} {
     margin-bottom: map-get($spacer, $i);
   }
 }
 
 // horizontal margin
 @for $i from 0 through 7 {
-  .mh-#{$i} {
+  .mh#{$i} {
     margin-left: map-get($spacer, $i);
     margin-right: map-get($spacer, $i);
   }
@@ -267,14 +267,36 @@ $hyphen: unquote("-");
 
 // vertical margin
 @for $i from 0 through 7 {
-  .mv-#{$i} {
+  .mv#{$i} {
     margin-top: map-get($spacer, $i);
     margin-bottom: map-get($spacer, $i);
   }
 }
 
-.mc {
-  @include margin(0 auto);
+.mc { @include margin(0 auto); }
+
+@each $mq, $viewport in $mqs {
+  @include media-query($viewport) {
+    @for $i from 1 through length($spacer) {
+      .ma#{$i}#{$hyphen}#{$mq} { margin: map-get($spacer, $i); }
+      .ml#{$i}#{$hyphen}#{$mq} { margin-left: map-get($spacer, $i); }
+      .mr#{$i}#{$hyphen}#{$mq} { margin-right: map-get($spacer, $i); }
+      .mt#{$i}#{$hyphen}#{$mq} { margin-top: map-get($spacer, $i); }
+      .mb#{$i}#{$hyphen}#{$mq} { margin-bottom: map-get($spacer, $i); }
+
+      .mh#{$i}#{$hyphen}#{$mq} {
+        margin-left: map-get($spacer, $i);
+        margin-right: map-get($spacer, $i);
+      }
+
+      .mv#{$i}#{$hyphen}#{$mq} {
+        margin-top: map-get($spacer, $i);
+        margin-bottom: map-get($spacer, $i);
+      }
+
+      .mc-#{$mq} { @include margin(0 auto); }
+    }
+  }
 }
 
 // ----------------------------------------------------------------------------
