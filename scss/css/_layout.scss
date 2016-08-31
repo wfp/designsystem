@@ -14,17 +14,104 @@
 // ----------------------------------------------------------------------------
 // Display
 // ----------------------------------------------------------------------------
-.dn           { @include display(none); }
-.di           { @include display(inline); }
-.db           { @include display(block); }
-.dib          { @include display(inline-block); }
-.dit          { @include display(inline-table); }
-.dt           { @include display(table); }
-.dtc          { @include display(table-cell); }
-.dt-row       { @include display(table-row); }
+.dn { @include display(none); }
+@each $mq, $viewport in $mqs {
+  .dn-#{$mq} {
+    @include media-query($viewport) {
+      @include display(none);
+    }
+  }
+}
+
+.di { @include display(inline); }
+@each $mq, $viewport in $mqs {
+  .di-#{$mq} {
+    @include media-query($viewport) {
+      @include display(inline);
+    }
+  }
+}
+
+.db { @include display(block); }
+@each $mq, $viewport in $mqs {
+  .db-#{$mq} {
+    @include media-query($viewport) {
+      @include display(block);
+    }
+  }
+}
+
+.dib { @include display(inline-block); }
+@each $mq, $viewport in $mqs {
+  .dib-#{$mq} {
+    @include media-query($viewport) {
+      @include display(inline-block);
+    }
+  }
+}
+
+.dit { @include display(inline-table); }
+@each $mq, $viewport in $mqs {
+  .dit-#{$mq} {
+    @include media-query($viewport) {
+      @include display(inline-table);
+    }
+  }
+}
+
+.dt { @include display(table); }
+@each $mq, $viewport in $mqs {
+  .dt-#{$mq} {
+    @include media-query($viewport) {
+      @include display(table);
+    }
+  }
+}
+
+.dtc { @include display(table-cell); }
+@each $mq, $viewport in $mqs {
+  .dtc-#{$mq} {
+    @include media-query($viewport) {
+      @include display(table-cell);
+    }
+  }
+}
+
+.dt-row { @include display(table-row); }
+@each $mq, $viewport in $mqs {
+  .dt-row-#{$mq} {
+    @include media-query($viewport) {
+      @include display(table-row);
+    }
+  }
+}
+
 .dt-row-group { @include display(table-row-group); }
-.dt-col       { @include display(table-column); }
+@each $mq, $viewport in $mqs {
+  .dt-row-group-#{$mq} {
+    @include media-query($viewport) {
+      @include display(table-row-group);
+    }
+  }
+}
+
+.dt-col { @include display(table-column); }
+@each $mq, $viewport in $mqs {
+  .dt-col-#{$mq} {
+    @include media-query($viewport) {
+      @include display(table-column);
+    }
+  }
+}
+
 .dt-col-group { @include display(table-column-group); }
+@each $mq, $viewport in $mqs {
+  .dt-col-group-#{$mq} {
+    @include media-query($viewport) {
+      @include display(table-column-group);
+    }
+  }
+}
 
 // Sets table to 100% width and all cells to equal width
 .dt--fixed {
@@ -36,8 +123,31 @@
 // Floats
 // ----------------------------------------------------------------------------
 .fl { @include float(left); }
+@each $mq, $viewport in $mqs {
+  .fl-#{$mq} {
+    @include media-query($viewport) {
+      @include float(left);
+    }
+  }
+}
+
 .fr { @include float(right); }
+@each $mq, $viewport in $mqs {
+  .fr-#{$mq} {
+    @include media-query($viewport) {
+      @include float(right);
+    }
+  }
+}
+
 .fn { @include float(none); }
+@each $mq, $viewport in $mqs {
+  .fn-#{$mq} {
+    @include media-query($viewport) {
+      @include float(none);
+    }
+  }
+}
 
 // ----------------------------------------------------------------------------
 // Heights
