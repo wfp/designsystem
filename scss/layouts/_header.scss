@@ -29,9 +29,9 @@
 %header--container {
   padding-top: 1.33rem;
   padding-bottom: 1rem;
-  padding-left: 1.33rem;
+  padding-left: 0.75rem;
 
-  @include media-query($md-screen) {
+  @include media-query($lg-screen) {
     padding: 1.33rem 0;
   }
 }
@@ -161,14 +161,14 @@
   display: inline-block;
   visibility: visible;
 
-  @include media-query($md-screen) {
+  @include media-query($lg-screen) {
     display: none;
     visibility: hidden;
   }
 }
 
 %header--misc {
-  @include media-query($md-screen) {
+  @include media-query($lg-screen) {
     display: inline-block;
     min-height: 4.5rem;
   };
@@ -178,7 +178,7 @@
   padding: 1rem;
   text-align: right;
 
-  @include media-query($md-screen) {
+  @include media-query($lg-screen) {
     padding: 0.875rem 0;
   }
 }
@@ -200,7 +200,7 @@
     opacity: 0;
     transform: translate3d(0, -4.25em, 0);
 
-    @include media-query($md-screen) {
+    @include media-query($lg-screen) {
       transition: unset;
       transform: none;
       z-index: auto;
@@ -219,7 +219,7 @@
     opacity: 1;
     transform: translate3d(0, 0, 0);
 
-    @include media-query($md-screen) {
+    @include media-query($lg-screen) {
       transition: unset;
     }
   }
@@ -249,7 +249,7 @@
     line-height: 1.2;
   }
 
-  @include media-query($md-screen) {
+  @include media-query($lg-screen) {
     @include menu-flat;
     // @include mh(0);
     @include margin(0.33rem 0);
@@ -355,7 +355,7 @@
 
   .header--nav {
     @extend %header--nav;
-    @include media-query($md-screen) {
+    @include media-query($lg-screen) {
       min-height: 4rem;
       text-align: right;
     }
@@ -385,7 +385,7 @@
       transform: translate3d(0, -6.5rem, 0);
     }
 
-    @include media-query($md-screen) {
+    @include media-query($lg-screen) {
       margin: 1.33rem 1rem;
       top: auto;
 
