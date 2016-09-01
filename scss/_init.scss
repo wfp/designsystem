@@ -47,7 +47,14 @@ $background-color:    transparentize($white, 0.1) !default;
 $content-width:       1000px !default;
 $max-content-width:   1200px !default;
 
-$sm-screen:           568px;
-$md-screen:           768px;
-$lg-screen:           1024px;
-$xl-screen:           1280px;
+$sm-screen:           35.5em;
+$md-screen:           48em;
+$lg-screen:           64em;
+$xl-screen:           80em;
+
+$mqs: (
+  sm: 35.5em,
+  md: 48em,
+  lg: 64em,
+  xl: 80em
+);
