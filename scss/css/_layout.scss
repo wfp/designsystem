@@ -327,11 +327,31 @@ $hyphen: unquote("-");
 .top--1 { @include pos--top--1; }
 .top--2 { @include pos--top--2; }
 
+@each $mq, $viewport in $mqs {
+  @include media-query($viewport) {
+    .top-0-#{$mq}  { @include pos--top-0; }
+    .top-1-#{$mq}  { @include pos--top-1; }
+    .top-2-#{$mq}  { @include pos--top-2; }
+    .top--1-#{$mq} { @include pos--top--1; }
+    .top--2-#{$mq} { @include pos--top--2; }
+  }
+}
+
 .bottom-0  { @include pos--bottom-0; }
 .bottom-1  { @include pos--bottom-1; }
 .bottom-2  { @include pos--bottom-2; }
 .bottom--1 { @include pos--bottom--1; }
 .bottom--2 { @include pos--bottom--2; }
+
+@each $mq, $viewport in $mqs {
+  @include media-query($viewport) {
+    .bottom-0-#{$mq}  { @include pos--bottom-0; }
+    .bottom-1-#{$mq}  { @include pos--bottom-1; }
+    .bottom-2-#{$mq}  { @include pos--bottom-2; }
+    .bottom--1-#{$mq} { @include pos--bottom--1; }
+    .bottom--2-#{$mq} { @include pos--bottom--2; }
+  }
+}
 
 .left-0  { @include pos--left-0; }
 .left-1  { @include pos--left-1; }
@@ -339,11 +359,31 @@ $hyphen: unquote("-");
 .left--1 { @include pos--left--1; }
 .left--2 { @include pos--left--2; }
 
+@each $mq, $viewport in $mqs {
+  @include media-query($viewport) {
+    .left-0-#{$mq}  { @include pos--left-0; }
+    .left-1-#{$mq}  { @include pos--left-1; }
+    .left-2-#{$mq}  { @include pos--left-2; }
+    .left--1-#{$mq} { @include pos--left--1; }
+    .left--2-#{$mq} { @include pos--left--2; }
+  }
+}
+
 .right-0  { @include pos--right-0; }
 .right-1  { @include pos--right-1; }
 .right-2  { @include pos--right-2; }
 .right--1 { @include pos--right--1; }
 .right--2 { @include pos--right--2; }
+
+@each $mq, $viewport in $mqs {
+  @include media-query($viewport) {
+    .right-0-#{$mq}  { @include pos--right-0; }
+    .right-1-#{$mq}  { @include pos--right-1; }
+    .right-2-#{$mq}  { @include pos--right-2; }
+    .right--1-#{$mq} { @include pos--right--1; }
+    .right--2-#{$mq} { @include pos--right--2; }
+  }
+}
 
 .fill-h { @include pos--fill-h; }
 .fill-v { @include pos--fill-v; }
