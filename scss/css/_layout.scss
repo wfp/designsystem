@@ -199,7 +199,7 @@ $hyphen: unquote("-");
 
 @each $mq, $viewport in $mqs {
   @include media-query($viewport) {
-    @for $i from 1 through length($spacer) {
+    @for $i from 0 through length($spacer) {
       .pa#{$i}#{$hyphen}#{$mq} { padding: map-get($spacer, $i); }
       .pl#{$i}#{$hyphen}#{$mq} { padding-left: map-get($spacer, $i); }
       .pr#{$i}#{$hyphen}#{$mq} { padding-right: map-get($spacer, $i); }
@@ -277,7 +277,7 @@ $hyphen: unquote("-");
 
 @each $mq, $viewport in $mqs {
   @include media-query($viewport) {
-    @for $i from 1 through length($spacer) {
+    @for $i from 0 through length($spacer) {
       .ma#{$i}#{$hyphen}#{$mq} { margin: map-get($spacer, $i); }
       .ml#{$i}#{$hyphen}#{$mq} { margin-left: map-get($spacer, $i); }
       .mr#{$i}#{$hyphen}#{$mq} { margin-right: map-get($spacer, $i); }
