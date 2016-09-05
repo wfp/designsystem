@@ -16,9 +16,9 @@ $widths: (
 
 // Literal percentage values
 @mixin width($width: auto) {
-  @if $width neq "auto" {
-    width: $width + %;
-  } @else {
+  @if $width == "auto" {
     width: $width;
+  } @else {
+    width: $width + %;
   }
 }
