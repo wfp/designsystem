@@ -106,6 +106,9 @@ $hyphen: unquote("-");
   .w#{$i} { @include width-scale($i); }
 }
 
+.w-25   { @include width(25); }
+.w-50   { @include width(50); }
+.w-75   { @include width(75); }
 .w-100  { @include width(100);}
 .w-auto { @include width(auto);}
 
@@ -114,6 +117,9 @@ $hyphen: unquote("-");
     @for $i from 1 through length($widths) {
       .w#{$i}#{$hyphen}#{$mq} { @include width-scale($i); }
     }
+    .w-25-#{$mq}   { @include width(25); }
+    .w-50-#{$mq}   { @include width(50); }
+    .w-75-#{$mq}   { @include width(75); }
     .w-100-#{$mq}  { @include width(100);}
     .w-auto-#{$mq} { @include width(auto);}
   }
