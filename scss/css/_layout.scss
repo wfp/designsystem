@@ -152,51 +152,18 @@ $hyphen: unquote("-");
 // ----------------------------------------------------------------------------
 // Spacing (Padding)
 // ----------------------------------------------------------------------------
-// padding (all)
 @for $i from 0 through length($spacer) {
-  .pa#{$i} {
-    padding: map-get($spacer, $i);
-  }
-}
+  .pa#{$i} { padding: map-get($spacer, $i); }
+  .pl#{$i} { padding-left: map-get($spacer, $i); }
+  .pr#{$i} { padding-right: map-get($spacer, $i); }
+  .pt#{$i} { padding-top: map-get($spacer, $i); }
+  .pb#{$i} { padding-bottom: map-get($spacer, $i); }
 
-// padding-left
-@for $i from 0 through length($spacer) {
-  .pl#{$i} {
-    padding-left: map-get($spacer, $i);
-  }
-}
-
-// padding-right
-@for $i from 0 through length($spacer) {
-  .pr#{$i} {
-    padding-right: map-get($spacer, $i);
-  }
-}
-
-// padding-top
-@for $i from 0 through length($spacer) {
-  .pt#{$i} {
-    padding-top: map-get($spacer, $i);
-  }
-}
-
-// padding-bottom
-@for $i from 0 through length($spacer) {
-  .pb#{$i} {
-    padding-bottom: map-get($spacer, $i);
-  }
-}
-
-// horizontal padding
-@for $i from 0 through length($spacer) {
   .ph#{$i} {
     padding-left: map-get($spacer, $i);
     padding-right: map-get($spacer, $i);
   }
-}
 
-// vertical padding
-@for $i from 0 through length($spacer) {
   .pv#{$i} {
     padding-top: map-get($spacer, $i);
     padding-bottom: map-get($spacer, $i);
@@ -228,51 +195,18 @@ $hyphen: unquote("-");
 // ----------------------------------------------------------------------------
 // Spacing (Margins)
 // ----------------------------------------------------------------------------
-// margin (all)
 @for $i from 0 through 7 {
-  .ma#{$i} {
-    margin: map-get($spacer, $i);
-  }
-}
+  .ma#{$i} { margin: map-get($spacer, $i); }
+  .ml#{$i} { margin-left: map-get($spacer, $i); }
+  .mr#{$i} { margin-right: map-get($spacer, $i); }
+  .mt#{$i} { margin-top: map-get($spacer, $i); }
+  .mb#{$i} { margin-bottom: map-get($spacer, $i); }
 
-// margin-left
-@for $i from 0 through 7 {
-  .ml#{$i} {
-    margin-left: map-get($spacer, $i);
-  }
-}
-
-// margin-right
-@for $i from 0 through 7 {
-  .mr#{$i} {
-    margin-right: map-get($spacer, $i);
-  }
-}
-
-// margin-top
-@for $i from 0 through 7 {
-  .mt#{$i} {
-    margin-top: map-get($spacer, $i);
-  }
-}
-
-// margin-bottom
-@for $i from 0 through 7 {
-  .mb#{$i} {
-    margin-bottom: map-get($spacer, $i);
-  }
-}
-
-// horizontal margin
-@for $i from 0 through 7 {
   .mh#{$i} {
     margin-left: map-get($spacer, $i);
     margin-right: map-get($spacer, $i);
   }
-}
 
-// vertical margin
-@for $i from 0 through 7 {
   .mv#{$i} {
     margin-top: map-get($spacer, $i);
     margin-bottom: map-get($spacer, $i);
@@ -299,9 +233,8 @@ $hyphen: unquote("-");
         margin-top: map-get($spacer, $i);
         margin-bottom: map-get($spacer, $i);
       }
-
-      .mc-#{$mq} { @include margin(0 auto); }
     }
+    .mc-#{$mq} { @include margin(0 auto); }
   }
 }
 
