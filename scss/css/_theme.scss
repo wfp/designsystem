@@ -51,3 +51,12 @@
 .bg-blue-80  { @include bg-color($primary, $primary, 0.8); }
 .bg-blue-90  { @include bg-color($primary, $primary, 0.9); }
 .bg-blue-100 { @include bg-color($primary, $primary, 1); }
+
+// Grey Gradation
+.bg-grey-1 { @include bg-color($grey-lightest, $grey-lightest, 0.8); }
+.bg-grey-2 { @include bg-color($grey-lighter, $grey-lighter, 0.8); }
+.bg-grey-3 { @include bg-color($grey-light, $grey-light, 0.8); }
+.bg-grey-4 { @include bg-color($grey, $grey, 0.8); }
+.bg-grey-5 { @include bg-color($grey-dark, $grey-dark, 0.8); }
+.bg-grey-6 { @include bg-color($grey-darker, $grey-darker, 0.8); }
+.bg-grey-7 { @include bg-color($grey-darkest, $grey-darkest, 0.8); }
