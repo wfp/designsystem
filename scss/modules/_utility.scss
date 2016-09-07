@@ -5,7 +5,7 @@
 // Tints
 // -----------------------------------------------------------------------------
 @mixin tint--static {
-  @extend .bg-black-50;
+  @extend .bg-tint-5;
   width: 100%;
 }
 
@@ -13,7 +13,7 @@
   @include tint--static;
 
   &:hover {
-    @extend .bg-black-80;
+    @extend .bg-tint-8;
   }
 }
 
