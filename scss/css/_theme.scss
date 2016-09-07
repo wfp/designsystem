@@ -13,50 +13,42 @@
 // Background Colours
 // ----------------------------------------------------------------------------
 
-// Dark
-.bg-black-0   { @include bg-color($black, transparent, 0); }
-.bg-black-10  { @include bg-color($black, $black, 0.1); }
-.bg-black-20  { @include bg-color($black, $black, 0.2); }
-.bg-black-30  { @include bg-color($black, $black, 0.3); }
-.bg-black-40  { @include bg-color($black, $black, 0.4); }
-.bg-black-50  { @include bg-color($black, $black, 0.5); }
-.bg-black-60  { @include bg-color($black, $black, 0.6); }
-.bg-black-70  { @include bg-color($black, $black, 0.7); }
-.bg-black-80  { @include bg-color($black, $black, 0.8); }
-.bg-black-90  { @include bg-color($black, $black, 0.9); }
-.bg-black-100 { @include bg-color($black, $black, 1); }
+// Tints
+.bg-tint-0  { @include bg-color($black, transparent, 0); }
+.bg-tint-1  { @include bg-color($black, $black, 0.1); }
+.bg-tint-2  { @include bg-color($black, $black, 0.2); }
+.bg-tint-3  { @include bg-color($black, $black, 0.3); }
+.bg-tint-4  { @include bg-color($black, $black, 0.4); }
+.bg-tint-5  { @include bg-color($black, $black, 0.5); }
+.bg-tint-6  { @include bg-color($black, $black, 0.6); }
+.bg-tint-7  { @include bg-color($black, $black, 0.7); }
+.bg-tint-8  { @include bg-color($black, $black, 0.8); }
+.bg-tint-9  { @include bg-color($black, $black, 0.9); }
 
-// Light
-.bg-white-0   { @include bg-color($white, transparent, 0); }
-.bg-white-10  { @include bg-color($white, $white, 0.1); }
-.bg-white-20  { @include bg-color($white, $white, 0.2); }
-.bg-white-30  { @include bg-color($white, $white, 0.3); }
-.bg-white-40  { @include bg-color($white, $white, 0.4); }
-.bg-white-50  { @include bg-color($white, $white, 0.5); }
-.bg-white-60  { @include bg-color($white, $white, 0.6); }
-.bg-white-70  { @include bg-color($white, $white, 0.7); }
-.bg-white-80  { @include bg-color($white, $white, 0.8); }
-.bg-white-90  { @include bg-color($white, $white, 0.9); }
-.bg-white-100 { @include bg-color($white, $white, 1); }
-
-// Primary
-.bg-blue-0   { @include bg-color($primary, transparent, 0); }
-.bg-blue-10  { @include bg-color($primary, $primary, 0.1); }
-.bg-blue-20  { @include bg-color($primary, $primary, 0.2); }
-.bg-blue-30  { @include bg-color($primary, $primary, 0.3); }
-.bg-blue-40  { @include bg-color($primary, $primary, 0.4); }
-.bg-blue-50  { @include bg-color($primary, $primary, 0.5); }
-.bg-blue-60  { @include bg-color($primary, $primary, 0.6); }
-.bg-blue-70  { @include bg-color($primary, $primary, 0.7); }
-.bg-blue-80  { @include bg-color($primary, $primary, 0.8); }
-.bg-blue-90  { @include bg-color($primary, $primary, 0.9); }
-.bg-blue-100 { @include bg-color($primary, $primary, 1); }
+// Solid colours
+.bg-black   { @include bg-color($black, $black, 1); }
+.bg-white   { @include bg-color($white, $white, 1); }
+.bg-grey    { @include bg-color($grey, $grey, 1); }
+.bg-blue    { @include bg-color($primary, $primary, 1); }
+.bg-red     { @include bg-color($red, $red, 1); }
+.bg-orange  { @include bg-color($orange, $orange, 1); }
+.bg-yellow  { @include bg-color($yellow, $yellow, 1); }
+.bg-green   { @include bg-color($green, $green, 1); }
 
 // Grey Gradation
-.bg-grey-1 { @include bg-color($grey-lightest, $grey-lightest, 0.8); }
-.bg-grey-2 { @include bg-color($grey-lighter, $grey-lighter, 0.8); }
-.bg-grey-3 { @include bg-color($grey-light, $grey-light, 0.8); }
-.bg-grey-4 { @include bg-color($grey, $grey, 0.8); }
-.bg-grey-5 { @include bg-color($grey-dark, $grey-dark, 0.8); }
-.bg-grey-6 { @include bg-color($grey-darker, $grey-darker, 0.8); }
-.bg-grey-7 { @include bg-color($grey-darkest, $grey-darkest, 0.8); }
+.bg-grey-1 { @include bg-color($grey-lightest, $grey-lightest, 0.9); }
+.bg-grey-2 { @include bg-color($grey-lighter, $grey-lighter, 0.9); }
+.bg-grey-3 { @include bg-color($grey-light, $grey-light, 0.9); }
+.bg-grey-4 { @include bg-color($grey, $grey, 0.9); }
+.bg-grey-5 { @include bg-color($grey-dark, $grey-dark, 0.9); }
+.bg-grey-6 { @include bg-color($grey-darker, $grey-darker, 0.9); }
+.bg-grey-7 { @include bg-color($grey-darkest, $grey-darkest, 0.9); }
+
+// Blue Gradation
+.bg-blue-1 { @include bg-color($blue-lightest, $blue-lightest, 0.9); }
+.bg-blue-2 { @include bg-color($blue-lighter, $blue-lighter, 0.9); }
+.bg-blue-3 { @include bg-color($blue-light, $blue-light, 0.9); }
+.bg-blue-4 { @include bg-color($blue, $blue, 0.9); }
+.bg-blue-5 { @include bg-color($blue-dark, $blue-dark, 0.9); }
+.bg-blue-6 { @include bg-color($blue-darker, $blue-darker, 0.9); }
+.bg-blue-7 { @include bg-color($blue-darkest, $blue-darkest, 0.9); }
