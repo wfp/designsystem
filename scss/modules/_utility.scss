@@ -11,6 +11,7 @@
 
 @mixin tint--dynamic {
   @include tint--static;
+  transition: background-color 0.125s ease-in;
 
   &:hover {
     @extend .bg-tint-8;
