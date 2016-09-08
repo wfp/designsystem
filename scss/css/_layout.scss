@@ -7,7 +7,8 @@ $hyphen: unquote("-");
 // ----------------------------------------------------------------------------
 // Box Sizing
 // ----------------------------------------------------------------------------
-.bb { @include box-sizing; }
+.bs-bb { @include bs(border-box); }
+.bs-cb { @include bs(content-box); }
 
 // ----------------------------------------------------------------------------
 // Clearfix
@@ -19,6 +20,7 @@ $hyphen: unquote("-");
 // ----------------------------------------------------------------------------
 .dn { @include display(none); }
 .di { @include display(inline); }
+.df { @include display(flex); }
 .db { @include display(block); }
 .dib { @include display(inline-block); }
 .dit { @include display(inline-table); }
