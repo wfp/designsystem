@@ -85,11 +85,21 @@ $hyphen: unquote("-");
 .h-auto     { @include height(auto); }
 .h-inherit  { @include height(inherit); }
 
+// Max Heights
+@for $i from 0 through length($max-heights) {
+  .mh#{$i} { @include mh($i); }
+}
+
 @each $mq, $viewport in $mqs {
   @include media-query($viewport) {
-    @for $i from 1 through length($heights) {
+    @for $i from 0 through length($heights) {
       .h#{$i}#{$hyphen}#{$mq} { @include h($i); }
     }
+
+    @for $i from 0 through length($max-heights) {
+      .mh#{$i}#{$hyphen}#{$mq} { @include mh($i); }
+    }
+
     .h-25-#{$mq}       { @include height(25%); }
     .h-50-#{$mq}       { @include height(50%); }
     .h-75-#{$mq}       { @include height(75%); }
