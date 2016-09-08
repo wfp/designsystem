@@ -4,6 +4,25 @@
 .tint-static  { @include tint--static; }
 .tint-dynamic { @include tint--dynamic; }
 
+
+// Object Fit
+.of-fit   { object-fit: fill; }
+.of-con   { object-fit: contain; }
+.of-cov   { object-fit: cover; }
+.of-sd    { object-fit: scale-down; }
+.of-none  { object-fit: none; }
+
+@each $mq, $viewport in $mqs {
+  @include media-query($viewport) {
+    .of-fit-#{$mq}   { object-fit: fill; }
+    .of-con-#{$mq}   { object-fit: contain; }
+    .of-cov-#{$mq}   { object-fit: cover; }
+    .of-sd-#{$mq}    { object-fit: scale-down; }
+    .of-none-#{$mq}  { object-fit: none; }
+  }
+}
+
+
 .wfp-wrapper {
   @include wrapper;
 }
