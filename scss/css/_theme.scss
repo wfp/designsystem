@@ -52,3 +52,11 @@
 .bg-blue-5 { @include bg-color($blue-dark, $blue-dark, 0.9); }
 .bg-blue-6 { @include bg-color($blue-darker, $blue-darker, 0.9); }
 .bg-blue-7 { @include bg-color($blue-darkest, $blue-darkest, 0.9); }
+
+// ----------------------------------------------------------------------------
+// Shadows
+// ----------------------------------------------------------------------------
+
+@for $i from 1 through length($shadows) {
+  .shadow-#{$i} { @include box-shadow($i); }
+}

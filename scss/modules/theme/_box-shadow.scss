@@ -1,0 +1,8 @@
+$shadows: (
+  1: 0 1px 3px rgba($black, 0.15),
+  2: 0 1px 8px rgba($black, 0.15)
+);
+
+@mixin box-shadow($type) {
+  box-shadow: map-get($shadows, $type);
+}
