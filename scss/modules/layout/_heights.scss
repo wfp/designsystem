@@ -1,22 +1,9 @@
 // Module: Heights
 // Project: WFP UI
 
-$heights: (
-  0: 0,
-  1: 1rem,
-  2: 2rem,
-  3: 4rem,
-  4: 6rem,
-  5: 8rem,
-  6: 10rem,
-  7: 12rem,
-  8: 16rem,
-  9: 24rem
-);
-
 // Scale steps
 @mixin h($scale) {
-  height: map-get($heights, $scale);
+  height: map-get($spacing, $scale);
 }
 
 // Literal percentage values
