@@ -1,6 +1,7 @@
 $shadows: (
   1: 0 1px 3px rgba($black, 0.15),
-  2: 0 1px 8px rgba($black, 0.15)
+  2: 0 1px 8px rgba($black, 0.15),
+  3: inset 4px 0 0 rgba($primary, 1)
 );
 
 @mixin box-shadow($type) {
