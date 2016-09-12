@@ -8,6 +8,14 @@
 .ta-right  { @include ta(right); }
 .ta-center { @include ta(center); }
 
+@each $mq, $viewport in $mqs {
+  @include media-query($viewport) {
+    .ta-left-#{$mq}   { @include ta(left); }
+    .ta-right-#{$mq}  { @include ta(right); }
+    .ta-center-#{$mq} { @include ta(center); }
+  }
+}
+
 // ----------------------------------------------------------------------------
 // Decoration
 // ----------------------------------------------------------------------------
