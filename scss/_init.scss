@@ -31,7 +31,7 @@ $blue-light:          lighten($blue, 9%);
 $blue-lighter:        lighten($blue, 18%);
 $blue-lightest:       lighten($blue, 30%);
 
-$grey-contrast:       #eaeaea;
+$grey-contrast:       #ededed;
 
 $black:               #000000;
 $white:               #ffffff;
@@ -68,10 +68,11 @@ $spacing: (
   6: 10rem,
   7: 12rem,
   8: 16rem,
-  9: 24rem,
-  10: 32rem,
-  11: 48rem,
-  12: 64rem,
-  13: 96rem,
-  14: 100%
+  9: 20rem,
+  10: 24rem,
+  11: 32rem,
+  12: 48rem,
+  13: 64rem,
+  14: 96rem,
+  15: 100%
 );
