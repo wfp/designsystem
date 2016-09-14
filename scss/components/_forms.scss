@@ -130,6 +130,10 @@
   } @else if $type == select {
     @extend %select-arrow;
     -webkit-appearance: none;
+    // Firefox 22 fix
+    -moz-appearance: none;
+    text-indent: 0.01px;
+    text-overflow: "";
     display: inline-block;
     padding: 0.4em 0.75em;
     padding-right: 2.25em;
