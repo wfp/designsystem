@@ -12,7 +12,6 @@ $color-gplus: #dc4e41;
   @include transition(0.1s border ease-in-out, 0.1s background ease-in-out, 0.1s color ease-in-out);
   display: inline-block;
   padding: 0.5rem 1rem;
-  margin: 0 0.25rem;
   font-family: inherit;
   font-weight: bold;
   font-size: 100%;
@@ -175,10 +174,6 @@ $color-gplus: #dc4e41;
   &.flat {
     border: 0;
     box-shadow: none;
-  }
-
-  &:only-child {
-    margin: 0;
   }
 }
 
