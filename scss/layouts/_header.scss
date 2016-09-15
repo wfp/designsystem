@@ -261,6 +261,16 @@
       border-bottom: 0;
     }
 
+    .menu--item {
+      &:first-child {
+        margin-left: 0;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
     .menu--link {
       padding: 0;
 
