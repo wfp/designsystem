@@ -30,6 +30,9 @@
 .bg-white   { @include bg-color($white, $white, 1); }
 .bg-grey    { @include bg-color($grey, $grey, 1); }
 .bg-blue    { @include bg-color($primary, $primary, 1); }
+// Temporary declaration
+.bg-blue-brand { @include bg-color($brand, $brand, 1); }
+// ---
 .bg-red     { @include bg-color($red, $red, 1); }
 .bg-orange  { @include bg-color($orange, $orange, 1); }
 .bg-yellow  { @include bg-color($yellow, $yellow, 1); }
