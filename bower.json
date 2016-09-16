@@ -6,7 +6,8 @@
   ],
   "description": "WFP UI",
   "main": [
-    "scss/wfpui.scss"
+    "scss/wfpui.scss",
+    "scss/wfpui+grid.scss",
   ],
   "keywords": [
     "ui",
@@ -33,7 +34,6 @@
   ],
   "devDependencies": {
     "bootstrap-sass": "~3.3.5",
-    "normalize-scss": "^3.0.3",
     "mathsass": "^0.9.5"
   }
 }
