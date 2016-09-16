@@ -3,35 +3,16 @@
 
 %footer {
   @include fs(5);
-  @include ta(center);
   border-top: 4px solid $grey-lighter;
 }
 
-%footer--panel {
-  &.left {
-    @include ta(center);
-
-    @include media-query($md-screen) {
-      @include ta(left);
-    }
-  }
-
-  &.right {
-    @include ta(center);
-
-    @include media-query($md-screen) {
-      @include ta(right);
-    }
-  }
-}
-
 %footer--top {
-  @include padding(0.25rem 0);
+  @include padding(0.5rem 0);
 }
 
 %footer--bottom {
   @extend %footer--top;
-  @include pv(0);
+  @include pv(2);
   border-top: 1px solid $grey-lighter;
 
   .footer--panel {
@@ -42,18 +23,11 @@
 %footer--heading {
   @include fs(5);
   @include fw(700);
-  @include mv(1);
-}
-
-%footer--label {
-  @include fs(6);
-  @include lh-heading;
-  @include mv(2);
+  @include mv(0);
+  @include mb(1);
 }
 
 %footer--links {
-  @include fs(6);
-  @include lh-default;
   @include nolist;
 
   .link {
@@ -64,7 +38,8 @@
 }
 
 %footer--logo {
-  display: inline-block;
+  @include display(inline-block);
+  @include mv(1);
 }
 
 // -----------------------------------------------------------------------------
@@ -72,18 +47,6 @@
 // -----------------------------------------------------------------------------
 @mixin footer-mini {
   @extend %footer;
-
-  .footer--panel {
-    @extend %footer--panel;
-  }
-
-  .footer--label {
-    @extend %footer--label;
-  }
-
-  .footer--links {
-    @extend %footer--links;
-  }
 }
 
 @mixin footer-compact {
@@ -91,22 +54,10 @@
 
   .footer--top {
     @extend %footer--top;
-
-    .wfp-wrapper {
-      @include pv(1);
-    }
   }
 
   .footer--bottom {
     @extend %footer--bottom;
-  }
-
-  .footer--panel {
-    @extend %footer--panel;
-  }
-
-  .footer--label {
-    @extend %footer--label;
   }
 
   .footer--heading {
@@ -126,10 +77,6 @@
   @include footer-compact;
 
   .footer--top {
-    .wfp-wrapper {
-      @include pv(2);
-    }
-
     .wfp-menu-plain {
       @include ma(0);
       @include ml(2);
