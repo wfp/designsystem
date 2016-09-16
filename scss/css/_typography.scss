@@ -4,15 +4,26 @@
 // ----------------------------------------------------------------------------
 // Alignment
 // ----------------------------------------------------------------------------
-.ta-left   { @include ta(left); }
-.ta-right  { @include ta(right); }
-.ta-center { @include ta(center); }
+.ta-left,
+.tl {
+  @include ta(left);
+}
+
+.ta-right,
+.tr {
+  @include ta(right);
+}
+
+.ta-center,
+.tc {
+  @include ta(center);
+}
 
 @each $mq, $viewport in $mqs {
   @include media-query($viewport) {
-    .ta-left-#{$mq}   { @include ta(left); }
-    .ta-right-#{$mq}  { @include ta(right); }
-    .ta-center-#{$mq} { @include ta(center); }
+    .ta-left-#{$mq}, .tl-#{$mq}   { @include ta(left); }
+    .ta-right-#{$mq}, .tr-#{$mq}  { @include ta(right); }
+    .ta-center-#{$mq}, .tc-#{$mq} { @include ta(center); }
   }
 }
 
