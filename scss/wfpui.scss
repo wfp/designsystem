@@ -1,10 +1,8 @@
 /*!
- * WFP UI sans grids, v0.12.1
+ * WFP UI sans grids, v0.13.0
  * Copyright 2016 WFP/MADBIT Co.
  * License: https://github.com/wfp/ui/blob/master/LICENSE
  */
-
-@import "normalize.scss";
 
 // Import Core CSS
 @import "css-core";
@@ -18,6 +16,7 @@
 @import "components/navigation/segmented-control";
 @import "components/navigation/breadcrumbs";
 @import "components/navigation/pagination";
+@import "components/hero";
 
 // Import layouts
 @import "layouts/header";

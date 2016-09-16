@@ -6,7 +6,7 @@
 // -----------------------------------------------------------------------------
 .wfp-header-spacer--narrow {
   overflow: auto;
-  padding-top: 4.125rem;
+  padding-top: 3.875rem;
 }
 
 %masthead {
@@ -27,18 +27,20 @@
 // Masthead: Narrow
 // -----------------------------------------------------------------------------
 %header--container {
-  padding: 0.5rem 0;
+  padding-top: 1.33rem;
+  padding-bottom: 1rem;
+  padding-left: 0.75rem;
+
+  @include media-query($lg-screen) {
+    padding: 1.33rem 0;
+  }
 }
 
 %header--title {
-  line-height: 1.2;
+  line-height: 1.33;
   font-size: 1rem;
   letter-spacing: initial;
   margin: 0;
-
-  @include media-query($md-screen) {
-    margin: 0 1em;
-  }
 }
 
 %header--logo {
@@ -64,7 +66,10 @@
   transition-property: border, background, color, width;
   transition-duration: 0.1s;
   transition-timing-function: ease-in;
-  padding: 0.25rem 0.66rem;
+  padding: 0.5rem 0.66rem 0.4rem;
+  line-height: 1.33;
+  font-size: 0.875rem;
+  text-transform: uppercase;
 
   &:hover {
     color: $orange;
@@ -156,28 +161,32 @@
   display: inline-block;
   visibility: visible;
 
-  @include media-query($md-screen) {
+  @include media-query($lg-screen) {
     display: none;
     visibility: hidden;
   }
 }
 
 %header--misc {
-  @include media-query($md-screen) {
+  @include media-query($lg-screen) {
     display: inline-block;
     min-height: 4.5rem;
   };
 }
 
 %header--nav {
-  padding: 0;
+  padding: 1rem;
   text-align: right;
+
+  @include media-query($lg-screen) {
+    padding: 0.875rem 0;
+  }
 }
 
 %header--menu {
   position: absolute;
   right: 0;
-  top: 4rem;
+  top: 3.875rem;
   width: 100%;
   margin: 0;
 
@@ -191,7 +200,7 @@
     opacity: 0;
     transform: translate3d(0, -4.25em, 0);
 
-    @include media-query($md-screen) {
+    @include media-query($lg-screen) {
       transition: unset;
       transform: none;
       z-index: auto;
@@ -210,7 +219,7 @@
     opacity: 1;
     transform: translate3d(0, 0, 0);
 
-    @include media-query($md-screen) {
+    @include media-query($lg-screen) {
       transition: unset;
     }
   }
@@ -224,6 +233,7 @@
   .menu--item {
     display: block;
     padding: 0;
+    margin: 0;
     border-bottom: 1px solid lighten($grey-darker, 5%);
 
     &:last-child {
@@ -239,8 +249,10 @@
     line-height: 1.2;
   }
 
-  @include media-query($md-screen) {
+  @include media-query($lg-screen) {
     @include menu-flat;
+    // @include mh(0);
+    @include margin(0.33rem 0);
     background-color: transparent;
     position: static;
     width: auto;
@@ -249,8 +261,18 @@
       border-bottom: 0;
     }
 
+    .menu--item {
+      &:first-child {
+        margin-left: 0;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
     .menu--link {
-      padding: 0.25rem 0;
+      padding: 0;
 
       &:active,
       &.active {
@@ -343,7 +365,7 @@
 
   .header--nav {
     @extend %header--nav;
-    @include media-query($md-screen) {
+    @include media-query($lg-screen) {
       min-height: 4rem;
       text-align: right;
     }
@@ -373,7 +395,7 @@
       transform: translate3d(0, -6.5rem, 0);
     }
 
-    @include media-query($md-screen) {
+    @include media-query($lg-screen) {
       margin: 1.33rem 1rem;
       top: auto;
 

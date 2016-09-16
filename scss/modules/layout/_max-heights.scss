@@ -1,0 +1,12 @@
+// Module: MAx Heights
+// Project: WFP UI
+
+// Scale steps
+@mixin mh($scale) {
+  max-height: map-get($spacing, $scale);
+}
+
+// Literal percentage values
+@mixin max-height($height: 0) {
+  max-height: $height;
+}

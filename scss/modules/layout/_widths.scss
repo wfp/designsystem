@@ -1,24 +1,16 @@
 // Module: Widths
 // Project: WFP UI
 
-$widths: (
-  1: 1rem,
-  2: 2rem,
-  3: 4rem,
-  4: 8rem,
-  5: 16rem
-);
-
 // Width steps
 @mixin width-scale($width) {
-  width: map-get($widths, $width);
+  width: map-get($spacing, $width);
 }
 
 // Literal percentage values
 @mixin width($width: auto) {
-  @if $width neq "auto" {
-    width: $width + %;
-  } @else {
+  @if $width == "auto" {
     width: $width;
+  } @else {
+    width: $width + %;
   }
 }

@@ -1,22 +1,9 @@
 // Module: Max Widths
 // Project: WFP UI
 
-$max-widths: (
-  1: 1rem,
-  2: 2rem,
-  3: 4rem,
-  4: 8rem,
-  5: 16rem,
-  6: 32rem,
-  7: 48rem,
-  8: 64rem,
-  9: 96rem,
-  10: 100%
-);
-
 // Scale steps
 @mixin mw($width) {
-  max-width: map-get($max-widths, $width);
+  max-width: map-get($spacing, $width);
 }
 
 // Literal percentage values

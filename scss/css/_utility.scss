@@ -1,20 +1,39 @@
 // CSS: Utilities
 // Project: WFP UI
 
+// No-list
+.nl {
+  list-style: none;
+}
+
 .tint-static  { @include tint--static; }
 .tint-dynamic { @include tint--dynamic; }
+
+
+// Object Fit
+.of-fit   { object-fit: fill; }
+.of-con   { object-fit: contain; }
+.of-cov   { object-fit: cover; }
+.of-sd    { object-fit: scale-down; }
+.of-none  { object-fit: none; }
+
+@each $mq, $viewport in $mqs {
+  @include media-query($viewport) {
+    .of-fit-#{$mq}   { object-fit: fill; }
+    .of-con-#{$mq}   { object-fit: contain; }
+    .of-cov-#{$mq}   { object-fit: cover; }
+    .of-sd-#{$mq}    { object-fit: scale-down; }
+    .of-none-#{$mq}  { object-fit: none; }
+  }
+}
+
 
 .wfp-wrapper {
   @include wrapper;
 }
 
-.wfp-wrapper-tight {
+.wfp-wrapper--tight {
   @include wrapper;
-  padding: 0 1rem;
-
-  @include media-query($content-width) {
-    padding: 0;
-  }
 }
 
 .wfp-wrapper--narrow {
@@ -82,12 +101,6 @@
 
 .wfp-band {
   @include band;
-
-  nav[role="navigation"] {
-    margin: 0;
-    padding: 0;
-    height: 2rem;
-  }
 }
 
 // -----------------------------------------------------------------------------

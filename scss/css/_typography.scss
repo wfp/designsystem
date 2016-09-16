@@ -4,9 +4,28 @@
 // ----------------------------------------------------------------------------
 // Alignment
 // ----------------------------------------------------------------------------
-.ta-left   { @include ta(left); }
-.ta-right  { @include ta(right); }
-.ta-center { @include ta(center); }
+.ta-left,
+.tl {
+  @include ta(left);
+}
+
+.ta-right,
+.tr {
+  @include ta(right);
+}
+
+.ta-center,
+.tc {
+  @include ta(center);
+}
+
+@each $mq, $viewport in $mqs {
+  @include media-query($viewport) {
+    .ta-left-#{$mq}, .tl-#{$mq}   { @include ta(left); }
+    .ta-right-#{$mq}, .tr-#{$mq}  { @include ta(right); }
+    .ta-center-#{$mq}, .tc-#{$mq} { @include ta(center); }
+  }
+}
 
 // ----------------------------------------------------------------------------
 // Decoration
@@ -22,6 +41,14 @@
 .lh-heading { @include lh-heading; }
 .lh-body    { @include lh-body; }
 
+@each $mq, $viewport in $mqs {
+  @include media-query($viewport) {
+    .lh-default-#{$mq} { @include lh-default; }
+    .lh-heading-#{$mq} { @include lh-heading; }
+    .lh-body-#{$mq}    { @include lh-body; }
+  }
+}
+
 // ----------------------------------------------------------------------------
 // Type Scale
 // ----------------------------------------------------------------------------
@@ -31,6 +58,17 @@
 .fs4 { @include fs(4); }
 .fs5 { @include fs(5); }
 .fs6 { @include fs(6); }
+
+@each $mq, $viewport in $mqs {
+  @include media-query($viewport) {
+    .fs1-#{$mq} { @include fs(1); }
+    .fs2-#{$mq} { @include fs(2); }
+    .fs3-#{$mq} { @include fs(3); }
+    .fs4-#{$mq} { @include fs(4); }
+    .fs5-#{$mq} { @include fs(5); }
+    .fs6-#{$mq} { @include fs(6); }
+  }
+}
 
 // ----------------------------------------------------------------------------
 // Style
@@ -56,18 +94,18 @@
 // Vertical Align
 // ----------------------------------------------------------------------------
 // Inline alignment
-.va-base { @include v-align("baseline"); }
-.va-sub { @include v-align("sub"); }
-.va-sup { @include v-align("super"); }
-.va-texttop { @include v-align("text-top"); }
-.va-textbottom { @include v-align("text-bottom"); }
+.va-base { @include v-align(baseline); }
+.va-sub { @include v-align(sub); }
+.va-sup { @include v-align(super); }
+.va-texttop { @include v-align(text-top); }
+.va-textbottom { @include v-align(text-bottom); }
 
 // ----------------------------------------------------------------------------
 // Table alignment
 // ----------------------------------------------------------------------------
-.va-mid { @include v-align("middle"); }
-.va-top { @include v-align("top"); }
-.va-bottom { @include v-align("bottom"); }
+.va-mid { @include v-align(middle); }
+.va-top { @include v-align(top); }
+.va-bottom { @include v-align(bottom); }
 
 // ----------------------------------------------------------------------------
 // Weight
@@ -76,7 +114,7 @@
 .bold   { @include fw-bold; }
 
 @for $i from 1 through 9 {
-  .fw-#{$i} { @include fw(#{$i}00); }
+  .fw#{$i} { @include fw(#{$i}00); }
 }
 
 // ----------------------------------------------------------------------------

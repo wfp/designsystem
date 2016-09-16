@@ -14,15 +14,15 @@ Not every footer needs to be extensive. Sometimes a very simple footer is all yo
 
 ###### Preview
 <footer class="wfp-footer--mini">
-  <div class="wfp-grid wfp-wrapper">
-    <div class="wfp-u-1 wfp-u-md-2-3 footer--panel left">
-      <h3 class="footer--label">{{ site.time | date: '%Y' }} &copy; World Food Programme</h3>
+  <div class="wfp-grid wfp-wrapper pv2">
+    <div class="wfp-u-1 wfp-u-md-1-3 tc tl-md">
+      <p class="fs6 bold">{{ site.time | date: '%Y' }} &copy; World Food Programme</p>
     </div>
-    <div class="wfp-u-1 wfp-u-md-1-3 footer--panel right">
-      <ul class="footer--links">
-        <li class="link"><a href="#">Donate</a></li>
-        <li class="link"><a href="#">Privacy</a></li>
-        <li class="link"><a href="#">Terms of Use</a></li>
+    <div class="wfp-u-1 wfp-u-md-2-3 tc tr-md">
+      <ul class="nl fs6 mv2 pa0">
+        <li class="dib ma0 ml1"><a href="#">Donate</a></li>
+        <li class="dib ma0 ml1"><a href="#">Privacy</a></li>
+        <li class="dib ma0 ml1"><a href="#">Terms of Use</a></li>
       </ul>
     </div>
   </div>
@@ -31,15 +31,15 @@ Not every footer needs to be extensive. Sometimes a very simple footer is all yo
 ###### Source
 {% highlight html %}
 <footer class="wfp-footer--mini">
-  <div class="wfp-grid wfp-wrapper">
-    <div class="wfp-u-1 wfp-u-md-2-3 footer--panel left">
-      <h3 class="footer--label">{{ site.time | date: '%Y' }} &copy; World Food Programme</h3>
+  <div class="wfp-grid wfp-wrapper pv2">
+    <div class="wfp-u-1 wfp-u-md-1-3 tc tl-md">
+      <p class="fs6 bold">{{ site.time | date: '%Y' }} &copy; World Food Programme</p>
     </div>
-    <div class="wfp-u-1 wfp-u-md-1-3 footer--panel right">
-      <ul class="footer--links">
-        <li class="link"><a href="#">Donate</a></li>
-        <li class="link"><a href="#">Privacy</a></li>
-        <li class="link"><a href="#">Terms of Use</a></li>
+    <div class="wfp-u-1 wfp-u-md-2-3 tc tr-md">
+      <ul class="nl fs6 mv2 pa0">
+        <li class="dib ma0 ml1"><a href="#">Donate</a></li>
+        <li class="dib ma0 ml1"><a href="#">Privacy</a></li>
+        <li class="dib ma0 ml1"><a href="#">Terms of Use</a></li>
       </ul>
     </div>
   </div>
@@ -52,8 +52,8 @@ This type of footer forms a simple layout containing social links, WFP logo, a c
 ###### Preview
 <footer class="wfp-footer--compact">
   <div class="footer--top">
-    <div class="wfp-grid wfp-wrapper">
-      <div class="wfp-u-1 wfp-u-md-1-2 footer--panel left">
+    <div class="wfp-grid wfp-wrapper pv2">
+      <div class="wfp-u-1 wfp-u-md-1-2 tc tl-md">
         <h5 class="footer--heading">Follow WFP on social networks</h5>
         <ul class="footer--links">
           <li class="link"><a href="#" class="wfp-btn--twitter xsmall">Twitter</a></li>
@@ -61,17 +61,17 @@ This type of footer forms a simple layout containing social links, WFP logo, a c
           <li class="link"><a href="#" class="wfp-btn--gplus xsmall">Google+</a></li>
         </ul>
       </div>
-      <div class="wfp-u-1 wfp-u-md-1-2 footer--panel right">
+      <div class="wfp-u-1 wfp-u-md-1-2 tc tr-md">
         <img src="{{ base }}/img/logos/dark/png/1x/en-full.png" srcset="{{ base }}/img/logos/dark/png/1x/en-full.png 1x, {{ base }}/img/logos/dark/png/2x/en-full.png 2x" class="footer--logo" alt="WFP Logo">
       </div>
     </div>
   </div>
-  <div class="footer--bottom">
+  <div class="footer--bottom fs6">
     <div class="wfp-grid wfp-wrapper">
-      <div class="wfp-u-1 wfp-u-md-1-3 footer--panel left">
-        <h4 class="footer--label">{{ site.time | date: '%Y' }} &copy; World Food Programme</h4>
+      <div class="wfp-u-1 wfp-u-md-1-3 tc tl-md">
+        <p>{{ site.time | date: '%Y' }} &copy; World Food Programme</p>
       </div>
-      <div class="wfp-u-1 wfp-u-md-2-3 footer--panel right">
+      <div class="wfp-u-1 wfp-u-md-2-3 tc tr-md">
         <ul class="footer--links">
           <li class="link"><a href="#">Donate</a></li>
           <li class="link"><a href="#">Privacy</a></li>
@@ -88,8 +88,8 @@ This type of footer forms a simple layout containing social links, WFP logo, a c
 {% highlight html %}
 <footer class="wfp-footer--compact">
   <div class="footer--top">
-    <div class="wfp-grid wfp-wrapper">
-      <div class="wfp-u-1 wfp-u-md-1-2 footer--panel left">
+    <div class="wfp-grid wfp-wrapper pv2">
+      <div class="wfp-u-1 wfp-u-md-1-2 tc tl-md">
         <h5 class="footer--heading">Follow WFP on social networks</h5>
         <ul class="footer--links">
           <li class="link"><a href="#" class="wfp-btn--twitter xsmall">Twitter</a></li>
@@ -97,17 +97,17 @@ This type of footer forms a simple layout containing social links, WFP logo, a c
           <li class="link"><a href="#" class="wfp-btn--gplus xsmall">Google+</a></li>
         </ul>
       </div>
-      <div class="wfp-u-1 wfp-u-md-1-2 footer--panel right">
-        <img src="{{ base }}/img/logos/dark/png/1x/en-full.png" srcset="{{ base }}/img/logos/dark/png/1x/en-full.png 1x, {{ base }}/img/logos/dark/png/2x/en-full.png 2x" class="footer--logo" alt="WFP Logo">
+      <div class="wfp-u-1 wfp-u-md-1-2 tc tr-md">
+        <img src="img/logos/dark/png/1x/en-full.png" srcset="img/logos/dark/png/1x/en-full.png 1x, img/logos/dark/png/2x/en-full.png 2x" class="footer--logo" alt="WFP Logo">
       </div>
     </div>
   </div>
-  <div class="footer--bottom">
+  <div class="footer--bottom fs6">
     <div class="wfp-grid wfp-wrapper">
-      <div class="wfp-u-1 wfp-u-md-1-3 footer--panel left">
-        <h4 class="footer--label">{{ site.time | date: '%Y' }} &copy; World Food Programme</h4>
+      <div class="wfp-u-1 wfp-u-md-1-3 tc tl-md">
+        <p>{{ site.time | date: '%Y' }} &copy; World Food Programme</p>
       </div>
-      <div class="wfp-u-1 wfp-u-md-2-3 footer--panel right">
+      <div class="wfp-u-1 wfp-u-md-2-3 tc tr-md">
         <ul class="footer--links">
           <li class="link"><a href="#">Donate</a></li>
           <li class="link"><a href="#">Privacy</a></li>
@@ -133,8 +133,8 @@ This flagship footer variant, builds up on top of `wfp-footer--compact` pattern.
 ###### Preview
 <footer class="wfp-footer--std">
   <div class="footer--top">
-    <div class="wfp-grid wfp-wrapper">
-      <div class="wfp-u-1 wfp-u-md-3-5 footer--panel left">
+    <div class="wfp-grid wfp-wrapper pv2">
+      <div class="wfp-u-1 wfp-u-md-3-5 tc tl-md">
         <nav class="wfp-menu-plain wfp-grid">
           <div class="menu--group wfp-u-1 wfp-u-md-1-2">
             <h6 class="menu--heading">Get Involved</h6>
@@ -156,11 +156,11 @@ This flagship footer variant, builds up on top of `wfp-footer--compact` pattern.
           </div>
         </nav>
       </div>
-      <div class="wfp-u-1 wfp-u-md-2-5 footer--panel right">
-        <div class="wfp-logo-wrapper">
+      <div class="wfp-u-1 wfp-u-md-2-5 tc tr-md">
+        <div class="pa1">
           <img src="{{ base }}/img/logos/dark/png/1x/en-standard.png" srcset="{{ base }}/img/logos/dark/png/1x/en-standard.png 1x, {{ base }}/img/logos/dark/png/2x/en-standard.png 2x" class="footer--logo" alt="WFP Logo">
         </div>
-        <div class="wfp-content-wrapper">
+        <div class="pa1">
           <ul class="footer--links">
             <li class="link"><a href="#" class="wfp-btn--twitter xsmall">Twitter</a></li>
             <li class="link"><a href="#" class="wfp-btn--facebook xsmall">Facebook</a></li>
@@ -170,13 +170,13 @@ This flagship footer variant, builds up on top of `wfp-footer--compact` pattern.
       </div>
     </div>
   </div>
-  <div class="footer--bottom">
+  <div class="footer--bottom fs6">
     <div class="wfp-grid wfp-wrapper">
-      <div class="wfp-u-1 wfp-u-md-1-3 footer--panel left">
-        <h4 class="footer--label">{{ site.time | date: '%Y' }} &copy; World Food Programme</h4>
+      <div class="wfp-u-1 wfp-u-md-1-3 tc tl-md">
+        <p>{{ site.time | date: '%Y' }} &copy; World Food Programme</p>
       </div>
-      <div class="wfp-u-1 wfp-u-md-2-3 footer--panel right">
-        <h4 class="footer--label">Via Cesare Giulio Viola 68-70, 00148 Rome, Italy</h4>
+      <div class="wfp-u-1 wfp-u-md-2-3 tc tr-md">
+        <p>Via Cesare Giulio Viola 68-70, 00148 Rome, Italy</p>
       </div>
     </div>
   </div>
@@ -186,14 +186,14 @@ This flagship footer variant, builds up on top of `wfp-footer--compact` pattern.
 {% highlight html %}
 <footer class="wfp-footer--std">
   <div class="footer--top">
-    <div class="wfp-grid wfp-wrapper">
-      <div class="wfp-u-1 wfp-u-md-3-5 footer--panel left">
+    <div class="wfp-grid wfp-wrapper pv2">
+      <div class="wfp-u-1 wfp-u-md-3-5 tc tl-md">
         <nav class="wfp-menu-plain wfp-grid">
           <div class="menu--group wfp-u-1 wfp-u-md-1-2">
             <h6 class="menu--heading">Get Involved</h6>
             <ul class="menu--wrapper">
               <li class="menu--item"><a href="#" class="menu--link">Make a donation</a></li>
-              <li class="menu--item"><a href="#" class="menu--link">Join "One Future" community</a></li>
+              <li class="menu--item"><a href="#" class="menu--link">Join the community</a></li>
               <li class="menu--item"><a href="#" class="menu--link">Spread the word</a></li>
               <li class="menu--item"><a href="#" class="menu--link">Careers at WFP</a></li>
             </ul>
@@ -209,11 +209,11 @@ This flagship footer variant, builds up on top of `wfp-footer--compact` pattern.
           </div>
         </nav>
       </div>
-      <div class="wfp-u-1 wfp-u-md-2-5 footer--panel right">
-        <div class="wfp-logo-wrapper">
-          <img src="{{ base }}/img/logos/dark/png/1x/en-standard.png" srcset="{{ base }}/img/logos/dark/png/1x/en-standard.png 1x, {{ base }}/img/logos/dark/png/2x/en-standard.png 2x" class="footer--logo" alt="WFP Logo">
+      <div class="wfp-u-1 wfp-u-md-2-5 tc tr-md">
+        <div class="pa1">
+          <img src="img/logos/dark/png/1x/en-standard.png" srcset="img/logos/dark/png/1x/en-standard.png 1x, img/logos/dark/png/2x/en-standard.png 2x" class="footer--logo" alt="WFP Logo">
         </div>
-        <div class="wfp-content-wrapper">
+        <div class="pa1">
           <ul class="footer--links">
             <li class="link"><a href="#" class="wfp-btn--twitter xsmall">Twitter</a></li>
             <li class="link"><a href="#" class="wfp-btn--facebook xsmall">Facebook</a></li>
@@ -223,13 +223,13 @@ This flagship footer variant, builds up on top of `wfp-footer--compact` pattern.
       </div>
     </div>
   </div>
-  <div class="footer--bottom">
+  <div class="footer--bottom fs6">
     <div class="wfp-grid wfp-wrapper">
-      <div class="wfp-u-1 wfp-u-md-1-3 footer--panel left">
-        <h4 class="footer--label">{{ site.time | date: '%Y' }} &copy; World Food Programme</h4>
+      <div class="wfp-u-1 wfp-u-md-1-3 tc tl-md">
+        <p>{{ site.time | date: '%Y' }} &copy; World Food Programme</p>
       </div>
-      <div class="wfp-u-1 wfp-u-md-2-3 footer--panel right">
-        <h4 class="footer--label">Via Cesare Giulio Viola 68-70, 00148 Rome, Italy</h4>
+      <div class="wfp-u-1 wfp-u-md-2-3 tc tr-md">
+        <p>Via Cesare Giulio Viola 68-70, 00148 Rome, Italy</p>
       </div>
     </div>
   </div>

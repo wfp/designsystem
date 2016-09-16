@@ -1,6 +1,6 @@
 // Module: Box Sizing
 // Project: WFP UI
 
-@mixin box-sizing {
-  box-sizing: border-box;
+@mixin bs($sizing) {
+  box-sizing: $sizing;
 }

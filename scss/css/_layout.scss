@@ -1,10 +1,14 @@
 // CSS: Layout
 // Project: WFP UI
 
+// Sass bug: https://github.com/sass/sass/issues/2131
+$hyphen: unquote("-");
+
 // ----------------------------------------------------------------------------
 // Box Sizing
 // ----------------------------------------------------------------------------
-.border-box { @include box-sizing; }
+.bs-bb { @include bs(border-box); }
+.bs-cb { @include bs(content-box); }
 
 // ----------------------------------------------------------------------------
 // Clearfix
@@ -14,17 +18,34 @@
 // ----------------------------------------------------------------------------
 // Display
 // ----------------------------------------------------------------------------
-.dn           { @include display(none); }
-.di           { @include display(inline); }
-.db           { @include display(block); }
-.dib          { @include display(inline-block); }
-.dit          { @include display(inline-table); }
-.dt           { @include display(table); }
-.dtc          { @include display(table-cell); }
-.dt-row       { @include display(table-row); }
+.dn { @include display(none); }
+.di { @include display(inline); }
+.df { @include display(flex); }
+.db { @include display(block); }
+.dib { @include display(inline-block); }
+.dit { @include display(inline-table); }
+.dt { @include display(table); }
+.dtc { @include display(table-cell); }
+.dt-row { @include display(table-row); }
 .dt-row-group { @include display(table-row-group); }
-.dt-col       { @include display(table-column); }
+.dt-col { @include display(table-column); }
 .dt-col-group { @include display(table-column-group); }
+
+@each $mq, $viewport in $mqs {
+  @include media-query($viewport) {
+    .dn-#{$mq} { @include display(none); }
+    .di-#{$mq} { @include display(inline); }
+    .db-#{$mq} { @include display(block); }
+    .dib-#{$mq} { @include display(inline-block); }
+    .dit-#{$mq} { @include display(inline-table); }
+    .dt-#{$mq} { @include display(table); }
+    .dtc-#{$mq} { @include display(table-cell); }
+    .dt-row-#{$mq} { @include display(table-row); }
+    .dt-row-group-#{$mq} { @include display(table-row-group); }
+    .dt-col-#{$mq} { @include display(table-column); }
+    .dt-col-group-#{$mq} { @include display(table-column-group); }
+  }
+}
 
 // Sets table to 100% width and all cells to equal width
 .dt--fixed {
@@ -39,13 +60,21 @@
 .fr { @include float(right); }
 .fn { @include float(none); }
 
+@each $mq, $viewport in $mqs {
+  @include media-query($viewport) {
+    .fl-#{$mq} { @include float(left); }
+    .fr-#{$mq} { @include float(right); }
+    .fn-#{$mq} { @include float(none); }
+  }
+}
+
 // ----------------------------------------------------------------------------
 // Heights
 // ----------------------------------------------------------------------------
 // Define height scale steps
-// E.g.: .h-1 { height: 1rem; }
-@for $i from 1 through 5 {
-  .h-#{$i} { @include h($i); }
+// E.g.: .h1 { height: 1rem; }
+@for $i from 0 through length($spacing) {
+  .h#{$i} { @include h($i); }
 }
 
 // CSS heights
@@ -56,137 +85,168 @@
 .h-auto     { @include height(auto); }
 .h-inherit  { @include height(inherit); }
 
+// Max Heights
+@for $i from 1 through length($spacing) {
+  .mh#{$i} { @include mh($i); }
+}
+
+@each $mq, $viewport in $mqs {
+  @include media-query($viewport) {
+    @for $i from 1 through length($spacing) {
+      .h#{$i}#{$hyphen}#{$mq} { @include h($i); }
+    }
+
+    @for $i from 1 through length($spacing) {
+      .mh#{$i}#{$hyphen}#{$mq} { @include mh($i); }
+    }
+
+    .h-25-#{$mq}       { @include height(25%); }
+    .h-50-#{$mq}       { @include height(50%); }
+    .h-75-#{$mq}       { @include height(75%); }
+    .h-100-#{$mq}      { @include height(100%); }
+    .h-auto-#{$mq}     { @include height(auto); }
+    .h-inherit-#{$mq}  { @include height(inherit); }
+  }
+}
+
 // ----------------------------------------------------------------------------
 // Widths
 // ----------------------------------------------------------------------------
 // Define width scale steps
 // E.g.: .w1 { width: 1rem; }
-@for $i from 1 through 5 {
+@for $i from 1 through length($spacing) {
   .w#{$i} { @include width-scale($i); }
 }
 
-.w-auto { @include width-scale(auto);}
+.w-25   { @include width(25); }
+.w-50   { @include width(50); }
+.w-75   { @include width(75); }
+.w-100  { @include width(100);}
+.w-auto { @include width(auto);}
+
+@each $mq, $viewport in $mqs {
+  @include media-query($viewport) {
+    @for $i from 1 through length($spacing) {
+      .w#{$i}#{$hyphen}#{$mq} { @include width-scale($i); }
+    }
+    .w-25-#{$mq}   { @include width(25); }
+    .w-50-#{$mq}   { @include width(50); }
+    .w-75-#{$mq}   { @include width(75); }
+    .w-100-#{$mq}  { @include width(100);}
+    .w-auto-#{$mq} { @include width(auto);}
+  }
+}
 
 // ----------------------------------------------------------------------------
 // Max Widths
 // ----------------------------------------------------------------------------
 // Define width scale steps
-// E.g.: .w1 { width: 1rem; }
-@for $i from 1 through 9 {
+// E.g.: .mw1 { max-width: 1rem; }
+@for $i from 1 through length($spacing) {
   .mw#{$i} { @include mw($i); }
 }
 
 // Full width
 .mw-100  { @include mw(10); }
-
 // Disable max-width
 .mw-none { @include max-width(none); }
 
-// ----------------------------------------------------------------------------
-// Spacing (Padding)
-// ----------------------------------------------------------------------------
-// padding (all)
-@for $i from 0 through 7 {
-  .pa-#{$i} {
-    padding: map-get($spacer, $i);
-  }
-}
-
-// padding-left
-@for $i from 0 through 7 {
-  .pl-#{$i} {
-    padding-left: map-get($spacer, $i);
-  }
-}
-
-// padding-right
-@for $i from 0 through 7 {
-  .pr-#{$i} {
-    padding-right: map-get($spacer, $i);
-  }
-}
-
-// padding-top
-@for $i from 0 through 7 {
-  .pt-#{$i} {
-    padding-top: map-get($spacer, $i);
-  }
-}
-
-// padding-bottom
-@for $i from 0 through 7 {
-  .pb-#{$i} {
-    padding-bottom: map-get($spacer, $i);
-  }
-}
-
-// horizontal padding
-@for $i from 0 through 7 {
-  .ph-#{$i} {
-    padding-left: map-get($spacer, $i);
-    padding-right: map-get($spacer, $i);
-  }
-}
-
-// vertical padding
-@for $i from 0 through 7 {
-  .pv-#{$i} {
-    padding-top: map-get($spacer, $i);
-    padding-bottom: map-get($spacer, $i);
+@each $mq, $viewport in $mqs {
+  @include media-query($viewport) {
+    @for $i from 1 through length($spacing) {
+      .mw#{$i}#{$hyphen}#{$mq} { @include mw($i); }
+    }
+    .mw-100-#{mq}  { @include mw(10); }
+    .mw-none-#{mq} { @include max-width(none); }
   }
 }
 
 // ----------------------------------------------------------------------------
 // Spacing (Padding)
 // ----------------------------------------------------------------------------
-// margin (all)
-@for $i from 0 through 7 {
-  .ma-#{$i} {
-    margin: map-get($spacer, $i);
+@for $i from 0 through length($spacer) {
+  .pa#{$i} { padding: map-get($spacer, $i); }
+  .pl#{$i} { padding-left: map-get($spacer, $i); }
+  .pr#{$i} { padding-right: map-get($spacer, $i); }
+  .pt#{$i} { padding-top: map-get($spacer, $i); }
+  .pb#{$i} { padding-bottom: map-get($spacer, $i); }
+
+  .ph#{$i} {
+    padding-left: map-get($spacer, $i);
+    padding-right: map-get($spacer, $i);
+  }
+
+  .pv#{$i} {
+    padding-top: map-get($spacer, $i);
+    padding-bottom: map-get($spacer, $i);
   }
 }
 
-// margin-left
+@each $mq, $viewport in $mqs {
+  @include media-query($viewport) {
+    @for $i from 0 through length($spacer) {
+      .pa#{$i}#{$hyphen}#{$mq} { padding: map-get($spacer, $i); }
+      .pl#{$i}#{$hyphen}#{$mq} { padding-left: map-get($spacer, $i); }
+      .pr#{$i}#{$hyphen}#{$mq} { padding-right: map-get($spacer, $i); }
+      .pt#{$i}#{$hyphen}#{$mq} { padding-top: map-get($spacer, $i); }
+      .pb#{$i}#{$hyphen}#{$mq} { padding-bottom: map-get($spacer, $i); }
+
+      .ph#{$i}#{$hyphen}#{$mq} {
+        padding-left: map-get($spacer, $i);
+        padding-right: map-get($spacer, $i);
+      }
+
+      .pv#{$i}#{$hyphen}#{$mq} {
+        padding-top: map-get($spacer, $i);
+        padding-bottom: map-get($spacer, $i);
+      }
+    }
+  }
+}
+
+// ----------------------------------------------------------------------------
+// Spacing (Margins)
+// ----------------------------------------------------------------------------
 @for $i from 0 through 7 {
-  .ml-#{$i} {
+  .ma#{$i} { margin: map-get($spacer, $i); }
+  .ml#{$i} { margin-left: map-get($spacer, $i); }
+  .mr#{$i} { margin-right: map-get($spacer, $i); }
+  .mt#{$i} { margin-top: map-get($spacer, $i); }
+  .mb#{$i} { margin-bottom: map-get($spacer, $i); }
+
+  .mh#{$i} {
     margin-left: map-get($spacer, $i);
-  }
-}
-
-// margin-right
-@for $i from 0 through 7 {
-  .mr-#{$i} {
     margin-right: map-get($spacer, $i);
   }
-}
 
-// margin-top
-@for $i from 0 through 7 {
-  .mt-#{$i} {
+  .mv#{$i} {
     margin-top: map-get($spacer, $i);
-  }
-}
-
-// margin-bottom
-@for $i from 0 through 7 {
-  .mb-#{$i} {
     margin-bottom: map-get($spacer, $i);
   }
 }
 
-// horizontal margin
-@for $i from 0 through 7 {
-  .mh-#{$i} {
-    margin-left: map-get($spacer, $i);
-    margin-right: map-get($spacer, $i);
-  }
-}
+.mc { @include margin(0 auto); }
 
-// vertical margin
-@for $i from 0 through 7 {
-  .mv-#{$i} {
-    margin-top: map-get($spacer, $i);
-    margin-bottom: map-get($spacer, $i);
+@each $mq, $viewport in $mqs {
+  @include media-query($viewport) {
+    @for $i from 0 through length($spacer) {
+      .ma#{$i}#{$hyphen}#{$mq} { margin: map-get($spacer, $i); }
+      .ml#{$i}#{$hyphen}#{$mq} { margin-left: map-get($spacer, $i); }
+      .mr#{$i}#{$hyphen}#{$mq} { margin-right: map-get($spacer, $i); }
+      .mt#{$i}#{$hyphen}#{$mq} { margin-top: map-get($spacer, $i); }
+      .mb#{$i}#{$hyphen}#{$mq} { margin-bottom: map-get($spacer, $i); }
+
+      .mh#{$i}#{$hyphen}#{$mq} {
+        margin-left: map-get($spacer, $i);
+        margin-right: map-get($spacer, $i);
+      }
+
+      .mv#{$i}#{$hyphen}#{$mq} {
+        margin-top: map-get($spacer, $i);
+        margin-bottom: map-get($spacer, $i);
+      }
+    }
+    .mc-#{$mq} { @include margin(0 auto); }
   }
 }
 
@@ -194,10 +254,19 @@
 // Position
 // ----------------------------------------------------------------------------
 
-.absolute  { @include pos--absolute; }
-.relative  { @include pos--relative; }
-.static    { @include pos--static; }
-.fixed     { @include pos--fixed; }
+.absolute { @include pos--absolute; }
+.relative { @include pos--relative; }
+.static { @include pos--static; }
+.fixed { @include pos--fixed; }
+
+@each $mq, $viewport in $mqs {
+  @include media-query($viewport) {
+    .absolute-#{$mq} { @include pos--absolute; }
+    .relative-#{$mq} { @include pos--relative; }
+    .static-#{$mq} { @include pos--static; }
+    .fixed-#{$mq} { @include pos--fixed; }
+  }
+}
 
 // ----------------------------------------------------------------------------
 // Coordinates
@@ -209,11 +278,31 @@
 .top--1 { @include pos--top--1; }
 .top--2 { @include pos--top--2; }
 
+@each $mq, $viewport in $mqs {
+  @include media-query($viewport) {
+    .top-0-#{$mq}  { @include pos--top-0; }
+    .top-1-#{$mq}  { @include pos--top-1; }
+    .top-2-#{$mq}  { @include pos--top-2; }
+    .top--1-#{$mq} { @include pos--top--1; }
+    .top--2-#{$mq} { @include pos--top--2; }
+  }
+}
+
 .bottom-0  { @include pos--bottom-0; }
 .bottom-1  { @include pos--bottom-1; }
 .bottom-2  { @include pos--bottom-2; }
 .bottom--1 { @include pos--bottom--1; }
 .bottom--2 { @include pos--bottom--2; }
+
+@each $mq, $viewport in $mqs {
+  @include media-query($viewport) {
+    .bottom-0-#{$mq}  { @include pos--bottom-0; }
+    .bottom-1-#{$mq}  { @include pos--bottom-1; }
+    .bottom-2-#{$mq}  { @include pos--bottom-2; }
+    .bottom--1-#{$mq} { @include pos--bottom--1; }
+    .bottom--2-#{$mq} { @include pos--bottom--2; }
+  }
+}
 
 .left-0  { @include pos--left-0; }
 .left-1  { @include pos--left-1; }
@@ -221,11 +310,31 @@
 .left--1 { @include pos--left--1; }
 .left--2 { @include pos--left--2; }
 
+@each $mq, $viewport in $mqs {
+  @include media-query($viewport) {
+    .left-0-#{$mq}  { @include pos--left-0; }
+    .left-1-#{$mq}  { @include pos--left-1; }
+    .left-2-#{$mq}  { @include pos--left-2; }
+    .left--1-#{$mq} { @include pos--left--1; }
+    .left--2-#{$mq} { @include pos--left--2; }
+  }
+}
+
 .right-0  { @include pos--right-0; }
 .right-1  { @include pos--right-1; }
 .right-2  { @include pos--right-2; }
 .right--1 { @include pos--right--1; }
 .right--2 { @include pos--right--2; }
+
+@each $mq, $viewport in $mqs {
+  @include media-query($viewport) {
+    .right-0-#{$mq}  { @include pos--right-0; }
+    .right-1-#{$mq}  { @include pos--right-1; }
+    .right-2-#{$mq}  { @include pos--right-2; }
+    .right--1-#{$mq} { @include pos--right--1; }
+    .right--2-#{$mq} { @include pos--right--2; }
+  }
+}
 
 .fill-h { @include pos--fill-h; }
 .fill-v { @include pos--fill-v; }

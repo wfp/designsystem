@@ -1,5 +1,5 @@
 /*!
- * WFP UI Bootstrap Theme, v0.12.1
+ * WFP UI Bootstrap Theme, v0.13.0
  * Copyright 2016 WFP/MADBIT Co.
  * License: https://github.com/wfp/ui/blob/master/LICENSE
  */
@@ -176,7 +176,7 @@ select {
   &:active,
   &:active:focus {
     border-color: rgba($black, 0.25);
-    color: darken($grey, 5%);
+    color: $grey-darker;
     background-image: none;
     background-color: inherit;
   }
@@ -191,7 +191,7 @@ select {
   &.btn-active:focus,
   &.btn-active:active:focus {
     background-color: darken($grey-light, 5%);
-    color: darken($grey, 5%);
+    color: $grey-darker;
     border-color: rgba($black, 0.25);
     box-shadow: rgba($black, 0.15) 0 0 8px inset;
   }
@@ -211,7 +211,7 @@ select {
   }
 
   &.btn-primary {
-    background-color: $primary;
+    background-color: darken($primary, 12%);
     color: $white;
 
     &:visited {
@@ -222,67 +222,67 @@ select {
     &:focus,
     &:active:focus {
       color: $white;
-      background-color: darken($primary, 5%);
+      background-color: darken($primary, 12%);
       box-shadow: rgba($black, 0.25) 0 0 16px inset;
     }
 
     &:hover {
       color: $white;
-      background-color: darken($primary, 5%);
+      background-color: darken($primary, 12%);
     }
   }
 
   &.btn-warning {
     background-color: $orange;
-    color: darken($orange, 40%);
+    color: darken($orange, 55%);
 
     &:active,
     &:focus,
     &:active:focus {
-      color: darken($orange, 40%);
+      color: darken($orange, 55%);
       background-color: darken($orange, 5%);
       box-shadow: rgba($black, 0.25) 0 0 16px inset;
     }
 
     &:hover {
-      color: darken($orange, 40%);
+      color: darken($orange, 55%);
       background-color: darken($orange, 5%);
     }
   }
 
   &.btn-success {
-    background-color: $green;
+    background-color: desaturate($green, 15%);
     color: $white;
 
     &:active,
     &:focus,
     &:active:focus {
       color: $white;
-      background-color: darken($green, 5%);
+      background-color: desaturate(darken($green, 10%), 15%);
       box-shadow: rgba($black, 0.25) 0 0 16px inset;
     }
 
     &:hover {
       color: $white;
-      background-color: darken($green, 5%);
+      background-color: desaturate(darken($green, 10%), 15%);
     }
   }
 
   &.btn-danger {
-    background-color: $red;
+    background-color: desaturate(darken($red, 10%), 25%);
     color: lighten($red, 35%);
 
     &:active,
     &:focus,
     &:active:focus {
       color: lighten($red, 35%);
-      background-color: darken($red, 5%);
+      background-color: desaturate(darken($red, 15%), 25%);
       box-shadow: rgba($black, 0.25) 0 0 16px inset;
     }
 
     &:hover {
       color: lighten($red, 35%);
-      background-color: darken($red, 5%);
+      background-color: desaturate(darken($red, 15%), 25%);
     }
   }
 
@@ -335,7 +335,7 @@ a {
 
     &.active {
       border-color: $accent;
-      background-color: $primary;
+      background-color: darken($primary, 12%);
       box-shadow: none;
       color: $white;
     }
@@ -405,7 +405,7 @@ a {
   border-radius: 1px;
 
   &.label-default {
-    background-color: $grey;
+    background-color: $grey-dark;
     color: $white;
   }
   &.label-primary { background-color: $primary; }
@@ -415,7 +415,7 @@ a {
 
   &.label-info {
     background-color: $grey-contrast;
-    color: $grey-dark;
+    color: $grey-darker;
   }
 }
 
@@ -447,14 +447,14 @@ a {
 
 .dropdown-menu > li > a:hover,
 .dropdown-menu > li > a:focus {
-  background-color: darken($primary, 5%);
+  background-color: darken($primary, 12%);
   color: $white;
 }
 
 .dropdown-menu > .active > a,
 .dropdown-menu > .active > a:hover,
 .dropdown-menu > .active > a:focus {
-  background-color: darken($primary, 5%);
+  background-color: darken($primary, 12%);
 }
 
 
@@ -502,7 +502,7 @@ a {
   .navbar-nav > .open > a:focus,
   .navbar-nav > .open > a:active,
   .navbar-nav > .open > a:hover {
-    color: $grey;
+    color: $grey-dark;
     background-color: $white;
   }
 
@@ -523,7 +523,7 @@ a {
       background-color: $white;
 
       .icon-bar {
-        background-color: $primary;
+        background-color: darken($primary, 12%);
       }
     }
   }
@@ -547,12 +547,12 @@ a {
   li {
     a {
       border-radius: 1px;
-      color: $primary;
+      color: darken($primary, 12%);
     }
 
     &.active {
       a {
-        background-color: $primary;
+        background-color: darken($primary, 12%);
       }
     }
   }
@@ -561,11 +561,11 @@ a {
 .nav-tabs {
   li {
     a {
-      color: $primary;
+      color: darken($primary, 12%);
       border-radius: 1px 1px 0 0;
 
       &:hover {
-        background-color: $grey-light;
+        background-color: $grey-lighter;
       }
     }
   }
@@ -620,7 +620,7 @@ a {
     line-height: 1;
 
     &:hover {
-      color: $primary;
+      color: darken($primary, 12%);
     }
 
     &.home {

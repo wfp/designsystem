@@ -30,7 +30,6 @@
   }
 
   thead {
-    background-color: none;
     color: $text-color;
     text-align: left;
     vertical-align: bottom;
@@ -51,6 +50,7 @@
   tr:nth-child(2n-1) {
     td {
       background-color: $blue-lightest;
+      color: $text-color;
     }
   }
 }

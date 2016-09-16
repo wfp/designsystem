@@ -5,15 +5,16 @@
 // Tints
 // -----------------------------------------------------------------------------
 @mixin tint--static {
-  @extend .bg-black-50;
+  @extend .bg-tint-5;
   width: 100%;
 }
 
 @mixin tint--dynamic {
   @include tint--static;
+  transition: background-color 0.125s ease-in;
 
   &:hover {
-    @extend .bg-black-80;
+    @extend .bg-tint-8;
   }
 }
 
@@ -30,6 +31,7 @@
 // Utility Band (for breadcrumbs, etc.)
 // -----------------------------------------------------------------------------
 @mixin band {
+  padding: 0.25rem 0;
   background: $white;
   border-bottom: 1px solid $grey-contrast;
   box-shadow: 0 1px 3px 0 rgba($black, 0.1);
@@ -41,11 +43,6 @@
 @mixin wrapper {
   margin: 0 auto;
   max-width: $content-width;
-  padding: 1rem;
-
-  @include media-query($content-width) {
-    padding: 1rem 0;
-  }
 
   @include media-query($xl-screen) {
     max-width: $max-content-width;
