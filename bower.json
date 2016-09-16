@@ -7,7 +7,7 @@
   "description": "WFP UI",
   "main": [
     "scss/wfpui.scss",
-    "scss/wfpui+grid.scss",
+    "scss/wfpui+grid.scss"
   ],
   "keywords": [
     "ui",
