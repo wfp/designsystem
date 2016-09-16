@@ -104,7 +104,7 @@
     &[readonly] {
       // Read-only state
       background: $grey-lightest;
-      color: $grey-lighter;
+      color: $grey-dark;
       border-color: $grey-lighter;
     }
   } @else if $type == checkbox {
@@ -166,7 +166,7 @@
     &[readonly] {
       // Read-only state
       background: $grey-light;
-      color: $grey-light;
+      color: $grey-darker;
       border-color: $grey-light;
     }
 
@@ -234,7 +234,7 @@
     &[readonly] {
       // Read-only state
       background: $grey-lightest;
-      color: $grey-lighter;
+      color: $grey-dark;
       border-color: $grey-lighter;
     }
   }
@@ -309,7 +309,7 @@
   }
 
   .error {
-    color: darken($orange, 40%);
+    color: desaturate(darken($orange, 55%), 15%);
     display: inline-block;
     background-color: $orange;
     padding: 0.25em 0.5em;

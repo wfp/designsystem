@@ -22,7 +22,7 @@
 
     &::after {
       content: "\203A";
-      color: transparentize($grey, 0.1);
+      color: $grey-light;
       font-size: 1.125rem;
       margin-left: 0.25rem;
       margin-right: 0.25rem;
@@ -53,7 +53,7 @@
 
     &:hover {
       background-color: inherit;
-      color: $primary;
+      color: darken($primary, 12%);
       border-bottom: 1px solid $orange;
     }
   }
