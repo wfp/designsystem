@@ -31,7 +31,7 @@
 @mixin menu--link {
   @include lh-body;
   @include padding(0 0.75rem);
-  @include height(1.5rem);
+  // @include height(1.5rem);
   display: block;
   color: darken($primary, 12%);
   border-bottom-color: transparent;
@@ -209,7 +209,7 @@
     }
 
     @include media-query($md-screen) {
-      @include padding(0.5rem 1.25rem);
+      @include padding(0.33rem 1.25rem);
     }
   }
 }
