@@ -255,7 +255,7 @@ module.exports = function(grunt) {
       },
       dist: {
         files: {
-          'dist/js/responsive-nav.min.js': ['js/responsive-nav.js']
+          'dist/js/responsive-nav.min.js': ['js/lib/responsive-nav.js']
         }
       },
       docs: {
@@ -269,7 +269,7 @@ module.exports = function(grunt) {
           screwIE8: true
         },
         files: {
-          'docs/js/lib/responsive-nav.js': ['js/responsive-nav.js']
+          'docs/js/lib/responsive-nav.js': ['js/lib/responsive-nav.js']
         }
       }
     },
