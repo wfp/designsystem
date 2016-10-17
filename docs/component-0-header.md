@@ -120,7 +120,7 @@ Internal header features a simple navigation, which works on both smaller and bi
 
 <div class="notice">
   <h2 class="title">Header Position</h2>
-  <p>You can also set header component to stay fixed to the top of your page, by adding <code>wfp-header-spacer--narrow</code> class to your <code>body</code> tag (for extra spacing), and class <code>fixed</code> to <code>header-int</code> element.</p>
+  <p>You can also set header component to stay fixed to the top of your page, by adding <code>hs--int</code> (for <code>header-int</code>) or <code>hs--ext</code> (for <code>header-ext</code>) class to your <code>body</code> tag (for extra spacing), and class <code>fixed</code> to <code>header-int</code> element.</p>
 </div>
 
 To ensure the navigation works correctly, include our fork of `responsive-nav` library to the bottom of your page, before the closing `body` tag. You can load it locally, from WFP UI `dist` directory, or from our CDN:
