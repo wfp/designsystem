@@ -68,7 +68,9 @@ $color-gplus: #dc4e41;
     background-color: darken($primary, 12%);
 
     &:hover {
+      color: $white;
       background-color: darken($primary, 20%);
+      border-color: rbga($black, 0.25);
     }
 
     &.active,
@@ -81,8 +83,8 @@ $color-gplus: #dc4e41;
     &.visited:hover,
     &.visited:active,
     &.visited:focus {
-      background-color: darken($blue-darker, 15%);
-      border-color: darken($blue-darker, 15%);
+      background-color: darken($primary, 20%);
+      border-color: darken($primary, 25%);
       color: $white;
     }
 
@@ -183,40 +185,50 @@ $color-gplus: #dc4e41;
   }
 }
 
-.wfp-btn {
+// This needs to be ignored until we can find a viable workaround
+.wfp-btn,
+a.wfp-btn {
   @include button;
 }
 
-.wfp-btn--primary {
+.wfp-btn--primary,
+a.wfp-btn--primary {
   @include button(primary);
 }
 
-.wfp-btn--negative {
+.wfp-btn--negative,
+a.wfp-btn--negative {
   @include button(negative);
 }
 
-.wfp-btn--positive {
+.wfp-btn--positive,
+a.wfp-btn--positive {
   @include button(positive);
 }
 
-.wfp-btn--warning {
+.wfp-btn--warning,
+a.wfp-btn--warning {
   @include button(warning);
 }
 
 // Social buttons
-.wfp-btn--twitter {
+.wfp-btn--twitter,
+a.wfp-btn--twitter {
   @include button(social, $color-twitter);
 }
 
-.wfp-btn--facebook {
+.wfp-btn--facebook,
+a.wfp-btn--facebook {
   @include button(social, $color-facebook);
 }
 
-.wfp-btn--gplus {
+.wfp-btn--gplus,
+a.wfp-btn--gplus {
   @include button(social, $color-gplus);
 }
 
 // Header buttons
-.wfp-btn--head {
+.wfp-btn--head,
+a.wfp-btn--head {
   @include button(head);
 }
