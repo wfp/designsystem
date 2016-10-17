@@ -25,13 +25,11 @@ If the vertical space is limited (i.e.: on smaller viewports), you can substitut
 
 ###### Preview
 <header class="wfp-header-ext">
-  <div class="wfp-grid wfp-wrapper">
+  <div class="wfp-grid wfp-wrapper" role="banner">
     <div class="wfp-u-2-3 wfp-u-sm-1-4 header--container">
-      <h1 class="header--title">
-        <a href="#" class="header--logo">
-          <img src="{{ base }}/img/logos/light/png/1x/en-standard.png" srcset="{{ base }}/img/logos/light/png/1x/en-standard.png 1x, {{ base }}/img/logos/light/png/2x/en-standard.png 2x" alt="UN World Food Programme">
-        </a>
-      </h1>
+      <a href="#" class="header--logo db pv2 mv1">
+        <img src="{{ base }}/img/logos/light/png/1x/en-standard.png" srcset="{{ base }}/img/logos/light/png/1x/en-standard.png 1x, {{ base }}/img/logos/light/png/2x/en-standard.png 2x" alt="UN World Food Programme">
+      </a>
     </div>
     <div class="wfp-u-1-3 wfp-u-sm-3-4 header--nav">
       <button class="header--toggle" id="js-menu-ext-trigger">Menu</button>
@@ -42,11 +40,6 @@ If the vertical space is limited (i.e.: on smaller viewports), you can substitut
           <li class="menu--item"><a href="#" class="menu--link">Navlink #3</a></li>
         </ul>
       </nav>
-      <div class="header--misc">
-        <div class="header--search">
-          <input type="search" class="header--input" placeholder="Search">
-        </div>
-      </div>
     </div>
   </div>
 </header>
@@ -54,30 +47,21 @@ If the vertical space is limited (i.e.: on smaller viewports), you can substitut
 ###### Source
 {% highlight html %}
 <header class="wfp-header-ext">
-  <div class="wfp-grid wfp-wrapper">
+  <div class="wfp-grid wfp-wrapper" role="banner">
     <div class="wfp-u-2-3 wfp-u-sm-1-4 header--container">
-      <h1 class="header--title">
-        <a href="#" class="header--logo">
-          <img src="en-standard.png" srcset="en-standard.png 1x, en-standard@2x.png 2x" alt="UN World Food Programme">
-        </a>
-      </h1>
+      <a href="#" class="header--logo db pv2 mv1">
+        <img src="en-standard.png" srcset="en-standard.png 1x, en-standard@2x.png 2x" alt="UN World Food Programme">
+      </a>
     </div>
     <div class="wfp-u-1-3 wfp-u-sm-3-4 header--nav">
-      <button class="header--toggle" id="js-example-menu-trigger">Menu</button>
-      <nav class="header--menu" id="js-example-menu">
+      <button class="header--toggle" id="js-menu-ext-trigger">Menu</button>
+      <nav class="header--menu" id="js-menu-ext">
         <ul class="menu--group">
           <li class="menu--item"><a href="#" class="menu--link active">Navlink #1</a></li>
           <li class="menu--item"><a href="#" class="menu--link">Navlink #2</a></li>
           <li class="menu--item"><a href="#" class="menu--link">Navlink #3</a></li>
-          <li class="menu--item"><a href="#" class="menu--link">Navlink #4</a></li>
-          <li class="menu--item"><a href="#" class="menu--link">Navlink #5</a></li>
         </ul>
       </nav>
-      <div class="header--misc">
-        <div class="header--search">
-          <input type="search" class="header--input" placeholder="Search">
-        </div>
-      </div>
     </div>
   </div>
 </header>
