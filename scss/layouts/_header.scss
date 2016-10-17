@@ -185,12 +185,9 @@
 }
 
 %header--nav {
-  padding: 1rem;
-  text-align: right;
-
-  @include media-query($lg-screen) {
-    padding: 0.875rem 0;
-  }
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }
 
 %header--menu {
@@ -217,6 +214,7 @@
       z-index: auto;
       visibility: visible;
       opacity: 1;
+      flex: 0 0 auto;
     }
   }
 
@@ -400,19 +398,19 @@
 
   .header--menu {
     @extend %header--menu;
-    top: 6.5rem;
-
-    &.closed {
-      transform: translate3d(0, -6.5rem, 0);
-    }
+    top: 6rem;
+    //
+    // &.closed {
+    //   transform: translate3d(0, -6rem, 0);
+    // }
 
     @include media-query($lg-screen) {
       margin: 1.33rem 1rem;
       top: auto;
 
-      &.closed {
-        transform: translate3d(0, 0, 0);
-      }
+      // &.closed {
+      //   transform: translate3d(0, 0, 0);
+      // }
     };
   }
 
