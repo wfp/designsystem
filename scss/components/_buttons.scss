@@ -75,9 +75,15 @@ $color-gplus: #dc4e41;
     &:active,
     &.active:hover,
     &.active:active,
-    &.active:focus {
+    &.active:focus,
+    &.visited,
+    &:visited,
+    &.visited:hover,
+    &.visited:active,
+    &.visited:focus {
       background-color: darken($blue-darker, 15%);
       border-color: darken($blue-darker, 15%);
+      color: $white;
     }
 
   } @else if $type == negative {
