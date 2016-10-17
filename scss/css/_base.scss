@@ -140,6 +140,10 @@ a {
   text-decoration: none;
   border-bottom: 1px solid $grey-lighter;
 
+  &:visited {
+    color: $blue-darkest;
+  }
+
   &:hover {
     border-bottom-color: $orange;
   }
@@ -147,6 +151,7 @@ a {
   &:focus {
     outline: thin dotted;
   }
+
 }
 
 // -----------------------------------------------------------------------------
