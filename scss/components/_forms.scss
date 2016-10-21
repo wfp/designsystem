@@ -81,7 +81,6 @@
       }
     }
 
-    &:required:invalid,
     &.invalid {
       margin-bottom: -1px;
       border-color: $orange;
