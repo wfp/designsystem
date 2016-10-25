@@ -177,3 +177,36 @@ Predefined set of `max-width` values.
 {% highlight html %}
 <div class="mw8 mw-100-md mw-none-lg"></div>
 {% endhighlight %}
+
+### Spacing (Padding)
+Predefined padding values, to help with spacing out individual elements. Uses exponentiation of base value `0.25rem`, and exponents (`n`) of between `0` and `7` (inclusive).
+
+- **Responsive:** Yes
+
+{% highlight scss %}
+// Padding: All
+.pa(n) { padding: pow(0.25rem, n); }
+
+// Padding: Directional
+.pl(n) { padding-left: pow(0.25rem, n); }
+.pr(n) { padding-right: pow(0.25rem, n); }
+.pt(n) { padding-top: pow(0.25rem, n); }
+.pb(n) { padding-bottom: pow(0.25rem, n); }
+
+// Padding: Horizontal
+.ph(n) {
+  padding-left: pow(0.25rem, n);
+  padding-right: pow(0.25rem, n);
+}
+
+// Padding: Vertical
+.pv(n) {
+  padding-top: pow(0.25rem, n);
+  padding-bottom: pow(0.25rem, n);
+}
+{% endhighlight %}
+
+###### Example
+{% highlight html %}
+<div class="pa2 ph4-md pv3-md"></div>
+{% endhighlight %}
