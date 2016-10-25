@@ -210,3 +210,42 @@ Predefined padding values, to help with spacing out individual elements. Uses ex
 {% highlight html %}
 <div class="pa2 ph4-md pv3-md"></div>
 {% endhighlight %}
+
+### Spacing (margin)
+Predefined margin values, to help with spacing out individual elements. Uses exponentiation of base value `0.25rem`, and exponents (`n`) of between `0` and `7` (inclusive).
+
+- **Responsive:** Yes
+
+{% highlight scss %}
+// Horizontally centred (non-responsive)
+.mc {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// Margin: All
+.ma(n) { margin: pow(0.25rem, n); }
+
+// Margin: Directional
+.ml(n) { margin-left: pow(0.25rem, n); }
+.mr(n) { margin-right: pow(0.25rem, n); }
+.mt(n) { margin-top: pow(0.25rem, n); }
+.mb(n) { margin-bottom: pow(0.25rem, n); }
+
+// Margin: Horizontal
+.mh(n) {
+  margin-left: pow(0.25rem, n);
+  margin-right: pow(0.25rem, n);
+}
+
+// Margin: Vertical
+.mv(n) {
+  margin-top: pow(0.25rem, n);
+  margin-bottom: pow(0.25rem, n);
+}
+{% endhighlight %}
+
+###### Example
+{% highlight html %}
+<div class="ma2 mh4-md mv3-md"></div>
+{% endhighlight %}
