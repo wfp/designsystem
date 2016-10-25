@@ -111,7 +111,7 @@ Predefined set of height values.
 {% endhighlight %}
 
 ### Widths
-Predefined set of height values.
+Predefined set of width values.
 
 - **Responsive:** Yes
 
@@ -143,4 +143,37 @@ Predefined set of height values.
 ###### Example
 {% highlight html %}
 <div class="w8 w-50-md w-auto-lg"></div>
+{% endhighlight %}
+
+
+### Max Widths
+Predefined set of `max-width` values.
+
+- **Responsive:** Yes
+
+{% highlight css %}
+.mw1         { max-width: 1rem; }
+.mw2         { max-width: 2rem; }
+.mw3         { max-width: 4rem; }
+.mw4         { max-width: 6rem; }
+.mw5         { max-width: 8rem; }
+.mw6         { max-width: 10rem; }
+.mw7         { max-width: 12rem; }
+.mw8         { max-width: 16rem; }
+.mw9         { max-width: 20rem; }
+.mw10        { max-width: 24rem; }
+.mw11        { max-width: 32rem; }
+.mw12        { max-width: 48rem; }
+.mw13        { max-width: 56rem; }
+.mw14        { max-width: 64rem; }
+.mw15        { max-width: 96rem; }
+.mw16        { max-width: 128rem; }
+
+.mw-100      { max-width: 100%; }
+.mw-none     { max-width: none; }
+{% endhighlight %}
+
+###### Example
+{% highlight html %}
+<div class="mw8 mw-100-md mw-none-lg"></div>
 {% endhighlight %}
