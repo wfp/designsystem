@@ -28,7 +28,11 @@ If the vertical space is limited (i.e.: on smaller viewports), you can substitut
   <div class="wfp-grid wfp-wrapper" role="banner">
     <div class="wfp-u-2-3 wfp-u-sm-1-4 header--container">
       <a href="#" class="header--logo db pv2 mv1">
-        <img src="{{ base }}/img/logos/light/png/1x/en-standard.png" srcset="{{ base }}/img/logos/light/png/1x/en-standard.png 1x, {{ base }}/img/logos/light/png/2x/en-standard.png 2x" alt="UN World Food Programme">
+        <picture class="db w-100">
+          <source srcset="{{ base }}/img/logos/light/png/1x/en-standard.png 1x, {{ base }}/img/logos/light/png/2x/en-standard.png 2x" media="(max-width: 767px)">
+          <source srcset="{{ base }}/img/logos/light/png/1x/en-full.png 1x, {{ base }}/img/logos/light/png/2x/en-full.png 2x" media="(min-width: 768px)">
+          <img src="{{ base }}/img/logos/light/png/1x/en-standard.png" alt="UN World Food Programme">
+        </picture>
       </a>
     </div>
     <div class="wfp-u-1-3 wfp-u-sm-3-4 header--nav">
@@ -50,7 +54,11 @@ If the vertical space is limited (i.e.: on smaller viewports), you can substitut
   <div class="wfp-grid wfp-wrapper" role="banner">
     <div class="wfp-u-2-3 wfp-u-sm-1-4 header--container">
       <a href="#" class="header--logo db pv2 mv1">
-        <img src="en-standard.png" srcset="en-standard.png 1x, en-standard@2x.png 2x" alt="UN World Food Programme">
+        <picture class="db w-100">
+          <source srcset="{{ base }}/img/logos/light/png/1x/en-standard.png 1x, {{ base }}/img/logos/light/png/2x/en-standard.png 2x" media="(max-width: 767px)">
+          <source srcset="{{ base }}/img/logos/light/png/1x/en-full.png 1x, {{ base }}/img/logos/light/png/2x/en-full.png 2x" media="(min-width: 768px)">
+          <img src="{{ base }}/img/logos/light/png/1x/en-standard.png" alt="UN World Food Programme">
+        </picture>
       </a>
     </div>
     <div class="wfp-u-1-3 wfp-u-sm-3-4 header--nav">
