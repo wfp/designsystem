@@ -109,3 +109,38 @@ Predefined set of height values.
 {% highlight html %}
 <div class="h-100 h-50-md h-auto-lg"></div>
 {% endhighlight %}
+
+### Widths
+Predefined set of height values.
+
+- **Responsive:** Yes
+
+{% highlight css %}
+.w1         { width: 1rem; }
+.w2         { width: 2rem; }
+.w3         { width: 4rem; }
+.w4         { width: 6rem; }
+.w5         { width: 8rem; }
+.w6         { width: 10rem; }
+.w7         { width: 12rem; }
+.w8         { width: 16rem; }
+.w9         { width: 20rem; }
+.w10        { width: 24rem; }
+.w11        { width: 32rem; }
+.w12        { width: 48rem; }
+.w13        { width: 56rem; }
+.w14        { width: 64rem; }
+.w15        { width: 96rem; }
+.w16        { width: 128rem; }
+
+.w-25       { width: 25%; }
+.w-50       { width: 50%; }
+.w-75       { width: 75%; }
+.w-100      { width: 100%; }
+.w-auto     { width: auto; }
+{% endhighlight %}
+
+###### Example
+{% highlight html %}
+<div class="w8 w-50-md w-auto-lg"></div>
+{% endhighlight %}
