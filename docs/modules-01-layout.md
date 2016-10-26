@@ -249,3 +249,54 @@ Predefined margin values, to help with spacing out individual elements. Uses exp
 {% highlight html %}
 <div class="ma2 mh4-md mv3-md"></div>
 {% endhighlight %}
+
+### Position
+Various position states and values to help position elements as necessary. Uses exponentiation of base value `1rem`, and exponents (`n`) of between `-2` and `2` (inclusive).
+
+- **Responsive:** No
+
+{% highlight scss %}
+// Position: states
+.pos--absolute {
+  position: absolute;
+}
+.pos--relative {
+  position: relative;
+}
+.pos--static {
+  position: static;
+}
+.pos--fixed {
+  position: fixed;
+}
+
+// Position: Values
+.pos--top-(n) { top: pow(1rem, n); }
+.pos--bottom-(n) { bottom: pow(1rem, n); }
+.pos--left-(n) { left: pow(1rem, n); }
+.pos--right(n) { right: pow(1rem, n); }
+
+// Position: Horizontal
+.pos--fill-h {
+  left: 0;
+  right: 0;
+}
+
+// Position: Vertical
+.pos--fill-v {
+  top: 0;
+  bottom: 0;
+}
+// Position: Vertical/horizontal
+.pos--fill {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+{% endhighlight %}
+
+###### Example
+{% highlight html %}
+<div class="ma2 mh4-md mv3-md"></div>
+{% endhighlight %}
