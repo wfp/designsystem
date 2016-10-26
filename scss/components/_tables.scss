@@ -13,8 +13,7 @@
 
   caption {
     color: $text-color;
-    text-align: center;
-    font-style: italic;
+    border-bottom: 2px solid $grey-lighter;
   }
 
   td, th {
