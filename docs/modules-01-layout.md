@@ -256,7 +256,7 @@ Various position states and values to help position elements as necessary. Uses 
 - **Responsive:** No
 
 {% highlight scss %}
-// Position: states
+// Position: States
 .pos--absolute {
   position: absolute;
 }
