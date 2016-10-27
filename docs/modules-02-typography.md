@@ -95,3 +95,17 @@ Use predefined styles on elements to control the font style.
 }
 
 {% endhighlight %}
+
+###  Text Decoration
+Use predefined styles on elements to control the font decoration style.
+**Responsive:** No
+
+.strike {
+  text-decoration: line-through;
+}
+.underline {
+  text-decoration: underline;
+}
+.no-decor {
+  text-decoration: none;
+}
