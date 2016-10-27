@@ -109,3 +109,23 @@ Use predefined styles on elements to control the font decoration style.
 .no-decor {
   text-decoration: none;
 }
+
+###  Text Transform
+Use predefined styles on elements to control the font transform style.
+**Responsive:** No
+
+.t-caps {
+  text-transform: capitalize;
+ }
+
+.t-allcaps  {
+  text-transform: uppercase;
+ }
+
+.t-lowcase  {
+  text-transform: lowercase;
+}
+
+.t-firstcap {
+  text-transform: capitalize;
+ }
