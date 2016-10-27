@@ -79,3 +79,19 @@ Predefined font size values, to maintain typography hierarchy. Uses exponentiati
 }
 
 {% endhighlight %}
+
+###  Font Style
+Use predefined styles on elements to control the font style.
+**Responsive:** No
+
+{% highlight scss %}
+// Font Size
+
+.fst-normal {
+  font-style: normal;
+}
+.fst-i {
+   font-style: italics;
+}
+
+{% endhighlight %}
