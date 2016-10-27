@@ -28,3 +28,28 @@ Use to alignment inline elements
   text-align: right;
 }
 {% endhighlight %}
+
+###  Font Weight
+Use on elements to control the font thickness. Increases incrementally from `1` to `9`, in addition shortcut classes are `normal` and `bold`.
+- **Responsive:** No
+
+{% highlight scss %}
+// Font Weight: Standard
+  .normal {
+    font-weight: normal;
+  }
+  .bold {
+    font-weight: bold;
+  }
+  // Font Weight: Increments
+  .fw--1 { font-weight: 100; }
+  .fw--2 { font-weight: 200; }
+  .fw--3 { font-weight: 300; }
+  .fw--4 { font-weight: 400; }
+  .fw--5 { font-weight: 500; }
+  .fw--6 { font-weight: 600; }
+  .fw--7 { font-weight: 700; }
+  .fw--8 { font-weight: 800; }
+  .fw--9 { font-weight: 900; }
+
+{% endhighlight %}
