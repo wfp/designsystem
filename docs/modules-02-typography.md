@@ -11,8 +11,7 @@ categories: Modules
 The following CSS classes allow you to control typography. Most of them are available in responsive variants.
 
 ### Alignment
-Use on containers to clear floats contained within.
-
+Use to alignment inline elements
 - **Responsive:** No
 
 {% highlight scss %}
