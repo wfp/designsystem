@@ -53,3 +53,16 @@ Use on elements to control the font thickness. Increases incrementally from `1` 
   .fw--9 { font-weight: 900; }
 
 {% endhighlight %}
+
+###  Font Size
+Predefined font size values, to maintain typography hierarchy. Uses exponentiation of base value `100`, and exponents (`n`) of between `100` and `900` (inclusive).
+- **Responsive:** Yes
+
+{% highlight scss %}
+// Font Size
+
+.fs(n) {
+  font-size: pow(100, n);
+}
+
+{% endhighlight %}
