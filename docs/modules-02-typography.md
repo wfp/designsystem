@@ -195,3 +195,20 @@ Use predefined styles on elements to control the font transform style.
  }
 
   {% endhighlight %}
+
+   ###  Tracking
+   Use predefined styles on elements to provide tracking (letter spacing).
+   **Responsive:** No
+
+   {% highlight scss %}
+   // Tracking
+   .tr-tight  {
+    letter-spacing: -0.03em;
+   }
+   .tr-loose  {
+     letter-spacing: 0.16em;
+   }
+   .tr-xloose {
+     letter-spacing: 0.32em;
+   }
+    {% endhighlight %}
