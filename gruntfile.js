@@ -89,7 +89,7 @@ module.exports = function(grunt) {
       options: {
         syntax: require('postcss-scss'),
         processors: [
-          require('autoprefixer')({ browsers: ['last 2 version'] }),
+          require('autoprefixer')({ browsers: ['last 3 version', 'ff >= 22', 'ie >= 11', 'Chrome >= 28', 'Safari >= 6'] }),
           require('pixrem')(),
           require('postcss-wcag-contrast')()
         ],
@@ -100,7 +100,7 @@ module.exports = function(grunt) {
       dist: {
         options: {
           processors: [
-            require('autoprefixer')({ browsers: ['last 2 version'] }),
+            require('autoprefixer')({ browsers: ['last 3 version', 'ff >= 22', 'ie >= 11', 'Chrome >= 28', 'Safari >= 6'] }),
             require('pixrem')(),
             require('postcss-wcag-contrast')(),
             require('cssnano')()
@@ -115,7 +115,7 @@ module.exports = function(grunt) {
       docs: {
         options: {
           processors: [
-            require('autoprefixer')({ browsers: ['last 2 version'] }),
+            require('autoprefixer')({ browsers: ['last 3 version', 'ff >= 22', 'ie >= 11', 'Chrome >= 28', 'Safari >= 6'] }),
             require('pixrem')()
           ]
         },
@@ -124,7 +124,7 @@ module.exports = function(grunt) {
       docsDist: {
         options: {
           processors: [
-            require('autoprefixer')({ browsers: ['last 2 version'] }),
+            require('autoprefixer')({ browsers: ['last 3 version', 'ff >= 22', 'ie >= 11', 'Chrome >= 28', 'Safari >= 6'] }),
             require('pixrem')(),
             require('cssnano')()
           ],
