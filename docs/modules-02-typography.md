@@ -162,6 +162,7 @@ Use predefined styles on elements to control the font transform style.
  .va-textbottom {
    vertical-align: text-bottom;  
  }
+
 // Table Alignment
  .va-mid {
    vertical-align: text-bottom;  
@@ -174,3 +175,23 @@ Use predefined styles on elements to control the font transform style.
  }
 
  {% endhighlight %}
+
+ ###  White space
+ Use predefined styles on elements to provide white space.
+ **Responsive:** No
+
+ {% highlight scss %}
+ // White space
+ .ws-normal {
+   white-space: normal;
+  }
+
+ .ws-nowrap  {
+   white-space: nowrap;
+  }
+
+ .ws-pre  {
+   white-space: pre;
+ }
+
+  {% endhighlight %}
