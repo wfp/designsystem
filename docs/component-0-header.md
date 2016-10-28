@@ -61,7 +61,7 @@ If the vertical space is limited (i.e.: on smaller viewports), you can substitut
         </picture>
       </a>
     </div>
-    <div class="wfp-u-1-3 wfp-u-sm-3-4 header--nav">
+    <div class="wfp-u-1-3 wfp-u-sm-3-4 header--nav pv3-lg pr2 pr0-lg">
       <button class="header--toggle" id="js-menu-ext-trigger">Menu</button>
       <nav class="header--menu" id="js-menu-ext">
         <ul class="menu--group">
