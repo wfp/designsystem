@@ -26,3 +26,13 @@ Use predefined colors agnostically.
   color: darken($primary, 12%);
 }
 {% endhighlight %}
+
+
+### Background Colours
+Use predefined colours and variant tints of `grey`, `blue` and `black`.
+- **Responsive:** No
+
+{% highlight scss %}
+// Black Tints
+
+{% endhighlight %}
