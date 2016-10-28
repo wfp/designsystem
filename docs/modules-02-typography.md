@@ -212,3 +212,20 @@ Use predefined styles on elements to control the font transform style.
      letter-spacing: 0.32em;
    }
     {% endhighlight %}
+
+    ###  Leading
+    Use predefined styles to provide standard, uniformed _line spacing_ styles for typography.
+    **Responsive:** Yes
+
+    {% highlight scss %}
+    // Leading
+    .lh-default {
+      line-height: 1;
+    }
+    .lh-heading {
+      line-height: 1.250;
+    }
+    .lh-body  {
+      line-height: 1.500;
+    }
+     {% endhighlight %}
