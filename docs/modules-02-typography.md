@@ -129,3 +129,34 @@ Use predefined styles on elements to control the font transform style.
 .t-firstcap {
   text-transform: capitalize;
  }
+
+ ###  Alignment
+ Use predefined styles on elements to control the vertical alignment (including table) style.
+ **Responsive:** No
+
+ // Vertical alignment
+ .va-base {
+   vertical-align: baseline;
+ }
+ .va-sub {
+   vertical-align: sub;
+ }
+ .va-sup {
+   vertical-align: super;
+ }
+ .va-texttop {
+   vertical-align: text-top;
+ }
+ .va-textbottom {
+   vertical-align: text-bottom;  
+ }
+// Table Alignment
+ .va-mid {
+   vertical-align: text-bottom;  
+ }
+ .va-top {
+   vertical-align: text-bottom;  
+ }
+ .va-bottom {
+   vertical-align: text-bottom;  
+ }
