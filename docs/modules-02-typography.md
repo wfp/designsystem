@@ -100,6 +100,9 @@ Use predefined styles on elements to control the font style.
 Use predefined styles on elements to control the font decoration style.
 **Responsive:** No
 
+{% highlight scss %}
+// Text decoration
+
 .strike {
   text-decoration: line-through;
 }
@@ -110,10 +113,14 @@ Use predefined styles on elements to control the font decoration style.
   text-decoration: none;
 }
 
+{% endhighlight %}
+
 ###  Text Transform
 Use predefined styles on elements to control the font transform style.
 **Responsive:** No
 
+{% highlight scss %}
+// Text decoration
 .t-caps {
   text-transform: capitalize;
  }
@@ -130,10 +137,15 @@ Use predefined styles on elements to control the font transform style.
   text-transform: capitalize;
  }
 
+ {% endhighlight %}
+
  ###  Alignment
  Use predefined styles on elements to control the vertical alignment (including table) style.
  **Responsive:** No
 
+
+ {% highlight scss %}
+ // Text Decoration
  // Vertical alignment
  .va-base {
    vertical-align: baseline;
@@ -160,3 +172,5 @@ Use predefined styles on elements to control the font transform style.
  .va-bottom {
    vertical-align: text-bottom;  
  }
+
+ {% endhighlight %}
