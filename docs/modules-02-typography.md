@@ -11,7 +11,7 @@ categories: Modules
 The following CSS classes allow you to control typography. Most of them are available in responsive variants.
 
 ### Alignment
-Use to alignment inline elements
+Use to alignment inline elements.
 
 - **Responsive:** Yes
 
