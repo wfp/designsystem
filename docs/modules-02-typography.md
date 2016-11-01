@@ -16,6 +16,7 @@ Use to alignment inline elements.
 - **Responsive:** Yes
 
 {% highlight scss %}
+// Default alignment
 .tl {
   text-align: left;
 }
@@ -24,6 +25,33 @@ Use to alignment inline elements.
 }
 .tr {
   text-align: right;
+}
+// Vertical alignment
+.va-base {
+  vertical-align: baseline;
+}
+.va-sub {
+  vertical-align: sub;
+}
+.va-sup {
+  vertical-align: super;
+}
+.va-texttop {
+  vertical-align: text-top;
+}
+.va-textbottom {
+  vertical-align: text-bottom;  
+}
+
+// Table Alignment
+.va-mid {
+  vertical-align: text-bottom;  
+}
+.va-top {
+  vertical-align: text-bottom;  
+}
+.va-bottom {
+  vertical-align: text-bottom;  
 }
 {% endhighlight %}
 
