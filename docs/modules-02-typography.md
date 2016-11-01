@@ -70,20 +70,6 @@ Predefined font size values, to maintain typography hierarchy. Uses exponentiati
 
 {% endhighlight %}
 
-###  Font Size
-Predefined font size values, to maintain typography hierarchy. Uses exponentiation of base value `100`, and exponents (`n`) of between `100` and `900` (inclusive).
-
-- **Responsive:** Yes
-
-{% highlight scss %}
-// Font Size
-
-.fs(n) {
-  font-size: pow(100, n);
-}
-
-{% endhighlight %}
-
 ###  Font Style
 Use predefined styles on elements to control the font style.
 
