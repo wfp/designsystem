@@ -16,15 +16,12 @@ Use to alignment inline elements
 - **Responsive:** Yes
 
 {% highlight scss %}
-.ta-left,
 .tl {
   text-align: left;
 }
-.ta-center,
 .tc {
   text-align: center;
 }
-.ta-right,
 .tr {
   text-align: right;
 }
