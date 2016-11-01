@@ -12,7 +12,7 @@ The following CSS classes allow you to control typography. Most of them are avai
 
 ### Alignment
 Use to alignment inline elements
-- **Responsive:** No
+- **Responsive:** Yes
 
 {% highlight scss %}
 .ta-left,
