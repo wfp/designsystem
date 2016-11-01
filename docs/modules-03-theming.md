@@ -11,6 +11,7 @@ The following CSS classes allow you to control theming.
 
 ### Colours
 Use predefined colors agnostically.
+
 - **Responsive:** No
 
 {% highlight scss %}
@@ -30,6 +31,7 @@ Use predefined colors agnostically.
 
 ### Background Colours
 Use predefined colours and variant tints of `grey`, `blue` and `black`.
+
 - **Responsive:** No
 
 {% highlight scss %}
@@ -38,6 +40,7 @@ Use predefined colours and variant tints of `grey`, `blue` and `black`.
 {% endhighlight %}
 
 ### Borders
+
 - **Responsive:** No
 
 {% highlight scss %}

@@ -12,6 +12,7 @@ The following CSS classes allow you to control typography. Most of them are avai
 
 ### Alignment
 Use to alignment inline elements
+
 - **Responsive:** Yes
 
 {% highlight scss %}
@@ -31,6 +32,7 @@ Use to alignment inline elements
 
 ###  Font Weight
 Use on elements to control the font thickness. Increases incrementally from `1` to `9`, in addition shortcut classes are `normal` and `bold`.
+
 - **Responsive:** No
 
 {% highlight scss %}
@@ -56,6 +58,7 @@ Use on elements to control the font thickness. Increases incrementally from `1` 
 
 ###  Font Size
 Predefined font size values, to maintain typography hierarchy. Uses exponentiation of base value `100`, and exponents (`n`) of between `100` and `900` (inclusive).
+
 - **Responsive:** Yes
 
 {% highlight scss %}
@@ -69,6 +72,7 @@ Predefined font size values, to maintain typography hierarchy. Uses exponentiati
 
 ###  Font Size
 Predefined font size values, to maintain typography hierarchy. Uses exponentiation of base value `100`, and exponents (`n`) of between `100` and `900` (inclusive).
+
 - **Responsive:** Yes
 
 {% highlight scss %}
@@ -82,7 +86,8 @@ Predefined font size values, to maintain typography hierarchy. Uses exponentiati
 
 ###  Font Style
 Use predefined styles on elements to control the font style.
-**Responsive:** No
+
+- **Responsive:** No
 
 {% highlight scss %}
 // Font Size
@@ -98,7 +103,8 @@ Use predefined styles on elements to control the font style.
 
 ###  Text Decoration
 Use predefined styles on elements to control the font decoration style.
-**Responsive:** No
+
+- **Responsive:** No
 
 {% highlight scss %}
 // Text decoration
@@ -117,7 +123,8 @@ Use predefined styles on elements to control the font decoration style.
 
 ###  Text Transform
 Use predefined styles on elements to control the font transform style.
-**Responsive:** No
+
+- **Responsive:** No
 
 {% highlight scss %}
 // Text decoration
@@ -141,7 +148,8 @@ Use predefined styles on elements to control the font transform style.
 
  ###  Alignment
  Use predefined styles on elements to control the vertical alignment (including table) style.
- **Responsive:** No
+
+- **Responsive:** No
 
 
  {% highlight scss %}
@@ -178,7 +186,8 @@ Use predefined styles on elements to control the font transform style.
 
  ###  White space
  Use predefined styles on elements to provide white space.
- **Responsive:** No
+
+ - **Responsive:** No
 
  {% highlight scss %}
  // White space
@@ -198,7 +207,8 @@ Use predefined styles on elements to control the font transform style.
 
    ###  Tracking
    Use predefined styles on elements to provide tracking (letter spacing).
-   **Responsive:** No
+
+-  **Responsive:** No
 
    {% highlight scss %}
    // Tracking
@@ -215,7 +225,8 @@ Use predefined styles on elements to control the font transform style.
 
     ###  Leading
     Use predefined styles to provide standard, uniformed _line spacing_ styles for typography.
-    **Responsive:** Yes
+
+-  **Responsive:** Yes
 
     {% highlight scss %}
     // Leading
