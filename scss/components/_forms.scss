@@ -81,7 +81,6 @@
       }
     }
 
-    &:required:invalid,
     &.invalid {
       margin-bottom: -1px;
       border-color: $orange;
@@ -142,7 +141,7 @@
     border-radius: 3px;
     box-shadow: 0 1px 3px rgba($black, 0.1);
     font-size: 100%;
-    line-height: 1.5;
+    // line-height: 1.5;
     vertical-align: baseline;
     transition: 0.3s linear border;
     position: relative;

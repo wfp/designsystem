@@ -225,7 +225,10 @@ $hyphen: unquote("-");
   }
 }
 
-.mc { @include margin(0 auto); }
+.mc {
+  margin-left: auto;
+  margin-right: auto;
+}
 
 @each $mq, $viewport in $mqs {
   @include media-query($viewport) {

@@ -10,14 +10,10 @@
   empty-cells: show;
   border: 0;
   width: 100%;
-  margin: 1em 0;
 
   caption {
     color: $text-color;
-    padding: 1em 0;
-    text-align: center;
-    font-size: 1em;
-    font-style: italic;
+    border-bottom: 2px solid $grey-lighter;
   }
 
   td, th {
@@ -26,7 +22,7 @@
     font-size: inherit;
     margin: 0;
     overflow: visible;
-    padding: 0.5em 1em;
+    padding: 0.5rem 1rem;
   }
 
   thead {
