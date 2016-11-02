@@ -68,9 +68,7 @@ $color-gplus: #dc4e41;
     background-color: darken($primary, 12%);
 
     &:hover {
-      color: $white;
       background-color: darken($primary, 20%);
-      border-color: rbga($black, 0.25);
     }
 
     &.active,
@@ -78,58 +76,8 @@ $color-gplus: #dc4e41;
     &.active:hover,
     &.active:active,
     &.active:focus {
-      background-color: darken($primary, 20%);
-      border-color: darken($primary, 25%);
-      color: $white;
-    }
-
-  } @else if $type == hollow {
-    color: $white;
-    background-color: transparent;
-    border: 2px solid $white;
-    box-shadow: none;
-    transition: 0.125s ease-in box-shadow,
-                0.125s ease-in background,
-                0.125s ease-in color;
-
-    &:hover {
-      color: darken($primary, 12%);
-      background-color: $white;
-      box-shadow: 0 1px 6px 0 rgba($black, 0.4);
-    }
-
-    &.active,
-    &:active,
-    &.active:hover,
-    &.active:active,
-    &.active:focus {
-      color: $white;
-      background-color: darken($primary, 12%);
-    }
-
-  } @else if $type == reverse {
-    color: darken($primary, 12%);
-    background-color: $white;
-    border: 2px solid $white;
-    transition: 0.125s ease-in box-shadow,
-                0.125s ease-in background,
-                0.125s ease-in color;
-
-    &:hover {
-      color: darken($primary, 25%);
-      background-color: $blue-lightest;
-      border-color: $blue-lightest;
-      box-shadow: 0 1px 6px 0 rgba($black, 0.4);
-    }
-
-    &.active,
-    &:active,
-    &.active:hover,
-    &.active:active,
-    &.active:focus {
-      color: darken($primary, 20%);
-      background-color: $white;
-      border: 2px solid $white;
+      background-color: darken($blue-darker, 15%);
+      border-color: darken($blue-darker, 15%);
     }
 
   } @else if $type == negative {
@@ -229,12 +177,6 @@ $color-gplus: #dc4e41;
   }
 }
 
-a {
-  &.wfp-btn {
-    @include button;
-  }
-}
-
 .wfp-btn {
   @include button;
 }
@@ -243,60 +185,16 @@ a {
   @include button(primary);
 }
 
-a {
-  &.wfp-btn--primary {
-    @include button(primary);
-  }
-}
-
-.wfp-btn--hollow {
-  @include button(hollow);
-}
-
-a {
-  &.wfp-btn--hollow {
-    @include button(hollow);
-  }
-}
-
-.wfp-btn--reverse {
-  @include button(reverse);
-}
-
-a {
-  &.wfp-btn--reverse {
-    @include button(reverse);
-  }
-}
-
 .wfp-btn--negative {
   @include button(negative);
-}
-
-a {
-  &.wfp-btn--negative {
-    @include button(negative);
-  }
 }
 
 .wfp-btn--positive {
   @include button(positive);
 }
 
-a {
-  &.wfp-btn--positive {
-    @include button(positive);
-  }
-}
-
 .wfp-btn--warning {
   @include button(warning);
-}
-
-a {
-  &.wfp-btn--warning {
-    @include button(warning);
-  }
 }
 
 // Social buttons
@@ -304,39 +202,15 @@ a {
   @include button(social, $color-twitter);
 }
 
-a {
-  &.wfp-btn--twitter {
-    @include button(social, $color-twitter);
-  }
-}
-
 .wfp-btn--facebook {
   @include button(social, $color-facebook);
-}
-
-a {
-  &.wfp-btn--facebook {
-    @include button(social, $color-facebook);
-  }
 }
 
 .wfp-btn--gplus {
   @include button(social, $color-gplus);
 }
 
-a {
-  &.wfp-btn--gplus {
-    @include button(social, $color-gplus);
-  }
-}
-
 // Header buttons
 .wfp-btn--head {
   @include button(head);
-}
-
-a {
-  .wfp-btn--head {
-    @include button(head);
-  }
 }

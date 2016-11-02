@@ -4,17 +4,6 @@
 // -----------------------------------------------------------------------------
 // Add spacing to the body tag, to compensate for a fixed masthead
 // -----------------------------------------------------------------------------
-.hs--int {
-  padding-top: 4rem;
-  overflow: auto;
-}
-
-.hs--ext {
-  padding-top: 6rem;
-  overflow: auto;
-}
-
-// DEV: OBSOLETE
 .wfp-header-spacer--narrow {
   overflow: auto;
   padding-top: 3.875rem;
@@ -22,6 +11,7 @@
 
 %masthead {
   position: relative;
+  // background-color: darken($primary, 12%);
   background-color: $primary;
   color: $white;
   box-shadow: rgba($black, 0.25) 0 1px 3px;
@@ -185,18 +175,20 @@
 }
 
 %header--nav {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
+  padding: 1rem;
+  text-align: right;
+
+  @include media-query($lg-screen) {
+    padding: 0.875rem 0;
+  }
 }
 
 %header--menu {
   position: absolute;
   right: 0;
-  top: 4rem;
+  top: 3.875rem;
   width: 100%;
   margin: 0;
-  line-height: 1;
 
   &.closed {
     @include transition-property(transform, opacity, visibility, z-index);
@@ -214,7 +206,6 @@
       z-index: auto;
       visibility: visible;
       opacity: 1;
-      flex: 0 0 auto;
     }
   }
 
@@ -398,19 +389,19 @@
 
   .header--menu {
     @extend %header--menu;
-    top: 6rem;
-    //
-    // &.closed {
-    //   transform: translate3d(0, -6rem, 0);
-    // }
+    top: 6.5rem;
+
+    &.closed {
+      transform: translate3d(0, -6.5rem, 0);
+    }
 
     @include media-query($lg-screen) {
       margin: 1.33rem 1rem;
       top: auto;
 
-      // &.closed {
-      //   transform: translate3d(0, 0, 0);
-      // }
+      &.closed {
+        transform: translate3d(0, 0, 0);
+      }
     };
   }
 

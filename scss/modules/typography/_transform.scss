@@ -14,9 +14,3 @@
 @mixin t-lowcase {
   text-transform: lowercase;
 }
-
-@mixin t-firstcap {
-  &::first-letter {
-    text-transform: capitalize;
-  }
-}

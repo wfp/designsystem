@@ -15,7 +15,7 @@ highlighter: rouge
 kramdown:
   input: GFM
 
-category-list: ["Basics", "Components", "Modules", "Patterns", "Resources", "Info"]
+category-list: ["Basics", "Components", "Patterns", "Resources", "Info"]
 
 # Defaults
 defaults:
