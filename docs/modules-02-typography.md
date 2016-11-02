@@ -10,7 +10,7 @@ categories: Modules
 
 The following CSS classes allow you to control typography. Most of them are available in responsive variants.
 
-### Alignment
+### Text Alignment
 Use to alignment inline elements.
 
 - **Responsive:** Yes
@@ -129,7 +129,7 @@ Use predefined styles on elements to control the font transform style.
 
 {% endhighlight %}
 
-###  Alignment
+###  Vertical Alignment
 Use predefined styles on elements to control the vertical alignment (including table) style.
 
 - **Responsive:** No
