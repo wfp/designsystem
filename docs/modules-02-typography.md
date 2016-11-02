@@ -33,14 +33,9 @@ Use on elements to control the font thickness. Increases incrementally from `1` 
 - **Responsive:** No
 
 {% highlight scss %}
-// Font Weight: Standard
-.normal {
-  font-weight: normal;
-}
-.bold {
-  font-weight: bold;
-}
-// Font Weight: Increments
+.normal { font-weight: normal; }
+.bold   { font-weight: bold; }
+
 .fw1 { font-weight: 100; }
 .fw2 { font-weight: 200; }
 .fw3 { font-weight: 300; }
@@ -50,7 +45,6 @@ Use on elements to control the font thickness. Increases incrementally from `1` 
 .fw7 { font-weight: 700; }
 .fw8 { font-weight: 800; }
 .fw9 { font-weight: 900; }
-
 {% endhighlight %}
 
 ###  Font Size
