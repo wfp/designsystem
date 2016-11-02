@@ -49,7 +49,7 @@ Use predefined colours and variant tints of `grey`, `blue` and `black`.
 {% endhighlight %}
 
 ### Box Shadow
-Predefined box-shadow values. Incrementally increasing with intensity.
+Predefined box-shadow values.
 
 - **Responsive:** No
 
