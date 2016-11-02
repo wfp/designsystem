@@ -156,10 +156,10 @@ Use predefined styles on elements to control the vertical alignment (including t
 
 // Table Alignment
 .va-mid {
-  vertical-align: text-bottom;  
+  vertical-align: text-middle;  
 }
 .va-top {
-  vertical-align: text-bottom;  
+  vertical-align: text-top;  
 }
 .va-bottom {
   vertical-align: text-bottom;  
