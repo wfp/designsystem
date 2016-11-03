@@ -63,7 +63,7 @@
 @mixin overflow-wrapper {
   overflow: auto;
   overflow-x: scroll;
-  white-space: nowrap;
+  white-space: normal;
   word-wrap: normal;
 }
 
