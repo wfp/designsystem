@@ -94,9 +94,17 @@
 
 .icon-favorite-true-light { background-image: url('png/favorite-true-light.png'); background-repeat: no-repeat; }
 
+.icon-file-dark { background-image: url('png/file-dark.png'); background-repeat: no-repeat; }
+
+.icon-file-light { background-image: url('png/file-light.png'); background-repeat: no-repeat; }
+
 .icon-flag-dark { background-image: url('png/flag-dark.png'); background-repeat: no-repeat; }
 
 .icon-flag-light { background-image: url('png/flag-light.png'); background-repeat: no-repeat; }
+
+.icon-folder-dark { background-image: url('png/folder-dark.png'); background-repeat: no-repeat; }
+
+.icon-folder-light { background-image: url('png/folder-light.png'); background-repeat: no-repeat; }
 
 .icon-grade-neg-dark { background-image: url('png/grade-neg-dark.png'); background-repeat: no-repeat; }
 
