@@ -31,11 +31,11 @@ You can check [support for `base64`](http://caniuse.com/#feat=atob-btoa) and [SV
 ###### CDN
 {% highlight html %}
 <!-- For modern browsers with SVG support -->
-<link rel="stylesheet" href="http://cdn.wfp.org/libraries/wfpui/v0.8.0/assets/icons/ui/ui-icons.svg.css">
+<link rel="stylesheet" href="http://cdn.wfp.org/libraries/wfpui/{{ site.version }}/assets/icons/ui/ui-icons.svg.css">
 <!-- For browsers without SVG support -->
-<link rel="stylesheet" href="http://cdn.wfp.org/libraries/wfpui/v0.8.0/assets/icons/ui/ui-icons.png.css">
+<link rel="stylesheet" href="http://cdn.wfp.org/libraries/wfpui/{{ site.version }}/assets/icons/ui/ui-icons.png.css">
 <!-- IE8-9 Fallback -->
-<link rel="stylesheet" href="http://cdn.wfp.org/libraries/wfpui/v0.8.0/assets/icons/ui/ui-icons.fallback.css">
+<link rel="stylesheet" href="http://cdn.wfp.org/libraries/wfpui/{{ site.version }}/assets/icons/ui/ui-icons.fallback.css">
 {% endhighlight %}
 
 Add UI icons to your interfaces using `<span>` element with a class `icon-{icon-name}`, where `{icon-name}` means a corresponding name of the icon listed in a preview below (or in the package).
