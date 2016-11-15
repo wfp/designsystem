@@ -13,7 +13,7 @@ As part of WFP UI, we maintain our own `bootstrap-theme.css`, which is a drop-in
 <!-- Bower -->
 <link rel="stylesheet" href="bower_components/wfp-ui/dist/css/bootstrap-theme.css">
 <!-- WFP CDN -->
-<link rel="stylesheet" href="http://cdn.wfp.org/libraries/wfpui/v0.8.0/css/bootstrap-theme.css">
+<link rel="stylesheet" href="http://cdn.wfp.org/libraries/wfpui/{{ site.version }}/css/bootstrap-theme.css">
 {% endhighlight %}
 
 <div class="notice">

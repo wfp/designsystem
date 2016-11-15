@@ -134,7 +134,7 @@ Internal header features a simple navigation, which works on both smaller and bi
 To ensure the navigation works correctly, include our fork of `responsive-nav` library to the bottom of your page, before the closing `body` tag. You can load it locally, from WFP UI `dist` directory, or from our CDN:
 
 {% highlight html %}
-<script src="http://cdn.wfp.org/libraries/wfpui/v0.8.0/js/responsive-nav.min.js" defer></script>
+<script src="http://cdn.wfp.org/libraries/wfpui/{{ site.version }}/js/responsive-nav.min.js" defer></script>
 <script>
   var nav = responsiveNav("#js-nav", {
     customToggle: "js-nav-trigger", // menu toggle
