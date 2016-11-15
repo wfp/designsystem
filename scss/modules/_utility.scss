@@ -41,7 +41,8 @@
 // Wrappers
 // -----------------------------------------------------------------------------
 @mixin wrapper {
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
   max-width: $content-width;
 
   @include media-query($xl-screen) {
@@ -62,7 +63,7 @@
 @mixin overflow-wrapper {
   overflow: auto;
   overflow-x: scroll;
-  white-space: nowrap;
+  white-space: normal;
   word-wrap: normal;
 }
 

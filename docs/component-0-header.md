@@ -25,13 +25,15 @@ If the vertical space is limited (i.e.: on smaller viewports), you can substitut
 
 ###### Preview
 <header class="wfp-header-ext">
-  <div class="wfp-grid wfp-wrapper">
+  <div class="wfp-grid wfp-wrapper" role="banner">
     <div class="wfp-u-2-3 wfp-u-sm-1-4 header--container">
-      <h1 class="header--title">
-        <a href="#" class="header--logo">
-          <img src="{{ base }}/img/logos/light/png/1x/en-standard.png" srcset="{{ base }}/img/logos/light/png/1x/en-standard.png 1x, {{ base }}/img/logos/light/png/2x/en-standard.png 2x" alt="UN World Food Programme">
-        </a>
-      </h1>
+      <a href="#" class="header--logo db pv2 mv1">
+        <picture class="db w-100">
+          <source srcset="{{ base }}/img/logos/light/png/1x/en-standard.png 1x, {{ base }}/img/logos/light/png/2x/en-standard.png 2x" media="(max-width: 767px)">
+          <source srcset="{{ base }}/img/logos/light/png/1x/en-full.png 1x, {{ base }}/img/logos/light/png/2x/en-full.png 2x" media="(min-width: 768px)">
+          <img src="{{ base }}/img/logos/light/png/1x/en-standard.png" alt="UN World Food Programme">
+        </picture>
+      </a>
     </div>
     <div class="wfp-u-1-3 wfp-u-sm-3-4 header--nav">
       <button class="header--toggle" id="js-menu-ext-trigger">Menu</button>
@@ -42,11 +44,6 @@ If the vertical space is limited (i.e.: on smaller viewports), you can substitut
           <li class="menu--item"><a href="#" class="menu--link">Navlink #3</a></li>
         </ul>
       </nav>
-      <div class="header--misc">
-        <div class="header--search">
-          <input type="search" class="header--input" placeholder="Search">
-        </div>
-      </div>
     </div>
   </div>
 </header>
@@ -54,30 +51,25 @@ If the vertical space is limited (i.e.: on smaller viewports), you can substitut
 ###### Source
 {% highlight html %}
 <header class="wfp-header-ext">
-  <div class="wfp-grid wfp-wrapper">
+  <div class="wfp-grid wfp-wrapper" role="banner">
     <div class="wfp-u-2-3 wfp-u-sm-1-4 header--container">
-      <h1 class="header--title">
-        <a href="#" class="header--logo">
-          <img src="en-standard.png" srcset="en-standard.png 1x, en-standard@2x.png 2x" alt="UN World Food Programme">
-        </a>
-      </h1>
+      <a href="#" class="header--logo db pv2 mv1">
+        <picture class="db w-100">
+          <source srcset="{{ base }}/img/logos/light/png/1x/en-standard.png 1x, {{ base }}/img/logos/light/png/2x/en-standard.png 2x" media="(max-width: 767px)">
+          <source srcset="{{ base }}/img/logos/light/png/1x/en-full.png 1x, {{ base }}/img/logos/light/png/2x/en-full.png 2x" media="(min-width: 768px)">
+          <img src="{{ base }}/img/logos/light/png/1x/en-standard.png" alt="UN World Food Programme">
+        </picture>
+      </a>
     </div>
-    <div class="wfp-u-1-3 wfp-u-sm-3-4 header--nav">
-      <button class="header--toggle" id="js-example-menu-trigger">Menu</button>
-      <nav class="header--menu" id="js-example-menu">
+    <div class="wfp-u-1-3 wfp-u-sm-3-4 header--nav pv3-lg pr2 pr0-lg">
+      <button class="header--toggle" id="js-menu-ext-trigger">Menu</button>
+      <nav class="header--menu" id="js-menu-ext">
         <ul class="menu--group">
           <li class="menu--item"><a href="#" class="menu--link active">Navlink #1</a></li>
           <li class="menu--item"><a href="#" class="menu--link">Navlink #2</a></li>
           <li class="menu--item"><a href="#" class="menu--link">Navlink #3</a></li>
-          <li class="menu--item"><a href="#" class="menu--link">Navlink #4</a></li>
-          <li class="menu--item"><a href="#" class="menu--link">Navlink #5</a></li>
         </ul>
       </nav>
-      <div class="header--misc">
-        <div class="header--search">
-          <input type="search" class="header--input" placeholder="Search">
-        </div>
-      </div>
     </div>
   </div>
 </header>
@@ -136,13 +128,13 @@ Internal header features a simple navigation, which works on both smaller and bi
 
 <div class="notice">
   <h2 class="title">Header Position</h2>
-  <p>You can also set header component to stay fixed to the top of your page, by adding <code>wfp-header-spacer--narrow</code> class to your <code>body</code> tag (for extra spacing), and class <code>fixed</code> to <code>header-int</code> element.</p>
+  <p>You can also set header component to stay fixed to the top of your page, by adding <code>hs--int</code> (for <code>header-int</code>) or <code>hs--ext</code> (for <code>header-ext</code>) class to your <code>body</code> tag (for extra spacing), and class <code>fixed</code> to <code>header-int</code> element.</p>
 </div>
 
 To ensure the navigation works correctly, include our fork of `responsive-nav` library to the bottom of your page, before the closing `body` tag. You can load it locally, from WFP UI `dist` directory, or from our CDN:
 
 {% highlight html %}
-<script src="http://cdn.wfp.org/libraries/wfpui/v0.8.0/js/responsive-nav.min.js" defer></script>
+<script src="http://cdn.wfp.org/libraries/wfpui/{{ site.version }}/js/responsive-nav.min.js" defer></script>
 <script>
   var nav = responsiveNav("#js-nav", {
     customToggle: "js-nav-trigger", // menu toggle

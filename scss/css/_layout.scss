@@ -149,15 +149,15 @@ $hyphen: unquote("-");
 // Full width
 .mw-100  { @include mw(10); }
 // Disable max-width
-.mw-none { @include max-width(none); }
+.mw-none { max-width: none; }
 
 @each $mq, $viewport in $mqs {
   @include media-query($viewport) {
     @for $i from 1 through length($spacing) {
       .mw#{$i}#{$hyphen}#{$mq} { @include mw($i); }
     }
-    .mw-100-#{mq}  { @include mw(10); }
-    .mw-none-#{mq} { @include max-width(none); }
+    .mw-100-#{$mq}  { @include mw(10); }
+    .mw-none-#{$mq} { max-width: none; }
   }
 }
 

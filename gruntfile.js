@@ -89,7 +89,7 @@ module.exports = function(grunt) {
       options: {
         syntax: require('postcss-scss'),
         processors: [
-          require('autoprefixer')({ browsers: ['last 2 version'] }),
+          require('autoprefixer')({ browsers: ['last 3 version', 'ff >= 22', 'ie >= 11', 'Chrome >= 28', 'Safari >= 6'] }),
           require('pixrem')(),
           require('postcss-wcag-contrast')()
         ],
@@ -100,7 +100,7 @@ module.exports = function(grunt) {
       dist: {
         options: {
           processors: [
-            require('autoprefixer')({ browsers: ['last 2 version'] }),
+            require('autoprefixer')({ browsers: ['last 3 version', 'ff >= 22', 'ie >= 11', 'Chrome >= 28', 'Safari >= 6'] }),
             require('pixrem')(),
             require('postcss-wcag-contrast')(),
             require('cssnano')()
@@ -115,7 +115,7 @@ module.exports = function(grunt) {
       docs: {
         options: {
           processors: [
-            require('autoprefixer')({ browsers: ['last 2 version'] }),
+            require('autoprefixer')({ browsers: ['last 3 version', 'ff >= 22', 'ie >= 11', 'Chrome >= 28', 'Safari >= 6'] }),
             require('pixrem')()
           ]
         },
@@ -124,7 +124,7 @@ module.exports = function(grunt) {
       docsDist: {
         options: {
           processors: [
-            require('autoprefixer')({ browsers: ['last 2 version'] }),
+            require('autoprefixer')({ browsers: ['last 3 version', 'ff >= 22', 'ie >= 11', 'Chrome >= 28', 'Safari >= 6'] }),
             require('pixrem')(),
             require('cssnano')()
           ],
@@ -167,11 +167,10 @@ module.exports = function(grunt) {
         }
       }
     },
-    svgtoolkit: {
+    svgcolorify: {
       light: {
         options: {
-          generatePNGs: false,
-          colorize: '#ffffff'
+          colorify: '#ffffff'
         },
         files: [{
           expand: true,
@@ -182,8 +181,7 @@ module.exports = function(grunt) {
       },
       dark: {
         options: {
-          generatePNGs: false,
-          colorize: '#232323'
+          colorify: '#232323'
         },
         files: [{
           expand: true,
@@ -194,8 +192,7 @@ module.exports = function(grunt) {
       },
       primary: {
         options: {
-          generatePNGs: false,
-          colorize: '#2A93FC'
+          colorify: '#0374e6'
         },
         files: [{
           expand: true,
@@ -287,7 +284,7 @@ module.exports = function(grunt) {
     htmlaudit: {
       default: {
         options: {
-          baseUri: 'http://cdn.wfp.org/guides/ui/v0.11.0/'
+          baseUri: 'http://cdn.wfp.org/guides/ui/v0.12.0/'
         },
         src: './dist/docs/*.html'
       },
@@ -323,11 +320,11 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-postcss');
   grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-sass-lint');
-  grunt.loadNpmTasks('grunt-svg-toolkit');
+  grunt.loadNpmTasks('grunt-svg-colorify');
   grunt.loadNpmTasks('grunt-pure-grids');
 
   // Build SVGs and SCSS
-  grunt.registerTask('gen-svg', ['clean:svg', 'svgtoolkit', 'datauri', 'clean:svg']);
+  grunt.registerTask('gen-svg', ['clean:svg', 'svgcolorify', 'datauri', 'clean:svg']);
   // Build Grunticon Icons
   grunt.registerTask('gen-icons', ['clean:grunticon', 'grunticon']);
   // Build WFP UI Docs locally
