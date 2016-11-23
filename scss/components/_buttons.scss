@@ -7,7 +7,9 @@ $color-facebook: #3b5998;
 $color-gplus: #dc4e41;
 
 @mixin button($type: default, $color: $grey-dark) {
-  @include transition(0.1s border ease-in-out, 0.1s background ease-in-out, 0.1s color ease-in-out);
+  transition: 0.1s border ease-in-out,
+              0.1s background ease-in-out,
+              0.1s color ease-in-out;
   display: inline-block;
   padding: 0.5rem 1rem;
   font-family: inherit;

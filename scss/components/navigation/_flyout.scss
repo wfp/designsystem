@@ -68,12 +68,12 @@
   }
 
   &.closed {
-    @include transition(transform, 0.25s, 0s, cubic-bezier(0.4, 0, 1, 1));
+    transition: transform 0.25s 0s cubic-bezier(0.4, 0, 1, 1);
     transform: translate3d(320px, 0, 0);
   }
 
   &.opened {
-    @include transition(transform, 0.25s, 0s, cubic-bezier(0.15, 1.23, 0.84, 1.04));
+    transition: transform 0.25s 0s cubic-bezier(0.15, 1.23, 0.84, 1.04);
     transform: translate3d(0, 0, 0);
   }
 }
