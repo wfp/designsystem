@@ -5,10 +5,7 @@
     "James Home <james@jameshome.co> (http://jrah.github.io)"
   ],
   "description": "WFP UI",
-  "main": [
-    "scss/wfpui.scss",
-    "scss/wfpui+grid.scss"
-  ],
+  "main": "scss/core.scss",
   "keywords": [
     "ui",
     "interface",
