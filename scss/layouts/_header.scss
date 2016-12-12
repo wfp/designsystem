@@ -14,7 +14,8 @@
   overflow: auto;
 }
 
-// DEV: OBSOLETE
+// NOTE: OBSOLETE DECLARATION
+// FIXME: Remove once ready for v1.0.0
 .wfp-header-spacer--narrow {
   overflow: auto;
   padding-top: 3.875rem;
@@ -197,6 +198,7 @@
   width: 100%;
   margin: 0;
   line-height: 1;
+  box-shadow: rgba($black, 0.2) 0 1px 8px;
 
   &.closed {
     transition: transform 0.25s 0s cubic-bezier(0.4, 0, 1, 1),
@@ -236,14 +238,14 @@
   .menu--group {
     @include nolist;
     text-align: initial;
-    background-color: $grey-darker;
+    background-color: $white;
   }
 
   .menu--item {
     display: block;
     padding: 0;
     margin: 0;
-    border-bottom: 1px solid lighten($grey-darker, 5%);
+    // border-bottom: 1px solid $grey-lighter;
 
     &:last-child {
       border-bottom: 0;
@@ -252,17 +254,40 @@
 
   .menu--link {
     display: block;
-    border-bottom-color: transparent;
-    color: $grey-light;
-    padding: 0.5rem 1rem;
+    background-color: darken($primary, 12%);
+    border-bottom-color: darken($primary, 12%);
+    color: $white;
+    font-weight: bold;
+    padding: 1rem;
     line-height: 1.2;
+
+    &:not(:only-child)::after {
+      @extend %icon-light-arrow-drop-down;
+      display: inline-block;
+      height: 1.5rem;
+      width: 1.5rem;
+      content: "";
+      vertical-align: bottom;
+      margin-top: -0.125rem;
+      float: right;
+
+      @include media-query($lg-screen) {
+        content: none;
+        display: none;
+      }
+    }
+
+    @include media-query($lg-screen) {
+      background-color: transparent;
+      border-bottom-color: transparent;
+    }
   }
 
   @include media-query($lg-screen) {
     @include menu-flat;
-    // @include mh(0);
     @include margin(0.33rem 0);
     background-color: transparent;
+    box-shadow: none;
     position: static;
     width: auto;
 
@@ -282,6 +307,8 @@
 
     .menu--link {
       padding: 0;
+      margin: 0 0.25rem;
+      font-weight: normal;
 
       &:active,
       &.active {
@@ -405,7 +432,7 @@
     // }
 
     @include media-query($lg-screen) {
-      margin: 1.33rem 1rem;
+      margin: 1.25rem 1rem;
       top: auto;
 
       // &.closed {
