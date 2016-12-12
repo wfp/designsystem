@@ -135,11 +135,11 @@ $color-gplus: #dc4e41;
 
   } @else if $type == negative {
     color: $white;
-    background-color: desaturate(darken($red, 15%), 40%);
+    background-color: darken($red, 5%);
 
     &:hover,
     &:active {
-      background-color: desaturate(darken($red, 20%), 40%);
+      background-color: darken($red, 10%);
     }
   } @else if $type == warning {
     color: darken($orange, 50%);
