@@ -29,9 +29,8 @@
 }
 
 @mixin menu--link {
-  @include lh-body;
   @include padding(0 0.75rem);
-  // @include height(1.5rem);
+  line-height: 1.450;
   display: block;
   color: darken($primary, 12%);
   border-bottom-color: transparent;

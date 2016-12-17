@@ -16,7 +16,7 @@
       margin-bottom: 1rem;
       padding-bottom: 0;
       border-bottom: 1px solid #fdeca8;
-      font-size: 0.875em;
+      font-size: 0.875rem;
     }
     .block {
       display: block;
@@ -24,39 +24,231 @@
     }
   </style>
 </head>
-<body class="wfp-header-spacer--narrow">
+<body class="hs--ext">
 
-  <header class="wfp-header-int fixed">
-    <div class="wfp-grid wfp-wrapper">
+  <header class="wfp-header-ext fixed">
+    <div class="wfp-grid wfp-wrapper relative" role="banner">
       <div class="wfp-u-3-5 wfp-u-md-1-3 header--container">
-        <h1 class="header--title"><a href="/" class="header--logo">Test Project</a></h1>
+        <a href="#" class="header--logo db pv2 mv1 ml2 ml0-lg">
+          <img src="http://cdn.wfp.org/libraries/wfpui/v0.14.0/assets/logos/light/svg/en-standard.svg" alt="WFP Logo (English)">
+        </a>
       </div>
-      <div class="wfp-u-2-5 wfp-u-md-2-3 header--nav">
-        <button class="header--btn" id="js-nav-trigger">Menu</button>
-        <div class="main-nav flyout closed">
-          <button class="nav-close" id="js-nav-close"><span class="close-icon">&#x2715;</span>Close</button>
-          <nav class="wfp-menu-inverse">
-            <div class="menu--group">
-              <h2 class="menu--heading">Menu</h2>
-              <ul class="menu--wrapper">
-                <li><a class="menu--item" href="./basics/principles/">Menu 1</a></li>
-                <li><a class="menu--item" href="./basics/branding/">Menu 2</a></li>
-                <li><a class="menu--item" href="./basics/typography/">Menu 3</a></li>
-                <li><a class="menu--item" href="./basics/content/">Menu 4</a></li>
-                <li><a class="menu--item" href="./basics/getting-started/">Menu 5</a></li>
-              </ul>
-            </div>
-            <div class="menu--group">
-              <h2 class="menu--heading">Menu</h2>
-              <ul class="menu--wrapper">
-                <li><a class="menu--item" href="./about/">Menu 1</a></li>
-              </ul>
-            </div>
-          </nav>
-        </div>
+      <div class="wfp-u-2-5 wfp-u-md-2-3 header--nav pv3-lg pr2 pr0-lg">
+        <button class="header--toggle" id="js-nav-trigger">Menu</button>
+        <nav class="header--menu closed" id="js-nav">
+          <ul class="menu--group">
+            <li class="menu--item">
+              <a href="#" class="menu--link">Who we are</a>
+              <div class="menu--submenu wfp-grid dn left-0 right-0">
+                <div class="submenu--wrap wfp-u-1 wfp-u-lg-1-3 pl0-lg">
+                  <h3 class="submenu--title fs6 mv0 lh-title">Overview</h3>
+                  <ul class="submenu--group nl pa0">
+                    <li class="group--item"><a href="#" class="group--link">Mission and values</a></li>
+                    <li class="group--item"><a href="#" class="group--link">Corporate strategy</a></li>
+                    <li class="group--item"><a href="#" class="group--link">Governance and leadership</a></li>
+                    <li class="group--item"><a href="#" class="group--link">History</a></li>
+                    <li class="group--item"><a href="#" class="group--link">Goodwill ambassadors</a></li>
+                  </ul>
+                </div>
+                <div class="submenu--wrap wfp-u-1 wfp-u-lg-1-3 pl3-lg">
+                  <h3 class="submenu--title fs6 mv0 lh-title">Partnerships</h3>
+                  <ul class="submenu--group nl pa0">
+                    <li class="group--item"><a href="#" class="group--link">Governments</a></li>
+                    <li class="group--item"><a href="#" class="group--link">Non-governmental organizations</a></li>
+                    <li class="group--item"><a href="#" class="group--link">Private sector</a></li>
+                    <li class="group--item"><a href="#" class="group--link">UN agencies and international institutions</a></li>
+                    <li class="group--item"><a href="#" class="group--link">Clusters and multi-stakeholder partnerships</a></li>
+                    <li class="group--item"><a href="#" class="group--link">Academia and think tanks</a></li>
+                  </ul>
+                </div>
+                <div class="submenu--wrap wfp-u-1 wfp-u-lg-1-3 pl3-lg">
+                  <h3 class="submenu--title fs6 mv0 lh-title">Transparency &amp; Accountability</h3>
+                  <ul class="submenu--group nl pa0">
+                    <li class="group--item"><a href="#" class="group--link">Finances and donors</a></li>
+                    <li class="group--item"><a href="#" class="group--link">Accountability to populations</a></li>
+                    <li class="group--item"><a href="#" class="group--link">Oversight</a></li>
+                    <li class="group--item"><a href="#" class="group--link">Independent evaluation</a></li>
+                    <li class="group--item"><a href="#" class="group--link">International aid transparency initiative</a></li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li class="menu--item">
+              <a href="#" class="menu--link">Our work</a>
+              <div class="menu--submenu wfp-grid dn left-0 right-0 pa3-lg">
+                <div class="submenu--wrap wfp-u-1 wfp-u-lg-1-3 pl0-lg">
+                  <h3 class="submenu--title fs6 mv0 lh-title">What we do</h3>
+                  <ul class="submenu--group nl pa0">
+                    <li class="group--item"><a href="#" class="group--link">Food assistance: cash-based and in-kind</a></li>
+                    <li class="group--item"><a href="#" class="group--link">Resilience building</a></li>
+                    <li class="group--item"><a href="#" class="group--link">Emergency preparedness and response</a></li>
+                    <li class="group--item"><a href="#" class="group--link">Shared humanitarian services</a></li>
+                    <li class="group--item"><a href="#" class="group--link">Country capacity strengthening</a></li>
+                    <li class="group--item"><a href="#" class="group--link">South-South cooperation</a></li>
+                  </ul>
+                </div>
+                <div class="submenu--wrap wfp-u-1 wfp-u-lg-1-3 pl3-lg">
+                  <h3 class="submenu--title fs6 mv0 lh-title">How we work</h3>
+                  <ul class="submenu--group nl pa0">
+                    <li class="group--item"><a href="#" class="group--link">Country strategic planning</a></li>
+                    <li class="group--item"><a href="#" class="group--link">Analyses and assessments</a></li>
+                    <li class="group--item"><a href="#" class="group--link">Programme design</a></li>
+                    <li class="group--item"><a href="#" class="group--link">Types of support</a></li>
+                    <li class="group--item"><a href="#" class="group--link">Supply chain</a></li>
+                    <li class="group--item"><a href="#" class="group--link">Monitoring, evaluation and learning</a></li>
+                  </ul>
+                </div>
+                <div class="submenu--wrap wfp-u-1 wfp-u-lg-1-3 pl3-lg">
+                  <h3 class="submenu--title fs6 mv0 lh-title">Focus areas</h3>
+                  <ul class="submenu--group nl pa0">
+                    <li class="group--item"><a href="#" class="group--link">Zero hungers</a></li>
+                    <li class="group--item"><a href="#" class="group--link">Agricultural market support</a></li>
+                    <li class="group--item"><a href="#" class="group--link">Climate change</a></li>
+                    <li class="group--item"><a href="#" class="group--link">Gender equality</a></li>
+                    <li class="group--item"><a href="#" class="group--link">Nutrition</a></li>
+                    <li class="group--item"><a href="#" class="group--link">Social protection and safety nets</a></li>
+                    <li class="group--item"><a href="#" class="group--link">Sustainable livelihoods and ecosystem</a></li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li class="menu--item">
+              <a href="#" class="menu--link">Where we work</a>
+              <div class="menu--submenu wfp-grid dn left-0 right-0 pa3-lg">
+                <div class="submenu--wrap wfp-u-1 wfp-u-lg-4-5 pl0-lg">
+                  <h3 class="submenu--title fs6 mv0 lh-title dn db-lg">Countries</h3>
+                  <div class="submenu--group ph3 pv2 dn-lg">
+                    <p>
+                      <a href="#" class="wfp-btn small bold tc">See all countries</a>
+                    </p>
+                  </div>
+                  <ul class="submenu--group wfp-grid nl pa0 dn db-lg">
+                    <div class="wfp-u-md-1-5">
+                      <li class="group--item"><a href="#" class="group--link">Afghanistan</a></li>
+                      <li class="group--item"><a href="#" class="group--link">Algeria</a></li>
+                      <li class="group--item"><a href="#" class="group--link">Armenia</a></li>
+                      <li class="group--item"><a href="#" class="group--link">Bangladesh</a></li>
+                      <li class="group--item"><a href="#" class="group--link">Benin</a></li>
+                      <li class="group--item"><a href="#" class="group--link">Bhutan</a></li>
+                      <li class="group--item"><a href="#" class="group--link">Bolivia</a></li>
+                      <li class="group--item"><a href="#" class="group--link">Burkina Faso</a></li>
+                      <li class="group--item"><a href="#" class="group--link">Burundi</a></li>
+                      <li class="group--item"><a href="#" class="group--link">Cambodia</a></li>
+                      <li class="group--item"><a href="#" class="group--link">Cameroon</a></li>
+                      <li class="group--item"><a href="#" class="group--link">Central African Republic</a></li>
+                      <li class="group--item"><a href="#" class="group--link">Chad</a></li>
+                      <li class="group--item"><a href="#" class="group--link">Colombia</a></li>
+                      <li class="group--item"><a href="#" class="group--link">Congo, Dem. Republic of</a></li>
+                      <li class="group--item"><a href="#" class="group--link">Congo, Republic of</a></li>
+                    </div>
+                    <div class="wfp-u-md-1-5">
+                      <li class="group--item"><a href="#" class="group--link">Afghanistan</a></li>
+                      <li class="group--item"><a href="#" class="group--link">Algeria</a></li>
+                      <li class="group--item"><a href="#" class="group--link">Armenia</a></li>
+                      <li class="group--item"><a href="#" class="group--link">Bangladesh</a></li>
+                      <li class="group--item"><a href="#" class="group--link">Benin</a></li>
+                      <li class="group--item"><a href="#" class="group--link">Bhutan</a></li>
+                      <li class="group--item"><a href="#" class="group--link">Bolivia</a></li>
+                      <li class="group--item"><a href="#" class="group--link">Burkina Faso</a></li>
+                      <li class="group--item"><a href="#" class="group--link">Burundi</a></li>
+                      <li class="group--item"><a href="#" class="group--link">Cambodia</a></li>
+                      <li class="group--item"><a href="#" class="group--link">Cameroon</a></li>
+                      <li class="group--item"><a href="#" class="group--link">Central African Republic</a></li>
+                      <li class="group--item"><a href="#" class="group--link">Chad</a></li>
+                      <li class="group--item"><a href="#" class="group--link">Colombia</a></li>
+                      <li class="group--item"><a href="#" class="group--link">Congo, Dem. Republic of</a></li>
+                      <li class="group--item"><a href="#" class="group--link">Congo, Republic of</a></li>
+                    </div>
+                    <div class="wfp-u-md-1-5">
+                      <li class="group--item"><a href="#" class="group--link">Afghanistan</a></li>
+                      <li class="group--item"><a href="#" class="group--link">Algeria</a></li>
+                      <li class="group--item"><a href="#" class="group--link">Armenia</a></li>
+                      <li class="group--item"><a href="#" class="group--link">Bangladesh</a></li>
+                      <li class="group--item"><a href="#" class="group--link">Benin</a></li>
+                      <li class="group--item"><a href="#" class="group--link">Bhutan</a></li>
+                      <li class="group--item"><a href="#" class="group--link">Bolivia</a></li>
+                      <li class="group--item"><a href="#" class="group--link">Burkina Faso</a></li>
+                      <li class="group--item"><a href="#" class="group--link">Burundi</a></li>
+                      <li class="group--item"><a href="#" class="group--link">Cambodia</a></li>
+                      <li class="group--item"><a href="#" class="group--link">Cameroon</a></li>
+                      <li class="group--item"><a href="#" class="group--link">Central African Republic</a></li>
+                      <li class="group--item"><a href="#" class="group--link">Chad</a></li>
+                      <li class="group--item"><a href="#" class="group--link">Colombia</a></li>
+                      <li class="group--item"><a href="#" class="group--link">Congo, Dem. Republic of</a></li>
+                      <li class="group--item"><a href="#" class="group--link">Congo, Republic of</a></li>
+                    </div>
+                    <div class="wfp-u-md-1-5">
+                      <li class="group--item"><a href="#" class="group--link">Afghanistan</a></li>
+                      <li class="group--item"><a href="#" class="group--link">Algeria</a></li>
+                      <li class="group--item"><a href="#" class="group--link">Armenia</a></li>
+                      <li class="group--item"><a href="#" class="group--link">Bangladesh</a></li>
+                      <li class="group--item"><a href="#" class="group--link">Benin</a></li>
+                      <li class="group--item"><a href="#" class="group--link">Bhutan</a></li>
+                      <li class="group--item"><a href="#" class="group--link">Bolivia</a></li>
+                      <li class="group--item"><a href="#" class="group--link">Burkina Faso</a></li>
+                      <li class="group--item"><a href="#" class="group--link">Burundi</a></li>
+                      <li class="group--item"><a href="#" class="group--link">Cambodia</a></li>
+                      <li class="group--item"><a href="#" class="group--link">Cameroon</a></li>
+                      <li class="group--item"><a href="#" class="group--link">Central African Republic</a></li>
+                      <li class="group--item"><a href="#" class="group--link">Chad</a></li>
+                      <li class="group--item"><a href="#" class="group--link">Colombia</a></li>
+                      <li class="group--item"><a href="#" class="group--link">Congo, Dem. Republic of</a></li>
+                      <li class="group--item"><a href="#" class="group--link">Congo, Republic of</a></li>
+                    </div>
+                    <div class="wfp-u-md-1-5">
+                      <li class="group--item"><a href="#" class="group--link">Afghanistan</a></li>
+                      <li class="group--item"><a href="#" class="group--link">Algeria</a></li>
+                      <li class="group--item"><a href="#" class="group--link">Armenia</a></li>
+                      <li class="group--item"><a href="#" class="group--link">Bangladesh</a></li>
+                      <li class="group--item"><a href="#" class="group--link">Benin</a></li>
+                      <li class="group--item"><a href="#" class="group--link">Bhutan</a></li>
+                      <li class="group--item"><a href="#" class="group--link">Bolivia</a></li>
+                      <li class="group--item"><a href="#" class="group--link">Burkina Faso</a></li>
+                      <li class="group--item"><a href="#" class="group--link">Burundi</a></li>
+                      <li class="group--item"><a href="#" class="group--link">Cambodia</a></li>
+                      <li class="group--item"><a href="#" class="group--link">Cameroon</a></li>
+                      <li class="group--item"><a href="#" class="group--link">Central African Republic</a></li>
+                      <li class="group--item"><a href="#" class="group--link">Chad</a></li>
+                      <li class="group--item"><a href="#" class="group--link">Colombia</a></li>
+                      <li class="group--item"><a href="#" class="group--link">Congo, Dem. Republic of</a></li>
+                    </div>
+                  </ul>
+                </div>
+                <div class="submenu--wrap wfp-u-1 wfp-u-lg-1-5 pl3-lg">
+                  <h3 class="submenu--title fs6 mv0 lh-title c-alert">Emergencies</h3>
+                  <ul class="submenu--group nl pa0">
+                    <li class="group--item"><a href="#" class="group--link">Syria crisis</a></li>
+                    <li class="group--item"><a href="#" class="group--link">South-Sudan emergency</a></li>
+                    <li class="group--item"><a href="#" class="group--link">Iraq emergency</a></li>
+                    <li class="group--item"><a href="#" class="group--link">Yemen emergency</a></li>
+                    <li class="group--item"><a href="#" class="group--link">Soth-Africa emergency</a></li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li class="menu--item">
+              <a href="#" class="menu--link">Get involved</a>
+              <div class="menu--submenu dn w-100 w8-lg pa3-lg">
+                <div class="submenu--wrap">
+                  <h3 class="submenu--title fs6 mv0 lh-title">Get involved</h3>
+                  <ul class="submenu--group nl pa0">
+                    <li class="group--item"><a href="#" class="group--link">Partner with us</a></li>
+                    <li class="group--item"><a href="#" class="group--link">Volunteer</a></li>
+                    <li class="group--item"><a href="#" class="group--link">Careers</a></li>
+                  </ul>
+                  <p class="ph3 pv2 pb0-lg mb0-lg">
+                    <a href="#" class="wfp-btn--negative small bold tc">Donate now</a>
+                  </p>
+                </div>
+              </div>
+            </li>
+            <li class="menu--item"><a href="#" class="menu--link">News and publications</a></li>
+          </ul>
+        </nav>
       </div>
     </div>
   </header>
+
 
   <div class="wfp-wrapper">
 
@@ -573,8 +765,10 @@
   </div>
 </footer>
 
-<script src="js/lib/responsive-nav.js"></script>
-<script>
+<script src="js/responsive-nav.js"></script>
+<script src="js/tools.js"></script>
+<script src="js/subnav.js"></script>
+<!-- <script>
 
   var nav = responsiveNav(".main-nav", {
     customToggle: "js-nav-trigger",
@@ -599,7 +793,18 @@
 
   var closeBtn = document.getElementById("js-nav-close");
   closeBtn.onclick = function(){ nav.close(); return false; }
-</script>
+</script> -->
+
+  <script>
+    var menuNav = responsiveNav("#js-nav", {
+      customToggle: "js-nav-trigger", // menu toggle
+      navClass: "header--menu", // menu class
+      openPos: "absolute", // `absolute`, or `fixed`
+      closedPos: "static"
+    });
+
+    var menuSubnav = new Subnav(document.querySelector('#js-nav'), menuNav);
+  </script>
 
 </body>
 </html>

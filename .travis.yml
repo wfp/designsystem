@@ -1,7 +1,7 @@
 language: node_js
 node_js:
   - "5.12"
-  - "4.4"
+  - "6.9"
 env:
   - CXX=g++-4.8
 addons:

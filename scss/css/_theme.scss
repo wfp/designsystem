@@ -8,6 +8,7 @@
 .c-light    { @include color--light; }
 .c-dark     { @include color--dark; }
 .c-primary  { @include color--primary; }
+.c-alert    { color: $red; }
 
 // ----------------------------------------------------------------------------
 // Background Colours

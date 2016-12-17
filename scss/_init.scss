@@ -37,7 +37,7 @@ $grey-contrast:       #ededed;
 
 $black:               #000000;
 $white:               #ffffff;
-$red:                 #ff5252;
+$red:                 desaturate(darken(#e6494a, 5%), 15%);
 $orange:              #ffc759;
 $yellow:              #fcdc5d;
 $green:               #00a878;

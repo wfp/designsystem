@@ -25,23 +25,20 @@ If the vertical space is limited (i.e.: on smaller viewports), you can substitut
 
 ###### Preview
 <header class="wfp-header-ext">
-  <div class="wfp-grid wfp-wrapper" role="banner">
-    <div class="wfp-u-2-3 wfp-u-sm-1-4 header--container">
-      <a href="#" class="header--logo db pv2 mv1">
-        <picture class="db w-100">
-          <source srcset="{{ base }}/img/logos/light/png/1x/en-standard.png 1x, {{ base }}/img/logos/light/png/2x/en-standard.png 2x" media="(max-width: 767px)">
-          <source srcset="{{ base }}/img/logos/light/png/1x/en-full.png 1x, {{ base }}/img/logos/light/png/2x/en-full.png 2x" media="(min-width: 768px)">
-          <img src="{{ base }}/img/logos/light/png/1x/en-standard.png" alt="UN World Food Programme">
-        </picture>
+  <div class="wfp-grid wfp-wrapper relative" role="banner">
+    <div class="wfp-u-3-5 wfp-u-md-1-3 header--container">
+      <a href="#" class="header--logo db pv2 mv1 ml2 ml0-lg">
+        <img src="http://cdn.wfp.org/libraries/wfpui/v0.14.0/assets/logos/light/svg/en-standard.svg" alt="WFP Logo (English)">
       </a>
     </div>
-    <div class="wfp-u-1-3 wfp-u-sm-3-4 header--nav">
+    <div class="wfp-u-2-5 wfp-u-md-2-3 header--nav pv3-lg pr2 pr0-lg">
       <button class="header--toggle" id="js-menu-ext-trigger">Menu</button>
-      <nav class="header--menu" id="js-menu-ext">
+      <nav class="header--menu closed" id="js-menu-ext">
         <ul class="menu--group">
-          <li class="menu--item"><a href="#" class="menu--link active">Navlink #1</a></li>
-          <li class="menu--item"><a href="#" class="menu--link">Navlink #2</a></li>
-          <li class="menu--item"><a href="#" class="menu--link">Navlink #3</a></li>
+          <li class="menu--item"><a href="#" class="menu--link active">Who we are</a></li>
+          <li class="menu--item"><a href="#" class="menu--link">Our work</a></li>
+          <li class="menu--item"><a href="#" class="menu--link">Where we work</a></li>
+          <li class="menu--item"><a href="#" class="menu--link">Get involved</a></li>
         </ul>
       </nav>
     </div>
@@ -51,23 +48,20 @@ If the vertical space is limited (i.e.: on smaller viewports), you can substitut
 ###### Source
 {% highlight html %}
 <header class="wfp-header-ext">
-  <div class="wfp-grid wfp-wrapper" role="banner">
-    <div class="wfp-u-2-3 wfp-u-sm-1-4 header--container">
-      <a href="#" class="header--logo db pv2 mv1">
-        <picture class="db w-100">
-          <source srcset="{{ base }}/img/logos/light/png/1x/en-standard.png 1x, {{ base }}/img/logos/light/png/2x/en-standard.png 2x" media="(max-width: 767px)">
-          <source srcset="{{ base }}/img/logos/light/png/1x/en-full.png 1x, {{ base }}/img/logos/light/png/2x/en-full.png 2x" media="(min-width: 768px)">
-          <img src="{{ base }}/img/logos/light/png/1x/en-standard.png" alt="UN World Food Programme">
-        </picture>
+  <div class="wfp-grid wfp-wrapper relative" role="banner">
+    <div class="wfp-u-3-5 wfp-u-md-1-3 header--container">
+      <a href="#" class="header--logo db pv2 mv1 ml2 ml0-lg">
+        <img src="http://cdn.wfp.org/libraries/wfpui/v0.14.0/assets/logos/light/svg/en-standard.svg" alt="WFP Logo (English)">
       </a>
     </div>
-    <div class="wfp-u-1-3 wfp-u-sm-3-4 header--nav pv3-lg pr2 pr0-lg">
+    <div class="wfp-u-2-5 wfp-u-md-2-3 header--nav pv3-lg pr2 pr0-lg">
       <button class="header--toggle" id="js-menu-ext-trigger">Menu</button>
-      <nav class="header--menu" id="js-menu-ext">
+      <nav class="header--menu closed" id="js-menu-ext">
         <ul class="menu--group">
-          <li class="menu--item"><a href="#" class="menu--link active">Navlink #1</a></li>
-          <li class="menu--item"><a href="#" class="menu--link">Navlink #2</a></li>
-          <li class="menu--item"><a href="#" class="menu--link">Navlink #3</a></li>
+          <li class="menu--item"><a href="#" class="menu--link active">Who we are</a></li>
+          <li class="menu--item"><a href="#" class="menu--link">Our work</a></li>
+          <li class="menu--item"><a href="#" class="menu--link">Where we work</a></li>
+          <li class="menu--item"><a href="#" class="menu--link">Get involved</a></li>
         </ul>
       </nav>
     </div>
