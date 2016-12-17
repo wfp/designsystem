@@ -1,7 +1,9 @@
-/*!
+/** !
  * WFP.org Tools
  * Copyright 2016 WFP/MADBIT Co.
  */
+
+/* eslint-disable no-unused-vars */
 
 /**
  * forEach polyfil
@@ -31,3 +33,5 @@ var bindEvent = function (element, type, handler) {
     element.attachEvent('on' + type, handler);
   }
 };
+
+/* eslint-enable no-unused-vars */
