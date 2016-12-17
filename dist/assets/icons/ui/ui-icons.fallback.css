@@ -10,6 +10,10 @@
 
 .icon-add-circle-light { background-image: url('png/add-circle-light.png'); background-repeat: no-repeat; }
 
+.icon-add-dark { background-image: url('png/add-dark.png'); background-repeat: no-repeat; }
+
+.icon-add-light { background-image: url('png/add-light.png'); background-repeat: no-repeat; }
+
 .icon-announcement-dark { background-image: url('png/announcement-dark.png'); background-repeat: no-repeat; }
 
 .icon-announcement-light { background-image: url('png/announcement-light.png'); background-repeat: no-repeat; }
@@ -82,6 +86,14 @@
 
 .icon-emoticon-light { background-image: url('png/emoticon-light.png'); background-repeat: no-repeat; }
 
+.icon-expand-less-dark { background-image: url('png/expand-less-dark.png'); background-repeat: no-repeat; }
+
+.icon-expand-less-light { background-image: url('png/expand-less-light.png'); background-repeat: no-repeat; }
+
+.icon-expand-more-dark { background-image: url('png/expand-more-dark.png'); background-repeat: no-repeat; }
+
+.icon-expand-more-light { background-image: url('png/expand-more-light.png'); background-repeat: no-repeat; }
+
 .icon-external-link-dark { background-image: url('png/external-link-dark.png'); background-repeat: no-repeat; }
 
 .icon-external-link-light { background-image: url('png/external-link-light.png'); background-repeat: no-repeat; }
@@ -146,6 +158,10 @@
 
 .icon-money-light { background-image: url('png/money-light.png'); background-repeat: no-repeat; }
 
+.icon-news-dark { background-image: url('png/news-dark.png'); background-repeat: no-repeat; }
+
+.icon-news-light { background-image: url('png/news-light.png'); background-repeat: no-repeat; }
+
 .icon-noentry-dark { background-image: url('png/noentry-dark.png'); background-repeat: no-repeat; }
 
 .icon-noentry-light { background-image: url('png/noentry-light.png'); background-repeat: no-repeat; }
@@ -157,6 +173,10 @@
 .icon-notifications-on-dark { background-image: url('png/notifications-on-dark.png'); background-repeat: no-repeat; }
 
 .icon-notifications-on-light { background-image: url('png/notifications-on-light.png'); background-repeat: no-repeat; }
+
+.icon-office-dark { background-image: url('png/office-dark.png'); background-repeat: no-repeat; }
+
+.icon-office-light { background-image: url('png/office-light.png'); background-repeat: no-repeat; }
 
 .icon-people-dark { background-image: url('png/people-dark.png'); background-repeat: no-repeat; }
 
@@ -185,6 +205,10 @@
 .icon-reload-dark { background-image: url('png/reload-dark.png'); background-repeat: no-repeat; }
 
 .icon-reload-light { background-image: url('png/reload-light.png'); background-repeat: no-repeat; }
+
+.icon-remove-dark { background-image: url('png/remove-dark.png'); background-repeat: no-repeat; }
+
+.icon-remove-light { background-image: url('png/remove-light.png'); background-repeat: no-repeat; }
 
 .icon-search-dark { background-image: url('png/search-dark.png'); background-repeat: no-repeat; }
 
