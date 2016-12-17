@@ -24,39 +24,139 @@
     }
   </style>
 </head>
-<body class="wfp-header-spacer--narrow">
+<body class="hs--ext">
 
-  <header class="wfp-header-int fixed">
-    <div class="wfp-grid wfp-wrapper">
-      <div class="wfp-u-3-5 wfp-u-md-1-3 header--container">
-        <h1 class="header--title"><a href="/" class="header--logo">Test Project</a></h1>
+  <header class="wfp-header-ext fixed">
+    <div class="wfp-grid wfp-wrapper relative" role="banner">
+      <div class="wfp-u-2-3 wfp-u-md-1-4 header--container">
+        <a href="#" class="header--logo db pv2 mv1">
+          <picture class="db w-100">
+            <source srcset="../../img/logos/light/png/1x/en-standard.png 1x, ../../img/logos/light/png/2x/en-standard.png 2x" media="(max-width: 767px)">
+            <source srcset="../../img/logos/light/png/1x/en-full.png 1x, ../../img/logos/light/png/2x/en-full.png 2x" media="(min-width: 768px)">
+            <img src="../../img/logos/light/png/1x/en-standard.png" alt="UN World Food Programme">
+          </picture>
+        </a>
       </div>
-      <div class="wfp-u-2-5 wfp-u-md-2-3 header--nav">
-        <button class="header--btn" id="js-nav-trigger">Menu</button>
-        <div class="main-nav flyout closed">
-          <button class="nav-close" id="js-nav-close"><span class="close-icon">&#x2715;</span>Close</button>
-          <nav class="wfp-menu-inverse">
-            <div class="menu--group">
-              <h2 class="menu--heading">Menu</h2>
-              <ul class="menu--wrapper">
-                <li><a class="menu--item" href="./basics/principles/">Menu 1</a></li>
-                <li><a class="menu--item" href="./basics/branding/">Menu 2</a></li>
-                <li><a class="menu--item" href="./basics/typography/">Menu 3</a></li>
-                <li><a class="menu--item" href="./basics/content/">Menu 4</a></li>
-                <li><a class="menu--item" href="./basics/getting-started/">Menu 5</a></li>
-              </ul>
-            </div>
-            <div class="menu--group">
-              <h2 class="menu--heading">Menu</h2>
-              <ul class="menu--wrapper">
-                <li><a class="menu--item" href="./about/">Menu 1</a></li>
-              </ul>
-            </div>
-          </nav>
-        </div>
+      <div class="wfp-u-2-5 wfp-u-md-2-3 header--nav pv3-lg pr2 pr0-lg">
+        <button class="header--toggle" id="js-nav-trigger">Menu</button>
+        <nav class="header--menu closed" id="js-nav">
+          <ul class="menu--group">
+            <li class="menu--item">
+              <a href="#" class="menu--link">Who we are</a>
+              <div class="menu--submenu wfp-grid dn w-100 right-0 pa3-md">
+                <div class="wfp-u-1 wfp-u-md-1-3 pr2-md">
+                  <h3 class="submenu--title fs4 pv2 mv0 lh-title">Overview</h3>
+                  <ul class="submenu--group nl pa0">
+                    <li class="group--item"><a href="#" class="group--link">Mission and values</a></li>
+                    <li class="group--item"><a href="#" class="group--link">Corporate strategy</a></li>
+                    <li class="group--item"><a href="#" class="group--link">Governance and leadership</a></li>
+                    <li class="group--item"><a href="#" class="group--link">History</a></li>
+                    <li class="group--item"><a href="#" class="group--link">Goodwill ambassadors</a></li>
+                  </ul>
+                </div>
+                <div class="wfp-u-1 wfp-u-md-1-3 ph1-md">
+                  <h3 class="submenu--title fs4 pv2 mv0 lh-title">Partnerships</h3>
+                  <ul class="submenu--group nl pa0">
+                    <li class="group--item"><a href="#" class="group--link">Governments</a></li>
+                    <li class="group--item"><a href="#" class="group--link">Non-governmental organizations</a></li>
+                    <li class="group--item"><a href="#" class="group--link">Private sector</a></li>
+                    <li class="group--item"><a href="#" class="group--link">UN agencies and international institutions</a></li>
+                    <li class="group--item"><a href="#" class="group--link">Clusters and multi-stakeholder partnerships</a></li>
+                    <li class="group--item"><a href="#" class="group--link">Academia and think tanks</a></li>
+                  </ul>
+                </div>
+                <div class="wfp-u-1 wfp-u-md-1-3 pl2-md">
+                  <h3 class="submenu--title fs4 pv2 mv0 lh-title">Transparency &amp; Accountability</h3>
+                  <ul class="submenu--group nl pa0">
+                    <li class="group--item"><a href="#" class="group--link">Finances and donors</a></li>
+                    <li class="group--item"><a href="#" class="group--link">Accountability to populations</a></li>
+                    <li class="group--item"><a href="#" class="group--link">Oversight</a></li>
+                    <li class="group--item"><a href="#" class="group--link">Independent evaluation</a></li>
+                    <li class="group--item"><a href="#" class="group--link">International aid transparency initiative</a></li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li class="menu--item">
+              <a href="#" class="menu--link">Our work</a>
+              <div class="menu--submenu wfp-grid dn pv2 ph3 w-100 right-0">
+                <div class="wfp-u-1 wfp-u-md-1-3">
+                  <h3 class="fs5">What we do</h3>
+                  <ul class="fs6">
+                    <li><a href="#">Food assistance: cash-based and in-kind</a></li>
+                    <li><a href="#">Resilience building</a></li>
+                    <li><a href="#">Emergency preparedness and response</a></li>
+                    <li><a href="#">Shared humanitarian services</a></li>
+                    <li><a href="#">Country capacity strengthening</a></li>
+                    <li><a href="#">South-South cooperation </a></li>
+                  </ul>
+                </div>
+                <div class="wfp-u-1 wfp-u-md-1-3">
+                  <h3 class="fs5">How we work</h3>
+                  <ul class="fs6">
+                    <li><a href="#">Country strategic planning</a></li>
+                    <li><a href="#">Analyses and assessments</a></li>
+                    <li><a href="#">Programme design</a></li>
+                    <li><a href="#">Types of support</a></li>
+                    <li><a href="#">Supply chain</a></li>
+                    <li><a href="#">Monitoring, evaluation and learning</a></li>
+                  </ul>
+                </div>
+                <div class="wfp-u-1 wfp-u-md-1-3">
+                  <h3 class="fs5">Focus areas</h3>
+                  <ul class="fs6">
+                    <li><a href="#">Zero hunger</a></li>
+                    <li><a href="#">Agricultural market support</a></li>
+                    <li><a href="#">Climate change</a></li>
+                    <li><a href="#">Disaster risk reduction</a></li>
+                    <li><a href="#">Gender equality</a></li>
+                    <li><a href="#">Nutrition</a></li>
+                    <li><a href="#">Social protection and safety nets</a></li>
+                    <li><a href="#">Sustainable livelihoods and ecosystem</a></li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li class="menu--item">
+              <a href="#" class="menu--link">Where we work</a>
+              <div class="menu--submenu dn pv2 ph3 w-100 w8-md">
+                <h3 class="fs5">Emergencies</h3>
+                <ul class="fs6">
+                  <li><a href="#">Syria crisis</a></li>
+                  <li><a href="#">South-Sudan emergency</a></li>
+                  <li><a href="#">Iraq emergency</a></li>
+                  <li><a href="#">Yemen emergency</a></li>
+                  <li><a href="#">Soth-Africa emergency</a></li>
+                </ul>
+                <div class="mt3">
+                  <p>
+                    <button type="button" class="wfp-btn block xsmall">See all emergencies</button>
+                  </p>
+                  <p>
+                    <button type="button" class="wfp-btn block xsmall">See all countries we operate in</button>
+                  </p>
+                </div>
+              </div>
+            </li>
+            <li class="menu--item">
+              <a href="#" class="menu--link">Get involved</a>
+              <div class="menu--submenu dn pv2 ph3 w-100 w8-md">
+                <p>
+                  <button type="button" class="wfp-btn--primary block xsmall">Donate now</button>
+                </p>
+                <ul class="fs6">
+                  <li><a href="#">Partner with us</a></li>
+                  <li><a href="#">Volunteer</a></li>
+                  <li><a href="#">Careers</a></li>
+                </ul>
+            </li>
+            <li class="menu--item"><a href="#" class="menu--link">News and publications</a></li>
+          </ul>
+        </nav>
       </div>
     </div>
   </header>
+
 
   <div class="wfp-wrapper">
 
@@ -574,7 +674,7 @@
 </footer>
 
 <script src="js/lib/responsive-nav.js"></script>
-<script>
+<!-- <script>
 
   var nav = responsiveNav(".main-nav", {
     customToggle: "js-nav-trigger",
@@ -599,7 +699,42 @@
 
   var closeBtn = document.getElementById("js-nav-close");
   closeBtn.onclick = function(){ nav.close(); return false; }
-</script>
+</script> -->
+
+  <script>
+    var nav = responsiveNav("#js-nav", {
+      customToggle: "js-nav-trigger", // menu toggle
+      navClass: "header--menu", // menu class
+      openPos: "absolute", // `absolute`, or `fixed`
+      closedPos: "static"
+    });
+    var forEach = function (array, callback, scope) {
+      for (var i = 0; i < array.length; i++) {
+        callback.call(scope, i, array[i]);
+      }
+    };
+    var containers = document.querySelectorAll('.menu--item');
+    var hideSubmenus = function (currentItem) {
+      forEach(containers, function(key, el) {
+        var submenu = el.querySelector('.menu--submenu');
+        if (submenu && submenu !== currentItem && !submenu.classList.contains('dn')) {
+          submenu.classList.add('dn');
+        }
+      });
+    };
+    forEach(containers, function (key, el){
+      var activator = el.querySelector('.menu--link');
+      var submenu = el.querySelector('.menu--submenu');
+      // console.log(submenu);
+      if (submenu !== null) {
+        activator.addEventListener('click', function (event) {
+          hideSubmenus(submenu);
+          submenu.classList.toggle('dn');
+          event.preventDefault();
+        });
+      }
+    });
+  </script>
 
 </body>
 </html>

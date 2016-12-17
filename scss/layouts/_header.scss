@@ -232,6 +232,7 @@
 
     @include media-query($lg-screen) {
       transition: unset;
+      transform: none;
     }
   }
 
@@ -432,7 +433,6 @@
     // }
 
     @include media-query($lg-screen) {
-      margin: 1.25rem 1rem;
       top: auto;
 
       // &.closed {
