@@ -250,9 +250,14 @@ module.exports = function(grunt) {
         screwIE8: true
       },
       dist: {
-        files: {
-          'dist/js/responsive-nav.min.js': ['js/lib/responsive-nav.js']
-        }
+        files: [
+          {
+            expand: true,
+            src: ['js/**/*.js'],
+            dest: 'dist/js/',
+            flatten: true
+          }
+        ]
       },
       docs: {
         options: {
@@ -264,9 +269,14 @@ module.exports = function(grunt) {
           preserveComments: 'all',
           screwIE8: true
         },
-        files: {
-          'docs/js/lib/responsive-nav.js': ['js/lib/responsive-nav.js']
-        }
+        files: [
+          {
+            expand: true,
+            src: ['js/**/*.js'],
+            dest: 'docs/js/',
+            flatten: true
+          }
+        ]
       }
     },
     eslint: {
@@ -302,8 +312,14 @@ module.exports = function(grunt) {
     },
     copy: {
       docsJS: {
-        src: './dist/js/responsive-nav.min.js',
-        dest: './docs/js/lib/responsive-nav.min.js'
+        files: [
+          {
+            expand: true,
+            src: ['dist/js/**'],
+            dest: 'docs/js/',
+            flatten: true
+          }
+        ]
       }
     }
   });
