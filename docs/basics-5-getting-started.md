@@ -54,6 +54,16 @@ Alternatively, you can load _WFP UI_ from our CDN, denoting a version number (i.
 <link href="http://cdn.wfp.org/libraries/wfpui/{{ site.version }}/css/wfpui+grid.css" rel="stylesheet">
 {% endhighlight %}
 
+### Offline Use
+If your application or website is not able to connect to the Internet, you can use the _WFP UI_ offline. Easiest way to start is to install it with Bower, as per above instructions.
+
+You can also download any particular release of [WFP UI from GitHub](https://github.com/wfp/ui/releases), copying contents of `dist/css` directory to your project's own `css`, and referencing `wfpui.css` contained inside.
+
+<div class="notice">
+  <h2 class="title">Notice</h2>
+  <p>The <i>WFP UI</i> is intended to be plug &amp; play, and integrate seamlessly with any front-end framework unobtrusively. Whether you use <i>BootStrap</i>, <i>Foundation</i>, <i>Skeleton</i>, or any other framework, you should easily be able to apply WFP UI styles to your projects.</p>
+</div>
+
 ### Documentation
 WFP UI uses [Grunt](http://gruntjs.com) as standard compile assets, however you can use other task runners such as [Gulp](http://gulpjs.com).
 
@@ -77,13 +87,3 @@ gulp.task('sass', function() {
         .pipe(gulp.dest(DIRS.css));
 });
 {% endhighlight %}
-
-### Offline Use
-If your application or website is not able to connect to the Internet, you can use the _WFP UI_ offline. Easiest way to start is to install it with Bower, as per above instructions.
-
-You can also download any particular release of [WFP UI from GitHub](https://github.com/wfp/ui/releases), copying contents of `dist/css` directory to your project's own `css`, and referencing `wfpui.css` contained inside.
-
-<div class="notice">
-  <h2 class="title">Notice</h2>
-  <p>The <i>WFP UI</i> is intended to be plug &amp; play, and integrate seamlessly with any front-end framework unobtrusively. Whether you use <i>BootStrap</i>, <i>Foundation</i>, <i>Skeleton</i>, or any other framework, you should easily be able to apply WFP UI styles to your projects.</p>
-</div>
