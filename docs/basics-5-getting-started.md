@@ -69,9 +69,10 @@ WFP UI uses [Grunt](http://gruntjs.com) as standard compile assets, however you 
 
 <div class="notice">
   <h2 class="title">Notice</h2>
-  <p>WFP UI uses external Sass dependencies so it is necessary that the the dependencies are linked using the native Sass <code>includePaths</code> option. See below for Gulp usage.</p>
+  <p>WFP UI uses external Sass dependencies so it is necessary that the the dependencies are linked using the native Sass <code>includePaths</code> option.</p>
 </div>
 
+Gulp `includePaths` implementation:
 {% highlight javascript %}
 const SASS_INCLUDE_PATHS = [path.join(__dirname, 'bower_components/mathsass/dist')];
 gulp.task('sass', function() {
@@ -86,4 +87,20 @@ gulp.task('sass', function() {
         .pipe(sourcemaps.write())
         .pipe(gulp.dest(DIRS.css));
 });
+{% endhighlight %}
+
+Grunt `includePaths` implementation (default in `gruntfile.js`):
+{% highlight javascript %}
+sass: {
+  options: {
+    outputStyle: 'expanded',
+    sourceMap: true,
+    indentedSyntax: true,
+    sassDir: 'scss',
+    cssDir: 'dist/css',
+    includePaths: [
+      'bower_components/mathsass/dist'
+    ]
+  }
+}
 {% endhighlight %}
