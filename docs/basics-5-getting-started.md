@@ -54,6 +54,30 @@ Alternatively, you can load _WFP UI_ from our CDN, denoting a version number (i.
 <link href="http://cdn.wfp.org/libraries/wfpui/{{ site.version }}/css/wfpui+grid.css" rel="stylesheet">
 {% endhighlight %}
 
+### Documentation
+WFP UI uses [Grunt](http://gruntjs.com) as standard compile assets, however you can use other task runners such as [Gulp](http://gulpjs.com).
+
+<div class="notice">
+  <h2 class="title">Notice</h2>
+  <p>WFP UI uses external Sass dependencies so it is necessary that the the dependencies are linked using the native Sass <code>includePaths</code> option. See below for Gulp usage.</p>
+</div>
+
+{% highlight javascript %}
+const SASS_INCLUDE_PATHS = [path.join(__dirname, 'bower_components/mathsass/dist')];
+gulp.task('sass', function() {
+    gulp.src([path.join(DIRS.css, 'main.scss')])
+        .pipe(echo())
+        .pipe(sass({
+            includePaths: SASS_INCLUDE_PATHS
+        }).on('error', sass.logError))
+        .pipe(sourcemaps.init())
+        .pipe(minifyCSS())
+        .pipe(rename({extname: '.min.css'}))
+        .pipe(sourcemaps.write())
+        .pipe(gulp.dest(DIRS.css));
+});
+{% endhighlight %}
+
 ### Offline Use
 If your application or website is not able to connect to the Internet, you can use the _WFP UI_ offline. Easiest way to start is to install it with Bower, as per above instructions.
 
