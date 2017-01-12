@@ -96,6 +96,7 @@ $color-gplus: #dc4e41;
     &:hover {
       color: darken($primary, 12%);
       background-color: $white;
+      border-color: $white;
       box-shadow: 0 1px 6px 0 rgba($black, 0.4);
     }
 
