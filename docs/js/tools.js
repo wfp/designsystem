@@ -1,7 +1,8 @@
-/*!
+/** !
  * WFP.org Tools
  * Copyright 2016 WFP/MADBIT Co.
  */
+/* eslint-disable no-unused-vars */
 /**
  * forEach polyfil
  * @param {Array} array - an array of elements to process
