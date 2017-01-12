@@ -37,8 +37,11 @@ If the vertical space is limited (i.e.: on smaller viewports), you can substitut
         <ul class="menu--group">
           <li class="menu--item"><a href="#" class="menu--link active">Who we are</a></li>
           <li class="menu--item"><a href="#" class="menu--link">Our work</a></li>
-          <li class="menu--item"><a href="#" class="menu--link">Where we work</a></li>
-          <li class="menu--item"><a href="#" class="menu--link">Get involved</a></li>
+          <div class="header--misc">
+            <div class="header--search">
+              <input type="search" class="header--input" placeholder="Search">
+            </div>
+          </div>
         </ul>
       </nav>
     </div>
@@ -60,8 +63,11 @@ If the vertical space is limited (i.e.: on smaller viewports), you can substitut
         <ul class="menu--group">
           <li class="menu--item"><a href="#" class="menu--link active">Who we are</a></li>
           <li class="menu--item"><a href="#" class="menu--link">Our work</a></li>
-          <li class="menu--item"><a href="#" class="menu--link">Where we work</a></li>
-          <li class="menu--item"><a href="#" class="menu--link">Get involved</a></li>
+          <div class="header--misc">
+            <div class="header--search">
+              <input type="search" class="header--input" placeholder="Search">
+            </div>
+          </div>
         </ul>
       </nav>
     </div>
