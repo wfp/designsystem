@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Grids
-permalink: /components/grids/
+title: Grid
+permalink: /components/grid/
 resource: true
 categories: Components
 ---
