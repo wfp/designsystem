@@ -100,8 +100,8 @@
     position: absolute;
     left: 0;
     top: 0;
-    width: 2.25rem;
-    height: 2.25rem;
+    width: 2rem;
+    height: 2rem;
     content: "";
     color: $white;
     z-index: 1;
@@ -109,6 +109,7 @@
 
   .header--input {
     width: 6rem;
+    height: 2rem;
     padding: 0.5rem 0 0.5rem 2rem;
     -webkit-appearance: none;
   }
