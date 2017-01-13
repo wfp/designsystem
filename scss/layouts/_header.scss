@@ -108,7 +108,9 @@
   }
 
   .header--input {
-    padding: 0.5rem 0.75rem 0.5rem 2rem;
+    width: 6rem;
+    padding: 0.5rem 0 0.5rem 2rem;
+    -webkit-appearance: none;
   }
 }
 
@@ -181,7 +183,6 @@
 %header--misc {
   @include media-query($lg-screen) {
     display: inline-block;
-    min-height: 4.5rem;
   };
 }
 
