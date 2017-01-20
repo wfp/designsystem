@@ -36,10 +36,6 @@ body {
   line-height: 1.500;
   background-color: $background-color;
   color: $text-color;
-
-  @include media-query($xl-screen) {
-    font-size: $base-font-size * 1.125;
-  };
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -49,27 +45,42 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  @include h1;
+  @include font-size(3);
+  @include tracking(tight);
+  @include lh-scale(0.66);
+  @include margin(0.5rem 0);
 }
 
 h2 {
-  @include h2;
+  @include margin(0.25rem 0);
+  @include lh-scale(0.875);
+  @include font-size(2.5);
+  letter-spacing: -0.025rem;
 }
 
 h3 {
-  @include h3;
+  @include margin(0.25rem 0);
+  @include lh-scale(0.875);
+  @include font-size(2.25);
+  letter-spacing: -0.025rem;
 }
 
 h4 {
-  @include h4;
+  @include font-size(2);
+  @include lh-scale(0.875);
+  @include margin(0.25rem 0);
 }
 
 h5 {
-  @include h5;
+  @include font-size(1.75);
+  @include lh-body;
+  @include margin(0.25rem 0);
 }
 
 h6 {
-  @include h6;
+  @include font-size(1.5);
+  @include lh-body;
+  @include margin(0.25rem 0);
 }
 
 // Fluid image to fit a lfuid parent container while maintaining aspect ratio
