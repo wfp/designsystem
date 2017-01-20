@@ -147,7 +147,7 @@ $hyphen: unquote("-");
 }
 
 // Full width
-.mw-100  { @include mw(10); }
+.mw-100  { max-width: 100%; }
 // Disable max-width
 .mw-none { max-width: none; }
 
@@ -156,7 +156,7 @@ $hyphen: unquote("-");
     @for $i from 1 through length($spacing) {
       .mw#{$i}#{$hyphen}#{$mq} { @include mw($i); }
     }
-    .mw-100-#{$mq}  { @include mw(10); }
+    .mw-100-#{$mq}  { max-width: 100%; }
     .mw-none-#{$mq} { max-width: none; }
   }
 }

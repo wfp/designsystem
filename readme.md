@@ -80,6 +80,24 @@ cd dist/docs
 sudo python -m SimpleHTTPServer 80
 ```
 
+## Drafting a new release
+1. Wrap up all major additions on `develop` branch and branch out to `release-vX.Y.Z`, depending on your release cycle.
+2. Bump version numbers inside following files:
+  - `/docs/_config.yml`
+  - `/scss/bootstrap-theme.scss`
+  - `/scss/wfpui.scss`
+  - `/scss/wfpui+grid.scss`
+  - `/scss/wfpui+grid.scss`
+3. Run `grunt test` and fix any errors that fail the build process.
+4. If you added or altered any assets, run `grunt dist-assets`.
+5. Run `grunt dist` to build all static project sources (mainly CSs & JS).
+6. Commit your changes and push to remote.
+7. Merge your release branch to `master` with a commit message `Release vX.Y.Z` (no `fast-forward`).
+8. Merge your release branch to `develop` using `fast-forward` strategy.
+9. Tag latest merge commit on `master` using a new version number.
+10. Push all changes to remote.
+11. Draft a new release on GitHub including a changelog.
+
 ## Authors & Contributors
 - [Matthew Morek](https://github.com/matthewmorek)
 - [James Home](https://github.com/jrah)
