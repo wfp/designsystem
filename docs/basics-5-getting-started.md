@@ -21,7 +21,7 @@ You can easily install _WFP UI_ using [Bower](http://bower.io/). Our Bower packa
 # Install the latest release
 $ bower install wfp-ui --save
 # Install any particular release
-$ bower install wfp-ui#0.7.0 --save
+$ bower install wfp-ui#{{ site.version }} --save
 {% endhighlight %}
 
 Now, add _WFP UI_ as a dependency to your main SCSS file:
@@ -72,24 +72,24 @@ WFP UI uses [Grunt](http://gruntjs.com) as standard compile assets, however you 
   <p>WFP UI uses external Sass dependencies so it is necessary that the the dependencies are linked using the native Sass <code>includePaths</code> option.</p>
 </div>
 
-Gulp `includePaths` implementation:
+###### Gulp `includePaths` implementation:
 {% highlight javascript %}
 const SASS_INCLUDE_PATHS = [path.join(__dirname, 'bower_components/mathsass/dist')];
 gulp.task('sass', function() {
-    gulp.src([path.join(DIRS.css, 'main.scss')])
-        .pipe(echo())
-        .pipe(sass({
-            includePaths: SASS_INCLUDE_PATHS
-        }).on('error', sass.logError))
-        .pipe(sourcemaps.init())
-        .pipe(minifyCSS())
-        .pipe(rename({extname: '.min.css'}))
-        .pipe(sourcemaps.write())
-        .pipe(gulp.dest(DIRS.css));
+  gulp.src([path.join(DIRS.css, 'main.scss')])
+    .pipe(echo())
+    .pipe(sass({
+      includePaths: SASS_INCLUDE_PATHS
+    }).on('error', sass.logError))
+    .pipe(sourcemaps.init())
+    .pipe(minifyCSS())
+    .pipe(rename({extname: '.min.css'}))
+    .pipe(sourcemaps.write())
+    .pipe(gulp.dest(DIRS.css));
 });
 {% endhighlight %}
 
-Grunt `includePaths` implementation (default in `gruntfile.js`):
+###### Grunt task `includePaths` implementation (default in `gruntfile.js`):
 {% highlight javascript %}
 sass: {
   options: {
