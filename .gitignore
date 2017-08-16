@@ -2,7 +2,6 @@ node_modules
 bower_components
 dist/docs
 *.map
-*.sublime-project
 docs/css
 icons/ui/dist
 docs/js/lib/responsive-nav.js
