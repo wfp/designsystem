@@ -1,42 +1,284 @@
 {
   "name": "wfp-ui",
-  "description": "WFP UI Kit",
-  "main": "dist/wfpui.css",
-  "author": "WFP COM",
-  "license": "MIT",
-  "man": "readme.md",
-  "private": true,
-  "dependencies": {
-    "autoprefixer": "^6.3.1",
-    "bower": "~1.7.7",
-    "cssnano": "^3.4.0",
-    "eslint": "~2.1.0",
-    "grunt": "~0.4.5",
-    "grunt-cli": "~1.2.0",
-    "grunt-contrib-clean": "~1.0.0",
-    "grunt-contrib-copy": "^1.0.0",
-    "grunt-contrib-uglify": "~1.0.1",
-    "grunt-contrib-watch": "~1.0.0",
-    "grunt-datauri": "~0.4.0",
-    "grunt-eslint": "~18.1.0",
-    "grunt-grunticon": "~2.2.2",
-    "grunt-html-auditor": "~1.1.1",
-    "grunt-jekyll": "~0.4.3",
-    "grunt-postcss": "~0.8.0",
-    "grunt-pure-grids": "~1.0.2",
-    "grunt-sass": "^1.1.0",
-    "grunt-sass-lint": "~0.2.0",
-    "grunt-svg-colorify": "^0.1.0",
-    "node-sass": "^3.4.2",
-    "pixrem": "^3.0.1",
-    "postcss-scss": "~0.1.8",
-    "postcss-wcag-contrast": "~1.0.0",
-    "time-grunt": "^1.3.0"
+  "version": "5.5.1",
+  "description": "WFP UI-Kit Next",
+  "license": "Apache-2",
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "sideEffects": false,
+  "scripts": {
+    "build": "node scripts/build.js",
+    "build-storybook": "build-storybook",
+    "ci-check": "yarn prettier:diff && yarn lint && yarn test --runInBand && yarn test-ssr",
+    "assets:build": "webpack -p --config webpack.buildAssets.js",
+    "css:build": "node-sass ./src/globals/scss -o ./dist/css --output-style compressed --source-map true",
+    "css:watch": "nodemon -e scss -x \"npm run css:build\"",
+    "commitmsg": "validate-commit-msg",
+    "contributors:add": "all-contributors add",
+    "contributors:generate": "all-contributors generate",
+    "lint": "eslint src",
+    "precommit": "lint-staged",
+    "prepublish": "yarn build",
+    "prettier": "prettier --write \"**/*.{scss,css,js,md}\"",
+    "prettier:diff": "prettier --list-different \"**/*.{scss,css,js,md}\"",
+    "semantic-release": "semantic-release",
+    "start": "yarn storybook",
+    "storybook": "start-storybook -s ./dist -p 9000",
+    "test": "jest --json --outputFile=jest-test-results.json",
+    "test-ssr": "yarn build && node ssr-tests/*.js"
+  },
+  "keywords": [
+    "wfp",
+    "World Food Programme",
+    "UN",
+    "United Nations",
+    "react",
+    "ui-kit"
+  ],
+  "files": [
+    "lib/**/*",
+    "es/**/*",
+    "umd/**/*"
+  ],
+  "eslintConfig": {
+    "parser": "babel-eslint",
+    "extends": [
+      "eslint:recommended",
+      "plugin:jsx-a11y/recommended"
+    ],
+    "plugins": [
+      "react",
+      "jsdoc",
+      "jsx-a11y"
+    ],
+    "rules": {
+      "react/jsx-uses-vars": 1,
+      "react/jsx-uses-react": 1,
+      "react/no-find-dom-node": 1,
+      "jsdoc/check-param-names": 2,
+      "jsdoc/check-tag-names": 2,
+      "jsdoc/check-types": 2,
+      "jsx-a11y/no-static-element-interactions": 1,
+      "jsx-a11y/no-noninteractive-element-interactions": 1,
+      "jsx-a11y/click-events-have-key-events": 1,
+      "jsx-a11y/anchor-is-valid": 1,
+      "jsx-a11y/interactive-supports-focus": 1,
+      "jsx-a11y/label-has-for": [
+        1,
+        {
+          "components": [
+            "Label"
+          ],
+          "required": {
+            "some": [
+              "nesting",
+              "id"
+            ]
+          },
+          "allowChildren": false
+        }
+      ]
+    },
+    "env": {
+      "node": true,
+      "browser": true,
+      "es6": true,
+      "jest": true,
+      "jasmine": true
+    },
+    "settings": {
+      "jsdoc": {
+        "tagNamePreference": {
+          "augments": "extends"
+        }
+      }
+    }
   },
   "peerDependencies": {
-    "bower": "~1.7.7",
-    "eslint": "~2.1.0",
-    "grunt": "~0.4.5",
-    "html-auditor": "~0.15.0"
-  }
+    "carbon-components": "^8.10.0",
+    "carbon-icons": "^5.1.2 || ^6.0.0",
+    "react": "^15.3.2 || ^16.1.0",
+    "react-dom": "^15.3.2 || ^16.1.0"
+  },
+  "dependencies": {
+    "classnames": "2.2.5",
+    "downshift": "^1.23.2",
+    "flatpickr": "4.3.0",
+    "invariant": "^2.2.3",
+    "lodash.debounce": "^4.0.8",
+    "lodash.isequal": "^4.5.0",
+    "lodash.omit": "^4.5.0",
+    "warning": "3.0.0",
+    "window-or-global": "^1.0.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.0.0-beta.38",
+    "@babel/core": "^7.0.0-beta.38",
+    "@babel/plugin-external-helpers": "^7.0.0-beta.38",
+    "@babel/plugin-proposal-class-properties": "^7.0.0-beta.38",
+    "@babel/preset-env": "^7.0.0-beta.38",
+    "@babel/preset-react": "^7.0.0-beta.38",
+    "@babel/preset-stage-1": "^7.0.0-beta.38",
+    "@storybook/addon-a11y": "^3.4.0",
+    "@storybook/addon-actions": "^3.2.15",
+    "@storybook/addon-info": "^3.2.13",
+    "@storybook/addon-jest": "^3.4.0",
+    "@storybook/addon-knobs": "^3.4.0",
+    "@storybook/addon-options": "^3.4.0",
+    "@storybook/addon-viewport": "^3.4.0",
+    "@storybook/react": "^3.2.13",
+    "all-contributors-cli": "^4.10.1",
+    "babel-core": "^7.0.0-0",
+    "babel-eslint": "^8.0.2",
+    "babel-jest": "^22.1.0",
+    "babel-plugin-react-docgen": "^1.9.0",
+    "babel-plugin-transform-object-assign": "^6.22.0",
+    "bowser": "^1.6.1",
+    "carbon-components": "^8.10.0",
+    "carbon-icons": "^6.1.0",
+    "chalk": "^2.3.0",
+    "cli-table": "^0.3.0",
+    "commitizen": "^2.9.5",
+    "copy-webpack-plugin": "^4.5.1",
+    "css-loader": "^0.28.4",
+    "cz-conventional-changelog-components": "^1.0.0",
+    "enzyme": "^3.1.0",
+    "enzyme-adapter-react-16": "^1.1.0",
+    "enzyme-to-json": "^3.1.2",
+    "eslint": "^4.11.0",
+    "eslint-plugin-jsdoc": "^3.3.0",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-react": "^7.4.0",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "file-loader": "^1.1.11",
+    "gzip-size": "^4.1.0",
+    "husky": "^0.14.3",
+    "imagemin-webpack-plugin": "^2.1.1",
+    "jest": "^22.1.0",
+    "lcov2badge": "^0.1.0",
+    "lint-staged": "^7.0.0",
+    "node-sass": "4.8.3",
+    "object-assign": "^4.1.1",
+    "postcss-loader": "^2.0.5",
+    "prettier": "^1.10.0",
+    "promise": "^8.0.1",
+    "prop-types": "^15.5.8",
+    "react": "^16.1.0",
+    "react-dom": "^16.1.0",
+    "react-redux": "^5.0.7",
+    "react-test-renderer": "^16.1.0",
+    "redux-form": "^7.3.0",
+    "redux-form-website-template": "^0.0.112",
+    "requestanimationframe": "^0.0.23",
+    "rimraf": "^2.6.1",
+    "rollup": "^0.57.0",
+    "rollup-plugin-babel": "^4.0.0-beta.1",
+    "rollup-plugin-commonjs": "^9.0.0",
+    "rollup-plugin-node-resolve": "^3.0.0",
+    "rollup-plugin-replace": "^2.0.0",
+    "rollup-plugin-sizes": "^0.4.0",
+    "rollup-plugin-uglify": "^3.0.0",
+    "sass-loader": "^6.0.5",
+    "semantic-release": "^15.0.0",
+    "storybook-addon-a11y": "^3.0.0",
+    "storybook-addon-smart-knobs": "^3.3.1",
+    "validate-commit-msg": "^2.10.1",
+    "whatwg-fetch": "^2.0.3"
+  },
+  "release": {
+    "branch": "master"
+  },
+  "babel": {
+    "presets": [
+      "./scripts/env",
+      "@babel/preset-react",
+      "@babel/preset-stage-1"
+    ]
+  },
+  "prettier": {
+    "jsxBracketSameLine": true,
+    "printWidth": 80,
+    "singleQuote": true,
+    "trailingComma": "es5"
+  },
+  "lint-staged": {
+    "*.js": [
+      "yarn prettier",
+      "yarn lint",
+      "git add"
+    ],
+    "*.{css,md,scss}": [
+      "yarn prettier",
+      "git add"
+    ]
+  },
+  "config": {
+    "validate-commit-msg": {
+      "types": [
+        "feat",
+        "fix",
+        "docs",
+        "style",
+        "refactor",
+        "perf",
+        "test",
+        "chore",
+        "revert"
+      ],
+      "warnOnFail": false,
+      "maxSubjectLength": 100,
+      "subjectPattern": ".+",
+      "subjectPatternErrorMsg": "Subject does not match subject pattern!"
+    },
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog-components"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wfp-ui/wfp-ui.git"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/components/**/*.js",
+      "!src/components/**/*-story.js"
+    ],
+    "coverageDirectory": "coverage",
+    "coverageReporters": [
+      "text",
+      "html"
+    ],
+    "setupFiles": [
+      "<rootDir>/config/jest/setup.js"
+    ],
+    "testMatch": [
+      "<rootDir>/**/__tests__/**/*.js?(x)",
+      "<rootDir>/**/?(*-)(spec|test).js?(x)"
+    ],
+    "testURL": "http://localhost",
+    "transform": {
+      "^.+\\.(js|jsx)$": "<rootDir>/config/jest/jsTransform.js",
+      "^.+\\.s?css$": "<rootDir>/config/jest/cssTransform.js",
+      "^(?!.*\\.(js|jsx|css|json)$)": "<rootDir>/config/jest/fileTransform.js"
+    },
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/examples/",
+      "/config/",
+      "/lib/",
+      "/es/",
+      "/cjs/"
+    ],
+    "transformIgnorePatterns": [
+      "[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"
+    ],
+    "moduleFileExtensions": [
+      "js",
+      "json"
+    ],
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ]
+  },
+  "bundleSizeThreshold": 80000
 }

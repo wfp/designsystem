@@ -1,0 +1,16 @@
+@import '../scss/import-once';
+@import './classic/classic';
+@import './experimental/experimental';
+@import './experimental/fallback';
+
+@include exports('grid') {
+  @if global-variable-exists('css--use-experimental-grid') == true and $css--use-experimental-grid == true {
+    @if global-variable-exists('css--use-experimental-grid-fallback') == true and $css--use-experimental-grid-fallback == true {
+      @include grid-experimental-fallback;
+    } @else {
+      @include grid-experimental;
+    }
+  } @else {
+    @include grid;
+  }
+}

@@ -1,0 +1,52 @@
+//-----------------------------
+// Modules
+//-----------------------------
+
+@import '../../globals/scss/vars';
+@import '../../globals/scss/colors';
+@import '../../globals/scss/helper-mixins';
+@import '../../globals/scss/layer';
+@import '../../globals/scss/typography';
+@import '../../globals/scss/import-once';
+@import '../../globals/scss/css--reset';
+@import '../../globals/scss/css--typography';
+
+@include exports('story') {
+  .#{$prefix}--story {
+    @include reset;
+    @include font-family;
+    p {
+    	margin-bottom: $spacing-lg;
+    }
+    h2 {
+	  	margin: $spacing-lg 0;
+	  	&.before--img {
+	  		margin-bottom: 0;
+	  	}
+	  }
+	  h3 {
+	  	margin: $spacing-xs 0;
+	  }
+	  h4 {
+	  	margin: $spacing-xs 0;
+	  }
+
+	  .#{$prefix}--story__title {
+	  	@include typescale('alpha');
+	  	font-weight: 700;
+	  }
+	  .#{$prefix}--story__sub-title {
+	  	@include typescale('gamma');
+	  	color: $color__navy-gray-7;
+	  	margin-bottom: $spacing-lg;
+	  }
+	  .#{$prefix}--story__type-beta {
+	    margin-bottom: $spacing-lg;
+	  }
+	  .#{$prefix}--markup {
+	  	font-style: italic;
+	  	@include typescale('delta');
+	    margin-bottom: $spacing-lg;
+	  }
+	}
+}

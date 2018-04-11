@@ -1,0 +1,135 @@
+//-------------------------
+// 🌍 Global
+//-------------------------
+
+$css--font-face: false !default;
+$css--helpers: true !default;
+$css--body: true !default;
+$css--use-experimental-grid: false !default;
+$css--use-experimental-grid-fallback: false !default;
+$css--use-layer: true !default;
+$css--reset: true !default;
+$css--typography: true !default;
+$css--plex: true !default;
+
+@import 'colors';
+@import 'vars';
+@import 'mixins';
+@import 'layout';
+@import 'layer';
+@import 'spacing';
+@import 'typography';
+@import 'import-once';
+@import 'css--reset';
+@import 'css--font-face';
+@import 'css--helpers';
+@import 'css--body';
+@import 'css--typography';
+@import '../grid/grid';
+
+//-------------------------
+// ☠️  Manage deprecations
+//-------------------------
+
+/**
+ * We flag this variable as true if someone uses the globals/scss/styles.scss
+ * entry-point. This allows us to collect all the messages and display them at
+ * the end of the file instead of bringing it up per-component.
+ *
+ * If a consumer instead gets the components by importing the partial directly,
+ * this variable _will not_ be set to true, so the deprecation message will be
+ * displayed after the @import.
+ */
+$deprecations--entry: true;
+// Collect all deprecation reasons into this list throughout the import cycle.
+$deprecations--reasons: ();
+// This message will be prepended to any deprecation notice
+$deprecations--message: 'Deprecated code was found, this code will be removed before the next release of the UI-Kit.';
+
+//-------------------------
+// 🍕 Components
+//-------------------------
+
+@import '../../components/Wrapper/wrapper';
+@import '../../components/Button/button';
+/*@import '../../components/copy-button/copy-button';
+*/
+@import '../../components/FileUploader/file-uploader';
+@import '../../components/Checkbox/checkbox';
+/*
+@import '../../components/combo-box/combo-box';
+*/
+@import '../../components/RadioButton/radio-button';
+/*
+@import '../../components/toggle/toggle';
+@import '../../components/search/search';
+@import '../../components/select/select';
+*/
+@import '../../components/TextInput/text-input';
+@import '../../components/TextArea/text-area';
+@import '../../components/NumberInput/number-input';
+@import '../../components/Form/form';
+/*
+@import '../../components/Link/link';
+@import '../../components/Wrapper/wrapper';
+/*@import '../../components/list-box/list-box';
+@import '../../components/list/list';
+@import '../../components/data-table/data-table';
+@import '../../components/data-table-v2/data-table-v2';
+@import '../../components/structured-list/structured-list';
+@import '../../components/code-snippet/code-snippet';
+@import '../../components/overflow-menu/overflow-menu';
+@import '../../components/card/card';
+@import '../../components/content-switcher/content-switcher';
+@import '../../components/date-picker/date-picker';
+@import '../../components/detail-page-header/detail-page-header';
+@import '../../components/dropdown/dropdown';
+*/
+@import '../../components/loading/loading';
+/*
+@import '../../components/modal/modal';
+*/
+@import '../../components/Module/module';
+/*
+@import '../../components/multi-select/multi-select';
+@import '../../components/notification/inline-notification';
+@import '../../components/notification/toast-notification';
+@import '../../components/tooltip/tooltip';
+@import '../../components/tabs/tabs';
+@import '../../components/tag/tag';
+@import '../../components/unified-header/unified-header';
+@import '../../components/interior-left-nav/interior-left-nav';
+@import '../../components/pagination/pagination';
+@import '../../components/accordion/accordion';
+@import '../../components/progress-indicator/progress-indicator';
+*/
+@import '../../components/Story/story';
+@import '../../components/Breadcrumb/breadcrumb';
+@import '../../components/BlockQuote/blockquote';
+/*
+@import '../../components/toolbar/toolbar';
+@import '../../components/time-picker/time-picker';
+@import '../../components/slider/slider';
+@import '../../components/order-summary/order-summary';
+@import '../../components/tile/tile';
+@import '../../components/lightbox/lightbox';
+@import '../../components/carousel/carousel';
+*/
+//-------------------------------------
+
+// 🙈 Hidden (Not exposed on website)
+//-------------------------------------
+@import '../../components/Footer/footer';
+/*@import '../../components/fab/fab'; */
+
+// Cycle through all the deprecation reasons, if any exist, that have been
+// accumulated through the @import process.
+@if (length($deprecations--reasons) > 0) {
+  $deprecations--message: '';
+  @each $reason in $deprecations--reasons {
+    $deprecations--message: '#{$deprecations--message}
+REASON: #{$reason}';
+  }
+
+  @warn $deprecations--message;
+}

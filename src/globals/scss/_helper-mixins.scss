@@ -1,0 +1,122 @@
+//----------------------------------------------
+// Mixins
+// ---------------------------------------------
+//
+//   Category             ||  Description
+//   ===========================================
+//   Misc                 ||  General helper @mixins
+//   Deprecated           ||  Not used anymore
+//   ===========================================
+
+//----------------------------------------------
+// Misc
+// ---------------------------------------------
+
+@import 'vars';
+@import 'css--reset';
+@import 'typography';
+
+@mixin text-overflow($width: false) {
+  display: block;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  // apply a width if width parameter exists
+  @if ($width) {
+    width: $width;
+  }
+}
+
+@mixin placeholder-colors {
+  color: $text-03;
+}
+
+@mixin box-shadow($size: 'small') {
+  // Large - For dropdowns
+  @if ($size == 'large') {
+    box-shadow: 6px 6px 6px 0 $box-shadow;
+  }
+
+  @if ($size == 'small') {
+    box-shadow: 0px 3px 3px 0 $box-shadow;
+  }
+}
+
+@mixin focus-outline($type: 'border') {
+  @if ($type == 'border') {
+    outline: 1px solid $brand-01;
+  }
+
+  @if ($type == 'blurred') {
+    box-shadow: 0 0 0 3px $color__blue-20;
+    outline: 1px solid transparent;
+  }
+}
+
+@mixin rotate($deg, $speed, $origin: center) {
+  transform: rotate($deg);
+  transition: transform $speed;
+  transform-origin: $origin;
+}
+
+@mixin hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+  visibility: visible;
+  white-space: nowrap;
+}
+
+@mixin button-reset($width: true) {
+  @include reset;
+  @include font-family;
+  @include font-smoothing;
+  @include letter-spacing;
+  display: inline-block;
+  background: none;
+  appearance: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+
+  @if ($width == true) {
+    width: 100%;
+  }
+
+  &::-moz-focus-inner {
+    border: 0;
+  }
+}
+
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
+@mixin deprecate($reason) {
+  $deprecations--entry: false !default;
+
+  @if ($deprecations--entry == true) {
+    $deprecations--reasons: append($deprecations--reasons, $reason) !global;
+    @content;
+  } @else {
+    @warn 'Deprecated code was found, this code will be removed before the next release of Carbon.
+REASON: #{$reason}';
+    @content;
+  }
+}
+
+//----------------------------------------------
+// Deprecated
+// ---------------------------------------------
+
+@mixin light-ui {
+  .#{$prefix}--global-light-ui & {
+    @content;
+  }
+}

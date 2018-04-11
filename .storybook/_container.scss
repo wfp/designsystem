@@ -1,0 +1,23 @@
+$css--font-face: true;
+$css--reset: true;
+html {
+	height: 100%;
+}
+body {
+	height: 100%;
+	#root {
+		height: 100%;
+		>div { /*main */
+			>div {
+				>div>button,>button {
+					font-size: 1rem !important;
+					background: #0A6EB4 !important;
+				}
+			}
+			&:first-child {
+				height: 100%;
+				margin-top: -1%;
+			}
+		}
+	}
+}
