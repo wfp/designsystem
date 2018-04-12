@@ -1,6 +1,5 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
 import { withSmartKnobs } from 'storybook-addon-smart-knobs'
 
 import { Provider } from 'react-redux';
@@ -8,7 +7,7 @@ import store from '../../internal/configureStore';
 import { Field } from 'redux-form';
 import FormWrapper from '../../internal/RfFormWrapper';
 
-import RfTextInput from './RfTextInput';
+import RfTextArea from './RfTextArea';
 
 const introText = `
   Text fields enable the user to interact with and input data. A single line
@@ -20,7 +19,7 @@ const email = value =>
   value && !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value) ?
   'Invalid email address' : undefined;
 
-storiesOf('TextInput', module)
+storiesOf('Redux Form TextArea', module)
 	.addDecorator(withSmartKnobs)
 	.addDecorator(story => <Provider store={store}><FormWrapper>{story()}</FormWrapper></Provider>)
   .addWithInfo(
@@ -31,7 +30,7 @@ storiesOf('TextInput', module)
       value can be either 'string' or 'number'.
     `,
     () => <Field
-              component={RfTextInput}
+              component={RfTextArea}
               label="Label"
               name="Input"
               placeholder="Placeholder here"
