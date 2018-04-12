@@ -1,45 +1,92 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
-import RfFormItem from '../FormItem/RfFormItem';
 
 import RfFormLabel from '../FormLabel/RfFormLabel';
 
-export const Input = (props) => {
-  const { className, input, id, disabled, meta: { touched, error }, type, placeholder} = props;
+const TextInput = (props) => {
 
-  const inputClasses = classNames({
-    'wfp--text-input': true,
-    'wfp--input--invalid' : touched && error
-  });
+  const {
+    className,
+    id,
+    type,
+    onChange,
+    onClick,
+    hideLabel,
+    invalid,
+    invalidText,
+    ...other
+  } = props;
+  const textInputProps = {
+    id,
+    onChange: evt => {
+      if (!other.disabled) {
+        onChange(evt);
+      }
+    },
+    onClick: evt => {
+      if (!other.disabled) {
+        onClick(evt);
+      }
+    },
+    input,
+    type,
+  };
 
-  return (
+  const errorId = id + '-error-msg';
+  const textInputClasses = classNames('wfp--text-input', className);
+
+  const error = invalid ? (
+    <div className="wfp--form-requirement" id={errorId}>
+      {invalidText}
+    </div>
+  ) : null;
+
+  const input = invalid ? (
     <input
-      {...input}
-      className={inputClasses}
-      disabled={disabled}
-      id={id ? id : input.name}
-      type={type}
-      className={inputClasses}
-      placeholder={placeholder}/>
-  )
-}
+      {...other}
+      {...textInputProps}
+      data-invalid
+      aria-invalid
+      aria-describedby={errorId}
+      className={textInputClasses}
+    />
+  ) : (
+    <input {...other} {...textInputProps} className={textInputClasses} />
+  );
 
-const RenderInput = (props) => {
   return (
-    <RfFormItem {...props}>
-      <RfFormLabel {...props} />
-      <Input {...props} />
-    </RfFormItem>
-  )
+    <div className="wfp--form-item">
+      <RfFormLabel {...props} /> 
+      {input}
+      {error}
+    </div>
+  );
 };
 
-
-RenderInput.propTypes = {
-  /**
-    Width of Wrapper, use 'narrow' or leave empty
-  */
-  pageWidth: PropTypes.string
+TextInput.propTypes = {
+  className: PropTypes.string,
+  defaultValue: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  disabled: PropTypes.bool,
+  id: PropTypes.string.isRequired,
+  labelText: PropTypes.string.isRequired,
+  onChange: PropTypes.func,
+  onClick: PropTypes.func,
+  type: PropTypes.string,
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  hideLabel: PropTypes.bool,
+  invalid: PropTypes.bool,
+  invalidText: PropTypes.string,
 };
 
-export default RenderInput;
+TextInput.defaultProps = {
+  className: 'wfp--text__input',
+  disabled: false,
+  type: 'text',
+  onChange: () => {},
+  onClick: () => {},
+  invalid: false,
+  invalidText: '',
+};
+
+export default TextInput;

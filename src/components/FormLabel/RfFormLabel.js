@@ -2,16 +2,18 @@ import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
-const Label = ({ children, input, label, id, info, isRequired, ...other }) => {
+const Label = ({ children, hideLabel, input, label, id, info, isRequired, ...other }) => {
+
   if (children !== false && label !== false) {
-    const labelClass = classNames({
+    const labelClasses = classNames({
       'wfp--label': true,
+      'wfp--visually-hidden': hideLabel,
       'label--required': isRequired
     }); 
     return (
       <label
         {...other}
-        className={labelClass}
+        className={labelClasses}
         htmlFor={id ? id : input ? input.name : ''}
       >
           {children ? children : label}
