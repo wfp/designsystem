@@ -2,7 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
-const Label = ({ children, hideLabel, input, label, id, info, isRequired, ...other }) => {
+const Label = ({ children, hideLabel, input, label, id, /* info, */ isRequired, ...other }) => {
 
   if (children !== false && label !== false) {
     const labelClasses = classNames({
@@ -16,7 +16,7 @@ const Label = ({ children, hideLabel, input, label, id, info, isRequired, ...oth
         className={labelClasses}
         htmlFor={id ? id : input ? input.name : ''}
       >
-          {children ? children : label}
+        {children ? children : label}
       </label>
     );
   }

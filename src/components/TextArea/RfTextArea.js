@@ -78,6 +78,7 @@ TextArea.propTypes = {
   placeholder: PropTypes.string,
   rows: PropTypes.number,
   value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  input: PropTypes.object,
   invalid: PropTypes.bool,
   invalidText: PropTypes.string,
   hideLabel: PropTypes.bool,

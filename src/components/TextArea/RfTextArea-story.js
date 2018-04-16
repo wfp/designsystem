@@ -19,11 +19,11 @@ const email = value =>
   value && !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value) ?
   'Invalid email address' : undefined;
 
-storiesOf('Redux Form TextArea', module)
+storiesOf('TextArea', module)
 	.addDecorator(withSmartKnobs)
 	.addDecorator(story => <Provider store={store}><FormWrapper>{story()}</FormWrapper></Provider>)
   .addWithInfo(
-    'Redux Form TextInput',
+    'Redux Form TextArea',
     `
       ${introText}
       The example below shows an enabled Text Input component. The default type is 'text' and its

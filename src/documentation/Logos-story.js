@@ -2,23 +2,23 @@
 
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import Button from '../components/Button';
 import Link from '../components/Link';
+import Blockquote from '../components/Blockquote';
 import Page from './Page';
 
 
-const LogoElement = ({color, logoKind, language, src}) => {
+const LogoElement = ({color, logoKind, src}) => {
 
   const fileTypes = ['.svg', '.png', '@4x.png','@8x.png'];
-	const backgroundColor = color === 'white' ? '#CCCCCC' : '#FFFFFF';
+	const backgroundColor = color === 'white' ? '#454646' : '#FFFFFF';
 	const width = (logoKind === 'standard'||logoKind === 'extended') ? 'auto' : 'auto';
 	const height = (logoKind === 'standard'||logoKind === 'extended') ? '50px' : '90px';
 	return (
-		<div style={{display: 'inline-block', width: '25%'}}>
+		<div style={{display: 'inline-block', marginRight: '10px'}}>
 			<img
 				alt="WFP Logo"
 				style={{
-					border: '3px solid #CCCCCC',
+					border: '1px solid #E5E5E5',
 					backgroundColor: backgroundColor,
 					width: width,
 					height: height
@@ -30,7 +30,6 @@ const LogoElement = ({color, logoKind, language, src}) => {
 						<Link
 							small
 							style={{marginRight: '0.5em', fontSize: '0.7em'}}
-							kind="ghost"
 							target="_blank"
 							href={`${src}${fileType}`}>
 							{fileType}
@@ -84,7 +83,8 @@ storiesOf('> Documentation', module)
   return (
     <Page title="Logos" subTitle="The new Logos in various sizes">
       <p>WFP's logo is available in three versions: emblem, standard, and full. Each has its own purpose and should be used appropriately, as per official branding guidelines, depending on available screen space and target audience.</p>
-      <p>You can find extended information about the Logo <Link href="http://brand.manuals.wfp.org/en/core-elements/logo/emblem-restyling-2018/">here</Link>.</p>
+      <p>You can find extended information about the Logo <Link href="http://brand.manuals.wfp.org/en/core-elements/logo/emblem-restyling-2018/" target="_blank">here</Link>.</p>
+       <Blockquote title="Which file type shall I use?"><p>Whenever possible use the svg files, since they are optimized with a small file size and will also serve HiDPI devices without problems. For print please use <Link href="http://newgo.wfp.org/collection/logos" target="_blank">these</Link> files.</p></Blockquote>
       <ul>
         {colorList}
       </ul>

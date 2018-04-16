@@ -2,17 +2,22 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
 
-const Checkbox = ({
-  className,
-  id,
-  input,
-  labelText,
-  onChange,
-  indeterminate,
-  hideLabel,
-  wrapperClassName,
-  ...other
-}) => {
+import RfFormLabel from '../FormLabel/RfFormLabel';
+
+const Checkbox = (props) => {
+
+	const {
+    className,
+    id,
+    labelText,
+    onChange,
+    indeterminate,
+    input,
+    hideLabel,
+    wrapperClassName,
+    ...other
+	} = props;
+
   let inputElement;
   const labelClasses = classNames('wfp--checkbox-label', className);
   const innerLabelClasses = classNames({
@@ -27,16 +32,10 @@ const Checkbox = ({
   return (
     <div className={wrapperClasses}>
       <input
-        {...other}
         {...input}
         type="checkbox"
         onChange={evt => {
-          /* Regular Form */
-          if (onChange)
-            onChange(input.checked, id, evt);
-          /* Redux Form */
-          if (input && input.onChange)
-            input.onChange(true);
+          onChange(input.checked, id, evt);
         }}
         className="wfp--checkbox"
         id={id}

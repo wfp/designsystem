@@ -15,7 +15,7 @@
   .#{$prefix}--story {
     @include reset;
     @include font-family;
-    p {
+    >p {
     	margin-bottom: $spacing-lg;
     }
     h2 {

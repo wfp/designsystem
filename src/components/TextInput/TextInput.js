@@ -6,6 +6,8 @@ const TextInput = ({
   labelText,
   className,
   id,
+  input,
+  meta,
   placeholder,
   type,
   onChange,
@@ -17,11 +19,11 @@ const TextInput = ({
 }) => {
   const textInputProps = {
     id,
-    onChange: evt => {
+    /*onChange: evt => {
       if (!other.disabled) {
         onChange(evt);
       }
-    },
+    },*/
     onClick: evt => {
       if (!other.disabled) {
         onClick(evt);
@@ -30,6 +32,13 @@ const TextInput = ({
     placeholder,
     type,
   };
+
+  /* Redux Form Mapping */
+
+  const invalidTextMap = meta ? meta.error : invalidText;
+  const invalidMap = meta ? !meta.valid : invalid;
+
+  console.log("map", invalidTextMap, invalidMap, meta.valid);
 
   const errorId = id + '-error-msg';
   const textInputClasses = classNames('wfp--text-input', className);
@@ -43,15 +52,16 @@ const TextInput = ({
     </label>
   ) : null;
 
-  const error = invalid ? (
+  const error = invalidMap ? (
     <div className="wfp--form-requirement" id={errorId}>
-      {invalidText}
+      {invalidTextMap}
     </div>
   ) : null;
 
-  const input = invalid ? (
+  const inputElement = invalidMap ? (
     <input
       {...other}
+      {...input}
       {...textInputProps}
       data-invalid
       aria-invalid
@@ -59,13 +69,13 @@ const TextInput = ({
       className={textInputClasses}
     />
   ) : (
-    <input {...other} {...textInputProps} className={textInputClasses} />
+    <input {...other} {...input} {...textInputProps} className={textInputClasses} />
   );
 
   return (
     <div className="wfp--form-item">
       {label}
-      {input}
+      {inputElement}
       {error}
     </div>
   );

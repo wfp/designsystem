@@ -1,6 +1,7 @@
 // Light UI Color Scheme
 $color__main: #0A6EB4 !default;
 $color__blue-51: lighten($color__main,3) !default;
+$color__main-darker: darken($color__main,3) !default;
 $color__gray-1: #dfe3e6 !default;
 $color__gray-2: #f0f3f6 !default;
 $color__gray-3: #f5f7fa !default;
@@ -11,6 +12,7 @@ $color__blue-20: #7cc7ff !default;
 $color__blue-30: #5aaafa !default;
 $color__blue-40: lighten($color__blue-51,5) !default;
 $color__blue-50: #4178be !default;
+$color__blue-60: darken($color__main,10) !default;
 $color__blue-90: #152935 !default;
 $color__navy-gray-1: #0f212e !default;
 $color__navy-gray-2: #20343e !default;

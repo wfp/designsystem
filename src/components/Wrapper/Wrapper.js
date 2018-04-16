@@ -1,18 +1,20 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import classnames from 'classnames';
+import classNames from 'classnames';
 
 const Wrapper = (props) => {
 
   const { children, className, pageWidth, ...other } = props;
-  const classNames = classnames({
+  const wrapperClasses = classNames({
     'wfp--wrapper' : true,
     'wfp--wrapper--narrow' : pageWidth === 'narrow',
     'wfp--wrapper--narrower' : pageWidth === 'narrower',
+    'wfp--wrapper--narrow wfp--wrapper--mobile-full' : pageWidth === 'narrow-full',
+    'wfp--wrapper--narrower wfp--wrapper--mobile-full' : pageWidth === 'narrower-full',
     [`${className}`]: className,
   });
   return (
-    <div className={classNames} {...other}>
+    <div className={wrapperClasses} {...other}>
       {children}
     </div>
   );

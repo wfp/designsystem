@@ -62,7 +62,9 @@ $deprecations--message: 'Deprecated code was found, this code will be removed be
 @import '../../components/RadioButton/radio-button';
 /*
 @import '../../components/toggle/toggle';
-@import '../../components/search/search';
+*/
+@import '../../components/Search/search';
+/*
 @import '../../components/select/select';
 */
 @import '../../components/TextInput/text-input';
@@ -90,6 +92,7 @@ $deprecations--message: 'Deprecated code was found, this code will be removed be
 @import '../../components/modal/modal';
 */
 @import '../../components/Module/module';
+@import '../../components/User/user';
 /*
 @import '../../components/multi-select/multi-select';
 @import '../../components/notification/inline-notification';
@@ -106,6 +109,7 @@ $deprecations--message: 'Deprecated code was found, this code will be removed be
 @import '../../components/Story/story';
 @import '../../components/Breadcrumb/breadcrumb';
 @import '../../components/BlockQuote/blockquote';
+@import '../../components/Table/table';
 /*
 @import '../../components/toolbar/toolbar';
 @import '../../components/time-picker/time-picker';
@@ -117,8 +121,10 @@ $deprecations--message: 'Deprecated code was found, this code will be removed be
 */
 //-------------------------------------
 
-// 🙈 Hidden (Not exposed on website)
+// 🙈 Page Elements
 //-------------------------------------
+@import '../../components/BannerNavigation/banner-navigation';
+@import '../../components/MainNavigation/main-navigation';
 @import '../../components/Footer/footer';
 /*@import '../../components/fab/fab'; */
 

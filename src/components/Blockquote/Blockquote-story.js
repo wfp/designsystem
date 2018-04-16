@@ -5,7 +5,7 @@ import withTests from '../../internal/withTests';
 
 import Blockquote from '../Blockquote';
 
-storiesOf('BlockQuote', module)
+storiesOf('Blockquote', module)
   .addDecorator(checkA11y)
   .addDecorator(withTests('Link'))
   .addWithInfo(

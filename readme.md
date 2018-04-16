@@ -1,6 +1,11 @@
+# Next United Nations World Food Programme UI Kit (WFP-UI)
 
 
-# Next WFP UI Kit
+Branch  | Build Status
+--------|-------------
+master  | [![Build Status](https://travis-ci.org/wfp/ui.svg?branch=master)](https://travis-ci.org/wfp/ui)
+develop | [![Build Status](https://travis-ci.org/wfp/ui.svg?branch=develop)](https://travis-ci.org/wfp/ui)
+
 > Work in progress, not for use at the moment.
 > 
 ## Credits

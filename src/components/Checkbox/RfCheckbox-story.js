@@ -7,7 +7,7 @@ import store from '../../internal/configureStore';
 import { Field } from 'redux-form';
 import FormWrapper from '../../internal/RfFormWrapper';
 
-import TextInput from './TextInput';
+import Checkbox from './Checkbox';
 
 const introText = `
   Text fields enable the user to interact with and input data. A single line
@@ -15,25 +15,22 @@ const introText = `
   text as opposed to a paragraph.
 `;
 
-const email = value =>
-  value && !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value) ?
-  'Invalid email address' : undefined;
 
-storiesOf('TextInput', module)
+storiesOf('Checkbox', module)
 	.addDecorator(withSmartKnobs)
 	.addDecorator(story => <Provider store={store}><FormWrapper>{story()}</FormWrapper></Provider>)
   .addWithInfo(
-    'Redux Form TextInput',
+    'Redux Form Checkbox',
     `
       ${introText}
       The example below shows an enabled Text Input component. The default type is 'text' and its
       value can be either 'string' or 'number'.
     `,
     () => <Field
-              component={TextInput}
+              component={Checkbox}
+              id="aaa"
               labelText="Label"
               name="Input"
               placeholder="Placeholder here"
-              validate={email}
           />
   );
