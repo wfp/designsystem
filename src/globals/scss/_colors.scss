@@ -8,12 +8,12 @@ $color__gray-3: #f5f7fa !default;
 $color__white: #fbfcfc !default;
 
 // UI Color Scheme
-$color__blue-20: #7cc7ff !default;
-$color__blue-30: #5aaafa !default;
-$color__blue-40: lighten($color__blue-51,5) !default;
-$color__blue-50: #4178be !default;
-$color__blue-60: darken($color__main,10) !default;
-$color__blue-90: #152935 !default;
+$color__blue-20: mix(white, $color__main, 75%) !default; // #7cc7ff
+$color__blue-30: mix(white, $color__main, 30%) !default; // #5aaafa
+$color__blue-40: mix(white, $color__main, 20%) !default; // lighten($color__blue-51,5)
+$color__blue-50: mix(black, $color__main, 3%) !default; // #4178be
+$color__blue-60: mix(black, $color__main, 20%) !default; //darken($color__main,10)
+$color__blue-90: #152935  !default; //  #152935 
 $color__navy-gray-1: #0f212e !default;
 $color__navy-gray-2: #20343e !default;
 $color__navy-gray-3: #2d3f49 !default;
