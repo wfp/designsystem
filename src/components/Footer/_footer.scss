@@ -62,11 +62,10 @@
   flex-direction: column;
   margin: 0;
   margin-right: rem(64px);
-  @include rtl{
+  @include rtl {
     margin-left:rem(64px);
-    margin-right: inherit;
+    margin-right: 0;
   }
-  
 }
 
 .#{$prefix}--footer-info__item > .#{$prefix}--link {
@@ -85,8 +84,8 @@
 
 .#{$prefix}--footer-cta {
   margin-left: auto;
-  @include rtl{
-    margin-left: inherit;
+  @include rtl {
+    margin-left: 0;
     margin-right: auto;
   }
 }

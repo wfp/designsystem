@@ -42,6 +42,11 @@
     font-weight: 600;
     margin-top: rem(-2px);
     margin-left: $spacing-sm;
+    @include rtl {
+      margin-left: 0;
+      margin-right: $spacing-sm;
+    }
+
     color: $text-03;
   }
 
@@ -50,10 +55,17 @@
   }
 
   .#{$prefix}--breadcrumb-item:last-child {
-    margin-right: 0;
-
-    &::after {
+    @include ltr {
       margin-right: 0;
+      &::after {
+        margin-right: 0;
+      }
+    }
+    @include rtl {
+      margin-left: 0;
+      &::after {
+        margin-left: 0;
+      }
     }
   }
 
