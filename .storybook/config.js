@@ -7,6 +7,10 @@ import infoAddon from '@storybook/addon-info';
 import { checkA11y } from 'storybook-addon-a11y';
 import Container from './Container';
 
+import {initializeRTL} from '../src/rtl-addon';
+initializeRTL();
+
+
 
 console.log(configureViewport, "sss", INITIAL_VIEWPORTS);
 // addDecorator(checkA11y);
@@ -45,6 +49,7 @@ configureViewport({
     ...newViewports
   }
 });*/
+
 
 // Option defaults:
 setOptions({

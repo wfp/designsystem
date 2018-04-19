@@ -20,6 +20,10 @@
     height: rem(25px);
     border-radius: 50%;
     margin-right: rem(10px);
+    @include rtl{
+      margin-left: rem(10px);
+      margin-right: inherit;
+    }
   }
 
 

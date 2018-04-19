@@ -7,6 +7,20 @@ $color__gray-2: #f0f3f6 !default;
 $color__gray-3: #f5f7fa !default;
 $color__white: #fbfcfc !default;
 
+
+// UI Main Colors (see http://brand.manuals.wfp.org/en/core-elements/colours/colour-palette/)
+
+$color__navy: #19486a !default;
+$color__aqua: #26bde2 !default;
+$color__dark-green: #3f7e44 !default;
+$color__lime: #2d3f49 !default;
+$color__yellow: #20343e !default;
+$color__ochre: #dda63a !default;
+$color__orange: #fd6925 !default;
+$color__red: #c5192d !default;
+$color__magenta: #dd1367 !default;
+
+
 // UI Color Scheme
 $color__blue-20: mix(white, $color__main, 75%) !default; // #7cc7ff
 $color__blue-30: mix(white, $color__main, 30%) !default; // #5aaafa
@@ -27,34 +41,33 @@ $color__white: #fff !default;
 
 // Accent Colors
 $color__blue-10: #c0e6ff !default;
-$color__blue-60: #325c80 !default;
-$color__teal-10: #a7fae6 !default;
-$color__teal-20: #6eedd8 !default;
-$color__teal-30: #41d6c3 !default;
-$color__teal-40: #00b4a0 !default;
-$color__teal-50: #008571 !default;
-$color__teal-60: #006d5d !default;
-$color__green-10: #c8f08f !default;
-$color__green-20: #b4e051 !default;
-$color__green-30: #8cd211 !default;
-$color__green-40: #5aa700 !default;
-$color__green-50: #4b8400 !default;
-$color__green-60: #2d660a !default;
-$color__yellow-10: #fde876 !default;
-$color__yellow-20: #fdd600 !default;
-$color__yellow-30: #efc100 !default;
-$color__yellow-60: #735f00 !default;
-$color__orange-10: #ffd4a0 !default;
-$color__orange-20: #ffa573 !default;
-$color__orange-30: #ff7832 !default;
-$color__orange-60: #a53725 !default;
-$color__red-10: #ffd2dd !default;
-$color__red-30: #ff7d87 !default;
-$color__red-40: #ff5050 !default;
-$color__red-50: #e71d32 !default;
-$color__red-60: #ad1625 !default;
-$color__purple-10: #eed2ff !default;
-$color__purple-20: #d7aaff !default;
-$color__purple-30: #ba8ff7 !default;
-$color__purple-40: #af6ee8 !default;
-$color__purple-60: #734098 !default;
+$color__aqua-10: mix(white, $color__aqua, 55%) !default;
+$color__aqua-20: mix(white, $color__aqua, 50%) !default;
+$color__aqua-30: mix(white, $color__aqua, 40%) !default;
+$color__aqua-40: mix(white, $color__aqua, 10%) !default;
+$color__aqua-50: mix(white, $color__aqua, 5%) !default;
+$color__aqua-60: mix(white, $color__aqua, 10%) !default;
+$color__green-10: mix(white, $color__dark-green, 55%) !default;
+$color__green-20: mix(white, $color__dark-green, 50%) !default;
+$color__green-30: mix(white, $color__dark-green, 40%) !default;
+$color__green-40: mix(white, $color__dark-green, 10%) !default;
+$color__green-50: mix(white, $color__dark-green, 5%) !default;
+$color__green-60: mix(black, $color__dark-green, 10%) !default;
+$color__yellow-10: mix(white, $color__yellow, 55%) !default
+$color__yellow-20: mix(white, $color__yellow, 50%) !default
+$color__yellow-30: mix(white, $color__yellow, 40%) !default
+$color__yellow-60: mix(black, $color__yellow, 10%) !default
+$color__orange-10: mix(white, $color__orange, 55%) !default;
+$color__orange-20: mix(white, $color__orange, 50%) !default;
+$color__orange-30: mix(white, $color__orange, 40%) !default;
+$color__orange-60: mix(black, $color__orange, 10%) !default;
+$color__red-10: mix(white, $color__red, 40%) !default;
+$color__red-30: mix(white, $color__red, 20%) !default;
+$color__red-40: mix(white, $color__red, 10%) !default;
+$color__red-50: mix(black, $color__red, 1%) !default;
+$color__red-60: mix(black, $color__red, 20%) !default;
+$color__magenta-10: mix(white, $color__magenta, 55%) !default;
+$color__magenta-20: mix(white, $color__magenta, 50%) !default;
+$color__magenta-30: mix(white, $color__magenta, 40%) !default;
+$color__magenta-40: mix(white, $color__magenta, 10%) !default;
+$color__magenta-60: mix(black, $color__magenta, 10%) !default;

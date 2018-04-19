@@ -91,6 +91,9 @@
 
   .#{$prefix}--search--md .#{$prefix}--search-magnifier {
     left: 0.6rem;
+    @include rtl{
+      right: 0.6em;
+    }
   }
 
   .#{$prefix}--search--sm .#{$prefix}--search-magnifier {

@@ -2,7 +2,7 @@
   "ui_colors": [
     {
       "name": "WFP Blue",
-      "hex": "#7cc7ff",
+      "hex": "#0A6EB4",
       "scss": "$color__main"
     },
     {

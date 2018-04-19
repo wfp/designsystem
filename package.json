@@ -183,6 +183,7 @@
     "sass-loader": "^6.0.5",
     "semantic-release": "^15.0.0",
     "storybook-addon-a11y": "^3.0.0",
+    "storybook-addon-rtl": "^0.1.1",
     "storybook-addon-smart-knobs": "^3.3.1",
     "validate-commit-msg": "^2.10.1",
     "whatwg-fetch": "^2.0.3"

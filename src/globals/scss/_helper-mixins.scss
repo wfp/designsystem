@@ -95,6 +95,17 @@
 }
 
 /**
+ * Right to left Support added
+ */
+
+@mixin rtl() {
+  body[dir=rtl] & {
+    @content;
+  }
+}
+
+
+/**
  * Generic `deprecate` mixin that is being used to indicate that a component is
  * no longer going to be present in the next major release of Carbon.
  */

@@ -10,7 +10,7 @@ import User from '../User';
 
 storiesOf('MainNavigation', module)
   .addWithInfo(
-    'default',
+    'Right to left',
     `
       The MainNavigation is used across all applications, it is the starting point of the application and offers the top level navigation items.
     `,
@@ -25,12 +25,12 @@ storiesOf('MainNavigation', module)
               </p>
             </div>
           }>
-					<Link href="http://communities.wfp.org" target="_blank">Communities</Link>
+					<Link href="http://communities.wfp.org" target="_blank">التاريخ</Link>
 				</MainNavigationItem>
 				<MainNavigationItem
           subNavigation={
             <div>
-              <h3>Manuals</h3>
+              <h3>أحكم</h3>
               <SubMenuList>
                 <SubMenuSection title="List Items">
                   <SubMenuItem><Link href="https://go.docs.wfp.org" target="_blank">GoDocs</Link></SubMenuItem>
@@ -57,20 +57,20 @@ storiesOf('MainNavigation', module)
               </SubMenuList>
             </div>
           }>
-					<Link href="http://manuals.wfp.org" target="_blank">Manuals</Link>
-				</MainNavigationItem>
+			<Link href="http://manuals.wfp.org" target="_blank">ذات</Link>
+		</MainNavigationItem>
         <MainNavigationItem>
-          <Link href="https://go.docs.wfp.org" target="_blank">GoDocs</Link>
+          <Link href="https://go.docs.wfp.org" target="_blank">وحتى</Link>
         </MainNavigationItem>
         <MainNavigationItem>
-          <Link href="http://opweb.wfp.org" target="_blank">OPweb</Link>
+          <Link href="http://opweb.wfp.org" target="_blank">ألمانيا</Link>
         </MainNavigationItem>      
 				<MainNavigationItem>
 					<Search
             size="medium"
             id="search-2"
-            labelText="Search"
-            placeHolderText="Search"
+            labelText="بحث"
+            placeHolderText="بحث"
 						onChange={action('onChange')}
 					/>
 				</MainNavigationItem>
@@ -83,7 +83,7 @@ storiesOf('MainNavigation', module)
               </p>
             </div>
           }>
-          <User title="Max Mustermann"/>
+          <User title="والنفيس"/>
         </MainNavigationItem>    
       </MainNavigation>
     )
