@@ -62,6 +62,10 @@
   flex-direction: column;
   margin: 0;
   margin-right: rem(64px);
+  @include rtl{
+    margin-left:rem(64px);
+    margin-right: inherit;
+  }
   
 }
 
@@ -81,6 +85,10 @@
 
 .#{$prefix}--footer-cta {
   margin-left: auto;
+  @include rtl{
+    margin-left: inherit;
+    margin-right: auto;
+  }
 }
 
 @include breakpointMax(bp--sm--major) {
