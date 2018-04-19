@@ -151,7 +151,7 @@ export default class Search extends Component {
 
     return (
       <div className={searchClasses} role="search">
-        <Icon
+        <div
           name="search--glyph"
           description="search"
           className="wfp--search-magnifier"

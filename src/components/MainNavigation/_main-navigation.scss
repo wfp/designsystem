@@ -55,6 +55,10 @@
         position: relative;
         top: rem(-1px);
         margin-left: 0.2em;
+        @include rtl {
+          margin-left: 0;
+          margin-right: 0.2em;
+        }
         width: rem(15px);
         content: "▾";
       }
