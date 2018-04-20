@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import classnames from 'classnames';
-import Story from '../Story';
+import Wrapper from '../Wrapper';
 
 const Story = ({ children, className }) => {
   const classNames = classnames({

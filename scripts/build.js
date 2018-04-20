@@ -44,13 +44,13 @@ Promise.all([
       BABEL_ENV: 'cjs',
     });
     exec(
-      `${rollupPath} -c scripts/rollup.config.js -o umd/carbon-components-react.js`,
+      `${rollupPath} -c scripts/rollup.config.js -o umd/wfp-components-react.js`,
       {
         NODE_ENV: 'development',
       }
     );
     exec(
-      `${rollupPath} -c scripts/rollup.config.js -o umd/carbon-components-react.min.js`,
+      `${rollupPath} -c scripts/rollup.config.js -o umd/wfp-components-react.min.js`,
       {
         NODE_ENV: 'production',
       }

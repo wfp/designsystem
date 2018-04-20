@@ -13,6 +13,6 @@
  *   Brand prefix. Should be in sync with `$prefix` Sass variable in carbon-components/src/globals/scss/_vars.scss.
  */
 const settings = {
-  prefix: 'bx',
+  prefix: 'wfp',
 };
 export default settings;
