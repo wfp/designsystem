@@ -88,7 +88,7 @@ module.exports = {
   ],
   external: peerDependencies,
   output: {
-    name: 'CarbonComponentsReact',
+    name: 'WfpComponentsReact',
     format: 'umd',
     globals: {
       classnames: 'classNames',

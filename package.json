@@ -1,6 +1,6 @@
 {
-  "name": "wfp-ui",
-  "version": "5.5.1",
+  "name": "@wfp/ui",
+  "version": "0.16.11",
   "description": "WFP UI-Kit Next",
   "license": "Apache-2",
   "main": "lib/index.js",
@@ -38,7 +38,9 @@
   "files": [
     "lib/**/*",
     "es/**/*",
-    "umd/**/*"
+    "umd/**/*",
+    "assets/**/*",
+    "css/**/*"
   ],
   "eslintConfig": {
     "parser": "babel-eslint",
@@ -95,8 +97,6 @@
     }
   },
   "peerDependencies": {
-    "carbon-components": "^8.10.0",
-    "carbon-icons": "^5.1.2 || ^6.0.0",
     "react": "^15.3.2 || ^16.1.0",
     "react-dom": "^15.3.2 || ^16.1.0"
   },

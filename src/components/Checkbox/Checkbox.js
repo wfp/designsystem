@@ -24,20 +24,22 @@ const Checkbox = ({
     wrapperClassName
   );
 
+  const onChangeInput = (evt) => {
+    /* Regular Form */
+    if (onChange)
+      onChange(input.checked, id, evt);
+    /* Redux Form */
+    if (input && input.onChange)
+      input.onChange(input.checked);
+  }
+
   return (
     <div className={wrapperClasses}>
       <input
         {...other}
         {...input}
         type="checkbox"
-        onChange={evt => {
-          /* Regular Form */
-          if (onChange)
-            onChange(input.checked, id, evt);
-          /* Redux Form */
-          if (input && input.onChange)
-            input.onChange(true);
-        }}
+        onClick={onChangeInput}
         className="wfp--checkbox"
         id={id}
         ref={el => {

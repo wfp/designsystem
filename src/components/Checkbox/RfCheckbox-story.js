@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withSmartKnobs } from 'storybook-addon-smart-knobs'
 
+import { withKnobs, text, boolean, number } from '@storybook/addon-knobs/react';
 import { Provider } from 'react-redux';
 import store from '../../internal/configureStore';
 import { Field } from 'redux-form';
@@ -17,20 +17,25 @@ const introText = `
 
 
 storiesOf('Checkbox', module)
-	.addDecorator(withSmartKnobs)
+  .addDecorator(withKnobs)
 	.addDecorator(story => <Provider store={store}><FormWrapper>{story()}</FormWrapper></Provider>)
   .addWithInfo(
     'Redux Form Checkbox',
     `
       ${introText}
-      The example below shows an enabled Text Input component. The default type is 'text' and its
-      value can be either 'string' or 'number'.
+      The example below shows an Checkbox Input component inside Redux-Form. The type is 'checkbox' and its
+      value can be a 'bool'.
     `,
-    () => <Field
-              component={Checkbox}
-              id="aaa"
-              labelText="Label"
-              name="Input"
-              placeholder="Placeholder here"
+    () => {
+      const label = text('label', 'Arunoda Susiripala');
+      const name = text('name', 'checkboxinput');
+      return (
+        <Field
+            component={Checkbox}
+            id="Inputelement"
+            labelText={label}
+            name={name}
           />
+      )
+    }
   );

@@ -63,14 +63,14 @@ storiesOf('> Documentation', module)
 								<LogoElement
 									color={color}
 									logoKind={logoKind}
-									src={`http://localhost:9000/logos/${logoKind}/wfp-logo-${logoKind}-${color}`} />
+									src={`logos/${logoKind}/wfp-logo-${logoKind}-${color}`} />
 							) : (
 								<div>
 									{languages.map(language =>
 										<LogoElement
 											color={color}
 											logoKind={logoKind}
-											src={`http://localhost:9000/logos/${logoKind}/${language}/wfp-logo-${logoKind}-${color}-${language}`} />
+											src={`logos/${logoKind}/${language}/wfp-logo-${logoKind}-${color}-${language}`} />
 									)}
 								</div>
 							)}

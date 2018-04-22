@@ -25,7 +25,7 @@ const exec = (command, extraEnv) =>
     env: Object.assign({}, process.env, extraEnv),
   });
 
-const ignoreGlobs = ['**/__tests__/*', '**/*-test.js', '**/*-story.js'].join(
+const ignoreGlobs = ['**/__tests__/*', '**/*-test.js', '**/*-story.js', '**/rtl-addon'].join(
   ','
 );
 
@@ -51,6 +51,12 @@ Promise.all([
     );
     exec(
       `${rollupPath} -c scripts/rollup.config.js -o umd/wfp-components-react.min.js`,
+      {
+        NODE_ENV: 'production',
+      }
+    );
+    exec(
+      `node-sass ./src/globals/scss -o ./css --output-style compressed --source-map true`,
       {
         NODE_ENV: 'production',
       }

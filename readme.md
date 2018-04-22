@@ -1,3 +1,4 @@
+
 # Next United Nations World Food Programme UI Kit (WFP-UI)
 
 
@@ -25,17 +26,17 @@ View available Components [here](http://ui.wfp.org). Usage information is availa
 
 Run the following command using [npm](https://www.npmjs.com/):
 ```bash
-npm install wfp-ui
+npm install @wfpw/ui
 ```
 Import a react component
 ```bash
-import Button from 'wfp-ui/Button';
-import button from 'wfp-ui/css/button';
+import { Breadcrumb, BreadcrumbItem, BreadcrumbHome } from '@wfp/ui';
 ```
-Start the CSS Watcher
+Import the css
 ```bash
-npm css:watch
+@import '@wfp/ui/css/styles';
 ```
+View available React Components [here](http://pydev.wfp.org:8282/). Usage information is available when you click the blue **Show Info** icon in the top right corner of the selected component.
 ## Logos
 All the logo files can be found in the `wfp-ui/logos` folder.
 Currently the logo is available in
