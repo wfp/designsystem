@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import icons from 'carbon-icons';
+//import icons from 'carbon-icons';
 
 /**
  * Returns a single icon Object
@@ -10,6 +10,8 @@ import icons from 'carbon-icons';
  * // Returns a single icon Object
  * this.findIcon('copy-code', icons.json);
  */
+const icons = [];
+ 
 export function findIcon(name, iconsObj = icons) {
   const icon = iconsObj.filter(obj => obj.name === name);
 
@@ -177,5 +179,5 @@ Icon.defaultProps = {
   description: 'Provide a description that will be used as the title',
 };
 
-export { icons };
+//export { icons };
 export default Icon;

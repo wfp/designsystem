@@ -13,7 +13,7 @@ export default class RadioButton extends React.Component {
     labelText: PropTypes.string.isRequired,
     name: PropTypes.string,
     onChange: PropTypes.func,
-    value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+    value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   };
 
   static defaultProps = {
@@ -25,7 +25,12 @@ export default class RadioButton extends React.Component {
   }
 
   handleChange = evt => {
-    this.props.onChange(this.props.value, this.props.name, evt);
+    // Regular Update
+    if (this.props.onChange)
+      this.props.onChange(this.props.value, this.props.name, evt);
+    // Redux Form Change
+    if (this.props.input && this.props.input.onChange)
+      this.props.input.onChange(evt.target.value);
   };
 
   render() {
@@ -34,13 +39,14 @@ export default class RadioButton extends React.Component {
       this.props.className
     );
 
-    const { labelText, ...other } = this.props;
-
+    const { component, labelText, input, value, ...other } = this.props;
     return (
       <div className={wrapperClasses}>
         <input
           {...other}
+          {...input}
           type="radio"
+          value={input && input.value ? input.value : value}
           className="wfp--radio-button"
           onChange={this.handleChange}
           id={this.uid}
