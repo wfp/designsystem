@@ -31,7 +31,7 @@ storiesOf('TextArea', module)
     `,
     () => <Field
               component={TextArea}
-              label="Label"
+              labelText="Label"
               name="Input"
               placeholder="Placeholder here"
               validate={email}

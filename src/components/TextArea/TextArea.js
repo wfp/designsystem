@@ -9,6 +9,7 @@ const TextArea = ({
   hideLabel,
   onChange,
   onClick,
+  input,
   invalid,
   invalidText,
   ...other
@@ -42,21 +43,22 @@ const TextArea = ({
     <div className="wfp--form-requirement">{invalidText}</div>
   ) : null;
 
-  const input = invalid ? (
+  const inputEl = invalid ? (
     <textarea
       {...other}
+      {...input}
       {...textareaProps}
       className={textareaClasses}
       data-invalid
     />
   ) : (
-    <textarea {...other} {...textareaProps} className={textareaClasses} />
+    <textarea {...other} {...input} {...textareaProps} className={textareaClasses} />
   );
 
   return (
     <div className="wfp--form-item">
       {label}
-      {input}
+      {inputEl}
       {error}
     </div>
   );
