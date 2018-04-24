@@ -2,28 +2,28 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import classnames from 'classnames';
 
-
-/* TODO: Icon Wrapper for custom Icons */
-
-const Icon = ({
+const FormGroup = ({
   children,
   className,
   ...other
 }) => {
-  const classNames = classnames('wfp--icon', className);
+  const classNames = classnames('wfp--radio-button-group', className);
+
   return (
+    <div className="wfp--form-item">
       <div
         className={classNames}
         {...other}
       >
         {children}
       </div>
+    </div>
   );
 };
 
-Icon.propTypes = {
+FormGroup.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
 };
 
-export default Icon;
+export default FormGroup;

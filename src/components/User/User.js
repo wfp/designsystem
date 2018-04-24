@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
 
-const UserIcon = ({
+const User = ({
   alt,
   className,
   image,
@@ -37,14 +37,17 @@ const UserIcon = ({
     );
 }
 
-UserIcon.propTypes = {
+User.propTypes = {
+  alt: PropTypes.string,
   image: PropTypes.string,
+  title: PropTypes.string
 
 };
 
-UserIcon.defaultProps = {
+User.defaultProps = {
   alt: 'User Icon',
+  title: 'No Name'
 
 };
 
-export default UserIcon;
+export default User;

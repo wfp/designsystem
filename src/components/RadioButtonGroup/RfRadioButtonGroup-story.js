@@ -8,7 +8,7 @@ import { Field } from 'redux-form';
 import FormWrapper from '../../internal/RfFormWrapper';
 
 import FormGroup from '../FormGroup';
-import RadioButtonGroup from './RadioButtonGroup';
+import RadioButtonGroupSimple from './RadioButtonGroupSimple';
 import RadioButton from '../RadioButton';
 
 const introText = `
@@ -31,13 +31,13 @@ storiesOf('RadioButtonGroup', module)
     () => {
       return (
         <FormGroup legendText="Radio Button heading">
-          <RadioButtonGroup
+          <RadioButtonGroupSimple
             name="radio-button-group"
             defaultSelected="default-selected"
             legend="Group Legend">
             <Field
               component={RadioButton}
-              type = "radio"
+              type="radio"
               value="first"
               labelText="Standard Radio Button label"
               name="radioinput"
@@ -52,12 +52,12 @@ storiesOf('RadioButtonGroup', module)
             <Field
               disabled
               component={RadioButton}
-              type = "radio"
+              type="radio"
               value="third"
               labelText="Disabled Radio Button"
               name="radioinput"
             />
-          </RadioButtonGroup>
+          </RadioButtonGroupSimple>
         </FormGroup>
       )
     }

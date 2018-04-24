@@ -39,14 +39,6 @@ storiesOf('RadioButton', module)
             labelText={label}
             name={name}
           />
-          <Field
-            component={RadioButton}
-            type = "radio"
-            id="Inputelemennt"
-            value="second"
-            labelText={label}
-            name={name}
-          />
         </div>
       )
     }
