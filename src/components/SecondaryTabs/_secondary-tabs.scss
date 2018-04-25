@@ -10,7 +10,6 @@
 @include exports('secondary-tabs') {
   .#{$prefix}--secondary-tabs {
     background: $color__white;
-    border-bottom: 2px solid $color__navy-gray-8;
     @include reset;
     display: flex;
     @include breakpointMax(bp--md--major) {

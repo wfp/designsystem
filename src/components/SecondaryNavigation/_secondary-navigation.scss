@@ -12,6 +12,7 @@
     background: $color__white;
     @include reset;
     display: flex;
+    border-bottom: 2px solid $color__navy-gray-8;
   }
 
   .#{$prefix}--secondary-navigation__title {
@@ -19,11 +20,15 @@
     @include font-family;
     font-weight: 700;
     padding-top: $spacing-xs;
+    padding-bottom: $spacing-xs;
   }
 
   .#{$prefix}--secondary-navigation__wrapper {
+    display: flex;
+    @include breakpointMax(bp--xs--major) {
+      flex-direction: column-reverse;
+    }
     @include breakpoint(bp--xs--major) {
-      display: flex;
       justify-content: space-between;
     }
   }
@@ -31,13 +36,13 @@
   .#{$prefix}--secondary-navigation__list {
     padding-top: $spacing-xs;
     @include breakpoint(bp--xs--major) {
-      padding: $spacing-lg 0 $spacing-xs 0;
+      padding: $spacing-lg 0 0 0;
     }
   }
   .#{$prefix}--secondary-navigation__additional {
-    padding-bottom: $spacing-xs;
+    padding-top: $spacing-md;
     @include breakpoint(bp--xs--major) {
-      padding: $spacing-lg 0 $spacing-xs 0;
+      padding: $spacing-lg 0 0 0;
     }
   }
 }

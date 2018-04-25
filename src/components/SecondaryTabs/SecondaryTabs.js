@@ -24,7 +24,7 @@ SecondaryTabsItem.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-const SecondaryTabs = ({children, className, id, pageWidth}) => {
+const SecondaryTabs = ({children, className, id}) => {
 
   const wrapperClasses = classNames(
     'wfp--secondary-tabs',
@@ -33,11 +33,9 @@ const SecondaryTabs = ({children, className, id, pageWidth}) => {
 
   return (
     <div id={id} className={wrapperClasses}>
-			<Wrapper pageWidth={pageWidth}>
-				<ul className="wfp--secondary-tabs__list">
-					{children}
-				</ul>
-			</Wrapper>
+			<ul className="wfp--secondary-tabs__list">
+				{children}
+			</ul>
     </div>
   );
 };
@@ -49,11 +47,6 @@ SecondaryTabs.propTypes = {
    */
   className: PropTypes.string,
   id: PropTypes.string,
-  wrapperClassName: PropTypes.string,
-};
-
-SecondaryTabs.defaultProps = {
-	pageWidth: 'narrower'
 };
 
 export { SecondaryTabsItem, SecondaryTabs };

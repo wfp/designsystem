@@ -37,9 +37,11 @@ const SecondaryNavigation = ({additional, children, className, id, pageWidth}) =
 				<div className="wfp--secondary-navigation__list">
 					{children}
 				</div>
-        <div className="wfp--secondary-navigation__additional">
-          {additional}
-        </div>
+        {additional &&
+          <div className="wfp--secondary-navigation__additional">
+            {additional}
+          </div>
+        }
 			</Wrapper>
     </div>
   );

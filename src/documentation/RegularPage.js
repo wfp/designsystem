@@ -143,23 +143,19 @@ const Page = ({ children }) => {
           <BreadcrumbItem href="#">Breadcrumb 3</BreadcrumbItem>
         </Breadcrumb>
         <SecondaryNavigationTitle>The Page Title</SecondaryNavigationTitle>
+
+        <SecondaryTabs pageWidth="narrow">
+          <SecondaryTabsItem>
+            <Link className="active" href="http://communities.wfp.org" target="_blank">First Tab</Link>
+          </SecondaryTabsItem>
+          <SecondaryTabsItem>
+            <Link href="http://manuals.wfp.org" target="_blank">Second Tab</Link>
+          </SecondaryTabsItem>
+          <SecondaryTabsItem>
+            <Link href="https://go.docs.wfp.org" target="_blank">Third Tab</Link>
+          </SecondaryTabsItem>       
+        </SecondaryTabs>
       </SecondaryNavigation>
-
-
-
-      <SecondaryTabs pageWidth="narrow">
-        <SecondaryTabsItem>
-          <Link className="active" href="http://communities.wfp.org" target="_blank">First Tab</Link>
-        </SecondaryTabsItem>
-        <SecondaryTabsItem>
-          <Link href="http://manuals.wfp.org" target="_blank">Second Tab</Link>
-        </SecondaryTabsItem>
-        <SecondaryTabsItem>
-          <Link href="https://go.docs.wfp.org" target="_blank">Third Tab</Link>
-        </SecondaryTabsItem>       
-      </SecondaryTabs>
-
-
 
       <Wrapper
         background="lighter"
