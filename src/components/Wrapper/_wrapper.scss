@@ -27,6 +27,11 @@
 	.#{$prefix}--wrapper--narrow {
 		max-width: 1200px;
 	}
+
+	.#{$prefix}--wrapper--background-lighter {
+		background: $color__navy-gray-9;
+	}
+
 	.#{$prefix}--wrapper--narrower {
 		max-width: 1000px;
 	}

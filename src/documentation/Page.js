@@ -4,7 +4,7 @@ import Wrapper from '../components/Wrapper';
 
 const Page = ({ children, subTitle, title }) => {
   return (
-     <Wrapper
+    <Wrapper
       style={{margin: '2em auto'}}
       className="wfp--story"
       pageWidth="narrower">

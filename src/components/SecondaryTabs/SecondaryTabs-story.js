@@ -12,7 +12,7 @@ storiesOf('SecondaryTabs', module)
       The SecondaryTabs is used on internal applications above the main navigation to crosslink between the most important internal applications. It is hidden on Mobile devices.
     `,
     () => (
-      <SecondaryTabs className="wfp--fieldset">
+      <SecondaryTabs>
         <SecondaryTabsItem>
           <Link className="active" href="http://communities.wfp.org" target="_blank">First Tab</Link>
         </SecondaryTabsItem>

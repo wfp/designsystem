@@ -4,7 +4,7 @@ import classNames from 'classnames';
 
 const Wrapper = (props) => {
 
-  const { children, className, pageWidth, ...other } = props;
+  const { background, children, className, pageWidth, ...other } = props;
   const wrapperClasses = classNames({
     'wfp--wrapper' : true,
     'wfp--wrapper--narrow' : pageWidth === 'narrow',
@@ -13,11 +13,26 @@ const Wrapper = (props) => {
     'wfp--wrapper--narrower wfp--wrapper--mobile-full' : pageWidth === 'narrower-full',
     [`${className}`]: className,
   });
-  return (
-    <div className={wrapperClasses} {...other}>
-      {children}
-    </div>
-  );
+  if (background) {
+    const backgroundClasses = classNames({
+      'wfp--wrapper--background-lighter' : background === 'lighter',
+    });
+
+    return (
+      <div className={backgroundClasses}>
+        <div className={wrapperClasses} {...other}>
+        {children}
+        </div>
+      </div>
+    );
+  }
+  else {
+    return (
+      <div className={wrapperClasses} {...other}>
+        {children}
+      </div>
+    );
+  }
 };
 
 Wrapper.propTypes = {

@@ -8,6 +8,14 @@ import { BannerNavigation, BannerNavigationItem } from '../components/BannerNavi
 import Footer from '../components/Footer';
 import Search from '../components/Search';
 
+import { SecondaryNavigation, SecondaryNavigationTitle } from '../components/SecondaryNavigation';
+import Breadcrumb from '../components/Breadcrumb';
+import BreadcrumbItem from '../components/BreadcrumbItem';
+import BreadcrumbHome from '../components/BreadcrumbHome';
+
+
+import { SecondaryTabs, SecondaryTabsItem } from '../components/SecondaryTabs';
+
 import { MainNavigation, MainNavigationItem, SubMenuList, SubMenuSection, SubMenuItem } from '../components/MainNavigation';
 import User from '../components/User';
 
@@ -46,7 +54,6 @@ const Page = ({ children }) => {
           />
         </BannerNavigationItem>*/}
       </BannerNavigation>
-
 
 
       <MainNavigation
@@ -122,7 +129,42 @@ const Page = ({ children }) => {
 
 
 
-      <Wrapper pageWidth="narrow">
+      <SecondaryNavigation
+        additional="additional Information"
+        pageWidth="narrow"
+      >
+        <Breadcrumb>
+          <BreadcrumbItem>
+            <a href="/#">
+              <BreadcrumbHome />
+            </a>
+          </BreadcrumbItem>
+          <BreadcrumbItem href="#">Breadcrumb 2</BreadcrumbItem>
+          <BreadcrumbItem href="#">Breadcrumb 3</BreadcrumbItem>
+        </Breadcrumb>
+        <SecondaryNavigationTitle>Title</SecondaryNavigationTitle>
+      </SecondaryNavigation>
+
+
+
+      <SecondaryTabs pageWidth="narrow">
+        <SecondaryTabsItem>
+          <Link className="active" href="http://communities.wfp.org" target="_blank">First Tab</Link>
+        </SecondaryTabsItem>
+        <SecondaryTabsItem>
+          <Link href="http://manuals.wfp.org" target="_blank">Second Tab</Link>
+        </SecondaryTabsItem>
+        <SecondaryTabsItem>
+          <Link href="https://go.docs.wfp.org" target="_blank">Third Tab</Link>
+        </SecondaryTabsItem>       
+      </SecondaryTabs>
+
+
+
+      <Wrapper
+        background="lighter"
+        pageWidth="narrow"
+      >
         {children}
       </Wrapper>
 

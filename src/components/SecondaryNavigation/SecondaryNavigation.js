@@ -3,20 +3,20 @@ import React from 'react';
 import classNames from 'classnames';
 import Wrapper from '../Wrapper';
 
-const SecondaryNavigationItem = ({className, children}) => {
+const SecondaryNavigationTitle = ({className, children}) => {
 
   const wrapperClasses = classNames(
-    'wfp--banner-navigation__item',
+    'wfp--secondary-navigation__title',
     className
   );
 	return (
-		<li className={wrapperClasses}>
+		<h1 className={wrapperClasses}>
 			{children}
-		</li>
+		</h1>
 	)
 };
 
-SecondaryNavigationItem.propTypes = {
+SecondaryNavigationTitle.propTypes = {
   /**
    * The CSS class name to be placed on the wrapping element.
    */
@@ -24,19 +24,22 @@ SecondaryNavigationItem.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-const SecondaryNavigation = ({children, className, id, pageWidth}) => {
+const SecondaryNavigation = ({additional, children, className, id, pageWidth}) => {
 
   const wrapperClasses = classNames(
-    'wfp--banner-navigation',
+    'wfp--secondary-navigation',
     className
   );
 
   return (
     <div id={id} className={wrapperClasses}>
-			<Wrapper pageWidth={pageWidth}>
-				<ul className="wfp--banner-navigation__list">
+			<Wrapper pageWidth={pageWidth} className="wfp--secondary-navigation__wrapper">
+				<div className="wfp--secondary-navigation__list">
 					{children}
-				</ul>
+				</div>
+        <div className="wfp--secondary-navigation__additional">
+          {additional}
+        </div>
 			</Wrapper>
     </div>
   );
@@ -56,4 +59,4 @@ SecondaryNavigation.defaultProps = {
 	pageWidth: 'narrower'
 };
 
-export { SecondaryNavigationItem, SecondaryNavigation };
+export { SecondaryNavigationTitle, SecondaryNavigation };

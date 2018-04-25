@@ -9,7 +9,7 @@
 
 @include exports('secondary-navigation') {
   .#{$prefix}--secondary-navigation {
-    background: $brand-01;
+    background: $color__white;
     @include reset;
     display: flex;
     @include breakpointMax(bp--md--major) {
@@ -17,33 +17,29 @@
     }
   }
 
-  .#{$prefix}--secondary-navigation__item {
-    @include typescale('omega');
+  .#{$prefix}--secondary-navigation__title {
+    @include typescale('beta');
     @include font-family;
-    padding: 0 $spacing-sm;
-    &:last-child {
-      padding-right: 0;
-    }
-    a {
-      @include typescale('omega');
-      color: $color__white;
-      text-decoration: none;
-      &:hover {
-        text-decoration: underline;
-      }
-      &:focus {
-        color: $color__white;
-      }
-      &:visited, &:active {
-        color: $color__white;
-      }
-    }
+    padding-top: $spacing-md;
+  }
+
+  .#{$prefix}--secondary-navigation__wrapper {
+    display: flex;
+    justify-content: space-between;
   }
 
   .#{$prefix}--secondary-navigation__list {
-    display: flex;
-    justify-content: flex-end;
-    height: rem(39px);
-    align-items: center;
+    padding: $spacing-md 0 $spacing-xs 0;
+    /*display: flex;
+    justify-content: flex-start;
+    height: rem(89px);
+    align-items: center;*/
+  }
+  .#{$prefix}--secondary-navigation__additional {
+    padding: $spacing-md 0 $spacing-xs 0;
+    /*display: flex;
+    justify-content: flex-start;
+    height: rem(89px);
+    align-items: center;*/
   }
 }
