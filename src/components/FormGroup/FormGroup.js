@@ -11,7 +11,7 @@ const FormGroup = ({
   messageText,
   ...other
 }) => {
-  const classNamesLegend = classnames('wfp--label', className);
+  const classNamesLegend = classnames('wfp--form-group__title', className);
   const classNamesFieldset = classnames('wfp--fieldset', className);
 
   return (

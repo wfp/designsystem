@@ -38,8 +38,6 @@ const TextInput = ({
   const invalidTextMap = meta ? meta.error : invalidText;
   const invalidMap = meta ? !meta.valid : invalid;
 
-  console.log("map", invalidTextMap, invalidMap, meta.valid);
-
   const errorId = id + '-error-msg';
   const textInputClasses = classNames('wfp--text-input', className);
   const labelClasses = classNames('wfp--label', {

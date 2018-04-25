@@ -60,9 +60,7 @@ $deprecations--message: 'Deprecated code was found, this code will be removed be
 @import '../../components/combo-box/combo-box';
 */
 @import '../../components/RadioButton/radio-button';
-/*
-@import '../../components/toggle/toggle';
-*/
+@import '../../components/Toggle/toggle';
 @import '../../components/Search/search';
 /*
 @import '../../components/select/select';
@@ -71,6 +69,7 @@ $deprecations--message: 'Deprecated code was found, this code will be removed be
 @import '../../components/TextArea/text-area';
 @import '../../components/NumberInput/number-input';
 @import '../../components/Form/form';
+@import '../../components/FormGroup/form-group';
 /*
 @import '../../components/Link/link';
 @import '../../components/Wrapper/wrapper';
