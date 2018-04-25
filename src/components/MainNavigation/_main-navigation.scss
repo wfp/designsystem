@@ -127,7 +127,9 @@
       top: rem(55px);
       left: 0;
       width: 100%;
-      min-height: 30vh;
+      max-height: 70vh;
+      overflow: auto;
+      z-index: z('modal');
       color: $text-01;
       background: $color__white;
       box-shadow: rgba(desaturate($color__main, 50%), 0.15) 0 3px 12px,
