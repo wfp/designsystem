@@ -13,7 +13,7 @@ storiesOf('BannerNavigation', module)
       The BannerNavigation is used on internal applications above the main navigation to crosslink between the most important internal applications. It is hidden on Mobile devices.
     `,
     () => (
-      <BannerNavigation className="wfp--fieldset">
+      <BannerNavigation>
         <BannerNavigationItem>
 					<Link href="http://communities.wfp.org" target="_blank">Communities</Link>
 				</BannerNavigationItem>

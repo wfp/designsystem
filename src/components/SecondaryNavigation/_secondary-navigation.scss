@@ -1,0 +1,49 @@
+@import '../../globals/scss/vars';
+@import '../../globals/scss/colors';
+@import '../../globals/scss/typography';
+@import '../../globals/scss/spacing';
+@import '../../globals/scss/helper-mixins';
+@import '../../globals/scss/import-once';
+@import '../../globals/scss/css--reset';
+@import '../form/form';
+
+@include exports('secondary-navigation') {
+  .#{$prefix}--secondary-navigation {
+    background: $brand-01;
+    @include reset;
+    display: flex;
+    @include breakpointMax(bp--md--major) {
+      display: none;
+    }
+  }
+
+  .#{$prefix}--secondary-navigation__item {
+    @include typescale('omega');
+    @include font-family;
+    padding: 0 $spacing-sm;
+    &:last-child {
+      padding-right: 0;
+    }
+    a {
+      @include typescale('omega');
+      color: $color__white;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+      &:focus {
+        color: $color__white;
+      }
+      &:visited, &:active {
+        color: $color__white;
+      }
+    }
+  }
+
+  .#{$prefix}--secondary-navigation__list {
+    display: flex;
+    justify-content: flex-end;
+    height: rem(39px);
+    align-items: center;
+  }
+}

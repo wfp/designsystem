@@ -1,13 +1,14 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { Module, ModuleHeader, ModuleBody } from '../Module';
+import Wrapper from '../Wrapper';
 
 
 import 'flexboxgrid/dist/flexboxgrid.css';
 
 
 storiesOf('Module', module)
-  .addDecorator(story => <div className="wfp--module__background">{story()}</div>)
+  .addDecorator(story => <div className="wfp--module__background"><Wrapper pageWidth="narrow">{story()}</Wrapper></div>)
   .addWithInfo(
     'Single',
     `

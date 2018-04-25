@@ -1,0 +1,71 @@
+@import '../../globals/scss/vars';
+@import '../../globals/scss/colors';
+@import '../../globals/scss/typography';
+@import '../../globals/scss/spacing';
+@import '../../globals/scss/helper-mixins';
+@import '../../globals/scss/import-once';
+@import '../../globals/scss/css--reset';
+@import '../form/form';
+
+@include exports('secondary-tabs') {
+  .#{$prefix}--secondary-tabs {
+    background: $color__white;
+    border-bottom: 1px solid $color__navy-gray-9;
+    @include reset;
+    display: flex;
+    @include breakpointMax(bp--md--major) {
+      //display: none;
+    }
+  }
+
+  .#{$prefix}--secondary-tabs__item {
+    @include typescale('epsilon');
+    @include font-family;
+    position: relative;
+    height: 100%;
+    &:last-child {
+      padding-right: 0;
+    }
+    a {
+      height: 100%;
+      width: 100%;
+      font-weight: bold;
+      line-height: rem(45px);
+      padding: 0 $spacing-md;
+      @include typescale('epsilon');
+      color: $color__navy-gray-5;
+      //color: $color__white;
+      text-decoration: none;
+      &:focus {
+        //color: $color__white;
+      }
+      &:visited, &:active {
+        color: $color__navy-gray-4;
+      }
+      &:hover {
+        color: $color__main;
+      }
+      &.active {
+        color: $color__main;
+        &:after {
+          position: absolute;
+          bottom: 0;
+          left: 5%;
+          content: "";
+          display: block;
+          width: 90%;
+          height: 3px;
+          background: $color__main;
+        }
+        //color: $color__white;
+      }
+    }
+  }
+
+  .#{$prefix}--secondary-tabs__list {
+    display: flex;
+    justify-content: flex-start;
+    height: rem(45px);
+    align-items: center;
+  }
+}

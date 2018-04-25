@@ -34,6 +34,7 @@ $weights: (
   )
 ) !default;
 
+/*
 @mixin plex-font-face {
   @each $family, $name in $families {
     @each $weight, $styles in $weights {
@@ -49,4 +50,4 @@ $weights: (
       }
     }
   }
-}
+}*/
