@@ -12,9 +12,6 @@
     background: $color__white;
     @include reset;
     display: flex;
-    @include breakpointMax(bp--md--major) {
-      //display: none;
-    }
   }
 
   .#{$prefix}--secondary-navigation__title {
@@ -25,24 +22,22 @@
   }
 
   .#{$prefix}--secondary-navigation__wrapper {
-    @include breakpoint(bp--md--major) {
+    @include breakpoint(bp--xs--major) {
       display: flex;
       justify-content: space-between;
     }
   }
 
   .#{$prefix}--secondary-navigation__list {
-    padding: $spacing-lg 0 $spacing-xs 0;
-    /*display: flex;
-    justify-content: flex-start;
-    height: rem(89px);
-    align-items: center;*/
+    padding-top: $spacing-xs;
+    @include breakpoint(bp--xs--major) {
+      padding: $spacing-lg 0 $spacing-xs 0;
+    }
   }
   .#{$prefix}--secondary-navigation__additional {
-    padding: $spacing-lg 0 $spacing-xs 0;
-    /*display: flex;
-    justify-content: flex-start;
-    height: rem(89px);
-    align-items: center;*/
+    padding-bottom: $spacing-xs;
+    @include breakpoint(bp--xs--major) {
+      padding: $spacing-lg 0 $spacing-xs 0;
+    }
   }
 }
