@@ -23,9 +23,13 @@
 		}
 	}
 
-
 	.#{$prefix}--wrapper--narrow {
 		max-width: 1200px;
+	}
+
+	.#{$prefix}--wrapper--spacing-md {
+		padding-top: $spacing-md;
+		padding-bottom: $spacing-md;
 	}
 
 	.#{$prefix}--wrapper--background-lighter {

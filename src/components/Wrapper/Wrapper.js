@@ -4,13 +4,14 @@ import classNames from 'classnames';
 
 const Wrapper = (props) => {
 
-  const { background, children, className, pageWidth, ...other } = props;
+  const { background, children, className, pageWidth, spacing, ...other } = props;
   const wrapperClasses = classNames({
     'wfp--wrapper' : true,
     'wfp--wrapper--narrow' : pageWidth === 'narrow',
     'wfp--wrapper--narrower' : pageWidth === 'narrower',
     'wfp--wrapper--narrow wfp--wrapper--mobile-full' : pageWidth === 'narrow-full',
     'wfp--wrapper--narrower wfp--wrapper--mobile-full' : pageWidth === 'narrower-full',
+    'wfp--wrapper--spacing-md' : spacing === 'md',
     [`${className}`]: className,
   });
   if (background) {

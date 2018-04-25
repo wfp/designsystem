@@ -142,7 +142,7 @@ const Page = ({ children }) => {
           <BreadcrumbItem href="#">Breadcrumb 2</BreadcrumbItem>
           <BreadcrumbItem href="#">Breadcrumb 3</BreadcrumbItem>
         </Breadcrumb>
-        <SecondaryNavigationTitle>Title</SecondaryNavigationTitle>
+        <SecondaryNavigationTitle>The Page Title</SecondaryNavigationTitle>
       </SecondaryNavigation>
 
 
@@ -164,6 +164,7 @@ const Page = ({ children }) => {
       <Wrapper
         background="lighter"
         pageWidth="narrow"
+        spacing="md"
       >
         {children}
       </Wrapper>

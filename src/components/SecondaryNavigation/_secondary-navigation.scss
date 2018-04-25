@@ -13,30 +13,33 @@
     @include reset;
     display: flex;
     @include breakpointMax(bp--md--major) {
-      display: none;
+      //display: none;
     }
   }
 
   .#{$prefix}--secondary-navigation__title {
     @include typescale('beta');
     @include font-family;
-    padding-top: $spacing-md;
+    font-weight: 700;
+    padding-top: $spacing-xs;
   }
 
   .#{$prefix}--secondary-navigation__wrapper {
-    display: flex;
-    justify-content: space-between;
+    @include breakpoint(bp--md--major) {
+      display: flex;
+      justify-content: space-between;
+    }
   }
 
   .#{$prefix}--secondary-navigation__list {
-    padding: $spacing-md 0 $spacing-xs 0;
+    padding: $spacing-lg 0 $spacing-xs 0;
     /*display: flex;
     justify-content: flex-start;
     height: rem(89px);
     align-items: center;*/
   }
   .#{$prefix}--secondary-navigation__additional {
-    padding: $spacing-md 0 $spacing-xs 0;
+    padding: $spacing-lg 0 $spacing-xs 0;
     /*display: flex;
     justify-content: flex-start;
     height: rem(89px);

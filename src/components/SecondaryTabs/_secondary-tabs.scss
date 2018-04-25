@@ -10,7 +10,7 @@
 @include exports('secondary-tabs') {
   .#{$prefix}--secondary-tabs {
     background: $color__white;
-    border-bottom: 1px solid $color__navy-gray-9;
+    border-bottom: 2px solid $color__navy-gray-8;
     @include reset;
     display: flex;
     @include breakpointMax(bp--md--major) {
@@ -33,7 +33,6 @@
     a {
       height: 100%;
       width: 100%;
-      font-weight: bold;
       line-height: rem(45px);
       padding: 0 $spacing-xs;
       @include typescale('epsilon');

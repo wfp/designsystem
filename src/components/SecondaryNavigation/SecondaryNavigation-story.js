@@ -18,7 +18,6 @@ storiesOf('SecondaryNavigation', module)
     () => (
       <SecondaryNavigation
         additional="additional Information"
-        className="wfp--fieldset"
       >
         <SecondaryNavigationTitle>Title</SecondaryNavigationTitle>
         <Breadcrumb>
