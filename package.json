@@ -244,7 +244,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/wfp-ui/wfp-ui.git"
+    "url": "https://github.com/wfp/ui.git"
   },
   "jest": {
     "collectCoverageFrom": [
