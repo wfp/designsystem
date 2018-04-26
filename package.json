@@ -8,7 +8,7 @@
   "sideEffects": false,
   "scripts": {
     "build": "node scripts/build.js",
-    "build-storybook": "build-storybook",
+    "build:storybook": "build-storybook",
     "ci-check": "yarn prettier:diff && yarn lint && yarn test --runInBand && yarn test-ssr",
     "build:assets": "webpack -p --config webpack.buildAssets.js",
     "build:css": "node-sass --output-style 'compressed' src/globals/scss/ -o ./dist/css/map && postcss ./dist/css/map -d ./dist/css/ --use autoprefixer",

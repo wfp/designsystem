@@ -6,6 +6,7 @@ const Select = ({
   className,
   id,
   inline,
+  input,
   labelText,
   disabled,
   children,
@@ -35,6 +36,7 @@ const Select = ({
         ) : null}
         <select
           {...other}
+          {...input}
           id={id}
           className="wfp--select-input"
           disabled={disabled}>

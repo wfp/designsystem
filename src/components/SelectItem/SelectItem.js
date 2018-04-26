@@ -4,7 +4,7 @@ import classNames from 'classnames';
 
 const SelectItem = ({ className, value, disabled, hidden, text, ...other }) => {
   const selectItemClasses = classNames({
-    'bx--select-option': true,
+    'wfp--select-option': true,
     [className]: className,
   });
 

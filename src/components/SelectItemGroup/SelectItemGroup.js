@@ -9,7 +9,7 @@ const SelectItemGroup = ({
   label,
   ...other
 }) => {
-  const classNames = classnames('bx--select-optgroup', className);
+  const classNames = classnames('wfp--select-optgroup', className);
   return (
     <optgroup
       className={classNames}

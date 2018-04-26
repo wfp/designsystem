@@ -1,5 +1,5 @@
 
-# Next United Nations World Food Programme UI Kit (WFP-UI)
+# World Food Programme UI Kit (WFP-UI)
 
 
 Branch  | Build Status
