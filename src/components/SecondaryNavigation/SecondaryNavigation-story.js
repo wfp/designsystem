@@ -13,7 +13,7 @@ storiesOf('SecondaryNavigation', module)
   .addWithInfo(
     'default',
     `
-      The SecondaryNavigation is used on internal applications above the main navigation to crosslink between the most important internal applications. It is hidden on Mobile devices.
+      Tabs are used to quickly navigate between views within the same context.
     `,
     () => (
       <SecondaryNavigation

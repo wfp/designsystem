@@ -45,6 +45,7 @@
 
 @mixin focus-outline($type: 'border') {
   @if ($type == 'border') {
+    border-color: $brand-01;
     outline: 1px solid $brand-01;
   }
 
