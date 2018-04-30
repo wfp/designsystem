@@ -51,7 +51,7 @@
     outline-color: $support-01;
     ~ .#{$prefix}--form-requirement {
       max-height: rem(200px);
-      border-top: 2px solid $support-01;
+      //border-top: 2px solid $support-01;
       position: relative;
       top: -2px;
     }
