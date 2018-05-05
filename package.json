@@ -1,9 +1,10 @@
 {
   "name": "@wfp/ui",
-  "version": "0.17.18",
+  "version": "0.17.19",
   "description": "WFP UI-Kit Next",
   "license": "Apache-2",
   "main": "lib/index.js",
+  "main:scss": "source/globals/styles.scss",
   "module": "es/index.js",
   "sideEffects": false,
   "scripts": {
@@ -40,6 +41,7 @@
     "lib/**/*",
     "es/**/*",
     "umd/**/*",
+    "source/**/*",
     "assets/**/*",
     "css/**/*"
   ],
