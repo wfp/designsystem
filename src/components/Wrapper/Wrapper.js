@@ -9,6 +9,7 @@ const Wrapper = (props) => {
     'wfp--wrapper' : true,
     'wfp--wrapper--narrow' : pageWidth === 'narrow',
     'wfp--wrapper--narrower' : pageWidth === 'narrower',
+    'wfp--wrapper--narrowest' : pageWidth === 'narrowest',
     'wfp--wrapper--narrow wfp--wrapper--mobile-full' : pageWidth === 'narrow-full',
     'wfp--wrapper--narrower wfp--wrapper--mobile-full' : pageWidth === 'narrower-full',
     'wfp--wrapper--spacing-md' : spacing === 'md',

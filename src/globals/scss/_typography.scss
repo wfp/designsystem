@@ -20,7 +20,7 @@ $typescale-map: (
   'caption' : 0.75rem,
   'legal' : 0.6875rem,
   'p' : 1rem
-);
+) !default;
 
 @mixin typescale($size) {
   @if map-has-key($typescale-map, $size) {
@@ -82,7 +82,7 @@ $font-size-map: (
   '14' : 0.875rem,
   '12' : 0.75rem,
   '11' : 0.6875rem,
- );
+ ) !default;
 
 @mixin font-size($size) {
   @if map-has-key($font-size-map, $size) {

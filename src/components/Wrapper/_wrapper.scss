@@ -39,6 +39,11 @@
 	.#{$prefix}--wrapper--narrower {
 		max-width: 1000px;
 	}
+
+	.#{$prefix}--wrapper--narrowest {
+		max-width: 500px;
+	}
+
 	@include breakpointMax(bp--md--major) {
 		.#{$prefix}--wrapper--mobile-full {
 			padding-left: 0;

@@ -3,6 +3,7 @@ node_modules
 es
 lib
 umd
+source
 storybook-static
 
 # Logs
