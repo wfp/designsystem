@@ -102,6 +102,7 @@ export {
 export RadioButton from './components/RadioButton';
 export RadioButtonGroup from './components/RadioButtonGroup';
 export Search from './components/Search';
+export { SecondaryTabs, SecondaryTabsItem } from './components/SecondaryTabs';
 /*
 export SecondaryButton from './components/SecondaryButton';
 export Select from './components/Select';
