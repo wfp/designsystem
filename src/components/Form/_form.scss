@@ -13,7 +13,7 @@
   .#{$prefix}--form-item {
     @include font-family;
     flex: 1;
-    margin-right: $spacing-md;
+    //margin-right: $spacing-md;
     margin-bottom: $spacing-lg;
 
     &:last-of-type {

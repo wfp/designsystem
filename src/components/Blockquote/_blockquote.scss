@@ -17,6 +17,14 @@
     padding: $spacing-md;
 	}
 
+  .#{$prefix}--blockquote--code {
+    .#{$prefix}--blockquote__content {
+      white-space: pre;
+      font-family: monospace;
+      line-height: 1.4;
+    }
+  }
+
 	.#{$prefix}--blockquote__title {
     display: block;
     font-weight: bold;

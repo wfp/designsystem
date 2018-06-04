@@ -9,11 +9,12 @@ const Toggle = ({
   onChange,
   onToggle,
   id,
+  input,
   labelA,
   labelB,
   ...other
 }) => {
-  let input;
+  let inputElement;
   const wrapperClasses = classNames({
     'wfp--form-item': true,
     [className]: className,
@@ -27,20 +28,35 @@ const Toggle = ({
     checkedProps.defaultChecked = defaultToggled;
   }
 
+  const onChangeInput = (evt) => {
+    /* Regular Form */
+    if (onChange)
+      onChange(input.checked, id, evt);
+    /* Redux Form */
+    if (input && input.onChange)
+      input.onChange(input.checked);
+  }
+
+
   return (
     <div className={wrapperClasses}>
       <input
         {...other}
+        {...input}
         {...checkedProps}
         type="checkbox"
         id={id}
         className="wfp--toggle"
         onChange={evt => {
           onChange && onChange(evt);
-          onToggle(input.checked, id, evt);
+          onToggle(inputElement.checked, id, evt);
+          console.log("update", evt);
+          /* Redux Form */
+          if (input && input.onChange)
+            input.onChange(input.checked);
         }}
         ref={el => {
-          input = el;
+          inputElement = el;
         }}
       />
 

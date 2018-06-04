@@ -5,6 +5,8 @@ lib
 umd
 source
 storybook-static
+dist
+css
 
 # Logs
 *.log
