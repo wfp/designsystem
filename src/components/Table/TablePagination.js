@@ -35,10 +35,17 @@ export default class ReactTablePagination extends Component {
   }
 
   changePage (page) {
-    page = this.getSafePage(page)
-    this.setState({ page })
-    if (this.props.page !== page) {
-      this.props.onPageChange(page)
+    const nextPage = this.getSafePage(page.page-1)
+    this.setState({ page });
+    
+    // Change Page
+    if (this.props.page !== nextPage) {
+      this.props.onPageChange(nextPage)
+    }
+
+    // Change PageSize
+    if (this.props.pageSize !== page.pageSize) {
+      this.props.onPageSizeChange(page.pageSize)
     }
   }
 
@@ -49,17 +56,16 @@ export default class ReactTablePagination extends Component {
   }
 
 
-
   handlePageClick = (data) => {
     this.setState({ page: data.selected })
     this.changePage(data.selected);
   }
 
 
-
   render () {
     const {
       // Computed
+      data,
       pages,
       // Props
       page,
@@ -76,6 +82,9 @@ export default class ReactTablePagination extends Component {
     } = this.props;
 
 
+    console.log(this.props);
+
+
     const props = {
       onChange: ({ page, pageSize }) => {
         console.log(`Page: ${page}`, `Page Size: ${pageSize}`); // eslint-disable-line no-console
@@ -89,7 +98,11 @@ export default class ReactTablePagination extends Component {
         style={this.props.style}
       >
         <div className="wfp-pagination">
-          <Pagination {...props} totalItems={103} />
+          <Pagination
+          {...props}
+          onChange={this.changePage}
+          pageSizes={pageSizeOptions}
+          totalItems={data.length} />
          {/*<ReactPaginate
             activeClassName={"active"}
             disabledClassName={"disabled"} //TODO: Create this class

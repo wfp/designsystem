@@ -24,6 +24,8 @@ $css--helpers: true;
     display: flex;
     align-items: center;
     border: 1px solid $ui-04;
+    border-left: none;
+    border-right: none;
 
     .#{$prefix}--form-item {
       flex: auto;
@@ -51,19 +53,14 @@ $css--helpers: true;
     }
   }
 
-  .#{$prefix}--pagination__button-icon {
-    height: rem(12px);
-    width: rem(12px);
-    fill: $ui-05;
-    pointer-events: none;
-    transition: $transition--base;
-  }
-
   .#{$prefix}--pagination__button {
     @include reset;
     border: none;
     background: none;
     cursor: pointer;
+    &:after {
+      transition: $transition--base;
+    }
 
     &:hover {
       .#{$prefix}--pagination__button-icon {
@@ -75,11 +72,12 @@ $css--helpers: true;
       @include focus-outline('border');
     }
 
-    &:disabled:hover {
-      cursor: default;
-
-      .#{$prefix}--pagination__button-icon {
-        fill: $ui-05;
+    &:disabled {
+      &:hover {
+        cursor: default;
+      }
+      &:after {
+        color: $ui-05;
       }
     }
   }
@@ -109,20 +107,12 @@ $css--helpers: true;
     }
 
     .#{$prefix}--select-input {
-      height: rem(24px);
-      width: rem(54px);
-      padding: 0 $spacing-xs;
-      margin: 0;
-      font-weight: 600;
-
+      height: rem(26px);
+      //font-weight: 600;
+      border: none;
       &:focus {
         @include focus-outline('border');
       }
-    }
-
-    .#{$prefix}--select__arrow {
-      right: 0.5rem;
-      top: 0.625rem;
     }
 
     .#{$prefix}--text-input {
@@ -150,16 +140,28 @@ $css--helpers: true;
       height: 100%;
       border-left: 1px solid $ui-04;
       border-right: 1px solid $ui-04;
+      font-size: 1.5rem;
+      color: $brand-01;
       width: rem(42px);
       margin: 0;
+      &:after {
+        display: block;
+        margin-top: -0.1em;
+      }
     }
 
     .#{$prefix}--pagination__button--forward {
       border-right: 0;
+      &:after {
+        content: '›';
+      }
     }
 
     .#{$prefix}--pagination__button--backward {
       margin-left: $spacing-md;
+      &:after {
+        content: '‹';
+      }
     }
 
     .#{$prefix}--select--inline {
@@ -168,7 +170,7 @@ $css--helpers: true;
     }
 
     .#{$prefix}--select-input {
-      padding-left: $spacing-md;
+      padding-left: $spacing-sm;
     }
 
     .#{$prefix}--select__arrow {

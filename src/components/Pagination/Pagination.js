@@ -8,7 +8,7 @@ import { equals } from '../../tools/array';
 
 let instanceId = 0;
 
-export default class PaginationV2 extends Component {
+export default class Pagination extends Component {
   static propTypes = {
     backwardText: PropTypes.string,
     className: PropTypes.string,
@@ -162,7 +162,7 @@ export default class PaginationV2 extends Component {
             {itemsPerPageText}:&nbsp;&nbsp;
           </span>
           <Select
-            id={`bx-pagination-select-${inputId}`}
+            id={`wfp-pagination-select-${inputId}`}
             labelText={itemsPerPageText}
             hideLabel
             inline
@@ -195,12 +195,8 @@ export default class PaginationV2 extends Component {
           <button
             className={backButtonClasses}
             onClick={this.decrementPage}
+            description={backwardText}
             disabled={this.props.disabled || statePage === 1}>
-            <Icon
-              className="wfp--pagination__button-icon"
-              name="chevron--left"
-              description={backwardText}
-            />
           </button>
           {pageInputDisabled ? null : (
             <Select
@@ -216,16 +212,12 @@ export default class PaginationV2 extends Component {
           <button
             className="wfp--pagination__button wfp--pagination__button--forward"
             onClick={this.incrementPage}
+            description={forwardText}
             disabled={
               this.props.disabled ||
               statePage === Math.ceil(totalItems / statePageSize) ||
               isLastPage
             }>
-            <Icon
-              className="wfp--pagination__button-icon"
-              name="chevron--right"
-              description={forwardText}
-            />
           </button>
         </div>
       </div>
