@@ -4,10 +4,11 @@ import classnames from 'classnames';
 import Icon from '../Icon';
 import Select from '../Select';
 import SelectItem from '../SelectItem';
-import TextInput from '../TextInput';
 import { equals } from '../../tools/array';
 
-export default class Pagination extends Component {
+let instanceId = 0;
+
+export default class PaginationV2 extends Component {
   static propTypes = {
     backwardText: PropTypes.string,
     className: PropTypes.string,
@@ -34,8 +35,7 @@ export default class Pagination extends Component {
     backwardText: 'Backward',
     itemRangeText: (min, max, total) => `${min}-${max} of ${total} items`,
     forwardText: 'Forward',
-    itemsPerPageText: 'items per page',
-    onChange: () => {},
+    itemsPerPageText: 'Items per page',
     pageNumberText: 'Page Number',
     pageRangeText: (current, total) => `${current} of ${total} pages`,
     disabled: false,
@@ -56,7 +56,7 @@ export default class Pagination extends Component {
   };
 
   componentWillMount() {
-    this.uniqueId = `${Math.floor(Math.random() * 0xffff)}`;
+    this.uniqueId = ++instanceId;
   }
 
   componentWillReceiveProps({ pageSizes, page, pageSize }) {
@@ -77,6 +77,10 @@ export default class Pagination extends Component {
     const pageSize = Number(evt.target.value);
     this.setState({ pageSize, page: 1 });
     this.props.onChange({ page: 1, pageSize });
+  };
+
+  handlePageChange = evt => {
+    this.setState({ page: evt.target.value });
   };
 
   handlePageInputChange = evt => {
@@ -102,6 +106,18 @@ export default class Pagination extends Component {
     this.props.onChange({ page, pageSize: this.state.pageSize });
   };
 
+  renderSelectItems = total => {
+    let counter = 1;
+    let itemArr = [];
+    while (counter <= total) {
+      itemArr.push(
+        <SelectItem key={counter} value={counter} text={String(counter)} />
+      );
+      counter++;
+    }
+    return itemArr;
+  };
+
   render() {
     const {
       backwardText,
@@ -110,12 +126,12 @@ export default class Pagination extends Component {
       id,
       itemsPerPageText,
       itemRangeText,
-      pageNumberText,
       pageRangeText,
       pageSize, // eslint-disable-line no-unused-vars
       pageSizes,
       itemText,
       pageText,
+      pageNumberText, // eslint-disable-line no-unused-vars
       pagesUnknown,
       isLastPage,
       pageInputDisabled,
@@ -128,15 +144,28 @@ export default class Pagination extends Component {
     const statePage = this.state.page;
     const statePageSize = this.state.pageSize;
     const classNames = classnames('wfp--pagination', className);
+    const backButtonClasses = classnames(
+      'wfp--pagination__button',
+      'wfp--pagination__button--backward',
+      {
+        'wfp--pagination__button--no-index': pageInputDisabled,
+      }
+    );
     const inputId = id || this.uniqueId;
+    const totalPages = Math.ceil(totalItems / statePageSize);
+    const selectItems = this.renderSelectItems(totalPages);
 
     return (
       <div className={classNames} {...other}>
         <div className="wfp--pagination__left">
+          <span className="wfp--pagination__text">
+            {itemsPerPageText}:&nbsp;&nbsp;
+          </span>
           <Select
             id={`bx-pagination-select-${inputId}`}
             labelText={itemsPerPageText}
             hideLabel
+            inline
             onChange={this.handleSizeChange}
             value={statePageSize}>
             {pageSizes.map(size => (
@@ -144,9 +173,7 @@ export default class Pagination extends Component {
             ))}
           </Select>
           <span className="wfp--pagination__text">
-            {itemsPerPageText}&nbsp;&nbsp;|&nbsp;&nbsp;
-          </span>
-          <span className="wfp--pagination__text">
+            &nbsp;|&nbsp;&nbsp;
             {pagesUnknown
               ? itemText(
                   statePageSize * (statePage - 1) + 1,
@@ -159,14 +186,14 @@ export default class Pagination extends Component {
                 )}
           </span>
         </div>
-        <div className="wfp--pagination__right">
+        <div className="wfp--pagination__right wfp--pagination--inline">
           <span className="wfp--pagination__text">
             {pagesUnknown
               ? pageText(statePage)
               : pageRangeText(statePage, Math.ceil(totalItems / statePageSize))}
           </span>
           <button
-            className="wfp--pagination__button wfp--pagination__button--backward"
+            className={backButtonClasses}
             onClick={this.decrementPage}
             disabled={this.props.disabled || statePage === 1}>
             <Icon
@@ -175,17 +202,16 @@ export default class Pagination extends Component {
               description={backwardText}
             />
           </button>
-          {pageInputDisabled ? (
-            <span className="wfp--pagination__text">|</span>
-          ) : (
-            <TextInput
-              id={`bx-pagination-input-${inputId}`}
-              placeholder="0"
-              value={statePage}
-              onChange={this.handlePageInputChange}
-              labelText={pageNumberText}
+          {pageInputDisabled ? null : (
+            <Select
+              id={`wfp-pagination-select-${inputId + 2}`}
+              labelText={itemsPerPageText}
               hideLabel
-            />
+              inline
+              onChange={this.handlePageInputChange}
+              value={statePage}>
+              {selectItems}
+            </Select>
           )}
           <button
             className="wfp--pagination__button wfp--pagination__button--forward"

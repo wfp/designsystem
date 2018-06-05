@@ -2,35 +2,36 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import ReactTable from 'react-table';
 import Pagination from '../PaginationV2';
+import TablePagination from './TablePagination';
 
 
 const data = [{
-    name: 'Tanner Linsley',
+    name: 'Emyr Monaghan',
     age: 26
   },
   {
-    name: 'Max Mustermann',
-    age: 23
+    name: 'Madihah Watson',
+    age: 28
+  },
+  {
+    name: 'Rahim Valdez',
+    age: 61
   },
   {
     name: 'Max Mustermann',
-    age: 23
+    age: 73
   },
   {
-    name: 'Max Mustermann',
-    age: 23
+    name: 'Maggie Alexander',
+    age: 52
   },
   {
-    name: 'Max Mustermann',
-    age: 23
+    name: 'Kirsten Martinez',
+    age: 19
   },
   {
-    name: 'Max Mustermann',
-    age: 23
-  },
-  {
-    name: 'Max Mustermann',
-    age: 23
+    name: 'Garfield Dejesus',
+    age: 78
   }];
 
   const columns = [
@@ -41,15 +42,7 @@ const data = [{
       Header: 'Age',
       accessor: 'age',
       Cell: props => <span className='number'>{props.value}</span> // Custom cell components!
-    },
-    {
-      Header: 'Name',
-      accessor: 'name' // String-based value accessors!
-    },
-    {
-      Header: 'Name',
-      accessor: 'name' // String-based value accessors!
-    }, 
+    }
   ]
 
 //PaginationComponent={Pagination}
@@ -58,12 +51,13 @@ storiesOf('Table', module)
   .addWithInfo(
     'default',
     `
-      We recommend React-Table for Tables.
+      We recommend React-Table for Tables. To use the custom Pagination please use 
     `,
     () => <ReactTable
 						data={data}
             defaultPageSize={5}
 						columns={columns}   
+            PaginationComponent={TablePagination}
 					/>
   )
 ;

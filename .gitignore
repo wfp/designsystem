@@ -1,6 +1,6 @@
 # Ignore generated folders
 node_modules
-es
+/es
 lib
 umd
 source
