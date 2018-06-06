@@ -1,6 +1,6 @@
 {
   "name": "@wfp/ui",
-  "version": "0.17.26",
+  "version": "0.17.28",
   "description": "WFP UI-Kit Next",
   "license": "Apache-2",
   "main": "lib/index.js",
@@ -30,12 +30,13 @@
     "test-ssr": "yarn build && node ssr-tests/*.js"
   },
   "keywords": [
-    "wfp",
+    "WFP",
     "World Food Programme",
     "UN",
     "United Nations",
     "react",
-    "ui-kit"
+    "ui-kit",
+    "components"
   ],
   "files": [
     "lib/**/*",
