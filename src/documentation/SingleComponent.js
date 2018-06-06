@@ -2,14 +2,15 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import Wrapper from '../components/Wrapper';
 
-const SingleComponent = ({ children, subTitle, title }) => {
+const SingleComponent = ({ children, pageWidth, subTitle, title, type }) => {
+
   return (
-     <Wrapper
+    <Wrapper
       style={{display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100%'}}
       className="wfp--story"
-      pageWidth="narrower">
+      pageWidth={pageWidth ? pageWidth : 'narrower'}>
         {children}
-	</Wrapper>
+	  </Wrapper>
   );
 };
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
+import SingleComponent from '../../documentation/SingleComponent';
 import Pagination from '../Pagination';
 
 const props = {
@@ -10,7 +11,7 @@ const props = {
 };
 
 storiesOf('Pagination', module)
-  .addDecorator(story => <div style={{ width: '800px' }}>{story()}</div>)
+  .addDecorator(story => <SingleComponent pageWidth="wide">{story()}</SingleComponent>)
   .addWithInfo(
     'with known total number of items',
     `
