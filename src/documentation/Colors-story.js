@@ -7,7 +7,7 @@ import Page from './Page';
 import colors from '../globals/data/colors'
 
 
-storiesOf('> Documentation', module)
+storiesOf(' Documentation', module)
 .addWithInfo(
   'Colors',
   ``,

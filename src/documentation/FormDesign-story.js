@@ -25,7 +25,7 @@ const InvalidPasswordProps = {
     'Your password must be at least 6 characters as well as contain at least one uppercase, one lowercase, and one number.',
 };
 
-storiesOf('> Documentation', module)
+storiesOf(' Documentation', module)
 .addWithInfo(
   'Form Design',
   ``,

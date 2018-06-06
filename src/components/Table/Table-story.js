@@ -1,7 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import ReactTable from 'react-table';
-import TablePagination from './TablePagination';
+
+import TablePagination from '../TablePagination';
 
 
 const data = [{
@@ -55,7 +56,7 @@ storiesOf('Table', module)
     () => <ReactTable
 						data={data}
             defaultPageSize={5}
-						columns={columns}   
+						columns={columns}
             PaginationComponent={TablePagination}
 					/>
   )

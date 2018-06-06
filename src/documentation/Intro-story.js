@@ -6,7 +6,7 @@ import Link from '../components/Link';
 import Page from './Page';
 import Blockquote from '../components/Blockquote';
 
-storiesOf('> Documentation', module)
+storiesOf(' Documentation', module)
 .addWithInfo(
   'Introduction',
   ``,
@@ -21,8 +21,8 @@ storiesOf('> Documentation', module)
       <a href="https://travis-ci.org/wfp/ui" target="_parent">
         <img alt="" src="https://travis-ci.org/wfp/ui.svg?branch=master" />
       </a>&nbsp;
-      <a href="https://npmjs.com/package/ui" target="_parent">
-        <img alt="" src="https://img.shields.io/npm/dm/ui.svg" />
+      <a href="https://npmjs.com/package/@wfp/ui" target="_parent">
+        <img alt="" src="https://img.shields.io/npm/dm/@wfp/ui.svg" />
       </a>&nbsp;
       <a href="https://github.com/wfp/ui" target="_parent">
         <img alt="" src="https://img.shields.io/github/stars/wfp/ui.svg?style=social&amp;label=Star" />

@@ -9,7 +9,7 @@ import Link from '../components/Link';
 
 import { Module, ModuleHeader, ModuleBody } from '../components/Module';
 
-storiesOf('> Documentation', module)
+storiesOf(' Documentation', module)
 .addDecorator(story => <RegularPage>{story()}</RegularPage>)
 .addWithInfo(
   'Application Page',

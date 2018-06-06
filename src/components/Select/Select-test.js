@@ -13,7 +13,7 @@ describe('Select', () => {
       </Select>
     );
 
-    const selectContainer = wrapper.find('.bx--form-item > div');
+    const selectContainer = wrapper.find('.wfp--form-item > div');
     const label = wrapper.find('label');
     const select = wrapper.find('select');
 
@@ -32,7 +32,7 @@ describe('Select', () => {
       });
 
       it('has the expected classes', () => {
-        expect(selectContainer.hasClass('bx--select')).toEqual(true);
+        expect(selectContainer.hasClass('wfp--select')).toEqual(true);
       });
 
       it('applies extra classes specified via className', () => {
@@ -62,7 +62,7 @@ describe('Select', () => {
       });
 
       it('has the expected classes', () => {
-        expect(select.hasClass('bx--select-input')).toEqual(true);
+        expect(select.hasClass('wfp--select-input')).toEqual(true);
       });
 
       it('has the expected id', () => {
@@ -91,7 +91,7 @@ describe('Select', () => {
       });
 
       it('has the expected classes', () => {
-        expect(label.hasClass('bx--label')).toEqual(true);
+        expect(label.hasClass('wfp--label')).toEqual(true);
       });
 
       it('has the expected htmlFor value', () => {
@@ -111,10 +111,10 @@ describe('Select', () => {
       </Select>
     );
 
-    const selectContainer = wrapper.find('.bx--form-item > div');
+    const selectContainer = wrapper.find('.wfp--form-item > div');
 
     it('has the expected classes', () => {
-      expect(selectContainer.hasClass('bx--select--inline')).toEqual(true);
+      expect(selectContainer.hasClass('wfp--select--inline')).toEqual(true);
     });
   });
 });

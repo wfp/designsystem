@@ -67,6 +67,7 @@ const TextInput = ({
       className={textInputClasses}
     />
   ) : (
+  
     <input {...other} {...input} {...textInputProps} className={textInputClasses} />
   );
 

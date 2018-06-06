@@ -5,7 +5,7 @@ import { storiesOf } from '@storybook/react';
 import Page from './Page';
 import Blockquote from '../components/Blockquote';
 
-storiesOf('> Documentation', module)
+storiesOf(' Documentation', module)
 .addWithInfo(
   'Favicons',
   ``,

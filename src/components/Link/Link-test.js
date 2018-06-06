@@ -10,8 +10,7 @@ describe('Link', () => {
       </Link>
     );
     it('should use the appropriate link class', () => {
-      expect(link.hasClass('wfp
-        --link')).toEqual(true);
+      expect(link.hasClass('wfp--link')).toEqual(true);
     });
     it('should inherit the href property', () => {
       expect(link.props().href).toEqual('www.google.com');

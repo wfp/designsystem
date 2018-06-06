@@ -1,4 +1,4 @@
-import React from 'react';
+/*import React from 'react';
 import Icon, {
   findIcon,
   svgShapes,
@@ -124,3 +124,4 @@ describe('Icon', () => {
     });
   });
 });
+*/

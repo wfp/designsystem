@@ -41,7 +41,7 @@ const LogoElement = ({color, logoKind, src}) => {
 	)
 };
 
-storiesOf('> Documentation', module)
+storiesOf(' Documentation', module)
 .addWithInfo(
   'Logos',
   ``,

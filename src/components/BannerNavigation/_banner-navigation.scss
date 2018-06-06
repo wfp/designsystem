@@ -26,7 +26,7 @@
     }
     a {
       @include typescale('omega');
-      color: $color__white;
+      color: rgba($color__white,0.8);
       text-decoration: none;
       &:hover {
         text-decoration: underline;
@@ -35,7 +35,7 @@
         color: $color__white;
       }
       &:visited, &:active {
-        color: $color__white;
+        color: rgba($color__white,0.8);
       }
     }
   }
@@ -43,7 +43,7 @@
   .#{$prefix}--banner-navigation__list {
     display: flex;
     justify-content: flex-end;
-    height: rem(39px);
+    height: rem(30px);
     align-items: center;
   }
 }

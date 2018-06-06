@@ -9,7 +9,7 @@ describe('SelectItem', () => {
     );
 
     it('Has the expected classes', () => {
-      expect(wrapper.hasClass('bx--select-option')).toEqual(true);
+      expect(wrapper.hasClass('wfp--select-option')).toEqual(true);
     });
 
     it('Should add extra classes that are passed via className', () => {

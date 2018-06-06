@@ -13,7 +13,7 @@ import Search from '../components/Search';
 import { MainNavigation, MainNavigationItem, SubMenuList, SubMenuSection, SubMenuItem } from '../components/MainNavigation';
 import User from '../components/User';
 
-storiesOf('> Documentation', module)
+storiesOf(' Documentation', module)
 .addWithInfo(
   'Regular Page',
   ``,

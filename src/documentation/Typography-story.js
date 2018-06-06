@@ -6,7 +6,7 @@ import Link from '../components/Link';
 import Page from './Page';
 import Blockquote from '../components/Blockquote';
 
-storiesOf('> Documentation', module)
+storiesOf(' Documentation', module)
 .addWithInfo(
   'Typography',
   ``,
