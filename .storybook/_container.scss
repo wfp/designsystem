@@ -9,6 +9,11 @@ body {
 		height: 100%;
 		>div { /*main */
 			>div {
+				>div:last-child {
+          h1, h2, p {
+  					font-family: "Open Sans",sans-serif !important;
+          }
+				}
 				>div>button,>button {
 					font-size: 1rem !important;
 					background: #0A6EB4 !important;
@@ -20,4 +25,21 @@ body {
 			}
 		}
 	}
+}
+
+.language-js {
+	margin: 1em 0;
+	background: #E6E8ED !important;
+  .keyword {
+    color: #07a;
+  }
+  .punctuation {
+    color: #999;
+  }
+  .string {
+    color: #690;
+  }
+  .operator {
+    color: #a67f59;
+  }
 }

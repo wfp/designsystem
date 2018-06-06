@@ -11,6 +11,10 @@ storiesOf('BannerNavigation', module)
     'default',
     `
       The BannerNavigation is used on internal applications above the main navigation to crosslink between the most important internal applications. It is hidden on Mobile devices.
+
+      ~~~js
+      import { BannerNavigation, BannerNavigationItem } from '@wfp/ui';
+      ~~~
     `,
     () => (
       <BannerNavigation>

@@ -140,6 +140,11 @@
   	display: none;
   }
 
+
+  [data-tooltipped] {
+    cursor: pointer;
+  }
+
   $positions: 'top', 'bottom', 'left', 'right';
   $origins: bottom, top, right, left;
   $circle-origins: 0% 100%, 0% -100%, 50% 0%, -50% 0%;

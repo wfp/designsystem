@@ -10,7 +10,25 @@ storiesOf('Tooltip', module)
   .addWithInfo(
     'default',
     `
-      We recommend React-Tippy for Tooltips.
+    We recommend [React-Tippy](https://github.com/tvkhoa/react-tippy) for Tooltips.
+    ~~~js
+    import { Tooltip } from 'react-tippy';
+    ~~~
+
+    The default white styling can be imported from wfp-ui:
+
+    ~~~js
+    import tooltipStyle from '@wfp/ui';
+    
+    [...]
+
+    <Tooltip
+    {...tooltipStyle}
+    >
+
+    [...]
+     ~~~
+
     `,
     () => <Tooltip
             // options
