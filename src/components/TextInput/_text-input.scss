@@ -9,7 +9,7 @@
 @import '../../globals/scss/typography';
 @import '../../globals/scss/spacing';
 @import '../../globals/scss/import-once';
-@import '../form/form';
+@import '../Form/form';
 
 @include exports('text-input') {
   .#{$prefix}--text-input {

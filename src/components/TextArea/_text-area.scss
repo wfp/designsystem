@@ -9,7 +9,7 @@
 @import '../../globals/scss/css--reset';
 @import '../../globals/scss/helper-mixins';
 @import '../../globals/scss/import-once';
-@import '../form/form';
+@import '../Form/form';
 
 @include exports('text-area') {
   .#{$prefix}--text-area {

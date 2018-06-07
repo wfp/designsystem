@@ -5,7 +5,7 @@
 @import '../../globals/scss/helper-mixins';
 @import '../../globals/scss/import-once';
 @import '../../globals/scss/css--reset';
-@import '../form/form';
+@import '../Form/form';
 
 @include exports('main-navigation') {
   .#{$prefix}--main-navigation {
@@ -86,6 +86,7 @@
       height: 100px;
     }
   }*/
+
 
 
  .#{$prefix}--main-navigation__logo {
