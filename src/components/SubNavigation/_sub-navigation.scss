@@ -1,0 +1,53 @@
+@import '../../globals/scss/vars';
+@import '../../globals/scss/colors';
+@import '../../globals/scss/typography';
+@import '../../globals/scss/spacing';
+@import '../../globals/scss/helper-mixins';
+@import '../../globals/scss/import-once';
+@import '../../globals/scss/css--reset';
+@import '../form/form';
+
+@include exports('sub-navigation') {
+  .#{$prefix}--sub-navigation {
+  }
+
+  .#{$prefix}--sub-navigation {
+    margin-bottom: $spacing-lg;
+  }
+
+  .#{$prefix}--sub-navigation__header {
+    width: 100%;
+    padding: $spacing-md;
+    background: $ui-02;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .#{$prefix}--sub-navigation__title {
+    font-weight: bold;
+  }
+
+  .#{$prefix}--sub-navigation__content {
+    padding: $spacing-md;
+  }
+
+  .#{$prefix}--sub-navigation__list {
+    padding: $spacing-2xs 0;
+    column-count: 3;
+  }
+
+  .#{$prefix}--sub-navigation__group {
+    padding: $spacing-2xs 0;
+  }
+
+  .#{$prefix}--sub-navigation__group__title {
+    @include typescale('epsilon');
+    margin-bottom: $spacing-2xs;
+  }
+
+
+  .#{$prefix}--sub-navigation__item {
+    padding: $spacing-2xs 0;
+  }
+}

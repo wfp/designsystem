@@ -2,7 +2,8 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 
-import { MainNavigation, MainNavigationItem, SubMenuList, SubMenuSection, SubMenuItem } from '../MainNavigation';
+import { MainNavigation, MainNavigationItem } from '../MainNavigation';
+import { SubNavigation, SubNavigationHeader, SubNavigationTitle, SubNavigationFilter, SubNavigationContent, SubNavigationList, SubNavigationGroup, SubNavigationItem } from '../SubNavigation';
 import Search from '../Search';
 import Link from '../Link';
 import User from '../User';
@@ -29,33 +30,51 @@ storiesOf('MainNavigation', module)
 				</MainNavigationItem>
 				<MainNavigationItem
           subNavigation={
-            <div>
-              <h3>Manuals</h3>
-              <SubMenuList>
-                <SubMenuSection title="List Items">
-                  <SubMenuItem><Link href="https://go.docs.wfp.org" target="_blank">GoDocs</Link></SubMenuItem>
-                  <SubMenuItem><Link href="https://go.docs.wfp.org" target="_blank">GoDocs</Link></SubMenuItem>
-                  <SubMenuItem><Link href="https://go.docs.wfp.org" target="_blank">GoDocs</Link></SubMenuItem>
-                  <SubMenuItem><Link href="https://go.docs.wfp.org" target="_blank">GoDocs</Link></SubMenuItem>
-                  <SubMenuItem><Link href="https://go.docs.wfp.org" target="_blank">GoDocs</Link></SubMenuItem>
-                  <SubMenuItem><Link href="https://go.docs.wfp.org" target="_blank">GoDocs</Link></SubMenuItem>
-                  <SubMenuItem><Link href="https://go.docs.wfp.org" target="_blank">GoDocs</Link></SubMenuItem>
-                  <SubMenuItem><Link href="https://go.docs.wfp.org" target="_blank">GoDocs</Link></SubMenuItem>
-                  <SubMenuItem><Link href="https://go.docs.wfp.org" target="_blank">GoDocs</Link></SubMenuItem>
-                </SubMenuSection>
-                <SubMenuSection title="List Items">
-                  <SubMenuItem><Link href="https://go.docs.wfp.org" target="_blank">GoDocs</Link></SubMenuItem>
-                  <SubMenuItem><Link href="https://go.docs.wfp.org" target="_blank">GoDocs</Link></SubMenuItem>
-                  <SubMenuItem><Link href="https://go.docs.wfp.org" target="_blank">GoDocs</Link></SubMenuItem>
-                  <SubMenuItem><Link href="https://go.docs.wfp.org" target="_blank">GoDocs</Link></SubMenuItem>
-                  <SubMenuItem><Link href="https://go.docs.wfp.org" target="_blank">GoDocs</Link></SubMenuItem>
-                  <SubMenuItem><Link href="https://go.docs.wfp.org" target="_blank">GoDocs</Link></SubMenuItem>
-                  <SubMenuItem><Link href="https://go.docs.wfp.org" target="_blank">GoDocs</Link></SubMenuItem>
-                  <SubMenuItem><Link href="https://go.docs.wfp.org" target="_blank">GoDocs</Link></SubMenuItem>
-                  <SubMenuItem><Link href="https://go.docs.wfp.org" target="_blank">GoDocs</Link></SubMenuItem>
-                </SubMenuSection>
-              </SubMenuList>
-            </div>
+            <SubNavigation>
+              <SubNavigationHeader>
+                <SubNavigationTitle>
+                  The Title
+                </SubNavigationTitle>
+                <SubNavigationFilter>
+                   <Search
+                    className="some-class"
+                    small
+                    id="search-2"
+                    labelText="Filter"
+                    placeHolderText="Filter"
+                    onChange={() => {
+                      console.log('onChange');
+                    }}
+                  />
+                </SubNavigationFilter>
+              </SubNavigationHeader>
+              <SubNavigationContent>
+                <SubNavigationList>
+                  <SubNavigationGroup title="First List">
+                    <SubNavigationItem><Link href="https://go.docs.wfp.org" target="_blank">GoDocs</Link></SubNavigationItem>
+                    <SubNavigationItem><Link href="https://go.docs.wfp.org" target="_blank">GoDocs</Link></SubNavigationItem>
+                    <SubNavigationItem><Link href="https://go.docs.wfp.org" target="_blank">GoDocs</Link></SubNavigationItem>
+                    <SubNavigationItem><Link href="https://go.docs.wfp.org" target="_blank">GoDocs</Link></SubNavigationItem>
+                    <SubNavigationItem><Link href="https://go.docs.wfp.org" target="_blank">GoDocs</Link></SubNavigationItem>
+                    <SubNavigationItem><Link href="https://go.docs.wfp.org" target="_blank">GoDocs</Link></SubNavigationItem>
+                    <SubNavigationItem><Link href="https://go.docs.wfp.org" target="_blank">GoDocs</Link></SubNavigationItem>
+                    <SubNavigationItem><Link href="https://go.docs.wfp.org" target="_blank">GoDocs</Link></SubNavigationItem>
+                    <SubNavigationItem><Link href="https://go.docs.wfp.org" target="_blank">GoDocs</Link></SubNavigationItem>
+                  </SubNavigationGroup>
+                  <SubNavigationGroup title="Second List of Items">
+                    <SubNavigationItem><Link href="https://go.docs.wfp.org" target="_blank">GoDocs</Link></SubNavigationItem>
+                    <SubNavigationItem><Link href="https://go.docs.wfp.org" target="_blank">GoDocs</Link></SubNavigationItem>
+                    <SubNavigationItem><Link href="https://go.docs.wfp.org" target="_blank">GoDocs</Link></SubNavigationItem>
+                    <SubNavigationItem><Link href="https://go.docs.wfp.org" target="_blank">GoDocs</Link></SubNavigationItem>
+                    <SubNavigationItem><Link href="https://go.docs.wfp.org" target="_blank">GoDocs</Link></SubNavigationItem>
+                    <SubNavigationItem><Link href="https://go.docs.wfp.org" target="_blank">GoDocs</Link></SubNavigationItem>
+                    <SubNavigationItem><Link href="https://go.docs.wfp.org" target="_blank">GoDocs</Link></SubNavigationItem>
+                    <SubNavigationItem><Link href="https://go.docs.wfp.org" target="_blank">GoDocs</Link></SubNavigationItem>
+                    <SubNavigationItem><Link href="https://go.docs.wfp.org" target="_blank">GoDocs</Link></SubNavigationItem>
+                  </SubNavigationGroup>
+                  </SubNavigationList>
+              </SubNavigationContent>
+            </SubNavigation>
           }>
 					<Link href="http://manuals.wfp.org" target="_blank">Manuals</Link>
 				</MainNavigationItem>
