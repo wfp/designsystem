@@ -5,6 +5,7 @@ import classNames from 'classnames';
 const User = ({
   alt,
   className,
+  ellipsis,
   image,
   title,
   ...other
@@ -14,14 +15,14 @@ const User = ({
   if ((image && image.includes("auto") || image === undefined)) {
     avatar = ( 
       <div
-        className="wfp--user-icon wfp--user-icon--empty"
+        className="wfp--user__icon wfp--user__icon--empty"
         alt={alt}
       />
     );
   }
   else {
     avatar = (
-        <img alt={alt} className="wfp--user-icon" src={image} />
+        <img alt={alt} className="wfp--user__icon" src={image} />
     );
   }
 
@@ -29,16 +30,25 @@ const User = ({
     className
   });
 
+
+  const titleClasses = classNames({
+    'wfp--user__title' : true,
+    'wfp--user__title--ellipsis' : ellipsis,
+  });
+
   return (
       <div className={classes} {...other}>
         {avatar}
-        <span>{title}</span>
+        <span className={titleClasses}>
+          {title}
+        </span>
       </div>
     );
 }
 
 User.propTypes = {
   alt: PropTypes.string,
+  ellipsis: PropTypes.bool,
   image: PropTypes.string,
   title: PropTypes.string
 

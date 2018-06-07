@@ -35,20 +35,18 @@
       color: $color__white;
       @include typescale('epsilon');
       text-decoration: none;
-      &:hover {
+      &:hover, &:visited, &:active {
+        color: $color__white;
         text-decoration: underline;
       }
       &:focus {
-        color: $color__white;
-      }
-      &:visited, &:active {
         color: $color__white;
       }
     }
   }
 
   .#{$prefix}--main-navigation__trigger--has-sub {
-    a, span {
+    >div, >a, >span {
       white-space: nowrap;
       &:after {
         display: inline-block;
@@ -66,7 +64,7 @@
   }
 
   .#{$prefix}--main-navigation__trigger--has-sub.#{$prefix}--main-navigation__trigger--open {
-    a, span {
+    >div, >a, >span {
       &:after {
         position: relative;
         top: rem(0.5px);
@@ -88,6 +86,21 @@
       height: 100px;
     }
   }*/
+
+
+ .#{$prefix}--main-navigation__logo {
+    a {
+       color: $color__white;
+       text-decoration: none;
+      &:hover, &:visited, &:active {
+        color: $color__white;
+        text-decoration: underline;
+      }
+      &:focus {
+        color: $color__white;
+      }
+    }
+  }
 
   @include breakpoint(bp--md--major) {
     .#{$prefix}--main-navigation__logo-wrapper {
@@ -129,6 +142,7 @@
       width: 100%;
       max-height: 70vh;
       overflow: auto;
+      overflow-x: hidden;
       z-index: z('modal');
       color: $text-01;
       background: $color__white;

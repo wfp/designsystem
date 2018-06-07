@@ -40,7 +40,7 @@
     .#{$prefix}--module__footer {
       display: flex;
       align-items: center;
-      padding: 1rem 1.5rem;
+      padding: 0.7rem 1.5rem;
       border-top: 1px solid $ui-04;
       @include typescale('zeta');
     }

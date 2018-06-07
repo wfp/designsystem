@@ -10,4 +10,14 @@ storiesOf('User', module)
     `,
     () => <User />
   )
+   .addWithInfo(
+    'Ellipsis',
+    `
+      The example below shows an User Icon.
+    `,
+    () => <User
+            ellipsis
+            title="Very long and difficult username"
+          />
+  )
 ;

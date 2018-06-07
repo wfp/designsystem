@@ -16,7 +16,7 @@ storiesOf('MainNavigation', module)
     `,
     () => (
       <MainNavigation
-        logo="WFP UI">
+        logo={<a href="#">WFP UI</a>}>
         <MainNavigationItem
           subNavigation={
             <div>
@@ -83,7 +83,9 @@ storiesOf('MainNavigation', module)
               </p>
             </div>
           }>
-          <User title="Max Mustermann"/>
+          <User
+            ellipsis
+            title="Max Mustermann long name"/>
         </MainNavigationItem>    
       </MainNavigation>
     )
