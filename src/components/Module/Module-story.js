@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { Module, ModuleHeader, ModuleBody } from '../Module';
+import { Module, ModuleHeader, ModuleBody, ModuleFooter } from '../Module';
 import Wrapper from '../Wrapper';
 
 
@@ -37,6 +37,7 @@ storiesOf('Module', module)
             electronic typesetting, remaining essentially unchanged.
           </p>
         </ModuleBody>
+        <ModuleFooter>Module Footer Example</ModuleFooter>
       </Module>
     )
   )

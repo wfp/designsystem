@@ -62,10 +62,21 @@ const ModuleHeader = ({ children, className, ...other }) => {
   );
 };
 
+const ModuleFooter = ({ children, className, ...other }) => {
+  const wrapperClasses = classNames('wfp--module__footer', className);
+
+  return (
+    <div className={wrapperClasses} {...other}>
+      {children}
+    </div>
+  );
+};
+
 Module.propTypes = propTypes;
 ModuleBody.propTypes = moduleBodyPropTypes;
 Module.defaultProps = defaultProps;
 ModuleBody.defaultProps = moduleBodydefaultProps;
 ModuleHeader.propTypes = moduleHeaderPropTypes;
+ModuleFooter.defaultProps = moduleBodydefaultProps;
 
-export { Module, ModuleBody, ModuleHeader };
+export { Module, ModuleBody, ModuleHeader, ModuleFooter };

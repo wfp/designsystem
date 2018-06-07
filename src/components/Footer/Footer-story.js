@@ -23,6 +23,11 @@ storiesOf('Footer', module)
     'Default',
     `
       WFP's default Footer for internal applications. The link area can be customized with relevant links and hints. There is a debug/version area underneath.
+
+      ~~~js
+      import { Footer } from '@wfp/ui';
+      ~~~
+
     `,
     () => <Footer {...additionalProps} />
   )

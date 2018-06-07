@@ -18,6 +18,22 @@ addDecorator(story => <Container story={story} />);
 
 // addon-info
 setDefaults({
+  styles: stylesheet => {
+    console.log("stylesheet", stylesheet);
+    return ({
+        ...stylesheet,
+        header: {
+          ...stylesheet.header,
+          h1: {
+            ...stylesheet.header.h1,
+          }
+        },
+        infoBody: {
+          ...stylesheet.infoBody,
+          fontFamily: '"Open Sans",sans-serif'
+        }
+      })
+},
   inline: false, // Toggles display of header with component name and description
 });
 

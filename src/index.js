@@ -67,7 +67,7 @@ export Loading from './components/Loading';
 export Modal from './components/Modal';
 export ModalWrapper from './components/ModalWrapper';
 */
-export { Module, ModuleBody, ModuleHeader } from './components/Module';
+export { Module, ModuleBody, ModuleHeader, ModuleFooter } from './components/Module';
 /*
 export MultiSelect from './components/MultiSelect';
 export Notification, {
