@@ -56,13 +56,8 @@ export {
   MainNavigation,
   MainNavigationItem
 } from './components/MainNavigation';
-export {
-  SubMenuList,
-  SubMenuSection,
-  SubMenuItem 
-} from './components/MainNavigation';
 
-/* export {
+export {
   SubNavigation,
   SubNavigationHeader,
   SubNavigationTitle,
@@ -72,7 +67,7 @@ export {
   SubNavigationGroup,
   SubNavigationItem 
 } from './components/SubNavigation';
-*/
+
 
 /*
 export ListItem from './components/ListItem';
