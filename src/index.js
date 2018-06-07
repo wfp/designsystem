@@ -61,6 +61,19 @@ export {
   SubMenuSection,
   SubMenuItem 
 } from './components/MainNavigation';
+
+/* export {
+  SubNavigation,
+  SubNavigationHeader,
+  SubNavigationTitle,
+  SubNavigationFilter,
+  SubNavigationContent,
+  SubNavigationList,
+  SubNavigationGroup,
+  SubNavigationItem 
+} from './components/SubNavigation';
+*/
+
 /*
 export ListItem from './components/ListItem';
 export Loading from './components/Loading';
