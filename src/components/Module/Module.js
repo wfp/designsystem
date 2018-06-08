@@ -66,8 +66,7 @@ const ModuleFooter = ({ children, className, ...other }) => {
   const wrapperClasses = classNames('wfp--module__footer', className);
 
   return (
-    <div className={wrapperCl
-      asses} {...other}>
+    <div className={wrapperClasses} {...other}>
       {children}
     </div>
   );

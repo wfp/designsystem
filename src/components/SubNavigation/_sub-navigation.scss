@@ -34,7 +34,7 @@
 
   .#{$prefix}--sub-navigation__list {
     padding: $spacing-2xs 0;
-    column-count: 3;
+    column-count: 4;
   }
 
   .#{$prefix}--sub-navigation__group {
@@ -48,6 +48,6 @@
 
 
   .#{$prefix}--sub-navigation__item {
-    padding: $spacing-2xs 0;
+    line-height: 1.6;
   }
 }
