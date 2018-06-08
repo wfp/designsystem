@@ -20,4 +20,12 @@ storiesOf('User', module)
             title="Very long and difficult username"
           />
   )
+  .addWithInfo(
+    'Image only',
+    `
+      The example below shows an User Icon.
+    `,
+    () => <User
+          />
+  )
 ;

@@ -39,9 +39,11 @@ const User = ({
   return (
       <div className={classes} {...other}>
         {avatar}
-        <span className={titleClasses}>
-          {title}
-        </span>
+        {title &&
+          <span className={titleClasses}>
+            {title}
+          </span>
+        }
       </div>
     );
 }
@@ -55,9 +57,7 @@ User.propTypes = {
 };
 
 User.defaultProps = {
-  alt: 'User Icon',
-  title: 'No Name'
-
+  alt: 'User Icon'
 };
 
 export default User;
