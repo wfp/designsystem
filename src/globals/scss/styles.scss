@@ -84,7 +84,7 @@ $deprecations--message: 'Deprecated code was found, this code will be removed be
 @import '../../components/detail-page-header/detail-page-header';
 @import '../../components/dropdown/dropdown';
 */
-@import '../../components/loading/loading';
+@import '../../components/Loading/loading';
 @import '../../components/Modal/modal';
 @import '../../components/Module/module';
 @import '../../components/User/user';
@@ -100,14 +100,14 @@ $deprecations--message: 'Deprecated code was found, this code will be removed be
 @import '../../components/unified-header/unified-header';
 @import '../../components/interior-left-nav/interior-left-nav';
 */
-@import '../../components/pagination/pagination';
+@import '../../components/Pagination/pagination';
 /*
 @import '../../components/accordion/accordion';
 @import '../../components/progress-indicator/progress-indicator';
 */
 @import '../../components/Story/story';
 @import '../../components/Breadcrumb/breadcrumb';
-@import '../../components/BlockQuote/blockquote';
+@import '../../components/Blockquote/blockquote';
 @import '../../components/Table/table';
 /*
 @import '../../components/toolbar/toolbar';

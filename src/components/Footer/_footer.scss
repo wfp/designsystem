@@ -9,7 +9,7 @@
 @import '../../globals/scss/layout';
 @import '../../globals/scss/css--reset';
 @import '../../globals/scss/css--typography';
-@import '../link/link';
+@import '../Link/link';
 
 .#{$prefix}--footer--bottom-fixed {
   position: fixed;

@@ -15,7 +15,7 @@
 
 @import './mixins';
 
-@import '../button/button';
+@import '../Button/button';
 
 @include exports('modal') {
   .#{$prefix}--modal {
