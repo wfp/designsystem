@@ -58,6 +58,7 @@ process.env.BABEL_ENV = 'es';
 
 module.exports = {
   input: 'src/index.js',
+
   plugins: [
     resolve({
       jsnext: true,

@@ -59,9 +59,8 @@ MainNavigationItem.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-//const MainNavigation = ({children, className, id, pageWidth}) => {
 
-class MainNavigationEl extends Component {
+class MainNavigation extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -91,6 +90,13 @@ class MainNavigationEl extends Component {
     this.setState(
       {openMobile: !this.state.openMobile}
     )
+  }
+
+
+  triggerSubNavigation = (trigger) => {
+    this.setState({
+      activeMenuItem: undefined
+    });
   }
 
   handleClickOutside = evt => {
@@ -147,7 +153,7 @@ class MainNavigationEl extends Component {
   }
 }
 
-MainNavigationEl.propTypes = {
+MainNavigation.propTypes = {
   children: PropTypes.node.isRequired,
   /**
    * The CSS class name to be placed on the wrapping element.
@@ -157,10 +163,10 @@ MainNavigationEl.propTypes = {
   wrapperClassName: PropTypes.string,
 };
 
-MainNavigationEl.defaultProps = {
+MainNavigation.defaultProps = {
 	pageWidth: 'narrow-full'
 };
 
-const MainNavigation = onClickOutside(MainNavigationEl);
+//const MainNavigation = onClickOutside(MainNavigationEl);
 
-export { MainNavigationItem, MainNavigation };
+export { MainNavigation, MainNavigationItem };

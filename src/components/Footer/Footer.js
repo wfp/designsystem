@@ -4,8 +4,8 @@ import classnames from 'classnames';
 import Link from '../Link';
 import Wrapper from '../Wrapper';
 
-import logoExtended from '../../../assets/logos/extended/en/wfp-logo-extended-black-en.svg';
-import logoVertical from '../../../assets/logos/vertical/en/wfp-logo-vertical-black-en.svg';
+//import logoExtended from '../../../assets/logos/extended/en/wfp-logo-extended-black-en.svg';
+//import logoVertical from '../../../assets/logos/vertical/en/wfp-logo-vertical-black-en.svg';
 
 const Footer = ({
   className,
@@ -16,6 +16,8 @@ const Footer = ({
   labelTwo,
   linkTextTwo,
   linkHrefTwo,
+  logoExtended,
+  logoVertical,
   metaContent,
   secondary,
   pageWidth,
@@ -47,8 +49,16 @@ const Footer = ({
       </div>
       )}
       <div className="wfp--footer-cta">
-        <img className="wfp--footer-cta-logo" src={logoExtended} alt="World Food Programme Logo" />
-        <img className="wfp--footer-cta-logo-small" src={logoVertical} alt="World Food Programme Logo" />
+        <img
+          className="wfp--footer-cta-logo"
+          src={logoExtended ? logoExtended : 'logos/extended/en/wfp-logo-extended-black-en.svg'}
+          alt="World Food Programme Logo"
+        />
+        <img
+          className="wfp--footer-cta-logo-small"
+          src={logoVertical ? logoVertical : 'logos/vertical/en/wfp-logo-vertical-black-en.svg'}
+          alt="World Food Programme Logo"
+        />
         {secondary}
       </div>
       </div>
