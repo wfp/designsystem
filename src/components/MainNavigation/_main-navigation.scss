@@ -113,7 +113,7 @@
       font-weight: 600;
     }
 
-    .wfp--main-navigation__wrapper {
+    .#{$prefix}--main-navigation__wrapper {
       display: flex;
       align-items: center;
       justify-content: flex-end;

@@ -72,30 +72,7 @@ const Page = ({ children }) => {
           subNavigation={
             <div>
               <h3>Manuals</h3>
-              <SubMenuList>
-                <SubMenuSection title="List Items">
-                  <SubMenuItem><Link href="https://go.docs.wfp.org" target="_blank">GoDocs</Link></SubMenuItem>
-                  <SubMenuItem><Link href="https://go.docs.wfp.org" target="_blank">GoDocs</Link></SubMenuItem>
-                  <SubMenuItem><Link href="https://go.docs.wfp.org" target="_blank">GoDocs</Link></SubMenuItem>
-                  <SubMenuItem><Link href="https://go.docs.wfp.org" target="_blank">GoDocs</Link></SubMenuItem>
-                  <SubMenuItem><Link href="https://go.docs.wfp.org" target="_blank">GoDocs</Link></SubMenuItem>
-                  <SubMenuItem><Link href="https://go.docs.wfp.org" target="_blank">GoDocs</Link></SubMenuItem>
-                  <SubMenuItem><Link href="https://go.docs.wfp.org" target="_blank">GoDocs</Link></SubMenuItem>
-                  <SubMenuItem><Link href="https://go.docs.wfp.org" target="_blank">GoDocs</Link></SubMenuItem>
-                  <SubMenuItem><Link href="https://go.docs.wfp.org" target="_blank">GoDocs</Link></SubMenuItem>
-                </SubMenuSection>
-                <SubMenuSection title="List Items">
-                  <SubMenuItem><Link href="https://go.docs.wfp.org" target="_blank">GoDocs</Link></SubMenuItem>
-                  <SubMenuItem><Link href="https://go.docs.wfp.org" target="_blank">GoDocs</Link></SubMenuItem>
-                  <SubMenuItem><Link href="https://go.docs.wfp.org" target="_blank">GoDocs</Link></SubMenuItem>
-                  <SubMenuItem><Link href="https://go.docs.wfp.org" target="_blank">GoDocs</Link></SubMenuItem>
-                  <SubMenuItem><Link href="https://go.docs.wfp.org" target="_blank">GoDocs</Link></SubMenuItem>
-                  <SubMenuItem><Link href="https://go.docs.wfp.org" target="_blank">GoDocs</Link></SubMenuItem>
-                  <SubMenuItem><Link href="https://go.docs.wfp.org" target="_blank">GoDocs</Link></SubMenuItem>
-                  <SubMenuItem><Link href="https://go.docs.wfp.org" target="_blank">GoDocs</Link></SubMenuItem>
-                  <SubMenuItem><Link href="https://go.docs.wfp.org" target="_blank">GoDocs</Link></SubMenuItem>
-                </SubMenuSection>
-              </SubMenuList>
+            
             </div>
           }>
           <Link href="http://manuals.wfp.org" target="_blank">Manuals</Link>

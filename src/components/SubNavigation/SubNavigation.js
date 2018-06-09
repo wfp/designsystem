@@ -1,32 +1,41 @@
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { Component } from 'react';
 import classNames from 'classnames';
+
+
 
 
 
 const SubNavigation = ({
   children,
-  className,
-  title,
+  open,
   ...other
 }) => {
 
-  const classes = classNames('wfp--sub-navigation', {
-    className
+  const subClasses = classNames({
+    'wfp--main-navigation__sub' : true,
+    'wfp--main-navigation__sub--open' : open
   });
 
   return (
-      <div className={classes} {...other}>
-        {children}
-      </div>
-    );
+    <div 
+      className={subClasses}
+      {...other}
+    >
+      {children}
+    </div>
+  )
 }
 
 SubNavigation.propTypes = {
+  children: PropTypes.element.isRequired,
 };
 
 SubNavigation.defaultProps = {
 };
+
+
+
 
 
 const SubNavigationItem = ({

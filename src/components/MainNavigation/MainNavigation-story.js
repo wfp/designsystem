@@ -30,10 +30,10 @@ storiesOf('MainNavigation', module)
 				</MainNavigationItem>
 				<MainNavigationItem
           subNavigation={
-            <SubNavigation>
+            <div>
               <SubNavigationHeader>
                 <SubNavigationTitle>
-                  The Title
+                  The Subnavigation Title
                 </SubNavigationTitle>
                 <SubNavigationFilter>
                    <Search
@@ -74,7 +74,7 @@ storiesOf('MainNavigation', module)
                   </SubNavigationGroup>
                   </SubNavigationList>
               </SubNavigationContent>
-            </SubNavigation>
+            </div>
           }>
 					<Link href="http://manuals.wfp.org" target="_blank">Manuals</Link>
 				</MainNavigationItem>

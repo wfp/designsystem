@@ -10,7 +10,7 @@
 @include exports('user-icon') {
 
   .#{$prefix}--user {
-      display: inline-flex;
+      display: flex;
       align-items: center;
   }
 

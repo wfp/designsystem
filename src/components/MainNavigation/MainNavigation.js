@@ -1,54 +1,83 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import onClickOutside from "react-onclickoutside";
+import { SubNavigation } from '../SubNavigation';
 import classNames from 'classnames';
 import Button from '../Button';
 import Wrapper from '../Wrapper';
 
 
-const MainNavigationItem = ({activeMenuItem, className, children, menuItem, onChangeSub, subNavigation}) => {
-
-  const wrapperClasses = classNames(className, {
-    'wfp--main-navigation__item' : true,
-    'wfp--main-navigation__item--open' : menuItem === activeMenuItem
-  });
-
-  const subClasses = classNames({
-    'wfp--main-navigation__sub' : true,
-    'wfp--main-navigation__sub--open' : menuItem === activeMenuItem
-  });
-
-  const triggerClasses = classNames({
-    'wfp--main-navigation__trigger' : true,
-    'wfp--main-navigation__trigger--has-sub' : subNavigation,
-    'wfp--main-navigation__trigger--open' : menuItem === activeMenuItem
-  });
-
-  const childrenWithProps = subNavigation ? React.cloneElement(children, {
-    onClick: (e) => onChangeSub(e, menuItem, 'toggle')
-  }) : children;
 
 
-  /*
-    onMouseEnter={(e) => onChangeSub(e, menuItem, 'in')}
-    onMouseLeave={(e) => onChangeSub(e, undefined, 'out')}
-    onMouseEnter={(e) => onChangeSub(e, menuItem, 'toggle')}
-  */
-	return (
-		<li
-      className={wrapperClasses}>
-			<div
-        className={triggerClasses}
-      >
-        {childrenWithProps}
-      </div>
-      {subNavigation &&
-      <div className={subClasses}>
-        {subNavigation}
-      </div>
+
+
+
+class MainNavigationItem extends Component {
+  constructor(props) {
+    super(props);
+  }
+
+  componentWillReceiveProps = (nextProps) => {
+    if (nextProps.menuItem === nextProps.activeMenuItem) {
+      document.addEventListener('mousedown', this.handleClickOutside);
     }
-		</li>
-	)
+    else {
+      document.removeEventListener('mousedown', this.handleClickOutside);
+    }
+  }
+
+  setWrapperRef = (node) =>{
+    this.wrapperRef = node;
+  }
+
+  handleClickOutside = (e) => {
+    if (this.wrapperRef && !this.wrapperRef.contains(event.target)) {
+      console.log('You clicked outside of me!', this.props);
+      this.props.onChangeSub(e, undefined, 'close');
+    }
+  }
+
+  render () {
+    const { activeMenuItem, className, children, menuItem, onChangeSub, subNavigation} = this.props;
+
+    const wrapperClasses = classNames(className, {
+      'wfp--main-navigation__item' : true,
+      'wfp--main-navigation__item--open' : menuItem === activeMenuItem
+    });
+
+    const triggerClasses = classNames({
+      'wfp--main-navigation__trigger' : true,
+      'wfp--main-navigation__trigger--has-sub' : subNavigation,
+      'wfp--main-navigation__trigger--open' : menuItem === activeMenuItem
+    });
+
+    const childrenWithProps = subNavigation ? React.cloneElement(children, {
+      onClick: (e) => onChangeSub(e, menuItem, 'toggle')
+    }) : children;
+   
+    /*
+      onMouseEnter={(e) => onChangeSub(e, menuItem, 'in')}
+      onMouseLeave={(e) => onChangeSub(e, undefined, 'out')}
+      onMouseEnter={(e) => onChangeSub(e, menuItem, 'toggle')}
+    */
+  	return (
+  		<li
+        className={wrapperClasses}
+        ref={this.setWrapperRef}>
+  			<div
+          className={triggerClasses}
+        >
+          {childrenWithProps}
+        </div>
+        {subNavigation &&
+        <SubNavigation
+          onChangeSub={onChangeSub}
+          open={menuItem === activeMenuItem ? true : false}>
+          {subNavigation}
+        </SubNavigation>
+      }
+  		</li>
+  	)
+  }
 };
 
 MainNavigationItem.propTypes = {
@@ -78,7 +107,15 @@ class MainNavigation extends Component {
         activeMenuItem: i
       });
     }
-    else */ if (action === 'toggle') {
+    else */ 
+
+    if (action === 'close') {
+      this.setState({
+        activeMenuItem: undefined
+      });
+    }
+    else if (action === 'toggle') {
+      console.log(this.state);
       const newI = (this.state.activeMenuItem === undefined|| this.state.activeMenuItem !== i) ? i : undefined;
       this.setState({
         activeMenuItem: newI
