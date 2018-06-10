@@ -22,7 +22,7 @@ storiesOf('Footer', module)
   .addWithInfo(
     'Default',
     `
-      WFP's default Footer for internal applications. The link area can be customized with relevant links and hints. There is a debug/version area underneath.
+      WFP's default Footer for internal applications. The link area can be customized with relevant links and hints. There is a debug/version area underneath. TODO: You can use the Logo from the CDN or a custom Logo on the Footer.
 
       ~~~js
       import { Footer } from '@wfp/ui';

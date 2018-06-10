@@ -73,4 +73,26 @@ storiesOf('Modal', module)
         </p>
       </Modal>
     )
+  )
+  .addWithInfo(
+    'wide',
+    `
+      For more space.
+    `,
+    () => (
+      <Modal
+        {...modalProps}
+        danger
+        open
+        modalHeading="Modal heading"
+        modalLabel="Optional label"
+        wide
+        primaryButtonText="Primary Button"
+        secondaryButtonText="Secondary Button">
+        <p className="wfp--modal-content__text">
+          Please see ModalWrapper for more examples and demo of the
+          functionality.
+        </p>
+      </Modal>
+    )
   );

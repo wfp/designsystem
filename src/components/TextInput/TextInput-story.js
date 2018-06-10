@@ -1,6 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
+import SingleComponent from '../../documentation/SingleComponent';
 import TextInput from '../TextInput';
 
 const TextInputProps = {
@@ -16,9 +17,14 @@ const introText = `
   Text fields enable the user to interact with and input data. A single line
   field is used when the input anticipated by the user is a single line of
   text as opposed to a paragraph.
+
+  ~~~js
+    import { TextInput } from '@wfp/ui';
+  ~~~
 `;
 
 storiesOf('TextInput', module)
+  .addDecorator(story => <SingleComponent pageWidth="wide">{story()}</SingleComponent>)
   .addWithInfo(
     'enabled',
     `

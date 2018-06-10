@@ -1,14 +1,22 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
+import SingleComponent from '../../documentation/SingleComponent';
 import User from '../User';
 
 storiesOf('User', module)
+  .addDecorator(story => <SingleComponent pageWidth="wide">{story()}</SingleComponent>)
   .addWithInfo(
     'default',
     `
       The example below shows an User Icon.
+
+      ~~~js
+      import { User } from '@wfp/ui';
+      ~~~
     `,
-    () => <User />
+    () => <User
+            title="Max Mustermann"
+          />
   )
    .addWithInfo(
     'Ellipsis',

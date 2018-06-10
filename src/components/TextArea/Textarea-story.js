@@ -1,6 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
+import SingleComponent from '../../documentation/SingleComponent';
 import TextArea from '../TextArea';
 
 const TextAreaProps = {
@@ -15,12 +16,17 @@ const TextAreaProps = {
 };
 
 storiesOf('TextArea', module)
+  .addDecorator(story => <SingleComponent pageWidth="wide">{story()}</SingleComponent>)
   .addWithInfo(
     'enabled',
     `
       Text areas enable the user to interact with and input data. A text area is used when you
       anticipate the user to input more than 1 sentence. The example belows shows an enabled
       Text Area component.
+
+      ~~~js
+      import { TextArea } from '@wfp/ui';
+      ~~~
     `,
     () => <TextArea {...TextAreaProps} />
   )

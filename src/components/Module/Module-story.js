@@ -23,7 +23,7 @@ storiesOf('Module', module)
       Module
     `,
     () => (
-      <Module className="some-class" size="single">
+      <Module className="some-class">
         <ModuleHeader>Module Example</ModuleHeader>
         <ModuleBody>
           <p>
@@ -42,35 +42,6 @@ storiesOf('Module', module)
     )
   )
   .addWithInfo(
-    'Double',
-    `
-      Modules are used to organize content in a structural manner.
-
-      Modules are separated into different components. Module components can be
-      'single' or 'double' with the default as 'double'.
-
-      ModuleHeader and ModuleBody components hold the content of the
-      Module
-    `,
-    () => (
-      <Module className="some-class">
-        <ModuleHeader>Module Example</ModuleHeader>
-        <ModuleBody>
-          <p>
-            Lorem Ipsum is dummy text of the printing and typesetting industry.
-            Lorem Ipsum has been the industry's standard dummy text ever since
-            the 1500s, when an unknown printer took a galley of type and
-            scrambled it to make a type specimen book.
-          </p>
-          <p>
-            It has survived not only five centuries, but also the leap into
-            electronic typesetting, remaining essentially unchanged.
-          </p>
-        </ModuleBody>
-      </Module>
-    )
-  )
-  .addWithInfo(
     'No Header',
     `
       Modules are used to organize content in a structural manner.
@@ -82,7 +53,7 @@ storiesOf('Module', module)
       Module
     `,
     () => (
-      <Module className="some-class" size="single">
+      <Module className="some-class">
         <ModuleBody>
           <p>
             It has survived not only five centuries, but also the leap into
@@ -104,7 +75,7 @@ storiesOf('Module', module)
       Module
     `,
     () => (
-      <Module className="some-class" size="single">
+      <Module className="some-class">
         <ModuleBody centered>
           <p>
             Lorem Ipsum is dummy text of the printing and typesetting industry.
@@ -119,7 +90,38 @@ storiesOf('Module', module)
         </ModuleBody>
       </Module>
     )
-  ).addWithInfo(
+  )
+  .addWithInfo(
+    'Dark',
+    `
+      Modules are used to organize content in a structural manner.
+
+      Modules are separated into different components. Module components can be
+      'single' or 'double' with the default as 'double'.
+
+      ModuleHeader and ModuleBody components hold the content of the
+      Module
+    `,
+    () => (
+      <Module dark className="some-class">
+        <ModuleHeader>Module Example</ModuleHeader>
+        <ModuleBody>
+          <p>
+            Lorem Ipsum is dummy text of the printing and typesetting industry.
+            Lorem Ipsum has been the industry's standard dummy text ever since
+            the 1500s, when an unknown printer took a galley of type and
+            scrambled it to make a type specimen book.
+          </p>
+          <p>
+            It has survived not only five centuries, but also the leap into
+            electronic typesetting, remaining essentially unchanged.
+          </p>
+        </ModuleBody>
+        <ModuleFooter>Module Footer Example</ModuleFooter>
+      </Module>
+    )
+  )
+  .addWithInfo(
     'With Grid',
     `
       Modules are used to organize content in a structural manner.
@@ -130,7 +132,7 @@ storiesOf('Module', module)
     `,
     () => (
       <div className="row">
-        <Module className="col-xs-12 col-md-6 col-lg-4" size="single">
+        <Module className="col-xs-12 col-md-6 col-lg-4">
           <ModuleHeader>Module Example</ModuleHeader>
           <ModuleBody>
             <p>
@@ -146,7 +148,7 @@ storiesOf('Module', module)
           </ModuleBody>
         </Module>
 
-        <Module className="col-xs-12 col-md-6 col-lg-4" size="single">
+        <Module className="col-xs-12 col-md-6 col-lg-4">
           <ModuleHeader>Module Example</ModuleHeader>
           <ModuleBody>
             <p>
@@ -162,7 +164,7 @@ storiesOf('Module', module)
           </ModuleBody>
         </Module>
 
-        <Module className="col-xs-12 col-md-6 col-lg-4" size="single">
+        <Module className="col-xs-12 col-md-6 col-lg-4">
           <ModuleHeader>Module Example</ModuleHeader>
           <ModuleBody>
             <p>

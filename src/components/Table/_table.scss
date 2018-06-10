@@ -13,10 +13,13 @@
  * Data Tables
  *
  * Styling for all tables created
- * with react-table,
- * uses FontAwesome for Icons
+ * with react-table
  */
+
 .ReactTable {
+  @include reset;
+  @include font-family;
+  font-size: 1rem;
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -82,7 +85,7 @@
 
 .ReactTable .rt-thead .rt-td,
 .ReactTable .rt-thead .rt-th {
-  padding: 1em 0.5em;
+  padding: 0.3rem 0.5rem;
   line-height: normal;
   position: relative;
   border-right: 1px solid $ui-04;

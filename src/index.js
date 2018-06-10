@@ -61,6 +61,7 @@ export {
   SubNavigation,
   SubNavigationHeader,
   SubNavigationTitle,
+  SubNavigationLink,
   SubNavigationFilter,
   SubNavigationContent,
   SubNavigationList,
@@ -72,9 +73,9 @@ export {
 /*
 export ListItem from './components/ListItem';
 export Loading from './components/Loading';
+*/
 export Modal from './components/Modal';
 export ModalWrapper from './components/ModalWrapper';
-*/
 export { Module, ModuleBody, ModuleHeader, ModuleFooter } from './components/Module';
 /*
 export MultiSelect from './components/MultiSelect';
@@ -99,8 +100,9 @@ export {
 } from './components/OrderSummary';
 export OverflowMenu from './components/OverflowMenu';
 export OverflowMenuItem from './components/OverflowMenuItem';
+*/
 export Pagination from './components/Pagination';
-export PaginationV2 from './components/PaginationV2';
+/*
 export PrimaryButton from './components/PrimaryButton';
 export {
   ProgressIndicator,
@@ -131,6 +133,9 @@ export {
 } from './components/StructuredList';
 export Tab from './components/Tab';
 export TabContent from './components/TabContent';
+*/
+export TablePagination from './components/TablePagination';
+/*
 export Table from './components/Table';
 export TableBody from './components/TableBody';
 export TableData from './components/TableData';

@@ -1,25 +1,15 @@
 import PropTypes from 'prop-types';
-import React, { Component } from 'react';
+import React from 'react';
 import classNames from 'classnames';
-
-
-
 
 
 const SubNavigation = ({
   children,
-  open,
   ...other
 }) => {
 
-  const subClasses = classNames({
-    'wfp--main-navigation__sub' : true,
-    'wfp--main-navigation__sub--open' : open
-  });
-
   return (
     <div 
-      className={subClasses}
       {...other}
     >
       {children}
@@ -31,17 +21,11 @@ SubNavigation.propTypes = {
   children: PropTypes.element.isRequired,
 };
 
-SubNavigation.defaultProps = {
-};
-
-
-
 
 
 const SubNavigationItem = ({
   children,
   className,
-  title,
   ...other
 }) => {
 
@@ -59,14 +43,12 @@ const SubNavigationItem = ({
 SubNavigationItem.propTypes = {
 };
 
-SubNavigationItem.defaultProps = {
-};
+
 
 
 const SubNavigationHeader = ({
   children,
   className,
-  title,
   ...other
 }) => {
 
@@ -84,13 +66,11 @@ const SubNavigationHeader = ({
 SubNavigationHeader.propTypes = {
 };
 
-SubNavigationHeader.defaultProps = {
-};
+
 
 const SubNavigationFilter = ({
   children,
   className,
-  title,
   ...other
 }) => {
 
@@ -110,8 +90,7 @@ SubNavigationFilter.propTypes = {
 
 };
 
-SubNavigationFilter.defaultProps = {
-};
+
 
 const SubNavigationList = ({
   children,
@@ -131,11 +110,8 @@ const SubNavigationList = ({
 }
 
 SubNavigationList.propTypes = {
-  image: PropTypes.string,
-
-};
-
-SubNavigationList.defaultProps = {
+  children: PropTypes.node,
+  className: PropTypes.string,
 };
 
 
@@ -161,6 +137,8 @@ SubNavigationContent.propTypes = {
 
 };
 
+
+
 const SubNavigationTitle = ({
   children,
   className,
@@ -180,11 +158,30 @@ const SubNavigationTitle = ({
 
 SubNavigationTitle.propTypes = {
   image: PropTypes.string,
-
 };
 
-SubNavigationTitle.defaultProps = {
+
+const SubNavigationLink = ({
+  children,
+  className,
+  ...other
+}) => {
+
+  const classes = classNames('wfp--sub-navigation__link', {
+    className
+  });
+
+  return (
+      <div className={classes} {...other}>
+        {children}
+      </div>
+    );
+}
+
+SubNavigationLink.propTypes = {
+  image: PropTypes.string,
 };
+
 
 const SubNavigationGroup = ({
   children,
@@ -204,17 +201,16 @@ const SubNavigationGroup = ({
             {title}
           </h3>
         }
-        {children}
+        <div>
+          {children}
+        </div>
       </div>
     );
 }
 
 SubNavigationGroup.propTypes = {
   image: PropTypes.string,
-
 };
 
-SubNavigationGroup.defaultProps = {
-};
 
-export { SubNavigation, SubNavigationHeader, SubNavigationTitle, SubNavigationFilter, SubNavigationContent, SubNavigationList, SubNavigationGroup, SubNavigationItem };
+export { SubNavigation, SubNavigationHeader, SubNavigationTitle, SubNavigationLink, SubNavigationFilter, SubNavigationContent, SubNavigationList, SubNavigationGroup, SubNavigationItem };

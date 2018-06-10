@@ -1,6 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
+import SingleComponent from '../../documentation/SingleComponent';
 import RadioButton from '../RadioButton';
 
 const radioProps = {
@@ -8,6 +9,7 @@ const radioProps = {
 };
 
 storiesOf('RadioButton', module)
+  .addDecorator(story => <SingleComponent pageWidth="wide">{story()}</SingleComponent>)
   .addWithInfo(
     'enabled',
     `

@@ -4,6 +4,7 @@ import { action } from '@storybook/addon-actions';
 
 import { MainNavigation, MainNavigationItem } from '../MainNavigation';
 import { SubNavigation, SubNavigationHeader, SubNavigationTitle, SubNavigationFilter, SubNavigationContent, SubNavigationList, SubNavigationGroup, SubNavigationItem } from '../SubNavigation';
+import Button from '../Button';
 import Search from '../Search';
 import Link from '../Link';
 import User from '../User';
@@ -14,6 +15,17 @@ storiesOf('MainNavigation', module)
     'default',
     `
       The MainNavigation is used across all applications, it is the starting point of the application and offers the top level navigation items.
+
+        ~~~js
+        import { MainNavigation, MainNavigationItem } from '@wfp/ui';
+        ~~~
+
+        It can be combined with a Dropdown SubNavigation.
+
+        ~~~js
+        import { SubNavigation, SubNavigationHeader, SubNavigationTitle, SubNavigationFilter, SubNavigationContent, SubNavigationList, SubNavigationGroup, SubNavigationItem } from '@wfp/ui';
+        ~~~
+        
     `,
     () => (
       <MainNavigation
@@ -30,11 +42,13 @@ storiesOf('MainNavigation', module)
 				</MainNavigationItem>
 				<MainNavigationItem
           subNavigation={
-            <div>
+            <SubNavigation>
               <SubNavigationHeader>
                 <SubNavigationTitle>
                   The Subnavigation Title
                 </SubNavigationTitle>
+                <Button small>Link to Subpage</Button>
+                
                 <SubNavigationFilter>
                    <Search
                     className="some-class"
@@ -50,7 +64,7 @@ storiesOf('MainNavigation', module)
               </SubNavigationHeader>
               <SubNavigationContent>
                 <SubNavigationList>
-                  <SubNavigationGroup title="First List">
+                  <SubNavigationGroup title="Second List of Items">
                     <SubNavigationItem><Link href="https://go.docs.wfp.org" target="_blank">GoDocs</Link></SubNavigationItem>
                     <SubNavigationItem><Link href="https://go.docs.wfp.org" target="_blank">GoDocs</Link></SubNavigationItem>
                     <SubNavigationItem><Link href="https://go.docs.wfp.org" target="_blank">GoDocs</Link></SubNavigationItem>
@@ -74,7 +88,7 @@ storiesOf('MainNavigation', module)
                   </SubNavigationGroup>
                   </SubNavigationList>
               </SubNavigationContent>
-            </div>
+            </SubNavigation>
           }>
 					<Link href="http://manuals.wfp.org" target="_blank">Manuals</Link>
 				</MainNavigationItem>

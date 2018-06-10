@@ -40,7 +40,7 @@
     .#{$prefix}--module__footer {
       display: flex;
       align-items: center;
-      padding: 0.7rem 1.5rem;
+      padding: 0.5rem 1rem;
       border-top: 1px solid $ui-04;
       @include typescale('zeta');
     }
@@ -75,13 +75,21 @@
       overflow-y: scroll;
       margin-bottom: 2rem;
     }
+  }
 
-    /*&.#{$prefix}--module--single {
-      max-width: rem(500px);
+  .#{$prefix}--module--dark {
+    .#{$prefix}--module__inner {
+      background: $brand-03;
+      color: $ui-01;
     }
-
-    &.#{$prefix}--module--double {
-      max-width: rem(1000px);
-    }*/
+    .#{$prefix}--module__header {
+      border-bottom-color: $brand-02;
+    }
+    .#{$prefix}--module__footer {
+      border-top-color: $brand-02;
+    }
+    .#{$prefix}--module__title {
+      color: $ui-01;
+    }
   }
 }

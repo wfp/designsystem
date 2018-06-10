@@ -27,10 +27,12 @@ const moduleBodydefaultProps = {
   centered: false,
 };
 
-const Module = ({ children, className, size, ...other }) => {
-  const wrapperClasses = classNames(
-    `wfp--module wfp--module--${size}`,
-    className
+const Module = ({ dark, children, className, ...other }) => {
+  const wrapperClasses = classNames({
+        'wfp--module--dark' : dark
+      },
+        className,
+        'wfp--module'
   );
 
   return (

@@ -16,8 +16,8 @@ const Footer = ({
   labelTwo,
   linkTextTwo,
   linkHrefTwo,
+  logo,
   logoExtended,
-  logoVertical,
   metaContent,
   secondary,
   pageWidth,
@@ -51,12 +51,12 @@ const Footer = ({
       <div className="wfp--footer-cta">
         <img
           className="wfp--footer-cta-logo"
-          src={logoExtended ? logoExtended : 'logos/extended/en/wfp-logo-extended-black-en.svg'}
+          src={logoExtended}
           alt="World Food Programme Logo"
         />
         <img
           className="wfp--footer-cta-logo-small"
-          src={logoVertical ? logoVertical : 'logos/vertical/en/wfp-logo-vertical-black-en.svg'}
+          src={logo}
           alt="World Food Programme Logo"
         />
         {secondary}
@@ -93,6 +93,8 @@ Footer.defaultProps = {
   labelTwo: 'Estimate Monthly Cost',
   linkTextTwo: 'Cost Calculator',
   linkHrefTwo: '#',
+  logo: 'logos/vertical/en/wfp-logo-vertical-black-en.svg',
+  logoExtended: 'logos/extended/en/wfp-logo-extended-black-en.svg',
   buttonText: 'Create',
 };
 

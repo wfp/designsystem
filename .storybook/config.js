@@ -16,6 +16,7 @@ console.log(configureViewport, "sss", INITIAL_VIEWPORTS);
 // addDecorator(checkA11y);
 addDecorator(story => <Container story={story} />);
 
+
 // addon-info
 setDefaults({
   styles: stylesheet => {
@@ -26,11 +27,21 @@ setDefaults({
           ...stylesheet.header,
           h1: {
             ...stylesheet.header.h1,
+            fontFamily: '"Open Sans",sans-serif',
+            fontWeight: 700
+          },
+          h2: {
+            ...stylesheet.header.h2,
+            color: '#888C8F',
+            fontFamily: '"Open Sans",sans-serif',
+            fontSize: '16px',
+            fontWeight: 600
           }
         },
         infoBody: {
           ...stylesheet.infoBody,
-          fontFamily: '"Open Sans",sans-serif'
+          fontFamily: '"Open Sans",sans-serif',
+          fontWeight: 400
         }
       })
 },

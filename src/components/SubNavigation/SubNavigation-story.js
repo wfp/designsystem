@@ -1,11 +1,10 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
 
-import { SubNavigation, SubNavigationHeader, SubNavigationTitle, SubNavigationFilter, SubNavigationContent, SubNavigationList, SubNavigationGroup, SubNavigationItem } from '../SubNavigation';
+import { SubNavigation, SubNavigationHeader, SubNavigationTitle, SubNavigationLink,  SubNavigationFilter, SubNavigationContent, SubNavigationList, SubNavigationGroup, SubNavigationItem } from '../SubNavigation';
 import Search from '../Search';
+import Button from '../Button';
 import Link from '../Link';
-import User from '../User';
 
 
 storiesOf('SubNavigation', module)
@@ -20,6 +19,10 @@ storiesOf('SubNavigation', module)
           <SubNavigationTitle>
             The Title
           </SubNavigationTitle>
+          <SubNavigationLink>
+            <Button small>The SubPage Link</Button>
+          </SubNavigationLink>
+
           <SubNavigationFilter>
              <Search
               className="some-class"

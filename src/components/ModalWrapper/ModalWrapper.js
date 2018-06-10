@@ -20,6 +20,7 @@ export default class ModalWrapper extends React.Component {
     secondaryButtonText: PropTypes.string,
     handleSubmit: PropTypes.func,
     disabled: PropTypes.bool,
+    wide: PropTypes.bool,
     triggerButtonKind: PropTypes.oneOf([
       'primary',
       'secondary',
@@ -73,6 +74,7 @@ export default class ModalWrapper extends React.Component {
       primaryButtonText,
       secondaryButtonText,
       disabled,
+      wide,
     } = this.props;
 
     const props = {
@@ -82,6 +84,7 @@ export default class ModalWrapper extends React.Component {
       passiveModal,
       primaryButtonText,
       secondaryButtonText,
+      wide,
       open: this.state.isOpen,
       onRequestClose: this.handleClose,
       onRequestSubmit: this.handleOnRequestSubmit,

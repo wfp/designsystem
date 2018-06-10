@@ -62,6 +62,7 @@ export default class Modal extends Component {
       onSecondarySubmit,
       iconDescription,
       primaryButtonDisabled,
+      wide,
       danger,
       ...other
     } = this.props;
@@ -73,6 +74,7 @@ export default class Modal extends Component {
     const modalClasses = classNames({
       'wfp--modal': true,
       'wfp--modal-tall': !passiveModal,
+      'wfp--modal--wide': wide,
       'is-visible': open,
       'wfp--modal--danger': this.props.danger,
       [this.props.className]: this.props.className,

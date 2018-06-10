@@ -31,7 +31,6 @@ class MainNavigationItem extends Component {
 
   handleClickOutside = (e) => {
     if (this.wrapperRef && !this.wrapperRef.contains(event.target)) {
-      console.log('You clicked outside of me!', this.props);
       this.props.onChangeSub(e, undefined, 'close');
     }
   }
@@ -54,31 +53,36 @@ class MainNavigationItem extends Component {
       onClick: (e) => onChangeSub(e, menuItem, 'toggle')
     }) : children;
    
+     const subClasses = classNames({
+      'wfp--main-navigation__sub' : true,
+      'wfp--main-navigation__sub--open' : menuItem === activeMenuItem
+    });
     /*
       onMouseEnter={(e) => onChangeSub(e, menuItem, 'in')}
       onMouseLeave={(e) => onChangeSub(e, undefined, 'out')}
       onMouseEnter={(e) => onChangeSub(e, menuItem, 'toggle')}
     */
-  	return (
-  		<li
+    return (
+      <li
         className={wrapperClasses}
         ref={this.setWrapperRef}>
-  			<div
+        <div
           className={triggerClasses}
         >
           {childrenWithProps}
         </div>
         {subNavigation &&
-        <SubNavigation
+        <div
+          className={subClasses}
           onChangeSub={onChangeSub}
           open={menuItem === activeMenuItem ? true : false}>
           {subNavigation}
-        </SubNavigation>
+        </div>
       }
-  		</li>
-  	)
+      </li>
+    )
   }
-};
+}
 
 MainNavigationItem.propTypes = {
   /**
@@ -101,7 +105,6 @@ class MainNavigation extends Component {
 
   onChangeSub = (e, i, action) => {
     e.preventDefault();
-    console.log("I've been clicked", e.target, e.target.id, i, action);
     /*if (action === 'in') {
       this.setState({
         activeMenuItem: i
@@ -115,7 +118,6 @@ class MainNavigation extends Component {
       });
     }
     else if (action === 'toggle') {
-      console.log(this.state);
       const newI = (this.state.activeMenuItem === undefined|| this.state.activeMenuItem !== i) ? i : undefined;
       this.setState({
         activeMenuItem: newI
@@ -130,15 +132,13 @@ class MainNavigation extends Component {
   }
 
 
-  triggerSubNavigation = (trigger) => {
+  triggerSubNavigation = () => {
     this.setState({
       activeMenuItem: undefined
     });
   }
 
   handleClickOutside = evt => {
-    console.log("clicked outside", evt);
-
     this.setState({
         activeMenuItem: undefined
     });
