@@ -7,7 +7,8 @@ const User = ({
   className,
   ellipsis,
   image,
-  title,
+  small,
+  name,
   ...other
 }) => {
 
@@ -34,14 +35,15 @@ const User = ({
   const titleClasses = classNames({
     'wfp--user__title' : true,
     'wfp--user__title--ellipsis' : ellipsis,
+    'wfp--user__title--small' : small,
   });
 
   return (
       <div className={classes} {...other}>
         {avatar}
-        {title &&
+        {name &&
           <span className={titleClasses}>
-            {title}
+            {name}
           </span>
         }
       </div>
@@ -52,7 +54,7 @@ User.propTypes = {
   alt: PropTypes.string,
   ellipsis: PropTypes.bool,
   image: PropTypes.string,
-  title: PropTypes.string
+  name: PropTypes.string
 
 };
 

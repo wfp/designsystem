@@ -40,4 +40,9 @@
     white-space: nowrap;
     text-overflow: ellipsis; 
   }
+  .wfp--user__title--small {
+    @include breakpoint(bp--md--major) {
+      display: none;
+    }
+  }
 }

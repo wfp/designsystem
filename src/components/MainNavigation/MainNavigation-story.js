@@ -52,7 +52,6 @@ storiesOf('MainNavigation', module)
                 <SubNavigationFilter>
                    <Search
                     className="some-class"
-                    small
                     id="search-2"
                     labelText="Filter"
                     placeHolderText="Filter"
@@ -100,7 +99,7 @@ storiesOf('MainNavigation', module)
         </MainNavigationItem>      
 				<MainNavigationItem>
 					<Search
-            size="medium"
+            small
             id="search-2"
             labelText="Search"
             placeHolderText="Search"

@@ -185,14 +185,16 @@ SubNavigationLink.propTypes = {
 
 const SubNavigationGroup = ({
   children,
+  columns,
   className,
   title,
   ...other
 }) => {
 
-  const classes = classNames('wfp--sub-navigation__group', {
-    className
-  });
+  const classes = classNames('wfp--sub-navigation__group',
+    { className },
+    {'wfp--sub-navigation__group--columns': columns }
+  );
 
   return (
       <div className={classes} {...other}>

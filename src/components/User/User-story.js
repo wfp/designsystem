@@ -15,17 +15,27 @@ storiesOf('User', module)
       ~~~
     `,
     () => <User
-            title="Max Mustermann"
+            name="Max Mustermann"
           />
   )
-   .addWithInfo(
+  .addWithInfo(
+    'Small',
+    `
+      The example below shows an User Icon with the Username only visible on desktop devices.
+    `,
+    () => <User
+            small
+            name="Very long and difficult username"
+          />
+  )        
+  .addWithInfo(
     'Ellipsis',
     `
       The example below shows an User Icon.
     `,
     () => <User
             ellipsis
-            title="Very long and difficult username"
+            name="Very long and difficult username"
           />
   )
   .addWithInfo(

@@ -2,6 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import ModalWrapper from '../ModalWrapper';
+import Button from '../Button';
 import TextInput from '../TextInput';
 import Select from '../Select';
 import SelectItem from '../SelectItem';
@@ -71,6 +72,34 @@ storiesOf('ModalWrapper', module)
           aliquam, facilisis est vitae, commodo magna. Lorem ipsum dolor sit
           amet, consectetur adipiscing elit. Mauris a lobortis ex. Nulla mollis
           tincidunt sodales.
+        </p>
+      </ModalWrapper>
+    )
+  )
+  .addWithInfo(
+    'custom Button',
+    `
+      Transactional modals are used to validate user decisions or to gain secondary confirmation from the user.
+    `,
+    () => (
+      <ModalWrapper
+        modalProps={modalProps}
+        customButton={<Button small>Custom Button</Button>}
+        id="transactional-modal"
+        buttonTriggerText="Transactional Modal"
+        modalLabel="Label (optional)"
+        modalHeading="Transactional Modal"
+        primaryButtonText="Save"
+        secondaryButtonText="Cancel"
+        handleSubmit={() => {
+          action('onSubmit')();
+          return true;
+        }}
+        shouldCloseAfterSubmit={true}>
+        <p className="wfp--modal-content__text">
+          Transactional modals are used to validate user decisions os to gain
+          secondary confirmation from the user. Typically, the modal requests
+          either a 'yes' or 'no' response.
         </p>
       </ModalWrapper>
     )

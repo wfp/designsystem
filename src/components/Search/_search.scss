@@ -27,7 +27,7 @@
     @include reset;
     @include font-family;
     appearance: none;
-    border: none;
+    border: $input-border;
     background-color: $field-01;
     color: $text-01;
     font-weight: 600;
@@ -52,23 +52,25 @@
   .#{$prefix}--search--sm .#{$prefix}--search-input {
     padding: 0 $spacing-xl;
     @include typescale('zeta');
-    height: rem(25px);
+    height: rem(30px);
     border-radius: 2px;
-  }
-
-  .#{$prefix}--search--md .#{$prefix}--search-input {
-    padding: 0 $spacing-xl;
-    width: 100%;
+    border: none;
+    transition: max-width 0.2s;
     @include breakpoint(bp--md--major) {
       max-width: rem(150px);
       &:focus {
         max-width: 230px;
       }
     }
+  }
+
+  .#{$prefix}--search--md .#{$prefix}--search-input {
+    padding: 0 $spacing-xl;
+    width: 100%;
+    
     @include typescale('zeta');
     height: rem(30px);
     border-radius: 2px;
-    transition: max-width 0.1s;
   }
 
   .#{$prefix}--search--lg .#{$prefix}--search-input {

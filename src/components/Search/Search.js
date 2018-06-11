@@ -8,8 +8,8 @@ export default class Search extends Component {
     children: PropTypes.node,
     className: PropTypes.string,
     type: PropTypes.string,
-    //small: PropTypes.bool,
-    size: PropTypes.string,
+    small: PropTypes.bool,
+    medium: PropTypes.string,
     placeHolderText: PropTypes.string,
     labelText: PropTypes.node.isRequired,
     id: PropTypes.string,
@@ -125,7 +125,8 @@ export default class Search extends Component {
           .substr(2)}`),
       placeHolderText,
       labelText,
-      size,
+      small,
+      medium,
       ...other
     } = this.props;
 
@@ -133,9 +134,9 @@ export default class Search extends Component {
 
     const searchClasses = classNames({
       'wfp--search wfp--search-with-options': true,
-      'wfp--search--lg': !size,
-      'wfp--search--md': size === 'medium',
-      'wfp--search--sm': size === 'small',
+      'wfp--search--lg': !medium && !small,
+      'wfp--search--md': medium,
+      'wfp--search--sm': small,
       [className]: className,
     });
 

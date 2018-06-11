@@ -38,7 +38,7 @@ storiesOf('SubNavigation', module)
         </SubNavigationHeader>
         <SubNavigationContent>
           <SubNavigationList>
-            <SubNavigationGroup title="First List">
+            <SubNavigationGroup title="First List" columns>
               <SubNavigationItem><Link href="https://go.docs.wfp.org" target="_blank">GoDocs</Link></SubNavigationItem>
               <SubNavigationItem><Link href="https://go.docs.wfp.org" target="_blank">GoDocs</Link></SubNavigationItem>
               <SubNavigationItem><Link href="https://go.docs.wfp.org" target="_blank">GoDocs</Link></SubNavigationItem>
