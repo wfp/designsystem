@@ -80,13 +80,13 @@
 
 .ReactTable .rt-thead .rt-tr {
   text-align: left;
-  font-weight: bold;
+  font-weight: 600;
 }
 
 .ReactTable .rt-thead .rt-td,
 .ReactTable .rt-thead .rt-th {
-  padding: 0.3rem 0.5rem;
-  line-height: normal;
+  padding: 0.5rem;
+  line-height: 1.2rem;
   position: relative;
   border-right: 1px solid $ui-04;
   /*-webkit-transition: box-shadow 0.3s cubic-bezier(.175, .885, .32, 1.275);
