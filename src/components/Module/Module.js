@@ -54,12 +54,15 @@ const ModuleBody = ({ children, className, centered, ...other }) => {
   );
 };
 
-const ModuleHeader = ({ children, className, ...other }) => {
+const ModuleHeader = ({ filter, children, className, ...other }) => {
   const wrapperClasses = classNames('wfp--module__header', className);
 
   return (
     <div className={wrapperClasses} {...other}>
       <h1 className="wfp--module__title">{children}</h1>
+      {filter && 
+        <div className="wfp--module__filter">{filter}</div>
+      }
     </div>
   );
 };

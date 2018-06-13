@@ -35,6 +35,7 @@
     .#{$prefix}--module__header {
       display: flex;
       align-items: center;
+      justify-content: space-between;
       padding: 1rem 1.5rem;
       border-bottom: 1px solid $ui-04;
     }
@@ -60,11 +61,26 @@
       flex-direction: column;
       flex: 3;
       padding: 1.5rem;
-
       /*p {
         @include typescale('zeta');
       }*/
     }
+
+    // > IE11 TODO: Remove when IE11 support dropped
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+
+    //_:-ms-fullscreen,
+    //:root  {
+      
+    }
+
+    // Edge
+    /*@supports (-ms-accelerator:true) {
+      .#{$prefix}--module__content {
+        flex: 3;
+      }
+    }*/
+
 
     .#{$prefix}--module__content--centered {
       align-items: center;
@@ -93,5 +109,32 @@
     .#{$prefix}--module__title {
       color: $ui-01;
     }
+  }
+}
+
+
+
+
+// > IE11 TODO: Remove when IE11 support dropped
+_:-ms-fullscreen,
+:root  {
+  .#{$prefix}--module__inner {
+    position: relative;
+  }
+
+  .#{$prefix}--module__content {
+    padding-bottom: 4rem;
+  }
+
+  // Footer at bottom
+  .#{$prefix}--module__footer {
+    position: absolute;
+    left:0;
+    right: 0;
+    bottom: 0;
+  }
+
+  .#{$prefix}--module__content {
+    flex: inherit;
   }
 }
