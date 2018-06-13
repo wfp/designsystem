@@ -1,0 +1,150 @@
+@import '../../globals/scss/vars';
+@import '../../globals/scss/colors';
+@import '../../globals/scss/typography';
+@import '../../globals/scss/spacing';
+@import '../../globals/scss/helper-mixins';
+@import '../../globals/scss/import-once';
+@import '../../globals/scss/css--reset';
+@import '../Form/form';
+
+@include exports('unit') {
+
+  .#{$prefix}--unit {
+      white-space: nowrap;
+      &:after, .unit__small {
+          font-size: 0.7em;
+          font-style: italic;
+          margin-left: 0.3em;
+          opacity: 0.7;
+      }
+  }
+
+  .#{$prefix}--unit--hide, .#{$prefix}--unit--hide .unit {
+      &:after, tspan:last-child {
+          display: none;
+      }
+  }
+
+  .#{$prefix}--unit--light {
+      &:after {
+          font-weight: 300;
+          margin-left: 0.2em;
+          opacity: 1;
+      }
+  }
+
+  .#{$prefix}--unit--littleusd {
+      &:after {
+          content: "USD";
+      }
+  }
+
+  .#{$prefix}--unit--none {
+      white-space: normal;
+  }
+
+  .#{$prefix}--unit--musd {
+      &:after {
+          content: "M USD";
+      }
+  }
+
+  .#{$prefix}--unit--tusd {
+      &:after {
+          content: "T USD";
+      }
+  }
+
+  .#{$prefix}--unit--usd {
+      &:after {
+          content: "M USD";
+      }
+  }
+
+  .#{$prefix}--unit--busd {
+      &:after {
+          content: "B USD";
+      }
+  }
+
+  .#{$prefix}--unit--mt {
+      &:after {
+          content: "MT";
+      }
+  }
+
+  .#{$prefix}--unit--littlepeople {
+      &:after {
+          content: "People";
+      }
+  }
+
+  .#{$prefix}--unit--people, .#{$prefix}--unit--mpeople {
+      &:after {
+          content: "M People";
+      }
+  }
+
+  .#{$prefix}--unit--million {
+      &:after {
+          content: "M";
+      }
+  }
+
+  .#{$prefix}--unit--partners {
+      &:after {
+          content: "Partners";
+      }
+  }
+
+  .#{$prefix}--unit--countries {
+      &:after {
+          content: "Countries";
+      }
+  }
+
+  .#{$prefix}--unit--percentage, .#{$prefix}--unit--simplepercentage {
+      &:after {
+          content: "%";
+      }
+  }
+
+  .#{$prefix}--unit--mbeneficiaries {
+      &:after {
+          content: "M Beneficiaries";
+      }
+  }
+
+  .#{$prefix}--unit--beneficiaries,
+  .#{$prefix}--unit--beneficiaries--text {
+      &:after {
+          content: "Beneficiaries";
+      }
+  }
+
+  .#{$prefix}--unit--months {
+      &:after {
+          content: "Months";
+      }
+  }
+
+  .#{$prefix}--unit--households {
+      &:after {
+          content: "Households";
+      }
+  }
+
+  .#{$prefix}--unit--trips {
+      &:after {
+          content: "Trips";
+      }
+  }
+
+  .#{$prefix}--unit--svg {
+      tspan:last-child {
+          font-size: 6px !important;
+          font-style: italic;
+          opacity: 0.6;
+      }
+  }
+}
