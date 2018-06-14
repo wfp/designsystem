@@ -192,7 +192,9 @@ const SubNavigationGroup = ({
 }) => {
 
   const classes = classNames('wfp--sub-navigation__group',
-    { className },
+    {
+      className
+    },
     {'wfp--sub-navigation__group--columns': columns }
   );
 
