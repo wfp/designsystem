@@ -25,7 +25,9 @@ export ComposedModal, {
   ModalBody,
   ModalFooter,
 } from './components/ComposedModal';
+*/
 export ContentSwitcher from './components/ContentSwitcher';
+/*
 export CopyButton from './components/CopyButton';
 export DangerButton from './components/DangerButton';
 export DataTable from './components/DataTable';
@@ -119,9 +121,7 @@ export SecondaryButton from './components/SecondaryButton';
 export Select from './components/Select';
 export SelectItem from './components/SelectItem';
 export SelectItemGroup from './components/SelectItemGroup';
-/*
 export Switch from './components/Switch';
-*/
 export Slider from './components/Slider';
 export Story from './components/Story';
 /*
@@ -146,8 +146,10 @@ export TableHeader from './components/TableHeader';
 export TableRow from './components/TableRow';
 export TableRowExpanded from './components/TableRowExpanded';
 export Tag, { types } from './components/Tag';
-export Tabs from './components/Tabs';
 */
+export Tabs from './components/Tabs';
+export Tab from './components/Tab';
+export TabContent from './components/TabContent';
 export TextArea from './components/TextArea';
 export TextInput from './components/TextInput';
 /*
