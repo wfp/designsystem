@@ -59,6 +59,7 @@
     .#{$prefix}--module__content {
       display: flex;
       flex-direction: column;
+      align-items: flex-start;
       flex: 3;
       padding: 1.5rem;
       /*p {
