@@ -27,9 +27,10 @@ const moduleBodydefaultProps = {
   centered: false,
 };
 
-const Module = ({ dark, children, className, ...other }) => {
+const Module = ({ dark, children, className, noMargin, ...other }) => {
   const wrapperClasses = classNames({
-        'wfp--module--dark' : dark
+        'wfp--module--dark' : dark,
+        'wfp--module--no-margin' : noMargin
       },
         className,
         'wfp--module'
