@@ -1,10 +1,39 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import SingleComponent from '../../documentation/SingleComponent';
+import ReactTable from 'react-table';
+import TablePagination from '../TablePagination';
 import { Unit } from '../Unit';
 
+
+const units = [
+  {unit: 'Musd', 'description': 'Generate Million USD based on USD', sample: 12345},
+  {unit: 'Usd', 'description': 'Generate Million USD based on USD', sample: 12345},
+  {unit: 'Tusd', 'description': 'Generate Million USD based on USD', sample: 12345},
+  {unit: 'Usd', 'description': 'Generate USD based on USD', sample: 12345},
+  {unit: 'Busd', 'description': 'Generate Billion USD based on USD', sample: 12345},
+  {unit: 'Littleusd', 'description': 'Generate Billion USD based on USD', sample: 12345},
+  {unit: 'Partners', 'description': 'Generate Billion USD based on USD', sample: 12345},
+  {unit: 'Beneficiaries', 'description': 'Generate Billion USD based on USD', sample: 12345},
+  {unit: 'Households', 'description': 'Generate Billion USD based on USD', sample: 12345},
+  {unit: 'Months', 'description': 'Generate Billion USD based on USD', sample: 12345},
+  {unit: 'Mt', 'description': 'Generate Billion USD based on USD', sample: 12345},
+  {unit: 'Littlepeople', 'description': 'Generate Billion USD based on USD', sample: 12345},
+  {unit: 'People', 'description': 'Generate Billion USD based on USD', sample: 12345},
+  {unit: 'Mpeople', 'description': 'Generate Billion USD based on USD', sample: 12345},
+  {unit: 'Million', 'description': 'Generate Billion USD based on USD', sample: 12345},
+  {unit: 'Percentage', 'description': 'Generate Billion USD based on USD', sample: 12345, from: 123456, 'additional': 'from'},
+  {unit: 'SimplePercentage', 'description': 'Generate Billion USD based on USD', sample: 12345},
+  {unit: 'MonthYear', 'description': 'Generate Billion USD based on USD', sample: 12345},
+  {unit: 'Year', 'description': 'Generate Billion USD based on USD', sample: 12345},
+  {unit: 'None', 'description': 'Returns no Unit', sample: 12345},
+  {unit: 'Trips', 'description': 'Adds thousands comma and Trips', sample: 12345},
+  {unit: 'Level', 'description': 'Generate Billion USD based on USD', sample: 12345},
+  {unit: 'Countries', 'description': 'Generate Billion USD based on USD', sample: 12345},
+];
+
 storiesOf('Unit', module)
-  .addDecorator(story => <SingleComponent pageWidth="wide">{story()}</SingleComponent>)
+  //.addDecorator(story => <SingleComponent pageWidth="wider">{story()}</SingleComponent>)
   .addWithInfo(
     'default',
     `
@@ -109,49 +138,82 @@ storiesOf('Unit', module)
 
 
     `,
-    () => <div>
+    () => {
 
-          
-          <table>
-            <thead>
-              <tr>
-              <td>Preview</td>
-              <td>type</td>
-              <td>additional</td>
-              </tr>
-            </thead>
-            <tr>
-              <td>
-                <Unit
-                  type="Usd"
-                >
-                  231321133
-                </Unit>
-              </td>
-              <td>
-                Usd
-              </td>
-              <td>
-                –
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <Unit
-                  type="Usd"
-                >
-                  231321133
-                </Unit>
-              </td>
-              <td>
-                Usd
-              </td>
-              <td>
-                –
-              </td>
-            </tr>
-          </table>
-         
-          </div>
+
+     const columns = [
+      {
+        Header: 'HTML',
+        accessor: 'name',
+        width: 150,
+        Cell: props => {
+          console.log(props);
+          return (
+          <Unit type={props.original.unit} from={props.original.from}>
+            { props.original.sample }
+          </Unit>
+          )
+        }
+      },
+      {
+        Header: 'SVG',
+        accessor: 'name',
+        width: 150,
+        Cell: props => {
+          console.log(props);
+          return (
+          <svg width="120" height="20">
+            <g transform="translate(0 17)">
+              <Unit type={props.original.unit+'Svg'} from={props.original.from}>
+                { props.original.sample }
+              </Unit>
+            </g>
+          </svg>
+          )
+        }
+      },
+       {
+        Header: 'Unit',
+        accessor: 'unit',
+        width: 150,
+      }, {
+        Header: 'Description',
+        accessor: 'description',
+        width: 300,
+      }, {
+        Header: 'Additional',
+        accessor: 'additional',
+        width: 100,
+      }
+      , {
+        Header: 'Source',
+        accessor: 'additional',
+        width: 100,
+        className: 'wfp--blockquote--code',
+       Cell: props => {
+        console.log(props);
+        return (
+          <span>
+            &#60;Unit
+              type={props.original.unit+'Svg'}
+              from={props.original.from}&#62;
+              { props.original.sample }
+            &#60;/Unit&#62;
+          </span>
+        )
+      }
+      }
+    ];
+
+
+      return (
+       <ReactTable
+          data={units}
+          defaultPageSize={10}
+          columns={columns}
+          PaginationComponent={TablePagination}
+        />
+      )
+    }
   )
 ;

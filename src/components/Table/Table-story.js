@@ -1,7 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import ReactTable from 'react-table';
-
 import TablePagination from '../TablePagination';
 
 
