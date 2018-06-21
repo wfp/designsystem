@@ -12,14 +12,16 @@ function addCommas( nStr ) {
     return x1 + x2.slice(0,3);
 }
 
-function addZeroes( num ) {
+function addZeroes( num, round ) {
+
+  const roundCalc = round ? round+1 : 3;
     num += '';
     var value = Number(num);
     var res = num.split(".");
     if(num.indexOf('.') === -1) {
         value = value.toFixed(1);
         num = value.toString();
-    } else if (res[1].length < 3) {
+    } else if (res[1].length < roundCalc) {
         value = value.toFixed(1);
         num = value.toString();
     }
@@ -43,21 +45,20 @@ export const InvalidSvg = ( props ) => {
 
 
 // Generate Million USD based on M USD 32.12 => 32.12 M USD
+export const MusdCalc = ( props ) => {
 
-// Percentage 50 / from={ 100 } => 50%
-export const MusdCalc = ( value, showZero, showUnit ) => {
+  const {children, showZero, showUnit, maximumSignificantDigits, maximumFractionDigits} = props;
 
-  // Remove commas
-  var valueb = (typeof value === 'string') ? value.replace(',', '') : value;
+  if (children) {
+    // Remove commas
+    var valueb = (typeof children === 'string') ? children.replace(',', '') : children;
 
+    valueb = valueb.toLocaleString('en-EN', 
+    { 
+      maximumSignificantDigits: maximumSignificantDigits,
+      maximumFractionDigits: valueb <= 0.5 ? 5 : maximumFractionDigits ? maximumFractionDigits : 2
+    })
 
-  const round = (valueb >= 0.5) ? 10 : (valueb >= 0.05) ? 100 : 10000;
- 
-  if (valueb >= 0.5) {
-    valueb = addCommas(addZeroes(Math.round(valueb * round) / round));
-  }
-  else {
-    valueb = Math.round(value * round) / round
   }
   const unit = showUnit ? " MUSD": "";
 
@@ -67,13 +68,14 @@ export const MusdCalc = ( value, showZero, showUnit ) => {
     return false;
 }
 
-export const UsdCalc = ( value, showZero, showUnit ) => {
- return MusdCalc(value/1000000, showZero, showUnit);
+export const UsdCalc = ( props ) => {
+  const newProps = { children: props.children/1000000 };
+  return MusdCalc(Object.assign({}, props, newProps));
 }
 
 // Format from MUSD 3,21 => 3,21 MUSD
 export const Musd = ( props ) => {
-  const value = MusdCalc(props.children);
+  const value = MusdCalc(props);
   if (value)
     return <span className={props.className}>{value}</span>;
   else
@@ -82,7 +84,7 @@ export const Musd = ( props ) => {
 
 // Format USD 1.212 => 1.212 USD
 export const Littleusd = ( props ) => {
-  const value = MusdCalc(props.children);
+  const value = MusdCalc(props);
   if (value)
     return <span className={props.className}>{value}</span>;
   else
@@ -108,7 +110,7 @@ export const LevelSvg = ( props ) => {
 
 export const MusdSvg = ( props ) => {
   const { className, value, style, type, ...other } = props;
-  const valueb = MusdCalc(props.children);
+  const valueb = MusdCalc(props);
   if (valueb)
     return (<text className={props.className} {...other}>
               <tspan style={style}>{ valueb }</tspan>
@@ -120,7 +122,7 @@ export const MusdSvg = ( props ) => {
 
 export const UsdSvg = ( props ) => {
   const { className, value, style, type, ...other } = props;
-  const valueb = MusdCalc(props.children/1000000);
+  const valueb = UsdCalc(props);
   if (valueb)
     return (<text className={props.className} {...other}>
               <tspan style={style}>{ valueb }</tspan>
@@ -144,7 +146,7 @@ export const TusdSvg = ( props ) => {
 
 // Generate Million USD based on USD 73821341 => 73.82 M USD 
 export const Usd = ( props ) => {
-  const value = MusdCalc(props.children/1000000);
+  const value = UsdCalc(props);
   if (value)
     return <span className={props.className}>{value}</span>;
   else

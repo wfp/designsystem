@@ -7,8 +7,8 @@ import { Unit } from '../Unit';
 
 
 const units = [
-  {unit: 'Musd', 'description': 'Generate Million USD based on USD', sample: 12345},
-  {unit: 'Usd', 'description': 'Generate Million USD based on USD', sample: 12345},
+  {unit: 'Musd', 'description': 'Generate Million USD based on USD', sample: 12345.12345},
+  {unit: 'Usd', 'description': 'Generate Million USD based on USD', sample: 12345.12345},
   {unit: 'Tusd', 'description': 'Generate Million USD based on USD', sample: 12345},
   {unit: 'Usd', 'description': 'Generate USD based on USD', sample: 12345},
   {unit: 'Busd', 'description': 'Generate Billion USD based on USD', sample: 12345},
@@ -149,7 +149,12 @@ storiesOf('Unit', module)
         Cell: props => {
           console.log(props);
           return (
-          <Unit type={props.original.unit} from={props.original.from}>
+          <Unit
+            type={props.original.unit}
+            from={props.original.from}
+            maximumFractionDigits={2}
+            maximumSignificantDigits={undefined}
+          >
             { props.original.sample }
           </Unit>
           )
@@ -164,7 +169,9 @@ storiesOf('Unit', module)
           return (
           <svg width="120" height="20">
             <g transform="translate(0 17)">
-              <Unit type={props.original.unit+'Svg'} from={props.original.from}>
+              <Unit
+                type={props.original.unit+'Svg'}
+                from={props.original.from}>
                 { props.original.sample }
               </Unit>
             </g>
