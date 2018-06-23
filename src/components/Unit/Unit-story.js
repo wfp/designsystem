@@ -4,15 +4,49 @@ import SingleComponent from '../../documentation/SingleComponent';
 import ReactTable from 'react-table';
 import TablePagination from '../TablePagination';
 import { Unit } from '../Unit';
+import { withKnobs, select, text, object } from '@storybook/addon-knobs/react';
 
 
 const units = [
-  {unit: 'Musd', 'description': 'Generate Million USD based on USD', sample: 12345.12345},
-  {unit: 'Usd', 'description': 'Generate Million USD based on USD', sample: 12345.12345},
-  {unit: 'Tusd', 'description': 'Generate Million USD based on USD', sample: 12345},
+  {
+    unit: 'Usd',
+    description: 'Generate USD based on USD',
+    sample: 12345.12345,
+    setup: {
+    }
+  },
+  {
+    unit: 'Usd',
+    description: 'Generate Million USD based on USD',
+    sample: 12345.12345,
+    setup: {
+      input: "million",
+      extension: "million",
+      showZero: true
+    }
+  },
+  {
+    unit: 'Usd',
+    description: 'Generate USD based on Million USD',
+    sample: 1,
+    setup: {
+      input: "million",
+      showZero: true
+    }
+  },
+  {
+    unit: 'Usd',
+    description: 'Generate Million USD based on Thousands USD',
+    sample: 12345.12345,
+    setup: {
+      extension: "million",
+      input: "thousand",
+      showZero: true
+    }
+  },
   {unit: 'Usd', 'description': 'Generate USD based on USD', sample: 12345},
   {unit: 'Busd', 'description': 'Generate Billion USD based on USD', sample: 12345},
-  {unit: 'Littleusd', 'description': 'Generate Billion USD based on USD', sample: 12345},
+  {unit: 'Level', 'description': 'Generate Billion USD based on USD', sample: 12345},
   {unit: 'Partners', 'description': 'Generate Billion USD based on USD', sample: 12345},
   {unit: 'Beneficiaries', 'description': 'Generate Billion USD based on USD', sample: 12345},
   {unit: 'Households', 'description': 'Generate Billion USD based on USD', sample: 12345},
@@ -34,6 +68,7 @@ const units = [
 
 storiesOf('Unit', module)
   //.addDecorator(story => <SingleComponent pageWidth="wider">{story()}</SingleComponent>)
+  .addDecorator(withKnobs)
   .addWithInfo(
     'default',
     `
@@ -141,19 +176,43 @@ storiesOf('Unit', module)
     () => {
 
 
-     const columns = [
+
+    const label = 'pageWidth';
+    const options = {
+    '': 'undefined',
+    'narrow': 'narrow'
+    };
+
+    const pageWidth = select(label, options, '');
+    const value = text('value', undefined);
+
+/*
+
+  maximumFractionDigits={2}
+  maximumSignificantDigits={undefined}
+
+*/
+    const defaultValue = {
+      extension: 'million',
+      input: 'thousand',
+      showZero: true
+    };
+    const groupId = 'GROUP-ID1';
+
+    const setup = object('Setup', defaultValue, groupId);
+
+
+
+    const columns = [
       {
         Header: 'HTML',
         accessor: 'name',
         width: 150,
         Cell: props => {
-          console.log(props);
           return (
           <Unit
             type={props.original.unit}
-            from={props.original.from}
-            maximumFractionDigits={2}
-            maximumSignificantDigits={undefined}
+            setup={props.original.setup}
           >
             { props.original.sample }
           </Unit>
@@ -212,14 +271,26 @@ storiesOf('Unit', module)
       }
     ];
 
-
       return (
+       <div>
        <ReactTable
           data={units}
           defaultPageSize={10}
           columns={columns}
           PaginationComponent={TablePagination}
         />
+
+
+        <h3>Customize</h3>
+
+        <Unit
+            setup={setup}
+          >
+            { value}
+          </Unit>
+
+
+        </div>
       )
     }
   )

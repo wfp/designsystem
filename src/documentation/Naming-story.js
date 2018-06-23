@@ -18,6 +18,16 @@ storiesOf(' Documentation', module)
         Notice
         Resources should not be spent trying to modify legacy systems, 3rd party applications or other user interfaces which cannot easily be customised.
       </Blockquote>
+
+      Please use ES-Lint to be in line with the coding conventions.
+
+      The configuration for react
+      <ul>
+        <li>ECMAScript 6 features</li>
+        <li>no require statements</li>
+        <li>spaces (2 space indentation)</li>
+        <li>Semicolon is required at the end of a line</li>
+        </ul>
     </Page>
   )
 );

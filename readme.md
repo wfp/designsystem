@@ -26,7 +26,7 @@ View available Components [here](http://ui.wfp.org). Usage information is availa
 
 Run the following command using [npm](https://www.npmjs.com/):
 ```bash
-npm install @wfpw/ui
+npm install @wfp/ui
 ```
 Import a react component
 ```bash

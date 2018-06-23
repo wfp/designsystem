@@ -43,11 +43,6 @@
       white-space: normal;
   }
 
-  .#{$prefix}--unit--musd {
-      &:after {
-          content: "M USD";
-      }
-  }
 
   .#{$prefix}--unit--tusd {
       &:after {
@@ -85,11 +80,11 @@
       }
   }
 
-  .#{$prefix}--unit--million {
+  /*.#{$prefix}--unit--million {
       &:after {
           content: "M";
       }
-  }
+  }*/
 
   .#{$prefix}--unit--partners {
       &:after {
@@ -139,6 +134,34 @@
           content: "Trips";
       }
   }
+
+  .#{$prefix}--unit--level {
+     &:before {
+        content: "Level ";
+    }
+  }
+
+  .#{$prefix}--unit--usd {
+    &:after {
+        content: "USD";
+    }
+    &.#{$prefix}--unit--thousand {
+      &:after {
+          content: "T USD";
+      }
+    }
+    &.#{$prefix}--unit--million {
+      &:after {
+          content: "M USD";
+      }
+    }
+    &.#{$prefix}--unit--billion {
+      &:after {
+          content: "B USD";
+      }
+    }
+  }
+
 
   .#{$prefix}--unit--svg {
       tspan:last-child {

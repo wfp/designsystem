@@ -1,4 +1,4 @@
-{
+const colors = {
   "ui_colors": [
     {
       "name": "WFP Blue",
@@ -57,3 +57,5 @@
     }
   ]
 }
+
+export default colors;
