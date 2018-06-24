@@ -28,15 +28,12 @@ const Toggle = ({
     checkedProps.defaultChecked = defaultToggled;
   }
 
-  const onChangeInput = (evt) => {
+  const onChangeInput = evt => {
     /* Regular Form */
-    if (onChange)
-      onChange(input.checked, id, evt);
+    if (onChange) onChange(input.checked, id, evt);
     /* Redux Form */
-    if (input && input.onChange)
-      input.onChange(input.checked);
-  }
-
+    if (input && input.onChange) input.onChange(input.checked);
+  };
 
   return (
     <div className={wrapperClasses}>
@@ -50,10 +47,9 @@ const Toggle = ({
         onChange={evt => {
           onChange && onChange(evt);
           onToggle(inputElement.checked, id, evt);
-          console.log("update", evt);
+          console.log('update', evt);
           /* Redux Form */
-          if (input && input.onChange)
-            input.onChange(input.checked);
+          if (input && input.onChange) input.onChange(input.checked);
         }}
         ref={el => {
           inputElement = el;

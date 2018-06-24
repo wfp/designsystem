@@ -3,7 +3,10 @@ import React from 'react';
 import classnames from 'classnames';
 
 const Breadcrumb = ({ children, className, ...other }) => {
-  const classNames = classnames('wfp--breadcrumb wfp--breadcrumb--no-trailing-slash', className);
+  const classNames = classnames(
+    'wfp--breadcrumb wfp--breadcrumb--no-trailing-slash',
+    className
+  );
   return (
     <div className={classNames} {...other}>
       {children}
@@ -12,6 +15,9 @@ const Breadcrumb = ({ children, className, ...other }) => {
 };
 
 Breadcrumb.propTypes = {
+  /**
+   * The children elements, usually multiple <BreadcrumbItem>
+   */
   children: PropTypes.node,
   className: PropTypes.string,
 };

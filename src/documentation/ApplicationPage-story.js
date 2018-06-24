@@ -6,15 +6,11 @@ import { action } from '@storybook/addon-actions';
 import RegularPage from './RegularPage';
 import Link from '../components/Link';
 
-
 import { Module, ModuleHeader, ModuleBody } from '../components/Module';
 
 storiesOf(' Documentation', module)
-.addDecorator(story => <RegularPage>{story()}</RegularPage>)
-.addWithInfo(
-  'Application Page',
-  ``,
-  () => (
+  .addDecorator(story => <RegularPage>{story()}</RegularPage>)
+  .addWithInfo('Application Page', ``, () => (
     <div className="row">
       <Module className="col-xs-12 col-md-6 col-lg-4" size="single">
         <ModuleHeader>Module Example</ModuleHeader>
@@ -64,5 +60,4 @@ storiesOf(' Documentation', module)
         </ModuleBody>
       </Module>
     </div>
-  )
-);
+  ));

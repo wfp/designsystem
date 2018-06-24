@@ -15,10 +15,13 @@ const introText = `
   text as opposed to a paragraph.
 `;
 
-
 storiesOf('RadioButton', module)
   .addDecorator(withKnobs)
-	.addDecorator(story => <Provider store={store}><FormWrapper>{story()}</FormWrapper></Provider>)
+  .addDecorator(story => (
+    <Provider store={store}>
+      <FormWrapper>{story()}</FormWrapper>
+    </Provider>
+  ))
   .addWithInfo(
     'Redux Form RadioButton',
     `
@@ -34,12 +37,12 @@ storiesOf('RadioButton', module)
           <Field
             component={RadioButton}
             id="Inputelement"
-            type = "radio"
+            type="radio"
             value="first"
             labelText={label}
             name={name}
           />
         </div>
-      )
+      );
     }
   );

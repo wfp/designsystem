@@ -11,7 +11,9 @@ const props = {
 };
 
 storiesOf('Pagination', module)
-  .addDecorator(story => <SingleComponent pageWidth="wide">{story()}</SingleComponent>)
+  .addDecorator(story => (
+    <SingleComponent pageWidth="wide">{story()}</SingleComponent>
+  ))
   .addWithInfo(
     'with known total number of items',
     `

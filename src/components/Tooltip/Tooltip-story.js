@@ -1,45 +1,29 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
+
+import { withReadme } from 'storybook-readme';
+import readme from './README.md';
+
 import { Tooltip } from 'react-tippy';
 import SingleComponent from '../../documentation/SingleComponent';
 import tooltipStyle from './Tooltip';
 
-
 storiesOf('Tooltip', module)
+  .addDecorator(withReadme([readme]))
   .addDecorator(story => <SingleComponent>{story()}</SingleComponent>)
   .addWithInfo(
     'default',
     `
-    We recommend [React-Tippy](https://github.com/tvkhoa/react-tippy) for Tooltips.
-    ~~~js
-    import { Tooltip } from 'react-tippy';
-    ~~~
-
-    The default white styling can be imported from wfp-ui:
-
-    ~~~js
-    import tooltipStyle from '@wfp/ui';
-    
-    [...]
-
-    <Tooltip
-    {...tooltipStyle}
-    >
-
-    [...]
-     ~~~
-
+      Default implementation
     `,
-    () => <Tooltip
-            // options
-            title="Welcome to the tooltip"
-            position="top"
-            trigger="click"
-            {...tooltipStyle}
-          >
-            <span>
-              Click here to show tooltip
-            </span>
-        </Tooltip>
-  )
-;
+    () => (
+      <Tooltip
+        // options
+        title="Welcome to the tooltip"
+        position="top"
+        trigger="click"
+        {...tooltipStyle}>
+        <span>Click here to show tooltip</span>
+      </Tooltip>
+    )
+  );

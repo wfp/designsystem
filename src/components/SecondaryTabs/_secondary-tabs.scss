@@ -41,7 +41,8 @@
       &:focus {
         //color: $color__white;
       }
-      &:visited, &:active {
+      &:visited,
+      &:active {
         color: $color__navy-gray-4;
       }
       &:hover {
@@ -52,7 +53,7 @@
         &:after {
           position: absolute;
           bottom: 0;
-          content: "";
+          content: '';
           display: block;
           width: 100%;
           height: 3px;

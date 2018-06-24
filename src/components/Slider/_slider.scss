@@ -86,7 +86,8 @@
     border-radius: 50%;
     top: 0;
     transform: translate(-50%, -50%);
-    transition: transform 100ms $carbon--standard-easing, background 100ms $carbon--standard-easing;
+    transition: transform 100ms $carbon--standard-easing,
+      background 100ms $carbon--standard-easing;
     cursor: pointer;
     outline: none;
 

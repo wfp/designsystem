@@ -28,12 +28,13 @@ const moduleBodydefaultProps = {
 };
 
 const Module = ({ dark, children, className, noMargin, ...other }) => {
-  const wrapperClasses = classNames({
-        'wfp--module--dark' : dark,
-        'wfp--module--no-margin' : noMargin
-      },
-        className,
-        'wfp--module'
+  const wrapperClasses = classNames(
+    {
+      'wfp--module--dark': dark,
+      'wfp--module--no-margin': noMargin,
+    },
+    className,
+    'wfp--module'
   );
 
   return (
@@ -61,9 +62,7 @@ const ModuleHeader = ({ filter, children, className, ...other }) => {
   return (
     <div className={wrapperClasses} {...other}>
       <h1 className="wfp--module__title">{children}</h1>
-      {filter && 
-        <div className="wfp--module__filter">{filter}</div>
-      }
+      {filter && <div className="wfp--module__filter">{filter}</div>}
     </div>
   );
 };

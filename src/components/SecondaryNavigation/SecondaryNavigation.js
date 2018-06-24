@@ -3,17 +3,12 @@ import React from 'react';
 import classNames from 'classnames';
 import Wrapper from '../Wrapper';
 
-const SecondaryNavigationTitle = ({className, children}) => {
-
+const SecondaryNavigationTitle = ({ className, children }) => {
   const wrapperClasses = classNames(
     'wfp--secondary-navigation__title',
     className
   );
-	return (
-		<h1 className={wrapperClasses}>
-			{children}
-		</h1>
-	)
+  return <h1 className={wrapperClasses}>{children}</h1>;
 };
 
 SecondaryNavigationTitle.propTypes = {
@@ -24,25 +19,27 @@ SecondaryNavigationTitle.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-const SecondaryNavigation = ({additional, children, className, id, pageWidth}) => {
-
-  const wrapperClasses = classNames(
-    'wfp--secondary-navigation',
-    className
-  );
+const SecondaryNavigation = ({
+  additional,
+  children,
+  className,
+  id,
+  pageWidth,
+}) => {
+  const wrapperClasses = classNames('wfp--secondary-navigation', className);
 
   return (
     <div id={id} className={wrapperClasses}>
-			<Wrapper pageWidth={pageWidth} className="wfp--secondary-navigation__wrapper">
-				<div className="wfp--secondary-navigation__list">
-					{children}
-				</div>
-        {additional &&
+      <Wrapper
+        pageWidth={pageWidth}
+        className="wfp--secondary-navigation__wrapper">
+        <div className="wfp--secondary-navigation__list">{children}</div>
+        {additional && (
           <div className="wfp--secondary-navigation__additional">
             {additional}
           </div>
-        }
-			</Wrapper>
+        )}
+      </Wrapper>
     </div>
   );
 };
@@ -58,7 +55,7 @@ SecondaryNavigation.propTypes = {
 };
 
 SecondaryNavigation.defaultProps = {
-	pageWidth: 'narrower'
+  pageWidth: 'narrower',
 };
 
 export { SecondaryNavigationTitle, SecondaryNavigation };

@@ -1,61 +1,61 @@
 const colors = {
-  "ui_colors": [
+  ui_colors: [
     {
-      "name": "WFP Blue",
-      "hex": "#0A6EB4",
-      "scss": "$color__main"
+      name: 'WFP Blue',
+      hex: '#0A6EB4',
+      scss: '$color__main',
     },
     {
-      "name": "Navy",
-      "hex": "#19486a",
-      "scss": "$color__navy"
+      name: 'Navy',
+      hex: '#19486a',
+      scss: '$color__navy',
     },
     {
-      "name": "Aqua",
-      "hex": "#26bde2",
-      "scss": "$color__aqua"
+      name: 'Aqua',
+      hex: '#26bde2',
+      scss: '$color__aqua',
     },
     {
-      "name": "Dark-Green",
-      "hex": "#3f7e44",
-      "scss": "$color__dark-green"
+      name: 'Dark-Green',
+      hex: '#3f7e44',
+      scss: '$color__dark-green',
     },
     {
-      "name": "Lime",
-      "hex": "#8AD220",
-      "scss": "$color__lime"
+      name: 'Lime',
+      hex: '#8AD220',
+      scss: '$color__lime',
     },
     {
-      "name": "Yellow",
-      "hex": "#F7B825",
-      "scss": "$color__yellow"
+      name: 'Yellow',
+      hex: '#F7B825',
+      scss: '$color__yellow',
     },
     {
-      "name": "Ochre",
-      "hex": "#dda63a",
-      "scss": "$color__ochre"
+      name: 'Ochre',
+      hex: '#dda63a',
+      scss: '$color__ochre',
     },
     {
-      "name": "Orange",
-      "hex": "#fd6925",
-      "scss": "$color__orange"
+      name: 'Orange',
+      hex: '#fd6925',
+      scss: '$color__orange',
     },
     {
-      "name": "Red",
-      "hex": "#c5192d",
-      "scss": "$color__red"
+      name: 'Red',
+      hex: '#c5192d',
+      scss: '$color__red',
     },
     {
-      "name": "Dark-Red",
-      "hex": "#a21942",
-      "scss": "$color__dark-red"
+      name: 'Dark-Red',
+      hex: '#a21942',
+      scss: '$color__dark-red',
     },
     {
-      "name": "Magenta",
-      "hex": "#dd1367",
-      "scss": "$color__magenta"
-    }
-  ]
-}
+      name: 'Magenta',
+      hex: '#dd1367',
+      scss: '$color__magenta',
+    },
+  ],
+};
 
 export default colors;

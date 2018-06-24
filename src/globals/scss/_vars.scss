@@ -3,14 +3,24 @@
 
 $prefix: 'wfp' !default;
 
-$carbon--ease-in: cubic-bezier(0.25, 0, 1, 1); // Used primarily for removing elements from the screen.
+$carbon--ease-in: cubic-bezier(
+  0.25,
+  0,
+  1,
+  1
+); // Used primarily for removing elements from the screen.
 $carbon--ease-out: cubic-bezier(
   0,
   0,
   0.25,
   1
 ); // Used for adding elements to the screen or changing on-screen states at a users's input.
-$carbon--standard-easing: cubic-bezier(0.5, 0, 0.1, 1); // Used for the majority of animations.
+$carbon--standard-easing: cubic-bezier(
+  0.5,
+  0,
+  0.1,
+  1
+); // Used for the majority of animations.
 
 // For back-ward compatibility
 $wfp--ease-in: $carbon--ease-in;
@@ -34,7 +44,7 @@ $text-01: $color__blue-90 !default;
 $text-02: $color__navy-gray-6 !default;
 $text-03: $color__navy-gray-6 !default;
 $field-01: $color__gray-2 !default;
-$support-01: #DD002B !default;
+$support-01: #dd002b !default;
 $support-02: $color__green-40 !default;
 $support-03: $color__yellow-30 !default;
 $support-04: $color__blue-30 !default;
@@ -66,7 +76,7 @@ $accordion-flex-direction: row !default;
 $accordion-justify-content: flex-start !default;
 $accordion-arrow-margin: 0 0 0 $spacing-2xs !default;
 $accordion-title-margin: 0 0 0 $spacing-md !default;
-$accordion-content-padding: 0 $spacing-md 0  $spacing-2xl !default;
+$accordion-content-padding: 0 $spacing-md 0 $spacing-2xl !default;
 
 // Card
 $card-text-align: center !default;

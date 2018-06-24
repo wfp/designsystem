@@ -3,12 +3,14 @@ import { storiesOf } from '@storybook/react';
 import { Module, ModuleHeader, ModuleBody, ModuleFooter } from '../Module';
 import Wrapper from '../Wrapper';
 
-
 import 'flexboxgrid/dist/flexboxgrid.css';
 
-
 storiesOf('Module', module)
-  .addDecorator(story => <div className="wfp--module__background"><Wrapper pageWidth="narrow">{story()}</Wrapper></div>)
+  .addDecorator(story => (
+    <div className="wfp--module__background">
+      <Wrapper pageWidth="narrow">{story()}</Wrapper>
+    </div>
+  ))
   .addWithInfo(
     'Single',
     `
@@ -136,10 +138,10 @@ storiesOf('Module', module)
           <ModuleHeader>Module Example</ModuleHeader>
           <ModuleBody>
             <p>
-              Lorem Ipsum is dummy text of the printing and typesetting industry.
-              Lorem Ipsum has been the industry's standard dummy text ever since
-              the 1500s, when an unknown printer took a galley of type and
-              scrambled it to make a type specimen book.
+              Lorem Ipsum is dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy text
+              ever since the 1500s, when an unknown printer took a galley of
+              type and scrambled it to make a type specimen book.
             </p>
             <p>
               It has survived not only five centuries, but also the leap into
@@ -152,10 +154,10 @@ storiesOf('Module', module)
           <ModuleHeader>Module Example</ModuleHeader>
           <ModuleBody>
             <p>
-              Lorem Ipsum is dummy text of the printing and typesetting industry.
-              Lorem Ipsum has been the industry's standard dummy text ever since
-              the 1500s, when an unknown printer took a galley of type and
-              scrambled it to make a type specimen book.
+              Lorem Ipsum is dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy text
+              ever since the 1500s, when an unknown printer took a galley of
+              type and scrambled it to make a type specimen book.
             </p>
             <p>
               It has survived not only five centuries, but also the leap into
@@ -168,10 +170,10 @@ storiesOf('Module', module)
           <ModuleHeader>Module Example</ModuleHeader>
           <ModuleBody>
             <p>
-              Lorem Ipsum is dummy text of the printing and typesetting industry.
-              Lorem Ipsum has been the industry's standard dummy text ever since
-              the 1500s, when an unknown printer took a galley of type and
-              scrambled it to make a type specimen book.
+              Lorem Ipsum is dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy text
+              ever since the 1500s, when an unknown printer took a galley of
+              type and scrambled it to make a type specimen book.
             </p>
             <p>
               It has survived not only five centuries, but also the leap into

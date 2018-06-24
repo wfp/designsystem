@@ -10,10 +10,12 @@ const toggleProps = {
 };
 
 storiesOf('Toggle', module)
-.addDecorator(story => <SingleComponent pageWidth="wide">{story()}</SingleComponent>)
-.addWithInfo(
-  'Default',
-  `
+  .addDecorator(story => (
+    <SingleComponent pageWidth="wide">{story()}</SingleComponent>
+  ))
+  .addWithInfo(
+    'Default',
+    `
       Toggles are controls that are used to quickly switch between two possible states. The example below shows
       an uncontrolled Toggle component. To use the Toggle component as a controlled component, set the toggled property.
       Setting the toggled property will allow you to change the value dynamically, whereas setting the defaultToggled
@@ -23,5 +25,5 @@ storiesOf('Toggle', module)
       import { Toggle } from '@wfp/ui';
       ~~~
     `,
-  () => <Toggle {...toggleProps} className="some-class" id="toggle-1" />
-);
+    () => <Toggle {...toggleProps} className="some-class" id="toggle-1" />
+  );

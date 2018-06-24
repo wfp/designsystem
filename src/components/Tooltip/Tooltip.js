@@ -2,7 +2,7 @@ const tooltipStyle = {
   duration: 200,
   animation: 'fade',
   theme: 'light',
-  arrow: true
-}
+  arrow: true,
+};
 
 export default tooltipStyle;

@@ -15,7 +15,7 @@
 
   .#{$prefix}--blockquote__content {
     padding: $spacing-md;
-	}
+  }
 
   .#{$prefix}--blockquote--code {
     .#{$prefix}--blockquote__content {
@@ -25,9 +25,9 @@
     }
   }
 
-	.#{$prefix}--blockquote__title {
+  .#{$prefix}--blockquote__title {
     display: block;
     font-weight: bold;
     padding: $spacing-md $spacing-md 0 $spacing-md;
-	}
+  }
 }

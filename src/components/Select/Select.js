@@ -62,7 +62,7 @@ Select.propTypes = {
 Select.defaultProps = {
   disabled: false,
   labelText: 'Select',
-  inline: false
+  inline: false,
 };
 
 export default Select;

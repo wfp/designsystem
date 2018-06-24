@@ -24,14 +24,12 @@ const Checkbox = ({
     wrapperClassName
   );
 
-  const onChangeInput = (evt) => {
+  const onChangeInput = evt => {
     /* Regular Form */
-    if (onChange)
-      onChange(input.checked, id, evt);
+    if (onChange) onChange(input.checked, id, evt);
     /* Redux Form */
-    if (input && input.onChange)
-      input.onChange(input.checked);
-  }
+    if (input && input.onChange) input.onChange(input.checked);
+  };
 
   return (
     <div className={wrapperClasses}>

@@ -25,9 +25,12 @@ const exec = (command, extraEnv) =>
     env: Object.assign({}, process.env, extraEnv),
   });
 
-const ignoreGlobs = ['**/__tests__/*', '**/*-test.js', '**/*-story.js', '**/rtl-addon'].join(
-  ','
-);
+const ignoreGlobs = [
+  '**/__tests__/*',
+  '**/*-test.js',
+  '**/*-story.js',
+  '**/rtl-addon',
+].join(',');
 
 console.log('Deleting old build folders...'); // eslint-disable-line no-console
 

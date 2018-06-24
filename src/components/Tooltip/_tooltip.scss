@@ -6,8 +6,7 @@
 @import '../../globals/scss/import-once';
 @import '../../globals/scss/css--reset';
 
-
-@mixin enter-transform ($position, $animation) {
+@mixin enter-transform($position, $animation) {
   @if ($animation == 'perspective') {
     @if ($position == 'top') {
       transform: translateY(-10px) rotateX(0);
@@ -41,7 +40,7 @@
   }
 }
 
-@mixin leave-transform ($position, $animation) {
+@mixin leave-transform($position, $animation) {
   @if ($animation == 'perspective') {
     @if ($position == 'top') {
       transform: translateY(0) rotateX(90deg);
@@ -85,7 +84,7 @@
   }
 }
 
-@mixin circle-transform-leave ($position) {
+@mixin circle-transform-leave($position) {
   $scale: 0.45;
   @if ($position == 'top') {
     transform: scale($scale) translate(-50%, -100%);
@@ -98,7 +97,7 @@
   }
 }
 
-@mixin arrow ($position, $width, $color) {
+@mixin arrow($position, $width, $color) {
   @if ($position == 'top') {
     border-top: $width solid $color;
     border-right: $width solid transparent;
@@ -118,7 +117,7 @@
   }
 }
 
-@mixin arrow-position ($position, $width) {
+@mixin arrow-position($position, $width) {
   @if ($position == 'top') {
     bottom: -$width;
   } @else if ($position == 'bottom') {
@@ -130,16 +129,14 @@
   }
 }
 
-
 @include exports('tooltip') {
   .tooltip--link {
-  	cursor: pointer;
+    cursor: pointer;
   }
 
   .tooltip--source {
-  	display: none;
+    display: none;
   }
-
 
   [data-tooltipped] {
     cursor: pointer;
@@ -150,226 +147,224 @@
   $circle-origins: 0% 100%, 0% -100%, 50% 0%, -50% 0%;
 
   .tippy-touch {
-  	cursor: pointer !important;
+    cursor: pointer !important;
   }
 
   .tippy-notransition {
-  	transition: none !important;
+    transition: none !important;
   }
 
   .tippy-popper {
-  	max-width: 400px;
-  	perspective: 800px;
-  	z-index: 9999;
-  	outline: 0;
-  	pointer-events: none;
-  	&.html-template {
-  		max-width: 96%;
-  		max-width: calc(100% - 20px);
-  	}
+    max-width: 400px;
+    perspective: 800px;
+    z-index: 9999;
+    outline: 0;
+    pointer-events: none;
+    &.html-template {
+      max-width: 96%;
+      max-width: calc(100% - 20px);
+    }
 
-  	@each $position in $positions {
-  		&[x-placement^=#{$position}] {
+    @each $position in $positions {
+      &[x-placement^='#{$position}'] {
+        [x-arrow] {
+          position: absolute;
+          width: 0;
+          height: 0;
+          @include arrow($position, 7px, #333);
+          @include arrow-position($position, 7px);
 
-  			[x-arrow] {
-  				position: absolute;
-  				width: 0;
-  				height: 0;
-  				@include arrow($position, 7px, #333);
-  				@include arrow-position($position, 7px);
+          &.arrow-small {
+            @include arrow($position, 5px, #333);
+            @include arrow-position($position, 5px);
+          }
 
-  				&.arrow-small {
-  					@include arrow($position, 5px, #333);
-  					@include arrow-position($position, 5px);
-  				}
+          &.arrow-big {
+            @include arrow($position, 10px, #333);
+            @include arrow-position($position, 10px);
+          }
+        }
 
-  				&.arrow-big {
-  					@include arrow($position, 10px, #333);
-  					@include arrow-position($position, 10px);
-  				}
-  			}
+        [x-circle] {
+          transform-origin: nth($circle-origins, index($positions, $position));
 
-  			[x-circle] {
-  				transform-origin: nth($circle-origins, index($positions, $position));
+          &.enter {
+            transform: scale(1) translate(-50%, -50%);
+            opacity: 1;
+          }
 
-  				&.enter {
-  					transform: scale(1) translate(-50%, -50%);
-  					opacity: 1;
-  				}
+          &.leave {
+            @include circle-transform-leave($position);
+            opacity: 0;
+          }
+        }
 
-  				&.leave {
-  					@include circle-transform-leave($position);
-  					opacity: 0;
-  				}
-  			}
+        .tippy-tooltip.light-theme {
+          [x-circle] {
+            background-color: white;
+          }
+          [x-arrow] {
+            @include arrow($position, 7px, white);
 
-  			.tippy-tooltip.light-theme {
-  				[x-circle] {
-  					background-color: white;
-  				}
-  				[x-arrow] {
-  					@include arrow($position, 7px, white);
+            &.arrow-small {
+              @include arrow($position, 5px, white);
+            }
 
-  					&.arrow-small {
-  						@include arrow($position, 5px, white);
-  					}
+            &.arrow-big {
+              @include arrow($position, 10px, white);
+            }
+          }
+        }
 
-  					&.arrow-big {
-  						@include arrow($position, 10px, white);
-  					}
-  				}
-  			}
+        .tippy-tooltip.transparent-theme {
+          [x-circle] {
+            background-color: rgba(0, 0, 0, 0.7);
+          }
+          [x-arrow] {
+            @include arrow($position, 7px, rgba(0, 0, 0, 0.7));
 
-  			.tippy-tooltip.transparent-theme {
-  				[x-circle] {
-  					background-color: rgba(0,0,0,0.7);
-  				}
-  				[x-arrow] {
-  					@include arrow($position, 7px, rgba(0,0,0,0.7));
+            &.arrow-small {
+              @include arrow($position, 5px, rgba(0, 0, 0, 0.7));
+            }
 
-  					&.arrow-small {
-  						@include arrow($position, 5px, rgba(0,0,0,0.7));
-  					}
+            &.arrow-big {
+              @include arrow($position, 10px, rgba(0, 0, 0, 0.7));
+            }
+          }
+        }
 
-  					&.arrow-big {
-  						@include arrow($position, 10px, rgba(0,0,0,0.7));
-  					}
-  				}
-  			}
+        [data-animation='perspective'] {
+          transform-origin: nth($origins, index($positions, $position));
 
-  			[data-animation=perspective] {
-  				transform-origin: nth($origins, index($positions, $position));
+          &.enter {
+            opacity: 1;
+            @include enter-transform($position, 'perspective');
+          }
 
-  				&.enter {
-  					opacity: 1;
-  					@include enter-transform($position, 'perspective');
-  				}
+          &.leave {
+            opacity: 0;
+            @include leave-transform($position, 'perspective');
+          }
+        }
 
-  				&.leave {
-  					opacity: 0;
-  					@include leave-transform($position, 'perspective');
-  				}
-  			}
+        [data-animation='fade'] {
+          &.enter {
+            opacity: 1;
+            @include enter-transform($position, 'fade');
+          }
+          &.leave {
+            opacity: 0;
+            @include enter-transform($position, 'fade');
+          }
+        }
 
-  			[data-animation=fade] {
-  				&.enter {
-  					opacity: 1;
-  					@include enter-transform($position, 'fade')
-  				}
-  				&.leave {
-  					opacity: 0;
-  					@include enter-transform($position, 'fade')
-  				}
-  			}
+        [data-animation='shift'] {
+          &.enter {
+            opacity: 1;
+            @include enter-transform($position, 'fade');
+          }
+          &.leave {
+            opacity: 0;
+            @include leave-transform($position, 'shift');
+          }
+        }
 
-  			[data-animation=shift] {
-  				&.enter {
-  					opacity: 1;
-  					@include enter-transform($position, 'fade')
-  				}
-  				&.leave {
-  					opacity: 0;
-  					@include leave-transform($position, 'shift')
-  				}
-  			}
+        [data-animation='scale'] {
+          &.enter {
+            opacity: 1;
+            @include enter-transform($position, 'scale');
+          }
+          &.leave {
+            opacity: 0;
+            @include leave-transform($position, 'scale');
+          }
+        }
+      }
+    }
 
-  			[data-animation=scale] {
-  				&.enter {
-  					opacity: 1;
-  					@include enter-transform($position, 'scale')
-  				}
-  				&.leave {
-  					opacity: 0;
-  					@include leave-transform($position, 'scale')
-  				}
-  			}
+    .tippy-tooltip.transparent-theme {
+      background-color: rgba(0, 0, 0, 0.7);
 
-  		}
-  	}
+      &[data-animatefill] {
+        background-color: transparent;
+      }
+    }
 
-  	.tippy-tooltip.transparent-theme {
-  		background-color: rgba(0,0,0,0.7);
+    .tippy-tooltip.light-theme {
+      color: #26323d;
+      box-shadow: 0 4px 20px 4px rgba(0, 20, 60, 0.1),
+        0 4px 80px -8px rgba(0, 20, 60, 0.2);
+      background-color: white;
 
-  		&[data-animatefill] {
-  			background-color: transparent;
-  		}
-  	}
-
-  	.tippy-tooltip.light-theme {
-  		color: #26323d;
-  		box-shadow: 0 4px 20px 4px rgba(0, 20, 60, 0.1),
-  					0 4px 80px -8px rgba(0, 20, 60, 0.2);
-  		background-color: white;
-
-  		&[data-animatefill] {
-  			background-color: transparent;
-  		}
-  	}
+      &[data-animatefill] {
+        background-color: transparent;
+      }
+    }
   }
 
   .tippy-tooltip {
-     position: relative;
-  	color: white;
-  	border-radius: 4px;
-  	font-size: 0.95rem;
-  	padding: 0.8rem;
-  	//text-align: center;
-  	will-change: transform;
-  	-webkit-font-smoothing: antialiased;
-  	-moz-osx-font-smoothing: grayscale;
-  	background-color: #333;
-  	pointer-events: none;
+    position: relative;
+    color: white;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    padding: 0.8rem;
+    //text-align: center;
+    will-change: transform;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #333;
+    pointer-events: none;
 
-  	&--small {
-  		padding: 0.25rem 0.5rem;
-  		font-size: 0.8rem;
-  	}
+    &--small {
+      padding: 0.25rem 0.5rem;
+      font-size: 0.8rem;
+    }
 
-  	&--big {
-  		padding: 0.6rem 1.2rem;
-  		font-size: 1.2rem;
-  	}
+    &--big {
+      padding: 0.6rem 1.2rem;
+      font-size: 1.2rem;
+    }
 
-  	&[data-animatefill] {
-  		overflow: hidden;
-  		background-color: transparent;
-  	}
+    &[data-animatefill] {
+      overflow: hidden;
+      background-color: transparent;
+    }
 
-  	&[data-interactive] {
-  		pointer-events: auto;
-  	}
+    &[data-interactive] {
+      pointer-events: auto;
+    }
 
-  	&[data-inertia] {
-  		// Safari/Webkit can't go out of range
-  		-webkit-transition-timing-function: cubic-bezier(.53,1,.36,.85);
-  		transition-timing-function: cubic-bezier(.53,2,.36,.85);
-  	}
+    &[data-inertia] {
+      // Safari/Webkit can't go out of range
+      -webkit-transition-timing-function: cubic-bezier(0.53, 1, 0.36, 0.85);
+      transition-timing-function: cubic-bezier(0.53, 2, 0.36, 0.85);
+    }
 
-  	[x-circle] {
-  		position: absolute;
-  		will-change: transform;
-  		background-color: #333;
-  		border-radius: 50%;
-  		width: 120%;
-  		width: calc(100% + 2rem);
-  		transition: all ease-out;
-  		left: 50%;
-  		top: 50%;
-  		z-index: -1;
-  		overflow: hidden;
+    [x-circle] {
+      position: absolute;
+      will-change: transform;
+      background-color: #333;
+      border-radius: 50%;
+      width: 120%;
+      width: calc(100% + 2rem);
+      transition: all ease-out;
+      left: 50%;
+      top: 50%;
+      z-index: -1;
+      overflow: hidden;
 
-  		&::before {
-  			content: '';
-  			padding-top: 75%;
-  			float: left;
-  		}
-  	}
+      &::before {
+        content: '';
+        padding-top: 75%;
+        float: left;
+      }
+    }
   }
 
   @media (max-width: 450px) {
-  	.tippy-popper {
-  		max-width: 96%;
-  		max-width: calc(100% - 20px);
-  	}
+    .tippy-popper {
+      max-width: 96%;
+      max-width: calc(100% - 20px);
+    }
   }
 }

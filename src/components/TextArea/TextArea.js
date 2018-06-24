@@ -52,7 +52,12 @@ const TextArea = ({
       data-invalid
     />
   ) : (
-    <textarea {...other} {...input} {...textareaProps} className={textareaClasses} />
+    <textarea
+      {...other}
+      {...input}
+      {...textareaProps}
+      className={textareaClasses}
+    />
   );
 
   return (

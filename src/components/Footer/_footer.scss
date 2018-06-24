@@ -27,7 +27,6 @@
   padding: rem(20px) 0;
 }
 
-
 .#{$prefix}--footer__content {
   box-sizing: border-box;
   display: flex;
@@ -35,7 +34,6 @@
   min-height: 3.5rem;
   width: 100%;
 }
-
 
 .#{$prefix}--footer-info {
   display: flex;
@@ -63,7 +61,7 @@
   margin: 0;
   margin-right: rem(64px);
   @include rtl {
-    margin-left:rem(64px);
+    margin-left: rem(64px);
     margin-right: 0;
   }
 }

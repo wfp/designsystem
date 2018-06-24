@@ -1,6 +1,14 @@
-$breakpoints: (bp--xs--major: 500px, bp--sm--major: 768px, bp--md--major: 992px, bp--lg--major: 1200px);
+$breakpoints: (
+  bp--xs--major: 500px,
+  bp--sm--major: 768px,
+  bp--md--major: 992px,
+  bp--lg--major: 1200px,
+);
 
-$padding: ('mobile': 3%, 'xs': 5%);
+$padding: (
+  'mobile': 3%,
+  'xs': 5%,
+);
 
 @function padding($value) {
   @if map-has-key($padding, $value) {
@@ -72,14 +80,14 @@ $padding: ('mobile': 3%, 'xs': 5%);
 }
 
 $z-indexes: (
-  modal : 9000,
-  overlay : 8000,
-  dropdown : 7000,
-  header : 6000,
-  footer : 5000,
-  hidden : - 1,
+  modal: 9000,
+  overlay: 8000,
+  dropdown: 7000,
+  header: 6000,
+  footer: 5000,
+  hidden: - 1,
   overflowHidden: - 1,
-  floating: 10000
+  floating: 10000,
 );
 
 //-------------------------------------

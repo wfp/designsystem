@@ -5,23 +5,20 @@ import { storiesOf } from '@storybook/react';
 import Page from './Page';
 import Blockquote from '../components/Blockquote';
 
-storiesOf(' Documentation', module)
-.addWithInfo(
-  'Favicons',
-  ``,
-  () => {
+storiesOf(' Documentation', module).addWithInfo('Favicons', ``, () => {
   return (
     <Page title="Favicons" subTitle="The new Logos in various sizes">
-
       <p>
-        All the logo files can be found in the `wfp-ui/favicons` folder. For the main favicon itself, it's best for cross-browser compatibility not to use any HTML. Just name the file favicon.ico and place it in the root of your domain.
+        All the logo files can be found in the `wfp-ui/favicons` folder. For the
+        main favicon itself, it's best for cross-browser compatibility not to
+        use any HTML. Just name the file favicon.ico and place it in the root of
+        your domain.
       </p>
 
-      <Blockquote 
+      <Blockquote
         title="Full sizes catalog which can be added to the HTML Head"
-        type="code"
-      >
-          {`<link rel="apple-touch-icon" sizes="57x57" href="/favicons/apple-icon-57x57.png">
+        type="code">
+        {`<link rel="apple-touch-icon" sizes="57x57" href="/favicons/apple-icon-57x57.png">
 <link rel="apple-touch-icon" sizes="60x60" href="/favicons/apple-icon-60x60.png">
 <link rel="apple-touch-icon" sizes="72x72" href="/favicons/apple-icon-72x72.png">
 <link rel="apple-touch-icon" sizes="76x76" href="/favicons/apple-icon-76x76.png">
@@ -39,6 +36,5 @@ storiesOf(' Documentation', module)
 <meta name="theme-color" content="#006CB6">`}
       </Blockquote>
     </Page>
-  )
-}
-);
+  );
+});

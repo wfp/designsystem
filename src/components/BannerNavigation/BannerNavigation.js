@@ -3,17 +3,9 @@ import React from 'react';
 import classNames from 'classnames';
 import Wrapper from '../Wrapper';
 
-const BannerNavigationItem = ({className, children}) => {
-
-  const wrapperClasses = classNames(
-    'wfp--banner-navigation__item',
-    className
-  );
-	return (
-		<li className={wrapperClasses}>
-			{children}
-		</li>
-	)
+const BannerNavigationItem = ({ className, children }) => {
+  const wrapperClasses = classNames('wfp--banner-navigation__item', className);
+  return <li className={wrapperClasses}>{children}</li>;
 };
 
 BannerNavigationItem.propTypes = {
@@ -24,20 +16,14 @@ BannerNavigationItem.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-const BannerNavigation = ({children, className, id, pageWidth}) => {
-
-  const wrapperClasses = classNames(
-    'wfp--banner-navigation',
-    className
-  );
+const BannerNavigation = ({ children, className, id, pageWidth }) => {
+  const wrapperClasses = classNames('wfp--banner-navigation', className);
 
   return (
     <div id={id} className={wrapperClasses}>
-			<Wrapper pageWidth={pageWidth}>
-				<ul className="wfp--banner-navigation__list">
-					{children}
-				</ul>
-			</Wrapper>
+      <Wrapper pageWidth={pageWidth}>
+        <ul className="wfp--banner-navigation__list">{children}</ul>
+      </Wrapper>
     </div>
   );
 };
@@ -53,7 +39,7 @@ BannerNavigation.propTypes = {
 };
 
 BannerNavigation.defaultProps = {
-	pageWidth: 'narrower'
+  pageWidth: 'narrower',
 };
 
 export { BannerNavigationItem, BannerNavigation };

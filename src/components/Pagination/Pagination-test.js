@@ -174,9 +174,9 @@ describe('Pagination', () => {
       it('should have two buttons for navigation', () => {
         const buttons = right.find('.wfp--pagination__button');
         expect(buttons.length).toBe(2);
-        expect(buttons.at(0).hasClass('wfp--pagination__button--backward')).toBe(
-          true
-        );
+        expect(
+          buttons.at(0).hasClass('wfp--pagination__button--backward')
+        ).toBe(true);
         expect(buttons.at(1).hasClass('wfp--pagination__button--forward')).toBe(
           true
         );

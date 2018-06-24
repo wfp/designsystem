@@ -33,7 +33,9 @@ describe('Slider', () => {
     });
 
     it('renders extra classes passed in via className', () => {
-      expect(wrapper.find('.wfp--slider').hasClass('extra-class')).toEqual(true);
+      expect(wrapper.find('.wfp--slider').hasClass('extra-class')).toEqual(
+        true
+      );
     });
 
     it('can be disabled', () => {

@@ -10,7 +10,9 @@ const checkboxEvents = {
 };
 
 storiesOf('Checkbox', module)
-  .addDecorator(story => <SingleComponent pageWidth="wide">{story()}</SingleComponent>)
+  .addDecorator(story => (
+    <SingleComponent pageWidth="wide">{story()}</SingleComponent>
+  ))
   .addWithInfo(
     'enabled checked',
     `

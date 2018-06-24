@@ -48,7 +48,9 @@ export default class ContentSwitcher extends React.Component {
       ...other
     } = this.props;
 
-    const classes = classNames('wfp--content-switcher', className, {'wfp--content-switcher--sm' : small});
+    const classes = classNames('wfp--content-switcher', className, {
+      'wfp--content-switcher--sm': small,
+    });
 
     return (
       <div {...other} className={classes}>

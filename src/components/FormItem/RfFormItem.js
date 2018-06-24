@@ -1,12 +1,14 @@
-import React from 'react'
-import classNames from 'classnames'
-import PropTypes from 'prop-types'
+import React from 'react';
+import classNames from 'classnames';
+import PropTypes from 'prop-types';
 
-const RfFormItem = (props) => {
+const RfFormItem = props => {
+  const showInvalid =
+    props.meta &&
+    ((props.meta.touched && props.meta.error) ||
+      (props.meta.submitFailed === true && props.meta.error));
 
-  const showInvalid = props.meta && (props.meta.touched && props.meta.error||props.meta.submitFailed === true && props.meta.error);
-
-	/*const inputClasses = classNames({
+  /*const inputClasses = classNames({
 			'required': props.isRequired,
 			'disabled': props.disabled,
 			'field--read-only': props.readOnly,
@@ -17,27 +19,26 @@ const RfFormItem = (props) => {
 		}); 
 */
 
-	const inputClasses = classNames({
-		'wfp--form-item': true,
-		'disabled': props.disabled
-		});
-	
-	if (showInvalid)
-		return (
-			<div className={inputClasses}>
-				{props.children}
-				<div className="wfp--form-requirement">
-					{props.meta.error}
-				</div>
-			</div>)
-	else return (<div className={inputClasses}>{props.children}</div>)
-}
+  const inputClasses = classNames({
+    'wfp--form-item': true,
+    disabled: props.disabled,
+  });
 
-RfFormItem.propTypes = {
-		meta: PropTypes.object,
-		children: PropTypes.node,
-		className: PropTypes.string,
-		required: PropTypes.bool
+  if (showInvalid)
+    return (
+      <div className={inputClasses}>
+        {props.children}
+        <div className="wfp--form-requirement">{props.meta.error}</div>
+      </div>
+    );
+  else return <div className={inputClasses}>{props.children}</div>;
 };
 
-export default RfFormItem
+RfFormItem.propTypes = {
+  meta: PropTypes.object,
+  children: PropTypes.node,
+  className: PropTypes.string,
+  required: PropTypes.bool,
+};
+
+export default RfFormItem;

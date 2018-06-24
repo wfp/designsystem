@@ -23,6 +23,9 @@ const BreadcrumbItem = ({ children, className, href, ...other }) => {
 };
 
 BreadcrumbItem.propTypes = {
+  /**
+   * The children elements, usually a link
+   */
   children: PropTypes.node,
   className: PropTypes.string,
   href: PropTypes.string,

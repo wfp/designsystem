@@ -74,13 +74,7 @@
   }
 
   .#{$prefix}--btn--tertiary {
-    @include button-theme(
-      transparent,
-      $ui-05,
-      $ui-05,
-      $ui-05,
-      $ui-05
-    );
+    @include button-theme(transparent, $ui-05, $ui-05, $ui-05, $ui-05);
 
     &:hover,
     &:focus {

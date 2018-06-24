@@ -80,8 +80,9 @@ describe('Modal', () => {
       const wrapper = shallow(
         <Modal primaryButtonText="Submit" secondaryButtonText="Cancel" />
       );
-      const modalButtons = wrapper.find('.wfp--modal__buttons-container').props()
-        .children;
+      const modalButtons = wrapper
+        .find('.wfp--modal__buttons-container')
+        .props().children;
       expect(modalButtons[0].props.children).toEqual('Cancel');
       expect(modalButtons[1].props.children).toEqual('Submit');
     });
@@ -194,8 +195,9 @@ describe('Danger Modal', () => {
     });
 
     it('has correct button combination', () => {
-      const modalButtons = wrapper.find('.wfp--modal__buttons-container').props()
-        .children;
+      const modalButtons = wrapper
+        .find('.wfp--modal__buttons-container')
+        .props().children;
       expect(modalButtons[0].props.kind).toEqual('tertiary');
       expect(modalButtons[1].props.kind).toEqual('danger--primary');
     });

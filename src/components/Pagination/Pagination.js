@@ -196,8 +196,8 @@ export default class Pagination extends Component {
             className={backButtonClasses}
             onClick={this.decrementPage}
             description={backwardText}
-            disabled={this.props.disabled || statePage === 1}>
-          </button>
+            disabled={this.props.disabled || statePage === 1}
+          />
           {pageInputDisabled ? null : (
             <Select
               id={`wfp-pagination-select-${inputId + 2}`}
@@ -217,8 +217,8 @@ export default class Pagination extends Component {
               this.props.disabled ||
               statePage === Math.ceil(totalItems / statePageSize) ||
               isLastPage
-            }>
-          </button>
+            }
+          />
         </div>
       </div>
     );

@@ -8,76 +8,78 @@
 @import '../Form/form';
 
 @include exports('unit') {
-
   .#{$prefix}--unit {
-      white-space: nowrap;
-      &:after, .unit__small {
-          font-size: 0.7em;
-          font-style: italic;
-          margin-left: 0.3em;
-          opacity: 0.7;
-      }
+    white-space: nowrap;
+    &:after,
+    .unit__small {
+      font-size: 0.7em;
+      font-style: italic;
+      margin-left: 0.3em;
+      opacity: 0.7;
+    }
   }
 
-  .#{$prefix}--unit--hide, .#{$prefix}--unit--hide .unit {
-      &:after, tspan:last-child {
-          display: none;
-      }
+  .#{$prefix}--unit--hide,
+  .#{$prefix}--unit--hide .unit {
+    &:after,
+    tspan:last-child {
+      display: none;
+    }
   }
 
   .#{$prefix}--unit--light {
-      &:after {
-          font-weight: 300;
-          margin-left: 0.2em;
-          opacity: 1;
-      }
+    &:after {
+      font-weight: 300;
+      margin-left: 0.2em;
+      opacity: 1;
+    }
   }
 
   .#{$prefix}--unit--littleusd {
-      &:after {
-          content: "USD";
-      }
+    &:after {
+      content: 'USD';
+    }
   }
 
   .#{$prefix}--unit--none {
-      white-space: normal;
+    white-space: normal;
   }
 
-
   .#{$prefix}--unit--tusd {
-      &:after {
-          content: "T USD";
-      }
+    &:after {
+      content: 'T USD';
+    }
   }
 
   .#{$prefix}--unit--usd {
-      &:after {
-          content: "M USD";
-      }
+    &:after {
+      content: 'M USD';
+    }
   }
 
   .#{$prefix}--unit--busd {
-      &:after {
-          content: "B USD";
-      }
+    &:after {
+      content: 'B USD';
+    }
   }
 
   .#{$prefix}--unit--mt {
-      &:after {
-          content: "MT";
-      }
+    &:after {
+      content: 'MT';
+    }
   }
 
   .#{$prefix}--unit--littlepeople {
-      &:after {
-          content: "People";
-      }
+    &:after {
+      content: 'People';
+    }
   }
 
-  .#{$prefix}--unit--people, .#{$prefix}--unit--mpeople {
-      &:after {
-          content: "M People";
-      }
+  .#{$prefix}--unit--people,
+  .#{$prefix}--unit--mpeople {
+    &:after {
+      content: 'M People';
+    }
   }
 
   /*.#{$prefix}--unit--million {
@@ -87,87 +89,165 @@
   }*/
 
   .#{$prefix}--unit--partners {
-      &:after {
-          content: "Partners";
-      }
+    &:after {
+      content: 'Partners';
+    }
   }
 
   .#{$prefix}--unit--countries {
-      &:after {
-          content: "Countries";
-      }
+    &:after {
+      content: 'Countries';
+    }
   }
 
-  .#{$prefix}--unit--percentage, .#{$prefix}--unit--simplepercentage {
-      &:after {
-          content: "%";
-      }
+  .#{$prefix}--unit--percentage,
+  .#{$prefix}--unit--simplepercentage {
+    &:after {
+      content: '%';
+    }
   }
 
   .#{$prefix}--unit--mbeneficiaries {
-      &:after {
-          content: "M Beneficiaries";
-      }
+    &:after {
+      content: 'M Beneficiaries';
+    }
   }
 
   .#{$prefix}--unit--beneficiaries,
   .#{$prefix}--unit--beneficiaries--text {
-      &:after {
-          content: "Beneficiaries";
-      }
+    &:after {
+      content: 'Beneficiaries';
+    }
   }
 
   .#{$prefix}--unit--months {
+    &:after {
+      content: 'Months';
+    }
+    &.#{$prefix}--unit--singular {
       &:after {
-          content: "Months";
+        content: 'Month';
       }
+    }
   }
 
   .#{$prefix}--unit--households {
-      &:after {
-          content: "Households";
-      }
+    &:after {
+      content: 'Households';
+    }
   }
 
   .#{$prefix}--unit--trips {
-      &:after {
-          content: "Trips";
-      }
+    &:after {
+      content: 'Trips';
+    }
   }
 
   .#{$prefix}--unit--level {
-     &:before {
-        content: "Level ";
+    &:before {
+      content: 'Level ';
     }
   }
 
   .#{$prefix}--unit--usd {
     &:after {
-        content: "USD";
+      content: 'USD';
+    }
+    &.#{$prefix}--unit--external {
+      &:after {
+        content: '';
+      }
+      &:before {
+        content: 'US$ ';
+      }
     }
     &.#{$prefix}--unit--thousand {
       &:after {
-          content: "T USD";
+        content: 'T USD';
+      }
+      &.#{$prefix}--unit--external {
+        &:after {
+          content: ' thousand';
+        }
+        &:before {
+          content: 'T US$ ';
+        }
       }
     }
     &.#{$prefix}--unit--million {
       &:after {
-          content: "M USD";
+        content: 'M USD';
+      }
+      &.#{$prefix}--unit--external {
+        &:after {
+          content: ' million';
+        }
+        &:before {
+          content: 'US$ ';
+        }
       }
     }
     &.#{$prefix}--unit--billion {
       &:after {
-          content: "B USD";
+        content: 'B USD';
+      }
+      &.#{$prefix}--unit--external {
+        &:after {
+          content: ' billion';
+        }
+        &:before {
+          content: 'US$ ';
+        }
       }
     }
   }
 
+  .#{$prefix}--unit--num {
+    &:after {
+      content: '';
+    }
+    &.#{$prefix}--unit--external {
+      &:after {
+        content: '';
+      }
+    }
+    &.#{$prefix}--unit--thousand {
+      &:after {
+        content: 'T';
+      }
+      &.#{$prefix}--unit--external {
+        &:after {
+          content: ' thousand';
+        }
+      }
+    }
+    &.#{$prefix}--unit--million {
+      &:after {
+        content: 'M';
+      }
+      &.#{$prefix}--unit--external {
+        &:after {
+          content: ' million';
+        }
+      }
+    }
+    &.#{$prefix}--unit--billion {
+      &:after {
+        content: 'B';
+      }
+      &.#{$prefix}--unit--external {
+        &:after {
+          content: ' billion';
+        }
+      }
+    }
+  }
 
   .#{$prefix}--unit--svg {
-      tspan:last-child {
-          font-size: 6px !important;
-          font-style: italic;
-          opacity: 0.6;
-      }
+    tspan:last-child {
+      font-size: 6px !important;
+      font-style: italic;
+      opacity: 0.6;
+    }
   }
 }

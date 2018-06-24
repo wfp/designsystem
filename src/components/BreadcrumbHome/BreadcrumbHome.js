@@ -5,14 +5,11 @@ import Link from '../Link';
 
 const BreadcrumbHome = ({ className, ...other }) => {
   const classNames = classnames('wfp--breadcrumb-home', className);
-  return (
-    <div className={classNames} {...other}>
-    </div>
-  );
+  return <div className={classNames} {...other} />;
 };
 
 BreadcrumbHome.propTypes = {
-  type: PropTypes.string
+  type: PropTypes.string,
 };
 
 export default BreadcrumbHome;

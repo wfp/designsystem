@@ -4,8 +4,7 @@ import classNames from 'classnames';
 
 import RfFormLabel from '../FormLabel/RfFormLabel';
 
-const TextInput = (props) => {
-
+const TextInput = props => {
   const {
     className,
     id,
@@ -57,7 +56,7 @@ const TextInput = (props) => {
 
   return (
     <div className="wfp--form-item">
-      <RfFormLabel {...props} /> 
+      <RfFormLabel {...props} />
       {input}
       {error}
     </div>

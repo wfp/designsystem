@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withSmartKnobs } from 'storybook-addon-smart-knobs'
+import { withSmartKnobs } from 'storybook-addon-smart-knobs';
 
 import { Provider } from 'react-redux';
 import store from '../../internal/configureStore';
@@ -13,23 +13,31 @@ const introText = `
   Toggle implementation for Redux Form
 `;
 
-const data =  {
-  "Input": true
-}
+const data = {
+  Input: true,
+};
 
 storiesOf('Toggle', module)
   .addDecorator(withSmartKnobs)
-  .addDecorator(story => <Provider store={store} sampleData={data}><FormWrapper sss="ssssss" sampleData={data}>{story()}</FormWrapper></Provider>)
+  .addDecorator(story => (
+    <Provider store={store} sampleData={data}>
+      <FormWrapper sss="ssssss" sampleData={data}>
+        {story()}
+      </FormWrapper>
+    </Provider>
+  ))
   .addWithInfo(
     'Redux Form Toggle',
     `
       ${introText}
     `,
-    () => <Field
-              id="toggle-1"
-              component={Toggle}
-              labelA="Off"
-              labelB="On"
-              name="Input"
-          />
+    () => (
+      <Field
+        id="toggle-1"
+        component={Toggle}
+        labelA="Off"
+        labelB="On"
+        name="Input"
+      />
+    )
   );

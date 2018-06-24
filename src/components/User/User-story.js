@@ -4,7 +4,9 @@ import SingleComponent from '../../documentation/SingleComponent';
 import User from '../User';
 
 storiesOf('User', module)
-  .addDecorator(story => <SingleComponent pageWidth="wide">{story()}</SingleComponent>)
+  .addDecorator(story => (
+    <SingleComponent pageWidth="wide">{story()}</SingleComponent>
+  ))
   .addWithInfo(
     'default',
     `
@@ -14,36 +16,26 @@ storiesOf('User', module)
       import { User } from '@wfp/ui';
       ~~~
     `,
-    () => <User
-            name="Max Mustermann"
-          />
+    () => <User name="Max Mustermann" />
   )
   .addWithInfo(
     'Small',
     `
       The example below shows an User Icon with the Username only visible on desktop devices.
     `,
-    () => <User
-            small
-            name="Very long and difficult username"
-          />
-  )        
+    () => <User small name="Very long and difficult username" />
+  )
   .addWithInfo(
     'Ellipsis',
     `
       The example below shows an User Icon.
     `,
-    () => <User
-            ellipsis
-            name="Very long and difficult username"
-          />
+    () => <User ellipsis name="Very long and difficult username" />
   )
   .addWithInfo(
     'Image only',
     `
       The example below shows an User Icon.
     `,
-    () => <User
-          />
-  )
-;
+    () => <User />
+  );

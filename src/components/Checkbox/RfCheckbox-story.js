@@ -15,10 +15,13 @@ const introText = `
   text as opposed to a paragraph.
 `;
 
-
 storiesOf('Checkbox', module)
   .addDecorator(withKnobs)
-	.addDecorator(story => <Provider store={store}><FormWrapper>{story()}</FormWrapper></Provider>)
+  .addDecorator(story => (
+    <Provider store={store}>
+      <FormWrapper>{story()}</FormWrapper>
+    </Provider>
+  ))
   .addWithInfo(
     'Redux Form Checkbox',
     `
@@ -31,11 +34,11 @@ storiesOf('Checkbox', module)
       const name = text('name', 'checkboxinput');
       return (
         <Field
-            component={Checkbox}
-            id="Inputelement"
-            labelText={label}
-            name={name}
-          />
-      )
+          component={Checkbox}
+          id="Inputelement"
+          labelText={label}
+          name={name}
+        />
+      );
     }
   );

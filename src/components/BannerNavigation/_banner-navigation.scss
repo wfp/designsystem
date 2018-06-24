@@ -26,7 +26,7 @@
     }
     a {
       @include typescale('omega');
-      color: rgba($color__white,0.8);
+      color: rgba($color__white, 0.8);
       text-decoration: none;
       &:hover {
         text-decoration: underline;
@@ -34,8 +34,9 @@
       &:focus {
         color: $color__white;
       }
-      &:visited, &:active {
-        color: rgba($color__white,0.8);
+      &:visited,
+      &:active {
+        color: rgba($color__white, 0.8);
       }
     }
   }

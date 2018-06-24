@@ -39,13 +39,13 @@ storiesOf('Footer', module)
     () => {
       const label = 'pageWidth';
       const options = {
-      '': 'undefined',
-      'narrow': 'narrow'
+        '': 'undefined',
+        narrow: 'narrow',
       };
       const defaultValue = '';
 
       const pageWidth = select(label, options, defaultValue);
-      
+
       return (
         <Footer
           className="some-class"
@@ -64,5 +64,6 @@ storiesOf('Footer', module)
             </div>
           </div>
         </Footer>
-      )}
-    );
+      );
+    }
+  );

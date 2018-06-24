@@ -16,22 +16,22 @@ const additionalProps = {
 };
 
 storiesOf('Breadcrumb', module)
-.addDecorator(withTests('Breadcrumb'))
-.addDecorator(story => <SingleComponent>{story()}</SingleComponent>)
-.addWithInfo(
-  'Default',
-  `
+  .addDecorator(withTests('Breadcrumb'))
+  .addDecorator(story => <SingleComponent>{story()}</SingleComponent>)
+  .addWithInfo(
+    'Default',
+    `
       Breadcrumb enables users to quickly see their location within a path of navigation and move up to a parent level if desired. It can be used with react-router by placing <NavLink></NavLink> inside <BreadcrumbItem />
     `,
-  () => (
-    <Breadcrumb {...additionalProps}>
-      <BreadcrumbItem>
-        <a href="/#">
-          <BreadcrumbHome />
-        </a>
-      </BreadcrumbItem>
-      <BreadcrumbItem href="#">Breadcrumb 2</BreadcrumbItem>
-      <BreadcrumbItem href="#">Breadcrumb 3</BreadcrumbItem>
-    </Breadcrumb>
-  )
-);
+    () => (
+      <Breadcrumb {...additionalProps}>
+        <BreadcrumbItem>
+          <a href="/#">
+            <BreadcrumbHome />
+          </a>
+        </BreadcrumbItem>
+        <BreadcrumbItem href="#">Breadcrumb 2</BreadcrumbItem>
+        <BreadcrumbItem href="#">Breadcrumb 3</BreadcrumbItem>
+      </Breadcrumb>
+    )
+  );

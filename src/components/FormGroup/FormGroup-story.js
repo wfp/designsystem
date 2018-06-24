@@ -20,18 +20,18 @@ const TextInputProps = {
 };
 
 storiesOf('FormGroup', module)
-.addDecorator(withTests('FormGroup'))
+  .addDecorator(withTests('FormGroup'))
 
-.addWithInfo(
-  'Default',
-  `
+  .addWithInfo(
+    'Default',
+    `
       Breadcrumb enables users to quickly see their location within a path of navigation and move up to a parent level if desired. It can be used with react-router by placing <NavLink></NavLink> inside <BreadcrumbItem />
     `,
-  () => (
-    <FormGroup {...fieldsetCheckboxProps}>
-      <TextInput {...TextInputProps} />
-      <TextInput {...TextInputProps} />
-      <TextInput {...TextInputProps} />
-    </FormGroup>
-  )
-);
+    () => (
+      <FormGroup {...fieldsetCheckboxProps}>
+        <TextInput {...TextInputProps} />
+        <TextInput {...TextInputProps} />
+        <TextInput {...TextInputProps} />
+      </FormGroup>
+    )
+  );

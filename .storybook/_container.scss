@@ -1,35 +1,40 @@
 $css--font-face: true;
 $css--reset: true;
 html {
-	height: 100%;
+  height: 100%;
 }
 body {
-	height: 100%;
-	#root {
-		height: 100%;
-		>div { /*main */
-			>div {
-				>div:last-child {
-          h1, h2, p, div {
-  					font-family: "Open Sans",sans-serif !important;
+  height: 100%;
+  #root {
+    height: 100%;
+    > div {
+      /*main */
+      > div {
+        > div:last-child {
+          h1,
+          h2,
+          p,
+          div {
+            //font-family: 'Open Sans', sans-serif !important;
           }
-				}
-				>div>button,>button {
-					font-size: 1rem !important;
-					background: #0A6EB4 !important;
-				}
-			}
-			&:first-child {
-				height: 100%;
-				//margin-top: -1%;
-			}
-		}
-	}
+        }
+        > div > button,
+        > button {
+          font-size: 1rem !important;
+          background: #0a6eb4 !important;
+        }
+      }
+      &:first-child {
+        height: 100%;
+        //margin-top: -1%;
+      }
+    }
+  }
 }
 
 .language-js {
-	margin: 1em 0;
-	background: #E6E8ED !important;
+  margin: 1em 0;
+  background: #e6e8ed !important;
   .keyword {
     color: #07a;
   }
@@ -41,5 +46,18 @@ body {
   }
   .operator {
     color: #a67f59;
+  }
+}
+
+.markdown-body {
+  width: 100%;
+  background: red;
+}
+
+table {
+  width: 100%;
+  th,
+  td {
+    border: 1px solid #ccc;
   }
 }

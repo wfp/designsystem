@@ -33,8 +33,11 @@ const Button = ({
   };
 
   const buttonImage = icon ? (
-    
-    <Icon name={icon} description={iconDescription} className="wfp--btn__icon" />
+    <Icon
+      name={icon}
+      description={iconDescription}
+      className="wfp--btn__icon"
+    />
   ) : null;
 
   const button = (

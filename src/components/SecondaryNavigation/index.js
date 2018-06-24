@@ -1,1 +1,4 @@
-export { SecondaryNavigation, SecondaryNavigationTitle } from './SecondaryNavigation';
+export {
+  SecondaryNavigation,
+  SecondaryNavigationTitle,
+} from './SecondaryNavigation';

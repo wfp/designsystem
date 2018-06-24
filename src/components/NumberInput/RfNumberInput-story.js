@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withSmartKnobs } from 'storybook-addon-smart-knobs'
+import { withSmartKnobs } from 'storybook-addon-smart-knobs';
 
 import { Provider } from 'react-redux';
 import store from '../../internal/configureStore';
@@ -16,13 +16,17 @@ const introText = `
 `;
 
 const email = value =>
-  value && !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value) ?
-  'Invalid email address' : undefined;
-
+  value && !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value)
+    ? 'Invalid email address'
+    : undefined;
 
 storiesOf('NumberInput', module)
-	.addDecorator(withSmartKnobs)
-	.addDecorator(story => <Provider store={store}><FormWrapper>{story()}</FormWrapper></Provider>)
+  .addDecorator(withSmartKnobs)
+  .addDecorator(story => (
+    <Provider store={store}>
+      <FormWrapper>{story()}</FormWrapper>
+    </Provider>
+  ))
   .addWithInfo(
     'Redux Form NumberInput',
     `
@@ -30,11 +34,13 @@ storiesOf('NumberInput', module)
       The example below shows an enabled Text Input component. The default type is 'text' and its
       value can be either 'string' or 'number'.
     `,
-    () => <Field
-              component={RfNumberInput}
-              label="Label"
-              name="Input"
-              placeholder="Placeholder here"
-              validate={email}
-          />
+    () => (
+      <Field
+        component={RfNumberInput}
+        label="Label"
+        name="Input"
+        placeholder="Placeholder here"
+        validate={email}
+      />
+    )
   );

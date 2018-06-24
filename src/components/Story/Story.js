@@ -5,14 +5,10 @@ import Wrapper from '../Wrapper';
 
 const Story = ({ children, className }) => {
   const classNames = classnames({
-    'wfp--story' : true,
+    'wfp--story': true,
     [`${className}`]: className,
   });
-  return (
-    <Wrapper className={classNames}>
-      {children}
-    </Wrapper>
-  );
+  return <Wrapper className={classNames}>{children}</Wrapper>;
 };
 
 Story.propTypes = {
@@ -20,7 +16,7 @@ Story.propTypes = {
     Width of Wrapper, use 'narrow' or leave empty
   */
   children: PropTypes.node,
-  className: PropTypes.string
+  className: PropTypes.string,
 };
 
 export default Story;

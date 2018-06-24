@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withSmartKnobs } from 'storybook-addon-smart-knobs'
+import { withSmartKnobs } from 'storybook-addon-smart-knobs';
 
 import { Provider } from 'react-redux';
 import store from '../../internal/configureStore';
@@ -16,23 +16,30 @@ const introText = `
 `;
 
 const email = value =>
-  value && !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value) ?
-  'Invalid email address' : undefined;
+  value && !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value)
+    ? 'Invalid email address'
+    : undefined;
 
 storiesOf('Slider', module)
   .addDecorator(withSmartKnobs)
-  .addDecorator(story => <Provider store={store}><FormWrapper>{story()}</FormWrapper></Provider>)
+  .addDecorator(story => (
+    <Provider store={store}>
+      <FormWrapper>{story()}</FormWrapper>
+    </Provider>
+  ))
   .addWithInfo(
     'Redux Form Slider',
     `
       ${introText}
       The example below shows an enabled Slider Input component.
     `,
-    () => <Field
-              component={Slider}
-              labelText="Label"
-              name="Input"
-              min={0}
-              max={100}
-          />
+    () => (
+      <Field
+        component={Slider}
+        labelText="Label"
+        name="Input"
+        min={0}
+        max={100}
+      />
+    )
   );

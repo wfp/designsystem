@@ -2,49 +2,49 @@ import React from 'react';
 import { configure, setAddon, addDecorator } from '@storybook/react';
 import { setOptions } from '@storybook/addon-options';
 import { setDefaults } from '@storybook/addon-info';
-import { configure as configureViewport, INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
+import {
+  configure as configureViewport,
+  INITIAL_VIEWPORTS,
+} from '@storybook/addon-viewport';
 import infoAddon from '@storybook/addon-info';
 import { checkA11y } from 'storybook-addon-a11y';
 import Container from './Container';
 
-import {initializeRTL} from '../src/rtl-addon';
+import { initializeRTL } from '../src/rtl-addon';
 initializeRTL();
 
-
-
-console.log(configureViewport, "sss", INITIAL_VIEWPORTS);
+console.log(configureViewport, 'sss', INITIAL_VIEWPORTS);
 // addDecorator(checkA11y);
 addDecorator(story => <Container story={story} />);
-
 
 // addon-info
 setDefaults({
   styles: stylesheet => {
-    console.log("stylesheet", stylesheet);
-    return ({
-        ...stylesheet,
-        header: {
-          ...stylesheet.header,
-          h1: {
-            ...stylesheet.header.h1,
-            fontFamily: '"Open Sans",sans-serif',
-            fontWeight: 700
-          },
-          h2: {
-            ...stylesheet.header.h2,
-            color: '#888C8F',
-            fontFamily: '"Open Sans",sans-serif',
-            fontSize: '16px',
-            fontWeight: 600
-          }
-        },
-        infoBody: {
-          ...stylesheet.infoBody,
+    console.log('stylesheet', stylesheet);
+    return {
+      ...stylesheet,
+      header: {
+        ...stylesheet.header,
+        h1: {
+          ...stylesheet.header.h1,
           fontFamily: '"Open Sans",sans-serif',
-          fontWeight: 400
-        }
-      })
-},
+          fontWeight: 700,
+        },
+        h2: {
+          ...stylesheet.header.h2,
+          color: '#888C8F',
+          fontFamily: '"Open Sans",sans-serif',
+          fontSize: '16px',
+          fontWeight: 600,
+        },
+      },
+      infoBody: {
+        ...stylesheet.infoBody,
+        fontFamily: '"Open Sans",sans-serif',
+        fontWeight: 400,
+      },
+    };
+  },
   inline: false, // Toggles display of header with component name and description
 });
 
@@ -56,16 +56,16 @@ const newViewports = {
     name: 'Kindle Fire 2',
     styles: {
       width: '600px',
-      height: '963px'
-    }
+      height: '963px',
+    },
   },
   kindleFireHD: {
     name: 'Kindle Fire HD',
     styles: {
       width: '533px',
-      height: '801px'
-    }
-  }
+      height: '801px',
+    },
+  },
 };
 
 /*
@@ -76,7 +76,6 @@ configureViewport({
     ...newViewports
   }
 });*/
-
 
 // Option defaults:
 setOptions({

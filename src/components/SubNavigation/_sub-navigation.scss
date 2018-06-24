@@ -34,14 +34,14 @@
 
   .#{$prefix}--sub-navigation__title {
     //font-weight: bold;
-      @include typescale('epsilon');
-      @include font-smoothing;
-      letter-spacing: 0;
-      font-weight: 600;
-      color: $text-01;
-      @include breakpointMax(bp--md--major) {
-        display: none;
-      }
+    @include typescale('epsilon');
+    @include font-smoothing;
+    letter-spacing: 0;
+    font-weight: 600;
+    color: $text-01;
+    @include breakpointMax(bp--md--major) {
+      display: none;
+    }
   }
 
   .#{$prefix}--sub-navigation__filter {
@@ -66,18 +66,16 @@
 
   .#{$prefix}--sub-navigation__group--columns {
     @include breakpoint(bp--md--major) {
-      >div {
+      > div {
         column-count: 4;
       }
     }
   }
 
-
   .#{$prefix}--sub-navigation__group__title {
     @include typescale('delta');
     margin-bottom: $spacing-2xs;
   }
-
 
   .#{$prefix}--sub-navigation__item {
     line-height: 1.6;

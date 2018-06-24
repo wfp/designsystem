@@ -4,9 +4,8 @@ import classNames from 'classnames';
 
 import RfFormLabel from '../FormLabel/RfFormLabel';
 
-const Checkbox = (props) => {
-
-	const {
+const Checkbox = props => {
+  const {
     className,
     id,
     labelText,
@@ -16,7 +15,7 @@ const Checkbox = (props) => {
     hideLabel,
     wrapperClassName,
     ...other
-	} = props;
+  } = props;
 
   let inputElement;
   const labelClasses = classNames('wfp--checkbox-label', className);

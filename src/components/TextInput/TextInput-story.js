@@ -24,7 +24,9 @@ const introText = `
 `;
 
 storiesOf('TextInput', module)
-  .addDecorator(story => <SingleComponent pageWidth="wide">{story()}</SingleComponent>)
+  .addDecorator(story => (
+    <SingleComponent pageWidth="wide">{story()}</SingleComponent>
+  ))
   .addWithInfo(
     'enabled',
     `

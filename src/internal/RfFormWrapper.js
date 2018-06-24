@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import { reduxForm } from 'redux-form';
 import { connect } from 'react-redux';
-import { Values } from 'redux-form-website-template'
+import { Values } from 'redux-form-website-template';
 import Button from '../components/Button';
 import Blockquote from '../components/Blockquote';
 import FormItem from '../components/FormItem/RfFormItem';
 import FormLabel from '../components/FormLabel/RfFormLabel';
 import { load as loadAccount } from './loadDefaultData';
-
 
 class FormEl extends Component {
   constructor(props) {
@@ -15,26 +14,29 @@ class FormEl extends Component {
   }
 
   render() {
-    const { handleSubmit, pristine, reset, sampleData, submitting } = this.props;
+    const {
+      handleSubmit,
+      pristine,
+      reset,
+      sampleData,
+      submitting,
+    } = this.props;
 
-
-    const data = sampleData ? sampleData : {
-      // used to populate "account" reducer when "Load" is clicked
-      Input: 13
-    }
+    const data = sampleData
+      ? sampleData
+      : {
+          // used to populate "account" reducer when "Load" is clicked
+          Input: 13,
+        };
 
     return (
       <form onSubmit={handleSubmit} className="wfp-form--stacked">
-          {this.props.children}
+        {this.props.children}
         <FormItem>
-          <br/>
-          <FormLabel>
-            Form Debug Controls
-          </FormLabel>
-          <br/>
-          <Button
-            type="submit"
-            disabled={pristine || submitting}>
+          <br />
+          <FormLabel>Form Debug Controls</FormLabel>
+          <br />
+          <Button type="submit" disabled={pristine || submitting}>
             Submit
           </Button>
           &nbsp;
@@ -58,24 +60,22 @@ class FormEl extends Component {
           </Blockquote>
         </FormItem>
       </form>
-    )
+    );
   }
 }
 
 let Form = reduxForm({
-    form: 'SimpleForm',  //Form name is same
-    enableReinitialize: true
-})(FormEl)
-
+  form: 'SimpleForm', //Form name is same
+  enableReinitialize: true,
+})(FormEl);
 
 // You have to connect() to any reducers that you wish to connect to yourself
 Form = connect(
   state => ({
     initialValues: state.account.data, // pull initial values from account reducer
   }),
-  { load: loadAccount }, // bind account loading action creator
+  { load: loadAccount } // bind account loading action creator
 )(Form);
-
 
 class RfFormWrapper extends Component {
   constructor(props) {
@@ -83,7 +83,7 @@ class RfFormWrapper extends Component {
   }
 
   onSubmit(submit) {
-    console.log("Submit", submit);
+    console.log('Submit', submit);
   }
 
   render() {
@@ -91,7 +91,7 @@ class RfFormWrapper extends Component {
       <Form onSubmit={this.onSubmit} {...this.props}>
         {this.props.children}
       </Form>
-    )
+    );
   }
 }
 

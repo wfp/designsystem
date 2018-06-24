@@ -35,8 +35,8 @@
       @include focus-outline('border');
     }
 
-    &[aria-disabled="true"] {
-      opacity: .5;
+    &[aria-disabled='true'] {
+      opacity: 0.5;
       pointer-events: none;
     }
   }

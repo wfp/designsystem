@@ -23,53 +23,44 @@ const Footer = ({
   pageWidth,
   ...other
 }) => {
-  const classNames = classnames(
-    'wfp--footer',
-    className
-  );
+  const classNames = classnames('wfp--footer', className);
 
-  const footer = 
+  const footer = (
     <footer {...other} className={classNames}>
       <Wrapper pageWidth={pageWidth}>
-      <div className="wfp--footer__content">
-      {children ? (
-        <div className="wfp--footer-info">
-          {children}
+        <div className="wfp--footer__content">
+          {children ? (
+            <div className="wfp--footer-info">{children}</div>
+          ) : (
+            <div className="wfp--footer-info">
+              <div className="wfp--footer-info__item">
+                <p className="wfp--footer-label">{labelOne}</p>
+                <Link href={linkHrefOne}>{linkTextOne}</Link>
+              </div>
+              <div className="wfp--footer-info__item">
+                <p className="wfp--footer-label">{labelTwo}</p>
+                <Link href={linkHrefTwo}>{linkTextTwo}</Link>
+              </div>
+            </div>
+          )}
+          <div className="wfp--footer-cta">
+            <img
+              className="wfp--footer-cta-logo"
+              src={logoExtended}
+              alt="World Food Programme Logo"
+            />
+            <img
+              className="wfp--footer-cta-logo-small"
+              src={logo}
+              alt="World Food Programme Logo"
+            />
+            {secondary}
+          </div>
         </div>
-      ) : (
-      <div className="wfp--footer-info">
-        <div className="wfp--footer-info__item">
-          <p className="wfp--footer-label">{labelOne}</p>
-          <Link href={linkHrefOne}>{linkTextOne}</Link>
-        </div>
-        <div className="wfp--footer-info__item">
-          <p className="wfp--footer-label">{labelTwo}</p>
-          <Link href={linkHrefTwo}>{linkTextTwo}</Link>
-        </div>
-      </div>
-      )}
-      <div className="wfp--footer-cta">
-        <img
-          className="wfp--footer-cta-logo"
-          src={logoExtended}
-          alt="World Food Programme Logo"
-        />
-        <img
-          className="wfp--footer-cta-logo-small"
-          src={logo}
-          alt="World Food Programme Logo"
-        />
-        {secondary}
-      </div>
-      </div>
-      {metaContent &&
-        <div className="wfp--footer-meta">
-        {metaContent}
-        </div>
-      }
+        {metaContent && <div className="wfp--footer-meta">{metaContent}</div>}
       </Wrapper>
     </footer>
-  ;
+  );
 
   return footer;
 };

@@ -115,7 +115,10 @@ export default class Slider extends PureComponent {
 
   state = {
     dragging: false,
-    value: this.props.input && this.props.input.value ? this.props.input.value : this.props.value,
+    value:
+      this.props.input && this.props.input.value
+        ? this.props.input.value
+        : this.props.value,
     left: 0,
   };
 
@@ -166,13 +169,11 @@ export default class Slider extends PureComponent {
           props.onChange({ value: newValue });
         }
 
-        console.log("new", newValue);
-
+        console.log('new', newValue);
 
         //Redux Form
         if (this.props.input && this.props.input.onChange)
           this.props.input.onChange(newValue);
-
 
         return {
           dragging: false,
@@ -189,7 +190,7 @@ export default class Slider extends PureComponent {
     const { value } = prevState;
 
     const range = max - min;
-    const valuePercentage = (value - min) / range * 100;
+    const valuePercentage = ((value - min) / range) * 100;
 
     let left;
     let newValue;
@@ -211,7 +212,7 @@ export default class Slider extends PureComponent {
           const multiplier =
             evt.shiftKey === true ? range / step / stepMuliplier : 1;
           const stepMultiplied = step * multiplier;
-          const stepSize = stepMultiplied / range * 100;
+          const stepSize = (stepMultiplied / range) * 100;
           left = valuePercentage + stepSize * direction;
           newValue = Number(value) + stepMultiplied * direction;
         }
@@ -220,8 +221,8 @@ export default class Slider extends PureComponent {
         const clientX = evt.touches ? evt.touches[0].clientX : evt.clientX;
         const track = this.track.getBoundingClientRect();
         const ratio = (clientX - track.left) / track.width;
-        const rounded = min + Math.round(range * ratio / step) * step;
-        left = (rounded - min) / range * 100;
+        const rounded = min + Math.round((range * ratio) / step) * step;
+        left = ((rounded - min) / range) * 100;
         newValue = rounded;
       }
     }

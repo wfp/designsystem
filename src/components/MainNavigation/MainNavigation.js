@@ -5,57 +5,59 @@ import classNames from 'classnames';
 import Button from '../Button';
 import Wrapper from '../Wrapper';
 
-
-
-
-
-
-
 class MainNavigationItem extends Component {
   constructor(props) {
     super(props);
   }
 
-  componentWillReceiveProps = (nextProps) => {
+  componentWillReceiveProps = nextProps => {
     if (nextProps.menuItem === nextProps.activeMenuItem) {
       document.addEventListener('mousedown', this.handleClickOutside);
-    }
-    else {
+    } else {
       document.removeEventListener('mousedown', this.handleClickOutside);
     }
-  }
+  };
 
-  setWrapperRef = (node) =>{
+  setWrapperRef = node => {
     this.wrapperRef = node;
-  }
+  };
 
-  handleClickOutside = (e) => {
+  handleClickOutside = e => {
     if (this.wrapperRef && !this.wrapperRef.contains(event.target)) {
       this.props.onChangeSub(e, undefined, 'close');
     }
-  }
+  };
 
-  render () {
-    const { activeMenuItem, className, children, menuItem, onChangeSub, subNavigation} = this.props;
+  render() {
+    const {
+      activeMenuItem,
+      className,
+      children,
+      menuItem,
+      onChangeSub,
+      subNavigation,
+    } = this.props;
 
     const wrapperClasses = classNames(className, {
-      'wfp--main-navigation__item' : true,
-      'wfp--main-navigation__item--open' : menuItem === activeMenuItem
+      'wfp--main-navigation__item': true,
+      'wfp--main-navigation__item--open': menuItem === activeMenuItem,
     });
 
     const triggerClasses = classNames({
-      'wfp--main-navigation__trigger' : true,
-      'wfp--main-navigation__trigger--has-sub' : subNavigation,
-      'wfp--main-navigation__trigger--open' : menuItem === activeMenuItem
+      'wfp--main-navigation__trigger': true,
+      'wfp--main-navigation__trigger--has-sub': subNavigation,
+      'wfp--main-navigation__trigger--open': menuItem === activeMenuItem,
     });
 
-    const childrenWithProps = subNavigation ? React.cloneElement(children, {
-      onClick: (e) => onChangeSub(e, menuItem, 'toggle')
-    }) : children;
-   
-     const subClasses = classNames({
-      'wfp--main-navigation__sub' : true,
-      'wfp--main-navigation__sub--open' : menuItem === activeMenuItem
+    const childrenWithProps = subNavigation
+      ? React.cloneElement(children, {
+          onClick: e => onChangeSub(e, menuItem, 'toggle'),
+        })
+      : children;
+
+    const subClasses = classNames({
+      'wfp--main-navigation__sub': true,
+      'wfp--main-navigation__sub--open': menuItem === activeMenuItem,
     });
     /*
       onMouseEnter={(e) => onChangeSub(e, menuItem, 'in')}
@@ -63,24 +65,18 @@ class MainNavigationItem extends Component {
       onMouseEnter={(e) => onChangeSub(e, menuItem, 'toggle')}
     */
     return (
-      <li
-        className={wrapperClasses}
-        ref={this.setWrapperRef}>
-        <div
-          className={triggerClasses}
-        >
-          {childrenWithProps}
-        </div>
-        {subNavigation &&
-        <div
-          className={subClasses}
-          onChangeSub={onChangeSub}
-          open={menuItem === activeMenuItem ? true : false}>
-          {subNavigation}
-        </div>
-      }
+      <li className={wrapperClasses} ref={this.setWrapperRef}>
+        <div className={triggerClasses}>{childrenWithProps}</div>
+        {subNavigation && (
+          <div
+            className={subClasses}
+            onChangeSub={onChangeSub}
+            open={menuItem === activeMenuItem ? true : false}>
+            {subNavigation}
+          </div>
+        )}
       </li>
-    )
+    );
   }
 }
 
@@ -92,16 +88,14 @@ MainNavigationItem.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-
 class MainNavigation extends Component {
   constructor(props) {
     super(props);
     this.state = {
       openMobile: false,
-      activeMenuItem: undefined
-    }
+      activeMenuItem: undefined,
+    };
   }
-
 
   onChangeSub = (e, i, action) => {
     e.preventDefault();
@@ -110,83 +104,74 @@ class MainNavigation extends Component {
         activeMenuItem: i
       });
     }
-    else */ 
+    else */
 
     if (action === 'close') {
       this.setState({
-        activeMenuItem: undefined
+        activeMenuItem: undefined,
       });
-    }
-    else if (action === 'toggle') {
-      const newI = (this.state.activeMenuItem === undefined|| this.state.activeMenuItem !== i) ? i : undefined;
+    } else if (action === 'toggle') {
+      const newI =
+        this.state.activeMenuItem === undefined ||
+        this.state.activeMenuItem !== i
+          ? i
+          : undefined;
       this.setState({
-        activeMenuItem: newI
+        activeMenuItem: newI,
       });
     }
-  }
+  };
 
   toggleMenu = () => {
-    this.setState(
-      {openMobile: !this.state.openMobile}
-    )
-  }
-
+    this.setState({ openMobile: !this.state.openMobile });
+  };
 
   triggerSubNavigation = () => {
     this.setState({
-      activeMenuItem: undefined
-    });
-  }
-
-  handleClickOutside = evt => {
-    this.setState({
-        activeMenuItem: undefined
+      activeMenuItem: undefined,
     });
   };
 
-  render () {
+  handleClickOutside = evt => {
+    this.setState({
+      activeMenuItem: undefined,
+    });
+  };
 
-    const {children, className, id, logo, pageWidth} = this.props;
+  render() {
+    const { children, className, id, logo, pageWidth } = this.props;
 
-    const wrapperClasses = classNames(
-      'wfp--main-navigation',
-      className
-    );
+    const wrapperClasses = classNames('wfp--main-navigation', className);
 
-    const listClasses = classNames(
-      'wfp--main-navigation__list',
-      {
-        'wfp--main-navigation__list--open' : this.state.openMobile,
-      }
-    );
-
+    const listClasses = classNames('wfp--main-navigation__list', {
+      'wfp--main-navigation__list--open': this.state.openMobile,
+    });
 
     return (
       <div id={id} className={wrapperClasses}>
-        <Wrapper pageWidth={pageWidth} className="wfp--main-navigation__wrapper">
+        <Wrapper
+          pageWidth={pageWidth}
+          className="wfp--main-navigation__wrapper">
           <div className="wfp--main-navigation__logo-wrapper">
             <Button
               className="wfp--main-navigation__button"
-              onClick={this.toggleMenu}
-            >
+              onClick={this.toggleMenu}>
               Menu
             </Button>
-            <div className="wfp--main-navigation__logo">
-              {logo}
-            </div>
+            <div className="wfp--main-navigation__logo">{logo}</div>
           </div>
           <ul className={listClasses}>
-             {React.Children.map(children, (child, i) => {
+            {React.Children.map(children, (child, i) => {
               return React.cloneElement(child, {
                 activeMenuItem: this.state.activeMenuItem,
                 menuItem: i,
-                onChangeSub: this.onChangeSub
-              })
+                onChangeSub: this.onChangeSub,
+              });
             })}
           </ul>
         </Wrapper>
       </div>
-      );
+    );
   }
 }
 
@@ -201,7 +186,7 @@ MainNavigation.propTypes = {
 };
 
 MainNavigation.defaultProps = {
-	pageWidth: 'narrow-full'
+  pageWidth: 'narrow-full',
 };
 
 //const MainNavigation = onClickOutside(MainNavigationEl);
