@@ -1,0 +1,75 @@
+@import '../../globals/scss/colors';
+@import '../../globals/scss/typography';
+@import '../../globals/scss/spacing';
+@import '../../globals/scss/css--reset';
+@import '../../globals/scss/import-once';
+
+@include exports('form') {
+  .#{$prefix}--fieldset {
+    @include reset;
+    margin-bottom: $spacing-xl;
+  }
+
+  .#{$prefix}--form-item {
+    @include font-family;
+    flex: 1;
+    //margin-right: $spacing-md;
+    margin-bottom: $spacing-lg;
+
+    &:last-of-type {
+      margin-right: 0;
+      margin-bottom: 0;
+    }
+  }
+
+  .#{$prefix}--label {
+    @include reset;
+    @include font-family;
+    @include typescale('zeta');
+    font-weight: $input-label-weight;
+    display: inline-block;
+    vertical-align: baseline;
+    margin-bottom: $spacing-xs;
+  }
+
+  .#{$prefix}--label .#{$prefix}--tooltip__trigger {
+    @include typescale('zeta');
+  }
+
+  .#{$prefix}--label--disabled {
+    opacity: 0.5;
+  }
+
+  input[data-invalid],
+  textarea[data-invalid],
+  select[data-invalid],
+  input.wfp--input--invalid,
+  textarea.wfp--input--invalid,
+  select.wfp--input--invalid {
+    //box-shadow: inset 0 -2px 0px 0px $support-01;
+    border-color: $support-01;
+    outline-color: $support-01;
+    ~ .#{$prefix}--form-requirement {
+      max-height: rem(200px);
+      //border-top: 2px solid $support-01;
+      position: relative;
+      top: -2px;
+    }
+  }
+
+  .#{$prefix}--form-requirement {
+    @include reset;
+    @include typescale('omega');
+    padding: $spacing-xs 0 0;
+    max-height: 0;
+    overflow: hidden;
+    font-weight: 600;
+    line-height: 1.5;
+
+    &::before {
+      content: '*';
+      display: inline-block;
+      color: $support-01;
+    }
+  }
+}

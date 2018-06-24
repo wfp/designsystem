@@ -1,0 +1,47 @@
+@import '../../globals/scss/vars';
+@import '../../globals/scss/colors';
+@import '../../globals/scss/typography';
+@import '../../globals/scss/spacing';
+@import '../../globals/scss/helper-mixins';
+@import '../../globals/scss/import-once';
+@import '../../globals/scss/css--reset';
+@import '../Form/form';
+
+@include exports('user-icon') {
+  .#{$prefix}--user {
+    display: flex;
+    align-items: center;
+  }
+
+  .#{$prefix}--user__icon {
+    @include reset;
+    width: rem(25px);
+    height: rem(25px);
+    border-radius: 50%;
+    margin-right: rem(10px);
+    @include rtl {
+      margin-left: rem(10px);
+      margin-right: inherit;
+    }
+  }
+
+  .#{$prefix}--user__icon--empty {
+    border-radius: 50%;
+    background-size: 100%;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='32' height='32'%3e%3cdefs%3e%3cpath id='a' d='M0 0H32V32H0z'/%3e%3c/defs%3e%3cg fill='none' fill-rule='evenodd'%3e%3cg%3e%3cmask id='b' fill='%23fff'%3e%3cuse xlink:href='%23a'/%3e%3c/mask%3e%3cuse fill='"+$color__navy-gray-7+"' xlink:href='%23a'/%3e%3ccircle cx='16' cy='11' r='8' fill='%23FFF' mask='url(%23b)'/%3e%3cellipse cx='16' cy='48.5' fill='%23FFF' mask='url(%23b)' rx='17' ry='31.5'/%3e%3c/g%3e%3c/g%3e%3c/svg%3e ");
+  }
+
+  .#{$prefix}--user__title--ellipsis {
+    display: inline-block;
+    max-width: 130px;
+    overflow: hidden;
+    line-height: 1.5;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  .wfp--user__title--small {
+    @include breakpoint(bp--md--major) {
+      display: none;
+    }
+  }
+}

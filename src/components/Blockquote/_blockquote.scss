@@ -1,0 +1,33 @@
+@import '../../globals/scss/vars';
+@import '../../globals/scss/colors';
+@import '../../globals/scss/typography';
+@import '../../globals/scss/spacing';
+@import '../../globals/scss/import-once';
+@import '../../globals/scss/css--reset';
+
+@include exports('blockquote') {
+  // <button> elements cannot be used as flex containers
+  .#{$prefix}--blockquote {
+    background-color: $color__navy-gray-9;
+    border-left: 5px solid $brand-01;
+    margin: $spacing-xs 0;
+  }
+
+  .#{$prefix}--blockquote__content {
+    padding: $spacing-md;
+  }
+
+  .#{$prefix}--blockquote--code {
+    .#{$prefix}--blockquote__content {
+      white-space: pre;
+      font-family: monospace;
+      line-height: 1.4;
+    }
+  }
+
+  .#{$prefix}--blockquote__title {
+    display: block;
+    font-weight: bold;
+    padding: $spacing-md $spacing-md 0 $spacing-md;
+  }
+}

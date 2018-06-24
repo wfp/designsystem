@@ -1,0 +1,50 @@
+import React from 'react';
+import { storiesOf } from '@storybook/react';
+import { withSmartKnobs } from 'storybook-addon-smart-knobs';
+
+import { Provider } from 'react-redux';
+import store from '../../internal/configureStore';
+import { Field } from 'redux-form';
+import FormWrapper from '../../internal/RfFormWrapper';
+
+import Select from './Select';
+
+const introText = `
+  Text fields enable the user to interact with and input data. A single line
+  field is used when the input anticipated by the user is a single line of
+  text as opposed to a paragraph.
+`;
+
+const email = value =>
+  value && !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value)
+    ? 'Invalid email address'
+    : undefined;
+
+storiesOf('Select', module)
+  .addDecorator(withSmartKnobs)
+  .addDecorator(story => (
+    <Provider store={store}>
+      <FormWrapper>{story()}</FormWrapper>
+    </Provider>
+  ))
+  .addWithInfo(
+    'Redux Form Select',
+    `
+      ${introText}
+      The example below shows an enabled Text Input component. The default type is 'text' and its
+      value can be either 'string' or 'number'.
+    `,
+    () => (
+      <Field
+        component={Select}
+        labelText="Label"
+        name="Input"
+        placeholder="Placeholder here"
+        validate={email}>
+        <option />
+        <option value="#ff0000">Red</option>
+        <option value="#00ff00">Green</option>
+        <option value="#0000ff">Blue</option>
+      </Field>
+    )
+  );

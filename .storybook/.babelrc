@@ -1,0 +1,19 @@
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "modules": false,
+        "targets": {
+          "browsers": [
+            "last 1 version",
+            "ie >= 11"
+          ]
+        }
+      }
+    ],
+    "@babel/preset-react",
+    "@babel/preset-stage-1"
+  ],
+  "plugins": ["react-docgen"]
+}

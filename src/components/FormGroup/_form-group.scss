@@ -1,0 +1,16 @@
+@import '../../globals/scss/vars';
+@import '../../globals/scss/colors';
+@import '../../globals/scss/mixins';
+@import '../../globals/scss/typography';
+@import '../../globals/scss/spacing';
+@import '../../globals/scss/import-once';
+@import '../../globals/scss/css--typography';
+
+@include exports('formgroup') {
+  .#{$prefix}--form-group__title {
+    @include typescale('gamma');
+    @include font-family;
+    font-weight: 600;
+    margin-bottom: $spacing-md;
+  }
+}

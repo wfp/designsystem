@@ -1,0 +1,127 @@
+//-----------------------------
+// Slider
+//-----------------------------
+
+@import '../../globals/scss/vars';
+@import '../../globals/scss/colors';
+@import '../../globals/scss/spacing';
+@import '../../globals/scss/helper-mixins';
+@import '../../globals/scss/layer';
+@import '../../globals/scss/typography';
+@import '../../globals/scss/layout';
+@import '../../globals/scss/import-once';
+@import '../Form/form';
+@import '../TextInput/text-input';
+
+@include exports('slider') {
+  .#{$prefix}--slider-container {
+    max-width: rem(600px);
+    min-width: rem(200px);
+    display: flex;
+    align-items: center;
+    user-select: none;
+
+    @media screen and (min-width: 768px) {
+      min-width: rem(350px);
+    }
+  }
+
+  .#{$prefix}--slider {
+    position: relative;
+    width: 100%;
+    margin: 0 $spacing-md;
+  }
+
+  .#{$prefix}--slider--disabled {
+    opacity: 0.5;
+  }
+
+  .#{$prefix}--slider--disabled .#{$prefix}--slider__thumb {
+    &:hover {
+      transform: translate(-50%, -50%);
+    }
+    &:focus {
+      box-shadow: none;
+      outline: none;
+    }
+    &:active {
+      background: $brand-01;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  .#{$prefix}--slider__range-label {
+    @include typescale('zeta');
+    color: $text-02;
+
+    &:last-of-type {
+      margin-right: $spacing-md;
+    }
+  }
+
+  .#{$prefix}--slider__track {
+    position: absolute;
+    width: 100%;
+    height: rem(4px);
+    background: $ui-05;
+    cursor: pointer;
+    transform: translate(0%, -50%);
+  }
+
+  .#{$prefix}--slider__filled-track {
+    position: absolute;
+    width: 100%;
+    height: rem(4px);
+    background: $brand-01;
+    transform-origin: left;
+    pointer-events: none;
+    transform: translate(0%, -50%);
+  }
+
+  .#{$prefix}--slider__thumb {
+    position: absolute;
+    height: rem(24px);
+    width: rem(24px);
+    background: $brand-01;
+    border-radius: 50%;
+    top: 0;
+    transform: translate(-50%, -50%);
+    transition: transform 100ms $carbon--standard-easing,
+      background 100ms $carbon--standard-easing;
+    cursor: pointer;
+    outline: none;
+
+    &--clicked {
+      transition: left $transition--base $carbon--standard-easing;
+    }
+
+    &:hover {
+      transform: translate(-50%, -50%) scale(1.05);
+    }
+    &:focus {
+      @include focus-outline('blurred');
+    }
+    &:active {
+      background: darken($brand-01, 5%);
+      transform: translate(-50%, -50%) scale(1.25);
+    }
+  }
+
+  .#{$prefix}--slider__input {
+    display: none;
+  }
+
+  .#{$prefix}--slider-text-input {
+    width: rem(60px);
+    min-width: 0;
+    height: 2rem;
+    padding: 0;
+    text-align: center;
+    font-weight: 600;
+    -moz-appearance: textfield;
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      display: none;
+    }
+  }
+}

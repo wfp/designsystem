@@ -1,0 +1,156 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ModalWrapper should render 1`] = `
+<ModalWrapper
+  buttonTriggerText="Test Modal"
+  disabled={false}
+  handleSubmit={[MockFunction]}
+  id="modal"
+  modalHeading="Transactional Modal"
+  modalLabel="Test Modal Label"
+  primaryButtonText="Save"
+  secondaryButtonText="Cancel"
+  shouldCloseAfterSubmit={true}
+  triggerButtonKind="primary"
+>
+  <div
+    onKeyDown={[Function]}
+    role="presentation"
+  >
+    <Button
+      disabled={false}
+      iconDescription="Provide icon description if icon is used"
+      kind="primary"
+      onClick={[Function]}
+      small={false}
+      tabIndex={0}
+      type="button"
+    >
+      <button
+        className="wfp--btn wfp--btn--primary"
+        disabled={false}
+        onClick={[Function]}
+        tabIndex={0}
+        type="button"
+      >
+        Test Modal
+      </button>
+    </Button>
+    <Modal
+      iconDescription="close the modal"
+      id="modal"
+      modalHeading="Transactional Modal"
+      modalLabel="Test Modal Label"
+      onKeyDown={[Function]}
+      onRequestClose={[Function]}
+      onRequestSubmit={[Function]}
+      open={false}
+      passiveModal={false}
+      primaryButtonDisabled={false}
+      primaryButtonText="Save"
+      secondaryButtonText="Cancel"
+    >
+      <div
+        className="wfp--modal wfp--modal-tall"
+        id="modal"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="presentation"
+        tabIndex={-1}
+      >
+        <div
+          className="wfp--modal-container"
+          role="dialog"
+        >
+          <div
+            className="wfp--modal-header"
+          >
+            <h4
+              className="wfp--modal-header__label"
+            >
+              Test Modal Label
+            </h4>
+            <h2
+              className="wfp--modal-header__heading"
+            >
+              Transactional Modal
+            </h2>
+            <button
+              className="wfp--modal-close"
+              onClick={[Function]}
+              type="button"
+            >
+              <Icon
+                className="wfp--modal-close__icon"
+                description="close the modal"
+                name="close"
+              >
+                <div
+                  className="wfp--icon wfp--modal-close__icon"
+                  description="close the modal"
+                  name="close"
+                />
+              </Icon>
+            </button>
+          </div>
+          <div
+            className="wfp--modal-content"
+          >
+            <p
+              className="wfp--modal-content__text"
+            >
+              Text
+            </p>
+          </div>
+          <div
+            className="wfp--modal-footer"
+          >
+            <div
+              className="wfp--modal__buttons-container"
+            >
+              <Button
+                disabled={false}
+                iconDescription="Provide icon description if icon is used"
+                kind="secondary"
+                onClick={[Function]}
+                small={false}
+                tabIndex={0}
+                type="button"
+              >
+                <button
+                  className="wfp--btn wfp--btn--secondary"
+                  disabled={false}
+                  onClick={[Function]}
+                  tabIndex={0}
+                  type="button"
+                >
+                  Cancel
+                </button>
+              </Button>
+              <Button
+                disabled={false}
+                iconDescription="Provide icon description if icon is used"
+                kind="primary"
+                onClick={[Function]}
+                small={false}
+                tabIndex={0}
+                type="button"
+              >
+                <button
+                  className="wfp--btn wfp--btn--primary"
+                  disabled={false}
+                  onClick={[Function]}
+                  tabIndex={0}
+                  type="button"
+                >
+                  Save
+                </button>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </Modal>
+  </div>
+</ModalWrapper>
+`;

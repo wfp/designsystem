@@ -1,0 +1,117 @@
+//-----------------------------
+// Select
+//-----------------------------
+
+@import '../../globals/scss/vars';
+@import '../../globals/scss/colors';
+@import '../../globals/scss/css--reset';
+@import '../../globals/scss/helper-mixins';
+@import '../../globals/scss/typography';
+@import '../../globals/scss/spacing';
+@import '../../globals/scss/import-once';
+@import '../Form/form';
+
+@include exports('select') {
+  .#{$prefix}--select {
+    @include reset;
+    position: relative;
+    display: block;
+    /*&:after {
+      content: "";
+      display: block;
+
+      position: absolute;
+      right: 0.6em;
+      top: 50%;
+      margin-top: rem(-3px);
+      width: rem(12px);
+      height: rem(8px);
+      pointer-events: none;
+    }*/
+  }
+
+  .#{$prefix}--select-input {
+    @include font-family;
+    @include typescale('zeta');
+    appearance: none;
+    display: block;
+    width: 100%;
+    height: rem(40px);
+    padding: 0 $spacing-xs;
+    color: $text-01;
+    background-color: $field-01;
+    border: $input-border;
+    border-radius: 0;
+    cursor: pointer;
+    position: relative;
+    line-height: 1em;
+
+    background-size: 10px auto;
+    background-position: calc(100% - 7px) calc(50% + 2px);
+    background-repeat: no-repeat;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10' width='10' height='10' %3e%3cpath fill='"+$brand-01+"' d='M10 0L5 5 0 0z'%3e%3c/path%3e%3c/svg%3e");
+
+    // Hide default select arrow in IE10+
+    &::-ms-expand {
+      display: none;
+    }
+
+    &:focus {
+      @include focus-outline('border');
+    }
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
+
+  /*.#{$prefix}--select__arrow {
+    fill: $brand-01;
+    position: absolute;
+    right: 1rem;
+    top: 1.175rem;
+    width: rem(10px);
+    height: rem(5px);
+    pointer-events: none;
+  }*/
+
+  .#{$prefix}--select-optgroup,
+  .#{$prefix}--select-option {
+    color: $text-01; // For the options to show in IE11
+  }
+
+  // Override some Firefox user-agent styles
+  @-moz-document url-prefix() {
+    .#{$prefix}--select-option {
+      background-color: $ui-01;
+      color: $text-01;
+    }
+
+    .#{$prefix}--select-optgroup {
+      color: $text-01;
+    }
+  }
+}
+
+.#{$prefix}--select--inline {
+  display: flex;
+  align-items: center;
+
+  .#{$prefix}--label {
+    white-space: nowrap;
+    margin: 0 $spacing-xs 0 0;
+    font-weight: 400;
+  }
+
+  .#{$prefix}--select-input {
+    background-color: transparent;
+    color: $brand-01;
+    font-weight: 600;
+
+    &:disabled ~ * {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
+}

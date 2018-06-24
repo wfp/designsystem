@@ -1,0 +1,141 @@
+//-----------------------------
+// Modules
+//-----------------------------
+
+@import '../../globals/scss/vars';
+@import '../../globals/scss/colors';
+@import '../../globals/scss/helper-mixins';
+@import '../../globals/scss/layer';
+@import '../../globals/scss/typography';
+@import '../../globals/scss/import-once';
+@import '../../globals/scss/css--reset';
+@import '../../globals/scss/css--typography';
+
+@include exports('modules') {
+  .#{$prefix}--module__background {
+    background-color: $ui-02;
+  }
+  .#{$prefix}--module {
+    @include reset;
+    @include font-family;
+    display: flex;
+    flex-direction: column;
+    padding: rem(10px);
+    //flex: 1 0 auto;
+    margin: 0;
+
+    .#{$prefix}--module__inner {
+      @include layer('raised');
+      box-shadow: 0px 1px 4px rgba(#000000, 0.05),
+        0px 25px 30px -15px rgba(#000000, 0.1);
+      background-color: $ui-01;
+      border-radius: 3px;
+      border: 1px solid transparent;
+    }
+
+    .#{$prefix}--module__header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 1.5rem;
+      border-bottom: 1px solid $ui-04;
+    }
+
+    .#{$prefix}--module__footer {
+      display: flex;
+      align-items: center;
+      padding: 0.5rem 1rem;
+      border-top: 1px solid $ui-04;
+      @include typescale('zeta');
+    }
+
+    .#{$prefix}--module__title {
+      @include typescale('zeta');
+      @include font-smoothing;
+      letter-spacing: 0;
+      font-weight: 600;
+      color: $text-01;
+    }
+
+    .#{$prefix}--module__content {
+      /*display: flex;
+      flex-direction: column;
+      align-items: flex-start;*/
+      flex: 3;
+      padding: 1.5rem;
+      /*p {
+        @include typescale('zeta');
+      }*/
+    }
+
+    // > IE11 TODO: Remove when IE11 support dropped
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+      //_:-ms-fullscreen,
+      //:root  {
+    }
+
+    // Edge
+    /*@supports (-ms-accelerator:true) {
+      .#{$prefix}--module__content {
+        flex: 3;
+      }
+    }*/
+
+    .#{$prefix}--module__content--centered {
+      align-items: center;
+      justify-content: center;
+      padding: 5rem;
+    }
+
+    .#{$prefix}--module__content--scrollable {
+      max-height: rem(300px);
+      overflow-y: scroll;
+      margin-bottom: 2rem;
+    }
+  }
+
+  .#{$prefix}--module--dark {
+    .#{$prefix}--module__inner {
+      background: $brand-03;
+      color: $ui-01;
+    }
+    .#{$prefix}--module__header {
+      border-bottom-color: $brand-02;
+    }
+    .#{$prefix}--module__footer {
+      border-top-color: $brand-02;
+    }
+    .#{$prefix}--module__title {
+      color: $ui-01;
+    }
+  }
+}
+
+.#{$prefix}--module--no-margin {
+  padding: 0;
+}
+
+// > IE11 TODO: Remove when IE11 support dropped
+_:-ms-fullscreen,
+:root {
+  .#{$prefix}--module__inner {
+    position: relative;
+  }
+
+  .#{$prefix}--module__content {
+    padding-bottom: 4rem;
+    overflow: hidden;
+  }
+
+  // Footer at bottom
+  .#{$prefix}--module__footer {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  .#{$prefix}--module__content {
+    flex: inherit;
+  }
+}

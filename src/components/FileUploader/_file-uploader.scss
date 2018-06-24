@@ -1,0 +1,100 @@
+@import '../../globals/scss/vars';
+@import '../../globals/scss/colors';
+@import '../../globals/scss/typography';
+@import '../../globals/scss/spacing';
+@import '../../globals/scss/css--reset';
+@import '../../globals/scss/helper-mixins';
+@import '../../globals/scss/import-once';
+@import '../../globals/scss/css--typography';
+@import '../Button/button';
+@import '../Form/form';
+@import '../Loading/loading';
+
+@include exports('file-uploader') {
+  .#{$prefix}--file {
+    width: 100%;
+  }
+
+  .#{$prefix}--file-input {
+    @include hidden;
+  }
+
+  .#{$prefix}--file-btn {
+    display: inline-flex;
+    margin: 0;
+  }
+
+  .#{$prefix}--label-description {
+    @include reset;
+    @include typescale('zeta');
+    @include line-height('body');
+    color: $text-02;
+    margin-bottom: $spacing-lg;
+  }
+
+  .#{$prefix}--file-container {
+    display: block;
+    width: 100%;
+    margin-top: $spacing-lg;
+  }
+
+  .#{$prefix}--file__selected-file {
+    @include text-overflow(300px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: rem(30px);
+    background-color: $field-01;
+    padding: 0 $spacing-md;
+    margin-bottom: $spacing-md;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .#{$prefix}--file-filename {
+    @include typescale('omega');
+    @include text-overflow(100%);
+    display: inline-flex;
+    align-items: center;
+    color: $text-01;
+    margin-right: $spacing-md;
+    height: 1.875rem;
+  }
+
+  .#{$prefix}--file__state-container {
+    display: flex;
+    align-items: center;
+
+    .#{$prefix}--loading {
+      width: 1.125rem;
+      height: 1.125rem;
+      margin-right: $spacing-xs;
+    }
+
+    .#{$prefix}--loading__svg {
+      stroke: $ui-05;
+    }
+  }
+
+  .#{$prefix}--file__state-container .#{$prefix}--file-close,
+  .#{$prefix}--file__state-container .#{$prefix}--file-complete {
+    width: 1rem;
+    height: 1rem;
+    fill: $text-01;
+    cursor: pointer;
+
+    &:focus {
+      @include focus-outline('border');
+    }
+  }
+
+  .#{$prefix}--file__state-container .#{$prefix}--file-close {
+    fill: $ui-05;
+  }
+
+  .#{$prefix}--file__state-container .#{$prefix}--file-complete {
+    fill: $support-02;
+  }
+}

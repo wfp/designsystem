@@ -1,0 +1,235 @@
+//-----------------------------
+// Search
+//-----------------------------
+
+@import '../../globals/scss/vars';
+@import '../../globals/scss/colors';
+@import '../../globals/scss/spacing';
+@import '../../globals/scss/layout';
+@import '../../globals/scss/helper-mixins';
+@import '../../globals/scss/css--reset';
+@import '../../globals/scss/typography';
+@import '../../globals/scss/layout';
+@import '../../globals/scss/import-once';
+
+@include exports('search') {
+  .#{$prefix}--search {
+    display: flex;
+    position: relative;
+    width: 100%;
+  }
+
+  .#{$prefix}--search .#{$prefix}--label {
+    @include hidden;
+  }
+
+  .#{$prefix}--search-input {
+    @include reset;
+    @include font-family;
+    appearance: none;
+    border: $input-border;
+    background-color: $field-01;
+    color: $text-01;
+    font-weight: 600;
+    padding: 0 $spacing-2xl;
+    text-overflow: ellipsis;
+    width: 100%;
+
+    &:focus {
+      @include focus-outline('none');
+    }
+
+    &::placeholder {
+      @include placeholder-colors;
+      font-weight: 400;
+    }
+
+    &::-ms-clear {
+      display: none;
+    }
+  }
+
+
+  .#{$prefix}--search--xs .#{$prefix}--search-input {
+    padding: 0 $spacing-lg;
+    @include typescale('zeta');
+    height: rem(20px);
+    line-height: rem(20px);
+    border-radius: 2px;
+    border: none;
+    transition: max-width 0.2s;
+    @include breakpoint(bp--md--major) {
+      max-width: rem(150px);
+      &:focus {
+        max-width: 230px;
+      }
+    }
+  }
+
+  .#{$prefix}--search--sm .#{$prefix}--search-input {
+    padding: 0 $spacing-xl;
+    @include typescale('zeta');
+    height: rem(30px);
+    line-height: rem(30px);
+    border-radius: 2px;
+    border: none;
+    transition: max-width 0.2s;
+    @include breakpoint(bp--md--major) {
+      max-width: rem(150px);
+      &:focus {
+        max-width: 230px;
+      }
+    }
+  }
+
+  .#{$prefix}--search--md .#{$prefix}--search-input {
+    padding: 0 $spacing-xl;
+    width: 100%;
+
+    @include typescale('zeta');
+    height: rem(30px);
+    border-radius: 2px;
+  }
+
+  .#{$prefix}--search--lg .#{$prefix}--search-input {
+    @include typescale('zeta');
+    height: rem(40px);
+  }
+
+  .#{$prefix}--search-magnifier,
+  .#{$prefix}--search-close {
+    position: absolute;
+    height: 0.9rem;
+    width: 0.9rem;
+    top: calc(50% - 0.43rem);
+  }
+
+  .#{$prefix}--search-magnifier {
+    left: 0.75rem;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='15' height='15'%3e%3cg fill='none' fill-rule='evenodd'%3e%3cg/%3e%3cg fill='"+$text-03+"'%3e%3cpath d='M5.77995042,1.92665014 C7.89926558,1.92665014 9.63325071,3.66063527 9.63325071,5.77995042 C9.63325071,7.89926558 7.89926558,9.63325071 5.77995042,9.63325071 C3.66063527,9.63325071 1.92665014,7.89926558 1.92665014,5.77995042 C1.92665014,3.66063527 3.66063527,1.92665014 5.77995042,1.92665014 Z M10.4492308,9.17643859 L15.0048589,13.7320667 L13.7320667,15.0048589 L9.17643859,10.4492308 C8.22131833,11.1470307 7.04650884,11.5599008 5.77995042,11.5599008 C2.60097769,11.5599008 0,8.95892316 0,5.77995042 C0,2.60097769 2.60097769,0 5.77995042,0 C8.95892316,0 11.5599008,2.60097769 11.5599008,5.77995042 C11.5599008,7.04650884 11.1470307,8.22131833 10.4492308,9.17643859 Z'/%3e%3c/g%3e%3c/g%3e%3c/svg%3e ");
+
+    @include rtl {
+      right: 0.75em;
+    }
+    fill: $ui-05;
+  }
+
+  .#{$prefix}--search--md .#{$prefix}--search-magnifier {
+    left: 0.3rem;
+    @include rtl {
+      right: 0.3em;
+    }
+  }
+
+
+  .#{$prefix}--search--xs .#{$prefix}--search-magnifier {
+    left: 0.5rem;
+    height: 0.8rem;
+    width: 0.8rem;
+    @include rtl {
+      right: 0.5rem;
+    }
+  }
+
+  .#{$prefix}--search--sm .#{$prefix}--search-magnifier {
+    left: 0.45rem;
+    @include rtl {
+      right: 0.45rem;
+    }
+  }
+
+  .#{$prefix}--search-close {
+    transition: $transition--base;
+    fill: $ui-05;
+    cursor: pointer;
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .#{$prefix}--search--md .#{$prefix}--search-close {
+    right: 0.4rem;
+    @include rtl {
+      left: 0.4em;
+      right: auto;
+    }
+  }
+
+  .#{$prefix}--search--xs .#{$prefix}--search-close {
+    right: 0.35rem;
+    @include rtl {
+      left: 0.35em;
+      right: auto;
+    }
+  }
+
+  .#{$prefix}--search--sm .#{$prefix}--search-close {
+    right: 0.35rem;
+    @include rtl {
+      left: 0.35em;
+      right: auto;
+    }
+  }
+
+  .#{$prefix}--search--lg .#{$prefix}--search-close {
+    right: rem(100px);
+    @include rtl {
+      left: rem(100px);
+      right: auto;
+    }
+  }
+
+  .#{$prefix}--search--lg .#{$prefix}--search-close:last-child {
+    right: rem(12px);
+    @include rtl {
+      left: rem(12px);
+      right: auto;
+    }
+  }
+
+  .#{$prefix}--search-button {
+    @include reset;
+    border: 0;
+    transition: $transition--base;
+    height: rem(40px);
+    width: rem(40px);
+    min-width: rem(40px);
+    margin-left: $spacing-2xs;
+    background-color: $ui-01;
+    position: relative;
+    padding: 0;
+  }
+
+  /*.#{$prefix}--search-button svg {
+    position: relative;
+    top: -1px;
+    box-sizing: border-box;
+    vertical-align: middle;
+    transition: $transition--base;
+    fill: $brand-01;
+    height: 1rem;
+    width: 1rem;
+  }*/
+
+  .#{$prefix}--search-button:hover,
+  .#{$prefix}--search-button:focus {
+    cursor: pointer;
+    background-color: $brand-01;
+    outline: 1px solid transparent;
+  }
+
+  .#{$prefix}--search-button:hover svg,
+  .#{$prefix}--search-button:focus svg {
+    fill: $ui-01;
+  }
+
+  .#{$prefix}--search-close--hidden {
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  .#{$prefix}--search-view--hidden {
+    display: none;
+  }
+}

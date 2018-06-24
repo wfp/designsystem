@@ -1,0 +1,52 @@
+//-----------------------------
+// Wrapper
+//-----------------------------
+
+@import '../../globals/scss/vars';
+@import '../../globals/scss/colors';
+@import '../../globals/scss/helper-mixins';
+@import '../../globals/scss/layout';
+@import '../../globals/scss/typography';
+@import '../../globals/scss/css--reset';
+@import '../../globals/scss/css--typography';
+
+@include exports('wrapper') {
+  .#{$prefix}--wrapper {
+    margin: auto;
+    width: 100%;
+    padding-left: $spacing-md;
+    padding-right: $spacing-md;
+    @include breakpoint(bp--md--major) {
+      padding-left: $spacing-md;
+      padding-right: $spacing-md;
+    }
+  }
+
+  .#{$prefix}--wrapper--narrow {
+    max-width: 1200px;
+  }
+
+  .#{$prefix}--wrapper--spacing-md {
+    padding-top: $spacing-md;
+    padding-bottom: $spacing-md;
+  }
+
+  .#{$prefix}--wrapper--background-lighter {
+    background: $color__navy-gray-9;
+  }
+
+  .#{$prefix}--wrapper--narrower {
+    max-width: 1000px;
+  }
+
+  .#{$prefix}--wrapper--narrowest {
+    max-width: 500px;
+  }
+
+  @include breakpointMax(bp--md--major) {
+    .#{$prefix}--wrapper--mobile-full {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+}

@@ -1,9 +1,0 @@
-// Module: Floats
-// Project: WFP UI
-
-@mixin float($dir) {
-  float: $dir;
-  @if $dir neq "none" {
-    display: inline;
-  }
-}
