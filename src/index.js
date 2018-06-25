@@ -184,6 +184,6 @@ export UnorderedList from './components/UnorderedList';
 */
 export User from './components/User';
 
-export { Unit, unitCalc } from './components/Unit';
+export Unit from './components/Unit';
 
 export Wrapper from './components/Wrapper';

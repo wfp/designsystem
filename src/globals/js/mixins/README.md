@@ -6,14 +6,14 @@ Carbon component mixins, based on [Subclass Factory Pattern](https://github.com/
 
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
-- [Component lifecycle (`create-component.js`)](#component-lifecycle-create-componentjs)
-  - [Creation](#creation)
-  - [Clean-up](#clean-up)
-  - [Component registry](#component-registry)
-- [Sugar layers for component instantiation](#sugar-layers-for-component-instantiation)
-  - [Searching for DOM nodes to intantiate components on (`init-component-by-search.js`)](#searching-for-dom-nodes-to-intantiate-components-on-init-component-by-searchjs)
-  - [Lazily instantiating a component upon an event on a root element (`init-component-by-event.js`)](#lazily-instantiating-a-component-upon-an-event-on-a-root-element-init-component-by-eventjs)
-  - [Lazily instantiating a component upon an event on a launcher button (`init-component-by-launcher.js`)](#lazily-instantiating-a-component-upon-an-event-on-a-launcher-button-init-component-by-launcherjs)
+* [Component lifecycle (`create-component.js`)](#component-lifecycle-create-componentjs)
+  * [Creation](#creation)
+  * [Clean-up](#clean-up)
+  * [Component registry](#component-registry)
+* [Sugar layers for component instantiation](#sugar-layers-for-component-instantiation)
+  * [Searching for DOM nodes to intantiate components on (`init-component-by-search.js`)](#searching-for-dom-nodes-to-intantiate-components-on-init-component-by-searchjs)
+  * [Lazily instantiating a component upon an event on a root element (`init-component-by-event.js`)](#lazily-instantiating-a-component-upon-an-event-on-a-root-element-init-component-by-eventjs)
+  * [Lazily instantiating a component upon an event on a launcher button (`init-component-by-launcher.js`)](#lazily-instantiating-a-component-upon-an-event-on-a-launcher-button-init-component-by-launcherjs)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 

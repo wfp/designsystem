@@ -7,7 +7,7 @@ import YearMonthCalc from './YearMonthCalc';
 
 // Generate USD
 export const Usd = props => {
-  return currencyCalc(props, 'USD');
+  return currencyCalc(props, '', 'US$');
 };
 
 // Generate Partners
@@ -22,7 +22,7 @@ export const Partners = props => {
 
 // Generate MT
 export const Mt = props => {
-  return currencyCalc(props, 'Partners', undefined, true);
+  return currencyCalc(props, 'MT', undefined, true);
 };
 
 // Generate MT

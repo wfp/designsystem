@@ -17,23 +17,17 @@
     $gridWidth: null;
     $totalMargin: 0;
 
-    @if map-get($breakpoint, margin) !=
-      0 and
-      map-get($breakpoint, margin) !=
-      null
-    {
+    @if map-get($breakpoint, margin) != 0 and map-get($breakpoint, margin) != null {
       $totalMargin: map-get($breakpoint, margin) * 2;
     }
 
-    @if isSameBreakpoint($breakpoint, $last) and map-get($last, margin) != null
-    {
+    @if isSameBreakpoint($breakpoint, $last) and map-get($last, margin) != null {
       $totalMargin: map-get($last, margin) * 2;
     }
 
     @if isSameBreakpoint($breakpoint, $last) and $totalMargin != 0 {
       $columnSize: calc(
-        (#{map-get($breakpoint, breakpoint) * 1rem} - #{$totalMargin}) /
-          #{$columnQuantity}
+         (#{map-get($breakpoint, breakpoint) * 1rem} - #{$totalMargin}) / #{$columnQuantity}
       );
     } @else if isSameBreakpoint($breakpoint, $last) {
       $columnSize: calc(
@@ -52,8 +46,7 @@
       &.#{$prefix}-grid--fixed-columns {
         grid-template-columns: repeat(
           auto-fill,
-          map-get($breakpoint, breakpoint) *
-            1rem /
+          map-get($breakpoint, breakpoint) * 1rem /
             map-get($breakpoint, columns)
         );
       }
@@ -88,9 +81,7 @@
     // Ex: Make sure .yourPrefix-grid__col--sm--2 has correct sizes in the lg media query
     @each $currentName, $currentBreakpoint in $breakpoints {
       // Check if current breakpoint is not bigger than current media query
-      @if map-get($breakpoint, breakpoint) >=
-        map-get($currentBreakpoint, breakpoint)
-      {
+      @if map-get($breakpoint, breakpoint) >= map-get($currentBreakpoint, breakpoint) {
         $columnAmount: map-get($currentBreakpoint, columns);
 
         // Loop each column in current breakpoint for new class
@@ -110,20 +101,19 @@
           );
 
           $maxColumnSize: calc(
-            #{map-get($last, breakpoint)}rem /
-              #{map-get($currentBreakpoint, columns)} *
-              #{$i}
+            #{map-get($last, breakpoint)}rem / #{map-get(
+                $currentBreakpoint,
+                columns
+              )} * #{$i}
           );
 
           @if map-get($last, margin) > 0 {
             $maxColumnSize: calc(
-              (
-                  #{map-get($last, breakpoint)}rem -
-                    #{map-get($last, margin)} *
+
+                (
+                  #{map-get($last, breakpoint)}rem - #{map-get($last, margin)} *
                     2
-                ) /
-                #{map-get($currentBreakpoint, columns)} *
-                #{$i}
+                ) / #{map-get($currentBreakpoint, columns)} * #{$i}
             );
           }
 
@@ -184,11 +174,7 @@
   $onlyCorrectionFound: false;
   @for $i from length($breakpoints) * -1 through -1 {
     $currentBreakpoint: nth($breakpoints, $i);
-    @if map-get(nth($currentBreakpoint, 2), breakpoint) <
-      map-get($breakpoint, breakpoint) and
-      $onlyCorrectionFound ==
-      false
-    {
+    @if map-get(nth($currentBreakpoint, 2), breakpoint) < map-get($breakpoint, breakpoint) and $onlyCorrectionFound == false {
       .#{$prefix}-grid__col--#{nth($currentBreakpoint, 1)}--0--only {
         display: flex;
       }
@@ -210,8 +196,7 @@
 // Set the width of a grid’s margin
 // and allow for a child to break out of the grid’s margin
 @mixin gridMargin($breakpoint, $last) {
-  @if map-get($breakpoint, margin) != null and map-get($breakpoint, margin) > 0
-  {
+  @if map-get($breakpoint, margin) != null and map-get($breakpoint, margin) > 0 {
     $margin: #{map-get($breakpoint, margin)};
 
     .#{$prefix}-container {

@@ -1,26 +1,24 @@
 // Light UI Color Scheme
-$color__main: #0A6EB4 !default;
-$color__blue-51: lighten($color__main,3) !default;
-$color__main-darker: darken($color__main,3) !default;
+$color__main: #0a6eb4 !default;
+$color__blue-51: lighten($color__main, 3) !default;
+$color__main-darker: darken($color__main, 3) !default;
 $color__gray-1: #dfe3e6 !default;
 $color__gray-2: #f0f3f6 !default;
 $color__gray-3: #f5f7fa !default;
 $color__white: #fbfcfc !default;
 
-
 // UI Main Colors (see http://brand.manuals.wfp.org/en/core-elements/colours/colour-palette/)
 
 $color__navy: #19486a !default;
 $color__aqua: #26bde2 !default;
-$color__dark-green: #336D37 !default;
-$color__lime: #8AD220 !default;
-$color__yellow: #F7B825 !default;
-$color__ochre: #D29536 !default;
+$color__dark-green: #336d37 !default;
+$color__lime: #8ad220 !default;
+$color__yellow: #f7b825 !default;
+$color__ochre: #d29536 !default;
 $color__orange: #fd6925 !default;
 $color__red: #c5192d !default;
-$color__dark-red: #8D0B33 !default;
+$color__dark-red: #8d0b33 !default;
 $color__magenta: #dd1367 !default;
-
 
 // UI Color Scheme
 $color__blue-20: mix(white, $color__main, 75%) !default; // #7cc7ff
@@ -28,7 +26,7 @@ $color__blue-30: mix(white, $color__main, 30%) !default; // #5aaafa
 $color__blue-40: mix(white, $color__main, 20%) !default; // lighten($color__blue-51,5)
 $color__blue-50: mix(black, $color__main, 3%) !default; // #4178be
 $color__blue-60: mix(black, $color__main, 20%) !default; //darken($color__main,10)
-$color__blue-90: #152935  !default; //  #152935 
+$color__blue-90: #152935 !default; //  #152935
 $color__navy-gray-1: #0f212e !default;
 $color__navy-gray-2: #20343e !default;
 $color__navy-gray-3: #2d3f49 !default;
@@ -54,10 +52,10 @@ $color__green-30: mix(white, $color__dark-green, 40%) !default;
 $color__green-40: mix(white, $color__dark-green, 10%) !default;
 $color__green-50: mix(white, $color__dark-green, 5%) !default;
 $color__green-60: mix(black, $color__dark-green, 10%) !default;
-$color__yellow-10: mix(white, $color__yellow, 55%) !default
-$color__yellow-20: mix(white, $color__yellow, 50%) !default
-$color__yellow-30: mix(white, $color__yellow, 40%) !default
-$color__yellow-60: mix(black, $color__yellow, 10%) !default
+$color__yellow-10: mix(white, $color__yellow, 55%) !default;
+$color__yellow-20: mix(white, $color__yellow, 50%) !default;
+$color__yellow-30: mix(white, $color__yellow, 40%) !default;
+$color__yellow-60: mix(black, $color__yellow, 10%) !default;
 $color__orange-10: mix(white, $color__orange, 55%) !default;
 $color__orange-20: mix(white, $color__orange, 50%) !default;
 $color__orange-30: mix(white, $color__orange, 40%) !default;

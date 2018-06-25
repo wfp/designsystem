@@ -91,10 +91,12 @@ export default class ModalWrapper extends React.Component {
       onRequestSubmit: this.handleOnRequestSubmit,
     };
 
-    const customButtonEl = customButton ? React.cloneElement(customButton, {
-      onClick: this.handleOpen,
-      kind: triggerButtonKind,
-    }) : undefined;
+    const customButtonEl = customButton
+      ? React.cloneElement(customButton, {
+          onClick: this.handleOpen,
+          kind: triggerButtonKind,
+        })
+      : undefined;
 
     return (
       <div

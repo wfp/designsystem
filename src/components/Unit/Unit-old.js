@@ -281,7 +281,7 @@ export const PercentageCalc = (
   var valueRe = false;
   if ((value && value !== 'NaN') || showZero) {
     if (from)
-      valueRe = Math.round((value / from) * 100 * decimalVal) / decimalVal;
+      valueRe = Math.round(value / from * 100 * decimalVal) / decimalVal;
     else valueRe = Math.round(value * decimalVal) / decimalVal;
   }
   if (valueRe !== false && isShift) {

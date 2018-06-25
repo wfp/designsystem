@@ -38,10 +38,10 @@ const MonthYearCalc = props => {
 
 // Format YYYYMM / from 201709  => Sep 2017
 export const YearMonthCalc = props => {
-  const { setup } = props;
+  const { svg } = props;
   const value = MonthYearCalc(props);
 
-  if (setup.svg) {
+  if (svg) {
     return SvgUnit({ value: value.monthName + ' ' + value.year }, props);
   }
 
