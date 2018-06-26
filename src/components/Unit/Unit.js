@@ -19,6 +19,7 @@ import PropTypes from 'prop-types';
 
 import SimpleCalc from './SimpleCalc';
 import SvgUnit from './SvgUnit';
+import StringUnit from './StringUnit';
 // All Unit Components together in <Unit type="Unitname" />
 
 export const scaleLookup = {
@@ -39,17 +40,20 @@ export const scaleLookup = {
   },
 };
 
-export const currencyCalc = (props, after, before, exact, afterSingular) => {
+export const currencyCalc = (props, after, before, afterSingular) => {
   const {
     children,
     input,
-    extension,
+    output,
     maximumSignificantDigits,
+    minimumFractionDigits,
     maximumFractionDigits,
     calcOnly,
+    string,
     svg,
     hideZero,
   } = props;
+
 
   // Remove commas
   var value =
@@ -64,38 +68,40 @@ export const currencyCalc = (props, after, before, exact, afterSingular) => {
       ? scaleLookup[input].pow * value
       : value;
 
-  // Extension
-  const extensionCalc =
-    extension && scaleLookup[extension] ? scaleLookup[extension] : undefined;
+  // output
+  const outputCalc =
+    output && scaleLookup[output] ? scaleLookup[output] : undefined;
 
-  value = value !== 0 && extension ? value / extensionCalc.pow : value;
+  value = value !== 0 && output ? value / outputCalc.pow : value;
 
-  // Convert to Locale String
-  value = value.toLocaleString('en-EN', {
-    minimumFractionDigits: exact
+  const toLocalStringConfig = {
+    //maximumSignificantDigits: maximumSignificantDigits,
+    minimumFractionDigits: maximumFractionDigits === 0
       ? 0
-      : maximumSignificantDigits
-        ? maximumSignificantDigits
-        : extensionCalc && extensionCalc.defaultmaximumFractionDigits
-          ? extensionCalc.defaultmaximumFractionDigits
+      : minimumFractionDigits
+        ? minimumFractionDigits
+        : outputCalc && outputCalc.defaultmaximumFractionDigits
+          ? outputCalc.defaultmaximumFractionDigits
           : 2,
-    maximumSignificantDigits: maximumSignificantDigits,
-    maximumFractionDigits: exact
+    maximumFractionDigits: maximumFractionDigits === 0
       ? 0
       : value <= 0.5
         ? 5
         : maximumFractionDigits
           ? maximumFractionDigits
-          : extensionCalc && extensionCalc.defaultmaximumFractionDigits
-            ? extensionCalc.defaultmaximumFractionDigits
+          : outputCalc && outputCalc.defaultmaximumFractionDigits
+            ? outputCalc.defaultmaximumFractionDigits
             : 2,
-  });
+  };
+
+  // Convert to Locale String
+  value = value.toLocaleString('en-EN', toLocalStringConfig);
 
   const calcObject = {
     value: value,
     before: before,
     after: after,
-    extension: extensionCalc,
+    output: outputCalc,
   };
 
   let className = props.className;
@@ -107,6 +113,7 @@ export const currencyCalc = (props, after, before, exact, afterSingular) => {
     return false;
   else if (calcOnly) return calcObject;
   else if (svg) return SvgUnit(calcObject, props);
+  else if (string) return StringUnit(calcObject, props);
   else if (value !== false) return <span className={className}>{value}</span>;
   else return <Invalid className={props.className} />;
 };
@@ -116,6 +123,7 @@ export const percentageCalc = (props, after, before) => {
     calcOnly,
     children,
     from,
+    string,
     svg,
     hideZero,
     maximumSignificantDigits,
@@ -149,12 +157,13 @@ export const percentageCalc = (props, after, before) => {
     value: value,
     before: before,
     after: after,
-    extension: undefined,
+    output: undefined,
   };
   if ((!value || value === 'NaN' || parseFloat(value) === 0) && hideZero)
     return false;
   else if (calcOnly) return calcObject;
   else if (svg) return SvgUnit(calcObject, props);
+  else if (string) return StringUnit(calcObject, props);
   else if (value !== false)
     return <span className={props.className}>{value}</span>;
   else return <Invalid className={props.className} />;
@@ -178,7 +187,7 @@ const components = {
 };
 
 const Unit = props => {
-  const { className, extension, textAnchor, hideZero, setup } = props;
+  const { className, output, string, textAnchor, hideZero, setup } = props;
   const type = props.type ? props.type : 'None';
   const Unit = components[type];
   //const unitHideClass = setup && setup.hideUnit ? 'wfp--unit--hide' : '';
@@ -187,8 +196,8 @@ const Unit = props => {
     ? 'wfp--unit--' + props.type.toLowerCase()
     : '';
 
-  const extensionClassName =
-    extension && scaleLookup[extension] ? 'wfp--unit--' + extension : '';
+  const outputClassName =
+    output && scaleLookup[output] ? 'wfp--unit--' + output : '';
   const setupClassName = setup ? 'wfp--unit--' + setup : '';
   const classNameCalc =
     'wfp--unit ' +
@@ -198,9 +207,13 @@ const Unit = props => {
     ' ' +
     /*   unitHideClass +
     ' ' +*/
-    extensionClassName +
+    outputClassName +
     ' ' +
     setupClassName;
+
+  if (string) {
+    return (Unit(props));
+  }
 
   if (Unit === undefined) {
     console.warn(`The unit "${type}" is undefined`);
@@ -225,7 +238,7 @@ Unit.propTypes = {
 };
 
 Unit.defaultProps = {
-  type: 'None',
+  type: 'None'
 };
 
 export default Unit;

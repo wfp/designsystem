@@ -9,7 +9,7 @@ import ReactTable from 'react-table';
 import Blockquote from '../Blockquote';
 import TablePagination from '../TablePagination';
 import Unit from './Unit';
-import { withKnobs, select, text, object } from '@storybook/addon-knobs/react';
+import { withKnobs, select, text, boolean, number, object } from '@storybook/addon-knobs/react';
 
 const units = [
   {
@@ -26,7 +26,8 @@ const units = [
     setup: {
       type: 'Usd',
       input: 'million',
-      extension: 'million',
+      output: 'million',
+      maximumSignificantDigits: 0,
       showZero: true,
     },
   },
@@ -36,7 +37,7 @@ const units = [
     setup: {
       type: 'Usd',
       input: 'external',
-      extension: 'million',
+      output: 'million',
     },
   },
   {
@@ -53,7 +54,7 @@ const units = [
     sample: 12345.12345,
     setup: {
       type: 'Usd',
-      extension: 'million',
+      output: 'million',
       input: 'thousand',
       showZero: true,
     },
@@ -101,6 +102,12 @@ const units = [
     },
   },
   {
+    description: 'No Settings',
+    sample: 'Lorem Ipsum et jomen',
+    setup: {
+    },
+  },
+  {
     description: 'Generate Megaton',
     sample: 12345,
     setup: {
@@ -119,7 +126,7 @@ const units = [
     sample: 12345,
     setup: {
       type: 'Num',
-      extension: 'million',
+      output: 'million',
     },
   },
   {
@@ -186,30 +193,8 @@ storiesOf('Unit', module)
       Some usage samples
     `,
     () => {
-      const label = 'pageWidth';
-      const options = {
-        '': 'undefined',
-        narrow: 'narrow',
-      };
 
-      const pageWidth = select(label, options, '');
-      const value = text('value', undefined);
-
-      /*
-
-  maximumFractionDigits={2}
-  maximumSignificantDigits={undefined}
-
-*/
-      const defaultValue = {
-        extension: 'million',
-        input: 'thousand',
-        showZero: true,
-      };
-      const groupId = 'GROUP-ID1';
-
-      const setup = object('Setup', defaultValue, groupId);
-
+      console.log(Unit({children: '2354245', output: 'million', type: 'Usd', string: true, value: '131323213'}));
       const columns = [
         {
           Header: 'HTML',
@@ -226,8 +211,6 @@ storiesOf('Unit', module)
           accessor: 'name',
           width: 150,
           Cell: props => {
-            console.log(props);
-
             let svgSetup = Object.assign({}, props.original.setup, {
               svg: true,
             });
@@ -270,7 +253,7 @@ storiesOf('Unit', module)
               <div style={{ padding: '20px' }}>
                 <Blockquote type="code">
                   {`<Unit
-  {${JSON.stringify(row.original.setup)}}
+  ${JSON.stringify(row.original.setup)}
 >
   ${row.original.sample}
 </Unit>`}
@@ -305,12 +288,13 @@ storiesOf('Unit', module)
       };
 
       const type = select('type', options, 'Usd');
-      const extension = text('extension', 'million');
+      const output = text('output', 'million');
       const input = text('input', 'thousand');
       const value = text('value', 1000000);
       const from = text('from', undefined);
-      const minimumFractionDigits = text('minimumFractionDigits', undefined);
-      const maximumSignificantDigits = text(
+      const minimumFractionDigits = number('minimumFractionDigits', undefined);
+      const maximumFractionDigits = number('maximumFractionDigits', undefined);
+      const maximumSignificantDigits = number(
         'maximumSignificantDigits',
         undefined
       );
@@ -330,11 +314,14 @@ storiesOf('Unit', module)
               height: '70px',
             }}>
             <Unit
+              exact={exact}
               type={type}
               from={from}
               minimumFractionDigits={minimumFractionDigits}
+              maximumFractionDigits={maximumFractionDigits}
               maximumSignificantDigits={maximumSignificantDigits}
-              hideEmpty={hideEmpty}>
+              hideEmpty={hideEmpty}
+              output={output}>
               {value}
             </Unit>
           </div>
