@@ -9,7 +9,14 @@ import ReactTable from 'react-table';
 import Blockquote from '../Blockquote';
 import TablePagination from '../TablePagination';
 import Unit from './Unit';
-import { withKnobs, select, text, boolean, number, object } from '@storybook/addon-knobs/react';
+import {
+  withKnobs,
+  select,
+  text,
+  boolean,
+  number,
+  object,
+} from '@storybook/addon-knobs/react';
 
 const units = [
   {
@@ -21,13 +28,13 @@ const units = [
   },
   {
     type: 'Usd',
-    description: 'Generate Million USD based on USD',
+    description: 'Generate Million USD based on USD and round to Integer',
     sample: 12345.12345,
     setup: {
       type: 'Usd',
       input: 'million',
       output: 'million',
-      maximumSignificantDigits: 0,
+      maximumFractionDigits: 0,
       showZero: true,
     },
   },
@@ -104,8 +111,7 @@ const units = [
   {
     description: 'No Settings',
     sample: 'Lorem Ipsum et jomen',
-    setup: {
-    },
+    setup: {},
   },
   {
     description: 'Generate Megaton',
@@ -193,8 +199,15 @@ storiesOf('Unit', module)
       Some usage samples
     `,
     () => {
-
-      console.log(Unit({children: '2354245', output: 'million', type: 'Usd', string: true, value: '131323213'}));
+      console.log(
+        Unit({
+          children: '2354245',
+          output: 'million',
+          type: 'Usd',
+          string: true,
+          value: '131323213',
+        })
+      );
       const columns = [
         {
           Header: 'HTML',

@@ -46,8 +46,12 @@ storiesOf(' Documentation', module).addWithInfo('Typography', ``, () => (
     <p>
       Paragraph – Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
       diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-      erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
-      rebum. Stet clita kasd gubergren.
+      erat, sed diam voluptua<sup>
+        <a id="anker3" title="" href="#fn3">
+          3
+        </a>
+      </sup>. At vero eos et accusam et justo duo dolores et ea rebum. Stet
+      clita kasd gubergren.
     </p>
 
     <h3>Dos and Don’ts</h3>

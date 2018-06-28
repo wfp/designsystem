@@ -27,16 +27,22 @@ class Blockquote extends React.Component {
       toggleable,
       columnCount,
       innerHtml,
+
+      light,
+      code,
+      warning,
+      info,
+
       type,
       ...other
     } = this.props;
     const blockquoteClass = classNames({
       'wfp--blockquote': true,
       'wfp--blockquote--toggleable': toggleable === true,
-      'wfp--blockquote--light': type === 'light',
-      'wfp--blockquote--code': type === 'code',
-      'wfp--blockquote--warning': type === 'warning',
-      'wfp--blockquote--info': type === 'info',
+      'wfp--blockquote--light': type === 'light' || light,
+      'wfp--blockquote--code': type === 'code' || code,
+      'wfp--blockquote--warning': type === 'warning' || warning,
+      'wfp--blockquote--info': type === 'info' || info,
       'wfp--blockquote--open': this.state.open,
     });
 

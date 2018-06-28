@@ -8,18 +8,17 @@ const Wrapper = props => {
     children,
     className,
     pageWidth,
+    mobilePageWidth,
     spacing,
     ...other
   } = props;
   const wrapperClasses = classNames({
     'wfp--wrapper': true,
-    'wfp--wrapper--narrow': pageWidth === 'narrow',
-    'wfp--wrapper--narrower': pageWidth === 'narrower',
-    'wfp--wrapper--narrowest': pageWidth === 'narrowest',
-    'wfp--wrapper--narrow wfp--wrapper--mobile-full':
-      pageWidth === 'narrow-full',
-    'wfp--wrapper--narrower wfp--wrapper--mobile-full':
-      pageWidth === 'narrower-full',
+    'wfp--wrapper--width-lg': pageWidth === 'narrow' || pageWidth === 'lg',
+    'wfp--wrapper--width-md': pageWidth === 'narrower' || pageWidth === 'md',
+    'wfp--wrapper--width-sm': pageWidth === 'narrowest' || pageWidth === 'sm',
+    'wfp--wrapper--width-xs': pageWidth === 'narrowest' || pageWidth === 'xs',
+    'wfp--wrapper--width-mobile-full': mobilePageWidth === 'full',
     'wfp--wrapper--spacing-md': spacing === 'md',
     [`${className}`]: className,
   });
@@ -45,12 +44,20 @@ const Wrapper = props => {
 };
 
 Wrapper.propTypes = {
-  /**
-    Width of Wrapper, use 'narrow' or leave empty
-  */
   children: PropTypes.node,
   className: PropTypes.string,
+  /**
+    Width of Wrapper
+  */
   pageWidth: PropTypes.string,
+  /**
+    Width on mobile devices
+  */
+  mobilePageWidth: PropTypes.string,
+  /**
+    Spacing on top and bottom
+  */
+  spacing: PropTypes.string,
 };
 
 export default Wrapper;

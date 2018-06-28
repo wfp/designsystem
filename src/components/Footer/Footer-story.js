@@ -1,55 +1,69 @@
+/* eslint-disable no-console */
+
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
-import { withKnobs, select } from '@storybook/addon-knobs/react';
-import Footer from '../Footer';
+import { withKnobs, select, text } from '@storybook/addon-knobs/react';
+import Footer from './Footer';
 import Link from '../Link';
 
-const additionalProps = {
-  onClick: action('onClick'),
-  className: 'some-class',
-  labelOne: 'Stet clita kasd',
-  linkTextOne: 'Lorem Ipsum',
-  linkHrefOne: 'www.google.com',
-  labelTwo: 'Bin sulamen et jam',
-  linkTextTwo: 'Et jomen',
-  linkHrefTwo: 'www.google.com',
-  buttonText: 'Create',
-};
+import { withReadme } from 'storybook-readme';
+import readme from './README.md';
 
 storiesOf('Footer', module)
+  //.addDecorator(withSmartKnobs)
   .addDecorator(withKnobs)
+  .addDecorator(withReadme([readme]))
   .addWithInfo(
     'Default',
     `
-      WFP's default Footer for internal applications. The link area can be customized with relevant links and hints. There is a debug/version area underneath. TODO: You can use the Logo from the CDN or a custom Logo on the Footer.
-
-      ~~~js
-      import { Footer } from '@wfp/ui';
-      ~~~
-
-    `,
-    () => <Footer {...additionalProps} />
-  )
-  .addWithInfo(
-    'Custom',
-    `
-      This footer allows custom elements to be placed inside.
+      Footer is the second most important place where your basic site information and links should live. Users turn often to the footer to look for important information, such as contact details, or links to less prominent sections of the website (privacy policy, terms of use, etc).
     `,
     () => {
-      const label = 'pageWidth';
       const options = {
         '': 'undefined',
-        narrow: 'narrow',
+        xs: 'xs',
+        sm: 'sm',
+        md: 'md',
+        lg: 'lg',
       };
       const defaultValue = '';
 
-      const pageWidth = select(label, options, defaultValue);
+      const pageWidth = select('pageWidth', options, defaultValue);
+
+      const optionsMobilePageWidth = {
+        '': 'undefined',
+        full: 'full',
+      };
+
+      const mobilePageWidth = select(
+        'mobilePageWidth',
+        optionsMobilePageWidth,
+        defaultValue
+      );
+
+      const metaContent = text(
+        'metaContent',
+        'WFP UI Kit version 1.0 – powered by RMT with full support of concerned divisions which are responsible for the accuracy of the content'
+      );
+
+      const className = text('className', 'some-class');
+
+      const logo = text(
+        'logo',
+        'logos/vertical/en/wfp-logo-vertical-black-en.svg'
+      );
+      const logoExtended = text(
+        'logoExtended',
+        'logos/extended/en/wfp-logo-extended-black-en.svg'
+      );
 
       return (
         <Footer
-          className="some-class"
-          metaContent="WFP UI Kit version 1.0 – powered by RMT with full support of concerned divisions which are responsible for the accuracy of the content"
+          className={className}
+          logo={logo}
+          logoExtended={logoExtended}
+          metaContent={metaContent}
+          mobilePageWidth={mobilePageWidth}
           pageWidth={pageWidth}>
           <div className="wfp--footer-info">
             <div className="wfp--footer-info__item">

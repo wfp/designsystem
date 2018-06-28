@@ -15,9 +15,9 @@
   .#{$prefix}--story {
     @include reset;
     @include font-family;
-    > p {
+    p {
       margin-bottom: $spacing-lg;
-      line-height: 1.5em;
+      line-height: 1.6em;
     }
     h2 {
       margin: $spacing-lg 0;
@@ -32,11 +32,25 @@
       margin: $spacing-xs 0;
     }
     ul {
-      list-style-position: inside;
-      line-height: 1.5em;
+      list-style-position: outside;
+      line-height: 1.6em;
       margin: 1.5em 0 1.5em 1.5em;
       li {
-        list-style-type: circle;
+        list-style-type: disc;
+      }
+    }
+
+    sup {
+      font-size: 0.7em;
+      background: $ui-03;
+      > a {
+        text-decoration: none;
+        &:before {
+          content: '[';
+        }
+        &:after {
+          content: ']';
+        }
       }
     }
 

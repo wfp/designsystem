@@ -54,7 +54,6 @@ export const currencyCalc = (props, after, before, afterSingular) => {
     hideZero,
   } = props;
 
-
   // Remove commas
   var value =
     typeof children === 'string' ? children.replace(',', '') : children;
@@ -76,22 +75,24 @@ export const currencyCalc = (props, after, before, afterSingular) => {
 
   const toLocalStringConfig = {
     //maximumSignificantDigits: maximumSignificantDigits,
-    minimumFractionDigits: maximumFractionDigits === 0
-      ? 0
-      : minimumFractionDigits
-        ? minimumFractionDigits
-        : outputCalc && outputCalc.defaultmaximumFractionDigits
-          ? outputCalc.defaultmaximumFractionDigits
-          : 2,
-    maximumFractionDigits: maximumFractionDigits === 0
-      ? 0
-      : value <= 0.5
-        ? 5
-        : maximumFractionDigits
-          ? maximumFractionDigits
+    minimumFractionDigits:
+      maximumFractionDigits === 0
+        ? 0
+        : minimumFractionDigits
+          ? minimumFractionDigits
           : outputCalc && outputCalc.defaultmaximumFractionDigits
             ? outputCalc.defaultmaximumFractionDigits
             : 2,
+    maximumFractionDigits:
+      maximumFractionDigits === 0
+        ? 0
+        : value <= 0.5
+          ? 5
+          : maximumFractionDigits
+            ? maximumFractionDigits
+            : outputCalc && outputCalc.defaultmaximumFractionDigits
+              ? outputCalc.defaultmaximumFractionDigits
+              : 2,
   };
 
   // Convert to Locale String
@@ -212,7 +213,7 @@ const Unit = props => {
     setupClassName;
 
   if (string) {
-    return (Unit(props));
+    return Unit(props);
   }
 
   if (Unit === undefined) {
@@ -238,7 +239,7 @@ Unit.propTypes = {
 };
 
 Unit.defaultProps = {
-  type: 'None'
+  type: 'None',
 };
 
 export default Unit;
