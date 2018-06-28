@@ -327,7 +327,6 @@ storiesOf('Unit', module)
               height: '70px',
             }}>
             <Unit
-              exact={exact}
               type={type}
               from={from}
               minimumFractionDigits={minimumFractionDigits}

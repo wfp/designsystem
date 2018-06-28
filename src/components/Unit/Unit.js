@@ -86,13 +86,17 @@ export const currencyCalc = (props, after, before, afterSingular) => {
     maximumFractionDigits:
       maximumFractionDigits === 0
         ? 0
-        : value <= 0.5
-          ? 5
-          : maximumFractionDigits
-            ? maximumFractionDigits
-            : outputCalc && outputCalc.defaultmaximumFractionDigits
-              ? outputCalc.defaultmaximumFractionDigits
-              : 2,
+        : value <= 0.005
+          ? 4
+          : value <= 0.05
+            ? 3
+            : value <= 0.5
+              ? 2
+              : maximumFractionDigits
+                ? maximumFractionDigits
+                : outputCalc && outputCalc.defaultmaximumFractionDigits
+                  ? outputCalc.defaultmaximumFractionDigits
+                  : 2,
   };
 
   // Convert to Locale String
