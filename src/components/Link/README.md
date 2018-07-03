@@ -6,6 +6,6 @@ Links can have the same properties as an `<a>`-Element.
 
 Use the Link styling by adding the className `wfp--link` to `<NavLink />`
 
-~~~js
+```js
 <NavLink className="wfp--link">Link</NavLink>
-~~~
+```

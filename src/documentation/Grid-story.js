@@ -21,7 +21,9 @@ storiesOf(' Documentation', module).addWithInfo('Grid', ``, () => (
         </Link>
       </li>
       <li>
-        <Link href="https://roylee0704.github.io/react-flexbox-grid/" target="_blank">
+        <Link
+          href="https://roylee0704.github.io/react-flexbox-grid/"
+          target="_blank">
           React-FlexBox-Grid
         </Link>
       </li>

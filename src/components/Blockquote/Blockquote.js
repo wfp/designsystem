@@ -30,7 +30,7 @@ class Blockquote extends React.Component {
       code,
       warning,
       info,
-      type
+      type,
     } = this.props;
     const blockquoteClass = classNames({
       'wfp--blockquote': true,

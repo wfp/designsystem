@@ -79,15 +79,18 @@ storiesOf(' Documentation', module).addWithInfo('Logos', ``, () => {
     </div>
   ));
   return (
-    <Page title="Logos" subTitle="The new Logos in various sizes" pageWidth="md">
+    <Page
+      title="Logos"
+      subTitle="The new Logos in various sizes"
+      pageWidth="md">
       <p>
-        WFP's logo is available in four versions: standard, extended, vertical and emblem.
-        Each has its own purpose and should be used appropriately, as per
-        official branding guidelines, depending on available screen space and
-        target audience.
+        WFP's logo is available in four versions: standard, extended, vertical
+        and emblem. Each has its own purpose and should be used appropriately,
+        as per official branding guidelines, depending on available screen space
+        and target audience.
       </p>
       <p>
-        You can find extended information about the Logo in the {' '}
+        You can find extended information about the Logo in the{' '}
         <Link
           href="http://brand.manuals.wfp.org/en/core-elements/logo/emblem-restyling-2018/"
           target="_blank">

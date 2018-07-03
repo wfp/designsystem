@@ -12,9 +12,10 @@ storiesOf(' Documentation', module).addWithInfo('Credits', ``, () => (
       <Link href="http://brand.manuals.wfp.org/">
         The World Food Programme’s (WFP) Branding Guidance
       </Link>{' '}
-      was published first in 2009 and has now been effectively implemented across the
-      organization, strengthening WFP’s brand image through consistent
-      representation. This new version shall reflect the changes in technology.
+      was published first in 2009 and has now been effectively implemented
+      across the organization, strengthening WFP’s brand image through
+      consistent representation. This new version shall reflect the changes in
+      technology.
     </p>
     The UI-Kit is be heavily based on:
     <ul>

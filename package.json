@@ -16,7 +16,7 @@
     "build:postcss": "postcss ./dist/css/map -d ./dist/css/ --use autoprefixer",
     "watch:css": "nodemon -e scss -x \"npm run build:css\"",
     "commitmsg": "validate-commit-msg",
-    "build:favicon": "convert assets/favicons/favicon-16x16.png assets/favicons/favicon-32x32.png assets/favicons/favicon-48x48.png assets/favicons/favicon-64x64.png  assets/favicons/favicon.ico",
+    "build:favicon": "convert dist/favicons/favicon-16x16.png dist/favicons/favicon-32x32.png dist/favicons/favicon-48x48.png dist/favicons/favicon-64x64.png -colors 256 dist/favicons/favicon.ico",
     "contributors:add": "all-contributors add",
     "contributors:generate": "all-contributors generate",
     "lint": "eslint src",

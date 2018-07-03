@@ -254,7 +254,7 @@ const Page = ({ children, withoutSecondary }) => {
         </MainNavigationItem>
       </MainNavigation>
 
-      {!withoutSecondary &&
+      {!withoutSecondary && (
         <SecondaryNavigation
           additional="additional Information"
           pageWidth="narrow">
@@ -290,9 +290,9 @@ const Page = ({ children, withoutSecondary }) => {
             </SecondaryTabsItem>
           </SecondaryTabs>
         </SecondaryNavigation>
-      }
+      )}
 
-        {children}
+      {children}
 
       <Footer
         className="some-class"

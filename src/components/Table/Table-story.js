@@ -54,16 +54,16 @@ const columns = [
 storiesOf('Table', module)
   .addDecorator(withReadme([readme]))
   .addWithInfo(
-  'default',
-  `
+    'default',
+    `
       We recommend [React-Table](https://react-table.js.org/) for Tables. To use the custom Pagination you can use the TablePagination component.
     `,
-  () => (
-    <ReactTable
-      data={data}
-      defaultPageSize={5}
-      columns={columns}
-      PaginationComponent={TablePagination}
-    />
-  )
-);
+    () => (
+      <ReactTable
+        data={data}
+        defaultPageSize={5}
+        columns={columns}
+        PaginationComponent={TablePagination}
+      />
+    )
+  );

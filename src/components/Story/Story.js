@@ -8,7 +8,14 @@ const Story = ({ children, className, pageWidth, spacing }) => {
     'wfp--story': true,
     [`${className}`]: className,
   });
-  return <Wrapper className={classNames} pageWidth={pageWidth ? pageWidth : 'md'} spacing={spacing}>{children}</Wrapper>;
+  return (
+    <Wrapper
+      className={classNames}
+      pageWidth={pageWidth ? pageWidth : 'md'}
+      spacing={spacing}>
+      {children}
+    </Wrapper>
+  );
 };
 
 Story.propTypes = {
