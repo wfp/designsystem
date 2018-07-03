@@ -47,7 +47,7 @@ storiesOf(' Documentation', module).addWithInfo('Logos', ``, () => {
   const languages = ['en', 'es', 'fr', 'ar'];
 
   const colorList = logoKinds.map(logoKind => (
-    <li style={{ marginBottom: '1em' }}>
+    <div style={{ marginBottom: '1em' }}>
       <div style={{ marginBottom: '1em', backgroundColor: logoKind.hex }} />
       <h2 className="before--img">{logoKind}</h2>
       {colors.map(color => {
@@ -76,22 +76,22 @@ storiesOf(' Documentation', module).addWithInfo('Logos', ``, () => {
           </div>
         );
       })}
-    </li>
+    </div>
   ));
   return (
-    <Page title="Logos" subTitle="The new Logos in various sizes">
+    <Page title="Logos" subTitle="The new Logos in various sizes" pageWidth="md">
       <p>
-        WFP's logo is available in three versions: emblem, standard, and full.
+        WFP's logo is available in four versions: standard, extended, vertical and emblem.
         Each has its own purpose and should be used appropriately, as per
         official branding guidelines, depending on available screen space and
         target audience.
       </p>
       <p>
-        You can find extended information about the Logo{' '}
+        You can find extended information about the Logo in the {' '}
         <Link
           href="http://brand.manuals.wfp.org/en/core-elements/logo/emblem-restyling-2018/"
           target="_blank">
-          here
+          Branding Guide
         </Link>.
       </p>
       <Blockquote title="Which file type shall I use?">
@@ -105,7 +105,7 @@ storiesOf(' Documentation', module).addWithInfo('Logos', ``, () => {
           files.
         </p>
       </Blockquote>
-      <ul>{colorList}</ul>
+      <div>{colorList}</div>
     </Page>
   );
 });

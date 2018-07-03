@@ -18,6 +18,9 @@
     p {
       margin-bottom: $spacing-lg;
       line-height: 1.6em;
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
     h2 {
       margin: $spacing-lg 0;
@@ -59,9 +62,13 @@
       font-weight: 700;
     }
     .#{$prefix}--story__sub-title {
-      @include typescale('gamma');
+      @include typescale('zeta');
+      font-weight: normal;
       color: $color__navy-gray-7;
-      margin-bottom: $spacing-lg;
+      margin-top: $spacing-xs;
+      margin-bottom: $spacing-xl;
+      //text-transform: uppercase;
+      letter-spacing: 0.05em;
     }
     .#{$prefix}--story__type-beta {
       margin-bottom: $spacing-lg;
@@ -70,6 +77,13 @@
       font-style: italic;
       @include typescale('delta');
       margin-bottom: $spacing-lg;
+    }
+
+    .#{$prefix}--inline-highlight {
+      display: inline-block;
+      font-weight: 600;
+      background: $ui-03;
+      padding: 0.05em 0.1em;
     }
   }
 }

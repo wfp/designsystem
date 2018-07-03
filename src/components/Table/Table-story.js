@@ -1,6 +1,9 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import ReactTable from 'react-table';
+import { withReadme } from 'storybook-readme';
+import readme from './README.md';
+
 import TablePagination from '../TablePagination';
 
 const data = [
@@ -48,23 +51,12 @@ const columns = [
 
 //PaginationComponent={Pagination}
 
-storiesOf('Table', module).addWithInfo(
+storiesOf('Table', module)
+  .addDecorator(withReadme([readme]))
+  .addWithInfo(
   'default',
   `
       We recommend [React-Table](https://react-table.js.org/) for Tables. To use the custom Pagination you can use the TablePagination component.
-
-      ~~~js
-      import { TablePagination } from '@wfp/ui';
-
-      // Replacing the Pagination Component of React-Table
-
-      <ReactTable
-        PaginationComponent={TablePagination}
-      />
-
-      ~~~
-
-
     `,
   () => (
     <ReactTable

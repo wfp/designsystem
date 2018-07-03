@@ -111,15 +111,5 @@ storiesOf(' Documentation', module).addWithInfo('Form Design', ``, () => (
       Always ask the user before submitting input. Do not ask if the user only
       saves the input.
     </p>
-    <ul>
-      <li>
-        <Link href="http://flexboxgrid.com/">Flexbox Grid</Link>
-      </li>
-      <li>
-        <Link href="https://roylee0704.github.io/react-flexbox-grid/">
-          React-FlexBox-Grid
-        </Link>
-      </li>
-    </ul>
   </Page>
 ));

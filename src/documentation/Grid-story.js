@@ -16,10 +16,12 @@ storiesOf(' Documentation', module).addWithInfo('Grid', ``, () => (
     </p>
     <ul>
       <li>
-        <Link href="http://flexboxgrid.com/">Flexbox Grid</Link>
+        <Link href="http://flexboxgrid.com/" target="_blank">
+          Flexbox Grid
+        </Link>
       </li>
       <li>
-        <Link href="https://roylee0704.github.io/react-flexbox-grid/">
+        <Link href="https://roylee0704.github.io/react-flexbox-grid/" target="_blank">
           React-FlexBox-Grid
         </Link>
       </li>

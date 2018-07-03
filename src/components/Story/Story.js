@@ -3,12 +3,12 @@ import React from 'react';
 import classnames from 'classnames';
 import Wrapper from '../Wrapper';
 
-const Story = ({ children, className }) => {
+const Story = ({ children, className, pageWidth, spacing }) => {
   const classNames = classnames({
     'wfp--story': true,
     [`${className}`]: className,
   });
-  return <Wrapper className={classNames}>{children}</Wrapper>;
+  return <Wrapper className={classNames} pageWidth={pageWidth ? pageWidth : 'md'} spacing={spacing}>{children}</Wrapper>;
 };
 
 Story.propTypes = {

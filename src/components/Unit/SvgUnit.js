@@ -1,7 +1,7 @@
 import React from 'react';
 
 const SvgUnit = (value, props) => {
-  const { className, style, type, ...other } = props;
+  const { style, ...other } = props;
 
   if (value)
     return (

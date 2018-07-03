@@ -3,6 +3,11 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import withTests from '../../internal/withTests';
+import SingleComponent from '../../documentation/SingleComponent';
+
+import { withReadme } from 'storybook-readme';
+import readme from './README.md';
+
 import Link from '../Link';
 
 const additionalProps = {
@@ -14,6 +19,8 @@ const additionalProps = {
 
 storiesOf('Link', module)
   .addDecorator(withTests('Link'))
+  .addDecorator(story => <SingleComponent>{story()}</SingleComponent>)
+  .addDecorator(withReadme([readme]))
   .addWithInfo(
     'Default',
     `

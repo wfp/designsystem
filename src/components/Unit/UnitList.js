@@ -1,6 +1,5 @@
 import React from 'react';
-import { Invalid } from './InvalidUnit';
-import { currencyCalc, percentageCalc, svgUnit } from './Unit';
+import { currencyCalc, percentageCalc } from './Unit';
 import SimpleCalc from './SimpleCalc';
 import YearMonthCalc from './YearMonthCalc';
 //import {SimpleCalc} from './SimpleCalc';

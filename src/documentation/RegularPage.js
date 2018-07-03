@@ -39,7 +39,7 @@ import {
 } from '../components/SubNavigation';
 import User from '../components/User';
 
-const Page = ({ children }) => {
+const Page = ({ children, withoutSecondary }) => {
   return (
     <div>
       <BannerNavigation pageWidth="narrow">
@@ -89,7 +89,7 @@ const Page = ({ children }) => {
         </BannerNavigationItem>*/}
       </BannerNavigation>
 
-      <MainNavigation logo={<a href="#">WFP UI</a>}>
+      <MainNavigation pageWidth="lg" logo={<a href="#">WFP UI</a>}>
         <MainNavigationItem
           subNavigation={
             <SubNavigation>
@@ -254,45 +254,45 @@ const Page = ({ children }) => {
         </MainNavigationItem>
       </MainNavigation>
 
-      <SecondaryNavigation
-        additional="additional Information"
-        pageWidth="narrow">
-        <Breadcrumb>
-          <BreadcrumbItem>
-            <a href="/#">
-              <BreadcrumbHome />
-            </a>
-          </BreadcrumbItem>
-          <BreadcrumbItem href="#">Breadcrumb 2</BreadcrumbItem>
-          <BreadcrumbItem href="#">Breadcrumb 3</BreadcrumbItem>
-        </Breadcrumb>
-        <SecondaryNavigationTitle>The Page Title</SecondaryNavigationTitle>
+      {!withoutSecondary &&
+        <SecondaryNavigation
+          additional="additional Information"
+          pageWidth="narrow">
+          <Breadcrumb>
+            <BreadcrumbItem>
+              <a href="/#">
+                <BreadcrumbHome />
+              </a>
+            </BreadcrumbItem>
+            <BreadcrumbItem href="#">Breadcrumb 2</BreadcrumbItem>
+            <BreadcrumbItem href="#">Breadcrumb 3</BreadcrumbItem>
+          </Breadcrumb>
+          <SecondaryNavigationTitle>The Page Title</SecondaryNavigationTitle>
 
-        <SecondaryTabs pageWidth="narrow">
-          <SecondaryTabsItem>
-            <Link
-              className="active"
-              href="http://communities.wfp.org"
-              target="_blank">
-              First Tab
-            </Link>
-          </SecondaryTabsItem>
-          <SecondaryTabsItem>
-            <Link href="http://manuals.wfp.org" target="_blank">
-              Second Tab
-            </Link>
-          </SecondaryTabsItem>
-          <SecondaryTabsItem>
-            <Link href="https://go.docs.wfp.org" target="_blank">
-              Third Tab
-            </Link>
-          </SecondaryTabsItem>
-        </SecondaryTabs>
-      </SecondaryNavigation>
+          <SecondaryTabs pageWidth="narrow">
+            <SecondaryTabsItem>
+              <Link
+                className="active"
+                href="http://communities.wfp.org"
+                target="_blank">
+                First Tab
+              </Link>
+            </SecondaryTabsItem>
+            <SecondaryTabsItem>
+              <Link href="http://manuals.wfp.org" target="_blank">
+                Second Tab
+              </Link>
+            </SecondaryTabsItem>
+            <SecondaryTabsItem>
+              <Link href="https://go.docs.wfp.org" target="_blank">
+                Third Tab
+              </Link>
+            </SecondaryTabsItem>
+          </SecondaryTabs>
+        </SecondaryNavigation>
+      }
 
-      <Wrapper background="lighter" pageWidth="narrow" spacing="md">
         {children}
-      </Wrapper>
 
       <Footer
         className="some-class"

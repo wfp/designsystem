@@ -25,16 +25,12 @@ class Blockquote extends React.Component {
       style,
       title,
       toggleable,
-      columnCount,
       innerHtml,
-
       light,
       code,
       warning,
       info,
-
-      type,
-      ...other
+      type
     } = this.props;
     const blockquoteClass = classNames({
       'wfp--blockquote': true,
