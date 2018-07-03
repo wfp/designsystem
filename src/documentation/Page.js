@@ -2,12 +2,12 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import Wrapper from '../components/Wrapper';
 
-const Page = ({ children, subTitle, title }) => {
+const Page = ({ children, pageWidth, subTitle, title }) => {
   return (
     <Wrapper
       style={{ margin: '2em auto' }}
       className="wfp--story"
-      pageWidth="narrower">
+      pageWidth={pageWidth ? pageWidth: 'sm'}>
       <h1 className="wfp--story__title">{title}</h1>
       <h2 className="wfp--story__sub-title">{subTitle}</h2>
       {children}

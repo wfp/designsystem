@@ -12,11 +12,11 @@ storiesOf(' Documentation', module).addWithInfo('Credits', ``, () => (
       <Link href="http://brand.manuals.wfp.org/">
         The World Food Programme’s (WFP) Branding Guidance
       </Link>{' '}
-      was published in 2009 and has now been effectively implemented across the
+      was published first in 2009 and has now been effectively implemented across the
       organization, strengthening WFP’s brand image through consistent
-      representation.
+      representation. This new version shall reflect the changes in technology.
     </p>
-    The UI-Kit will be heavily based on:
+    The UI-Kit is be heavily based on:
     <ul>
       <li>
         <Link href="https://github.com/carbon-design-system/carbon-components">
@@ -34,14 +34,5 @@ storiesOf(' Documentation', module).addWithInfo('Credits', ``, () => (
         </Link>
       </li>
     </ul>
-    <Blockquote title="Notice">
-      <p>
-        Your feedback is highly appreciated! You can use the Feedback Button on
-        the right, Create a{' '}
-        <Link href="https://github.com/wfp/ui/issues">new Issue</Link> on Github
-        or send an email to{' '}
-        <Link href="mailto:robert.guehne@wfp.org">robert.guehne@wfp.org</Link>.
-      </p>
-    </Blockquote>
   </Page>
 ));

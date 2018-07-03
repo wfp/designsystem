@@ -1,13 +1,12 @@
 import React from 'react';
-import { Invalid } from './InvalidUnit';
-import { currencyCalc, percentageCalc, svgUnit } from './Unit';
+import { currencyCalc, percentageCalc } from './Unit';
 import SimpleCalc from './SimpleCalc';
 import YearMonthCalc from './YearMonthCalc';
 //import {SimpleCalc} from './SimpleCalc';
 
 // Generate USD
 export const Usd = props => {
-  return currencyCalc(props, 'USD');
+  return currencyCalc(props, '', 'US$');
 };
 
 // Generate Partners
@@ -22,7 +21,7 @@ export const Partners = props => {
 
 // Generate MT
 export const Mt = props => {
-  return currencyCalc(props, 'Partners', undefined, true);
+  return currencyCalc(props, 'MT', undefined, true);
 };
 
 // Generate MT

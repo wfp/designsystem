@@ -46,9 +46,9 @@ View available React Components [here](http://pydev.wfp.org:8282/). Usage inform
 All the logo files can be found in the `wfp-ui/logos` folder.
 Currently the logo is available in
 
-- **Colors:** blue, white and black
-- **Fileformat:** svg, png in different sizes
-- **Languages:** arabic, english, spanish, french
+* **Colors:** blue, white and black
+* **Fileformat:** svg, png in different sizes
+* **Languages:** arabic, english, spanish, french
 
 The Source files can be found in `sketch/WFP Logos.sketch`.
 
@@ -89,14 +89,14 @@ Please refer to the [Contribution Guidelines](./.github/CONTRIBUTING.md) before 
 
 We recommend the use of [React Storybook](https://github.com/storybooks/react-storybook) for developing components.
 
-1.  Start the server:
+1. Start the server:
 
-    ```
-    $ yarn storybook
-    ```
+   ```
+   $ yarn storybook
+   ```
 
-2.  Open browser to `http://localhost:9000/`.
+2. Open browser to `http://localhost:9000/`.
 
-3.  Develop components in their respective folders (`/components` or `/internal`).
+3. Develop components in their respective folders (`/components` or `/internal`).
 
-4.  Write stories for your components in `/.storybook`.
+4. Write stories for your components in `/.storybook`.

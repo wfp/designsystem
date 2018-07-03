@@ -1,6 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
+import SingleComponent from '../../documentation/SingleComponent';
 import NumberInput from '../NumberInput';
 
 const numberInputProps = {
@@ -21,6 +22,7 @@ const introText = `
 `;
 
 storiesOf('NumberInput', module)
+  .addDecorator(story => <SingleComponent>{story()}</SingleComponent>)
   .addWithInfo(
     'enabled',
     `

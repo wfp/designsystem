@@ -11,7 +11,7 @@ storiesOf(' Documentation', module).addWithInfo('Naming Convention', ``, () => (
     <p>
       The UI Kit uses the{' '}
       <a href="http://getbem.com/naming">BEM naming convention</a> with a{' '}
-      <i>'wfp--'</i> prefix as standard naming for all css elements.
+      <i className="wfp--inline-highlight">wfp--</i> prefix as standard naming for all css elements.
     </p>
     <p>
       Please use ES-Lint which is a linting utility for JavaScript and JSX while

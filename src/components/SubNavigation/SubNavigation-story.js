@@ -1,6 +1,9 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
+import { withReadme } from 'storybook-readme';
+import readme from './README.md';
+
 import {
   SubNavigation,
   SubNavigationHeader,
@@ -16,7 +19,9 @@ import Search from '../Search';
 import Button from '../Button';
 import Link from '../Link';
 
-storiesOf('SubNavigation', module).addWithInfo(
+storiesOf('SubNavigation', module)
+.addDecorator(withReadme([readme]))
+.addWithInfo(
   'default',
   `
       The SubNavigation is used as a part of the MainNavigation is used across all applications and offers the secondary level navigation items.

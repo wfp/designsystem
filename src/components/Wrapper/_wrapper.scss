@@ -22,7 +22,7 @@
     }
   }
 
-  .#{$prefix}--wrapper--narrow {
+  .#{$prefix}--wrapper--width-lg {
     max-width: 1200px;
   }
 
@@ -35,16 +35,20 @@
     background: $color__navy-gray-9;
   }
 
-  .#{$prefix}--wrapper--narrower {
+  .#{$prefix}--wrapper--width-md {
     max-width: 1000px;
   }
 
-  .#{$prefix}--wrapper--narrowest {
+  .#{$prefix}--wrapper--width-sm {
+    max-width: 700px;
+  }
+
+  .#{$prefix}--wrapper--width-xs {
     max-width: 500px;
   }
 
   @include breakpointMax(bp--md--major) {
-    .#{$prefix}--wrapper--mobile-full {
+    .#{$prefix}--wrapper--width-mobile-full {
       padding-left: 0;
       padding-right: 0;
     }

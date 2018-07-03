@@ -25,11 +25,11 @@ storiesOf(' Documentation', module).addWithInfo('Colors', ``, () => {
           backgroundColor: color.hex,
         }}
       />
-      <div>
+      <div style={{fontSize: '0.8em'}}>
         <h4>{color.name}</h4>
-        <p>js: {color.name}</p>
-        <p>scss: {color.scss}</p>
-        <p>hex: {color.hex}</p>
+        <div>js: {color.name}</div>
+        <div>scss: {color.scss}</div>
+        <div>hex: {color.hex}</div>
       </div>
     </li>
   ));

@@ -139,7 +139,14 @@ class MainNavigation extends Component {
   };
 
   render() {
-    const { children, className, id, logo, pageWidth } = this.props;
+    const {
+      children,
+      className,
+      id,
+      logo,
+      mobilePageWidth,
+      pageWidth,
+    } = this.props;
 
     const wrapperClasses = classNames('wfp--main-navigation', className);
 
@@ -151,6 +158,7 @@ class MainNavigation extends Component {
       <div id={id} className={wrapperClasses}>
         <Wrapper
           pageWidth={pageWidth}
+          mobilePageWidth={mobilePageWidth}
           className="wfp--main-navigation__wrapper">
           <div className="wfp--main-navigation__logo-wrapper">
             <Button
@@ -186,7 +194,8 @@ MainNavigation.propTypes = {
 };
 
 MainNavigation.defaultProps = {
-  pageWidth: 'narrow-full',
+  pageWidth: 'narrow',
+  mobilePageWidth: 'full',
 };
 
 //const MainNavigation = onClickOutside(MainNavigationEl);

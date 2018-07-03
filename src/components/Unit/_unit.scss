@@ -150,8 +150,11 @@
   }
 
   .#{$prefix}--unit--usd {
+    &:before {
+      content: 'US$ ';
+    }
     &:after {
-      content: 'USD';
+      content: '';
     }
     &.#{$prefix}--unit--external {
       &:after {
@@ -163,7 +166,7 @@
     }
     &.#{$prefix}--unit--thousand {
       &:after {
-        content: 'T USD';
+        content: 'T';
       }
       &.#{$prefix}--unit--external {
         &:after {
@@ -176,7 +179,7 @@
     }
     &.#{$prefix}--unit--million {
       &:after {
-        content: 'M USD';
+        content: 'M';
       }
       &.#{$prefix}--unit--external {
         &:after {
@@ -189,7 +192,7 @@
     }
     &.#{$prefix}--unit--billion {
       &:after {
-        content: 'B USD';
+        content: 'B';
       }
       &.#{$prefix}--unit--external {
         &:after {
