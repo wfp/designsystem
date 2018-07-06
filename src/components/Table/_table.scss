@@ -625,4 +625,64 @@
   .#{$prefix}--cell--list {
     line-height: 1.5rem;
   }
+
+  @include breakpointMax(bp--sm--major) {
+    .ReactTable--responsive {
+      .rt-thead,
+      .rt-tbody {
+        min-width: inherit !important;
+      }
+      .rt-thead {
+        display: none;
+      }
+      .rt-tr {
+        display: block;
+        display: flex;
+        flex-direction: column-reverse;
+      }
+      .rt-th,
+      .rt-td {
+        width: 100% !important;
+        max-width: inherit !important;
+      }
+      .rt-expandable {
+        height: inherit !important; // TODO: Write custom Expander Component
+        width: inherit !important;
+      }
+      .rt-expander {
+        color: $brand-01;
+        margin: 0;
+        &::after {
+          display: none;
+        }
+      }
+    }
+    .ReactTable--responsive__cell {
+      //display: flex;
+    }
+    .ReactTable--responsive__cell__title {
+      display: block;
+      font-weight: 600;
+      margin-top: rem(5px);
+      margin-bottom: rem(5px);
+      width: 100%;
+    }
+    .ReactTable--responsive__cell__content {
+    }
+  }
+
+  @include breakpoint(bp--sm--major) {
+    .ReactTable--responsive__cell__title {
+      display: none;
+    }
+    .rt-expander {
+      button {
+        display: none;
+      }
+    }
+  }
+
+  .ReactTable__subcomponent {
+    padding: rem(20px);
+  }
 }

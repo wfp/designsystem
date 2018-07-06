@@ -68,9 +68,9 @@ $deprecations--message: 'Deprecated code was found, this code will be removed be
 @import '../../components/NumberInput/number-input';
 @import '../../components/Form/form';
 @import '../../components/FormGroup/form-group';
-/*
+
 @import '../../components/Link/link';
-@import '../../components/Wrapper/wrapper';
+/*
 /*@import '../../components/list-box/list-box';
 @import '../../components/list/list';
 @import '../../components/data-table/data-table';
@@ -86,6 +86,7 @@ $deprecations--message: 'Deprecated code was found, this code will be removed be
 @import '../../components/detail-page-header/detail-page-header';
 @import '../../components/dropdown/dropdown';
 */
+@import '../../components/List/list';
 @import '../../components/Loading/loading';
 @import '../../components/Modal/modal';
 @import '../../components/Module/module';

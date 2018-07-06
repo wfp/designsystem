@@ -1,0 +1,30 @@
+//-----------------------------
+// Link
+//-----------------------------
+
+@import '../../globals/scss/colors';
+@import '../../globals/scss/vars';
+@import '../../globals/scss/layout';
+@import '../../globals/scss/typography';
+@import '../../globals/scss/helper-mixins';
+@import '../../globals/scss/import-once';
+@import '../../globals/scss/css--reset';
+
+@include exports('list') {
+  .#{$prefix}--list {
+    @include reset;
+    @include font-family;
+    @include typescale('epsilon');
+    @include font-smoothing;
+  }
+  .#{$prefix}--list--simple {
+    line-height: 1.5em;
+    li {
+      display: flex;
+    }
+    .#{$prefix}--list__element__title {
+      font-weight: 700;
+      margin-right: rem(5px);
+    }
+  }
+}
