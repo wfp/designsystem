@@ -9,7 +9,7 @@ import Blockquote from '../components/Blockquote';
 storiesOf(' Documentation', module).addWithInfo('Grid', ``, () => (
   <Page title="Grid" subTitle="Recommendations for grid system">
     <p>
-      The UI-Kit doesn't come with a CSS grid system. We recommend the use of a
+      The UI Kit doesn't come with a CSS grid system. We recommend the use of a
       modern flexbox based grid system like{' '}
       <Link href="http://flexboxgrid.com/">Flexbox Grid</Link>, which is also
       available as react Components.

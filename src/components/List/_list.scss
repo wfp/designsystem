@@ -27,4 +27,7 @@
       margin-right: rem(5px);
     }
   }
+  .#{$prefix}--list--small {
+    font-size: 0.8em;
+  }
 }

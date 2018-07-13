@@ -5,29 +5,28 @@ import Icon from '../Icon';
 
 export default class Search extends Component {
   static propTypes = {
-    children: PropTypes.node,
     className: PropTypes.string,
     type: PropTypes.string,
-    smaller: PropTypes.bool,
     small: PropTypes.bool,
-    medium: PropTypes.string,
     placeHolderText: PropTypes.string,
     labelText: PropTypes.node.isRequired,
     id: PropTypes.string,
-    searchButtonLabelText: PropTypes.string,
-    layoutButtonLabelText: PropTypes.string,
+    closeButtonLabelText: PropTypes.string,
+    /**
+     * `true` to use the light version.
+     */
+    light: PropTypes.bool,
   };
 
   static defaultProps = {
     type: 'text',
-    smaller: false,
     small: false,
     placeHolderText: '',
     onChange: () => {},
+    light: false,
   };
 
   state = {
-    format: 'list',
     hasContent: this.props.value || this.props.defaultValue || false,
   };
 
@@ -47,18 +46,6 @@ export default class Search extends Component {
     this.setState({ hasContent: false }, () => this.input.focus());
   };
 
-  toggleLayout = () => {
-    if (this.state.format === 'list') {
-      this.setState({
-        format: 'grid',
-      });
-    } else {
-      this.setState({
-        format: 'list',
-      });
-    }
-  };
-
   handleChange = evt => {
     this.setState({
       hasContent: evt.target.value !== '',
@@ -67,58 +54,10 @@ export default class Search extends Component {
     this.props.onChange(evt);
   };
 
-  // eslint-disable-next-line consistent-return
-  searchFilterBtn = () => {
-    if (!this.props.small) {
-      return (
-        <button
-          className="wfp--search-button"
-          type="button"
-          aria-label={this.props.searchButtonLabelText}>
-          <Icon
-            name="filter--glyph"
-            description="filter"
-            className="wfp--search-filter"
-          />
-        </button>
-      );
-    }
-  };
-
-  // eslint-disable-next-line consistent-return
-  searchLayoutBtn = () => {
-    if (!this.props.small) {
-      return (
-        <button
-          className="wfp--search-button"
-          type="button"
-          onClick={this.toggleLayout}
-          aria-label={this.props.layoutButtonLabelText}>
-          {this.state.format === 'list' ? (
-            <div className="wfp--search__toggle-layout__container">
-              <Icon
-                name="list"
-                description="list"
-                className="wfp--search-view"
-              />
-            </div>
-          ) : (
-            <div className="wfp--search__toggle-layout__container">
-              <Icon
-                name="grid"
-                description="toggle-layout"
-                className="wfp--search-view"
-              />
-            </div>
-          )}
-        </button>
-      );
-    }
-  };
-
   render() {
     const {
       className,
+      banner,
       type,
       id = (this._inputId =
         this._inputId ||
@@ -127,20 +66,22 @@ export default class Search extends Component {
           .substr(2)}`),
       placeHolderText,
       labelText,
+      closeButtonLabelText,
       small,
-      smaller,
-      medium,
+      main,
+      light,
       ...other
     } = this.props;
 
     const { hasContent } = this.state;
 
     const searchClasses = classNames({
-      'wfp--search wfp--search-with-options': true,
-      'wfp--search--lg': !medium && !small && !smaller,
-      'wfp--search--md': medium,
+      'wfp--search': true,
+      'wfp--search--lg': !small,
       'wfp--search--sm': small,
-      'wfp--search--xs': smaller,
+      'wfp--search--main': main,
+      'wfp--search--banner': banner,
+      'wfp--search--light': light,
       [className]: className,
     });
 
@@ -149,16 +90,11 @@ export default class Search extends Component {
       'wfp--search-close--hidden': !hasContent,
     });
 
-    /*
-      {this.searchFilterBtn()}
-      {this.searchLayoutBtn()}
-    */
-
     return (
       <div className={searchClasses} role="search">
-        <div
-          name="search--glyph"
-          description="search"
+        <Icon
+          name="search"
+          description={labelText}
           className="wfp--search-magnifier"
         />
         <label htmlFor={id} className="wfp--label">
@@ -175,12 +111,13 @@ export default class Search extends Component {
             this.input = input;
           }}
         />
-        <Icon
-          name="close--glyph"
-          description="close"
+        <button
           className={clearClasses}
           onClick={this.clearInput}
-        />
+          type="button"
+          aria-label={closeButtonLabelText}>
+          <Icon name="close--solid" description={closeButtonLabelText} />
+        </button>
       </div>
     );
   }

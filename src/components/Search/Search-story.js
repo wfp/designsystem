@@ -3,17 +3,16 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import SingleComponent from '../../documentation/SingleComponent';
 import Search from '../Search';
+import SearchSkeleton from '../Search/Search.Skeleton';
+import SingleComponent from '../../documentation/SingleComponent';
 
 const searchProps = {
   className: 'some-class',
 };
 
 storiesOf('Search', module)
-  .addDecorator(story => (
-    <SingleComponent pageWidth="wide">{story()}</SingleComponent>
-  ))
+  .addDecorator(story => <SingleComponent>{story()}</SingleComponent>)
   .addWithInfo(
     'normal',
     `
@@ -28,10 +27,7 @@ storiesOf('Search', module)
         id="search-1"
         labelText="Search"
         placeHolderText="Search"
-        onChange={() => {
-          console.log('onChange');
-          action('onChange');
-        }}
+        onChange={action('onChange')}
       />
     )
   )
@@ -51,10 +47,7 @@ storiesOf('Search', module)
         id="search-2"
         labelText="Search"
         placeHolderText="Search"
-        onChange={() => {
-          console.log('onChange');
-          action('onChange');
-        }}
+        onChange={action('onChange')}
       />
     )
   )
@@ -91,4 +84,38 @@ storiesOf('Search', module)
 
       return <ControlledSearch />;
     }
+  )
+  .addWithInfo(
+    'light',
+    `
+      Search enables users to specify a word or a phrase to find particular relevant pieces of content
+      without the use of navigation. Search can be used as the primary means of discovering content,
+      or as a filter to aid the user in finding content.
+    `,
+    () => (
+      <Search
+        {...searchProps}
+        light
+        className="some-class"
+        id="search-1"
+        labelText="Search"
+        placeHolderText="Search"
+        onChange={() => {
+          console.log('onChange');
+          action('onChange');
+        }}
+      />
+    )
+  )
+  .addWithInfo(
+    'skeleton',
+    `
+      Placeholder skeleton state to use when content is loading.
+    `,
+    () => (
+      <div style={{ width: '200px' }}>
+        <SearchSkeleton />&nbsp;
+        <SearchSkeleton small />
+      </div>
+    )
   );

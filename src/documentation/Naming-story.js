@@ -7,7 +7,7 @@ import Page from './Page';
 import Blockquote from '../components/Blockquote';
 
 storiesOf(' Documentation', module).addWithInfo('Naming Convention', ``, () => (
-  <Page title="Naming Convention" subTitle="Introduction to the new WFP UI-Kit">
+  <Page title="Naming Convention" subTitle="Introduction to the new WFP UI Kit">
     <p>
       The UI Kit uses the{' '}
       <a href="http://getbem.com/naming">BEM naming convention</a> with a{' '}

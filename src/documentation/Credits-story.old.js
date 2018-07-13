@@ -7,7 +7,7 @@ import Page from './Page';
 import Blockquote from '../components/Blockquote';
 
 storiesOf(' Documentation', module).addWithInfo('Credits', ``, () => (
-  <Page title="Credits" subTitle="Introduction to the new WFP UI-Kit">
+  <Page title="Credits" subTitle="Introduction to the new WFP UI Kit">
     <p>
       <Link href="http://brand.manuals.wfp.org/">
         The World Food Programme’s (WFP) Branding Guidance

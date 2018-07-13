@@ -10,7 +10,7 @@ storiesOf(' Documentation', module).addWithInfo('Typography', ``, () => (
   <Page
     title="Typography"
     pageWidth="narrow"
-    subTitle="Introduction to the new WFP UI-Kit">
+    subTitle="Introduction to the new WFP UI Kit">
     <p>
       Typography plays a critical role in any design; in fact, it accounts for
       as much as 95% of everything we see on the Web. When done well, it adds
@@ -38,8 +38,8 @@ storiesOf(' Documentation', module).addWithInfo('Typography', ``, () => (
     <h2>Heading 2</h2>
     <h3>Heading 3</h3>
     <h4>Heading 4</h4>
-    <h5>Heading 5</h5>
-    <h6>Heading 6</h6>
+    {/*<h5>Heading 5</h5>*/}
+    {/*<h6>Heading 6</h6>*/}
 
     <h3>Paragraph</h3>
 

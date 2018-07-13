@@ -9,7 +9,7 @@
 
 ## Credits
 
-The UI-Kit will be heavily based on:
+The UI Kit will be heavily based on:
 
 > [Carbon Components](https://github.com/carbon-design-system/carbon-components) >[U.S. Webdesign System](https://designsystem.digital.gov/page-templates/#landing-page) >[Sketch Favicon Exporter Template](https://github.com/frederik-jacques/sketch-favicon-exporter-template)
 

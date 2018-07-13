@@ -1,7 +1,7 @@
 {
   "name": "@wfp/ui",
-  "version": "0.17.79",
-  "description": "WFP UI-Kit Next",
+  "version": "0.17.84",
+  "description": "WFP UI Kit Next",
   "license": "Apache-2",
   "main": "lib/index.js",
   "main:scss": "source/globals/styles.scss",
@@ -102,6 +102,7 @@
     }
   },
   "peerDependencies": {
+    "carbon-icons": "^7.0.5",
     "react": "^15.3.2 || ^16.1.0",
     "react-dom": "^15.3.2 || ^16.1.0"
   },
@@ -145,7 +146,7 @@
     "babel-plugin-transform-object-assign": "^6.22.0",
     "bowser": "^1.6.1",
     "carbon-components": "^8.10.0",
-    "carbon-icons": "^6.1.0",
+    "carbon-icons": "^7.0.7",
     "chalk": "^2.3.0",
     "cli-table": "^0.3.0",
     "commitizen": "^2.9.5",

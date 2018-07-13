@@ -7,7 +7,7 @@ import Page from './Page';
 import Blockquote from '../components/Blockquote';
 
 storiesOf(' Documentation', module).addWithInfo('Usage', ``, () => (
-  <Page title="Usage" subTitle="How to use the UI-Kit">
+  <Page title="Usage" subTitle="How to use the UI Kit">
     <h3>React</h3>
     <p>Importing the React components</p>
     <Blockquote title="Importing the MainNavigation" type="code">

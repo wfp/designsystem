@@ -181,7 +181,7 @@ storiesOf('MainNavigation', module)
         </MainNavigationItem>
         <MainNavigationItem>
           <Search
-            small
+            main
             id="search-2"
             labelText="Search"
             placeHolderText="Search"

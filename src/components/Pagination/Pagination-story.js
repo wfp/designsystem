@@ -34,16 +34,4 @@ storiesOf('Pagination', module)
         pageInputDisabled={true}
       />
     )
-  )
-  .addWithInfo(
-    'multipe pagination components',
-    `Showcasing unique ids for each pagination component`,
-    () => {
-      return (
-        <div>
-          <Pagination {...props} totalItems={103} />
-          <Pagination {...props} totalItems={103} />
-        </div>
-      );
-    }
   );
