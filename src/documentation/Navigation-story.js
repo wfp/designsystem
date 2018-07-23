@@ -3,7 +3,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { linkTo } from '@storybook/addon-links';
-import Link from '../components/Link';
 import Button from '../components/Button';
 import Page from './Page';
 import Blockquote from '../components/Blockquote';

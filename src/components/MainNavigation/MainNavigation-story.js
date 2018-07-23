@@ -41,7 +41,7 @@ storiesOf('MainNavigation', module)
         
     `,
     () => (
-      <MainNavigation logo={<a href="#">WFP UI</a>}>
+      <MainNavigation logo={<a href="http://www.wfp.org">WFP UI</a>}>
         <MainNavigationItem>
           <Link href="http://communities.wfp.org" target="_blank">
             Communities

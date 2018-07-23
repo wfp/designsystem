@@ -69,16 +69,14 @@
     }
   }
 
-  .#{$prefix}--unit--littlepeople {
+  .#{$prefix}--unit--people {
     &:after {
       content: 'People';
     }
-  }
-
-  .#{$prefix}--unit--people,
-  .#{$prefix}--unit--mpeople {
-    &:after {
-      content: 'M People';
+    &.#{$prefix}--unit--million {
+      &:after {
+        content: 'M People';
+      }
     }
   }
 

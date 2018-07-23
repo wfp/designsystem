@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import classnames from 'classnames';
-import Link from '../Link';
 
 const BreadcrumbHome = ({ className, ...other }) => {
   const classNames = classnames('wfp--breadcrumb-home', className);

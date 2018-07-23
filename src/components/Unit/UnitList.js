@@ -11,12 +11,12 @@ export const Usd = props => {
 
 // Generate Partners
 export const People = props => {
-  return currencyCalc(props, 'Partners', undefined, true);
+  return currencyCalc(props, 'People', undefined, true, true);
 };
 
 // Generate Partners
 export const Partners = props => {
-  return currencyCalc(props, 'Partners', undefined, true);
+  return currencyCalc(props, 'Partners', undefined, true, true);
 };
 
 // Generate MT
@@ -36,17 +36,17 @@ export const Num = props => {
 
 // Generate Beneficiaries
 export const Beneficiaries = props => {
-  return currencyCalc(props, 'Beneficaries', undefined, true);
+  return currencyCalc(props, 'Beneficaries', undefined, true, true);
 };
 
 // Generate Households
 export const Households = props => {
-  return currencyCalc(props, 'Households', undefined, true);
+  return currencyCalc(props, 'Households', undefined, true, true);
 };
 
 // Generate Trips
 export const Trips = props => {
-  return currencyCalc(props, 'Trips', undefined, true);
+  return currencyCalc(props, 'Trips', undefined, true, true);
 };
 
 // Generate Households

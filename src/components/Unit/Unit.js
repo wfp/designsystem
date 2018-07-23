@@ -40,7 +40,13 @@ export const scaleLookup = {
   },
 };
 
-export const currencyCalc = (props, after, before, afterSingular) => {
+export const currencyCalc = (
+  props,
+  after,
+  before,
+  afterSingular,
+  isAbsolute
+) => {
   const {
     children,
     input,
@@ -56,7 +62,7 @@ export const currencyCalc = (props, after, before, afterSingular) => {
 
   // Remove commas
   var value =
-    typeof children === 'string' ? children.replace(',', '') : children;
+    typeof children === 'string' ? children.replace(/,/g, '') : children;
 
   // Parse as float
   value = parseFloat(value);
@@ -76,27 +82,31 @@ export const currencyCalc = (props, after, before, afterSingular) => {
   const toLocalStringConfig = {
     //maximumSignificantDigits: maximumSignificantDigits,
     minimumFractionDigits:
-      maximumFractionDigits === 0
-        ? 0
-        : minimumFractionDigits
-          ? minimumFractionDigits
-          : outputCalc && outputCalc.defaultmaximumFractionDigits
-            ? outputCalc.defaultmaximumFractionDigits
-            : 2,
+      isAbsolute === true
+        ? minimumFractionDigits === 0
+        : maximumFractionDigits === 0
+          ? 0
+          : minimumFractionDigits
+            ? minimumFractionDigits
+            : outputCalc && outputCalc.defaultmaximumFractionDigits
+              ? outputCalc.defaultmaximumFractionDigits
+              : 2,
     maximumFractionDigits:
-      value <= 0.005
-        ? 4
-        : value <= 0.05
-          ? 3
-          : value <= 0.5
-            ? 2
-            : maximumFractionDigits === 0
-              ? 0
-              : maximumFractionDigits
-                ? maximumFractionDigits
-                : outputCalc && outputCalc.defaultmaximumFractionDigits
-                  ? outputCalc.defaultmaximumFractionDigits
-                  : 2,
+      isAbsolute === true
+        ? maximumFractionDigits === 0
+        : value <= 0.005
+          ? 4
+          : value <= 0.05
+            ? 3
+            : value <= 0.5
+              ? 2
+              : maximumFractionDigits === 0
+                ? 0
+                : maximumFractionDigits
+                  ? maximumFractionDigits
+                  : outputCalc && outputCalc.defaultmaximumFractionDigits
+                    ? outputCalc.defaultmaximumFractionDigits
+                    : 2,
   };
 
   // Convert to Locale String
@@ -137,7 +147,7 @@ export const percentageCalc = (props, after, before) => {
 
   // Remove commas
   var value =
-    typeof children === 'string' ? children.replace(',', '') : children;
+    typeof children === 'string' ? children.replace(/,/g, '') : children;
 
   // Parse as float
   value = parseFloat(value);

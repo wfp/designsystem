@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import classnames from 'classnames';
 
-export const ListElement = ({ children, className, title, ...other }) => {
+export const ListItem = ({ children, className, title, ...other }) => {
   const classNames = classnames('wfp--list__element', className);
   return (
     <li className={classNames} {...other}>

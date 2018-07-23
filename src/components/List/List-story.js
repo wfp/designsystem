@@ -8,7 +8,7 @@ import SingleComponent from '../../documentation/SingleComponent';
 import { withReadme } from 'storybook-readme';
 import readme from './README.md';
 
-import { List } from '../List';
+import { List, ListItem } from '../List';
 
 const additionalProps = {
   onClick: () => {
@@ -24,12 +24,13 @@ storiesOf('List', module)
   .addWithInfo(
     'Default',
     `
-      Links are typically used as a means of navigation either within the application, to a place outside, or to a resource.
-      For anything else, especially things that change data, you should be using a button.
+      Lists show a number of connected items written consecutively, typically one below the other.
     `,
     () => (
       <List href="#" {...additionalProps}>
-        Link
+        <ListItem>First item</ListItem>
+        <ListItem>Second item</ListItem>
+        <ListItem>Third item</ListItem>
       </List>
     )
   );

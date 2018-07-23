@@ -15,23 +15,26 @@
   .#{$prefix}--select {
     @include reset;
     position: relative;
-    display: block;
-    /*&:after {
-      content: "";
-      display: block;
-
-      position: absolute;
-      right: 0.6em;
-      top: 50%;
-      margin-top: rem(-3px);
-      width: rem(12px);
-      height: rem(8px);
-      pointer-events: none;
-    }*/
+    display: flex;
+    flex-direction: column;
   }
 
   .#{$prefix}--select-input {
     @include font-family;
+    @include typescale('zeta');
+    height: rem(40px);
+    appearance: none;
+    display: block;
+    width: 100%;
+    padding: 0 $spacing-2xl 0 $spacing-md;
+    color: $text-01;
+    background-color: $field-01;
+    border: $input-border;
+    order: 2;
+    border-radius: 0;
+    cursor: pointer;
+
+    /*    @include font-family;
     @include typescale('zeta');
     appearance: none;
     display: block;
@@ -44,41 +47,77 @@
     border-radius: 0;
     cursor: pointer;
     position: relative;
-    line-height: 1em;
-
-    background-size: 10px auto;
-    background-position: calc(100% - 7px) calc(50% + 2px);
-    background-repeat: no-repeat;
-    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10' width='10' height='10' %3e%3cpath fill='"+$brand-01+"' d='M10 0L5 5 0 0z'%3e%3c/path%3e%3c/svg%3e");
+    line-height: 1em;*/
 
     // Hide default select arrow in IE10+
     &::-ms-expand {
       display: none;
     }
 
+    & ~ .#{$prefix}--label {
+      order: 1;
+    }
+
     &:focus {
       @include focus-outline('border');
+    }
+
+    &[data-invalid],
+    &[data-invalid]:focus {
+      // box-shadow: 0 2px 0 0 $support-01;
+    }
+
+    &:focus ~ .#{$prefix}--label {
+      color: $brand-01;
+    }
+
+    &[data-invalid]:focus ~ .#{$prefix}--label {
+      color: $support-01;
     }
 
     &:disabled {
       opacity: 0.5;
       cursor: not-allowed;
     }
+
+    ~ .#{$prefix}--form-requirement {
+      order: 3;
+      color: $support-01;
+      font-weight: 400;
+      margin-top: $spacing-2xs;
+
+      &::before {
+        display: none;
+      }
+    }
   }
 
-  /*.#{$prefix}--select__arrow {
+  .#{$prefix}--select--light .#{$prefix}--select-input {
+    background: $field-02;
+  }
+
+  .#{$prefix}--select__arrow {
     fill: $brand-01;
     position: absolute;
     right: 1rem;
-    top: 1.175rem;
+    bottom: 1rem;
     width: rem(10px);
     height: rem(5px);
     pointer-events: none;
-  }*/
+  }
+
+  &[data-invalid] ~ .#{$prefix}--select__arrow {
+    bottom: 2.25rem;
+  }
 
   .#{$prefix}--select-optgroup,
   .#{$prefix}--select-option {
     color: $text-01; // For the options to show in IE11
+  }
+
+  .#{$prefix}--select-option[disabled] {
+    opacity: 0.5;
+    cursor: not-allowed;
   }
 
   // Override some Firefox user-agent styles
@@ -92,26 +131,79 @@
       color: $text-01;
     }
   }
-}
 
-.#{$prefix}--select--inline {
-  display: flex;
-  align-items: center;
+  .#{$prefix}--select--inline {
+    display: grid;
+    grid-template-columns: auto auto;
 
-  .#{$prefix}--label {
-    white-space: nowrap;
-    margin: 0 $spacing-xs 0 0;
-    font-weight: 400;
+    // Targets IE10+ browsers: Display grid auto not supported
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+
+    .#{$prefix}--label {
+      white-space: nowrap;
+      margin: 0 $spacing-xs 0 0;
+      font-weight: 400;
+      align-self: center;
+    }
+
+    .#{$prefix}--select-input {
+      background-color: transparent;
+      color: $brand-01;
+      font-weight: 600;
+      box-shadow: none;
+
+      &:hover {
+        background-color: $color__white;
+      }
+
+      &:focus {
+        @include focus-outline('border');
+      }
+
+      ~ .#{$prefix}--select__arrow {
+        bottom: auto;
+        top: 1rem;
+      }
+
+      &[data-invalid] {
+        color: $text-01;
+        outline-offset: 2px;
+
+        &:focus {
+          outline: 1px solid $support-01;
+          box-shadow: none;
+        }
+      }
+
+      &:disabled ~ * {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+
+      ~ .#{$prefix}--form-requirement {
+        grid-column-start: 2;
+
+        // Targets IE10+ browsers: Display grid auto not supported
+        @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+          position: absolute;
+          bottom: -1.5rem;
+        }
+      }
+    }
   }
 
-  .#{$prefix}--select-input {
-    background-color: transparent;
-    color: $brand-01;
-    font-weight: 600;
+  //Skeleton State
+  .#{$prefix}--select.#{$prefix}--skeleton {
+    @include skeleton;
+    width: 100%;
+    height: 2.5rem;
+  }
 
-    &:disabled ~ * {
-      opacity: 0.5;
-      cursor: not-allowed;
-    }
+  .#{$prefix}--select.#{$prefix}--skeleton .#{$prefix}--select-input {
+    display: none;
   }
 }

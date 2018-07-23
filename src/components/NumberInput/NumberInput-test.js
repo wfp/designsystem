@@ -10,7 +10,6 @@ describe('NumberInput', () => {
     let numberInput;
     let container;
     let formItem;
-    let icons;
 
     beforeEach(() => {
       wrapper = mount(

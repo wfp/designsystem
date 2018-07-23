@@ -1,6 +1,6 @@
 {
   "name": "@wfp/ui",
-  "version": "0.17.84",
+  "version": "0.17.97",
   "description": "WFP UI Kit Next",
   "license": "Apache-2",
   "main": "lib/index.js",
@@ -25,7 +25,7 @@
     "prettier": "prettier --write \"**/*.{scss,css,js,md}\"",
     "prettier:diff": "prettier --list-different \"**/*.{scss,css,js,md}\"",
     "semantic-release": "semantic-release",
-    "start": "yarn storybook",
+    "start": "yarn storybook && yarn watch:css",
     "storybook": "start-storybook -s ./dist -p 9000",
     "test": "jest --json --outputFile=jest-test-results.json",
     "test-ssr": "yarn build && node ssr-tests/*.js"
@@ -102,7 +102,7 @@
     }
   },
   "peerDependencies": {
-    "carbon-icons": "^7.0.5",
+    "@wfp/icons": "^0.0.34",
     "react": "^15.3.2 || ^16.1.0",
     "react-dom": "^15.3.2 || ^16.1.0"
   },
@@ -137,6 +137,7 @@
     "@storybook/addon-storyshots": "^3.4.6",
     "@storybook/addon-viewport": "^3.4.0",
     "@storybook/react": "^3.2.13",
+    "@wfp/icons": "^0.0.4",
     "all-contributors-cli": "^4.10.1",
     "autoprefixer": "^8.3.0",
     "babel-core": "^7.0.0-0",
@@ -146,7 +147,6 @@
     "babel-plugin-transform-object-assign": "^6.22.0",
     "bowser": "^1.6.1",
     "carbon-components": "^8.10.0",
-    "carbon-icons": "^7.0.7",
     "chalk": "^2.3.0",
     "cli-table": "^0.3.0",
     "commitizen": "^2.9.5",

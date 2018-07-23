@@ -1,6 +1,8 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
+import { iconCaretDown } from '@wfp/icons';
+import Icon from '../Icon';
 
 const Select = ({
   className,
@@ -11,6 +13,7 @@ const Select = ({
   disabled,
   children,
   hideLabel,
+  iconDescription,
   ...other
 }) => {
   const selectClasses = classNames({
@@ -42,6 +45,11 @@ const Select = ({
           disabled={disabled}>
           {children}
         </select>
+        <Icon
+          icon={iconCaretDown}
+          className="wfp--select__arrow"
+          description={iconDescription}
+        />
       </div>
     </div>
   );
@@ -56,6 +64,7 @@ Select.propTypes = {
   onChange: PropTypes.func,
   disabled: PropTypes.bool,
   defaultValue: PropTypes.any,
+  iconDescription: PropTypes.string.isRequired,
   hideLabel: PropTypes.bool,
 };
 
@@ -63,6 +72,7 @@ Select.defaultProps = {
   disabled: false,
   labelText: 'Select',
   inline: false,
+  iconDescription: 'open list of options',
 };
 
 export default Select;

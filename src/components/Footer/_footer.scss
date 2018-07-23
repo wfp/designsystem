@@ -23,7 +23,6 @@
   border-top: 2px solid $color__navy-gray-8;
   background-color: $ui-01;
   z-index: z('footer');
-  //margin-top: $spacing-xs;
   padding: rem(20px) 0;
 }
 
@@ -54,7 +53,7 @@
 }
 
 .#{$prefix}--footer-info__item {
-  @include typescale('delta');
+  //@include typescale('delta');
   @include line-height('body');
   display: flex;
   flex-direction: column;
@@ -73,6 +72,7 @@
 .#{$prefix}--footer-info__item > .#{$prefix}--footer-label {
   @include typescale('zeta');
   @include line-height('body');
+  font-weight: 600;
   margin: 0;
 
   @media screen and (max-width: 600px) {
@@ -97,5 +97,52 @@
 @include breakpoint(bp--sm--major) {
   .#{$prefix}--footer-cta-logo-small {
     display: none;
+  }
+}
+
+/* External */
+
+.#{$prefix}--footer--external {
+  .#{$prefix}--footer-info-external {
+  }
+
+  .#{$prefix}--footer-info__item {
+    //@include typescale('delta');
+    @include line-height('body');
+    display: block;
+    margin: 0;
+    margin-right: rem(64px);
+    @include rtl {
+      margin-left: rem(64px);
+      margin-right: 0;
+    }
+  }
+
+  .#{$prefix}--footer-info__item > .#{$prefix}--link {
+    font-weight: 600;
+    margin-right: rem(10px);
+    @include typescale('zeta');
+    @include breakpointMax(bp--md--major) {
+      display: block;
+    }
+  }
+
+  .#{$prefix}--footer-meta {
+    @include typescale('zeta');
+    border-top: 1px solid $color__navy-gray-8;
+    margin-top: $spacing-md;
+    padding-top: $spacing-md;
+    @include breakpoint(bp--md--major) {
+      display: flex;
+    }
+    justify-content: space-between;
+    font-style: normal;
+  }
+
+  .#{$prefix}--footer-meta__links {
+    .#{$prefix}--link {
+      font-weight: 600;
+      margin-left: rem(10px);
+    }
   }
 }

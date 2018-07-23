@@ -2,8 +2,6 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 import Link from '../components/Link';
-import Wrapper from '../components/Wrapper';
-import Blockquote from '../components/Blockquote';
 import {
   BannerNavigation,
   BannerNavigationItem,
@@ -89,7 +87,9 @@ const Page = ({ children, withoutSecondary }) => {
         </BannerNavigationItem>*/}
       </BannerNavigation>
 
-      <MainNavigation pageWidth="lg" logo={<a href="#">WFP UI</a>}>
+      <MainNavigation
+        pageWidth="lg"
+        logo={<a href="http://www.wfp.org">WFP UI</a>}>
         <MainNavigationItem
           subNavigation={
             <SubNavigation>
@@ -103,9 +103,6 @@ const Page = ({ children, withoutSecondary }) => {
                     id="search-2"
                     labelText="Filter"
                     placeHolderText="Filter"
-                    onChange={() => {
-                      console.log('onChange');
-                    }}
                   />
                 </SubNavigationFilter>
               </SubNavigationHeader>

@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import { SubNavigation } from '../SubNavigation';
 import classNames from 'classnames';
 import Button from '../Button';
 import Wrapper from '../Wrapper';
@@ -132,7 +131,7 @@ class MainNavigation extends Component {
     });
   };
 
-  handleClickOutside = evt => {
+  handleClickOutside = () => {
     this.setState({
       activeMenuItem: undefined,
     });

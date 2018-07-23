@@ -2,9 +2,7 @@
 
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import Link from '../components/Link';
 import Page from './Page';
-import Blockquote from '../components/Blockquote';
 
 storiesOf(' Documentation', module).addWithInfo('Naming Convention', ``, () => (
   <Page title="Naming Convention" subTitle="Introduction to the new WFP UI Kit">
@@ -17,7 +15,7 @@ storiesOf(' Documentation', module).addWithInfo('Naming Convention', ``, () => (
     <p>
       Please use ES-Lint which is a linting utility for JavaScript and JSX while
       building your React Application to analyze source code to flag programming
-      errors, bugs, stylistic errors, and suspicious constructs.
+      errors, bugs, stylistic errors and suspicious constructs.
     </p>
 
     <ul>

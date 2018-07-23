@@ -54,6 +54,9 @@ export InteriorLeftNavItem from './components/InteriorLeftNavItem';
 export InteriorLeftNavList from './components/InteriorLeftNavList';
 */
 export Link from './components/Link';
+
+export { List, ListItem } from './components/List';
+
 export {
   MainNavigation,
   MainNavigationItem,

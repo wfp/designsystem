@@ -2,9 +2,7 @@
 
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import Link from '../components/Link';
 import Page from './Page';
-import Blockquote from '../components/Blockquote';
 
 storiesOf(' Documentation', module).addWithInfo('Typography', ``, () => (
   <Page

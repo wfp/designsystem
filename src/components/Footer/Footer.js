@@ -3,6 +3,7 @@ import React from 'react';
 import classnames from 'classnames';
 import Link from '../Link';
 import Wrapper from '../Wrapper';
+import Icon from '../Icon';
 
 //import logoExtended from '../../../assets/logos/extended/en/wfp-logo-extended-black-en.svg';
 //import logoVertical from '../../../assets/logos/vertical/en/wfp-logo-vertical-black-en.svg';
@@ -10,6 +11,7 @@ import Wrapper from '../Wrapper';
 const Footer = ({
   className,
   children,
+  external,
   labelOne,
   linkTextOne,
   linkHrefOne,
@@ -19,11 +21,16 @@ const Footer = ({
   logo,
   logoExtended,
   metaContent,
+  metaLinks,
   secondary,
   pageWidth,
   ...other
 }) => {
-  const classNames = classnames('wfp--footer', className);
+  const classNames = classnames(
+    'wfp--footer',
+    { 'wfp--footer--external': external },
+    className
+  );
 
   const footer = (
     <footer {...other} className={classNames}>
@@ -44,20 +51,45 @@ const Footer = ({
             </div>
           )}
           <div className="wfp--footer-cta">
-            <img
-              className="wfp--footer-cta-logo"
-              src={logoExtended}
-              alt="World Food Programme Logo"
-            />
-            <img
-              className="wfp--footer-cta-logo-small"
-              src={logo}
-              alt="World Food Programme Logo"
-            />
+            {logoExtended ? (
+              <img
+                className="wfp--footer-cta-logo"
+                src={logoExtended}
+                alt="World Food Programme Logo"
+              />
+            ) : (
+              <Icon
+                name="wfp-logo--extended--en"
+                description="WFP"
+                className="wfp--footer-cta-logo"
+              />
+            )}
+
+            {logo ? (
+              <img
+                className="wfp--footer-cta-logo-small"
+                src={logo}
+                alt="World Food Programme Logo"
+              />
+            ) : (
+              <Icon
+                name="wfp-logo--vertical--en"
+                description="WFP"
+                className="wfp--footer-cta-logo"
+              />
+            )}
             {secondary}
           </div>
         </div>
-        {metaContent && <div className="wfp--footer-meta">{metaContent}</div>}
+      </Wrapper>
+
+      <Wrapper className="wfp--footer-meta" pageWidth={pageWidth}>
+        {metaContent && (
+          <div className="wfp--footer-meta__content">{metaContent}</div>
+        )}
+        {metaLinks && (
+          <div className="wfp--footer-meta__links">{metaLinks}</div>
+        )}
       </Wrapper>
     </footer>
   );
@@ -84,8 +116,6 @@ Footer.defaultProps = {
   labelTwo: 'Estimate Monthly Cost',
   linkTextTwo: 'Cost Calculator',
   linkHrefTwo: '#',
-  logo: 'logos/vertical/en/wfp-logo-vertical-black-en.svg',
-  logoExtended: 'logos/extended/en/wfp-logo-extended-black-en.svg',
   buttonText: 'Create',
 };
 
