@@ -7,6 +7,7 @@ import Blockquote from '../components/Blockquote';
 
 storiesOf(' Documentation', module).addWithInfo('Usage', ``, () => (
   <Page title="Usage" subTitle="How to use the UI Kit">
+    <h2>For Developers</h2>
     <h3>React</h3>
     <p>Importing the React components</p>
     <Blockquote title="Importing the MainNavigation" type="code">
@@ -44,5 +45,8 @@ $color__main: #0076FF;
 // Only use variables
 @import "../../node_modules/@wfp/ui/source/globals/scss/vars";`}
     </Blockquote>
+
+    <h2>For Designers</h2>
+    <p>Sketch</p>
   </Page>
 ));

@@ -2,15 +2,49 @@
 
 import React from 'react';
 import { storiesOf } from '@storybook/react';
+import { linkTo } from '@storybook/addon-links'
 import Link from '../components/Link';
 import Page from './Page';
 import Blockquote from '../components/Blockquote';
+import Wrapper from '../components/Wrapper';
+import Button from '../components/Button';
 
-storiesOf(' Documentation', module).addWithInfo('Introduction', ``, () => (
-  <Page title="WFP UI Guidelines" subTitle="Introduction to the new WFP UI Kit">
+import { withReadme } from 'storybook-readme';
+import readme from './README-INTRODUCTION.md';
+
+
+const Box = ({title, content}) => (
+  <div>
+    <h3>{title}</h3>
+    <p>{content}</p>
+  </div>
+)
+
+storiesOf(' Documentation', module)
+.addDecorator(withReadme([readme]))
+.addWithInfo('Introduction', ``, () => (
+
+  <div>
+
+  <Wrapper pageWidth="narrow" background="dark" backgroundStyle={{ color: '#FFFFFF', padding: '8rem 0', textAlign: 'center'}}>
+    <h1 style={{fontSize: '6rem', marginBottom: '0.5em', letterSpacing: '0.1em', fontWeight: '100'}}>
+      <span style={{ marginBottom: '0em', letterSpacing: '0.1em', fontWeight: '700'}}>
+        WFP
+      </span>
+         <span style={{marginLeft: '0.3em', letterSpacing: '0.05em'}}>
+          UI
+        </span>
+    </h1>
+
+    <Button kind="inverse" style={{marginRight: '1em'}} href="https://github.com/wfp/ui">Follow on GitHub</Button>
+    <Button kind="inverse" style={{marginLeft: '1em'}} onClick={linkTo('Documentation', 'Usage')}>Getting started</Button>
+  </Wrapper>
+
+  <Page>
+
     <p>
       The new WFP UI it is based on the{' '}
-      <Link href="http://brand.manuals.wfp.org/">
+      <Link href="http://brand.manuals.wfp.org/" target="_blank">
         World Food Programme’s Branding Guidance
       </Link>{' '}
       WFP's new branding was launched in early 2018 and will be implemented
@@ -21,6 +55,8 @@ storiesOf(' Documentation', module).addWithInfo('Introduction', ``, () => (
       Building on this initiative, the World Food Programme’s User Interface
       Style Guide emphasizes WFP’s commitment to establish and build the brand.
     </p>
+
+    <h3>Purpose</h3>
     <p>
       The purpose of this project is to create a unified toolkit that is used by
       UX-designers and developers alike on their projects to ensure all
@@ -74,4 +110,5 @@ storiesOf(' Documentation', module).addWithInfo('Introduction', ``, () => (
       <a href="https://www.npmjs.com/package/@wfp/ui">Package on npm</a>
     </p>
   </Page>
+  </div>
 ));

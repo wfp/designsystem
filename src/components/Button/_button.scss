@@ -149,6 +149,31 @@
     }
   }
 
+  .#{$prefix}--btn--inverse {
+    @include button-theme(
+      transparent,
+      $ui-01,
+      $ui-01,
+      rgba($ui-01, 0.1),
+      $ui-01,
+    );
+
+    &:hover {
+      color: $inverse-01;
+      border: $button-border-width solid $ui-01;
+    }
+
+    &:focus {
+      color: $inverse-01;
+    }
+
+    &:hover:disabled,
+    &:focus:disabled {
+      color: $support-01;
+      border: $button-border-width solid $support-01;
+    }
+  }
+
   .#{$prefix}--btn--danger--primary {
     @include button-theme(
       $support-01,

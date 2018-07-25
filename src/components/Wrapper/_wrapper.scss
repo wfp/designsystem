@@ -35,6 +35,10 @@
     background: $color__navy-gray-9;
   }
 
+  .#{$prefix}--wrapper--background-dark {
+    background: $brand-01;
+  }
+
   .#{$prefix}--wrapper--width-md {
     max-width: 1000px;
   }

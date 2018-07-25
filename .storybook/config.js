@@ -124,6 +124,4 @@ function loadStories() {
   keys.forEach(filename => req(filename));
 }
 
-
-console.log(loadStories());
 configure(loadStories, module);
