@@ -134,32 +134,23 @@ storiesOf('Footer', module)
           metaContent={
             <span>
               2018 © World Food Programme<br />
-              Via C. G. Viola 68 Parco dei Medici - 00148 Rome, Italy
             </span>
           }
-          metaLinks={
+          secondary={
             <div>
-              <Link href="http://www.wfp.org">Donate</Link>
-              <Link href="http://www.wfp.org">Privacy</Link>
-              <Link href="http://www.wfp.org">Contact</Link>
-              <Link href="http://www.wfp.org">Terms of Use</Link>
-              <Link href="http://www.wfp.org">Executive Board</Link>
-              <Link href="http://www.wfp.org">WFP Alumni</Link>
+              Via C. G. Viola 68 Parco dei Medici<br />00148 Rome, Italy
             </div>
           }
           mobilePageWidth={mobilePageWidth}
           pageWidth={pageWidth}>
-          <div className="wfp--footer-info">
-            <div className="wfp--footer-info__item">
-              <p className="wfp--footer-label">
-                Follow the World Food Programme on:
-              </p>
-              <Link href="http://www.wfp.org">Twitter</Link>
-              <Link href="http://www.wfp.org">Facebook</Link>
-              <Link href="http://www.wfp.org">Instagram</Link>
-              <Link href="http://www.wfp.org">Linkedin</Link>
-              <Link href="http://www.wfp.org">Medium</Link>
-            </div>
+          <div>
+            The United Nations World Food Programme - saving lives in
+            emergencies and changing lives for millions through sustainable
+            development. WFP works in more than 80 countries around the world,
+            feeding people caught in conflict and disasters, and laying the
+            foundations for a better future.
+            <br />
+            <Link href="http://www.wfp.org">Custom Links</Link>
           </div>
         </Footer>
       );

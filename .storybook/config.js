@@ -116,7 +116,14 @@ setOptions({
 
 function loadStories() {
   const req = require.context('../src', true, /\-story\.js$/);
-  req.keys().forEach(filename => req(filename));
+
+  let keys = req.keys();
+
+  keys.unshift('./documentation/Intro-story.js');
+
+  keys.forEach(filename => req(filename));
 }
 
+
+console.log(loadStories());
 configure(loadStories, module);

@@ -37,23 +37,23 @@ const Footer = ({
       <Wrapper pageWidth={pageWidth}>
         <div className="wfp--footer__content">
           {children ? (
-            <div className="wfp--footer-info">{children}</div>
+            <div className="wfp--footer__info">{children}</div>
           ) : (
-            <div className="wfp--footer-info">
-              <div className="wfp--footer-info__item">
-                <p className="wfp--footer-label">{labelOne}</p>
+            <div className="wfp--footer__info">
+              <div className="wfp--footer__info__item">
+                <p className="wfp--footer__label">{labelOne}</p>
                 <Link href={linkHrefOne}>{linkTextOne}</Link>
               </div>
-              <div className="wfp--footer-info__item">
-                <p className="wfp--footer-label">{labelTwo}</p>
+              <div className="wfp--footer__info__item">
+                <p className="wfp--footer__label">{labelTwo}</p>
                 <Link href={linkHrefTwo}>{linkTextTwo}</Link>
               </div>
             </div>
           )}
-          <div className="wfp--footer-cta">
+          <div className="wfp--footer__cta">
             {logoExtended ? (
               <img
-                className="wfp--footer-cta-logo"
+                className="wfp--footer__cta-logo"
                 src={logoExtended}
                 alt="World Food Programme Logo"
               />
@@ -61,13 +61,13 @@ const Footer = ({
               <Icon
                 name="wfp-logo--extended--en"
                 description="WFP"
-                className="wfp--footer-cta-logo"
+                className="wfp--footer__cta-logo"
               />
             )}
 
             {logo ? (
               <img
-                className="wfp--footer-cta-logo-small"
+                className="wfp--footer__cta-logo-small"
                 src={logo}
                 alt="World Food Programme Logo"
               />
@@ -75,20 +75,22 @@ const Footer = ({
               <Icon
                 name="wfp-logo--vertical--en"
                 description="WFP"
-                className="wfp--footer-cta-logo"
+                className="wfp--footer__cta-logo"
               />
             )}
-            {secondary}
+            {secondary && (
+              <div className="wfp--footer__secondary">{secondary}</div>
+            )}
           </div>
         </div>
       </Wrapper>
 
-      <Wrapper className="wfp--footer-meta" pageWidth={pageWidth}>
+      <Wrapper className="wfp--footer__meta" pageWidth={pageWidth}>
         {metaContent && (
-          <div className="wfp--footer-meta__content">{metaContent}</div>
+          <div className="wfp--footer__meta__content">{metaContent}</div>
         )}
         {metaLinks && (
-          <div className="wfp--footer-meta__links">{metaLinks}</div>
+          <div className="wfp--footer__meta__links">{metaLinks}</div>
         )}
       </Wrapper>
     </footer>
