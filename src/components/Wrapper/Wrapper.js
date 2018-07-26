@@ -23,7 +23,7 @@ const Wrapper = props => {
     'wfp--wrapper--spacing-md': spacing === 'md',
     [`${className}`]: className,
   });
-  if (background || backgroundStyle) {
+  if (background || backgroundStyle) {
     const backgroundClasses = classNames({
       'wfp--wrapper--background-lighter': background === 'lighter',
       'wfp--wrapper--background-dark': background === 'dark',

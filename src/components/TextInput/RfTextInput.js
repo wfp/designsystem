@@ -11,7 +11,6 @@ const TextInput = props => {
     type,
     onChange,
     onClick,
-    hideLabel,
     invalid,
     invalidText,
     ...other

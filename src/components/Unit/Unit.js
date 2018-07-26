@@ -17,7 +17,6 @@ import {
 } from './UnitList';
 import PropTypes from 'prop-types';
 
-import SimpleCalc from './SimpleCalc';
 import SvgUnit from './SvgUnit';
 import StringUnit from './StringUnit';
 // All Unit Components together in <Unit type="Unitname" />
@@ -51,7 +50,7 @@ export const currencyCalc = (
     children,
     input,
     output,
-    maximumSignificantDigits,
+    /* maximumSignificantDigits, */
     minimumFractionDigits,
     maximumFractionDigits,
     calcOnly,
@@ -202,7 +201,7 @@ const components = {
 };
 
 const Unit = props => {
-  const { className, output, string, textAnchor, hideZero, setup } = props;
+  const { className, output, string, textAnchor, setup } = props;
   const type = props.type ? props.type : 'None';
   const Unit = components[type];
   //const unitHideClass = setup && setup.hideUnit ? 'wfp--unit--hide' : '';
@@ -231,7 +230,7 @@ const Unit = props => {
   }
 
   if (Unit === undefined) {
-    console.warn(`The unit "${type}" is undefined`);
+    /* console.warn(`The unit "${type}" is undefined`); */
     return null;
   }
 

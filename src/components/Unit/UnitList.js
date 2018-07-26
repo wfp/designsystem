@@ -1,4 +1,3 @@
-import React from 'react';
 import { currencyCalc, percentageCalc } from './Unit';
 import SimpleCalc from './SimpleCalc';
 import YearMonthCalc from './YearMonthCalc';

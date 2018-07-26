@@ -111,7 +111,7 @@ storiesOf('Footer', module)
 
       const metaContent = text(
         'metaContent',
-        'WFP UI Kit version 1.0 – powered by RMT with full support of concerned divisions which are responsible for the accuracy of the content'
+        ' 2018 © World Food Programme'
       );
 
       const className = text('className', 'some-class');
@@ -131,11 +131,7 @@ storiesOf('Footer', module)
           className={className}
           logo={logo}
           logoExtended={logoExtended}
-          metaContent={
-            <span>
-              2018 © World Food Programme<br />
-            </span>
-          }
+          metaContent={metaContent}
           secondary={
             <div>
               Via C. G. Viola 68 Parco dei Medici<br />00148 Rome, Italy

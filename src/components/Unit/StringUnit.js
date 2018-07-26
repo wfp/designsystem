@@ -1,6 +1,4 @@
-import React from 'react';
-
-const StringUnit = (value, props) => {
+const StringUnit = (value) => {
   if (value) {
     const before = value.before ? value.before + ' ' : '';
     const afterOutput =

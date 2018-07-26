@@ -5,7 +5,7 @@ import { withReadme } from 'storybook-readme';
 import readme from './README.md';
 
 import TablePagination from '../TablePagination';
-import { List, ListElement } from '../List';
+import { List, ListItem } from '../List';
 import Button from '../Button';
 
 const data = [
@@ -112,15 +112,15 @@ const InlineMobile = props => {
 const GenderBreakdown = props => {
   return (
     <List kind="simple" small>
-      <ListElement title="Male">
+      <ListItem title="Male">
         {props.original.csp_end_target_female}
-      </ListElement>
-      <ListElement title="Female">
+      </ListItem>
+      <ListItem title="Female">
         {props.original.csp_end_target_female}
-      </ListElement>
-      <ListElement title="Overfall">
+      </ListItem>
+      <ListItem title="Overfall">
         {props.original.csp_end_target_female}
-      </ListElement>
+      </ListItem>
     </List>
   );
 };
@@ -183,7 +183,6 @@ storiesOf('Table', module)
         ExpanderComponent={ResponsiveExpanderComponent}
         PaginationComponent={TablePagination}
         SubComponent={row => {
-          console.log(row);
           return (
             <div className="ReactTable__subcomponent">
               {row.original.data_source}

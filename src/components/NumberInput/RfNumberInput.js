@@ -121,9 +121,9 @@ export default class NumberInput extends Component {
       iconDescription, // eslint-disable-line
       id,
       input,
-      max,
+      /* max,
       min,
-      step,
+      step, */
       invalid,
       invalidText,
       ...other
@@ -131,7 +131,7 @@ export default class NumberInput extends Component {
 
     const numberInputClasses = classNames('wfp--number', className);
 
-    const props = {
+    /* const props = {
       disabled,
       id,
       max,
@@ -139,7 +139,7 @@ export default class NumberInput extends Component {
       step,
       onChange: this.handleChange,
       value: this.state.value,
-    };
+    }; */
 
     const buttonProps = {
       disabled,

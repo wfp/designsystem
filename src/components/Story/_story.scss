@@ -43,6 +43,10 @@
       }
     }
 
+    .#{$prefix}--blockquote {
+      margin-bottom: 1.5em;
+    }
+
     sup {
       font-size: 0.7em;
       background: $ui-03;

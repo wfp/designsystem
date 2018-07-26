@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
-import Wrapper from '../Wrapper';
 
 const SecondaryTabsItem = ({ className, children }) => {
   const wrapperClasses = classNames('wfp--secondary-tabs__item', className);

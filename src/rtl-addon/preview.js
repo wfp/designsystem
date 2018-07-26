@@ -6,7 +6,7 @@ function handleUpdateEvent({ direction }) {
   setTextDirection(direction);
 }
 
-export function initialize(options = {}) {
+export function initialize() {
   const channel = addons.getChannel();
   channel.on(UPDATE_EVENT_ID, handleUpdateEvent);
   channel.emit(INITIALIZE_EVENT_ID);
