@@ -7,7 +7,7 @@ import Wrapper from '../components/Wrapper';
 
 import { Module, ModuleHeader, ModuleBody } from '../components/Module';
 
-storiesOf(' Documentation', module)
+storiesOf(' Documentation.Sample Pages', module)
   .addDecorator(story => <RegularPage>{story()}</RegularPage>)
   .addWithInfo('Application Page', ``, () => (
     <Wrapper background="lighter" pageWidth="lg" spacing="md">

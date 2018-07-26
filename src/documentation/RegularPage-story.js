@@ -5,7 +5,7 @@ import { storiesOf } from '@storybook/react';
 import Blockquote from '../components/Blockquote';
 import RegularPage from './RegularPage';
 import Story from '../components/Story';
-storiesOf(' Documentation', module)
+storiesOf(' Documentation.Sample Pages', module)
   .addDecorator(story => <RegularPage withoutSecondary>{story()}</RegularPage>)
   .addWithInfo('Regular Page', ``, () => (
     <div>

@@ -15,12 +15,17 @@ storiesOf(' Documentation', module).addWithInfo('Colors', ``, () => {
         webkitColumnBreakInside: 'avoid',
         pageBreakInside: 'avoid',
         breakInside: 'avoid-column',
+        width: '49%',
+        marginBottom: '1%',
+        marginRight: '1%',
+        padding: '1em',
+        border: '1px solid #E5E5E5',
       }}>
       <div
         style={{
-          width: '2.5em',
-          height: '2.5em',
-          marginTop: '0.5em',
+          width: '3.5em',
+          height: '100%',
+          marginTop: '0em',
           marginRight: '1em',
           backgroundColor: color.hex,
         }}
@@ -50,7 +55,7 @@ storiesOf(' Documentation', module).addWithInfo('Colors', ``, () => {
         </Link>.
       </p>
 
-      <ul style={{ columnCount: '3' }}>{colorList}</ul>
+      <ul style={{ display: 'flex', flexWrap: 'wrap', margin: 0 }}>{colorList}</ul>
 
       <h3>Usage</h3>
 
