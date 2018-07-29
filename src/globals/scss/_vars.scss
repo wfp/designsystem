@@ -60,6 +60,10 @@ $nav-04: $color__magenta-60 !default;
 
 // TODO: Align Colors
 $hover-primary: darken($brand-01, 10%) !default;
+$hover-primary-text: darken($brand-01, 15%) !default;
+$hover-danger: darken($support-01, 10%) !default;
+$hover-secondary: $brand-01 !default;
+$hover-row: rgba($brand-02, 0.1) !default;
 
 // Global
 $input-border: 2px solid $color__navy-gray-7 !default;

@@ -1,7 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import SingleComponent from '../../documentation/SingleComponent';
 import Pagination from '../Pagination';
+
+import SingleComponent from '../../documentation/SingleComponent';
 
 const props = {
   onChange: ({ page, pageSize }) => {
@@ -34,4 +35,16 @@ storiesOf('Pagination', module)
         pageInputDisabled={true}
       />
     )
+  )
+  .addWithInfo(
+    'multipe pagination components',
+    `Showcasing unique ids for each pagination component`,
+    () => {
+      return (
+        <div>
+          <Pagination {...props} totalItems={103} />
+          <Pagination {...props} totalItems={103} />
+        </div>
+      );
+    }
   );

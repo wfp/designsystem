@@ -1,17 +1,28 @@
 import React from 'react';
+import { iconChevronLeft, iconChevronRight } from '@wfp/icons';
 import Icon from '../Icon';
 import Pagination from '../Pagination';
 import Select from '../Select';
 import SelectItem from '../SelectItem';
 import { shallow, mount } from 'enzyme';
 
+jest.useFakeTimers();
+
 describe('Pagination', () => {
   describe('renders as expected', () => {
     const pagination = shallow(
-      <Pagination className="extra-class" pageSizes={[5, 10]} totalItems={50} />
+      <Pagination
+        className="extra-class"
+        pageSizes={[5, 10]}
+        totalItems={50}
+      />
     );
 
-    /*describe('icons', () => {
+    beforeEach(() => {
+      pagination.setProps('itemsPerPageFollowsText', undefined);
+    });
+
+    describe('icons', () => {
       const icons = pagination.find(Icon);
 
       it('should have 3 icons', () => {
@@ -19,13 +30,13 @@ describe('Pagination', () => {
       });
 
       it('should use correct "backward" icon', () => {
-        expect(icons.first().props().name).toEqual('chevron--left');
+        expect(icons.first().props().icon).toEqual(iconChevronLeft);
       });
 
       it('should use correct "forward" icon', () => {
-        expect(icons.last().props().name).toEqual('chevron--right');
+        expect(icons.last().props().icon).toEqual(iconChevronRight);
       });
-    });*/
+    });
 
     describe('pagination container', () => {
       it('should render the expected classes', () => {
@@ -52,12 +63,21 @@ describe('Pagination', () => {
 
       it('should label the dropdown', () => {
         const label = left.find('.wfp--pagination__text').first();
-        expect(label.text()).toBe('Items per page:\u00a0\u00a0');
+        expect(label.text()).toBe('Items per page:');
+      });
+
+      it('should support translated label with colon', () => {
+        pagination.setProps({ itemsPerPageFollowsText: 'foo' });
+        const label = pagination
+          .find('.wfp--pagination__left')
+          .find('.wfp--pagination__text')
+          .first();
+        expect(label.text()).toBe('foo');
       });
 
       it('should show the item range out of the total', () => {
         const label = left.find('.wfp--pagination__text').at(1);
-        expect(label.text()).toBe(' |  1-5 of 50 items');
+        expect(label.text()).toBe('\u00a0|\u00a0\u00a01-5 of 50 items');
       });
 
       describe('pagination size container when total pages unknown', () => {
@@ -81,12 +101,21 @@ describe('Pagination', () => {
 
         it('should label the dropdown', () => {
           const label = left.find('.wfp--pagination__text').first();
-          expect(label.text()).toBe('Items per page:\u00a0\u00a0');
+          expect(label.text()).toBe('Items per page:');
+        });
+
+        it('should support translated label with colon', () => {
+          pagination.setProps({ itemsPerPageFollowsText: 'foo' });
+          const label = pagination
+            .find('.wfp--pagination__left')
+            .find('.wfp--pagination__text')
+            .first();
+          expect(label.text()).toBe('foo');
         });
 
         it('should show the item range without the total', () => {
           const label = left.find('.wfp--pagination__text').at(1);
-          expect(label.text()).toBe(' |  1-5 items');
+          expect(label.text()).toBe('\u00a0|\u00a0\u00a01-5 items');
         });
       });
 
@@ -104,13 +133,18 @@ describe('Pagination', () => {
             />
           );
           expect(pager.state().pageSize).toBe(5);
-          pager.find('select').simulate('change', { target: { value: 10 } });
+          pager
+            .find('select')
+            .first()
+            .simulate('change', { target: { value: 10 } });
           expect(actualPageSize).toBe(10);
           expect(pager.state().pageSize).toBe(10);
 
           // Text updates after change
           const labels = pager.find('.wfp--pagination__text');
-          expect(labels.at(1).text()).toBe('1-10 of 50 items');
+          expect(labels.at(1).text()).toBe(
+            '\u00a0|\u00a0\u00a01-10 of 50 items'
+          );
           expect(labels.at(2).text()).toBe('1 of 5 pages');
         });
 
@@ -128,7 +162,10 @@ describe('Pagination', () => {
           );
           pager.setState({ page: 2 });
           expect(pager.state().page).toBe(2);
-          pager.find('select').simulate('change', { target: { value: 10 } });
+          pager
+            .find('select')
+            .first()
+            .simulate('change', { target: { value: 10 } });
           expect(actualPage).toBe(1);
           expect(pager.state().page).toBe(1);
         });
@@ -171,12 +208,21 @@ describe('Pagination', () => {
         expect(label.text()).toBe('1 of 10 pages');
       });
 
+      it('should render ranges and pages for no items', () => {
+        const pager = mount(
+          <Pagination pageSizes={[5, 10]} totalItems={0} />
+        );
+        const labels = pager.find('.wfp--pagination__text');
+        expect(labels.at(1).text()).toBe('\u00a0|\u00a0\u00a00-0 of 0 items');
+        expect(labels.at(2).text()).toBe('1 of 1 pages');
+      });
+
       it('should have two buttons for navigation', () => {
         const buttons = right.find('.wfp--pagination__button');
         expect(buttons.length).toBe(2);
-        expect(
-          buttons.at(0).hasClass('wfp--pagination__button--backward')
-        ).toBe(true);
+        expect(buttons.at(0).hasClass('wfp--pagination__button--backward')).toBe(
+          true
+        );
         expect(buttons.at(1).hasClass('wfp--pagination__button--forward')).toBe(
           true
         );
@@ -314,9 +360,10 @@ describe('Pagination', () => {
           );
           expect(pager.state().page).toBe(1);
           pager
-            .find('.wfp--text__input')
+            .find('select')
             .last()
             .simulate('change', { target: { value: 2 } });
+          jest.runAllTimers();
           expect(actualPage).toBe(2);
           expect(pager.state().page).toBe(2);
         });
