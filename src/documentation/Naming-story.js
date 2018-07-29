@@ -4,7 +4,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import Page from './Page';
 
-storiesOf(' Documentation', module).addWithInfo('Naming Convention', ``, () => (
+storiesOf(' Documentation', module).addWithInfo('Naming Convention & Linting', ``, () => (
   <Page title="Naming Convention" subTitle="Introduction to the new WFP UI Kit">
     <p>
       The UI Kit uses the{' '}

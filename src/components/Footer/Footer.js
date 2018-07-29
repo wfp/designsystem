@@ -75,7 +75,7 @@ const Footer = ({
               <Icon
                 name="wfp-logo--vertical--en"
                 description="WFP"
-                className="wfp--footer__cta-logo"
+                className="wfp--footer__cta-logo-small"
               />
             )}
             {secondary && (

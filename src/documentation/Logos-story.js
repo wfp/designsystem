@@ -7,7 +7,7 @@ import Blockquote from '../components/Blockquote';
 import Page from './Page';
 
 const LogoElement = ({ color, logoKind, src }) => {
-  const fileTypes = ['.svg', '.png', '@4x.png', '@8x.png'];
+  const fileTypes = ['.svg', /*'.png', '@4x.png',*/ '@8x.png'];
   const backgroundColor = color === 'white' ? '#454646' : '#FFFFFF';
   const width =
     logoKind === 'standard' || logoKind === 'extended' ? 'auto' : 'auto';

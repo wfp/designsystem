@@ -9,7 +9,6 @@ import Blockquote from '../components/Blockquote';
 
 storiesOf(' Documentation', module).addWithInfo('Navigation', ``, () => (
   <Page title="Navigation" subTitle="3-Level Navigation">
-    <p>Limit the Number of Levels</p>
     <h3>Main (Primary) Navigation</h3>
     <p>
       The Main Navigation is a Horizontal Menu which consists of multiple
