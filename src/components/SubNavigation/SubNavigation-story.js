@@ -42,7 +42,7 @@ storiesOf('SubNavigation', module)
               labelText="Filter"
               placeHolderText="Filter"
               onChange={() => {
-                alert("Apply Filter");
+                alert('Apply Filter');
               }}
             />
           </SubNavigationFilter>

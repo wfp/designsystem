@@ -12,7 +12,10 @@ import iconList from '@wfp/icons/dist/carbon-icons.json';
 
 storiesOf(' Documentation', module).addWithInfo('Icons', ``, () => (
   <Page title="Icons" subTitle="Introduction to the new WFP UI Kit">
-    <p>For Usage please take a look at the <Link onClick={linkTo('Icon', 'Default')}>Icon-Component</Link>.</p>
+    <p>
+      For Usage please take a look at the{' '}
+      <Link onClick={linkTo('Icon', 'Default')}>Icon-Component</Link>.
+    </p>
 
     <Blockquote title="Notice">
       WFP UI is using a fork of{' '}

@@ -112,12 +112,8 @@ const InlineMobile = props => {
 const GenderBreakdown = props => {
   return (
     <List kind="simple" small>
-      <ListItem title="Male">
-        {props.original.csp_end_target_female}
-      </ListItem>
-      <ListItem title="Female">
-        {props.original.csp_end_target_female}
-      </ListItem>
+      <ListItem title="Male">{props.original.csp_end_target_female}</ListItem>
+      <ListItem title="Female">{props.original.csp_end_target_female}</ListItem>
       <ListItem title="Overfall">
         {props.original.csp_end_target_female}
       </ListItem>

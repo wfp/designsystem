@@ -109,10 +109,7 @@ storiesOf('Footer', module)
         defaultValue
       );
 
-      const metaContent = text(
-        'metaContent',
-        ' 2018 © World Food Programme'
-      );
+      const metaContent = text('metaContent', ' 2018 © World Food Programme');
 
       const className = text('className', 'some-class');
 

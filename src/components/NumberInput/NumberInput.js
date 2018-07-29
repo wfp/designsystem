@@ -58,7 +58,7 @@ export default class NumberInput extends Component {
 
     // Redux Form Initial
     if (props.input && props.input.value) {
-      value =  props.input.value;
+      value = props.input.value;
     }
 
     this.state = {
@@ -71,7 +71,7 @@ export default class NumberInput extends Component {
       this.setState({ value: nextProps.value });
     }
     // Redux Form Change
-    if (nextProps.input && (nextProps.input.value !== this.props.input.value)) {
+    if (nextProps.input && nextProps.input.value !== this.props.input.value) {
       this.setState({ value: nextProps.input.value });
     }
   }
@@ -115,7 +115,6 @@ export default class NumberInput extends Component {
       // Redux Form Change
       if (this.props.input && this.props.input.onChange)
         this.props.input.onChange(value);
-
 
       this.setState(
         {

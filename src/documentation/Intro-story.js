@@ -50,7 +50,6 @@ storiesOf(' Documentation', module)
           </span>
         </h1>
 
-
         <Button
           kind="inverse"
           style={{ marginRight: '0.5em' }}

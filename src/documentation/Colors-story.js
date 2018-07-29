@@ -55,7 +55,9 @@ storiesOf(' Documentation', module).addWithInfo('Colors', ``, () => {
         </Link>.
       </p>
 
-      <ul style={{ display: 'flex', flexWrap: 'wrap', margin: 0 }}>{colorList}</ul>
+      <ul style={{ display: 'flex', flexWrap: 'wrap', margin: 0 }}>
+        {colorList}
+      </ul>
 
       <h3>Usage</h3>
 

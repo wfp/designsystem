@@ -83,7 +83,7 @@ class RfFormWrapper extends Component {
   }
 
   onSubmit(submit) {
-    alert("Submitted: " + JSON.stringify(submit));
+    alert('Submitted: ' + JSON.stringify(submit));
   }
 
   render() {

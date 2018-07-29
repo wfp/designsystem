@@ -1,7 +1,9 @@
 import React from 'react';
 import { mount, shallow } from 'enzyme';
+import { iconCaretUp, iconCaretDown } from 'carbon-icons';
 import Icon from '../Icon';
 import NumberInput from '../NumberInput';
+import NumberInputSkeleton from '../NumberInput/NumberInput.Skeleton';
 
 describe('NumberInput', () => {
   describe('should render as expected', () => {
@@ -10,6 +12,7 @@ describe('NumberInput', () => {
     let numberInput;
     let container;
     let formItem;
+    let icons;
 
     beforeEach(() => {
       wrapper = mount(
@@ -85,6 +88,12 @@ describe('NumberInput', () => {
         expect(invalidText.text()).toEqual('invalid text');
       });
 
+      it('should specify light number input as expected', () => {
+        expect(wrapper.props().light).toEqual(false);
+        wrapper.setProps({ light: true });
+        expect(wrapper.props().light).toEqual(true);
+      });
+
       describe('initial rendering', () => {
         const getWrapper = (min, max, value) =>
           mount(
@@ -122,10 +131,17 @@ describe('NumberInput', () => {
           let numberInput = wrapper.find('input');
           expect(numberInput.prop('value')).toEqual(5);
         });
+
+        it('should set invalidText when value is empty string', () => {
+          wrapper.setProps({ value: '' });
+          const invalidText = wrapper.find('.wfp--form-requirement');
+          expect(invalidText.length).toEqual(1);
+          expect(invalidText.text()).toEqual('invalid text');
+        });
       });
     });
 
-    /*describe('Icon', () => {
+    describe('Icon', () => {
       it('renders two Icon components', () => {
         expect(icons.length).toEqual(2);
       });
@@ -135,8 +151,8 @@ describe('NumberInput', () => {
       });
 
       it('should use correct icons', () => {
-        expect(icons.at(0).prop('name')).toEqual('caret--up');
-        expect(icons.at(1).prop('name')).toEqual('caret--down');
+        expect(icons.at(0).prop('icon')).toEqual(iconCaretUp);
+        expect(icons.at(1).prop('icon')).toEqual(iconCaretDown);
       });
 
       it('adds new iconDescription when passed via props', () => {
@@ -153,7 +169,7 @@ describe('NumberInput', () => {
           iconDescription === iconUpText && iconDescription === iconDownText;
         expect(matches).toEqual(true);
       });
-    });*/
+    });
 
     describe('label', () => {
       it('renders a label', () => {
@@ -176,8 +192,8 @@ describe('NumberInput', () => {
       );
 
       const input = wrapper.find('input');
-      const upArrow = wrapper.find('.up-icon').parent();
-      const downArrow = wrapper.find('.down-icon').parent();
+      const upArrow = wrapper.find('button.up-icon');
+      const downArrow = wrapper.find('button.down-icon');
 
       it('should be disabled when numberInput is disabled', () => {
         expect(upArrow.prop('disabled')).toEqual(true);
@@ -290,6 +306,20 @@ describe('NumberInput', () => {
         expect(onChange).toBeCalled();
         expect(onChange).toHaveBeenCalledWith(expect.anything());
       });
+    });
+  });
+});
+
+describe('NumberInputSkeleton', () => {
+  describe('Renders as expected', () => {
+    const wrapper = shallow(<NumberInputSkeleton />);
+
+    const container = wrapper.find('.wfp--number');
+    const label = wrapper.find('.wfp--label');
+
+    it('has the expected classes', () => {
+      expect(container.hasClass('wfp--skeleton')).toEqual(true);
+      expect(label.hasClass('wfp--skeleton')).toEqual(true);
     });
   });
 });

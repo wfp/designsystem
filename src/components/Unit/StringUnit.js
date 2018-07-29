@@ -1,4 +1,4 @@
-const StringUnit = (value) => {
+const StringUnit = value => {
   if (value) {
     const before = value.before ? value.before + ' ' : '';
     const afterOutput =

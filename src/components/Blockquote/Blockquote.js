@@ -59,7 +59,10 @@ class Blockquote extends React.Component {
         <div className={blockquoteContentClass} style={style}>
           {children}
           {innerHtml && (
-            <div role="complementary" dangerouslySetInnerHTML={this.showInnerHtml(innerHtml)} />
+            <div
+              role="complementary"
+              dangerouslySetInnerHTML={this.showInnerHtml(innerHtml)}
+            />
           )}
         </div>
       </div>

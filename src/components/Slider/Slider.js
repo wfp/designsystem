@@ -168,7 +168,7 @@ export default class Slider extends PureComponent {
         if (typeof props.onChange === 'function') {
           props.onChange({ value: newValue });
         }
-        
+
         //Redux Form
         if (this.props.input && this.props.input.onChange)
           this.props.input.onChange(newValue);

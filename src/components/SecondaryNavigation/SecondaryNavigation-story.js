@@ -8,8 +8,6 @@ import Breadcrumb from '../Breadcrumb';
 import BreadcrumbItem from '../BreadcrumbItem';
 import BreadcrumbHome from '../BreadcrumbHome';
 
-
-
 storiesOf('SecondaryNavigation', module).addWithInfo(
   'default',
   `
