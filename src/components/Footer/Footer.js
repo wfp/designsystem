@@ -42,11 +42,19 @@ const Footer = ({
             <div className="wfp--footer__info">
               <div className="wfp--footer__info__item">
                 <p className="wfp--footer__label">{labelOne}</p>
-                <Link href={linkHrefOne}>{linkTextOne}</Link>
+                <ul className="wfp--footer__list">
+                  <li>
+                    <Link href={linkHrefOne}>{linkTextOne}</Link>
+                  </li>
+                </ul>
               </div>
               <div className="wfp--footer__info__item">
                 <p className="wfp--footer__label">{labelTwo}</p>
-                <Link href={linkHrefTwo}>{linkTextTwo}</Link>
+                <ul className="wfp--footer__list">
+                  <li>
+                    <Link href={linkHrefTwo}>{linkTextTwo}</Link>
+                  </li>
+                </ul>
               </div>
             </div>
           )}

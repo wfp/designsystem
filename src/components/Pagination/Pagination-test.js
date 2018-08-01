@@ -11,11 +11,7 @@ jest.useFakeTimers();
 describe('Pagination', () => {
   describe('renders as expected', () => {
     const pagination = shallow(
-      <Pagination
-        className="extra-class"
-        pageSizes={[5, 10]}
-        totalItems={50}
-      />
+      <Pagination className="extra-class" pageSizes={[5, 10]} totalItems={50} />
     );
 
     beforeEach(() => {
@@ -209,9 +205,7 @@ describe('Pagination', () => {
       });
 
       it('should render ranges and pages for no items', () => {
-        const pager = mount(
-          <Pagination pageSizes={[5, 10]} totalItems={0} />
-        );
+        const pager = mount(<Pagination pageSizes={[5, 10]} totalItems={0} />);
         const labels = pager.find('.wfp--pagination__text');
         expect(labels.at(1).text()).toBe('\u00a0|\u00a0\u00a00-0 of 0 items');
         expect(labels.at(2).text()).toBe('1 of 1 pages');
@@ -220,9 +214,9 @@ describe('Pagination', () => {
       it('should have two buttons for navigation', () => {
         const buttons = right.find('.wfp--pagination__button');
         expect(buttons.length).toBe(2);
-        expect(buttons.at(0).hasClass('wfp--pagination__button--backward')).toBe(
-          true
-        );
+        expect(
+          buttons.at(0).hasClass('wfp--pagination__button--backward')
+        ).toBe(true);
         expect(buttons.at(1).hasClass('wfp--pagination__button--forward')).toBe(
           true
         );

@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { iconCaretUp, iconCaretDown } from '@wfp/icons';
 import Icon from '../Icon';
 import classNames from 'classnames';
+import Label from '../Label';
 
 export default class NumberInput extends Component {
   static propTypes = {
@@ -212,9 +213,10 @@ export default class NumberInput extends Component {
             {...props}
             ref={this._handleInputRef}
           />
-          <label htmlFor={id} className="wfp--label">
+          {/*<label htmlFor={id} className="wfp--label">
             {label}
-          </label>
+          </label>*/}
+          <Label {...this.props} />
           {error}
         </div>
       </div>

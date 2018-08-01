@@ -37,7 +37,7 @@ storiesOf('NumberInput', module)
     () => (
       <Field
         component={NumberInput}
-        label="Label"
+        label={<span>Label</span>}
         name="Input"
         placeholder="Placeholder here"
         validate={email}

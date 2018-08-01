@@ -81,7 +81,7 @@ export const currencyCalc = (
   const toLocalStringConfig = {
     //maximumSignificantDigits: maximumSignificantDigits,
     minimumFractionDigits:
-      isAbsolute === true
+      isAbsolute === true && output === undefined
         ? minimumFractionDigits === 0
         : maximumFractionDigits === 0
           ? 0
@@ -91,7 +91,7 @@ export const currencyCalc = (
               ? outputCalc.defaultmaximumFractionDigits
               : 2,
     maximumFractionDigits:
-      isAbsolute === true
+      isAbsolute === true && output === undefined
         ? maximumFractionDigits === 0
         : value <= 0.005
           ? 4

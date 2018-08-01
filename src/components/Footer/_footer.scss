@@ -42,6 +42,10 @@
   }
 }
 
+.#{$prefix}--footer__list {
+
+}
+
 .#{$prefix}--footer__meta {
   @include typescale('zeta');
   @include line-height('body');
@@ -100,11 +104,11 @@
   }
 }
 
-.#{$prefix}--footer-info {
+.#{$prefix}--footer__info {
   display: flex;
 }
 
-.#{$prefix}--footer-info__item {
+.#{$prefix}--footer__info__item {
   margin-right: rem(20px);
 }
 
