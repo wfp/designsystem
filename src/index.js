@@ -17,6 +17,7 @@ export CardFooter from './components/CardFooter';
 export CardStatus from './components/CardStatus';
 */
 export Checkbox from './components/Checkbox';
+export Credits from './components/Credits';
 /*
 export CodeSnippet from './components/CodeSnippet';
 export ComboBox from './components/ComboBox';
