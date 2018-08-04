@@ -4,6 +4,10 @@ import './_container.scss';
 import '../dist/css/styles.css';
 
 export default class Container extends Component {
+  componentWillMount() {
+    window.scrollTo(0, 0);
+  }
+
   render() {
     const { story } = this.props;
 

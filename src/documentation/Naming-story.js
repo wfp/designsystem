@@ -3,11 +3,12 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import Page from './Page';
+import { withReadme } from 'storybook-readme';
+import readme from './NAMING-README.md';
 
-storiesOf(' Documentation', module).addWithInfo(
-  'Naming Convention & Linting',
-  ``,
-  () => (
+storiesOf(' Documentation', module)
+  .addDecorator(withReadme([readme]))
+  .addWithInfo('Naming Convention & Linting', ``, () => (
     <Page
       title="Naming Convention"
       subTitle="Introduction to the new WFP UI Kit">
@@ -30,5 +31,4 @@ storiesOf(' Documentation', module).addWithInfo(
         <li>Semicolon is required at the end of a line</li>
       </ul>
     </Page>
-  )
-);
+  ));

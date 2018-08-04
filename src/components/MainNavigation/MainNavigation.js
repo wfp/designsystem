@@ -147,6 +147,10 @@ class MainNavigation extends Component {
       pageWidth,
     } = this.props;
 
+
+    console.log("aaaaa");
+    console.log(document.getElementById('root').innerHTML);
+
     const wrapperClasses = classNames('wfp--main-navigation', className);
 
     const listClasses = classNames('wfp--main-navigation__list', {

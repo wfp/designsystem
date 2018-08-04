@@ -10,11 +10,18 @@ import readme from './README.md';
 
 import ReadMore from '../ReadMore';
 
-
 storiesOf('ReadMore', module)
   .addDecorator(withTests('ReadMore'))
   .addDecorator(story => <SingleComponent>{story()}</SingleComponent>)
   .addDecorator(withReadme([readme]))
+  /*.addDecorator(
+     exampleStory({
+      component: ReadMore,
+      example: ReadMore,
+      code: onSelectCode,
+      options: { showAddonPanel: true },
+    })
+  )*/
   .addWithInfo(
     'Default',
     `
@@ -22,7 +29,9 @@ storiesOf('ReadMore', module)
       For anything else, especially things that change data, you should be using a button.
     `,
     () => (
-      <ReadMore href="#" html="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.">
-      </ReadMore>
+      <ReadMore
+        href="#"
+        html="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
+      />
     )
   );

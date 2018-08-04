@@ -7,3 +7,6 @@ import '@storybook/addon-jest/register';
 import '@storybook/addon-links/register';
 import '@storybook/addon-options/register';
 import '../src/rtl-addon/manager';
+
+
+require('./lucid-docs-addon/register');

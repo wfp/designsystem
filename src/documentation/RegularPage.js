@@ -34,6 +34,7 @@ import {
   SubNavigationGroup,
   SubNavigationFilter,
   SubNavigationItem,
+  SubNavigationLink,
 } from '../components/SubNavigation';
 import User from '../components/User';
 
@@ -87,118 +88,123 @@ const Page = ({ children, withoutSecondary }) => {
         </BannerNavigationItem>*/}
       </BannerNavigation>
 
-      <MainNavigation
-        pageWidth="lg"
-        logo={<a href="http://www.wfp.org">WFP UI</a>}>
+      <MainNavigation logo={<a href="http://www.wfp.org">WFP UI</a>}>
+        <MainNavigationItem>
+          <Link href="http://communities.wfp.org" target="_blank">
+            Communities
+          </Link>
+        </MainNavigationItem>
         <MainNavigationItem
           subNavigation={
             <SubNavigation>
               <SubNavigationHeader>
-                <SubNavigationTitle>The Subnavigation Title</SubNavigationTitle>
-                <Button small>Link to Subpage</Button>
+                <SubNavigationTitle>The Title</SubNavigationTitle>
+                <SubNavigationLink>
+                  <Button small>The SubPage Link</Button>
+                </SubNavigationLink>
 
                 <SubNavigationFilter>
                   <Search
                     className="some-class"
+                    small
                     id="search-2"
-                    labelText="Filter"
-                    placeHolderText="Filter"
+                    placeHolderText="Filter List"
                   />
                 </SubNavigationFilter>
               </SubNavigationHeader>
               <SubNavigationContent>
                 <SubNavigationList>
-                  <SubNavigationGroup title="Second List of Items">
+                  <SubNavigationGroup title="First List" columns>
                     <SubNavigationItem>
                       <Link href="https://go.docs.wfp.org" target="_blank">
-                        GoDocs
+                        Lorem Ipsum et jomen
                       </Link>
                     </SubNavigationItem>
                     <SubNavigationItem>
                       <Link href="https://go.docs.wfp.org" target="_blank">
-                        GoDocs
+                        At vero eos
                       </Link>
                     </SubNavigationItem>
                     <SubNavigationItem>
                       <Link href="https://go.docs.wfp.org" target="_blank">
-                        GoDocs
+                        Sadipscing elitr
                       </Link>
                     </SubNavigationItem>
                     <SubNavigationItem>
                       <Link href="https://go.docs.wfp.org" target="_blank">
-                        GoDocs
+                        At vero eos
                       </Link>
                     </SubNavigationItem>
                     <SubNavigationItem>
                       <Link href="https://go.docs.wfp.org" target="_blank">
-                        GoDocs
+                        Sadipscing elitr
                       </Link>
                     </SubNavigationItem>
                     <SubNavigationItem>
                       <Link href="https://go.docs.wfp.org" target="_blank">
-                        GoDocs
+                        Dolore magna
                       </Link>
                     </SubNavigationItem>
                     <SubNavigationItem>
                       <Link href="https://go.docs.wfp.org" target="_blank">
-                        GoDocs
+                        Sadipscing elitr
                       </Link>
                     </SubNavigationItem>
                     <SubNavigationItem>
                       <Link href="https://go.docs.wfp.org" target="_blank">
-                        GoDocs
+                        Consetetur sadipscing
                       </Link>
                     </SubNavigationItem>
                     <SubNavigationItem>
                       <Link href="https://go.docs.wfp.org" target="_blank">
-                        GoDocs
+                        Sadipscing elitr
                       </Link>
                     </SubNavigationItem>
                   </SubNavigationGroup>
-                  <SubNavigationGroup title="Second List of Items">
+                  <SubNavigationGroup title="Second List of Items" columns>
                     <SubNavigationItem>
                       <Link href="https://go.docs.wfp.org" target="_blank">
-                        GoDocs
+                        At vero eos
                       </Link>
                     </SubNavigationItem>
                     <SubNavigationItem>
                       <Link href="https://go.docs.wfp.org" target="_blank">
-                        GoDocs
+                        Sadipscing elitr
                       </Link>
                     </SubNavigationItem>
                     <SubNavigationItem>
                       <Link href="https://go.docs.wfp.org" target="_blank">
-                        GoDocs
+                        At vero eos
                       </Link>
                     </SubNavigationItem>
                     <SubNavigationItem>
                       <Link href="https://go.docs.wfp.org" target="_blank">
-                        GoDocs
+                        Nonumy eirmod
                       </Link>
                     </SubNavigationItem>
                     <SubNavigationItem>
                       <Link href="https://go.docs.wfp.org" target="_blank">
-                        GoDocs
+                        Consetetur sadipscing
                       </Link>
                     </SubNavigationItem>
                     <SubNavigationItem>
                       <Link href="https://go.docs.wfp.org" target="_blank">
-                        GoDocs
+                        Dolore magna
                       </Link>
                     </SubNavigationItem>
                     <SubNavigationItem>
                       <Link href="https://go.docs.wfp.org" target="_blank">
-                        GoDocs
+                        Nonumy eirmod
                       </Link>
                     </SubNavigationItem>
                     <SubNavigationItem>
                       <Link href="https://go.docs.wfp.org" target="_blank">
-                        GoDocs
+                        Dolore magna
                       </Link>
                     </SubNavigationItem>
                     <SubNavigationItem>
                       <Link href="https://go.docs.wfp.org" target="_blank">
-                        GoDocs
+                        Sadipscing elitr
                       </Link>
                     </SubNavigationItem>
                   </SubNavigationGroup>
@@ -222,7 +228,7 @@ const Page = ({ children, withoutSecondary }) => {
         </MainNavigationItem>
         <MainNavigationItem>
           <Search
-            small
+            main
             id="search-2"
             labelText="Search"
             placeHolderText="Search"
@@ -236,14 +242,7 @@ const Page = ({ children, withoutSecondary }) => {
               <p>
                 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
                 diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                aliquyam erat, sed diam voluptua. At vero eos et accusam et
-                justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
-                takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
-                dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-                eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-                sed diam voluptua. At vero eos et accusam et justo duo dolores
-                et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus
-                est Lorem ipsum dolor sit amet.
+                aliquya.
               </p>
             </div>
           }>

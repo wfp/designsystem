@@ -6,9 +6,7 @@ const Credits = ({ children, className, info, ...other }) => {
   const classNames = classnames('wfp--credits', className);
   return (
     <div className={classNames} {...other}>
-      <div className="wfp--credits__info">
-        {info}
-      </div>
+      <div className="wfp--credits__info">{info}</div>
       {children}
     </div>
   );
