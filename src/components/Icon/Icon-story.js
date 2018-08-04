@@ -4,6 +4,8 @@ import iconsList from '@wfp/icons';
 import { storiesOf } from '@storybook/react';
 import Icon, { setIconsList } from '../Icon';
 import IconSkeleton from '../Icon/Icon.Skeleton';
+import SingleComponent from '../../documentation/SingleComponent';
+
 
 import { withReadme } from 'storybook-readme';
 import readme from './README.md';
@@ -14,7 +16,7 @@ const props = {
   style: {
     margin: '50px',
   },
-  fill: 'grey',
+  fill: 'black',
   description: 'This is a description of the icon and what it does in context',
   className: 'extra-class',
 };
@@ -35,6 +37,7 @@ const propsSkeleton2 = {
 
 storiesOf('Icon', module)
   .addDecorator(withReadme([readme]))
+  .addDecorator(story => <SingleComponent>{story()}</SingleComponent>)
   .addWithInfo(
     'Default',
     `
