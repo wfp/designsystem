@@ -203,6 +203,8 @@ PropType.style = {
 };
 
 const PropsList = ({ showIndex, showTopLinks, props }) => {
+
+	console.log(props);
 	const sortedProps = _.sortBy(props, 'isRequired');
 
 	return (

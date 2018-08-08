@@ -66,6 +66,9 @@ class PropsPanel extends React.Component {
 	}
 
 	onDisplayProps(propsJSON) {
+
+
+		console.log("aaaa", propsJSON);
 		if (!_.isString(propsJSON)) {
 			return this.setState({
 				props: null,
@@ -107,6 +110,8 @@ class PropsPanel extends React.Component {
 
 	componentDidMount() {
 		const { channel, api } = this.props;
+
+		console.log(api);
 		// Listen to the notes and render it.
 		channel.on('lucid-docs-display-props', this.onDisplayProps);
 		channel.on(
@@ -150,7 +155,7 @@ class PropsPanel extends React.Component {
 
 // Register the addon with a unique name.
 addons.register('lucid-docs', api => {
-	api.setOptions({
+	/*api.setOptions({
 		name: 'Lucid UI',
 		url: 'https://github.com/appnexus/lucid',
 		showAddonPanel: false,
@@ -158,10 +163,10 @@ addons.register('lucid-docs', api => {
 	});
 
 	// Also need to set a unique name to the panel.
-	addons.addPanel('lucid-docs-panel-props', {
+	 addons.addPanel('lucid-docs-panel-props', {
 		title: 'Props',
 		render: () => <PropsPanel channel={addons.getChannel()} api={api} />,
-	});
+	}); 
 	addons.addPanel('lucid-docs-panel-code', {
 		title: 'Code',
 		render: () => <CodePanel channel={addons.getChannel()} api={api} />,
@@ -187,5 +192,5 @@ addons.register('lucid-docs', api => {
 		setTimeout(() => {
 			ReactDOM.render(<PanelToggles api={api} />, div);
 		}, 200);
-	});
+	});*/
 });

@@ -25,9 +25,15 @@ const additionalProps = {
 storiesOf('Breadcrumb', module)
   .addDecorator(withTests('Breadcrumb'))
   .addDecorator(
-    exampleStory
+    exampleStory({
+      component: SingleComponent,
+      example: SingleComponent,
+      code: BreadcrumbRaw,
+      path: ['Accordion'],
+      options: { showAddonPanel: true },
+    })
   )
-  //.addDecorator(story => <SingleComponent>{story()}</SingleComponent>)
+  .addDecorator(story => <SingleComponent>{story()}</SingleComponent>)
   .addWithInfo(
     'Default',
     `
