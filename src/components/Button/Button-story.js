@@ -3,7 +3,16 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { checkA11y } from '@storybook/addon-a11y';
 import SingleComponent from '../../documentation/SingleComponent';
+import { exampleStory } from '../../../.storybook/lucid-docs-addon';
+
 import withTests from '../../internal/withTests';
+
+import HtmlComponent from '../../documentation/HtmlComponent';
+
+
+import ButtonRaw from '!!raw-loader!./Button';
+import ButtonHtml from '!!raw-loader!./Button.html';
+
 
 import Button from '../Button';
 
@@ -15,6 +24,14 @@ const buttonEvents = {
 
 storiesOf('Buttons', module)
   .addDecorator(checkA11y)
+  .addDecorator(
+    exampleStory({
+      component: SingleComponent,
+      example: SingleComponent,
+      code: ButtonRaw,
+      options: { showAddonPanel: true },
+    })
+  )
   .addDecorator(withTests('Link'))
   .addDecorator(story => <SingleComponent>{story()}</SingleComponent>)
   .addWithInfo(
@@ -235,4 +252,22 @@ storiesOf('Buttons', module)
         </Button>
       </div>
     )
+  );
+
+  storiesOf('Buttons', module)
+  .addDecorator(story => <HtmlComponent html={ButtonHtml}>{story()}</HtmlComponent>)
+  .addDecorator(
+    exampleStory({
+      component: SingleComponent,
+      example: SingleComponent,
+      code: ButtonHtml,
+      options: { showAddonPanel: true },
+    })
+  )
+  .addWithInfo(
+    'html',
+    `
+      Breadcrumb enables users to quickly see their location within a path of navigation and move up to a parent level if desired. It can be used with react-router by placing <NavLink></NavLink> inside <BreadcrumbItem />
+    `,
+    () => null
   );
