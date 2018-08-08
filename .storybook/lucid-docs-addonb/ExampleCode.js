@@ -112,7 +112,7 @@ ReactDOM.render(
 						js_module: true,
 					}}
 				>
-					<img
+					{/* <img
 						style={{
 							cursor: 'pointer',
 							position: 'absolute',
@@ -123,7 +123,7 @@ ReactDOM.render(
 						width={40}
 						height={40}
 						title="Open in CodePen"
-					/>
+					/> */}
 				</CodepenDefine>
 			)}
 			<div

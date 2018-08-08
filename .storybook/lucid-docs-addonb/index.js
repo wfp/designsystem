@@ -25,6 +25,7 @@ const getDefaultPropValue = (componentRef, property) => {
 };
 
 const getPropTypeData = resolverFn => {
+
 	const type = _.get(resolverFn, ['peek', 'type']);
 	let dynamicData;
 
@@ -66,6 +67,8 @@ const getPropTypeData = resolverFn => {
 };
 
 const getPropsData = componentRef => {
+
+	console.log(componentRef.propTypes);
 	return _.map(componentRef.propTypes, (resolverFn, property) => {
 		return {
 			...getPropTypeData(resolverFn),
@@ -144,13 +147,6 @@ export const withProps = componentRef => {
 	};
 };
 
-
-function setStorySource(context, source, locationsMap) {
-  const channel = addons.getChannel();
-  channel.emit('lucid-docs-source', source.code);
-  //const currentLocation = getLocation(context, locationsMap);
-}
-
 export const withCode = (source = null) => {
 	return StoryComponent => {
 		return props => {
@@ -178,8 +174,12 @@ export const withChildComponents = (componentRef, maxHeight, path) => {
 };
 
 const getDefaultExport = mod => (mod.__esModule ? mod.default : mod);
-/*
-export const exampleStory = ({ component, code, example, path, options }) => {
+
+export const exampleStory = (props) => {
+
+	/* console.log(props);
+	const { component, code, example, path, options, story } = props;
+
 	const StoryComponent = options
 		? props => {
 				setOptions(options);
@@ -189,7 +189,7 @@ export const exampleStory = ({ component, code, example, path, options }) => {
 
 	const componentRef = getDefaultExport(component);
 
-	const storyWithCode = withCode(code)(StoryComponent);
+	const storyWithCode = withCode(code)(story);
 	const storyWithProps = withProps(componentRef)(storyWithCode);
 	const storyWithChildComponents = withChildComponents(componentRef, 1, path)(
 		storyWithProps
@@ -197,17 +197,7 @@ export const exampleStory = ({ component, code, example, path, options }) => {
 	const storyWithDescription = withDescription(componentRef)(
 		storyWithChildComponents
 	);
-	return storyWithDescription;
+	return storyWithDescription; */
+
+
 };
-*/
-
-export function exampleStory(source, code, locationsMap = {}) {
-  return (story, context) => {
-
-  	//const storyWithCode = withCodeNew(code)(story);
-  	setStorySource(context, source, locationsMap);
-
-    //setStorySource(context, source, locationsMap);
-    return story();
-  };
-}
