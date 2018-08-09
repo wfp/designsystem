@@ -12,7 +12,6 @@ import { exampleStory } from '../../../.storybook/lucid-docs-addon';
 import Raw from '!!raw-loader!./Blockquote';
 import Html from '!!raw-loader!./Blockquote.html';
 
-
 import { withReadme } from 'storybook-readme';
 import readme from './README.md';
 
@@ -58,8 +57,6 @@ storiesOf('Blockquote', module)
       );
     }
   );
-
-
 
 storiesOf('Blockquote', module)
   .addDecorator(

@@ -50,7 +50,6 @@ class ReadMore extends React.Component {
   }
 }
 
-
 ReadMore.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,

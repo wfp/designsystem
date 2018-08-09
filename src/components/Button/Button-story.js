@@ -9,10 +9,8 @@ import withTests from '../../internal/withTests';
 
 import HtmlComponent from '../../documentation/HtmlComponent';
 
-
 import ButtonRaw from '!!raw-loader!./Button';
 import ButtonHtml from '!!raw-loader!./Button.html';
-
 
 import Button from '../Button';
 
@@ -254,8 +252,10 @@ storiesOf('Buttons', module)
     )
   );
 
-  storiesOf('Buttons', module)
-  .addDecorator(story => <HtmlComponent html={ButtonHtml}>{story()}</HtmlComponent>)
+storiesOf('Buttons', module)
+  .addDecorator(story => (
+    <HtmlComponent html={ButtonHtml}>{story()}</HtmlComponent>
+  ))
   .addDecorator(
     exampleStory({
       component: SingleComponent,

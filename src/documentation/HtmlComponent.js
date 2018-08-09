@@ -3,9 +3,10 @@ import React from 'react';
 import Wrapper from '../components/Wrapper';
 import Blockquote from '../components/Blockquote';
 
+import { withReadme } from 'storybook-readme';
+import readme from './HTML-README.md';
+
 const SingleComponent = ({ children, html, pageWidth }) => {
-
-
   console.log(children);
   return (
     <Wrapper
@@ -18,13 +19,8 @@ const SingleComponent = ({ children, html, pageWidth }) => {
       }}
       className="wfp--story"
       pageWidth={pageWidth ? pageWidth : 'narrower'}>
-
-       <div contentEditable='true' dangerouslySetInnerHTML={{ __html: html }}></div>
-       <div style={{display: 'none'}}>
-        {children}
-       </div>
-
-
+      <div contentEditable="true" dangerouslySetInnerHTML={{ __html: html }} />
+      <div style={{ display: 'none' }}>{children}</div>
     </Wrapper>
   );
 };

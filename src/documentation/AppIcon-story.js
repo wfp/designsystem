@@ -31,7 +31,7 @@ storiesOf(' Documentation', module).addWithInfo('App Icons', ``, () => (
         width: 100,
         height: 100,
       }}
-      src={`${process.env.STORYBOOK_ASSETS}/app/WFP_APP_ICON_300x300.png`}
+      src={`${process.env.STORYBOOK_ASSETS}app/WFP_APP_ICON_300x300.png`}
     />
     <br />
     {fileSizes.map(fileSize => (
@@ -39,7 +39,9 @@ storiesOf(' Documentation', module).addWithInfo('App Icons', ``, () => (
         small
         style={{ marginRight: '0.5em', fontSize: '0.7em' }}
         target="_blank"
-        href={`${process.env.STORYBOOK_ASSETS}app/WFP_APP_ICON_${fileSize}x${fileSize}.png`}>
+        href={`${
+          process.env.STORYBOOK_ASSETS
+        }app/WFP_APP_ICON_${fileSize}x${fileSize}.png`}>
         {fileSize} x {fileSize}px
       </Link>
     ))}

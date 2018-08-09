@@ -6,9 +6,7 @@ import Page from './Page';
 import Blockquote from '../components/Blockquote';
 
 storiesOf(' Documentation', module).addWithInfo('Typography', ``, () => (
-  <Page
-    title="Typography"
-    subTitle="Introduction to the new WFP UI Kit">
+  <Page title="Typography" subTitle="Introduction to the new WFP UI Kit">
     {/*<p>
       Typography plays a critical role in any design; in fact, it accounts for
       as much as 95% of everything we see on the Web. When done well, it adds
@@ -33,7 +31,11 @@ storiesOf(' Documentation', module).addWithInfo('Typography', ``, () => (
 
     <h3>Headings</h3>
 
-    <p>Headings help to add a hierarchy to a page, and they are key identifiers for users reading a page. They should be used in an order that is relevant to the content of a page.</p>
+    <p>
+      Headings help to add a hierarchy to a page, and they are key identifiers
+      for users reading a page. They should be used in an order that is relevant
+      to the content of a page.
+    </p>
 
     <Blockquote>
       <h1>Heading 1</h1>

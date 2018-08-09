@@ -7,9 +7,9 @@ import HtmlComponent from '../../documentation/HtmlComponent';
 import { withReadme } from 'storybook-readme';
 import readme from '../../documentation/HTML-README.md';
 
-import Html from '!!raw-loader!./Checkbox.html';
+import Html from '!!raw-loader!./Credits.html';
 
-storiesOf('Checkbox', module)
+storiesOf('Credits', module)
   .addDecorator(withReadme([readme]))
   .addDecorator(
     exampleStory({

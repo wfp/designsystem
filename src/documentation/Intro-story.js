@@ -66,17 +66,19 @@ storiesOf(' Documentation', module)
       </Wrapper>
 
       <Page>
-        <div className="row" style={{margin: '2em 0'}}>
-          <div className="col-xs-12 col-md-3 col-lg-3" style={{textAlign: 'left'}}>
+        <div className="row" style={{ margin: '2em 0' }}>
+          <div
+            className="col-xs-12 col-md-3 col-lg-3"
+            style={{ textAlign: 'left' }}>
             <img
               alt="Usability"
               style={{
                 width: '80px',
                 height: 'auto',
                 marginTop: '3em',
-                marginLeft: '0em'
+                marginLeft: '0em',
               }}
-              src={`${process.env.STORYBOOK_ASSETS}/internal/branding.svg`}
+              src={`${process.env.STORYBOOK_ASSETS}internal/branding.svg`}
             />
           </div>
 
@@ -92,24 +94,26 @@ storiesOf(' Documentation', module)
               consistent representation.
             </p>
             <p>
-              Building on this initiative, the World Food Programme’s user interface
-              style guide emphasizes WFP’s commitment to establish and build the
-              brand.
+              Building on this initiative, the World Food Programme’s user
+              interface style guide emphasizes WFP’s commitment to establish and
+              build the brand.
             </p>
           </div>
         </div>
 
-        <div className="row" style={{margin: '2em 0'}}>
-          <div className="col-xs-12 col-md-3 col-lg-3" style={{textAlign: 'left'}}>
+        <div className="row" style={{ margin: '2em 0' }}>
+          <div
+            className="col-xs-12 col-md-3 col-lg-3"
+            style={{ textAlign: 'left' }}>
             <img
               alt="Usability"
               style={{
                 width: '80px',
                 height: 'auto',
                 marginTop: '3em',
-                marginLeft: '0.2em'
+                marginLeft: '0.2em',
               }}
-              src={`${process.env.STORYBOOK_ASSETS}/internal/usability.svg`}
+              src={`${process.env.STORYBOOK_ASSETS}internal/usability.svg`}
             />
           </div>
 
@@ -117,31 +121,32 @@ storiesOf(' Documentation', module)
             <h3>Purpose</h3>
             <p>
               The purpose of this project is to create a unified toolkit that is
-              used by UX-designers and developers on their projects alike to ensure
-              all WFP-branded projects are accessible, appealing and have a
-              consistent look and feel across the board by following WFP’s design
-              and implementation guidelines.
+              used by UX-designers and developers on their projects alike to
+              ensure all WFP-branded projects are accessible, appealing and have
+              a consistent look and feel across the board by following WFP’s
+              design and implementation guidelines.
             </p>
             <p>
-              The guidelines contained in this guide are to be applied to all WFP's
-              digital products such as websites, web applications, internal
-              systems and other.
+              The guidelines contained in this guide are to be applied to all
+              WFP's digital products such as websites, web applications,
+              internal systems and other.
             </p>
           </div>
         </div>
 
-
-        <div className="row" style={{margin: '2em 0'}}>
-          <div className="col-xs-12 col-md-3 col-lg-3" style={{textAlign: 'left'}}>
+        <div className="row" style={{ margin: '2em 0' }}>
+          <div
+            className="col-xs-12 col-md-3 col-lg-3"
+            style={{ textAlign: 'left' }}>
             <img
               alt="Toolkit"
               style={{
                 width: '100px',
                 height: 'auto',
                 marginTop: '2em',
-                marginLeft: '0em'
+                marginLeft: '0em',
               }}
-              src={`${process.env.STORYBOOK_ASSETS}/internal/toolkit.svg`}
+              src={`${process.env.STORYBOOK_ASSETS}internal/toolkit.svg`}
             />
           </div>
 
@@ -154,9 +159,9 @@ storiesOf(' Documentation', module)
             </p>
             <p>
               The guide is a living document created to meet the needs of WFP’s
-              front-end developers and designers. If there is a component or pattern
-               you need or you have any other feedback, question or comment
-              please contact us.
+              front-end developers and designers. If there is a component or
+              pattern you need or you have any other feedback, question or
+              comment please contact us.
             </p>
           </div>
         </div>

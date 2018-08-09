@@ -8,7 +8,6 @@ import BreadcrumbItem from '../BreadcrumbItem';
 import BreadcrumbHome from '../BreadcrumbHome';
 import SingleComponent from '../../documentation/SingleComponent';
 
-
 import HtmlComponent from '../../documentation/HtmlComponent';
 
 import { exampleStory } from '../../../.storybook/lucid-docs-addon';
@@ -53,8 +52,6 @@ storiesOf('Breadcrumb', module)
     )
   );
 
-
-
 storiesOf('Breadcrumb', module)
   .addDecorator(
     exampleStory({
@@ -64,9 +61,11 @@ storiesOf('Breadcrumb', module)
       options: { showAddonPanel: true },
     })
   )
-  .addDecorator(story => <HtmlComponent html={BreadcrumbHtml}>{story()}</HtmlComponent>)
+  .addDecorator(story => (
+    <HtmlComponent html={BreadcrumbHtml}>{story()}</HtmlComponent>
+  ))
   .addWithInfo(
-    'html',
+    'html only',
     `
       Breadcrumb enables users to quickly see their location within a path of navigation and move up to a parent level if desired. It can be used with react-router by placing <NavLink></NavLink> inside <BreadcrumbItem />
     `,

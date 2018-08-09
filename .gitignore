@@ -4,8 +4,8 @@ node_modules
 lib
 umd
 source
-storybook-static
-dist
+docs
+assets
 css
 
 # Logs

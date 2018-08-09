@@ -6,7 +6,6 @@ import HtmlComponent from '../../documentation/HtmlComponent';
 
 import Html from '!!raw-loader!./ContentSwitcher.html';
 
-
 storiesOf('ContentSwitcher', module)
   .addDecorator(
     exampleStory({
@@ -16,7 +15,7 @@ storiesOf('ContentSwitcher', module)
   )
   .addDecorator(story => <HtmlComponent html={Html}>{story()}</HtmlComponent>)
   .addWithInfo(
-    'html',
+    'html only',
     `
      html view
     `,
