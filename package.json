@@ -1,6 +1,6 @@
 {
   "name": "@wfp/ui",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "WFP UI Kit Next",
   "license": "Apache-2",
   "main": "lib/index.js",
@@ -40,11 +40,7 @@
     "components"
   ],
   "files": [
-    "lib/**/*",
-    "es/**/*",
-    "umd/**/*",
-    "source/**/*",
-    "assets/**/*"
+    "lib/**/*"
   ],
   "eslintConfig": {
     "parser": "babel-eslint",
