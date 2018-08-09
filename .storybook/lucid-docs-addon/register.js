@@ -29,6 +29,16 @@ class CodePanel extends React.Component {
 	}
 
 	componentDidMount() {
+
+		console.log("unmonono");
+		const { channel, api } = this.props;
+		// Listen to the notes and render it.
+		channel.on('lucid-docs-source', this.onSource);
+	}
+
+	componentWillUnmount() {
+
+		console.log("unmount");
 		const { channel, api } = this.props;
 		// Listen to the notes and render it.
 		channel.on('lucid-docs-source', this.onSource);
@@ -108,22 +118,22 @@ class PropsPanel extends React.Component {
 	componentDidMount() {
 		const { channel, api } = this.props;
 		// Listen to the notes and render it.
-		channel.on('lucid-docs-display-props', this.onDisplayProps);
+		/*channel.on('lucid-docs-display-props', this.onDisplayProps);
 		channel.on(
 			'lucid-docs-display-child-components',
 			this.onDisplayChildComponents
-		);
+		);*/
 	}
 
 	componentWillUnmount() {
 		this.onDisplayProps();
 		this.unmounted = true;
-		const { channel, api } = this.props;
+		/*const { channel, api } = this.props;
 		channel.removeListener('lucid-docs-display-props', this.onDisplayProps);
 		channel.removeListener(
 			'lucid-docs-display-child-components',
 			this.onDisplayChildComponents
-		);
+		);*/
 	}
 
 	render() {
@@ -150,24 +160,19 @@ class PropsPanel extends React.Component {
 
 // Register the addon with a unique name.
 addons.register('lucid-docs', api => {
-	api.setOptions({
-		name: 'Lucid UI',
-		url: 'https://github.com/appnexus/lucid',
-		showAddonPanel: false,
-		addonPanelInRight: true,
-	});
 
 	// Also need to set a unique name to the panel.
-	addons.addPanel('lucid-docs-panel-props', {
+	/*addons.addPanel('lucid-docs-panel-props', {
 		title: 'Props',
 		render: () => <PropsPanel channel={addons.getChannel()} api={api} />,
-	});
+	}); */
+
 	addons.addPanel('lucid-docs-panel-code', {
 		title: 'Code',
 		render: () => <CodePanel channel={addons.getChannel()} api={api} />,
 	});
 
-	addons.getChannel().on('lucid-docs-panel-layout-toggle', () => {
+	/*addons.getChannel().on('lucid-docs-panel-layout-toggle', () => {
 		const urlState = api.getUrlState();
 		api.setOptions({
 			addonPanelInRight: !urlState.panelRight,
@@ -179,7 +184,7 @@ addons.register('lucid-docs', api => {
 		api.setOptions({
 			showAddonPanel: !urlState.addons,
 		});
-	});
+	});*/
 
 	const div = window.document.createElement('div');
 	window.document.body.appendChild(div);

@@ -53,7 +53,9 @@ class CodepenDefine extends React.Component {
 	}
 }
 
-const ExampleCode = ({ code, hasCodepen, packageJson }) => (
+const ExampleCode = ({ code, hasCodepen, packageJson }) => {
+
+	return (
 	<section
 		style={{
 			height: '100%',
@@ -145,7 +147,8 @@ ReactDOM.render(
 			</div>
 		</div>
 	</section>
-);
+)
+};
 
 ExampleCode.defaultProps = {
 	hasCodepen: false,

@@ -46,7 +46,7 @@ storiesOf(' Documentation', module)
             WFP
           </span>
           <span style={{ marginLeft: '0.3em', letterSpacing: '0.05em' }}>
-            UI
+            UI KIT
           </span>
         </h1>
 
@@ -87,13 +87,13 @@ storiesOf(' Documentation', module)
               <Link href="http://brand.manuals.wfp.org/" target="_blank">
                 World Food Programme’s Branding Guidance
               </Link>{' '}
-              WFP's new branding was launched in early 2018 and will be implemented
+              WFP's new branding launched in early 2018 and will be implemented
               across the organization, strengthening WFP’s brand image through
               consistent representation.
             </p>
             <p>
-              Building on this initiative, the World Food Programme’s User Interface
-              Style Guide emphasizes WFP’s commitment to establish and build the
+              Building on this initiative, the World Food Programme’s user interface
+              style guide emphasizes WFP’s commitment to establish and build the
               brand.
             </p>
           </div>
@@ -117,15 +117,15 @@ storiesOf(' Documentation', module)
             <h3>Purpose</h3>
             <p>
               The purpose of this project is to create a unified toolkit that is
-              used by UX-designers and developers alike on their projects to ensure
-              all WFP-branded projects are accessible, appealing, and have a
+              used by UX-designers and developers on their projects alike to ensure
+              all WFP-branded projects are accessible, appealing and have a
               consistent look and feel across the board by following WFP’s design
               and implementation guidelines.
             </p>
             <p>
-              The guidelines contained in this guide are to be applied to all WFP
-              digital products (such as: websites, web applications, internal
-              systems and other).
+              The guidelines contained in this guide are to be applied to all WFP's
+              digital products such as websites, web applications, internal
+              systems and other.
             </p>
           </div>
         </div>
@@ -138,7 +138,7 @@ storiesOf(' Documentation', module)
               style={{
                 width: '100px',
                 height: 'auto',
-                marginTop: '1em',
+                marginTop: '2em',
                 marginLeft: '0em'
               }}
               src={`${process.env.STORYBOOK_ASSETS}/internal/toolkit.svg`}
@@ -146,15 +146,16 @@ storiesOf(' Documentation', module)
           </div>
 
           <div className="col-xs">
+            <h3>Toolkit</h3>
             <p>
               By unifiying design elements into reusable components, development
               will simplify and accelerate the development of these digital
               products.
             </p>
             <p>
-              The Guide is a living document created to meet the needs of WFP’s
-              front-end developers and designers. If there is a Component or Pattern
-              that you need, or you have any other feedback, question or comment
+              The guide is a living document created to meet the needs of WFP’s
+              front-end developers and designers. If there is a component or pattern
+               you need or you have any other feedback, question or comment
               please contact us.
             </p>
           </div>
