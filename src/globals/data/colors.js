@@ -1,57 +1,57 @@
 const colors = {
   ui_colors: [
     {
-      name: 'WFP Blue',
+      name: 'main',
       hex: '#0A6EB4',
       scss: '$color__main',
     },
     {
-      name: 'Navy',
+      name: 'navy',
       hex: '#19486a',
       scss: '$color__navy',
     },
     {
-      name: 'Aqua',
+      name: 'aqua',
       hex: '#26bde2',
       scss: '$color__aqua',
     },
     {
-      name: 'Dark-Green',
+      name: 'dark-green',
       hex: '#3f7e44',
       scss: '$color__dark-green',
     },
     {
-      name: 'Lime',
+      name: 'lime',
       hex: '#8AD220',
       scss: '$color__lime',
     },
     {
-      name: 'Yellow',
+      name: 'yellow',
       hex: '#F7B825',
       scss: '$color__yellow',
     },
     {
-      name: 'Ochre',
+      name: 'ochre',
       hex: '#dda63a',
       scss: '$color__ochre',
     },
     {
-      name: 'Orange',
+      name: 'orange',
       hex: '#fd6925',
       scss: '$color__orange',
     },
     {
-      name: 'Red',
+      name: 'red',
       hex: '#c5192d',
       scss: '$color__red',
     },
     {
-      name: 'Dark-Red',
+      name: 'dark-red',
       hex: '#a21942',
       scss: '$color__dark-red',
     },
     {
-      name: 'Magenta',
+      name: 'magenta',
       hex: '#dd1367',
       scss: '$color__magenta',
     },

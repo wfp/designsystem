@@ -1,7 +1,7 @@
 {
   "ui_colors": [
     {
-      "name": "WFP Blue",
+      "name": "main",
       "hex": "#0A6EB4",
       "scss": "$color__main"
     },

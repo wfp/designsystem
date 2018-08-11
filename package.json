@@ -40,7 +40,11 @@
     "components"
   ],
   "files": [
-    "lib/**/*"
+    "lib/**/*",
+    "es/**/*",
+    "umd/**/*",
+    "source/**/*",
+    "assets/**/*"
   ],
   "eslintConfig": {
     "parser": "babel-eslint",
