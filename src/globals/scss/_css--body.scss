@@ -20,26 +20,3 @@
     @include css-body;
   }
 }
-
-
-/*
-// UI Color Scheme Color Classes
-@each $name, $color in $colors {
-  .color-#{$name} {
-      $blend20: #{'color__' + $name + '-20'};
-      $blend30: #{'color__' + $name + '-30'};
-      $blend40: #{'$color__' + $name + '-40'};
-      $blend60: #{'$color__' + $name + '-60'};
-      $blend70: #{'$color__' + $name + '-70'};
-      $blend80: #{'$color__' + $name + '-80'};
-
-      background-color: #{$color};
-        &.blend-20 { background-color: #{$blend20}; }
-        &.blend-30 { background-color: #{'$' + $blend30}; }
-        &.blend-40 { background-color: #{'$' + $blend40}; }
-        &.blend-60 { background-color: #{'$' + $blend60}; }
-        &.blend-70 { background-color: #{'$' + $blend70}; }
-        &.blend-80 { background-color: #{'$' + $blend80}; } 
-  }
-}
-*/

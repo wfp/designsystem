@@ -62,20 +62,30 @@ storiesOf(' Documentation', module).addWithInfo('Colors', ``, () => {
             >
               <div
                 style={{
-                  width: '20%',
+                  width: '20px',
                   height: '20px',
-                  marginTop: '0em',
-                  marginRight: '1em'
+                  marginTop: '1px',
+                  marginRight: '1em',
+                  marginBottom: '1px'
                 }}
                 className={`color__${color.name}-${blend}`}
               >
               </div>
               <div
                 style={{
-                  width: '70%',
+                  marginTop: '2px',
+                  lineHeight: '20px'
                 }}
               >
-                scss: {color.scss}-${blend}
+              <span
+                style={{
+                  display: 'inline-block',
+                  marginRight: '1em'
+                }}
+              >
+                hex: #0A6EB4
+              </span>
+              scss: {color.scss}-${blend}
               </div>
             </div>
           ))}
@@ -94,7 +104,7 @@ storiesOf(' Documentation', module).addWithInfo('Colors', ``, () => {
       </p>
 
       <p>
-        You can find the extended Colour Palette{' '}
+        The extended Colour Palette can be found here{' '}
         <Link href="http://brand.manuals.wfp.org/en/core-elements/colours/colour-palette/">
           here
         </Link>.

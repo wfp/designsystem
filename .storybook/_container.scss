@@ -1,9 +1,7 @@
 $css--font-face: true;
 $css--reset: true;
 
-
 @import '../src/globals/scss/_colors.scss';
-
 
 html {
   height: 100%;
@@ -113,7 +111,6 @@ table {
   }
 }
 
-
 .color__main-20 {
   background: $color__main-20;
 }
@@ -132,7 +129,6 @@ table {
 .color__main-80 {
   background: $color__main-80;
 }
-
 
 .color__navy-20 {
   background: $color__navy-20;
@@ -153,7 +149,6 @@ table {
   background: $color__navy-80;
 }
 
-
 .color__aqua-20 {
   background: $color__aqua-20;
 }
@@ -172,7 +167,6 @@ table {
 .color__aqua-80 {
   background: $color__aqua-80;
 }
-
 
 .color__dark-green-20 {
   background: $color__dark-green-20;
@@ -193,7 +187,6 @@ table {
   background: $color__dark-green-80;
 }
 
-
 .color__lime-20 {
   background: $color__lime-20;
 }
@@ -212,7 +205,6 @@ table {
 .color__lime-80 {
   background: $color__lime-80;
 }
-
 
 .color__yellow-20 {
   background: $color__yellow-20;
@@ -233,8 +225,6 @@ table {
   background: $color__yellow-80;
 }
 
-
-
 .color__ochre-20 {
   background: $color__ochre-20;
 }
@@ -253,7 +243,6 @@ table {
 .color__ochre-80 {
   background: $color__ochre-80;
 }
-
 
 .color__orange-20 {
   background: $color__orange-20;
@@ -274,7 +263,6 @@ table {
   background: $color__orange-80;
 }
 
-
 .color__red-20 {
   background: $color__red-20;
 }
@@ -293,7 +281,6 @@ table {
 .color__red-80 {
   background: $color__red-80;
 }
-
 
 .color__dark-red-20 {
   background: $color__dark-red-20;
