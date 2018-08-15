@@ -30,7 +30,7 @@ class Blockquote extends React.Component {
       code,
       warning,
       info,
-      type
+      type,
     } = this.props;
     const blockquoteClass = classNames({
       'wfp--blockquote': true,
@@ -59,7 +59,10 @@ class Blockquote extends React.Component {
         <div className={blockquoteContentClass} style={style}>
           {children}
           {innerHtml && (
-            <div dangerouslySetInnerHTML={this.showInnerHtml(innerHtml)} />
+            <div
+              role="complementary"
+              dangerouslySetInnerHTML={this.showInnerHtml(innerHtml)}
+            />
           )}
         </div>
       </div>

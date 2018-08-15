@@ -2,20 +2,10 @@
 
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
-import Link from '../components/Link';
-import Wrapper from '../components/Wrapper';
 import Blockquote from '../components/Blockquote';
-import {
-  BannerNavigation,
-  BannerNavigationItem,
-} from '../components/BannerNavigation';
 import RegularPage from './RegularPage';
 import Story from '../components/Story';
-import Footer from '../components/Footer';
-import Search from '../components/Search';
-
-storiesOf(' Documentation', module)
+storiesOf(' Documentation.Sample Pages', module)
   .addDecorator(story => <RegularPage withoutSecondary>{story()}</RegularPage>)
   .addWithInfo('Regular Page', ``, () => (
     <div>

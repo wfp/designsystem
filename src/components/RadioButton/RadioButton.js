@@ -39,7 +39,7 @@ export default class RadioButton extends React.Component {
       this.props.className
     );
 
-    const { component, labelText, input, value, ...other } = this.props;
+    const { labelText, input, value, ...other } = this.props;
     return (
       <div className={wrapperClasses}>
         <input

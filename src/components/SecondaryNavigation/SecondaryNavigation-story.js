@@ -1,6 +1,5 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
 import {
   SecondaryNavigation,
   SecondaryNavigationTitle,
@@ -8,8 +7,6 @@ import {
 import Breadcrumb from '../Breadcrumb';
 import BreadcrumbItem from '../BreadcrumbItem';
 import BreadcrumbHome from '../BreadcrumbHome';
-
-import Link from '../Link';
 
 storiesOf('SecondaryNavigation', module).addWithInfo(
   'default',

@@ -7,7 +7,7 @@ import { Tooltip } from 'react-tippy';
 The default styling can be imported from wfp-ui.
 
 ```js
-import tooltipStyle from '@wfp/ui';
+import { tooltipStyle } from '@wfp/ui';
 
 [...]
 

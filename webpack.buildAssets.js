@@ -5,19 +5,19 @@ const path = require('path');
 
 module.exports = {
   entry: {
-    index: './src/index.js',
+    index: './src/vendorOnly.js',
   },
 
   output: {
     filename: '[name].js',
-    path: path.join(__dirname, './dist'),
-    publicPath: '/dist',
+    path: path.join(__dirname, './assets'),
+    publicPath: '/assets',
   },
 
   plugins: [
     new CopyWebpackPlugin([
       {
-        from: './assets/',
+        from: './src/assets/',
         to: '[path][name].[ext]',
       },
     ]),

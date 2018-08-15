@@ -65,9 +65,13 @@ export default class ReactTablePagination extends Component {
             onChange={this.changePage}
             pageSizes={pageSizeOptions}
             pageSize={pageSize}
+            page={page}
+            pages={pages}
             totalItems={totalItems ? totalItems : data.length}
             pagesUnknown={pagesUnknown}
             isLastPage={isLastPage}
+            showPageJump={showPageJump}
+            showPageSizeOptions={showPageSizeOptions}
             pageInputDisabled={pageInputDisabled}
           />
         </div>

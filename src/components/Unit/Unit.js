@@ -17,7 +17,6 @@ import {
 } from './UnitList';
 import PropTypes from 'prop-types';
 
-import SimpleCalc from './SimpleCalc';
 import SvgUnit from './SvgUnit';
 import StringUnit from './StringUnit';
 // All Unit Components together in <Unit type="Unitname" />
@@ -40,12 +39,18 @@ export const scaleLookup = {
   },
 };
 
-export const currencyCalc = (props, after, before, afterSingular) => {
+export const currencyCalc = (
+  props,
+  after,
+  before,
+  afterSingular,
+  isAbsolute
+) => {
   const {
     children,
     input,
     output,
-    maximumSignificantDigits,
+    /* maximumSignificantDigits, */
     minimumFractionDigits,
     maximumFractionDigits,
     calcOnly,
@@ -56,7 +61,7 @@ export const currencyCalc = (props, after, before, afterSingular) => {
 
   // Remove commas
   var value =
-    typeof children === 'string' ? children.replace(',', '') : children;
+    typeof children === 'string' ? children.replace(/,/g, '') : children;
 
   // Parse as float
   value = parseFloat(value);
@@ -76,21 +81,25 @@ export const currencyCalc = (props, after, before, afterSingular) => {
   const toLocalStringConfig = {
     //maximumSignificantDigits: maximumSignificantDigits,
     minimumFractionDigits:
-      maximumFractionDigits === 0
-        ? 0
-        : minimumFractionDigits
-          ? minimumFractionDigits
-          : outputCalc && outputCalc.defaultmaximumFractionDigits
-            ? outputCalc.defaultmaximumFractionDigits
-            : 2,
+      isAbsolute === true && output === undefined
+        ? minimumFractionDigits === 0
+        : maximumFractionDigits === 0
+          ? 0
+          : minimumFractionDigits
+            ? minimumFractionDigits
+            : outputCalc && outputCalc.defaultmaximumFractionDigits
+              ? outputCalc.defaultmaximumFractionDigits
+              : 2,
     maximumFractionDigits:
-        value <= 0.005
+      isAbsolute === true && output === undefined
+        ? maximumFractionDigits === 0
+        : value <= 0.005
           ? 4
           : value <= 0.05
             ? 3
             : value <= 0.5
               ? 2
-                :maximumFractionDigits === 0
+              : maximumFractionDigits === 0
                 ? 0
                 : maximumFractionDigits
                   ? maximumFractionDigits
@@ -137,7 +146,7 @@ export const percentageCalc = (props, after, before) => {
 
   // Remove commas
   var value =
-    typeof children === 'string' ? children.replace(',', '') : children;
+    typeof children === 'string' ? children.replace(/,/g, '') : children;
 
   // Parse as float
   value = parseFloat(value);
@@ -192,7 +201,7 @@ const components = {
 };
 
 const Unit = props => {
-  const { className, output, string, textAnchor, hideZero, setup } = props;
+  const { className, output, string, textAnchor, setup } = props;
   const type = props.type ? props.type : 'None';
   const Unit = components[type];
   //const unitHideClass = setup && setup.hideUnit ? 'wfp--unit--hide' : '';
@@ -221,7 +230,7 @@ const Unit = props => {
   }
 
   if (Unit === undefined) {
-    console.warn(`The unit "${type}" is undefined`);
+    /* console.warn(`The unit "${type}" is undefined`); */
     return null;
   }
 

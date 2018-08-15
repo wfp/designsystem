@@ -7,7 +7,7 @@ import store from '../../internal/configureStore';
 import { Field } from 'redux-form';
 import FormWrapper from '../../internal/RfFormWrapper';
 
-import RfNumberInput from './RfNumberInput';
+import NumberInput from './NumberInput';
 
 const introText = `
   Text fields enable the user to interact with and input data. A single line
@@ -36,8 +36,8 @@ storiesOf('NumberInput', module)
     `,
     () => (
       <Field
-        component={RfNumberInput}
-        label="Label"
+        component={NumberInput}
+        label={<span>Label</span>}
         name="Input"
         placeholder="Placeholder here"
         validate={email}

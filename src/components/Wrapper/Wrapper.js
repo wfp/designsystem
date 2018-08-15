@@ -5,6 +5,7 @@ import classNames from 'classnames';
 const Wrapper = props => {
   const {
     background,
+    backgroundStyle,
     children,
     className,
     pageWidth,
@@ -22,13 +23,14 @@ const Wrapper = props => {
     'wfp--wrapper--spacing-md': spacing === 'md',
     [`${className}`]: className,
   });
-  if (background) {
+  if (background || backgroundStyle) {
     const backgroundClasses = classNames({
       'wfp--wrapper--background-lighter': background === 'lighter',
+      'wfp--wrapper--background-dark': background === 'dark',
     });
 
     return (
-      <div className={backgroundClasses}>
+      <div className={backgroundClasses} style={backgroundStyle}>
         <div className={wrapperClasses} {...other}>
           {children}
         </div>

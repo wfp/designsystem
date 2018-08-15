@@ -72,15 +72,6 @@ const fieldsetRadioProps = {
   legendText: 'Radio Button heading',
 };
 
-const searchProps = {
-  className: 'some-class',
-};
-
-const fieldsetSearchProps = {
-  className: 'some-class',
-  legendText: 'Search',
-};
-
 const selectProps = {
   className: 'some-class',
 };

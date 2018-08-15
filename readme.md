@@ -1,30 +1,24 @@
 # World Food Programme UI Kit (WFP-UI)
 
-| Branch  | Build Status                                                                                     |
-| ------- | ------------------------------------------------------------------------------------------------ |
-| master  | [![Build Status](https://travis-ci.org/wfp/ui.svg?branch=master)](https://travis-ci.org/wfp/ui)  |
-| develop | [![Build Status](https://travis-ci.org/wfp/ui.svg?branch=develop)](https://travis-ci.org/wfp/ui) |
-
-> Work in progress, not for use at the moment.
-
-## Credits
-
-The UI-Kit will be heavily based on:
-
-> [Carbon Components](https://github.com/carbon-design-system/carbon-components) >[U.S. Webdesign System](https://designsystem.digital.gov/page-templates/#landing-page) >[Sketch Favicon Exporter Template](https://github.com/frederik-jacques/sketch-favicon-exporter-template)
+| Branch | Build Status                                                                                    |
+| ------ | ----------------------------------------------------------------------------------------------- |
+| master | [![Build Status](https://travis-ci.org/wfp/ui.svg?branch=master)](https://travis-ci.org/wfp/ui) |
+| next   | [![Build Status](https://travis-ci.org/wfp/ui.svg?branch=next)](https://travis-ci.org/wfp/ui)   |
 
 ## Usage
 
-### List of Available Components
-
-View available Components [here](http://ui.wfp.org). Usage information is available when you click the blue **?** icon in the top right corner of the selected component.
-
-### Usage
+### Installation
 
 Run the following command using [npm](https://www.npmjs.com/):
 
 ```bash
-npm install @wfp/ui
+npm install @wfp/ui -develop
+```
+
+or [yarn](https://yarnpkg.com/lang/en/):
+
+```bash
+yarn add @wfp/ui -D
 ```
 
 Import a react component
@@ -33,13 +27,41 @@ Import a react component
 import { Breadcrumb, BreadcrumbItem, BreadcrumbHome } from '@wfp/ui';
 ```
 
-Import the css
+Import the CSS
 
 ```bash
-@import '@wfp/ui/css/styles';
+@import '@wfp/ui/assets/css/styles';
 ```
 
-View available React Components [here](http://pydev.wfp.org:8282/). Usage information is available when you click the blue **Show Info** icon in the top right corner of the selected component.
+Additional information about the Usage can be found [here](http://pydev.wfp.org:8282/?selectedKind=%20Documentation&selectedStory=Usage&full=0&addons=1&stories=1&panelRight=0&addonPanel=REACT_STORYBOOK%2Freadme%2Fpanel).
+
+### Documentation & list of components available
+
+View available Components [here](http://pydev.wfp.org:8282). Usage information is available when you click the blue **?** icon in the top right corner of the selected component.
+
+## About the WFP UI Guidelines
+
+The new WFP UI Kit is based on the [World Food Programme’s Branding Guidance](http://brand.manuals.wfp.org/) WFP's new branding was launched in early 2018 and will be implemented across the organization, strengthening WFP’s brand image through consistent representation.
+
+Building on this initiative, the World Food Programme’s User Interface Style Guide emphasizes WFP’s commitment to establish and build the brand.
+
+## Purpose
+
+The purpose of this project is to create a unified toolkit that is used by UX-designers and developers alike on their projects to ensure all WFP-branded projects are accessible, appealing, and have a consistent look and feel across the board by following WFP’s design and implementation guidelines.
+
+The guidelines contained in this guide are to be applied to all WFP digital products (such as: websites, web applications, internal systems and other).
+
+By unifiying design elements into reusable components, development will simplify and accelerate the development of these digital products.
+
+The Guide is a living document created to meet the needs of WFP’s front-end developers and designers. If there is a Component or Pattern that you need, or you have any other feedback, question or comment please contact us.
+
+## Credits
+
+The UI Kit is be based on:
+
+* [Carbon Components](https://github.com/carbon-design-system/carbon-components)
+* [U.S. Webdesign System](https://designsystem.digital.gov/page-templates/#landing-page)
+* [Sketch Favicon Exporter Template](https://github.com/frederik-jacques/sketch-favicon-exporter-template)
 
 ## Logos
 

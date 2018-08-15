@@ -76,6 +76,7 @@ export class FileUploaderButton extends Component {
       <div
         role="button"
         className={classes}
+        tabIndex={0}
         onKeyDown={evt => {
           if (evt.which === 13 || evt.which === 32) {
             this.input.click();

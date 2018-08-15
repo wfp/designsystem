@@ -15,6 +15,7 @@
 
   .#{$prefix}--blockquote__content {
     padding: $spacing-md;
+    line-height: 1.4;
   }
 
   .#{$prefix}--blockquote--code {
@@ -24,6 +25,11 @@
       line-height: 1.4;
     }
   }
+
+  .#{$prefix}--blockquote--warning {
+    border-left: 5px solid $color__red;
+  }
+
 
   .#{$prefix}--blockquote__title {
     display: block;

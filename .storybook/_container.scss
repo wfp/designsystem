@@ -1,5 +1,8 @@
 $css--font-face: true;
 $css--reset: true;
+
+@import '../src/globals/scss/_colors.scss';
+
 html {
   height: 100%;
 }
@@ -60,4 +63,259 @@ table {
   td {
     border: 1px solid #ccc;
   }
+}
+
+.storybook--logo__element {
+  &:hover {
+    background: -webkit-linear-gradient(
+        45deg,
+        rgba(0, 0, 0, 0.0980392) 25%,
+        rgba(0, 0, 0, 0) 25%,
+        rgba(0, 0, 0, 0) 75%,
+        rgba(0, 0, 0, 0.0980392) 75%,
+        rgba(0, 0, 0, 0.0980392) 0
+      ),
+      -webkit-linear-gradient(45deg, rgba(0, 0, 0, 0.0980392) 25%, rgba(
+              0,
+              0,
+              0,
+              0
+            )
+            25%, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0.0980392) 75%, rgba(
+              0,
+              0,
+              0,
+              0.0980392
+            )
+            0);
+    background: linear-gradient(
+        45deg,
+        rgba(0, 0, 0, 0.0980392) 25%,
+        rgba(0, 0, 0, 0) 25%,
+        rgba(0, 0, 0, 0) 75%,
+        rgba(0, 0, 0, 0.0980392) 75%,
+        rgba(0, 0, 0, 0.0980392) 0
+      ),
+      linear-gradient(
+        45deg,
+        rgba(0, 0, 0, 0.0980392) 25%,
+        rgba(0, 0, 0, 0) 25%,
+        rgba(0, 0, 0, 0) 75%,
+        rgba(0, 0, 0, 0.0980392) 75%,
+        rgba(0, 0, 0, 0.0980392) 0
+      );
+    background-position: 0 0, 10px 10px;
+    background-origin: padding-box;
+    background-clip: border-box;
+    background-size: 20px 20px;
+  }
+}
+
+.color__main-20 {
+  background: $color__main-20;
+}
+.color__main-30 {
+  background: $color__main-30;
+}
+.color__main-40 {
+  background: $color__main-40;
+}
+.color__main-60 {
+  background: $color__main-60;
+}
+.color__main-70 {
+  background: $color__main-70;
+}
+.color__main-80 {
+  background: $color__main-80;
+}
+
+.color__navy-20 {
+  background: $color__navy-20;
+}
+.color__navy-30 {
+  background: $color__navy-30;
+}
+.color__navy-40 {
+  background: $color__navy-40;
+}
+.color__navy-60 {
+  background: $color__navy-60;
+}
+.color__navy-70 {
+  background: $color__navy-70;
+}
+.color__navy-80 {
+  background: $color__navy-80;
+}
+
+.color__aqua-20 {
+  background: $color__aqua-20;
+}
+.color__aqua-30 {
+  background: $color__aqua-30;
+}
+.color__aqua-40 {
+  background: $color__aqua-40;
+}
+.color__aqua-60 {
+  background: $color__aqua-60;
+}
+.color__aqua-70 {
+  background: $color__aqua-70;
+}
+.color__aqua-80 {
+  background: $color__aqua-80;
+}
+
+.color__dark-green-20 {
+  background: $color__dark-green-20;
+}
+.color__dark-green-30 {
+  background: $color__dark-green-30;
+}
+.color__dark-green-40 {
+  background: $color__dark-green-40;
+}
+.color__dark-green-60 {
+  background: $color__dark-green-60;
+}
+.color__dark-green-70 {
+  background: $color__dark-green-70;
+}
+.color__dark-green-80 {
+  background: $color__dark-green-80;
+}
+
+.color__lime-20 {
+  background: $color__lime-20;
+}
+.color__lime-30 {
+  background: $color__lime-30;
+}
+.color__lime-40 {
+  background: $color__lime-40;
+}
+.color__lime-60 {
+  background: $color__lime-60;
+}
+.color__lime-70 {
+  background: $color__lime-70;
+}
+.color__lime-80 {
+  background: $color__lime-80;
+}
+
+.color__yellow-20 {
+  background: $color__yellow-20;
+}
+.color__yellow-30 {
+  background: $color__yellow-30;
+}
+.color__yellow-40 {
+  background: $color__yellow-40;
+}
+.color__yellow-60 {
+  background: $color__yellow-60;
+}
+.color__yellow-70 {
+  background: $color__yellow-70;
+}
+.color__yellow-80 {
+  background: $color__yellow-80;
+}
+
+.color__ochre-20 {
+  background: $color__ochre-20;
+}
+.color__ochre-30 {
+  background: $color__ochre-30;
+}
+.color__ochre-40 {
+  background: $color__ochre-40;
+}
+.color__ochre-60 {
+  background: $color__ochre-60;
+}
+.color__ochre-70 {
+  background: $color__ochre-70;
+}
+.color__ochre-80 {
+  background: $color__ochre-80;
+}
+
+.color__orange-20 {
+  background: $color__orange-20;
+}
+.color__orange-30 {
+  background: $color__orange-30;
+}
+.color__orange-40 {
+  background: $color__orange-40;
+}
+.color__orange-60 {
+  background: $color__orange-60;
+}
+.color__orange-70 {
+  background: $color__orange-70;
+}
+.color__orange-80 {
+  background: $color__orange-80;
+}
+
+.color__red-20 {
+  background: $color__red-20;
+}
+.color__red-30 {
+  background: $color__red-30;
+}
+.color__red-40 {
+  background: $color__red-40;
+}
+.color__red-60 {
+  background: $color__red-60;
+}
+.color__red-70 {
+  background: $color__red-70;
+}
+.color__red-80 {
+  background: $color__red-80;
+}
+
+.color__dark-red-20 {
+  background: $color__dark-red-20;
+}
+.color__dark-red-30 {
+  background: $color__dark-red-30;
+}
+.color__dark-red-40 {
+  background: $color__dark-red-40;
+}
+.color__dark-red-60 {
+  background: $color__dark-red-60;
+}
+.color__dark-red-70 {
+  background: $color__dark-red-70;
+}
+.color__dark-red-80 {
+  background: $color__dark-red-80;
+}
+
+.color__magenta-20 {
+  background: $color__magenta-20;
+}
+.color__magenta-30 {
+  background: $color__magenta-30;
+}
+.color__magenta-40 {
+  background: $color__magenta-40;
+}
+.color__magenta-60 {
+  background: $color__magenta-60;
+}
+.color__magenta-70 {
+  background: $color__magenta-70;
+}
+.color__magenta-80 {
+  background: $color__magenta-80;
 }

@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import Wrapper from '../components/Wrapper';
 
-const SingleComponent = ({ children, pageWidth, subTitle, title, type }) => {
+const SingleComponent = ({ children, pageWidth }) => {
   return (
     <Wrapper
       style={{

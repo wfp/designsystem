@@ -53,7 +53,7 @@ storiesOf('BannerNavigation', module).addWithInfo(
       </BannerNavigationItem>
       <BannerNavigationItem>
         <Search
-          smaller
+          banner
           id="search-2"
           labelText="Search"
           placeHolderText="Search"

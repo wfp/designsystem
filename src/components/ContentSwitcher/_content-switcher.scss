@@ -30,8 +30,9 @@
     align-items: center;
     padding: 0 $spacing-xl;
     margin: 0;
+    font-weight: 600;
     text-decoration: none;
-    border: 1px solid $brand-01;
+    border: 2px solid $brand-01;
     color: $brand-01;
 
     &:focus {
@@ -108,7 +109,6 @@
   .#{$prefix}--content-switcher-btn.#{$prefix}--content-switcher--selected {
     background-color: $brand-01;
     color: $inverse-01;
-    font-weight: 400;
     outline: 1px solid transparent;
 
     &:hover,

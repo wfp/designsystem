@@ -2,8 +2,6 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
 
-import RfFormLabel from '../FormLabel/RfFormLabel';
-
 const Checkbox = props => {
   const {
     className,
@@ -14,7 +12,6 @@ const Checkbox = props => {
     input,
     hideLabel,
     wrapperClassName,
-    ...other
   } = props;
 
   let inputElement;

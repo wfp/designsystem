@@ -17,6 +17,7 @@ export CardFooter from './components/CardFooter';
 export CardStatus from './components/CardStatus';
 */
 export Checkbox from './components/Checkbox';
+export Credits from './components/Credits';
 /*
 export CodeSnippet from './components/CodeSnippet';
 export ComboBox from './components/ComboBox';
@@ -54,6 +55,9 @@ export InteriorLeftNavItem from './components/InteriorLeftNavItem';
 export InteriorLeftNavList from './components/InteriorLeftNavList';
 */
 export Link from './components/Link';
+
+export { List, ListItem } from './components/List';
+
 export {
   MainNavigation,
   MainNavigationItem,
@@ -156,6 +160,8 @@ export Tab from './components/Tab';
 export TabContent from './components/TabContent';
 export TextArea from './components/TextArea';
 export TextInput from './components/TextInput';
+
+export tooltipStyle from './components/Tooltip';
 /*
 export {
   Tile,

@@ -2,9 +2,13 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import ContentSwitcher from '../ContentSwitcher';
+import SingleComponent from '../../documentation/SingleComponent';
 import Switch from '../Switch';
 
 storiesOf('ContentSwitcher', module)
+  .addDecorator(story => (
+    <SingleComponent pageWidth="wide">{story()}</SingleComponent>
+  ))
   .addWithInfo(
     'Default',
     `

@@ -21,7 +21,9 @@ const TextInputProps = {
 
 storiesOf('FormGroup', module)
   .addDecorator(withTests('FormGroup'))
-
+  .addDecorator(story => (
+    <SingleComponent pageWidth="wide">{story()}</SingleComponent>
+  ))
   .addWithInfo(
     'Default',
     `

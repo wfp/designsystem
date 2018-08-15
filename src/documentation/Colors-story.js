@@ -7,29 +7,89 @@ import Page from './Page';
 import Blockquote from '../components/Blockquote';
 import colors from '../globals/data/colors';
 
+
+const colorBlend = [
+  '20', '30', '40', '60', '80'
+]
+
 storiesOf(' Documentation', module).addWithInfo('Colors', ``, () => {
   const colorList = colors.ui_colors.map(color => (
     <li
+      style={{
+        width: '100%',
+        marginBottom: '1%',
+        padding: '1em',
+        border: '1px solid #E5E5E5',
+        listStyleType: 'none'
+      }}>
+      <div
       style={{
         display: 'flex',
         webkitColumnBreakInside: 'avoid',
         pageBreakInside: 'avoid',
         breakInside: 'avoid-column',
+        flexWrap: 'wrap',
+        height: '100%',
       }}>
-      <div
-        style={{
-          width: '2.5em',
-          height: '2.5em',
-          marginTop: '0.5em',
-          marginRight: '1em',
-          backgroundColor: color.hex,
-        }}
-      />
-      <div style={{fontSize: '0.8em'}}>
-        <h4>{color.name}</h4>
-        <div>js: {color.name}</div>
-        <div>scss: {color.scss}</div>
-        <div>hex: {color.hex}</div>
+        <div
+          style={{
+            width: '3.5em',
+            height: '100%',
+            marginTop: '0em',
+            marginRight: '1em',
+            backgroundColor: color.hex,
+          }}
+        />
+        <div style={{ width: '30%', flexGrow: '1', fontSize: '0.8em' }}>
+          <h4>{color.name}</h4>
+          <div>js: {color.name}</div>
+          <div>scss: {color.scss}</div>
+          <div>hex: {color.hex}</div>
+        </div>
+
+        <div
+          style={{
+            width: '50%',
+          }}
+        >
+        {colorBlend.map(blend => (
+            <div
+              style={{
+                display: 'flex',
+                fontSize: '0.7em',
+                width: '100%'
+              }}
+            >
+              <div
+                style={{
+                  width: '20px',
+                  height: '20px',
+                  marginTop: '1px',
+                  marginRight: '1em',
+                  marginBottom: '1px'
+                }}
+                className={`color__${color.name}-${blend}`}
+              >
+              </div>
+              <div
+                style={{
+                  marginTop: '2px',
+                  lineHeight: '20px'
+                }}
+              >
+              <span
+                style={{
+                  display: 'inline-block',
+                  marginRight: '1em'
+                }}
+              >
+                hex: #0A6EB4
+              </span>
+              scss: {color.scss}-${blend}
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </li>
   ));
@@ -44,13 +104,15 @@ storiesOf(' Documentation', module).addWithInfo('Colors', ``, () => {
       </p>
 
       <p>
-        You can find the extended Colour Palette{' '}
+        The extended Colour Palette can be found here{' '}
         <Link href="http://brand.manuals.wfp.org/en/core-elements/colours/colour-palette/">
           here
         </Link>.
       </p>
 
-      <ul style={{ columnCount: '3' }}>{colorList}</ul>
+      <ul style={{ display: 'flex', flexWrap: 'wrap', margin: 0 }}>
+        {colorList}
+      </ul>
 
       <h3>Usage</h3>
 

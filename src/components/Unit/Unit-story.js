@@ -9,14 +9,7 @@ import ReactTable from 'react-table';
 import Blockquote from '../Blockquote';
 import TablePagination from '../TablePagination';
 import Unit from './Unit';
-import {
-  withKnobs,
-  select,
-  text,
-  boolean,
-  number,
-  object,
-} from '@storybook/addon-knobs/react';
+import { withKnobs, select, text, number } from '@storybook/addon-knobs/react';
 
 const units = [
   {
@@ -199,15 +192,6 @@ storiesOf('Unit', module)
       Some usage samples
     `,
     () => {
-      console.log(
-        Unit({
-          children: '2354245',
-          output: 'million',
-          type: 'Usd',
-          string: true,
-          value: '131323213',
-        })
-      );
       const columns = [
         {
           Header: 'HTML',
@@ -224,9 +208,6 @@ storiesOf('Unit', module)
           accessor: 'name',
           width: 150,
           Cell: props => {
-            let svgSetup = Object.assign({}, props.original.setup, {
-              svg: true,
-            });
             return (
               <svg width="120" height="20">
                 <g transform="translate(0 17)">
@@ -296,13 +277,13 @@ storiesOf('Unit', module)
         Num: 'Num',
         YearMonth: 'YearMonth',
         Level: 'Level',
+        People: 'People',
         Countries: 'Countries',
         Percentage: 'Percentage',
       };
 
       const type = select('type', options, 'Usd');
       const output = text('output', 'million');
-      const input = text('input', 'thousand');
       const value = text('value', 1000000);
       const from = text('from', undefined);
       const minimumFractionDigits = number('minimumFractionDigits', undefined);

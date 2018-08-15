@@ -2,16 +2,12 @@
 
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import Link from '../components/Link';
 import Page from './Page';
 import Blockquote from '../components/Blockquote';
 
 storiesOf(' Documentation', module).addWithInfo('Typography', ``, () => (
-  <Page
-    title="Typography"
-    pageWidth="narrow"
-    subTitle="Introduction to the new WFP UI-Kit">
-    <p>
+  <Page title="Typography" subTitle="Introduction to the new WFP UI Kit">
+    {/*<p>
       Typography plays a critical role in any design; in fact, it accounts for
       as much as 95% of everything we see on the Web. When done well, it adds
       personality to content, becomes its voice. When established poorly,
@@ -23,7 +19,7 @@ storiesOf(' Documentation', module).addWithInfo('Typography', ``, () => (
       In some cases, it will lead to problems with processing text, and thus
       increasing cognitive load on the user. The bigger the congnitive load is,
       the harder it is for users to complete their tasks.
-    </p>
+    </p>*/}
 
     <h3>Typefaces</h3>
 
@@ -34,12 +30,21 @@ storiesOf(' Documentation', module).addWithInfo('Typography', ``, () => (
     </p>
 
     <h3>Headings</h3>
-    <h1>Heading 1</h1>
-    <h2>Heading 2</h2>
-    <h3>Heading 3</h3>
-    <h4>Heading 4</h4>
-    <h5>Heading 5</h5>
-    <h6>Heading 6</h6>
+
+    <p>
+      Headings help to add a hierarchy to a page, and they are key identifiers
+      for users reading a page. They should be used in an order that is relevant
+      to the content of a page.
+    </p>
+
+    <Blockquote>
+      <h1>Heading 1</h1>
+      <h2>Heading 2</h2>
+      <h3>Heading 3</h3>
+      <h4>Heading 4</h4>
+    </Blockquote>
+    {/*<h5>Heading 5</h5>*/}
+    {/*<h6>Heading 6</h6>*/}
 
     <h3>Paragraph</h3>
 
@@ -54,7 +59,7 @@ storiesOf(' Documentation', module).addWithInfo('Typography', ``, () => (
       clita kasd gubergren.
     </p>
 
-    <h3>Dos and Don’ts</h3>
+    {/*<h3>Dos and Don’ts</h3>
     <ul>
       <li>
         Don’t try to mix two typefaces within a single section, such as a
@@ -78,6 +83,6 @@ storiesOf(' Documentation', module).addWithInfo('Typography', ``, () => (
         formatting where it’s not required and leave styling of the content to
         your desiger. This will ensure all of it looks consistent.
       </li>
-    </ul>
+    </ul>*/}
   </Page>
 ));

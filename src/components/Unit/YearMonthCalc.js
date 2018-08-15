@@ -1,8 +1,9 @@
 import React from 'react';
 import SvgUnit from './SvgUnit';
+import StringUnit from './StringUnit';
 
-const MonthYearCalc = props => {
-  const { children, setup } = props;
+const YearMonthGen = props => {
+  const { children } = props;
 
   let value = children;
 
@@ -38,18 +39,21 @@ const MonthYearCalc = props => {
 
 // Format YYYYMM / from 201709  => Sep 2017
 export const YearMonthCalc = props => {
-  const { svg } = props;
-  const value = MonthYearCalc(props);
+  const { className, string, svg, calcOnly } = props;
+  const YearMonthgenerated = YearMonthGen(props);
 
-  if (svg) {
-    return SvgUnit({ value: value.monthName + ' ' + value.year }, props);
-  }
+  const calcObject = {
+    value: YearMonthgenerated.monthName + ' ' + YearMonthgenerated.year,
+    before: '',
+    after: '',
+    output: undefined,
+  };
 
-  return (
-    <span className={props.className}>
-      {value.monthName} {value.year}
-    </span>
-  );
+  if (calcOnly) return calcObject;
+  else if (svg) return SvgUnit(calcObject, props);
+  else if (string) return StringUnit(calcObject, props);
+  else if (calcObject !== false)
+    return <span className={className}>{calcObject.value}</span>;
 };
 
 export default YearMonthCalc;

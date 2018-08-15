@@ -47,7 +47,6 @@ const Toggle = ({
         onChange={evt => {
           onChange && onChange(evt);
           onToggle(inputElement.checked, id, evt);
-          console.log('update', evt);
           /* Redux Form */
           if (input && input.onChange) input.onChange(input.checked);
         }}
