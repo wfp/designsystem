@@ -15,6 +15,7 @@ export const ListItem = ({ children, className, title, ...other }) => {
 export const List = ({ children, className, kind, small, ...other }) => {
   const classNames = classnames('wfp--list', className, {
     'wfp--list--simple': kind === 'simple',
+    'wfp--list--details': kind === 'details',
     'wfp--list--small': small,
   });
   return (

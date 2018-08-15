@@ -34,7 +34,7 @@
     h4 {
       margin: $spacing-xs 0;
     }
-    ul {
+    .#{$prefix}--story--list {
       list-style-position: outside;
       line-height: 1.6em;
       margin: 1.5em 0 1.5em 1.5em;
