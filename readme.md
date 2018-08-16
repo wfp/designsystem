@@ -33,7 +33,7 @@ Import the CSS
 @import '@wfp/ui/assets/css/styles';
 ```
 
-Additional information about the Usage can be found [here](http://pydev.wfp.org:8282/?selectedKind=%20Documentation&selectedStory=Usage&full=0&addons=1&stories=1&panelRight=0&addonPanel=REACT_STORYBOOK%2Freadme%2Fpanel).
+Additional information about the Usage can be found [here](https://wfp.org/UIGuide).
 
 ### Documentation & list of components available
 
