@@ -29,14 +29,12 @@ class CodePanel extends React.Component {
   }
 
   componentDidMount() {
-    console.log('unmonono');
     const { channel, api } = this.props;
     // Listen to the notes and render it.
     channel.on('lucid-docs-source', this.onSource);
   }
 
   componentWillUnmount() {
-    console.log('unmount');
     const { channel, api } = this.props;
     // Listen to the notes and render it.
     channel.on('lucid-docs-source', this.onSource);

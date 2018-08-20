@@ -67,7 +67,7 @@ const ModuleHeader = ({ filter, children, className, ...other }) => {
   );
 };
 
-const ModuleFooter = ({ children, className, ...other }) => {
+const ModuleFooter = ({ centered, children, className, ...other }) => {
   const wrapperClasses = classNames('wfp--module__footer', className);
 
   return (

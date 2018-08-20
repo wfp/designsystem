@@ -13,14 +13,12 @@ import Container from './Container';
 import { initializeRTL } from '../src/rtl-addon';
 initializeRTL();
 
-console.log(configureViewport, 'sss', INITIAL_VIEWPORTS);
 // addDecorator(checkA11y);
 addDecorator(story => <Container story={story} />);
 
 // addon-info
 setDefaults({
   styles: stylesheet => {
-    console.log('stylesheet', stylesheet);
     return {
       ...stylesheet,
       header: {

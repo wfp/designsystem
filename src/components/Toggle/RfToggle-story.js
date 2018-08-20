@@ -21,7 +21,7 @@ storiesOf('Toggle', module)
   .addDecorator(withSmartKnobs)
   .addDecorator(story => (
     <Provider store={store} sampleData={data}>
-      <FormWrapper sss="ssssss" sampleData={data}>
+      <FormWrapper sampleData={data}>
         {story()}
       </FormWrapper>
     </Provider>

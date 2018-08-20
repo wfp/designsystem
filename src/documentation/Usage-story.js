@@ -21,7 +21,11 @@ storiesOf(' Documentation', module).addWithInfo('Usage', ``, () => (
     <h3>CSS</h3>
     <p>You can import the whole css file into your application.</p>
     <Blockquote title="CDN" type="code">
-      {`TODO: Show import from CDN`}
+      {`<link
+  rel="stylesheet"
+  type="text/css"
+  href="https://cdn.wfp.org/guides/ui/v1.0.0/assets/css/styles.css"
+/>`}
     </Blockquote>
     <h3>SCSS</h3>
     <p>
