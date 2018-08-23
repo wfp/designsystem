@@ -48,8 +48,9 @@ export Form from './components/Form';
 export FormGroup from './components/FormGroup';
 export FormItem from './components/FormItem';
 export FormLabel from './components/FormLabel';
-/*
+
 export Icon from './components/Icon';
+/*
 export InteriorLeftNav from './components/InteriorLeftNav';
 export InteriorLeftNavItem from './components/InteriorLeftNavItem';
 export InteriorLeftNavList from './components/InteriorLeftNavList';
