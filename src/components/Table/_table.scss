@@ -685,4 +685,10 @@
   .ReactTable__subcomponent {
     padding: rem(20px);
   }
+
+  .ReactTable--alternate-row {
+    .rt-tr-group:nth-child(2n+1) {
+      background: lighten($ui-02, 5);
+    }
+  }
 }

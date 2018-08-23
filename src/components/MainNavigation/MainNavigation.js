@@ -23,7 +23,7 @@ class MainNavigationItem extends Component {
 
   handleClickOutside = e => {
     if (this.wrapperRef && !this.wrapperRef.contains(event.target)) {
-        this.props.onChangeSub(e, undefined, 'close');
+      this.props.onChangeSub(e, undefined, 'close');
     }
   };
 
@@ -69,7 +69,6 @@ class MainNavigationItem extends Component {
         {subNavigation && (
           <div
             className={subClasses}
-            
             open={menuItem === activeMenuItem ? true : false}>
             {subNavigation}
           </div>

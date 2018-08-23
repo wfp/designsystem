@@ -1,17 +1,16 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import ReactDOM from "react-dom";
+import ReactDOM from 'react-dom';
 import classNames from 'classnames';
 import Icon from '../Icon';
 import Button from '../Button';
 
 export default class Modal extends Component {
-
   constructor(props) {
     super(props);
 
     this.rootSelector = document.body;
-    this.container = document.createElement("div");
+    this.container = document.createElement('div');
   }
 
   componentDidMount() {
@@ -21,7 +20,6 @@ export default class Modal extends Component {
   componentWillUnmount() {
     this.rootSelector.removeChild(this.container);
   }
-
 
   static propTypes = {
     children: PropTypes.node,
@@ -148,7 +146,6 @@ export default class Modal extends Component {
       </div>
     );
 
-
     return ReactDOM.createPortal(
       <div
         {...other}
@@ -158,8 +155,10 @@ export default class Modal extends Component {
         role="presentation"
         tabIndex={-1}>
         {modalBody}
-      </div>, this.container);
-   /* return (
+      </div>,
+      this.container
+    );
+    /* return (
       
     );*/
   }
