@@ -5,6 +5,7 @@ import { storiesOf } from '@storybook/react';
 import Page from './Page';
 import Blockquote from '../components/Blockquote';
 import Button from '../components/Button';
+import Link from '../components/Link';
 
 storiesOf(' Documentation', module).addWithInfo('Usage', ``, () => (
   <Page title="Usage" subTitle="How to use the UI Kit">
@@ -52,9 +53,10 @@ $color__main: #0076FF;
     </Blockquote>
     <h2>For Designers</h2>
     <p>
-      Designers can use a Sketch libary containing the core visual styles,
-      components and patterns.
+      Designers can use a <Link href="https://www.sketchapp.com/" target="_blank">Sketch</Link> libary containing the core visual styles,
+      components and patterns. <Link href="https://www.adobe.com/en/products/xd.html" target="_blank">Adobe xD</Link> users can also use the Sketch file (<Link href="https://helpx.adobe.com/xd/kb/open-sketch-files-in-xd.html" target="_blank">Instruction</Link>).
     </p>
+
     <Button href="https://github.com/wfp/ui/blob/next/sketch/WFP%20Template.sketch?raw=true">
       WFP UI Template
     </Button>{' '}
