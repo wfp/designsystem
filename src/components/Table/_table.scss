@@ -687,7 +687,7 @@
   }
 
   .ReactTable--alternate-row {
-    .rt-tr-group:nth-child(2n+1) {
+    .rt-tr-group:nth-child(2n + 1) {
       background: lighten($ui-02, 5);
     }
   }

@@ -60,12 +60,10 @@ storiesOf('Footer', module)
       return (
         <Footer
           className={className}
-          logo={logo}
-          logoExtended={logoExtended}
           metaContent={metaContent}
           mobilePageWidth={mobilePageWidth}
           pageWidth={pageWidth}>
-          <div className="wfp--footer-info">
+          <div className="wfp--footer__info">
             <div className="wfp--footer__info__item">
               <p className="wfp--footer__label">A label</p>
               <ul className="wfp--footer__list">

@@ -27,12 +27,12 @@ import { Footer } from '@wfp/ui';
 </Footer>
 ```
 
-| Setting         | Default                                            | Options               | Role                                                                                                  |
-| --------------- | -------------------------------------------------- | --------------------- | ----------------------------------------------------------------------------------------------------- |
-| children        | `undefined`                                        | `string`              | The value which should be displayed                                                                   |
-| options         | `None`                                             | `xs` `sm` `md` `lg`   | Set the maximum width of the Wrapper content `xs`: `500px` `sm`: `700px` `md`:`1000px` `lg`: `1200px` |
-| mobilePageWidth | `None`                                             | `full` `sm` `md` `lg` | Width on mobile devices `full`: `100%`                                                                |
-| className       | `None`                                             | `string`              | Set Footer className                                                                                  |
-| Logo            | `logos/vertical/en/wfp-logo-vertical-black-en.svg` | `string`              | Footer on Mobile Devices                                                                              |
-| Logo            | `logos/extended/en/wfp-logo-extended-black-en.svg` | `string`              | Footer on Desktop Devices                                                                             |
-| metaContent     | `undefined`                                        | `string` `component`  | Footer meta text                                                                                      |
+| Setting         | Default                                       | Options               | Role                                                                                                  |
+| --------------- | --------------------------------------------- | --------------------- | ----------------------------------------------------------------------------------------------------- |
+| children        | `undefined`                                   | `string`              | The value which should be displayed                                                                   |
+| options         | `undefined`                                   | `xs` `sm` `md` `lg`   | Set the maximum width of the Wrapper content `xs`: `500px` `sm`: `700px` `md`:`1000px` `lg`: `1200px` |
+| mobilePageWidth | `undefined`                                   | `full` `sm` `md` `lg` | Width on mobile devices `full`: `100%`                                                                |
+| className       | `undefined`                                   | `string`              | Set Footer className                                                                                  |
+| Logo            | `Vertical black english Logo from @wfp/icons` | `string`              | Footer Logo on Mobile Devices, if not set the default logo from `@wfp/icons` be used.                 |
+| Logo            | `Extended black english from @wfp/icons`      | `string`              | Footer on Desktop Devices, if not set the default logo from `@wfp/icons` be used.                     |
+| metaContent     | `undefined`                                   | `string` `component`  | Footer meta text                                                                                      |
