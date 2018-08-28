@@ -1,6 +1,6 @@
 {
   "name": "@wfp/ui",
-  "version": "1.0.94",
+  "version": "1.0.95",
   "description": "WFP UI Kit Next",
   "license": "Apache-2",
   "main": "lib/index.js",
