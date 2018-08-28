@@ -26,7 +26,7 @@ const Checkbox = ({
 
   const onChangeInput = evt => {
     /* Regular Form */
-    if (onChange) onChange(input.checked, id, evt);
+    if (onChange) onChange(inputElement.checked, id, evt);
     /* Redux Form */
     if (input && input.onChange) input.onChange(input.checked);
   };
