@@ -62,14 +62,7 @@ module.exports = (storybookBaseConfig, configType) => {
   ];
 
   const modulesOld = newConfig.module.rules;
-
-  console.log('aaaaaaa', modulesOld);
-
-  console.log('bbbbbbbb', modules);
-
   newConfig.module.rules = modules.concat(modulesOld);
-
-  //console.log("cccccc", modulesNew);
 
   return newConfig;
 };
