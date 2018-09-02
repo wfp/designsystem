@@ -7,10 +7,7 @@ import Page from './Page';
 import Blockquote from '../components/Blockquote';
 import colors from '../globals/data/colors';
 
-
-const colorBlend = [
-  '20', '30', '40', '60', '80'
-]
+const colorBlend = ['20', '30', '40', '60', '80'];
 
 storiesOf(' Documentation', module).addWithInfo('Colors', ``, () => {
   const colorList = colors.ui_colors.map(color => (
@@ -20,17 +17,17 @@ storiesOf(' Documentation', module).addWithInfo('Colors', ``, () => {
         marginBottom: '1%',
         padding: '1em',
         border: '1px solid #E5E5E5',
-        listStyleType: 'none'
+        listStyleType: 'none',
       }}>
       <div
-      style={{
-        display: 'flex',
-        webkitColumnBreakInside: 'avoid',
-        pageBreakInside: 'avoid',
-        breakInside: 'avoid-column',
-        flexWrap: 'wrap',
-        height: '100%',
-      }}>
+        style={{
+          display: 'flex',
+          webkitColumnBreakInside: 'avoid',
+          pageBreakInside: 'avoid',
+          breakInside: 'avoid-column',
+          flexWrap: 'wrap',
+          height: '100%',
+        }}>
         <div
           style={{
             width: '3.5em',
@@ -50,42 +47,37 @@ storiesOf(' Documentation', module).addWithInfo('Colors', ``, () => {
         <div
           style={{
             width: '50%',
-          }}
-        >
-        {colorBlend.map(blend => (
+          }}>
+          {colorBlend.map(blend => (
             <div
               style={{
                 display: 'flex',
                 fontSize: '0.7em',
-                width: '100%'
-              }}
-            >
+                width: '100%',
+              }}>
               <div
                 style={{
                   width: '20px',
                   height: '20px',
                   marginTop: '1px',
                   marginRight: '1em',
-                  marginBottom: '1px'
+                  marginBottom: '1px',
                 }}
                 className={`color__${color.name}-${blend}`}
-              >
-              </div>
+              />
               <div
                 style={{
                   marginTop: '2px',
-                  lineHeight: '20px'
-                }}
-              >
-              <span
-                style={{
-                  display: 'inline-block',
-                  marginRight: '1em'
-                }}
-              >
-                hex: #0A6EB4
-              </span>
-              scss: {color.scss}-${blend}
+                  lineHeight: '20px',
+                }}>
+                <span
+                  style={{
+                    display: 'inline-block',
+                    marginRight: '1em',
+                  }}>
+                  hex: #0A6EB4
+                </span>
+                scss: {color.scss}-${blend}
               </div>
             </div>
           ))}

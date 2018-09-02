@@ -1,10 +1,26 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 import classNames from 'classnames';
 import Icon from '../Icon';
 import Button from '../Button';
 
 export default class Modal extends Component {
+  constructor(props) {
+    super(props);
+
+    this.rootSelector = document.body;
+    this.container = document.createElement('div');
+  }
+
+  componentDidMount() {
+    this.rootSelector.appendChild(this.container);
+  }
+
+  componentWillUnmount() {
+    this.rootSelector.removeChild(this.container);
+  }
+
   static propTypes = {
     children: PropTypes.node,
     className: PropTypes.string,
@@ -130,7 +146,7 @@ export default class Modal extends Component {
       </div>
     );
 
-    return (
+    return ReactDOM.createPortal(
       <div
         {...other}
         onKeyDown={this.handleKeyDown}
@@ -139,7 +155,11 @@ export default class Modal extends Component {
         role="presentation"
         tabIndex={-1}>
         {modalBody}
-      </div>
+      </div>,
+      this.container
     );
+    /* return (
+      
+    );*/
   }
 }

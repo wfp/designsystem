@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import Truncate from 'react-truncate-html';
-import Button from '../Button';
+import Link from '../Link';
 
 class ReadMore extends React.Component {
   constructor(props) {
@@ -39,12 +39,12 @@ class ReadMore extends React.Component {
             }}
           />
         )}
-        <Button
+        <Link
           onClick={this.handleToggleClick}
           small
-          style={{ marginTop: '0.5em' }}>
+          style={{ marginTop: '0.9em' }}>
           {showMore ? 'Read less' : 'Read more'}
-        </Button>
+        </Link>
       </div>
     );
   }

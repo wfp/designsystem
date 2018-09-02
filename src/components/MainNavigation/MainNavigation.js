@@ -69,7 +69,6 @@ class MainNavigationItem extends Component {
         {subNavigation && (
           <div
             className={subClasses}
-            onChangeSub={onChangeSub}
             open={menuItem === activeMenuItem ? true : false}>
             {subNavigation}
           </div>
@@ -146,9 +145,6 @@ class MainNavigation extends Component {
       mobilePageWidth,
       pageWidth,
     } = this.props;
-
-    console.log('aaaaa');
-    console.log(document.getElementById('root').innerHTML);
 
     const wrapperClasses = classNames('wfp--main-navigation', className);
 

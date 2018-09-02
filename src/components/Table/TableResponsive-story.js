@@ -173,7 +173,7 @@ storiesOf('Table', module)
       <ReactTable
         data={data}
         defaultPageSize={5}
-        className="ReactTable--responsive"
+        className="ReactTable--responsive ReactTable--alternate-row"
         columns={columns}
         minRows={1}
         ExpanderComponent={ResponsiveExpanderComponent}
