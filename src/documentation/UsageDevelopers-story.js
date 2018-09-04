@@ -8,7 +8,7 @@ import Button from '../components/Button';
 import Link from '../components/Link';
 
 storiesOf(' Documentation.Getting Started', module).addWithInfo(
-  'For Developers',
+  'Usage for Developers',
   ``,
   () => (
     <Page title="Usage for Developers" subTitle="How to use the UI Kit">
@@ -16,7 +16,7 @@ storiesOf(' Documentation.Getting Started', module).addWithInfo(
         The UI Kit can be used by UX-designers and developers alike on their
         projects.
       </p>
-      <h2>For Developers</h2>
+      <h2>Usage for Developers</h2>
       <h3>React</h3>
       <p>Importing the React components</p>
       <Blockquote title="Importing the MainNavigation" type="code">
