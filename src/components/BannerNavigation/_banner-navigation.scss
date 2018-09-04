@@ -9,7 +9,7 @@
 
 @include exports('banner-navigation') {
   .#{$prefix}--banner-navigation {
-    background: $brand-01;
+    background: $color__main-60;
     @include reset;
     display: flex;
     @include breakpointMax(bp--md--major) {
@@ -26,7 +26,7 @@
     }
     a {
       @include typescale('omega');
-      color: rgba($color__white, 0.8);
+      color: rgba($color__white, 0.9);
       text-decoration: none;
       &:hover {
         text-decoration: underline;
