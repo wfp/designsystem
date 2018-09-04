@@ -1,4 +1,4 @@
-Closes carbon-design-system/carbon-components-react#
+Closes @wfp/ui#
 
 {{short description}}
 

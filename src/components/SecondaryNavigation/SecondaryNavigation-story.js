@@ -8,6 +8,19 @@ import Breadcrumb from '../Breadcrumb';
 import BreadcrumbItem from '../BreadcrumbItem';
 import BreadcrumbHome from '../BreadcrumbHome';
 
+import Tabs from '../Tabs';
+import Tab from '../Tab';
+
+const props = {
+  tabs: {
+    className: 'some-class',
+    triggerHref: '#anotherAnchor',
+  },
+  tab: {
+    className: 'another-class',
+  },
+};
+
 storiesOf('SecondaryNavigation', module).addWithInfo(
   'default',
   `
@@ -15,7 +28,9 @@ storiesOf('SecondaryNavigation', module).addWithInfo(
     `,
   () => (
     <SecondaryNavigation additional="additional Information">
-      <SecondaryNavigationTitle>Title</SecondaryNavigationTitle>
+      <SecondaryNavigationTitle>
+        Title
+      </SecondaryNavigationTitle>
       <Breadcrumb>
         <BreadcrumbItem>
           <a href="/#">
@@ -25,6 +40,21 @@ storiesOf('SecondaryNavigation', module).addWithInfo(
         <BreadcrumbItem href="#">Breadcrumb 2</BreadcrumbItem>
         <BreadcrumbItem href="#">Breadcrumb 3</BreadcrumbItem>
       </Breadcrumb>
+
+      <Tabs {...props.tabs}>
+        <Tab {...props.tab} label="Tab label 1">
+          <div className="some-content">Content for first tab goes here.</div>
+        </Tab>
+        <Tab {...props.tab} label="Tab label 2">
+          <div className="some-content">Content for second tab goes here.</div>
+        </Tab>
+        <Tab {...props.tab} label="Tab label 3">
+          <div className="some-content">Content for third tab goes here.</div>
+        </Tab>
+        <Tab {...props.tab} label="Tab label 4">
+          <div className="some-content">Content for fourth tab goes here.</div>
+        </Tab>
+      </Tabs>
     </SecondaryNavigation>
   )
 );

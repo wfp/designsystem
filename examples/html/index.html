@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>WFP UI Kit html example</title>
+    <link rel="apple-touch-icon" sizes="57x57" href="https://cdn.wfp.org/guides/ui/v1.0.95/assets/favicons/apple-touch-icon-57-precomposed.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="https://cdn.wfp.org/guides/ui/v1.0.95/assets/favicons/apple-touch-icon-60-precomposed.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="https://cdn.wfp.org/guides/ui/v1.0.95/assets/favicons/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="https://cdn.wfp.org/guides/ui/v1.0.95/assets/favicons/apple-touch-icon-76-precomposed.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="https://cdn.wfp.org/guides/ui/v1.0.95/assets/favicons/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="https://cdn.wfp.org/guides/ui/v1.0.95/assets/favicons/apple-touch-icon-120-precomposed.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="https://cdn.wfp.org/guides/ui/v1.0.95/assets/favicons/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="https://cdn.wfp.org/guides/ui/v1.0.95/assets/favicons/apple-touch-icon-152-precomposed.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://cdn.wfp.org/guides/ui/v1.0.95/assets/favicons/apple-touch-icon-180-precomposed.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://cdn.wfp.org/guides/ui/v1.0.95/assets/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="https://cdn.wfp.org/guides/ui/v1.0.95/assets/favicons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://cdn.wfp.org/guides/ui/v1.0.95/assets/favicons/favicon-16x16.png">
+    <meta name="msapplication-TileColor" content="#006CB6">
+    <meta name="msapplication-TileImage" content="https://cdn.wfp.org/guides/ui/v1.0.95/assets/ms-icon-144x144.png">
+    <meta name="theme-color" content="#006CB6">
+
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.wfp.org/guides/ui/v1.0.95/assets/css/styles.css">
+  </head>
+<body>
+
+<div id="root">
+   <div role="main">
+      <div>
+         <div class="wfp--banner-navigation">
+            <div class="wfp--wrapper wfp--wrapper--width-lg">
+               <ul class="wfp--banner-navigation__list">
+                  <li class="wfp--banner-navigation__item">
+                     <a href="http://communities.wfp.org" class="wfp--link" target="_blank">Communities</a>
+                  </li>
+                  <li class="wfp--banner-navigation__item"><a href="http://manuals.wfp.org" class="wfp--link" target="_blank">Manuals</a></li>
+                  <li class="wfp--banner-navigation__item"><a href="https://go.docs.wfp.org" class="wfp--link" target="_blank">GoDocs</a></li>
+                  <li class="wfp--banner-navigation__item"><a href="http://opweb.wfp.org" class="wfp--link" target="_blank">OPweb</a></li>
+                  <li class="wfp--banner-navigation__item"><a href="http://info.wfp.org" class="wfp--link" target="_blank">IN/FO</a></li>
+                  <li class="wfp--banner-navigation__item"><a href="https://selfservice.go.wfp.org" class="wfp--link" target="_blank">Self-service</a></li>
+                  <li class="wfp--banner-navigation__item"><a href="https://welearn.wfp.org" class="wfp--link" target="_blank">WeLearn</a></li>
+               </ul>
+            </div>
+         </div>
+         <div class="wfp--main-navigation">
+            <div class="wfp--wrapper wfp--wrapper--width-lg wfp--wrapper--width-mobile-full wfp--main-navigation__wrapper">
+               <div class="wfp--main-navigation__logo-wrapper">
+                  <button tabindex="0" class="wfp--main-navigation__button wfp--btn wfp--btn--primary" type="button">Menu</button>
+                  <div class="wfp--main-navigation__logo"><a href="http://www.wfp.org">WFP UI</a></div>
+               </div>
+               <ul class="wfp--main-navigation__list">
+                  <li class="wfp--main-navigation__item">
+                     <div class="wfp--main-navigation__trigger"><a href="http://communities.wfp.org" class="wfp--link" target="_blank">Communities</a></div>
+                  </li>
+                  <li class="wfp--main-navigation__item">
+                     <div class="wfp--main-navigation__trigger"><a href="https://go.docs.wfp.org" class="wfp--link" target="_blank">GoDocs</a></div>
+                  </li>
+                  <li class="wfp--main-navigation__item">
+                     <div class="wfp--main-navigation__trigger"><a href="http://opweb.wfp.org" class="wfp--link" target="_blank">OPweb</a></div>
+                  </li>
+                  <li class="wfp--main-navigation__item">
+                     <div class="wfp--main-navigation__trigger">
+                        <div class="wfp--search wfp--search--lg wfp--search--main" role="search">
+                           <svg class="wfp--search-magnifier" fill-rule="evenodd" height="16" name="search" role="img" viewBox="0 0 16 16" width="16" aria-label="Search" alt="Search">
+                              <title>Search</title>
+                              <path d="M11.435 10.063h-.728l-.251-.252a5.89 5.89 0 0 0 1.437-3.865 5.946 5.946 0 1 0-5.947 5.947 5.91 5.91 0 0 0 3.865-1.432l.252.251v.723L14.637 16 16 14.637l-4.565-4.574zm-5.489 0a4.117 4.117 0 1 1 0-8.234 4.117 4.117 0 0 1 0 8.234z"></path>
+                           </svg>
+                           <label for="search-2" class="wfp--label">Search</label><input type="text" class="wfp--search-input" id="search-2" placeholder="Search">
+                           <button class="wfp--search-close wfp--search-close--hidden" type="button">
+                              <svg fill-rule="evenodd" height="16" name="close--solid" role="img" viewBox="0 0 16 16" width="16" aria-label="Provide a description that will be used as the title" alt="Provide a description that will be used as the title">
+                                 <title>Provide a description that will be used as the title</title>
+                                 <path d="M8 6.586L5.879 4.464 4.464 5.88 6.586 8l-2.122 2.121 1.415 1.415L8 9.414l2.121 2.122 1.415-1.415L9.414 8l2.122-2.121-1.415-1.415L8 6.586zM8 16A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"></path>
+                              </svg>
+                           </button>
+                        </div>
+                     </div>
+                  </li>
+               </ul>
+            </div>
+         </div>
+         <div>
+            <div style="position: relative; z-index: 0;">
+               <div>
+                  <div class="wfp--wrapper wfp--wrapper--width-lg wfp--wrapper--spacing-md wfp--story">
+                     <h1 class="wfp--story__title">Lorem Ipsum</h1>
+                     <h2 class="wfp--story__sub-title">Et jomen bin dolor</h2>
+                     <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+                     <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+                     <div class="wfp--blockquote">
+                        <div class="wfp--blockquote__title">Notice</div>
+                        <div class="wfp--blockquote__content">Notice Resources should not be spent trying to modify legacy systems, 3rd party applications or other user interfaces which cannot easily be customised.</div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+          </div>
+         <footer buttontext="Create" class="wfp--footer some-class">
+            <div class="wfp--wrapper wfp--wrapper--width-lg">
+               <div class="wfp--footer__content">
+                  <div class="wfp--footer__info">
+                     <div class="wfp--footer-info">
+                        <div class="wfp--footer-info__item">
+                           <p class="wfp--footer-label">A label</p>
+                           <a href="http://www.wfp.org" class="wfp--link">First Link</a><a href="http://www.wfp.org" class="wfp--link">Second Link</a>
+                        </div>
+                        <div class="wfp--footer-info__item">
+                           <p class="wfp--footer-label">Another label</p>
+                           <a href="http://www.go.wfp.org" class="wfp--link">WFP go</a><a href="http://www.wfp.org" class="wfp--link">Second Link</a>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="wfp--footer__cta">
+
+                    <img
+                      class="wfp--footer__cta-logo" 
+                      src="https://cdn.wfp.org/guides/ui/v1.0.95/assets/logos/extended/en/wfp-logo-extended-black-en.svg"
+                      name="wfp-logo--extended--en"
+                    />
+
+                    <img
+                      alt="WFP"
+                      class="wfp--footer__cta-logo-small"
+                      name="wfp-logo--vertical--en"
+                      src="https://cdn.wfp.org/guides/ui/v1.0.95/assets/logos/standard/en/wfp-logo-standard-black-en.svg"
+                    />
+                  </div>
+               </div>
+            </div>
+            <div class="wfp--wrapper wfp--wrapper--width-lg wfp--footer__meta">
+               <div class="wfp--footer__meta__content">WFP UI Kit version 1.0 – powered by RMT with full support of concerned divisions which are responsible for the accuracy of the content</div>
+            </div>
+         </footer>
+      </div>
+   </div>
+</div>
+
+</body>
+</html>
