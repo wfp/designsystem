@@ -30,7 +30,7 @@ storiesOf('Buttons', module)
       options: { showAddonPanel: true },
     })
   )
-  .addDecorator(withTests('Link'))
+  .addDecorator(withTests('Button'))
   .addDecorator(story => <SingleComponent>{story()}</SingleComponent>)
   .addWithInfo(
     'Primary Buttons',

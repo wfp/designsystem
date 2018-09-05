@@ -138,7 +138,7 @@ export default class Pagination extends Component {
     this.uniqueId = ++instanceId;
   }
 
-  UNSAFE_componentWillReceiveProps({ pageSizes, page, pageSize }) {
+  componentWillReceiveProps({ pageSizes, page, pageSize }) {
     if (!equals(pageSizes, this.props.pageSizes)) {
       this.setState({ pageSize: pageSizes[0], page: 1 });
     }

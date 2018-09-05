@@ -1,5 +1,7 @@
 import PropTypes from 'prop-types';
-import React, { Component } from 'react';
+import React from 'react';
+import classnames from 'classnames';
+
 import Truncate from 'react-truncate-html';
 import Link from '../Link';
 
@@ -20,8 +22,10 @@ class ReadMore extends React.Component {
     const { className, html } = this.props;
     const { showMore } = this.state;
 
+    const classNames = classnames('wfp--readmore', className);
+
     return (
-      <div className={className}>
+      <div className={classNames}>
         {showMore ? (
           <div>
             <Truncate

@@ -25,7 +25,7 @@ storiesOf('Wrapper', module)
         md: 'md',
         lg: 'lg',
       };
-      const defaultValue = '';
+      const defaultValue = 'sm';
 
       const pageWidth = select('pageWidth', options, defaultValue);
 

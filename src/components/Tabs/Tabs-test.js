@@ -1,4 +1,5 @@
 import React from 'react';
+import { iconCaretDown } from 'carbon-icons';
 import Icon from '../Icon';
 import Tabs from '../Tabs';
 import Tab from '../Tab';
@@ -56,7 +57,7 @@ describe('Tabs', () => {
       });
 
       it('renders <Icon>', () => {
-        expect(trigger.find(Icon).props().name).toEqual('caret--down');
+        expect(trigger.find(Icon).props().icon).toEqual(iconCaretDown);
       });
     });
 
@@ -270,6 +271,13 @@ describe('props update', () => {
     expect(wrapper.state().selected).toEqual(1);
     wrapper.setProps({ selected: 0 });
     expect(wrapper.state().selected).toEqual(0);
+  });
+
+  it('avoids updating state upon setting props, unless there the value actually changes', () => {
+    wrapper.setProps({ selected: 1 });
+    wrapper.setState({ selected: 2 });
+    wrapper.setProps({ selected: 1 });
+    expect(wrapper.state().selected).toEqual(2);
   });
 });
 

@@ -15,13 +15,7 @@ describe('Module', () => {
     });
 
     it('should render the appropriate classes', () => {
-      expect(testModule.hasClass('wfp--module--double')).toEqual(true);
       expect(testModule.hasClass('extra-class')).toEqual(true);
-    });
-
-    it('should render with specified class', () => {
-      testModule.setProps({ size: 'single' });
-      expect(testModule.hasClass('wfp--module--single')).toEqual(true);
     });
 
     it('should render children as expected', () => {

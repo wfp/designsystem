@@ -4,22 +4,18 @@ import { shallow } from 'enzyme';
 
 describe('Link', () => {
   describe('Renders as expected', () => {
-    const link = shallow(
-      <Link href="www.google.com" className="some-class">
-        A simple link
-      </Link>
+    const readMore = shallow(
+      <ReadMore
+        className="some-class"
+        href="#"
+        html="Lorem ipsum"
+      />
     );
     it('should use the appropriate link class', () => {
-      expect(link.hasClass('wfp--link')).toEqual(true);
-    });
-    it('should inherit the href property', () => {
-      expect(link.props().href).toEqual('www.google.com');
-    });
-    it('should include child content', () => {
-      expect(link.text()).toEqual('A simple link');
+      expect(readMore.hasClass('wfp--readmore')).toEqual(true);
     });
     it('should all for custom classes to be applied', () => {
-      expect(link.hasClass('some-class')).toEqual(true);
+      expect(readMore.hasClass('some-class')).toEqual(true);
     });
   });
 });
