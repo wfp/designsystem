@@ -5,11 +5,7 @@ import { shallow } from 'enzyme';
 describe('Link', () => {
   describe('Renders as expected', () => {
     const readMore = shallow(
-      <ReadMore
-        className="some-class"
-        href="#"
-        html="Lorem ipsum"
-      />
+      <ReadMore className="some-class" href="#" html="Lorem ipsum" />
     );
     it('should use the appropriate link class', () => {
       expect(readMore.hasClass('wfp--readmore')).toEqual(true);

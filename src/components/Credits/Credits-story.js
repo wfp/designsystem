@@ -21,7 +21,7 @@ storiesOf('Credits', module)
       For anything else, especially things that change data, you should be using a button.
     `,
     () => (
-      <Credits info="© Rein Skullerud">
+      <Credits info="Photo: WFP/ Rein Skullerud">
         <img
           alt="Default illustration"
           style={{ width: '700px', height: 'auto' }}

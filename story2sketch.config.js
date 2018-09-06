@@ -1,45 +1,45 @@
 module.exports = {
-  output: "stories.asketch.jsonframe.json",
-  url: "http://localhost:9000/iframe.html",
+  output: 'stories.asketch.jsonframe.json',
+  url: 'http://localhost:9000/iframe.html',
   concurrency: 1,
   symbolGutter: 200,
   viewports: {
     narrow: {
       width: 320,
       height: 1200,
-      symbolPrefix: "Mobile/"
+      symbolPrefix: 'Mobile/',
     },
     standard: {
       width: 1200,
       height: 1200,
-      symbolPrefix: "Desktop/"
-    }
+      symbolPrefix: 'Desktop/',
+    },
   },
-  pageTitle: "WFP UI",
+  pageTitle: 'WFP UI',
   stories: [
     {
-      kind: "Footer",
+      kind: 'Footer',
       stories: [
         {
-          name: "Internal"
-        }
-      ]
+          name: 'Internal',
+        },
+      ],
     },
     {
-      kind: "MainNavigation",
+      kind: 'MainNavigation',
       stories: [
         {
-          name: "default"
-        }
-      ]
+          name: 'default',
+        },
+      ],
     },
     {
-      kind: "Table",
+      kind: 'Table',
       stories: [
         {
-          name: "default"
-        }
-      ]
-    }
-  ]
-}
+          name: 'default',
+        },
+      ],
+    },
+  ],
+};

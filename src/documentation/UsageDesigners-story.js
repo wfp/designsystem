@@ -17,14 +17,17 @@ storiesOf(' Documentation.Getting Started', module).addWithInfo(
         <Link href="https://www.sketchapp.com/" target="_blank">
           Sketch
         </Link>{' '}
-        and <Link href="https://www.adobe.com/en/products/xd.html" target="_blank">
+        and{' '}
+        <Link href="https://www.adobe.com/en/products/xd.html" target="_blank">
           Adobe xD
-        </Link> library containing the core visual styles, components and patterns. All the files can be found on <Link href="https://github.com/wfp/ui-design-kit" target="_blank">GitHub</Link>.
+        </Link>{' '}
+        library containing the core visual styles, components and patterns. All
+        the files can be found on{' '}
+        <Link href="https://github.com/wfp/ui-design-kit" target="_blank">
+          GitHub
+        </Link>.
       </p>
-
-      <h3>
-        Template
-      </h3>
+      <h3>Template</h3>
       <p>Get guidelines and UI examples</p>
       <Button href="https://github.com/wfp/ui-design-kit/blob/master/WFP%20Template.sketch?raw=true">
         WFP UI Template (Sketch)
@@ -32,7 +35,6 @@ storiesOf(' Documentation.Getting Started', module).addWithInfo(
       <Button href="https://github.com/wfp/ui-design-kit/blob/master/WFP%20Template.xd?raw=true">
         WFP UI Template (Adobe xD)
       </Button>{' '}
-
       <h3>Assets</h3>
       <p>All logo variations and Favicons</p>
       <Button href="https://github.com/wfp/ui-design-kit/blob/master/WFP%20Logos.sketch?raw=true">

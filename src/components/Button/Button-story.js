@@ -236,6 +236,19 @@ storiesOf('Buttons', module)
     )
   )
   .addWithInfo(
+    'Inverse Buttons',
+    `
+      Inverse Buttons can be used on dark backgrounds
+    `,
+    () => (
+      <div style={{ padding: '5rem', background: '#565557' }}>
+        <Button kind="inverse" {...buttonEvents} className="some-class">
+          Inverse button
+        </Button>
+      </div>
+    )
+  )
+  .addWithInfo(
     'Sets of Buttons',
     `
       When an action required by the user has more than one option, always use a a negative action button (secondary) paired with a positive action button (primary) in that order. Negative action buttons will be on the left. Positive action buttons should be on the right. When these two types buttons are paired in the correct order, they will automatically space themselves apart.

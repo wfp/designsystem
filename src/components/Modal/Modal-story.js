@@ -8,7 +8,7 @@ const modalProps = {
   onClick: action('onClick'),
   onFocus: action('onFocus'),
   className: 'some-class',
-  id: 'some-id'
+  id: 'some-id',
 };
 
 storiesOf('Modal', module)

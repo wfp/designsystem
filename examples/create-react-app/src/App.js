@@ -23,53 +23,37 @@ class App extends Component {
         </div>
         <article className="App__demo">
           <h3 className="App__demo-title">A sample Button</h3>
-          <Button
-            className="some-class"
-            href="#"
-          >
-          Primary button as link
+          <Button className="some-class" href="#">
+            Primary button as link
           </Button>
         </article>
         <Footer
           className="some-class"
           metaContent="WFP UI Kit version 1.0 – powered by RMT with full …"
           mobilePageWidth=""
-          pageWidth=""
-        >
+          pageWidth="">
           <div className="wfp--footer__info">
             <div className="wfp--footer__info__item">
-              <p className="wfp--footer__label">
-              A label
-              </p>
+              <p className="wfp--footer__label">A label</p>
               <ul className="wfp--footer__list">
                 <li>
-                  <Link href="http://www.wfp.org">
-                    First Link
-                  </Link>
+                  <Link href="http://www.wfp.org">First Link</Link>
                 </li>
                 <li>
-                  <Link href="http://www.wfp.org">
-                    Second Link
-                  </Link>
+                  <Link href="http://www.wfp.org">Second Link</Link>
                 </li>
               </ul>
-              </div>
-              <div className="wfp--footer__info__item">
-                <p className="wfp--footer__label">
-                  Another label
-                </p>
+            </div>
+            <div className="wfp--footer__info__item">
+              <p className="wfp--footer__label">Another label</p>
               <ul className="wfp--footer__list">
-              <li>
-                <Link href="http://www.wfp.org">
-                  First Link
-                </Link>
-              </li>
-              <li>
-                <Link href="http://www.wfp.org">
-                  Second Link
-                </Link>
-              </li>
-            </ul>
+                <li>
+                  <Link href="http://www.wfp.org">First Link</Link>
+                </li>
+                <li>
+                  <Link href="http://www.wfp.org">Second Link</Link>
+                </li>
+              </ul>
             </div>
           </div>
         </Footer>

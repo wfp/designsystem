@@ -1,4 +1,3 @@
-
 # `examples/create-react-app`
 
 > See how to integrate `@wfp/ui` and `@wfp/icons` into a project
