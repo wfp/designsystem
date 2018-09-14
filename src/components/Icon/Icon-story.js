@@ -1,6 +1,6 @@
 import React from 'react';
-import { iconAdd, iconAddSolid, iconAddOutline } from 'carbon-icons';
-import iconsList from 'carbon-icons';
+import { iconAdd, iconAddSolid, iconAddOutline } from '@wfp/icons';
+import iconsList from '@wfp/icons';
 import { storiesOf } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
 import { withKnobs, select, text } from '@storybook/addon-knobs';

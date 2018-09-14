@@ -13,10 +13,23 @@ storiesOf(' Documentation', module)
     return (
       <Page title="Email Template" subTitle="Email template for applications">
         <p>
-          The eMail template can be used to for application related notifications. It is responsive and works in Microsoft Outlook, <a href="https://outlook.office365.com/owa/?realm=wfp.org&exsvurl=1&ll-cc=1031&modurl=0" target="_blank">Microsoft Outlook web</a> and most other eMail clients. Make sure to also provide a text-only version of your eMail.
+          The eMail template can be used to for application related
+          notifications. It is responsive and works in Microsoft Outlook,{' '}
+          <a
+            href="https://outlook.office365.com/owa/?realm=wfp.org&exsvurl=1&ll-cc=1031&modurl=0"
+            target="_blank">
+            Microsoft Outlook web
+          </a>{' '}
+          and most other eMail clients. Make sure to also provide a text-only
+          version of your eMail.
         </p>
         <p>
-          <Button href={`${process.env.STORYBOOK_ASSETS}email/transaction-email.html`}>View eMail template</Button>
+          <Button
+            href={`${
+              process.env.STORYBOOK_ASSETS
+            }email/transaction-email.html`}>
+            View eMail template
+          </Button>
         </p>
       </Page>
     );

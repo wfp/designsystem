@@ -28,7 +28,6 @@ storiesOf('SecondaryNavigation', module).addWithInfo(
     `,
   () => (
     <SecondaryNavigation additional="additional Information">
-      <SecondaryNavigationTitle>Title</SecondaryNavigationTitle>
       <Breadcrumb>
         <BreadcrumbItem>
           <a href="/#">
@@ -38,6 +37,8 @@ storiesOf('SecondaryNavigation', module).addWithInfo(
         <BreadcrumbItem href="#">Breadcrumb 2</BreadcrumbItem>
         <BreadcrumbItem href="#">Breadcrumb 3</BreadcrumbItem>
       </Breadcrumb>
+
+      <SecondaryNavigationTitle>Title</SecondaryNavigationTitle>
 
       <Tabs {...props.tabs}>
         <Tab {...props.tab} label="Tab label 1">

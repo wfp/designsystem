@@ -2,9 +2,21 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import classnames from 'classnames';
 
-const BreadcrumbHome = ({ className, ...other }) => {
+import Icon from '../Icon';
+
+const BreadcrumbHome = ({ className, hometext, ...other }) => {
   const classNames = classnames('wfp--breadcrumb-home', className);
-  return <div className={classNames} {...other} />;
+  return (
+    <Icon
+      name="home"
+      fill="#0b77c2"
+      width="14"
+      height="14"
+      description={hometext}
+      className={classNames}
+      {...other}
+    />
+  );
 };
 
 BreadcrumbHome.propTypes = {

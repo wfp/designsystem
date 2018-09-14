@@ -1,12 +1,21 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
+import Icon from '../Icon';
 
 const User = ({ alt, className, ellipsis, image, small, name, ...other }) => {
   var avatar;
   if ((image && image.includes('auto')) || image === undefined) {
     avatar = (
-      <div className="wfp--user__icon wfp--user__icon--empty" alt={alt} />
+      <Icon
+        name="user"
+        fill="#ffffff"
+        width="14"
+        height="14"
+        description={alt}
+        className="wfp--user__icon wfp--user__icon--empty"
+        {...other}
+      />
     );
   } else {
     avatar = <img alt={alt} className="wfp--user__icon" src={image} />;

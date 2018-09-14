@@ -19,11 +19,16 @@ const TextInput = ({
 }) => {
   const textInputProps = {
     id,
-    /*onChange: evt => {
-      if (!other.disabled) {
-        onChange(evt);
-      }
-    },*/
+    onChange: !meta
+      ? evt => {
+          if (!other.disabled) {
+            onChange(evt);
+          }
+        }
+      : evt => {
+          /* Redux Form update input */
+          input.onChange(evt);
+        },
     onClick: evt => {
       if (!other.disabled) {
         onClick(evt);
@@ -88,7 +93,7 @@ TextInput.propTypes = {
   className: PropTypes.string,
   defaultValue: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   disabled: PropTypes.bool,
-  id: PropTypes.string.isRequired,
+  id: PropTypes.string,
   labelText: PropTypes.string.isRequired,
   onChange: PropTypes.func,
   onClick: PropTypes.func,
