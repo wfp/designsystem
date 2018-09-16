@@ -45,7 +45,7 @@
 
 @mixin focus-outline($type: 'border') {
   @if ($type == 'border') {
-    outline: 1px solid $brand-01;
+    outline: 2px solid $brand-01;
   }
 
   @if ($type == 'blurred') {

@@ -90,14 +90,14 @@ export function svgShapes(svgData) {
 }
 
 export function isPrefixed(name) {
-  if (__DEV__) {
+  /*if (__DEV__) {
     invariant(
       typeof name === 'string',
       '[Icon] icon name is missing. You likely forgot to specify the icon, ' +
         'or are using older (pre-`7.x`) version of `carbon-icons` library. ' +
         'To specify the icon, use either `icon` (data) or `name` (icon name) properties.'
     );
-  }
+  }*/
   return name && name.split('--')[0] === 'icon';
 }
 
