@@ -48,6 +48,7 @@
 
   .#{$prefix}--blockquote--error {
     border-left: 5px solid $color__red;
+    background: $color__red-10;
     .#{$prefix}--blockquote__icon {
       fill: $color__red !important;
     }
