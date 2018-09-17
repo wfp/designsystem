@@ -18,6 +18,19 @@
     line-height: 1.4;
   }
 
+  .#{$prefix}--blockquote--with-icon {
+    padding-left: 4rem;
+  }
+
+  .#{$prefix}--blockquote__icon {
+    margin-left: $spacing-xl;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    fill: $brand-01;
+    margin-top: -15px;
+  }
+
   .#{$prefix}--blockquote--code {
     .#{$prefix}--blockquote__content {
       white-space: pre;
@@ -27,12 +40,29 @@
   }
 
   .#{$prefix}--blockquote--warning {
+    border-left: 5px solid $color__yellow;
+    .#{$prefix}--blockquote__icon {
+      fill: $color__yellow !important;
+    }
+  }
+
+  .#{$prefix}--blockquote--error {
     border-left: 5px solid $color__red;
+    .#{$prefix}--blockquote__icon {
+      fill: $color__red !important;
+    }
   }
 
   .#{$prefix}--blockquote__title {
     display: block;
     font-weight: bold;
     padding: $spacing-md $spacing-md 0 $spacing-md;
+  }
+
+  .#{$prefix}--blockquote--light {
+    border-left: 0;
+    .#{$prefix}--blockquote__content {
+      padding: $spacing-sm;
+    }
   }
 }

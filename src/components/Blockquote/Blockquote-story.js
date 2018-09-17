@@ -36,17 +36,21 @@ storiesOf('Blockquote', module)
     `,
     () => {
       const toggleable = boolean('toggleable', false);
+      const error = boolean('error', false);
       const light = boolean('light', false);
       const code = boolean('code', false);
       const warning = boolean('warning', false);
       const info = boolean('info', false);
+      const withIcon  = boolean('withIcon', false);
 
       return (
         <Blockquote
+          error={error}
           toogleable={toggleable}
           light={light}
           code={code}
           warning={warning}
+          withIcon={withIcon}
           info={info}>
           Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
           nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
