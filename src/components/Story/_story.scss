@@ -34,19 +34,6 @@
     h4 {
       margin: $spacing-xs 0;
     }
-    .#{$prefix}--story--list {
-      list-style-position: outside;
-      line-height: 1.6em;
-      margin: 1.5em 0 1.5em 1.5em;
-      li {
-        list-style-type: disc;
-      }
-    }
-
-    .#{$prefix}--blockquote {
-      margin-bottom: 1.5em;
-    }
-
     sup {
       font-size: 0.7em;
       background: $ui-03;
@@ -60,34 +47,47 @@
         }
       }
     }
+  }
 
-    .#{$prefix}--story__title {
-      @include typescale('alpha');
-      font-weight: 700;
+  .#{$prefix}--story--list {
+    list-style-position: outside;
+    line-height: 1.6em;
+    margin: 1.5em 0 1.5em 1.5em;
+    li {
+      list-style-type: disc;
     }
-    .#{$prefix}--story__sub-title {
-      @include typescale('zeta');
-      font-weight: normal;
-      color: $color__navy-gray-7;
-      margin-top: $spacing-xs;
-      margin-bottom: $spacing-xl;
-      //text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-    .#{$prefix}--story__type-beta {
-      margin-bottom: $spacing-lg;
-    }
-    .#{$prefix}--markup {
-      font-style: italic;
-      @include typescale('delta');
-      margin-bottom: $spacing-lg;
-    }
+  }
 
-    .#{$prefix}--inline-highlight {
-      display: inline-block;
-      font-weight: 600;
-      background: $ui-03;
-      padding: 0.05em 0.1em;
-    }
+  .#{$prefix}--blockquote {
+    margin-bottom: 1.5em;
+  }
+
+  .#{$prefix}--story__title {
+    @include typescale('alpha');
+    font-weight: 700;
+  }
+  .#{$prefix}--story__sub-title {
+    @include typescale('zeta');
+    font-weight: normal;
+    color: $color__navy-gray-7;
+    margin-top: $spacing-xs;
+    margin-bottom: $spacing-xl;
+    //text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .#{$prefix}--story__type-beta {
+    margin-bottom: $spacing-lg;
+  }
+  .#{$prefix}--markup {
+    font-style: italic;
+    @include typescale('delta');
+    margin-bottom: $spacing-lg;
+  }
+
+  .#{$prefix}--inline-highlight {
+    display: inline-block;
+    font-weight: 600;
+    background: $ui-03;
+    padding: 0.05em 0.1em;
   }
 }

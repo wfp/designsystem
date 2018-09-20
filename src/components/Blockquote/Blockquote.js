@@ -3,18 +3,17 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import Icon from '../Icon';
 
-
 const iconLookup = {
   warning: {
-    icon: 'warning'
+    icon: 'warning',
   },
   error: {
-    icon: 'warning--solid'
+    icon: 'warning--solid',
   },
   info: {
-    icon: 'info--solid'
-  }
-}
+    icon: 'info--solid',
+  },
+};
 
 class Blockquote extends React.Component {
   constructor(props) {
@@ -65,9 +64,9 @@ class Blockquote extends React.Component {
       [`${className}`]: className,
     });
 
-
-    
-    const lookup = warning ? iconLookup['warning'] : error ? iconLookup['error'] : iconLookup['info'];
+    const lookup = warning
+      ? iconLookup['warning']
+      : error ? iconLookup['error'] : iconLookup['info'];
 
     const icon = withIcon ? (
       <Icon
@@ -77,8 +76,7 @@ class Blockquote extends React.Component {
         height="30"
         width="30"
       />
-    )
-    : null;
+    ) : null;
 
     return (
       <div className={blockquoteClass}>

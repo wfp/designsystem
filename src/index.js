@@ -62,10 +62,7 @@ export {
   SecondaryNavigation,
   SecondaryNavigationTitle,
 } from './components/SecondaryNavigation';
-export {
-  SecondaryTabs,
-  SecondaryTabsItem
-} from './components/SecondaryTabs';
+export { SecondaryTabs, SecondaryTabsItem } from './components/SecondaryTabs';
 
 export Select from './components/Select';
 export SelectItem from './components/SelectItem';

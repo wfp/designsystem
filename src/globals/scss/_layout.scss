@@ -18,6 +18,12 @@ $padding: (
   }
 }
 
+@mixin print($size) {
+  @media print {
+    @content;
+  }
+}
+
 //-------------------------------------
 // @mixin: breakpoint($size)
 //-------------------------------------

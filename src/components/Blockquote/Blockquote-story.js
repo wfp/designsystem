@@ -41,7 +41,7 @@ storiesOf('Blockquote', module)
       const code = boolean('code', false);
       const warning = boolean('warning', false);
       const info = boolean('info', false);
-      const withIcon  = boolean('withIcon', false);
+      const withIcon = boolean('withIcon', false);
 
       return (
         <Blockquote
