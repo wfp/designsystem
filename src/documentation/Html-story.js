@@ -8,7 +8,7 @@ import Blockquote from '../components/Blockquote';
 import { withReadme } from 'storybook-readme';
 import readme from './HTML-README.md';
 
-storiesOf(' Documentation', module)
+storiesOf(' Documentation.Getting Started', module)
   .addDecorator(withReadme([readme]))
   .addWithInfo('HTML Usage', ``, () => (
     <Page title="HTML Usage" subTitle="Use the UI Kit without react.js">
@@ -22,7 +22,7 @@ storiesOf(' Documentation', module)
         {`<link
   rel="stylesheet"
   type="text/css"
-  href="https://cdn.wfp.org/guides/ui/v1.0.0/assets/css/styles.css"
+  href="https://cdn.wfp.org/guides/ui/v1.1.16/assets/css/styles.min.css"
 />`}
       </Blockquote>
       <h3>SCSS</h3>

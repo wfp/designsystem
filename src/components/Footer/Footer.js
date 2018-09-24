@@ -116,7 +116,6 @@ Footer.propTypes = {
   labelTwo: PropTypes.string,
   linkTextTwo: PropTypes.string,
   linkHrefTwo: PropTypes.string,
-  buttonText: PropTypes.string,
 };
 
 Footer.defaultProps = {
@@ -126,7 +125,6 @@ Footer.defaultProps = {
   labelTwo: 'Estimate Monthly Cost',
   linkTextTwo: 'Cost Calculator',
   linkHrefTwo: '#',
-  buttonText: 'Create',
 };
 
 export default Footer;

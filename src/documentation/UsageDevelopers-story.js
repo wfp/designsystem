@@ -13,11 +13,27 @@ storiesOf(' Documentation.Getting Started', module).addWithInfo(
   () => (
     <Page title="Usage for Developers" subTitle="How to use the UI Kit">
       <p>
-        The UI Kit can be used by UX-designers and developers alike on their
-        projects.
+        The UI Kit provides developers with React.js components, scss, css, html and assets.
       </p>
       <h2>Usage for Developers</h2>
       <h3>React</h3>
+      <p>Installing the UI Kit</p>
+      <Blockquote title="Install via npm" type="code">
+        {`npm install @wfp/ui --save`}
+      </Blockquote>
+      <Blockquote title="Install via yarn" type="code">
+        {`yarn add @wfp/ui`}
+      </Blockquote>
+
+      <p>Many components need Icons. Please also install @wfp/icons (peer dependency)</p>
+      <Blockquote title="Install via npm" type="code">
+        {`npm install @wfp/icons --save`}
+      </Blockquote>
+      <Blockquote title="Install via yarn" type="code">
+        {`yarn add @wfp/icons`}
+      </Blockquote>
+
+
       <p>Importing the React components</p>
       <Blockquote title="Importing the MainNavigation" type="code">
         {`import { MainNavigation, MainNavigationItem } from '@wfp/ui';`}
@@ -28,8 +44,12 @@ storiesOf(' Documentation.Getting Started', module).addWithInfo(
         {`<link
   rel="stylesheet"
   type="text/css"
-  href="https://cdn.wfp.org/guides/ui/v1.0.0/assets/css/styles.css"
-/>`}
+  href="https://cdn.wfp.org/guides/ui/v1.1.16/assets/css/styles.min.css"
+/>
+
+/* Uncompressed styles.css */
+https://cdn.wfp.org/guides/ui/v1.1.16/assets/css/styles.css
+`}
       </Blockquote>
       <h3>SCSS</h3>
       <p>

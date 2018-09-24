@@ -8,7 +8,7 @@ describe('Footer', () => {
       <Footer
         className="some-class"
         labelOne="Need Help?"
-        linkTextOne="Contact Bluemix Sales"
+        linkTextOne="Contact"
         linkHrefOne="www.google.com"
         labelTwo="Estimate Monthly Cost"
         linkTextTwo="Cost Calculator"
@@ -26,7 +26,7 @@ describe('Footer', () => {
     });
 
     it('should send the first link the correct title', () => {
-      expect(footer.props().linkTextOne).toEqual('Contact Bluemix Sales');
+      expect(footer.props().linkTextOne).toEqual('Contact');
     });
 
     it('should send the first link the href property', () => {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { iconCaretDown } from 'carbon-icons';
+import { iconCaretDown } from '@wfp/icons';
 import Icon from '../Icon';
 import Tabs from '../Tabs';
 import Tab from '../Tab';

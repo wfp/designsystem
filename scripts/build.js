@@ -35,6 +35,7 @@ const ignoreGlobs = [
 console.log('Deleting old build folders...'); // eslint-disable-line no-console
 
 Promise.all([
+  rimrafAsync(`${rootDir}/css`),
   rimrafAsync(`${rootDir}/cjs`),
   rimrafAsync(`${rootDir}/source`),
   rimrafAsync(`${rootDir}/es`),
@@ -67,6 +68,12 @@ Promise.all([
     );
     exec(
       `node-sass ./src/globals/scss -o ./css --output-style compressed --source-map true`,
+      {
+        NODE_ENV: 'production',
+      }
+    );
+    exec(
+      `node-sass ./src/globals/scss/styles.scss > ./css/styles.min.css --output-style compressed | postcss ./css/styles.min.css --no-map -u autoprefixer -r`,
       {
         NODE_ENV: 'production',
       }

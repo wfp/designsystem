@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount, shallow } from 'enzyme';
-import { iconCaretUp, iconCaretDown } from 'carbon-icons';
+import { iconCaretUp, iconCaretDown } from '@wfp/icons';
 import Icon from '../Icon';
 import NumberInput from '../NumberInput';
 import NumberInputSkeleton from '../NumberInput/NumberInput.Skeleton';

@@ -14,7 +14,7 @@ storiesOf(' Documentation', module).addWithInfo('Icons', ``, () => (
   <Page title="Icons" subTitle="Introduction to the new WFP UI Kit">
     <p>
       For Usage please take a look at the{' '}
-      <Link onClick={linkTo('Icon', 'Default')}>Icon-Component</Link>.
+      <Link onClick={linkTo('Icon', 'Default')}>Icon-Component</Link> or <Link onClick={linkTo(' Documentation.Getting Started', 'Usage for Developers')}>Usage for Developers</Link>.
     </p>
 
     <Blockquote title="Notice">
