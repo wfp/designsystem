@@ -7,6 +7,10 @@ import Tabs from '../Tabs';
 import Tab from '../Tab';
 import TabsSkeleton from '../Tabs/Tabs.Skeleton';
 
+import HtmlComponent from '../../documentation/HtmlComponent';
+import Html from '!!raw-loader!./Tabs.html';
+import { exampleStory } from '../../../.storybook/lucid-docs-addon';
+
 const props = {
   tabs: () => ({
     className: 'some-class',
@@ -67,4 +71,20 @@ storiesOf('Tabs', module)
         Placeholder skeleton state to use when content is loading.
       `,
     })(() => <TabsSkeleton />)
+  );
+
+storiesOf('Tabs', module)
+  .addDecorator(
+    exampleStory({
+      code: Html,
+      options: { showAddonPanel: true },
+    })
+  )
+  .addDecorator(story => <HtmlComponent html={Html}>{story()}</HtmlComponent>)
+  .addWithInfo(
+    'html',
+    `
+     html view
+    `,
+    () => null
   );

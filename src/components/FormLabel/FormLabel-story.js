@@ -4,6 +4,10 @@ import FormLabel from './FormLabel';
 import SingleComponent from '../../documentation/SingleComponent';
 //import Tooltip from '../Tooltip';
 
+import HtmlComponent from '../../documentation/HtmlComponent';
+import Html from '!!raw-loader!./FormLabel.html';
+import { exampleStory } from '../../../.storybook/lucid-docs-addon';
+
 const additionalProps = {
   className: 'some-class',
 };
@@ -30,4 +34,20 @@ storiesOf('FormLabel', module)
         </Tooltip>*/}
       </FormLabel>
     )
+  );
+
+storiesOf('FormLabel', module)
+  .addDecorator(
+    exampleStory({
+      code: Html,
+      options: { showAddonPanel: true },
+    })
+  )
+  .addDecorator(story => <HtmlComponent html={Html}>{story()}</HtmlComponent>)
+  .addWithInfo(
+    'html',
+    `
+     html view
+    `,
+    () => null
   );
