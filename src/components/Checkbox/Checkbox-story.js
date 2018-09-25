@@ -4,6 +4,10 @@ import { action } from '@storybook/addon-actions';
 import SingleComponent from '../../documentation/SingleComponent';
 import Checkbox from '../Checkbox';
 
+import HtmlComponent from '../../documentation/HtmlComponent';
+import Html from '!!raw-loader!./Checkbox.html';
+import { exampleStory } from '../../../.storybook/lucid-docs-addon';
+
 const checkboxEvents = {
   className: 'some-class',
   onChange: action('onChange'),
@@ -127,4 +131,20 @@ storiesOf('Checkbox', module)
         />
       </fieldset>
     )
+  );
+
+storiesOf('Checkbox', module)
+  .addDecorator(
+    exampleStory({
+      code: Html,
+      options: { showAddonPanel: true },
+    })
+  )
+  .addDecorator(story => <HtmlComponent html={Html}>{story()}</HtmlComponent>)
+  .addWithInfo(
+    'html',
+    `
+     html view
+    `,
+    () => null
   );
