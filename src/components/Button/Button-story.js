@@ -9,6 +9,8 @@ import withTests from '../../internal/withTests';
 
 import HtmlComponent from '../../documentation/HtmlComponent';
 
+import Html from '!!raw-loader!./Button.html';
+
 import ButtonRaw from '!!raw-loader!./Button';
 import ButtonHtml from '!!raw-loader!./Button.html';
 
@@ -281,6 +283,22 @@ storiesOf('Buttons', module)
     'html',
     `
       Breadcrumb enables users to quickly see their location within a path of navigation and move up to a parent level if desired. It can be used with react-router by placing <NavLink></NavLink> inside <BreadcrumbItem />
+    `,
+    () => null
+  );
+
+storiesOf('Button', module)
+  .addDecorator(
+    exampleStory({
+      code: Html,
+      options: { showAddonPanel: true },
+    })
+  )
+  .addDecorator(story => <HtmlComponent html={Html}>{story()}</HtmlComponent>)
+  .addWithInfo(
+    'html',
+    `
+     html view
     `,
     () => null
   );

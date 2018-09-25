@@ -8,6 +8,11 @@ import SingleComponent from '../../documentation/SingleComponent';
 import { withReadme } from 'storybook-readme';
 import readme from './README.md';
 
+import HtmlComponent from '../../documentation/HtmlComponent';
+import Html from '!!raw-loader!./Link.html';
+import { exampleStory } from '../../../.storybook/lucid-docs-addon';
+
+
 import Link from '../Link';
 
 const additionalProps = {
@@ -32,4 +37,20 @@ storiesOf('Link', module)
         Link
       </Link>
     )
+  );
+
+storiesOf('Link', module)
+  .addDecorator(
+    exampleStory({
+      code: Html,
+      options: { showAddonPanel: true },
+    })
+  )
+  .addDecorator(story => <HtmlComponent html={Html}>{story()}</HtmlComponent>)
+  .addWithInfo(
+    'html',
+    `
+     html view
+    `,
+    () => null
   );

@@ -29,6 +29,7 @@
       color: rgba($color__white, 0.9);
       text-decoration: none;
       &:hover {
+        color: $color__white;
         text-decoration: underline;
       }
       &:focus {
