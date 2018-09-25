@@ -9,6 +9,11 @@ import Link from '../Link';
 import { withReadme } from 'storybook-readme';
 import readme from './README.md';
 
+import HtmlComponent from '../../documentation/HtmlComponent';
+import Html_internal from '!!raw-loader!./Footer_internal.html';
+import Html_external from '!!raw-loader!./Footer_external.html';
+import { exampleStory } from '../../../.storybook/lucid-docs-addon';
+
 storiesOf('Footer', module)
   //.addDecorator(withSmartKnobs)
   .addDecorator(withKnobs)
@@ -158,4 +163,36 @@ storiesOf('Footer', module)
         </Footer>
       );
     }
+  );
+
+storiesOf('Footer', module)
+  .addDecorator(
+    exampleStory({
+      code: Html_internal,
+      options: { showAddonPanel: true },
+    })
+  )
+  .addDecorator(story => <HtmlComponent html={Html_internal}>{story()}</HtmlComponent>)
+  .addWithInfo(
+    'html-internal',
+    `
+     html view
+    `,
+    () => null
+  );
+
+  storiesOf('Footer', module)
+  .addDecorator(
+    exampleStory({
+      code: Html_external,
+      options: { showAddonPanel: true },
+    })
+  )
+  .addDecorator(story => <HtmlComponent html={Html_external}>{story()}</HtmlComponent>)
+  .addWithInfo(
+    'html-external',
+    `
+     html view
+    `,
+    () => null
   );

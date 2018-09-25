@@ -13,7 +13,8 @@ storiesOf(' Documentation.Getting Started', module).addWithInfo(
   () => (
     <Page title="Usage for Developers" subTitle="How to use the UI Kit">
       <p>
-        The UI Kit provides developers with React.js components, scss, css, html and assets.
+        The UI Kit provides developers with React.js components, scss, css, html
+        and assets.
       </p>
       <h2>Usage for Developers</h2>
       <h3>React</h3>
@@ -25,14 +26,16 @@ storiesOf(' Documentation.Getting Started', module).addWithInfo(
         {`yarn add @wfp/ui`}
       </Blockquote>
 
-      <p>Many components need Icons. Please also install @wfp/icons (peer dependency)</p>
+      <p>
+        Many components need Icons. Please also install @wfp/icons (peer
+        dependency)
+      </p>
       <Blockquote title="Install via npm" type="code">
         {`npm install @wfp/icons --save`}
       </Blockquote>
       <Blockquote title="Install via yarn" type="code">
         {`yarn add @wfp/icons`}
       </Blockquote>
-
 
       <p>Importing the React components</p>
       <Blockquote title="Importing the MainNavigation" type="code">
