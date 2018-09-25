@@ -6,11 +6,12 @@ import SingleComponent from '../../documentation/SingleComponent';
 import withTests from '../../internal/withTests';
 
 import HtmlComponent from '../../documentation/HtmlComponent';
-
 import { exampleStory } from '../../../.storybook/lucid-docs-addon';
+import Html from '!!raw-loader!./Blockquote.html';
+
 
 import Raw from '!!raw-loader!./Blockquote';
-import Html from '!!raw-loader!./Blockquote.html';
+
 
 import { withReadme } from 'storybook-readme';
 import readme from './README.md';

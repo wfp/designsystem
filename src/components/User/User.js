@@ -5,7 +5,7 @@ import Icon from '../Icon';
 
 const User = ({ alt, className, ellipsis, image, small, name, ...other }) => {
   var avatar;
-  if ((image && image.includes('auto')) || image === undefined) {
+  if (image === undefined) {
     avatar = (
       <Icon
         name="user"

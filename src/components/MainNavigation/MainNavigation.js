@@ -168,11 +168,14 @@ class MainNavigation extends Component {
           </div>
           <ul className={listClasses}>
             {React.Children.map(children, (child, i) => {
-              return React.cloneElement(child, {
-                activeMenuItem: this.state.activeMenuItem,
-                menuItem: i,
-                onChangeSub: this.onChangeSub,
-              });
+              if (child) {
+                return React.cloneElement(child, {
+                  activeMenuItem: this.state.activeMenuItem,
+                  menuItem: i,
+                  onChangeSub: this.onChangeSub,
+                });
+              }
+              else return null;
             })}
           </ul>
         </Wrapper>

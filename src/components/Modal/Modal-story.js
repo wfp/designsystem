@@ -3,6 +3,11 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import Modal from '../Modal';
 
+
+import HtmlComponent from '../../documentation/HtmlComponent';
+import { exampleStory } from '../../../.storybook/lucid-docs-addon';
+import Html from '!!raw-loader!./Modal.html';
+
 const modalProps = {
   onBlur: action('onBlur'),
   onClick: action('onClick'),
@@ -97,3 +102,21 @@ storiesOf('Modal', module)
       </Modal>
     )
   );
+
+
+  storiesOf('Modal', module)
+  .addDecorator(
+    exampleStory({
+      code: Html,
+      options: { showAddonPanel: true },
+    })
+  )
+  .addDecorator(story => <HtmlComponent html={Html}>{story()}</HtmlComponent>)
+  .addWithInfo(
+    'html',
+    `
+     html view
+    `,
+    () => null
+  );
+

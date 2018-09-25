@@ -27,7 +27,7 @@ storiesOf('List', module)
       Lists show a number of connected items written consecutively, typically one below the other.
     `,
     () => (
-      <List href="#" {...additionalProps}>
+      <List {...additionalProps}>
         <ListItem>First item</ListItem>
         <ListItem>Second item</ListItem>
         <ListItem>Third item</ListItem>
