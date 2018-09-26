@@ -172,7 +172,9 @@ storiesOf('Footer', module)
       options: { showAddonPanel: true },
     })
   )
-  .addDecorator(story => <HtmlComponent html={Html_internal}>{story()}</HtmlComponent>)
+  .addDecorator(story => (
+    <HtmlComponent html={Html_internal}>{story()}</HtmlComponent>
+  ))
   .addWithInfo(
     'html-internal',
     `
@@ -181,14 +183,16 @@ storiesOf('Footer', module)
     () => null
   );
 
-  storiesOf('Footer', module)
+storiesOf('Footer', module)
   .addDecorator(
     exampleStory({
       code: Html_external,
       options: { showAddonPanel: true },
     })
   )
-  .addDecorator(story => <HtmlComponent html={Html_external}>{story()}</HtmlComponent>)
+  .addDecorator(story => (
+    <HtmlComponent html={Html_external}>{story()}</HtmlComponent>
+  ))
   .addWithInfo(
     'html-external',
     `

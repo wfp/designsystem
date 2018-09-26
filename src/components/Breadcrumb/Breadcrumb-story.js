@@ -65,7 +65,7 @@ storiesOf('Breadcrumb', module)
     <HtmlComponent html={BreadcrumbHtml}>{story()}</HtmlComponent>
   ))
   .addWithInfo(
-    'html only',
+    'html',
     `
       Breadcrumb enables users to quickly see their location within a path of navigation and move up to a parent level if desired. It can be used with react-router by placing <NavLink></NavLink> inside <BreadcrumbItem />
     `,
