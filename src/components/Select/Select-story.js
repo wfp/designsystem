@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { withInfo } from '@storybook/addon-info';
 import { withKnobs, boolean, text } from '@storybook/addon-knobs';
-import Select from '../Select';
+import Select from './Select';
 import SelectItem from '../SelectItem';
 import SelectItemGroup from '../SelectItemGroup';
 import SelectSkeleton from '../Select/Select.Skeleton';

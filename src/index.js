@@ -64,7 +64,7 @@ export {
 } from './components/SecondaryNavigation';
 export { SecondaryTabs, SecondaryTabsItem } from './components/SecondaryTabs';
 
-export Select from './components/Select';
+export { Select /*, RfSelect*/ } from './components/Select';
 export SelectItem from './components/SelectItem';
 export SelectItemGroup from './components/SelectItemGroup';
 export Switch from './components/Switch';

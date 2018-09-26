@@ -7,7 +7,7 @@ import store from '../../internal/configureStore';
 import { Field } from 'redux-form';
 import FormWrapper from '../../internal/RfFormWrapper';
 
-import Select from './RfSelect';
+import RfSelect from './RfSelect';
 
 const introText = `
   Text fields enable the user to interact with and input data. A single line
@@ -36,7 +36,7 @@ storiesOf('Select', module)
     `,
     () => (
       <Field
-        component={Select}
+        component={RfSelect}
         labelText="Label"
         name="Input"
         placeholder="Placeholder here"
