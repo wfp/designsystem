@@ -35,7 +35,7 @@ deploy:
   username: apikey
   password: $CLOUD_API_KEY
   api: https://api.ng.bluemix.net
-  organization: carbon-design-system
+  organization: wfp
   space: production
   on:
     branch: master

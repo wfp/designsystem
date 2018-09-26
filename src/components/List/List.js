@@ -27,5 +27,5 @@ export const List = ({ children, className, kind, small, ...other }) => {
 
 List.propTypes = {
   children: PropTypes.node,
-  className: PropTypes.string
+  className: PropTypes.string,
 };

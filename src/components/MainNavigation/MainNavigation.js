@@ -174,8 +174,7 @@ class MainNavigation extends Component {
                   menuItem: i,
                   onChangeSub: this.onChangeSub,
                 });
-              }
-              else return null;
+              } else return null;
             })}
           </ul>
         </Wrapper>

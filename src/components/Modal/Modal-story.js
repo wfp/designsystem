@@ -3,7 +3,6 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import Modal from '../Modal';
 
-
 import HtmlComponent from '../../documentation/HtmlComponent';
 import { exampleStory } from '../../../.storybook/lucid-docs-addon';
 import Html from '!!raw-loader!./Modal.html';
@@ -103,8 +102,7 @@ storiesOf('Modal', module)
     )
   );
 
-
-  storiesOf('Modal', module)
+storiesOf('Modal', module)
   .addDecorator(
     exampleStory({
       code: Html,
@@ -119,4 +117,3 @@ storiesOf('Modal', module)
     `,
     () => null
   );
-

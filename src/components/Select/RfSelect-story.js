@@ -7,7 +7,7 @@ import store from '../../internal/configureStore';
 import { Field } from 'redux-form';
 import FormWrapper from '../../internal/RfFormWrapper';
 
-import Select from './Select';
+import Select from './RfSelect';
 
 const introText = `
   Text fields enable the user to interact with and input data. A single line

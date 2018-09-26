@@ -9,9 +9,7 @@ import HtmlComponent from '../../documentation/HtmlComponent';
 import { exampleStory } from '../../../.storybook/lucid-docs-addon';
 import Html from '!!raw-loader!./Blockquote.html';
 
-
 import Raw from '!!raw-loader!./Blockquote';
-
 
 import { withReadme } from 'storybook-readme';
 import readme from './README.md';

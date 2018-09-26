@@ -12,7 +12,6 @@ import HtmlComponent from '../../documentation/HtmlComponent';
 import Html from '!!raw-loader!./Link.html';
 import { exampleStory } from '../../../.storybook/lucid-docs-addon';
 
-
 import Link from '../Link';
 
 const additionalProps = {
