@@ -21,6 +21,7 @@ const iconMap = {
 const kinds = {
   primary: 'Primary button (primary)',
   secondary: 'Secondary button (secondary)',
+  inverse: 'Inverse button (dark background)',
   danger: 'Danger button (danger)',
   'danger--primary': 'Danger primary button (danger--primary)',
   ghost: 'Ghost button (ghost)',

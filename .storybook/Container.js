@@ -12,9 +12,8 @@ export default class Container extends Component {
 
   render() {
     const { context, story } = this.props;
-    console.log(context);
-
-    if (context && !context.kind[0] !== ' ') {
+    
+    if (context && !context.kind.indexOf(" ") !== 0) {
       return (
         <div role="main">
           <SingleComponent>{story()}</SingleComponent>

@@ -26,7 +26,7 @@ SingleComponent.propTypes = {
   /**
     Width of Wrapper, use 'narrow' or leave empty
   */
-  centered: PropTypes.boolean,
+  centered: PropTypes.bool,
   children: PropTypes.node,
   className: PropTypes.string,
 };
