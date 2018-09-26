@@ -21,15 +21,12 @@ $carbon--standard-easing: cubic-bezier(
   0.1,
   1
 ); // Used for the majority of animations.
-
 // For back-ward compatibility
 $wfp--ease-in: $carbon--ease-in;
 $wfp--ease-out: $carbon--ease-out;
 $wfp--standard-easing: $carbon--standard-easing;
-
 $transition--base: 50ms;
 $transition--expansion: 100ms;
-
 // Color Theme Variables
 $brand-01: $color__main-51 !default; // Main Link and Button Color
 $brand-02: $color__main-60 !default; // Main WFP Color //$color__blue-40
@@ -53,23 +50,20 @@ $nav-01: $color__navy-gray-1 !default;
 $nav-02: $color__main-80 !default;
 $nav-03: $color__magenta-30 !default;
 $nav-04: $color__magenta-60 !default;
-//$nav-05: $color__aqua-40 !default;
-//$nav-06: $color__aqua-50 !default;
-//$nav-07: $color__blue-30 !default;
-//$nav-08: $color__blue-51 !default;
-
+// $nav-05: $color__aqua-40 !default;
+// $nav-06: $color__aqua-50 !default;
+// $nav-07: $color__blue-30 !default;
+// $nav-08: $color__blue-51 !default;
 // TODO: Align Colors
 $hover-primary: darken($brand-01, 10%) !default;
 $hover-primary-text: darken($brand-01, 15%) !default;
 $hover-danger: darken($support-01, 10%) !default;
 $hover-secondary: $brand-01 !default;
 $hover-row: rgba($brand-02, 0.1) !default;
-
 // Global
 $input-border: 1px solid $color__navy-gray-2 !default;
 $input-label-weight: 600 !default;
 $input-border-radius: 0px !default;
-
 // Button Theme Variables
 $button-font-weight: 700 !default;
 $button-font-size: 0.875rem !default;
@@ -78,56 +72,42 @@ $button-height: 40px !default;
 $button-padding: 0 $spacing-md !default;
 $button-padding-sm: 0 $spacing-xs !default;
 $button-border-width: 2px !default;
-
 // Accordion (Reverse)
 $accordion-flex-direction: row !default;
 $accordion-justify-content: flex-start !default;
 $accordion-arrow-margin: 0 0 0 $spacing-2xs !default;
 $accordion-title-margin: 0 0 0 $spacing-md !default;
 $accordion-content-padding: 0 $spacing-md 0 $spacing-2xl !default;
-
 // Card
 $card-text-align: center !default;
 $card-flex-align: center !default;
-
 // Checkbox
 $checkbox-border-width: 2px !default;
-
 // Code Snippet
 $snippet-background-color: $field-01 !default;
-
 // Content Switcher
 $content-switcher-border-radius: 5px !default;
 $content-switcher-option-border: 2px solid $brand-01 !default;
-
 // Data Table
 $data-table-heading-transform: uppercase !default;
 $data-table-heading-border-bottom: 1px solid $brand-01 !default;
 $data-table-row-height: 2rem !default;
-
 // Modal
 $modal-border-top: $brand-01 4px solid !default;
 $modal-footer-background-color: $ui-03 !default;
-
 // Progress Indicator
 $progress-indicator-bar-width: 1px inset transparent !default;
 $progress-indicator-stroke-width: 5 !default;
 $progress-indicator-line-offset: 0.625rem !default;
-
 // Paddings for the Page
-
 $page-padding-mobile: 1em;
 $page-padding: 1em;
-
 // Line Height
 $line-height: 1.4em;
-
 // Radio Button
 $radio-border-width: 2px !default;
-
 // Structured Theme Variables
 $structured-list-padding: 2rem !default;
 $structured-list-text-transform: none !default;
-
 // Skeleton Loading
-$skeleton: rgba($color__main-51, 0.1) !default; //old $field-0
+$skeleton: rgba($color__main-51, 0.1) !default; // old $field-0

@@ -17,22 +17,19 @@ $padding: (
     @warn 'padding: could not find #{$value} in $padding map. Please make sure it is defined';
   }
 }
-
 @mixin print($size) {
   @media print {
     @content;
   }
 }
-
-//-------------------------------------
+// -------------------------------------
 // @mixin: breakpoint($size)
-//-------------------------------------
+// -------------------------------------
 // usage:
 // @include breakpoint(bp--md--major) {
-//    - styles here --
+// - styles here --
 // }
-//-------------------------------------
-
+// -------------------------------------
 @mixin breakpoint($size) {
   @if map-has-key($breakpoints, $size) {
     @media screen and (min-width: map-get($breakpoints, $size)) {
@@ -44,16 +41,14 @@ $padding: (
     }
   }
 }
-
-//-------------------------------------
+// -------------------------------------
 // @mixin: breakpointMax($size)
-//-------------------------------------
+// -------------------------------------
 // usage:
 // @include breakpointMax(bp--md--major) {
-//    - styles here --
+// - styles here --
 // }
-//-------------------------------------
-
+// -------------------------------------
 @mixin breakpointMax($size) {
   @if map-has-key($breakpoints, $size) {
     @media screen and (max-width: map-get($breakpoints, $size)-1px) {
@@ -65,26 +60,23 @@ $padding: (
     }
   }
 }
-//-------------------------------------
+// -------------------------------------
 // @mixin: grid-container
-//-------------------------------------
+// -------------------------------------
 // usage:
 // .some-container {
-//   @include grid-container;
+// @include grid-container;
 // }
-//-------------------------------------
-
+// -------------------------------------
 @mixin grid-container {
   width: 100%;
   padding-right: padding(mobile);
   padding-left: padding(mobile);
-
   @include breakpoint(bp--xs--major) {
     padding-right: padding(xs);
     padding-left: padding(xs);
   }
 }
-
 $z-indexes: (
   modal: 9000,
   overlay: 8000,
@@ -95,20 +87,17 @@ $z-indexes: (
   overflowHidden: - 1,
   floating: 10000
 );
-
-//-------------------------------------
+// -------------------------------------
 // @function: z($layer)
-//-------------------------------------
+// -------------------------------------
 // usage:
 // .modal {
-//   z-index: z('modal');
+// z-index: z('modal');
 // }
-//-------------------------------------
-
+// -------------------------------------
 @function z($layer) {
   @if not map-has-key($z-indexes, $layer) {
     @warn 'No layer found for `#{$layer}` in $z-indexes map. Property omitted.';
   }
-
   @return map-get($z-indexes, $layer);
 }
