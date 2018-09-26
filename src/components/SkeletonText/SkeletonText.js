@@ -11,8 +11,8 @@ const SkeletonText = ({
   ...other
 }) => {
   const skeletonTextClasses = classNames({
-    'wfp--skeleton__text': true,
-    'wfp--skeleton__heading': heading,
+    'bx--skeleton__text': true,
+    'bx--skeleton__heading': heading,
     [className]: className,
   });
 

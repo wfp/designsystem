@@ -1,150 +1,71 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import SingleComponent from '../../documentation/SingleComponent';
+import { withInfo } from '@storybook/addon-info';
+import { withKnobs, boolean, text } from '@storybook/addon-knobs';
 import Checkbox from '../Checkbox';
+import CheckboxSkeleton from '../Checkbox/Checkbox.Skeleton';
 
-import HtmlComponent from '../../documentation/HtmlComponent';
-import Html from '!!raw-loader!./Checkbox.html';
-import { exampleStory } from '../../../.storybook/lucid-docs-addon';
-
-const checkboxEvents = {
+const props = () => ({
   className: 'some-class',
+  labelText: text('Label text (labelText)', 'Checkbox label'),
+  indeterminate: boolean('Intermediate (indeterminate)', false),
+  disabled: boolean('Disabled (disabled)', false),
+  hideLabel: boolean('No label (hideLabel)', false),
+  wrapperClassName: text('Wrapper CSS class name (wrapperClassName)', ''),
   onChange: action('onChange'),
-};
+});
 
 storiesOf('Checkbox', module)
-  .addDecorator(story => (
-    <SingleComponent pageWidth="wide">{story()}</SingleComponent>
-  ))
-  .addWithInfo(
-    'enabled checked',
-    `
-      Checkboxes are used when there is a list of options and the user may select multiple options, including all or none.
-      The example below shows how the Checkbox component can be used as an uncontrolled component that is initially checked
-      by setting the defaultChecked property to true. To use the component in a controlled way, you should set the
-      checked property instead.
-    `,
-    () => (
-      <fieldset className="wfp--fieldset">
-        <legend className="wfp--label">Checkbox heading</legend>
-        <Checkbox
-          defaultChecked
-          {...checkboxEvents}
-          id="checkbox-label-1"
-          labelText="Checkbox label 1"
-        />
-        <Checkbox
-          defaultChecked
-          {...checkboxEvents}
-          id="checkbox-label-2"
-          labelText="Checkbox label 2"
-        />
-      </fieldset>
-    )
-  )
-  .addWithInfo(
-    'enabled unchecked',
-    `
-      Checkboxes are used when there is a list of options and the user may select multiple options, including all or none.
-      The example below shows how the Checkbox component can be used as an uncontrolled component that is initially
-      unchecked. To use the component in a controlled way, you should set the checked property instead.
-    `,
-    () => (
-      <fieldset className="wfp--fieldset">
-        <legend className="wfp--label">Checkbox heading</legend>
-        <Checkbox
-          {...checkboxEvents}
-          id="checkbox-label-1"
-          labelText="Checkbox label 1"
-        />
-        <Checkbox
-          {...checkboxEvents}
-          id="checkbox-label-2"
-          labelText="Checkbox label 2"
-        />
-      </fieldset>
-    )
-  )
-  .addWithInfo(
-    'enabled indeterminate',
-    `
-      Checkboxes are used when there is a list of options and the user may select multiple options, including all or none.
-      The example below shows how the Checkbox component can be used as a controlled component that is initially
-      indeterminate.
-    `,
-    () => (
-      <fieldset className="wfp--fieldset">
-        <legend className="wfp--label">Checkbox heading</legend>
-        <Checkbox
-          {...checkboxEvents}
-          id="checkbox-label-1"
-          labelText="Checkbox label 1"
-          indeterminate
-        />
-        <Checkbox
-          {...checkboxEvents}
-          id="checkbox-label-2"
-          labelText="Checkbox label 2"
-          indeterminate
-        />
-      </fieldset>
-    )
-  )
-  .addWithInfo(
-    'disabled',
-    `
-      Checkboxes are used when there is a list of options and the user may select multiple options, including all or none.
-      The example below shows a disabled Checkbox component.
-    `,
-    () => (
-      <fieldset disabled className="wfp--fieldset">
-        <legend className="wfp--label">Checkbox heading</legend>
-        <Checkbox
-          {...checkboxEvents}
-          id="checkbox-label-1"
-          labelText="Checkbox label 1"
-        />
-        <Checkbox
-          {...checkboxEvents}
-          id="checkbox-label-2"
-          labelText="Checkbox label 2"
-        />
-      </fieldset>
-    )
-  )
-  .addWithInfo(
-    'no label',
-    `
-      Checkboxes are used when there is a list of options and the user may select multiple options, including all or none.
-      The example below shows a Checkbox component with a hidden label. Use this property to hide the label visually but still preserve accessibility.
-    `,
-    () => (
-      <fieldset className="wfp--fieldset">
-        <legend className="wfp--label">Checkbox heading</legend>
-        <Checkbox
-          {...checkboxEvents}
-          id="checkbox-label-2"
-          labelText="Checkbox label hidden"
-          hideLabel={true}
-          wrapperClassName="wrapper-class"
-        />
-      </fieldset>
-    )
-  );
-
-storiesOf('Checkbox', module)
-  .addDecorator(
-    exampleStory({
-      code: Html,
-      options: { showAddonPanel: true },
+  .addDecorator(withKnobs)
+  .add(
+    'checked',
+    withInfo({
+      text: `
+        Checkboxes are used when there is a list of options and the user may select multiple options, including all or none.
+        The example below shows how the Checkbox component can be used as an uncontrolled component that is initially checked
+        by setting the defaultChecked property to true. To use the component in a controlled way, you should set the
+        checked property instead.
+      `,
+    })(() => {
+      const checkboxProps = props();
+      return (
+        <fieldset className="wfp--fieldset">
+          <legend className="wfp--label">Checkbox heading</legend>
+          <Checkbox defaultChecked {...checkboxProps} id="checkbox-label-1" />
+          <Checkbox defaultChecked {...checkboxProps} id="checkbox-label-1" />
+        </fieldset>
+      );
     })
   )
-  .addDecorator(story => <HtmlComponent html={Html}>{story()}</HtmlComponent>)
-  .addWithInfo(
-    'html',
-    `
-     html view
-    `,
-    () => null
+  .add(
+    'unchecked',
+    withInfo({
+      text: `
+        Checkboxes are used when there is a list of options and the user may select multiple options, including all or none.
+        The example below shows how the Checkbox component can be used as an uncontrolled component that is initially
+        unchecked. To use the component in a controlled way, you should set the checked property instead.
+      `,
+    })(() => {
+      const checkboxProps = props();
+      return (
+        <fieldset className="wfp--fieldset">
+          <legend className="wfp--label">Checkbox heading</legend>
+          <Checkbox {...checkboxProps} id="checkbox-label-1" />
+          <Checkbox {...checkboxProps} id="checkbox-label-2" />
+        </fieldset>
+      );
+    })
+  )
+  .add(
+    'skeleton',
+    withInfo({
+      text: `
+        Placeholder skeleton state to use when content is loading.
+      `,
+    })(() => (
+      <div>
+        <CheckboxSkeleton />
+      </div>
+    ))
   );

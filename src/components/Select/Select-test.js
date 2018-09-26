@@ -4,7 +4,7 @@ import Select from '../Select';
 import SelectItem from '../SelectItem';
 import SelectSkeleton from '../Select/Select.Skeleton';
 import { mount, shallow } from 'enzyme';
-import { iconCaretDown } from 'carbon-icons';
+import { iconCaretDown } from '@wfp/icons';
 
 describe('Select', () => {
   describe('Renders as expected', () => {

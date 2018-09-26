@@ -3,30 +3,32 @@ import './polyfills';
 import './_container.scss';
 import '../assets/css/styles.css';
 
+import SingleComponent from '../src/documentation/SingleComponent';
+
+
 export default class Container extends Component {
   componentWillMount() {
     window.scrollTo(0, 0);
   }
 
   render() {
-    const { story } = this.props;
+    const { context, story } = this.props;
+    console.log(context);
 
-    return (
-      <div
-        role="main"
-        style={
-          {
-            //maxWidth: '1000px',
-            //margin: 'auto',
-            //margin: '2em'
-            //padding: '3em',
-            //display: 'flex',
-            //flexDirection: 'column',
-            //alignItems: 'center',
-          }
-        }>
-        {story()}
-      </div>
-    );
+    if (context && !context.kind[0] !== " ") {
+      return (
+        <div role="main">
+          <SingleComponent>{story()}</SingleComponent>
+        </div>
+      );
+    }
+    else {
+      return (
+        <div
+          role="main">
+          {story()}
+        </div>
+      );
+    }
   }
 }

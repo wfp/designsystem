@@ -9,6 +9,7 @@ describe('ModalWrapper', () => {
     mockProps = {
       id: 'modal',
       buttonTriggerText: 'Test Modal',
+      buttonTriggerClassName: 'btn-trigger',
       modalHeading: 'Transactional Modal',
       modalLabel: 'Test Modal Label',
       primaryButtonText: 'Save',
@@ -38,6 +39,19 @@ describe('ModalWrapper', () => {
 
     wrapper.find({ children: mockProps.primaryButtonText }).simulate('click');
     expect(wrapper.state('isOpen')).toBe(false);
+  });
+
+  it('should return focus to the trigger button after closing', () => {
+    const wrapper = mount(
+      <ModalWrapper {...mockProps}>
+        <p className="wfp--modal-content__text">Text</p>
+      </ModalWrapper>
+    );
+    const { triggerButton } = wrapper.instance();
+    jest.spyOn(triggerButton.current, 'focus');
+    wrapper.find({ children: mockProps.buttonTriggerText }).simulate('click');
+    wrapper.find({ children: mockProps.primaryButtonText }).simulate('click');
+    expect(triggerButton.current.focus).toHaveBeenCalledTimes(1);
   });
 
   it('should not close after an unsuccessful submit action', () => {

@@ -9,7 +9,21 @@ import { equals } from '../../tools/array';
 
 let instanceId = 0;
 
-export default class Pagination extends Component {
+export default class PaginationV2 extends Component {
+  constructor(props) {
+    super(props);
+    const { pageSizes, page, pageSize } = this.props;
+    this.state = {
+      page: page,
+      pageSize:
+        pageSize && pageSizes.includes(pageSize) ? pageSize : pageSizes[0],
+      prevPageSizes: pageSizes,
+      prevPage: page,
+      prevPageSize: pageSize,
+    };
+    this.uniqueId = ++instanceId;
+  }
+
   static propTypes = {
     /**
      * The description for the backward icon.
@@ -126,30 +140,28 @@ export default class Pagination extends Component {
     pageText: page => `page ${page}`,
   };
 
-  state = {
-    page: this.props.page,
-    pageSize:
-      this.props.pageSize && this.props.pageSizes.includes(this.props.pageSize)
-        ? this.props.pageSize
-        : this.props.pageSizes[0],
-  };
-
-  UNSAFE_componentWillMount() {
-    this.uniqueId = ++instanceId;
-  }
-
-  componentWillReceiveProps({ pageSizes, page, pageSize }) {
-    if (!equals(pageSizes, this.props.pageSizes)) {
-      this.setState({ pageSize: pageSizes[0], page: 1 });
-    }
-    if (page !== this.props.page) {
-      this.setState({
-        page,
-      });
-    }
-    if (pageSize !== this.props.pageSize) {
-      this.setState({ pageSize });
-    }
+  static getDerivedStateFromProps({ pageSizes, page, pageSize }, state) {
+    const {
+      prevPageSizes,
+      prevPage,
+      prevPageSize,
+      page: currentPage,
+      pageSize: currentPageSize,
+    } = state;
+    const pageSizesChanged = !equals(pageSizes, prevPageSizes);
+    const pageChanged = page !== prevPage;
+    const pageSizeChanged = pageSize !== prevPageSize;
+    return !pageSizesChanged && !pageChanged && !pageSizeChanged
+      ? null
+      : {
+          page: pageSizesChanged ? 1 : pageChanged ? page : currentPage,
+          pageSize: pageSizesChanged
+            ? pageSizes[0]
+            : pageSizeChanged ? pageSize : currentPageSize,
+          prevPageSizes: pageSizes,
+          prevPage: page,
+          prevPageSize: pageSize,
+        };
   }
 
   handleSizeChange = evt => {

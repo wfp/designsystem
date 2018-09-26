@@ -1,26 +1,17 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
 import classNames from 'classnames';
+import { iconClose } from '@wfp/icons';
 import Icon from '../Icon';
 import Button from '../Button';
 
+const matchesFuncName =
+  typeof Element !== 'undefined' &&
+  ['matches', 'webkitMatchesSelector', 'msMatchesSelector'].filter(
+    name => typeof Element.prototype[name] === 'function'
+  )[0];
+
 export default class Modal extends Component {
-  constructor(props) {
-    super(props);
-
-    this.rootSelector = document.body;
-    this.container = document.createElement('div');
-  }
-
-  componentDidMount() {
-    this.rootSelector.appendChild(this.container);
-  }
-
-  componentWillUnmount() {
-    this.rootSelector.removeChild(this.container);
-  }
-
   static propTypes = {
     children: PropTypes.node,
     className: PropTypes.string,
@@ -39,6 +30,9 @@ export default class Modal extends Component {
     primaryButtonDisabled: PropTypes.bool,
     onSecondarySubmit: PropTypes.func,
     danger: PropTypes.bool,
+    shouldSubmitOnEnter: PropTypes.bool,
+    selectorsFloatingMenus: PropTypes.arrayOf(PropTypes.string),
+    selectorPrimaryFocus: PropTypes.string,
   };
 
   static defaultProps = {
@@ -50,17 +44,108 @@ export default class Modal extends Component {
     iconDescription: 'close the modal',
     modalHeading: '',
     modalLabel: '',
+    selectorsFloatingMenus: [
+      '.wfp--overflow-menu-options',
+      '.wfp--tooltip',
+      '.flatpickr-calendar',
+    ],
+    selectorPrimaryFocus: '[data-modal-primary-focus]',
+  };
+
+  button = React.createRef();
+  outerModal = React.createRef();
+  innerModal = React.createRef();
+
+  elementOrParentIsFloatingMenu = target => {
+    if (target && typeof target.closest === 'function') {
+      return this.props.selectorsFloatingMenus.some(selector =>
+        target.closest(selector)
+      );
+    } else {
+      // Alternative if closest does not exist.
+      while (target) {
+        if (typeof target[matchesFuncName] === 'function') {
+          if (
+            this.props.selectorsFloatingMenus.some(selector =>
+              target[matchesFuncName](selector)
+            )
+          ) {
+            return true;
+          }
+        }
+        target = target.parentNode;
+      }
+      return false;
+    }
   };
 
   handleKeyDown = evt => {
     if (evt.which === 27) {
-      this.props.onRequestClose();
+      this.props.onRequestClose(evt);
+    }
+    if (evt.which === 13 && this.props.shouldSubmitOnEnter) {
+      this.props.onRequestSubmit(evt);
     }
   };
 
   handleClick = evt => {
-    if (this.innerModal && !this.innerModal.contains(evt.target)) {
-      this.props.onRequestClose();
+    if (
+      this.innerModal.current &&
+      !this.innerModal.current.contains(evt.target) &&
+      !this.elementOrParentIsFloatingMenu(evt.target)
+    ) {
+      this.props.onRequestClose(evt);
+    }
+  };
+
+  handleBlur = evt => {
+    // Keyboard trap
+    if (
+      this.innerModal.current &&
+      this.props.open &&
+      evt.relatedTarget &&
+      !this.innerModal.current.contains(evt.relatedTarget) &&
+      !this.elementOrParentIsFloatingMenu(evt.relatedTarget)
+    ) {
+      this.focusModal();
+    }
+  };
+
+  componentDidUpdate(prevProps) {
+    if (!prevProps.open && this.props.open) {
+      this.beingOpen = true;
+    } else if (prevProps.open && !this.props.open) {
+      this.beingOpen = false;
+    }
+  }
+
+  focusModal = () => {
+    if (this.outerModal.current) {
+      this.outerModal.current.focus();
+    }
+  };
+
+  focusButton = evt => {
+    const primaryFocusElement = evt.currentTarget.querySelector(
+      this.props.selectorPrimaryFocus
+    );
+    if (primaryFocusElement) {
+      primaryFocusElement.focus();
+      return;
+    }
+    if (this.button) {
+      this.button.current.focus();
+    }
+  };
+
+  handleTransitionEnd = evt => {
+    if (
+      this.outerModal.current.offsetWidth &&
+      this.outerModal.current.offsetHeight &&
+      this.beingOpen
+    ) {
+      this.focusButton(evt);
+      this.beingOpen = false;
     }
   };
 
@@ -78,8 +163,10 @@ export default class Modal extends Component {
       onSecondarySubmit,
       iconDescription,
       primaryButtonDisabled,
-      wide,
       danger,
+      selectorPrimaryFocus, // eslint-disable-line
+      selectorsFloatingMenus, // eslint-disable-line
+      shouldSubmitOnEnter, // eslint-disable-line
       ...other
     } = this.props;
 
@@ -90,7 +177,6 @@ export default class Modal extends Component {
     const modalClasses = classNames({
       'wfp--modal': true,
       'wfp--modal-tall': !passiveModal,
-      'wfp--modal--wide': wide,
       'is-visible': open,
       'wfp--modal--danger': this.props.danger,
       [this.props.className]: this.props.className,
@@ -100,9 +186,10 @@ export default class Modal extends Component {
       <button
         className="wfp--modal-close"
         type="button"
-        onClick={onRequestClose}>
+        onClick={onRequestClose}
+        ref={this.button}>
         <Icon
-          name="close"
+          icon={iconClose}
           className="wfp--modal-close__icon"
           description={iconDescription}
         />
@@ -111,9 +198,7 @@ export default class Modal extends Component {
 
     const modalBody = (
       <div
-        ref={modal => {
-          this.innerModal = modal;
-        }}
+        ref={this.innerModal}
         role="dialog"
         className="wfp--modal-container"
         aria-label={modalAriaLabel}>
@@ -137,7 +222,8 @@ export default class Modal extends Component {
               <Button
                 kind={danger ? 'danger--primary' : 'primary'}
                 disabled={primaryButtonDisabled}
-                onClick={onRequestSubmit}>
+                onClick={onRequestSubmit}
+                inputref={this.button}>
                 {primaryButtonText}
               </Button>
             </div>
@@ -146,20 +232,19 @@ export default class Modal extends Component {
       </div>
     );
 
-    return ReactDOM.createPortal(
+    return (
       <div
         {...other}
         onKeyDown={this.handleKeyDown}
         onClick={this.handleClick}
+        onBlur={this.handleBlur}
         className={modalClasses}
         role="presentation"
-        tabIndex={-1}>
+        tabIndex={-1}
+        onTransitionEnd={this.props.open ? this.handleTransitionEnd : undefined}
+        ref={this.outerModal}>
         {modalBody}
-      </div>,
-      this.container
+      </div>
     );
-    /* return (
-      
-    );*/
   }
 }

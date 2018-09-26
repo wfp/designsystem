@@ -2,12 +2,14 @@
 
 exports[`ModalWrapper should render 1`] = `
 <ModalWrapper
+  buttonTriggerClassName="btn-trigger"
   buttonTriggerText="Test Modal"
   disabled={false}
   handleSubmit={[MockFunction]}
   id="modal"
   modalHeading="Transactional Modal"
   modalLabel="Test Modal Label"
+  onKeyDown={[Function]}
   primaryButtonText="Save"
   secondaryButtonText="Cancel"
   shouldCloseAfterSubmit={true}
@@ -18,8 +20,21 @@ exports[`ModalWrapper should render 1`] = `
     role="presentation"
   >
     <Button
+      className="btn-trigger"
       disabled={false}
       iconDescription="Provide icon description if icon is used"
+      inputref={
+        Object {
+          "current": <button
+            class="btn-trigger wfp--btn wfp--btn--primary"
+            inputref="[object Object]"
+            tabindex="0"
+            type="button"
+          >
+            Test Modal
+          </button>,
+        }
+      }
       kind="primary"
       onClick={[Function]}
       small={false}
@@ -27,8 +42,20 @@ exports[`ModalWrapper should render 1`] = `
       type="button"
     >
       <button
-        className="wfp--btn wfp--btn--primary"
+        className="btn-trigger wfp--btn wfp--btn--primary"
         disabled={false}
+        inputref={
+          Object {
+            "current": <button
+              class="btn-trigger wfp--btn wfp--btn--primary"
+              inputref="[object Object]"
+              tabindex="0"
+              type="button"
+            >
+              Test Modal
+            </button>,
+          }
+        }
         onClick={[Function]}
         tabIndex={0}
         type="button"
@@ -49,10 +76,19 @@ exports[`ModalWrapper should render 1`] = `
       primaryButtonDisabled={false}
       primaryButtonText="Save"
       secondaryButtonText="Cancel"
+      selectorPrimaryFocus="[data-modal-primary-focus]"
+      selectorsFloatingMenus={
+        Array [
+          ".wfp--overflow-menu-options",
+          ".wfp--tooltip",
+          ".flatpickr-calendar",
+        ]
+      }
     >
       <div
         className="wfp--modal wfp--modal-tall"
         id="modal"
+        onBlur={[Function]}
         onClick={[Function]}
         onKeyDown={[Function]}
         role="presentation"
@@ -84,7 +120,30 @@ exports[`ModalWrapper should render 1`] = `
                 className="wfp--modal-close__icon"
                 description="close the modal"
                 fillRule="evenodd"
-                name="close"
+                icon={
+                  Object {
+                    "height": "10",
+                    "id": "icon--close",
+                    "name": "icon--close",
+                    "styles": "",
+                    "svgData": Object {
+                      "circles": "",
+                      "ellipses": "",
+                      "paths": Array [
+                        Object {
+                          "d": "M6.32 5L10 8.68 8.68 10 5 6.32 1.32 10 0 8.68 3.68 5 0 1.32 1.32 0 5 3.68 8.68 0 10 1.32 6.32 5z",
+                          "fill-rule": "nonzero",
+                        },
+                      ],
+                      "polygons": "",
+                      "polylines": "",
+                      "rects": "",
+                    },
+                    "tags": "icon--close",
+                    "viewBox": "0 0 10 10",
+                    "width": "10",
+                  }
+                }
                 role="img"
               >
                 <svg
@@ -93,7 +152,6 @@ exports[`ModalWrapper should render 1`] = `
                   className="wfp--modal-close__icon"
                   fillRule="evenodd"
                   height="10"
-                  name="close"
                   role="img"
                   viewBox="0 0 10 10"
                   width="10"
@@ -146,6 +204,18 @@ exports[`ModalWrapper should render 1`] = `
               <Button
                 disabled={false}
                 iconDescription="Provide icon description if icon is used"
+                inputref={
+                  Object {
+                    "current": <button
+                      class="wfp--btn wfp--btn--primary"
+                      inputref="[object Object]"
+                      tabindex="0"
+                      type="button"
+                    >
+                      Save
+                    </button>,
+                  }
+                }
                 kind="primary"
                 onClick={[Function]}
                 small={false}
@@ -155,6 +225,18 @@ exports[`ModalWrapper should render 1`] = `
                 <button
                   className="wfp--btn wfp--btn--primary"
                   disabled={false}
+                  inputref={
+                    Object {
+                      "current": <button
+                        class="wfp--btn wfp--btn--primary"
+                        inputref="[object Object]"
+                        tabindex="0"
+                        type="button"
+                      >
+                        Save
+                      </button>,
+                    }
+                  }
                   onClick={[Function]}
                   tabIndex={0}
                   type="button"

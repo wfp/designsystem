@@ -7,7 +7,7 @@ import store from '../../internal/configureStore';
 import { Field } from 'redux-form';
 import FormWrapper from '../../internal/RfFormWrapper';
 
-import Checkbox from './Checkbox';
+import RfCheckbox from './RfCheckbox';
 
 const introText = `
   Text fields enable the user to interact with and input data. A single line
@@ -34,7 +34,7 @@ storiesOf('Checkbox', module)
       const name = text('name', 'checkboxinput');
       return (
         <Field
-          component={Checkbox}
+          component={RfCheckbox}
           id="Inputelement"
           labelText={label}
           name={name}

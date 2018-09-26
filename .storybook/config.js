@@ -16,7 +16,7 @@ import { initializeRTL } from '../src/rtl-addon';
 initializeRTL();
 
 // addDecorator(checkA11y);
-addDecorator(story => <Container story={story} />);
+addDecorator((story, context) => <Container story={story} context={context} />);
 
 // addon-info
 setDefaults({

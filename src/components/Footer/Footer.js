@@ -9,6 +9,7 @@ import Icon from '../Icon';
 //import logoVertical from '../../../assets/logos/vertical/en/wfp-logo-vertical-black-en.svg';
 
 const Footer = ({
+  buttonText,
   className,
   children,
   external,

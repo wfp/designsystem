@@ -8,7 +8,7 @@ export BreadcrumbItem from './components/BreadcrumbItem';
 export BreadcrumbHome from './components/BreadcrumbHome';
 export Button from './components/Button';
 
-export Checkbox from './components/Checkbox';
+export { Checkbox, RfCheckbox } from './components/Checkbox';
 export Credits from './components/Credits';
 
 export ContentSwitcher from './components/ContentSwitcher';
@@ -64,7 +64,7 @@ export {
 } from './components/SecondaryNavigation';
 export { SecondaryTabs, SecondaryTabsItem } from './components/SecondaryTabs';
 
-export { Select /*, RfSelect*/ } from './components/Select';
+export { Select, RfSelect } from './components/Select';
 export SelectItem from './components/SelectItem';
 export SelectItemGroup from './components/SelectItemGroup';
 export Switch from './components/Switch';
