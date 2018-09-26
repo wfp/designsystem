@@ -8,7 +8,6 @@ import Link from '../Link';
 import HtmlComponent from '../../documentation/HtmlComponent';
 import { exampleStory } from '../../../.storybook/lucid-docs-addon';
 
-import Raw from '!!raw-loader!./BannerNavigation';
 import Html from '!!raw-loader!./BannerNavigation.html';
 
 storiesOf('BannerNavigation', module).addWithInfo(

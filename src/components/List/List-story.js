@@ -8,7 +8,7 @@ import { withReadme } from 'storybook-readme';
 import readme from './README.md';
 
 import HtmlComponent from '../../documentation/HtmlComponent';
-import Html from '!!raw-loader!./List.html';
+import Html from './List.html';
 import { exampleStory } from '../../../.storybook/lucid-docs-addon';
 
 import { List, ListItem } from '../List';

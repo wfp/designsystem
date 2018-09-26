@@ -34,6 +34,14 @@ module.exports = (storybookBaseConfig, configType) => {
       ],
     },
     {
+      test: /\.html$/,
+      use: [
+        {
+          loader: 'raw-loader',
+        }
+      ],
+    },
+    {
       test: /\.scss$/,
       use: [
         { loader: 'style-loader' },

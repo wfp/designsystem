@@ -53,15 +53,6 @@ storiesOf('Footer', module)
 
       const className = text('className', 'some-class');
 
-      const logo = text(
-        'logo',
-        'logos/vertical/en/wfp-logo-vertical-black-en.svg'
-      );
-      const logoExtended = text(
-        'logoExtended',
-        'logos/extended/en/wfp-logo-extended-black-en.svg'
-      );
-
       return (
         <Footer
           className={className}
