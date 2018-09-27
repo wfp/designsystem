@@ -38,7 +38,7 @@ module.exports = (storybookBaseConfig, configType) => {
       use: [
         {
           loader: 'raw-loader',
-        }
+        },
       ],
     },
     {

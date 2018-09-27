@@ -24,6 +24,7 @@ module.exports = {
     new ImageminPlugin({
       test: /\.(jpe?g|png|gif|svg)$/i,
     }),
+    new ExtractTextPlugin('email/[name].html'),
     new ExtractTextPlugin('css/[name].css'),
   ],
 
