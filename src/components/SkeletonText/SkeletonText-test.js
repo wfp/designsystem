@@ -7,7 +7,7 @@ describe('SkeletonText', () => {
     const wrapper = shallow(<SkeletonText />);
 
     it('Has the expected classes', () => {
-      expect(wrapper.hasClass('bx--skeleton__text')).toEqual(true);
+      expect(wrapper.hasClass('wfp---skeleton__text')).toEqual(true);
     });
   });
 });
@@ -17,7 +17,7 @@ describe('SkeletonText Heading', () => {
     const wrapper = shallow(<SkeletonText heading />);
 
     it('Has the expected classes', () => {
-      expect(wrapper.hasClass('bx--skeleton__heading')).toEqual(true);
+      expect(wrapper.hasClass('wfp---skeleton__heading')).toEqual(true);
     });
   });
 });

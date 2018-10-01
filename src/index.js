@@ -87,6 +87,7 @@ export Tab from './components/Tab';
 export TabContent from './components/TabContent';
 export Tabs from './components/Tabs';
 export TextArea from './components/TextArea';
+export RfTextArea from './components/RfTextArea';
 export TextInput from './components/TextInput';
 
 export tooltipStyle from './components/Tooltip';

@@ -26,6 +26,12 @@ export default class Tabs extends React.Component {
     className: PropTypes.string,
 
     /**
+     * Provide a customTabContent by using independent action triggers
+     * inside the Tabs
+     */
+    customTabContent: PropTypes.bool,
+
+    /**
      * Specify whether the Tab content is hidden
      */
     hidden: PropTypes.bool,
@@ -176,6 +182,7 @@ export default class Tabs extends React.Component {
       ariaLabel,
       iconDescription,
       className,
+      customTabContent,
       triggerHref,
       role,
       onSelectionChange,
@@ -197,7 +204,7 @@ export default class Tabs extends React.Component {
       return newTab;
     });
 
-    const tabContentWithProps = React.Children.map(tabsWithProps, tab => {
+    const tabContentWithProps = customTabContent ? React.Children.map(tabsWithProps, tab => {
       const { children, selected } = tab.props;
 
       return (
@@ -209,7 +216,7 @@ export default class Tabs extends React.Component {
           {children}
         </TabContent>
       );
-    });
+    }) : null;
 
     const classes = {
       tabs: classNames('wfp--tabs', className),

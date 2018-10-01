@@ -121,10 +121,10 @@ Footer.propTypes = {
 
 Footer.defaultProps = {
   labelOne: 'Need Help?',
-  linkTextOne: 'Contact Bluemix Sales',
+  linkTextOne: 'Contact',
   linkHrefOne: '#',
-  labelTwo: 'Estimate Monthly Cost',
-  linkTextTwo: 'Cost Calculator',
+  labelTwo: 'Second Link',
+  linkTextTwo: 'About',
   linkHrefTwo: '#',
 };
 

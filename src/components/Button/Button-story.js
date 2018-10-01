@@ -9,8 +9,8 @@ import ButtonSkeleton from '../Button/Button.Skeleton';
 
 const icons = {
   none: 'None',
-  iconAddSolid: 'Add with filled circle (iconAddSolid from `carbon-icons`)',
-  iconSearch: 'Search (iconSearch from `carbon-icons`)',
+  iconAddSolid: 'Add with filled circle (iconAddSolid from `@wfp/icons`)',
+  iconSearch: 'Search (iconSearch from `@wfp/icons`)',
 };
 
 const iconMap = {

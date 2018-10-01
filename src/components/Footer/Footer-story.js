@@ -48,7 +48,7 @@ storiesOf('Footer', module)
 
       const metaContent = text(
         'metaContent',
-        'WFP UI Kit version 1.0 – powered by RMT with full support of concerned divisions which are responsible for the accuracy of the content'
+        '2019 © World Food Programme'
       );
 
       const className = text('className', 'some-class');
@@ -115,7 +115,7 @@ storiesOf('Footer', module)
         defaultValue
       );
 
-      const metaContent = text('metaContent', ' 2018 © World Food Programme');
+      const metaContent = text('metaContent', ' 2019 © World Food Programme');
 
       const className = text('className', 'some-class');
 

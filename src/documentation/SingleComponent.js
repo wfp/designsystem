@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import Wrapper from '../components/Wrapper';
 
-const SingleComponent = ({ centered, children, pageWidth }) => {
+const SingleComponent = ({ centered, children, html, pageWidth }) => {
   return (
     <Wrapper
       style={
@@ -11,7 +11,7 @@ const SingleComponent = ({ centered, children, pageWidth }) => {
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              height: '100%',
+              height: '100%'
             }
           : undefined
       }

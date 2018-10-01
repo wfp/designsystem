@@ -34,6 +34,13 @@ const props = {
   }),
 };
 
+const el = (props) => {
+  console.log(props);
+  return(
+    <div>sddds</div>
+  )
+};
+
 storiesOf('Tabs', module)
   .addDecorator(withKnobs)
   .add(
@@ -54,9 +61,21 @@ storiesOf('Tabs', module)
         <Tab {...props.tab()} label="Tab label 3">
           <div className="some-content">Content for third tab goes here.</div>
         </Tab>
-        <Tab {...props.tab()} label="Tab label 4">
-          <div className="some-content">Content for fourth tab goes here.</div>
+        <Tab {...props.tab()} label="Tab label 4" renderAnchor={el}>
         </Tab>
+      </Tabs>
+    ))
+  )
+  .add(
+    'Custom Tab Content',
+    withInfo({
+      text: `
+        Custom Tab Content which is independent from the Tabs
+      `,
+    })(() => (
+      <Tabs {...props.tabs()} customTabContent={true}>
+        <Tab {...props.tab()} label="Tab label 1" href="http://www.de.wfp.org" renderAnchor={el} />
+        <Tab {...props.tab()} label="Tab label 4" href="http://www.fr.wfp.org" renderAnchor={el} />
       </Tabs>
     ))
   )

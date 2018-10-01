@@ -56,9 +56,12 @@ storiesOf(' Documentation', module).addWithInfo('Form Design', ``, () => (
 
     <h3>Avoid placing inputs side-by-side.</h3>
 
-    <p>
+    {/*<p>
       Eye-tracking studies have shown that simple one-column layouts are better
       than multi-column layouts with questions positioned side-by-side.
+    </p>*/}
+    <p>
+      User attention should always be directed on one task at a time, 2 items on the same line will compete for attention as there is no visual priority between them, resulting in a heavier task for the user.
     </p>
     <p>
       The only exception to this rule is when the input needs multiple field
@@ -68,6 +71,35 @@ storiesOf(' Documentation', module).addWithInfo('Form Design', ``, () => (
         read more
       </Link>
     </p>
+
+    <h4>2 columns layout exceptions apply to:</h4>
+
+    <h5>1. Information that people perceive as one but need more than one input field to complete</h5>
+
+    <ul className="wfp--story--list">
+      <li>dd – mm – yyyy (date picker)</li>
+      <li>amount – currency</li>
+      <li>national prefix - phone number</li>
+      <li>first name - second name - last name</li>
+    </ul>
+
+    <h5>2. Information that people will find in the same place</h5>
+
+    <ul className="wfp--story--list">
+      <li>CVV and credit card expiry date</li>
+    </ul>
+
+    <h5>3. Information that are complementary and/or more meaningful if read together</h5>
+
+    <ul className="wfp--story--list">
+      <li>currency - currency exchange rate</li>
+    </ul>
+
+    <h5>4. When one field is non editable and used for comparison/reference purposes</h5>
+
+    <ul>
+      <li>country data input - RB data read only</li>
+    </ul>
 
     <h3>Group related fields together into sections or steps</h3>
 
