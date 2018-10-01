@@ -9,11 +9,11 @@ storiesOf(' Documentation', module).addWithInfo('Browser Support', ``, () => (
     <p>Components is supported in the following browsers:</p>
 
     <ul className="wfp--story--list">
-      <li>IE11</li>
-      <li>IE Edge latest</li>
-      <li>Firefox latest</li>
-      <li>Chrome latest</li>
-      <li>Safari latest</li>
+      <li>IE11 (Support will be removed soon)</li>
+      <li>IE Edge latest & last four versions</li>
+      <li>Firefox latest & last four versions</li>
+      <li>Chrome latest & last four versions</li>
+      <li>Safari latest & last two versions</li>
     </ul>
   </Page>
 ));
