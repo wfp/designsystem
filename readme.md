@@ -62,6 +62,8 @@ The UI Kit is be based on:
 * [Carbon Components](https://github.com/carbon-design-system/carbon-components)
 * [U.S. Webdesign System](https://designsystem.digital.gov/page-templates/#landing-page)
 * [Sketch Favicon Exporter Template](https://github.com/frederik-jacques/sketch-favicon-exporter-template)
+* [Appnexus Lucid](https://github.com/appnexus/lucid)
+* [FontAwesome](http://fontawesome.io)
 
 ## Logos
 
