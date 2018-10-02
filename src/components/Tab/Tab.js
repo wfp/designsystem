@@ -72,6 +72,7 @@ export default class Tab extends React.Component {
     const anchorProps = {
       className: 'wfp--tabs__nav-link',
       href,
+      label,
       role: 'tab',
       tabIndex,
       ['aria-selected']: selected,

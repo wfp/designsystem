@@ -13,14 +13,17 @@
     @include reset;
     display: flex;
     border-bottom: 2px solid $color__navy-gray-8;
+    .#{$prefix}--tabs {
+      min-height: auto;
+    }
   }
 
   .#{$prefix}--secondary-navigation__title {
     @include typescale('beta');
     @include font-family;
     font-weight: 700;
-    padding-top: $spacing-xs;
-    padding-bottom: $spacing-xs;
+    padding-top: $spacing-md;
+    padding-bottom: $spacing-md;
   }
 
   .#{$prefix}--secondary-navigation__wrapper {

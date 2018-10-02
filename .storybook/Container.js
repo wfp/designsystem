@@ -34,7 +34,7 @@ export default class Container extends Component {
       );
     } else {
       return (
-        <div role="main">
+        <div role="main" id="container">
           {story()}
         </div>
       );

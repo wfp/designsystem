@@ -1,5 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
+import { withInfo } from '@storybook/addon-info';
+import { withReadme } from 'storybook-readme';
+import readme from './README.md';
 import {
   SecondaryNavigation,
   SecondaryNavigationTitle,
@@ -15,45 +18,66 @@ const props = {
   tabs: {
     className: 'some-class',
     triggerHref: '#anotherAnchor',
+    inline: true
   },
   tab: {
     className: 'another-class',
   },
 };
 
-storiesOf('SecondaryNavigation', module).addWithInfo(
-  'default',
-  `
-      Tabs are used to quickly navigate between views within the same context.
-    `,
-  () => (
-    <SecondaryNavigation additional="additional Information">
-      <Breadcrumb>
-        <BreadcrumbItem>
-          <a href="/#">
-            <BreadcrumbHome />
-          </a>
-        </BreadcrumbItem>
-        <BreadcrumbItem href="#">Breadcrumb 2</BreadcrumbItem>
-        <BreadcrumbItem href="#">Breadcrumb 3</BreadcrumbItem>
-      </Breadcrumb>
-
-      <SecondaryNavigationTitle>Title</SecondaryNavigationTitle>
-
-      <Tabs {...props.tabs}>
-        <Tab {...props.tab} label="Tab label 1">
-          <div className="some-content">Content for first tab goes here.</div>
-        </Tab>
-        <Tab {...props.tab} label="Tab label 2">
-          <div className="some-content">Content for second tab goes here.</div>
-        </Tab>
-        <Tab {...props.tab} label="Tab label 3">
-          <div className="some-content">Content for third tab goes here.</div>
-        </Tab>
-        <Tab {...props.tab} label="Tab label 4">
-          <div className="some-content">Content for fourth tab goes here.</div>
-        </Tab>
-      </Tabs>
-    </SecondaryNavigation>
+const renderAnchor = (props) => {
+  console.log(props);
+  return(
+    <a href={props.href}>{props.label}</a>
   )
+};
+
+storiesOf('SecondaryNavigation', module)
+.addDecorator(withReadme([readme]))
+.add(
+    'default',
+    withInfo({
+      text: `
+        The SecondaryNavigation shows the page title and and optional tab navigation
+      `,
+    })(() => (
+      <SecondaryNavigation additional="additional Information">
+        <Breadcrumb>
+          <BreadcrumbItem>
+            <a href="/#">
+              <BreadcrumbHome />
+            </a>
+          </BreadcrumbItem>
+          <BreadcrumbItem href="#">Breadcrumb 2</BreadcrumbItem>
+          <BreadcrumbItem href="#">Breadcrumb 3</BreadcrumbItem>
+        </Breadcrumb>
+        <SecondaryNavigationTitle>The Page Title</SecondaryNavigationTitle>
+        <Tabs {...props.tabs} customTabContent={true}>
+          <Tab {...props.tab} label="Tab label 1" href="http://www.de.wfp.org" renderAnchor={renderAnchor} />
+          <Tab {...props.tab} label="Tab label 2" href="http://www.es.wfp.org" renderAnchor={renderAnchor} />
+          <Tab {...props.tab} label="Tab label 3" href="http://www.us.wfp.org" renderAnchor={renderAnchor} />
+          <Tab {...props.tab} label="Tab label 4" href="http://www.fr.wfp.org" renderAnchor={renderAnchor} />
+        </Tabs>
+      </SecondaryNavigation>
+    ))
+).add(
+    'Heading only',
+    withInfo({
+      text: `
+        The SecondaryNavigation shows the page title and and optional tab navigation
+      `,
+    })(() => (
+      <SecondaryNavigation additional="additional Information">
+        <Breadcrumb>
+          <BreadcrumbItem>
+            <a href="/#">
+              <BreadcrumbHome />
+            </a>
+          </BreadcrumbItem>
+          <BreadcrumbItem href="#">Breadcrumb 2</BreadcrumbItem>
+          <BreadcrumbItem href="#">Breadcrumb 3</BreadcrumbItem>
+        </Breadcrumb>
+        <SecondaryNavigationTitle>The Page Title</SecondaryNavigationTitle>
+      </SecondaryNavigation>
+    ))
 );

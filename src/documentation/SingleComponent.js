@@ -1,25 +1,51 @@
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import React from 'react';
 import Wrapper from '../components/Wrapper';
 
-const SingleComponent = ({ centered, children, html, pageWidth }) => {
-  return (
-    <Wrapper
-      style={
-        centered
-          ? {
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              height: '100%'
-            }
-          : undefined
-      }
-      className="wfp--story"
-      pageWidth={pageWidth}>
-      {children}
-    </Wrapper>
-  );
+import classnames from 'classnames';
+
+
+class SingleComponent extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {height: 0};
+  }
+
+  componentDidMount() {
+    const height = document.getElementById('container').clientHeight;
+
+    console.log("height", height);
+    this.setState({ height });
+  }
+
+  render() {
+    const { centered, children, pageWidth } = this.props;
+    const { height } = this.state;
+
+    const classNames = classnames(
+      'wfp--story',
+      {'wfp--single-component--top': height >= 300}
+    );
+
+    return (
+      <Wrapper
+        style={
+          centered && height <= 300
+            ? {
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                height: '100%'
+              }
+            : undefined
+        }
+        className={classNames}
+        pageWidth={pageWidth}>
+        <div id="container">{children}</div>
+      </Wrapper>
+    )
+  };
 };
 
 SingleComponent.propTypes = {

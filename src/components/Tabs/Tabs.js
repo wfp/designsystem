@@ -32,6 +32,11 @@ export default class Tabs extends React.Component {
     customTabContent: PropTypes.bool,
 
     /**
+     * Specify whether the Tabs are displayed inline
+     */
+    inline: PropTypes.bool,
+
+    /**
      * Specify whether the Tab content is hidden
      */
     hidden: PropTypes.bool,
@@ -181,6 +186,7 @@ export default class Tabs extends React.Component {
     const {
       ariaLabel,
       iconDescription,
+      inline,
       className,
       customTabContent,
       triggerHref,
@@ -219,9 +225,10 @@ export default class Tabs extends React.Component {
     }) : null;
 
     const classes = {
-      tabs: classNames('wfp--tabs', className),
+      tabs: classNames('wfp--tabs'),
       tablist: classNames('wfp--tabs__nav', {
         'wfp--tabs__nav--hidden': this.state.dropdownHidden,
+        'wfp--tabs__nav--inline': inline
       }),
     };
 
