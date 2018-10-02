@@ -5,7 +5,7 @@ import { storiesOf } from '@storybook/react';
 import Page from './Page';
 import Button from '../components/Button';
 import { withReadme } from 'storybook-readme';
-import readme from './FAVICONS-README.md';
+import readme from './EMAIL-README.md';
 
 storiesOf(' Documentation', module)
   .addDecorator(withReadme([readme]))
@@ -17,6 +17,7 @@ storiesOf(' Documentation', module)
           notifications. It is responsive and works in Microsoft Outlook,{' '}
           <a
             href="https://outlook.office365.com/owa/?realm=wfp.org&exsvurl=1&ll-cc=1031&modurl=0"
+            rel="noopener noreferrer"
             target="_blank">
             Microsoft Outlook web
           </a>{' '}
@@ -25,9 +26,7 @@ storiesOf(' Documentation', module)
         </p>
         <p>
           <Button
-            href={`${
-              process.env.STORYBOOK_ASSETS
-            }email/transaction-email.html`}>
+            href={`../assets/email/transaction-email.html`}>
             View eMail template
           </Button>
         </p>

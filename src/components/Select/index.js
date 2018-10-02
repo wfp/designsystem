@@ -1,3 +1,2 @@
 export default from './Select';
-export * from './Select';
-export * from './RfSelect';
+export { default as RfSelect } from './RfSelect';

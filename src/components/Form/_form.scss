@@ -10,6 +10,14 @@
     margin-bottom: $spacing-xl;
   }
 
+  .#{$prefix}--fieldset__inline {
+    display: flex;
+    flex-wrap: wrap;
+    >.#{$prefix}--label {
+      width: 100%;
+    }
+  }
+
   .#{$prefix}--form-item {
     @include font-family;
     flex: 1;

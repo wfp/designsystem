@@ -25,7 +25,7 @@ storiesOf(' Documentation', module).addWithInfo('Icons', ``, () => (
     </p>
 
     <Blockquote title="Notice">
-      WFP UI is using a fork of{' '}
+      WFP UI Icons is using a fork of{' '}
       <Link href="https://github.com/IBM/carbon-icons" target="_blank">
         Carbon Icons
       </Link>. You can find additional information in the{' '}

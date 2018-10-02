@@ -4,6 +4,7 @@ import classnames from 'classnames';
 
 const FormGroup = ({
   legendText,
+  inline,
   invalid,
   children,
   className,
@@ -12,10 +13,10 @@ const FormGroup = ({
   ...other
 }) => {
   const classNamesLegend = classnames('wfp--form-group__title', className);
-  const classNamesFieldset = classnames('wfp--fieldset', className);
+  const classNamesFieldset = classnames('wfp--fieldset', {'wfp--fieldset__inline': inline}, className);
 
   return (
-    <fieldset
+    <div
       {...invalid && { 'data-invalid': '' }}
       className={classNamesFieldset}
       {...other}>
@@ -24,7 +25,7 @@ const FormGroup = ({
       {message ? (
         <div className="wfp--form__requirements">{messageText}</div>
       ) : null}
-    </fieldset>
+    </div>
   );
 };
 

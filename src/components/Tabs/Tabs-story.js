@@ -61,8 +61,6 @@ storiesOf('Tabs', module)
         <Tab {...props.tab()} label="Tab label 3">
           <div className="some-content">Content for third tab goes here.</div>
         </Tab>
-        <Tab {...props.tab()} label="Tab label 4" renderAnchor={el}>
-        </Tab>
       </Tabs>
     ))
   )

@@ -3,6 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { withInfo } from '@storybook/addon-info';
 import { withKnobs, boolean, text } from '@storybook/addon-knobs';
+import FormGroup from '../FormGroup';
 import Checkbox from '../Checkbox';
 import CheckboxSkeleton from '../Checkbox/Checkbox.Skeleton';
 
@@ -54,6 +55,26 @@ storiesOf('Checkbox', module)
           <Checkbox {...checkboxProps} id="checkbox-label-1" />
           <Checkbox {...checkboxProps} id="checkbox-label-2" />
         </fieldset>
+      );
+    })
+  )
+  .add(
+    'inline',
+    withInfo({
+      text: `
+        Checkboxes are used when there is a list of options and the user may select multiple options, including all or none.
+        The example below shows how the Checkbox component can be displayed vertically.
+      `,
+    })(() => {
+      const checkboxProps = props();
+      return (
+        <FormGroup>
+          <legend className="wfp--label">Checkbox heading</legend>
+          <div className="wfp--fieldset__inline">
+            <Checkbox {...checkboxProps} id="checkbox-label-1" />
+            <Checkbox {...checkboxProps} id="checkbox-label-2" />
+          </div>
+        </FormGroup>
       );
     })
   )
