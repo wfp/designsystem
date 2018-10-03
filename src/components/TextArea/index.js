@@ -1,4 +1,4 @@
 export * from './TextArea.Skeleton';
 export default from './TextArea';
-export * from './RfTextArea';
+export { default as RfTextArea } from './RfTextArea';
 

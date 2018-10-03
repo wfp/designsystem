@@ -19,7 +19,7 @@ storiesOf('TextInput', module)
   )
   .addDecorator(story => <HtmlComponent html={Html}>{story()}</HtmlComponent>)
   .addWithInfo(
-    'html only',
+    'html',
     `
      html view
     `,

@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { iconCaretUp, iconCaretDown } from '@wfp/icons';
 import Icon from '../Icon';
 import classNames from 'classnames';
-import Label from '../Label';
+import FormLabel from '../FormLabel';
 
 export default class NumberInput extends Component {
   static propTypes = {
@@ -216,7 +216,7 @@ export default class NumberInput extends Component {
           {/*<label htmlFor={id} className="wfp--label">
             {label}
           </label>*/}
-          <Label {...this.props} />
+          <FormLabel {...this.props} />
           {error}
         </div>
       </div>

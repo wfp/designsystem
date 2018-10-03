@@ -62,7 +62,6 @@ export {
   SecondaryNavigation,
   SecondaryNavigationTitle,
 } from './components/SecondaryNavigation';
-export { SecondaryTabs, SecondaryTabsItem } from './components/SecondaryTabs';
 
 export Select, { RfSelect } from './components/Select';
 export SelectItem from './components/SelectItem';
@@ -86,8 +85,7 @@ export TablePagination from './components/TablePagination';
 export Tab from './components/Tab';
 export TabContent from './components/TabContent';
 export Tabs from './components/Tabs';
-export TextArea from './components/TextArea';
-export RfTextArea from './components/TextArea';
+export TextArea, { RfTextArea } from './components/TextArea';
 export TextInput from './components/TextInput';
 
 export tooltipStyle from './components/Tooltip';
