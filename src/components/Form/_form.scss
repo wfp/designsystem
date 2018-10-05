@@ -56,7 +56,7 @@
   select[data-invalid],
   .#{$prefix}--list-box[data-invalid] {
     border-color: $support-01;
-    box-shadow: 0 2px 0px 0px $support-01;
+    //box-shadow: 0 2px 0px 0px $support-01;
 
     ~ .#{$prefix}--form-requirement {
       max-height: rem(200px);
@@ -157,7 +157,7 @@
   select[data-invalid],
   .#{$prefix}--list-box[data-invalid] {
     border-color: $support-01;
-    box-shadow: 0 2px 0px 0px $support-01;
+    //box-shadow: 0 2px 0px 0px $support-01;
 
     ~ .#{$prefix}--form-requirement {
       max-height: rem(200px);
