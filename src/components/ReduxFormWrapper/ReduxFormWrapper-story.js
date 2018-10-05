@@ -3,6 +3,10 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { withInfo } from '@storybook/addon-info';
 import { withKnobs, boolean, select, text } from '@storybook/addon-knobs';
+
+import { withReadme } from 'storybook-readme';
+import readme from './README.md';
+
 import store from '../../internal/configureStore';
 import { Provider } from 'react-redux';
 import { Field } from 'redux-form';
@@ -67,6 +71,7 @@ const props = {
 
 storiesOf('ReduxFormWrapper', module)
   .addDecorator(withKnobs)
+  .addDecorator(withReadme([readme]))
   .addDecorator(story => (
     <Provider store={store}>
       <FormWrapper>{story()}</FormWrapper>

@@ -8,9 +8,6 @@ import Html from '!!raw-loader!./User.html';
 import { exampleStory } from '../../../.storybook/lucid-docs-addon';
 
 storiesOf('User', module)
-  .addDecorator(story => (
-    <SingleComponent pageWidth="wide">{story()}</SingleComponent>
-  ))
   .addWithInfo(
     'default',
     `
