@@ -32,7 +32,7 @@ class FormEl extends Component {
     return (
       <form onSubmit={handleSubmit} className="wfp-form--stacked">
         {this.props.children}
-        <FormItem>
+        <div>
           <br />
           <FormLabel>Form Debug Controls</FormLabel>
           <br />
@@ -58,7 +58,7 @@ class FormEl extends Component {
           <Blockquote>
             <Values form="SimpleForm" />
           </Blockquote>
-        </FormItem>
+        </div>
       </form>
     );
   }

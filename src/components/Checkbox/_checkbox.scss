@@ -21,6 +21,8 @@
     .#{$prefix}--fieldset__inline & {
       margin-right: $spacing-md;
       margin-top: $spacing-xs;
+      margin-bottom: $spacing-xs;
+      flex: none;
     }
   }
 

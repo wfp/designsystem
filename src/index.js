@@ -8,7 +8,7 @@ export BreadcrumbItem from './components/BreadcrumbItem';
 export BreadcrumbHome from './components/BreadcrumbHome';
 export Button from './components/Button';
 
-export Checkbox, { RfCheckbox } from './components/Checkbox';
+export Checkbox from './components/Checkbox';
 export Credits from './components/Credits';
 
 export ContentSwitcher from './components/ContentSwitcher';
@@ -56,6 +56,9 @@ export Pagination from './components/Pagination';
 
 export RadioButton from './components/RadioButton';
 export RadioButtonGroup from './components/RadioButtonGroup';
+
+export ReduxFormWrapper from './components/ReduxFormWrapper';
+
 export Search from './components/Search';
 
 export {
@@ -63,7 +66,7 @@ export {
   SecondaryNavigationTitle,
 } from './components/SecondaryNavigation';
 
-export Select, { RfSelect } from './components/Select';
+export Select from './components/Select';
 export SelectItem from './components/SelectItem';
 export SelectItemGroup from './components/SelectItemGroup';
 export Switch from './components/Switch';
@@ -85,7 +88,7 @@ export TablePagination from './components/TablePagination';
 export Tab from './components/Tab';
 export TabContent from './components/TabContent';
 export Tabs from './components/Tabs';
-export TextArea, { RfTextArea } from './components/TextArea';
+export TextArea from './components/TextArea';
 export TextInput from './components/TextInput';
 
 export tooltipStyle from './components/Tooltip';

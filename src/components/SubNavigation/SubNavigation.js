@@ -7,7 +7,7 @@ const SubNavigation = ({ children, ...other }) => {
 };
 
 SubNavigation.propTypes = {
-  children: PropTypes.element.isRequired,
+  children: PropTypes.node.isRequired,
 };
 
 const SubNavigationItem = ({ children, className, ...other }) => {

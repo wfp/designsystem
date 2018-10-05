@@ -1,8 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import FormLabel from './FormLabel';
-import SingleComponent from '../../documentation/SingleComponent';
-//import Tooltip from '../Tooltip';
 
 import HtmlComponent from '../../documentation/HtmlComponent';
 import Html from '!!raw-loader!./FormLabel.html';
@@ -13,7 +11,6 @@ const additionalProps = {
 };
 
 storiesOf('FormLabel', module)
-  .addDecorator(story => <SingleComponent>{story()}</SingleComponent>)
   .addWithInfo(
     'Default',
     `

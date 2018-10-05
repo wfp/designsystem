@@ -17,7 +17,16 @@ $padding: (
     @warn 'padding: could not find #{$value} in $padding map. Please make sure it is defined';
   }
 }
-@mixin print($size) {
+
+// -------------------------------------
+// @mixin: print()
+// -------------------------------------
+// usage:
+// @include print {
+// - styles here --
+// }
+// -------------------------------------
+@mixin print() {
   @media print {
     @content;
   }
