@@ -18,33 +18,4 @@ storiesOf('FormLabel', module)
 
   `,
     () => <FormLabel {...additionalProps}>Label</FormLabel>
-  )
-  .addWithInfo(
-    'With tooltip',
-    `
-    Form label with tooltip.
-  `,
-    () => (
-      <FormLabel {...additionalProps}>
-        {/*<Tooltip triggerText="Label">
-          This is the content of the tooltip.
-        </Tooltip>*/}
-      </FormLabel>
-    )
-  );
-
-storiesOf('FormLabel', module)
-  .addDecorator(
-    exampleStory({
-      code: Html,
-      options: { showAddonPanel: true },
-    })
-  )
-  .addDecorator(story => <HtmlComponent html={Html}>{story()}</HtmlComponent>)
-  .addWithInfo(
-    'html',
-    `
-     html view
-    `,
-    () => null
-  );
+);
