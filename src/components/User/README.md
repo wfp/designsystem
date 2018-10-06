@@ -4,9 +4,10 @@ import { User } from  '@wfp/ui';
 ```
 ```js
 <User
-	alt="Image Alt text"
-	name="Max Mustermann"
-	ellipsis={false}
+  alt="Image Alt text"
+  ellipsis={false}
+  name="Max Mustermann"
+  image="https//www.example.com/image.jpg"
 />
 ```
 | Setting | Default | Options | Role |
