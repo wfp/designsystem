@@ -17,7 +17,7 @@ import { exampleStory } from '../../../.storybook/lucid-docs-addon';
 
 const units = [
   {
-    description: 'Generate USD based on USD',
+    description: 'generate USD based on USD',
     sample: 12345.12345,
     setup: {
       type: 'Usd',
@@ -25,7 +25,7 @@ const units = [
   },
   {
     type: 'Usd',
-    description: 'Generate Million USD based on USD and round to Integer',
+    description: 'generate million USD based on USD and round to integer',
     sample: 12345.12345,
     setup: {
       type: 'Usd',
@@ -36,7 +36,7 @@ const units = [
     },
   },
   {
-    description: 'Generate Million USD based on USD External Style',
+    description: 'generate Million USD based on USD, external style',
     sample: 12345.12345,
     setup: {
       type: 'Usd',
@@ -45,7 +45,7 @@ const units = [
     },
   },
   {
-    description: 'Generate USD based on Million USD',
+    description: 'generate USD based on million USD',
     sample: 1,
     setup: {
       type: 'Usd',
@@ -54,7 +54,7 @@ const units = [
     },
   },
   {
-    description: 'Generate Million USD based on Thousands USD',
+    description: 'generate Million USD based on thousands USD',
     sample: 12345.12345,
     setup: {
       type: 'Usd',
@@ -64,68 +64,68 @@ const units = [
     },
   },
   {
-    description: 'Generate Billion USD based on USD',
-    sample: 12345,
+    description: 'level',
+    sample: 3,
     setup: {
       type: 'Level',
     },
   },
   {
-    description: 'Generate Billion USD based on USD',
+    description: 'partners',
     sample: 12345,
     setup: {
       type: 'Partners',
     },
   },
   {
-    description: 'Generate Billion USD based on USD',
+    description: 'beneficaries',
     sample: 12345,
     setup: {
       type: 'Beneficiaries',
     },
   },
   {
-    description: 'Generate Billion USD based on USD',
+    description: 'generate billion USD based on USD',
     sample: 12345,
     setup: {
       type: 'Households',
     },
   },
   {
-    description: 'Display months',
+    description: 'display months',
     sample: 12,
     setup: {
       type: 'Months',
     },
   },
   {
-    description: 'Months singular',
+    description: 'months singular',
     sample: 1,
     setup: {
       type: 'Months',
     },
   },
   {
-    description: 'No Settings',
+    description: 'no settings',
     sample: 'Lorem Ipsum et jomen',
     setup: {},
   },
   {
-    description: 'Generate Megaton',
+    description: 'generate megaton',
     sample: 12345,
     setup: {
       type: 'Mt',
     },
   },
   {
-    description: 'Generate Billion USD based on USD',
+    description: 'generate billion USD based on USD',
     sample: 12345,
     setup: {
       type: 'People',
     },
   },
   {
-    description: 'Million without a Type',
+    description: 'million without a Type',
     sample: 12345,
     setup: {
       type: 'Num',
@@ -133,7 +133,7 @@ const units = [
     },
   },
   {
-    description: 'Generate Billion USD based on USD',
+    description: 'generate billion USD based on USD',
     sample: 5,
     setup: {
       type: 'Percentage',
@@ -141,21 +141,21 @@ const units = [
     },
   },
   {
-    description: 'Generate Billion USD based on USD',
+    description: 'generate billion USD based on USD',
     sample: 12345,
     setup: {
       type: 'Percentage',
     },
   },
   {
-    description: 'Generate Billion USD based on USD',
+    description: 'generate billion USD based on USD',
     sample: 201807,
     setup: {
       type: 'YearMonth',
     },
   },
   {
-    description: 'Returns no Unit',
+    description: 'returns no Unit',
     sample: 'Hello World',
     setup: {
       type: 'None',
@@ -169,7 +169,7 @@ const units = [
     },
   },
   {
-    description: 'Generate Billion USD based on USD',
+    description: 'Generate billion USD based on USD',
     sample: 12345,
     setup: {
       type: 'Countries',

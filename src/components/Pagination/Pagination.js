@@ -9,7 +9,7 @@ import { equals } from '../../tools/array';
 
 let instanceId = 0;
 
-export default class PaginationV2 extends Component {
+export default class Pagination extends Component {
   constructor(props) {
     super(props);
     const { pageSizes, page, pageSize } = this.props;

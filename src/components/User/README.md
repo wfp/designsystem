@@ -1,4 +1,4 @@
-The User Icon is used inside the MainNavigation and can display an Avatar and Username.
+The User Icon is used inside the MainNavigation and can display an avatar and username.
 ```js
 import { User } from  '@wfp/ui';
 ```

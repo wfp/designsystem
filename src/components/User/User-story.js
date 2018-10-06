@@ -1,6 +1,5 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
 import { withInfo } from '@storybook/addon-info';
 
 import { withReadme } from 'storybook-readme';
@@ -8,12 +7,6 @@ import readme from './README.md';
 
 import { withKnobs, boolean, select, text } from '@storybook/addon-knobs';
 import User from '../User';
-
-const types = {
-  '': 'None',
-  email: 'For email (email)',
-  password: 'For password (password)',
-};
 
 const UserProps = () => ({
   alt: text('Alternative Text (alt)', 'The Alt Text'),
