@@ -1,58 +1,37 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import SingleComponent from '../../documentation/SingleComponent';
+import { action } from '@storybook/addon-actions';
+import { withInfo } from '@storybook/addon-info';
+
+import { withReadme } from 'storybook-readme';
+import readme from './README.md';
+
+import { withKnobs, boolean, select, text } from '@storybook/addon-knobs';
 import User from '../User';
 
-import HtmlComponent from '../../documentation/HtmlComponent';
-import Html from '!!raw-loader!./User.html';
-import { exampleStory } from '../../../.storybook/lucid-docs-addon';
+const types = {
+  '': 'None',
+  email: 'For email (email)',
+  password: 'For password (password)',
+};
+
+const UserProps = () => ({
+  alt: text('Alternative Text (alt)', 'The Alt Text'),
+  ellipsis: boolean('Ellipsis (ellipsis)', false),
+  className: 'some-class',
+  image: text('Image (image)', undefined),
+  name: text('User name (name)', 'Max Mustermann'),
+  small: boolean('Small (small)', false)
+});
 
 storiesOf('User', module)
-  .addWithInfo(
-    'default',
-    `
-      The example below shows an User Icon.
-
-      ~~~js
-      import { User } from '@wfp/ui';
-      ~~~
-    `,
-    () => <User name="Max Mustermann" />
-  )
-  .addWithInfo(
-    'Small',
-    `
-      The example below shows an User Icon with the Username only visible on desktop devices.
-    `,
-    () => <User small name="Very long and difficult username" />
-  )
-  .addWithInfo(
-    'Ellipsis',
-    `
-      The example below shows an User Icon.
-    `,
-    () => <User ellipsis name="Very long and difficult username" />
-  )
-  .addWithInfo(
-    'Image only',
-    `
-      The example below shows an User Icon.
-    `,
-    () => <User />
-  );
-
-storiesOf('User', module)
-  .addDecorator(
-    exampleStory({
-      code: Html,
-      options: { showAddonPanel: true },
-    })
-  )
-  .addDecorator(story => <HtmlComponent html={Html}>{story()}</HtmlComponent>)
-  .addWithInfo(
-    'html',
-    `
-     html view
-    `,
-    () => null
+  .addDecorator(withKnobs)
+  .addDecorator(withReadme([readme]))
+  .add(
+    'Default',
+    withInfo({
+      text: `
+        The User Icon is used inside the MainNavigation and can display an Avatar and Username.
+      `,
+    })(() => <User {...UserProps()} />)
   );

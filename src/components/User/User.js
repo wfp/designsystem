@@ -48,6 +48,7 @@ User.propTypes = {
 
 User.defaultProps = {
   alt: 'User Icon',
+  ellipsis: false
 };
 
 export default User;
