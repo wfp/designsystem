@@ -1,5 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
+import { withInfo } from '@storybook/addon-info';
 
 import { withReadme } from 'storybook-readme';
 import readme from './README.md';
@@ -180,16 +181,6 @@ const units = [
 storiesOf('Unit', module)
   .addDecorator(withKnobs)
   .addDecorator(withReadme([readme]))
-  .addDecorator(story => (
-    <SingleComponent pageWidth="wide">{story()}</SingleComponent>
-  ))
-  .addWithInfo(
-    'default',
-    `
-      Default minimal usage
-    `,
-    () => <Unit type="Usd">231321133</Unit>
-  )
   .addWithInfo(
     'Samples',
     `
@@ -231,7 +222,7 @@ storiesOf('Unit', module)
         {
           Header: 'Description',
           accessor: 'description',
-          width: 300,
+          width: 500,
         },
       ];
 
@@ -263,13 +254,15 @@ storiesOf('Unit', module)
       );
     }
   )
-  .addWithInfo(
-    'Options',
-    `
-      Use Knobs to configure the options
-    `,
-    () => {
-      const options = {
+
+  .add(
+    'default',
+    withInfo({
+      text: `
+        use Knobs to customize Unit component
+      `,
+    })(() => {
+      const typeOptions = {
         None: 'None',
         Narrow: 'Narrow',
         Usd: 'Usd',
@@ -286,62 +279,34 @@ storiesOf('Unit', module)
         Percentage: 'Percentage',
       };
 
-      const type = select('type', options, 'Usd');
-      const output = text('output', 'million');
-      const value = text('value', 1000000);
-      const from = text('from', undefined);
-      const minimumFractionDigits = number('minimumFractionDigits', undefined);
-      const maximumFractionDigits = number('maximumFractionDigits', undefined);
-      const maximumSignificantDigits = number(
-        'maximumSignificantDigits',
-        undefined
-      );
-      const hideEmpty = text('hideEmpty', undefined);
+      const decimalOptions = {
+        undefined: undefined,
+        thousand: 'thousand',
+        million: 'million',
+        billion: 'billion'
+      };
+
+
+      const unitProps = {
+        type: select('Unit type (type)', typeOptions, 'Usd'),
+        output: select('Output decimal name (output)', decimalOptions,'million'),
+        from: select('Input decimal name (from)', decimalOptions, undefined),
+        minimumFractionDigits: number('minimum number of fraction digits to use (minimumFractionDigits)', undefined),
+        maximumFractionDigits: number('minimum number of fraction digits to use (maximumFractionDigits)', undefined),
+        maximumSignificantDigits: number('maximum number of significant digits to use (maximumSignificantDigits)', undefined),
+        hideEmpty: text('hide value if empty (hideEmpty)', undefined)
+      }
+      const value= text('value', 1000000);
 
       return (
-        <div>
-          <h3>Preview</h3>
-
-          <div
-            style={{
-              display: 'flex',
-              border: '1px solid #CCC',
-              marginBottom: '1em',
-              justifyContent: 'center',
-              alignItems: 'center',
-              height: '70px',
-            }}>
-            <Unit
-              type={type}
-              from={from}
-              minimumFractionDigits={minimumFractionDigits}
-              maximumFractionDigits={maximumFractionDigits}
-              maximumSignificantDigits={maximumSignificantDigits}
-              hideEmpty={hideEmpty}
-              output={output}>
-              {value}
-            </Unit>
-          </div>
-          <p>Use Knobs to customize the Probs of the Unit Component.</p>
-          <div>
-            <Blockquote title="Generated Code" type="code">
-              {`<Unit
-  type="${type}"
-  from="${from}"
-  minimumFractionDigits="${minimumFractionDigits}"
-  maximumSignificantDigits="${maximumSignificantDigits}"
-  hideEmpty="${hideEmpty}"
->
-  ${value}
-</Unit>`}
-            </Blockquote>
-          </div>
-        </div>
+        <Unit {...unitProps}>
+          {value}
+        </Unit>
       );
-    }
+    })
   );
 
-storiesOf('Unit', module)
+/*storiesOf('Unit', module)
   .addDecorator(
     exampleStory({
       code: Html,
@@ -355,4 +320,21 @@ storiesOf('Unit', module)
      html view
     `,
     () => null
+  ); */
+
+  storiesOf('Unit', module)
+  .addDecorator(
+    exampleStory({
+      code: Html,
+      options: { showAddonPanel: true },
+    })
+  )
+  .addDecorator(story => <HtmlComponent html={Html}>{story()}</HtmlComponent>)
+  .add(
+    'html',
+    withInfo({
+      text: `
+        html view
+      `,
+    })(() => null)
   );

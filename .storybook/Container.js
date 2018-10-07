@@ -32,7 +32,15 @@ export default class Container extends Component {
           <SingleComponent html={context.story.includes('html') ? true : false}>{story()}</SingleComponent>
         </div>
       );
-    } else {
+    } 
+    else if (context.story.includes('html')) {
+      return (
+        <div role="main">
+          <HtmlComponent html={Html}>{story()}</HtmlComponent>
+        </div>
+      );
+    }
+    else {
       return (
         <div role="main" id="container">
           {story()}
