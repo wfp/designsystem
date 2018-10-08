@@ -6,6 +6,7 @@ import { withKnobs, boolean, text } from '@storybook/addon-knobs';
 import ModalWrapper from '../ModalWrapper';
 import TextInput from '../TextInput';
 import Select from '../Select';
+import Button from '../Button';
 import SelectItem from '../SelectItem';
 import RadioButtonGroup from '../RadioButtonGroup';
 import RadioButton from '../RadioButton';
@@ -148,6 +149,35 @@ storiesOf('ModalWrapper', module)
             disabled
           />
         </RadioButtonGroup>
+      </ModalWrapper>
+    ))
+  )
+  .add(
+    'custom button',
+    withInfo({
+      text: `
+        Using the customButton prop allows you to use a custom trigger element for opening the modal.
+      `,
+    })(() => (
+      <ModalWrapper
+        id="transactional-passive-modal"
+        handleSubmit={() => {
+          action('onSubmit')();
+          return true;
+        }}
+        customButton={<Button kind="danger">Custom Button</Button>}
+        {...props()}>
+        <p className="wfp--modal-content__text">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+          cursus fermentum risus, sit amet fringilla nunc pellentesque quis.
+          Duis quis odio ultrices, cursus lacus ac, posuere felis. Donec
+          dignissim libero in augue mattis, a molestie metus vestibulum. Aliquam
+          placerat felis ultrices lorem condimentum, nec ullamcorper felis
+          porttitor. Nunc at maximus purus. Curabitur sodales eros sit amet
+          dolor bibendum gravida. Sed efficitur, arcu imperdiet vestibulum
+          ultrices, risus diam ullamcorper arcu, sit amet gravida metus ligula
+          quis metus.
+        </p>
       </ModalWrapper>
     ))
   );

@@ -9,6 +9,7 @@ export default class ModalWrapper extends React.Component {
     status: PropTypes.string,
     handleOpen: PropTypes.func,
     children: PropTypes.node,
+    customButton: PropTypes.element,
     id: PropTypes.string,
     buttonTriggerText: PropTypes.node,
     buttonTriggerClassName: PropTypes.string,
@@ -66,6 +67,8 @@ export default class ModalWrapper extends React.Component {
   render() {
     const {
       children,
+      customButton,
+      id,
       onKeyDown,
       buttonTriggerText,
       buttonTriggerClassName,
@@ -83,6 +86,14 @@ export default class ModalWrapper extends React.Component {
       onRequestSubmit: this.handleOnRequestSubmit,
     };
 
+    const customButtonEl = customButton	
+      ? React.cloneElement(customButton, {
+          disabled: disabled,	
+          onClick: this.handleOpen,
+          inputref: this.triggerButton
+        })	
+      : undefined;
+
     return (
       <div
         role="presentation"
@@ -92,14 +103,21 @@ export default class ModalWrapper extends React.Component {
             onKeyDown(evt);
           }
         }}>
-        <Button
-          className={buttonTriggerClassName}
-          disabled={disabled}
-          kind={triggerButtonKind}
-          onClick={this.handleOpen}
-          inputref={this.triggerButton}>
-          {buttonTriggerText}
-        </Button>
+        {customButton ? (	 
+          <React.Fragment>
+            {customButtonEl}
+          </React.Fragment>	 
+        ) : (
+          <Button
+            id={id}
+            className={buttonTriggerClassName}
+            disabled={disabled}
+            kind={triggerButtonKind}
+            onClick={this.handleOpen}
+            inputref={this.triggerButton}>
+            {buttonTriggerText}
+          </Button>
+        )}
         <Modal {...props}>{children}</Modal>
       </div>
     );

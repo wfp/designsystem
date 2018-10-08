@@ -17,30 +17,28 @@ export default class Container extends Component {
     console.log(this.props);
 
     if (context.story.includes('html')) {
-      setOptions({ selectedAddonPanel: 'lucid-docs-panel-code' })
-    }
-    else if (context.story.includes('Right to left')) {
-      setOptions({ selectedAddonPanel: 'storybook/rtl/rtl-panel' })
-    }
-    else {
-      setOptions({ selectedAddonPanel: 'REACT_STORYBOOK/readme/panel' })
+      setOptions({ selectedAddonPanel: 'lucid-docs-panel-code' });
+    } else if (context.story.includes('Right to left')) {
+      setOptions({ selectedAddonPanel: 'storybook/rtl/rtl-panel' });
+    } else {
+      setOptions({ selectedAddonPanel: 'REACT_STORYBOOK/readme/panel' });
     }
 
     if (context && !context.kind.indexOf(' ') == 0) {
       return (
         <div role="main">
-          <SingleComponent html={context.story.includes('html') ? true : false}>{story()}</SingleComponent>
+          <SingleComponent html={context.story.includes('html') ? true : false}>
+            {story()}
+          </SingleComponent>
         </div>
       );
-    } 
-    else if (context.story.includes('html')) {
+    } else if (context.story.includes('html')) {
       return (
         <div role="main">
           <HtmlComponent html={Html}>{story()}</HtmlComponent>
         </div>
       );
-    }
-    else {
+    } else {
       return (
         <div role="main" id="container">
           {story()}
