@@ -2,17 +2,22 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { withInfo } from '@storybook/addon-info';
-import { BannerNavigation, BannerNavigationItem } from './BannerNavigation';
-import { BannerNavigationWithContent } from './BannerNavigationWithContent';
-import Search from '../Search';
-import Link from '../Link';
+
+import { withReadme } from 'storybook-readme';
+import readme from './README.md';
 
 import HtmlComponent from '../../documentation/HtmlComponent';
 import { exampleStory } from '../../../.storybook/lucid-docs-addon';
 
 import Html from '!!raw-loader!./BannerNavigation.html';
 
+import { BannerNavigation, BannerNavigationItem } from './BannerNavigation';
+import { BannerNavigationWithContent } from './BannerNavigationWithContent';
+import Search from '../Search';
+import Link from '../Link';
+
 storiesOf('BannerNavigation', module)
+.addDecorator(withReadme([readme]))
 .add(
   'default',
   withInfo({

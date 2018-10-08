@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 import classNames from 'classnames';
 import { iconClose } from '@wfp/icons';
 import Icon from '../Icon';
@@ -11,6 +12,8 @@ const matchesFuncName =
     name => typeof Element.prototype[name] === 'function'
   )[0];
 
+const modalRoot = document.body;
+
 export default class Modal extends Component {
   static propTypes = {
     children: PropTypes.node,
@@ -18,6 +21,7 @@ export default class Modal extends Component {
     passiveModal: PropTypes.bool,
     onRequestClose: PropTypes.func,
     id: PropTypes.string,
+    inPortal: PropTypes.bool,
     modalHeading: PropTypes.string,
     modalLabel: PropTypes.string,
     modalAriaLabel: PropTypes.string,
@@ -42,6 +46,7 @@ export default class Modal extends Component {
     onKeyDown: () => {},
     passiveModal: false,
     iconDescription: 'close the modal',
+    inPortal: true,
     modalHeading: '',
     modalLabel: '',
     selectorsFloatingMenus: [
@@ -51,6 +56,11 @@ export default class Modal extends Component {
     ],
     selectorPrimaryFocus: '[data-modal-primary-focus]',
   };
+  
+  constructor(props) {
+    super(props);
+    this.el = document.createElement('div');
+  }
 
   button = React.createRef();
   outerModal = React.createRef();
@@ -111,7 +121,16 @@ export default class Modal extends Component {
     }
   };
 
+  componentDidMount() {
+    modalRoot.appendChild(this.el);
+  }
+
+  componentWillUnmount() {
+    modalRoot.removeChild(this.el);
+  }
+
   componentDidUpdate(prevProps) {
+
     if (!prevProps.open && this.props.open) {
       this.beingOpen = true;
     } else if (prevProps.open && !this.props.open) {
@@ -151,6 +170,7 @@ export default class Modal extends Component {
 
   render() {
     const {
+      inPortal,
       modalHeading,
       modalLabel,
       modalAriaLabel,
@@ -232,7 +252,8 @@ export default class Modal extends Component {
       </div>
     );
 
-    return (
+
+    const modal = (
       <div
         {...other}
         onKeyDown={this.handleKeyDown}
@@ -246,5 +267,15 @@ export default class Modal extends Component {
         {modalBody}
       </div>
     );
+
+    if (inPortal) {
+      return ReactDOM.createPortal(
+        modal,
+        this.el,
+      );
+    }
+    else {
+      return modal;
+    }
   }
 }

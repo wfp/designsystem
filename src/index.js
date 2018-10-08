@@ -14,6 +14,7 @@ export Credits from './components/Credits';
 
 export ContentSwitcher from './components/ContentSwitcher';
 
+export FileUploader from './components/FileUploader';
 export Footer from './components/Footer';
 export Form from './components/Form';
 export FormGroup from './components/FormGroup';
