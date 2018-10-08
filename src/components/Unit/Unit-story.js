@@ -181,12 +181,13 @@ const units = [
 storiesOf('Unit', module)
   .addDecorator(withKnobs)
   .addDecorator(withReadme([readme]))
-  .addWithInfo(
+  .add(
     'Samples',
-    `
-      Some usage samples
-    `,
-    () => {
+    withInfo({
+      text: `
+        Some sample Units
+      `,
+    })(() => {
       const columns = [
         {
           Header: 'HTML',
@@ -252,7 +253,7 @@ storiesOf('Unit', module)
           }}
         />
       );
-    }
+    })
   )
 
   .add(
@@ -285,7 +286,6 @@ storiesOf('Unit', module)
         million: 'million',
         billion: 'billion'
       };
-
 
       const unitProps = {
         type: select('Unit type (type)', typeOptions, 'Usd'),

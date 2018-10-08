@@ -135,18 +135,6 @@
     right: 0.75rem;
   }
 
-  .#{$prefix}--search--banner {
-    .#{$prefix}--search-magnifier,
-    .#{$prefix}--search-close {
-      height: 0.8rem;
-      width: 0.8rem;
-      top: calc(50% - 0.4rem);
-    }
-    .#{$prefix}--search-magnifier {
-      left: rem(7px);
-    }
-  }
-
   .#{$prefix}--search--lg .#{$prefix}--search-close {
     right: rem(12px);
   }
@@ -205,6 +193,25 @@
 
     &::placeholder {
       color: transparent;
+    }
+  }
+
+  .#{$prefix}--search--banner {
+    .#{$prefix}--search-magnifier,
+    .#{$prefix}--search-close {
+      height: 0.8rem;
+      width: 0.8rem;
+      top: calc(50% - 0.4rem);
+    }
+    .#{$prefix}--search-magnifier {
+      left: rem(7px);
+    }
+    .#{$prefix}--search-close {
+      right: rem(7px);
+      svg {
+        width: 100%;
+        height: 100%;
+      }
     }
   }
 }

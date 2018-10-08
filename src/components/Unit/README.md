@@ -7,13 +7,12 @@ import { Unit } from '@wfp/ui';
 ```js
 <Unit
   type="Usd"
-  setup={{
-    "output":"million",
-    "input":"thousand",
-    "showZero"
-  }}
+  input="thousand"
+  output="million"
+  showZero
+  hideEmpty
 >
-  1000000
+  1234567
 </Unit>
 ```
 

@@ -1,7 +1,9 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
+import { withInfo } from '@storybook/addon-info';
 import { BannerNavigation, BannerNavigationItem } from './BannerNavigation';
+import { BannerNavigationWithContent } from './BannerNavigationWithContent';
 import Search from '../Search';
 import Link from '../Link';
 
@@ -10,16 +12,18 @@ import { exampleStory } from '../../../.storybook/lucid-docs-addon';
 
 import Html from '!!raw-loader!./BannerNavigation.html';
 
-storiesOf('BannerNavigation', module).addWithInfo(
+storiesOf('BannerNavigation', module)
+.add(
   'default',
-  `
-      The BannerNavigation is used on internal applications above the main navigation to crosslink between the most important internal applications. It is hidden on Mobile devices.
+  withInfo({
+    text: `
+    The BannerNavigation is used on internal applications above the main navigation to crosslink between the most important internal applications. It is hidden on Mobile devices.
 
-      ~~~js
-      import { BannerNavigation, BannerNavigationItem } from '@wfp/ui';
-      ~~~
+    ~~~js
+    import { BannerNavigation, BannerNavigationItem } from '@wfp/ui';
+    ~~~
     `,
-  () => (
+  })(() => (
     <BannerNavigation>
       <BannerNavigationItem>
         <Link href="http://communities.wfp.org" target="_blank">
@@ -66,7 +70,21 @@ storiesOf('BannerNavigation', module).addWithInfo(
         />
       </BannerNavigationItem>
     </BannerNavigation>
-  )
+  ))
+)
+.add(
+  'BannerNavigationWithContent',
+  withInfo({
+    text: `
+    The BannerNavigation is used on internal applications above the main navigation to crosslink between the most important internal applications. It is hidden on Mobile devices.
+
+    ~~~js
+    import { BannerNavigation, BannerNavigationItem } from '@wfp/ui';
+    ~~~
+    `,
+  })(() => (
+    <BannerNavigationWithContent />
+  ))
 );
 
 storiesOf('BannerNavigation', module)
@@ -77,10 +95,11 @@ storiesOf('BannerNavigation', module)
     })
   )
   .addDecorator(story => <HtmlComponent html={Html}>{story()}</HtmlComponent>)
-  .addWithInfo(
+  .add(
     'html',
-    `
-     html view
-    `,
-    () => null
+    withInfo({
+      text: `
+        html view
+      `,
+    })(() => null)
   );
