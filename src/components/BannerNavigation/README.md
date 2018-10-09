@@ -2,6 +2,8 @@ The BannerNavigation is used on internal applications only and allows the user t
 
 ### Usage with default content
 
+`BannerNavigationWithContent` will contain the default links and search input for on the [Global Telephone Directory](http://gtd.wfp.org/).
+
 ```js
 import { BannerNavigationWithContent } from  '@wfp/ui';
 ```
@@ -11,6 +13,7 @@ import { BannerNavigationWithContent } from  '@wfp/ui';
 
 ### Usage with custom content
 
+`BannerNavigation` allows you to use custom `BannerNavigationItem` components inside.
 ```js
 import { BannerNavigation } from  '@wfp/ui';
 ```
@@ -34,7 +37,7 @@ import { BannerNavigation } from  '@wfp/ui';
 ```
 | Setting | Default | Options | Role |
 | -------- | ----------- | -------------------- | ---------------------------------------------- |
-| alt | `undefined` | `string` | The alt-text of the avatar |
-| name | `undefined` | `string`  `undefined` | The user name. If `undefined` only the avatar image will be displayed  |
-| ellipsis | `false` | `boolean` | Sets the max-width of the user name to `130px` and shows an ellipsis  |
-| image | `undefined` | `string` | Url to an avatar image The size of the image is `25px` * `25px`. Provide at least `50px` * `50px` to support HiDPI displays. |
+| children | `undefined` | `string` | List of `BannerNavigationItem` components |
+| className | `undefined` | `string`  `undefined` | Additional className which will be added to the `BannerNavigation`  |
+| id | `false` | `boolean` | Sets an `id`  |
+| pageWidth | `undefined` | `string` | See `Wrapper` component for possible arguments |
