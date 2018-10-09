@@ -34,7 +34,7 @@ const Footer = ({
   );
 
   const footer = (
-    <footer {...other} className={classNames}>
+    <footer className={classNames}>
       <Wrapper pageWidth={pageWidth}>
         <div className="wfp--footer__content">
           {children ? (

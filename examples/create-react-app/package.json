@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "@wfp/icons": "^0.0.57",
-    "@wfp/ui": "^1.1.33",
+    "@wfp/ui": "^1.1.36",
     "node-sass": "^4.9.3",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
@@ -17,7 +17,10 @@
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": "react-app",
+    "globals": {
+      "__DEV__": true
+    }
   },
   "browserslist": [
     ">0.2%",
