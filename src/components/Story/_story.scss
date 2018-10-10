@@ -33,6 +33,7 @@
     }
     h4 {
       margin: $spacing-xs 0;
+      @include typescale('epsilon');
     }
     sup {
       font-size: 0.7em;
