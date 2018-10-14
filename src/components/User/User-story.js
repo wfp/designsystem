@@ -14,7 +14,7 @@ const UserProps = () => ({
   className: 'some-class',
   image: text('Image (image)', undefined),
   name: text('User name (name)', 'Max Mustermann'),
-  small: boolean('Small (small)', false)
+  small: boolean('Small (small)', false),
 });
 
 storiesOf('User', module)

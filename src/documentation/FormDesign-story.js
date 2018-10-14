@@ -61,7 +61,9 @@ storiesOf(' Documentation', module).addWithInfo('Form Design', ``, () => (
       than multi-column layouts with questions positioned side-by-side.
     </p>*/}
     <p>
-      User attention should always be directed on one task at a time, 2 items on the same line will compete for attention as there is no visual priority between them, resulting in a heavier task for the user.
+      User attention should always be directed on one task at a time, 2 items on
+      the same line will compete for attention as there is no visual priority
+      between them, resulting in a heavier task for the user.
     </p>
     <p>
       The only exception to this rule is when the input needs multiple field
@@ -74,7 +76,10 @@ storiesOf(' Documentation', module).addWithInfo('Form Design', ``, () => (
 
     <h4>2 columns layout exceptions apply to:</h4>
 
-    <h5>1. Information that people perceive as one but need more than one input field to complete</h5>
+    <h5>
+      1. Information that people perceive as one but need more than one input
+      field to complete
+    </h5>
 
     <ul className="wfp--story--list">
       <li>dd – mm – yyyy (date picker)</li>
@@ -89,13 +94,19 @@ storiesOf(' Documentation', module).addWithInfo('Form Design', ``, () => (
       <li>CVV and credit card expiry date</li>
     </ul>
 
-    <h5>3. Information that are complementary and/or more meaningful if read together</h5>
+    <h5>
+      3. Information that are complementary and/or more meaningful if read
+      together
+    </h5>
 
     <ul className="wfp--story--list">
       <li>currency - currency exchange rate</li>
     </ul>
 
-    <h5>4. When one field is non editable and used for comparison/reference purposes</h5>
+    <h5>
+      4. When one field is non editable and used for comparison/reference
+      purposes
+    </h5>
 
     <ul>
       <li>country data input - RB data read only</li>

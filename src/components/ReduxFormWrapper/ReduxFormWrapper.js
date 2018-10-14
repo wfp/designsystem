@@ -1,8 +1,12 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-const ReduxFormWrapper = WrappedComponent => (
-  ({input, meta: { touched, error, warning }, children, ...other}) => {
+const ReduxFormWrapper = WrappedComponent => ({
+  input,
+  meta: { touched, error, warning },
+  children,
+  ...other
+}) => {
   if (WrappedComponent === undefined) return null;
   return (
     <WrappedComponent
@@ -11,18 +15,15 @@ const ReduxFormWrapper = WrappedComponent => (
       labelText={
         <React.Fragment>
           {other.labelText}
-          {other.required &&
-            <div className="wfp--label__required"></div>
-          }
+          {other.required && <div className="wfp--label__required" />}
         </React.Fragment>
       }
       invalidText={error}
-      invalid={touched && error}
-    >
+      invalid={touched && error}>
       {children}
     </WrappedComponent>
-  )}
-);
+  );
+};
 
 ReduxFormWrapper.propTypes = {
   /**

@@ -8,7 +8,7 @@ $feature-flags: () !default;
 // Default feature flag values
 $default-feature-flags: (
   components-x: false,
-  ui-shell: false,
+  ui-shell: false
 );
 
 $did-warn-diverged-feature-flags: false !default !global;
@@ -29,9 +29,9 @@ $did-warn-diverged-feature-flags: false !default !global;
     }
 
     @if (length($diverged) > 0) {
-      @warn 'Usage of non-default feature flags was found: #{$diverged}. ' +
-        'Feature/code under non-default feature flags are either experimental, deprecated, or support for edge cases. ' +
-        'They are subject to change any time. Use them at your own risk.';
+      @warn 'Usage of non-default feature flags was found: #{$diverged}. ' + 'Feature/code under non-default feature flags are either experimental,
+        deprecated,
+        or support for edge cases. ' + 'They are subject to change any time. Use them at your own risk.';
       $did-warn-diverged-feature-flags: true !global;
     }
   }
@@ -47,37 +47,23 @@ $feature-flags: merge-feature-flags($default-feature-flags, $feature-flags);
 @if global-variable-exists(css--use-experimental-grid) == true {
   $feature-flags: map-merge(
     $feature-flags,
-    (
-      grid: $css--use-experimental-grid,
-    )
+     (grid: $css--use-experimental-grid)
   );
 }
 
 @if global-variable-exists(css--use-experimental-grid-fallback) == true {
   $feature-flags: map-merge(
     $feature-flags,
-    (
-      grid--fallback: $css--use-experimental-grid-fallback,
-    )
+     (grid--fallback: $css--use-experimental-grid-fallback)
   );
 }
 
 // However, if we don't have those flags available let's go ahead and add in
 // some defaults for the grid and grid--fallback
 @if map-has-key($feature-flags, grid) == false {
-  $feature-flags: map-merge(
-    $feature-flags,
-    (
-      grid: false,
-    )
-  );
+  $feature-flags: map-merge($feature-flags,  (grid: false));
 }
 
 @if map-has-key($feature-flags, grid--fallback) == false {
-  $feature-flags: map-merge(
-    $feature-flags,
-    (
-      grid--fallback: false,
-    )
-  );
+  $feature-flags: map-merge($feature-flags,  (grid--fallback: false));
 }

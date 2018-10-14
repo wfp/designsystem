@@ -56,7 +56,7 @@ export default class Modal extends Component {
     ],
     selectorPrimaryFocus: '[data-modal-primary-focus]',
   };
-  
+
   constructor(props) {
     super(props);
     this.el = document.createElement('div');
@@ -130,7 +130,6 @@ export default class Modal extends Component {
   }
 
   componentDidUpdate(prevProps) {
-
     if (!prevProps.open && this.props.open) {
       this.beingOpen = true;
     } else if (prevProps.open && !this.props.open) {
@@ -252,7 +251,6 @@ export default class Modal extends Component {
       </div>
     );
 
-
     const modal = (
       <div
         {...other}
@@ -269,12 +267,8 @@ export default class Modal extends Component {
     );
 
     if (inPortal) {
-      return ReactDOM.createPortal(
-        modal,
-        this.el,
-      );
-    }
-    else {
+      return ReactDOM.createPortal(modal, this.el);
+    } else {
       return modal;
     }
   }

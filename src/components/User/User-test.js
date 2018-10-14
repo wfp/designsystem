@@ -4,11 +4,7 @@ import { mount, shallow } from 'enzyme';
 
 describe('User', () => {
   describe('renders as expected', () => {
-    const wrapper = mount(
-      <User
-        name="Username"
-      />
-    );
+    const wrapper = mount(<User name="Username" />);
 
     const userWrapper = () => wrapper.find('div.wfp--user');
 
@@ -28,7 +24,7 @@ describe('User', () => {
     });
 
     const userTitle = () => wrapper.find('span');
-    
+
     describe('usertitle', () => {
       it('renders as expected', () => {
         expect(userTitle().length).toBe(1);
@@ -40,7 +36,9 @@ describe('User', () => {
 
       it('has the expected classes for ellipsis', () => {
         wrapper.setProps({ ellipsis: true });
-        expect(userTitle().hasClass('wfp--user__title--ellipsis')).toEqual(true);
+        expect(userTitle().hasClass('wfp--user__title--ellipsis')).toEqual(
+          true
+        );
       });
 
       it('should set value as expected', () => {

@@ -5,20 +5,23 @@ The BannerNavigation is used on internal applications only and allows the user t
 `BannerNavigationWithContent` will contain the default links and search input for on the [Global Telephone Directory](http://gtd.wfp.org/).
 
 ```js
-import { BannerNavigationWithContent } from  '@wfp/ui';
+import { BannerNavigationWithContent } from '@wfp/ui';
 ```
+
 ```js
- <BannerNavigationWithContent pageWidth="narrow" />
+<BannerNavigationWithContent pageWidth="narrow" />
 ```
 
 ### Usage with custom content
 
 `BannerNavigation` allows you to use custom `BannerNavigationItem` components inside.
+
 ```js
-import { BannerNavigation } from  '@wfp/ui';
+import { BannerNavigation } from '@wfp/ui';
 ```
+
 ```js
- <BannerNavigation>
+<BannerNavigation>
   <BannerNavigationItem>
     <Link href="http://communities.wfp.org" target="_blank">
       Communities
@@ -35,9 +38,10 @@ import { BannerNavigation } from  '@wfp/ui';
   </BannerNavigationItem>
 </BannerNavigation>
 ```
-| Setting | Default | Options | Role |
-| -------- | ----------- | -------------------- | ---------------------------------------------- |
-| children | `undefined` | `string` | List of `BannerNavigationItem` components |
-| className | `undefined` | `string`  `undefined` | Additional className which will be added to the `BannerNavigation`  |
-| id | `false` | `boolean` | Sets an `id`  |
-| pageWidth | `undefined` | `string` | See `Wrapper` component for possible arguments |
+
+| Setting   | Default     | Options              | Role                                                               |
+| --------- | ----------- | -------------------- | ------------------------------------------------------------------ |
+| children  | `undefined` | `string`             | List of `BannerNavigationItem` components                          |
+| className | `undefined` | `string` `undefined` | Additional className which will be added to the `BannerNavigation` |
+| id        | `false`     | `boolean`            | Sets an `id`                                                       |
+| pageWidth | `undefined` | `string`             | See `Wrapper` component for possible arguments                     |

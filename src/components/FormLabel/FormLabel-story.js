@@ -10,12 +10,11 @@ const additionalProps = {
   className: 'some-class',
 };
 
-storiesOf('FormLabel', module)
-  .addWithInfo(
-    'Default',
-    `
+storiesOf('FormLabel', module).addWithInfo(
+  'Default',
+  `
     Form label.
 
   `,
-    () => <FormLabel {...additionalProps}>Label</FormLabel>
+  () => <FormLabel {...additionalProps}>Label</FormLabel>
 );

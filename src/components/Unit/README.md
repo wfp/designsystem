@@ -5,13 +5,7 @@ import { Unit } from '@wfp/ui';
 ```
 
 ```js
-<Unit
-  type="Usd"
-  input="thousand"
-  output="million"
-  showZero
-  hideEmpty
->
+<Unit type="Usd" input="thousand" output="million" showZero hideEmpty>
   1234567
 </Unit>
 ```

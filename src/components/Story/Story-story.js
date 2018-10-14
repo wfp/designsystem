@@ -34,16 +34,18 @@ storiesOf('Story', module).addWithInfo(
         countless lives and causing massive displacement. The Kasai crisis
         unfolded within a country already struggling with a protracted and
         underfunded emergency in the east. Since the emergence of the Kasai
-        crisis, funding shortfalls proved to be a major challenge to
-        WFP’s response.
+        crisis, funding shortfalls proved to be a major challenge to WFP’s
+        response.
       </p>
-       <p>
+      <p>
         The scale of the food security and nutrition crisis in Kasai is immense.
-        In September 2017, the <span className="wfp--inline-highlight">World Food Programme (WFP)’s Emergency Food
-        Security Assessment</span> found that there were 3.2 million severely food
-        insecure people in this region alone. In addition, 400,000 children are
-        at risk of dying from severe acute malnutrition without urgent
-        life-saving assistance.
+        In September 2017, the{' '}
+        <span className="wfp--inline-highlight">
+          World Food Programme (WFP)’s Emergency Food Security Assessment
+        </span>{' '}
+        found that there were 3.2 million severely food insecure people in this
+        region alone. In addition, 400,000 children are at risk of dying from
+        severe acute malnutrition without urgent life-saving assistance.
       </p>
       <ul className="wfp--story--list">
         <li>Lorem ipsum dolor sit amet</li>

@@ -29,20 +29,14 @@ const SecondaryNavigation = ({
   id,
   pageWidth,
 }) => {
-
   const wrapperClasses = classNames('wfp--secondary-navigation', className);
 
   return (
-    <div
-      id={id}
-      className={wrapperClasses}
-    >
+    <div id={id} className={wrapperClasses}>
       <Wrapper
         pageWidth={pageWidth}
         className="wfp--secondary-navigation__wrapper">
-        <div className="wfp--secondary-navigation__list">
-          {children}
-        </div>
+        <div className="wfp--secondary-navigation__list">{children}</div>
         {additional && (
           <div className="wfp--secondary-navigation__additional">
             {additional}

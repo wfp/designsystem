@@ -13,17 +13,16 @@ describe('FormInput', () => {
   describe('should render as expected', () => {
     const wrapper = mount(
       <Provider store={store}>
-      <FormWrapper>
-        <Field
-          component={ReduxFormWrapper(TextArea)}
-          labelText="Email Input"
-        >
-        </Field>
-      </FormWrapper>
-    </Provider>
+        <FormWrapper>
+          <Field
+            component={ReduxFormWrapper(TextArea)}
+            labelText="Email Input"
+          />
+        </FormWrapper>
+      </Provider>
     );
 
-   /* const textarea = () => wrapper.find('textarea');
+    /* const textarea = () => wrapper.find('textarea');
 
     describe('label', () => {
       it('renders a textarea', () => {
@@ -55,7 +54,5 @@ describe('FormInput', () => {
         expect(renderedLabel.text()).toEqual('Email Input');
       });
     });
-
-
   });
 });

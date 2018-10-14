@@ -13,7 +13,11 @@ const FormGroup = ({
   ...other
 }) => {
   const classNamesLegend = classnames('wfp--form-group__title', className);
-  const classNamesFieldset = classnames('wfp--fieldset', {'wfp--fieldset__inline': inline}, className);
+  const classNamesFieldset = classnames(
+    'wfp--fieldset',
+    { 'wfp--fieldset__inline': inline },
+    className
+  );
 
   return (
     <div

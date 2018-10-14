@@ -284,25 +284,34 @@ storiesOf('Unit', module)
         undefined: undefined,
         thousand: 'thousand',
         million: 'million',
-        billion: 'billion'
+        billion: 'billion',
       };
 
       const unitProps = {
         type: select('Unit type (type)', typeOptions, 'Usd'),
-        output: select('Output decimal name (output)', decimalOptions,'million'),
+        output: select(
+          'Output decimal name (output)',
+          decimalOptions,
+          'million'
+        ),
         from: select('Input decimal name (from)', decimalOptions, undefined),
-        minimumFractionDigits: number('minimum number of fraction digits to use (minimumFractionDigits)', undefined),
-        maximumFractionDigits: number('minimum number of fraction digits to use (maximumFractionDigits)', undefined),
-        maximumSignificantDigits: number('maximum number of significant digits to use (maximumSignificantDigits)', undefined),
-        hideEmpty: text('hide value if empty (hideEmpty)', undefined)
-      }
-      const value= text('value', 1000000);
+        minimumFractionDigits: number(
+          'minimum number of fraction digits to use (minimumFractionDigits)',
+          undefined
+        ),
+        maximumFractionDigits: number(
+          'minimum number of fraction digits to use (maximumFractionDigits)',
+          undefined
+        ),
+        maximumSignificantDigits: number(
+          'maximum number of significant digits to use (maximumSignificantDigits)',
+          undefined
+        ),
+        hideEmpty: text('hide value if empty (hideEmpty)', undefined),
+      };
+      const value = text('value', 1000000);
 
-      return (
-        <Unit {...unitProps}>
-          {value}
-        </Unit>
-      );
+      return <Unit {...unitProps}>{value}</Unit>;
     })
   );
 
@@ -322,7 +331,7 @@ storiesOf('Unit', module)
     () => null
   ); */
 
-  storiesOf('Unit', module)
+storiesOf('Unit', module)
   .addDecorator(
     exampleStory({
       code: Html,

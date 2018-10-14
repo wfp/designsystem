@@ -4,18 +4,16 @@ import Wrapper from '../components/Wrapper';
 
 import classnames from 'classnames';
 
-
 class SingleComponent extends Component {
-
   constructor(props) {
     super(props);
-    this.state = {height: 0};
+    this.state = { height: 0 };
   }
 
   componentDidMount() {
     const height = document.getElementById('container').clientHeight;
 
-    console.log("height", height);
+    console.log('height', height);
     this.setState({ height });
   }
 
@@ -23,10 +21,9 @@ class SingleComponent extends Component {
     const { centered, children, pageWidth } = this.props;
     const { height } = this.state;
 
-    const classNames = classnames(
-      'wfp--story',
-      {'wfp--single-component--top': height >= 300}
-    );
+    const classNames = classnames('wfp--story', {
+      'wfp--single-component--top': height >= 300,
+    });
 
     return (
       <Wrapper
@@ -36,7 +33,7 @@ class SingleComponent extends Component {
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                height: '100%'
+                height: '100%',
               }
             : undefined
         }
@@ -44,9 +41,9 @@ class SingleComponent extends Component {
         pageWidth={pageWidth}>
         <div id="container">{children}</div>
       </Wrapper>
-    )
-  };
-};
+    );
+  }
+}
 
 SingleComponent.propTypes = {
   /**

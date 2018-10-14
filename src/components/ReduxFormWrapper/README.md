@@ -3,8 +3,7 @@ ReduxFormWrapper allows you to use Input components as a `component` prop inside
 ```js
 import { ReduFormWrapper } from '@wfp/ui';
 ```
+
 ```js
-<Field
-    component={ReduxFormWrapper(TextInput)}
-/>
+<Field component={ReduxFormWrapper(TextInput)} />
 ```

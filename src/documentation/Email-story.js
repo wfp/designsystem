@@ -25,8 +25,7 @@ storiesOf(' Documentation', module)
           version of your eMail.
         </p>
         <p>
-          <Button
-            href={`../assets/email/transaction-email.html`}>
+          <Button href={`../assets/email/transaction-email.html`}>
             View eMail template
           </Button>
         </p>

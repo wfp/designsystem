@@ -34,11 +34,9 @@ const props = {
   }),
 };
 
-const el = (props) => {
+const el = props => {
   console.log(props);
-  return(
-    <div>sddds</div>
-  )
+  return <div>sddds</div>;
 };
 
 storiesOf('Tabs', module)
@@ -72,8 +70,18 @@ storiesOf('Tabs', module)
       `,
     })(() => (
       <Tabs {...props.tabs()} customTabContent={true}>
-        <Tab {...props.tab()} label="Tab label 1" href="http://www.de.wfp.org" renderAnchor={el} />
-        <Tab {...props.tab()} label="Tab label 4" href="http://www.fr.wfp.org" renderAnchor={el} />
+        <Tab
+          {...props.tab()}
+          label="Tab label 1"
+          href="http://www.de.wfp.org"
+          renderAnchor={el}
+        />
+        <Tab
+          {...props.tab()}
+          label="Tab label 4"
+          href="http://www.fr.wfp.org"
+          renderAnchor={el}
+        />
       </Tabs>
     ))
   )

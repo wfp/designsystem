@@ -86,12 +86,12 @@ export default class ModalWrapper extends React.Component {
       onRequestSubmit: this.handleOnRequestSubmit,
     };
 
-    const customButtonEl = customButton	
+    const customButtonEl = customButton
       ? React.cloneElement(customButton, {
-          disabled: disabled,	
+          disabled: disabled,
           onClick: this.handleOpen,
-          inputref: this.triggerButton
-        })	
+          inputref: this.triggerButton,
+        })
       : undefined;
 
     return (
@@ -103,10 +103,8 @@ export default class ModalWrapper extends React.Component {
             onKeyDown(evt);
           }
         }}>
-        {customButton ? (	 
-          <React.Fragment>
-            {customButtonEl}
-          </React.Fragment>	 
+        {customButton ? (
+          <React.Fragment>{customButtonEl}</React.Fragment>
         ) : (
           <Button
             id={id}

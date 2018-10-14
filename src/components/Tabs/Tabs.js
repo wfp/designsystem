@@ -210,25 +210,27 @@ export default class Tabs extends React.Component {
       return newTab;
     });
 
-    const tabContentWithProps = !customTabContent ? React.Children.map(tabsWithProps, tab => {
-      const { children, selected } = tab.props;
+    const tabContentWithProps = !customTabContent
+      ? React.Children.map(tabsWithProps, tab => {
+          const { children, selected } = tab.props;
 
-      return (
-        <TabContent
-          className="tab-content"
-          aria-hidden={!selected}
-          hidden={!selected}
-          selected={selected}>
-          {children}
-        </TabContent>
-      );
-    }) : null;
+          return (
+            <TabContent
+              className="tab-content"
+              aria-hidden={!selected}
+              hidden={!selected}
+              selected={selected}>
+              {children}
+            </TabContent>
+          );
+        })
+      : null;
 
     const classes = {
       tabs: classNames('wfp--tabs', className),
       tablist: classNames('wfp--tabs__nav', {
         'wfp--tabs__nav--hidden': this.state.dropdownHidden,
-        'wfp--tabs__nav--inline': inline
+        'wfp--tabs__nav--inline': inline,
       }),
     };
 

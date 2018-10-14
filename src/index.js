@@ -1,7 +1,7 @@
 export {
   BannerNavigation,
   BannerNavigationItem,
-  BannerNavigationWithContent
+  BannerNavigationWithContent,
 } from './components/BannerNavigation';
 export Blockquote from './components/Blockquote';
 export Breadcrumb from './components/Breadcrumb';

@@ -18,23 +18,21 @@ const props = {
   tabs: {
     className: 'some-class',
     triggerHref: '#anotherAnchor',
-    inline: true
+    inline: true,
   },
   tab: {
     className: 'another-class',
   },
 };
 
-const renderAnchor = (props) => {
+const renderAnchor = props => {
   console.log(props);
-  return(
-    <a href={props.href}>{props.label}</a>
-  )
+  return <a href={props.href}>{props.label}</a>;
 };
 
 storiesOf('SecondaryNavigation', module)
-.addDecorator(withReadme([readme]))
-.add(
+  .addDecorator(withReadme([readme]))
+  .add(
     'default',
     withInfo({
       text: `
@@ -53,14 +51,35 @@ storiesOf('SecondaryNavigation', module)
         </Breadcrumb>
         <SecondaryNavigationTitle>The Page Title</SecondaryNavigationTitle>
         <Tabs {...props.tabs} customTabContent={true}>
-          <Tab {...props.tab} label="Tab label 1" href="http://www.de.wfp.org" renderAnchor={renderAnchor} />
-          <Tab {...props.tab} label="Tab label 2" href="http://www.es.wfp.org" renderAnchor={renderAnchor} />
-          <Tab {...props.tab} label="Tab label 3" href="http://www.us.wfp.org" renderAnchor={renderAnchor} />
-          <Tab {...props.tab} label="Tab label 4" href="http://www.fr.wfp.org" renderAnchor={renderAnchor} />
+          <Tab
+            {...props.tab}
+            label="Tab label 1"
+            href="http://www.de.wfp.org"
+            renderAnchor={renderAnchor}
+          />
+          <Tab
+            {...props.tab}
+            label="Tab label 2"
+            href="http://www.es.wfp.org"
+            renderAnchor={renderAnchor}
+          />
+          <Tab
+            {...props.tab}
+            label="Tab label 3"
+            href="http://www.us.wfp.org"
+            renderAnchor={renderAnchor}
+          />
+          <Tab
+            {...props.tab}
+            label="Tab label 4"
+            href="http://www.fr.wfp.org"
+            renderAnchor={renderAnchor}
+          />
         </Tabs>
       </SecondaryNavigation>
     ))
-).add(
+  )
+  .add(
     'Heading only',
     withInfo({
       text: `
@@ -80,4 +99,4 @@ storiesOf('SecondaryNavigation', module)
         <SecondaryNavigationTitle>The Page Title</SecondaryNavigationTitle>
       </SecondaryNavigation>
     ))
-);
+  );

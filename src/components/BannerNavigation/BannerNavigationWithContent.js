@@ -1,15 +1,15 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import {BannerNavigation, BannerNavigationItem } from './BannerNavigation';
+import { BannerNavigation, BannerNavigationItem } from './BannerNavigation';
 import Search from '../Search';
 import Link from '../Link';
 
-const BannerNavigationWithContent = (props) => {
-  const { search, ...other} = props;
+const BannerNavigationWithContent = props => {
+  const { search, ...other } = props;
 
-  const action = (event) => {
-    console.log("aaaa", event.target.value);
-  }
+  const action = event => {
+    console.log('aaaa', event.target.value);
+  };
   return (
     <BannerNavigation {...other}>
       <BannerNavigationItem>
@@ -47,25 +47,24 @@ const BannerNavigationWithContent = (props) => {
           WeLearn
         </Link>
       </BannerNavigationItem>
-      {search &&
-      <BannerNavigationItem>
-        <form
-          action="http://gtd.wfp.org" 
-          method="GET" 
-          acceptCharset="UTF-8" 
-          target="_blank"
-        >
-          <Search
-            banner
-            id="search-2"
-            labelText="Find People"
-            name="q"
-            placeHolderText="Find People"
-            onChange={action}
-          />
-        </form>
-      </BannerNavigationItem>
-      }
+      {search && (
+        <BannerNavigationItem>
+          <form
+            action="http://gtd.wfp.org"
+            method="GET"
+            acceptCharset="UTF-8"
+            target="_blank">
+            <Search
+              banner
+              id="search-2"
+              labelText="Find People"
+              name="q"
+              placeHolderText="Find People"
+              onChange={action}
+            />
+          </form>
+        </BannerNavigationItem>
+      )}
     </BannerNavigation>
   );
 };
@@ -80,7 +79,7 @@ BannerNavigationWithContent.propTypes = {
 };
 
 BannerNavigationWithContent.defaultProps = {
-  search: true
+  search: true,
 };
 
 export { BannerNavigationWithContent };

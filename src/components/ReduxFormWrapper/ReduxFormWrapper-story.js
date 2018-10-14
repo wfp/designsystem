@@ -26,7 +26,7 @@ const inputs = {
   Select: 'Select',
   TextArea: 'TextArea',
   TextInput: 'TextInput',
-  Toggle: 'Toggle'
+  Toggle: 'Toggle',
 };
 
 const inputMap = {
@@ -35,15 +35,13 @@ const inputMap = {
   Select,
   TextArea,
   TextInput,
-  Toggle
+  Toggle,
 };
 
-const required = value => value ? undefined : 'Required';
+const required = value => (value ? undefined : 'Required');
 const maxLength = max => value =>
   value && value.length > max ? `Must be ${max} characters or less` : undefined;
 const maxLength15 = maxLength(15);
-
-
 
 const children = () => (
   <React.Fragment>
@@ -58,16 +56,19 @@ const props = {
   regular: () => ({
     id: 'id-input',
     className: 'some-class',
-    component: ReduxFormWrapper(inputMap[select('Component (ReduxFormWrapper(Input))', inputs, 'TextInput')]),
+    component: ReduxFormWrapper(
+      inputMap[
+        select('Component (ReduxFormWrapper(Input))', inputs, 'TextInput')
+      ]
+    ),
     onClick: action('onClick'),
     labelText: text('Label (labelText)', 'Label Text'),
     name: text('Name', 'input'),
     placeholder: text('Placeholder', 'Placeholder content here'),
     required: boolean('Required (required)', true),
     onFocus: action('onFocus'),
-  })
+  }),
 };
-
 
 storiesOf('ReduxFormWrapper', module)
   .addDecorator(withKnobs)
@@ -85,12 +86,6 @@ storiesOf('ReduxFormWrapper', module)
       `,
     })(() => {
       const regularProps = props.regular();
-      return (
-       <Field
-          {...regularProps}
-          validate={[ required, maxLength15 ]}
-        >
-      </Field>
-      );
+      return <Field {...regularProps} validate={[required, maxLength15]} />;
     })
   );

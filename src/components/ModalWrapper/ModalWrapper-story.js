@@ -45,7 +45,7 @@ const props = () => ({
 storiesOf('ModalWrapper', module)
   .addDecorator(withKnobs)
   .add(
-    'transactional/passive modal',
+    'default',
     withInfo({
       text: `
         Transactional modals are used to validate user decisions or to gain secondary confirmation from the user.

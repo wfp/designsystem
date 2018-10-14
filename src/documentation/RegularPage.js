@@ -44,18 +44,16 @@ const props = {
   tabs: {
     className: 'some-class',
     triggerHref: '#anotherAnchor',
-    inline: true
+    inline: true,
   },
   tab: {
     className: 'another-class',
   },
 };
 
-const renderAnchor = (props) => {
+const renderAnchor = props => {
   console.log(props);
-  return(
-    <a href={props.href}>{props.label}</a>
-  )
+  return <a href={props.href}>{props.label}</a>;
 };
 
 const Page = ({ children, withoutSecondary }) => {
@@ -271,7 +269,9 @@ const Page = ({ children, withoutSecondary }) => {
       </MainNavigation>
 
       {!withoutSecondary && (
-        <SecondaryNavigation additional="additional Information" pageWidth="narrow">
+        <SecondaryNavigation
+          additional="additional Information"
+          pageWidth="narrow">
           <Breadcrumb>
             <BreadcrumbItem>
               <a href="/#">
@@ -283,10 +283,30 @@ const Page = ({ children, withoutSecondary }) => {
           </Breadcrumb>
           <SecondaryNavigationTitle>The Page Title</SecondaryNavigationTitle>
           <Tabs {...props.tabs} customTabContent={true}>
-            <Tab {...props.tab} label="Tab label 1" href="http://www.de.wfp.org" renderAnchor={renderAnchor} />
-            <Tab {...props.tab} label="Tab label 2" href="http://www.es.wfp.org" renderAnchor={renderAnchor} />
-            <Tab {...props.tab} label="Tab label 3" href="http://www.us.wfp.org" renderAnchor={renderAnchor} />
-            <Tab {...props.tab} label="Tab label 4" href="http://www.fr.wfp.org" renderAnchor={renderAnchor} />
+            <Tab
+              {...props.tab}
+              label="Tab label 1"
+              href="http://www.de.wfp.org"
+              renderAnchor={renderAnchor}
+            />
+            <Tab
+              {...props.tab}
+              label="Tab label 2"
+              href="http://www.es.wfp.org"
+              renderAnchor={renderAnchor}
+            />
+            <Tab
+              {...props.tab}
+              label="Tab label 3"
+              href="http://www.us.wfp.org"
+              renderAnchor={renderAnchor}
+            />
+            <Tab
+              {...props.tab}
+              label="Tab label 4"
+              href="http://www.fr.wfp.org"
+              renderAnchor={renderAnchor}
+            />
           </Tabs>
         </SecondaryNavigation>
       )}

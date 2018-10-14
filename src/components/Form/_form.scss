@@ -18,6 +18,7 @@
     flex-direction: column;
     flex: 1;
     align-items: flex-start;
+    margin-bottom: 2rem;
   }
 
   .#{$prefix}--form-item--light input,
@@ -123,7 +124,7 @@
     margin-bottom: $spacing-xs;
   }
 
-   .#{$prefix}--label__required {
+  .#{$prefix}--label__required {
     @include reset;
     display: inline-block;
     padding-left: $spacing-xs;

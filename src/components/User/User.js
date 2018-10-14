@@ -21,9 +21,7 @@ const User = ({ alt, className, ellipsis, image, small, name, ...other }) => {
     avatar = <img alt={alt} className="wfp--user__icon" src={image} />;
   }
 
-  const classes = classNames('wfp--user', 
-    className,
-  );
+  const classes = classNames('wfp--user', className);
 
   const titleClasses = classNames({
     'wfp--user__title': true,
@@ -48,7 +46,7 @@ User.propTypes = {
 
 User.defaultProps = {
   alt: 'User Icon',
-  ellipsis: false
+  ellipsis: false,
 };
 
 export default User;
