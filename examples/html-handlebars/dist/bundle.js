@@ -86,6 +86,17 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "../../src/components/MainNavigation/main-navigation.js":
+/*!**********************************************************************************************!*\
+  !*** /Applications/MAMP/htdocs/wfp-ui-next/src/components/MainNavigation/main-navigation.js ***!
+  \**********************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("(function () {\n  var hamburger = {\n    navToggle: document.querySelector('.wfp--main-navigation__button'),\n    nav: document.querySelector('.wfp--main-navigation__list'),\n    doToggle: function (e) {\n      e.preventDefault(); //this.navToggle.classList.toggle('wfp--main-navigation__list--open');\n\n      this.nav.classList.toggle('wfp--main-navigation__list--open');\n    }\n  };\n  hamburger.navToggle.addEventListener('click', function (e) {\n    hamburger.doToggle(e);\n  }); //hamburger.nav.addEventListener('click', function(e) { hamburger.doToggle(e); });\n})();\n\n//# sourceURL=webpack:////Applications/MAMP/htdocs/wfp-ui-next/src/components/MainNavigation/main-navigation.js?");
+
+/***/ }),
+
 /***/ "./node_modules/@babel/polyfill/lib/index.js":
 /*!***************************************************!*\
   !*** ./node_modules/@babel/polyfill/lib/index.js ***!
@@ -3211,13 +3222,13 @@ eval("var g;\r\n\r\n// This works in non-strict mode\r\ng = (function() {\r\n\tr
 /***/ }),
 
 /***/ 0:
-/*!*****************************!*\
-  !*** multi @babel/polyfill ***!
-  \*****************************/
+/*!************************************************************************************!*\
+  !*** multi @babel/polyfill ../../src/components/MainNavigation/main-navigation.js ***!
+  \************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("module.exports = __webpack_require__(/*! @babel/polyfill */\"./node_modules/@babel/polyfill/lib/index.js\");\n\n\n//# sourceURL=webpack:///multi_@babel/polyfill?");
+eval("__webpack_require__(/*! @babel/polyfill */\"./node_modules/@babel/polyfill/lib/index.js\");\nmodule.exports = __webpack_require__(/*! ../../src/components/MainNavigation/main-navigation.js */\"../../src/components/MainNavigation/main-navigation.js\");\n\n\n//# sourceURL=webpack:///multi_@babel/polyfill_../../src/components/MainNavigation/main-navigation.js?");
 
 /***/ })
 

@@ -2,7 +2,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   context: __dirname,
-  entry: ['@babel/polyfill'
+  entry: ['@babel/polyfill', 
+          '../../src/components/MainNavigation/main-navigation.js'
          ],
   output: {    
     filename: 'bundle.js',
