@@ -2,8 +2,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   context: __dirname,
-  entry: ['@babel/polyfill', 
-          './students.js'
+  entry: ['@babel/polyfill'
          ],
   output: {    
     filename: 'bundle.js',

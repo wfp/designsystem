@@ -10,8 +10,8 @@ import { withReadme } from 'storybook-readme';
 import readme from './README.md';
 
 import HtmlComponent from '../../documentation/HtmlComponent';
-import Html_internal from '!!raw-loader!./Footer_internal.html';
-import Html_external from '!!raw-loader!./Footer_external.html';
+import Html_internal from '!!raw-loader!./Footer-internal.hbs';
+import Html_external from '!!raw-loader!./Footer-external.hbs';
 import { exampleStory } from '../../../.storybook/lucid-docs-addon';
 
 storiesOf('Footer', module)

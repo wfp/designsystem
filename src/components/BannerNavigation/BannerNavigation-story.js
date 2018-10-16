@@ -9,7 +9,7 @@ import readme from './README.md';
 import HtmlComponent from '../../documentation/HtmlComponent';
 import { exampleStory } from '../../../.storybook/lucid-docs-addon';
 
-import Html from '!!raw-loader!./BannerNavigation.html';
+import Html from '!!raw-loader!./BannerNavigation.hbs';
 
 import { BannerNavigation, BannerNavigationItem } from './BannerNavigation';
 import { BannerNavigationWithContent } from './BannerNavigationWithContent';
