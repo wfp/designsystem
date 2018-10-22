@@ -4,6 +4,7 @@ import classNames from 'classnames';
 
 export default class Tab extends React.Component {
   static propTypes = {
+    children: PropTypes.node,
     className: PropTypes.string,
     handleTabClick: PropTypes.func,
     handleTabAnchorFocus: PropTypes.func,
@@ -48,6 +49,7 @@ export default class Tab extends React.Component {
 
   render() {
     const {
+      children,
       className,
       handleTabClick,
       handleTabAnchorFocus, // eslint-disable-line
@@ -64,8 +66,8 @@ export default class Tab extends React.Component {
     } = this.props;
 
     const classes = classNames(
-      'wfp--step-navigation__nav-item',
-      { 'wfp--step-navigation__nav-item--selected': selected },
+      'wfp--step-navigation__section',
+      { 'wfp--step-navigation__section--selected': selected },
       className
     );
 
@@ -101,10 +103,13 @@ export default class Tab extends React.Component {
           renderAnchor(anchorProps)
         ) : (
           <a {...anchorProps}>
-            <span>Number</span>
+            <span className="wfp--step-navigation__section__indicator">A</span>
             {label}
           </a>
         )}
+        <ul>
+        {children}
+        </ul>
       </li>
     );
   }

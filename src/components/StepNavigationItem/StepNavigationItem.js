@@ -101,7 +101,7 @@ export default class Tab extends React.Component {
           renderAnchor(anchorProps)
         ) : (
           <a {...anchorProps}>
-            <span>Number</span>
+            <span className="wfp--step-navigation__nav-item__indicator">B</span>
             {label}
           </a>
         )}

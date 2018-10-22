@@ -111,9 +111,9 @@
   .#{$prefix}--step-navigation__nav-item {
     @include typescale('zeta');
     background-color: $ui-01;
+    margin: 0;
     padding: 0;
     cursor: pointer;
-
     &:hover,
     &:focus {
       //background-color: $hover-row;
@@ -128,10 +128,20 @@
       background: transparent;
       padding: $spacing-sm 0 $spacing-sm;
 
-      & + & {
+      /*& + & {
         margin-left: rem(48px);
-      }
+      }*/
     }
+
+    &:first-child {
+      background: red;
+      .#{$prefix}--step-navigation__nav-item__indicator {
+          &:after {
+            top: -16px;
+            height: 16px;
+          }
+        }
+      }
   }
 
   .#{$prefix}--step-navigation__nav-item--selected {
@@ -150,6 +160,51 @@
     }
   }
 
+  .#{$prefix}--step-navigation__section {
+    margin-bottom: rem(4px);
+    >.#{$prefix}--step-navigation__nav-link {
+      margin-bottom: rem(2px);
+    }
+  }
+
+  .#{$prefix}--step-navigation__section__indicator {
+    display: block;
+    border: 2px solid $ui-05;
+    border-radius: 30px;
+    flex-shrink: 0;
+    width: rem(34px);
+    height: rem(34px);
+    line-height: rem(30px);
+    margin-right: rem(8px);
+    text-align: center;
+  }
+
+  .#{$prefix}--step-navigation__nav-item__indicator {
+    display: block;
+    position: relative;
+    background: $ui-04;
+    flex-shrink: 0;
+    border-radius: 30px;
+    width: rem(24px);
+    height: rem(24px);
+    line-height: rem(24px);
+    margin: 0 rem(14px) 0 rem(5px);
+    text-align: center;
+    &:after {
+      display: block;
+      width: 2px;
+      height: 24px;
+      position: absolute;
+      z-index: -100;
+      //z-index: -1px;
+      top: -24px;
+      left: 50%;
+      margin-left: -1px;
+      content: "";
+      background: $ui-04;
+    }
+  }
+
   .#{$prefix}--step-navigation__nav-item:hover .#{$prefix}--step-navigation__nav-link {
     color: $text-01;
 
@@ -159,7 +214,8 @@
   }
 
   .#{$prefix}--step-navigation__nav-link {
-    display: inline-block;
+    display: flex;
+    align-items: center;
     color: $text-01;
     text-decoration: none;
     padding: $spacing-md;
