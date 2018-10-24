@@ -14,9 +14,6 @@ import { exampleStory } from '../../../.storybook/lucid-docs-addon';
 import { List, ListItem } from '../List';
 
 const additionalProps = {
-  onClick: () => {
-    console.log('Clicked!');
-  }, // eslint-disable-line no-console
   className: 'some-class',
 };
 
