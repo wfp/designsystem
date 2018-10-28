@@ -1,5 +1,6 @@
 @import 'colors';
 @import 'spacing';
+@import 'theme-tokens';
 
 $prefix: 'wfp' !default;
 
@@ -27,33 +28,6 @@ $wfp--ease-out: $carbon--ease-out;
 $wfp--standard-easing: $carbon--standard-easing;
 $transition--base: 50ms;
 $transition--expansion: 100ms;
-// Color Theme Variables
-$brand-01: $color__main-51 !default; // Main Link and Button Color
-$brand-02: $color__main-60 !default; // Main WFP Color //$color__blue-40
-$brand-03: $color__yellow !default; // Darker WFP Blue // $color__teal-20
-$inverse-01: $color__white !default;
-$ui-01: $color__white !default;
-$ui-02: $color__navy-gray-9 !default;
-$ui-03: $color__gray-2 !default;
-$ui-04: $color__gray-1 !default;
-$ui-05: $color__navy-gray-7 !default;
-$text-01: $color__main-80 !default;
-$text-02: $color__navy-gray-6 !default;
-$text-03: $color__navy-gray-6 !default;
-$field-01: $color__navy-gray-10 !default;
-$field-02: $color__white !default;
-$support-01: $color__red !default;
-$support-02: $color__dark-green-40 !default;
-$support-03: $color__yellow-30 !default;
-$support-04: $color__main-30 !default;
-$nav-01: $color__navy-gray-1 !default;
-$nav-02: $color__main-80 !default;
-$nav-03: $color__magenta-30 !default;
-$nav-04: $color__magenta-60 !default;
-// $nav-05: $color__aqua-40 !default;
-// $nav-06: $color__aqua-50 !default;
-// $nav-07: $color__blue-30 !default;
-// $nav-08: $color__blue-51 !default;
 // TODO: Align Colors
 $hover-primary: darken($brand-01, 10%) !default;
 $hover-primary-text: darken($brand-01, 15%) !default;
@@ -67,7 +41,6 @@ $input-border-radius: 0px !default;
 // Button Theme Variables
 $button-font-weight: 700 !default;
 $button-font-size: 0.875rem !default;
-$button-border-radius: 4px !default;
 $button-height: 40px !default;
 $button-padding: 0 $spacing-md !default;
 $button-padding-sm: 0 $spacing-xs !default;

@@ -68,6 +68,11 @@ export {
   SecondaryNavigationTitle,
 } from './components/SecondaryNavigation';
 
+
+export StepNavigation from './components/SelectItem';
+export StepNavigationSection from './components/StepNavigationSection';
+export StepNavigationItem from './components/StepNavigationItem';
+
 export Select from './components/Select';
 export SelectItem from './components/SelectItem';
 export SelectItemGroup from './components/SelectItemGroup';

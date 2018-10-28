@@ -45,7 +45,7 @@ const el = props => {
 storiesOf('StepNavigation', module)
   .addDecorator(withKnobs)
   .add(
-    'Default',
+    'Default (work in progress)',
     withInfo({
       text: `
         Tabs are used to quickly navigate between views within the same context. Create individual
@@ -71,35 +71,4 @@ storiesOf('StepNavigation', module)
 
       </StepNavigation>
     ))
-  )
-  .add(
-    'Custom Tab Content',
-    withInfo({
-      text: `
-        Custom Tab Content which is independent from the Tabs
-      `,
-    })(() => (
-      <Tabs {...props.tabs()} customTabContent={true}>
-        <Tab
-          {...props.tab()}
-          label="Tab label 1"
-          href="http://www.de.wfp.org"
-          renderAnchor={el}
-        />
-        <Tab
-          {...props.tab()}
-          label="Tab label 4"
-          href="http://www.fr.wfp.org"
-          renderAnchor={el}
-        />
-      </Tabs>
-    ))
-  )
-  .add(
-    'skeleton',
-    withInfo({
-      text: `
-        Placeholder skeleton state to use when content is loading.
-      `,
-    })(() => <TabsSkeleton />)
   );
