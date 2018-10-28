@@ -26,7 +26,7 @@
     "prettier:diff": "prettier --list-different \"**/*.{scss,css,js,md}\"",
     "semantic-release": "semantic-release",
     "start": "yarn storybook",
-    "storybook": "STORYBOOK_ASSETS= start-storybook -s ./src/assets -p 9000",
+    "storybook": "start-storybook -s ./src/assets -p 9000",
     "test": "jest --json --outputFile=jest-test-results.json",
     "test-ssr": "yarn build && node ssr-tests/*.js"
   },

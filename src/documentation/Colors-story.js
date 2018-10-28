@@ -110,12 +110,12 @@ storiesOf(' Documentation', module).addWithInfo('Colors', ``, () => {
         </Link>.
       </p>
 
-      <ul style={{ display: 'flex', flexWrap: 'wrap', margin: 0 }}>
+      <ul style={{ display: 'flex', flexWrap: 'wrap' }}>
         {colorList(regularColors)}
       </ul>
 
       <h3>Symbolic colors</h3>
-      <ul style={{ display: 'flex', flexWrap: 'wrap', margin: 0 }}>
+      <ul style={{ display: 'flex', flexWrap: 'wrap'}}>
         {colorList(symbolicColors)}
       </ul>
 

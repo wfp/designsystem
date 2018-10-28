@@ -16,23 +16,23 @@
     @include reset;
     @include font-family;
     p {
-      margin-bottom: $spacing-lg;
+      margin-top: $spacing-md;
       line-height: 1.6em;
       &:last-child {
         margin-bottom: 0;
       }
     }
     h2 {
-      margin: $spacing-lg 0;
+      //margin: $spacing-lg 0;
       &.before--img {
         margin-bottom: 0;
       }
     }
     h3 {
-      margin: $spacing-xs 0;
+      margin-top: $spacing-xs;
     }
     h4 {
-      margin: $spacing-xs 0;
+      margin-top: $spacing-xs;
       @include typescale('epsilon');
     }
     sup {
@@ -48,6 +48,36 @@
         }
       }
     }
+
+
+    /* All the line spacings */
+
+    .#{$prefix}--blockquote {
+      & + p, & + h3 {
+        margin-top: $spacing-lg;
+      }
+    }
+
+    p + .#{$prefix}--blockquote {
+        margin-top: $spacing-sm;
+    }
+
+    p + h2 {
+      margin-top: $spacing-lg;
+    }
+
+    p + h3 {
+      margin-top: $spacing-lg;
+    }
+
+    p + ul, h3 + ul, h4 + ul {
+      margin-top: $spacing-md;
+    }
+
+    h3 + p {
+      margin-top: $spacing-sm;
+    }
+
   }
 
   .#{$prefix}--story--list {
@@ -60,7 +90,7 @@
   }
 
   .#{$prefix}--blockquote {
-    margin-bottom: 1.5em;
+    //margin-bottom: 1.5em;
   }
 
   .#{$prefix}--story__title {

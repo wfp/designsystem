@@ -26,7 +26,6 @@ const InvalidPasswordProps = {
 
 storiesOf(' Documentation', module).addWithInfo('Form Design', ``, () => (
   <Page title="Form UX-Design" subTitle="Recommendations for form design">
-    <h3>Structure</h3>
     <h3>Avoid Multistep forms for internal applications</h3>
 
     <p>Long scrolling forms are okay.</p>
@@ -108,7 +107,7 @@ storiesOf(' Documentation', module).addWithInfo('Form Design', ``, () => (
       purposes
     </h5>
 
-    <ul>
+    <ul className="wfp--story--list">
       <li>country data input - RB data read only</li>
     </ul>
 
