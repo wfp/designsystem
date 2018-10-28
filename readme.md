@@ -37,7 +37,7 @@ Additional information about the Usage can be found [here](https://wfp.org/UIGui
 
 ### Documentation & list of components available
 
-View available Components [here](http://pydev.wfp.org:8282). Usage information is available when you click the blue **?** icon in the top right corner of the selected component.
+View available Components [here](https://wfp.org/UIGuide). Usage information is available when you click the blue **?** icon in the top right corner of the selected component.
 
 ## About the WFP UI Guidelines
 

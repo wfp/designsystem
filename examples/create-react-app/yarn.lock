@@ -892,9 +892,9 @@
   version "0.0.57"
   resolved "https://registry.yarnpkg.com/@wfp/icons/-/icons-0.0.57.tgz#a8042f75e2017ef46470f983f9d3e1ad20c2f9b6"
 
-"@wfp/ui@^1.1.36":
-  version "1.1.36"
-  resolved "https://registry.yarnpkg.com/@wfp/ui/-/ui-1.1.36.tgz#49c4396ee3614ad5c8bcef23e15bc28b88974a02"
+"@wfp/ui@^1.1.38":
+  version "1.1.38"
+  resolved "https://registry.yarnpkg.com/@wfp/ui/-/ui-1.1.38.tgz#fae3777fa1fb45fed54b221bd331c15dd11bde9b"
   dependencies:
     downshift "^1.23.2"
     flatpickr "4.3.0"
