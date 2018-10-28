@@ -127,6 +127,7 @@
   $structured-list-padding: 2rem !default !global;
   $structured-list-text-transform: none !default !global;
 
+  $css--font-face: true;
   // Skeleton Loading
   $skeleton: rgba($color__main-51, 0.1) !default !global; //old $field-01
 }
@@ -252,6 +253,7 @@
 
   // Skeleton Loading
   $skeleton: rgba($color__blue-51, 0.1) !default !global; //old $field-01 TODO: Define for experimental
+  $css--font-face: true;
 }
 
 @include exports('theme') {

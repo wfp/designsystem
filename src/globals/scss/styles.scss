@@ -2,7 +2,7 @@
 // 🌍 Global
 //-------------------------
 
-$css--font-face: false !default;
+$css--font-face: true !default;
 $css--helpers: true !default;
 $css--body: true !default;
 //$css--use-experimental-grid: false !default;
@@ -10,7 +10,6 @@ $css--body: true !default;
 $css--use-layer: true !default;
 $css--reset: true !default;
 $css--typography: true !default;
-$css--plex: true !default;
 
 @import 'colors';
 @import 'vars';
