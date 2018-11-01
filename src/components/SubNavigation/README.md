@@ -15,9 +15,36 @@ import {
 ```
 
 ```js
-<Blockquote pageWidth="xs" mobilePageWidth="full">
-  Content
-</Wrapper>
+<SubNavigation>
+  <SubNavigationHeader>
+    <SubNavigationTitle>The Title of the SubNavigation</SubNavigationTitle>
+    <SubNavigationLink>
+      <Button small>The SubPage Link</Button>
+    </SubNavigationLink>
+    <SubNavigationFilter>
+      <Search
+        className="some-class"
+        small
+        id="search-2"
+        labelText="Filter"
+        placeHolderText="Filter"
+      />
+    </SubNavigationFilter>
+  </SubNavigationHeader>
+  <SubNavigationContent>
+    <SubNavigationList>
+      <SubNavigationGroup title="First List" columns>
+        <SubNavigationItem>
+          <Link href="https://go.docs.wfp.org" target="_blank">
+            GoDocs
+          </Link>
+        </SubNavigationItem>
+        {/* ...more SubNavigation Items */}
+      </SubNavigationGroup>
+      {/* ...more SubNavigation Groups */}
+    </SubNavigationList>
+  </SubNavigationContent>
+</SubNavigation>
 ```
 
 ### SubNavigation

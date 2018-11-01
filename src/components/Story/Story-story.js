@@ -1,25 +1,23 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import Wrapper from '../Wrapper';
-
+import { withInfo } from '@storybook/addon-info';
 import HtmlComponent from '../../documentation/HtmlComponent';
 import Html from '!!raw-loader!./Story.html';
 import { exampleStory } from '../../../.storybook/lucid-docs-addon';
 
-storiesOf('Story', module).addWithInfo(
-  'Simple Story',
-  `
-      Modules are used to organize content in a structural manner.
+import { withReadme } from 'storybook-readme';
+import readme from './README.md';
 
-
-      Modules are separated into different components. Module components can be
-      'single' or 'double' with the default as 'double'.
-
-
-      ModuleHeader and ModuleBody components hold the content of the
-      Module
+storiesOf('Story', module)
+.addDecorator(withReadme([readme]))
+.add(
+  'Default',
+  withInfo({
+    text: `
+    Story shows full feature styled text
     `,
-  () => (
+  })(() => (
     <Wrapper className="wfp--story" pageWidth="narrower">
       <h1 className="wfp--story__title">
         WFP’s Immediate Response Account — saving lives in the Kasai region of
@@ -62,7 +60,7 @@ storiesOf('Story', module).addWithInfo(
       </p>
     </Wrapper>
   )
-);
+));
 
 storiesOf('Story', module)
   .addDecorator(
@@ -72,10 +70,7 @@ storiesOf('Story', module)
     })
   )
   .addDecorator(story => <HtmlComponent html={Html}>{story()}</HtmlComponent>)
-  .addWithInfo(
+  .add(
     'html',
-    `
-     html view
-    `,
-    () => null
+    (() => null)
   );

@@ -70,9 +70,12 @@
   $hover-row: rgba($brand-02, 0.1) !default !global;
 
   // Global
-  $input-border: 1px solid transparent !default !global;
-  $input-label-weight: 600 !default !global;
   $focus: $color__blue-20 !default !global;
+
+  $input-border: 1px solid $color__navy-gray-2 !default;
+  $input-label-weight: 600 !default;
+  $input-border-radius: 0px !default;
+
 
   // Button Theme Variables
   $button-font-weight: 600 !default !global;
@@ -83,13 +86,6 @@
   $button-padding-sm: 0 $spacing-xs !default !global;
   $button-border-width: 2px !default !global;
   $button-outline-width: 1px !default !global;
-
-  // Accordion (Reverse)
-  $accordion-flex-direction: row !default !global;
-  $accordion-justify-content: flex-start !default !global;
-  $accordion-arrow-margin: 0 0 0 $spacing-2xs !default !global;
-  $accordion-title-margin: 0 0 0 $spacing-md !default !global;
-  $accordion-content-padding: 0 $spacing-md 0 $spacing-2xl !default !global;
 
   // Card
   $card-text-align: center !default !global;
@@ -202,13 +198,6 @@
   $button-outline-width: 3px !default !global;
   $button-outline-offset: -5px !default !global;
   $button-outline: 1px solid $ibm-colors__white !default !global;
-
-  // Accordion (Reverse)
-  $accordion-flex-direction: row-reverse !default !global;
-  $accordion-justify-content: flex-start !default !global;
-  $accordion-arrow-margin: 0 $spacing-md 0 0 !default !global;
-  $accordion-title-margin: 0 0 0 $spacing-md !default !global;
-  $accordion-content-padding: 0 0 0 $spacing-md !default !global;
 
   // Card
   $card-text-align: center !default !global;

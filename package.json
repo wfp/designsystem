@@ -153,6 +153,7 @@
     "@storybook/addon-viewport": "^3.4.0",
     "@storybook/react": "^3.4.11",
     "@wfp/icons": "^0.0.57",
+    "add": "^2.0.6",
     "all-contributors-cli": "^4.10.1",
     "autoprefixer": "^8.3.0",
     "babel-core": "^7.0.0-bridge.0",
@@ -200,6 +201,7 @@
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
     "react-redux": "^5.0.7",
+    "react-select": "^2.1.1",
     "react-syntax-highlighter": "^8.0.1",
     "react-table": "^6.8.0",
     "react-test-renderer": "^16.4.0",
@@ -223,7 +225,8 @@
     "storybook-addon-smart-knobs": "^3.3.1",
     "storybook-readme": "^3.3.0",
     "validate-commit-msg": "^2.10.1",
-    "whatwg-fetch": "^2.0.3"
+    "whatwg-fetch": "^2.0.3",
+    "yarn": "^1.10.1"
   },
   "release": {
     "branch": "master"

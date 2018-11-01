@@ -34,6 +34,7 @@ $colors: (
 );
 
 // UI Color Scheme Extended
+$color__main-10: mix(white, $color__main, 85%) !default;
 $color__main-20: mix(white, $color__main, 75%) !default;
 $color__main-30: mix(white, $color__main, 50%) !default;
 $color__main-40: mix(white, $color__main, 25%) !default;
@@ -41,6 +42,7 @@ $color__main-60: mix(black, $color__main, 25%) !default;
 $color__main-70: mix(black, $color__main, 50%) !default;
 $color__main-80: mix(black, $color__main, 75%) !default;
 // Alias for blue since it is the same
+$color__blue-10: $color__main-10 !default;
 $color__blue-20: $color__main-20 !default;
 $color__blue-30: $color__main-30 !default;
 $color__blue-40: $color__main-40 !default;

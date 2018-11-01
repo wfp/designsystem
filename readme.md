@@ -138,14 +138,14 @@ The UI Kit is based on:
 
   
 
-## Logos
+## Assets
 
-  
 
-All the logo files can be found in the `wfp-ui/logos` folder.
+All the logo files can be found in the [UI Assets repository on GitHub](https://github.com/wfp/ui-assets).
+
+### Logos
 
 Currently the logo is available in
-
   
 
 *  **Colors:** blue, white and black
@@ -154,69 +154,24 @@ Currently the logo is available in
 
 *  **Languages:** arabic, english, spanish, french
 
-  
 
 The Source files can be found in `sketch/WFP Logos.sketch`.
 
   
-
-## Sketch Library
-
-  
-
-The Sketch Library can be used to easily create new UI in [Sketch App](https://www.sketchapp.com/).
-
-You can download it [Sketch App](https://www.sketchapp.com/).
-
-  
-
 ## Favicons
 
-  
 
 All the logo files can be found in the `wfp-ui/favicons` folder.
 
-The full sizes catalog which has to be added to the header.
-
   
 
-```html
+## For Designers: Sketch Library
 
-<link  rel="apple-touch-icon"  sizes="57x57"  href="/favicons/apple-icon-57x57.png">
+The Sketch and Adobe xD library can be used to easily create new User interfaces. [UI Design Kit on GitHub](https://github.com/wfp/ui-design-kit).
 
-<link  rel="apple-touch-icon"  sizes="60x60"  href="/favicons/apple-icon-60x60.png">
+You can download it [Sketch App](https://www.sketchapp.com/).
 
-<link  rel="apple-touch-icon"  sizes="72x72"  href="/favicons/apple-icon-72x72.png">
 
-<link  rel="apple-touch-icon"  sizes="76x76"  href="/favicons/apple-icon-76x76.png">
-
-<link  rel="apple-touch-icon"  sizes="114x114"  href="/favicons/apple-icon-114x114.png">
-
-<link  rel="apple-touch-icon"  sizes="120x120"  href="/favicons/apple-icon-120x120.png">
-
-<link  rel="apple-touch-icon"  sizes="144x144"  href="/favicons/apple-icon-144x144.png">
-
-<link  rel="apple-touch-icon"  sizes="152x152"  href="/favicons/apple-icon-152x152.png">
-
-<link  rel="apple-touch-icon"  sizes="180x180"  href="/favicons/apple-icon-180x180.png">
-
-<link  rel="icon"  type="image/png"  sizes="192x192"  href="/favicons/android-icon-192x192.png">
-
-<link  rel="icon"  type="image/png"  sizes="32x32"  href="/favicons/favicon-32x32.png">
-
-<link  rel="icon"  type="image/png"  sizes="96x96"  href="/favicons/favicon-96x96.png">
-
-<link  rel="icon"  type="image/png"  sizes="16x16"  href="/favicons/favicon-16x16.png">
-
-<meta  name="msapplication-TileColor"  content="#006CB6">
-
-<meta  name="msapplication-TileImage"  content="/ms-icon-144x144.png">
-
-<meta  name="theme-color"  content="#006CB6">
-
-```
-
-  
 
 ## Development
 
