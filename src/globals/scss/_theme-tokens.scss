@@ -78,7 +78,7 @@
 
 
   // Button Theme Variables
-  $button-font-weight: 600 !default !global;
+  $button-font-weight: 700 !default !global;
   $button-font-size: 0.875rem !default !global;
   $button-border-radius: 4px !default !global;
   $button-height: 40px !default !global;
@@ -86,10 +86,6 @@
   $button-padding-sm: 0 $spacing-xs !default !global;
   $button-border-width: 2px !default !global;
   $button-outline-width: 1px !default !global;
-
-  // Card
-  $card-text-align: center !default !global;
-  $card-flex-align: center !default !global;
 
   // Checkbox
   $checkbox-border-width: 2px !default !global;

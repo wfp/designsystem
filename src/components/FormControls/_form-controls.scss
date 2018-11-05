@@ -1,0 +1,39 @@
+//-----------------------------
+// Tabs
+//-----------------------------
+
+@import '../../globals/scss/vars';
+@import '../../globals/scss/colors';
+@import '../../globals/scss/spacing';
+@import '../../globals/scss/helper-mixins';
+@import '../../globals/scss/layer';
+@import '../../globals/scss/typography';
+@import '../../globals/scss/layout';
+@import '../../globals/scss/import-once';
+@import '../../globals/scss/css--typography';
+
+@include exports('form-controls') {
+  .#{$prefix}--form-controls {
+    display: flex;
+    justify-content: space-between;
+    .#{$prefix}--btn {
+      margin-right: $spacing-xs;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    @include breakpoint(bp--sm--major) {
+      background: none;
+    }
+  }
+
+  .#{$prefix}--form-controls__prev {
+    display: inline-flex !important;
+    flex-direction: row-reverse;
+    .#{$prefix}--btn__icon {
+      margin-left: 0;
+      margin-right: 0.5em;
+    }
+  }
+}

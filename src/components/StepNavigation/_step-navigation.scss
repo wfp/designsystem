@@ -134,7 +134,6 @@
     }
 
     &:first-child {
-      background: red;
       .#{$prefix}--step-navigation__nav-item__indicator {
           &:after {
             top: -16px;

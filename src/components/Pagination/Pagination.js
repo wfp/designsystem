@@ -256,7 +256,7 @@ export default class Pagination extends Component {
           </span>
 
           <Select
-            id={`bx-pagination-select-${inputId}`}
+            id={`wfp-pagination-select-${inputId}`}
             labelText={itemsPerPageText}
             hideLabel
             inline
@@ -298,7 +298,7 @@ export default class Pagination extends Component {
           </button>
           {pageInputDisabled ? null : (
             <Select
-              id={`bx-pagination-select-${inputId + 2}`}
+              id={`wfp-pagination-select-${inputId + 2}`}
               labelText={itemsPerPageText}
               hideLabel
               inline

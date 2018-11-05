@@ -18,8 +18,12 @@
     flex-direction: column;
     flex: 1;
     align-items: flex-start;
-    margin-bottom: 2rem;
+    //margin-bottom: 2rem;
   }
+
+  .#{$prefix}--form-long .#{$prefix}--form-item {
+    margin-bottom: 2rem;
+}
 
   .#{$prefix}--form-item--light input,
   .#{$prefix}--form-item--light input[type='number'] {
