@@ -3,8 +3,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import Page from './Page';
-import Blockquote from '../components/Blockquote';
-import Button from '../components/Button';
 import Link from '../components/Link';
 
 storiesOf(' Documentation.Getting Started', module).addWithInfo(

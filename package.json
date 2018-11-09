@@ -22,8 +22,8 @@
     "lint": "eslint src",
     "precommit": "lint-staged",
     "prepublish": "yarn build",
-    "prettier": "prettier --write \"**/*.{scss,css,js,md}\"",
-    "prettier:diff": "prettier --list-different \"**/*.{scss,css,js,md}\"",
+    "prettier": "prettier --write \"**/*.{scss,css,js}\"",
+    "prettier:diff": "prettier --list-different \"**/*.{scss,css,js}\"",
     "semantic-release": "semantic-release",
     "start": "yarn storybook",
     "storybook": "start-storybook -s ./src/assets -p 9000",
@@ -277,7 +277,7 @@
       "yarn lint",
       "git add"
     ],
-    "*.{css,md,scss}": [
+    "*.{css,scss}": [
       "yarn prettier",
       "git add"
     ]

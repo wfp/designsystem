@@ -99,7 +99,11 @@ storiesOf('Footer', module)
       };
       const defaultValue = '';
 
-      const pageWidth = select('page Width of Wrapper (pageWidth)', options, defaultValue);
+      const pageWidth = select(
+        'page Width of Wrapper (pageWidth)',
+        options,
+        defaultValue
+      );
 
       const optionsMobilePageWidth = {
         '': 'undefined',
@@ -112,17 +116,22 @@ storiesOf('Footer', module)
         defaultValue
       );
 
-      const metaContent = text('meta Content (metaContent)', ' 2019 © World Food Programme');
+      const metaContent = text(
+        'meta Content (metaContent)',
+        ' 2019 © World Food Programme'
+      );
 
       const className = text('class name (className)', 'some-class');
 
       const logo = text(
         'logo on mobile devices (logo)',
-        process.env.STORYBOOK_ASSETS + 'logos/vertical/en/wfp-logo-vertical-black-en.svg'
+        process.env.STORYBOOK_ASSETS +
+          'logos/vertical/en/wfp-logo-vertical-black-en.svg'
       );
       const logoExtended = text(
         'logo on desktop devices (logoExtended)',
-        process.env.STORYBOOK_ASSETS +'logos/extended/en/wfp-logo-extended-black-en.svg'
+        process.env.STORYBOOK_ASSETS +
+          'logos/extended/en/wfp-logo-extended-black-en.svg'
       );
 
       return (

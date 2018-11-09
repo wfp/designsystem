@@ -10,12 +10,14 @@ import colors from '../globals/data/colors';
 const colorBlend = ['20', '30', '40', '60', '80'];
 
 storiesOf(' Documentation', module).addWithInfo('Colors', ``, () => {
+  const regularColors = colors.ui_colors.filter(
+    ui_colors => ui_colors.type !== 'symbolic'
+  );
+  const symbolicColors = colors.ui_colors.filter(
+    ui_colors => ui_colors.type === 'symbolic'
+  );
 
-  
-  const regularColors = colors.ui_colors.filter(ui_colors => ui_colors.type !== "symbolic");
-  const symbolicColors = colors.ui_colors.filter(ui_colors => ui_colors.type === "symbolic");
-
-  const colorList = (filterList) => {
+  const colorList = filterList => {
     return filterList.map(color => (
       <li
         style={{
@@ -90,7 +92,7 @@ storiesOf(' Documentation', module).addWithInfo('Colors', ``, () => {
           </div>
         </div>
       </li>
-    ))
+    ));
   };
 
   return (
@@ -115,14 +117,11 @@ storiesOf(' Documentation', module).addWithInfo('Colors', ``, () => {
       </ul>
 
       <h3>Symbolic colors</h3>
-      <ul style={{ display: 'flex', flexWrap: 'wrap'}}>
+      <ul style={{ display: 'flex', flexWrap: 'wrap' }}>
         {colorList(symbolicColors)}
       </ul>
 
-      <p>
-
-        
-      </p>
+      <p />
 
       <h3>Usage</h3>
 

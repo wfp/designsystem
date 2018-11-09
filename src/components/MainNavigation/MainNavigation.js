@@ -5,11 +5,7 @@ import Button from '../Button';
 import Wrapper from '../Wrapper';
 
 class MainNavigationItem extends Component {
-  constructor(props) {
-    super(props);
-  }
-
-  componentWillReceiveProps = nextProps => {
+  UNSAFE_componentWillReceiveProps = nextProps => {
     if (nextProps.menuItem === nextProps.activeMenuItem) {
       document.addEventListener('mousedown', this.handleClickOutside);
     } else {
@@ -58,11 +54,6 @@ class MainNavigationItem extends Component {
       'wfp--main-navigation__sub': true,
       'wfp--main-navigation__sub--open': menuItem === activeMenuItem,
     });
-    /*
-      onMouseEnter={(e) => onChangeSub(e, menuItem, 'in')}
-      onMouseLeave={(e) => onChangeSub(e, undefined, 'out')}
-      onMouseEnter={(e) => onChangeSub(e, menuItem, 'toggle')}
-    */
     return (
       <li className={wrapperClasses} ref={this.setWrapperRef}>
         <div className={triggerClasses}>{childrenWithProps}</div>
@@ -197,7 +188,5 @@ MainNavigation.defaultProps = {
   pageWidth: 'narrow',
   mobilePageWidth: 'full',
 };
-
-//const MainNavigation = onClickOutside(MainNavigationEl);
 
 export { MainNavigation, MainNavigationItem };

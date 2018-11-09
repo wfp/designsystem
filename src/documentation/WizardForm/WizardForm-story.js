@@ -4,29 +4,25 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import WizardForm from './WizardForm';
 
-
-import { Provider } from 'react-redux'
-import { createStore, combineReducers } from 'redux'
-import { reducer as reduxFormReducer } from 'redux-form'
-
+import { Provider } from 'react-redux';
+import { createStore, combineReducers } from 'redux';
+import { reducer as reduxFormReducer } from 'redux-form';
 
 const reducer = combineReducers({
-  form: reduxFormReducer // mounted under "form"
-})
+  form: reduxFormReducer, // mounted under "form"
+});
 const store = (window.devToolsExtension
   ? window.devToolsExtension()(createStore)
-  : createStore)(reducer)
-
+  : createStore)(reducer);
 
 const showResults = values =>
   new Promise(resolve => {
     setTimeout(() => {
       // simulate server latency
-      window.alert(`You submitted:\n\n${JSON.stringify(values, null, 2)}`)
-      resolve()
-    }, 500)
-  })
-
+      window.alert(`You submitted:\n\n${JSON.stringify(values, null, 2)}`);
+      resolve();
+    }, 500);
+  });
 
 storiesOf(' Documentation', module).addWithInfo('Wizard Form', ``, () => (
   <Provider store={store}>

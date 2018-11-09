@@ -191,6 +191,7 @@ export default class Tabs extends React.Component {
       customTabContent,
       triggerHref,
       role,
+      selectedPage,
       onSelectionChange,
       ...other
     } = this.props;
@@ -199,6 +200,7 @@ export default class Tabs extends React.Component {
       const newTab = React.cloneElement(tab, {
         index,
         selected: index === this.state.selected,
+        selectedPage: selectedPage,
         handleTabClick: this.handleTabClick(onSelectionChange),
         handleTabAnchorFocus: this.handleTabAnchorFocus(onSelectionChange),
         ref: e => {

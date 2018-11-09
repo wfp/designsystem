@@ -49,17 +49,17 @@
       }
     }
 
-
     /* All the line spacings */
 
     .#{$prefix}--blockquote {
-      & + p, & + h3 {
+      & + p,
+      & + h3 {
         margin-top: $spacing-lg;
       }
     }
 
     p + .#{$prefix}--blockquote {
-        margin-top: $spacing-sm;
+      margin-top: $spacing-sm;
     }
 
     p + h2 {
@@ -70,14 +70,15 @@
       margin-top: $spacing-lg;
     }
 
-    p + ul, h3 + ul, h4 + ul {
+    p + ul,
+    h3 + ul,
+    h4 + ul {
       margin-top: $spacing-md;
     }
 
     h3 + p {
       margin-top: $spacing-sm;
     }
-
   }
 
   .#{$prefix}--story--list {

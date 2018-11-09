@@ -7,6 +7,25 @@
 @import '../../globals/scss/css--reset';
 @import '../Form/form';
 
-@include exports('table') {
- 
+@include exports('react-select') {
+
+  .#{$prefix}--react-select-container {
+    .#{$prefix}--react-select__control {
+      border-radius: 0;
+      background-color: $field-01;
+      border: $input-border;
+      &:hover {
+        border: $input-border;
+      }
+    }
+    .#{$prefix}--react-select__control--is-focused, .#{$prefix}--react-select__control--is-focused:hover {
+      //border: $input-border;
+      box-shadow: none;
+      //border-color: red;
+      @include focus-outline('border-important');
+    } 
+    .wfp--react-select__menu {
+      background: red;
+    }
+  }
 }

@@ -16,6 +16,7 @@ import ReduxFormWrapper from '../ReduxFormWrapper';
 import Checkbox from '../Checkbox';
 import RadioButton from '../RadioButton';
 import Select from '../Select';
+import ReactSelect from 'react-select';
 import TextArea from '../TextArea';
 import TextInput from '../TextInput';
 import Toggle from '../Toggle';
@@ -24,6 +25,7 @@ const inputs = {
   Checkbox: 'Checkbox',
   RadioButton: 'RadioButton',
   Select: 'Select',
+  ReactSelect: 'ReactSelect',
   TextArea: 'TextArea',
   TextInput: 'TextInput',
   Toggle: 'Toggle',
@@ -33,40 +35,50 @@ const inputMap = {
   Checkbox,
   RadioButton,
   Select,
+  ReactSelect,
   TextArea,
   TextInput,
   Toggle,
 };
+
+const options = [
+  { value: 'chocolate', label: 'Chocolate' },
+  { value: 'strawberry', label: 'Strawberry' },
+  { value: 'vanilla', label: 'Vanilla' },
+];
 
 const required = value => (value ? undefined : 'Required');
 const maxLength = max => value =>
   value && value.length > max ? `Must be ${max} characters or less` : undefined;
 const maxLength15 = maxLength(15);
 
-const children = () => (
+/* const children = () => (
   <React.Fragment>
     <option />
     <option value="#ff0000">Red</option>
     <option value="#00ff00">Green</option>
     <option value="#0000ff">Blue</option>
   </React.Fragment>
-);
+); */
 
 const props = {
   regular: () => ({
     id: 'id-input',
-    className: 'some-class',
+    className: 'wfp--react-select-container',
+    classNamePrefix: 'wfp--react-select',
     component: ReduxFormWrapper(
       inputMap[
         select('Component (ReduxFormWrapper(Input))', inputs, 'TextInput')
       ]
     ),
+    defaultMenuIsOpen: true,
     onClick: action('onClick'),
     labelText: text('Label (labelText)', 'Label Text'),
     name: text('Name', 'input'),
     placeholder: text('Placeholder', 'Placeholder content here'),
     required: boolean('Required (required)', true),
     onFocus: action('onFocus'),
+    options: options
   }),
 };
 

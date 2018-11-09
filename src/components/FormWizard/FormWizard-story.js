@@ -6,9 +6,6 @@ import { withKnobs, number, text } from '@storybook/addon-knobs';
 import StepNavigation from '../StepNavigation';
 import StepNavigationSection from '../StepNavigationSection';
 import StepNavigationItem from '../StepNavigationItem';
-import Tabs from '../Tabs';
-import Tab from '../Tab';
-import TabsSkeleton from '../Tabs/Tabs.Skeleton';
 
 const props = {
   tabs: () => ({
@@ -37,11 +34,6 @@ const props = {
   }),
 };
 
-const el = props => {
-  console.log(props);
-  return <div>sddds</div>;
-};
-
 storiesOf('FormWizard', module)
   .addDecorator(withKnobs)
   .add(
@@ -58,7 +50,9 @@ storiesOf('FormWizard', module)
             <div className="some-content">Content for first tab goes here.</div>
           </StepNavigationItem>
           <StepNavigationItem {...props.tab()} label="Tab label 2">
-            <div className="some-content">Content for second tab goes here.</div>
+            <div className="some-content">
+              Content for second tab goes here.
+            </div>
           </StepNavigationItem>
         </StepNavigationSection>
         <StepNavigationSection {...props.tab()} label="Tab label 1">

@@ -23,7 +23,6 @@
     }
   }
 
-
   .#{$prefix}--tag--wfp {
     @include tag-theme($color__blue-10, $color__blue-60);
   }
@@ -91,7 +90,7 @@
   .#{$prefix}--tag--basic {
     @include tag-theme--x($ibm-colors__gray--10, $ibm-colors__gray--100);
   }
-/*
+  /*
   .#{$prefix}--tag--red {
     @include tag-theme--x($ibm-colors__red--10, $ibm-colors__red--60);
   }

@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
-import Button from '../Button'
 
 export default class Tabs extends React.Component {
   static propTypes = {
@@ -9,7 +8,7 @@ export default class Tabs extends React.Component {
      * Specify the text to be read by screen-readers when visiting the <Tabs>
      * component
      */
-    ariaLabel: PropTypes.string
+    ariaLabel: PropTypes.string,
   };
 
   static defaultProps = {
@@ -112,28 +111,16 @@ export default class Tabs extends React.Component {
   };
 
   render() {
-    const {
-      className,
-      children,
-      sidebar,
-      ...other
-    } = this.props;
+    const { className, children, sidebar } = this.props;
 
     const classes = {
-      formControls: classNames('wfp--form-wizard', className)
+      formControls: classNames('wfp--form-wizard', className),
     };
 
-    const selectedTab = this.getTabAt(this.state.selected);
-    const selectedLabel = selectedTab ? selectedTab.props.label : '';
-
     return (
-      <div className={classes.formControls} >
-        <div className="wfp--form-wizard__sidebar">
-          {sidebar}
-        </div>
-        <div className="wfp--form-wizard__content">
-          {children}
-        </div>
+      <div className={classes.formControls}>
+        <div className="wfp--form-wizard__sidebar">{sidebar}</div>
+        <div className="wfp--form-wizard__content">{children}</div>
       </div>
     );
   }

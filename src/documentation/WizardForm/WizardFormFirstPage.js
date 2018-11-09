@@ -5,10 +5,9 @@ import validate from './validate';
 import FormControls from '../../components/FormControls';
 import ReduxFormWrapper from '../../components/ReduxFormWrapper';
 import TextInput from '../../components/TextInput';
-import Button from '../../components/Button';
 
 const WizardFormFirstPage = props => {
-  const { handleSubmit } = props
+  const { handleSubmit } = props;
   return (
     <form className="wfp--form-long" onSubmit={handleSubmit}>
       <Field
@@ -24,18 +23,15 @@ const WizardFormFirstPage = props => {
         labelText="Last Name"
       />
       <div>
-      <FormControls
-        previousHidden={true}
-        submitHidden={true}
-      />
+        <FormControls previousHidden={true} submitHidden={true} />
       </div>
     </form>
-  )
-}
+  );
+};
 
 export default reduxForm({
   form: 'wizard', // <------ same form name
   destroyOnUnmount: false, // <------ preserve form data
   forceUnregisterOnUnmount: true, // <------ unregister fields on unmount
-  validate
-})(WizardFormFirstPage)
+  validate,
+})(WizardFormFirstPage);

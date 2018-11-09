@@ -122,11 +122,11 @@ export default class Slider extends PureComponent {
     left: 0,
   };
 
-  componentDidMount() {
+  UNSAFE_componentDidMount() {
     this.updatePosition();
   }
 
-  componentWillReceiveProps(nextProps) {
+  UNSAFE_componentWillReceiveProps(nextProps) {
     if (!isEqual(nextProps, this.props)) {
       this.updatePosition();
     }

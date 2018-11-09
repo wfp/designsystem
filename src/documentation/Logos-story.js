@@ -13,7 +13,7 @@ const LogoElement = ({ color, logoKind, src }) => {
     logoKind === 'standard' || logoKind === 'extended' ? 'auto' : 'auto';
   const height =
     logoKind === 'standard' || logoKind === 'extended' ? '40px' : '80px';
-    console.log(process.env);
+  console.log(process.env);
   return (
     <div style={{ display: 'inline-block', marginRight: '10px' }}>
       <div

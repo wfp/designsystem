@@ -38,7 +38,7 @@ $typescale-map: (
 }
 
 @mixin font-family {
-    font-family: $font-family-sans-serif;
+  font-family: $font-family-sans-serif;
 }
 
 // There are two line heights to choose from. One for headings and one for body text
@@ -79,6 +79,15 @@ $font-size-map: (
   @if map-has-key($font-size-map, $size) {
     font-size: map-get($font-size-map, $size);
   } @else {
-    @warn 'This is not a step of the Carbon Type Scale! Valid sizes are 11, 12, 14, 16, 18, 20, 28, 36, 54, and 76';
+    @warn 'This is not a step of the Carbon Type Scale! Valid sizes are 11,
+      12,
+      14,
+      16,
+      18,
+      20,
+      28,
+      36,
+      54,
+      and 76';
   }
 }

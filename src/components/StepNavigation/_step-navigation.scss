@@ -135,33 +135,27 @@
 
     &:first-child {
       .#{$prefix}--step-navigation__nav-item__indicator {
-          &:after {
-            top: -16px;
-            height: 16px;
-          }
+        &:after {
+          top: -16px;
+          height: 16px;
         }
       }
+    }
   }
 
   .#{$prefix}--step-navigation__nav-item--selected {
-    border: none;
-
-    @include breakpoint(bp--sm--major) {
-      border-bottom: 2px solid $brand-01;
-
-      .#{$prefix}--step-navigation__nav-link {
-        color: $brand-01;
-
-        &:focus {
-          color: $brand-01;
-        }
+    .#{$prefix}--step-navigation__nav-item__indicator {
+      background: $brand-01;
+      color: $ui-01;
+      &:after {
+        background-color: $brand-01;
       }
     }
   }
 
   .#{$prefix}--step-navigation__section {
     margin-bottom: rem(4px);
-    >.#{$prefix}--step-navigation__nav-link {
+    > .#{$prefix}--step-navigation__nav-link {
       margin-bottom: rem(2px);
     }
   }
@@ -199,12 +193,13 @@
       top: -24px;
       left: 50%;
       margin-left: -1px;
-      content: "";
+      content: '';
       background: $ui-04;
     }
   }
 
-  .#{$prefix}--step-navigation__nav-item:hover .#{$prefix}--step-navigation__nav-link {
+  .#{$prefix}--step-navigation__nav-item:hover
+    .#{$prefix}--step-navigation__nav-link {
     color: $text-01;
 
     @include breakpoint(bp--sm--major) {
@@ -251,18 +246,22 @@
     cursor: default;
   }
 
-  .#{$prefix}--step-navigation.#{$prefix}--skeleton .#{$prefix}--step-navigation__nav-link {
+  .#{$prefix}--step-navigation.#{$prefix}--skeleton
+    .#{$prefix}--step-navigation__nav-link {
     @include skeleton;
     width: rem(75px);
     height: rem(12px);
   }
 
-  .#{$prefix}--step-navigation.#{$prefix}--skeleton .#{$prefix}--step-navigation-trigger {
+  .#{$prefix}--step-navigation.#{$prefix}--skeleton
+    .#{$prefix}--step-navigation-trigger {
     @include skeleton;
     width: rem(100px);
   }
 
-  .#{$prefix}--step-navigation.#{$prefix}--skeleton .#{$prefix}--step-navigation-trigger svg {
+  .#{$prefix}--step-navigation.#{$prefix}--skeleton
+    .#{$prefix}--step-navigation-trigger
+    svg {
     @include hidden;
   }
 }

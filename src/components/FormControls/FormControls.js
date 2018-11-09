@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
-import Button from '../Button'
+import Button from '../Button';
 
 export default class Tabs extends React.Component {
   static propTypes = {
@@ -9,7 +9,7 @@ export default class Tabs extends React.Component {
      * Specify the text to be read by screen-readers when visiting the <Tabs>
      * component
      */
-    ariaLabel: PropTypes.string
+    ariaLabel: PropTypes.string,
   };
 
   static defaultProps = {
@@ -113,13 +113,8 @@ export default class Tabs extends React.Component {
 
   render() {
     const {
-      ariaLabel,
-      iconDescription,
       inline,
       className,
-      customTabContent,
-      triggerHref,
-      role,
       next,
       nextDisabled,
       nextHidden,
@@ -132,8 +127,6 @@ export default class Tabs extends React.Component {
       submitDisabled,
       submitHidden,
       submitText,
-      onSelectionChange,
-      ...other
     } = this.props;
 
     const classes = {
@@ -144,47 +137,41 @@ export default class Tabs extends React.Component {
       }),
     };
 
-    const selectedTab = this.getTabAt(this.state.selected);
-    const selectedLabel = selectedTab ? selectedTab.props.label : '';
-
     return (
-      <div className={classes.formControls} >
+      <div className={classes.formControls}>
         <div>
-          {!previousHidden &&
+          {!previousHidden && (
             <Button
               disabled={previousDisabled}
               kind="secondary"
               className="wfp--form-controls__prev"
               icon="arrow--left"
-              onClick={previous}
-            >
+              onClick={previous}>
               {previousText}
             </Button>
-          }
-          {!nextHidden &&
+          )}
+          {!nextHidden && (
             <Button
               disabled={nextDisabled}
               kind="secondary"
               className="wfp--form-controls__next"
               icon="arrow--right"
               type="submit"
-              onClick={next}
-            >
+              onClick={next}>
               {nextText}
             </Button>
-          }
+          )}
         </div>
         <div>
-          {!submitHidden &&
-          <Button
-            disabled={submitDisabled}
-            type="submit"
-            className="next"
-            onClick={submit}
-          >
-            {submitText}
-          </Button>
-          }
+          {!submitHidden && (
+            <Button
+              disabled={submitDisabled}
+              type="submit"
+              className="next"
+              onClick={submit}>
+              {submitText}
+            </Button>
+          )}
         </div>
       </div>
     );

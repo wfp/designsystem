@@ -1,4 +1,3 @@
-
 @import '../../globals/scss/vars';
 @import '../../globals/scss/theme';
 @import '../../globals/scss/colors';
@@ -116,7 +115,7 @@
       }
     }
   }
-  
+
   .#{$prefix}--btn--inverse {
     @include button-theme(
       transparent,

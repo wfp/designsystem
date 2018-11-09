@@ -26,13 +26,16 @@ storiesOf(' Documentation', module).addWithInfo('Typography', ``, () => (
     <p>
       Open Sans is the primary typeface for user interfaces; it’s a round,
       humanist sans-serif, with incredibly warm appeal. It can be used for both
-      headlines and paragraphs alike, as well as for interface elements.    
+      headlines and paragraphs alike, as well as for interface elements.
     </p>
 
     <h3>How to use it</h3>
 
-    <p>Open Sans is already included in the WFP UI's CSS.
-      If you don't want to include the font you can use set <span className="wfp--inline-highlight">$css--font-face: false;</span> with scss.
+    <p>
+      Open Sans is already included in the WFP UI's CSS. If you don't want to
+      include the font you can use set{' '}
+      <span className="wfp--inline-highlight">$css--font-face: false;</span>{' '}
+      with scss.
     </p>
 
     <h2>Headings</h2>

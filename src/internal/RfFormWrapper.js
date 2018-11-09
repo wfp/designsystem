@@ -4,14 +4,10 @@ import { connect } from 'react-redux';
 import { Values } from 'redux-form-website-template';
 import Button from '../components/Button';
 import Blockquote from '../components/Blockquote';
-import FormItem from '../components/FormItem/RfFormItem';
 import FormLabel from '../components/FormLabel/RfFormLabel';
 import { load as loadAccount } from './loadDefaultData';
 
 class FormEl extends Component {
-  constructor(props) {
-    super(props);
-  }
 
   render() {
     const {
@@ -78,10 +74,6 @@ Form = connect(
 )(Form);
 
 class RfFormWrapper extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   onSubmit(submit) {
     alert('Submitted: ' + JSON.stringify(submit));
   }

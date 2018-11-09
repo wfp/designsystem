@@ -2,7 +2,7 @@
  * Right to left Support added
  */
 
- @mixin ltr() {
+@mixin ltr() {
   body[dir='ltr'] & {
     @content;
   }

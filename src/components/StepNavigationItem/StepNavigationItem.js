@@ -56,16 +56,18 @@ export default class Tab extends React.Component {
       index,
       label,
       selected,
+      selectedPage,
       tabIndex,
       onClick,
       onKeyDown,
+      page,
       renderAnchor,
       ...other
     } = this.props;
 
     const classes = classNames(
       'wfp--step-navigation__nav-item',
-      { 'wfp--step-navigation__nav-item--selected': selected },
+      { 'wfp--step-navigation__nav-item--selected': page === selectedPage },
       className
     );
 
@@ -102,7 +104,7 @@ export default class Tab extends React.Component {
         ) : (
           <a {...anchorProps}>
             <span className="wfp--step-navigation__nav-item__indicator">B</span>
-            {label}
+            {label} {page === selectedPage && <span>Selected Page</span>}
           </a>
         )}
       </li>

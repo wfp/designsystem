@@ -47,6 +47,10 @@ export default class Tab extends React.Component {
     }
   }
 
+  getTabs() {
+    return React.Children.map(this.props.children, tab => tab);
+  }
+
   render() {
     const {
       children,
@@ -58,6 +62,7 @@ export default class Tab extends React.Component {
       index,
       label,
       selected,
+      selectedPage,
       tabIndex,
       onClick,
       onKeyDown,
@@ -77,11 +82,18 @@ export default class Tab extends React.Component {
       label,
       role: 'tab',
       tabIndex,
-      ['aria-selected']: selected,
       ref: e => {
         this.tabAnchor = e;
       },
     };
+
+    const tabsWithProps = this.getTabs().map((tab, index) => {
+      console.log('tab', tab);
+      const newTab = React.cloneElement(tab, {
+        selectedPage: selectedPage,
+      });
+      return newTab;
+    });
 
     return (
       <li
@@ -107,9 +119,7 @@ export default class Tab extends React.Component {
             {label}
           </a>
         )}
-        <ul>
-        {children}
-        </ul>
+        <ul>{tabsWithProps}</ul>
       </li>
     );
   }
