@@ -21,7 +21,8 @@ class SingleComponent extends Component {
     const { centered, children, pageWidth } = this.props;
     const { height } = this.state;
 
-    const classNames = classnames('wfp--story', {
+    //'wfp--story', 
+    const classNames = classnames({
       'wfp--single-component--top': height >= 300,
     });
 
@@ -39,7 +40,12 @@ class SingleComponent extends Component {
         }
         className={classNames}
         pageWidth={pageWidth}>
-        <div id="container">{children}</div>
+        <div
+          id="container"
+          style={{flexGrow: 1}}
+        >
+          {children}
+        </div>
       </Wrapper>
     );
   }

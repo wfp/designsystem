@@ -5,10 +5,7 @@ import { withKnobs, boolean } from '@storybook/addon-knobs/react';
 import SingleComponent from '../../documentation/SingleComponent';
 import withTests from '../../internal/withTests';
 
-import HtmlComponent from '../../documentation/HtmlComponent';
 import { exampleStory } from '../../../.storybook/lucid-docs-addon';
-import Html from '!!raw-loader!./Blockquote.html';
-
 import Raw from '!!raw-loader!./Blockquote';
 
 import { withReadme } from 'storybook-readme';
@@ -59,20 +56,4 @@ storiesOf('Blockquote', module)
         </Blockquote>
       );
     }
-  );
-
-storiesOf('Blockquote', module)
-  .addDecorator(
-    exampleStory({
-      code: Html,
-      options: { showAddonPanel: true },
-    })
-  )
-  .addDecorator(story => <HtmlComponent html={Html}>{story()}</HtmlComponent>)
-  .addWithInfo(
-    'html',
-    `
-     html view
-    `,
-    () => null
-  );
+);

@@ -22,6 +22,7 @@
 
   .#{$prefix}--form-wizard__sidebar {
     width: rem(300px);
+    margin-right: $spacing-lg;
   }
 
   .#{$prefix}--form-wizard__content {

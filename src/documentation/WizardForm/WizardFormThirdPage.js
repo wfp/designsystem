@@ -2,6 +2,11 @@ import React from 'react';
 import { Field, reduxForm } from 'redux-form';
 import validate from './validate';
 import FormControls from '../../components/FormControls';
+
+import ReduxFormWrapper from '../../components/ReduxFormWrapper';
+import FormGroup from '../../components/FormGroup';
+import TextArea from '../../components/TextArea';
+
 const colors = ['Red', 'Orange', 'Yellow', 'Green', 'Blue', 'Indigo', 'Violet'];
 
 const renderColorSelector = ({ input, meta: { touched, error } }) => (
@@ -22,28 +27,18 @@ const WizardFormThirdPage = props => {
   const { handleSubmit, pristine, previousPage, submitting } = props;
   return (
     <form onSubmit={handleSubmit}>
-      <div>
-        <label>Favorite Color</label>
-        <Field name="favoriteColor" component={renderColorSelector} />
-      </div>
-      <div>
-        <label htmlFor="employed">Employed</label>
-        <div>
-          <Field
-            name="employed"
-            id="employed"
-            component="input"
-            type="checkbox"
-          />
-        </div>
-      </div>
-      <div>
-        <label>Notes</label>
-        <div>
-          <Field name="notes" component="textarea" placeholder="Notes" />
-        </div>
-      </div>
-      <FormControls />
+      <FormGroup>
+        <Field
+          component={ReduxFormWrapper(TextArea)}
+          name="notes"
+          labelText="Notes"
+          placeholder="Notes"
+        />
+      </FormGroup>
+      <FormControls
+        onPreviousClick={previousPage}
+        nextHidden={true}
+      />
     </form>
   );
 };

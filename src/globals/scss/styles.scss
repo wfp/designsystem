@@ -25,6 +25,8 @@ $css--typography: true !default;
 @import 'css--helpers';
 @import 'css--body';
 @import 'css--typography';
+
+@import 'text-gradient';
 //@import '../grid/grid';
 
 //-------------------------
@@ -82,6 +84,7 @@ $deprecations--message: 'Deprecated code was found, this code will be removed be
 @import '../../components/overflow-menu/overflow-menu';
 @import '../../components/card/card';
 */
+@import '../../components/PhotoCard/photo-card';
 @import '../../components/ContentSwitcher/content-switcher';
 /*
 @import '../../components/date-picker/date-picker';

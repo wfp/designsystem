@@ -22,7 +22,7 @@ class FormEl extends Component {
       ? sampleData
       : {
           // used to populate "account" reducer when "Load" is clicked
-          Input: 13,
+          input: 13,
         };
 
     return (
@@ -47,7 +47,6 @@ class FormEl extends Component {
           <Button
             type="button"
             kind="secondary"
-            disabled={pristine || submitting}
             onClick={() => this.props.load(data)}>
             Load Sample Data
           </Button>

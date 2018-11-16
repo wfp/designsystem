@@ -10,7 +10,7 @@ const options = [
   { value: 'vanilla', label: 'Vanilla' },
 ];
 
-storiesOf('ReactSelect', module)
+storiesOf('React-Select', module)
   .addDecorator(withReadme([readme]))
   .addWithInfo(
     'default',

@@ -21,6 +21,7 @@ const Wrapper = props => {
     'wfp--wrapper--width-xs': pageWidth === 'narrowest' || pageWidth === 'xs',
     'wfp--wrapper--width-mobile-full': mobilePageWidth === 'full',
     'wfp--wrapper--spacing-md': spacing === 'md',
+    'wfp--wrapper--spacing-xl': spacing === 'xl',
     [`${className}`]: className,
   });
   if (background || backgroundStyle) {

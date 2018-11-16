@@ -115,15 +115,15 @@ export default class Tabs extends React.Component {
     const {
       inline,
       className,
-      next,
+      onNextClick,
       nextDisabled,
       nextHidden,
       nextText,
-      previous,
+      onPreviousClick,
       previousDisabled,
       previousHidden,
       previousText,
-      submit,
+      onSubmitClick,
       submitDisabled,
       submitHidden,
       submitText,
@@ -146,7 +146,7 @@ export default class Tabs extends React.Component {
               kind="secondary"
               className="wfp--form-controls__prev"
               icon="arrow--left"
-              onClick={previous}>
+              onClick={onPreviousClick}>
               {previousText}
             </Button>
           )}
@@ -157,7 +157,7 @@ export default class Tabs extends React.Component {
               className="wfp--form-controls__next"
               icon="arrow--right"
               type="submit"
-              onClick={next}>
+              onClick={onNextClick}>
               {nextText}
             </Button>
           )}
@@ -168,7 +168,7 @@ export default class Tabs extends React.Component {
               disabled={submitDisabled}
               type="submit"
               className="next"
-              onClick={submit}>
+              onClick={onSubmitClick}>
               {submitText}
             </Button>
           )}

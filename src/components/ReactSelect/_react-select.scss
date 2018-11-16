@@ -24,8 +24,5 @@
       //border-color: red;
       @include focus-outline('border-important');
     } 
-    .wfp--react-select__menu {
-      background: red;
-    }
   }
 }

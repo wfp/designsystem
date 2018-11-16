@@ -2,9 +2,6 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import Wrapper from '../Wrapper';
 import { withInfo } from '@storybook/addon-info';
-import HtmlComponent from '../../documentation/HtmlComponent';
-import Html from '!!raw-loader!./Story.html';
-import { exampleStory } from '../../../.storybook/lucid-docs-addon';
 
 import { withReadme } from 'storybook-readme';
 import readme from './README.md';
@@ -61,13 +58,3 @@ storiesOf('Story', module)
       </Wrapper>
     ))
   );
-
-storiesOf('Story', module)
-  .addDecorator(
-    exampleStory({
-      code: Html,
-      options: { showAddonPanel: true },
-    })
-  )
-  .addDecorator(story => <HtmlComponent html={Html}>{story()}</HtmlComponent>)
-  .add('html', () => null);

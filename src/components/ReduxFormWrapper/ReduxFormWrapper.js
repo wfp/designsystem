@@ -19,6 +19,7 @@ const ReduxFormWrapper = WrappedComponent => ({
         </React.Fragment>
       }
       invalidText={error}
+      onBlur={onblur ? () => onBlur(value) : null}
       invalid={touched && error}>
       {children}
     </WrappedComponent>

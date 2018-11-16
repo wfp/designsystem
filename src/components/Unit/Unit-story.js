@@ -12,10 +12,6 @@ import TablePagination from '../TablePagination';
 import Unit from './Unit';
 import { withKnobs, select, text, number } from '@storybook/addon-knobs/react';
 
-import HtmlComponent from '../../documentation/HtmlComponent';
-import Html from '!!raw-loader!./Unit.html';
-import { exampleStory } from '../../../.storybook/lucid-docs-addon';
-
 const units = [
   {
     description: 'generate USD based on USD',
@@ -313,37 +309,4 @@ storiesOf('Unit', module)
 
       return <Unit {...unitProps}>{value}</Unit>;
     })
-  );
-
-/*storiesOf('Unit', module)
-  .addDecorator(
-    exampleStory({
-      code: Html,
-      options: { showAddonPanel: true },
-    })
-  )
-  .addDecorator(story => <HtmlComponent html={Html}>{story()}</HtmlComponent>)
-  .addWithInfo(
-    'html',
-    `
-     html view
-    `,
-    () => null
-  ); */
-
-storiesOf('Unit', module)
-  .addDecorator(
-    exampleStory({
-      code: Html,
-      options: { showAddonPanel: true },
-    })
-  )
-  .addDecorator(story => <HtmlComponent html={Html}>{story()}</HtmlComponent>)
-  .add(
-    'html',
-    withInfo({
-      text: `
-        html view
-      `,
-    })(() => null)
   );

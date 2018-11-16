@@ -71,7 +71,6 @@ const props = {
         select('Component (ReduxFormWrapper(Input))', inputs, 'TextInput')
       ]
     ),
-    defaultMenuIsOpen: true,
     onClick: action('onClick'),
     labelText: text('Label (labelText)', 'Label Text'),
     name: text('Name', 'input'),

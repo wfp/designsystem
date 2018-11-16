@@ -7,10 +7,6 @@ import withTests from '../../internal/withTests';
 import { withReadme } from 'storybook-readme';
 import readme from './README.md';
 
-import HtmlComponent from '../../documentation/HtmlComponent';
-import Html from './List.html';
-import { exampleStory } from '../../../.storybook/lucid-docs-addon';
-
 import { List, ListItem } from '../List';
 
 const additionalProps = {
@@ -69,20 +65,4 @@ storiesOf('List', module)
         </ListItem>
       </List>
     )
-  );
-
-storiesOf('List', module)
-  .addDecorator(
-    exampleStory({
-      code: Html,
-      options: { showAddonPanel: true },
-    })
-  )
-  .addDecorator(story => <HtmlComponent html={Html}>{story()}</HtmlComponent>)
-  .addWithInfo(
-    'html',
-    `
-     html view
-    `,
-    () => null
   );

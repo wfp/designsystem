@@ -188,19 +188,3 @@ storiesOf('Module', module)
       </div>
     )
   );
-
-storiesOf('Module', module)
-  .addDecorator(
-    exampleStory({
-      code: Html,
-      options: { showAddonPanel: true },
-    })
-  )
-  .addDecorator(story => <HtmlComponent html={Html}>{story()}</HtmlComponent>)
-  .addWithInfo(
-    'html',
-    `
-     html view
-    `,
-    () => null
-  );

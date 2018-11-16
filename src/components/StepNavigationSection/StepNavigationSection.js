@@ -87,13 +87,14 @@ export default class Tab extends React.Component {
       },
     };
 
-    const tabsWithProps = this.getTabs().map((tab, index) => {
+    /*const tabsWithProps = this.getTabs().map((tab, index) => {
       console.log('tab', tab);
       const newTab = React.cloneElement(tab, {
         selectedPage: selectedPage,
+        handleTabClick: handleTabClick
       });
       return newTab;
-    });
+    }); */
 
     return (
       <li
@@ -102,7 +103,7 @@ export default class Tab extends React.Component {
         className={classes}
         onClick={evt => {
           handleTabClick(index, label, evt);
-          onClick(evt);
+          //onClick(evt);
         }}
         onKeyDown={evt => {
           this.setTabFocus(evt);
@@ -119,7 +120,7 @@ export default class Tab extends React.Component {
             {label}
           </a>
         )}
-        <ul>{tabsWithProps}</ul>
+        {/*<ul>{tabsWithProps}</ul>*/}
       </li>
     );
   }

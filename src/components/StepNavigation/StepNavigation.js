@@ -121,12 +121,10 @@ export default class Tabs extends React.Component {
 
   // following functions (handle*) are Props on Tab.js, see Tab.js for parameters
   handleTabClick = onSelectionChange => {
+    console.log("Handle tabl click");
     return (index, label, evt) => {
       evt.preventDefault();
       this.selectTabAt(index, onSelectionChange);
-      this.setState({
-        dropdownHidden: true,
-      });
     };
   };
 
@@ -173,6 +171,7 @@ export default class Tabs extends React.Component {
 
   selectTabAt = (index, onSelectionChange) => {
     if (this.state.selected !== index) {
+      this.props.handleTabClick(index);
       this.setState({
         selected: index,
       });
@@ -226,22 +225,6 @@ export default class Tabs extends React.Component {
     return (
       <>
         <nav {...other} className={classes.tabs} role={role}>
-          <div
-            role="listbox"
-            aria-label={ariaLabel}
-            tabIndex={0}
-            className="wfp--step-navigation-trigger"
-            onClick={this.handleDropdownClick}
-            onKeyPress={this.handleDropdownClick}>
-            <a
-              tabIndex={-1}
-              className="wfp--step-navigation-trigger-text"
-              href={triggerHref}
-              onClick={this.handleDropdownClick}>
-              {selectedLabel}
-            </a>
-            <Icon description={iconDescription} icon={iconCaretDown} />
-          </div>
           <ul role="tablist" className={classes.tablist}>
             {tabsWithProps}
           </ul>

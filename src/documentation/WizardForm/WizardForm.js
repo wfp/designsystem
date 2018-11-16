@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { Values } from 'redux-form-website-template';
 
 import StepNavigation from '../../components/StepNavigation';
 import StepNavigationSection from '../../components/StepNavigationSection';
 import StepNavigationItem from '../../components/StepNavigationItem';
+
+import Blockquote from '../../components/Blockquote';
+
 import Wrapper from '../../components/Wrapper';
 import FormWizard from '../../components/FormWizard';
 import WizardFormFirstPage from './WizardFormFirstPage';
@@ -27,36 +31,42 @@ class WizardForm extends Component {
     this.setState({ page: this.state.page - 1 });
   }
 
+  handleTabClick = (index) => {
+    console.log("click", index);
+    this.setState({ page: index });
+  }
+
   render() {
     const { onSubmit } = this.props;
     const { page } = this.state;
     return (
-      <Wrapper pageWidth="md">
+      <Wrapper pageWidth="md" spacing="xl">
         <FormWizard
           sidebar={
-            <StepNavigation selectedPage={page}>
-              <StepNavigationSection label="Credentials">
-                <StepNavigationItem label="Name and last name" page={1} />
-                <StepNavigationItem label="Additional information" page={2} />
-              </StepNavigationSection>
-              <StepNavigationSection label="Tab label 1">
-                <StepNavigationItem label="Tab label 3" page={3} />
-              </StepNavigationSection>
+            <StepNavigation selectedPage={page} handleTabClick={this.handleTabClick}>
+              <StepNavigationItem label="Name and last name" page={0} />
+              <StepNavigationItem label="Additional information with long description" page={1} />
+              <StepNavigationSection label="section" />
+              <StepNavigationItem label="Tab label 3" page={2} />
             </StepNavigation>
           }>
-          {page === 1 && <WizardFormFirstPage onSubmit={this.nextPage} />}
-          {page === 2 && (
+          {page === 0 && <WizardFormFirstPage onSubmit={this.nextPage} />}
+          {page === 1 && (
             <WizardFormSecondPage
               previousPage={this.previousPage}
               onSubmit={this.nextPage}
             />
           )}
-          {page === 3 && (
+          {page === 2 && (
             <WizardFormThirdPage
               previousPage={this.previousPage}
               onSubmit={onSubmit}
             />
           )}
+
+          <Blockquote>
+            <Values form="wizard" />
+          </Blockquote>
         </FormWizard>
       </Wrapper>
     );

@@ -64,22 +64,20 @@
   }
 
   .#{$prefix}--step-navigation__nav {
-    @include layer('overlay');
     margin: 0;
     padding: 0;
-    position: absolute;
+    //position: absolute;
     width: 100%;
     list-style: none;
     display: flex;
     flex-direction: column;
-    z-index: z('dropdown');
     background: $ui-01;
 
     a {
       text-decoration: none;
     }
 
-    @include breakpoint(bp--sm--major) {
+   /* @include breakpoint(bp--sm--major) {
       @include typescale('epsilon');
       flex-direction: column;
       margin-right: $spacing-md;
@@ -87,11 +85,7 @@
       background: none;
       box-shadow: none;
       z-index: auto;
-    }
-
-    @include breakpoint(bp--lg--major) {
-      margin-left: 0;
-    }
+    }*/
   }
 
   .#{$prefix}--step-navigation__nav--inline {
@@ -183,12 +177,13 @@
     line-height: rem(24px);
     margin: 0 rem(14px) 0 rem(5px);
     text-align: center;
+    z-index: 2;
     &:after {
       display: block;
       width: 2px;
       height: 24px;
       position: absolute;
-      z-index: -100;
+      z-index: 1;
       //z-index: -1px;
       top: -24px;
       left: 50%;
@@ -214,8 +209,10 @@
     text-decoration: none;
     padding: $spacing-md;
     width: 100%;
-    white-space: nowrap;
-    text-overflow: ellipsis;
+    position: relative;
+    z-index: 2;
+    /* white-space: nowrap;
+    text-overflow: ellipsis; */
 
     &:focus {
       outline: 1px solid transparent;

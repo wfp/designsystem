@@ -12,7 +12,7 @@ const renderError = ({ meta: { touched, error } }) =>
   touched && error ? <span>{error}</span> : false;
 
 const WizardFormSecondPage = props => {
-  const { handleSubmit } = props;
+  const { handleSubmit, previousPage } = props;
   return (
     <form onSubmit={handleSubmit}>
       <Field
@@ -45,7 +45,10 @@ const WizardFormSecondPage = props => {
           <Field name="sex" component={renderError} />
         </FormGroup>
       </FormGroup>
-      <FormControls />
+      <FormControls
+        onPreviousClick={previousPage}
+        submitHidden={true}
+      />
     </form>
   );
 };
