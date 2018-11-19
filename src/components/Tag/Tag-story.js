@@ -3,6 +3,10 @@ import { storiesOf } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
 import { withKnobs, select, text } from '@storybook/addon-knobs';
 import Tag, { types as typesList } from '../Tag';
+import { withReadme } from 'storybook-readme';
+import readme from './README.md';
+
+
 import TagSkeleton from '../Tag/Tag.Skeleton';
 
 const types = typesList.reduce(
@@ -14,6 +18,7 @@ const types = typesList.reduce(
 );
 
 storiesOf('Tag', module)
+  .addDecorator(withReadme([readme]))
   .addDecorator(withKnobs)
   .add(
     'Default',
@@ -27,7 +32,7 @@ storiesOf('Tag', module)
       <div>
         <Tag
           className="some-class"
-          type={select('Tag type (type)', types, 'experimental')}>
+          type={select('Tag type (type)', types, 'wfp')}>
           {text('Content (children)', '')}
         </Tag>
       </div>

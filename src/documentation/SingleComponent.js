@@ -42,7 +42,7 @@ class SingleComponent extends Component {
         pageWidth={pageWidth}>
         <div
           id="container"
-          style={{flexGrow: 1}}
+          style={{flexBasis: 'auto'}}
         >
           {children}
         </div>

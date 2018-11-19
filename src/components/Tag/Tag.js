@@ -4,14 +4,8 @@ import classNames from 'classnames';
 
 const TYPES = {
   beta: 'Beta',
-  community: 'Community',
   custom: 'Custom',
-  dedicated: 'Dedicated',
-  experimental: 'Experimental',
   wfp: 'WFP',
-  local: 'Local',
-  private: 'Private',
-  'third-party': 'Third-Party',
 };
 
 const Tag = ({ children, className, type, ...other }) => {

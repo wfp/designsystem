@@ -26,32 +26,10 @@
   .#{$prefix}--tag--wfp {
     @include tag-theme($color__blue-10, $color__blue-60);
   }
-  /*
+
   .#{$prefix}--tag--beta {
     @include tag-theme($color__gray-1, $color__navy-gray-4);
   }
-
-  .#{$prefix}--tag--third-party {
-    @include tag-theme($color__teal-10, $color__teal-60);
-  }
-
-  .#{$prefix}--tag--local,
-  .#{$prefix}--tag--dedicated,
-  .#{$prefix}--tag--custom {
-    @include tag-theme($color__purple-10, $color__purple-60);
-  }
-
-  .#{$prefix}--tag--experimental {
-    @include tag-theme($color__orange-10, $color__orange-60);
-  }
-
-  .#{$prefix}--tag--community {
-    @include tag-theme($color__green-10, $color__green-60);
-  }
-
-  .#{$prefix}--tag--private {
-    @include tag-theme($color__yellow-10, $color__yellow-60);
-  }*/
 
   // Skeleton state
   .#{$prefix}--tag.#{$prefix}--skeleton {

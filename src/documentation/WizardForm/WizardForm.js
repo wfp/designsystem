@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+
 import { Values } from 'redux-form-website-template';
+
 
 import StepNavigation from '../../components/StepNavigation';
 import StepNavigationSection from '../../components/StepNavigationSection';
@@ -8,6 +10,8 @@ import StepNavigationItem from '../../components/StepNavigationItem';
 
 import Blockquote from '../../components/Blockquote';
 
+
+import FormError from '../../components/FormError';
 import Wrapper from '../../components/Wrapper';
 import FormWizard from '../../components/FormWizard';
 import WizardFormFirstPage from './WizardFormFirstPage';
@@ -20,7 +24,7 @@ class WizardForm extends Component {
     this.nextPage = this.nextPage.bind(this);
     this.previousPage = this.previousPage.bind(this);
     this.state = {
-      page: 1,
+      page: 0,
     };
   }
   nextPage() {
@@ -37,8 +41,14 @@ class WizardForm extends Component {
   }
 
   render() {
-    const { onSubmit } = this.props;
+    const { error, onSubmit } = this.props;
     const { page } = this.state;
+
+
+    /* const validation = validate(this.props.values, this.props);
+
+    console.log("validation", validation, this.props.values); */
+
     return (
       <Wrapper pageWidth="md" spacing="xl">
         <FormWizard
@@ -50,7 +60,11 @@ class WizardForm extends Component {
               <StepNavigationItem label="Tab label 3" page={2} />
             </StepNavigation>
           }>
-          {page === 0 && <WizardFormFirstPage onSubmit={this.nextPage} />}
+          {page === 0 && 
+            <WizardFormFirstPage
+              onSubmit={this.nextPage} 
+            />
+          }
           {page === 1 && (
             <WizardFormSecondPage
               previousPage={this.previousPage}
@@ -65,7 +79,7 @@ class WizardForm extends Component {
           )}
 
           <Blockquote>
-            <Values form="wizard" />
+            {/*<Values form="wizard" />*/}
           </Blockquote>
         </FormWizard>
       </Wrapper>
@@ -76,5 +90,14 @@ class WizardForm extends Component {
 WizardForm.propTypes = {
   onSubmit: PropTypes.func.isRequired,
 };
+
+/*
+export default reduxForm({
+  form: 'wizard', // <------ same form name
+  destroyOnUnmount: false, // <------ preserve form data
+  forceUnregisterOnUnmount: true, // <------ unregister fields on unmount
+  validate,
+})(WizardForm);
+*/
 
 export default WizardForm;

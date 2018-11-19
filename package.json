@@ -207,7 +207,7 @@
     "react-test-renderer": "^16.4.0",
     "react-tippy": "^1.2.2",
     "react-truncate-html": "^0.1.7",
-    "redux-form": "^7.3.0",
+    "redux-form": "^7.4.2",
     "redux-form-website-template": "^0.0.112",
     "requestanimationframe": "^0.0.23",
     "rimraf": "^2.6.1",

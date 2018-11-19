@@ -17,13 +17,14 @@
     position: relative;
     display: block;
     width: 100%;
+    text-decoration: none;
     height: rem(200px);
     @include breakpoint(bp--md--major) {
       height: rem(260px);
     }
     transition: all 0.1s;
     @include layer(pop-out);
-    &:hover {
+    &.#{$prefix}--photo-card--link:hover {
       @include layer(pop-out--hover);
     }
     color: $text-01;
@@ -44,18 +45,27 @@
     overflow: hidden;
   }
 
+  .#{$prefix}--photo-card--no-background {
+    background:$brand-02;
+  }
+
+
   .#{$prefix}--photo-card__info {
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
-    padding: $spacing-md;
+    padding: $spacing-md*1.1 $spacing-md;
     z-index: 100;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 
-  
-
+  .#{$prefix}--photo-card__info__more {
+    margin-right: $spacing-md;
+  }
 
   .#{$prefix}--photo-card__info__metadata {
     margin: 0;
@@ -115,7 +125,7 @@
         opacity: 0.6;
       }
     }
-    &:hover {
+    &.#{$prefix}--photo-card--link:hover {
       .#{$prefix}--photo-card__info__title {
         text-decoration: underline;
       }
@@ -134,8 +144,11 @@
       height: rem(500px);
     }
     box-shadow: none;
-    &:hover {
+    &.#{$prefix}--photo-card--link:hover {
       box-shadow: none;
+    }
+    .#{$prefix}--photo-card__info {
+      padding: $spacing-lg;
     }
     .#{$prefix}--photo-card__info__background {
       height: rem(300px);
@@ -146,20 +159,64 @@
   }
 
 
-  .#{$prefix}--photo-card--page-splash {
+  .#{$prefix}--photo-card--splash, .#{$prefix}--photo-card--splash-image, .#{$prefix}--photo-card--splash-compact {
     height: rem(300px);
+    display: flex;
+    align-items: center;
+    color: $ui-01;
     @include breakpoint(bp--md--major) {
       height: rem(500px);
     }
     box-shadow: none;
-    &:hover {
+    &.#{$prefix}--photo-card--link:hover {
       box-shadow: none;
     }
-    .#{$prefix}--photo-card__info__background {
-      height: rem(300px);
+    .#{$prefix}--photo-card__info {
+      position: relative;
+      text-align: center;
+      padding: $spacing-2xl;
       @include breakpoint(bp--md--major) {
-        height: rem(500px);
+        padding: $spacing-4xl;
       }
+    }
+  }
+
+  .#{$prefix}--photo-card--splash-image {
+    .#{$prefix}--photo-card__info {
+      text-align: right;
+      align-items: flex-end;
+    }
+    .#{$prefix}--photo-card__info__more {
+      margin-top: $spacing-md;
+      margin-right: 0;
+    }
+    .#{$prefix}--photo-card__background {
+      &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 3;
+        background: rgba(#000000, 0.4);
+      }
+    }
+    .#{$prefix}--photo-card__info {
+      flex-direction: column;
+    }
+  }
+
+  .#{$prefix}--photo-card--splash-compact {
+    height: rem(70px);
+    .#{$prefix}--photo-card__info {
+      justify-content: center;
+    }
+    .#{$prefix}--photo-card__info__title {
+      margin-bottom: 0;
+    }
+    .#{$prefix}--photo-card__info__more {
+      margin-left: $spacing-xl;
     }
   }
 
@@ -174,7 +231,7 @@
     .#{$prefix}--photo-card__info__title {
       color: $brand-01;
     }
-    &:hover {
+    &.#{$prefix}--photo-card--link:hover {
       .#{$prefix}--photo-card__info__title {
         text-decoration: underline;
       }
@@ -212,23 +269,22 @@
       filter: blur(40px);
       transform: scale(-1.2, 1.2);
     }
-    &:hover {
+    &.#{$prefix}--photo-card--link:hover {
       .#{$prefix}--photo-card__info__title {
         text-decoration: underline;
       }
-      .#{$prefix}--photo-card__info {
-        /*color: $color__white;
-        background: $brand-01; */
-      }
-      /*.#{$prefix}--photo-card__info__background {
-        &:after {
-          background: $brand-01;
-          opacity: 1;
-        }
-      }*/
     }
   }
 
-
+  .#{$prefix}--photo-card--related {
+    display: flex;
+    img {
+      height: 100%;
+      width: auto;
+    }
+    .#{$prefix}--photo-card__info {
+      position: relative;
+    }
+  }
 
 }
