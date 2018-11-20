@@ -1,6 +1,8 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
+import Icon from '../Icon';
+//import colors from '../../globals/data/colors.js';
 
 export default class Tab extends React.Component {
   static propTypes = {
@@ -55,6 +57,8 @@ export default class Tab extends React.Component {
       href,
       index,
       label,
+      locked,
+      status,
       selected,
       selectedPage,
       tabIndex,
@@ -67,7 +71,12 @@ export default class Tab extends React.Component {
 
     const classes = classNames(
       'wfp--step-navigation__nav-item',
+      { 'wfp--step-navigation__nav-item--before': page < selectedPage },
       { 'wfp--step-navigation__nav-item--selected': page === selectedPage },
+      { 'wfp--step-navigation__nav-item--locked': locked },
+      { 'wfp--step-navigation__nav-item--not-started': status === 'not-started' },
+      { 'wfp--step-navigation__nav-item--warning': status === 'warning' },
+      { 'wfp--step-navigation__nav-item--complete': status === 'complete' },
       className
     );
 
@@ -83,29 +92,45 @@ export default class Tab extends React.Component {
       },
     };
 
+    const icon = {
+      'not-started': {name: 'menu', fill: '#0b77c2' },
+      warning: {name: 'warning--solid', fill: '#0b77c2' },
+      locked: {name: 'unlock', fill: '#0b77c2' },
+      complete: {name: 'checkmark', fill: '#0b77c2' },
+    }
+
     return (
       <li
         {...other}
         tabIndex={-1}
         className={classes}
         onClick={evt => {
-          handleTabClick(index, label, evt);
-          onClick(evt);
-        }}
-        onKeyDown={evt => {
-          this.setTabFocus(evt);
-          handleTabKeyDown(index, label, evt);
-          onKeyDown(evt);
+          if (!locked) {
+            handleTabClick(index, label, evt);
+            onClick(evt);
+          }
         }}
         role="presentation"
         selected={selected}>
         {renderAnchor ? (
           renderAnchor(anchorProps)
         ) : (
-          <a {...anchorProps}>
-            <span className="wfp--step-navigation__nav-item__indicator">B</span>
-            {label} {page === selectedPage && <span>Selected Page</span>}
-          </a>
+          <React.Fragment>
+            <span className="wfp--step-navigation__nav-item__indicator">
+              {locked || status ? (
+                <Icon
+                  name={icon[locked ? 'locked' : status].name}
+                  fill={icon[locked ? 'locked' : status].fill}
+                  width="14"
+                  height="14"
+                  description="sss"
+                />
+              ) : (
+                <React.Fragment>{page+1}</React.Fragment>
+              )}
+            </span>
+            <span className="wfp--step-navigation__nav-item__text">{label}</span>
+          </React.Fragment>
         )}
       </li>
     );

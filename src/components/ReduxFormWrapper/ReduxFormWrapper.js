@@ -1,15 +1,21 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-const ReduxFormWrapper = WrappedComponent => ({
+const ReduxFormWrapper = ({
   input,
+  InputComponent,
   meta: { touched, error, warning },
   children,
   ...other
 }) => {
-  if (WrappedComponent === undefined) return null;
+  if (InputComponent === undefined) return null;
+
+  const onChangeX = (e) => {
+    input.onChange(e);
+  }
+
   return (
-    <WrappedComponent
+    <InputComponent
       {...input}
       {...other}
       labelText={
@@ -20,9 +26,10 @@ const ReduxFormWrapper = WrappedComponent => ({
       }
       invalidText={error}
       onBlur={onblur ? () => onBlur(value) : null}
+      onChange={input.onChange}
       invalid={touched && error}>
       {children}
-    </WrappedComponent>
+    </InputComponent>
   );
 };
 

@@ -16,13 +16,15 @@ const WizardFormFirstPage = props => {
       <Field
         id="firstName"
         name="firstName"
-        component={ReduxFormWrapper(TextInput)}
+        component={ReduxFormWrapper}
+        InputComponent={TextInput}
         labelText="First Name"
       />
       <Field
         id="lastName"
         name="lastName"
-        component={ReduxFormWrapper(TextInput)}
+        component={ReduxFormWrapper}
+        InputComponent={TextInput}
         labelText="Last Name"
       />
       <div>

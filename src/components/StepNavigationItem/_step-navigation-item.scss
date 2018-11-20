@@ -1,0 +1,199 @@
+//-----------------------------
+// Tabs
+//-----------------------------
+
+@import '../../globals/scss/vars';
+@import '../../globals/scss/colors';
+@import '../../globals/scss/spacing';
+@import '../../globals/scss/helper-mixins';
+@import '../../globals/scss/layer';
+@import '../../globals/scss/typography';
+@import '../../globals/scss/layout';
+@import '../../globals/scss/import-once';
+@import '../../globals/scss/css--typography';
+
+@include exports('step-navigation-item') {
+  .#{$prefix}--step-navigation__nav-item {
+    @include typescale('zeta');
+    margin: 0;
+    padding: $spacing-sm 0 $spacing-sm;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    &:focus {
+      outline: none;
+      background: blue;
+    }
+    &:first-child {
+      .#{$prefix}--step-navigation__nav-item__indicator {
+        &:after {
+          display: none;
+          top: -18px;
+          height: 18px;
+        }
+      }
+    }
+  }
+
+  .#{$prefix}--step-navigation__nav-item__text {
+    text-decoration: underline;
+    color: $brand-01;
+  }
+
+  /*
+  .#{$prefix}--step-navigation__section {
+    margin-bottom: rem(4px);
+    > .#{$prefix}--step-navigation__nav-link {
+      margin-bottom: rem(2px);
+    }
+  }
+
+  .#{$prefix}--step-navigation__section__indicator {
+    display: block;
+    border: 2px solid $ui-05;
+    border-radius: 30px;
+    flex-shrink: 0;
+    width: rem(34px);
+    height: rem(34px);
+    line-height: rem(30px);
+    margin-right: rem(8px);
+    text-align: center;
+  }*/
+
+  .#{$prefix}--step-navigation__nav-item__indicator {
+    display: block;
+    position: relative;
+    background: $ui-01;
+    border: 2px solid $ui-04;
+    flex-shrink: 0;
+    border-radius: 34px;
+    width: rem(34px);
+    height: rem(34px);
+    line-height: rem(32px);
+    margin: 14px rem(14px) 14px rem(5px);
+    text-align: center;
+    z-index: 2;
+    font-weight: 800;
+    >svg {
+      position: relative;
+      top: 1px;
+    }
+    &:after {
+      display: block;
+      width: 2px;
+      height: 26px;
+      position: absolute;
+      z-index: 1;
+      //z-index: -1px;
+      bottom: rem(34px);
+      left: 53%;
+      margin-left: -1px;
+      content: '';
+      background: $ui-04;
+    }
+  }
+
+  .#{$prefix}--step-navigation__nav-item {
+    display: flex;
+    align-items: center;
+    color: $text-01;
+    text-decoration: none;
+    padding: $spacing-md;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+    &:focus {
+      outline: none;
+    }
+
+    @include breakpoint(bp--sm--major) {
+      padding: 0 $spacing-3xs;
+      width: auto;
+      &:focus {
+        background-color: transparent;
+        color: $text-01;
+        outline: 1px solid transparent;
+      }
+    }
+  }
+
+  /* Before State */
+  .#{$prefix}--step-navigation__nav-item--before {
+    .#{$prefix}--step-navigation__nav-item__indicator {
+      //background: $brand-01;
+      //color: $ui-01;
+      &:after {
+        //background-color: $brand-01;
+      }
+    }
+  }
+
+  /* Selected State */
+  .#{$prefix}--step-navigation__nav-item--selected {
+    .#{$prefix}--step-navigation__nav-item__text {
+      text-decoration: none;
+      color: $text-01;
+    }
+    .#{$prefix}--step-navigation__nav-item__indicator {
+      background: $brand-01;
+      border-color: $brand-01;
+      color: $ui-01;
+      >svg {
+        fill: $ui-01 !important;
+      }
+      &:after {
+        //background-color: $brand-01;
+      }
+    }
+  }
+
+  .#{$prefix}--step-navigation__nav-item--warning {
+    .#{$prefix}--step-navigation__nav-item__indicator {
+      >svg {
+        fill: $support-03 !important;
+      }
+    }
+    &.#{$prefix}--step-navigation__nav-item--selected {
+      .#{$prefix}--step-navigation__nav-item__indicator {
+        background: $support-03;
+        border-color: $support-03;
+        >svg {
+          fill: $ui-01 !important;
+        }
+      }
+    }
+  }
+
+  .#{$prefix}--step-navigation__nav-item--complete {
+    .#{$prefix}--step-navigation__nav-item__indicator {
+      >svg {
+        fill: $support-02 !important;
+        position: relative;
+        top: 1px;
+      }
+    }
+    &.#{$prefix}--step-navigation__nav-item--selected {
+      .#{$prefix}--step-navigation__nav-item__indicator {
+        background: $support-02;
+        border-color: $support-02;
+        >svg {
+          fill: $ui-01 !important;
+        }
+      }
+    }
+  }
+
+  /* Locked State */
+  .#{$prefix}--step-navigation__nav-item--locked {
+    cursor: not-allowed;
+    .#{$prefix}--step-navigation__nav-item__text {
+      text-decoration: none;
+      color: $text-02;
+    }
+    .#{$prefix}--step-navigation__nav-item__indicator {
+      >svg {
+        fill: $ui-05 !important;
+      }
+    }
+  }
+}

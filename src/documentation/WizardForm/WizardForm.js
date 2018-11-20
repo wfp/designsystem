@@ -55,9 +55,8 @@ class WizardForm extends Component {
           sidebar={
             <StepNavigation selectedPage={page} handleTabClick={this.handleTabClick}>
               <StepNavigationItem label="Name and last name" page={0} />
-              <StepNavigationItem label="Additional information with long description" page={1} />
-              <StepNavigationSection label="section" />
-              <StepNavigationItem label="Tab label 3" page={2} />
+              <StepNavigationItem label="Additional information with long description" page={1} status="not-started" />
+              <StepNavigationItem label="Tab label 3" page={2} locked />
             </StepNavigation>
           }>
           {page === 0 && 
@@ -79,7 +78,7 @@ class WizardForm extends Component {
           )}
 
           <Blockquote>
-            {/*<Values form="wizard" />*/}
+            <Values form="wizard" />
           </Blockquote>
         </FormWizard>
       </Wrapper>

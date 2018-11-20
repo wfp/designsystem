@@ -29,7 +29,8 @@ const WizardFormThirdPage = props => {
     <form onSubmit={handleSubmit}>
       <FormGroup>
         <Field
-          component={ReduxFormWrapper(TextArea)}
+          component={ReduxFormWrapper}
+          InputComponent={TextArea}
           name="notes"
           labelText="Notes"
           placeholder="Notes"

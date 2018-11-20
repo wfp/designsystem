@@ -66,11 +66,10 @@ const props = {
     id: 'id-input',
     className: 'wfp--react-select-container',
     classNamePrefix: 'wfp--react-select',
-    component: ReduxFormWrapper(
-      inputMap[
-        select('Component (ReduxFormWrapper(Input))', inputs, 'TextInput')
-      ]
-    ),
+    component: ReduxFormWrapper,
+    InputComponent: inputMap[
+      select('Component (ReduxFormWrapper(Input))', inputs, 'TextInput')
+    ],
     onClick: action('onClick'),
     labelText: text('Label (labelText)', 'Label Text'),
     name: text('Name', 'input'),

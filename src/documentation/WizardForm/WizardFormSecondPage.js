@@ -20,7 +20,8 @@ const WizardFormSecondPage = props => {
       <Field
         name="email"
         type="email"
-        component={ReduxFormWrapper(TextInput)}
+        component={ReduxFormWrapper}
+        InputComponent={TextInput}
         labelText="Email"
       />
       <FormGroup>
@@ -32,14 +33,16 @@ const WizardFormSecondPage = props => {
           legend="Group Legend">
           <Field
             name="sex"
-            component={ReduxFormWrapper(RadioButton)}
+            component={ReduxFormWrapper}
+            InputComponent={RadioButton}
             type="radio"
             value="male"
             labelText="Male"
           />
           <Field
             name="sex"
-            component={ReduxFormWrapper(RadioButton)}
+            component={ReduxFormWrapper}
+            InputComponent={RadioButton}
             type="radio"
             value="female"
             labelText="Female"
