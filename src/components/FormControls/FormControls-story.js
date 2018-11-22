@@ -3,9 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { withInfo } from '@storybook/addon-info';
 import { withKnobs, number, text } from '@storybook/addon-knobs';
-import StepNavigation from '../StepNavigation';
-import StepNavigationSection from '../StepNavigationSection';
-import StepNavigationItem from '../StepNavigationItem';
+import FormControls from '../FormControls';
 
 const props = {
   tabs: () => ({
@@ -44,23 +42,6 @@ storiesOf('FormControls', module)
         Tab components for each item in the Tabs list.
       `,
     })(() => (
-      <StepNavigation {...props.tabs()}>
-        <StepNavigationSection {...props.tab()} label="Tab label 1">
-          <StepNavigationItem {...props.tab()} label="Tab label 1">
-            <div className="some-content">Content for first tab goes here.</div>
-          </StepNavigationItem>
-          <StepNavigationItem {...props.tab()} label="Tab label 2">
-            <div className="some-content">
-              Content for second tab goes here.
-            </div>
-          </StepNavigationItem>
-        </StepNavigationSection>
-
-        <StepNavigationSection {...props.tab()} label="Tab label 1">
-          <StepNavigationItem {...props.tab()} label="Tab label 3">
-            <div className="some-content">Content for third tab goes here.</div>
-          </StepNavigationItem>
-        </StepNavigationSection>
-      </StepNavigation>
+      <FormControls {...props.tabs()} />
     ))
   );

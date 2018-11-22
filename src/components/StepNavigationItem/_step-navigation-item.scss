@@ -64,7 +64,7 @@
     display: block;
     position: relative;
     background: $ui-01;
-    border: 2px solid $ui-04;
+    border: 2px solid $brand-01;
     flex-shrink: 0;
     border-radius: 34px;
     width: rem(34px);
@@ -73,19 +73,21 @@
     margin: 14px rem(14px) 14px rem(5px);
     text-align: center;
     z-index: 2;
-    font-weight: 800;
+    color: $brand-01;
+    transition: all 0.1s;
     >svg {
       position: relative;
       top: 1px;
+      fill: $brand-01;
     }
     &:after {
       display: block;
       width: 2px;
-      height: 26px;
+      height: 22px;
       position: absolute;
       z-index: 1;
       //z-index: -1px;
-      bottom: rem(34px);
+      bottom: rem(35px);
       left: 53%;
       margin-left: -1px;
       content: '';
@@ -191,7 +193,9 @@
       color: $text-02;
     }
     .#{$prefix}--step-navigation__nav-item__indicator {
+      border-color: $ui-05;
       >svg {
+        top: 0px;
         fill: $ui-05 !important;
       }
     }

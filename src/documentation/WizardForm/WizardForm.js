@@ -3,13 +3,10 @@ import PropTypes from 'prop-types';
 
 import { Values } from 'redux-form-website-template';
 
-
 import StepNavigation from '../../components/StepNavigation';
-import StepNavigationSection from '../../components/StepNavigationSection';
 import StepNavigationItem from '../../components/StepNavigationItem';
 
 import Blockquote from '../../components/Blockquote';
-
 
 import FormError from '../../components/FormError';
 import Wrapper from '../../components/Wrapper';

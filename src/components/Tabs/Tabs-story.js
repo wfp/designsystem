@@ -7,6 +7,9 @@ import Tabs from '../Tabs';
 import Tab from '../Tab';
 import TabsSkeleton from '../Tabs/Tabs.Skeleton';
 
+import { withReadme } from 'storybook-readme';
+import readme from './README.md';
+
 const props = {
   tabs: () => ({
     className: 'some-class',
@@ -34,13 +37,20 @@ const props = {
   }),
 };
 
-const el = props => {
-  console.log(props);
-  return <div>sddds</div>;
+const el = ({href}) => {
+  return <a style={{color: 'green'}} href={href}>Custom link</a>;
+};
+
+const listEl = (props) => {
+  return (
+    <a {...props}>
+      <span style={{color: 'blue'}} href={props.href}>Custom list element</span>
+  </a>);
 };
 
 storiesOf('Tabs', module)
   .addDecorator(withKnobs)
+  .addDecorator(withReadme([readme]))
   .add(
     'Default',
     withInfo({
@@ -80,7 +90,7 @@ storiesOf('Tabs', module)
           {...props.tab()}
           label="Tab label 4"
           href="http://www.fr.wfp.org"
-          renderAnchor={el}
+          renderListElement={listEl}
         />
       </Tabs>
     ))

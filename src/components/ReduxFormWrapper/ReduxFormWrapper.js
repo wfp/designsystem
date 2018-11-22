@@ -14,6 +14,10 @@ const ReduxFormWrapper = ({
     input.onChange(e);
   }
 
+  const onBlurX = (e) => {
+    input.onBlur(e);
+  }
+
   return (
     <InputComponent
       {...input}
@@ -25,7 +29,7 @@ const ReduxFormWrapper = ({
         </React.Fragment>
       }
       invalidText={error}
-      onBlur={onblur ? () => onBlur(value) : null}
+      onBlur={input.onBlur}
       onChange={input.onChange}
       invalid={touched && error}>
       {children}

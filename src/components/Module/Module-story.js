@@ -5,10 +5,6 @@ import Wrapper from '../Wrapper';
 
 import 'flexboxgrid/dist/flexboxgrid.css';
 
-import HtmlComponent from '../../documentation/HtmlComponent';
-import Html from '!!raw-loader!./Module.html';
-import { exampleStory } from '../../../.storybook/lucid-docs-addon';
-
 storiesOf('Module', module)
   .addDecorator(story => (
     <div className="wfp--module__background">

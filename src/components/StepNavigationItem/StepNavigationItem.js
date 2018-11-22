@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import Icon from '../Icon';
 //import colors from '../../globals/data/colors.js';
 
-export default class Tab extends React.Component {
+export default class StepNavigationItem extends React.Component {
   static propTypes = {
     className: PropTypes.string,
     handleTabClick: PropTypes.func,
@@ -15,7 +15,6 @@ export default class Tab extends React.Component {
     label: PropTypes.string,
     role: PropTypes.string.isRequired,
     onClick: PropTypes.func.isRequired,
-    onKeyDown: PropTypes.func.isRequired,
     selected: PropTypes.bool.isRequired,
     tabIndex: PropTypes.number.isRequired,
     /*
@@ -33,40 +32,22 @@ export default class Tab extends React.Component {
     href: '#',
     selected: false,
     onClick: () => {},
-    onKeyDown: () => {},
   };
 
-  setTabFocus(evt) {
-    const leftKey = 37;
-    const rightKey = 39;
-    if (evt.which === leftKey) {
-      this.props.handleTabAnchorFocus(this.props.index - 1);
-    } else if (evt.which === rightKey) {
-      this.props.handleTabAnchorFocus(this.props.index + 1);
-    } else {
-      return;
-    }
-  }
 
   render() {
     const {
       className,
       handleTabClick,
-      handleTabAnchorFocus, // eslint-disable-line
-      handleTabKeyDown,
-      href,
       index,
       label,
       locked,
       status,
       selected,
       selectedPage,
-      tabIndex,
       onClick,
-      onKeyDown,
       page,
-      renderAnchor,
-      ...other
+      renderAnchor
     } = this.props;
 
     const classes = classNames(
@@ -82,26 +63,20 @@ export default class Tab extends React.Component {
 
     const anchorProps = {
       className: 'wfp--step-navigation__nav-link',
-      href,
-      label,
-      role: 'tab',
-      tabIndex,
-      ['aria-selected']: selected,
       ref: e => {
         this.tabAnchor = e;
       },
     };
 
     const icon = {
-      'not-started': {name: 'menu', fill: '#0b77c2' },
-      warning: {name: 'warning--solid', fill: '#0b77c2' },
-      locked: {name: 'unlock', fill: '#0b77c2' },
-      complete: {name: 'checkmark', fill: '#0b77c2' },
+      'not-started': {name: 'ellipsis'},
+      warning: {name: 'warning--solid'},
+      locked: {name: 'lock'},
+      complete: {name: 'checkmark' },
     }
 
     return (
       <li
-        {...other}
         tabIndex={-1}
         className={classes}
         onClick={evt => {
@@ -120,7 +95,6 @@ export default class Tab extends React.Component {
               {locked || status ? (
                 <Icon
                   name={icon[locked ? 'locked' : status].name}
-                  fill={icon[locked ? 'locked' : status].fill}
                   width="14"
                   height="14"
                   description="sss"

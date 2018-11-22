@@ -69,7 +69,6 @@ export {
 } from './components/SecondaryNavigation';
 
 export StepNavigation from './components/SelectItem';
-export StepNavigationSection from './components/StepNavigationSection';
 export StepNavigationItem from './components/StepNavigationItem';
 
 export Select from './components/Select';

@@ -1,11 +1,8 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
-import { iconCaretDown } from '@wfp/icons';
-import Icon from '../Icon';
-import TabContent from '../TabContent';
 
-export default class Tabs extends React.Component {
+export default class StepNavigation extends React.Component {
   static propTypes = {
     /**
      * Specify the text to be read by screen-readers when visiting the <Tabs>
@@ -224,7 +221,7 @@ export default class Tabs extends React.Component {
 
     return (
       <>
-        <nav {...other} className={classes.tabs} role={role}>
+        <nav className={classes.tabs} role={role}>
           <ul role="tablist" className={classes.tablist}>
             {tabsWithProps}
           </ul>
