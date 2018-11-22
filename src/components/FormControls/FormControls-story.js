@@ -2,46 +2,44 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { withInfo } from '@storybook/addon-info';
-import { withKnobs, number, text } from '@storybook/addon-knobs';
+import { withKnobs, boolean, text } from '@storybook/addon-knobs';
+import { withReadme } from 'storybook-readme';
+import readme from './README.md';
+
 import FormControls from '../FormControls';
 
+
 const props = {
-  tabs: () => ({
+  formControls: () => ({
     className: 'some-class',
-    selected: number('The index of the selected tab (selected in <Tabs>)', 1),
-    triggerHref: text(
-      'The href of trigger button for narrow mode (triggerHref in <Tabs>)',
-      '#'
-    ),
-    role: text('ARIA role (role in <Tabs>)', 'navigation'),
-    iconDescription: text(
-      'The description of the trigger icon for narrow mode (iconDescription in <Tabs>)',
-      'show menu options'
-    ),
-    onClick: action('onClick'),
-    onKeyDown: action('onKeyDown'),
-    onSelectionChange: action('onSelectionChange'),
-  }),
-  tab: () => ({
-    className: 'another-class',
-    href: text('The href for tab (href in <Tab>)', '#'),
-    role: text('ARIA role (role in <Tab>)', 'presentation'),
-    tabIndex: number('Tab index (tabIndex in <Tab>)', 0),
-    onClick: action('onClick'),
-    onKeyDown: action('onKeyDown'),
+    onNextClick: action('onNextClick'),
+    nextDisabled: boolean('disable Next button (nextDisabled)', false),
+    nextIcon: text('custom icon for Next button (nextIcon)', 'arrow--right'),
+    nextHidden: boolean('hide Next button (nextHidden)', false),
+    nextText: text('custom text for Next button (nextText)', undefined),
+    onPreviousClick: action('onPreviousClick'),
+    previousDisabled: boolean('disable Previous button (previousDisabled)', false),
+    previousIcon: text('custom icon for Previous button (previousIcon)', 'arrow--left'),
+    previousHidden: boolean('hide Next button (nextHidden)', false),
+    previousText: text('custom text for Next button (nextText)', undefined),
+    onSubmitClick: action('onSubmitClick'),
+    submitDisabled: boolean('disable Submit button (SubmitDisabled)', false),
+    submitIcon: text('optional icon for Next button (nextIcon)', 'arrow--right'),
+    submitHidden: boolean('hide Submit button (submitHidden)', false),
+    submitText: text('custom text for Next button (nextText)', undefined),
   }),
 };
 
 storiesOf('FormControls', module)
   .addDecorator(withKnobs)
+  .addDecorator(withReadme([readme]))
   .add(
     'Default (work in progress)',
     withInfo({
       text: `
-        Tabs are used to quickly navigate between views within the same context. Create individual
-        Tab components for each item in the Tabs list.
+      **FormControls** can be used inside a regular form or multistep form as action buttons to save and submit a form.
       `,
     })(() => (
-      <FormControls {...props.tabs()} />
+      <FormControls {...props.formControls()} />
     ))
   );

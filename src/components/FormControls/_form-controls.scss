@@ -18,9 +18,9 @@
     justify-content: space-between;
     .#{$prefix}--btn {
       margin-right: $spacing-xs;
-      &:last-child {
-        margin-right: 0;
-      }
+    }
+    .#{$prefix}--form-controls__submit {
+      margin-right: 0;
     }
 
     @include breakpoint(bp--sm--major) {

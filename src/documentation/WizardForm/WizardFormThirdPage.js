@@ -38,7 +38,8 @@ const WizardFormThirdPage = props => {
       </FormGroup>
       <FormControls
         onPreviousClick={previousPage}
-        nextHidden={true}
+        nextText="Save Form"
+        nextIcon={false}
       />
     </form>
   );

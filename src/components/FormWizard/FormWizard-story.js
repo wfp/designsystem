@@ -6,6 +6,9 @@ import { withKnobs, number, text } from '@storybook/addon-knobs';
 import StepNavigation from '../StepNavigation';
 import StepNavigationItem from '../StepNavigationItem';
 
+import { withReadme } from 'storybook-readme';
+import readme from './README.md';
+
 const props = {
   tabs: () => ({
     className: 'some-class',
@@ -35,6 +38,7 @@ const props = {
 
 storiesOf('FormWizard', module)
   .addDecorator(withKnobs)
+  .addDecorator(withReadme([readme]))
   .add(
     'Default (work in progress)',
     withInfo({

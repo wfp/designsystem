@@ -6,6 +6,7 @@ export const ButtonTypes = {
     'secondary',
     'danger',
     'ghost',
+    'inverse',
     'danger--primary',
     'tertiary',
   ]),

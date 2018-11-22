@@ -3,149 +3,69 @@ import React from 'react';
 import classNames from 'classnames';
 import Button from '../Button';
 
-export default class Tabs extends React.Component {
+export default class FormControls extends React.Component {
   static propTypes = {
     /**
      * Specify the text to be read by screen-readers when visiting the <Tabs>
      * component
      */
-    ariaLabel: PropTypes.string,
+    className: PropTypes.string,
+    onNextClick: PropTypes.func,
+    nextDisabled: PropTypes.bool,
+    nextIcon: PropTypes.string,
+    nextHidden: PropTypes.bool,
+    nextText: PropTypes.node,
+    onPreviousClick: PropTypes.func,
+    previousDisabled: PropTypes.bool,
+    previousIcon: PropTypes.string,
+    previousHidden: PropTypes.bool,
+    previousText: PropTypes.node,
+    onSubmitClick: PropTypes.func,
+    submitDisabled: PropTypes.bool,
+    submitIcon: PropTypes.string,
+    submitHidden: PropTypes.bool,
+    submitText: PropTypes.node,
   };
 
   static defaultProps = {
+    nextIcon: 'arrow--right',
     nextText: 'Next',
+    previousIcon: 'arrow--left',
     previousText: 'Previous',
-    submitText: 'Submit',
-    selected: 0,
-    ariaLabel: 'listbox',
-  };
-
-  state = {
-    dropdownHidden: true,
-  };
-
-  static getDerivedStateFromProps({ selected }, state) {
-    const { prevSelected } = state;
-    return prevSelected === selected
-      ? null
-      : {
-          selected,
-          prevSelected: selected,
-        };
-  }
-
-  getTabs() {
-    return React.Children.map(this.props.children, tab => tab);
-  }
-
-  getTabAt = index => {
-    return (
-      this[`tab${index}`] || React.Children.toArray(this.props.children)[index]
-    );
-  };
-
-  setTabAt = (index, tabRef) => {
-    this[`tab${index}`] = tabRef;
-  };
-
-  // following functions (handle*) are Props on Tab.js, see Tab.js for parameters
-  handleTabClick = onSelectionChange => {
-    return (index, label, evt) => {
-      evt.preventDefault();
-      this.selectTabAt(index, onSelectionChange);
-      this.setState({
-        dropdownHidden: true,
-      });
-    };
-  };
-
-  handleTabKeyDown = onSelectionChange => {
-    return (index, label, evt) => {
-      const key = evt.key || evt.which;
-
-      if (key === 'Enter' || key === 13 || key === ' ' || key === 32) {
-        this.selectTabAt(index, onSelectionChange);
-        this.setState({
-          dropdownHidden: true,
-        });
-      }
-    };
-  };
-
-  handleTabAnchorFocus = onSelectionChange => {
-    return index => {
-      const tabCount = React.Children.count(this.props.children) - 1;
-      let tabIndex = index;
-
-      if (index < 0) {
-        tabIndex = tabCount;
-      } else if (index > tabCount) {
-        tabIndex = 0;
-      }
-
-      const tab = this.getTabAt(tabIndex);
-
-      if (tab) {
-        this.selectTabAt(tabIndex, onSelectionChange);
-        if (tab.tabAnchor) {
-          tab.tabAnchor.focus();
-        }
-      }
-    };
-  };
-
-  handleDropdownClick = () => {
-    this.setState({
-      dropdownHidden: !this.state.dropdownHidden,
-    });
-  };
-
-  selectTabAt = (index, onSelectionChange) => {
-    if (this.state.selected !== index) {
-      this.setState({
-        selected: index,
-      });
-      if (typeof onSelectionChange === 'function') {
-        onSelectionChange(index);
-      }
-    }
+    submitText: 'Submit'
   };
 
   render() {
     const {
-      inline,
       className,
       onNextClick,
       nextDisabled,
+      nextIcon,
       nextHidden,
       nextText,
       onPreviousClick,
       previousDisabled,
+      previousIcon,
       previousHidden,
       previousText,
       onSubmitClick,
       submitDisabled,
+      submitIcon,
       submitHidden,
       submitText,
     } = this.props;
 
-    const classes = {
-      formControls: classNames('wfp--form-controls', className),
-      tablist: classNames('wfp--step-navigation__nav', {
-        'wfp--step-navigation__nav--hidden': this.state.dropdownHidden,
-        'wfp--step-navigation__nav--inline': inline,
-      }),
-    };
+    const formControlsClasses =  classNames('wfp--form-controls', className);
 
     return (
-      <div className={classes.formControls}>
+      <div className={formControlsClasses}>
         <div>
           {!previousHidden && (
             <Button
               disabled={previousDisabled}
               kind="secondary"
               className="wfp--form-controls__prev"
-              icon="arrow--left"
+              icon={previousIcon}
               onClick={onPreviousClick}>
               {previousText}
             </Button>
@@ -155,7 +75,7 @@ export default class Tabs extends React.Component {
               disabled={nextDisabled}
               kind="secondary"
               className="wfp--form-controls__next"
-              icon="arrow--right"
+              icon={nextIcon}
               type="submit"
               onClick={onNextClick}>
               {nextText}
@@ -168,6 +88,7 @@ export default class Tabs extends React.Component {
               disabled={submitDisabled}
               type="submit"
               className="next"
+              icon={submitIcon}
               onClick={onSubmitClick}>
               {submitText}
             </Button>
