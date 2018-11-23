@@ -91,10 +91,7 @@ export function svgShapes(svgData) {
 
 export function isPrefixed(name) {
   if (__DEV__) {
-    invariant(
-      typeof name === 'string',
-      '[Icon] icon name is missing.'
-    );
+    invariant(typeof name === 'string', '[Icon] icon name is missing.');
   }
   return name && name.split('--')[0] === 'icon';
 }

@@ -124,7 +124,6 @@ function loadStories() {
   keys.forEach(filename => req(filename));
 }
 
-
 function loadHtml() {
   const req = require.context('../src', true, /\.html$/);
 
@@ -133,7 +132,6 @@ function loadHtml() {
 
   console.log(keys);
 }
-
 
 console.log(loadHtml());
 
@@ -165,9 +163,6 @@ storiesOf('Credits', module)
   );
 
 */
-
-
-
 
 configure(loadStories, module);
 

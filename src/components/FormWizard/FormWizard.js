@@ -5,29 +5,27 @@ import classNames from 'classnames';
 export default class Tabs extends React.Component {
   static propTypes = {
     /**
-     * Specify a custom css class 
+     * Specify a custom css class
      * which is added to the container
      */
     className: PropTypes.string,
     /**
-     * Specify the custom 
+     * Specify the custom
      * main content component
      */
     children: PropTypes.node.isRequired,
     /**
-     * Specify the custom 
+     * Specify the custom
      * sidebar component
      */
     sidebar: PropTypes.node.isRequired,
   };
 
-  static defaultProps = {
-  };
+  static defaultProps = {};
 
   state = {
     dropdownHidden: true,
   };
-
 
   render() {
     const { className, children, sidebar } = this.props;

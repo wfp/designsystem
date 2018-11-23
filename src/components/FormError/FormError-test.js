@@ -11,10 +11,10 @@ describe('FormError', () => {
         message={{
           generic: 'Something went terribly wrong',
           fields: [
-            {key: 'fieldkey', message: 'One field which is wrong'},
-            {key: 'anotherfieldkey', message: 'Another field which is wrong'}
-          ]
-        }} 
+            { key: 'fieldkey', message: 'One field which is wrong' },
+            { key: 'anotherfieldkey', message: 'Another field which is wrong' },
+          ],
+        }}
       />
     );
     it('should use the appropriate link class', () => {

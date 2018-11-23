@@ -32,7 +32,7 @@ export default class FormControls extends React.Component {
     nextText: 'Next',
     previousIcon: 'arrow--left',
     previousText: 'Previous',
-    submitText: 'Submit'
+    submitText: 'Submit',
   };
 
   render() {
@@ -55,7 +55,7 @@ export default class FormControls extends React.Component {
       submitText,
     } = this.props;
 
-    const formControlsClasses =  classNames('wfp--form-controls', className);
+    const formControlsClasses = classNames('wfp--form-controls', className);
 
     return (
       <div className={formControlsClasses}>

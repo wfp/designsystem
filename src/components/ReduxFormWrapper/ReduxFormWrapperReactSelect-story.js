@@ -38,11 +38,12 @@ storiesOf('ReduxFormWrapper', module)
     })(() => {
       return (
         <Field
-        component={ReduxFormWrapper(ReactSelect)}
-        className="wfp--react-select-container"
-        classNamePrefix="wfp--react-select"
-        isMulti
-        options={options}
-      />);
+          component={ReduxFormWrapper(ReactSelect)}
+          className="wfp--react-select-container"
+          classNamePrefix="wfp--react-select"
+          isMulti
+          options={options}
+        />
+      );
     })
   );

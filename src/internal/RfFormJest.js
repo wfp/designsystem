@@ -4,12 +4,8 @@ import { connect } from 'react-redux';
 import { load as loadAccount } from './loadDefaultData';
 
 class FormEl extends Component {
-
   render() {
-    const {
-      handleSubmit,
-      sampleData,
-    } = this.props;
+    const { handleSubmit, sampleData } = this.props;
 
     return (
       <form onSubmit={handleSubmit} className="wfp-form--stacked">
@@ -33,7 +29,6 @@ Form = connect(
 )(Form);
 
 class RfFormWrapper extends Component {
-
   onSubmit(submit) {
     alert('Submitted: ' + JSON.stringify(submit));
   }

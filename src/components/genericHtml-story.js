@@ -7,7 +7,6 @@ import HtmlComponent from '../documentation/HtmlComponent';
 import { withReadme } from 'storybook-readme';
 import readme from '../documentation/HTML-README.md';
 
-
 function importAll(r) {
   return r.keys().map(r);
 }
@@ -20,22 +19,22 @@ const htmlData = importAll(req);
 let keys = req.keys();
 
 keys.forEach(function(element, i) {
-  var split = element.split("/");
+  var split = element.split('/');
 
-  const additionalName = split[split.length-1].replace('.hbs', '').replace(split[split.length-2] + '-', ' ');
+  const additionalName = split[split.length - 1]
+    .replace('.hbs', '')
+    .replace(split[split.length - 2] + '-', ' ');
 
-  storiesOf(split[split.length-2], module)
-  .addDecorator(withReadme([readme]))
-  .addDecorator(
-    exampleStory({
-      code: htmlData[i],
-      options: { showAddonPanel: true },
-    })
-  )
-  .addDecorator(story => <HtmlComponent html={htmlData[i]}>{story()}</HtmlComponent>)
-  .add(
-    'html' + additionalName,
-    (() => null)
-  );
+  storiesOf(split[split.length - 2], module)
+    .addDecorator(withReadme([readme]))
+    .addDecorator(
+      exampleStory({
+        code: htmlData[i],
+        options: { showAddonPanel: true },
+      })
+    )
+    .addDecorator(story => (
+      <HtmlComponent html={htmlData[i]}>{story()}</HtmlComponent>
+    ))
+    .add('html' + additionalName, () => null);
 });
-  

@@ -32,15 +32,14 @@ class WizardForm extends Component {
     this.setState({ page: this.state.page - 1 });
   }
 
-  handleTabClick = (index) => {
-    console.log("click", index);
+  handleTabClick = index => {
+    console.log('click', index);
     this.setState({ page: index });
-  }
+  };
 
   render() {
     const { error, onSubmit } = this.props;
     const { page } = this.state;
-
 
     /* const validation = validate(this.props.values, this.props);
 
@@ -50,17 +49,19 @@ class WizardForm extends Component {
       <Wrapper pageWidth="md" spacing="xl">
         <FormWizard
           sidebar={
-            <StepNavigation selectedPage={page} handleTabClick={this.handleTabClick}>
+            <StepNavigation
+              selectedPage={page}
+              handleTabClick={this.handleTabClick}>
               <StepNavigationItem label="Name and last name" page={0} />
-              <StepNavigationItem label="Additional information with long description" page={1} status="not-started" />
+              <StepNavigationItem
+                label="Additional information with long description"
+                page={1}
+                status="not-started"
+              />
               <StepNavigationItem label="Tab label 3" page={2} locked />
             </StepNavigation>
           }>
-          {page === 0 && 
-            <WizardFormFirstPage
-              onSubmit={this.nextPage} 
-            />
-          }
+          {page === 0 && <WizardFormFirstPage onSubmit={this.nextPage} />}
           {page === 1 && (
             <WizardFormSecondPage
               previousPage={this.previousPage}

@@ -10,13 +10,16 @@ import FormControls from '../../components/FormControls';
 import RadioButton from '../../components/RadioButton/RadioButton';
 
 const renderError = ({ meta: { touched, error } }) =>
-  touched && error ? <span className="wfp--form-requirement">{error}</span> : false;
+  touched && error ? (
+    <span className="wfp--form-requirement">{error}</span>
+  ) : (
+    false
+  );
 
 const WizardFormSecondPage = props => {
   const { error, handleSubmit, previousPage, submitFailed } = props;
   return (
     <form onSubmit={handleSubmit}>
-
       <Field
         name="email"
         type="email"
@@ -50,10 +53,7 @@ const WizardFormSecondPage = props => {
         </FormGroup>
         <Field name="sex" component={renderError} />
       </FormGroup>
-      <FormControls
-        onPreviousClick={previousPage}
-        submitHidden={true}
-      />
+      <FormControls onPreviousClick={previousPage} submitHidden={true} />
     </form>
   );
 };

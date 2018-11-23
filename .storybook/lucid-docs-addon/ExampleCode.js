@@ -138,7 +138,7 @@ ReactDOM.render(
               height: '100%',
               margin: 0,
             }}>
-              {code}
+            {code}
           </SyntaxHighlighter>
         </div>
       </div>

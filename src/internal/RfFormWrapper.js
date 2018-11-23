@@ -8,7 +8,6 @@ import FormLabel from '../components/FormLabel/RfFormLabel';
 import { load as loadAccount } from './loadDefaultData';
 
 class FormEl extends Component {
-
   render() {
     const {
       handleSubmit,

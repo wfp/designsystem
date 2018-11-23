@@ -8,7 +8,6 @@
 @import '../Form/form';
 
 @include exports('react-select') {
-
   .#{$prefix}--react-select-container {
     .#{$prefix}--react-select__control {
       border-radius: 0;
@@ -18,11 +17,12 @@
         border: $input-border;
       }
     }
-    .#{$prefix}--react-select__control--is-focused, .#{$prefix}--react-select__control--is-focused:hover {
+    .#{$prefix}--react-select__control--is-focused,
+    .#{$prefix}--react-select__control--is-focused:hover {
       //border: $input-border;
       box-shadow: none;
       //border-color: red;
       @include focus-outline('border-important');
-    } 
+    }
   }
 }

@@ -8,7 +8,6 @@ import readme from './README.md';
 
 import FormControls from '../FormControls';
 
-
 const props = {
   formControls: () => ({
     className: 'some-class',
@@ -18,8 +17,14 @@ const props = {
     nextHidden: boolean('hide Next button (nextHidden)', false),
     nextText: text('custom text for Next button (nextText)', undefined),
     onPreviousClick: action('onPreviousClick'),
-    previousDisabled: boolean('disable Previous button (previousDisabled)', false),
-    previousIcon: text('custom icon for Previous button (previousIcon)', 'arrow--left'),
+    previousDisabled: boolean(
+      'disable Previous button (previousDisabled)',
+      false
+    ),
+    previousIcon: text(
+      'custom icon for Previous button (previousIcon)',
+      'arrow--left'
+    ),
     previousHidden: boolean('hide Next button (nextHidden)', false),
     previousText: text('custom text for Next button (nextText)', undefined),
     onSubmitClick: action('onSubmitClick'),
@@ -36,8 +41,14 @@ const props = {
     nextHidden: boolean('hide Next button (nextHidden)', false),
     nextText: text('custom text for Next button (nextText)', 'Save form'),
     onPreviousClick: action('onPreviousClick'),
-    previousDisabled: boolean('disable Previous button (previousDisabled)', false),
-    previousIcon: text('custom icon for Previous button (previousIcon)', 'arrow--left'),
+    previousDisabled: boolean(
+      'disable Previous button (previousDisabled)',
+      false
+    ),
+    previousIcon: text(
+      'custom icon for Previous button (previousIcon)',
+      'arrow--left'
+    ),
     previousHidden: boolean('hide Next button (nextHidden)', true),
     previousText: text('custom text for Next button (nextText)', undefined),
     onSubmitClick: action('onSubmitClick'),
@@ -57,17 +68,13 @@ storiesOf('FormControls', module)
       text: `
       **FormControls** can be used inside a regular form or multistep form as action buttons to save and submit a form.
       `,
-    })(() => (
-      <FormControls {...props.formControls()} />
-    )
-  ))
+    })(() => <FormControls {...props.formControls()} />)
+  )
   .add(
     'Simple form',
     withInfo({
       text: `
       **FormControls** can be used inside a regular form or multistep form as action buttons to save and submit a form.
       `,
-    })(() => (
-      <FormControls {...props.formControlsSimple()} />
-    )
-  ));
+    })(() => <FormControls {...props.formControlsSimple()} />)
+  );

@@ -118,7 +118,7 @@ export default class StepNavigation extends React.Component {
 
   // following functions (handle*) are Props on Tab.js, see Tab.js for parameters
   handleTabClick = onSelectionChange => {
-    console.log("Handle tabl click");
+    console.log('Handle tabl click');
     return (index, label, evt) => {
       evt.preventDefault();
       this.selectTabAt(index, onSelectionChange);

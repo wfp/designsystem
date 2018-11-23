@@ -67,16 +67,17 @@ const props = {
     className: 'wfp--react-select-container',
     classNamePrefix: 'wfp--react-select',
     component: ReduxFormWrapper,
-    InputComponent: inputMap[
-      select('Component (ReduxFormWrapper(Input))', inputs, 'TextInput')
-    ],
+    InputComponent:
+      inputMap[
+        select('Component (ReduxFormWrapper(Input))', inputs, 'TextInput')
+      ],
     onClick: action('onClick'),
     labelText: text('Label (labelText)', 'Label Text'),
     name: text('Name', 'input'),
     placeholder: text('Placeholder', 'Placeholder content here'),
     required: boolean('Required (required)', true),
     onFocus: action('onFocus'),
-    options: options
+    options: options,
   }),
 };
 

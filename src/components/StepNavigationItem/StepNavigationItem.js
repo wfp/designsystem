@@ -34,7 +34,6 @@ export default class StepNavigationItem extends React.Component {
     onClick: () => {},
   };
 
-
   render() {
     const {
       className,
@@ -47,7 +46,7 @@ export default class StepNavigationItem extends React.Component {
       selectedPage,
       onClick,
       page,
-      renderAnchor
+      renderAnchor,
     } = this.props;
 
     const classes = classNames(
@@ -55,7 +54,9 @@ export default class StepNavigationItem extends React.Component {
       { 'wfp--step-navigation__nav-item--before': page < selectedPage },
       { 'wfp--step-navigation__nav-item--selected': page === selectedPage },
       { 'wfp--step-navigation__nav-item--locked': locked },
-      { 'wfp--step-navigation__nav-item--not-started': status === 'not-started' },
+      {
+        'wfp--step-navigation__nav-item--not-started': status === 'not-started',
+      },
       { 'wfp--step-navigation__nav-item--warning': status === 'warning' },
       { 'wfp--step-navigation__nav-item--complete': status === 'complete' },
       className
@@ -69,11 +70,11 @@ export default class StepNavigationItem extends React.Component {
     };
 
     const icon = {
-      'not-started': {name: 'ellipsis'},
-      warning: {name: 'warning--solid'},
-      locked: {name: 'lock'},
-      complete: {name: 'checkmark' },
-    }
+      'not-started': { name: 'ellipsis' },
+      warning: { name: 'warning--solid' },
+      locked: { name: 'lock' },
+      complete: { name: 'checkmark' },
+    };
 
     return (
       <li
@@ -92,7 +93,7 @@ export default class StepNavigationItem extends React.Component {
         ) : (
           <React.Fragment>
             <span className="wfp--step-navigation__nav-item__indicator">
-              {locked || status ? (
+              {locked || status ? (
                 <Icon
                   name={icon[locked ? 'locked' : status].name}
                   width="14"
@@ -100,10 +101,12 @@ export default class StepNavigationItem extends React.Component {
                   description="sss"
                 />
               ) : (
-                <React.Fragment>{page+1}</React.Fragment>
+                <React.Fragment>{page + 1}</React.Fragment>
               )}
             </span>
-            <span className="wfp--step-navigation__nav-item__text">{label}</span>
+            <span className="wfp--step-navigation__nav-item__text">
+              {label}
+            </span>
           </React.Fragment>
         )}
       </li>

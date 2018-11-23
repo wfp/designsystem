@@ -6,7 +6,6 @@ import Tag, { types as typesList } from '../Tag';
 import { withReadme } from 'storybook-readme';
 import readme from './README.md';
 
-
 import TagSkeleton from '../Tag/Tag.Skeleton';
 
 const types = typesList.reduce(

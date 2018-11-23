@@ -56,4 +56,4 @@ storiesOf('Blockquote', module)
         </Blockquote>
       );
     }
-);
+  );

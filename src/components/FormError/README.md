@@ -1,16 +1,16 @@
 The FormError is displayed at the top of the form if a form is not valid when trying to submit it.
 
 
-## Props
+### Props
 
 | Setting    | Default     | Options   | Role                                                 |
 | ---------- | ----------- | --------- | ---------------------------------------------------- |
 | className | `undefined` | `string` | custom additional className         |
-| message      | `undefined`      | `object` | an object of the error message                                           |
-| submitFailed      | `false`      | `boolean` | the Error Message is only shown if true                                           |
+| message      | `undefined`      | `object` | an object of the error message                        
+| submitFailed      | `false`      | `boolean` | the Error Message is only shown if true  |
 
 
-### Message prop structure
+### `message` object structure
 
 ```js
 {

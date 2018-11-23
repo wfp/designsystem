@@ -73,7 +73,7 @@
       text-decoration: none;
     }
 
-   /* @include breakpoint(bp--sm--major) {
+    /* @include breakpoint(bp--sm--major) {
       @include typescale('epsilon');
       flex-direction: column;
       margin-right: $spacing-md;

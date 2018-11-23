@@ -38,6 +38,6 @@ export default reduxForm({
   form: 'wizard', // <------ same form name
   destroyOnUnmount: false, // <------ preserve form data
   forceUnregisterOnUnmount: true, // <------ unregister fields on unmount
-  validate
+  validate,
   //validate: (values, formData) => { return validate(values, formData, 0)},
 })(WizardFormFirstPage);

@@ -8,10 +8,8 @@ import FormWizard from '../FormWizard';
 import { withReadme } from 'storybook-readme';
 import readme from './README.md';
 
-
 const props = {
-  tabs: () => ({
-  }),
+  tabs: () => ({}),
 };
 
 storiesOf('FormWizard', module)

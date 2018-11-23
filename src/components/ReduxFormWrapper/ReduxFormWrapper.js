@@ -10,13 +10,13 @@ const ReduxFormWrapper = ({
 }) => {
   if (InputComponent === undefined) return null;
 
-  const onChangeX = (e) => {
+  const onChangeX = e => {
     input.onChange(e);
-  }
+  };
 
-  const onBlurX = (e) => {
+  const onBlurX = e => {
     input.onBlur(e);
-  }
+  };
 
   return (
     <InputComponent

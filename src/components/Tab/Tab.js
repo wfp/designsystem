@@ -86,13 +86,12 @@ export default class Tab extends React.Component {
       },
     };
 
-
     //  {...other}
     const liProps = {
       tabIndex: -1,
       className: classes,
       onClick: evt => {
-        console.log("click");
+        console.log('click');
         handleTabClick(index, label, evt);
         onClick(evt);
       },
@@ -102,16 +101,14 @@ export default class Tab extends React.Component {
         onKeyDown(evt);
       },
       role: 'presentation',
-      selected: selected
+      selected: selected,
     };
-
-    
 
     return (
       <React.Fragment>
         {renderListElement ? (
           renderListElement(liProps)
-        ): (
+        ) : (
           <li {...liProps}>
             {renderAnchor ? (
               renderAnchor(anchorProps)
@@ -119,8 +116,7 @@ export default class Tab extends React.Component {
               <a {...anchorProps}>{label}</a>
             )}
           </li>
-        )
-      }
+        )}
       </React.Fragment>
     );
   }

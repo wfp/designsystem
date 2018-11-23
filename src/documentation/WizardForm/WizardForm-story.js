@@ -27,9 +27,9 @@ const showResults = values =>
   });
 
 storiesOf(' Documentation', module)
-.addDecorator(withReadme([readme]))
-.addWithInfo('Wizard Form', ``, () => (
-  <Provider store={store}>
-    <WizardForm onSubmit={showResults} />
-  </Provider>
-));
+  .addDecorator(withReadme([readme]))
+  .addWithInfo('Wizard Form', ``, () => (
+    <Provider store={store}>
+      <WizardForm onSubmit={showResults} />
+    </Provider>
+  ));

@@ -37,15 +37,22 @@ const props = {
   }),
 };
 
-const el = ({href}) => {
-  return <a style={{color: 'green'}} href={href}>Custom link</a>;
+const el = ({ href }) => {
+  return (
+    <a style={{ color: 'green' }} href={href}>
+      Custom link
+    </a>
+  );
 };
 
-const listEl = (props) => {
+const listEl = props => {
   return (
     <a {...props}>
-      <span style={{color: 'blue'}} href={props.href}>Custom list element</span>
-  </a>);
+      <span style={{ color: 'blue' }} href={props.href}>
+        Custom list element
+      </span>
+    </a>
+  );
 };
 
 storiesOf('Tabs', module)

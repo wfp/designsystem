@@ -75,7 +75,7 @@
     z-index: 2;
     color: $brand-01;
     transition: all 0.1s;
-    >svg {
+    > svg {
       position: relative;
       top: 1px;
       fill: $brand-01;
@@ -140,7 +140,7 @@
       background: $brand-01;
       border-color: $brand-01;
       color: $ui-01;
-      >svg {
+      > svg {
         fill: $ui-01 !important;
       }
       &:after {
@@ -151,7 +151,7 @@
 
   .#{$prefix}--step-navigation__nav-item--warning {
     .#{$prefix}--step-navigation__nav-item__indicator {
-      >svg {
+      > svg {
         fill: $support-03 !important;
       }
     }
@@ -159,7 +159,7 @@
       .#{$prefix}--step-navigation__nav-item__indicator {
         background: $support-03;
         border-color: $support-03;
-        >svg {
+        > svg {
           fill: $ui-01 !important;
         }
       }
@@ -168,7 +168,7 @@
 
   .#{$prefix}--step-navigation__nav-item--complete {
     .#{$prefix}--step-navigation__nav-item__indicator {
-      >svg {
+      > svg {
         fill: $support-02 !important;
         position: relative;
         top: 1px;
@@ -178,7 +178,7 @@
       .#{$prefix}--step-navigation__nav-item__indicator {
         background: $support-02;
         border-color: $support-02;
-        >svg {
+        > svg {
           fill: $ui-01 !important;
         }
       }
@@ -194,7 +194,7 @@
     }
     .#{$prefix}--step-navigation__nav-item__indicator {
       border-color: $ui-05;
-      >svg {
+      > svg {
         top: 0px;
         fill: $ui-05 !important;
       }
