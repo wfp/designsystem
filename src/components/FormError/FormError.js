@@ -1,26 +1,33 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
+import Blockquote from '../Blockquote';
+
 const FormError = ({ className, message, submitFailed }) => {
   console.log("message", message);
 
   if (message && submitFailed === true) {
-    return (
-      <div className='wfp__form-error'>
-        <h4 className='wfp__form-error__title'>{message.generic}</h4>
-        {message.generic && (
-          <ul className="wfp__form-error__list">
-            { message.generic.map((field, i) => <li key={i}><label>{field}</label></li>) }
-          </ul>
-        )}
-        
-        {message.fields && (
-          <ul className="wfp__form-error__list">
-            { Object.keys(message.fields).map((field, i) => <li key={i}><label htmlFor={field}>{message.fields[field]}</label></li>) }
-          </ul>
-        )}
-        
-      </div>);
+    return (      
+    <Blockquote
+      warning
+      withIcon={true}
+    >
+      <h4 className='wfp--form-error__title'>
+        {message.generic}
+      </h4>
+      
+      {message.fields && (
+        <ul className="wfp--form-error__list">
+          { message.fields.map((field, i) => (
+            <li key={i}>
+              <label htmlFor={field.key}>
+                {field.message}
+              </label>
+            </li>))
+          }
+        </ul>
+      )}
+    </Blockquote>);
   }
   else {
     return (null);

@@ -1,25 +1,24 @@
 import React from 'react';
-import Link from '../Link';
+import FormError from '../FormError';
 import { shallow } from 'enzyme';
 
-describe('Credits', () => {
+describe('FormError', () => {
   describe('Renders as expected', () => {
-    const link = shallow(
-      <Link href="www.google.com" className="some-class">
-        A simple link
-      </Link>
+    const errorMessage = shallow(
+      <FormError
+        className="another-class"
+        submitFailed={true}
+        message={{
+          generic: 'Something went terribly wrong',
+          fields: [
+            {key: 'fieldkey', message: 'One field which is wrong'},
+            {key: 'anotherfieldkey', message: 'Another field which is wrong'}
+          ]
+        }} 
+      />
     );
     it('should use the appropriate link class', () => {
-      expect(link.hasClass('wfp--link')).toEqual(true);
-    });
-    it('should inherit the href property', () => {
-      expect(link.props().href).toEqual('www.google.com');
-    });
-    it('should include child content', () => {
-      expect(link.text()).toEqual('A simple link');
-    });
-    it('should all for custom classes to be applied', () => {
-      expect(link.hasClass('some-class')).toEqual(true);
+      expect(errorMessage.hasClass('another-class')).toEqual(true);
     });
   });
 });

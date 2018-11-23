@@ -14,8 +14,10 @@
 
 @include exports('form-controls') {
   .#{$prefix}--form-controls {
-    display: flex;
-    justify-content: space-between;
+    @include breakpoint(bp--sm--major) {
+      display: flex;
+      justify-content: space-between;
+    }
     .#{$prefix}--btn {
       margin-right: $spacing-xs;
     }
@@ -25,6 +27,12 @@
 
     @include breakpoint(bp--sm--major) {
       background: none;
+    }
+  }
+
+  .wfp--form-controls__steps {
+    @include breakpointMax(bp--sm--major) {
+      margin-bottom: $spacing-xs;
     }
   }
 

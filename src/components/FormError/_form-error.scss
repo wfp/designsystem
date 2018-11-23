@@ -10,18 +10,8 @@
 @import '../../globals/scss/import-once';
 @import '../../globals/scss/css--reset';
 
-@include exports('credits') {
-  .#{$prefix}--credits {
-    @include reset;
-    position: relative;
-  }
-
-  .#{$prefix}--credits__info {
-    position: absolute;
-    top: 0;
-    right: 0;
-    padding: rem(5px) rem(7px);
-    color: $color__white;
-    background: rgba(#000000, 0.5);
+@include exports('form-error') {
+  .#{$prefix}--form-error__title {
+    margin-bottom: $spacing-xs;
   }
 }

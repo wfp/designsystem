@@ -59,7 +59,7 @@ export default class FormControls extends React.Component {
 
     return (
       <div className={formControlsClasses}>
-        <div>
+        <div className="wfp--form-controls__steps">
           {!previousHidden && (
             <Button
               disabled={previousDisabled}

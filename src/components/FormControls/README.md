@@ -2,7 +2,7 @@
 
 | Setting    | Default     | Options   | Role                                                 |
 | ---------- | ----------- | --------- | ---------------------------------------------------- |
-| className | `undefined` | `boolean` | custom additional className         |
+| className | `undefined` | `string` | custom additional className         |
 | onNextClick      | `undefined`      | `function` | onClick Action                                           |
 | nextDisabled      | `false`      | `boolean` | disable Next Button                                           |
 | nextIcon      | `arrow--right`      | `string` | custom icon for Next button                                           |

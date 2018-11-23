@@ -1,34 +1,39 @@
-/* eslint-disable no-console */
-
 import React from 'react';
 import { storiesOf } from '@storybook/react';
+import { action } from '@storybook/addon-actions';
 import { withInfo } from '@storybook/addon-info';
-import withTests from '../../internal/withTests';
-import SingleComponent from '../../documentation/SingleComponent';
+import { withKnobs, boolean, number, object, text } from '@storybook/addon-knobs';
+import FormError from '../FormError';
 
 import { withReadme } from 'storybook-readme';
 import readme from './README.md';
 
-import Credits from '../Credits';
+const props = {
+  formError: () => ({
+    className: 'some-class',
+    message: object('Error message (message)', {
+      generic: 'Something went terribly wrong',
+      fields: [
+        {key: 'fieldkey', message: 'One field which is wrong'},
+        {key: 'anotherfieldkey', message: 'Another field which is wrong'}
+      ]
+    }),
+    submitFailed: boolean('Submit failed (submitFailed)', true),
+  })
+};
 
-storiesOf('FormError', module)
-  .addDecorator(withTests('Credits'))
-  .addDecorator(story => <SingleComponent>{story()}</SingleComponent>)
+
+
+storiesOf('FormError (experimental)', module)
+  .addDecorator(withKnobs)
   .addDecorator(withReadme([readme]))
   .add(
     'Default',
     withInfo({
       text: `
-      Links are typically used as a means of navigation either within the application, to a place outside, or to a resource.
-      For anything else, especially things that change data, you should be using a button.
-    `,
+        The FormError is displayed at the top of the form if a form is not valid when trying to submit it.
+      `,
     })(() => (
-      <Credits info="Photo: WFP/ Rein Skullerud">
-        <img
-          alt="Default illustration"
-          style={{ width: '700px', height: 'auto' }}
-          src="http://www1.wfp.org/sites/default/files/images/hp_yem_20170717_wfp-reem_nada_0109_3.jpg"
-        />
-      </Credits>
+      <FormError {...props.formError()} />
     ))
   );
