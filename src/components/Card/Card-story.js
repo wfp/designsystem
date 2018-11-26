@@ -41,7 +41,7 @@ const props = {
     kind: select('Card kind (kind)', kinds, 'landscape'),
     title: text(
       'Title (title)',
-      'The Climate Adaption Mangement and Innovation Initiative (C-ADAPT)'
+      'The Climate Adaption Mangement and Innovation Initiative'
     ),
     metadata: text('Metadata (metadata)', 'Another Category'),
     moreButton: select('More element (more)', buttonKinds, 'inverse'),

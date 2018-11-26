@@ -130,39 +130,7 @@ function loadHtml() {
   let keys = req.keys();
   keys.forEach(filename => req(filename));
 
-  console.log(keys);
 }
-
-console.log(loadHtml());
-
-/*
-import React from 'react';
-import { storiesOf } from '@storybook/react';
-
-import { exampleStory } from '../../../.storybook/lucid-docs-addon';
-import HtmlComponent from '../../documentation/HtmlComponent';
-
-import { withReadme } from 'storybook-readme';
-import readme from '../../documentation/HTML-README.md';
-
-import Html from '!!raw-loader!./Credits.html';
-
-
-
-storiesOf('Credits', module)
-  .addDecorator(withReadme([readme]))
-  .addDecorator(
-    exampleStory({
-      code: Html,
-      options: { showAddonPanel: true },
-    })
-  )
-  .add(
-    'html',
-    (() => null)
-  );
-
-*/
 
 configure(loadStories, module);
 

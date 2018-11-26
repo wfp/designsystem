@@ -18,10 +18,10 @@ const props = {
   formError: () => ({
     className: 'some-class',
     message: object('Error message (message)', {
-      generic: 'Something went terribly wrong',
+      generic: 'Something went very terribly wrong.',
       fields: [
-        { key: 'fieldkey', message: 'One field which is wrong' },
-        { key: 'anotherfieldkey', message: 'Another field which is wrong' },
+        { key: 'fieldkey', message: 'Please enter your name.'},
+        { key: 'anotherfieldkey', message: 'The selected e-mail could not be validated.' },
       ],
     }),
     submitFailed: boolean('Submit failed (submitFailed)', true),

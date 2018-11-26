@@ -14,7 +14,6 @@ export default class Container extends Component {
 
   render() {
     const { context, story } = this.props;
-    console.log(this.props);
 
     if (context.story.includes('html')) {
       setOptions({ selectedAddonPanel: 'lucid-docs-panel-code' });
