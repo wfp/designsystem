@@ -15,6 +15,8 @@ export default class Container extends Component {
   render() {
     const { context, story } = this.props;
 
+    console.log("context, story", );
+
     if (context.story.includes('html')) {
       setOptions({ selectedAddonPanel: 'lucid-docs-panel-code' });
     } else if (context.story.includes('Right to left')) {
@@ -23,24 +25,27 @@ export default class Container extends Component {
       setOptions({ selectedAddonPanel: 'REACT_STORYBOOK/readme/panel' });
     }
 
+    const storyRender = story();
+    const flexBasis = storyRender.props['data-flexbasis'];
+
     if (context && !context.kind.indexOf(' ') == 0) {
       return (
         <div role="main">
-          <SingleComponent html={context.story.includes('html') ? true : false}>
-            {story()}
+          <SingleComponent flexBasis={flexBasis ? flexBasis : undefined} html={context.story.includes('html') ? true : false}>
+            { storyRender }
           </SingleComponent>
         </div>
       );
     } else if (context.story.includes('html')) {
       return (
         <div role="main">
-          <HtmlComponent html={Html}>{story()}</HtmlComponent>
+          <HtmlComponent html={Html}>{ storyRender}</HtmlComponent>
         </div>
       );
     } else {
       return (
         <div role="main" id="container">
-          {story()}
+          { storyRender }
         </div>
       );
     }

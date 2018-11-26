@@ -63,9 +63,9 @@ storiesOf('Card', module)
   .addDecorator(withKnobs)
   .addDecorator(withTests('Card'))
   .addDecorator(withReadme([readme]))
-  /*.addDecorator(story => (
-    <div style={{width: '800px'}}>{story()}</div>
-  ))*/
+  .addDecorator(story => (
+    <div data-flexbasis='800px'>{story()}</div>
+  ))
   .add(
     'Default',
     withInfo({

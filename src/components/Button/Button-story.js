@@ -7,6 +7,9 @@ import { iconAddSolid, iconSearch } from '@wfp/icons';
 import Button from '../Button';
 import ButtonSkeleton from '../Button/Button.Skeleton';
 
+import { withReadme } from 'storybook-readme';
+import readme from './README.md';
+
 const icons = {
   none: 'None',
   iconAddSolid: 'Add with filled circle (iconAddSolid from `@wfp/icons`)',
@@ -49,6 +52,7 @@ const props = {
 
 storiesOf('Buttons', module)
   .addDecorator(withKnobs)
+  .addDecorator(withReadme([readme]))
   .add(
     'Default',
     withInfo({

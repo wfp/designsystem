@@ -18,13 +18,15 @@ class SingleComponent extends Component {
   }
 
   render() {
-    const { centered, children, pageWidth } = this.props;
+    const { centered, children, flexBasis, pageWidth } = this.props;
     const { height } = this.state;
 
     //'wfp--story',
     const classNames = classnames({
       'wfp--single-component--top': height >= 300,
     });
+
+    console.log('flexBasis', flexBasis);
 
     return (
       <Wrapper
@@ -40,7 +42,7 @@ class SingleComponent extends Component {
         }
         className={classNames}
         pageWidth={pageWidth}>
-        <div id="container" style={{ flexBasis: '750px' }}>
+        <div id="container" style={{ flexBasis: flexBasis ? flexBasis : 'auto' }}>
           {children}
         </div>
       </Wrapper>
