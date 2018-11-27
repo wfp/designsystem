@@ -5,7 +5,8 @@ import { storiesOf } from '@storybook/react';
 import Page from './Page';
 import Blockquote from '../components/Blockquote';
 
-storiesOf(' Documentation', module).addWithInfo('Typography', ``, () => (
+storiesOf(' Documentation', module)
+  .add('Typography', () => (
   <Page title="Typography" subTitle="Introduction to the new WFP UI Kit">
     {/*<p>
       Typography plays a critical role in any design; in fact, it accounts for

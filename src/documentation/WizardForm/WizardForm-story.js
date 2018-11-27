@@ -28,7 +28,7 @@ const showResults = values =>
 
 storiesOf(' Documentation', module)
   .addDecorator(withReadme([readme]))
-  .addWithInfo('Wizard Form', ``, () => (
+  .add('Wizard Form', () => (
     <Provider store={store}>
       <WizardForm onSubmit={showResults} />
     </Provider>

@@ -10,7 +10,7 @@ import readme from './HTML-README.md';
 
 storiesOf(' Documentation.Getting Started', module)
   .addDecorator(withReadme([readme]))
-  .addWithInfo('HTML Usage', ``, () => (
+  .add('HTML Usage', () => (
     <Page title="HTML Usage" subTitle="Use the UI Kit without react.js">
       <p>
         Most parts of the UI Kit can be used with html / css only. See the

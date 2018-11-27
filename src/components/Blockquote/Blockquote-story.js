@@ -1,12 +1,9 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { checkA11y } from '@storybook/addon-a11y';
+import { withInfo } from '@storybook/addon-info';
 import { withKnobs, boolean } from '@storybook/addon-knobs/react';
-import SingleComponent from '../../documentation/SingleComponent';
 import withTests from '../../internal/withTests';
-
-import { exampleStory } from '../../../.storybook/lucid-docs-addon';
-import Raw from '!!raw-loader!./Blockquote';
 
 import { withReadme } from 'storybook-readme';
 import readme from './README.md';
@@ -14,22 +11,12 @@ import readme from './README.md';
 import Blockquote from '../Blockquote';
 
 storiesOf('Blockquote', module)
-  .addDecorator(checkA11y)
-  .addDecorator(
-    exampleStory({
-      code: Raw,
-      options: { showAddonPanel: true },
-    })
-  )
+  /*.addDecorator(checkA11y)
   .addDecorator(withTests('Link'))
-  .addDecorator(withReadme([readme]))
-  .addDecorator(story => <SingleComponent>{story()}</SingleComponent>)
+  .addDecorator(withReadme([readme]))*/
   .addDecorator(withKnobs)
-  .addWithInfo(
-    'Primary Blockquote',
-    `
-     The <Blockquote> Element (or HTML Block Quotation Element) indicates that the enclosed text is an extended quotation.
-    `,
+  .add(
+    'Default',
     () => {
       const toggleable = boolean('toggleable', false);
       const error = boolean('error', false);
@@ -54,6 +41,13 @@ storiesOf('Blockquote', module)
           rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
           ipsum dolor sit amet.
         </Blockquote>
-      );
-    }
+       );
+      },
+      {
+        info: {
+          text: `
+            The <Blockquote> Element (or HTML Block Quotation Element) indicates that the enclosed text is an extended quotation.
+          `,
+        },
+      }
   );

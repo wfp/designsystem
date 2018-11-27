@@ -21,7 +21,7 @@ import readme from './README-INTRODUCTION.md';
 
 storiesOf(' Documentation', module)
   .addDecorator(withReadme([readme]))
-  .addWithInfo('Introduction', ``, () => (
+  .add('Introduction', () => (
     <div>
       <Wrapper
         pageWidth="narrow"

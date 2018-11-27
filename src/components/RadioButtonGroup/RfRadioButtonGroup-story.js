@@ -24,13 +24,13 @@ storiesOf('RadioButtonGroup', module)
       <FormWrapper>{story()}</FormWrapper>
     </Provider>
   ))
-  .addWithInfo(
+  .add(
     'Redux Form RadioButtonGroup',
-    `
+    /*`
       ${introText}
       The example below shows an RadioButton Input component inside Redux-Form. The type is 'radio' and its
       value can be a 'bool'.
-    `,
+    `,*/
     () => {
       return (
         <FormGroup legendText="Radio Button heading">

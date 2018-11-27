@@ -5,7 +5,8 @@ import { storiesOf } from '@storybook/react';
 import Link from '../components/Link';
 import Page from './Page';
 
-storiesOf(' Documentation', module).addWithInfo('Grid', ``, () => (
+storiesOf(' Documentation', module)
+  .add('Grid', () => (
   <Page title="Grid" subTitle="Recommendations for grid system">
     <p>
       The UI Kit doesn't come with a CSS grid system. We recommend the use of a

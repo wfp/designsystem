@@ -1,7 +1,7 @@
 **FormControls** can be used inside a regular form or multistep form as action buttons to save and submit a form.
 
-| Setting    | Default     | Options   | Role                                                 |
-| ---------- | ----------- | --------- | ---------------------------------------------------- |
+| Setting    | Default     | Options   | Role  |
+| ---------- | ----------- | --------- | ---------- |
 | className | `undefined` | `string` | custom additional className         |
 | onNextClick      | `undefined`      | `function` | onClick Action                                           |
 | nextDisabled      | `false`      | `boolean` | disable Next Button                                           |

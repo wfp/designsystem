@@ -5,9 +5,9 @@ import { storiesOf } from '@storybook/react';
 import Page from './Page';
 import Link from '../components/Link';
 
-storiesOf(' Documentation.Getting Started', module).addWithInfo(
+storiesOf(' Documentation.Getting Started', module)
+  .add(
   'React Usage',
-  ``,
   () => (
     <Page title="React" subTitle="Guidelines & Recommendations">
       <h2>Decouple front- and backend</h2>

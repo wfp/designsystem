@@ -11,9 +11,9 @@ storiesOf('Module', module)
       <Wrapper pageWidth="narrow">{story()}</Wrapper>
     </div>
   ))
-  .addWithInfo(
+  .add(
     'Single',
-    `
+    /*`
       Modules are used to organize content in a structural manner.
 
 
@@ -23,7 +23,7 @@ storiesOf('Module', module)
 
       ModuleHeader and ModuleBody components hold the content of the
       Module
-    `,
+    `,*/
     () => (
       <Module className="some-class">
         <ModuleHeader>Module Example</ModuleHeader>
@@ -43,9 +43,9 @@ storiesOf('Module', module)
       </Module>
     )
   )
-  .addWithInfo(
+  .add(
     'No Header',
-    `
+    /*`
       Modules are used to organize content in a structural manner.
 
       Modules are separated into different components. Module components can be
@@ -53,7 +53,7 @@ storiesOf('Module', module)
 
       ModuleHeader and ModuleBody components hold the content of the
       Module
-    `,
+    `,*/
     () => (
       <Module className="some-class">
         <ModuleBody>
@@ -65,9 +65,9 @@ storiesOf('Module', module)
       </Module>
     )
   )
-  .addWithInfo(
+  .add(
     'No Header - Centered Content',
-    `
+    /*`
       Modules are used to organize content in a structural manner.
 
       Modules are separated into different components. Module components can be
@@ -75,7 +75,7 @@ storiesOf('Module', module)
 
       ModuleHeader and ModuleBody components hold the content of the
       Module
-    `,
+    `,*/
     () => (
       <Module className="some-class">
         <ModuleBody centered>
@@ -93,9 +93,9 @@ storiesOf('Module', module)
       </Module>
     )
   )
-  .addWithInfo(
+  .add(
     'Dark',
-    `
+    /*`
       Modules are used to organize content in a structural manner.
 
       Modules are separated into different components. Module components can be
@@ -103,7 +103,7 @@ storiesOf('Module', module)
 
       ModuleHeader and ModuleBody components hold the content of the
       Module
-    `,
+    `,*/
     () => (
       <Module dark className="some-class">
         <ModuleHeader>Module Example</ModuleHeader>
@@ -123,15 +123,15 @@ storiesOf('Module', module)
       </Module>
     )
   )
-  .addWithInfo(
+  .add(
     'With Grid',
-    `
+    /*`
       Modules are used to organize content in a structural manner.
 
       Modules are separated into different components. They can also use a css grid system.
 
       The use of flexboxgrid is recommended.
-    `,
+    `,*/
     () => (
       <div className="row">
         <Module className="col-xs-12 col-md-6 col-lg-4">

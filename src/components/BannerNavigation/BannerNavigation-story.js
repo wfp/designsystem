@@ -6,11 +6,6 @@ import { withInfo } from '@storybook/addon-info';
 import { withReadme } from 'storybook-readme';
 import readme from './README.md';
 
-import HtmlComponent from '../../documentation/HtmlComponent';
-import { exampleStory } from '../../../.storybook/lucid-docs-addon';
-
-import Html from '!!raw-loader!./BannerNavigation.hbs';
-
 import { BannerNavigation, BannerNavigationItem } from './BannerNavigation';
 import { BannerNavigationWithContent } from './BannerNavigationWithContent';
 import Search from '../Search';
@@ -88,21 +83,4 @@ storiesOf('BannerNavigation', module)
     ~~~
     `,
     })(() => <BannerNavigationWithContent />)
-  );
-
-storiesOf('BannerNavigation', module)
-  .addDecorator(
-    exampleStory({
-      code: Html,
-      options: { showAddonPanel: true },
-    })
-  )
-  .addDecorator(story => <HtmlComponent html={Html}>{story()}</HtmlComponent>)
-  .add(
-    'html',
-    withInfo({
-      text: `
-        html view
-      `,
-    })(() => null)
   );

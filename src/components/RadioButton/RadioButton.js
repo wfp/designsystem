@@ -5,15 +5,52 @@ import uid from '../../tools/uniqueId';
 
 export default class RadioButton extends React.Component {
   static propTypes = {
+    /**
+     * Specify whether the <RadioButton> is currently checked
+     */
     checked: PropTypes.bool,
+
+    /**
+     * Provide an optional className to be applied to the containing node
+     */
     className: PropTypes.string,
+
+    /**
+     * Specify whether the <RadioButton> should be checked by default
+     */
     defaultChecked: PropTypes.bool,
+
+    /**
+     * Specify whether the control is disabled
+     */
     disabled: PropTypes.bool,
+
+    /**
+     * Provide a unique id for the underlying <input> node
+     */
     id: PropTypes.string,
-    labelText: PropTypes.string.isRequired,
+
+    /**
+     * Provide label text to be read by screen readers when interacting with the
+     * control
+     */
+    labelText: PropTypes.node.isRequired,
+
+    /**
+     * Provide a name for the underlying <input> node
+     */
     name: PropTypes.string,
+
+    /**
+     * Provide an optional `onChange` hook that is called each time the value of
+     * the underlying <input> changes
+     */
     onChange: PropTypes.func,
-    value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+
+    /**
+     * Specify the value of the <RadioButton>
+     */
+    value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
   };
 
   static defaultProps = {
@@ -25,12 +62,7 @@ export default class RadioButton extends React.Component {
   }
 
   handleChange = evt => {
-    // Regular Update
-    if (this.props.onChange)
-      this.props.onChange(this.props.value, this.props.name, evt);
-    // Redux Form Change
-    if (this.props.input && this.props.input.onChange)
-      this.props.input.onChange(evt.target.value);
+    this.props.onChange(this.props.value, this.props.name, evt);
   };
 
   render() {
@@ -39,20 +71,19 @@ export default class RadioButton extends React.Component {
       this.props.className
     );
 
-    const { labelText, input, value, ...other } = this.props;
+    const { labelText, ...other } = this.props;
+
     return (
       <div className={wrapperClasses}>
         <input
           {...other}
-          {...input}
           type="radio"
-          value={input && input.value ? input.value : value}
-          className="wfp--radio-button"
+          className="bx--radio-button"
           onChange={this.handleChange}
           id={this.uid}
         />
-        <label htmlFor={this.uid} className="wfp--radio-button__label">
-          <span className="wfp--radio-button__appearance" />
+        <label htmlFor={this.uid} className="bx--radio-button__label">
+          <span className="bx--radio-button__appearance" />
           {labelText}
         </label>
       </div>

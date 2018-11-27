@@ -12,11 +12,8 @@ storiesOf('Wrapper', module)
   //.addDecorator(withSmartKnobs)
   .addDecorator(withKnobs)
   .addDecorator(withReadme([readme]))
-  .addWithInfo(
+  .add(
     'Default',
-    `
-      Wrapper can wrap it's content in a specific width depending on if the application has a full or fixed width.
-    `,
     () => {
       const options = {
         '': 'undefined',

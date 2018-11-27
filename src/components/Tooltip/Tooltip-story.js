@@ -11,11 +11,8 @@ import tooltipStyle from './Tooltip';
 storiesOf('Tooltip', module)
   .addDecorator(withReadme([readme]))
   .addDecorator(story => <SingleComponent>{story()}</SingleComponent>)
-  .addWithInfo(
+  .add(
     'default',
-    `
-      Default implementation
-    `,
     () => (
       <Tooltip
         // options

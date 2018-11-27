@@ -5,9 +5,9 @@ import { storiesOf } from '@storybook/react';
 import Page from './Page';
 import Blockquote from '../components/Blockquote';
 
-storiesOf(' Documentation.Getting Started', module).addWithInfo(
+storiesOf(' Documentation.Getting Started', module)
+  .add(
   'Usage for Developers',
-  ``,
   () => (
     <Page title="Usage for Developers" subTitle="How to use the UI Kit">
       <p>

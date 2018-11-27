@@ -9,7 +9,7 @@ import readme from './FAVICONS-README.md';
 
 storiesOf(' Documentation', module)
   .addDecorator(withReadme([readme]))
-  .addWithInfo('Favicons', ``, () => {
+  .add('Favicons', () => {
     return (
       <Page title="Favicons" subTitle="The new Logos in various sizes">
         <p>

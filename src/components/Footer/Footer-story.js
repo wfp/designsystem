@@ -12,11 +12,8 @@ import readme from './README.md';
 storiesOf('Footer', module)
   .addDecorator(withKnobs)
   .addDecorator(withReadme([readme]))
-  .addWithInfo(
+  .add(
     'Internal',
-    `
-      Footer is the second most important place where your basic site information and links should live. Users turn often to the footer to look for important information, such as contact details, or links to less prominent sections of the website (privacy policy, terms of use, etc).
-    `,
     () => {
       const options = {
         '': 'undefined',
@@ -78,11 +75,8 @@ storiesOf('Footer', module)
       );
     }
   )
-  .addWithInfo(
+  .add(
     'External',
-    `
-      Footer is the second most important place where your basic site information and links should live. Users turn often to the footer to look for important information, such as contact details, or links to less prominent sections of the website (privacy policy, terms of use, etc).
-    `,
     () => {
       const options = {
         '': 'undefined',

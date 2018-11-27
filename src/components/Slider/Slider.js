@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import isEqual from 'lodash.isequal';
 import TextInput from '../TextInput';
+import { sliderValuePropSync } from '../../internal/FeatureFlags';
 
 const defaultFormatLabel = (value, label) => {
   return typeof label === 'function' ? label(value) : `${value}${label}`;
@@ -63,7 +64,7 @@ export default class Slider extends PureComponent {
     /**
      * The label for the slider.
      */
-    labelText: PropTypes.string,
+    labelText: PropTypes.node,
 
     /**
      * A value determining how much the value should increase/decrease by moving the thumb by mouse.
@@ -100,6 +101,11 @@ export default class Slider extends PureComponent {
      * The `ariaLabel` for the `<input>`.
      */
     ariaLabelInput: PropTypes.string,
+
+    /**
+     * `true` to use the light version.
+     */
+    light: PropTypes.bool,
   };
 
   static defaultProps = {
@@ -111,28 +117,44 @@ export default class Slider extends PureComponent {
     maxLabel: '',
     inputType: 'number',
     ariaLabelInput: 'Slider number input',
+    light: false,
   };
 
   state = {
     dragging: false,
-    value:
-      this.props.input && this.props.input.value
-        ? this.props.input.value
-        : this.props.value,
+    value: this.props.value,
     left: 0,
   };
 
-  UNSAFE_componentDidMount() {
+  componentDidMount() {
     this.updatePosition();
   }
 
+  static getDerivedStateFromProps({ value, min, max }, state) {
+    const { value: currentValue, prevValue, prevMin, prevMax } = state;
+    if (
+      !sliderValuePropSync ||
+      (prevValue === value && prevMin === min && prevMax === max)
+    ) {
+      return null;
+    }
+    const effectiveValue = Math.min(
+      Math.max(prevValue === value ? currentValue : value, min),
+      max
+    );
+    return {
+      value: effectiveValue,
+      left: (effectiveValue - min) / (max - min) * 100,
+      prevValue: value,
+      prevMin: min,
+      prevMax: max,
+    };
+  }
+
   UNSAFE_componentWillReceiveProps(nextProps) {
-    if (!isEqual(nextProps, this.props)) {
+    if (!sliderValuePropSync && !isEqual(nextProps, this.props)) {
       this.updatePosition();
     }
-
-    if (nextProps.input && nextProps.input.value !== this.state.value)
-      this.setState({ value: nextProps.input.value });
   }
 
   updatePosition = evt => {
@@ -152,10 +174,13 @@ export default class Slider extends PureComponent {
 
     requestAnimationFrame(() => {
       this.setState((prevState, props) => {
+        // Note: In FF, `evt.target` of `mousemove` event can be `HTMLDocument` which doesn't have `classList`.
+        // One example is dragging out of browser viewport.
         const fromInput =
           evt &&
           evt.target &&
-          evt.target.classList.contains('wfp-slider-text-input');
+          evt.target.classList &&
+          evt.target.classList.contains('bx-slider-text-input');
         const { left, newValue: newSliderValue } = this.calcValue(
           evt,
           prevState,
@@ -168,11 +193,6 @@ export default class Slider extends PureComponent {
         if (typeof props.onChange === 'function') {
           props.onChange({ value: newValue });
         }
-
-        //Redux Form
-        if (this.props.input && this.props.input.onChange)
-          this.props.input.onChange(newValue);
-
         return {
           dragging: false,
           left,
@@ -318,16 +338,21 @@ export default class Slider extends PureComponent {
       required,
       disabled,
       name,
+      light,
       ...other
     } = this.props;
 
     const { value, left } = this.state;
 
     const sliderClasses = classNames(
-      'wfp--slider',
-      { 'wfp--slider--disabled': disabled },
+      'bx--slider',
+      { 'bx--slider--disabled': disabled },
       className
     );
+
+    const inputClasses = classNames('bx-slider-text-input', {
+      'bx--text-input--light': light,
+    });
 
     const filledTrackStyle = {
       transform: `translate(0%, -50%) scaleX(${left / 100})`,
@@ -337,12 +362,12 @@ export default class Slider extends PureComponent {
     };
 
     return (
-      <div className="wfp--form-item">
-        <label htmlFor={id} className="wfp--label">
+      <div className="bx--form-item">
+        <label htmlFor={id} className="bx--label">
           {labelText}
         </label>
-        <div className="wfp--slider-container">
-          <span className="wfp--slider__range-label">
+        <div className="bx--slider-container">
+          <span className="bx--slider__range-label">
             {formatLabel(min, minLabel)}
           </span>
           <div
@@ -356,17 +381,17 @@ export default class Slider extends PureComponent {
             tabIndex={-1}
             {...other}>
             <div
-              className="wfp--slider__track"
+              className="bx--slider__track"
               ref={node => {
                 this.track = node;
               }}
             />
             <div
-              className="wfp--slider__filled-track"
+              className="bx--slider__filled-track"
               style={filledTrackStyle}
             />
             <div
-              className="wfp--slider__thumb"
+              className="bx--slider__thumb"
               role="slider"
               id={id}
               tabIndex={0}
@@ -389,14 +414,14 @@ export default class Slider extends PureComponent {
               onChange={this.handleChange}
             />
           </div>
-          <span className="wfp--slider__range-label">
+          <span className="bx--slider__range-label">
             {formatLabel(max, maxLabel)}
           </span>
           {!hideTextInput && (
             <TextInput
               type={inputType}
               id="input-for-slider"
-              className="wfp-slider-text-input"
+              className={inputClasses}
               value={value}
               onChange={this.handleChange}
               labelText=""

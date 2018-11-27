@@ -5,7 +5,8 @@ import { storiesOf } from '@storybook/react';
 import Page from './Page';
 import Link from '../components/Link';
 
-storiesOf(' Documentation', module).addWithInfo('Development', ``, () => (
+storiesOf(' Documentation', module)
+.add('Development', () => (
   <Page title="Development" subTitle="Help improving the UI Kit">
     <p>
       Development is made on a GitHub repository. Feel free create an Issue or

@@ -4,7 +4,8 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import Page from './Page';
 
-storiesOf(' Documentation', module).addWithInfo('Browser Support', ``, () => (
+storiesOf(' Documentation', module)
+  .add('Browser Support', () => (
   <Page title="Browser Support" subTitle="All supported browsers">
     <p>Components is supported in the following browsers:</p>
 

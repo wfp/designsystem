@@ -7,7 +7,7 @@ import RegularPage from './RegularPage';
 import Story from '../components/Story';
 storiesOf(' Documentation.Sample Pages', module)
   .addDecorator(story => <RegularPage withoutSecondary>{story()}</RegularPage>)
-  .addWithInfo('Regular Page', ``, () => (
+  .add('Regular Page', () => (
     <div>
       <Story pageWidth="lg" spacing="md">
         <h1 className="wfp--story__title">Lorem Ipsum</h1>

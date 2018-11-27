@@ -4,37 +4,59 @@ import RadioButton from '../RadioButton';
 import warning from 'warning';
 
 export default class RadioButtonGroup extends React.Component {
+  state = { selected: this.props.valueSelected || this.props.defaultSelected };
+
   static propTypes = {
+    /**
+     * Provide a collection of <RadioButton> components to render in the group
+     */
     children: PropTypes.node,
+
+    /**
+     * Provide an optional className to be applied to the container node
+     */
     className: PropTypes.string,
+
+    /**
+     * Specify the <RadioButton> to be selected by default
+     */
     defaultSelected: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+
+    /**
+     * Specify the name of the underlying <input> nodes
+     */
     name: PropTypes.string.isRequired,
+
+    /**
+     * Specify whether the group is disabled
+     */
     disabled: PropTypes.bool,
+
+    /**
+     * Provide an optional `onChange` hook that is called whenever the value of
+     * the group changes
+     */
     onChange: PropTypes.func,
+
+    /**
+     * Specify the value that is currently selected in the group
+     */
     valueSelected: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   };
 
   static defaultProps = {
     onChange: /* istanbul ignore next */ () => {},
-    className: 'wfp--radio-button-group',
+    className: 'bx--radio-button-group',
   };
 
-  state = {
-    selected: null,
-  };
-
-  UNSAFE_componentWillMount() {
-    this.setState({
-      selected: this.props.valueSelected || this.props.defaultSelected || null,
-    });
-  }
-
-  UNSAFE_componentWillReceiveProps(nextProps) {
-    if (nextProps.hasOwnProperty('valueSelected')) {
-      this.setState({
-        selected: nextProps.valueSelected,
-      });
-    }
+  static getDerivedStateFromProps({ valueSelected, defaultSelected }, state) {
+    const { prevValueSelected } = state;
+    return prevValueSelected === valueSelected
+      ? null
+      : {
+          selected: valueSelected || defaultSelected,
+          prevValueSelected: valueSelected,
+        };
   }
 
   getRadioButtons = () => {
@@ -75,7 +97,7 @@ export default class RadioButtonGroup extends React.Component {
     const { disabled, className } = this.props;
 
     return (
-      <div className="wfp--form-item">
+      <div className="bx--form-item">
         <div className={className} disabled={disabled}>
           {this.getRadioButtons()}
         </div>

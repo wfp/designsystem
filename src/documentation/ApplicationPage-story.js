@@ -9,7 +9,7 @@ import { Module, ModuleHeader, ModuleBody } from '../components/Module';
 
 storiesOf(' Documentation.Sample Pages', module)
   .addDecorator(story => <RegularPage>{story()}</RegularPage>)
-  .addWithInfo('Application Page', ``, () => (
+  .add('Application Page', () => (
     <Wrapper background="lighter" pageWidth="lg" spacing="md">
       <div className="row">
         <Module className="col-xs-12 col-md-6 col-lg-4" size="single">

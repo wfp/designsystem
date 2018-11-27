@@ -8,7 +8,7 @@ import readme from './NAMING-README.md';
 
 storiesOf(' Documentation', module)
   .addDecorator(withReadme([readme]))
-  .addWithInfo('Naming Convention & Linting', ``, () => (
+  .add('Naming Convention & Linting', () => (
     <Page
       title="Naming Convention"
       subTitle="Introduction to the new WFP UI Kit">

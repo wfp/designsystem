@@ -16,11 +16,11 @@ const additionalProps = {
 storiesOf('List', module)
   .addDecorator(withTests('List'))
   .addDecorator(withReadme([readme]))
-  .addWithInfo(
+  .add(
     'Default',
-    `
+    /* `
       Lists show a number of connected items written consecutively, typically one below the other.
-    `,
+    `,*/
     () => (
       <List {...additionalProps}>
         <ListItem>First item</ListItem>
@@ -29,11 +29,11 @@ storiesOf('List', module)
       </List>
     )
   )
-  .addWithInfo(
+  .add(
     'List with Titles',
-    `
+    /*`
       Lists show a number of connected items written consecutively, typically one below the other.
-    `,
+    `,*/
     () => (
       <List kind="details" {...additionalProps} style={{ columnCount: 3 }}>
         <ListItem title="Strategic Outcome">

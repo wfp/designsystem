@@ -9,7 +9,7 @@ import readme from './EMAIL-README.md';
 
 storiesOf(' Documentation', module)
   .addDecorator(withReadme([readme]))
-  .addWithInfo('Email', ``, () => {
+  .add('Email', () => {
     return (
       <Page title="Email Template" subTitle="Email template for applications">
         <p>

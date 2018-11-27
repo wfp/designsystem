@@ -93,6 +93,7 @@ export TablePagination from './components/TablePagination';
 export Tab from './components/Tab';
 export TabContent from './components/TabContent';
 export Tabs from './components/Tabs';
+export Tag from './components/Tag';
 export TextArea from './components/TextArea';
 export TextInput from './components/TextInput';
 

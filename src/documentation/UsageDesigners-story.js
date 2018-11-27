@@ -6,9 +6,9 @@ import Page from './Page';
 import Button from '../components/Button';
 import Link from '../components/Link';
 
-storiesOf(' Documentation.Getting Started', module).addWithInfo(
+storiesOf(' Documentation.Getting Started', module)
+.add(
   'Usage for Designers',
-  ``,
   () => (
     <Page title="Usage for Designers" subTitle="How to use the UI Kit">
       <p>

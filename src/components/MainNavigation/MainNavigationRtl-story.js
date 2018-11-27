@@ -7,11 +7,11 @@ import Search from '../Search';
 import Link from '../Link';
 import User from '../User';
 
-storiesOf('MainNavigation', module).addWithInfo(
+storiesOf('MainNavigation', module).add(
   'Right to left',
-  `
+  /*`
       The MainNavigation is used across all applications, it is the starting point of the application and offers the top level navigation items.
-    `,
+    `,*/
   () => (
     <MainNavigation logo="WFP UI">
       <MainNavigationItem
