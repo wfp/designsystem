@@ -62,9 +62,9 @@ storiesOf('BannerNavigation', module)
         </BannerNavigationItem>
         <BannerNavigationItem>
           <Search
-            banner
             id="search-2"
             labelText="Search"
+            kind="banner"
             placeHolderText="Search"
             onChange={action('onChange')}
           />

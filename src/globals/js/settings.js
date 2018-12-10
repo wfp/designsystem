@@ -1,6 +1,6 @@
 /**
  * Settings.
- * @exports CarbonComponents.settings
+ * @exports wfp-ui.settings
  * @type Object
  * @property {boolean} [disableAutoInit]
  *   Disables automatic instantiation of components.
@@ -9,10 +9,11 @@
  *   by searching for elements with `data-component-name` (e.g. `data-loading`) attribute
  *   or upon DOM events (e.g. clicking) on such elements.
  *   See each components' static `.init()` methods for details.
- * @property {string} [prefix=bx]
+ * @property {string} [prefix=wfp]
  *   Brand prefix. Should be in sync with `$prefix` Sass variable in carbon-components/src/globals/scss/_vars.scss.
  */
 const settings = {
   prefix: 'wfp',
 };
+//module.exports = settings;
 export default settings;

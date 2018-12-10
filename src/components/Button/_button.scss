@@ -32,6 +32,34 @@
     }
   }
 
+  button.#{$prefix}--btn--icon-reverse {
+    .#{$prefix}--btn__icon {
+      float: left;
+      margin-left: 0;
+      margin-right: $spacing-xs;
+    }
+  }
+
+  a.#{$prefix}--btn--icon-reverse {
+    display: flex;
+    flex-direction: row-reverse;
+    .#{$prefix}--btn__icon {
+      float: left;
+      margin-left: 0;
+      margin-right: $spacing-xs;
+    }
+  }
+
+  a,button {
+    &.#{$prefix}--btn--icon-only {
+      padding: 0 $spacing-sm;
+      .#{$prefix}--btn__icon {
+        margin-left: 0;
+        margin-right: 0;
+      }
+    }
+  }
+
   .#{$prefix}--btn {
     @include button-base;
   }

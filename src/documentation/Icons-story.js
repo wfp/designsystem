@@ -31,7 +31,7 @@ storiesOf(' Documentation', module)
         Carbon Icons
       </Link>. You can find additional information in the{' '}
       <Link
-        href="http://www.carbondesignsystem.com/style/iconography/library"
+        href="http://www.carbondesignsystem.com/guidelines/iconography"
         target="_blank">
         Carbon Design System
       </Link>

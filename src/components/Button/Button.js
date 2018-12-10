@@ -11,6 +11,7 @@ const Button = ({
   small,
   kind,
   href,
+  iconReverse,
   tabIndex,
   type,
   icon,
@@ -20,6 +21,8 @@ const Button = ({
   const buttonClasses = classNames(className, {
     'wfp--btn': true,
     'wfp--btn--sm': small,
+    'wfp--btn--icon-reverse': iconReverse,
+    'wfp--btn--icon-only': icon && children === undefined,
     'wfp--btn--primary': kind === 'primary',
     'wfp--btn--danger': kind === 'danger',
     'wfp--btn--secondary': kind === 'secondary',
@@ -99,6 +102,11 @@ Button.propTypes = {
   /**
    * Optionally specify an href for your Button to become an <a> element
    */
+  iconReverse: PropTypes.bool,
+
+  /**
+   * Optionally specify an href for your Button to become an <a> element
+   */
   href: PropTypes.string,
 
   /**
@@ -145,6 +153,7 @@ Button.propTypes = {
 };
 
 Button.defaultProps = {
+  iconReverse: false,
   iconDescription: 'Provide icon description if icon is used',
   tabIndex: 0,
   type: 'button',

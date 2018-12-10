@@ -892,18 +892,18 @@
   version "0.0.57"
   resolved "https://registry.yarnpkg.com/@wfp/icons/-/icons-0.0.57.tgz#a8042f75e2017ef46470f983f9d3e1ad20c2f9b6"
 
-"@wfp/ui@^1.1.38":
-  version "1.1.38"
-  resolved "https://registry.yarnpkg.com/@wfp/ui/-/ui-1.1.38.tgz#fae3777fa1fb45fed54b221bd331c15dd11bde9b"
+"@wfp/ui@^1.1.42":
+  version "1.1.42"
+  resolved "https://registry.yarnpkg.com/@wfp/ui/-/ui-1.1.42.tgz#40bb3c08ae2cffefa82db3348c7116c06fbd4441"
   dependencies:
-    downshift "^1.23.2"
-    flatpickr "4.3.0"
+    classnames "2.2.6"
+    downshift "^1.31.14"
+    flatpickr "4.5.1"
     invariant "^2.2.3"
     lodash.debounce "^4.0.8"
     lodash.isequal "^4.5.0"
     lodash.omit "^4.5.0"
-    react-onclickoutside "^6.7.1"
-    warning "3.0.0"
+    warning "^3.0.0"
     window-or-global "^1.0.1"
 
 "@xtuc/ieee754@^1.2.0":
@@ -1918,6 +1918,10 @@ class-utils@^0.3.5:
     isobject "^3.0.0"
     static-extend "^0.1.1"
 
+classnames@2.2.6:
+  version "2.2.6"
+  resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.2.6.tgz#43935bffdd291f326dad0a205309b38d00f650ce"
+
 clean-css@4.2.x:
   version "4.2.1"
   resolved "https://registry.yarnpkg.com/clean-css/-/clean-css-4.2.1.tgz#2d411ef76b8569b6d0c84068dabe85b0aa5e5c17"
@@ -2722,7 +2726,7 @@ dotenv@6.0.0:
   version "6.0.0"
   resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-6.0.0.tgz#24e37c041741c5f4b25324958ebbc34bca965935"
 
-downshift@^1.23.2:
+downshift@^1.31.14:
   version "1.31.16"
   resolved "https://registry.yarnpkg.com/downshift/-/downshift-1.31.16.tgz#acd81631539502d4112d01bd573654419fd9f640"
 
@@ -3366,9 +3370,9 @@ flat-cache@^1.2.1:
     graceful-fs "^4.1.2"
     write "^0.2.1"
 
-flatpickr@4.3.0:
-  version "4.3.0"
-  resolved "http://registry.npmjs.org/flatpickr/-/flatpickr-4.3.0.tgz#9cc3aa8c9a2bde1ea431be0f4a74f40f9bad79e3"
+flatpickr@4.5.1:
+  version "4.5.1"
+  resolved "https://registry.yarnpkg.com/flatpickr/-/flatpickr-4.5.1.tgz#f65eaf54c07538f87d6f68a67b03cf816d7fb82f"
 
 flatten@^1.0.2:
   version "1.0.2"
@@ -6932,10 +6936,6 @@ react-error-overlay@^5.0.4:
   version "5.0.4"
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-5.0.4.tgz#39cf184d770f98b65a2ee59a779d03b8d092b69e"
 
-react-onclickoutside@^6.7.1:
-  version "6.7.1"
-  resolved "https://registry.yarnpkg.com/react-onclickoutside/-/react-onclickoutside-6.7.1.tgz#6a5b5b8b4eae6b776259712c89c8a2b36b17be93"
-
 react-scripts@2.0.4:
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/react-scripts/-/react-scripts-2.0.4.tgz#244a69abbf5630a80ad81349a6d0d56d91583c6c"
@@ -8433,7 +8433,7 @@ walker@~1.0.5:
   dependencies:
     makeerror "1.0.x"
 
-warning@3.0.0:
+warning@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/warning/-/warning-3.0.0.tgz#32e5377cb572de4ab04753bdf8821c01ed605b7c"
   dependencies:

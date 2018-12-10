@@ -11,9 +11,9 @@ import { withReadme } from 'storybook-readme';
 import readme from './README.md';
 
 const icons = {
-  none: 'None',
-  iconAddSolid: 'Add with filled circle (iconAddSolid from `@wfp/icons`)',
-  iconSearch: 'Search (iconSearch from `@wfp/icons`)',
+  'None': 'none',
+  'Add with filled circle (iconAddSolid from `@wfp/icons`)': 'iconAddSolid',
+  'Search (iconSearch from `@wfp/icons`)': 'iconSearch',
 };
 
 const iconMap = {
@@ -22,12 +22,12 @@ const iconMap = {
 };
 
 const kinds = {
-  primary: 'Primary button (primary)',
-  secondary: 'Secondary button (secondary)',
-  inverse: 'Inverse button (dark background)',
-  danger: 'Danger button (danger)',
-  'danger--primary': 'Danger primary button (danger--primary)',
-  ghost: 'Ghost button (ghost)',
+  'Primary button (primary)': 'primary',
+  'Secondary button (secondary)': 'secondary',
+  'Inverse button (dark background)': 'inverse',
+  'Danger button (danger)': 'danger',
+  'Danger primary button (danger--primary)': 'danger--primary',
+  'Ghost button (ghost)': 'ghost',
 };
 
 const props = {
@@ -37,6 +37,7 @@ const props = {
     disabled: boolean('Disabled (disabled)', false),
     small: boolean('Small (small)', false),
     icon: iconMap[select('Icon (icon)', icons, 'none')],
+    iconReverse: boolean('Reverse Icon (iconReverse)', false),
     onClick: action('onClick'),
     onFocus: action('onFocus'),
   }),
@@ -45,6 +46,7 @@ const props = {
     disabled: boolean('Disabled (disabled)', false),
     small: boolean('Small (small)', false),
     icon: iconMap[select('Icon (icon)', icons, 'none')],
+    iconReverse: boolean('Reverse Icon (iconReverse)', false),
     onClick: action('onClick'),
     onFocus: action('onFocus'),
   }),
@@ -83,7 +85,7 @@ storiesOf('Buttons', module)
       return (
         <div style={{ display: 'flex', alignItems: 'center' }}>
           <Button {...regularProps} className="some-class">
-            Button
+            
           </Button>
           &nbsp;
           <Button {...regularProps} href="#" className="some-class">

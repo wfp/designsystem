@@ -55,7 +55,7 @@ const BannerNavigationWithContent = props => {
             acceptCharset="UTF-8"
             target="_blank">
             <Search
-              banner
+              kind="banner"
               id="search-2"
               labelText="Find People"
               name="q"

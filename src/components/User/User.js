@@ -3,7 +3,7 @@ import React from 'react';
 import classNames from 'classnames';
 import Icon from '../Icon';
 
-const User = ({ alt, className, ellipsis, image, small, name, ...other }) => {
+const User = ({ alt, className, children, ellipsis, image, small, name, ...other }) => {
   var avatar;
   if (image === undefined) {
     avatar = (
@@ -33,6 +33,7 @@ const User = ({ alt, className, ellipsis, image, small, name, ...other }) => {
     <div className={classes} {...other}>
       {avatar}
       {name && <span className={titleClasses}>{name}</span>}
+      {children}
     </div>
   );
 };

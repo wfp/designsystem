@@ -21,6 +21,12 @@
     &:not(:first-child) {
       margin-left: 0;
     }
+    >a {
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
   }
 
   .#{$prefix}--tag--wfp {

@@ -14,15 +14,15 @@ import readme from './README.md';
 import Card from '../Card';
 
 const kinds = {
-  landscape: 'Landscape (landscape)',
-  'landscape-light': 'Landscape Light (landscape-light)',
-  split: 'Split (split)',
-  hero: 'Hero (hero)',
-  splash: 'Page splash (splash)',
-  'splash-image': 'Page splash image (splash-image)',
-  'splash-compact': 'Page splash compact (splash-compact)',
-  related: 'Related content (related)',
-  teaser: 'Teaser',
+  'Landscape (landscape)': 'landscape',
+  'Landscape Light (landscape-light)': 'landscape-light',
+  'Split (split)': 'split',
+  'Hero (hero)': 'hero',
+  'Page splash (splash)': 'splash',
+  'Page splash image (splash-image)': 'splash-image',
+  'Page splash compact (splash-compact)': 'splash-compact',
+  'Related content (related)': 'related',
+  'Teaser': 'teaser',
 };
 
 const buttons = {
@@ -31,8 +31,8 @@ const buttons = {
 };
 
 const buttonKinds = {
-  inverse: 'Hero default (inverse)',
-  regular: 'Hero default (inverse)',
+  'Hero default (inverse)': 'inverse',
+  'Hero default (regular)': 'regular',
 };
 
 const props = {

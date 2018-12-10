@@ -3,21 +3,25 @@ import React from 'react';
 import classnames from 'classnames';
 import Link from '../Link';
 
-const newChild = (children, href) => {
-  if (typeof children === 'string' && !(href === undefined)) {
+const newChild = (children, disableLink, href) => {
+  if (disableLink === true ) {
+    return <span>{children}</span>;
+  }
+  else if (typeof children === 'string' && !(href === undefined)) {
     return <Link href={href}>{children}</Link>;
-  } else {
+  } 
+  else {
     return React.cloneElement(React.Children.only(children), {
       className: 'wfp--link',
     });
   }
 };
 
-const BreadcrumbItem = ({ children, className, href, ...other }) => {
+const BreadcrumbItem = ({ children, className, disableLink, href, ...other }) => {
   const classNames = classnames('wfp--breadcrumb-item', className);
   return (
     <div className={classNames} {...other}>
-      {newChild(children, href)}
+      {newChild(children, disableLink, href)}
     </div>
   );
 };

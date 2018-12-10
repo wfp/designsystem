@@ -35,6 +35,9 @@
       color: $color__white;
       @include typescale('epsilon');
       text-decoration: none;
+      &.active {
+        border-bottom: 3px solid rgba($ui-01,0.2);
+      }
       &:hover,
       &:visited,
       &:active {
@@ -52,7 +55,9 @@
     > a,
     > span {
       white-space: nowrap;
-      &:after {
+      padding-left: 0.3em;
+      padding-right: 0.3em;
+      /*&:after {
         display: inline-block;
         position: relative;
         top: rem(-1px);
@@ -63,20 +68,26 @@
         }
         width: rem(15px);
         content: '▾';
-      }
+      }*/
     }
   }
 
+  .#{$prefix}--main-navigation__trigger__icon {
+    display: inline-block;
+    position: relative;
+    top: rem(-1px);
+    vertical-align: middle;
+    margin-left: 0.3em;
+    @include rtl {
+      margin-left: 0;
+      margin-right: 0.3em;
+    }
+  }
+
+
   .#{$prefix}--main-navigation__trigger--has-sub.#{$prefix}--main-navigation__trigger--open {
-    > div,
-    > a,
-    > span {
-      &:after {
-        position: relative;
-        top: rem(0.5px);
-        font-weight: 700;
-        content: '×';
-      }
+    .#{$prefix}--main-navigation__trigger__icon {
+      //top: rem(0px);
     }
   }
 
