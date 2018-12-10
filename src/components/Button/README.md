@@ -13,6 +13,8 @@ Use the `icon` and `iconDescription` prop to add an Icon to the Button. Refer to
 
 To show the Icon on the left side use the `iconReverse` prop.
 
+Using an Button with only an Icon while not beeing recommended can be achieved by leaving the Button text blank.
+
 #### html
 
   

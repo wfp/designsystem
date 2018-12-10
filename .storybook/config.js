@@ -25,6 +25,7 @@ addDecorator(
   withOptions({
     name: `WFP UI`,
     url: 'https://github.com/wfp/ui',
+    hierarchySeparator: /\./,
   })
 );
 
