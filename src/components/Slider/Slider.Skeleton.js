@@ -4,20 +4,20 @@ import React from 'react';
 const SliderSkeleton = ({ hideLabel, id }) => {
   const label = hideLabel ? null : (
     // eslint-disable-next-line jsx-a11y/label-has-for,jsx-a11y/label-has-associated-control
-    <label className="bx--label bx--skeleton" htmlFor={id} />
+    <label className="wfp--label wfp--skeleton" htmlFor={id} />
   );
 
   return (
-    <div className="bx--form-item">
+    <div className="wfp--form-item">
       {label}
-      <div className="bx--slider-container bx--skeleton">
-        <span className="bx--slider__range-label" />
-        <div className="bx--slider">
-          <div className="bx--slider__track" />
-          <div className="bx--slider__filled-track" />
-          <div className="bx--slider__thumb" />
+      <div className="wfp--slider-container wfp--skeleton">
+        <span className="wfp--slider__range-label" />
+        <div className="wfp--slider">
+          <div className="wfp--slider__track" />
+          <div className="wfp--slider__filled-track" />
+          <div className="wfp--slider__thumb" />
         </div>
-        <span className="bx--slider__range-label" />
+        <span className="wfp--slider__range-label" />
       </div>
     </div>
   );

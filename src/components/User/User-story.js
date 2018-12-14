@@ -5,7 +5,7 @@ import { withInfo } from '@storybook/addon-info';
 import { withReadme } from 'storybook-readme';
 import readme from './README.md';
 
-import { withKnobs, boolean, select, text } from '@storybook/addon-knobs';
+import { withKnobs, boolean, text } from '@storybook/addon-knobs';
 import User from '../User';
 
 const UserProps = () => ({
@@ -22,9 +22,10 @@ storiesOf('User', module)
   .addDecorator(withReadme([readme]))
   .add(
     'Default',
-    withInfo({
-      text: `
-        The User Icon is used inside the MainNavigation and can display an Avatar and Username.
-      `,
-    })(() => <User {...UserProps()} />)
+    () => <User {...UserProps()} />,
+    {
+      info: {
+        text: readme
+      }
+    }
   );

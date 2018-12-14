@@ -7,13 +7,17 @@ export default class Search extends Component {
   static propTypes = {
     className: PropTypes.string,
     type: PropTypes.string,
+    /**
+     *  Input type should be `search` or `text`
+     */
     small: PropTypes.bool,
     placeHolderText: PropTypes.string,
     labelText: PropTypes.node.isRequired,
     id: PropTypes.string,
+    onChange: PropTypes.func,
     closeButtonLabelText: PropTypes.string,
     /**
-     * `true` to use the light version.
+     *  Different styling options are available `large`, `small`, `banner`, `main`, `light`
      */
     kind: PropTypes.string,
   };

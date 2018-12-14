@@ -36,5 +36,11 @@ keys.forEach(function(element, i) {
     .addDecorator(story => (
       <HtmlComponent html={htmlData[i]}>{story()}</HtmlComponent>
     ))
-    .add('html ' + additionalName, () => null);
+    .add('html ' + additionalName, () => null,  {
+      info: {
+        text: readme,
+        source: false,
+        propTables: false,
+      },
+    });
 });

@@ -11,9 +11,9 @@ import { withReadme } from 'storybook-readme';
 import readme from './README.md';
 
 const icons = {
-  'None': 'none',
-  'Add with filled circle (iconAddSolid from `@wfp/icons`)': 'iconAddSolid',
-  'Search (iconSearch from `@wfp/icons`)': 'iconSearch',
+  None: 'None',
+  'Add with filled circle (iconAddSolid from `@wfp/ui`)': 'iconAddSolid',
+  'Search (iconSearch from `@wfp/ui`)': 'iconSearch',
 };
 
 const iconMap = {
@@ -24,10 +24,10 @@ const iconMap = {
 const kinds = {
   'Primary button (primary)': 'primary',
   'Secondary button (secondary)': 'secondary',
-  'Inverse button (dark background)': 'inverse',
   'Danger button (danger)': 'danger',
   'Danger primary button (danger--primary)': 'danger--primary',
   'Ghost button (ghost)': 'ghost',
+  'Inverse button (inverse)': 'inverse',
 };
 
 const props = {
@@ -37,7 +37,7 @@ const props = {
     disabled: boolean('Disabled (disabled)', false),
     small: boolean('Small (small)', false),
     icon: iconMap[select('Icon (icon)', icons, 'none')],
-    iconReverse: boolean('Reverse Icon (iconReverse)', false),
+    iconReverse: boolean('Icon in front (iconReverse)', false),
     onClick: action('onClick'),
     onFocus: action('onFocus'),
   }),
@@ -46,7 +46,6 @@ const props = {
     disabled: boolean('Disabled (disabled)', false),
     small: boolean('Small (small)', false),
     icon: iconMap[select('Icon (icon)', icons, 'none')],
-    iconReverse: boolean('Reverse Icon (iconReverse)', false),
     onClick: action('onClick'),
     onFocus: action('onFocus'),
   }),
@@ -54,38 +53,14 @@ const props = {
 
 storiesOf('Buttons', module)
   .addDecorator(withKnobs)
-  .addDecorator(withReadme([readme]))
   .add(
     'Default',
-    withInfo({
-      text: `
-        Buttons are used to initialize an action, either in the background or
-        foreground of an experience.
-
-        There are several kinds of buttons.
-
-        Primary buttons should be used for the principle call to action
-        on the page.
-
-        Secondary buttons should be used for secondary actions on each page.
-
-        Danger buttons should be used for a negative action (such as Delete) on the page.
-
-        Modify the behavior of the button by changing its event properties.
-
-        Small buttons may be used when there is not enough space for a
-        regular sized button. This issue is most found in tables. Small button should have three words
-        or less.
-
-        When words are not enough, icons can be used in buttons to better communicate what the button does. Icons are
-        always paired with text.
-      `,
-    })(() => {
+    () => {
       const regularProps = props.regular();
       return (
         <div style={{ display: 'flex', alignItems: 'center' }}>
           <Button {...regularProps} className="some-class">
-            
+            Button
           </Button>
           &nbsp;
           <Button {...regularProps} href="#" className="some-class">
@@ -94,15 +69,16 @@ storiesOf('Buttons', module)
           &nbsp;
         </div>
       );
-    })
+    },
+    {
+      info: {
+        text: readme,
+      },
+    }
   )
   .add(
     'Sets of Buttons',
-    withInfo({
-      text: `
-        When an action required by the user has more than one option, always use a a negative action button (secondary) paired with a positive action button (primary) in that order. Negative action buttons will be on the left. Positive action buttons should be on the right. When these two types buttons are paired in the correct order, they will automatically space themselves apart.
-      `,
-    })(() => {
+    () => {
       const setProps = props.set();
       return (
         <div>
@@ -114,15 +90,16 @@ storiesOf('Buttons', module)
           </Button>
         </div>
       );
-    })
+    },
+    {
+      info: {
+        text: readme,
+      },
+    }
   )
   .add(
     'skeleton',
-    withInfo({
-      text: `
-        Placeholder skeleton state to use when content is loading.
-      `,
-    })(() => (
+    () => (
       <div>
         <ButtonSkeleton />
         &nbsp;
@@ -130,5 +107,12 @@ storiesOf('Buttons', module)
         &nbsp;
         <ButtonSkeleton small />
       </div>
-    ))
+    ),
+    {
+      info: {
+        text: `
+          Placeholder skeleton state to use when content is loading.
+        `,
+      },
+    }
   );

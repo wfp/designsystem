@@ -78,7 +78,7 @@ storiesOf(' Documentation', module)
                 marginTop: '3em',
                 marginLeft: '0em',
               }}
-              src={`${process.env.STORYBOOK_ASSETS}internal/branding.svg`}
+              src={`${process.env.STORYBOOK_INTERNAL_ASSETS}internal/branding.svg`}
             />
           </div>
 
@@ -113,7 +113,7 @@ storiesOf(' Documentation', module)
                 marginTop: '3em',
                 marginLeft: '0.2em',
               }}
-              src={`${process.env.STORYBOOK_ASSETS}internal/usability.svg`}
+              src={`${process.env.STORYBOOK_INTERNAL_ASSETS}internal/usability.svg`}
             />
           </div>
 
@@ -146,7 +146,7 @@ storiesOf(' Documentation', module)
                 marginTop: '2em',
                 marginLeft: '0em',
               }}
-              src={`${process.env.STORYBOOK_ASSETS}internal/toolkit.svg`}
+              src={`${process.env.STORYBOOK_INTERNAL_ASSETS}internal/toolkit.svg`}
             />
           </div>
 

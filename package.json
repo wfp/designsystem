@@ -104,7 +104,7 @@
     }
   },
   "peerDependencies": {
-    "@wfp/icons": "^0.0.58",
+    "@wfp/icons": "^0.0.60",
     "react": "^16.4.0",
     "react-dom": "^16.4.0"
   },

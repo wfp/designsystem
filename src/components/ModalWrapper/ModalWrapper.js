@@ -97,6 +97,7 @@ export default class ModalWrapper extends React.Component {
     return (
       <div
         role="presentation"
+        className="wfp--modal__wrapper"
         onKeyDown={evt => {
           if (evt.which === 27) {
             this.handleClose();

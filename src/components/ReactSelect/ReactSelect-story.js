@@ -23,5 +23,10 @@ storiesOf('React-Select', module)
           options={options}
         />
       </div>
-    )
+    ),
+    {
+      info: {
+        text: readme,
+      },
+    }
   );

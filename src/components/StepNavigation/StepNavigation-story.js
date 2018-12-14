@@ -53,14 +53,18 @@ storiesOf('StepNavigation', module)
         Tab components for each item in the Tabs list.
       `,
     })(() => (
-      <StepNavigation selectedPage={0} handleTabClick={handleTabClick}>
-        <StepNavigationItem label="Name and last name" page={0} />
+      <StepNavigation selectedPage={1} handleTabClick={handleTabClick}>
+        <StepNavigationItem label="Item without Status" page={0} />
+        <StepNavigationItem label="Active Item" page={1} />
         <StepNavigationItem
-          label="Additional information with long description"
-          page={1}
+          label="Not started Item"
+          page={2}
           status="not-started"
         />
-        <StepNavigationItem label="Tab label 3" page={2} locked />
+        <StepNavigationItem label="Warning Item" page={3} status="warning" />
+        <StepNavigationItem label="Complete Item" page={4} status="complete" />
+        <StepNavigationItem label="Skipped Item" page={4} status="skip" />
+        <StepNavigationItem label="Locked Item" page={5} status="locked" />
       </StepNavigation>
     ))
   );

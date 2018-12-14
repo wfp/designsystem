@@ -308,5 +308,10 @@ storiesOf('Unit', module)
       const value = text('value', 1000000);
 
       return <Unit {...unitProps}>{value}</Unit>;
-    })
+    }),
+    {
+      info: {
+        text: readme
+      }
+    }
   );

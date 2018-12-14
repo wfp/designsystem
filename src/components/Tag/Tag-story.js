@@ -21,21 +21,18 @@ storiesOf('Tag', module)
   .addDecorator(withKnobs)
   .add(
     'Default',
-    withInfo({
-      text: `
-        Tags are used for items that need to be labeled, categorized, or organized using keywords that describe them.
-        The example below shows how the Tag component can be used. Each type has a default message describing the type,
-        but a custom message can also be applied.
-      `,
-    })(() => (
-      <div>
+    () => (
         <Tag
           className="some-class"
           type={select('Tag type (type)', types, 'wfp')}>
           {text('Content (children)', '')}
         </Tag>
-      </div>
-    ))
+    ),
+    {
+      info: {
+        text: readme
+      }
+    }
   )
   .add(
     'skeleton',
@@ -44,8 +41,6 @@ storiesOf('Tag', module)
       Placeholder skeleton state to use when content is loading.
       `,
     })(() => (
-      <div>
         <TagSkeleton />
-      </div>
     ))
   );

@@ -40,7 +40,6 @@ export default class StepNavigationItem extends React.Component {
       handleTabClick,
       index,
       label,
-      locked,
       status,
       selected,
       selectedPage,
@@ -51,14 +50,13 @@ export default class StepNavigationItem extends React.Component {
 
     const classes = classNames(
       'wfp--step-navigation__nav-item',
-      { 'wfp--step-navigation__nav-item--before': page < selectedPage },
-      { 'wfp--step-navigation__nav-item--selected': page === selectedPage },
-      { 'wfp--step-navigation__nav-item--locked': locked },
-      {
-        'wfp--step-navigation__nav-item--not-started': status === 'not-started',
-      },
-      { 'wfp--step-navigation__nav-item--warning': status === 'warning' },
-      { 'wfp--step-navigation__nav-item--complete': status === 'complete' },
+      {'wfp--step-navigation__nav-item--before': page < selectedPage},
+      {'wfp--step-navigation__nav-item--selected': page === selectedPage},
+      {'wfp--step-navigation__nav-item--locked': status === 'locked' },
+      {'wfp--step-navigation__nav-item--not-started': status === 'not-started'},
+      {'wfp--step-navigation__nav-item--skip': status === 'skip' },
+      {'wfp--step-navigation__nav-item--warning': status === 'warning' },
+      {'wfp--step-navigation__nav-item--complete': status === 'complete' },
       className
     );
 
@@ -73,6 +71,7 @@ export default class StepNavigationItem extends React.Component {
       'not-started': { name: 'ellipsis' },
       warning: { name: 'warning--solid' },
       locked: { name: 'lock' },
+      skip: { name: 'error--glyph' },
       complete: { name: 'checkmark' },
     };
 
@@ -81,7 +80,7 @@ export default class StepNavigationItem extends React.Component {
         tabIndex={-1}
         className={classes}
         onClick={evt => {
-          if (!locked) {
+          if (status !== 'locked') {
             handleTabClick(index, label, evt);
             onClick(evt);
           }
@@ -93,9 +92,9 @@ export default class StepNavigationItem extends React.Component {
         ) : (
           <React.Fragment>
             <span className="wfp--step-navigation__nav-item__indicator">
-              {locked || status ? (
+              {status ? (
                 <Icon
-                  name={icon[locked ? 'locked' : status].name}
+                  name={icon[status].name}
                   width="14"
                   height="14"
                   description="sss"

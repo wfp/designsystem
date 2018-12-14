@@ -1,43 +1,95 @@
 $css--font-face: true;
 $css--reset: true;
 
-@import 'src/globals/scss/styles.scss';
+@import 'src/globals/scss/vars.scss';
+
+
+/*
+  Formating Info Panel
+ TODO: find another solution
+*/
 
 html {
   height: 100%;
 }
 body {
   height: 100%;
+  div[role="main"] {
+    height: 100%;
+  }
   #root {
     height: 100%;
-    > div {
+    >div {
       /*main */
       > div {
-        > div:last-child {
-          h1,
-          h2,
-          p,
-          div {
-            //font-family: 'Open Sans', sans-serif !important;
+        >div {
+          > div {
+            > div:last-child {
+              >div {
+                >div {
+                  border: none !important;
+                }
+              }
+              div {
+                font-weight: normal !important;
+              }
+              h3 {
+                margin: $spacing-xs 0 !important;
+                text-transform: none !important;
+              }
+              h4 {
+                margin: $spacing-xs 0 !important;
+                text-transform: none !important;
+              }
+              h1,
+              h2,
+              p,
+              div {
+                font-family: 'Open Sans', sans-serif !important;
+                color: $text-01 !important;
+              }
+              th {
+                font-weight: 700;
+              }
+              table {
+                font-size: 0.9em;
+                span {
+                  background: $ui-02;
+                  padding: 0 $spacing-3xs;
+                }
+              }
+              td {
+                padding: $spacing-xs;
+              }
+              code {
+                background: $ui-02;
+                padding: 0 $spacing-3xs;
+              }
+            }
+            > div > button,
+            > button {
+              font-size: 1rem !important;
+              background: #0a6eb4 !important;
+            }
+          }
+          &:first-child {
+            //height: 100%;
+            //margin-top: -1%;
           }
         }
-        > div > button,
-        > button {
-          font-size: 1rem !important;
-          background: #0a6eb4 !important;
-        }
-      }
-      &:first-child {
-        height: 100%;
-        //margin-top: -1%;
       }
     }
   }
 }
 
 .language-js {
-  margin: 1em 0;
-  background: #e6e8ed !important;
+  margin: 1em 0 !important;
+  background: $ui-02 !important;
+  overflow-x: auto !important;
+  font-size: 0.8rem !important;
+  code {
+    font-weight: normal !important;
+  }
   .keyword {
     color: #07a;
   }
@@ -110,6 +162,8 @@ table {
     background-size: 20px 20px;
   }
 }
+
+
 .color__main-20 {
   background: $color__main-20;
 }

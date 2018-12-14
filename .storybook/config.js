@@ -13,6 +13,54 @@ import Container from './Container';
 addDecorator(
   withInfo({
     maxPropStringLength: 200, // Displays the first 200 characters in the default prop string
+    styles: stylesheet => {
+      console.log('stylesheet', stylesheet);
+      return ({
+      // Setting the style with a function
+      ...stylesheet,
+      infoBody: {
+        ...stylesheet.infoBody,
+        fontFamily: 'Open Sans',
+        lineHeight: '1.6em',
+        fontSize: '1rem'
+      },
+      propTableHead: {
+        ...stylesheet.propTableHead,
+        marginTop: '20px',
+        marginBottom: '10px',
+        fontSize: '1.2rem'
+      },
+      source: {
+        h1: {
+          //...stylesheet.source.h1,
+          fontSize: '1.4rem',
+          margin: '1rem 0',
+          fontWeight: '700'
+        }
+      },
+      header: {
+        ...stylesheet.header,
+        body: {
+          ...stylesheet.header.body,
+          borderBottom: 'none',
+          marginBottom: '0',
+          paddingTop: '0'
+        },
+        h1: {
+          ...stylesheet.header.h1,
+          fontSize: '2.25rem',
+          fontWeight: '700'
+        },
+        h2: {
+          ...stylesheet.header.h2,
+          fontSize: '0.9rem',
+          color: '#8c9ba5',
+          marginBottom: '1rem',
+          letterSpacing: '0.05em',
+          fontWeight: 'normal'
+        },
+      },
+    })},
   })
 );
 

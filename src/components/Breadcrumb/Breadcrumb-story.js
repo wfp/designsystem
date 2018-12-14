@@ -37,9 +37,7 @@ storiesOf('Breadcrumb', module)
     ),
     {
       info: {
-        text: `
-          Breadcrumb enables users to quickly see their location within a path of navigation and move up to a parent level if desired.
-        `,
+        text: readme,
       },
     }
   )
