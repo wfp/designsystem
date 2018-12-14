@@ -2,6 +2,7 @@ import React from 'react';
 import { iconAdd, iconAddSolid, iconAddOutline } from '@wfp/icons';
 import iconsList from '@wfp/icons';
 import { storiesOf } from '@storybook/react';
+import readme from './README.md';
 
 import { withKnobs, select, text } from '@storybook/addon-knobs';
 import Icon, { setIconsList } from '../Icon';
@@ -71,9 +72,7 @@ storiesOf('Icon', module)
     ),
     {
       info: {
-        text: `
-            Icons are used in the product to present common actions and commands. Modify the fill property to change the color of the icon. The name property defines which icon to display. For accessibility, provide a context-rich description with the description prop. For a full list of icon names, see carbondesignsystem.com/style/iconography/library
-          `,
+        text: readme,
       },
     }
   )
