@@ -5,11 +5,12 @@ import { storiesOf } from '@storybook/react';
 import Blockquote from '../components/Blockquote';
 import RegularPage from './RegularPage';
 import Story from '../components/Story';
+import Wrapper from '../components/Wrapper';
 storiesOf(' Documentation.Sample Pages', module)
   .addDecorator(story => <RegularPage withoutSecondary>{story()}</RegularPage>)
   .add('Regular Page', () => (
-    <div>
-      <Story pageWidth="lg" spacing="md">
+    <Wrapper pageWidth="lg" spacing="md">
+      <Story>
         <h1 className="wfp--story__title">Lorem Ipsum</h1>
         <h2 className="wfp--story__sub-title">Et jomen bin dolor</h2>
         <p>
@@ -36,5 +37,5 @@ storiesOf(' Documentation.Sample Pages', module)
           customised.
         </Blockquote>
       </Story>
-    </div>
+    </Wrapper>
   ));

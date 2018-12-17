@@ -1,12 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { checkA11y } from '@storybook/addon-a11y';
-import { withInfo } from '@storybook/addon-info';
 import { withKnobs, boolean } from '@storybook/addon-knobs/react';
-import withTests from '../../internal/withTests';
-
-import { withReadme } from 'storybook-readme';
-import readme from './README.md';
 
 import Blockquote from '../Blockquote';
 

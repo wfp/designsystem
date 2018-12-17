@@ -9,6 +9,7 @@
 
 @include exports('react-select') {
   .#{$prefix}--react-select-container {
+    width: 100%;
     .#{$prefix}--react-select__control {
       border-radius: 0;
       background-color: $field-01;

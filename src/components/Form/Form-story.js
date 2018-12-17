@@ -1,8 +1,9 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import SingleComponent from '../../documentation/SingleComponent';
+import readme from './README.md';
 
+import { withKnobs, boolean, text } from '@storybook/addon-knobs';
 import Checkbox from '../Checkbox';
 import Form from '../Form';
 import FormGroup from '../FormGroup';
@@ -11,7 +12,7 @@ import NumberInput from '../NumberInput';
 import RadioButton from '../RadioButton';
 import RadioButtonGroup from '../RadioButtonGroup';
 import Button from '../Button';
-//import Search from '../Search';
+import Search from '../Search';
 import Select from '../Select';
 import SelectItem from '../SelectItem';
 import TextArea from '../TextArea';
@@ -20,6 +21,7 @@ import Toggle from '../Toggle';
 
 const additionalProps = {
   className: 'some-class',
+  longForm: true,
   onSubmit: e => {
     e.preventDefault();
     action('FormSubmitted')(e);
@@ -31,15 +33,13 @@ const checkboxEvents = {
   labelText: 'Checkbox label',
 };
 
-const fieldsetCheckboxProps = {
+const fieldsetCheckboxProps = () => ({
   className: 'some-class',
-  legendText: 'Checkbox heading',
-};
-
-const fieldsetNumberInputProps = {
-  className: 'some-class',
-  legendText: 'Number Input heading',
-};
+  legendText: text('Text in <legend> (legendText)', 'Checkbox heading'),
+  message: boolean('Show form requirement (message)', false),
+  messageText: text('Form requirement text (messageText)', ''),
+  invalid: boolean('Mark as invalid (invalid)', false),
+});
 
 const numberInputProps = {
   className: 'some-class',
@@ -77,6 +77,15 @@ const radioProps = {
 const fieldsetRadioProps = {
   className: 'some-class',
   legendText: 'Radio Button heading',
+};
+
+const searchProps = {
+  className: 'some-class',
+};
+
+const fieldsetSearchProps = {
+  className: 'some-class',
+  legendText: 'Search',
 };
 
 const selectProps = {
@@ -119,24 +128,19 @@ const buttonEvents = {
 };
 
 storiesOf('Form', module)
-  .addDecorator(story => (
-    <SingleComponent centered={false} pageWidth="sm">
-      {story()}
-    </SingleComponent>
-  ))
+  .addDecorator(withKnobs)
   .add(
     'Default',
     () => (
       <Form {...additionalProps}>
-        <FormGroup {...fieldsetCheckboxProps}>
+        <FormGroup {...fieldsetCheckboxProps()}>
           <Checkbox defaultChecked {...checkboxEvents} id="checkbox-0" />
           <Checkbox {...checkboxEvents} id="checkbox-1" />
           <Checkbox disabled {...checkboxEvents} id="checkbox-2" />
         </FormGroup>
 
-        <FormGroup {...fieldsetNumberInputProps}>
-          <NumberInput {...numberInputProps} />
-        </FormGroup>
+        <NumberInput {...numberInputProps} />
+
         <FormGroup {...fieldsetToggleProps}>
           <Toggle {...toggleProps} id="toggle-1" />
           <Toggle disabled {...toggleProps} id="toggle-2" />
@@ -183,46 +187,53 @@ storiesOf('Form', module)
           </RadioButtonGroup>
         </FormGroup>
 
-        <FormGroup>
-          <Select
-            {...selectProps}
-            id="select-1"
-            defaultValue="placeholder-item">
-            <SelectItem
-              disabled
-              hidden
-              value="placeholder-item"
-              text="Choose an option"
-            />
-            <SelectItem value="option-1" text="Option 1" />
-            <SelectItem value="option-2" text="Option 2" />
-            <SelectItem value="option-3" text="Option 3" />
-          </Select>
-
-          <TextInput {...TextInputProps} />
-
-          <TextInput
-            type="password"
-            required
-            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"
-            {...PasswordProps}
+        <FormGroup {...fieldsetSearchProps}>
+          <Search
+            {...searchProps}
+            id="search-1"
+            labelText="Search"
+            placeHolderText="Search"
           />
-
-          <TextInput
-            type="password"
-            required
-            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"
-            {...InvalidPasswordProps}
-          />
-
-          <TextArea {...textareaProps} />
         </FormGroup>
 
-        <FormGroup>
-          <Button type="submit" className="some-class" {...buttonEvents}>
-            Submit
-          </Button>
-        </FormGroup>
+        <Select {...selectProps} id="select-1" defaultValue="placeholder-item">
+          <SelectItem
+            disabled
+            hidden
+            value="placeholder-item"
+            text="Choose an option"
+          />
+          <SelectItem value="option-1" text="Option 1" />
+          <SelectItem value="option-2" text="Option 2" />
+          <SelectItem value="option-3" text="Option 3" />
+        </Select>
+
+        <TextInput {...TextInputProps} />
+
+        <TextInput
+          type="password"
+          required
+          pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"
+          {...PasswordProps}
+        />
+
+        <TextInput
+          type="password"
+          required
+          pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"
+          {...InvalidPasswordProps}
+        />
+
+        <TextArea {...textareaProps} />
+
+        <Button type="submit" className="some-class" {...buttonEvents}>
+          Submit
+        </Button>
       </Form>
-    )
+    ),
+    {
+      info: {
+        text: readme,
+      },
+    }
   );
