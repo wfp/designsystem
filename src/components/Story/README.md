@@ -15,7 +15,7 @@ When applying the story classes the margins between the elements will be calcula
 </div>
 ```
 
-### SubNavigationLink
+### Selectors
 
 | selector     | Options     | Role                                           |
 | -------- | ----------- | ----------- | ---------------------------------------------- |

@@ -1,8 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import Wrapper from '../Wrapper';
-import { withInfo } from '@storybook/addon-info';
-
+import Story from './Story';
 import { withReadme } from 'storybook-readme';
 import readme from './README.md';
 
@@ -10,12 +8,8 @@ storiesOf('Story', module)
   .addDecorator(withReadme([readme]))
   .add(
     'Default',
-    withInfo({
-      text: `
-    Story shows full feature styled text
-    `,
-    })(() => (
-      <Wrapper className="wfp--story" pageWidth="narrower">
+    (() => (
+      <Story>
         <h1 className="wfp--story__title">
           WFP’s Immediate Response Account — saving lives in the Kasai region of
           DRC
@@ -55,6 +49,11 @@ storiesOf('Story', module)
           children are at risk of dying from severe acute malnutrition without
           urgent life-saving assistance.
         </p>
-      </Wrapper>
-    ))
+      </Story>
+    )),
+    {
+      info: {
+        text: readme,
+      },
+    }
   );

@@ -12,6 +12,12 @@ const options = [
 
 storiesOf('React-Select', module)
   .addDecorator(withReadme([readme]))
+  .addParameters({
+    info: {
+      source: false,
+      propTables: false
+    }
+  })
   .add(
     'default',
     () => (
