@@ -17,6 +17,7 @@ export ContentSwitcher from './components/ContentSwitcher';
 export FileUploader from './components/FileUploader';
 export Footer from './components/Footer';
 export Form from './components/Form';
+export FormControls from './components/FormControls';
 export FormGroup from './components/FormGroup';
 export FormHint from './components/FormHint';
 export FormItem from './components/FormItem';

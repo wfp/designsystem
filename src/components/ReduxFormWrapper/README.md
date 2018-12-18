@@ -5,10 +5,13 @@ import { ReduxFormWrapper } from '@wfp/ui';
 ```
 
 ```js
-<Field component={ReduxFormWrapper(TextInput)} {...otherProps} />
+<Field
+  component={ReduxFormWrapper} 
+  InputComponent={TextInput}
+  {...otherProps} />
 ```
 
-### Example usage for react-select
+### Example usage for react-select or other custom Input
 
 ```js
 import ReactSelect from 'react-select';
@@ -19,11 +22,23 @@ const options = [
   { value: 'vanilla', label: 'Vanilla' },
 ];
 
+
+const ReactSelectHelper = (props) => (
+  <div className="wfp--form-item">
+    <label htmlFor={props.id} className="wfp--label">{props.labelText}</label>
+    <ReactSelect
+      {...props}
+    />
+  </div>
+);
+
 <Field
-  component={ReduxFormWrapper(ReactSelect)}
+  component={ReduxFormWrapper}
+  InputComponent={ReactSelectHelper}
   className="wfp--react-select-container"
   classNamePrefix="wfp--react-select"
   isMulti
   options={options}
 />
+
 ```

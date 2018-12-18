@@ -1,8 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
 import { withInfo } from '@storybook/addon-info';
-import { withKnobs, boolean, select, text } from '@storybook/addon-knobs';
+import { withKnobs } from '@storybook/addon-knobs';
 
 import { withReadme } from 'storybook-readme';
 import readme from './README.md';
@@ -36,12 +35,24 @@ storiesOf('ReduxFormWrapper', module)
         A wrapper for inputs so they can be used with ReduxForm.
       `,
     })(() => {
+
+      const ReactSelectHelper = (props) => (
+        <div className="wfp--form-item">
+          <label htmlFor={props.id} className="wfp--label">{props.labelText}</label>
+          <ReactSelect
+            {...props}
+          />
+        </div>
+      );
+
       return (
         <Field
-          component={ReduxFormWrapper(ReactSelect)}
+          component={ReduxFormWrapper}
+          InputComponent={ReactSelectHelper}
           className="wfp--react-select-container"
           classNamePrefix="wfp--react-select"
           isMulti
+          labelText="The label"
           options={options}
         />
       );
