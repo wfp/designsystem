@@ -10,7 +10,15 @@ import { getStorybook } from '@storybook/react';
 
 import Container from './Container';
 
+import { withTests } from '@storybook/addon-jest';
+ 
+import results from '../.jest-test-results.json';
+ 
+
 addDecorator(
+  withTests({
+    results,
+  }),
   withInfo({
     maxPropStringLength: 200, // Displays the first 200 characters in the default prop string
     styles: stylesheet => {

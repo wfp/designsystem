@@ -1,5 +1,5 @@
 import React from 'react';
-import { Invalid } from './InvalidUnit';
+import scaleLookup from './scaleLookup';
 
 import {
   Countries,
@@ -18,172 +18,7 @@ import {
   YearMonth,
 } from './UnitList';
 import PropTypes from 'prop-types';
-
-import SvgUnit from './SvgUnit';
-import StringUnit from './StringUnit';
 // All Unit Components together in <Unit type="Unitname" />
-
-export const scaleLookup = {
-  thousand: {
-    pow: 1000,
-    defaultmaximumFractionDigits: 2,
-    default: { after: 'T' },
-  },
-  million: {
-    pow: 1000000,
-    defaultmaximumFractionDigits: 1,
-    default: { after: 'M' },
-  },
-  billion: {
-    pow: 1000000000,
-    defaultmaximumFractionDigits: 2,
-    default: { after: 'B' },
-  },
-};
-
-export const currencyCalc = (
-  props,
-  after,
-  before,
-  afterSingular,
-  isAbsolute
-) => {
-  const {
-    children,
-    input,
-    output,
-    /* maximumSignificantDigits, */
-    minimumFractionDigits,
-    maximumFractionDigits,
-    calcOnly,
-    string,
-    svg,
-    hideZero,
-  } = props;
-
-  // Remove commas
-  var value =
-    typeof children === 'string' ? children.replace(/,/g, '') : children;
-
-  // Parse as float
-  value = parseFloat(value);
-
-  // Input
-  value =
-    value !== 0 && input && scaleLookup[input]
-      ? scaleLookup[input].pow * value
-      : value;
-
-  // output
-  const outputCalc =
-    output && scaleLookup[output] ? scaleLookup[output] : undefined;
-
-  value = value !== 0 && output ? value / outputCalc.pow : value;
-
-  const toLocalStringConfig = {
-    //maximumSignificantDigits: maximumSignificantDigits,
-    minimumFractionDigits:
-      isAbsolute === true && output === undefined
-        ? minimumFractionDigits === 0
-        : maximumFractionDigits === 0
-          ? 0
-          : minimumFractionDigits
-            ? minimumFractionDigits
-            : outputCalc && outputCalc.defaultmaximumFractionDigits
-              ? outputCalc.defaultmaximumFractionDigits
-              : 2,
-    maximumFractionDigits:
-      isAbsolute === true && output === undefined
-        ? maximumFractionDigits === 0
-        : value <= 0.005
-          ? 4
-          : value <= 0.05
-            ? 3
-            : value <= 0.5
-              ? 2
-              : maximumFractionDigits === 0
-                ? 0
-                : maximumFractionDigits
-                  ? maximumFractionDigits
-                  : outputCalc && outputCalc.defaultmaximumFractionDigits
-                    ? outputCalc.defaultmaximumFractionDigits
-                    : 2,
-  };
-
-  // Convert to Locale String
-  value = value.toLocaleString('en-EN', toLocalStringConfig);
-
-  const calcObject = {
-    value: value,
-    before: before,
-    after: after,
-    output: outputCalc,
-  };
-
-  let className = props.className;
-  if (value === '1' && afterSingular) {
-    className = className + ' wfp--unit--singular';
-  }
-
-  if ((!value || value === 'NaN' || parseFloat(value) === 0) && hideZero)
-    return false;
-  else if (calcOnly) return calcObject;
-  else if (svg) return SvgUnit(calcObject, props);
-  else if (string) return StringUnit(calcObject, props);
-  else if (value !== false) return <span className={className}>{value}</span>;
-  else return <Invalid className={props.className} />;
-};
-
-export const percentageCalc = (props, after, before) => {
-  const {
-    calcOnly,
-    children,
-    from,
-    string,
-    svg,
-    hideZero,
-    maximumSignificantDigits,
-    maximumFractionDigits,
-  } = props;
-
-  // Remove commas
-  var value =
-    typeof children === 'string' ? children.replace(/,/g, '') : children;
-
-  // Parse as float
-  value = parseFloat(value);
-
-  if (parseFloat(from) === 0) {
-    value = false;
-  } else if (from) {
-    value = value / parseFloat(from) * 100;
-  }
-
-  // Convert to Locale String
-  value = value.toLocaleString('en-EN', {
-    minimumFractionDigits: maximumSignificantDigits
-      ? maximumSignificantDigits
-      : 0,
-    maximumSignificantDigits: maximumSignificantDigits,
-    maximumFractionDigits:
-      value <= 0.5 ? 5 : maximumFractionDigits ? maximumFractionDigits : 1,
-  });
-
-  const calcObject = {
-    value: value,
-    before: before,
-    after: after,
-    output: undefined,
-  };
-  if ((!value || value === 'NaN' || parseFloat(value) === 0) && hideZero)
-    return false;
-  else if (calcOnly) return calcObject;
-  else if (svg) return SvgUnit(calcObject, props);
-  else if (string) return StringUnit(calcObject, props);
-  else if (value !== false)
-    return <span className={props.className}>{value}</span>;
-  else return <Invalid className={props.className} />;
-};
 
 const components = {
   Usd,
@@ -243,14 +78,39 @@ const Unit = props => {
 
 Unit.propTypes = {
   /**
-    Width of Wrapper, use 'narrow' or leave empty `undefined`
+    The value which should be displayed
   */
-
-  from: PropTypes.string,
+  children: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number
+  ]),
+  /**
+    Only used for type Percentage will divide value/from string, float
+  */
+  from: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number
+  ]),
+  /**
+    Hide the Unit if it's value is zero.
+  */
+  hideEmpty: PropTypes.bool,
+  /**
+    The minimum number of fraction digits to use. Possible values are from 0 to 20. Only used on numeric types 
+  */
   minimumFractionDigits: PropTypes.number,
+  /**
+    A value between 1-21, The maximum number of significant digits to use. Possible values are from 1 to 21; the default is minimumSignificantDigits.
+  */
   maximumSignificantDigits: PropTypes.number,
+  /**
+    A value between 1-21, The minimum number of fraction digits to use. Possible values are from 0 to 20. Only used on numeric types 
+  */
   maximumFractionDigits: PropTypes.number,
-  type: PropTypes.text,
+  /**
+    A value between 1-21, 0, The maximum number of significant digits to use. Possible values are from 1 to 21; the default is minimumSignificantDigits and 0 which will show an integer.
+  */
+  type: PropTypes.string,
 };
 
 Unit.defaultProps = {

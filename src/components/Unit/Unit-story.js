@@ -1,6 +1,5 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withInfo } from '@storybook/addon-info';
 
 import { withReadme } from 'storybook-readme';
 import readme from './README.md';
@@ -179,11 +178,7 @@ storiesOf('Unit', module)
   .addDecorator(withReadme([readme]))
   .add(
     'Samples',
-    withInfo({
-      text: `
-        Some sample Units
-      `,
-    })(() => {
+    (() => {
       const columns = [
         {
           Header: 'HTML',
@@ -254,11 +249,7 @@ storiesOf('Unit', module)
 
   .add(
     'default',
-    withInfo({
-      text: `
-        use Knobs to customize Unit component
-      `,
-    })(() => {
+   (() => {
       const typeOptions = {
         None: 'None',
         Narrow: 'Narrow',

@@ -27,7 +27,8 @@
     "semantic-release": "semantic-release",
     "start": "yarn storybook",
     "storybook": "start-storybook -s ./src/assets -p 9000",
-    "test": "jest --json --outputFile=jest-test-results.json",
+    "test": "jest",
+    "test:generate-output": "jest --json --outputFile=.jest-test-results.json || true",
     "test-ssr": "yarn build && node ssr-tests/*.js"
   },
   "keywords": [

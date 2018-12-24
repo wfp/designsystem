@@ -1,4 +1,4 @@
-*FormHint* allows you to add a longer explanation to an input element.
+**FormHint** allows you to add a longer explanation to an input element.
 
 Use the `helperText` prop instead if the information is very important for filling out the input.
 

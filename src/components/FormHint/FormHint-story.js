@@ -12,7 +12,7 @@ const props = () => ({
 
 storiesOf('FormHint', module)
   .addDecorator(withKnobs)
-  .add('Default', () => <label className="wfp--label">The Label <FormHint {...props()} /></label>, {
+  .add('Default (in development)', () => <label className="wfp--label">The Label <FormHint {...props()} /></label>, {
     info: {
       text: readme,
     },

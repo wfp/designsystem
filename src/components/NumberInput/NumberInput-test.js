@@ -30,10 +30,10 @@ describe('NumberInput', () => {
 
       label = wrapper.find('label');
       numberInput = wrapper.find('input');
-      container = wrapper.find('.bx--number');
-      formItem = wrapper.find('.bx--form-item');
+      container = wrapper.find('.wfp--number');
+      formItem = wrapper.find('.wfp--form-item');
       icons = wrapper.find(Icon);
-      helper = wrapper.find('.bx--form__helper-text');
+      helper = wrapper.find('.wfp--form__helper-text');
     });
 
     describe('input', () => {
@@ -42,11 +42,11 @@ describe('NumberInput', () => {
       });
 
       it('has the expected classes', () => {
-        expect(container.hasClass('bx--number')).toEqual(true);
+        expect(container.hasClass('wfp--number')).toEqual(true);
       });
 
       it('has renders with form-item wrapper', () => {
-        expect(formItem.hasClass('bx--form-item')).toEqual(true);
+        expect(formItem.hasClass('wfp--form-item')).toEqual(true);
       });
 
       it('applies extra classes via className', () => {
@@ -80,13 +80,13 @@ describe('NumberInput', () => {
       it('should set invalid as expected', () => {
         expect(container.prop('data-invalid')).toEqual(undefined);
         wrapper.setProps({ invalid: true });
-        expect(wrapper.find('.bx--number').prop('data-invalid')).toEqual(true);
+        expect(wrapper.find('.wfp--number').prop('data-invalid')).toEqual(true);
       });
 
       it('should set invalidText as expected', () => {
-        expect(wrapper.find('.bx--form-requirement').length).toEqual(0);
+        expect(wrapper.find('.wfp--form-requirement').length).toEqual(0);
         wrapper.setProps({ invalid: true });
-        const invalidText = wrapper.find('.bx--form-requirement');
+        const invalidText = wrapper.find('.wfp--form-requirement');
         expect(invalidText.length).toEqual(1);
         expect(invalidText.text()).toEqual('invalid text');
       });
@@ -100,11 +100,11 @@ describe('NumberInput', () => {
       it('should hide label as expected', () => {
         expect(numberInput.prop('min')).toEqual(0);
         wrapper.setProps({ hideLabel: true });
-        expect(wrapper.find('label').hasClass('bx--visually-hidden')).toEqual(
+        expect(wrapper.find('label').hasClass('wfp--visually-hidden')).toEqual(
           true
         );
         expect(
-          wrapper.find('.bx--number').hasClass('bx--number--nolabel')
+          wrapper.find('.wfp--number').hasClass('wfp--number--nolabel')
         ).toEqual(true);
       });
 
@@ -148,7 +148,7 @@ describe('NumberInput', () => {
 
         it('should set invalidText when value is empty string', () => {
           wrapper.setState({ value: '' });
-          const invalidText = wrapper.find('.bx--form-requirement');
+          const invalidText = wrapper.find('.wfp--form-requirement');
           expect(invalidText.length).toEqual(1);
 
           expect(invalidText.text()).toEqual('invalid text');
@@ -157,7 +157,7 @@ describe('NumberInput', () => {
         it('allow empty string value', () => {
           wrapper.setState({ value: '' });
           wrapper.setProps({ allowEmpty: true });
-          const invalidText = wrapper.find('.bx--form-requirement');
+          const invalidText = wrapper.find('.wfp--form-requirement');
           expect(invalidText.length).toEqual(0);
         });
 
@@ -213,7 +213,7 @@ describe('NumberInput', () => {
       });
 
       it('has the expected classes', () => {
-        expect(label.hasClass('bx--label')).toEqual(true);
+        expect(label.hasClass('wfp--label')).toEqual(true);
       });
     });
 
@@ -230,7 +230,7 @@ describe('NumberInput', () => {
             </span>
           ),
         });
-        const renderedHelper = wrapper.find('.bx--form__helper-text');
+        const renderedHelper = wrapper.find('.wfp--form__helper-text');
         expect(renderedHelper.props().children).toEqual(
           <span>
             This helper text has <a href="#">a link</a>.
@@ -377,12 +377,12 @@ describe('NumberInputSkeleton', () => {
   describe('Renders as expected', () => {
     const wrapper = shallow(<NumberInputSkeleton />);
 
-    const container = wrapper.find('.bx--number');
-    const label = wrapper.find('.bx--label');
+    const container = wrapper.find('.wfp--number');
+    const label = wrapper.find('.wfp--label');
 
     it('has the expected classes', () => {
-      expect(container.hasClass('bx--skeleton')).toEqual(true);
-      expect(label.hasClass('bx--skeleton')).toEqual(true);
+      expect(container.hasClass('wfp--skeleton')).toEqual(true);
+      expect(label.hasClass('wfp--skeleton')).toEqual(true);
     });
   });
 });

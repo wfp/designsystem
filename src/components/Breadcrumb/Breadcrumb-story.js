@@ -20,6 +20,7 @@ const props = () => ({
 });
 
 storiesOf('Breadcrumb', module)
+  .addParameters({ jest: ['Breadcrumb'] })
   .addDecorator(withKnobs)
   .addDecorator(withReadme([readme]))
   .add(

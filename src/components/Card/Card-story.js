@@ -3,7 +3,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
-import withTests from '../../internal/withTests';
 import SingleComponent from '../../documentation/SingleComponent';
 import { withKnobs, boolean, select, text } from '@storybook/addon-knobs';
 import Button from '../Button';
@@ -61,7 +60,6 @@ const props = {
 
 storiesOf('Card', module)
   .addDecorator(withKnobs)
-  .addDecorator(withTests('Card'))
   .addDecorator(withReadme([readme]))
   .addDecorator(story => (
     <div data-flexbasis='800px'>{story()}</div>

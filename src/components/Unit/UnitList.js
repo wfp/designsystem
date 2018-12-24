@@ -1,7 +1,7 @@
-import { currencyCalc, percentageCalc } from './Unit';
+import currencyCalc from './currencyCalc';
+import percentageCalc from './percentageCalc';
 import SimpleCalc from './SimpleCalc';
 import YearMonthCalc from './YearMonthCalc';
-//import {SimpleCalc} from './SimpleCalc';
 
 // Generate USD
 export const Usd = props => {

@@ -24,7 +24,11 @@ body {
       > div {
         >div {
           > div {
+            button[type="button"] {
+              z-index: 10000000;
+            }
             > div:last-child {
+              z-index: 1000000000 !important;
               >div {
                 >div {
                   border: none !important;

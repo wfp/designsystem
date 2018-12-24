@@ -52,6 +52,7 @@ const props = {
 };
 
 storiesOf('Buttons', module)
+  .addParameters({ jest: ['Button'] })
   .addDecorator(withKnobs)
   .add(
     'Default',

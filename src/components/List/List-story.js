@@ -2,7 +2,6 @@
 
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import withTests from '../../internal/withTests';
 
 import { withReadme } from 'storybook-readme';
 import readme from './README.md';
@@ -14,7 +13,6 @@ const additionalProps = {
 };
 
 storiesOf('List', module)
-  .addDecorator(withTests('List'))
   .addDecorator(withReadme([readme]))
   .add(
     'Default',

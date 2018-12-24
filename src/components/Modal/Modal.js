@@ -5,6 +5,9 @@ import classNames from 'classnames';
 import { iconClose } from '@wfp/icons';
 import Icon from '../Icon';
 import Button from '../Button';
+import settings from '../../globals/js/settings';
+
+const { prefix } = settings;
 
 const matchesFuncName =
   typeof Element !== 'undefined' &&
@@ -16,27 +19,115 @@ const modalRoot = document.body;
 
 export default class Modal extends Component {
   static propTypes = {
+    /**
+     * Provide the contents of your Modal
+     */
     children: PropTypes.node,
+
+    /**
+     * Specify an optional className to be applied to the modal root node
+     */
     className: PropTypes.string,
+
+    /**
+     * Specify whether the modal should be button-less
+     */
     passiveModal: PropTypes.bool,
+
+    /**
+     * Specify a handler for closing modal.
+     * The handler should care of closing modal, e.g. changing `open` prop.
+     */
     onRequestClose: PropTypes.func,
+
+    /**
+     * Specify the DOM element ID of the top-level node.
+     */
     id: PropTypes.string,
-    inPortal: PropTypes.bool,
+
+    /**
+     * Specify the content of the modal header title.
+     */
     modalHeading: PropTypes.string,
-    modalLabel: PropTypes.string,
+    /**
+     * Specify the content of the modal header label.
+     */
+    modalLabel: PropTypes.node,
+
+    /**
+     * Specify a label to be read by screen readers on the modal root node
+     */
     modalAriaLabel: PropTypes.string,
+
+    /**
+     * Specify the text for the secondary button
+     */
     secondaryButtonText: PropTypes.string,
+
+    /**
+     * Specify the text for the primary button
+     */
     primaryButtonText: PropTypes.string,
+
+    /**
+     * Specify whether the Modal is currently open
+     */
     open: PropTypes.bool,
+
+    /**
+     * Specify a handler for "submitting" modal.
+     * The handler should care of closing modal, e.g. changing `open` prop, if necessary.
+     */
     onRequestSubmit: PropTypes.func,
+    
+    /**
+     * Specify a handler for a key press modal
+     */
     onKeyDown: PropTypes.func,
+
+    /**
+     * Provide a description for "close" icon that can be read by screen readers
+     */
     iconDescription: PropTypes.string,
+
+    /**
+     * Specify whether the Button should be disabled, or not
+     */
     primaryButtonDisabled: PropTypes.bool,
+
+    /**
+     * Specify a handler for the secondary button.
+     * Useful if separate handler from `onRequestClose` is desirable
+     */
     onSecondarySubmit: PropTypes.func,
+
+    /**
+     * Specify whether the Modal is for dangerous actions
+     */
     danger: PropTypes.bool,
+
+    /**
+     * Specify if Enter key should be used as "submit" action
+     */
     shouldSubmitOnEnter: PropTypes.bool,
+
+    /**
+     * Specify CSS selectors that match DOM elements working as floating menus.
+     * Focusing on those elements won't trigger "focus-wrap" behavior
+     */
     selectorsFloatingMenus: PropTypes.arrayOf(PropTypes.string),
+
+    /**
+     * Specify a CSS selector that matches the DOM element that should
+     * be focused when the Modal opens
+     */
     selectorPrimaryFocus: PropTypes.string,
+    
+    /**
+     * If true the Modal will be rendered inside a portal at the end of the
+     * body element, otherwise at the position it is placed.
+     */
+    inPortal: PropTypes.bool
   };
 
   static defaultProps = {
@@ -49,11 +140,6 @@ export default class Modal extends Component {
     inPortal: true,
     modalHeading: '',
     modalLabel: '',
-    selectorsFloatingMenus: [
-      '.wfp--overflow-menu-options',
-      '.wfp--tooltip',
-      '.flatpickr-calendar',
-    ],
     selectorPrimaryFocus: '[data-modal-primary-focus]',
   };
 
@@ -67,16 +153,21 @@ export default class Modal extends Component {
   innerModal = React.createRef();
 
   elementOrParentIsFloatingMenu = target => {
+    const {
+      selectorsFloatingMenus = [
+        `.${prefix}--overflow-menu-options`,
+        `.${prefix}--tooltip`,
+        '.flatpickr-calendar',
+      ],
+    } = this.props;
     if (target && typeof target.closest === 'function') {
-      return this.props.selectorsFloatingMenus.some(selector =>
-        target.closest(selector)
-      );
+      return selectorsFloatingMenus.some(selector => target.closest(selector));
     } else {
       // Alternative if closest does not exist.
       while (target) {
         if (typeof target[matchesFuncName] === 'function') {
           if (
-            this.props.selectorsFloatingMenus.some(selector =>
+            selectorsFloatingMenus.some(selector =>
               target[matchesFuncName](selector)
             )
           ) {
@@ -108,6 +199,12 @@ export default class Modal extends Component {
     }
   };
 
+  focusModal = () => {
+    if (this.outerModal.current) {
+      this.outerModal.current.focus();
+    }
+  };
+
   handleBlur = evt => {
     // Keyboard trap
     if (
@@ -121,14 +218,6 @@ export default class Modal extends Component {
     }
   };
 
-  componentDidMount() {
-    modalRoot.appendChild(this.el);
-  }
-
-  componentWillUnmount() {
-    modalRoot.removeChild(this.el);
-  }
-
   componentDidUpdate(prevProps) {
     if (!prevProps.open && this.props.open) {
       this.beingOpen = true;
@@ -137,14 +226,8 @@ export default class Modal extends Component {
     }
   }
 
-  focusModal = () => {
-    if (this.outerModal.current) {
-      this.outerModal.current.focus();
-    }
-  };
-
-  focusButton = evt => {
-    const primaryFocusElement = evt.currentTarget.querySelector(
+  focusButton = focusContainerElement => {
+    const primaryFocusElement = focusContainerElement.querySelector(
       this.props.selectorPrimaryFocus
     );
     if (primaryFocusElement) {
@@ -156,20 +239,31 @@ export default class Modal extends Component {
     }
   };
 
+  componentDidMount() {
+    modalRoot.appendChild(this.el);
+    if (!this.props.open) {
+      return;
+    }
+    this.focusButton(this.innerModal.current);
+  }
+
+  componentWillUnmount() {
+    modalRoot.removeChild(this.el);
+  }
+
   handleTransitionEnd = evt => {
     if (
       this.outerModal.current.offsetWidth &&
       this.outerModal.current.offsetHeight &&
       this.beingOpen
     ) {
-      this.focusButton(evt);
+      this.focusButton(evt.currentTarget);
       this.beingOpen = false;
     }
   };
 
   render() {
     const {
-      inPortal,
       modalHeading,
       modalLabel,
       modalAriaLabel,
@@ -181,6 +275,7 @@ export default class Modal extends Component {
       onRequestSubmit,
       onSecondarySubmit,
       iconDescription,
+      inPortal,
       primaryButtonDisabled,
       danger,
       selectorPrimaryFocus, // eslint-disable-line
@@ -194,22 +289,22 @@ export default class Modal extends Component {
       : onRequestClose;
 
     const modalClasses = classNames({
-      'wfp--modal': true,
-      'wfp--modal-tall': !passiveModal,
+      [`${prefix}--modal`]: true,
+      [`${prefix}--modal-tall`]: !passiveModal,
       'is-visible': open,
-      'wfp--modal--danger': this.props.danger,
+      [`${prefix}--modal--danger`]: this.props.danger,
       [this.props.className]: this.props.className,
     });
 
     const modalButton = (
       <button
-        className="wfp--modal-close"
+        className={`${prefix}--modal-close`}
         type="button"
         onClick={onRequestClose}
         ref={this.button}>
         <Icon
           icon={iconClose}
-          className="wfp--modal-close__icon"
+          className={`${prefix}--modal-close__icon`}
           description={iconDescription}
         />
       </button>
@@ -219,20 +314,20 @@ export default class Modal extends Component {
       <div
         ref={this.innerModal}
         role="dialog"
-        className="wfp--modal-container"
+        className={`${prefix}--modal-container`}
         aria-label={modalAriaLabel}>
-        <div className="wfp--modal-header">
+        <div className={`${prefix}--modal-header`}>
           {passiveModal && modalButton}
           {modalLabel && (
-            <h4 className="wfp--modal-header__label">{modalLabel}</h4>
+            <h4 className={`${prefix}--modal-header__label`}>{modalLabel}</h4>
           )}
-          <h2 className="wfp--modal-header__heading">{modalHeading}</h2>
+          <h2 className={`${prefix}--modal-header__heading`}>{modalHeading}</h2>
           {!passiveModal && modalButton}
         </div>
-        <div className="wfp--modal-content">{this.props.children}</div>
+        <div className={`${prefix}--modal-content`}>{this.props.children}</div>
         {!passiveModal && (
-          <div className="wfp--modal-footer">
-            <div className="wfp--modal__buttons-container">
+          <div className={`${prefix}--modal-footer`}>
+            <div className={`${prefix}--modal__buttons-container`}>
               <Button
                 kind={danger ? 'tertiary' : 'secondary'}
                 onClick={onSecondaryButtonClick}>

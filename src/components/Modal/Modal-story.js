@@ -3,6 +3,8 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { withInfo } from '@storybook/addon-info';
 import { withKnobs, boolean, text } from '@storybook/addon-knobs';
+import readme from './README.md';
+
 import Modal from '../Modal';
 
 const props = () => ({
@@ -41,17 +43,16 @@ storiesOf('Modal', module)
   .addDecorator(withKnobs)
   .add(
     'Default',
-    withInfo({
-      text: `
-        Modals communicate information via a secondary window and allow the user to maintain the context of a particular task.
-        Use the Modal Wrapper component to encapsulate your Modal within a button.
-      `,
-    })(() => (
+    () => (
       <Modal {...props()}>
         <p className="wfp--modal-content__text">
           Please see ModalWrapper for more examples and demo of the
           functionality.
         </p>
       </Modal>
-    ))
-  );
+    ),{
+      info: {
+        text: readme,
+      },
+    })
+  ;

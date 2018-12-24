@@ -2,8 +2,6 @@
 
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import withTests from '../../internal/withTests';
-import SingleComponent from '../../documentation/SingleComponent';
 
 import { withReadme } from 'storybook-readme';
 import readme from './README.md';
@@ -11,7 +9,6 @@ import readme from './README.md';
 import ReadMore from '../ReadMore';
 
 storiesOf('ReadMore', module)
-  .addDecorator(withTests('ReadMore'))
   .addDecorator(withReadme([readme]))
   .add(
     'Default',

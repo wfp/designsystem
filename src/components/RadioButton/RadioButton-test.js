@@ -30,7 +30,7 @@ describe('RadioButton', () => {
       });
 
       it('has the expected class', () => {
-        expect(input.hasClass('bx--radio-button')).toEqual(true);
+        expect(input.hasClass('wfp--radio-button')).toEqual(true);
       });
 
       it('has a unique id set by default', () => {
@@ -53,12 +53,12 @@ describe('RadioButton', () => {
       });
 
       it('should set the correct class', () => {
-        expect(label.props().className).toEqual('bx--radio-button__label');
+        expect(label.props().className).toEqual('wfp--radio-button__label');
       });
 
       it('should render a span with the correct class', () => {
         const span = label.find('span');
-        expect(span.hasClass('bx--radio-button__appearance')).toEqual(true);
+        expect(span.hasClass('wfp--radio-button__appearance')).toEqual(true);
       });
 
       it('should render label text', () => {
@@ -124,8 +124,8 @@ describe('RadioButtonSkeleton', () => {
     const label = wrapper.find('label');
 
     it('Has the expected classes', () => {
-      expect(label.hasClass('bx--skeleton')).toEqual(true);
-      expect(label.hasClass('bx--radio-button__label')).toEqual(true);
+      expect(label.hasClass('wfp--skeleton')).toEqual(true);
+      expect(label.hasClass('wfp--radio-button__label')).toEqual(true);
     });
   });
 });

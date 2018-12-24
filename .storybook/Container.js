@@ -44,7 +44,7 @@ export default class Container extends Component {
     console.log("context, story", this.props);
 
     const storyRender = story();
-    const flexBasis = storyRender.props.children ? storyRender.props.children.props['data-flexbasis'] : undefined;
+    const flexBasis = storyRender.props.children && storyRender.props.children.props ? storyRender.props.children.props['data-flexbasis'] : undefined;
 
     console.log("render", storyRender);
 

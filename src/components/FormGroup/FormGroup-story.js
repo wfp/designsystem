@@ -2,7 +2,6 @@
 
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import withTests from '../../internal/withTests';
 import FormGroup from '../FormGroup';
 import TextInput from '../TextInput';
 
@@ -19,7 +18,6 @@ const TextInputProps = {
 };
 
 storiesOf('FormGroup', module)
-  .addDecorator(withTests('FormGroup'))
   .add(
     'Default',
     () => (

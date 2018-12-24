@@ -3,7 +3,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
-import withTests from '../../internal/withTests';
 import SingleComponent from '../../documentation/SingleComponent';
 
 import { withReadme } from 'storybook-readme';
@@ -12,7 +11,6 @@ import readme from './README.md';
 import Credits from '../Credits';
 
 storiesOf('Credits', module)
-  .addDecorator(withTests('Credits'))
   .addDecorator(story => <SingleComponent>{story()}</SingleComponent>)
   .addDecorator(withReadme([readme]))
   .add(
