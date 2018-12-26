@@ -3,6 +3,7 @@
 //-----------------------------
 
 @import '../../globals/scss/vars';
+@import '../../globals/scss/theme';
 @import '../../globals/scss/colors';
 @import '../../globals/scss/typography';
 @import '../../globals/scss/spacing';
@@ -21,14 +22,20 @@
     padding: $spacing-md;
     color: $text-01;
     background-color: $field-01;
+    appearance: none;
     border: $input-border;
+    order: 2;
     resize: vertical;
+
+    & ~ .#{$prefix}--label {
+      order: 1;
+    }
 
     &:focus {
       @include focus-outline('border');
     }
 
-    &::-webkit-input-placeholder {
+    &::placeholder {
       @include placeholder-colors;
     }
 
@@ -39,6 +46,64 @@
 
     &:disabled:hover {
       border: $input-border;
+    }
+
+    &[data-invalid],
+    &[data-invalid]:focus {
+      box-shadow: 0 2px 0 0 $support-01;
+    }
+
+    &:focus ~ .#{$prefix}--label {
+      color: $brand-01;
+    }
+
+    &[data-invalid]:focus + .#{$prefix}--label {
+      color: $support-01;
+    }
+
+    & ~ .#{$prefix}--form-requirement {
+      order: 3;
+      color: $support-01;
+      font-weight: 400;
+      margin-top: $spacing-2xs;
+
+      &::before {
+        display: none;
+      }
+    }
+  }
+
+  .#{$prefix}--text-area--light {
+    background: $field-02;
+  }
+
+  // Skeleton State
+  #{$prefix}--text-area.#{$prefix}--skeleton {
+    @include skeleton;
+    height: rem(100px);
+
+    &::-webkit-input-placeholder {
+      color: transparent;
+    }
+  }
+
+  // Skeleton State
+  #{$prefix}--text-area.#{$prefix}--skeleton {
+    @include skeleton;
+    height: rem(100px);
+
+    &::-webkit-input-placeholder {
+      color: transparent;
+    }
+  }
+
+  // Skeleton State
+  #{$prefix}--text-area.#{$prefix}--skeleton {
+    @include skeleton;
+    height: rem(100px);
+
+    &::-webkit-input-placeholder {
+      color: transparent;
     }
   }
 }

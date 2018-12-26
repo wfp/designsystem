@@ -6,6 +6,7 @@ umd
 source
 docs
 assets
+!src/assets
 css
 
 # Logs

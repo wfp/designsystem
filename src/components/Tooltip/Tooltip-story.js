@@ -10,12 +10,8 @@ import tooltipStyle from './Tooltip';
 
 storiesOf('Tooltip', module)
   .addDecorator(withReadme([readme]))
-  .addDecorator(story => <SingleComponent>{story()}</SingleComponent>)
-  .addWithInfo(
+  .add(
     'default',
-    `
-      Default implementation
-    `,
     () => (
       <Tooltip
         // options
@@ -25,5 +21,10 @@ storiesOf('Tooltip', module)
         {...tooltipStyle}>
         <span>Click here to show tooltip</span>
       </Tooltip>
-    )
+    ),
+    {
+      info: {
+        text: readme,
+      },
+    }
   );

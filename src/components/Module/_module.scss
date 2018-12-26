@@ -96,14 +96,14 @@
 
   .#{$prefix}--module--dark {
     .#{$prefix}--module__inner {
-      background: $brand-03;
+      background: $brand-02;
       color: $ui-01;
     }
     .#{$prefix}--module__header {
-      border-bottom-color: $brand-02;
+      border-bottom-color: rgba(#fff, 0.1);
     }
     .#{$prefix}--module__footer {
-      border-top-color: $brand-02;
+      border-top-color: rgba(#fff, 0.1);
     }
     .#{$prefix}--module__title {
       color: $ui-01;

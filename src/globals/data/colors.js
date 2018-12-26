@@ -55,6 +55,30 @@ const colors = {
       hex: '#dd1367',
       scss: '$color__magenta',
     },
+    {
+      name: 'female',
+      hex: '#DD0A79',
+      scss: '$color__female',
+      type: 'symbolic',
+    },
+    {
+      name: 'male',
+      hex: '#D19906',
+      scss: '$color__male',
+      type: 'symbolic',
+    },
+    {
+      name: 'national',
+      hex: '#FD6925',
+      scss: '$color__national',
+      type: 'symbolic',
+    },
+    {
+      name: 'international',
+      hex: '#3F7E44',
+      scss: '$color__international',
+      type: 'symbolic',
+    },
   ],
 };
 

@@ -3,13 +3,10 @@ import React, { Component } from 'react';
 import classNames from 'classnames';
 import Button from '../Button';
 import Wrapper from '../Wrapper';
+import Icon from '../Icon';
 
 class MainNavigationItem extends Component {
-  constructor(props) {
-    super(props);
-  }
-
-  componentWillReceiveProps = nextProps => {
+  UNSAFE_componentWillReceiveProps = nextProps => {
     if (nextProps.menuItem === nextProps.activeMenuItem) {
       document.addEventListener('mousedown', this.handleClickOutside);
     } else {
@@ -22,7 +19,7 @@ class MainNavigationItem extends Component {
   };
 
   handleClickOutside = e => {
-    if (this.wrapperRef && !this.wrapperRef.contains(event.target)) {
+    if (this.wrapperRef && !this.wrapperRef.contains(e.target)) {
       this.props.onChangeSub(e, undefined, 'close');
     }
   };
@@ -50,19 +47,27 @@ class MainNavigationItem extends Component {
 
     const childrenWithProps = subNavigation
       ? React.cloneElement(children, {
+          children: (
+            <React.Fragment>
+              {children.props.children}
+              <Icon
+                className="wfp--main-navigation__trigger__icon"
+                name={menuItem === activeMenuItem ? 'close' : 'caret--down'}
+                fill="#FFFFFF"
+                description="expand icon"
+              />
+            </React.Fragment>
+          ),
           onClick: e => onChangeSub(e, menuItem, 'toggle'),
         })
       : children;
+
+    console.log('childrenWithProps', childrenWithProps);
 
     const subClasses = classNames({
       'wfp--main-navigation__sub': true,
       'wfp--main-navigation__sub--open': menuItem === activeMenuItem,
     });
-    /*
-      onMouseEnter={(e) => onChangeSub(e, menuItem, 'in')}
-      onMouseLeave={(e) => onChangeSub(e, undefined, 'out')}
-      onMouseEnter={(e) => onChangeSub(e, menuItem, 'toggle')}
-    */
     return (
       <li className={wrapperClasses} ref={this.setWrapperRef}>
         <div className={triggerClasses}>{childrenWithProps}</div>
@@ -168,11 +173,13 @@ class MainNavigation extends Component {
           </div>
           <ul className={listClasses}>
             {React.Children.map(children, (child, i) => {
-              return React.cloneElement(child, {
-                activeMenuItem: this.state.activeMenuItem,
-                menuItem: i,
-                onChangeSub: this.onChangeSub,
-              });
+              if (child) {
+                return React.cloneElement(child, {
+                  activeMenuItem: this.state.activeMenuItem,
+                  menuItem: i,
+                  onChangeSub: this.onChangeSub,
+                });
+              } else return null;
             })}
           </ul>
         </Wrapper>
@@ -195,7 +202,5 @@ MainNavigation.defaultProps = {
   pageWidth: 'narrow',
   mobilePageWidth: 'full',
 };
-
-//const MainNavigation = onClickOutside(MainNavigationEl);
 
 export { MainNavigation, MainNavigationItem };

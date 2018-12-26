@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount, shallow } from 'enzyme';
-import { iconCaretUp, iconCaretDown } from 'carbon-icons';
+import { iconCaretUp, iconCaretDown } from '@wfp/icons';
 import Icon from '../Icon';
 import NumberInput from '../NumberInput';
 import NumberInputSkeleton from '../NumberInput/NumberInput.Skeleton';
@@ -13,6 +13,7 @@ describe('NumberInput', () => {
     let container;
     let formItem;
     let icons;
+    let helper;
 
     beforeEach(() => {
       wrapper = mount(
@@ -23,6 +24,7 @@ describe('NumberInput', () => {
           label="Number Input"
           className="extra-class"
           invalidText="invalid text"
+          helperText="testHelper"
         />
       );
 
@@ -31,6 +33,7 @@ describe('NumberInput', () => {
       container = wrapper.find('.wfp--number');
       formItem = wrapper.find('.wfp--form-item');
       icons = wrapper.find(Icon);
+      helper = wrapper.find('.wfp--form__helper-text');
     });
 
     describe('input', () => {
@@ -94,6 +97,17 @@ describe('NumberInput', () => {
         expect(wrapper.props().light).toEqual(true);
       });
 
+      it('should hide label as expected', () => {
+        expect(numberInput.prop('min')).toEqual(0);
+        wrapper.setProps({ hideLabel: true });
+        expect(wrapper.find('label').hasClass('wfp--visually-hidden')).toEqual(
+          true
+        );
+        expect(
+          wrapper.find('.wfp--number').hasClass('wfp--number--nolabel')
+        ).toEqual(true);
+      });
+
       describe('initial rendering', () => {
         const getWrapper = (min, max, value) =>
           mount(
@@ -133,10 +147,32 @@ describe('NumberInput', () => {
         });
 
         it('should set invalidText when value is empty string', () => {
-          wrapper.setProps({ value: '' });
+          wrapper.setState({ value: '' });
           const invalidText = wrapper.find('.wfp--form-requirement');
           expect(invalidText.length).toEqual(1);
+
           expect(invalidText.text()).toEqual('invalid text');
+        });
+
+        it('allow empty string value', () => {
+          wrapper.setState({ value: '' });
+          wrapper.setProps({ allowEmpty: true });
+          const invalidText = wrapper.find('.wfp--form-requirement');
+          expect(invalidText.length).toEqual(0);
+        });
+
+        it('should change the value upon change in props', () => {
+          wrapper.setProps({ value: 1 });
+          wrapper.setState({ value: 1 });
+          wrapper.setProps({ value: 2 });
+          expect(wrapper.state().value).toEqual(2);
+        });
+
+        it('should avoid change the value upon setting props, unless there the value actually changes', () => {
+          wrapper.setProps({ value: 1 });
+          wrapper.setState({ value: 2 });
+          wrapper.setProps({ value: 1 });
+          expect(wrapper.state().value).toEqual(2);
         });
       });
     });
@@ -171,13 +207,40 @@ describe('NumberInput', () => {
       });
     });
 
-    describe('label', () => {
+    describe('labelText', () => {
       it('renders a label', () => {
         expect(label.length).toEqual(1);
       });
 
       it('has the expected classes', () => {
         expect(label.hasClass('wfp--label')).toEqual(true);
+      });
+    });
+
+    describe('helper', () => {
+      it('renders a helper', () => {
+        expect(helper.length).toEqual(1);
+      });
+
+      it('renders children as expected', () => {
+        wrapper.setProps({
+          helperText: (
+            <span>
+              This helper text has <a href="#">a link</a>.
+            </span>
+          ),
+        });
+        const renderedHelper = wrapper.find('.wfp--form__helper-text');
+        expect(renderedHelper.props().children).toEqual(
+          <span>
+            This helper text has <a href="#">a link</a>.
+          </span>
+        );
+      });
+
+      it('should set helper text as expected', () => {
+        wrapper.setProps({ helperText: 'Helper text' });
+        expect(helper.text()).toEqual('Helper text');
       });
     });
   });

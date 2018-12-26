@@ -9,12 +9,11 @@ const Toggle = ({
   onChange,
   onToggle,
   id,
-  input,
   labelA,
   labelB,
   ...other
 }) => {
-  let inputElement;
+  let input;
   const wrapperClasses = classNames({
     'wfp--form-item': true,
     [className]: className,
@@ -28,30 +27,20 @@ const Toggle = ({
     checkedProps.defaultChecked = defaultToggled;
   }
 
-  const onChangeInput = evt => {
-    /* Regular Form */
-    if (onChange) onChange(input.checked, id, evt);
-    /* Redux Form */
-    if (input && input.onChange) input.onChange(input.checked);
-  };
-
   return (
     <div className={wrapperClasses}>
       <input
         {...other}
-        {...input}
         {...checkedProps}
         type="checkbox"
         id={id}
         className="wfp--toggle"
         onChange={evt => {
           onChange && onChange(evt);
-          onToggle(inputElement.checked, id, evt);
-          /* Redux Form */
-          if (input && input.onChange) input.onChange(input.checked);
+          onToggle(input.checked, id, evt);
         }}
         ref={el => {
-          inputElement = el;
+          input = el;
         }}
       />
 
@@ -65,12 +54,39 @@ const Toggle = ({
 };
 
 Toggle.propTypes = {
+  /**
+   * Specify a custom className to apply to the form-item node
+   */
   className: PropTypes.string,
+
+  /**
+   * Specify whether the toggle should be on by default
+   */
   defaultToggled: PropTypes.bool,
+
+  /**
+   * Provide an optional hook that is called when the control is toggled
+   */
   onToggle: PropTypes.func,
+
+  /**
+   * Provide an id that unique represents the underlying <input>
+   */
   id: PropTypes.string.isRequired,
+
+  /**
+   * Specify whether the control is toggled
+   */
   toggled: PropTypes.bool,
+
+  /**
+   * Specify the label for the "off" position
+   */
   labelA: PropTypes.string.isRequired,
+
+  /**
+   * Specify the label for the "on" position
+   */
   labelB: PropTypes.string.isRequired,
 };
 

@@ -3,44 +3,123 @@ import React, { Component } from 'react';
 import { iconCaretUp, iconCaretDown } from '@wfp/icons';
 import Icon from '../Icon';
 import classNames from 'classnames';
-import Label from '../Label';
+import settings from '../../globals/js/settings';
+
+const { prefix } = settings;
 
 export default class NumberInput extends Component {
+  constructor(props) {
+    super(props);
+    let value = props.value;
+    if (props.min || props.min === 0) {
+      value = Math.max(props.min, value);
+    }
+    this.state = { value };
+  }
+
   static propTypes = {
+    /**
+     * Specify an optional className to be applied to the wrapper node
+     */
     className: PropTypes.string,
+
+    /**
+     * Specify if the control should be disabled, or not
+     */
     disabled: PropTypes.bool,
+
+    /**
+     * Specify whether you want the underlying label to be visually hidden
+     */
+    hideLabel: PropTypes.bool,
+
+    /**
+     * Provide a description for up/down icons that can be read by screen readers
+     */
     iconDescription: PropTypes.string.isRequired,
+
+    /**
+     * Specify a custom `id` for the input
+     */
     id: PropTypes.string.isRequired,
-    label: PropTypes.node,
+
+    /**
+     * Generic `label` that will be used as the textual representation of what
+     * this field is for
+     */
+    labelText: PropTypes.node,
+
+    /**
+     * The maximum value.
+     */
     max: PropTypes.number,
+
+    /**
+     * The minimum value.
+     */
     min: PropTypes.number,
+
     /**
      * The new value is available in 'imaginaryTarget.value'
      * i.e. to get the value: evt.imaginaryTarget.value
      */
     onChange: PropTypes.func,
+
+    /**
+     * Provide an optional function to be called when the up/down button is clicked
+     */
     onClick: PropTypes.func,
+
+    /**
+     * Specify how much the valus should increase/decrease upon clicking on up/down button
+     */
     step: PropTypes.number,
+
+    /**
+     * Specify the value of the input
+     */
     value: PropTypes.number,
+
+    /**
+     * Specify if the currently value is invalid.
+     */
     invalid: PropTypes.bool,
+
+    /**
+     * Message which is displayed if the value is invalid.
+     */
     invalidText: PropTypes.string,
+
+    /**
+     * Provide text that is used alongside the control label for additional help
+     */
+    helperText: PropTypes.node,
+
     /**
      * `true` to use the light version.
      */
     light: PropTypes.bool,
+
+    /**
+     * `true` to allow empty string.
+     */
+    allowEmpty: PropTypes.bool,
   };
 
   static defaultProps = {
     disabled: false,
+    hideLabel: false,
     iconDescription: 'choose a number',
-    label: ' ',
+    labelText: ' ',
     onChange: () => {},
     onClick: () => {},
     step: 1,
     value: 0,
     invalid: false,
     invalidText: 'Provide invalidText',
+    helperText: '',
     light: false,
+    allowEmpty: false,
   };
 
   /**
@@ -49,43 +128,20 @@ export default class NumberInput extends Component {
    */
   _inputRef = null;
 
-  constructor(props) {
-    super(props);
-
-    let value = props.value;
-    if (props.min || props.min === 0) {
-      value = Math.max(props.min, value);
-    }
-
-    // Redux Form Initial
-    if (props.input && props.input.value) {
-      value = props.input.value;
-    }
-
-    this.state = {
-      value,
-    };
-  }
-
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.value !== this.props.value) {
-      this.setState({ value: nextProps.value });
-    }
-    // Redux Form Change
-    if (nextProps.input && nextProps.input.value !== this.props.input.value) {
-      this.setState({ value: nextProps.input.value });
-    }
+  static getDerivedStateFromProps({ min, value }, state) {
+    const { prevValue } = state;
+    return prevValue === value
+      ? null
+      : {
+          value: isNaN(min) ? value : Math.max(min, value),
+          prevValue: value,
+        };
   }
 
   handleChange = evt => {
     if (!this.props.disabled) {
       evt.persist();
       evt.imaginaryTarget = this._inputRef;
-
-      // Redux Form Change
-      if (this.props.input && this.props.input.onChange)
-        this.props.input.onChange(evt.target.value);
-
       this.setState(
         {
           value: evt.target.value,
@@ -112,11 +168,6 @@ export default class NumberInput extends Component {
       value = direction === 'down' ? value - step : value + step;
       evt.persist();
       evt.imaginaryTarget = this._inputRef;
-
-      // Redux Form Change
-      if (this.props.input && this.props.input.onChange)
-        this.props.input.onChange(value);
-
       this.setState(
         {
           value,
@@ -143,18 +194,23 @@ export default class NumberInput extends Component {
       disabled,
       iconDescription, // eslint-disable-line
       id,
-      label,
+      hideLabel,
+      labelText,
       max,
       min,
       step,
       invalid,
       invalidText,
+      helperText,
       light,
+      allowEmpty,
       ...other
     } = this.props;
 
-    const numberInputClasses = classNames('wfp--number', className, {
-      'wfp--number--light': light,
+    const numberInputClasses = classNames(`${prefix}--number`, className, {
+      [`${prefix}--number--light`]: light,
+      [`${prefix}--number--helpertext`]: helperText,
+      [`${prefix}--number--nolabel`]: hideLabel,
     });
 
     const props = {
@@ -174,17 +230,33 @@ export default class NumberInput extends Component {
 
     const inputWrapperProps = {};
     let error = null;
-    if (invalid || this.state.value === '') {
+    if (invalid || (!allowEmpty && this.state.value === '')) {
       inputWrapperProps['data-invalid'] = true;
-      error = <div className="wfp--form-requirement">{invalidText}</div>;
+      error = (
+        <div className={`${prefix}--form-requirement`}>{invalidText}</div>
+      );
     }
 
+    const helper = helperText ? (
+      <div className={`${prefix}--form__helper-text`}>{helperText}</div>
+    ) : null;
+
+    const labelClasses = classNames(`${prefix}--label`, {
+      [`${prefix}--visually-hidden`]: hideLabel,
+    });
+
+    const labelTextComponent = labelText ? (
+      <label htmlFor={id} className={labelClasses}>
+        {labelText}
+      </label>
+    ) : null;
+
     return (
-      <div className="wfp--form-item">
+      <div className={`${prefix}--form-item`}>
         <div className={numberInputClasses} {...inputWrapperProps}>
-          <div className="wfp--number__controls">
+          <div className={`${prefix}--number__controls`}>
             <button
-              className="wfp--number__control-btn up-icon"
+              className={`${prefix}--number__control-btn up-icon`}
               {...buttonProps}
               onClick={evt => this.handleArrowClick(evt, 'up')}>
               <Icon
@@ -195,7 +267,7 @@ export default class NumberInput extends Component {
               />
             </button>
             <button
-              className="wfp--number__control-btn down-icon"
+              className={`${prefix}--number__control-btn down-icon`}
               {...buttonProps}
               onClick={evt => this.handleArrowClick(evt, 'down')}>
               <Icon
@@ -206,6 +278,7 @@ export default class NumberInput extends Component {
               />
             </button>
           </div>
+          {labelTextComponent}
           <input
             type="number"
             pattern="[0-9]*"
@@ -213,11 +286,8 @@ export default class NumberInput extends Component {
             {...props}
             ref={this._handleInputRef}
           />
-          {/*<label htmlFor={id} className="wfp--label">
-            {label}
-          </label>*/}
-          <Label {...this.props} />
           {error}
+          {helper}
         </div>
       </div>
     );

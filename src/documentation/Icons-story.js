@@ -10,20 +10,27 @@ import Link from '../components/Link';
 import Icon from '../components/Icon';
 import iconList from '@wfp/icons/dist/carbon-icons.json';
 
-storiesOf(' Documentation', module).addWithInfo('Icons', ``, () => (
+storiesOf(' Documentation', module).add('Icons', () => (
   <Page title="Icons" subTitle="Introduction to the new WFP UI Kit">
     <p>
       For Usage please take a look at the{' '}
-      <Link onClick={linkTo('Icon', 'Default')}>Icon-Component</Link>.
+      <Link onClick={linkTo('Icon', 'Default')}>Icon-Component</Link> or{' '}
+      <Link
+        onClick={linkTo(
+          ' Documentation.Getting Started',
+          'Usage for Developers'
+        )}>
+        Usage for Developers
+      </Link>.
     </p>
 
     <Blockquote title="Notice">
-      WFP UI is using a fork of{' '}
+      WFP UI Icons is using a fork of{' '}
       <Link href="https://github.com/IBM/carbon-icons" target="_blank">
         Carbon Icons
       </Link>. You can find additional information in the{' '}
       <Link
-        href="http://www.carbondesignsystem.com/style/iconography/library"
+        href="http://www.carbondesignsystem.com/guidelines/iconography"
         target="_blank">
         Carbon Design System
       </Link>

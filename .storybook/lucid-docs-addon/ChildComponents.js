@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
 import _ from 'lodash';
-import marksy from 'marksy/components';
+import marksy from 'marksy/jsx';
 import PropTypes from './PropTypes';
 import { stripIndent } from './util';
 

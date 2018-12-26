@@ -6,7 +6,7 @@ const IconSkeleton = ({ style }) => {
     style,
   };
 
-  return <div className="bx--icon--skeleton" {...props} />;
+  return <div className="wfp--icon--skeleton" {...props} />;
 };
 
 IconSkeleton.propTypes = {

@@ -7,20 +7,25 @@ export default class Search extends Component {
   static propTypes = {
     className: PropTypes.string,
     type: PropTypes.string,
+    /**
+     *  Input type should be `search` or `text`
+     */
     small: PropTypes.bool,
     placeHolderText: PropTypes.string,
     labelText: PropTypes.node.isRequired,
     id: PropTypes.string,
+    onChange: PropTypes.func,
     closeButtonLabelText: PropTypes.string,
     /**
-     * `true` to use the light version.
+     *  Different styling options are available `large`, `small`, `banner`, `main`, `light`
      */
-    light: PropTypes.bool,
+    kind: PropTypes.string,
   };
 
   static defaultProps = {
     type: 'text',
     small: false,
+    kind: 'large',
     placeHolderText: '',
     onChange: () => {},
     light: false,
@@ -57,7 +62,6 @@ export default class Search extends Component {
   render() {
     const {
       className,
-      banner,
       type,
       id = (this._inputId =
         this._inputId ||
@@ -68,8 +72,7 @@ export default class Search extends Component {
       labelText,
       closeButtonLabelText,
       small,
-      main,
-      light,
+      kind,
       ...other
     } = this.props;
 
@@ -77,11 +80,11 @@ export default class Search extends Component {
 
     const searchClasses = classNames({
       'wfp--search': true,
-      'wfp--search--lg': !small,
-      'wfp--search--sm': small,
-      'wfp--search--main': main,
-      'wfp--search--banner': banner,
-      'wfp--search--light': light,
+      'wfp--search--lg': kind === 'large',
+      'wfp--search--sm': kind === 'small',
+      'wfp--search--main': kind === 'main',
+      'wfp--search--banner': kind === 'banner',
+      'wfp--search--light': kind === 'light',
       [className]: className,
     });
 

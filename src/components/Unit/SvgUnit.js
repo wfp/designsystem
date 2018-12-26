@@ -1,4 +1,5 @@
 import React from 'react';
+import { InvalidSvg } from './InvalidUnit';
 
 const SvgUnit = (value, props) => {
   const { style, ...other } = props;

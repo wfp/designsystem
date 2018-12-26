@@ -1,5 +1,7 @@
 # World Food Programme UI Kit (WFP-UI)
 
+## **[Living Style Guide & Documentation](https://wfp.org/UIGuide)**
+
 | Branch | Build Status                                                                                    |
 | ------ | ----------------------------------------------------------------------------------------------- |
 | master | [![Build Status](https://travis-ci.org/wfp/ui.svg?branch=master)](https://travis-ci.org/wfp/ui) |
@@ -12,13 +14,15 @@
 Run the following command using [npm](https://www.npmjs.com/):
 
 ```bash
-npm install @wfp/ui -develop
+npm install @wfp/ui
+npm install @wfp/icons
 ```
 
 or [yarn](https://yarnpkg.com/lang/en/):
 
 ```bash
-yarn add @wfp/ui -D
+yarn add @wfp/ui
+yarn add @wfp/icons
 ```
 
 Import a react component
@@ -37,7 +41,7 @@ Additional information about the Usage can be found [here](https://wfp.org/UIGui
 
 ### Documentation & list of components available
 
-View available Components [here](http://pydev.wfp.org:8282). Usage information is available when you click the blue **?** icon in the top right corner of the selected component.
+View available Components [here](https://wfp.org/UIGuide). Usage information is available when you click the blue **?** icon in the top right corner of the selected component.
 
 ## About the WFP UI Guidelines
 
@@ -57,51 +61,43 @@ The Guide is a living document created to meet the needs of WFP’s front-end de
 
 ## Credits
 
-The UI Kit is be based on:
+The UI Kit is based on:
 
 * [Carbon Components](https://github.com/carbon-design-system/carbon-components)
+
 * [U.S. Webdesign System](https://designsystem.digital.gov/page-templates/#landing-page)
+
 * [Sketch Favicon Exporter Template](https://github.com/frederik-jacques/sketch-favicon-exporter-template)
 
-## Logos
+* [Appnexus Lucid](https://github.com/appnexus/lucid)
 
-All the logo files can be found in the `wfp-ui/logos` folder.
+* [FontAwesome](http://fontawesome.io)
+
+## Assets
+
+All the logo files can be found in the [UI Assets repository on GitHub](https://github.com/wfp/ui-assets).
+
+### Logos
+
 Currently the logo is available in
 
 * **Colors:** blue, white and black
+
 * **Fileformat:** svg, png in different sizes
+
 * **Languages:** arabic, english, spanish, french
 
 The Source files can be found in `sketch/WFP Logos.sketch`.
 
-## Sketch Library
-
-The Sketch Library can be used to easily create new UI in [Sketch App](https://www.sketchapp.com/).
-You can download it [Sketch App](https://www.sketchapp.com/).
-
 ## Favicons
 
 All the logo files can be found in the `wfp-ui/favicons` folder.
-The full sizes catalog which has to be added to the header.
 
-```html
-<link rel="apple-touch-icon" sizes="57x57" href="/favicons/apple-icon-57x57.png">
-<link rel="apple-touch-icon" sizes="60x60" href="/favicons/apple-icon-60x60.png">
-<link rel="apple-touch-icon" sizes="72x72" href="/favicons/apple-icon-72x72.png">
-<link rel="apple-touch-icon" sizes="76x76" href="/favicons/apple-icon-76x76.png">
-<link rel="apple-touch-icon" sizes="114x114" href="/favicons/apple-icon-114x114.png">
-<link rel="apple-touch-icon" sizes="120x120" href="/favicons/apple-icon-120x120.png">
-<link rel="apple-touch-icon" sizes="144x144" href="/favicons/apple-icon-144x144.png">
-<link rel="apple-touch-icon" sizes="152x152" href="/favicons/apple-icon-152x152.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-icon-180x180.png">
-<link rel="icon" type="image/png" sizes="192x192"  href="/favicons/android-icon-192x192.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="96x96" href="/favicons/favicon-96x96.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
-<meta name="msapplication-TileColor" content="#006CB6">
-<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
-<meta name="theme-color" content="#006CB6">
-```
+## For Designers: Sketch Library
+
+The Sketch and Adobe xD library can be used to easily create new User interfaces. [UI Design Kit on GitHub](https://github.com/wfp/ui-design-kit).
+
+You can download it [Sketch App](https://www.sketchapp.com/).
 
 ## Development
 
@@ -111,14 +107,26 @@ Please refer to the [Contribution Guidelines](./.github/CONTRIBUTING.md) before 
 
 We recommend the use of [React Storybook](https://github.com/storybooks/react-storybook) for developing components.
 
-1. Start the server:
+1. Generate new tests
 
-   ```
-   $ yarn storybook
-   ```
+```
+$ yarn test
+```
 
-2. Open browser to `http://localhost:9000/`.
+2. Start the server:
 
-3. Develop components in their respective folders (`/components` or `/internal`).
+```
+$ yarn storybook
+```
 
-4. Write stories for your components in `/.storybook`.
+3. Start the css watcher:
+
+```
+$ yarn watch:css
+```
+
+4. Open browser to `http://localhost:9000/`.
+
+5) Develop components in their respective folders (`/components` or `/internal`).
+
+6. Write stories for your components in `/.storybook`.

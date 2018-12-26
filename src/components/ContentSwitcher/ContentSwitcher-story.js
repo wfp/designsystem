@@ -1,52 +1,81 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
+
+import { withKnobs, select, text } from '@storybook/addon-knobs';
+import { iconAddSolid, iconSearch } from '@wfp/icons';
+import Icon from '../Icon';
 import ContentSwitcher from '../ContentSwitcher';
-import SingleComponent from '../../documentation/SingleComponent';
 import Switch from '../Switch';
 
+const icons = {
+  None: 'None',
+  'Add with filled circle (iconAddSolid from `@wfp-ui`)': 'iconAddSolid',
+  'Search (iconSearch from `@wfp-ui`)': 'iconSearch',
+};
+
+const iconMap = {
+  iconAddSolid: <Icon icon={iconAddSolid} />,
+  iconSearch: <Icon icon={iconSearch} />,
+};
+
+const kinds = {
+  'Anchor (anchor)': 'anchor',
+  'Button (button)': 'button',
+};
+
+const props = {
+  contentSwitcher: () => ({
+    onChange: action('onChange'),
+  }),
+  switch: () => ({
+    onClick: action('onClick - Switch'),
+    kind: select('Button kind (kind in <Switch>)', kinds, 'anchor'),
+    href: text('The link href (href in <Switch>)', ''),
+    icon: iconMap[select('Icon (icon in <Switch>)', icons, 'none')],
+  }),
+};
+
 storiesOf('ContentSwitcher', module)
-  .addDecorator(story => (
-    <SingleComponent pageWidth="wide">{story()}</SingleComponent>
-  ))
-  .addWithInfo(
+  .addDecorator(withKnobs)
+  .add(
     'Default',
-    `
-      The Content Switcher component manipulates the content shown following an exclusive or “either/or” pattern.
-      Create Switch components for each section in the content switcher.
-    `,
-    () => (
-      <ContentSwitcher onChange={action('onChange')}>
-        <Switch kind="anchor" name="one" text="First section" />
-        <Switch kind="anchor" name="two" text="Second section" />
-        <Switch kind="anchor" name="three" text="Third section" />
-      </ContentSwitcher>
-    )
+    () => {
+      const switchProps = props.switch();
+      return (
+        <ContentSwitcher {...props.contentSwitcher()}>
+          <Switch name="one" text="First section" {...switchProps} />
+          <Switch name="two" text="Second section" {...switchProps} />
+          <Switch name="three" text="Third section" {...switchProps} />
+        </ContentSwitcher>
+      );
+    },
+    {
+      info: {
+        text: `
+            The Content Switcher component manipulates the content shown following an exclusive or “either/or” pattern.
+            Create Switch components for each section in the content switcher.
+          `,
+      },
+    }
   )
-  .addWithInfo(
-    'Small',
-    `
-      The Content Switcher component manipulates the content shown following an exclusive or “either/or” pattern.
-      Create Switch components for each section in the content switcher.
-    `,
-    () => (
-      <ContentSwitcher small onChange={action('onChange')}>
-        <Switch kind="anchor" name="one" text="First section" />
-        <Switch kind="anchor" name="two" text="Second section" />
-        <Switch kind="anchor" name="three" text="Third section" />
-      </ContentSwitcher>
-    )
-  )
-  .addWithInfo(
+  .add(
     'Selected',
-    `
-      Render the Content Switcher with a different section automatically selected
-    `,
-    () => (
-      <ContentSwitcher selectedIndex={1} onChange={action('onChange')}>
-        <Switch kind="anchor" name="one" text="First section" />
-        <Switch kind="anchor" name="two" text="Second section" />
-        <Switch kind="anchor" name="three" text="Third section" />
-      </ContentSwitcher>
-    )
+    () => {
+      const switchProps = props.switch();
+      return (
+        <ContentSwitcher {...props.contentSwitcher()} selectedIndex={1}>
+          <Switch name="one" text="First section" {...switchProps} />
+          <Switch name="two" text="Second section" {...switchProps} />
+          <Switch name="three" text="Third section" {...switchProps} />
+        </ContentSwitcher>
+      );
+    },
+    {
+      info: {
+        text: `
+             Render the Content Switcher with a different section automatically selected
+           `,
+      },
+    }
   );

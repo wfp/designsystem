@@ -16,6 +16,9 @@ SecondaryNavigationTitle.propTypes = {
    * The CSS class name to be placed on the wrapping element.
    */
   className: PropTypes.string,
+  /**
+   * The content of the SecondaryNavigation can be fully customized.
+   */
   children: PropTypes.node.isRequired,
 };
 

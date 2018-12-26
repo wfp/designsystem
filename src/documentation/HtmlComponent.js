@@ -1,10 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import Wrapper from '../components/Wrapper';
-import Blockquote from '../components/Blockquote';
-
-import { withReadme } from 'storybook-readme';
-import readme from './HTML-README.md';
 
 const SingleComponent = ({ children, html, pageWidth }) => {
   console.log(children);

@@ -138,13 +138,15 @@ ReactDOM.render(
               height: '100%',
               margin: 0,
             }}>
-            {code.replace(/(\.\.\/)*(src\/)?index(\.js)?/, 'lucid-ui')}
+            {code}
           </SyntaxHighlighter>
         </div>
       </div>
     </section>
   );
 };
+
+//{code.replace(/(\.\.\/)*(src\/)?index(\.js)?/, 'lucid-ui')}
 
 ExampleCode.defaultProps = {
   hasCodepen: false,

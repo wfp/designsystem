@@ -6,8 +6,6 @@ const TextInput = ({
   labelText,
   className,
   id,
-  input,
-  meta,
   placeholder,
   type,
   onChange,
@@ -15,15 +13,17 @@ const TextInput = ({
   hideLabel,
   invalid,
   invalidText,
+  helperText,
+  light,
   ...other
 }) => {
   const textInputProps = {
     id,
-    /*onChange: evt => {
+    onChange: evt => {
       if (!other.disabled) {
         onChange(evt);
       }
-    },*/
+    },
     onClick: evt => {
       if (!other.disabled) {
         onClick(evt);
@@ -33,13 +33,10 @@ const TextInput = ({
     type,
   };
 
-  /* Redux Form Mapping */
-
-  const invalidTextMap = meta ? meta.error : invalidText;
-  const invalidMap = meta ? !meta.valid : invalid;
-
   const errorId = id + '-error-msg';
-  const textInputClasses = classNames('wfp--text-input', className);
+  const textInputClasses = classNames('wfp--text-input', className, {
+    'wfp--text-input--light': light,
+  });
   const labelClasses = classNames('wfp--label', {
     'wfp--visually-hidden': hideLabel,
   });
@@ -50,16 +47,15 @@ const TextInput = ({
     </label>
   ) : null;
 
-  const error = invalidMap ? (
+  const error = invalid ? (
     <div className="wfp--form-requirement" id={errorId}>
-      {invalidTextMap}
+      {invalidText}
     </div>
   ) : null;
 
-  const inputElement = invalidMap ? (
+  const input = invalid ? (
     <input
       {...other}
-      {...input}
       {...textInputProps}
       data-invalid
       aria-invalid
@@ -67,18 +63,18 @@ const TextInput = ({
       className={textInputClasses}
     />
   ) : (
-    <input
-      {...other}
-      {...input}
-      {...textInputProps}
-      className={textInputClasses}
-    />
+    <input {...other} {...textInputProps} className={textInputClasses} />
   );
+
+  const helper = helperText ? (
+    <div className="wfp--form__helper-text">{helperText}</div>
+  ) : null;
 
   return (
     <div className="wfp--form-item">
       {label}
-      {inputElement}
+      {input}
+      {helper}
       {error}
     </div>
   );
@@ -89,7 +85,7 @@ TextInput.propTypes = {
   defaultValue: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   disabled: PropTypes.bool,
   id: PropTypes.string.isRequired,
-  labelText: PropTypes.string.isRequired,
+  labelText: PropTypes.node.isRequired,
   onChange: PropTypes.func,
   onClick: PropTypes.func,
   placeholder: PropTypes.string,
@@ -98,6 +94,11 @@ TextInput.propTypes = {
   hideLabel: PropTypes.bool,
   invalid: PropTypes.bool,
   invalidText: PropTypes.string,
+  helperText: PropTypes.node,
+  /**
+   * `true` to use the light version.
+   */
+  light: PropTypes.bool,
 };
 
 TextInput.defaultProps = {
@@ -108,6 +109,8 @@ TextInput.defaultProps = {
   onClick: () => {},
   invalid: false,
   invalidText: '',
+  helperText: '',
+  light: false,
 };
 
 export default TextInput;

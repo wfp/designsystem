@@ -1,30 +1,91 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
+import { iconCaretDown } from '@wfp/icons';
 import Icon from '../Icon';
 import TabContent from '../TabContent';
 
 export default class Tabs extends React.Component {
   static propTypes = {
+    /**
+     * Specify the text to be read by screen-readers when visiting the <Tabs>
+     * component
+     */
     ariaLabel: PropTypes.string,
+
+    /**
+     * Pass in a collection of <Tab> children to be rendered depending on the
+     * currently selected tab
+     */
     children: PropTypes.node,
+
+    /**
+     * Provide a className that is applied to the root <nav> component for the
+     * <Tabs>
+     */
     className: PropTypes.string,
+
+    /**
+     * Provide a customTabContent by using independent action triggers
+     * inside the Tabs
+     */
+    customTabContent: PropTypes.bool,
+
+    /**
+     * Specify whether the Tabs are displayed inline
+     */
+    inline: PropTypes.bool,
+
+    /**
+     * Specify whether the Tab content is hidden
+     */
     hidden: PropTypes.bool,
-    href: PropTypes.string.isRequired,
+
+    /**
+     * By default, this value is "navigation". You can also provide an alternate
+     * role if it makes sense from the accessibility-side
+     */
     role: PropTypes.string.isRequired,
+
+    /**
+     * Optionally provide an `onClick` handler that is invoked when a <Tab> is
+     * clicked
+     */
     onClick: PropTypes.func,
+
+    /**
+     * Optionally provide an `onKeyDown` handler that is invoked when keyed
+     * navigation is triggered
+     */
     onKeyDown: PropTypes.func,
-    /** Called whenever selection changes, with index of the tab that was selected */
+
+    /**
+     * Provide an optional handler that is called whenever the selection
+     * changes. This method is called with the index of the tab that was
+     * selected
+     */
     onSelectionChange: PropTypes.func,
+
+    /**
+     * Provide a string that represents the `href` for the triggered <Tab>
+     */
     triggerHref: PropTypes.string.isRequired,
+
+    /**
+     * Optionally provide an index for the currently selected <Tab>
+     */
     selected: PropTypes.number,
+
+    /**
+     * Provide a description that is read out when a user visits the caret icon
+     * for the dropdown menu of items
+     */
     iconDescription: PropTypes.string.isRequired,
   };
 
   static defaultProps = {
     iconDescription: 'show menu options',
     role: 'navigation',
-    href: '#',
     triggerHref: '#',
     selected: 0,
     ariaLabel: 'listbox',
@@ -32,11 +93,16 @@ export default class Tabs extends React.Component {
 
   state = {
     dropdownHidden: true,
-    selected: this.props.selected,
   };
 
-  UNSAFE_componentWillReceiveProps({ selected }) {
-    this.selectTabAt(selected);
+  static getDerivedStateFromProps({ selected }, state) {
+    const { prevSelected } = state;
+    return prevSelected === selected
+      ? null
+      : {
+          selected,
+          prevSelected: selected,
+        };
   }
 
   getTabs() {
@@ -59,7 +125,7 @@ export default class Tabs extends React.Component {
       evt.preventDefault();
       this.selectTabAt(index, onSelectionChange);
       this.setState({
-        dropdownHidden: !this.state.dropdownHidden,
+        dropdownHidden: true,
       });
     };
   };
@@ -71,7 +137,7 @@ export default class Tabs extends React.Component {
       if (key === 'Enter' || key === 13 || key === ' ' || key === 32) {
         this.selectTabAt(index, onSelectionChange);
         this.setState({
-          dropdownHidden: !this.state.dropdownHidden,
+          dropdownHidden: true,
         });
       }
     };
@@ -120,7 +186,9 @@ export default class Tabs extends React.Component {
     const {
       ariaLabel,
       iconDescription,
+      inline,
       className,
+      customTabContent,
       triggerHref,
       role,
       onSelectionChange,
@@ -142,23 +210,27 @@ export default class Tabs extends React.Component {
       return newTab;
     });
 
-    const tabContentWithProps = React.Children.map(tabsWithProps, tab => {
-      const { children, selected } = tab.props;
+    const tabContentWithProps = !customTabContent
+      ? React.Children.map(tabsWithProps, tab => {
+          const { children, selected } = tab.props;
 
-      return (
-        <TabContent
-          className="tab-content"
-          hidden={!selected}
-          selected={selected}>
-          {children}
-        </TabContent>
-      );
-    });
+          return (
+            <TabContent
+              className="tab-content"
+              aria-hidden={!selected}
+              hidden={!selected}
+              selected={selected}>
+              {children}
+            </TabContent>
+          );
+        })
+      : null;
 
     const classes = {
       tabs: classNames('wfp--tabs', className),
       tablist: classNames('wfp--tabs__nav', {
         'wfp--tabs__nav--hidden': this.state.dropdownHidden,
+        'wfp--tabs__nav--inline': inline,
       }),
     };
 
@@ -166,7 +238,7 @@ export default class Tabs extends React.Component {
     const selectedLabel = selectedTab ? selectedTab.props.label : '';
 
     return (
-      <div>
+      <>
         <nav {...other} className={classes.tabs} role={role}>
           <div
             role="listbox"
@@ -182,14 +254,14 @@ export default class Tabs extends React.Component {
               onClick={this.handleDropdownClick}>
               {selectedLabel}
             </a>
-            <Icon description={iconDescription} name="caret--down" />
+            <Icon description={iconDescription} icon={iconCaretDown} />
           </div>
           <ul role="tablist" className={classes.tablist}>
             {tabsWithProps}
           </ul>
         </nav>
         {tabContentWithProps}
-      </div>
+      </>
     );
   }
 }

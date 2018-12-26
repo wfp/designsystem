@@ -16,37 +16,25 @@
     @include reset;
     @include font-family;
     p {
-      margin-bottom: $spacing-lg;
+      margin-top: $spacing-md;
       line-height: 1.6em;
       &:last-child {
         margin-bottom: 0;
       }
     }
     h2 {
-      margin: $spacing-lg 0;
+      //margin: $spacing-lg 0;
       &.before--img {
         margin-bottom: 0;
       }
     }
     h3 {
-      margin: $spacing-xs 0;
+      margin-top: $spacing-xs;
     }
     h4 {
-      margin: $spacing-xs 0;
+      margin-top: $spacing-xs;
+      @include typescale('epsilon');
     }
-    .#{$prefix}--story--list {
-      list-style-position: outside;
-      line-height: 1.6em;
-      margin: 1.5em 0 1.5em 1.5em;
-      li {
-        list-style-type: disc;
-      }
-    }
-
-    .#{$prefix}--blockquote {
-      margin-bottom: 1.5em;
-    }
-
     sup {
       font-size: 0.7em;
       background: $ui-03;
@@ -61,33 +49,77 @@
       }
     }
 
-    .#{$prefix}--story__title {
-      @include typescale('alpha');
-      font-weight: 700;
-    }
-    .#{$prefix}--story__sub-title {
-      @include typescale('zeta');
-      font-weight: normal;
-      color: $color__navy-gray-7;
-      margin-top: $spacing-xs;
-      margin-bottom: $spacing-xl;
-      //text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-    .#{$prefix}--story__type-beta {
-      margin-bottom: $spacing-lg;
-    }
-    .#{$prefix}--markup {
-      font-style: italic;
-      @include typescale('delta');
-      margin-bottom: $spacing-lg;
+    /* All the line spacings */
+
+    .#{$prefix}--blockquote {
+      & + p,
+      & + h3 {
+        margin-top: $spacing-lg;
+      }
     }
 
-    .#{$prefix}--inline-highlight {
-      display: inline-block;
-      font-weight: 600;
-      background: $ui-03;
-      padding: 0.05em 0.1em;
+    p + .#{$prefix}--blockquote {
+      margin-top: $spacing-sm;
     }
+
+    p + h2 {
+      margin-top: $spacing-lg;
+    }
+
+    p + h3 {
+      margin-top: $spacing-lg;
+    }
+
+    p + ul,
+    h3 + ul,
+    h4 + ul {
+      margin-top: $spacing-md;
+    }
+
+    h3 + p {
+      margin-top: $spacing-sm;
+    }
+  }
+
+  .#{$prefix}--story--list {
+    list-style-position: outside;
+    line-height: 1.6em;
+    margin: 1.5em 0 1.5em 1.5em;
+    li {
+      list-style-type: disc;
+    }
+  }
+
+  .#{$prefix}--blockquote {
+    //margin-bottom: 1.5em;
+  }
+
+  .#{$prefix}--story__title {
+    @include typescale('alpha');
+    font-weight: 700;
+  }
+  .#{$prefix}--story__sub-title {
+    @include typescale('zeta');
+    font-weight: normal;
+    color: $color__navy-gray-7;
+    margin-top: $spacing-xs;
+    margin-bottom: $spacing-xl;
+    //text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .#{$prefix}--story__type-beta {
+    margin-bottom: $spacing-lg;
+  }
+  .#{$prefix}--markup {
+    font-style: italic;
+    @include typescale('delta');
+    margin-bottom: $spacing-lg;
+  }
+
+  .#{$prefix}--inline-highlight {
+    display: inline-block;
+    font-weight: 600;
+    background: $ui-03;
+    padding: 0.05em 0.1em;
   }
 }

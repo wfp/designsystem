@@ -4,15 +4,10 @@ import { connect } from 'react-redux';
 import { Values } from 'redux-form-website-template';
 import Button from '../components/Button';
 import Blockquote from '../components/Blockquote';
-import FormItem from '../components/FormItem/RfFormItem';
 import FormLabel from '../components/FormLabel/RfFormLabel';
 import { load as loadAccount } from './loadDefaultData';
 
 class FormEl extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     const {
       handleSubmit,
@@ -26,13 +21,13 @@ class FormEl extends Component {
       ? sampleData
       : {
           // used to populate "account" reducer when "Load" is clicked
-          Input: 13,
+          input: 13,
         };
 
     return (
       <form onSubmit={handleSubmit} className="wfp-form--stacked">
         {this.props.children}
-        <FormItem>
+        <div>
           <br />
           <FormLabel>Form Debug Controls</FormLabel>
           <br />
@@ -51,14 +46,13 @@ class FormEl extends Component {
           <Button
             type="button"
             kind="secondary"
-            disabled={pristine || submitting}
             onClick={() => this.props.load(data)}>
             Load Sample Data
           </Button>
           <Blockquote>
             <Values form="SimpleForm" />
           </Blockquote>
-        </FormItem>
+        </div>
       </form>
     );
   }
@@ -78,10 +72,6 @@ Form = connect(
 )(Form);
 
 class RfFormWrapper extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   onSubmit(submit) {
     alert('Submitted: ' + JSON.stringify(submit));
   }

@@ -1,0 +1,10 @@
+{{#if componentsX}}
+{{#each tags}}
+<span class="wfp--tag wfp--tag--{{type}}">{{label}}</span>
+{{/each}}
+<span class="wfp--tag wfp--tag--basic" disabled>Component</span>
+{{else}}
+{{#each tags}}
+<span class="wfp--tag wfp--tag--{{type}}">{{label}}</span>
+  {{/each}}
+{{/if}}

@@ -5,7 +5,7 @@ import { storiesOf } from '@storybook/react';
 import Page from './Page';
 import Blockquote from '../components/Blockquote';
 
-storiesOf(' Documentation', module).addWithInfo('Typography', ``, () => (
+storiesOf(' Documentation', module).add('Typography', () => (
   <Page title="Typography" subTitle="Introduction to the new WFP UI Kit">
     {/*<p>
       Typography plays a critical role in any design; in fact, it accounts for
@@ -21,7 +21,7 @@ storiesOf(' Documentation', module).addWithInfo('Typography', ``, () => (
       the harder it is for users to complete their tasks.
     </p>*/}
 
-    <h3>Typefaces</h3>
+    <h2>Typefaces</h2>
 
     <p>
       Open Sans is the primary typeface for user interfaces; it’s a round,
@@ -29,7 +29,16 @@ storiesOf(' Documentation', module).addWithInfo('Typography', ``, () => (
       headlines and paragraphs alike, as well as for interface elements.
     </p>
 
-    <h3>Headings</h3>
+    <h3>How to use it</h3>
+
+    <p>
+      Open Sans is already included in the WFP UI's CSS. If you don't want to
+      include the font you can use set{' '}
+      <span className="wfp--inline-highlight">$css--font-face: false;</span>{' '}
+      with scss.
+    </p>
+
+    <h2>Headings</h2>
 
     <p>
       Headings help to add a hierarchy to a page, and they are key identifiers

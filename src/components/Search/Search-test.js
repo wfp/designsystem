@@ -119,7 +119,7 @@ describe('Search', () => {
       const small = mount(
         <Search
           id="test"
-          small
+          kind="small"
           className="extra-class"
           label="Search Field"
           labelText="testlabel"

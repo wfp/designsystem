@@ -6,8 +6,8 @@ import { shallow, mount } from 'enzyme';
 
 describe('Modal', () => {
   describe('Renders as expected', () => {
-    const wrapper = shallow(<Modal className="extra-class" />);
-    const mounted = mount(<Modal className="extra-class" />);
+    const wrapper = shallow(<Modal className="extra-class" inPortal={false} />);
+    const mounted = mount(<Modal className="extra-class" inPortal={false} />);
 
     it('has the expected classes', () => {
       expect(wrapper.hasClass('wfp--modal')).toEqual(true);
@@ -27,7 +27,7 @@ describe('Modal', () => {
     });
 
     it('should set id if one is passed via props', () => {
-      const modal = shallow(<Modal id="modal-1" />);
+      const modal = shallow(<Modal id="modal-1" inPortal={false} />);
       expect(modal.props().id).toEqual('modal-1');
     });
 
@@ -136,13 +136,33 @@ describe('Modal', () => {
       expect(wrapper.state('isOpen')).toEqual(false);
     });
 
-    it('should handle keyDown events', () => {
+    it('should handle close keyDown events', () => {
       const onRequestClose = jest.fn();
       const wrapper = mount(<Modal onRequestClose={onRequestClose} />);
       wrapper.simulate('keyDown', { which: 26 });
       expect(onRequestClose).not.toBeCalled();
       wrapper.simulate('keyDown', { which: 27 });
       expect(onRequestClose).toBeCalled();
+    });
+
+    it('should handle submit keyDown events with shouldSubmitOnEnter enabled', () => {
+      const onRequestSubmit = jest.fn();
+      const wrapper = mount(
+        <Modal onRequestSubmit={onRequestSubmit} shouldSubmitOnEnter />
+      );
+      wrapper.simulate('keyDown', { which: 14 });
+      expect(onRequestSubmit).not.toBeCalled();
+      wrapper.simulate('keyDown', { which: 13 });
+      expect(onRequestSubmit).toBeCalled();
+    });
+
+    it('should not handle submit keyDown events with shouldSubmitOnEnter not enabled', () => {
+      const onRequestSubmit = jest.fn();
+      const wrapper = mount(<Modal onRequestSubmit={onRequestSubmit} />);
+      wrapper.simulate('keyDown', { which: 14 });
+      expect(onRequestSubmit).not.toBeCalled();
+      wrapper.simulate('keyDown', { which: 13 });
+      expect(onRequestSubmit).not.toBeCalled();
     });
 
     it('should close by default on secondary button click', () => {
@@ -188,7 +208,7 @@ describe('Modal Wrapper', () => {
 });
 describe('Danger Modal', () => {
   describe('Renders as expected', () => {
-    const wrapper = shallow(<Modal danger />);
+    const wrapper = shallow(<Modal danger inPortal={false} />);
 
     it('has the expected classes', () => {
       expect(wrapper.hasClass('wfp--modal--danger')).toEqual(true);

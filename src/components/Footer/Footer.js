@@ -9,6 +9,7 @@ import Icon from '../Icon';
 //import logoVertical from '../../../assets/logos/vertical/en/wfp-logo-vertical-black-en.svg';
 
 const Footer = ({
+  buttonText,
   className,
   children,
   external,
@@ -33,7 +34,7 @@ const Footer = ({
   );
 
   const footer = (
-    <footer {...other} className={classNames}>
+    <footer className={classNames}>
       <Wrapper pageWidth={pageWidth}>
         <div className="wfp--footer__content">
           {children ? (
@@ -116,17 +117,15 @@ Footer.propTypes = {
   labelTwo: PropTypes.string,
   linkTextTwo: PropTypes.string,
   linkHrefTwo: PropTypes.string,
-  buttonText: PropTypes.string,
 };
 
 Footer.defaultProps = {
   labelOne: 'Need Help?',
-  linkTextOne: 'Contact Bluemix Sales',
+  linkTextOne: 'Contact',
   linkHrefOne: '#',
-  labelTwo: 'Estimate Monthly Cost',
-  linkTextTwo: 'Cost Calculator',
+  labelTwo: 'Second Link',
+  linkTextTwo: 'About',
   linkHrefTwo: '#',
-  buttonText: 'Create',
 };
 
 export default Footer;

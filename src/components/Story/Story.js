@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import classnames from 'classnames';
-import Wrapper from '../Wrapper';
 
 const Story = ({ children, className, pageWidth, spacing }) => {
   const classNames = classnames({
@@ -9,20 +8,23 @@ const Story = ({ children, className, pageWidth, spacing }) => {
     [`${className}`]: className,
   });
   return (
-    <Wrapper
+    <div
       className={classNames}
       pageWidth={pageWidth ? pageWidth : 'md'}
       spacing={spacing}>
       {children}
-    </Wrapper>
+    </div>
   );
 };
 
 Story.propTypes = {
   /**
-    Width of Wrapper, use 'narrow' or leave empty
+    The Story content
   */
   children: PropTypes.node,
+  /**
+    Additional className for Story
+  */
   className: PropTypes.string,
 };
 

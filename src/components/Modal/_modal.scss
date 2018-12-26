@@ -47,6 +47,10 @@
     @include modal--color($support-01);
   }
 
+  .#{$prefix}--modal__wrapper {
+    display: inline;
+  }
+
   .#{$prefix}--modal-container {
     @include reset;
     @include layer('pop-out');

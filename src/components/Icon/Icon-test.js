@@ -1,5 +1,5 @@
 import React from 'react';
-import { iconSearch } from 'carbon-icons';
+import { iconSearch } from '@wfp/icons';
 import Icon, { findIcon, svgShapes, getSvgData, isPrefixed } from '../Icon';
 import { mount } from 'enzyme';
 

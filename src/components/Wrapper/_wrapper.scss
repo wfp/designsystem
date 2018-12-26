@@ -31,6 +31,11 @@
     padding-bottom: $spacing-md;
   }
 
+  .#{$prefix}--wrapper--spacing-xl {
+    padding-top: $spacing-xl;
+    padding-bottom: $spacing-xl;
+  }
+
   .#{$prefix}--wrapper--background-lighter {
     background: $color__navy-gray-9;
   }

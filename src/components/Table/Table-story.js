@@ -53,11 +53,11 @@ const columns = [
 
 storiesOf('Table', module)
   .addDecorator(withReadme([readme]))
-  .addWithInfo(
+  .add(
     'default',
-    `
+    /*`
       We recommend [React-Table](https://react-table.js.org/) for Tables. To use the custom Pagination you can use the TablePagination component.
-    `,
+    `,*/
     () => (
       <ReactTable
         data={data}

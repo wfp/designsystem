@@ -1,73 +1,112 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
+import { withInfo } from '@storybook/addon-info';
+import { withKnobs, number, text } from '@storybook/addon-knobs';
 import Tabs from '../Tabs';
 import Tab from '../Tab';
 import TabsSkeleton from '../Tabs/Tabs.Skeleton';
 
+import { withReadme } from 'storybook-readme';
+import readme from './README.md';
+
 const props = {
-  tabs: {
+  tabs: () => ({
     className: 'some-class',
-    triggerHref: '#anotherAnchor',
-  },
-  tab: {
-    className: 'another-class',
+    selected: number('The index of the selected tab (selected in <Tabs>)', 1),
+    triggerHref: text(
+      'The href of trigger button for narrow mode (triggerHref in <Tabs>)',
+      '#'
+    ),
+    role: text('ARIA role (role in <Tabs>)', 'navigation'),
+    iconDescription: text(
+      'The description of the trigger icon for narrow mode (iconDescription in <Tabs>)',
+      'show menu options'
+    ),
     onClick: action('onClick'),
     onKeyDown: action('onKeyDown'),
-  },
+    onSelectionChange: action('onSelectionChange'),
+  }),
+  tab: () => ({
+    className: 'another-class',
+    href: text('The href for tab (href in <Tab>)', '#'),
+    role: text('ARIA role (role in <Tab>)', 'presentation'),
+    tabIndex: number('Tab index (tabIndex in <Tab>)', 0),
+    onClick: action('onClick'),
+    onKeyDown: action('onKeyDown'),
+  }),
+};
+
+const el = ({ href }) => {
+  return (
+    <a style={{ color: 'green' }} href={href}>
+      Custom link
+    </a>
+  );
+};
+
+const listEl = props => {
+  return (
+    <a {...props}>
+      <span style={{ color: 'blue' }} href={props.href}>
+        Custom list element
+      </span>
+    </a>
+  );
 };
 
 storiesOf('Tabs', module)
-  .addWithInfo(
+  .addDecorator(withKnobs)
+  .addDecorator(withReadme([readme]))
+  .add(
     'Default',
-    `
-      Tabs are used to quickly navigate between views within the same context. Create individual
-      Tab components for each item in the Tabs list.
-    `,
-    () => (
-      <Tabs {...props.tabs}>
-        <Tab {...props.tab} label="Tab label 1">
+    withInfo({
+      text: `
+        Tabs are used to quickly navigate between views within the same context. Create individual
+        Tab components for each item in the Tabs list.
+      `,
+    })(() => (
+      <Tabs {...props.tabs()}>
+        <Tab {...props.tab()} label="Tab label 1">
           <div className="some-content">Content for first tab goes here.</div>
         </Tab>
-        <Tab {...props.tab} label="Tab label 2">
+        <Tab {...props.tab()} label="Tab label 2">
           <div className="some-content">Content for second tab goes here.</div>
         </Tab>
-        <Tab {...props.tab} label="Tab label 3">
+        <Tab {...props.tab()} label="Tab label 3">
           <div className="some-content">Content for third tab goes here.</div>
         </Tab>
-        <Tab {...props.tab} label="Tab label 4">
-          <div className="some-content">Content for fourth tab goes here.</div>
-        </Tab>
       </Tabs>
-    )
+    ))
   )
-  .addWithInfo(
-    'Selected Example',
-    `
-      By using the selected prop on the Tabs component, you can switch which Tab gets
-      rendered by default
-    `,
-    () => (
-      <Tabs {...props.tabs} selected={3}>
-        <Tab {...props.tab} label="Tab label 1">
-          <div className="some-content">Content for first tab goes here.</div>
-        </Tab>
-        <Tab {...props.tab} label="Tab label 2">
-          <div className="some-content">Content for second tab goes here.</div>
-        </Tab>
-        <Tab {...props.tab} label="Tab label 3">
-          <div className="some-content">Content for third tab goes here.</div>
-        </Tab>
-        <Tab {...props.tab} label="Tab label 4">
-          <div className="some-content">ontent for fourth tab goes here.</div>
-        </Tab>
+  .add(
+    'Custom Tab Content',
+    withInfo({
+      text: `
+        Custom Tab Content which is independent from the Tabs
+      `,
+    })(() => (
+      <Tabs {...props.tabs()} customTabContent={true}>
+        <Tab
+          {...props.tab()}
+          label="Tab label 1"
+          href="http://www.de.wfp.org"
+          renderAnchor={el}
+        />
+        <Tab
+          {...props.tab()}
+          label="Tab label 4"
+          href="http://www.fr.wfp.org"
+          renderListElement={listEl}
+        />
       </Tabs>
-    )
+    ))
   )
-  .addWithInfo(
+  .add(
     'skeleton',
-    `
-      Placeholder skeleton state to use when content is loading.
-    `,
-    () => <TabsSkeleton />
+    withInfo({
+      text: `
+        Placeholder skeleton state to use when content is loading.
+      `,
+    })(() => <TabsSkeleton />)
   );

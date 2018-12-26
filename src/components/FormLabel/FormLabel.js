@@ -3,7 +3,7 @@ import React from 'react';
 import classnames from 'classnames';
 
 const FormLabel = ({ className, children, id, ...other }) => {
-  const classNames = classnames('bx--label', className);
+  const classNames = classnames('wfp--label', className);
 
   return (
     <label htmlFor={id} className={classNames} {...other}>

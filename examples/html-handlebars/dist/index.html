@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="storybook-version" content="3.4.11">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+    <title>WFP html handlebars example</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.wfp.org/guides/ui/v1.1.21/assets/css/styles.min.css" />
+    <!-- <link rel="stylesheet" href="../../../css/styles.css" /> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.min.css" />
+  </head>
+  <body>
+    <div class="wfp--banner-navigation">
+    	<div class="wfp--wrapper wfp--wrapper--width-lg">
+    		<ul class="wfp--banner-navigation__list">
+    			<li class="wfp--banner-navigation__item">
+    				<a href="http://communities.wfp.org" class="wfp--link" target="_blank">Communities</a>
+    			</li>
+    			<li class="wfp--banner-navigation__item">
+    				<a href="http://manuals.wfp.org" class="wfp--link" target="_blank">Manuals</a>
+    			</li>
+    			<li class="wfp--banner-navigation__item">
+    				<a href="https://go.docs.wfp.org" class="wfp--link" target="_blank">GoDocs</a>
+    			</li>
+    			<li class="wfp--banner-navigation__item">
+    				<a href="http://opweb.wfp.org" class="wfp--link" target="_blank">OPweb</a>
+    			</li>
+    			<li class="wfp--banner-navigation__item">
+    				<a href="http://info.wfp.org" class="wfp--link" target="_blank">IN/FO</a>
+    			</li>
+    			<li class="wfp--banner-navigation__item">
+    				<a href="https://selfservice.go.wfp.org" class="wfp--link" target="_blank">Self-service</a>
+    			</li>
+    			<li class="wfp--banner-navigation__item">
+    				<a href="https://welearn.wfp.org" class="wfp--link" target="_blank">WeLearn</a>
+    			</li>
+    			<li class="wfp--banner-navigation__item">
+    				<div class="wfp--search wfp--search--lg wfp--search--banner" role="search">
+    					<svg class="wfp--search-magnifier" fill-rule="evenodd" height="16" name="search" role="img" viewBox="0 0 16 16" width="16" aria-label="Search" alt="Search">
+    						<title>Search</title>
+    						<path d="M11.435 10.063h-.728l-.251-.252a5.89 5.89 0 0 0 1.437-3.865 5.946 5.946 0 1 0-5.947 5.947 5.91 5.91 0 0 0 3.865-1.432l.252.251v.723L14.637 16 16 14.637l-4.565-4.574zm-5.489 0a4.117 4.117 0 1 1 0-8.234 4.117 4.117 0 0 1 0 8.234z">							
+    						</path>
+    					</svg>
+    					<label for="search-2" class="wfp--label">Search</label>
+    					<input class="wfp--search-input" id="search-2" placeholder="Search" type="text">
+    					<button class="wfp--search-close wfp--search-close--hidden" type="button">
+    						<svg fill-rule="evenodd" height="16" name="close--solid" role="img" viewBox="0 0 16 16" width="16" aria-label="Provide a description that will be used as the title" alt="Provide a description that will be used as the title">
+    							<title>Provide a description that will be used as the title</title>
+    							<path d="M8 6.586L5.879 4.464 4.464 5.88 6.586 8l-2.122 2.121 1.415 1.415L8 9.414l2.121 2.122 1.415-1.415L9.414 8l2.122-2.121-1.415-1.415L8 6.586zM8 16A8 8 0 1 1 8 0a8 8 0 0 1 0 16z">
+    							</path>
+    						</svg>
+    					</button>
+    				</div>
+    			</li>
+    		</ul>
+    	</div>
+    </div>    <div class="wfp--main-navigation">
+      <div class="wfp--wrapper wfp--wrapper--width-lg wfp--wrapper--width-mobile-full wfp--main-navigation__wrapper">
+        <div class="wfp--main-navigation__logo-wrapper">
+          <button tabindex="0" class="wfp--main-navigation__button wfp--btn wfp--btn--primary" type="button">Menu</button>
+          <div class="wfp--main-navigation__logo"><a href="http://www.wfp.org">WFP UI</a></div>
+        </div>
+        <ul class="wfp--main-navigation__list">
+          <li class="wfp--main-navigation__item">
+            <div class="wfp--main-navigation__trigger"><a href="http://communities.wfp.org" class="wfp--link" target="_blank">Lorem</a></div>
+          </li>
+          <li class="wfp--main-navigation__item">
+            <div class="wfp--main-navigation__trigger"><a href="https://go.docs.wfp.org" class="wfp--link" target="_blank">Ipsum jomen</a></div>
+          </li>
+          <li class="wfp--main-navigation__item">
+            <div class="wfp--main-navigation__trigger"><a href="http://opweb.wfp.org" class="wfp--link" target="_blank">Bin dualem</a></div>
+          </li>
+    
+          <li class="wfp--main-navigation__item">
+            <div class="wfp--main-navigation__trigger wfp--main-navigation__trigger--has-sub"><a href="http://manuals.wfp.org" class="wfp--link" target="_blank">Manuals</a></div>
+            <div class="wfp--main-navigation__sub">
+              <div>
+                <div class="wfp--sub-navigation__header">
+                  <div class="wfp--sub-navigation__title">The Title</div>
+                  <div class="wfp--sub-navigation__link"><button tabindex="0" class="wfp--btn wfp--btn--sm wfp--btn--primary" type="button">The SubPage Link</button></div>
+                  <div class="wfp--sub-navigation__filter">
+                    <div class="wfp--search wfp--search--sm some-class" role="search">
+                      <svg class="wfp--search-magnifier" fill-rule="evenodd" height="16" name="search" role="img" viewBox="0 0 16 16" width="16" aria-label="Provide a description that will be used as the title" alt="Provide a description that will be used as the title">
+                        <title>Provide a description that will be used as the title</title>
+                        <path d="M11.435 10.063h-.728l-.251-.252a5.89 5.89 0 0 0 1.437-3.865 5.946 5.946 0 1 0-5.947 5.947 5.91 5.91 0 0 0 3.865-1.432l.252.251v.723L14.637 16 16 14.637l-4.565-4.574zm-5.489 0a4.117 4.117 0 1 1 0-8.234 4.117 4.117 0 0 1 0 8.234z"></path>
+                      </svg>
+                      <label for="search-2" class="wfp--label"></label><input type="text" class="wfp--search-input" id="search-2" placeholder="Filter List">
+                      <button class="wfp--search-close wfp--search-close--hidden" type="button">
+                        <svg fill-rule="evenodd" height="16" name="close--solid" role="img" viewBox="0 0 16 16" width="16" aria-label="Provide a description that will be used as the title" alt="Provide a description that will be used as the title">
+                          <title>Provide a description that will be used as the title</title>
+                          <path d="M8 6.586L5.879 4.464 4.464 5.88 6.586 8l-2.122 2.121 1.415 1.415L8 9.414l2.121 2.122 1.415-1.415L9.414 8l2.122-2.121-1.415-1.415L8 6.586zM8 16A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"></path>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div class="wfp--sub-navigation__content">
+                  <div class="wfp--sub-navigation__list">
+                    <div class="wfp--sub-navigation__group wfp--sub-navigation__group--columns">
+                      <h3 class="wfp--sub-navigation__group__title">First List</h3>
+                      <div>
+                        <div class="wfp--sub-navigation__item"><a href="https://go.docs.wfp.org" class="wfp--link" target="_blank">Lorem Ipsum et jomen</a></div>
+                        <div class="wfp--sub-navigation__item"><a href="https://go.docs.wfp.org" class="wfp--link" target="_blank">At vero eos</a></div>
+                        <div class="wfp--sub-navigation__item"><a href="https://go.docs.wfp.org" class="wfp--link" target="_blank">Sadipscing elitr</a></div>
+                        <div class="wfp--sub-navigation__item"><a href="https://go.docs.wfp.org" class="wfp--link" target="_blank">At vero eos</a></div>
+                        <div class="wfp--sub-navigation__item"><a href="https://go.docs.wfp.org" class="wfp--link" target="_blank">Sadipscing elitr</a></div>
+                        <div class="wfp--sub-navigation__item"><a href="https://go.docs.wfp.org" class="wfp--link" target="_blank">Dolore magna</a></div>
+                        <div class="wfp--sub-navigation__item"><a href="https://go.docs.wfp.org" class="wfp--link" target="_blank">Sadipscing elitr</a></div>
+                        <div class="wfp--sub-navigation__item"><a href="https://go.docs.wfp.org" class="wfp--link" target="_blank">Consetetur sadipscing</a></div>
+                        <div class="wfp--sub-navigation__item"><a href="https://go.docs.wfp.org" class="wfp--link" target="_blank">Sadipscing elitr</a></div>
+                      </div>
+                    </div>
+                    <div class="wfp--sub-navigation__group wfp--sub-navigation__group--columns">
+                      <h3 class="wfp--sub-navigation__group__title">Second List of Items</h3>
+                      <div>
+                        <div class="wfp--sub-navigation__item"><a href="https://go.docs.wfp.org" class="wfp--link" target="_blank">At vero eos</a></div>
+                        <div class="wfp--sub-navigation__item"><a href="https://go.docs.wfp.org" class="wfp--link" target="_blank">Sadipscing elitr</a></div>
+                        <div class="wfp--sub-navigation__item"><a href="https://go.docs.wfp.org" class="wfp--link" target="_blank">At vero eos</a></div>
+                        <div class="wfp--sub-navigation__item"><a href="https://go.docs.wfp.org" class="wfp--link" target="_blank">Nonumy eirmod</a></div>
+                        <div class="wfp--sub-navigation__item"><a href="https://go.docs.wfp.org" class="wfp--link" target="_blank">Consetetur sadipscing</a></div>
+                        <div class="wfp--sub-navigation__item"><a href="https://go.docs.wfp.org" class="wfp--link" target="_blank">Dolore magna</a></div>
+                        <div class="wfp--sub-navigation__item"><a href="https://go.docs.wfp.org" class="wfp--link" target="_blank">Nonumy eirmod</a></div>
+                        <div class="wfp--sub-navigation__item"><a href="https://go.docs.wfp.org" class="wfp--link" target="_blank">Dolore magna</a></div>
+                        <div class="wfp--sub-navigation__item"><a href="https://go.docs.wfp.org" class="wfp--link" target="_blank">Sadipscing elitr</a></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+    
+           <li class="wfp--main-navigation__item">
+            <div class="wfp--main-navigation__trigger wfp--main-navigation__trigger--has-sub"><a href="http://manuals.wfp.org" class="wfp--link" target="_blank">Sea takimata</a></div>
+            <div class="wfp--main-navigation__sub">
+              <div>
+                <div class="wfp--sub-navigation__header">
+                  <div class="wfp--sub-navigation__title">Another Title</div>
+                  <div class="wfp--sub-navigation__link"><button tabindex="0" class="wfp--btn wfp--btn--sm wfp--btn--primary" type="button">The SubPage Link</button></div>
+                  <div class="wfp--sub-navigation__filter">
+                    <div class="wfp--search wfp--search--sm some-class" role="search">
+                      <svg class="wfp--search-magnifier" fill-rule="evenodd" height="16" name="search" role="img" viewBox="0 0 16 16" width="16" aria-label="Provide a description that will be used as the title" alt="Provide a description that will be used as the title">
+                        <title>Provide a description that will be used as the title</title>
+                        <path d="M11.435 10.063h-.728l-.251-.252a5.89 5.89 0 0 0 1.437-3.865 5.946 5.946 0 1 0-5.947 5.947 5.91 5.91 0 0 0 3.865-1.432l.252.251v.723L14.637 16 16 14.637l-4.565-4.574zm-5.489 0a4.117 4.117 0 1 1 0-8.234 4.117 4.117 0 0 1 0 8.234z"></path>
+                      </svg>
+                      <label for="search-2" class="wfp--label"></label><input type="text" class="wfp--search-input" id="search-2" placeholder="Filter List">
+                      <button class="wfp--search-close wfp--search-close--hidden" type="button">
+                        <svg fill-rule="evenodd" height="16" name="close--solid" role="img" viewBox="0 0 16 16" width="16" aria-label="Provide a description that will be used as the title" alt="Provide a description that will be used as the title">
+                          <title>Provide a description that will be used as the title</title>
+                          <path d="M8 6.586L5.879 4.464 4.464 5.88 6.586 8l-2.122 2.121 1.415 1.415L8 9.414l2.121 2.122 1.415-1.415L9.414 8l2.122-2.121-1.415-1.415L8 6.586zM8 16A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"></path>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div class="wfp--sub-navigation__content">
+                  <div class="wfp--sub-navigation__list">
+                    <div class="wfp--sub-navigation__group wfp--sub-navigation__group--columns">
+                      <h3 class="wfp--sub-navigation__group__title">First List</h3>
+                      <div>
+                        <div class="wfp--sub-navigation__item"><a href="https://go.docs.wfp.org" class="wfp--link" target="_blank">Lorem Ipsum et jomen</a></div>
+                        <div class="wfp--sub-navigation__item"><a href="https://go.docs.wfp.org" class="wfp--link" target="_blank">At vero eos</a></div>
+                        <div class="wfp--sub-navigation__item"><a href="https://go.docs.wfp.org" class="wfp--link" target="_blank">Sadipscing elitr</a></div>
+                        <div class="wfp--sub-navigation__item"><a href="https://go.docs.wfp.org" class="wfp--link" target="_blank">At vero eos</a></div>
+                        <div class="wfp--sub-navigation__item"><a href="https://go.docs.wfp.org" class="wfp--link" target="_blank">Sadipscing elitr</a></div>
+                        <div class="wfp--sub-navigation__item"><a href="https://go.docs.wfp.org" class="wfp--link" target="_blank">Dolore magna</a></div>
+                        <div class="wfp--sub-navigation__item"><a href="https://go.docs.wfp.org" class="wfp--link" target="_blank">Sadipscing elitr</a></div>
+                        <div class="wfp--sub-navigation__item"><a href="https://go.docs.wfp.org" class="wfp--link" target="_blank">Consetetur sadipscing</a></div>
+                        <div class="wfp--sub-navigation__item"><a href="https://go.docs.wfp.org" class="wfp--link" target="_blank">Sadipscing elitr</a></div>
+                      </div>
+                    </div>
+                    <div class="wfp--sub-navigation__group wfp--sub-navigation__group--columns">
+                      <h3 class="wfp--sub-navigation__group__title">Second List of Items</h3>
+                      <div>
+                        <div class="wfp--sub-navigation__item"><a href="https://go.docs.wfp.org" class="wfp--link" target="_blank">At vero eos</a></div>
+                        <div class="wfp--sub-navigation__item"><a href="https://go.docs.wfp.org" class="wfp--link" target="_blank">Sadipscing elitr</a></div>
+                        <div class="wfp--sub-navigation__item"><a href="https://go.docs.wfp.org" class="wfp--link" target="_blank">At vero eos</a></div>
+                        <div class="wfp--sub-navigation__item"><a href="https://go.docs.wfp.org" class="wfp--link" target="_blank">Nonumy eirmod</a></div>
+                        <div class="wfp--sub-navigation__item"><a href="https://go.docs.wfp.org" class="wfp--link" target="_blank">Consetetur sadipscing</a></div>
+                        <div class="wfp--sub-navigation__item"><a href="https://go.docs.wfp.org" class="wfp--link" target="_blank">Dolore magna</a></div>
+                        <div class="wfp--sub-navigation__item"><a href="https://go.docs.wfp.org" class="wfp--link" target="_blank">Nonumy eirmod</a></div>
+                        <div class="wfp--sub-navigation__item"><a href="https://go.docs.wfp.org" class="wfp--link" target="_blank">Dolore magna</a></div>
+                        <div class="wfp--sub-navigation__item"><a href="https://go.docs.wfp.org" class="wfp--link" target="_blank">Sadipscing elitr</a></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+    
+          <li class="wfp--main-navigation__item">
+            <div class="wfp--main-navigation__trigger">
+              <div class="wfp--search wfp--search--lg wfp--search--main" role="search">
+                <svg class="wfp--search-magnifier" fill-rule="evenodd" height="16" name="search" role="img" viewBox="0 0 16 16" width="16" aria-label="Search" alt="Search">
+                  <title>Search</title>
+                  <path d="M11.435 10.063h-.728l-.251-.252a5.89 5.89 0 0 0 1.437-3.865 5.946 5.946 0 1 0-5.947 5.947 5.91 5.91 0 0 0 3.865-1.432l.252.251v.723L14.637 16 16 14.637l-4.565-4.574zm-5.489 0a4.117 4.117 0 1 1 0-8.234 4.117 4.117 0 0 1 0 8.234z"></path>
+                </svg>
+                <label for="search-2" class="wfp--label">Search</label><input type="text" class="wfp--search-input" id="search-2" placeholder="Search">
+                <button class="wfp--search-close wfp--search-close--hidden" type="button">
+                  <svg fill-rule="evenodd" height="16" name="close--solid" role="img" viewBox="0 0 16 16" width="16" aria-label="Provide a description that will be used as the title" alt="Provide a description that will be used as the title">
+                    <title>Provide a description that will be used as the title</title>
+                    <path d="M8 6.586L5.879 4.464 4.464 5.88 6.586 8l-2.122 2.121 1.415 1.415L8 9.414l2.121 2.122 1.415-1.415L9.414 8l2.122-2.121-1.415-1.415L8 6.586zM8 16A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </li>
+    
+          <li class="wfp--main-navigation__user wfp--main-navigation__item">
+            <div class="wfp--main-navigation__trigger wfp--main-navigation__trigger--has-sub">
+              <div class="wfp--user" title="Max Mustermann long name">
+                <svg class="wfp--user__icon wfp--user__icon--empty" fill="#ffffff" fill-rule="evenodd" height="14" name="user" role="img" viewBox="0 0 16 16" width="14" title="Max Mustermann long name" aria-label="User Icon" alt="User Icon">
+                  <title>User Icon</title>
+                  <path d="M6.123 9.455a3.5 3.5 0 1 1 3.754 0c1.958.97 3.571 3.424 4.436 6.64-5.852-.027-6.488-.027-12.62-.027.867-3.203 2.477-5.645 4.43-6.613z"></path>
+                </svg>
+              </div>
+            </div>
+            <div class="wfp--main-navigation__sub">
+              <div>
+                <div class="wfp--sub-navigation__header">
+                  <div class="wfp--sub-navigation__title">User Menu</div>
+                </div>
+                <div class="wfp--sub-navigation__content">
+                  <div class="wfp--sub-navigation__list">
+                    <div class="wfp--sub-navigation__group">
+                      <h3 class="wfp--sub-navigation__group__title">First List</h3>
+                      <div>
+                        <div class="wfp--sub-navigation__item"><a href="https://go.docs.wfp.org" class="wfp--link" target="_blank">Lorem Ipsum et jomen</a></div>
+                        <div class="wfp--sub-navigation__item"><a href="https://go.docs.wfp.org" class="wfp--link" target="_blank">At vero eos</a></div>
+                        <div class="wfp--sub-navigation__item"><a href="https://go.docs.wfp.org" class="wfp--link" target="_blank">Sadipscing elitr</a></div>
+                        <div class="wfp--sub-navigation__item"><a href="https://go.docs.wfp.org" class="wfp--link" target="_blank">At vero eos</a></div>
+                        <div class="wfp--sub-navigation__item"><a href="https://go.docs.wfp.org" class="wfp--link" target="_blank">Sadipscing elitr</a></div>
+                        <div class="wfp--sub-navigation__item"><a href="https://go.docs.wfp.org" class="wfp--link" target="_blank">Dolore magna</a></div>
+                        <div class="wfp--sub-navigation__item"><a href="https://go.docs.wfp.org" class="wfp--link" target="_blank">Sadipscing elitr</a></div>
+                        <div class="wfp--sub-navigation__item"><a href="https://go.docs.wfp.org" class="wfp--link" target="_blank">Consetetur sadipscing</a></div>
+                        <div class="wfp--sub-navigation__item"><a href="https://go.docs.wfp.org" class="wfp--link" target="_blank">Sadipscing elitr</a></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>    <div class="wfp--secondary-navigation">
+      <div class="wfp--wrapper wfp--wrapper--width-lg wfp--secondary-navigation__wrapper">
+        <div class="wfp--secondary-navigation__list">
+          <div class="wfp--breadcrumb wfp--breadcrumb--no-trailing-slash">
+            <div class="wfp--breadcrumb-item">
+              <a href="/#" class="wfp--link">
+                <svg class="wfp--breadcrumb-home" fill="#0b77c2" fill-rule="evenodd" height="14" name="home" role="img" viewBox="0 0 16 16" width="14" aria-label="Provide a description that will be used as the title" alt="Provide a description that will be used as the title">
+                  <title>Provide a description that will be used as the title</title>
+                  <path d="M13.555 9.515v3.842a.654.654 0 0 1-.666.643H9.666a.329.329 0 0 1-.333-.322v-3.002a.329.329 0 0 0-.334-.322H7a.329.329 0 0 0-.333.322v3.002c0 .177-.15.322-.334.322H3.11a.654.654 0 0 1-.667-.643V9.515a.32.32 0 0 1 .122-.25l5.223-4.149a.348.348 0 0 1 .425 0l5.223 4.15c.075.062.12.153.12.25zm2.323-1.632l-2.323-1.847V2.323a.329.329 0 0 0-.333-.322h-1.556a.329.329 0 0 0-.333.322v1.946L8.846 2.294a1.37 1.37 0 0 0-1.694 0L.12 7.883a.315.315 0 0 0-.045.453l.709.83a.343.343 0 0 0 .469.044l6.534-5.193a.348.348 0 0 1 .425 0l6.534 5.193a.343.343 0 0 0 .47-.043l.708-.831a.315.315 0 0 0-.047-.453z"></path>
+                </svg>
+              </a>
+            </div>
+            <div class="wfp--breadcrumb-item"><a href="#" class="wfp--link">Breadcrumb 2</a></div>
+            <div class="wfp--breadcrumb-item"><a href="#" class="wfp--link">Breadcrumb 3</a></div>
+          </div>
+          <h1 class="wfp--secondary-navigation__title">The Page Title</h1>
+          <nav class="wfp--tabs some-class" role="navigation">
+            <div role="listbox" aria-label="listbox" tabindex="0" class="wfp--tabs-trigger">
+              <a tabindex="-1" class="wfp--tabs-trigger-text" href="#anotherAnchor">Tab label 1</a>
+              <svg fill-rule="evenodd" height="5" role="img" viewBox="0 0 10 5" width="10" aria-label="show menu options" alt="show menu options">
+                <title>show menu options</title>
+                <path d="M0 0l5 4.998L10 0z"></path>
+              </svg>
+            </div>
+            <ul role="tablist" class="wfp--tabs__nav wfp--tabs__nav--hidden wfp--tabs__nav--inline">
+              <li role="presentation" tabindex="-1" class="wfp--tabs__nav-item wfp--tabs__nav-item--selected another-class"><a href="http://www.de.wfp.org">Tab label 1</a></li>
+              <li role="presentation" tabindex="-1" class="wfp--tabs__nav-item another-class"><a href="http://www.es.wfp.org">Tab label 2</a></li>
+              <li role="presentation" tabindex="-1" class="wfp--tabs__nav-item another-class"><a href="http://www.us.wfp.org">Tab label 3</a></li>
+              <li role="presentation" tabindex="-1" class="wfp--tabs__nav-item another-class"><a href="http://www.fr.wfp.org">Tab label 4</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="wfp--secondary-navigation__additional">additional Information</div>
+      </div>
+    </div>    <div class="wfp--wrapper--background-lighter">
+      <div class="wfp--wrapper wfp--wrapper--width-lg wfp--wrapper--spacing-md">
+        <div class="row">
+          <div class="col-xs-12 col-md-6 col-lg-4 wfp--module">
+            <div class="wfp--module__inner">
+              <div class="wfp--module__header">
+                <h1 class="wfp--module__title">Module Example</h1>
+              </div>
+              <div class="wfp--module__content">
+                <p>Lorem Ipsum is dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                <p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-12 col-md-6 col-lg-4 wfp--module">
+            <div class="wfp--module__inner">
+              <div class="wfp--module__header">
+                <h1 class="wfp--module__title">Module Example</h1>
+              </div>
+              <div class="wfp--module__content">
+                <p>Lorem Ipsum is dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                <p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-12 col-md-6 col-lg-4 wfp--module">
+            <div class="wfp--module__inner">
+              <div class="wfp--module__header">
+                <h1 class="wfp--module__title">Module Example</h1>
+              </div>
+              <div class="wfp--module__content">
+                <p>Lorem Ipsum is dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                <p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-12 col-md-6 col-lg-6 wfp--module">
+            <div class="wfp--module__inner">
+              <div class="wfp--module__header">
+                <h1 class="wfp--module__title">Module Example</h1>
+              </div>
+              <div class="wfp--module__content">
+                <p>Lorem Ipsum is dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                <p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-12 col-md-6 col-lg-6 wfp--module">
+            <div class="wfp--module__inner">
+              <div class="wfp--module__header">
+                <h1 class="wfp--module__title">Module Example</h1>
+              </div>
+              <div class="wfp--module__content">
+                <p>Lorem Ipsum is dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                <p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer mobilepagewidth="" class="wfp--footer">
+    	<div class="wfp--wrapper wfp--wrapper--width-lg">
+    		<div class="wfp--footer__content">
+    			<div class="wfp--footer__info">
+    				<div class="wfp--footer__info">
+    					<div class="wfp--footer__info__item">
+    						<p class="wfp--footer__label">A label</p>
+    						<ul class="wfp--footer__list">
+    							<li><a href="http://www.wfp.org" class="wfp--link">First Link</a></li>
+    							<li><a href="http://www.wfp.org" class="wfp--link">Second Link</a></li>
+    						</ul></div><div class="wfp--footer__info__item"><p class="wfp--footer__label">Another label</p>
+    							<ul class="wfp--footer__list">
+    								<li><a href="http://www.wfp.org" class="wfp--link">First Link</a></li><li><a href="http://www.wfp.org" class="wfp--link">Second Link</a>
+    								</li>
+    							</ul>
+    						</div>
+    					</div>
+    				</div>
+    				<div class="wfp--footer__cta">
+              <img class="wfp--footer__cta-logo" src="https://cdn.wfp.org/guides/ui/v1.1.21/assets/logos/extended/en/wfp-logo-extended-black-en.svg" alt="World Food Programme Logo" />
+              <img class="wfp--footer__cta-logo-small" src="https://cdn.wfp.org/guides/ui/v1.1.21/assets/logos/standard/en/wfp-logo-standard-black-en.svg" alt="World Food Programme Logo" />
+            </div>
+    			</div>
+    		</div>
+    		<div class="wfp--wrapper wfp--wrapper--width-lg wfp--footer__meta">
+    			<div class="wfp--footer__meta__content">
+            2019 © World Food Programme
+    			</div>
+    		</div>
+    	</footer>  <script type="text/javascript" src="bundle.js"></script></body>
+</html>

@@ -75,6 +75,10 @@
     z-index: z('dropdown');
     background: $ui-01;
 
+    a {
+      text-decoration: none;
+    }
+
     @include breakpoint(bp--sm--major) {
       @include typescale('epsilon');
       flex-direction: row;
@@ -88,6 +92,12 @@
     @include breakpoint(bp--lg--major) {
       margin-left: 0;
     }
+  }
+
+  .#{$prefix}--tabs__nav--inline {
+    position: relative;
+    margin-left: 0;
+    margin-right: 0;
   }
 
   .#{$prefix}--tabs__nav--hidden {

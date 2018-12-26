@@ -13,7 +13,7 @@ import { withKnobs, select, text, number } from '@storybook/addon-knobs/react';
 
 const units = [
   {
-    description: 'Generate USD based on USD',
+    description: 'generate USD based on USD',
     sample: 12345.12345,
     setup: {
       type: 'Usd',
@@ -21,7 +21,7 @@ const units = [
   },
   {
     type: 'Usd',
-    description: 'Generate Million USD based on USD and round to Integer',
+    description: 'generate million USD based on USD and round to integer',
     sample: 12345.12345,
     setup: {
       type: 'Usd',
@@ -32,7 +32,7 @@ const units = [
     },
   },
   {
-    description: 'Generate Million USD based on USD External Style',
+    description: 'generate Million USD based on USD, external style',
     sample: 12345.12345,
     setup: {
       type: 'Usd',
@@ -41,7 +41,7 @@ const units = [
     },
   },
   {
-    description: 'Generate USD based on Million USD',
+    description: 'generate USD based on million USD',
     sample: 1,
     setup: {
       type: 'Usd',
@@ -50,7 +50,7 @@ const units = [
     },
   },
   {
-    description: 'Generate Million USD based on Thousands USD',
+    description: 'generate Million USD based on thousands USD',
     sample: 12345.12345,
     setup: {
       type: 'Usd',
@@ -60,68 +60,68 @@ const units = [
     },
   },
   {
-    description: 'Generate Billion USD based on USD',
-    sample: 12345,
+    description: 'level',
+    sample: 3,
     setup: {
       type: 'Level',
     },
   },
   {
-    description: 'Generate Billion USD based on USD',
+    description: 'partners',
     sample: 12345,
     setup: {
       type: 'Partners',
     },
   },
   {
-    description: 'Generate Billion USD based on USD',
+    description: 'beneficaries',
     sample: 12345,
     setup: {
       type: 'Beneficiaries',
     },
   },
   {
-    description: 'Generate Billion USD based on USD',
+    description: 'generate billion USD based on USD',
     sample: 12345,
     setup: {
       type: 'Households',
     },
   },
   {
-    description: 'Display months',
+    description: 'display months',
     sample: 12,
     setup: {
       type: 'Months',
     },
   },
   {
-    description: 'Months singular',
+    description: 'months singular',
     sample: 1,
     setup: {
       type: 'Months',
     },
   },
   {
-    description: 'No Settings',
+    description: 'no settings',
     sample: 'Lorem Ipsum et jomen',
     setup: {},
   },
   {
-    description: 'Generate Megaton',
+    description: 'generate megaton',
     sample: 12345,
     setup: {
       type: 'Mt',
     },
   },
   {
-    description: 'Generate Billion USD based on USD',
+    description: 'generate billion USD based on USD',
     sample: 12345,
     setup: {
       type: 'People',
     },
   },
   {
-    description: 'Million without a Type',
+    description: 'million without a Type',
     sample: 12345,
     setup: {
       type: 'Num',
@@ -129,7 +129,7 @@ const units = [
     },
   },
   {
-    description: 'Generate Billion USD based on USD',
+    description: 'generate billion USD based on USD',
     sample: 5,
     setup: {
       type: 'Percentage',
@@ -137,21 +137,21 @@ const units = [
     },
   },
   {
-    description: 'Generate Billion USD based on USD',
+    description: 'generate billion USD based on USD',
     sample: 12345,
     setup: {
       type: 'Percentage',
     },
   },
   {
-    description: 'Generate Billion USD based on USD',
+    description: 'generate billion USD based on USD',
     sample: 201807,
     setup: {
       type: 'YearMonth',
     },
   },
   {
-    description: 'Returns no Unit',
+    description: 'returns no Unit',
     sample: 'Hello World',
     setup: {
       type: 'None',
@@ -165,7 +165,7 @@ const units = [
     },
   },
   {
-    description: 'Generate Billion USD based on USD',
+    description: 'Generate billion USD based on USD',
     sample: 12345,
     setup: {
       type: 'Countries',
@@ -176,96 +176,76 @@ const units = [
 storiesOf('Unit', module)
   .addDecorator(withKnobs)
   .addDecorator(withReadme([readme]))
-  .addDecorator(story => (
-    <SingleComponent pageWidth="wide">{story()}</SingleComponent>
-  ))
-  .addWithInfo(
-    'default',
-    `
-      Default minimal usage
-    `,
-    () => <Unit type="Usd">231321133</Unit>
-  )
-  .addWithInfo(
-    'Samples',
-    `
-      Some usage samples
-    `,
-    () => {
-      const columns = [
-        {
-          Header: 'HTML',
-          accessor: 'name',
-          width: 150,
-          Cell: props => {
-            return (
-              <Unit {...props.original.setup}>{props.original.sample}</Unit>
-            );
-          },
+  .add('Samples', () => {
+    const columns = [
+      {
+        Header: 'HTML',
+        accessor: 'name',
+        width: 150,
+        Cell: props => {
+          return <Unit {...props.original.setup}>{props.original.sample}</Unit>;
         },
-        {
-          Header: 'SVG',
-          accessor: 'name',
-          width: 150,
-          Cell: props => {
-            return (
-              <svg width="120" height="20">
-                <g transform="translate(0 17)">
-                  <Unit {...props.original.setup} svg>
-                    {props.original.sample}
-                  </Unit>
-                </g>
-              </svg>
-            );
-          },
+      },
+      {
+        Header: 'SVG',
+        accessor: 'name',
+        width: 150,
+        Cell: props => {
+          return (
+            <svg width="120" height="20">
+              <g transform="translate(0 17)">
+                <Unit {...props.original.setup} svg>
+                  {props.original.sample}
+                </Unit>
+              </g>
+            </svg>
+          );
         },
-        {
-          Header: 'Type',
-          accessor: 'type',
-          width: 150,
-        },
-        {
-          Header: 'Description',
-          accessor: 'description',
-          width: 300,
-        },
-      ];
+      },
+      {
+        Header: 'Type',
+        accessor: 'type',
+        width: 150,
+      },
+      {
+        Header: 'Description',
+        accessor: 'description',
+        width: 500,
+      },
+    ];
 
-      return (
-        <ReactTable
-          data={units}
-          defaultPageSize={10}
-          columns={columns}
-          PaginationComponent={TablePagination}
-          defaultSorted={[
-            {
-              id: 'type',
-            },
-          ]}
-          SubComponent={row => {
-            return (
-              <div style={{ padding: '20px' }}>
-                <Blockquote type="code">
-                  {`<Unit
+    return (
+      <ReactTable
+        data={units}
+        defaultPageSize={10}
+        columns={columns}
+        PaginationComponent={TablePagination}
+        defaultSorted={[
+          {
+            id: 'type',
+          },
+        ]}
+        SubComponent={row => {
+          return (
+            <div style={{ padding: '20px' }}>
+              <Blockquote type="code">
+                {`<Unit
   ${JSON.stringify(row.original.setup)}
 >
   ${row.original.sample}
 </Unit>`}
-                </Blockquote>
-              </div>
-            );
-          }}
-        />
-      );
-    }
-  )
-  .addWithInfo(
-    'Options',
-    `
-      Use Knobs to configure the options
-    `,
+              </Blockquote>
+            </div>
+          );
+        }}
+      />
+    );
+  })
+
+  .add(
+    'default',
     () => {
-      const options = {
+      const typeOptions = {
         None: 'None',
         Narrow: 'Narrow',
         Usd: 'Usd',
@@ -282,57 +262,42 @@ storiesOf('Unit', module)
         Percentage: 'Percentage',
       };
 
-      const type = select('type', options, 'Usd');
-      const output = text('output', 'million');
+      const decimalOptions = {
+        undefined: undefined,
+        thousand: 'thousand',
+        million: 'million',
+        billion: 'billion',
+      };
+
+      const unitProps = {
+        type: select('Unit type (type)', typeOptions, 'Usd'),
+        output: select(
+          'Output decimal name (output)',
+          decimalOptions,
+          'million'
+        ),
+        from: select('Input decimal name (from)', decimalOptions, undefined),
+        minimumFractionDigits: number(
+          'minimum number of fraction digits to use (minimumFractionDigits)',
+          undefined
+        ),
+        maximumFractionDigits: number(
+          'minimum number of fraction digits to use (maximumFractionDigits)',
+          undefined
+        ),
+        maximumSignificantDigits: number(
+          'maximum number of significant digits to use (maximumSignificantDigits)',
+          undefined
+        ),
+        hideEmpty: text('hide value if empty (hideEmpty)', undefined),
+      };
       const value = text('value', 1000000);
-      const from = text('from', undefined);
-      const minimumFractionDigits = number('minimumFractionDigits', undefined);
-      const maximumFractionDigits = number('maximumFractionDigits', undefined);
-      const maximumSignificantDigits = number(
-        'maximumSignificantDigits',
-        undefined
-      );
-      const hideEmpty = text('hideEmpty', undefined);
 
-      return (
-        <div>
-          <h3>Preview</h3>
-
-          <div
-            style={{
-              display: 'flex',
-              border: '1px solid #CCC',
-              marginBottom: '1em',
-              justifyContent: 'center',
-              alignItems: 'center',
-              height: '70px',
-            }}>
-            <Unit
-              type={type}
-              from={from}
-              minimumFractionDigits={minimumFractionDigits}
-              maximumFractionDigits={maximumFractionDigits}
-              maximumSignificantDigits={maximumSignificantDigits}
-              hideEmpty={hideEmpty}
-              output={output}>
-              {value}
-            </Unit>
-          </div>
-          <p>Use Knobs to customize the Probs of the Unit Component.</p>
-          <div>
-            <Blockquote title="Generated Code" type="code">
-              {`<Unit
-  type="${type}"
-  from="${from}"
-  minimumFractionDigits="${minimumFractionDigits}"
-  maximumSignificantDigits="${maximumSignificantDigits}"
-  hideEmpty="${hideEmpty}"
->
-  ${value}
-</Unit>`}
-            </Blockquote>
-          </div>
-        </div>
-      );
+      return <Unit {...unitProps}>{value}</Unit>;
+    },
+    {
+      info: {
+        text: readme,
+      },
     }
   );

@@ -1,0 +1,29 @@
+@import '../../globals/scss/vars';
+@import '../../globals/scss/colors';
+@import '../../globals/scss/typography';
+@import '../../globals/scss/spacing';
+@import '../../globals/scss/helper-mixins';
+@import '../../globals/scss/import-once';
+@import '../../globals/scss/css--reset';
+@import '../Form/form';
+
+@include exports('react-select') {
+  .#{$prefix}--react-select-container {
+    width: 100%;
+    .#{$prefix}--react-select__control {
+      border-radius: 0;
+      background-color: $field-01;
+      border: $input-border;
+      &:hover {
+        border: $input-border;
+      }
+    }
+    .#{$prefix}--react-select__control--is-focused,
+    .#{$prefix}--react-select__control--is-focused:hover {
+      //border: $input-border;
+      box-shadow: none;
+      //border-color: red;
+      @include focus-outline('border-important');
+    }
+  }
+}

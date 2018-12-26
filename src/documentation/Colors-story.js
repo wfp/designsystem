@@ -9,82 +9,92 @@ import colors from '../globals/data/colors';
 
 const colorBlend = ['20', '30', '40', '60', '80'];
 
-storiesOf(' Documentation', module).addWithInfo('Colors', ``, () => {
-  const colorList = colors.ui_colors.map(color => (
-    <li
-      style={{
-        width: '100%',
-        marginBottom: '1%',
-        padding: '1em',
-        border: '1px solid #E5E5E5',
-        listStyleType: 'none',
-      }}>
-      <div
+storiesOf(' Documentation', module).add('Colors', () => {
+  const regularColors = colors.ui_colors.filter(
+    ui_colors => ui_colors.type !== 'symbolic'
+  );
+  const symbolicColors = colors.ui_colors.filter(
+    ui_colors => ui_colors.type === 'symbolic'
+  );
+
+  const colorList = filterList => {
+    return filterList.map(color => (
+      <li
         style={{
-          display: 'flex',
-          webkitColumnBreakInside: 'avoid',
-          pageBreakInside: 'avoid',
-          breakInside: 'avoid-column',
-          flexWrap: 'wrap',
-          height: '100%',
+          width: '100%',
+          marginBottom: '1%',
+          padding: '1em',
+          border: '1px solid #E5E5E5',
+          listStyleType: 'none',
         }}>
         <div
           style={{
-            width: '3.5em',
+            display: 'flex',
+            webkitColumnBreakInside: 'avoid',
+            pageBreakInside: 'avoid',
+            breakInside: 'avoid-column',
+            flexWrap: 'wrap',
             height: '100%',
-            marginTop: '0em',
-            marginRight: '1em',
-            backgroundColor: color.hex,
-          }}
-        />
-        <div style={{ width: '30%', flexGrow: '1', fontSize: '0.8em' }}>
-          <h4>{color.name}</h4>
-          <div>js: {color.name}</div>
-          <div>scss: {color.scss}</div>
-          <div>hex: {color.hex}</div>
-        </div>
-
-        <div
-          style={{
-            width: '50%',
           }}>
-          {colorBlend.map(blend => (
-            <div
-              style={{
-                display: 'flex',
-                fontSize: '0.7em',
-                width: '100%',
-              }}>
+          <div
+            style={{
+              width: '3.5em',
+              height: '100%',
+              marginTop: '0em',
+              marginRight: '1em',
+              backgroundColor: color.hex,
+            }}
+          />
+          <div style={{ width: '30%', flexGrow: '1', fontSize: '0.8em' }}>
+            <h4>{color.name}</h4>
+            <div>js: {color.name}</div>
+            <div>scss: {color.scss}</div>
+            <div>hex: {color.hex}</div>
+          </div>
+
+          <div
+            style={{
+              width: '50%',
+            }}>
+            {colorBlend.map(blend => (
               <div
                 style={{
-                  width: '20px',
-                  height: '20px',
-                  marginTop: '1px',
-                  marginRight: '1em',
-                  marginBottom: '1px',
-                }}
-                className={`color__${color.name}-${blend}`}
-              />
-              <div
-                style={{
-                  marginTop: '2px',
-                  lineHeight: '20px',
+                  display: 'flex',
+                  fontSize: '0.7em',
+                  width: '100%',
                 }}>
-                <span
+                <div
                   style={{
-                    display: 'inline-block',
+                    width: '20px',
+                    height: '20px',
+                    marginTop: '1px',
                     marginRight: '1em',
+                    marginBottom: '1px',
+                  }}
+                  className={`color__${color.name}-${blend}`}
+                />
+                <div
+                  style={{
+                    marginTop: '2px',
+                    lineHeight: '20px',
                   }}>
-                  hex: #0A6EB4
-                </span>
-                scss: {color.scss}-${blend}
+                  <span
+                    style={{
+                      display: 'inline-block',
+                      marginRight: '1em',
+                    }}>
+                    hex: #0A6EB4
+                  </span>
+                  scss: {color.scss}-${blend}
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
-    </li>
-  ));
+      </li>
+    ));
+  };
+
   return (
     <Page title="Colors" subTitle="All colours">
       <p>
@@ -102,9 +112,16 @@ storiesOf(' Documentation', module).addWithInfo('Colors', ``, () => {
         </Link>.
       </p>
 
-      <ul style={{ display: 'flex', flexWrap: 'wrap', margin: 0 }}>
-        {colorList}
+      <ul style={{ display: 'flex', flexWrap: 'wrap' }}>
+        {colorList(regularColors)}
       </ul>
+
+      <h3>Symbolic colors</h3>
+      <ul style={{ display: 'flex', flexWrap: 'wrap' }}>
+        {colorList(symbolicColors)}
+      </ul>
+
+      <p />
 
       <h3>Usage</h3>
 

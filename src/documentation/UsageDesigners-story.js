@@ -3,39 +3,43 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import Page from './Page';
-import Blockquote from '../components/Blockquote';
 import Button from '../components/Button';
 import Link from '../components/Link';
 
-storiesOf(' Documentation.Getting Started', module).addWithInfo(
+storiesOf(' Documentation.Getting Started', module).add(
   'Usage for Designers',
-  ``,
   () => (
     <Page title="Usage for Designers" subTitle="How to use the UI Kit">
-      <h2>For Designers</h2>
       <p>
-        Designers can use a{' '}
+        Designers can use the{' '}
         <Link href="https://www.sketchapp.com/" target="_blank">
           Sketch
         </Link>{' '}
-        libary containing the core visual styles, components and patterns.{' '}
+        and{' '}
         <Link href="https://www.adobe.com/en/products/xd.html" target="_blank">
           Adobe xD
         </Link>{' '}
-        users can also use the Sketch file (<Link
-          href="https://helpx.adobe.com/xd/kb/open-sketch-files-in-xd.html"
-          target="_blank">
-          Instruction
-        </Link>).
+        library containing the core visual styles, components and patterns. All
+        the files can be found on{' '}
+        <Link href="https://github.com/wfp/ui-design-kit" target="_blank">
+          GitHub
+        </Link>.
       </p>
-      <Button href="https://github.com/wfp/ui/blob/next/sketch/WFP%20Template.sketch?raw=true">
-        WFP UI Template
+      <h3>Template</h3>
+      <p>Get guidelines and UI examples</p>
+      <Button href="https://github.com/wfp/ui-design-kit/blob/master/WFP%20Template.sketch?raw=true">
+        WFP UI Template (Sketch)
       </Button>{' '}
-      <Button href="https://github.com/wfp/ui/blob/next/sketch/WFP%20Logos.sketch?raw=true">
-        Logos
+      <Button href="https://github.com/wfp/ui-design-kit/blob/master/WFP%20Template.xd?raw=true">
+        WFP UI Template (Adobe xD)
       </Button>{' '}
-      <Button href="https://github.com/wfp/ui/blob/next/sketch/WFP%20Favicons.sketch?raw=true">
-        Favicons
+      <h3>Assets</h3>
+      <p>All logo variations and Favicons</p>
+      <Button href="https://github.com/wfp/ui-design-kit/blob/master/WFP%20Logos.sketch?raw=true">
+        Logos (Sketch)
+      </Button>{' '}
+      <Button href="https://github.com/wfp/ui-design-kit/blob/master/WFP%20Favicons.sketch?raw=true">
+        Favicons (Sketch)
       </Button>
     </Page>
   )

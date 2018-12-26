@@ -1,41 +1,27 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import SingleComponent from '../../documentation/SingleComponent';
+import { withInfo } from '@storybook/addon-info';
+
+import { withReadme } from 'storybook-readme';
+import readme from './README.md';
+
+import { withKnobs, boolean, text } from '@storybook/addon-knobs';
 import User from '../User';
 
-storiesOf('User', module)
-  .addDecorator(story => (
-    <SingleComponent pageWidth="wide">{story()}</SingleComponent>
-  ))
-  .addWithInfo(
-    'default',
-    `
-      The example below shows an User Icon.
+const UserProps = () => ({
+  alt: text('Alternative Text (alt)', 'The Alt Text'),
+  ellipsis: boolean('Ellipsis (ellipsis)', false),
+  className: 'some-class',
+  image: text('Image (image)', undefined),
+  name: text('User name (name)', 'Max Mustermann'),
+  small: boolean('Small (small)', false),
+});
 
-      ~~~js
-      import { User } from '@wfp/ui';
-      ~~~
-    `,
-    () => <User name="Max Mustermann" />
-  )
-  .addWithInfo(
-    'Small',
-    `
-      The example below shows an User Icon with the Username only visible on desktop devices.
-    `,
-    () => <User small name="Very long and difficult username" />
-  )
-  .addWithInfo(
-    'Ellipsis',
-    `
-      The example below shows an User Icon.
-    `,
-    () => <User ellipsis name="Very long and difficult username" />
-  )
-  .addWithInfo(
-    'Image only',
-    `
-      The example below shows an User Icon.
-    `,
-    () => <User />
-  );
+storiesOf('User', module)
+  .addDecorator(withKnobs)
+  .addDecorator(withReadme([readme]))
+  .add('Default', () => <User {...UserProps()} />, {
+    info: {
+      text: readme,
+    },
+  });

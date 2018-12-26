@@ -24,9 +24,9 @@ import User from '../User';
 
 storiesOf('MainNavigation', module)
   .addDecorator(withReadme([readme]))
-  .addWithInfo(
+  .add(
     'default',
-    `
+    /*`
       The MainNavigation is used across all applications, it is the starting point of the application and offers the top level navigation items.
 
         ~~~js
@@ -39,7 +39,7 @@ storiesOf('MainNavigation', module)
         import { SubNavigation, SubNavigationHeader, SubNavigationTitle, SubNavigationFilter, SubNavigationContent, SubNavigationList, SubNavigationGroup, SubNavigationItem } from '@wfp/ui';
         ~~~
         
-    `,
+    `,*/
     () => (
       <MainNavigation logo={<a href="http://www.wfp.org">WFP UI</a>}>
         <MainNavigationItem>
@@ -59,7 +59,7 @@ storiesOf('MainNavigation', module)
                 <SubNavigationFilter>
                   <Search
                     className="some-class"
-                    small
+                    kind="main"
                     id="search-2"
                     placeHolderText="Filter List"
                   />
@@ -181,7 +181,7 @@ storiesOf('MainNavigation', module)
         </MainNavigationItem>
         <MainNavigationItem>
           <Search
-            main
+            kind="main"
             id="search-2"
             labelText="Search"
             placeHolderText="Search"

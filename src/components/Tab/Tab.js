@@ -17,6 +17,10 @@ export default class Tab extends React.Component {
     selected: PropTypes.bool.isRequired,
     tabIndex: PropTypes.number.isRequired,
     /*
+     * An optional parameter to allow overriding the list element rendering.
+     **/
+    renderListElement: PropTypes.node,
+    /*
      * An optional parameter to allow overriding the anchor rendering.
      * Useful for using Tab along with react-router or other client
      * side router libraries.
@@ -60,6 +64,7 @@ export default class Tab extends React.Component {
       onClick,
       onKeyDown,
       renderAnchor,
+      renderListElement,
       ...other
     } = this.props;
 
@@ -72,35 +77,47 @@ export default class Tab extends React.Component {
     const anchorProps = {
       className: 'wfp--tabs__nav-link',
       href,
+      label,
       role: 'tab',
       tabIndex,
+      ['aria-selected']: selected,
       ref: e => {
         this.tabAnchor = e;
       },
     };
 
+    //  {...other}
+    const liProps = {
+      tabIndex: -1,
+      className: classes,
+      onClick: evt => {
+        console.log('click');
+        handleTabClick(index, label, evt);
+        onClick(evt);
+      },
+      onKeyDown: evt => {
+        this.setTabFocus(evt);
+        handleTabKeyDown(index, label, evt);
+        onKeyDown(evt);
+      },
+      role: 'presentation',
+      selected: selected,
+    };
+
     return (
-      <li
-        {...other}
-        tabIndex={-1}
-        className={classes}
-        onClick={evt => {
-          handleTabClick(index, label, evt);
-          onClick(evt);
-        }}
-        onKeyDown={evt => {
-          this.setTabFocus(evt);
-          handleTabKeyDown(index, label, evt);
-          onKeyDown(evt);
-        }}
-        role="presentation"
-        selected={selected}>
-        {renderAnchor ? (
-          renderAnchor(anchorProps)
+      <React.Fragment>
+        {renderListElement ? (
+          renderListElement(liProps)
         ) : (
-          <a {...anchorProps}>{label}</a>
+          <li {...liProps}>
+            {renderAnchor ? (
+              renderAnchor(anchorProps)
+            ) : (
+              <a {...anchorProps}>{label}</a>
+            )}
+          </li>
         )}
-      </li>
+      </React.Fragment>
     );
   }
 }

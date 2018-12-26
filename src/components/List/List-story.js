@@ -2,8 +2,6 @@
 
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import withTests from '../../internal/withTests';
-import SingleComponent from '../../documentation/SingleComponent';
 
 import { withReadme } from 'storybook-readme';
 import readme from './README.md';
@@ -11,34 +9,29 @@ import readme from './README.md';
 import { List, ListItem } from '../List';
 
 const additionalProps = {
-  onClick: () => {
-    console.log('Clicked!');
-  }, // eslint-disable-line no-console
   className: 'some-class',
 };
 
 storiesOf('List', module)
-  .addDecorator(withTests('List'))
-  .addDecorator(story => <SingleComponent>{story()}</SingleComponent>)
   .addDecorator(withReadme([readme]))
-  .addWithInfo(
+  .add(
     'Default',
-    `
+    /* `
       Lists show a number of connected items written consecutively, typically one below the other.
-    `,
+    `,*/
     () => (
-      <List href="#" {...additionalProps}>
+      <List {...additionalProps}>
         <ListItem>First item</ListItem>
         <ListItem>Second item</ListItem>
         <ListItem>Third item</ListItem>
       </List>
     )
   )
-  .addWithInfo(
+  .add(
     'List with Titles',
-    `
+    /*`
       Lists show a number of connected items written consecutively, typically one below the other.
-    `,
+    `,*/
     () => (
       <List kind="details" {...additionalProps} style={{ columnCount: 3 }}>
         <ListItem title="Strategic Outcome">

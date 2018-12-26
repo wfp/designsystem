@@ -4,22 +4,84 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import Icon from '../Icon';
 import uid from '../../tools/uniqueId';
+import { ButtonTypes } from '../../prop-types/types';
+import { iconCloseSolid, iconCheckmarkSolid } from '@wfp/icons';
 
 export class FileUploaderButton extends Component {
+  state = {};
+
   static propTypes = {
+    /**
+     * Provide a custom className to be applied to the container node
+     */
     className: PropTypes.string,
+
+    /**
+     * Specify whether you want to disable any updates to the FileUploaderButton
+     * label
+     */
     disableLabelChanges: PropTypes.bool,
+
+    /**
+     * Provide a unique id for the underlying <input> node
+     */
     id: PropTypes.string,
+
+    /**
+     * Provide the label text to be read by screen readers when interacting with
+     * this control
+     */
     labelText: PropTypes.string,
+
+    /**
+     * Specify whether you want the component to list the files that have been
+     * submitted to be uploaded
+     */
     listFiles: PropTypes.bool,
+
+    /**
+     * Specify if the component should accept multiple files to upload
+     */
     multiple: PropTypes.bool,
+
+    /**
+     * Provide a name for the underlying <input> node
+     */
+    name: PropTypes.string,
+
+    /**
+     * Provide an optional `onChange` hook that is called each time the <input>
+     * value changes
+     */
     onChange: PropTypes.func,
+
+    /**
+     * Provide an optional `onClick` hook that is called each time the button is
+     * clicked
+     */
     onClick: PropTypes.func,
+
+    /**
+     * Provide an accessibility role for the <FileUploaderButton>
+     */
     role: PropTypes.string,
+
+    /**
+     * Provide a custom tabIndex value for the <FileUploaderButton>
+     */
     tabIndex: PropTypes.number,
-    buttonKind: PropTypes.oneOf(['primary', 'secondary']),
+
+    /**
+     * Specify the type of underlying button
+     */
+    buttonKind: ButtonTypes.buttonKind,
+
+    /**
+     * Specify the types of files that this input should be able to receive
+     */
     accept: PropTypes.arrayOf(PropTypes.string),
   };
+
   static defaultProps = {
     tabIndex: 0,
     disableLabelChanges: false,
@@ -30,16 +92,15 @@ export class FileUploaderButton extends Component {
     onClick: () => {},
     accept: [],
   };
-  state = {
-    labelText: this.props.labelText,
-  };
-  componentWillMount() {
-    this.uid = this.props.id || uid();
-  }
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.labelText !== this.props.labelText) {
-      this.setState({ labelText: nextProps.labelText });
-    }
+
+  static getDerivedStateFromProps({ labelText }, state) {
+    const { prevLabelText } = state;
+    return prevLabelText === labelText
+      ? null
+      : {
+          labelText,
+          prevLabelText: labelText,
+        };
   }
 
   handleChange = evt => {
@@ -65,6 +126,7 @@ export class FileUploaderButton extends Component {
       tabIndex,
       buttonKind,
       accept,
+      name,
       ...other
     } = this.props;
     const classes = classNames({
@@ -72,11 +134,13 @@ export class FileUploaderButton extends Component {
       [className]: className,
     });
 
+    this.uid = this.props.id || uid();
+
     return (
       <div
         role="button"
+        tabIndex="0"
         className={classes}
-        tabIndex={0}
         onKeyDown={evt => {
           if (evt.which === 13 || evt.which === 32) {
             this.input.click();
@@ -95,8 +159,10 @@ export class FileUploaderButton extends Component {
           ref={input => (this.input = input)}
           id={this.uid}
           type="file"
+          tabIndex="-1"
           multiple={multiple}
           accept={accept}
+          name={name}
           onChange={this.handleChange}
           onClick={evt => {
             evt.target.value = null;
@@ -109,10 +175,16 @@ export class FileUploaderButton extends Component {
 
 export class Filename extends Component {
   static propTypes = {
+    /**
+     * Specify an optional object of styles to be applied inline to the root
+     * node
+     */
     style: PropTypes.object,
+
+    /**
+     * Specify the status of the File Upload
+     */
     status: PropTypes.oneOf(['edit', 'complete', 'uploading']),
-    tabIndex: PropTypes.number,
-    onKeyDown: PropTypes.func,
   };
 
   static defaultProps = {
@@ -141,7 +213,7 @@ export class Filename extends Component {
         <Icon
           description={iconDescription}
           className="wfp--file-close"
-          name="close--glyph"
+          icon={iconCloseSolid}
           style={style}
           {...other}
         />
@@ -151,7 +223,7 @@ export class Filename extends Component {
         <Icon
           description={iconDescription}
           className="wfp--file-complete"
-          name="checkmark--glyph"
+          icon={iconCheckmarkSolid}
           style={style}
           {...other}
         />
@@ -166,13 +238,13 @@ export default class FileUploader extends Component {
   static propTypes = {
     iconDescription: PropTypes.string,
     buttonLabel: PropTypes.string,
-    buttonKind: PropTypes.oneOf(['primary', 'secondary']),
+    buttonKind: ButtonTypes.buttonKind,
     filenameStatus: PropTypes.oneOf(['edit', 'complete', 'uploading'])
       .isRequired,
     labelDescription: PropTypes.string,
     labelTitle: PropTypes.string,
     multiple: PropTypes.bool,
-    onChange: PropTypes.func,
+    name: PropTypes.string,
     onClick: PropTypes.func,
     className: PropTypes.string,
     accept: PropTypes.arrayOf(PropTypes.string),
@@ -184,25 +256,33 @@ export default class FileUploader extends Component {
     buttonLabel: '',
     buttonKind: 'primary',
     multiple: false,
-    onChange: () => {},
     onClick: () => {},
     accept: [],
   };
 
   state = {
     filenames: [],
-    filenameStatus: '',
   };
 
   nodes = [];
 
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.filenameStatus !== this.props.filenameStatus) {
-      this.setState({ filenameStatus: nextProps.filenameStatus });
-    }
+  static getDerivedStateFromProps({ filenameStatus }, state) {
+    const { prevFilenameStatus } = state;
+    return prevFilenameStatus === filenameStatus
+      ? null
+      : {
+          filenameStatus,
+          prevFilenameStatus: filenameStatus,
+        };
   }
+
   handleChange = evt => {
-    this.setState({ filenames: [...evt.target.files].map(file => file.name) });
+    evt.stopPropagation();
+    this.setState({
+      filenames: this.state.filenames.concat(
+        Array.prototype.map.call(evt.target.files, file => file.name)
+      ),
+    });
     this.props.onChange(evt);
   };
 
@@ -230,6 +310,7 @@ export default class FileUploader extends Component {
       className,
       multiple,
       accept,
+      name,
       ...other
     } = this.props;
 
@@ -249,6 +330,7 @@ export default class FileUploader extends Component {
           onChange={this.handleChange}
           disableLabelChanges
           accept={accept}
+          name={name}
         />
         <div className="wfp--file-container">
           {this.state.filenames.length === 0
@@ -264,12 +346,6 @@ export default class FileUploader extends Component {
                     <Filename
                       iconDescription={iconDescription}
                       status={filenameStatus}
-                      onClick={evt => {
-                        if (filenameStatus === 'edit') {
-                          this.handleClick(evt, index);
-                        }
-                      }}
-                      iconDescription={iconDescription}
                       onKeyDown={evt => {
                         if (evt.which === 13 || evt.which === 32) {
                           this.handleClick(evt, index);
