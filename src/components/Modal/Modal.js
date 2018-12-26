@@ -15,7 +15,7 @@ const matchesFuncName =
     name => typeof Element.prototype[name] === 'function'
   )[0];
 
-const modalRoot = document.body;
+const modalRoot = typeof document !== 'undefined' ? document.body : undefined;
 
 export default class Modal extends Component {
   static propTypes = {

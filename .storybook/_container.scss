@@ -3,7 +3,6 @@ $css--reset: true;
 
 @import 'src/globals/scss/styles.scss';
 
-
 /*
   Formating Info Panel
  TODO: find another solution
@@ -14,23 +13,23 @@ html {
 }
 body {
   height: 100%;
-  div[role="main"] {
+  div[role='main'] {
     height: 100%;
   }
   #root {
     height: 100%;
-    >div {
+    > div {
       /*main */
       > div {
-        >div {
+        > div {
           > div {
-            button[type="button"] {
+            button[type='button'] {
               z-index: 10000000;
             }
             > div:last-child {
               z-index: 1000000000 !important;
-              >div {
-                >div {
+              > div {
+                > div {
                   border: none !important;
                 }
               }
@@ -166,7 +165,6 @@ table {
     background-size: 20px 20px;
   }
 }
-
 
 .color__main-20 {
   background: $color__main-20;

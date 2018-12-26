@@ -19,7 +19,7 @@ storiesOf('FormHint', module)
         <label className="wfp--label" htmlFor="input">
           The Label <FormHint {...props()} />
         </label>
-        <input id="input"/>
+        <input id="input" />
       </div>
     ),
     {

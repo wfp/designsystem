@@ -2,7 +2,6 @@ const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 
-
 const useExperimentalFeatures =
   process.env.CARBON_USE_EXPERIMENTAL_FEATURES === 'true';
 
@@ -15,9 +14,6 @@ const useStyleSourceMap =
 const replaceTable = {
   componentsX: useExperimentalFeatures,
 };
-
-
-
 
 const styleLoaders = [
   {
@@ -109,7 +105,6 @@ module.exports = (baseConfig, env, defaultConfig) => {
       ...styleLoaders,
     ],
   });
-
 
   defaultConfig.module.rules.push({
     test: /\.hbs$/,
