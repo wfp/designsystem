@@ -1,5 +1,5 @@
 import React from 'react';
-import { configure, addDecorator } from '@storybook/react';
+import { addParameters, configure, addDecorator } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
 import { withOptions } from '@storybook/addon-options';
 // import { checkA11y } from 'storybook-addon-a11y';
@@ -7,18 +7,18 @@ import { withOptions } from '@storybook/addon-options';
 import { getStorybook } from '@storybook/react';
 //import { initializeRTL } from 'storybook-addon-rtl';
 
-
 import Container from './Container';
 
 import { withTests } from '@storybook/addon-jest';
- 
 import results from '../.jest-test-results.json';
  
-
 addDecorator(
   withTests({
     results,
-  }),
+  })
+);
+
+addDecorator(
   withInfo({
     maxPropStringLength: 200, // Displays the first 200 characters in the default prop string
     styles: stylesheet => {

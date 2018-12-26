@@ -7,6 +7,9 @@ import { iconAddSolid, iconSearch } from '@wfp/icons';
 import Button from '../Button';
 import ButtonSkeleton from '../Button/Button.Skeleton';
 
+import results from '../../../.jest-test-results.json';
+import { withTests } from '@storybook/addon-jest';
+
 import { withReadme } from 'storybook-readme';
 import readme from './README.md';
 
@@ -52,7 +55,7 @@ const props = {
 };
 
 storiesOf('Buttons', module)
-  .addParameters({ jest: ['Button'] })
+  .addParameters({ jest: ['Button-test'] })
   .addDecorator(withKnobs)
   .add(
     'Default',
@@ -69,7 +72,7 @@ storiesOf('Buttons', module)
           </Button>
           &nbsp;
         </div>
-      );
+      )
     },
     {
       info: {

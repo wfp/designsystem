@@ -16,6 +16,7 @@ exports[`ModalWrapper should render 1`] = `
   triggerButtonKind="primary"
 >
   <div
+    className="wfp--modal__wrapper"
     onKeyDown={[Function]}
     role="presentation"
   >
@@ -23,10 +24,13 @@ exports[`ModalWrapper should render 1`] = `
       className="btn-trigger"
       disabled={false}
       iconDescription="Provide icon description if icon is used"
+      iconReverse={false}
+      id="modal"
       inputref={
         Object {
           "current": <button
             class="btn-trigger wfp--btn wfp--btn--primary"
+            id="modal"
             inputref="[object Object]"
             tabindex="0"
             type="button"
@@ -44,10 +48,12 @@ exports[`ModalWrapper should render 1`] = `
       <button
         className="btn-trigger wfp--btn wfp--btn--primary"
         disabled={false}
+        id="modal"
         inputref={
           Object {
             "current": <button
               class="btn-trigger wfp--btn wfp--btn--primary"
+              id="modal"
               inputref="[object Object]"
               tabindex="0"
               type="button"
@@ -65,7 +71,7 @@ exports[`ModalWrapper should render 1`] = `
     </Button>
     <Modal
       iconDescription="close the modal"
-      id="modal"
+      inPortal={true}
       modalHeading="Transactional Modal"
       modalLabel="Test Modal Label"
       onKeyDown={[Function]}
@@ -77,154 +83,212 @@ exports[`ModalWrapper should render 1`] = `
       primaryButtonText="Save"
       secondaryButtonText="Cancel"
       selectorPrimaryFocus="[data-modal-primary-focus]"
-      selectorsFloatingMenus={
-        Array [
-          ".wfp--overflow-menu-options",
-          ".wfp--tooltip",
-          ".flatpickr-calendar",
-        ]
-      }
     >
-      <div
-        className="wfp--modal wfp--modal-tall"
-        id="modal"
-        onBlur={[Function]}
-        onClick={[Function]}
-        onKeyDown={[Function]}
-        role="presentation"
-        tabIndex={-1}
-      >
-        <div
-          className="wfp--modal-container"
-          role="dialog"
-        >
-          <div
-            className="wfp--modal-header"
-          >
-            <h4
-              className="wfp--modal-header__label"
-            >
-              Test Modal Label
-            </h4>
-            <h2
-              className="wfp--modal-header__heading"
-            >
-              Transactional Modal
-            </h2>
-            <button
-              className="wfp--modal-close"
-              onClick={[Function]}
-              type="button"
-            >
-              <Icon
-                className="wfp--modal-close__icon"
-                description="close the modal"
-                fillRule="evenodd"
-                icon={
-                  Object {
-                    "height": "10",
-                    "id": "icon--close",
-                    "name": "icon--close",
-                    "styles": "",
-                    "svgData": Object {
-                      "circles": "",
-                      "ellipses": "",
-                      "paths": Array [
-                        Object {
-                          "d": "M6.32 5L10 8.68 8.68 10 5 6.32 1.32 10 0 8.68 3.68 5 0 1.32 1.32 0 5 3.68 8.68 0 10 1.32 6.32 5z",
-                          "fill-rule": "nonzero",
-                        },
-                      ],
-                      "polygons": "",
-                      "polylines": "",
-                      "rects": "",
-                    },
-                    "tags": "icon--close",
-                    "viewBox": "0 0 10 10",
-                    "width": "10",
-                  }
-                }
-                role="img"
-              >
-                <svg
-                  alt="close the modal"
-                  aria-label="close the modal"
-                  className="wfp--modal-close__icon"
-                  fillRule="evenodd"
-                  height="10"
-                  role="img"
-                  viewBox="0 0 10 10"
-                  width="10"
-                >
-                  <title>
-                    close the modal
-                  </title>
-                  <path
-                    d="M6.32 5L10 8.68 8.68 10 5 6.32 1.32 10 0 8.68 3.68 5 0 1.32 1.32 0 5 3.68 8.68 0 10 1.32 6.32 5z"
-                    key="key0"
-                  />
-                </svg>
-              </Icon>
-            </button>
-          </div>
-          <div
-            className="wfp--modal-content"
-          >
-            <p
-              className="wfp--modal-content__text"
-            >
-              Text
-            </p>
-          </div>
-          <div
-            className="wfp--modal-footer"
-          >
+      <Portal
+        containerInfo={
+          <div>
             <div
-              className="wfp--modal__buttons-container"
+              class="wfp--modal wfp--modal-tall"
+              role="presentation"
+              tabindex="-1"
             >
-              <Button
-                disabled={false}
-                iconDescription="Provide icon description if icon is used"
-                kind="secondary"
-                onClick={[Function]}
-                small={false}
-                tabIndex={0}
-                type="button"
+              <div
+                class="wfp--modal-container"
+                role="dialog"
               >
-                <button
-                  className="wfp--btn wfp--btn--secondary"
-                  disabled={false}
-                  onClick={[Function]}
-                  tabIndex={0}
-                  type="button"
+                <div
+                  class="wfp--modal-header"
                 >
-                  Cancel
-                </button>
-              </Button>
-              <Button
-                disabled={false}
-                iconDescription="Provide icon description if icon is used"
-                inputref={
-                  Object {
-                    "current": <button
+                  <h4
+                    class="wfp--modal-header__label"
+                  >
+                    Test Modal Label
+                  </h4>
+                  <h2
+                    class="wfp--modal-header__heading"
+                  >
+                    Transactional Modal
+                  </h2>
+                  <button
+                    class="wfp--modal-close"
+                    type="button"
+                  >
+                    <svg
+                      alt="close the modal"
+                      aria-label="close the modal"
+                      class="wfp--modal-close__icon"
+                      fill-rule="evenodd"
+                      height="10"
+                      role="img"
+                      viewBox="0 0 10 10"
+                      width="10"
+                    >
+                      <title>
+                        close the modal
+                      </title>
+                      <path
+                        d="M6.32 5L10 8.68 8.68 10 5 6.32 1.32 10 0 8.68 3.68 5 0 1.32 1.32 0 5 3.68 8.68 0 10 1.32 6.32 5z"
+                      />
+                    </svg>
+                  </button>
+                </div>
+                <div
+                  class="wfp--modal-content"
+                >
+                  <p
+                    class="wfp--modal-content__text"
+                  >
+                    Text
+                  </p>
+                </div>
+                <div
+                  class="wfp--modal-footer"
+                >
+                  <div
+                    class="wfp--modal__buttons-container"
+                  >
+                    <button
+                      class="wfp--btn wfp--btn--secondary"
+                      tabindex="0"
+                      type="button"
+                    >
+                      Cancel
+                    </button>
+                    <button
                       class="wfp--btn wfp--btn--primary"
                       inputref="[object Object]"
                       tabindex="0"
                       type="button"
                     >
                       Save
-                    </button>,
-                  }
-                }
-                kind="primary"
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        }
+      >
+        <div
+          className="wfp--modal wfp--modal-tall"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          role="presentation"
+          tabIndex={-1}
+        >
+          <div
+            className="wfp--modal-container"
+            role="dialog"
+          >
+            <div
+              className="wfp--modal-header"
+            >
+              <h4
+                className="wfp--modal-header__label"
+              >
+                Test Modal Label
+              </h4>
+              <h2
+                className="wfp--modal-header__heading"
+              >
+                Transactional Modal
+              </h2>
+              <button
+                className="wfp--modal-close"
                 onClick={[Function]}
-                small={false}
-                tabIndex={0}
                 type="button"
               >
-                <button
-                  className="wfp--btn wfp--btn--primary"
+                <Icon
+                  className="wfp--modal-close__icon"
+                  description="close the modal"
+                  fillRule="evenodd"
+                  icon={
+                    Object {
+                      "height": "10",
+                      "id": "icon--close",
+                      "name": "icon--close",
+                      "styles": "",
+                      "svgData": Object {
+                        "circles": "",
+                        "ellipses": "",
+                        "paths": Array [
+                          Object {
+                            "d": "M6.32 5L10 8.68 8.68 10 5 6.32 1.32 10 0 8.68 3.68 5 0 1.32 1.32 0 5 3.68 8.68 0 10 1.32 6.32 5z",
+                            "fill-rule": "nonzero",
+                          },
+                        ],
+                        "polygons": "",
+                        "polylines": "",
+                        "rects": "",
+                      },
+                      "tags": "icon--close",
+                      "viewBox": "0 0 10 10",
+                      "width": "10",
+                    }
+                  }
+                  role="img"
+                >
+                  <svg
+                    alt="close the modal"
+                    aria-label="close the modal"
+                    className="wfp--modal-close__icon"
+                    fillRule="evenodd"
+                    height="10"
+                    role="img"
+                    viewBox="0 0 10 10"
+                    width="10"
+                  >
+                    <title>
+                      close the modal
+                    </title>
+                    <path
+                      d="M6.32 5L10 8.68 8.68 10 5 6.32 1.32 10 0 8.68 3.68 5 0 1.32 1.32 0 5 3.68 8.68 0 10 1.32 6.32 5z"
+                      key="key0"
+                    />
+                  </svg>
+                </Icon>
+              </button>
+            </div>
+            <div
+              className="wfp--modal-content"
+            >
+              <p
+                className="wfp--modal-content__text"
+              >
+                Text
+              </p>
+            </div>
+            <div
+              className="wfp--modal-footer"
+            >
+              <div
+                className="wfp--modal__buttons-container"
+              >
+                <Button
                   disabled={false}
+                  iconDescription="Provide icon description if icon is used"
+                  iconReverse={false}
+                  kind="secondary"
+                  onClick={[Function]}
+                  small={false}
+                  tabIndex={0}
+                  type="button"
+                >
+                  <button
+                    className="wfp--btn wfp--btn--secondary"
+                    disabled={false}
+                    onClick={[Function]}
+                    tabIndex={0}
+                    type="button"
+                  >
+                    Cancel
+                  </button>
+                </Button>
+                <Button
+                  disabled={false}
+                  iconDescription="Provide icon description if icon is used"
+                  iconReverse={false}
                   inputref={
                     Object {
                       "current": <button
@@ -237,17 +301,39 @@ exports[`ModalWrapper should render 1`] = `
                       </button>,
                     }
                   }
+                  kind="primary"
                   onClick={[Function]}
+                  small={false}
                   tabIndex={0}
                   type="button"
                 >
-                  Save
-                </button>
-              </Button>
+                  <button
+                    className="wfp--btn wfp--btn--primary"
+                    disabled={false}
+                    inputref={
+                      Object {
+                        "current": <button
+                          class="wfp--btn wfp--btn--primary"
+                          inputref="[object Object]"
+                          tabindex="0"
+                          type="button"
+                        >
+                          Save
+                        </button>,
+                      }
+                    }
+                    onClick={[Function]}
+                    tabIndex={0}
+                    type="button"
+                  >
+                    Save
+                  </button>
+                </Button>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      </Portal>
     </Modal>
   </div>
 </ModalWrapper>

@@ -60,6 +60,7 @@ const props = {
 
 storiesOf('Card', module)
   .addDecorator(withKnobs)
+  .addParameters({ jest: ['Card-test'] })
   .addDecorator(withReadme([readme]))
   .addDecorator(story => (
     <div data-flexbasis='800px'>{story()}</div>

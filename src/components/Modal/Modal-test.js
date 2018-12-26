@@ -6,8 +6,8 @@ import { shallow, mount } from 'enzyme';
 
 describe('Modal', () => {
   describe('Renders as expected', () => {
-    const wrapper = shallow(<Modal className="extra-class" />);
-    const mounted = mount(<Modal className="extra-class" />);
+    const wrapper = shallow(<Modal className="extra-class" inPortal={false} />);
+    const mounted = mount(<Modal className="extra-class" inPortal={false} />);
 
     it('has the expected classes', () => {
       expect(wrapper.hasClass('wfp--modal')).toEqual(true);
@@ -27,7 +27,7 @@ describe('Modal', () => {
     });
 
     it('should set id if one is passed via props', () => {
-      const modal = shallow(<Modal id="modal-1" />);
+      const modal = shallow(<Modal id="modal-1" inPortal={false} />);
       expect(modal.props().id).toEqual('modal-1');
     });
 
@@ -208,7 +208,7 @@ describe('Modal Wrapper', () => {
 });
 describe('Danger Modal', () => {
   describe('Renders as expected', () => {
-    const wrapper = shallow(<Modal danger />);
+    const wrapper = shallow(<Modal danger inPortal={false} />);
 
     it('has the expected classes', () => {
       expect(wrapper.hasClass('wfp--modal--danger')).toEqual(true);

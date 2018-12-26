@@ -8,7 +8,7 @@ const FormError = ({ className, message, submitFailed }) => {
 
   if (message && submitFailed === true) {
     return (
-      <Blockquote warning withIcon={true}>
+      <Blockquote className={className} warning withIcon={true}>
         <h4 className="wfp--form-error__title">{message.generic}</h4>
 
         {message.fields && (

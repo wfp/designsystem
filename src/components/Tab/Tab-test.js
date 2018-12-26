@@ -8,7 +8,7 @@ describe('Tab', () => {
 
     it('adds extra classes that are passed via className', () => {
       wrapper.setProps({ className: 'extra-class' });
-      expect(wrapper.hasClass('extra-class')).toBe(true);
+      expect(wrapper.find('li').hasClass('extra-class')).toBe(true);
     });
 
     it('renders <a> with expected className', () => {
@@ -16,7 +16,7 @@ describe('Tab', () => {
     });
 
     it('renders <li> with [role="presentation"]', () => {
-      expect(wrapper.props().role).toEqual('presentation');
+      expect(wrapper.find('li').props().role).toEqual('presentation');
     });
 
     it('renders <a> with [role="tab"]', () => {
@@ -45,13 +45,13 @@ describe('Tab', () => {
       expect(wrapper.find('a').props().href).toEqual('#other-content');
     });
 
-    it('should not have [className="wfp--tabs__nav-item--selected"] by default', () => {
-      expect(wrapper.hasClass('wfp--tabs__nav-item--selected')).toBe(false);
+    it('should not have [className="bx--tabs__nav-item--selected"] by default', () => {
+      expect(wrapper.hasClass('bx--tabs__nav-item--selected')).toBe(false);
     });
 
     it('adds [className="wfp--tabs__nav-item--selected"] when selected prop is true', () => {
       wrapper.setProps({ selected: true });
-      expect(wrapper.hasClass('wfp--tabs__nav-item--selected')).toBe(true);
+      expect(wrapper.find('li').hasClass('wfp--tabs__nav-item--selected')).toBe(true);
     });
   });
 
@@ -63,13 +63,13 @@ describe('Tab', () => {
 
       it('invokes handleTabClick from onClick prop', () => {
         wrapper.setProps({ handleTabClick });
-        wrapper.simulate('click');
+        wrapper.find('li').simulate('click');
         expect(handleTabClick).toBeCalled();
       });
 
       it('invokes onClick when a function is passed to onClick prop', () => {
         wrapper.setProps({ onClick });
-        wrapper.simulate('click');
+        wrapper.find('li').simulate('click');
         expect(onClick).toBeCalled();
       });
     });
@@ -82,13 +82,13 @@ describe('Tab', () => {
       wrapper.setProps({ onKeyDown, handleTabAnchorFocus, handleTabKeyDown });
 
       it('invokes onKeyDown when a function is passed to onKeyDown prop', () => {
-        wrapper.simulate('keyDown', { which: 38 });
+        wrapper.find('li').simulate('keyDown', { which: 38 });
         expect(onKeyDown).toBeCalled();
         expect(handleTabAnchorFocus).not.toBeCalled();
       });
 
       it('invokes handleTabAnchorFocus when onKeyDown occurs for appropriate events', () => {
-        wrapper.simulate('keyDown', { which: 37 });
+        wrapper.find('li').simulate('keyDown', { which: 37 });
         expect(onKeyDown).toBeCalled();
         expect(handleTabAnchorFocus).toBeCalled();
       });

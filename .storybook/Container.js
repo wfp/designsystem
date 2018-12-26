@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+
 import './polyfills';
 import './_container.scss';
 import '../assets/css/styles.css';
@@ -7,6 +8,7 @@ import { withOptions } from '@storybook/addon-options';
 
 import SingleComponent from '../src/documentation/SingleComponent';
 
+
 export default class Container extends Component {
 
   constructor(props) {
@@ -14,13 +16,15 @@ export default class Container extends Component {
     this.state = {context: {}};
   }
 
-
-
   static getDerivedStateFromProps(nextProps, prevState){
+
 
     console.log("state", nextProps.context.kind !== prevState.context.kind || nextProps.context.story !== prevState.context.story, nextProps.context.kind !== prevState.context.kind, nextProps.context.story !== prevState.context.story, nextProps.context, prevState.context);
       if(nextProps.context.kind !== prevState.context.kind || nextProps.context.story !== prevState.context.story){
-        console.log("update now");
+
+
+    //nextProps.story.addParameters({ jest: ['Card-test'] });
+
         window.scrollTo(0, 0);
         if (nextProps.context.story.includes('html')) {
           withOptions({ selectedAddonPanel: 'lucid-docs-panel-code' });
@@ -40,10 +44,11 @@ export default class Container extends Component {
 
   render() {
     const { context, story } = this.props;
-
     console.log("context, story", this.props);
 
     const storyRender = story();
+
+    console.log('storyRender', storyRender);
     const flexBasis = storyRender.props.children && storyRender.props.children.props ? storyRender.props.children.props['data-flexbasis'] : undefined;
 
     console.log("render", storyRender);
@@ -51,6 +56,7 @@ export default class Container extends Component {
     if (context && !context.kind.indexOf(' ') == 0) {
       return (
         <div role="main">
+        <button onClick={this.addParams}>Add Tests</button>
           <SingleComponent flexBasis={flexBasis ? flexBasis : undefined} html={context.story.includes('html') ? true : false}>
             { storyRender }
           </SingleComponent>
@@ -65,6 +71,7 @@ export default class Container extends Component {
     } else {
       return (
         <div role="main" id="container">
+        <button onClick={this.addParams}>Add Tests</button>
           { storyRender }
         </div>
       );

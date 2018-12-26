@@ -207,7 +207,7 @@ describe('NumberInput', () => {
       });
     });
 
-    describe('label', () => {
+    describe('labelText', () => {
       it('renders a label', () => {
         expect(label.length).toEqual(1);
       });

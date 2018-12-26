@@ -14,8 +14,8 @@ describe('Tag', () => {
     it('should provide a default label based on the type', () => {
       const tag = shallow(<Tag type="beta" />);
       expect(tag.text()).toEqual('Beta');
-      tag.setProps({ type: 'ibm' });
-      expect(tag.text()).toEqual('IBM');
+      tag.setProps({ type: 'wfp' });
+      expect(tag.text()).toEqual('WFP');
     });
   });
 

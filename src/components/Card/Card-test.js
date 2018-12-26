@@ -2,7 +2,7 @@ import React from 'react';
 import Link from '../Link';
 import { shallow } from 'enzyme';
 
-describe('Credits', () => {
+describe('Card', () => {
   describe('Renders as expected', () => {
     const link = shallow(
       <Link href="www.google.com" className="some-class">
