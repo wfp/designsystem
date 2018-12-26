@@ -51,7 +51,9 @@ describe('Tab', () => {
 
     it('adds [className="wfp--tabs__nav-item--selected"] when selected prop is true', () => {
       wrapper.setProps({ selected: true });
-      expect(wrapper.find('li').hasClass('wfp--tabs__nav-item--selected')).toBe(true);
+      expect(wrapper.find('li').hasClass('wfp--tabs__nav-item--selected')).toBe(
+        true
+      );
     });
   });
 

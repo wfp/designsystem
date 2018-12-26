@@ -50,9 +50,10 @@ storiesOf('Modal', module)
           functionality.
         </p>
       </Modal>
-    ),{
+    ),
+    {
       info: {
         text: readme,
       },
-    })
-  ;
+    }
+  );

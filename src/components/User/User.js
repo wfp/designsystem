@@ -3,7 +3,16 @@ import React from 'react';
 import classNames from 'classnames';
 import Icon from '../Icon';
 
-const User = ({ alt, className, children, ellipsis, image, small, name, ...other }) => {
+const User = ({
+  alt,
+  className,
+  children,
+  ellipsis,
+  image,
+  small,
+  name,
+  ...other
+}) => {
   var avatar;
   if (image === undefined) {
     avatar = (

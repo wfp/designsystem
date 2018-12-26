@@ -50,7 +50,8 @@
     }
   }
 
-  a,button {
+  a,
+  button {
     &.#{$prefix}--btn--icon-only {
       padding: 0 $spacing-sm;
       .#{$prefix}--btn__icon {

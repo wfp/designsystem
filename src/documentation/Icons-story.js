@@ -10,8 +10,7 @@ import Link from '../components/Link';
 import Icon from '../components/Icon';
 import iconList from '@wfp/icons/dist/carbon-icons.json';
 
-storiesOf(' Documentation', module)
-  .add('Icons', () => (
+storiesOf(' Documentation', module).add('Icons', () => (
   <Page title="Icons" subTitle="Introduction to the new WFP UI Kit">
     <p>
       For Usage please take a look at the{' '}

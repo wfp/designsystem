@@ -212,7 +212,15 @@
     }
     .#{$prefix}--step-navigation__nav-item__indicator {
       border-color: $ui-04;
-      clip-path: polygon(0 -100%, 56% -100%, 56% 14%, 93% 50%, 56% 90%, 56% 100%, 0 100%);
+      clip-path: polygon(
+        0 -100%,
+        56% -100%,
+        56% 14%,
+        93% 50%,
+        56% 90%,
+        56% 100%,
+        0 100%
+      );
       > svg {
         top: 0px;
         fill: $ui-05 !important;

@@ -48,8 +48,7 @@ const LogoElement = ({ color, logoKind, src }) => {
   );
 };
 
-storiesOf(' Documentation', module)
-  .add('Logos', () => {
+storiesOf(' Documentation', module).add('Logos', () => {
   const logoKinds = [
     {
       key: 'standard',

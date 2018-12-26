@@ -13,7 +13,7 @@ setIconsList(iconsList);
 const icons = {
   'Add (iconAdd from `@wfp/icons`)': 'iconAdd',
   'Add with filled circle (iconAddSolid from `@wfp/icons`)': 'iconAddSolid',
-  'Add with circle (iconAddOutline from `@wfp/icons`)': 'iconAddOutline'
+  'Add with circle (iconAddOutline from `@wfp/icons`)': 'iconAddOutline',
 };
 
 const iconMap = {
@@ -23,11 +23,7 @@ const iconMap = {
 };
 
 const props = () => {
-  const selectedIcon = select(
-    'The icon (icon (regular))',
-    icons,
-    'iconAdd'
-  );
+  const selectedIcon = select('The icon (icon (regular))', icons, 'iconAdd');
   return {
     style: {
       margin: '50px',

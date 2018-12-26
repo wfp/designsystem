@@ -20,12 +20,8 @@ const UserProps = () => ({
 storiesOf('User', module)
   .addDecorator(withKnobs)
   .addDecorator(withReadme([readme]))
-  .add(
-    'Default',
-    () => <User {...UserProps()} />,
-    {
-      info: {
-        text: readme
-      }
-    }
-  );
+  .add('Default', () => <User {...UserProps()} />, {
+    info: {
+      text: readme,
+    },
+  });

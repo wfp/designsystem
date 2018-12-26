@@ -44,7 +44,9 @@
     margin-right: $spacing-xs;
   }
 
-  .#{$prefix}--radio-button:checked + .#{$prefix}--radio-button__label .#{$prefix}--radio-button__appearance {
+  .#{$prefix}--radio-button:checked
+    + .#{$prefix}--radio-button__label
+    .#{$prefix}--radio-button__appearance {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -66,7 +68,9 @@
     cursor: not-allowed;
   }
 
-  .#{$prefix}--radio-button:focus + .#{$prefix}--radio-button__label .#{$prefix}--radio-button__appearance {
+  .#{$prefix}--radio-button:focus
+    + .#{$prefix}--radio-button__label
+    .#{$prefix}--radio-button__appearance {
     @include focus-outline('blurred');
   }
 
@@ -77,7 +81,8 @@
     height: rem(18px);
   }
 
-  .#{$prefix}--radio-button__label.#{$prefix}--skeleton .#{$prefix}--radio-button__appearance {
+  .#{$prefix}--radio-button__label.#{$prefix}--skeleton
+    .#{$prefix}--radio-button__appearance {
     display: none;
   }
 }
@@ -114,7 +119,9 @@
     margin-right: $spacing-xs;
   }
 
-  .#{$prefix}--radio-button:checked + .#{$prefix}--radio-button__label .#{$prefix}--radio-button__appearance {
+  .#{$prefix}--radio-button:checked
+    + .#{$prefix}--radio-button__label
+    .#{$prefix}--radio-button__appearance {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -143,14 +150,20 @@
     cursor: not-allowed;
   }
 
-  .#{$prefix}--radio-button:disabled + .#{$prefix}--radio-button__label .#{$prefix}--radio-button__appearance,
-  .#{$prefix}--radio-button:disabled:checked + .#{$prefix}--radio-button__label .#{$prefix}--radio-button__appearance {
+  .#{$prefix}--radio-button:disabled
+    + .#{$prefix}--radio-button__label
+    .#{$prefix}--radio-button__appearance,
+  .#{$prefix}--radio-button:disabled:checked
+    + .#{$prefix}--radio-button__label
+    .#{$prefix}--radio-button__appearance {
     border-color: $disabled;
   }
 
   // Focus
 
-  .#{$prefix}--radio-button:focus + .#{$prefix}--radio-button__label .#{$prefix}--radio-button__appearance {
+  .#{$prefix}--radio-button:focus
+    + .#{$prefix}--radio-button__label
+    .#{$prefix}--radio-button__appearance {
     @include focus-outline('blurred');
   }
 
@@ -161,7 +174,8 @@
     height: rem(18px);
   }
 
-  .#{$prefix}--radio-button__label.#{$prefix}--skeleton .#{$prefix}--radio-button__appearance {
+  .#{$prefix}--radio-button__label.#{$prefix}--skeleton
+    .#{$prefix}--radio-button__appearance {
     display: none;
   }
 }

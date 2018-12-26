@@ -23,7 +23,7 @@ export default class FormHint extends Component {
      */
 
     children: PropTypes.node,
-     /**
+    /**
      * Specify a custom icon for the hint
      */
     icon: PropTypes.object,
@@ -34,15 +34,9 @@ export default class FormHint extends Component {
   };
 
   render() {
-    const {
-      className,
-      children,
-      description,
-      icon,
-      ...other
-    } = this.props;
+    const { className, children, description, icon, ...other } = this.props;
 
-    const formHintClasses = classNames(`${prefix}--form-hint`, className,);
+    const formHintClasses = classNames(`${prefix}--form-hint`, className);
 
     return (
       <div className={formHintClasses}>
@@ -52,14 +46,8 @@ export default class FormHint extends Component {
           position="top"
           trigger="click"
           {...other}
-          {...tooltipStyle}
-        >
-          <Icon
-            icon={icon}
-            width="15"
-            height="15"
-            description={children}
-          />
+          {...tooltipStyle}>
+          <Icon icon={icon} width="15" height="15" description={children} />
         </Tooltip>
       </div>
     );

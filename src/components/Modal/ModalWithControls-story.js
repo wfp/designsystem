@@ -10,50 +10,39 @@ class ModalWithControls extends React.Component {
   toggleModal = () => {
     console.log('Toggle the open state');
     this.setState(state => ({
-      open: !state.open
+      open: !state.open,
     }));
-  }
+  };
 
   submitAndClose = () => {
     alert('Submit now and close the modal');
     this.setState(state => ({
-      open: false
+      open: false,
     }));
-  }
+  };
 
-  render(){
+  render() {
     const { open } = this.state;
 
     return (
       <div>
-        <button onClick={this.toggleModal}>
-          Open Modal
-        </button>
+        <button onClick={this.toggleModal}>Open Modal</button>
         <Modal
           open={open}
           primaryButtonText="Submit"
           onRequestSubmit={this.submitAndClose}
           secondaryButtonText="Cancel Modal"
           onSecondarySubmit={this.toggleModal}
-          onRequestClose={this.toggleModal}
-        >
-        <p className="wfp--modal-content__text">
-          Nothing to see here
-        </p>
+          onRequestClose={this.toggleModal}>
+          <p className="wfp--modal-content__text">Nothing to see here</p>
         </Modal>
       </div>
     );
   }
 }
 
-storiesOf('Modal', module)
-  .add(
-    'with Controls',
-    () => (
-      <ModalWithControls />
-    ),{
-      info: {
-        text: readme,
-      },
-    })
-  ;
+storiesOf('Modal', module).add('with Controls', () => <ModalWithControls />, {
+  info: {
+    text: readme,
+  },
+});

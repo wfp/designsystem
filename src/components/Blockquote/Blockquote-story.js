@@ -35,13 +35,13 @@ storiesOf('Blockquote', module)
           rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
           ipsum dolor sit amet.
         </Blockquote>
-       );
-      },
-      {
-        info: {
-          text: `
+      );
+    },
+    {
+      info: {
+        text: `
             The <Blockquote> Element (or HTML Block Quotation Element) indicates that the enclosed text is an extended quotation.
           `,
-        },
-      }
+      },
+    }
   );

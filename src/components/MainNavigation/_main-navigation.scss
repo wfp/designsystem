@@ -36,7 +36,7 @@
       @include typescale('epsilon');
       text-decoration: none;
       &.active {
-        border-bottom: 3px solid rgba($ui-01,0.2);
+        border-bottom: 3px solid rgba($ui-01, 0.2);
       }
       &:hover,
       &:visited,
@@ -83,7 +83,6 @@
       margin-right: 0.3em;
     }
   }
-
 
   .#{$prefix}--main-navigation__trigger--has-sub.#{$prefix}--main-navigation__trigger--open {
     .#{$prefix}--main-navigation__trigger__icon {

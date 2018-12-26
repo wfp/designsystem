@@ -21,7 +21,7 @@
     &:not(:first-child) {
       margin-left: 0;
     }
-    >a {
+    > a {
       text-decoration: none;
       &:hover {
         text-decoration: underline;

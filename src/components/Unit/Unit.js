@@ -80,17 +80,11 @@ Unit.propTypes = {
   /**
     The value which should be displayed
   */
-  children: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.number
-  ]),
+  children: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   /**
     Only used for type Percentage will divide value/from string, float
   */
-  from: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.number
-  ]),
+  from: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   /**
     Hide the Unit if it's value is zero.
   */

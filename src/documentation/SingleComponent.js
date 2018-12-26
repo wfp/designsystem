@@ -42,7 +42,9 @@ class SingleComponent extends Component {
         }
         className={classNames}
         pageWidth={pageWidth}>
-        <div id="container" style={{ flexBasis: flexBasis ? flexBasis : 'auto' }}>
+        <div
+          id="container"
+          style={{ flexBasis: flexBasis ? flexBasis : 'auto' }}>
           {children}
         </div>
       </Wrapper>

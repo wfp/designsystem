@@ -6,7 +6,11 @@ import settings from '../../globals/js/settings';
 const { prefix } = settings;
 
 const Form = ({ className, children, longForm, ...other }) => {
-  const classNames = classnames(`${prefix}--form`, { 'wfp--form-long': longForm === true }, className);
+  const classNames = classnames(
+    `${prefix}--form`,
+    { 'wfp--form-long': longForm === true },
+    className
+  );
 
   return (
     <form className={classNames} {...other}>

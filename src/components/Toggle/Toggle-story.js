@@ -21,11 +21,11 @@ storiesOf('Toggle', module)
   .addDecorator(withKnobs)
   .add(
     'Default',
-    (() => <Toggle {...toggleProps()} className="some-class" id="toggle-1" />),
+    () => <Toggle {...toggleProps()} className="some-class" id="toggle-1" />,
     {
       info: {
-        text: readme
-      }
+        text: readme,
+      },
     }
   )
   .add(
@@ -37,7 +37,7 @@ storiesOf('Toggle', module)
     })(() => <ToggleSkeleton />),
     {
       info: {
-        text: readme
-      }
+        text: readme,
+      },
     }
   );

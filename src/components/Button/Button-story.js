@@ -72,7 +72,7 @@ storiesOf('Buttons', module)
           </Button>
           &nbsp;
         </div>
-      )
+      );
     },
     {
       info: {

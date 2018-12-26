@@ -164,24 +164,21 @@ const columns = [
 
 storiesOf('Table', module)
   .addDecorator(withReadme([readme]))
-  .add(
-    'responsive',
-    () => (
-      <ReactTable
-        data={data}
-        defaultPageSize={5}
-        className="ReactTable--responsive ReactTable--alternate-row"
-        columns={columns}
-        minRows={1}
-        ExpanderComponent={ResponsiveExpanderComponent}
-        PaginationComponent={TablePagination}
-        SubComponent={row => {
-          return (
-            <div className="ReactTable__subcomponent">
-              {row.original.data_source}
-            </div>
-          );
-        }}
-      />
-    )
-  );
+  .add('responsive', () => (
+    <ReactTable
+      data={data}
+      defaultPageSize={5}
+      className="ReactTable--responsive ReactTable--alternate-row"
+      columns={columns}
+      minRows={1}
+      ExpanderComponent={ResponsiveExpanderComponent}
+      PaginationComponent={TablePagination}
+      SubComponent={row => {
+        return (
+          <div className="ReactTable__subcomponent">
+            {row.original.data_source}
+          </div>
+        );
+      }}
+    />
+  ));

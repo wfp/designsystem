@@ -176,80 +176,75 @@ const units = [
 storiesOf('Unit', module)
   .addDecorator(withKnobs)
   .addDecorator(withReadme([readme]))
-  .add(
-    'Samples',
-    (() => {
-      const columns = [
-        {
-          Header: 'HTML',
-          accessor: 'name',
-          width: 150,
-          Cell: props => {
-            return (
-              <Unit {...props.original.setup}>{props.original.sample}</Unit>
-            );
-          },
+  .add('Samples', () => {
+    const columns = [
+      {
+        Header: 'HTML',
+        accessor: 'name',
+        width: 150,
+        Cell: props => {
+          return <Unit {...props.original.setup}>{props.original.sample}</Unit>;
         },
-        {
-          Header: 'SVG',
-          accessor: 'name',
-          width: 150,
-          Cell: props => {
-            return (
-              <svg width="120" height="20">
-                <g transform="translate(0 17)">
-                  <Unit {...props.original.setup} svg>
-                    {props.original.sample}
-                  </Unit>
-                </g>
-              </svg>
-            );
-          },
+      },
+      {
+        Header: 'SVG',
+        accessor: 'name',
+        width: 150,
+        Cell: props => {
+          return (
+            <svg width="120" height="20">
+              <g transform="translate(0 17)">
+                <Unit {...props.original.setup} svg>
+                  {props.original.sample}
+                </Unit>
+              </g>
+            </svg>
+          );
         },
-        {
-          Header: 'Type',
-          accessor: 'type',
-          width: 150,
-        },
-        {
-          Header: 'Description',
-          accessor: 'description',
-          width: 500,
-        },
-      ];
+      },
+      {
+        Header: 'Type',
+        accessor: 'type',
+        width: 150,
+      },
+      {
+        Header: 'Description',
+        accessor: 'description',
+        width: 500,
+      },
+    ];
 
-      return (
-        <ReactTable
-          data={units}
-          defaultPageSize={10}
-          columns={columns}
-          PaginationComponent={TablePagination}
-          defaultSorted={[
-            {
-              id: 'type',
-            },
-          ]}
-          SubComponent={row => {
-            return (
-              <div style={{ padding: '20px' }}>
-                <Blockquote type="code">
-                  {`<Unit
+    return (
+      <ReactTable
+        data={units}
+        defaultPageSize={10}
+        columns={columns}
+        PaginationComponent={TablePagination}
+        defaultSorted={[
+          {
+            id: 'type',
+          },
+        ]}
+        SubComponent={row => {
+          return (
+            <div style={{ padding: '20px' }}>
+              <Blockquote type="code">
+                {`<Unit
   ${JSON.stringify(row.original.setup)}
 >
   ${row.original.sample}
 </Unit>`}
-                </Blockquote>
-              </div>
-            );
-          }}
-        />
-      );
-    })
-  )
+              </Blockquote>
+            </div>
+          );
+        }}
+      />
+    );
+  })
 
   .add(
     'default',
-   (() => {
+    () => {
       const typeOptions = {
         None: 'None',
         Narrow: 'Narrow',
@@ -299,10 +294,10 @@ storiesOf('Unit', module)
       const value = text('value', 1000000);
 
       return <Unit {...unitProps}>{value}</Unit>;
-    }),
+    },
     {
       info: {
-        text: readme
-      }
+        text: readme,
+      },
     }
   );

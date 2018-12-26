@@ -25,7 +25,10 @@ storiesOf(' Documentation', module)
           version of your eMail.
         </p>
         <p>
-          <Button href={`${process.env.STORYBOOK_INTERNAL_ASSETS}email/transaction-email.html`}>
+          <Button
+            href={`${
+              process.env.STORYBOOK_INTERNAL_ASSETS
+            }email/transaction-email.html`}>
             View eMail template
           </Button>
         </p>

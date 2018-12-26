@@ -35,13 +35,12 @@ storiesOf('ReduxFormWrapper', module)
         A wrapper for inputs so they can be used with ReduxForm.
       `,
     })(() => {
-
-      const ReactSelectHelper = (props) => (
+      const ReactSelectHelper = props => (
         <div className="wfp--form-item">
-          <label htmlFor={props.id} className="wfp--label">{props.labelText}</label>
-          <ReactSelect
-            {...props}
-          />
+          <label htmlFor={props.id} className="wfp--label">
+            {props.labelText}
+          </label>
+          <ReactSelect {...props} />
         </div>
       );
 

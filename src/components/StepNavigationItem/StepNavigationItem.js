@@ -50,13 +50,15 @@ export default class StepNavigationItem extends React.Component {
 
     const classes = classNames(
       'wfp--step-navigation__nav-item',
-      {'wfp--step-navigation__nav-item--before': page < selectedPage},
-      {'wfp--step-navigation__nav-item--selected': page === selectedPage},
-      {'wfp--step-navigation__nav-item--locked': status === 'locked' },
-      {'wfp--step-navigation__nav-item--not-started': status === 'not-started'},
-      {'wfp--step-navigation__nav-item--skip': status === 'skip' },
-      {'wfp--step-navigation__nav-item--warning': status === 'warning' },
-      {'wfp--step-navigation__nav-item--complete': status === 'complete' },
+      { 'wfp--step-navigation__nav-item--before': page < selectedPage },
+      { 'wfp--step-navigation__nav-item--selected': page === selectedPage },
+      { 'wfp--step-navigation__nav-item--locked': status === 'locked' },
+      {
+        'wfp--step-navigation__nav-item--not-started': status === 'not-started',
+      },
+      { 'wfp--step-navigation__nav-item--skip': status === 'skip' },
+      { 'wfp--step-navigation__nav-item--warning': status === 'warning' },
+      { 'wfp--step-navigation__nav-item--complete': status === 'complete' },
       className
     );
 

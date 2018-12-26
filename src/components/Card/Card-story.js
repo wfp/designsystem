@@ -21,7 +21,7 @@ const kinds = {
   'Page splash image (splash-image)': 'splash-image',
   'Page splash compact (splash-compact)': 'splash-compact',
   'Related content (related)': 'related',
-  'Teaser': 'teaser',
+  Teaser: 'teaser',
 };
 
 const buttons = {
@@ -62,9 +62,7 @@ storiesOf('Card', module)
   .addDecorator(withKnobs)
   .addParameters({ jest: ['Card-test'] })
   .addDecorator(withReadme([readme]))
-  .addDecorator(story => (
-    <div data-flexbasis='800px'>{story()}</div>
-  ))
+  .addDecorator(story => <div data-flexbasis="800px">{story()}</div>)
   .add(
     'Default',
     withInfo({

@@ -24,7 +24,7 @@ storiesOf('Tooltip', module)
     ),
     {
       info: {
-        text: readme
-      }
+        text: readme,
+      },
     }
   );

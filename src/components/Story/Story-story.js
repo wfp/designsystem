@@ -8,7 +8,7 @@ storiesOf('Story', module)
   .addDecorator(withReadme([readme]))
   .add(
     'Default',
-    (() => (
+    () => (
       <Story>
         <h1 className="wfp--story__title">
           WFP’s Immediate Response Account — saving lives in the Kasai region of
@@ -50,7 +50,7 @@ storiesOf('Story', module)
           urgent life-saving assistance.
         </p>
       </Story>
-    )),
+    ),
     {
       info: {
         text: readme,

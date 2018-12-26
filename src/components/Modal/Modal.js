@@ -79,7 +79,7 @@ export default class Modal extends Component {
      * The handler should care of closing modal, e.g. changing `open` prop, if necessary.
      */
     onRequestSubmit: PropTypes.func,
-    
+
     /**
      * Specify a handler for a key press modal
      */
@@ -122,12 +122,12 @@ export default class Modal extends Component {
      * be focused when the Modal opens
      */
     selectorPrimaryFocus: PropTypes.string,
-    
+
     /**
      * If true the Modal will be rendered inside a portal at the end of the
      * body element, otherwise at the position it is placed.
      */
-    inPortal: PropTypes.bool
+    inPortal: PropTypes.bool,
   };
 
   static defaultProps = {

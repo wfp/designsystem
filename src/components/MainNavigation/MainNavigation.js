@@ -45,19 +45,19 @@ class MainNavigationItem extends Component {
       'wfp--main-navigation__trigger--open': menuItem === activeMenuItem,
     });
 
-
     const childrenWithProps = subNavigation
       ? React.cloneElement(children, {
           children: (
-          <React.Fragment>
-            {children.props.children}
-            <Icon 
-              className="wfp--main-navigation__trigger__icon"
-              name={menuItem === activeMenuItem ? 'close' : 'caret--down'}
-              fill="#FFFFFF"
-              description="expand icon"
-            />
-          </React.Fragment>) ,
+            <React.Fragment>
+              {children.props.children}
+              <Icon
+                className="wfp--main-navigation__trigger__icon"
+                name={menuItem === activeMenuItem ? 'close' : 'caret--down'}
+                fill="#FFFFFF"
+                description="expand icon"
+              />
+            </React.Fragment>
+          ),
           onClick: e => onChangeSub(e, menuItem, 'toggle'),
         })
       : children;
@@ -70,16 +70,14 @@ class MainNavigationItem extends Component {
     });
     return (
       <li className={wrapperClasses} ref={this.setWrapperRef}>
-        <div className={triggerClasses}>
-        {childrenWithProps}
-        </div>
-        {subNavigation &&
+        <div className={triggerClasses}>{childrenWithProps}</div>
+        {subNavigation && (
           <div
             className={subClasses}
             open={menuItem === activeMenuItem ? true : false}>
             {subNavigation}
           </div>
-        }
+        )}
       </li>
     );
   }

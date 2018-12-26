@@ -17,14 +17,10 @@ const TextInputProps = {
   placeholder: 'Placeholder text',
 };
 
-storiesOf('FormGroup', module)
-  .add(
-    'Default',
-    () => (
-      <FormGroup {...fieldsetCheckboxProps}>
-        <TextInput {...TextInputProps} />
-        <TextInput {...TextInputProps} />
-        <TextInput {...TextInputProps} />
-      </FormGroup>
-    )
-  );
+storiesOf('FormGroup', module).add('Default', () => (
+  <FormGroup {...fieldsetCheckboxProps}>
+    <TextInput {...TextInputProps} />
+    <TextInput {...TextInputProps} />
+    <TextInput {...TextInputProps} />
+  </FormGroup>
+));

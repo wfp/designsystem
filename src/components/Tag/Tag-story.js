@@ -22,16 +22,16 @@ storiesOf('Tag', module)
   .add(
     'Default',
     () => (
-        <Tag
-          className="some-class"
-          type={select('Tag type (type)', types, 'wfp')}>
-          {text('Content (children)', '')}
-        </Tag>
+      <Tag
+        className="some-class"
+        type={select('Tag type (type)', types, 'wfp')}>
+        {text('Content (children)', '')}
+      </Tag>
     ),
     {
       info: {
-        text: readme
-      }
+        text: readme,
+      },
     }
   )
   .add(
@@ -40,7 +40,5 @@ storiesOf('Tag', module)
       text: `
       Placeholder skeleton state to use when content is loading.
       `,
-    })(() => (
-        <TagSkeleton />
-    ))
+    })(() => <TagSkeleton />)
   );

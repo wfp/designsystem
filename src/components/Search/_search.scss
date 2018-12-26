@@ -37,7 +37,6 @@
     width: 100%;
     order: 1;
 
-
     &:focus {
       outline: none;
     }
@@ -270,8 +269,8 @@
   .#{$prefix}--search-close {
     @include button-reset(false);
     @include focus-outline('reset');
-    transition: opacity $transition--base, outline $transition--base, background-color $transition--base,
-      border-color $transition--base;
+    transition: opacity $transition--base, outline $transition--base,
+      background-color $transition--base, border-color $transition--base;
     cursor: pointer;
     visibility: visible;
     opacity: 1;
@@ -368,7 +367,6 @@
   }
 }
 
-
 .#{$prefix}--search--main {
   .#{$prefix}--search-magnifier,
   .#{$prefix}--search-close {
@@ -395,7 +393,6 @@
     @include search;
   }
 }
-
 
 /*//-----------------------------
 // Search
