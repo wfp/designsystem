@@ -15,9 +15,12 @@ storiesOf('FormHint', module)
   .add(
     'Default (in development)',
     () => (
-      <label className="wfp--label">
-        The Label <FormHint {...props()} />
-      </label>
+      <div>
+        <label className="wfp--label" htmlFor="input">
+          The Label <FormHint {...props()} />
+        </label>
+        <input id="input"/>
+      </div>
     ),
     {
       info: {

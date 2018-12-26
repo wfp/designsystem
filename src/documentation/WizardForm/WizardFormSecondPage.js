@@ -28,7 +28,7 @@ const WizardFormSecondPage = props => {
         labelText="Email"
       />
       <FormGroup>
-        <label>Sex</label>
+        <label htmlFor="sex">Sex</label>
         <FormGroup
           className="wfp--radio-button-group"
           name="radio-button-group"
