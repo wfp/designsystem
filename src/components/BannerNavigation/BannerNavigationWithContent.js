@@ -82,7 +82,7 @@ BannerNavigationWithContent.propTypes = {
   /**
    * A onChange Function for the search
    */
-  searchOnChange: PropTypes.func
+  searchOnChange: PropTypes.func,
 };
 
 BannerNavigationWithContent.defaultProps = {

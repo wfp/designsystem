@@ -22,8 +22,25 @@ By adding `ReactTable--responsive` the table will be displayed as a list on mobi
 
 ### Alternating Row colors
 
-By adding `ReactTable--alternate-row` the table will get alternating row colors.
+By adding `-striped` the table will get alternating row colors.
 
 ```js
-<ReactTable className="ReactTable--alternate-row" />
+<ReactTable className="-striped" />
 ```
+
+## Highlight on hover
+
+By adding ` -highlight` row will be highlighten on hover
+
+```js
+<ReactTable className="-highlight" />
+```
+
+## Border
+
+By adding ` -border` a border will be added to the table
+
+```js
+<ReactTable className="-border" />
+```
+

@@ -7,7 +7,6 @@ import FormHint from './FormHint';
 
 import { Tooltip } from 'react-tippy';
 
-
 const props = () => ({
   className: 'some-class',
   children: text('Label text (labelText)', 'Lorem Ipsum'),

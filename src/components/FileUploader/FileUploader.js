@@ -349,7 +349,7 @@ export default class FileUploader extends Component {
     evt.stopPropagation();
     const fileArray = this.state.filenames.concat(
       Array.prototype.map.call(evt.target.files, file => file.name)
-    )
+    );
     this.setState({
       filenames: fileArray,
     });

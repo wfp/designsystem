@@ -61,6 +61,7 @@
     -webkit-box-direction: normal;
     flex-direction: column;
     user-select: none;
+    background: lighten($ui-02,1);
   }
 
   .ReactTable .rt-thead.-headerGroups {
@@ -336,11 +337,20 @@
   }
 
   .ReactTable.-striped .rt-tr.-odd {
-    background: rgba(0, 0, 0, 0.03);
+    background: $ui-01;
+  }
+
+  .ReactTable.-border {
+    border: 1px solid $ui-04;
+    .wfp--pagination {
+      border-left: 0;
+      border-right: 0;
+      border-bottom: 0;
+    }
   }
 
   .ReactTable.-highlight .rt-tbody .rt-tr:not(.-padRow):hover {
-    background: rgba(0, 0, 0, 0.05);
+    background: lighten($color__main-10,3);
   }
 
   .ReactTable .-pagination {
@@ -684,11 +694,5 @@
 
   .ReactTable__subcomponent {
     padding: rem(20px);
-  }
-
-  .ReactTable--alternate-row {
-    .rt-tr-group:nth-child(2n + 1) {
-      background: lighten($ui-02, 5);
-    }
   }
 }

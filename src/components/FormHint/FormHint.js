@@ -37,7 +37,14 @@ export default class FormHint extends Component {
   };
 
   render() {
-    const { className, children, description, icon, TooltipComponent, ...other } = this.props;
+    const {
+      className,
+      children,
+      description,
+      icon,
+      TooltipComponent,
+      ...other
+    } = this.props;
 
     const formHintClasses = classNames(`${prefix}--form-hint`, className);
 

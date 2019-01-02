@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 
 import './polyfills';
 import './_container.scss';
-import '../assets/css/styles.css';
 
 import { withOptions } from '@storybook/addon-options';
 
