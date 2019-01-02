@@ -41,7 +41,32 @@
 <meta name="twitter:image:alt" content="WFP UI">
 <meta name="twitter:site" content="@wfp">
 
-<!-- Storybook override -->
+<!-- Storybook override and outdated message -->
 <script>
   document.title = 'WFP UI';
+  console.log("sss");
+
+  var xhr = new XMLHttpRequest();
+  xhr.onload = function() {
+    console.log('error', this.status);
+    if (this.status < 400 && this.status >= 300) {
+      console.log('this redirects to ' + this.getResponseHeader("Location"), this);
+    } else {
+      console.log('doesn\'t redirect ' + this.getResponseHeader("Location"), this.getResponseHeader("x-amz-meta-website-redirect-location"));
+    }
+  }
+  xhr.open('HEAD', 'https://cdn.wfp.org/guides/ui', true);
+  xhr.send();
+
+  window.onload = function () {
+    console.log('Dokument geladen');
+    var html = document.createElement('div'); // is a node
+    var xhr = new XMLHttpRequest();
+    xhr.onload = function() {
+      html.innerHTML = 'test satu dua tiga';
+      document.body.prepend(html);
+    }
+    xhr.open('HEAD', 'https://cdn.wfp.org/guides/ui', true);
+    xhr.send();
+  }
 </script>

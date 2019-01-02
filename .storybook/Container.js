@@ -62,7 +62,6 @@ export default class Container extends Component {
     if (context && !context.kind.indexOf(' ') == 0) {
       return (
         <div role="main">
-          <button onClick={this.addParams}>Add Tests</button>
           <SingleComponent
             flexBasis={flexBasis ? flexBasis : undefined}
             html={context.story.includes('html') ? true : false}>
@@ -79,7 +78,6 @@ export default class Container extends Component {
     } else {
       return (
         <div role="main" id="container">
-          <button onClick={this.addParams}>Add Tests</button>
           {storyRender}
         </div>
       );

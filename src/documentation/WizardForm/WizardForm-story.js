@@ -13,8 +13,8 @@ import { reducer as reduxFormReducer } from 'redux-form';
 const reducer = combineReducers({
   form: reduxFormReducer, // mounted under "form"
 });
-const store = (window.devToolsExtension
-  ? window.devToolsExtension()(createStore)
+const store = (window.__REDUX_DEVTOOLS_EXTENSION__
+  ? window.__REDUX_DEVTOOLS_EXTENSION__()(createStore)
   : createStore)(reducer);
 
 const showResults = values =>

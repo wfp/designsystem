@@ -5,11 +5,7 @@ import Search from '../Search';
 import Link from '../Link';
 
 const BannerNavigationWithContent = props => {
-  const { search, ...other } = props;
-
-  const action = event => {
-    console.log('aaaa', event.target.value);
-  };
+  const { searchOnChange, search, ...other } = props;
   return (
     <BannerNavigation {...other}>
       <BannerNavigationItem>
@@ -60,7 +56,7 @@ const BannerNavigationWithContent = props => {
               labelText="Find People"
               name="q"
               placeHolderText="Find People"
-              onChange={action}
+              onChange={searchOnChange}
             />
           </form>
         </BannerNavigationItem>
@@ -75,11 +71,23 @@ BannerNavigationWithContent.propTypes = {
    */
   className: PropTypes.string,
   id: PropTypes.string,
+  /**
+   * The PageWidth attribute
+   */
   pageWidth: PropTypes.string,
+  /**
+   * Allows to disable the search input
+   */
+  search: PropTypes.bool,
+  /**
+   * A onChange Function for the search
+   */
+  searchOnChange: PropTypes.func
 };
 
 BannerNavigationWithContent.defaultProps = {
   search: true,
+  searchOnChange: () => {},
 };
 
 export { BannerNavigationWithContent };
