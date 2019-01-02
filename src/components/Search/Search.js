@@ -15,6 +15,7 @@ export default class Search extends Component {
     labelText: PropTypes.node.isRequired,
     id: PropTypes.string,
     onChange: PropTypes.func,
+    onSearchIconClick: PropTypes.func,
     closeButtonLabelText: PropTypes.string,
     /**
      *  Different styling options are available `large`, `small`, `banner`, `main`, `light`
@@ -28,6 +29,7 @@ export default class Search extends Component {
     kind: 'large',
     placeHolderText: '',
     onChange: () => {},
+    onSearchIconClick: () => {},
     light: false,
   };
 
@@ -73,6 +75,7 @@ export default class Search extends Component {
       closeButtonLabelText,
       small,
       kind,
+      onSearchIconClick,
       ...other
     } = this.props;
 
@@ -99,6 +102,7 @@ export default class Search extends Component {
           name="search"
           description={labelText}
           className="wfp--search-magnifier"
+          onClick={onSearchIconClick}
         />
         <label htmlFor={id} className="wfp--label">
           {labelText}
