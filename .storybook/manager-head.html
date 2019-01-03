@@ -44,29 +44,32 @@
 <!-- Storybook override and outdated message -->
 <script>
   document.title = 'WFP UI';
-  console.log("sss");
 
-  var xhr = new XMLHttpRequest();
-  xhr.onload = function() {
-    console.log('error', this.status);
-    if (this.status < 400 && this.status >= 300) {
-      console.log('this redirects to ' + this.getResponseHeader("Location"), this);
-    } else {
-      console.log('doesn\'t redirect ' + this.getResponseHeader("Location"), this.getResponseHeader("x-amz-meta-website-redirect-location"));
-    }
-  }
-  xhr.open('HEAD', 'https://cdn.wfp.org/guides/ui', true);
-  xhr.send();
-
+  /* Work around to show depreciated documentations */
   window.onload = function () {
-    console.log('Dokument geladen');
-    var html = document.createElement('div'); // is a node
+    loadDepreciated();
+  }
+
+  function loadDepreciated() {
     var xhr = new XMLHttpRequest();
+    xhr.responseType = 'text';
     xhr.onload = function() {
-      html.innerHTML = 'test satu dua tiga';
-      document.body.prepend(html);
+      var currentVersionRegexp = /<!--(.*?)-->/g;
+      var currentVersion = currentVersionRegexp.exec(xhr.responseText)[1];
+
+      var storybookVersionRegexp = /ui\/v(.*?)\/docs/g;
+      var storybookVersion = storybookVersionRegexp.exec(window.location.href);
+
+      if (storybookVersion !== null && currentVersion[1] !== storybookVersion[1] || 1 === 1) {
+        var elem = document.createElement('div');
+        elem.innerHTML = xhr.responseText;
+        document.body.appendChild(elem);
+        console.log('This is an outdated version of the UI Kit documentation', currentVersion, storybookVersion);
+      }
+
+      var storybookVersion = window.location.href;
     }
-    xhr.open('HEAD', 'https://cdn.wfp.org/guides/ui', true);
+    xhr.open('GET', 'https://cdn.wfp.org/guides/ui/assets/depreciation-warning.html?_=' + new Date().getTime(), true);
     xhr.send();
   }
 </script>
