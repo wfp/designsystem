@@ -11,7 +11,7 @@ import Icon from '../components/Icon';
 import iconList from '@wfp/icons/dist/carbon-icons.json';
 
 storiesOf(' Documentation', module).add('Icons', () => (
-  <Page title="Icons" subTitle="Introduction to the new WFP UI Kit">
+  <Page title="Icons" subTitle="Icons & Logos for User Interfaces">
     <p>
       For Usage please take a look at the{' '}
       <Link onClick={linkTo('Icon', 'Default')}>Icon-Component</Link> or{' '}
@@ -36,6 +36,26 @@ storiesOf(' Documentation', module).add('Icons', () => (
       </Link>
     </Blockquote>
 
+    <h3>Humanitarian Thematic Icon Set</h3>
+    <p>
+      The <i>UN Office for the Coordination of Humanitarian Affairs (OCHA)</i> has established icons to
+      represent humanitarian assistance and to ensure consistency in use, these have been shared
+      widely with UN agencies and NGOs.{' '}
+        <Link href="https://www.unocha.org/story/iconography-part-un%E2%80%99s-humanitarian-efforts-ocha-releases-new-humanitarian-icons" target="_blank">
+          Visit OCHA Icon Library
+        </Link>
+    </p>
+    <p>
+      WFP has also created some
+      {' '} 
+      <Link
+        href="http://newgo.wfp.org/documents/humanitarian-thematic-icon-set-png"
+        target="_blank">
+        WFP specific icons
+      </Link>
+      {' '}
+      to add to this set.
+    </p>
     <h3>List of Icons</h3>
 
     {iconList.map(icon => {
