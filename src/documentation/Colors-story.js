@@ -11,7 +11,10 @@ const colorBlend = ['20', '30', '40', '60', '80'];
 
 storiesOf(' Documentation', module).add('Colors', () => {
   const regularColors = colors.ui_colors.filter(
-    ui_colors => ui_colors.type !== 'symbolic'
+    ui_colors => ui_colors.type !== 'symbolic' && ui_colors.type !== 'ui'
+  );
+  const uiColors = colors.ui_colors.filter(
+    ui_colors => ui_colors.type === 'ui'
   );
   const symbolicColors = colors.ui_colors.filter(
     ui_colors => ui_colors.type === 'symbolic'
@@ -50,46 +53,63 @@ storiesOf(' Documentation', module).add('Colors', () => {
             <div>js: {color.name}</div>
             <div>scss: {color.scss}</div>
             <div>hex: {color.hex}</div>
+            {color.css && (
+              <div>
+                css: {color.css}
+                <div
+                  className={color.css}
+                  style={{
+                    display: 'inline-block',
+                    marginLeft: '0.5em',
+                    width: '1em',
+                    height: '1em',
+                  }}
+                />
+              </div>
+            )}
           </div>
 
-          <div
-            style={{
-              width: '50%',
-            }}>
-            {colorBlend.map(blend => (
+          {color.type !== 'symbolic' &&
+            color.type !== 'ui' && (
               <div
                 style={{
-                  display: 'flex',
-                  fontSize: '0.7em',
-                  width: '100%',
+                  width: '50%',
                 }}>
-                <div
-                  style={{
-                    width: '20px',
-                    height: '20px',
-                    marginTop: '1px',
-                    marginRight: '1em',
-                    marginBottom: '1px',
-                  }}
-                  className={`color__${color.name}-${blend}`}
-                />
-                <div
-                  style={{
-                    marginTop: '2px',
-                    lineHeight: '20px',
-                  }}>
-                  <span
+                {colorBlend.map(blend => (
+                  <div
                     style={{
-                      display: 'inline-block',
-                      marginRight: '1em',
+                      display: 'flex',
+                      fontSize: '0.7em',
+                      width: '100%',
                     }}>
-                    hex: #0A6EB4
-                  </span>
-                  scss: {color.scss}-${blend}
-                </div>
+                    <div
+                      style={{
+                        width: '20px',
+                        height: '20px',
+                        marginTop: '1px',
+                        marginRight: '1em',
+                        marginBottom: '1px',
+                      }}
+                      className={`color__${color.name}-${blend}`}
+                    />
+                    <div
+                      style={{
+                        marginTop: '2px',
+                        lineHeight: '20px',
+                      }}>
+                      <span
+                        style={{
+                          display: 'inline-block',
+                          marginRight: '1em',
+                        }}>
+                        hex: #0A6EB4
+                      </span>
+                      scss: {color.scss}-${blend}
+                    </div>
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
+            )}
         </div>
       </li>
     ));
@@ -112,6 +132,7 @@ storiesOf(' Documentation', module).add('Colors', () => {
         </Link>.
       </p>
 
+      <h3>Brand Colors</h3>
       <ul style={{ display: 'flex', flexWrap: 'wrap' }}>
         {colorList(regularColors)}
       </ul>
@@ -119,6 +140,10 @@ storiesOf(' Documentation', module).add('Colors', () => {
       <h3>Symbolic colors</h3>
       <ul style={{ display: 'flex', flexWrap: 'wrap' }}>
         {colorList(symbolicColors)}
+      </ul>
+      <h3>UI Colors</h3>
+      <ul style={{ display: 'flex', flexWrap: 'wrap' }}>
+        {colorList(uiColors)}
       </ul>
 
       <p />
@@ -137,6 +162,7 @@ import colors from '@wfp/ui/source/globals/data/colors.js'`}
         {`// Only use variables
 @import "../../node_modules/@wfp/ui/source/globals/scss/vars";`}
       </Blockquote>
+      <p>For UI</p>
     </Page>
   );
 });

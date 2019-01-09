@@ -61,12 +61,12 @@
     -webkit-box-direction: normal;
     flex-direction: column;
     user-select: none;
-    background: lighten($ui-02,1);
+    background: lighten($ui-02, 1);
   }
 
   .ReactTable .rt-thead.-headerGroups {
     background: rgba(0, 0, 0, 0.03);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   }
 
   .ReactTable .rt-thead.-filters {
@@ -190,7 +190,7 @@
   }
 
   .ReactTable .rt-tbody .rt-tr-group {
-    border-bottom: solid 1px rgba(0, 0, 0, 0.05);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.1);
   }
 
   .ReactTable .rt-tbody .rt-tr-group:last-child {
@@ -337,7 +337,7 @@
   }
 
   .ReactTable.-striped .rt-tr.-odd {
-    background: $ui-01;
+    background: lighten($ui-02, 2);
   }
 
   .ReactTable.-border {
@@ -345,12 +345,13 @@
     .wfp--pagination {
       border-left: 0;
       border-right: 0;
+      border-top: 1px solid $ui-04;
       border-bottom: 0;
     }
   }
 
   .ReactTable.-highlight .rt-tbody .rt-tr:not(.-padRow):hover {
-    background: lighten($color__main-10,3);
+    background: lighten($color__main-10, 3);
   }
 
   .ReactTable .-pagination {

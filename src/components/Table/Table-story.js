@@ -5,44 +5,43 @@ import { withReadme } from 'storybook-readme';
 import { withKnobs, boolean, text } from '@storybook/addon-knobs';
 import readme from './README.md';
 
-
 import TablePagination from '../TablePagination';
 
 const data = [
   {
     name: 'Emyr Monaghan',
     age: 26,
-    city: 'Berlin'
+    city: 'Berlin',
   },
   {
     name: 'Madihah Watson',
     age: 28,
-    city: 'Rome'
+    city: 'Rome',
   },
   {
     name: 'Rahim Valdez',
     age: 61,
-    city: 'Nairobi'
+    city: 'Nairobi',
   },
   {
     name: 'Max Mustermann',
     age: 73,
-    city: 'Panama Citry'
+    city: 'Panama Citry',
   },
   {
     name: 'Maggie Alexander',
     age: 52,
-    city: 'Bangok'
+    city: 'Bangok',
   },
   {
     name: 'Kirsten Martinez',
     age: 19,
-    city: 'New York'
+    city: 'New York',
   },
   {
     name: 'Garfield Dejesus',
     age: 78,
-    city: 'Paris'
+    city: 'Paris',
   },
 ];
 
@@ -70,33 +69,37 @@ const props = {
 };
 
 storiesOf('Table', module)
-.addDecorator(withKnobs)
-.add('Default', () => (
-    <ReactTable
-      data={data}
-      defaultPageSize={5}
-      columns={columns}
-      PaginationComponent={TablePagination}
-    />
-  ),
-  {
-    info: {
-      text: readme,
-    },
-  }
-)
-.add('Zebra Striped', () => (
-    <ReactTable
-      data={data}
-      defaultPageSize={5}
-      columns={columns}
-      className="-border -striped -highlight"
-      PaginationComponent={TablePagination}
-    />
-  ),
-  {
-    info: {
-      text: readme,
-    },
-  }
-);
+  .addDecorator(withKnobs)
+  .add(
+    'Default',
+    () => (
+      <ReactTable
+        data={data}
+        defaultPageSize={5}
+        columns={columns}
+        PaginationComponent={TablePagination}
+      />
+    ),
+    {
+      info: {
+        text: readme,
+      },
+    }
+  )
+  .add(
+    'Zebra Striped',
+    () => (
+      <ReactTable
+        data={data}
+        defaultPageSize={5}
+        columns={columns}
+        className="-border -striped -highlight"
+        PaginationComponent={TablePagination}
+      />
+    ),
+    {
+      info: {
+        text: readme,
+      },
+    }
+  );

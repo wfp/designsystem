@@ -38,22 +38,23 @@ storiesOf(' Documentation', module).add('Icons', () => (
 
     <h3>Humanitarian Thematic Icon Set</h3>
     <p>
-      The <i>UN Office for the Coordination of Humanitarian Affairs (OCHA)</i> has established icons to
-      represent humanitarian assistance and to ensure consistency in use, these have been shared
-      widely with UN agencies and NGOs.{' '}
-        <Link href="https://www.unocha.org/story/iconography-part-un%E2%80%99s-humanitarian-efforts-ocha-releases-new-humanitarian-icons" target="_blank">
-          Visit OCHA Icon Library
-        </Link>
+      The <i>UN Office for the Coordination of Humanitarian Affairs (OCHA)</i>{' '}
+      has established icons to represent humanitarian assistance and to ensure
+      consistency in use, these have been shared widely with UN agencies and
+      NGOs.{' '}
+      <Link
+        href="https://www.unocha.org/story/iconography-part-un%E2%80%99s-humanitarian-efforts-ocha-releases-new-humanitarian-icons"
+        target="_blank">
+        Visit OCHA Icon Library
+      </Link>
     </p>
     <p>
-      WFP has also created some
-      {' '} 
+      WFP has also created some{' '}
       <Link
         href="http://newgo.wfp.org/documents/humanitarian-thematic-icon-set-png"
         target="_blank">
         WFP specific icons
-      </Link>
-      {' '}
+      </Link>{' '}
       to add to this set.
     </p>
     <h3>List of Icons</h3>
