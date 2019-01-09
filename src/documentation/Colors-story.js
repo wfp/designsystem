@@ -48,8 +48,27 @@ storiesOf(' Documentation', module).add('Colors', () => {
               backgroundColor: color.hex,
             }}
           />
-          <div style={{ width: '30%', flexGrow: '1', fontSize: '0.8em' }}>
-            <h4>{color.name}</h4>
+          <div
+            style={{
+              width: '30%',
+              flexGrow: '1',
+              fontSize: '0.7em',
+              lineHeight: '2em',
+            }}>
+            <h4 style={{ marginBottom: '0.5em' }}>
+              {color.name}
+              {color.description && (
+                <i
+                  style={{
+                    fontWeight: 'normal',
+                    fontStyle: 'italic',
+                    marginLeft: '0.2em',
+                  }}>
+                  {color.description}
+                </i>
+              )}
+            </h4>
+
             <div>js: {color.name}</div>
             <div>scss: {color.scss}</div>
             <div>hex: {color.hex}</div>

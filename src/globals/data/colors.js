@@ -102,7 +102,8 @@ const colors = {
     },
     {
       name: 'ui-01',
-      hex: '#fbfcfc',
+      description: 'WFP`s main color',
+      hex: '#0A6EB4',
       scss: '$ui-01',
       css: 'color__ui-01',
       type: 'ui',
