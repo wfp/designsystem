@@ -4,8 +4,6 @@ import React from 'react';
 import Blockquote from '../Blockquote';
 
 const FormError = ({ className, message, submitFailed }) => {
-  console.log('message', message);
-
   if (message && submitFailed === true) {
     return (
       <Blockquote className={className} warning withIcon={true}>

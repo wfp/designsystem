@@ -52,7 +52,6 @@ const props = {
 };
 
 const renderAnchor = props => {
-  console.log(props);
   return <a href={props.href}>{props.label}</a>;
 };
 

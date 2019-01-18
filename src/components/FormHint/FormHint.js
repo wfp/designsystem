@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import { iconInfoSolid } from '@wfp/icons';
 import Icon from '../Icon';
 
-import { Tooltip } from 'react-tippy';
 import tooltipStyle from '../Tooltip';
 
 import classNames from 'classnames';
@@ -27,6 +26,10 @@ export default class FormHint extends Component {
      * Specify a custom icon for the hint
      */
     icon: PropTypes.object,
+    /**
+     * Specify a component for the tooltip, usually react-tippy
+     */
+    TooltipComponent: PropTypes.func.isRequired,
   };
 
   static defaultProps = {
@@ -34,13 +37,20 @@ export default class FormHint extends Component {
   };
 
   render() {
-    const { className, children, description, icon, ...other } = this.props;
+    const {
+      className,
+      children,
+      description,
+      icon,
+      TooltipComponent,
+      ...other
+    } = this.props;
 
     const formHintClasses = classNames(`${prefix}--form-hint`, className);
 
     return (
       <div className={formHintClasses}>
-        <Tooltip
+        <TooltipComponent
           // options
           title={children}
           position="top"
@@ -48,7 +58,7 @@ export default class FormHint extends Component {
           {...other}
           {...tooltipStyle}>
           <Icon icon={icon} width="15" height="15" description={children} />
-        </Tooltip>
+        </TooltipComponent>
       </div>
     );
   }

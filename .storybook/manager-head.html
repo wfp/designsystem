@@ -41,7 +41,35 @@
 <meta name="twitter:image:alt" content="WFP UI">
 <meta name="twitter:site" content="@wfp">
 
-<!-- Storybook override -->
+<!-- Storybook override and outdated message -->
 <script>
   document.title = 'WFP UI';
+
+  /* Work around to show depreciated documentations */
+  window.onload = function () {
+    loadDepreciated();
+  }
+
+  function loadDepreciated() {
+    var xhr = new XMLHttpRequest();
+    xhr.responseType = 'text';
+    xhr.onload = function() {
+      var currentVersionRegexp = /<!--(.*?)-->/g;
+      var currentVersion = currentVersionRegexp.exec(xhr.responseText)[1];
+
+      var storybookVersionRegexp = /ui\/v(.*?)\/docs/g;
+      var storybookVersion = storybookVersionRegexp.exec(window.location.href);
+
+      if (storybookVersion !== null && currentVersion[1] !== storybookVersion[1] || 1 === 1) {
+        var elem = document.createElement('div');
+        elem.innerHTML = xhr.responseText;
+        document.body.appendChild(elem);
+        console.log('This is an outdated version of the UI Kit documentation', currentVersion, storybookVersion);
+      }
+
+      var storybookVersion = window.location.href;
+    }
+    xhr.open('GET', 'https://cdn.wfp.org/guides/ui/assets/depreciation-warning.html?_=' + new Date().getTime(), true);
+    xhr.send();
+  }
 </script>

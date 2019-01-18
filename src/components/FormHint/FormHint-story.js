@@ -5,6 +5,8 @@ import readme from './README.md';
 import { withKnobs, text } from '@storybook/addon-knobs';
 import FormHint from './FormHint';
 
+import { Tooltip } from 'react-tippy';
+
 const props = () => ({
   className: 'some-class',
   children: text('Label text (labelText)', 'Lorem Ipsum'),
@@ -15,12 +17,9 @@ storiesOf('FormHint', module)
   .add(
     'Default (in development)',
     () => (
-      <div>
-        <label className="wfp--label" htmlFor="input">
-          The Label <FormHint {...props()} />
-        </label>
-        <input id="input" />
-      </div>
+      <label className="wfp--label" htmlFor="input">
+        The Label <FormHint {...props()} TooltipComponent={Tooltip} />
+      </label>
     ),
     {
       info: {

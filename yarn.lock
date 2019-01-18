@@ -2160,9 +2160,9 @@
     "@webassemblyjs/wast-parser" "1.7.11"
     "@xtuc/long" "4.2.1"
 
-"@wfp/icons@0.0.58":
-  version "0.0.58"
-  resolved "https://registry.yarnpkg.com/@wfp/icons/-/icons-0.0.58.tgz#ed11b52aded557c00291eda5a2c5be19bc79f20f"
+"@wfp/icons@0.0.68":
+  version "0.0.68"
+  resolved "https://registry.yarnpkg.com/@wfp/icons/-/icons-0.0.68.tgz#c1c4ad85d21f06ef18491b65c5261f8d08991b69"
 
 "@xtuc/ieee754@^1.2.0":
   version "1.2.0"
@@ -3727,7 +3727,7 @@ carbon-components@^9.61.4:
     lodash.debounce "^4.0.8"
     warning "^3.0.0"
 
-carbon-icons@^7.0.5, carbon-icons@^7.0.7:
+carbon-icons@^7.0.7:
   version "7.0.7"
   resolved "https://registry.yarnpkg.com/carbon-icons/-/carbon-icons-7.0.7.tgz#ebafe3e9fa25df973796a8eca06d8a7c501cc610"
 

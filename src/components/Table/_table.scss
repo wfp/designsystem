@@ -61,11 +61,12 @@
     -webkit-box-direction: normal;
     flex-direction: column;
     user-select: none;
+    background: lighten($ui-02, 1);
   }
 
   .ReactTable .rt-thead.-headerGroups {
     background: rgba(0, 0, 0, 0.03);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   }
 
   .ReactTable .rt-thead.-filters {
@@ -108,7 +109,7 @@
       right: 0.6em;
       font-size: 1.3em;
       content: '▾';
-      color: $brand-02;
+      color: $brand-01;
     }
   }
 
@@ -189,7 +190,7 @@
   }
 
   .ReactTable .rt-tbody .rt-tr-group {
-    border-bottom: solid 1px rgba(0, 0, 0, 0.05);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.1);
   }
 
   .ReactTable .rt-tbody .rt-tr-group:last-child {
@@ -292,10 +293,10 @@
     top: 50%;
     left: 50%;
     -webkit-transform: translate(-50%, -50%) rotate(-90deg);
-    transform: translate(-50%, -50%) rotate(-90deg);
+    transform: translate(-50%, -50%) rotate(-90deg) scaleY(0.6);
     border-left: 5.04px solid transparent;
     border-right: 5.04px solid transparent;
-    border-top: 7px solid rgba(0, 0, 0, 0.8);
+    border-top: 7px solid $brand-01;
     -webkit-transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     cursor: pointer;
@@ -336,11 +337,21 @@
   }
 
   .ReactTable.-striped .rt-tr.-odd {
-    background: rgba(0, 0, 0, 0.03);
+    background: lighten($ui-02, 2);
+  }
+
+  .ReactTable.-border {
+    border: 1px solid $ui-04;
+    .wfp--pagination {
+      border-left: 0;
+      border-right: 0;
+      border-top: 1px solid $ui-04;
+      border-bottom: 0;
+    }
   }
 
   .ReactTable.-highlight .rt-tbody .rt-tr:not(.-padRow):hover {
-    background: rgba(0, 0, 0, 0.05);
+    background: lighten($color__main-10, 3);
   }
 
   .ReactTable .-pagination {
@@ -684,11 +695,5 @@
 
   .ReactTable__subcomponent {
     padding: rem(20px);
-  }
-
-  .ReactTable--alternate-row {
-    .rt-tr-group:nth-child(2n + 1) {
-      background: lighten($ui-02, 5);
-    }
   }
 }
