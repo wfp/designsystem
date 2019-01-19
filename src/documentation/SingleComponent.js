@@ -12,8 +12,6 @@ class SingleComponent extends Component {
 
   componentDidMount() {
     const height = document.getElementById('container').clientHeight;
-
-    console.log('height', height);
     this.setState({ height });
   }
 
@@ -25,8 +23,6 @@ class SingleComponent extends Component {
     const classNames = classnames({
       'wfp--single-component--top': height >= 300,
     });
-
-    console.log('flexBasis', flexBasis);
 
     return (
       <Wrapper

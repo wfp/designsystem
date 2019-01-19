@@ -22,7 +22,6 @@ addDecorator(
   withInfo({
     maxPropStringLength: 200, // Displays the first 200 characters in the default prop string
     styles: stylesheet => {
-      console.log('stylesheet', stylesheet);
       return {
         // Setting the style with a function
         ...stylesheet,

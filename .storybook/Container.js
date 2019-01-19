@@ -14,15 +14,6 @@ export default class Container extends Component {
   }
 
   static getDerivedStateFromProps(nextProps, prevState) {
-    console.log(
-      'state',
-      nextProps.context.kind !== prevState.context.kind ||
-        nextProps.context.story !== prevState.context.story,
-      nextProps.context.kind !== prevState.context.kind,
-      nextProps.context.story !== prevState.context.story,
-      nextProps.context,
-      prevState.context
-    );
     if (
       nextProps.context.kind !== prevState.context.kind ||
       nextProps.context.story !== prevState.context.story
@@ -46,17 +37,13 @@ export default class Container extends Component {
 
   render() {
     const { context, story } = this.props;
-    console.log('context, story', this.props);
 
     const storyRender = story();
 
-    console.log('storyRender', storyRender);
     const flexBasis =
       storyRender.props.children && storyRender.props.children.props
         ? storyRender.props.children.props['data-flexbasis']
         : undefined;
-
-    console.log('render', storyRender);
 
     if (context && !context.kind.indexOf(' ') == 0) {
       return (

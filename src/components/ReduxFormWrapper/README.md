@@ -7,8 +7,10 @@ import { ReduxFormWrapper } from '@wfp/ui';
 ```js
 <Field
   component={ReduxFormWrapper} 
-  InputComponent={TextInput}
-  {...otherProps} />
+  {...otherProps}
+>
+  <TextInput />
+</Field>
 ```
 
 ### Example usage for react-select or other custom Input
@@ -39,6 +41,8 @@ const ReactSelectHelper = (props) => (
   classNamePrefix="wfp--react-select"
   isMulti
   options={options}
-/>
+>
+  <ReactSelectHelper />
+</Field>
 
 ```

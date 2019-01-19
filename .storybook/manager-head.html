@@ -60,11 +60,11 @@
       var storybookVersionRegexp = /ui\/v(.*?)\/docs/g;
       var storybookVersion = storybookVersionRegexp.exec(window.location.href);
 
-      if (storybookVersion !== null && currentVersion[1] !== storybookVersion[1] || 1 === 1) {
+      if (storybookVersion !== null && currentVersion !== storybookVersion[1]) {
         var elem = document.createElement('div');
         elem.innerHTML = xhr.responseText;
         document.body.appendChild(elem);
-        console.log('This is an outdated version of the UI Kit documentation', currentVersion, storybookVersion);
+        console.log('This is an outdated version of the UI Kit documentation', currentVersion, storybookVersion[1]);
       }
 
       var storybookVersion = window.location.href;

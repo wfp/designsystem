@@ -1,25 +1,33 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import warningMesssage from 'warning';
+
+let didWarnAboutDeprecation = false;
 
 const ReduxFormWrapper = ({
   input,
   InputComponent,
+  classNamePrefix,
   meta: { touched, error, warning },
   children,
   ...other
 }) => {
-  if (InputComponent === undefined) return null;
+  if (children === undefined && InputComponent === undefined) return null;
 
-  const onChangeX = e => {
-    input.onChange(e);
-  };
+  const InputComponentConnect = children ? children : InputComponent;
 
-  const onBlurX = e => {
-    input.onBlur(e);
-  };
+  if (__DEV__ && InputComponent !== undefined) {
+    warningMesssage(
+      didWarnAboutDeprecation,
+      'The `InputComponent` prop of ReduxFormWrapper has been deprecated and will be removed ' +
+        'in the next major release of `@wfp/ui`. Please use ' +
+        '`children` instead.'
+    );
+    didWarnAboutDeprecation = true;
+  }
 
   return (
-    <InputComponent
+    <InputComponentConnect
       {...input}
       {...other}
       labelText={
@@ -31,9 +39,8 @@ const ReduxFormWrapper = ({
       invalidText={error}
       onBlur={input.onBlur}
       onChange={input.onChange}
-      invalid={touched && error}>
-      {children}
-    </InputComponent>
+      invalid={touched && error}
+    />
   );
 };
 
@@ -43,12 +50,10 @@ ReduxFormWrapper.propTypes = {
    * input node
    */
   className: PropTypes.string,
-
   /**
-   * Optionally provide the default value of the <textarea>
+   * Specify the input component which is getting connected
    */
-  defaultValue: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-
+  children: PropTypes.func.isRequired,
   /**
    * Specify whether the control is disabled
    */
@@ -66,14 +71,14 @@ ReduxFormWrapper.propTypes = {
   labelText: PropTypes.node.isRequired,
 
   /**
-   * Optionally provide an `onChange` handler that is called whenever <textarea>
+   * Optionally provide an `onChange` handler that is called whenever <InputComponent>
    * is updated
    */
   onChange: PropTypes.func,
 
   /**
    * Optionally provide an `onClick` handler that is called whenever the
-   * <textarea> is clicked
+   * <InputComponent> is clicked
    */
   onClick: PropTypes.func,
 
@@ -106,11 +111,6 @@ ReduxFormWrapper.propTypes = {
    * Specify whether you want the underlying label to be visually hidden
    */
   hideLabel: PropTypes.bool,
-
-  /**
-   * Specify whether you want the light version of this control
-   */
-  light: PropTypes.bool,
 };
 
 ReduxFormWrapper.defaultProps = {

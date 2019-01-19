@@ -56,7 +56,6 @@ export default class ReactTablePagination extends Component {
       totalItems,
     } = this.props;
 
-    console.log('The probs', this.props, this.props.TableComponent);
     return (
       <div
         className={classnames(paginationClassName, '-pagination')}
