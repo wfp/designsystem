@@ -2,10 +2,6 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 import Link from '../components/Link';
-import {
-  BannerNavigation,
-  BannerNavigationItem,
-} from '../components/BannerNavigation';
 import Footer from '../components/Footer';
 import Search from '../components/Search';
 
@@ -58,53 +54,6 @@ const renderAnchor = props => {
 const Page = ({ children, withoutSecondary }) => {
   return (
     <div>
-      <BannerNavigation pageWidth="narrow">
-        <BannerNavigationItem>
-          <Link href="http://communities.wfp.org" target="_blank">
-            Communities
-          </Link>
-        </BannerNavigationItem>
-        <BannerNavigationItem>
-          <Link href="http://manuals.wfp.org" target="_blank">
-            Manuals
-          </Link>
-        </BannerNavigationItem>
-        <BannerNavigationItem>
-          <Link href="https://go.docs.wfp.org" target="_blank">
-            GoDocs
-          </Link>
-        </BannerNavigationItem>
-        <BannerNavigationItem>
-          <Link href="http://opweb.wfp.org" target="_blank">
-            OPweb
-          </Link>
-        </BannerNavigationItem>
-        <BannerNavigationItem>
-          <Link href="http://info.wfp.org" target="_blank">
-            IN/FO
-          </Link>
-        </BannerNavigationItem>
-        <BannerNavigationItem>
-          <Link href="https://selfservice.go.wfp.org" target="_blank">
-            Self-service
-          </Link>
-        </BannerNavigationItem>
-        <BannerNavigationItem>
-          <Link href="https://welearn.wfp.org" target="_blank">
-            WeLearn
-          </Link>
-        </BannerNavigationItem>
-        {/*<BannerNavigationItem>
-          <Search
-            size="small"
-            id="search-2"
-            labelText="Search"
-            placeHolderText="Search"
-            onChange={action('onChange')}
-          />
-        </BannerNavigationItem>*/}
-      </BannerNavigation>
-
       <MainNavigation logo={<a href="http://www.wfp.org">WFP UI</a>}>
         <MainNavigationItem>
           <Link href="http://communities.wfp.org" target="_blank">

@@ -73,6 +73,7 @@ export default class Search extends Component {
       placeHolderText,
       labelText,
       closeButtonLabelText,
+      light,
       small,
       kind,
       onSearchIconClick,

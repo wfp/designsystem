@@ -12,18 +12,9 @@ import Search from '../Search';
 import Link from '../Link';
 
 storiesOf('BannerNavigation', module)
-  .addDecorator(withReadme([readme]))
   .add(
-    'default',
-    withInfo({
-      text: `
-    The BannerNavigation is used on internal applications above the main navigation to crosslink between the most important internal applications. It is hidden on Mobile devices.
-
-    ~~~js
-    import { BannerNavigation, BannerNavigationItem } from '@wfp/ui';
-    ~~~
-    `,
-    })(() => (
+    'Default',
+    () => (
       <BannerNavigation>
         <BannerNavigationItem>
           <Link href="http://communities.wfp.org" target="_blank">
@@ -70,17 +61,15 @@ storiesOf('BannerNavigation', module)
           />
         </BannerNavigationItem>
       </BannerNavigation>
-    ))
+    ),
+    {
+      info: {
+        text: readme,
+      },
+    }
   )
-  .add(
-    'BannerNavigationWithContent',
-    withInfo({
-      text: `
-    The BannerNavigation is used on internal applications above the main navigation to crosslink between the most important internal applications. It is hidden on Mobile devices.
-
-    ~~~js
-    import { BannerNavigation, BannerNavigationItem } from '@wfp/ui';
-    ~~~
-    `,
-    })(() => <BannerNavigationWithContent />)
-  );
+  .add('BannerNavigationWithContent', () => <BannerNavigationWithContent />, {
+    info: {
+      text: readme,
+    },
+  });

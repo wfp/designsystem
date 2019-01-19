@@ -1,4 +1,4 @@
-The BannerNavigation is used on internal applications only and allows the user to quickly switch to other important applications.
+The BannerNavigation is used on internal applications which are actually listed on the bar only to crosslink between the applications. It is hidden on Mobile devices.
 
 ### Usage with default content
 
