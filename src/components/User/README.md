@@ -1,4 +1,4 @@
-The User Icon is used inside the MainNavigation and can display an avatar and username.
+The User is used inside the MainNavigation and can display an avatar and username. It can be also used inside forms, etc. with the extended prop.
 
 ```js
 import { User } from '@wfp/ui';
@@ -13,9 +13,25 @@ import { User } from '@wfp/ui';
 />
 ```
 
-| Setting  | Default     | Options              | Role                                                                                                                         |
-| -------- | ----------- | -------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
-| alt      | `undefined` | `string`             | The alt-text of the avatar                                                                                                   |
-| name     | `undefined` | `string` `undefined` | The user name. If `undefined` only the avatar image will be displayed                                                        |
-| ellipsis | `false`     | `boolean`            | Sets the max-width of the user name to `130px` and shows an ellipsis                                                         |
-| image    | `undefined` | `string`             | Url to an avatar image The size of the image is `25px` _ `25px`. Provide at least `50px` _ `50px` to support HiDPI displays. |
+### Extended User
+
+```js
+<User
+  alt="Image Alt text"
+  description={
+    <List kind="simple" small>
+      <ListItem>Business Support Assistant G4</ListItem>
+      <ListItem>Fixed Term</ListItem>
+    </List>
+  }
+  extendedDescription={
+    <List kind="simple" small>
+      <ListItem title="First level supervisor">Marie Curie</ListItem>
+      <ListItem title="Mrc">Tanzania Country Office</ListItem>
+      <ListItem title="Head of unit">Max Planck</ListItem>
+    </List>
+  }
+  name="Albert Einstein"
+  image="https//www.example.com/image.jpg"
+/>
+```

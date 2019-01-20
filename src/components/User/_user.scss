@@ -18,6 +18,15 @@
     height: rem(25px);
     border-radius: 50%;
     margin-right: rem(10px);
+    .#{$prefix}--user--has-description & {
+      width: rem(60px);
+      height: rem(60px);
+      margin-right: $spacing-lg;
+      @include rtl {
+        margin-left: $spacing-lg;
+        margin-right: inherit;
+      }
+    }
     @include rtl {
       margin-left: rem(10px);
       margin-right: inherit;
@@ -30,6 +39,26 @@
     background-color: $color__navy-gray-7;
   }
 
+  .#{$prefix}--user__description {
+    @include typescale('delta');
+    //color: $text-02;
+  }
+
+  .#{$prefix}--user__extended-description {
+    margin-left: $spacing-lg;
+    @include typescale('delta');
+    //color: $text-02;
+  }
+
+  .#{$prefix}--user__title {
+    > span {
+      .#{$prefix}--user--has-description & {
+        font-weight: bold;
+        line-height: 1.4em;
+      }
+    }
+  }
+
   .#{$prefix}--user__title--ellipsis {
     display: inline-block;
     max-width: 130px;
@@ -38,7 +67,7 @@
     white-space: nowrap;
     text-overflow: ellipsis;
   }
-  .wfp--user__title--small {
+  .#{$prefix}--user__title--small {
     @include breakpoint(bp--md--major) {
       display: none;
     }

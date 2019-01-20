@@ -145,14 +145,14 @@ const colors = {
     },
     {
       name: 'text-02',
-      hex: '#5a6872',
+      hex: '#8c9ba5',
       scss: '$text-02',
       css: 'color__text-02',
       type: 'ui',
     },
     {
       name: 'text-03',
-      hex: '#5a6872',
+      hex: '#dfe6eb',
       scss: '$text-03',
       css: 'color__text-03',
       type: 'ui',
