@@ -24,10 +24,8 @@ storiesOf(' Documentation', module)
         <h3>Use with CDN</h3>
         <p>
           The Favicons from the CDN can be found{' '}
-          <Link href={`${process.env.STORYBOOK_ASSETS}favicons`}>
-            here ({`${process.env.STORYBOOK_ASSETS}favicons`})
-          </Link>. The full sizes catalog of the icons can be found below in the
-          readme.
+          <Link href={`${process.env.STORYBOOK_ASSETS}favicons`}>here</Link>.
+          The full sizes catalog of the icons can be found below in the readme.
         </p>
       </Page>
     );

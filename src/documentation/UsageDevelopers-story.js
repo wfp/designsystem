@@ -2,8 +2,13 @@
 
 import React from 'react';
 import { storiesOf } from '@storybook/react';
+import PrismCode from 'react-prism';
+
 import Page from './Page';
 import Blockquote from '../components/Blockquote';
+
+require('prismjs');
+require('prismjs/themes/prism.css');
 
 storiesOf(' Documentation.Getting Started', module).add(
   'Usage for Developers',
@@ -17,10 +22,14 @@ storiesOf(' Documentation.Getting Started', module).add(
       <h3>React</h3>
       <p>Installing the UI Kit</p>
       <Blockquote title="Install via npm" type="code">
-        {`npm install @wfp/ui --save`}
+        <PrismCode component="pre" className="language-html">
+          {`npm install @wfp/ui --save`}
+        </PrismCode>
       </Blockquote>
       <Blockquote title="Install via yarn" type="code">
-        {`yarn add @wfp/ui`}
+        <PrismCode component="pre" className="language-html">
+          {`yarn add @wfp/ui`}
+        </PrismCode>
       </Blockquote>
 
       <p>
@@ -28,20 +37,27 @@ storiesOf(' Documentation.Getting Started', module).add(
         dependency)
       </p>
       <Blockquote title="Install via npm" type="code">
-        {`npm install @wfp/icons --save`}
+        <PrismCode component="pre" className="language-html">
+          {`npm install @wfp/icons --save`}
+        </PrismCode>
       </Blockquote>
       <Blockquote title="Install via yarn" type="code">
-        {`yarn add @wfp/icons`}
+        <PrismCode component="pre" className="language-html">
+          {`yarn add @wfp/icons`}
+        </PrismCode>
       </Blockquote>
 
       <p>Importing the React components</p>
       <Blockquote title="Importing the MainNavigation" type="code">
-        {`import { MainNavigation, MainNavigationItem } from '@wfp/ui';`}
+        <PrismCode component="pre" className="language-javascript">
+          {`import { MainNavigation, MainNavigationItem } from '@wfp/ui';`}
+        </PrismCode>
       </Blockquote>
       <h3>CSS</h3>
       <p>You can import the whole css file into your application.</p>
       <Blockquote title="CDN" type="code">
-        {`<link
+        <PrismCode component="pre" className="language-html">
+          {`<link
   rel="stylesheet"
   type="text/css"
   href="https://cdn.wfp.org/guides/ui/v1.1.16/assets/css/styles.min.css"
@@ -50,6 +66,7 @@ storiesOf(' Documentation.Getting Started', module).add(
 /* Uncompressed styles.css */
 https://cdn.wfp.org/guides/ui/v1.1.16/assets/css/styles.css
 `}
+        </PrismCode>
       </Blockquote>
       <h3>SCSS</h3>
       <p>
@@ -58,7 +75,8 @@ https://cdn.wfp.org/guides/ui/v1.1.16/assets/css/styles.css
         variables and functions from WFP-UI or to override settings.
       </p>
       <Blockquote title="Use Source scss" type="code">
-        {`// Override settings
+        <PrismCode component="pre" className="language-css">
+          {`// Override settings
 $input-border-radius: 5px;
 $button-border-radius: 60px;
 $button-font-size: 25px;
@@ -73,6 +91,7 @@ $color__main: #0076FF;
 
 // Only use variables
 @import "../../node_modules/@wfp/ui/source/globals/scss/vars";`}
+        </PrismCode>
       </Blockquote>
     </Page>
   )

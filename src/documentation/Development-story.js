@@ -12,9 +12,10 @@ storiesOf(' Documentation', module).add('Development', () => (
       submit a pull request.{' '}
       <Link href="https://github.com/wfp/ui">Project on GitHub</Link>
     </p>
+    <br />
     <iframe
       title="GitHub Like"
-      src="https://ghbtns.com/github-btn.html?user=wfp&repo=ui&type=star&count=true"
+      src="https://ghbtns.com/github-btn.html?user=wfp&repo=ui&type=star&count=true&size=large"
       frameborder="0"
       scrolling="0"
       width="160px"

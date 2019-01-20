@@ -6,7 +6,7 @@ import Page from './Page';
 import Blockquote from '../components/Blockquote';
 
 storiesOf(' Documentation', module).add('Typography', () => (
-  <Page title="Typography" subTitle="Introduction to the new WFP UI Kit">
+  <Page title="Typography" subTitle="Typefaces & Spacings">
     {/*<p>
       Typography plays a critical role in any design; in fact, it accounts for
       as much as 95% of everything we see on the Web. When done well, it adds

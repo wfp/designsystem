@@ -3,10 +3,12 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import Page from './Page';
+import Blockquote from '../components/Blockquote';
+import Link from '../components/Link';
 
 storiesOf(' Documentation', module).add('Browser Support', () => (
   <Page title="Browser Support" subTitle="All supported browsers">
-    <p>Components is supported in the following browsers:</p>
+    <p>Currently the following browsers are supported:</p>
 
     <ul className="wfp--story--list">
       <li>IE11 (Support will be removed soon)</li>
@@ -15,5 +17,20 @@ storiesOf(' Documentation', module).add('Browser Support', () => (
       <li>Chrome latest & last four versions</li>
       <li>Safari latest & last two versions</li>
     </ul>
+
+    <p>
+      Please make sure that your application is independent of which browser is
+      used to access them (i.e. browser agnostic).
+    </p>
+
+    <Blockquote>
+      Find out{' '}
+      <Link
+        href="http://newgo.wfp.org/documents/software-solutions-technology-stack"
+        target="_blank">
+        more
+      </Link>{' '}
+      about the browsers supported on WFP GO.
+    </Blockquote>
   </Page>
 ));

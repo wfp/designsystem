@@ -5,11 +5,11 @@ import Wrapper from '../components/Wrapper';
 const Page = ({ children, pageWidth, subTitle, title }) => {
   return (
     <Wrapper
-      style={{ margin: '2em auto' }}
+      style={{ margin: '4rem auto' }}
       className="wfp--story"
       pageWidth={pageWidth ? pageWidth : 'sm'}>
-      <h1 className="wfp--story__title">{title}</h1>
       <h2 className="wfp--story__sub-title">{subTitle}</h2>
+      <h1 className="wfp--story__title">{title}</h1>
       {children}
     </Wrapper>
   );

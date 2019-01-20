@@ -23,7 +23,7 @@ describe('User', () => {
       });
     });
 
-    const userTitle = () => wrapper.find('span');
+    const userTitle = () => wrapper.find('span.wfp--user__title');
 
     describe('usertitle', () => {
       it('renders as expected', () => {

@@ -194,7 +194,7 @@ const Page = ({ children, withoutSecondary }) => {
         </MainNavigationItem>
         <MainNavigationItem>
           <Search
-            main
+            kind="main"
             id="search-2"
             labelText="Search"
             placeHolderText="Search"

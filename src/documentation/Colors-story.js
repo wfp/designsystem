@@ -135,7 +135,7 @@ storiesOf(' Documentation', module).add('Colors', () => {
   };
 
   return (
-    <Page title="Colors" subTitle="All colours">
+    <Page title="Brand & UX colors" subTitle="All colours">
       <p>
         The visual identity includes a palette of ten complementary colours that
         can be used with the logo in communications products. Please do not use
