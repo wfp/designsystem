@@ -6,7 +6,7 @@ import Page from './Page';
 import Link from '../components/Link';
 
 storiesOf(' Documentation.Getting Started', module).add('React Usage', () => (
-  <Page title="React" subTitle="Guidelines & Recommendations">
+  <Page title="React Usage" subTitle="Guidelines & Recommendations">
     <h2>Decouple front- and backend</h2>
     <p>
       Seperating the front end from the back end minimizes the overall

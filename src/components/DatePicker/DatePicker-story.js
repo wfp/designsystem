@@ -1,35 +1,129 @@
-/**
- * Modified from https://github.com/IBM/carbon-components-react/
- *
- * This source code is licensed under the Apache-2.0 license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
 /* eslint-disable no-console */
 
-import React from 'react';
+import React, { PureComponent } from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 
 import { withKnobs, text } from '@storybook/addon-knobs';
-import Link from '../Link';
+import readme from './README.md';
 
-const props = () => ({
-  className: 'some-class',
-  href: text('The link href (href)', '#'),
-  onClick: (handler => evt => {
-    evt.preventDefault(); // Prevent link from being followed for demo purpose
-    handler(evt);
-  })(action('onClick')),
-});
+import store from '../../internal/configureStore';
+import FormWrapper from '../../internal/RfFormWrapper';
+import moment from 'moment';
+import { Provider } from 'react-redux';
+import { Field } from 'redux-form';
+
+import 'react-dates/initialize';
+import { SingleDatePicker, DateRangePicker } from 'react-dates';
+
+export const DatePickerField = ({
+  labelText,
+  meta: { active, error, touched },
+  name,
+  input: { value, onFocus, onBlur, onChange },
+}) => (
+  <div>
+    <label htmlFor={name} className="wfp--label">
+      {labelText}
+    </label>
+    <SingleDatePicker
+      id={name}
+      date={value}
+      focused={active}
+      hideKeyboardShortcutsPanel
+      onDateChange={value => onChange({ value })}
+      onFocusChange={({ focused }) => (focused ? onFocus(true) : onBlur(true))}
+    />
+    {error && touched && <span>{error}</span>}
+  </div>
+);
+
+class DateRangePickerField extends PureComponent {
+  state = { focusedInput: null };
+  handleFocusChange = focusedInput => this.setState({ focusedInput });
+
+  render() {
+    const {
+      labelText,
+      meta: { error, touched },
+      name,
+      input: { value: { startDate = null, endDate = null }, onChange },
+    } = this.props;
+    const { focusedInput = null } = this.state;
+
+    return (
+      <div>
+        <label htmlFor={name} className="wfp--label">
+          {labelText}
+        </label>
+        <DateRangePicker
+          endDateId="endDate"
+          endDate={endDate}
+          endDatePlaceholderText="End Date"
+          focusedInput={focusedInput}
+          hideKeyboardShortcutsPanel
+          id={name}
+          onDatesChange={onChange}
+          onFocusChange={this.handleFocusChange}
+          startDateId="startDate"
+          startDate={startDate}
+          startDatePlaceholderText="Start Date"
+        />
+        {error && touched && <span>{error}</span>}
+      </div>
+    );
+  }
+}
+
+const props = {
+  datePicker: () => ({
+    component: DatePickerField,
+    name: text('The input name (name)', 'inputname'),
+    labelText: 'Select a date',
+    onClick: (handler => evt => {
+      evt.preventDefault(); // Prevent link from being followed for demo purpose
+      handler(evt);
+    })(action('onClick')),
+  }),
+  dateRangePicker: () => ({
+    component: DateRangePickerField,
+    name: 'datepicker',
+    labelText: 'Select a date range',
+    onClick: (handler => evt => {
+      evt.preventDefault(); // Prevent link from being followed for demo purpose
+      handler(evt);
+    })(action('onClick')),
+  }),
+};
 
 storiesOf('DatePicker', module)
   .addDecorator(withKnobs)
-  .add('Default', () => <Link {...props()}>Link</Link>, {
-    info: {
-      text: `
-            Links are typically used as a means of navigation either within the application, to a place outside, or to a resource.
-            For anything else, especially things that change data, you should be using a button.
-          `,
-    },
-  });
+  .addDecorator(story => (
+    <Provider store={store}>
+      <FormWrapper>{story()}</FormWrapper>
+    </Provider>
+  ))
+  .add(
+    'DatePicker (draft)',
+    () => (
+      <Field
+        {...props.datePicker()}
+        format={value => (value ? moment(value) : undefined)}
+        normalize={data => data && data.value && data.value.format()}
+      />
+    ),
+    {
+      info: {
+        text: readme,
+      },
+    }
+  )
+  .add(
+    'DateRangePicker (draft)',
+    () => <Field {...props.dateRangePicker()} />,
+    {
+      info: {
+        text: readme,
+      },
+    }
+  );

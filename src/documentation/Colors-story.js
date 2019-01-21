@@ -109,7 +109,7 @@ storiesOf(' Documentation', module).add('Colors', () => {
                         marginRight: '1em',
                         marginBottom: '1px',
                       }}
-                      className={`color__${color.name}-${blend}`}
+                      className={`color__${color.name}-{blend}`}
                     />
                     <div
                       style={{
@@ -123,7 +123,7 @@ storiesOf(' Documentation', module).add('Colors', () => {
                         }}>
                         hex: #0A6EB4
                       </span>
-                      scss: {color.scss}-${blend}
+                      scss: {color.scss}-{blend}
                     </div>
                   </div>
                 ))}

@@ -1,11 +1,10 @@
-Links are typically used as a means of navigation either within the application, to a place outside, or to a resource. For anything else, especially things that change data and actions, you should be using a button.
+The Datepicker allows the user to select a date or date range from a calendar.
 
-Links can have the same properties as an `<a>`-Element.
+We recommend [React Dates](https://github.com/airbnb/react-dates) for DatePickers and DateRangePickers.
 
-### Use with react-router
-
-Use the Link styling by adding the className `wfp--link` to `<NavLink />`
+Initialize with loading classes to load the styling from WFP UI
 
 ```js
-<NavLink className="wfp--link">Link</NavLink>
+import 'react-dates/initialize';
+import { SingleDatePicker, DateRangePicker } from 'react-dates';
 ```
