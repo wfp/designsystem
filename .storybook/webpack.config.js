@@ -50,6 +50,16 @@ const styleLoaders = [
   },
 ];
 
+module.exports = function(baseConfig, env, defaultConfig) {
+  defaultConfig.module.rules.push({
+    test: /\-story\.js$/,
+    loaders: [require.resolve('@storybook/addon-storysource/loader')],
+    enforce: 'pre',
+  });
+
+  return defaultConfig;
+};
+
 module.exports = (baseConfig, env, defaultConfig) => {
   defaultConfig.devtool = useStyleSourceMap ? 'source-map' : '';
   defaultConfig.optimization = {
@@ -119,7 +129,5 @@ module.exports = (baseConfig, env, defaultConfig) => {
       })
     );
   }
-
-  console.log('defaultConfig', JSON.stringify(defaultConfig, null, 4));
   return defaultConfig;
 };

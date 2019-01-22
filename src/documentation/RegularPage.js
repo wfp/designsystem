@@ -216,20 +216,20 @@ const Page = ({ children, withoutSecondary }) => {
         </MainNavigationItem>
       </MainNavigation>
 
-      {!withoutSecondary && (
-        <SecondaryNavigation
-          additional="additional Information"
-          pageWidth="narrow">
-          <Breadcrumb>
-            <BreadcrumbItem>
-              <a href="/#">
-                <BreadcrumbHome />
-              </a>
-            </BreadcrumbItem>
-            <BreadcrumbItem href="#">Breadcrumb 2</BreadcrumbItem>
-            <BreadcrumbItem href="#">Breadcrumb 3</BreadcrumbItem>
-          </Breadcrumb>
-          <SecondaryNavigationTitle>The Page Title</SecondaryNavigationTitle>
+      <SecondaryNavigation
+        additional="additional Information"
+        pageWidth="narrow">
+        <Breadcrumb>
+          <BreadcrumbItem>
+            <a href="/#">
+              <BreadcrumbHome />
+            </a>
+          </BreadcrumbItem>
+          <BreadcrumbItem href="#">Breadcrumb 2</BreadcrumbItem>
+          <BreadcrumbItem href="#">Breadcrumb 3</BreadcrumbItem>
+        </Breadcrumb>
+        <SecondaryNavigationTitle>The Page Title</SecondaryNavigationTitle>
+        {!withoutSecondary && (
           <Tabs {...props.tabs} customTabContent={true}>
             <Tab
               {...props.tab}
@@ -256,8 +256,8 @@ const Page = ({ children, withoutSecondary }) => {
               renderAnchor={renderAnchor}
             />
           </Tabs>
-        </SecondaryNavigation>
-      )}
+        )}
+      </SecondaryNavigation>
 
       {children}
 

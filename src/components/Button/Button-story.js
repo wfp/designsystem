@@ -1,16 +1,11 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { withInfo } from '@storybook/addon-info';
 import { withKnobs, boolean, select } from '@storybook/addon-knobs';
 import { iconAddSolid, iconSearch } from '@wfp/icons';
 import Button from '../Button';
 import ButtonSkeleton from '../Button/Button.Skeleton';
 
-import results from '../../../.jest-test-results.json';
-import { withTests } from '@storybook/addon-jest';
-
-import { withReadme } from 'storybook-readme';
 import readme from './README.md';
 
 const icons = {

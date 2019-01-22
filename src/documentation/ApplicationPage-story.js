@@ -4,6 +4,8 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import RegularPage from './RegularPage';
 import Wrapper from '../components/Wrapper';
+import { Select } from '../components/Select';
+import ReactSelect from 'react-select';
 
 import { Module, ModuleHeader, ModuleBody } from '../components/Module';
 
@@ -11,6 +13,12 @@ storiesOf(' Documentation.Sample Pages', module)
   .addDecorator(story => <RegularPage>{story()}</RegularPage>)
   .add('Application Page', () => (
     <Wrapper background="lighter" pageWidth="lg" spacing="md">
+      <ReactSelect
+        className="wfp--react-select-container"
+        classNamePrefix="wfp--react-select"
+        isMulti
+        id="abc"
+      />
       <div className="row">
         <Module className="col-xs-12 col-md-6 col-lg-4" size="single">
           <ModuleHeader>Module Example</ModuleHeader>

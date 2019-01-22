@@ -9,5 +9,5 @@ import '@storybook/addon-options/register';
 //import '@storybook/addon-viewport/register';
 import '@storybook/addon-jest/register';
 //import 'storybook-addon-rtl/register';
-//import '@storybook/addon-storysource/register';
+import '@storybook/addon-storysource/register';
 //require('./lucid-docs-addon/register');

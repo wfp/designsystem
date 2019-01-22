@@ -1,25 +1,26 @@
 import React from 'react';
-import Link from '../Link';
+import { List, ListItem } from '../List';
 import { shallow } from 'enzyme';
 
-describe('Link', () => {
+describe('List', () => {
   describe('Renders as expected', () => {
-    const link = shallow(
-      <Link href="www.google.com" className="some-class">
-        A simple link
-      </Link>
+    const list = shallow(
+      <List className="some-class">
+        <ListItem>First Item</ListItem>
+        <ListItem>Second Item</ListItem>
+      </List>
     );
+
     it('should use the appropriate link class', () => {
-      expect(link.hasClass('wfp--link')).toEqual(true);
+      expect(list.hasClass('wfp--list')).toEqual(true);
     });
-    it('should inherit the href property', () => {
-      expect(link.props().href).toEqual('www.google.com');
+
+    it('Renders children as expected', () => {
+      expect(list.props().children.length).toEqual(2);
     });
-    it('should include child content', () => {
-      expect(link.text()).toEqual('A simple link');
-    });
+
     it('should all for custom classes to be applied', () => {
-      expect(link.hasClass('some-class')).toEqual(true);
+      expect(list.hasClass('some-class')).toEqual(true);
     });
   });
 });
