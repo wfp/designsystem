@@ -11,7 +11,6 @@ import {
 } from '@storybook/addon-knobs';
 import FormError from '../FormError';
 
-import { withReadme } from 'storybook-readme';
 import readme from './README.md';
 
 const props = {
@@ -33,12 +32,10 @@ const props = {
 
 storiesOf('FormError', module)
   .addDecorator(withKnobs)
-  .addDecorator(withReadme([readme]))
+  .addParameters({ jest: ['FormError-test'] })
   .add(
     'Default (experimental)',
     withInfo({
-      text: `
-        The FormError is displayed at the top of the form if a form is not valid when trying to submit it.
-      `,
+      text: readme,
     })(() => <FormError {...props.formError()} />)
   );

@@ -1,10 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { withReadme } from 'storybook-readme';
 import readme from './README.md';
 
-import SingleComponent from '../../documentation/SingleComponent';
 import ReactTable from 'react-table';
 import Blockquote from '../Blockquote';
 import TablePagination from '../TablePagination';
@@ -175,72 +173,82 @@ const units = [
 
 storiesOf('Unit', module)
   .addDecorator(withKnobs)
-  .addDecorator(withReadme([readme]))
-  .add('Samples', () => {
-    const columns = [
-      {
-        Header: 'HTML',
-        accessor: 'name',
-        width: 150,
-        Cell: props => {
-          return <Unit {...props.original.setup}>{props.original.sample}</Unit>;
-        },
-      },
-      {
-        Header: 'SVG',
-        accessor: 'name',
-        width: 150,
-        Cell: props => {
-          return (
-            <svg width="120" height="20">
-              <g transform="translate(0 17)">
-                <Unit {...props.original.setup} svg>
-                  {props.original.sample}
-                </Unit>
-              </g>
-            </svg>
-          );
-        },
-      },
-      {
-        Header: 'Type',
-        accessor: 'type',
-        width: 150,
-      },
-      {
-        Header: 'Description',
-        accessor: 'description',
-        width: 500,
-      },
-    ];
-
-    return (
-      <ReactTable
-        data={units}
-        defaultPageSize={10}
-        columns={columns}
-        PaginationComponent={TablePagination}
-        defaultSorted={[
-          {
-            id: 'type',
+  .addParameters({ jest: ['Unit-test'] })
+  .add(
+    'Samples',
+    () => {
+      const columns = [
+        {
+          Header: 'HTML',
+          accessor: 'name',
+          width: 150,
+          Cell: props => {
+            return (
+              <Unit {...props.original.setup}>{props.original.sample}</Unit>
+            );
           },
-        ]}
-        SubComponent={row => {
-          return (
-            <div style={{ padding: '20px' }}>
-              <Blockquote type="code">
-                {`<Unit
+        },
+        {
+          Header: 'SVG',
+          accessor: 'name',
+          width: 150,
+          Cell: props => {
+            return (
+              <svg width="120" height="20">
+                <g transform="translate(0 17)">
+                  <Unit {...props.original.setup} svg>
+                    {props.original.sample}
+                  </Unit>
+                </g>
+              </svg>
+            );
+          },
+        },
+        {
+          Header: 'Type',
+          accessor: 'type',
+          width: 150,
+        },
+        {
+          Header: 'Description',
+          accessor: 'description',
+          width: 500,
+        },
+      ];
+
+      return (
+        <ReactTable
+          data={units}
+          defaultPageSize={10}
+          columns={columns}
+          PaginationComponent={TablePagination}
+          defaultSorted={[
+            {
+              id: 'type',
+            },
+          ]}
+          SubComponent={row => {
+            return (
+              <div style={{ padding: '20px' }}>
+                <Blockquote type="code">
+                  {`<Unit
   ${JSON.stringify(row.original.setup)}
 >
   ${row.original.sample}
 </Unit>`}
-              </Blockquote>
-            </div>
-          );
-        }}
-      />
-    );
-  })
+                </Blockquote>
+              </div>
+            );
+          }}
+        />
+      );
+    },
+    {
+      info: {
+        text: readme,
+      },
+    }
+  )
 
   .add(
     'default',

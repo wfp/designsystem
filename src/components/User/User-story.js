@@ -48,7 +48,7 @@ const UserProps = {
 
 storiesOf('User', module)
   .addDecorator(withKnobs)
-  .addDecorator(withReadme([readme]))
+  .addParameters({ jest: ['User-test'] })
   .add('Default', () => <User {...UserProps.default()} />, {
     info: {
       text: readme,

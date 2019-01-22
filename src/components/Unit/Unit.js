@@ -56,8 +56,6 @@ const Unit = props => {
     ' ' +
     unitClassName +
     ' ' +
-    /*   unitHideClass +
-    ' ' +*/
     outputClassName +
     ' ' +
     setupClassName;

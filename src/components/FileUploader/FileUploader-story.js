@@ -16,6 +16,8 @@ import FileUploader, { FileUploaderButton } from '../FileUploader';
 import FileUploaderSkeleton from '../FileUploader/FileUploader.Skeleton';
 import Button from '../Button';
 
+import readme from './README.md';
+
 const buttonKinds = {
   'Primary (primary)': 'primary',
   'Secondary (secondary)': 'secondary',
@@ -70,14 +72,13 @@ const props = {
 
 storiesOf('FileUploader', module)
   .addDecorator(withKnobs)
+  .addParameters({ jest: ['FileUploader-test'] })
   .add(
     'FileUploaderButton',
     () => <FileUploaderButton {...props.fileUploaderButton()} />,
     {
       info: {
-        text: `
-            The FileUploaderButton can be used as a standalone component if you do not need the extra UI that comes with FileUploader. The FileUploaderButton is used in FileUploader.
-          `,
+        text: readme,
       },
     }
   )
@@ -120,9 +121,7 @@ storiesOf('FileUploader', module)
     ),
     {
       info: {
-        text: `
-    Placeholder skeleton state to use when content is loading.
-    `,
+        text: readme,
       },
     }
   );
