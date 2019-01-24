@@ -1,6 +1,6 @@
 {
   "name": "@wfp/ui",
-  "version": "1.1.57",
+  "version": "1.1.58",
   "description": "WFP UI Kit Next",
   "license": "Apache-2",
   "main": "lib/index.js",
@@ -106,13 +106,14 @@
     }
   },
   "peerDependencies": {
-    "@wfp/icons": "^0.0.68",
+    "@wfp/icons": "^0.0.70",
     "react": "^16.4.0",
     "react-dom": "^16.4.0"
   },
   "dependencies": {
     "classnames": "2.2.6",
     "downshift": "^1.31.14",
+    "final-form": "^4.11.0",
     "flatpickr": "4.5.1",
     "invariant": "^2.2.3",
     "lodash.debounce": "^4.0.8",
@@ -154,7 +155,7 @@
     "@storybook/addon-storysource": "^4.1.7",
     "@storybook/addons": "^4.1.7",
     "@storybook/react": "^4.1.7",
-    "@wfp/icons": "0.0.68",
+    "@wfp/icons": "0.0.70",
     "add": "^2.0.6",
     "all-contributors-cli": "^5.2.1",
     "autoprefixer": "^8.3.0",
@@ -207,6 +208,7 @@
     "react": "^16.4.0",
     "react-dates": "^18.4.0",
     "react-dom": "^16.4.0",
+    "react-final-form": "^4.0.2",
     "react-prism": "^4.3.2",
     "react-redux": "^5.0.7",
     "react-select": "^2.1.1",
