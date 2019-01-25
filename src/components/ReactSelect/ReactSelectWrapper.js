@@ -10,6 +10,7 @@ export const SingleDatePickerField = ({
   meta: { active, error, touched },
   name,
   input: { value, onFocus, onBlur, onChange },
+  ...other
 }) => {
   const SingleDatePicker = datePicker;
 
@@ -31,6 +32,7 @@ export const SingleDatePickerField = ({
         onFocusChange={({ focused }) =>
           focused ? onFocus(true) : onBlur(true)
         }
+        {...other}
       />
       {errorMessage}
     </div>

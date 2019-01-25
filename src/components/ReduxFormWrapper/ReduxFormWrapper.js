@@ -62,6 +62,7 @@ const ReduxFormWrapper = ({
           {other.required && <div className="wfp--label__required" />}
         </React.Fragment>
       }
+      controlled={true}
       invalidText={error}
       onBlur={input.onBlur}
       onChange={input.onChange}

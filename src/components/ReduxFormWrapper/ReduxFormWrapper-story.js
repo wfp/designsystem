@@ -20,6 +20,7 @@ import ReactSelect from 'react-select';
 import TextArea from '../TextArea';
 import TextInput from '../TextInput';
 import Toggle from '../Toggle';
+import { DateRangePickerInput, SingleDatePickerInput } from '../DatePicker';
 
 const inputs = {
   Checkbox: 'Checkbox',
@@ -61,21 +62,16 @@ const maxLength15 = maxLength(15);
   </React.Fragment>
 ); */
 
-const child = props => {
-  const Input =
-    inputMap[
-      select('Component (ReduxFormWrapper(Input))', inputs, 'TextInput')
-    ];
-  return <Input {...props} />;
-};
-
 const props = {
   regular: () => ({
     id: 'id-input',
     className: 'wfp--react-select-container',
     classNamePrefix: 'wfp--react-select',
     component: ReduxFormWrapper,
-    children: child,
+    inputComponent:
+      inputMap[
+        select('Component (ReduxFormWrapper(Input))', inputs, 'TextInput')
+      ],
     onClick: action('onClick'),
     labelText: text('Label (labelText)', 'Label Text'),
     name: text('Name', 'input'),

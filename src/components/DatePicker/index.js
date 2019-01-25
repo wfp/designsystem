@@ -1,2 +1,2 @@
-export { SingleDatePickerField } from './SingleDatePickerField';
-export { DateRangePickerField } from './DateRangePickerField';
+export { SingleDatePickerInput } from './SingleDatePickerInput';
+export { DateRangePickerInput } from './DateRangePickerInput';
