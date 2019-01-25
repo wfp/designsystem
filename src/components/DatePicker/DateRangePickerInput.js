@@ -34,6 +34,10 @@ export class DateRangePickerInput extends PureComponent {
       endDateId,
       endDatePlaceholderText,
       name,
+      onBlur,
+      onDragStart,
+      onDrop,
+      onFocus,
       ...other
     } = this.props;
     const { focusedInput, startDate, endDate } = this.state;
@@ -66,17 +70,19 @@ export class DateRangePickerInput extends PureComponent {
         {helper}
         <DateRangePicker
           endDateId={endDateId}
-          endDate={controlled ? value.endDate : endDate}
+          endDate={onChange ? value.endDate : endDate}
           endDatePlaceholderText={endDatePlaceholderText}
           focusedInput={focusedInput}
           hideKeyboardShortcutsPanel
           onDatesChange={({ startDate, endDate }) => {
-            onChange({ startDate, endDate });
+            if (onChange) {
+              onChange({ startDate, endDate });
+            }
             this.setState({ startDate, endDate });
           }}
           onFocusChange={this.handleFocusChange}
           startDateId={startDateId}
-          startDate={controlled ? value.startDate : startDate}
+          startDate={onChange ? value.startDate : startDate}
           startDatePlaceholderText={startDatePlaceholderText}
           {...other}
         />
@@ -91,7 +97,6 @@ DateRangePickerInput.defaultProps = {
   endDateId: 'endDate',
   startDatePlaceholderText: 'Start Date',
   endDatePlaceholderText: 'End Date',
-  onChange: () => {},
 };
 
 DateRangePickerInput.propTypes = {

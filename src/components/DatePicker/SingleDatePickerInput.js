@@ -27,12 +27,13 @@ export class SingleDatePickerInput extends PureComponent {
       invalid,
       invalidText,
       helperText,
-
       active,
       value,
+      name,
       onFocus,
       onBlur,
-
+      onDragStart,
+      onDrop,
       ...other
     } = this.props;
 
@@ -62,11 +63,13 @@ export class SingleDatePickerInput extends PureComponent {
         {label}
         {helper}
         <SingleDatePicker
-          date={controlled ? value : controlledValue}
+          date={onChange ? value : controlledValue}
           focused={focused}
           hideKeyboardShortcutsPanel
           onDateChange={value => {
-            onChange({ value });
+            if (onChange) {
+              onChange({ value });
+            }
             this.setState({ controlledValue: value });
           }}
           onFocusChange={({ focused }) => {
@@ -134,11 +137,6 @@ SingleDatePickerInput.propTypes = {
    * Specify the rows attribute for the <textarea>
    */
   rows: PropTypes.number,
-
-  /**
-   * Provide the current value of the <textarea>
-   */
-  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 
   /**
    * Specify whether the control is currently invalid

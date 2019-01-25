@@ -62,11 +62,10 @@ const ReduxFormWrapper = ({
           {other.required && <div className="wfp--label__required" />}
         </React.Fragment>
       }
-      controlled={true}
       invalidText={error}
       onBlur={input.onBlur}
       onChange={input.onChange}
-      invalid={touched && error}
+      invalid={touched && error ? true : false}
     />
   );
 };
@@ -80,7 +79,7 @@ ReduxFormWrapper.propTypes = {
   /**
    * Specify the input component which is getting connected
    */
-  children: PropTypes.func.isRequired,
+  inputComponent: PropTypes.func.isRequired,
   /**
    * Specify whether the control is disabled
    */
