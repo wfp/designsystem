@@ -15,8 +15,8 @@ export Credits from './components/Credits';
 export ContentSwitcher from './components/ContentSwitcher';
 
 export {
-  SingleDatePickerField,
-  DateRangePickerField,
+  SingleDatePickerInput,
+  DateRangePickerInput,
 } from './components/DatePicker';
 
 export FileUploader from './components/FileUploader';
