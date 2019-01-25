@@ -68,8 +68,6 @@
     position: absolute;
     right: 0;
     top: 50%;
-    -webkit-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
     transform: translateY(-50%);
   }
   .SingleDatePickerInput_clearDate__default:focus,
@@ -398,9 +396,6 @@
     background: #fff;
     text-align: center;
     vertical-align: top;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
     user-select: none;
   }
   .CalendarMonth_table {
@@ -626,9 +621,7 @@
     border-radius: 3px;
   }
   .DayPicker_transitionContainer__horizontal {
-    -webkit-transition: height 0.2s ease-in-out;
-    -moz-transition: height 0.2s ease-in-out;
-    transition: height 0.2s ease-in-out;
+    //transition: height 0.2s ease-in-out;
   }
   .DayPicker_transitionContainer__vertical {
     width: 100%;
@@ -685,9 +678,6 @@
     font-weight: auto;
   }
   .DateInput_input__readOnly {
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
     user-select: none;
   }
   .DateInput_input__focused {
@@ -765,8 +755,6 @@
     position: absolute;
     right: 0;
     top: 50%;
-    -webkit-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
     transform: translateY(-50%);
   }
   .DateRangePickerInput_clearDates__small {

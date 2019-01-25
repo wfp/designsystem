@@ -11,7 +11,7 @@ storiesOf(' Documentation', module).add('Browser Support', () => (
     <p>Currently the following browsers are supported:</p>
 
     <ul className="wfp--story--list">
-      <li>IE11 (Support will be removed soon)</li>
+      <li>IE11 (will soon no longer be supported by the WFP UI Kit)</li>
       <li>IE Edge latest & last four versions</li>
       <li>Firefox latest & last four versions</li>
       <li>Chrome latest & last four versions</li>

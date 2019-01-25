@@ -6,15 +6,23 @@ let didWarnAboutDeprecation = false;
 
 const ReduxFormWrapper = ({
   input,
+  inputComponent,
   InputComponent,
   classNamePrefix,
   meta: { touched, error, warning },
   children,
   ...other
 }) => {
-  if (children === undefined && InputComponent === undefined) return null;
+  if (
+    children === undefined &&
+    inputComponent === undefined &&
+    InputComponent === undefined
+  )
+    return null;
 
-  const InputComponentConnect = children ? children : InputComponent;
+  const InputComponentConnect = inputComponent
+    ? inputComponent
+    : InputComponent;
 
   if (__DEV__ && InputComponent !== undefined) {
     warningMesssage(
@@ -25,6 +33,24 @@ const ReduxFormWrapper = ({
     );
     didWarnAboutDeprecation = true;
   }
+
+  /* if (typeof children === 'object') {
+    const element = React.cloneElement(children, {
+      input,
+      other,
+      labelText: (
+        <React.Fragment>
+          {other.labelText}
+          {other.required && <div className="wfp--label__required" />}
+        </React.Fragment>
+      ),
+      invalidText: error,
+      onBlur: input.onBlur,
+      onChange: input.onChange,
+      invalid: touched && error
+    })
+  return (element) 
+} */
 
   return (
     <InputComponentConnect

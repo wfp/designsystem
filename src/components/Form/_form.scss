@@ -83,7 +83,11 @@
     font-weight: 600;
     line-height: 1.5;
     display: none;
-
+    order: 3;
+    &.invalid {
+      max-height: rem(200px);
+      display: block;
+    }
     &::before {
       content: '*';
       display: inline-block;

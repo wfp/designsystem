@@ -14,6 +14,11 @@ export Credits from './components/Credits';
 
 export ContentSwitcher from './components/ContentSwitcher';
 
+export {
+  SingleDatePickerField,
+  DateRangePickerField,
+} from './components/DatePicker';
+
 export FileUploader from './components/FileUploader';
 export Footer from './components/Footer';
 export Form from './components/Form';
@@ -22,6 +27,7 @@ export FormGroup from './components/FormGroup';
 export FormHint from './components/FormHint';
 export FormItem from './components/FormItem';
 export FormLabel from './components/FormLabel';
+export FormWizard from './components/FormWizard';
 
 export Icon from './components/Icon';
 
@@ -70,7 +76,7 @@ export {
   SecondaryNavigationTitle,
 } from './components/SecondaryNavigation';
 
-export StepNavigation from './components/SelectItem';
+export StepNavigation from './components/StepNavigation';
 export StepNavigationItem from './components/StepNavigationItem';
 
 export Select from './components/Select';

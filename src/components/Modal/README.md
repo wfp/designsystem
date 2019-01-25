@@ -20,6 +20,18 @@ If you use the `passive={true}`prop you can add a custom Footer
 </div>
 ```
 
+
+#### Full screen Dialog (`Dialog` example)
+
+Full screen dialogs only show the Modal element without any other content like the navigation. They can be used for login, password reset or very important dialogs.
+
+```js
+  <Modal
+    open
+    hideClose
+    backgroundImage={yourBackgroundImage.jpg}
+  />
+
 #### Handle the `open` state
 
 Modal allows you to control the `open` State on your own. Use the Modal Wrapper component to use a controlled version of Modal.

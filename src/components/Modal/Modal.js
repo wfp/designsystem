@@ -234,7 +234,7 @@ export default class Modal extends Component {
       primaryFocusElement.focus();
       return;
     }
-    if (this.button) {
+    if (this.button && this.button.current) {
       this.button.current.focus();
     }
   };
@@ -270,6 +270,7 @@ export default class Modal extends Component {
       passiveModal,
       secondaryButtonText,
       primaryButtonText,
+      backgroundImage,
       open,
       onRequestClose,
       onRequestSubmit,
@@ -278,6 +279,7 @@ export default class Modal extends Component {
       inPortal,
       primaryButtonDisabled,
       danger,
+      hideClose,
       selectorPrimaryFocus, // eslint-disable-line
       selectorsFloatingMenus, // eslint-disable-line
       shouldSubmitOnEnter, // eslint-disable-line
@@ -291,12 +293,13 @@ export default class Modal extends Component {
     const modalClasses = classNames({
       [`${prefix}--modal`]: true,
       [`${prefix}--modal-tall`]: !passiveModal,
+      [`${prefix}--modal-background-image`]: backgroundImage,
       'is-visible': open,
       [`${prefix}--modal--danger`]: this.props.danger,
       [this.props.className]: this.props.className,
     });
 
-    const modalButton = (
+    const modalButton = !hideClose ? (
       <button
         className={`${prefix}--modal-close`}
         type="button"
@@ -308,7 +311,7 @@ export default class Modal extends Component {
           description={iconDescription}
         />
       </button>
-    );
+    ) : null;
 
     const modalBody = (
       <div
@@ -353,6 +356,11 @@ export default class Modal extends Component {
         onClick={this.handleClick}
         onBlur={this.handleBlur}
         className={modalClasses}
+        style={
+          backgroundImage
+            ? { backgroundImage: `url(${backgroundImage})` }
+            : undefined
+        }
         role="presentation"
         tabIndex={-1}
         onTransitionEnd={this.props.open ? this.handleTransitionEnd : undefined}

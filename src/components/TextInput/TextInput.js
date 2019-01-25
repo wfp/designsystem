@@ -73,8 +73,8 @@ const TextInput = ({
   return (
     <div className="wfp--form-item">
       {label}
-      {input}
       {helper}
+      {input}
       {error}
     </div>
   );
