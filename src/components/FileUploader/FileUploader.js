@@ -383,6 +383,7 @@ export default class FileUploader extends Component {
       multiple,
       accept,
       name,
+      onFilesChange,
       ...other
     } = this.props;
 

@@ -7,7 +7,7 @@ const { prefix } = settings;
 
 export class SingleDatePickerInput extends PureComponent {
   state = {
-    controlledValue: this.props.value ? this.props.value : null,
+    controlledValue: this.props.initialValue ? this.props.value : null,
     focusedInput: null,
   };
   handleFocusChange = focusedInput => this.setState({ focusedInput });
@@ -63,7 +63,7 @@ export class SingleDatePickerInput extends PureComponent {
         {label}
         {helper}
         <SingleDatePicker
-          date={onChange ? value : controlledValue}
+          date={onChange && value ? value : controlledValue}
           focused={focused}
           hideKeyboardShortcutsPanel
           onDateChange={value => {
