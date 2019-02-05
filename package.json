@@ -1,6 +1,6 @@
 {
   "name": "@wfp/ui",
-  "version": "1.1.65",
+  "version": "1.1.66",
   "description": "WFP UI Kit Next",
   "license": "Apache-2",
   "main": "lib/index.js",
@@ -106,7 +106,7 @@
     }
   },
   "peerDependencies": {
-    "@wfp/icons": "^0.0.70",
+    "@wfp/icons": "^0.0.71",
     "react": "^16.4.0",
     "react-dom": "^16.4.0"
   },
@@ -155,7 +155,7 @@
     "@storybook/addon-storysource": "^4.1.7",
     "@storybook/addons": "^4.1.7",
     "@storybook/react": "^4.1.7",
-    "@wfp/icons": "0.0.70",
+    "@wfp/icons": "0.0.71",
     "add": "^2.0.6",
     "all-contributors-cli": "^5.2.1",
     "autoprefixer": "^8.3.0",
