@@ -82,6 +82,15 @@
     h3 + p {
       margin-top: $spacing-sm;
     }
+
+    div + h4,
+    h3 + h4 {
+      margin-top: $spacing-lg;
+    }
+
+    h4 + div {
+      margin-top: $spacing-md;
+    }
   }
 
   .#{$prefix}--story--list {

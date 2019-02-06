@@ -10,13 +10,10 @@ storiesOf('Story', module)
     'Default',
     () => (
       <Story>
-        <h1 className="wfp--story__title">
-          WFP’s Immediate Response Account — saving lives in the Kasai region of
-          DRC
-        </h1>
         <h2 className="wfp--story__sub-title">
           Funding facility allows for scale-up of emergency operation
         </h2>
+        <h1 className="wfp--story__title">WFP’s Immediate Response Account</h1>
         <p className="wfp--markup">
           In mid-2016, widespread inter-ethnic tensions and conflict descended
           on the Kasai region of the Democratic Republic of Congo (DRC),

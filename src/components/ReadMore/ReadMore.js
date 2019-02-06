@@ -19,30 +19,14 @@ class ReadMore extends React.Component {
   };
 
   render() {
-    const { className, html } = this.props;
+    const { collapsed, className, expanded, moreText, html } = this.props;
     const { showMore } = this.state;
 
     const classNames = classnames('wfp--readmore', className);
 
     return (
       <div className={classNames}>
-        {showMore ? (
-          <div>
-            <Truncate
-              lines={100000}
-              dangerouslySetInnerHTML={{
-                __html: html,
-              }}
-            />
-          </div>
-        ) : (
-          <Truncate
-            lines={3}
-            dangerouslySetInnerHTML={{
-              __html: html,
-            }}
-          />
-        )}
+        {showMore ? expanded : collapsed}
         <Link
           onClick={this.handleToggleClick}
           small

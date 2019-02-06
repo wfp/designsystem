@@ -105,6 +105,7 @@ $deprecations--message: 'Deprecated code was found, this code will be removed be
 @import '../../components/notification/toast-notification';
 */
 
+@import '../../components/InlineLoading/inline-loading';
 @import '../../components/StepNavigation/step-navigation';
 @import '../../components/StepNavigationItem/step-navigation-item';
 @import '../../components/SkeletonText/skeleton';

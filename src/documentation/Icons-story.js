@@ -8,7 +8,94 @@ import Page from './Page';
 import Blockquote from '../components/Blockquote';
 import Link from '../components/Link';
 import Icon from '../components/Icon';
+import { Module, ModuleFooter } from '../components/Module';
 import iconList from '@wfp/icons/dist/carbon-icons.json';
+import Button from '../components/Button';
+
+import { Tooltip } from 'react-tippy';
+import tooltipStyle from '../components/Tooltip';
+
+const IconList = ({ icon }) => {
+  const iconName = icon.name.replace('icon--', '');
+  return (
+    <Tooltip
+      html={
+        <div
+          style={{
+            lineHeight: '1.2em',
+            padding: '0.2em 0.5em',
+            minHeight: '3rem',
+            display: 'flex',
+            justifyContent: 'center',
+            flexDirection: 'column',
+            alignItems: 'center',
+          }}>
+          <Icon
+            name={iconName}
+            description="WFP"
+            width="150"
+            height="150"
+            className="wfp--footer-cta-logo"
+          />
+          <div
+            className="wfp--inline-highlight"
+            style={{
+              fontFamily: 'monospace',
+              display: 'block',
+              marginTop: '1rem',
+              marginBottom: '1rem',
+              fontWeight: 'bold',
+            }}>
+            {iconName}
+          </div>
+          <Button
+            icon="download--glyph"
+            href={`https://github.com/wfp/carbon-icons/blob/master/src/svg/${iconName}.svg`}
+            small>
+            Download
+          </Button>
+        </div>
+      }
+      position="top"
+      trigger="click"
+      {...tooltipStyle}
+      style={{
+        width: '12.5%',
+      }}>
+      <Module light withHover>
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'column',
+            width: '100%',
+            height: '55px',
+          }}>
+          <Icon
+            name={iconName}
+            description="WFP"
+            width="39"
+            className="wfp--footer-cta-logo"
+          />
+        </div>
+        <ModuleFooter
+          style={{
+            padding: '0.2em',
+            fontSize: '0.45em',
+            textAlign: 'center',
+            alignItems: 'center',
+            justifyContent: 'center',
+            minHeight: '2rem',
+          }}>
+          <span>{iconName}</span>
+        </ModuleFooter>
+      </Module>
+    </Tooltip>
+  );
+};
+
+const wrapperStyle = { display: 'flex', flexWrap: 'wrap', margin: '0 -0.7em' };
 
 storiesOf(' Documentation', module).add('Icons', () => (
   <Page title="Icons" subTitle="Icons & Logos for User Interfaces">
@@ -59,43 +146,40 @@ storiesOf(' Documentation', module).add('Icons', () => (
     </p>
     <h3>List of Icons</h3>
 
-    {iconList.map(icon => {
-      const iconName = icon.name.replace('icon--', '');
-      return (
-        <div
-          style={{
-            display: 'inline-block',
-            border: '1px solid #E5E5E5',
-            height: '24%',
-            width: '24%',
-            marginRight: '1%',
-            marginBottom: '1%',
-            textAlign: 'center',
-            fontSize: '0.6em',
-          }}>
-          <div
-            style={{
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center',
-              width: '150px',
-              height: '100px',
-            }}>
-            <Icon
-              name={iconName}
-              description="WFP"
-              className="wfp--footer-cta-logo"
-            />
-          </div>
-          <div
-            style={{
-              background: '#F4F4F4',
-              lineHeight: '3em',
-            }}>
-            {iconName}
-          </div>
-        </div>
-      );
-    })}
+    <h4>WFP Logos</h4>
+    <div style={wrapperStyle}>
+      {iconList
+        .filter(function(icon) {
+          return icon.name.includes('logo');
+        })
+        .map(icon => {
+          return <IconList icon={icon} />;
+        })}
+    </div>
+
+    <h4>WFP Humanitatian Icons</h4>
+    <div style={wrapperStyle}>
+      {iconList
+        .filter(function(icon) {
+          return icon.name.includes('wfp-hum--');
+        })
+        .map(icon => {
+          return <IconList icon={icon} />;
+        })}
+    </div>
+
+    <h4>UI Icons</h4>
+
+    <div style={wrapperStyle}>
+      {iconList
+        .filter(function(icon) {
+          return (
+            !icon.name.includes('wfp-hum--') && !icon.name.includes('logo')
+          );
+        })
+        .map(icon => {
+          return <IconList icon={icon} />;
+        })}
+    </div>
   </Page>
 ));

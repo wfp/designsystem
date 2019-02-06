@@ -94,6 +94,20 @@
     }
   }
 
+  .#{$prefix}--module--light {
+    .#{$prefix}--module__inner {
+      box-shadow: none;
+      border: 2px solid rgba(#000, 0.1);
+    }
+    &.#{$prefix}--module--with-hover {
+      &:hover {
+        .#{$prefix}--module__inner {
+          border-color: $brand-01;
+        }
+      }
+    }
+  }
+
   .#{$prefix}--module--dark {
     .#{$prefix}--module__inner {
       background: $brand-02;

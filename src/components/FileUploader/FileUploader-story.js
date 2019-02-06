@@ -87,7 +87,7 @@ storiesOf('FileUploader', module)
     () => {
       let fileUploader;
       return (
-        <div className="bx--file__container">
+        <div className="wfp--file__container">
           <FileUploader
             {...props.fileUploader()}
             ref={node => (fileUploader = node)}
