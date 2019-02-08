@@ -10,35 +10,70 @@
 @import '../../globals/scss/import-once';
 @import '../../globals/scss/css--reset';
 
-@include exports('link') {
-  .#{$prefix}--link {
+@include exports('read-more') {
+  .#{$prefix}--read-more {
     @include reset;
-    @include font-family;
-    //@include typescale('epsilon');
-    @include font-smoothing;
-    font-weight: 600;
-    cursor: pointer;
-    color: $brand-01;
-    text-decoration: underline;
-    transition: $transition--base;
-
-    &:visited {
-      color: $brand-01;
-    }
-
-    &:active,
-    &:hover,
-    &:focus {
-      color: $brand-02;
-    }
-
-    &:focus {
-      @include focus-outline('border');
-    }
+    max-height: 400px;
+    overflow: hidden;
+    transition: all 0.3s;
 
     &[aria-disabled='true'] {
       opacity: 0.5;
       pointer-events: none;
+    }
+  }
+
+  .#{$prefix}--read-more__trigger {
+    display: block;
+    svg {
+      margin-left: 0.2em;
+      fill: $brand-01;
+    }
+  }
+
+  .#{$prefix}--read-more__content {
+    padding-bottom: $spacing-xs;
+  }
+
+  .#{$prefix}--read-more--fade {
+    position: relative;
+    .#{$prefix}--read-more__content {
+      position: relative;
+      overflow: hidden;
+      margin-bottom: $spacing-xs;
+      &:after {
+        content: '';
+        z-index: 10;
+        outline: 0;
+        display: block;
+        height: 40px;
+        width: 100%;
+        transition: all 1.7s;
+        opacity: 1;
+        position: absolute;
+        bottom: -5px;
+        background: linear-gradient(
+          to bottom,
+          rgba(255, 255, 255, 0) 0%,
+          white 100%
+        );
+      }
+    }
+    &.#{$prefix}--read-more--expanded {
+      .#{$prefix}--read-more__content {
+        margin-bottom: 0;
+        &:after {
+          opacity: 0;
+        }
+      }
+    }
+  }
+
+  .#{$prefix}--read-more--max-height {
+    .#{$prefix}--read-more__content {
+      overflow: hidden;
+      padding-bottom: $spacing-xs;
+      transition: all 0.3s;
     }
   }
 }

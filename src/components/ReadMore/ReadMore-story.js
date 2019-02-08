@@ -2,28 +2,65 @@
 
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-
-import { withReadme } from 'storybook-readme';
 import readme from './README.md';
 
 import ReadMore from '../ReadMore';
-import Truncate from 'react-truncate-html';
+import Truncate from 'react-truncate';
+
+import { withKnobs, boolean, number, text } from '@storybook/addon-knobs';
+import Button from '../Button';
 
 const moreText =
-  'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.';
+  'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor inviduntLorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor inviduntet dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.';
+
+const collapsed = (
+  <Truncate lines={1} ellipsis="...">
+    {moreText}
+  </Truncate>
+);
+
+const props = {
+  regular: () => ({
+    className: 'some-class',
+    collapsed: collapsed,
+    children: text('The expanded content (children)', moreText),
+    expandText: text('Expand text (expandText)', undefined),
+    collapseText: text('Collapse text (collapseText)', undefined),
+    maxHeight: number('Collapsed maximum Height (maxHeight)', undefined),
+    fade: boolean('Fade (fade)', false),
+  }),
+  fade: () => ({
+    className: 'some-class',
+    children: text('The expanded content (children)', moreText),
+    expandText: text('Expand text (expandText)', undefined),
+    collapseText: text('Collapse text (collapseText)', undefined),
+    maxHeight: number('Collapsed maximum Height (maxHeight)', 50),
+    fade: boolean('Fade (fade)', true),
+  }),
+  customButton: () => ({
+    className: 'some-class',
+    children: text('The expanded content (children)', moreText),
+    expandLink: <Button>Expand</Button>,
+    collapseLink: <Button>Collapse</Button>,
+    maxHeight: number('Collapsed maximum Height (maxHeight)', 50),
+    fade: boolean('Fade (fade)', true),
+  }),
+};
 
 storiesOf('ReadMore', module)
-  .addDecorator(withReadme([readme]))
-  .add('Default (Draft)', () => (
-    <ReadMore
-      collapsed={
-        <Truncate
-          lines={3}
-          dangerouslySetInnerHTML={{
-            __html: moreText,
-          }}
-        />
-      }
-      expanded={moreText}
-    />
-  ));
+  .addDecorator(withKnobs)
+  .add('Default (draft)', () => <ReadMore {...props.regular()} />, {
+    info: {
+      text: readme,
+    },
+  })
+  .add('Fade & animate (draft)', () => <ReadMore {...props.fade()} />, {
+    info: {
+      text: readme,
+    },
+  })
+  .add('Custom Buttons', () => <ReadMore {...props.customButton()} />, {
+    info: {
+      text: readme,
+    },
+  });
