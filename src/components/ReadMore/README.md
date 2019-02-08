@@ -5,7 +5,7 @@ Using the **ReadMore** component is a simple way to keep longer content from clu
 
 The `collapsed` props content will be displayed if the content is collapsed.
 ```js
-<ReadMore  collapsed="Collapsed content">
+<ReadMore collapsed="Collapsed content">
   Expanded content
 </ReadMore>
 ```
@@ -14,13 +14,13 @@ The `collapsed` props content will be displayed if the content is collapsed.
 Based on the type of content use [react-truncate](https://www.npmjs.com/package/react-truncate) or [react-truncate-html](https://www.npmjs.com/package/react-truncate-html) to truncate the collapsed content.
 
 ```js
-import  Truncate  from  'react-truncate';
+import Truncate from 'react-truncate';
 ```
 
 ```js
 <ReadMore
   collapsed={
-    <Truncate  lines={1}  ellipsis="...">{moreText}</Truncate>
+    <Truncate lines={1} ellipsis="...">{moreText}</Truncate>
   }
  >
   Expanded content

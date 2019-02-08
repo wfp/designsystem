@@ -19,6 +19,7 @@ const IconList = ({ icon }) => {
   const iconName = icon.name.replace('icon--', '');
   return (
     <Tooltip
+      interactive
       html={
         <div
           style={{
@@ -52,7 +53,7 @@ const IconList = ({ icon }) => {
             icon="download--glyph"
             href={`https://github.com/wfp/carbon-icons/blob/master/src/svg/${iconName}.svg`}
             small>
-            Download
+            View on GitHub
           </Button>
         </div>
       }
