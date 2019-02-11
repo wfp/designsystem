@@ -21,7 +21,7 @@
   .#{$prefix}--secondary-navigation__title {
     @include typescale('beta');
     @include font-family;
-    font-weight: 700;
+    font-weight: 400;
     padding-top: $spacing-md;
     padding-bottom: $spacing-md;
   }

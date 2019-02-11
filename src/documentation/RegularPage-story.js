@@ -11,8 +11,6 @@ storiesOf(' Documentation.Sample Pages', module)
   .add('Regular Page', () => (
     <Wrapper pageWidth="lg" spacing="md">
       <Story>
-        <h1 className="wfp--story__title">Lorem Ipsum</h1>
-        <h2 className="wfp--story__sub-title">Et jomen bin dolor</h2>
         <p>
           Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
           nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
