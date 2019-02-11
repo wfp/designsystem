@@ -1,6 +1,6 @@
 {
   "name": "@wfp/ui",
-  "version": "1.1.67",
+  "version": "1.2.0",
   "description": "WFP UI Kit Next",
   "license": "Apache-2",
   "main": "lib/index.js",
@@ -30,7 +30,8 @@
     "storybook": "start-storybook -s ./src/assets -p 9000",
     "test": "jest",
     "test:generate-output": "jest --json --outputFile=.jest-test-results.json || true",
-    "test-ssr": "yarn build && node ssr-tests/*.js"
+    "test-ssr": "yarn build && node ssr-tests/*.js",
+    "release": "standard-version"
   },
   "keywords": [
     "WFP",
@@ -113,7 +114,6 @@
   "dependencies": {
     "classnames": "2.2.6",
     "downshift": "^1.31.14",
-    "final-form": "^4.11.0",
     "flatpickr": "4.5.1",
     "invariant": "^2.2.3",
     "lodash.debounce": "^4.0.8",
@@ -185,6 +185,7 @@
     "eslint-plugin-react": "^7.11.1",
     "extract-text-webpack-plugin": "^3.0.2",
     "file-loader": "^1.1.11",
+    "final-form": "^4.11.0",
     "flexboxgrid": "^6.3.1",
     "gzip-size": "^5.0.0",
     "husky": "^1.1.2",
@@ -231,6 +232,7 @@
     "rollup-plugin-uglify": "^3.0.0",
     "sass-loader": "^7.1.0",
     "semantic-release": "^15.0.0",
+    "standard-version": "^4.4.0",
     "storybook-addon-rtl": "^0.1.2",
     "storybook-readme": "^4.0.2",
     "string-replace-loader": "^2.1.0",
