@@ -7,7 +7,9 @@ import RegularPage from './RegularPage';
 import Story from '../components/Story';
 import Wrapper from '../components/Wrapper';
 storiesOf(' Documentation.Sample Pages', module)
-  .addDecorator(story => <RegularPage withoutSecondary>{story()}</RegularPage>)
+  .addDecorator(story => (
+    <RegularPage withoutSecondaryTabs>{story()}</RegularPage>
+  ))
   .add('Regular Page', () => (
     <Wrapper pageWidth="lg" spacing="md">
       <Story>

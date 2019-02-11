@@ -51,7 +51,7 @@ const renderAnchor = props => {
   return <a href={props.href}>{props.label}</a>;
 };
 
-const Page = ({ children, withoutSecondary }) => {
+const Page = ({ children, withoutSecondary, withoutSecondaryTabs }) => {
   return (
     <div>
       <MainNavigation logo={<a href="http://www.wfp.org">WFP UI</a>}>
@@ -216,48 +216,50 @@ const Page = ({ children, withoutSecondary }) => {
         </MainNavigationItem>
       </MainNavigation>
 
-      <SecondaryNavigation
-        additional="additional Information"
-        pageWidth="narrow">
-        <Breadcrumb>
-          <BreadcrumbItem>
-            <a href="/#">
-              <BreadcrumbHome />
-            </a>
-          </BreadcrumbItem>
-          <BreadcrumbItem href="#">Breadcrumb 2</BreadcrumbItem>
-          <BreadcrumbItem href="#">Breadcrumb 3</BreadcrumbItem>
-        </Breadcrumb>
-        <SecondaryNavigationTitle>The Page Title</SecondaryNavigationTitle>
-        {!withoutSecondary && (
-          <Tabs {...props.tabs} customTabContent={true}>
-            <Tab
-              {...props.tab}
-              label="Tab label 1"
-              href="http://www.de.wfp.org"
-              renderAnchor={renderAnchor}
-            />
-            <Tab
-              {...props.tab}
-              label="Tab label 2"
-              href="http://www.es.wfp.org"
-              renderAnchor={renderAnchor}
-            />
-            <Tab
-              {...props.tab}
-              label="Tab label 3"
-              href="http://www.us.wfp.org"
-              renderAnchor={renderAnchor}
-            />
-            <Tab
-              {...props.tab}
-              label="Tab label 4"
-              href="http://www.fr.wfp.org"
-              renderAnchor={renderAnchor}
-            />
-          </Tabs>
-        )}
-      </SecondaryNavigation>
+      {!withoutSecondary && (
+        <SecondaryNavigation
+          additional="additional Information"
+          pageWidth="narrow">
+          <Breadcrumb>
+            <BreadcrumbItem>
+              <a href="/#">
+                <BreadcrumbHome />
+              </a>
+            </BreadcrumbItem>
+            <BreadcrumbItem href="#">Breadcrumb 2</BreadcrumbItem>
+            <BreadcrumbItem href="#">Breadcrumb 3</BreadcrumbItem>
+          </Breadcrumb>
+          <SecondaryNavigationTitle>The Page Title</SecondaryNavigationTitle>
+          {!withoutSecondaryTabs && (
+            <Tabs {...props.tabs} customTabContent={true}>
+              <Tab
+                {...props.tab}
+                label="Tab label 1"
+                href="http://www.de.wfp.org"
+                renderAnchor={renderAnchor}
+              />
+              <Tab
+                {...props.tab}
+                label="Tab label 2"
+                href="http://www.es.wfp.org"
+                renderAnchor={renderAnchor}
+              />
+              <Tab
+                {...props.tab}
+                label="Tab label 3"
+                href="http://www.us.wfp.org"
+                renderAnchor={renderAnchor}
+              />
+              <Tab
+                {...props.tab}
+                label="Tab label 4"
+                href="http://www.fr.wfp.org"
+                renderAnchor={renderAnchor}
+              />
+            </Tabs>
+          )}
+        </SecondaryNavigation>
+      )}
 
       {children}
 

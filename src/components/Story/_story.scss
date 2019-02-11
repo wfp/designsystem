@@ -15,6 +15,16 @@
   .#{$prefix}--story {
     @include reset;
     @include font-family;
+    &__center {
+      text-align: center;
+    }
+    &__full-height {
+      min-height: 65vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
     p {
       margin-top: $spacing-md;
       line-height: 1.6em;
