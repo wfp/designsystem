@@ -11,7 +11,6 @@
     "build": "node scripts/build.js && yarn build:css && yarn build:cssmin",
     "build:storybook": "build-storybook -o docs",
     "ci-check": "yarn prettier:diff && yarn lint && yarn test --runInBand && yarn test-ssr",
-    "build:assets": "webpack -p --config webpack.buildAssets.js",
     "build:cssmin": "node-sass ./src/globals/scss/styles.scss > ./assets/css/styles.min.css --output-style compressed | postcss ./assets/css/styles.min.css --no-map -u autoprefixer -r | postcss ./assets/css/styles.min.css -d ./assets/css/ --use autoprefixer",
     "build:css": "node-sass ./src/globals/scss -o ./assets/css --output-style compressed --source-map true | postcss ./assets/css/styles.css -d ./assets/css/ --use autoprefixer",
     "watch:css": "nodemon -e scss -x \"npm run build:css\"",
@@ -239,6 +238,7 @@
     "terser-webpack-plugin": "^1.1.0",
     "validate-commit-msg": "^2.10.1",
     "webpack": "^4.25.1",
+    "webpack-cli": "^3.2.3",
     "whatwg-fetch": "^2.0.3"
   },
   "release": {

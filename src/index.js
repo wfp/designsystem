@@ -32,6 +32,8 @@ export FormWizard from './components/FormWizard';
 export Icon from './components/Icon';
 
 export Link from './components/Link';
+export Loading from './components/Loading';
+export InlineLoading from './components/InlineLoading';
 
 export { List, ListItem } from './components/List';
 

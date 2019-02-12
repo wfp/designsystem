@@ -11,7 +11,7 @@ storiesOf(' Documentation', module)
   .addDecorator(withReadme([readme]))
   .add('Email', () => {
     return (
-      <Page title="Email Template" subTitle="Email template for applications">
+      <Page title="Email Template" subTitle="Newsletter & Transactional">
         <p>
           The eMail template can be used to for application related
           notifications. It is responsive and works in Microsoft Outlook,{' '}
@@ -21,15 +21,46 @@ storiesOf(' Documentation', module)
             target="_blank">
             Microsoft Outlook web
           </a>{' '}
-          and most other eMail clients. Make sure to also provide a text-only
-          version of your eMail.
+          and most other eMail clients.
         </p>
         <p>
+          Make sure to also provide a text-only version of your eMail and
+          consider using a css inliner tool like{' '}
+          <a
+            href="https://templates.mailchimp.com/resources/inline-css/"
+            rel="noopener noreferrer"
+            target="_blank">
+            Mailchimp CSS Inliner Tool
+          </a>
+        </p>
+        <h3>External mail templates</h3>
+        <p>
           <Button
+            small
+            kind="secondary"
             href={`${
               process.env.STORYBOOK_INTERNAL_ASSETS
-            }email/transaction-email.html`}>
-            View eMail template
+            }email/newsletter-external-email.html`}>
+            Transaction
+          </Button>&nbsp;
+          <Button
+            small
+            kind="secondary"
+            href={`${
+              process.env.STORYBOOK_INTERNAL_ASSETS
+            }email/transaction-internal-email.html`}>
+            Newsletter
+          </Button>
+        </p>
+        <h3>Internal mail templates</h3>
+        <p>
+          <Button
+            small
+            kind="secondary"
+            href={`${
+              process.env.STORYBOOK_INTERNAL_ASSETS
+            }email/transaction-internal-email.html`}>
+            Transaction
           </Button>
         </p>
       </Page>
