@@ -89,6 +89,11 @@ export default class Pagination extends Component {
     pageSizes: PropTypes.arrayOf(PropTypes.number).isRequired,
 
     /**
+     * `true` if ture the pageSizes should be not visible.
+     */
+    pageSizesDisabled: PropTypes.bool,
+
+    /**
      * The total number of items.
      */
     totalItems: PropTypes.number,
@@ -221,6 +226,7 @@ export default class Pagination extends Component {
       itemRangeText,
       pageRangeText,
       pageSize, // eslint-disable-line no-unused-vars
+      pageSizesDisabled,
       pageSizes,
       itemText,
       pageText,
@@ -251,23 +257,26 @@ export default class Pagination extends Component {
     return (
       <div className={classNames} {...other}>
         <div className="wfp--pagination__left">
+          {!pageSizesDisabled && (
+            <React.Fragment>
+              <span className="wfp--pagination__text">
+                {itemsPerPageFollowsText || itemsPerPageText}
+              </span>
+              <Select
+                id={`wfp-pagination-select-${inputId}`}
+                labelText={itemsPerPageText}
+                hideLabel
+                inline
+                onChange={this.handleSizeChange}
+                value={statePageSize}>
+                {pageSizes.map(size => (
+                  <SelectItem key={size} value={size} text={String(size)} />
+                ))}
+              </Select>
+              <span className="wfp--pagination__text">&nbsp;|&nbsp;&nbsp;</span>
+            </React.Fragment>
+          )}
           <span className="wfp--pagination__text">
-            {itemsPerPageFollowsText || itemsPerPageText}
-          </span>
-
-          <Select
-            id={`wfp-pagination-select-${inputId}`}
-            labelText={itemsPerPageText}
-            hideLabel
-            inline
-            onChange={this.handleSizeChange}
-            value={statePageSize}>
-            {pageSizes.map(size => (
-              <SelectItem key={size} value={size} text={String(size)} />
-            ))}
-          </Select>
-          <span className="wfp--pagination__text">
-            &nbsp;|&nbsp;&nbsp;
             {pagesUnknown
               ? itemText(
                   statePageSize * (statePage - 1) + 1,

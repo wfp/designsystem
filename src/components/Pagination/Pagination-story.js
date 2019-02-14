@@ -28,6 +28,10 @@ const props = () => ({
   ),
   pageSize: number('Number of items per page (pageSize)', 10),
   pageSizes: array('Choices of `pageSize` (pageSizes)', [10, 20, 30, 40, 50]),
+  pageSizesDisabled: boolean(
+    'Hide the `pageSize` select (pageSizeDisabled)',
+    false
+  ),
   itemsPerPageText: text(
     'Label for `pageSizes` select UI (itemsPerPageText)',
     'Items per page:'

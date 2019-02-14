@@ -94,6 +94,7 @@ storiesOf('Table', module)
         defaultPageSize={5}
         columns={columns}
         className="-border -striped -highlight"
+        pageSizesDisabled
         PaginationComponent={TablePagination}
       />
     ),

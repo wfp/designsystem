@@ -1,81 +1,89 @@
-import React, { Component } from 'react';
+import React from 'react';
 import classnames from 'classnames';
 
 import Pagination from '../Pagination';
 
-export default class ReactTablePagination extends Component {
-  constructor(props) {
-    super();
-
-    this.state = {
-      page: props.page,
-    };
-  }
-
-  UNSAFE_componentWillReceiveProps(nextProps) {
-    this.setState({ page: nextProps.page });
-  }
-
-  getSafePage = page => {
-    if (isNaN(page)) {
-      page = this.props.page;
+const ReactTablePagination = ({
+  // Computed
+  data,
+  page,
+  pageSizeOptions,
+  paginationClassName,
+  totalItems,
+  style,
+  onPageChange,
+  onPageSizeChange,
+  // Props
+  isLastPage,
+  pages,
+  showPageSizeOptions,
+  pageInputDisabled,
+  pageSize,
+  pagesUnknown,
+  backwardText,
+  forwardText,
+  itemsPerPageText,
+  itemsPerPageFollowsText,
+  itemRangeText,
+  pageRangeText,
+  pageSizesDisabled,
+  itemText,
+  pageNumberText,
+}) => {
+  const getSafePage = newPage => {
+    if (isNaN(newPage)) {
+      newPage = page;
     }
-    return Math.min(Math.max(page, 0), this.props.pages - 1);
+    return Math.min(Math.max(newPage, 0), pages - 1);
   };
 
-  changePage = page => {
-    const nextPage = this.getSafePage(page.page - 1);
-    this.setState({ page });
+  const changePage = page => {
+    const nextPage = getSafePage(page.page - 1);
 
-    // Change Page
-    if (this.props.page !== nextPage) {
-      this.props.onPageChange(nextPage);
+    // Update Page
+    if (page !== nextPage) {
+      onPageChange(nextPage);
     }
 
-    // Change PageSize
-    if (this.props.pageSize !== page.pageSize) {
-      this.props.onPageSizeChange(page.pageSize);
+    // Update PageSize
+    if (pageSize !== page.pageSize) {
+      onPageSizeChange(page.pageSize);
     }
   };
 
-  render() {
-    const {
-      // Computed
-      data,
-      isLastPage,
-      pages,
-      // Props
-      page,
-      showPageSizeOptions,
-      pageInputDisabled,
-      pageSizeOptions,
-      pageSize,
-      pagesUnknown,
-      paginationClassName,
-      showPageJump,
-      totalItems,
-    } = this.props;
+  const propList = {
+    isLastPage,
+    pages,
+    //showPageSizeOptions,
+    pageInputDisabled,
+    pageSize,
+    pagesUnknown,
+    backwardText,
+    forwardText,
+    itemsPerPageText,
+    itemsPerPageFollowsText,
+    itemRangeText,
+    pageRangeText,
+    pageSizesDisabled,
+    itemText,
+    pageNumberText,
+  };
 
-    return (
-      <div
-        className={classnames(paginationClassName, '-pagination')}
-        style={this.props.style}>
-        <div className="wfp-pagination">
-          <Pagination
-            onChange={this.changePage}
-            pageSizes={pageSizeOptions}
-            pageSize={pageSize}
-            page={page + 1}
-            pages={pages}
-            totalItems={totalItems ? totalItems : data.length}
-            pagesUnknown={pagesUnknown}
-            isLastPage={isLastPage}
-            showPageJump={showPageJump}
-            showPageSizeOptions={showPageSizeOptions}
-            pageInputDisabled={pageInputDisabled}
-          />
-        </div>
+  return (
+    <div
+      className={classnames(paginationClassName, '-pagination')}
+      style={style}>
+      <div className="wfp-pagination">
+        <Pagination
+          onChange={changePage}
+          pageSizes={pageSizeOptions}
+          page={page + 1}
+          totalItems={totalItems ? totalItems : data.length}
+          {...propList}
+        />
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
+
+export default ReactTablePagination;
