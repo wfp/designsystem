@@ -191,7 +191,7 @@ export default class Slider extends PureComponent {
           return { dragging: false };
         }
         if (typeof props.onChange === 'function') {
-          props.onChange({ value: newValue });
+          props.onChange(newValue);
         }
         return {
           dragging: false,
