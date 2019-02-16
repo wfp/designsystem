@@ -642,7 +642,6 @@
     background: #fff;
     position: relative;
     display: inline-block;
-    width: 130px;
     vertical-align: middle;
   }
   .DateInput__small {
@@ -718,10 +717,6 @@
   .DateRangePickerInput__disabled {
     background: #f2f2f2;
   }
-  .DateRangePickerInput__withBorder {
-    border-radius: 2px;
-    border: 1px solid #dbdbdb;
-  }
   .DateRangePickerInput__rtl {
     direction: rtl;
   }
@@ -735,6 +730,7 @@
     display: inline-block;
     vertical-align: middle;
     color: #484848;
+    margin: 0 0.4em;
   }
   .DateRangePickerInput_arrow_svg {
     vertical-align: middle;

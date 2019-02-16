@@ -10,6 +10,7 @@ const babel = require('rollup-plugin-babel');
 const replace = require('rollup-plugin-replace');
 const uglify = require('rollup-plugin-uglify');
 const sizes = require('rollup-plugin-sizes');
+const strip = require('rollup-plugin-strip');
 
 const packageJson = require('../package.json');
 const peerDependencies = Object.keys(packageJson.peerDependencies || {}).concat(
@@ -21,6 +22,7 @@ const prodSettings =
   env === 'development'
     ? []
     : [
+        strip(),
         uglify(),
         sizes({
           report(details) {

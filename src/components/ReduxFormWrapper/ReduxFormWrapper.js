@@ -10,15 +10,9 @@ const ReduxFormWrapper = ({
   InputComponent,
   classNamePrefix,
   meta: { touched, error, warning },
-  children,
   ...other
 }) => {
-  if (
-    children === undefined &&
-    inputComponent === undefined &&
-    InputComponent === undefined
-  )
-    return null;
+  if (inputComponent === undefined && InputComponent === undefined) return null;
 
   const InputComponentConnect = inputComponent
     ? inputComponent
