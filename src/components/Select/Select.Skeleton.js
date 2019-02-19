@@ -1,9 +1,10 @@
+/* eslint-disable jsx-a11y/label-has-for */
+/* eslint-disable jsx-a11y/label-has-associated-control */
 import PropTypes from 'prop-types';
 import React from 'react';
 
 const SelectSkeleton = ({ hideLabel, id }) => {
   const label = hideLabel ? null : (
-    // eslint-disable-next-line jsx-a11y/label-has-associated-control
     <label className="wfp--label wfp--skeleton" htmlFor={id} />
   );
 

@@ -167,6 +167,7 @@ export default class Modal extends Component {
       while (target) {
         if (typeof target[matchesFuncName] === 'function') {
           if (
+            // eslint-disable-next-line no-loop-func
             selectorsFloatingMenus.some(selector =>
               target[matchesFuncName](selector)
             )

@@ -1,6 +1,6 @@
 import React from 'react';
 import Blockquote from '../Button';
-import { shallow, mount } from 'enzyme';
+import { shallow } from 'enzyme';
 
 describe('Blockquote', () => {
   describe('Renders common props as expected', () => {

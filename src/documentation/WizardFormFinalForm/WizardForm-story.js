@@ -10,7 +10,6 @@ import Wizard from './Wizard';
 import ReduxFormWrapper from '../../components/ReduxFormWrapper';
 import TextInput from '../../components/TextInput';
 import TextArea from '../../components/TextArea';
-import FormError from '../../components/FormError';
 import FormGroup from '../../components/FormGroup';
 import RadioButton from '../../components/RadioButton/RadioButton';
 

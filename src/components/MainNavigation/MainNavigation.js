@@ -62,12 +62,11 @@ class MainNavigationItem extends Component {
         })
       : children;
 
-    console.log('childrenWithProps', childrenWithProps);
-
     const subClasses = classNames({
       'wfp--main-navigation__sub': true,
       'wfp--main-navigation__sub--open': menuItem === activeMenuItem,
     });
+
     return (
       <li className={wrapperClasses} ref={this.setWrapperRef}>
         <div className={triggerClasses}>{childrenWithProps}</div>

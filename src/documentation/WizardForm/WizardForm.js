@@ -8,7 +8,6 @@ import StepNavigationItem from '../../components/StepNavigationItem';
 
 import Blockquote from '../../components/Blockquote';
 
-import FormError from '../../components/FormError';
 import Wrapper from '../../components/Wrapper';
 import FormWizard from '../../components/FormWizard';
 import WizardFormFirstPage from './WizardFormFirstPage';

@@ -20,7 +20,6 @@ import ReactSelect from 'react-select';
 import TextArea from '../TextArea';
 import TextInput from '../TextInput';
 import Toggle from '../Toggle';
-import { DateRangePickerInput, SingleDatePickerInput } from '../DatePicker';
 
 const inputs = {
   Checkbox: 'Checkbox',

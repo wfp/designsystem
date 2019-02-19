@@ -40,8 +40,8 @@ export class SingleDatePickerInput extends PureComponent {
     const { controlledValue, focused } = this.state;
     const SingleDatePicker = datePicker;
 
-    const labelClasses = classNames('wfp--label', {
-      'wfp--visually-hidden': hideLabel,
+    const labelClasses = classNames(`${prefix}--label`, {
+      [`${prefix}--visually-hidden`]: hideLabel,
     });
 
     const label = labelText ? (
@@ -51,11 +51,11 @@ export class SingleDatePickerInput extends PureComponent {
     ) : null;
 
     const errorMessage = invalid ? (
-      <div className="wfp--form-requirement invalid">{invalidText}</div>
+      <div className={`${prefix}--form-requirement invalid`}>{invalidText}</div>
     ) : null;
 
     const helper = helperText ? (
-      <div className="wfp--form__helper-text">{helperText}</div>
+      <div className={`${prefix}--form__helper-text`}>{helperText}</div>
     ) : null;
 
     return (

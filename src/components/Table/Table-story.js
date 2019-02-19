@@ -1,8 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import ReactTable from 'react-table';
-import { withReadme } from 'storybook-readme';
-import { withKnobs, boolean, text } from '@storybook/addon-knobs';
+import { withKnobs } from '@storybook/addon-knobs';
 import readme from './README.md';
 
 import TablePagination from '../TablePagination';
@@ -60,13 +59,6 @@ const columns = [
     accessor: 'city', // String-based value accessors!
   },
 ];
-
-const props = {
-  table: () => ({
-    className: 'striped',
-    zebra: boolean('Zebra Stripping (zebra)', false),
-  }),
-};
 
 storiesOf('Table', module)
   .addDecorator(withKnobs)

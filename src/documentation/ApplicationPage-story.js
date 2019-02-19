@@ -4,7 +4,6 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import RegularPage from './RegularPage';
 import Wrapper from '../components/Wrapper';
-import { Select } from '../components/Select';
 import ReactSelect from 'react-select';
 
 import { Module, ModuleHeader, ModuleBody } from '../components/Module';

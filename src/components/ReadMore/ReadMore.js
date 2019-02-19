@@ -5,7 +5,6 @@ import classnames from 'classnames';
 import Link from '../Link';
 import { iconCaretUp, iconCaretDown } from '@wfp/icons';
 import Icon from '../Icon';
-import classNames from 'classnames';
 import settings from '../../globals/js/settings';
 
 const { prefix } = settings;

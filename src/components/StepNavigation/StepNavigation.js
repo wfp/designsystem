@@ -179,16 +179,11 @@ export default class StepNavigation extends React.Component {
 
   render() {
     const {
-      ariaLabel,
-      iconDescription,
       inline,
       className,
-      customTabContent,
-      triggerHref,
       role,
       selectedPage,
       onSelectionChange,
-      ...other
     } = this.props;
 
     const tabsWithProps = this.getTabs().map((tab, index) => {
@@ -214,9 +209,6 @@ export default class StepNavigation extends React.Component {
         'wfp--step-navigation__nav--inline': inline,
       }),
     };
-
-    const selectedTab = this.getTabAt(this.state.selected);
-    const selectedLabel = selectedTab ? selectedTab.props.label : '';
 
     return (
       <>

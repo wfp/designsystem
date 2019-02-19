@@ -19,7 +19,7 @@ export const isRequired = field => {
 export const arrayIsRequired = field => {
   if (!field) {
     return 'Required';
-  } else if (field.length == 0) {
+  } else if (field.length === 0) {
     return 'Required';
   } else {
     return null;

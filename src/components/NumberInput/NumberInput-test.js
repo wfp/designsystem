@@ -226,14 +226,14 @@ describe('NumberInput', () => {
         wrapper.setProps({
           helperText: (
             <span>
-              This helper text has <a href="#">a link</a>.
+              This helper text has <a href="http://www.wfp.org">a link</a>.
             </span>
           ),
         });
         const renderedHelper = wrapper.find('.wfp--form__helper-text');
         expect(renderedHelper.props().children).toEqual(
           <span>
-            This helper text has <a href="#">a link</a>.
+            This helper text has <a href="http://www.wfp.org">a link</a>.
           </span>
         );
       });

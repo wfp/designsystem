@@ -1,6 +1,6 @@
 import React from 'react';
 import User from '../User';
-import { mount, shallow } from 'enzyme';
+import { mount } from 'enzyme';
 
 describe('User', () => {
   describe('renders as expected', () => {

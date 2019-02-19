@@ -83,7 +83,10 @@ class Blockquote extends React.Component {
         {title && (
           <div
             onClick={this.toggleBlockquote}
-            className="wfp--blockquote__title">
+            onKeyDown={this.toggleBlockquote}
+            className="wfp--blockquote__title"
+            role="button"
+            tabIndex={0}>
             {title}
           </div>
         )}

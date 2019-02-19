@@ -92,7 +92,6 @@ Checkbox.propTypes = {
 
   /**
    * Receives three arguments: true/false, the checkbox's id, and the dom event.
-   * `(value, id, event) => console.log({value, id, event})`
    */
   onChange: PropTypes.func,
 

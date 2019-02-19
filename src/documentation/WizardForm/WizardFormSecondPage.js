@@ -3,7 +3,6 @@ import { Field, reduxForm } from 'redux-form';
 import validate from './validate';
 
 import ReduxFormWrapper from '../../components/ReduxFormWrapper';
-import FormError from '../../components/FormError';
 import FormGroup from '../../components/FormGroup';
 import TextInput from '../../components/TextInput';
 import FormControls from '../../components/FormControls';
@@ -17,7 +16,7 @@ const renderError = ({ meta: { touched, error } }) =>
   );
 
 const WizardFormSecondPage = props => {
-  const { error, handleSubmit, previousPage, submitFailed } = props;
+  const { handleSubmit, previousPage } = props;
   return (
     <form onSubmit={handleSubmit}>
       <Field

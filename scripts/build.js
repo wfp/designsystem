@@ -42,18 +42,12 @@ Promise.all([
   rimrafAsync(`${rootDir}/umd`),
 ])
   .then(() => {
-    exec(
-      `${babelPath} src -q -d es --plugins transform-remove-console --ignore "${ignoreGlobs}"`,
-      {
-        BABEL_ENV: 'es',
-      }
-    );
-    exec(
-      `${babelPath} src -q -d lib --plugins transform-remove-console --ignore "${ignoreGlobs}"`,
-      {
-        BABEL_ENV: 'cjs',
-      }
-    );
+    exec(`${babelPath} src -q -d es --ignore "${ignoreGlobs}"`, {
+      BABEL_ENV: 'es',
+    });
+    exec(`${babelPath} src -q -d lib --ignore "${ignoreGlobs}"`, {
+      BABEL_ENV: 'cjs',
+    });
     exec(
       `${rollupPath} -c scripts/rollup.config.js -o umd/wfp-components-react.js`,
       {

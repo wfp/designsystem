@@ -5,7 +5,6 @@ import { withReadme } from 'storybook-readme';
 import readme from './README.md';
 
 import { Tooltip } from 'react-tippy';
-import SingleComponent from '../../documentation/SingleComponent';
 import tooltipStyle from './Tooltip';
 
 storiesOf('Tooltip', module)

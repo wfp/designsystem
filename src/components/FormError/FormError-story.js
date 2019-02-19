@@ -1,14 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
 import { withInfo } from '@storybook/addon-info';
-import {
-  withKnobs,
-  boolean,
-  number,
-  object,
-  text,
-} from '@storybook/addon-knobs';
+import { withKnobs, boolean, object } from '@storybook/addon-knobs';
 import FormError from '../FormError';
 
 import readme from './README.md';

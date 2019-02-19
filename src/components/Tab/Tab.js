@@ -65,7 +65,6 @@ export default class Tab extends React.Component {
       onKeyDown,
       renderAnchor,
       renderListElement,
-      ...other
     } = this.props;
 
     const classes = classNames(
@@ -80,7 +79,7 @@ export default class Tab extends React.Component {
       label,
       role: 'tab',
       tabIndex,
-      ['aria-selected']: selected,
+      'aria-selected': selected,
       ref: e => {
         this.tabAnchor = e;
       },

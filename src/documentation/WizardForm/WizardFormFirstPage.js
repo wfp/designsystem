@@ -3,12 +3,11 @@ import { Field, reduxForm } from 'redux-form';
 import validate from './validate';
 
 import FormControls from '../../components/FormControls';
-import FormError from '../../components/FormError';
 import ReduxFormWrapper from '../../components/ReduxFormWrapper';
 import TextInput from '../../components/TextInput';
 
 const WizardFormFirstPage = props => {
-  const { error, submitFailed, handleSubmit } = props;
+  const { handleSubmit } = props;
 
   return (
     <form className="wfp--form-long" onSubmit={handleSubmit}>

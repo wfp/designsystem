@@ -44,8 +44,8 @@ export class DateRangePickerInput extends PureComponent {
 
     const DateRangePicker = datePicker;
 
-    const labelClasses = classNames('wfp--label', {
-      'wfp--visually-hidden': hideLabel,
+    const labelClasses = classNames(`${prefix}--label`, {
+      [`${prefix}--visually-hidden`]: hideLabel,
     });
 
     const label = labelText ? (
@@ -55,16 +55,16 @@ export class DateRangePickerInput extends PureComponent {
     ) : null;
 
     const errorMessage = invalid ? (
-      <div className="wfp--form-requirement invalid">{invalidText}</div>
+      <div className={`${prefix}--form-requirement invalid`}>{invalidText}</div>
     ) : null;
 
     const helper = helperText ? (
-      <div className="wfp--form__helper-text">{helperText}</div>
+      <div className={`${prefix}--form__helper-text`}>{helperText}</div>
     ) : null;
 
     return (
       <div>
-        <label htmlFor={name} className="wfp--label">
+        <label htmlFor={name} className={`${prefix}--label`}>
           {labelText}
         </label>
         {helper}

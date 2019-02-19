@@ -1,11 +1,7 @@
-import { formErrorResponse, isRequired } from '../../components/FormError';
+import { formErrorResponse } from '../../components/FormError';
 
 const validate = (values, formData) => {
   const errors = {};
-  //errors.firstName = isRequired(values.firstName);
-  //errors.email = isRequired(values.email);
-  //registeredFields
-
   if (formData.registeredFields && formData.registeredFields.email) {
     if (!values.email) {
       errors.email = 'Required';
@@ -15,14 +11,6 @@ const validate = (values, formData) => {
       errors.email = 'Invalid email address';
     }
   }
-
-  /*
-  if (!values.sex) {
-    errors.sex = 'Required';
-  }
-  if (!values.favoriteColor) {
-    errors.favoriteColor = 'Required';
-  }*/
 
   if (Object.keys(errors).length >= 1) {
     errors._error = 'No way';

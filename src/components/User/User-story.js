@@ -1,9 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withInfo } from '@storybook/addon-info';
 import { List, ListItem } from '../List';
 
-import { withReadme } from 'storybook-readme';
 import readme from './README.md';
 
 import { withKnobs, boolean, text } from '@storybook/addon-knobs';
