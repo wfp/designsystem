@@ -115,7 +115,7 @@ describe('Slider', () => {
         which: '38',
       };
       wrapper.instance().updatePosition(evt);
-      expect(mockFn).lastCalledWith({ value: 51 });
+      expect(mockFn).lastCalledWith(51);
       expect(wrapper.state().value).toEqual(51);
     });
 
@@ -125,7 +125,7 @@ describe('Slider', () => {
         which: '40',
       };
       wrapper.instance().updatePosition(evt);
-      expect(mockFn).lastCalledWith({ value: 50 });
+      expect(mockFn).lastCalledWith(50);
       expect(wrapper.state().value).toEqual(50);
     });
 
@@ -135,7 +135,7 @@ describe('Slider', () => {
         clientX: '1000',
       };
       wrapper.instance().updatePosition(evt);
-      expect(mockFn).lastCalledWith({ value: 100 });
+      expect(mockFn).lastCalledWith(100);
       expect(wrapper.state().value).toEqual(100);
     });
   });

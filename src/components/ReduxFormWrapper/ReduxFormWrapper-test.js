@@ -15,8 +15,9 @@ describe('FormInput', () => {
       <Provider store={store}>
         <FormWrapper>
           <Field
+            name="email"
             component={ReduxFormWrapper}
-            InputComponent={TextArea}
+            inputComponent={TextArea}
             labelText="Email Input"
           />
         </FormWrapper>
