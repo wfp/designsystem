@@ -51,6 +51,11 @@
     box-shadow: 0px 2px 8px 0 $focus;
   }
 
+  @if ($type == 'border-small') {
+    outline: 2px solid $brand-02;
+    outline-offset: 2px;
+  }
+
   @if ($type == 'border-important') {
     outline: 2px solid $brand-01 !important;
     outline-offset: -1px;

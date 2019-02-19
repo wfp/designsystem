@@ -33,7 +33,7 @@
     }
 
     &:focus {
-      @include focus-outline('border');
+      @include focus-outline('border-small');
     }
 
     &[aria-disabled='true'] {
