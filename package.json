@@ -288,6 +288,7 @@
     "*.js": [
       "yarn prettier",
       "yarn lint",
+      "yarn test",
       "git add"
     ],
     "*.{css,scss}": [
