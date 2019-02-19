@@ -1,6 +1,6 @@
 {
   "name": "@wfp/ui",
-  "version": "1.2.0-alpha.5",
+  "version": "1.2.0",
   "description": "WFP UI Kit Next",
   "license": "Apache-2",
   "main": "lib/index.js",
@@ -30,7 +30,8 @@
     "test": "jest",
     "test:generate-output": "jest --json --outputFile=.jest-test-results.json || true",
     "test-ssr": "yarn build && node ssr-tests/*.js",
-    "release": "standard-version"
+    "release": "standard-version",
+    "release:alpha": "standard-version -- --prerelease alpha"
   },
   "keywords": [
     "WFP",
@@ -106,7 +107,7 @@
     }
   },
   "peerDependencies": {
-    "@wfp/icons": "^0.0.72",
+    "@wfp/icons": "^0.0.74",
     "react": "^16.4.0",
     "react-dom": "^16.4.0"
   },
@@ -154,7 +155,7 @@
     "@storybook/addon-storysource": "^4.1.7",
     "@storybook/addons": "^4.1.7",
     "@storybook/react": "^4.1.7",
-    "@wfp/icons": "0.0.72",
+    "@wfp/icons": "0.0.74",
     "add": "^2.0.6",
     "all-contributors-cli": "^5.2.1",
     "autoprefixer": "^8.3.0",
