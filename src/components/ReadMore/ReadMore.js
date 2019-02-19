@@ -129,7 +129,6 @@ export default class ReadMore extends Component {
           display: 'block',
         };
 
-    console.log('sss', collapseLink, expandLink);
     return (
       <div className={classNames}>
         <div className={`${prefix}--read-more__content`} style={contentStyle}>

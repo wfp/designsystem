@@ -8,7 +8,6 @@ class ModalWithControls extends React.Component {
   state = { open: false };
 
   toggleModal = () => {
-    console.log('Toggle the open state');
     this.setState(state => ({
       open: !state.open,
     }));

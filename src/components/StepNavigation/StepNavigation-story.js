@@ -38,7 +38,6 @@ const props = {
 };
 
 const handleTabClick = index => {
-  console.log('click', index);
   this.setState({ page: index });
 };
 

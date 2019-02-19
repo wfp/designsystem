@@ -33,17 +33,12 @@ class WizardForm extends Component {
   }
 
   handleTabClick = index => {
-    console.log('click', index);
     this.setState({ page: index });
   };
 
   render() {
-    const { error, onSubmit } = this.props;
+    const { onSubmit } = this.props;
     const { page } = this.state;
-
-    /* const validation = validate(this.props.values, this.props);
-
-    console.log("validation", validation, this.props.values); */
 
     return (
       <Wrapper pageWidth="md" spacing="xl">

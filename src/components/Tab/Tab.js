@@ -91,7 +91,6 @@ export default class Tab extends React.Component {
       tabIndex: -1,
       className: classes,
       onClick: evt => {
-        console.log('click');
         handleTabClick(index, label, evt);
         onClick(evt);
       },

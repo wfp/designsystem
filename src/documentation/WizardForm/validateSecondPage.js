@@ -1,7 +1,6 @@
 import { formErrorResponse, isRequired } from '../../components/FormError';
 
 const validate = (values, formData) => {
-  console.log('Values', formData, values);
   const errors = {};
   //errors.firstName = isRequired(values.firstName);
   //errors.email = isRequired(values.email);
@@ -29,7 +28,6 @@ const validate = (values, formData) => {
     errors._error = 'No way';
   }
 
-  console.log('errors', errors, Object.keys(errors).length);
   return formErrorResponse(errors);
 };
 

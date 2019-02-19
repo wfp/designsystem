@@ -6,7 +6,7 @@ import settings from '../../globals/js/settings';
 import Icon from '../Icon';
 import uid from '../../tools/uniqueId';
 import { ButtonTypes } from '../../prop-types/types';
-import { iconCloseSolid, iconCheckmarkSolid } from '@wfp/icons';
+import { iconCloseGlyph, iconCheckmarkGlyph } from '@wfp/icons';
 import { componentsX } from '../../internal/FeatureFlags';
 
 const { prefix } = settings;
@@ -229,7 +229,7 @@ export class Filename extends Component {
         <Icon
           description={iconDescription}
           className={`${prefix}--file-close`}
-          icon={iconCloseSolid}
+          icon={iconCloseGlyph}
           style={style}
           {...other}
         />
@@ -239,7 +239,7 @@ export class Filename extends Component {
         <Icon
           description={iconDescription}
           className={`${prefix}--file-complete`}
-          icon={iconCheckmarkSolid}
+          icon={iconCheckmarkGlyph}
           style={style}
           {...other}
         />
