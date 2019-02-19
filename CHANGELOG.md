@@ -2,17 +2,6 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-<a name="1.2.0"></a>
-# [1.2.0](https://github.com/WFP/UI/compare/v1.2.0-alpha.5...v1.2.0) (2019-02-19)
-
-
-### Features
-
-* **Icons:** Upgrade to newer version, console.logs removed ([0fb1fe3](https://github.com/WFP/UI/commit/0fb1fe3))
-* **Slider:** OnChange now returns int instead of object ([80a657f](https://github.com/WFP/UI/commit/80a657f))
-
-
-
 <a name="1.2.0-alpha.5"></a>
 # [1.2.0-alpha.5](https://github.com/WFP/UI/compare/v1.2.0-alpha.4...v1.2.0-alpha.5) (2019-02-16)
 
