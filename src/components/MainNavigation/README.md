@@ -3,6 +3,19 @@ clickable items placed at the top of the page. The navigation stays
 unchanged when browswing through the site and is present on every page.
 The currently selected item is usually highlighted.
 
+The MainNavigation is used across all applications, it is the starting point of the application and offers the top level navigation items.
+
+```js
+import { MainNavigation, MainNavigationItem } from '@wfp/ui';
+```
+
+It can be combined with a Dropdown SubNavigation.
+
+```js
+import { SubNavigation, SubNavigationHeader, SubNavigationTitle, SubNavigationFilter, SubNavigationContent, SubNavigationList, SubNavigationGroup, SubNavigationItem } from '@wfp/ui';
+```
+
+
 ```
 The maximum number of items is 6 to 8 items depending on the average word length.
 ```

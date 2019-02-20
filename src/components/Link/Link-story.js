@@ -25,11 +25,4 @@ const props = () => ({
 
 storiesOf('Link', module)
   .addDecorator(withKnobs)
-  .add('Default', () => <Link {...props()}>Link</Link>, {
-    info: {
-      text: `
-            Links are typically used as a means of navigation either within the application, to a place outside, or to a resource.
-            For anything else, especially things that change data, you should be using a button.
-          `,
-    },
-  });
+  .add('Default', () => <Link {...props()}>Link</Link>);

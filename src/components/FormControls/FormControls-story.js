@@ -3,8 +3,6 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { withInfo } from '@storybook/addon-info';
 import { withKnobs, boolean, text } from '@storybook/addon-knobs';
-import { withReadme } from 'storybook-readme';
-import readme from './README.md';
 
 import FormControls from '../FormControls';
 
@@ -61,20 +59,8 @@ const props = {
 
 storiesOf('FormControls', module)
   .addDecorator(withKnobs)
-  .addDecorator(withReadme([readme]))
-  .add(
-    'Default (Wizard form)',
-    withInfo({
-      text: `
-      **FormControls** can be used inside a regular form or multistep form as action buttons to save and submit a form.
-      `,
-    })(() => <FormControls {...props.formControls()} />)
-  )
-  .add(
-    'Simple form',
-    withInfo({
-      text: `
-      **FormControls** can be used inside a regular form or multistep form as action buttons to save and submit a form.
-      `,
-    })(() => <FormControls {...props.formControlsSimple()} />)
-  );
+
+  .add('Default (Wizard form)', () => (
+    <FormControls {...props.formControls()} />
+  ))
+  .add('Simple form', () => <FormControls {...props.formControlsSimple()} />);

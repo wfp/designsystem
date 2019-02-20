@@ -6,9 +6,6 @@ import { withInfo } from '@storybook/addon-info';
 import { withKnobs, boolean, select, text } from '@storybook/addon-knobs';
 import Button from '../Button';
 
-import { withReadme } from 'storybook-readme';
-import readme from './README.md';
-
 import Card from '../Card';
 
 const kinds = {
@@ -60,17 +57,8 @@ const props = {
 storiesOf('Card', module)
   .addDecorator(withKnobs)
   .addParameters({ jest: ['Card-test'] })
-  .addDecorator(withReadme([readme]))
-  .addDecorator(story => <div data-flexbasis="800px">{story()}</div>)
-  .add(
-    'Default',
-    withInfo({
-      text: `
-      Links are typically used as a means of navigation either within the application, to a place outside, or to a resource.
-      For anything else, especially things that change data, you should be using a button.
-    `,
-    })(() => {
-      const setProps = props.set();
-      return <Card {...setProps} more={buttons[setProps.moreButton]} />;
-    })
-  );
+  .addDecorator(story => <div style={{ width: '100%' }}>{story()}</div>)
+  .add('Default', () => {
+    const setProps = props.set();
+    return <Card {...setProps} more={buttons[setProps.moreButton]} />;
+  });

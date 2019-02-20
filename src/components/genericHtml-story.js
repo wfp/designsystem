@@ -4,7 +4,6 @@ import { storiesOf } from '@storybook/react';
 import { exampleStory } from '../../.storybook/lucid-docs-addon';
 import HtmlComponent from '../documentation/HtmlComponent';
 
-import { withReadme } from 'storybook-readme';
 import readme from '../documentation/HTML-README.md';
 
 function importAll(r) {
@@ -26,7 +25,6 @@ keys.forEach(function(element, i) {
     .replace(split[split.length - 2] + '-', ' ');
 
   storiesOf(split[split.length - 2], module)
-    .addDecorator(withReadme([readme]))
     .addDecorator(
       exampleStory({
         code: htmlData[i],

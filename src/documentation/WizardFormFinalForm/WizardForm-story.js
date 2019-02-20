@@ -2,8 +2,6 @@
 
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withReadme } from 'storybook-readme';
-import readme from './README.md';
 
 import { Field } from 'react-final-form';
 import Wizard from './Wizard';
@@ -27,9 +25,9 @@ const renderError = ({ meta: { touched, error } }) =>
     false
   );
 
-storiesOf(' Documentation', module)
-  .addDecorator(withReadme([readme]))
-  .add('Wizard Form final-form (draft)', () => (
+storiesOf(' Documentation', module).add(
+  'Wizard Form final-form (draft)',
+  () => (
     <Wizard
       initialValues={{ employed: true, stooge: 'larry' }}
       onSubmit={onSubmit}>
@@ -107,4 +105,5 @@ storiesOf(' Documentation', module)
         </FormGroup>
       </Wizard.Page>
     </Wizard>
-  ));
+  )
+);

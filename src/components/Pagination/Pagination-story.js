@@ -42,24 +42,12 @@ const props = () => ({
 storiesOf('Pagination', module)
   .addDecorator(withKnobs)
   .addDecorator(story => <div style={{ width: '800px' }}>{story()}</div>)
-  .add(
-    'default',
-    withInfo({
-      text: `
-        The pagination component is used to paginate through items.
-      `,
-    })(() => <Pagination {...props()} />)
-  )
-  .add(
-    'multipe pagination components',
-    withInfo({
-      text: `Showcasing unique ids for each pagination component`,
-    })(() => {
-      return (
-        <div>
-          <Pagination {...props()} />
-          <Pagination {...props()} />
-        </div>
-      );
-    })
-  );
+  .add('default', () => <Pagination {...props()} />)
+  .add('multipe pagination components', () => {
+    return (
+      <div>
+        <Pagination {...props()} />
+        <Pagination {...props()} />
+      </div>
+    );
+  });

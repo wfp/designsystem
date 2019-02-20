@@ -2,8 +2,6 @@
 
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withReadme } from 'storybook-readme';
-import readme from './README.md';
 
 import WizardForm from './WizardForm';
 import { Provider } from 'react-redux';
@@ -26,10 +24,8 @@ const showResults = values =>
     }, 500);
   });
 
-storiesOf(' Documentation', module)
-  .addDecorator(withReadme([readme]))
-  .add('Wizard Form', () => (
-    <Provider store={store}>
-      <WizardForm onSubmit={showResults} />
-    </Provider>
-  ));
+storiesOf(' Documentation', module).add('Wizard Form', () => (
+  <Provider store={store}>
+    <WizardForm onSubmit={showResults} />
+  </Provider>
+));

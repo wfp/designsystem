@@ -2,7 +2,6 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import ReactTable from 'react-table';
 import { withKnobs } from '@storybook/addon-knobs';
-import readme from './README.md';
 
 import TablePagination from '../TablePagination';
 
@@ -62,37 +61,21 @@ const columns = [
 
 storiesOf('Table', module)
   .addDecorator(withKnobs)
-  .add(
-    'Default',
-    () => (
-      <ReactTable
-        data={data}
-        defaultPageSize={5}
-        columns={columns}
-        PaginationComponent={TablePagination}
-      />
-    ),
-    {
-      info: {
-        text: readme,
-      },
-    }
-  )
-  .add(
-    'Zebra Striped',
-    () => (
-      <ReactTable
-        data={data}
-        defaultPageSize={5}
-        columns={columns}
-        className="-border -striped -highlight"
-        pageSizesDisabled
-        PaginationComponent={TablePagination}
-      />
-    ),
-    {
-      info: {
-        text: readme,
-      },
-    }
-  );
+  .add('Default', () => (
+    <ReactTable
+      data={data}
+      defaultPageSize={5}
+      columns={columns}
+      PaginationComponent={TablePagination}
+    />
+  ))
+  .add('Zebra Striped', () => (
+    <ReactTable
+      data={data}
+      defaultPageSize={5}
+      columns={columns}
+      className="-border -striped -highlight"
+      pageSizesDisabled
+      PaginationComponent={TablePagination}
+    />
+  ));

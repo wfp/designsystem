@@ -1,6 +1,5 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import readme from './README.md';
 
 import Modal from '../Modal';
 
@@ -40,8 +39,4 @@ class ModalWithControls extends React.Component {
   }
 }
 
-storiesOf('Modal', module).add('with Controls', () => <ModalWithControls />, {
-  info: {
-    text: readme,
-  },
-});
+storiesOf('Modal', module).add('with Controls', () => <ModalWithControls />);

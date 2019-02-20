@@ -4,8 +4,6 @@ import { withInfo } from '@storybook/addon-info';
 import { withKnobs, boolean, object } from '@storybook/addon-knobs';
 import FormError from '../FormError';
 
-import readme from './README.md';
-
 const props = {
   formError: () => ({
     className: 'some-class',
@@ -26,9 +24,4 @@ const props = {
 storiesOf('FormError', module)
   .addDecorator(withKnobs)
   .addParameters({ jest: ['FormError-test'] })
-  .add(
-    'Default (experimental)',
-    withInfo({
-      text: readme,
-    })(() => <FormError {...props.formError()} />)
-  );
+  .add('Default (experimental)', () => <FormError {...props.formError()} />);

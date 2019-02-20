@@ -1,8 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import readme from './README.md';
-
 import ReactTable from 'react-table';
 import Blockquote from '../Blockquote';
 import TablePagination from '../TablePagination';
@@ -174,138 +172,116 @@ const units = [
 storiesOf('Unit', module)
   .addDecorator(withKnobs)
   .addParameters({ jest: ['Unit-test'] })
-  .add(
-    'Samples',
-    () => {
-      const columns = [
-        {
-          Header: 'HTML',
-          accessor: 'name',
-          width: 150,
-          Cell: props => {
-            return (
-              <Unit {...props.original.setup}>{props.original.sample}</Unit>
-            );
-          },
+  .add('Samples', () => {
+    const columns = [
+      {
+        Header: 'HTML',
+        accessor: 'name',
+        width: 150,
+        Cell: props => {
+          return <Unit {...props.original.setup}>{props.original.sample}</Unit>;
         },
-        {
-          Header: 'SVG',
-          accessor: 'name',
-          width: 150,
-          Cell: props => {
-            return (
-              <svg width="120" height="20">
-                <g transform="translate(0 17)">
-                  <Unit {...props.original.setup} svg>
-                    {props.original.sample}
-                  </Unit>
-                </g>
-              </svg>
-            );
-          },
+      },
+      {
+        Header: 'SVG',
+        accessor: 'name',
+        width: 150,
+        Cell: props => {
+          return (
+            <svg width="120" height="20">
+              <g transform="translate(0 17)">
+                <Unit {...props.original.setup} svg>
+                  {props.original.sample}
+                </Unit>
+              </g>
+            </svg>
+          );
         },
-        {
-          Header: 'Type',
-          accessor: 'type',
-          width: 150,
-        },
-        {
-          Header: 'Description',
-          accessor: 'description',
-          width: 500,
-        },
-      ];
+      },
+      {
+        Header: 'Type',
+        accessor: 'type',
+        width: 150,
+      },
+      {
+        Header: 'Description',
+        accessor: 'description',
+        width: 500,
+      },
+    ];
 
-      return (
-        <ReactTable
-          data={units}
-          defaultPageSize={10}
-          columns={columns}
-          PaginationComponent={TablePagination}
-          defaultSorted={[
-            {
-              id: 'type',
-            },
-          ]}
-          SubComponent={row => {
-            return (
-              <div style={{ padding: '20px' }}>
-                <Blockquote type="code">
-                  {`<Unit
+    return (
+      <ReactTable
+        data={units}
+        defaultPageSize={10}
+        columns={columns}
+        PaginationComponent={TablePagination}
+        defaultSorted={[
+          {
+            id: 'type',
+          },
+        ]}
+        SubComponent={row => {
+          return (
+            <div style={{ padding: '20px' }}>
+              <Blockquote type="code">
+                {`<Unit
   ${JSON.stringify(row.original.setup)}
 >
   ${row.original.sample}
 </Unit>`}
-                </Blockquote>
-              </div>
-            );
-          }}
-        />
-      );
-    },
-    {
-      info: {
-        text: readme,
-      },
-    }
-  )
+              </Blockquote>
+            </div>
+          );
+        }}
+      />
+    );
+  })
 
-  .add(
-    'default',
-    () => {
-      const typeOptions = {
-        None: 'None',
-        Narrow: 'Narrow',
-        Usd: 'Usd',
-        Partners: 'Partners',
-        Beneficiaries: 'Beneficiaries',
-        Households: 'Households',
-        Months: 'Months',
-        Mt: 'Mt',
-        Num: 'Num',
-        YearMonth: 'YearMonth',
-        Level: 'Level',
-        People: 'People',
-        Countries: 'Countries',
-        Percentage: 'Percentage',
-      };
+  .add('default', () => {
+    const typeOptions = {
+      None: 'None',
+      Narrow: 'Narrow',
+      Usd: 'Usd',
+      Partners: 'Partners',
+      Beneficiaries: 'Beneficiaries',
+      Households: 'Households',
+      Months: 'Months',
+      Mt: 'Mt',
+      Num: 'Num',
+      YearMonth: 'YearMonth',
+      Level: 'Level',
+      People: 'People',
+      Countries: 'Countries',
+      Percentage: 'Percentage',
+    };
 
-      const decimalOptions = {
-        undefined: undefined,
-        thousand: 'thousand',
-        million: 'million',
-        billion: 'billion',
-      };
+    const decimalOptions = {
+      undefined: undefined,
+      thousand: 'thousand',
+      million: 'million',
+      billion: 'billion',
+    };
 
-      const unitProps = {
-        type: select('Unit type (type)', typeOptions, 'Usd'),
-        output: select(
-          'Output decimal name (output)',
-          decimalOptions,
-          'million'
-        ),
-        from: select('Input decimal name (from)', decimalOptions, undefined),
-        minimumFractionDigits: number(
-          'minimum number of fraction digits to use (minimumFractionDigits)',
-          undefined
-        ),
-        maximumFractionDigits: number(
-          'minimum number of fraction digits to use (maximumFractionDigits)',
-          undefined
-        ),
-        maximumSignificantDigits: number(
-          'maximum number of significant digits to use (maximumSignificantDigits)',
-          undefined
-        ),
-        hideEmpty: text('hide value if empty (hideEmpty)', undefined),
-      };
-      const value = text('value', 1000000);
+    const unitProps = {
+      type: select('Unit type (type)', typeOptions, 'Usd'),
+      output: select('Output decimal name (output)', decimalOptions, 'million'),
+      from: select('Input decimal name (from)', decimalOptions, undefined),
+      minimumFractionDigits: number(
+        'minimum number of fraction digits to use (minimumFractionDigits)',
+        undefined
+      ),
+      maximumFractionDigits: number(
+        'minimum number of fraction digits to use (maximumFractionDigits)',
+        undefined
+      ),
+      maximumSignificantDigits: number(
+        'maximum number of significant digits to use (maximumSignificantDigits)',
+        undefined
+      ),
+      hideEmpty: text('hide value if empty (hideEmpty)', undefined),
+    };
+    const value = text('value', 1000000);
 
-      return <Unit {...unitProps}>{value}</Unit>;
-    },
-    {
-      info: {
-        text: readme,
-      },
-    }
-  );
+    return <Unit {...unitProps}>{value}</Unit>;
+  });

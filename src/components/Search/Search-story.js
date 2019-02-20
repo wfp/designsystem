@@ -4,9 +4,6 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 
-import { withReadme } from 'storybook-readme';
-import readme from './README.md';
-
 import { withKnobs, select, text } from '@storybook/addon-knobs';
 import Search from '../Search';
 import SearchSkeleton from '../Search/Search.Skeleton';
@@ -37,25 +34,11 @@ const props = () => ({
 
 storiesOf('Search', module)
   .addDecorator(withKnobs)
-  .addDecorator(withReadme([readme]))
-  .add('Default', () => <Search {...props()} id="search-1" />, {
-    info: {
-      text: readme,
-    },
-  })
-  .add(
-    'skeleton',
-    () => (
-      <div style={{ width: '200px' }}>
-        <SearchSkeleton />&nbsp;
-        <SearchSkeleton small />
-      </div>
-    ),
-    {
-      info: {
-        text: `
-            Placeholder skeleton state to use when content is loading.
-          `,
-      },
-    }
-  );
+
+  .add('Default', () => <Search {...props()} id="search-1" />)
+  .add('skeleton', () => (
+    <div style={{ width: '200px' }}>
+      <SearchSkeleton />&nbsp;
+      <SearchSkeleton small />
+    </div>
+  ));

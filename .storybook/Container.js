@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { addParameters } from '@storybook/react';
 
 import './polyfills';
 import './_container.scss';
@@ -18,8 +19,6 @@ export default class Container extends Component {
       nextProps.context.kind !== prevState.context.kind ||
       nextProps.context.story !== prevState.context.story
     ) {
-      //nextProps.story.addParameters({ jest: ['Card-test'] });
-
       window.scrollTo(0, 0);
       if (nextProps.context.story.includes('html')) {
         withOptions({ selectedAddonPanel: 'lucid-docs-panel-code' });
@@ -39,6 +38,14 @@ export default class Container extends Component {
     const { context, story } = this.props;
 
     const storyRender = story();
+
+    /*
+    addParameters({
+      jest: ['Card-test'],
+      info: {
+        inline: true,
+      }
+    });*/
 
     const flexBasis =
       storyRender.props.children && storyRender.props.children.props

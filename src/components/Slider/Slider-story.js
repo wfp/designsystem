@@ -30,33 +30,13 @@ const props = () => ({
 
 storiesOf('Slider', module)
   .addDecorator(withKnobs)
-  .add(
-    'default',
-    () => (
-      <div style={{ marginTop: '2rem' }}>
-        <Slider id="slider" {...props()} />
-      </div>
-    ),
-    {
-      info: {
-        text: `
-            Sliders provide a visual indication of adjustable content, where the user can move the handle along a horizontal track to increase or decrease the value.
-          `,
-      },
-    }
-  )
-  .add(
-    'skeleton',
-    () => (
-      <div style={{ marginTop: '2rem' }}>
-        <SliderSkeleton />
-      </div>
-    ),
-    {
-      info: {
-        text: `
-            Placeholder skeleton state to use when content is loading.
-          `,
-      },
-    }
-  );
+  .add('default', () => (
+    <div style={{ marginTop: '2rem' }}>
+      <Slider id="slider" {...props()} />
+    </div>
+  ))
+  .add('skeleton', () => (
+    <div style={{ marginTop: '2rem' }}>
+      <SliderSkeleton />
+    </div>
+  ));

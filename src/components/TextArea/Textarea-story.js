@@ -28,20 +28,5 @@ const TextAreaProps = () => ({
 
 storiesOf('TextArea', module)
   .addDecorator(withKnobs)
-  .add(
-    'Default',
-    withInfo({
-      text: `
-        Text areas enable the user to interact with and input data. A text area is used when you
-        anticipate the user to input more than 1 sentence.
-      `,
-    })(() => <TextArea {...TextAreaProps()} />)
-  )
-  .add(
-    'skeleton',
-    withInfo({
-      text: `
-        Placeholder skeleton state to use when content is loading.
-      `,
-    })(() => <TextAreaSkeleton />)
-  );
+  .add('Default', () => <TextArea {...TextAreaProps()} />)
+  .add('skeleton', () => <TextAreaSkeleton />);

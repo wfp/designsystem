@@ -6,8 +6,6 @@ import { iconAddSolid, iconSearch } from '@wfp/icons';
 import Button from '../Button';
 import ButtonSkeleton from '../Button/Button.Skeleton';
 
-import readme from './README.md';
-
 const icons = {
   None: 'None',
   'Add with filled circle (iconAddSolid from `@wfp/ui`)': 'iconAddSolid',
@@ -49,69 +47,43 @@ const props = {
   }),
 };
 
-storiesOf('Buttons', module)
+storiesOf('Button', module)
   .addParameters({ jest: ['Button-test'] })
   .addDecorator(withKnobs)
-  .add(
-    'Default',
-    () => {
-      const regularProps = props.regular();
-      return (
-        <div style={{ display: 'flex', alignItems: 'center' }}>
-          <Button {...regularProps} className="some-class">
-            Button
-          </Button>
-          &nbsp;
-          <Button {...regularProps} href="#" className="some-class">
-            Link
-          </Button>
-          &nbsp;
-        </div>
-      );
-    },
-    {
-      info: {
-        text: readme,
-      },
-    }
-  )
-  .add(
-    'Sets of Buttons',
-    () => {
-      const setProps = props.set();
-      return (
-        <div>
-          <Button kind="secondary" {...setProps}>
-            Secondary button
-          </Button>
-          <Button kind="primary" {...setProps}>
-            Primary button
-          </Button>
-        </div>
-      );
-    },
-    {
-      info: {
-        text: readme,
-      },
-    }
-  )
-  .add(
-    'skeleton',
-    () => (
-      <div>
-        <ButtonSkeleton />
+  .add('Default', () => {
+    const regularProps = props.regular();
+    return (
+      <div style={{ display: 'flex', alignItems: 'center' }}>
+        <Button {...regularProps} className="some-class">
+          Button
+        </Button>
         &nbsp;
-        <ButtonSkeleton href="#" />
+        <Button {...regularProps} href="#" className="some-class">
+          Link
+        </Button>
         &nbsp;
-        <ButtonSkeleton small />
       </div>
-    ),
-    {
-      info: {
-        text: `
-          Placeholder skeleton state to use when content is loading.
-        `,
-      },
-    }
-  );
+    );
+  })
+  .add('Sets of Buttons', () => {
+    const setProps = props.set();
+    return (
+      <div>
+        <Button kind="secondary" {...setProps}>
+          Secondary button
+        </Button>
+        <Button kind="primary" {...setProps}>
+          Primary button
+        </Button>
+      </div>
+    );
+  })
+  .add('skeleton', () => (
+    <div>
+      <ButtonSkeleton />
+      &nbsp;
+      <ButtonSkeleton href="#" />
+      &nbsp;
+      <ButtonSkeleton small />
+    </div>
+  ));

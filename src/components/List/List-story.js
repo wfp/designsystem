@@ -3,9 +3,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { withReadme } from 'storybook-readme';
-import readme from './README.md';
-
 import { List, ListItem } from '../List';
 
 const additionalProps = {
@@ -13,7 +10,6 @@ const additionalProps = {
 };
 
 storiesOf('List', module)
-  .addDecorator(withReadme([readme]))
   .add(
     'Default',
     /* `

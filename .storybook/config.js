@@ -2,10 +2,11 @@ import React from 'react';
 import { addParameters, configure, addDecorator } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
 import { withOptions } from '@storybook/addon-options';
+import addonAPI from '@storybook/addons';
 // import { checkA11y } from 'storybook-addon-a11y';
 
 import { getStorybook } from '@storybook/react';
-//import { initializeRTL } from 'storybook-addon-rtl';
+import withNotes from './wfp-storybook';
 
 import Container from './Container';
 
@@ -21,6 +22,7 @@ addDecorator(
 addDecorator(
   withInfo({
     maxPropStringLength: 200, // Displays the first 200 characters in the default prop string
+    header: false,
     styles: stylesheet => {
       return {
         // Setting the style with a function
@@ -84,22 +86,14 @@ addDecorator(
   })
 );
 
+addDecorator(withNotes);
+
 // addDecorator(checkA11y);
 
 function loadStories() {
   const req = require.context('../src', true, /\-story\.js$/);
-
   let keys = req.keys();
-
   keys.unshift('./documentation/Intro-story.js');
-
-  keys.forEach(filename => req(filename));
-}
-
-function loadHtml() {
-  const req = require.context('../src', true, /\.hbs$/);
-
-  let keys = req.keys();
   keys.forEach(filename => req(filename));
 }
 

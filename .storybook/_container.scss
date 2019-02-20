@@ -8,6 +8,16 @@ $css--reset: true;
  TODO: find another solution
 */
 
+#story-root {
+  margin-top: 2rem;
+  min-height: 30vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+
+  //border: 2px solid $ui-04;
+}
 html {
   height: 100%;
 }

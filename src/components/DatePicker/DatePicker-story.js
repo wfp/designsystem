@@ -5,7 +5,6 @@ import { storiesOf } from '@storybook/react';
 
 import { withKnobs, boolean, text } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
-import readme from './README.md';
 
 import { SingleDatePickerInput } from './SingleDatePickerInput';
 import { DateRangePickerInput } from './DateRangePickerInput';
@@ -70,50 +69,24 @@ const props = {
 
 storiesOf('DatePicker', module)
   .addDecorator(withKnobs)
-  .add(
-    'SingleDatePicker (draft)',
-    () => <SingleDatePickerInput {...props.datePicker()} />,
-    {
-      info: {
-        text: readme,
-      },
-    }
-  )
-  .add(
-    'DateRangePicker (draft)',
-    () => <DateRangePickerInput {...props.dateRangePicker()} />,
-    {
-      info: {
-        text: readme,
-      },
-    }
-  )
+  .add('SingleDatePicker (draft)', () => (
+    <SingleDatePickerInput {...props.datePicker()} />
+  ))
+  .add('DateRangePicker (draft)', () => (
+    <DateRangePickerInput {...props.dateRangePicker()} />
+  ))
   .addDecorator(story => (
     <Provider store={store}>
       <FormWrapper>{story()}</FormWrapper>
     </Provider>
   ))
-  .add(
-    'DatePicker Field (draft)',
-    () => (
-      <Field
-        {...props.datePickerField()}
-        format={value => (value ? moment(value) : undefined)}
-        normalize={data => data && data.value && data.value.format()}
-      />
-    ),
-    {
-      info: {
-        text: readme,
-      },
-    }
-  )
-  .add(
-    'DateRangePicker Field (draft)',
-    () => <Field {...props.dateRangePickerField()} />,
-    {
-      info: {
-        text: readme,
-      },
-    }
-  );
+  .add('DatePicker Field (draft)', () => (
+    <Field
+      {...props.datePickerField()}
+      format={value => (value ? moment(value) : undefined)}
+      normalize={data => data && data.value && data.value.format()}
+    />
+  ))
+  .add('DateRangePicker Field (draft)', () => (
+    <Field {...props.dateRangePickerField()} />
+  ));

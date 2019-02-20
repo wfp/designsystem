@@ -2,8 +2,6 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { List, ListItem } from '../List';
 
-import readme from './README.md';
-
 import { withKnobs, boolean, text } from '@storybook/addon-knobs';
 import User from '../User';
 
@@ -47,13 +45,5 @@ const UserProps = {
 storiesOf('User', module)
   .addDecorator(withKnobs)
   .addParameters({ jest: ['User-test'] })
-  .add('Default', () => <User {...UserProps.default()} />, {
-    info: {
-      text: readme,
-    },
-  })
-  .add('With Description', () => <User {...UserProps.description()} />, {
-    info: {
-      text: readme,
-    },
-  });
+  .add('Default', () => <User {...UserProps.default()} />)
+  .add('With Description', () => <User {...UserProps.description()} />);

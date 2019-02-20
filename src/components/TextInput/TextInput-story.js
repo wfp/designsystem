@@ -33,28 +33,11 @@ const TextInputProps = () => ({
 
 storiesOf('TextInput', module)
   .addDecorator(withKnobs)
-  .add(
-    'Default',
-    withInfo({
-      text: `
-        Text fields enable the user to interact with and input data. A single line
-        field is used when the input anticipated by the user is a single line of
-        text as opposed to a paragraph.
-        The default type is 'text' and its value can be either 'string' or 'number'.
-      `,
-    })(() => <TextInput {...TextInputProps()} />)
-  )
-  .add(
-    'skeleton',
-    withInfo({
-      text: `
-        Placeholder skeleton state to use when content is loading.
-        `,
-    })(() => (
-      <div>
-        <TextInputSkeleton />
-        <br />
-        <TextInputSkeleton hideLabel />
-      </div>
-    ))
-  );
+  .add('Default', () => <TextInput {...TextInputProps()} />)
+  .add('skeleton', () => (
+    <div>
+      <TextInputSkeleton />
+      <br />
+      <TextInputSkeleton hideLabel />
+    </div>
+  ));

@@ -7,9 +7,6 @@ import Tabs from '../Tabs';
 import Tab from '../Tab';
 import TabsSkeleton from '../Tabs/Tabs.Skeleton';
 
-import { withReadme } from 'storybook-readme';
-import readme from './README.md';
-
 const props = {
   tabs: () => ({
     className: 'some-class',
@@ -57,56 +54,34 @@ const listEl = props => {
 
 storiesOf('Tabs', module)
   .addDecorator(withKnobs)
-  .addDecorator(withReadme([readme]))
-  .add(
-    'Default',
-    withInfo({
-      text: `
-        Tabs are used to quickly navigate between views within the same context. Create individual
-        Tab components for each item in the Tabs list.
-      `,
-    })(() => (
-      <Tabs {...props.tabs()}>
-        <Tab {...props.tab()} label="Tab label 1">
-          <div className="some-content">Content for first tab goes here.</div>
-        </Tab>
-        <Tab {...props.tab()} label="Tab label 2">
-          <div className="some-content">Content for second tab goes here.</div>
-        </Tab>
-        <Tab {...props.tab()} label="Tab label 3">
-          <div className="some-content">Content for third tab goes here.</div>
-        </Tab>
-      </Tabs>
-    ))
-  )
-  .add(
-    'Custom Tab Content',
-    withInfo({
-      text: `
-        Custom Tab Content which is independent from the Tabs
-      `,
-    })(() => (
-      <Tabs {...props.tabs()} customTabContent={true}>
-        <Tab
-          {...props.tab()}
-          label="Tab label 1"
-          href="http://www.de.wfp.org"
-          renderAnchor={el}
-        />
-        <Tab
-          {...props.tab()}
-          label="Tab label 4"
-          href="http://www.fr.wfp.org"
-          renderListElement={listEl}
-        />
-      </Tabs>
-    ))
-  )
-  .add(
-    'skeleton',
-    withInfo({
-      text: `
-        Placeholder skeleton state to use when content is loading.
-      `,
-    })(() => <TabsSkeleton />)
-  );
+
+  .add('Default', () => (
+    <Tabs {...props.tabs()}>
+      <Tab {...props.tab()} label="Tab label 1">
+        <div className="some-content">Content for first tab goes here.</div>
+      </Tab>
+      <Tab {...props.tab()} label="Tab label 2">
+        <div className="some-content">Content for second tab goes here.</div>
+      </Tab>
+      <Tab {...props.tab()} label="Tab label 3">
+        <div className="some-content">Content for third tab goes here.</div>
+      </Tab>
+    </Tabs>
+  ))
+  .add('Custom Tab Content', () => (
+    <Tabs {...props.tabs()} customTabContent={true}>
+      <Tab
+        {...props.tab()}
+        label="Tab label 1"
+        href="http://www.de.wfp.org"
+        renderAnchor={el}
+      />
+      <Tab
+        {...props.tab()}
+        label="Tab label 4"
+        href="http://www.fr.wfp.org"
+        renderListElement={listEl}
+      />
+    </Tabs>
+  ))
+  .add('skeleton', () => <TabsSkeleton />);

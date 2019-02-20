@@ -2,7 +2,6 @@
 
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import readme from './README.md';
 
 import ReadMore from '../ReadMore';
 import Truncate from 'react-truncate';
@@ -49,18 +48,6 @@ const props = {
 
 storiesOf('ReadMore', module)
   .addDecorator(withKnobs)
-  .add('Default (draft)', () => <ReadMore {...props.regular()} />, {
-    info: {
-      text: readme,
-    },
-  })
-  .add('Fade & animate (draft)', () => <ReadMore {...props.fade()} />, {
-    info: {
-      text: readme,
-    },
-  })
-  .add('Custom Buttons', () => <ReadMore {...props.customButton()} />, {
-    info: {
-      text: readme,
-    },
-  });
+  .add('Default (draft)', () => <ReadMore {...props.regular()} />)
+  .add('Fade & animate (draft)', () => <ReadMore {...props.fade()} />)
+  .add('Custom Buttons', () => <ReadMore {...props.customButton()} />);

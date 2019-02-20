@@ -16,8 +16,6 @@ import FileUploader, { FileUploaderButton } from '../FileUploader';
 import FileUploaderSkeleton from '../FileUploader/FileUploader.Skeleton';
 import Button from '../Button';
 
-import readme from './README.md';
-
 const buttonKinds = {
   'Primary (primary)': 'primary',
   'Secondary (secondary)': 'secondary',
@@ -73,55 +71,31 @@ const props = {
 storiesOf('FileUploader', module)
   .addDecorator(withKnobs)
   .addParameters({ jest: ['FileUploader-test'] })
-  .add(
-    'FileUploaderButton',
-    () => <FileUploaderButton {...props.fileUploaderButton()} />,
-    {
-      info: {
-        text: readme,
-      },
-    }
-  )
-  .add(
-    'FileUploader',
-    () => {
-      let fileUploader;
-      return (
-        <div className="wfp--file__container">
-          <FileUploader
-            {...props.fileUploader()}
-            ref={node => (fileUploader = node)}
-          />
-          <Button
-            kind="secondary"
-            small
-            style={{ marginTop: '1rem' }}
-            onClick={() => {
-              fileUploader.clearFiles();
-            }}>
-            Clear File
-          </Button>
-        </div>
-      );
-    },
-    {
-      info: {
-        text: `
-            The FileUploader components allow the user to upload any necessary files. This uses the FileUploaderButton and Filename components. Filename components will appear below the FileUploaderButton when files are added. Use the filenameStatus prop to control what icon appears in Filename ('edit', 'complete', or 'uploading').
-          `,
-      },
-    }
-  )
-  .add(
-    'skeleton',
-    () => (
-      <div style={{ width: '500px' }}>
-        <FileUploaderSkeleton />
+  .add('FileUploaderButton', () => (
+    <FileUploaderButton {...props.fileUploaderButton()} />
+  ))
+  .add('FileUploader', () => {
+    let fileUploader;
+    return (
+      <div className="wfp--file__container">
+        <FileUploader
+          {...props.fileUploader()}
+          ref={node => (fileUploader = node)}
+        />
+        <Button
+          kind="secondary"
+          small
+          style={{ marginTop: '1rem' }}
+          onClick={() => {
+            fileUploader.clearFiles();
+          }}>
+          Clear File
+        </Button>
       </div>
-    ),
-    {
-      info: {
-        text: readme,
-      },
-    }
-  );
+    );
+  })
+  .add('skeleton', () => (
+    <div style={{ width: '500px' }}>
+      <FileUploaderSkeleton />
+    </div>
+  ));

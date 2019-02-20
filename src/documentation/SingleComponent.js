@@ -27,9 +27,9 @@ class SingleComponent extends Component {
     return (
       <Wrapper
         style={
-          centered && height <= 300
+          centered && height <= 30
             ? {
-                display: 'flex',
+                display: 'block',
                 alignItems: 'center',
                 justifyContent: 'center',
                 height: '100%',

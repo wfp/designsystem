@@ -2,7 +2,6 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { withKnobs, boolean, text } from '@storybook/addon-knobs';
-import readme from './README.md';
 
 import Modal from '../Modal';
 import TextInput from '../TextInput';
@@ -81,38 +80,21 @@ const props = {
 
 storiesOf('Modal', module)
   .addDecorator(withKnobs)
-  .add(
-    'Default',
-    () => (
-      <Modal {...props.default()}>
-        <p className="wfp--modal-content__text">
-          Please see ModalWrapper for more examples and demo of the
-          functionality.
-        </p>
-      </Modal>
-    ),
-    {
-      info: {
-        text: readme,
-      },
-    }
-  )
-  .add(
-    'Dialog Page (draft)',
-    () => (
-      <Modal {...props.dialog()}>
-        <p className="wfp--modal-content__text">
-          <TextInput
-            labelText="Your email adress"
-            placeholder="yourname@wfp.org"
-            helperText="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum."
-          />
-        </p>
-      </Modal>
-    ),
-    {
-      info: {
-        text: readme,
-      },
-    }
-  );
+  .add('Default', () => (
+    <Modal {...props.default()}>
+      <p className="wfp--modal-content__text">
+        Please see ModalWrapper for more examples and demo of the functionality.
+      </p>
+    </Modal>
+  ))
+  .add('Dialog Page (draft)', () => (
+    <Modal {...props.dialog()}>
+      <p className="wfp--modal-content__text">
+        <TextInput
+          labelText="Your email adress"
+          placeholder="yourname@wfp.org"
+          helperText="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum."
+        />
+      </p>
+    </Modal>
+  ));

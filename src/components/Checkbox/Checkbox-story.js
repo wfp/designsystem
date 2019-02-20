@@ -19,74 +19,40 @@ const props = () => ({
 
 storiesOf('Checkbox', module)
   .addDecorator(withKnobs)
-  .add(
-    'checked',
-    withInfo({
-      text: `
-        Checkboxes are used when there is a list of options and the user may select multiple options, including all or none.
-        The example below shows how the Checkbox component can be used as an uncontrolled component that is initially checked
-        by setting the defaultChecked property to true. To use the component in a controlled way, you should set the
-        checked property instead.
-      `,
-    })(() => {
-      const checkboxProps = props();
-      return (
-        <fieldset className="wfp--fieldset">
-          <legend className="wfp--label">Checkbox heading</legend>
-          <Checkbox defaultChecked {...checkboxProps} id="checkbox-label-1" />
-          <Checkbox defaultChecked {...checkboxProps} id="checkbox-label-1" />
-        </fieldset>
-      );
-    })
-  )
-  .add(
-    'unchecked',
-    withInfo({
-      text: `
-        Checkboxes are used when there is a list of options and the user may select multiple options, including all or none.
-        The example below shows how the Checkbox component can be used as an uncontrolled component that is initially
-        unchecked. To use the component in a controlled way, you should set the checked property instead.
-      `,
-    })(() => {
-      const checkboxProps = props();
-      return (
-        <fieldset className="wfp--fieldset">
-          <legend className="wfp--label">Checkbox heading</legend>
+  .add('checked', () => {
+    const checkboxProps = props();
+    return (
+      <fieldset className="wfp--fieldset">
+        <legend className="wfp--label">Checkbox heading</legend>
+        <Checkbox defaultChecked {...checkboxProps} id="checkbox-label-1" />
+        <Checkbox defaultChecked {...checkboxProps} id="checkbox-label-1" />
+      </fieldset>
+    );
+  })
+  .add('unchecked', () => {
+    const checkboxProps = props();
+    return (
+      <fieldset className="wfp--fieldset">
+        <legend className="wfp--label">Checkbox heading</legend>
+        <Checkbox {...checkboxProps} id="checkbox-label-1" />
+        <Checkbox {...checkboxProps} id="checkbox-label-2" />
+      </fieldset>
+    );
+  })
+  .add('inline', () => {
+    const checkboxProps = props();
+    return (
+      <FormGroup>
+        <legend className="wfp--label">Checkbox heading</legend>
+        <div className="wfp--fieldset__inline">
           <Checkbox {...checkboxProps} id="checkbox-label-1" />
           <Checkbox {...checkboxProps} id="checkbox-label-2" />
-        </fieldset>
-      );
-    })
-  )
-  .add(
-    'inline',
-    withInfo({
-      text: `
-        Checkboxes are used when there is a list of options and the user may select multiple options, including all or none.
-        The example below shows how the Checkbox component can be displayed vertically.
-      `,
-    })(() => {
-      const checkboxProps = props();
-      return (
-        <FormGroup>
-          <legend className="wfp--label">Checkbox heading</legend>
-          <div className="wfp--fieldset__inline">
-            <Checkbox {...checkboxProps} id="checkbox-label-1" />
-            <Checkbox {...checkboxProps} id="checkbox-label-2" />
-          </div>
-        </FormGroup>
-      );
-    })
-  )
-  .add(
-    'skeleton',
-    withInfo({
-      text: `
-        Placeholder skeleton state to use when content is loading.
-      `,
-    })(() => (
-      <div>
-        <CheckboxSkeleton />
-      </div>
-    ))
-  );
+        </div>
+      </FormGroup>
+    );
+  })
+  .add('skeleton', () => (
+    <div>
+      <CheckboxSkeleton />
+    </div>
+  ));

@@ -7,8 +7,6 @@ import RadioButtonGroup from '../RadioButtonGroup';
 import RadioButton from '../RadioButton';
 import FormGroup from '../FormGroup';
 
-import readme from './README.md';
-
 const values = {
   standard: 'standard',
   'default-selected': 'default-selected',
@@ -40,30 +38,18 @@ const props = {
 
 storiesOf('RadioButtonGroup', module)
   .addDecorator(withKnobs)
-  .add(
-    'Default',
-    () => {
-      const radioProps = props.radio();
-      return (
-        <FormGroup legendText="Radio Button heading">
-          <RadioButtonGroup
-            defaultSelected="default-selected"
-            legend="Group Legend"
-            {...props.group()}>
-            <RadioButton value="standard" id="radio-1" {...radioProps} />
-            <RadioButton
-              value="default-selected"
-              id="radio-2"
-              {...radioProps}
-            />
-            <RadioButton value="disabled" id="radio-3" {...radioProps} />
-          </RadioButtonGroup>
-        </FormGroup>
-      );
-    },
-    {
-      info: {
-        text: readme,
-      },
-    }
-  );
+  .add('Default', () => {
+    const radioProps = props.radio();
+    return (
+      <FormGroup legendText="Radio Button heading">
+        <RadioButtonGroup
+          defaultSelected="default-selected"
+          legend="Group Legend"
+          {...props.group()}>
+          <RadioButton value="standard" id="radio-1" {...radioProps} />
+          <RadioButton value="default-selected" id="radio-2" {...radioProps} />
+          <RadioButton value="disabled" id="radio-3" {...radioProps} />
+        </RadioButtonGroup>
+      </FormGroup>
+    );
+  });

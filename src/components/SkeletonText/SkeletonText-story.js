@@ -24,15 +24,8 @@ const props = () => ({
 
 storiesOf('SkeletonText', module)
   .addDecorator(withKnobs)
-  .add(
-    'Default',
-    withInfo({
-      text: `
-        Skeleton states are used as a progressive loading state while the user waits for content to load.
-      `,
-    })(() => (
-      <div style={{ width: '300px' }}>
-        <SkeletonText {...props()} />
-      </div>
-    ))
-  );
+  .add('Default', () => (
+    <div style={{ width: '300px' }}>
+      <SkeletonText {...props()} />
+    </div>
+  ));

@@ -4,9 +4,6 @@ import { action } from '@storybook/addon-actions';
 import { withInfo } from '@storybook/addon-info';
 import { withKnobs, boolean, select, text } from '@storybook/addon-knobs';
 
-import { withReadme } from 'storybook-readme';
-import readme from './README.md';
-
 import store from '../../internal/configureStore';
 import { Provider } from 'react-redux';
 import { Field } from 'redux-form';
@@ -83,20 +80,13 @@ const props = {
 
 storiesOf('ReduxFormWrapper', module)
   .addDecorator(withKnobs)
-  .addDecorator(withReadme([readme]))
+
   .addDecorator(story => (
     <Provider store={store}>
       <FormWrapper>{story()}</FormWrapper>
     </Provider>
   ))
-  .add(
-    'Default',
-    withInfo({
-      text: `
-        A wrapper for inputs so they can be used with ReduxForm.
-      `,
-    })(() => {
-      const regularProps = props.regular();
-      return <Field {...regularProps} validate={[required, maxLength15]} />;
-    })
-  );
+  .add('Default', () => {
+    const regularProps = props.regular();
+    return <Field {...regularProps} validate={[required, maxLength15]} />;
+  });
