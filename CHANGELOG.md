@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.2.0-alpha.7"></a>
+# [1.2.0-alpha.7](https://github.com/WFP/UI/compare/v1.2.0-alpha.6...v1.2.0-alpha.7) (2019-02-20)
+
+
+### Features
+
+* **Input:** Shadow on Input elements ([94a79bd](https://github.com/WFP/UI/commit/94a79bd))
+
+
+
 <a name="1.2.0-alpha.6"></a>
 # [1.2.0-alpha.6](https://github.com/WFP/UI/compare/v1.2.0-alpha.5...v1.2.0-alpha.6) (2019-02-19)
 
