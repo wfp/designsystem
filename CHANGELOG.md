@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.2.0-alpha.8"></a>
+# [1.2.0-alpha.8](https://github.com/WFP/UI/compare/v1.2.0-alpha.7...v1.2.0-alpha.8) (2019-02-21)
+
+
+### Features
+
+* **Story:** divider added ([921cf98](https://github.com/WFP/UI/commit/921cf98))
+
+
+
 <a name="1.2.0-alpha.7"></a>
 # [1.2.0-alpha.7](https://github.com/WFP/UI/compare/v1.2.0-alpha.6...v1.2.0-alpha.7) (2019-02-20)
 
