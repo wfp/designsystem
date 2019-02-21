@@ -13,7 +13,7 @@ storiesOf(' Documentation', module).add('Grid', () => (
       <Link href="http://flexboxgrid.com/">Flexbox Grid</Link>, which is also
       available as react components.
     </p>
-    <ul className="wfp--story--list">
+    <ul className="wfp--story__list">
       <li>
         <Link href="http://flexboxgrid.com/" target="_blank">
           Flexbox Grid

@@ -8,7 +8,7 @@ import Link from '../components/Link';
 const fileSizes = [120, 152, 160, 167, 180, 192, 300];
 
 storiesOf(' Documentation', module).add('App Icons', () => (
-  <Page title="App Icons" subTitle="Introduction to the new WFP UI Kit">
+  <Page title="App Icons" subTitle="Icons for Android & iOS">
     <p>All WFP apps should use the same app icon featuring the WFP acronym.</p>
 
     <p>

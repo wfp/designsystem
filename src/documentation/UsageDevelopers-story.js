@@ -7,9 +7,6 @@ import PrismCode from 'react-prism';
 import Page from './Page';
 import Blockquote from '../components/Blockquote';
 
-require('prismjs');
-require('prismjs/themes/prism.css');
-
 storiesOf(' Documentation.Getting Started', module).add(
   'Usage for Developers',
   () => (

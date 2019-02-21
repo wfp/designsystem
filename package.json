@@ -9,7 +9,7 @@
   "sideEffects": false,
   "scripts": {
     "build": "node scripts/build.js && yarn build:css && yarn build:cssmin",
-    "build:storybook": "build-storybook -o docs",
+    "build:storybook": "rm -r docs && build-storybook -o docs",
     "ci-check": "yarn prettier:diff && yarn lint && yarn test --runInBand && yarn test-ssr",
     "build:cssmin": "node-sass ./src/globals/scss/styles.scss > ./assets/css/styles.min.css --output-style compressed | postcss ./assets/css/styles.min.css --no-map -u autoprefixer -r | postcss ./assets/css/styles.min.css -d ./assets/css/ --use autoprefixer",
     "build:css": "node-sass ./src/globals/scss -o ./assets/css --output-style compressed --source-map true | postcss ./assets/css/styles.css -d ./assets/css/ --use autoprefixer",

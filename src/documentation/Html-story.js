@@ -2,10 +2,10 @@
 
 import React from 'react';
 import { storiesOf } from '@storybook/react';
+import PrismCode from 'react-prism';
 import Page from './Page';
 import Blockquote from '../components/Blockquote';
-
-import readme from './HTML-README.md';
+import Link from '../components/Link';
 
 storiesOf(' Documentation.Getting Started', module).add('HTML Usage', () => (
   <Page title="HTML Usage" subTitle="Use the UI Kit without react.js">
@@ -16,11 +16,13 @@ storiesOf(' Documentation.Getting Started', module).add('HTML Usage', () => (
     </p>
 
     <Blockquote title="CDN" type="code">
-      {`<link
+      <PrismCode component="pre" className="language-html">
+        {`<link
   rel="stylesheet"
   type="text/css"
   href="https://cdn.wfp.org/guides/ui/v1.1.16/assets/css/styles.min.css"
 />`}
+      </PrismCode>
     </Blockquote>
     <h3>SCSS</h3>
     <p>
@@ -29,7 +31,8 @@ storiesOf(' Documentation.Getting Started', module).add('HTML Usage', () => (
       functions from WFP UI or to override settings.
     </p>
     <Blockquote title="Use Source scss" type="code">
-      {`// Override settings
+      <PrismCode component="pre" className="language-css">
+        {`// Override settings
 $input-border-radius: 5px;
 $button-border-radius: 60px;
 $button-font-size: 25px;
@@ -44,6 +47,16 @@ $color__main: #0076FF;
 
 // Only use variables
 @import "../../node_modules/@wfp/ui/source/globals/scss/vars";`}
+      </PrismCode>
     </Blockquote>
+    <h3>Usage with Google Chrome</h3>
+    <p>
+      Download the{' '}
+      <Link href="https://developers.google.com/web/tools/chrome-devtools/">
+        Google Chrome DevTools
+      </Link>. Right-click on any component, click{' '}
+      <span className="wfp--inline-highlight">Inspect</span>, and you'll see the
+      html of that component which can be copied and reused.
+    </p>
   </Page>
 ));

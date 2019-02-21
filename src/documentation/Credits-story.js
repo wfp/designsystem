@@ -18,22 +18,23 @@ storiesOf(' Documentation', module).add('Credits', () => (
       technology.
     </p>
     <h3>The UI-Kit is be heavily based on</h3>
-    <List kind="simple">
-      <ListItem>
+
+    <ul className="wfp--story__list">
+      <li>
         <Link href="https://github.com/carbon-design-system/carbon-components">
           Carbon Components
         </Link>
-      </ListItem>
-      <ListItem>
+      </li>
+      <li>
         <Link href="https://designsystem.digital.gov/page-templates">
           U.S. Webdesign System
         </Link>
-      </ListItem>
-      <ListItem>
+      </li>
+      <li>
         <Link href="https://github.com/frederik-jacques/sketch-favicon-exporter-template">
           Sketch Favicon Exporter Template
         </Link>
-      </ListItem>
-    </List>
+      </li>
+    </ul>
   </Page>
 ));

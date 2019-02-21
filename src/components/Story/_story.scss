@@ -147,4 +147,11 @@
     background: $ui-03;
     padding: 0.05em 0.1em;
   }
+
+  .#{$prefix}--story__divider {
+    border: 1px solid $ui-04;
+  }
+  .#{$prefix}--story__divider--lg {
+    border: 2px solid $ui-04;
+  }
 }

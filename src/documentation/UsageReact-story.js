@@ -51,6 +51,12 @@ storiesOf(' Documentation.Getting Started', module).add('React Usage', () => (
 
     <h3>Forms</h3>
     <p>
+      <Link href="https://github.com/final-form/react-final-form">
+        react-final-form
+      </Link>{' '}
+      is a form library for react.
+    </p>
+    <p style={{ textDecoration: 'line-through' }}>
       <Link href="https://github.com/erikras/redux-form">redux-form</Link> works
       with React Redux to enable an html form in React to use Redux to store all
       of its state.
@@ -89,7 +95,7 @@ storiesOf(' Documentation.Getting Started', module).add('React Usage', () => (
     <p>Configuration on Adal https://github.com/salvoravida/react-adal</p>
 
     <h3>Useful links</h3>
-    <ul className="wfp--story--list">
+    <ul className="wfp--story__list">
       <li>
         <Link href="https://gist.github.com/datchley/4e0d05c526d532d1b05bf9b48b174faf">
           React/Redux Style Guide

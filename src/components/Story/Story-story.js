@@ -27,11 +27,29 @@ storiesOf('Story', module).add('Default', () => (
       region alone. In addition, 400,000 children are at risk of dying from
       severe acute malnutrition without urgent life-saving assistance.
     </p>
-    <ul className="wfp--story--list">
+    <ul className="wfp--story__list">
       <li>Lorem ipsum dolor sit amet</li>
       <li>Consetetur sadipscing elitr</li>
       <li>Sed diam nonumy eirmod tempor invidunt ut labore et dolore</li>
     </ul>
+    <p>
+      The scale of the food security and nutrition crisis in Kasai is immense.
+      In September 2017, the World Food Programme (WFP)’s Emergency Food
+      Security Assessment found that there were 3.2 million severely food
+      insecure people in this region alone. In addition, 400,000 children are at
+      risk of dying from severe acute malnutrition without urgent life-saving
+      assistance.
+    </p>
+    <hr className="wfp--story__divider" />
+    <p>
+      The scale of the food security and nutrition crisis in Kasai is immense.
+      In September 2017, the World Food Programme (WFP)’s Emergency Food
+      Security Assessment found that there were 3.2 million severely food
+      insecure people in this region alone. In addition, 400,000 children are at
+      risk of dying from severe acute malnutrition without urgent life-saving
+      assistance.
+    </p>
+    <hr className="wfp--story__divider--lg" />
     <p>
       The scale of the food security and nutrition crisis in Kasai is immense.
       In September 2017, the World Food Programme (WFP)’s Emergency Food

@@ -13,6 +13,9 @@ import Container from './Container';
 import { withTests } from '@storybook/addon-jest';
 import results from '../.jest-test-results.json';
 
+require('prismjs');
+require('prismjs/themes/prism.css');
+
 addDecorator(
   withTests({
     results,

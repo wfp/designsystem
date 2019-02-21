@@ -80,7 +80,7 @@ storiesOf(' Documentation', module).add('Form Design', () => (
       field to complete
     </h5>
 
-    <ul className="wfp--story--list">
+    <ul className="wfp--story__list">
       <li>dd – mm – yyyy (date picker)</li>
       <li>amount – currency</li>
       <li>national prefix - phone number</li>
@@ -89,7 +89,7 @@ storiesOf(' Documentation', module).add('Form Design', () => (
 
     <h5>2. Information that people will find in the same place</h5>
 
-    <ul className="wfp--story--list">
+    <ul className="wfp--story__list">
       <li>CVV and credit card expiry date</li>
     </ul>
 
@@ -98,7 +98,7 @@ storiesOf(' Documentation', module).add('Form Design', () => (
       together
     </h5>
 
-    <ul className="wfp--story--list">
+    <ul className="wfp--story__list">
       <li>currency - currency exchange rate</li>
     </ul>
 
@@ -107,7 +107,7 @@ storiesOf(' Documentation', module).add('Form Design', () => (
       purposes
     </h5>
 
-    <ul className="wfp--story--list">
+    <ul className="wfp--story__list">
       <li>country data input - RB data read only</li>
     </ul>
 

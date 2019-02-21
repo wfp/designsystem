@@ -3,7 +3,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import Page from './Page';
-import readme from './NAMING-README.md';
+import Link from '../components/Link';
 
 storiesOf(' Documentation', module).add('Naming Convention & Linting', () => (
   <Page title="Naming Convention" subTitle="Introduction to the new WFP UI Kit">
@@ -25,8 +25,17 @@ storiesOf(' Documentation', module).add('Naming Convention & Linting', () => (
       building your React Application to analyze source code to flag programming
       errors, bugs, stylistic errors and suspicious constructs.
     </p>
+    <p>
+      If you want to use the ESLint configuration in a project you can install
+      it with the{' '}
+      <Link href="https://www.npmjs.com/package/eslint-config-react-app">
+        eslint-config-react-app
+      </Link>. It also includes the eslint-plugin-jsx-a11y accessibility rules
+      by default. When using Create React App no action is needed since it
+      already includes the configuration.
+    </p>
 
-    <ul className="wfp--story--list">
+    <ul className="wfp--story__list">
       <li>ECMAScript 6 features</li>
       <li>no require statements</li>
       <li>spaces (2 space indentation)</li>
