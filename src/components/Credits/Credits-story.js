@@ -2,7 +2,6 @@
 
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withInfo } from '@storybook/addon-info';
 import SingleComponent from '../../documentation/SingleComponent';
 
 import Credits from '../Credits';

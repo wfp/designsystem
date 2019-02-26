@@ -9,8 +9,6 @@ import Blockquote from '../components/Blockquote';
 import Wrapper from '../components/Wrapper';
 import Button from '../components/Button';
 
-import readme from './README-INTRODUCTION.md';
-
 /* const Box = ({ title, content }) => (
   <div>
     <h3>{title}</h3>

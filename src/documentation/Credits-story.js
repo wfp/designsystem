@@ -3,7 +3,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import Link from '../components/Link';
-import { List, ListItem } from '../components/List';
 import Page from './Page';
 
 storiesOf(' Documentation', module).add('Credits', () => (

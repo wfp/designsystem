@@ -2,7 +2,6 @@
 
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withInfo } from '@storybook/addon-info';
 import { withKnobs, boolean, number, select } from '@storybook/addon-knobs';
 import SkeletonText from '../SkeletonText';
 
