@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.2.0-alpha.9"></a>
+# [1.2.0-alpha.9](https://github.com/WFP/UI/compare/v1.2.0-alpha.8...v1.2.0-alpha.9) (2019-02-28)
+
+
+### Bug Fixes
+
+* **TablePagination:** page max filter removed ([686779a](https://github.com/WFP/UI/commit/686779a))
+
+
+
 <a name="1.2.0-alpha.8"></a>
 # [1.2.0-alpha.8](https://github.com/WFP/UI/compare/v1.2.0-alpha.7...v1.2.0-alpha.8) (2019-02-21)
 
