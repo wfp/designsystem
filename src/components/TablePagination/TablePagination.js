@@ -34,7 +34,7 @@ const ReactTablePagination = ({
     if (isNaN(newPage)) {
       newPage = page;
     }
-    return Math.min(Math.max(newPage, 0), pages - 1);
+    return newPage;
   };
 
   const changePage = page => {

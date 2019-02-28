@@ -29,7 +29,7 @@ const props = () => ({
 
 storiesOf('InlineLoading', module)
   .addDecorator(withKnobs)
-  .add('Inline loading', () => (
+  .add('Inline loading (draft)', () => (
     <div>
       <InlineLoading {...props()} />
     </div>

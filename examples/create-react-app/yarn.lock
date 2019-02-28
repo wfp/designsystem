@@ -892,9 +892,9 @@
   version "0.0.57"
   resolved "https://registry.yarnpkg.com/@wfp/icons/-/icons-0.0.57.tgz#a8042f75e2017ef46470f983f9d3e1ad20c2f9b6"
 
-"@wfp/ui@^1.1.42":
-  version "1.1.42"
-  resolved "https://registry.yarnpkg.com/@wfp/ui/-/ui-1.1.42.tgz#40bb3c08ae2cffefa82db3348c7116c06fbd4441"
+"@wfp/ui@^1.2.0-alpha.4":
+  version "1.2.0-alpha.4"
+  resolved "https://registry.yarnpkg.com/@wfp/ui/-/ui-1.2.0-alpha.4.tgz#0f0a68a73bf928c4ca893905f02d777afe47ac8c"
   dependencies:
     classnames "2.2.6"
     downshift "^1.31.14"

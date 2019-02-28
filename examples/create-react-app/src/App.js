@@ -13,6 +13,7 @@ import {
   Search,
   SubNavigation,
   User,
+  InlineLoading,
 } from '@wfp/ui';
 import logo from './logo.svg';
 import './App.scss';
@@ -80,6 +81,7 @@ class App extends Component {
             Primary button as link
           </Button>
         </article>
+        <InlineLoading />
         <Footer
           className="some-class"
           metaContent="WFP UI Kit version 1.0 – powered by RMT with full …"

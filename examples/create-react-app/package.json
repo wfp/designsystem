@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "@wfp/icons": "^0.0.57",
-    "@wfp/ui": "^1.1.42",
+    "@wfp/ui": "^1.2.0-alpha.4",
     "node-sass": "^4.9.3",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",

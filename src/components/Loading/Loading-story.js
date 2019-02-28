@@ -19,6 +19,6 @@ const props = () => ({
 
 storiesOf('Loading', module)
   .addDecorator(withKnobs)
-  .add('Default', () => {
+  .add('Default (Draft)', () => {
     return <Loading {...props()} className={'some-class'} />;
   });

@@ -1,6 +1,15 @@
-### SCSS
+Use the **Loading** spinner to indicate a loading time between 1 and 7 seconds. For shorter loading times don't use any loader and for longer use a progress bar to indicate the remaining time.
 
-#### Modifiers
+### Usage (react)
+
+```javascript
+import { Loading } from '@wfp/ui';
+
+
+<Loading withOverlay={false} active />
+```
+
+#### css Modifiers
 
 Use these modifiers with `.wfp--loading` class.
 
@@ -9,60 +18,3 @@ Use these modifiers with `.wfp--loading` class.
 | .wfp--loading--small        | Class for small loading spinner          |
 | .wfp--loading--stop         | Class for stopping the loading animation |
 | .wfp--loading-overlay--stop | Class for hiding the overlay             |
-
-### JavaScript
-
-#### Getting component class reference
-
-##### ES2015
-
-```javascript
-import { Loading } from 'carbon-components';
-```
-
-##### With pre-build bundle (`carbon-components.min.js`)
-
-```javascript
-var Loading = CarbonComponents.Loading;
-```
-
-#### Instantiating
-
-```javascript
-// `#my-loading` is an element with `[data-loading]` attribute
-Loading.create(document.getElementById('my-loading'));
-```
-
-#### Public Methods
-
-| Name     | Params           | Description                                                 |
-| -------- | ---------------- | ----------------------------------------------------------- |
-| release  |                  | Deletes the instance                                        |
-| set      | active : Boolean | Sets the active/inactive state                              |
-| toggle   |                  | Toggles active/inactive state                               |
-| isActive |                  | Returns current state                                       |
-| end      |                  | Runs end animation and then delete the element from the DOM |
-
-##### Example - Activating the loading spinner
-
-```javascript
-// `#my-loading` is an element with `[data-loading]` attribute
-var loadingInstance = Loading.create(document.getElementById('my-loading'));
-loadingInstance.set(true);
-```
-
-#### Options
-
-| Option                  | Default Selector          | Description                                                      |
-| ----------------------- | ------------------------- | ---------------------------------------------------------------- |
-| selectorInit            | [data-loading]            | The CSS selector to find the loading component                   |
-| selectorLoadingOverlay  | .wfp--loading-overlay      | The selector for the loading overlay.                            |
-| classLoadingOverlayStop | wfp--loading-overlay--stop | The class for the loading overlay's stopped state.               |
-| active                  | true                      | A boolean value representing the initial state of the component. |
-
-##### Example - Activating upon instantiating
-
-```javascript
-// `#my-loading` is an element with `[data-loading]` attribute
-Loading.create(document.getElementById('my-loading'), { active: true });
-```

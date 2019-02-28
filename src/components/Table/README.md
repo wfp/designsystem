@@ -2,14 +2,19 @@ We recommend [React-Table](https://react-table.js.org/) for Tables.
 
 ### Pagination
 
-To use the custom Pagination you can use the TablePagination component.
+To use the custom Pagination you can use the TablePagination component. Additional props for the TablePagination can be directly added to the `ReactTable` component (see Pagination component).
+
 
 ```js
 import { TablePagination } from '@wfp/ui';
 
 // Replacing the Pagination Component of React-Table
 
-<ReactTable PaginationComponent={TablePagination} />;
+<ReactTable
+  PaginationComponent={TablePagination}
+  {...yourOtherProps}
+  {...otherPropsForThePaginationToo}
+/>
 ```
 
 ### Responsive
