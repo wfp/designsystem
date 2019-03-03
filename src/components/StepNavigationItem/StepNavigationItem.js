@@ -102,7 +102,7 @@ export default class StepNavigationItem extends React.Component {
                   description="sss"
                 />
               ) : (
-                <React.Fragment>{page + 1}</React.Fragment>
+                <span>{page + 1}</span>
               )}
             </span>
             <span className="wfp--step-navigation__nav-item__text">

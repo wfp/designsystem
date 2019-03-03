@@ -78,7 +78,7 @@ const ReactTablePagination = ({
           onChange={changePage}
           pageSizes={pageSizeOptions}
           page={page + 1}
-          totalItems={totalItems ? totalItems : data.length}
+          totalItems={totalItems ? totalItems : data ? data.length : undefined}
           {...propList}
         />
       </div>

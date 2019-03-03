@@ -8,7 +8,6 @@
 import React, { PureComponent } from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-
 import { withKnobs, boolean, number, text } from '@storybook/addon-knobs';
 
 import Button from '../Button';

@@ -1,9 +1,7 @@
 import React from 'react';
-import { addParameters, configure, addDecorator } from '@storybook/react';
+import { configure, addDecorator } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
 import { withOptions } from '@storybook/addon-options';
-import addonAPI from '@storybook/addons';
-// import { checkA11y } from 'storybook-addon-a11y';
 
 import { getStorybook } from '@storybook/react';
 import withNotes from './wfp-storybook';

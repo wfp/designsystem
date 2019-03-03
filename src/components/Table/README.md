@@ -11,8 +11,8 @@ import { TablePagination } from '@wfp/ui';
 // Replacing the Pagination Component of React-Table
 
 <ReactTable
+  {...yourTableProps}
   PaginationComponent={TablePagination}
-  {...yourOtherProps}
   {...otherPropsForThePaginationToo}
 />
 ```

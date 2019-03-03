@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withKnobs } from '@storybook/addon-knobs';
+import { withKnobs, boolean, number, text } from '@storybook/addon-knobs';
 
 import StepNavigation from '../StepNavigation';
 import StepNavigationItem from '../StepNavigationItem';
@@ -9,11 +9,18 @@ const handleTabClick = index => {
   this.setState({ page: index });
 };
 
+const props = () => ({
+  vertical: boolean('Display vertical (vertical)', false),
+  small: boolean('Small size (small)', false),
+  selectedPage: number('Currently selected page (selectedPage)', 1),
+  handleTabClick: handleTabClick,
+});
+
 storiesOf('StepNavigation', module)
   .addDecorator(withKnobs)
 
   .add('Default (work in progress)', () => (
-    <StepNavigation selectedPage={1} handleTabClick={handleTabClick}>
+    <StepNavigation {...props()}>
       <StepNavigationItem label="Item without Status" page={0} />
       <StepNavigationItem label="Active Item" page={1} />
       <StepNavigationItem

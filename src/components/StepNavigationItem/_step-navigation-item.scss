@@ -61,16 +61,22 @@
   }*/
 
   .#{$prefix}--step-navigation__nav-item__indicator {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: relative;
     background: $ui-01;
     border: 2px solid $brand-01;
     flex-shrink: 0;
-    border-radius: 34px;
-    width: rem(34px);
-    height: rem(34px);
-    line-height: rem(32px);
-    margin: 14px rem(14px) 14px rem(5px);
+    border-radius: 3em;
+    width: 3em;
+    height: 3em;
+    .#{$prefix}--step-navigation--small & {
+      width: 1.5em;
+      height: 1.5em;
+    }
+    line-height: 1em;
+    margin: 0.7em 1em 0.7em 0;
     text-align: center;
     z-index: 2;
     color: $brand-01;
@@ -79,16 +85,38 @@
       position: relative;
       top: 1px;
       fill: $brand-01;
+      width: 1em;
+      height: 1em;
+      .#{$prefix}--step-navigation--small & {
+        width: 0.8em;
+        height: 0.8em;
+      }
     }
     &:after {
       display: block;
       width: 2px;
-      height: 22px;
+      height: 1.1em;
+      bottom: 3em;
+      .#{$prefix}--step-navigation--small & {
+        bottom: 1.5em;
+      }
+      .#{$prefix}--step-navigation--vertical.#{$prefix}--step-navigation--regular
+        & {
+        display: none;
+      }
+      .#{$prefix}--step-navigation--vertical.#{$prefix}--step-navigation--small
+        & {
+        height: 2px;
+        width: 1em;
+        left: inherit;
+        right: 1.5em;
+        bottom: 50%;
+      }
       position: absolute;
       z-index: 1;
       //z-index: -1px;
-      bottom: rem(35px);
-      left: 53%;
+
+      left: calc(50% - 0px);
       margin-left: -1px;
       content: '';
       background: $ui-04;
@@ -109,7 +137,7 @@
     }
 
     @include breakpoint(bp--sm--major) {
-      padding: 0 $spacing-3xs;
+      padding: 0 0.2em;
       width: auto;
       &:focus {
         background-color: transparent;
@@ -151,6 +179,14 @@
 
   .#{$prefix}--step-navigation__nav-item--warning {
     .#{$prefix}--step-navigation__nav-item__indicator {
+      .#{$prefix}--step-navigation--small & {
+        border-color: $support-03;
+        background: $support-03;
+        > svg {
+          top: -0.05em;
+          fill: $ui-01 !important;
+        }
+      }
       > svg {
         fill: $support-03 !important;
       }
@@ -168,6 +204,13 @@
 
   .#{$prefix}--step-navigation__nav-item--complete {
     .#{$prefix}--step-navigation__nav-item__indicator {
+      .#{$prefix}--step-navigation--small & {
+        border-color: $support-02;
+        background: $support-02;
+        > svg {
+          fill: $ui-01 !important;
+        }
+      }
       > svg {
         fill: $support-02 !important;
         position: relative;
@@ -212,15 +255,17 @@
     }
     .#{$prefix}--step-navigation__nav-item__indicator {
       border-color: $ui-04;
-      clip-path: polygon(
-        0 -100%,
-        56% -100%,
-        56% 14%,
-        93% 50%,
-        56% 90%,
-        56% 100%,
-        0 100%
-      );
+      .#{$prefix}--step-navigation--regular & {
+        clip-path: polygon(
+          0 -100%,
+          56% -100%,
+          56% 14%,
+          93% 50%,
+          56% 90%,
+          56% 100%,
+          0 100%
+        );
+      }
       > svg {
         top: 0px;
         fill: $ui-05 !important;

@@ -75,7 +75,12 @@ storiesOf('Table', module)
       defaultPageSize={5}
       columns={columns}
       className="-border -striped -highlight"
+      onPageChange={page => {
+        // eslint-disable-next-line no-console
+        console.log('page', page);
+      }}
       pageSizesDisabled
+      totalItems={100}
       PaginationComponent={TablePagination}
     />
   ));
