@@ -30,6 +30,11 @@ const props = {
       'Form validation UI content (invalidText)',
       'A valid value is required'
     ),
+    showDefaultInputIcon: boolean(
+      'Show Input Icon (showDefaultInputIcon)',
+      true
+    ),
+    inputIconPosition: text('Icon Position(inputIconPosition)', 'after'),
     helperText: text('Helper text (helperText)', 'Optional helper text.'),
     onClick: action('onClick'),
     onChange: action('onChange'),
@@ -41,6 +46,11 @@ const props = {
     disabled: boolean('Disabled (disabled)', false),
     hideLabel: boolean('No label (hideLabel)', false),
     invalid: boolean('Show form validation UI (invalid)', false),
+    showDefaultInputIcon: boolean(
+      'Show Input Icon (showDefaultInputIcon)',
+      true
+    ),
+    inputIconPosition: text('Icon Position(showDefaultInputIcon)', 'after'),
     invalidText: text(
       'Form validation UI content (invalidText)',
       'A valid value is required'
