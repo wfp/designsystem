@@ -44,6 +44,36 @@ storiesOf('Module', module)
     )
   )
   .add(
+    'Multiple Headers',
+    /*`
+      Modules are used to organize content in a structural manner.
+
+      Modules are separated into different components. Module components can be
+      'single' or 'double' with the default as 'double'.
+
+      ModuleHeader and ModuleBody components hold the content of the
+      Module
+    `,*/
+    () => (
+      <Module className="some-class">
+        <ModuleHeader>Module Example</ModuleHeader>
+        <ModuleBody>
+          <p>
+            It has survived not only five centuries, but also the leap into
+            electronic typesetting, remaining essentially unchanged.
+          </p>
+        </ModuleBody>
+        <ModuleHeader>Module Example</ModuleHeader>
+        <ModuleBody>
+          <p>
+            It has survived not only five centuries, but also the leap into
+            electronic typesetting, remaining essentially unchanged.
+          </p>
+        </ModuleBody>
+      </Module>
+    )
+  )
+  .add(
     'No Header',
     /*`
       Modules are used to organize content in a structural manner.

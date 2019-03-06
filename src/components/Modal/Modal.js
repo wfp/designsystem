@@ -332,11 +332,13 @@ export default class Modal extends Component {
         {!passiveModal && (
           <div className={`${prefix}--modal-footer`}>
             <div className={`${prefix}--modal__buttons-container`}>
-              <Button
-                kind={danger ? 'tertiary' : 'secondary'}
-                onClick={onSecondaryButtonClick}>
-                {secondaryButtonText}
-              </Button>
+              {secondaryButtonText && (
+                <Button
+                  kind={danger ? 'tertiary' : 'secondary'}
+                  onClick={onSecondaryButtonClick}>
+                  {secondaryButtonText}
+                </Button>
+              )}
               <Button
                 kind={danger ? 'danger--primary' : 'primary'}
                 disabled={primaryButtonDisabled}
