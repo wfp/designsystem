@@ -30,7 +30,14 @@ storiesOf('ReduxFormWrapper', module)
         <label htmlFor={props.id} className="wfp--label">
           {props.labelText}
         </label>
-        <ReactSelect {...props} />
+        {props.helperText && (
+          <div className="wfp--form__helper-text">{props.helperText}</div>
+        )}
+        <ReactSelect
+          {...props}
+          className="wfp--react-select-container"
+          classNamePrefix="wfp--react-select"
+        />
       </div>
     );
 
@@ -38,9 +45,7 @@ storiesOf('ReduxFormWrapper', module)
       <Field
         component={ReduxFormWrapper}
         InputComponent={ReactSelectHelper}
-        className="wfp--react-select-container"
-        classNamePrefix="wfp--react-select"
-        isMulti
+        helperText="This is a helper text"
         labelText="The label"
         options={options}
       />

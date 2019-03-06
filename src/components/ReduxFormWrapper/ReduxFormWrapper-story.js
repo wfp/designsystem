@@ -69,6 +69,7 @@ const props = {
       ],
     onClick: action('onClick'),
     labelText: text('Label (labelText)', 'Label Text'),
+    helperText: text('Helper text (helperText)', 'This is a helper text'),
     name: text('Name', 'input'),
     placeholder: text('Placeholder', 'Placeholder content here'),
     required: boolean('Required (required)', true),
