@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.2.0-alpha.10"></a>
+# [1.2.0-alpha.10](https://github.com/WFP/UI/compare/v1.2.0-alpha.9...v1.2.0-alpha.10) (2019-03-06)
+
+
+### Features
+
+* **DatePicker:** add Calendar icon ([#187](https://github.com/WFP/UI/issues/187)) ([bd52fae](https://github.com/WFP/UI/commit/bd52fae))
+* **StepNavigation:** vertical and small StepNavigation added ([7c5e358](https://github.com/WFP/UI/commit/7c5e358))
+
+
+
 <a name="1.2.0-alpha.9"></a>
 # [1.2.0-alpha.9](https://github.com/WFP/UI/compare/v1.2.0-alpha.8...v1.2.0-alpha.9) (2019-02-28)
 
