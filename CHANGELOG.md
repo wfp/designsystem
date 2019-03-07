@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.2.0-alpha.11"></a>
+# [1.2.0-alpha.11](https://github.com/WFP/UI/compare/v1.2.0-alpha.10...v1.2.0-alpha.11) (2019-03-07)
+
+
+### Features
+
+* **Card:** Card released ([cb0e025](https://github.com/WFP/UI/commit/cb0e025))
+* **ReactSelect:** example updated ([e3e2636](https://github.com/WFP/UI/commit/e3e2636))
+
+
+
 <a name="1.2.0-alpha.10"></a>
 # [1.2.0-alpha.10](https://github.com/WFP/UI/compare/v1.2.0-alpha.9...v1.2.0-alpha.10) (2019-03-06)
 
