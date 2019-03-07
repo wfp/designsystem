@@ -119,6 +119,7 @@
   .SingleDatePicker_picker {
     z-index: 1;
     background-color: #fff;
+    outline: 1px solid $ui-04;
     position: absolute;
   }
   .SingleDatePicker_picker__rtl {
@@ -659,7 +660,7 @@
     display: block;
     width: 100%;
     height: rem(40px);
-    min-width: 10rem;
+    min-width: 5rem;
     padding: 0 $spacing-xs;
     color: $text-01;
     appearance: none;
@@ -711,7 +712,9 @@
     fill: transparent;
   }
   .DateRangePickerInput {
-    display: inline-block;
+    //display: inline-block;
+    display: flex;
+    align-items: center;
   }
   .DateRangePickerInput__disabled {
     background: #f2f2f2;
@@ -801,6 +804,7 @@
   .DateRangePicker_picker {
     z-index: 1;
     background-color: #fff;
+    outline: 1px solid $ui-04;
     position: absolute;
   }
   .DateRangePicker_picker__rtl {
