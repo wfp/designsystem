@@ -34,6 +34,7 @@ const props = {
       'Show Input Icon (showDefaultInputIcon)',
       true
     ),
+    showClearDates: boolean('Show clear date (showClearDates)', true),
     inputIconPosition: text('Icon Position(inputIconPosition)', 'after'),
     helperText: text('Helper text (helperText)', 'Optional helper text.'),
     onClick: action('onClick'),
@@ -50,6 +51,7 @@ const props = {
       'Show Input Icon (showDefaultInputIcon)',
       true
     ),
+    showClearDates: boolean('Show clear date (showClearDates)', true),
     inputIconPosition: text('Icon Position(showDefaultInputIcon)', 'after'),
     invalidText: text(
       'Form validation UI content (invalidText)',

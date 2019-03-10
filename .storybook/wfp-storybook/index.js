@@ -13,13 +13,8 @@ export const withNotes = makeDecorator({
   allowDeprecatedUsage: true,
   wrapper: (getStory, context, { options, parameters }) => {
     const channel = addons.getChannel();
-
-    //context = "aaaa";
-
     /* Import all html documents */
     const req = require.context('./', true, /\.hbs$/);
-
-    console.log('context', context);
 
     var text = '';
 

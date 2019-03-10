@@ -67,7 +67,6 @@
     @include layer('overlay');
     margin: 0;
     padding: 0;
-    position: absolute;
     width: 100%;
     list-style: none;
     display: flex;
@@ -82,8 +81,8 @@
     @include breakpoint(bp--sm--major) {
       @include typescale('epsilon');
       flex-direction: row;
-      margin-right: $spacing-md;
-      margin-left: $spacing-md;
+      //margin-right: $spacing-md;
+      //margin-left: $spacing-md;
       background: none;
       box-shadow: none;
       z-index: auto;

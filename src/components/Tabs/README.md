@@ -38,3 +38,32 @@ const  listEl  = (props) => (
 	renderListElement={listEl}
 />
 ```
+
+
+### Use with react-router
+
+Write a custom component to use Tabs with different route handlers like `react-router`.
+
+```js
+const listElReactRouter = ({ anchor, className, to, exact, match }) => (
+  <Route
+    to={to}
+    exact={exact}
+    children={({ match }) => (
+      <li className={match ? className + " wfp--tabs__nav-item--selected" : className}>
+        <Link className={anchor.className} to={to}>{anchor.label}</Link>
+      </li>
+    )}
+  />
+);
+```
+
+```js
+<Tabs customTabContent={true}>
+  <Tab
+    label="React-Router Example"
+    to="/path"
+    renderListElement={listElReactRouter}
+  />
+</Tabs>
+```

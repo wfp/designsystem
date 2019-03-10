@@ -73,6 +73,12 @@ export default class Tab extends React.Component {
       className
     );
 
+    const selectedClasses = classNames(
+      'wfp--tabs__nav-item',
+      'wfp--tabs__nav-item--selected',
+      className
+    );
+
     const anchorProps = {
       className: 'wfp--tabs__nav-link',
       href,
@@ -105,7 +111,12 @@ export default class Tab extends React.Component {
     return (
       <React.Fragment>
         {renderListElement ? (
-          renderListElement(liProps)
+          renderListElement({
+            ...this.props,
+            ...liProps,
+            anchor: anchorProps,
+            selectedClasses: selectedClasses,
+          })
         ) : (
           <li {...liProps}>
             {renderAnchor ? (

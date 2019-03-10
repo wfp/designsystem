@@ -33,23 +33,63 @@ const props = {
   }),
 };
 
-const el = ({ href }) => {
+const el = ({ href, label }) => {
   return (
     <a style={{ color: 'green' }} href={href}>
-      Custom link
+      {label}
     </a>
   );
 };
 
-const listEl = props => {
+const listEl = ({ anchor, className, label, href }) => {
   return (
-    <a {...props}>
-      <span style={{ color: 'blue' }} href={props.href}>
-        Custom list element
+    <a className={className}>
+      <span style={{ color: 'blue' }} href={href}>
+        {anchor.label}
       </span>
     </a>
   );
 };
+
+/*
+const TabLink = (props) => (
+  <Route
+    path={to}
+    exact={exact}
+    children={({ match }) => (
+      <div className={match ? "wfp--tabs__nav-item wfp--tabs__nav-item--selected" : "wfp--tabs__nav-item"}>
+        <Link className="wfp--tabs__nav-link" to={to}>{children}</Link>
+      </div>
+    )}
+  />
+);
+*/
+
+const FakeRoute = ({ children }) => {
+  const Children = children;
+  return <Children match />;
+};
+
+const FakeLink = ({ children, className }) => (
+  <div className={className}>{children}</div>
+);
+
+const listElReactRouter = ({ anchor, className, to, exact, match }) => (
+  <FakeRoute
+    to={to}
+    exact={exact}
+    children={({ match }) => (
+      <li
+        className={
+          match ? className + ' wfp--tabs__nav-item--selected' : className
+        }>
+        <FakeLink className={anchor.className} to={to}>
+          {anchor.label}
+        </FakeLink>
+      </li>
+    )}
+  />
+);
 
 storiesOf('Tabs', module)
   .addDecorator(withKnobs)
@@ -80,6 +120,13 @@ storiesOf('Tabs', module)
         label="Tab label 4"
         href="http://www.fr.wfp.org"
         renderListElement={listEl}
+      />
+      <Tab
+        {...props.tab()}
+        label="React-Router Example"
+        href="http://www.fr.wfp.org"
+        to="/path"
+        renderListElement={listElReactRouter}
       />
     </Tabs>
   ))
