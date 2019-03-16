@@ -16,6 +16,7 @@ storiesOf('Wrapper', module)
       sm: 'sm',
       md: 'md',
       lg: 'lg',
+      full: 'full',
     };
     const defaultValue = 'sm';
 

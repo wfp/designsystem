@@ -1,5 +1,5 @@
 import React from 'react';
-import { iconAdd, iconAddSolid, iconAddOutline } from '@wfp/icons';
+import { iconAdd, iconAddGlyph, iconAddOutline } from '@wfp/icons';
 import iconsList from '@wfp/icons';
 import { storiesOf } from '@storybook/react';
 
@@ -11,13 +11,13 @@ setIconsList(iconsList);
 
 const icons = {
   'Add (iconAdd from `@wfp/icons`)': 'iconAdd',
-  'Add with filled circle (iconAddSolid from `@wfp/icons`)': 'iconAddSolid',
+  'Add with filled circle (iconAddGlyph from `@wfp/icons`)': 'iconAddGlyph',
   'Add with circle (iconAddOutline from `@wfp/icons`)': 'iconAddOutline',
 };
 
 const iconMap = {
   iconAdd,
-  iconAddSolid,
+  iconAddGlyph,
   iconAddOutline,
 };
 

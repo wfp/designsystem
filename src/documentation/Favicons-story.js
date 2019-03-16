@@ -33,9 +33,7 @@ class FaviconCanvas extends React.Component {
     const context = this.refs.canvas.getContext('2d');
     context.clearRect(0, 0, 300, 300);
 
-    var mainColor = colors.ui_colors.find(function(element) {
-      return element.name === 'main';
-    });
+    var mainColor = colors.main.hex;
 
     const name =
       this.props.name && this.props.name.length >= 1 ? this.props.name : '–';
@@ -45,7 +43,7 @@ class FaviconCanvas extends React.Component {
       height: canvas.height,
       shape: 'square',
       fontColor: '#ffffff',
-      backgroundColor: mainColor.hex,
+      backgroundColor: mainColor,
       text: name.toUpperCase(),
       fontFamily: 'Open Sans',
       fontWeight: 'bold',

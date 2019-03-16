@@ -11,6 +11,8 @@ import Container from './Container';
 import { withTests } from '@storybook/addon-jest';
 import results from '../.jest-test-results.json';
 
+import wfpTheme from './wfpTheme';
+
 require('prismjs');
 require('prismjs/themes/prism.css');
 
@@ -84,6 +86,7 @@ addDecorator(
     name: `WFP UI`,
     url: 'https://github.com/wfp/ui',
     hierarchySeparator: /\./,
+    theme: wfpTheme,
   })
 );
 

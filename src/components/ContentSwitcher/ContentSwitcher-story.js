@@ -3,19 +3,19 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 
 import { withKnobs, select, text } from '@storybook/addon-knobs';
-import { iconAddSolid, iconSearch } from '@wfp/icons';
+import { iconAddGlyph, iconSearch } from '@wfp/icons';
 import Icon from '../Icon';
 import ContentSwitcher from '../ContentSwitcher';
 import Switch from '../Switch';
 
 const icons = {
   None: 'None',
-  'Add with filled circle (iconAddSolid from `@wfp-ui`)': 'iconAddSolid',
+  'Add with filled circle (iconAddGlyph from `@wfp-ui`)': 'iconAddGlyph',
   'Search (iconSearch from `@wfp-ui`)': 'iconSearch',
 };
 
 const iconMap = {
-  iconAddSolid: <Icon icon={iconAddSolid} />,
+  iconAddGlyph: <Icon icon={iconAddGlyph} />,
   iconSearch: <Icon icon={iconSearch} />,
 };
 

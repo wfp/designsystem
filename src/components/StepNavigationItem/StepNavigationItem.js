@@ -2,7 +2,6 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
 import Icon from '../Icon';
-//import colors from '../../globals/data/colors.js';
 
 export default class StepNavigationItem extends React.Component {
   static propTypes = {

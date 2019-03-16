@@ -10,13 +10,13 @@ import colors from '../globals/data/colors';
 const colorBlend = ['20', '30', '40', '60', '80'];
 
 storiesOf(' Documentation', module).add('Colors', () => {
-  const regularColors = colors.ui_colors.filter(
+  const regularColors = Object.values(colors.ui_colors).filter(
     ui_colors => ui_colors.type !== 'symbolic' && ui_colors.type !== 'ui'
   );
-  const uiColors = colors.ui_colors.filter(
+  const uiColors = Object.values(colors.ui_colors).filter(
     ui_colors => ui_colors.type === 'ui'
   );
-  const symbolicColors = colors.ui_colors.filter(
+  const symbolicColors = Object.values(colors.ui_colors).filter(
     ui_colors => ui_colors.type === 'symbolic'
   );
 

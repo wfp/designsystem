@@ -2,18 +2,18 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { withKnobs, boolean, select } from '@storybook/addon-knobs';
-import { iconAddSolid, iconSearch } from '@wfp/icons';
+import { iconAddGlyph, iconSearch } from '@wfp/icons';
 import Button from '../Button';
 import ButtonSkeleton from '../Button/Button.Skeleton';
 
 const icons = {
   None: 'None',
-  'Add with filled circle (iconAddSolid from `@wfp/ui`)': 'iconAddSolid',
+  'Add with filled circle (iconAddGlyph from `@wfp/ui`)': 'iconAddGlyph',
   'Search (iconSearch from `@wfp/ui`)': 'iconSearch',
 };
 
 const iconMap = {
-  iconAddSolid,
+  iconAddGlyph,
   iconSearch,
 };
 

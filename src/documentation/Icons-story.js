@@ -12,6 +12,8 @@ import { Module, ModuleFooter } from '../components/Module';
 import iconList from '@wfp/icons/dist/carbon-icons.json';
 import Button from '../components/Button';
 
+import IconConverter from './IconConverter';
+
 import { Tooltip } from 'react-tippy';
 import tooltipStyle from '../components/Tooltip';
 
@@ -123,6 +125,16 @@ storiesOf(' Documentation', module).add('Icons', () => (
         Carbon Design System
       </Link>
     </Blockquote>
+
+    <h3>Generate an custom Icon</h3>
+    <p>
+      Generate a custom icon which can be used inside the{' '}
+      <span className="wfp--inline-highlight">icon</span> prop of the{' '}
+      <span className="wfp--inline-highlight">{`<Icon/>`}</span> component. SVG
+      images which are generated with Sketch App works best. Also consider
+      optimizing the svg image before.
+    </p>
+    <IconConverter />
 
     <h3>Humanitarian Thematic Icon Set</h3>
     <p>
