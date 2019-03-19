@@ -4,7 +4,9 @@ import { withInfo } from '@storybook/addon-info';
 import { withOptions } from '@storybook/addon-options';
 
 import { getStorybook } from '@storybook/react';
-import withNotes from './wfp-storybook';
+import withAutoNotes from './wfp-storybook';
+
+//import { withNotes } from '@storybook/addon-notes';
 
 import Container from './Container';
 
@@ -21,6 +23,21 @@ addDecorator(
     results,
   })
 );
+
+/*addDecorator(
+  withNotes(`
+# Hello World
+
+This is some code showing usage of the component and other inline documentation
+
+~~~js
+<div>
+  hello world!
+  <Component/>
+</div>
+~~~
+  `)
+);*/
 
 addDecorator(
   withInfo({
@@ -90,7 +107,7 @@ addDecorator(
   })
 );
 
-addDecorator(withNotes);
+addDecorator(withAutoNotes);
 
 // addDecorator(checkA11y);
 
