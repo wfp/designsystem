@@ -137,6 +137,20 @@
 
     .#{$prefix}--main-navigation__item {
       padding: 0 $spacing-sm;
+
+      // Relate the sub navigation dropdown to the parent navigation item
+      &.#{$prefix}--content-width {
+        position: relative;
+
+        // Get the width from its navigation content
+        & > .#{$prefix}--main-navigation__sub--open {
+          left: inherit;
+          min-width: 100%;
+          right: 0;
+          top: 2.5rem;
+          width: auto;
+        }
+      }
     }
 
     .#{$prefix}--main-navigation__button {
