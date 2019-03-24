@@ -6,5 +6,5 @@ import { Icon } from  '@wfp/ui';
 ```
 
 ```js
-<Icon  name="search"  width={100}  height={100}  />
+<Icon  icon=search"  width={100}  height={100}  />
 ```

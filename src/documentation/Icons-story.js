@@ -10,12 +10,18 @@ import Link from '../components/Link';
 import Icon from '../components/Icon';
 import { Module, ModuleFooter } from '../components/Module';
 import iconList from '@wfp/icons/dist/carbon-icons.json';
+import { iconDownloadGlyph } from '@wfp/icons';
+
 import Button from '../components/Button';
 
 import IconConverter from './IconConverter';
 
 import { Tooltip } from 'react-tippy';
 import tooltipStyle from '../components/Tooltip';
+
+function camelCaseFromHyphnated(s) {
+  return s.replace(/\-+([A-z])/g, (match, token) => token.toUpperCase());
+}
 
 const IconList = ({ icon }) => {
   const iconName = icon.name.replace('icon--', '');
@@ -34,7 +40,7 @@ const IconList = ({ icon }) => {
             alignItems: 'center',
           }}>
           <Icon
-            name={iconName}
+            icon={icon}
             description="WFP"
             width="150"
             height="150"
@@ -51,8 +57,22 @@ const IconList = ({ icon }) => {
             }}>
             {iconName}
           </div>
+
+          <div
+            className="wfp--inline-highlight"
+            style={{
+              fontFamily: 'monospace',
+              display: 'block',
+              whiteSpace: 'pre',
+              marginTop: '0.2rem',
+              marginBottom: '1rem',
+            }}>
+            {`import
+  {${camelCaseFromHyphnated('icon--' + iconName)}} 
+from '@wfp/icons'`}
+          </div>
           <Button
-            icon="download--glyph"
+            icon={iconDownloadGlyph}
             href={`https://github.com/wfp/carbon-icons/blob/master/src/svg/${iconName}.svg`}
             small>
             View on GitHub
@@ -76,7 +96,7 @@ const IconList = ({ icon }) => {
             height: '55px',
           }}>
           <Icon
-            name={iconName}
+            icon={icon}
             description="WFP"
             width="39"
             className="wfp--footer-cta-logo"
