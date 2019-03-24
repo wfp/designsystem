@@ -1,7 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { withKnobs, boolean, text } from '@storybook/addon-knobs';
+import { withKnobs, boolean, object, text } from '@storybook/addon-knobs';
+import { iconArrowLeft, iconArrowRight } from '@wfp/icons';
 
 import FormControls from '../FormControls';
 
@@ -10,7 +11,7 @@ const props = {
     className: 'some-class',
     onNextClick: action('onNextClick'),
     nextDisabled: boolean('disable Next button (nextDisabled)', false),
-    nextIcon: text('custom icon for Next button (nextIcon)', 'arrow--right'),
+    nextIcon: object('custom icon for Next button (nextIcon)', iconArrowRight),
     nextHidden: boolean('hide Next button (nextHidden)', false),
     nextText: text('custom text for Next button (nextText)', undefined),
     onPreviousClick: action('onPreviousClick'),
@@ -18,9 +19,9 @@ const props = {
       'disable Previous button (previousDisabled)',
       false
     ),
-    previousIcon: text(
+    previousIcon: object(
       'custom icon for Previous button (previousIcon)',
-      'arrow--left'
+      iconArrowLeft
     ),
     previousHidden: boolean('hide Next button (nextHidden)', false),
     previousText: text('custom text for Next button (nextText)', undefined),
