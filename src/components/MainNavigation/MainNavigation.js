@@ -33,11 +33,13 @@ class MainNavigationItem extends Component {
       menuItem,
       onChangeSub,
       subNavigation,
+      subNavWideAsContent,
     } = this.props;
 
     const wrapperClasses = classNames(className, {
       'wfp--main-navigation__item': true,
       'wfp--main-navigation__item--open': menuItem === activeMenuItem,
+      'wfp--content-width': subNavigation && subNavWideAsContent,
     });
 
     const triggerClasses = classNames({
@@ -196,6 +198,11 @@ MainNavigation.propTypes = {
   className: PropTypes.string,
   id: PropTypes.string,
   wrapperClassName: PropTypes.string,
+};
+
+MainNavigationItem.propTypes = {
+  /** Sets the width of the SubNavigation container based on its content */
+  subNavWideAsContent: PropTypes.bool,
 };
 
 MainNavigation.defaultProps = {
