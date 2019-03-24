@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import classNames from 'classnames';
 import Icon from '../Icon';
+import { iconSearch, iconCloseGlyph } from '@wfp/icons';
 
 export default class Search extends Component {
   static propTypes = {
@@ -100,7 +101,7 @@ export default class Search extends Component {
     return (
       <div className={searchClasses} role="search">
         <Icon
-          name="search"
+          icon={iconSearch}
           description={labelText}
           className="wfp--search-magnifier"
           onClick={onSearchIconClick}
@@ -124,7 +125,7 @@ export default class Search extends Component {
           onClick={this.clearInput}
           type="button"
           aria-label={closeButtonLabelText}>
-          <Icon name="close--solid" description={closeButtonLabelText} />
+          <Icon icon={iconCloseGlyph} description={closeButtonLabelText} />
         </button>
       </div>
     );

@@ -3,15 +3,17 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import Icon from '../Icon';
 
+import { iconWarning, iconWarningSolid, iconInfoSolid } from '@wfp/icons';
+
 const iconLookup = {
   warning: {
-    icon: 'warning',
+    icon: iconWarning,
   },
   error: {
-    icon: 'warning--solid',
+    icon: iconWarningSolid,
   },
   info: {
-    icon: 'info--solid',
+    icon: iconInfoSolid,
   },
 };
 
@@ -70,7 +72,7 @@ class Blockquote extends React.Component {
 
     const icon = withIcon ? (
       <Icon
-        name={lookup.icon}
+        icon={lookup.icon}
         description="Blockquote Icon"
         className="wfp--blockquote__icon"
         height="30"

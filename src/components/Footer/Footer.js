@@ -4,6 +4,7 @@ import classnames from 'classnames';
 import Link from '../Link';
 import Wrapper from '../Wrapper';
 import Icon from '../Icon';
+import { iconWfpLogoExtendedEn, iconWfpLogoVerticalEn } from '@wfp/icons';
 
 //import logoExtended from '../../../assets/logos/extended/en/wfp-logo-extended-black-en.svg';
 //import logoVertical from '../../../assets/logos/vertical/en/wfp-logo-vertical-black-en.svg';
@@ -68,7 +69,7 @@ const Footer = ({
               />
             ) : (
               <Icon
-                name="wfp-logo--extended--en"
+                icon={iconWfpLogoExtendedEn}
                 description="WFP"
                 className="wfp--footer__cta-logo"
               />
@@ -82,7 +83,7 @@ const Footer = ({
               />
             ) : (
               <Icon
-                name="wfp-logo--vertical--en"
+                icon={iconWfpLogoVerticalEn}
                 description="WFP"
                 className="wfp--footer__cta-logo-small"
               />

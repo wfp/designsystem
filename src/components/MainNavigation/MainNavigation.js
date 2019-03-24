@@ -4,6 +4,7 @@ import classNames from 'classnames';
 import Button from '../Button';
 import Wrapper from '../Wrapper';
 import Icon from '../Icon';
+import { iconClose, iconCaretDown } from '@wfp/icons';
 
 class MainNavigationItem extends Component {
   UNSAFE_componentWillReceiveProps = nextProps => {
@@ -52,7 +53,7 @@ class MainNavigationItem extends Component {
               {children.props.children}
               <Icon
                 className="wfp--main-navigation__trigger__icon"
-                name={menuItem === activeMenuItem ? 'close' : 'caret--down'}
+                icon={menuItem === activeMenuItem ? iconClose : iconCaretDown}
                 fill="#FFFFFF"
                 description="expand icon"
               />

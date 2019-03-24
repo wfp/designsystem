@@ -47,69 +47,7 @@ describe('Icon', () => {
     });
   });
 
-  describe('Supports legacy icon', () => {
-    const props = {
-      className: 'extra-class',
-      name: 'search--glyph',
-      width: '20',
-      height: '20',
-      description: 'close the thing',
-      style: {
-        transition: '2s',
-      },
-    };
-
-    const wrapper = mount(<Icon {...props} />);
-
-    it('Renders `description` as expected', () => {
-      expect(wrapper.props().description).toEqual('close the thing');
-    });
-
-    it('should have expected viewBox on <svg>', () => {
-      expect(wrapper.find('svg').props().viewBox).not.toEqual('');
-    });
-  });
-
-  describe('findIcon', () => {
-    it('should return a defined object', () => {
-      const test = findIcon('search');
-      expect(test).toBeDefined();
-    });
-
-    it('returns a single JSON object', () => {
-      const test = [findIcon('search')];
-      expect(test.length).toEqual(1);
-    });
-
-    it('returns false when given wrong name param', () => {
-      const test = findIcon('wrong-name');
-      expect(test).toBe(false);
-    });
-
-    it('throws if multiple icons are found from one name param', () => {
-      const json = [{ name: 'bob' }, { name: 'bob' }];
-
-      expect(() => {
-        findIcon('bob', json);
-      }).toThrow();
-    });
-  });
-
-  describe('getSvgData', () => {
-    it('returns false when given an undefined icon name', () => {
-      const badData = getSvgData('wrongIconName');
-
-      expect(badData).toBe(false);
-    });
-  });
-
   describe('svgShapes', () => {
-    it('returns with SVG XML when given a valid icon name', () => {
-      const data = getSvgData('icon--search');
-      const content = svgShapes(data);
-      expect(content.length).toBeGreaterThan(0);
-    });
-
     it('returns empty when given an icon with no valid svgProp', () => {
       const svgData = {
         invalidProp: [{ invalidAttribute: 43 }],

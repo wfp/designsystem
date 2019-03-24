@@ -2,6 +2,13 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
 import Icon from '../Icon';
+import {
+  iconEllipsis,
+  iconWarningGlyph,
+  iconLocked,
+  iconErrorGlyph,
+  iconCheckmark,
+} from '@wfp/icons';
 
 export default class StepNavigationItem extends React.Component {
   static propTypes = {
@@ -69,11 +76,11 @@ export default class StepNavigationItem extends React.Component {
     };
 
     const icon = {
-      'not-started': { name: 'ellipsis' },
-      warning: { name: 'warning--solid' },
-      locked: { name: 'lock' },
-      skip: { name: 'error--glyph' },
-      complete: { name: 'checkmark' },
+      'not-started': { icon: iconEllipsis },
+      warning: { icon: iconWarningGlyph },
+      locked: { icon: iconLocked },
+      skip: { icon: iconErrorGlyph },
+      complete: { icon: iconCheckmark },
     };
 
     return (
@@ -95,10 +102,10 @@ export default class StepNavigationItem extends React.Component {
             <span className="wfp--step-navigation__nav-item__indicator">
               {status ? (
                 <Icon
-                  name={icon[status].name}
+                  icon={icon[status].icon}
                   width="14"
                   height="14"
-                  description="sss"
+                  description="Step Item"
                 />
               ) : (
                 <span>{page + 1}</span>

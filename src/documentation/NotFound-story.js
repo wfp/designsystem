@@ -7,13 +7,15 @@ import Link from '../components/Link';
 import Story from '../components/Story';
 import Icon from '../components/Icon';
 import Wrapper from '../components/Wrapper';
+import { iconWfpHumEmergencyResponsePos } from '@wfp/icons';
+
 storiesOf(' Documentation.Sample Pages', module)
   .addDecorator(story => <RegularPage withoutSecondary>{story()}</RegularPage>)
   .add('Not found (404)', () => (
     <Wrapper pageWidth="lg" spacing="md">
       <Story className="wfp--story__center wfp--story__full-height">
         <Icon
-          name="wfp-hum--emergency-response-pos"
+          icon={iconWfpHumEmergencyResponsePos}
           fill="#0a6eb4"
           width={200}
           height={200}

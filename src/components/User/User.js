@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
 import Icon from '../Icon';
+import { iconUser } from '@wfp/icons';
 
 const User = ({
   alt,
@@ -19,7 +20,7 @@ const User = ({
   if (image === undefined) {
     avatar = (
       <Icon
-        name="user"
+        icon={iconUser}
         fill="#ffffff"
         width="14"
         height="14"

@@ -4,10 +4,8 @@ import iconsList from '@wfp/icons';
 import { storiesOf } from '@storybook/react';
 
 import { withKnobs, select, text } from '@storybook/addon-knobs';
-import Icon, { setIconsList } from '../Icon';
+import Icon from '../Icon';
 import IconSkeleton from '../Icon/Icon.Skeleton';
-
-setIconsList(iconsList);
 
 const icons = {
   'Add (iconAdd from `@wfp/icons`)': 'iconAdd',
