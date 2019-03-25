@@ -17,20 +17,30 @@ import Button from '../../components/Button';
 ); */
 
 storiesOf('Documentation|General', module)
-  .addParameters({ options: { showPanel: false } })
+  .addParameters({ options: { showPanel: false, isToolshown: false } })
   .add('Introduction', () => (
     <div>
-      <Wrapper
-        pageWidth="narrow"
-        background="dark"
-        backgroundStyle={{
+      <img
+        alt="Hero"
+        style={{
+          width: '100%',
+          height: 'auto',
+        }}
+        src={`${process.env.STORYBOOK_INTERNAL_ASSETS}internal/hero-image.jpg`}
+      />
+      <div
+        style={{
           color: '#FFFFFF',
-          padding: '8rem 0',
+          padding: '13vw 0',
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
           textAlign: 'center',
         }}>
         <h1
           style={{
-            fontSize: '6rem',
+            fontSize: '8vw',
             marginBottom: '0.5em',
             fontWeight: '100',
           }}>
@@ -47,7 +57,7 @@ storiesOf('Documentation|General', module)
           </span>
         </h1>
 
-        <Button
+        {/*<Button
           kind="inverse"
           style={{ marginRight: '0.5em' }}
           onClick={linkTo('Documentation', 'Usage')}>
@@ -59,11 +69,11 @@ storiesOf('Documentation|General', module)
           style={{ marginLeft: '0.5em' }}
           href="https://github.com/wfp/ui">
           Follow on GitHub
-        </Button>
-      </Wrapper>
+        </Button>*/}
+      </div>
 
       <Page>
-        <div className="row" style={{ margin: '2em 0' }}>
+        <div className="row" style={{ margin: '0' }}>
           <div
             className="col-xs-12 col-md-3 col-lg-3"
             style={{ textAlign: 'left' }}>
@@ -82,7 +92,7 @@ storiesOf('Documentation|General', module)
           </div>
 
           <div className="col-xs">
-            <h3>About the UI Kit</h3>
+            <h3 className="wfp--story__content-title">About the UI Kit</h3>
             <p>
               The new WFP UI Kit is based on the{' '}
               <Link href="http://brand.manuals.wfp.org/" target="_blank">
@@ -119,7 +129,7 @@ storiesOf('Documentation|General', module)
           </div>
 
           <div className="col-xs">
-            <h3>Purpose</h3>
+            <h3 className="wfp--story__content-title">Purpose</h3>
             <p>
               The purpose of this project is to create a unified toolkit that is
               used by UX-designers and developers on their projects alike to
@@ -154,7 +164,7 @@ storiesOf('Documentation|General', module)
           </div>
 
           <div className="col-xs">
-            <h3>Toolkit</h3>
+            <h3 className="wfp--story__content-title">Toolkit</h3>
             <p>
               By unifiying design elements into reusable components, development
               will simplify and accelerate the development of these digital
@@ -166,22 +176,23 @@ storiesOf('Documentation|General', module)
               pattern you need or you have any other feedback, question or
               comment please contact us.
             </p>
+
+            <Blockquote title="Your Feedback">
+              <p>
+                Your feedback is highly appreciated! You can use the Feedback
+                Button on the right, create a{' '}
+                <Link href="https://github.com/wfp/ui/issues" target="_blank">
+                  new Issue
+                </Link>{' '}
+                on GitHub or send an email to{' '}
+                <Link href="mailto:robert.guehne@wfp.org">
+                  robert.guehne@wfp.org
+                </Link>
+                .
+              </p>
+            </Blockquote>
           </div>
         </div>
-        <Blockquote title="Your Feedback">
-          <p>
-            Your feedback is highly appreciated! You can use the Feedback Button
-            on the right, create a{' '}
-            <Link href="https://github.com/wfp/ui/issues" target="_blank">
-              new Issue
-            </Link>{' '}
-            on GitHub or send an email to{' '}
-            <Link href="mailto:robert.guehne@wfp.org">
-              robert.guehne@wfp.org
-            </Link>
-            .
-          </p>
-        </Blockquote>
       </Page>
     </div>
   ));

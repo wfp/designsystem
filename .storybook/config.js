@@ -97,7 +97,13 @@ addDecorator((story, context) => <Container story={story} context={context} />);
 addDecorator(withAutoNotes);
 
 addParameters({
-  options: { showPanel: true },
+  options: {
+    name: 'WFP UI',
+    url: 'https://github.com/wfp/ui',
+    theme: wfpTheme,
+    showPanel: true,
+    isToolshown: true,
+  },
 });
 
 // addDecorator(checkA11y);

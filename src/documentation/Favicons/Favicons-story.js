@@ -154,40 +154,42 @@ class FaviconGenerator extends Component {
   }
 }
 
-storiesOf('Documentation|General', module).add('Favicons', () => {
-  return (
-    <Page title="Favicons" subTitle="The new Logos in various sizes">
-      <p>
-        For the main favicon itself, it's best for cross-browser compatibility
-        not to use any HTML. Just name the file favicon.ico and place it in the
-        root of your domain.
-      </p>
+storiesOf('Documentation|General', module)
+  .addParameters({ options: { showPanel: false, isToolshown: false } })
+  .add('Favicons', () => {
+    return (
+      <Page title="Favicons" subTitle="The new Logos in various sizes">
+        <p>
+          For the main favicon itself, it's best for cross-browser compatibility
+          not to use any HTML. Just name the file favicon.ico and place it in
+          the root of your domain.
+        </p>
 
-      <h3>Internal Applications: Generate Favicon</h3>
-      <p>
-        Use the generator to create favicons with an acronym of applications
-        name.
-      </p>
+        <h3>Internal Applications: Generate Favicon</h3>
+        <p>
+          Use the generator to create favicons with an acronym of applications
+          name.
+        </p>
 
-      <FaviconGenerator />
+        <FaviconGenerator />
 
-      <h3>External Applications: Use with CDN</h3>
-      <p>
-        The favicons can be found in the{' '}
-        <Link href="https://github.com/wfp/ui-assets/tree/master/src/favicons">
-          @wfp/ui-assets
-        </Link>{' '}
-        repository and the Sketch source in the{' '}
-        <Link href="https://github.com/wfp/ui-design-kit/blob/master/WFP%20Icons.sketch">
-          @wfp/ui-design-kit
-        </Link>{' '}
-        repository.
-      </p>
-      <Blockquote
-        title="Full sizes catalog which can be added to the HTML Head"
-        type="code">
-        <PrismCode component="pre" className="language-html">
-          {`<link rel="apple-touch-icon" sizes="57x57" href="https://cdn.wfp.org/guides/ui/assets/v0.0.1/favicons/apple-touch-icon-57-precomposed.png">
+        <h3>External Applications: Use with CDN</h3>
+        <p>
+          The favicons can be found in the{' '}
+          <Link href="https://github.com/wfp/ui-assets/tree/master/src/favicons">
+            @wfp/ui-assets
+          </Link>{' '}
+          repository and the Sketch source in the{' '}
+          <Link href="https://github.com/wfp/ui-design-kit/blob/master/WFP%20Icons.sketch">
+            @wfp/ui-design-kit
+          </Link>{' '}
+          repository.
+        </p>
+        <Blockquote
+          title="Full sizes catalog which can be added to the HTML Head"
+          type="code">
+          <PrismCode component="pre" className="language-html">
+            {`<link rel="apple-touch-icon" sizes="57x57" href="https://cdn.wfp.org/guides/ui/assets/v0.0.1/favicons/apple-touch-icon-57-precomposed.png">
 <link rel="apple-touch-icon" sizes="72x72" href="https://cdn.wfp.org/guides/ui/assets/v0.0.1/favicons/apple-touch-icon-72-precomposed.png">
 <link rel="apple-touch-icon" sizes="76x76" href="https://cdn.wfp.org/guides/ui/assets/v0.0.1/favicons/apple-touch-icon-56-precomposed.png">
 <link rel="apple-touch-icon" sizes="114x114" href="https://cdn.wfp.org/guides/ui/assets/v0.0.1/favicons/apple-touch-icon-114-precomposed.png">
@@ -204,8 +206,8 @@ storiesOf('Documentation|General', module).add('Favicons', () => {
 <meta name="msapplication-TileColor" content="#0A6EB4">
 <meta name="msapplication-TileImage" content="https://cdn.wfp.org/guides/ui/assets/v0.0.1/ms-icon-144x144.png">
 <meta name="theme-color" content="#0A6EB4">`}
-        </PrismCode>
-      </Blockquote>
-    </Page>
-  );
-});
+          </PrismCode>
+        </Blockquote>
+      </Page>
+    );
+  });

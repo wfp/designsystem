@@ -55,7 +55,12 @@ addons.register('MYADDON', api => {
   addons.addPanel('MYADDON/panel', {
     title: 'Feedback',
     render: ({ active }) => (
-      <Notes channel={addons.getChannel()} api={api} active={active} />
+      <Notes
+        key={api}
+        channel={addons.getChannel()}
+        api={api}
+        active={active}
+      />
     ),
   });
 });

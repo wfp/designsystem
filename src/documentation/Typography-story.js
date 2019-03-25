@@ -5,9 +5,11 @@ import { storiesOf } from '@storybook/react';
 import Page from './Page';
 import Blockquote from '../components/Blockquote';
 
-storiesOf('Documentation|General', module).add('Typography', () => (
-  <Page title="Typography" subTitle="Typefaces & Spacings">
-    {/*<p>
+storiesOf('Documentation|General', module)
+  .addParameters({ options: { showPanel: false, isToolshown: false } })
+  .add('Typography', () => (
+    <Page title="Typography" subTitle="Typefaces & Spacings">
+      {/*<p>
       Typography plays a critical role in any design; in fact, it accounts for
       as much as 95% of everything we see on the Web. When done well, it adds
       personality to content, becomes its voice. When established poorly,
@@ -21,56 +23,56 @@ storiesOf('Documentation|General', module).add('Typography', () => (
       the harder it is for users to complete their tasks.
     </p>*/}
 
-    <h2>Typefaces</h2>
+      <h2>Typefaces</h2>
 
-    <p>
-      Open Sans is the primary typeface for user interfaces; it’s a round,
-      humanist sans-serif, with incredibly warm appeal. It can be used for both
-      headlines and paragraphs alike, as well as for interface elements.
-    </p>
+      <p>
+        Open Sans is the primary typeface for user interfaces; it’s a round,
+        humanist sans-serif, with incredibly warm appeal. It can be used for
+        both headlines and paragraphs alike, as well as for interface elements.
+      </p>
 
-    <h3>How to use it</h3>
+      <h3>How to use it</h3>
 
-    <p>
-      Open Sans is already included in the WFP UI's CSS. If you don't want to
-      include the font you can use set{' '}
-      <span className="wfp--inline-highlight">$css--font-face: false;</span>{' '}
-      with scss.
-    </p>
+      <p>
+        Open Sans is already included in the WFP UI's CSS. If you don't want to
+        include the font you can use set{' '}
+        <span className="wfp--inline-highlight">$css--font-face: false;</span>{' '}
+        with scss.
+      </p>
 
-    <h2>Headings</h2>
+      <h2>Headings</h2>
 
-    <p>
-      Headings help to add a hierarchy to a page, and they are key identifiers
-      for users reading a page. They should be used in an order that is relevant
-      to the content of a page.
-    </p>
+      <p>
+        Headings help to add a hierarchy to a page, and they are key identifiers
+        for users reading a page. They should be used in an order that is
+        relevant to the content of a page.
+      </p>
 
-    <Blockquote>
-      <h1>Heading 1</h1>
-      <h2>Heading 2</h2>
-      <h3>Heading 3</h3>
-      <h4>Heading 4</h4>
-    </Blockquote>
-    {/*<h5>Heading 5</h5>*/}
-    {/*<h6>Heading 6</h6>*/}
+      <Blockquote>
+        <h1>Heading 1</h1>
+        <h2>Heading 2</h2>
+        <h3>Heading 3</h3>
+        <h4>Heading 4</h4>
+      </Blockquote>
+      {/*<h5>Heading 5</h5>*/}
+      {/*<h6>Heading 6</h6>*/}
 
-    <h3>Paragraph</h3>
+      <h3>Paragraph</h3>
 
-    <p>
-      Paragraph – Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-      diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-      erat, sed diam voluptua
-      <sup>
-        <a id="anker3" title="" href="#fn3">
-          3
-        </a>
-      </sup>
-      . At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
-      gubergren.
-    </p>
+      <p>
+        Paragraph – Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+        diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
+        erat, sed diam voluptua
+        <sup>
+          <a id="anker3" title="" href="#fn3">
+            3
+          </a>
+        </sup>
+        . At vero eos et accusam et justo duo dolores et ea rebum. Stet clita
+        kasd gubergren.
+      </p>
 
-    {/*<h3>Dos and Don’ts</h3>
+      {/*<h3>Dos and Don’ts</h3>
     <ul>
       <li>
         Don’t try to mix two typefaces within a single section, such as a
@@ -95,5 +97,5 @@ storiesOf('Documentation|General', module).add('Typography', () => (
         your desiger. This will ensure all of it looks consistent.
       </li>
     </ul>*/}
-  </Page>
-));
+    </Page>
+  ));

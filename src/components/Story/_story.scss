@@ -122,6 +122,14 @@
     margin-bottom: $spacing-xl;
     margin-left: -0.058em;
   }
+
+  .#{$prefix}--story__content-title {
+    @include typescale('alpha');
+    font-weight: 300;
+    margin-bottom: $spacing-lg;
+    margin-left: -0.058em;
+  }
+
   .#{$prefix}--story__sub-title {
     @include typescale('zeta');
     font-weight: normal;

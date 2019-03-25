@@ -25,7 +25,7 @@ class SingleComponent extends Component {
     });
 
     return (
-      <Wrapper
+      <div
         style={
           centered && height <= 200
             ? {
@@ -43,7 +43,7 @@ class SingleComponent extends Component {
           style={{ flexBasis: flexBasis ? flexBasis : 'auto' }}>
           {children}
         </div>
-      </Wrapper>
+      </div>
     );
   }
 }

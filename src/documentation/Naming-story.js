@@ -5,9 +5,9 @@ import { storiesOf } from '@storybook/react';
 import Page from './Page';
 import Link from '../components/Link';
 
-storiesOf('Documentation|General', module).add(
-  'Naming Convention & Linting',
-  () => (
+storiesOf('Documentation|General', module)
+  .addParameters({ options: { showPanel: false, isToolshown: false } })
+  .add('Naming Convention & Linting', () => (
     <Page
       title="Naming Convention"
       subTitle="Introduction to the new WFP UI Kit">
@@ -47,5 +47,4 @@ storiesOf('Documentation|General', module).add(
         <li>Semicolon is required at the end of a line</li>
       </ul>
     </Page>
-  )
-);
+  ));
