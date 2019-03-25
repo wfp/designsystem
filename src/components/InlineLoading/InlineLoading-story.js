@@ -26,7 +26,7 @@ const props = () => ({
   onSuccess: action('onSuccess'),
 });
 
-storiesOf('InlineLoading', module)
+storiesOf('Components|InlineLoading', module)
   .addDecorator(withKnobs)
   .add('Inline loading (draft)', () => (
     <div>

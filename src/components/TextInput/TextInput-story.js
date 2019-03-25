@@ -30,7 +30,7 @@ const TextInputProps = () => ({
   onChange: action('onChange'),
 });
 
-storiesOf('TextInput', module)
+storiesOf('Components|TextInput', module)
   .addDecorator(withKnobs)
   .add('Default', () => <TextInput {...TextInputProps()} />)
   .add('skeleton', () => (

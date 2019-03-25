@@ -120,7 +120,7 @@ from '@wfp/icons'`}
 
 const wrapperStyle = { display: 'flex', flexWrap: 'wrap', margin: '0 -0.7em' };
 
-storiesOf(' Documentation', module).add('Icons', () => (
+storiesOf('Documentation|General', module).add('Icons', () => (
   <Page title="Icons" subTitle="Icons & Logos for User Interfaces">
     <p>
       For Usage please take a look at the{' '}
@@ -131,14 +131,16 @@ storiesOf(' Documentation', module).add('Icons', () => (
           'Usage for Developers'
         )}>
         Usage for Developers
-      </Link>.
+      </Link>
+      .
     </p>
 
     <Blockquote title="Notice">
       WFP UI Icons is using a fork of{' '}
       <Link href="https://github.com/IBM/carbon-icons" target="_blank">
         Carbon Icons
-      </Link>. You can find additional information in the{' '}
+      </Link>
+      . You can find additional information in the{' '}
       <Link
         href="http://www.carbondesignsystem.com/guidelines/iconography"
         target="_blank">

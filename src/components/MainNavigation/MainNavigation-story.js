@@ -19,7 +19,7 @@ import Search from '../Search';
 import Link from '../Link';
 import User from '../User';
 
-storiesOf('MainNavigation', module).add('default', () => (
+storiesOf('Components|MainNavigation', module).add('default', () => (
   <MainNavigation logo={<a href="http://www.wfp.org">WFP UI</a>}>
     <MainNavigationItem>
       <Link href="http://communities.wfp.org" target="_blank">

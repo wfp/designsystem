@@ -26,7 +26,7 @@ const renderAnchor = props => {
   return <a href={props.href}>{props.label}</a>;
 };
 
-storiesOf('SecondaryNavigation', module)
+storiesOf('Components|SecondaryNavigation', module)
   .add('default', () => (
     <SecondaryNavigation additional="additional Information">
       <Breadcrumb>

@@ -20,9 +20,9 @@ export default class Container extends Component {
       nextProps.context.story !== prevState.context.story
     ) {
       window.scrollTo(0, 0);
-      if (nextProps.context.story.includes('html')) {
+      /*if (nextProps.context.story.includes('html')) {
         withOptions({ selectedAddonPanel: 'lucid-docs-panel-code' });
-      } else if (nextProps.context.story.includes('Right to left')) {
+      } else*/ if (nextProps.context.story.includes('Right to left')) {
         withOptions({ selectedAddonPanel: 'storybook/rtl' });
       } else {
         withOptions({ selectedAddonPanel: 'REACT_STORYBOOK/readme/panel' });
@@ -39,22 +39,11 @@ export default class Container extends Component {
 
     const storyRender = story();
 
-    console.log('story', storyRender);
-
-    /*
-    addParameters({
-      jest: ['Card-test'],
-      info: {
-        inline: true,
-      }
-    });*/
-
     const flexBasis =
       storyRender.props.children && storyRender.props.children.props
         ? storyRender.props.children.props['data-flexbasis']
         : undefined;
 
-    const StoryR = storyRender;
 
     if (context && !context.kind.indexOf(' ') == 0) {
       return (
@@ -75,8 +64,7 @@ export default class Container extends Component {
     } else {
       return (
         <div role="main" id="container">
-          ssssss
-          <StoryR />
+          {storyRender}
         </div>
       );
     }

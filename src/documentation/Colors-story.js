@@ -9,7 +9,7 @@ import colors from '../globals/data/colors';
 
 const colorBlend = ['20', '30', '40', '60', '80'];
 
-storiesOf(' Documentation', module).add('Colors', () => {
+storiesOf('Documentation|General', module).add('Colors', () => {
   const regularColors = Object.values(colors.ui_colors).filter(
     ui_colors => ui_colors.type !== 'symbolic' && ui_colors.type !== 'ui'
   );
@@ -88,47 +88,46 @@ storiesOf(' Documentation', module).add('Colors', () => {
             )}
           </div>
 
-          {color.type !== 'symbolic' &&
-            color.type !== 'ui' && (
-              <div
-                style={{
-                  width: '50%',
-                }}>
-                {colorBlend.map(blend => (
+          {color.type !== 'symbolic' && color.type !== 'ui' && (
+            <div
+              style={{
+                width: '50%',
+              }}>
+              {colorBlend.map(blend => (
+                <div
+                  style={{
+                    display: 'flex',
+                    fontSize: '0.7em',
+                    width: '100%',
+                  }}>
                   <div
                     style={{
-                      display: 'flex',
-                      fontSize: '0.7em',
-                      width: '100%',
+                      width: '20px',
+                      height: '20px',
+                      marginTop: '1px',
+                      marginRight: '1em',
+                      marginBottom: '1px',
+                    }}
+                    className={`color__${color.name}-{blend}`}
+                  />
+                  <div
+                    style={{
+                      marginTop: '2px',
+                      lineHeight: '20px',
                     }}>
-                    <div
+                    <span
                       style={{
-                        width: '20px',
-                        height: '20px',
-                        marginTop: '1px',
+                        display: 'inline-block',
                         marginRight: '1em',
-                        marginBottom: '1px',
-                      }}
-                      className={`color__${color.name}-{blend}`}
-                    />
-                    <div
-                      style={{
-                        marginTop: '2px',
-                        lineHeight: '20px',
                       }}>
-                      <span
-                        style={{
-                          display: 'inline-block',
-                          marginRight: '1em',
-                        }}>
-                        hex: #0A6EB4
-                      </span>
-                      scss: {color.scss}-{blend}
-                    </div>
+                      hex: #0A6EB4
+                    </span>
+                    scss: {color.scss}-{blend}
                   </div>
-                ))}
-              </div>
-            )}
+                </div>
+              ))}
+            </div>
+          )}
         </div>
       </li>
     ));
@@ -148,7 +147,8 @@ storiesOf(' Documentation', module).add('Colors', () => {
         The extended Colour Palette can be found here{' '}
         <Link href="http://brand.manuals.wfp.org/en/core-elements/colours/colour-palette/">
           here
-        </Link>.
+        </Link>
+        .
       </p>
 
       <h3>Brand Colors</h3>

@@ -24,7 +24,7 @@ const showResults = values =>
     }, 500);
   });
 
-storiesOf(' Documentation', module).add('Wizard Form', () => (
+storiesOf('Documentation|General', module).add('Wizard Form', () => (
   <Provider store={store}>
     <WizardForm onSubmit={showResults} />
   </Provider>

@@ -59,7 +59,7 @@ const columns = [
   },
 ];
 
-storiesOf('Table', module)
+storiesOf('Components|Table', module)
   .addDecorator(withKnobs)
   .add('Default', () => (
     <ReactTable

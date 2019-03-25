@@ -78,7 +78,7 @@ const props = {
   }),
 };
 
-storiesOf('Modal', module)
+storiesOf('Components|Modal', module)
   .addDecorator(withKnobs)
   .add('Default', () => (
     <Modal {...props.default()}>

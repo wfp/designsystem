@@ -6,7 +6,7 @@ import { withKnobs, select, text } from '@storybook/addon-knobs/react';
 import Footer from './Footer';
 import Link from '../Link';
 
-storiesOf('Footer', module)
+storiesOf('Components|Footer', module)
   .addDecorator(withKnobs)
   .addParameters({ jest: ['Footer-test'] })
   .add('Internal', () => {
@@ -106,12 +106,12 @@ storiesOf('Footer', module)
     const logo = text(
       'logo on mobile devices (logo)',
       process.env.STORYBOOK_ASSETS +
-        'logos/vertical/en/wfp-logo-vertical-black-en.svg'
+      'logos/vertical/en/wfp-logo-vertical-black-en.svg'
     );
     const logoExtended = text(
       'logo on desktop devices (logoExtended)',
       process.env.STORYBOOK_ASSETS +
-        'logos/extended/en/wfp-logo-extended-black-en.svg'
+      'logos/extended/en/wfp-logo-extended-black-en.svg'
     );
 
     return (
@@ -123,7 +123,9 @@ storiesOf('Footer', module)
         metaContent={metaContent}
         secondary={
           <div>
-            Via C. G. Viola 68 Parco dei Medici<br />00148 Rome, Italy
+            Via C. G. Viola 68 Parco dei Medici
+            <br />
+            00148 Rome, Italy
           </div>
         }
         mobilePageWidth={mobilePageWidth}

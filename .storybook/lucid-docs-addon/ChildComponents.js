@@ -86,10 +86,9 @@ const ChildComponent = ({
     <section style={styles.childComponent}>
       <div style={styles.name}>
         {childComponentName}
-        {!isPrivate &&
-          childComponentName !== displayName && (
-            <span style={styles.displayName}>(see {displayName})</span>
-          )}
+        {!isPrivate && childComponentName !== displayName && (
+          <span style={styles.displayName}>(see {displayName})</span>
+        )}
       </div>
       <div>{compile(description).tree}</div>
       <PropTypes showIndex={false} props={props} />

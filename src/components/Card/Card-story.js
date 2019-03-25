@@ -53,7 +53,7 @@ const props = {
   }),
 };
 
-storiesOf('Card', module)
+storiesOf('Components|Card', module)
   .addDecorator(withKnobs)
   .addParameters({ jest: ['Card-test'] })
   .addDecorator(story => <div style={{ width: '100%' }}>{story()}</div>)

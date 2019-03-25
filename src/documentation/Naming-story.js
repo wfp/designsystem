@@ -5,7 +5,7 @@ import { storiesOf } from '@storybook/react';
 import Page from './Page';
 import Link from '../components/Link';
 
-storiesOf(' Documentation', module).add('Naming Convention & Linting', () => (
+storiesOf('Documentation|General', module).add('Naming Convention & Linting', () => (
   <Page title="Naming Convention" subTitle="Introduction to the new WFP UI Kit">
     <p>
       The UI Kit uses the{' '}
@@ -30,9 +30,10 @@ storiesOf(' Documentation', module).add('Naming Convention & Linting', () => (
       it with the{' '}
       <Link href="https://www.npmjs.com/package/eslint-config-react-app">
         eslint-config-react-app
-      </Link>. It also includes the eslint-plugin-jsx-a11y accessibility rules
-      by default. When using Create React App no action is needed since it
-      already includes the configuration.
+      </Link>
+      . It also includes the eslint-plugin-jsx-a11y accessibility rules by
+      default. When using Create React App no action is needed since it already
+      includes the configuration.
     </p>
 
     <ul className="wfp--story__list">

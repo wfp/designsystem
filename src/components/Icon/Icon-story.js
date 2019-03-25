@@ -96,7 +96,7 @@ const propsSkeleton2 = {
   },
 };
 
-storiesOf('Icon', module)
+storiesOf('Components|Icon', module)
   .addParameters({
     info: {
       source: false,

@@ -113,12 +113,12 @@ export default class ReadMore extends Component {
           undefined,
         }
       : maxHeight && !showMore
-        ? {
-            maxHeight: maxHeight,
-          }
-        : {
-            maxHeight: innerHeight + 20,
-          };
+      ? {
+          maxHeight: maxHeight,
+        }
+      : {
+          maxHeight: innerHeight + 20,
+        };
 
     const collapseStyle = showMore
       ? {

@@ -47,7 +47,7 @@ class FaviconCanvas extends React.Component {
       text: name.toUpperCase(),
       fontFamily: 'Open Sans',
       fontWeight: 'bold',
-      fontSize: 15 + 120 * 1 / name.length,
+      fontSize: 15 + (120 * 1) / name.length,
     });
   }
 
@@ -154,7 +154,7 @@ class FaviconGenerator extends Component {
   }
 }
 
-storiesOf(' Documentation', module).add('Favicons', () => {
+storiesOf('Documentation|General', module).add('Favicons', () => {
   return (
     <Page title="Favicons" subTitle="The new Logos in various sizes">
       <p>

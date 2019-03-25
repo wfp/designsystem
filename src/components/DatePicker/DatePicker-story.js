@@ -79,7 +79,7 @@ const props = {
   }),
 };
 
-storiesOf('DatePicker', module)
+storiesOf('Components|DatePicker', module)
   .addDecorator(withKnobs)
   .add('SingleDatePicker (draft)', () => (
     <SingleDatePickerInput {...props.datePicker()} />

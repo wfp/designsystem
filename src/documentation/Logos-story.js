@@ -47,7 +47,7 @@ const LogoElement = ({ color, logoKind, src }) => {
   );
 };
 
-storiesOf(' Documentation', module).add('Logos', () => {
+storiesOf('Documentation|General', module).add('Logos', () => {
   const logoKinds = [
     {
       key: 'standard',
@@ -140,7 +140,8 @@ storiesOf(' Documentation', module).add('Logos', () => {
           href="http://brand.manuals.wfp.org/en/core-elements/logo/emblem-restyling-2018/"
           target="_blank">
           Branding Guide
-        </Link>.
+        </Link>
+        .
       </p>
       <Blockquote title="Which file type shall I use?">
         <p>

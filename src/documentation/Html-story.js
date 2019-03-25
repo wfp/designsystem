@@ -7,7 +7,7 @@ import Page from './Page';
 import Blockquote from '../components/Blockquote';
 import Link from '../components/Link';
 
-storiesOf(' Documentation.Getting Started', module).add('HTML Usage', () => (
+storiesOf(' Documentation|Getting Started', module).add('HTML Usage', () => (
   <Page title="HTML Usage" subTitle="Use the UI Kit without react.js">
     <p>
       Most parts of the UI Kit can be used with html / css only. See the readme
@@ -54,7 +54,8 @@ $color__main: #0076FF;
       Download the{' '}
       <Link href="https://developers.google.com/web/tools/chrome-devtools/">
         Google Chrome DevTools
-      </Link>. Right-click on any component, click{' '}
+      </Link>
+      . Right-click on any component, click{' '}
       <span className="wfp--inline-highlight">Inspect</span>, and you'll see the
       html of that component which can be copied and reused.
     </p>

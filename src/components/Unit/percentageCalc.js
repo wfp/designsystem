@@ -25,7 +25,7 @@ export const percentageCalc = (props, after, before) => {
   if (parseFloat(from) === 0) {
     value = false;
   } else if (from) {
-    value = value / parseFloat(from) * 100;
+    value = (value / parseFloat(from)) * 100;
   }
 
   // Convert to Locale String

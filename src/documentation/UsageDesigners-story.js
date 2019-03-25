@@ -6,7 +6,7 @@ import Page from './Page';
 import Button from '../components/Button';
 import Link from '../components/Link';
 
-storiesOf(' Documentation.Getting Started', module).add(
+storiesOf(' Documentation|Getting Started', module).add(
   'Usage for Designers',
   () => (
     <Page title="Usage for Designers" subTitle="How to use the UI Kit">
@@ -23,7 +23,8 @@ storiesOf(' Documentation.Getting Started', module).add(
         the files can be found on{' '}
         <Link href="https://github.com/wfp/ui-design-kit" target="_blank">
           GitHub
-        </Link>.
+        </Link>
+        .
       </p>
       <h3>Template</h3>
       <p>Get guidelines and UI examples</p>

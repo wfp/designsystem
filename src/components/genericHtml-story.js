@@ -24,7 +24,7 @@ keys.forEach(function(element, i) {
     .replace('.hbs', '')
     .replace(split[split.length - 2] + '-', ' ');
 
-  storiesOf(split[split.length - 2], module)
+  storiesOf('Components|' + split[split.length - 2], module)
     .addDecorator(
       exampleStory({
         code: htmlData[i],

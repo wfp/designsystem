@@ -23,6 +23,6 @@ const props = () => ({
   })(action('onClick')),
 });
 
-storiesOf('Link', module)
+storiesOf('Components|Link', module)
   .addDecorator(withKnobs)
   .add('Default', () => <Link {...props()}>Link</Link>);

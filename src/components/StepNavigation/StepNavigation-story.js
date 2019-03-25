@@ -16,7 +16,7 @@ const props = () => ({
   handleTabClick: handleTabClick,
 });
 
-storiesOf('StepNavigation', module)
+storiesOf('Components|StepNavigation', module)
   .addDecorator(withKnobs)
 
   .add('Default (work in progress)', () => (

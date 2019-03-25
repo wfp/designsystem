@@ -16,7 +16,7 @@ import Button from '../components/Button';
   </div>
 ); */
 
-storiesOf(' Documentation', module).add('Introduction', () => (
+storiesOf('Documentation|General', module).add('Introduction', () => (
   <div>
     <Wrapper
       pageWidth="narrow"
@@ -75,7 +75,7 @@ storiesOf(' Documentation', module).add('Introduction', () => (
             }}
             src={`${
               process.env.STORYBOOK_INTERNAL_ASSETS
-            }internal/branding.svg`}
+              }internal/branding.svg`}
           />
         </div>
 
@@ -112,7 +112,7 @@ storiesOf(' Documentation', module).add('Introduction', () => (
             }}
             src={`${
               process.env.STORYBOOK_INTERNAL_ASSETS
-            }internal/usability.svg`}
+              }internal/usability.svg`}
           />
         </div>
 
@@ -172,7 +172,8 @@ storiesOf(' Documentation', module).add('Introduction', () => (
             new Issue
           </Link>{' '}
           on GitHub or send an email to{' '}
-          <Link href="mailto:robert.guehne@wfp.org">robert.guehne@wfp.org</Link>.
+          <Link href="mailto:robert.guehne@wfp.org">robert.guehne@wfp.org</Link>
+          .
         </p>
       </Blockquote>
     </Page>

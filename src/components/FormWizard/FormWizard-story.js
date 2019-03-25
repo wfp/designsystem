@@ -7,7 +7,7 @@ const props = {
   tabs: () => ({}),
 };
 
-storiesOf('FormWizard', module)
+storiesOf('Components|FormWizard', module)
   .addDecorator(withKnobs)
 
   .add('Default', () => (

@@ -5,7 +5,7 @@ import { storiesOf } from '@storybook/react';
 import Page from './Page';
 import Button from '../components/Button';
 
-storiesOf(' Documentation', module).add('Email', () => {
+storiesOf('Documentation|General', module).add('Email', () => {
   return (
     <Page title="Email Template" subTitle="Newsletter & Transactional">
       <p>
@@ -36,15 +36,16 @@ storiesOf(' Documentation', module).add('Email', () => {
           kind="secondary"
           href={`${
             process.env.STORYBOOK_INTERNAL_ASSETS
-          }email/newsletter-external-email.html`}>
+            }email/newsletter-external-email.html`}>
           Transaction
-        </Button>&nbsp;
+        </Button>
+        &nbsp;
         <Button
           small
           kind="secondary"
           href={`${
             process.env.STORYBOOK_INTERNAL_ASSETS
-          }email/transaction-internal-email.html`}>
+            }email/transaction-internal-email.html`}>
           Newsletter
         </Button>
       </p>
@@ -55,7 +56,7 @@ storiesOf(' Documentation', module).add('Email', () => {
           kind="secondary"
           href={`${
             process.env.STORYBOOK_INTERNAL_ASSETS
-          }email/transaction-internal-email.html`}>
+            }email/transaction-internal-email.html`}>
           Transaction
         </Button>
       </p>

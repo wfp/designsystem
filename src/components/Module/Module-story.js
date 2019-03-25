@@ -5,7 +5,7 @@ import Wrapper from '../Wrapper';
 
 import 'flexboxgrid/dist/flexboxgrid.css';
 
-storiesOf('Module', module)
+storiesOf('Components|Module', module)
   .addDecorator(story => (
     <div className="wfp--module__background">
       <Wrapper pageWidth="narrow">{story()}</Wrapper>

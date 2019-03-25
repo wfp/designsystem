@@ -32,13 +32,14 @@ const props = () => ({
   onChange: action('onChange'),
 });
 
-storiesOf('Search', module)
+storiesOf('Components|Search', module)
   .addDecorator(withKnobs)
 
   .add('Default', () => <Search {...props()} id="search-1" />)
   .add('skeleton', () => (
     <div style={{ width: '200px' }}>
-      <SearchSkeleton />&nbsp;
+      <SearchSkeleton />
+      &nbsp;
       <SearchSkeleton small />
     </div>
   ));

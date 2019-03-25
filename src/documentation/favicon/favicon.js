@@ -3,10 +3,10 @@
   'object' == typeof exports && 'object' == typeof module
     ? (module.exports = e())
     : 'function' == typeof define && define.amd
-      ? define([], e)
-      : 'object' == typeof exports
-        ? (exports.Favicon = e())
-        : (t.Favicon = e());
+    ? define([], e)
+    : 'object' == typeof exports
+    ? (exports.Favicon = e())
+    : (t.Favicon = e());
 })(window, function() {
   return (function(t) {
     var e = {};
@@ -113,14 +113,14 @@
           n += 16 * t.length;
           for (let r = 0; r < e; r++) {
             const e = t[r];
-            (n += 40), (n += 4 * e * e), (n += 2 * e * e / 8);
+            (n += 40), (n += 4 * e * e), (n += (2 * e * e) / 8);
           }
           return n;
         }
         createBitmapImageData(t) {
           const e = t.getContext('2d').getImageData(0, 0, t.width, t.height),
             n = (new Uint32Array(e.data.buffer).reverse().buffer,
-            new Uint8Array(t.width * t.height * 2 / 8));
+            new Uint8Array((t.width * t.height * 2) / 8));
           n.fill(0);
           let r = this.arrayBufferToBinary(this.canvasToBitmap(t));
           return (r += this.Uint8ArrayToBinary(n));

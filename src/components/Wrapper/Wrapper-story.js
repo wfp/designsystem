@@ -5,7 +5,7 @@ import { storiesOf } from '@storybook/react';
 import { withKnobs, select } from '@storybook/addon-knobs/react';
 import Wrapper from '../Wrapper';
 
-storiesOf('Wrapper', module)
+storiesOf('Components|Wrapper', module)
   //.addDecorator(withSmartKnobs)
   .addDecorator(withKnobs)
 

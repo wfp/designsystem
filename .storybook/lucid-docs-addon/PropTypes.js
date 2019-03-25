@@ -258,12 +258,11 @@ const PropsList = ({ showIndex, showTopLinks, props }) => {
                   </SyntaxHighlighter>
                 </div>
               )}
-              {showIndex &&
-                showTopLinks && (
-                  <a style={{ ...style.a, ...style.top }} href="#top">
-                    top
-                  </a>
-                )}
+              {showIndex && showTopLinks && (
+                <a style={{ ...style.a, ...style.top }} href="#top">
+                  top
+                </a>
+              )}
             </div>
           </span>
         )

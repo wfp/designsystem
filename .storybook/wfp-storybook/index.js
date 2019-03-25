@@ -1,27 +1,26 @@
 import addons, { makeDecorator } from '@storybook/addons';
 import marked from 'marked';
 import { addParameters, configure, addDecorator } from '@storybook/react';
+import React from 'react';
 
 function renderMarkdown(text, options) {
   return marked(text, { ...marked.defaults, ...options });
 }
 
 export const withNotes = makeDecorator({
-  name: 'withNotesbb',
-  parameterName: 'notesbb',
+  /*name: 'withNotes',
+  parameterName: 'notes',
   skipIfNoParametersOrOptions: false,
-  allowDeprecatedUsage: true,
+  allowDeprecatedUsage: true,*/
   wrapper: (getStory, context, { options, parameters }) => {
     const channel = addons.getChannel();
     /* Import all html documents */
     const req = require.context('./', true, /\.hbs$/);
-
     var text = '';
-
     try {
-      text = require(`../../src/components/${context.kind}/README.md`);
+      text = require(`../../src/components/${context.kind.replace("Components|", "")}/README.md`);
       // do stuff
-    } catch (ex) {}
+    } catch (ex) { }
 
     //const htmlData = importAll(req);
 
@@ -31,21 +30,20 @@ export const withNotes = makeDecorator({
 
     const inline = context && !context.kind.indexOf(' ') == 0 ? true : false;
 
-    console.log('context');
-    context.parameters.notes = 'ssss';
+    console.log('context', parameters, context);
 
-    context.parameters.info = {
+    /* context.parameters.info = {
       inline: inline,
       text: text,
+    }; */
+
+    context.parameters.readme = {
+      sidebar: text,
+      StoryPreview: ({ children }) => <React.Fragment>{children}</React.Fragment>
     };
 
-    const storyOptions = parameters || options;
 
-    /*parameters({
-      info: {
-        inline: true,
-      }
-    });*/
+    const storyOptions = parameters || options;
 
     /* const { text, markdown, markdownOptions } =
       typeof storyOptions === 'string' ? { text: storyOptions } : storyOptions;

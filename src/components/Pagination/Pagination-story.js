@@ -38,7 +38,7 @@ const props = () => ({
   onChange: action('onChange'),
 });
 
-storiesOf('Pagination', module)
+storiesOf('Components|Pagination', module)
   .addDecorator(withKnobs)
   .addDecorator(story => <div style={{ width: '800px' }}>{story()}</div>)
   .add('default', () => <Pagination {...props()} />)

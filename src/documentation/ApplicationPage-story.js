@@ -8,7 +8,7 @@ import ReactSelect from 'react-select';
 
 import { Module, ModuleHeader, ModuleBody } from '../components/Module';
 
-storiesOf(' Documentation.Sample Pages', module)
+storiesOf('Documentation|Sample Pages', module)
   .addDecorator(story => <RegularPage>{story()}</RegularPage>)
   .add('Application Page', () => (
     <Wrapper background="lighter" pageWidth="lg" spacing="md">

@@ -32,15 +32,18 @@ const svgBuild = src => {
     .pipe(
       xmlEdit(xml => {
         if (xml.svg.circle !== undefined) {
-          const convertedCircles = xml.svg.circle.map(obj => obj.$).map(obj => {
-            const { cx, cy, r } = obj;
-            return {
-              $: {
-                d: `M ${cx} ${cy} m -${r},0 a ${r},${r} 0 1,1 ${parseFloat(r) *
-                  2}, 0 a ${r},${r} 0 1,1 -${parseFloat(r) * 2}, 0`,
-              },
-            };
-          });
+          const convertedCircles = xml.svg.circle
+            .map(obj => obj.$)
+            .map(obj => {
+              const { cx, cy, r } = obj;
+              return {
+                $: {
+                  d: `M ${cx} ${cy} m -${r},0 a ${r},${r} 0 1,1 ${parseFloat(
+                    r
+                  ) * 2}, 0 a ${r},${r} 0 1,1 -${parseFloat(r) * 2}, 0`,
+                },
+              };
+            });
 
           if (xml.svg.path !== undefined) {
             convertedCircles.forEach(circle => xml.svg.path.push(circle));

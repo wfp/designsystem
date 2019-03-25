@@ -5,7 +5,7 @@ import { storiesOf } from '@storybook/react';
 import Link from '../components/Link';
 import Page from './Page';
 
-storiesOf(' Documentation', module).add('Credits', () => (
+storiesOf('Documentation|General', module).add('Credits', () => (
   <Page title="Credits & License" subTitle="Introduction to the new WFP UI Kit">
     <p>
       <Link href="http://brand.manuals.wfp.org/">

@@ -68,7 +68,7 @@ const props = {
     component: ReduxFormWrapper,
     inputComponent:
       inputMap[
-        select('Component (ReduxFormWrapper(Input))', inputs, 'TextInput')
+      select('Component (ReduxFormWrapper(Input))', inputs, 'TextInput')
       ],
     onClick: action('onClick'),
     labelText: text('Label (labelText)', 'Label Text'),
@@ -81,7 +81,7 @@ const props = {
   }),
 };
 
-storiesOf('ReduxFormWrapper', module)
+storiesOf('Components|ReduxFormWrapper', module)
   .addDecorator(withKnobs)
 
   .addDecorator(story => (

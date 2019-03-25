@@ -11,7 +11,7 @@ const props = () => ({
   children: text('Label text (labelText)', 'Lorem Ipsum'),
 });
 
-storiesOf('FormHint', module)
+storiesOf('Components|FormHint', module)
   .addDecorator(withKnobs)
   .add('Default (in development)', () => (
     <label className="wfp--label" htmlFor="input">

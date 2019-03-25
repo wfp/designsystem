@@ -13,7 +13,7 @@ const types = typesList.reduce(
   {}
 );
 
-storiesOf('Tag', module)
+storiesOf('Components|Tag', module)
   .addDecorator(withKnobs)
   .add('Default', () => (
     <Tag className="some-class" type={select('Tag type (type)', types, 'wfp')}>

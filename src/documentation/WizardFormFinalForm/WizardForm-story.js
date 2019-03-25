@@ -25,7 +25,7 @@ const renderError = ({ meta: { touched, error } }) =>
     false
   );
 
-storiesOf(' Documentation', module).add(
+storiesOf('Documentation|General', module).add(
   'Wizard Form final-form (draft)',
   () => (
     <Wizard

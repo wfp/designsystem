@@ -237,7 +237,10 @@
   $toggle-background-color: $ibm-colors__green--30 !default !global;
 
   // Skeleton Loading
-  $skeleton: rgba($color__blue-51, 0.1) !default !global; //old $field-01 TODO: Define for experimental
+  $skeleton: rgba(
+    $color__blue-51,
+    0.1
+  ) !default !global; //old $field-01 TODO: Define for experimental
   $css--font-face: true;
 }
 

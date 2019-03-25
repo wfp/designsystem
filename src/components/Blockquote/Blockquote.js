@@ -68,7 +68,9 @@ class Blockquote extends React.Component {
 
     const lookup = warning
       ? iconLookup['warning']
-      : error ? iconLookup['error'] : iconLookup['info'];
+      : error
+      ? iconLookup['error']
+      : iconLookup['info'];
 
     const icon = withIcon ? (
       <Icon

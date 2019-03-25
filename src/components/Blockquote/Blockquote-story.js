@@ -4,7 +4,7 @@ import { withKnobs, boolean } from '@storybook/addon-knobs/react';
 
 import Blockquote from '../Blockquote';
 
-storiesOf('Blockquote', module)
+storiesOf('Components|Blockquote', module)
   //.addDecorator(checkA11y)
   .addParameters({ jest: ['Blockquote-test'] })
   .addDecorator(withKnobs)

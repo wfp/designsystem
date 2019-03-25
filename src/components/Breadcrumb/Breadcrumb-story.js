@@ -15,7 +15,7 @@ const props = () => ({
   onClick: action('onClick'),
 });
 
-storiesOf('Breadcrumb', module)
+storiesOf('Components|Components|Breadcrumb', module)
   .addParameters({ jest: ['Breadcrumb'] })
   .addDecorator(withKnobs)
 

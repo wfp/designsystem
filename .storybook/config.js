@@ -6,14 +6,15 @@ import { withOptions } from '@storybook/addon-options';
 import { getStorybook } from '@storybook/react';
 import withAutoNotes from './wfp-storybook';
 
-//import { withNotes } from '@storybook/addon-notes';
+import { withNotes } from '@storybook/addon-notes';
 
 import Container from './Container';
 
+import { addReadme } from 'storybook-readme';
 import { withTests } from '@storybook/addon-jest';
 import results from '../.jest-test-results.json';
 
-//import wfpTheme from './wfpTheme';
+import wfpTheme from './wfpTheme';
 
 require('prismjs');
 require('prismjs/themes/prism.css');
@@ -25,6 +26,8 @@ addDecorator(
     results,
   })
 );
+
+addDecorator(addReadme);
 
 /*addDecorator(
   withNotes(`
@@ -100,9 +103,9 @@ addDecorator(
 
 //initializeRTL();
 
-//addDecorator((story, context) => <Container story={story} context={context} />);
+addDecorator((story, context) => <Container story={story} context={context} />);
 
-/*
+
 addDecorator(
   withOptions({
     name: `WFP UI`,
@@ -111,9 +114,9 @@ addDecorator(
     theme: wfpTheme,
   })
 );
-*/
 
-//addDecorator(withAutoNotes);
+
+addDecorator(withAutoNotes);
 
 // addDecorator(checkA11y);
 

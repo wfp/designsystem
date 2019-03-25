@@ -39,4 +39,4 @@ class ModalWithControls extends React.Component {
   }
 }
 
-storiesOf('Modal', module).add('with Controls', () => <ModalWithControls />);
+storiesOf('Components|Modal', module).add('with Controls', () => <ModalWithControls />);

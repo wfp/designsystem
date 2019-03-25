@@ -7,7 +7,7 @@ import Button from '../components/Button';
 import Page from './Page';
 import Blockquote from '../components/Blockquote';
 
-storiesOf(' Documentation', module).add('Navigation', () => (
+storiesOf('Documentation|General', module).add('Navigation', () => (
   <Page title="Navigation" subTitle="3-Level Navigation">
     <h3>Main (Primary) Navigation</h3>
     <p>

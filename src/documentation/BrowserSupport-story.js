@@ -6,7 +6,7 @@ import Page from './Page';
 import Blockquote from '../components/Blockquote';
 import Link from '../components/Link';
 
-storiesOf(' Documentation', module).add('Browser Support', () => (
+storiesOf('Documentation|General', module).add('Browser Support', () => (
   <Page title="Browser Support" subTitle="All supported browsers">
     <p>Currently the following browsers are supported:</p>
 

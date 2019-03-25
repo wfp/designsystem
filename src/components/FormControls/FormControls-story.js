@@ -57,7 +57,7 @@ const props = {
   }),
 };
 
-storiesOf('FormControls', module)
+storiesOf('Components|FormControls', module)
   .addDecorator(withKnobs)
 
   .add('Default (Wizard form)', () => (

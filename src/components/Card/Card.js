@@ -46,15 +46,12 @@ const Card = ({
           {metadata && (
             <p className="wfp--photo-card__info__metadata">{metadata}</p>
           )}
-          {title &&
-            (kind === 'hero' || kind === 'page-splash') && (
-              <h2 className="wfp--photo-card__info__title">{title}</h2>
-            )}
-          {title &&
-            kind !== 'hero' &&
-            kind !== 'page-splash' && (
-              <h3 className="wfp--photo-card__info__title">{title}</h3>
-            )}
+          {title && (kind === 'hero' || kind === 'page-splash') && (
+            <h2 className="wfp--photo-card__info__title">{title}</h2>
+          )}
+          {title && kind !== 'hero' && kind !== 'page-splash' && (
+            <h3 className="wfp--photo-card__info__title">{title}</h3>
+          )}
           {subTitle && (
             <p className="wfp--photo-card__info__subtitle">{subTitle}</p>
           )}

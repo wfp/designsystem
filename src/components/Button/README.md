@@ -1,6 +1,9 @@
 Buttons are used to initialize an action, either in the background or
 foreground of an experience.
 
+<!-- PROPS -->
+
+
 #### Small buttons
 
 Small buttons may be used when there is not enough space for a

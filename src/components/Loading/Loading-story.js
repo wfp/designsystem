@@ -17,7 +17,7 @@ const props = () => ({
   small: boolean('Small (small)', false),
 });
 
-storiesOf('Loading', module)
+storiesOf('Components|Loading', module)
   .addDecorator(withKnobs)
   .add('Default (Draft)', () => {
     return <Loading {...props()} className={'some-class'} />;

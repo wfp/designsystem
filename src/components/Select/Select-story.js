@@ -30,7 +30,7 @@ const props = {
   }),
 };
 
-storiesOf('Select', module)
+storiesOf('Components|Select', module)
   .addDecorator(withKnobs)
   .add('Default', () => {
     const groupProps = props.group();

@@ -160,7 +160,7 @@ const columns = [
 
 //PaginationComponent={Pagination}
 
-storiesOf('Table', module).add('responsive', () => (
+storiesOf('Components|Table', module).add('responsive', () => (
   <ReactTable
     data={data}
     defaultPageSize={5}

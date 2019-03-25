@@ -1,5 +1,5 @@
 // Community addons
-//import 'storybook-readme/register';
+import 'storybook-readme/register';
 import '@storybook/addon-knobs/register';
 
 import '@storybook/addon-actions/register';
@@ -11,5 +11,5 @@ import '@storybook/addon-options/register';
 import '@storybook/addon-jest/register';
 //import 'storybook-addon-rtl/register';
 import '@storybook/addon-storysource/register';
-import './wfp-storybook/register';
+//import './wfp-storybook/register';
 //require('./lucid-docs-addon/register');

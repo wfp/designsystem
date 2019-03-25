@@ -36,7 +36,7 @@ const props = {
   }),
 };
 
-storiesOf('ContentSwitcher', module)
+storiesOf('Components|ContentSwitcher', module)
   .addDecorator(withKnobs)
   .add('Default', () => {
     const switchProps = props.switch();

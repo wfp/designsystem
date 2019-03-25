@@ -8,7 +8,7 @@ $feature-flags: () !default;
 // Default feature flag values
 $default-feature-flags: (
   components-x: false,
-  ui-shell: false
+  ui-shell: false,
 );
 
 $did-warn-diverged-feature-flags: false !default !global;
@@ -23,7 +23,9 @@ $did-warn-diverged-feature-flags: false !default !global;
     $diverged: ();
 
     @each $name, $value in $src {
-      @if (map-has-key($dst, $name) == true and map-get($dst, $name) != $value) {
+      @if (
+        map-has-key($dst, $name) == true and map-get($dst, $name) != $value
+      ) {
         $diverged: append($diverged, $name);
       }
     }
@@ -47,23 +49,37 @@ $feature-flags: merge-feature-flags($default-feature-flags, $feature-flags);
 @if global-variable-exists(css--use-experimental-grid) == true {
   $feature-flags: map-merge(
     $feature-flags,
-     (grid: $css--use-experimental-grid)
+    (
+      grid: $css--use-experimental-grid,
+    )
   );
 }
 
 @if global-variable-exists(css--use-experimental-grid-fallback) == true {
   $feature-flags: map-merge(
     $feature-flags,
-     (grid--fallback: $css--use-experimental-grid-fallback)
+    (
+      grid--fallback: $css--use-experimental-grid-fallback,
+    )
   );
 }
 
 // However, if we don't have those flags available let's go ahead and add in
 // some defaults for the grid and grid--fallback
 @if map-has-key($feature-flags, grid) == false {
-  $feature-flags: map-merge($feature-flags,  (grid: false));
+  $feature-flags: map-merge(
+    $feature-flags,
+    (
+      grid: false,
+    )
+  );
 }
 
 @if map-has-key($feature-flags, grid--fallback) == false {
-  $feature-flags: map-merge($feature-flags,  (grid--fallback: false));
+  $feature-flags: map-merge(
+    $feature-flags,
+    (
+      grid--fallback: false,
+    )
+  );
 }

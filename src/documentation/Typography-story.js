@@ -5,7 +5,7 @@ import { storiesOf } from '@storybook/react';
 import Page from './Page';
 import Blockquote from '../components/Blockquote';
 
-storiesOf(' Documentation', module).add('Typography', () => (
+storiesOf('Documentation|General', module).add('Typography', () => (
   <Page title="Typography" subTitle="Typefaces & Spacings">
     {/*<p>
       Typography plays a critical role in any design; in fact, it accounts for
@@ -60,12 +60,14 @@ storiesOf(' Documentation', module).add('Typography', () => (
     <p>
       Paragraph – Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
       diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-      erat, sed diam voluptua<sup>
+      erat, sed diam voluptua
+      <sup>
         <a id="anker3" title="" href="#fn3">
           3
         </a>
-      </sup>. At vero eos et accusam et justo duo dolores et ea rebum. Stet
-      clita kasd gubergren.
+      </sup>
+      . At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
+      gubergren.
     </p>
 
     {/*<h3>Dos and Don’ts</h3>

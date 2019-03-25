@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import Story from './Story';
 
-storiesOf('Story', module).add('Default', () => (
+storiesOf('Components|Story', module).add('Default', () => (
   <Story>
     <h2 className="wfp--story__sub-title">
       Funding facility allows for scale-up of emergency operation

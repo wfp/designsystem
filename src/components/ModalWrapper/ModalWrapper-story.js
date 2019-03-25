@@ -41,7 +41,7 @@ const props = () => ({
   onMouseUp: action('onMouseUp'),
 });
 
-storiesOf('ModalWrapper', module)
+storiesOf('Components|ModalWrapper', module)
   .addDecorator(withKnobs)
   .add('default', () => (
     <ModalWrapper

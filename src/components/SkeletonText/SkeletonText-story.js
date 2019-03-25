@@ -21,7 +21,7 @@ const props = () => ({
   ),
 });
 
-storiesOf('SkeletonText', module)
+storiesOf('Components|SkeletonText', module)
   .addDecorator(withKnobs)
   .add('Default', () => (
     <div style={{ width: '300px' }}>

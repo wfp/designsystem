@@ -46,7 +46,7 @@ const props = {
   }),
 };
 
-storiesOf('ReadMore', module)
+storiesOf('Components|ReadMore', module)
   .addDecorator(withKnobs)
   .add('Default (draft)', () => <ReadMore {...props.regular()} />)
   .add('Fade & animate (draft)', () => <ReadMore {...props.fade()} />)

@@ -42,7 +42,7 @@ const UserProps = {
   }),
 };
 
-storiesOf('User', module)
+storiesOf('Components|User', module)
   .addDecorator(withKnobs)
   .addParameters({ jest: ['User-test'] })
   .add('Default', () => <User {...UserProps.default()} />)

@@ -36,7 +36,7 @@ const props = {
   }),
 };
 
-storiesOf('RadioButtonGroup', module)
+storiesOf('Components|RadioButtonGroup', module)
   .addDecorator(withKnobs)
   .add('Default', () => {
     const radioProps = props.radio();

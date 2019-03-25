@@ -9,7 +9,7 @@ const additionalProps = {
   className: 'some-class',
 };
 
-storiesOf('List', module)
+storiesOf('Components|List', module)
   .add(
     'Default',
     /* `

@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react';
 import { Tooltip } from 'react-tippy';
 import tooltipStyle from './Tooltip';
 
-storiesOf('Tooltip', module).add('default', () => (
+storiesOf('Components|Tooltip', module).add('default', () => (
   <Tooltip
     // options
     title="Welcome to the tooltip"

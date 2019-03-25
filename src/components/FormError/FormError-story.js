@@ -20,7 +20,7 @@ const props = {
   }),
 };
 
-storiesOf('FormError', module)
+storiesOf('Components|FormError', module)
   .addDecorator(withKnobs)
   .addParameters({ jest: ['FormError-test'] })
   .add('Default (experimental)', () => <FormError {...props.formError()} />);

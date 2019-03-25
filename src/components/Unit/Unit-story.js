@@ -169,7 +169,7 @@ const units = [
   },
 ];
 
-storiesOf('Unit', module)
+storiesOf('Components|Unit', module)
   .addDecorator(withKnobs)
   .addParameters({ jest: ['Unit-test'] })
   .add('Samples', () => {

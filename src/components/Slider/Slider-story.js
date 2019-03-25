@@ -28,7 +28,7 @@ const props = () => ({
   onChange: action('onChange'),
 });
 
-storiesOf('Slider', module)
+storiesOf('Components|Slider', module)
   .addDecorator(withKnobs)
   .add('default', () => (
     <div style={{ marginTop: '2rem' }}>
