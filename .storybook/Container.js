@@ -39,6 +39,8 @@ export default class Container extends Component {
 
     const storyRender = story();
 
+    console.log('story', storyRender);
+
     /*
     addParameters({
       jest: ['Card-test'],
@@ -51,6 +53,8 @@ export default class Container extends Component {
       storyRender.props.children && storyRender.props.children.props
         ? storyRender.props.children.props['data-flexbasis']
         : undefined;
+
+    const StoryR = storyRender;
 
     if (context && !context.kind.indexOf(' ') == 0) {
       return (
@@ -71,7 +75,8 @@ export default class Container extends Component {
     } else {
       return (
         <div role="main" id="container">
-          {storyRender}
+          ssssss
+          <StoryR />
         </div>
       );
     }

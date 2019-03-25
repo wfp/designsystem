@@ -16,6 +16,7 @@ import ReactSelect from 'react-select';
 import TextArea from '../TextArea';
 import TextInput from '../TextInput';
 import Toggle from '../Toggle';
+import NumberInput from '../NumberInput';
 
 const inputs = {
   Checkbox: 'Checkbox',
@@ -24,6 +25,7 @@ const inputs = {
   ReactSelect: 'ReactSelect',
   TextArea: 'TextArea',
   TextInput: 'TextInput',
+  NumberInput: 'NumberInput',
   Toggle: 'Toggle',
 };
 
@@ -34,6 +36,7 @@ const inputMap = {
   ReactSelect,
   TextArea,
   TextInput,
+  NumberInput,
   Toggle,
 };
 

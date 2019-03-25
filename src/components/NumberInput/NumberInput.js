@@ -174,7 +174,7 @@ export default class NumberInput extends Component {
         },
         () => {
           this.props.onClick(evt, direction);
-          this.props.onChange(evt, direction);
+          this.props.onChange(value, evt, direction);
         }
       );
     }

@@ -7,8 +7,8 @@ function renderMarkdown(text, options) {
 }
 
 export const withNotes = makeDecorator({
-  name: 'withNotes',
-  parameterName: 'notes',
+  name: 'withNotesbb',
+  parameterName: 'notesbb',
   skipIfNoParametersOrOptions: false,
   allowDeprecatedUsage: true,
   wrapper: (getStory, context, { options, parameters }) => {
@@ -30,6 +30,10 @@ export const withNotes = makeDecorator({
     //keys.forEach(function(element, i) {
 
     const inline = context && !context.kind.indexOf(' ') == 0 ? true : false;
+
+    console.log('context');
+    context.parameters.notes = 'ssss';
+
     context.parameters.info = {
       inline: inline,
       text: text,
@@ -49,8 +53,6 @@ export const withNotes = makeDecorator({
     if (!text && !markdown) {
       throw new Error('You must set of one of `text` or `markdown` on the `notes` parameter');
     } */
-
-    channel.emit('storybook/notes/add_notes', 'bbbbb');
 
     return getStory(context);
   },

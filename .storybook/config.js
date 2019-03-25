@@ -13,10 +13,12 @@ import Container from './Container';
 import { withTests } from '@storybook/addon-jest';
 import results from '../.jest-test-results.json';
 
-import wfpTheme from './wfpTheme';
+//import wfpTheme from './wfpTheme';
 
 require('prismjs');
 require('prismjs/themes/prism.css');
+
+//addDecorator(withNotes);
 
 addDecorator(
   withTests({
@@ -39,6 +41,7 @@ This is some code showing usage of the component and other inline documentation
   `)
 );*/
 
+/*
 addDecorator(
   withInfo({
     maxPropStringLength: 200, // Displays the first 200 characters in the default prop string
@@ -93,11 +96,13 @@ addDecorator(
     },
   })
 );
+*/
 
 //initializeRTL();
 
-addDecorator((story, context) => <Container story={story} context={context} />);
+//addDecorator((story, context) => <Container story={story} context={context} />);
 
+/*
 addDecorator(
   withOptions({
     name: `WFP UI`,
@@ -106,8 +111,9 @@ addDecorator(
     theme: wfpTheme,
   })
 );
+*/
 
-addDecorator(withAutoNotes);
+//addDecorator(withAutoNotes);
 
 // addDecorator(checkA11y);
 
