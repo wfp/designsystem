@@ -2,8 +2,8 @@
 
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import Page from './Page';
-import Link from '../components/Link';
+import Page from '../Page';
+import Link from '../../components/Link';
 
 storiesOf(' Documentation|Getting Started', module).add('React Usage', () => (
   <Page title="React Usage" subTitle="Guidelines & Recommendations">

@@ -41,7 +41,7 @@ storiesOf('Documentation|General', module).add('App Icons', () => (
         target="_blank"
         href={`${
           process.env.STORYBOOK_ASSETS
-          }app/WFP_APP_ICON_${fileSize}x${fileSize}.png`}>
+        }app/WFP_APP_ICON_${fileSize}x${fileSize}.png`}>
         {fileSize} x {fileSize}px
       </Link>
     ))}

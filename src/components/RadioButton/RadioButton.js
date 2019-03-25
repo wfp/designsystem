@@ -29,7 +29,7 @@ export default class RadioButton extends React.Component {
     disabled: PropTypes.bool,
 
     /**
-     * Provide a unique id for the underlying <input> node
+     * Provide a unique id for the underlying `input` node
      */
     id: PropTypes.string,
 
@@ -40,13 +40,13 @@ export default class RadioButton extends React.Component {
     labelText: PropTypes.node.isRequired,
 
     /**
-     * Provide a name for the underlying <input> node
+     * Provide a name for the underlying `input` node
      */
     name: PropTypes.string,
 
     /**
      * Provide an optional `onChange` hook that is called each time the value of
-     * the underlying <input> changes
+     * the underlying `input` changes
      */
     onChange: PropTypes.func,
 

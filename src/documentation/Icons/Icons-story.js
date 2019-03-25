@@ -4,20 +4,20 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { linkTo } from '@storybook/addon-links';
 
-import Page from './Page';
-import Blockquote from '../components/Blockquote';
-import Link from '../components/Link';
-import Icon from '../components/Icon';
-import { Module, ModuleFooter } from '../components/Module';
+import Page from '../Page';
+import Blockquote from '../../components/Blockquote';
+import Link from '../../components/Link';
+import Icon from '../../components/Icon';
+import { Module, ModuleFooter } from '../../components/Module';
 import iconList from '@wfp/icons/dist/carbon-icons.json';
 import { iconDownloadGlyph } from '@wfp/icons';
 
-import Button from '../components/Button';
+import Button from '../../components/Button';
 
 import IconConverter from './IconConverter';
 
 import { Tooltip } from 'react-tippy';
-import tooltipStyle from '../components/Tooltip';
+import tooltipStyle from '../../components/Tooltip';
 
 function camelCaseFromHyphnated(s) {
   return s.replace(/\-+([A-z])/g, (match, token) => token.toUpperCase());

@@ -27,7 +27,7 @@ export class FileUploaderButton extends Component {
     disableLabelChanges: PropTypes.bool,
 
     /**
-     * Provide a unique id for the underlying <input> node
+     * Provide a unique id for the underlying `input` node
      */
     id: PropTypes.string,
 
@@ -49,7 +49,7 @@ export class FileUploaderButton extends Component {
     multiple: PropTypes.bool,
 
     /**
-     * Provide a name for the underlying <input> node
+     * Provide a name for the underlying `input` node
      */
     name: PropTypes.string,
 
@@ -290,7 +290,7 @@ export default class FileUploader extends Component {
     multiple: PropTypes.bool,
 
     /**
-     * Provide a name for the underlying <input> node
+     * Provide a name for the underlying `input` node
      */
     name: PropTypes.string,
 

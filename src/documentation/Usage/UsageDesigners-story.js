@@ -2,9 +2,9 @@
 
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import Page from './Page';
-import Button from '../components/Button';
-import Link from '../components/Link';
+import Page from '../Page';
+import Button from '../../components/Button';
+import Link from '../../components/Link';
 
 storiesOf(' Documentation|Getting Started', module).add(
   'Usage for Designers',

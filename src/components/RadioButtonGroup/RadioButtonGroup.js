@@ -26,7 +26,7 @@ export default class RadioButtonGroup extends React.Component {
     defaultSelected: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 
     /**
-     * Specify the name of the underlying <input> nodes
+     * Specify the name of the underlying `input` nodes
      */
     name: PropTypes.string.isRequired,
 

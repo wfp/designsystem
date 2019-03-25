@@ -35,6 +35,10 @@ export const withNotes = makeDecorator({
 
     console.log('context', parameters, context);
 
+    context.parameters.options.panelPosition = 'bottom';
+
+    addParameters({ options: { panelPosition: 'bottom' } });
+
     /* context.parameters.info = {
       inline: inline,
       text: text,

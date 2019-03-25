@@ -29,11 +29,11 @@ class SingleComponent extends Component {
         style={
           centered && height <= 200
             ? {
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              height: '100%',
-            }
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                height: '100%',
+              }
             : undefined
         }
         className={classNames}

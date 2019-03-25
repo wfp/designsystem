@@ -2,18 +2,18 @@
 /* eslint-disable no-console */
 
 import React, { Component } from 'react';
-import Icon from '../components/Icon';
-import Button from '../components/Button';
-import TextArea from '../components/TextArea';
-import { Module, ModuleBody } from '../components/Module';
-import ReduxFormWrapper from '../components/ReduxFormWrapper';
+import Icon from '../../components/Icon';
+import Button from '../../components/Button';
+import TextArea from '../../components/TextArea';
+import { Module, ModuleBody } from '../../components/Module';
+import ReduxFormWrapper from '../../components/ReduxFormWrapper';
 import { Form, Field } from 'react-final-form';
 
-import Blockquote from '../components/Blockquote';
+import Blockquote from '../../components/Blockquote';
 import PrismCode from 'react-prism';
 
-const getJSON = require('./IconConverter/getJSON');
-const formatJS = require('./IconConverter/formatJS');
+const getJSON = require('./getJSON');
+const formatJS = require('./formatJS');
 
 export default class FaviconGenerator extends Component {
   constructor(props) {

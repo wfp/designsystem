@@ -3,19 +3,19 @@
 
 import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
-import Page from './Page';
-import Link from '../components/Link';
-import Button from '../components/Button';
-import TextInput from '../components/TextInput';
-import { Module, ModuleBody } from '../components/Module';
-import ReduxFormWrapper from '../components/ReduxFormWrapper';
+import Page from '../Page';
+import Link from '../../components/Link';
+import Button from '../../components/Button';
+import TextInput from '../../components/TextInput';
+import { Module, ModuleBody } from '../../components/Module';
+import ReduxFormWrapper from '../../components/ReduxFormWrapper';
 import { Form, Field } from 'react-final-form';
 import { Package } from './favicon/favicon.js';
-import Blockquote from '../components/Blockquote';
+import Blockquote from '../../components/Blockquote';
 import PrismCode from 'react-prism';
 
 import centerjs from './favicon/center';
-import colors from '../globals/data/colors.js';
+import colors from '../../globals/data/colors.js';
 
 const canvas = {
   width: 128,

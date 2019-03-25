@@ -5,42 +5,47 @@ import { storiesOf } from '@storybook/react';
 import Page from './Page';
 import Link from '../components/Link';
 
-storiesOf('Documentation|General', module).add('Naming Convention & Linting', () => (
-  <Page title="Naming Convention" subTitle="Introduction to the new WFP UI Kit">
-    <p>
-      The UI Kit uses the{' '}
-      <a href="http://getbem.com/naming">BEM naming convention</a>.
-    </p>
+storiesOf('Documentation|General', module).add(
+  'Naming Convention & Linting',
+  () => (
+    <Page
+      title="Naming Convention"
+      subTitle="Introduction to the new WFP UI Kit">
+      <p>
+        The UI Kit uses the{' '}
+        <a href="http://getbem.com/naming">BEM naming convention</a>.
+      </p>
 
-    <h3>Namespacing</h3>
-    <p>
-      The Components are built to be included individually and not clobber
-      global styles - all class attributes are prefixed by the{' '}
-      <i className="wfp--inline-highlight">wfp--</i> moniker.
-    </p>
+      <h3>Namespacing</h3>
+      <p>
+        The Components are built to be included individually and not clobber
+        global styles - all class attributes are prefixed by the{' '}
+        <i className="wfp--inline-highlight">wfp--</i> moniker.
+      </p>
 
-    <h3>Linting</h3>
-    <p>
-      Please use ES-Lint which is a linting utility for JavaScript and JSX while
-      building your React Application to analyze source code to flag programming
-      errors, bugs, stylistic errors and suspicious constructs.
-    </p>
-    <p>
-      If you want to use the ESLint configuration in a project you can install
-      it with the{' '}
-      <Link href="https://www.npmjs.com/package/eslint-config-react-app">
-        eslint-config-react-app
-      </Link>
-      . It also includes the eslint-plugin-jsx-a11y accessibility rules by
-      default. When using Create React App no action is needed since it already
-      includes the configuration.
-    </p>
+      <h3>Linting</h3>
+      <p>
+        Please use ES-Lint which is a linting utility for JavaScript and JSX
+        while building your React Application to analyze source code to flag
+        programming errors, bugs, stylistic errors and suspicious constructs.
+      </p>
+      <p>
+        If you want to use the ESLint configuration in a project you can install
+        it with the{' '}
+        <Link href="https://www.npmjs.com/package/eslint-config-react-app">
+          eslint-config-react-app
+        </Link>
+        . It also includes the eslint-plugin-jsx-a11y accessibility rules by
+        default. When using Create React App no action is needed since it
+        already includes the configuration.
+      </p>
 
-    <ul className="wfp--story__list">
-      <li>ECMAScript 6 features</li>
-      <li>no require statements</li>
-      <li>spaces (2 space indentation)</li>
-      <li>Semicolon is required at the end of a line</li>
-    </ul>
-  </Page>
-));
+      <ul className="wfp--story__list">
+        <li>ECMAScript 6 features</li>
+        <li>no require statements</li>
+        <li>spaces (2 space indentation)</li>
+        <li>Semicolon is required at the end of a line</li>
+      </ul>
+    </Page>
+  )
+);

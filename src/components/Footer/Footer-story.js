@@ -106,12 +106,12 @@ storiesOf('Components|Footer', module)
     const logo = text(
       'logo on mobile devices (logo)',
       process.env.STORYBOOK_ASSETS +
-      'logos/vertical/en/wfp-logo-vertical-black-en.svg'
+        'logos/vertical/en/wfp-logo-vertical-black-en.svg'
     );
     const logoExtended = text(
       'logo on desktop devices (logoExtended)',
       process.env.STORYBOOK_ASSETS +
-      'logos/extended/en/wfp-logo-extended-black-en.svg'
+        'logos/extended/en/wfp-logo-extended-black-en.svg'
     );
 
     return (

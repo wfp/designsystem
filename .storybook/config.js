@@ -1,6 +1,6 @@
 import React from 'react';
-import { configure, addDecorator } from '@storybook/react';
-import { withInfo } from '@storybook/addon-info';
+import { configure, addDecorator, addParameters } from '@storybook/react';
+import { addReadme } from 'storybook-readme';
 import { withOptions } from '@storybook/addon-options';
 
 import { getStorybook } from '@storybook/react';
@@ -22,7 +22,7 @@ addDecorator(
   })
 );
 
-//addDecorator(addReadme);
+addDecorator(addReadme);
 
 /*
 addDecorator(
@@ -85,23 +85,27 @@ addDecorator(
 
 addDecorator((story, context) => <Container story={story} context={context} />);
 
-addDecorator(
+/*addDecorator(
   withOptions({
     name: `WFP UI`,
     url: 'https://github.com/wfp/ui',
     hierarchySeparator: /\./,
     theme: wfpTheme,
   })
-);
+); */
 
 addDecorator(withAutoNotes);
+
+addParameters({
+  options: { showPanel: true },
+});
 
 // addDecorator(checkA11y);
 
 function loadStories() {
   const req = require.context('../src', true, /\-story\.js$/);
   let keys = req.keys();
-  keys.unshift('./documentation/Intro-story.js');
+  keys.unshift('./documentation/Intro/Intro-story.js');
   keys.forEach(filename => req(filename));
 }
 

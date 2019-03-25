@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { addParameters, configure } from '@storybook/react';
 
 import './polyfills';
 import './_container.scss';
@@ -22,9 +23,9 @@ export default class Container extends Component {
       } else*/ if (
         nextProps.context.story.includes('Right to left')
       ) {
-        //withOptions({ selectedAddonPanel: 'storybook/rtl' });
+        //withOptions({ name: `WFP UI aaa`, selectedAddonPanel: 'storybook/rtl', addonPanelInRight: true });
       } else {
-        //withOptions({ selectedAddonPanel: 'REACT_STORYBOOK/readme/panel' });
+        //withOptions({ name: `WFP UI ddd`, selectedAddonPanel: 'REACT_STORYBOOK/readme/panel', addonPanelInRight: true });
       }
 
       return {

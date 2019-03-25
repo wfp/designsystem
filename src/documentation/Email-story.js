@@ -36,7 +36,7 @@ storiesOf('Documentation|General', module).add('Email', () => {
           kind="secondary"
           href={`${
             process.env.STORYBOOK_INTERNAL_ASSETS
-            }email/newsletter-external-email.html`}>
+          }email/newsletter-external-email.html`}>
           Transaction
         </Button>
         &nbsp;
@@ -45,7 +45,7 @@ storiesOf('Documentation|General', module).add('Email', () => {
           kind="secondary"
           href={`${
             process.env.STORYBOOK_INTERNAL_ASSETS
-            }email/transaction-internal-email.html`}>
+          }email/transaction-internal-email.html`}>
           Newsletter
         </Button>
       </p>
@@ -56,7 +56,7 @@ storiesOf('Documentation|General', module).add('Email', () => {
           kind="secondary"
           href={`${
             process.env.STORYBOOK_INTERNAL_ASSETS
-            }email/transaction-internal-email.html`}>
+          }email/transaction-internal-email.html`}>
           Transaction
         </Button>
       </p>
