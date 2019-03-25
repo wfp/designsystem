@@ -27,13 +27,13 @@ class SingleComponent extends Component {
     return (
       <Wrapper
         style={
-          centered && height <= 30
+          centered && height <= 200
             ? {
-                display: 'block',
-                alignItems: 'center',
-                justifyContent: 'center',
-                height: '100%',
-              }
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              height: '100%',
+            }
             : undefined
         }
         className={classNames}

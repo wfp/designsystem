@@ -34,7 +34,7 @@ class Notes extends React.Component {
     const { active } = this.props;
     const textAfterFormatted = text ? text.trim().replace(/\n/g, '<br />') : '';
     */
-    return null;
+    return (<div>Feedback</div>);
 
     return active ? (
       <NotesPanel dangerouslySetInnerHTML={{ __html: textAfterFormatted }} />
@@ -57,7 +57,7 @@ class Notes extends React.Component {
 addons.register('MYADDON', api => {
   // Also need to set a unique name to the panel.
   addons.addPanel('MYADDON/panel', {
-    title: 'Notes',
+    title: 'Feedback',
     render: ({ active }) => (
       <Notes channel={addons.getChannel()} api={api} active={active} />
     ),
