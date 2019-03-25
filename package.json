@@ -1,6 +1,6 @@
 {
   "name": "@wfp/ui",
-  "version": "1.2.0-alpha.12",
+  "version": "1.2.0-alpha.13",
   "description": "WFP UI Kit Next",
   "license": "Apache-2",
   "main": "lib/index.js",
@@ -154,6 +154,7 @@
     "@storybook/addon-notes": "^5.0.5",
     "@storybook/addon-options": "^5.0.5",
     "@storybook/addon-storysource": "^5.0.5",
+    "@storybook/addon-viewport": "^5.0.5",
     "@storybook/addons": "^5.0.5",
     "@storybook/react": "^5.0.5",
     "@storybook/theming": "^5.0.5",
