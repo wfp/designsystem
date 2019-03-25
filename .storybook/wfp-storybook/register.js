@@ -30,15 +30,11 @@ class Notes extends React.Component {
   }
 
   render() {
-    /*const { text } = this.state;
+    const { text } = this.state;
     const { active } = this.props;
-    const textAfterFormatted = text ? text.trim().replace(/\n/g, '<br />') : '';
-    */
-    return (<div>Feedback</div>);
-
-    return active ? (
-      <NotesPanel dangerouslySetInnerHTML={{ __html: textAfterFormatted }} />
-    ) : null;
+    /*const textAfterFormatted = text ? text.trim().replace(/\n/g, '<br />') : '';
+     */
+    return active ? <div>Feedback</div> : null;
   }
 
   // This is some cleanup tasks when the Notes panel is unmounting.

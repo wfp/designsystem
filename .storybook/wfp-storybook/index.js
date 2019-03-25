@@ -18,9 +18,12 @@ export const withNotes = makeDecorator({
     const req = require.context('./', true, /\.hbs$/);
     var text = '';
     try {
-      text = require(`../../src/components/${context.kind.replace("Components|", "")}/README.md`);
+      text = require(`../../src/components/${context.kind.replace(
+        'Components|',
+        ''
+      )}/README.md`);
       // do stuff
-    } catch (ex) { }
+    } catch (ex) {}
 
     //const htmlData = importAll(req);
 
@@ -37,11 +40,23 @@ export const withNotes = makeDecorator({
       text: text,
     }; */
 
+    var filename = context.parameters.fileName;
+    filename = filename.substr(0, filename.lastIndexOf('/'));
+
+    text = `# ${context.kind.replace(
+      'Components|',
+      ''
+    )} <a href="https://github.com/wfp/ui/tree/next/${filename}">(View Source on Github)</a>
+
+${text}
+
+<!-- PROPS -->`;
     context.parameters.readme = {
       sidebar: text,
-      StoryPreview: ({ children }) => <React.Fragment>{children}</React.Fragment>
+      StoryPreview: ({ children }) => (
+        <React.Fragment>{children}</React.Fragment>
+      ),
     };
-
 
     const storyOptions = parameters || options;
 

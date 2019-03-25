@@ -6,11 +6,8 @@ import { withOptions } from '@storybook/addon-options';
 import { getStorybook } from '@storybook/react';
 import withAutoNotes from './wfp-storybook';
 
-import { withNotes } from '@storybook/addon-notes';
-
 import Container from './Container';
 
-import { addReadme } from 'storybook-readme';
 import { withTests } from '@storybook/addon-jest';
 import results from '../.jest-test-results.json';
 
@@ -19,30 +16,13 @@ import wfpTheme from './wfpTheme';
 require('prismjs');
 require('prismjs/themes/prism.css');
 
-//addDecorator(withNotes);
-
 addDecorator(
   withTests({
     results,
   })
 );
 
-addDecorator(addReadme);
-
-/*addDecorator(
-  withNotes(`
-# Hello World
-
-This is some code showing usage of the component and other inline documentation
-
-~~~js
-<div>
-  hello world!
-  <Component/>
-</div>
-~~~
-  `)
-);*/
+//addDecorator(addReadme);
 
 /*
 addDecorator(
@@ -105,7 +85,6 @@ addDecorator(
 
 addDecorator((story, context) => <Container story={story} context={context} />);
 
-
 addDecorator(
   withOptions({
     name: `WFP UI`,
@@ -114,7 +93,6 @@ addDecorator(
     theme: wfpTheme,
   })
 );
-
 
 addDecorator(withAutoNotes);
 

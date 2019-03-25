@@ -17,7 +17,7 @@ const TextInputProps = {
   placeholder: 'Placeholder text',
 };
 
-storiesOf('Components|Components|FormGroup', module).add('Default', () => (
+storiesOf('Components|FormGroup', module).add('Default', () => (
   <FormGroup {...fieldsetCheckboxProps}>
     <TextInput {...TextInputProps} />
     <TextInput {...TextInputProps} />

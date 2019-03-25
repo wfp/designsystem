@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
-import { addParameters } from '@storybook/react';
 
 import './polyfills';
 import './_container.scss';
-
-import { withOptions } from '@storybook/addon-options';
 
 import SingleComponent from '../src/documentation/SingleComponent';
 
@@ -22,10 +19,12 @@ export default class Container extends Component {
       window.scrollTo(0, 0);
       /*if (nextProps.context.story.includes('html')) {
         withOptions({ selectedAddonPanel: 'lucid-docs-panel-code' });
-      } else*/ if (nextProps.context.story.includes('Right to left')) {
-        withOptions({ selectedAddonPanel: 'storybook/rtl' });
+      } else*/ if (
+        nextProps.context.story.includes('Right to left')
+      ) {
+        //withOptions({ selectedAddonPanel: 'storybook/rtl' });
       } else {
-        withOptions({ selectedAddonPanel: 'REACT_STORYBOOK/readme/panel' });
+        //withOptions({ selectedAddonPanel: 'REACT_STORYBOOK/readme/panel' });
       }
 
       return {
@@ -43,7 +42,6 @@ export default class Container extends Component {
       storyRender.props.children && storyRender.props.children.props
         ? storyRender.props.children.props['data-flexbasis']
         : undefined;
-
 
     if (context && !context.kind.indexOf(' ') == 0) {
       return (
