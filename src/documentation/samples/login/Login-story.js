@@ -16,7 +16,7 @@ storiesOf('Documentation|Samples', module)
       open
       hideClose
       modalHeading="Login"
-      modalLabel="WFP Sample Application"
+      modalLabel="Sample Application"
       primaryButtonText="Login"
       secondaryButtonText="Forgot password?"
       modalFooter={({ primaryButtonText, secondaryButtonText }) => (

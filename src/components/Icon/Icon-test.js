@@ -1,6 +1,6 @@
 import React from 'react';
 import { iconSearch } from '@wfp/icons';
-import Icon, { findIcon, svgShapes, getSvgData, isPrefixed } from '../Icon';
+import Icon, { svgShapes, isPrefixed } from '../Icon';
 import { mount } from 'enzyme';
 
 describe('Icon', () => {

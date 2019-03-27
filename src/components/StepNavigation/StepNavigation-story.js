@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, boolean, number, text } from '@storybook/addon-knobs';
+import { withKnobs, boolean, number } from '@storybook/addon-knobs';
 
 import StepNavigation from '../StepNavigation';
 import StepNavigationItem from '../StepNavigationItem';

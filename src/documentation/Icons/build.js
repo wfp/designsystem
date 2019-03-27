@@ -3,7 +3,6 @@ const svgo = require('gulp-svgo');
 const rsp = require('remove-svg-properties').stream;
 const dom = require('gulp-dom');
 const xmlEdit = require('gulp-edit-xml');
-const { toPath } = require('svg-points');
 
 const svgBuild = src => {
   return gulp

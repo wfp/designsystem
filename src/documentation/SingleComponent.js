@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Wrapper from '../components/Wrapper';
 
 import classnames from 'classnames';
 

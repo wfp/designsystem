@@ -76,7 +76,7 @@ export default class Wizard extends React.Component {
         validate={this.validate}
         onSubmit={this.handleSubmit}>
         {({ handleSubmit, submitting, values }) => (
-          <form onSubmit={handleSubmit} className="wfp--form-long">
+          <form onSubmit={handleSubmit}>
             <FormWizard
               formHeader={`Page: ${page}`}
               formControls={
@@ -115,7 +115,7 @@ export default class Wizard extends React.Component {
                 </StepNavigation>
               }>
               {/* Adding the wfp--form-long class is important */}
-              {activePage}
+              <div className="wfp--form-long">{activePage}</div>
             </FormWizard>
 
             <FormSpy
