@@ -22,7 +22,6 @@
     align-items: center;
     &:focus {
       outline: none;
-      background: blue;
     }
     &:first-child {
       .#{$prefix}--step-navigation__nav-item__indicator {
@@ -204,6 +203,7 @@
 
   .#{$prefix}--step-navigation__nav-item--complete {
     .#{$prefix}--step-navigation__nav-item__indicator {
+      border-color: $support-02;
       .#{$prefix}--step-navigation--small & {
         border-color: $support-02;
         background: $support-02;

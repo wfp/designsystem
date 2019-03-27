@@ -53,6 +53,10 @@ export default class Modal extends Component {
      * Specify the content of the modal header label.
      */
     modalLabel: PropTypes.node,
+    /**
+     * Specify the a function which renders a custom ModalFooter.
+     */
+    modalFooter: PropTypes.func,
 
     /**
      * Specify a label to be read by screen readers on the modal root node

@@ -9,6 +9,7 @@ import ReduxFormWrapper from '../../components/ReduxFormWrapper';
 import TextInput from '../../components/TextInput';
 import TextArea from '../../components/TextArea';
 import FormGroup from '../../components/FormGroup';
+import Blockquote from '../../components/Blockquote';
 import Wrapper from '../../components/Wrapper';
 import RadioButton from '../../components/RadioButton/RadioButton';
 import RegularPage from '../RegularPage';
@@ -30,14 +31,23 @@ const renderError = ({ meta: { touched, error } }) =>
 storiesOf('Documentation|Samples', module)
   .addParameters({ options: { showPanel: false, isToolshown: false } })
   .addDecorator(story => (
-    <RegularPage withoutSecondaryTabs>{story()}</RegularPage>
+    <RegularPage pageWidth="md" withoutSecondaryTabs>
+      {story()}
+    </RegularPage>
   ))
   .add('Wizard Form final-form (draft)', () => (
-    <Wrapper background="lighter" pageWidth="lg" spacing="xl">
+    <Wrapper background="lighter" pageWidth="md" spacing="xl">
       <Wizard
         initialValues={{ employed: true, stooge: 'larry' }}
         onSubmit={onSubmit}>
         <Wizard.Page>
+          <Blockquote
+            style={{ marginBottom: '2rem' }}
+            title="Regular Blockquote">
+            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+            nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
+            erat, sed diam voluptua.{' '}
+          </Blockquote>
           <div class="row">
             <div className="col-md-6">
               <Field

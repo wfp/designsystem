@@ -51,10 +51,17 @@ const renderAnchor = props => {
   return <a href={props.href}>{props.label}</a>;
 };
 
-const Page = ({ children, withoutSecondary, withoutSecondaryTabs }) => {
+const Page = ({
+  children,
+  withoutSecondary,
+  withoutSecondaryTabs,
+  pageWidth,
+}) => {
   return (
     <div>
-      <MainNavigation logo={<a href="http://www.wfp.org">WFP UI</a>}>
+      <MainNavigation
+        pageWidth={pageWidth}
+        logo={<a href="http://www.wfp.org">WFP UI</a>}>
         <MainNavigationItem>
           <Link href="http://communities.wfp.org" target="_blank">
             Communities
@@ -219,7 +226,7 @@ const Page = ({ children, withoutSecondary, withoutSecondaryTabs }) => {
       {!withoutSecondary && (
         <SecondaryNavigation
           additional="additional Information"
-          pageWidth="narrow">
+          pageWidth={pageWidth}>
           <Breadcrumb>
             <BreadcrumbItem>
               <a href="/#">
@@ -263,7 +270,7 @@ const Page = ({ children, withoutSecondary, withoutSecondaryTabs }) => {
 
       {children}
       <Footer
-        pageWidth="lg"
+        pageWidth={pageWidth}
         metaContent="WFP UI Kit version 1.0 – powered by RMT with full support of concerned divisions which are responsible for the accuracy of the content">
         <div className="wfp--footer__info">
           <div className="wfp--footer__info__item">
@@ -300,6 +307,10 @@ Page.propTypes = {
   */
   children: PropTypes.node,
   className: PropTypes.string,
+};
+
+Page.defaultProps = {
+  pageWidth: 'lg',
 };
 
 export default Page;

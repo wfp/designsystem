@@ -78,7 +78,7 @@ export default class Wizard extends React.Component {
         {({ handleSubmit, submitting, values }) => (
           <form onSubmit={handleSubmit}>
             <FormWizard
-              formHeader={`Page: ${page}`}
+              formHeader={`Step: ${page}/4 Some more text`}
               formControls={
                 <FormControls
                   onPreviousClick={this.previous}
