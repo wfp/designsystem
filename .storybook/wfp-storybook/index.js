@@ -44,13 +44,18 @@ export const withNotes = makeDecorator({
       text: text,
     }; */
 
-    var filename = context.parameters.fileName;
-    filename = filename.substr(0, filename.lastIndexOf('/'));
+    //var filename = context.parameters.fileName;
+    //filename = filename ? filename.substr(0, filename.lastIndexOf('/')) : undefined;
 
-    text = `# ${context.kind.replace(
-      'Components|',
-      ''
-    )} <a href="https://github.com/wfp/ui/tree/next/${filename}">(View Source on Github)</a>
+    var kind = context.kind;
+    kind = kind.replace('Components|', 'components/');
+    //foldername = filename ? filename.substr(0, filename.lastIndexOf('/')) : undefined;
+
+    var githubLink = kind.includes('components/')
+      ? `<a href="https://github.com/wfp/ui/tree/next/src/${kind}">(View Source on Github)</a>`
+      : '';
+
+    text = `# ${context.kind.replace('Components|', '')} ${githubLink}
 
 ${text}
 

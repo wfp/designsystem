@@ -262,21 +262,31 @@ const Page = ({ children, withoutSecondary, withoutSecondaryTabs }) => {
       )}
 
       {children}
-
       <Footer
-        className="some-class"
-        metaContent="WFP UI Kit version 1.0 – powered by RMT with full support of concerned divisions which are responsible for the accuracy of the content"
-        pageWidth="narrow">
-        <div className="wfp--footer-info">
-          <div className="wfp--footer-info__item">
-            <p className="wfp--footer-label">A label</p>
-            <Link href="http://www.wfp.org">First Link</Link>
-            <Link href="http://www.wfp.org">Second Link</Link>
+        pageWidth="lg"
+        metaContent="WFP UI Kit version 1.0 – powered by RMT with full support of concerned divisions which are responsible for the accuracy of the content">
+        <div className="wfp--footer__info">
+          <div className="wfp--footer__info__item">
+            <p className="wfp--footer__label">A label</p>
+            <ul className="wfp--footer__list">
+              <li>
+                <Link href="http://www.wfp.org">First Link</Link>
+              </li>
+              <li>
+                <Link href="http://www.wfp.org">Second Link</Link>
+              </li>
+            </ul>
           </div>
-          <div className="wfp--footer-info__item">
-            <p className="wfp--footer-label">Another label</p>
-            <Link href="http://www.go.wfp.org">WFP go</Link>
-            <Link href="http://www.wfp.org">Second Link</Link>
+          <div className="wfp--footer__info__item">
+            <p className="wfp--footer__label">Another label</p>
+            <ul className="wfp--footer__list">
+              <li>
+                <Link href="http://www.wfp.org">First Link</Link>
+              </li>
+              <li>
+                <Link href="http://www.wfp.org">Second Link</Link>
+              </li>
+            </ul>
           </div>
         </div>
       </Footer>

@@ -83,16 +83,49 @@ const Card = ({
 };
 
 Card.propTypes = {
+  /**
+   List of `BannerNavigationItem` components
+ */
   children: PropTypes.node,
+  /**
+   Additional className which will be added
+ */
   className: PropTypes.string,
+  /**
+   An optimized photograph
+ */
   image: PropTypes.string,
+  /**
+  External link flag
+*/
   isExternal: PropTypes.bool,
+  /**
+  Render as link
+*/
   isLink: PropTypes.bool,
+  /**
+  A short sentence to explain the content of the node (max 180 characters) 
+*/
   subTitle: PropTypes.node,
+  /**
+   A search-friendly title (ideally 50 characters, max 100) 
+*/
   title: PropTypes.node,
+  /**
+  Additional metadatas
+*/
   metadata: PropTypes.string,
+  /**
+  Additional more content
+*/
   more: PropTypes.node,
+  /**
+  Kind of Card
+*/
   kind: PropTypes.string,
+  /**
+  The URL where the content uploaded is located.
+*/
   url: PropTypes.string,
 };
 

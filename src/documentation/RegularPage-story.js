@@ -6,7 +6,7 @@ import Blockquote from '../components/Blockquote';
 import RegularPage from './RegularPage';
 import Story from '../components/Story';
 import Wrapper from '../components/Wrapper';
-storiesOf(' Documentation|Sample Pages', module)
+storiesOf(' Documentation|Samples', module)
   .addDecorator(story => (
     <RegularPage withoutSecondaryTabs>{story()}</RegularPage>
   ))

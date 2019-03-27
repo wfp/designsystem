@@ -2,6 +2,8 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
 
+import { Module, ModuleBody, ModuleHeader, ModuleFooter } from '../Module';
+
 export default class FormWizard extends React.Component {
   static propTypes = {
     /**
@@ -24,7 +26,13 @@ export default class FormWizard extends React.Component {
   static defaultProps = {};
 
   render() {
-    const { className, children, sidebar } = this.props;
+    const {
+      className,
+      children,
+      formHeader,
+      formControls,
+      sidebar,
+    } = this.props;
 
     const classes = {
       formControls: classNames('wfp--form-wizard', className),
@@ -33,7 +41,11 @@ export default class FormWizard extends React.Component {
     return (
       <div className={classes.formControls}>
         <div className="wfp--form-wizard__sidebar">{sidebar}</div>
-        <div className="wfp--form-wizard__content">{children}</div>
+        <Module className="wfp--form-wizard__content" noMargin>
+          <ModuleHeader>{formHeader}</ModuleHeader>
+          <ModuleBody>{children}</ModuleBody>
+          <ModuleFooter>{formControls}</ModuleFooter>
+        </Module>
       </div>
     );
   }

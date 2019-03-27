@@ -150,7 +150,7 @@ storiesOf('Documentation|General', module)
         </Link>
       </Blockquote>
 
-      <h3>Generate an custom Icon</h3>
+      <h3>Generate custom Icon</h3>
       <p>
         Generate a custom icon which can be used inside the{' '}
         <span className="wfp--inline-highlight">icon</span> prop of the{' '}

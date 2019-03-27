@@ -267,6 +267,7 @@ export default class Modal extends Component {
     const {
       modalHeading,
       modalLabel,
+      modalFooter,
       modalAriaLabel,
       passiveModal,
       secondaryButtonText,
@@ -331,22 +332,26 @@ export default class Modal extends Component {
         <div className={`${prefix}--modal-content`}>{this.props.children}</div>
         {!passiveModal && (
           <div className={`${prefix}--modal-footer`}>
-            <div className={`${prefix}--modal__buttons-container`}>
-              {secondaryButtonText && (
+            {!modalFooter ? (
+              <div className={`${prefix}--modal__buttons-container`}>
+                {secondaryButtonText && (
+                  <Button
+                    kind={danger ? 'tertiary' : 'secondary'}
+                    onClick={onSecondaryButtonClick}>
+                    {secondaryButtonText}
+                  </Button>
+                )}
                 <Button
-                  kind={danger ? 'tertiary' : 'secondary'}
-                  onClick={onSecondaryButtonClick}>
-                  {secondaryButtonText}
+                  kind={danger ? 'danger--primary' : 'primary'}
+                  disabled={primaryButtonDisabled}
+                  onClick={onRequestSubmit}
+                  inputref={this.button}>
+                  {primaryButtonText}
                 </Button>
-              )}
-              <Button
-                kind={danger ? 'danger--primary' : 'primary'}
-                disabled={primaryButtonDisabled}
-                onClick={onRequestSubmit}
-                inputref={this.button}>
-                {primaryButtonText}
-              </Button>
-            </div>
+              </div>
+            ) : (
+              <div>{modalFooter(this.props)}</div>
+            )}
           </div>
         )}
       </div>

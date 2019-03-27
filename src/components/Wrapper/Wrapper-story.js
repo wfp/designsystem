@@ -35,7 +35,8 @@ storiesOf('Components|Wrapper', module)
 
     const optionsSpacing = {
       '': 'undefined',
-      full: 'full',
+      md: 'md',
+      xl: 'xl',
     };
 
     const spacing = select('spacing', optionsSpacing, defaultValue);

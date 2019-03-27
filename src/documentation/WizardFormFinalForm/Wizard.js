@@ -1,11 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Form } from 'react-final-form';
+import { Form, FormSpy } from 'react-final-form';
 import FormWizard from '../../components/FormWizard';
-import Wrapper from '../../components/Wrapper';
 import FormControls from '../../components/FormControls';
 import StepNavigation from '../../components/StepNavigation';
 import StepNavigationItem from '../../components/StepNavigationItem';
+
+const handleValidation = props => {
+  return null;
+};
 
 export default class Wizard extends React.Component {
   static propTypes = {
@@ -20,6 +23,13 @@ export default class Wizard extends React.Component {
       values: props.initialValues || {},
     };
   }
+
+  handleTabClick = values =>
+    this.setState(state => ({
+      page: values,
+      values,
+    }));
+
   next = values =>
     this.setState(state => ({
       page: Math.min(state.page + 1, this.props.children.length - 1),
@@ -61,28 +71,15 @@ export default class Wizard extends React.Component {
     const activePage = React.Children.toArray(children)[page];
     const isLastPage = page === React.Children.count(children) - 1;
     return (
-      <Wrapper pageWidth="md" spacing="xl">
-        <FormWizard
-          sidebar={
-            <StepNavigation
-              selectedPage={page}
-              handleTabClick={this.handleTabClick}>
-              <StepNavigationItem label="Name and last name" page={0} />
-              <StepNavigationItem
-                label="Additional information with long description"
-                page={1}
-                status="not-started"
-              />
-            </StepNavigation>
-          }>
-          <Form
-            initialValues={values}
-            validate={this.validate}
-            onSubmit={this.handleSubmit}>
-            {({ handleSubmit, submitting, values }) => (
-              <form onSubmit={handleSubmit} className="wfp--form-long">
-                {/* Adding the wfp--form-long class is important */}
-                {activePage}
+      <Form
+        initialValues={values}
+        validate={this.validate}
+        onSubmit={this.handleSubmit}>
+        {({ handleSubmit, submitting, values }) => (
+          <form onSubmit={handleSubmit} className="wfp--form-long">
+            <FormWizard
+              formHeader={`Page: ${page}`}
+              formControls={
                 <FormControls
                   onPreviousClick={this.previous}
                   previousHidden={page > 0 ? false : true}
@@ -90,12 +87,47 @@ export default class Wizard extends React.Component {
                   submitHidden={!isLastPage}
                   onSubmitClick={handleSubmit}
                 />
-                <pre>{JSON.stringify(values, 0, 2)}</pre>
-              </form>
-            )}
-          </Form>
-        </FormWizard>
-      </Wrapper>
+              }
+              sidebar={
+                <StepNavigation
+                  selectedPage={page}
+                  handleTabClick={this.handleTabClick}>
+                  <StepNavigationItem
+                    label="Name and last name"
+                    page={0}
+                    status={page >= 1 ? 'complete' : 'not-started'}
+                  />
+                  <StepNavigationItem
+                    label="Additional information"
+                    page={1}
+                    status={page >= 2 ? 'complete' : 'not-started'}
+                  />
+                  <StepNavigationItem
+                    label="Et jomen bin"
+                    page={2}
+                    status={page >= 3 ? 'complete' : 'not-started'}
+                  />
+                  <StepNavigationItem
+                    label="Sulamen mon anmen"
+                    page={3}
+                    status={page >= 2 ? 'complete' : 'locked'}
+                  />
+                </StepNavigation>
+              }>
+              {/* Adding the wfp--form-long class is important */}
+              {activePage}
+            </FormWizard>
+
+            <FormSpy
+              subscription={{ active: true, values: true }}
+              component={handleValidation}
+            />
+            <br />
+            <br />
+            <pre>{JSON.stringify(values, 0, 2)}</pre>
+          </form>
+        )}
+      </Form>
     );
   }
 }

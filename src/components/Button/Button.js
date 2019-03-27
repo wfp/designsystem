@@ -125,19 +125,15 @@ Button.propTypes = {
   role: PropTypes.string,
 
   /**
-   * Specify an icon to include in the Button through a string or object
-   * representing the SVG data of the icon
+   * Specify an `icon` to include in the Button through an object
+   * representing the SVG data of the icon, similar to the `Icon` component
    */
-  icon: PropTypes.oneOfType([
-    PropTypes.shape({
-      width: PropTypes.string,
-      height: PropTypes.string,
-      viewBox: PropTypes.string.isRequired,
-      svgData: PropTypes.object.isRequired,
-    }),
-    PropTypes.string,
-  ]),
-
+  icon: PropTypes.shape({
+    width: PropTypes.string,
+    height: PropTypes.string,
+    viewBox: PropTypes.string.isRequired,
+    svgData: PropTypes.object.isRequired,
+  }),
   /**
    * If specifying the `icon` prop, provide a description for that icon that can
    * be read by screen readers

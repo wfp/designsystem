@@ -1,0 +1,1 @@
+FormLabel can be used whenever it is needed to show a label detached from a regular input.

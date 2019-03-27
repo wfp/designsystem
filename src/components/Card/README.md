@@ -26,19 +26,3 @@ Page splash with compact size - title and link
 
 #### Teaser
 Card used on publication teasers
-
-  
-
-| Setting | Default | Options | Role |
-| --------- | ----------- | -------------------- | ------------------------------------------------------------------ |
-| children | `undefined` | `string` | List of `BannerNavigationItem` components |
-| className | `undefined` | `string`  `undefined` | Additional className which will be added to the `BannerNavigation` |
-| image | `undefined` | `string` | An optimized photograph |
-| isExternal | `undefined` | `bool` | External link flag |
-| isLink | `undefined` | `bool` | Render as link |
-| subTitle | `undefined` | `node` `string` | A short sentence to explain the content of the node (max 180 characters) |
-| title | `undefined` | `node` `string` |  A search-friendly title (ideally 50 characters, max 100) |
-| metadata | `undefined` | `node` `string` |  |
-| more | `undefined` | `string` `string` |  |
-| kind | `undefined` | `string` | Kind of Card |
-| url | `undefined` | `string` | The URL where the content uploaded is located. |

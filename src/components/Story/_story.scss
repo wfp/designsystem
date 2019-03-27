@@ -113,7 +113,9 @@
   }
 
   .#{$prefix}--blockquote {
-    //margin-bottom: 1.5em;
+    p {
+      margin: 0;
+    }
   }
 
   .#{$prefix}--story__title {

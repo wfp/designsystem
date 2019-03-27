@@ -9,7 +9,7 @@
   // <button> elements cannot be used as flex containers
   .#{$prefix}--blockquote {
     background-color: $color__navy-gray-9;
-    border-left: 5px solid $brand-01;
+    border-left: 15px solid $brand-01;
     margin: $spacing-xs 0;
     position: relative;
     pre[class*='language-'] {
@@ -61,7 +61,7 @@
 
   .#{$prefix}--blockquote__title {
     display: block;
-    font-weight: bold;
+    font-weight: 600;
     padding: $spacing-md $spacing-md 0 $spacing-md;
   }
 

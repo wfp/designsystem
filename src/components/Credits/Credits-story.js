@@ -6,7 +6,7 @@ import SingleComponent from '../../documentation/SingleComponent';
 
 import Credits from '../Credits';
 
-storiesOf('Components|Components|Credits', module)
+storiesOf('Components|Credits', module)
   .addDecorator(story => <SingleComponent>{story()}</SingleComponent>)
 
   .add('Default', () => (
