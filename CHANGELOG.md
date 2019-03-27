@@ -2,7 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-# [1.2.0-alpha.14](https://github.com/WFP/UI/compare/v1.2.0-alpha.13...v1.2.0-alpha.14) (2019-03-27)
+# [1.2.0-alpha.15](https://github.com/WFP/UI/compare/v1.2.0-alpha.14...v1.2.0-alpha.15) (2019-03-27)
+
+
+### Features
+
+* **Form:** Modal scrollbar, Input spacings ([722536b](https://github.com/WFP/UI/commit/722536b))
 
 
 
