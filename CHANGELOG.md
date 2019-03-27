@@ -2,23 +2,7 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-# [1.2.0-alpha.12](https://github.com/WFP/UI/compare/v1.2.0-alpha.11...v1.2.0-alpha.12) (2019-03-25)
-
-
-### Bug Fixes
-
-* **DatePicker:** small display alignment ([d788cc1](https://github.com/WFP/UI/commit/d788cc1))
-* **Modal:** Tests fixed ([1fadccf](https://github.com/WFP/UI/commit/1fadccf))
-* **NumberInput:** controls work with Final Forms ([afaad34](https://github.com/WFP/UI/commit/afaad34))
-
-
-### Features
-
-* **IconConverter:** add custom icons ([cda8e68](https://github.com/WFP/UI/commit/cda8e68))
-* **Icons:** Icon, MainNavigation, Footer, Blockquote ([9562a94](https://github.com/WFP/UI/commit/9562a94))
-* **MainNavigation:** Add a prop to set the sub navigation dropdown wide as its content ([c2a7a28](https://github.com/WFP/UI/commit/c2a7a28))
-* **StepNavigation:** Icons progress indicator line ([6785385](https://github.com/WFP/UI/commit/6785385))
-* **Tabs:** refactored styling, more flexibility with external libraries ([#184](https://github.com/WFP/UI/issues/184)) ([e99141a](https://github.com/WFP/UI/commit/e99141a))
+# [1.2.0-alpha.14](https://github.com/WFP/UI/compare/v1.2.0-alpha.13...v1.2.0-alpha.14) (2019-03-27)
 
 
 
