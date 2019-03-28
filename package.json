@@ -107,8 +107,8 @@
   },
   "peerDependencies": {
     "@wfp/icons": "^0.0.78",
-    "react": "^16.4.0",
-    "react-dom": "^16.4.0"
+    "react": "^16.8.5",
+    "react-dom": "^16.8.5"
   },
   "dependencies": {
     "classnames": "2.2.6",
@@ -208,9 +208,9 @@
     "promise": "^8.0.1",
     "prop-types": "^15.5.8",
     "raw-loader": "^0.5.1",
-    "react": "^16.7.0",
+    "react": "^16.8.5",
     "react-dates": "^18.4.0",
-    "react-dom": "^16.7.0",
+    "react-dom": "^16.8.5",
     "react-final-form": "^4.0.2",
     "react-prism": "^4.3.2",
     "react-redux": "^5.0.7",

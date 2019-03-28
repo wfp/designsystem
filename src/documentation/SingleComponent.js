@@ -21,22 +21,11 @@ class SingleComponent extends Component {
     //'wfp--story',
     const classNames = classnames({
       'wfp--single-component--top': height >= 300,
+      'wfp--single-component--centered': centered && height <= 200,
     });
 
     return (
-      <div
-        style={
-          centered && height <= 200
-            ? {
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                height: '100%',
-              }
-            : undefined
-        }
-        className={classNames}
-        pageWidth={pageWidth}>
+      <div className={classNames} pageWidth={pageWidth}>
         <div
           id="container"
           style={{ flexBasis: flexBasis ? flexBasis : 'auto' }}>

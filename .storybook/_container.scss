@@ -19,6 +19,7 @@ $css--reset: true;
 
   //border: 2px solid $ui-04;
 }
+
 html {
   height: 100%;
 }
@@ -123,6 +124,15 @@ table {
   th,
   td {
     border: 1px solid #ccc;
+  }
+}
+
+@include breakpoint(bp--sm--major) {
+  .wfp--single-component--centered {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
   }
 }
 
