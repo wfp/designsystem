@@ -88,7 +88,12 @@ MainNavigationItem.propTypes = {
    * The CSS class name to be placed on the wrapping element.
    */
   className: PropTypes.string,
-  children: PropTypes.node.isRequired,
+  children: PropTypes.element.isRequired,
+  /**
+   * If defined the `MainNaviationItem` will have a toggleable
+   * SubNavigation. See the `SubNavigation` component for details on usage
+   */
+  subNavigation: PropTypes.node,
 };
 
 export default MainNavigationItem;

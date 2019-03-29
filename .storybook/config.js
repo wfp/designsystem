@@ -24,7 +24,8 @@ addDecorator(
 
 addParameters({
   backgrounds: [
-    { name: 'WFP white (ui-01)', value: '#F6F9FC', default: true },
+    { name: 'WFP white (ui-01)', value: '#fbfcfc', default: true },
+    { name: 'WFP background (ui-02)', value: '#eff2f5', default: true },
     { name: 'WFP brand (brand-01)', value: '#0a6eb4' },
   ],
 });

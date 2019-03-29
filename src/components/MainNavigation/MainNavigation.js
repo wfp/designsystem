@@ -108,18 +108,40 @@ class MainNavigation extends Component {
 }
 
 MainNavigation.propTypes = {
+  /**
+   * Usually multiple `MainNavigationItem` elements
+   */
   children: PropTypes.node.isRequired,
   /**
    * The CSS class name to be placed on the wrapping element.
    */
   className: PropTypes.string,
+  /**
+   * Defines an ID for the component.
+   */
   id: PropTypes.string,
+  /**
+   * The Logo can be either a string or a component
+   */
+  logo: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
+  /**
+   * See `Wrapper` component for more information
+   */
+  pageWidth: PropTypes.string,
+  /**
+   * See `Wrapper` component for more information
+   */
+  mobilePageWidth: PropTypes.string,
+  /**
+   * Additional className for the `Wrapper`
+   */
   wrapperClassName: PropTypes.string,
 };
 
 MainNavigation.defaultProps = {
   pageWidth: 'md',
   mobilePageWidth: 'full',
+  logo: 'WFP',
 };
 
 export default MainNavigation;
