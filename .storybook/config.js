@@ -22,6 +22,13 @@ addDecorator(
   })
 );
 
+addParameters({
+  backgrounds: [
+    { name: 'WFP white (ui-01)', value: '#F6F9FC', default: true },
+    { name: 'WFP brand (brand-01)', value: '#0a6eb4' },
+  ],
+});
+
 addDecorator(addReadme);
 
 /*

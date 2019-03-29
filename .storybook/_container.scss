@@ -23,8 +23,13 @@ $css--reset: true;
 html {
   height: 100%;
 }
+
+#storybook-preview-background {
+  background: $ui-01;
+}
 body {
   height: 100%;
+  background: none;
   div[role='main'] {
     height: 100%;
   }

@@ -38,10 +38,8 @@ export InlineLoading from './components/InlineLoading';
 
 export { List, ListItem } from './components/List';
 
-export {
-  MainNavigation,
-  MainNavigationItem,
-} from './components/MainNavigation';
+export MainNavigation from './components/MainNavigation';
+export MainNavigationItem from './components/MainNavigationItem';
 
 export {
   SubNavigation,
