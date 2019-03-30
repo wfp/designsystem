@@ -6,7 +6,7 @@ Step by step navigation is a way of presenting end-to-end journeys and wizard fo
 
 - warning (warning that there is information missing)
 
-- error (draft)
+- error (experimental)
 
 - not-started (currently empty, because not yet started)
 

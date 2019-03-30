@@ -35,7 +35,13 @@ BreadcrumbItem.propTypes = {
    * The children elements, usually a link
    */
   children: PropTypes.node,
+  /**
+   * Specify an optional className to be added to the `BreadcrumbItem` Icon
+   */
   className: PropTypes.string,
+  /**
+   * Specify an link for the `BreadcrumbItem`
+   */
   href: PropTypes.string,
 };
 

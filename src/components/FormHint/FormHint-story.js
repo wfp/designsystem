@@ -13,7 +13,7 @@ const props = () => ({
 
 storiesOf('Components|FormHint', module)
   .addDecorator(withKnobs)
-  .add('Default (in development)', () => (
+  .add('Default (experimental)', () => (
     <label className="wfp--label" htmlFor="input">
       The Label <FormHint {...props()} TooltipComponent={Tooltip} />
     </label>

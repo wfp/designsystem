@@ -81,10 +81,10 @@ const props = {
 
 storiesOf('Components|DatePicker', module)
   .addDecorator(withKnobs)
-  .add('SingleDatePicker (draft)', () => (
+  .add('SingleDatePicker (experimental)', () => (
     <SingleDatePickerInput {...props.datePicker()} />
   ))
-  .add('DateRangePicker (draft)', () => (
+  .add('DateRangePicker (experimental)', () => (
     <DateRangePickerInput {...props.dateRangePicker()} />
   ))
   .addDecorator(story => (
@@ -92,13 +92,13 @@ storiesOf('Components|DatePicker', module)
       <FormWrapper>{story()}</FormWrapper>
     </Provider>
   ))
-  .add('DatePicker Field (draft)', () => (
+  .add('DatePicker Field (experimental)', () => (
     <Field
       {...props.datePickerField()}
       format={value => (value ? moment(value) : undefined)}
       normalize={data => data && data.value && data.value.format()}
     />
   ))
-  .add('DateRangePicker Field (draft)', () => (
+  .add('DateRangePicker Field (experimental)', () => (
     <Field {...props.dateRangePickerField()} />
   ));

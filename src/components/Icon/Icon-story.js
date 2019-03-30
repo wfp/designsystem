@@ -109,7 +109,7 @@ storiesOf('Components|Icon', module)
       <Icon {...props.default()} />
     </div>
   ))
-  .add('Custom Icon (Draft)', () => (
+  .add('Custom Icon (experimental)', () => (
     <div>
       <Icon {...props.custom()} />
     </div>

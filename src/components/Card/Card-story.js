@@ -57,7 +57,7 @@ storiesOf('Components|Card', module)
   .addDecorator(withKnobs)
   .addParameters({ jest: ['Card-test'] })
   .addDecorator(story => <div style={{ width: '100%' }}>{story()}</div>)
-  .add('Default (Draft)', () => {
+  .add('Default (experimental)', () => {
     const setProps = props.set();
     return <Card {...setProps} more={buttons[setProps.moreButton]} />;
   });

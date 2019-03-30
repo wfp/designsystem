@@ -35,7 +35,7 @@ storiesOf('Documentation|Samples', module)
       {story()}
     </RegularPage>
   ))
-  .add('Wizard Form final-form (draft)', () => (
+  .add('Wizard Form final-form (experimental)', () => (
     <Wrapper background="lighter" pageWidth="md" spacing="xl">
       <Wizard
         initialValues={{ employed: true, stooge: 'larry' }}

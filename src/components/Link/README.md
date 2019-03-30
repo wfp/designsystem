@@ -7,5 +7,9 @@ Links can have the same properties as an `<a>`-Element.
 Use the Link styling by adding the className `wfp--link` to `<NavLink />`
 
 ```js
+import { Link } from '@wfp/ui';
+```
+
+```js
 <NavLink className="wfp--link">Link</NavLink>
 ```

@@ -65,7 +65,9 @@ class Notes extends React.Component {
             Your feedback is highly appreciated! Please use the buttons below to
             provide feedback.
           </p>
-          <Button kind="secondary">Create Issue on GitHub</Button>{' '}
+          <Button kind="secondary" href="https://github.com/wfp/ui/issues/">
+            Create Issue on GitHub
+          </Button>{' '}
           <Button kind="secondary" href="slack://channel?team=wfp&id=ux-ui">
             UX-UI Slack channel
           </Button>{' '}

@@ -21,7 +21,14 @@ const BreadcrumbHome = ({ className, hometext, ...other }) => {
 };
 
 BreadcrumbHome.propTypes = {
-  type: PropTypes.string,
+  /**
+   * Specify an optional className to be added to the `Home` Icon
+   */
+  className: PropTypes.string,
+  /**
+   * Specify an optional text for the `Home` Icon
+   */
+  hometext: PropTypes.string,
 };
 
 export default BreadcrumbHome;

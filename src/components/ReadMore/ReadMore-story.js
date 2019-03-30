@@ -48,6 +48,6 @@ const props = {
 
 storiesOf('Components|ReadMore', module)
   .addDecorator(withKnobs)
-  .add('Default (draft)', () => <ReadMore {...props.regular()} />)
-  .add('Fade & animate (draft)', () => <ReadMore {...props.fade()} />)
+  .add('Default (experimental)', () => <ReadMore {...props.regular()} />)
+  .add('Fade & animate (experimental)', () => <ReadMore {...props.fade()} />)
   .add('Custom Buttons', () => <ReadMore {...props.customButton()} />);

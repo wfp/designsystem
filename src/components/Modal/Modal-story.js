@@ -87,7 +87,7 @@ storiesOf('Components|Modal', module)
       </p>
     </Modal>
   ))
-  .add('Long Content (Draft)', () => (
+  .add('Long Content (experimental)', () => (
     <Modal {...props.default()}>
       <p className="wfp--modal-content__text">
         Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
@@ -128,7 +128,7 @@ storiesOf('Components|Modal', module)
       </p>
     </Modal>
   ))
-  .add('Dialog Page (draft)', () => (
+  .add('Dialog Page (experimental)', () => (
     <Modal {...props.dialog()}>
       <p className="wfp--modal-content__text">
         <TextInput
