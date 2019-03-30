@@ -3,13 +3,13 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 
 const useExperimentalFeatures =
-  process.env.CARBON_USE_EXPERIMENTAL_FEATURES === 'true';
+  process.env.WFP_UI_USE_EXPERIMENTAL_FEATURES === 'true';
 
 const useExternalCss =
-  process.env.CARBON_REACT_STORYBOOK_USE_EXTERNAL_CSS === 'true';
+  process.env.WFP_UI_REACT_STORYBOOK_USE_EXTERNAL_CSS === 'true';
 
 const useStyleSourceMap =
-  process.env.CARBON_REACT_STORYBOOK_USE_STYLE_SOURCEMAP === 'true';
+  process.env.WFP_UI_REACT_STORYBOOK_USE_STYLE_SOURCEMAP === 'true';
 
 const replaceTable = {
   componentsX: useExperimentalFeatures,
@@ -50,7 +50,8 @@ const styleLoaders = [
   },
 ];
 
-module.exports = function(baseConfig, env, defaultConfig) {
+/*
+module.exports = function (baseConfig, env, defaultConfig) {
   defaultConfig.module.rules.push({
     test: /\-story\.js$/,
     loaders: [require.resolve('@storybook/addon-storysource/loader')],
@@ -59,6 +60,7 @@ module.exports = function(baseConfig, env, defaultConfig) {
 
   return defaultConfig;
 };
+*/
 
 module.exports = async ({ config, mode }) => {
   config.devtool = useStyleSourceMap ? 'source-map' : '';
@@ -86,7 +88,7 @@ module.exports = async ({ config, mode }) => {
     },
   });
 
-  config.module.rules.push({
+  /* config.module.rules.push({
     test: /-story\.jsx?$/,
     loaders: [
       {
@@ -105,7 +107,7 @@ module.exports = async ({ config, mode }) => {
       },
     ],
     enforce: 'pre',
-  });
+  }); */
 
   config.module.rules.push({
     test: /\.scss$/,

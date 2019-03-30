@@ -2,7 +2,12 @@ import React from 'react';
 import addons from '@storybook/addons';
 import styled from '@emotion/styled';
 import { addParameters, configure, addDecorator } from '@storybook/react';
+import { blue } from 'ansi-colors';
 
+import './_wfp-storybook.scss';
+
+import Button from '../../src/components/Button';
+import Story from '../../src/components/Story';
 const NotesPanel = styled.div({
   margin: 10,
   width: '100%',
@@ -40,7 +45,36 @@ class Notes extends React.Component {
      window.usabilla_live = lightningjs.require("usabilla_live", "//w.usabilla.com/47554182d0dc.js");
      /*]]>{/literal}*/</script>
      <!-- end usabilla live embed code -->`;
-    return active ? <div>Feedback</div> : null;
+    if (!active) {
+      return null;
+    }
+    return (
+      <div
+        style={{
+          position: 'absolute',
+          top: 0,
+          height: '100%',
+          width: '100%',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          textAlign: 'center',
+        }}>
+        <Story>
+          <p style={{ marginBottom: '2rem' }}>
+            Your feedback is highly appreciated! Please use the buttons below to
+            provide feedback.
+          </p>
+          <Button kind="secondary">Create Issue on GitHub</Button>{' '}
+          <Button kind="secondary" href="slack://channel?team=wfp&id=ux-ui">
+            UX-UI Slack channel
+          </Button>{' '}
+          <Button kind="secondary" href="mailto:robert.guehne@wfp.org">
+            Send email
+          </Button>
+        </Story>
+      </div>
+    );
   }
 
   // This is some cleanup tasks when the Notes panel is unmounting.

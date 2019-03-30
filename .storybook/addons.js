@@ -12,4 +12,3 @@ import '@storybook/addon-jest/register';
 //import 'storybook-addon-rtl/register';
 //import '@storybook/addon-storysource/register';
 import './wfp-storybook/register';
-//require('./lucid-docs-addon/register');

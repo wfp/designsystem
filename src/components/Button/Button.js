@@ -125,8 +125,7 @@ Button.propTypes = {
   role: PropTypes.string,
 
   /**
-   * Specify an `icon` to include in the Button through an object
-   * representing the SVG data of the icon, similar to the `Icon` component
+   * Specify an `icon` to include in the Button through an object representing the SVG data of the icon, similar to the `Icon` component
    */
   icon: PropTypes.shape({
     width: PropTypes.string,
