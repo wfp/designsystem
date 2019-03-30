@@ -5,7 +5,6 @@ import { withKnobs, boolean } from '@storybook/addon-knobs/react';
 import Blockquote from '../Blockquote';
 
 storiesOf('Components|Blockquote', module)
-  //.addDecorator(checkA11y)
   .addParameters({ jest: ['Blockquote-test'] })
   .addDecorator(withKnobs)
   .add('Default', () => {

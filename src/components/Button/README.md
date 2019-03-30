@@ -41,4 +41,4 @@ Using an Button with only an Icon while not beeing recommended can be achieved b
 
 #### html
 
-All buttons can use icons. It's recommended to inline SVG icons when possible. Simply add the appropriate <svg> to the button HTML with the wfp--btn__icon class. You can also include <title> for better accessibility to describe what the button does.
+All buttons can use icons. It's recommended to inline SVG icons when possible. Simply add the appropriate `svg` image to the button HTML with the wfp--btn__icon class. You can also include a `title` tag for better accessibility to describe what the button does.

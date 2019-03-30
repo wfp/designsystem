@@ -1,2 +1,76 @@
 @import 'src/components/Button/button.scss';
 @import 'src/components/Story/story.scss';
+
+@import 'src/globals/scss/vars.scss';
+
+/*
+[data-name=" Documentation"] {
+  font-weight: bold;
+  color: #0b77c2 !important;
+  margin-bottom: 0.4em;
+}
+
+.vertical.Pane1 h3 {
+  color: #0b77c2 !important;
+  text-transform: none !important;
+}
+
+[data-name="Getting Started"] {
+  color: #0b77c2 !important;
+}
+*/
+
+/*
+body,
+* {
+  font-family: "Open Sans", sans-serif !important;
+}
+
+
+.Pane.horizontal.Pane1 {
+  overflow: hidden !important;
+}
+*/
+
+.container {
+  svg {
+    path {
+      fill: $brand-03;
+    }
+  }
+  section > a > div > svg {
+    path {
+      fill: $brand-01;
+    }
+  }
+}
+
+#storybook-preview-background {
+  background: #f6f9fc;
+}
+
+.storybook-readme-story {
+  max-width: 800px;
+  margin: auto;
+  code {
+    background-color: rgba(27, 31, 35, 0.05);
+    border-radius: 3px;
+    font-size: 85%;
+    margin: 0;
+    padding: 0.2em 0.4em;
+    font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, Courier,
+      monospace;
+    font-size: 12px;
+  }
+}
+
+.readme--github {
+  float: right;
+  margin-top: 0.6em;
+}
+
+.markdown-props-table {
+  table {
+    font-size: 0.8rem;
+  }
+}

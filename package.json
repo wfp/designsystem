@@ -106,7 +106,7 @@
     }
   },
   "peerDependencies": {
-    "@wfp/icons": "^0.0.78",
+    "@wfp/icons": "^0.0.80",
     "react": "^16.8.5",
     "react-dom": "^16.8.5"
   },
@@ -159,7 +159,7 @@
     "@storybook/addons": "^5.0.5",
     "@storybook/react": "^5.0.5",
     "@storybook/theming": "^5.0.5",
-    "@wfp/icons": "^0.0.78",
+    "@wfp/icons": "^0.0.80",
     "add": "^2.0.6",
     "all-contributors-cli": "^5.2.1",
     "autoprefixer": "^8.3.0",

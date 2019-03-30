@@ -52,7 +52,7 @@ export const withNotes = makeDecorator({
     //foldername = filename ? filename.substr(0, filename.lastIndexOf('/')) : undefined;
 
     var githubLink = kind.includes('components/')
-      ? `<a href="https://github.com/wfp/ui/tree/next/src/${kind}">(View Source on Github)</a>`
+      ? `<a class="wfp--btn wfp--btn--secondary wfp--btn--sm readme--github" href="https://github.com/wfp/ui/tree/next/src/${kind}">View Source on Github</a>`
       : '';
 
     text = `# ${context.kind.replace('Components|', '')} ${githubLink}

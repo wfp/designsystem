@@ -41,6 +41,7 @@ class Blockquote extends React.Component {
       style,
       title,
       toggleable,
+      icon,
       innerHtml,
       light,
       code,
@@ -72,9 +73,9 @@ class Blockquote extends React.Component {
       ? iconLookup['error']
       : iconLookup['info'];
 
-    const icon = withIcon ? (
+    const iconElement = withIcon ? (
       <Icon
-        icon={lookup.icon}
+        icon={icon ? icon : lookup.icon}
         description="Blockquote Icon"
         className="wfp--blockquote__icon"
         height="30"
@@ -95,7 +96,7 @@ class Blockquote extends React.Component {
           </div>
         )}
 
-        {icon}
+        {iconElement}
         <div className={blockquoteContentClass} style={style}>
           {children}
           {innerHtml && (
@@ -111,8 +112,38 @@ class Blockquote extends React.Component {
 }
 
 Blockquote.propTypes = {
+  /**
+   * Specify the content of your `Blockquote`
+   */
   children: PropTypes.node,
+  /**
+   * Show content formated as code
+   */
+  code: PropTypes.bool,
+  /**
+   * Display content as `dangerouslySetInnerHTML` content
+   */
+  innerHtml: PropTypes.string,
+  /**
+   * Display light version of Blockquote
+   */
+  light: PropTypes.bool,
+  /**
+   * Show options to show and hide the Blockquote
+   */
+  toogleable: PropTypes.bool,
+  /**
+   * Specify the type of your Blockquote Options are `light` `code` `error` `warning` `info`
+   */
   type: PropTypes.string,
+  /**
+   * Specify if an Icon should be displayed
+   */
+  withIcon: PropTypes.bool,
+  /**
+   * Specify a custom icon
+   */
+  icon: PropTypes.bool,
 };
 
 export default Blockquote;
