@@ -1,7 +1,13 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { withKnobs, boolean, select, text } from '@storybook/addon-knobs';
+import {
+  withKnobs,
+  boolean,
+  number,
+  select,
+  text,
+} from '@storybook/addon-knobs';
 
 import store from '../../internal/configureStore';
 import { Provider } from 'react-redux';
@@ -12,6 +18,7 @@ import ReduxFormWrapper from '../ReduxFormWrapper';
 import Checkbox from '../Checkbox';
 import RadioButton from '../RadioButton';
 import Select from '../Select';
+import Slider from '../Slider';
 import ReactSelect from 'react-select';
 import TextArea from '../TextArea';
 import TextInput from '../TextInput';
@@ -22,6 +29,7 @@ const inputs = {
   Checkbox: 'Checkbox',
   RadioButton: 'RadioButton',
   Select: 'Select',
+  Slider: 'Slider',
   ReactSelect: 'ReactSelect',
   TextArea: 'TextArea',
   TextInput: 'TextInput',
@@ -33,6 +41,7 @@ const inputMap = {
   Checkbox,
   RadioButton,
   Select,
+  Slider,
   ReactSelect,
   TextArea,
   TextInput,
@@ -78,12 +87,14 @@ const props = {
     required: boolean('Required (required)', true),
     onFocus: action('onFocus'),
     options: options,
+    min: number('The minimum value (min)', 0),
+    max: number('The maximum value (max)', 100),
+    step: number('The step (step)', 1),
   }),
 };
 
 storiesOf('Components|ReduxFormWrapper', module)
   .addDecorator(withKnobs)
-
   .addDecorator(story => (
     <Provider store={store}>
       <FormWrapper>{story()}</FormWrapper>

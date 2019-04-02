@@ -106,7 +106,7 @@ class FaviconGenerator extends Component {
             name: 'WFP',
           }}
           render={({ handleSubmit, form, submitting, pristine, values }) => (
-            <form onSubmit={handleSubmit} className="wfp--form-long">
+            <form onSubmit={handleSubmit}>
               <Module light className="some-class" style={{ padding: '1em 0' }}>
                 <ModuleBody>
                   <div
@@ -114,7 +114,7 @@ class FaviconGenerator extends Component {
                       display: 'flex',
                       justifyContent: 'space-between',
                     }}>
-                    <div>
+                    <div className="wfp--form-long">
                       <Field
                         name="name"
                         component={ReduxFormWrapper}

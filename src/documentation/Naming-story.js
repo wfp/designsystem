@@ -8,9 +8,7 @@ import Link from '../components/Link';
 storiesOf('Documentation|General', module)
   .addParameters({ options: { showPanel: false, isToolshown: false } })
   .add('Naming Convention & Linting', () => (
-    <Page
-      title="Naming Convention"
-      subTitle="Introduction to the new WFP UI Kit">
+    <Page title="Naming Convention" subTitle="Naming Convention & Linting">
       <p>
         The UI Kit uses the{' '}
         <a href="http://getbem.com/naming">BEM naming convention</a>.
@@ -25,9 +23,13 @@ storiesOf('Documentation|General', module)
 
       <h3>Linting</h3>
       <p>
-        Please use ES-Lint which is a linting utility for JavaScript and JSX
-        while building your React Application to analyze source code to flag
-        programming errors, bugs, stylistic errors and suspicious constructs.
+        Use{' '}
+        <Link href="https://eslint.org/" target="_blank">
+          ES-Lint
+        </Link>{' '}
+        which is a linting utility for JavaScript and JSX while building your
+        React Application to analyze source code to flag programming errors,
+        bugs, stylistic errors and suspicious constructs.
       </p>
       <p>
         If you want to use the ESLint configuration in a project you can install
@@ -39,6 +41,8 @@ storiesOf('Documentation|General', module)
         default. When using Create React App no action is needed since it
         already includes the configuration.
       </p>
+
+      <h4>Basic rules used when building the UI-Kit</h4>
 
       <ul className="wfp--story__list">
         <li>ECMAScript 6 features</li>

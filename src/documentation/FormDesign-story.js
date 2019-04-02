@@ -69,13 +69,14 @@ storiesOf('Documentation|General', module)
       <p>
         The only exception to this rule is when the input needs multiple field
         elements like asking for dates (day, month, year) or time (hours and
-        minutes), where multiple fields are expected to be on one line.{' '}
+        minutes), where multiple fields are expected to be on one line. Read{' '}
         <Link href="https://uxplanet.org/the-18-must-do-principles-in-the-form-design-fe89d0127c92">
-          read more
-        </Link>
+          more
+        </Link>{' '}
+        about principles in form design.
       </p>
 
-      <h4>2 columns layout exceptions apply to:</h4>
+      <p>2 columns layout exceptions apply to:</p>
 
       <h5>
         1. Information that people perceive as one but need more than one input

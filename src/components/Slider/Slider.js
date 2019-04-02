@@ -151,10 +151,11 @@ export default class Slider extends PureComponent {
     };
   }
 
-  UNSAFE_componentWillReceiveProps(nextProps) {
+  shouldComponentUpdate(nextProps) {
     if (!sliderValuePropSync && !isEqual(nextProps, this.props)) {
       this.updatePosition();
     }
+    return true;
   }
 
   updatePosition = evt => {
@@ -323,7 +324,7 @@ export default class Slider extends PureComponent {
       hideTextInput,
       id = (this.inputId =
         this.inputId ||
-        `__carbon-slider_${Math.random()
+        `__wfp-slider_${Math.random()
           .toString(36)
           .substr(2)}`),
       min,
