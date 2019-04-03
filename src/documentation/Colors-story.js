@@ -146,12 +146,17 @@ storiesOf('Documentation|General', module)
         </p>
 
         <p>
-          The extended Colour Palette can be found here{' '}
+          The extended Colour Palette can be found{' '}
           <Link href="http://brand.manuals.wfp.org/en/core-elements/colours/colour-palette/">
             here
           </Link>
           .
         </p>
+
+        <h3>User Interface Colors</h3>
+        <ul style={{ display: 'flex', flexWrap: 'wrap' }}>
+          {colorList(uiColors)}
+        </ul>
 
         <h3>Brand Colors</h3>
         <ul style={{ display: 'flex', flexWrap: 'wrap' }}>
@@ -161,10 +166,6 @@ storiesOf('Documentation|General', module)
         <h3>Symbolic colors</h3>
         <ul style={{ display: 'flex', flexWrap: 'wrap' }}>
           {colorList(symbolicColors)}
-        </ul>
-        <h3>UI Colors</h3>
-        <ul style={{ display: 'flex', flexWrap: 'wrap' }}>
-          {colorList(uiColors)}
         </ul>
 
         <p />

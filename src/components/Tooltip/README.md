@@ -20,3 +20,5 @@ import { tooltipStyle } from '@wfp/ui';
 
 [...]
 ```
+
+<!-- NO PROPS -->

@@ -49,3 +49,4 @@ By adding ` -border` a border will be added to the table
 <ReactTable className="-border" />
 ```
 
+<!-- NO PROPS -->

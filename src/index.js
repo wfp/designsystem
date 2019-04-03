@@ -62,6 +62,7 @@ export {
   ModuleFooter,
 } from './components/Module';
 
+export notificationStyle from './components/Notification';
 export NumberInput from './components/NumberInput';
 export Pagination from './components/Pagination';
 

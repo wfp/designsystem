@@ -51,15 +51,17 @@ export const withNotes = makeDecorator({
     kind = kind.replace('Components|', 'components/');
     //foldername = filename ? filename.substr(0, filename.lastIndexOf('/')) : undefined;
 
+    text = text.includes('<!-- NO PROPS -->') ? text : text + '<!-- PROPS -->';
+    text = text.replace('<!-- NO PROPS -->', '');
+
     var githubLink = kind.includes('components/')
       ? `<a class="wfp--btn wfp--btn--secondary wfp--btn--sm readme--github" href="https://github.com/wfp/ui/tree/next/src/${kind}">View Source on Github</a>`
       : '';
 
     text = `# ${context.kind.replace('Components|', '')} ${githubLink}
 
-${text}
+${text}`;
 
-<!-- PROPS -->`;
     context.parameters.readme = {
       sidebar: text,
       StoryPreview: ({ children }) => (

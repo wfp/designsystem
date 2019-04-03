@@ -84,6 +84,7 @@ const colors = {
     scss: '$brand-01',
     css: 'color__brand-01',
     type: 'ui',
+    description: 'Primary interactive color, Primary buttons',
   },
   'brand-02': {
     name: 'brand-02',
@@ -91,6 +92,7 @@ const colors = {
     scss: '$brand-02',
     css: 'color__brand-02',
     type: 'ui',
+    description: 'BannerNavigation',
   },
   'brand-03': {
     name: 'brand-03',
@@ -98,14 +100,15 @@ const colors = {
     scss: '$brand-03',
     css: 'color__brand-03',
     type: 'ui',
+    description: 'Secondary interactive color (experimental)',
   },
   'ui-01': {
     name: 'ui-01',
-    description: 'WFP`s main color',
-    hex: '#0A6EB4',
+    hex: '#ffffff',
     scss: '$ui-01',
     css: 'color__ui-01',
     type: 'ui',
+    description: 'Primary container background; Secondary page background',
   },
   'ui-02': {
     name: 'ui-02',
@@ -113,6 +116,7 @@ const colors = {
     scss: '$ui-02',
     css: 'color__ui-02',
     type: 'ui',
+    description: 'Primary page background; Secondary container background',
   },
   'ui-03': {
     name: 'ui-03',
@@ -120,6 +124,7 @@ const colors = {
     scss: '$ui-03',
     css: 'color__ui-03',
     type: 'ui',
+    description: 'Subtle border, Tertiary background color',
   },
   'ui-04': {
     name: 'ui-04',
@@ -127,6 +132,7 @@ const colors = {
     scss: '$ui-04',
     css: 'color__ui-04',
     type: 'ui',
+    description: '3:1 AA element contrast; Medium contrast border',
   },
   'ui-05': {
     name: 'ui-05',
@@ -134,6 +140,8 @@ const colors = {
     scss: '$ui-03',
     css: 'color__ui-05',
     type: 'ui',
+    description:
+      '4.5:1 AA element contrast; High contrast border; Emphasis elements',
   },
   'text-01': {
     name: 'text-01',
@@ -141,6 +149,8 @@ const colors = {
     scss: '$text-01',
     css: 'color__text-01',
     type: 'ui',
+    description:
+      'Primary text; Body copy; Headers; Hover text color for text-02',
   },
   'text-02': {
     name: 'text-02',
@@ -148,6 +158,7 @@ const colors = {
     scss: '$text-02',
     css: 'color__text-02',
     type: 'ui',
+    description: 'Secondary text; Input labels; Help text',
   },
   'text-03': {
     name: 'text-03',
@@ -155,6 +166,7 @@ const colors = {
     scss: '$text-03',
     css: 'color__text-03',
     type: 'ui',
+    description: 'Placeholder text',
   },
   'inverse-01': {
     name: 'inverse-01',
