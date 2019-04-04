@@ -3,29 +3,47 @@ import React from 'react';
 import classNames from 'classnames';
 
 const propTypes = {
+  /**
+   * Specify the content of the `Module`, usually a `ModuleHeader` `ModuleBody` and `ModuleFooter`component.
+   */
   children: PropTypes.node,
+  /**
+   * The CSS class name for the slider.
+   */
   className: PropTypes.string,
-  size: PropTypes.oneOf(['single', 'double']),
 };
 
 const moduleBodyPropTypes = {
+  /**
+   * Specify the content of the `ModuleBody`
+   */
   children: PropTypes.node,
+  /**
+   * Specify wheater the content should be centered.
+   */
   centered: PropTypes.bool,
+  /**
+   * The CSS class name for the slider.
+   */
   className: PropTypes.string,
 };
 
 const moduleHeaderPropTypes = {
+  /**
+   * Specify the content of the `ModuleHeaders`
+   */
   children: PropTypes.node,
+  /**
+   * The CSS class name for the slider.
+   */
   className: PropTypes.string,
 };
 
 const defaultProps = {
-  size: 'double',
-};
-
-const moduleBodydefaultProps = {
   centered: false,
 };
+
+const moduleBodydefaultProps = {};
 
 const Module = ({
   dark,

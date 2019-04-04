@@ -20,9 +20,9 @@
     display: flex;
     align-items: center;
     user-select: none;
-
-    @media screen and (min-width: 768px) {
-      min-width: rem(350px);
+    &--full-width {
+      width: 100%;
+      max-width: inherit;
     }
   }
 

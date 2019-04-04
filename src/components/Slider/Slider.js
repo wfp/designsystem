@@ -72,8 +72,7 @@ export default class Slider extends PureComponent {
     step: PropTypes.number,
 
     /**
-     * A value determining how much the value should increase/decrease by Shift+arrow keys,
-     * which will be `(max - min) / stepMuliplier`.
+     * A value determining how much the value should increase/decrease by Shift+arrow keys, which will be `(max - min) / stepMuliplier`.
      */
     stepMuliplier: PropTypes.number,
 
@@ -101,14 +100,18 @@ export default class Slider extends PureComponent {
      * The `ariaLabel` for the `<input>`.
      */
     ariaLabelInput: PropTypes.string,
-
     /**
-     * `true` to use the light version.
+     * `true` to use the light version. (experimental)
      */
     light: PropTypes.bool,
+    /**
+     * Use the width of the parent element
+     */
+    fullWidth: PropTypes.bool,
   };
 
   static defaultProps = {
+    fullWidth: false,
     hideTextInput: false,
     step: 1,
     stepMuliplier: 4,
@@ -332,6 +335,7 @@ export default class Slider extends PureComponent {
       max,
       maxLabel,
       formatLabel = defaultFormatLabel,
+      fullWidth,
       labelText,
       step,
       stepMuliplier, // eslint-disable-line no-unused-vars
@@ -351,7 +355,11 @@ export default class Slider extends PureComponent {
       className
     );
 
-    const inputClasses = classNames('wfp-slider-text-input', {
+    const sliderContainerClasses = classNames('wfp--slider-container', {
+      'wfp--slider-container--full-width': fullWidth,
+    });
+
+    const inputClasses = classNames('wfp--slider-text-input', {
       'wfp--text-input--light': light,
     });
 
@@ -367,7 +375,7 @@ export default class Slider extends PureComponent {
         <label htmlFor={id} className="wfp--label">
           {labelText}
         </label>
-        <div className="wfp--slider-container">
+        <div className={sliderContainerClasses}>
           <span className="wfp--slider__range-label">
             {formatLabel(min, minLabel)}
           </span>

@@ -5,7 +5,7 @@ import React, { Component } from 'react';
 import Icon from '../../components/Icon';
 import Button from '../../components/Button';
 import TextArea from '../../components/TextArea';
-import { Module, ModuleBody } from '../../components/Module';
+import { Module, ModuleHeader, ModuleBody } from '../../components/Module';
 import ReduxFormWrapper from '../../components/ReduxFormWrapper';
 import { Form, Field } from 'react-final-form';
 
@@ -44,6 +44,7 @@ export default class FaviconGenerator extends Component {
           render={({ handleSubmit, form, submitting, pristine, values }) => (
             <form onSubmit={handleSubmit} className="wfp--form-long">
               <Module light className="some-class" style={{ padding: '1em 0' }}>
+                <ModuleHeader>Convert svg to icon</ModuleHeader>
                 <ModuleBody>
                   <Field
                     name="svg"
@@ -53,11 +54,11 @@ export default class FaviconGenerator extends Component {
                     labelText="SVG code"
                     placeholder="Your svg code"
                   />
-                  <div className="wfp--form-item">
-                    <Button type="submit">Generate Icon</Button>
-                  </div>
+                  <Button type="submit">Generate Icon</Button>
+
                   {this.state.json && (
                     <div>
+                      <br />
                       <label className="wfp--label">Preview</label>
                       <br />
                       <Module
