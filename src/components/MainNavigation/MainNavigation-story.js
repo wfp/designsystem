@@ -88,18 +88,25 @@ storiesOf('Components|MainNavigation', module).add('default', () => (
           <MainNavigationItem
             className="wfp--main-navigation__user"
             subNavigation={
-              <div>
-                <h3>Hello World</h3>
-                <Link
-                  onClick={() => onChangeSub(undefined, undefined, 'close')}>
-                  Close Demo
-                </Link>
-                <p>
-                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                  diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                  aliquya.
-                </p>
-              </div>
+              <SubNavigation>
+                <SubNavigationHeader>
+                  <SubNavigationTitle>Welcome Lorem!</SubNavigationTitle>
+                  <SubNavigationLink>
+                    <Button secondary small>
+                      Logout
+                    </Button>
+                  </SubNavigationLink>
+                </SubNavigationHeader>
+                <SubNavigationContent>
+                  Additional content can be placed here.
+                  <br />
+                  Demo for internal close action:{' '}
+                  <Link
+                    onClick={() => onChangeSub(undefined, undefined, 'close')}>
+                    Close Menu
+                  </Link>
+                </SubNavigationContent>
+              </SubNavigation>
             }>
             <User ellipsis title="Max Mustermann long name" />
           </MainNavigationItem>

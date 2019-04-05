@@ -75,6 +75,16 @@
     );
   }
 
+  .#{$prefix}--btn--navigation {
+    @include button-theme(
+      saturate($color__main-40, 10%),
+      transparent,
+      $inverse-01,
+      saturate(lighten($color__main-40, 5), 10%),
+      $ui-01
+    );
+  }
+
   .#{$prefix}--btn--secondary {
     @include button-theme(
       transparent,

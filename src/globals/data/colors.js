@@ -14,7 +14,7 @@ const colors = {
     hex: '#26bde2',
     scss: '$color__aqua',
   },
-  'dark- green': {
+  'dark-green': {
     name: 'dark-green',
     hex: '#3f7e44',
     scss: '$color__dark-green',

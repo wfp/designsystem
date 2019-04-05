@@ -131,7 +131,8 @@ storiesOf('Documentation|General', module)
     <Page title="Icons" subTitle="Icons & Logos for User Interfaces">
       <p>
         For Usage please take a look at the{' '}
-        <Link onClick={linkTo('Icon', 'Default')}>Icon-Component</Link> or{' '}
+        <Link onClick={linkTo('Components|Icon', 'Default')}>Icon</Link>{' '}
+        component or{' '}
         <Link
           onClick={linkTo(
             ' Documentation.Getting Started',

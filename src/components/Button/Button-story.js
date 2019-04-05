@@ -24,6 +24,7 @@ const kinds = {
   'Danger primary button (danger--primary)': 'danger--primary',
   'Ghost button (ghost)': 'ghost',
   'Inverse button (inverse)': 'inverse',
+  'Main navigation button (navigation)': 'navigation',
 };
 
 const props = {

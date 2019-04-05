@@ -85,3 +85,27 @@ From the `children` any change can be manually triggered by a function
   </MainNavigation>
 ));
 ```
+
+### SubNavigation for the User
+
+An `User` `MainNavigationItem` consists out of the `User` component and a `SubNavigation`.
+
+```html
+  <MainNavigationItem
+  className="wfp--main-navigation__user"
+  subNavigation={
+    <SubNavigation>
+      <SubNavigationHeader>
+        <SubNavigationTitle>Welcome Max!</SubNavigationTitle>
+        <SubNavigationLink>
+          <Button secondary small>Logout</Button>
+        </SubNavigationLink>
+      </SubNavigationHeader>
+      <SubNavigationContent>
+       {/* Additional content */}
+      </SubNavigationContent>
+    </SubNavigation>
+  }>
+  <User ellipsis title="Max Mustermann" />
+</MainNavigationItem>
+```

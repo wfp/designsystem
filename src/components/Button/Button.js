@@ -26,6 +26,7 @@ const Button = ({
     'wfp--btn--primary': kind === 'primary',
     'wfp--btn--danger': kind === 'danger',
     'wfp--btn--secondary': kind === 'secondary',
+    'wfp--btn--navigation': kind === 'navigation',
     'wfp--btn--ghost': kind === 'ghost',
     'wfp--btn--inverse': kind === 'inverse',
     'wfp--btn--danger--primary': kind === 'danger--primary',
