@@ -2,17 +2,7 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-# [1.2.0-alpha.16](https://github.com/WFP/UI/compare/v1.2.0-alpha.15...v1.2.0-alpha.16) (2019-04-05)
-
-
-### Features
-
-* **Button:** main navigation button added and other ([2f77a4b](https://github.com/WFP/UI/commit/2f77a4b))
-* **MainNavigation:** improved external controls and documentation ([dc1aac9](https://github.com/WFP/UI/commit/dc1aac9))
-* **MainNavigation:** refactoring ([0fc8f3a](https://github.com/WFP/UI/commit/0fc8f3a))
-* **Notifications:** added and Module patterns, etc. ([15921c1](https://github.com/WFP/UI/commit/15921c1))
-* **Slider:** Slider width features added and other changes ([4d1757a](https://github.com/WFP/UI/commit/4d1757a))
-* **Slider:** uses shouldComponentUpdate now ([3ad3f01](https://github.com/WFP/UI/commit/3ad3f01))
+# [1.2.0-alpha.17](https://github.com/WFP/UI/compare/v1.2.0-alpha.16...v1.2.0-alpha.17) (2019-04-05)
 
 
 
