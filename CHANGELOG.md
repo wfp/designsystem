@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-# [1.2.0-alpha.17](https://github.com/WFP/UI/compare/v1.2.0-alpha.16...v1.2.0-alpha.17) (2019-04-05)
+# [1.2.0-alpha.18](https://github.com/WFP/UI/compare/v1.2.0-alpha.17...v1.2.0-alpha.18) (2019-04-15)
 
 
 
