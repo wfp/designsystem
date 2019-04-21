@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import isEqual from 'lodash.isequal';
@@ -9,7 +9,7 @@ const defaultFormatLabel = (value, label) => {
   return typeof label === 'function' ? label(value) : `${value}${label}`;
 };
 
-export default class Slider extends PureComponent {
+export default class Slider extends Component {
   static propTypes = {
     /**
      * The CSS class name for the slider.
@@ -89,7 +89,7 @@ export default class Slider extends PureComponent {
     /**
      * The `name` attribute of the `<input>`.
      */
-    name: PropTypes.bool,
+    name: PropTypes.string,
 
     /**
      * The `type` attribute of the `<input>`.
@@ -428,6 +428,7 @@ export default class Slider extends PureComponent {
           </span>
           {!hideTextInput && (
             <TextInput
+              disabled={disabled}
               type={inputType}
               id="input-for-slider"
               className={inputClasses}

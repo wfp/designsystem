@@ -49,6 +49,13 @@ storiesOf(' Documentation|Getting Started', module).add('React Usage', () => (
       link(asynchronous things)
     </p>
 
+    <h3>Maps</h3>
+    <p>
+      <Link href="https://www.react-simple-maps.io">
+        react-simple-maps
+      </Link>{' '} is a map component to generate simple political maps
+    </p>
+
     <h3>Forms</h3>
     <p>
       <Link href="https://github.com/final-form/react-final-form">

@@ -70,8 +70,8 @@ class Blockquote extends React.Component {
     const lookup = warning
       ? iconLookup['warning']
       : error
-      ? iconLookup['error']
-      : iconLookup['info'];
+        ? iconLookup['error']
+        : iconLookup['info'];
 
     const iconElement = withIcon ? (
       <Icon
@@ -132,6 +132,10 @@ Blockquote.propTypes = {
    * Show options to show and hide the Blockquote
    */
   toogleable: PropTypes.bool,
+  /**
+   * Show title for Blockquote
+   */
+  title: PropTypes.node,
   /**
    * Specify the type of your Blockquote Options are `light` `code` `error` `warning` `info`
    */

@@ -124,13 +124,14 @@ body {
   }
 }
 
+/*
 table {
   width: 100%;
   th,
   td {
     border: 1px solid #ccc;
   }
-}
+}*/
 
 @include breakpoint(bp--sm--major) {
   .wfp--single-component--centered {

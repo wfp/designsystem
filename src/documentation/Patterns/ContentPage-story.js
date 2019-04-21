@@ -11,11 +11,9 @@ storiesOf('Documentation|Patterns', module)
     <Page title="Content Page" subTitle="Regular Content Page">
       <h3>Where to use?</h3>
       <p>
-        Accessible design not only helps users with disabilities; it provides
-        better user experiences for everyone. All components follow the WCAG AA
-        standards.
+        This is currently a draft.
       </p>
-      <ul className="wfp--story__list">
+      {/*<ul className="wfp--story__list">
         <li>
           <Link
             href="https://next.carbondesignsystem.com/guidelines/accessibility/overview#carbon-and-accessibility"
@@ -23,6 +21,6 @@ storiesOf('Documentation|Patterns', module)
             Standards of the Carbon Design System
           </Link>
         </li>
-      </ul>
+  </ul>*/}
     </Page>
   ));

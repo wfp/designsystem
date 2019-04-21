@@ -12,11 +12,13 @@ export const ListItem = ({ children, className, title, ...other }) => {
   );
 };
 
-export const List = ({ children, className, kind, small, ...other }) => {
+export const List = ({ children, className, colon, kind, small, ...other }) => {
   const classNames = classnames('wfp--list', className, {
     'wfp--list--simple': kind === 'simple',
+    'wfp--list--simple-inline': kind === 'simple-inline',
     'wfp--list--details': kind === 'details',
     'wfp--list--small': small,
+    'wfp--list--colon': colon,
   });
   return (
     <ul className={classNames} {...other}>

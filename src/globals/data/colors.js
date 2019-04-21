@@ -59,24 +59,28 @@ const colors = {
     hex: '#DD0A79',
     scss: '$color__female',
     type: 'symbolic',
+    description: 'Indicate female'
   },
   male: {
     name: 'male',
     hex: '#D19906',
     scss: '$color__male',
     type: 'symbolic',
+    description: 'Indicate male'
   },
   national: {
     name: 'national',
     hex: '#FD6925',
     scss: '$color__national',
     type: 'symbolic',
+    description: 'Indicate national staff'
   },
   international: {
     name: 'international',
     hex: '#3F7E44',
     scss: '$color__international',
     type: 'symbolic',
+    description: 'Indicate international staff'
   },
   'brand-01': {
     name: 'brand-01',

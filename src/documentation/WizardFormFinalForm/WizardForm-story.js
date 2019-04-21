@@ -25,8 +25,8 @@ const renderError = ({ meta: { touched, error } }) =>
   touched && error ? (
     <span className="wfp--form-requirement">{error}</span>
   ) : (
-    false
-  );
+      false
+    );
 
 storiesOf('Documentation|Samples', module)
   .addParameters({ options: { showPanel: false, isToolshown: false } })
@@ -48,7 +48,7 @@ storiesOf('Documentation|Samples', module)
             nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
             erat, sed diam voluptua.{' '}
           </Blockquote>
-          <div class="row">
+          <div className="row">
             <div className="col-md-6">
               <Field
                 id="firstName"

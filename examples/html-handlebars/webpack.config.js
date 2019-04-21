@@ -12,7 +12,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       title: 'Custom template using Handlebars',
-      template: 'index.hbs',
+      template: 'redirect.hbs',
     }),
   ],
   module: {

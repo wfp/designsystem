@@ -19,8 +19,8 @@
     height: 100%;
     text-align: center;
     background: 0 0;
-    border: 2px solid #00a699;
-    color: #00a699;
+    border: 2px solid $brand-01;
+    color: $brand-01;
     padding: 4px 12px;
     margin-right: 8px;
     line-height: normal;
@@ -34,7 +34,7 @@
   }
   .PresetDateRangePicker_button__selected {
     color: #fff;
-    background: #00a699;
+    background: $brand-01;
   }
   .SingleDatePickerInput {
     display: inline-block;
@@ -306,7 +306,7 @@
     cursor: default;
   }
   .CalendarDay__default {
-    border: 1px solid #e4e7e7;
+    border: 1px solid $ui-04;
     color: #484848;
     background: #fff;
   }
@@ -349,7 +349,7 @@
   }
   .CalendarDay__selected_span {
     background: $color__main-30;
-    border: 1px double $color__main-40;
+    border: 1px double darken($color__main-30,5);
     color: #fff;
   }
   .CalendarDay__selected_span:active,

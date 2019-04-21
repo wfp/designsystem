@@ -13,4 +13,8 @@
     font-weight: 600;
     margin-bottom: $spacing-md;
   }
+
+  .#{$prefix}--fieldset__inline {
+    display: flex;
+  }
 }

@@ -48,6 +48,7 @@ const moduleBodydefaultProps = {};
 const Module = ({
   dark,
   light,
+  centered,
   children,
   className,
   noMargin,

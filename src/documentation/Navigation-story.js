@@ -24,7 +24,7 @@ storiesOf('Documentation|General', module)
       </Blockquote>
 
       <Button
-        onClick={linkTo('MainNavigation', 'default')}
+        onClick={linkTo('Components|MainNavigation', 'default')}
         small
         kind="secondary"
         style={{ marginBottom: '2em' }}>
@@ -39,7 +39,7 @@ storiesOf('Documentation|General', module)
         Navigation and present on every page.
       </p>
       <Button
-        onClick={linkTo('SubNavigation', 'default')}
+        onClick={linkTo('Components|SubNavigation', 'default')}
         small
         kind="secondary"
         style={{ marginBottom: '2em' }}>
@@ -53,7 +53,7 @@ storiesOf('Documentation|General', module)
         is related to the selected page and it is optional.
       </p>
       <Button
-        onClick={linkTo('SecondaryNavigation', 'default')}
+        onClick={linkTo('Components|SecondaryNavigation', 'default')}
         small
         kind="secondary"
         style={{ marginBottom: '2em' }}>
@@ -68,7 +68,7 @@ storiesOf('Documentation|General', module)
         external links.
       </p>
       <Button
-        onClick={linkTo('BannerNavigation', 'default')}
+        onClick={linkTo('Components|BannerNavigation', 'default')}
         small
         kind="secondary"
         style={{ marginBottom: '2em' }}>

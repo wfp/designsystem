@@ -1,30 +1,29 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, boolean } from '@storybook/addon-knobs/react';
+import { withKnobs, boolean, text } from '@storybook/addon-knobs/react';
 
 import Blockquote from '../Blockquote';
+
+const props = () => ({
+  title: text('title', 'Blockquote title'),
+  toggleable: boolean('toggleable', false),
+  error: boolean('error', false),
+  light: boolean('light', false),
+  code: boolean('code', false),
+  warning: boolean('warning', false),
+  info: boolean('info', false),
+  withIcon: boolean('withIcon', false),
+});
+
 
 storiesOf('Components|Blockquote', module)
   .addParameters({ jest: ['Blockquote-test'] })
   .addDecorator(withKnobs)
   .add('Default', () => {
-    const toggleable = boolean('toggleable', false);
-    const error = boolean('error', false);
-    const light = boolean('light', false);
-    const code = boolean('code', false);
-    const warning = boolean('warning', false);
-    const info = boolean('info', false);
-    const withIcon = boolean('withIcon', false);
 
     return (
       <Blockquote
-        error={error}
-        toogleable={toggleable}
-        light={light}
-        code={code}
-        warning={warning}
-        withIcon={withIcon}
-        info={info}>
+        {...props()}>
         Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
         eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
         voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet

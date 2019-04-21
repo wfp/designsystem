@@ -22,8 +22,8 @@ const ReduxFormWrapper = ({
     warningMesssage(
       didWarnAboutDeprecation,
       'The `InputComponent` prop of ReduxFormWrapper has been deprecated and will be removed ' +
-        'in the next major release of `@wfp/ui`. Please use ' +
-        '`children` instead.'
+      'in the next major release of `@wfp/ui`. Please use ' +
+      '`children` instead.'
     );
     didWarnAboutDeprecation = true;
   }
@@ -134,8 +134,8 @@ ReduxFormWrapper.propTypes = {
 };
 
 ReduxFormWrapper.defaultProps = {
-  onChange: () => {},
-  onClick: () => {},
+  onChange: () => { },
+  onClick: () => { },
 };
 
 export default ReduxFormWrapper;

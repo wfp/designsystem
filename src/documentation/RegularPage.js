@@ -59,10 +59,10 @@ const Page = ({
     <div>
       <MainNavigation
         pageWidth={pageWidth}
-        logo={<a href="http://www.wfp.org">WFP UI</a>}>
+        logo={<a href="http://www.wfp.org">Application name</a>}>
         <MainNavigationItem>
           <Link href="http://communities.wfp.org" target="_blank">
-            Communities
+            Section 1
           </Link>
         </MainNavigationItem>
         <MainNavigationItem
@@ -184,17 +184,17 @@ const Page = ({
             </SubNavigation>
           }>
           <Link href="http://manuals.wfp.org" target="_blank">
-            Manuals
+            Section 2
           </Link>
         </MainNavigationItem>
         <MainNavigationItem>
           <Link href="https://go.docs.wfp.org" target="_blank">
-            GoDocs
+            Section 3
           </Link>
         </MainNavigationItem>
         <MainNavigationItem>
           <Link href="http://opweb.wfp.org" target="_blank">
-            OPweb
+            Section 4
           </Link>
         </MainNavigationItem>
         <MainNavigationItem>
@@ -234,7 +234,7 @@ const Page = ({
             <BreadcrumbItem href="#">Breadcrumb 2</BreadcrumbItem>
             <BreadcrumbItem href="#">Breadcrumb 3</BreadcrumbItem>
           </Breadcrumb>
-          <SecondaryNavigationTitle>The Page Title</SecondaryNavigationTitle>
+          <SecondaryNavigationTitle>The page title</SecondaryNavigationTitle>
           {!withoutSecondaryTabs && (
             <Tabs {...props.tabs} customTabContent={true}>
               <Tab

@@ -16,20 +16,18 @@ storiesOf('Documentation|Patterns', module)
         Use the Dashboard pattern whenever you have to display data with a high
         content density.
       </p>
-      <h4>Operational dashboard</h4>
+      <h4>Operational dashboard (Application)</h4>
       <p>
-        Operational dashboards aim to impart critical information quickly to
+        Operational dashboards aim to impart information quickly to
         users as they are engaged in time-sensitive tasks. Main goals of the
-        operational dashboard are to present data deviations to the user quickly
-        and clearly, show current resources, their status. View support actions,
-        its a digital control room designed to help users be quick, proactive,
-        and efficient.
+        operational dashboard are to present all the information the user needs to take action
+        and provide him with the tools for entering the information.
+        The dasboard should help users to be quick, proactive, and efficient.
       </p>
       <h4>Analytical dashboard</h4>
       <p>
-        In contrast to Operational, Analytical dashboards provide the user with
-        at-a-glance information used for analysis and decision making, and are
-        less time sensitive and not focused on immediate action. A primary goal
+        Analytical dashboards provide the user with information used for analysis and decision making, and are
+        less time sensitive and not focused on taking action. A primary goal
         is to help users make the best sense of the data, analyze trends and
         drive decision making.
       </p>

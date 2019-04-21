@@ -2,12 +2,45 @@
 
 import React from 'react';
 import { storiesOf } from '@storybook/react';
+import PrismCode from 'react-prism';
 import Link from '../components/Link';
+import { List, ListItem } from '../components/List';
 import Page from './Page';
 import Blockquote from '../components/Blockquote';
 import colors from '../globals/data/colors';
 
-const colorBlend = ['20', '30', '40', '60', '80'];
+const colorBlend = [
+  { name: '20', blend: 'ffffff', percentage: '75' },
+  { name: '30', blend: 'ffffff', percentage: '50' },
+  { name: '40', blend: 'ffffff', percentage: '25' },
+  { name: '60', blend: '000000', percentage: '25' },
+  { name: '70', blend: '000000', percentage: '50' },
+  { name: '80', blend: '000000', percentage: '75' },
+];
+
+
+var mix = function (color_1, color_2, weight) {
+  function d2h(d) { return d.toString(16); }  // convert a decimal value to hex
+  function h2d(h) { return parseInt(h, 16); } // convert a hex value to decimal 
+
+  weight = (typeof (weight) !== 'undefined') ? weight : 50; // set the weight to 50%, if that argument is omitted
+
+  var color = "#";
+
+  for (var i = 0; i <= 5; i += 2) { // loop through each of the 3 hex pairs—red, green, and blue
+    var v1 = h2d(color_1.substr(i, 2)), // extract the current pairs
+      v2 = h2d(color_2.substr(i, 2)),
+
+      // combine the current pairs from each source color, according to the specified weight
+      val = d2h(Math.floor(v2 + (v1 - v2) * (weight / 100.0)));
+
+    while (val.length < 2) { val = '0' + val; } // prepend a '0' if val results in a single digit
+
+    color += val; // concatenate val to our new color string
+  }
+
+  return color; // PROFIT!
+};
 
 storiesOf('Documentation|General', module)
   .addParameters({ options: { showPanel: false, isToolshown: false } })
@@ -47,6 +80,7 @@ storiesOf('Documentation|General', module)
                 height: '100%',
                 marginTop: '0em',
                 marginRight: '1em',
+                borderRadius: '3px',
                 backgroundColor: color.hex,
               }}
             />
@@ -70,24 +104,27 @@ storiesOf('Documentation|General', module)
                   </i>
                 )}
               </h4>
+              <List colon kind="simple">
+                <ListItem title="js">{color.name}</ListItem>
+                <ListItem title="scss">{color.scss}</ListItem>
+                <ListItem title="hex">{color.hex}</ListItem>
 
-              <div>js: {color.name}</div>
-              <div>scss: {color.scss}</div>
-              <div>hex: {color.hex}</div>
-              {color.css && (
-                <div>
-                  css: {color.css}
-                  <div
-                    className={color.css}
-                    style={{
-                      display: 'inline-block',
-                      marginLeft: '0.5em',
-                      width: '1em',
-                      height: '1em',
-                    }}
-                  />
-                </div>
-              )}
+                {color.css && (
+                  <ListItem title="css">
+                    .{color.css}
+                    <div
+                      className={color.css}
+                      style={{
+                        display: 'inline-block',
+                        marginLeft: '0.5em',
+                        borderRadius: '3px',
+                        width: '1em',
+                        height: '1em',
+                      }}
+                    />
+                  </ListItem>
+                )}
+              </List>
             </div>
 
             {color.type !== 'symbolic' && color.type !== 'ui' && (
@@ -109,6 +146,8 @@ storiesOf('Documentation|General', module)
                         marginTop: '1px',
                         marginRight: '1em',
                         marginBottom: '1px',
+                        borderRadius: '3px',
+                        background: mix(blend.blend, color.hex.replace('#', ''), blend.percentage),
                       }}
                       className={`color__${color.name}-{blend}`}
                     />
@@ -122,9 +161,11 @@ storiesOf('Documentation|General', module)
                           display: 'inline-block',
                           marginRight: '1em',
                         }}>
-                        hex: #0A6EB4
+                        <List colon kind="simple-inline" inline>
+                          <ListItem title="hex">{mix(blend.blend, color.hex.replace('#', ''), blend.percentage)}</ListItem>
+                          <ListItem title="scss">{color.scss}-{blend.name}</ListItem>
+                        </List>
                       </span>
-                      scss: {color.scss}-{blend}
                     </div>
                   </div>
                 ))}
@@ -136,17 +177,17 @@ storiesOf('Documentation|General', module)
     };
 
     return (
-      <Page title="Brand & UX colors" subTitle="All colours">
+      <Page title="Brand & UX colors" subTitle="Color palette">
         <p>
-          The visual identity includes a palette of ten complementary colours
+          The visual identity includes a palette of ten complementary colors
           that can be used with the logo in communications products. Please do
-          not use any other colours. The palette can, however, be extended by
-          using different hues of these colours. The color reference codes are
+          not use any other colors. The palette can, however, be extended by
+          using different hues of these colors. The color reference codes are
           shown below.
         </p>
 
         <p>
-          The extended Colour Palette can be found{' '}
+          The extended color palette can be found{' '}
           <Link href="http://brand.manuals.wfp.org/en/core-elements/colours/colour-palette/">
             here
           </Link>
@@ -172,19 +213,29 @@ storiesOf('Documentation|General', module)
 
         <h3>Usage</h3>
 
-        <Blockquote title="NPM" type="code">
-          {`// Import colors as json (needs a json loader)
+        <p>The colors can be used via JavaScript or different frameworks.</p>
+
+        <Blockquote title="Usage in JavaScript" type="code">
+          <PrismCode component="pre" className="language-js">
+            {`// Import colors as json (needs a json loader)
 import colors from '@wfp/ui/source/globals/data/colors.json'
 
 // Import colors as js
-import colors from '@wfp/ui/source/globals/data/colors.js'`}
-        </Blockquote>
+import colors from '@wfp/ui/source/globals/data/colors.js'
 
-        <Blockquote title="SCSS" type="code">
-          {`// Only use variables
-@import "../../node_modules/@wfp/ui/source/globals/scss/vars";`}
+const barChartColor = colors.navy;
+`}
+          </PrismCode>
         </Blockquote>
-        <p>For UI</p>
+        <p>Setting color variables makes it easy to reuse colors,
+          without the hassle of updating every single Hex color code once they change.</p>
+
+        <Blockquote title="Usage in scss" type="code">
+          <PrismCode component="pre" className="language-css">
+            {`// Only use variables
+@import "../../node_modules/@wfp/ui/source/globals/scss/vars";`}
+          </PrismCode>
+        </Blockquote>
       </Page>
     );
   });

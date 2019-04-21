@@ -145,26 +145,72 @@ The Source files can be found in https://github.com/wfp/ui-assets.
 ## Favicons
 All the logo files can be found in https://github.com/wfp/ui-assets.
 ## For Designers: Sketch Library
-The Sketch and Adobe xD library can be used to easily create new User interfaces. [UI Design Kit on GitHub](https://github.com/wfp/ui-design-kit).
+The [Sketch App](https://www.sketchapp.com/) and [Adobe xD](https://www.adobe.com/en/products/xd.html) library can be used to easily create new User interfaces. 
 
-You can download it [Sketch App](https://www.sketchapp.com/).
+The downloads are available here: [UI Design Kit on GitHub](https://github.com/wfp/ui-design-kit).
+
 ## Development
 
 Please refer to the [Contribution Guidelines](./.github/CONTRIBUTING.md) before starting any work.
 ### Using the server
+
 We recommend the use of [React Storybook](https://github.com/storybooks/react-storybook) for developing components.
 1. Generate new tests
 ```
-$ yarn test
+yarn test
 ```
 2. Start the server:
 ```
-$ yarn storybook
+yarn storybook
 ```
-3. Start the css watcher:
+3. Open browser to `http://localhost:9000/`.
+4. Develop components in the `/components` folder. Add the export to `index.js` to include them into the build.
+5. Write stories for your components in `/.components` with `-story.js` ending.
+
+### Commits
+
+Use [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0-beta.4/) for commit messages and pre-commit hooks for commiting.
+
+Make sure your commit does not produce any errors while checking:
+
+- ESlint
+- jest tests
+- correct commit message
+
+### Testing
+
+Use jest for testing the components. Once commited the branches will be also tested on [Travis CI](https://travis-ci.org/wfp/ui).
+
 ```
-$ yarn watch:css
+npm run test
 ```
-4. Open browser to `http://localhost:9000/`.
-5. Develop components in the `/components` folder.
-6. Write stories for your components in `/.storybook`.
+
+### Deployment
+
+The UI-Kit uses [Standard Version](https://github.com/conventional-changelog/standard-version) for automate versioning and CHANGELOG generation.
+
+### Generate alpha release
+```
+npm run release -- --prerelease alpha
+npm publish --tag alpha
+```
+
+### Generate full release
+```
+npm run release
+npm publish
+```
+
+### Releasing Storybook (documentation) to AWS S3
+
+Create a new build for the documentation and copy the `assets` and `docs` folder manually to [WFP`s AWS S3 instance](https://cdn.wfp.org/guides/ui/) following the naming scheme (for example: v1.2.1).
+
+```
+npm run build:storybook
+```
+
+Edit the `website-redirect-location` meta tag of `index.html` to point [wfp.org/UIGuide](https://wfp.org/UIGuide) to the latest documentation folder. This can be done with [MountainDuck](https://mountainduck.io/).
+
+Edit the first line of `assets/depreciation-warning.html` to point to the latest version of the UI-Kit.
+
+Clear the Server cache with [Cloudfront Purge Tool](https://chrome.google.com/webstore/detail/cloudfront-purge-tool).

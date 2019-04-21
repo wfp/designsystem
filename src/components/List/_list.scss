@@ -14,13 +14,32 @@
   .#{$prefix}--list {
     @include reset;
     @include font-family;
-    @include typescale('epsilon');
+    //@include typescale('epsilon');
     @include font-smoothing;
+  }
+  .#{$prefix}--list--colon {
+    .#{$prefix}--list__element__title{
+      &:after {
+        content: ":";
+      }
+    }
   }
   .#{$prefix}--list--simple {
     line-height: 1.5em;
     li {
       display: flex;
+    }
+    .#{$prefix}--list__element__title {
+      font-weight: 700;
+      margin-right: rem(5px);
+    }
+  }
+  .#{$prefix}--list--simple-inline {
+    line-height: 1.5em;
+    display: flex;
+    li {
+      display: flex;
+      margin-right: 1em;
     }
     .#{$prefix}--list__element__title {
       font-weight: 700;

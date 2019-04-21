@@ -9,7 +9,7 @@
   // <button> elements cannot be used as flex containers
   .#{$prefix}--blockquote {
     background-color: $color__navy-gray-9;
-    border-left: 15px solid $brand-01;
+    border-left: 5px solid $brand-01;
     margin: $spacing-xs 0;
     position: relative;
     pre[class*='language-'] {
@@ -45,14 +45,14 @@
   }
 
   .#{$prefix}--blockquote--warning {
-    border-left: 5px solid $color__yellow;
+    border-left-color: $color__yellow;
     .#{$prefix}--blockquote__icon {
       fill: $color__yellow !important;
     }
   }
 
   .#{$prefix}--blockquote--error {
-    border-left: 5px solid $color__red;
+    border-left-color: $color__red;
     background: $color__red-10;
     .#{$prefix}--blockquote__icon {
       fill: $color__red !important;

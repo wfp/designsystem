@@ -19,7 +19,7 @@ const props = () => ({
 storiesOf('Components|StepNavigation', module)
   .addDecorator(withKnobs)
 
-  .add('Default (work in progress)', () => (
+  .add('Default (experimental)', () => (
     <StepNavigation {...props()}>
       <StepNavigationItem label="Item without Status" page={0} />
       <StepNavigationItem label="Active Item" page={1} />

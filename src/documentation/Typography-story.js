@@ -4,6 +4,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import Page from './Page';
 import Blockquote from '../components/Blockquote';
+import Link from '../components/Link';
 
 storiesOf('Documentation|General', module)
   .addParameters({ options: { showPanel: false, isToolshown: false } })
@@ -39,6 +40,10 @@ storiesOf('Documentation|General', module)
         <span className="wfp--inline-highlight">$css--font-face: false;</span>{' '}
         with scss.
       </p>
+
+      <h2>Capitalization</h2>
+
+      <Link href="https://cdn.wfp.org/guides/editorial/content/capitalization/" target="_blank">This guide</Link>{' '} explains rules for capatalization.
 
       <h2>Headings</h2>
 
