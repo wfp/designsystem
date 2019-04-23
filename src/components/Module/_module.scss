@@ -30,7 +30,6 @@
         0px 25px 30px -15px rgba(#000000, 0.1);
       background-color: $ui-01;
       border-radius: 3px;
-      border: 1px solid transparent;
     }
 
     .#{$prefix}--module__header {
@@ -39,6 +38,10 @@
       justify-content: space-between;
       padding: 1rem 1.5rem;
       border-bottom: 1px solid $ui-04;
+    }
+
+    .#{$prefix}--module__filter {
+      display: flex;
     }
 
     .#{$prefix}--module__footer {

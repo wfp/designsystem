@@ -12,7 +12,7 @@ function importAll(r) {
 
 /* Import all html documents */
 const req = require.context('./', true, /\.hbs$/);
-const reqConfig = require.context('./', true, /\.config.js$/);
+//const reqConfig = require.context('./', true, /\.config.js$/);
 
 const htmlData = importAll(req);
 
@@ -21,7 +21,7 @@ let keys = req.keys();
 keys.forEach(function(element, i) {
   var config = {};
 
-  let configKeys = reqConfig.keys();
+  //let configKeys = reqConfig.keys();
 
   var split = element.split('/');
 

@@ -133,6 +133,21 @@ storiesOf('Documentation|General', module)
           read more
         </Link>
       </p>
+      <h3>Wizard Forms</h3>
+      <p>Apply to these rules when developing a wizard form.</p>
+      <ul className="wfp--story__list">
+        <li>
+          show errors when the user wants to change a page (or do live
+          validation)
+        </li>
+        <li>
+          stop the user from moving to another page when wrong content was
+          entered (make sure it is possible to move to other pages when no
+          content is entered, except when it is needed on the following pages)
+        </li>
+        <li>use checkmark indicator once wizard page is filled completely.</li>
+        <li>use warning indicator if some content is filled</li>
+      </ul>
       <h3>Be clear with your error messages</h3>
       <p>
         It doesn’t matter what type of validation you use, you should always use

@@ -13,7 +13,7 @@
     order: 2;
     .#{$prefix}--react-select__control {
       border-radius: 0;
-      min-height: rem(40px);
+      min-height: $input-height;
       background-color: $field-01;
       border: $input-border;
       &:hover {

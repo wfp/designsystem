@@ -18,7 +18,7 @@
     @include typescale('zeta');
     display: block;
     width: 100%;
-    height: rem(40px);
+    height: $input-height;
     min-width: 10rem;
     padding: 0 $spacing-xs;
     color: $text-01;
