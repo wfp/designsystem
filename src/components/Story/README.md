@@ -17,8 +17,8 @@ When applying the story classes the margins between the elements will be calcula
 
 ### Selectors
 
-| selector     | Options     | Role                                           |
-| -------- | ----------- | ----------- | ---------------------------------------------- |
+| selector | Options | Role   |
+| -------- | ----------- | ----------- |
 | `.wfp--story__title` | `none` | The main title of the story|
 | `.wfp--story__sub-title` | `none` | A subtitle placed directly under the main title |
 | `.wfp--story__markup` | `none` | a link to a overview of the MainNavigationItem |

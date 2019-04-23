@@ -37,5 +37,4 @@ export default create({
 
   brandTitle: 'WFP UI',
   brandUrl: 'https://wfp.org',
-  brandImage: 'https://placehold.it/350x150',
 });

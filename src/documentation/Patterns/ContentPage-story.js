@@ -10,9 +10,7 @@ storiesOf('Documentation|Patterns', module)
   .add('Content page', () => (
     <Page title="Content Page" subTitle="Regular Content Page">
       <h3>Where to use?</h3>
-      <p>
-        This is currently a draft.
-      </p>
+      <p>This is currently a draft.</p>
       {/*<ul className="wfp--story__list">
         <li>
           <Link

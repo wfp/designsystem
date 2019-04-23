@@ -5,13 +5,12 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-const { prefix } = require('../../globals/js/settings');
-const { componentsX } = require('../../globals/js/feature-flags');
+import settings from '../../globals/js/settings';
+const { prefix } = settings;
 
 module.exports = {
   context: {
     prefix,
-    componentsX,
   },
   variants: [
     {

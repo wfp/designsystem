@@ -51,9 +51,8 @@ storiesOf(' Documentation|Getting Started', module).add('React Usage', () => (
 
     <h3>Maps</h3>
     <p>
-      <Link href="https://www.react-simple-maps.io">
-        react-simple-maps
-      </Link>{' '} is a map component to generate simple political maps
+      <Link href="https://www.react-simple-maps.io">react-simple-maps</Link> is
+      a map component to generate simple political maps
     </p>
 
     <h3>Forms</h3>

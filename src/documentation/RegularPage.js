@@ -54,6 +54,7 @@ const Page = ({
   withoutSecondary,
   withoutSecondaryTabs,
   pageWidth,
+  title,
 }) => {
   return (
     <div>
@@ -234,7 +235,9 @@ const Page = ({
             <BreadcrumbItem href="#">Breadcrumb 2</BreadcrumbItem>
             <BreadcrumbItem href="#">Breadcrumb 3</BreadcrumbItem>
           </Breadcrumb>
-          <SecondaryNavigationTitle>The page title</SecondaryNavigationTitle>
+          <SecondaryNavigationTitle>
+            {title ? title : 'The page title'}
+          </SecondaryNavigationTitle>
           {!withoutSecondaryTabs && (
             <Tabs {...props.tabs} customTabContent={true}>
               <Tab

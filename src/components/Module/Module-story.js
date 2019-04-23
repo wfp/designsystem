@@ -4,15 +4,33 @@ import { Module, ModuleHeader, ModuleBody, ModuleFooter } from '../Module';
 import Wrapper from '../Wrapper';
 
 import 'flexboxgrid/dist/flexboxgrid.css';
+import {
+  withKnobs,
+  array,
+  boolean,
+  number,
+  text,
+} from '@storybook/addon-knobs';
+
+const props = () => ({
+  className: text('Additional class (className)', false),
+  noMargin: boolean('Disable margin (noMargin)', false),
+  light: boolean('Styling for white background (light)', false),
+  dark: boolean('Styling with dark content (dark)', false),
+  withHover: boolean('Add hover class (withHover)', false),
+});
 
 storiesOf('Components|Module', module)
+  .addDecorator(withKnobs)
   .addDecorator(story => (
-    <div className="wfp--module__background">
+    <div
+      className="wfp--module__background"
+      style={{ height: '100vh', width: '100%' }}>
       <Wrapper pageWidth="narrow">{story()}</Wrapper>
     </div>
   ))
   .add('Default', () => (
-    <Module className="some-class">
+    <Module {...props()}>
       <ModuleHeader>Module Example</ModuleHeader>
       <ModuleBody>
         <p>

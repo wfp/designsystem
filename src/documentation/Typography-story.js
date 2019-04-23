@@ -23,36 +23,32 @@ storiesOf('Documentation|General', module)
       increasing cognitive load on the user. The bigger the congnitive load is,
       the harder it is for users to complete their tasks.
     </p>*/}
-
       <h2>Typefaces</h2>
-
       <p>
         Open Sans is the primary typeface for user interfaces; it’s a round,
         humanist sans-serif, with incredibly warm appeal. It can be used for
         both headlines and paragraphs alike, as well as for interface elements.
       </p>
-
       <h3>How to use it</h3>
-
       <p>
         Open Sans is already included in the WFP UI's CSS. If you don't want to
         include the font you can use set{' '}
         <span className="wfp--inline-highlight">$css--font-face: false;</span>{' '}
         with scss.
       </p>
-
       <h2>Capitalization</h2>
-
-      <Link href="https://cdn.wfp.org/guides/editorial/content/capitalization/" target="_blank">This guide</Link>{' '} explains rules for capatalization.
-
+      <Link
+        href="https://cdn.wfp.org/guides/editorial/content/capitalization/"
+        target="_blank">
+        This guide
+      </Link>{' '}
+      explains rules for capatalization.
       <h2>Headings</h2>
-
       <p>
         Headings help to add a hierarchy to a page, and they are key identifiers
         for users reading a page. They should be used in an order that is
         relevant to the content of a page.
       </p>
-
       <Blockquote>
         <h1>Heading 1</h1>
         <h2>Heading 2</h2>
@@ -61,9 +57,7 @@ storiesOf('Documentation|General', module)
       </Blockquote>
       {/*<h5>Heading 5</h5>*/}
       {/*<h6>Heading 6</h6>*/}
-
       <h3>Paragraph</h3>
-
       <p>
         Paragraph – Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
         diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
@@ -76,7 +70,6 @@ storiesOf('Documentation|General', module)
         . At vero eos et accusam et justo duo dolores et ea rebum. Stet clita
         kasd gubergren.
       </p>
-
       {/*<h3>Dos and Don’ts</h3>
     <ul>
       <li>

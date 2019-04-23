@@ -38,8 +38,8 @@ If you want to help improve the docs, it's a good idea to let others know what y
 2. Navigate to your forked repository and copy the **SSH url**. Clone your fork by running the following in your terminal:
 
    ```
-   $ git clone git@github.com:{ YOUR_USERNAME }/carbon-components-react.git
-   $ cd carbon-components-react
+   $ git clone git@github.com:{ YOUR_USERNAME }/UI.git
+   $ cd UI
    ```
 
    See [GitHub docs](https://help.github.com/articles/fork-a-repo/) for more details on forking a repository.
@@ -153,10 +153,4 @@ Test your changes by running our test commands:
 
   ```
   yarn test --watch
-  ```
-
-* Generate code coverage report (stored in `.gh-pages/coverage` folder):
-
-  ```
-  yarn test --coverage
   ```

@@ -13,7 +13,7 @@ storiesOf('Documentation|Samples', module)
   .add('Application Page', () => (
     <Wrapper background="lighter" pageWidth="lg" spacing="md">
       <div className="row">
-        <Module className="col-xs-12 col-md-6 col-lg-4" size="single">
+        <Module className="col-xs-12 col-md-6 col-lg-4">
           <ModuleHeader>Module Example</ModuleHeader>
           <ModuleBody>
             <p>
@@ -29,7 +29,7 @@ storiesOf('Documentation|Samples', module)
           </ModuleBody>
         </Module>
 
-        <Module className="col-xs-12 col-md-6 col-lg-4" size="single">
+        <Module className="col-xs-12 col-md-6 col-lg-4">
           <ModuleHeader>Module Example</ModuleHeader>
           <ModuleBody>
             <p>
@@ -45,7 +45,7 @@ storiesOf('Documentation|Samples', module)
           </ModuleBody>
         </Module>
 
-        <Module className="col-xs-12 col-md-6 col-lg-4" size="single">
+        <Module className="col-xs-12 col-md-6 col-lg-4">
           <ModuleHeader>Module Example</ModuleHeader>
           <ModuleBody>
             <p>
@@ -61,7 +61,7 @@ storiesOf('Documentation|Samples', module)
           </ModuleBody>
         </Module>
 
-        <Module className="col-xs-12 col-md-6 col-lg-6" size="single">
+        <Module className="col-xs-12 col-md-6 col-lg-6">
           <ModuleHeader>Module Example</ModuleHeader>
           <ModuleBody>
             <p>
@@ -77,7 +77,7 @@ storiesOf('Documentation|Samples', module)
           </ModuleBody>
         </Module>
 
-        <Module className="col-xs-12 col-md-6 col-lg-6" size="single">
+        <Module className="col-xs-12 col-md-6 col-lg-6">
           <ModuleHeader>Module Example</ModuleHeader>
           <ModuleBody>
             <p>

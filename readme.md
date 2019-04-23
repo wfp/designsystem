@@ -152,6 +152,8 @@ The downloads are available here: [UI Design Kit on GitHub](https://github.com/w
 ## Development
 
 Please refer to the [Contribution Guidelines](./.github/CONTRIBUTING.md) before starting any work.
+Use the `next` branch for active development.
+
 ### Using the server
 
 We recommend the use of [React Storybook](https://github.com/storybooks/react-storybook) for developing components.

@@ -18,23 +18,28 @@ const colorBlend = [
   { name: '80', blend: '000000', percentage: '75' },
 ];
 
+var mix = function(color_1, color_2, weight) {
+  function d2h(d) {
+    return d.toString(16);
+  } // convert a decimal value to hex
+  function h2d(h) {
+    return parseInt(h, 16);
+  } // convert a hex value to decimal
 
-var mix = function (color_1, color_2, weight) {
-  function d2h(d) { return d.toString(16); }  // convert a decimal value to hex
-  function h2d(h) { return parseInt(h, 16); } // convert a hex value to decimal 
+  weight = typeof weight !== 'undefined' ? weight : 50; // set the weight to 50%, if that argument is omitted
 
-  weight = (typeof (weight) !== 'undefined') ? weight : 50; // set the weight to 50%, if that argument is omitted
+  var color = '#';
 
-  var color = "#";
-
-  for (var i = 0; i <= 5; i += 2) { // loop through each of the 3 hex pairs—red, green, and blue
+  for (var i = 0; i <= 5; i += 2) {
+    // loop through each of the 3 hex pairs—red, green, and blue
     var v1 = h2d(color_1.substr(i, 2)), // extract the current pairs
       v2 = h2d(color_2.substr(i, 2)),
-
       // combine the current pairs from each source color, according to the specified weight
       val = d2h(Math.floor(v2 + (v1 - v2) * (weight / 100.0)));
 
-    while (val.length < 2) { val = '0' + val; } // prepend a '0' if val results in a single digit
+    while (val.length < 2) {
+      val = '0' + val;
+    } // prepend a '0' if val results in a single digit
 
     color += val; // concatenate val to our new color string
   }
@@ -147,7 +152,11 @@ storiesOf('Documentation|General', module)
                         marginRight: '1em',
                         marginBottom: '1px',
                         borderRadius: '3px',
-                        background: mix(blend.blend, color.hex.replace('#', ''), blend.percentage),
+                        background: mix(
+                          blend.blend,
+                          color.hex.replace('#', ''),
+                          blend.percentage
+                        ),
                       }}
                       className={`color__${color.name}-{blend}`}
                     />
@@ -162,8 +171,16 @@ storiesOf('Documentation|General', module)
                           marginRight: '1em',
                         }}>
                         <List colon kind="simple-inline" inline>
-                          <ListItem title="hex">{mix(blend.blend, color.hex.replace('#', ''), blend.percentage)}</ListItem>
-                          <ListItem title="scss">{color.scss}-{blend.name}</ListItem>
+                          <ListItem title="hex">
+                            {mix(
+                              blend.blend,
+                              color.hex.replace('#', ''),
+                              blend.percentage
+                            )}
+                          </ListItem>
+                          <ListItem title="scss">
+                            {color.scss}-{blend.name}
+                          </ListItem>
                         </List>
                       </span>
                     </div>
@@ -227,8 +244,10 @@ const barChartColor = colors.navy;
 `}
           </PrismCode>
         </Blockquote>
-        <p>Setting color variables makes it easy to reuse colors,
-          without the hassle of updating every single Hex color code once they change.</p>
+        <p>
+          Setting color variables makes it easy to reuse colors, without the
+          hassle of updating every single Hex color code once they change.
+        </p>
 
         <Blockquote title="Usage in scss" type="code">
           <PrismCode component="pre" className="language-css">

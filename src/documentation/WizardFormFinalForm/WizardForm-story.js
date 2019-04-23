@@ -25,8 +25,8 @@ const renderError = ({ meta: { touched, error } }) =>
   touched && error ? (
     <span className="wfp--form-requirement">{error}</span>
   ) : (
-      false
-    );
+    false
+  );
 
 storiesOf('Documentation|Samples', module)
   .addParameters({ options: { showPanel: false, isToolshown: false } })

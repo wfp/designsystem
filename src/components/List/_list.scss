@@ -18,9 +18,9 @@
     @include font-smoothing;
   }
   .#{$prefix}--list--colon {
-    .#{$prefix}--list__element__title{
+    .#{$prefix}--list__element__title {
       &:after {
-        content: ":";
+        content: ':';
       }
     }
   }

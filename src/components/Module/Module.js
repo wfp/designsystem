@@ -11,6 +11,10 @@ const propTypes = {
    * The CSS class name for the slider.
    */
   className: PropTypes.string,
+  noMargin: PropTypes.bool,
+  light: PropTypes.bool,
+  dark: PropTypes.bool,
+  withHover: PropTypes.withHover,
 };
 
 const moduleBodyPropTypes = {
@@ -51,6 +55,7 @@ const Module = ({
   centered,
   children,
   className,
+  margin,
   noMargin,
   withHover,
   ...other
@@ -59,6 +64,9 @@ const Module = ({
     {
       'wfp--module--dark': dark,
       'wfp--module--no-margin': noMargin,
+      'wfp--module--margin-xs': margin === 'xs',
+      'wfp--module--margin-md': margin === 'md',
+      'wfp--module--margin-lg': margin === 'lg',
       'wfp--module--light': light,
       'wfp--module--with-hover': withHover,
     },

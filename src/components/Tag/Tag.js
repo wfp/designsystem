@@ -6,6 +6,9 @@ const TYPES = {
   beta: 'Beta',
   custom: 'Custom',
   wfp: 'WFP',
+  error: 'error',
+  success: 'Success',
+  warning: 'Warning',
 };
 
 const Tag = ({ children, className, type, ...other }) => {

@@ -17,7 +17,7 @@ storiesOf('Components|Tag', module)
   .addDecorator(withKnobs)
   .add('Default', () => (
     <Tag className="some-class" type={select('Tag type (type)', types, 'wfp')}>
-      {text('Content (children)', '')}
+      {text('Content (children)', 'This is a tag')}
     </Tag>
   ))
   .add('skeleton', () => <TagSkeleton />);
