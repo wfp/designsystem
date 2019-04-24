@@ -2,13 +2,7 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-# [1.2.0-alpha.21](https://github.com/WFP/UI/compare/v1.2.0-alpha.20...v1.2.0-alpha.21) (2019-04-24)
-
-
-### Features
-
-* **AdvancedFilter:** advanced Filter example added ([62acc07](https://github.com/WFP/UI/commit/62acc07))
-* **colors:** Color json and export ([0831601](https://github.com/WFP/UI/commit/0831601))
+# [1.2.0-alpha.22](https://github.com/WFP/UI/compare/v1.2.0-alpha.21...v1.2.0-alpha.22) (2019-04-24)
 
 
 
