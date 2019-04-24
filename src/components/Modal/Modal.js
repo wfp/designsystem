@@ -187,10 +187,10 @@ export default class Modal extends Component {
 
   handleKeyDown = evt => {
     if (evt.which === 27) {
-      this.props.onRequestClose(evt);
+      this.props.onRequestClose(evt, 'key');
     }
     if (evt.which === 13 && this.props.shouldSubmitOnEnter) {
-      this.props.onRequestSubmit(evt);
+      this.props.onRequestSubmit(evt, 'key');
     }
   };
 
@@ -200,8 +200,12 @@ export default class Modal extends Component {
       !this.innerModal.current.contains(evt.target) &&
       !this.elementOrParentIsFloatingMenu(evt.target)
     ) {
-      this.props.onRequestClose(evt);
+      this.props.onRequestClose(evt, 'background');
     }
+  };
+
+  handleCloseButton = evt => {
+    this.props.onRequestClose(evt, 'button');
   };
 
   focusModal = () => {
@@ -309,7 +313,7 @@ export default class Modal extends Component {
       <button
         className={`${prefix}--modal-close`}
         type="button"
-        onClick={onRequestClose}
+        onClick={this.handleCloseButton}
         ref={this.button}>
         <Icon
           icon={iconClose}

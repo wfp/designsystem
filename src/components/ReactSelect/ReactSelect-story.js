@@ -8,7 +8,7 @@ const options = [
   { value: 'vanilla', label: 'Vanilla' },
 ];
 
-storiesOf('Components|React-Select', module)
+storiesOf('Components|ReactSelect', module)
   .addParameters({
     info: {
       source: false,

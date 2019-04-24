@@ -11,10 +11,22 @@ const propTypes = {
    * The CSS class name for the slider.
    */
   className: PropTypes.string,
+  /**
+   * Disables the default margin
+   */
   noMargin: PropTypes.bool,
+  /**
+   * Light appearance (for white backgrounds)
+   */
   light: PropTypes.bool,
+  /**
+   * Dark appearance
+   */
   dark: PropTypes.bool,
-  withHover: PropTypes.withHover,
+  /**
+   * Additional hover styling
+   */
+  withHover: PropTypes.bool,
 };
 
 const moduleBodyPropTypes = {

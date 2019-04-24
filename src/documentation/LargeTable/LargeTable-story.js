@@ -16,7 +16,7 @@ import Select from '../../components/Select';
 import SelectItem from '../../components/SelectItem';
 import Button from '../../components/Button';
 
-import { iconAddGlyph, iconSubtractGlyph } from '@wfp/icons';
+import { iconFilterAlt, iconAddGlyph, iconSubtractGlyph } from '@wfp/icons';
 
 import { Module, ModuleHeader, ModuleBody } from '../../components/Module';
 
@@ -95,7 +95,7 @@ const MyForm = onSubmit => (
     initialValues={{ stooge: 'larry', employed: false }}
     render={({ handleSubmit, form, submitting, pristine, values }) => (
       <form onSubmit={handleSubmit}>
-        <div className="row">
+        <div className="wfp--form-long row">
           <div className="col-xs-12 col-md-6 col-lg-3">
             <Field
               id="select"
@@ -176,7 +176,7 @@ class TableWithFilter extends Component {
     const { filterActivated } = this.state;
 
     return (
-      <Module>
+      <Module noMargin>
         <ModuleHeader
           filter={
             <React.Fragment>
@@ -184,7 +184,7 @@ class TableWithFilter extends Component {
               <Search />
               <Button
                 onClick={this.toggleFilter}
-                icon={filterActivated ? iconSubtractGlyph : iconAddGlyph}
+                icon={filterActivated ? iconSubtractGlyph : iconFilterAlt}
                 kind="secondary"
                 style={{ marginLeft: '1em' }}>
                 {filterActivated ? 'Hide Filter' : 'Show Filter'}

@@ -2253,9 +2253,9 @@
     "@webassemblyjs/wast-parser" "1.8.5"
     "@xtuc/long" "4.2.2"
 
-"@wfp/icons@^0.0.80":
-  version "0.0.80"
-  resolved "https://registry.yarnpkg.com/@wfp/icons/-/icons-0.0.80.tgz#d9278c9f008b804ff87c6136aac9e49a2c8ecf58"
+"@wfp/icons@^0.0.81":
+  version "0.0.81"
+  resolved "https://registry.yarnpkg.com/@wfp/icons/-/icons-0.0.81.tgz#86996eab5884edc8942f838c1edeea59abacbd69"
 
 "@xtuc/ieee754@^1.2.0":
   version "1.2.0"
