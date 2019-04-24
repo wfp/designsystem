@@ -2,13 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-# [1.2.0-alpha.20](https://github.com/WFP/UI/compare/v1.2.0-alpha.19...v1.2.0-alpha.20) (2019-04-23)
+# [1.2.0-alpha.21](https://github.com/WFP/UI/compare/v1.2.0-alpha.20...v1.2.0-alpha.21) (2019-04-24)
 
 
 ### Features
 
-* **Module:** Documentation, handlebars demos WIP ([c0a087a](https://github.com/WFP/UI/commit/c0a087a))
-* **multiple:** color nuances [#189](https://github.com/WFP/UI/issues/189) and overall color page improvement, redirect page example in handlebars added, Blockquote update, Android UI docs Wip, DatePicker, List has new styles (simple-inline, list-colon), Select Carbon Components update, Dashboard documentation ([0eee6d0](https://github.com/WFP/UI/commit/0eee6d0))
+* **AdvancedFilter:** advanced Filter example added ([62acc07](https://github.com/WFP/UI/commit/62acc07))
+* **colors:** Color json and export ([0831601](https://github.com/WFP/UI/commit/0831601))
 
 
 
