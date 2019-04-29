@@ -69,6 +69,7 @@ export default class Wizard extends React.Component {
     const { children } = this.props;
     const { page, values } = this.state;
     const activePage = React.Children.toArray(children)[page];
+
     const isLastPage = page === React.Children.count(children) - 1;
     return (
       <Form
@@ -78,7 +79,8 @@ export default class Wizard extends React.Component {
         {({ handleSubmit, submitting, values }) => (
           <form onSubmit={handleSubmit}>
             <FormWizard
-              formHeader={`Step: ${page}/4 Some more text`}
+              stickySidebar
+              formHeader={`Step: ${page}/4 ${activePage.props.label}`}
               formControls={
                 <FormControls
                   onPreviousClick={this.previous}
@@ -92,7 +94,20 @@ export default class Wizard extends React.Component {
                 <StepNavigation
                   selectedPage={page}
                   handleTabClick={this.handleTabClick}>
-                  <StepNavigationItem
+                  {/* You may also generate these steps from the pages */}
+
+                  {React.Children.map(children, (child, i) => {
+                    // Ignore the first child
+                    return (
+                      <StepNavigationItem
+                        page={i}
+                        status={page >= i ? 'complete' : 'not-started'}
+                        {...child.props}
+                      />
+                    );
+                  })}
+
+                  {/*<StepNavigationItem
                     label="Name and last name"
                     page={0}
                     status={page >= 1 ? 'complete' : 'not-started'}
@@ -103,15 +118,16 @@ export default class Wizard extends React.Component {
                     status={page >= 2 ? 'complete' : 'not-started'}
                   />
                   <StepNavigationItem
-                    label="Et jomen bin"
+                    label="Sulamen mon anmen"
                     page={2}
-                    status={page >= 3 ? 'complete' : 'not-started'}
+                    status={page >= 1 ? 'complete' : 'locked'}
                   />
                   <StepNavigationItem
-                    label="Sulamen mon anmen"
+                    label="Summary"
+                    helperText="Check & validate"
                     page={3}
-                    status={page >= 2 ? 'complete' : 'locked'}
-                  />
+                    status={'summary'}
+                  />*/}
                 </StepNavigation>
               }>
               {/* Adding the wfp--form-long class is important */}

@@ -8,8 +8,8 @@ import Link from '../components/Link';
 
 storiesOf('Documentation|General', module)
   .addParameters({ options: { showPanel: false, isToolshown: false } })
-  .add('Browser Support', () => (
-    <Page title="Browser Support" subTitle="All supported browsers">
+  .add('Browser support', () => (
+    <Page title="Browser support" subTitle="All supported browsers">
       <p>Currently the following browsers are supported:</p>
 
       <ul className="wfp--story__list">

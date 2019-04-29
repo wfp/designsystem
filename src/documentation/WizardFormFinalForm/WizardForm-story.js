@@ -40,7 +40,7 @@ storiesOf('Documentation|Samples', module)
       <Wizard
         initialValues={{ employed: true, stooge: 'larry' }}
         onSubmit={onSubmit}>
-        <Wizard.Page>
+        <Wizard.Page label="Name and last name">
           <Blockquote
             style={{ marginBottom: '2rem' }}
             title="Regular Blockquote">
@@ -88,7 +88,7 @@ storiesOf('Documentation|Samples', module)
             labelText="First Name"
           />
         </Wizard.Page>
-        <Wizard.Page>
+        <Wizard.Page label="Contact data">
           <FormGroup>
             <label htmlFor="sex">Sex</label>
             <FormGroup
@@ -126,6 +126,7 @@ storiesOf('Documentation|Samples', module)
           </FormGroup>
         </Wizard.Page>
         <Wizard.Page
+          label="Additional notes"
           validate={values => {
             const errors = {};
             if (!values.newNotes) {
@@ -141,13 +142,25 @@ storiesOf('Documentation|Samples', module)
             placeholder="Notes"
           />
         </Wizard.Page>
-        <Wizard.Page>
+        <Wizard.Page label="Sulamen mon anmen">
           <Field
             component={ReduxFormWrapper}
             inputComponent={TextArea}
-            name="notes"
+            name="newNotes"
             labelText="Notes"
             placeholder="Notes"
+          />
+        </Wizard.Page>
+        <Wizard.Page
+          label="Summary"
+          helperText="Check & validate"
+          status={'summary'}>
+          <Field
+            component={ReduxFormWrapper}
+            inputComponent={TextArea}
+            name="newNotes"
+            labelText="Summary"
+            placeholder="Summary"
           />
         </Wizard.Page>
       </Wizard>

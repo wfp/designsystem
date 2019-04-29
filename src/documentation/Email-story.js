@@ -39,7 +39,7 @@ storiesOf('Documentation|General', module)
             href={`${
               process.env.STORYBOOK_INTERNAL_ASSETS
             }email/newsletter-external-email.html`}>
-            Transaction
+            Newsletter
           </Button>
           &nbsp;
           <Button
@@ -47,8 +47,8 @@ storiesOf('Documentation|General', module)
             kind="secondary"
             href={`${
               process.env.STORYBOOK_INTERNAL_ASSETS
-            }email/transaction-internal-email.html`}>
-            Newsletter
+            }email/transaction-external-email.html`}>
+            Transaction
           </Button>
         </p>
         <h3>Internal mail templates</h3>

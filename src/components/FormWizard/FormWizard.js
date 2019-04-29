@@ -21,6 +21,10 @@ export default class FormWizard extends React.Component {
      * sidebar component
      */
     sidebar: PropTypes.node.isRequired,
+    /**
+     * Sticky sidebar
+     */
+    stickySidebar: PropTypes.bool,
   };
 
   static defaultProps = {};
@@ -32,10 +36,15 @@ export default class FormWizard extends React.Component {
       formHeader,
       formControls,
       sidebar,
+      stickySidebar,
     } = this.props;
 
     const classes = {
-      formControls: classNames('wfp--form-wizard', className),
+      formControls: classNames(
+        'wfp--form-wizard',
+        { 'wfp--form-wizard--sticky': stickySidebar },
+        className
+      ),
     };
 
     return (

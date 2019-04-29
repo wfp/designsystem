@@ -17,9 +17,10 @@
     @include breakpoint(bp--sm--major) {
       display: flex;
       justify-content: space-between;
+      width: 100%;
     }
     .#{$prefix}--btn {
-      margin-right: $spacing-xs;
+      //margin-right: $spacing-xs;
     }
     .#{$prefix}--form-controls__submit {
       margin-right: 0;

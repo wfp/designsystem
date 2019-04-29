@@ -4,13 +4,7 @@ import { Module, ModuleHeader, ModuleBody, ModuleFooter } from '../Module';
 import Wrapper from '../Wrapper';
 
 import 'flexboxgrid/dist/flexboxgrid.css';
-import {
-  withKnobs,
-  array,
-  boolean,
-  number,
-  text,
-} from '@storybook/addon-knobs';
+import { withKnobs, boolean, text } from '@storybook/addon-knobs';
 
 const props = () => ({
   className: text('Additional class (className)', false),

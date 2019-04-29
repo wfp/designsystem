@@ -8,12 +8,7 @@ import Page from '../Page';
 import Blockquote from '../../components/Blockquote';
 import Link from '../../components/Link';
 import Icon from '../../components/Icon';
-import {
-  Module,
-  ModuleFooter,
-  ModuleBody,
-  ModuleHeader,
-} from '../../components/Module';
+import { Module, ModuleFooter } from '../../components/Module';
 import iconList from '@wfp/icons/dist/carbon-icons.json';
 import { iconDownloadGlyph } from '@wfp/icons';
 

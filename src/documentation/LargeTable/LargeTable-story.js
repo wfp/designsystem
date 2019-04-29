@@ -16,7 +16,7 @@ import Select from '../../components/Select';
 import SelectItem from '../../components/SelectItem';
 import Button from '../../components/Button';
 
-import { iconFilterAlt, iconAddGlyph, iconSubtractGlyph } from '@wfp/icons';
+import { iconFilterAlt, iconSubtractGlyph } from '@wfp/icons';
 
 import { Module, ModuleHeader, ModuleBody } from '../../components/Module';
 
@@ -181,13 +181,13 @@ class TableWithFilter extends Component {
           filter={
             <React.Fragment>
               {' '}
-              <Search />
+              <Search placeHolderText="Type to filter" />
               <Button
                 onClick={this.toggleFilter}
                 icon={filterActivated ? iconSubtractGlyph : iconFilterAlt}
                 kind="secondary"
                 style={{ marginLeft: '1em' }}>
-                {filterActivated ? 'Hide Filter' : 'Show Filter'}
+                {filterActivated ? 'Hide filters' : 'Advanced filters'}
               </Button>
             </React.Fragment>
           }>

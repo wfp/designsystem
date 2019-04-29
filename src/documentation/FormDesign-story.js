@@ -12,6 +12,7 @@ const TextInputProps = {
   className: 'some-class',
   id: 'test2',
   labelText: 'Text Input label',
+  helperText: 'Optional helper text.',
   placeholder: 'Placeholder text',
 };
 
@@ -26,12 +27,8 @@ const InvalidPasswordProps = {
 
 storiesOf('Documentation|General', module)
   .addParameters({ options: { showPanel: false, isToolshown: false } })
-  .add('Form Design', () => (
+  .add('Form design', () => (
     <Page title="Form UX-Design" subTitle="Recommendations for form design">
-      <h3>Avoid Multistep forms for internal applications</h3>
-
-      <p>Long scrolling forms are okay.</p>
-
       <h3>Provide Autosave</h3>
 
       <p>
@@ -133,20 +130,37 @@ storiesOf('Documentation|General', module)
           read more
         </Link>
       </p>
-      <h3>Wizard Forms</h3>
-      <p>Apply to these rules when developing a wizard form.</p>
+
+      <h3>Avoid Multistep (Wizard) forms if not necessary</h3>
+
+      <p>It is okay to place more than 10 inputs on a page.</p>
+
+      <h3>Multistep (Wizard) Forms</h3>
+      <p>Apply to these rules when developing a wizard form:</p>
       <ul className="wfp--story__list">
         <li>
-          show errors when the user wants to change a page (or do live
+          Keep the number of steps at the minimum{' '}
+          <Link
+            href="https://uxplanet.org/wizard-design-pattern-8c86e14f2a38"
+            target="_blank">
+            read more
+          </Link>
+        </li>
+        <li>
+          A review step is mandatory. This step should also do a server-side
+          check of all data entered and show a summary.
+        </li>
+        <li>
+          Show errors when the user wants to change a page (or do live
           validation)
         </li>
         <li>
-          stop the user from moving to another page when wrong content was
+          Stop the user from moving to another page when wrong content was
           entered (make sure it is possible to move to other pages when no
           content is entered, except when it is needed on the following pages)
         </li>
-        <li>use checkmark indicator once wizard page is filled completely.</li>
-        <li>use warning indicator if some content is filled</li>
+        <li>Use checkmark indicator once wizard page is filled completely.</li>
+        <li>Use warning indicator if some content is filled</li>
       </ul>
       <h3>Be clear with your error messages</h3>
       <p>

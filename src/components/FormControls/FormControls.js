@@ -71,6 +71,8 @@ export default class FormControls extends React.Component {
               {previousText}
             </Button>
           )}
+        </div>
+        <div>
           {!nextHidden && (
             <Button
               disabled={nextDisabled}
@@ -82,8 +84,6 @@ export default class FormControls extends React.Component {
               {nextText}
             </Button>
           )}
-        </div>
-        <div>
           {!submitHidden && (
             <Button
               disabled={submitDisabled}

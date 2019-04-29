@@ -1,6 +1,5 @@
 import React from 'react';
 import { iconAdd, iconAddGlyph, iconAddOutline } from '@wfp/icons';
-import iconsList from '@wfp/icons';
 import { storiesOf } from '@storybook/react';
 
 import { withKnobs, select, text } from '@storybook/addon-knobs';
@@ -56,7 +55,6 @@ const props = {
     };
   },
   custom: () => {
-    const selectedIcon = select('The icon (icon (regular))', icons, 'iconAdd');
     return {
       style: {
         margin: '50px',

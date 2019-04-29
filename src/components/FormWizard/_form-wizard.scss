@@ -18,10 +18,18 @@
     @include breakpoint(bp--sm--major) {
       background: none;
     }
+    &--sticky {
+      .#{$prefix}--step-navigation {
+        @include breakpoint(bp--sm--major) {
+          position: sticky;
+          top: 0;
+        }
+      }
+    }
   }
 
   .#{$prefix}--form-wizard__sidebar {
-    width: rem(390px);
+    width: rem(300px);
     margin-top: $spacing-md;
     margin-right: $spacing-lg;
   }

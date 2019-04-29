@@ -7,8 +7,8 @@ import Link from '../components/Link';
 
 storiesOf('Documentation|General', module)
   .addParameters({ options: { showPanel: false, isToolshown: false } })
-  .add('Naming Convention & Linting', () => (
-    <Page title="Naming Convention" subTitle="Naming Convention & Linting">
+  .add('Naming convention & linting', () => (
+    <Page title="Naming convention" subTitle="Naming convention & linting">
       <p>
         The UI Kit uses the{' '}
         <a href="http://getbem.com/naming">BEM naming convention</a>.

@@ -2,12 +2,9 @@
 
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { linkTo } from '@storybook/addon-links';
 import Link from '../../components/Link';
 import Page from '../Page';
 import Blockquote from '../../components/Blockquote';
-import Wrapper from '../../components/Wrapper';
-import Button from '../../components/Button';
 
 /* const Box = ({ title, content }) => (
   <div>

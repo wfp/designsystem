@@ -8,6 +8,7 @@ import {
   iconLocked,
   iconErrorGlyph,
   iconCheckmark,
+  iconMenu,
 } from '@wfp/icons';
 
 export default class StepNavigationItem extends React.Component {
@@ -16,6 +17,7 @@ export default class StepNavigationItem extends React.Component {
     handleTabClick: PropTypes.func,
     handleTabAnchorFocus: PropTypes.func,
     handleTabKeyDown: PropTypes.func,
+    helperText: PropTypes.node,
     href: PropTypes.string.isRequired,
     index: PropTypes.number,
     label: PropTypes.string,
@@ -48,6 +50,7 @@ export default class StepNavigationItem extends React.Component {
       label,
       status,
       selected,
+      helperText,
       selectedPage,
       onClick,
       page,
@@ -65,6 +68,7 @@ export default class StepNavigationItem extends React.Component {
       { 'wfp--step-navigation__nav-item--skip': status === 'skip' },
       { 'wfp--step-navigation__nav-item--warning': status === 'warning' },
       { 'wfp--step-navigation__nav-item--complete': status === 'complete' },
+      { 'wfp--step-navigation__nav-item--summary': status === 'summary' },
       className
     );
 
@@ -81,6 +85,7 @@ export default class StepNavigationItem extends React.Component {
       locked: { icon: iconLocked },
       skip: { icon: iconErrorGlyph },
       complete: { icon: iconCheckmark },
+      summary: { icon: iconMenu },
     };
 
     return (
@@ -99,7 +104,7 @@ export default class StepNavigationItem extends React.Component {
           renderAnchor(anchorProps)
         ) : (
           <React.Fragment>
-            <span className="wfp--step-navigation__nav-item__indicator">
+            <div className="wfp--step-navigation__nav-item__indicator">
               {status ? (
                 <Icon
                   icon={icon[status].icon}
@@ -110,10 +115,17 @@ export default class StepNavigationItem extends React.Component {
               ) : (
                 <span>{page + 1}</span>
               )}
-            </span>
-            <span className="wfp--step-navigation__nav-item__text">
-              {label}
-            </span>
+            </div>
+            <div>
+              <span className="wfp--step-navigation__nav-item__text">
+                {label}
+              </span>
+              {helperText && (
+                <span className="wfp--step-navigation__nav-item__helper-text">
+                  {helperText}
+                </span>
+              )}
+            </div>
           </React.Fragment>
         )}
       </li>
