@@ -6,38 +6,25 @@ export const withNotes = makeDecorator({
     const channel = addons.getChannel();
 
     /* Import all html documents */
-    const req = require.context('./', true, /\.hbs$/);
+    const req = require.context('../../src', true, /\.hbs$/);
+    const reqReadme = require.context('../../src', true, /\.md$/);
+
     var text = '';
-    console.log('context', context.parameters.fileName);
 
-    var result = /[^/]*$/.exec(context.parameters.fileName)[1];
+    var result = /(.*\/)(\w+)(-story.js)+/.exec(context.parameters.fileName);
 
-    console.log('result', result);
+    var readmePath = (result[1] + 'README.md').replace('./src/', './');
+    const githubPath = result[1].replace('./src/', './');
+
+    const resultReadme = reqReadme.keys().find(fruit => fruit === readmePath);
+
     try {
-      text = require(`../../src/components/${context.kind.replace(
-        'Components|',
-        ''
-      )}/README.md`);
-      // do stuff
-    } catch (ex) {}
+      text = reqReadme(readmePath);
+    } catch (ex) {
+      console.log('error', ex);
+    }
 
-    let keys = req.keys();
-
-    //context.parameters.options.panelPosition = 'bottom';
-
-    //addParameters({ options: { panelPosition: 'bottom' } });
-
-    /* context.parameters.info = {
-      inline: inline,
-      text: text,
-    }; */
-
-    //var filename = context.parameters.fileName;
-    //filename = filename ? filename.substr(0, filename.lastIndexOf('/')) : undefined;
-
-    var kind = context.kind;
-    kind = kind.replace('Components|', 'components/');
-    //foldername = filename ? filename.substr(0, filename.lastIndexOf('/')) : undefined;
+    console.log('context', context);
 
     if (!text.includes('<!-- NO PROPS -->')) {
       text = `${text}
@@ -45,11 +32,13 @@ export const withNotes = makeDecorator({
     }
     //text = text.replace('<!-- NO PROPS -->', '');
 
-    var githubLink = kind.includes('components/')
-      ? `<a class="wfp--btn wfp--btn--secondary wfp--btn--sm readme--github" href="https://github.com/wfp/ui/tree/next/src/${kind}">View Source on Github</a>`
-      : '';
+    var githubLink = `<a class="wfp--btn wfp--btn--secondary wfp--btn--sm readme--github" href="https://github.com/wfp/ui/tree/next/src/${githubPath}">View Source on Github</a>`;
 
-    text = `# ${context.kind.replace('Components|', '')} ${githubLink}
+    text = `# ${
+      context.kind.includes('Samples') ? context.name : ''
+    } ${context.kind
+      .replace('Documentation|', '')
+      .replace('Components|', '')} ${githubLink}
 
 ${text}`;
 
