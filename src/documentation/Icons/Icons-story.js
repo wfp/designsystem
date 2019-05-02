@@ -20,7 +20,7 @@ import { Tooltip } from 'react-tippy';
 import tooltipStyle from '../../components/Tooltip';
 
 function camelCaseFromHyphnated(s) {
-  return s.replace(/\-+([A-z])/g, (match, token) => token.toUpperCase());
+  return s.replace(/-+([A-z])/g, (match, token) => token.toUpperCase());
 }
 
 const IconList = ({ icon }) => {

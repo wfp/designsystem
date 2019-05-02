@@ -1,22 +1,18 @@
 import addons, { makeDecorator } from '@storybook/addons';
-import marked from 'marked';
-import { addParameters, configure, addDecorator } from '@storybook/react';
 import React from 'react';
 
-function renderMarkdown(text, options) {
-  return marked(text, { ...marked.defaults, ...options });
-}
-
 export const withNotes = makeDecorator({
-  /*name: 'withNotes',
-  parameterName: 'notes',
-  skipIfNoParametersOrOptions: false,
-  allowDeprecatedUsage: true,*/
   wrapper: (getStory, context, { options, parameters }) => {
     const channel = addons.getChannel();
+
     /* Import all html documents */
     const req = require.context('./', true, /\.hbs$/);
     var text = '';
+    console.log('context', context.parameters.fileName);
+
+    var result = /[^/]*$/.exec(context.parameters.fileName)[1];
+
+    console.log('result', result);
     try {
       text = require(`../../src/components/${context.kind.replace(
         'Components|',
@@ -25,19 +21,11 @@ export const withNotes = makeDecorator({
       // do stuff
     } catch (ex) {}
 
-    //const htmlData = importAll(req);
-
     let keys = req.keys();
 
-    //keys.forEach(function(element, i) {
+    //context.parameters.options.panelPosition = 'bottom';
 
-    const inline = context && !context.kind.indexOf(' ') == 0 ? true : false;
-
-    console.log('context', parameters, context);
-
-    context.parameters.options.panelPosition = 'bottom';
-
-    addParameters({ options: { panelPosition: 'bottom' } });
+    //addParameters({ options: { panelPosition: 'bottom' } });
 
     /* context.parameters.info = {
       inline: inline,

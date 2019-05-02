@@ -205,7 +205,7 @@ class TableWithFilter extends Component {
 }
 
 storiesOf('Documentation|Samples', module)
-  .addParameters({ options: { showPanel: false, isToolshown: false } })
+  //.addParameters({ options: { showPanel: false, isToolshown: false } })
   .addDecorator(story => (
     <RegularPage title="Table with filter">{story()}</RegularPage>
   ))

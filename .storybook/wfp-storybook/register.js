@@ -1,18 +1,10 @@
 import React from 'react';
 import addons from '@storybook/addons';
-import styled from '@emotion/styled';
-import { addParameters, configure, addDecorator } from '@storybook/react';
-import { blue } from 'ansi-colors';
 
-import './_wfp-storybook.scss';
+import '!style-loader!css-loader!sass-loader!./_wfp-storybook.scss';
 
 import Button from '../../src/components/Button';
 import Story from '../../src/components/Story';
-const NotesPanel = styled.div({
-  margin: 10,
-  width: '100%',
-  overflow: 'auto',
-});
 
 class Notes extends React.Component {
   state = {

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { addParameters, configure } from '@storybook/react';
 
 import './polyfills';
 import './_container.scss';
@@ -18,11 +17,7 @@ export default class Container extends Component {
       nextProps.context.story !== prevState.context.story
     ) {
       window.scrollTo(0, 0);
-      /*if (nextProps.context.story.includes('html')) {
-        withOptions({ selectedAddonPanel: 'lucid-docs-panel-code' });
-      } else*/ if (
-        nextProps.context.story.includes('Right to left')
-      ) {
+      if (nextProps.context.story.includes('Right to left')) {
         //withOptions({ name: `WFP UI aaa`, selectedAddonPanel: 'storybook/rtl', addonPanelInRight: true });
       } else {
         //withOptions({ name: `WFP UI ddd`, selectedAddonPanel: 'REACT_STORYBOOK/readme/panel', addonPanelInRight: true });

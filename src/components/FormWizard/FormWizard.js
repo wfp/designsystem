@@ -51,9 +51,9 @@ export default class FormWizard extends React.Component {
       <div className={classes.formControls}>
         <div className="wfp--form-wizard__sidebar">{sidebar}</div>
         <Module className="wfp--form-wizard__content" noMargin>
-          <ModuleHeader>{formHeader}</ModuleHeader>
+          {formHeader && <ModuleHeader>{formHeader}</ModuleHeader>}
           <ModuleBody>{children}</ModuleBody>
-          <ModuleFooter>{formControls}</ModuleFooter>
+          {formControls && <ModuleFooter>{formControls}</ModuleFooter>}
         </Module>
       </div>
     );

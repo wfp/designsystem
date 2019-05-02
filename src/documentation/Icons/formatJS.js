@@ -5,12 +5,12 @@
  */
 
 const formatJS = (symbol, options = {}) => {
-  this.options = Object.assign(
+  /*const newOptions = Object.assign(
     {
       json: true,
     },
     options
-  );
+  );*/
 
   // iconMeta - returns new JSON Array of icon Objects
   // For each "symbol.svg.symbol", create new Objects with these keys/values
