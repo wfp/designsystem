@@ -188,6 +188,7 @@
     "file-loader": "^1.1.11",
     "final-form": "^4.11.1",
     "flexboxgrid": "^6.3.1",
+    "fuse.js": "^3.4.4",
     "gzip-size": "^5.0.0",
     "handlebars": "^4.1.2",
     "husky": "^1.1.2",

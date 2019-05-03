@@ -5,6 +5,7 @@ import { storiesOf } from '@storybook/react';
 import { Form, Field } from 'react-final-form';
 
 import ReactTable from 'react-table';
+import Fuse from 'fuse.js';
 
 import ReduxFormWrapper from '../../components/ReduxFormWrapper';
 import TextInput from '../../components/TextInput';
@@ -76,20 +77,57 @@ const columns = [
   },
 ];
 
-const Table = () => (
-  <ReactTable
-    data={data
-      .concat(data)
-      .concat(data)
-      .concat(data)}
-    defaultPageSize={20}
-    columns={columns}
-    className="-border -striped -highlight -spacing-xs"
-    PaginationComponent={TablePagination}
-  />
-);
+const Table = ({ simpleSearch, search }) => {
+  var dataFiltered = data;
 
-const MyForm = onSubmit => (
+  if (simpleSearch) {
+    /* Simple Search using fuzy.js */
+    var options = {
+      shouldSort: true,
+      distance: 0,
+      threshold: 0.0,
+      minMatchCharLength: 1,
+      keys: ['name', 'age', 'city'],
+    };
+    var fuse = new Fuse(dataFiltered, options);
+    dataFiltered = fuse.search(simpleSearch);
+  }
+
+  /* Advanced search with custom filtering for each input using fuzy.js */
+
+  if (search.name) {
+    var options = {
+      threshold: 0.0,
+      minMatchCharLength: 1,
+      keys: ['name'],
+    };
+    var fuse = new Fuse(dataFiltered, options);
+    dataFiltered = fuse.search(search.name);
+  }
+
+  if (search.age) {
+    var options = {
+      threshold: 0.0,
+      minMatchCharLength: 1,
+      keys: ['age'],
+    };
+    var fuse = new Fuse(dataFiltered, options);
+    console.log('fuse', fuse);
+    dataFiltered = fuse.search(search.age);
+  }
+
+  return (
+    <ReactTable
+      data={dataFiltered}
+      defaultPageSize={20}
+      columns={columns}
+      className="-border -striped -highlight -spacing-xs"
+      PaginationComponent={TablePagination}
+    />
+  );
+};
+
+const MyForm = ({ onSubmit }) => (
   <Form
     onSubmit={onSubmit}
     initialValues={{ stooge: 'larry', employed: false }}
@@ -120,20 +158,20 @@ const MyForm = onSubmit => (
           </div>
           <div className="col-xs-12 col-md-6 col-lg-3">
             <Field
-              id="firstName"
-              name="firstName"
+              id="name"
+              name="name"
               component={ReduxFormWrapper}
               inputComponent={TextInput}
-              labelText="First name"
+              labelText="Name"
             />
           </div>
           <div className="col-xs-12 col-md-6 col-lg-3">
             <Field
-              id="lastName"
-              name="lastName"
+              id="age"
+              name="age"
               component={ReduxFormWrapper}
               inputComponent={TextInput}
-              labelText="Last name"
+              labelText="Age"
             />
           </div>
         </div>
@@ -165,6 +203,8 @@ class TableWithFilter extends Component {
     super(props);
     this.state = {
       filterActivated: false,
+      simpleSearch: undefined,
+      search: {},
     };
   }
 
@@ -172,8 +212,17 @@ class TableWithFilter extends Component {
     this.setState({ filterActivated: !this.state.filterActivated });
   };
 
+  setSimpleSearch = event => {
+    this.setState({ simpleSearch: event.target.value });
+  };
+
+  setSearch = event => {
+    console.log('search', event);
+    this.setState({ search: event });
+  };
+
   render() {
-    const { filterActivated } = this.state;
+    const { filterActivated, simpleSearch } = this.state;
 
     return (
       <Module noMargin>
@@ -181,7 +230,10 @@ class TableWithFilter extends Component {
           filter={
             <React.Fragment>
               {' '}
-              <Search placeHolderText="Type to filter" />
+              <Search
+                placeHolderText="Type to filter"
+                onChange={this.setSimpleSearch}
+              />
               <Button
                 onClick={this.toggleFilter}
                 icon={filterActivated ? iconSubtractGlyph : iconFilterAlt}
@@ -195,10 +247,10 @@ class TableWithFilter extends Component {
         </ModuleHeader>
         {filterActivated && (
           <ModuleBody>
-            <MyForm onSubmit={e => console.log('Submit')} />
+            <MyForm onSubmit={this.setSearch} />
           </ModuleBody>
         )}
-        <Table />
+        <Table {...this.state} />
       </Module>
     );
   }
@@ -209,7 +261,7 @@ storiesOf('Documentation|Samples', module)
   .addDecorator(story => (
     <RegularPage title="Table with filter">{story()}</RegularPage>
   ))
-  .add('Large table with filter', () => (
+  .add('Table with filter', () => (
     <Wrapper background="lighter" pageWidth="lg" spacing="md">
       <TableWithFilter />
     </Wrapper>

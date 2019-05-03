@@ -1464,7 +1464,7 @@
   version "0.7.0"
   resolved "https://registry.yarnpkg.com/@sindresorhus/is/-/is-0.7.0.tgz#9a06f4f137ee84d7df0460c1fdb1135ffa6c50fd"
 
-"@storybook/addon-a11y@^5.0.1":
+"@storybook/addon-a11y@^5.0.10":
   version "5.0.11"
   resolved "https://registry.yarnpkg.com/@storybook/addon-a11y/-/addon-a11y-5.0.11.tgz#b045a99c2582722db8b34e2edee11aa5521eba26"
   dependencies:
@@ -1483,7 +1483,7 @@
     react-dom "^16.8.1"
     util-deprecate "^1.0.2"
 
-"@storybook/addon-actions@^5.0.1":
+"@storybook/addon-actions@^5.0.10":
   version "5.0.11"
   resolved "https://registry.yarnpkg.com/@storybook/addon-actions/-/addon-actions-5.0.11.tgz#7ca6d6ce9400b9b97f2699935edade88905767c3"
   dependencies:
@@ -1502,7 +1502,7 @@
     react-inspector "^2.3.0"
     uuid "^3.3.2"
 
-"@storybook/addon-backgrounds@^5.0.1":
+"@storybook/addon-backgrounds@^5.0.10":
   version "5.0.11"
   resolved "https://registry.yarnpkg.com/@storybook/addon-backgrounds/-/addon-backgrounds-5.0.11.tgz#d21dc3c047891c1c6cd96bf8c9db2a7679a057b6"
   dependencies:
@@ -1517,7 +1517,7 @@
     react "^16.8.1"
     util-deprecate "^1.0.2"
 
-"@storybook/addon-info@^5.0.1":
+"@storybook/addon-info@^5.0.10":
   version "5.0.11"
   resolved "https://registry.yarnpkg.com/@storybook/addon-info/-/addon-info-5.0.11.tgz#d051fdf2b9e6c15b0bc4ef2a23200f35f1e1397d"
   dependencies:
@@ -1537,7 +1537,7 @@
     react-lifecycles-compat "^3.0.4"
     util-deprecate "^1.0.2"
 
-"@storybook/addon-jest@^5.0.1":
+"@storybook/addon-jest@^5.0.10":
   version "5.0.11"
   resolved "https://registry.yarnpkg.com/@storybook/addon-jest/-/addon-jest-5.0.11.tgz#a4a8407c036f77f7d2c07ac8257129b924c61ec6"
   dependencies:
@@ -1552,7 +1552,7 @@
     upath "^1.1.0"
     util-deprecate "^1.0.2"
 
-"@storybook/addon-knobs@^5.0.1":
+"@storybook/addon-knobs@^5.0.10":
   version "5.0.11"
   resolved "https://registry.yarnpkg.com/@storybook/addon-knobs/-/addon-knobs-5.0.11.tgz#1f093560ceec78f4906e0575ded0ac03b4494b09"
   dependencies:
@@ -1573,7 +1573,7 @@
     react-select "^2.3.0"
     util-deprecate "^1.0.2"
 
-"@storybook/addon-links@^5.0.1":
+"@storybook/addon-links@^5.0.10":
   version "5.0.11"
   resolved "https://registry.yarnpkg.com/@storybook/addon-links/-/addon-links-5.0.11.tgz#59a9ce8acc8d5dd7e5622ff875cafc8fe4d6e865"
   dependencies:
@@ -1585,7 +1585,7 @@
     prop-types "^15.6.2"
     qs "^6.5.2"
 
-"@storybook/addon-notes@^5.0.1":
+"@storybook/addon-notes@^5.0.10":
   version "5.0.11"
   resolved "https://registry.yarnpkg.com/@storybook/addon-notes/-/addon-notes-5.0.11.tgz#ce7aa0f4c9f2e5735353c742943266ca39372fe2"
   dependencies:
@@ -1599,7 +1599,7 @@
     prop-types "^15.6.2"
     util-deprecate "^1.0.2"
 
-"@storybook/addon-options@^5.0.1":
+"@storybook/addon-options@^5.0.10":
   version "5.0.11"
   resolved "https://registry.yarnpkg.com/@storybook/addon-options/-/addon-options-5.0.11.tgz#fea3b1b92e64c2321efa52fac67772043126cc66"
   dependencies:
@@ -1607,7 +1607,7 @@
     core-js "^2.6.5"
     util-deprecate "^1.0.2"
 
-"@storybook/addon-storysource@^5.0.1":
+"@storybook/addon-storysource@^5.0.10":
   version "5.0.11"
   resolved "https://registry.yarnpkg.com/@storybook/addon-storysource/-/addon-storysource-5.0.11.tgz#cd9f1c5df1a8dfa400655ad3098dcde1006183c3"
   dependencies:
@@ -1623,7 +1623,7 @@
     react-syntax-highlighter "^8.0.1"
     regenerator-runtime "^0.12.1"
 
-"@storybook/addon-viewport@^5.0.1":
+"@storybook/addon-viewport@^5.0.10":
   version "5.0.11"
   resolved "https://registry.yarnpkg.com/@storybook/addon-viewport/-/addon-viewport-5.0.11.tgz#93b1d6db2c06b7a9282ee96a9a4d1dd2c4ba8849"
   dependencies:
@@ -1638,7 +1638,7 @@
     prop-types "^15.6.2"
     util-deprecate "^1.0.2"
 
-"@storybook/addons@5.0.11", "@storybook/addons@^5.0.1":
+"@storybook/addons@5.0.11", "@storybook/addons@^5.0.10":
   version "5.0.11"
   resolved "https://registry.yarnpkg.com/@storybook/addons/-/addons-5.0.11.tgz#86de70747e0a692d9dd8ea431daa1147d8785697"
   dependencies:
@@ -1866,7 +1866,7 @@
     pretty-hrtime "^1.0.3"
     regenerator-runtime "^0.12.1"
 
-"@storybook/react@^5.0.1":
+"@storybook/react@^5.0.10":
   version "5.0.11"
   resolved "https://registry.yarnpkg.com/@storybook/react/-/react-5.0.11.tgz#e131437a59d1f2fac7fbad4ab0c28a54d8a96398"
   dependencies:
@@ -1913,7 +1913,7 @@
     memoizerific "^1.11.3"
     qs "^6.5.2"
 
-"@storybook/theming@5.0.11", "@storybook/theming@^5.0.1":
+"@storybook/theming@5.0.11", "@storybook/theming@^5.0.10":
   version "5.0.11"
   resolved "https://registry.yarnpkg.com/@storybook/theming/-/theming-5.0.11.tgz#46e243c36324676c36393c01695bdbd6369e79b4"
   dependencies:
@@ -4273,14 +4273,6 @@ concat-stream@^1.4.10, concat-stream@^1.4.7, concat-stream@^1.5.0, concat-stream
     readable-stream "^2.2.2"
     typedarray "^0.0.6"
 
-condense-newlines@^0.2.1:
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/condense-newlines/-/condense-newlines-0.2.1.tgz#3de985553139475d32502c83b02f60684d24c55f"
-  dependencies:
-    extend-shallow "^2.0.1"
-    is-whitespace "^0.3.0"
-    kind-of "^3.0.2"
-
 config-chain@^1.1.11, config-chain@^1.1.12:
   version "1.1.12"
   resolved "https://registry.yarnpkg.com/config-chain/-/config-chain-1.1.12.tgz#0fde8d091200eb5e808caf25fe618c02f48e4efa"
@@ -6616,6 +6608,10 @@ functional-red-black-tree@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/functional-red-black-tree/-/functional-red-black-tree-1.0.1.tgz#1b0ab3bd553b2a0d6399d29c0e3ea0b252078327"
 
+fuse.js@^3.4.4:
+  version "3.4.4"
+  resolved "https://registry.yarnpkg.com/fuse.js/-/fuse.js-3.4.4.tgz#f98f55fcb3b595cf6a3e629c5ffaf10982103e95"
+
 fuzzy-search@^3.0.1:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/fuzzy-search/-/fuzzy-search-3.0.1.tgz#14a4964508a9607d6e9a88818e7ff634108260b6"
@@ -7150,10 +7146,6 @@ hastscript@^5.0.0:
 he@1.2.x, he@^1.1.1:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/he/-/he-1.2.0.tgz#84ae65fa7eafb165fddb61566ae14baf05664f0f"
-
-highlight.js@^9.11.0:
-  version "9.15.6"
-  resolved "https://registry.yarnpkg.com/highlight.js/-/highlight.js-9.15.6.tgz#72d4d8d779ec066af9a17cb14360c3def0aa57c4"
 
 highlight.js@~9.12.0:
   version "9.12.0"
@@ -8056,10 +8048,6 @@ is-utf8@^0.2.0:
   version "0.2.1"
   resolved "https://registry.yarnpkg.com/is-utf8/-/is-utf8-0.2.1.tgz#4b0da1442104d1b336340e80797e865cf39f7d72"
 
-is-whitespace@^0.3.0:
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/is-whitespace/-/is-whitespace-0.3.0.tgz#1639ecb1be036aec69a54cbb401cfbed7114ab7f"
-
 is-windows@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/is-windows/-/is-windows-0.2.0.tgz#de1aa6d63ea29dd248737b69f1ff8b8002d2108c"
@@ -8508,16 +8496,6 @@ jpegtran-bin@^4.0.0:
 js-base64@^2.1.8:
   version "2.5.1"
   resolved "https://registry.yarnpkg.com/js-base64/-/js-base64-2.5.1.tgz#1efa39ef2c5f7980bb1784ade4a8af2de3291121"
-
-js-beautify@^1.6.12:
-  version "1.9.1"
-  resolved "https://registry.yarnpkg.com/js-beautify/-/js-beautify-1.9.1.tgz#6f9ef915f5d8d92b9f907606fce63795884c8040"
-  dependencies:
-    config-chain "^1.1.12"
-    editorconfig "^0.15.2"
-    glob "^7.1.3"
-    mkdirp "~0.5.0"
-    nopt "~4.0.1"
 
 js-beautify@^1.8.9:
   version "1.9.0"
@@ -11187,14 +11165,6 @@ pretty-ms@^3.1.0:
   dependencies:
     parse-ms "^1.0.0"
 
-pretty@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/pretty/-/pretty-2.0.0.tgz#adbc7960b7bbfe289a557dc5f737619a220d06a5"
-  dependencies:
-    condense-newlines "^0.2.1"
-    extend-shallow "^2.0.1"
-    js-beautify "^1.6.12"
-
 prism-themes@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/prism-themes/-/prism-themes-1.1.0.tgz#9f4fadf0c9c7ee415773717ea69c2aaa25aedbfd"
@@ -11648,12 +11618,6 @@ react-helmet-async@^0.2.0:
     prop-types "^15.6.1"
     react-fast-compare "^2.0.2"
     shallowequal "^1.0.2"
-
-react-highlight@^0.12.0:
-  version "0.12.0"
-  resolved "https://registry.yarnpkg.com/react-highlight/-/react-highlight-0.12.0.tgz#34de986a0bfdf228904d0c269b69538d95b35802"
-  dependencies:
-    highlight.js "^9.11.0"
 
 react-hotkeys@2.0.0-pre4:
   version "2.0.0-pre4"
