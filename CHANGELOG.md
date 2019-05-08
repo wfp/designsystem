@@ -2,13 +2,7 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-# [1.2.0-alpha.23](https://github.com/WFP/UI/compare/v1.2.0-alpha.22...v1.2.0-alpha.23) (2019-05-08)
-
-
-### Features
-
-* **Module:** onRequestClose has additional attribute now ([50e3712](https://github.com/WFP/UI/commit/50e3712))
-* **Wizard:** Buttons, summary step added, generate from pages, sticky sidebar ([df5def6](https://github.com/WFP/UI/commit/df5def6))
+# [1.2.0-alpha.24](https://github.com/WFP/UI/compare/v1.2.0-alpha.23...v1.2.0-alpha.24) (2019-05-08)
 
 
 
