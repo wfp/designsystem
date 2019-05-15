@@ -86,7 +86,10 @@ storiesOf('Components|DatePicker', module)
   ))
   .add('DateRangePicker (experimental)', () => (
     <DateRangePickerInput {...props.dateRangePicker()} />
-  ))
+  ));
+
+storiesOf('Components|DatePicker', module)
+  .addDecorator(withKnobs)
   .addDecorator(story => (
     <Provider store={store}>
       <FormWrapper>{story()}</FormWrapper>

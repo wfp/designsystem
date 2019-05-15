@@ -7,5 +7,25 @@ import { Icon } from  '@wfp/ui';
 ```
 
 ```js
-<Icon  icon={iconHome}  width={100}  height={100}  />
+<Icon
+  icon={iconHome}
+  width={100}
+  height={100}
+/>
+```
+
+### Use with colors (Java-script)
+
+```js
+import {iconHome} from '@wfp/icons';
+import { Icon, colors } from  '@wfp/ui';
+```
+
+```js
+<Icon
+  icon={iconHome}
+  color={colors.lime.hex}
+  width={100}
+  height={100}
+/>
 ```

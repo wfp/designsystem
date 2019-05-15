@@ -171,16 +171,16 @@
           position: absolute;
           width: 0;
           height: 0;
-          @include arrow($position, 7px, #333);
+          @include arrow($position, 7px, #ffffff);
           @include arrow-position($position, 7px);
 
           &.arrow-small {
-            @include arrow($position, 5px, #333);
+            @include arrow($position, 5px, #ffffff);
             @include arrow-position($position, 5px);
           }
 
           &.arrow-big {
-            @include arrow($position, 10px, #333);
+            @include arrow($position, 10px, #ffffff);
             @include arrow-position($position, 10px);
           }
         }
@@ -199,7 +199,7 @@
           }
         }
 
-        .tippy-tooltip.light-theme {
+        /*.tippy-tooltip.light-theme {
           [x-circle] {
             background-color: white;
           }
@@ -231,7 +231,7 @@
               @include arrow($position, 10px, rgba(0, 0, 0, 0.7));
             }
           }
-        }
+        }*/
 
         [data-animation='perspective'] {
           transform-origin: nth($origins, index($positions, $position));
@@ -282,13 +282,13 @@
       }
     }
 
-    .tippy-tooltip.transparent-theme {
+    /*.tippy-tooltip.transparent-theme {
       background-color: rgba(0, 0, 0, 0.7);
 
       &[data-animatefill] {
         background-color: transparent;
       }
-    }
+    }*/
 
     .tippy-tooltip.light-theme {
       color: #26323d;
@@ -308,6 +308,7 @@
     border-radius: 4px;
     font-size: 0.95rem;
     padding: 0.8rem;
+    text-align: left;
     //text-align: center;
     will-change: transform;
     -webkit-font-smoothing: antialiased;

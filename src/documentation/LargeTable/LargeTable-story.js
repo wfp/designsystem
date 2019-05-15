@@ -119,7 +119,7 @@ const Table = ({ simpleSearch, search }) => {
   return (
     <ReactTable
       data={dataFiltered}
-      defaultPageSize={20}
+      defaultPageSize={10}
       columns={columns}
       className="-border -striped -highlight -spacing-xs"
       PaginationComponent={TablePagination}
@@ -209,6 +209,9 @@ class TableWithFilter extends Component {
   }
 
   toggleFilter = () => {
+    if (this.state.filterActivated) {
+      this.setState({ search: {} });
+    }
     this.setState({ filterActivated: !this.state.filterActivated });
   };
 

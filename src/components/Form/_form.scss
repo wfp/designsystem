@@ -25,6 +25,9 @@
     margin-bottom: -1rem;
     .#{$prefix}--form-item {
       margin-bottom: 1.3rem;
+      .#{$prefix}--form-item {
+        margin-bottom: 0;
+      }
     }
   }
 

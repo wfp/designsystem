@@ -184,6 +184,12 @@ storiesOf('Documentation|General', module)
       </p>
       <h3>List of Icons</h3>
 
+      <Link
+        href="https://github.com/wfp/carbon-icons/tree/master/src/svg"
+        target="_blank">
+        Source svg files
+      </Link>
+
       <h4>WFP Logos</h4>
       <div style={wrapperStyle}>
         {iconList

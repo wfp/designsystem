@@ -59,11 +59,11 @@ export class SingleDatePickerInput extends PureComponent {
     ) : null;
 
     return (
-      <div>
+      <div className="wfp--form-item">
         {label}
         {helper}
         <SingleDatePicker
-          date={onChange && value ? value : controlledValue}
+          date={onChange && value ? controlledValue : value}
           focused={focused}
           hideKeyboardShortcutsPanel
           onDateChange={value => {

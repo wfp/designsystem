@@ -111,6 +111,7 @@
   }
   .SingleDatePicker {
     position: relative;
+    order: 3;
     //display: inline-block
   }
   .SingleDatePicker__block {
@@ -797,6 +798,7 @@
   }
   .DateRangePicker {
     position: relative;
+    order: 3;
     //display: inline-block;
   }
   .DateRangePicker__block {

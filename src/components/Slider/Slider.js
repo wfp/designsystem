@@ -342,6 +342,10 @@ export default class Slider extends Component {
       inputType,
       required,
       disabled,
+      helperText,
+      invalid,
+      invalidText,
+      hideLabel,
       name,
       light,
       ...other
@@ -370,11 +374,32 @@ export default class Slider extends Component {
       left: `${left}%`,
     };
 
+    const errorId = id + '-error-msg';
+
+    const labelClasses = classNames('wfp--label', {
+      'wfp--visually-hidden': hideLabel,
+    });
+
+    const label = labelText ? (
+      <label htmlFor={id} className={labelClasses}>
+        {labelText}
+      </label>
+    ) : null;
+
+    const error = invalid ? (
+      <div className="wfp--form-requirement" id={errorId}>
+        {invalidText}
+      </div>
+    ) : null;
+
+    const helper = helperText ? (
+      <div className="wfp--form__helper-text">{helperText}</div>
+    ) : null;
+
     return (
       <div className="wfp--form-item">
-        <label htmlFor={id} className="wfp--label">
-          {labelText}
-        </label>
+        {label}
+        {helper}
         <div className={sliderContainerClasses}>
           <span className="wfp--slider__range-label">
             {formatLabel(min, minLabel)}
@@ -439,6 +464,7 @@ export default class Slider extends Component {
             />
           )}
         </div>
+        {error}
       </div>
     );
   }

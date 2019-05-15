@@ -63,10 +63,8 @@ export class DateRangePickerInput extends PureComponent {
     ) : null;
 
     return (
-      <div>
-        <label htmlFor={name} className={`${prefix}--label`}>
-          {labelText}
-        </label>
+      <div className="wfp--form-item">
+        {label}
         {helper}
         <DateRangePicker
           endDateId={endDateId}

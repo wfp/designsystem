@@ -85,12 +85,17 @@ const Select = React.forwardRef(
         </>
       );
     })();
+
+    const labelTextComponent = labelText ? (
+      <label htmlFor={id} className={labelClasses}>
+        {labelText}
+      </label>
+    ) : null;
+
     return (
       <div className={`${prefix}--form-item`}>
         <div className={selectClasses}>
-          <label htmlFor={id} className={labelClasses}>
-            {labelText}
-          </label>
+          {labelTextComponent}
           {!inline && helper}
           {componentsX && inline && (
             <>

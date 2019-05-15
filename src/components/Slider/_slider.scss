@@ -17,6 +17,7 @@
   .#{$prefix}--slider-container {
     max-width: rem(600px);
     min-width: rem(200px);
+    order: 3;
     display: flex;
     align-items: center;
     user-select: none;

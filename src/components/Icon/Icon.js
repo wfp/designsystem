@@ -97,17 +97,17 @@ Icon.propTypes = {
   description: PropTypes.string.isRequired,
 
   /**
-   * The `<svg>` `fill` attribute.
+   * The `svg` `fill` attribute.
    */
   fill: PropTypes.string,
 
   /**
-   * The `<svg>` `fillRule` attribute.
+   * The `svg` `fillRule` attribute.
    */
   fillRule: PropTypes.string,
 
   /**
-   * The `<svg>` `height` attribute.
+   * The `svg` `height` attribute.
    */
   height: PropTypes.string,
 
@@ -139,12 +139,12 @@ Icon.propTypes = {
   style: PropTypes.object,
 
   /**
-   * The `<svg>` `viewbox` attribute.
+   * The `svg` `viewbox` attribute.
    */
   viewBox: PropTypes.string,
 
   /**
-   * The `<svg>` `width` attribute.
+   * The `svg` `width` attribute.
    */
   width: PropTypes.string,
 

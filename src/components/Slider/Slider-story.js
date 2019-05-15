@@ -24,6 +24,7 @@ const props = () => ({
     4
   ),
   labelText: text('Label text (labelText)', 'Slider Label'),
+  helperText: text('Helper text (helperText)', 'Additional helper text'),
   minLabel: text('Label for minimum value (minLabel)', ''),
   maxLabel: text('Label for maximum value (maxLabel)', ''),
   onChange: action('onChange'),
