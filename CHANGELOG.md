@@ -2,7 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-# [1.2.0-alpha.25](https://github.com/WFP/UI/compare/v1.2.0-alpha.24...v1.2.0-alpha.25) (2019-05-08)
+# [1.2.0-alpha.26](https://github.com/WFP/UI/compare/v1.2.0-alpha.25...v1.2.0-alpha.26) (2019-05-15)
+
+
+### Bug Fixes
+
+* **DatePicker:** reset, documentation, Wrapper stories ([a619cef](https://github.com/WFP/UI/commit/a619cef))
 
 
 
