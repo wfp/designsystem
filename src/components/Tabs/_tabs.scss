@@ -22,14 +22,17 @@
     height: auto;
     width: 100%;
     position: relative;
+    overflow: auto;
+    //padding: 1px;
+    max-width: 100%;
 
     @include breakpoint(bp--sm--major) {
       background: none;
-      min-height: rem(49px);
+      //min-height: rem(49px);
     }
   }
 
-  .#{$prefix}--tabs-trigger {
+  /*.#{$prefix}--tabs-trigger {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -51,7 +54,7 @@
     @include breakpoint(bp--sm--major) {
       display: none;
     }
-  }
+  }*/
 
   .#{$prefix}--tabs-trigger-text {
     text-decoration: none;
@@ -59,7 +62,7 @@
     color: $text-01;
 
     &:focus {
-      @include focus-outline('border');
+      //@include focus-outline('border');
     }
   }
 
@@ -78,15 +81,15 @@
       text-decoration: none;
     }
 
-    @include breakpoint(bp--sm--major) {
-      @include typescale('epsilon');
-      flex-direction: row;
-      //margin-right: $spacing-md;
-      //margin-left: $spacing-md;
-      background: none;
-      box-shadow: none;
-      z-index: auto;
-    }
+    //@include breakpoint(bp--sm--major) {
+    @include typescale('epsilon');
+    flex-direction: row;
+    //margin-right: $spacing-md;
+    //margin-left: $spacing-md;
+    background: none;
+    box-shadow: none;
+    z-index: auto;
+    //}
 
     @include breakpoint(bp--lg--major) {
       margin-left: 0;
@@ -99,13 +102,13 @@
     margin-right: 0;
   }
 
-  .#{$prefix}--tabs__nav--hidden {
+  /*.#{$prefix}--tabs__nav--hidden {
     display: none;
 
     @include breakpoint(bp--sm--major) {
       display: flex;
     }
-  }
+  }*/
 
   .#{$prefix}--tabs__nav-item {
     @include typescale('zeta');
@@ -117,44 +120,48 @@
     &:focus {
       //background-color: $hover-row;
 
-      @include breakpoint(bp--sm--major) {
-        outline: 1px solid transparent;
-        background: transparent;
-      }
+      //@include breakpoint(bp--sm--major) {
+      //outline: 1px solid transparent;
+      //background: transparent;
+      //}
     }
 
     @include breakpoint(bp--sm--major) {
       background: transparent;
-      padding: $spacing-sm 0 $spacing-sm;
 
-      & + & {
-        margin-left: rem(48px);
+      a {
+        padding: $spacing-sm $spacing-xs;
+      }
+
+      &+& {
+        margin-left: $spacing-lg;
       }
     }
   }
 
   .#{$prefix}--tabs__nav-item--selected {
-    border: none;
+    //border: none;
 
-    @include breakpoint(bp--sm--major) {
-      border-bottom: 2px solid $brand-01;
+    //@include breakpoint(bp--sm--major) {
+    border-bottom: 2px solid $brand-01;
 
-      .#{$prefix}--tabs__nav-link {
+    .#{$prefix}--tabs__nav-link {
+      color: $brand-01;
+
+      &:focus {
         color: $brand-01;
-
-        &:focus {
-          color: $brand-01;
-        }
       }
     }
+
+    //}
   }
 
   .#{$prefix}--tabs__nav-item:hover .#{$prefix}--tabs__nav-link {
-    color: $text-01;
+    //color: $text-01;
 
-    @include breakpoint(bp--sm--major) {
-      //color: $hover-secondary;
-    }
+    //@include breakpoint(bp--sm--major) {
+    color: $hover-secondary;
+    //}
   }
 
   .#{$prefix}--tabs__nav-link {
@@ -166,27 +173,30 @@
     white-space: nowrap;
     text-overflow: ellipsis;
 
-    &:focus {
+    /*&:focus {
       outline: 1px solid transparent;
       background-color: $brand-01;
       color: $inverse-01;
+    }*/
+
+    //@include breakpoint(bp--sm--major) {
+    //padding: 0 $spacing-3xs;
+    //width: auto;
+
+    &:focus {
+      //background-color: transparent;
+      color: $text-01;
+      outline: 1px solid transparent;
+      //box-shadow: 0 0 0 1px $brand-01;
     }
 
-    @include breakpoint(bp--sm--major) {
-      padding: 0 $spacing-3xs;
-      width: auto;
-
-      &:hover {
-        color: $brand-01;
-      }
-
-      &:focus {
-        background-color: transparent;
-        color: $text-01;
-        outline: 1px solid transparent;
-        box-shadow: 0 0 0 1px $brand-01;
-      }
+    &:hover {
+      color: $brand-01;
     }
+
+
+
+    //}
   }
 
   // Skeleton state
@@ -208,5 +218,9 @@
 
   .#{$prefix}--tabs.#{$prefix}--skeleton .#{$prefix}--tabs-trigger svg {
     @include hidden;
+  }
+
+  .#{$prefix}--tab-content {
+    margin-top: $spacing-md;
   }
 }

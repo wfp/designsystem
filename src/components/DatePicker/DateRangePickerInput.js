@@ -68,7 +68,7 @@ export class DateRangePickerInput extends PureComponent {
         {helper}
         <DateRangePicker
           endDateId={endDateId}
-          endDate={onChange && value ? value.endDate : endDate}
+          endDate={onChange && value ? endDate : value.endDate}
           endDatePlaceholderText={endDatePlaceholderText}
           focusedInput={focusedInput}
           hideKeyboardShortcutsPanel
@@ -80,7 +80,7 @@ export class DateRangePickerInput extends PureComponent {
           }}
           onFocusChange={this.handleFocusChange}
           startDateId={startDateId}
-          startDate={onChange && value ? value.startDate : startDate}
+          startDate={onChange && value ? startDate : value.startDate}
           startDatePlaceholderText={startDatePlaceholderText}
           {...other}
         />

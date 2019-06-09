@@ -100,9 +100,9 @@ export default class Tabs extends React.Component {
     return prevSelected === selected
       ? null
       : {
-          selected,
-          prevSelected: selected,
-        };
+        selected,
+        prevSelected: selected,
+      };
   }
 
   getTabs() {
@@ -212,18 +212,18 @@ export default class Tabs extends React.Component {
 
     const tabContentWithProps = !customTabContent
       ? React.Children.map(tabsWithProps, tab => {
-          const { children, selected } = tab.props;
+        const { children, selected } = tab.props;
 
-          return (
-            <TabContent
-              className="tab-content"
-              aria-hidden={!selected}
-              hidden={!selected}
-              selected={selected}>
-              {children}
-            </TabContent>
-          );
-        })
+        return (
+          <TabContent
+            className="wfp--tab-content"
+            aria-hidden={!selected}
+            hidden={!selected}
+            selected={selected}>
+            {children}
+          </TabContent>
+        );
+      })
       : null;
 
     const classes = {
@@ -234,28 +234,9 @@ export default class Tabs extends React.Component {
       }),
     };
 
-    const selectedTab = this.getTabAt(this.state.selected);
-    const selectedLabel = selectedTab ? selectedTab.props.label : '';
-
     return (
       <>
         <nav {...other} className={classes.tabs} role={role}>
-          <div
-            role="listbox"
-            aria-label={ariaLabel}
-            tabIndex={0}
-            className="wfp--tabs-trigger"
-            onClick={this.handleDropdownClick}
-            onKeyPress={this.handleDropdownClick}>
-            <a
-              tabIndex={-1}
-              className="wfp--tabs-trigger-text"
-              href={triggerHref}
-              onClick={this.handleDropdownClick}>
-              {selectedLabel}
-            </a>
-            <Icon description={iconDescription} icon={iconCaretDown} />
-          </div>
           <ul role="tablist" className={classes.tablist}>
             {tabsWithProps}
           </ul>

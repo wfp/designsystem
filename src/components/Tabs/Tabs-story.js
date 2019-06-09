@@ -105,6 +105,9 @@ storiesOf('Components|Tabs', module)
       <Tab {...props.tab()} label="Tab label 3">
         <div className="some-content">Content for third tab goes here.</div>
       </Tab>
+      <Tab {...props.tab()} label="Tab label 4">
+        <div className="some-content">Content for fourth tab goes here.</div>
+      </Tab>
     </Tabs>
   ))
   .add('Custom Tab Content', () => (

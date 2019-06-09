@@ -92,7 +92,17 @@ storiesOf('Components|DatePicker', module)
   .addDecorator(withKnobs)
   .addDecorator(story => (
     <Provider store={store}>
-      <FormWrapper>{story()}</FormWrapper>
+      <FormWrapper
+        sampleData={{
+          datepicker: {
+            startDate: '2019-05-22T10:00:00.000Z',
+            endDate: '2019-05-24T10:00:00.000Z',
+          },
+          inputname: '2019-05-23T12:00:00+02:00',
+        }}>
+        {' '}
+        {story()}
+      </FormWrapper>
     </Provider>
   ))
   .add('DatePicker Field (experimental)', () => (
