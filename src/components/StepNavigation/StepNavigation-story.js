@@ -10,6 +10,7 @@ const handleTabClick = index => {
 };
 
 const props = () => ({
+  className: 'additional-class',
   vertical: boolean('Display vertical (vertical)', false),
   small: boolean('Small size (small)', false),
   selectedPage: number('Currently selected page (selectedPage)', 1),

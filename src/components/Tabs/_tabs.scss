@@ -133,8 +133,8 @@
         padding: $spacing-sm $spacing-xs;
       }
 
-      &+& {
-        margin-left: $spacing-lg;
+      & + & {
+        margin-left: $spacing-md;
       }
     }
   }
@@ -168,7 +168,7 @@
     display: inline-block;
     color: $text-01;
     text-decoration: none;
-    padding: $spacing-md;
+    padding: $spacing-md $spacing-xs * 1.2;
     width: 100%;
     white-space: nowrap;
     text-overflow: ellipsis;
@@ -193,8 +193,6 @@
     &:hover {
       color: $brand-01;
     }
-
-
 
     //}
   }

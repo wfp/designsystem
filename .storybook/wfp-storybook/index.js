@@ -20,11 +20,12 @@ export const withNotes = makeDecorator({
 
     try {
       text = reqReadme(readmePath);
+      text = text ? text.default : 'no readme';
     } catch (ex) {
       console.log('error', ex);
     }
 
-    console.log('context', context);
+    console.log('context', text);
 
     if (!text.includes('<!-- NO PROPS -->')) {
       text = `${text}
