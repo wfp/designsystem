@@ -2,17 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-# [1.2.0-alpha.30](https://github.com/WFP/UI/compare/v1.2.0-alpha.29...v1.2.0-alpha.30) (2019-06-17)
-
-
-### Bug Fixes
-
-* **Tests:** fixing tests and removing dublicated test ([7cc67df](https://github.com/WFP/UI/commit/7cc67df))
+# [1.2.0-alpha.31](https://github.com/WFP/UI/compare/v1.2.0-alpha.30...v1.2.0-alpha.31) (2019-06-17)
 
 
 ### Features
 
-* **StepNavigation:** skip item added, Tabs clean up ([b1d9f4f](https://github.com/WFP/UI/commit/b1d9f4f))
+* **Tabs:** animated and disabled stated ([#194](https://github.com/WFP/UI/issues/194)) ([8c7e9af](https://github.com/WFP/UI/commit/8c7e9af))
 
 
 
