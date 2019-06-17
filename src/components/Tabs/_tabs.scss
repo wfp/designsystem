@@ -32,6 +32,14 @@
     }
   }
 
+  .#{$prefix}--tabs__nav__bar {
+    position: absolute;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    background: $brand-01;
+    height: 2px;
+    bottom: 0;
+  }
+
   /*.#{$prefix}--tabs-trigger {
     display: flex;
     align-items: center;
@@ -129,7 +137,8 @@
     @include breakpoint(bp--sm--major) {
       background: transparent;
 
-      a {
+      > a,
+      > span {
         padding: $spacing-sm $spacing-xs;
       }
 
@@ -143,7 +152,7 @@
     //border: none;
 
     //@include breakpoint(bp--sm--major) {
-    border-bottom: 2px solid $brand-01;
+    //border-bottom: 2px solid $brand-01;
 
     .#{$prefix}--tabs__nav-link {
       color: $brand-01;
@@ -154,6 +163,20 @@
     }
 
     //}
+  }
+
+  .#{$prefix}--tabs__nav-item--disabled {
+    //border-bottom: 2px solid $brand-01;
+
+    .#{$prefix}--tabs__nav-link {
+      color: $ui-05;
+      cursor: not-allowed;
+
+      &:hover,
+      &:focus {
+        color: $ui-05;
+      }
+    }
   }
 
   .#{$prefix}--tabs__nav-item:hover .#{$prefix}--tabs__nav-link {

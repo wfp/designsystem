@@ -14,4 +14,6 @@ Step by step navigation is a way of presenting end-to-end journeys and wizard fo
 
 - skip (skipped step)
 
+- disabled (disabled step)
+
 - complete (completed step)

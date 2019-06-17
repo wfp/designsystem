@@ -53,6 +53,7 @@ export default class Tab extends React.Component {
   render() {
     const {
       className,
+      disabled,
       handleTabClick,
       handleTabAnchorFocus, // eslint-disable-line
       handleTabKeyDown,
@@ -69,6 +70,7 @@ export default class Tab extends React.Component {
 
     const classes = classNames(
       'wfp--tabs__nav-item',
+      { 'wfp--tabs__nav-item--disabled': disabled },
       { 'wfp--tabs__nav-item--selected': selected },
       className
     );
@@ -96,13 +98,17 @@ export default class Tab extends React.Component {
       tabIndex: -1,
       className: classes,
       onClick: evt => {
-        handleTabClick(index, label, evt);
-        onClick(evt);
+        if (!disabled) {
+          handleTabClick(index, label, evt);
+          onClick(evt);
+        }
       },
       onKeyDown: evt => {
-        this.setTabFocus(evt);
-        handleTabKeyDown(index, label, evt);
-        onKeyDown(evt);
+        if (!disabled) {
+          this.setTabFocus(evt);
+          handleTabKeyDown(index, label, evt);
+          onKeyDown(evt);
+        }
       },
       role: 'presentation',
       selected: selected,
@@ -121,6 +127,8 @@ export default class Tab extends React.Component {
           <li {...liProps}>
             {renderAnchor ? (
               renderAnchor(anchorProps)
+            ) : disabled ? (
+              <span {...anchorProps}>{label}</span>
             ) : (
               <a {...anchorProps}>{label}</a>
             )}

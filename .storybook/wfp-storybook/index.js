@@ -6,15 +6,18 @@ export const withNotes = makeDecorator({
     const channel = addons.getChannel();
 
     /* Import all html documents */
-    const req = require.context('../../src', true, /\.hbs$/);
+    //const req = require.context('../../src', true, /\.hbs$/);
     const reqReadme = require.context('../../src', true, /\.md$/);
 
     var text = '';
 
     var result = /(.*\/)(\w+)(-story.js)+/.exec(context.parameters.fileName);
+    console.log('context', context, result);
 
-    var readmePath = (result[1] + 'README.md').replace('./src/', './');
-    const githubPath = result[1].replace('./src/', './');
+    var resultName = result ? result[1] : '';
+
+    var readmePath = (resultName + 'README.md').replace('./src/', './');
+    const githubPath = resultName.replace('./src/', './');
 
     const resultReadme = reqReadme.keys().find(fruit => fruit === readmePath);
 

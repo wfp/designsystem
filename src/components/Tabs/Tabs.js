@@ -1,8 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
-import { iconCaretDown } from '@wfp/icons';
-import Icon from '../Icon';
 import TabContent from '../TabContent';
 
 export default class Tabs extends React.Component {
@@ -75,25 +73,21 @@ export default class Tabs extends React.Component {
      * Optionally provide an index for the currently selected <Tab>
      */
     selected: PropTypes.number,
-
-    /**
-     * Provide a description that is read out when a user visits the caret icon
-     * for the dropdown menu of items
-     */
-    iconDescription: PropTypes.string.isRequired,
   };
 
   static defaultProps = {
-    iconDescription: 'show menu options',
     role: 'navigation',
     triggerHref: '#',
     selected: 0,
     ariaLabel: 'listbox',
   };
 
-  state = {
-    dropdownHidden: true,
-  };
+  constructor(props) {
+    super(props);
+    this.state = {};
+    // Create the ref
+    this.rootRef = React.createRef();
+  }
 
   static getDerivedStateFromProps({ selected }, state) {
     const { prevSelected } = state;
@@ -103,6 +97,19 @@ export default class Tabs extends React.Component {
           selected,
           prevSelected: selected,
         };
+  }
+
+  componentDidMount() {
+    this.getSizes();
+  }
+
+  componentDidUpdate(prevProps) {
+    if (
+      prevProps.children !== this.props.children &&
+      prevProps.active !== this.props.active
+    ) {
+      this.getSizes();
+    }
   }
 
   getTabs() {
@@ -115,6 +122,22 @@ export default class Tabs extends React.Component {
     );
   };
 
+  getSizes = () => {
+    const rootBounds = this.rootRef.current.getBoundingClientRect();
+    const sizes = {};
+    this.rootRef.current.children.forEach((el, key) => {
+      const bounds = el.getBoundingClientRect();
+
+      const left = bounds.left - rootBounds.left;
+      const right = rootBounds.right - bounds.right;
+
+      sizes[key] = { left, right };
+    });
+
+    this.setState({ sizes });
+    return sizes;
+  };
+
   setTabAt = (index, tabRef) => {
     this[`tab${index}`] = tabRef;
   };
@@ -124,9 +147,6 @@ export default class Tabs extends React.Component {
     return (index, label, evt) => {
       evt.preventDefault();
       this.selectTabAt(index, onSelectionChange);
-      this.setState({
-        dropdownHidden: true,
-      });
     };
   };
 
@@ -136,9 +156,6 @@ export default class Tabs extends React.Component {
 
       if (key === 'Enter' || key === 13 || key === ' ' || key === 32) {
         this.selectTabAt(index, onSelectionChange);
-        this.setState({
-          dropdownHidden: true,
-        });
       }
     };
   };
@@ -165,12 +182,6 @@ export default class Tabs extends React.Component {
     };
   };
 
-  handleDropdownClick = () => {
-    this.setState({
-      dropdownHidden: !this.state.dropdownHidden,
-    });
-  };
-
   selectTabAt = (index, onSelectionChange) => {
     if (this.state.selected !== index) {
       this.setState({
@@ -185,7 +196,6 @@ export default class Tabs extends React.Component {
   render() {
     const {
       ariaLabel,
-      iconDescription,
       inline,
       className,
       customTabContent,
@@ -195,10 +205,12 @@ export default class Tabs extends React.Component {
       ...other
     } = this.props;
 
+    const { selected, sizes } = this.state;
+
     const tabsWithProps = this.getTabs().map((tab, index) => {
       const newTab = React.cloneElement(tab, {
         index,
-        selected: index === this.state.selected,
+        selected: index === selected,
         handleTabClick: this.handleTabClick(onSelectionChange),
         handleTabAnchorFocus: this.handleTabAnchorFocus(onSelectionChange),
         ref: e => {
@@ -229,15 +241,17 @@ export default class Tabs extends React.Component {
     const classes = {
       tabs: classNames('wfp--tabs', className),
       tablist: classNames('wfp--tabs__nav', {
-        'wfp--tabs__nav--hidden': this.state.dropdownHidden,
         'wfp--tabs__nav--inline': inline,
       }),
     };
 
+    const sizeBar = sizes ? sizes[selected] : undefined;
+
     return (
       <>
         <nav {...other} className={classes.tabs} role={role}>
-          <ul role="tablist" className={classes.tablist}>
+          <div className="wfp--tabs__nav__bar" style={sizeBar}></div>
+          <ul ref={this.rootRef} role="tablist" className={classes.tablist}>
             {tabsWithProps}
           </ul>
         </nav>
