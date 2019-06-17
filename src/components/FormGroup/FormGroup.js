@@ -21,7 +21,7 @@ const FormGroup = ({
 
   return (
     <div
-      {...invalid && { 'data-invalid': '' }}
+      {...(invalid && { 'data-invalid': '' })}
       className={classNamesFieldset}
       {...other}>
       <legend className={classNamesLegend}>{legendText}</legend>

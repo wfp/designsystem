@@ -36,18 +36,14 @@ storiesOf('Documentation|General', module)
           <Button
             small
             kind="secondary"
-            href={`${
-              process.env.STORYBOOK_INTERNAL_ASSETS
-            }email/newsletter-external-email.html`}>
+            href={`${process.env.STORYBOOK_INTERNAL_ASSETS}email/newsletter-external-email.html`}>
             Newsletter
           </Button>
           &nbsp;
           <Button
             small
             kind="secondary"
-            href={`${
-              process.env.STORYBOOK_INTERNAL_ASSETS
-            }email/transaction-external-email.html`}>
+            href={`${process.env.STORYBOOK_INTERNAL_ASSETS}email/transaction-external-email.html`}>
             Transaction
           </Button>
         </p>
@@ -56,9 +52,7 @@ storiesOf('Documentation|General', module)
           <Button
             small
             kind="secondary"
-            href={`${
-              process.env.STORYBOOK_INTERNAL_ASSETS
-            }email/transaction-internal-email.html`}>
+            href={`${process.env.STORYBOOK_INTERNAL_ASSETS}email/transaction-internal-email.html`}>
             Transaction
           </Button>
         </p>

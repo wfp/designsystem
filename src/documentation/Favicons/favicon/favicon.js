@@ -99,8 +99,8 @@
               s = o.getContext('2d'),
               c = o.width,
               f = o.height,
-              u = (s.getImageData(0, 0, c, f),
-              this.createBitmapInfoHeader(c, f)),
+              u =
+                (s.getImageData(0, 0, c, f), this.createBitmapInfoHeader(c, f)),
               l = this.createBitmapImageData(o),
               g = u.length + l.length,
               h = this.calculateBitmapOffset(this.sizes, e);
@@ -119,8 +119,9 @@
         }
         createBitmapImageData(t) {
           const e = t.getContext('2d').getImageData(0, 0, t.width, t.height),
-            n = (new Uint32Array(e.data.buffer).reverse().buffer,
-            new Uint8Array((t.width * t.height * 2) / 8));
+            n =
+              (new Uint32Array(e.data.buffer).reverse().buffer,
+              new Uint8Array((t.width * t.height * 2) / 8));
           n.fill(0);
           let r = this.arrayBufferToBinary(this.canvasToBitmap(t));
           return (r += this.Uint8ArrayToBinary(n));

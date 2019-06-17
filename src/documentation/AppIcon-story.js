@@ -43,9 +43,7 @@ storiesOf('Documentation|General', module)
           small
           style={{ marginRight: '0.5em', fontSize: '0.7em' }}
           target="_blank"
-          href={`${
-            process.env.STORYBOOK_ASSETS
-          }app/WFP_APP_ICON_${fileSize}x${fileSize}.png`}>
+          href={`${process.env.STORYBOOK_ASSETS}app/WFP_APP_ICON_${fileSize}x${fileSize}.png`}>
           {fileSize} x {fileSize}px
         </Link>
       ))}

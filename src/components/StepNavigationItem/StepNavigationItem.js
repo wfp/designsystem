@@ -9,6 +9,7 @@ import {
   iconErrorGlyph,
   iconCheckmark,
   iconMenu,
+  iconOverflowMenu,
 } from '@wfp/icons';
 
 export default class StepNavigationItem extends React.Component {
@@ -61,14 +62,7 @@ export default class StepNavigationItem extends React.Component {
       'wfp--step-navigation__nav-item',
       { 'wfp--step-navigation__nav-item--before': page < selectedPage },
       { 'wfp--step-navigation__nav-item--selected': page === selectedPage },
-      { 'wfp--step-navigation__nav-item--locked': status === 'locked' },
-      {
-        'wfp--step-navigation__nav-item--not-started': status === 'not-started',
-      },
-      { 'wfp--step-navigation__nav-item--skip': status === 'skip' },
-      { 'wfp--step-navigation__nav-item--warning': status === 'warning' },
-      { 'wfp--step-navigation__nav-item--complete': status === 'complete' },
-      { 'wfp--step-navigation__nav-item--summary': status === 'summary' },
+      { [`wfp--step-navigation__nav-item--${status}`]: status },
       className
     );
 
@@ -83,7 +77,8 @@ export default class StepNavigationItem extends React.Component {
       'not-started': { icon: iconEllipsis },
       warning: { icon: iconWarningGlyph },
       locked: { icon: iconLocked },
-      skip: { icon: iconErrorGlyph },
+      skip: { icon: iconOverflowMenu },
+      disabled: { icon: iconErrorGlyph },
       complete: { icon: iconCheckmark },
       summary: { icon: iconMenu },
     };
@@ -98,14 +93,13 @@ export default class StepNavigationItem extends React.Component {
             onClick(evt);
           }
         }}
-        role="presentation"
-        selected={selected}>
+        role="presentation">
         {renderAnchor ? (
           renderAnchor(anchorProps)
         ) : (
           <React.Fragment>
             <div className="wfp--step-navigation__nav-item__indicator">
-              {status ? (
+              {status && page !== selectedPage ? (
                 <Icon
                   icon={icon[status].icon}
                   width="14"

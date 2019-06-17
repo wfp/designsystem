@@ -32,6 +32,7 @@ storiesOf('Components|StepNavigation', module)
       <StepNavigationItem label="Warning Item" page={3} status="warning" />
       <StepNavigationItem label="Complete Item" page={4} status="complete" />
       <StepNavigationItem label="Skipped Item" page={4} status="skip" />
-      <StepNavigationItem label="Locked Item" page={5} status="locked" />
+      <StepNavigationItem label="Disabled Item" page={5} status="disabled" />
+      <StepNavigationItem label="Locked Item" page={6} status="locked" />
     </StepNavigation>
   ));

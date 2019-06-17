@@ -100,9 +100,9 @@ export default class Tabs extends React.Component {
     return prevSelected === selected
       ? null
       : {
-        selected,
-        prevSelected: selected,
-      };
+          selected,
+          prevSelected: selected,
+        };
   }
 
   getTabs() {
@@ -212,18 +212,18 @@ export default class Tabs extends React.Component {
 
     const tabContentWithProps = !customTabContent
       ? React.Children.map(tabsWithProps, tab => {
-        const { children, selected } = tab.props;
+          const { children, selected } = tab.props;
 
-        return (
-          <TabContent
-            className="wfp--tab-content"
-            aria-hidden={!selected}
-            hidden={!selected}
-            selected={selected}>
-            {children}
-          </TabContent>
-        );
-      })
+          return (
+            <TabContent
+              className="wfp--tab-content"
+              aria-hidden={!selected}
+              hidden={!selected}
+              selected={selected}>
+              {children}
+            </TabContent>
+          );
+        })
       : null;
 
     const classes = {

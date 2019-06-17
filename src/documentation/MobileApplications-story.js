@@ -52,9 +52,7 @@ storiesOf('Documentation|General', module)
           marginBottom: '2em',
           marginLeft: '-5%',
         }}
-        src={`${
-          process.env.STORYBOOK_INTERNAL_ASSETS
-        }internal/mobile-android-general.png`}
+        src={`${process.env.STORYBOOK_INTERNAL_ASSETS}internal/mobile-android-general.png`}
       />
       <p>
         Use the{' '}

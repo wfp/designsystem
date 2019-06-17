@@ -102,9 +102,7 @@ storiesOf('Documentation|General', module)
                   <LogoElement
                     color={color}
                     logoKind={logoKind.key}
-                    src={`logos/${logoKind.key}/wfp-logo-${
-                      logoKind.key
-                    }-${color}`}
+                    src={`logos/${logoKind.key}/wfp-logo-${logoKind.key}-${color}`}
                   />
                 ) : (
                   <div>
@@ -112,9 +110,7 @@ storiesOf('Documentation|General', module)
                       <LogoElement
                         color={color}
                         logoKind={logoKind.key}
-                        src={`logos/${logoKind.key}/${language}/wfp-logo-${
-                          logoKind.key
-                        }-${color}-${language}`}
+                        src={`logos/${logoKind.key}/${language}/wfp-logo-${logoKind.key}-${color}-${language}`}
                       />
                     ))}
                   </div>
