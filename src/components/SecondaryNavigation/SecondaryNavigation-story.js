@@ -22,10 +22,6 @@ const props = {
   },
 };
 
-const renderAnchor = props => {
-  return <a href={props.href}>{props.label}</a>;
-};
-
 storiesOf('Components|SecondaryNavigation', module)
   .add('default', () => (
     <SecondaryNavigation additional="additional Information">
@@ -40,30 +36,10 @@ storiesOf('Components|SecondaryNavigation', module)
       </Breadcrumb>
       <SecondaryNavigationTitle>The Page Title</SecondaryNavigationTitle>
       <Tabs {...props.tabs} customTabContent={true}>
-        <Tab
-          {...props.tab}
-          label="Tab label 1"
-          href="http://www.de.wfp.org"
-          renderAnchor={renderAnchor}
-        />
-        <Tab
-          {...props.tab}
-          label="Tab label 2"
-          href="http://www.es.wfp.org"
-          renderAnchor={renderAnchor}
-        />
-        <Tab
-          {...props.tab}
-          label="Tab label 3"
-          href="http://www.us.wfp.org"
-          renderAnchor={renderAnchor}
-        />
-        <Tab
-          {...props.tab}
-          label="Tab label 4"
-          href="http://www.fr.wfp.org"
-          renderAnchor={renderAnchor}
-        />
+        <Tab {...props.tab} label="Tab label 1" href="http://www.de.wfp.org" />
+        <Tab {...props.tab} label="Tab label 2" href="http://www.es.wfp.org" />
+        <Tab {...props.tab} label="Tab label 3" href="http://www.us.wfp.org" />
+        <Tab {...props.tab} label="Tab label 4" href="http://www.fr.wfp.org" />
       </Tabs>
     </SecondaryNavigation>
   ))

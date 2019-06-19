@@ -25,18 +25,14 @@
     overflow: auto;
     //padding: 1px;
     max-width: 100%;
-
-    @include breakpoint(bp--sm--major) {
-      background: none;
-      //min-height: rem(49px);
-    }
   }
 
   .#{$prefix}--tabs__nav__bar {
     position: absolute;
     transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
     background: $brand-01;
-    height: 2px;
+    z-index: 10;
+    height: 3px;
     bottom: 0;
   }
 
@@ -83,7 +79,7 @@
     display: flex;
     flex-direction: column;
     z-index: z('dropdown');
-    background: $ui-01;
+    //background: $ui-01;
 
     a {
       text-decoration: none;
@@ -94,7 +90,6 @@
     flex-direction: row;
     //margin-right: $spacing-md;
     //margin-left: $spacing-md;
-    background: none;
     box-shadow: none;
     z-index: auto;
     //}
@@ -120,7 +115,6 @@
 
   .#{$prefix}--tabs__nav-item {
     @include typescale('zeta');
-    background-color: $ui-01;
     padding: 0;
     cursor: pointer;
 
@@ -134,17 +128,14 @@
       //}
     }
 
-    @include breakpoint(bp--sm--major) {
-      background: transparent;
+    > a,
+    > span {
+      display: block;
+      padding: $spacing-sm $spacing-xs;
+    }
 
-      > a,
-      > span {
-        padding: $spacing-sm $spacing-xs;
-      }
-
-      & + & {
-        margin-left: $spacing-md;
-      }
+    & + & {
+      margin-left: $spacing-md;
     }
   }
 

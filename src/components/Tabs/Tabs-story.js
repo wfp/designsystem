@@ -133,4 +133,27 @@ storiesOf('Components|Tabs', module)
       />
     </Tabs>
   ))
+  .add('Custom Tab Logic', () => (
+    <Tabs {...props.tabs()} customTabContent={true}>
+      <Tab
+        {...props.tab()}
+        label="Tab label 1"
+        href="http://www.de.wfp.org"
+        renderAnchor={el}
+      />
+      <Tab
+        {...props.tab()}
+        label="Tab label 4"
+        href="http://www.fr.wfp.org"
+        renderListElement={listEl}
+      />
+      <Tab
+        {...props.tab()}
+        label="React-Router Example"
+        href="http://www.fr.wfp.org"
+        to="/path"
+        renderListElement={listElReactRouter}
+      />
+    </Tabs>
+  ))
   .add('skeleton', () => <TabsSkeleton />);

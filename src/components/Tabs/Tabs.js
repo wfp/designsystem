@@ -123,10 +123,13 @@ export default class Tabs extends React.Component {
   };
 
   getSizes = () => {
+    if (this.rootRef.current.length > 1) {
+      return null;
+    }
     const rootBounds = this.rootRef.current.getBoundingClientRect();
     const sizes = {};
-    this.rootRef.current.children.forEach((el, key) => {
-      const bounds = el.getBoundingClientRect();
+    Object.values(this.rootRef.current.children).forEach((el, key) => {
+      const bounds = el.children[0].getBoundingClientRect();
 
       const left = bounds.left - rootBounds.left;
       const right = rootBounds.right - bounds.right;
@@ -145,7 +148,9 @@ export default class Tabs extends React.Component {
   // following functions (handle*) are Props on Tab.js, see Tab.js for parameters
   handleTabClick = onSelectionChange => {
     return (index, label, evt) => {
-      evt.preventDefault();
+      if (evt) {
+        evt.preventDefault();
+      }
       this.selectTabAt(index, onSelectionChange);
     };
   };
@@ -225,7 +230,9 @@ export default class Tabs extends React.Component {
     const tabContentWithProps = !customTabContent
       ? React.Children.map(tabsWithProps, tab => {
           const { children, selected } = tab.props;
-
+          if (!children) {
+            return null;
+          }
           return (
             <TabContent
               className="wfp--tab-content"
