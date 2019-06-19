@@ -2,12 +2,7 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-# [1.2.0-alpha.31](https://github.com/WFP/UI/compare/v1.2.0-alpha.30...v1.2.0-alpha.31) (2019-06-17)
-
-
-### Features
-
-* **Tabs:** animated and disabled stated ([#194](https://github.com/WFP/UI/issues/194)) ([8c7e9af](https://github.com/WFP/UI/commit/8c7e9af))
+# [1.2.0](https://github.com/WFP/UI/compare/v1.2.0-alpha.31...v1.2.0) (2019-06-19)
 
 
 
