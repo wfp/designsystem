@@ -108,7 +108,7 @@
   },
   "ui-01": {
     "name": "ui-01",
-    "hex": "#ffffff",
+    "hex": "#fbfcfc",
     "scss": "$ui-01",
     "css": "color__ui-01",
     "type": "ui",

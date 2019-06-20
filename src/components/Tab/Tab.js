@@ -83,7 +83,7 @@ export default class Tab extends React.Component {
 
     const anchorProps = {
       className: 'wfp--tabs__nav-link',
-      href,
+      href: disabled ? undefined : href,
       label,
       role: 'tab',
       tabIndex,

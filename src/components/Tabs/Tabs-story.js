@@ -15,10 +15,6 @@ const props = {
       '#'
     ),
     role: text('ARIA role (role in <Tabs>)', 'navigation'),
-    iconDescription: text(
-      'The description of the trigger icon for narrow mode (iconDescription in <Tabs>)',
-      'show menu options'
-    ),
     onClick: action('onClick'),
     onKeyDown: action('onKeyDown'),
     onSelectionChange: action('onSelectionChange'),
@@ -93,7 +89,6 @@ const listElReactRouter = ({ anchor, className, to, exact, match }) => (
 
 storiesOf('Components|Tabs', module)
   .addDecorator(withKnobs)
-
   .add('Default', () => (
     <Tabs {...props.tabs()}>
       <Tab {...props.tab()} label="Tab label 1">

@@ -222,12 +222,6 @@ describe('Tabs', () => {
       </Tabs>
     );
 
-    describe('dropdownHidden', () => {
-      it('should be true', () => {
-        expect(wrapper.state().dropdownHidden).toEqual(true);
-      });
-    });
-
     describe('selected', () => {
       it('should be 0', () => {
         expect(wrapper.state().selected).toEqual(0);
