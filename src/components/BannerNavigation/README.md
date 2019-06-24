@@ -2,7 +2,7 @@ The BannerNavigation is used on internal applications which are actually listed 
 
 ### Usage with default content
 
-`BannerNavigationWithContent` will contain the default links and search input for on the [Global Telephone Directory](http://gtd.wfp.org/).
+`BannerNavigationWithContent` will contain the default links.
 
 ```js
 import { BannerNavigationWithContent } from '@wfp/ui';

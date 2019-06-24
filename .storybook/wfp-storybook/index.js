@@ -2,33 +2,34 @@ import addons, { makeDecorator } from '@storybook/addons';
 import React from 'react';
 
 export const withNotes = makeDecorator({
-  wrapper: (getStory, context, { options, parameters }) => {
+  wrapper: (getStory, context, ttt) => {
     const channel = addons.getChannel();
 
-    /* Import all html documents */
-    //const req = require.context('../../src', true, /\.hbs$/);
+    const contextName = context.kind.includes('Samples')
+      ? context.name
+      : context.kind.replace('Documentation|', '').replace('Components|', '');
+
     const reqReadme = require.context('../../src', true, /\.md$/);
 
     var text = '';
 
     var result = /(.*\/)(\w+)(-story.js)+/.exec(context.parameters.fileName);
-    console.log('context', context, result);
-
     var resultName = result ? result[1] : '';
 
-    var readmePath = (resultName + 'README.md').replace('./src/', './');
-    const githubPath = resultName.replace('./src/', './');
-
-    const resultReadme = reqReadme.keys().find(fruit => fruit === readmePath);
+    const resultReadme = reqReadme
+      .keys()
+      .find(
+        fruit =>
+          fruit.search(new RegExp(contextName.replace(/\s/g, ''), 'i')) !== -1
+      );
+    const githubPath = resultReadme
+      ? resultReadme.replace('./src/', './').replace('README.md', '')
+      : undefined;
 
     try {
-      text = reqReadme(readmePath);
+      text = reqReadme(resultReadme);
       text = text ? text.default : 'no readme';
-    } catch (ex) {
-      console.log('error', ex);
-    }
-
-    console.log('context', text);
+    } catch (ex) {}
 
     if (!text.includes('<!-- NO PROPS -->')) {
       text = `${text}
@@ -36,13 +37,9 @@ export const withNotes = makeDecorator({
     }
     //text = text.replace('<!-- NO PROPS -->', '');
 
-    var githubLink = `<a class="wfp--btn wfp--btn--secondary wfp--btn--sm readme--github" href="https://github.com/wfp/ui/tree/next/src/${githubPath}">View Source on Github</a>`;
+    var githubLink = `<a class="wfp--btn wfp--btn--secondary wfp--btn--sm readme--github" href="https://github.com/wfp/ui/tree/next/src/${githubPath}" target="_blank">View Source on Github</a>`;
 
-    text = `# ${
-      context.kind.includes('Samples') ? context.name : ''
-    } ${context.kind
-      .replace('Documentation|', '')
-      .replace('Components|', '')} ${githubLink}
+    text = `# ${contextName} ${githubLink}
 
 ${text}`;
 
@@ -52,8 +49,6 @@ ${text}`;
         <React.Fragment>{children}</React.Fragment>
       ),
     };
-
-    const storyOptions = parameters || options;
 
     /* const { text, markdown, markdownOptions } =
       typeof storyOptions === 'string' ? { text: storyOptions } : storyOptions;

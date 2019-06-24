@@ -34,11 +34,29 @@ const FormGroup = ({
 };
 
 FormGroup.propTypes = {
+  /**
+   * Specify the contained form elements
+   */
   children: PropTypes.node,
+  /**
+   * Specify a title for the `FormGroup`
+   */
   legendText: PropTypes.string,
+  /**
+   * Specify an optional className to be applied to the wrapper node
+   */
   className: PropTypes.string,
+  /**
+   * Specify an invalid attribute for the `fieldset`
+   */
   invalid: PropTypes.bool,
+  /**
+     * Specify if a message is shown for the `fieldset`
+     */
   message: PropTypes.bool,
+  /**
+   * Specify a message for the `fieldset`
+   */
   messageText: PropTypes.string,
 };
 
