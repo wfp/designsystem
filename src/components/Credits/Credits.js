@@ -13,8 +13,17 @@ const Credits = ({ children, className, info, ...other }) => {
 };
 
 Credits.propTypes = {
+  /**
+ Specify the image or content
+*/
   children: PropTypes.node,
+  /**
+ Additional className which will be added
+*/
   className: PropTypes.string,
+  /**
+ Specifiy the info content
+*/
   info: PropTypes.string,
 };
 

@@ -1,1 +1,1 @@
-A **FormGroup** connects a section of a form.
+A **FormGroup** connects a separates a section of a form and usually starts with a title.

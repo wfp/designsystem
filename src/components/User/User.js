@@ -76,12 +76,12 @@ User.propTypes = {
   ellipsis: PropTypes.bool,
   /**
    * Provide a custom className that is applied directly to the underlying
-   * <textarea> node
+   * &lt;textarea&gt; node
    */
   className: PropTypes.string,
   /**
    * Additional description under the Name will also increase the size
-   * of the Avatar use <List kind="simple" small /> as default content
+   * of the Avatar use &lt;List kind="simple" small /&gt; as default content
    */
   description: PropTypes.node,
   /**

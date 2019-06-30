@@ -1,4 +1,4 @@
-The FormError is displayed at the top of the form if a form is not valid when trying to submit it.
+The **FormError** is displayed at the top of the form if a form is not valid when trying to submit it.
 
 
 ### Props

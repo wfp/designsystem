@@ -25,9 +25,9 @@ storiesOf('Documentation|General', module)
     </p>*/}
       <h2>Typefaces</h2>
       <p>
-        Open Sans is the primary typeface for user interfaces; it’s a round,
-        humanist sans-serif, with incredibly warm appeal. It can be used for
-        both headlines and paragraphs alike, as well as for interface elements.
+        Open Sans is the typeface for user interfaces; it’s a round, humanist
+        sans-serif, with incredibly warm appeal. It can be used for both
+        headlines and paragraphs alike, as well as for interface elements.
       </p>
       <h3>How to use it</h3>
       <p>
@@ -36,13 +36,22 @@ storiesOf('Documentation|General', module)
         <span className="wfp--inline-highlight">$css--font-face: false;</span>{' '}
         with scss.
       </p>
+      <h3>Other languages & styles</h3>
+      <p>
+        If you need other languages or font styles you can find more on{' '}
+        <Link href="https://fonts.google.com/specimen/Open+Sans">
+          Open Sans on fonts.google.com
+        </Link>
+      </p>
       <h2>Capitalization</h2>
-      <Link
-        href="https://cdn.wfp.org/guides/editorial/content/capitalization/"
-        target="_blank">
-        This guide
-      </Link>{' '}
-      explains rules for capatalization.
+      <p>
+        <Link
+          href="https://cdn.wfp.org/guides/editorial/content/capitalization/"
+          target="_blank">
+          This guide
+        </Link>{' '}
+        explains rules for capatalization.
+      </p>
       <h2>Headings</h2>
       <p>
         Headings help to add a hierarchy to a page, and they are key identifiers

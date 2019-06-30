@@ -81,20 +81,79 @@ const TextInput = ({
 };
 
 TextInput.propTypes = {
+  /**
+   * Specify an optional className to be applied to the &lt;input&gt; node
+   */
   className: PropTypes.string,
+
+  /**
+   * Optionally provide the default value of the &lt;input&gt;
+   */
   defaultValue: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+
+  /**
+   * Specify whether the &lt;input&gt; should be disabled
+   */
   disabled: PropTypes.bool,
+
+  /**
+   * Specify a custom `id` for the &lt;input&gt;
+   */
   id: PropTypes.string.isRequired,
+
+  /**
+   * Provide the text that will be read by a screen reader when visiting this
+   * control
+   */
   labelText: PropTypes.node.isRequired,
+
+  /**
+   * Optionally provide an `onChange` handler that is called whenever &lt;input&gt;
+   * is updated
+   */
   onChange: PropTypes.func,
+
+  /**
+   * Optionally provide an `onClick` handler that is called whenever the
+   * &lt;input&gt; is clicked
+   */
   onClick: PropTypes.func,
+
+  /**
+   * Specify the placeholder attribute for the &lt;input&gt;
+   */
   placeholder: PropTypes.string,
+
+  /**
+   * Specify the type of the &lt;input&gt;
+   */
   type: PropTypes.string,
+
+  /**
+   * Specify the value of the &lt;input&gt;
+   */
   value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+
+  /**
+   * Specify whether you want the underlying label to be visually hidden
+   */
   hideLabel: PropTypes.bool,
+
+  /**
+   * Specify whether the control is currently invalid
+   */
   invalid: PropTypes.bool,
+
+  /**
+   * Provide the text that is displayed when the control is in an invalid state
+   */
   invalidText: PropTypes.string,
+
+  /**
+   * Provide text that is used alongside the control label for additional help
+   */
   helperText: PropTypes.node,
+
   /**
    * `true` to use the light version.
    */

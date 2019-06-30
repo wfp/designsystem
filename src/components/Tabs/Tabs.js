@@ -123,7 +123,7 @@ export default class Tabs extends React.Component {
   };
 
   getSizes = () => {
-    if (this.rootRef.current.length > 1) {
+    if (this.rootRef.current === null || this.rootRef.current.length > 1) {
       return null;
     }
     const rootBounds = this.rootRef.current.getBoundingClientRect();

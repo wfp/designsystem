@@ -240,7 +240,7 @@
     "semantic-release": "^15.0.0",
     "standard-version": "^4.4.0",
     "storybook-addon-rtl": "^0.1.2",
-    "storybook-readme": "^5.0.3",
+    "storybook-readme": "^5.0.5",
     "string-replace-loader": "^2.1.0",
     "terser-webpack-plugin": "^1.1.0",
     "validate-commit-msg": "^2.10.1",

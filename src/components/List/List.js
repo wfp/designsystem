@@ -28,6 +28,12 @@ export const List = ({ children, className, colon, kind, small, ...other }) => {
 };
 
 List.propTypes = {
+  /**
+   * Provide multiple `ListItem` components
+   */
   children: PropTypes.node,
+  /**
+   * Specify a custom className
+   */
   className: PropTypes.string,
 };
