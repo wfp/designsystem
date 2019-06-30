@@ -45,6 +45,7 @@ ${text}`;
 
     context.parameters.readme = {
       sidebar: text,
+      codeTheme: 'github',
       StoryPreview: ({ children }) => (
         <React.Fragment>{children}</React.Fragment>
       ),

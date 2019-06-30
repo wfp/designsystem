@@ -12,8 +12,8 @@ import results from '../.jest-test-results.json';
 
 import wfpTheme from './wfpTheme';
 
-require('prismjs');
-require('prismjs/themes/prism.css');
+//require('prismjs');
+//require('prismjs/themes/prism.css');
 
 addDecorator(
   withTests({

@@ -51,8 +51,8 @@ FormGroup.propTypes = {
    */
   invalid: PropTypes.bool,
   /**
-     * Specify if a message is shown for the `fieldset`
-     */
+   * Specify if a message is shown for the `fieldset`
+   */
   message: PropTypes.bool,
   /**
    * Specify a message for the `fieldset`
