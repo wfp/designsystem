@@ -16,3 +16,8 @@ Source: https://material.io/design/components/cards.html#anatomy
 Put the name in the top left corner, align controls or actions to the top right corner of the Module and place the information in the content. The ModuleFooter can be used to show additional functionality like sharing or exporting.
 
 Using Modules has additional benefits of flexibility when it comes to responsive design.
+
+### Usage with react
+```js
+import { Module } from '@wfp/ui';
+```

@@ -1,5 +1,17 @@
 Tags are used for items that need to be labeled, categorized, or organized using keywords that describe them.
 
+### Usage with react
+```js
+import { Tag } from '@wfp/ui';
+```
+
+```js
+<Tag className="some-class" type="wfp">
+  This is a tag
+</Tag>
+```
+
+
 ### SCSS
 
 #### Mixins

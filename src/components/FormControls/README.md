@@ -1,5 +1,10 @@
 **FormControls** can be used inside a regular form or multistep form as action buttons to save and submit a form.
 
+### Usage with react
+```js
+import { FormControls } from '@wfp/ui';
+```
+
 | Setting    | Default     | Options   | Role  |
 | ---------- | ----------- | --------- | ---------- |
 | className | `undefined` | `string` | custom additional className         |

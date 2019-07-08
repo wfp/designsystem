@@ -26,3 +26,24 @@ Page splash with compact size - title and link
 
 #### Teaser
 Card used on publication teasers
+
+### Usage with react
+
+```js
+import { Card } from '@wfp/ui';
+```
+
+```js
+<Card 
+  className="some-class"
+  kind="landscape"
+  title="The Climate Adaption Mangement and Innovation Initiative"
+  metadata="Another Category"
+  moreButton="inverse"
+  subTitle="Food security and climate change analyses, adaptation planning, and good practices in food security adaptation programming."
+  image="http://www1.wfp.org/sites/default/files/images/yemen-hero-min.jpg"
+  url="http://www.wfp.org/"
+  isExternal={false}
+  isLink={true}
+/>
+```

@@ -4,7 +4,7 @@ Wrapper can wrap it's content in a specific width depending on if the applicatio
 import { Wrapper } from '@wfp/ui';
 ```
 
-```html
+```js
 <Wrapper pageWidth="xs" mobilePageWidth="full">
   Content
 </Wrapper>

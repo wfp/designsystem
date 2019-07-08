@@ -4,7 +4,7 @@ The `<Blockquote />` element indicates that the enclosed text is an extended quo
 import { Blockquote } from '@wfp/ui';
 ```
 
-```html
+```js
 <Blockquote>
   Content
 </Blockquote>

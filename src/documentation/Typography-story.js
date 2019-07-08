@@ -5,6 +5,7 @@ import { storiesOf } from '@storybook/react';
 import Page from './Page';
 import Blockquote from '../components/Blockquote';
 import Link from '../components/Link';
+import { linkTo } from '@storybook/addon-links';
 
 storiesOf('Documentation|General', module)
   .addParameters({ options: { showPanel: false, isToolshown: false } })
@@ -38,11 +39,13 @@ storiesOf('Documentation|General', module)
       </p>
       <h3>Other languages & styles</h3>
       <p>
-        If you need other languages or font styles you can find more on{' '}
+        Open Sans provides various font styles and special language character
+        sets, which can be found on{' '}
         <Link href="https://fonts.google.com/specimen/Open+Sans">
           Open Sans on fonts.google.com
         </Link>
       </p>
+
       <h2>Capitalization</h2>
       <p>
         <Link
@@ -51,6 +54,13 @@ storiesOf('Documentation|General', module)
           This guide
         </Link>{' '}
         explains rules for capatalization.
+      </p>
+
+      <h2>Default formating</h2>
+      <p>
+        See the{' '}
+        <Link onClick={linkTo('Button', 'Second')}>Story component</Link> for
+        applying default styling.
       </p>
       <h2>Headings</h2>
       <p>

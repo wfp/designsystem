@@ -15,9 +15,11 @@
   .#{$prefix}--story {
     @include reset;
     @include font-family;
+
     &__center {
       text-align: center;
     }
+
     &__full-height {
       min-height: 65vh;
       display: flex;
@@ -25,37 +27,47 @@
       justify-content: center;
       align-items: center;
     }
+
     p {
       margin-top: $spacing-md;
       line-height: 1.6em;
+
       &:last-child {
         margin-bottom: 0;
       }
     }
+
     h2 {
       //margin: $spacing-lg 0;
       &.before--img {
         margin-bottom: 0;
       }
     }
+
     i {
       font-style: italic;
     }
+
     h3 {
       margin-top: $spacing-xs;
     }
+
     h4 {
       margin-top: $spacing-xs;
       @include typescale('epsilon');
     }
+
     sup {
       font-size: 0.7em;
       background: $ui-03;
+
       > a {
         text-decoration: none;
+
         &:before {
           content: '[';
         }
+
         &:after {
           content: ']';
         }
@@ -83,6 +95,14 @@
       margin-top: $spacing-lg;
     }
 
+    h1 + h2 {
+      margin-top: $spacing-lg;
+    }
+
+    h2 + h3 {
+      margin-top: $spacing-lg;
+    }
+
     p + ul,
     h3 + ul,
     h4 + ul {
@@ -107,6 +127,7 @@
     list-style-position: outside;
     line-height: 1.6em;
     margin: 1.5em 0 1.5em 1.5em;
+
     li {
       list-style-type: disc;
     }
@@ -142,9 +163,11 @@
     font-weight: 600;
     letter-spacing: 0.05em;
   }
+
   .#{$prefix}--story__type-beta {
     margin-bottom: $spacing-lg;
   }
+
   .#{$prefix}--markup {
     font-style: italic;
     @include typescale('delta');
@@ -161,6 +184,7 @@
   .#{$prefix}--story__divider {
     border: 1px solid $ui-04;
   }
+
   .#{$prefix}--story__divider--lg {
     border: 2px solid $ui-04;
   }

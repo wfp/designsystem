@@ -4,6 +4,7 @@ import { addReadme } from 'storybook-readme';
 
 import { getStorybook } from '@storybook/react';
 import withAutoNotes from './wfp-storybook';
+import { withA11y } from '@storybook/addon-a11y';
 
 import Container from './Container';
 
@@ -20,6 +21,8 @@ addDecorator(
     results,
   })
 );
+
+addDecorator(withA11y);
 
 addParameters({
   backgrounds: [

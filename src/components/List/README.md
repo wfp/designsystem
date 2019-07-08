@@ -4,10 +4,12 @@ The **List** component show a number of connected items written consecutively, t
 
 ```js
 import { List } from @wfp/ui;
+```
 
-  <List>
-    <ListItem>First item</ListItem>
-    <ListItem>Second item</ListItem>
-    <ListItem>Third item</ListItem>
-  </List>
+```js
+<List>
+  <ListItem>First item</ListItem>
+  <ListItem>Second item</ListItem>
+  <ListItem>Third item</ListItem>
+</List>
 ```

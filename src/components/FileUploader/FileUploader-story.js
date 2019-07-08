@@ -68,7 +68,7 @@ const props = {
   }),
 };
 
-storiesOf('Components|FileUploader', module)
+storiesOf('Components|FileUploader (draft)', module)
   .addDecorator(withKnobs)
   .addParameters({ jest: ['FileUploader-test'] })
   .add('FileUploaderButton', () => (

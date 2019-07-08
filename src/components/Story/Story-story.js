@@ -17,6 +17,7 @@ storiesOf('Components|Story', module).add('Default', () => (
       crisis, funding shortfalls proved to be a major challenge to WFP’s
       response.
     </p>
+    <h2>Secondary heading</h2>
     <p>
       The scale of the food security and nutrition crisis in Kasai is immense.
       In September 2017, the{' '}
@@ -27,6 +28,7 @@ storiesOf('Components|Story', module).add('Default', () => (
       region alone. In addition, 400,000 children are at risk of dying from
       severe acute malnutrition without urgent life-saving assistance.
     </p>
+    <h3>Smaller Heading (h3)</h3>
     <ul className="wfp--story__list">
       <li>Lorem ipsum dolor sit amet</li>
       <li>Consetetur sadipscing elitr</li>

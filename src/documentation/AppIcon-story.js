@@ -9,8 +9,8 @@ const fileSizes = [120, 152, 160, 167, 180, 192, 300];
 
 storiesOf('Documentation|General', module)
   .addParameters({ options: { showPanel: false, isToolshown: false } })
-  .add('App Icons', () => (
-    <Page title="App Icons" subTitle="Icons for Android & iOS">
+  .add('App icons', () => (
+    <Page title="App icons" subTitle="Icons for Android & iOS">
       <p>
         All WFP apps should use the same app icon featuring the WFP acronym.
       </p>

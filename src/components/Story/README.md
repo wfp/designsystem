@@ -1,9 +1,14 @@
 
 The **Story** component adds a default style, formatting and spacing for a longer text with main focus on readability.
 
+More information can be found in the [typography documentation](?path=/story/documentation-general--typography).
+
 ### Usage with react
 ```js
 import { Story } from '@wfp/ui';
+```
+
+```js
 <Story>
 Content
 </Story>

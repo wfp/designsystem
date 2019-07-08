@@ -1,6 +1,11 @@
 
 Step by step navigation is a way of presenting end-to-end journeys and wizard forms. It groups existing guidance and transactions into a series of steps.
 
+### Usage with react
+```js
+import { StepNavigation, StepNavigationItem } from '@wfp/ui';
+```
+
 ### Default types of state
 
 

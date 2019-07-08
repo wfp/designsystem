@@ -1,5 +1,10 @@
 **Tabs** are used to quickly navigate between views within the same context.
 
+### Usage with react
+```js
+import { Tabs, Tab, TabContent } from '@wfp/ui';
+```
+
 ### Use a custom Tab Link Component
 
   A custom `renderAnchor` replaces the Link inside the `<Tab/>` Component
@@ -38,8 +43,7 @@ const  listEl  = (props) => (
 	renderListElement={listEl}
 />
 ```
-
-
+s
 ### Use with react-router
 
 Write a custom component to use Tabs with different route handlers like `react-router`.

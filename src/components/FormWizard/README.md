@@ -1,1 +1,7 @@
 The **FormWizard** is a wrapper for creating Wizard forms.
+
+### Usage with react
+
+```js
+import { FormWizard } from '@wfp/ui';
+```

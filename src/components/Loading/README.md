@@ -4,8 +4,9 @@ Use the **Loading** spinner to indicate a loading time between 1 and 7 seconds. 
 
 ```javascript
 import { Loading } from '@wfp/ui';
+```
 
-
+```js
 <Loading withOverlay={false} active />
 ```
 

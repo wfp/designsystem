@@ -10,8 +10,8 @@ import Page from './Page';
 
 storiesOf('Documentation|General', module)
   .addParameters({ options: { showPanel: false, isToolshown: false } })
-  .add('Mobile Applications (experimental)', () => (
-    <Page title="Mobile Applications" subTitle="UX Standards">
+  .add('Mobile applications (experimental)', () => (
+    <Page title="Mobile applications" subTitle="UX Standards">
       <Blockquote title="In development" type="warning">
         This page is subject to change and will be updated soon.
       </Blockquote>

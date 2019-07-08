@@ -49,19 +49,13 @@ const styleLoaders = [
   },
 ];
 
-/*
-module.exports = function (baseConfig, env, defaultConfig) {
-  defaultConfig.module.rules.push({
-    test: /\-story\.js$/,
+module.exports = async ({ config, mode }) => {
+  config.module.rules.push({
+    test: /\-story\.jsx?$/,
     loaders: [require.resolve('@storybook/addon-storysource/loader')],
     enforce: 'pre',
   });
 
-  return defaultConfig;
-};
-*/
-
-module.exports = async ({ config, mode }) => {
   config.devtool = useStyleSourceMap ? 'source-map' : '';
   config.optimization = {
     ...config.optimization,

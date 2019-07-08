@@ -47,3 +47,15 @@ Using an Button with only an Icon while not beeing recommended can be achieved b
 #### html
 
 All buttons can use icons. It's recommended to inline SVG icons when possible. Simply add the appropriate `svg` image to the button HTML with the `wfp--btn__icon` class. You can also include a `title` tag for better accessibility to describe what the button does.
+
+
+### Usage with react
+```js
+import { Button } from '@wfp/ui';
+```
+
+```js
+<Button href="#">
+  This is a button
+</Button>
+```

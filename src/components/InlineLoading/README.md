@@ -1,3 +1,8 @@
+### Usage with react
+```js
+import { InlineLoading } from '@wfp/ui';
+```
+
 ### JavaScript
 
 #### Getting component class reference

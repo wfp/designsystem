@@ -6,7 +6,6 @@ To use the styling from WFP don't import any css from `react-toastify` and add t
 
 ```js
 import { notificationStyle } from '@wfp/ui';
-
 ```
 
 ```js

@@ -1,6 +1,11 @@
 
 Using the **ReadMore** component is a simple way to keep longer content from cluttering up your page, giving you more control over how much content is displayed to visitors.
 
+### Usage with react
+```js
+import { ReadMore } from '@wfp/ui';
+```
+
 ### Use with custom content for collapsed and expanded state
 
 The `collapsed` props content will be displayed if the content is collapsed.
