@@ -100,7 +100,7 @@ Card.propTypes = {
 */
   isExternal: PropTypes.bool,
   /**
-  Render as link
+  Render the Card as link
 */
   isLink: PropTypes.bool,
   /**

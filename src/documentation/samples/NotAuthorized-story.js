@@ -10,7 +10,7 @@ import Wrapper from '../../components/Wrapper';
 import { iconWarningSolid } from '@wfp/icons';
 
 storiesOf(' Documentation|Samples', module)
-  .addDecorator(story => <RegularPage withoutSecondary>{story()}</RegularPage>)
+  //.addDecorator(story => <RegularPage withoutSecondary>{story()}</RegularPage>)
   .add('Not authorized', () => (
     <Wrapper pageWidth="lg" spacing="md">
       <Story className="wfp--story__center wfp--story__full-height">
@@ -20,9 +20,10 @@ storiesOf(' Documentation|Samples', module)
           width={100}
           height={100}
           style={{
-            marginBottom: '3rem',
+            marginBottom:
+              '3rem' /*,
             filter:
-              'drop-shadow(10px 6px 0px #f7b825)' /* , transform: 'rotate(10deg)'*/,
+              'drop-shadow(10px 6px 0px #f7b825)', transform: 'rotate(10deg)'*/,
           }}
         />
         <h1 className="wfp--story__title">Not authorized</h1>

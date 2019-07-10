@@ -125,7 +125,10 @@ export default class Modal extends Component {
      * Specify a CSS selector that matches the DOM element that should
      * be focused when the Modal opens. If "false" no selector will be triggered
      */
-    selectorPrimaryFocus: PropTypes.string,
+    selectorPrimaryFocus: PropTypes.oneOfType([
+      PropTypes.bool,
+      PropTypes.string,
+    ]),
 
     /**
      * If true the Modal will be rendered inside a portal at the end of the

@@ -81,13 +81,13 @@ $button-padding: 10px 25px;
 $color__main: #0076FF;
 
 // Import all stylesheets
-@import "../../node_modules/@wfp/ui/source/globals/scss/styles";
+@import "~/@wfp/ui/source/globals/scss/styles";
 
 // Only import the Button stylesheet
-@import "../../node_modules/@wfp/ui/source/components/Button/button";
+@import "~/@wfp/ui/source/components/Button/button";
 
 // Only use variables
-@import "../../node_modules/@wfp/ui/source/globals/scss/vars";`}
+@import "~/@wfp/ui/source/globals/scss/vars";`}
         </PrismCode>
       </Blockquote>
     </Page>
