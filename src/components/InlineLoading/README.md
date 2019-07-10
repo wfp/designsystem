@@ -1,6 +1,19 @@
+**Inline loading** spinners are used when performing actions. They help notify user’s that their action is being processed. The waiting experience is a crucial design opportunity. Although it may not be obvious what is occurring on the back-end, we can communicate clearly to reassure the user that progress is happening.
+
+It is best practice to use an Inline loading component for any Create, Update, or Delete actions. The component provides feedback to the user about the progress of the action they took. This could be in a table, after a primary or secondary button click, or even in a modal.
+
 ### Usage with react
 ```js
 import { InlineLoading } from '@wfp/ui';
+```
+
+```js
+<InlineLoading 
+  iconDescription="Active loading indicator" 
+  description="Loading data..." 
+  success={false}
+  onSuccess={onSuccess}
+/>
 ```
 
 ### JavaScript

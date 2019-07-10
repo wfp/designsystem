@@ -13,7 +13,7 @@ export default class Search extends Component {
      */
     small: PropTypes.bool,
     placeHolderText: PropTypes.string,
-    labelText: PropTypes.node.isRequired,
+    labelText: PropTypes.node,
     id: PropTypes.string,
     onChange: PropTypes.func,
     onSearchIconClick: PropTypes.func,

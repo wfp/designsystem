@@ -27,6 +27,10 @@ const props = {
       'Secondary button text (secondaryButtonText)',
       'Secondary Button'
     ),
+    selectorPrimaryFocus: text(
+      'Selector Primary Focus on Open (selectorPrimaryFocus) default: [data-modal-primary-focus]',
+      false
+    ),
     iconDescription: text(
       'Close icon description (iconDescription)',
       'Close the modal'

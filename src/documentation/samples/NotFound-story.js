@@ -2,11 +2,11 @@
 
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import RegularPage from './RegularPage';
-import Link from '../components/Link';
-import Story from '../components/Story';
-import Icon from '../components/Icon';
-import Wrapper from '../components/Wrapper';
+import RegularPage from '../RegularPage';
+import Link from '../../components/Link';
+import Story from '../../components/Story';
+import Icon from '../../components/Icon';
+import Wrapper from '../../components/Wrapper';
 import { iconWfpHumEmergencyResponsePos } from '@wfp/icons';
 
 storiesOf(' Documentation|Samples', module)

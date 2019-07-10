@@ -1,6 +1,6 @@
 **TextArea** represents a multi-line plain-text editing control, useful when you want to allow users to enter a sizeable amount of free-form text, for example a comment on a review or feedback form.
 
-[Carbon Design System Usage for text inputs](https://next.carbondesignsystem.com/components/text-area)
+[Carbon Design System Usage for text inputs](https://next.carbondesignsystem.com/components/text-input)
 
 ### Usage with react
 ```js
@@ -8,7 +8,7 @@ import { TextArea } from '@wfp/ui';
 ```
 
 ```js
-<TextArea  
+<TextArea
   className="some-class"
   id="test2"
   defaultValue="Default value (defaultValue)"
@@ -22,3 +22,4 @@ import { TextArea } from '@wfp/ui';
   onClick={onClick}
   onChange={onChange}
 />
+```

@@ -9,7 +9,7 @@ import Credits from '../Credits';
 storiesOf('Components|Credits', module)
   .addDecorator(story => <SingleComponent>{story()}</SingleComponent>)
 
-  .add('Default', () => (
+  .add('Default (depreciated)', () => (
     <Credits info="Photo: WFP/ Rein Skullerud">
       <img
         alt="Default illustration"

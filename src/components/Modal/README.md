@@ -13,8 +13,8 @@ import { Modal } from  '@wfp/ui';
 
 If you use the `passive={true}`prop you can add a custom Footer
 ```js
-<div  className="wfp--modal-footer">
-	<div  className="wfp--modal__buttons-container">
+<div className="wfp--modal-footer">
+	<div className="wfp--modal__buttons-container">
 		The Modal Footer content
 	</div>
 </div>
@@ -26,11 +26,12 @@ If you use the `passive={true}`prop you can add a custom Footer
 Full screen dialogs only show the Modal element without any other content like the navigation. They can be used for login, password reset or very important dialogs.
 
 ```js
-  <Modal
-    open
-    hideClose
-    backgroundImage={yourBackgroundImage.jpg}
-  />
+<Modal
+  open
+  hideClose
+  backgroundImage={yourBackgroundImage.jpg}
+/>
+```
 
 #### Handle the `open` state
 

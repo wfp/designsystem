@@ -123,7 +123,7 @@ export default class Modal extends Component {
 
     /**
      * Specify a CSS selector that matches the DOM element that should
-     * be focused when the Modal opens
+     * be focused when the Modal opens. If "false" no selector will be triggered
      */
     selectorPrimaryFocus: PropTypes.string,
 
@@ -236,6 +236,9 @@ export default class Modal extends Component {
   }
 
   focusButton = focusContainerElement => {
+    if (this.props.selectorPrimaryFocus === false) {
+      return;
+    }
     const primaryFocusElement = focusContainerElement.querySelector(
       this.props.selectorPrimaryFocus
     );

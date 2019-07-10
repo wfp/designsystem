@@ -1,5 +1,6 @@
 import React from 'react';
 import addons from '@storybook/addons';
+import { STORY_CHANGED } from '@storybook/core-events';
 
 import '!style-loader!css-loader!sass-loader!./_wfp-storybook.scss';
 
@@ -21,7 +22,7 @@ class Notes extends React.Component {
     channel.on('MYADDON/add_notes', this.onAddNotes);
 
     // Clear the current notes on every story change.
-    this.stopListeningOnStory = api.onStory(() => {
+    this.stopListeningOnStory = api.on(STORY_CHANGED, () => {
       this.onAddNotes('');
     });
   }
