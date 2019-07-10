@@ -2,15 +2,7 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-# [1.3.0-alpha.2](https://github.com/WFP/UI/compare/v1.2.2-alpha.0...v1.3.0-alpha.2) (2019-07-10)
-
-
-### Features
-
-* **BannerNavigation:** fix spelling and other fixes ([ef59d98](https://github.com/WFP/UI/commit/ef59d98))
-* **Modal:** option to disable selectorPrimaryFocus added, NotAuthorized template added ([02918fc](https://github.com/WFP/UI/commit/02918fc))
-* **multiple:** added code examples, accessibility tests, story source ([ea4c735](https://github.com/WFP/UI/commit/ea4c735))
-* **Tabs:** added animation and fixed Secondary Navigation ([#194](https://github.com/WFP/UI/issues/194)) ([75f9282](https://github.com/WFP/UI/commit/75f9282))
+# [1.3.0](https://github.com/WFP/UI/compare/v1.3.0-alpha.2...v1.3.0) (2019-07-10)
 
 
 
