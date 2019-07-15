@@ -147,6 +147,7 @@
     "@storybook/addon-a11y": "^5.1.9",
     "@storybook/addon-actions": "^5.1.8",
     "@storybook/addon-backgrounds": "^5.1.8",
+    "@storybook/addon-google-analytics": "^5.1.9",
     "@storybook/addon-info": "^5.1.8",
     "@storybook/addon-jest": "^5.1.8",
     "@storybook/addon-knobs": "^5.1.8",

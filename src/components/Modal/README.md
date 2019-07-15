@@ -80,3 +80,19 @@ class ModalWithControls extends React.Component {
   }
 }
 ```
+
+### Disable closing the Modal if the user clicks on the background
+
+```js
+onRequestClose={(evt, trigger) => {
+  if (trigger !== 'background') {
+    return props.onClose(evt, trigger);
+  }
+  return null;
+}}
+
+<Modal
+  onRequestClose={this.onRequestClose}
+  {...otherProps}
+/>
+```

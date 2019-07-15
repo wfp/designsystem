@@ -1499,6 +1499,17 @@
     react "^16.8.3"
     util-deprecate "^1.0.2"
 
+"@storybook/addon-google-analytics@^5.1.9":
+  version "5.1.9"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-google-analytics/-/addon-google-analytics-5.1.9.tgz#3ba167e9295ffcff494435485a0c6657272adc0a"
+  integrity sha512-1XyCqO+1cf3mtOab1rhvs35lG7b0FbrKWZgncEs2RkyhMtT1wgZGZUg/KyR2g6OJF3GtlZ8h9rf4OihEo8e+Gg==
+  dependencies:
+    "@storybook/addons" "5.1.9"
+    "@storybook/core-events" "5.1.9"
+    core-js "^3.0.1"
+    global "^4.3.2"
+    react-ga "^2.5.7"
+
 "@storybook/addon-info@^5.1.8":
   version "5.1.9"
   resolved "https://registry.yarnpkg.com/@storybook/addon-info/-/addon-info-5.1.9.tgz#324066b02c7b76bd459d44ad3e6fe5640b7a8781"
@@ -13077,6 +13088,11 @@ react-focus-lock@^1.18.3:
     focus-lock "^0.6.3"
     prop-types "^15.6.2"
     react-clientside-effect "^1.2.0"
+
+react-ga@^2.5.7:
+  version "2.6.0"
+  resolved "https://registry.yarnpkg.com/react-ga/-/react-ga-2.6.0.tgz#c3fe830ead2ad25117e1d33280d9698de9b28496"
+  integrity sha512-GWHBWZDFjDGMkIk1LzroIn0mNTygKw3adXuqvGvheFZvlbpqMPbHsQsTdQBIxRRdXGQM/Zq+dQLRPKbwIHMTaw==
 
 react-helmet-async@^1.0.2:
   version "1.0.2"
