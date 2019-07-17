@@ -135,6 +135,10 @@ export default class Modal extends Component {
      * body element, otherwise at the position it is placed.
      */
     inPortal: PropTypes.bool,
+    /**
+     * If true the Modal will be wider then the regular Modal
+     */
+    wide: PropTypes.bool,
   };
 
   static defaultProps = {
@@ -296,6 +300,7 @@ export default class Modal extends Component {
       primaryButtonDisabled,
       danger,
       hideClose,
+      wide,
       selectorPrimaryFocus, // eslint-disable-line
       selectorsFloatingMenus, // eslint-disable-line
       shouldSubmitOnEnter, // eslint-disable-line
@@ -308,8 +313,9 @@ export default class Modal extends Component {
 
     const modalClasses = classNames({
       [`${prefix}--modal`]: true,
-      [`${prefix}--modal-tall`]: !passiveModal,
-      [`${prefix}--modal-background-image`]: backgroundImage,
+      [`${prefix}--modal--wide`]: wide,
+      [`${prefix}--modal--tall`]: !passiveModal,
+      [`${prefix}--modal--background-image`]: backgroundImage,
       'is-visible': open,
       [`${prefix}--modal--danger`]: this.props.danger,
       [this.props.className]: this.props.className,

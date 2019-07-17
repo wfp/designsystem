@@ -42,6 +42,7 @@ const props = {
     onRequestClose: action('onRequestClose'),
     onRequestSubmit: action('onRequestSubmit'),
     onSecondarySubmit: action('onSecondarySubmit'),
+    wide: boolean('Wider Modal (wide)', false),
   }),
   dialog: () => ({
     className: 'some-class',
@@ -79,6 +80,7 @@ const props = {
     onRequestClose: action('onRequestClose'),
     onRequestSubmit: action('onRequestSubmit'),
     onSecondarySubmit: action('onSecondarySubmit'),
+    wide: boolean('Wider Modal (wide)', false),
   }),
 };
 
