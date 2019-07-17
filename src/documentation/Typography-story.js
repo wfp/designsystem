@@ -46,7 +46,27 @@ storiesOf('Documentation|General', module)
         </Link>
       </p>
 
-      <h2>Capitalization</h2>
+      <h2>Editorial</h2>
+      <Blockquote title="Editorial Guidelines" type="warning">
+        <p>
+          All editorial guidelines can be found in{' '}
+          <Link href="https://cdn.wfp.org/guides/editorial" target="_blank">
+            this guide
+          </Link>
+        </p>
+      </Blockquote>
+
+      <h3>DNS Naming</h3>
+      <p>
+        <Link
+          href="https://newgo.wfp.org/documents/dns-conventions/"
+          target="_blank">
+          This guide
+        </Link>{' '}
+        explains rules for DNS namespace conventions.
+      </p>
+
+      <h3>Capitalization</h3>
       <p>
         <Link
           href="https://cdn.wfp.org/guides/editorial/content/capitalization/"

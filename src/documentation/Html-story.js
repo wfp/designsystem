@@ -40,13 +40,13 @@ $button-padding: 10px 25px;
 $color__main: #0076FF;
 
 // Import all stylesheets
-@import "~/@wfp/ui/source/globals/scss/styles";
+@import "~@wfp/ui/source/globals/scss/styles";
 
 // Only import the Button stylesheet
-@import "~/@wfp/ui/source/components/Button/button";
+@import "~@wfp/ui/source/components/Button/button";
 
 // Only use variables
-@import "~/@wfp/ui/source/globals/scss/vars";`}
+@import "~@wfp/ui/source/globals/scss/vars";`}
       </PrismCode>
     </Blockquote>
     <h3>Usage with Google Chrome</h3>
