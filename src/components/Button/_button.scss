@@ -107,7 +107,7 @@
 
     &:hover > .#{$prefix}--btn__icon,
     &:focus > .#{$prefix}--btn__icon {
-      fill: $brand-01;
+      fill: $inverse-01;
     }
 
     &:hover:disabled,
