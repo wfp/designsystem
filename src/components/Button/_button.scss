@@ -43,6 +43,7 @@
   a.#{$prefix}--btn--icon-reverse {
     display: flex;
     flex-direction: row-reverse;
+
     .#{$prefix}--btn__icon {
       float: left;
       margin-left: 0;
@@ -54,6 +55,7 @@
   button {
     &.#{$prefix}--btn--icon-only {
       padding: 0 $spacing-sm;
+
       .#{$prefix}--btn__icon {
         margin-left: 0;
         margin-right: 0;
@@ -105,7 +107,7 @@
 
     &:hover > .#{$prefix}--btn__icon,
     &:focus > .#{$prefix}--btn__icon {
-      fill: $inverse-01;
+      fill: $brand-01;
     }
 
     &:hover:disabled,
