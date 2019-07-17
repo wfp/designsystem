@@ -21,6 +21,7 @@ import ReduxFormWrapper from '../ReduxFormWrapper';
 const props = {
   datePicker: () => ({
     datePicker: SingleDatePicker,
+    date: moment('2019-07-22T10:00:00.000Z'),
     labelText: text('Label text (labelText)', 'Text Input label'),
     placeholder: text('Placeholder text (placeholder)', 'Placeholder text'),
     disabled: boolean('Disabled (disabled)', false),
@@ -34,7 +35,7 @@ const props = {
       'Show Input Icon (showDefaultInputIcon)',
       true
     ),
-    showClearDates: boolean('Show clear date (showClearDates)', true),
+    //showClearDates: boolean('Show clear date (showClearDates)', true),
     inputIconPosition: text('Icon Position(inputIconPosition)', 'after'),
     helperText: text('Helper text (helperText)', 'Optional helper text.'),
     onClick: action('onClick'),
@@ -95,10 +96,10 @@ storiesOf('Components|DatePicker', module)
       <FormWrapper
         sampleData={{
           datepicker: {
-            startDate: '2019-05-22T10:00:00.000Z',
-            endDate: '2019-05-24T10:00:00.000Z',
+            startDate: '2019-07-22T10:00:00.000Z',
+            endDate: '2019-07-24T10:00:00.000Z',
           },
-          inputname: '2019-05-23T12:00:00+02:00',
+          inputname: '2020-07-23T12:00:00+02:00',
         }}>
         {' '}
         {story()}
@@ -113,5 +114,15 @@ storiesOf('Components|DatePicker', module)
     />
   ))
   .add('DateRangePicker Field (experimental)', () => (
-    <Field {...props.dateRangePickerField()} />
+    <Field
+      {...props.dateRangePickerField()}
+      format={value =>
+        value
+          ? {
+              startDate: moment(value.startDate),
+              endDate: moment(value.endDate),
+            }
+          : undefined
+      }
+    />
   ));

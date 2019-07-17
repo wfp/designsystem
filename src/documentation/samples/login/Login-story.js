@@ -28,11 +28,13 @@ storiesOf('Documentation|Samples', module)
       backgroundImage="https://password.go.wfp.org/images/MAU_20150202_WFP-Agron_Dragaj_0018.jpg">
       <p className="wfp--modal-content__text wfp--form-long">
         <TextInput
+          id="emailinput"
           labelText="Your email adress"
           placeholder="yourname@wfp.org"
           helperText={`Enter the email adress you've used when you've registred`}
         />
         <TextInput
+          id="passportinput"
           labelText="Your password"
           type="password"
           placeholder=""

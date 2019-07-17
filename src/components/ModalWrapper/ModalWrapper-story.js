@@ -90,7 +90,8 @@ storiesOf('Components|ModalWrapper', module)
       <TextInput
         id="test2"
         placeholder="Hint text here"
-        label="Text Input:"
+        t
+        labelText="Text Input:"
         data-modal-primary-focus
       />
       <br />

@@ -63,7 +63,7 @@ export class SingleDatePickerInput extends PureComponent {
         {label}
         {helper}
         <SingleDatePicker
-          date={onChange && value ? controlledValue : value}
+          date={onChange && value ? value : controlledValue}
           focused={focused}
           hideKeyboardShortcutsPanel
           onDateChange={value => {

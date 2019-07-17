@@ -37,5 +37,6 @@ import ReduxFormWrapper from '../ReduxFormWrapper';
   component={ReduxFormWrapper}
   inputComponent={DateRangePickerInput}
   datePicker={DateRangePicker}
+  format={value => (value ? { startDate: moment(value.startDate), endDate: moment(value.endDate) } : undefined)}
 />
 ```

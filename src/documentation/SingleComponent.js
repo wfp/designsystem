@@ -24,8 +24,9 @@ class SingleComponent extends Component {
       'wfp--single-component--centered': centered && height <= 200,
     });
 
+    // pageWidth={pageWidth}
     return (
-      <div className={classNames} pageWidth={pageWidth}>
+      <div className={classNames}>
         <div
           id="container"
           style={{ flexBasis: flexBasis ? flexBasis : 'auto' }}>
