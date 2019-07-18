@@ -2,7 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-# [1.3.0-alpha.6](https://github.com/WFP/UI/compare/v1.3.0-alpha.5...v1.3.0-alpha.6) (2019-07-16)
+# [1.3.0-alpha.7](https://github.com/WFP/UI/compare/v1.3.0-alpha.5...v1.3.0-alpha.7) (2019-07-18)
+
+
+### Bug Fixes
+
+* **Button:** icon color on hover([#199](https://github.com/WFP/UI/issues/199)) ([c913c0c](https://github.com/WFP/UI/commit/c913c0c))
+* **Button:** secondary icon button is not visible on focus fixed ([#199](https://github.com/WFP/UI/issues/199)) ([ebfbe8f](https://github.com/WFP/UI/commit/ebfbe8f))
+
+
+### Features
+
+* **DatePicker:** compatibility improved, Google Analytics tracking ([4d3bf53](https://github.com/WFP/UI/commit/4d3bf53))
+* **InfoBar:** added InfoBar component ([#197](https://github.com/WFP/UI/issues/197)) ([2b48a93](https://github.com/WFP/UI/commit/2b48a93))
+* **Modal:** added wide prop for Modal and improved sizing ([#200](https://github.com/WFP/UI/issues/200)) ([a01969b](https://github.com/WFP/UI/commit/a01969b))
+* **NumberInput:** empty values are now possible ([39f8265](https://github.com/WFP/UI/commit/39f8265))
 
 
 
