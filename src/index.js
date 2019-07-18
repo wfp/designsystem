@@ -26,6 +26,7 @@ export FormItem from './components/FormItem';
 export FormLabel from './components/FormLabel';
 export FormWizard from './components/FormWizard';
 export Icon from './components/Icon';
+export InfoBar from './components/InfoBar';
 export Link from './components/Link';
 export Loading from './components/Loading';
 export InlineLoading from './components/InlineLoading';

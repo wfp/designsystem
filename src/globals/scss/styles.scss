@@ -60,6 +60,7 @@ $deprecations--message: 'Deprecated code was found, this code will be removed be
 @import '../../components/FormWizard/form-wizard';
 @import '../../components/FormError/form-error';
 @import '../../components/FileUploader/file-uploader';
+@import '../../components/InfoBar/info-bar';
 @import '../../components/Checkbox/checkbox';
 /*
 @import '../../components/combo-box/combo-box';
@@ -146,6 +147,7 @@ $deprecations--message: 'Deprecated code was found, this code will be removed be
 // accumulated through the @import process.
 @if (length($deprecations--reasons) > 0) {
   $deprecations--message: '';
+
   @each $reason in $deprecations--reasons {
     $deprecations--message: '#{$deprecations--message}
 REASON: #{$reason}';
