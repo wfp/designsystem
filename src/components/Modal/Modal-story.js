@@ -16,6 +16,14 @@ const props = {
       'Enter key to submit (shouldSubmitOnEnter)',
       false
     ),
+    primaryButtonDisabled: boolean(
+      'Disable primary button (primaryButtonDisabled)',
+      false
+    ),
+    secondaryButtonDisabled: boolean(
+      'Disable secondary button (secondaryButtonDisabled)',
+      false
+    ),
     modalHeading: text('Modal heading (modalHeading)', 'Modal heading'),
     modalLabel: text('Optional label (modalLabel)', 'Label'),
     modalAriaLabel: text('ARIA label (modalAriaLabel)', ''),
@@ -48,6 +56,14 @@ const props = {
     className: 'some-class',
     open: boolean('Open (open)', true),
     passiveModal: boolean('Without footer (passiveModal)', false),
+    primaryButtonDisabled: boolean(
+      'Disable primary button (primaryButtonDisabled)',
+      false
+    ),
+    secondaryButtonDisabled: boolean(
+      'Disable secondary button (secondaryButtonDisabled)',
+      false
+    ),
     backgroundImage: text(
       'Background Image (backgroundImage)',
       'https://password.go.wfp.org/images/MAU_20150202_WFP-Agron_Dragaj_0018.jpg'

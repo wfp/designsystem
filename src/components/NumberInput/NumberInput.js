@@ -7,6 +7,20 @@ import settings from '../../globals/js/settings';
 
 const { prefix } = settings;
 
+function PropTypeEmptyString(props, propName, componentName) {
+  componentName = componentName || 'ANONYMOUS';
+
+  if (props[propName]) {
+    let value = props[propName];
+    if (typeof value === 'string' && value !== '') {
+      return new Error(
+        propName + ' in ' + componentName + ' is not an empty string'
+      );
+    }
+  }
+  return null;
+}
+
 const capMin = (min, value) =>
   isNaN(min) || (!min && min !== 0) || isNaN(value) || (!value && value !== 0)
     ? value
@@ -85,7 +99,7 @@ export default class NumberInput extends Component {
     /**
      * Specify the value of the input, if undefined or null the value is empty
      */
-    value: PropTypes.number,
+    value: PropTypes.oneOfType([PropTypeEmptyString, PropTypes.number]),
 
     /**
      * Specify if the currently value is invalid.

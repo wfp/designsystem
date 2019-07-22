@@ -100,6 +100,11 @@ export default class Modal extends Component {
     primaryButtonDisabled: PropTypes.bool,
 
     /**
+     * Specify whether the secondary Button should be disabled, or not
+     */
+    secondaryButtonDisabled: PropTypes.bool,
+
+    /**
      * Specify a handler for the secondary button.
      * Useful if separate handler from `onRequestClose` is desirable
      */
@@ -145,6 +150,7 @@ export default class Modal extends Component {
     onRequestClose: () => {},
     onRequestSubmit: () => {},
     primaryButtonDisabled: false,
+    secondaryButtonDisabled: false,
     onKeyDown: () => {},
     passiveModal: false,
     iconDescription: 'close the modal',
@@ -298,6 +304,7 @@ export default class Modal extends Component {
       iconDescription,
       inPortal,
       primaryButtonDisabled,
+      secondaryButtonDisabled,
       danger,
       hideClose,
       wide,
@@ -357,6 +364,7 @@ export default class Modal extends Component {
                 {secondaryButtonText && (
                   <Button
                     kind={danger ? 'tertiary' : 'secondary'}
+                    disabled={secondaryButtonDisabled}
                     onClick={onSecondaryButtonClick}>
                     {secondaryButtonText}
                   </Button>
