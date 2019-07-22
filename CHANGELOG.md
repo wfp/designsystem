@@ -2,7 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-# [1.3.0-alpha.8](https://github.com/WFP/UI/compare/v1.3.0-alpha.7...v1.3.0-alpha.8) (2019-07-22)
+# [1.3.0-alpha.9](https://github.com/WFP/UI/compare/v1.3.0-alpha.8...v1.3.0-alpha.9) (2019-07-22)
+
+
+### Features
+
+* **Modal:** secondaryButtonDisabled added ([2c7feb2](https://github.com/WFP/UI/commit/2c7feb2))
 
 
 
