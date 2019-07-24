@@ -110,6 +110,7 @@
     "react-dom": "^16.8.5"
   },
   "dependencies": {
+    "@tippy.js/react": "^2.2.2",
     "classnames": "2.2.6",
     "invariant": "^2.2.3",
     "lodash.debounce": "^4.0.8",

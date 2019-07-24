@@ -1,16 +1,15 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Tooltip } from 'react-tippy';
+import Tippy from '@tippy.js/react';
 import tooltipStyle from './Tooltip';
 
 storiesOf('Components|Tooltip', module).add('default', () => (
-  <Tooltip
+  <Tippy
     // options
-    title="Welcome to the tooltip"
-    position="top"
+    content="Welcome to the tooltip"
     trigger="click"
     {...tooltipStyle}>
     <span>Click here to show tooltip</span>
-  </Tooltip>
+  </Tippy>
 ));

@@ -1,4 +1,4 @@
-[React-Tippy](https://github.com/tvkhoa/react-tippy) is recommended for Tooltips in React.js and [Tippy.js](https://github.com/atomiks/tippyjs) for Vanilla.js.
+[tippy.js-react](https://github.com/atomiks/tippy.js-react) is recommended for Tooltips in React.js and [Tippy.js](https://github.com/atomiks/tippyjs) for Vanilla.js.
 
 ```js
 import { Tooltip } from 'react-tippy';

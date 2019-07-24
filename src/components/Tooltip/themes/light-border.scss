@@ -1,0 +1,157 @@
+@import '../_mixins.scss';
+@import '../_vars.scss';
+
+$transparentLight: rgba(0, 8, 16, 0.08);
+$transparentDark: rgba(0, 8, 16, 0.15);
+$transparentDarker: rgba(0, 8, 16, 0.2);
+
+.#{$namespace-prefix}-tooltip.light-border-theme {
+  background-color: white;
+  background-clip: padding-box;
+  border: 1px solid $transparentDark;
+  color: #26323d;
+  box-shadow: 0 3px 14px -0.5px $transparentLight;
+
+  .#{$namespace-prefix}-backdrop {
+    background-color: white;
+  }
+
+  .#{$namespace-prefix}-arrow,
+  .#{$namespace-prefix}-roundarrow {
+    &::after,
+    &::before {
+      content: '';
+      position: absolute;
+      z-index: -1;
+    }
+  }
+
+  .#{$namespace-prefix}-roundarrow {
+    fill: white;
+
+    &::after {
+      background-image: url(data:image/svg+xml;base64,PHN2ZyBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGZpbGwtcnVsZT0iZXZlbm9kZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLW1pdGVybGltaXQ9IjEuNDE0MjEiIHZpZXdCb3g9IjAgMCAxOCA3IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Im0wIDdzMi4wMjEtLjAxNSA1LjI1My00LjIxOGMxLjMzMS0xLjczMSAyLjU0NC0yLjc3NSAzLjc0Ny0yLjc4MiAxLjIwMy0uMDA3IDIuNDE2IDEuMDM1IDMuNzYxIDIuNzgyIDMuMjUxIDQuMjIzIDUuMjM5IDQuMjE4IDUuMjM5IDQuMjE4eiIgZmlsbD0iIzMzMyIgZmlsbC1vcGFjaXR5PSIuMjM1Mjk0IiBmaWxsLXJ1bGU9Im5vbnplcm8iLz48L3N2Zz4=);
+      background-size: 18px 7px;
+      width: 18px;
+      height: 7px;
+      left: 0;
+      top: 0;
+      fill: $transparentDark;
+    }
+  }
+
+  &[x-placement^='top'] {
+    .#{$namespace-prefix}-roundarrow::after {
+      top: 1px;
+      transform: rotate(180deg);
+    }
+
+    .#{$namespace-prefix}-arrow {
+      border-top-color: #fff;
+
+      &::after {
+        border-top: 7px solid white;
+        top: -7px;
+      }
+      &::before {
+        border-top: 7px solid $transparentDarker;
+        bottom: -1px;
+      }
+    }
+  }
+
+  &[x-placement^='bottom'] {
+    .#{$namespace-prefix}-roundarrow::after {
+      top: -1px;
+    }
+
+    .#{$namespace-prefix}-arrow {
+      border-bottom-color: #fff;
+
+      &::after {
+        border-bottom: 7px solid white;
+        bottom: -7px;
+      }
+      &::before {
+        border-bottom: 7px solid $transparentDarker;
+        bottom: -6px;
+      }
+    }
+  }
+
+  &[x-placement^='left'] {
+    .#{$namespace-prefix}-roundarrow::after {
+      left: 1px;
+      top: 0;
+      transform: rotate(90deg);
+    }
+
+    .#{$namespace-prefix}-arrow {
+      border-left-color: #fff;
+
+      &::after {
+        border-left: 7px solid white;
+        left: -7px;
+      }
+      &::before {
+        border-left: 7px solid $transparentDarker;
+        left: -6px;
+      }
+    }
+  }
+
+  &[x-placement^='right'] {
+    .#{$namespace-prefix}-roundarrow::after {
+      left: -1px;
+      top: 0;
+      transform: rotate(-90deg);
+    }
+
+    .#{$namespace-prefix}-arrow {
+      border-right-color: #fff;
+
+      &::after {
+        border-right: 7px solid white;
+        right: -7px;
+      }
+      &::before {
+        border-right: 7px solid $transparentDarker;
+        right: -6px;
+      }
+    }
+  }
+
+  &[x-placement^='top'],
+  &[x-placement^='bottom'] {
+    .#{$namespace-prefix}-arrow,
+    .#{$namespace-prefix}-roundarrow {
+      transform: translateX(-1px);
+    }
+
+    .#{$namespace-prefix}-arrow {
+      &::after,
+      &::before {
+        left: -7px;
+        border-left: 7px solid transparent;
+        border-right: 7px solid transparent;
+      }
+    }
+  }
+
+  &[x-placement^='left'],
+  &[x-placement^='right'] {
+    .#{$namespace-prefix}-arrow,
+    .#{$namespace-prefix}-roundarrow {
+      transform: translateY(-1px);
+    }
+
+    .#{$namespace-prefix}-arrow {
+      &::after,
+      &::before {
+        top: -7px;
+        border-top: 7px solid transparent;
+        border-bottom: 7px solid transparent;
+      }
+    }
+  }
+}

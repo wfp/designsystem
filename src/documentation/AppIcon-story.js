@@ -12,7 +12,17 @@ storiesOf('Documentation|General', module)
   .add('App icons', () => (
     <Page title="App icons" subTitle="Icons for Android & iOS">
       <p>
-        All WFP apps should use the same app icon featuring the WFP acronym.
+        All WFP apps should use a custom made icon to be distinguishable. By
+        using the branding colors the icon should be recognizable as an WFP app.
+      </p>
+
+      <p>
+        For Android Apps please follow the{' '}
+        <Link
+          href="https://developer.android.com/google-play/resources/icon-design-specifications"
+          target="_blan">
+          Guidelines
+        </Link>
       </p>
 
       <p>
