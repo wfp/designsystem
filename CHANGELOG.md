@@ -2,12 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-# [1.3.0-alpha.9](https://github.com/WFP/UI/compare/v1.3.0-alpha.8...v1.3.0-alpha.9) (2019-07-22)
+# [1.3.0-alpha.10](https://github.com/WFP/UI/compare/v1.3.0-alpha.9...v1.3.0-alpha.10) (2019-07-25)
 
 
 ### Features
 
-* **Modal:** secondaryButtonDisabled added ([2c7feb2](https://github.com/WFP/UI/commit/2c7feb2))
+* **Tooltip:** added new tippy react implementation ([#205](https://github.com/WFP/UI/issues/205)) ([7427073](https://github.com/WFP/UI/commit/7427073))
+* **Tooltip:** cleanup and readme ([#205](https://github.com/WFP/UI/issues/205)) ([ecbb064](https://github.com/WFP/UI/commit/ecbb064))
 
 
 
