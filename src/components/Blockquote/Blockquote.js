@@ -58,7 +58,7 @@ class Blockquote extends React.Component {
       'wfp--blockquote--error': type === 'error' || error,
       'wfp--blockquote--warning': type === 'warning' || warning,
       'wfp--blockquote--info': type === 'info' || info,
-      'wfp--blockquote--with-icon': withIcon,
+      'wfp--blockquote--with-icon': withIcon || icon,
       'wfp--blockquote--open': this.state.open,
     });
 
@@ -73,7 +73,11 @@ class Blockquote extends React.Component {
       ? iconLookup['error']
       : iconLookup['info'];
 
-    const iconElement = withIcon ? (
+    const iconElement = React.isValidElement(icon) ? (
+      <div className="wfp--blockquote__icon wfp--blockquote__icon--custom">
+        {icon}
+      </div>
+    ) : withIcon || icon ? (
       <Icon
         icon={icon ? icon : lookup.icon}
         description="Blockquote Icon"
@@ -85,19 +89,18 @@ class Blockquote extends React.Component {
 
     return (
       <div className={blockquoteClass}>
-        {title && (
-          <div
-            onClick={this.toggleBlockquote}
-            onKeyDown={this.toggleBlockquote}
-            className="wfp--blockquote__title"
-            role="button"
-            tabIndex={0}>
-            {title}
-          </div>
-        )}
-
         {iconElement}
         <div className={blockquoteContentClass} style={style}>
+          {title && (
+            <div
+              onClick={this.toggleBlockquote}
+              onKeyDown={this.toggleBlockquote}
+              className="wfp--blockquote__title"
+              role="button"
+              tabIndex={0}>
+              {title}
+            </div>
+          )}
           {children}
           {innerHtml && (
             <div
@@ -145,9 +148,9 @@ Blockquote.propTypes = {
    */
   withIcon: PropTypes.bool,
   /**
-   * Specify a custom icon
+   * Specify a custom icon. Can be either a `Icon` object or React component
    */
-  icon: PropTypes.bool,
+  icon: PropTypes.oneOfType([PropTypes.node, PropTypes.object]),
 };
 
 export default Blockquote;

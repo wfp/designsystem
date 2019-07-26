@@ -76,9 +76,7 @@ const props = {
     classNamePrefix: 'wfp--react-select',
     component: ReduxFormWrapper,
     inputComponent:
-      inputMap[
-        select('Component (ReduxFormWrapper(Input))', inputs, 'TextInput')
-      ],
+      inputMap[select('Input component (inputComponent)', inputs, 'TextInput')],
     onClick: action('onClick'),
     labelText: text('Label (labelText)', 'Label Text'),
     helperText: text('Helper text (helperText)', 'This is a helper text'),
