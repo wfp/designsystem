@@ -2,13 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-# [1.3.0-alpha.10](https://github.com/WFP/UI/compare/v1.3.0-alpha.9...v1.3.0-alpha.10) (2019-07-25)
+# [1.3.0-alpha.11](https://github.com/WFP/UI/compare/v1.3.0-alpha.10...v1.3.0-alpha.11) (2019-07-26)
 
 
 ### Features
 
-* **Tooltip:** added new tippy react implementation ([#205](https://github.com/WFP/UI/issues/205)) ([7427073](https://github.com/WFP/UI/commit/7427073))
-* **Tooltip:** cleanup and readme ([#205](https://github.com/WFP/UI/issues/205)) ([ecbb064](https://github.com/WFP/UI/commit/ecbb064))
+* **Blockquote:** custom icons added ([861aa7d](https://github.com/WFP/UI/commit/861aa7d))
 
 
 
