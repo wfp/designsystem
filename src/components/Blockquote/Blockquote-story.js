@@ -25,7 +25,7 @@ storiesOf('Components|Blockquote', module)
   .add('Default', () => {
     return <Blockquote {...props()} />;
   })
-  .add('Custom icon', () => {
+  .add('custom icon', () => {
     return (
       <Blockquote
         {...props()}

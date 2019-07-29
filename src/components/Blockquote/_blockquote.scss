@@ -69,6 +69,10 @@
     display: block;
     font-weight: 600;
     margin-bottom: $spacing-xs;
+
+    &:focus {
+      outline: 0;
+    }
   }
 
   .#{$prefix}--blockquote--light {
