@@ -17,6 +17,7 @@
     //@include typescale('epsilon');
     @include font-smoothing;
   }
+
   .#{$prefix}--list--colon {
     .#{$prefix}--list__element__title {
       &:after {
@@ -24,44 +25,56 @@
       }
     }
   }
+
   .#{$prefix}--list--simple {
     line-height: 1.5em;
+
     li {
       display: flex;
     }
+
     .#{$prefix}--list__element__title {
       font-weight: 700;
       margin-right: rem(5px);
     }
   }
+
   .#{$prefix}--list--simple-inline {
     line-height: 1.5em;
     display: flex;
+    flex-wrap: wrap;
+
     li {
       display: flex;
       margin-right: 1em;
     }
+
     .#{$prefix}--list__element__title {
       font-weight: 700;
       margin-right: rem(5px);
     }
   }
+
   .#{$prefix}--list--small {
     font-size: 0.8em;
   }
+
   .#{$prefix}--list--details {
     @include line-height('body');
     list-style-type: none;
     margin: 0;
+
     li {
       break-inside: avoid-column;
     }
+
     .#{$prefix}--list__element__title {
       font-weight: 700;
       display: block;
       @include typescale('delta');
       margin-bottom: $spacing-md;
     }
+
     .#{$prefix}--list__element__content {
       margin-bottom: rem(20px);
       display: block;
