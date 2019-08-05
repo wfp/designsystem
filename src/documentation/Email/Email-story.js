@@ -2,17 +2,17 @@
 
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import Page from './Page';
-import Button from '../components/Button';
+import Page from '../Page';
+import Button from '../../components/Button';
 
 storiesOf('Documentation|General', module)
   .addParameters({ options: { showPanel: false, isToolshown: false } })
   .add('Email', () => {
     return (
-      <Page title="Email Template" subTitle="Newsletter & Transactional">
+      <Page title="Email template" subTitle="Newsletter & transactional">
         <p>
-          The eMail template can be used to for application related
-          notifications. It is responsive and works in Microsoft Outlook,{' '}
+          The eMail template can be used for application related notifications.
+          It is responsive and works in Microsoft Outlook,{' '}
           <a
             href="https://outlook.office365.com/owa/?realm=wfp.org&exsvurl=1&ll-cc=1031&modurl=0"
             rel="noopener noreferrer"
@@ -30,6 +30,7 @@ storiesOf('Documentation|General', module)
             target="_blank">
             Mailchimp CSS Inliner Tool
           </a>
+          .
         </p>
         <h3>External mail templates</h3>
         <p>
@@ -55,6 +56,20 @@ storiesOf('Documentation|General', module)
             href={`${process.env.STORYBOOK_INTERNAL_ASSETS}email/transaction-internal-email.html`}>
             Transaction
           </Button>
+        </p>
+        <h3>Use with Outlook</h3>
+        <p>
+          <Button
+            small
+            kind="secondary"
+            href={`${process.env.STORYBOOK_INTERNAL_ASSETS}email/newsletter-external-email-legacy.html`}>
+            Newsletter (internal & external)
+          </Button>
+        </p>
+        <p>
+          The template can be used as copy & paste from Google Chrome into
+          Microsoft Outlook. This method is not recommended and shall be only
+          used if there is no other mail service available.
         </p>
       </Page>
     );
