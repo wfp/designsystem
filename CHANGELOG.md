@@ -2,12 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-# [1.3.0-alpha.11](https://github.com/WFP/UI/compare/v1.3.0-alpha.10...v1.3.0-alpha.11) (2019-07-26)
+# [1.3.0-alpha.12](https://github.com/WFP/UI/compare/v1.3.0-alpha.11...v1.3.0-alpha.12) (2019-08-07)
 
 
 ### Features
 
-* **Blockquote:** custom icons added ([861aa7d](https://github.com/WFP/UI/commit/861aa7d))
+* **email:** Outlook template added ([#206](https://github.com/WFP/UI/issues/206)) ([3f8e66c](https://github.com/WFP/UI/commit/3f8e66c))
 
 
 
