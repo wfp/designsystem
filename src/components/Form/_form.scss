@@ -23,8 +23,10 @@
 
   .#{$prefix}--form-long {
     margin-bottom: -1rem;
+
     .#{$prefix}--form-item {
       margin-bottom: 1.3rem;
+
       .#{$prefix}--form-item {
         margin-bottom: 0;
       }
@@ -90,10 +92,12 @@
     line-height: 1.5;
     display: none;
     order: 3;
+
     &.invalid {
       max-height: rem(200px);
       display: block;
     }
+
     &::before {
       content: '*';
       display: inline-block;
@@ -144,6 +148,7 @@
     padding-left: $spacing-xs;
     color: $support-01;
     font-weight: 600;
+
     &::before {
       content: '*';
       display: inline-block;

@@ -158,7 +158,7 @@ const colors = {
   },
   'text-02': {
     name: 'text-02',
-    hex: '#8c9ba5',
+    hex: '#5a6872',
     scss: '$text-02',
     css: 'color__text-02',
     type: 'ui',

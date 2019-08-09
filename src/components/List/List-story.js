@@ -14,7 +14,7 @@ const kinds = {
 const props = () => ({
   className: 'some-class',
   colon: boolean('Colon (colon)', false),
-  kind: select('The link href (href)', kinds, 'simple'),
+  kind: select('Kind of list (kind)', kinds, 'simple'),
   small: boolean('Small (small)', false),
 });
 

@@ -27,7 +27,7 @@ export default class FormHint extends Component {
      */
     icon: PropTypes.object,
     /**
-     * Specify a component for the tooltip, usually react-tippy
+     * Specify a component for the tooltip, usually `@tippy.js/react`
      */
     TooltipComponent: PropTypes.func.isRequired,
   };

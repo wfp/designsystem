@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react';
 import { withKnobs, text } from '@storybook/addon-knobs';
 import FormHint from './FormHint';
 
-import { Tooltip } from 'react-tippy';
+import Tippy from '@tippy.js/react';
 
 const props = () => ({
   className: 'some-class',
@@ -15,6 +15,6 @@ storiesOf('Components|FormHint', module)
   .addDecorator(withKnobs)
   .add('Default (experimental)', () => (
     <label className="wfp--label" htmlFor="input">
-      The Label <FormHint {...props()} TooltipComponent={Tooltip} />
+      The Label <FormHint {...props()} TooltipComponent={Tippy} />
     </label>
   ));

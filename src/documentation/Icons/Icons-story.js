@@ -16,7 +16,7 @@ import Button from '../../components/Button';
 
 import IconConverter from './IconConverter';
 
-import { Tooltip } from 'react-tippy';
+import Tippy from '@tippy.js/react';
 import tooltipStyle from '../../components/Tooltip';
 
 function camelCaseFromHyphnated(s) {
@@ -26,9 +26,9 @@ function camelCaseFromHyphnated(s) {
 const IconList = ({ icon }) => {
   const iconName = icon.name.replace('icon--', '');
   return (
-    <Tooltip
+    <Tippy
       interactive
-      html={
+      content={
         <div
           style={{
             lineHeight: '1.2em',
@@ -79,42 +79,43 @@ from '@wfp/icons'`}
           </Button>
         </div>
       }
-      position="top"
       trigger="click"
-      {...tooltipStyle}
-      style={{
-        width: '12.5%',
-      }}>
-      <Module light withHover>
-        <div
-          style={{
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexDirection: 'column',
-            width: '100%',
-            height: '55px',
-          }}>
-          <Icon
-            icon={icon}
-            description="WFP"
-            width="39"
-            className="wfp--footer-cta-logo"
-          />
-        </div>
-        <ModuleFooter
-          style={{
-            padding: '0.2em',
-            fontSize: '0.45em',
-            textAlign: 'center',
-            alignItems: 'center',
-            justifyContent: 'center',
-            minHeight: '2rem',
-          }}>
-          <span>{iconName}</span>
-        </ModuleFooter>
-      </Module>
-    </Tooltip>
+      {...tooltipStyle}>
+      <div
+        style={{
+          width: '12.5%',
+        }}>
+        <Module light withHover>
+          <div
+            style={{
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              flexDirection: 'column',
+              width: '100%',
+              height: '55px',
+            }}>
+            <Icon
+              icon={icon}
+              description="WFP"
+              width="39"
+              className="wfp--footer-cta-logo"
+            />
+          </div>
+          <ModuleFooter
+            style={{
+              padding: '0.2em',
+              fontSize: '0.45em',
+              textAlign: 'center',
+              alignItems: 'center',
+              justifyContent: 'center',
+              minHeight: '2rem',
+            }}>
+            <span>{iconName}</span>
+          </ModuleFooter>
+        </Module>
+      </div>
+    </Tippy>
   );
 };
 
