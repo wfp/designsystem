@@ -41,7 +41,7 @@ var mix = function(color_1, color_2, weight) {
       val = '0' + val;
     } // prepend a '0' if val results in a single digit
 
-    color += val; // concatenate val to our new color string
+    color += val; // concatenate val to our new colour string
   }
 
   return color; // PROFIT!
@@ -49,7 +49,7 @@ var mix = function(color_1, color_2, weight) {
 
 storiesOf('Documentation|General', module)
   .addParameters({ options: { showPanel: false, isToolshown: false } })
-  .add('Colors', () => {
+  .add('Colours', () => {
     const regularColors = Object.values(colors).filter(
       ui_colors => ui_colors.type !== 'symbolic' && ui_colors.type !== 'ui'
     );
@@ -194,34 +194,34 @@ storiesOf('Documentation|General', module)
     };
 
     return (
-      <Page title="Brand & UX colors" subTitle="Color palette">
+      <Page title="Brand & UX colours" subTitle="Colour palette">
         <p>
-          The visual identity includes a palette of ten complementary colors
+          The visual identity includes a palette of ten complementary colours
           that can be used with the logo in communications products. Please do
-          not use any other colors. The palette can, however, be extended by
-          using different hues of these colors. The color reference codes are
+          not use any other colours. The palette can, however, be extended by
+          using different hues of these colours. The colour reference codes are
           shown below.
         </p>
 
         <p>
-          The extended color palette can be found{' '}
+          The extended colour palette can be found{' '}
           <Link href="http://brand.manuals.wfp.org/en/core-elements/colours/colour-palette/">
             here
           </Link>
           .
         </p>
 
-        <h3>User Interface Colors</h3>
+        <h3>User Interface Colours</h3>
         <ul style={{ display: 'flex', flexWrap: 'wrap' }}>
           {colorList(uiColors)}
         </ul>
 
-        <h3>Brand Colors</h3>
+        <h3>Brand Colours</h3>
         <ul style={{ display: 'flex', flexWrap: 'wrap' }}>
           {colorList(regularColors)}
         </ul>
 
-        <h3>Symbolic colors</h3>
+        <h3>Symbolic colours</h3>
         <ul style={{ display: 'flex', flexWrap: 'wrap' }}>
           {colorList(symbolicColors)}
         </ul>
@@ -245,8 +245,8 @@ const barChartColor = colors.navy;
           </PrismCode>
         </Blockquote>
         <p>
-          Setting color variables makes it easy to reuse colors, without the
-          hassle of updating every single Hex color code once they change.
+          Setting colour variables makes it easy to reuse colours, without the
+          hassle of updating every single Hex colour code once they change.
         </p>
 
         <Blockquote title="Usage in scss" type="code">

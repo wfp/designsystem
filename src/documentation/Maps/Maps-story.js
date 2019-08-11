@@ -13,7 +13,8 @@ storiesOf('Documentation|General', module)
     <Page title="Maps" subTitle="Icons for Android & iOS">
       <p>
         All WFP apps should use a custom made icon to be distinguishable. By
-        using the branding colors the icon should be recognizable as an WFP app.
+        using the branding colours the icon should be recognizable as an WFP
+        app.
       </p>
 
       <p>

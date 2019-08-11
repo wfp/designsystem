@@ -25,8 +25,8 @@ storiesOf('Documentation|General', module)
       <ul className="wfp--story__list">
         <li>
           Use{' '}
-          <Link onClick={linkTo('Documentation|General', 'Colors')}>
-            WFP's branding colors
+          <Link onClick={linkTo('Documentation|General', 'Colours')}>
+            WFP's branding colours
           </Link>
         </li>
         <li>

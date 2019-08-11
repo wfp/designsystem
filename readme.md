@@ -126,7 +126,7 @@ Currently the logo is available in
 
   
 
-*  **Colors:** blue, white and black
+*  **Colours:** blue, white and black
 
   
 
@@ -195,6 +195,9 @@ The UI-Kit uses [Standard Version](https://github.com/conventional-changelog/sta
 ```
 npm run release -- --prerelease alpha
 npm publish --tag alpha
+
+or
+git push --follow-tags origin next && npm publish --tag alpha
 ```
 
 ### Generate full release
