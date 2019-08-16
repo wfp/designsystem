@@ -30,12 +30,12 @@ describe('Modal', () => {
     });
 
     it('should not be a passive modal by default', () => {
-      expect(wrapper.hasClass('wfp--modal-tall')).toEqual(true);
+      expect(wrapper.hasClass('wfp--modal--tall')).toEqual(true);
     });
 
     it('should be a passive modal when passiveModal is passed', () => {
       wrapper.setProps({ passiveModal: true });
-      expect(wrapper.hasClass('wfp--modal-tall')).toEqual(false);
+      expect(wrapper.hasClass('wfp--modal--tall')).toEqual(false);
     });
 
     it('should set id if one is passed via props', () => {

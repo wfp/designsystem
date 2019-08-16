@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, boolean, text, select } from '@storybook/addon-knobs';
+import { withKnobs, boolean, select } from '@storybook/addon-knobs';
 import { List, ListItem } from '../List';
 
 const kinds = {

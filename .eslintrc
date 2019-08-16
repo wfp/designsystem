@@ -54,6 +54,9 @@
       "tagNamePreference": {
         "augments": "extends"
       }
+    },
+    "react": {
+      "version": "detect",
     }
   }
 }

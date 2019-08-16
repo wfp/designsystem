@@ -37,9 +37,6 @@ keys.forEach(function(element, i) {
 
       //console.log('config', config, element.replace('.hbs', '.config.js'), i);
 
-      var data = {
-        componentsX: true,
-      };
       var result = template(config);
       //result = "";
       //htmlData[i]

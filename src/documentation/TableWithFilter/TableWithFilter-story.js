@@ -96,24 +96,24 @@ const Table = ({ simpleSearch, search }) => {
   /* Advanced search with custom filtering for each input using fuzy.js */
 
   if (search.name) {
-    var options = {
+    var optionsName = {
       threshold: 0.0,
       minMatchCharLength: 1,
       keys: ['name'],
     };
-    var fuse = new Fuse(dataFiltered, options);
-    dataFiltered = fuse.search(search.name);
+    var fuseName = new Fuse(dataFiltered, optionsName);
+    dataFiltered = fuseName.search(search.name);
   }
 
   if (search.age) {
-    var options = {
+    var optionsAge = {
       threshold: 0.0,
       minMatchCharLength: 1,
       keys: ['age'],
     };
-    var fuse = new Fuse(dataFiltered, options);
-    console.log('fuse', fuse);
-    dataFiltered = fuse.search(search.age);
+    var fuseAge = new Fuse(dataFiltered, optionsAge);
+    console.log('fuse', fuseAge);
+    dataFiltered = fuseAge.search(search.age);
   }
 
   return (
@@ -225,7 +225,7 @@ class TableWithFilter extends Component {
   };
 
   render() {
-    const { filterActivated, simpleSearch } = this.state;
+    const { filterActivated } = this.state;
 
     return (
       <Module noMargin>

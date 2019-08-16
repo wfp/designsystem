@@ -39,10 +39,8 @@ const el = ({ href, label }) => {
 
 const listEl = ({ anchor, className, label, href }) => {
   return (
-    <a className={className}>
-      <span style={{ color: 'blue' }} href={href}>
-        {anchor.label}
-      </span>
+    <a className={className} href={href}>
+      <span style={{ color: 'blue' }}>{anchor.label}</span>
     </a>
   );
 };

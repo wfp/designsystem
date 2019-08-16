@@ -15,16 +15,14 @@ class SingleComponent extends Component {
   }
 
   render() {
-    const { centered, children, flexBasis, pageWidth } = this.props;
+    const { centered, children, flexBasis } = this.props;
     const { height } = this.state;
 
-    //'wfp--story',
     const classNames = classnames({
       'wfp--single-component--top': height >= 300,
       'wfp--single-component--centered': centered && height <= 200,
     });
 
-    // pageWidth={pageWidth}
     return (
       <div className={classNames}>
         <div

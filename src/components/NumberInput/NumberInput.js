@@ -9,7 +9,6 @@ const { prefix } = settings;
 
 function PropTypeEmptyString(props, propName, componentName) {
   componentName = componentName || 'ANONYMOUS';
-
   if (props[propName]) {
     let value = props[propName];
     if (typeof value === 'string' && value !== '') {

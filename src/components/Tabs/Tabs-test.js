@@ -31,7 +31,7 @@ describe('Tabs', () => {
       });
     });
 
-    describe('Trigger (<div>)', () => {
+    /*describe('Trigger (<div>)', () => {
       const wrapper = shallow(
         <Tabs className="extra-class">
           <Tab label="firstTab">content1</Tab>
@@ -40,26 +40,26 @@ describe('Tabs', () => {
       );
 
       //const trigger = wrapper.find('div.wfp--tabs-trigger');
-      const tablist = wrapper.find('ul');
+      //const tablist = wrapper.find('ul');
 
-      /*it('renders default className for trigger', () => {
+      it('renders default className for trigger', () => {
         expect(trigger.hasClass('wfp--tabs-trigger')).toBe(true);
       });
-      */
+      
 
-      /*it('renders hidden className by default', () => {
+      it('renders hidden className by default', () => {
         expect(tablist.hasClass('wfp--tabs__nav--hidden')).toBe(true);
-      });/*
+      });
 
-      /* it('renders default className for triggerText', () => {
+       it('renders default className for triggerText', () => {
          expect(trigger.find('a').hasClass('wfp--tabs-trigger-text')).toBe(true);
-       });*/
+       });
 
-      /* it('renders <Icon>', () => {
+       it('renders <Icon>', () => {
          expect(trigger.find(Icon).props().icon).toEqual(iconCaretDown);
        });
-       */
-    });
+       
+    });*/
 
     describe('Children (<Tab>)', () => {
       const wrapper = shallow(
@@ -129,7 +129,7 @@ describe('Tabs', () => {
 
   describe('events', () => {
     describe('click', () => {
-      const wrapper = mount(
+      /*const wrapper = mount(
         <Tabs>
           <Tab label="firstTab" className="firstTab">
             content1
@@ -138,7 +138,7 @@ describe('Tabs', () => {
             content2
           </Tab>
         </Tabs>
-      );
+      );*/
 
       describe('state: dropdownHidden', () => {
         /*it('toggles dropdownHidden state after trigger is clicked', () => {

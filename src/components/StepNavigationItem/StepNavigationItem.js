@@ -50,7 +50,6 @@ export default class StepNavigationItem extends React.Component {
       index,
       label,
       status,
-      selected,
       helperText,
       selectedPage,
       onClick,

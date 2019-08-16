@@ -148,6 +148,7 @@ describe('NumberInput', () => {
 
         it('should set invalidText when value is empty string', () => {
           wrapper.setState({ value: '' });
+          wrapper.setProps({ allowEmpty: false });
           const invalidText = wrapper.find('.wfp--form-requirement');
           expect(invalidText.length).toEqual(1);
 

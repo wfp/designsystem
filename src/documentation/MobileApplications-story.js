@@ -69,9 +69,7 @@ storiesOf('Documentation|General', module)
       </p>
       <ul className="wfp--story__list">
         <li>
-          <Link
-            href="https://next.carbondesignsystem.com/guidelines/accessibility/overview#carbon-and-accessibility"
-            target="_blank">
+          <Link href="https://material.io/design" target="_blank">
             Google Material UI
           </Link>
         </li>

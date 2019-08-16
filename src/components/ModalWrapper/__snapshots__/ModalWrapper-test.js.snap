@@ -81,6 +81,7 @@ exports[`ModalWrapper should render 1`] = `
       passiveModal={false}
       primaryButtonDisabled={false}
       primaryButtonText="Save"
+      secondaryButtonDisabled={false}
       secondaryButtonText="Cancel"
       selectorPrimaryFocus="[data-modal-primary-focus]"
     >
@@ -88,7 +89,7 @@ exports[`ModalWrapper should render 1`] = `
         containerInfo={
           <div>
             <div
-              class="wfp--modal wfp--modal-tall"
+              class="wfp--modal wfp--modal--tall"
               role="presentation"
               tabindex="-1"
             >
@@ -170,7 +171,7 @@ exports[`ModalWrapper should render 1`] = `
         }
       >
         <div
-          className="wfp--modal wfp--modal-tall"
+          className="wfp--modal wfp--modal--tall"
           onBlur={[Function]}
           onClick={[Function]}
           onKeyDown={[Function]}
