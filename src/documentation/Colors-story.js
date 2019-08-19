@@ -51,13 +51,20 @@ storiesOf('Documentation|General', module)
   .addParameters({ options: { showPanel: false, isToolshown: false } })
   .add('Colours', () => {
     const regularColors = Object.values(colors).filter(
-      ui_colors => ui_colors.type !== 'symbolic' && ui_colors.type !== 'ui'
+      ui_colors =>
+        ui_colors.type !== 'symbolic' &&
+        ui_colors.type !== 'ui' &&
+        ui_colors.type !== 'sdg'
     );
     const uiColors = Object.values(colors).filter(
       ui_colors => ui_colors.type === 'ui'
     );
     const symbolicColors = Object.values(colors).filter(
       ui_colors => ui_colors.type === 'symbolic'
+    );
+
+    const sdgColors = Object.values(colors).filter(
+      ui_colors => ui_colors.type === 'sdg'
     );
 
     const colorList = filterList => {
@@ -219,6 +226,11 @@ storiesOf('Documentation|General', module)
         <h3>Brand Colours</h3>
         <ul style={{ display: 'flex', flexWrap: 'wrap' }}>
           {colorList(regularColors)}
+        </ul>
+
+        <h3>Sustainable development goals colours</h3>
+        <ul style={{ display: 'flex', flexWrap: 'wrap' }}>
+          {colorList(sdgColors)}
         </ul>
 
         <h3>Symbolic colours</h3>
