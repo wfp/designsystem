@@ -2,13 +2,14 @@
 
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import Blockquote from '../components/Blockquote';
-import RegularPage from './RegularPage';
-import Story from '../components/Story';
-import Wrapper from '../components/Wrapper';
-import { Module, ModuleHeader, ModuleBody } from '../components/Module';
+import Blockquote from '../../components/Blockquote';
+import RegularPage from '../RegularPage';
+import Story from '../../components/Story';
+import Wrapper from '../../components/Wrapper';
+import { Module, ModuleHeader, ModuleBody } from '../../components/Module';
 
 storiesOf(' Documentation|Samples', module)
+  .addParameters({ hideProps: true })
   .addDecorator(story => (
     <RegularPage title="Regular content page" withoutSecondaryTabs>
       {story()}

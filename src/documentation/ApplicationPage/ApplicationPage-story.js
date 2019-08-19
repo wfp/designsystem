@@ -2,13 +2,13 @@
 
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import RegularPage from './RegularPage';
-import Wrapper from '../components/Wrapper';
+import RegularPage from '../RegularPage';
+import Wrapper from '../../components/Wrapper';
 
-import { Module, ModuleHeader, ModuleBody } from '../components/Module';
+import { Module, ModuleHeader, ModuleBody } from '../../components/Module';
 
 storiesOf('Documentation|Samples', module)
-  .addParameters({ options: { showPanel: false, isToolshown: false } })
+  .addParameters({ hideProps: true })
   .addDecorator(story => <RegularPage>{story()}</RegularPage>)
   .add('Application Page', () => (
     <Wrapper background="lighter" pageWidth="lg" spacing="md">

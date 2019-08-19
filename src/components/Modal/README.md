@@ -4,6 +4,33 @@ Use the Modal Wrapper component to encapsulate your Modal within a button.
 
 Modal is forked from [Carbon Components](https://www.carbondesignsystem.com/components/modal/code) 
 
+### When to use
+
+#### Do use
+
+##### Grab the user’s attention
+Use when you want to interrupt a user’s current task to catch the user’s full attention to something more important.
+##### Need user input
+Use when you want to get information from the user. Ex. sign up or login form.
+##### Show additional information in context.
+Use when you want to show additional information without losing the context of the parent page. Ex. showing larger images or videos.
+##### Show additional information (not in context)
+Use when you want to show information that is not directly related to the parent page or other options that are “independent” from other pages. Ex. notifications.
+
+Source: [Best Practices for Modals / Overlays / Dialog Windows](https://uxplanet.org/best-practices-for-modals-overlays-dialog-windows-c00c66cddd8c) 
+
+#### Do not use
+
+##### Long content
+Avoid using modal dialogs when the content needs a scrollbar.
+
+##### Long forms
+Do not use when a long form is displayed.
+
+##### Complex decision making
+Avoid modal dialogs for complex decision making that requires additional sources of information unavailable in the modal.
+
+
 ### Usage
 
 ```js

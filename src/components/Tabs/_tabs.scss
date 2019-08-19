@@ -117,6 +117,7 @@
     @include typescale('zeta');
     padding: 0;
     cursor: pointer;
+    white-space: nowrap;
 
     &:hover,
     &:focus {

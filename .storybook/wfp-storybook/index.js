@@ -13,6 +13,8 @@ export const withNotes = makeDecorator({
 
     var text = '';
 
+    //console.log('context', context.parameters.hideProps);
+
     var result = /(.*\/)(\w+)(-story.js)+/.exec(context.parameters.fileName);
     var resultName = result ? result[1] : '';
 
@@ -31,7 +33,7 @@ export const withNotes = makeDecorator({
       text = text ? text.default : 'no readme';
     } catch (ex) {}
 
-    if (!text.includes('<!-- NO PROPS -->')) {
+    if (!text.includes('<!-- NO PROPS -->') && !context.parameters.hideProps) {
       text = `${text}
 <!-- PROPS -->`;
     }
@@ -53,7 +55,7 @@ ${text}`;
 
     /* const { text, markdown, markdownOptions } =
       typeof storyOptions === 'string' ? { text: storyOptions } : storyOptions;
-    
+     
     if (!text && !markdown) {
       throw new Error('You must set of one of `text` or `markdown` on the `notes` parameter');
     } */
