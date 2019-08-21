@@ -38,6 +38,7 @@ body,
       fill: $brand-03;
     }
   }
+
   section > a > div > svg {
     path {
       fill: $brand-01;
@@ -56,6 +57,7 @@ body,
 .storybook-readme-story {
   max-width: 800px;
   margin: auto;
+
   code {
     background-color: rgba(27, 31, 35, 0.05);
     border-radius: 3px;
@@ -66,6 +68,10 @@ body,
       monospace;
     font-size: 12px;
   }
+}
+
+ul {
+  list-style-type: disc;
 }
 
 .readme--github {
