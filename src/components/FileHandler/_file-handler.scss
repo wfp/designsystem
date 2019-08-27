@@ -1,0 +1,125 @@
+@import '../../globals/scss/vars';
+@import '../../globals/scss/colors';
+@import '../../globals/scss/typography';
+@import '../../globals/scss/spacing';
+@import '../../globals/scss/css--reset';
+@import '../../globals/scss/helper-mixins';
+@import '../../globals/scss/import-once';
+@import '../../globals/scss/css--typography';
+@import '../Button/button';
+@import '../Form/form';
+@import '../Loading/loading';
+
+@include exports('file-handler') {
+  .#{$prefix}--file {
+    width: 100%;
+  }
+
+  .#{$prefix}--file-input {
+    @include hidden;
+  }
+
+  .#{$prefix}--file-btn {
+    margin-top: $spacing-xs;
+  }
+
+  .#{$prefix}--label-description {
+    @include reset;
+    @include typescale('zeta');
+    @include line-height('body');
+    color: $text-02;
+    margin-bottom: $spacing-xs;
+  }
+
+  .#{$prefix}--file-dropzone {
+    display: block;
+    width: 100%;
+    border: 2px dashed $brand-01;
+    margin-top: $spacing-xs;
+    padding: $spacing-md;
+    text-align: center;
+    border-radius: $button-border-radius;
+  }
+
+  .#{$prefix}--file-list {
+    li {
+      display: block;
+      width: 100%;
+      border-bottom: 2px solid $ui-03;
+      margin-top: $spacing-xs;
+      padding: $spacing-md 0;
+      border-radius: $button-border-radius;
+    }
+  }
+
+  .#{$prefix}--file-path {
+    display: block;
+    font-weight: bold;
+  }
+
+  .#{$prefix}--file-size {
+    display: block;
+    color: $ui-05;
+    @include typescale('caption');
+  }
+
+  .#{$prefix}--file__selected-file {
+    @include text-overflow(300px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: rem(20px);
+    background-color: $field-01;
+    //padding: 0 $spacing-md;
+    margin-bottom: $spacing-3xs;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .#{$prefix}--file-filename {
+    @include typescale('omega');
+    @include text-overflow(100%);
+    display: inline-flex;
+    align-items: center;
+    color: $text-01;
+    margin-right: $spacing-md;
+    height: 1.875rem;
+  }
+
+  .#{$prefix}--file__state-container {
+    display: flex;
+    align-items: center;
+
+    .#{$prefix}--loading {
+      width: 1.125rem;
+      height: 1.125rem;
+      margin-right: $spacing-xs;
+    }
+
+    .#{$prefix}--loading__svg {
+      stroke: $ui-05;
+    }
+  }
+
+  .#{$prefix}--file__state-container .#{$prefix}--file-close,
+  .#{$prefix}--file__state-container .#{$prefix}--file-complete {
+    width: 1rem;
+    height: 1rem;
+    fill: $text-01;
+    cursor: pointer;
+
+    &:focus {
+      @include focus-outline('border');
+    }
+  }
+
+  .#{$prefix}--file__state-container .#{$prefix}--file-close {
+    fill: $ui-05;
+  }
+
+  .#{$prefix}--file__state-container .#{$prefix}--file-complete {
+    fill: $support-02;
+  }
+}

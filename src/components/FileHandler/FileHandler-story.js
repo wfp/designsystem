@@ -43,7 +43,9 @@ const props = {
       filenameStatuses,
       'edit'
     ),
-    files: array('Accepted file extensions (accept)', ['.jpg', '.png'], ','),
+    files: array('Accepted file extensions (accept)', [
+      { path: 'lorem.jpg', size: '21133' },
+    ]),
     accept: array('Accepted file extensions (accept)', ['.jpg', '.png'], ','),
     name: text('Form item name: (name)', ''),
     multiple: boolean('Supports multiple files (multiple)', true),

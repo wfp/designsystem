@@ -60,6 +60,9 @@
     sup {
       font-size: 0.7em;
       background: $ui-03;
+      vertical-align: top;
+      position: relative;
+      top: -0.5em;
 
       > a {
         text-decoration: none;
@@ -119,6 +122,22 @@
     }
 
     h4 + div {
+      margin-top: $spacing-md;
+    }
+
+    h1 + .wfp--list,
+    h2 + .wfp--list,
+    h3 + .wfp--list,
+    h4 + .wfp--list,
+    h5 + .wfp--list {
+      margin-top: $spacing-md;
+    }
+
+    .wfp--list + h1,
+    .wfp--list + h2,
+    .wfp--list + h3,
+    .wfp--list + h4,
+    .wfp--list + h5 {
       margin-top: $spacing-md;
     }
   }

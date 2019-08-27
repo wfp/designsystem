@@ -5,6 +5,7 @@ import { storiesOf } from '@storybook/react';
 import Page from './Page';
 import Blockquote from '../components/Blockquote';
 import Link from '../components/Link';
+import { List, ListItem } from '../components/List';
 import { linkTo } from '@storybook/addon-links';
 
 storiesOf('Documentation|General', module)
@@ -90,17 +91,52 @@ storiesOf('Documentation|General', module)
       </p>
       <Blockquote>
         <h1>Heading 1</h1>
+        <List kind="simple" colon small>
+          <ListItem title="font-size">2.25rem (36px)</ListItem>
+          <ListItem title="line-height">1.25</ListItem>
+          <ListItem title="font-weight">600</ListItem>
+        </List>
         <h2>Heading 2</h2>
+        <List kind="simple" colon small>
+          <ListItem title="font-size">1.75rem (28px)</ListItem>
+          <ListItem title="line-height">1.25</ListItem>
+          <ListItem title="font-weight">600</ListItem>
+        </List>
         <h3>Heading 3</h3>
+        <List kind="simple" colon small>
+          <ListItem title="font-size">1.25rem (20px)</ListItem>
+          <ListItem title="line-height">1.25</ListItem>
+          <ListItem title="font-weight">600</ListItem>
+        </List>
         <h4>Heading 4</h4>
+        <List kind="simple" colon small>
+          <ListItem title="font-size">1.125rem (18px)</ListItem>
+          <ListItem title="line-height">1.25</ListItem>
+          <ListItem title="font-weight">600</ListItem>
+        </List>
+        <h5>Heading 5</h5>
+        <List kind="simple" colon small>
+          <ListItem title="font-size">1rem (16px)</ListItem>
+          <ListItem title="line-height">1.25</ListItem>
+          <ListItem title="font-weight">600</ListItem>
+        </List>
       </Blockquote>
       {/*<h5>Heading 5</h5>*/}
       {/*<h6>Heading 6</h6>*/}
-      <h3>Paragraph</h3>
+      <h2>Paragraph</h2>
+
+      <Blockquote>
+        <h5>Paragraph</h5>
+        <List kind="simple" colon small>
+          <ListItem title="font-size">1rem (16px)</ListItem>
+          <ListItem title="line-height">1.6</ListItem>
+          <ListItem title="font-weight">400</ListItem>
+        </List>
+      </Blockquote>
       <p>
-        Paragraph – Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-        diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-        erat, sed diam voluptua
+        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+        eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+        voluptua.
         <sup>
           <a id="anker3" title="" href="#fn3">
             3

@@ -94,6 +94,33 @@ storiesOf('Components|FileUploader (draft)', module)
       </div>
     );
   })
+  .add('FileUploader exiting files', () => {
+    let fileUploader;
+
+    const fileChange = (e, evt) => {
+      console.log('files changed', e, evt.target.value, fileUploader.nodes);
+    };
+
+    return (
+      <div className="wfp--file__container">
+        <FileUploader
+          {...props.fileUploader()}
+          ref={node => (fileUploader = node)}
+          onFilesChange={fileChange}
+          files={[{ name: 'lorem-ipsum.jpg' }]}
+        />
+        <Button
+          kind="secondary"
+          small
+          style={{ marginTop: '1rem' }}
+          onClick={() => {
+            fileUploader.clearFiles();
+          }}>
+          Clear File
+        </Button>
+      </div>
+    );
+  })
   .add('skeleton', () => (
     <div style={{ width: '500px' }}>
       <FileUploaderSkeleton />

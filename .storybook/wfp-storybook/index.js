@@ -45,6 +45,7 @@ export const withNotes = makeDecorator({
 
 ${text}`;
 
+    console.log('context', context);
     context.parameters.readme = {
       sidebar: text,
       codeTheme: 'github',
