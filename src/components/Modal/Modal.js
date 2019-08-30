@@ -136,6 +136,11 @@ export default class Modal extends Component {
     ]),
 
     /**
+     *  Different styling options are available `info`, `warning`, `danger`
+     */
+    type: PropTypes.oneOf(['info', 'warning', 'danger']),
+
+    /**
      * If true the Modal will be rendered inside a portal at the end of the
      * body element, otherwise at the position it is placed.
      */
@@ -308,6 +313,7 @@ export default class Modal extends Component {
       danger,
       hideClose,
       wide,
+      type,
       selectorPrimaryFocus, // eslint-disable-line
       selectorsFloatingMenus, // eslint-disable-line
       shouldSubmitOnEnter, // eslint-disable-line
@@ -324,7 +330,9 @@ export default class Modal extends Component {
       [`${prefix}--modal--tall`]: !passiveModal,
       [`${prefix}--modal--background-image`]: backgroundImage,
       'is-visible': open,
-      [`${prefix}--modal--danger`]: this.props.danger,
+      [`${prefix}--modal--warning`]: type === 'warning' || this.props.warning,
+      [`${prefix}--modal--danger`]: type === 'danger' || this.props.danger,
+
       [this.props.className]: this.props.className,
     });
 

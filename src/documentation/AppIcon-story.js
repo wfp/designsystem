@@ -3,6 +3,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import Page from './Page';
+import Blockquote from '../components/Blockquote';
 import Link from '../components/Link';
 
 const fileSizes = [120, 152, 160, 167, 180, 192, 300];
@@ -11,6 +12,9 @@ storiesOf('Documentation|General', module)
   .addParameters({ options: { showPanel: false, isToolshown: false } })
   .add('App icons', () => (
     <Page title="App icons" subTitle="Icons for Android & iOS">
+      <Blockquote warning title="Work in progress">
+        Please notice that this page is currently a draft.
+      </Blockquote>
       <p>
         All WFP apps should use a custom made icon to be distinguishable. By
         using the branding colors the icon should be recognizable as an WFP app.

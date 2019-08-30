@@ -9,7 +9,7 @@ import Filename from '../FileUploader/Filename';
 
 const { prefix } = settings;
 
-export default class FileUploaderButton extends Component {
+export class FileUploaderButton extends Component {
   state = {};
 
   static propTypes = {

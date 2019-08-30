@@ -228,7 +228,7 @@ storiesOf('Documentation|General', module)
           {colorList(regularColors)}
         </ul>
 
-        <h3>Sustainable development goals colours</h3>
+        {/*<h3>Sustainable development goals colours</h3>
         <ul style={{ display: 'flex', flexWrap: 'wrap' }}>
           {colorList(sdgColors)}
         </ul>
@@ -236,7 +236,7 @@ storiesOf('Documentation|General', module)
         <h3>Symbolic colours</h3>
         <ul style={{ display: 'flex', flexWrap: 'wrap' }}>
           {colorList(symbolicColors)}
-        </ul>
+        </ul>*/}
 
         <p />
 

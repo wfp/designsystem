@@ -7,7 +7,7 @@ import settings from '../../globals/js/settings';
 
 const { prefix } = settings;
 
-export default class Filename extends Component {
+export class Filename extends Component {
   static propTypes = {
     /**
      * Specify an optional object of styles to be applied inline to the root

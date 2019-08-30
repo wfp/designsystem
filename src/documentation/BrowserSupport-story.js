@@ -5,11 +5,19 @@ import { storiesOf } from '@storybook/react';
 import Page from './Page';
 import Blockquote from '../components/Blockquote';
 import Link from '../components/Link';
+import InfoBar from '../components/InfoBar';
 
 storiesOf('Documentation|General', module)
   .addParameters({ options: { showPanel: false, isToolshown: false } })
   .add('Browser support', () => (
-    <Page title="Browser support" subTitle="All supported browsers">
+    <Page title="Browser support" subTitle="Supported browsers">
+      <Blockquote warning title="IE11 support">
+        Please notice that the UI Kit currently supports IE11, but it will no
+        longer do it in future releases. Those applications that do not work
+        properly or do not work at all in IE11 will need to include a warning
+        message inviting the user to switch to a more modern browser.
+      </Blockquote>
+
       <p>Currently the following browsers are supported:</p>
 
       <ul className="wfp--story__list">
@@ -34,5 +42,17 @@ storiesOf('Documentation|General', module)
         </Link>{' '}
         about the browsers supported on WFP GO.
       </Blockquote>
+
+      {/*<h3>Outdated browser message</h3>
+      <h4>Banner</h4>
+
+      <InfoBar pageWidth="narrow">
+        Lorem ipsum dolor sit amet, consetetur sadipscing elitr
+      </InfoBar>
+      <p></p>
+      <Link href="#">Display source code</Link>
+      <h4>Modal</h4>
+      <p></p>
+      <Link href="#">Warning modal</Link>*/}
     </Page>
   ));

@@ -69,8 +69,8 @@ storiesOf('Documentation|General', module)
       </p>
       <ul className="wfp--story__list">
         <li>
-          <Link href="https://material.io/design" target="_blank">
-            Google Material UI
+          <Link href="https://material.io/develop/android/" target="_blank">
+            Google Material UI Android development
           </Link>
         </li>
       </ul>

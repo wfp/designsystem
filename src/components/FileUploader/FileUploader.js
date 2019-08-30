@@ -5,8 +5,8 @@ import classNames from 'classnames';
 import settings from '../../globals/js/settings';
 import uid from '../../tools/uniqueId';
 import { ButtonTypes } from '../../prop-types/types';
-import Filename from '../FileUploader/Filename';
-import FileUploaderButton from '../FileUploader/FileUploaderButton';
+import { Filename } from '../FileUploader/Filename';
+import { FileUploaderButton } from '../FileUploader/FileUploaderButton';
 
 const { prefix } = settings;
 
@@ -121,7 +121,6 @@ export default class FileUploader extends Component {
   };
 
   handleClick = (evt, index) => {
-    console.log(this.nodes);
     const filteredArray = this.state.filenames.filter(
       filename => filename !== this.nodes[index].innerText.trim()
     );
