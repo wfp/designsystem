@@ -116,6 +116,10 @@
       margin-top: $spacing-sm;
     }
 
+    button + p {
+      margin-top: $spacing-sm;
+    }
+
     div + h4,
     h3 + h4 {
       margin-top: $spacing-lg;

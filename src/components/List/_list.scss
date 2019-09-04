@@ -39,6 +39,23 @@
     }
   }
 
+  .#{$prefix}--list--bullet {
+    line-height: 1.5em;
+    list-style-type: disc;
+    margin-left: 1.5em;
+    //list-style:
+    //list-style-position: inside;
+
+    li {
+      //list-style-type: square;
+    }
+
+    .#{$prefix}--list__element__title {
+      font-weight: 700;
+      margin-right: rem(5px);
+    }
+  }
+
   .#{$prefix}--list--simple-inline {
     line-height: 1.5em;
     display: flex;

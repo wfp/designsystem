@@ -17,6 +17,7 @@ const List = ({ children, className, colon, kind, small, ...other }) => {
     'wfp--list--simple': kind === 'simple',
     'wfp--list--simple-inline': kind === 'simple-inline',
     'wfp--list--details': kind === 'details',
+    'wfp--list--bullet': kind === 'bullet',
     'wfp--list--small': small,
     'wfp--list--colon': colon,
   });

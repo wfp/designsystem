@@ -8,6 +8,7 @@ import { List, ListItem } from '../List';
 const kinds = {
   'Simple vertical list (simple)': 'simple',
   'Simple horizontal list (simple-inline)': 'simple-inline',
+  'Bullet list (bullet)': 'bullet',
   'Detailed list (details)': 'details',
 };
 
