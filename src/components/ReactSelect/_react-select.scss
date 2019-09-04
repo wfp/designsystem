@@ -11,21 +11,30 @@
   .#{$prefix}--react-select-container {
     width: 100%;
     order: 2;
+
     .#{$prefix}--react-select__control {
       border-radius: 0;
       min-height: $input-height;
       background-color: $field-01;
       border: $input-border;
+
       &:hover {
         border: $input-border;
       }
     }
+
     .#{$prefix}--react-select__control--is-focused,
     .#{$prefix}--react-select__control--is-focused:hover {
       //border: $input-border;
       box-shadow: none;
       //border-color: red;
       @include focus-outline('border-important');
+    }
+
+    .#{$prefix}--react-select__control--is-disabled,
+    .#{$prefix}--react-select__control--is-disabled:hover {
+      opacity: 0.5;
+      cursor: not-allowed;
     }
   }
 }

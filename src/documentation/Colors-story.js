@@ -242,14 +242,14 @@ storiesOf('Documentation|General', module)
 
         <h3>Usage</h3>
 
-        <p>The colors can be used via JavaScript or different frameworks.</p>
+        <p>The colours can be used via JavaScript or different frameworks.</p>
 
         <Blockquote title="Usage in JavaScript" type="code">
           <PrismCode component="pre" className="language-js">
-            {`// Import colors as json (needs a json loader)
+            {`// Import colours as json (needs a json loader)
 import colors from '@wfp/ui/source/globals/data/colors.json'
 
-// Import colors as js
+// Import colours as js
 import colors from '@wfp/ui/source/globals/data/colors.js'
 
 const barChartColor = colors.navy;
