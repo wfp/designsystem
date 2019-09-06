@@ -38,14 +38,14 @@
 
     &:focus {
       outline: none;
-      //box-shadow: 0 2px 0 0 $brand-01;
+      //box-shadow: 0 2px 0 0 $interactive-01;
     }
 
     &:focus {
       @include focus-outline('border');
     }
     /* &:focus ~ .#{$prefix}--label {
-      color: $brand-01;
+      color: $interactive-01;
     } */
 
     &:disabled {
@@ -121,7 +121,7 @@
   }
 
   .#{$prefix}--number__controls svg {
-    fill: $brand-01;
+    fill: $interactive-01;
 
     // Hover styles for use with old HTML w/o button
     &:hover {

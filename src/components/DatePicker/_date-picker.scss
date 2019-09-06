@@ -19,8 +19,8 @@
     height: 100%;
     text-align: center;
     background: 0 0;
-    border: 2px solid $brand-01;
-    color: $brand-01;
+    border: 2px solid $interactive-01;
+    color: $interactive-01;
     padding: 4px 12px;
     margin-right: 8px;
     line-height: normal;
@@ -34,7 +34,7 @@
   }
   .PresetDateRangePicker_button__selected {
     color: #fff;
-    background: $brand-01;
+    background: $interactive-01;
   }
   .SingleDatePickerInput {
     display: inline-block;
@@ -200,7 +200,7 @@
   }
   .DayPickerKeyboardShortcuts_show__bottomRight::before {
     border-top: 26px solid transparent;
-    border-right: 33px solid $brand-01;
+    border-right: 33px solid $interactive-01;
     bottom: 0;
     right: 0;
   }
@@ -213,7 +213,7 @@
   }
   .DayPickerKeyboardShortcuts_show__topRight::before {
     border-bottom: 26px solid transparent;
-    border-right: 33px solid $brand-01;
+    border-right: 33px solid $interactive-01;
     top: 0;
     right: 0;
   }
@@ -226,7 +226,7 @@
   }
   .DayPickerKeyboardShortcuts_show__topLeft::before {
     border-bottom: 26px solid transparent;
-    border-left: 33px solid $brand-01;
+    border-left: 33px solid $interactive-01;
     top: 0;
     left: 0;
   }
@@ -366,8 +366,8 @@
   .CalendarDay__selected,
   .CalendarDay__selected:active,
   .CalendarDay__selected:hover {
-    background: $brand-01;
-    border: 1px double $brand-01;
+    background: $interactive-01;
+    border: 1px double $interactive-01;
     color: #fff;
   }
   .CalendarDay__hovered_span,
@@ -481,13 +481,13 @@
     margin: 0;
   }
   .DayPickerNavigation_button__default {
-    border: 2px solid $brand-01;
+    border: 2px solid $interactive-01;
     background-color: #fff;
     color: #757575;
   }
   .DayPickerNavigation_button__default:focus,
   .DayPickerNavigation_button__default:hover {
-    border: 2px solid $brand-01;
+    border: 2px solid $interactive-01;
   }
   .DayPickerNavigation_button__default:active {
     background: #f2f2f2;
@@ -535,7 +535,7 @@
   .DayPickerNavigation_svg__horizontal {
     height: 19px;
     width: 19px;
-    fill: $brand-01;
+    fill: $interactive-01;
     display: block;
   }
   .DayPickerNavigation_svg__vertical {

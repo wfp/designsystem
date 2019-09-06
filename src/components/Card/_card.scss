@@ -132,7 +132,7 @@
       }
       .#{$prefix}--photo-card__info__background {
         &:after {
-          background: $brand-01;
+          background: $interactive-01;
           opacity: 1;
         }
       }
@@ -230,7 +230,7 @@
       display: none;
     }
     .#{$prefix}--photo-card__info__title {
-      color: $brand-01;
+      color: $interactive-01;
     }
     &.#{$prefix}--photo-card--link:hover {
       .#{$prefix}--photo-card__info__title {
@@ -238,7 +238,7 @@
       }
       .#{$prefix}--photo-card__info__background {
         &:after {
-          background: $brand-01;
+          background: $interactive-01;
           opacity: 1;
         }
       }
@@ -264,7 +264,7 @@
       @include text-gradient();
     }
     .#{$prefix}--photo-card__info__title {
-      color: $brand-01;
+      color: $interactive-01;
     }
     .#{$prefix}--photo-card__info__background {
       filter: blur(40px);

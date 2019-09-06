@@ -16,6 +16,7 @@
     width: 100%;
     padding-left: $spacing-md;
     padding-right: $spacing-md;
+
     @include breakpoint(bp--md--major) {
       padding-left: $spacing-md;
       padding-right: $spacing-md;
@@ -45,7 +46,7 @@
   }
 
   .#{$prefix}--wrapper--background-dark {
-    background: $color__main;
+    background: $brand-01;
   }
 
   .#{$prefix}--wrapper--width-md {

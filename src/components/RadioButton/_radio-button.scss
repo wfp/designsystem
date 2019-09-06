@@ -52,7 +52,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border-color: $brand-01;
+    border-color: $interactive-01;
 
     &:before {
       content: '';
@@ -61,7 +61,7 @@
       width: 0.5rem;
       height: 0.5rem;
       border-radius: 50%;
-      background-color: $brand-01;
+      background-color: $interactive-01;
     }
   }
 

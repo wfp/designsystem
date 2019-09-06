@@ -8,9 +8,10 @@
   // Color Theme Variables
 
   // Color Theme Variables
-  $brand-01: $color__main-51 !default !global; // Main Link and Button Color
+  $interactive-01: $color__main-51 !default !global; // Main Link and Button Color
+  $brand-01: $color__main !default !global; // Main Link and Button Color
   $brand-02: $color__main-60 !default !global; // Main WFP Color //$color__blue-40
-  $brand-03: $color__yellow !default !global; // Darker WFP Blue // $color__teal-20
+  $interactive-03: $color__yellow !default !global; // Darker WFP Blue // $color__teal-20
   $inverse-01: $color__white !default !global;
   $inverse-02: $color__white !default !global;
   $ui-01: $color__white !default !global;
@@ -36,10 +37,10 @@
   $nav-03: $color__magenta-30 !default !global;
   $nav-04: $color__magenta-60 !default !global;
 
-  $hover-primary: darken($brand-01, 10%) !default !global;
-  $hover-primary-text: darken($brand-01, 15%) !default !global;
+  $hover-primary: darken($interactive-01, 10%) !default !global;
+  $hover-primary-text: darken($interactive-01, 15%) !default !global;
   $hover-danger: darken($support-01, 10%) !default !global;
-  $hover-secondary: $brand-01 !default !global;
+  $hover-secondary: $interactive-01 !default !global;
   $hover-row: rgba($brand-02, 0.1) !default !global;
 
   // Global
@@ -69,15 +70,15 @@
 
   // Content Switcher
   $content-switcher-border-radius: 8px !default !global;
-  $content-switcher-option-border: 1px solid $brand-01 !default !global;
+  $content-switcher-option-border: 1px solid $interactive-01 !default !global;
 
   // Data Table
   $data-table-heading-transform: uppercase !default !global;
-  $data-table-heading-border-bottom: 1px solid $brand-01 !default !global;
+  $data-table-heading-border-bottom: 1px solid $interactive-01 !default !global;
   $data-table-row-height: 2rem !default !global;
 
   // Modal
-  $modal-border-top: $brand-01 4px solid !default !global;
+  $modal-border-top: $interactive-01 4px solid !default !global;
   $modal-footer-background-color: $ui-02 !default !global;
 
   // Progress Indicator

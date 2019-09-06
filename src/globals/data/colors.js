@@ -91,11 +91,11 @@ const colors = {
     type: 'symbolic',
     description: 'Indicate international staff',
   },
-  'brand-01': {
-    name: 'brand-01',
+  'interactive-01': {
+    name: 'interactive-01',
     hex: '#0b77c2',
-    scss: '$brand-01',
-    css: 'color__brand-01',
+    scss: '$interactive-01',
+    css: 'color__interactive-01',
     type: 'ui',
     description: 'Primary interactive color, Primary buttons',
   },
@@ -107,11 +107,11 @@ const colors = {
     type: 'ui',
     description: 'BannerNavigation',
   },
-  'brand-03': {
-    name: 'brand-03',
+  'interactive-03': {
+    name: 'interactive-03',
     hex: '#f7b825',
-    scss: '$brand-03',
-    css: 'color__brand-03',
+    scss: '$interactive-03',
+    css: 'color__interactive-03',
     type: 'ui',
     description: 'Secondary interactive color (experimental)',
   },

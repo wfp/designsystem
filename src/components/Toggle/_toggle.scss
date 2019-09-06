@@ -100,7 +100,7 @@
   .#{$prefix}--toggle--small:checked
     + .#{$prefix}--toggle__label
     .#{$prefix}--toggle__check {
-    fill: $brand-01;
+    fill: $interactive-01;
     transform: scale(1) translateX(16px);
   }
 
@@ -122,14 +122,14 @@
     + .#{$prefix}--toggle__label
     .#{$prefix}--toggle__appearance {
     &:before {
-      background-color: $brand-01;
+      background-color: $interactive-01;
     }
 
     &:after {
       transform: translateX(24px);
-      background-color: $brand-01;
+      background-color: $interactive-01;
       box-shadow: none;
-      border-color: $brand-01;
+      border-color: $interactive-01;
     }
   }
 
@@ -137,8 +137,8 @@
     + .#{$prefix}--toggle__label
     .#{$prefix}--toggle__appearance {
     &:before {
-      background-color: $brand-01;
-      border-color: $brand-01;
+      background-color: $interactive-01;
+      border-color: $interactive-01;
     }
 
     &:after {

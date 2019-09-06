@@ -9,6 +9,7 @@ const ReduxFormWrapper = ({
   inputComponent,
   InputComponent,
   classNamePrefix,
+  invalidText,
   meta: { touched, error, warning },
   ...other
 }) => {

@@ -7,7 +7,7 @@
 @import '../../globals/scss/css--reset';
 @import '../Form/form';
 
-@include exports('banner-navigation') {
+@include exports('info-bar') {
   .#{$prefix}--info-bar {
     background: $support-03;
     @include reset;

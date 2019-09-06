@@ -38,7 +38,7 @@
 
   .#{$prefix}--step-navigation__nav-item__text {
     text-decoration: underline;
-    color: $brand-01;
+    color: $interactive-01;
   }
 
   .#{$prefix}--step-navigation__nav-item__helper-text {
@@ -75,7 +75,7 @@
     justify-content: center;
     position: relative;
     //background: $ui-01;
-    border: 2px solid $brand-01;
+    border: 2px solid $interactive-01;
     flex-shrink: 0;
     border-radius: 3em;
     width: 3em;
@@ -90,13 +90,13 @@
     margin: 0.7em 1em 0.7em 0;
     text-align: center;
     z-index: 2;
-    color: $brand-01;
+    color: $interactive-01;
     transition: all 0.1s;
 
     > svg {
       position: relative;
       top: 1px;
-      fill: $brand-01;
+      fill: $interactive-01;
       width: 1em;
       height: 1em;
 
@@ -170,10 +170,10 @@
   /* Before State */
   .#{$prefix}--step-navigation__nav-item--before {
     .#{$prefix}--step-navigation__nav-item__indicator {
-      //background: $brand-01;
+      //background: $interactive-01;
       //color: $ui-01;
       &:after {
-        background-color: $brand-01;
+        background-color: $interactive-01;
       }
     }
   }
@@ -186,8 +186,8 @@
     }
 
     .#{$prefix}--step-navigation__nav-item__indicator {
-      background: $brand-01;
-      border-color: $brand-01 !important;
+      background: $interactive-01;
+      border-color: $interactive-01 !important;
       color: $ui-01;
 
       > svg {
@@ -195,7 +195,7 @@
       }
 
       &:after {
-        background-color: $brand-01;
+        background-color: $interactive-01;
       }
     }
   }

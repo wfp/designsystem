@@ -49,7 +49,7 @@
       border: $input-border;
     }
     &:focus ~ .#{$prefix}--label {
-      color: $brand-01;
+      color: $interactive-01;
     }
 
     &[data-invalid]:focus + .#{$prefix}--label {

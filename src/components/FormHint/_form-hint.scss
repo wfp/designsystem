@@ -13,10 +13,10 @@
     margin: 0 $spacing-2xs;
     user-select: none;
     svg {
-      fill: $brand-01;
+      fill: $interactive-01;
     }
     &:hover {
-      box-shadow: 0 1px 0 $brand-01;
+      box-shadow: 0 1px 0 $interactive-01;
     }
   }
 }

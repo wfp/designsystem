@@ -42,7 +42,7 @@
     }
 
     &:focus ~ .#{$prefix}--search-magnifier {
-      fill: $brand-01;
+      fill: $interactive-01;
     }
 
     &::placeholder {
@@ -103,7 +103,7 @@
   }
 
   .#{$prefix}--search-close:focus {
-    outline: 1px solid $brand-01;
+    outline: 1px solid $interactive-01;
     outline-offset: 2px;
   }
 
@@ -144,7 +144,7 @@
   .#{$prefix}--search-button:hover,
   .#{$prefix}--search-button:focus {
     cursor: pointer;
-    background-color: $brand-01;
+    background-color: $interactive-01;
     outline: 1px solid transparent;
   }
 

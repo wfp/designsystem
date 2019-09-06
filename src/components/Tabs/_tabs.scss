@@ -30,7 +30,7 @@
   .#{$prefix}--tabs__nav__bar {
     position: absolute;
     transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
-    background: $brand-01;
+    background: $interactive-01;
     z-index: 10;
     height: 3px;
     bottom: 0;
@@ -48,7 +48,7 @@
     svg {
       width: rem(12px);
       height: rem(12px);
-      fill: $brand-01;
+      fill: $interactive-01;
     }
 
     &:focus {
@@ -144,13 +144,13 @@
     //border: none;
 
     //@include breakpoint(bp--sm--major) {
-    //border-bottom: 2px solid $brand-01;
+    //border-bottom: 2px solid $interactive-01;
 
     .#{$prefix}--tabs__nav-link {
-      color: $brand-01;
+      color: $interactive-01;
 
       &:focus {
-        color: $brand-01;
+        color: $interactive-01;
       }
     }
 
@@ -158,7 +158,7 @@
   }
 
   .#{$prefix}--tabs__nav-item--disabled {
-    //border-bottom: 2px solid $brand-01;
+    //border-bottom: 2px solid $interactive-01;
 
     .#{$prefix}--tabs__nav-link {
       color: $ui-05;
@@ -190,7 +190,7 @@
 
     /*&:focus {
       outline: 1px solid transparent;
-      background-color: $brand-01;
+      background-color: $interactive-01;
       color: $inverse-01;
     }*/
 
@@ -202,11 +202,11 @@
       //background-color: transparent;
       color: $text-01;
       outline: 1px solid transparent;
-      //box-shadow: 0 0 0 1px $brand-01;
+      //box-shadow: 0 0 0 1px $interactive-01;
     }
 
     &:hover {
-      color: $brand-01;
+      color: $interactive-01;
     }
 
     //}

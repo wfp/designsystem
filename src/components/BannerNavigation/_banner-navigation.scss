@@ -12,6 +12,7 @@
     background: $color__main-60;
     @include reset;
     display: flex;
+
     @include breakpointMax(bp--md--major) {
       display: none;
     }
@@ -21,20 +22,25 @@
     @include typescale('omega');
     @include font-family;
     padding: 0 $spacing-sm;
+
     &:last-child {
       padding-right: 0;
     }
+
     a {
       @include typescale('omega');
       color: rgba($color__white, 0.9);
       text-decoration: none;
+
       &:hover {
         color: $color__white;
         text-decoration: underline;
       }
+
       &:focus {
         color: $color__white;
       }
+
       &:visited,
       &:active {
         color: rgba($color__white, 0.8);

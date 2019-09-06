@@ -132,7 +132,11 @@ table {
   }
 }
 
-.color__brand-01 {
+.color__interactive-01 {
+  background: $interactive-01;
+}
+
+.color__brand {
   background: $brand-01;
 }
 
@@ -140,8 +144,8 @@ table {
   background: $brand-02;
 }
 
-.color__brand-03 {
-  background: $brand-03;
+.color__interactive-03 {
+  background: $interactive-03;
 }
 
 .color__inverse-01 {

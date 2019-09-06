@@ -69,7 +69,7 @@
 
   .#{$prefix}--btn--primary {
     @include button-theme(
-      $brand-01,
+      $interactive-01,
       transparent,
       $inverse-01,
       $hover-primary,
@@ -90,10 +90,10 @@
   .#{$prefix}--btn--secondary {
     @include button-theme(
       transparent,
-      $brand-01,
-      $brand-01,
+      $interactive-01,
+      $interactive-01,
       $hover-secondary,
-      $brand-01
+      $interactive-01
     );
 
     &:hover,
@@ -102,7 +102,7 @@
     }
 
     &:active {
-      color: $brand-01;
+      color: $interactive-01;
     }
 
     &:hover > .#{$prefix}--btn__icon,
@@ -112,7 +112,7 @@
 
     &:hover:disabled,
     &:focus:disabled {
-      color: $brand-01;
+      color: $interactive-01;
     }
   }
 
@@ -143,9 +143,9 @@
     @include button-theme(
       transparent,
       transparent,
-      $brand-01,
-      $brand-01,
-      $brand-01
+      $interactive-01,
+      $interactive-01,
+      $interactive-01
     );
 
     &:hover,
@@ -167,10 +167,10 @@
 
     &:hover:disabled,
     &:focus:disabled {
-      color: $brand-01;
+      color: $interactive-01;
 
       .#{$prefix}--btn__icon {
-        fill: $brand-01;
+        fill: $interactive-01;
       }
     }
   }
@@ -286,7 +286,7 @@
 
   .#{$prefix}--btn--primary {
     @include button-theme--x(
-      $brand-01,
+      $interactive-01,
       transparent,
       $inverse-01,
       #0353e9,
@@ -314,10 +314,10 @@
   .#{$prefix}--btn--tertiary {
     @include button-theme--x(
       transparent,
-      $brand-01,
-      $brand-01,
+      $interactive-01,
+      $interactive-01,
       #0353e9,
-      $brand-01,
+      $interactive-01,
       $brand-02
     );
     position: relative;
@@ -346,9 +346,9 @@
     @include button-theme--x(
       transparent,
       transparent,
-      $brand-01,
+      $interactive-01,
       $ibm-colors__gray--10,
-      $brand-01,
+      $interactive-01,
       $ibm-colors__blue--70
     );
 
