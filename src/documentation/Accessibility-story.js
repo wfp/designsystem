@@ -5,7 +5,7 @@ import { storiesOf } from '@storybook/react';
 import Link from '../components/Link';
 import Page from './Page';
 
-storiesOf('Documentation|General', module)
+storiesOf('Documentation|Guidelines', module)
   .addParameters({ options: { showPanel: false, isToolshown: false } })
   .add('Accessibility', () => (
     <Page title="Accessibility" subTitle="UX Standards">

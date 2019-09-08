@@ -5,7 +5,7 @@ import { storiesOf } from '@storybook/react';
 import Link from '../components/Link';
 import Page from './Page';
 
-storiesOf('Documentation|General', module)
+storiesOf('Documentation|Getting started', module)
   .addParameters({ options: { showPanel: false, isToolshown: false } })
   .add('Credits', () => (
     <Page
@@ -20,12 +20,12 @@ storiesOf('Documentation|General', module)
         consistent representation. This new version shall reflect the changes in
         technology.
       </p>
-      <h3>The UI-Kit is be heavily based on</h3>
+      <h3>The UI Kit is be heavily based on</h3>
 
       <ul className="wfp--story__list">
         <li>
           <Link href="https://github.com/carbon-design-system/carbon-components">
-            Carbon Components
+            Carbon Design System by IBM
           </Link>
         </li>
         <li>

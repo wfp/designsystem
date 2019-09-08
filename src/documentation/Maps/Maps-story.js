@@ -7,7 +7,7 @@ import Link from '../../components/Link';
 
 const fileSizes = [120, 152, 160, 167, 180, 192, 300];
 
-storiesOf('Documentation|General', module)
+storiesOf('Documentation|Guidelines', module)
   .addParameters({ options: { showPanel: false, isToolshown: false } })
   .add('Maps', () => (
     <Page title="Maps" subTitle="Icons for Android & iOS">

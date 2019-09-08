@@ -7,9 +7,9 @@ import PrismCode from 'react-prism';
 import Page from '../Page';
 import Blockquote from '../../components/Blockquote';
 
-storiesOf(' Documentation|Developers', module).add(
-  'Usage for Developers',
-  () => (
+storiesOf(' Documentation|Getting started', module)
+  .addParameters({ options: { showPanel: false, isToolshown: false } })
+  .add('Developers', () => (
     <Page title="Usage for Developers" subTitle="How to use the UI Kit">
       <p>
         The UI Kit provides developers with React.js components, scss, css, html
@@ -96,5 +96,4 @@ $color__main: #0076FF;
         </PrismCode>
       </Blockquote>
     </Page>
-  )
-);
+  ));

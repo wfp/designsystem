@@ -5,7 +5,7 @@ import { storiesOf } from '@storybook/react';
 import Page from '../Page';
 import Link from '../../components/Link';
 
-storiesOf('Documentation|General', module)
+storiesOf('Documentation|Guidelines', module)
   .addParameters({ options: { showPanel: false, isToolshown: false } })
   .add('Data Visualization', () => (
     <Page title="Data Visualization" subTitle="Icons for Android & iOS">

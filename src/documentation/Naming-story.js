@@ -5,7 +5,7 @@ import { storiesOf } from '@storybook/react';
 import Page from './Page';
 import Link from '../components/Link';
 
-storiesOf('Documentation|General', module)
+storiesOf('Documentation|Guidelines', module)
   .addParameters({ options: { showPanel: false, isToolshown: false } })
   .add('Naming convention & linting', () => (
     <Page title="Naming convention" subTitle="Naming convention & linting">
@@ -42,7 +42,7 @@ storiesOf('Documentation|General', module)
         already includes the configuration.
       </p>
 
-      <h4>Basic rules used when building the UI-Kit</h4>
+      <h4>Basic rules used when building the UI Kit</h4>
 
       <ul className="wfp--story__list">
         <li>ECMAScript 6 features</li>

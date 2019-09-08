@@ -121,7 +121,7 @@ from '@wfp/icons'`}
 
 const wrapperStyle = { display: 'flex', flexWrap: 'wrap', margin: '0 -0.7em' };
 
-storiesOf('Documentation|General', module)
+storiesOf('Documentation|Guidelines', module)
   .addParameters({ options: { showPanel: false, isToolshown: false } })
   .add('Icons', () => (
     <Page title="Icons" subTitle="Icons & Logos for User Interfaces">
@@ -129,11 +129,7 @@ storiesOf('Documentation|General', module)
         For Usage please take a look at the{' '}
         <Link onClick={linkTo('Components|Icon', 'Default')}>Icon</Link>{' '}
         component or{' '}
-        <Link
-          onClick={linkTo(
-            ' Documentation.Getting Started',
-            'Usage for Developers'
-          )}>
+        <Link onClick={linkTo(' Documentation.Getting Started', 'Developers')}>
           Usage for Developers
         </Link>
         .

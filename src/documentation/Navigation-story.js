@@ -4,10 +4,11 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { linkTo } from '@storybook/addon-links';
 import Button from '../components/Button';
+import { iconArrowRight } from '@wfp/icons';
 import Page from './Page';
 import Blockquote from '../components/Blockquote';
 
-storiesOf('Documentation|General', module)
+storiesOf('Documentation|Guidelines', module)
   .addParameters({ options: { showPanel: false, isToolshown: false } })
   .add('Navigation', () => (
     <Page title="Navigation" subTitle="3-Level Navigation">
@@ -23,13 +24,16 @@ storiesOf('Documentation|General', module)
         word length.
       </Blockquote>
 
-      <Button
-        onClick={linkTo('Components|MainNavigation', 'default')}
-        small
-        kind="secondary"
-        style={{ marginBottom: '2em' }}>
-        Go to MainNavigation
-      </Button>
+      <p>
+        <Button
+          onClick={linkTo('Components|MainNavigation', 'default')}
+          small
+          icon={iconArrowRight}
+          kind="secondary"
+          style={{ marginBottom: '2em' }}>
+          Go to MainNavigation
+        </Button>
+      </p>
 
       <h3>Sub Navigation</h3>
       <p>
@@ -38,13 +42,16 @@ storiesOf('Documentation|General', module)
         more detailed selection if the former. It is attached to the Main
         Navigation and present on every page.
       </p>
-      <Button
-        onClick={linkTo('Components|SubNavigation', 'default')}
-        small
-        kind="secondary"
-        style={{ marginBottom: '2em' }}>
-        Go to SubNavigation
-      </Button>
+      <p>
+        <Button
+          onClick={linkTo('Components|SubNavigation', 'default')}
+          small
+          icon={iconArrowRight}
+          kind="secondary"
+          style={{ marginBottom: '2em' }}>
+          Go to SubNavigation
+        </Button>
+      </p>
 
       <h3>Secondary Navigation</h3>
 
@@ -52,13 +59,16 @@ storiesOf('Documentation|General', module)
         The Secondary Navigation splits a page in logical sections. It's content
         is related to the selected page and it is optional.
       </p>
-      <Button
-        onClick={linkTo('Components|SecondaryNavigation', 'default')}
-        small
-        kind="secondary"
-        style={{ marginBottom: '2em' }}>
-        Go to SecondaryNavigation
-      </Button>
+      <p>
+        <Button
+          onClick={linkTo('Components|SecondaryNavigation', 'default')}
+          small
+          icon={iconArrowRight}
+          kind="secondary"
+          style={{ marginBottom: '2em' }}>
+          Go to SecondaryNavigation
+        </Button>
+      </p>
 
       <h3>Banner Navigation</h3>
 
@@ -67,12 +77,15 @@ storiesOf('Documentation|General', module)
         should target to a new tab. It is additional and should only cover
         external links.
       </p>
-      <Button
-        onClick={linkTo('Components|BannerNavigation', 'default')}
-        small
-        kind="secondary"
-        style={{ marginBottom: '2em' }}>
-        Go to BannerNavigation
-      </Button>
+      <p>
+        <Button
+          onClick={linkTo('Components|BannerNavigation', 'default')}
+          small
+          icon={iconArrowRight}
+          kind="secondary"
+          style={{ marginBottom: '2em' }}>
+          Go to BannerNavigation
+        </Button>
+      </p>
     </Page>
   ));

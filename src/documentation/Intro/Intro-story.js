@@ -13,7 +13,7 @@ import Blockquote from '../../components/Blockquote';
   </div>
 ); */
 
-storiesOf('Documentation|General', module)
+storiesOf('Documentation|Getting started', module)
   .addParameters({ options: { showPanel: false, isToolshown: false } })
   .add('Introduction', () => (
     <div>

@@ -189,7 +189,7 @@ npm run test
 
 ### Deployment
 
-The UI-Kit uses [Standard Version](https://github.com/conventional-changelog/standard-version) for automate versioning and CHANGELOG generation.
+The UI Kit uses [Standard Version](https://github.com/conventional-changelog/standard-version) for automate versioning and CHANGELOG generation.
 
 ### Generate alpha release
 ```
@@ -216,6 +216,6 @@ npm run build:storybook
 
 Edit the `website-redirect-location` meta tag of `index.html` to point [wfp.org/UIGuide](https://wfp.org/UIGuide) to the latest documentation folder. This can be done with [MountainDuck](https://mountainduck.io/).
 
-Edit the first line of `assets/depreciation-warning.html` to point to the latest version of the UI-Kit.
+Edit the first line of `assets/depreciation-warning.html` to point to the latest version of the UI Kit.
 
 Clear the Server cache with [Cloudfront Purge Tool](https://chrome.google.com/webstore/detail/cloudfront-purge-tool).

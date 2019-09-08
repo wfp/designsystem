@@ -7,7 +7,7 @@ import Blockquote from '../components/Blockquote';
 import Link from '../components/Link';
 import InfoBar from '../components/InfoBar';
 
-storiesOf('Documentation|General', module)
+storiesOf('Documentation|Guidelines', module)
   .addParameters({ options: { showPanel: false, isToolshown: false } })
   .add('Browser support', () => (
     <Page title="Browser support" subTitle="Supported browsers">

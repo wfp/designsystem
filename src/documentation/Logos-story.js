@@ -47,7 +47,7 @@ const LogoElement = ({ color, logoKind, src }) => {
   );
 };
 
-storiesOf('Documentation|General', module)
+storiesOf('Documentation|Guidelines', module)
   .addParameters({ options: { showPanel: false, isToolshown: false } })
   .add('Logos', () => {
     const logoKinds = [
