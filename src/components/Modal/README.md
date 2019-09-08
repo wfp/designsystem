@@ -17,6 +17,9 @@ Use when you want to show information that is not directly related to the parent
 
 Source: [Best Practices for Modals / Overlays / Dialog Windows](https://uxplanet.org/best-practices-for-modals-overlays-dialog-windows-c00c66cddd8c) 
 
+ [Modal & Nonmodal Dialogs: When (& When Not) to Use Them](https://www.nngroup.com/articles/modal-nonmodal-dialog/) 
+
+
 ### Do not use
 
 #### Long content

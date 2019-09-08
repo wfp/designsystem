@@ -1,5 +1,7 @@
 **Tabs** are used to quickly navigate between views within the same context.
 
+They are based on the [Carbon Design System Tabs](https://www.carbondesignsystem.com/components/tabs/usage/).
+
 ### Usage
 
 #### Use tabs to alternate between views within the same context

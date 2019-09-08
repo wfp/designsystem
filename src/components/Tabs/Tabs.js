@@ -105,8 +105,9 @@ export default class Tabs extends React.Component {
 
   componentDidUpdate(prevProps) {
     if (
-      prevProps.children !== this.props.children &&
-      prevProps.active !== this.props.active
+      prevProps !== this.props
+      //prevProps.children !== this.props.children &&
+      //prevProps.active !== this.props.active
     ) {
       this.getSizes();
     }

@@ -22,6 +22,7 @@ const props = {
   tab: () => ({
     className: 'another-class',
     href: text('The href for tab (href in <Tab>)', '#'),
+    label: text('The label for tab (label in <Tab>)', 'Tab label'),
     role: text('ARIA role (role in <Tab>)', 'presentation'),
     tabIndex: number('Tab index (tabIndex in <Tab>)', 0),
     onClick: action('onClick'),
@@ -89,16 +90,16 @@ storiesOf('Components|Tabs', module)
   .addDecorator(withKnobs)
   .add('Default', () => (
     <Tabs {...props.tabs()}>
-      <Tab {...props.tab()} label="Tab label 1">
+      <Tab {...props.tab()} label={`${props.tab().label} 1`}>
         <div className="some-content">Content for first tab goes here.</div>
       </Tab>
-      <Tab {...props.tab()} label="Tab label 2">
+      <Tab {...props.tab()} label={`${props.tab().label} 2`}>
         <div className="some-content">Content for second tab goes here.</div>
       </Tab>
-      <Tab {...props.tab()} label="Tab label 3">
+      <Tab {...props.tab()} label={`${props.tab().label} 3`}>
         <div className="some-content">Content for third tab goes here.</div>
       </Tab>
-      <Tab {...props.tab()} disabled label="Tab label 4 disabled">
+      <Tab {...props.tab()} disabled label={`${props.tab().label} 4 disabled`}>
         <div className="some-content">Content for fourth tab goes here.</div>
       </Tab>
     </Tabs>
