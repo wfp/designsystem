@@ -2,12 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-# [1.3.0-alpha.12](https://github.com/WFP/UI/compare/v1.3.0-alpha.11...v1.3.0-alpha.12) (2019-08-07)
+# [1.3.0-alpha.10](https://github.com/WFP/UI/compare/v1.3.0-alpha.12...v1.3.0-alpha.10) (2019-09-09)
+
+
+### Bug Fixes
+
+* **ReactSelect:** styles alignment for disabled styles ([#208](https://github.com/WFP/UI/issues/208)) ([436fcf6](https://github.com/WFP/UI/commit/436fcf6))
 
 
 ### Features
 
-* **email:** Outlook template added ([#206](https://github.com/WFP/UI/issues/206)) ([3f8e66c](https://github.com/WFP/UI/commit/3f8e66c))
+* **Blockquote:** added success option and aligned to other components ([d97b0b8](https://github.com/WFP/UI/commit/d97b0b8))
+* **colors:** SDG colors added ([1c27322](https://github.com/WFP/UI/commit/1c27322))
+* **colors:** SDG sccs values ([d45d19a](https://github.com/WFP/UI/commit/d45d19a))
+* **Colour:** interactive color added, Tabs propTypes and descriptions ([ce37652](https://github.com/WFP/UI/commit/ce37652))
+* **FileHandler:** initial file Handler added ([7f9bba9](https://github.com/WFP/UI/commit/7f9bba9))
+* **Tabs:** update sizing on prop change ([#204](https://github.com/WFP/UI/issues/204)) ([c8d2c74](https://github.com/WFP/UI/commit/c8d2c74))
+* **Tooltip:** moving to new Tippy package ([299533c](https://github.com/WFP/UI/commit/299533c))
 
 
 
