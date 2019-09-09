@@ -7,7 +7,7 @@ import { Module, ModuleHeader, ModuleBody } from '../../components/Module';
 import Page from '../Page';
 import { linkTo } from '@storybook/addon-links';
 
-storiesOf('Documentation|Patterns', module)
+storiesOf('Documentation|Guidelines', module)
   .addParameters({ options: { showPanel: false, isToolshown: false } })
   .add('Dashboard', () => (
     <Page title="Dashboards" subTitle="Operational & Analytical applications">

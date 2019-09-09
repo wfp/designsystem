@@ -18,15 +18,18 @@
     height: rem(25px);
     border-radius: 50%;
     margin-right: rem(10px);
+
     .#{$prefix}--user--has-description & {
       width: rem(60px);
       height: rem(60px);
       margin-right: $spacing-lg;
+
       @include rtl {
         margin-left: $spacing-lg;
         margin-right: inherit;
       }
     }
+
     @include rtl {
       margin-left: rem(10px);
       margin-right: inherit;
@@ -36,6 +39,7 @@
   .#{$prefix}--user__icon--empty {
     border-radius: 50%;
     background-size: 100%;
+    border: 2px solid white;
     background-color: $color__navy-gray-7;
   }
 
@@ -67,6 +71,7 @@
     white-space: nowrap;
     text-overflow: ellipsis;
   }
+
   .#{$prefix}--user__title--small {
     @include breakpoint(bp--md--major) {
       display: none;

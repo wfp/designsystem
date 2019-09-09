@@ -3,7 +3,12 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import Icon from '../Icon';
 
-import { iconWarning, iconWarningSolid, iconInfoSolid } from '@wfp/icons';
+import {
+  iconCheckmark,
+  iconWarning,
+  iconWarningSolid,
+  iconInfoSolid,
+} from '@wfp/icons';
 
 const iconLookup = {
   warning: {
@@ -14,6 +19,9 @@ const iconLookup = {
   },
   info: {
     icon: iconInfoSolid,
+  },
+  success: {
+    icon: iconCheckmark,
   },
 };
 
@@ -48,16 +56,17 @@ class Blockquote extends React.Component {
       warning,
       withIcon,
       info,
-      type,
+      kind,
     } = this.props;
     const blockquoteClass = classNames({
       'wfp--blockquote': true,
       'wfp--blockquote--toggleable': toggleable === true,
-      'wfp--blockquote--light': type === 'light' || light,
-      'wfp--blockquote--code': type === 'code' || code,
-      'wfp--blockquote--error': type === 'error' || error,
-      'wfp--blockquote--warning': type === 'warning' || warning,
-      'wfp--blockquote--info': type === 'info' || info,
+      'wfp--blockquote--light': light,
+      'wfp--blockquote--code': code,
+      'wfp--blockquote--error': kind === 'error' || error,
+      'wfp--blockquote--warning': kind === 'warning' || warning,
+      'wfp--blockquote--success': kind === 'success',
+      'wfp--blockquote--info': kind === 'info' || info,
       'wfp--blockquote--with-icon': withIcon || icon,
       'wfp--blockquote--open': this.state.open,
     });
@@ -67,11 +76,15 @@ class Blockquote extends React.Component {
       [`${className}`]: className,
     });
 
-    const lookup = warning
-      ? iconLookup['warning']
-      : error
-      ? iconLookup['error']
-      : iconLookup['info'];
+    // @deprecated Only kind is allowed
+    const lookup =
+      warning || kind === 'warning'
+        ? iconLookup['warning']
+        : error || kind === 'error'
+        ? iconLookup['error']
+        : kind === 'success'
+        ? iconLookup['success']
+        : iconLookup['info'];
 
     const iconElement = React.isValidElement(icon) ? (
       <div className="wfp--blockquote__icon wfp--blockquote__icon--custom">
@@ -142,7 +155,7 @@ Blockquote.propTypes = {
   /**
    * Specify the type of your Blockquote Options are `light` `code` `error` `warning` `info`
    */
-  type: PropTypes.string,
+  kind: PropTypes.string,
   /**
    * Specify if an Icon should be displayed
    */

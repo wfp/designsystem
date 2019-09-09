@@ -4,7 +4,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import Page from '../Page';
 
-storiesOf('Documentation|Patterns', module)
+storiesOf('Documentation|Guidelines', module)
   .addParameters({ options: { showPanel: false, isToolshown: false } })
   .add('Content page', () => (
     <Page title="Content Page" subTitle="Regular Content Page">

@@ -1,8 +1,15 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, boolean, text } from '@storybook/addon-knobs/react';
+import { withKnobs, boolean, select, text } from '@storybook/addon-knobs/react';
 
 import Blockquote from '../Blockquote';
+
+const kinds = {
+  'Info (info)': 'info',
+  'Warning (warning)': 'warning',
+  'Error (error)': 'error',
+  'Success (success)': 'success',
+};
 
 const props = () => ({
   title: text('title', 'Blockquote title'),
@@ -11,11 +18,12 @@ const props = () => ({
     'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.At vero eos et accusam et justo duo dolores et ea rebum.Stetclita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.'
   ),
   toggleable: boolean('toggleable', false),
-  error: boolean('error', false),
+  error: boolean('error (depreciated)', false),
+  kind: select('Blockquote kind (kind)', kinds, 'primary'),
   light: boolean('light', false),
   code: boolean('code', false),
-  warning: boolean('warning', false),
-  info: boolean('info', false),
+  warning: boolean('warning (depreciated)', false),
+  info: boolean('info (depreciated)', false),
   withIcon: boolean('withIcon', false),
 });
 

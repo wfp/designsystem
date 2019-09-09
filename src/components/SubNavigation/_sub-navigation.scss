@@ -26,7 +26,7 @@
   }
 
   .#{$prefix}--sub-navigation__link {
-    flex-grow: 1;
+    //flex-grow: 1;
     @include breakpoint(bp--md--major) {
       margin-left: $spacing-md;
     }
@@ -39,6 +39,7 @@
     letter-spacing: 0;
     font-weight: 600;
     color: $text-01;
+
     @include breakpointMax(bp--md--major) {
       display: none;
     }
@@ -47,6 +48,7 @@
   .#{$prefix}--sub-navigation__filter {
     display: flex;
     align-items: center;
+
     @include breakpointMax(bp--md--major) {
       width: 35%;
     }
