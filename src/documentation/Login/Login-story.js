@@ -2,14 +2,14 @@
 
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import RegularPage from '../../RegularPage';
-import TextInput from '../../../components/TextInput';
-import Button from '../../../components/Button';
-import Modal from '../../../components/Modal';
-import Link from '../../../components/Link';
+import RegularPage from '../RegularPage';
+import TextInput from '../../components/TextInput';
+import Button from '../../components/Button';
+import Modal from '../../components/Modal';
+import Link from '../../components/Link';
 
 storiesOf('Documentation|Samples', module)
-  .addParameters({ options: { showPanel: false, isToolshown: false } })
+  .addParameters({ hideProps: true })
   .addDecorator(story => <RegularPage>{story()}</RegularPage>)
   .add('Login Page', () => (
     <Modal

@@ -29,14 +29,14 @@ const renderError = ({ meta: { touched, error } }) =>
   );
 
 storiesOf('Documentation|Samples', module)
-  .addParameters({ options: { showPanel: false, isToolshown: false } })
+  .addParameters({ hideProps: true })
   .addDecorator(story => (
-    <RegularPage pageWidth="md" withoutSecondaryTabs>
+    <RegularPage title="Wizard form" withoutSecondaryTabs pageWidth="lg">
       {story()}
     </RegularPage>
   ))
-  .add('Wizard Form final-form (experimental)', () => (
-    <Wrapper background="lighter" pageWidth="md" spacing="xl">
+  .add('Wizard Form ', () => (
+    <Wrapper background="lighter" pageWidth="lg" spacing="xl">
       <Wizard
         initialValues={{ employed: true, stooge: 'larry' }}
         onSubmit={onSubmit}>

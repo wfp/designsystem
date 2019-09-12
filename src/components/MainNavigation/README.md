@@ -5,6 +5,23 @@ The currently selected item is usually highlighted.
 
 The MainNavigation is used across all applications, it is the starting point of the application and offers the top level navigation items.
 
+It can be used in internal and external applications.
+
+
+### Usage
+
+#### Internal and external applications
+The MainNavigation can be used for both internal and external websites.
+
+### Do not use
+
+#### External websites (wfp.org, etc.)
+The header might not be the right solution for external websites. Please consult the #ux-ui channel on Slack.
+
+#### Logo in the MainNavigation
+Do not use WFP's logo inside the MainNavigation.
+
+
 ```js
 import {
   MainNavigation,

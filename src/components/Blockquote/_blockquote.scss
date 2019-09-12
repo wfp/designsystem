@@ -72,6 +72,7 @@
 
   .#{$prefix}--blockquote--success {
     border-left-color: $support-02;
+    background: $color__dark-green-10;
 
     .#{$prefix}--blockquote__icon {
       fill: $support-02 !important;

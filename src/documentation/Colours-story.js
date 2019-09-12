@@ -264,7 +264,12 @@ const barChartColor = colors.navy;
         <Blockquote title="Usage in scss" type="code">
           <PrismCode component="pre" className="language-css">
             {`// Only use variables
-@import "../../node_modules/@wfp/ui/source/globals/scss/vars";`}
+@import "~@wfp/ui/source/globals/scss/vars";
+
+body {
+  background: $ui-02;
+}
+`}
           </PrismCode>
         </Blockquote>
       </Page>

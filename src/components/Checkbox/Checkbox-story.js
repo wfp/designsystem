@@ -24,7 +24,7 @@ storiesOf('Components|Checkbox', module)
       <fieldset className="wfp--fieldset">
         <legend className="wfp--label">Checkbox heading</legend>
         <Checkbox defaultChecked {...checkboxProps} id="checkbox-label-1" />
-        <Checkbox defaultChecked {...checkboxProps} id="checkbox-label-1" />
+        <Checkbox defaultChecked {...checkboxProps} id="checkbox-label-2" />
       </fieldset>
     );
   })

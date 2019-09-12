@@ -83,11 +83,7 @@ storiesOf('Documentation|Guidelines', module)
           marginTop: '3em',
           marginLeft: '0em',
         }}
-        src={`$ {
-        process.env.STORYBOOK_INTERNAL_ASSETS
-      }
-
-      internal/brand-color.png`}
+        src={`${process.env.STORYBOOK_INTERNAL_ASSETS}internal/brand-color.png`}
       />{' '}
       ADD INTERACTIVE COLOR <h5>Do not use for:</h5>{' '}
       <List kind="bullet">
@@ -123,11 +119,7 @@ storiesOf('Documentation|Guidelines', module)
           marginTop: '3em',
           marginLeft: '0em',
         }}
-        src={`$ {
-        process.env.STORYBOOK_INTERNAL_ASSETS
-      }
-
-      internal/secondary-color.png`}
+        src={`${process.env.STORYBOOK_INTERNAL_ASSETS}internal/secondary-color.png`}
       />{' '}
       <p>Accent secondary colour</p>{' '}
       <p>
@@ -179,11 +171,7 @@ storiesOf('Documentation|Guidelines', module)
           marginTop: '3em',
           marginLeft: '0em',
         }}
-        src={`$ {
-        process.env.STORYBOOK_INTERNAL_ASSETS
-      }
-
-      internal/background-contrast.png`}
+        src={`${process.env.STORYBOOK_INTERNAL_ASSETS}internal/background-contrast.png`}
       />{' '}
       <h4>ui - 01</h4>{' '}
       <p>Primary container background; Secondary page background</p>{' '}

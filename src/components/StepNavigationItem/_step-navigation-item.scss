@@ -202,6 +202,8 @@
 
   .#{$prefix}--step-navigation__nav-item--warning {
     .#{$prefix}--step-navigation__nav-item__indicator {
+      border-color: $support-03;
+
       .#{$prefix}--step-navigation--small & {
         border-color: $support-03;
         background: $support-03;
@@ -214,6 +216,7 @@
 
       > svg {
         fill: $support-03 !important;
+        top: -1px;
       }
     }
 

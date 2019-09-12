@@ -1,0 +1,1 @@
+The **Login** page is based on the Modal component.
