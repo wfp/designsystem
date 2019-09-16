@@ -13,44 +13,8 @@ storiesOf(' Documentation|Getting started', module)
     <Page title="HTML Usage" subTitle="Use the UI Kit without react.js">
       <p>
         Most parts of the UI Kit can be used with html / css only. See the
-        readme below for more information. You can use the css from the CDN or
-        the scss from npm.
+        readme below for more information.
       </p>
-
-      <Blockquote title="CDN" type="code">
-        <PrismCode component="pre" className="language-html">
-          {`<link
-  rel="stylesheet"
-  type="text/css"
-  href="https://cdn.wfp.org/guides/ui/v1.1.16/assets/css/styles.min.css"
-/>`}
-        </PrismCode>
-      </Blockquote>
-      <h3>SCSS</h3>
-      <p>
-        When using scss you can also import the SCSS sources from the
-        node_module. This allows you to use only parts of the SCSS, reuse common
-        variables and functions from WFP UI or to override settings.
-      </p>
-      <Blockquote title="Use Source scss" type="code">
-        <PrismCode component="pre" className="language-css">
-          {`// Sample overriding settings
-$input-border-radius: 5px;
-$button-border-radius: 60px;
-$button-font-size: 25px;
-$button-padding: 10px 25px;
-$color__main: #0076FF;
-
-// Import all stylesheets
-@import "~@wfp/ui/source/globals/scss/styles";
-
-// Only import the Button stylesheet
-@import "~@wfp/ui/source/components/Button/button";
-
-// Only use variables
-@import "~@wfp/ui/source/globals/scss/vars";`}
-        </PrismCode>
-      </Blockquote>
       <h3>Usage with Google Chrome</h3>
       <p>
         Download the{' '}
@@ -61,5 +25,45 @@ $color__main: #0076FF;
         <span className="wfp--inline-highlight">Inspect</span>, and you'll see
         the html of that component which can be copied and reused.
       </p>
+      <h3>Vanilla.js</h3>
+
+      <p>
+        JS components are built using React, but that does not limit their usage
+        to just React applications. You can render any component in any
+        JavaScript application with ReactDOM.render. Think of it like using a
+        jQuery plugin.
+      </p>
+
+      <Blockquote title="Usage without react" kind="code">
+        <PrismCode component="pre" className="language-js">
+          {`// Sample overriding settings
+import ReactDOM from 'react-dom';
+import { Button } from "@wfp/ui";
+ 
+const myContainerElement = document.getElementById("container");
+ 
+// with JSX
+ReactDOM.render(<Button>Simple Button</Button>, myContainerElement);
+ 
+// with vanilla JS, use React.createElement
+ReactDOM.render(
+    React.createElement(Button, {
+        className: Classes.SMALL,
+        children: 'Simple button'
+    }),
+    myContainerElement
+);
+`}
+        </PrismCode>
+      </Blockquote>
+      <p>To remove the component from the DOM and clean up, unmount it:</p>
+      <Blockquote title="Unmount component" kind="code">
+        <PrismCode component="pre" className="language-js">
+          {`
+ReactDOM.unmountComponentAtNode(myContainerElement);
+`}
+        </PrismCode>
+      </Blockquote>
+      <p>Check out the React API docs for more details.</p>
     </Page>
   ));
