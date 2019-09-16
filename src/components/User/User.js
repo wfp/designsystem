@@ -30,7 +30,11 @@ const User = ({
       />
     );
   } else {
-    avatar = <img alt={alt} className="wfp--user__icon" src={image} />;
+    avatar = (
+      <div className="wfp--user__icon">
+        <img alt={alt} src={image} />
+      </div>
+    );
   }
 
   const classes = classNames('wfp--user', className, {

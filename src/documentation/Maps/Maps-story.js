@@ -17,6 +17,37 @@ storiesOf('Documentation|Guidelines', module)
         app.
       </p>
 
+      <h4>Mapbox.gl</h4>
+      <iframe
+        src="https://codesandbox.io/embed/mapbox-un-base-map-from-archgis-custom-q3g4k?fontsize=14&hidenavigation=1&view=preview"
+        title="@esri/react-arcgis example"
+        allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"
+        style={{
+          width: '100%',
+          height: '500px',
+          border: '0',
+          borderRadius: '4px',
+          overflow: 'hidden',
+        }}
+        sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"
+      />
+
+      <h4>ArcGIS API for JavaScript</h4>
+
+      <iframe
+        src="https://codesandbox.io/embed/esrireact-arcgis-example-8ytym?fontsize=14&hidenavigation=1&view=preview"
+        title="@esri/react-arcgis example"
+        allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"
+        style={{
+          width: '100%',
+          height: '500px',
+          border: '0',
+          borderRadius: '4px',
+          overflow: 'hidden',
+        }}
+        sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"
+      />
+
       <p>
         For Android Apps please follow the{' '}
         <Link
@@ -37,26 +68,17 @@ storiesOf('Documentation|Guidelines', module)
         </Link>
       </p>
 
-      <h3>Sizes</h3>
+      <h3>Mapbox GL</h3>
 
-      <img
-        alt="WFP Icon"
-        style={{
-          border: '1px solid #E5E5E5',
-          width: 100,
-          height: 100,
-        }}
-        src={`${process.env.STORYBOOK_ASSETS}app/WFP_APP_ICON_300x300.png`}
-      />
-      <br />
-      {fileSizes.map(fileSize => (
-        <Link
-          small
-          style={{ marginRight: '0.5em', fontSize: '0.7em' }}
-          target="_blank"
-          href={`${process.env.STORYBOOK_ASSETS}app/WFP_APP_ICON_${fileSize}x${fileSize}.png`}>
-          {fileSize} x {fileSize}px
+      <p>
+        Mapbox is a mapping platform for custom designed maps. You can use the
+        WFP basemap for the official UN country names and boundaries.
+      </p>
+
+      <p>
+        <Link href="https://codesandbox.io/s/mapbox-un-base-map-from-archgis-q0v0o">
+          Example implementation using react-map-gl
         </Link>
-      ))}
+      </p>
     </Page>
   ));

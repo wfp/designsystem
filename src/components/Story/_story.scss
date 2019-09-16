@@ -144,6 +144,22 @@
     .wfp--list + h5 {
       margin-top: $spacing-md;
     }
+
+    h1 + iframe,
+    h2 + iframe,
+    h3 + iframe,
+    h4 + iframe,
+    h5 + iframe {
+      margin-top: $spacing-xs;
+    }
+
+    iframe + h1,
+    iframe + h2,
+    iframe + h3,
+    iframe + h4,
+    iframe + h5 {
+      margin-top: $spacing-md;
+    }
   }
 
   .#{$prefix}--story__list {
