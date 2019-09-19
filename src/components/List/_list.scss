@@ -14,8 +14,12 @@
   .#{$prefix}--list {
     @include reset;
     @include font-family;
+
     //@include typescale('epsilon');
-    @include font-smoothing;
+    //@include font-smoothing;
+    .#{$prefix}--list-item--checkmark {
+      list-style-type: square;
+    }
   }
 
   .#{$prefix}--list--colon {
@@ -43,13 +47,9 @@
     line-height: 1.5em;
     list-style-type: disc;
     margin-left: 1.5em;
+
     //list-style:
     //list-style-position: inside;
-
-    li {
-      //list-style-type: square;
-    }
-
     .#{$prefix}--list__element__title {
       font-weight: 700;
       margin-right: rem(5px);

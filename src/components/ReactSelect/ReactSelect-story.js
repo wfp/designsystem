@@ -49,4 +49,19 @@ storiesOf('Components|ReactSelect', module)
         {...props.regular()}
       />
     </div>
+  ))
+  .add('Staff select', () => (
+    <div className="wfp--form-item" style={{ minWidth: '400px' }}>
+      <label htmlFor="abc" className="wfp--label">
+        The Label
+      </label>
+      <ReactSelect
+        className="wfp--react-select-container"
+        classNamePrefix="wfp--react-select"
+        isMulti
+        id="abc"
+        options={options}
+        {...props.regular()}
+      />
+    </div>
   ));

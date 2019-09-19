@@ -56,28 +56,28 @@
   },
   "female": {
     "name": "female",
-    "hex": "#DD0A79",
+    "hex": "#3f7e44",
     "scss": "$color__female",
     "type": "symbolic",
     "description": "Indicate female"
   },
   "male": {
     "name": "male",
-    "hex": "#FFB500",
+    "hex": "#26bde2",
     "scss": "$color__male",
     "type": "symbolic",
     "description": "Indicate male"
   },
   "national": {
     "name": "national",
-    "hex": "#FD6925",
+    "hex": "#3C5979",
     "scss": "$color__national",
     "type": "symbolic",
     "description": "Indicate national staff"
   },
   "international": {
     "name": "international",
-    "hex": "#3F7E44",
+    "hex": "#fcc30b",
     "scss": "$color__international",
     "type": "symbolic",
     "description": "Indicate international staff"

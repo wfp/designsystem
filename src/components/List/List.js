@@ -2,8 +2,10 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import classnames from 'classnames';
 
-const ListItem = ({ children, className, title, ...other }) => {
-  const classNames = classnames('wfp--list__element', className);
+const ListItem = ({ children, className, title, kind, ...other }) => {
+  const classNames = classnames('wfp--list__element', className, {
+    'wfp--list-item--checkmark': kind === 'checkmark',
+  });
   return (
     <li className={classNames} {...other}>
       {title && <span className="wfp--list__element__title">{title}</span>}

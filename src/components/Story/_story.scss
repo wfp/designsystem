@@ -134,7 +134,7 @@
     h3 + .wfp--list,
     h4 + .wfp--list,
     h5 + .wfp--list {
-      margin-top: $spacing-md;
+      margin-top: $spacing-xs;
     }
 
     .wfp--list + h1,
@@ -201,6 +201,19 @@
     text-transform: uppercase;
     font-weight: 600;
     letter-spacing: 0.05em;
+  }
+
+  .#{$prefix}--story__sub-heading {
+    @include typescale('zeta');
+    font-weight: normal;
+    color: $ui-05;
+    margin-top: $spacing-2xs !important;
+    margin-bottom: $spacing-2xs;
+    font-style: italic;
+    //text-transform: uppercase;
+    font-weight: 400;
+
+    //letter-spacing: 0.05em;
   }
 
   .#{$prefix}--story__type-beta {

@@ -41,8 +41,10 @@ body {
   }
 }
 
-.language-js {
-  margin: 1em 0 !important;
+.language-js,
+.language-css {
+  margin: 0 !important;
+  margin-top: 1rem !important;
   background: $ui-02 !important;
   overflow-x: auto !important;
   font-size: 0.8rem !important;
@@ -136,7 +138,7 @@ table {
   background: $interactive-01;
 }
 
-.color__brand {
+.color__brand-01 {
   background: $brand-01;
 }
 
@@ -186,6 +188,18 @@ table {
 
 .color__text-03 {
   background: $text-03;
+}
+
+.color__support-01 {
+  background: $support-01;
+}
+
+.color__support-02 {
+  background: $support-02;
+}
+
+.color__support-03 {
+  background: $support-03;
 }
 
 .color__field-01 {

@@ -53,6 +53,7 @@ storiesOf('Documentation|Guidelines', module)
     const regularColors = Object.values(colors).filter(
       ui_colors =>
         ui_colors.type !== 'symbolic' &&
+        ui_colors.type !== 'support' &&
         ui_colors.type !== 'ui' &&
         ui_colors.type !== 'sdg'
     );
@@ -61,6 +62,10 @@ storiesOf('Documentation|Guidelines', module)
     );
     const symbolicColors = Object.values(colors).filter(
       ui_colors => ui_colors.type === 'symbolic'
+    );
+
+    const supportColors = Object.values(colors).filter(
+      ui_colors => ui_colors.type === 'support'
     );
 
     const sdgColors = Object.values(colors).filter(
@@ -139,62 +144,65 @@ storiesOf('Documentation|Guidelines', module)
               </List>
             </div>
 
-            {color.type !== 'symbolic' && color.type !== 'ui' && (
-              <div
-                style={{
-                  width: '50%',
-                }}>
-                {colorBlend.map(blend => (
-                  <div
-                    style={{
-                      display: 'flex',
-                      fontSize: '0.7em',
-                      width: '100%',
-                    }}>
+            {color.type !== 'symbolic' &&
+              color.type !== 'ui' &&
+              color.type !== 'sdg' &&
+              color.type !== 'support' && (
+                <div
+                  style={{
+                    width: '50%',
+                  }}>
+                  {colorBlend.map(blend => (
                     <div
                       style={{
-                        width: '20px',
-                        height: '20px',
-                        marginTop: '1px',
-                        marginRight: '1em',
-                        marginBottom: '1px',
-                        borderRadius: '3px',
-                        background: mix(
-                          blend.blend,
-                          color.hex.replace('#', ''),
-                          blend.percentage
-                        ),
-                      }}
-                      className={`color__${color.name}-{blend}`}
-                    />
-                    <div
-                      style={{
-                        marginTop: '2px',
-                        lineHeight: '20px',
+                        display: 'flex',
+                        fontSize: '0.7em',
+                        width: '100%',
                       }}>
-                      <span
+                      <div
                         style={{
-                          display: 'inline-block',
+                          width: '20px',
+                          height: '20px',
+                          marginTop: '1px',
                           marginRight: '1em',
+                          marginBottom: '1px',
+                          borderRadius: '3px',
+                          background: mix(
+                            blend.blend,
+                            color.hex.replace('#', ''),
+                            blend.percentage
+                          ),
+                        }}
+                        className={`color__${color.name}-{blend}`}
+                      />
+                      <div
+                        style={{
+                          marginTop: '2px',
+                          lineHeight: '20px',
                         }}>
-                        <List colon kind="simple-inline" inline>
-                          <ListItem title="hex">
-                            {mix(
-                              blend.blend,
-                              color.hex.replace('#', ''),
-                              blend.percentage
-                            )}
-                          </ListItem>
-                          <ListItem title="scss">
-                            {color.scss}-{blend.name}
-                          </ListItem>
-                        </List>
-                      </span>
+                        <span
+                          style={{
+                            display: 'inline-block',
+                            marginRight: '1em',
+                          }}>
+                          <List colon kind="simple-inline" inline>
+                            <ListItem title="hex">
+                              {mix(
+                                blend.blend,
+                                color.hex.replace('#', ''),
+                                blend.percentage
+                              )}
+                            </ListItem>
+                            <ListItem title="scss">
+                              {color.scss}-{blend.name}
+                            </ListItem>
+                          </List>
+                        </span>
+                      </div>
                     </div>
-                  </div>
-                ))}
-              </div>
-            )}
+                  ))}
+                </div>
+              )}
           </div>
         </li>
       ));
@@ -228,7 +236,12 @@ storiesOf('Documentation|Guidelines', module)
           {colorList(regularColors)}
         </ul>
 
-        {/*<h3>Sustainable development goals colours</h3>
+        <h3>Support colours</h3>
+        <ul style={{ display: 'flex', flexWrap: 'wrap' }}>
+          {colorList(supportColors)}
+        </ul>
+
+        <h3>Sustainable development goals colours</h3>
         <ul style={{ display: 'flex', flexWrap: 'wrap' }}>
           {colorList(sdgColors)}
         </ul>
@@ -236,7 +249,7 @@ storiesOf('Documentation|Guidelines', module)
         <h3>Symbolic colours</h3>
         <ul style={{ display: 'flex', flexWrap: 'wrap' }}>
           {colorList(symbolicColors)}
-        </ul>*/}
+        </ul>
 
         <p />
 

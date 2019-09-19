@@ -36,6 +36,12 @@ $sdg-15: #56c02b;
 $sdg-16: #00689d;
 $sdg-17: $color__navy;
 
+//  Symbolic colors
+$color__female: #3f7e44 !default !global;
+$color__male: #26bde2 !default !global;
+$color__national: #3c5979 !default !global;
+$color__international: #fcc30b !default !global;
+
 // Color Array
 $colors: (
   navy: $color__navy,
