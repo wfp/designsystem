@@ -1,4 +1,4 @@
-We recommend [React-Table](https://react-table.js.org/) for Tables.
+We recommend [React-Table](https://react-table.js.org/) for tables. If you need Excel like features like cell editing row selection and copy/paste we recommend [ag-grid](https://www.ag-grid.com/).
 
 ### Pagination
 
