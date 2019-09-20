@@ -61,6 +61,24 @@ const Icon = ({
   iconRef,
   ...other
 }) => {
+  if (React.isValidElement(icon)) {
+    width = width ? width : icon.props.width;
+    height = height ? height : icon.props.height;
+
+    var clonedIcon = React.cloneElement(icon, {
+      className,
+      role,
+      width,
+      height,
+      style,
+      fill,
+      fillRule,
+      description,
+    });
+
+    return clonedIcon;
+  }
+
   const props = {
     className,
     fill,
@@ -115,13 +133,15 @@ Icon.propTypes = {
     /**
      * The icon data.
      */
-    icon: PropTypes.shape({
-      width: PropTypes.string,
-      height: PropTypes.string,
-      viewBox: PropTypes.string.isRequired,
-      svgData: PropTypes.object.isRequired,
-    }),
-
+    icon: PropTypes.oneOfType([
+      PropTypes.shape({
+        width: PropTypes.string,
+        height: PropTypes.string,
+        viewBox: PropTypes.string.isRequired,
+        svgData: PropTypes.object.isRequired,
+      }),
+      PropTypes.node,
+    ]),
     /**
      * The name in the sprite.
      */

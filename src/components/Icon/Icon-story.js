@@ -6,6 +6,8 @@ import { withKnobs, select, text } from '@storybook/addon-knobs';
 import Icon from '../Icon';
 import IconSkeleton from '../Icon/Icon.Skeleton';
 
+import Button from '../Button';
+
 const icons = {
   'Add (iconAdd from `@wfp/icons`)': 'iconAdd',
   'Add with filled circle (iconAddGlyph from `@wfp/icons`)': 'iconAddGlyph',
@@ -18,18 +20,82 @@ const iconMap = {
   iconAddOutline,
 };
 
-/* const customIcon = `
-  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
-    <path d="M5 0h6v2H5zM2 3v3h1v10h10V6h1V3H2zm5 11H5V7h2v7zm4 0H9V7h2v7z" />
-  </svg >`; */
-
 const customIcon = (
   <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="16"
-    height="16"
-    viewBox="0 0 16 16">
-    <path d="M5 0h6v2H5zM2 3v3h1v10h10V6h1V3H2zm5 11H5V7h2v7zm4 0H9V7h2v7z" />
+    width="50"
+    height="50"
+    viewBox="0 0 50 50"
+    xmlns="http://www.w3.org/2000/svg">
+    <g fillRule="evenodd">
+      <path
+        d="M47 15.2l-9.4 4.2c.5 1.3.9 2.6 1 3.9L49 22a24 24 0 0 0-1.9-6.8z"
+        fill="#C31F33"
+      />
+      <path
+        d="M42 8l-7.3 7.3c1 1 1.8 2 2.4 3.2l9.1-5A24 24 0 0 0 42 8z"
+        fill="#279B48"
+      />
+      <path
+        d="M34.7 3l-4.2 9.5c1.3.5 2.4 1.2 3.4 2l6.7-7.8a24 24 0 0 0-6-3.7z"
+        fill="#D3A029"
+      />
+      <path
+        d="M26 1l-.4 10.4c1.4 0 2.7.3 4 .7l3.3-9.8A24 24 0 0 0 26 1z"
+        fill="#EB1C2D"
+      />
+      <path
+        d="M17.3 2.3l3.3 9.8c1.3-.5 2.6-.7 4-.8L24.2 1a24 24 0 0 0-7 1.3z"
+        fill="#183668"
+      />
+      <path
+        d="M9.6 6.6l6.6 8c1-1 2.2-1.6 3.4-2.1l-4-9.6a24 24 0 0 0-6 3.7z"
+        fill="#02558B"
+      />
+      <path
+        d="M4 13.5l9 5c.7-1.2 1.5-2.3 2.5-3.2L8.2 7.9A24 24 0 0 0 4 13.5z"
+        fill="#5DBB46"
+      />
+      <path
+        d="M1.2 21.9l10.3 1.3c.2-1.3.5-2.6 1-3.8l-9.4-4.3A24 24 0 0 0 1.2 22z"
+        fill="#007DBC"
+      />
+      <path
+        d="M1.7 30.7l10-2.4c-.3-1.3-.4-2.7-.3-4L1 23.7a24 24 0 0 0 .7 7z"
+        fill="#48773E"
+      />
+      <path
+        d="M5.3 38.8l8.5-6c-.8-1-1.4-2.2-1.8-3.5l-9.8 3.2a24 24 0 0 0 3.1 6.3z"
+        fill="#CF8D2A"
+      />
+      <path
+        d="M11.6 45l5.8-8.6c-1.1-.7-2.1-1.6-3-2.7l-8 6.6a24 24 0 0 0 5.2 4.7z"
+        fill="#F99D26"
+      />
+      <path
+        d="M19.7 48.5l2.3-10c-1.3-.4-2.6-.9-3.7-1.5l-5.1 9c2 1.1 4.2 2 6.5 2.5z"
+        fill="#E11484"
+      />
+      <path
+        d="M28.5 48.9L27 38.6c-1.3.2-2.6.2-4 0L21.5 49c2.3.3 4.7.3 7 0z"
+        fill="#F36D25"
+      />
+      <path
+        d="M37 46l-5.2-9c-1.1.7-2.4 1.1-3.7 1.4l2.3 10.1a24 24 0 0 0 6.5-2.5z"
+        fill="#8F1838"
+      />
+      <path
+        d="M43.7 40.3l-8-6.5c-.9 1-1.9 1.9-3 2.6l5.8 8.6a24 24 0 0 0 5.2-4.7z"
+        fill="#FDB713"
+      />
+      <path
+        d="M48 32.6L38 29.3c-.4 1.3-1 2.5-1.8 3.6l8.5 6c1.3-2 2.4-4.1 3.1-6.3z"
+        fill="#00AED9"
+      />
+      <path
+        d="M49.1 23.8l-10.3.5c0 1.4 0 2.7-.4 4l10 2.5c.6-2.3.8-4.7.7-7z"
+        fill="#EF402B"
+      />
+    </g>
   </svg>
 );
 
@@ -56,15 +122,7 @@ const props = {
   },
   custom: () => {
     return {
-      style: {
-        margin: '50px',
-      },
-      icon: {
-        width: '10',
-        height: '10',
-        viewBox: '0 0 10 10',
-        svgData: customIcon,
-      },
+      icon: customIcon,
       role: text('ARIA role (role)', ''),
       fill: text('The SVG `fill` attribute (fill)', 'grey'),
       fillRule: text('The SVG `fillRule` attribute (fillRule)', ''),
@@ -95,12 +153,6 @@ const propsSkeleton2 = {
 };
 
 storiesOf('Components|Icon', module)
-  .addParameters({
-    info: {
-      source: false,
-      inline: true,
-    },
-  })
   .addDecorator(withKnobs)
   .add('Default', () => (
     <div>
@@ -110,6 +162,9 @@ storiesOf('Components|Icon', module)
   .add('Custom Icon (experimental)', () => (
     <div>
       <Icon {...props.custom()} />
+      {/*<br />
+      <br />
+      <Button icon={customIcon} kind="secondary">Button with custom icon</Button>*/}
     </div>
   ))
   .add('Skeleton', () => (
