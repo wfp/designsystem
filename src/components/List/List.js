@@ -5,6 +5,7 @@ import classnames from 'classnames';
 const ListItem = ({ children, className, title, kind, ...other }) => {
   const classNames = classnames('wfp--list__element', className, {
     'wfp--list-item--checkmark': kind === 'checkmark',
+    'wfp--list-item--cross': kind === 'cross',
   });
   return (
     <li className={classNames} {...other}>

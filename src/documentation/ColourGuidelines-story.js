@@ -43,6 +43,16 @@ storiesOf('Documentation|Guidelines', module)
         Use the <i>70–25–5(60–30–10)</i> rule to create sense of balance and
         allow the eye to move comfortably from one focal point to the next.
       </p>
+      <img
+        alt="Brand colour"
+        style={{
+          width: '100%',
+          height: 'auto',
+          marginTop: '1em',
+          marginLeft: '0em',
+        }}
+        src={`${process.env.STORYBOOK_INTERNAL_ASSETS}internal/colors.png`}
+      />
       <h2>Interactive colours</h2>
       <Color color="interactive-01" />
       <h4 className="wfp--story__sub-heading">
@@ -59,25 +69,25 @@ storiesOf('Documentation|Guidelines', module)
         <ListItem kind="checkmark">buttons</ListItem>
         <ListItem kind="checkmark">other interactive elements</ListItem>
       </List>
-      {/*<img
+      <img
         alt="Brand colour"
         style={{
           width: '100%',
           height: 'auto',
-          marginTop: '3em',
+          marginTop: '1em',
           marginLeft: '0em',
         }}
         src={`${process.env.STORYBOOK_INTERNAL_ASSETS}internal/brand-color.png`}
-      />*/}
+      />
       <h5>Do not use for:</h5>
       <List kind="bullet">
-        <ListItem>
+        <ListItem kind="cross">
           {' '}
           MainNavigation, since it is a branding element and not interactive as
           a whole
         </ListItem>
-        <ListItem>other branding elements</ListItem>
-        <ListItem>non - interactive elements</ListItem>
+        <ListItem kind="cross">other branding elements</ListItem>
+        <ListItem kind="cross">non - interactive elements</ListItem>
       </List>
       <h2>Brand colour</h2>
       <p>
@@ -103,8 +113,10 @@ storiesOf('Documentation|Guidelines', module)
       </List>
       <h4>Do not use for:</h4>
       <List kind="bullet">
-        <ListItem>interactive elements like buttons or links</ListItem>
-        <ListItem>Primary and secondary colours</ListItem>
+        <ListItem kind="cross">
+          interactive elements like buttons or links
+        </ListItem>
+        <ListItem kind="cross">Primary and secondary colours</ListItem>
       </List>
       <Color color="brand-02" />
       <h4 className="wfp--story__sub-heading">
@@ -121,16 +133,14 @@ storiesOf('Documentation|Guidelines', module)
         elements within a component, such different variants used on a floating
         action button container as well as the icon within it.
       </p>
-      <h3>sdg - 01 - 17</h3>{' '}
-      <h4 className="wfp--story__sub-heading">SDG colors add here</h4>
-      <h4>brand - 03</h4>
+      <Color color="brand-03" />
       <h4 className="wfp--story__sub-heading">Accent secondary colour</h4>
       <img
         alt="Brand colour"
         style={{
           width: '100%',
           height: 'auto',
-          marginTop: '3em',
+          marginTop: '1em',
           marginLeft: '0em',
         }}
         src={`${process.env.STORYBOOK_INTERNAL_ASSETS}internal/secondary-color.png`}
@@ -157,21 +167,27 @@ storiesOf('Documentation|Guidelines', module)
         <ListItem kind="checkmark">
           yellow makes a good button colour in placed in isolation
         </ListItem>
-        <ListItem>
+        <ListItem kind="checkmark">
           external websites where colour creates interest and meaning and
           improves the conversation rate
         </ListItem>
       </List>
       <h4>Do not use it:</h4>
       <List kind="bullet">
-        <ListItem>for regular actions</ListItem>
-        <ListItem>multiple actions / times on the same webpage</ListItem>
-        <ListItem>
+        <ListItem kind="cross">for regular actions</ListItem>
+        <ListItem kind="cross">
+          multiple actions / times on the same webpage
+        </ListItem>
+        <ListItem kind="cross">
           limit the use of yellow to the elements you want to emphasize related
           to the audience priority
         </ListItem>
-        <ListItem>limit usage for texts and navigation elements</ListItem>
+        <ListItem kind="cross">
+          limit usage for texts and navigation elements
+        </ListItem>
       </List>
+      <h3>sdg - 01 - 17</h3>{' '}
+      <h4 className="wfp--story__sub-heading">SDG colors add here</h4>
       <h3>Neutral colours</h3>
       <p>
         Neutral colours are used in the interface for non-interactive elements,
@@ -188,36 +204,66 @@ storiesOf('Documentation|Guidelines', module)
         src={`${process.env.STORYBOOK_INTERNAL_ASSETS}internal/background-contrast.png`}
       />
       <Color color="ui-01" />
-      <p>Primary container background; Secondary page background</p>
+      <h4 className="wfp--story__sub-heading">
+        Primary container background; Secondary page background
+      </h4>
       <p>
         This colour is used as the page background if there are no Modules on
         top of it.
       </p>
       <Color color="ui-02" />
-      <p>Primary page background; Secondary container background</p>
+      <h4 className="wfp--story__sub-heading">
+        Primary page background; Secondary container background
+      </h4>
       <p>
         Use this colour as page background if there are modules on top of it to
         increase the contrast between the modules.
       </p>
       <Color color="ui-03" />
-      <p>Subtle border, Tertiary background colour</p>
+      <h4 className="wfp--story__sub-heading">
+        Subtle border, Tertiary background colour
+      </h4>
       <Color color="ui-04" />
-      <p>3: 1 AA element contrast; Medium contrast border</p>
+      <h4 className="wfp--story__sub-heading">
+        3: 1 AA element contrast; Medium contrast border
+      </h4>
       <Color color="ui-05" />
-      <p>4.5: 1 AA element contrast; High contrast border; Emphasis elements</p>
+      <h4 className="wfp--story__sub-heading">
+        4.5: 1 AA element contrast; High contrast border; Emphasis elements
+      </h4>
       <Color color="text-01" />
-      <h4>text - 01</h4>
-      <p>Primary text; Body copy; Headers; Hover text colour for text - 02</p>
+      <h4 className="wfp--story__sub-heading">
+        Primary text; Body copy; Headers; Hover text colour for text - 02
+      </h4>
       <Color color="text-02" />
-      <p>Secondary text; Input labels; Help text</p>
+      <h4 className="wfp--story__sub-heading">
+        Secondary text; Input labels; Help text
+      </h4>
       <Color color="text-03" />
-      <p>Placeholder text</p> <p>Semantic colours</p>
+      <h4 className="wfp--story__sub-heading">
+        Placeholder text; Semantic colours
+      </h4>
       <h2>Success, error, warning and information</h2>
       <Color color="support-01" />
-      <p>Error</p> <p>Indicates an error</p>
+      <h4 className="wfp--story__sub-heading">Error</h4>
+      <p>
+        Use the error color to indicate an error or to focus the attention on
+        something which is crucial to see. Paired with a cross icon, red
+        delivers the message that something went wrong.
+      </p>
       <Color color="support-02" />
-      <p>Success</p> <p>Indicates a success</p>
+      <h4 className="wfp--story__sub-heading">Success</h4>
+      <p>
+        Use green to indicate success state. Paired with a checkmark icon the
+        user knows that the operation was successfully completed.
+      </p>
       <Color color="support-03" />
-      <p>Warning</p> <p>Indicates a warning</p>
+      <h4 className="wfp--story__sub-heading">Warning</h4>
+      <p>
+        Use yellow to indicate a transient warning which is less important than
+        an error message. Yellow typically consists of items which require the
+        user’s immediate attention, or indicate a waiting period. Although this
+        overlaps with the use of red, yellow is more transient in nature.
+      </p>
     </Page>
   ));

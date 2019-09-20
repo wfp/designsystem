@@ -39,6 +39,8 @@
 
     h2 {
       //margin: $spacing-lg 0;
+      margin-top: $spacing-2xl;
+
       &.before--img {
         margin-bottom: 0;
       }
@@ -49,11 +51,11 @@
     }
 
     h3 {
-      margin-top: $spacing-xs;
+      margin-top: $spacing-2xl;
     }
 
     h4 {
-      margin-top: $spacing-xs;
+      margin-top: $spacing-md;
       @include typescale('epsilon');
     }
 
@@ -91,11 +93,11 @@
     }
 
     p + h2 {
-      margin-top: $spacing-lg;
+      margin-top: $spacing-2xl;
     }
 
     p + h3 {
-      margin-top: $spacing-lg;
+      margin-top: $spacing-2xl;
     }
 
     h1 + h2 {
@@ -137,13 +139,13 @@
       margin-top: $spacing-xs;
     }
 
-    .wfp--list + h1,
-    .wfp--list + h2,
-    .wfp--list + h3,
-    .wfp--list + h4,
-    .wfp--list + h5 {
-      margin-top: $spacing-md;
-    }
+    /*.wfp--list+h1,
+    .wfp--list+h2,
+    .wfp--list+h3,
+    .wfp--list+h4,
+    .wfp--list+h5 {
+      margin-top: $spacing-lg;
+    }*/
 
     h1 + iframe,
     h2 + iframe,

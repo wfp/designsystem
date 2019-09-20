@@ -17,8 +17,27 @@
 
     //@include typescale('epsilon');
     //@include font-smoothing;
-    .#{$prefix}--list-item--checkmark {
-      list-style-type: square;
+    .#{$prefix}--list-item--checkmark,
+    .#{$prefix}--list-item--cross {
+      list-style-type: none;
+      position: relative;
+      //padding-left: 0;
+      //margin-left: -1.6em;
+
+      &:before {
+        color: $support-02;
+        position: absolute;
+        font-size: 1em;
+        left: -1.4em;
+        content: '✔';
+      }
+    }
+
+    .#{$prefix}--list-item--cross {
+      &:before {
+        color: $support-01;
+        content: '✘';
+      }
     }
   }
 
