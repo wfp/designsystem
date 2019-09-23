@@ -54,9 +54,4 @@ storiesOf('Components|ReduxFormWrapper', module)
         )}
       />
     );
-  })
-  .add('skeleton', () => (
-    <div style={{ width: '300px' }}>
-      <SelectSkeleton />
-    </div>
-  ));
+  });

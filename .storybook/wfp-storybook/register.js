@@ -102,5 +102,5 @@ addons.register('MYADDON', api => {
 
   addons.elements.panel['storybookjs/knobs/panel'].title = 'Properties';
   addons.elements.panel['storybook/actions/panel'].title = 'Events';
-  addons.elements.panel['storybook/source-loader/panel'].title = 'Source';
+  //addons.elements.panel['storybook/source-loader/panel'].title = 'Source';
 });
