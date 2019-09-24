@@ -2,23 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-# [1.3.0-alpha.13](https://github.com/WFP/UI/compare/v1.3.0-alpha.12...v1.3.0-alpha.13) (2019-09-09)
-
-
-### Bug Fixes
-
-* **ReactSelect:** styles alignment for disabled styles ([#208](https://github.com/WFP/UI/issues/208)) ([436fcf6](https://github.com/WFP/UI/commit/436fcf6))
+# [1.3.0-alpha.14](https://github.com/WFP/UI/compare/v1.3.0-alpha.13...v1.3.0-alpha.14) (2019-09-24)
 
 
 ### Features
 
-* **Blockquote:** added success option and aligned to other components ([d97b0b8](https://github.com/WFP/UI/commit/d97b0b8))
-* **colors:** SDG colors added ([1c27322](https://github.com/WFP/UI/commit/1c27322))
-* **colors:** SDG sccs values ([d45d19a](https://github.com/WFP/UI/commit/d45d19a))
-* **Colour:** interactive color added, Tabs propTypes and descriptions ([ce37652](https://github.com/WFP/UI/commit/ce37652))
-* **FileHandler:** initial file Handler added ([7f9bba9](https://github.com/WFP/UI/commit/7f9bba9))
-* **Tabs:** update sizing on prop change ([#204](https://github.com/WFP/UI/issues/204)) ([c8d2c74](https://github.com/WFP/UI/commit/c8d2c74))
-* **Tooltip:** moving to new Tippy package ([299533c](https://github.com/WFP/UI/commit/299533c))
+* **Colours:** support colours added and documentation updated ([5c70519](https://github.com/WFP/UI/commit/5c70519))
+* **Icons:** accepts react components now ([#209](https://github.com/WFP/UI/issues/209)) ([292e0b3](https://github.com/WFP/UI/commit/292e0b3))
+* **table:** simple table added ([d0624ea](https://github.com/WFP/UI/commit/d0624ea))
+* **User:** non-square User icons support ([0f48bac](https://github.com/WFP/UI/commit/0f48bac))
 
 
 
