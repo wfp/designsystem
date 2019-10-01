@@ -10,7 +10,13 @@ export class SingleDatePickerInput extends PureComponent {
     controlledValue: this.props.initialValue ? this.props.value : null,
     focusedInput: null,
   };
-  handleFocusChange = focusedInput => this.setState({ focusedInput });
+
+  handleFocusChange = focusedInput => {
+    if (!focusedInput && typeof this.props.onBlur === 'function') {
+      this.props.onBlur();
+    }
+    this.setState({ focusedInput });
+  };
 
   render() {
     const {
