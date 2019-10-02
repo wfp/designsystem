@@ -2,15 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-# [1.3.0-alpha.14](https://github.com/WFP/UI/compare/v1.3.0-alpha.13...v1.3.0-alpha.14) (2019-09-24)
+# [1.3.0-alpha.15](https://github.com/WFP/UI/compare/v1.3.0-alpha.14...v1.3.0-alpha.15) (2019-10-02)
 
 
-### Features
+### Bug Fixes
 
-* **Colours:** support colours added and documentation updated ([5c70519](https://github.com/WFP/UI/commit/5c70519))
-* **Icons:** accepts react components now ([#209](https://github.com/WFP/UI/issues/209)) ([292e0b3](https://github.com/WFP/UI/commit/292e0b3))
-* **table:** simple table added ([d0624ea](https://github.com/WFP/UI/commit/d0624ea))
-* **User:** non-square User icons support ([0f48bac](https://github.com/WFP/UI/commit/0f48bac))
+* **DatePicker:** onblur and touched state for final-forms thanks to Serhii ([b54589d](https://github.com/WFP/UI/commit/b54589d))
 
 
 
