@@ -2,12 +2,7 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-# [1.3.0-alpha.15](https://github.com/WFP/UI/compare/v1.3.0-alpha.14...v1.3.0-alpha.15) (2019-10-02)
-
-
-### Bug Fixes
-
-* **DatePicker:** onblur and touched state for final-forms thanks to Serhii ([b54589d](https://github.com/WFP/UI/commit/b54589d))
+# [1.3.0-alpha.16](https://github.com/WFP/UI/compare/v1.3.0-alpha.15...v1.3.0-alpha.16) (2019-10-10)
 
 
 
