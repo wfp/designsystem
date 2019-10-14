@@ -62,7 +62,7 @@ storiesOf('Documentation|Guidelines', module)
           <Button
             small
             kind="secondary"
-            href={`${process.env.STORYBOOK_INTERNAL_ASSETS}email/newsletter-external-email-legacy.html`}>
+            href={`${process.env.STORYBOOK_INTERNAL_ASSETS}email/newsletter-external-email.html`}>
             Newsletter (internal & external)
           </Button>
         </p>

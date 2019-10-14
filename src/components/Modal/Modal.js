@@ -409,7 +409,7 @@ export default class Modal extends Component {
         tabIndex={-1}
         onTransitionEnd={this.props.open ? this.handleTransitionEnd : undefined}
         ref={this.outerModal}>
-        {modalBody}
+        <div className={`${prefix}--modal-inner`}>{modalBody}</div>
       </div>
     );
 

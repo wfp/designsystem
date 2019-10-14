@@ -4,6 +4,7 @@ import { action } from '@storybook/addon-actions';
 import { withKnobs, number, text } from '@storybook/addon-knobs';
 import Tabs from '../Tabs';
 import Tab from '../Tab';
+import Tag from '../Tag';
 import TabsSkeleton from '../Tabs/Tabs.Skeleton';
 
 const props = {
@@ -32,17 +33,25 @@ const props = {
 
 const el = ({ href, label }) => {
   return (
-    <a style={{ color: 'green' }} href={href}>
-      {label}
+    <a href={href}>
+      <span>
+        {label} <Tag type="wfp">renderAnchor</Tag>
+      </span>
     </a>
   );
 };
 
 const listEl = ({ anchor, className, label, href }) => {
   return (
-    <a className={className} href={href}>
-      <span style={{ color: 'blue' }}>{anchor.label}</span>
-    </a>
+    <li className={className}>
+      <div
+        className="wfp--tabs__nav-link"
+        onClick={() => {
+          alert('Custom renderListElement');
+        }}>
+        {anchor.label} *
+      </div>
+    </li>
   );
 };
 
@@ -106,24 +115,13 @@ storiesOf('Components|Tabs', module)
   ))
   .add('Custom Tab Content', () => (
     <Tabs {...props.tabs()} customTabContent={true}>
+      <Tab {...props.tab()} label="Tab label 1" href="http://www.de.wfp.org" />
+      <Tab {...props.tab()} label="Tab label 2" href="http://www.fr.wfp.org" />
       <Tab
         {...props.tab()}
-        label="Tab label 1"
-        href="http://www.de.wfp.org"
-        renderAnchor={el}
-      />
-      <Tab
-        {...props.tab()}
-        label="Tab label 4"
-        href="http://www.fr.wfp.org"
-        renderListElement={listEl}
-      />
-      <Tab
-        {...props.tab()}
-        label="React-Router Example"
+        label="Tab label 3"
         href="http://www.fr.wfp.org"
         to="/path"
-        renderListElement={listElReactRouter}
       />
     </Tabs>
   ))
@@ -131,13 +129,13 @@ storiesOf('Components|Tabs', module)
     <Tabs {...props.tabs()} customTabContent={true}>
       <Tab
         {...props.tab()}
-        label="Tab label 1"
+        label="Custom"
         href="http://www.de.wfp.org"
         renderAnchor={el}
       />
       <Tab
         {...props.tab()}
-        label="Tab label 4"
+        label="Custom renderListElement"
         href="http://www.fr.wfp.org"
         renderListElement={listEl}
       />

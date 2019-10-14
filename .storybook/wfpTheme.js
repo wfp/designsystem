@@ -36,5 +36,5 @@ export default create({
   */
 
   brandTitle: 'WFP UI',
-  brandUrl: 'https://wfp.org',
+  brandUrl: 'https://wfp.org/UIGuide',
 });
