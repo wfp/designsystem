@@ -62,7 +62,7 @@ class Parent extends Component {
   }
 
   closeMenu = () => {
-    this.child.current.onChangeSub(undefined, undefined, 'close');
+    this.child.current.onChangeSub('close');
   };
 
   render() {
@@ -89,7 +89,7 @@ From the `children` any change can be manually triggered by a function
             subNavigation={
               <div>
                 <Link
-                  onClick={() => onChangeSub(undefined, undefined, 'close')}>
+                  onClick={() => onChangeSub('close')}>
                   Close Demo
                 </Link>
               </div>

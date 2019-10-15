@@ -101,10 +101,7 @@ storiesOf('Components|MainNavigation', module).add('default', () => (
                   Additional content can be placed here.
                   <br />
                   Demo for internal close action:{' '}
-                  <Link
-                    onClick={() => onChangeSub(undefined, undefined, 'close')}>
-                    Close Menu
-                  </Link>
+                  <Link onClick={() => onChangeSub('close')}>Close Menu</Link>
                 </SubNavigationContent>
               </SubNavigation>
             }>
