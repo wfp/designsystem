@@ -54,6 +54,50 @@ The maximum number of items is 6 to 8 items depending on the average word length
 
 From outside (using react-router, etc.) using `refs` a function can be triggered every time a route changes.
 
+##### Using react-router (withRouter)
+```js
+import React from "react";
+import PropTypes from "prop-types";
+import { withRouter } from "react-router";
+
+class Parent extends Component {
+
+  static propTypes = {
+    match: PropTypes.object.isRequired,
+    location: PropTypes.object.isRequired,
+    history: PropTypes.object.isRequired
+  };
+
+  constructor(props) {
+    super(props);
+    this.child = React.createRef();
+  }
+
+  // Depending on your usecase/performance use getDerivedStateFromProps instead
+  componentDidUpdate(prevProps, prevState) {
+  if (!prevState.locaction && this.props.locaction) {
+    this.closeMenu();
+  }
+}
+
+  closeMenu = () => {
+    this.child.current.onChangeSub('close');
+  };
+
+  render() {
+    return (
+      <div>
+        <MainNavigation ref={this.child} />
+        <button onClick={this.closeMenu}>Close everything</button>
+      </div>
+    );
+  }
+}
+
+const ParentWithRouter = withRouter(Parent);
+
+```
+##### Trigger with external button
 ```js
 class Parent extends Component {
   constructor(props) {

@@ -13,7 +13,7 @@ class MainNavigation extends Component {
     };
   }
 
-  onChangeSub = (e, i, action) => {
+  onChangeSub = (action, e, i) => {
     if (e) {
       e.preventDefault();
     }
@@ -25,7 +25,7 @@ class MainNavigation extends Component {
     } else if (action === 'toggle') {
       const newI =
         this.state.activeMenuItem === undefined ||
-        this.state.activeMenuItem !== i
+          this.state.activeMenuItem !== i
           ? i
           : undefined;
       this.setState({
