@@ -59,7 +59,7 @@ class MainNavigationItem extends Component {
               />
             </React.Fragment>
           ),
-          onClick: e => onChangeSub('toggle', e, menuItem),
+          onClick: e => onChangeSub('toggle', menuItem, e),
         })
       : children;
 

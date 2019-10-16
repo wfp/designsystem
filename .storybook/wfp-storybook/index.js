@@ -31,7 +31,7 @@ export const withNotes = makeDecorator({
 <!-- PROPS -->`;
     }
 
-    var githubLink = `<a class="wfp--btn wfp--btn--secondary wfp--btn--sm readme--github" href="https://github.com/wfp/ui/tree/next/src/${githubPath}" target="_blank">View Source on Github</a>`;
+    var githubLink = `<a class="wfp--btn wfp--btn--secondary wfp--btn--sm readme--github" href="https://github.com/wfp/ui/tree/next/src/${githubPath}" target="_blank">View source & readme on Github</a>`;
 
     text = `# ${contextName} ${githubLink}
 ${text}`;

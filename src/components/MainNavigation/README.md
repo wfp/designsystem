@@ -75,10 +75,14 @@ class Parent extends Component {
 
   // Depending on your usecase/performance use getDerivedStateFromProps instead
   componentDidUpdate(prevProps, prevState) {
-  if (!prevState.locaction && this.props.locaction) {
-    this.closeMenu();
+    if (!prevState.locaction && this.props.locaction) {
+      this.closeMenu();
+    }
   }
-}
+
+  openFirstMenu = () => {
+    this.child.current.onChangeSub('toggle', 0);
+  };
 
   closeMenu = () => {
     this.child.current.onChangeSub('close');
@@ -88,6 +92,7 @@ class Parent extends Component {
     return (
       <div>
         <MainNavigation ref={this.child} />
+        <button onClick={this.openFirstMenu}>Open first menu</button>
         <button onClick={this.closeMenu}>Close everything</button>
       </div>
     );

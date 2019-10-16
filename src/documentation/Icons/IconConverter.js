@@ -82,13 +82,13 @@ export default class FaviconGenerator extends Component {
                           />
                         </ModuleBody>
                       </Module>
-                      <Blockquote title="Icon json" type="code">
+                      <Blockquote title="Icon json" code>
                         <PrismCode component="pre" className="language-json">
                           {JSON.stringify(this.state.json, null, 2)}
                         </PrismCode>
                       </Blockquote>
 
-                      <Blockquote title="Component code" type="code">
+                      <Blockquote title="Component code" code>
                         <PrismCode component="pre" className="language-json">
                           {`<Icon 
   icon={${JSON.stringify(this.state.json, null, 2)}}

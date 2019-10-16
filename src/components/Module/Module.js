@@ -39,6 +39,10 @@ const moduleBodyPropTypes = {
    */
   centered: PropTypes.bool,
   /**
+   * Specify wheater the body should have no padding.
+   */
+  noPadding: PropTypes.bool,
+  /**
    * The CSS class name for the slider.
    */
   className: PropTypes.string,
@@ -93,9 +97,10 @@ const Module = ({
   );
 };
 
-const ModuleBody = ({ children, className, centered, ...other }) => {
+const ModuleBody = ({ children, className, centered, noPadding, ...other }) => {
   const wrapperClasses = classNames('wfp--module__content', className, {
     'wfp--module__content--centered': centered,
+    'wfp--module__content--no-padding': noPadding,
   });
 
   return (

@@ -16,7 +16,7 @@ import Blockquote from '../../components/Blockquote';
 storiesOf('Documentation|Getting started', module)
   .addParameters({ options: { showPanel: false, isToolshown: false } })
   .add('Introduction', () => (
-    <div>
+    <div className="intro-hero">
       <img
         alt="Hero"
         style={{
@@ -26,9 +26,9 @@ storiesOf('Documentation|Getting started', module)
         src={`${process.env.STORYBOOK_INTERNAL_ASSETS}internal/hero-image.jpg`}
       />
       <div
+        className="intro-hero-container"
         style={{
           color: '#FFFFFF',
-          padding: '13vw 0',
           position: 'absolute',
           top: 0,
           left: 0,

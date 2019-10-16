@@ -224,7 +224,7 @@ storiesOf('Components|Unit', module)
         SubComponent={row => {
           return (
             <div style={{ padding: '20px' }}>
-              <Blockquote type="code">
+              <Blockquote code>
                 {`<Unit
   ${JSON.stringify(row.original.setup)}
 >

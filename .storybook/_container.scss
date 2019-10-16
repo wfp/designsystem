@@ -477,3 +477,24 @@ table {
 .color__magenta-80 {
   background: $color__magenta-80;
 }
+
+.intro-hero {
+  img {
+    margin-top: 0;
+  }
+
+  .intro-hero-container {
+    padding: 13vw 0;
+  }
+
+  @include breakpoint(bp--lg--major) {
+    img {
+      margin-top: -7vw;
+      margin-bottom: -7rem;
+    }
+
+    .intro-hero-container {
+      padding-top: 7vw;
+    }
+  }
+}

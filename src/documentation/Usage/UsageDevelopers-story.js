@@ -18,12 +18,12 @@ storiesOf(' Documentation|Getting started', module)
       <h2>Usage for Developers</h2>
       <h3>React</h3>
       <p>Installing the UI Kit</p>
-      <Blockquote title="Install via npm" type="code">
+      <Blockquote title="Install via npm" code>
         <PrismCode component="pre" className="language-html">
           {`npm install @wfp/ui --save`}
         </PrismCode>
       </Blockquote>
-      <Blockquote title="Install via yarn" type="code">
+      <Blockquote title="Install via yarn" code>
         <PrismCode component="pre" className="language-html">
           {`yarn add @wfp/ui`}
         </PrismCode>
@@ -33,26 +33,26 @@ storiesOf(' Documentation|Getting started', module)
         Many components need Icons. Please also install @wfp/icons (peer
         dependency)
       </p>
-      <Blockquote title="Install via npm" type="code">
+      <Blockquote title="Install via npm" code>
         <PrismCode component="pre" className="language-html">
           {`npm install @wfp/icons --save`}
         </PrismCode>
       </Blockquote>
-      <Blockquote title="Install via yarn" type="code">
+      <Blockquote title="Install via yarn" code>
         <PrismCode component="pre" className="language-html">
           {`yarn add @wfp/icons`}
         </PrismCode>
       </Blockquote>
 
       <p>Importing the React components</p>
-      <Blockquote title="Importing the MainNavigation" type="code">
+      <Blockquote title="Importing the MainNavigation" code>
         <PrismCode component="pre" className="language-javascript">
           {`import { MainNavigation, MainNavigationItem } from '@wfp/ui';`}
         </PrismCode>
       </Blockquote>
       <h3>CSS</h3>
       <p>You can import the whole css file into your application.</p>
-      <Blockquote title="CDN" type="code">
+      <Blockquote title="CDN" code>
         <PrismCode component="pre" className="language-html">
           {`<link
   rel="stylesheet"
@@ -71,7 +71,7 @@ https://cdn.wfp.org/guides/ui/v1.1.16/assets/css/styles.css
         node_module. This allows you to use only parts of the SCSS, reuse common
         variables and functions from WFP-UI or to override settings.
       </p>
-      <Blockquote title="Use Source scss" type="code">
+      <Blockquote title="Use Source scss" code>
         <PrismCode component="pre" className="language-css">
           {`// Override settings
 $input-border-radius: 5px;

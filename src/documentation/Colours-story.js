@@ -257,7 +257,7 @@ storiesOf('Documentation|Guidelines', module)
 
         <p>The colours can be used via JavaScript or different frameworks.</p>
 
-        <Blockquote title="Usage in JavaScript" type="code">
+        <Blockquote title="Usage in JavaScript" code>
           <PrismCode component="pre" className="language-js">
             {`// Import colours as json (needs a json loader)
 import colors from '@wfp/ui/source/globals/data/colors.json'
@@ -274,7 +274,7 @@ const barChartColor = colors.navy;
           hassle of updating every single Hex colour code once they change.
         </p>
 
-        <Blockquote title="Usage in scss" type="code">
+        <Blockquote title="Usage in scss" code>
           <PrismCode component="pre" className="language-css">
             {`// Only use variables
 @import "~@wfp/ui/source/globals/scss/vars";

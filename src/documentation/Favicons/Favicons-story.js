@@ -173,7 +173,7 @@ storiesOf('Documentation|Guidelines', module)
 
         <FaviconGenerator />
 
-        <h3>External Applications: Use with CDN</h3>
+        <h3>External Applications: Usage with CDN</h3>
         <p>
           The favicons can be found in the{' '}
           <Link href="https://github.com/wfp/ui-assets/tree/master/src/favicons">
@@ -187,7 +187,7 @@ storiesOf('Documentation|Guidelines', module)
         </p>
         <Blockquote
           title="Full sizes catalog which can be added to the HTML Head"
-          type="code">
+          code>
           <PrismCode component="pre" className="language-html">
             {`<link rel="apple-touch-icon" sizes="57x57" href="https://cdn.wfp.org/guides/ui/assets/v0.0.1/favicons/apple-touch-icon-57-precomposed.png">
 <link rel="apple-touch-icon" sizes="72x72" href="https://cdn.wfp.org/guides/ui/assets/v0.0.1/favicons/apple-touch-icon-72-precomposed.png">
