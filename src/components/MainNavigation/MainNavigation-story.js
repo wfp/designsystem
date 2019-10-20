@@ -42,10 +42,13 @@ storiesOf('Components|MainNavigation', module).add('default', () => (
 
                   <SubNavigationFilter>
                     <Search
-                      className="some-class"
-                      kind="main"
+                      small
                       id="search-2"
-                      placeHolderText="Filter List"
+                      labelText="Filter"
+                      placeHolderText="Filter list"
+                      onChange={() => {
+                        alert('Apply Filter');
+                      }}
                     />
                   </SubNavigationFilter>
                 </SubNavigationHeader>

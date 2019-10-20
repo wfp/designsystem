@@ -26,9 +26,9 @@
   }
 
   .#{$prefix}--sub-navigation__link {
-    //flex-grow: 1;
     @include breakpoint(bp--md--major) {
       margin-left: $spacing-md;
+      flex-grow: 1;
     }
   }
 
