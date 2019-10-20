@@ -1,9 +1,10 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
+import { withResizeDetector } from 'react-resize-detector';
 import TabContent from '../TabContent';
 
-export default class Tabs extends React.Component {
+class Tabs extends React.Component {
   static propTypes = {
     /**
      * Specify the text to be read by screen-readers when visiting the <Tabs>
@@ -268,3 +269,5 @@ export default class Tabs extends React.Component {
     );
   }
 }
+
+export default withResizeDetector(Tabs);

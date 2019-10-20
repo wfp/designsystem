@@ -39,7 +39,7 @@ const LogoElement = ({ color, logoKind, src }) => {
             style={{ marginRight: '0.5em', fontSize: '0.7em' }}
             target="_blank"
             href={`${process.env.STORYBOOK_ASSETS}${src}${fileType}`}>
-            {fileType}
+            {fileType.replace('.', '')}
           </Link>
         </span>
       ))}
@@ -145,7 +145,7 @@ storiesOf('Documentation|Guidelines', module)
           <p>
             Whenever possible use the svg files, since they are optimized with a
             small file size and will also serve HiDPI devices without problems.
-            For print please use{' '}
+            For printing please use{' '}
             <Link href="http://newgo.wfp.org/collection/logos" target="_blank">
               these
             </Link>{' '}

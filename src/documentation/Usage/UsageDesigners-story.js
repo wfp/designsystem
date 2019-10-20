@@ -57,7 +57,7 @@ storiesOf(' Documentation|Getting started', module)
         Logos (Sketch)
       </Button>{' '}
       <Button href="https://github.com/wfp/ui-design-kit/blob/master/WFP%20Favicons.sketch?raw=true">
-        Favicons(Sketch)
+        Favicons (Sketch)
       </Button>
     </Page>
   ));

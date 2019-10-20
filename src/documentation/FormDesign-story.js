@@ -7,6 +7,7 @@ import Page from './Page';
 import Blockquote from '../components/Blockquote';
 
 import TextInput from '../components/TextInput';
+import { List, ListItem } from '../components/List';
 
 const TextInputProps = {
   className: 'some-class',
@@ -66,57 +67,65 @@ storiesOf('Documentation|Guidelines', module)
       <p>
         The only exception to this rule is when the input needs multiple field
         elements like asking for dates (day, month, year) or time (hours and
-        minutes), where multiple fields are expected to be on one line. Read{' '}
+        minutes), where multiple fields are expected to be on one line. Read
+        more about{' '}
         <Link href="https://uxplanet.org/the-18-must-do-principles-in-the-form-design-fe89d0127c92">
-          more
-        </Link>{' '}
-        about principles in form design.
+          principles in form design
+        </Link>
+        .
       </p>
 
-      <p>2 columns layout exceptions apply to:</p>
+      <h4>2 columns layout exceptions apply to:</h4>
 
-      <h5>
-        1. Information that people perceive as one but need more than one input
+      <p>
+        Information that people perceive as one but need more than one input
         field to complete
-      </h5>
+      </p>
 
-      <ul className="wfp--story__list">
-        <li>dd – mm – yyyy (date picker)</li>
-        <li>amount – currency</li>
-        <li>national prefix - phone number</li>
-        <li>first name - second name - last name</li>
-      </ul>
+      <List kind="bullet">
+        <ListItem kind="checkmark">dd – mm – yyyy (date picker)</ListItem>
+        <ListItem kind="checkmark">amount – currency</ListItem>
+        <ListItem kind="checkmark">national prefix - phone number</ListItem>
+        <ListItem kind="checkmark">
+          first name - second name - last name
+        </ListItem>
+      </List>
 
-      <h5>2. Information that people will find in the same place</h5>
+      <p>Information that people will find in the same place</p>
 
-      <ul className="wfp--story__list">
-        <li>CVV and credit card expiry date</li>
-      </ul>
+      <List kind="bullet">
+        <ListItem kind="checkmark">CVV and credit card expiry date</ListItem>
+      </List>
 
-      <h5>
-        3. Information that are complementary and/or more meaningful if read
+      <p>
+        Information that are complementary and/or more meaningful if read
         together
-      </h5>
+      </p>
 
-      <ul className="wfp--story__list">
-        <li>currency - currency exchange rate</li>
-      </ul>
+      <List kind="bullet">
+        <ListItem kind="checkmark">currency - currency exchange rate</ListItem>
+      </List>
 
-      <h5>
-        4. When one field is non editable and used for comparison/reference
+      <p>
+        When one field is non editable and used for comparison/reference
         purposes
-      </h5>
+      </p>
 
-      <ul className="wfp--story__list">
-        <li>country data input - RB data read only</li>
-      </ul>
+      <List kind="bullet">
+        <ListItem kind="checkmark">
+          country data input - RB data read only
+        </ListItem>
+      </List>
 
       <h3>Group related fields together into sections or steps</h3>
 
       <p>
         If your form has more than six fields, it’s considered good practice to
-        group questions into logical sections or steps. Use &#x3C;FormGroup
-        /&#x3E; for this behaviour.
+        group questions into logical sections or steps. Use the
+        <span className="wfp--inline-highlight">
+          &#x3C;FormGroup /&#x3E;
+        </span>{' '}
+        component for this behaviour.
       </p>
 
       <h3>Validate Fields after Users Submit the Form</h3>
