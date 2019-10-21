@@ -2,7 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-# [1.3.0-alpha.17](https://github.com/WFP/UI/compare/v1.3.0-alpha.16...v1.3.0-alpha.17) (2019-10-14)
+# [1.3.0-alpha.18](https://github.com/WFP/UI/compare/v1.3.0-alpha.17...v1.3.0-alpha.18) (2019-10-21)
+
+
+### Bug Fixes
+
+* **SubNavigation:** minor fix in button placement ([1482cb1](https://github.com/WFP/UI/commit/1482cb1))
+
+
+### Features
+
+* **FormError:** export added, minor doc adjustments ([74e9c67](https://github.com/WFP/UI/commit/74e9c67))
+* **MainNavigation:** order of parameters changed, may break MainNavigation! ([3fe1741](https://github.com/WFP/UI/commit/3fe1741))
+* **Module:** font-size increased and paddings reduced ([#211](https://github.com/WFP/UI/issues/211)), other improvements ([8fa323e](https://github.com/WFP/UI/commit/8fa323e))
+* **Tabs:** resize observer to calculate underline position [#210](https://github.com/WFP/UI/issues/210) ([0dca564](https://github.com/WFP/UI/commit/0dca564))
 
 
 
