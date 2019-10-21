@@ -232,6 +232,7 @@ storiesOf('Documentation|Guidelines', module)
         </ul>
 
         <h3>Brand Colours</h3>
+        <p>Tints for use in graphs and charts</p>
         <ul style={{ display: 'flex', flexWrap: 'wrap' }}>
           {colorList(regularColors)}
         </ul>
@@ -240,12 +241,12 @@ storiesOf('Documentation|Guidelines', module)
         <ul style={{ display: 'flex', flexWrap: 'wrap' }}>
           {colorList(supportColors)}
         </ul>
-
+        {/*
         <h3>Sustainable development goals colours</h3>
         <ul style={{ display: 'flex', flexWrap: 'wrap' }}>
           {colorList(sdgColors)}
         </ul>
-
+        */}
         <h3>Symbolic colours</h3>
         <ul style={{ display: 'flex', flexWrap: 'wrap' }}>
           {colorList(symbolicColors)}

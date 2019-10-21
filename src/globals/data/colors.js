@@ -121,7 +121,8 @@ const colors = {
     scss: '$interactive-03',
     css: 'color__interactive-03',
     type: 'ui',
-    description: 'Secondary interactive color (experimental)',
+    description:
+      'Secondary interactive colour (recommended); to use a different accent colour please contact wfp.publications@wfp.org',
   },
   'ui-01': {
     name: 'ui-01',

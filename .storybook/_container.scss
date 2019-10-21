@@ -42,12 +42,13 @@ body {
 }
 
 .language-js,
-.language-css {
+.language-css,
+.language-html {
   margin: 0 !important;
   margin-top: 1rem !important;
   background: $ui-02 !important;
   overflow-x: auto !important;
-  font-size: 0.8rem !important;
+  font-size: 0.9rem !important;
 
   code {
     font-weight: normal !important;
@@ -69,15 +70,6 @@ body {
     color: #a67f59;
   }
 }
-
-/*
-table {
-  width: 100%;
-  th,
-  td {
-    border: 1px solid #ccc;
-  }
-}*/
 
 @include breakpoint(bp--sm--major) {
   .wfp--single-component--centered {
