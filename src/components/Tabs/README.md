@@ -81,21 +81,22 @@ const  listEl  = (props) => (
 Write a custom component to use Tabs with different route handlers like `react-router`.
 
 ```js
-const listElReactRouter = ({ index, selected, label, to, exact, handleTabClick }) => (
+import { Link } from 'react-router-dom';
+
+const listElReactRouter = ({ anchor, className, to, exact, match }) => (
   <Route
-    path={to}
+    to={to}
     exact={exact}
-    children={({ match }) => {
-      if (match && !selected) {
-        /* handle the Tab changes */
-        handleTabClick(index, label);
-      }
-      return (
-        <div className={match ? "wfp--tabs__nav-item wfp--tabs__nav-item--selected" : "wfp--tabs__nav-item"}>
-          <Link className="wfp--tabs__nav-link" to={to}>{label}</Link>
-        </div>
-      )
-    }}
+    children={({ match }) => (
+      <li
+        className={
+          match ? className + ' wfp--tabs__nav-item--selected' : className
+        }>
+        <Link className={anchor.className} to={to}>
+          {anchor.label}
+        </Link>
+      </li>
+    )}
   />
 );
 ```
