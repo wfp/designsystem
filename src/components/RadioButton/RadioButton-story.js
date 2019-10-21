@@ -16,7 +16,7 @@ const radioProps = () => ({
   onChange: action('onChange'),
 });
 
-storiesOf('Components|RadioButton', module)
+storiesOf('Forms|RadioButton', module)
   .addDecorator(withKnobs)
   .add('Default', () => <RadioButton id="radio-1" {...radioProps()} />)
   .add('skeleton', () => (

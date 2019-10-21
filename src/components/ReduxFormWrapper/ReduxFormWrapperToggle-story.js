@@ -10,7 +10,7 @@ import SelectSkeleton from '../Select/Select.Skeleton';
 
 const onSubmit = () => {};
 
-storiesOf('Components|ReduxFormWrapper', module)
+storiesOf('Forms|ReduxFormWrapper', module)
   .addDecorator(withKnobs)
   .add('Toggle (react-final-form)', () => {
     return (

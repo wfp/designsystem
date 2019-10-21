@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react';
 import InfoBar from './InfoBar';
 import Link from '../Link';
 
-storiesOf('Components|InfoBar', module)
+storiesOf('Navigation|InfoBar', module)
   .addDecorator(story => <div style={{ width: '100vw' }}>{story()}</div>)
   .add('Default', () => (
     <InfoBar>

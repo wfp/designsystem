@@ -57,7 +57,7 @@ const props = {
   }),
 };
 
-storiesOf('Components|FormControls', module)
+storiesOf('Forms|FormControls', module)
   .addDecorator(withKnobs)
   .addDecorator(story => <div style={{ width: '60vw' }}>{story()}</div>)
   .add('Default (Wizard form)', () => (

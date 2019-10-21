@@ -9,7 +9,7 @@ import Icon from '../../components/Icon';
 import Wrapper from '../../components/Wrapper';
 import { iconWfpHumEmergencyResponsePos } from '@wfp/icons';
 
-storiesOf(' Documentation|Samples', module)
+storiesOf(' Documentation|Templates', module)
   .addDecorator(story => <RegularPage withoutSecondary>{story()}</RegularPage>)
   .add('Not found (404)', () => (
     <Wrapper pageWidth="lg" spacing="md">

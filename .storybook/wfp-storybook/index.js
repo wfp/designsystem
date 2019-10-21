@@ -3,7 +3,7 @@ import React from 'react';
 
 export const withNotes = makeDecorator({
   wrapper: (getStory, context, ttt) => {
-    const contextName = context.kind.includes('Samples')
+    const contextName = context.kind.includes('Templates')
       ? context.name
       : context.kind.replace('Documentation|', '').replace('Components|', '');
 

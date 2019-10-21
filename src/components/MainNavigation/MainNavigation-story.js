@@ -21,7 +21,7 @@ import Search from '../Search';
 import Link from '../Link';
 import User from '../User';
 
-storiesOf('Components|MainNavigation', module).add('default', () => (
+storiesOf('Navigation|MainNavigation', module).add('default', () => (
   <MainNavigation logo={<a href="http://www.wfp.org">Application name</a>}>
     {({ onChangeSub }) => {
       return (

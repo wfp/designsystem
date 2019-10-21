@@ -7,7 +7,7 @@ import { BannerNavigationWithContent } from './BannerNavigationWithContent';
 import Search from '../Search';
 import Link from '../Link';
 
-storiesOf('Components|BannerNavigation', module)
+storiesOf('Navigation|BannerNavigation', module)
   .add('Default', () => (
     <BannerNavigation>
       <BannerNavigationItem>

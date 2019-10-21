@@ -126,7 +126,7 @@ const buttonEvents = {
   className: 'some-class',
 };
 
-storiesOf('Components|Form', module)
+storiesOf('Forms|Form', module)
   .addDecorator(withKnobs)
   .add('Default', () => (
     <Form {...additionalProps}>

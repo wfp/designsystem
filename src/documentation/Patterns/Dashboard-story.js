@@ -45,7 +45,7 @@ storiesOf('Documentation|Guidelines', module)
         inside a <Link onClick={linkTo('Components', 'Wrapper')}>Wrapper</Link>{' '}
         component.
         <br /> An example can be found{' '}
-        <Link onClick={linkTo('Documentation|Samples', 'Application Page')}>
+        <Link onClick={linkTo('Documentation|Templates', 'Application Page')}>
           here
         </Link>
         .

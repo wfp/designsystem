@@ -28,7 +28,7 @@ const props = () => ({
   allowEmpty: boolean('Allow empty value (allowEmpty)', false),
 });
 
-storiesOf('Components|NumberInput', module)
+storiesOf('Forms|NumberInput', module)
   .addDecorator(withKnobs)
   .add('Default', () => <NumberInput {...props()} />)
   .add('skeleton', () => <NumberInputSkeleton />);

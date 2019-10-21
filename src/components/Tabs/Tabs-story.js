@@ -95,7 +95,7 @@ const listElReactRouter = ({ anchor, className, to, exact, match }) => (
   />
 );
 
-storiesOf('Components|Tabs', module)
+storiesOf('Navigation|Tabs', module)
   .addDecorator(withKnobs)
   .add('Default', () => (
     <Tabs {...props.tabs()}>

@@ -91,7 +91,7 @@ const props = {
   }),
 };
 
-storiesOf('Components|ReduxFormWrapper', module)
+storiesOf('Forms|ReduxFormWrapper', module)
   .addDecorator(withKnobs)
   .addDecorator(story => (
     <Provider store={store}>

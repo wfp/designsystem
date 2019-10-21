@@ -16,7 +16,7 @@ const options = [
   { value: 'vanilla', label: 'Vanilla' },
 ];
 
-storiesOf('Components|ReduxFormWrapper', module)
+storiesOf('Forms|ReduxFormWrapper', module)
   .addDecorator(withKnobs)
 
   .addDecorator(story => (

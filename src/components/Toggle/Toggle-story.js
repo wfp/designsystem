@@ -15,7 +15,7 @@ const toggleProps = () => ({
   onToggle: action('onToggle'),
 });
 
-storiesOf('Components|Toggle', module)
+storiesOf('Forms|Toggle', module)
   .addDecorator(withKnobs)
   .add('Default', () => (
     <Toggle {...toggleProps()} className="some-class" id="toggle-1" />

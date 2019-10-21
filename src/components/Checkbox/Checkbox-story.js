@@ -16,7 +16,7 @@ const props = () => ({
   onChange: action('onChange'),
 });
 
-storiesOf('Components|Checkbox', module)
+storiesOf('Forms|Checkbox', module)
   .addDecorator(withKnobs)
   .add('checked', () => {
     const checkboxProps = props();

@@ -8,7 +8,7 @@ import Button from '../../components/Button';
 import Modal from '../../components/Modal';
 import Link from '../../components/Link';
 
-storiesOf('Documentation|Samples', module)
+storiesOf('Documentation|Templates', module)
   .addParameters({ hideProps: true })
   .addDecorator(story => <RegularPage>{story()}</RegularPage>)
   .add('Login Page', () => (

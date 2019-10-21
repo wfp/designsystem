@@ -25,7 +25,7 @@ const TextAreaProps = () => ({
   onClick: action('onClick'),
 });
 
-storiesOf('Components|TextArea', module)
+storiesOf('Forms|TextArea', module)
   .addDecorator(withKnobs)
   .add('Default', () => <TextArea {...TextAreaProps()} />)
   .add('skeleton', () => <TextAreaSkeleton />);
