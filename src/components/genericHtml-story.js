@@ -29,13 +29,9 @@ keys.forEach(function(element, i) {
     .replace('.hbs', '')
     .replace(split[split.length - 2] + '-', ' ');
 
-  storiesOf('Components|' + split[split.length - 2], module)
+  /*storiesOf('Components|' + split[split.length - 2], module)
     .addDecorator(story => {
       var template = handlebars.compile(htmlData[i]);
-
-      //.replace('.hbs', '.config.js')
-
-      //console.log('config', config, element.replace('.hbs', '.config.js'), i);
 
       var result = template(config);
       //result = "";
@@ -49,5 +45,5 @@ keys.forEach(function(element, i) {
         source: false,
         propTables: false,
       },
-    });
+    });*/
 });
