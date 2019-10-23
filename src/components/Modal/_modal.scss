@@ -34,12 +34,13 @@
     content: '';
     opacity: 0;
     background-color: rgba($ui-03, 0.5);
+    //background-color: rgba(#000, 0.5);
     transition: opacity 200ms, z-index 0s 200ms, visibility 0s 200ms;
     visibility: hidden;
 
-    &.#{$prefix}--modal--tall {
-      align-items: fle;
-    }
+    /*&.#{$prefix}--modal--tall {
+      align-items: flex;
+    }*/
 
     &.is-visible {
       z-index: z('modal');
@@ -93,7 +94,7 @@
     }
 
     @media (min-width: 1024px) {
-      max-width: 70%;
+      max-width: 55%;
       //max-height: 100%;
 
       .#{$prefix}--modal--wide & {
