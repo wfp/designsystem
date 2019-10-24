@@ -91,7 +91,7 @@ export Tabs from './components/Tabs';
 export Tag from './components/Tag';
 export TextArea from './components/TextArea';
 export TextInput from './components/TextInput';
-export tooltipStyle from './components/Tooltip';
+export { tooltipStyle, tooltipStyleDark } from './components/Tooltip';
 export Toggle from './components/Toggle';
 /*
 export ToggleSmall from './components/ToggleSmall';
