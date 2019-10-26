@@ -17,7 +17,7 @@ import Button from '../../components/Button';
 import IconConverter from './IconConverter';
 
 import Tippy from '@tippy.js/react';
-import tooltipStyle from '../../components/Tooltip';
+import { tooltipStyle } from '../../components/Tooltip';
 
 function camelCaseFromHyphnated(s) {
   return s.replace(/-+([A-z])/g, (match, token) => token.toUpperCase());

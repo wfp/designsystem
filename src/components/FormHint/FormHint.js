@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { iconInfoSolid } from '@wfp/icons';
 import Icon from '../Icon';
 
-import tooltipStyle from '../Tooltip';
+import { tooltipStyle } from '../Tooltip';
 
 import classNames from 'classnames';
 import settings from '../../globals/js/settings';

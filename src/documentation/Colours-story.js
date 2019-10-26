@@ -255,7 +255,6 @@ storiesOf('Documentation|Guidelines', module)
         <p />
 
         <h3>Usage</h3>
-
         <p>The colours can be used via JavaScript or different frameworks.</p>
 
         <Blockquote title="Usage in JavaScript" code>
