@@ -13,11 +13,12 @@ const User = ({
   extendedDescription,
   image,
   small,
+  missingImage,
   name,
   ...other
 }) => {
   var avatar;
-  if (image === undefined) {
+  if (image === undefined && missingImage === 'avatar') {
     avatar = (
       <Icon
         icon={iconUser}
@@ -28,6 +29,26 @@ const User = ({
         className="wfp--user__icon wfp--user__icon--empty"
         {...other}
       />
+    );
+  } else if (image === undefined && missingImage === 'letter') {
+    avatar = (
+      <svg
+        id="Layer_1"
+        className="wfp--user__icon wfp--user__icon--empty"
+        x="0px"
+        y="0px"
+        viewBox="0 0 25 25"
+        height="25px"
+        width="25px">
+        <text
+          x="50%"
+          y="56%"
+          dominant-baseline="middle"
+          text-anchor="middle"
+          class="text">
+          {name && name.toUpperCase()[0]}
+        </text>
+      </svg>
     );
   } else {
     avatar = (
@@ -89,6 +110,11 @@ User.propTypes = {
    */
   description: PropTypes.node,
   /**
+   * Selects the generated empty icon if no image is provided.
+   * Can be `avatar` or `letter`.
+   */
+  missingImage: PropTypes.oneOf(['avatar', 'letter']),
+  /**
    * Extended Description column can be added only use if the description
    * is also set
    */
@@ -103,6 +129,7 @@ User.propTypes = {
 
 User.defaultProps = {
   alt: 'User Icon',
+  missingImage: 'avatar',
   ellipsis: false,
 };
 

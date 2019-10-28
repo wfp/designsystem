@@ -5,8 +5,6 @@ import { storiesOf } from '@storybook/react';
 import Page from '../Page';
 import Link from '../../components/Link';
 
-const fileSizes = [120, 152, 160, 167, 180, 192, 300];
-
 storiesOf('Documentation|Guidelines', module)
   .addParameters({ options: { showPanel: false, isToolshown: false } })
   .add('Maps', () => (

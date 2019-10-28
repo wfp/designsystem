@@ -1,9 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import ReactTable from 'react-table';
 import { withKnobs } from '@storybook/addon-knobs';
-
-import TablePagination from '../TablePagination';
 
 const data = [
   {

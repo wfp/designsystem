@@ -2,8 +2,13 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { List, ListItem } from '../List';
 
-import { withKnobs, boolean, text } from '@storybook/addon-knobs';
+import { withKnobs, boolean, select, text } from '@storybook/addon-knobs';
 import User from '../User';
+
+const kinds = {
+  'Avatar (avatar)': 'avatar',
+  'First letter of last name (letter)': 'letter',
+};
 
 const UserProps = {
   default: () => ({
@@ -13,6 +18,7 @@ const UserProps = {
       'Extended description (extendedDescription)',
       undefined
     ),
+    missingImage: select('Icon (icon in <Switch>)', kinds, 'avatar'),
     ellipsis: boolean('Ellipsis (ellipsis)', false),
     className: 'some-class',
     image: text('Image (image)', undefined),

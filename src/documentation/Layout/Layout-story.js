@@ -4,7 +4,6 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import Page from '../Page';
 import { List, ListItem } from '../../components/List';
-import Button from '../../components/Button';
 
 storiesOf('Documentation|Guidelines', module)
   .addParameters({ options: { showPanel: false, isToolshown: false } })

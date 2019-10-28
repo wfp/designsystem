@@ -6,8 +6,6 @@ import { withKnobs, select, text } from '@storybook/addon-knobs';
 import Icon from '../Icon';
 import IconSkeleton from '../Icon/Icon.Skeleton';
 
-import Button from '../Button';
-
 const icons = {
   'Add (iconAdd from `@wfp/icons`)': 'iconAdd',
   'Add with filled circle (iconAddGlyph from `@wfp/icons`)': 'iconAddGlyph',

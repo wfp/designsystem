@@ -3,7 +3,6 @@ import React from 'react';
 const CloseButton = ({ YouCanPassAnyProps, closeToast }) => (
   <button
     ariaLabel="close"
-    role="img"
     className="Toastify__close-button"
     onClick={closeToast}>
     <span></span>
