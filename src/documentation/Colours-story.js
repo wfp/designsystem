@@ -231,8 +231,7 @@ storiesOf('Documentation|Guidelines', module)
           {colorList(uiColors)}
         </ul>
 
-        <h3>Brand Colours</h3>
-        <p>Tints for use in graphs and charts</p>
+        <h3>Brand Colours – Tints for use in graphs and charts</h3>
         <ul style={{ display: 'flex', flexWrap: 'wrap' }}>
           {colorList(regularColors)}
         </ul>
