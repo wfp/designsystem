@@ -119,7 +119,8 @@
 
   .#{$prefix}--module--dark {
     .#{$prefix}--module__inner {
-      background: $brand-02;
+      box-shadow: none;
+      background: $brand-01;
       color: $ui-01;
     }
 
