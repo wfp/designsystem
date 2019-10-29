@@ -1,0 +1,32 @@
+//-----------------------------
+// Link
+//-----------------------------
+
+@import '../../globals/scss/colors';
+@import '../../globals/scss/vars';
+@import '../../globals/scss/layout';
+@import '../../globals/scss/typography';
+@import '../../globals/scss/helper-mixins';
+@import '../../globals/scss/import-once';
+@import '../../globals/scss/css--reset';
+
+@include exports('value') {
+  .#{$prefix}--link {
+    @include reset;
+    @include font-family;
+    //@include typescale('epsilon');
+    @include font-smoothing;
+  }
+  .#{$prefix}--title {
+    @include typescale('epsilon');
+    margin-bottom: $spacing-md;
+    font-weight: 700;
+  }
+  .#{$prefix}--primary-value {
+    @include typescale('beta');
+    margin-bottom: $spacing-md;
+  }
+  .#{$prefix}--secondary-value {
+    @include typescale('epsilon');
+  }
+}

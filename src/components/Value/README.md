@@ -1,0 +1,1 @@
+**Value** are typically used to show KPI values and additional information.

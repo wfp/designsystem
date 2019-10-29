@@ -98,5 +98,6 @@ export ToggleSmall from './components/ToggleSmall';
 */
 export User from './components/User';
 export Unit from './components/Unit';
+export Value from './components/Value';
 export Wrapper from './components/Wrapper';
 export colors from './globals/data/colors';

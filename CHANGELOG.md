@@ -2,20 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-# [1.3.0-alpha.18](https://github.com/WFP/UI/compare/v1.3.0-alpha.17...v1.3.0-alpha.18) (2019-10-21)
-
-
-### Bug Fixes
-
-* **SubNavigation:** minor fix in button placement ([1482cb1](https://github.com/WFP/UI/commit/1482cb1))
+# [1.3.0-alpha.19](https://github.com/WFP/UI/compare/v1.3.0-alpha.18...v1.3.0-alpha.19) (2019-10-29)
 
 
 ### Features
 
-* **FormError:** export added, minor doc adjustments ([74e9c67](https://github.com/WFP/UI/commit/74e9c67))
-* **MainNavigation:** order of parameters changed, may break MainNavigation! ([3fe1741](https://github.com/WFP/UI/commit/3fe1741))
-* **Module:** font-size increased and paddings reduced ([#211](https://github.com/WFP/UI/issues/211)), other improvements ([8fa323e](https://github.com/WFP/UI/commit/8fa323e))
-* **Tabs:** resize observer to calculate underline position [#210](https://github.com/WFP/UI/issues/210) ([0dca564](https://github.com/WFP/UI/commit/0dca564))
+* **Modal:** minor Modal width adjustments ([6511afd](https://github.com/WFP/UI/commit/6511afd))
+* **Module:** dark styling now without background and lighter foreground ([2162c9b](https://github.com/WFP/UI/commit/2162c9b))
+* **Notification:** design updates ([3c606d6](https://github.com/WFP/UI/commit/3c606d6))
+* **Tooltip:** dark styling added ([c513fb0](https://github.com/WFP/UI/commit/c513fb0))
+* **User:** option to show the first letter of a username (by Emanuele Scarbattoli) ([c861f5e](https://github.com/WFP/UI/commit/c861f5e))
 
 
 
