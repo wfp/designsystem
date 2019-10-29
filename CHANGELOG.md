@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-# [1.3.0-alpha.19](https://github.com/WFP/UI/compare/v1.3.0-alpha.18...v1.3.0-alpha.19) (2019-10-29)
+# [1.3.0-alpha.20](https://github.com/WFP/UI/compare/v1.3.0-alpha.18...v1.3.0-alpha.20) (2019-10-29)
 
 
 ### Features
@@ -12,6 +12,7 @@ All notable changes to this project will be documented in this file. See [standa
 * **Notification:** design updates ([3c606d6](https://github.com/WFP/UI/commit/3c606d6))
 * **Tooltip:** dark styling added ([c513fb0](https://github.com/WFP/UI/commit/c513fb0))
 * **User:** option to show the first letter of a username (by Emanuele Scarbattoli) ([c861f5e](https://github.com/WFP/UI/commit/c861f5e))
+* **Value:** draft added ([c378f65](https://github.com/WFP/UI/commit/c378f65))
 
 
 
