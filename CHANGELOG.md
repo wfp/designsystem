@@ -2,17 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-# [1.3.0-alpha.20](https://github.com/WFP/UI/compare/v1.3.0-alpha.18...v1.3.0-alpha.20) (2019-10-29)
+# [1.3.0-alpha.21](https://github.com/WFP/UI/compare/v1.3.0-alpha.20...v1.3.0-alpha.21) (2019-10-30)
 
 
-### Features
+### Bug Fixes
 
-* **Modal:** minor Modal width adjustments ([6511afd](https://github.com/WFP/UI/commit/6511afd))
-* **Module:** dark styling now without background and lighter foreground ([2162c9b](https://github.com/WFP/UI/commit/2162c9b))
-* **Notification:** design updates ([3c606d6](https://github.com/WFP/UI/commit/3c606d6))
-* **Tooltip:** dark styling added ([c513fb0](https://github.com/WFP/UI/commit/c513fb0))
-* **User:** option to show the first letter of a username (by Emanuele Scarbattoli) ([c861f5e](https://github.com/WFP/UI/commit/c861f5e))
-* **Value:** draft added ([c378f65](https://github.com/WFP/UI/commit/c378f65))
+* **Value:** minor adjustments ([2b06601](https://github.com/WFP/UI/commit/2b06601))
 
 
 
