@@ -19,12 +19,13 @@
   }
   .#{$prefix}--title {
     @include typescale('epsilon');
-    margin-bottom: $spacing-md;
-    font-weight: 700;
+    color: $text-02;
+    margin-bottom: $spacing-xs;
+    font-weight: 600;
   }
   .#{$prefix}--primary-value {
     @include typescale('beta');
-    margin-bottom: $spacing-md;
+    margin-bottom: $spacing-xs;
   }
   .#{$prefix}--secondary-value {
     @include typescale('epsilon');
