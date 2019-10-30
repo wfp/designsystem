@@ -2,12 +2,7 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-# [1.3.0-alpha.21](https://github.com/WFP/UI/compare/v1.3.0-alpha.20...v1.3.0-alpha.21) (2019-10-30)
-
-
-### Bug Fixes
-
-* **Value:** minor adjustments ([2b06601](https://github.com/WFP/UI/commit/2b06601))
+# [1.3.0-alpha.22](https://github.com/WFP/UI/compare/v1.3.0-alpha.21...v1.3.0-alpha.22) (2019-10-30)
 
 
 
