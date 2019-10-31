@@ -34,7 +34,7 @@ const User = ({
     avatar = (
       <svg
         id="Layer_1"
-        className="wfp--user__icon wfp--user__icon--empty"
+        className="wfp--user__icon wfp--user__icon--empty wfp--user__icon--letter"
         x="0px"
         y="0px"
         viewBox="0 0 25 25"
@@ -42,9 +42,9 @@ const User = ({
         width="25px">
         <text
           x="50%"
-          y="56%"
-          dominant-baseline="middle"
-          text-anchor="middle"
+          y="57%"
+          dominantBaseline="middle"
+          textAnchor="middle"
           class="text">
           {name && name.toUpperCase()[0]}
         </text>
@@ -124,6 +124,9 @@ User.propTypes = {
    * Provide at least 50px * 50px to support HiDPI displays.
    */
   image: PropTypes.string,
+  /**
+   * The username which will be displayed. Usually `Firstname Lastname`.
+   */
   name: PropTypes.string,
 };
 

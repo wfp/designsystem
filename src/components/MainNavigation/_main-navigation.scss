@@ -31,6 +31,7 @@
     cursor: pointer;
     user-select: none;
     //vertical-align: middle;
+    white-space: nowrap;
     a {
       color: $color__white;
       @include typescale('epsilon');
@@ -126,6 +127,7 @@
     .#{$prefix}--main-navigation__logo {
       flex-grow: 1;
       font-weight: 600;
+      white-space: nowrap;
     }
 
     .#{$prefix}--main-navigation__wrapper {

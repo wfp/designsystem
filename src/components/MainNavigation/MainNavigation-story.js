@@ -108,7 +108,41 @@ storiesOf('Navigation|MainNavigation', module).add('default', () => (
                 </SubNavigationContent>
               </SubNavigation>
             }>
-            <User ellipsis title="Max Mustermann long name" />
+            <User
+              ellipsis
+              name="Max Mustermann long name"
+              missingImage="letter"
+            />
+          </MainNavigationItem>
+          <MainNavigationItem
+            className="wfp--main-navigation__user"
+            subNavigation={
+              <SubNavigation>
+                <SubNavigationHeader>
+                  <SubNavigationTitle>Choose language</SubNavigationTitle>
+                </SubNavigationHeader>
+                <SubNavigationContent>
+                  <SubNavigationList>
+                    <SubNavigationGroup>
+                      <SubNavigationItem>
+                        <Link href="#">English</Link>
+                      </SubNavigationItem>
+                      <SubNavigationItem>
+                        <Link href="#">
+                          French <i>(français)</i>
+                        </Link>
+                      </SubNavigationItem>
+                      <SubNavigationItem>
+                        <Link href="#">
+                          German <i>(deutsch)</i>
+                        </Link>
+                      </SubNavigationItem>
+                    </SubNavigationGroup>
+                  </SubNavigationList>
+                </SubNavigationContent>
+              </SubNavigation>
+            }>
+            <span>EN</span>
           </MainNavigationItem>
         </React.Fragment>
       );
