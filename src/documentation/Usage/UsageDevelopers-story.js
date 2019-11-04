@@ -3,9 +3,11 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import PrismCode from 'react-prism';
+import { linkTo } from '@storybook/addon-links';
 
 import Page from '../Page';
 import Blockquote from '../../components/Blockquote';
+import Link from '../../components/Link';
 
 storiesOf(' Documentation|Getting started', module)
   .addParameters({ options: { showPanel: false, isToolshown: false } })
@@ -15,8 +17,17 @@ storiesOf(' Documentation|Getting started', module)
         The UI Kit provides developers with React.js components, scss, css, html
         and assets.
       </p>
-      <h2>Usage for Developers</h2>
-      <h3>React</h3>
+      <h3>Getting started with react.js</h3>
+      <p>
+        If you create your first react project use{' '}
+        <Link
+          target="_blank"
+          href="https://github.com/facebook/create-react-app">
+          create-react-app
+        </Link>{' '}
+        to generate a boilerplate version.
+      </p>
+      <h3>Add dependencies</h3>
       <p>Installing the UI Kit</p>
       <Blockquote title="Install via npm" code>
         <PrismCode component="pre" className="language-html">
@@ -29,71 +40,31 @@ storiesOf(' Documentation|Getting started', module)
         </PrismCode>
       </Blockquote>
 
-      <p>
-        Many components need Icons. Please also install @wfp/icons (peer
-        dependency)
-      </p>
-      <Blockquote title="Install via npm" code>
-        <PrismCode component="pre" className="language-html">
-          {`npm install @wfp/icons --save`}
-        </PrismCode>
-      </Blockquote>
-      <Blockquote title="Install via yarn" code>
-        <PrismCode component="pre" className="language-html">
-          {`yarn add @wfp/icons`}
-        </PrismCode>
-      </Blockquote>
-
       <p>Importing the React components</p>
-      <Blockquote title="Importing the MainNavigation" code>
+      <Blockquote title="Importing a Button" code>
         <PrismCode component="pre" className="language-javascript">
-          {`import { MainNavigation, MainNavigationItem } from '@wfp/ui';`}
+          {`import { Button } from '@wfp/ui';`}
+        </PrismCode>
+      </Blockquote>
+      <Blockquote title="Using the Button" code>
+        <PrismCode component="pre" className="language-javascript">
+          {`<Button>ButtonText</Button>`}
         </PrismCode>
       </Blockquote>
       <h3>CSS</h3>
-      <p>You can import the whole css file into your application.</p>
-      <Blockquote title="CDN" code>
-        <PrismCode component="pre" className="language-html">
-          {`<link
-  rel="stylesheet"
-  type="text/css"
-  href="https://cdn.wfp.org/guides/ui/v1.1.16/assets/css/styles.min.css"
-/>
-
-/* Uncompressed styles.css */
-https://cdn.wfp.org/guides/ui/v1.1.16/assets/css/styles.css
-`}
-        </PrismCode>
-      </Blockquote>
-      <h3>SCSS</h3>
       <p>
-        When using scss you can also import the SCSS sources from the
-        node_module. This allows you to use only parts of the SCSS, reuse common
-        variables and functions from WFP-UI or to override settings.
+        See the{' '}
+        <Link onClick={linkTo('Documentation|Getting started', 'CSS')}>
+          CSS page
+        </Link>{' '}
+        for guidelines.
       </p>
-      <Blockquote title="Use Source scss" code>
-        <PrismCode component="pre" className="language-css">
-          {`// Override settings
-$input-border-radius: 5px;
-$button-border-radius: 60px;
-$button-font-size: 25px;
-$button-padding: 10px 25px;
-$color__main: #0076FF;
-
-// Regular scss import
-@import "~@wfp/ui/source/globals/scss/styles";
-
-// Import all stylesheets using css modules
-:global {
-  @import "~@wfp/ui/source/globals/scss/styles";
-}
-
-// Only import the Button stylesheet
-@import "~@wfp/ui/source/components/Button/button";
-
-// Only use variables
-@import "~@wfp/ui/source/globals/scss/vars";`}
-        </PrismCode>
-      </Blockquote>
+      <h2>Decouple front- and backend</h2>
+      <p>
+        Seperating the front end from the back end minimizes the overall
+        complexity and allows the frontend and backend developers to work
+        independently. It will also give Flexibility fo a constant evolution if
+        the application is seperated highly decoupled, focussed microservices.
+      </p>
     </Page>
   ));
