@@ -7,27 +7,8 @@ import Link from '../../components/Link';
 
 storiesOf(' Documentation|Getting started', module)
   .addParameters({ options: { showPanel: false, isToolshown: false } })
-  .add('React.js', () => (
-    <Page title="React.js usage" subTitle="Guidelines & Recommendations">
-      <h2>Decouple front- and backend</h2>
-      <p>
-        Seperating the front end from the back end minimizes the overall
-        complexity and allows the frontend and backend developers to work
-        independently. It will also give Flexibility fo a constant evolution if
-        the application is seperated highly decoupled, focussed microservices.
-      </p>
-
-      <h2>Getting started</h2>
-      <p>
-        If you create your first react project use{' '}
-        <Link
-          target="_blank"
-          href="https://github.com/facebook/create-react-app">
-          create-react-app
-        </Link>{' '}
-        to generate a boilerplate version.
-      </p>
-
+  .add('Tool recommendations', () => (
+    <Page title="Recommended tools" subTitle="Guidelines & Recommendations">
       <h2>CSS</h2>
       <p>
         <Link target="_blank" href="https://sass-lang.com">
@@ -129,9 +110,6 @@ storiesOf(' Documentation|Getting started', module)
         </Link>{' '}
         is a set of modular charting components for React.
       </p>
-
-      <h3>Linting & naming</h3>
-      <p>Configuration on Adal https://github.com/salvoravida/react-adal</p>
 
       <h3>Useful links</h3>
       <ul className="wfp--story__list">
