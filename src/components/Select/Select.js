@@ -28,6 +28,7 @@ const Select = React.forwardRef(
       children,
       iconDescription,
       hideLabel,
+      small,
       invalid,
       invalidText,
       helperText,
@@ -39,6 +40,7 @@ const Select = React.forwardRef(
     const selectClasses = classNames({
       [`${prefix}--select`]: true,
       [`${prefix}--select--inline`]: inline,
+      [`${prefix}--select--small`]: small,
       [`${prefix}--select--light`]: light,
       [`${prefix}--select--invalid`]: invalid,
       [className]: className,
@@ -191,6 +193,10 @@ Select.propTypes = {
    * Specify whether you want the light version of this control
    */
   light: PropTypes.bool,
+  /**
+   * Specify whether you want the small version of this control
+   */
+  small: PropTypes.bool,
 };
 
 Select.defaultProps = {

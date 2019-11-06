@@ -118,6 +118,19 @@
     }
   }
 
+  .#{$prefix}--select--small {
+    //TODO: work in progress
+    .#{$prefix}--select-input {
+      font-size: 0.8em;
+      height: 30px;
+      padding-right: 1.7rem;
+    }
+    .#{$prefix}--select__arrow {
+      right: 0.6rem;
+      bottom: 0.785rem;
+    }
+  }
+
   .#{$prefix}--select--inline {
     display: grid;
     grid-template-columns: auto auto;

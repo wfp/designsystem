@@ -25,6 +25,7 @@ const props = {
     ),
     disabled: boolean('Disabled (disabled in <Select>)', false),
     hideLabel: boolean('No label (hideLabel in <Select>)', false),
+    small: boolean('Styling for small (small)', false),
     invalid: boolean('Show form validation UI (invalid in <Select>)', false),
     invalidText: text(
       'Form validation UI content (invalidText in <Select>)',

@@ -5,7 +5,7 @@ import { storiesOf } from '@storybook/react';
 import Page from './Page';
 import Blockquote from '../components/Blockquote';
 import Link from '../components/Link';
-import InfoBar from '../components/InfoBar';
+import { linkTo } from '@storybook/addon-links';
 
 storiesOf('Documentation|Guidelines', module)
   .addParameters({ options: { showPanel: false, isToolshown: false } })
@@ -15,7 +15,12 @@ storiesOf('Documentation|Guidelines', module)
         Please notice that the UI Kit currently supports IE11, but it will no
         longer do it in future releases. Those applications that do not work
         properly or do not work at all in IE11 will need to include a warning
-        message inviting the user to switch to a more modern browser.
+        message inviting the user to switch to a more modern browser. The
+        warning can be found{' '}
+        <Link onClick={linkTo('Documentation|Templates', 'Browser Warning')}>
+          here
+        </Link>
+        .
       </Blockquote>
 
       <p>Currently the following browsers are supported:</p>
@@ -30,17 +35,22 @@ storiesOf('Documentation|Guidelines', module)
 
       <p>
         Please make sure that your application is independent of which browser
-        is used to access them (i.e. browser agnostic).
-      </p>
-
-      <Blockquote>
-        Find out{' '}
+        is used to access them (i.e. browser agnostic). Find out{' '}
         <Link
           href="http://newgo.wfp.org/documents/software-solutions-technology-stack"
           target="_blank">
           more
         </Link>{' '}
         about the browsers supported on WFP GO.
+      </p>
+
+      <Blockquote>
+        Use{' '}
+        <Link href="https://www.browserstack.com/" target="_blank">
+          BrowserStack
+        </Link>{' '}
+        for testing different browsers in the cloud. To get access please ask in
+        the #ux-ui channel on Slack.
       </Blockquote>
 
       {/*<h3>Outdated browser message</h3>
