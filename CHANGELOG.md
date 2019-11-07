@@ -2,7 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-# [1.3.0-alpha.27](https://github.com/WFP/UI/compare/v1.3.0-alpha.26...v1.3.0-alpha.27) (2019-11-07)
+# [1.3.0-alpha.28](https://github.com/WFP/UI/compare/v1.3.0-alpha.27...v1.3.0-alpha.28) (2019-11-07)
+
+
+### Features
+
+* **print:** print support improved [@emanuelescarabattoli](https://github.com/emanuelescarabattoli) ([6e7a564](https://github.com/WFP/UI/commit/6e7a564))
+* **RadioButtonGroup:** label and helperText added ([cffb134](https://github.com/WFP/UI/commit/cffb134))
 
 
 
