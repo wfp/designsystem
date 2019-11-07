@@ -57,16 +57,12 @@ export default class RadioButtonGroup extends React.Component {
      */
 
     helperText: PropTypes.node,
-    /**
-     * Specify a custom `id` for the &lt;input&gt;
-     */
-    id: PropTypes.string.isRequired,
 
     /**
      * Provide the text that will be read by a screen reader when visiting this
      * control
      */
-    labelText: PropTypes.node.isRequired,
+    labelText: PropTypes.node,
   };
 
   static defaultProps = {
@@ -132,9 +128,7 @@ export default class RadioButtonGroup extends React.Component {
     });
 
     const label = labelText ? (
-      <label htmlFor={id} className={labelClasses}>
-        {labelText}
-      </label>
+      <span className={labelClasses}>{labelText}</span>
     ) : null;
 
     const helper = helperText ? (

@@ -24,6 +24,9 @@
   background-color: $ui-01;
   z-index: z('footer');
   padding: rem(20px) 0;
+  @media print {
+    display: none;
+  }
 }
 
 .#{$prefix}--footer__content {

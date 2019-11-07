@@ -16,6 +16,9 @@
 
     .#{$prefix}--tabs {
       margin-bottom: -2px;
+      @media print {
+        display: none;
+      }
     }
   }
 

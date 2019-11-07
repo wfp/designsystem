@@ -13,6 +13,9 @@
     background: $color__main;
     @include reset;
     //display: flex;
+    @media print {
+      display: none;
+    }
   }
 
   .#{$prefix}--main-navigation__item {
