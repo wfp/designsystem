@@ -18,7 +18,7 @@ const User = ({
   ...other
 }) => {
   var avatar;
-  if (image === undefined && missingImage === 'avatar') {
+  if (!image && missingImage === 'avatar') {
     avatar = (
       <Icon
         icon={iconUser}

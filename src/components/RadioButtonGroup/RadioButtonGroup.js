@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import classNames from 'classnames';
 import RadioButton from '../RadioButton';
 import warning from 'warning';
 import settings from '../../globals/js/settings';
@@ -45,6 +46,27 @@ export default class RadioButtonGroup extends React.Component {
      * Specify the value that is currently selected in the group
      */
     valueSelected: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+
+    /**
+     * Specify whether you want the underlying label to be visually hidden
+     */
+
+    hideLabel: PropTypes.bool,
+    /**
+     * Provide text that is used alongside the control label for additional help
+     */
+
+    helperText: PropTypes.node,
+    /**
+     * Specify a custom `id` for the &lt;input&gt;
+     */
+    id: PropTypes.string.isRequired,
+
+    /**
+     * Provide the text that will be read by a screen reader when visiting this
+     * control
+     */
+    labelText: PropTypes.node.isRequired,
   };
 
   static defaultProps = {
@@ -98,13 +120,35 @@ export default class RadioButtonGroup extends React.Component {
   render() {
     const {
       disabled,
+      labelText,
+      helperText,
+      id,
+      hideLabel,
       className = `${prefix}--radio-button-group`,
     } = this.props;
+
+    const labelClasses = classNames('wfp--label', {
+      'wfp--visually-hidden': hideLabel,
+    });
+
+    const label = labelText ? (
+      <label htmlFor={id} className={labelClasses}>
+        {labelText}
+      </label>
+    ) : null;
+
+    const helper = helperText ? (
+      <div className="wfp--form__helper-text">{helperText}</div>
+    ) : null;
 
     return (
       <div className={`${prefix}--form-item`}>
         <div className={className} disabled={disabled}>
-          {this.getRadioButtons()}
+          {label}
+          {helper}
+          <div className={`${prefix}--radio-button-group-inside`}>
+            {this.getRadioButtons()}
+          </div>
         </div>
       </div>
     );

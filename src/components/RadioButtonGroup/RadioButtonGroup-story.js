@@ -24,6 +24,14 @@ const props = {
       values,
       'default-selected'
     ),
+    labelText: text(
+      'Label text (labelText in <RadioButtonGroup>)',
+      'Radio button group label'
+    ),
+    helperText: text(
+      'Helper text (labelText in <RadioButtonGroup>)',
+      'Radio button group helper'
+    ),
     onChange: action('onChange'),
   }),
   radio: () => ({
@@ -41,15 +49,13 @@ storiesOf('Forms|RadioButtonGroup', module)
   .add('Default', () => {
     const radioProps = props.radio();
     return (
-      <FormGroup legendText="Radio Button heading">
-        <RadioButtonGroup
-          defaultSelected="default-selected"
-          legend="Group Legend"
-          {...props.group()}>
-          <RadioButton value="standard" id="radio-1" {...radioProps} />
-          <RadioButton value="default-selected" id="radio-2" {...radioProps} />
-          <RadioButton value="disabled" id="radio-3" {...radioProps} />
-        </RadioButtonGroup>
-      </FormGroup>
+      <RadioButtonGroup
+        defaultSelected="default-selected"
+        legend="Group Legend"
+        {...props.group()}>
+        <RadioButton value="standard" id="radio-1" {...radioProps} />
+        <RadioButton value="default-selected" id="radio-2" {...radioProps} />
+        <RadioButton value="disabled" id="radio-3" {...radioProps} />
+      </RadioButtonGroup>
     );
   });
