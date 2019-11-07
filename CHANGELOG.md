@@ -2,13 +2,7 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-# [1.3.0-alpha.26](https://github.com/WFP/UI/compare/v1.3.0-alpha.25...v1.3.0-alpha.26) (2019-11-07)
-
-
-### Features
-
-* **Inputs:** error message now highlighted ([d4b5e00](https://github.com/WFP/UI/commit/d4b5e00))
-* **Typography:** Case-Sensitivity section added ([80433ad](https://github.com/WFP/UI/commit/80433ad))
+# [1.3.0-alpha.27](https://github.com/WFP/UI/compare/v1.3.0-alpha.26...v1.3.0-alpha.27) (2019-11-07)
 
 
 
