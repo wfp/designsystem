@@ -85,13 +85,14 @@
   .#{$prefix}--form-requirement {
     @include reset;
     @include typescale('omega');
-    margin: $spacing-sm 0 0;
+    margin: $spacing-2xs 0 0;
     max-height: 0;
     overflow: hidden;
     font-weight: 600;
     line-height: 1.5;
     display: none;
     order: 3;
+    color: $support-01;
 
     &.invalid {
       max-height: rem(200px);

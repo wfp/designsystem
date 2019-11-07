@@ -15,10 +15,7 @@ const types = {
 const TextInputProps = () => ({
   className: 'some-class',
   id: 'test2',
-  defaultValue: text(
-    'Default value (defaultValue)',
-    'This is not a default value'
-  ),
+  defaultValue: text('Default value (defaultValue)', 'This is a default value'),
   labelText: text('Label text (labelText)', 'Text Input label'),
   placeholder: text('Placeholder text (placeholder)', 'Placeholder text'),
   light: boolean('Light variant (light)', false),
