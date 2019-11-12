@@ -2,7 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-# [1.3.0-alpha.29](https://github.com/WFP/UI/compare/v1.3.0-alpha.28...v1.3.0-alpha.29) (2019-11-07)
+# [1.3.0-alpha.30](https://github.com/WFP/UI/compare/v1.3.0-alpha.29...v1.3.0-alpha.30) (2019-11-12)
+
+
+### Bug Fixes
+
+* **MainNavigation:** search size ([#239](https://github.com/WFP/UI/issues/239)) ([42af6b9](https://github.com/WFP/UI/commit/42af6b9))
 
 
 
