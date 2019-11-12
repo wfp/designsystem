@@ -77,7 +77,9 @@
 
   .#{$prefix}--user__title--ellipsis {
     display: inline-block;
-    max-width: 130px;
+    @include breakpoint(bp--md--major) {
+      max-width: 130px;
+    }
     overflow: hidden;
     line-height: 1.5;
     white-space: nowrap;

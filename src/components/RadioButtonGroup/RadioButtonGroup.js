@@ -20,6 +20,10 @@ export default class RadioButtonGroup extends React.Component {
      * Provide an optional className to be applied to the container node
      */
     className: PropTypes.string,
+    /**
+     * Provide an optional className to be applied to the container node
+     */
+    controlled: PropTypes.bool,
 
     /**
      * Specify the <RadioButton> to be selected by default
@@ -67,6 +71,7 @@ export default class RadioButtonGroup extends React.Component {
 
   static defaultProps = {
     onChange: /* istanbul ignore next */ () => {},
+    controlled: true,
   };
 
   static getDerivedStateFromProps({ valueSelected, defaultSelected }, state) {
@@ -115,10 +120,11 @@ export default class RadioButtonGroup extends React.Component {
 
   render() {
     const {
+      children,
       disabled,
       labelText,
       helperText,
-      id,
+      controlled,
       hideLabel,
       className = `${prefix}--radio-button-group`,
     } = this.props;
@@ -141,7 +147,7 @@ export default class RadioButtonGroup extends React.Component {
           {label}
           {helper}
           <div className={`${prefix}--radio-button-group-inside`}>
-            {this.getRadioButtons()}
+            {controlled ? this.getRadioButtons() : children}
           </div>
         </div>
       </div>

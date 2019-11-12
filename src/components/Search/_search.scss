@@ -320,9 +320,7 @@
   width: 100%;
   height: rem(20px);
   padding: 0 $spacing-lg;
-  &:focus {
-    max-width: 200px;
-  }
+
   transition: max-width 0.2s;
   @include breakpoint(bp--md--major) {
     max-width: rem(150px);
@@ -357,9 +355,6 @@
   height: rem(30px);
   padding: 0 $spacing-xl;
   @include typescale('epsilon');
-  &:focus {
-    max-width: 200px;
-  }
   transition: max-width 0.2s;
   @include breakpoint(bp--md--major) {
     max-width: rem(150px);

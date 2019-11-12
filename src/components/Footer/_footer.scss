@@ -45,7 +45,11 @@
   }
 }
 
-.#{$prefix}--footer__list {
+.#{$prefix}--footer__sdg {
+  margin-top: 0.45rem;
+  margin-left: $spacing-xl;
+  width: 50px;
+  height: 50px;
 }
 
 .#{$prefix}--footer__meta {
@@ -88,6 +92,7 @@
 
 .#{$prefix}--footer__cta {
   margin-left: auto;
+  display: flex;
   @include rtl {
     margin-left: 0;
     margin-right: auto;
