@@ -10,7 +10,7 @@ const ReduxFormWrapper = ({
   InputComponent,
   classNamePrefix,
   invalidText,
-  meta: { touched, error, warning },
+  meta: { touched, error, submitError, warning },
   ...other
 }) => {
   if (inputComponent === undefined && InputComponent === undefined) return null;
@@ -57,10 +57,10 @@ const ReduxFormWrapper = ({
           {other.required && <div className="wfp--label__required" />}
         </React.Fragment>
       }
-      invalidText={error}
+      invalidText={error || submitError}
       onBlur={input.onBlur}
       onChange={input.onChange}
-      invalid={touched && error ? true : false}
+      invalid={touched && (error || submitError) ? true : false}
     />
   );
 };

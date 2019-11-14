@@ -10,7 +10,7 @@ import Link from '../../components/Link';
 
 storiesOf('Documentation|Templates', module)
   .addParameters({ hideProps: true })
-  .addDecorator(story => <RegularPage>{story()}</RegularPage>)
+  //.addDecorator(story => <RegularPage>{story()}</RegularPage>)
   .add('Login Page', () => (
     <Modal
       open
