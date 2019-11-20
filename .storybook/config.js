@@ -40,8 +40,6 @@ addDecorator(withAutoNotes);
 
 addParameters({
   options: {
-    name: 'WFP UI',
-    url: 'https://github.com/wfp/ui',
     theme: wfpTheme,
     showPanel: true,
     isToolshown: true,

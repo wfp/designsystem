@@ -55,6 +55,7 @@ const Icon = ({
   fillRule,
   height,
   icon,
+  iconTitle,
   role,
   style,
   width,
