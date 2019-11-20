@@ -46,7 +46,7 @@
 }
 
 .#{$prefix}--footer__sdg {
-  margin-top: 0.45rem;
+  //margin-top: 0.45rem;
   margin-left: $spacing-xl;
   width: 50px;
   height: 50px;
@@ -93,6 +93,8 @@
 .#{$prefix}--footer__cta {
   margin-left: auto;
   display: flex;
+  flex-wrap: wrap;
+  align-items: center;
   @include rtl {
     margin-left: 0;
     margin-right: auto;
@@ -101,6 +103,9 @@
 
 @include breakpointMax(bp--sm--major) {
   .#{$prefix}--footer__cta-logo {
+    display: none;
+  }
+  .#{$prefix}--footer__sdg {
     display: none;
   }
 }
@@ -175,6 +180,10 @@
   .#{$prefix}--footer__secondary {
     margin-top: rem(20px);
     font-weight: 600;
+    @include typescale('caption');
+    @include breakpoint(bp--md--major) {
+      width: 100%;
+    }
     @include line-height('body');
   }
 
