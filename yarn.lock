@@ -2591,6 +2591,13 @@
   resolved "https://registry.yarnpkg.com/@wfp/icons/-/icons-0.0.81.tgz#86996eab5884edc8942f838c1edeea59abacbd69"
   integrity sha512-ydBzRSEOErpMlBBz5TH1UijlJiEeU/437RvNrLxYKUmgQwTgxZb0eTApKdDAS9ytyP6D35VnzaWe7NtTIpzziw==
 
+"@wfp/icons@^0.0.82":
+  version "0.0.82"
+  resolved "https://registry.yarnpkg.com/@wfp/icons/-/icons-0.0.82.tgz#176a684639a1e199e598fa746e2dfcba9df1226b"
+  integrity sha512-HPJHUMHA4Fy14NvywaLBLBUEkB82hQ+OM1Ttguh2BwIRZ4eDf0t4gA5he0p/FeUg5dj2WPm79rd3YZ1/iZ/SVQ==
+  dependencies:
+    natives "^1.1.6"
+
 "@xtuc/ieee754@^1.2.0":
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/@xtuc/ieee754/-/ieee754-1.2.0.tgz#eef014a3145ae477a1cbc00cd1e552336dceb790"
@@ -11321,6 +11328,11 @@ nanomatch@^1.2.9:
     regex-not "^1.0.0"
     snapdragon "^0.8.1"
     to-regex "^3.0.1"
+
+natives@^1.1.6:
+  version "1.1.6"
+  resolved "https://registry.yarnpkg.com/natives/-/natives-1.1.6.tgz#a603b4a498ab77173612b9ea1acdec4d980f00bb"
+  integrity sha512-6+TDFewD4yxY14ptjKaS63GVdtKiES1pTPyxn9Jb0rBqPMZ7VcCiooEhPNsr+mqHtMGxa/5c/HhcC4uPEUw/nA==
 
 natural-compare@^1.4.0:
   version "1.4.0"

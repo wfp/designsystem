@@ -31,7 +31,7 @@ export function svgShapes(svgData) {
         });
       } else if (svgProp === 'paths') {
         return data.map((path, index) => (
-          <path d={path.d} key={`key${index}`} />
+          <path fill={path.fill} d={path.d} key={`key${index}`} />
         ));
       }
 
