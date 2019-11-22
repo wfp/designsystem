@@ -6,7 +6,7 @@ import { withKnobs, select, text } from '@storybook/addon-knobs/react';
 import Footer from './Footer';
 import Link from '../Link';
 
-storiesOf('Navigation|Footer', module)
+storiesOf('Components|Footer', module)
   .addDecorator(withKnobs)
   .addParameters({ jest: ['Footer-test'] })
   .add('Internal', () => {

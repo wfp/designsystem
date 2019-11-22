@@ -8,6 +8,7 @@ import TextAreaSkeleton from '../TextArea/TextArea.Skeleton';
 const TextAreaProps = () => ({
   className: 'some-class',
   disabled: boolean('Disabled (disabled)', false),
+  readOnly: boolean('Read-only (readOnly)', false),
   light: boolean('Light variant (light)', false),
   hideLabel: boolean('No label (hideLabel)', false),
   labelText: text('Label text (labelText)', 'Text Area label'),
@@ -25,7 +26,7 @@ const TextAreaProps = () => ({
   onClick: action('onClick'),
 });
 
-storiesOf('Forms|TextArea', module)
+storiesOf('Components|TextArea', module)
   .addDecorator(withKnobs)
   .add('Default', () => <TextArea {...TextAreaProps()} />)
   .add('skeleton', () => <TextAreaSkeleton />);

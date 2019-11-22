@@ -28,7 +28,7 @@ const renderError = ({ meta: { touched, error } }) =>
     false
   );
 
-storiesOf('Documentation|Templates', module)
+storiesOf('Design|Templates', module)
   .addParameters({ hideProps: true })
   .addDecorator(story => (
     <RegularPage title="Wizard form" withoutSecondaryTabs pageWidth="lg">

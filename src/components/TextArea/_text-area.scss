@@ -55,6 +55,10 @@
     &[data-invalid]:focus + .#{$prefix}--label {
       color: $support-01;
     }
+
+    &:read-only {
+      @include read-only('border');
+    }
   }
 
   .#{$prefix}--text-area--light {

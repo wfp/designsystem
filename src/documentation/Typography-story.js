@@ -8,7 +8,7 @@ import Link from '../components/Link';
 import { List, ListItem } from '../components/List';
 import { linkTo } from '@storybook/addon-links';
 
-storiesOf('Documentation|Guidelines', module)
+storiesOf('Design|Core', module)
   .addParameters({ options: { showPanel: false, isToolshown: false } })
   .add('Typography', () => (
     <Page title="Typography" subTitle="Typefaces & Spacings">

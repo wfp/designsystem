@@ -2,6 +2,9 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
 
+import settings from '../../globals/js/settings';
+const { prefix } = settings;
+
 const TextArea = ({
   className,
   id,
@@ -32,8 +35,9 @@ const TextArea = ({
   const textareaClasses = classNames('wfp--text-area', className, {
     'wfp--text-area--light': light,
   });
-  const labelClasses = classNames('wfp--label', {
-    'wfp--visually-hidden': hideLabel,
+  const labelClasses = classNames(`${prefix}--label`, {
+    [`${prefix}--visually-hidden`]: hideLabel,
+    [`${prefix}--label--disabled`]: other.disabled,
   });
 
   const label = labelText ? (

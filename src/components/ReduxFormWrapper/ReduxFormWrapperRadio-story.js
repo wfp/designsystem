@@ -10,7 +10,7 @@ import SelectSkeleton from '../Select/Select.Skeleton';
 
 const onSubmit = () => {};
 
-storiesOf('Forms|ReduxFormWrapper', module)
+storiesOf('Components|ReduxFormWrapper', module)
   .addDecorator(withKnobs)
   .add('RadioButton (react-final-form)', () => {
     return (

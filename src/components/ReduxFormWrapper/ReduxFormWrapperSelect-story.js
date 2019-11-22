@@ -11,7 +11,7 @@ import SelectSkeleton from '../Select/Select.Skeleton';
 
 const onSubmit = () => {};
 
-storiesOf('Forms|ReduxFormWrapper', module)
+storiesOf('Components|ReduxFormWrapper', module)
   .addDecorator(withKnobs)
   .add('Select (react-final-form)', () => {
     return (

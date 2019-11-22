@@ -8,10 +8,10 @@ import Link from '../../components/Link';
 
 import { iconAddGlyph } from '@wfp/icons';
 
-storiesOf(' Documentation|Getting started', module)
+storiesOf(' Design|Getting started', module)
   .addParameters({ options: { showPanel: false, isToolshown: false } })
   .add('Designers', () => (
-    <Page title="Usage for Designers" subTitle="How to use the UI Kit">
+    <Page title="Resources for Designers" subTitle="How to use the UI Kit">
       <p>
         Designers can use the{' '}
         <Link href="https://www.sketchapp.com/" target="_blank">

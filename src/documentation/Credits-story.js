@@ -5,7 +5,7 @@ import { storiesOf } from '@storybook/react';
 import Link from '../components/Link';
 import Page from './Page';
 
-storiesOf('Documentation|Getting started', module)
+storiesOf('Design|Getting started', module)
   .addParameters({ options: { showPanel: false, isToolshown: false } })
   .add('Credits', () => (
     <Page

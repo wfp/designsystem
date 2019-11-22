@@ -5,7 +5,7 @@ import { storiesOf } from '@storybook/react';
 import Page from '../Page';
 import { List, ListItem } from '../../components/List';
 
-storiesOf('Documentation|Guidelines', module)
+storiesOf('Design|Guidelines', module)
   .addParameters({ options: { showPanel: false, isToolshown: false } })
   .add('Layout', () => {
     return (

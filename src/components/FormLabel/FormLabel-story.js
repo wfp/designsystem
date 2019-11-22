@@ -6,6 +6,6 @@ const additionalProps = {
   className: 'some-class',
 };
 
-storiesOf('Forms|FormLabel', module).add('Default', () => (
+storiesOf('Components|FormLabel', module).add('Default', () => (
   <FormLabel {...additionalProps}>Label</FormLabel>
 ));

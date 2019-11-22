@@ -44,5 +44,9 @@
     &:disabled:hover {
       border: $input-border;
     }
+
+    &:read-only {
+      @include read-only('border');
+    }
   }
 }

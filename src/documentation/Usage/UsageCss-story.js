@@ -6,7 +6,7 @@ import PrismCode from 'react-prism';
 import Page from '../Page';
 import Blockquote from '../../components/Blockquote';
 
-storiesOf(' Documentation|Getting started', module)
+storiesOf(' Design|Getting started', module)
   .addParameters({ options: { showPanel: false, isToolshown: false } })
   .add('CSS', () => (
     <Page title="CSS/SCSS Usage" subTitle="css styling">

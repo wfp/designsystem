@@ -1,6 +1,9 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
+import settings from '../../globals/js/settings';
+
+const { prefix } = settings;
 
 const TextInput = ({
   labelText,
@@ -20,12 +23,12 @@ const TextInput = ({
   const textInputProps = {
     id,
     onChange: evt => {
-      if (!other.disabled) {
+      if (!other.disabled && !other.readOnly) {
         onChange(evt);
       }
     },
     onClick: evt => {
-      if (!other.disabled) {
+      if (!other.disabled && !other.readOnly) {
         onClick(evt);
       }
     },
@@ -34,11 +37,14 @@ const TextInput = ({
   };
 
   const errorId = id + '-error-msg';
-  const textInputClasses = classNames('wfp--text-input', className, {
-    'wfp--text-input--light': light,
+  const textInputClasses = classNames(`${prefix}--text-input`, className, {
+    [`${prefix}--text-input--light`]: light,
+    [`${prefix}--text-input--invalid`]: invalid,
   });
-  const labelClasses = classNames('wfp--label', {
-    'wfp--visually-hidden': hideLabel,
+
+  const labelClasses = classNames(`${prefix}--label`, {
+    [`${prefix}--visually-hidden`]: hideLabel,
+    [`${prefix}--label--disabled`]: other.disabled,
   });
 
   const label = labelText ? (

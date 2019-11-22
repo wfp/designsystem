@@ -22,7 +22,7 @@ const props = {
   },
 };
 
-storiesOf('Navigation|SecondaryNavigation', module)
+storiesOf('Components|SecondaryNavigation', module)
   .add('default', () => (
     <SecondaryNavigation additional="additional Information">
       <Breadcrumb>

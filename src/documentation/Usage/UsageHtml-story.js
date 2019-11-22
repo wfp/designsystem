@@ -7,7 +7,7 @@ import Page from '../Page';
 import Blockquote from '../../components/Blockquote';
 import Link from '../../components/Link';
 
-storiesOf(' Documentation|Getting started', module)
+storiesOf(' Design|Getting started', module)
   .addParameters({ options: { showPanel: false, isToolshown: false } })
   .add('HTML', () => (
     <Page title="HTML Usage" subTitle="Use the UI Kit without react.js">

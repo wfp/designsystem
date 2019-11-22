@@ -8,7 +8,7 @@ import { iconArrowRight } from '@wfp/icons';
 import Page from './Page';
 import Blockquote from '../components/Blockquote';
 
-storiesOf('Documentation|Guidelines', module)
+storiesOf('Design|Guidelines', module)
   .addParameters({ options: { showPanel: false, isToolshown: false } })
   .add('Navigation', () => (
     <Page title="Navigation" subTitle="3-Level Navigation">

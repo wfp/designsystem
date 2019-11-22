@@ -7,7 +7,7 @@ import Blockquote from '../components/Blockquote';
 import Link from '../components/Link';
 import { linkTo } from '@storybook/addon-links';
 
-storiesOf('Documentation|Guidelines', module)
+storiesOf('Design|Guidelines', module)
   .addParameters({ options: { showPanel: false, isToolshown: false } })
   .add('Browser support', () => (
     <Page title="Browser support" subTitle="Supported browsers">
@@ -17,7 +17,7 @@ storiesOf('Documentation|Guidelines', module)
         properly or do not work at all in IE11 will need to include a warning
         message inviting the user to switch to a more modern browser. The
         warning can be found{' '}
-        <Link onClick={linkTo('Documentation|Templates', 'Browser Warning')}>
+        <Link onClick={linkTo('Design|Templates', 'Browser Warning')}>
           here
         </Link>
         .

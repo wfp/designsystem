@@ -5,7 +5,7 @@ import { storiesOf } from '@storybook/react';
 import Page from '../Page';
 import Link from '../../components/Link';
 
-storiesOf(' Documentation|Getting started', module)
+storiesOf(' Design|Getting started', module)
   .addParameters({ options: { showPanel: false, isToolshown: false } })
   .add('Tool recommendations', () => (
     <Page title="Recommended tools" subTitle="Guidelines & Recommendations">
@@ -18,10 +18,10 @@ storiesOf(' Documentation|Getting started', module)
         etc.{' '}
         <Link
           target="_blank"
-          href="https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-a-sass-stylesheet">
+          href="https://create-react-app.dev/docs/adding-a-sass-stylesheet">
           Learn more
         </Link>{' '}
-        about how to use Scss with create-react-app.
+        about how to use scss with create-react-app.
       </p>
 
       <h2>Recommended components</h2>
@@ -44,11 +44,24 @@ storiesOf(' Documentation|Getting started', module)
       </p>
 
       <h3>Maps</h3>
-      <p>
+      {/*<p>
         <Link target="_blank" href="https://www.react-simple-maps.io">
           react-simple-maps
         </Link>{' '}
         is a map component to generate simple political maps
+      </p>*/}
+      <p>
+        <Link target="_blank" href="https://github.com/uber/react-map-gl">
+          react-map-gl
+        </Link>{' '}
+        for maps using mapbox.gl
+      </p>
+
+      <p>
+        <Link target="_blank" href="https://developers.arcgis.com/javascript">
+          ArcGIS API for JavaScript
+        </Link>{' '}
+        for complex maps with custom layers
       </p>
 
       <h3>Forms</h3>

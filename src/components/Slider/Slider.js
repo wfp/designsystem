@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
+import { sliderValuePropSync } from '../../internal/FeatureFlags';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import isEqual from 'lodash.isequal';
 import TextInput from '../TextInput';
-import { sliderValuePropSync } from '../../internal/FeatureFlags';
+
+import settings from '../../globals/js/settings';
+const { prefix } = settings;
 
 const defaultFormatLabel = (value, label) => {
   return typeof label === 'function' ? label(value) : `${value}${label}`;
@@ -376,8 +379,9 @@ export default class Slider extends Component {
 
     const errorId = id + '-error-msg';
 
-    const labelClasses = classNames('wfp--label', {
-      'wfp--visually-hidden': hideLabel,
+    const labelClasses = classNames(`${prefix}--label`, {
+      [`${prefix}--visually-hidden`]: hideLabel,
+      [`${prefix}--label--disabled`]: other.disabled,
     });
 
     const label = labelText ? (

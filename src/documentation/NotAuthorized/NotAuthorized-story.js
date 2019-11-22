@@ -8,7 +8,7 @@ import Icon from '../../components/Icon';
 import Wrapper from '../../components/Wrapper';
 import { iconWarningSolid } from '@wfp/icons';
 
-storiesOf(' Documentation|Templates', module)
+storiesOf(' Design|Templates', module)
   .addParameters({ hideProps: true })
   .add('Not authorized', () => (
     <Wrapper pageWidth="lg" spacing="md">

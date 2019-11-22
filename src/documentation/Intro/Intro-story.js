@@ -13,23 +13,23 @@ import Blockquote from '../../components/Blockquote';
   </div>
 ); */
 
-storiesOf('Documentation|Getting started', module)
+storiesOf('Design|Getting started', module)
   .addParameters({ options: { showPanel: false, isToolshown: false } })
   .add('Introduction', () => (
     <div className="intro-hero">
-      <img
+      {/*<img
         alt="Hero"
         style={{
           width: '100%',
           height: 'auto',
         }}
         src={`${process.env.STORYBOOK_INTERNAL_ASSETS}internal/hero-image.jpg`}
-      />
+      />*/}
       <div
         className="intro-hero-container"
         style={{
           color: '#FFFFFF',
-          position: 'absolute',
+          //position: 'absolute',
           top: 0,
           left: 0,
           right: 0,
@@ -38,7 +38,7 @@ storiesOf('Documentation|Getting started', module)
         <h1
           style={{
             fontSize: '8vw',
-            marginBottom: '0.5em',
+            marginBottom: '0.1em',
             fontWeight: '100',
           }}>
           <span

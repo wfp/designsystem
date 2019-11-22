@@ -45,6 +45,18 @@
   }
 }
 
+@mixin read-only($type: 'border') {
+  @if ($type == 'border') {
+    border-color: $ui-02;
+    &:hover,
+    &:focus {
+      border-color: $ui-02;
+      outline: none;
+      box-shadow: none;
+    }
+  }
+}
+
 @mixin focus-outline($type: 'border') {
   @if ($type == 'border') {
     outline: 2px solid $interactive-01;

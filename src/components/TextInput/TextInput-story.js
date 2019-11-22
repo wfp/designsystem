@@ -26,13 +26,14 @@ const TextInputProps = () => ({
     'Form validation UI content (invalidText)',
     'A valid value is required'
   ),
+  readOnly: boolean('Read-only (readOnly)', false),
   helperText: text('Helper text (helperText)', 'Optional helper text.'),
   onClick: action('onClick'),
   type: select('Form control type (type)', types, 'text'),
   onChange: action('onChange'),
 });
 
-storiesOf('Forms|TextInput', module)
+storiesOf('Components|TextInput', module)
   .addDecorator(withKnobs)
   .add('Default', () => <TextInput {...TextInputProps()} />)
   .add('skeleton', () => (

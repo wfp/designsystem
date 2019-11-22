@@ -471,12 +471,19 @@ body {
 }
 
 .intro-hero {
+  height: 30vw;
+  background: $brand-01;
+
   img {
     margin-top: 0;
   }
 
   .intro-hero-container {
-    padding: 13vw 0;
+    // padding: 1vw 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   @include breakpoint(bp--lg--major) {

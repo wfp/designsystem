@@ -121,7 +121,7 @@ from '@wfp/icons'`}
 
 const wrapperStyle = { display: 'flex', flexWrap: 'wrap', margin: '0 -0.7em' };
 
-storiesOf('Documentation|Guidelines', module)
+storiesOf('Design|Core', module)
   .addParameters({ options: { showPanel: false, isToolshown: false } })
   .add('Icons', () => (
     <Page title="Icons" subTitle="Icons & Logos for User Interfaces">

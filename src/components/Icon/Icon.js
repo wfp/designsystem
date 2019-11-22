@@ -24,6 +24,7 @@ export function svgShapes(svgData) {
             cx: circle.cx,
             cy: circle.cy,
             r: circle.r,
+            fill: circle.fill,
             key: `circle${index}`,
           };
 

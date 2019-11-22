@@ -80,7 +80,7 @@ const props = {
   }),
 };
 
-storiesOf('Forms|DatePicker', module)
+storiesOf('Components|DatePicker', module)
   .addDecorator(withKnobs)
   .add('SingleDatePicker (experimental)', () => (
     <SingleDatePickerInput {...props.datePicker()} />
@@ -89,7 +89,7 @@ storiesOf('Forms|DatePicker', module)
     <DateRangePickerInput {...props.dateRangePicker()} />
   ));
 
-storiesOf('Forms|DatePicker', module)
+storiesOf('Components|DatePicker', module)
   .addDecorator(withKnobs)
   .addDecorator(story => (
     <Provider store={store}>

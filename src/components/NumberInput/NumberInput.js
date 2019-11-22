@@ -263,6 +263,7 @@ export default class NumberInput extends Component {
 
     const labelClasses = classNames(`${prefix}--label`, {
       [`${prefix}--visually-hidden`]: hideLabel,
+      [`${prefix}--label--disabled`]: other.disabled,
     });
 
     const labelTextComponent = labelText ? (

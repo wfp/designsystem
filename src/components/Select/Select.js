@@ -9,12 +9,12 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
 import { iconCaretDown } from '@wfp/icons';
-import settings from '../../globals/js/settings';
+
 import Icon from '../Icon';
 import { componentsX } from '../../internal/FeatureFlags';
 //import ChevronDownGlyph from '@carbon/icons-react/lib/chevron--down/index';
 //import WarningFilled16 from '@carbon/icons-react/lib/warning--filled/16';
-
+import settings from '../../globals/js/settings';
 const { prefix } = settings;
 
 const Select = React.forwardRef(
@@ -47,7 +47,7 @@ const Select = React.forwardRef(
     });
     const labelClasses = classNames(`${prefix}--label`, {
       [`${prefix}--visually-hidden`]: hideLabel,
-      [`${prefix}--label--disabled`]: disabled,
+      [`${prefix}--label--disabled`]: other.disabled,
     });
     const errorId = `${id}-error-msg`;
     const error = invalid ? (
