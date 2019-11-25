@@ -40,7 +40,7 @@ storiesOf('Design|Core', module)
         <ListItem>Semantic colours</ListItem>
       </List>
       <p>
-        Use the <i>70–25–5(60–30–10)</i> rule to create sense of balance and
+        Use the <i>70–25–5 (60–30–10)</i> rule to create sense of balance and
         allow the eye to move comfortably from one focal point to the next.
       </p>
       <img

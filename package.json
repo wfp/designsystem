@@ -213,6 +213,7 @@
     "react-dates": "^18.4.0",
     "react-dom": "^16.10.2",
     "react-final-form": "^4.0.2",
+    "react-markdown": "^4.2.2",
     "react-prism": "^4.3.2",
     "react-redux": "^5.0.7",
     "react-select": "^2.1.1",

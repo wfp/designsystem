@@ -47,7 +47,7 @@
   "dark-red": {
     "name": "dark-red",
     "hex": "#a21942",
-    "scss": "$color__dark-red",
+    "scss": "$color__dark-red"
   },
   "magenta": {
     "name": "magenta",
@@ -98,11 +98,11 @@
     "type": "ui",
     "description": "BannerNavigation"
   },
-  "interactive-03": {
-    "name": "interactive-03",
+  "interactive-02": {
+    "name": "interactive-02",
     "hex": "#f7b825",
-    "scss": "$interactive-03",
-    "css": "color__interactive-03",
+    "scss": "$interactive-02",
+    "css": "color__interactive-02",
     "type": "ui",
     "description": "Secondary interactive colour (recommended) to use a different accent colour please contact wfp.publications@wfp.org"
   },
@@ -112,7 +112,8 @@
     "scss": "$ui-01",
     "css": "color__ui-01",
     "type": "ui",
-    "description": "Primary container background; Secondary page background"
+    "shortDescription": "Primary container background; Secondary page background",
+    "description": "This colour is used as the page background if there are no Modules on top of it."
   },
   "ui-02": {
     "name": "ui-02",
@@ -120,7 +121,8 @@
     "scss": "$ui-02",
     "css": "color__ui-02",
     "type": "ui",
-    "description": "Primary page background; Secondary container background"
+    "shortDescription": "Primary page background; Secondary container background",
+    "description": "Use this colour as page background if there are modules on top of it to increase the contrast between the modules."
   },
   "ui-03": {
     "name": "ui-03",
@@ -128,7 +130,7 @@
     "scss": "$ui-03",
     "css": "color__ui-03",
     "type": "ui",
-    "description": "Subtle border, Tertiary background color"
+    "shortDescription": "Subtle border, Tertiary background colour"
   },
   "ui-04": {
     "name": "ui-04",
@@ -136,7 +138,7 @@
     "scss": "$ui-04",
     "css": "color__ui-04",
     "type": "ui",
-    "description": "3:1 AA element contrast; Medium contrast border"
+    "shortDescription": "3:1 AA element contrast; Medium contrast border"
   },
   "ui-05": {
     "name": "ui-05",
@@ -144,7 +146,7 @@
     "scss": "$ui-03",
     "css": "color__ui-05",
     "type": "ui",
-    "description": "4.5:1 AA element contrast; High contrast border; Emphasis elements"
+    "shortDescription": "4.5:1 AA element contrast; High contrast border; Emphasis elements"
   },
   "text-01": {
     "name": "text-01",
@@ -152,7 +154,7 @@
     "scss": "$text-01",
     "css": "color__text-01",
     "type": "ui",
-    "description": "Primary text; Body copy; Headers; Hover text color for text-02"
+    "shortDescription": "Primary text; Body copy; Headers; Hover text colour for text - 02"
   },
   "text-02": {
     "name": "text-02",
@@ -160,7 +162,7 @@
     "scss": "$text-02",
     "css": "color__text-02",
     "type": "ui",
-    "description": "Secondary text; Input labels; Help text"
+    "shortDescription": "Secondary text; Input labels; Help text"
   },
   "text-03": {
     "name": "text-03",
@@ -168,7 +170,7 @@
     "scss": "$text-03",
     "css": "color__text-03",
     "type": "ui",
-    "description": "Placeholder text"
+    "shortDescription": "Secondary text; Input labels; Help text"
   },
   "inverse-01": {
     "name": "inverse-01",

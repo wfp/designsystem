@@ -26,11 +26,22 @@ storiesOf('Design|Guidelines', module)
       <p>Currently the following browsers are supported:</p>
 
       <ul className="wfp--story__list">
-        <li>IE11 (will soon no longer be supported by the WFP UI Kit)</li>
-        <li>IE Edge latest & last four versions</li>
-        <li>Firefox latest & last four versions</li>
-        <li>Chrome latest & last four versions</li>
-        <li>Safari latest & last two versions</li>
+        <li>
+          <b>Microsoft Internet Explorer 11 (IE11)</b> soon no longer be
+          supported by the WFP UI Kit
+        </li>
+        <li>
+          <b>Microsoft Edge</b> latest & last four versions
+        </li>
+        <li>
+          <b>Mozilla Firefox</b> latest & last four versions
+        </li>
+        <li>
+          <b>Google Chrome</b> latest & last four versions
+        </li>
+        <li>
+          <b>Safari</b> latest & last two versions
+        </li>
       </ul>
 
       <p>

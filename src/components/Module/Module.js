@@ -16,6 +16,10 @@ const propTypes = {
    */
   noMargin: PropTypes.bool,
   /**
+   * Use 100% height of parent container
+   */
+  fullHeight: PropTypes.bool,
+  /**
    * Light appearance (for white backgrounds)
    */
   light: PropTypes.bool,
@@ -72,6 +76,7 @@ const Module = ({
   children,
   className,
   margin,
+  fullHeight,
   noMargin,
   withHover,
   ...other
@@ -80,6 +85,7 @@ const Module = ({
     {
       'wfp--module--dark': dark,
       'wfp--module--no-margin': noMargin,
+      'wfp--module--full-height': fullHeight,
       'wfp--module--margin-xs': margin === 'xs',
       'wfp--module--margin-md': margin === 'md',
       'wfp--module--margin-lg': margin === 'lg',

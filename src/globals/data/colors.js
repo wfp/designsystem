@@ -8,18 +8,18 @@ const colors = {
     name: 'navy',
     hex: '#19486a',
     scss: '$color__navy',
-    description: 'Same as SDG 17',
+    shortDescription: 'Same as SDG 17',
   },
   aqua: {
     name: 'aqua',
     hex: '#26bde2',
-    description: 'Same as SDG 6',
+    shortDescription: 'Same as SDG 6',
     scss: '$color__aqua',
   },
   'dark-green': {
     name: 'dark-green',
     hex: '#3f7e44',
-    description: 'Same as SDG 13',
+    shortDescription: 'Same as SDG 13',
     scss: '$color__dark-green',
   },
   lime: {
@@ -30,37 +30,37 @@ const colors = {
   yellow: {
     name: 'yellow',
     hex: '#fcc30b',
-    description: 'Same as SDG 7',
+    shortDescription: 'Same as SDG 7',
     scss: '$color__yellow',
   },
   ochre: {
     name: 'ochre',
     hex: '#dda63a',
-    description: 'Same as SDG 2',
+    shortDescription: 'Same as SDG 2',
     scss: '$color__ochre',
   },
   orange: {
     name: 'orange',
     hex: '#fd6925',
-    description: 'Same as SDG 9',
+    shortDescription: 'Same as SDG 9',
     scss: '$color__orange',
   },
   red: {
     name: 'red',
     hex: '#c5192d',
-    description: 'Same as SDG 1',
+    shortDescription: 'Same as SDG 1',
     scss: '$color__red',
   },
   'dark-red': {
     name: 'dark-red',
     hex: '#a21942',
-    description: 'Same as SDG 8',
+    shortDescription: 'Same as SDG 8',
     scss: '$color__dark-red',
   },
   magenta: {
     name: 'magenta',
     hex: '#dd1367',
-    description: 'Same as SDG 10',
+    shortDescription: 'Same as SDG 10',
     scss: '$color__magenta',
   },
   female: {
@@ -68,61 +68,61 @@ const colors = {
     hex: '#3f7e44',
     scss: '$color__female',
     type: 'symbolic',
-    description: 'Indicate female',
+    shortDescription: 'Indicate female',
   },
   male: {
     name: 'male',
     hex: '#26bde2',
     scss: '$color__male',
     type: 'symbolic',
-    description: 'Indicate male',
+    shortDescription: 'Indicate male',
   },
   national: {
     name: 'national',
     hex: '#3C5979',
     scss: '$color__national',
     type: 'symbolic',
-    description: 'Indicate national staff',
+    shortDescription: 'Indicate national staff',
   },
   international: {
     name: 'international',
     hex: '#fcc30b',
     scss: '$color__international',
     type: 'symbolic',
-    description: 'Indicate international staff',
+    shortDescription: 'Indicate international staff',
   },
   'interactive-01': {
     name: 'interactive-01',
     hex: '#0b77c2',
     scss: '$interactive-01',
     css: 'color__interactive-01',
-    type: 'ui',
-    description: 'Primary interactive color, Primary buttons',
+    type: 'brand',
+    shortDescription: 'Primary interactive color, Primary buttons',
+  },
+  'interactive-02': {
+    name: 'interactive-02',
+    hex: '#f7b825',
+    scss: '$interactive-02',
+    css: 'color__interactive-02',
+    type: 'brand',
+    shortDescription:
+      'Secondary interactive colour (recommended); to use a different accent colour please contact wfp.publications@wfp.org',
   },
   'brand-01': {
     name: 'brand-01',
     hex: '#0A6EB4',
     scss: '$brand-01',
     css: 'color__brand-01',
-    type: 'ui',
-    description: 'WFP brand color, same as main',
+    type: 'brand',
+    shortDescription: 'WFP brand color, same as main',
   },
   'brand-02': {
     name: 'brand-02',
     hex: '#085387',
     scss: '$brand-02',
     css: 'color__brand-02',
-    type: 'ui',
-    description: 'BannerNavigation',
-  },
-  'interactive-03': {
-    name: 'interactive-03',
-    hex: '#f7b825',
-    scss: '$interactive-03',
-    css: 'color__interactive-03',
-    type: 'ui',
-    description:
-      'Secondary interactive colour (recommended); to use a different accent colour please contact wfp.publications@wfp.org',
+    type: 'brand',
+    shortDescription: 'BannerNavigation',
   },
   'ui-01': {
     name: 'ui-01',
@@ -130,7 +130,9 @@ const colors = {
     scss: '$ui-01',
     css: 'color__ui-01',
     type: 'ui',
-    description: 'Primary container background; Secondary page background',
+    shortDescription: 'Primary container background; Secondary page background',
+    description:
+      'This colour is used as the page background if there are no Modules on top of it.',
   },
   'ui-02': {
     name: 'ui-02',
@@ -138,7 +140,9 @@ const colors = {
     scss: '$ui-02',
     css: 'color__ui-02',
     type: 'ui',
-    description: 'Primary page background; Secondary container background',
+    shortDescription: 'Primary page background; Secondary container background',
+    description:
+      'Use this colour as page background if there are modules on top of it to increase the contrast between the modules.',
   },
   'ui-03': {
     name: 'ui-03',
@@ -146,7 +150,7 @@ const colors = {
     scss: '$ui-03',
     css: 'color__ui-03',
     type: 'ui',
-    description: 'Subtle border, Tertiary background color',
+    shortDescription: 'Subtle border, Tertiary background color',
   },
   'ui-04': {
     name: 'ui-04',
@@ -154,7 +158,7 @@ const colors = {
     scss: '$ui-04',
     css: 'color__ui-04',
     type: 'ui',
-    description: '3:1 AA element contrast; Medium contrast border',
+    shortDescription: '3:1 AA element contrast; Medium contrast border',
   },
   'ui-05': {
     name: 'ui-05',
@@ -162,7 +166,7 @@ const colors = {
     scss: '$ui-03',
     css: 'color__ui-05',
     type: 'ui',
-    description:
+    shortDescription:
       '4.5:1 AA element contrast; High contrast border; Emphasis elements',
   },
   'text-01': {
@@ -171,7 +175,7 @@ const colors = {
     scss: '$text-01',
     css: 'color__text-01',
     type: 'ui',
-    description:
+    shortDescription:
       'Primary text; Body copy; Headers; Hover text color for text-02',
   },
   'text-02': {
@@ -180,7 +184,7 @@ const colors = {
     scss: '$text-02',
     css: 'color__text-02',
     type: 'ui',
-    description: 'Secondary text; Input labels; Help text',
+    shortDescription: 'Secondary text; Input labels; Help text',
   },
   'text-03': {
     name: 'text-03',
@@ -188,7 +192,7 @@ const colors = {
     scss: '$text-03',
     css: 'color__text-03',
     type: 'ui',
-    description: 'Placeholder text',
+    shortDescription: 'Placeholder text',
   },
   'inverse-01': {
     name: 'inverse-01',
@@ -224,7 +228,7 @@ const colors = {
     scss: '$sdg-01',
     css: 'color__sdg-01',
     type: 'sdg',
-    description: 'No poverty, red',
+    shortDescription: 'No poverty, red',
   },
   'sdg-02': {
     name: 'sdg-02',
@@ -232,7 +236,7 @@ const colors = {
     scss: '$sdg-02',
     css: 'color__sdg-02',
     type: 'sdg',
-    description: 'Zero hunger, mustard',
+    shortDescription: 'Zero hunger, mustard',
   },
   'sdg-03': {
     name: 'sdg-03',
@@ -240,7 +244,7 @@ const colors = {
     scss: '$sdg-03',
     css: 'color__sdg-03',
     type: 'sdg',
-    description: 'Good health and well-being, kelly green',
+    shortDescription: 'Good health and well-being, kelly green',
   },
   'sdg-04': {
     name: 'sdg-04',
@@ -248,7 +252,7 @@ const colors = {
     scss: '$sdg-04',
     css: 'color__sdg-04',
     type: 'sdg',
-    description: 'Quality education, dark red',
+    shortDescription: 'Quality education, dark red',
   },
   'sdg-05': {
     name: 'sdg-05',
@@ -256,7 +260,7 @@ const colors = {
     scss: '$sdg-05',
     css: 'color__sdg-05',
     type: 'sdg',
-    description: 'Gender equality, red orange',
+    shortDescription: 'Gender equality, red orange',
   },
   'sdg-06': {
     name: 'sdg-06',
@@ -264,7 +268,7 @@ const colors = {
     scss: '$sdg-06',
     css: 'color__sdg-06',
     type: 'sdg',
-    description: 'Clean water and sanitation, bright blue',
+    shortDescription: 'Clean water and sanitation, bright blue',
   },
   'sdg-07': {
     name: 'sdg-07',
@@ -272,7 +276,7 @@ const colors = {
     scss: '$sdg-07',
     css: 'color__sdg-07',
     type: 'sdg',
-    description: 'Affordable and clean energy, yellow',
+    shortDescription: 'Affordable and clean energy, yellow',
   },
   'sdg-08': {
     name: 'sdg-08',
@@ -280,7 +284,7 @@ const colors = {
     scss: '$sdg-08',
     css: 'color__sdg-08',
     type: 'sdg',
-    description: 'Decent work and economic growth, burgundy red',
+    shortDescription: 'Decent work and economic growth, burgundy red',
   },
   'sdg-09': {
     name: 'sdg-09',
@@ -288,7 +292,7 @@ const colors = {
     scss: '$sdg-09',
     css: 'color__sdg-09',
     type: 'sdg',
-    description: 'Industry, innovation and infrastructure, orange',
+    shortDescription: 'Industry, innovation and infrastructure, orange',
   },
   'sdg-10': {
     name: 'sdg-10',
@@ -296,7 +300,7 @@ const colors = {
     scss: '$sdg-10',
     css: 'color__sdg-10',
     type: 'sdg',
-    description: 'Reduced inequalities, magentas',
+    shortDescription: 'Reduced inequalities, magentas',
   },
   'sdg-11': {
     name: 'sdg-11',
@@ -304,7 +308,7 @@ const colors = {
     scss: '$sdg-11',
     css: 'color__sdg-11',
     type: 'sdg',
-    description: 'Sustainable cities and communities, golden yellow',
+    shortDescription: 'Sustainable cities and communities, golden yellow',
   },
   'sdg-12': {
     name: 'sdg-12',
@@ -312,7 +316,7 @@ const colors = {
     scss: '$sdg-12',
     css: 'color__sdg-12',
     type: 'sdg',
-    description: 'Responsible consumption and production, dark mustard',
+    shortDescription: 'Responsible consumption and production, dark mustard',
   },
   'sdg-13': {
     name: 'sdg-13',
@@ -320,7 +324,7 @@ const colors = {
     scss: '$sdg-10',
     css: 'color__sdg-13',
     type: 'sdg',
-    description: 'Climate action, dark green',
+    shortDescription: 'Climate action, dark green',
   },
   'sdg-14': {
     name: 'sdg-14',
@@ -328,7 +332,7 @@ const colors = {
     scss: '$sdg-14',
     css: 'color__sdg-14',
     type: 'sdg',
-    description: 'Life below water, blue',
+    shortDescription: 'Life below water, blue',
   },
   'sdg-15': {
     name: 'sdg-15',
@@ -336,7 +340,7 @@ const colors = {
     scss: '$sdg-15',
     css: 'color__sdg-15',
     type: 'sdg',
-    description: 'Life on land, lime green',
+    shortDescription: 'Life on land, lime green',
   },
   'sdg-16': {
     name: 'sdg-16',
@@ -344,7 +348,7 @@ const colors = {
     scss: '$sdg-16',
     css: 'color__sdg-16',
     type: 'sdg',
-    description: 'Peace, justice and stron institutions, royal blue',
+    shortDescription: 'Peace, justice and stron institutions, royal blue',
   },
   'sdg-17': {
     name: 'sdg-17',
@@ -352,7 +356,7 @@ const colors = {
     scss: '$sdg-17',
     css: 'color__sdg-17',
     type: 'sdg',
-    description: 'Partnership for the goals, navy blue',
+    shortDescription: 'Partnership for the goals, navy blue',
   },
   'support-01': {
     name: 'support-01',
@@ -360,7 +364,9 @@ const colors = {
     scss: '$support-01',
     css: 'color__support-01',
     type: 'support',
-    description: 'Error (same as color__red)',
+    shortDescription: 'Error (same as color__red)',
+    description:
+      'Use the error color to indicate an error or to focus the attention on something which is crucial to see. Paired with a cross icon, red delivers the message that something went wrong.',
   },
   'support-02': {
     name: 'support-02',
@@ -368,7 +374,9 @@ const colors = {
     scss: '$support-02',
     css: 'color__support-02',
     type: 'support',
-    description: 'Success',
+    shortDescription: 'Success',
+    description:
+      'Use green to indicate success state. Paired with a checkmark icon the user knows that the operation was successfully completed.',
   },
   'support-03': {
     name: 'support-03',
@@ -376,7 +384,9 @@ const colors = {
     scss: '$support-03',
     css: 'color__support-03',
     type: 'support',
-    description: 'Warning (same as color__yellow)',
+    shortDescription: 'Warning (same as color__yellow)',
+    description:
+      'Use yellow to indicate a transient warning which is less important than an error message. Yellow typically consists of items which require the user’s immediate attention, or indicate a waiting period. Although this overlaps with the use of red, yellow is more transient in nature.',
   },
 };
 
