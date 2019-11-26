@@ -47,6 +47,10 @@ const TextInput = ({
     [`${prefix}--label--disabled`]: other.disabled,
   });
 
+  const helperTextClasses = classNames(`${prefix}--form__helper-text`, {
+    [`${prefix}--form__helper-text--disabled`]: other.disabled,
+  });
+
   const label = labelText ? (
     <label htmlFor={id} className={labelClasses}>
       {labelText}
@@ -73,7 +77,7 @@ const TextInput = ({
   );
 
   const helper = helperText ? (
-    <div className="wfp--form__helper-text">{helperText}</div>
+    <div className={helperTextClasses}>{helperText}</div>
   ) : null;
 
   return (

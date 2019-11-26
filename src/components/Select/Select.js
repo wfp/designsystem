@@ -43,11 +43,12 @@ const Select = React.forwardRef(
       [`${prefix}--select--small`]: small,
       [`${prefix}--select--light`]: light,
       [`${prefix}--select--invalid`]: invalid,
+      [`${prefix}--select--disabled`]: disabled,
       [className]: className,
     });
     const labelClasses = classNames(`${prefix}--label`, {
       [`${prefix}--visually-hidden`]: hideLabel,
-      [`${prefix}--label--disabled`]: other.disabled,
+      [`${prefix}--label--disabled`]: disabled,
     });
     const errorId = `${id}-error-msg`;
     const error = invalid ? (
@@ -99,7 +100,7 @@ const Select = React.forwardRef(
         <div className={selectClasses}>
           {labelTextComponent}
           {!inline && helper}
-          {componentsX && inline && (
+          {inline && (
             <>
               <div className={`${prefix}--select-input--inline__wrapper`}>
                 <div

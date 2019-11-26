@@ -51,6 +51,14 @@ storiesOf(' Design|Getting started', module)
           {`<Button>ButtonText</Button>`}
         </PrismCode>
       </Blockquote>
+      <h3>Polyfills</h3>
+      <p>
+        Polyfills are needed for IE browsers. We recommend{' '}
+        <Link href="https://babeljs.io/docs/en/babel-preset-env">
+          babel-preset-env
+        </Link>{' '}
+        for it.
+      </p>
       <h3>CSS</h3>
       <p>
         See the{' '}

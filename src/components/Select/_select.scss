@@ -178,7 +178,7 @@
         }
       }
 
-      &:disabled ~ * {
+      &:disabled {
         opacity: 0.5;
         cursor: not-allowed;
       }
@@ -193,6 +193,10 @@
         }
       }
     }
+  }
+
+  .#{$prefix}--select-input:disabled ~ .#{$prefix}--select__arrow {
+    opacity: 0.5;
   }
 
   //Skeleton State

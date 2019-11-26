@@ -46,6 +46,10 @@ const TextArea = ({
     </label>
   ) : null;
 
+  const helperTextClasses = classNames(`${prefix}--form__helper-text`, {
+    [`${prefix}--form__helper-text--disabled`]: other.disabled,
+  });
+
   const error = invalid ? (
     <div className="wfp--form-requirement">{invalidText}</div>
   ) : null;
@@ -62,7 +66,7 @@ const TextArea = ({
   );
 
   const helper = helperText ? (
-    <div className="wfp--form__helper-text">{helperText}</div>
+    <div className={helperTextClasses}>{helperText}</div>
   ) : null;
 
   return (
