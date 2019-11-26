@@ -26,12 +26,13 @@ storiesOf('Design|Core', module)
       the harder it is for users to complete their tasks.
     </p>*/}
 
-      <Blockquote title="Editorial Guidelines" type="warning">
+      <Blockquote title="WFP editorial style guide">
         <p>
           All editorial guidelines can be found in{' '}
           <Link href="https://cdn.wfp.org/guides/editorial" target="_blank">
             this guide
           </Link>
+          .
         </p>
       </Blockquote>
 

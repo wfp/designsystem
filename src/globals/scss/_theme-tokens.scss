@@ -38,6 +38,9 @@
   $nav-02: $color__main-80 !default !global;
   $nav-03: $color__magenta-30 !default !global;
   $nav-04: $color__magenta-60 !default !global;
+  $disabled: $color__navy-gray-10 !default !global;
+  $disabled-01: $color__navy-gray-10 !default !global;
+  $disabled-02: $color__navy-gray-8 !default !global;
 
   $hover-primary: darken($interactive-01, 10%) !default !global;
   $hover-primary-text: darken($interactive-01, 15%) !default !global;

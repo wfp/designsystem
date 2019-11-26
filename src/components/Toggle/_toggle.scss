@@ -34,8 +34,9 @@
       display: block;
       content: '';
       width: 100%;
-      height: rem(4px);
-      top: -2px;
+      height: rem(28px);
+      top: rem(-14px);
+      border-radius: rem(28px);
       background-color: $ui-05;
       transition: $transition--base $carbon--standard-easing;
       cursor: pointer;
@@ -45,11 +46,11 @@
       box-sizing: border-box;
       position: absolute;
       display: block;
-      border: 2px solid $ui-05;
+      border: 3px solid $ui-05;
       cursor: pointer;
-      top: -12px;
-      width: rem(24px);
-      height: rem(24px);
+      top: -14px;
+      width: rem(28px);
+      height: rem(28px);
       background-color: $ui-01;
       border-radius: 50%;
       content: '';
@@ -127,7 +128,7 @@
 
     &:after {
       transform: translateX(24px);
-      background-color: $interactive-01;
+      background-color: $ui-01;
       box-shadow: none;
       border-color: $interactive-01;
     }
