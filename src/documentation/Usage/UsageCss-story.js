@@ -15,20 +15,24 @@ storiesOf(' Design|Getting started', module)
         use it from the CDN.
       </p>
 
-      <h3>CDN Usage</h3>
+      <h3>React import</h3>
+      <p>You can also import the css directly from the npm package.</p>
+      <Blockquote title="Import css via react" kind="code">
+        <PrismCode component="pre" className="language-css">
+          {`// Import all stylesheets
+import  '~@wfp/ui/assets/css/styles.css';
+`}
+        </PrismCode>
+      </Blockquote>
+      <p>Make sure you have a scss loader installed.</p>
+      <Blockquote title="Import scss via react" kind="code">
+        <PrismCode component="pre" className="language-css">
+          {`// Import all stylesheets
+import  '~@wfp/ui/source/globals/scss/styles';
 
-      <p>
-        Import the WFP UI css from the WFP CDN. Change the version number to the
-        UI Kit version you are using.
-      </p>
-
-      <Blockquote title="CDN" kind="code">
-        <PrismCode component="pre" className="language-html">
-          {`<link
-  rel="stylesheet"
-  type="text/css"
-  href="https://cdn.wfp.org/guides/ui/v1.1.16/assets/css/styles.min.css"
-/>`}
+// Only import the Button stylesheet
+import '~@wfp/ui/source/components/Button/button';
+`}
         </PrismCode>
       </Blockquote>
       <h3>SCSS</h3>
@@ -56,28 +60,20 @@ $color__main: #0076FF;
 @import "~@wfp/ui/source/globals/scss/vars";`}
         </PrismCode>
       </Blockquote>
+      <h3>CDN Usage</h3>
 
-      <h3>React import</h3>
-      <p>You can also import the css directly from the npm package.</p>
-      <Blockquote title="Import scss via react" kind="code">
-        <PrismCode component="pre" className="language-css">
-          {`
-// Import all stylesheets
-import  '~@wfp/ui/assets/css/styles.css';
-`}
-        </PrismCode>
-      </Blockquote>
-      <p>Make sure you have a scss loader installed.</p>
-      <Blockquote title="Import scss via react" kind="code">
-        <PrismCode component="pre" className="language-css">
-          {`
-// 
-// Import all stylesheets
-import  '~@wfp/ui/source/globals/scss/styles';
+      <p>
+        Import the WFP UI css from the WFP CDN. Change the version number to the
+        UI Kit version you are using.
+      </p>
 
-// Only import the Button stylesheet
-import '~@wfp/ui/source/components/Button/button';
-`}
+      <Blockquote title="CDN" kind="code">
+        <PrismCode component="pre" className="language-html">
+          {`<link
+rel="stylesheet"
+type="text/css"
+href="https://cdn.wfp.org/guides/ui/v1.1.16/assets/css/styles.min.css"
+/>`}
         </PrismCode>
       </Blockquote>
     </Page>
