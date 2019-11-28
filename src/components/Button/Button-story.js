@@ -73,6 +73,7 @@ storiesOf('Components|Button', module)
         <Button kind="secondary" {...setProps}>
           Secondary button
         </Button>
+        &nbsp;
         <Button kind="primary" {...setProps}>
           Primary button
         </Button>

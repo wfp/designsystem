@@ -4,6 +4,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import Page from '../Page';
 import Link from '../../components/Link';
+import { linkTo } from '@storybook/addon-links';
 
 storiesOf(' Design|Getting started', module)
   .addParameters({ options: { showPanel: false, isToolshown: false } })
@@ -44,6 +45,14 @@ storiesOf(' Design|Getting started', module)
       </p>
 
       <h3>Maps</h3>
+
+      <p>
+        Please have a look at the{' '}
+        <Link onClick={linkTo('Design|Guidelines', 'Maps')}>
+          Map guidelines
+        </Link>
+        .
+      </p>
       {/*<p>
         <Link target="_blank" href="https://www.react-simple-maps.io">
           react-simple-maps

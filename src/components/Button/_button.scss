@@ -63,6 +63,8 @@
     }
   }
 
+  /* Standard syntax */
+
   .#{$prefix}--btn {
     @include button-base;
   }
@@ -75,6 +77,21 @@
       $hover-primary,
       $ui-01
     );
+  }
+
+  @keyframes slidein {
+    from {
+      box-shadow: 0 0 0 0px rgba($ui-05, 0.7);
+    }
+
+    to {
+      box-shadow: 0 0 0 7px rgba($ui-05, 0);
+    }
+  }
+
+  .#{$prefix}--btn--animating {
+    animation-duration: 0.5s;
+    animation-name: slidein;
   }
 
   .#{$prefix}--btn--navigation {
@@ -258,7 +275,7 @@
 
   .#{$prefix}--btn--secondary + .#{$prefix}--btn--primary,
   .#{$prefix}--btn--tertiary + .#{$prefix}--btn--danger--primary {
-    margin-left: $spacing-md;
+    margin-left: $spacing-xs;
   }
 
   // Skeleton State
@@ -296,14 +313,14 @@
   }
 
   .#{$prefix}--btn--secondary {
-    @include button-theme--x(
+    /*@include button-theme--x(
       $ibm-colors__gray--80,
       $ibm-colors__gray--80,
       $inverse-01,
       $ibm-colors__gray--70,
       $inverse-01,
       $ibm-colors__gray--60
-    );
+    );*/
 
     &:hover,
     &:focus {

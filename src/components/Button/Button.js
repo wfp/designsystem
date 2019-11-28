@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { useState } from 'react';
 import Icon from '../Icon';
 import classNames from 'classnames';
 import { ButtonTypes } from '../../prop-types/types';
@@ -16,8 +16,11 @@ const Button = ({
   type,
   icon,
   iconDescription,
+  onClick,
   ...other
 }) => {
+  const [count, setCount] = useState(0);
+
   const buttonClasses = classNames(className, {
     'wfp--btn': true,
     'wfp--btn--sm': small,
@@ -31,6 +34,7 @@ const Button = ({
     'wfp--btn--inverse': kind === 'inverse',
     'wfp--btn--danger--primary': kind === 'danger--primary',
     'wfp--btn--tertiary': kind === 'tertiary',
+    'wfp--btn--animating': count,
   });
 
   const commonProps = {
@@ -47,12 +51,25 @@ const Button = ({
     />
   ) : null;
 
+  const endAnimation = () => {
+    setCount(false);
+  };
+
+  const onClickAnimation = e => {
+    if (onClick) {
+      onClick(e);
+    }
+    setCount(true);
+    setTimeout(endAnimation, 500);
+  };
+
   const button = (
     <button
       {...other}
       {...commonProps}
       disabled={disabled}
       type={type}
+      onClick={onClickAnimation}
       ref={other.inputref}>
       {children}
       {buttonImage}
@@ -65,6 +82,7 @@ const Button = ({
       {...commonProps}
       href={href}
       role="button"
+      onClick={onClickAnimation}
       ref={other.inputref}>
       {children}
       {buttonImage}

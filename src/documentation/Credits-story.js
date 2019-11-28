@@ -12,7 +12,7 @@ storiesOf('Design|Getting started', module)
       title="Credits & License"
       subTitle="Introduction to the new WFP UI Kit">
       <p>
-        <Link href="http://brand.manuals.wfp.org/">
+        <Link href="http://brand.manuals.wfp.org/" target="_blank">
           The World Food Programme’s (WFP) Branding Guidance
         </Link>{' '}
         was published first in 2009 and has now been effectively implemented
@@ -24,17 +24,23 @@ storiesOf('Design|Getting started', module)
 
       <ul className="wfp--story__list">
         <li>
-          <Link href="https://github.com/carbon-design-system/carbon-components">
+          <Link
+            href="https://github.com/carbon-design-system/carbon-components"
+            target="_blank">
             Carbon Design System by IBM
           </Link>
         </li>
         <li>
-          <Link href="https://designsystem.digital.gov/page-templates">
+          <Link
+            href="https://designsystem.digital.gov/page-templates"
+            target="_blank">
             U.S. Webdesign System
           </Link>
         </li>
         <li>
-          <Link href="https://github.com/frederik-jacques/sketch-favicon-exporter-template">
+          <Link
+            href="https://github.com/frederik-jacques/sketch-favicon-exporter-template"
+            target="_blank">
             Sketch Favicon Exporter Template
           </Link>
         </li>
