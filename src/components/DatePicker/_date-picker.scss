@@ -415,6 +415,7 @@
     padding-top: 22px;
     padding-bottom: 37px;
     caption-side: initial;
+    margin-bottom: $spacing-2xs;
   }
   .CalendarMonth_caption__verticalScrollable {
     padding-top: 12px;
@@ -750,8 +751,10 @@
     line-height: normal;
     overflow: visible;
     cursor: pointer;
-    padding: 10px;
-    margin: 0 10px 0 5px;
+    padding: 5px;
+    height: 34px;
+    width: 34px;
+    margin: 0 10px 0 15px;
     position: absolute;
     right: 0;
     top: 50%;
@@ -762,7 +765,7 @@
   }
   .DateRangePickerInput_clearDates_default:focus,
   .DateRangePickerInput_clearDates_default:hover {
-    background: #dbdbdb;
+    //background: #dbdbdb;
     border-radius: 50%;
   }
   .DateRangePickerInput_clearDates__hide {

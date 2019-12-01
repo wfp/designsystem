@@ -53,11 +53,13 @@ storiesOf(' Design|Getting started', module)
       </p>
       <h3>Assets</h3>
       <p>All logo variations and Favicons</p>
-      <Button href="https://github.com/wfp/ui-design-kit/blob/master/WFP%20Logos.sketch?raw=true">
-        Logos (Sketch)
-      </Button>{' '}
-      <Button href="https://github.com/wfp/ui-design-kit/blob/master/WFP%20Favicons.sketch?raw=true">
-        Favicons (Sketch)
-      </Button>
+      <p>
+        <Button href="https://github.com/wfp/ui-design-kit/blob/master/WFP%20Logos.sketch?raw=true">
+          Logos (Sketch)
+        </Button>{' '}
+        <Button href="https://github.com/wfp/ui-design-kit/blob/master/WFP%20Favicons.sketch?raw=true">
+          Favicons (Sketch)
+        </Button>
+      </p>
     </Page>
   ));

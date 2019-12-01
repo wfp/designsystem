@@ -9,6 +9,7 @@ import Page from '../Page';
 import Blockquote from '../../components/Blockquote';
 import { Module, ModuleBody } from '../../components/Module';
 import colors from '../../globals/data/colors';
+import { hex, score } from 'wcag-contrast';
 
 import './_colours.scss';
 
@@ -102,8 +103,16 @@ storiesOf('Design|Guidelines', module)
           <Module fullHeight noMargin light className="colour__item">
             <div
               className="colour__field"
-              style={{ backgroundColor: color.hex }}
-            />
+              style={{ backgroundColor: color.hex }}>
+              <div className="colour__contrast">
+                <span>A</span>
+                <div>>{score(hex(color.hex, '#000000'))}</div>
+              </div>
+              <div className="colour__contrast colour__contrast--light">
+                <span>A</span>
+                <div>{score(hex(color.hex, '#FFFFFF'))}</div>
+              </div>
+            </div>
             <div
               style={{
                 flexGrow: '1',
@@ -111,7 +120,7 @@ storiesOf('Design|Guidelines', module)
                 lineHeight: '2em',
               }}>
               <ModuleBody>
-                <h4>{color.name}</h4>
+                <h4>{color.name}ddd</h4>
                 {color.shortDescription && (
                   <h4 className="wfp--story__sub-heading">
                     {color.shortDescription}
