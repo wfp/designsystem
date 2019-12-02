@@ -14,29 +14,26 @@
   .#{$prefix}--list {
     @include reset;
     @include font-family;
-
-    //@include typescale('epsilon');
-    //@include font-smoothing;
     .#{$prefix}--list-item--checkmark,
     .#{$prefix}--list-item--cross {
       list-style-type: none;
       position: relative;
-      //padding-left: 0;
-      //margin-left: -1.6em;
-
-      &:before {
-        color: $support-02;
+      .#{$prefix}--list-item__icon {
         position: absolute;
-        font-size: 1em;
-        left: -1.4em;
-        content: '✔';
+        left: -1.4rem;
+        top: 0.3em;
+        path {
+          fill: $support-02;
+        }
       }
     }
 
     .#{$prefix}--list-item--cross {
-      &:before {
-        color: $support-01;
-        content: '✘';
+      .#{$prefix}--list-item__icon {
+        top: 0.3em;
+        path {
+          fill: $support-01;
+        }
       }
     }
   }
