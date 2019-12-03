@@ -2,6 +2,32 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+# [1.3.0-alpha.31](https://github.com/WFP/UI/compare/v1.3.0-alpha.30...v1.3.0-alpha.31) (2019-12-03)
+
+
+### Bug Fixes
+
+* **Footer:** SDG logo fixed ([98eb6c3](https://github.com/WFP/UI/commit/98eb6c3))
+* **Icon:** remove iconTitle from props ([11c27d7](https://github.com/WFP/UI/commit/11c27d7))
+
+
+### Features
+
+* **Button:** onClick animation added ([87d9ac4](https://github.com/WFP/UI/commit/87d9ac4))
+* **colours:** new colour page and changelog ([2ef611f](https://github.com/WFP/UI/commit/2ef611f))
+* **icons:** custom colors are now supported, emergency icons added ([f409c35](https://github.com/WFP/UI/commit/f409c35))
+* **inputs:** read-only state added and other changes ([8dd71cb](https://github.com/WFP/UI/commit/8dd71cb))
+* **List:** checkmark and cross with custom icons ([b2a236f](https://github.com/WFP/UI/commit/b2a236f))
+* **Select:** disabled state improved ([a230986](https://github.com/WFP/UI/commit/a230986))
+* **Storybook:** favicon now visible in build ([4093726](https://github.com/WFP/UI/commit/4093726))
+* **Toggle:** new design for toggle input ([5ec81b8](https://github.com/WFP/UI/commit/5ec81b8))
+
+
+
+# Change Log
+
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
 # [1.3.0-alpha.30](https://github.com/WFP/UI/compare/v1.3.0-alpha.29...v1.3.0-alpha.30) (2019-11-12)
 
 ### Bug Fixes
