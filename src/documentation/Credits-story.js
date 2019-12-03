@@ -7,7 +7,7 @@ import Page from './Page';
 
 storiesOf('Design|Getting started', module)
   .addParameters({ options: { showPanel: false, isToolshown: false } })
-  .add('Credits', () => (
+  .add('Credits & Development', () => (
     <Page
       title="Credits & License"
       subTitle="Introduction to the new WFP UI Kit">
@@ -45,5 +45,30 @@ storiesOf('Design|Getting started', module)
           </Link>
         </li>
       </ul>
+      <h2>Contributing</h2>
+      <p>
+        Development is made on a GitHub repository. Feel free create an Issue or
+        submit a pull request.{' '}
+        <Link href="https://github.com/wfp/ui" target="_blank">
+          Project on GitHub
+        </Link>
+      </p>
+      <br />
+      <iframe
+        title="GitHub Like"
+        src="https://ghbtns.com/github-btn.html?user=wfp&repo=ui&type=star&count=true&size=large"
+        frameBorder="0"
+        scrolling="0"
+        width="160px"
+        height="30px"
+      />
+      <h3>NPM</h3>
+      <p>
+        npm is a package manager for the JavaScript programming language. All
+        versions of the UI Kit will be published there.{' '}
+        <Link href="https://www.npmjs.com/package/@wfp/ui" target="_blank">
+          View package on npm
+        </Link>
+      </p>
     </Page>
   ));

@@ -101,6 +101,10 @@
       margin-top: $spacing-2xl;
     }
 
+    ul + h2 {
+      margin-top: $spacing-xl;
+    }
+
     p + h3 {
       margin-top: $spacing-2xl;
     }
