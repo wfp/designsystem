@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+# [1.3.0-alpha.32](https://github.com/WFP/UI/compare/v1.3.0-alpha.31...v1.3.0-alpha.32) (2019-12-03)
+
+
+
+# Change Log
+
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
 # [1.3.0-alpha.31](https://github.com/WFP/UI/compare/v1.3.0-alpha.30...v1.3.0-alpha.31) (2019-12-03)
 
 
