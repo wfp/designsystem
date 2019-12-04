@@ -16,9 +16,11 @@ const Value = ({ value, secondaryValue, className, href, title, ...other }) => {
   const classNames = classnames(`${prefix}--value`, className);
   return (
     <div className={classNames} {...other}>
-      <div className={`${prefix}--title`}>{title}</div>
-      <div className={`${prefix}--primary-value`}>{value}</div>
-      <div className={`${prefix}--secondary-value`}>{secondaryValue}</div>
+      <h4 className={`${prefix}--value__ttitle`}>{title}</h4>
+      <div className={`${prefix}--value__primary-value`}>{value}</div>
+      <div className={`${prefix}--value__secondary-value`}>
+        {secondaryValue}
+      </div>
     </div>
   );
 };

@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
-import { withResizeDetector } from 'react-resize-detector';
 import TabContent from '../TabContent';
 
 class Tabs extends React.Component {
@@ -102,16 +101,11 @@ class Tabs extends React.Component {
 
   componentDidMount() {
     this.getSizes();
+    window.addEventListener('resize', this.getSizes);
   }
 
-  componentDidUpdate(prevProps) {
-    if (
-      prevProps !== this.props
-      //prevProps.children !== this.props.children &&
-      //prevProps.active !== this.props.active
-    ) {
-      this.getSizes();
-    }
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.getSizes);
   }
 
   getTabs() {
@@ -270,4 +264,4 @@ class Tabs extends React.Component {
   }
 }
 
-export default withResizeDetector(Tabs);
+export default Tabs;

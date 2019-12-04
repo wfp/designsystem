@@ -1,26 +1,28 @@
 import React from 'react';
-import Link from '../Link';
+import Value from '../Value';
 import { shallow } from 'enzyme';
-/*
-describe('Link', () => {
+
+describe('Value', () => {
   describe('Renders as expected', () => {
-    const link = shallow(
-      <Link href="www.google.com" className="some-class">
-        A simple link
-      </Link>
+    const wrapper = shallow(
+      <Value
+        value="value"
+        secondaryValue="secondaryValue"
+        title="title"
+        className="some-class"
+      />
     );
     it('should use the appropriate link class', () => {
-      expect(link.hasClass('wfp--link')).toEqual(true);
+      expect(wrapper.hasClass('wfp--value')).toEqual(true);
     });
-    it('should inherit the href property', () => {
-      expect(link.props().href).toEqual('www.google.com');
+    /*it('should inherit the href property', () => {
+      expect(wrapper.find('h4').hasClass('wfp--value__title')).toBe(true);
     });
     it('should include child content', () => {
-      expect(link.text()).toEqual('A simple link');
-    });
+      expect(wrapper.text()).toEqual('A simple link');
+    });*/
     it('should all for custom classes to be applied', () => {
-      expect(link.hasClass('some-class')).toEqual(true);
+      expect(wrapper.hasClass('some-class')).toEqual(true);
     });
   });
 });
-*/
