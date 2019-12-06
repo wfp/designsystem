@@ -18,13 +18,15 @@ storiesOf(' Design|Getting started', module)
   .add("What's new (Changelog)", () => (
     <Page title="Changelog" subTitle="Latest updates and versions">
       <Blockquote title="UI Kit 1.3 is available" kind="warning">
-        We've just release the new version of the UI Kit. Get the latest version
-        now. <br />
-        Read the{' '}
+        We've just release the new version of the UI Kit. Get the{' '}
+        <Link href="https://www.npmjs.com/package/@wfp/ui" target="_blank">
+          latest version
+        </Link>{' '}
+        now or read the{' '}
         <Link
           href="https://github.com/wfp/ui/blob/next/CHANGELOG.md"
           target="_blank">
-          full changelog
+          full changelog.
         </Link>
       </Blockquote>
 

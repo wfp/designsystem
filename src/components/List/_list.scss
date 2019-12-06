@@ -59,15 +59,18 @@
   }
 
   .#{$prefix}--list--bullet {
-    line-height: 1.5em;
+    //line-height: 1.7em;
     list-style-type: disc;
     margin-left: 1.5em;
-
-    //list-style:
-    //list-style-position: inside;
     .#{$prefix}--list__element__title {
       font-weight: 700;
       margin-right: rem(5px);
+    }
+    li {
+      margin-bottom: 1em;
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
   }
 

@@ -2,10 +2,10 @@
 
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import Page from './Page';
-import Blockquote from '../components/Blockquote';
-import Link from '../components/Link';
-import { List, ListItem } from '../components/List';
+import Page from '../Page';
+import Blockquote from '../../components/Blockquote';
+import Link from '../../components/Link';
+import { List, ListItem } from '../../components/List';
 import { linkTo } from '@storybook/addon-links';
 
 storiesOf('Design|Core', module)

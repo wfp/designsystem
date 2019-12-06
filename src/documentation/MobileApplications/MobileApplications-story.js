@@ -4,9 +4,9 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { linkTo } from '@storybook/addon-links';
 
-import Link from '../components/Link';
-import Blockquote from '../components/Blockquote';
-import Page from './Page';
+import Link from '../../components/Link';
+import Blockquote from '../../components/Blockquote';
+import Page from '../Page';
 
 storiesOf('Design|Guidelines', module)
   .addParameters({ options: { showPanel: false, isToolshown: false } })

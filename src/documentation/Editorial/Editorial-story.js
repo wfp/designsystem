@@ -8,7 +8,7 @@ import Link from '../../components/Link';
 import { List, ListItem } from '../../components/List';
 import { linkTo } from '@storybook/addon-links';
 
-storiesOf('Design|Core', module)
+storiesOf('Design|Guidelines', module)
   .addParameters({ options: { showPanel: false, isToolshown: false } })
   .add('Editorial', () => (
     <Page title="Editorial" subTitle="Editorial">

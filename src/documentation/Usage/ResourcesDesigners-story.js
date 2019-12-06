@@ -29,7 +29,6 @@ storiesOf(' Design|Getting started', module)
         .
       </p>
       <h3>Template</h3>
-      <p>Get guidelines and UI examples</p>
       <h4>Sketch Cloud</h4>
       <p>
         Use the Library on Sketch Cloud to always have access to the latest UI
@@ -46,6 +45,10 @@ storiesOf(' Design|Getting started', module)
         </Button>
       </p>
       <h4>Adobe xD</h4>
+      <p>
+        Download the Adobe xD Template, unlike in Sketch it is not possible to
+        use the template as a library.
+      </p>
       <p>
         <Button href="https://github.com/wfp/ui-design-kit/blob/master/WFP%20Template.xd?raw=true">
           WFP UI Template (Adobe xD)

@@ -16,7 +16,7 @@ const Value = ({ value, secondaryValue, className, href, title, ...other }) => {
   const classNames = classnames(`${prefix}--value`, className);
   return (
     <div className={classNames} {...other}>
-      <h4 className={`${prefix}--value__ttitle`}>{title}</h4>
+      <h4 className={`${prefix}--value__title`}>{title}</h4>
       <div className={`${prefix}--value__primary-value`}>{value}</div>
       <div className={`${prefix}--value__secondary-value`}>
         {secondaryValue}

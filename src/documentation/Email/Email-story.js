@@ -17,7 +17,7 @@ storiesOf('Design|Guidelines', module)
             href="https://outlook.office365.com/owa/?realm=wfp.org&exsvurl=1&ll-cc=1031&modurl=0"
             rel="noopener noreferrer"
             target="_blank">
-            Microsoft Outlook web
+            Microsoft Outlook on the web
           </a>{' '}
           and most other eMail clients.
         </p>

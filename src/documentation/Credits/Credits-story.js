@@ -2,8 +2,8 @@
 
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import Link from '../components/Link';
-import Page from './Page';
+import Link from '../../components/Link';
+import Page from '../Page';
 
 storiesOf('Design|Getting started', module)
   .addParameters({ options: { showPanel: false, isToolshown: false } })
@@ -45,7 +45,7 @@ storiesOf('Design|Getting started', module)
           </Link>
         </li>
       </ul>
-      <h2>Contributing</h2>
+      <h3>Contributing</h3>
       <p>
         Development is made on a GitHub repository. Feel free create an Issue or
         submit a pull request.{' '}

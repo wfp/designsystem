@@ -3,10 +3,10 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { linkTo } from '@storybook/addon-links';
-import Button from '../components/Button';
+import Button from '../../components/Button';
 import { iconArrowRight } from '@wfp/icons';
-import Page from './Page';
-import Blockquote from '../components/Blockquote';
+import Page from '../Page';
+import Blockquote from '../../components/Blockquote';
 
 storiesOf('Design|Guidelines', module)
   .addParameters({ options: { showPanel: false, isToolshown: false } })

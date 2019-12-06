@@ -2,8 +2,8 @@
 
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import Page from './Page';
-import Link from '../components/Link';
+import Page from '../Page';
+import Link from '../../components/Link';
 
 storiesOf('Design|Guidelines', module)
   .addParameters({ options: { showPanel: false, isToolshown: false } })

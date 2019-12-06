@@ -67,7 +67,7 @@ var mix = function(color_1, color_2, weight) {
   return color; // PROFIT!
 };
 
-storiesOf('Design|Guidelines', module)
+storiesOf('Design|Core', module)
   .addParameters({ options: { showPanel: false, isToolshown: false } })
   .add('Colours', () => {
     const regularColors = Object.values(colors).filter(
@@ -120,20 +120,14 @@ storiesOf('Design|Guidelines', module)
                 lineHeight: '2em',
               }}>
               <ModuleBody>
-                <h4>{color.name}ddd</h4>
-                {color.shortDescription && (
-                  <h4 className="wfp--story__sub-heading">
-                    {color.shortDescription}
-                  </h4>
-                )}
-                {color.description && <p>{color.description}</p>}
+                <h4>{color.name}</h4>
                 <List colon kind="simple">
-                  <ListItem title="js">{color.name}</ListItem>
-                  <ListItem title="scss">{color.scss}</ListItem>
-                  <ListItem title="hex">{color.hex}</ListItem>
+                  {/*<ListItem>{color.name}</ListItem>
+                  <ListItem>{color.scss}</ListItem>*/}
+                  <ListItem>{color.hex}</ListItem>
 
                   {color.css && (
-                    <ListItem title="css">
+                    <ListItem>
                       .{color.css}
                       <div
                         className={color.css}
@@ -148,6 +142,12 @@ storiesOf('Design|Guidelines', module)
                     </ListItem>
                   )}
                 </List>
+                {color.shortDescription && (
+                  <h4 className="wfp--story__sub-heading">
+                    {color.shortDescription}
+                  </h4>
+                )}
+                {color.description && <p>{color.description}</p>}
               </ModuleBody>
             </div>
             {/*
