@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+# [1.3.0-alpha.33](https://github.com/WFP/UI/compare/v1.3.0-alpha.32...v1.3.0-alpha.33) (2019-12-06)
+
+
+### Bug Fixes
+
+* **Select:** inline prop showed the input two times ([b89f8c6](https://github.com/WFP/UI/commit/b89f8c6))
+
+
+### Features
+
+* **Tabs:** resize detector removed and replaced with own solution, tests fixed ([de387b8](https://github.com/WFP/UI/commit/de387b8))
+
+
+
+# Change Log
+
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
 # [1.3.0-alpha.32](https://github.com/WFP/UI/compare/v1.3.0-alpha.31...v1.3.0-alpha.32) (2019-12-03)
 
 
