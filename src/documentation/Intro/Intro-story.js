@@ -1,10 +1,12 @@
 /* eslint-disable no-console */
 
-import React from 'react';
+import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
 import Link from '../../components/Link';
+import classnames from 'classnames';
 import Page from '../Page';
 import Blockquote from '../../components/Blockquote';
+import './_intro.scss';
 
 /* const Box = ({ title, content }) => (
   <div>
@@ -13,10 +15,62 @@ import Blockquote from '../../components/Blockquote';
   </div>
 ); */
 
+export default class IntroAnimation extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      count: 0,
+    };
+  }
+  componentDidMount() {
+    this.timer();
+  }
+
+  timer = () => {
+    const newCount = this.state.count <= 1 ? this.state.count + 1 : 0;
+    this.setState({ count: newCount });
+    setTimeout(this.timer, 4000);
+  };
+
+  render() {
+    const classNames = classnames('intro-animation', {
+      'intro-animation--mobile': this.state.count === 0,
+      'intro-animation--tablet': this.state.count === 1,
+      'intro-animation--desktop': this.state.count === 2,
+    });
+
+    return (
+      <div className="intro-hero" onClick={() => this.timer()}>
+        <div className={classNames}>
+          <h1 className="intro__heading">
+            <span
+              style={{
+                marginBottom: '0em',
+                letterSpacing: '0.02em',
+                fontWeight: '700',
+              }}>
+              WFP
+            </span>
+            <span className="intro__heading__secondary">UI KIT</span>
+          </h1>
+          <div className="intro__monitor">
+            <div className="intro__line">
+              <div className="intro__line__control intro__line__control__first" />
+              <div className="intro__line__control intro__line__control__second" />
+              <div className="intro__line__control intro__line__control__third" />
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+}
+
 storiesOf('Design|Getting started', module)
   .addParameters({ options: { showPanel: false, isToolshown: false } })
   .add('Introduction', () => (
-    <div className="intro-hero">
+    <div>
+      <IntroAnimation />
       {/*<img
         alt="Hero"
         style={{
@@ -25,36 +79,8 @@ storiesOf('Design|Getting started', module)
         }}
         src={`${process.env.STORYBOOK_INTERNAL_ASSETS}internal/hero-image.jpg`}
       />*/}
-      <div
-        className="intro-hero-container"
-        style={{
-          color: '#FFFFFF',
-          //position: 'absolute',
-          top: 0,
-          left: 0,
-          right: 0,
-          textAlign: 'center',
-        }}>
-        <h1
-          style={{
-            fontSize: '8vw',
-            marginBottom: '0.1em',
-            fontWeight: '100',
-          }}>
-          <span
-            style={{
-              marginBottom: '0em',
-              letterSpacing: '0.02em',
-              fontWeight: '700',
-            }}>
-            WFP
-          </span>
-          <span style={{ marginLeft: '0.3em', letterSpacing: '0.05em' }}>
-            UI KIT
-          </span>
-        </h1>
 
-        {/*<Button
+      {/*<Button
           kind="inverse"
           style={{ marginRight: '0.5em' }}
           onClick={linkTo('Documentation', 'Usage')}>
@@ -67,7 +93,6 @@ storiesOf('Design|Getting started', module)
           href="https://github.com/wfp/ui">
           Follow on GitHub
         </Button>*/}
-      </div>
 
       <Page>
         <div className="row" style={{ margin: '0' }}>
