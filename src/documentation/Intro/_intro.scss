@@ -7,6 +7,7 @@ $css--reset: false;
   background: $brand-01;
   background: linear-gradient(90deg, $brand-01, 0%, lighten($brand-01, 5) 100%);
   height: 100vh;
+  position: relative;
 }
 .intro-animation {
   display: flex;
@@ -89,6 +90,15 @@ $css--reset: false;
   }
 }
 
+.intro__links {
+  position: absolute;
+  bottom: 10vh;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
 .intro__dots {
   position: absolute;
   top: 0;
@@ -121,12 +131,12 @@ $css--reset: false;
     }
   }
   .intro-animation--desktop & {
-    transform: translateX(2%) translateY(4.8%);
+    transform: translateX(2%) translateY(4.9%);
     opacity: 1;
     .intro__dots__dot {
-      width: 1.4vw;
-      height: 1.4vw;
-      margin-right: 0.4vw;
+      width: 1.1vw;
+      height: 1.1vw;
+      margin-right: 0.5vw;
     }
   }
 

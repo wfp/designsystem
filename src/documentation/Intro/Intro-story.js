@@ -2,22 +2,18 @@
 
 import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
+import { linkTo } from '@storybook/addon-links';
 import Link from '../../components/Link';
 import classnames from 'classnames';
 import Page from '../Page';
 import Blockquote from '../../components/Blockquote';
+import Button from '../../components/Button';
 import './_intro.scss';
-
-/* const Box = ({ title, content }) => (
-  <div>
-    <h3>{title}</h3>
-    <p>{content}</p>
-  </div>
-); */
 
 export default class IntroAnimation extends Component {
   constructor(props) {
     super(props);
+    this.timeout = null;
     this.state = {
       count: 0,
     };
@@ -27,9 +23,12 @@ export default class IntroAnimation extends Component {
   }
 
   timer = () => {
+    if (this.timer) {
+      clearTimeout(this.timeout);
+    }
     const newCount = this.state.count <= 1 ? this.state.count + 1 : 0;
     this.setState({ count: newCount });
-    //setTimeout(this.timer, 4000);
+    this.timeout = setTimeout(this.timer, 4000);
   };
 
   render() {
@@ -54,6 +53,21 @@ export default class IntroAnimation extends Component {
             </div>
             <div className="intro__line"></div>
           </div>
+        </div>
+        <div className="intro__links">
+          <Button
+            kind="inverse"
+            style={{ marginRight: '0.5em' }}
+            onClick={linkTo('Design|Getting started', 'Developers')}>
+            Getting started
+          </Button>
+
+          <Button
+            kind="inverse"
+            style={{ marginLeft: '0.5em' }}
+            href="https://github.com/wfp/ui">
+            Follow on GitHub
+          </Button>
         </div>
       </div>
     );
