@@ -50,7 +50,7 @@ class Blockquote extends React.Component {
       title,
       toggleable,
       icon,
-      innerHtml,
+      //innerHtml,
       light,
       code,
       warning,
@@ -139,7 +139,7 @@ Blockquote.propTypes = {
   /**
    * Display content as `dangerouslySetInnerHTML` content
    */
-  innerHtml: PropTypes.string,
+  //innerHtml: PropTypes.string,
   /**
    * Display light version of Blockquote
    */
