@@ -29,7 +29,7 @@ export default class IntroAnimation extends Component {
   timer = () => {
     const newCount = this.state.count <= 1 ? this.state.count + 1 : 0;
     this.setState({ count: newCount });
-    setTimeout(this.timer, 4000);
+    //setTimeout(this.timer, 4000);
   };
 
   render() {
@@ -43,22 +43,16 @@ export default class IntroAnimation extends Component {
       <div className="intro-hero" onClick={() => this.timer()}>
         <div className={classNames}>
           <h1 className="intro__heading">
-            <span
-              style={{
-                marginBottom: '0em',
-                letterSpacing: '0.02em',
-                fontWeight: '700',
-              }}>
-              WFP
-            </span>
+            <span>WFP</span>
             <span className="intro__heading__secondary">UI KIT</span>
           </h1>
           <div className="intro__monitor">
-            <div className="intro__line">
-              <div className="intro__line__control intro__line__control__first" />
-              <div className="intro__line__control intro__line__control__second" />
-              <div className="intro__line__control intro__line__control__third" />
+            <div className="intro__dots">
+              <div className="intro__dots__dot intro__dots__first" />
+              <div className="intro__dots__dot intro__dots__second" />
+              <div className="intro__dots__dot intro__dots__third" />
             </div>
+            <div className="intro__line"></div>
           </div>
         </div>
       </div>
@@ -195,8 +189,13 @@ storiesOf('Design|Getting started', module)
 
             <Blockquote title="Your Feedback">
               <p>
-                Your feedback is highly appreciated! You can use the Feedback
-                Button on the right, create a{' '}
+                Your feedback is highly appreciated! You can use the{' '}
+                <Link
+                  href="https://wfp.slack.com/archives/C53A4FMFG"
+                  target="_blank">
+                  #ux-ui
+                </Link>{' '}
+                channel on Slack, create a{' '}
                 <Link href="https://github.com/wfp/ui/issues" target="_blank">
                   new Issue
                 </Link>{' '}

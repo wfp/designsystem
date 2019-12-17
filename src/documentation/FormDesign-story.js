@@ -121,10 +121,8 @@ storiesOf('Design|Guidelines', module)
 
       <p>
         If your form has more than six fields, it’s considered good practice to
-        group questions into logical sections or steps. Use the
-        <span className="wfp--inline-highlight">
-          &#x3C;FormGroup /&#x3E;
-        </span>{' '}
+        group questions into logical sections or steps. Use the{' '}
+        <span className="wfp--inline-highlight">&#x3C;FormGroup /&#x3E;</span>{' '}
         component for this behaviour.
       </p>
 

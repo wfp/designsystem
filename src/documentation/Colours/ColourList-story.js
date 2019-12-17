@@ -11,7 +11,11 @@ import { Module, ModuleBody } from '../../components/Module';
 import colors from '../../globals/data/colors';
 import { hex, score } from 'wcag-contrast';
 
+import Tippy from '@tippy.js/react';
+import { tooltipStyle } from '../../components/Tooltip';
+
 import './_colours.scss';
+import { color } from '@storybook/theming';
 
 const Color = ({ color }) => (
   <h3>
@@ -71,11 +75,7 @@ storiesOf('Design|Core', module)
   .addParameters({ options: { showPanel: false, isToolshown: false } })
   .add('Colours', () => {
     const regularColors = Object.values(colors).filter(
-      ui_colors =>
-        ui_colors.type !== 'symbolic' &&
-        ui_colors.type !== 'support' &&
-        ui_colors.type !== 'ui' &&
-        ui_colors.type !== 'sdg'
+      ui_colors => ui_colors.type === 'communications'
     );
 
     const brandColors = Object.values(colors).filter(
@@ -97,60 +97,96 @@ storiesOf('Design|Core', module)
       ui_colors => ui_colors.type === 'sdg'
     );
 
+    const tooltips = {
+      'ui-01': (
+        <img
+          alt="Brand colour"
+          style={{
+            width: '100%',
+            height: 'auto',
+            marginTop: '3em',
+            marginLeft: '0em',
+          }}
+          src={`${process.env.STORYBOOK_INTERNAL_ASSETS}internal/background-contrast.png`}
+        />
+      ),
+      'ui-02': (
+        <img
+          alt="Brand colour"
+          style={{
+            width: '100%',
+            height: 'auto',
+            marginTop: '3em',
+            marginLeft: '0em',
+          }}
+          src={`${process.env.STORYBOOK_INTERNAL_ASSETS}internal/background-contrast.png`}
+        />
+      ),
+    };
+
     const colorList = filterList => {
       return filterList.map(color => (
-        <li>
-          <Module fullHeight noMargin light className="colour__item">
-            <div
-              className="colour__field"
-              style={{ backgroundColor: color.hex }}>
-              <div className="colour__contrast">
-                <span>A</span>
-                <div>>{score(hex(color.hex, '#000000'))}</div>
-              </div>
-              <div className="colour__contrast colour__contrast--light">
-                <span>A</span>
-                <div>{score(hex(color.hex, '#FFFFFF'))}</div>
-              </div>
+        <Tippy
+          // options
+          content={
+            <div>
+              {color.description && <p>{color.description}</p>}
+              {tooltips[color.name]}
+              {color.name}
             </div>
-            <div
-              style={{
-                flexGrow: '1',
-                fontSize: '0.7em',
-                lineHeight: '2em',
-              }}>
-              <ModuleBody>
-                <h4>{color.name}</h4>
-                <List colon kind="simple">
-                  {/*<ListItem>{color.name}</ListItem>
+          }
+          {...tooltipStyle}>
+          <li>
+            <Module fullHeight noMargin light className="colour__item">
+              <div
+                className="colour__field"
+                style={{ backgroundColor: color.hex }}>
+                <div className="colour__contrast">
+                  <span>A</span>
+                  <div>>{score(hex(color.hex, '#000000'))}</div>
+                </div>
+                <div className="colour__contrast colour__contrast--light">
+                  <span>A</span>
+                  <div>{score(hex(color.hex, '#FFFFFF'))}</div>
+                </div>
+              </div>
+              <div
+                style={{
+                  flexGrow: '1',
+                  fontSize: '0.7em',
+                  lineHeight: '2em',
+                }}>
+                <ModuleBody>
+                  <h4>{color.name}</h4>
+                  <List colon kind="simple">
+                    {/*<ListItem>{color.name}</ListItem>
                   <ListItem>{color.scss}</ListItem>*/}
-                  <ListItem>{color.hex}</ListItem>
+                    <ListItem>{color.hex}</ListItem>
 
-                  {color.css && (
-                    <ListItem>
-                      .{color.css}
-                      <div
-                        className={color.css}
-                        style={{
-                          display: 'inline-block',
-                          marginLeft: '0.5em',
-                          borderRadius: '3px',
-                          width: '1em',
-                          height: '1em',
-                        }}
-                      />
-                    </ListItem>
+                    {color.css && (
+                      <ListItem>
+                        .{color.css}
+                        <div
+                          className={color.css}
+                          style={{
+                            display: 'inline-block',
+                            marginLeft: '0.5em',
+                            borderRadius: '3px',
+                            width: '1em',
+                            height: '1em',
+                          }}
+                        />
+                      </ListItem>
+                    )}
+                  </List>
+                  {color.shortDescription && (
+                    <h4 className="wfp--story__sub-heading">
+                      {color.shortDescription}
+                    </h4>
                   )}
-                </List>
-                {color.shortDescription && (
-                  <h4 className="wfp--story__sub-heading">
-                    {color.shortDescription}
-                  </h4>
-                )}
-                {color.description && <p>{color.description}</p>}
-              </ModuleBody>
-            </div>
-            {/*
+                </ModuleBody>
+              </div>
+              {/*
             {color.type !== 'symbolic' &&
               color.type !== 'ui' &&
               color.type !== 'sdg' &&
@@ -210,8 +246,9 @@ storiesOf('Design|Core', module)
                               ))}
                 </div>
               )}*/}
-          </Module>
-        </li>
+            </Module>
+          </li>
+        </Tippy>
       ));
     };
 
@@ -231,12 +268,21 @@ storiesOf('Design|Core', module)
           </Link>
           .
         </p>
-        <p>A colour scheme usually consists of these colour categories:</p>
+        {/*<p>A colour scheme usually consists of these colour categories:</p>
         <List kind="bullet">
-          <ListItem>Interactive, primary and secondary colours</ListItem>
-          <ListItem>Accent colours</ListItem> <ListItem>Neutrals</ListItem>
-          <ListItem>Semantic colours</ListItem>
-        </List>
+          <ListItem>
+            <a href="#brand">Interactive, primary and secondary colours</a>
+          </ListItem>
+          <ListItem>
+            <a href="#accent">Accent colours</a>
+          </ListItem>
+          <ListItem>
+            <a href="#neutrals">Neutrals</a>
+          </ListItem>
+          <ListItem>
+            <a href="#semantic">Semantic colours</a>
+          </ListItem>
+        </List>*/}
         <p>
           Use the <i>70–25–5 (60–30–10)</i> rule to create sense of balance and
           allow the eye to move comfortably from one focal point to the next.
@@ -251,9 +297,6 @@ storiesOf('Design|Core', module)
           }}
           src={`${process.env.STORYBOOK_INTERNAL_ASSETS}internal/colors.png`}
         />
-
-        <h3>Primary Colours</h3>
-        <ul className="color--list">{colorList(brandColors)}</ul>
         <Color color="interactive-01" />
         <h4 className="wfp--story__sub-heading">
           Primary interactive colour, Primary buttons
@@ -263,12 +306,6 @@ storiesOf('Design|Core', module)
           touched. It is slightly lighter then the main WFP blue to communicate
           that an element is interactive and to be distinguishable from black.
         </p>
-        <h4>Use interactive - 01 for:</h4>
-        <List kind="bullet">
-          <ListItem kind="checkmark">links</ListItem>
-          <ListItem kind="checkmark">buttons</ListItem>
-          <ListItem kind="checkmark">other interactive elements</ListItem>
-        </List>
         <img
           alt="Brand colour"
           style={{
@@ -279,16 +316,28 @@ storiesOf('Design|Core', module)
           }}
           src={`${process.env.STORYBOOK_INTERNAL_ASSETS}internal/brand-color.png`}
         />
-        <h5>Do not use for:</h5>
-        <List kind="bullet">
-          <ListItem kind="cross">
-            {' '}
-            MainNavigation, since it is a branding element and not interactive
-            as a whole
-          </ListItem>
-          <ListItem kind="cross">other branding elements</ListItem>
-          <ListItem kind="cross">non - interactive elements</ListItem>
-        </List>
+        <section className="dodonot">
+          <div>
+            <h4>Use interactive - 01 for:</h4>
+            <List kind="bullet">
+              <ListItem kind="checkmark">links</ListItem>
+              <ListItem kind="checkmark">buttons</ListItem>
+              <ListItem kind="checkmark">other interactive elements</ListItem>
+            </List>
+          </div>
+          <div>
+            <h4>Do not use for:</h4>
+            <List kind="bullet">
+              <ListItem kind="cross">
+                {' '}
+                MainNavigation, since it is a branding element and not
+                interactive as a whole
+              </ListItem>
+              <ListItem kind="cross">other branding elements</ListItem>
+              <ListItem kind="cross">non - interactive elements</ListItem>
+            </List>
+          </div>
+        </section>
         <h2>Brand colour</h2>
         <p>
           These are the base colours of the UI. Primary colours are the ones
@@ -299,26 +348,29 @@ storiesOf('Design|Core', module)
         <h4 className="wfp--story__sub-heading">WFP's corporate colour</h4>
         <p>
           The brand-01 colour is WFP’s corporate blue which is used in all
-          (non-interactive) branding elements.
+          (non-interactive) branding elements. It is the colour displayed most
+          frequently across your App’s screens and components. The primary
+          colour can also be used to accent elements.
         </p>
-        <p>
-          It is the colour displayed most frequently across your App’s screens
-          and components. The primary colour can also be used to accent
-          elements.
-        </p>
-        <h4>Use brand-01 for:</h4>
-        <List kind="bullet">
-          <ListItem kind="checkmark">MainNavigation</ListItem>
-          <ListItem kind="checkmark">brand elements</ListItem>
-          <ListItem kind="checkmark">dark background</ListItem>
-        </List>
-        <h4>Do not use for:</h4>
-        <List kind="bullet">
-          <ListItem kind="cross">
-            interactive elements like buttons or links
-          </ListItem>
-          <ListItem kind="cross">Primary and secondary colours</ListItem>
-        </List>
+        <section className="dodonot">
+          <div>
+            <h4>Use brand-01 for:</h4>
+            <List kind="bullet">
+              <ListItem kind="checkmark">MainNavigation</ListItem>
+              <ListItem kind="checkmark">brand elements</ListItem>
+              <ListItem kind="checkmark">dark background</ListItem>
+            </List>
+          </div>
+          <div>
+            <h4>Do not use for:</h4>
+            <List kind="bullet">
+              <ListItem kind="cross">
+                interactive elements like buttons or links
+              </ListItem>
+              <ListItem kind="cross">Primary and secondary colours</ListItem>
+            </List>
+          </div>
+        </section>
         <Color color="brand-02" />
         <h4 className="wfp--story__sub-heading">
           Interactive emphasis colour (e.g. hovers)
@@ -368,54 +420,52 @@ storiesOf('Design|Core', module)
             wfp.publications@wfp.org
           </Link>
         </p>
-        <h4>Secondary colours are best for:</h4>
-        <List kind="bullet">
-          <ListItem kind="checkmark">
-            floating action buttons (mobile devices)
-          </ListItem>
-          <ListItem kind="checkmark">progress bars</ListItem>
-          <ListItem kind="checkmark">important highlights</ListItem>
-          <ListItem kind="checkmark">
-            Call - to - action buttons and links
-          </ListItem>
-          <ListItem kind="checkmark">
-            yellow makes a good button colour in placed in isolation
-          </ListItem>
-          <ListItem kind="checkmark">
-            external websites where colour creates interest and meaning and
-            improves the conversation rate
-          </ListItem>
-        </List>
-        <h4>Do not use it:</h4>
-        <List kind="bullet">
-          <ListItem kind="cross">for regular actions</ListItem>
-          <ListItem kind="cross">
-            multiple actions / times on the same webpage
-          </ListItem>
-          <ListItem kind="cross">
-            limit the use of yellow to the elements you want to emphasize
-            related to the audience priority
-          </ListItem>
-          <ListItem kind="cross">
-            limit usage for texts and navigation elements
-          </ListItem>
-        </List>
+        <section className="dodonot">
+          <div>
+            <h4>Secondary colours are best for:</h4>
+            <List kind="bullet">
+              <ListItem kind="checkmark">
+                floating action buttons (mobile devices)
+              </ListItem>
+              <ListItem kind="checkmark">progress bars</ListItem>
+              <ListItem kind="checkmark">important highlights</ListItem>
+              <ListItem kind="checkmark">
+                Call - to - action buttons and links
+              </ListItem>
+              <ListItem kind="checkmark">
+                yellow makes a good button colour in placed in isolation
+              </ListItem>
+              <ListItem kind="checkmark">
+                external websites where colour creates interest and meaning and
+                improves the conversation rate
+              </ListItem>
+            </List>
+          </div>
+          <div>
+            <h4>Do not use it:</h4>
+            <List kind="bullet">
+              <ListItem kind="cross">for regular actions</ListItem>
+              <ListItem kind="cross">
+                multiple actions / times on the same webpage
+              </ListItem>
+              <ListItem kind="cross">
+                limit the use of yellow to the elements you want to emphasize
+                related to the audience priority
+              </ListItem>
+              <ListItem kind="cross">
+                limit usage for texts and navigation elements
+              </ListItem>
+            </List>
+          </div>
+        </section>
+        <h3>Primary Colours</h3>
+        <ul className="color--list">{colorList(brandColors)}</ul>
         <h3>User Interface Colours</h3>
         <p>
-          Neutral colours are used in the interface for non-interactive
-          elements, backgrounds and borders.
+          Neutral colours are used for non-interactive elements, backgrounds and
+          borders.
         </p>
         <ul className="color--list">{colorList(uiColors)}</ul>
-        <img
-          alt="Brand colour"
-          style={{
-            width: '100%',
-            height: 'auto',
-            marginTop: '3em',
-            marginLeft: '0em',
-          }}
-          src={`${process.env.STORYBOOK_INTERNAL_ASSETS}internal/background-contrast.png`}
-        />
         <h3>Brand Colours – Tints for use in graphs and charts</h3>
         <ul className="color--list">{colorList(regularColors)}</ul>
         <h3>Success, error, warning and information</h3>

@@ -11,25 +11,11 @@ storiesOf(' Design|Getting started', module)
   .addParameters({ options: { showPanel: false, isToolshown: false } })
   .add('HTML', () => (
     <Page title="HTML Usage" subTitle="Use the UI Kit without react.js">
-      <p>
-        Most parts of the UI Kit can be used with html / css only. See the
-        readme below for more information.
-      </p>
-      <h3>Usage with Google Chrome</h3>
-      <p>
-        Download the{' '}
-        <Link href="https://developers.google.com/web/tools/chrome-devtools/">
-          Google Chrome DevTools
-        </Link>
-        . Right-click on any component, click{' '}
-        <span className="wfp--inline-highlight">Inspect</span>, and you'll see
-        the html of that component which can be copied and reused.
-      </p>
       <h3>Vanilla.js</h3>
 
       <p>
-        JS components are built using React, but that does not limit their usage
-        to just React applications. You can render any component in any
+        The JS components are built using React, but that does not limit their
+        usage to just React applications. You can render any component in any
         JavaScript application with ReactDOM.render. Think of it like using a
         jQuery plugin.
       </p>
@@ -59,11 +45,27 @@ ReactDOM.render(
       <p>To remove the component from the DOM and clean up, unmount it:</p>
       <Blockquote title="Unmount component" kind="code">
         <PrismCode component="pre" className="language-js">
-          {`
-ReactDOM.unmountComponentAtNode(myContainerElement);
+          {`ReactDOM.unmountComponentAtNode(myContainerElement);
 `}
         </PrismCode>
       </Blockquote>
-      <p>Check out the React API docs for more details.</p>
+      <p>
+        Check out the{' '}
+        <Link href="https://reactjs.org/docs/react-api.html" target="_blank">
+          React API docs
+        </Link>{' '}
+        for more details.
+      </p>
+      <h3>Usage with Google Chrome</h3>
+      <p>
+        {' '}
+        Many parts of the UI Kit can be used with html/css only. Download the{' '}
+        <Link href="https://developers.google.com/web/tools/chrome-devtools/">
+          Google Chrome DevTools
+        </Link>
+        . Right-click on any component, click{' '}
+        <span className="wfp--inline-highlight">Inspect</span>, and you'll see
+        the html of that component which can be copied and reused.
+      </p>
     </Page>
   ));

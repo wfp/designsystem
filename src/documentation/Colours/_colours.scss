@@ -17,6 +17,7 @@ $css--reset: false;
     margin-right: 2%;
     margin-bottom: 2%;
     list-style-type: none;
+    outline: none;
   }
   h4 {
     margin: 0;
@@ -77,5 +78,13 @@ $css--reset: false;
     color: #fff;
     width: auto;
     background: rgba(#000, 0.7);
+  }
+}
+
+.dodonot {
+  display: flex;
+  margin: 1rem 0;
+  > div {
+    width: 50%;
   }
 }

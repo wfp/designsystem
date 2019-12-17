@@ -9,6 +9,7 @@ import { withKnobs, boolean, text } from '@storybook/addon-knobs';
 const props = () => ({
   className: text('Additional class (className)', false),
   noMargin: boolean('Disable margin (noMargin)', false),
+  fullHeight: boolean('Adapt to parents height (fullHeight)', false),
   light: boolean('Styling for white background (light)', false),
   dark: boolean('Styling with dark content (dark)', false),
   withHover: boolean('Add hover class (withHover)', false),

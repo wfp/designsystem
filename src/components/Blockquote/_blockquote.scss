@@ -25,6 +25,7 @@
   .#{$prefix}--blockquote__content {
     padding: $spacing-md;
     line-height: 1.4;
+    word-wrap: anywhere;
   }
 
   .#{$prefix}--blockquote--with-icon {

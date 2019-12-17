@@ -61,7 +61,9 @@ class Notes extends React.Component {
           <Button kind="secondary" href="https://github.com/wfp/ui/issues/">
             Create Issue on GitHub
           </Button>{' '}
-          <Button kind="secondary" href="slack://channel?team=wfp&id=ux-ui">
+          <Button
+            kind="secondary"
+            href="https://wfp.slack.com/archives/C53A4FMFG">
             UX-UI Slack channel
           </Button>{' '}
           <Button kind="secondary" href="mailto:robert.guehne@wfp.org">
