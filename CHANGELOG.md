@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+# [1.3.0-alpha.34](https://github.com/WFP/UI/compare/v1.3.0-alpha.33...v1.3.0-alpha.34) (2019-12-17)
+
+
+### Bug Fixes
+
+* **Blockquote:** same padding if no content is present ([6375f82](https://github.com/WFP/UI/commit/6375f82))
+
+
+### Features
+
+* **Blockquote:** depreciate html rendering for security reasons ([7c50420](https://github.com/WFP/UI/commit/7c50420))
+
+
+
+# Change Log
+
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
 # [1.3.0-alpha.33](https://github.com/WFP/UI/compare/v1.3.0-alpha.32...v1.3.0-alpha.33) (2019-12-06)
 
 
