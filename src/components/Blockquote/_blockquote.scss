@@ -28,6 +28,12 @@
     word-wrap: anywhere;
   }
 
+  .#{$prefix}--blockquote--no-content {
+    .#{$prefix}--blockquote__title {
+      margin-bottom: 0;
+    }
+  }
+
   .#{$prefix}--blockquote--with-icon {
     //padding-left: 4rem;
   }

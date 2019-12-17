@@ -297,6 +297,8 @@ storiesOf('Design|Core', module)
           }}
           src={`${process.env.STORYBOOK_INTERNAL_ASSETS}internal/colors.png`}
         />
+        <h3>Primary Colours</h3>
+        <ul className="color--list">{colorList(brandColors)}</ul>
         <Color color="interactive-01" />
         <h4 className="wfp--story__sub-heading">
           Primary interactive colour, Primary buttons
@@ -458,8 +460,6 @@ storiesOf('Design|Core', module)
             </List>
           </div>
         </section>
-        <h3>Primary Colours</h3>
-        <ul className="color--list">{colorList(brandColors)}</ul>
         <h3>User Interface Colours</h3>
         <p>
           Neutral colours are used for non-interactive elements, backgrounds and

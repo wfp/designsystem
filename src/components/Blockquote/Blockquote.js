@@ -37,9 +37,9 @@ class Blockquote extends React.Component {
     this.setState({ open: !this.state.open });
   };
 
-  showInnerHtml = content => {
+  /*showInnerHtml = content => {
     return { __html: content };
-  };
+  };*/
 
   render() {
     const {
@@ -63,6 +63,7 @@ class Blockquote extends React.Component {
       'wfp--blockquote--toggleable': toggleable === true,
       'wfp--blockquote--light': light,
       'wfp--blockquote--code': code,
+      'wfp--blockquote--no-content': !children,
       'wfp--blockquote--error': kind === 'error' || error,
       'wfp--blockquote--warning': kind === 'warning' || warning,
       'wfp--blockquote--success': kind === 'success',
@@ -71,8 +72,7 @@ class Blockquote extends React.Component {
       'wfp--blockquote--open': this.state.open,
     });
 
-    const blockquoteContentClass = classNames({
-      'wfp--blockquote__content': true,
+    const blockquoteContentClass = classNames('wfp--blockquote__content', {
       [`${className}`]: className,
     });
 
@@ -115,12 +115,12 @@ class Blockquote extends React.Component {
             </div>
           )}
           {children}
-          {innerHtml && (
+          {/*innerHtml && (
             <div
               role="complementary"
               dangerouslySetInnerHTML={this.showInnerHtml(innerHtml)}
             />
-          )}
+          )*/}
         </div>
       </div>
     );
