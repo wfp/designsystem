@@ -14,7 +14,8 @@ storiesOf(' Design|Getting started', module)
   .add('Developers', () => (
     <Page title="Usage for Developers" subTitle="How to use the UI Kit">
       <p>
-        The UI Kit provides developers with React.js components, scss, css, html
+        The UI Kit provides developers with React.js components, scss,{' '}
+        <Link onClick={linkTo('Design|Getting started', 'CSS')}>css</Link>, html
         and assets.
       </p>
       <h3>Getting started with react.js</h3>
