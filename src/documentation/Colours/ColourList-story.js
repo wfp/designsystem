@@ -71,7 +71,7 @@ var mix = function(color_1, color_2, weight) {
   return color; // PROFIT!
 };
 
-storiesOf('Design|Core', module)
+storiesOf('Getting started|Core', module)
   .addParameters({ options: { showPanel: false, isToolshown: false } })
   .add('Colours', () => {
     const regularColors = Object.values(colors).filter(

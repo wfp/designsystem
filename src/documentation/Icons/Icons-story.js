@@ -68,7 +68,7 @@ const IconList = ({ icon }) => {
               marginBottom: '1rem',
             }}>
             {`import
-  {${camelCaseFromHyphnated('icon--' + iconName)}} 
+  {${camelCaseFromHyphnated('icon--' + iconName)}}
 from '@wfp/icons'`}
           </div>
           <Button
@@ -121,7 +121,7 @@ from '@wfp/icons'`}
 
 const wrapperStyle = { display: 'flex', flexWrap: 'wrap', margin: '0 -0.7em' };
 
-storiesOf('Design|Core', module)
+storiesOf('Getting started|Core', module)
   .addParameters({ options: { showPanel: false, isToolshown: false } })
   .add('Icons', () => (
     <Page title="Icons" subTitle="Icons & Logos for User Interfaces">

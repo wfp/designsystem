@@ -24,7 +24,7 @@ const Color = ({ color }) => (
   </h3>
 );
 
-storiesOf('Design|Core', module)
+storiesOf('Getting started|Core', module)
   .addParameters({
     options: {
       showPanel: false,

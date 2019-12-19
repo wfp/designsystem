@@ -5,7 +5,7 @@ import { storiesOf } from '@storybook/react';
 import Page from './Page';
 import Link from '../components/Link';
 
-storiesOf('Design|Guidelines', module)
+storiesOf('Getting started|Guidelines', module)
   .addParameters({ options: { showPanel: false, isToolshown: false } })
   .add('Development', () => (
     <Page title="Development" subTitle="Help improving the UI Kit">

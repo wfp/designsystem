@@ -3,6 +3,10 @@ $css--reset: false;
 @import '../../globals/scss/spacing';
 @import '../../globals/scss/helper-mixins';
 
+h1 {
+  font-size: 8vw;
+}
+
 .intro-hero {
   background: $brand-01;
   background: linear-gradient(90deg, $brand-01, 0%, lighten($brand-01, 5) 100%);

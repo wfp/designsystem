@@ -31,9 +31,9 @@ export default function(ToMix) {
       ) {
         this.create(target, options);
       } else {
-        [...target.querySelectorAll(effectiveOptions.selectorInit)].forEach(
-          element => this.create(element, options)
-        );
+        [
+          ...target.querySelectorAll(effectiveOptions.selectorInit),
+        ].forEach(element => this.create(element, options));
       }
     }
   }

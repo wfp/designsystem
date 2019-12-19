@@ -13,7 +13,7 @@ import './_changelog.scss';
 
 console.log(Changelog);
 
-storiesOf(' Design|Getting started', module)
+storiesOf('Getting started|Getting started', module)
   .addParameters({ options: { showPanel: false, isToolshown: false } })
   .add("What's new (Changelog)", () => (
     <Page title="Changelog" subTitle="Latest updates and versions">

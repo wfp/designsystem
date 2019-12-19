@@ -26,7 +26,7 @@ const InvalidPasswordProps = {
     'Your password must be at least 6 characters as well as contain at least one uppercase, one lowercase, and one number.',
 };
 
-storiesOf('Design|Guidelines', module)
+storiesOf('Getting started|Guidelines', module)
   .addParameters({ options: { showPanel: false, isToolshown: false } })
   .add('Form design', () => (
     <Page title="Form UX-Design" subTitle="Recommendations for form design">

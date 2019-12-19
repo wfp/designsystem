@@ -6,9 +6,9 @@ import Page from '../Page';
 import Link from '../../components/Link';
 import { linkTo } from '@storybook/addon-links';
 
-storiesOf(' Design|Getting started', module)
+storiesOf('Getting started|Getting started', module)
   .addParameters({ options: { showPanel: false, isToolshown: false } })
-  .add('Tool recommendations', () => (
+  .add('Extending the kit', () => (
     <Page title="Recommended tools" subTitle="Guidelines & Recommendations">
       <h2>CSS</h2>
       <p>
@@ -48,7 +48,7 @@ storiesOf(' Design|Getting started', module)
 
       <p>
         Please have a look at the{' '}
-        <Link onClick={linkTo('Design|Guidelines', 'Maps')}>
+        <Link onClick={linkTo('Getting started|Guidelines', 'Maps')}>
           Map guidelines
         </Link>
         .

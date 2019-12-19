@@ -7,10 +7,12 @@ import { Module, ModuleHeader, ModuleBody } from '../../components/Module';
 import Page from '../Page';
 import { linkTo } from '@storybook/addon-links';
 
-storiesOf('Design|Guidelines', module)
+storiesOf('Getting started|Guidelines', module)
   .addParameters({ options: { showPanel: false, isToolshown: false } })
-  .add('Dashboard', () => (
-    <Page title="Dashboards" subTitle="Operational & Analytical applications">
+  .add('Dashboard design', () => (
+    <Page
+      title="Dashboard design"
+      subTitle="Operational & Analytical applications">
       <h3>When to use it?</h3>
       <p>
         Use the Dashboard pattern whenever you have to display data with a high
@@ -45,7 +47,7 @@ storiesOf('Design|Guidelines', module)
         inside a <Link onClick={linkTo('Components', 'Wrapper')}>Wrapper</Link>{' '}
         component.
         <br /> An example can be found{' '}
-        <Link onClick={linkTo('Design|Templates', 'Application Page')}>
+        <Link onClick={linkTo('Getting started|Templates', 'Application Page')}>
           here
         </Link>
         .

@@ -5,9 +5,9 @@ import { storiesOf } from '@storybook/react';
 import Link from '../../components/Link';
 import Page from '../Page';
 
-storiesOf('Design|Getting started', module)
+storiesOf('Getting started|Getting started', module)
   .addParameters({ options: { showPanel: false, isToolshown: false } })
-  .add('Credits & Development', () => (
+  .add('Credits', () => (
     <Page
       title="Credits & License"
       subTitle="Introduction to the new WFP UI Kit">
