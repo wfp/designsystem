@@ -79,7 +79,6 @@ const Button = ({
       ref={other.inputref}>
       {children}
       {buttonImage}
-      {count}
     </button>
   );
 
