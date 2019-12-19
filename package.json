@@ -1,6 +1,6 @@
 {
   "name": "@wfp/ui",
-  "version": "1.3.0-alpha.34",
+  "version": "1.3.0-alpha.35",
   "description": "WFP UI Kit Next",
   "license": "Apache-2",
   "main": "lib/index.js",
@@ -19,7 +19,7 @@
     "contributors:generate": "all-contributors generate",
     "lint": "eslint src",
     "precommit": "lint-staged && yarn lint",
-    "prepublish": "yarn build",
+    "prepare": "yarn build",
     "prettier": "prettier --write \"**/*.{scss,css,js}\"",
     "prettier:staged": "prettier",
     "prettier:diff": "prettier --list-different \"**/*.{scss,css,js}\"",

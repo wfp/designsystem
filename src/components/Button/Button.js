@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Icon from '../Icon';
 import classNames from 'classnames';
 import { ButtonTypes } from '../../prop-types/types';
@@ -20,6 +20,13 @@ const Button = ({
   ...other
 }) => {
   const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    let timer = setTimeout(() => endAnimation(), 500);
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [count]);
 
   const buttonClasses = classNames(className, {
     'wfp--btn': true,
@@ -60,7 +67,6 @@ const Button = ({
       onClick(e);
     }
     setCount(true);
-    setTimeout(endAnimation, 500);
   };
 
   const button = (
@@ -73,6 +79,7 @@ const Button = ({
       ref={other.inputref}>
       {children}
       {buttonImage}
+      {count}
     </button>
   );
 

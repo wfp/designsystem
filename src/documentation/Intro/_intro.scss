@@ -30,6 +30,9 @@ h1 {
   align-items: center;
   justify-content: center;
   position: relative;
+  margin-top: -5vw;
+  background: rgba(#fff, 0.02);
+  box-shadow: 0px 15px 15px -7px rgba(#000, 0.2);
   .intro-animation--mobile & {
     width: 15vw;
     height: 25vw;
@@ -52,6 +55,7 @@ h1 {
   color: #fff;
   position: absolute;
   top: 50%;
+  margin-top: -3vw;
   transition: all 0.5s;
   transition-timing-function: ease-in-out;
   display: flex;
@@ -96,7 +100,7 @@ h1 {
 
 .intro__links {
   position: absolute;
-  bottom: 10vh;
+  bottom: 13vh;
   left: 0;
   width: 100%;
   display: flex;
