@@ -8,10 +8,10 @@ import Link from '../../components/Link';
 import { List, ListItem } from '../../components/List';
 import { linkTo } from '@storybook/addon-links';
 
-storiesOf('Design|Guidelines', module)
+storiesOf('Getting started|Guidelines', module)
   .addParameters({ options: { showPanel: false, isToolshown: false } })
-  .add('Editorial', () => (
-    <Page title="Editorial" subTitle="Editorial">
+  .add('Capitalization', () => (
+    <Page title="Capitalization" subTitle="Guidelines">
       {/*<p>
       Typography plays a critical role in any design; in fact, it accounts for
       as much as 95% of everything we see on the Web. When done well, it adds

@@ -259,7 +259,7 @@ class TableWithFilter extends Component {
   }
 }
 
-storiesOf('Design|Templates', module)
+storiesOf('Getting started|Templates', module)
   .addParameters({ hideProps: true })
   .addDecorator(story => (
     <RegularPage title="Table with filter">{story()}</RegularPage>

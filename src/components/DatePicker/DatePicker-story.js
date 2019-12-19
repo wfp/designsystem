@@ -21,11 +21,12 @@ import ReduxFormWrapper from '../ReduxFormWrapper';
 const props = {
   datePicker: () => ({
     datePicker: SingleDatePicker,
-    date: moment('2019-07-22T10:00:00.000Z'),
+    date: moment(),
     labelText: text('Label text (labelText)', 'Text Input label'),
     placeholder: text('Placeholder text (placeholder)', 'Placeholder text'),
     disabled: boolean('Disabled (disabled)', false),
     hideLabel: boolean('No label (hideLabel)', false),
+    showClearDate: boolean('Show clear dates button (showClearDate)', false),
     invalid: boolean('Show form validation UI (invalid)', false),
     invalidText: text(
       'Form validation UI content (invalidText)',
@@ -48,6 +49,7 @@ const props = {
     disabled: boolean('Disabled (disabled)', false),
     hideLabel: boolean('No label (hideLabel)', false),
     invalid: boolean('Show form validation UI (invalid)', false),
+    showClearDates: boolean('Show clear dates button (showClearDates)', false),
     showDefaultInputIcon: boolean(
       'Show Input Icon (showDefaultInputIcon)',
       true
@@ -96,10 +98,10 @@ storiesOf('Components|DatePicker', module)
       <FormWrapper
         sampleData={{
           datepicker: {
-            startDate: '2019-07-22T10:00:00.000Z',
-            endDate: '2019-07-24T10:00:00.000Z',
+            startDate: moment(),
+            endDate: moment().add(15, 'days'),
           },
-          inputname: '2020-07-23T12:00:00+02:00',
+          inputname: moment(),
         }}>
         {' '}
         {story()}

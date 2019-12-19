@@ -38,6 +38,7 @@
   }
   .SingleDatePickerInput {
     display: inline-block;
+    white-space: nowrap;
   }
   .SingleDatePickerInput__withBorder {
     //border-radius: 2px;
@@ -63,16 +64,17 @@
     line-height: normal;
     overflow: visible;
     cursor: pointer;
-    padding: 10px;
+    padding: 8px;
     margin: 0 10px 0 5px;
+    margin-left: -35px;
+    line-height: 15px;
     position: absolute;
-    right: 0;
     top: 50%;
     transform: translateY(-50%);
   }
   .SingleDatePickerInput_clearDate__default:focus,
   .SingleDatePickerInput_clearDate__default:hover {
-    background: #dbdbdb;
+    //background: #dbdbdb;
     border-radius: 50%;
   }
   .SingleDatePickerInput_clearDate__small {
@@ -84,7 +86,7 @@
   .SingleDatePickerInput_clearDate_svg {
     fill: #82888a;
     height: 12px;
-    width: 15px;
+    width: 12px;
     vertical-align: middle;
   }
   .SingleDatePickerInput_clearDate_svg__small {

@@ -9,7 +9,7 @@ import Page from '../Page';
 import Blockquote from '../../components/Blockquote';
 import Link from '../../components/Link';
 
-storiesOf(' Design|Getting started', module)
+storiesOf('Getting started|Getting started', module)
   .addParameters({ options: { showPanel: false, isToolshown: false } })
   .add('Developers', () => (
     <Page title="Usage for Developers" subTitle="How to use the UI Kit">
@@ -63,7 +63,9 @@ storiesOf(' Design|Getting started', module)
       <h3>CSS</h3>
       <p>
         See the{' '}
-        <Link onClick={linkTo('Design|Getting started', 'CSS')}>CSS page</Link>{' '}
+        <Link onClick={linkTo('Getting started|Getting started', 'CSS')}>
+          CSS page
+        </Link>{' '}
         for guidelines.
       </p>
       <h2>Decouple front- and backend</h2>

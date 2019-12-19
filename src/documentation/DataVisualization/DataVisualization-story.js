@@ -5,10 +5,10 @@ import { storiesOf } from '@storybook/react';
 import Page from '../Page';
 import Link from '../../components/Link';
 
-storiesOf('Design|Guidelines', module)
+storiesOf('Getting started|Guidelines', module)
   .addParameters({ options: { showPanel: false, isToolshown: false } })
-  .add('Data Visualization', () => (
-    <Page title="Data Visualization" subTitle="Icons for Android & iOS">
+  .add('Data visualization', () => (
+    <Page title="Data visualization" subTitle="Guidelines">
       <p>
         <Link
           href="https://brand.manuals.wfp.org/en/data-visualization-guidance/"

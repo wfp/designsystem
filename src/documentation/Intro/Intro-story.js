@@ -58,7 +58,7 @@ export default class IntroAnimation extends Component {
           <Button
             kind="inverse"
             style={{ marginRight: '0.5em' }}
-            onClick={linkTo('Design|Getting started', 'Developers')}>
+            onClick={linkTo('Getting started|Getting started', 'Developers')}>
             Getting started
           </Button>
 
@@ -74,11 +74,11 @@ export default class IntroAnimation extends Component {
   }
 }
 
-storiesOf('Design|Getting started', module)
+storiesOf('Getting started|Getting started', module)
   .addParameters({ options: { showPanel: false, isToolshown: false } })
   .add('Introduction', () => (
     <div>
-      <IntroAnimation />
+      {/*<IntroAnimation />*/}
       {/*<img
         alt="Hero"
         style={{
@@ -103,6 +103,8 @@ storiesOf('Design|Getting started', module)
         </Button>*/}
 
       <Page>
+        <h1>WFP UI Kit</h1>
+
         <div className="row" style={{ margin: '0' }}>
           <div
             className="col-xs-12 col-md-3 col-lg-3"

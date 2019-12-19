@@ -6,7 +6,7 @@ export const withNotes = makeDecorator({
     const contextName = context.kind.includes('Templates')
       ? context.name
       : context.kind
-          .replace('Design|', '')
+          .replace('Getting started|', '')
           .replace('Components|', '')
           .replace('Navigation|', '');
 

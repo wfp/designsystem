@@ -15246,9 +15246,7 @@ var storybook_ui_dll = (function(e) {
             key: '_howReactAppRespondedTo',
             value: function(e, t, n) {
               var r = this.keyEventManager.reactAppHistoryWithEvent(t, n);
-              return (
-                r === Ee || (r === Oe || (r === ke || me.incrementId())), r
-              );
+              return r === Ee || r === Oe || r === ke || me.incrementId(), r;
             },
           },
           {
@@ -33242,9 +33240,10 @@ var storybook_ui_dll = (function(e) {
       e.exports = function() {
         return (
           'function' == typeof r &&
-          ('function' == typeof Symbol &&
-            ('symbol' == typeof r('foo') &&
-              ('symbol' == typeof Symbol('bar') && o())))
+          'function' == typeof Symbol &&
+          'symbol' == typeof r('foo') &&
+          'symbol' == typeof Symbol('bar') &&
+          o()
         );
       };
     }.call(this, n('fRV1')));
@@ -38760,11 +38759,11 @@ var storybook_ui_dll = (function(e) {
             var Qt,
               Jt =
                 f &&
-                ((Qt = Object.getOwnPropertyDescriptor(
+                (Qt = Object.getOwnPropertyDescriptor(
                   RegExp.prototype,
                   'flags'
                 )) &&
-                  ce.IsCallable(Qt.get));
+                ce.IsCallable(Qt.get);
             f &&
               !Jt &&
               w.getter(RegExp.prototype, 'flags', function() {
@@ -52453,9 +52452,9 @@ var storybook_ui_dll = (function(e) {
       (null !== o
         ? 0 === o.type
         : !r &&
-          (2 < t.length &&
-            ('o' === t[0] || 'O' === t[0]) &&
-            ('n' === t[1] || 'N' === t[1]))) ||
+          2 < t.length &&
+          ('o' === t[0] || 'O' === t[0]) &&
+          ('n' === t[1] || 'N' === t[1])) ||
         ((function(e, t, n, r) {
           if (
             null == t ||
@@ -54131,7 +54130,8 @@ var storybook_ui_dll = (function(e) {
         ? e.shouldComponentUpdate(r, i, a)
         : !t.prototype ||
             !t.prototype.isPureReactComponent ||
-            (!en(n, r) || !en(o, i));
+            !en(n, r) ||
+            !en(o, i);
     }
     function uo(e, t, n) {
       var r = !1,
@@ -55237,9 +55237,9 @@ var storybook_ui_dll = (function(e) {
               ? ((n = o.fallback),
                 (o = Gr(r, r.pendingProps)),
                 0 == (1 & t.mode) &&
-                  ((a = null !== t.memoizedState ? t.child.child : t.child) !==
+                  (a = null !== t.memoizedState ? t.child.child : t.child) !==
                     r.child &&
-                    (o.child = a)),
+                  (o.child = a),
                 (r = o.sibling = Gr(u, n, u.expirationTime)),
                 (n = o),
                 (o.childExpirationTime = 0),
@@ -56576,7 +56576,7 @@ var storybook_ui_dll = (function(e) {
               case 6:
                 i && null != t.stateNode
                   ? la(i, t, i.memoizedProps, s)
-                  : ('string' != typeof s && (null === t.stateNode && a('166')),
+                  : ('string' != typeof s && null === t.stateNode && a('166'),
                     (i = wo(_o.current)),
                     wo(mo.current),
                     mi(t)
@@ -56603,12 +56603,12 @@ var storybook_ui_dll = (function(e) {
                   null !== i &&
                     !s &&
                     u &&
-                    (null !== (i = i.child.sibling) &&
-                      (null !== (l = t.firstEffect)
-                        ? ((t.firstEffect = i), (i.nextEffect = l))
-                        : ((t.firstEffect = t.lastEffect = i),
-                          (i.nextEffect = null)),
-                      (i.effectTag = 8))),
+                    null !== (i = i.child.sibling) &&
+                    (null !== (l = t.firstEffect)
+                      ? ((t.firstEffect = i), (i.nextEffect = l))
+                      : ((t.firstEffect = t.lastEffect = i),
+                        (i.nextEffect = null)),
+                    (i.effectTag = 8)),
                   (s || u) && (t.effectTag |= 4);
                 break;
               case 7:
@@ -58716,8 +58716,8 @@ var storybook_ui_dll = (function(e) {
               : (function(e, t) {
                   return (
                     'symbol' === e ||
-                    ('Symbol' === t['@@toStringTag'] ||
-                      ('function' == typeof Symbol && t instanceof Symbol))
+                    'Symbol' === t['@@toStringTag'] ||
+                    ('function' == typeof Symbol && t instanceof Symbol)
                   );
                 })(t, e)
               ? 'symbol'

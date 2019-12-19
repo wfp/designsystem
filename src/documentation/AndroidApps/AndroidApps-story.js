@@ -8,10 +8,10 @@ import Link from '../../components/Link';
 import Blockquote from '../../components/Blockquote';
 import Page from '../Page';
 
-storiesOf('Design|Guidelines', module)
+storiesOf('Getting started|Guidelines', module)
   .addParameters({ options: { showPanel: false, isToolshown: false } })
-  .add('Mobile applications (experimental)', () => (
-    <Page title="Mobile applications" subTitle="UX Standards">
+  .add('Android apps', () => (
+    <Page title="Android apps" subTitle="UX Standards">
       <Blockquote title="In development" type="warning">
         This page is subject to change and will be updated soon.
       </Blockquote>
@@ -25,13 +25,13 @@ storiesOf('Design|Guidelines', module)
       <ul className="wfp--story__list">
         <li>
           Use{' '}
-          <Link onClick={linkTo('Design|Guidelines', 'Colours')}>
+          <Link onClick={linkTo('Getting started|Guidelines', 'Colours')}>
             WFP's branding colours
           </Link>
         </li>
         <li>
           Use{' '}
-          <Link onClick={linkTo('Design|Guidelines', 'Typography')}>
+          <Link onClick={linkTo('Getting started|Guidelines', 'Typography')}>
             Open Sans
           </Link>{' '}
           as font

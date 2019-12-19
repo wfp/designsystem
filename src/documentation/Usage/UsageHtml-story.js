@@ -7,7 +7,7 @@ import Page from '../Page';
 import Blockquote from '../../components/Blockquote';
 import Link from '../../components/Link';
 
-storiesOf(' Design|Getting started', module)
+storiesOf('Getting started|Getting started', module)
   .addParameters({ options: { showPanel: false, isToolshown: false } })
   .add('HTML', () => (
     <Page title="HTML Usage" subTitle="Use the UI Kit without react.js">
@@ -25,12 +25,12 @@ storiesOf(' Design|Getting started', module)
           {`// Sample overriding settings
 import ReactDOM from 'react-dom';
 import { Button } from "@wfp/ui";
- 
+
 const myContainerElement = document.getElementById("container");
- 
+
 // with JSX
 ReactDOM.render(<Button>Simple Button</Button>, myContainerElement);
- 
+
 // with vanilla JS, use React.createElement
 ReactDOM.render(
     React.createElement(Button, {

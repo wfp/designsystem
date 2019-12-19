@@ -8,7 +8,7 @@ import Story from '../../components/Story';
 import Wrapper from '../../components/Wrapper';
 import { Module, ModuleHeader, ModuleBody } from '../../components/Module';
 
-storiesOf(' Design|Templates', module)
+storiesOf('Getting started|Templates', module)
   .addParameters({ hideProps: true })
   .addDecorator(story => (
     <RegularPage title="Regular content page" withoutSecondaryTabs>

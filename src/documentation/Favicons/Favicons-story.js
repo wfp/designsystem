@@ -154,7 +154,7 @@ class FaviconGenerator extends Component {
   }
 }
 
-storiesOf('Design|Core', module)
+storiesOf('Getting started|Core', module)
   .addParameters({ options: { showPanel: false, isToolshown: false } })
   .add('Favicons', () => {
     return (
