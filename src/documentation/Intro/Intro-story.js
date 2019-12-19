@@ -103,7 +103,6 @@ storiesOf('Getting started|Getting started', module)
         </Button>*/}
 
       <Page>
-
         <h1>WFP UI Kit</h1>
 
         <div className="row" style={{ margin: '0' }}>

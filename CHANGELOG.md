@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+# [1.3.0-alpha.36](https://github.com/WFP/UI/compare/v1.3.0-alpha.35...v1.3.0-alpha.36) (2019-12-18)
+
+
+### Bug Fixes
+
+* **Button:** disable timeout onUnmount 87d9ac48ee79cca9e1d823126b1d4bfc981af28f ([53e5bf7](https://github.com/WFP/UI/commit/53e5bf7))
+
+
+
+# Change Log
+
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
 # [1.3.0-alpha.35](https://github.com/WFP/UI/compare/v1.3.0-alpha.34...v1.3.0-alpha.35) (2019-12-18)
 
 
