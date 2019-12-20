@@ -11,7 +11,6 @@ import classNames from 'classnames';
 import { iconCaretDown } from '@wfp/icons';
 
 import Icon from '../Icon';
-import { componentsX } from '../../internal/FeatureFlags';
 //import ChevronDownGlyph from '@carbon/icons-react/lib/chevron--down/index';
 //import WarningFilled16 from '@carbon/icons-react/lib/warning--filled/16';
 import settings from '../../globals/js/settings';

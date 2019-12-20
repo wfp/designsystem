@@ -46,6 +46,8 @@ const listEl = ({ anchor, className, label, href }) => {
     <li className={className}>
       <div
         className="wfp--tabs__nav-link"
+        role="button"
+        tabIndex={0}
         onClick={() => {
           alert('Custom renderListElement');
         }}>

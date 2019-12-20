@@ -1,5 +1,7 @@
 import React from 'react';
-import FileUploader, { FileUploaderButton, Filename } from '../FileUploader';
+import FileUploader, {
+  FileUploaderButton /*, Filename*/,
+} from '../FileUploader';
 import FileUploaderSkeleton from '../FileUploader/FileUploader.Skeleton';
 import { mount, shallow } from 'enzyme';
 

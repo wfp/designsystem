@@ -1,13 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import ReactSelect from 'react-select';
-import {
-  withKnobs,
-  boolean,
-  number,
-  select,
-  text,
-} from '@storybook/addon-knobs';
+import { withKnobs, boolean, text } from '@storybook/addon-knobs';
 
 const options = [
   { value: 'chocolate', label: 'Chocolate' },

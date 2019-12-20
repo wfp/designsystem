@@ -10,7 +10,7 @@ storiesOf('Getting started|Guidelines', module)
   .addParameters({ options: { showPanel: false, isToolshown: false } })
   .add('Maps', () => (
     <Page title="Maps" subTitle="Frontend implementation of maps">
-      <p>When designing an map</p>
+      {/*<p>When designing an map</p>*/}
 
       <h3>Official UN boundaries</h3>
       <p>Make sure your map follows these rules:</p>
@@ -75,18 +75,5 @@ storiesOf('Getting started|Guidelines', module)
         }}
         sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"
       />
-
-      <h3>Mapbox GL</h3>
-
-      <p>
-        Mapbox is a mapping platform for custom designed maps. You can use the
-        WFP basemap for the official UN country names and boundaries.
-      </p>
-
-      <p>
-        <Link href="https://codesandbox.io/s/mapbox-un-base-map-from-archgis-q0v0o">
-          Example implementation using react-map-gl
-        </Link>
-      </p>
     </Page>
   ));

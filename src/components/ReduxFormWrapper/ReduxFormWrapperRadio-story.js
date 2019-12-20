@@ -6,7 +6,6 @@ import RadioButton from '../RadioButton';
 import ReduxFormWrapper from '../ReduxFormWrapper';
 import Button from '../Button';
 import Blockquote from '../Blockquote';
-import SelectSkeleton from '../Select/Select.Skeleton';
 
 const onSubmit = () => {};
 

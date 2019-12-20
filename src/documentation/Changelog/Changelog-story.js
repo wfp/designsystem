@@ -2,7 +2,6 @@
 
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import PrismCode from 'react-prism';
 import Page from '../Page';
 import Blockquote from '../../components/Blockquote';
 import Link from '../../components/Link';

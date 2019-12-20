@@ -14,6 +14,7 @@ import { hex, score } from 'wcag-contrast';
 import Tippy from '@tippy.js/react';
 import { tooltipStyle } from '../../components/Tooltip';
 
+import ColorList from './ColourList';
 import './_colours.scss';
 import { color } from '@storybook/theming';
 
@@ -74,29 +75,6 @@ var mix = function(color_1, color_2, weight) {
 storiesOf('Getting started|Core', module)
   .addParameters({ options: { showPanel: false, isToolshown: false } })
   .add('Colours', () => {
-    const regularColors = Object.values(colors).filter(
-      ui_colors => ui_colors.type === 'communications'
-    );
-
-    const brandColors = Object.values(colors).filter(
-      ui_colors => ui_colors.type === 'brand'
-    );
-
-    const uiColors = Object.values(colors).filter(
-      ui_colors => ui_colors.type === 'ui'
-    );
-    const symbolicColors = Object.values(colors).filter(
-      ui_colors => ui_colors.type === 'symbolic'
-    );
-
-    const supportColors = Object.values(colors).filter(
-      ui_colors => ui_colors.type === 'support'
-    );
-
-    const sdgColors = Object.values(colors).filter(
-      ui_colors => ui_colors.type === 'sdg'
-    );
-
     const tooltips = {
       'ui-01': (
         <img
@@ -124,134 +102,6 @@ storiesOf('Getting started|Core', module)
       ),
     };
 
-    const colorList = filterList => {
-      return filterList.map(color => (
-        <Tippy
-          // options
-          content={
-            <div>
-              {color.description && <p>{color.description}</p>}
-              {tooltips[color.name]}
-              {color.name}
-            </div>
-          }
-          {...tooltipStyle}>
-          <li>
-            <Module fullHeight noMargin light className="colour__item">
-              <div
-                className="colour__field"
-                style={{ backgroundColor: color.hex }}>
-                <div className="colour__contrast">
-                  <span>A</span>
-                  <div>>{score(hex(color.hex, '#000000'))}</div>
-                </div>
-                <div className="colour__contrast colour__contrast--light">
-                  <span>A</span>
-                  <div>{score(hex(color.hex, '#FFFFFF'))}</div>
-                </div>
-              </div>
-              <div
-                style={{
-                  flexGrow: '1',
-                  fontSize: '0.7em',
-                  lineHeight: '2em',
-                }}>
-                <ModuleBody>
-                  <h4>{color.name}</h4>
-                  <List colon kind="simple">
-                    {/*<ListItem>{color.name}</ListItem>
-                  <ListItem>{color.scss}</ListItem>*/}
-                    <ListItem>{color.hex}</ListItem>
-
-                    {color.css && (
-                      <ListItem>
-                        .{color.css}
-                        <div
-                          className={color.css}
-                          style={{
-                            display: 'inline-block',
-                            marginLeft: '0.5em',
-                            borderRadius: '3px',
-                            width: '1em',
-                            height: '1em',
-                          }}
-                        />
-                      </ListItem>
-                    )}
-                  </List>
-                  {color.shortDescription && (
-                    <h4 className="wfp--story__sub-heading">
-                      {color.shortDescription}
-                    </h4>
-                  )}
-                </ModuleBody>
-              </div>
-              {/*
-            {color.type !== 'symbolic' &&
-              color.type !== 'ui' &&
-              color.type !== 'sdg' &&
-              color.type !== 'support' && (
-                <div
-                  style={{
-                    width: '50%',
-                  }}>
-                  {colorBlend.map(blend => (
-                    <div
-                      style={{
-                        display: 'flex',
-                        fontSize: '0.7em',
-                        width: '100%',
-                      }}>
-                      <div
-                        style={{
-                          width: '20px',
-                          height: '20px',
-                          marginTop: '1px',
-                          marginRight: '1em',
-                          marginBottom: '1px',
-                          borderRadius: '3px',
-                          background: mix(
-                            blend.blend,
-                            color.hex.replace('#', ''),
-                            blend.percentage
-                          ),
-                        }}
-                        className={`color__${color.name}-{blend}`}
-                      />
-                      <div
-                        style={{
-                          marginTop: '2px',
-                          lineHeight: '20px',
-                        }}>
-                        <span
-                          style={{
-                            display: 'inline-block',
-                            marginRight: '1em',
-                          }}>
-                          <List colon kind="simple-inline" inline>
-                            <ListItem title="hex">
-                              {mix(
-                                blend.blend,
-                                color.hex.replace('#', ''),
-                                blend.percentage
-                              )}
-                            </ListItem>
-                            <ListItem title="scss">
-                              {color.scss}-{blend.name}
-                            </ListItem>
-                          </List>
-                        </span>
-                      </div>
-                    </div>
-                              ))}
-                </div>
-              )}*/}
-            </Module>
-          </li>
-        </Tippy>
-      ));
-    };
-
     return (
       <Page title="Brand & UX colours" subTitle="Colour palette">
         <p>
@@ -268,24 +118,27 @@ storiesOf('Getting started|Core', module)
           </Link>
           .
         </p>
-        {/*<p>A colour scheme usually consists of these colour categories:</p>
+        <p>WFP online visual identity includes the following colours:</p>
         <List kind="bullet">
           <ListItem>
-            <a href="#brand">Interactive, primary and secondary colours</a>
+            <a href="#primary">primary</a>
           </ListItem>
           <ListItem>
-            <a href="#accent">Accent colours</a>
+            <a href="#accent">extended primary</a>
           </ListItem>
           <ListItem>
-            <a href="#neutrals">Neutrals</a>
+            <a href="#neutrals">neutrals</a>
           </ListItem>
           <ListItem>
-            <a href="#semantic">Semantic colours</a>
+            <a href="#semantic">semantic </a>
           </ListItem>
-        </List>*/}
+          <ListItem>
+            <a href="#semantic">symbolic </a>
+          </ListItem>
+        </List>
         <p>
-          Use the <i>70–25–5 (60–30–10)</i> rule to create sense of balance and
-          allow the eye to move comfortably from one focal point to the next.
+          Use the <i>70–25–5</i> rule to create sense of balance and allow the
+          eye to move comfortably from one focal point to the next.
         </p>
         <img
           alt="Brand colour"
@@ -298,7 +151,23 @@ storiesOf('Getting started|Core', module)
           src={`${process.env.STORYBOOK_INTERNAL_ASSETS}internal/colors.png`}
         />
         <h3>Primary Colours</h3>
-        <ul className="color--list">{colorList(brandColors)}</ul>
+        <p>
+          Primary colours are the base colours of the UI, the ones that are used
+          most frequently in the interface.{' '}
+          <b>Brand-01 is the base branding colour</b>, corresponding to WFP’s
+          corporate blue: it is used for brand elements and non-interactive
+          elements. <b>Interactive colours</b> are used for primary links and
+          action items that can be clicked or touched, to emphasize important
+          actions and highlight information in your application. Yellow is the
+          recommended <b>secondary accent colour</b>: to use a different colour
+          please contact{' '}
+          <Link href="mailto:wfp.publications@wfp.org">
+            wfp.publications@wfp.org
+          </Link>
+        </p>
+        <ul className="color--list">
+          <ColorList filter="brand" />
+        </ul>
         <Color color="interactive-01" />
         <h4 className="wfp--story__sub-heading">
           Primary interactive colour, Primary buttons
@@ -465,11 +334,58 @@ storiesOf('Getting started|Core', module)
           Neutral colours are used for non-interactive elements, backgrounds and
           borders.
         </p>
-        <ul className="color--list">{colorList(uiColors)}</ul>
+        <ul className="color--list">
+          <ColorList filter="ui" />
+        </ul>
+
+        <h3>ui-01 and ui-02</h3>
+        <h4 className="wfp--story__sub-heading">
+          Container and page background colors
+        </h4>
+        <p>
+          <b>ui-01</b> is used as the page background if there are not Modules
+          on top of it, while ui-02 is used as the page background when there
+          are Modules on top.
+        </p>
+        <img
+          alt="Brand colour"
+          style={{
+            width: '100%',
+            height: 'auto',
+            marginTop: '3em',
+            marginLeft: '0em',
+          }}
+          src={`${process.env.STORYBOOK_INTERNAL_ASSETS}internal/background-contrast.png`}
+        />
         <h3>Brand Colours – Tints for use in graphs and charts</h3>
-        <ul className="color--list">{colorList(regularColors)}</ul>
+        <ul className="color--list">
+          <ColorList filter="communications" />
+        </ul>
         <h3>Success, error, warning and information</h3>
-        <ul className="color--list">{colorList(supportColors)}</ul>
+        <ul className="color--list">
+          <ColorList filter="support" />
+        </ul>
+
+        <Color color="support-01" />
+        <p>
+          Use the error colour to indicate an error or to focus the attention on
+          something which is crucial to see. Paired with a cross icon, red
+          delivers the message that something went wrong.{' '}
+        </p>
+        <Color color="support-02" />
+        <p>
+          Use green to indicate success state. Paired with a checkmark icon the
+          user knows that the operation was successfully completed.
+        </p>
+        <Color color="support-03" />
+        <p>
+          Use yellow to indicate a transient warning which is less important
+          than an error message. Yellow tipically consists of items which
+          require the user’s immediate attention, or indicate a waiting period.
+          Although this overlaps with the use of red, yellow is more transient
+          in nature.
+        </p>
+
         {/*
         <h3>Sustainable development goals colours</h3>
         <ul style={{ display: 'flex', flexWrap: 'wrap' }}>
@@ -477,7 +393,9 @@ storiesOf('Getting started|Core', module)
         </ul>
         */}
         <h3>Symbolic colours</h3>
-        <ul className="color--list">{colorList(symbolicColors)}</ul>
+        <ul className="color--list">
+          <ColorList filter="symbolic" />
+        </ul>
         <p />
         <h3>Usage</h3>
         <p>The colours can be used via JavaScript or different frameworks.</p>
