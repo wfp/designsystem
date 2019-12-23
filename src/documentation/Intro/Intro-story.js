@@ -109,7 +109,7 @@ storiesOf('Getting started|Getting started', module)
             WFP’s commitment to establish and build the brand.
           </p>
           <Button
-            kind="primary"
+            kind="accent"
             icon={iconLightGlyph}
             style={{ marginRight: '0.5em' }}
             onClick={linkTo('Getting started|Getting started', 'Developers')}>

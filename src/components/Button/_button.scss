@@ -79,6 +79,22 @@
     );
   }
 
+  .#{$prefix}--btn--accent {
+    @include button-theme(
+      $brand-03,
+      transparent,
+      $text-01,
+      darken($brand-03, 5),
+      $text-01
+    );
+
+    .#{$prefix}--btn__icon,
+    &:hover > .#{$prefix}--btn__icon,
+    &:focus > .#{$prefix}--btn__icon {
+      fill: $text-01;
+    }
+  }
+
   @keyframes slidein {
     from {
       box-shadow: 0 0 0 0px rgba($ui-05, 0.7);

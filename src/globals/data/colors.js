@@ -141,8 +141,7 @@ const colors = {
     scss: '$interactive-02',
     css: 'color__interactive-02',
     type: 'brand',
-    shortDescription:
-      'Accent colour (recommended)',
+    shortDescription: 'Accent colour (recommended)',
   },
   'ui-01': {
     name: 'ui-01',

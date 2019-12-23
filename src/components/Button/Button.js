@@ -35,6 +35,7 @@ const Button = ({
     'wfp--btn--icon-only': icon && children === undefined,
     'wfp--btn--primary': kind === 'primary',
     'wfp--btn--danger': kind === 'danger',
+    'wfp--btn--accent': kind === 'accent',
     'wfp--btn--secondary': kind === 'secondary',
     'wfp--btn--navigation': kind === 'navigation',
     'wfp--btn--ghost': kind === 'ghost',
