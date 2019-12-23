@@ -61,7 +61,7 @@ const ColourDocs = () => {
         </ListItem>
         <ListItem>
           <Link href="extendedPrimary" onClick={executeScroll}>
-            extendedPrimary{' '}
+            extended primary{' '}
           </Link>
         </ListItem>
         <ListItem>
