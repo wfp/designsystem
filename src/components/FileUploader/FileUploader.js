@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import settings from '../../globals/js/settings';
-import uid from '../../tools/uniqueId';
+//import uid from '../../tools/uniqueId';
 import { ButtonTypes } from '../../prop-types/types';
 import { Filename } from '../FileUploader/Filename';
 import { FileUploaderButton } from '../FileUploader/FileUploaderButton';

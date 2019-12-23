@@ -48,6 +48,9 @@ const listEl = ({ anchor, className, label, href }) => {
         className="wfp--tabs__nav-link"
         role="button"
         tabIndex={0}
+        onKeyPress={() => {
+          alert('Custom renderListElement keypress');
+        }}
         onClick={() => {
           alert('Custom renderListElement');
         }}>

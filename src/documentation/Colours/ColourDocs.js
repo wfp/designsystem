@@ -1,4 +1,4 @@
-import React, { Component, useRef } from 'react';
+import React, { useRef } from 'react';
 import PrismCode from 'react-prism';
 import Link from '../../components/Link';
 import { List, ListItem } from '../../components/List';
@@ -8,7 +8,6 @@ import Blockquote from '../../components/Blockquote';
 import { linkTo } from '@storybook/addon-links';
 import ColorList from './ColourList';
 import './_colours.scss';
-import { color } from '@storybook/theming';
 
 const Color = ({ color }) => (
   <h3>
@@ -161,7 +160,8 @@ const ColourDocs = () => {
         Interactive emphasis colour (e.g. hovers)
       </h4>
       <p>
-        This colour is used for hover and active states. {/* and to create contrast
+        This colour is used for hover and active states.{' '}
+        {/* and to create contrast
         between UI elements such as distinguishing the BannerNavigation bar from
         the MainNavigation. You can use this dark variant of our primary colour
         on elements.*/}

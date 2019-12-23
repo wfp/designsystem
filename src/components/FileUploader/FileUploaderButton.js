@@ -5,7 +5,7 @@ import classNames from 'classnames';
 import settings from '../../globals/js/settings';
 import uid from '../../tools/uniqueId';
 import { ButtonTypes } from '../../prop-types/types';
-import Filename from '../FileUploader/Filename';
+//import Filename from '../FileUploader/Filename';
 
 const { prefix } = settings;
 

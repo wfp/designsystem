@@ -5,7 +5,6 @@ import { action } from '@storybook/addon-actions';
 import { withKnobs, boolean, select, text } from '@storybook/addon-knobs';
 import RadioButtonGroup from '../RadioButtonGroup';
 import RadioButton from '../RadioButton';
-import FormGroup from '../FormGroup';
 
 const values = {
   standard: 'standard',

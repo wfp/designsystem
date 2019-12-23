@@ -2,60 +2,6 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withKnobs } from '@storybook/addon-knobs';
 
-const data = [
-  {
-    name: 'Emyr Monaghan',
-    age: 26,
-    city: 'Berlin',
-  },
-  {
-    name: 'Madihah Watson',
-    age: 28,
-    city: 'Rome',
-  },
-  {
-    name: 'Rahim Valdez',
-    age: 61,
-    city: 'Nairobi',
-  },
-  {
-    name: 'Max Mustermann',
-    age: 73,
-    city: 'Panama Citry',
-  },
-  {
-    name: 'Maggie Alexander',
-    age: 52,
-    city: 'Bangok',
-  },
-  {
-    name: 'Kirsten Martinez',
-    age: 19,
-    city: 'New York',
-  },
-  {
-    name: 'Garfield Dejesus',
-    age: 78,
-    city: 'Paris',
-  },
-];
-
-const columns = [
-  {
-    Header: 'Name',
-    accessor: 'name', // String-based value accessors!
-  },
-  {
-    Header: 'Age',
-    accessor: 'age',
-    Cell: props => <span className="number">{props.value}</span>, // Custom cell components!
-  },
-  {
-    Header: 'City',
-    accessor: 'city', // String-based value accessors!
-  },
-];
-
 storiesOf('Components|Table', module)
   .addDecorator(withKnobs)
   .add('Simple table', () => (
@@ -75,18 +21,18 @@ storiesOf('Components|Table', module)
       </thead>
       <tbody>
         <tr>
-          <td>playground</td>
-          <td>apple</td>
+          <td>Max</td>
+          <td>Mustermann</td>
           <td>29</td>
-          <td>apple malone binam</td>
-          <td>apple</td>
+          <td>32</td>
+          <td>confirmed</td>
         </tr>
         <tr>
-          <td>lorem</td>
-          <td>ipsum</td>
+          <td>John</td>
+          <td>Doe</td>
           <td>32</td>
-          <td>apple lorem dolor</td>
-          <td>apple</td>
+          <td>21</td>
+          <td>pending</td>
         </tr>
       </tbody>
     </table>

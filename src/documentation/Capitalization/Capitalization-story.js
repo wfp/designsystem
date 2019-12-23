@@ -6,7 +6,6 @@ import Page from '../Page';
 import Blockquote from '../../components/Blockquote';
 import Link from '../../components/Link';
 import { List, ListItem } from '../../components/List';
-import { linkTo } from '@storybook/addon-links';
 
 storiesOf('Getting started|Guidelines', module)
   .addParameters({ options: { showPanel: false, isToolshown: false } })
