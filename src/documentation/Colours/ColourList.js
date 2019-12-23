@@ -8,12 +8,79 @@ import { hex, score } from 'wcag-contrast';
 import Tippy from '@tippy.js/react';
 import { tooltipStyle } from '../../components/Tooltip';
 
+/*
+const tooltips = {
+    'ui-01': (
+    <img
+        alt="Brand colour"
+        style={{
+        width: '100%',
+        height: 'auto',
+        marginTop: '3em',
+        marginLeft: '0em',
+        }}
+        src={`${process.env.STORYBOOK_INTERNAL_ASSETS}internal/background-contrast.png`}
+    />
+    ),
+    'ui-02': (
+    <img
+        alt="Brand colour"
+        style={{
+        width: '100%',
+        height: 'auto',
+        marginTop: '3em',
+        marginLeft: '0em',
+        }}
+        src={`${process.env.STORYBOOK_INTERNAL_ASSETS}internal/background-contrast.png`}
+    />
+    ),
+};
+
+const colorBlend = [
+  { name: '20', blend: 'ffffff', percentage: '75' },
+  { name: '30', blend: 'ffffff', percentage: '50' },
+  { name: '40', blend: 'ffffff', percentage: '25' },
+  { name: '60', blend: '000000', percentage: '25' },
+  { name: '70', blend: '000000', percentage: '50' },
+  { name: '80', blend: '000000', percentage: '75' },
+];
+
+var mix = function(color_1, color_2, weight) {
+  function d2h(d) {
+    return d.toString(16);
+  } // convert a decimal value to hex
+  function h2d(h) {
+    return parseInt(h, 16);
+  } // convert a hex value to decimal
+
+  weight = typeof weight !== 'undefined' ? weight : 50; // set the weight to 50%, if that argument is omitted
+
+  var color = '#';
+
+  for (var i = 0; i <= 5; i += 2) {
+    // loop through each of the 3 hex pairs—red, green, and blue
+    var v1 = h2d(color_1.substr(i, 2)), // extract the current pairs
+      v2 = h2d(color_2.substr(i, 2)),
+      // combine the current pairs from each source color, according to the specified weight
+      val = d2h(Math.floor(v2 + (v1 - v2) * (weight / 100.0)));
+
+    while (val.length < 2) {
+      val = '0' + val;
+    } // prepend a '0' if val results in a single digit
+
+    color += val; // concatenate val to our new colour string
+  }
+
+  return color; // PROFIT!
+};
+*/
+
 const colorList = ({ filter }) => {
   const filteredColors = Object.values(colors).filter(
     ui_colors => ui_colors.type === filter
   );
 
-  return filteredColors.map(color => (
+  const list = filteredColors.map(color => (
     <Tippy
       // options
       content={
@@ -136,6 +203,8 @@ const colorList = ({ filter }) => {
       </li>
     </Tippy>
   ));
+
+  return <ul className="color--list">{list}</ul>;
 };
 
 export default colorList;

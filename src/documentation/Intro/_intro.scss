@@ -3,15 +3,96 @@ $css--reset: false;
 @import '../../globals/scss/spacing';
 @import '../../globals/scss/helper-mixins';
 
+$color-intro: $brand-01;
+$color-intro-mobile: $brand-01;
+$color-intro-tablet: $brand-03;
 h1 {
   font-size: 8vw;
 }
 
+.intro-content {
+  //background: $brand-01;
+  background: $ui-02;
+  clip-path: polygon(0 15%, 100% 0, 100% 100%, 0% 100%);
+  margin-top: -15%;
+  padding-top: 15%;
+  z-index: -1;
+  position: relative;
+  /*color: #fff;
+  .wfp--link {
+    color: #fff;
+  }*/
+  .wfp--blockquote {
+    background: rgba($brand-01, 0.1);
+  }
+  .wfp--wrapper {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    padding: 4rem 0;
+  }
+}
+
+.intro {
+  //background: $ui-02;
+  //background: linear-gradient(90deg, $brand-01, 0%, lighten($brand-01, 5) 100%);
+  height: 90vh;
+  width: 100vw;
+  display: flex;
+  //box-shadow: inset 0px -22px 22px rgba(#000, 0.015);
+  position: relative;
+  align-items: center;
+  padding: 0 5%;
+  //color: #fff;
+  h1 {
+    letter-spacing: 0.05rem;
+  }
+  &__name {
+    font-weight: 100;
+  }
+  &__version {
+    opacity: 0.4;
+    font-size: 0.2em;
+    font-weight: normal;
+    font-style: italic;
+    text-transform: initial;
+  }
+  &__left {
+    width: 50%;
+    min-width: 50%;
+    max-width: 50%;
+    padding: 0 3% 0 10%;
+    margin-top: -5%;
+    h1 {
+      font-size: 4rem;
+      //font-weight: 100;
+      text-transform: uppercase;
+    }
+    p {
+      font-size: 1.2rem;
+      line-height: 1.8;
+      padding: 1.6rem 0 2.2rem 0;
+    }
+  }
+  &__right {
+    padding-left: 5%;
+    padding-right: 15%;
+    width: 50%;
+    max-width: 50%;
+  }
+}
+
 .intro-hero {
-  background: $brand-01;
-  background: linear-gradient(90deg, $brand-01, 0%, lighten($brand-01, 5) 100%);
+  //background: linear-gradient(90deg, $brand-01, 0%, lighten($brand-01, 5) 100%);
   height: 100vh;
   position: relative;
+  svg {
+    height: 20%;
+    width: 20%;
+    margin-left: -0.5%;
+    path {
+      //fill: $color-intro;
+    }
+  }
 }
 .intro-animation {
   display: flex;
@@ -21,7 +102,7 @@ h1 {
 }
 
 .intro__monitor {
-  border: 2px solid #fff;
+  border: 2px solid $color-intro;
   border-radius: 1rem;
   transition: all 0.5s;
   transition-timing-function: ease-in-out;
@@ -31,18 +112,22 @@ h1 {
   justify-content: center;
   position: relative;
   margin-top: -5vw;
-  background: rgba(#fff, 0.02);
-  box-shadow: 0px 15px 15px -7px rgba(#000, 0.2);
+  //background: rgba($color-intro, 0.02);
+  //background: $ui-01;
+  box-shadow: 0px 7px 10px -4px rgba($brand-01, 0.2);
+  //box-shadow: 5px 5px 0px 0px rgba($brand-01, 0.2);
   .intro-animation--mobile & {
     width: 15vw;
     height: 25vw;
+    //border-color: $color-intro-mobile;
   }
   .intro-animation--tablet & {
     width: 20vw;
     height: 30vw;
+    //border-color: $color-intro-tablet;
   }
   .intro-animation--desktop & {
-    width: 50vw;
+    width: 30vw;
     height: 20vw;
   }
 }
@@ -52,7 +137,7 @@ h1 {
   white-space: nowrap;
   width: 100%;
   text-align: center;
-  color: #fff;
+  color: $color-intro;
   position: absolute;
   top: 50%;
   margin-top: -3vw;
@@ -62,13 +147,15 @@ h1 {
   flex-wrap: wrap;
   justify-content: center;
   .intro-animation--mobile & {
-    transform: translateY(-1vw) scale(1);
+    transform: translateY(-2vw) scale(1);
+    //border-color: $color-intro-mobile;
   }
   .intro-animation--tablet & {
-    transform: translateY(-1vw) scale(1.3);
+    transform: translateY(-3vw) scale(1.3);
+    //border-color: $color-intro-tablet;
   }
   .intro-animation--desktop & {
-    transform: translateY(0vw) scale(2.5);
+    transform: translateY(-1vw) scale(1.5);
   }
 }
 
@@ -83,18 +170,20 @@ h1 {
   top: 0;
   width: 100%;
   height: 0px;
-  border-bottom: 2px solid #fff;
+  border-bottom: 2px solid $color-intro;
   display: flex;
   transition: all 0.5s;
   transition-timing-function: ease-in-out;
   .intro-animation--mobile & {
     transform: translateY(22vw);
+    //border-color: $color-intro-mobile;
   }
   .intro-animation--tablet & {
     transform: translateY(25vw);
+    //border-color: $color-intro-tablet;
   }
   .intro-animation--desktop & {
-    transform: translateY(3vw);
+    transform: translateY(2.5vw);
   }
 }
 
@@ -139,17 +228,17 @@ h1 {
     }
   }
   .intro-animation--desktop & {
-    transform: translateX(2%) translateY(4.9%);
+    transform: translateX(2.4%) translateY(4.3%);
     opacity: 1;
     .intro__dots__dot {
-      width: 1.1vw;
-      height: 1.1vw;
-      margin-right: 0.5vw;
+      width: 1vw;
+      height: 1vw;
+      margin-right: 0.4vw;
     }
   }
 
   .intro__dots__dot {
-    border: 2px solid #fff;
+    border: 2px solid $color-intro;
     border-radius: 30px;
     width: 3vw;
     height: 3vw;

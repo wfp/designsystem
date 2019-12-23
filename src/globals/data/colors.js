@@ -186,8 +186,7 @@ const colors = {
     scss: '$text-01',
     css: 'color__text-01',
     type: 'ui',
-    shortDescription:
-      'Primary text; Body copy; Headers; Hover text color for text-02',
+    shortDescription: 'Primary text colour',
   },
   'text-02': {
     name: 'text-02',
@@ -211,6 +210,7 @@ const colors = {
     scss: '$inverse-01',
     css: 'color__inverse-01',
     type: 'ui',
+    shortDescription: 'Inverse text color; Inverse icon color',
   },
   'inverse-02': {
     name: 'inverse-02',
@@ -218,6 +218,7 @@ const colors = {
     scss: '$inverse-02',
     css: 'color__inverse-02',
     type: 'ui',
+    shortDescription: 'High contrast backgrounds; High contrast elements',
   },
   'field-01': {
     name: 'field-01',
@@ -225,14 +226,15 @@ const colors = {
     scss: '$field-02',
     css: 'color__field-01',
     type: 'ui',
+    shortDescription: 'Default input fields; Fields on $ui-backgrounds',
   },
-  'field-02': {
+  /*'field-02': {
     name: 'field-02',
     hex: '#fbfcfc',
     scss: '$field-02',
     css: 'color__field-02',
     type: 'ui',
-  },
+  },*/
   'sdg-01': {
     name: 'sdg-01',
     hex: '#E5243B',
