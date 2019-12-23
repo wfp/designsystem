@@ -110,7 +110,7 @@ storiesOf('Getting started|Getting started', module)
             kind="primary"
             icon={iconLightGlyph}
             style={{ marginRight: '0.5em' }}
-            onClick={linkTo('Documentation', 'Usage')}>
+            onClick={linkTo('Getting started|Getting started', 'Developers')}>
             Getting started
           </Button>
 

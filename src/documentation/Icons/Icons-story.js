@@ -129,7 +129,7 @@ storiesOf('Getting started|Core', module)
         For Usage please take a look at the{' '}
         <Link onClick={linkTo('Components|Icon', 'Default')}>Icon</Link>{' '}
         component or{' '}
-        <Link onClick={linkTo(' Documentation.Getting Started', 'Developers')}>
+        <Link onClick={linkTo(' Getting started|Getting Started', 'Developers')}>
           Usage for Developers
         </Link>
         .
