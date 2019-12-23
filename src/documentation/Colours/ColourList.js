@@ -114,12 +114,17 @@ const colorList = ({ filter }) => {
               <List colon kind="simple">
                 {/*<ListItem>{color.name}</ListItem>
                     <ListItem>{color.scss}</ListItem>*/}
-                <ListItem>{color.hex}</ListItem>
+                    {color.shortDescription && (
+                      <h4 className="wfp--story__sub-heading">
+                        {color.shortDescription}
+                      </h4>
+                    )}
+                <ListItem><strong>Hex:</strong> {color.hex}</ListItem>
 
                 {color.css && (
                   <ListItem>
-                    .{color.css}
-                    <div
+                    <strong>CSS:</strong> .{color.css}
+                    {/*<div
                       className={color.css}
                       style={{
                         display: 'inline-block',
@@ -128,15 +133,10 @@ const colorList = ({ filter }) => {
                         width: '1em',
                         height: '1em',
                       }}
-                    />
+                    />*/}
                   </ListItem>
                 )}
               </List>
-              {color.shortDescription && (
-                <h4 className="wfp--story__sub-heading">
-                  {color.shortDescription}
-                </h4>
-              )}
             </ModuleBody>
           </div>
           {/*

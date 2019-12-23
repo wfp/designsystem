@@ -31,7 +31,8 @@ const ColourDocs = () => {
   const linkRefs = {
     primary: useRef(null),
     extendedPrimary: useRef(null),
-    neutals: useRef(null),
+    neutrals: useRef(null),
+    dataviz: useRef(null),
     semantic: useRef(null),
     symbolic: useRef(null),
   };
@@ -42,7 +43,7 @@ const ColourDocs = () => {
   };
 
   return (
-    <Page title="Brand & UX colours" subTitle="Colour palette">
+    <Page title="Colours" subTitle="Core">
       {/*<p>
         The visual identity includes a palette of ten complementary colours that
         can be used with the logo in communications products. Please do not use
@@ -55,17 +56,22 @@ const ColourDocs = () => {
       <List kind="bullet">
         <ListItem>
           <Link href="primary" onClick={executeScroll}>
-            primary
+            primary{' '}
           </Link>
         </ListItem>
         <ListItem>
-          <Link href="accent" onClick={executeScroll}>
-            extended primary
+          <Link href="extendedPrimary" onClick={executeScroll}>
+            extendedPrimary{' '}
           </Link>
         </ListItem>
         <ListItem>
           <Link href="neutrals" onClick={executeScroll}>
-            neutrals
+            neutrals{' '}
+          </Link>
+        </ListItem>
+        <ListItem>
+          <Link href="dataviz" onClick={executeScroll}>
+            dataviz{' '}
           </Link>
         </ListItem>
         <ListItem>
@@ -119,6 +125,53 @@ const ColourDocs = () => {
 
       <ColorList filter="brand" />
 
+      <Color color="brand-01" />
+      <h4 className="wfp--story__sub-heading">WFP's corporate colour</h4>
+      <p>
+        The brand-01 colour is WFP’s corporate blue which is used in all
+        (non-interactive) branding elements. It is the colour displayed most
+        frequently across your App’s screens and components. The primary colour
+        can also be used to accent elements.
+      </p>
+      <section className="dodonot">
+        <div>
+          <h4>Use brand-01 for:</h4>
+          <List kind="bullet">
+            <ListItem kind="checkmark">
+              <Link onClick={linkTo('Components|MainNavigation', 'default')}>
+                MainNavigation
+              </Link>
+            </ListItem>
+            <ListItem kind="checkmark">brand elements</ListItem>
+            <ListItem kind="checkmark">dark background</ListItem>
+          </List>
+        </div>
+        <div>
+          <h4>Do not use for:</h4>
+          <List kind="bullet">
+            <ListItem kind="cross">
+              interactive elements like buttons or links
+            </ListItem>
+            <ListItem kind="cross">Primary and secondary colours</ListItem>
+          </List>
+        </div>
+      </section>
+      <Color color="brand-02" />
+      <h4 className="wfp--story__sub-heading">
+        Interactive emphasis colour (e.g. hovers)
+      </h4>
+      <p>
+        This colour is used for hover and active states. {/* and to create contrast
+        between UI elements such as distinguishing the BannerNavigation bar from
+        the MainNavigation. You can use this dark variant of our primary colour
+        on elements.*/}
+      </p>
+      {/*<p>
+        You can also use variants to distinguish elements within a component,
+        such different variants used on a floating action button container as
+        well as the icon within it.
+      </p>*/}
+
       <Color color="interactive-01" />
       <h4 className="wfp--story__sub-heading">
         Primary interactive colour, primary buttons
@@ -162,58 +215,7 @@ const ColourDocs = () => {
           </List>
         </div>
       </section>
-      <h2>Brand colour</h2>
-      <p>
-        These are the base colours of the UI. Primary colours are the ones that
-        are used most frequently in the interface.The WFP brand colour is
-        selected as the primary colour.
-      </p>
-      <Color color="brand-01" />
-      <h4 className="wfp--story__sub-heading">WFP's corporate colour</h4>
-      <p>
-        The brand-01 colour is WFP’s corporate blue which is used in all
-        (non-interactive) branding elements. It is the colour displayed most
-        frequently across your App’s screens and components. The primary colour
-        can also be used to accent elements.
-      </p>
-      <section className="dodonot">
-        <div>
-          <h4>Use brand-01 for:</h4>
-          <List kind="bullet">
-            <ListItem kind="checkmark">
-              <Link onClick={linkTo('Components|MainNavigation', 'default')}>
-                MainNavigation
-              </Link>
-            </ListItem>
-            <ListItem kind="checkmark">brand elements</ListItem>
-            <ListItem kind="checkmark">dark background</ListItem>
-          </List>
-        </div>
-        <div>
-          <h4>Do not use for:</h4>
-          <List kind="bullet">
-            <ListItem kind="cross">
-              interactive elements like buttons or links
-            </ListItem>
-            <ListItem kind="cross">Primary and secondary colours</ListItem>
-          </List>
-        </div>
-      </section>
-      <Color color="brand-02" />
-      <h4 className="wfp--story__sub-heading">
-        Interactive emphasis colour (e.g. hovers)
-      </h4>
-      <p>
-        This colour is used for hover, active states and to create contrast
-        between UI elements such as distinguishing the BannerNavigation bar from
-        the MainNavigation. You can use this dark variant of our primary colour
-        on elements.
-      </p>
-      <p>
-        You can also use variants to distinguish elements within a component,
-        such different variants used on a floating action button container as
-        well as the icon within it.
-      </p>
+
       <Color color="brand-03" />
       <h4 className="wfp--story__sub-heading">Accent secondary colour</h4>
       <img
@@ -295,6 +297,7 @@ const ColourDocs = () => {
       </p>
 
       <h3 ref={linkRefs.neutrals}>Neutrals</h3>
+
       <p>
         Neutral colours are used for non-interactive elements, backgrounds,
         borders and texts.
@@ -320,11 +323,12 @@ const ColourDocs = () => {
         }}
         src={`${process.env.STORYBOOK_INTERNAL_ASSETS}internal/background-contrast.png`}
       />
-      <h3>Brand Colours – Tints for use in graphs and charts</h3>
+      <h3 ref={linkRefs.dataviz}>Tints to use in graphs and charts</h3>
 
       <ColorList filter="communications" />
 
-      <h3 ref={linkRefs.semantic}>Semantic</h3>
+      <h3 ref={linkRefs.semantic}>Semantic colours</h3>
+
       <ColorList filter="support" />
 
       <Color color="support-01" />
@@ -361,10 +365,10 @@ const ColourDocs = () => {
         <PrismCode component="pre" className="language-js">
           {`// Import colours as json (needs a json loader)
           import colors from '@wfp/ui/source/globals/data/colors.json'
-          
+
           // Import colours as js
           import colors from '@wfp/ui/source/globals/data/colors.js'
-          
+
           const barChartColor = colors.navy;
           `}
         </PrismCode>
@@ -377,7 +381,7 @@ const ColourDocs = () => {
         <PrismCode component="pre" className="language-css">
           {`// Only use variables
           @import "~@wfp/ui/source/globals/scss/vars";
-          
+
           body {
           background: $ui-02;
           }
