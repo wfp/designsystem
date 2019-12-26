@@ -5,21 +5,20 @@ $css--reset: false;
 @import '../../globals/scss/helper-mixins';
 
 $color-intro: $brand-01;
+$border-width: 2px;
 $color-intro-mobile: $brand-01;
 $color-intro-tablet: $accent-01;
-h1 {
-  font-size: 8vw;
-}
 
 .intro-content {
   //background: $brand-01;
-  background: $ui-02;
+  //background: $ui-02;
+  background: linear-gradient(-190deg, $ui-02 0%, #fff 100%);
   margin-top: 2%;
   padding-top: 0;
   @include breakpoint(bp--md--major) {
-    clip-path: polygon(0 15%, 100% 0, 100% 100%, 0% 100%);
-    margin-top: -15%;
-    padding-top: 15%;
+    clip-path: polygon(0 150px, 100% 0, 100% 100%, 0% 100%);
+    margin-top: -7%;
+    padding-top: 10%;
   }
   z-index: -1;
   position: relative;
@@ -33,7 +32,9 @@ h1 {
   .wfp--wrapper {
     margin-top: 0 !important;
     margin-bottom: 0 !important;
-    padding: 4rem 0;
+    @include breakpoint(bp--md--major) {
+      padding: 4rem 0;
+    }
   }
 }
 
@@ -52,12 +53,9 @@ h1 {
     flex-direction: column;
     padding: 0 3%;
   }
-  padding: 0 11% 0 14%;
+  padding: 0 12% 0 14%;
 
   //color: #fff;
-  h1 {
-    letter-spacing: 0.05rem;
-  }
   &__name {
     font-weight: 100;
   }
@@ -73,17 +71,18 @@ h1 {
       width: 50%;
       min-width: 50%;
       max-width: 50%;
-      margin-top: -5%;
+      margin-top: -1%;
     }
-    padding: 0 3% 0 0%;
+    padding-right: 2%;
 
     h1 {
+      letter-spacing: 0.05rem;
       font-size: 4rem;
-      //font-weight: 100;
+      font-weight: 700;
       text-transform: uppercase;
     }
     p {
-      font-size: 1.2rem;
+      font-size: 1.15rem;
       line-height: 1.8;
       padding: 1.6rem 0 2.2rem 0;
     }
@@ -91,6 +90,7 @@ h1 {
   &__right {
     padding-left: 2%;
     padding-right: 0%;
+    margin-top: 5.5%;
     @include breakpointMax(bp--md--major) {
       display: none;
     }
@@ -102,7 +102,6 @@ h1 {
 }
 
 .intro-hero {
-  //background: linear-gradient(90deg, $brand-01, 0%, lighten($brand-01, 5) 100%);
   height: 100vh;
   position: relative;
   svg {
@@ -110,7 +109,7 @@ h1 {
     width: 20%;
     margin-left: -0.5%;
     path {
-      //fill: $color-intro;
+      fill: $color-intro;
     }
   }
 }
@@ -122,7 +121,7 @@ h1 {
 }
 
 .intro__monitor {
-  border: 2px solid $color-intro;
+  border: $border-width solid $color-intro;
   border-radius: 1rem;
   transition: all 0.5s;
   transition-timing-function: ease-in-out;
@@ -190,7 +189,7 @@ h1 {
   top: 0;
   width: 100%;
   height: 0px;
-  border-bottom: 2px solid $color-intro;
+  border-bottom: $border-width solid $color-intro;
   display: flex;
   transition: all 0.5s;
   transition-timing-function: ease-in-out;
@@ -233,7 +232,7 @@ h1 {
       height: 1.4vw;
       opacity: 0;
     }
-    transform: translateX(50%) translateY(90%);
+    transform: translateX(43%) translateY(90%);
   }
   .intro-animation--tablet & {
     //opacity: 0;
@@ -258,7 +257,7 @@ h1 {
   }
 
   .intro__dots__dot {
-    border: 2px solid $color-intro;
+    border: $border-width solid $color-intro;
     border-radius: 30px;
     width: 3vw;
     height: 3vw;

@@ -1,5 +1,6 @@
 import { create } from '@storybook/theming';
 import colors from '../src/globals/data/colors.js';
+import React, { Component } from 'react';
 
 export default create({
   base: 'light',
@@ -35,6 +36,6 @@ export default create({
   inputBorderRadius: 4,
   */
 
-  brandTitle: 'WFP UI',
+  brandTitle: 'WFP <span style="font-weight: 400">UI-KIT</span>',
   brandUrl: 'https://wfp.org/UIGuide',
 });

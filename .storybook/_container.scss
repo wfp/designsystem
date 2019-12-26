@@ -28,6 +28,12 @@ html {
   background: $ui-01;
 }
 
+.sidebar-header {
+  span {
+    font-weight: 100;
+  }
+}
+
 body {
   height: 100%;
   background: none;

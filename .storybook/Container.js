@@ -17,11 +17,6 @@ export default class Container extends Component {
       nextProps.context.story !== prevState.context.story
     ) {
       window.scrollTo(0, 0);
-      if (nextProps.context.story.includes('Right to left')) {
-        //withOptions({ name: `WFP UI aaa`, selectedAddonPanel: 'storybook/rtl', addonPanelInRight: true });
-      } else {
-        //withOptions({ name: `WFP UI ddd`, selectedAddonPanel: 'REACT_STORYBOOK/readme/panel', addonPanelInRight: true });
-      }
 
       return {
         context: nextProps.context,

@@ -105,9 +105,9 @@ storiesOf('Getting started|Getting started', module)
             <span className="intro__version">v1.4</span>
           </h1>
           <p>
-            The World Food Programme’s User Interface Kit provides you with
-            guidelines, components and templates to boost the user experience of
-            your products.
+            The World Food Programme’s User Interface Kit <br />
+            provides you with guidelines, components and templates
+            <br /> to boost the user experience of your products.
           </p>
           <Button
             kind="primary"
