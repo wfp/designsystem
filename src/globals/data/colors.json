@@ -90,11 +90,11 @@
     "type": "ui",
     "description": "Primary interactive color, Primary buttons"
   },
-  "brand-02": {
-    "name": "brand-02",
+  "interactive-02": {
+    "name": "interactive-02",
     "hex": "#085387",
-    "scss": "$brand-02",
-    "css": "color__brand-02",
+    "scss": "$interactive-02",
+    "css": "color__interactive-02",
     "type": "ui",
     "description": "BannerNavigation"
   },

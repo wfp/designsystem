@@ -9,10 +9,10 @@
 
   // Color Theme Variables
   $interactive-01: $color__main-51 !default !global; // Main Link and Button Color
-  $interactive-02: $color__yellow !default !global; // Darker WFP Blue // $color__teal-20
+  $accent-02: $color__yellow !default !global; // Darker WFP Blue // $color__teal-20
   $brand-01: $color__main !default !global; // Main Link and Button Color
-  $brand-02: $color__main-60 !default !global; // Main WFP Color //$color__blue-40
-  $brand-03: $color__yellow !default !global;
+  $interactive-02: $color__main-60 !default !global; // Main WFP Color //$color__blue-40
+  $accent-01: $color__yellow !default !global;
   $inverse-01: $color__white !default !global;
   $inverse-02: $color__white !default !global;
   $inverse-03: $color__navy-gray-3 !default !global;
@@ -46,7 +46,7 @@
   $hover-primary-text: darken($interactive-01, 15%) !default !global;
   $hover-danger: darken($support-01, 10%) !default !global;
   $hover-secondary: $interactive-01 !default !global;
-  $hover-row: rgba($brand-02, 0.1) !default !global;
+  $hover-row: rgba($interactive-02, 0.1) !default !global;
 
   // Global
   $focus: $color__blue-20 !default !global;

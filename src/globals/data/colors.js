@@ -119,14 +119,6 @@ const colors = {
     type: 'brand',
     shortDescription: 'WFP brand color',
   },
-  'brand-02': {
-    name: 'brand-02',
-    hex: '#085387',
-    scss: '$brand-02',
-    css: 'color__brand-02',
-    type: 'brand',
-    shortDescription: 'BannerNavigation',
-  },
   'interactive-01': {
     name: 'interactive-01',
     hex: '#0b77c2',
@@ -137,9 +129,17 @@ const colors = {
   },
   'interactive-02': {
     name: 'interactive-02',
-    hex: '#f7b825',
+    hex: '#085387',
     scss: '$interactive-02',
     css: 'color__interactive-02',
+    type: 'brand',
+    shortDescription: 'BannerNavigation',
+  },
+  'accent-01': {
+    name: 'accent-01',
+    hex: '#f7b825',
+    scss: '$accent-01',
+    css: 'color__accent-01',
     type: 'brand',
     shortDescription: 'Accent colour (recommended)',
   },

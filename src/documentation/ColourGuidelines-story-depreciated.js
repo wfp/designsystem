@@ -118,7 +118,7 @@ storiesOf('Getting started|Core', module)
         </ListItem>
         <ListItem kind="cross">Primary and secondary colours</ListItem>
       </List>
-      <Color color="brand-02" />
+      <Color color="interactive-02" />
       <h4 className="wfp--story__sub-heading">
         Interactive emphasis colour (e.g. hovers)
       </h4>
@@ -133,7 +133,7 @@ storiesOf('Getting started|Core', module)
         elements within a component, such different variants used on a floating
         action button container as well as the icon within it.
       </p>
-      <Color color="brand-03" />
+      <Color color="accent-01" />
       <h4 className="wfp--story__sub-heading">Accent secondary colour</h4>
       <img
         alt="Brand colour"

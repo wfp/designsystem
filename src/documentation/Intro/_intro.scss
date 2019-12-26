@@ -1,11 +1,12 @@
 $css--reset: false;
 @import '../../globals/scss/vars';
 @import '../../globals/scss/spacing';
+@import '../../globals/scss/layout';
 @import '../../globals/scss/helper-mixins';
 
 $color-intro: $brand-01;
 $color-intro-mobile: $brand-01;
-$color-intro-tablet: $brand-03;
+$color-intro-tablet: $accent-01;
 h1 {
   font-size: 8vw;
 }
@@ -13,9 +14,13 @@ h1 {
 .intro-content {
   //background: $brand-01;
   background: $ui-02;
-  clip-path: polygon(0 15%, 100% 0, 100% 100%, 0% 100%);
-  margin-top: -15%;
-  padding-top: 15%;
+  margin-top: 2%;
+  padding-top: 0;
+  @include breakpoint(bp--md--major) {
+    clip-path: polygon(0 15%, 100% 0, 100% 100%, 0% 100%);
+    margin-top: -15%;
+    padding-top: 15%;
+  }
   z-index: -1;
   position: relative;
   /*color: #fff;
@@ -35,13 +40,20 @@ h1 {
 .intro {
   //background: $ui-02;
   //background: linear-gradient(90deg, $brand-01, 0%, lighten($brand-01, 5) 100%);
-  height: 90vh;
-  width: 100vw;
+  @include breakpoint(bp--md--major) {
+    height: 90vh;
+    width: 100vw;
+  }
   display: flex;
   //box-shadow: inset 0px -22px 22px rgba(#000, 0.015);
   position: relative;
   align-items: center;
-  padding: 0 5%;
+  @include breakpointMax(bp--md--major) {
+    flex-direction: column;
+    padding: 0 3%;
+  }
+  padding: 0 11% 0 14%;
+
   //color: #fff;
   h1 {
     letter-spacing: 0.05rem;
@@ -57,11 +69,14 @@ h1 {
     text-transform: initial;
   }
   &__left {
-    width: 50%;
-    min-width: 50%;
-    max-width: 50%;
-    padding: 0 3% 0 10%;
-    margin-top: -5%;
+    @include breakpoint(bp--md--major) {
+      width: 50%;
+      min-width: 50%;
+      max-width: 50%;
+      margin-top: -5%;
+    }
+    padding: 0 3% 0 0%;
+
     h1 {
       font-size: 4rem;
       //font-weight: 100;
@@ -74,10 +89,15 @@ h1 {
     }
   }
   &__right {
-    padding-left: 5%;
-    padding-right: 15%;
-    width: 50%;
-    max-width: 50%;
+    padding-left: 2%;
+    padding-right: 0%;
+    @include breakpointMax(bp--md--major) {
+      display: none;
+    }
+    @include breakpoint(bp--md--major) {
+      width: 50%;
+      max-width: 50%;
+    }
   }
 }
 

@@ -81,10 +81,10 @@
 
   .#{$prefix}--btn--accent {
     @include button-theme(
-      $brand-03,
+      $accent-01,
       transparent,
       $text-01,
-      darken($brand-03, 5),
+      darken($accent-01, 5),
       $text-01
     );
 
@@ -324,7 +324,7 @@
       $inverse-01,
       #0353e9,
       $ui-01,
-      $brand-02
+      $interactive-02
     );
   }
 
@@ -351,7 +351,7 @@
       $interactive-01,
       #0353e9,
       $interactive-01,
-      $brand-02
+      $interactive-02
     );
     position: relative;
 

@@ -105,11 +105,12 @@ storiesOf('Getting started|Getting started', module)
             <span className="intro__version">v1.4</span>
           </h1>
           <p>
-            The World Food Programme’s user interface style guide emphasizes
-            WFP’s commitment to establish and build the brand.
+            The World Food Programme’s User Interface Kit provides you with
+            guidelines, components and templates to boost the user experience of
+            your products.
           </p>
           <Button
-            kind="accent"
+            kind="primary"
             icon={iconLightGlyph}
             style={{ marginRight: '0.5em' }}
             onClick={linkTo('Getting started|Getting started', 'Developers')}>

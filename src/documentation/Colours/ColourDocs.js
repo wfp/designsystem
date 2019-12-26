@@ -155,22 +155,6 @@ const ColourDocs = () => {
           </List>
         </div>
       </section>
-      <Color color="brand-02" />
-      <h4 className="wfp--story__sub-heading">
-        Interactive emphasis colour (e.g. hovers)
-      </h4>
-      <p>
-        This colour is used for hover and active states.{' '}
-        {/* and to create contrast
-        between UI elements such as distinguishing the BannerNavigation bar from
-        the MainNavigation. You can use this dark variant of our primary colour
-        on elements.*/}
-      </p>
-      {/*<p>
-        You can also use variants to distinguish elements within a component,
-        such different variants used on a floating action button container as
-        well as the icon within it.
-      </p>*/}
 
       <Color color="interactive-01" />
       <h4 className="wfp--story__sub-heading">
@@ -191,6 +175,23 @@ const ColourDocs = () => {
         }}
         src={`${process.env.STORYBOOK_INTERNAL_ASSETS}internal/brand-color.png`}
       />
+
+      <Color color="interactive-02" />
+      <h4 className="wfp--story__sub-heading">
+        Interactive emphasis colour (e.g. hovers)
+      </h4>
+      <p>
+        This colour is used for hover and active states.{' '}
+        {/* and to create contrast
+        between UI elements such as distinguishing the BannerNavigation bar from
+        the MainNavigation. You can use this dark variant of our primary colour
+        on elements.*/}
+      </p>
+      {/*<p>
+        You can also use variants to distinguish elements within a component,
+        such different variants used on a floating action button container as
+        well as the icon within it.
+      </p>*/}
       <section className="dodonot">
         <div>
           <h4>Use interactive - 01 for:</h4>
@@ -216,7 +217,7 @@ const ColourDocs = () => {
         </div>
       </section>
 
-      <Color color="brand-03" />
+      <Color color="accent-01" />
       <h4 className="wfp--story__sub-heading">Accent secondary colour</h4>
       <img
         alt="Brand colour"
