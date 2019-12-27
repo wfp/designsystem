@@ -86,7 +86,6 @@ const colorList = ({ filter }) => {
       content={
         <div>
           {color.description && <p>{color.description}</p>}
-          {/* tooltips[color.name] */}
           {color.name}
         </div>
       }

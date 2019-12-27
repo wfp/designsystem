@@ -30,7 +30,7 @@
   }
 
   .#{$prefix}--tag--wfp {
-    @include tag-theme($color__blue-10, $color__blue-60);
+    @include tag-theme($color__brand-01-10, $color__brand-01-60);
   }
 
   .#{$prefix}--tag--beta {

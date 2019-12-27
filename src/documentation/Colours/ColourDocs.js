@@ -297,6 +297,8 @@ const ColourDocs = () => {
         rest of the interface.
       </p>
 
+      <ColorList filter="brand-extended" />
+
       <h3 ref={linkRefs.neutrals}>Neutrals</h3>
 
       <p>

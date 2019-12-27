@@ -8,6 +8,7 @@ $color-intro: $brand-01;
 $border-width: 2px;
 $color-intro-mobile: $brand-01;
 $color-intro-tablet: $accent-01;
+$easing: cubic-bezier(0.17, 0.89, 0.32, 1.1); //ease-in-out;
 
 .intro-content {
   //background: $brand-01;
@@ -124,7 +125,7 @@ $color-intro-tablet: $accent-01;
   border: $border-width solid $color-intro;
   border-radius: 1rem;
   transition: all 0.5s;
-  transition-timing-function: ease-in-out;
+  transition-timing-function: $easing;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -161,7 +162,7 @@ $color-intro-tablet: $accent-01;
   top: 50%;
   margin-top: -3vw;
   transition: all 0.5s;
-  transition-timing-function: ease-in-out;
+  transition-timing-function: $easing;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -192,7 +193,7 @@ $color-intro-tablet: $accent-01;
   border-bottom: $border-width solid $color-intro;
   display: flex;
   transition: all 0.5s;
-  transition-timing-function: ease-in-out;
+  transition-timing-function: $easing;
   .intro-animation--mobile & {
     transform: translateY(22vw);
     //border-color: $color-intro-mobile;
@@ -225,7 +226,7 @@ $color-intro-tablet: $accent-01;
   height: 100%;
   display: flex;
   transition: all 0.5s;
-  transition-timing-function: ease-in-out;
+  transition-timing-function: $easing;
   .intro-animation--mobile & {
     .intro__dots__dot {
       width: 1.4vw;
@@ -262,6 +263,6 @@ $color-intro-tablet: $accent-01;
     width: 3vw;
     height: 3vw;
     transition: all 0.5s;
-    transition-timing-function: ease-in-out;
+    transition-timing-function: $easing;
   }
 }

@@ -1,110 +1,56 @@
-# Change Log
-
-All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
-
 # [1.3.0-alpha.37](https://github.com/WFP/UI/compare/v1.3.0-alpha.36...v1.3.0-alpha.37) (2019-12-19)
-
 
 ### Bug Fixes
 
-* **Button:** removed count ([08cb0f2](https://github.com/WFP/UI/commit/08cb0f2))
-
-
-
-# Change Log
-
-All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+- **Button:** removed count ([08cb0f2](https://github.com/WFP/UI/commit/08cb0f2))
 
 # [1.3.0-alpha.36](https://github.com/WFP/UI/compare/v1.3.0-alpha.35...v1.3.0-alpha.36) (2019-12-18)
 
-
 ### Bug Fixes
 
-* **Button:** disable timeout onUnmount 87d9ac48ee79cca9e1d823126b1d4bfc981af28f ([53e5bf7](https://github.com/WFP/UI/commit/53e5bf7))
-
-
-
-# Change Log
-
-All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+- **Button:** disable timeout onUnmount 87d9ac48ee79cca9e1d823126b1d4bfc981af28f ([53e5bf7](https://github.com/WFP/UI/commit/53e5bf7))
 
 # [1.3.0-alpha.35](https://github.com/WFP/UI/compare/v1.3.0-alpha.34...v1.3.0-alpha.35) (2019-12-18)
 
-
-
-# Change Log
-
-All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
-
 # [1.3.0-alpha.34](https://github.com/WFP/UI/compare/v1.3.0-alpha.33...v1.3.0-alpha.34) (2019-12-17)
-
 
 ### Bug Fixes
 
-* **Blockquote:** same padding if no content is present ([6375f82](https://github.com/WFP/UI/commit/6375f82))
-
+- **Blockquote:** same padding if no content is present ([6375f82](https://github.com/WFP/UI/commit/6375f82))
 
 ### Features
 
-* **Blockquote:** depreciate html rendering for security reasons ([7c50420](https://github.com/WFP/UI/commit/7c50420))
-
-
-
-# Change Log
-
-All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+- **Blockquote:** depreciate html rendering for security reasons ([7c50420](https://github.com/WFP/UI/commit/7c50420))
 
 # [1.3.0-alpha.33](https://github.com/WFP/UI/compare/v1.3.0-alpha.32...v1.3.0-alpha.33) (2019-12-06)
 
-
 ### Bug Fixes
 
-* **Select:** inline prop showed the input two times ([b89f8c6](https://github.com/WFP/UI/commit/b89f8c6))
-
+- **Select:** inline prop showed the input two times ([b89f8c6](https://github.com/WFP/UI/commit/b89f8c6))
 
 ### Features
 
-* **Tabs:** resize detector removed and replaced with own solution, tests fixed ([de387b8](https://github.com/WFP/UI/commit/de387b8))
-
-
-
-# Change Log
-
-All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+- **Tabs:** resize detector removed and replaced with own solution, tests fixed ([de387b8](https://github.com/WFP/UI/commit/de387b8))
 
 # [1.3.0-alpha.32](https://github.com/WFP/UI/compare/v1.3.0-alpha.31...v1.3.0-alpha.32) (2019-12-03)
 
-
-
-# Change Log
-
-All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
-
 # [1.3.0-alpha.31](https://github.com/WFP/UI/compare/v1.3.0-alpha.30...v1.3.0-alpha.31) (2019-12-03)
-
 
 ### Bug Fixes
 
-* **Footer:** SDG logo fixed ([98eb6c3](https://github.com/WFP/UI/commit/98eb6c3))
-* **Icon:** remove iconTitle from props ([11c27d7](https://github.com/WFP/UI/commit/11c27d7))
-
+- **Footer:** SDG logo fixed ([98eb6c3](https://github.com/WFP/UI/commit/98eb6c3))
+- **Icon:** remove iconTitle from props ([11c27d7](https://github.com/WFP/UI/commit/11c27d7))
 
 ### Features
 
-* **Button:** onClick animation added ([87d9ac4](https://github.com/WFP/UI/commit/87d9ac4))
-* **colours:** new colour page and changelog ([2ef611f](https://github.com/WFP/UI/commit/2ef611f))
-* **icons:** custom colors are now supported, emergency icons added ([f409c35](https://github.com/WFP/UI/commit/f409c35))
-* **inputs:** read-only state added and other changes ([8dd71cb](https://github.com/WFP/UI/commit/8dd71cb))
-* **List:** checkmark and cross with custom icons ([b2a236f](https://github.com/WFP/UI/commit/b2a236f))
-* **Select:** disabled state improved ([a230986](https://github.com/WFP/UI/commit/a230986))
-* **Storybook:** favicon now visible in build ([4093726](https://github.com/WFP/UI/commit/4093726))
-* **Toggle:** new design for toggle input ([5ec81b8](https://github.com/WFP/UI/commit/5ec81b8))
-
-
-
-# Change Log
-
-All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+- **Button:** onClick animation added ([87d9ac4](https://github.com/WFP/UI/commit/87d9ac4))
+- **colours:** new colour page and changelog ([2ef611f](https://github.com/WFP/UI/commit/2ef611f))
+- **icons:** custom colors are now supported, emergency icons added ([f409c35](https://github.com/WFP/UI/commit/f409c35))
+- **inputs:** read-only state added and other changes ([8dd71cb](https://github.com/WFP/UI/commit/8dd71cb))
+- **List:** checkmark and cross with custom icons ([b2a236f](https://github.com/WFP/UI/commit/b2a236f))
+- **Select:** disabled state improved ([a230986](https://github.com/WFP/UI/commit/a230986))
+- **Storybook:** favicon now visible in build ([4093726](https://github.com/WFP/UI/commit/4093726))
+- **Toggle:** new design for toggle input ([5ec81b8](https://github.com/WFP/UI/commit/5ec81b8))
 
 # [1.3.0-alpha.30](https://github.com/WFP/UI/compare/v1.3.0-alpha.29...v1.3.0-alpha.30) (2019-11-12)
 

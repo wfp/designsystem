@@ -64,14 +64,15 @@ $color__main-40: mix(white, $color__main, 25%) !default;
 $color__main-60: mix(black, $color__main, 25%) !default;
 $color__main-70: mix(black, $color__main, 50%) !default;
 $color__main-80: mix(black, $color__main, 75%) !default;
+
 // Alias for blue since it is the same
-$color__blue-10: $color__main-10 !default;
-$color__blue-20: $color__main-20 !default;
-$color__blue-30: $color__main-30 !default;
-$color__blue-40: $color__main-40 !default;
-$color__blue-60: $color__main-60 !default;
-$color__blue-70: $color__main-70 !default;
-$color__blue-80: $color__main-80 !default;
+$color__brand-01-10: $color__main-10 !default;
+$color__brand-01-20: $color__main-20 !default;
+$color__brand-01-30: $color__main-30 !default;
+$color__brand-01-40: $color__main-40 !default;
+$color__brand-01-60: $color__main-60 !default;
+$color__brand-01-70: $color__main-70 !default;
+$color__brand-01-80: $color__main-80 !default;
 // Color Blends, sccs doesn't support dynamic var creation
 $color__navy-20: mix(white, $color__navy, 75%) !default;
 $color__navy-30: mix(white, $color__navy, 50%) !default;
