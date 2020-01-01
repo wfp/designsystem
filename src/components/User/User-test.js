@@ -1,6 +1,6 @@
 import React from 'react';
 import User from '../User';
-import { mount, shallow } from 'enzyme';
+import { mount } from 'enzyme';
 
 describe('User', () => {
   describe('renders as expected', () => {
@@ -23,7 +23,7 @@ describe('User', () => {
       });
     });
 
-    const userTitle = () => wrapper.find('span');
+    const userTitle = () => wrapper.find('span.wfp--user__title');
 
     describe('usertitle', () => {
       it('renders as expected', () => {

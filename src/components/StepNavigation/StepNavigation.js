@@ -2,16 +2,14 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
 
+import settings from '../../globals/js/settings';
+
+const { prefix } = settings;
+
 export default class StepNavigation extends React.Component {
   static propTypes = {
     /**
-     * Specify the text to be read by screen-readers when visiting the <Tabs>
-     * component
-     */
-    ariaLabel: PropTypes.string,
-
-    /**
-     * Pass in a collection of <Tab> children to be rendered depending on the
+     * Pass in a collection of <StepNavigationItem> children to be rendered depending on the
      * currently selected tab
      */
     children: PropTypes.node,
@@ -29,14 +27,14 @@ export default class StepNavigation extends React.Component {
     customTabContent: PropTypes.bool,
 
     /**
-     * Specify whether the Tabs are displayed inline
+     * Specify whether the StepNavigation will be displayed small
      */
-    inline: PropTypes.bool,
+    small: PropTypes.bool,
 
     /**
-     * Specify whether the Tab content is hidden
+     * Specify whether the StepNavigation will be displayed vertically
      */
-    hidden: PropTypes.bool,
+    vertical: PropTypes.bool,
 
     /**
      * By default, this value is "navigation". You can also provide an alternate
@@ -51,33 +49,15 @@ export default class StepNavigation extends React.Component {
     onClick: PropTypes.func,
 
     /**
-     * Optionally provide an `onKeyDown` handler that is invoked when keyed
-     * navigation is triggered
-     */
-    onKeyDown: PropTypes.func,
-
-    /**
      * Provide an optional handler that is called whenever the selection
      * changes. This method is called with the index of the tab that was
      * selected
      */
     onSelectionChange: PropTypes.func,
-
-    /**
-     * Provide a string that represents the `href` for the triggered <Tab>
-     */
-    triggerHref: PropTypes.string.isRequired,
-
     /**
      * Optionally provide an index for the currently selected <Tab>
      */
     selected: PropTypes.number,
-
-    /**
-     * Provide a description that is read out when a user visits the caret icon
-     * for the dropdown menu of items
-     */
-    iconDescription: PropTypes.string.isRequired,
   };
 
   static defaultProps = {
@@ -118,7 +98,6 @@ export default class StepNavigation extends React.Component {
 
   // following functions (handle*) are Props on Tab.js, see Tab.js for parameters
   handleTabClick = onSelectionChange => {
-    console.log('Handle tabl click');
     return (index, label, evt) => {
       evt.preventDefault();
       this.selectTabAt(index, onSelectionChange);
@@ -180,16 +159,13 @@ export default class StepNavigation extends React.Component {
 
   render() {
     const {
-      ariaLabel,
-      iconDescription,
       inline,
+      small,
+      vertical,
       className,
-      customTabContent,
-      triggerHref,
       role,
       selectedPage,
       onSelectionChange,
-      ...other
     } = this.props;
 
     const tabsWithProps = this.getTabs().map((tab, index) => {
@@ -209,15 +185,17 @@ export default class StepNavigation extends React.Component {
     });
 
     const classes = {
-      tabs: classNames('wfp--step-navigation', className),
+      tabs: classNames(className, {
+        [`${prefix}--step-navigation`]: true,
+        [`${prefix}--step-navigation--vertical`]: vertical,
+        [`${prefix}--step-navigation--small`]: small,
+        [`${prefix}--step-navigation--regular`]: !small,
+      }),
       tablist: classNames('wfp--step-navigation__nav', {
         'wfp--step-navigation__nav--hidden': this.state.dropdownHidden,
         'wfp--step-navigation__nav--inline': inline,
       }),
     };
-
-    const selectedTab = this.getTabAt(this.state.selected);
-    const selectedLabel = selectedTab ? selectedTab.props.label : '';
 
     return (
       <>

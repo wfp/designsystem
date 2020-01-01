@@ -1,5 +1,42 @@
 **Tabs** are used to quickly navigate between views within the same context.
 
+They are based on the [Carbon Design System Tabs](https://www.carbondesignsystem.com/components/tabs/usage/).
+
+### Usage
+
+#### Use tabs to alternate between views within the same context
+
+not to navigate to different areas. This is the single most important point, because staying in place while alternating views is the reason we have tabs in the first place.
+
+#### Logically chunk
+
+the content behind the tabs so users can easily predict what they'll find when they select a given tab. (Card sorting is one option for researching this “mini-IA” problem. If you don't find clearly distinct groupings, then tabs are likely the wrong interface control for managing your content.)
+
+#### Short labels
+
+Write short tab labels and use plain language, rather than made-up terms. Tab labels should usually be 1–2 words. Short labels are more scannable; if you need longer labels, it’s a sign that the choices are too complicated for a tab control.
+
+#### Design tabs
+
+that are parallel in nature. If the tabs are significantly dissimilar, users will interpret them as site navigation.
+
+#### Place the row of tabs on top of the tab panel
+
+not on the sides or the bottom, where users often overlook them. The scope controlled by the tabs should be obvious from the visual design. Metaphorically, using tabs is like leafing through index cards in a drawer of an old-fashioned card catalog, so users must be able to tell at a glance what constitutes an "index card" (i.e., tab panel).
+
+
+### Do not use
+
+#### as an input
+Tabs should be only used to navigate between views and never as an input.
+
+Source: [Tabs, Used Right by Nielsen Normal Group](https://www.nngroup.com/articles/tabs-used-right/)
+
+### Usage with react
+```js
+import { Tabs, Tab, TabContent } from '@wfp/ui';
+```
+
 ### Use a custom Tab Link Component
 
   A custom `renderAnchor` replaces the Link inside the `<Tab/>` Component
@@ -37,4 +74,39 @@ const  listEl  = (props) => (
 	href="http://www.fr.wfp.org"
 	renderListElement={listEl}
 />
+```
+
+### Use with react-router
+
+Write a custom component to use Tabs with different route handlers like `react-router`.
+
+```js
+import { Link } from 'react-router-dom';
+
+const listElReactRouter = ({ anchor, className, to, exact, match }) => (
+  <Route
+    to={to}
+    exact={exact}
+    children={({ match }) => (
+      <li
+        className={
+          match ? className + ' wfp--tabs__nav-item--selected' : className
+        }>
+        <Link className={anchor.className} to={to}>
+          {anchor.label}
+        </Link>
+      </li>
+    )}
+  />
+);
+```
+
+```js
+<Tabs customTabContent={true}>
+  <Tab
+    label="React-Router Example"
+    to="/path"
+    renderListElement={listElReactRouter}
+  />
+</Tabs>
 ```

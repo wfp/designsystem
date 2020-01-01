@@ -14,4 +14,9 @@
   .#{$prefix}--form-error__title {
     margin-bottom: $spacing-xs;
   }
+
+  .#{$prefix}--form-error__list {
+    list-style-type: disc;
+    margin-left: 1.3rem;
+  }
 }

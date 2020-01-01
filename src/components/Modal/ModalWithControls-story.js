@@ -1,6 +1,5 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import readme from './README.md';
 
 import Modal from '../Modal';
 
@@ -8,7 +7,6 @@ class ModalWithControls extends React.Component {
   state = { open: false };
 
   toggleModal = () => {
-    console.log('Toggle the open state');
     this.setState(state => ({
       open: !state.open,
     }));
@@ -41,8 +39,6 @@ class ModalWithControls extends React.Component {
   }
 }
 
-storiesOf('Modal', module).add('with Controls', () => <ModalWithControls />, {
-  info: {
-    text: readme,
-  },
-});
+storiesOf('Components|Modal', module).add('with Controls', () => (
+  <ModalWithControls />
+));

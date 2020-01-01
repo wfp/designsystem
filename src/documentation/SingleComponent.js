@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Wrapper from '../components/Wrapper';
 
 import classnames from 'classnames';
 
@@ -12,42 +11,26 @@ class SingleComponent extends Component {
 
   componentDidMount() {
     const height = document.getElementById('container').clientHeight;
-
-    console.log('height', height);
     this.setState({ height });
   }
 
   render() {
-    const { centered, children, flexBasis, pageWidth } = this.props;
+    const { centered, children, flexBasis } = this.props;
     const { height } = this.state;
 
-    //'wfp--story',
     const classNames = classnames({
       'wfp--single-component--top': height >= 300,
+      'wfp--single-component--centered': centered && height <= 200,
     });
 
-    console.log('flexBasis', flexBasis);
-
     return (
-      <Wrapper
-        style={
-          centered && height <= 300
-            ? {
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                height: '100%',
-              }
-            : undefined
-        }
-        className={classNames}
-        pageWidth={pageWidth}>
+      <div className={classNames}>
         <div
           id="container"
           style={{ flexBasis: flexBasis ? flexBasis : 'auto' }}>
           {children}
         </div>
-      </Wrapper>
+      </div>
     );
   }
 }

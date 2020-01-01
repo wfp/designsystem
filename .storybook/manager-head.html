@@ -1,39 +1,18 @@
-<style>
-  [data-name=" Documentation"] {
-    font-weight: bold;
-    color: #0b77c2 !important;
-    margin-bottom: 0.4em;
-  }
-  
-  .vertical.Pane1 h3 {
-    color: #0b77c2 !important;
-    text-transform: none !important;
-  }
+<link rel="icon" type="image/png" sizes="32x32" href="./internal/wfp-favicon-png32.png" />
+<link rel="icon" type="image/png" sizes="512x512" href="./internal/wfp-favicon-png512.png" />
 
-  [data-name="Getting Started"] {
-    color: #0b77c2 !important;
-  }
-  
-  body, * {
-    font-family: "Open Sans",sans-serif !important;
-  }
-
-  .Pane.horizontal.Pane1 {
-    overflow: hidden !important;
-  }
-</style>
-
-
-<link rel="icon" type="image/png" sizes="96x96" href="../../../assets/v.0.0.1/favicons/favicon-96x96.png" />
-
-<meta name="keywords" content="WFP, design, system, branding, World Food Programme, United, Nations, design system, styleguide, style, guide, components, library, pattern, kit, component, cloud, React, React.js">
-<meta name="description" content="The new WFP UI Kit is based on the World Food Programme’s Branding Guidance WFP's new branding launched in early 2018 and will be implemented across the organization, strengthening WFP’s brand image through consistent representation.">
+<meta name="keywords"
+  content="WFP, design, system, branding, World Food Programme, United, Nations, design system, styleguide, style, guide, components, library, pattern, kit, component, cloud, React, React.js">
+<meta name="description"
+  content="The new WFP UI Kit is based on the World Food Programme’s Branding Guidance WFP's new branding launched in early 2018 and will be implemented across the organization, strengthening WFP’s brand image through consistent representation.">
 
 <!-- Open Graph -->
 <meta property="og:title" content="WFP UI Kit">
 <meta property="og:site_name" content="WFP UI Kit">
-<meta property="og:description" content="The new WFP UI Kit is based on the World Food Programme’s Branding Guidance WFP's new branding launched in early 2018 and will be implemented across the organization, strengthening WFP’s brand image through consistent representation.">
-<meta property="og:image" content="http://www1.wfp.org/themes/custom/wfp_org/images/logos/wfp-logo-extended-white-en.svg">
+<meta property="og:description"
+  content="The new WFP UI Kit is based on the World Food Programme’s Branding Guidance WFP's new branding launched in early 2018 and will be implemented across the organization, strengthening WFP’s brand image through consistent representation.">
+<meta property="og:image"
+  content="http://www1.wfp.org/themes/custom/wfp_org/images/logos/wfp-logo-extended-white-en.svg">
 <meta property="og:url" content="http://wfp.org/UiGuide">
 
 <!-- Social -->
@@ -53,18 +32,18 @@
   function loadDepreciated() {
     var xhr = new XMLHttpRequest();
     xhr.responseType = 'text';
-    xhr.onload = function() {
+    xhr.onload = function () {
       var currentVersionRegexp = /<!--(.*?)-->/g;
       var currentVersion = currentVersionRegexp.exec(xhr.responseText)[1];
 
       var storybookVersionRegexp = /ui\/v(.*?)\/docs/g;
       var storybookVersion = storybookVersionRegexp.exec(window.location.href);
 
-      if (storybookVersion !== null && currentVersion[1] !== storybookVersion[1] || 1 === 1) {
+      if (storybookVersion !== null && currentVersion !== storybookVersion[1]) {
         var elem = document.createElement('div');
         elem.innerHTML = xhr.responseText;
         document.body.appendChild(elem);
-        console.log('This is an outdated version of the UI Kit documentation', currentVersion, storybookVersion);
+        console.log('This is an outdated version of the UI Kit documentation', currentVersion, storybookVersion[1]);
       }
 
       var storybookVersion = window.location.href;

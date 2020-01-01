@@ -1,47 +1,57 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, boolean } from '@storybook/addon-knobs/react';
+import { withKnobs, boolean, select, text } from '@storybook/addon-knobs/react';
 
 import Blockquote from '../Blockquote';
 
-storiesOf('Blockquote', module)
-  /*.addDecorator(checkA11y)
-  .addDecorator(withTests('Link'))
-  .addDecorator(withReadme([readme]))*/
-  .addDecorator(withKnobs)
-  .add(
-    'Default',
-    () => {
-      const toggleable = boolean('toggleable', false);
-      const error = boolean('error', false);
-      const light = boolean('light', false);
-      const code = boolean('code', false);
-      const warning = boolean('warning', false);
-      const info = boolean('info', false);
-      const withIcon = boolean('withIcon', false);
+const kinds = {
+  'Info (info)': 'info',
+  'Warning (warning)': 'warning',
+  'Error (error)': 'error',
+  'Success (success)': 'success',
+};
 
-      return (
-        <Blockquote
-          error={error}
-          toogleable={toggleable}
-          light={light}
-          code={code}
-          warning={warning}
-          withIcon={withIcon}
-          info={info}>
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-          nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-          sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
-          rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
-          ipsum dolor sit amet.
-        </Blockquote>
-      );
-    },
-    {
-      info: {
-        text: `
-            The <Blockquote> Element (or HTML Block Quotation Element) indicates that the enclosed text is an extended quotation.
-          `,
-      },
-    }
-  );
+const props = () => ({
+  title: text('title', 'Blockquote title'),
+  children: text(
+    'content (children)',
+    'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.At vero eos et accusam et justo duo dolores et ea rebum.Stetclita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.'
+  ),
+  toggleable: boolean('toggleable', false),
+  error: boolean('error (depreciated)', false),
+  kind: select('Blockquote kind (kind)', kinds, 'primary'),
+  light: boolean('light', false),
+  code: boolean('code', false),
+  warning: boolean('warning (depreciated)', false),
+  info: boolean('info (depreciated)', false),
+  withIcon: boolean('withIcon', false),
+});
+
+storiesOf('Components|Blockquote', module)
+  .addParameters({ jest: ['Blockquote-test'] })
+  .addDecorator(withKnobs)
+  .add('Default', () => {
+    return <Blockquote {...props()} />;
+  })
+  .add('custom icon', () => {
+    return (
+      <Blockquote
+        {...props()}
+        icon={
+          <img
+            alt="Usability"
+            style={{
+              width: '80px',
+              height: 'auto',
+            }}
+            src={`${process.env.STORYBOOK_INTERNAL_ASSETS}internal/branding.svg`}
+          />
+        }>
+        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+        eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+        voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
+        clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
+        amet.
+      </Blockquote>
+    );
+  });

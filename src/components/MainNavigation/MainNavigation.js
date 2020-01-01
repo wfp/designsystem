@@ -3,93 +3,6 @@ import React, { Component } from 'react';
 import classNames from 'classnames';
 import Button from '../Button';
 import Wrapper from '../Wrapper';
-import Icon from '../Icon';
-
-class MainNavigationItem extends Component {
-  UNSAFE_componentWillReceiveProps = nextProps => {
-    if (nextProps.menuItem === nextProps.activeMenuItem) {
-      document.addEventListener('mousedown', this.handleClickOutside);
-    } else {
-      document.removeEventListener('mousedown', this.handleClickOutside);
-    }
-  };
-
-  setWrapperRef = node => {
-    this.wrapperRef = node;
-  };
-
-  handleClickOutside = e => {
-    if (this.wrapperRef && !this.wrapperRef.contains(e.target)) {
-      this.props.onChangeSub(e, undefined, 'close');
-    }
-  };
-
-  render() {
-    const {
-      activeMenuItem,
-      className,
-      children,
-      menuItem,
-      onChangeSub,
-      subNavigation,
-    } = this.props;
-
-    const wrapperClasses = classNames(className, {
-      'wfp--main-navigation__item': true,
-      'wfp--main-navigation__item--open': menuItem === activeMenuItem,
-    });
-
-    const triggerClasses = classNames({
-      'wfp--main-navigation__trigger': true,
-      'wfp--main-navigation__trigger--has-sub': subNavigation,
-      'wfp--main-navigation__trigger--open': menuItem === activeMenuItem,
-    });
-
-    const childrenWithProps = subNavigation
-      ? React.cloneElement(children, {
-          children: (
-            <React.Fragment>
-              {children.props.children}
-              <Icon
-                className="wfp--main-navigation__trigger__icon"
-                name={menuItem === activeMenuItem ? 'close' : 'caret--down'}
-                fill="#FFFFFF"
-                description="expand icon"
-              />
-            </React.Fragment>
-          ),
-          onClick: e => onChangeSub(e, menuItem, 'toggle'),
-        })
-      : children;
-
-    console.log('childrenWithProps', childrenWithProps);
-
-    const subClasses = classNames({
-      'wfp--main-navigation__sub': true,
-      'wfp--main-navigation__sub--open': menuItem === activeMenuItem,
-    });
-    return (
-      <li className={wrapperClasses} ref={this.setWrapperRef}>
-        <div className={triggerClasses}>{childrenWithProps}</div>
-        {subNavigation && (
-          <div
-            className={subClasses}
-            open={menuItem === activeMenuItem ? true : false}>
-            {subNavigation}
-          </div>
-        )}
-      </li>
-    );
-  }
-}
-
-MainNavigationItem.propTypes = {
-  /**
-   * The CSS class name to be placed on the wrapping element.
-   */
-  className: PropTypes.string,
-  children: PropTypes.node.isRequired,
-};
 
 class MainNavigation extends Component {
   constructor(props) {
@@ -100,14 +13,10 @@ class MainNavigation extends Component {
     };
   }
 
-  onChangeSub = (e, i, action) => {
-    e.preventDefault();
-    /*if (action === 'in') {
-      this.setState({
-        activeMenuItem: i
-      });
+  onChangeSub = (action, i, e) => {
+    if (e) {
+      e.preventDefault();
     }
-    else */
 
     if (action === 'close') {
       this.setState({
@@ -157,6 +66,16 @@ class MainNavigation extends Component {
       'wfp--main-navigation__list--open': this.state.openMobile,
     });
 
+    const parentProps = {
+      onChangeSub: this.onChangeSub,
+      toggleMenu: this.toggleMenu,
+    };
+
+    const childrenSelect =
+      typeof children === 'function'
+        ? children(parentProps).props.children
+        : children;
+
     return (
       <div id={id} className={wrapperClasses}>
         <Wrapper
@@ -172,7 +91,7 @@ class MainNavigation extends Component {
             <div className="wfp--main-navigation__logo">{logo}</div>
           </div>
           <ul className={listClasses}>
-            {React.Children.map(children, (child, i) => {
+            {React.Children.map(childrenSelect, (child, i) => {
               if (child) {
                 return React.cloneElement(child, {
                   activeMenuItem: this.state.activeMenuItem,
@@ -189,18 +108,40 @@ class MainNavigation extends Component {
 }
 
 MainNavigation.propTypes = {
+  /**
+   * Usually multiple `MainNavigationItem` elements
+   */
   children: PropTypes.node.isRequired,
   /**
    * The CSS class name to be placed on the wrapping element.
    */
   className: PropTypes.string,
+  /**
+   * Defines an ID for the component.
+   */
   id: PropTypes.string,
+  /**
+   * The Logo can be either a string or a component
+   */
+  logo: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
+  /**
+   * See `Wrapper` component for more information
+   */
+  pageWidth: PropTypes.string,
+  /**
+   * See `Wrapper` component for more information
+   */
+  mobilePageWidth: PropTypes.string,
+  /**
+   * Additional className for the `Wrapper`
+   */
   wrapperClassName: PropTypes.string,
 };
 
 MainNavigation.defaultProps = {
-  pageWidth: 'narrow',
+  pageWidth: 'md',
   mobilePageWidth: 'full',
+  logo: 'WFP',
 };
 
-export { MainNavigation, MainNavigationItem };
+export default MainNavigation;

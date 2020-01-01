@@ -1,4 +1,4 @@
-@import '../node_modules/@wfp/ui/source/globals/scss/styles.scss';
+@import '~@wfp/ui/source/globals/scss/styles.scss';
 
 .App {
   text-align: center;
@@ -28,6 +28,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }

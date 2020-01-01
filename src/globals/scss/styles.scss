@@ -55,10 +55,12 @@ $deprecations--message: 'Deprecated code was found, this code will be removed be
 @import '../../components/Wrapper/wrapper';
 @import '../../components/Button/button';
 @import '../../components/Credits/credits';
+@import '../../components/DatePicker/date-picker';
 @import '../../components/FormControls/form-controls';
 @import '../../components/FormWizard/form-wizard';
 @import '../../components/FormError/form-error';
 @import '../../components/FileUploader/file-uploader';
+@import '../../components/InfoBar/info-bar';
 @import '../../components/Checkbox/checkbox';
 /*
 @import '../../components/combo-box/combo-box';
@@ -97,13 +99,16 @@ $deprecations--message: 'Deprecated code was found, this code will be removed be
 @import '../../components/Loading/loading';
 @import '../../components/Modal/modal';
 @import '../../components/Module/module';
+@import '../../components/Notification/notification';
 @import '../../components/User/user';
+@import '../../components/Value/value';
 /*
 @import '../../components/multi-select/multi-select';
 @import '../../components/notification/inline-notification';
 @import '../../components/notification/toast-notification';
 */
 
+@import '../../components/InlineLoading/inline-loading';
 @import '../../components/StepNavigation/step-navigation';
 @import '../../components/StepNavigationItem/step-navigation-item';
 @import '../../components/SkeletonText/skeleton';
@@ -119,6 +124,8 @@ $deprecations--message: 'Deprecated code was found, this code will be removed be
 @import '../../components/accordion/accordion';
 @import '../../components/progress-indicator/progress-indicator';
 */
+
+@import '../../components/ReadMore/read-more';
 @import '../../components/Story/story';
 @import '../../components/Breadcrumb/breadcrumb';
 @import '../../components/Blockquote/blockquote';
@@ -141,6 +148,7 @@ $deprecations--message: 'Deprecated code was found, this code will be removed be
 // accumulated through the @import process.
 @if (length($deprecations--reasons) > 0) {
   $deprecations--message: '';
+
   @each $reason in $deprecations--reasons {
     $deprecations--message: '#{$deprecations--message}
 REASON: #{$reason}';

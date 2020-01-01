@@ -43,6 +43,7 @@
   a.#{$prefix}--btn--icon-reverse {
     display: flex;
     flex-direction: row-reverse;
+
     .#{$prefix}--btn__icon {
       float: left;
       margin-left: 0;
@@ -54,6 +55,7 @@
   button {
     &.#{$prefix}--btn--icon-only {
       padding: 0 $spacing-sm;
+
       .#{$prefix}--btn__icon {
         margin-left: 0;
         margin-right: 0;
@@ -61,16 +63,71 @@
     }
   }
 
+  /* Standard syntax */
+
   .#{$prefix}--btn {
     @include button-base;
   }
 
   .#{$prefix}--btn--primary {
-    @include button-theme($brand-01, transparent, $inverse-01, $hover-primary, $ui-01);
+    @include button-theme(
+      $interactive-01,
+      transparent,
+      $inverse-01,
+      $hover-primary,
+      $ui-01
+    );
+  }
+
+  .#{$prefix}--btn--accent {
+    @include button-theme(
+      $accent-01,
+      transparent,
+      $text-01,
+      darken($accent-01, 5),
+      $text-01
+    );
+
+    .#{$prefix}--btn__icon,
+    &:hover > .#{$prefix}--btn__icon,
+    &:focus > .#{$prefix}--btn__icon {
+      fill: $text-01;
+    }
+  }
+
+  @keyframes slidein {
+    from {
+      box-shadow: 0 0 0 0px rgba($ui-05, 0.7);
+    }
+
+    to {
+      box-shadow: 0 0 0 7px rgba($ui-05, 0);
+    }
+  }
+
+  .#{$prefix}--btn--animating {
+    animation-duration: 0.5s;
+    animation-name: slidein;
+  }
+
+  .#{$prefix}--btn--navigation {
+    @include button-theme(
+      saturate($color__main-40, 10%),
+      transparent,
+      $inverse-01,
+      saturate(lighten($color__main-40, 5), 10%),
+      $ui-01
+    );
   }
 
   .#{$prefix}--btn--secondary {
-    @include button-theme(transparent, $brand-01, $brand-01, $hover-secondary, $brand-01);
+    @include button-theme(
+      transparent,
+      $interactive-01,
+      $interactive-01,
+      $hover-secondary,
+      $interactive-01
+    );
 
     &:hover,
     &:focus {
@@ -78,7 +135,7 @@
     }
 
     &:active {
-      color: $brand-01;
+      color: $interactive-01;
     }
 
     &:hover > .#{$prefix}--btn__icon,
@@ -88,7 +145,7 @@
 
     &:hover:disabled,
     &:focus:disabled {
-      color: $brand-01;
+      color: $interactive-01;
     }
   }
 
@@ -116,7 +173,13 @@
   }
 
   .#{$prefix}--btn--ghost {
-    @include button-theme(transparent, transparent, $brand-01, $brand-01, $brand-01);
+    @include button-theme(
+      transparent,
+      transparent,
+      $interactive-01,
+      $interactive-01,
+      $interactive-01
+    );
 
     &:hover,
     &:focus {
@@ -137,10 +200,10 @@
 
     &:hover:disabled,
     &:focus:disabled {
-      color: $brand-01;
+      color: $interactive-01;
 
       .#{$prefix}--btn__icon {
-        fill: $brand-01;
+        fill: $interactive-01;
       }
     }
   }
@@ -171,7 +234,13 @@
   }
 
   .#{$prefix}--btn--danger {
-    @include button-theme(transparent, $support-01, $support-01, $support-01, $support-01);
+    @include button-theme(
+      transparent,
+      $support-01,
+      $support-01,
+      $support-01,
+      $support-01
+    );
 
     &:hover {
       color: $inverse-01;
@@ -199,7 +268,13 @@
   }
 
   .#{$prefix}--btn--danger--primary {
-    @include button-theme($support-01, transparent, $inverse-01, darken($support-01, 10%), $ui-01);
+    @include button-theme(
+      $support-01,
+      transparent,
+      $inverse-01,
+      darken($support-01, 10%),
+      $ui-01
+    );
 
     &:hover:disabled,
     &:focus:disabled {
@@ -216,7 +291,7 @@
 
   .#{$prefix}--btn--secondary + .#{$prefix}--btn--primary,
   .#{$prefix}--btn--tertiary + .#{$prefix}--btn--danger--primary {
-    margin-left: $spacing-md;
+    margin-left: $spacing-xs;
   }
 
   // Skeleton State
@@ -243,18 +318,25 @@
   }
 
   .#{$prefix}--btn--primary {
-    @include button-theme--x($brand-01, transparent, $inverse-01, #0353e9, $ui-01, $brand-02);
+    @include button-theme--x(
+      $interactive-01,
+      transparent,
+      $inverse-01,
+      #0353e9,
+      $ui-01,
+      $interactive-02
+    );
   }
 
   .#{$prefix}--btn--secondary {
-    @include button-theme--x(
+    /*@include button-theme--x(
       $ibm-colors__gray--80,
       $ibm-colors__gray--80,
       $inverse-01,
       $ibm-colors__gray--70,
       $inverse-01,
       $ibm-colors__gray--60
-    );
+    );*/
 
     &:hover,
     &:focus {
@@ -263,7 +345,14 @@
   }
 
   .#{$prefix}--btn--tertiary {
-    @include button-theme--x(transparent, $brand-01, $brand-01, #0353e9, $brand-01, $brand-02);
+    @include button-theme--x(
+      transparent,
+      $interactive-01,
+      $interactive-01,
+      #0353e9,
+      $interactive-01,
+      $interactive-02
+    );
     position: relative;
 
     &:hover {
@@ -287,7 +376,14 @@
   }
 
   .#{$prefix}--btn--ghost {
-    @include button-theme--x(transparent, transparent, $brand-01, $ibm-colors__gray--10, $brand-01, $ibm-colors__blue--70);
+    @include button-theme--x(
+      transparent,
+      transparent,
+      $interactive-01,
+      $ibm-colors__gray--10,
+      $interactive-01,
+      $ibm-colors__blue--70
+    );
 
     &:hover,
     &:active {
@@ -320,7 +416,14 @@
   }
 
   .#{$prefix}--btn--danger {
-    @include button-theme--x(transparent, $support-01, $support-01, $support-01, $support-01, $ibm-colors__red--80);
+    @include button-theme--x(
+      transparent,
+      $support-01,
+      $support-01,
+      $support-01,
+      $support-01,
+      $ibm-colors__red--80
+    );
 
     &:hover {
       color: $inverse-01;
@@ -333,7 +436,14 @@
   }
 
   .#{$prefix}--btn--danger--primary {
-    @include button-theme--x($support-01, transparent, $inverse-01, #ba1b23, $ui-01, $ibm-colors__red--80);
+    @include button-theme--x(
+      $support-01,
+      transparent,
+      $inverse-01,
+      #ba1b23,
+      $ui-01,
+      $ibm-colors__red--80
+    );
 
     &:hover:disabled,
     &:focus:disabled {

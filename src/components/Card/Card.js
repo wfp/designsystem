@@ -46,15 +46,12 @@ const Card = ({
           {metadata && (
             <p className="wfp--photo-card__info__metadata">{metadata}</p>
           )}
-          {title &&
-            (kind === 'hero' || kind === 'page-splash') && (
-              <h2 className="wfp--photo-card__info__title">{title}</h2>
-            )}
-          {title &&
-            kind !== 'hero' &&
-            kind !== 'page-splash' && (
-              <h3 className="wfp--photo-card__info__title">{title}</h3>
-            )}
+          {title && (kind === 'hero' || kind === 'page-splash') && (
+            <h2 className="wfp--photo-card__info__title">{title}</h2>
+          )}
+          {title && kind !== 'hero' && kind !== 'page-splash' && (
+            <h3 className="wfp--photo-card__info__title">{title}</h3>
+          )}
           {subTitle && (
             <p className="wfp--photo-card__info__subtitle">{subTitle}</p>
           )}
@@ -86,16 +83,49 @@ const Card = ({
 };
 
 Card.propTypes = {
+  /**
+   List of `BannerNavigationItem` components
+ */
   children: PropTypes.node,
+  /**
+   Additional className which will be added
+ */
   className: PropTypes.string,
+  /**
+   An optimized photograph
+ */
   image: PropTypes.string,
+  /**
+  External link flag
+*/
   isExternal: PropTypes.bool,
+  /**
+  Render the Card as link
+*/
   isLink: PropTypes.bool,
+  /**
+  A short sentence to explain the content of the node (max 180 characters) 
+*/
   subTitle: PropTypes.node,
+  /**
+   A search-friendly title (ideally 50 characters, max 100) 
+*/
   title: PropTypes.node,
+  /**
+  Additional metadatas
+*/
   metadata: PropTypes.string,
+  /**
+  Additional more content
+*/
   more: PropTypes.node,
+  /**
+  Kind of Card
+*/
   kind: PropTypes.string,
+  /**
+  The URL where the content uploaded is located.
+*/
   url: PropTypes.string,
 };
 

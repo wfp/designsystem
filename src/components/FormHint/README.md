@@ -4,13 +4,13 @@ Use the `helperText` prop instead if the information is very important for filli
 
 
 ```js
-import { Tooltip } from 'react-tippy';
+import Tippy from '@tippy.js/react';
 import { FormHint } from '@wfp/ui';
 ```
 
 ```js
 <FormHint
-  TooltipComponent={Tooltip}
+  TooltipComponent={Tippy}
 >
   The Tooltip Content
 </FormHint>

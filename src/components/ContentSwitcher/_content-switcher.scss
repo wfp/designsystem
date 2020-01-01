@@ -10,7 +10,7 @@
   .#{$prefix}--content-switcher {
     @include font-family;
     display: flex;
-    height: rem(40px);
+    height: $input-height;
   }
 
   .#{$prefix}--content-switcher--sm {
@@ -32,8 +32,8 @@
     margin: 0;
     font-weight: 600;
     text-decoration: none;
-    border: 2px solid $brand-01;
-    color: $brand-01;
+    border: 2px solid $interactive-01;
+    color: $interactive-01;
 
     &:focus {
       outline: 1px solid transparent;
@@ -107,7 +107,7 @@
   }
 
   .#{$prefix}--content-switcher-btn.#{$prefix}--content-switcher--selected {
-    background-color: $brand-01;
+    background-color: $interactive-01;
     color: $inverse-01;
     outline: 1px solid transparent;
 

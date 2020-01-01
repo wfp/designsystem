@@ -1,7 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { withInfo } from '@storybook/addon-info';
 import {
   withKnobs,
   array,
@@ -28,6 +27,10 @@ const props = () => ({
   ),
   pageSize: number('Number of items per page (pageSize)', 10),
   pageSizes: array('Choices of `pageSize` (pageSizes)', [10, 20, 30, 40, 50]),
+  pageSizesDisabled: boolean(
+    'Hide the `pageSize` select (pageSizeDisabled)',
+    false
+  ),
   itemsPerPageText: text(
     'Label for `pageSizes` select UI (itemsPerPageText)',
     'Items per page:'
@@ -35,27 +38,15 @@ const props = () => ({
   onChange: action('onChange'),
 });
 
-storiesOf('Pagination', module)
+storiesOf('Components|Pagination', module)
   .addDecorator(withKnobs)
   .addDecorator(story => <div style={{ width: '800px' }}>{story()}</div>)
-  .add(
-    'default',
-    withInfo({
-      text: `
-        The pagination component is used to paginate through items.
-      `,
-    })(() => <Pagination {...props()} />)
-  )
-  .add(
-    'multipe pagination components',
-    withInfo({
-      text: `Showcasing unique ids for each pagination component`,
-    })(() => {
-      return (
-        <div>
-          <Pagination {...props()} />
-          <Pagination {...props()} />
-        </div>
-      );
-    })
-  );
+  .add('default', () => <Pagination {...props()} />)
+  .add('multipe pagination components', () => {
+    return (
+      <div>
+        <Pagination {...props()} />
+        <Pagination {...props()} />
+      </div>
+    );
+  });

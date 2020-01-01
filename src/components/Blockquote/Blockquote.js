@@ -3,15 +3,25 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import Icon from '../Icon';
 
+import {
+  iconCheckmark,
+  iconWarning,
+  iconWarningSolid,
+  iconInfoSolid,
+} from '@wfp/icons';
+
 const iconLookup = {
   warning: {
-    icon: 'warning',
+    icon: iconWarning,
   },
   error: {
-    icon: 'warning--solid',
+    icon: iconWarningSolid,
   },
   info: {
-    icon: 'info--solid',
+    icon: iconInfoSolid,
+  },
+  success: {
+    icon: iconCheckmark,
   },
 };
 
@@ -27,9 +37,9 @@ class Blockquote extends React.Component {
     this.setState({ open: !this.state.open });
   };
 
-  showInnerHtml = content => {
+  /*showInnerHtml = content => {
     return { __html: content };
-  };
+  };*/
 
   render() {
     const {
@@ -39,38 +49,50 @@ class Blockquote extends React.Component {
       style,
       title,
       toggleable,
-      innerHtml,
+      icon,
+      //innerHtml,
       light,
       code,
       warning,
       withIcon,
       info,
-      type,
+      kind,
     } = this.props;
     const blockquoteClass = classNames({
       'wfp--blockquote': true,
       'wfp--blockquote--toggleable': toggleable === true,
-      'wfp--blockquote--light': type === 'light' || light,
-      'wfp--blockquote--code': type === 'code' || code,
-      'wfp--blockquote--error': type === 'error' || error,
-      'wfp--blockquote--warning': type === 'warning' || warning,
-      'wfp--blockquote--info': type === 'info' || info,
-      'wfp--blockquote--with-icon': withIcon,
+      'wfp--blockquote--light': light,
+      'wfp--blockquote--code': code,
+      'wfp--blockquote--no-content': !children,
+      'wfp--blockquote--error': kind === 'error' || error,
+      'wfp--blockquote--warning': kind === 'warning' || warning,
+      'wfp--blockquote--success': kind === 'success',
+      'wfp--blockquote--info': kind === 'info' || info,
+      'wfp--blockquote--with-icon': withIcon || icon,
       'wfp--blockquote--open': this.state.open,
     });
 
-    const blockquoteContentClass = classNames({
-      'wfp--blockquote__content': true,
+    const blockquoteContentClass = classNames('wfp--blockquote__content', {
       [`${className}`]: className,
     });
 
-    const lookup = warning
-      ? iconLookup['warning']
-      : error ? iconLookup['error'] : iconLookup['info'];
+    // @deprecated Only kind is allowed
+    const lookup =
+      warning || kind === 'warning'
+        ? iconLookup['warning']
+        : error || kind === 'error'
+        ? iconLookup['error']
+        : kind === 'success'
+        ? iconLookup['success']
+        : iconLookup['info'];
 
-    const icon = withIcon ? (
+    const iconElement = React.isValidElement(icon) ? (
+      <div className="wfp--blockquote__icon wfp--blockquote__icon--custom">
+        {icon}
+      </div>
+    ) : withIcon || icon ? (
       <Icon
-        name={lookup.icon}
+        icon={icon ? icon : lookup.icon}
         description="Blockquote Icon"
         className="wfp--blockquote__icon"
         height="30"
@@ -80,23 +102,25 @@ class Blockquote extends React.Component {
 
     return (
       <div className={blockquoteClass}>
-        {title && (
-          <div
-            onClick={this.toggleBlockquote}
-            className="wfp--blockquote__title">
-            {title}
-          </div>
-        )}
-
-        {icon}
+        {iconElement}
         <div className={blockquoteContentClass} style={style}>
+          {title && (
+            <div
+              onClick={this.toggleBlockquote}
+              onKeyDown={this.toggleBlockquote}
+              className="wfp--blockquote__title"
+              role="button"
+              tabIndex={0}>
+              {title}
+            </div>
+          )}
           {children}
-          {innerHtml && (
+          {/*innerHtml && (
             <div
               role="complementary"
               dangerouslySetInnerHTML={this.showInnerHtml(innerHtml)}
             />
-          )}
+          )*/}
         </div>
       </div>
     );
@@ -104,8 +128,42 @@ class Blockquote extends React.Component {
 }
 
 Blockquote.propTypes = {
+  /**
+   * Specify the content of your `Blockquote`
+   */
   children: PropTypes.node,
-  type: PropTypes.string,
+  /**
+   * Show content formated as code
+   */
+  code: PropTypes.bool,
+  /**
+   * Display content as `dangerouslySetInnerHTML` content
+   */
+  //innerHtml: PropTypes.string,
+  /**
+   * Display light version of Blockquote
+   */
+  light: PropTypes.bool,
+  /**
+   * Show options to show and hide the Blockquote
+   */
+  toogleable: PropTypes.bool,
+  /**
+   * Show title for Blockquote
+   */
+  title: PropTypes.node,
+  /**
+   * Specify the type of your Blockquote Options are `light` `code` `error` `warning` `info`
+   */
+  kind: PropTypes.string,
+  /**
+   * Specify if an Icon should be displayed
+   */
+  withIcon: PropTypes.bool,
+  /**
+   * Specify a custom icon. Can be either a `Icon` object or React component
+   */
+  icon: PropTypes.oneOfType([PropTypes.node, PropTypes.object]),
 };
 
 export default Blockquote;

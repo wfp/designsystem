@@ -9,6 +9,11 @@ const BannerNavigationWithContent = props => {
   return (
     <BannerNavigation {...other}>
       <BannerNavigationItem>
+        <Link href="https://newgo.wfp.org" target="_blank">
+          WFPgo
+        </Link>
+      </BannerNavigationItem>
+      <BannerNavigationItem>
         <Link href="http://communities.wfp.org" target="_blank">
           Communities
         </Link>
@@ -35,7 +40,7 @@ const BannerNavigationWithContent = props => {
       </BannerNavigationItem>
       <BannerNavigationItem>
         <Link href="https://selfservice.go.wfp.org" target="_blank">
-          Self-service
+          Self-Service
         </Link>
       </BannerNavigationItem>
       <BannerNavigationItem>
@@ -86,7 +91,7 @@ BannerNavigationWithContent.propTypes = {
 };
 
 BannerNavigationWithContent.defaultProps = {
-  search: true,
+  search: false,
   searchOnChange: () => {},
 };
 

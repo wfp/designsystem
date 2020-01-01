@@ -3,10 +3,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { withKnobs, boolean } from '@storybook/addon-knobs';
-
-import { withReadme } from 'storybook-readme';
-import readme from './README.md';
+import { withKnobs } from '@storybook/addon-knobs';
 
 import Breadcrumb from '../Breadcrumb';
 import BreadcrumbHome from '../BreadcrumbHome';
@@ -18,33 +15,19 @@ const props = () => ({
   onClick: action('onClick'),
 });
 
-storiesOf('Breadcrumb', module)
+storiesOf('Components|Breadcrumb', module)
   .addParameters({ jest: ['Breadcrumb'] })
   .addDecorator(withKnobs)
-  .addDecorator(withReadme([readme]))
-  .add(
-    'Default',
-    () => (
-      <Breadcrumb {...props()}>
-        <BreadcrumbItem>
-          <a href="/#">
-            <BreadcrumbHome />
-          </a>
-        </BreadcrumbItem>
-        <BreadcrumbItem href="#">Breadcrumb 2</BreadcrumbItem>
-        <BreadcrumbItem disableLink>Breadcrumb 3</BreadcrumbItem>
-      </Breadcrumb>
-    ),
-    {
-      info: {
-        text: readme,
-      },
-    }
-  )
-  .add('skeleton', () => <BreadcrumbSkeleton />, {
-    info: {
-      text: `
-          Placeholder skeleton state to use when content is loading.
-          `,
-    },
-  });
+
+  .add('Default', () => (
+    <Breadcrumb {...props()}>
+      <BreadcrumbItem>
+        <a href="/#">
+          <BreadcrumbHome />
+        </a>
+      </BreadcrumbItem>
+      <BreadcrumbItem href="#">Breadcrumb 2</BreadcrumbItem>
+      <BreadcrumbItem disableLink>Breadcrumb 3</BreadcrumbItem>
+    </Breadcrumb>
+  ))
+  .add('skeleton', () => <BreadcrumbSkeleton />);

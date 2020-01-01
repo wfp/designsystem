@@ -1,15 +1,18 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
+import { sliderValuePropSync } from '../../internal/FeatureFlags';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import isEqual from 'lodash.isequal';
 import TextInput from '../TextInput';
-import { sliderValuePropSync } from '../../internal/FeatureFlags';
+
+import settings from '../../globals/js/settings';
+const { prefix } = settings;
 
 const defaultFormatLabel = (value, label) => {
   return typeof label === 'function' ? label(value) : `${value}${label}`;
 };
 
-export default class Slider extends PureComponent {
+export default class Slider extends Component {
   static propTypes = {
     /**
      * The CSS class name for the slider.
@@ -72,8 +75,7 @@ export default class Slider extends PureComponent {
     step: PropTypes.number,
 
     /**
-     * A value determining how much the value should increase/decrease by Shift+arrow keys,
-     * which will be `(max - min) / stepMuliplier`.
+     * A value determining how much the value should increase/decrease by Shift+arrow keys, which will be `(max - min) / stepMuliplier`.
      */
     stepMuliplier: PropTypes.number,
 
@@ -90,7 +92,7 @@ export default class Slider extends PureComponent {
     /**
      * The `name` attribute of the `<input>`.
      */
-    name: PropTypes.bool,
+    name: PropTypes.string,
 
     /**
      * The `type` attribute of the `<input>`.
@@ -101,14 +103,18 @@ export default class Slider extends PureComponent {
      * The `ariaLabel` for the `<input>`.
      */
     ariaLabelInput: PropTypes.string,
-
     /**
-     * `true` to use the light version.
+     * `true` to use the light version. (experimental)
      */
     light: PropTypes.bool,
+    /**
+     * Use the width of the parent element
+     */
+    fullWidth: PropTypes.bool,
   };
 
   static defaultProps = {
+    fullWidth: false,
     hideTextInput: false,
     step: 1,
     stepMuliplier: 4,
@@ -144,17 +150,18 @@ export default class Slider extends PureComponent {
     );
     return {
       value: effectiveValue,
-      left: (effectiveValue - min) / (max - min) * 100,
+      left: ((effectiveValue - min) / (max - min)) * 100,
       prevValue: value,
       prevMin: min,
       prevMax: max,
     };
   }
 
-  UNSAFE_componentWillReceiveProps(nextProps) {
+  shouldComponentUpdate(nextProps) {
     if (!sliderValuePropSync && !isEqual(nextProps, this.props)) {
       this.updatePosition();
     }
+    return true;
   }
 
   updatePosition = evt => {
@@ -191,7 +198,7 @@ export default class Slider extends PureComponent {
           return { dragging: false };
         }
         if (typeof props.onChange === 'function') {
-          props.onChange({ value: newValue });
+          props.onChange(newValue);
         }
         return {
           dragging: false,
@@ -208,7 +215,7 @@ export default class Slider extends PureComponent {
     const { value } = prevState;
 
     const range = max - min;
-    const valuePercentage = (value - min) / range * 100;
+    const valuePercentage = ((value - min) / range) * 100;
 
     let left;
     let newValue;
@@ -230,7 +237,7 @@ export default class Slider extends PureComponent {
           const multiplier =
             evt.shiftKey === true ? range / step / stepMuliplier : 1;
           const stepMultiplied = step * multiplier;
-          const stepSize = stepMultiplied / range * 100;
+          const stepSize = (stepMultiplied / range) * 100;
           left = valuePercentage + stepSize * direction;
           newValue = Number(value) + stepMultiplied * direction;
         }
@@ -239,8 +246,8 @@ export default class Slider extends PureComponent {
         const clientX = evt.touches ? evt.touches[0].clientX : evt.clientX;
         const track = this.track.getBoundingClientRect();
         const ratio = (clientX - track.left) / track.width;
-        const rounded = min + Math.round(range * ratio / step) * step;
-        left = (rounded - min) / range * 100;
+        const rounded = min + Math.round((range * ratio) / step) * step;
+        left = ((rounded - min) / range) * 100;
         newValue = rounded;
       }
     }
@@ -323,7 +330,7 @@ export default class Slider extends PureComponent {
       hideTextInput,
       id = (this.inputId =
         this.inputId ||
-        `__carbon-slider_${Math.random()
+        `__wfp-slider_${Math.random()
           .toString(36)
           .substr(2)}`),
       min,
@@ -331,12 +338,17 @@ export default class Slider extends PureComponent {
       max,
       maxLabel,
       formatLabel = defaultFormatLabel,
+      fullWidth,
       labelText,
       step,
       stepMuliplier, // eslint-disable-line no-unused-vars
       inputType,
       required,
       disabled,
+      helperText,
+      invalid,
+      invalidText,
+      hideLabel,
       name,
       light,
       ...other
@@ -350,7 +362,11 @@ export default class Slider extends PureComponent {
       className
     );
 
-    const inputClasses = classNames('wfp-slider-text-input', {
+    const sliderContainerClasses = classNames('wfp--slider-container', {
+      'wfp--slider-container--full-width': fullWidth,
+    });
+
+    const inputClasses = classNames('wfp--slider-text-input', {
       'wfp--text-input--light': light,
     });
 
@@ -361,12 +377,34 @@ export default class Slider extends PureComponent {
       left: `${left}%`,
     };
 
+    const errorId = id + '-error-msg';
+
+    const labelClasses = classNames(`${prefix}--label`, {
+      [`${prefix}--visually-hidden`]: hideLabel,
+      [`${prefix}--label--disabled`]: other.disabled,
+    });
+
+    const label = labelText ? (
+      <label htmlFor={id} className={labelClasses}>
+        {labelText}
+      </label>
+    ) : null;
+
+    const error = invalid ? (
+      <div className="wfp--form-requirement" id={errorId}>
+        {invalidText}
+      </div>
+    ) : null;
+
+    const helper = helperText ? (
+      <div className="wfp--form__helper-text">{helperText}</div>
+    ) : null;
+
     return (
       <div className="wfp--form-item">
-        <label htmlFor={id} className="wfp--label">
-          {labelText}
-        </label>
-        <div className="wfp--slider-container">
+        {label}
+        {helper}
+        <div className={sliderContainerClasses}>
           <span className="wfp--slider__range-label">
             {formatLabel(min, minLabel)}
           </span>
@@ -419,6 +457,7 @@ export default class Slider extends PureComponent {
           </span>
           {!hideTextInput && (
             <TextInput
+              disabled={disabled}
               type={inputType}
               id="input-for-slider"
               className={inputClasses}
@@ -429,6 +468,7 @@ export default class Slider extends PureComponent {
             />
           )}
         </div>
+        {error}
       </div>
     );
   }

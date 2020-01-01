@@ -15,6 +15,7 @@
   .#{$prefix}--module__background {
     background-color: $ui-02;
   }
+
   .#{$prefix}--module {
     @include reset;
     @include font-family;
@@ -30,27 +31,30 @@
         0px 25px 30px -15px rgba(#000000, 0.1);
       background-color: $ui-01;
       border-radius: 3px;
-      border: 1px solid transparent;
     }
 
     .#{$prefix}--module__header {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 1rem 1.5rem;
+      padding: 0.9rem 1.2rem 0.8rem;
       border-bottom: 1px solid $ui-04;
+    }
+
+    .#{$prefix}--module__filter {
+      display: flex;
     }
 
     .#{$prefix}--module__footer {
       display: flex;
       align-items: center;
-      padding: 0.5rem 1rem;
+      padding: 0.7rem 1.2rem;
       border-top: 1px solid $ui-04;
-      @include typescale('zeta');
+      @include typescale('omega');
     }
 
     .#{$prefix}--module__title {
-      @include typescale('zeta');
+      @include typescale('epsilon');
       @include font-smoothing;
       letter-spacing: 0;
       font-weight: 600;
@@ -62,7 +66,7 @@
       flex-direction: column;
       align-items: flex-start;*/
       flex: 3;
-      padding: 1.5rem;
+      padding: 0.8rem 1.2rem;
       /*p {
         @include typescale('zeta');
       }*/
@@ -87,6 +91,10 @@
       padding: 5rem;
     }
 
+    .#{$prefix}--module__content--no-padding {
+      padding: 0;
+    }
+
     .#{$prefix}--module__content--scrollable {
       max-height: rem(300px);
       overflow-y: scroll;
@@ -94,17 +102,43 @@
     }
   }
 
+  .#{$prefix}--module--light {
+    .#{$prefix}--module__inner {
+      box-shadow: none;
+      border: 2px solid rgba(#000, 0.1);
+    }
+
+    &.#{$prefix}--module--with-hover {
+      &:hover {
+        .#{$prefix}--module__inner {
+          border-color: $interactive-01;
+        }
+      }
+    }
+  }
+
+  .#{$prefix}--module--full-height {
+    height: 100%;
+    .#{$prefix}--module__inner {
+      height: 100%;
+    }
+  }
+
   .#{$prefix}--module--dark {
     .#{$prefix}--module__inner {
-      background: $brand-02;
+      box-shadow: none;
+      background: $brand-01;
       color: $ui-01;
     }
+
     .#{$prefix}--module__header {
       border-bottom-color: rgba(#fff, 0.1);
     }
+
     .#{$prefix}--module__footer {
       border-top-color: rgba(#fff, 0.1);
     }
+
     .#{$prefix}--module__title {
       color: $ui-01;
     }

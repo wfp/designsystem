@@ -1,11 +1,13 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { withInfo } from '@storybook/addon-info';
-import { withKnobs, boolean, select, text } from '@storybook/addon-knobs';
-
-import { withReadme } from 'storybook-readme';
-import readme from './README.md';
+import {
+  withKnobs,
+  boolean,
+  number,
+  select,
+  text,
+} from '@storybook/addon-knobs';
 
 import store from '../../internal/configureStore';
 import { Provider } from 'react-redux';
@@ -16,18 +18,22 @@ import ReduxFormWrapper from '../ReduxFormWrapper';
 import Checkbox from '../Checkbox';
 import RadioButton from '../RadioButton';
 import Select from '../Select';
+import Slider from '../Slider';
 import ReactSelect from 'react-select';
 import TextArea from '../TextArea';
 import TextInput from '../TextInput';
 import Toggle from '../Toggle';
+import NumberInput from '../NumberInput';
 
 const inputs = {
   Checkbox: 'Checkbox',
   RadioButton: 'RadioButton',
   Select: 'Select',
+  Slider: 'Slider',
   ReactSelect: 'ReactSelect',
   TextArea: 'TextArea',
   TextInput: 'TextInput',
+  NumberInput: 'NumberInput',
   Toggle: 'Toggle',
 };
 
@@ -35,9 +41,11 @@ const inputMap = {
   Checkbox,
   RadioButton,
   Select,
+  Slider,
   ReactSelect,
   TextArea,
   TextInput,
+  NumberInput,
   Toggle,
 };
 
@@ -67,36 +75,30 @@ const props = {
     className: 'wfp--react-select-container',
     classNamePrefix: 'wfp--react-select',
     component: ReduxFormWrapper,
-    InputComponent:
-      inputMap[
-        select('Component (ReduxFormWrapper(Input))', inputs, 'TextInput')
-      ],
+    inputComponent:
+      inputMap[select('Input component (inputComponent)', inputs, 'TextInput')],
     onClick: action('onClick'),
     labelText: text('Label (labelText)', 'Label Text'),
+    helperText: text('Helper text (helperText)', 'This is a helper text'),
     name: text('Name', 'input'),
     placeholder: text('Placeholder', 'Placeholder content here'),
     required: boolean('Required (required)', true),
     onFocus: action('onFocus'),
     options: options,
+    min: number('The minimum value (min)', 0),
+    max: number('The maximum value (max)', 100),
+    step: number('The step (step)', 1),
   }),
 };
 
-storiesOf('ReduxFormWrapper', module)
+storiesOf('Components|ReduxFormWrapper', module)
   .addDecorator(withKnobs)
-  .addDecorator(withReadme([readme]))
   .addDecorator(story => (
     <Provider store={store}>
       <FormWrapper>{story()}</FormWrapper>
     </Provider>
   ))
-  .add(
-    'Default',
-    withInfo({
-      text: `
-        A wrapper for inputs so they can be used with ReduxForm.
-      `,
-    })(() => {
-      const regularProps = props.regular();
-      return <Field {...regularProps} validate={[required, maxLength15]} />;
-    })
-  );
+  .add('Default', () => {
+    const regularProps = props.regular();
+    return <Field {...regularProps} validate={[required, maxLength15]} />;
+  });

@@ -53,6 +53,10 @@ export default class Modal extends Component {
      * Specify the content of the modal header label.
      */
     modalLabel: PropTypes.node,
+    /**
+     * Specify the a function which renders a custom ModalFooter.
+     */
+    modalFooter: PropTypes.func,
 
     /**
      * Specify a label to be read by screen readers on the modal root node
@@ -96,6 +100,11 @@ export default class Modal extends Component {
     primaryButtonDisabled: PropTypes.bool,
 
     /**
+     * Specify whether the secondary Button should be disabled, or not
+     */
+    secondaryButtonDisabled: PropTypes.bool,
+
+    /**
      * Specify a handler for the secondary button.
      * Useful if separate handler from `onRequestClose` is desirable
      */
@@ -119,21 +128,34 @@ export default class Modal extends Component {
 
     /**
      * Specify a CSS selector that matches the DOM element that should
-     * be focused when the Modal opens
+     * be focused when the Modal opens. If "false" no selector will be triggered
      */
-    selectorPrimaryFocus: PropTypes.string,
+    selectorPrimaryFocus: PropTypes.oneOfType([
+      PropTypes.bool,
+      PropTypes.string,
+    ]),
+
+    /**
+     *  Different styling options are available `info`, `warning`, `danger`
+     */
+    type: PropTypes.oneOf(['info', 'warning', 'danger']),
 
     /**
      * If true the Modal will be rendered inside a portal at the end of the
      * body element, otherwise at the position it is placed.
      */
     inPortal: PropTypes.bool,
+    /**
+     * If true the Modal will be wider then the regular Modal
+     */
+    wide: PropTypes.bool,
   };
 
   static defaultProps = {
     onRequestClose: () => {},
     onRequestSubmit: () => {},
     primaryButtonDisabled: false,
+    secondaryButtonDisabled: false,
     onKeyDown: () => {},
     passiveModal: false,
     iconDescription: 'close the modal',
@@ -167,6 +189,7 @@ export default class Modal extends Component {
       while (target) {
         if (typeof target[matchesFuncName] === 'function') {
           if (
+            // eslint-disable-next-line no-loop-func
             selectorsFloatingMenus.some(selector =>
               target[matchesFuncName](selector)
             )
@@ -182,10 +205,10 @@ export default class Modal extends Component {
 
   handleKeyDown = evt => {
     if (evt.which === 27) {
-      this.props.onRequestClose(evt);
+      this.props.onRequestClose(evt, 'key');
     }
     if (evt.which === 13 && this.props.shouldSubmitOnEnter) {
-      this.props.onRequestSubmit(evt);
+      this.props.onRequestSubmit(evt, 'key');
     }
   };
 
@@ -195,8 +218,12 @@ export default class Modal extends Component {
       !this.innerModal.current.contains(evt.target) &&
       !this.elementOrParentIsFloatingMenu(evt.target)
     ) {
-      this.props.onRequestClose(evt);
+      this.props.onRequestClose(evt, 'background');
     }
+  };
+
+  handleCloseButton = evt => {
+    this.props.onRequestClose(evt, 'button');
   };
 
   focusModal = () => {
@@ -227,6 +254,9 @@ export default class Modal extends Component {
   }
 
   focusButton = focusContainerElement => {
+    if (this.props.selectorPrimaryFocus === false) {
+      return;
+    }
     const primaryFocusElement = focusContainerElement.querySelector(
       this.props.selectorPrimaryFocus
     );
@@ -234,7 +264,7 @@ export default class Modal extends Component {
       primaryFocusElement.focus();
       return;
     }
-    if (this.button) {
+    if (this.button && this.button.current) {
       this.button.current.focus();
     }
   };
@@ -266,10 +296,12 @@ export default class Modal extends Component {
     const {
       modalHeading,
       modalLabel,
+      modalFooter,
       modalAriaLabel,
       passiveModal,
       secondaryButtonText,
       primaryButtonText,
+      backgroundImage,
       open,
       onRequestClose,
       onRequestSubmit,
@@ -277,7 +309,11 @@ export default class Modal extends Component {
       iconDescription,
       inPortal,
       primaryButtonDisabled,
+      secondaryButtonDisabled,
       danger,
+      hideClose,
+      wide,
+      type,
       selectorPrimaryFocus, // eslint-disable-line
       selectorsFloatingMenus, // eslint-disable-line
       shouldSubmitOnEnter, // eslint-disable-line
@@ -290,17 +326,21 @@ export default class Modal extends Component {
 
     const modalClasses = classNames({
       [`${prefix}--modal`]: true,
-      [`${prefix}--modal-tall`]: !passiveModal,
+      [`${prefix}--modal--wide`]: wide,
+      [`${prefix}--modal--tall`]: !passiveModal,
+      [`${prefix}--modal--background-image`]: backgroundImage,
       'is-visible': open,
-      [`${prefix}--modal--danger`]: this.props.danger,
+      [`${prefix}--modal--warning`]: type === 'warning' || this.props.warning,
+      [`${prefix}--modal--danger`]: type === 'danger' || this.props.danger,
+
       [this.props.className]: this.props.className,
     });
 
-    const modalButton = (
+    const modalButton = !hideClose ? (
       <button
         className={`${prefix}--modal-close`}
         type="button"
-        onClick={onRequestClose}
+        onClick={this.handleCloseButton}
         ref={this.button}>
         <Icon
           icon={iconClose}
@@ -308,7 +348,7 @@ export default class Modal extends Component {
           description={iconDescription}
         />
       </button>
-    );
+    ) : null;
 
     const modalBody = (
       <div
@@ -327,20 +367,27 @@ export default class Modal extends Component {
         <div className={`${prefix}--modal-content`}>{this.props.children}</div>
         {!passiveModal && (
           <div className={`${prefix}--modal-footer`}>
-            <div className={`${prefix}--modal__buttons-container`}>
-              <Button
-                kind={danger ? 'tertiary' : 'secondary'}
-                onClick={onSecondaryButtonClick}>
-                {secondaryButtonText}
-              </Button>
-              <Button
-                kind={danger ? 'danger--primary' : 'primary'}
-                disabled={primaryButtonDisabled}
-                onClick={onRequestSubmit}
-                inputref={this.button}>
-                {primaryButtonText}
-              </Button>
-            </div>
+            {!modalFooter ? (
+              <div className={`${prefix}--modal__buttons-container`}>
+                {secondaryButtonText && (
+                  <Button
+                    kind={danger ? 'tertiary' : 'secondary'}
+                    disabled={secondaryButtonDisabled}
+                    onClick={onSecondaryButtonClick}>
+                    {secondaryButtonText}
+                  </Button>
+                )}
+                <Button
+                  kind={danger ? 'danger--primary' : 'primary'}
+                  disabled={primaryButtonDisabled}
+                  onClick={onRequestSubmit}
+                  inputref={this.button}>
+                  {primaryButtonText}
+                </Button>
+              </div>
+            ) : (
+              <div>{modalFooter(this.props)}</div>
+            )}
           </div>
         )}
       </div>
@@ -353,11 +400,16 @@ export default class Modal extends Component {
         onClick={this.handleClick}
         onBlur={this.handleBlur}
         className={modalClasses}
+        style={
+          backgroundImage
+            ? { backgroundImage: `url(${backgroundImage})` }
+            : undefined
+        }
         role="presentation"
         tabIndex={-1}
         onTransitionEnd={this.props.open ? this.handleTransitionEnd : undefined}
         ref={this.outerModal}>
-        {modalBody}
+        <div className={`${prefix}--modal-inner`}>{modalBody}</div>
       </div>
     );
 

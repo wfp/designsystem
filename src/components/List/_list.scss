@@ -8,41 +8,108 @@
 @import '../../globals/scss/typography';
 @import '../../globals/scss/helper-mixins';
 @import '../../globals/scss/import-once';
-@import '../../globals/scss/css--reset';
 
 @include exports('list') {
   .#{$prefix}--list {
     @include reset;
     @include font-family;
-    @include typescale('epsilon');
-    @include font-smoothing;
+    .#{$prefix}--list-item--checkmark,
+    .#{$prefix}--list-item--cross {
+      list-style-type: none;
+      position: relative;
+      .#{$prefix}--list-item__icon {
+        position: absolute;
+        left: -1.4rem;
+        top: 0.3em;
+        path {
+          fill: $support-02;
+        }
+      }
+    }
+
+    .#{$prefix}--list-item--cross {
+      .#{$prefix}--list-item__icon {
+        top: 0.3em;
+        path {
+          fill: $support-01;
+        }
+      }
+    }
   }
+
+  .#{$prefix}--list--colon {
+    .#{$prefix}--list__element__title {
+      &:after {
+        content: ':';
+      }
+    }
+  }
+
   .#{$prefix}--list--simple {
     line-height: 1.5em;
+
     li {
       display: flex;
     }
+
     .#{$prefix}--list__element__title {
       font-weight: 700;
       margin-right: rem(5px);
     }
   }
+
+  .#{$prefix}--list--bullet {
+    //line-height: 1.7em;
+    list-style-type: disc;
+    margin-left: 1.5em;
+    .#{$prefix}--list__element__title {
+      font-weight: 700;
+      margin-right: rem(5px);
+    }
+    li {
+      margin-bottom: 1em;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .#{$prefix}--list--simple-inline {
+    line-height: 1.5em;
+    display: flex;
+    flex-wrap: wrap;
+
+    li {
+      display: flex;
+      margin-right: 1em;
+    }
+
+    .#{$prefix}--list__element__title {
+      font-weight: 700;
+      margin-right: rem(5px);
+    }
+  }
+
   .#{$prefix}--list--small {
     font-size: 0.8em;
   }
+
   .#{$prefix}--list--details {
     @include line-height('body');
     list-style-type: none;
     margin: 0;
+
     li {
       break-inside: avoid-column;
     }
+
     .#{$prefix}--list__element__title {
       font-weight: 700;
       display: block;
       @include typescale('delta');
       margin-bottom: $spacing-md;
     }
+
     .#{$prefix}--list__element__content {
       margin-bottom: rem(20px);
       display: block;

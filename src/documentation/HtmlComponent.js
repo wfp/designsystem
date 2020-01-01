@@ -3,7 +3,6 @@ import React from 'react';
 import Wrapper from '../components/Wrapper';
 
 const SingleComponent = ({ children, html, pageWidth }) => {
-  console.log(children);
   return (
     <Wrapper
       style={{

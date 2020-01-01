@@ -2,7 +2,15 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
 import Icon from '../Icon';
-//import colors from '../../globals/data/colors.js';
+import {
+  iconEllipsis,
+  iconWarningGlyph,
+  iconLocked,
+  iconErrorGlyph,
+  iconCheckmark,
+  iconMenu,
+  iconOverflowMenu,
+} from '@wfp/icons';
 
 export default class StepNavigationItem extends React.Component {
   static propTypes = {
@@ -10,6 +18,7 @@ export default class StepNavigationItem extends React.Component {
     handleTabClick: PropTypes.func,
     handleTabAnchorFocus: PropTypes.func,
     handleTabKeyDown: PropTypes.func,
+    helperText: PropTypes.node,
     href: PropTypes.string.isRequired,
     index: PropTypes.number,
     label: PropTypes.string,
@@ -41,7 +50,7 @@ export default class StepNavigationItem extends React.Component {
       index,
       label,
       status,
-      selected,
+      helperText,
       selectedPage,
       onClick,
       page,
@@ -52,13 +61,7 @@ export default class StepNavigationItem extends React.Component {
       'wfp--step-navigation__nav-item',
       { 'wfp--step-navigation__nav-item--before': page < selectedPage },
       { 'wfp--step-navigation__nav-item--selected': page === selectedPage },
-      { 'wfp--step-navigation__nav-item--locked': status === 'locked' },
-      {
-        'wfp--step-navigation__nav-item--not-started': status === 'not-started',
-      },
-      { 'wfp--step-navigation__nav-item--skip': status === 'skip' },
-      { 'wfp--step-navigation__nav-item--warning': status === 'warning' },
-      { 'wfp--step-navigation__nav-item--complete': status === 'complete' },
+      { [`wfp--step-navigation__nav-item--${status}`]: status },
       className
     );
 
@@ -70,11 +73,13 @@ export default class StepNavigationItem extends React.Component {
     };
 
     const icon = {
-      'not-started': { name: 'ellipsis' },
-      warning: { name: 'warning--solid' },
-      locked: { name: 'lock' },
-      skip: { name: 'error--glyph' },
-      complete: { name: 'checkmark' },
+      'not-started': { icon: iconEllipsis },
+      warning: { icon: iconWarningGlyph },
+      locked: { icon: iconLocked },
+      skip: { icon: iconOverflowMenu },
+      disabled: { icon: iconErrorGlyph },
+      complete: { icon: iconCheckmark },
+      summary: { icon: iconMenu },
     };
 
     return (
@@ -87,27 +92,33 @@ export default class StepNavigationItem extends React.Component {
             onClick(evt);
           }
         }}
-        role="presentation"
-        selected={selected}>
+        role="presentation">
         {renderAnchor ? (
           renderAnchor(anchorProps)
         ) : (
           <React.Fragment>
-            <span className="wfp--step-navigation__nav-item__indicator">
-              {status ? (
+            <div className="wfp--step-navigation__nav-item__indicator">
+              {status && page !== selectedPage ? (
                 <Icon
-                  name={icon[status].name}
+                  icon={icon[status].icon}
                   width="14"
                   height="14"
-                  description="sss"
+                  description="Step Item"
                 />
               ) : (
-                <React.Fragment>{page + 1}</React.Fragment>
+                <span>{page + 1}</span>
               )}
-            </span>
-            <span className="wfp--step-navigation__nav-item__text">
-              {label}
-            </span>
+            </div>
+            <div>
+              <span className="wfp--step-navigation__nav-item__text">
+                {label}
+              </span>
+              {helperText && (
+                <span className="wfp--step-navigation__nav-item__helper-text">
+                  {helperText}
+                </span>
+              )}
+            </div>
           </React.Fragment>
         )}
       </li>

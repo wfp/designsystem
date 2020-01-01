@@ -47,10 +47,16 @@ const Wrapper = props => {
 };
 
 Wrapper.propTypes = {
+  /**
+   * The content which should be displayed
+   */
   children: PropTypes.node,
+  /**
+ Specify additional className which will be added
+*/
   className: PropTypes.string,
   /**
-    Width of Wrapper
+    `xs` `sm` `md` `lg`:  Set the maximum width of the Wrapper content `xs`: `500px` `sm`: `700px` `md`:`1000px` `lg`: `1200px` 
   */
   pageWidth: PropTypes.string,
   /**
@@ -58,7 +64,7 @@ Wrapper.propTypes = {
   */
   mobilePageWidth: PropTypes.string,
   /**
-    Spacing on top and bottom
+    `full` `sm` `md` `lg`:  Width on mobile devices `full`: `100%`      
   */
   spacing: PropTypes.string,
 };

@@ -1,5 +1,5 @@
 import React from 'react';
-import { mount, shallow } from 'enzyme';
+import { mount } from 'enzyme';
 
 import store from '../../internal/configureStore';
 import { Provider } from 'react-redux';
@@ -15,8 +15,9 @@ describe('FormInput', () => {
       <Provider store={store}>
         <FormWrapper>
           <Field
+            name="email"
             component={ReduxFormWrapper}
-            InputComponent={TextArea}
+            inputComponent={TextArea}
             labelText="Email Input"
           />
         </FormWrapper>

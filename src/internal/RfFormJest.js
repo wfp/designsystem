@@ -5,7 +5,7 @@ import { load as loadAccount } from './loadDefaultData';
 
 class FormEl extends Component {
   render() {
-    const { handleSubmit, sampleData } = this.props;
+    const { handleSubmit } = this.props;
 
     return (
       <form onSubmit={handleSubmit} className="wfp-form--stacked">

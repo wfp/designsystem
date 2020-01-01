@@ -13,6 +13,9 @@
     background: $color__main;
     @include reset;
     //display: flex;
+    @media print {
+      display: none;
+    }
   }
 
   .#{$prefix}--main-navigation__item {
@@ -31,6 +34,7 @@
     cursor: pointer;
     user-select: none;
     //vertical-align: middle;
+    white-space: nowrap;
     a {
       color: $color__white;
       @include typescale('epsilon');
@@ -126,6 +130,7 @@
     .#{$prefix}--main-navigation__logo {
       flex-grow: 1;
       font-weight: 600;
+      white-space: nowrap;
     }
 
     .#{$prefix}--main-navigation__wrapper {
@@ -137,6 +142,20 @@
 
     .#{$prefix}--main-navigation__item {
       padding: 0 $spacing-sm;
+
+      // Relate the sub navigation dropdown to the parent navigation item
+      &.#{$prefix}--content-width {
+        position: relative;
+
+        // Get the width from its navigation content
+        & > .#{$prefix}--main-navigation__sub--open {
+          left: inherit;
+          min-width: 100%;
+          right: 0;
+          top: 2.5rem;
+          width: auto;
+        }
+      }
     }
 
     .#{$prefix}--main-navigation__button {
@@ -168,6 +187,7 @@
         left: inherit;
         right: 0;
         width: 25%;
+        min-width: 250px;
       }
     }
   }
@@ -208,8 +228,8 @@
         width: 100%;
       }
       padding: $spacing-md $page-padding-mobile;
-      background-color: $color__blue-60;
-      border-bottom: 1px solid lighten($color__blue-60, 5);
+      background-color: $color__brand-01-60;
+      border-bottom: 1px solid lighten($color__brand-01-60, 5);
     }
   }
 }

@@ -1,9 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import ReactTable from 'react-table';
-import { withReadme } from 'storybook-readme';
-import { withKnobs, boolean, text } from '@storybook/addon-knobs';
-import readme from './README.md';
+import { withKnobs } from '@storybook/addon-knobs';
 
 import TablePagination from '../TablePagination';
 
@@ -61,45 +59,28 @@ const columns = [
   },
 ];
 
-const props = {
-  table: () => ({
-    className: 'striped',
-    zebra: boolean('Zebra Stripping (zebra)', false),
-  }),
-};
-
-storiesOf('Table', module)
+storiesOf('Components|Table', module)
   .addDecorator(withKnobs)
-  .add(
-    'Default',
-    () => (
-      <ReactTable
-        data={data}
-        defaultPageSize={5}
-        columns={columns}
-        PaginationComponent={TablePagination}
-      />
-    ),
-    {
-      info: {
-        text: readme,
-      },
-    }
-  )
-  .add(
-    'Zebra Striped',
-    () => (
-      <ReactTable
-        data={data}
-        defaultPageSize={5}
-        columns={columns}
-        className="-border -striped -highlight"
-        PaginationComponent={TablePagination}
-      />
-    ),
-    {
-      info: {
-        text: readme,
-      },
-    }
-  );
+  .add('Default', () => (
+    <ReactTable
+      data={data}
+      defaultPageSize={5}
+      columns={columns}
+      PaginationComponent={TablePagination}
+    />
+  ))
+  .add('Zebra Striped', () => (
+    <ReactTable
+      data={data}
+      defaultPageSize={5}
+      columns={columns}
+      className="-border -striped -highlight"
+      onPageChange={page => {
+        // eslint-disable-next-line no-console
+        console.log('page', page);
+      }}
+      pageSizesDisabled
+      totalItems={100}
+      PaginationComponent={TablePagination}
+    />
+  ));

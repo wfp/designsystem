@@ -2,28 +2,37 @@
 
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-
-import { withReadme } from 'storybook-readme';
-import readme from './README.md';
-
+import { withKnobs, boolean, select } from '@storybook/addon-knobs';
 import { List, ListItem } from '../List';
 
-const additionalProps = {
-  className: 'some-class',
+const kinds = {
+  'Simple vertical list (simple)': 'simple',
+  'Simple horizontal list (simple-inline)': 'simple-inline',
+  'Bullet list (bullet)': 'bullet',
+  'Detailed list (details)': 'details',
 };
 
-storiesOf('List', module)
-  .addDecorator(withReadme([readme]))
+const props = () => ({
+  className: 'some-class',
+  colon: boolean('Colon (colon)', false),
+  kind: select('Kind of list (kind)', kinds, 'simple'),
+  small: boolean('Small (small)', false),
+});
+
+storiesOf('Components|List', module)
+  .addDecorator(withKnobs)
   .add(
     'Default',
     /* `
       Lists show a number of connected items written consecutively, typically one below the other.
     `,*/
     () => (
-      <List {...additionalProps}>
-        <ListItem>First item</ListItem>
-        <ListItem>Second item</ListItem>
+      <List {...props()}>
+        <ListItem title="List item with title">First item</ListItem>
+        <ListItem title="Another item with title">Second item</ListItem>
         <ListItem>Third item</ListItem>
+        <ListItem>Fourth item</ListItem>
+        <ListItem>Fifth item</ListItem>
       </List>
     )
   )
@@ -33,7 +42,7 @@ storiesOf('List', module)
       Lists show a number of connected items written consecutively, typically one below the other.
     `,*/
     () => (
-      <List kind="details" {...additionalProps} style={{ columnCount: 3 }}>
+      <List kind="details" style={{ columnCount: 3 }}>
         <ListItem title="Strategic Outcome">
           Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
           nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,

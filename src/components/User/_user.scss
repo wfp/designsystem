@@ -18,6 +18,25 @@
     height: rem(25px);
     border-radius: 50%;
     margin-right: rem(10px);
+    overflow: hidden;
+
+    > img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+
+    .#{$prefix}--user--has-description & {
+      width: rem(60px);
+      height: rem(60px);
+      margin-right: $spacing-lg;
+
+      @include rtl {
+        margin-left: $spacing-lg;
+        margin-right: inherit;
+      }
+    }
+
     @include rtl {
       margin-left: rem(10px);
       margin-right: inherit;
@@ -27,18 +46,47 @@
   .#{$prefix}--user__icon--empty {
     border-radius: 50%;
     background-size: 100%;
+    border: 2px solid white;
     background-color: $color__navy-gray-7;
+    text {
+      fill: $ui-01;
+      font-weight: 600;
+      font-family: 'Arial';
+    }
+  }
+
+  .#{$prefix}--user__description {
+    @include typescale('delta');
+    //color: $text-02;
+  }
+
+  .#{$prefix}--user__extended-description {
+    margin-left: $spacing-lg;
+    @include typescale('delta');
+    //color: $text-02;
+  }
+
+  .#{$prefix}--user__title {
+    > span {
+      .#{$prefix}--user--has-description & {
+        font-weight: bold;
+        line-height: 1.4em;
+      }
+    }
   }
 
   .#{$prefix}--user__title--ellipsis {
     display: inline-block;
-    max-width: 130px;
+    @include breakpoint(bp--md--major) {
+      max-width: 130px;
+    }
     overflow: hidden;
     line-height: 1.5;
     white-space: nowrap;
     text-overflow: ellipsis;
   }
-  .wfp--user__title--small {
+
+  .#{$prefix}--user__title--small {
     @include breakpoint(bp--md--major) {
       display: none;
     }

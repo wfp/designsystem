@@ -11,7 +11,7 @@ https://medium.com/commonux/how-to-design-a-form-wizard-b85fe1cc665a
 
 ### redux-form
 
-The wizard uses redux-form and is based on this example: https://redux-form.com/7.4.2/examples/wizard/
+The wizard uses react-final-form and is based on this example: https://github.com/final-form/react-final-form
 
 ### states
 

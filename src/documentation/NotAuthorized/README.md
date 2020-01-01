@@ -1,0 +1,1 @@
+The **not authorized** example page can be used when the user has no access to the whole page.

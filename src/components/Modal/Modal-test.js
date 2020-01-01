@@ -6,8 +6,20 @@ import { shallow, mount } from 'enzyme';
 
 describe('Modal', () => {
   describe('Renders as expected', () => {
-    const wrapper = shallow(<Modal className="extra-class" inPortal={false} />);
-    const mounted = mount(<Modal className="extra-class" inPortal={false} />);
+    const wrapper = shallow(
+      <Modal
+        className="extra-class"
+        secondaryButtonText="Secondary"
+        inPortal={false}
+      />
+    );
+    const mounted = mount(
+      <Modal
+        className="extra-class"
+        secondaryButtonText="Secondary"
+        inPortal={false}
+      />
+    );
 
     it('has the expected classes', () => {
       expect(wrapper.hasClass('wfp--modal')).toEqual(true);
@@ -18,12 +30,12 @@ describe('Modal', () => {
     });
 
     it('should not be a passive modal by default', () => {
-      expect(wrapper.hasClass('wfp--modal-tall')).toEqual(true);
+      expect(wrapper.hasClass('wfp--modal--tall')).toEqual(true);
     });
 
     it('should be a passive modal when passiveModal is passed', () => {
       wrapper.setProps({ passiveModal: true });
-      expect(wrapper.hasClass('wfp--modal-tall')).toEqual(false);
+      expect(wrapper.hasClass('wfp--modal--tall')).toEqual(false);
     });
 
     it('should set id if one is passed via props', () => {
@@ -167,7 +179,12 @@ describe('Modal', () => {
 
     it('should close by default on secondary button click', () => {
       const onRequestClose = jest.fn();
-      const modal = mount(<Modal onRequestClose={onRequestClose} />);
+      const modal = mount(
+        <Modal
+          secondaryButtonText="Secondary"
+          onRequestClose={onRequestClose}
+        />
+      );
       const secondaryBtn = modal.find('.wfp--btn--secondary');
       secondaryBtn.simulate('click');
       expect(onRequestClose).toBeCalled();
@@ -175,7 +192,12 @@ describe('Modal', () => {
 
     it('should handle custom secondary button events', () => {
       const onSecondarySubmit = jest.fn();
-      const modal = mount(<Modal onSecondarySubmit={onSecondarySubmit} />);
+      const modal = mount(
+        <Modal
+          secondaryButtonText="Secondary"
+          onSecondarySubmit={onSecondarySubmit}
+        />
+      );
       const secondaryBtn = modal.find('.wfp--btn--secondary');
       secondaryBtn.simulate('click');
       expect(onSecondarySubmit).toBeCalled();
@@ -208,7 +230,9 @@ describe('Modal Wrapper', () => {
 });
 describe('Danger Modal', () => {
   describe('Renders as expected', () => {
-    const wrapper = shallow(<Modal danger inPortal={false} />);
+    const wrapper = shallow(
+      <Modal danger secondaryButtonText="Secondary" inPortal={false} />
+    );
 
     it('has the expected classes', () => {
       expect(wrapper.hasClass('wfp--modal--danger')).toEqual(true);

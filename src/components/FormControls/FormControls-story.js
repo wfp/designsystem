@@ -1,10 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { withInfo } from '@storybook/addon-info';
-import { withKnobs, boolean, text } from '@storybook/addon-knobs';
-import { withReadme } from 'storybook-readme';
-import readme from './README.md';
+import { withKnobs, boolean, object, text } from '@storybook/addon-knobs';
+import { iconArrowLeft, iconArrowRight } from '@wfp/icons';
 
 import FormControls from '../FormControls';
 
@@ -13,7 +11,7 @@ const props = {
     className: 'some-class',
     onNextClick: action('onNextClick'),
     nextDisabled: boolean('disable Next button (nextDisabled)', false),
-    nextIcon: text('custom icon for Next button (nextIcon)', 'arrow--right'),
+    nextIcon: object('custom icon for Next button (nextIcon)', iconArrowRight),
     nextHidden: boolean('hide Next button (nextHidden)', false),
     nextText: text('custom text for Next button (nextText)', undefined),
     onPreviousClick: action('onPreviousClick'),
@@ -21,9 +19,9 @@ const props = {
       'disable Previous button (previousDisabled)',
       false
     ),
-    previousIcon: text(
+    previousIcon: object(
       'custom icon for Previous button (previousIcon)',
-      'arrow--left'
+      iconArrowLeft
     ),
     previousHidden: boolean('hide Next button (nextHidden)', false),
     previousText: text('custom text for Next button (nextText)', undefined),
@@ -59,22 +57,10 @@ const props = {
   }),
 };
 
-storiesOf('FormControls', module)
+storiesOf('Components|FormControls', module)
   .addDecorator(withKnobs)
-  .addDecorator(withReadme([readme]))
-  .add(
-    'Default (Wizard form)',
-    withInfo({
-      text: `
-      **FormControls** can be used inside a regular form or multistep form as action buttons to save and submit a form.
-      `,
-    })(() => <FormControls {...props.formControls()} />)
-  )
-  .add(
-    'Simple form',
-    withInfo({
-      text: `
-      **FormControls** can be used inside a regular form or multistep form as action buttons to save and submit a form.
-      `,
-    })(() => <FormControls {...props.formControlsSimple()} />)
-  );
+  .addDecorator(story => <div style={{ width: '60vw' }}>{story()}</div>)
+  .add('Default (Wizard form)', () => (
+    <FormControls {...props.formControls()} />
+  ))
+  .add('Simple form', () => <FormControls {...props.formControlsSimple()} />);

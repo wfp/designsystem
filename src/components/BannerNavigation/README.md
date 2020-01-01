@@ -1,8 +1,8 @@
-The BannerNavigation is used on internal applications only and allows the user to quickly switch to other important applications.
+The BannerNavigation is used on internal applications which are actually listed on the bar only to crosslink between the applications. It is hidden on Mobile devices.
 
 ### Usage with default content
 
-`BannerNavigationWithContent` will contain the default links and search input for on the [Global Telephone Directory](http://gtd.wfp.org/).
+`BannerNavigationWithContent` will contain the default links.
 
 ```js
 import { BannerNavigationWithContent } from '@wfp/ui';

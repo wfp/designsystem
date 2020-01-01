@@ -27,18 +27,23 @@ Page splash with compact size - title and link
 #### Teaser
 Card used on publication teasers
 
-  
+### Usage with react
 
-| Setting | Default | Options | Role |
-| --------- | ----------- | -------------------- | ------------------------------------------------------------------ |
-| children | `undefined` | `string` | List of `BannerNavigationItem` components |
-| className | `undefined` | `string`  `undefined` | Additional className which will be added to the `BannerNavigation` |
-| image | `undefined` | `string` | An optimized photograph |
-| isExternal | `undefined` | `bool` | External link flag |
-| isLink | `undefined` | `bool` | Render as link |
-| subTitle | `undefined` | `node` `string` | A short sentence to explain the content of the node (max 180 characters) |
-| title | `undefined` | `node` `string` |  A search-friendly title (ideally 50 characters, max 100) |
-| metadata | `undefined` | `node` `string` |  |
-| more | `undefined` | `string` `string` |  |
-| kind | `undefined` | `string` | Kind of Card |
-| url | `undefined` | `string` | The URL where the content uploaded is located. |
+```js
+import { Card } from '@wfp/ui';
+```
+
+```js
+<Card 
+  className="some-class"
+  kind="landscape"
+  title="The Climate Adaption Mangement and Innovation Initiative"
+  metadata="Another Category"
+  moreButton="inverse"
+  subTitle="Food security and climate change analyses, adaptation planning, and good practices in food security adaptation programming."
+  image="http://www1.wfp.org/sites/default/files/images/yemen-hero-min.jpg"
+  url="http://www.wfp.org/"
+  isExternal={false}
+  isLink={true}
+/>
+```

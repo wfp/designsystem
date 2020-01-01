@@ -1,3 +1,10 @@
+/**
+ * Modified from https://github.com/IBM/carbon-components-react/
+ *
+ * This source code is licensed under the Apache-2.0 license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
 /* eslint-disable no-console */
 
 import React from 'react';
@@ -16,13 +23,6 @@ const props = () => ({
   })(action('onClick')),
 });
 
-storiesOf('Link', module)
+storiesOf('Components|Link', module)
   .addDecorator(withKnobs)
-  .add('Default', () => <Link {...props()}>Link</Link>, {
-    info: {
-      text: `
-            Links are typically used as a means of navigation either within the application, to a place outside, or to a resource.
-            For anything else, especially things that change data, you should be using a button.
-          `,
-    },
-  });
+  .add('Default', () => <Link {...props()}>Link</Link>);

@@ -13,8 +13,17 @@ const FormLabel = ({ className, children, id, ...other }) => {
 };
 
 FormLabel.propTypes = {
+  /**
+   * The content of the label
+   */
   children: PropTypes.node,
+  /**
+   * Additional `class` attributes
+   */
   className: PropTypes.string,
+  /**
+   * The ID of the related input which will be used as `htmlFor`
+   */
   id: PropTypes.string,
 };
 

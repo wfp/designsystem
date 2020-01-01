@@ -1,6 +1,4 @@
 import React from 'react';
-import { iconCaretDown } from '@wfp/icons';
-import Icon from '../Icon';
 import Tabs from '../Tabs';
 import Tab from '../Tab';
 import TabsSkeleton from '../Tabs/Tabs.Skeleton';
@@ -33,7 +31,7 @@ describe('Tabs', () => {
       });
     });
 
-    describe('Trigger (<div>)', () => {
+    /*describe('Trigger (<div>)', () => {
       const wrapper = shallow(
         <Tabs className="extra-class">
           <Tab label="firstTab">content1</Tab>
@@ -41,25 +39,27 @@ describe('Tabs', () => {
         </Tabs>
       );
 
-      const trigger = wrapper.find('div.wfp--tabs-trigger');
-      const tablist = wrapper.find('ul');
+      //const trigger = wrapper.find('div.wfp--tabs-trigger');
+      //const tablist = wrapper.find('ul');
 
       it('renders default className for trigger', () => {
         expect(trigger.hasClass('wfp--tabs-trigger')).toBe(true);
       });
+      
 
       it('renders hidden className by default', () => {
         expect(tablist.hasClass('wfp--tabs__nav--hidden')).toBe(true);
       });
 
-      it('renders default className for triggerText', () => {
-        expect(trigger.find('a').hasClass('wfp--tabs-trigger-text')).toBe(true);
-      });
+       it('renders default className for triggerText', () => {
+         expect(trigger.find('a').hasClass('wfp--tabs-trigger-text')).toBe(true);
+       });
 
-      it('renders <Icon>', () => {
-        expect(trigger.find(Icon).props().icon).toEqual(iconCaretDown);
-      });
-    });
+       it('renders <Icon>', () => {
+         expect(trigger.find(Icon).props().icon).toEqual(iconCaretDown);
+       });
+       
+    });*/
 
     describe('Children (<Tab>)', () => {
       const wrapper = shallow(
@@ -97,22 +97,22 @@ describe('Tabs', () => {
     );
 
     it('renders expected className', () => {
-      const tabContentClass = 'tab-content';
+      const tabContentClass = 'wfp--tab-content';
       expect(
         wrapper
-          .find('.tab-content')
+          .find('.wfp--tab-content')
           .first()
           .hasClass(tabContentClass)
       ).toBe(true);
     });
 
     it('renders content children as expected', () => {
-      expect(wrapper.find('.tab-content').length).toEqual(2);
+      expect(wrapper.find('.wfp--tab-content').length).toEqual(2);
     });
 
     it('renders hidden props with boolean value', () => {
       const hiddenProp = wrapper
-        .find('.tab-content')
+        .find('.wfp--tab-content')
         .first()
         .props().hidden;
       expect(typeof hiddenProp).toBe('boolean');
@@ -120,7 +120,7 @@ describe('Tabs', () => {
 
     it('renders selected props with boolean value', () => {
       const selectedProp = wrapper
-        .find('.tab-content')
+        .find('.wfp--tab-content')
         .first()
         .props().hidden;
       expect(typeof selectedProp).toBe('boolean');
@@ -129,7 +129,7 @@ describe('Tabs', () => {
 
   describe('events', () => {
     describe('click', () => {
-      const wrapper = mount(
+      /*const wrapper = mount(
         <Tabs>
           <Tab label="firstTab" className="firstTab">
             content1
@@ -138,10 +138,10 @@ describe('Tabs', () => {
             content2
           </Tab>
         </Tabs>
-      );
+      );*/
 
       describe('state: dropdownHidden', () => {
-        it('toggles dropdownHidden state after trigger is clicked', () => {
+        /*it('toggles dropdownHidden state after trigger is clicked', () => {
           const trigger = wrapper.find('.wfp--tabs-trigger');
 
           trigger.simulate('click');
@@ -157,7 +157,7 @@ describe('Tabs', () => {
           expect(wrapper.state().dropdownHidden).toEqual(false);
           triggerText.simulate('click');
           expect(wrapper.state().dropdownHidden).toEqual(true);
-        });
+        });*/
       });
     });
 
@@ -219,12 +219,6 @@ describe('Tabs', () => {
         </Tab>
       </Tabs>
     );
-
-    describe('dropdownHidden', () => {
-      it('should be true', () => {
-        expect(wrapper.state().dropdownHidden).toEqual(true);
-      });
-    });
 
     describe('selected', () => {
       it('should be 0', () => {

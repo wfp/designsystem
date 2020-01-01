@@ -3,8 +3,6 @@ import React, { Component } from 'react';
 import './polyfills';
 import './_container.scss';
 
-import { withOptions } from '@storybook/addon-options';
-
 import SingleComponent from '../src/documentation/SingleComponent';
 
 export default class Container extends Component {
@@ -14,29 +12,11 @@ export default class Container extends Component {
   }
 
   static getDerivedStateFromProps(nextProps, prevState) {
-    console.log(
-      'state',
-      nextProps.context.kind !== prevState.context.kind ||
-        nextProps.context.story !== prevState.context.story,
-      nextProps.context.kind !== prevState.context.kind,
-      nextProps.context.story !== prevState.context.story,
-      nextProps.context,
-      prevState.context
-    );
     if (
       nextProps.context.kind !== prevState.context.kind ||
       nextProps.context.story !== prevState.context.story
     ) {
-      //nextProps.story.addParameters({ jest: ['Card-test'] });
-
       window.scrollTo(0, 0);
-      if (nextProps.context.story.includes('html')) {
-        withOptions({ selectedAddonPanel: 'lucid-docs-panel-code' });
-      } else if (nextProps.context.story.includes('Right to left')) {
-        withOptions({ selectedAddonPanel: 'storybook/rtl' });
-      } else {
-        withOptions({ selectedAddonPanel: 'REACT_STORYBOOK/readme/panel' });
-      }
 
       return {
         context: nextProps.context,
@@ -46,17 +26,13 @@ export default class Container extends Component {
 
   render() {
     const { context, story } = this.props;
-    console.log('context, story', this.props);
 
     const storyRender = story();
 
-    console.log('storyRender', storyRender);
     const flexBasis =
       storyRender.props.children && storyRender.props.children.props
         ? storyRender.props.children.props['data-flexbasis']
         : undefined;
-
-    console.log('render', storyRender);
 
     if (context && !context.kind.indexOf(' ') == 0) {
       return (

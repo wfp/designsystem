@@ -46,7 +46,7 @@
   }
 
   .#{$prefix}--photo-card--no-background {
-    background: $brand-02;
+    background: $interactive-02;
   }
 
   .#{$prefix}--photo-card__info {
@@ -54,7 +54,7 @@
     bottom: 0;
     left: 0;
     width: 100%;
-    padding: $spacing-md*1.1 $spacing-md;
+    padding: $spacing-md * 1.1 $spacing-md;
     z-index: 100;
     overflow: hidden;
     display: flex;
@@ -132,7 +132,7 @@
       }
       .#{$prefix}--photo-card__info__background {
         &:after {
-          background: $brand-01;
+          background: $interactive-01;
           opacity: 1;
         }
       }
@@ -230,7 +230,7 @@
       display: none;
     }
     .#{$prefix}--photo-card__info__title {
-      color: $brand-01;
+      color: $interactive-01;
     }
     &.#{$prefix}--photo-card--link:hover {
       .#{$prefix}--photo-card__info__title {
@@ -238,7 +238,7 @@
       }
       .#{$prefix}--photo-card__info__background {
         &:after {
-          background: $brand-01;
+          background: $interactive-01;
           opacity: 1;
         }
       }
@@ -264,7 +264,7 @@
       @include text-gradient();
     }
     .#{$prefix}--photo-card__info__title {
-      color: $brand-01;
+      color: $interactive-01;
     }
     .#{$prefix}--photo-card__info__background {
       filter: blur(40px);

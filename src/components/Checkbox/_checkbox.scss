@@ -75,8 +75,8 @@
   .#{$prefix}--checkbox:indeterminate + .#{$prefix}--checkbox-label::before,
   .#{$prefix}--checkbox-label[data-contained-checkbox-state='true']::before,
   .#{$prefix}--checkbox-label[data-contained-checkbox-state='mixed']::before {
-    background-color: $brand-01;
-    border-color: $brand-01;
+    background-color: $interactive-01;
+    border-color: $interactive-01;
   }
 
   .#{$prefix}--checkbox:checked + .#{$prefix}--checkbox-label::after,
@@ -140,8 +140,8 @@
     .#{$prefix}--checkbox-appearance {
     display: flex;
     align-items: baseline;
-    background-color: $brand-01;
-    border-color: $brand-01;
+    background-color: $interactive-01;
+    border-color: $interactive-01;
   }
 
   .#{$prefix}--checkbox:focus
@@ -174,7 +174,7 @@
 
     @-moz-document url-prefix() {
       & {
-        stroke: $brand-01;
+        stroke: $interactive-01;
       }
     }
   }

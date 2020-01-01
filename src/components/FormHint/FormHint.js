@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { iconInfoSolid } from '@wfp/icons';
 import Icon from '../Icon';
 
-import tooltipStyle from '../Tooltip';
+import { tooltipStyle } from '../Tooltip';
 
 import classNames from 'classnames';
 import settings from '../../globals/js/settings';
@@ -27,7 +27,7 @@ export default class FormHint extends Component {
      */
     icon: PropTypes.object,
     /**
-     * Specify a component for the tooltip, usually react-tippy
+     * Specify a component for the tooltip, usually `@tippy.js/react`
      */
     TooltipComponent: PropTypes.func.isRequired,
   };

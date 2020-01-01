@@ -20,10 +20,11 @@
     cursor: pointer;
     display: flex;
     align-items: center;
+
     &:focus {
       outline: none;
-      background: blue;
     }
+
     &:first-child {
       .#{$prefix}--step-navigation__nav-item__indicator {
         &:after {
@@ -37,7 +38,15 @@
 
   .#{$prefix}--step-navigation__nav-item__text {
     text-decoration: underline;
-    color: $brand-01;
+    color: $interactive-01;
+  }
+
+  .#{$prefix}--step-navigation__nav-item__helper-text {
+    display: block;
+    margin-top: $spacing-2xs;
+    text-decoration: none;
+    color: $ui-05;
+    @include typescale('omega');
   }
 
   /*
@@ -61,34 +70,71 @@
   }*/
 
   .#{$prefix}--step-navigation__nav-item__indicator {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: relative;
-    background: $ui-01;
-    border: 2px solid $brand-01;
+    //background: $ui-01;
+    border: 2px solid $interactive-01;
     flex-shrink: 0;
-    border-radius: 34px;
-    width: rem(34px);
-    height: rem(34px);
-    line-height: rem(32px);
-    margin: 14px rem(14px) 14px rem(5px);
+    border-radius: 3em;
+    width: 3em;
+    height: 3em;
+
+    .#{$prefix}--step-navigation--small & {
+      width: 1.5em;
+      height: 1.5em;
+    }
+
+    line-height: 1em;
+    margin: 0.7em 1em 0.7em 0;
     text-align: center;
     z-index: 2;
-    color: $brand-01;
+    color: $interactive-01;
     transition: all 0.1s;
+
     > svg {
       position: relative;
       top: 1px;
-      fill: $brand-01;
+      fill: $interactive-01;
+      width: 1em;
+      height: 1em;
+
+      .#{$prefix}--step-navigation--small & {
+        width: 0.8em;
+        height: 0.8em;
+      }
     }
+
     &:after {
       display: block;
       width: 2px;
-      height: 22px;
+      height: 1.1em;
+      bottom: 3em;
+
+      .#{$prefix}--step-navigation--small & {
+        bottom: 1.5em;
+      }
+
+      .#{$prefix}--step-navigation--vertical.#{$prefix}--step-navigation--regular
+        & {
+        display: none;
+      }
+
+      .#{$prefix}--step-navigation--vertical.#{$prefix}--step-navigation--small
+        & {
+        height: 2px;
+        width: 1em;
+        left: inherit;
+        right: 1.5em;
+        bottom: 50%;
+      }
+
       position: absolute;
       z-index: 1;
       //z-index: -1px;
-      bottom: rem(35px);
-      left: 53%;
+
+      left: calc(50% - 0px);
       margin-left: -1px;
       content: '';
       background: $ui-04;
@@ -104,13 +150,15 @@
     width: 100%;
     position: relative;
     z-index: 2;
+
     &:focus {
       outline: none;
     }
 
     @include breakpoint(bp--sm--major) {
-      padding: 0 $spacing-3xs;
+      padding: 0 0.2em;
       width: auto;
+
       &:focus {
         background-color: transparent;
         color: $text-01;
@@ -122,10 +170,10 @@
   /* Before State */
   .#{$prefix}--step-navigation__nav-item--before {
     .#{$prefix}--step-navigation__nav-item__indicator {
-      //background: $brand-01;
+      //background: $interactive-01;
       //color: $ui-01;
       &:after {
-        //background-color: $brand-01;
+        background-color: $interactive-01;
       }
     }
   }
@@ -136,26 +184,43 @@
       text-decoration: none;
       color: $text-01;
     }
+
     .#{$prefix}--step-navigation__nav-item__indicator {
-      background: $brand-01;
-      border-color: $brand-01;
+      background: $interactive-01;
+      border-color: $interactive-01 !important;
       color: $ui-01;
+
       > svg {
         fill: $ui-01 !important;
       }
+
       &:after {
-        //background-color: $brand-01;
+        background-color: $interactive-01;
       }
     }
   }
 
   .#{$prefix}--step-navigation__nav-item--warning {
     .#{$prefix}--step-navigation__nav-item__indicator {
+      border-color: $support-03;
+
+      .#{$prefix}--step-navigation--small & {
+        border-color: $support-03;
+        background: $support-03;
+
+        > svg {
+          top: -0.05em;
+          fill: $ui-01 !important;
+        }
+      }
+
       > svg {
         fill: $support-03 !important;
+        top: -1px;
       }
     }
-    &.#{$prefix}--step-navigation__nav-item--selected {
+
+    /*&.#{$prefix}--step-navigation__nav-item--selected {
       .#{$prefix}--step-navigation__nav-item__indicator {
         background: $support-03;
         border-color: $support-03;
@@ -163,24 +228,45 @@
           fill: $ui-01 !important;
         }
       }
-    }
+    }*/
   }
 
   .#{$prefix}--step-navigation__nav-item--complete {
     .#{$prefix}--step-navigation__nav-item__indicator {
+      border-color: $support-02;
+
+      .#{$prefix}--step-navigation--small & {
+        border-color: $support-02;
+        background: $support-02;
+
+        > svg {
+          fill: $ui-01 !important;
+        }
+      }
+
       > svg {
         fill: $support-02 !important;
         position: relative;
         top: 1px;
       }
     }
-    &.#{$prefix}--step-navigation__nav-item--selected {
+
+    /*&.#{$prefix}--step-navigation__nav-item--selected {
       .#{$prefix}--step-navigation__nav-item__indicator {
         background: $support-02;
         border-color: $support-02;
         > svg {
           fill: $ui-01 !important;
         }
+      }
+    }*/
+  }
+
+  /* Not started State */
+  .#{$prefix}--step-navigation__nav-item--not-started {
+    .#{$prefix}--step-navigation__nav-item__indicator {
+      > svg {
+        top: -1px;
       }
     }
   }
@@ -189,12 +275,15 @@
   .#{$prefix}--step-navigation__nav-item--locked {
     cursor: not-allowed;
     color: $ui-03;
+
     .#{$prefix}--step-navigation__nav-item__text {
       color: $text-02;
       text-decoration: none;
     }
+
     .#{$prefix}--step-navigation__nav-item__indicator {
       border-color: $ui-05;
+
       > svg {
         top: 0px;
         fill: $ui-05 !important;
@@ -202,25 +291,85 @@
     }
   }
 
+  /* Summary State */
+  .#{$prefix}--step-navigation__nav-item--summary {
+    //color: $ui-03;
+    //margin-top: 1rem;
+
+    .#{$prefix}--step-navigation__nav-item__text {
+      //color: $text-02;
+      //text-decoration: none;
+    }
+
+    .#{$prefix}--step-navigation__nav-item__indicator {
+      //border-color: $ui-05;
+      /* &:after {
+        display: none !important;
+      } */
+
+      > svg {
+        top: -1px;
+        //fill: $ui-05 !important;
+      }
+    }
+  }
+
   /* Skipped State */
   .#{$prefix}--step-navigation__nav-item--skip {
-    cursor: not-allowed;
     color: $ui-03;
+
     .#{$prefix}--step-navigation__nav-item__text {
       color: $text-02;
       text-decoration: none;
     }
+
     .#{$prefix}--step-navigation__nav-item__indicator {
       border-color: $ui-04;
-      clip-path: polygon(
-        0 -100%,
-        56% -100%,
-        56% 14%,
-        93% 50%,
-        56% 90%,
-        56% 100%,
-        0 100%
-      );
+
+      .#{$prefix}--step-navigation--regular & {
+        clip-path: polygon(
+          0 -100%,
+          56% -100%,
+          56% 14%,
+          93% 50%,
+          56% 90%,
+          56% 100%,
+          0 100%
+        );
+      }
+
+      > svg {
+        top: 0px;
+        fill: $ui-05 !important;
+      }
+    }
+  }
+
+  /* Disabled State */
+  .#{$prefix}--step-navigation__nav-item--disabled {
+    cursor: not-allowed;
+    color: $ui-03;
+
+    .#{$prefix}--step-navigation__nav-item__text {
+      color: $text-02;
+      text-decoration: none;
+    }
+
+    .#{$prefix}--step-navigation__nav-item__indicator {
+      border-color: $ui-04;
+
+      .#{$prefix}--step-navigation--regular & {
+        clip-path: polygon(
+          0 -100%,
+          56% -100%,
+          56% 14%,
+          93% 50%,
+          56% 90%,
+          56% 100%,
+          0 100%
+        );
+      }
+
       > svg {
         top: 0px;
         fill: $ui-05 !important;

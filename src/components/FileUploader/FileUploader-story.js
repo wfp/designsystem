@@ -68,61 +68,61 @@ const props = {
   }),
 };
 
-storiesOf('FileUploader', module)
+storiesOf('Components|FileUploader (draft)', module)
   .addDecorator(withKnobs)
-  .add(
-    'FileUploaderButton',
-    () => <FileUploaderButton {...props.fileUploaderButton()} />,
-    {
-      info: {
-        text: `
-            The FileUploaderButton can be used as a standalone component if you do not need the extra UI that comes with FileUploader. The FileUploaderButton is used in FileUploader.
-          `,
-      },
-    }
-  )
-  .add(
-    'FileUploader',
-    () => {
-      let fileUploader;
-      return (
-        <div className="bx--file__container">
-          <FileUploader
-            {...props.fileUploader()}
-            ref={node => (fileUploader = node)}
-          />
-          <Button
-            kind="secondary"
-            small
-            style={{ marginTop: '1rem' }}
-            onClick={() => {
-              fileUploader.clearFiles();
-            }}>
-            Clear File
-          </Button>
-        </div>
-      );
-    },
-    {
-      info: {
-        text: `
-            The FileUploader components allow the user to upload any necessary files. This uses the FileUploaderButton and Filename components. Filename components will appear below the FileUploaderButton when files are added. Use the filenameStatus prop to control what icon appears in Filename ('edit', 'complete', or 'uploading').
-          `,
-      },
-    }
-  )
-  .add(
-    'skeleton',
-    () => (
-      <div style={{ width: '500px' }}>
-        <FileUploaderSkeleton />
+  .addParameters({ jest: ['FileUploader-test'] })
+  .add('FileUploaderButton', () => (
+    <FileUploaderButton {...props.fileUploaderButton()} />
+  ))
+  .add('FileUploader', () => {
+    let fileUploader;
+    return (
+      <div className="wfp--file__container">
+        <FileUploader
+          {...props.fileUploader()}
+          ref={node => (fileUploader = node)}
+        />
+        <Button
+          kind="secondary"
+          small
+          style={{ marginTop: '1rem' }}
+          onClick={() => {
+            fileUploader.clearFiles();
+          }}>
+          Clear File
+        </Button>
       </div>
-    ),
-    {
-      info: {
-        text: `
-    Placeholder skeleton state to use when content is loading.
-    `,
-      },
-    }
-  );
+    );
+  })
+  .add('FileUploader exiting files', () => {
+    let fileUploader;
+
+    const fileChange = (e, evt) => {
+      console.log('files changed', e, evt.target.value, fileUploader.nodes);
+    };
+
+    return (
+      <div className="wfp--file__container">
+        <FileUploader
+          {...props.fileUploader()}
+          ref={node => (fileUploader = node)}
+          onFilesChange={fileChange}
+          files={[{ name: 'lorem-ipsum.jpg' }]}
+        />
+        <Button
+          kind="secondary"
+          small
+          style={{ marginTop: '1rem' }}
+          onClick={() => {
+            fileUploader.clearFiles();
+          }}>
+          Clear File
+        </Button>
+      </div>
+    );
+  })
+  .add('skeleton', () => (
+    <div style={{ width: '500px' }}>
+      <FileUploaderSkeleton />
+    </div>
+  ));

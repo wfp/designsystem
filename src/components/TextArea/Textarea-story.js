@@ -1,7 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { withInfo } from '@storybook/addon-info';
 import { withKnobs, boolean, number, text } from '@storybook/addon-knobs';
 import TextArea from '../TextArea';
 import TextAreaSkeleton from '../TextArea/TextArea.Skeleton';
@@ -9,6 +8,7 @@ import TextAreaSkeleton from '../TextArea/TextArea.Skeleton';
 const TextAreaProps = () => ({
   className: 'some-class',
   disabled: boolean('Disabled (disabled)', false),
+  readOnly: boolean('Read-only (readOnly)', false),
   light: boolean('Light variant (light)', false),
   hideLabel: boolean('No label (hideLabel)', false),
   labelText: text('Label text (labelText)', 'Text Area label'),
@@ -26,22 +26,7 @@ const TextAreaProps = () => ({
   onClick: action('onClick'),
 });
 
-storiesOf('TextArea', module)
+storiesOf('Components|TextArea', module)
   .addDecorator(withKnobs)
-  .add(
-    'Default',
-    withInfo({
-      text: `
-        Text areas enable the user to interact with and input data. A text area is used when you
-        anticipate the user to input more than 1 sentence.
-      `,
-    })(() => <TextArea {...TextAreaProps()} />)
-  )
-  .add(
-    'skeleton',
-    withInfo({
-      text: `
-        Placeholder skeleton state to use when content is loading.
-      `,
-    })(() => <TextAreaSkeleton />)
-  );
+  .add('Default', () => <TextArea {...TextAreaProps()} />)
+  .add('skeleton', () => <TextAreaSkeleton />);

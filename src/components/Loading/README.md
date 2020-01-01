@@ -1,0 +1,21 @@
+Use the **Loading** spinner to indicate a loading time between 1 and 7 seconds. For shorter loading times don't use any loader and for longer use a progress bar to indicate the remaining time.
+
+### Usage (react)
+
+```javascript
+import { Loading } from '@wfp/ui';
+```
+
+```js
+<Loading withOverlay={false} active />
+```
+
+#### css Modifiers
+
+Use these modifiers with `.wfp--loading` class.
+
+| Selector                   | Description                              |
+| -------------------------- | ---------------------------------------- |
+| .wfp--loading--small        | Class for small loading spinner          |
+| .wfp--loading--stop         | Class for stopping the loading animation |
+| .wfp--loading-overlay--stop | Class for hiding the overlay             |

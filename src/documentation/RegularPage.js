@@ -2,10 +2,6 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 import Link from '../components/Link';
-import {
-  BannerNavigation,
-  BannerNavigationItem,
-} from '../components/BannerNavigation';
 import Footer from '../components/Footer';
 import Search from '../components/Search';
 
@@ -22,10 +18,8 @@ import Tab from '../components/Tab';
 
 import Button from '../components/Button';
 
-import {
-  MainNavigation,
-  MainNavigationItem,
-} from '../components/MainNavigation';
+import MainNavigation from '../components/MainNavigation';
+import MainNavigationItem from '../components/MainNavigationItem';
 
 import {
   SubNavigationList,
@@ -55,60 +49,21 @@ const renderAnchor = props => {
   return <a href={props.href}>{props.label}</a>;
 };
 
-const Page = ({ children, withoutSecondary }) => {
+const Page = ({
+  children,
+  withoutSecondary,
+  withoutSecondaryTabs,
+  pageWidth,
+  title,
+}) => {
   return (
     <div>
-      <BannerNavigation pageWidth="narrow">
-        <BannerNavigationItem>
-          <Link href="http://communities.wfp.org" target="_blank">
-            Communities
-          </Link>
-        </BannerNavigationItem>
-        <BannerNavigationItem>
-          <Link href="http://manuals.wfp.org" target="_blank">
-            Manuals
-          </Link>
-        </BannerNavigationItem>
-        <BannerNavigationItem>
-          <Link href="https://go.docs.wfp.org" target="_blank">
-            GoDocs
-          </Link>
-        </BannerNavigationItem>
-        <BannerNavigationItem>
-          <Link href="http://opweb.wfp.org" target="_blank">
-            OPweb
-          </Link>
-        </BannerNavigationItem>
-        <BannerNavigationItem>
-          <Link href="http://info.wfp.org" target="_blank">
-            IN/FO
-          </Link>
-        </BannerNavigationItem>
-        <BannerNavigationItem>
-          <Link href="https://selfservice.go.wfp.org" target="_blank">
-            Self-service
-          </Link>
-        </BannerNavigationItem>
-        <BannerNavigationItem>
-          <Link href="https://welearn.wfp.org" target="_blank">
-            WeLearn
-          </Link>
-        </BannerNavigationItem>
-        {/*<BannerNavigationItem>
-          <Search
-            size="small"
-            id="search-2"
-            labelText="Search"
-            placeHolderText="Search"
-            onChange={action('onChange')}
-          />
-        </BannerNavigationItem>*/}
-      </BannerNavigation>
-
-      <MainNavigation logo={<a href="http://www.wfp.org">WFP UI</a>}>
+      <MainNavigation
+        pageWidth={pageWidth}
+        logo={<a href="http://www.wfp.org">Application name</a>}>
         <MainNavigationItem>
           <Link href="http://communities.wfp.org" target="_blank">
-            Communities
+            Section 1
           </Link>
         </MainNavigationItem>
         <MainNavigationItem
@@ -230,22 +185,22 @@ const Page = ({ children, withoutSecondary }) => {
             </SubNavigation>
           }>
           <Link href="http://manuals.wfp.org" target="_blank">
-            Manuals
+            Section 2
           </Link>
         </MainNavigationItem>
         <MainNavigationItem>
           <Link href="https://go.docs.wfp.org" target="_blank">
-            GoDocs
+            Section 3
           </Link>
         </MainNavigationItem>
         <MainNavigationItem>
           <Link href="http://opweb.wfp.org" target="_blank">
-            OPweb
+            Section 4
           </Link>
         </MainNavigationItem>
         <MainNavigationItem>
           <Search
-            main
+            kind="main"
             id="search-2"
             labelText="Search"
             placeHolderText="Search"
@@ -270,7 +225,7 @@ const Page = ({ children, withoutSecondary }) => {
       {!withoutSecondary && (
         <SecondaryNavigation
           additional="additional Information"
-          pageWidth="narrow">
+          pageWidth={pageWidth}>
           <Breadcrumb>
             <BreadcrumbItem>
               <a href="/#">
@@ -280,52 +235,66 @@ const Page = ({ children, withoutSecondary }) => {
             <BreadcrumbItem href="#">Breadcrumb 2</BreadcrumbItem>
             <BreadcrumbItem href="#">Breadcrumb 3</BreadcrumbItem>
           </Breadcrumb>
-          <SecondaryNavigationTitle>The Page Title</SecondaryNavigationTitle>
-          <Tabs {...props.tabs} customTabContent={true}>
-            <Tab
-              {...props.tab}
-              label="Tab label 1"
-              href="http://www.de.wfp.org"
-              renderAnchor={renderAnchor}
-            />
-            <Tab
-              {...props.tab}
-              label="Tab label 2"
-              href="http://www.es.wfp.org"
-              renderAnchor={renderAnchor}
-            />
-            <Tab
-              {...props.tab}
-              label="Tab label 3"
-              href="http://www.us.wfp.org"
-              renderAnchor={renderAnchor}
-            />
-            <Tab
-              {...props.tab}
-              label="Tab label 4"
-              href="http://www.fr.wfp.org"
-              renderAnchor={renderAnchor}
-            />
-          </Tabs>
+          <SecondaryNavigationTitle>
+            {title ? title : 'The page title'}
+          </SecondaryNavigationTitle>
+          {!withoutSecondaryTabs && (
+            <Tabs {...props.tabs} customTabContent={true}>
+              <Tab
+                {...props.tab}
+                label="Tab label 1"
+                href="http://www.de.wfp.org"
+                renderAnchor={renderAnchor}
+              />
+              <Tab
+                {...props.tab}
+                label="Tab label 2"
+                href="http://www.es.wfp.org"
+                renderAnchor={renderAnchor}
+              />
+              <Tab
+                {...props.tab}
+                label="Tab label 3"
+                href="http://www.us.wfp.org"
+                renderAnchor={renderAnchor}
+              />
+              <Tab
+                {...props.tab}
+                label="Tab label 4"
+                href="http://www.fr.wfp.org"
+                renderAnchor={renderAnchor}
+              />
+            </Tabs>
+          )}
         </SecondaryNavigation>
       )}
 
       {children}
-
       <Footer
-        className="some-class"
-        metaContent="WFP UI Kit version 1.0 – powered by RMT with full support of concerned divisions which are responsible for the accuracy of the content"
-        pageWidth="narrow">
-        <div className="wfp--footer-info">
-          <div className="wfp--footer-info__item">
-            <p className="wfp--footer-label">A label</p>
-            <Link href="http://www.wfp.org">First Link</Link>
-            <Link href="http://www.wfp.org">Second Link</Link>
+        pageWidth={pageWidth}
+        metaContent="WFP UI Kit version 1.0 – powered by RMT with full support of concerned divisions which are responsible for the accuracy of the content">
+        <div className="wfp--footer__info">
+          <div className="wfp--footer__info__item">
+            <p className="wfp--footer__label">A label</p>
+            <ul className="wfp--footer__list">
+              <li>
+                <Link href="http://www.wfp.org">First Link</Link>
+              </li>
+              <li>
+                <Link href="http://www.wfp.org">Second Link</Link>
+              </li>
+            </ul>
           </div>
-          <div className="wfp--footer-info__item">
-            <p className="wfp--footer-label">Another label</p>
-            <Link href="http://www.go.wfp.org">WFP go</Link>
-            <Link href="http://www.wfp.org">Second Link</Link>
+          <div className="wfp--footer__info__item">
+            <p className="wfp--footer__label">Another label</p>
+            <ul className="wfp--footer__list">
+              <li>
+                <Link href="http://www.wfp.org">First Link</Link>
+              </li>
+              <li>
+                <Link href="http://www.wfp.org">Second Link</Link>
+              </li>
+            </ul>
           </div>
         </div>
       </Footer>
@@ -339,6 +308,10 @@ Page.propTypes = {
   */
   children: PropTypes.node,
   className: PropTypes.string,
+};
+
+Page.defaultProps = {
+  pageWidth: 'lg',
 };
 
 export default Page;

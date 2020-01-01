@@ -2,7 +2,6 @@
 # `examples/html-handlebars`
 
   
-
 > How to integrate `@wfp/ui` and `@wfp/icons` into a project
 
 > using plain html

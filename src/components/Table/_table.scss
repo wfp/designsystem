@@ -8,6 +8,30 @@
 @import '../Form/form';
 
 @include exports('table') {
+  .#{$prefix}--table {
+    th,
+    td {
+      padding: $spacing-xs;
+    }
+
+    th {
+      border-right: 1px solid $ui-04;
+      text-align: left;
+    }
+
+    thead {
+      background: $ui-03;
+      border-bottom: 2px solid #dfe3e6;
+      font-weight: 600;
+    }
+
+    tbody {
+      tr {
+        border-bottom: 1px solid $ui-04;
+      }
+    }
+  }
+
   /**
  * Data Tables
  *
@@ -109,7 +133,7 @@
       right: 0.6em;
       font-size: 1.3em;
       content: '▾';
-      color: $brand-01;
+      color: $interactive-01;
     }
   }
 
@@ -257,14 +281,16 @@
     &.right {
       flex-direction: row-reverse;
     }
+
     &.center {
       > span {
         display: block;
         margin: auto;
       }
     }
+
     &.highlighted {
-      background: $brand-01;
+      background: $interactive-01;
     }
   }
 
@@ -296,7 +322,7 @@
     transform: translate(-50%, -50%) rotate(-90deg) scaleY(0.6);
     border-left: 5.04px solid transparent;
     border-right: 5.04px solid transparent;
-    border-top: 7px solid $brand-01;
+    border-top: 7px solid $interactive-01;
     -webkit-transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     cursor: pointer;
@@ -336,12 +362,17 @@
     border-right: 0;
   }
 
-  .ReactTable.-striped .rt-tr.-odd {
+  .ReactTable.-striped .rt-tr.-even {
     background: lighten($ui-02, 2);
+  }
+
+  .ReactTable.-spacing-xs .rt-tr {
+    padding: $spacing-xs;
   }
 
   .ReactTable.-border {
     border: 1px solid $ui-04;
+
     .wfp--pagination {
       border-left: 0;
       border-right: 0;
@@ -367,6 +398,7 @@
     align-items: stretch;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
+
     //padding: 3px;
     //border-top: 2px solid #e8e8e8;
     > div {
@@ -382,7 +414,7 @@
     border: 0;
     padding: 0.5em 0;
     font-size: 1em;
-    color: $brand-01;
+    color: $interactive-01;
     background: none;
     transition: all 0.1s ease;
     cursor: pointer;
@@ -643,34 +675,42 @@
       .rt-tbody {
         min-width: inherit !important;
       }
+
       .rt-thead {
         display: none;
       }
+
       .rt-tr {
         display: block;
         display: flex;
         flex-direction: column;
       }
+
       .rt-th,
       .rt-td {
         width: 100% !important;
         max-width: inherit !important;
       }
+
       .rt-expandable {
         height: inherit !important; // TODO: Write custom Expander Component
         width: inherit !important;
       }
+
       .rt-expander {
-        color: $brand-01;
+        color: $interactive-01;
         margin: 0;
+
         &::after {
           display: none;
         }
       }
     }
+
     .ReactTable--responsive__cell {
       //display: flex;
     }
+
     .ReactTable--responsive__cell__title {
       display: block;
       font-weight: 600;
@@ -678,6 +718,7 @@
       margin-bottom: rem(5px);
       width: 100%;
     }
+
     .ReactTable--responsive__cell__content {
     }
   }
@@ -686,6 +727,7 @@
     .ReactTable--responsive__cell__title {
       display: none;
     }
+
     .rt-expander {
       button {
         display: none;

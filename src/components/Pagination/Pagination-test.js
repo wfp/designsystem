@@ -71,9 +71,14 @@ describe('Pagination', () => {
         expect(label.text()).toBe('foo');
       });
 
-      it('should show the item range out of the total', () => {
+      it('should show the item spacers', () => {
         const label = left.find('.wfp--pagination__text').at(1);
-        expect(label.text()).toBe('\u00a0|\u00a0\u00a01-5 of 50 items');
+        expect(label.text()).toBe('\u00a0|\u00a0\u00a0');
+      });
+
+      it('should show the item range out of the total', () => {
+        const label = left.find('.wfp--pagination__text').at(2);
+        expect(label.text()).toBe('1-5 of 50 items');
       });
 
       describe('pagination size container when total pages unknown', () => {
@@ -109,9 +114,14 @@ describe('Pagination', () => {
           expect(label.text()).toBe('foo');
         });
 
-        it('should show the item range without the total', () => {
+        it('should show the item range spacers', () => {
           const label = left.find('.wfp--pagination__text').at(1);
-          expect(label.text()).toBe('\u00a0|\u00a0\u00a01-5 items');
+          expect(label.text()).toBe('\u00a0|\u00a0\u00a0');
+        });
+
+        it('should show the item range out of the total', () => {
+          const label = left.find('.wfp--pagination__text').at(2);
+          expect(label.text()).toBe('1-5 items');
         });
       });
 
@@ -138,10 +148,8 @@ describe('Pagination', () => {
 
           // Text updates after change
           const labels = pager.find('.wfp--pagination__text');
-          expect(labels.at(1).text()).toBe(
-            '\u00a0|\u00a0\u00a01-10 of 50 items'
-          );
-          expect(labels.at(2).text()).toBe('1 of 5 pages');
+          expect(labels.at(1).text()).toBe('\u00a0|\u00a0\u00a0');
+          expect(labels.at(2).text()).toBe('1-10 of 50 items');
         });
 
         it('should reset the page when page size changes', () => {
@@ -225,8 +233,8 @@ describe('Pagination', () => {
       it('should render ranges and pages for no items', () => {
         const pager = mount(<Pagination pageSizes={[5, 10]} totalItems={0} />);
         const labels = pager.find('.wfp--pagination__text');
-        expect(labels.at(1).text()).toBe('\u00a0|\u00a0\u00a00-0 of 0 items');
-        expect(labels.at(2).text()).toBe('1 of 1 pages');
+        expect(labels.at(1).text()).toBe('\u00a0|\u00a0\u00a0');
+        expect(labels.at(2).text()).toBe('0-0 of 0 items');
       });
 
       it('should have two buttons for navigation', () => {

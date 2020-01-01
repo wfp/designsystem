@@ -1,26 +1,19 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { withInfo } from '@storybook/addon-info';
 import { withKnobs, boolean, select } from '@storybook/addon-knobs';
-import { iconAddSolid, iconSearch } from '@wfp/icons';
+import { iconAddGlyph, iconSearch } from '@wfp/icons';
 import Button from '../Button';
 import ButtonSkeleton from '../Button/Button.Skeleton';
 
-import results from '../../../.jest-test-results.json';
-import { withTests } from '@storybook/addon-jest';
-
-import { withReadme } from 'storybook-readme';
-import readme from './README.md';
-
 const icons = {
   None: 'None',
-  'Add with filled circle (iconAddSolid from `@wfp/ui`)': 'iconAddSolid',
+  'Add with filled circle (iconAddGlyph from `@wfp/ui`)': 'iconAddGlyph',
   'Search (iconSearch from `@wfp/ui`)': 'iconSearch',
 };
 
 const iconMap = {
-  iconAddSolid,
+  iconAddGlyph,
   iconSearch,
 };
 
@@ -31,6 +24,7 @@ const kinds = {
   'Danger primary button (danger--primary)': 'danger--primary',
   'Ghost button (ghost)': 'ghost',
   'Inverse button (inverse)': 'inverse',
+  'Main navigation button (navigation)': 'navigation',
 };
 
 const props = {
@@ -54,69 +48,44 @@ const props = {
   }),
 };
 
-storiesOf('Buttons', module)
+storiesOf('Components|Button', module)
   .addParameters({ jest: ['Button-test'] })
   .addDecorator(withKnobs)
-  .add(
-    'Default',
-    () => {
-      const regularProps = props.regular();
-      return (
-        <div style={{ display: 'flex', alignItems: 'center' }}>
-          <Button {...regularProps} className="some-class">
-            Button
-          </Button>
-          &nbsp;
-          <Button {...regularProps} href="#" className="some-class">
-            Link
-          </Button>
-          &nbsp;
-        </div>
-      );
-    },
-    {
-      info: {
-        text: readme,
-      },
-    }
-  )
-  .add(
-    'Sets of Buttons',
-    () => {
-      const setProps = props.set();
-      return (
-        <div>
-          <Button kind="secondary" {...setProps}>
-            Secondary button
-          </Button>
-          <Button kind="primary" {...setProps}>
-            Primary button
-          </Button>
-        </div>
-      );
-    },
-    {
-      info: {
-        text: readme,
-      },
-    }
-  )
-  .add(
-    'skeleton',
-    () => (
-      <div>
-        <ButtonSkeleton />
+  .add('Default', () => {
+    const regularProps = props.regular();
+    return (
+      <div style={{ display: 'flex', alignItems: 'center' }}>
+        <Button {...regularProps} className="some-class">
+          Button
+        </Button>
         &nbsp;
-        <ButtonSkeleton href="#" />
+        <Button {...regularProps} href="#" className="some-class">
+          Link
+        </Button>
         &nbsp;
-        <ButtonSkeleton small />
       </div>
-    ),
-    {
-      info: {
-        text: `
-          Placeholder skeleton state to use when content is loading.
-        `,
-      },
-    }
-  );
+    );
+  })
+  .add('Sets of Buttons', () => {
+    const setProps = props.set();
+    return (
+      <div>
+        <Button kind="secondary" {...setProps}>
+          Secondary button
+        </Button>
+        &nbsp;
+        <Button kind="primary" {...setProps}>
+          Primary button
+        </Button>
+      </div>
+    );
+  })
+  .add('skeleton', () => (
+    <div>
+      <ButtonSkeleton />
+      &nbsp;
+      <ButtonSkeleton href="#" />
+      &nbsp;
+      <ButtonSkeleton small />
+    </div>
+  ));

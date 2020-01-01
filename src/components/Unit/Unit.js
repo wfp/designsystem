@@ -56,8 +56,6 @@ const Unit = props => {
     ' ' +
     unitClassName +
     ' ' +
-    /*   unitHideClass +
-    ' ' +*/
     outputClassName +
     ' ' +
     setupClassName;
@@ -102,13 +100,33 @@ Unit.propTypes = {
   */
   maximumFractionDigits: PropTypes.number,
   /**
-    A value between 1-21, 0, The maximum number of significant digits to use. Possible values are from 1 to 21; the default is minimumSignificantDigits and 0 which will show an integer.
+    Render output as svg text 
   */
-  type: PropTypes.string,
+  svg: PropTypes.bool,
+  /**
+    The unit type  */
+  type: PropTypes.oneOf([
+    undefined,
+    'None',
+    'Narrow',
+    'Usd',
+    'Partners',
+    'Beneficiaries',
+    'Households',
+    'Months',
+    'Mt',
+    'Num',
+    'YearMonth',
+    'Level',
+    'People',
+    'Countries',
+    'Percentage',
+  ]),
 };
 
 Unit.defaultProps = {
   type: 'None',
+  svg: false,
 };
 
 export default Unit;

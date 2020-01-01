@@ -3,13 +3,13 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 
 const useExperimentalFeatures =
-  process.env.CARBON_USE_EXPERIMENTAL_FEATURES === 'true';
+  process.env.WFP_UI_USE_EXPERIMENTAL_FEATURES === 'true';
 
 const useExternalCss =
-  process.env.CARBON_REACT_STORYBOOK_USE_EXTERNAL_CSS === 'true';
+  process.env.WFP_UI_REACT_STORYBOOK_USE_EXTERNAL_CSS === 'true';
 
 const useStyleSourceMap =
-  process.env.CARBON_REACT_STORYBOOK_USE_STYLE_SOURCEMAP === 'true';
+  process.env.WFP_UI_REACT_STORYBOOK_USE_STYLE_SOURCEMAP === 'true';
 
 const replaceTable = {
   componentsX: useExperimentalFeatures,
@@ -42,7 +42,6 @@ const styleLoaders = [
         $feature-flags: (
           components-x: ${useExperimentalFeatures},
           grid: ${useExperimentalFeatures},
-          ui-shell: true,
         );
       `,
       sourceMap: useStyleSourceMap,
@@ -50,10 +49,16 @@ const styleLoaders = [
   },
 ];
 
-module.exports = (baseConfig, env, defaultConfig) => {
-  defaultConfig.devtool = useStyleSourceMap ? 'source-map' : '';
-  defaultConfig.optimization = {
-    ...defaultConfig.optimization,
+module.exports = async ({ config, mode }) => {
+  config.module.rules.push({
+    test: /\-story\.jsx?$/,
+    loaders: [require.resolve('@storybook/addon-storysource/loader')],
+    enforce: 'pre',
+  });
+
+  config.devtool = useStyleSourceMap ? 'source-map' : '';
+  config.optimization = {
+    ...config.optimization,
     minimizer: [
       new TerserPlugin({
         sourceMap: true,
@@ -64,7 +69,7 @@ module.exports = (baseConfig, env, defaultConfig) => {
     ],
   };
 
-  defaultConfig.module.rules.push({
+  config.module.rules.push({
     test: /(\/|\\)FeatureFlags\.js$/,
     loader: 'string-replace-loader',
     options: {
@@ -76,14 +81,14 @@ module.exports = (baseConfig, env, defaultConfig) => {
     },
   });
 
-  defaultConfig.module.rules.push({
+  /* config.module.rules.push({
     test: /-story\.jsx?$/,
     loaders: [
       {
         loader: require.resolve('@storybook/addon-storysource/loader'),
         options: {
           prettierConfig: {
-            parser: 'babylon',
+            parser: 'babel',
             printWidth: 80,
             tabWidth: 2,
             bracketSpacing: true,
@@ -95,9 +100,9 @@ module.exports = (baseConfig, env, defaultConfig) => {
       },
     ],
     enforce: 'pre',
-  });
+  }); */
 
-  defaultConfig.module.rules.push({
+  config.module.rules.push({
     test: /\.scss$/,
     sideEffects: true,
     use: [
@@ -106,20 +111,18 @@ module.exports = (baseConfig, env, defaultConfig) => {
     ],
   });
 
-  defaultConfig.module.rules.push({
+  config.module.rules.push({
     test: /\.hbs$/,
     sideEffects: true,
     loader: 'raw-loader',
   });
 
   if (useExternalCss) {
-    defaultConfig.plugins.push(
+    config.plugins.push(
       new MiniCssExtractPlugin({
         filename: '[name].[contenthash].css',
       })
     );
   }
-
-  console.log('defaultConfig', JSON.stringify(defaultConfig, null, 4));
-  return defaultConfig;
+  return config;
 };

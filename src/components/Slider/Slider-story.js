@@ -12,7 +12,8 @@ const props = () => ({
   inputType: text('The form element type (inputType)', ''),
   ariaLabelInput: text('The ARIA label for the <input> (ariaLabelInput)', ''),
   disabled: boolean('Disabled (disabled)', false),
-  light: boolean('Light variant (light)', false),
+  light: boolean('Light variant (experimental) (light)', false),
+  fullWidth: boolean('Use with of parent container (fullWidth)', false),
   hideTextInput: boolean('Without text input (hideTextInput)', false),
   value: !sliderValuePropSync ? 50 : number('The value (value)', 50),
   min: number('The minimum value (min)', 0),
@@ -23,40 +24,21 @@ const props = () => ({
     4
   ),
   labelText: text('Label text (labelText)', 'Slider Label'),
+  helperText: text('Helper text (helperText)', 'Additional helper text'),
   minLabel: text('Label for minimum value (minLabel)', ''),
   maxLabel: text('Label for maximum value (maxLabel)', ''),
   onChange: action('onChange'),
 });
 
-storiesOf('Slider', module)
+storiesOf('Components|Slider', module)
   .addDecorator(withKnobs)
-  .add(
-    'default',
-    () => (
-      <div style={{ marginTop: '2rem' }}>
-        <Slider id="slider" {...props()} />
-      </div>
-    ),
-    {
-      info: {
-        text: `
-            Sliders provide a visual indication of adjustable content, where the user can move the handle along a horizontal track to increase or decrease the value.
-          `,
-      },
-    }
-  )
-  .add(
-    'skeleton',
-    () => (
-      <div style={{ marginTop: '2rem' }}>
-        <SliderSkeleton />
-      </div>
-    ),
-    {
-      info: {
-        text: `
-            Placeholder skeleton state to use when content is loading.
-          `,
-      },
-    }
-  );
+  .add('default', () => (
+    <div style={{ marginTop: '2rem' }}>
+      <Slider id="slider" {...props()} />
+    </div>
+  ))
+  .add('skeleton', () => (
+    <div style={{ marginTop: '2rem' }}>
+      <SliderSkeleton />
+    </div>
+  ));

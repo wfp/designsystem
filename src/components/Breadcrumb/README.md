@@ -1,6 +1,10 @@
 Breadcrumb enables users to quickly see their location within a path of navigation and move up to a parent level if desired.
 
 ```js
+import { Breadcrumb, BreadcrumbItem, BreadcrumbHome } from '@wfp/ui';
+```
+
+```js
  <Breadcrumb>
   <BreadcrumbItem>
     <a href="/#">

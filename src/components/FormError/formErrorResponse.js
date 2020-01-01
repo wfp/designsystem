@@ -1,5 +1,3 @@
-import { change, untouch } from 'redux-form';
-
 export const formErrorResponse = errorFields => {
   const errors = {};
   var generic = [];

@@ -7,13 +7,33 @@ import settings from '../../globals/js/settings';
 
 const { prefix } = settings;
 
+function PropTypeEmptyString(props, propName, componentName) {
+  componentName = componentName || 'ANONYMOUS';
+  if (props[propName]) {
+    let value = props[propName];
+    if (typeof value === 'string' && value !== '') {
+      return new Error(
+        propName + ' in ' + componentName + ' is not an empty string'
+      );
+    }
+  }
+  return null;
+}
+
+const capMin = (min, value) =>
+  isNaN(min) || (!min && min !== 0) || isNaN(value) || (!value && value !== 0)
+    ? value
+    : Math.max(min, value);
+const capMax = (max, value) =>
+  isNaN(max) || (!max && max !== 0) || isNaN(value) || (!value && value !== 0)
+    ? value
+    : Math.min(max, value);
+
 export default class NumberInput extends Component {
   constructor(props) {
     super(props);
-    let value = props.value;
-    if (props.min || props.min === 0) {
-      value = Math.max(props.min, value);
-    }
+
+    const value = capMax(props.max, capMin(props.min, props.value));
     this.state = { value };
   }
 
@@ -76,9 +96,9 @@ export default class NumberInput extends Component {
     step: PropTypes.number,
 
     /**
-     * Specify the value of the input
+     * Specify the value of the input, if undefined or null the value is empty
      */
-    value: PropTypes.number,
+    value: PropTypes.oneOfType([PropTypeEmptyString, PropTypes.number]),
 
     /**
      * Specify if the currently value is invalid.
@@ -114,12 +134,12 @@ export default class NumberInput extends Component {
     onChange: () => {},
     onClick: () => {},
     step: 1,
-    value: 0,
+    value: undefined,
     invalid: false,
     invalidText: 'Provide invalidText',
     helperText: '',
     light: false,
-    allowEmpty: false,
+    allowEmpty: true,
   };
 
   /**
@@ -128,12 +148,12 @@ export default class NumberInput extends Component {
    */
   _inputRef = null;
 
-  static getDerivedStateFromProps({ min, value }, state) {
+  static getDerivedStateFromProps({ min, max, value = 0 }, state) {
     const { prevValue } = state;
     return prevValue === value
       ? null
       : {
-          value: isNaN(min) ? value : Math.max(min, value),
+          value: capMax(max, capMin(min, value)),
           prevValue: value,
         };
   }
@@ -174,7 +194,7 @@ export default class NumberInput extends Component {
         },
         () => {
           this.props.onClick(evt, direction);
-          this.props.onChange(evt, direction);
+          this.props.onChange(value, evt, direction);
         }
       );
     }
@@ -243,6 +263,7 @@ export default class NumberInput extends Component {
 
     const labelClasses = classNames(`${prefix}--label`, {
       [`${prefix}--visually-hidden`]: hideLabel,
+      [`${prefix}--label--disabled`]: other.disabled,
     });
 
     const labelTextComponent = labelText ? (

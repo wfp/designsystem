@@ -8,115 +8,81 @@ $css--reset: true;
  TODO: find another solution
 */
 
+#story-root {
+  margin-top: 2rem;
+  min-height: 30vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  height: 100%;
+
+  //border: 2px solid $ui-04;
+}
+
 html {
   height: 100%;
 }
-body {
-  height: 100%;
-  div[role='main'] {
-    height: 100%;
-  }
-  #root {
-    height: 100%;
-    > div {
-      /*main */
-      > div {
-        > div {
-          > div {
-            button[type='button'] {
-              z-index: 10000000;
-            }
-            > div:last-child {
-              z-index: 1000000000 !important;
-              > div {
-                > div {
-                  border: none !important;
-                }
-              }
-              div {
-                font-weight: normal !important;
-              }
-              h3 {
-                margin: $spacing-xs 0 !important;
-                text-transform: none !important;
-              }
-              h4 {
-                margin: $spacing-xs 0 !important;
-                text-transform: none !important;
-              }
-              h1,
-              h2,
-              p,
-              div {
-                font-family: 'Open Sans', sans-serif !important;
-                color: $text-01 !important;
-              }
-              th {
-                font-weight: 700;
-              }
-              table {
-                font-size: 0.9em;
-                span {
-                  background: $ui-02;
-                  padding: 0 $spacing-3xs;
-                }
-              }
-              td {
-                padding: $spacing-xs;
-              }
-              code {
-                background: $ui-02;
-                padding: 0 $spacing-3xs;
-              }
-            }
-            > div > button,
-            > button {
-              font-size: 1rem !important;
-              background: #0a6eb4 !important;
-            }
-          }
-          &:first-child {
-            //height: 100%;
-            //margin-top: -1%;
-          }
-        }
-      }
-    }
+
+#storybook-preview-background {
+  background: $ui-01;
+}
+
+.sidebar-header {
+  span {
+    font-weight: 100;
   }
 }
 
-.language-js {
-  margin: 1em 0 !important;
+body {
+  height: 100%;
+  background: none;
+
+  div[role='main'] {
+    height: 100%;
+  }
+
+  #root {
+    height: 100%;
+  }
+}
+
+.language-js,
+.language-css,
+.language-html {
+  margin: 0 !important;
+  margin-top: 1rem !important;
   background: $ui-02 !important;
   overflow-x: auto !important;
-  font-size: 0.8rem !important;
+  font-size: 0.9rem !important;
+
   code {
     font-weight: normal !important;
   }
+
   .keyword {
     color: #07a;
   }
+
   .punctuation {
     color: #999;
   }
+
   .string {
     color: #690;
   }
+
   .operator {
     color: #a67f59;
   }
 }
 
-.markdown-body {
-  width: 100%;
-  background: red;
-}
-
-table {
-  width: 100%;
-  th,
-  td {
-    border: 1px solid #ccc;
+@include breakpoint(bp--sm--major) {
+  .wfp--single-component--centered {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
   }
 }
 
@@ -166,48 +132,82 @@ table {
   }
 }
 
+.color__interactive-01 {
+  background: $interactive-01;
+}
+
 .color__brand-01 {
   background: $brand-01;
 }
-.color__brand-02 {
-  background: $brand-02;
+
+.color__interactive-02 {
+  background: $interactive-02;
 }
-.color__brand-03 {
-  background: $brand-03;
+
+.color__accent-01 {
+  background: $accent-01;
 }
+
+.color__interactive-02 {
+  background: $interactive-02;
+}
+
 .color__inverse-01 {
   background: $inverse-01;
 }
+
 .color__inverse-02 {
   background: $inverse-02;
 }
+
 .color__ui-01 {
   background: $ui-01;
 }
+
 .color__ui-02 {
   background: $ui-02;
 }
+
 .color__ui-03 {
   background: $ui-03;
 }
+
 .color__ui-04 {
   background: $ui-04;
 }
+
 .color__ui-05 {
   background: $ui-05;
 }
+
 .color__text-01 {
   background: $text-01;
 }
+
 .color__text-02 {
   background: $text-02;
 }
+
 .color__text-03 {
   background: $text-03;
 }
+
+.color__support-01 {
+  background: $support-01;
+}
+
+.color__support-02 {
+  background: $support-02;
+}
+
+.color__support-03 {
+  background: $support-03;
+}
+
 .color__field-01 {
   background: $field-01;
 }
+
 .color__field-02 {
   background: $field-02;
 }
@@ -215,36 +215,71 @@ table {
 .color__main-20 {
   background: $color__main-20;
 }
+
 .color__main-30 {
   background: $color__main-30;
 }
+
 .color__main-40 {
   background: $color__main-40;
 }
+
 .color__main-60 {
   background: $color__main-60;
 }
+
 .color__main-70 {
   background: $color__main-70;
 }
+
 .color__main-80 {
   background: $color__main-80;
 }
+
+.color__brand-01-20 {
+  background: $color__brand-01-20;
+}
+
+.color__brand-01-30 {
+  background: $color__brand-01-30;
+}
+
+.color__brand-01-40 {
+  background: $color__brand-01-40;
+}
+
+.color__brand-01-60 {
+  background: $color__brand-01-60;
+}
+
+.color__brand-01-70 {
+  background: $color__brand-01-70;
+}
+
+.color__brand-01-80 {
+  background: $color__brand-01-80;
+}
+
 .color__navy-20 {
   background: $color__navy-20;
 }
+
 .color__navy-30 {
   background: $color__navy-30;
 }
+
 .color__navy-40 {
   background: $color__navy-40;
 }
+
 .color__navy-60 {
   background: $color__navy-60;
 }
+
 .color__navy-70 {
   background: $color__navy-70;
 }
+
 .color__navy-80 {
   background: $color__navy-80;
 }
@@ -252,18 +287,23 @@ table {
 .color__aqua-20 {
   background: $color__aqua-20;
 }
+
 .color__aqua-30 {
   background: $color__aqua-30;
 }
+
 .color__aqua-40 {
   background: $color__aqua-40;
 }
+
 .color__aqua-60 {
   background: $color__aqua-60;
 }
+
 .color__aqua-70 {
   background: $color__aqua-70;
 }
+
 .color__aqua-80 {
   background: $color__aqua-80;
 }
@@ -271,18 +311,23 @@ table {
 .color__dark-green-20 {
   background: $color__dark-green-20;
 }
+
 .color__dark-green-30 {
   background: $color__dark-green-30;
 }
+
 .color__dark-green-40 {
   background: $color__dark-green-40;
 }
+
 .color__dark-green-60 {
   background: $color__dark-green-60;
 }
+
 .color__dark-green-70 {
   background: $color__dark-green-70;
 }
+
 .color__dark-green-80 {
   background: $color__dark-green-80;
 }
@@ -290,18 +335,23 @@ table {
 .color__lime-20 {
   background: $color__lime-20;
 }
+
 .color__lime-30 {
   background: $color__lime-30;
 }
+
 .color__lime-40 {
   background: $color__lime-40;
 }
+
 .color__lime-60 {
   background: $color__lime-60;
 }
+
 .color__lime-70 {
   background: $color__lime-70;
 }
+
 .color__lime-80 {
   background: $color__lime-80;
 }
@@ -309,18 +359,23 @@ table {
 .color__yellow-20 {
   background: $color__yellow-20;
 }
+
 .color__yellow-30 {
   background: $color__yellow-30;
 }
+
 .color__yellow-40 {
   background: $color__yellow-40;
 }
+
 .color__yellow-60 {
   background: $color__yellow-60;
 }
+
 .color__yellow-70 {
   background: $color__yellow-70;
 }
+
 .color__yellow-80 {
   background: $color__yellow-80;
 }
@@ -328,18 +383,23 @@ table {
 .color__ochre-20 {
   background: $color__ochre-20;
 }
+
 .color__ochre-30 {
   background: $color__ochre-30;
 }
+
 .color__ochre-40 {
   background: $color__ochre-40;
 }
+
 .color__ochre-60 {
   background: $color__ochre-60;
 }
+
 .color__ochre-70 {
   background: $color__ochre-70;
 }
+
 .color__ochre-80 {
   background: $color__ochre-80;
 }
@@ -347,18 +407,23 @@ table {
 .color__orange-20 {
   background: $color__orange-20;
 }
+
 .color__orange-30 {
   background: $color__orange-30;
 }
+
 .color__orange-40 {
   background: $color__orange-40;
 }
+
 .color__orange-60 {
   background: $color__orange-60;
 }
+
 .color__orange-70 {
   background: $color__orange-70;
 }
+
 .color__orange-80 {
   background: $color__orange-80;
 }
@@ -366,18 +431,23 @@ table {
 .color__red-20 {
   background: $color__red-20;
 }
+
 .color__red-30 {
   background: $color__red-30;
 }
+
 .color__red-40 {
   background: $color__red-40;
 }
+
 .color__red-60 {
   background: $color__red-60;
 }
+
 .color__red-70 {
   background: $color__red-70;
 }
+
 .color__red-80 {
   background: $color__red-80;
 }
@@ -385,18 +455,23 @@ table {
 .color__dark-red-20 {
   background: $color__dark-red-20;
 }
+
 .color__dark-red-30 {
   background: $color__dark-red-30;
 }
+
 .color__dark-red-40 {
   background: $color__dark-red-40;
 }
+
 .color__dark-red-60 {
   background: $color__dark-red-60;
 }
+
 .color__dark-red-70 {
   background: $color__dark-red-70;
 }
+
 .color__dark-red-80 {
   background: $color__dark-red-80;
 }
@@ -404,18 +479,52 @@ table {
 .color__magenta-20 {
   background: $color__magenta-20;
 }
+
 .color__magenta-30 {
   background: $color__magenta-30;
 }
+
 .color__magenta-40 {
   background: $color__magenta-40;
 }
+
 .color__magenta-60 {
   background: $color__magenta-60;
 }
+
 .color__magenta-70 {
   background: $color__magenta-70;
 }
+
 .color__magenta-80 {
   background: $color__magenta-80;
 }
+
+/*
+.intro-hero {
+  height: 30vw;
+  background: $brand-01;
+
+  img {
+    margin-top: 0;
+  }
+
+  .intro-hero-container {
+    // padding: 1vw 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @include breakpoint(bp--lg--major) {
+    img {
+      margin-top: -7vw;
+      margin-bottom: -7rem;
+    }
+
+    .intro-hero-container {
+      padding-top: 7vw;
+    }
+  }
+}*/

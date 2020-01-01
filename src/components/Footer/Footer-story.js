@@ -6,12 +6,9 @@ import { withKnobs, select, text } from '@storybook/addon-knobs/react';
 import Footer from './Footer';
 import Link from '../Link';
 
-import { withReadme } from 'storybook-readme';
-import readme from './README.md';
-
-storiesOf('Footer', module)
+storiesOf('Components|Footer', module)
   .addDecorator(withKnobs)
-  .addDecorator(withReadme([readme]))
+  .addParameters({ jest: ['Footer-test'] })
   .add('Internal', () => {
     const options = {
       '': 'undefined',
@@ -126,7 +123,9 @@ storiesOf('Footer', module)
         metaContent={metaContent}
         secondary={
           <div>
-            Via C. G. Viola 68 Parco dei Medici<br />00148 Rome, Italy
+            Via C. G. Viola 68 Parco dei Medici
+            <br />
+            00148 Rome, Italy
           </div>
         }
         mobilePageWidth={mobilePageWidth}

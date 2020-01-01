@@ -1,14 +1,17 @@
 ReduxFormWrapper allows you to use Input components as a `component` prop inside a [redux-form](https://redux-form.com) `Field`.
 
 ```js
-import { ReduxFormWrapper } from '@wfp/ui';
+import { TextArea, ReduxFormWrapper } from '@wfp/ui';
 ```
 
 ```js
 <Field
   component={ReduxFormWrapper} 
-  InputComponent={TextInput}
-  {...otherProps} />
+  inputComponent={TextArea}
+  {...otherProps}
+>
+  <TextInput />
+</Field>
 ```
 
 ### Example usage for react-select or other custom Input
@@ -34,11 +37,10 @@ const ReactSelectHelper = (props) => (
 
 <Field
   component={ReduxFormWrapper}
-  InputComponent={ReactSelectHelper}
+  inputComponent={ReactSelectHelper}
   className="wfp--react-select-container"
   classNamePrefix="wfp--react-select"
   isMulti
   options={options}
 />
-
 ```

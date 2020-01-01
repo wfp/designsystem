@@ -34,8 +34,9 @@
       display: block;
       content: '';
       width: 100%;
-      height: rem(4px);
-      top: -2px;
+      height: rem(28px);
+      top: rem(-14px);
+      border-radius: rem(28px);
       background-color: $ui-05;
       transition: $transition--base $carbon--standard-easing;
       cursor: pointer;
@@ -45,11 +46,11 @@
       box-sizing: border-box;
       position: absolute;
       display: block;
-      border: 2px solid $ui-05;
+      border: 3px solid $ui-05;
       cursor: pointer;
-      top: -12px;
-      width: rem(24px);
-      height: rem(24px);
+      top: -14px;
+      width: rem(28px);
+      height: rem(28px);
       background-color: $ui-01;
       border-radius: 50%;
       content: '';
@@ -100,7 +101,7 @@
   .#{$prefix}--toggle--small:checked
     + .#{$prefix}--toggle__label
     .#{$prefix}--toggle__check {
-    fill: $brand-01;
+    fill: $interactive-01;
     transform: scale(1) translateX(16px);
   }
 
@@ -122,14 +123,14 @@
     + .#{$prefix}--toggle__label
     .#{$prefix}--toggle__appearance {
     &:before {
-      background-color: $brand-01;
+      background-color: $interactive-01;
     }
 
     &:after {
       transform: translateX(24px);
-      background-color: $brand-01;
+      background-color: $ui-01;
       box-shadow: none;
-      border-color: $brand-01;
+      border-color: $interactive-01;
     }
   }
 
@@ -137,8 +138,8 @@
     + .#{$prefix}--toggle__label
     .#{$prefix}--toggle__appearance {
     &:before {
-      background-color: $brand-01;
-      border-color: $brand-01;
+      background-color: $interactive-01;
+      border-color: $interactive-01;
     }
 
     &:after {

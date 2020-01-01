@@ -33,15 +33,15 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 $spacing-md;
-    height: rem(40px);
+    //padding: 0 $spacing-md;
+    height: 2em;
     cursor: pointer;
     //background-color: $field-02;
 
     svg {
-      width: rem(12px);
-      height: rem(12px);
-      fill: $brand-01;
+      width: 1em;
+      height: 1em;
+      fill: $interactive-01;
     }
 
     @include breakpoint(bp--sm--major) {
@@ -53,7 +53,6 @@
     text-decoration: none;
     font-weight: 600;
     color: $text-01;
-
     &:focus {
       @include focus-outline('border');
     }
@@ -67,8 +66,6 @@
     list-style: none;
     display: flex;
     flex-direction: column;
-    background: $ui-01;
-
     a {
       text-decoration: none;
     }
@@ -95,6 +92,24 @@
 
     @include breakpoint(bp--sm--major) {
       display: flex;
+    }
+  }
+
+  // Small StepNavigation
+  .#{$prefix}--step-navigation--small {
+    font-size: 0.5rem;
+    .#{$prefix}--step-navigation__nav-item__text {
+      display: none;
+    }
+  }
+
+  // Vertical StepNavigation
+  .#{$prefix}--step-navigation--vertical {
+    ul {
+      flex-direction: row;
+    }
+    .#{$prefix}--step-navigation__nav-item__text {
+      margin-right: 0.5em;
     }
   }
 

@@ -1,8 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import ReactTable from 'react-table';
-import { withReadme } from 'storybook-readme';
-import readme from './README.md';
 
 import TablePagination from '../TablePagination';
 import { List, ListItem } from '../List';
@@ -162,23 +160,21 @@ const columns = [
 
 //PaginationComponent={Pagination}
 
-storiesOf('Table', module)
-  .addDecorator(withReadme([readme]))
-  .add('responsive', () => (
-    <ReactTable
-      data={data}
-      defaultPageSize={5}
-      className="ReactTable--responsive ReactTable--alternate-row"
-      columns={columns}
-      minRows={1}
-      ExpanderComponent={ResponsiveExpanderComponent}
-      PaginationComponent={TablePagination}
-      SubComponent={row => {
-        return (
-          <div className="ReactTable__subcomponent">
-            {row.original.data_source}
-          </div>
-        );
-      }}
-    />
-  ));
+storiesOf('Components|Table', module).add('responsive', () => (
+  <ReactTable
+    data={data}
+    defaultPageSize={5}
+    className="ReactTable--responsive ReactTable--alternate-row"
+    columns={columns}
+    minRows={1}
+    ExpanderComponent={ResponsiveExpanderComponent}
+    PaginationComponent={TablePagination}
+    SubComponent={row => {
+      return (
+        <div className="ReactTable__subcomponent">
+          {row.original.data_source}
+        </div>
+      );
+    }}
+  />
+));

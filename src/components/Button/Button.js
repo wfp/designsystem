@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Icon from '../Icon';
 import classNames from 'classnames';
 import { ButtonTypes } from '../../prop-types/types';
@@ -16,8 +16,18 @@ const Button = ({
   type,
   icon,
   iconDescription,
+  onClick,
   ...other
 }) => {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    let timer = setTimeout(() => endAnimation(), 500);
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [count]);
+
   const buttonClasses = classNames(className, {
     'wfp--btn': true,
     'wfp--btn--sm': small,
@@ -25,11 +35,14 @@ const Button = ({
     'wfp--btn--icon-only': icon && children === undefined,
     'wfp--btn--primary': kind === 'primary',
     'wfp--btn--danger': kind === 'danger',
+    'wfp--btn--accent': kind === 'accent',
     'wfp--btn--secondary': kind === 'secondary',
+    'wfp--btn--navigation': kind === 'navigation',
     'wfp--btn--ghost': kind === 'ghost',
     'wfp--btn--inverse': kind === 'inverse',
     'wfp--btn--danger--primary': kind === 'danger--primary',
     'wfp--btn--tertiary': kind === 'tertiary',
+    'wfp--btn--animating': count,
   });
 
   const commonProps = {
@@ -46,12 +59,24 @@ const Button = ({
     />
   ) : null;
 
+  const endAnimation = () => {
+    setCount(false);
+  };
+
+  const onClickAnimation = e => {
+    if (onClick) {
+      onClick(e);
+    }
+    setCount(true);
+  };
+
   const button = (
     <button
       {...other}
       {...commonProps}
       disabled={disabled}
       type={type}
+      onClick={onClickAnimation}
       ref={other.inputref}>
       {children}
       {buttonImage}
@@ -64,6 +89,7 @@ const Button = ({
       {...commonProps}
       href={href}
       role="button"
+      onClick={onClickAnimation}
       ref={other.inputref}>
       {children}
       {buttonImage}
@@ -125,19 +151,14 @@ Button.propTypes = {
   role: PropTypes.string,
 
   /**
-   * Specify an icon to include in the Button through a string or object
-   * representing the SVG data of the icon
+   * Specify an `icon` to include in the Button through an object representing the SVG data of the icon, similar to the `Icon` component
    */
-  icon: PropTypes.oneOfType([
-    PropTypes.shape({
-      width: PropTypes.string,
-      height: PropTypes.string,
-      viewBox: PropTypes.string.isRequired,
-      svgData: PropTypes.object.isRequired,
-    }),
-    PropTypes.string,
-  ]),
-
+  icon: PropTypes.shape({
+    width: PropTypes.string,
+    height: PropTypes.string,
+    viewBox: PropTypes.string.isRequired,
+    svgData: PropTypes.object.isRequired,
+  }),
   /**
    * If specifying the `icon` prop, provide a description for that icon that can
    * be read by screen readers

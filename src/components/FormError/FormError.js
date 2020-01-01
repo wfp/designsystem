@@ -6,7 +6,7 @@ import Blockquote from '../Blockquote';
 const FormError = ({ className, message, submitFailed }) => {
   if (message && submitFailed === true) {
     return (
-      <Blockquote className={className} warning withIcon={true}>
+      <Blockquote className={className} warning withIcon={false}>
         <h4 className="wfp--form-error__title">{message.generic}</h4>
 
         {message.fields && (

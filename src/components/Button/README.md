@@ -1,5 +1,10 @@
-Buttons are used to initialize an action, either in the background or
-foreground of an experience.
+Buttons express what action will occur when the user clicks or touches it. Buttons are used to initialize an action, either in the background or foreground of an experience.
+
+Buttons are used primarily on action items. Some examples include Add, Save, Delete, and Sign up. Each page can have one or two primary buttons. Any remaining calls-to-action should be represented as secondary buttons.
+
+Do not use buttons as navigational elements. Instead, use links when the desired action is to take the user to a new page.
+
+[Carbon Design System Usage for Buttons](https://next.carbondesignsystem.com/components/button)
 
 #### Small buttons
 
@@ -41,4 +46,16 @@ Using an Button with only an Icon while not beeing recommended can be achieved b
 
 #### html
 
-All buttons can use icons. It's recommended to inline SVG icons when possible. Simply add the appropriate <svg> to the button HTML with the wfp--btn__icon class. You can also include <title> for better accessibility to describe what the button does.
+All buttons can use icons. It's recommended to inline SVG icons when possible. Simply add the appropriate `svg` image to the button HTML with the `wfp--btn__icon` class. You can also include a `title` tag for better accessibility to describe what the button does.
+
+
+### Usage with react
+```js
+import { Button } from '@wfp/ui';
+```
+
+```js
+<Button href="#">
+  This is a button
+</Button>
+```

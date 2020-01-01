@@ -28,20 +28,7 @@ const props = () => ({
   allowEmpty: boolean('Allow empty value (allowEmpty)', false),
 });
 
-storiesOf('NumberInput', module)
+storiesOf('Components|NumberInput', module)
   .addDecorator(withKnobs)
-  .add('Default', () => <NumberInput {...props()} />, {
-    info: {
-      text: `
-            Number inputs are similar to text fields, but contain controls used to increase or decrease an incremental value.
-            The Number Input component can be passed a starting value, a min, a max, and the step.
-          `,
-    },
-  })
-  .add('skeleton', () => <NumberInputSkeleton />, {
-    info: {
-      text: `
-            Placeholder skeleton state to use when content is loading.
-          `,
-    },
-  });
+  .add('Default', () => <NumberInput {...props()} />)
+  .add('skeleton', () => <NumberInputSkeleton />);

@@ -7,11 +7,23 @@ import { ButtonTypes } from '../../prop-types/types';
 export default class ModalWrapper extends React.Component {
   static propTypes = {
     status: PropTypes.string,
+    /**
+     * Specify a function to open the Modal.
+     */
     handleOpen: PropTypes.func,
     children: PropTypes.node,
+    /**
+     * Specify a custom trigger `Button`.
+     */
     customButton: PropTypes.element,
     id: PropTypes.string,
+    /**
+     * Specify the text for the trigger `Button`.
+     */
     buttonTriggerText: PropTypes.node,
+    /**
+     * Specify a `class` for the trigger `Button`.
+     */
     buttonTriggerClassName: PropTypes.string,
     modalLabel: PropTypes.string,
     modalHeading: PropTypes.string,
@@ -21,9 +33,15 @@ export default class ModalWrapper extends React.Component {
     modalBeforeContent: PropTypes.bool,
     primaryButtonText: PropTypes.string,
     secondaryButtonText: PropTypes.string,
+    /**
+     * Specify a `function` which is triggered when submitting the `Modal`.
+     */
     handleSubmit: PropTypes.func,
     disabled: PropTypes.bool,
     triggerButtonKind: ButtonTypes.buttonKind,
+    /**
+     * Specify if `Modal` should be closed after submitting.
+     */
     shouldCloseAfterSubmit: PropTypes.bool,
   };
 

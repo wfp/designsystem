@@ -17,12 +17,13 @@
   .#{$prefix}--slider-container {
     max-width: rem(600px);
     min-width: rem(200px);
+    order: 3;
     display: flex;
     align-items: center;
     user-select: none;
-
-    @media screen and (min-width: 768px) {
-      min-width: rem(350px);
+    &--full-width {
+      width: 100%;
+      max-width: inherit;
     }
   }
 
@@ -45,7 +46,7 @@
       outline: none;
     }
     &:active {
-      background: $brand-01;
+      background: $interactive-01;
       transform: translate(-50%, -50%);
     }
   }
@@ -72,7 +73,7 @@
     position: absolute;
     width: 100%;
     height: rem(4px);
-    background: $brand-01;
+    background: $interactive-01;
     transform-origin: left;
     pointer-events: none;
     transform: translate(0%, -50%);
@@ -82,17 +83,17 @@
     position: absolute;
     height: rem(24px);
     width: rem(24px);
-    background: $brand-01;
+    background: $interactive-01;
     border-radius: 50%;
     top: 0;
     transform: translate(-50%, -50%);
-    transition: transform 100ms $carbon--standard-easing,
-      background 100ms $carbon--standard-easing;
+    transition: transform 100ms $wfp--standard-easing,
+      background 100ms $wfp--standard-easing;
     cursor: pointer;
     outline: none;
 
     &--clicked {
-      transition: left $transition--base $carbon--standard-easing;
+      transition: left $transition--base $wfp--standard-easing;
     }
 
     &:hover {
@@ -102,7 +103,7 @@
       @include focus-outline('blurred');
     }
     &:active {
-      background: darken($brand-01, 5%);
+      background: darken($interactive-01, 5%);
       transform: translate(-50%, -50%) scale(1.25);
     }
   }

@@ -21,8 +21,16 @@
     //margin-bottom: 2rem;
   }
 
-  .#{$prefix}--form-long .#{$prefix}--form-item {
-    margin-bottom: 2rem;
+  .#{$prefix}--form-long {
+    margin-bottom: -1rem;
+
+    .#{$prefix}--form-item {
+      margin-bottom: 1.3rem;
+
+      .#{$prefix}--form-item {
+        margin-bottom: 0;
+      }
+    }
   }
 
   .#{$prefix}--form-item--light input,
@@ -77,12 +85,19 @@
   .#{$prefix}--form-requirement {
     @include reset;
     @include typescale('omega');
-    margin: $spacing-sm 0 0;
+    margin: $spacing-2xs 0 0;
     max-height: 0;
     overflow: hidden;
     font-weight: 600;
     line-height: 1.5;
     display: none;
+    order: 3;
+    color: $support-01;
+
+    &.invalid {
+      max-height: rem(200px);
+      display: block;
+    }
 
     &::before {
       content: '*';
@@ -134,6 +149,7 @@
     padding-left: $spacing-xs;
     color: $support-01;
     font-weight: 600;
+
     &::before {
       content: '*';
       display: inline-block;

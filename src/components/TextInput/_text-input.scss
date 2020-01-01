@@ -18,12 +18,13 @@
     @include typescale('zeta');
     display: block;
     width: 100%;
-    height: rem(40px);
+    height: $input-height;
     min-width: 10rem;
     padding: 0 $spacing-xs;
     color: $text-01;
     appearance: none;
     background-color: $field-01;
+    order: 2;
     border: $input-border;
     border-radius: $input-border-radius;
 
@@ -42,6 +43,10 @@
 
     &:disabled:hover {
       border: $input-border;
+    }
+
+    &:read-only {
+      @include read-only('border');
     }
   }
 }

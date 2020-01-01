@@ -2,7 +2,7 @@ We recommend [React Select](https://react-select.com) for multiselect, autocompl
 
 ### Usage
 
-To use the WFP UI styling add the following className and classNamePrefix props.
+To use the WFP UI styling add the following ```className``` and ```classNamePrefix``` props.
 
 ```js
  <Select
@@ -11,8 +11,12 @@ To use the WFP UI styling add the following className and classNamePrefix props.
   />
 ```
 
+### Usage with react-final-forms or redux-forms
 
-Use with Label
+[Click here](?path=/story/components-reduxformwrapper--select-react-final-form) for an example on using react-select inside the ```<Field/>``` component.
+
+
+### Usage inside custom component with a label
 
 ```js
 <div className="wfp--form-item" style={{ minWidth: '400px' }}>

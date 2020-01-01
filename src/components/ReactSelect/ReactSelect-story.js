@@ -1,8 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import ReactSelect from 'react-select';
-import { withReadme } from 'storybook-readme';
-import readme from './README.md';
+import { withKnobs, boolean, text } from '@storybook/addon-knobs';
 
 const options = [
   { value: 'chocolate', label: 'Chocolate' },
@@ -10,33 +9,53 @@ const options = [
   { value: 'vanilla', label: 'Vanilla' },
 ];
 
-storiesOf('React-Select', module)
-  .addDecorator(withReadme([readme]))
+const props = {
+  regular: () => ({
+    placeholder: text('Placeholder (placeholder)', 'Placeholder'),
+    isSearch: boolean(
+      'allow the user to search for matching options (isSearch)',
+      true
+    ),
+    isMulti: boolean('allow the user to select multiple values (isMult)', true),
+    isDisabled: boolean('disabled (isDisabled)', false),
+  }),
+};
+
+storiesOf('Components|ReactSelect', module)
+  .addDecorator(withKnobs)
   .addParameters({
     info: {
       source: false,
       propTables: false,
     },
   })
-  .add(
-    'default',
-    () => (
-      <div className="wfp--form-item" style={{ minWidth: '400px' }}>
-        <label htmlFor="abc" className="wfp--label">
-          The Label
-        </label>
-        <ReactSelect
-          className="wfp--react-select-container"
-          classNamePrefix="wfp--react-select"
-          isMulti
-          id="abc"
-          options={options}
-        />
-      </div>
-    ),
-    {
-      info: {
-        text: readme,
-      },
-    }
-  );
+  .add('default', () => (
+    <div className="wfp--form-item" style={{ minWidth: '400px' }}>
+      <label htmlFor="abc" className="wfp--label">
+        The Label
+      </label>
+      <ReactSelect
+        className="wfp--react-select-container"
+        classNamePrefix="wfp--react-select"
+        isMulti
+        id="abc"
+        options={options}
+        {...props.regular()}
+      />
+    </div>
+  ))
+  .add('Staff select', () => (
+    <div className="wfp--form-item" style={{ minWidth: '400px' }}>
+      <label htmlFor="abc" className="wfp--label">
+        The Label
+      </label>
+      <ReactSelect
+        className="wfp--react-select-container"
+        classNamePrefix="wfp--react-select"
+        isMulti
+        id="abc"
+        options={options}
+        {...props.regular()}
+      />
+    </div>
+  ));

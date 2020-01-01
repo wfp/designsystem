@@ -49,28 +49,28 @@ export const currencyCalc = (
       isAbsolute === true && output === undefined
         ? minimumFractionDigits === 0
         : maximumFractionDigits === 0
-          ? 0
-          : minimumFractionDigits
-            ? minimumFractionDigits
-            : outputCalc && outputCalc.defaultmaximumFractionDigits
-              ? outputCalc.defaultmaximumFractionDigits
-              : 2,
+        ? 0
+        : minimumFractionDigits
+        ? minimumFractionDigits
+        : outputCalc && outputCalc.defaultmaximumFractionDigits
+        ? outputCalc.defaultmaximumFractionDigits
+        : 2,
     maximumFractionDigits:
       isAbsolute === true && output === undefined
         ? maximumFractionDigits === 0
         : value <= 0.005
-          ? 4
-          : value <= 0.05
-            ? 3
-            : value <= 0.5
-              ? 2
-              : maximumFractionDigits === 0
-                ? 0
-                : maximumFractionDigits
-                  ? maximumFractionDigits
-                  : outputCalc && outputCalc.defaultmaximumFractionDigits
-                    ? outputCalc.defaultmaximumFractionDigits
-                    : 2,
+        ? 4
+        : value <= 0.05
+        ? 3
+        : value <= 0.5
+        ? 2
+        : maximumFractionDigits === 0
+        ? 0
+        : maximumFractionDigits
+        ? maximumFractionDigits
+        : outputCalc && outputCalc.defaultmaximumFractionDigits
+        ? outputCalc.defaultmaximumFractionDigits
+        : 2,
   };
 
   // Convert to Locale String

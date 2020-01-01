@@ -13,24 +13,30 @@
     @include reset;
     display: flex;
     border-bottom: 2px solid $color__navy-gray-8;
+
     .#{$prefix}--tabs {
-      min-height: auto;
+      margin-bottom: -2px;
+      @media print {
+        display: none;
+      }
     }
   }
 
   .#{$prefix}--secondary-navigation__title {
     @include typescale('beta');
     @include font-family;
-    font-weight: 700;
+    font-weight: 400;
     padding-top: $spacing-md;
     padding-bottom: $spacing-md;
   }
 
   .#{$prefix}--secondary-navigation__wrapper {
     display: flex;
+
     @include breakpointMax(bp--xs--major) {
       flex-direction: column-reverse;
     }
+
     @include breakpoint(bp--xs--major) {
       justify-content: space-between;
     }
@@ -38,12 +44,15 @@
 
   .#{$prefix}--secondary-navigation__list {
     padding-top: $spacing-xs;
+
     @include breakpoint(bp--xs--major) {
       padding: $spacing-lg 0 0 0;
     }
   }
+
   .#{$prefix}--secondary-navigation__additional {
     padding-top: $spacing-md;
+
     @include breakpoint(bp--xs--major) {
       padding: $spacing-lg 0 0 0;
     }

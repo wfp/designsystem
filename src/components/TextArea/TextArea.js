@@ -2,6 +2,9 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
 
+import settings from '../../globals/js/settings';
+const { prefix } = settings;
+
 const TextArea = ({
   className,
   id,
@@ -32,8 +35,9 @@ const TextArea = ({
   const textareaClasses = classNames('wfp--text-area', className, {
     'wfp--text-area--light': light,
   });
-  const labelClasses = classNames('wfp--label', {
-    'wfp--visually-hidden': hideLabel,
+  const labelClasses = classNames(`${prefix}--label`, {
+    [`${prefix}--visually-hidden`]: hideLabel,
+    [`${prefix}--label--disabled`]: other.disabled,
   });
 
   const label = labelText ? (
@@ -41,6 +45,10 @@ const TextArea = ({
       {labelText}
     </label>
   ) : null;
+
+  const helperTextClasses = classNames(`${prefix}--form__helper-text`, {
+    [`${prefix}--form__helper-text--disabled`]: other.disabled,
+  });
 
   const error = invalid ? (
     <div className="wfp--form-requirement">{invalidText}</div>
@@ -58,7 +66,7 @@ const TextArea = ({
   );
 
   const helper = helperText ? (
-    <div className="wfp--form__helper-text">{helperText}</div>
+    <div className={helperTextClasses}>{helperText}</div>
   ) : null;
 
   return (
@@ -74,17 +82,17 @@ const TextArea = ({
 TextArea.propTypes = {
   /**
    * Provide a custom className that is applied directly to the underlying
-   * <textarea> node
+   * &lt;textarea&gt; node
    */
   className: PropTypes.string,
 
   /**
-   * Specify the `cols` attribute for the underlying <textarea> node
+   * Specify the `cols` attribute for the underlying &lt;textarea&gt; node
    */
   cols: PropTypes.number,
 
   /**
-   * Optionally provide the default value of the <textarea>
+   * Optionally provide the default value of the &lt;textarea&gt;
    */
   defaultValue: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 
@@ -105,29 +113,29 @@ TextArea.propTypes = {
   labelText: PropTypes.node.isRequired,
 
   /**
-   * Optionally provide an `onChange` handler that is called whenever <textarea>
+   * Optionally provide an `onChange` handler that is called whenever &lt;textarea&gt;
    * is updated
    */
   onChange: PropTypes.func,
 
   /**
    * Optionally provide an `onClick` handler that is called whenever the
-   * <textarea> is clicked
+   * &lt;textarea&gt; is clicked
    */
   onClick: PropTypes.func,
 
   /**
-   * Specify the placeholder attribute for the <textarea>
+   * Specify the placeholder attribute for the &lt;textarea&gt;
    */
   placeholder: PropTypes.string,
 
   /**
-   * Specify the rows attribute for the <textarea>
+   * Specify the rows attribute for the &lt;textarea&gt;
    */
   rows: PropTypes.number,
 
   /**
-   * Provide the current value of the <textarea>
+   * Provide the current value of the &lt;textarea&gt;
    */
   value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 

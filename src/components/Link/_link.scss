@@ -18,22 +18,22 @@
     @include font-smoothing;
     font-weight: 600;
     cursor: pointer;
-    color: $brand-01;
+    color: $interactive-01;
     text-decoration: underline;
     transition: $transition--base;
 
     &:visited {
-      color: $brand-01;
+      color: $interactive-01;
     }
 
     &:active,
     &:hover,
     &:focus {
-      color: $brand-02;
+      color: $interactive-02;
     }
 
     &:focus {
-      @include focus-outline('border');
+      @include focus-outline('border-small');
     }
 
     &[aria-disabled='true'] {

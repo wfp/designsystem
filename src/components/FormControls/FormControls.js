@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
 import Button from '../Button';
+import { iconArrowLeft, iconArrowRight } from '@wfp/icons';
 
 export default class FormControls extends React.Component {
   static propTypes = {
@@ -12,25 +13,25 @@ export default class FormControls extends React.Component {
     className: PropTypes.string,
     onNextClick: PropTypes.func,
     nextDisabled: PropTypes.bool,
-    nextIcon: PropTypes.string,
+    nextIcon: PropTypes.object,
     nextHidden: PropTypes.bool,
     nextText: PropTypes.node,
     onPreviousClick: PropTypes.func,
     previousDisabled: PropTypes.bool,
-    previousIcon: PropTypes.string,
+    previousIcon: PropTypes.object,
     previousHidden: PropTypes.bool,
     previousText: PropTypes.node,
     onSubmitClick: PropTypes.func,
     submitDisabled: PropTypes.bool,
-    submitIcon: PropTypes.string,
+    submitIcon: PropTypes.object,
     submitHidden: PropTypes.bool,
     submitText: PropTypes.node,
   };
 
   static defaultProps = {
-    nextIcon: 'arrow--right',
+    nextIcon: iconArrowRight,
     nextText: 'Next',
-    previousIcon: 'arrow--left',
+    previousIcon: iconArrowLeft,
     previousText: 'Previous',
     submitText: 'Submit',
   };
@@ -70,6 +71,8 @@ export default class FormControls extends React.Component {
               {previousText}
             </Button>
           )}
+        </div>
+        <div>
           {!nextHidden && (
             <Button
               disabled={nextDisabled}
@@ -81,8 +84,6 @@ export default class FormControls extends React.Component {
               {nextText}
             </Button>
           )}
-        </div>
-        <div>
           {!submitHidden && (
             <Button
               disabled={submitDisabled}

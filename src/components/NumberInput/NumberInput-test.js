@@ -148,6 +148,7 @@ describe('NumberInput', () => {
 
         it('should set invalidText when value is empty string', () => {
           wrapper.setState({ value: '' });
+          wrapper.setProps({ allowEmpty: false });
           const invalidText = wrapper.find('.wfp--form-requirement');
           expect(invalidText.length).toEqual(1);
 
@@ -226,14 +227,14 @@ describe('NumberInput', () => {
         wrapper.setProps({
           helperText: (
             <span>
-              This helper text has <a href="#">a link</a>.
+              This helper text has <a href="http://www.wfp.org">a link</a>.
             </span>
           ),
         });
         const renderedHelper = wrapper.find('.wfp--form__helper-text');
         expect(renderedHelper.props().children).toEqual(
           <span>
-            This helper text has <a href="#">a link</a>.
+            This helper text has <a href="http://www.wfp.org">a link</a>.
           </span>
         );
       });

@@ -25,7 +25,7 @@ $css--helpers: true;
     display: flex;
     align-items: center;
     border: 1px solid $ui-03;
-    height: rem(40px);
+    height: rem(46px);
 
     .#{$prefix}--form-item {
       flex: auto;
@@ -118,7 +118,7 @@ $css--helpers: true;
     .#{$prefix}--select-input {
       height: rem(24px);
       width: auto;
-      padding: 0 1.25rem 0 0.5rem;
+      padding: 0 1.25rem 0 0.4rem;
       margin: 0;
       font-weight: 600;
       text-align-last: center;
@@ -162,7 +162,7 @@ $css--helpers: true;
     margin-right: -1rem;
 
     .#{$prefix}--pagination__button {
-      height: rem(40px);
+      height: rem(46px);
       border-left: 1px solid $ui-03;
       border-right: 1px solid $ui-03;
       margin: 0;
