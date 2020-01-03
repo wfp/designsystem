@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+# [1.4.0](https://github.com/WFP/UI/compare/v1.3.0-alpha.37...v1.4.0) (2020-01-03)
+
+
+### Bug Fixes
+
+* **lint:** lint issues fixed ([48f259c](https://github.com/WFP/UI/commit/48f259c))
+
+
+### Features
+
+* **Button:** accent button added ([556d763](https://github.com/WFP/UI/commit/556d763))
+* **Colors:** brand color shades added ([4b3d47a](https://github.com/WFP/UI/commit/4b3d47a))
+* **Colors:** renaming coiors accent-01 added ([fb81ee0](https://github.com/WFP/UI/commit/fb81ee0))
+
+
+
+# Change Log
+
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
 # [1.3.0](https://github.com/WFP/UI/compare/v1.3.0-alpha.37...v1.3.0) (2020-01-03)
 
 
