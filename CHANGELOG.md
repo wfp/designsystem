@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.4.1-alpha.0](https://github.com/WFP/UI/compare/v1.4.0...v1.4.1-alpha.0) (2020-01-15)
+
+
+
+# Change Log
+
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
 # [1.4.0](https://github.com/WFP/UI/compare/v1.3.0-alpha.37...v1.4.0) (2020-01-03)
 
 
