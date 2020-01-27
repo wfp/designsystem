@@ -1,6 +1,6 @@
 {
   "name": "@wfp/ui",
-  "version": "1.4.1-alpha.3",
+  "version": "1.4.1-alpha.4",
   "description": "WFP UI Kit Next",
   "license": "Apache-2",
   "main": "lib/index.js",
@@ -11,8 +11,8 @@
     "build": "node scripts/build.js && yarn build:css && yarn build:cssmin",
     "build:storybook": "rm -r docs && build-storybook -s ./src/assets -o docs",
     "ci-check": "yarn prettier:diff && yarn lint && yarn test --runInBand && yarn test-ssr",
-    "build:cssmin": "node-sass ./src/globals/scss/styles.scss > ./assets/css/styles.min.css --output-style compressed | postcss ./assets/css/styles.min.css --no-map -u autoprefixer -r | postcss ./assets/css/styles.min.css -d ./assets/css/ --use autoprefixer",
-    "build:css": "node-sass ./src/globals/scss -o ./assets/css --output-style compressed --source-map true | postcss ./assets/css/styles.css -d ./assets/css/ --use autoprefixer",
+    "build:cssmin": "node-sass ./src/globals/scss/styles.scss ./assets/css/styles.min.css --output-style compressed && postcss ./assets/css/styles.min.css --no-map -u autoprefixer -rs",
+    "build:css": "node-sass ./src/globals/scss -o ./assets/css --output-style compressed --source-map true && postcss ./assets/css/styles.css -d ./assets/css/ --use autoprefixer",
     "commitmsg": "validate-commit-msg",
     "build:favicon": "convert assets/favicons/favicon-16x16.png assets/favicons/favicon-32x32.png assets/favicons/favicon-48x48.png assets/favicons/favicon-64x64.png -colors 256 assets/favicons/favicon.ico",
     "contributors:add": "all-contributors add",
