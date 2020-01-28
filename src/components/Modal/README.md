@@ -38,7 +38,7 @@ import { Modal } from  '@wfp/ui';
 ```
 #### Manual footer
 
-If you use the `passive={true}`prop you can add a custom Footer
+If you use the `passiveModal={true}`prop you can add a custom Footer
 ```js
 <div className="wfp--modal-footer">
 	<div className="wfp--modal__buttons-container">
