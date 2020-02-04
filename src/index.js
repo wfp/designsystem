@@ -16,7 +16,13 @@ export {
   SingleDatePickerInput,
   DateRangePickerInput,
 } from './components/DatePicker';
-export FileUploader from './components/FileUploader';
+
+//export * from './FileUploader.Skeleton';
+export FileUploader, {
+  FileUploaderButton,
+  FileUploaderItem,
+  FileUploaderDropContainer,
+} from './components/FileUploader';
 export Footer from './components/Footer';
 export Form from './components/Form';
 export FormControls from './components/FormControls';

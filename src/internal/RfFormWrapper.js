@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { reduxForm } from 'redux-form';
 import { connect } from 'react-redux';
-import { Values } from 'redux-form-website-template';
+//import { Values } from 'redux-form-website-template';
 import Button from '../components/Button';
 import Blockquote from '../components/Blockquote';
 import FormLabel from '../components/FormLabel/RfFormLabel';
@@ -49,9 +49,7 @@ class FormEl extends Component {
             onClick={() => this.props.load(data)}>
             Load Sample Data
           </Button>
-          <Blockquote>
-            <Values form="SimpleForm" />
-          </Blockquote>
+          <Blockquote>{/*<Values form="SimpleForm" />*/}</Blockquote>
         </div>
       </form>
     );

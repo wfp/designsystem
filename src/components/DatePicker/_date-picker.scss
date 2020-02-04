@@ -39,6 +39,7 @@
   .SingleDatePickerInput {
     display: inline-block;
     white-space: nowrap;
+    position: relative;
   }
   .SingleDatePickerInput__withBorder {
     //border-radius: 2px;
@@ -97,19 +98,25 @@
     border: 0;
     color: inherit;
     font: inherit;
-    line-height: normal;
     overflow: visible;
     cursor: pointer;
-    display: inline-block;
-    vertical-align: middle;
-    padding: 10px;
-    margin: 0 5px 0 5px;
+    padding: 0 14px;
+    margin: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &:focus {
+      outline: none;
+    }
   }
   .SingleDatePickerInput_calendarIcon_svg {
-    fill: $ui-05;
+    fill: $interactive-01;
     height: 15px;
     width: 14px;
-    vertical-align: middle;
   }
   .SingleDatePicker {
     position: relative;

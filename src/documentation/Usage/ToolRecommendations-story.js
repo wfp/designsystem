@@ -75,6 +75,12 @@ storiesOf('Getting started|Getting started', module)
 
       <h3>Forms</h3>
       <p>
+        <Link target="_blank" href="https://react-hook-form.com/">
+          react-hook-form
+        </Link>{' '}
+        is a form library for react.
+      </p>
+      <p>
         <Link
           target="_blank"
           href="https://github.com/final-form/react-final-form">

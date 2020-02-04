@@ -23,6 +23,10 @@
       }
     }
 
+    .#{$prefix}--react-select__single-value {
+      overflow: visible;
+    }
+
     .#{$prefix}--react-select__control--is-focused,
     .#{$prefix}--react-select__control--is-focused:hover {
       //border: $input-border;

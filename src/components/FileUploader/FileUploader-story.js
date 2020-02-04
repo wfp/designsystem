@@ -1,9 +1,15 @@
+/**
+ * Copyright IBM Corp. 2016, 2018
+ *
+ * This source code is licensed under the Apache-2.0 license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
 /* eslint-disable no-console */
 
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-
 import {
   withKnobs,
   array,
@@ -12,10 +18,14 @@ import {
   select,
   text,
 } from '@storybook/addon-knobs';
+import settings from '../../globals/js/settings';
+
 import FileUploader, { FileUploaderButton } from '../FileUploader';
 import FileUploaderSkeleton from '../FileUploader/FileUploader.Skeleton';
-import Button from '../Button';
+import FileUploaderItem from './FileUploaderItem';
+import FileUploaderDropContainer from './FileUploaderDropContainer';
 
+const { prefix } = settings;
 const buttonKinds = {
   'Primary (primary)': 'primary',
   'Secondary (secondary)': 'secondary',
@@ -45,7 +55,7 @@ const props = {
         'Prevent the label from being replaced with file selected file (disableLabelChanges)',
         false
       ),
-      role: text('ARIA role of the button (role)', ''),
+      role: text('ARIA role of the button (role)', 'button'),
       tabIndex: number('Tab index (tabIndex)', 0),
       onChange: action('onChange'),
     };
@@ -65,62 +75,71 @@ const props = {
     accept: array('Accepted file extensions (accept)', ['.jpg', '.png'], ','),
     name: text('Form item name: (name)', ''),
     multiple: boolean('Supports multiple files (multiple)', true),
+    iconDescription: text(
+      'Close button icon description (iconDescription)',
+      'Clear file'
+    ),
+  }),
+  fileUploaderItem: () => ({
+    name: text('Filename (name)', 'README.md'),
+    status: select('Status for file name (status)', filenameStatuses, 'edit'),
+    iconDescription: text(
+      'Close button icon description (iconDescription)',
+      'Clear file'
+    ),
+    onDelete: action('onDelete'),
+    invalid: boolean('Invalid (invalid)', false),
+    errorSubject: text(
+      'Error subject (errorSubject)',
+      'File size exceeds limit'
+    ),
+    errorBody: text(
+      'Error body (errorBody)',
+      '500kb max file size. Select a new file and try again.'
+    ),
+  }),
+  fileUploaderDropContainer: () => ({
+    labelText: text(
+      'Label text (labelText)',
+      'Drag and drop files here or click to upload'
+    ),
+    name: text('Form item name (name)', ''),
+    multiple: boolean('Supports multiple files (multiple)', true),
+    accept: array(
+      'Accepted MIME types or file extensions (accept)',
+      ['image/jpeg', 'image/png'],
+      ','
+    ),
+    disabled: boolean('Disabled (disabled)', false),
+    role: text('ARIA role of the button (role)', ''),
+    tabIndex: number('Tab index (tabIndex)', 0),
+    onChange: action('onChange'),
   }),
 };
 
-storiesOf('Components|FileUploader (draft)', module)
+storiesOf('FileUploader', module)
   .addDecorator(withKnobs)
-  .addParameters({ jest: ['FileUploader-test'] })
   .add('FileUploaderButton', () => (
     <FileUploaderButton {...props.fileUploaderButton()} />
   ))
   .add('FileUploader', () => {
-    let fileUploader;
     return (
-      <div className="wfp--file__container">
-        <FileUploader
-          {...props.fileUploader()}
-          ref={node => (fileUploader = node)}
-        />
-        <Button
-          kind="secondary"
-          small
-          style={{ marginTop: '1rem' }}
-          onClick={() => {
-            fileUploader.clearFiles();
-          }}>
-          Clear File
-        </Button>
+      <div className={`${prefix}--file__container`}>
+        <FileUploader {...props.fileUploader()} />
       </div>
     );
   })
-  .add('FileUploader exiting files', () => {
-    let fileUploader;
-
-    const fileChange = (e, evt) => {
-      console.log('files changed', e, evt.target.value, fileUploader.nodes);
-    };
-
-    return (
-      <div className="wfp--file__container">
-        <FileUploader
-          {...props.fileUploader()}
-          ref={node => (fileUploader = node)}
-          onFilesChange={fileChange}
-          files={[{ name: 'lorem-ipsum.jpg' }]}
-        />
-        <Button
-          kind="secondary"
-          small
-          style={{ marginTop: '1rem' }}
-          onClick={() => {
-            fileUploader.clearFiles();
-          }}>
-          Clear File
-        </Button>
-      </div>
-    );
-  })
+  .add('FileUploaderItem', () => (
+    <FileUploaderItem {...props.fileUploaderItem()} />
+  ))
+  .add('FileUploaderDropContainer', () => (
+    <FileUploaderDropContainer {...props.fileUploaderDropContainer()} />
+  ))
+  .add('Drag and drop upload container example application', () =>
+    require('./stories/drop-container').default(
+      props.fileUploaderDropContainer()
+    )
+  )
   .add('skeleton', () => (
     <div style={{ width: '500px' }}>
       <FileUploaderSkeleton />
