@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.5.0-alpha.0](https://github.com/WFP/UI/compare/v1.4.1-alpha.8...v1.5.0-alpha.0) (2020-02-04)
+
+
+### Features
+
+* **FileUploader:** upgrade based on Carbon Design System ([#246](https://github.com/WFP/UI/issues/246)) ([45b5fb0](https://github.com/WFP/UI/commit/45b5fb0c5049606e3170f0b7757c3451ad4424f0))
+
 ### [1.4.1-alpha.8](https://github.com/WFP/UI/compare/v1.4.1-alpha.7...v1.4.1-alpha.8) (2020-02-03)
 
 ## [1.4.1-alpha.7](https://github.com/WFP/UI/compare/v1.4.1-alpha.6...v1.4.1-alpha.7) (2020-02-03)
