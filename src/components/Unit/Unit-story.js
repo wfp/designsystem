@@ -249,6 +249,8 @@ storiesOf('Components|Unit', module)
       Months: 'Months',
       Mt: 'Mt',
       Num: 'Num',
+      MetricTons: 'MetricTons',
+      Kg: 'Kg',
       YearMonth: 'YearMonth',
       Level: 'Level',
       People: 'People',

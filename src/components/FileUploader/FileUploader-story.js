@@ -20,8 +20,8 @@ import {
 } from '@storybook/addon-knobs';
 import settings from '../../globals/js/settings';
 
-import FileUploader, { FileUploaderButton } from '../FileUploader';
-import FileUploaderSkeleton from '../FileUploader/FileUploader.Skeleton';
+import FileUploader, { FileUploaderButton } from '.';
+import FileUploaderSkeleton from './FileUploader.Skeleton';
 import FileUploaderItem from './FileUploaderItem';
 import FileUploaderDropContainer from './FileUploaderDropContainer';
 
@@ -117,7 +117,7 @@ const props = {
   }),
 };
 
-storiesOf('FileUploader', module)
+storiesOf('Components|FileUploader', module)
   .addDecorator(withKnobs)
   .add('FileUploaderButton', () => (
     <FileUploaderButton {...props.fileUploaderButton()} />

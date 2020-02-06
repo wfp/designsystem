@@ -1,12 +1,13 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
-
+import FormItem from '../FormItem';
 import settings from '../../globals/js/settings';
 const { prefix } = settings;
 
 const TextArea = ({
   className,
+  formItemClassName,
   id,
   labelText,
   hideLabel,
@@ -70,12 +71,12 @@ const TextArea = ({
   ) : null;
 
   return (
-    <div className="wfp--form-item">
+    <FormItem className={formItemClassName}>
       {label}
       {input}
       {helper}
       {error}
-    </div>
+    </FormItem>
   );
 };
 

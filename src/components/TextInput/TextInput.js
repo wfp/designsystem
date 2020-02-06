@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
 import settings from '../../globals/js/settings';
+import FormItem from '../FormItem';
 
 const { prefix } = settings;
 
@@ -9,6 +10,7 @@ const TextInput = ({
   labelText,
   className,
   id,
+  formItemClassName,
   placeholder,
   type,
   onChange,
@@ -81,12 +83,12 @@ const TextInput = ({
   ) : null;
 
   return (
-    <div className="wfp--form-item">
+    <FormItem className={formItemClassName}>
       {label}
       {helper}
       {input}
       {error}
-    </div>
+    </FormItem>
   );
 };
 
@@ -105,6 +107,11 @@ TextInput.propTypes = {
    * Specify whether the &lt;input&gt; should be disabled
    */
   disabled: PropTypes.bool,
+
+  /**
+   * Specify an optional className to be applied to the form-item node
+   */
+  formItemClassName: PropTypes.string,
 
   /**
    * Specify a custom `id` for the &lt;input&gt;

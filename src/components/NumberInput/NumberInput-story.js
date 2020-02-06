@@ -9,6 +9,11 @@ import NumberInputSkeleton from '../NumberInput/NumberInput.Skeleton';
 const props = () => ({
   className: 'some-class',
   id: 'tj-input',
+
+  formItemClassName: text(
+    'Form item className (formItemClassName)',
+    'some-form-item-class'
+  ),
   labelText: text('Label text (labelText)', 'Number Input label'),
   hideLabel: boolean('No label (hideLabel)', false),
   min: number('Minimum value (min)', 0),

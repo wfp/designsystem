@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { iconCaretUp, iconCaretDown } from '@wfp/icons';
 import Icon from '../Icon';
+import FormItem from '../FormItem';
 import classNames from 'classnames';
 import settings from '../../globals/js/settings';
 
@@ -42,6 +43,11 @@ export default class NumberInput extends Component {
      * Specify an optional className to be applied to the wrapper node
      */
     className: PropTypes.string,
+
+    /**
+     * Specify an optional className to be applied to the form-item node
+     */
+    formItemClassName: PropTypes.string,
 
     /**
      * Specify if the control should be disabled, or not
@@ -212,6 +218,7 @@ export default class NumberInput extends Component {
     const {
       className,
       disabled,
+      formItemClassName,
       iconDescription, // eslint-disable-line
       id,
       hideLabel,
@@ -273,7 +280,7 @@ export default class NumberInput extends Component {
     ) : null;
 
     return (
-      <div className={`${prefix}--form-item`}>
+      <FormItem className={formItemClassName}>
         <div className={numberInputClasses} {...inputWrapperProps}>
           <div className={`${prefix}--number__controls`}>
             <button
@@ -310,7 +317,7 @@ export default class NumberInput extends Component {
           {error}
           {helper}
         </div>
-      </div>
+      </FormItem>
     );
   }
 }
