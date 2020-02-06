@@ -9,6 +9,13 @@ All notable changes to this project will be documented in this file. See [standa
 
 * **TextArea:** placeholder color and other changes ([c9ae731](https://github.com/WFP/UI/commit/c9ae7318b41032bfd3332fc7809ac367e75283fb))
 
+## [1.5.0-alpha.0](https://github.com/WFP/UI/compare/v1.4.1-alpha.14...v1.5.0-alpha.0) (2020-02-06)
+
+
+### Features
+
+* **TextArea:** placeholder color and other changes ([c9ae731](https://github.com/WFP/UI/commit/c9ae7318b41032bfd3332fc7809ac367e75283fb))
+
 ### [1.4.1-alpha.14](https://github.com/WFP/UI/compare/v1.4.1-alpha.13...v1.4.1-alpha.14) (2020-02-06)
 
 ### [1.4.1-alpha.13](https://github.com/WFP/UI/compare/v1.4.1-alpha.12...v1.4.1-alpha.13) (2020-02-06)
