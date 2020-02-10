@@ -72,8 +72,10 @@ Promise.all([
         NODE_ENV: 'production',
       }
     );
+
+    //node-sass ./src/globals/scss/styles.scss ./assets/css/styles.min.css --output-style compressed && postcss ./assets/css/styles.min.css --no-map -u autoprefixer -rs
     exec(
-      `node-sass ./src/globals/scss/styles.scss ./css/styles.min.css --output-style compressed | postcss ./css/styles.min.css --no-map -u autoprefixer -r`,
+      `node-sass ./src/globals/scss/styles.scss ./css/styles.min.css --output-style compressed && postcss ./css/styles.min.css --no-map -u autoprefixer -rs`,
       {
         NODE_ENV: 'production',
       }

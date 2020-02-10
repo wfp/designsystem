@@ -7,6 +7,7 @@ import FormItem from '../FormItem';
 const { prefix } = settings;
 
 const TextInput = ({
+  additional,
   labelText,
   className,
   id,
@@ -86,6 +87,7 @@ const TextInput = ({
     <FormItem className={formItemClassName}>
       {label}
       {helper}
+      {additional}
       {input}
       {error}
     </FormItem>
@@ -165,6 +167,11 @@ TextInput.propTypes = {
    * Provide the text that is displayed when the control is in an invalid state
    */
   invalidText: PropTypes.string,
+
+  /**
+   * Provide additional component that is used alongside the input for customization
+   */
+  additional: PropTypes.node,
 
   /**
    * Provide text that is used alongside the control label for additional help
