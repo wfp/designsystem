@@ -3,17 +3,20 @@
 It is best practice to use an Inline loading component for any Create, Update, or Delete actions. The component provides feedback to the user about the progress of the action they took. This could be in a table, after a primary or secondary button click, or even in a modal.
 
 ### Usage with react
+
 ```js
 import { InlineLoading } from '@wfp/ui';
 ```
 
 ```js
-<InlineLoading 
-  iconDescription="Active loading indicator" 
-  description="Loading data..." 
+
+{loading ?(<InlineLoading
+  iconDescription="Active loading indicator"
+  description="Loading data..."
   success={false}
   onSuccess={onSuccess}
-/>
+/>) : <TheContentAfterLoading />
+)}
 ```
 
 ### JavaScript
@@ -56,7 +59,9 @@ InlineLoading.create(document.getElementById('my-inline-loading'));
 
 ```javascript
 // `#my-inline-loading` is an element with `[data-inline-loading]` attribute
-var inlineLoadingInstance = InlineLoading.create(document.getElementById('my-inline-loading'));
+var inlineLoadingInstance = InlineLoading.create(
+  document.getElementById('my-inline-loading')
+);
 inlineLoadingInstance.setState(InlineLoading.states.FINISHED);
 ```
 
@@ -69,4 +74,4 @@ inlineLoadingInstance.setState(InlineLoading.states.FINISHED);
 | selectorFinished     | [data-inline-loading-finished]      | The CSS selector to find the "finished" icon                    |
 | selectorTextActive   | [data-inline-loading-text-active]   | The CSS selector to find the text describing the active state   |
 | selectorTextFinished | [data-inline-loading-text-finished] | The CSS selector to find the text describing the finished state |
-| classLoadingStop     | .wfp--loading--stop                  | The CSS class for spinner's stopped state                       |
+| classLoadingStop     | .wfp--loading--stop                 | The CSS class for spinner's stopped state                       |

@@ -9,7 +9,7 @@ Initialize with loading classes to load the styling from WFP UI
 ```js
 import 'react-dates/initialize';
 import { SingleDatePicker, DateRangePicker } from 'react-dates';
-import ReduxFormWrapper from '../ReduxFormWrapper';
+import { SingleDatePickerInput} from '@wfp/ui';
 
 <SingleDatePickerInput
   datePicker={SingleDatePicker}
@@ -23,13 +23,17 @@ import ReduxFormWrapper from '../ReduxFormWrapper';
 ### Usage with redux-form or final-forms
 
 ```js
+import ReduxFormWrapper from '@wfp/ui';
+import { SingleDatePickerInput } from '@wfp/ui';
+import { SingleDatePicker, DateRangePicker } from 'react-dates';
+
 <Field
   component={ReduxFormWrapper}
   inputComponent={SingleDatePickerInput}
   datePicker={SingleDatePicker}
   format={value => (value ? moment(value) : undefined)}
   normalize={data => data && data.value && data.value.format()}
-/>
+/>;
 ```
 
 ```js
@@ -37,6 +41,10 @@ import ReduxFormWrapper from '../ReduxFormWrapper';
   component={ReduxFormWrapper}
   inputComponent={DateRangePickerInput}
   datePicker={DateRangePicker}
-  format={value => (value ? { startDate: moment(value.startDate), endDate: moment(value.endDate) } : undefined)}
+  format={value =>
+    value
+      ? { startDate: moment(value.startDate), endDate: moment(value.endDate) }
+      : undefined
+  }
 />
 ```

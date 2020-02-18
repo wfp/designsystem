@@ -92,6 +92,42 @@ const data = [
     csp_end_target_female: '20.8',
     csp_end_target_overall: '13.43',
   },
+
+  {
+    outcome_indicator: 'Consumption-based Coping Strategy Index (Average)',
+    target_location: ' Duo dolores et ea',
+    data_source: 'Stet clita kasd gubergren',
+    base_value_male: '12.06',
+    base_value_female: '22.8',
+    base_value_overall: '11.43',
+    latest_follow_up_male: '12.06',
+    latest_follow_up_female: '33.8',
+    latest_follow_up_overall: '73.43',
+    year_end_target_male: '18.06',
+    year_end_target_female: '21.8',
+    year_end_target_overall: '12.43',
+    csp_end_target_male: '18.06',
+    csp_end_target_female: '20.8',
+    csp_end_target_overall: '13.43',
+  },
+
+  {
+    outcome_indicator: 'Consumption-based Coping Strategy Index (Average)',
+    target_location: ' Duo dolores et ea',
+    data_source: 'Stet clita kasd gubergren',
+    base_value_male: '12.06',
+    base_value_female: '22.8',
+    base_value_overall: '11.43',
+    latest_follow_up_male: '12.06',
+    latest_follow_up_female: '33.8',
+    latest_follow_up_overall: '73.43',
+    year_end_target_male: '18.06',
+    year_end_target_female: '21.8',
+    year_end_target_overall: '12.43',
+    csp_end_target_male: '18.06',
+    csp_end_target_female: '20.8',
+    csp_end_target_overall: '13.43',
+  },
 ];
 
 const InlineMobile = props => {

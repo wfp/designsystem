@@ -1,5 +1,6 @@
 'use strict';
 
+import { uglify } from 'rollup-plugin-uglify';
 const chalk = require('chalk');
 const Table = require('cli-table');
 const gzip = require('gzip-size');
@@ -8,13 +9,12 @@ const commonjs = require('rollup-plugin-commonjs');
 const resolve = require('rollup-plugin-node-resolve');
 const babel = require('rollup-plugin-babel');
 const replace = require('rollup-plugin-replace');
-const uglify = require('rollup-plugin-uglify');
-const sizes = require('rollup-plugin-sizes');
 
+const sizes = require('rollup-plugin-sizes');
 const packageJson = require('../package.json');
-const peerDependencies = Object.keys(packageJson.peerDependencies || {}).concat(
-  ['classnames', 'prop-types']
-);
+const peerDependencies = Object.keys(
+  packageJson.peerDependencies || {}
+).concat(['classnames', 'prop-types']);
 
 const env = process.env.NODE_ENV || 'development';
 const prodSettings =

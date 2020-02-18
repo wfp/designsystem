@@ -37,14 +37,9 @@ const styleLoaders = [
   {
     loader: 'sass-loader',
     options: {
-      includePaths: [path.resolve(__dirname, '..', 'node_modules')],
-      data: `
-        $feature-flags: (
-          components-x: ${useExperimentalFeatures},
-          grid: ${useExperimentalFeatures},
-        );
-      `,
-      sourceMap: useStyleSourceMap,
+      sassOptions: {
+        includePaths: [path.resolve(__dirname, '..', 'node_modules')],
+      },
     },
   },
 ];

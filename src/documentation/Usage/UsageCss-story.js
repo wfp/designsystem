@@ -50,6 +50,9 @@ $button-font-size: 25px;
 $button-padding: 10px 25px;
 $color__main: #0076FF;
 
+// Disable css reset
+$css--reset==false
+
 // Import all stylesheets
 @import "~@wfp/ui/source/globals/scss/styles";
 

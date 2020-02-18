@@ -40,7 +40,7 @@
       @include typescale('epsilon');
       text-decoration: none;
       &.active {
-        border-bottom: 3px solid rgba($ui-01, 0.2);
+        border-bottom: 3px solid rgba($ui-01, 0.5);
       }
       &:hover,
       &:visited,
