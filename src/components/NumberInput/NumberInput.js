@@ -117,6 +117,11 @@ export default class NumberInput extends Component {
     invalidText: PropTypes.string,
 
     /**
+     * Provide additional component that is used alongside the input for customization
+     */
+    additional: PropTypes.node,
+
+    /**
      * Provide text that is used alongside the control label for additional help
      */
     helperText: PropTypes.node,
@@ -216,6 +221,7 @@ export default class NumberInput extends Component {
 
   render() {
     const {
+      additional,
       className,
       disabled,
       formItemClassName,
@@ -307,6 +313,7 @@ export default class NumberInput extends Component {
             </button>
           </div>
           {labelTextComponent}
+          {additional}
           <input
             type="number"
             pattern="[0-9]*"
