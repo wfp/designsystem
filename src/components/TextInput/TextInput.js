@@ -2,13 +2,16 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
 import settings from '../../globals/js/settings';
+import FormItem from '../FormItem';
 
 const { prefix } = settings;
 
 const TextInput = ({
+  additional,
   labelText,
   className,
   id,
+  formItemClassName,
   placeholder,
   type,
   onChange,
@@ -81,12 +84,13 @@ const TextInput = ({
   ) : null;
 
   return (
-    <div className="wfp--form-item">
+    <FormItem className={formItemClassName}>
       {label}
       {helper}
+      {additional}
       {input}
       {error}
-    </div>
+    </FormItem>
   );
 };
 
@@ -105,6 +109,11 @@ TextInput.propTypes = {
    * Specify whether the &lt;input&gt; should be disabled
    */
   disabled: PropTypes.bool,
+
+  /**
+   * Specify an optional className to be applied to the form-item node
+   */
+  formItemClassName: PropTypes.string,
 
   /**
    * Specify a custom `id` for the &lt;input&gt;
@@ -158,6 +167,11 @@ TextInput.propTypes = {
    * Provide the text that is displayed when the control is in an invalid state
    */
   invalidText: PropTypes.string,
+
+  /**
+   * Provide additional component that is used alongside the input for customization
+   */
+  additional: PropTypes.node,
 
   /**
    * Provide text that is used alongside the control label for additional help

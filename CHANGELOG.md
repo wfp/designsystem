@@ -1,3 +1,145 @@
+# Changelog
+
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+## [1.5.0-alpha.0](https://github.com/WFP/UI/compare/v1.4.1-alpha.14...v1.5.0-alpha.0) (2020-02-10)
+
+
+### Features
+
+* **TextArea:** placeholder color and other changes ([c9ae731](https://github.com/WFP/UI/commit/c9ae7318b41032bfd3332fc7809ac367e75283fb))
+
+## [1.5.0-alpha.0](https://github.com/WFP/UI/compare/v1.4.1-alpha.14...v1.5.0-alpha.0) (2020-02-06)
+
+
+### Features
+
+* **TextArea:** placeholder color and other changes ([c9ae731](https://github.com/WFP/UI/commit/c9ae7318b41032bfd3332fc7809ac367e75283fb))
+
+## [1.5.0-alpha.0](https://github.com/WFP/UI/compare/v1.4.1-alpha.14...v1.5.0-alpha.0) (2020-02-06)
+
+
+### Features
+
+* **TextArea:** placeholder color and other changes ([c9ae731](https://github.com/WFP/UI/commit/c9ae7318b41032bfd3332fc7809ac367e75283fb))
+
+### [1.4.1-alpha.14](https://github.com/WFP/UI/compare/v1.4.1-alpha.13...v1.4.1-alpha.14) (2020-02-06)
+
+### [1.4.1-alpha.13](https://github.com/WFP/UI/compare/v1.4.1-alpha.12...v1.4.1-alpha.13) (2020-02-06)
+
+### [1.4.1-alpha.12](https://github.com/WFP/UI/compare/v1.4.1-alpha.11...v1.4.1-alpha.12) (2020-02-06)
+
+### [1.4.1-alpha.11](https://github.com/WFP/UI/compare/v1.5.0-alpha.0...v1.4.1-alpha.11) (2020-02-05)
+
+## [1.5.0-alpha.0](https://github.com/WFP/UI/compare/v1.4.1-alpha.8...v1.5.0-alpha.0) (2020-02-04)
+
+
+### Features
+
+* **FileUploader:** upgrade based on Carbon Design System ([#246](https://github.com/WFP/UI/issues/246)) ([45b5fb0](https://github.com/WFP/UI/commit/45b5fb0c5049606e3170f0b7757c3451ad4424f0))
+
+### [1.4.1-alpha.8](https://github.com/WFP/UI/compare/v1.4.1-alpha.7...v1.4.1-alpha.8) (2020-02-03)
+
+## [1.4.1-alpha.7](https://github.com/WFP/UI/compare/v1.4.1-alpha.6...v1.4.1-alpha.7) (2020-02-03)
+
+
+
+# Change Log
+
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+## [1.4.1-alpha.6](https://github.com/WFP/UI/compare/v1.4.1-alpha.4...v1.4.1-alpha.6) (2020-02-03)
+
+
+
+# Change Log
+
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+## [1.4.1-alpha.5](https://github.com/WFP/UI/compare/v1.4.1-alpha.4...v1.4.1-alpha.5) (2020-02-03)
+
+
+
+# Change Log
+
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+## [1.4.1-alpha.4](https://github.com/WFP/UI/compare/v1.4.1-alpha.3...v1.4.1-alpha.4) (2020-01-27)
+
+
+
+# Change Log
+
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+## [1.4.1-alpha.3](https://github.com/WFP/UI/compare/v1.4.1-alpha.2...v1.4.1-alpha.3) (2020-01-27)
+
+
+
+# Change Log
+
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+## [1.4.1-alpha.2](https://github.com/WFP/UI/compare/v1.4.1-alpha.1...v1.4.1-alpha.2) (2020-01-27)
+
+
+
+# Change Log
+
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+## [1.4.1-alpha.1](https://github.com/WFP/UI/compare/v1.4.1-alpha.0...v1.4.1-alpha.1) (2020-01-27)
+
+
+
+# Change Log
+
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+## [1.4.1-alpha.0](https://github.com/WFP/UI/compare/v1.4.0...v1.4.1-alpha.0) (2020-01-15)
+
+
+
+# Change Log
+
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+# [1.4.0](https://github.com/WFP/UI/compare/v1.3.0-alpha.37...v1.4.0) (2020-01-03)
+
+
+### Bug Fixes
+
+* **lint:** lint issues fixed ([48f259c](https://github.com/WFP/UI/commit/48f259c))
+
+
+### Features
+
+* **Button:** accent button added ([556d763](https://github.com/WFP/UI/commit/556d763))
+* **Colors:** brand color shades added ([4b3d47a](https://github.com/WFP/UI/commit/4b3d47a))
+* **Colors:** renaming coiors accent-01 added ([fb81ee0](https://github.com/WFP/UI/commit/fb81ee0))
+
+
+
+# Change Log
+
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+# [1.3.0](https://github.com/WFP/UI/compare/v1.3.0-alpha.37...v1.3.0) (2020-01-03)
+
+
+### Bug Fixes
+
+* **lint:** lint issues fixed ([48f259c](https://github.com/WFP/UI/commit/48f259c))
+
+
+### Features
+
+* **Button:** accent button added ([556d763](https://github.com/WFP/UI/commit/556d763))
+* **Colors:** brand color shades added ([4b3d47a](https://github.com/WFP/UI/commit/4b3d47a))
+* **Colors:** renaming coiors accent-01 added ([fb81ee0](https://github.com/WFP/UI/commit/fb81ee0))
+
+
+
 # [1.3.0-alpha.37](https://github.com/WFP/UI/compare/v1.3.0-alpha.36...v1.3.0-alpha.37) (2019-12-19)
 
 ### Bug Fixes

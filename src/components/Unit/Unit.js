@@ -115,6 +115,8 @@ Unit.propTypes = {
     'Households',
     'Months',
     'Mt',
+    'MetricTons',
+    'kg',
     'Num',
     'YearMonth',
     'Level',

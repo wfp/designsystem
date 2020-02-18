@@ -2,10 +2,10 @@
 
 ## **[Click here to visit: Living Style Guide & Documentation](https://wfp.org/UIGuide)**
 
-| Branch | Build Status                                                                                    |
-| ------ | ----------------------------------------------------------------------------------------------- |
-| master | [![Build Status](https://travis-ci.org/wfp/ui.svg?branch=master)](https://travis-ci.org/wfp/ui) |
-| next   | [![Build Status](https://travis-ci.org/wfp/ui.svg?branch=next)](https://travis-ci.org/wfp/ui)   |
+| Branch | Build Status                                                                                       |
+| ------ | -------------------------------------------------------------------------------------------------- |
+| master | [![Build Status](https://travis-ci.org/wfp/ui.svg?branch=master)](https://travis-ci.org/wfp/ui)    |
+| v1.5   | [![Build Status](https://travis-ci.org/wfp/ui.svg?branch=feat/v1.5)](https://travis-ci.org/wfp/ui) |
 
 ## ![Usage](https://cdn.wfp.org/guides/ui/v1.2.0/assets/internal/toolkit.svg 'Usage') Usage
 
@@ -102,7 +102,7 @@ The downloads are available here: [UI Design Kit on GitHub](https://github.com/w
 ## Development
 
 Please refer to the [Contribution Guidelines](./.github/CONTRIBUTING.md) before starting any work.
-Use the `next` branch for active development.
+Use the `feat/` branches for active development.
 
 ### Using the server
 
@@ -160,7 +160,7 @@ git push --follow-tags origin next && npm publish --tag alpha
 
 ```
 npm run release
-npm publish
+npm run build && publish
 ```
 
 ### Releasing Storybook (documentation) to AWS S3

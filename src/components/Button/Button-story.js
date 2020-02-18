@@ -20,6 +20,8 @@ const iconMap = {
 const kinds = {
   'Primary button (primary)': 'primary',
   'Secondary button (secondary)': 'secondary',
+  'Tertiary button (tertiary)': 'tertiary',
+  'Accent button (accent)': 'accent',
   'Danger button (danger)': 'danger',
   'Danger primary button (danger--primary)': 'danger--primary',
   'Ghost button (ghost)': 'ghost',

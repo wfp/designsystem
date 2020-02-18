@@ -23,7 +23,7 @@ storiesOf('Getting started|Getting started', module)
         </Link>{' '}
         now or read the{' '}
         <Link
-          href="https://github.com/wfp/ui/blob/next/CHANGELOG.md"
+          href="https://github.com/wfp/ui/blob/master/CHANGELOG.md"
           target="_blank">
           full changelog.
         </Link>
