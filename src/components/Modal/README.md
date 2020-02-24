@@ -36,17 +36,16 @@ Avoid modal dialogs for complex decision making that requires additional sources
 ```js
 import { Modal } from  '@wfp/ui';
 ```
-#### Manual footer
+#### Custom footer
 
-If you use the `passive={true}`prop you can add a custom Footer
+To display custom footer content, pass a function (or React component) to `modalFooter` prop
+
 ```js
-<div className="wfp--modal-footer">
-	<div className="wfp--modal__buttons-container">
-		The Modal Footer content
-	</div>
-</div>
+<Modal
+  open
+  modalFooter={() => <div>The Modal Footer content</div>}
+/>
 ```
-
 
 #### Full screen Dialog (`Dialog` example)
 
