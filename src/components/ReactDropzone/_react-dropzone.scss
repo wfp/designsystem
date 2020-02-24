@@ -1,0 +1,36 @@
+$css--helpers: true;
+
+@import '../../globals/scss/vars';
+@import '../../globals/scss/colors';
+@import '../../globals/scss/spacing';
+@import '../../globals/scss/helper-mixins';
+@import '../../globals/scss/typography';
+@import '../../globals/scss/layout';
+@import '../../globals/scss/css--helpers';
+@import '../../globals/scss/import-once';
+@import '../Select/select';
+@import '../TextInput/text-input';
+
+@include exports('react-dropzone') {
+  .#{$prefix}--dropzone {
+    &__input {
+      padding: $spacing-xs;
+      border: 1px dashed $interactive-01;
+      text-align: center;
+      cursor: pointer;
+      @include typescale(zeta);
+      &:focus {
+        outline: none;
+        background: $ui-02;
+      }
+    }
+    &__file-list {
+      h4 {
+        @include typescale(zeta);
+        margin-bottom: $spacing-2xs;
+      }
+      margin-top: $spacing-xs;
+      @include typescale(zeta);
+    }
+  }
+}
