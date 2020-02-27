@@ -47,7 +47,7 @@ const LogoElement = ({ color, logoKind, src }) => {
   );
 };
 
-storiesOf('Getting started|Core', module)
+storiesOf('Design|Core', module)
   .addParameters({ options: { showPanel: false, isToolshown: false } })
   .add('Logos', () => {
     const logoKinds = [
@@ -82,23 +82,38 @@ storiesOf('Getting started|Core', module)
           "The acronym WFP is used globally, and must not be translated. It is usually used as part of WFP's logo. However, where the upmost simplicity and immediate recognition are necessary, the acronym can be used alone if it will aid legibility.",
         link: 'http://brand.manuals.wfp.org/en/core-elements/logo/acronym/',
       },
+      {
+        key: 'sdg',
+        title: 'The Sustainable Development Goals (SDGs)',
+        description:
+          "The Sustainable Development Goals (SDGs) logo, including the colour wheel can be used in addition to WFP's logo.",
+        link:
+          'https://www.un.org/sustainabledevelopment/news/communications-material/',
+      },
     ];
     const colors = ['blue', 'black', 'white'];
+    const colorsSdg = ['color'];
     const languages = ['en', 'es', 'fr', 'ar'];
 
     const colorList = logoKinds.map(logoKind => (
       <div style={{ marginBottom: '1em' }}>
         <div style={{ marginBottom: '1em' }} />
-        <h2>{logoKind.key}</h2>
+        <h2>{logoKind.title ? logoKind.title : logoKind.key}</h2>
         <p>{logoKind.description}</p>
         <Link href={logoKind.link}>Additional information</Link>
-        {colors.map(color => {
+        {(logoKind.key === 'sdg' ? colorsSdg : colors).map(color => {
           return (
             <div>
               <h4>{color}</h4>
 
               <div>
-                {logoKind.key === 'emblem' || logoKind.key === 'acronym' ? (
+                {logoKind.key === 'sdg' ? (
+                  <LogoElement
+                    color={color}
+                    logoKind={logoKind.key}
+                    src={`logos/${logoKind.key}/sdg-logo-circle`}
+                  />
+                ) : logoKind.key === 'emblem' || logoKind.key === 'acronym' ? (
                   <LogoElement
                     color={color}
                     logoKind={logoKind.key}

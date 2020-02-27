@@ -6,7 +6,9 @@ import Link from '../../components/Link';
 import Page from '../Page';
 
 storiesOf('Getting started|Getting started', module)
-  .addParameters({ options: { showPanel: false, isToolshown: false } })
+  .addParameters({
+    options: { showPanel: false, isToolshown: false, sort: 'zzzzzz' },
+  })
   .add('Credits', () => (
     <Page
       title="Credits & License"

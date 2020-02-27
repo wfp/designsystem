@@ -5,7 +5,7 @@ import { storiesOf } from '@storybook/react';
 import Link from '../../components/Link';
 import Page from '../Page';
 
-storiesOf('Getting started|Core', module)
+storiesOf('Design|Core', module)
   .addParameters({ options: { showPanel: false, isToolshown: false } })
   .add('Grid', () => (
     <Page title="Grid system" subTitle="Recommendations for grid system">

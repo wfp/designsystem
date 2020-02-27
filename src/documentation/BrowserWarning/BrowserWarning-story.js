@@ -65,7 +65,7 @@ class ModalWithControls extends React.Component {
   }
 }
 
-storiesOf('Getting started|Templates', module)
-  .addParameters({ hideProps: true })
+storiesOf('Design|Templates', module)
+  .addParameters({ hideProps: true, sort: 'z' })
   //.addDecorator(story => <RegularPage>{story()}</RegularPage>)
   .add('Browser Warning', () => <ModalWithControls />);

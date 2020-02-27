@@ -7,7 +7,7 @@ import { Module, ModuleHeader, ModuleBody } from '../../components/Module';
 import Page from '../Page';
 import { linkTo } from '@storybook/addon-links';
 
-storiesOf('Getting started|Guidelines', module)
+storiesOf('Design|Guidelines', module)
   .addParameters({ options: { showPanel: false, isToolshown: false } })
   .add('Dashboard design', () => (
     <Page
@@ -47,7 +47,7 @@ storiesOf('Getting started|Guidelines', module)
         inside a <Link onClick={linkTo('Components', 'Wrapper')}>Wrapper</Link>{' '}
         component.
         <br /> An example can be found{' '}
-        <Link onClick={linkTo('Getting started|Templates', 'Application Page')}>
+        <Link onClick={linkTo('Design|Templates', 'Application Page')}>
           here
         </Link>
         .

@@ -9,9 +9,11 @@ import Link from '../../components/Link';
 import { iconAddGlyph } from '@wfp/icons';
 
 storiesOf('Getting started|Getting started', module)
-  .addParameters({ options: { showPanel: false, isToolshown: false } })
+  .addParameters({
+    options: { showPanel: false, isToolshown: false, sort: 'd' },
+  })
   .add('Designers', () => (
-    <Page title="Downloads" subTitle="How to use the UI Kit">
+    <Page title="Downloads for Designers" subTitle="How to use the UI Kit">
       <p>
         Designers can use the{' '}
         <Link href="https://www.sketchapp.com/" target="_blank">

@@ -14,14 +14,32 @@ $css--helpers: true;
 @include exports('react-dropzone') {
   .#{$prefix}--dropzone {
     &__input {
-      padding: $spacing-xs;
-      border: 1px dashed $interactive-01;
+      padding: $spacing-md;
+      border: 2px dashed $ui-05;
+      border-radius: $button-border-radius;
+      background: $ui-02;
       text-align: center;
       cursor: pointer;
-      @include typescale(zeta);
+      &--drag-active {
+        background: $ui-03;
+        border-color: $interactive-01;
+        box-shadow: 0px 0px 10px rgba($interactive-01, 0.2);
+      }
+      p {
+        @include typescale(zeta);
+      }
+      &:hover {
+        border-color: $interactive-01;
+      }
       &:focus {
         outline: none;
         background: $ui-02;
+      }
+    }
+    &__icon {
+      margin-bottom: $spacing-sm;
+      path {
+        fill: $interactive-01;
       }
     }
     &__file-list {

@@ -13,8 +13,10 @@ import './_changelog.scss';
 console.log(Changelog);
 
 storiesOf('Getting started|Getting started', module)
-  .addParameters({ options: { showPanel: false, isToolshown: false } })
-  .add("What's new (Changelog)", () => (
+  .addParameters({
+    options: { showPanel: false, isToolshown: false, sort: 'zzz' },
+  })
+  .add("What's new in 1.4", () => (
     <Page title="Changelog" subTitle="Latest updates and versions">
       <Blockquote title="UI-Kit 1.4 is available" kind="warning">
         We've just release the new version of the UI Kit. Get the{' '}

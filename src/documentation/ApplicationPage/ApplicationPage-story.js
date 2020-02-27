@@ -7,7 +7,7 @@ import Wrapper from '../../components/Wrapper';
 
 import { Module, ModuleHeader, ModuleBody } from '../../components/Module';
 
-storiesOf('Getting started|Templates', module)
+storiesOf('Design|Templates', module)
   .addParameters({ hideProps: true })
   .addDecorator(story => <RegularPage>{story()}</RegularPage>)
   .add('Application Page', () => (
