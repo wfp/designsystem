@@ -8,7 +8,9 @@ import Blockquote from '../../components/Blockquote';
 import Link from '../../components/Link';
 
 storiesOf('Getting started|Getting started', module)
-  .addParameters({ options: { showPanel: false, isToolshown: false } })
+  .addParameters({
+    options: { showPanel: false, isToolshown: false, sort: 'z' },
+  })
   .add('HTML', () => (
     <Page title="HTML Usage" subTitle="Use the UI Kit without react.js">
       <h3>Vanilla.js</h3>

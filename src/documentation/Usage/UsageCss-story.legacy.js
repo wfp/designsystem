@@ -7,7 +7,9 @@ import Page from '../Page';
 import Blockquote from '../../components/Blockquote';
 
 storiesOf('Getting started|Getting started', module)
-  .addParameters({ options: { showPanel: false, isToolshown: false } })
+  .addParameters({
+    options: { showPanel: false, isToolshown: false, sort: 'z' },
+  })
   .add('CSS', () => (
     <Page title="CSS/SCSS Usage" subTitle="css styling">
       <p>
