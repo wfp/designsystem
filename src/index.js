@@ -36,6 +36,7 @@ export Icon from './components/Icon';
 export InfoBar from './components/InfoBar';
 export Link from './components/Link';
 export Loading from './components/Loading';
+export Input from './components/Input';
 export InlineLoading from './components/InlineLoading';
 export { List, ListItem } from './components/List';
 export MainNavigation from './components/MainNavigation';

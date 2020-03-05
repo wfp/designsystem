@@ -72,16 +72,6 @@ export default class StepNavigation extends React.Component {
     dropdownHidden: true,
   };
 
-  static getDerivedStateFromProps({ selected }, state) {
-    const { prevSelected } = state;
-    return prevSelected === selected
-      ? null
-      : {
-          selected,
-          prevSelected: selected,
-        };
-  }
-
   getTabs() {
     return React.Children.map(this.props.children, tab => tab);
   }
@@ -146,15 +136,12 @@ export default class StepNavigation extends React.Component {
   };
 
   selectTabAt = (index, onSelectionChange) => {
-    if (this.state.selected !== index) {
-      this.props.handleTabClick(index);
-      this.setState({
-        selected: index,
-      });
-      if (typeof onSelectionChange === 'function') {
-        onSelectionChange(index);
-      }
+    console.log(this.state.selected, index);
+    this.props.handleTabClick(index);
+    if (typeof onSelectionChange === 'function') {
+      onSelectionChange(index);
     }
+    //}
   };
 
   render() {
@@ -171,7 +158,7 @@ export default class StepNavigation extends React.Component {
     const tabsWithProps = this.getTabs().map((tab, index) => {
       const newTab = React.cloneElement(tab, {
         index,
-        selected: index === this.state.selected,
+        //selected: index === this.state.selected,
         selectedPage: selectedPage,
         handleTabClick: this.handleTabClick(onSelectionChange),
         handleTabAnchorFocus: this.handleTabAnchorFocus(onSelectionChange),

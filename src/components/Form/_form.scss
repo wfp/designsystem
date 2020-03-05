@@ -77,6 +77,13 @@
     }
   }
 
+  .#{$prefix}--form-item--invalid {
+    .#{$prefix}--form-requirement {
+      max-height: rem(200px);
+      display: block;
+    }
+  }
+
   // Fix for red ring when input is marked required in Firefox, refs #744
   input:not(output):not([data-invalid]):-moz-ui-invalid {
     box-shadow: none;
@@ -176,6 +183,7 @@
   input[data-invalid],
   textarea[data-invalid],
   select[data-invalid],
+  .#{$prefix}--form-item--invalid,
   .#{$prefix}--list-box[data-invalid] {
     border-color: $support-01;
     //box-shadow: 0 2px 0px 0px $support-01;

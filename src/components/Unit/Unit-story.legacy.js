@@ -172,7 +172,7 @@ const units = [
 storiesOf('Components|Unit', module)
   .addDecorator(withKnobs)
   .addParameters({ jest: ['Unit-test'] })
-  .add('Samples', () => {
+  /*.add('Samples', () => {
     const columns = [
       {
         Header: 'HTML',
@@ -236,7 +236,7 @@ storiesOf('Components|Unit', module)
         }}
       />
     );
-  })
+  })*/
 
   .add('default', () => {
     const typeOptions = {

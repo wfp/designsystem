@@ -8,90 +8,92 @@ import Wrapper from '../../components/Wrapper';
 import { Module, ModuleHeader, ModuleBody } from '../../components/Module';
 
 storiesOf('Design|Templates', module)
+  //.addDecorator(story => <RegularPage>{story()}</RegularPage>)
   .addParameters({ hideProps: true })
-  .addDecorator(story => <RegularPage>{story()}</RegularPage>)
   .add('Application Page', () => (
-    <Wrapper background="lighter" pageWidth="lg" spacing="md">
-      <div className="row">
-        <Module className="col-xs-12 col-md-6 col-lg-4">
-          <ModuleHeader>Module Example</ModuleHeader>
-          <ModuleBody>
-            <p>
-              Lorem Ipsum is dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book.
-            </p>
-            <p>
-              It has survived not only five centuries, but also the leap into
-              electronic typesetting, remaining essentially unchanged.
-            </p>
-          </ModuleBody>
-        </Module>
+    <RegularPage>
+      <Wrapper background="lighter" pageWidth="lg" spacing="md">
+        <div className="row">
+          <Module className="col-xs-12 col-md-6 col-lg-4">
+            <ModuleHeader>Module Example</ModuleHeader>
+            <ModuleBody>
+              <p>
+                Lorem Ipsum is dummy text of the printing and typesetting
+                industry. Lorem Ipsum has been the industry's standard dummy
+                text ever since the 1500s, when an unknown printer took a galley
+                of type and scrambled it to make a type specimen book.
+              </p>
+              <p>
+                It has survived not only five centuries, but also the leap into
+                electronic typesetting, remaining essentially unchanged.
+              </p>
+            </ModuleBody>
+          </Module>
 
-        <Module className="col-xs-12 col-md-6 col-lg-4">
-          <ModuleHeader>Module Example</ModuleHeader>
-          <ModuleBody>
-            <p>
-              Lorem Ipsum is dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book.
-            </p>
-            <p>
-              It has survived not only five centuries, but also the leap into
-              electronic typesetting, remaining essentially unchanged.
-            </p>
-          </ModuleBody>
-        </Module>
+          <Module className="col-xs-12 col-md-6 col-lg-4">
+            <ModuleHeader>Module Example</ModuleHeader>
+            <ModuleBody>
+              <p>
+                Lorem Ipsum is dummy text of the printing and typesetting
+                industry. Lorem Ipsum has been the industry's standard dummy
+                text ever since the 1500s, when an unknown printer took a galley
+                of type and scrambled it to make a type specimen book.
+              </p>
+              <p>
+                It has survived not only five centuries, but also the leap into
+                electronic typesetting, remaining essentially unchanged.
+              </p>
+            </ModuleBody>
+          </Module>
 
-        <Module className="col-xs-12 col-md-6 col-lg-4">
-          <ModuleHeader>Module Example</ModuleHeader>
-          <ModuleBody>
-            <p>
-              Lorem Ipsum is dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book.
-            </p>
-            <p>
-              It has survived not only five centuries, but also the leap into
-              electronic typesetting, remaining essentially unchanged.
-            </p>
-          </ModuleBody>
-        </Module>
+          <Module className="col-xs-12 col-md-6 col-lg-4">
+            <ModuleHeader>Module Example</ModuleHeader>
+            <ModuleBody>
+              <p>
+                Lorem Ipsum is dummy text of the printing and typesetting
+                industry. Lorem Ipsum has been the industry's standard dummy
+                text ever since the 1500s, when an unknown printer took a galley
+                of type and scrambled it to make a type specimen book.
+              </p>
+              <p>
+                It has survived not only five centuries, but also the leap into
+                electronic typesetting, remaining essentially unchanged.
+              </p>
+            </ModuleBody>
+          </Module>
 
-        <Module className="col-xs-12 col-md-6 col-lg-6">
-          <ModuleHeader>Module Example</ModuleHeader>
-          <ModuleBody>
-            <p>
-              Lorem Ipsum is dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book.
-            </p>
-            <p>
-              It has survived not only five centuries, but also the leap into
-              electronic typesetting, remaining essentially unchanged.
-            </p>
-          </ModuleBody>
-        </Module>
+          <Module className="col-xs-12 col-md-6 col-lg-6">
+            <ModuleHeader>Module Example</ModuleHeader>
+            <ModuleBody>
+              <p>
+                Lorem Ipsum is dummy text of the printing and typesetting
+                industry. Lorem Ipsum has been the industry's standard dummy
+                text ever since the 1500s, when an unknown printer took a galley
+                of type and scrambled it to make a type specimen book.
+              </p>
+              <p>
+                It has survived not only five centuries, but also the leap into
+                electronic typesetting, remaining essentially unchanged.
+              </p>
+            </ModuleBody>
+          </Module>
 
-        <Module className="col-xs-12 col-md-6 col-lg-6">
-          <ModuleHeader>Module Example</ModuleHeader>
-          <ModuleBody>
-            <p>
-              Lorem Ipsum is dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book.
-            </p>
-            <p>
-              It has survived not only five centuries, but also the leap into
-              electronic typesetting, remaining essentially unchanged.
-            </p>
-          </ModuleBody>
-        </Module>
-      </div>
-    </Wrapper>
+          <Module className="col-xs-12 col-md-6 col-lg-6">
+            <ModuleHeader>Module Example</ModuleHeader>
+            <ModuleBody>
+              <p>
+                Lorem Ipsum is dummy text of the printing and typesetting
+                industry. Lorem Ipsum has been the industry's standard dummy
+                text ever since the 1500s, when an unknown printer took a galley
+                of type and scrambled it to make a type specimen book.
+              </p>
+              <p>
+                It has survived not only five centuries, but also the leap into
+                electronic typesetting, remaining essentially unchanged.
+              </p>
+            </ModuleBody>
+          </Module>
+        </div>
+      </Wrapper>
+    </RegularPage>
   ));

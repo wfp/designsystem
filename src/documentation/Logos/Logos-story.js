@@ -92,7 +92,7 @@ storiesOf('Design|Core', module)
       },
     ];
     const colors = ['blue', 'black', 'white'];
-    const colorsSdg = ['color'];
+    const colorsSdg = ['colour'];
     const languages = ['en', 'es', 'fr', 'ar'];
 
     const colorList = logoKinds.map(logoKind => (
