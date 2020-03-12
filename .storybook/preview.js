@@ -98,12 +98,6 @@ addParameters({
       }*/
 
       //a[1].kind === b[1].kind && 1 === 2
-
-      console.log(
-        'idaaa',
-        a[1].kind.split('|')[0],
-        a[1].kind.split('|')[0] === 'Design'
-      );
       return a[1].parameters.options.sort
         ? a[1].parameters.options.sort.localeCompare(
             b[1].parameters.options.sort,

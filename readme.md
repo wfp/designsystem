@@ -160,7 +160,7 @@ git push --follow-tags origin next && npm publish --tag alpha
 
 ```
 npm run release
-npm run build && publish
+npm publish
 ```
 
 ### Releasing Storybook (documentation) to AWS S3

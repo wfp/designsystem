@@ -24,6 +24,10 @@ html {
   height: 100%;
 }
 
+.sb-show-main {
+  padding: 0 !important;
+}
+
 #storybook-preview-background {
   background: $ui-01;
 }
