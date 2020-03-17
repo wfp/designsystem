@@ -18,40 +18,21 @@
   .#{$prefix}--number input[type='number'] {
     @include typescale('zeta');
     @include font-family;
+    @include input-base;
     box-sizing: border-box;
     display: inline-flex;
     width: 100%;
     min-width: 9.375rem;
     padding-left: $spacing-md;
     padding-right: $spacing-xl;
-    height: $input-height;
-    color: $text-01;
-    background-color: $field-01;
-    //border: none;
-    //box-shadow: 0 1px 0 0 $ui-05;
-    order: 2;
-    border: $input-border;
 
     & ~ .#{$prefix}--label {
       order: 1;
     }
 
-    &:focus {
-      outline: none;
-      //box-shadow: 0 2px 0 0 $interactive-01;
-    }
-
-    &:focus {
-      @include focus-outline('border');
-    }
     /* &:focus ~ .#{$prefix}--label {
       color: $interactive-01;
     } */
-
-    &:disabled {
-      opacity: 0.5;
-      cursor: not-allowed;
-    }
 
     &:disabled ~ .#{$prefix}--number__controls {
       opacity: 0.5;
@@ -73,7 +54,7 @@
   }
 
   .#{$prefix}--number input[type='number'] {
-    appearance: textfield; // Firefox: Hide spinner (up and down buttons)
+    //appearance: textfield; // Firefox: Hide spinner (up and down buttons)
 
     &::-ms-clear {
       display: none; // IE: Hide "clear-field" `x` button on input field

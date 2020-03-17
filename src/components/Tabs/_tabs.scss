@@ -118,17 +118,6 @@
     padding: 0;
     cursor: pointer;
     white-space: nowrap;
-
-    &:hover,
-    &:focus {
-      //background-color: $hover-row;
-
-      //@include breakpoint(bp--sm--major) {
-      //outline: 1px solid transparent;
-      //background: transparent;
-      //}
-    }
-
     > a,
     > span {
       display: block;
@@ -171,13 +160,11 @@
     }
   }
 
+  /*
   .#{$prefix}--tabs__nav-item:hover .#{$prefix}--tabs__nav-link {
-    //color: $text-01;
-
-    //@include breakpoint(bp--sm--major) {
     color: $hover-secondary;
-    //}
   }
+  */
 
   .#{$prefix}--tabs__nav-link {
     display: inline-block;

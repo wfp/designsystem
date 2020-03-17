@@ -4,12 +4,11 @@ import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
 import { Form, Field } from 'react-final-form';
 
-import ReactTable from 'react-table';
+//import ReactTable from 'react-table';
+//import TablePagination from '../../components/TablePagination';
 import Fuse from 'fuse.js';
-
 import ReduxFormWrapper from '../../components/ReduxFormWrapper';
 import TextInput from '../../components/TextInput';
-
 import RegularPage from '../RegularPage';
 import Wrapper from '../../components/Wrapper';
 import Search from '../../components/Search';
@@ -20,8 +19,6 @@ import Button from '../../components/Button';
 import { iconFilterAlt, iconSubtractGlyph } from '@wfp/icons';
 
 import { Module, ModuleHeader, ModuleBody } from '../../components/Module';
-
-import TablePagination from '../../components/TablePagination';
 
 const data = [
   {
@@ -116,7 +113,8 @@ const Table = ({ simpleSearch, search }) => {
     dataFiltered = fuseAge.search(search.age);
   }
 
-  return (
+  return <div>Table</div>;
+  /*return (
     <ReactTable
       data={dataFiltered}
       defaultPageSize={10}
@@ -124,7 +122,7 @@ const Table = ({ simpleSearch, search }) => {
       className="-border -striped -highlight -spacing-xs"
       PaginationComponent={TablePagination}
     />
-  );
+  );*/
 };
 
 const MyForm = ({ onSubmit }) => (
@@ -261,11 +259,10 @@ class TableWithFilter extends Component {
 
 storiesOf('Design|Templates', module)
   .addParameters({ hideProps: true })
-  .addDecorator(story => (
-    <RegularPage title="Table with filter">{story()}</RegularPage>
-  ))
   .add('Table with filter', () => (
-    <Wrapper background="lighter" pageWidth="lg" spacing="md">
-      <TableWithFilter />
-    </Wrapper>
+    <RegularPage title="Table with filter">
+      <Wrapper background="lighter" pageWidth="lg" spacing="md">
+        <TableWithFilter />
+      </Wrapper>
+    </RegularPage>
   ));

@@ -50,15 +50,7 @@ export default class FormHint extends Component {
 
     return (
       <div className={formHintClasses}>
-        <TooltipComponent
-          // options
-          title={children}
-          position="top"
-          trigger="click"
-          {...other}
-          {...tooltipStyle}>
-          <Icon icon={icon} width="15" height="15" description={children} />
-        </TooltipComponent>
+        <Icon icon={icon} width="15" height="15" description={children} />
       </div>
     );
   }

@@ -84,20 +84,7 @@ addParameters({
     theme: wfpTheme,
     showPanel: true,
     isToolshown: true,
-    /* storySort: sortEachDepth([
-      ['Getting started|Getting started', 'Core', 'Buttons', '...'][('Intro', '...', 'System')], // 1. level - ordered like this rest default order // 2. level - Intro first, System last in between default order
-      ['Overview', '...'], // 3. level - Intro first rest default order
-    ]),*/
-
     storySort: (a, b) => {
-      /*if (
-        a[1].parameters.options.sort === undefined ||
-        b[1].parameters.options.sort === undefined
-      ) {
-        return null;
-      }*/
-
-      //a[1].kind === b[1].kind && 1 === 2
       return a[1].parameters.options.sort
         ? a[1].parameters.options.sort.localeCompare(
             b[1].parameters.options.sort,
@@ -112,21 +99,7 @@ addParameters({
         : b[1].kind.split('|')[0] === 'Getting started' &&
           a[1].kind.split('|')[0] !== 'Getting started'
         ? 1
-        : 0 /* a[1].id.localeCompare(b[1].id, undefined, { numeric: true }) */;
-
-      /*return a[1].kind === b[1].kind
-        ? 0
-        : a[1].name.toString().localeCompare(b[1].name.toString(), undefined, {
-            numeric: true,
-          });*/
-
-      return a[1].name.length > b[1].name.length ? 1 : 0;
-      //return a[1].parameters.options.sort > b[1].parameters.options.sort;
-
-      return a[1].kind === b[1].kind
-        ? 0
-        : a[1].parameters.options.sort > b[1].parameters.options.sort;
-      //: a[1].id.localeCompare(b[1].id, undefined, { numeric: true });
+        : 0;
     },
   },
 });
