@@ -4,7 +4,7 @@ import { action } from '@storybook/addon-actions';
 import { withKnobs, boolean, object, text } from '@storybook/addon-knobs';
 import { iconArrowLeft, iconArrowRight } from '@wfp/icons';
 
-import FormControls from '../FormControls';
+import FormControls from '.';
 
 const props = {
   formControls: () => ({
@@ -60,7 +60,7 @@ const props = {
 storiesOf('Components|FormControls', module)
   .addDecorator(withKnobs)
   .addDecorator(story => <div style={{ width: '60vw' }}>{story()}</div>)
-  .add('Default (Wizard form)', () => (
+  .add('Default (legacy, wizard)', () => (
     <FormControls {...props.formControls()} />
   ))
   .add('Simple form', () => <FormControls {...props.formControlsSimple()} />);

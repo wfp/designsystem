@@ -52,6 +52,12 @@ export default class RadioButtonGroup extends React.Component {
     valueSelected: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 
     /**
+     * Specify whether the elements should be displayed vertically.
+     */
+
+    vertical: PropTypes.bool,
+
+    /**
      * Specify whether you want the underlying label to be visually hidden
      */
 
@@ -71,7 +77,7 @@ export default class RadioButtonGroup extends React.Component {
 
   static defaultProps = {
     onChange: /* istanbul ignore next */ () => {},
-    controlled: true,
+    controlled: false,
   };
 
   static getDerivedStateFromProps({ valueSelected, defaultSelected }, state) {
@@ -125,12 +131,17 @@ export default class RadioButtonGroup extends React.Component {
       labelText,
       helperText,
       controlled,
+      vertical,
       hideLabel,
       className = `${prefix}--radio-button-group`,
     } = this.props;
 
     const labelClasses = classNames('wfp--label', {
       'wfp--visually-hidden': hideLabel,
+    });
+
+    const wrapperClasses = classNames(`${prefix}--form-item`, {
+      [`${prefix}--radio-button-group__vertical`]: vertical,
     });
 
     const label = labelText ? (
@@ -142,7 +153,7 @@ export default class RadioButtonGroup extends React.Component {
     ) : null;
 
     return (
-      <div className={`${prefix}--form-item`}>
+      <div className={wrapperClasses}>
         <div className={className} disabled={disabled}>
           {label}
           {helper}
