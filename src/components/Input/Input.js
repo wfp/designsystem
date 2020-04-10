@@ -68,8 +68,6 @@ const Input = ({
     </div>
   ) : null;
 
-  //const Input = children;
-
   const elementProps = invalid
     ? {
         ...other,
@@ -84,23 +82,6 @@ const Input = ({
         ...inputProps,
         className: inputClasses,
       };
-
-  /*const input = children
-    ? children
-    : invalid
-    ? React.cloneElement(children, {
-        ...other,
-        ...inputProps,
-        'data-invalid': true,
-        'aria-invalid': true,
-        'aria-describedby': errorId,
-        className: inputClasses,
-      })
-    : React.cloneElement(children, {
-        ...other,
-        ...inputProps,
-        className: inputClasses,
-      });*/
 
   const helper = helperText ? (
     <div className={helperTextClasses}>{helperText}</div>
