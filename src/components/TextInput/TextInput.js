@@ -20,6 +20,7 @@ const TextInput = ({
   invalid,
   invalidText,
   helperText,
+  inputRef,
   light,
   ...other
 }) => {
@@ -70,13 +71,19 @@ const TextInput = ({
     <input
       {...other}
       {...textInputProps}
+      ref={inputRef}
       data-invalid
       aria-invalid
       aria-describedby={errorId}
       className={textInputClasses}
     />
   ) : (
-    <input {...other} {...textInputProps} className={textInputClasses} />
+    <input
+      {...other}
+      {...textInputProps}
+      className={textInputClasses}
+      ref={inputRef}
+    />
   );
 
   const helper = helperText ? (

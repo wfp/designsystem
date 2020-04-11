@@ -19,6 +19,11 @@ function PropTypeEmptyString(props, propName, componentName) {
   return null;
 }
 
+Number.prototype.countDecimals = function() {
+  if (Math.floor(this.valueOf()) === this.valueOf()) return 0;
+  return this.toString().split('.')[1].length || 0;
+};
+
 const capMin = (min, value) =>
   isNaN(min) || (!min && min !== 0) || isNaN(value) || (!value && value !== 0)
     ? value
@@ -29,36 +34,6 @@ const capMax = (max, value) =>
     : Math.min(max, value);
 
 function NumberInput(props) {
-  const initialValue = capMax(props.max, capMin(props.min, props.value));
-  const [value, setValue] = useState(initialValue);
-  var _inputRef = useRef(null);
-
-  const handleChange = evt => {
-    if (!props.disabled) {
-      evt.persist();
-      evt.imaginaryTarget = _inputRef;
-      setValue(evt.target.value);
-      props.onChange(evt);
-    }
-  };
-
-  const handleArrowClick = (evt, direction) => {
-    let valueState = typeof value === 'string' ? Number(value) : value;
-    const { disabled, min, max, step } = props;
-    const conditional =
-      direction === 'down'
-        ? (min !== undefined && valueState > min) || min === undefined
-        : (max !== undefined && valueState < max) || max === undefined;
-    if (!disabled && conditional) {
-      valueState = direction === 'down' ? valueState - step : valueState + step;
-      evt.persist();
-      evt.imaginaryTarget = _inputRef;
-      props.onClick(evt, direction);
-      props.onChange(value, evt, direction);
-      setValue(valueState);
-    }
-  };
-
   const {
     additional,
     className,
@@ -72,12 +47,47 @@ function NumberInput(props) {
     step,
     invalid,
     invalidText,
+    onChange = () => {},
+    onClick = () => {},
     helperText,
     light,
     allowEmpty,
+    inputRef,
     pattern = '[0-9]*',
     ...other
   } = props;
+
+  const initialValue = capMax(max, capMin(min, props.value));
+  const [value, setValue] = useState(initialValue);
+  var _inputRef = inputRef ? inputRef : useRef(null);
+
+  const handleChange = evt => {
+    if (!props.disabled) {
+      evt.persist();
+      evt.imaginaryTarget = _inputRef;
+      setValue(evt.target.value);
+      onChange(evt);
+    }
+  };
+
+  const handleArrowClick = (evt, direction) => {
+    let valueState = typeof value === 'string' ? Number(value) : value;
+    const { disabled, min, max, step } = props;
+    const conditional =
+      direction === 'down'
+        ? (min !== undefined && valueState > min) || min === undefined
+        : (max !== undefined && valueState < max) || max === undefined;
+    if (!disabled && conditional) {
+      valueState = direction === 'down' ? valueState - step : valueState + step;
+      valueState = capMax(max, capMin(min, valueState));
+      valueState = valueState.toFixed(step.countDecimals());
+      evt.persist();
+      evt.imaginaryTarget = _inputRef;
+      onClick(evt, direction);
+      onChange(value, evt, direction);
+      setValue(valueState);
+    }
+  };
 
   const numberInputClasses = classNames(`${prefix}--number`, className, {
     [`${prefix}--number--light`]: light,
@@ -106,18 +116,17 @@ function NumberInput(props) {
         return (
           <div className={`${prefix}--number__controls`}>
             <button
-              className={`${prefix}--number__control-btn down-icon`}
-              {...buttonProps}
-              onClick={evt => handleArrowClick(evt, 'down')}>
-              +
-            </button>
-            <button
               className={`${prefix}--number__control-btn up-icon`}
               {...buttonProps}
               onClick={evt => handleArrowClick(evt, 'up')}>
+              +
+            </button>
+            <button
+              className={`${prefix}--number__control-btn down-icon`}
+              {...buttonProps}
+              onClick={evt => handleArrowClick(evt, 'down')}>
               −
             </button>
-
             <input
               type="number"
               pattern={pattern}

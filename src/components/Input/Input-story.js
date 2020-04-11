@@ -35,11 +35,11 @@ const TextInputProps = () => ({
 
 storiesOf('Components|Input', module)
   .addDecorator(withKnobs)
-  .add('Default', () => (
+  /*.add('Default', () => (
     <Input {...TextInputProps()}>
       <input></input>
     </Input>
-  ))
+  ))*/
   .add('Functional', () => (
     <Input {...TextInputProps()}>
       {props => {

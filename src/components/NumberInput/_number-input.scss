@@ -67,15 +67,7 @@
 
   .#{$prefix}--number__controls {
     @include reset;
-   /*position: absolute;
-    display: block;
-    left: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    left: auto;
-    right: 0rem;
-    bottom: 0rem;*/
+    order: 1;
     position: relative;
     &:hover {
       .#{$prefix}--number__control-btn {
@@ -96,10 +88,10 @@
     margin-left:-1px;
     font-weight: 600;
     font-size: 1.5rem;
-    border: 1px solid $input-border-color;
+   // border: 1px solid $input-border-color;
     opacity: 0;
     transition: all 0.1s;
-    //border-left-color: $input-border-color;
+    border-left: $input-border;
     //position: absolute;
     order: 3;
     position: absolute;
@@ -110,6 +102,7 @@
 
 
     &:focus {
+      border-left-color: transparent;
       @include focus-outline;
       z-index: 100;
     }
