@@ -11,101 +11,68 @@ import classNames from 'classnames';
 import { iconCaretDown } from '@wfp/icons';
 
 import Icon from '../Icon';
-//import ChevronDownGlyph from '@carbon/icons-react/lib/chevron--down/index';
-//import WarningFilled16 from '@carbon/icons-react/lib/warning--filled/16';
 import settings from '../../globals/js/settings';
+import Input from '../Input';
 const { prefix } = settings;
 
-const Select = React.forwardRef(
-  (
-    {
-      className,
-      id,
-      inline,
-      labelText,
-      disabled,
-      children,
-      iconDescription,
-      hideLabel,
-      small,
-      invalid,
-      invalidText,
-      helperText,
-      light,
-      ...other
-    },
-    ref
-  ) => {
-    const selectClasses = classNames({
-      [`${prefix}--select`]: true,
-      [`${prefix}--select--inline`]: inline,
-      [`${prefix}--select--small`]: small,
-      [`${prefix}--select--light`]: light,
-      [`${prefix}--select--invalid`]: invalid,
-      [`${prefix}--select--disabled`]: disabled,
-      [className]: className,
-    });
-    const labelClasses = classNames(`${prefix}--label`, {
-      [`${prefix}--visually-hidden`]: hideLabel,
-      [`${prefix}--label--disabled`]: disabled,
-    });
-    const errorId = `${id}-error-msg`;
-    const error = invalid ? (
-      <div className={`${prefix}--form-requirement`} id={errorId}>
-        {invalidText}
-      </div>
-    ) : null;
-    const helperTextClasses = classNames(`${prefix}--form__helper-text`, {
-      [`${prefix}--form__helper-text--disabled`]: disabled,
-    });
-    const helper = helperText ? (
-      <div className={helperTextClasses}>{helperText}</div>
-    ) : null;
-    const ariaProps = {};
-    if (invalid) {
-      ariaProps['aria-describedby'] = errorId;
-    }
-    const input = (() => {
-      return (
-        <>
-          <select
-            {...other}
-            {...ariaProps}
-            id={id}
-            className={`${prefix}--select-input`}
-            disabled={disabled || undefined}
-            data-invalid={invalid || undefined}
-            aria-invalid={invalid || undefined}
-            ref={ref}>
-            {children}
-          </select>
-          <Icon
-            icon={iconCaretDown}
-            className={`${prefix}--select__arrow`}
-            description={iconDescription}
-          />
-        </>
-      );
-    })();
+function Select(props) {
+  const {
+    className,
+    id,
+    inline,
+    labelText,
+    disabled,
+    children,
+    iconDescription,
+    hideLabel,
+    small,
+    invalid,
+    invalidText,
+    helperText,
+    light,
+    inputRef,
+    ...other
+  } = props;
 
-    const labelTextComponent = labelText ? (
-      <label htmlFor={id} className={labelClasses}>
-        {labelText}
-      </label>
-    ) : null;
+  const selectClasses = classNames({
+    [`${prefix}--select`]: true,
+    [`${prefix}--select--inline`]: inline,
+    [`${prefix}--select--small`]: small,
+    [`${prefix}--select--light`]: light,
+    [`${prefix}--select--invalid`]: invalid,
+    [`${prefix}--select--disabled`]: disabled,
+    [className]: className,
+  });
 
+  const ariaProps = {};
+  if (invalid) {
+    ariaProps['aria-describedby'] = errorId;
+  }
+  const input = (() => {
     return (
-      <div className={`${prefix}--form-item`}>
-        <div className={selectClasses}>
-          {labelTextComponent}
-          {helper}
-          {input}
-          {error}
-        </div>
+      <div className={selectClasses}>
+        <select
+          {...other}
+          {...ariaProps}
+          id={id}
+          className={`${prefix}--select-input`}
+          disabled={disabled || undefined}
+          data-invalid={invalid || undefined}
+          aria-invalid={invalid || undefined}
+          ref={inputRef}>
+          {children}
+        </select>
+        <Icon
+          icon={iconCaretDown}
+          className={`${prefix}--select__arrow`}
+          description={iconDescription}
+        />
       </div>
     );
-  }
-);
+  })();
+
+  return <Input {...props}>{() => input}</Input>;
+}
 
 Select.propTypes = {
   /**

@@ -10,6 +10,7 @@ const Checkbox = ({
   indeterminate,
   hideLabel,
   wrapperClassName,
+  inputRef,
   title = '',
   ...other
 }) => {
@@ -24,6 +25,14 @@ const Checkbox = ({
     wrapperClassName
   );
 
+  /*
+  el => {
+          input = el;
+          if (input) {
+            input.indeterminate = indeterminate;
+          }
+        }
+        */
   return (
     <div className={wrapperClasses}>
       <input
@@ -34,12 +43,7 @@ const Checkbox = ({
         }}
         className="wfp--checkbox"
         id={id}
-        ref={el => {
-          input = el;
-          if (input) {
-            input.indeterminate = indeterminate;
-          }
-        }}
+        ref={inputRef}
       />
       <label htmlFor={id} className={labelClasses} title={title || null}>
         <span className={innerLabelClasses}>{labelText}</span>
