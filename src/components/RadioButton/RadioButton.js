@@ -80,7 +80,7 @@ export default class RadioButton extends React.Component {
       <div className={wrapperClasses}>
         <input
           {...other}
-          inputRef={ref}
+          ref={inputRef}
           type="radio"
           className={`${prefix}--radio-button`}
           onChange={this.handleChange}

@@ -15,6 +15,7 @@ const TextArea = ({
   onClick,
   invalid,
   invalidText,
+  inputRef,
   helperText,
   light,
   ...other
@@ -59,11 +60,17 @@ const TextArea = ({
     <textarea
       {...other}
       {...textareaProps}
+      ref={inputRef}
       className={textareaClasses}
       data-invalid
     />
   ) : (
-    <textarea {...other} {...textareaProps} className={textareaClasses} />
+    <textarea
+      {...other}
+      ref={inputRef}
+      {...textareaProps}
+      className={textareaClasses}
+    />
   );
 
   const helper = helperText ? (

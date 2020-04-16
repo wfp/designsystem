@@ -8,6 +8,8 @@ const { prefix } = settings;
 
 const Input = ({
   additional,
+  addonBefore,
+  addonAfter,
   labelText,
   children,
   className,
@@ -92,7 +94,15 @@ const Input = ({
       {label}
       {helper}
       {additional}
-      {children(elementProps)}
+      <div className={`${prefix}--input-wrapper`}>
+        {addonBefore && (
+          <div className={`${prefix}--input-addon-before`}>{addonBefore}</div>
+        )}
+        {children(elementProps)}
+        {addonAfter && (
+          <div className={`${prefix}--input-addon-after`}>{addonAfter}</div>
+        )}
+      </div>
       {error}
     </FormItem>
   );

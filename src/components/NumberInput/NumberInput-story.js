@@ -9,7 +9,8 @@ import NumberInputSkeleton from '../NumberInput/NumberInput.Skeleton';
 const props = () => ({
   className: 'some-class',
   id: 'tj-input',
-
+  addonBefore: text('addonBefore', '€'),
+  addonAfter: text('addonAfter', '$'),
   formItemClassName: text(
     'Form item className (formItemClassName)',
     'some-form-item-class'
