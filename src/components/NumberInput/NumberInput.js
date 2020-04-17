@@ -41,6 +41,7 @@ function NumberInput(props) {
     formItemClassName,
     id,
     hideLabel,
+    hideControls,
     labelText,
     max,
     min,
@@ -93,6 +94,7 @@ function NumberInput(props) {
     [`${prefix}--number--light`]: light,
     [`${prefix}--number--helpertext`]: helperText,
     [`${prefix}--number--nolabel`]: hideLabel,
+    [`${prefix}--number--nocontrols`]: hideControls,
   });
 
   const newProps = {

@@ -16,6 +16,7 @@ const props = () => ({
     'some-form-item-class'
   ),
   labelText: text('Label text (labelText)', 'Number Input label'),
+  hideControls: boolean('hide controls (hideControls)', false),
   hideLabel: boolean('No label (hideLabel)', false),
   min: number('Minimum value (min)', 0),
   max: number('Maximum value (max)', 100),

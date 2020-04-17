@@ -76,6 +76,12 @@
     }
   }
 
+  .#{$prefix}--number--nocontrols {
+    .#{$prefix}--number__control-btn {
+      display: none;
+    }
+  }
+
   .#{$prefix}--number__control-btn {
     @include button-reset;
     display: inline-flex;
