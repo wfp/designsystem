@@ -19,7 +19,7 @@ function PropTypeEmptyString(props, propName, componentName) {
   return null;
 }
 
-Number.prototype.countDecimals = function() {
+Number.prototype.countDecimals = function () {
   if (Math.floor(this.valueOf()) === this.valueOf()) return 0;
   return this.toString().split('.')[1].length || 0;
 };
@@ -45,7 +45,7 @@ function NumberInput(props) {
     labelText,
     max,
     min,
-    step,
+    step = 1,
     invalid,
     invalidText,
     onChange = () => {},
@@ -60,12 +60,14 @@ function NumberInput(props) {
 
   const initialValue = capMax(max, capMin(min, props.value));
   const [value, setValue] = useState(initialValue);
-  var _inputRef = inputRef ? inputRef : useRef(null);
+  const newInputRef = useRef(null);
+  var _inputRef = inputRef ? inputRef : newInputRef;
 
-  const handleChange = evt => {
+  const handleChange = (evt) => {
     if (!props.disabled) {
       evt.persist();
       evt.imaginaryTarget = _inputRef;
+
       setValue(evt.target.value);
       onChange(evt);
     }
@@ -73,12 +75,13 @@ function NumberInput(props) {
 
   const handleArrowClick = (evt, direction) => {
     let valueState = typeof value === 'string' ? Number(value) : value;
-    const { disabled, min, max, step } = props;
+    valueState = isNaN(valueState) ? 0 : valueState;
     const conditional =
       direction === 'down'
         ? (min !== undefined && valueState > min) || min === undefined
         : (max !== undefined && valueState < max) || max === undefined;
     if (!disabled && conditional) {
+      console.log(valueState, step);
       valueState = direction === 'down' ? valueState - step : valueState + step;
       valueState = capMax(max, capMin(min, valueState));
       valueState = valueState.toFixed(step.countDecimals());
@@ -114,19 +117,19 @@ function NumberInput(props) {
 
   return (
     <Input {...props} formItemClassName={numberInputClasses}>
-      {props => {
+      {() => {
         return (
           <div className={`${prefix}--number__controls`}>
             <button
               className={`${prefix}--number__control-btn up-icon`}
               {...buttonProps}
-              onClick={evt => handleArrowClick(evt, 'up')}>
+              onClick={(evt) => handleArrowClick(evt, 'up')}>
               +
             </button>
             <button
               className={`${prefix}--number__control-btn down-icon`}
               {...buttonProps}
-              onClick={evt => handleArrowClick(evt, 'down')}>
+              onClick={(evt) => handleArrowClick(evt, 'down')}>
               −
             </button>
             <input

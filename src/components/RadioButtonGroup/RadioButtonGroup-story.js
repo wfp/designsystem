@@ -59,9 +59,24 @@ storiesOf('Components|RadioButtonGroup', module)
         defaultSelected="default-selected"
         legend="Group Legend"
         {...props.group()}>
-        <RadioButton value="standard" id="radio-1" {...radioProps} />
-        <RadioButton value="default-selected" id="radio-2" {...radioProps} />
-        <RadioButton value="disabled" id="radio-3" {...radioProps} />
+        <RadioButton
+          value="standard"
+          id="radio-1"
+          {...radioProps}
+          labelText="Radio button label 1"
+        />
+        <RadioButton
+          value="default-selected"
+          id="radio-2"
+          {...radioProps}
+          labelText="Radio button label 2"
+        />
+        <RadioButton
+          value="disabled"
+          id="radio-3"
+          {...radioProps}
+          labelText="Radio 1"
+        />
       </RadioButtonGroup>
     );
   })

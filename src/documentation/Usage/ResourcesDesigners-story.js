@@ -42,7 +42,7 @@ storiesOf('Getting started|Getting started', module)
         </Button>{' '}
         <Button
           kind="secondary"
-          href="https://github.com/wfp/ui-design-kit/blob/master/">
+          href="https://www.sketch.com/s/57cd224c-35ac-47be-b269-e032c60dc6a4">
           View WFP UI on Sketch Cloud
         </Button>
       </p>

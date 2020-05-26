@@ -104,15 +104,21 @@
     }
 
     .#{$prefix}--list__element__title {
-      font-weight: 700;
+      font-weight: 600;
       display: block;
       @include typescale('delta');
-      margin-bottom: $spacing-md;
+      margin-bottom: $spacing-xs;
     }
 
     .#{$prefix}--list__element__content {
-      margin-bottom: rem(20px);
+      @include typescale('epsilon');
       display: block;
+    }
+    .#{$prefix}--list__element {
+      margin-bottom: $spacing-xs;
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
   }
 }

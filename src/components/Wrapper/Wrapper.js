@@ -2,7 +2,15 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
 
-const Wrapper = props => {
+export const pageWidths = {
+  xs: 'xs',
+  sm: 'sm',
+  md: 'md',
+  lg: 'lg',
+  full: 'full',
+};
+
+const Wrapper = (props) => {
   const {
     background,
     backgroundStyle,

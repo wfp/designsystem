@@ -61,7 +61,7 @@
   $button-font-size: 0.875rem !default !global;
   $button-border-radius: 4px !default !global;
   $button-height: 40px !default !global;
-  $button-padding: 0 $spacing-md !default !global;
+  $button-padding: 0 $spacing-md * 0.8 !default !global;
   $button-padding-sm: 0 $spacing-xs !default !global;
   $button-border-width: 2px !default !global;
   $button-outline-width: 1px !default !global;

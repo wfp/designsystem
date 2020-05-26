@@ -86,6 +86,7 @@
 
       .#{$prefix}--modal--wide & {
         max-width: 90%;
+        min-width: 800px;
       }
 
       //max-height: 90%;

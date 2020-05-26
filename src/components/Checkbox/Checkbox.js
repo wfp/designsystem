@@ -14,6 +14,7 @@ const Checkbox = ({
   title = '',
   ...other
 }) => {
+  const customId = id ? id : other.name;
   let input;
   const labelClasses = classNames('wfp--checkbox-label', className);
   const innerLabelClasses = classNames({
@@ -25,27 +26,19 @@ const Checkbox = ({
     wrapperClassName
   );
 
-  /*
-  el => {
-          input = el;
-          if (input) {
-            input.indeterminate = indeterminate;
-          }
-        }
-        */
   return (
     <div className={wrapperClasses}>
       <input
         {...other}
         type="checkbox"
-        onChange={evt => {
-          onChange(input.checked, id, evt);
+        onChange={(evt) => {
+          onChange(evt.target.checked, customId, evt);
         }}
         className="wfp--checkbox"
-        id={id}
+        id={customId}
         ref={inputRef}
       />
-      <label htmlFor={id} className={labelClasses} title={title || null}>
+      <label htmlFor={customId} className={labelClasses} title={title || null}>
         <span className={innerLabelClasses}>{labelText}</span>
       </label>
     </div>
