@@ -7,26 +7,24 @@ The MainNavigation is used across all applications, it is the starting point of 
 
 It can be used in internal and external applications.
 
-
 ### Usage
 
 #### Internal and external applications
+
 The MainNavigation can be used for both internal and external websites.
 
 ### Do not use
 
 #### External websites (wfp.org, etc.)
+
 The header might not be the right solution for external websites. Please consult the #ux-ui channel on Slack.
 
 #### Logo in the MainNavigation
+
 Do not use WFP's logo inside the MainNavigation.
 
-
 ```js
-import {
-  MainNavigation,
-  MainNavigationItem
-} from '@wfp/ui';
+import { MainNavigation, MainNavigationItem } from '@wfp/ui';
 ```
 
 ### SubNavigation
@@ -42,7 +40,7 @@ import {
   SubNavigationContent,
   SubNavigationList,
   SubNavigationGroup,
-  SubNavigationItem 
+  SubNavigationItem,
 } from '@wfp/ui';
 ```
 
@@ -55,17 +53,17 @@ The maximum number of items is 6 to 8 items depending on the average word length
 From outside (using react-router, etc.) using `refs` a function can be triggered every time a route changes.
 
 ##### Using react-router (withRouter)
+
 ```js
-import React from "react";
-import PropTypes from "prop-types";
-import { withRouter } from "react-router";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { withRouter } from 'react-router';
 
 class Parent extends Component {
-
   static propTypes = {
     match: PropTypes.object.isRequired,
     location: PropTypes.object.isRequired,
-    history: PropTypes.object.isRequired
+    history: PropTypes.object.isRequired,
   };
 
   constructor(props) {
@@ -100,9 +98,10 @@ class Parent extends Component {
 }
 
 const ParentWithRouter = withRouter(Parent);
-
 ```
+
 ##### Trigger with external button
+
 ```js
 class Parent extends Component {
   constructor(props) {
@@ -175,3 +174,5 @@ An `User` `MainNavigationItem` consists out of the `User` component and a `SubNa
   <User ellipsis title="Max Mustermann" />
 </MainNavigationItem>
 ```
+
+### MainNavigationItem

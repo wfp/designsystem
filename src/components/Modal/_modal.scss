@@ -79,14 +79,15 @@
     height: 100%;
     padding: $spacing-xl 3% 0rem 3%;
 
-    @media (min-width: 600px) {
+    @include breakpoint(bp--sm--major) {
       height: auto;
       min-width: 500px;
       max-width: 75%;
 
       .#{$prefix}--modal--wide & {
-        max-width: 90%;
-        min-width: 800px;
+        max-width: 100%;
+        width: 100%;
+        min-width: 768px;
       }
 
       //max-height: 90%;
@@ -154,7 +155,7 @@
       margin-left: $spacing-md;
     }
 
-    @media (min-width: 600px) {
+    @include breakpoint(bp--sm--major) {
       margin-left: rem(-48px);
       margin-right: rem(-48px);
       padding: $spacing-xl $spacing-3xl;
