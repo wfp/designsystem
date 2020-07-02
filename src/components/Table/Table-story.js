@@ -6,6 +6,7 @@ import { withKnobs } from '@storybook/addon-knobs';
 
 import TablePagination from '../TablePagination';
 import Table from './Table';
+import Pagination from '../Pagination';
 
 const data = [
   {
@@ -67,7 +68,7 @@ const columns = [
   {
     Header: 'Age',
     accessor: 'age',
-    Cell: props => <span className="number">{props.value}</span>, // Custom cell components!
+    Cell: (props) => <span className="number">{props.value}</span>, // Custom cell components!
   },
   {
     Header: 'City',
@@ -92,9 +93,9 @@ function ContentTable({ columns, data }) {
   return (
     <Table {...getTableProps()}>
       <thead>
-        {headerGroups.map(headerGroup => (
+        {headerGroups.map((headerGroup) => (
           <tr {...headerGroup.getHeaderGroupProps()}>
-            {headerGroup.headers.map(column => (
+            {headerGroup.headers.map((column) => (
               <th {...column.getHeaderProps()}>{column.render('Header')}</th>
             ))}
           </tr>
@@ -105,7 +106,7 @@ function ContentTable({ columns, data }) {
           prepareRow(row);
           return (
             <tr {...row.getRowProps()}>
-              {row.cells.map(cell => {
+              {row.cells.map((cell) => {
                 return <td {...cell.getCellProps()}>{cell.render('Cell')}</td>;
               })}
             </tr>
@@ -113,6 +114,52 @@ function ContentTable({ columns, data }) {
         })}
       </tbody>
     </Table>
+  );
+}
+
+function ContentPaginationTable({ columns, data }) {
+  // Use the state and functions returned from useTable to build your UI
+  const {
+    getTableProps,
+    getTableBodyProps,
+    headerGroups,
+    rows,
+    prepareRow,
+  } = useTable({
+    columns,
+    data,
+  });
+
+  // Render the UI for your table
+  return (
+    <>
+      <Table {...getTableProps()}>
+        <thead>
+          {headerGroups.map((headerGroup) => (
+            <tr {...headerGroup.getHeaderGroupProps()}>
+              {headerGroup.headers.map((column) => (
+                <th {...column.getHeaderProps()}>{column.render('Header')}</th>
+              ))}
+            </tr>
+          ))}
+        </thead>
+        <tbody {...getTableBodyProps()}>
+          {rows.map((row, i) => {
+            prepareRow(row);
+            return (
+              <tr {...row.getRowProps()}>
+                {row.cells.map((cell) => {
+                  return (
+                    <td {...cell.getCellProps()}>{cell.render('Cell')}</td>
+                  );
+                })}
+              </tr>
+            );
+          })}
+        </tbody>
+        <Pagination />
+      </Table>
+    </>
   );
 }
 
@@ -148,6 +195,38 @@ function TableStory() {
   return <ContentTable columns={columns} data={data} />;
 }
 
+function TablePaginationStory() {
+  const columns = React.useMemo(
+    () => [
+      {
+        Header: 'Name',
+        columns: [
+          {
+            Header: 'First Name',
+            accessor: 'firstName',
+          },
+          {
+            Header: 'Last Name',
+            accessor: 'lastName',
+          },
+        ],
+      },
+      {
+        Header: 'Info',
+        columns: [
+          {
+            Header: 'Status',
+            accessor: 'status',
+          },
+        ],
+      },
+    ],
+    []
+  );
+
+  return <ContentPaginationTable columns={columns} data={data} />;
+}
 storiesOf('Components|Table (experimental)', module)
   .addDecorator(withKnobs)
-  .add('Default', () => <TableStory />);
+  .add('Default', () => <TableStory />)
+  .add('with Pagination', () => <TablePaginationStory />);
