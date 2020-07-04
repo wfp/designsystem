@@ -10,14 +10,12 @@ import { darken } from 'polished';
 import { logger } from '@storybook/client-logger';
 
 import { getBlockBackgroundStyle } from '@storybook/components/dist/blocks/BlockBackgroundStyles';
-import { Source, SourceProps } from '@storybook/components/dist/blocks/Source';
+import { Source, SourceProps } from './Source';
 import {
   ActionBar,
   ActionItem,
 } from '@storybook/components/dist/ActionBar/ActionBar';
 import { Toolbar } from '@storybook/components/dist/blocks/Toolbar';
-
-import ReactDOMServer from 'react-dom/server';
 
 export interface PreviewProps {
   isColumn?: boolean;
@@ -107,10 +105,8 @@ const getSource = (
       };
     }
     case expanded === 'html': {
-      console.log('withSource', withSource);
-
       const htmlSource = {
-        code: htmlComponent,
+        code: htmlComponent.replace(` data-reactroot=""`, ''),
         dark: false,
         language: 'jsx',
       };
@@ -206,12 +202,6 @@ const Preview: FunctionComponent<PreviewProps> = ({
   className,
   ...props
 }) => {
-  const Component = children;
-  //const newChildren = React.cloneElement(children, { something: 'nice!' });
-  //console.log('propsa', ReactDOMServer.renderToString(<Component />));
-
-  console.log('propsa', children);
-
   const [expanded, setExpanded] = useState(isExpanded);
   const { source, actionItem, actionItemHtml } = getSource(
     withSource,
@@ -229,9 +219,6 @@ const Preview: FunctionComponent<PreviewProps> = ({
     logger.warn('Cannot use toolbar with multiple preview children, disabling');
   }
   const showToolbar = withToolbar && !Array.isArray(children);
-  //console.log('propsa', ReactDOMServer.renderToString(<>{children}</>));
-  //return null;
-  //return <>{children}</>;
   return (
     <PreviewContainer
       {...{ withSource, withToolbar: showToolbar }}

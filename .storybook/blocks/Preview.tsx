@@ -21,7 +21,7 @@ import {
   SourceContext,
   SourceContextProps,
 } from '@storybook/addon-docs/dist/blocks/SourceContainer';
-import { getSourceProps } from '@storybook/addon-docs/dist/blocks/Source';
+import { getSourceProps } from './Source';
 
 import ReactDOMServer from 'react-dom/server';
 
@@ -61,9 +61,14 @@ const getPreviewProps = (
   }
 
   const name = docsContext.kind.substr(docsContext.kind.lastIndexOf('/') + 1);
-
   const HtmlComponent = docsContext.parameters.component;
-  const html = ReactDOMServer.renderToString(<HtmlComponent />);
+  console.log(docsContext);
+  const html = docsContext.parameters.component
+    ? ReactDOMServer.renderToString(
+        <HtmlComponent {...docsContext.parameters.props} />
+      )
+    : '';
+  //const html = 'dasasd';
 
   const childArray: ReactNodeArray = Array.isArray(children)
     ? children
@@ -85,6 +90,8 @@ const getPreviewProps = (
     docsContext,
     sourceContext
   );
+
+  console.log('propssss', props, sourceProps);
   return {
     ...props, // pass through columns etc.
     htmlComponent: html,

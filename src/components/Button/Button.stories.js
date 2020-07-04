@@ -50,7 +50,7 @@ const props = {
   }),
 };
 
-storiesOf('Components|Button', module)
+storiesOf('Components/Button', module)
   .addParameters({ jest: ['Button-test'] })
   .addDecorator(withKnobs)
   .add('Default', () => {

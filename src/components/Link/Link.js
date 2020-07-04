@@ -32,7 +32,7 @@ Link.propTypes = {
   /**
    * Provide the content for the Link
    */
-  children: PropTypes.node,
+  children: PropTypes.string,
 
   /**
    * Provide a custom className to be applied to the containing <a> node

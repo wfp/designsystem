@@ -8,7 +8,10 @@ import {
   DocsContext,
   DocsContextProps,
 } from '@storybook/addon-docs/dist/blocks/DocsContext';
-import { SourceContext, SourceContextProps } from './SourceContainer';
+import {
+  SourceContext,
+  SourceContextProps,
+} from '@storybook/addon-docs/dist/blocks/SourceContainer';
 import { CURRENT_SELECTION } from './types';
 
 import { enhanceSource } from './enhanceSource';
@@ -56,6 +59,8 @@ export const getSourceProps = (
     const targetIds = multiProps.ids || [targetId];
     source = targetIds
       .map((sourceId) => {
+        console.log('sourcesa', sources);
+        return 'aaa';
         const snippet = sources && sources[sourceId];
         if (snippet) return snippet;
         if (storyStore) {

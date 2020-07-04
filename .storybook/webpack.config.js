@@ -75,6 +75,12 @@ module.exports = async ({ config, mode }) => {
     ],
   });
 
+  config.module.rules.push({
+    test: /styles.scss$/,
+    use: ['style-loader', 'css-loader', 'sass-loader'],
+    include: path.resolve(__dirname, '../'),
+  });
+
   // Return the altered config
   return config;
 };

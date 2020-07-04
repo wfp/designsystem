@@ -22,6 +22,7 @@ import { Primary } from './blocks/Primary';
 import { Props } from './Props';
 import { Stories } from './Stories';
 import { PRIMARY_STORY } from './types';*/
+import '../src/globals/scss/styles.scss';
 
 export const DocsPaged = (props) => {
   console.log('props', props);

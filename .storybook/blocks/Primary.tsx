@@ -1,8 +1,8 @@
 import React, { useContext, FC } from 'react';
 import { DocsContext } from '@storybook/addon-docs/dist/blocks/DocsContext';
+import { SourceContext } from '@storybook/addon-docs/dist/blocks/SourceContainer';
 import { DocsStory } from './DocsStory';
 import { getDocsStories } from './utils';
-import ReactDOMServer from 'react-dom/server';
 
 interface PrimaryProps {
   name?: string;
@@ -10,11 +10,10 @@ interface PrimaryProps {
 
 export const Primary: FC<PrimaryProps> = ({ name }) => {
   const context = useContext(DocsContext);
+  const sourceContext = useContext(SourceContext);
   const componentStories = getDocsStories(context);
 
-  const HtmlComponent = context.parameters.component;
-  const Html = ReactDOMServer.renderToString(<HtmlComponent />);
-  console.log('contexta', Html);
+  console.log('sourceContext', sourceContext);
 
   let story;
   if (componentStories) {
@@ -22,7 +21,5 @@ export const Primary: FC<PrimaryProps> = ({ name }) => {
       ? componentStories.find((s) => s.name === name)
       : componentStories[0];
   }
-  return story ? (
-    <DocsStory {...story} htmlComponent={Html} expanded={false} withToolbar />
-  ) : null;
+  return story ? <DocsStory {...story} expanded={false} withToolbar /> : null;
 };

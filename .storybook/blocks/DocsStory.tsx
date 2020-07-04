@@ -12,7 +12,6 @@ export const DocsStory: FunctionComponent<DocsStoryProps> = ({
   expanded = true,
   withToolbar = false,
   parameters,
-  htmlComponent,
 }) => (
   <Anchor storyId={id}>
     {expanded && <Subheading>{name}</Subheading>}
@@ -25,6 +24,5 @@ export const DocsStory: FunctionComponent<DocsStoryProps> = ({
     <Preview withToolbar={withToolbar}>
       <Story id={id} />
     </Preview>
-    {htmlComponent}
   </Anchor>
 );

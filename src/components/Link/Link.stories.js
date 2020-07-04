@@ -5,7 +5,13 @@ import { action } from '@storybook/addon-actions';
 import { withKnobs, text } from '@storybook/addon-knobs';
 import Link from '.';
 
-export default { title: 'Components|Link', component: Link };
+export default {
+  title: 'Components/Link',
+  component: Link,
+  /*argTypes: {
+    children: { control: 'text' },
+  },*/
+};
 
 const props = () => ({
   className: 'some-class',
@@ -16,10 +22,9 @@ const props = () => ({
   })(action('onClick')),
 });
 
-/*
-storiesOf('Components|Link', module)
-  .addDecorator(withKnobs)
-  .add('Default', () => <Link {...props()}>Link</Link>);
-*/
+export const LinkRegular = (args) => <Link {...args} />;
+LinkRegular.args = {
+  children: 'Link',
+};
 
-export const LinkRegular = () => <Link {...props()}>Link</Link>;
+export const LinkAdvanced = (args) => <Link {...args}>Link</Link>;

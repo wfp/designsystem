@@ -5,7 +5,7 @@
 @import '../../globals/scss/spacing';
 @import '../../globals/scss/import-once';
 @import '../../globals/scss/css--typography';
-@import '../Link/link';
+//@import '../Link/link';
 
 @include exports('breadcrumb') {
   .#{$prefix}--breadcrumb {

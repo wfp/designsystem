@@ -3,7 +3,7 @@ import Table from './Table';
 import ReactDOMServer from 'react-dom/server';
 
 export default {
-  title: 'Table/Button',
+  title: 'Component/Component',
   component: Table,
   /*parameters: {
     storySource: {
@@ -12,7 +12,12 @@ export default {
   },*/
 };
 
-export const withText = ({ story }) => <button>Hello Button{story}</button>;
+export const withText = ({ args }) => (
+  <button text="hello" {...args}>
+    Hello Button
+  </button>
+);
+withText.args = { label: 'hello' };
 
 export const withEmoji = () => {
   //console.log(ReactDOMServer.renderToString(<Table />));
