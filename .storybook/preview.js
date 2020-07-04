@@ -1,118 +1,47 @@
-import React from 'react';
-import { configure, addDecorator, addParameters } from '@storybook/react';
-import { addReadme } from 'storybook-readme';
+import { addParameters } from '@storybook/react';
+import {
+  DocsPage,
+  Title,
+  Subtitle,
+  Description,
+  //Primary,
+  Props,
+  Stories,
+  types,
+  DocsContainer,
+} from '@storybook/addon-docs/blocks';
+import Source from './source';
 
-import { getStorybook } from '@storybook/react';
-import withAutoNotes from './wfp-storybook';
-import { withA11y } from '@storybook/addon-a11y';
+import React, { FC } from 'react';
+//import { Title } from '@storybook/addon-docs/Title';
+/*import { Subtitle } from './Subtitle';
+import { Description } from './Description';*/
+import { Primary } from './blocks/Primary';
+//import { Props } from './blocks/Props';
+/*
+import { Props } from './Props';
+import { Stories } from './Stories';
+import { PRIMARY_STORY } from './types';*/
 
-import Container from './Container';
+export const DocsPaged = (props) => {
+  console.log('props', props);
+  return (
+    <>
+      <Title />
+      <Subtitle />
+      <Description />
+      <Primary />
+      <Props />
+      <Stories />
+      {/*<Source />*/}
+    </>
+  );
+};
 
-import { withTests } from '@storybook/addon-jest';
-import results from '../.jest-test-results.json';
-
-import wfpTheme from './wfpTheme';
-
-addDecorator(
-  withTests({
-    results,
-  })
-);
-
-addDecorator(withA11y);
-
+console.log('DocsContainer', DocsContainer);
 addParameters({
-  backgrounds: [
-    { name: 'WFP white (ui-01)', value: '#fbfcfc', default: true },
-    { name: 'WFP background (ui-02)', value: '#eff2f5', default: true },
-    { name: 'WFP brand (interactive-01)', value: '#0a6eb4' },
-  ],
-});
-
-addDecorator(addReadme);
-
-addDecorator((story, context) => <Container story={story} context={context} />);
-
-addDecorator(withAutoNotes);
-
-function sortEachDepth(orderPerDepth) {
-  return (a, b) => {
-    // If the two stories have the same story kind, then use the default
-    // ordering, which is the order they are defined in the story file.
-    if (a[1].kind === b[1].kind) {
-      return 0;
-    }
-    const storyKindA = a[1].kind.split('/');
-    const storyKindB = b[1].kind.split('/');
-    let depth = 0;
-    let nameA, nameB, indexA, indexB;
-    let ordering = orderPerDepth[0] || [];
-    while (true) {
-      nameA = storyKindA[depth] ? storyKindA[depth] : '';
-      nameB = storyKindB[depth] ? storyKindB[depth] : '';
-
-      if (nameA === nameB) {
-        // We'll need to look at the next part of the name.
-        depth++;
-        ordering = orderPerDepth[depth] || [];
-        continue;
-      } else {
-        // Look for the names in the given `ordering` array.
-        indexA = ordering.indexOf(nameA);
-        indexB = ordering.indexOf(nameB);
-
-        // If at least one of the names is found, sort by the `ordering` array.
-        if (indexA !== -1 || indexB !== -1) {
-          // If one of the names is not found in `ordering`, list it at the place of '...' or last.
-          if (indexA === -1) {
-            indexA = ordering.indexOf('...') || ordering.length;
-          }
-          if (indexB === -1) {
-            indexB = ordering.indexOf('...') || ordering.length;
-          }
-          return indexA - indexB;
-        }
-      }
-      // Otherwise, use alphabetical order.
-      return nameA.localeCompare(nameB);
-    }
-  };
-}
-
-addParameters({
-  options: {
-    theme: wfpTheme,
-    showPanel: true,
-    isToolshown: true,
-    storySort: (a, b) => {
-      return a[1].parameters.options.sort
-        ? a[1].parameters.options.sort.localeCompare(
-            b[1].parameters.options.sort,
-            undefined,
-            {
-              numeric: true,
-            }
-          )
-        : b[1].kind.split('|')[0] === 'Design' &&
-          a[1].kind.split('|')[0] !== 'Design'
-        ? 1
-        : b[1].kind.split('|')[0] === 'Getting started' &&
-          a[1].kind.split('|')[0] !== 'Getting started'
-        ? 1
-        : 0;
-    },
+  docs: {
+    container: DocsContainer,
+    page: DocsPaged,
   },
 });
-
-function loadStories() {
-  const req = require.context('../src', true, /\-story\.js$/);
-  let keys = req.keys();
-
-  console.log(keys);
-  //keys.unshift('./documentation/Intro/Intro-story.js');
-  keys.forEach(filename => req(filename));
-}
-
-configure(loadStories, module);
-
-export { getStorybook };
