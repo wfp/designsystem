@@ -6,14 +6,12 @@ import {
   DocsContextProps,
 } from '@storybook/addon-docs/dist/blocks/DocsContext';
 import { getDocsStories } from './utils';
-import { Component } from './types';
 
 type Decorator = (...args: any) => any;
 
 interface MetaProps {
   title: string;
-  component?: Component;
-  subcomponents: Record<string, Component>;
+  component?: any;
   decorators?: [Decorator];
   parameters?: any;
 }

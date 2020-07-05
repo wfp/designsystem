@@ -70,12 +70,6 @@ ${extractComponentDescription(target) || ''}
 
 const DescriptionContainer: FunctionComponent<DescriptionProps> = (props) => {
   const context = useContext(DocsContext);
-
-  console.log('contexta', '../.' + context.parameters.fileName);
-  const fileName = '../src/components/Link/README.md';
-  //const readme = require(`!!raw-loader!../${fileName}`);
-  //const readme = require('!!raw-loader!../../src/components/Link/README.md');
-  //console.log('contextavv', readme.default);
   const { markdown } = getDescriptionProps(props, context);
   return markdown ? <Description markdown={markdown} /> : null;
 };

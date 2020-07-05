@@ -12,11 +12,10 @@ import {
 } from '@storybook/addon-docs/dist/blocks/DocsContext';
 import { anchorBlockIdFromId } from './Anchor';
 import { storyBlockIdFromId } from './Story';
-import { SourceContainer } from './SourceContainer';
 import { CodeOrSourceMdx, AnchorMdx, HeadersMdx } from './mdx';
 import { scrollToElement } from './utils';
 
-export interface DocsContainerProps {
+interface DocsContainerProps {
   context: DocsContextProps;
 }
 
@@ -84,17 +83,15 @@ export const DocsContainer: FunctionComponent<DocsContainerProps> = ({
 
   return (
     <DocsContext.Provider value={context}>
-      <SourceContainer>
-        <ThemeProvider theme={theme}>
-          <MDXProvider components={allComponents}>
-            <DocsWrapper className="sbdocs sbdocs-wrapper">
-              <DocsContent className="sbdocs sbdocs-content">
-                {children}
-              </DocsContent>
-            </DocsWrapper>
-          </MDXProvider>
-        </ThemeProvider>
-      </SourceContainer>
+      <ThemeProvider theme={theme}>
+        <MDXProvider components={allComponents}>
+          <DocsWrapper className="sbdocs sbdocs-wrapper">
+            <DocsContent className="sbdocs sbdocs-content">
+              {children}
+            </DocsContent>
+          </DocsWrapper>
+        </MDXProvider>
+      </ThemeProvider>
     </DocsContext.Provider>
   );
 };

@@ -59,6 +59,7 @@ const getPreviewProps = (
       ),
     };
   }
+
   const name = docsContext.kind.substr(docsContext.kind.lastIndexOf('/') + 1);
   const HtmlComponent = docsContext.parameters.component;
   console.log(docsContext);
@@ -67,6 +68,8 @@ const getPreviewProps = (
         <HtmlComponent {...docsContext.parameters.props} />
       )
     : '';
+  //const html = 'dasasd';
+
   const childArray: ReactNodeArray = Array.isArray(children)
     ? children
     : [children];
@@ -87,6 +90,7 @@ const getPreviewProps = (
     docsContext,
     sourceContext
   );
+
   return {
     ...props, // pass through columns etc.
     htmlComponent: html,
@@ -98,6 +102,7 @@ const getPreviewProps = (
 
 export const Preview: FC<PreviewProps> = (props) => {
   const docsContext = useContext(DocsContext);
+
   const sourceContext = useContext(SourceContext);
   const previewProps = getPreviewProps(props, docsContext, sourceContext);
   const { children } = props;

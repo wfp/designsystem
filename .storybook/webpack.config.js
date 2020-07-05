@@ -1,5 +1,6 @@
 const cssesc = require('cssesc');
 const normalizePath = require('normalize-path');
+const webpack = require('webpack');
 const {
   stringifyRequest,
   urlToRequest,
@@ -54,6 +55,19 @@ module.exports = async ({ config, mode }) => {
   // 'PRODUCTION' is used when building the static version of storybook.
 
   // Make whatever fine-grained changes you need
+
+  config.module.rules.unshift({
+    test: /\.md$/i,
+    use: [
+      {
+        loader: 'raw-loader',
+        options: {
+          esModule: false,
+        },
+      },
+    ],
+  });
+
   config.module.rules.push({
     test: /\.module.scss$/,
     loaders: [
@@ -82,5 +96,12 @@ module.exports = async ({ config, mode }) => {
   });
 
   // Return the altered config
+  /*config.plugins.push(
+    new webpack.NormalModuleReplacementPlugin(
+      /StorybookLogo/,
+      path.resolve(__dirname, 'Logo.js')
+    )
+  );*/
+
   return config;
 };

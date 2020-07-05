@@ -1,14 +1,8 @@
-export {
-  ColorPalette,
-  ColorItem,
-  IconGallery,
-  IconItem,
-  Typeset,
-} from '@storybook/components';
+export { ColorPalette, ColorItem, IconGallery, IconItem, Typeset } from '@storybook/components';
 
 export * from './Anchor';
 export * from './Description';
-export * from '@storybook/addon-docs/dist/blocks/DocsContext';
+export * from './DocsContext';
 export * from './DocsPage';
 export * from './DocsContainer';
 export * from './DocsStory';

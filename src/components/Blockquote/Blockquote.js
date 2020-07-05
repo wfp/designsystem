@@ -165,7 +165,7 @@ Blockquote.propTypes = {
   /**
    * Specify the type of your Blockquote Options are `light` `code` `error` `warning` `info`
    */
-  kind: PropTypes.string,
+  kind: PropTypes.oneOf[('info', 'warning', 'error', 'success')],
   /**
    * Specify if an Icon should be displayed
    */

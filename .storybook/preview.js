@@ -1,22 +1,22 @@
 import { addParameters } from '@storybook/react';
 import {
-  DocsPage,
+  //DocsPage,
   Title,
   Subtitle,
   Description,
-  //Primary,
+  Primary,
   Props,
   Stories,
   types,
   DocsContainer,
 } from '@storybook/addon-docs/blocks';
-import Source from './source';
+import { DocsPage } from './blocks/DocsPage';
 
 import React, { FC } from 'react';
 //import { Title } from '@storybook/addon-docs/Title';
 /*import { Subtitle } from './Subtitle';
 import { Description } from './Description';*/
-import { Primary } from './blocks/Primary';
+//import { Primary } from './blocks-old/Primary';
 //import { Props } from './blocks/Props';
 /*
 import { Props } from './Props';
@@ -34,15 +34,13 @@ export const DocsPaged = (props) => {
       <Primary />
       <Props />
       <Stories />
-      {/*<Source />*/}
     </>
   );
 };
 
-console.log('DocsContainer', DocsContainer);
 addParameters({
   docs: {
     container: DocsContainer,
-    page: DocsPaged,
+    page: DocsPage,
   },
 });

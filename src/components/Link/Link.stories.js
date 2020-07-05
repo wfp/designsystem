@@ -25,6 +25,7 @@ const props = () => ({
 export const LinkRegular = (args) => <Link {...args} />;
 LinkRegular.args = {
   children: 'Link',
+  href: '#',
 };
 
 export const LinkAdvanced = (args) => <Link {...args}>Link</Link>;

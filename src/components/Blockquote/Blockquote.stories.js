@@ -1,8 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, boolean, select, text } from '@storybook/addon-knobs/react';
+//import { withKnobs, boolean, select, text } from '@storybook/addon-knobs/react';
 
-import Blockquote from '../Blockquote';
+import Blockquote from '.';
 
 const kinds = {
   'Info (info)': 'info',
@@ -11,6 +11,18 @@ const kinds = {
   'Success (success)': 'success',
 };
 
+export default {
+  title: 'Components/Blockquote',
+  component: Blockquote,
+  argTypes: {
+    loadingState: {
+      type: 'inline-radio',
+      options: ['loading', 'error', 'ready'],
+    },
+  },
+};
+
+/*
 const props = () => ({
   title: text('title', 'Blockquote title'),
   children: text(
@@ -25,9 +37,9 @@ const props = () => ({
   warning: boolean('warning (depreciated)', false),
   info: boolean('info (depreciated)', false),
   withIcon: boolean('withIcon', false),
-});
+});*/
 
-storiesOf('Components|Blockquote', module)
+/*storiesOf('Components|Blockquote', module)
   .addParameters({ jest: ['Blockquote-test'] })
   .addDecorator(withKnobs)
   .add('Default', () => {
@@ -54,4 +66,22 @@ storiesOf('Components|Blockquote', module)
         amet.
       </Blockquote>
     );
-  });
+  });*/
+
+export const Default = (args) => <Blockquote {...args} />;
+Default.args = {
+  children: `Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+  eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+  voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
+  clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
+  amet.`,
+};
+
+Default.argTypes = {
+  kind: {
+    control: {
+      type: 'select',
+      options: ['info', 'warning', 'error', 'success'],
+    },
+  },
+};

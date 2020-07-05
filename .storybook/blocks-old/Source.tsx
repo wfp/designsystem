@@ -59,6 +59,8 @@ export const getSourceProps = (
     const targetIds = multiProps.ids || [targetId];
     source = targetIds
       .map((sourceId) => {
+        console.log('sourcesa', sources);
+        return 'aaa';
         const snippet = sources && sources[sourceId];
         if (snippet) return snippet;
         if (storyStore) {
