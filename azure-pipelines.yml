@@ -22,7 +22,7 @@ steps:
   displayName: 'npm build storybook and publish'
 - task: S3Upload@1
   inputs:
-    bucketName: 
+    bucketName: uikit.wfp.org
     globExpressions: '**'
 
 
