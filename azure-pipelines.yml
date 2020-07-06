@@ -22,8 +22,11 @@ steps:
   displayName: 'npm build storybook and publish'
 - task: S3Upload@1
   inputs:
-    awsCredentials: 'WFP cdn'
+    awsCredentials: 'WFP UI-Kit'
     regionName: 'eu-west-1'
     bucketName: 'uikit.wfp.org'
     sourceFolder: './'
     globExpressions: '**'
+    createBucket: true
+    logRequest: true
+    logResponse: true
