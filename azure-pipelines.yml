@@ -20,6 +20,7 @@ steps:
      npm run build
      npm run build:storybook
   displayName: 'npm build storybook and publish'
+  
 - task: S3Upload@1
   inputs:
     awsCredentials: 'WFP UI-Kit'
