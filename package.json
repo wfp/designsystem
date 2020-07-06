@@ -1,6 +1,6 @@
 {
   "name": "@wfp/ui",
-  "version": "1.5.0",
+  "version": "0.0.0",
   "description": "WFP UI Kit Next",
   "license": "Apache-2",
   "main": "lib/index.js",
@@ -218,7 +218,7 @@
     "rollup-plugin-sizes": "^1.0.2",
     "rollup-plugin-uglify": "^6.0.4",
     "sass-loader": "^8.0.2",
-    "semantic-release": "^17.0.6",
+    "semantic-release": "^17.1.1",
     "standard-version": "^7.1.0",
     "storybook-addon-rtl": "^0.2.2",
     "storybook-readme": "^5.0.8",
