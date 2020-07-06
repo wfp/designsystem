@@ -20,16 +20,6 @@ steps:
     npm run build
     npm run build:storybook
   displayName: 'npm build storybook and publish'
-- task: S3Upload@1
-  inputs:
-    awsCredentials: 'WFP UI-Kit'
-    regionName: 'eu-west-1'
-    bucketName: 'uikit.wfp.org'
-    sourceFolder: './docs'
-    globExpressions: '**'
-    createBucket: true
-    logRequest: true
-    logResponse: true
 
 - task: Bash@3
   inputs:
@@ -38,3 +28,16 @@ steps:
       PACKAGE_VERSION=$(sed -nE 's/^\s*"version": "(.*?)",$/\1/p' package.json)
       echo "Package version"
       echo $PACKAGE_VERSION
+      echo ##vso[task.setvariable variable=npmversion]$PACKAGE_VERSION
+
+- task: S3Upload@1
+  inputs:
+    awsCredentials: 'WFP UI-Kit'
+    regionName: 'eu-west-1'
+    bucketName: 'uikit.wfp.org'
+    sourceFolder: './docs'
+    globExpressions: '**'
+    targetFolder: $(npmversion)
+    createBucket: true
+    logRequest: true
+    logResponse: true
