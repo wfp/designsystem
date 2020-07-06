@@ -1,21 +1,38 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
-  entry: './src/Table.js',
+  entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
   },
-  plugins: [new MiniCssExtractPlugin()],
+  plugins: [new CleanWebpackPlugin(), new MiniCssExtractPlugin()],
+  externals: [{ '@wfp/icons': 'icons' }],
   module: {
     rules: [
       {
         test: /\.jsx?$/,
+        exclude: /(node_modules|bower_components)/,
         loader: 'babel-loader',
+        options: {
+          presets: ['@babel/preset-env'],
+        },
       },
       {
-        test: /\.scss$/,
+        test: /styles.scss$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          //'style-loader',
+          'css-loader',
+          'sass-loader',
+        ],
+        include: path.resolve(__dirname, './'),
+      },
+      /*{
+        test: /\.scssa$/,
         use: [
           {
             loader: MiniCssExtractPlugin.loader,
@@ -38,27 +55,10 @@ module.exports = {
           },
           require.resolve('sass-loader'),
         ],
-      },
-      /*{
-        test: /\.scss$/,
-        loader: [
-          require.resolve('style-loader'),
-          {
-            loader: require.resolve('css-loader'),
-            options: {
-              importLoaders: 1,
-              modules: {
-                mode: 'local',
-                localIdentName: 'wfp--[name]__[local]',
-                // localIdentName: '[sha1:hash:hex:4]',
-                context: path.resolve(__dirname, 'src'),
-                hashPrefix: 'my-custom-hash',
-              },
-            },
-          },
-          require.resolve('sass-loader'),
-        ],
       },*/
     ],
+  },
+  optimization: {
+    // minimizer: [new UglifyJsPlugin()],
   },
 };

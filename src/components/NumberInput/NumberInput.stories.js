@@ -3,8 +3,8 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 
 import { withKnobs, boolean, number, text } from '@storybook/addon-knobs';
-import NumberInput from '../NumberInput';
-import NumberInputSkeleton from '../NumberInput/NumberInput.Skeleton';
+import NumberInput from '.';
+import NumberInputSkeleton from './NumberInput.Skeleton';
 
 const props = () => ({
   className: 'some-class',

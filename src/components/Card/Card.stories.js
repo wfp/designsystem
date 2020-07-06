@@ -5,7 +5,7 @@ import { storiesOf } from '@storybook/react';
 import { withKnobs, boolean, select, text } from '@storybook/addon-knobs';
 import Button from '../Button';
 
-import Card from '../Card';
+import Card from '.';
 
 const kinds = {
   'Landscape (landscape)': 'landscape',
@@ -56,7 +56,7 @@ const props = {
 storiesOf('Components|Card', module)
   .addDecorator(withKnobs)
   .addParameters({ jest: ['Card-test'] })
-  .addDecorator(story => <div style={{ width: '100%' }}>{story()}</div>)
+  .addDecorator((story) => <div style={{ width: '100%' }}>{story()}</div>)
   .add('Default (experimental)', () => {
     const setProps = props.set();
     return <Card {...setProps} more={buttons[setProps.moreButton]} />;
