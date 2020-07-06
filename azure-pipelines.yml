@@ -31,10 +31,18 @@ steps:
       NPM_VERSION=${PACKAGE_VERSION//./-}
       echo $NPM_VERSION
       echo '##vso[task.setvariable variable=NPM_VAR]'$NPM_VERSION
-      echo "==============="
-      echo "ACR reg login"
-      echo $NPM_VAR
-      echo "==============="
+
+- task: S3Upload@1
+  inputs:
+    awsCredentials: 'WFP UI-Kit'
+    regionName: 'eu-west-1'
+    bucketName: 'uikit.wfp.org'
+    sourceFolder: './dist'
+    globExpressions: '**'
+    targetFolder: "dist$(NPM_VAR)"
+    createBucket: true
+    logRequest: true
+    logResponse: true
 
 - task: S3Upload@1
   inputs:
@@ -43,16 +51,7 @@ steps:
     bucketName: 'uikit.wfp.org'
     sourceFolder: './docs'
     globExpressions: '**'
-    targetFolder: $(NPM_VAR)
+    targetFolder: "docs"
     createBucket: true
     logRequest: true
     logResponse: true
-
-- task: Bash@3
-  inputs:
-    targetType: 'inline'
-    script: |
-      echo "==============="
-      echo "ACR reg login"
-      echo $NPM_VAR
-      echo "==============="
