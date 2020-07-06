@@ -16,17 +16,16 @@ steps:
   displayName: 'Install Node.js'
 - script: |
     npm install
-  #  npm run semantic-release
-     npm run build
-     npm run build:storybook
+    npm run semantic-release
+    npm run build
+    npm run build:storybook
   displayName: 'npm build storybook and publish'
-  
 - task: S3Upload@1
   inputs:
     awsCredentials: 'WFP UI-Kit'
     regionName: 'eu-west-1'
     bucketName: 'uikit.wfp.org'
-    sourceFolder: './docs'
+    sourceFolder: './'
     globExpressions: '**'
     createBucket: true
     logRequest: true
