@@ -16,13 +16,42 @@ steps:
   displayName: 'Install Node.js'
 - script: |
     npm install
-  #  npm run semantic-release
-  #  npm run build
-  #  npm run build:storybook
+    npm run semantic-release
+    npm run build
+    npm run build:storybook
   displayName: 'npm build storybook and publish'
+
+- task: Bash@3
+  inputs:
+    targetType: 'inline'
+    script: |
+      PACKAGE_VERSION=$(sed -nE 's/^\s*"version": "(.*?)",$/\1/p' package.json)
+      echo "Package version"
+      echo $PACKAGE_VERSION
+      NPM_VERSION=${PACKAGE_VERSION//./-}
+      echo $NPM_VERSION
+      echo '##vso[task.setvariable variable=NPM_VAR]'$NPM_VERSION
+
 - task: S3Upload@1
   inputs:
-    bucketName: 
+    awsCredentials: 'WFP UI-Kit'
+    regionName: 'eu-west-1'
+    bucketName: 'uikit.wfp.org'
+    sourceFolder: './dist'
     globExpressions: '**'
+    targetFolder: "dist$(NPM_VAR)"
+    createBucket: true
+    logRequest: true
+    logResponse: true
 
-
+- task: S3Upload@1
+  inputs:
+    awsCredentials: 'WFP UI-Kit'
+    regionName: 'eu-west-1'
+    bucketName: 'uikit.wfp.org'
+    sourceFolder: './docs'
+    globExpressions: '**'
+    targetFolder: "docs"
+    createBucket: true
+    logRequest: true
+    logResponse: true
