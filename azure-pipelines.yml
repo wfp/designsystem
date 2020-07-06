@@ -25,7 +25,7 @@ steps:
     awsCredentials: 'WFP UI-Kit'
     regionName: 'eu-west-1'
     bucketName: 'uikit.wfp.org'
-    sourceFolder: './'
+    sourceFolder: './docs'
     globExpressions: '**'
     createBucket: true
     logRequest: true
