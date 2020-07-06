@@ -1,6 +1,6 @@
 {
   "name": "@wfp/ui",
-  "version": "1.4.1-alpha.46",
+  "version": "1.5.0",
   "description": "WFP UI Kit Next",
   "license": "Apache-2",
   "main": "lib/index.js",
@@ -30,7 +30,8 @@
     "test": "jest",
     "test:generate-output": "jest --json --outputFile=.jest-test-results.json || true",
     "test-ssr": "yarn build && node ssr-tests/*.js",
-    "release": "standard-version"
+    "release": "standard-version",
+    "release:alpha": "standard-version -- --prerelease alpha"
   },
   "keywords": [
     "WFP",

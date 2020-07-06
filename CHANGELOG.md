@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.5.0](https://github.com/WFP/UI/compare/v1.4.1...v1.5.0) (2020-07-06)
+
+
+### Features
+
+* **Refactoring:** buiilding new documentation ([95f21a8](https://github.com/WFP/UI/commit/95f21a87cc9ee232336733e1e68952aa2b771432))
+* **SettingsMedication:** import success message added ([a0754fe](https://github.com/WFP/UI/commit/a0754fee37bb071443acdb2071f8a25a0c6ab057))
+* **Storybook:** html code view ([3f85a9e](https://github.com/WFP/UI/commit/3f85a9eb0539a90d461dabb5ddf828e5ab284199))
+* **Storybook:** improved documentation ([a0f17fa](https://github.com/WFP/UI/commit/a0f17fab2aad65c6ac4d963c97ebd08d071f65fa))
+* **Table:** added layout ([31846d4](https://github.com/WFP/UI/commit/31846d4da4010a60f8cc8f5a6d2ab0c28c60bbc3))
+
 ### [1.4.1](https://github.com/WFP/UI/compare/v1.5.0...v1.4.1) (2020-05-31)
 
 ## [1.5.0](https://github.com/WFP/UI/compare/v1.4.1-alpha.14...v1.5.0) (2020-05-31)
