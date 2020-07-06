@@ -1,10 +1,8 @@
 // manager.js
-import { themes } from '@storybook/theming/create';
+import { themes } from '@storybook/theming';
 import { addons } from '@storybook/addons';
-
-addons.setConfig({
-  theme: themes.dark,
-});
+// manager.js
+import theme from './theme';
 
 addons.setConfig({
   /**
@@ -52,7 +50,7 @@ addons.setConfig({
   /**
    * theme storybook, see link below
    */
-  theme: undefined,
+  theme: theme,
 
   /**
    * id to select an addon panel

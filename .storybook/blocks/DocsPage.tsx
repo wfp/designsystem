@@ -3,6 +3,7 @@ import React, { FC } from 'react';
 import { Subtitle } from './Subtitle';
 import { Description } from './Description';
 */
+import { Subtitle } from './Subtitle';
 import { Primary } from './Primary';
 import { Description } from './Description';
 /*
@@ -15,7 +16,7 @@ import { PRIMARY_STORY } from './types';
 import {
   //DocsPage,
   Title,
-  Subtitle,
+  //Subtitle,
   //Description,
   //Primary,
   Props,
@@ -26,8 +27,8 @@ import {
 
 export const DocsPage: FC = () => (
   <>
-    <Title />
     <Subtitle />
+    <Title />
     <Description />
     <Primary />
     <Props story={PRIMARY_STORY} />

@@ -8,6 +8,9 @@ import Link from '.';
 export default {
   title: 'Components/Link',
   component: Link,
+  parameters: {
+    componentSubtitle: 'Component',
+  },
   /*argTypes: {
     children: { control: 'text' },
   },*/

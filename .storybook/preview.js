@@ -1,8 +1,10 @@
 import { addParameters } from '@storybook/react';
+import theme from './theme';
+
 import {
   //DocsPage,
   Title,
-  Subtitle,
+  //Subtitle,
   Description,
   Primary,
   Props,
@@ -11,6 +13,7 @@ import {
   DocsContainer,
 } from '@storybook/addon-docs/blocks';
 import { DocsPage } from './blocks/DocsPage';
+import { Subtitle } from './blocks/Subtitle';
 
 import React, { FC } from 'react';
 //import { Title } from '@storybook/addon-docs/Title';
@@ -22,7 +25,8 @@ import { Description } from './Description';*/
 import { Props } from './Props';
 import { Stories } from './Stories';
 import { PRIMARY_STORY } from './types';*/
-import '../src/globals/scss/styles.scss';
+//import '../src/globals/scss/styles.scss';
+import './storybook.scss';
 
 export const DocsPaged = (props) => {
   console.log('props', props);
@@ -44,3 +48,10 @@ addParameters({
     page: DocsPage,
   },
 });
+
+// or global addParameters
+export const parameters = {
+  docs: {
+    theme: theme,
+  },
+};

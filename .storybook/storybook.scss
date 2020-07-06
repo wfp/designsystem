@@ -1,0 +1,34 @@
+@import '../src/globals/scss/styles.scss';
+
+.sb-show-main,
+.sbdocs,
+.sbdocs {
+  list-style: disc;
+}
+.sbdocs {
+  font-weight: 400;
+  @extend .wfp--story;
+
+  .sbdocs-p {
+    font-size: 1rem;
+  }
+  .sbdocs-li {
+    font-size: 1rem;
+  }
+  .sbdocs-h1,
+  .sbdocs-title {
+    @extend .wfp--story__title;
+  }
+  .sbdocs-subtitle {
+    @extend .wfp--story__sub-title;
+  }
+  .sbdocs-h2 {
+    border: none;
+    font-weight: 700;
+    margin-bottom: $spacing-md;
+  }
+  .sbdocs-h3 {
+    font-size: 1rem;
+    font-weight: 700;
+  }
+}
