@@ -28,7 +28,9 @@ steps:
       PACKAGE_VERSION=$(sed -nE 's/^\s*"version": "(.*?)",$/\1/p' package.json)
       echo "Package version"
       echo $PACKAGE_VERSION
-      echo '##vso[task.setvariable variable=npmversion]$PACKAGE_VERSION'
+      NPM_VERSION=${PACKAGE_VERSION//./-}
+      echo $NPM_VERSION
+      echo '##vso[task.setvariable variable=npmversion]$NPM_VERSION'
 
 - task: S3Upload@1
   inputs:
