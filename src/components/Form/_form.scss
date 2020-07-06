@@ -24,12 +24,8 @@
   .#{$prefix}--form-long {
     margin-bottom: -1rem;
 
-    .#{$prefix}--form-item {
+    > .#{$prefix}--form-item {
       margin-bottom: 1.3rem;
-
-      .#{$prefix}--form-item {
-        margin-bottom: 0;
-      }
     }
   }
 
@@ -72,6 +68,13 @@
     //box-shadow: 0 2px 0px 0px $support-01;
 
     ~ .#{$prefix}--form-requirement {
+      max-height: rem(200px);
+      display: block;
+    }
+  }
+
+  .#{$prefix}--form-item--invalid {
+    .#{$prefix}--form-requirement {
       max-height: rem(200px);
       display: block;
     }
@@ -176,6 +179,7 @@
   input[data-invalid],
   textarea[data-invalid],
   select[data-invalid],
+  .#{$prefix}--form-item--invalid,
   .#{$prefix}--list-box[data-invalid] {
     border-color: $support-01;
     //box-shadow: 0 2px 0px 0px $support-01;

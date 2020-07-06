@@ -63,7 +63,7 @@ const Button = ({
     setCount(false);
   };
 
-  const onClickAnimation = e => {
+  const onClickAnimation = (e) => {
     if (onClick) {
       onClick(e);
     }
@@ -78,8 +78,9 @@ const Button = ({
       type={type}
       onClick={onClickAnimation}
       ref={other.inputref}>
+      {iconReverse && buttonImage}
       {children}
-      {buttonImage}
+      {!iconReverse && buttonImage}
     </button>
   );
 
@@ -163,7 +164,7 @@ Button.propTypes = {
    * If specifying the `icon` prop, provide a description for that icon that can
    * be read by screen readers
    */
-  iconDescription: props => {
+  iconDescription: (props) => {
     if (props.icon && !props.iconDescription) {
       return new Error(
         'icon property specified without also providing an iconDescription property.'

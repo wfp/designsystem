@@ -2,8 +2,14 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import classnames from 'classnames';
 
-const FormItem = ({ className, children, ...other }) => {
-  const classNames = classnames('wfp--form-item', className);
+const FormItem = ({ className, children, invalid, ...other }) => {
+  const classNames = classnames(
+    'wfp--form-item',
+    {
+      'wfp--form-item--invalid': invalid,
+    },
+    className
+  );
 
   return (
     <div className={classNames} {...other}>

@@ -71,7 +71,7 @@ export default class RadioButtonGroup extends React.Component {
 
   static defaultProps = {
     onChange: /* istanbul ignore next */ () => {},
-    controlled: true,
+    controlled: false,
   };
 
   static getDerivedStateFromProps({ valueSelected, defaultSelected }, state) {

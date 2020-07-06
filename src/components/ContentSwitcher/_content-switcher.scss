@@ -14,9 +14,10 @@
   }
 
   .#{$prefix}--content-switcher--sm {
-    height: rem(25px);
+    height: rem(24px);
     .#{$prefix}--content-switcher-btn {
-      padding: 0 $spacing-sm;
+      padding: 0 $spacing-sm 0 $spacing-sm;
+      @include typescale(caption);
     }
   }
 
@@ -41,7 +42,7 @@
       //background-color: $hover-primary;
       z-index: 2;
       //border-color: $hover-primary;
-      text-decoration: underline;
+      text-decoration: none;
       //color: $inverse-01;
     }
 

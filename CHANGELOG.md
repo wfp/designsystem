@@ -2,6 +2,101 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.0.0](https://github.com/WFP/UI/compare/v1.4.1...v0.0.0) (2020-07-06)
+
+
+### Features
+
+* **Refactoring:** buiilding new documentation ([95f21a8](https://github.com/WFP/UI/commit/95f21a87cc9ee232336733e1e68952aa2b771432))
+* **SettingsMedication:** import success message added ([a0754fe](https://github.com/WFP/UI/commit/a0754fee37bb071443acdb2071f8a25a0c6ab057))
+* **Storybook:** html code view ([3f85a9e](https://github.com/WFP/UI/commit/3f85a9eb0539a90d461dabb5ddf828e5ab284199))
+* **Storybook:** improved documentation ([a0f17fa](https://github.com/WFP/UI/commit/a0f17fab2aad65c6ac4d963c97ebd08d071f65fa))
+* **Table:** added layout ([31846d4](https://github.com/WFP/UI/commit/31846d4da4010a60f8cc8f5a6d2ab0c28c60bbc3))
+
+## [1.5.0](https://github.com/WFP/UI/compare/v1.4.1...v1.5.0) (2020-07-06)
+
+
+### Features
+
+* **Refactoring:** buiilding new documentation ([95f21a8](https://github.com/WFP/UI/commit/95f21a87cc9ee232336733e1e68952aa2b771432))
+* **SettingsMedication:** import success message added ([a0754fe](https://github.com/WFP/UI/commit/a0754fee37bb071443acdb2071f8a25a0c6ab057))
+* **Storybook:** html code view ([3f85a9e](https://github.com/WFP/UI/commit/3f85a9eb0539a90d461dabb5ddf828e5ab284199))
+* **Storybook:** improved documentation ([a0f17fa](https://github.com/WFP/UI/commit/a0f17fab2aad65c6ac4d963c97ebd08d071f65fa))
+* **Table:** added layout ([31846d4](https://github.com/WFP/UI/commit/31846d4da4010a60f8cc8f5a6d2ab0c28c60bbc3))
+
+### [1.4.1](https://github.com/WFP/UI/compare/v1.5.0...v1.4.1) (2020-05-31)
+
+## [1.5.0](https://github.com/WFP/UI/compare/v1.4.1-alpha.14...v1.5.0) (2020-05-31)
+
+
+### Features
+
+* **Dependencies:** update all dependencies to the latest version ([d61f143](https://github.com/WFP/UI/commit/d61f143d15d615a2e5bfaa59cdeaafe23d29d39b))
+* **Input:** addonBefore and addonAfter added ([15f6000](https://github.com/WFP/UI/commit/15f6000128e5995bfd07beb5245031f1455b616a))
+* **Input:** component wrapper added ([84d32bb](https://github.com/WFP/UI/commit/84d32bb84bd269148a34b96971b8e055849a490a))
+* **Input:** expose refs ([71e0855](https://github.com/WFP/UI/commit/71e0855b96306c9625d4bcf14dccc5978271f6fc))
+* **NumberInput:** additional added to the NumberInput ([3bde686](https://github.com/WFP/UI/commit/3bde68649fe7e3b52e1a9921bca554f931dcd9a1))
+* **NumberInput:** new number input using hooks ([0b437a2](https://github.com/WFP/UI/commit/0b437a22e66d493fedb84b6f14ee25d4a6134b88))
+* **RadioButton:** added ref to input ([6dee5f0](https://github.com/WFP/UI/commit/6dee5f02912d2b5392d4db129398474354f85a66))
+* **RadioButtonGroup:** vertical view added ([31a831f](https://github.com/WFP/UI/commit/31a831f0d4b1bd21a848828cc2f0487b47c3be13))
+* **ReactDropzone:** added new uploader component and other minor fixes ([04bfd7d](https://github.com/WFP/UI/commit/04bfd7db4852648a9878f3624f1acca7d6a495a6))
+* **Storybook:** sorting feature, upgrade Storybook add SDG logo to icons ([f10ec7d](https://github.com/WFP/UI/commit/f10ec7dd48dc8ac388a7e251b9ca292e85347515))
+* **TextArea:** placeholder color and other changes ([c9ae731](https://github.com/WFP/UI/commit/c9ae7318b41032bfd3332fc7809ac367e75283fb))
+* **TextInput:** additional prop added ([dddbd6f](https://github.com/WFP/UI/commit/dddbd6fbaa9c0c0fa48b6a76324ad14052053878))
+
+## [1.5.0-alpha.0](https://github.com/WFP/UI/compare/v1.4.1-alpha.14...v1.5.0-alpha.0) (2020-04-27)
+
+
+### Features
+
+* **Dependencies:** update all dependencies to the latest version ([d61f143](https://github.com/WFP/UI/commit/d61f143d15d615a2e5bfaa59cdeaafe23d29d39b))
+* **Input:** addonBefore and addonAfter added ([15f6000](https://github.com/WFP/UI/commit/15f6000128e5995bfd07beb5245031f1455b616a))
+* **Input:** component wrapper added ([84d32bb](https://github.com/WFP/UI/commit/84d32bb84bd269148a34b96971b8e055849a490a))
+* **Input:** expose refs ([71e0855](https://github.com/WFP/UI/commit/71e0855b96306c9625d4bcf14dccc5978271f6fc))
+* **NumberInput:** additional added to the NumberInput ([3bde686](https://github.com/WFP/UI/commit/3bde68649fe7e3b52e1a9921bca554f931dcd9a1))
+* **NumberInput:** new number input using hooks ([0b437a2](https://github.com/WFP/UI/commit/0b437a22e66d493fedb84b6f14ee25d4a6134b88))
+* **RadioButton:** added ref to input ([6dee5f0](https://github.com/WFP/UI/commit/6dee5f02912d2b5392d4db129398474354f85a66))
+* **RadioButtonGroup:** vertical view added ([31a831f](https://github.com/WFP/UI/commit/31a831f0d4b1bd21a848828cc2f0487b47c3be13))
+* **ReactDropzone:** added new uploader component and other minor fixes ([04bfd7d](https://github.com/WFP/UI/commit/04bfd7db4852648a9878f3624f1acca7d6a495a6))
+* **Storybook:** sorting feature, upgrade Storybook add SDG logo to icons ([f10ec7d](https://github.com/WFP/UI/commit/f10ec7dd48dc8ac388a7e251b9ca292e85347515))
+* **TextArea:** placeholder color and other changes ([c9ae731](https://github.com/WFP/UI/commit/c9ae7318b41032bfd3332fc7809ac367e75283fb))
+* **TextInput:** additional prop added ([dddbd6f](https://github.com/WFP/UI/commit/dddbd6fbaa9c0c0fa48b6a76324ad14052053878))
+
+## [1.5.0-alpha.0](https://github.com/WFP/UI/compare/v1.4.1-alpha.14...v1.5.0-alpha.0) (2020-04-04)
+
+
+### Features
+
+* **Input:** component wrapper added ([84d32bb](https://github.com/WFP/UI/commit/84d32bb84bd269148a34b96971b8e055849a490a))
+* **NumberInput:** additional added to the NumberInput ([3bde686](https://github.com/WFP/UI/commit/3bde68649fe7e3b52e1a9921bca554f931dcd9a1))
+* **RadioButtonGroup:** vertical view added ([31a831f](https://github.com/WFP/UI/commit/31a831f0d4b1bd21a848828cc2f0487b47c3be13))
+* **ReactDropzone:** added new uploader component and other minor fixes ([04bfd7d](https://github.com/WFP/UI/commit/04bfd7db4852648a9878f3624f1acca7d6a495a6))
+* **Storybook:** sorting feature, upgrade Storybook add SDG logo to icons ([f10ec7d](https://github.com/WFP/UI/commit/f10ec7dd48dc8ac388a7e251b9ca292e85347515))
+* **TextArea:** placeholder color and other changes ([c9ae731](https://github.com/WFP/UI/commit/c9ae7318b41032bfd3332fc7809ac367e75283fb))
+* **TextInput:** additional prop added ([dddbd6f](https://github.com/WFP/UI/commit/dddbd6fbaa9c0c0fa48b6a76324ad14052053878))
+
+## [1.5.0-alpha.0](https://github.com/WFP/UI/compare/v1.4.1-alpha.14...v1.5.0-alpha.0) (2020-03-05)
+
+
+### Features
+
+* **Input:** component wrapper added ([84d32bb](https://github.com/WFP/UI/commit/84d32bb84bd269148a34b96971b8e055849a490a))
+* **NumberInput:** additional added to the NumberInput ([3bde686](https://github.com/WFP/UI/commit/3bde68649fe7e3b52e1a9921bca554f931dcd9a1))
+* **ReactDropzone:** added new uploader component and other minor fixes ([04bfd7d](https://github.com/WFP/UI/commit/04bfd7db4852648a9878f3624f1acca7d6a495a6))
+* **Storybook:** sorting feature, upgrade Storybook add SDG logo to icons ([f10ec7d](https://github.com/WFP/UI/commit/f10ec7dd48dc8ac388a7e251b9ca292e85347515))
+* **TextArea:** placeholder color and other changes ([c9ae731](https://github.com/WFP/UI/commit/c9ae7318b41032bfd3332fc7809ac367e75283fb))
+* **TextInput:** additional prop added ([dddbd6f](https://github.com/WFP/UI/commit/dddbd6fbaa9c0c0fa48b6a76324ad14052053878))
+
+## [1.5.0-alpha.0](https://github.com/WFP/UI/compare/v1.4.1-alpha.14...v1.5.0-alpha.0) (2020-02-26)
+
+
+### Features
+
+* **NumberInput:** additional added to the NumberInput ([3bde686](https://github.com/WFP/UI/commit/3bde68649fe7e3b52e1a9921bca554f931dcd9a1))
+* **ReactDropzone:** added new uploader component and other minor fixes ([04bfd7d](https://github.com/WFP/UI/commit/04bfd7db4852648a9878f3624f1acca7d6a495a6))
+* **TextArea:** placeholder color and other changes ([c9ae731](https://github.com/WFP/UI/commit/c9ae7318b41032bfd3332fc7809ac367e75283fb))
+* **TextInput:** additional prop added ([dddbd6f](https://github.com/WFP/UI/commit/dddbd6fbaa9c0c0fa48b6a76324ad14052053878))
+
 ## [1.5.0-alpha.0](https://github.com/WFP/UI/compare/v1.4.1-alpha.14...v1.5.0-alpha.0) (2020-02-10)
 
 

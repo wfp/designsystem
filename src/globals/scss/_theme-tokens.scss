@@ -61,7 +61,7 @@
   $button-font-size: 0.875rem !default !global;
   $button-border-radius: 4px !default !global;
   $button-height: 40px !default !global;
-  $button-padding: 0 $spacing-md !default !global;
+  $button-padding: 0 $spacing-md * 0.8 !default !global;
   $button-padding-sm: 0 $spacing-xs !default !global;
   $button-border-width: 2px !default !global;
   $button-outline-width: 1px !default !global;
@@ -74,8 +74,8 @@
   $snippet-border-color: $ui-03 !default !global;
 
   // Content Switcher
-  $content-switcher-border-radius: 8px !default !global;
-  $content-switcher-option-border: 1px solid $interactive-01 !default !global;
+  $content-switcher-border-radius: 6px !default !global;
+  $content-switcher-option-border: 2px solid $interactive-01 !default !global;
 
   // Data Table
   $data-table-heading-transform: uppercase !default !global;

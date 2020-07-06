@@ -74,12 +74,13 @@ export default class RadioButton extends React.Component {
       this.props.className
     );
 
-    const { labelText, ...other } = this.props;
+    const { labelText, inputRef, ...other } = this.props;
 
     return (
       <div className={wrapperClasses}>
         <input
           {...other}
+          ref={inputRef}
           type="radio"
           className={`${prefix}--radio-button`}
           onChange={this.handleChange}

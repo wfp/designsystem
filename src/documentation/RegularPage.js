@@ -49,7 +49,7 @@ const renderAnchor = props => {
   return <a href={props.href}>{props.label}</a>;
 };
 
-const Page = ({
+const RegularPage = ({
   children,
   withoutSecondary,
   withoutSecondaryTabs,
@@ -302,7 +302,7 @@ const Page = ({
   );
 };
 
-Page.propTypes = {
+RegularPage.propTypes = {
   /**
     Width of Wrapper, use 'narrow' or leave empty
   */
@@ -310,8 +310,8 @@ Page.propTypes = {
   className: PropTypes.string,
 };
 
-Page.defaultProps = {
+RegularPage.defaultProps = {
   pageWidth: 'lg',
 };
 
-export default Page;
+export default RegularPage;

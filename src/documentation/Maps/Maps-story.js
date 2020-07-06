@@ -6,7 +6,7 @@ import Page from '../Page';
 import Link from '../../components/Link';
 import { List, ListItem } from '../../components/List';
 
-storiesOf('Getting started|Guidelines', module)
+storiesOf('Design|Guidelines', module)
   .addParameters({ options: { showPanel: false, isToolshown: false } })
   .add('Maps', () => (
     <Page title="Maps" subTitle="Frontend implementation of maps">

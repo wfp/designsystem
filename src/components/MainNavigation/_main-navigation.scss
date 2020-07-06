@@ -122,7 +122,7 @@
     }
   }
 
-  @include breakpoint(bp--md--major) {
+  @include breakpoint(bp--sm--major) {
     .#{$prefix}--main-navigation__logo-wrapper {
       flex-grow: 1;
     }
@@ -192,7 +192,7 @@
     }
   }
 
-  @include breakpointMax(bp--md--major) {
+  @include breakpointMax(bp--sm--major) {
     .#{$prefix}--main-navigation__logo-wrapper {
       display: flex;
       align-items: center;

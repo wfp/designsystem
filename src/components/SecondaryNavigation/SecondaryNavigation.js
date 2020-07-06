@@ -54,6 +54,10 @@ SecondaryNavigation.propTypes = {
    */
   className: PropTypes.string,
   id: PropTypes.string,
+  /**
+   * The width of the SecondaryNavigation (same as Wrapper)
+   */
+  pageWidth: PropTypes.string,
   wrapperClassName: PropTypes.string,
 };
 

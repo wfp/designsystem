@@ -52,32 +52,34 @@ $deprecations--message: 'Deprecated code was found, this code will be removed be
 // 🍕 Components
 //-------------------------
 
-@import '../../components/Wrapper/wrapper';
-@import '../../components/Button/button';
-@import '../../components/Credits/credits';
-@import '../../components/DatePicker/date-picker';
-@import '../../components/FormControls/form-controls';
-@import '../../components/FormWizard/form-wizard';
+@import '../../components/Wrapper/wrapper.scss';
+@import '../../components/Button/button.scss';
+@import '../../components/Credits/credits.scss';
+@import '../../components/DatePicker/date-picker.scss';
+@import '../../components/FormControls/form-controls.scss';
+@import '../../components/FormWizard/form-wizard.scss';
 @import '../../components/FormError/form-error';
 @import '../../components/FileUploader/file-uploader';
 @import '../../components/InfoBar/info-bar';
-@import '../../components/Checkbox/checkbox';
+@import '../../components/Input/input';
+@import '../../components/Checkbox/checkbox.scss';
 /*
 @import '../../components/combo-box/combo-box';
 */
 @import '../../components/RadioButton/radio-button';
-@import '../../components/Toggle/toggle';
-@import '../../components/Search/search';
-@import '../../components/Select/select';
-@import '../../components/ReactSelect/react-select';
-@import '../../components/TextInput/text-input';
-@import '../../components/TextArea/text-area';
-@import '../../components/NumberInput/number-input';
-@import '../../components/Form/form';
-@import '../../components/FormGroup/form-group';
-@import '../../components/FormHint/form-hint';
+@import '../../components/Toggle/toggle.scss';
+@import '../../components/Search/search.scss';
+@import '../../components/Select/select.scss';
+@import '../../components/ReactDropzone/react-dropzone.scss';
+@import '../../components/ReactSelect/react-select.scss';
+@import '../../components/TextInput/text-input.scss';
+@import '../../components/TextArea/text-area.scss';
+@import '../../components/NumberInput/number-input.scss';
+@import '../../components/Form/form.scss';
+@import '../../components/FormGroup/form-group.scss';
+@import '../../components/FormHint/form-hint.scss';
 
-@import '../../components/Link/link';
+//@import '../../components/Link/link';
 /*
 /*@import '../../components/list-box/list-box';
 @import '../../components/list/list';
@@ -127,11 +129,11 @@ $deprecations--message: 'Deprecated code was found, this code will be removed be
 
 @import '../../components/ReadMore/read-more';
 @import '../../components/Story/story';
-@import '../../components/Breadcrumb/breadcrumb';
-@import '../../components/Blockquote/blockquote';
-@import '../../components/Table/table';
-@import '../../components/Slider/slider';
-@import '../../components/Unit/unit';
+@import '../../components/Breadcrumb/breadcrumb.scss';
+@import '../../components/Blockquote/blockquote.scss';
+@import '../../components/Table/table.scss';
+@import '../../components/Slider/slider.scss';
+@import '../../components/Unit/unit.scss';
 
 //-------------------------------------
 

@@ -44,6 +44,7 @@ class Blockquote extends React.Component {
   render() {
     const {
       className,
+      contentClassName,
       children,
       error,
       style,
@@ -70,10 +71,11 @@ class Blockquote extends React.Component {
       'wfp--blockquote--info': kind === 'info' || info,
       'wfp--blockquote--with-icon': withIcon || icon,
       'wfp--blockquote--open': this.state.open,
+      [`${className}`]: className,
     });
 
     const blockquoteContentClass = classNames('wfp--blockquote__content', {
-      [`${className}`]: className,
+      [`${className}`]: contentClassName,
     });
 
     // @deprecated Only kind is allowed
@@ -129,6 +131,14 @@ class Blockquote extends React.Component {
 
 Blockquote.propTypes = {
   /**
+   * Specify a className of your `Blockquote`
+   */
+  className: PropTypes.string,
+  /**
+   * Specify a className of the inner Blockquote content
+   */
+  children: PropTypes.string,
+  /**
    * Specify the content of your `Blockquote`
    */
   children: PropTypes.node,
@@ -155,7 +165,7 @@ Blockquote.propTypes = {
   /**
    * Specify the type of your Blockquote Options are `light` `code` `error` `warning` `info`
    */
-  kind: PropTypes.string,
+  kind: PropTypes.oneOf[('info', 'warning', 'error', 'success')],
   /**
    * Specify if an Icon should be displayed
    */

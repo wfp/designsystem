@@ -15,6 +15,6 @@ storiesOf('Components|FormHint', module)
   .addDecorator(withKnobs)
   .add('Default (experimental)', () => (
     <label className="wfp--label" htmlFor="input">
-      The Label <FormHint {...props()} TooltipComponent={Tippy} />
+      The Label <FormHint {...props()} />
     </label>
   ));

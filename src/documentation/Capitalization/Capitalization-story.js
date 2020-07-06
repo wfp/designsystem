@@ -7,8 +7,10 @@ import Blockquote from '../../components/Blockquote';
 import Link from '../../components/Link';
 import { List, ListItem } from '../../components/List';
 
-storiesOf('Getting started|Guidelines', module)
-  .addParameters({ options: { showPanel: false, isToolshown: false } })
+storiesOf('Design|Guidelines', module)
+  .addParameters({
+    options: { showPanel: false, isToolshown: false, sort: 'a' },
+  })
   .add('Capitalization', () => (
     <Page title="Capitalization" subTitle="Guidelines">
       {/*<p>

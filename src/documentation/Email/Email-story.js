@@ -5,7 +5,7 @@ import { storiesOf } from '@storybook/react';
 import Page from '../Page';
 import Button from '../../components/Button';
 
-storiesOf('Getting started|Guidelines', module)
+storiesOf('Design|Guidelines', module)
   .addParameters({ options: { showPanel: false, isToolshown: false } })
   .add('Email', () => {
     return (

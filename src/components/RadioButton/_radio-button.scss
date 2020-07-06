@@ -18,14 +18,30 @@
     flex-direction: column;
     flex: 1;
     align-items: flex-start;
+    width: 100%;
+  }
+
+  .#{$prefix}--radio-button-group__vertical {
+    .#{$prefix}--radio-button-group-inside {
+      flex-direction: column;
+      > * {
+        margin-bottom: $spacing-xs * 1.5;
+      }
+    }
   }
 
   .#{$prefix}--radio-button-group-inside {
     display: flex;
-    align-items: center;
     flex-wrap: wrap;
     margin-top: $spacing-xs;
     order: 2;
+    width: 100%;
+    > * {
+      margin-right: $spacing-lg;
+    }
+    .#{$prefix}--form-item {
+      flex: none;
+    }
   }
 
   .#{$prefix}--radio-button {
@@ -39,7 +55,6 @@
     display: flex;
     align-items: center;
     cursor: pointer;
-    margin-right: $spacing-md;
   }
 
   .#{$prefix}--radio-button__appearance {
