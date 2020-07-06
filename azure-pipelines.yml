@@ -30,3 +30,11 @@ steps:
     createBucket: true
     logRequest: true
     logResponse: true
+
+- task: Bash@3
+  inputs:
+    targetType: 'inline'
+    script: |
+      PACKAGE_VERSION=$(sed -nE 's/^\s*"version": "(.*?)",$/\1/p' package.json)
+      echo "Package version"
+      echo $PACKAGE_VERSION
