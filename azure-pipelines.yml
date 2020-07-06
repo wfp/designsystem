@@ -37,7 +37,7 @@ steps:
     bucketName: 'uikit.wfp.org'
     sourceFolder: './docs'
     globExpressions: '**'
-    targetFolder: $(npmversion)
+    targetFolder: '$(npmversion)'
     createBucket: true
     logRequest: true
     logResponse: true
