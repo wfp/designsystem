@@ -30,7 +30,7 @@ steps:
       echo $PACKAGE_VERSION
       NPM_VERSION=${PACKAGE_VERSION//./-}
       echo $NPM_VERSION
-      echo '##vso[task.setvariable variable=npmversion]$NPM_VERSION'
+      echo '##vso[task.setvariable variable=npmversion]thisisthe$(NPM_VERSION)value$NPM_VERSION'
 
 - task: S3Upload@1
   inputs:
