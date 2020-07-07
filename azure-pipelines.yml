@@ -52,9 +52,11 @@ steps:
       sourceFolder: './dist'
       globExpressions: '**'
       targetFolder: 'dist$(NPM_VAR)'
+      filesAcl: 'public-read'
       createBucket: true
       logRequest: true
       logResponse: true
+
 
   - task: S3Upload@1
     inputs:
@@ -64,6 +66,7 @@ steps:
       sourceFolder: './docs'
       globExpressions: '**'
       targetFolder: 'docs'
+      filesAcl: 'public-read'
       createBucket: true
       logRequest: true
       logResponse: true
