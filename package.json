@@ -236,7 +236,7 @@
     "rollup-plugin-uglify": "^6.0.4",
     "sass-loader": "^8.0.2",
     "semantic-release": "^17.0.2",
-    "standard-version": "^7.1.0",
+    "standard-version": "^8.0.1",
     "storybook-addon-rtl": "^0.2.2",
     "storybook-readme": "^5.0.8",
     "string-replace-loader": "^2.1.0",
