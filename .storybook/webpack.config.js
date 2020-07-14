@@ -102,6 +102,5 @@ module.exports = async ({ config, mode }) => {
       path.resolve(__dirname, 'Logo.js')
     )
   );*/
-
   return config;
 };

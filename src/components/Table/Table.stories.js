@@ -1,9 +1,11 @@
 import React from 'react';
-import { useTable, usePagination } from 'react-table';
-import makeData from './makeData';
+import { usePagination, useSortBy, useTable } from 'react-table';
+import makeData, { sampleColumns } from './makeData';
 
-import Table from '.';
+import Table from './Table';
+import TableSorting from './TableSorting';
 import Pagination from '../Pagination';
+import ReactDOMServer from 'react-dom/server';
 
 export default {
   title: 'Components/Table',
@@ -13,7 +15,7 @@ export default {
   },
 };
 
-function ReactTable({ columns, data }) {
+function ReactTable({ columns, data, withBorder }) {
   // Use the state and functions returned from useTable to build your UI
   const {
     getTableProps,
@@ -28,7 +30,7 @@ function ReactTable({ columns, data }) {
 
   // Render the UI for your table
   return (
-    <Table {...getTableProps()}>
+    <Table {...getTableProps()} withBorder={withBorder}>
       <thead>
         {headerGroups.map((headerGroup) => (
           <tr {...headerGroup.getHeaderGroupProps()}>
@@ -54,7 +56,7 @@ function ReactTable({ columns, data }) {
   );
 }
 
-function ReactTablePagination({ columns, data }) {
+function ReactTablePagination({ columns, data, withBorder }) {
   // Use the state and functions returned from useTable to build your UI
   const {
     getTableProps,
@@ -116,7 +118,7 @@ function ReactTablePagination({ columns, data }) {
           )}
         </code>
       </pre>
-      <Table {...getTableProps()}>
+      <Table {...getTableProps()} withBorder={withBorder}>
         <thead>
           {headerGroups.map((headerGroup) => (
             <tr {...headerGroup.getHeaderGroupProps()}>
@@ -199,92 +201,92 @@ function ReactTablePagination({ columns, data }) {
   );
 }
 
-export const TableRegular = (args) => {
-  const columns = React.useMemo(
-    () => [
-      {
-        Header: 'Name',
-        columns: [
+function ReactTableSorting({ columns, data, withBorder }) {
+  const {
+    getTableProps,
+    getTableBodyProps,
+    headerGroups,
+    rows,
+    prepareRow,
+  } = useTable(
+    {
+      columns,
+      data,
+      initialState: {
+        sortBy: [
           {
-            Header: 'First Name',
-            accessor: 'firstName',
-          },
-          {
-            Header: 'Last Name',
-            accessor: 'lastName',
-          },
-        ],
-      },
-      {
-        Header: 'Info',
-        columns: [
-          {
-            Header: 'Age',
-            accessor: 'age',
-          },
-          {
-            Header: 'Visits',
-            accessor: 'visits',
-          },
-          {
-            Header: 'Status',
-            accessor: 'status',
-          },
-          {
-            Header: 'Profile Progress',
-            accessor: 'progress',
+            id: 'age',
+            desc: false,
           },
         ],
       },
-    ],
-    []
+    },
+    useSortBy
   );
+  return (
+    <Table {...getTableProps()}>
+      <thead>
+        {headerGroups.map((headerGroup) => (
+          <tr {...headerGroup.getHeaderGroupProps()}>
+            {headerGroup.headers.map((column) => (
+              // Add the sorting props to control sorting. For this example
+              // we can add them into the header props
+              <th {...column.getHeaderProps(column.getSortByToggleProps())}>
+                {column.render('Header')}
+                {/* Add a sort direction indicator */}
+                <TableSorting {...column} />
+              </th>
+            ))}
+          </tr>
+        ))}
+      </thead>
+      <tbody {...getTableBodyProps()}>
+        {rows.map((row, i) => {
+          prepareRow(row);
+          return (
+            <tr {...row.getRowProps()}>
+              {row.cells.map((cell) => {
+                return <td {...cell.getCellProps()}>{cell.render('Cell')}</td>;
+              })}
+            </tr>
+          );
+        })}
+      </tbody>
+    </Table>
+  );
+}
+
+export const TableRegular = (args) => {
+  const columns = React.useMemo(() => sampleColumns, []);
 
   const data = React.useMemo(() => makeData(3), []);
   return <ReactTable {...args} columns={columns} data={data} />;
 };
 
+export const TableSortingHeader = (args) => {
+  const columns = React.useMemo(() => sampleColumns, []);
+
+  const data = React.useMemo(() => makeData(8), []);
+  return <ReactTableSorting {...args} columns={columns} data={data} />;
+};
+
 export const TablePagination = (args) => {
-  const columns = React.useMemo(
-    () => [
-      {
-        Header: 'Name',
-        columns: [
-          {
-            Header: 'First Name',
-            accessor: 'firstName',
-          },
-          {
-            Header: 'Last Name',
-            accessor: 'lastName',
-          },
-        ],
-      },
-      {
-        Header: 'Info',
-        columns: [
-          {
-            Header: 'Age',
-            accessor: 'age',
-          },
-          {
-            Header: 'Visits',
-            accessor: 'visits',
-          },
-          {
-            Header: 'Status',
-            accessor: 'status',
-          },
-          {
-            Header: 'Profile Progress',
-            accessor: 'progress',
-          },
-        ],
-      },
-    ],
-    []
-  );
+  const columns = React.useMemo(() => sampleColumns, []);
 
   const data = React.useMemo(() => makeData(25), []);
+
   return <ReactTablePagination {...args} columns={columns} data={data} />;
+};
+
+const hello = `
+Imagine this to be a \`much\` longer block of text that spans
+several lines.
+`;
+
+TablePagination.story = {
+  parameters: {
+    docs: {
+      storyDescription: hello,
+    },
+  },
 };

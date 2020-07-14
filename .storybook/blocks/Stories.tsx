@@ -23,6 +23,7 @@ export const Stories: FunctionComponent<StoriesProps> = ({
   if (!stories || stories.length === 0) {
     return null;
   }
+
   return (
     <>
       <Heading>{title}</Heading>

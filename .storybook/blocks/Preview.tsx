@@ -60,13 +60,10 @@ const getPreviewProps = (
     };
   }
   const name = docsContext.kind.substr(docsContext.kind.lastIndexOf('/') + 1);
-  const HtmlComponent = docsContext.parameters.component;
-  console.log(docsContext);
-  const html = docsContext.parameters.component
-    ? ReactDOMServer.renderToString(
-        <HtmlComponent {...docsContext.parameters.props} />
-      )
-    : '';
+
+  /*const output = ReactDOMServer.renderToStaticMarkup(
+      <ReactTablePagination {...args} columns={columns} data={data} />
+    ); */
   const childArray: ReactNodeArray = Array.isArray(children)
     ? children
     : [children];
@@ -89,21 +86,25 @@ const getPreviewProps = (
   );
   return {
     ...props, // pass through columns etc.
-    htmlComponent: html,
     name: name,
+    storyFn: docsContext.storyFn,
     withSource: sourceProps,
     isExpanded: withSource === SourceState.OPEN,
   };
 };
 
 export const Preview: FC<PreviewProps> = (props) => {
+  console.log(props);
   const docsContext = useContext(DocsContext);
   const sourceContext = useContext(SourceContext);
+  console.log('sourceContext', docsContext, sourceContext);
   const previewProps = getPreviewProps(props, docsContext, sourceContext);
   const { children } = props;
   return (
     <MDXProvider components={resetComponents}>
-      <PurePreview {...previewProps}>{children}</PurePreview>
+      <PurePreview {...previewProps} storyComponent={props.storyComponent}>
+        {children}
+      </PurePreview>
     </MDXProvider>
   );
 };

@@ -31,6 +31,7 @@
       background: $ui-03;
       border-bottom: 2px solid #dfe3e6;
       font-weight: 600;
+      font-size: 0.85em;
     }
 
     tbody {
@@ -41,6 +42,10 @@
         }
       }
     }
+  }
+
+  .tableWithBorder {
+    border: 1px solid $ui-04;
   }
 
   /* Cell Classes in work */
@@ -56,6 +61,22 @@
     line-height: 1.5rem;
   }
 
+  .sorting {
+    margin-left: $spacing-2xs;
+    vertical-align: text-top;
+    display: inline-block;
+    svg {
+      //width: auto;
+      //height: 0.8rem;
+      path {
+        fill: $interactive-01;
+      }
+    }
+  }
+
+  .isSortable {
+    min-width: 25px;
+  }
   /*
   @include breakpointMax(bp--sm--major) {
     .ReactTable--responsive {

@@ -11,11 +11,15 @@ import { logger } from '@storybook/client-logger';
 
 import { getBlockBackgroundStyle } from '@storybook/components/dist/blocks/BlockBackgroundStyles';
 import { Source, SourceProps } from './Source';
+import Hello from '../Hello';
 import {
   ActionBar,
   ActionItem,
 } from '@storybook/components/dist/ActionBar/ActionBar';
 import { Toolbar } from '@storybook/components/dist/blocks/Toolbar';
+
+import ReactDOMServer from 'react-dom/server';
+import pretty from 'pretty';
 
 export interface PreviewProps {
   isColumn?: boolean;
@@ -86,7 +90,8 @@ const getSource = (
   expanded: boolean,
   setExpanded: Function,
   htmlComponent: string,
-  name: string
+  name: string,
+  storyFn: any
 ): SourceItem => {
   switch (true) {
     case !!(withSource && withSource.error): {
@@ -105,8 +110,12 @@ const getSource = (
       };
     }
     case expanded === 'html': {
+      const html = ReactDOMServer.renderToStaticMarkup(storyFn).replace(
+        /role="[^"]*"/g,
+        ''
+      );
       const htmlSource = {
-        code: htmlComponent.replace(` data-reactroot=""`, ''),
+        code: pretty(html),
         dark: false,
         language: 'jsx',
       };
@@ -196,19 +205,23 @@ const Preview: FunctionComponent<PreviewProps> = ({
   children,
   withSource,
   htmlComponent,
+  storyFn,
   name,
   withToolbar = false,
   isExpanded = false,
   className,
+  storyComponent,
   ...props
 }) => {
+  console.log('props', props);
   const [expanded, setExpanded] = useState(isExpanded);
   const { source, actionItem, actionItemHtml } = getSource(
     withSource,
     expanded,
     setExpanded,
     htmlComponent,
-    name
+    name,
+    storyComponent()
   );
   const [scale, setScale] = useState(1);
   const previewClasses = className

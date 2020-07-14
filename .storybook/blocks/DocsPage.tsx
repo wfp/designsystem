@@ -8,7 +8,9 @@ import { Primary } from './Primary';
 import { Description } from './Description';
 /*
 import { Props } from './Props';
+*/
 import { Stories } from './Stories';
+/*
 import { PRIMARY_STORY } from './types';*/
 
 import { PRIMARY_STORY } from './types';
@@ -20,7 +22,7 @@ import {
   //Description,
   //Primary,
   Props,
-  Stories,
+  //Stories,
   //types,
   //DocsContainer,
 } from '@storybook/addon-docs/blocks';

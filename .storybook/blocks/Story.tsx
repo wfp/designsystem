@@ -47,9 +47,12 @@ export const getStoryProps = (
   const { name } = props as StoryDefProps;
   const inputId = id === CURRENT_SELECTION ? context.id : id;
   const previewId = inputId || lookupStoryId(name, context);
-  const data = context.storyStore.fromId(previewId) || {};
-
+  console.log('previewId', previewId, context);
+  const data = context.storyStore
+    ? context.storyStore.fromId(previewId) || {}
+    : {};
   const { height, inline } = props;
+
   const {
     storyFn = undefined,
     name: storyName = undefined,
@@ -87,6 +90,7 @@ const Story: FunctionComponent<StoryProps> = (props) => (
   <DocsContext.Consumer>
     {(context) => {
       const storyProps = getStoryProps(props, context);
+      console.log('contextc', props, context);
       if (!storyProps) {
         return null;
       }

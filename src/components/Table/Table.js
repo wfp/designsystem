@@ -3,9 +3,21 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import styles from './table.module.scss';
 
-export default function Table(props) {
-  const { className, children, ...other } = props;
-  const classes = classNames(styles.table, className);
+export default function Table({
+  className,
+  children,
+  responsive,
+  withBorder,
+  ...other
+}) {
+  const classes = classNames(
+    styles.table,
+    {
+      [`${styles.responsive}`]: responsive,
+      [`${styles.tableWithBorder}`]: withBorder,
+    },
+    className
+  );
   return (
     <table {...other} className={classes}>
       {children}
@@ -20,7 +32,17 @@ Table.propTypes = {
   children: PropTypes.node,
 
   /**
-   * Provide a custom className to be applied to the containing <table /> node
+   * Provide a custom className to be applied to the containing `<table />` node
    */
   className: PropTypes.string,
+
+  /**
+   * Displays the `<table />` as a responsive layout on small devices
+   */
+  responsive: PropTypes.bool,
+
+  /**
+   * Displays a border around the `<table />` node
+   */
+  withBorder: PropTypes.bool,
 };
