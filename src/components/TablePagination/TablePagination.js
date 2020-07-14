@@ -30,14 +30,14 @@ const ReactTablePagination = ({
   itemText,
   pageNumberText,
 }) => {
-  const getSafePage = newPage => {
+  const getSafePage = (newPage) => {
     if (isNaN(newPage)) {
       newPage = page;
     }
     return newPage;
   };
 
-  const changePage = page => {
+  const changePage = (page) => {
     const nextPage = getSafePage(page.page - 1);
 
     // Update Page
@@ -77,7 +77,7 @@ const ReactTablePagination = ({
         <Pagination
           onChange={changePage}
           pageSizes={pageSizeOptions}
-          page={page + 1}
+          page={page}
           totalItems={totalItems ? totalItems : data ? data.length : undefined}
           {...propList}
         />

@@ -25,13 +25,28 @@ import {
   //DocsContainer,
 } from '@storybook/addon-docs/blocks';
 
-export const DocsPage: FC = () => (
-  <>
-    <Subtitle />
-    <Title />
-    <Description />
-    <Primary />
-    <Props story={PRIMARY_STORY} />
-    <Stories />
-  </>
-);
+export const DocsPage: FC = (props) => {
+  const reqReadme = require.context('../../src', true, /\.md$/);
+  const contextName = 'Link';
+  const resultReadme = reqReadme
+    .keys()
+    .find(
+      (fruit) =>
+        fruit.search(new RegExp(contextName.replace(/\s/g, ''), 'i')) !== -1
+    );
+  console.log('reqReadme', props, resultReadme);
+
+  console.log('props', props);
+  console.log('hello');
+
+  return (
+    <>
+      <Subtitle />
+      <Title />
+      <Description />
+      <Primary />
+      <Props story={PRIMARY_STORY} />
+      <Stories />
+    </>
+  );
+};

@@ -28,8 +28,12 @@ import { PRIMARY_STORY } from './types';*/
 //import '../src/globals/scss/styles.scss';
 import './storybook.scss';
 
+/*
+const githubPath = resultReadme
+  ? resultReadme.replace('./src/', './').replace('README.md', '')
+  : undefined;*/
+
 export const DocsPaged = (props) => {
-  console.log('props', props);
   return (
     <>
       <Title />

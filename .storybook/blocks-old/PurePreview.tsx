@@ -141,9 +141,9 @@ ${withSource.code}`,
     default: {
       return {
         source: null,
-        actionItem: { title: 'Show code', onClick: () => setExpanded(true) },
+        actionItem: { title: 'code', onClick: () => setExpanded(true) },
         actionItemHtml: {
-          title: 'Show html',
+          title: 'html',
           onClick: () => setExpanded('html'),
         },
       };
