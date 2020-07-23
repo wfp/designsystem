@@ -51,7 +51,7 @@ steps:
       bucketName: 'uikit.wfp.org'
       sourceFolder: './dist'
       globExpressions: '**'
-      targetFolder: 'dist$(NPM_VAR)'
+      targetFolder: 'cdn/$(NPM_VAR)'
       filesAcl: 'public-read'
       createBucket: true
       logRequest: true
@@ -65,7 +65,7 @@ steps:
       bucketName: 'uikit.wfp.org'
       sourceFolder: './docs'
       globExpressions: '**'
-      targetFolder: 'docs'
+      targetFolder: 'next-docs'
       filesAcl: 'public-read'
       createBucket: true
       logRequest: true
