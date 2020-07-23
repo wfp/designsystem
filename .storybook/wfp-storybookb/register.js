@@ -12,7 +12,7 @@ class Notes extends React.Component {
     text: '',
   };
 
-  onAddNotes = text => {
+  onAddNotes = (text) => {
     //this.setState({ text });
   };
 
@@ -87,7 +87,7 @@ class Notes extends React.Component {
 }
 
 // Register the addon with a unique name.
-addons.register('MYADDON', api => {
+addons.register('MYADDON', (api) => {
   // Also need to set a unique name to the panel.
   addons.addPanel('MYADDON/panel', {
     title: 'Feedback',

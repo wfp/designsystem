@@ -16,30 +16,33 @@ BannerNavigationItem.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-const BannerNavigation = ({ children, className, id, pageWidth }) => {
+const BannerNavigation = ({ children, className, ...props }) => {
   const wrapperClasses = classNames('wfp--banner-navigation', className);
 
   return (
-    <div id={id} className={wrapperClasses}>
-      <Wrapper pageWidth={pageWidth}>
-        <ul className="wfp--banner-navigation__list">{children}</ul>
-      </Wrapper>
-    </div>
+    <Wrapper {...props} className={wrapperClasses}>
+      <ul className="wfp--banner-navigation__list">{children}</ul>
+    </Wrapper>
   );
 };
 
 BannerNavigation.propTypes = {
+  /**
+   * The content usually consisting out of `BannerNavigationItem`
+   */
   children: PropTypes.node.isRequired,
   /**
    * The CSS class name to be placed on the wrapping element.
    */
   className: PropTypes.string,
-  id: PropTypes.string,
-  wrapperClassName: PropTypes.string,
+  /**
+   * The width of the `Wrapper` component
+   */
+  pageWidth: PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'full']),
 };
 
 BannerNavigation.defaultProps = {
-  pageWidth: 'narrower',
+  pageWidth: 'md',
 };
 
 export { BannerNavigationItem, BannerNavigation };

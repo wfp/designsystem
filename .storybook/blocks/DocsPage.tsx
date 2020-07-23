@@ -39,7 +39,6 @@ export const DocsPage: FC = (props) => {
   console.log('reqReadme', props, resultReadme);
 
   console.log('props', props);
-  console.log('hello');
 
   return (
     <>

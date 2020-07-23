@@ -1,0 +1,18 @@
+{
+  "presets": [
+    "@babel/preset-env",
+    "@babel/preset-react",
+    "@babel/preset-typescript"
+  ],
+  "plugins": [
+    "@babel/plugin-proposal-class-properties",
+    "@babel/plugin-proposal-export-default-from",
+    [
+      "babel-plugin-react-docgen",
+      {
+        "DOC_GEN_COLLECTION_NAME": "STORYBOOK_REACT_CLASSES",
+        "handlers": ["react-docgen-external-proptypes-handler"]
+      }
+    ]
+  ]
+}

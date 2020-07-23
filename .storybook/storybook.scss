@@ -12,6 +12,12 @@
   .sbdocs-p {
     font-size: 1rem;
   }
+  .sbdocs-a {
+    @extend .wfp--link;
+    color: $interactive-01;
+    font-size: 1rem;
+    line-height: inherit;
+  }
   .sbdocs-li {
     font-size: 1rem;
   }

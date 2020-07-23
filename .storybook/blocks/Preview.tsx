@@ -88,6 +88,7 @@ const getPreviewProps = (
     ...props, // pass through columns etc.
     name: name,
     storyFn: docsContext.storyFn,
+    subcomponents: docsContext.parameters.subcomponents,
     withSource: sourceProps,
     isExpanded: withSource === SourceState.OPEN,
   };

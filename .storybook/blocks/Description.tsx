@@ -10,6 +10,8 @@ import {
 import { Component, CURRENT_SELECTION } from './types';
 import { str } from '@storybook/addon-docs/dist/lib/docgen';
 
+import markdownd from './markdown.stories.mdx';
+
 export enum DescriptionType {
   INFO = 'info',
   NOTES = 'notes',
@@ -77,7 +79,16 @@ const DescriptionContainer: FunctionComponent<DescriptionProps> = (props) => {
   //const readme = require('!!raw-loader!../../src/components/Link/README.md');
   //console.log('contextavv', readme.default);
   const { markdown } = getDescriptionProps(props, context);
-  return markdown ? <Description markdown={markdown} /> : null;
+
+  console.log('markdown', context.parameters.mdx);
+  const Docs = context.parameters.mdx;
+  //    <Docs />
+  return markdown || context.parameters.mdx ? (
+    <>
+      <Docs />
+      <Description markdown={markdown} />
+    </>
+  ) : null;
 };
 
 // since we are in the docs blocks, assume default description if for primary component story

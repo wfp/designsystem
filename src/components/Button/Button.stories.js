@@ -1,93 +1,140 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { withKnobs, boolean, select } from '@storybook/addon-knobs';
+
+import { withKnobs, text } from '@storybook/addon-knobs';
+import { buttonKinds } from '../../prop-types/types';
+
 import { iconAddGlyph, iconSearch } from '@wfp/icons';
-import Button from '../Button';
-import ButtonSkeleton from '../Button/Button.Skeleton';
 
-const icons = {
-  None: 'None',
-  'Add with filled circle (iconAddGlyph from `@wfp/ui`)': 'iconAddGlyph',
-  'Search (iconSearch from `@wfp/ui`)': 'iconSearch',
+import markdown from './README.mdx';
+
+import Button from '.';
+
+export default {
+  title: 'Components/Button',
+  component: Button,
+  parameters: {
+    componentSubtitle: 'Component',
+    mdx: markdown,
+  },
+  /*argTypes: {
+    children: { control: 'text' },
+  },*/
 };
 
-const iconMap = {
-  iconAddGlyph,
-  iconSearch,
+const props = () => ({
+  className: 'some-class',
+  href: text('The link href (href)', '#'),
+  onClick: ((handler) => (evt) => {
+    evt.preventDefault(); // Prevent link from being followed for demo purpose
+    handler(evt);
+  })(action('onClick')),
+});
+
+export const ButtonRegular = (args) => <Button {...args} />;
+ButtonRegular.args = {
+  children: 'Button',
+  href: '#',
 };
 
-const kinds = {
-  'Primary button (primary)': 'primary',
-  'Secondary button (secondary)': 'secondary',
-  'Tertiary button (tertiary)': 'tertiary',
-  'Accent button (accent)': 'accent',
-  'Danger button (danger)': 'danger',
-  'Danger primary button (danger--primary)': 'danger--primary',
-  'Ghost button (ghost)': 'ghost',
-  'Inverse button (inverse)': 'inverse',
-  'Main navigation button (navigation)': 'navigation',
-};
-
-const props = {
-  regular: () => ({
-    className: 'some-class',
-    kind: select('Button kind (kind)', kinds, 'primary'),
-    disabled: boolean('Disabled (disabled)', false),
-    small: boolean('Small (small)', false),
-    icon: iconMap[select('Icon (icon)', icons, 'none')],
-    iconReverse: boolean('Icon in front (iconReverse)', false),
-    onClick: action('onClick'),
-    onFocus: action('onFocus'),
-  }),
-  set: () => ({
-    className: 'some-class',
-    disabled: boolean('Disabled (disabled)', false),
-    small: boolean('Small (small)', false),
-    icon: iconMap[select('Icon (icon)', icons, 'none')],
-    onClick: action('onClick'),
-    onFocus: action('onFocus'),
-  }),
-};
-
-storiesOf('Components/Button', module)
-  .addParameters({ jest: ['Button-test'] })
-  .addDecorator(withKnobs)
-  .add('Default', () => {
-    const regularProps = props.regular();
-    return (
-      <div style={{ display: 'flex', alignItems: 'center' }}>
-        <Button {...regularProps} className="some-class">
-          Button
-        </Button>
-        &nbsp;
-        <Button {...regularProps} href="#" className="some-class">
-          Link
-        </Button>
-        &nbsp;
-      </div>
-    );
-  })
-  .add('Sets of Buttons', () => {
-    const setProps = props.set();
-    return (
-      <div>
-        <Button kind="secondary" {...setProps}>
-          Secondary button
-        </Button>
-        &nbsp;
-        <Button kind="primary" {...setProps}>
-          Primary button
+export const ButtonKind = (args) => (
+  <>
+    {buttonKinds.map((e) => (
+      <div
+        style={{
+          display: 'inline-block',
+          background: e === 'inverse' ? '#ccc' : '',
+          padding: '0.3rem',
+        }}>
+        <Button {...args} kind={e}>
+          {e}
         </Button>
       </div>
-    );
-  })
-  .add('skeleton', () => (
-    <div>
-      <ButtonSkeleton />
-      &nbsp;
-      <ButtonSkeleton href="#" />
-      &nbsp;
-      <ButtonSkeleton small />
-    </div>
-  ));
+    ))}
+  </>
+);
+ButtonKind.args = {
+  children: 'Button',
+  href: '#',
+};
+
+const hello = `
+By changing the \`kind\` prop you can use different styles of the button.
+
+\`primary\` buttons should be used for the principle call to action
+on the page.
+
+\`secondary\` buttons should be used for secondary actions on each page.
+
+\`tertiary\` buttons should be used for simple actions on the page.
+
+\`accent\` buttons should be used for very important actions and only once or twice on each page
+
+\`danger\` buttons should be used for a negative action (such as Delete) on the page.
+
+\`danger--primary\` buttons should be used for a negative principle call to action (such as Delete) on the page.
+
+\`ghost\` buttons should be used in places where a regular button would draw too much attention and look similar to links.
+
+\`inverse\` buttons should be used on dark backgrounds.
+
+\`navigation\` buttons should be only used in the main navigation.
+
+`;
+
+ButtonKind.story = {
+  parameters: {
+    docs: {
+      storyDescription: hello,
+    },
+  },
+};
+
+export const ButtonIcon = (args) => (
+  <>
+    <Button {...args} icon={iconAddGlyph}>
+      Button with icon
+    </Button>
+    {''} <Button {...args} icon={iconAddGlyph} kind="tertiary"></Button>{' '}
+    <Button {...args} icon={iconAddGlyph} iconReverse kind="tertiary">
+      With iconReverse
+    </Button>
+  </>
+);
+
+const helloButtonIcon = `
+When words are not enough, icons can be used in buttons to better communicate what the button does. Icons should be
+always paired with text whenever possible.
+`;
+
+ButtonIcon.story = {
+  parameters: {
+    docs: {
+      storyDescription: helloButtonIcon,
+    },
+  },
+};
+
+export const Small = (args) => (
+  <>
+    <Button small>Small button</Button>{' '}
+    <Button {...args} icon={iconAddGlyph} kind="tertiary" small>
+      With icon
+    </Button>{' '}
+  </>
+);
+
+const helloButtonSmall = `
+Small buttons may be used when there is not enough space for a
+regular sized button. This issue is most found in tables. Small button should have three words
+or less.
+`;
+
+Small.story = {
+  parameters: {
+    docs: {
+      storyDescription: helloButtonSmall,
+    },
+  },
+};

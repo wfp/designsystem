@@ -124,12 +124,19 @@ Button.propTypes = {
   /**
    * Specify the kind of Button you want to create
    */
-  kind: ButtonTypes.buttonKind.isRequired,
+  kind: PropTypes.oneOf([
+    'primary',
+    'secondary',
+    'accent',
+    'danger',
+    'ghost',
+    'inverse',
+    'danger--primary',
+    'tertiary',
+    'navigation',
+  ]),
 
-  /**
-   * Optionally specify an href for your Button to become an <a> element
-   */
-  iconReverse: PropTypes.bool,
+  //ButtonTypes.buttonKind.isRequired,
 
   /**
    * Optionally specify an href for your Button to become an <a> element
@@ -172,6 +179,11 @@ Button.propTypes = {
     }
     return undefined;
   },
+
+  /**
+   * Optionally specify an href for your Button to become an <a> element
+   */
+  iconReverse: PropTypes.bool,
 };
 
 Button.defaultProps = {

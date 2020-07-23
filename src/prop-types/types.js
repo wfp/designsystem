@@ -11,16 +11,18 @@ export const ButtonTypes = {
     'inverse',
     'danger--primary',
     'tertiary',
+    'navigation',
   ]),
 };
 
-export const ButtonKinds = [
+export const buttonKinds = [
   'primary',
   'secondary',
+  'tertiary',
   'accent',
+  'danger--primary',
   'danger',
   'ghost',
   'inverse',
-  'danger--primary',
-  'tertiary',
+  'navigation',
 ];

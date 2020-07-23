@@ -6,10 +6,8 @@ The BannerNavigation is used on internal applications which are actually listed 
 
 ```js
 import { BannerNavigationWithContent } from '@wfp/ui';
-```
 
-```js
-<BannerNavigationWithContent pageWidth="narrow" />
+<BannerNavigationWithContent pageWidth="narrow" />;
 ```
 
 ### Usage with custom content
@@ -18,9 +16,7 @@ import { BannerNavigationWithContent } from '@wfp/ui';
 
 ```js
 import { BannerNavigation } from '@wfp/ui';
-```
 
-```js
 <BannerNavigation>
   <BannerNavigationItem>
     <Link href="http://communities.wfp.org" target="_blank">
@@ -36,12 +32,5 @@ import { BannerNavigation } from '@wfp/ui';
       onChange={action('onChange')}
     />
   </BannerNavigationItem>
-</BannerNavigation>
+</BannerNavigation>;
 ```
-
-| Setting   | Default     | Options              | Role                                                               |
-| --------- | ----------- | -------------------- | ------------------------------------------------------------------ |
-| children  | `undefined` | `string`             | List of `BannerNavigationItem` components                          |
-| className | `undefined` | `string` `undefined` | Additional className which will be added to the `BannerNavigation` |
-| id        | `false`     | `boolean`            | Sets an `id`                                                       |
-| pageWidth | `undefined` | `string`             | See `Wrapper` component for possible arguments                     |

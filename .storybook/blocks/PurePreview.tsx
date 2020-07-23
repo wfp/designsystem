@@ -11,7 +11,6 @@ import { logger } from '@storybook/client-logger';
 
 import { getBlockBackgroundStyle } from '@storybook/components/dist/blocks/BlockBackgroundStyles';
 import { Source, SourceProps } from './Source';
-import Hello from '../Hello';
 import {
   ActionBar,
   ActionItem,
@@ -91,7 +90,8 @@ const getSource = (
   setExpanded: Function,
   htmlComponent: string,
   name: string,
-  storyFn: any
+  storyFn: any,
+  subcomponents: any
 ): SourceItem => {
   switch (true) {
     case !!(withSource && withSource.error): {
@@ -131,8 +131,14 @@ const getSource = (
 
     case expanded: {
       console.log('withSource', withSource);
+      let a = '';
+
+      if (subcomponents)
+        Object.keys(subcomponents).forEach((element) => {
+          a = `${a}, ${element}`;
+        });
       const reactSource = {
-        code: `import {  ${name}  } from "@wfp/ui";
+        code: `import {  ${name} ${a}  } from "@wfp/ui";
         
 ${withSource.code}`,
         dark: false,
@@ -211,9 +217,10 @@ const Preview: FunctionComponent<PreviewProps> = ({
   isExpanded = false,
   className,
   storyComponent,
+  subcomponents,
   ...props
 }) => {
-  console.log('props', props);
+  console.log('propssss', subcomponents);
   const [expanded, setExpanded] = useState(isExpanded);
   const { source, actionItem, actionItemHtml } = getSource(
     withSource,
@@ -221,7 +228,8 @@ const Preview: FunctionComponent<PreviewProps> = ({
     setExpanded,
     htmlComponent,
     name,
-    storyComponent()
+    storyComponent(),
+    subcomponents
   );
   const [scale, setScale] = useState(1);
   const previewClasses = className

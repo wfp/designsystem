@@ -41,7 +41,7 @@
   }
 
   a.#{$prefix}--btn--icon-reverse {
-    display: flex;
+    display: inline-flex;
     flex-direction: row-reverse;
 
     .#{$prefix}--btn__icon {

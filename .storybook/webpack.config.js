@@ -95,12 +95,5 @@ module.exports = async ({ config, mode }) => {
     include: path.resolve(__dirname, '../'),
   });
 
-  // Return the altered config
-  /*config.plugins.push(
-    new webpack.NormalModuleReplacementPlugin(
-      /StorybookLogo/,
-      path.resolve(__dirname, 'Logo.js')
-    )
-  );*/
   return config;
 };

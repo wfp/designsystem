@@ -21,14 +21,7 @@ const Card = ({
   };
 
   const wrapperClasses = classNames('wfp--photo-card', {
-    'wfp--photo-card--landscape': kind === 'landscape',
-    'wfp--photo-card--landscape-light': kind === 'landscape-light',
-    'wfp--photo-card--split': kind === 'split',
-    'wfp--photo-card--hero': kind === 'hero',
-    'wfp--photo-card--splash': kind === 'splash',
-    'wfp--photo-card--splash-image': kind === 'splash-image',
-    'wfp--photo-card--splash-compact': kind === 'splash-compact',
-    'wfp--photo-card--related': kind === 'related',
+    [`wfp--photo-card--${kind}`]: kind,
     'wfp--photo-card--no-background': !image,
     'wfp--photo-card--link': isLink,
     [`${className}`]: className,
@@ -92,6 +85,10 @@ Card.propTypes = {
  */
   className: PropTypes.string,
   /**
+   The links target
+*/
+  href: PropTypes.string,
+  /**
    An optimized photograph
  */
   image: PropTypes.string,
@@ -122,7 +119,17 @@ Card.propTypes = {
   /**
   Kind of Card
 */
-  kind: PropTypes.string,
+  kind: PropTypes.oneOf([
+    'landscape',
+    'landscape-light',
+    'split',
+    'hero',
+    'splash',
+    'splash-image',
+    'splash-compact',
+    'related',
+    'teaser',
+  ]).isRequired,
   /**
   The URL where the content uploaded is located.
 */
