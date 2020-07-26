@@ -10,9 +10,10 @@ import {
   Props,
   Stories,
   types,
-  DocsContainer,
+  //DocsContainer,
 } from '@storybook/addon-docs/blocks';
 import { DocsPage } from './blocks/DocsPage';
+import { DocsContainer } from './blocks/DocsContainer';
 import { Subtitle } from './blocks/Subtitle';
 
 import React, { FC } from 'react';

@@ -28,12 +28,12 @@ const Input = ({
 }) => {
   const inputProps = {
     id,
-    onChange: evt => {
+    onChange: (evt) => {
       if (!other.disabled && !other.readOnly) {
         onChange(evt);
       }
     },
-    onClick: evt => {
+    onClick: (evt) => {
       if (!other.disabled && !other.readOnly) {
         onClick(evt);
       }
@@ -66,7 +66,7 @@ const Input = ({
 
   const error = invalid ? (
     <div className="wfp--form-requirement" id={errorId}>
-      {invalidText}
+      {invalid.message ? invalid.message : invalidText}
     </div>
   ) : null;
 

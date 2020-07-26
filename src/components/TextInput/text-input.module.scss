@@ -12,11 +12,10 @@
 @import '../Form/form';
 
 @include exports('text-input') {
-  .#{$prefix}--text-input {
-    @include reset;
-    @include input-base;
-    @include font-family;
+  .text input {
     @include typescale('zeta');
-    width: 100%;
+    @include font-family;
+    @include input-base;
+    @include input-error;
   }
 }

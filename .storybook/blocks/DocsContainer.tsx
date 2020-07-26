@@ -16,6 +16,9 @@ import { SourceContainer } from './SourceContainer';
 import { CodeOrSourceMdx, AnchorMdx, HeadersMdx } from './mdx';
 import { scrollToElement } from './utils';
 
+import { Subtitle } from './Subtitle';
+import { Title } from './Title';
+
 export interface DocsContainerProps {
   context: DocsContextProps;
 }
@@ -89,6 +92,8 @@ export const DocsContainer: FunctionComponent<DocsContainerProps> = ({
           <MDXProvider components={allComponents}>
             <DocsWrapper className="sbdocs sbdocs-wrapper">
               <DocsContent className="sbdocs sbdocs-content">
+                <Subtitle />
+                <Title />
                 {children}
               </DocsContent>
             </DocsWrapper>

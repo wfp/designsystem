@@ -1,18 +1,18 @@
 import React from 'react';
 import markdown from './README.mdx';
 import { action } from '@storybook/addon-actions';
-import NumberInput from '.';
+import Tag from '.';
 
 export default {
-  title: 'Components/NumberInput',
-  component: NumberInput,
+  title: 'Components/Tag',
+  component: Tag,
   parameters: {
     componentSubtitle: 'Component',
     mdx: markdown,
   },
 };
 
-export const Regular = (args) => <NumberInput {...args} />;
+export const Regular = (args) => <Tag {...args}>Text</Tag>;
 
 const description = `
 You can customize the content by using \`BannerNavigation\`.

@@ -67,6 +67,14 @@
   }
 }
 
+@mixin input-error {
+  &:invalid,
+  &.#{$prefix}--input--invalid {
+    border-color: $support-01;
+    outline: 1px solid $support-01;
+  }
+}
+
 @mixin box-shadow($size: 'small') {
   // Large - For dropdowns
   @if ($size == 'large') {

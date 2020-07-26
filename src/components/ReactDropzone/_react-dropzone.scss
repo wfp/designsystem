@@ -9,7 +9,7 @@ $css--helpers: true;
 @import '../../globals/scss/css--helpers';
 @import '../../globals/scss/import-once';
 @import '../Select/select';
-@import '../TextInput/text-input';
+//@import '../TextInput/text-input';
 
 @include exports('react-dropzone') {
   .#{$prefix}--dropzone {

@@ -68,14 +68,14 @@
     //box-shadow: 0 2px 0px 0px $support-01;
 
     ~ .#{$prefix}--form-requirement {
-      max-height: rem(200px);
+      //max-height: rem(200px);
       display: block;
     }
   }
 
   .#{$prefix}--form-item--invalid {
     .#{$prefix}--form-requirement {
-      max-height: rem(200px);
+      //max-height: rem(200px);
       display: block;
     }
   }
@@ -90,7 +90,7 @@
     @include typescale('omega');
     margin: $spacing-2xs 0 0;
     max-height: 0;
-    overflow: hidden;
+    //overflow: hidden;
     font-weight: 600;
     line-height: 1.5;
     display: none;

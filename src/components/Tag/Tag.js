@@ -38,5 +38,9 @@ Tag.propTypes = {
   type: PropTypes.oneOf(Object.keys(TYPES)).isRequired,
 };
 
+Tag.defaultProps = {
+  type: 'wfp',
+};
+
 export const types = Object.keys(TYPES);
 export default Tag;

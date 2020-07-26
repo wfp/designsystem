@@ -3,101 +3,60 @@ import React from 'react';
 import classNames from 'classnames';
 import settings from '../../globals/js/settings';
 import FormItem from '../FormItem';
+import Input from '../Input/Input';
+import styles from './text-input.module.scss';
 
 const { prefix } = settings;
 
-const TextInput = ({
-  additional,
-  labelText,
-  className,
-  id,
-  formItemClassName,
-  placeholder,
-  type,
-  onChange,
-  onClick,
-  hideLabel,
-  invalid,
-  invalidText,
-  helperText,
-  inputRef,
-  light,
-  ...other
-}) => {
-  const textInputProps = {
+const TextInput = (props) => {
+  const {
+    additional,
+    disabled,
+    labelText,
+    className,
     id,
-    onChange: evt => {
-      if (!other.disabled && !other.readOnly) {
-        onChange(evt);
-      }
-    },
-    onClick: evt => {
-      if (!other.disabled && !other.readOnly) {
-        onClick(evt);
-      }
-    },
+    formItemClassName,
     placeholder,
     type,
+    onChange,
+    onClick,
+    hideLabel,
+    invalid,
+    invalidText,
+    helperText,
+    inputRef,
+    light,
+    pattern,
+    ...other
+  } = props;
+
+  const textInputClasses = classNames(`${prefix}--text`, className, {
+    [`${prefix}--text--light`]: light,
+    [`${prefix}--text--helpertext`]: helperText,
+    [`${prefix}--text--nolabel`]: hideLabel,
+    [styles.text]: true,
+  });
+
+  const newProps = {
+    disabled,
+    id,
   };
 
-  const errorId = id + '-error-msg';
-  const textInputClasses = classNames(`${prefix}--text-input`, className, {
-    [`${prefix}--text-input--light`]: light,
-    [`${prefix}--text-input--invalid`]: invalid,
-  });
-
-  const labelClasses = classNames(`${prefix}--label`, {
-    [`${prefix}--visually-hidden`]: hideLabel,
-    [`${prefix}--label--disabled`]: other.disabled,
-  });
-
-  const helperTextClasses = classNames(`${prefix}--form__helper-text`, {
-    [`${prefix}--form__helper-text--disabled`]: other.disabled,
-  });
-
-  const label = labelText ? (
-    <label htmlFor={id} className={labelClasses}>
-      {labelText}
-    </label>
-  ) : null;
-
-  const error = invalid ? (
-    <div className="wfp--form-requirement" id={errorId}>
-      {invalidText}
-    </div>
-  ) : null;
-
-  const input = invalid ? (
-    <input
-      {...other}
-      {...textInputProps}
-      ref={inputRef}
-      data-invalid
-      aria-invalid
-      aria-describedby={errorId}
-      className={textInputClasses}
-    />
-  ) : (
-    <input
-      {...other}
-      {...textInputProps}
-      className={textInputClasses}
-      ref={inputRef}
-    />
-  );
-
-  const helper = helperText ? (
-    <div className={helperTextClasses}>{helperText}</div>
-  ) : null;
-
   return (
-    <FormItem className={formItemClassName}>
-      {label}
-      {helper}
-      {additional}
-      {input}
-      {error}
-    </FormItem>
+    <Input {...props} formItemClassName={textInputClasses}>
+      {(e) => {
+        return (
+          <input
+            pattern={pattern}
+            {...other}
+            {...newProps}
+            ref={inputRef}
+            className={textInputClasses}
+            {...e}
+          />
+        );
+      }}
+    </Input>
   );
 };
 
@@ -125,13 +84,18 @@ TextInput.propTypes = {
   /**
    * Specify a custom `id` for the &lt;input&gt;
    */
-  id: PropTypes.string.isRequired,
+  id: PropTypes.string,
 
   /**
    * Provide the text that will be read by a screen reader when visiting this
    * control
    */
-  labelText: PropTypes.node.isRequired,
+  labelText: PropTypes.node,
+
+  /**
+   * Specify a custom `name` for the &lt;input&gt;
+   */
+  name: PropTypes.string.isRequired,
 
   /**
    * Optionally provide an `onChange` handler that is called whenever &lt;input&gt;

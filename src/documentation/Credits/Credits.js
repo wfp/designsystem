@@ -1,18 +1,11 @@
-/* eslint-disable no-console */
-
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import Link from '../../components/Link';
 import Page from '../Page';
 
-storiesOf('Getting started|Getting started', module)
-  .addParameters({
-    options: { showPanel: false, isToolshown: false, sort: 'zzzzzz' },
-  })
-  .add('Credits', () => (
-    <Page
-      title="Credits & License"
-      subTitle="Introduction to the new WFP UI Kit">
+export default function Credits() {
+  return (
+    <div>
       <p>
         <Link href="http://brand.manuals.wfp.org/" target="_blank">
           The World Food Programme’s (WFP) Branding Guidance
@@ -72,5 +65,6 @@ storiesOf('Getting started|Getting started', module)
           View package on npm
         </Link>
       </p>
-    </Page>
-  ));
+    </div>
+  );
+}

@@ -42,8 +42,8 @@ export const DocsPage: FC = (props) => {
 
   return (
     <>
-      <Subtitle />
-      <Title />
+      {/*<Subtitle />
+      <Title />*/}
       <Description />
       <Primary />
       <Props story={PRIMARY_STORY} />

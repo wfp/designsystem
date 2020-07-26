@@ -84,6 +84,7 @@ on the page.
 `;
 
 ButtonKind.story = {
+  name: 'kind parameter',
   parameters: {
     docs: {
       storyDescription: hello,
@@ -109,6 +110,7 @@ always paired with text whenever possible.
 `;
 
 ButtonIcon.story = {
+  name: 'with icon',
   parameters: {
     docs: {
       storyDescription: helloButtonIcon,
@@ -132,6 +134,7 @@ or less.
 `;
 
 Small.story = {
+  name: 'small Button',
   parameters: {
     docs: {
       storyDescription: helloButtonSmall,

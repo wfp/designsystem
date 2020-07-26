@@ -9,6 +9,7 @@ const Toggle = ({
   onChange,
   onToggle,
   id,
+  name,
   labelA,
   labelB,
   ...other
@@ -27,24 +28,27 @@ const Toggle = ({
     checkedProps.defaultChecked = defaultToggled;
   }
 
+  const htmlFor = id ? id : name;
+
   return (
     <div className={wrapperClasses}>
       <input
         {...other}
         {...checkedProps}
         type="checkbox"
-        id={id}
+        id={htmlFor}
         className="wfp--toggle"
-        onChange={evt => {
+        onChange={(evt) => {
+          console.log('change', evt);
           onChange && onChange(evt);
-          onToggle(input.checked, id, evt);
+          onToggle(input.checked, htmlFor, evt);
         }}
-        ref={el => {
+        ref={(el) => {
           input = el;
         }}
       />
 
-      <label className="wfp--toggle__label" htmlFor={id}>
+      <label className="wfp--toggle__label" htmlFor={htmlFor}>
         <span className="wfp--toggle__text--left">{labelA}</span>
         <span className="wfp--toggle__appearance" />
         <span className="wfp--toggle__text--right">{labelB}</span>
@@ -72,7 +76,12 @@ Toggle.propTypes = {
   /**
    * Provide an id that unique represents the underlying `input`
    */
-  id: PropTypes.string.isRequired,
+  id: PropTypes.string,
+
+  /**
+   * Provide an name that unique represents the underlying `input`
+   */
+  name: PropTypes.string.isRequired,
 
   /**
    * Specify whether the control is toggled
@@ -94,6 +103,7 @@ Toggle.defaultProps = {
   defaultToggled: false,
   labelA: 'Off',
   labelB: 'On',
+  name: 'toggle',
   onToggle: () => {},
 };
 
