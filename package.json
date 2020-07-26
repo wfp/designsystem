@@ -5,7 +5,6 @@
   "license": "Apache-2",
   "main": "dist/bundle.js",
   "main:scss": "source/globals/styles.scss",
-  "module": "src/index.js",
   "sideEffects": false,
   "scripts": {
     "build:legacy": "node scripts/build.js && yarn build:css && yarn build:cssmin",
