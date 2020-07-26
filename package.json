@@ -4,6 +4,7 @@
   "description": "WFP UI Kit Next",
   "license": "Apache-2",
   "main": "dist/bundle.js",
+  "module": "dist/bundle.js",
   "main:scss": "source/globals/styles.scss",
   "sideEffects": false,
   "scripts": {

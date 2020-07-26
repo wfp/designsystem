@@ -102,6 +102,7 @@ module.exports = ['source-map'].map((devtool) => ({
     ],
   },
   optimization: {
+    usedExports: true,
     // minimizer: [new UglifyJsPlugin()],
   },
 }));
