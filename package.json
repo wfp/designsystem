@@ -29,8 +29,6 @@
     "test": "jest",
     "test:generate-output": "jest --json --outputFile=.jest-test-results.json || true",
     "test-ssr": "yarn build && node ssr-tests/*.js",
-    "release": "standard-version",
-    "release:alpha": "standard-version -- --prerelease alpha"
   },
   "keywords": [
     "WFP",
