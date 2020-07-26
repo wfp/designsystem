@@ -15,24 +15,21 @@ steps:
       versionSpec: '10.x'
     displayName: 'Install Node.js'
   - script: |
-      npm install
-      npm run semantic-release
-      npm run build
-      npm run build:storybook
-    displayName: 'npm install'
+      yarn install
+    displayName: 'yarn install'
 
   - script: |
-      npm run build
-    displayName: 'npm run build'
+      yarn run build
+    displayName: 'yarn run build'
 
   - script: |
-      npm run semantic-release
-    displayName: 'npm run semantic-release'
+      yarn run semantic-release
+    displayName: 'yarn run semantic-release'
 
 
   - script: |
-      npm run build:storybook
-    displayName: 'npm run build:storybook'
+      yarn run build:storybook
+    displayName: 'yarn run build:storybook'
 
   - task: Bash@3
     inputs:
