@@ -228,9 +228,6 @@
     "xml2js": "^0.4.19",
     "yarn": "^1.22.4"
   },
-  "release": {
-    "branch": "master"
-  },
   "babel": {
     "presets": [
       "./scripts/env",
