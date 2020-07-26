@@ -28,7 +28,7 @@
     "storybook": "STORYBOOK_INTERNAL_ASSETS=../ start-storybook -s ./src/assets -p 9000",
     "test": "jest",
     "test:generate-output": "jest --json --outputFile=.jest-test-results.json || true",
-    "test-ssr": "yarn build && node ssr-tests/*.js",
+    "test-ssr": "yarn build && node ssr-tests/*.js"
   },
   "keywords": [
     "WFP",
