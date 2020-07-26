@@ -15,7 +15,6 @@ const reControlChars = /[\u0000-\u001f\u0080-\u009f]/g;
 const reRelativePath = /^\.+/;
 const reFileName = /([^\/]+)(?=\.\w+$)/g;
 
-
 function getLocalIdent(loaderContext, localIdentName, localName, options) {
   if (!options.context) {
     // eslint-disable-next-line no-param-reassign
@@ -50,9 +49,11 @@ function getLocalIdent(loaderContext, localIdentName, localName, options) {
   return name;
 }
 
-module.exports = {
+module.exports = ['source-map'].map((devtool) => ({
   entry: './src/index.js',
+  mode: 'development',
   output: {
+    library: '@wfp/ui',
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
   },
@@ -97,35 +98,10 @@ module.exports = {
           },
           require.resolve('sass-loader'),
         ],
-      }
-      /*{
-        test: /\.scssa$/,
-        use: [
-          {
-            loader: MiniCssExtractPlugin.loader,
-            options: {
-              publicPath: '/public/path/to/',
-            },
-          },
-          {
-            loader: require.resolve('css-loader'),
-            options: {
-              importLoaders: 1,
-              modules: {
-                mode: 'local',
-                localIdentName: 'wfp--[name]__[local]',
-                // localIdentName: '[sha1:hash:hex:4]',
-                context: path.resolve(__dirname, 'src'),
-                hashPrefix: 'my-custom-hash',
-              },
-            },
-          },
-          require.resolve('sass-loader'),
-        ],
-      },*/
+      },
     ],
   },
   optimization: {
     // minimizer: [new UglifyJsPlugin()],
   },
-};
+}));

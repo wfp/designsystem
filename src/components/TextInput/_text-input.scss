@@ -12,7 +12,7 @@
 @import '../Form/form';
 
 @include exports('text-input') {
-  .text input {
+  .#{$prefix}--text input {
     @include typescale('zeta');
     @include font-family;
     @include input-base;

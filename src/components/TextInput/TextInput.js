@@ -4,7 +4,6 @@ import classNames from 'classnames';
 import settings from '../../globals/js/settings';
 import FormItem from '../FormItem';
 import Input from '../Input/Input';
-import styles from './text-input.module.scss';
 
 const { prefix } = settings;
 
@@ -34,7 +33,6 @@ const TextInput = (props) => {
     [`${prefix}--text--light`]: light,
     [`${prefix}--text--helpertext`]: helperText,
     [`${prefix}--text--nolabel`]: hideLabel,
-    [styles.text]: true,
   });
 
   const newProps = {
