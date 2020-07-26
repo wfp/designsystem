@@ -26,7 +26,6 @@ steps:
       npm run semantic-release
     displayName: 'npm run semantic-release'
 
-
   - script: |
       npm run build:storybook
     displayName: 'npm run build:storybook'
