@@ -15,6 +15,7 @@
   .#{$prefix}--input-wrapper {
     display: flex;
     order: 3;
+    width: 100%;
   }
   .#{$prefix}--input {
     @include reset;
@@ -53,7 +54,8 @@
       @include read-only('border');
     }
   }
-  .#{$prefix}--input-addon-before, .#{$prefix}--input-addon-after {
+  .#{$prefix}--input-addon-before,
+  .#{$prefix}--input-addon-after {
     height: $input-height;
     line-height: $input-height;
     padding: 0 $spacing-xs;

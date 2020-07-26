@@ -7,7 +7,6 @@ tests
 config
 assets
 examples
-lib
 scripts
 *.stories.js
 *-story.js

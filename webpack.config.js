@@ -56,13 +56,28 @@ module.exports = ['source-map'].map((devtool) => ({
     library: '@wfp/ui',
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
+    libraryTarget: 'umd',
   },
+  devtool,
   plugins: [new CleanWebpackPlugin(), new MiniCssExtractPlugin()],
-  externals: [{ '@wfp/icons': 'icons' }],
+  externals: [
+    {
+      '@wfp/icons': '@wfp/icons',
+      classnames: 'classnames',
+      react: 'react',
+      'react-dom': 'react-dom',
+      lodash: {
+        commonjs: 'lodash',
+        commonjs2: 'lodash',
+        amd: 'lodash',
+        root: '_',
+      },
+    },
+  ],
   module: {
     rules: [
       {
-        test: /\.jsx?$/,
+        test: /\.js?$/,
         exclude: /(node_modules|bower_components)/,
         loader: 'babel-loader',
         options: {
@@ -103,6 +118,7 @@ module.exports = ['source-map'].map((devtool) => ({
   },
   optimization: {
     usedExports: true,
+    runtimeChunk: true,
     // minimizer: [new UglifyJsPlugin()],
   },
 }));

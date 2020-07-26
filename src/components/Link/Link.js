@@ -1,7 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import styles from './link.module.scss';
+
+import settings from '../../globals/js/settings';
+const { prefix } = settings;
 
 /**
 Links are typically used as a means of navigation either within the application, to a place outside, or to a resource. For anything else, especially things that change data and actions, you should be using a `button`.
@@ -16,7 +18,12 @@ Links can have the same properties as a regular `<a>`-element.
  */
 
 export const Link = ({ children, className, href, ...other }) => {
-  const classNames = classnames(styles.link, className);
+  const classNames = classnames(
+    {
+      [`${prefix}--link`]: true,
+    },
+    className
+  );
   return (
     <a href={href} className={classNames} {...other}>
       {children}

@@ -34,6 +34,8 @@ function Select(props) {
     ...other
   } = props;
 
+  const usedId = id ? id : name;
+
   const selectClasses = classNames({
     [`${prefix}--select`]: true,
     [`${prefix}--select--inline`]: inline,
@@ -54,7 +56,7 @@ function Select(props) {
         <select
           {...other}
           {...ariaProps}
-          id={id}
+          id={usedId}
           className={`${prefix}--select-input`}
           disabled={disabled || undefined}
           data-invalid={invalid || undefined}
@@ -88,7 +90,7 @@ Select.propTypes = {
   /**
    * Specify a custom `id` for the `<select>`
    */
-  id: PropTypes.string.isRequired,
+  id: PropTypes.string,
 
   /**
    * Specify whether you want the inline version of this control
@@ -154,7 +156,6 @@ Select.propTypes = {
 
 Select.defaultProps = {
   disabled: false,
-  labelText: 'Select',
   inline: false,
   iconDescription: 'open list of options',
   invalid: false,

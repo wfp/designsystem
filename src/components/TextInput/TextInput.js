@@ -41,7 +41,7 @@ const TextInput = (props) => {
   };
 
   return (
-    <Input {...props} formItemClassName={textInputClasses}>
+    <Input {...props} formItemClassName={formItemClassName}>
       {(e) => {
         return (
           <input

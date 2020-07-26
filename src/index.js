@@ -1,5 +1,3 @@
-import '../src/globals/scss/styles.scss';
-
 export {
   BannerNavigation,
   BannerNavigationItem,
