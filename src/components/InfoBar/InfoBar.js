@@ -19,7 +19,17 @@ InfoBar.propTypes = {
    * The CSS class name to be placed on the wrapping element.
    */
   className: PropTypes.string,
+  /**
+   * Additional `id` provided to the wrapping element
+   */
   id: PropTypes.string,
+  /**
+   *  `pageWidth` for the `<Wrapper />` component
+   */
+  pageWidth: PropTypes.string,
+  /**
+   * Additional `className` for the `<Wrapper />` component
+   */
   wrapperClassName: PropTypes.string,
 };
 

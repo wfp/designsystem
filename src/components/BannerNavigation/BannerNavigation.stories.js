@@ -1,5 +1,5 @@
 import React from 'react';
-//import markdown from './README.mdx';
+import markdown from './README.mdx';
 import { action } from '@storybook/addon-actions';
 import { BannerNavigation, BannerNavigationItem } from './BannerNavigation';
 import { BannerNavigationWithContent } from './BannerNavigationWithContent';
@@ -12,7 +12,7 @@ export default {
   subcomponents: { BannerNavigationItem, Link },
   parameters: {
     componentSubtitle: 'Component',
-    //mdx: markdown,
+    mdx: markdown,
   },
 };
 

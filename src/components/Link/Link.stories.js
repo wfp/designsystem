@@ -4,16 +4,15 @@ import { action } from '@storybook/addon-actions';
 
 import { withKnobs, text } from '@storybook/addon-knobs';
 import Link from '.';
+import markdown from './README.mdx';
 
 export default {
   title: 'Components/Link',
   component: Link,
   parameters: {
     componentSubtitle: 'Component',
+    mdx: markdown,
   },
-  /*argTypes: {
-    children: { control: 'text' },
-  },*/
 };
 
 const props = () => ({

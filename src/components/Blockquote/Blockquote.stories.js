@@ -14,12 +14,6 @@ const kinds = {
 export default {
   title: 'Components/Blockquote',
   component: Blockquote,
-  argTypes: {
-    loadingState: {
-      type: 'inline-radio',
-      options: ['loading', 'error', 'ready'],
-    },
-  },
 };
 
 /*

@@ -5,7 +5,7 @@ import {
   //DocsPage,
   Title,
   //Subtitle,
-  Description,
+  //Description,
   Primary,
   Props,
   Stories,
@@ -18,8 +18,8 @@ import { Subtitle } from './blocks/Subtitle';
 
 import React, { FC } from 'react';
 //import { Title } from '@storybook/addon-docs/Title';
-/*import { Subtitle } from './Subtitle';
-import { Description } from './Description';*/
+/*import { Subtitle } from './Subtitle';*/
+import Description from './blocks/Description'; /*
 //import { Primary } from './blocks-old/Primary';
 //import { Props } from './blocks/Props';
 /*

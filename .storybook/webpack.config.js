@@ -85,13 +85,13 @@ module.exports = async ({ config, mode }) => {
           },
         },
       },
-      require.resolve('sass-loader'),
+      require.resolve('fast-sass-loader'),
     ],
   });
 
   config.module.rules.push({
     test: /storybook.scss$/,
-    use: ['style-loader', 'css-loader', 'sass-loader'],
+    use: ['style-loader', 'css-loader', 'fast-sass-loader'],
     include: path.resolve(__dirname, '../'),
   });
 

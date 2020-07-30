@@ -139,6 +139,8 @@ export default class Pagination extends Component {
     disabled: false,
     page: 1,
     pagesUnknown: false,
+    pageSize: 10,
+    pageSizes: [10, 20, 50],
     isLastPage: false,
     pageInputDisabled: false,
     itemText: (min, max) => `${min}-${max} items`,

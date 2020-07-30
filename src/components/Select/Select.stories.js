@@ -1,12 +1,14 @@
 import React from 'react';
 import Select from './Select';
 import SelectItem from '../SelectItem';
+import markdown from './README.mdx';
 
 export default {
   title: 'Components/Select',
   component: Select,
   parameters: {
     componentSubtitle: 'Component',
+    mdx: markdown,
   },
 };
 
@@ -19,7 +21,10 @@ export const SelectDefault = (args) => {
   );
 };
 
-SelectDefault.args = { helperText: 'This is a helper text' };
+SelectDefault.args = {
+  labelText: 'Label text',
+  helperText: 'This is a helper text',
+};
 
 const hello = `
 Imagine this to be a \`much\` longer block of text that spans
