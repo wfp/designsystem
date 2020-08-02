@@ -50,10 +50,6 @@ const SubNavigationFilter = ({ children, className, ...other }) => {
   );
 };
 
-SubNavigationFilter.propTypes = {
-  image: PropTypes.string,
-};
-
 const SubNavigationList = ({ children, className, ...other }) => {
   const classes = classNames('wfp--sub-navigation__list', {
     className,
@@ -83,10 +79,6 @@ const SubNavigationContent = ({ children, className, ...other }) => {
   );
 };
 
-SubNavigationContent.propTypes = {
-  image: PropTypes.string,
-};
-
 const SubNavigationTitle = ({ children, className, ...other }) => {
   const classes = classNames('wfp--sub-navigation__title', {
     className,
@@ -97,10 +89,6 @@ const SubNavigationTitle = ({ children, className, ...other }) => {
       {children}
     </div>
   );
-};
-
-SubNavigationTitle.propTypes = {
-  image: PropTypes.string,
 };
 
 const SubNavigationLink = ({ children, className, ...other }) => {
@@ -116,7 +104,10 @@ const SubNavigationLink = ({ children, className, ...other }) => {
 };
 
 SubNavigationLink.propTypes = {
-  image: PropTypes.string,
+  /**
+   * Provide the content of link
+   */
+  children: PropTypes.string,
 };
 
 const SubNavigationGroup = ({
@@ -143,6 +134,17 @@ const SubNavigationGroup = ({
 };
 
 SubNavigationGroup.propTypes = {
+  /**
+   * Provide amount of columns shown
+   */
+  columns: PropTypes.number,
+  /**
+   * Provide a title for the grop
+   */
+  title: PropTypes.node,
+  /**
+   * Provide content to be rendered inside of a <Tag>
+   */
   image: PropTypes.string,
 };
 

@@ -202,6 +202,10 @@ Footer.propTypes = {
   /** 
    Meta content, usually the copyright notice
  */
+  external: PropTypes.bool,
+  /** 
+   Meta content, usually the copyright notice
+ */
   metaContent: PropTypes.node,
   /**
    Optional WFP logo for mobile devices, can be used if the Logo should be provided by the CDN

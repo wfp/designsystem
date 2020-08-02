@@ -5,6 +5,7 @@ const { inInstall } = require('in-publish');
 const path = require('path');
 const rimraf = require('rimraf');
 const { promisify } = require('util');
+import babel from 'rollup-plugin-babel'
 
 if (inInstall()) {
   process.exit(0);

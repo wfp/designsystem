@@ -77,10 +77,6 @@ const Card = ({
 
 Card.propTypes = {
   /**
-   List of `BannerNavigationItem` components
- */
-  children: PropTypes.node,
-  /**
    Additional className which will be added
  */
   className: PropTypes.string,
@@ -128,7 +124,6 @@ Card.propTypes = {
     'splash-image',
     'splash-compact',
     'related',
-    'teaser',
   ]).isRequired,
   /**
   The URL where the content uploaded is located.

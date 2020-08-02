@@ -68,10 +68,7 @@ const ListItem = ({ children, className, title, kind, ...other }) => {
 
 const List = ({ children, className, colon, kind, small, ...other }) => {
   const classNames = classnames('wfp--list', className, {
-    'wfp--list--simple': kind === 'simple',
-    'wfp--list--simple-inline': kind === 'simple-inline',
-    'wfp--list--details': kind === 'details',
-    'wfp--list--bullet': kind === 'bullet',
+    [`wfp--list--${kind}`]: kind,
     'wfp--list--small': small,
     'wfp--list--colon': colon,
   });
@@ -96,9 +93,9 @@ List.propTypes = {
    */
   colon: PropTypes.bool,
   /**
-   * Specify a kind. Options are `simple`, `simple-inline`, `details`
+   * Specify a kind.
    */
-  kind: PropTypes.string,
+  kind: PropTypes.oneOf(['simple', 'simple-inline', 'details', 'bullet']),
   /**
    * Specify if the List should be small
    */
@@ -106,6 +103,7 @@ List.propTypes = {
 };
 
 List.defaultProps = {
+  kind: 'simple',
   colon: false,
   small: false,
 };
