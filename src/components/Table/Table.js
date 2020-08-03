@@ -1,7 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-import styles from './table.module.scss';
 
 export default function Table({
   className,
@@ -11,10 +10,10 @@ export default function Table({
   ...other
 }) {
   const classes = classNames(
-    styles.table,
+    'wfp--table',
     {
-      [`${styles.responsive}`]: responsive,
-      [`${styles.tableWithBorder}`]: withBorder,
+      'wfp--table--responsive': responsive,
+      'wfp--table--with-border': withBorder,
     },
     className
   );

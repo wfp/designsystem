@@ -18,6 +18,7 @@ export default create({
 
   // Text colors
   textColor: '#031c2d',
+  headerCommon: { color: 'red' },
   /*textInverseColor: 'rgba(255,255,255,0.9)',
 
   // Toolbar default and active colors

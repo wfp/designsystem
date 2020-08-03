@@ -1,7 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-import styles from './table.module.scss';
 import Icon from '../Icon';
 import {
   iconCaretDown,
@@ -17,9 +16,9 @@ export default function TableSorting({
   sortType,
   ...other
 }) {
-  const classes = classNames(className, styles.sorting, {
-    [`${styles.isSorted}`]: isSorted,
-    [`${styles.isSortable}`]: sortType,
+  const classes = classNames(className, 'wfp--table--sorting', {
+    'wfp--table--is-sorted': isSorted,
+    'wfp--table--is-sortable': sortType,
   });
   return (
     <span className={classes}>
