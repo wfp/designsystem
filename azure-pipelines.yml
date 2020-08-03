@@ -41,18 +41,18 @@ steps:
         echo $NPM_VERSION
         echo '##vso[task.setvariable variable=NPM_VAR]'$NPM_VERSION
 
-  - task: S3Upload@1
-    inputs:
-      awsCredentials: 'WFP UI-Kit'
-      regionName: 'eu-west-1'
-      bucketName: 'uikit.wfp.org'
-      sourceFolder: './dist'
-      globExpressions: '**'
-      targetFolder: 'cdn/$(NPM_VAR)'
-      filesAcl: 'public-read'
-      createBucket: true
-      logRequest: true
-      logResponse: true
+#  - task: S3Upload@1
+#    inputs:
+#      awsCredentials: 'WFP UI-Kit'
+#      regionName: 'eu-west-1'
+#      bucketName: 'uikit.wfp.org'
+#      sourceFolder: './dist'
+#      globExpressions: '**'
+#      targetFolder: 'cdn/$(NPM_VAR)'
+#      filesAcl: 'public-read'
+#      createBucket: true
+#      logRequest: true
+#      logResponse: true
 
 
   - task: S3Upload@1
