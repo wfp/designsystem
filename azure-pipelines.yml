@@ -23,7 +23,7 @@ steps:
       restoreKeys: |
         npm | "$(Agent.OS)"
         npm
-    displayName: Cache NPM packages
+    displayName: 'Cache NPM packages'
 ​
   - script: |
       mkdir -p $(NPM_CACHE_FOLDER)
