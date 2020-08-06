@@ -12,7 +12,7 @@ const { prefix } = settings;
 const matchesFuncName =
   typeof Element !== 'undefined' &&
   ['matches', 'webkitMatchesSelector', 'msMatchesSelector'].filter(
-    name => typeof Element.prototype[name] === 'function'
+    (name) => typeof Element.prototype[name] === 'function'
   )[0];
 
 const modalRoot = typeof document !== 'undefined' ? document.body : undefined;
@@ -29,6 +29,10 @@ export default class Modal extends Component {
      */
     className: PropTypes.string,
 
+    /**
+     * Specify whether the modals content should be only loaded when the `Modal` is `open`
+     */
+    lazyLoad: PropTypes.bool,
     /**
      * Specify whether the modal should be button-less
      */
@@ -160,6 +164,7 @@ export default class Modal extends Component {
     passiveModal: false,
     iconDescription: 'close the modal',
     inPortal: true,
+    lazyLoad: false,
     modalHeading: '',
     modalLabel: '',
     selectorPrimaryFocus: '[data-modal-primary-focus]',
@@ -174,7 +179,7 @@ export default class Modal extends Component {
   outerModal = React.createRef();
   innerModal = React.createRef();
 
-  elementOrParentIsFloatingMenu = target => {
+  elementOrParentIsFloatingMenu = (target) => {
     const {
       selectorsFloatingMenus = [
         `.${prefix}--overflow-menu-options`,
@@ -183,14 +188,16 @@ export default class Modal extends Component {
       ],
     } = this.props;
     if (target && typeof target.closest === 'function') {
-      return selectorsFloatingMenus.some(selector => target.closest(selector));
+      return selectorsFloatingMenus.some((selector) =>
+        target.closest(selector)
+      );
     } else {
       // Alternative if closest does not exist.
       while (target) {
         if (typeof target[matchesFuncName] === 'function') {
           if (
             // eslint-disable-next-line no-loop-func
-            selectorsFloatingMenus.some(selector =>
+            selectorsFloatingMenus.some((selector) =>
               target[matchesFuncName](selector)
             )
           ) {
@@ -203,7 +210,7 @@ export default class Modal extends Component {
     }
   };
 
-  handleKeyDown = evt => {
+  handleKeyDown = (evt) => {
     if (evt.which === 27) {
       this.props.onRequestClose(evt, 'key');
     }
@@ -212,7 +219,7 @@ export default class Modal extends Component {
     }
   };
 
-  handleClick = evt => {
+  handleClick = (evt) => {
     if (
       this.innerModal.current &&
       !this.innerModal.current.contains(evt.target) &&
@@ -222,7 +229,7 @@ export default class Modal extends Component {
     }
   };
 
-  handleCloseButton = evt => {
+  handleCloseButton = (evt) => {
     this.props.onRequestClose(evt, 'button');
   };
 
@@ -232,7 +239,7 @@ export default class Modal extends Component {
     }
   };
 
-  handleBlur = evt => {
+  handleBlur = (evt) => {
     // Keyboard trap
     if (
       this.innerModal.current &&
@@ -253,7 +260,7 @@ export default class Modal extends Component {
     }
   }
 
-  focusButton = focusContainerElement => {
+  focusButton = (focusContainerElement) => {
     if (this.props.selectorPrimaryFocus === false) {
       return;
     }
@@ -281,7 +288,7 @@ export default class Modal extends Component {
     modalRoot.removeChild(this.el);
   }
 
-  handleTransitionEnd = evt => {
+  handleTransitionEnd = (evt) => {
     if (
       this.outerModal.current.offsetWidth &&
       this.outerModal.current.offsetHeight &&
@@ -303,6 +310,7 @@ export default class Modal extends Component {
       primaryButtonText,
       backgroundImage,
       open,
+      lazyLoad,
       onRequestClose,
       onRequestSubmit,
       onSecondarySubmit,
@@ -319,6 +327,10 @@ export default class Modal extends Component {
       shouldSubmitOnEnter, // eslint-disable-line
       ...other
     } = this.props;
+
+    if (!open && lazyLoad) {
+      return null;
+    }
 
     const onSecondaryButtonClick = onSecondarySubmit
       ? onSecondarySubmit
@@ -412,7 +424,6 @@ export default class Modal extends Component {
         <div className={`${prefix}--modal-inner`}>{modalBody}</div>
       </div>
     );
-
     if (inPortal) {
       return ReactDOM.createPortal(modal, this.el);
     } else {
