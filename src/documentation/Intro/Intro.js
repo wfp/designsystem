@@ -10,7 +10,7 @@ import classnames from 'classnames';
 import Page from '../Page';
 import Blockquote from '../../components/Blockquote';
 import Button from '../../components/Button';
-import './_intro.scss';
+//import './_intro.scss';
 import { iconLightGlyph } from '@wfp/icons';
 
 function Icon() {
@@ -75,21 +75,6 @@ export default class IntroAnimation extends Component {
             <div className="intro__line"></div>
           </div>
         </div>
-        {/*<div className="intro__links">
-          <Button
-            kind="inverse"
-            style={{ marginRight: '0.5em' }}
-            onClick={linkTo('Getting started|Getting started', 'Developers')}>
-            Getting started
-          </Button>
-
-          <Button
-            kind="inverse"
-            style={{ marginLeft: '0.5em' }}
-            href="https://github.com/wfp/ui">
-            Follow on GitHub
-          </Button>
-    </div>*/}
       </div>
     );
   }

@@ -65,11 +65,11 @@ class FaviconCanvas extends React.Component {
   }
 }
 
-const onSubmit = async values => {
+const onSubmit = async (values) => {
   window.alert(JSON.stringify(values, 0, 2));
 };
 
-class FaviconGenerator extends Component {
+export default class FaviconGenerator extends Component {
   constructor(props) {
     super(props);
     this.child = React.createRef();
@@ -80,7 +80,7 @@ class FaviconGenerator extends Component {
     this.child.current.download();
   };
 
-  updateUrl = dataurl => {
+  updateUrl = (dataurl) => {
     this.setState({
       dataurl: dataurl,
     });
@@ -153,61 +153,3 @@ class FaviconGenerator extends Component {
     );
   }
 }
-
-storiesOf('Design|Core', module)
-  .addParameters({ options: { showPanel: false, isToolshown: false } })
-  .add('Favicons', () => {
-    return (
-      <Page title="Favicons" subTitle="The new Logos in various sizes">
-        <p>
-          For the main favicon itself, it's best for cross-browser compatibility
-          not to use any HTML. Just name the file favicon.ico and place it in
-          the root of your domain.
-        </p>
-
-        <h3>Internal Applications: Generate Favicon</h3>
-        <p>
-          Use the generator to create favicons with an acronym of applications
-          name.
-        </p>
-
-        <FaviconGenerator />
-
-        <h3>External Applications: Usage with CDN</h3>
-        <p>
-          The favicons can be found in the{' '}
-          <Link href="https://github.com/wfp/ui-assets/tree/master/src/favicons">
-            @wfp/ui-assets
-          </Link>{' '}
-          repository and the Sketch source in the{' '}
-          <Link href="https://github.com/wfp/ui-design-kit/blob/master/WFP%20Icons.sketch">
-            @wfp/ui-design-kit
-          </Link>{' '}
-          repository.
-        </p>
-        <Blockquote
-          title="Full sizes catalog which can be added to the HTML Head"
-          code>
-          <PrismCode component="pre" className="language-html">
-            {`<link rel="apple-touch-icon" sizes="57x57" href="https://cdn.wfp.org/guides/ui/assets/v0.0.1/favicons/apple-touch-icon-57-precomposed.png">
-<link rel="apple-touch-icon" sizes="72x72" href="https://cdn.wfp.org/guides/ui/assets/v0.0.1/favicons/apple-touch-icon-72-precomposed.png">
-<link rel="apple-touch-icon" sizes="76x76" href="https://cdn.wfp.org/guides/ui/assets/v0.0.1/favicons/apple-touch-icon-56-precomposed.png">
-<link rel="apple-touch-icon" sizes="114x114" href="https://cdn.wfp.org/guides/ui/assets/v0.0.1/favicons/apple-touch-icon-114-precomposed.png">
-<link rel="apple-touch-icon" sizes="120x120" href="https://cdn.wfp.org/guides/ui/assets/v0.0.1/favicons/apple-touch-icon-120-precomposed.png">
-<link rel="apple-touch-icon" sizes="144x144" href="https://cdn.wfp.org/guides/ui/assets/v0.0.1/favicons/apple-touch-icon-144-precomposed.png">
-<link rel="apple-touch-icon" sizes="152x152" href="https://cdn.wfp.org/guides/ui/assets/v0.0.1/favicons/apple-touch-icon-152-precomposed.png">
-<link rel="apple-touch-icon" sizes="180x180" href="https://cdn.wfp.org/guides/ui/assets/v0.0.1/favicons/apple-touch-icon-180-precomposed.png">
-
-<link rel="icon" type="image/png" sizes="260x260"  href="https://cdn.wfp.org/guides/ui/assets/v0.0.1/favicons/favicon-260x260.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://cdn.wfp.org/guides/ui/assets/v0.0.1/favicons/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="96x96" href="https://cdn.wfp.org/guides/ui/assets/v0.0.1/favicons/favicon-96x96.png">
-<link rel="icon" type="image/png" sizes="16x16" href="https://cdn.wfp.org/guides/ui/assets/v0.0.1/favicons/favicon-16x16.png">
-
-<meta name="msapplication-TileColor" content="#0A6EB4">
-<meta name="msapplication-TileImage" content="https://cdn.wfp.org/guides/ui/assets/v0.0.1/ms-icon-144x144.png">
-<meta name="theme-color" content="#0A6EB4">`}
-          </PrismCode>
-        </Blockquote>
-      </Page>
-    );
-  });
