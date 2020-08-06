@@ -6,7 +6,7 @@ trigger:
 
 pool:
   vmImage: 'ubuntu-latest'
-  
+
 variables:
   NPM_CACHE_FOLDER: $(Pipeline.Workspace)/.npm
 
@@ -50,7 +50,7 @@ steps:
       archiveType: "zip"
       archiveFile: "$(Build.ArtifactStagingDirectory)/build-$(Build.BuildId).zip"
       replaceExistingArchive: true
-​
+
   - task: PublishBuildArtifacts@1
     inputs:
       PathtoPublish: "$(Build.ArtifactStagingDirectory)"
