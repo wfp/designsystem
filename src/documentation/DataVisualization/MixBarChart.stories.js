@@ -1,15 +1,15 @@
 import React from 'react';
-import BarChart,
-   Bar,
+import {
+  BarChart,
+  Bar,
   Cell,
   XAxis,
   YAxis,
   CartesianGrid,
   Tooltip,
   Legend,
-'recharts';
+} from 'recharts';
 
-/*
 const data = [
   {
     name: 'Page A',
@@ -53,9 +53,9 @@ const data = [
     pv: 4300,
     amt: 2100,
   },
-];*/
+];
 
-/*function MixBarChartChart() {
+export function MixBarChartChart() {
   return (
     <BarChart
       width={500}
@@ -77,7 +77,7 @@ const data = [
       <Bar dataKey="uv" fill="#ffc658" />
     </BarChart>
   );
-}*/
+}
 export default {
   title: 'Components/Chart',
 
@@ -85,7 +85,3 @@ export default {
     componentSubtitle: 'Component',
   },
 };
-
-export function MixBarChart() {
-  return <div>Hello</div>;
-}
