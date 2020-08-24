@@ -37,15 +37,15 @@ const components = {
   YearMonth,
 };
 
-const Unit = props => {
+const Unit = (props) => {
   const { className, output, string, textAnchor, setup } = props;
-  const type = props.type ? props.type : 'None';
+  const type = props.type
+    ? props.type.charAt(0).toUpperCase() + props.type.slice(1)
+    : 'None';
   const Unit = components[type];
   //const unitHideClass = setup && setup.hideUnit ? 'wfp--unit--hide' : '';
   const textAnchorCalc = textAnchor ? textAnchor : 'start';
-  const unitClassName = props.type
-    ? 'wfp--unit--' + props.type.toLowerCase()
-    : '';
+  const unitClassName = type ? 'wfp--unit--' + type.toLowerCase() : '';
 
   const outputClassName =
     output && scaleLookup[output] ? 'wfp--unit--' + output : '';
@@ -107,27 +107,27 @@ Unit.propTypes = {
     The unit type  */
   type: PropTypes.oneOf([
     undefined,
-    'None',
-    'Narrow',
-    'Usd',
-    'Partners',
-    'Beneficiaries',
-    'Households',
-    'Months',
-    'Mt',
-    'MetricTons',
+    'none',
+    'narrow',
+    'usd',
+    'partners',
+    'beneficiaries',
+    'households',
+    'months',
+    'mt',
+    'metricTons',
     'kg',
-    'Num',
-    'YearMonth',
-    'Level',
-    'People',
-    'Countries',
-    'Percentage',
+    'num',
+    'yearMonth',
+    'level',
+    'people',
+    'countries',
+    'percentage',
   ]),
 };
 
 Unit.defaultProps = {
-  type: 'None',
+  type: 'none',
   svg: false,
 };
 

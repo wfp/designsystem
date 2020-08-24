@@ -12,7 +12,12 @@ export default {
   },
 };
 
-export const Regular = (args) => <Unit {...args}>Text</Unit>;
+export const Regular = (args) => <Unit {...args} />;
+
+Regular.args = {
+  children: '12345',
+  type: 'usd',
+};
 
 const description = `
 You can customize the content by using \`BannerNavigation\`.

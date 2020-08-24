@@ -100,7 +100,8 @@
 
 @mixin focus-outline($type: 'border') {
   @if ($type == 'border') {
-    outline: 2px solid $interactive-01;
+    border-color: $interactive-01;
+    outline: 1px solid $interactive-01;
     box-shadow: 0px 2px 8px 0 $focus;
   }
 

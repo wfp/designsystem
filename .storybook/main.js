@@ -7,10 +7,10 @@ module.exports = {
     //'/.storybook/addon-wfp/register',
     './localAddon/register.tsx',
     './localAddon/preset.ts',
-    //'@storybook/addon-docs',
-    {
+    '@storybook/addon-docs',
+    /*{
       name: '@storybook/addon-docs',
-      options: {
+      /*options: {
         configureJSX: true,
         babelOptions: {
           presets: [
@@ -18,19 +18,10 @@ module.exports = {
             '@babel/preset-react',
             '@babel/preset-typescript',
           ],
-          plugins: [
-            [
-              'babel-plugin-react-docgen',
-              {
-                DOC_GEN_COLLECTION_NAME: 'STORYBOOK_REACT_CLASSES',
-                handlers: ['react-docgen-external-proptypes-handler'],
-              },
-            ],
-          ],
         },
         sourceLoaderOptions: null,
       },
-    },
+    },*/
     '@storybook/addon-controls',
   ],
 
@@ -52,12 +43,12 @@ module.exports = {
   },
 
   webpack: async (config, options) => {
-    config.plugins.push(
+    /*config.plugins.push(
       new webpack.NormalModuleReplacementPlugin(
         /shared/,
         path.resolve(__dirname, 'shared.tsx')
       )
-    );
+    );*/
 
     /*config.plugins.push(
       new webpack.NormalModuleReplacementPlugin(

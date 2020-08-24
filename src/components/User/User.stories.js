@@ -14,11 +14,15 @@ export default {
 
 export const Regular = (args) => <User {...args}>Text</User>;
 
+export const AvatarOnly = (args) => (
+  <User name="Max Mustermann" showName={false} />
+);
+
 const description = `
-You can customize the content by using \`BannerNavigation\`.
+You can show the avatar only without showing the username.
 `;
 
-Regular.story = {
+AvatarOnly.story = {
   parameters: {
     docs: {
       storyDescription: description,

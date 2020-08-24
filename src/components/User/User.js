@@ -12,6 +12,7 @@ const User = ({
   ellipsis,
   extendedDescription,
   image,
+  showName,
   small,
   missingImage,
   name,
@@ -67,7 +68,7 @@ const User = ({
   return (
     <div className={classes} {...other}>
       {avatar}
-      {name && (
+      {showName && (
         <span className={titleClasses}>
           <span>{name}</span>
           {description && (
@@ -120,6 +121,10 @@ User.propTypes = {
    */
   image: PropTypes.string,
   /**
+   * Show the name next to the avatar
+   */
+  showName: PropTypes.bool,
+  /**
    * The username which will be displayed. Usually `Firstname Lastname`.
    */
   name: PropTypes.string,
@@ -129,6 +134,7 @@ User.defaultProps = {
   alt: 'User Icon',
   missingImage: 'avatar',
   ellipsis: false,
+  showName: true,
 };
 
 export default User;
