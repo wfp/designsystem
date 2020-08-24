@@ -21,7 +21,7 @@ Regular.args = {
   subTitle:
     'Food security and climate change analyses, adaptation planning, and good practices in food security adaptation programming.',
   title: 'The Climate Adaption Mangement and Innovation Initiative',
-  //kind: 'landscape',
+  kind: 'landscape',
 };
 
 export const Landscape = (args) => <Card {...args} />;
