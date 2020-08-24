@@ -12,7 +12,7 @@ export default {
   },
 };
 
-export const Regular = (args) => <FormLabel {...args}>Text</FormLabel>;
+export const Regular = (args) => <FormLabel {...args}>Label text</FormLabel>;
 
 const description = `
 You can customize the content by using \`BannerNavigation\`.

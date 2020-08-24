@@ -25,3 +25,17 @@ Regular.story = {
     },
   },
 };
+
+export const SmallSearch = (args) => <Search {...args} />;
+
+SmallSearch.args = {
+  kind: 'small',
+};
+
+SmallSearch.story = {
+  parameters: {
+    docs: {
+      storyDescription: `There are diffent ways to render the \`Search\` input by changing the \`kind\` prop.`,
+    },
+  },
+};

@@ -2,6 +2,7 @@ import React from 'react';
 import markdown from './README.mdx';
 import { action } from '@storybook/addon-actions';
 import User from '.';
+import { List, ListItem } from '../List';
 
 export default {
   title: 'Components/User',
@@ -12,10 +13,18 @@ export default {
   },
 };
 
-export const Regular = (args) => <User {...args}>Text</User>;
+export const Regular = (args) => <User {...args} />;
+
+Regular.args = {
+  children: 'Max Mustermann',
+};
 
 export const AvatarOnly = (args) => (
-  <User name="Max Mustermann" showName={false} />
+  <User
+    name="Max Mustermann"
+    showName={false}
+    image="https://www.wfp.org/sites/default/files/styles/page_accordion/public/images/ourwork_humanitarian.jpg?itok=R0ymBwxH"
+  />
 );
 
 const description = `
@@ -26,6 +35,39 @@ AvatarOnly.story = {
   parameters: {
     docs: {
       storyDescription: description,
+    },
+  },
+};
+
+export const ExtendedUser = (args) => (
+  <User
+    alt="Image Alt text"
+    description={
+      <List kind="simple" small>
+        <ListItem>Business Support Assistant G4</ListItem>
+        <ListItem>Fixed Term</ListItem>
+      </List>
+    }
+    extendedDescription={
+      <List kind="simple" small>
+        <ListItem title="First level supervisor">Marie Curie</ListItem>
+        <ListItem title="Mrc">Tanzania Country Office</ListItem>
+        <ListItem title="Head of unit">Max Planck</ListItem>
+      </List>
+    }
+    name="Albert Einstein"
+    image="https://www.wfp.org/sites/default/files/styles/page_accordion/public/images/ourwork_humanitarian.jpg?itok=R0ymBwxH"
+  />
+);
+
+const extendedDescription = `
+You can show the avatar only without showing the username.
+`;
+
+ExtendedUser.story = {
+  parameters: {
+    docs: {
+      storyDescription: extendedDescription,
     },
   },
 };
