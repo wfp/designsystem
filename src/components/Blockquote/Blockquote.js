@@ -97,14 +97,14 @@ class Blockquote extends React.Component {
         icon={icon ? icon : lookup.icon}
         description="Blockquote Icon"
         className="wfp--blockquote__icon"
-        height="30"
-        width="30"
       />
     ) : null;
 
     return (
       <div className={blockquoteClass}>
-        {iconElement}
+        {iconElement && (
+          <div className="wfp--blockquote__icon-wrapper">{iconElement}</div>
+        )}
         <div className={blockquoteContentClass} style={style}>
           {title && (
             <div

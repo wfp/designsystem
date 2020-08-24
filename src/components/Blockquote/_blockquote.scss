@@ -64,6 +64,7 @@
 
   .#{$prefix}--blockquote--warning {
     border-left-color: $color__yellow;
+    background: $color__yellow-10;
 
     .#{$prefix}--blockquote__icon {
       fill: $color__yellow !important;
