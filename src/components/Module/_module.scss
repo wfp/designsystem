@@ -109,6 +109,7 @@
     }
 
     &.#{$prefix}--module--with-hover {
+      cursor: pointer;
       &:hover {
         .#{$prefix}--module__inner {
           border-color: $interactive-01;

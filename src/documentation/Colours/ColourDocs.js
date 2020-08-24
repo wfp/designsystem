@@ -7,7 +7,7 @@ import Blockquote from '../../components/Blockquote';
 
 import { linkTo } from '@storybook/addon-links';
 import ColorList from './ColourList';
-import './_colours.scss';
+//import styles from './colours.module.scss';
 
 const Color = ({ color }) => (
   <h3>
@@ -24,7 +24,7 @@ const Color = ({ color }) => (
     {color}
   </h3>
 );
-const scrollToRef = ref => window.scrollTo(0, ref.current.offsetTop);
+const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop);
 
 const ColourDocs = () => {
   const linkRefs = {
@@ -36,7 +36,7 @@ const ColourDocs = () => {
     symbolic: useRef(null),
   };
 
-  const executeScroll = e => {
+  const executeScroll = (e) => {
     e.preventDefault();
     scrollToRef(linkRefs[e.target.getAttribute('href')]);
   };

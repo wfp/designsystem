@@ -1,12 +1,8 @@
-$css--reset: false;
-@import '../../globals/scss/vars';
-@import '../../globals/scss/spacing';
-@import '../../globals/scss/helper-mixins';
-/*@import '../../globals/scss/theme';
-@import '../../globals/scss/colors';
-@import '../../globals/scss/typography';
+/*$css--reset: false;
+@import 'src/globals/scss/vars';
+@import 'src/globals/scss/spacing';
+@import 'src/globals/scss/helper-mixins';
 
-*/
 .color--list {
   display: flex;
   flex-wrap: wrap;
@@ -88,3 +84,4 @@ $css--reset: false;
     width: 50%;
   }
 }
++/
