@@ -23,6 +23,10 @@ export const Regular = (args) => (
   </List>
 );
 
+Regular.args = {
+  colon: true,
+};
+
 export const ListColumns = (args) => (
   <List kind="details" style={{ columnCount: 3 }}>
     <ListItem title="Strategic Outcome">

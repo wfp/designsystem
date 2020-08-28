@@ -67,6 +67,14 @@
       align-items: flex-start;*/
       flex: 3;
       padding: 0.8rem 1.2rem;
+      > * {
+        &:first-child {
+          margin-top: 0;
+        }
+        &:last-child {
+          margin-top: 0;
+        }
+      }
       /*p {
         @include typescale('zeta');
       }*/
