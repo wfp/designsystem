@@ -1,15 +1,8 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-//import { withKnobs, boolean, select, text } from '@storybook/addon-knobs/react';
-
 import Blockquote from '.';
-
-import { withKnobs, text } from '@storybook/addon-knobs';
-import Link from '.';
-import markdown from './README.mdx';
-
 import Icon from '../Icon';
-import { iconAdd, iconAddGlyph, iconAddOutline } from '@wfp/icons';
+import { iconAddOutline } from '@wfp/icons';
+import markdown from './README.mdx';
 
 const props = {
   children: `Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy

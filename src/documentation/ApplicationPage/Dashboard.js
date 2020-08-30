@@ -7,9 +7,8 @@ import { Module, ModuleHeader, ModuleBody } from '../../components/Module';
 import Page from '../Page';
 import { linkTo } from '@storybook/addon-links';
 
-storiesOf('Design|Guidelines', module)
-  .addParameters({ options: { showPanel: false, isToolshown: false } })
-  .add('Dashboard design', () => (
+export default function Dashboard() {
+  return (
     <Page
       title="Dashboard design"
       subTitle="Operational & Analytical applications">
@@ -115,4 +114,5 @@ storiesOf('Design|Guidelines', module)
         </li>
       </ul>
     </Page>
-  ));
+  );
+}

@@ -52,6 +52,7 @@ addParameters({
     container: DocsContainer,
     page: DocsPage,
   },
+  viewMode: 'docs',
 });
 
 // or global addParameters

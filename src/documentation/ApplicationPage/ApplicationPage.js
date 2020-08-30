@@ -7,10 +7,8 @@ import Wrapper from '../../components/Wrapper';
 
 import { Module, ModuleHeader, ModuleBody } from '../../components/Module';
 
-storiesOf('Design|Templates', module)
-  //.addDecorator(story => <RegularPage>{story()}</RegularPage>)
-  .addParameters({ hideProps: true })
-  .add('Application Page', () => (
+export default function ApplicationPage() {
+  return (
     <RegularPage>
       <Wrapper background="lighter" pageWidth="lg" spacing="md">
         <div className="row">
@@ -96,4 +94,5 @@ storiesOf('Design|Templates', module)
         </div>
       </Wrapper>
     </RegularPage>
-  ));
+  );
+}
