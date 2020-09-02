@@ -69,3 +69,15 @@ ListColumns.story = {
     },
   },
 };
+
+export const ListDetails = (args) => (
+  <List kind="bullets">
+    <ListItem kind="checkmark">hello</ListItem>
+    <ListItem kind="cross">hello</ListItem>
+    <ListItem>hello</ListItem>
+  </List>
+);
+
+// ListDetails.story = {
+
+// }
