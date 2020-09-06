@@ -40,3 +40,20 @@ withError.args = {
   labelText: 'The labelText',
   invalid: { message: 'Please enter your first name' },
 };
+
+export const withDisabled = (args) => <TextInput {...args} />;
+
+withDisabled.story = {
+  parameters: {
+    docs: {
+      storyDescription: description,
+    },
+  },
+};
+
+withDisabled.args = {
+  name: 'inputname',
+  helperText: 'Optional helperText',
+  labelText: 'Disabled labelText',
+  disabled: true,
+};

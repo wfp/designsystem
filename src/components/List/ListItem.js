@@ -75,14 +75,11 @@ ListItem.propTypes = {
    * Specify a custom className
    */
   className: PropTypes.string,
-  /**
-   * Specify if colons should be used
-   */
-  colon: PropTypes.bool,
+
   /**
    * Specify a kind.
    */
-  kind: PropTypes.oneOf(['simple', 'simple-inline', 'details', 'bullet']),
+  kind: PropTypes.oneOf(['checkmark', 'cross']),
   /**
    * Specify if the List should be small
    */
