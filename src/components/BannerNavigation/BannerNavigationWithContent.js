@@ -76,7 +76,7 @@ BannerNavigationWithContent.propTypes = {
   /**
    * The CSS class name to be placed on the wrapping element.
    */
-  pageWidth: PropTypes.string,
+  pageWidth: PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'full']),
   /**
    * Allows to disable the search input
    */

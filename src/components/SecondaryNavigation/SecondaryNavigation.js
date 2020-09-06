@@ -57,7 +57,7 @@ SecondaryNavigation.propTypes = {
   /**
    * The width of the SecondaryNavigation (same as Wrapper)
    */
-  pageWidth: PropTypes.string,
+  pageWidth: PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'full']),
   wrapperClassName: PropTypes.string,
 };
 

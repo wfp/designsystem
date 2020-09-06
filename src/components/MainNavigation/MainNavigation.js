@@ -127,7 +127,7 @@ MainNavigation.propTypes = {
   /**
    * See `Wrapper` component for more information
    */
-  pageWidth: PropTypes.string,
+  pageWidth: PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'full']),
   /**
    * See `Wrapper` component for more information
    */
