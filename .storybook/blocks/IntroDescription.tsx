@@ -9,8 +9,10 @@ import {
 } from '@storybook/addon-docs/dist/blocks/DocsContext';
 import { Component, CURRENT_SELECTION } from './types';
 import { str } from '@storybook/addon-docs/dist/lib/docgen';
+import ReactDOMServer from 'react-dom/server';
 
 import markdownd from './markdown.stories.mdx';
+import Tag from '../../src/components/Tag';
 
 export enum DescriptionType {
   INFO = 'info',
@@ -74,12 +76,15 @@ const DescriptionContainer: FunctionComponent<DescriptionProps> = (props) => {
   const context = useContext(DocsContext);
   const { markdown } = getDescriptionProps(props, context);
 
-  console.log('markdown', context.parameters.mdx);
   const Docs = context.parameters.mdx;
   return markdown || context.parameters.mdx ? (
     <>
-      <Docs />
-      {/*<Description markdown={markdown} />*/}
+      {context.parameters.status && (
+        <Tag className={`status__${context.parameters.status}`}>
+          Ready for production
+        </Tag>
+      )}
+      <Description markdown={markdown} />
     </>
   ) : null;
 };
@@ -89,4 +94,4 @@ DescriptionContainer.defaultProps = {
   of: '.',
 };
 
-export { DescriptionContainer as Description };
+export { DescriptionContainer as IntroDescription };

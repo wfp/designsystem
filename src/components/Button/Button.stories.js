@@ -14,8 +14,10 @@ import Button from '.';
 export default {
   title: 'Components/Button',
   component: Button,
+  markdown: 'hello',
   parameters: {
     componentSubtitle: 'Component',
+    status: 'released',
     mdx: markdown,
   },
   /*argTypes: {
@@ -62,30 +64,24 @@ ButtonKind.args = {
 const hello = `
 By changing the \`kind\` prop you can use different styles of the button.
 
-\`primary\` buttons should be used for the principle call to action
-on the page.
-
-\`secondary\` buttons should be used for secondary actions on each page.
-
-\`tertiary\` buttons should be used for simple actions on the page.
-
-\`accent\` buttons should be used for very important actions and only once or twice on each page
-
-\`danger\` buttons should be used for a negative action (such as Delete) on the page.
-
-\`danger--primary\` buttons should be used for a negative principle call to action (such as Delete) on the page.
-
-\`ghost\` buttons should be used in places where a regular button would draw too much attention and look similar to links.
-
-\`inverse\` buttons should be used on dark backgrounds.
-
-\`navigation\` buttons should be only used in the main navigation.
-
+| kind   |  Description  |
+|----------|-------------|
+| \`primary\` | the principle call to action on the page |
+| \`secondary\` | secondary actions on each page   |
+| \`tertiary\` | simple actions on the page |
+| \`accent\` | very important actions and only once or twice on each page |
+| \`tertiary\` | simple actions on the page |
+| \`danger\` | a negative action (such as Delete) on the page |
+| \`danger--primary\` | a negative principle call to action (such as Delete) on the page |
+| \`ghost\` | in places where a regular button would draw too much attention and look similar to links |
+| \`inverse\` | should be used on dark backgrounds |
+| \`navigation\`| should be only used in the main navigation |
 `;
 
 ButtonKind.story = {
-  name: 'kind parameter',
+  name: 'Button kinds',
   parameters: {
+    markdown: 'hello',
     docs: {
       storyDescription: hello,
     },
@@ -107,10 +103,17 @@ export const ButtonIcon = (args) => (
 const helloButtonIcon = `
 When words are not enough, icons can be used in buttons to better communicate what the button does. Icons should be
 always paired with text whenever possible.
+
+
+Use the \`icon\` and \`iconDescription\` prop to add an Icon to the Button. Refer to the [Icon](?selectedKind=Icon) documentation for usage.
+
+To show the Icon on the left side use the \`iconReverse\` prop.
+
+Using an Button with only an Icon while not beeing recommended can be achieved by leaving the Button text blank.
 `;
 
 ButtonIcon.story = {
-  name: 'with icon',
+  name: 'Button with icon',
   parameters: {
     docs: {
       storyDescription: helloButtonIcon,

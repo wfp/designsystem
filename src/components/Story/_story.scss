@@ -10,6 +10,7 @@
 @import '../../globals/scss/import-once';
 @import '../../globals/scss/css--reset';
 @import '../../globals/scss/css--typography';
+@import '../Link/link';
 
 @include exports('story') {
   .#{$prefix}--story {
@@ -58,6 +59,10 @@
     h4 {
       margin-top: $spacing-md;
       @include typescale('epsilon');
+    }
+
+    a {
+      @extend .wfp--link;
     }
 
     sup {

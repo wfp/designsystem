@@ -55,7 +55,7 @@
 
   p {
     @include reset;
-    @include typescale('p');
+    //@include typescale('p');
     @include line-height('body');
     font-weight: 400;
   }

@@ -32,8 +32,6 @@ Link.propTypes = {
 
   /**
    * Provide the `href` attribute for the <a> node
-   *
-   * - https://wfp.org
    */
   href: PropTypes.string,
 };

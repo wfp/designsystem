@@ -123,7 +123,7 @@ MainNavigation.propTypes = {
   /**
    * The Logo can be either a string or a component
    */
-  logo: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
+  logo: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   /**
    * See `Wrapper` component for more information
    */

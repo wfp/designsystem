@@ -1,47 +1,36 @@
 import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
 
-Buttons express what action will occur when the user clicks or touches it. Buttons are used to initialize an action, either in the background or foreground of an experience.
+### Usage
 
-Buttons are used primarily on action items. Some examples include Add, Save, Delete, and Sign up. Each page can have one or two primary or accent buttons. Any remaining calls-to-action should be represented as secondary buttons.
+Buttons are clickable elements that are used to trigger actions. They communicate calls to action to the user and allow users to interact with pages in a variety of ways. Button labels express what action will occur when the user interacts with it.
+
+#### When to use
+
+Buttons are used primarily on action items. Some examples include `Add`, `Save`, `Delete`, and `Sign up`. Each page can have one or two primary or accent buttons. Any remaining calls-to-action should be represented as secondary buttons.
+
+#### When not to use
 
 Do not use buttons as navigational elements. Instead, use links when the desired action is to take the user to a new page.
-
-[Carbon Design System Usage for Buttons](https://next.carbondesignsystem.com/components/button)
 
 ### Actions
 
 When an action required by the user has more than one option, always use a a negative action button (`secondary`) paired with a positive action button (`primary` or `accent`) in that order. Negative action buttons will be on the left. Positive action buttons should be on the right. When these two types buttons are paired in the correct order, they will automatically space themselves apart.
 
-### react
-
-Use the `icon` and `iconDescription` prop to add an Icon to the Button. Refer to the [Icon](?selectedKind=Icon) documentation for usage.
-
-To show the Icon on the left side use the `iconReverse` prop.
-
-Using an Button with only an Icon while not beeing recommended can be achieved by leaving the Button text blank.
-
 ### html
 
 To use a button with plain html add `wfp--btn` and `wfp--btn--{kind}` as class to the `<a>` or `<button>` element.
 
-```
+```html
 <a class="wfp--btn wfp--btn--primary" href="#">Link</a>
+<button class="wfp--btn wfp--btn--primary">Button</button>
 ```
 
 All buttons can use icons. It's recommended to inline SVG icons when possible. Simply add the appropriate `svg` image to the button HTML with the `wfp--btn__icon` class. You can also include a `title` tag for better accessibility to describe what the button does.
 
-<!--
-## Usage with react
+### Related
 
-```js
-import { Button } from '@wfp/ui';
-```
+[Link](?path=/docs/components-link--link-regular)
 
-```js
-<Button href="#">This is a button</Button>
-```
+### Reference
 
-```
-
-```
--->
+[Carbon Design System Usage for Buttons](https://next.carbondesignsystem.com/components/button)

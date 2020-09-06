@@ -8,7 +8,16 @@ import {
   ArgsTableError,
   ArgTypes,
   TabbedArgsTable,
-} from '@storybook/components';
+} from './ArgsTable';
+
+/*
+import {
+  ArgsTable,
+  ArgsTableProps,
+  ArgsTableError,
+  ArgTypes,
+  TabbedArgsTable,
+} from '@storybook/components';*/
 import { Args } from '@storybook/addons';
 import { StoryStore } from '@storybook/client-api';
 import Events from '@storybook/core-events';
@@ -230,7 +239,6 @@ export const Props: FC<PropsProps> = (props) => {
         ? { [mainLabel]: main, ...subcomponents }
         : subcomponents;
   }
-
   if (story) {
     return <StoryTable {...(props as StoryProps)} components={allComponents} />;
   }

@@ -42,7 +42,7 @@
   }
 
   .#{$prefix}--tag--success {
-    @include tag-theme($support-light-02, $support-02);
+    @include tag-theme($support-light-02, darken($support-02, 14));
   }
 
   .#{$prefix}--tag--warning {

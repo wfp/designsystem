@@ -6,9 +6,10 @@ import { Description } from './Description';
 import { Subtitle } from './Subtitle';
 import { Primary } from './Primary';
 import { Description } from './Description';
-/*
+import { IntroDescription } from './IntroDescription';
+
 import { Props } from './Props';
-*/
+
 import { Stories } from './Stories';
 /*
 import { PRIMARY_STORY } from './types';*/
@@ -21,7 +22,7 @@ import {
   //Subtitle,
   //Description,
   //Primary,
-  Props,
+  //Props,
   //Stories,
   //types,
   //DocsContainer,
@@ -44,10 +45,16 @@ export const DocsPage: FC = (props) => {
     <>
       {/*<Subtitle />
       {/*<Title />*/}
+      <IntroDescription />
+
+      <div className="sticky-preview-wrapper">
+        <div className="sticky-preview">
+          <Primary />
+        </div>
+        <Props story={PRIMARY_STORY} />
+      </div>
+      <Stories title="Examples" />
       <Description />
-      <Primary />
-      <Props story={PRIMARY_STORY} />
-      <Stories />
     </>
   );
 };

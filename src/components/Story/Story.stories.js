@@ -21,9 +21,9 @@ export const Regular = (args) => (
     <h1 className="wfp--story__title">WFP’s Immediate Response Account</h1>
     <p className="wfp--markup">
       In mid-2016, widespread inter-ethnic tensions and conflict descended on
-      the Kasai region of the Democratic Republic of Congo (DRC), claiming
-      countless lives and causing massive displacement. The Kasai crisis
-      unfolded within a country already struggling with a protracted and
+      the Kasai region of the <a href="#">Democratic Republic of Congo (DRC)</a>
+      , claiming countless lives and causing massive displacement. The Kasai
+      crisis unfolded within a country already struggling with a protracted and
       underfunded emergency in the east. Since the emergence of the Kasai
       crisis, funding shortfalls proved to be a major challenge to WFP’s
       response.
@@ -31,7 +31,7 @@ export const Regular = (args) => (
     <h2>Secondary heading</h2>
     <p>
       The scale of the food security and nutrition crisis in Kasai is immense.
-      In September 2017, the{' '}
+      In <a href="#">September 2017</a>, the{' '}
       <span className="wfp--inline-highlight">
         World Food Programme (WFP)’s Emergency Food Security Assessment
       </span>{' '}
@@ -39,7 +39,9 @@ export const Regular = (args) => (
       region alone. In addition, 400,000 children are at risk of dying from
       severe acute malnutrition without urgent life-saving assistance.
     </p>
-    <h3>Smaller Heading (h3)</h3>
+    <h3>
+      Smaller Heading (h3) with <a href="#">link</a>
+    </h3>
     <ul className="wfp--story__list">
       <li>Lorem ipsum dolor sit amet</li>
       <li>Consetetur sadipscing elitr</li>
