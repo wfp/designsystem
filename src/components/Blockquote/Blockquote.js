@@ -34,7 +34,9 @@ class Blockquote extends React.Component {
   }
 
   toggleBlockquote = () => {
-    this.setState({ open: !this.state.open });
+    this.setState({ open: !this.state.open }, () => {
+      console.log('toogle', this.state.open);
+    });
   };
 
   /*showInnerHtml = content => {
@@ -49,7 +51,7 @@ class Blockquote extends React.Component {
       error,
       style,
       title,
-      toggleable,
+      toogleable,
       icon,
       //innerHtml,
       light,
@@ -61,7 +63,7 @@ class Blockquote extends React.Component {
     } = this.props;
     const blockquoteClass = classNames({
       'wfp--blockquote': true,
-      'wfp--blockquote--toggleable': toggleable === true,
+      'wfp--blockquote--toggleable': toogleable === true,
       'wfp--blockquote--light': light,
       'wfp--blockquote--code': code,
       'wfp--blockquote--no-content': !children,
@@ -70,7 +72,7 @@ class Blockquote extends React.Component {
       'wfp--blockquote--success': kind === 'success',
       'wfp--blockquote--info': kind === 'info' || info,
       'wfp--blockquote--with-icon': withIcon || icon,
-      'wfp--blockquote--open': this.state.open,
+      'wfp--blockquote--toggle--open': this.state.open,
       [`${className}`]: className,
     });
 
@@ -116,7 +118,8 @@ class Blockquote extends React.Component {
               {title}
             </div>
           )}
-          {children}
+          <div className="wfp--blockquote__inside">{children}</div>
+
           {/*innerHtml && (
             <div
               role="complementary"
@@ -155,7 +158,7 @@ Blockquote.propTypes = {
    */
   light: PropTypes.bool,
   /**
-   * Show options to show and hide the Blockquote
+   * Show options to show and hide the Blockquote when title is clicked
    */
   toogleable: PropTypes.bool,
   /**

@@ -49,7 +49,7 @@ LandscapeLight.args = {
 LandscapeLight.story = {
   parameters: {
     docs: {
-      storyDescription: `A card designed to highlight a link using a landscape photograph and a title with metadata above.`,
+      storyDescription: `A card designed to highlight a link using a landscape photograph and  white-background section below with a title and a subtitle.`,
     },
   },
 };
@@ -110,7 +110,7 @@ SplashImage.args = {
 SplashImage.story = {
   parameters: {
     docs: {
-      storyDescription: `Page bottom content section with image.`,
+      storyDescription: `Page middle content section with background image.`,
     },
   },
 };
@@ -126,7 +126,7 @@ SplashCompact.args = {
 SplashCompact.story = {
   parameters: {
     docs: {
-      storyDescription: `Page bottom content section with image.`,
+      storyDescription: `A card content section without space around title and subtitle.`,
     },
   },
 };
@@ -141,7 +141,7 @@ Related.args = {
 Related.story = {
   parameters: {
     docs: {
-      storyDescription: `Page bottom content section with image.`,
+      storyDescription: `A card designed with landscape photograph and a title with metadata on right side.`,
     },
   },
 };

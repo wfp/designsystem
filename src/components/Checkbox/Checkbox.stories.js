@@ -16,6 +16,7 @@ export const Regular = (args) => <Checkbox {...args} />;
 
 Regular.args = {
   labelText: 'Label text',
+  id: 'check-1',
 };
 
 const description = `

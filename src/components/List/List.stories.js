@@ -70,7 +70,7 @@ ListColumns.story = {
   },
 };
 
-export const ListDetails = (args) => (
+export const ListBullets = (args) => (
   <List kind="bullets">
     <ListItem kind="checkmark">hello</ListItem>
     <ListItem kind="cross">hello</ListItem>
@@ -78,6 +78,12 @@ export const ListDetails = (args) => (
   </List>
 );
 
-// ListDetails.story = {
+const listItemDescription = ` \`bullets\` List with ListItems can have \`checkmark\` and \`cross\` kinds`;
 
-// }
+ListBullets.story = {
+  parameters: {
+    docs: {
+      storyDescription: listItemDescription,
+    },
+  },
+};

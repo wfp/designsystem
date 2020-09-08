@@ -20,6 +20,7 @@ You can customize the content by using \`BannerNavigation\`.
 
 Regular.args = {
   totalItems: 30,
+  onChange: () => {},
 };
 
 Regular.story = {
