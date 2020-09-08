@@ -175,7 +175,9 @@ export default class Pagination extends Component {
 
   handleSizeChange = (evt) => {
     const pageSize = Number(evt.target.value);
-    this.setState({ pageSize, page: 1 });
+    this.setState({ pageSize, page: 1 }, () => {
+      console.log('after size', pageSize, this.state.pageSize);
+    });
     this.props.onChange({ page: 1, pageSize });
   };
 
@@ -274,7 +276,8 @@ export default class Pagination extends Component {
                 hideLabel
                 inline
                 onChange={this.handleSizeChange}
-                value={statePageSize}>
+                // value={statePageSize}
+                value={this.state.pageSize}>
                 {pageSizes.map((size) => (
                   <SelectItem key={size} value={size} text={String(size)} />
                 ))}
@@ -289,8 +292,11 @@ export default class Pagination extends Component {
                   statePage * statePageSize
                 )
               : itemRangeText(
-                  Math.min(statePageSize * (statePage - 1) + 1, totalItems),
-                  Math.min(statePage * statePageSize, totalItems),
+                  Math.min(
+                    this.state.pageSize * (statePage - 1) + 1,
+                    totalItems
+                  ),
+                  Math.min(statePage * this.state.pageSize, totalItems),
                   totalItems
                 )}
           </span>
