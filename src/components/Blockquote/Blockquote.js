@@ -25,6 +25,9 @@ const iconLookup = {
   },
 };
 
+/**
+ *  The Blockquote element indicates that the enclosed text is an extended quotation or information. It is rendered visually by a surrounding box. */
+
 class Blockquote extends React.Component {
   constructor(props) {
     super(props);
