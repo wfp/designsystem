@@ -8,6 +8,7 @@ export default {
   component: Checkbox,
   parameters: {
     componentSubtitle: 'Component',
+    status: 'released',
     mdx: markdown,
   },
 };

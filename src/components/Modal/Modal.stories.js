@@ -8,6 +8,7 @@ export default {
   component: Modal,
   parameters: {
     componentSubtitle: 'Component',
+    status: 'released',
     mdx: markdown,
   },
 };

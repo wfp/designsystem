@@ -8,6 +8,7 @@ export default {
   component: InlineLoading,
   parameters: {
     componentSubtitle: 'Component',
+    status: 'released',
     mdx: markdown,
   },
 };

@@ -31,6 +31,7 @@ export default {
   ],
   parameters: {
     componentSubtitle: 'Component',
+    status: 'released',
     mdx: markdown,
   },
 };

@@ -8,6 +8,7 @@ export default {
   component: RadioButton,
   parameters: {
     componentSubtitle: 'RadioButton',
+    status: 'released',
     mdx: markdown,
   },
 };

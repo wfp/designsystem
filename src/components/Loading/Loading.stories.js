@@ -8,6 +8,7 @@ export default {
   component: Loading,
   parameters: {
     componentSubtitle: 'Component',
+    status: 'released',
     mdx: markdown,
   },
 };

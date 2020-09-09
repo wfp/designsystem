@@ -8,6 +8,7 @@ export default {
   component: ModalWrapper,
   parameters: {
     componentSubtitle: 'Component',
+    status: 'released',
     mdx: markdown,
   },
 };

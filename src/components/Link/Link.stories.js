@@ -10,6 +10,7 @@ export default {
   component: Link,
   parameters: {
     componentSubtitle: 'Component',
+    status: 'released',
     mdx: markdown,
   },
 };

@@ -9,6 +9,7 @@ export default {
   component: Icon,
   parameters: {
     componentSubtitle: 'Component',
+    status: 'released',
     mdx: markdown,
   },
 };

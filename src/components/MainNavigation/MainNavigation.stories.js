@@ -25,6 +25,7 @@ export default {
   component: MainNavigation,
   parameters: {
     componentSubtitle: 'Component',
+    status: 'released',
     mdx: markdown,
   },
 };

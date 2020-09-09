@@ -8,6 +8,7 @@ export default {
   component: List,
   parameters: {
     componentSubtitle: 'Component',
+    status: 'released',
     mdx: markdown,
     subcomponents: { ListItem },
   },

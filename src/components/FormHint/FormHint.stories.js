@@ -8,6 +8,7 @@ export default {
   component: FormHint,
   parameters: {
     componentSubtitle: 'Component',
+    status: 'released',
     mdx: markdown,
   },
 };
