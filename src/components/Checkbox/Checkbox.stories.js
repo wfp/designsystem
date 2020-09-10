@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import markdown from './README.mdx';
 import { action } from '@storybook/addon-actions';
 import Checkbox from '.';
@@ -32,11 +32,21 @@ Regular.story = {
   },
 };
 
-export const CheckedInput = (args) => <Checkbox {...args} />;
+export const CheckedInput = (args) => {
+  const [isChecked, setChecked] = useState(true);
+
+  return (
+    <Checkbox
+      {...args}
+      onChange={() => setChecked(!isChecked)}
+      checked={isChecked}
+    />
+  );
+};
 
 CheckedInput.args = {
   labelText: 'Checked Input',
-  checked: true,
+  id: 'check-2',
 };
 
 const check = `Specify whether the underlying input should be checked.`;
