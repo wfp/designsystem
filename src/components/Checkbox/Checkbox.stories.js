@@ -31,3 +31,71 @@ Regular.story = {
     },
   },
 };
+
+export const CheckedInput = (args) => <Checkbox {...args} />;
+
+CheckedInput.args = {
+  labelText: 'Checked Input',
+  checked: true,
+};
+
+const check = `Specify whether the underlying input should be checked.`;
+
+CheckedInput.story = {
+  parameters: {
+    docs: {
+      storyDescription: check,
+    },
+  },
+};
+
+export const Indeterminate = (args) => <Checkbox {...args} />;
+
+Indeterminate.args = {
+  labelText: 'Indeterminate Input',
+  indeterminate: true,
+};
+
+const indeterminate = `Is a state that is neither checked nor unchecked. It’s that in-between state that we might consider the “Maybe” between “Yes” and “No” options`;
+
+Indeterminate.story = {
+  parameters: {
+    docs: {
+      storyDescription: indeterminate,
+    },
+  },
+};
+
+export const DisabledInput = (args) => <Checkbox {...args} />;
+
+DisabledInput.args = {
+  labelText: 'Disabled Input',
+  disabled: true,
+};
+
+const disabled = `Specify whether the Checkbox should be interactive or not`;
+
+DisabledInput.story = {
+  parameters: {
+    docs: {
+      storyDescription: disabled,
+    },
+  },
+};
+
+export const HideLabel = (args) => <Checkbox {...args} />;
+
+HideLabel.args = {
+  labelText: 'Hidden Label',
+  hideLabel: true,
+};
+
+const nolabel = `Specify whether the label should be hidden or not`;
+
+HideLabel.story = {
+  parameters: {
+    docs: {
+      storyDescription: nolabel,
+    },
+  },
+};
