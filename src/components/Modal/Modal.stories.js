@@ -14,15 +14,3 @@ export default {
 };
 
 export const Regular = (args) => <Modal {...args}>Text</Modal>;
-
-const description = `
-You can customize the content by using \`BannerNavigation\`.
-`;
-
-Regular.story = {
-  parameters: {
-    docs: {
-      storyDescription: description,
-    },
-  },
-};

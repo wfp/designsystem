@@ -17,6 +17,8 @@ const matchesFuncName =
 
 const modalRoot = typeof document !== 'undefined' ? document.body : undefined;
 
+/** Modals focus the user’s attention exclusively on one task or piece of information via a window that sits on top of the page content. */
+
 export default class Modal extends Component {
   static propTypes = {
     /**

@@ -3,6 +3,8 @@ import React from 'react';
 import classNames from 'classnames';
 import Wrapper from '../Wrapper';
 
+/** The InfoBar shows very important information on top of the page. */
+
 const InfoBar = ({ children, className, id, pageWidth }) => {
   const wrapperClasses = classNames('wfp--info-bar', className);
 

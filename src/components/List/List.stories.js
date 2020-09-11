@@ -28,6 +28,78 @@ Regular.args = {
   colon: true,
 };
 
+export const SimpleInline = (args) => (
+  <List {...args}>
+    <ListItem title="List item with title">First item</ListItem>
+    <ListItem title="Another item with title">Second item</ListItem>
+    <ListItem>Third item</ListItem>
+    <ListItem>Fourth item</ListItem>
+    <ListItem>Fifth item</ListItem>
+  </List>
+);
+
+SimpleInline.args = {
+  kind: 'simple-inline',
+};
+
+const msg = ` \`simple-inline\` \`kind\` shows listed items next to each other`;
+
+SimpleInline.story = {
+  parameters: {
+    docs: {
+      storyDescription: msg,
+    },
+  },
+};
+
+export const Details = (args) => (
+  <List {...args}>
+    <ListItem title="List item with title">First item</ListItem>
+    <ListItem title="Another item with title">Second item</ListItem>
+    <ListItem>Third item</ListItem>
+    <ListItem>Fourth item</ListItem>
+    <ListItem>Fifth item</ListItem>
+  </List>
+);
+
+Details.args = {
+  kind: 'details',
+};
+
+const msghere = ` \`details\` \`kind\` shows listed items on different blocks`;
+
+Details.story = {
+  parameters: {
+    docs: {
+      storyDescription: msghere,
+    },
+  },
+};
+
+export const Bullet = (args) => (
+  <List {...args}>
+    <ListItem title="List item with title">First item</ListItem>
+    <ListItem title="Another item with title">Second item</ListItem>
+    <ListItem>Third item</ListItem>
+    <ListItem>Fourth item</ListItem>
+    <ListItem>Fifth item</ListItem>
+  </List>
+);
+
+Bullet.args = {
+  kind: 'bullet',
+};
+
+const msgg = ` \`bullet\` \`kind\` shows bulleted list items`;
+
+Bullet.story = {
+  parameters: {
+    docs: {
+      storyDescription: msgg,
+    },
+  },
+};
+
 export const ListColumns = (args) => (
   <List kind="details" style={{ columnCount: 3 }}>
     <ListItem title="Strategic Outcome">
@@ -60,7 +132,7 @@ export const ListColumns = (args) => (
 );
 
 const description = `
-Lists can have multiple columns by using the \`columnCount\` prop.
+Lists can have multiple columns by using the \`columnCount\` attribute in \`style\` prop.
 `;
 
 ListColumns.story = {
@@ -71,17 +143,18 @@ ListColumns.story = {
   },
 };
 
-export const ListBullets = (args) => (
+export const ListitemBullets = (args) => (
   <List kind="bullets">
-    <ListItem kind="checkmark">hello</ListItem>
-    <ListItem kind="cross">hello</ListItem>
+    <ListItem kind="checkmark">checkmark</ListItem>
+
+    <ListItem kind="cross">cross</ListItem>
     <ListItem>hello</ListItem>
   </List>
 );
 
 const listItemDescription = ` \`bullets\` List with ListItems can have \`checkmark\` and \`cross\` kinds`;
 
-ListBullets.story = {
+ListitemBullets.story = {
   parameters: {
     docs: {
       storyDescription: listItemDescription,
