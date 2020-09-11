@@ -8,6 +8,7 @@ export default {
   component: FormLabel,
   parameters: {
     componentSubtitle: 'Component',
+    status: 'released',
     mdx: markdown,
   },
 };

@@ -10,6 +10,7 @@ export default {
   component: Footer,
   parameters: {
     componentSubtitle: 'Component',
+    status: 'released',
     mdx: markdown,
   },
 };

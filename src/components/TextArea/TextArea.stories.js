@@ -8,6 +8,7 @@ export default {
   component: TextArea,
   parameters: {
     componentSubtitle: 'Component',
+    status: 'released',
     mdx: markdown,
   },
 };

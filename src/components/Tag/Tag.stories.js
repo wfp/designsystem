@@ -8,6 +8,7 @@ export default {
   component: Tag,
   parameters: {
     componentSubtitle: 'Component',
+    status: 'released',
     mdx: markdown,
   },
 };

@@ -13,6 +13,7 @@ export default {
   component: Table,
   parameters: {
     componentSubtitle: 'Component',
+    status: 'released',
     mdx: markdown,
   },
 };

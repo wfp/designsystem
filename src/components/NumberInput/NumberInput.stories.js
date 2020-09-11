@@ -8,6 +8,7 @@ export default {
   component: NumberInput,
   parameters: {
     componentSubtitle: 'Component',
+    status: 'released',
     mdx: markdown,
   },
 };

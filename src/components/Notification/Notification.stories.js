@@ -13,6 +13,7 @@ export default {
   component: Button,
   parameters: {
     componentSubtitle: 'Component',
+    status: 'released',
     mdx: markdown,
   },
 };

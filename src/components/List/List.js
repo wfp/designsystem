@@ -3,6 +3,8 @@ import React from 'react';
 import classnames from 'classnames';
 import Icon from '../Icon';
 
+/** List component show a number of connected items written consecutively, typically one below the other. */
+
 export const List = ({ children, className, colon, kind, small, ...other }) => {
   const classNames = classnames('wfp--list', className, {
     [`wfp--list--${kind}`]: kind,

@@ -89,6 +89,8 @@ const sdgIcon = (
 //import logoExtended from '../../../assets/logos/extended/en/wfp-logo-extended-black-en.svg';
 //import logoVertical from '../../../assets/logos/vertical/en/wfp-logo-vertical-black-en.svg';
 
+/** A Footer is a section at the bottom of each page. It typically contains basic site information, copyright data or links to related pages. */
+
 const Footer = ({
   buttonText,
   className,

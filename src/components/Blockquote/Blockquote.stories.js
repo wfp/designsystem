@@ -24,6 +24,7 @@ export default {
   component: Blockquote,
   parameters: {
     componentSubtitle: 'Component',
+    status: 'released',
     mdx: markdown,
   },
 };
@@ -56,6 +57,22 @@ toogleable.story = {
   parameters: {
     docs: {
       storyDescription: `Use \`toogleable\` property to show and hide blockquote when title is clicked`,
+    },
+  },
+};
+
+export const light = (args) => <Blockquote {...args} />;
+
+light.args = {
+  ...props,
+  light: true,
+  title: 'Title',
+};
+
+light.story = {
+  parameters: {
+    docs: {
+      storyDescription: `Use \`light\` property to display light version of blockquote`,
     },
   },
 };

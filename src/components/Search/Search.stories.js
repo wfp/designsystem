@@ -8,6 +8,7 @@ export default {
   component: Search,
   parameters: {
     componentSubtitle: 'Component',
+    status: 'released',
     mdx: markdown,
   },
 };

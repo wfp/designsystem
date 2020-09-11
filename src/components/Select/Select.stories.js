@@ -8,6 +8,7 @@ export default {
   component: Select,
   parameters: {
     componentSubtitle: 'Component',
+    status: 'released',
     mdx: markdown,
   },
 };

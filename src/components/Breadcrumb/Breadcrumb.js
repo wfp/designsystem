@@ -5,6 +5,9 @@ import settings from '../../globals/js/settings';
 
 const { prefix } = settings;
 
+/**
+ * The breadcrumb is a secondary navigation pattern that helps a user understand the hierarchy among levels and navigate back through them. */
+
 const Breadcrumb = ({ children, className, ...other }) => {
   const classNames = classnames(className, {
     [`${prefix}--breadcrumb`]: true,

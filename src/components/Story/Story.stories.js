@@ -8,6 +8,7 @@ export default {
   component: Story,
   parameters: {
     componentSubtitle: 'Component',
+    status: 'released',
     mdx: markdown,
   },
 };

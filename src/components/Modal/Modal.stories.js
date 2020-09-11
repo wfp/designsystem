@@ -8,20 +8,9 @@ export default {
   component: Modal,
   parameters: {
     componentSubtitle: 'Component',
+    status: 'released',
     mdx: markdown,
   },
 };
 
 export const Regular = (args) => <Modal {...args}>Text</Modal>;
-
-const description = `
-You can customize the content by using \`BannerNavigation\`.
-`;
-
-Regular.story = {
-  parameters: {
-    docs: {
-      storyDescription: description,
-    },
-  },
-};

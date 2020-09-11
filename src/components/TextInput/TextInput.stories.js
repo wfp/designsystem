@@ -8,6 +8,7 @@ export default {
   component: TextInput,
   parameters: {
     componentSubtitle: 'Component',
+    status: 'released',
     mdx: markdown,
   },
 };

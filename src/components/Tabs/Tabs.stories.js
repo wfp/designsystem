@@ -11,6 +11,7 @@ export default {
   component: Tabs,
   parameters: {
     componentSubtitle: 'Component',
+    status: 'released',
     mdx: markdown,
   },
 };
