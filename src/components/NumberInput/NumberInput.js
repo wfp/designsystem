@@ -33,6 +33,8 @@ const capMax = (max, value) =>
     ? value
     : Math.min(max, value);
 
+/** The number input component is used for entering numeric values and includes controls for incrementally increasing or decreasing the value */
+
 function NumberInput(props) {
   const {
     additional,
