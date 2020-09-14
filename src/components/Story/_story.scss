@@ -40,7 +40,6 @@
     }
 
     h2 {
-      //margin: $spacing-lg 0;
       margin-top: $spacing-2xl;
 
       &.before--img {
@@ -151,7 +150,7 @@
     h3 + .wfp--list,
     h4 + .wfp--list,
     h5 + .wfp--list {
-      margin-top: $spacing-xs;
+      margin-top: $spacing-md;
     }
 
     /*.wfp--list+h1,

@@ -61,7 +61,7 @@ class Blockquote extends React.Component {
     } = this.props;
     const blockquoteClass = classNames({
       'wfp--blockquote': true,
-      'wfp--blockquote--toggleable': toggleable === true,
+      'wfp--blockquote--toggleable': toggleable,
       'wfp--blockquote--light': light,
       'wfp--blockquote--code': code,
       'wfp--blockquote--no-content': !children,
@@ -70,7 +70,7 @@ class Blockquote extends React.Component {
       'wfp--blockquote--success': kind === 'success',
       'wfp--blockquote--info': kind === 'info' || info,
       'wfp--blockquote--with-icon': withIcon || icon,
-      'wfp--blockquote--open': this.state.open,
+      'wfp--blockquote--toggle-open': this.state.open,
       [`${className}`]: className,
     });
 
@@ -116,13 +116,7 @@ class Blockquote extends React.Component {
               {title}
             </div>
           )}
-          {children}
-          {/*innerHtml && (
-            <div
-              role="complementary"
-              dangerouslySetInnerHTML={this.showInnerHtml(innerHtml)}
-            />
-          )*/}
+          <div className="wfp--blockquote__inside">{children}</div>
         </div>
       </div>
     );
@@ -157,7 +151,7 @@ Blockquote.propTypes = {
   /**
    * Show options to show and hide the Blockquote
    */
-  toogleable: PropTypes.bool,
+  toggleable: PropTypes.bool,
   /**
    * Show title for Blockquote
    */

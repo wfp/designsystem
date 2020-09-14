@@ -3,7 +3,7 @@
 Add `controlled={false}` to allow final-form to hand the state.
 
 ```js
-<RadioButtonGroup
+<InputGroup
   controlled={false}
   labelText="Tracking frequency"
   helperText="How often the position will be updated">
@@ -25,5 +25,5 @@ Add `controlled={false}` to allow final-form to hand the state.
     labelText="Radiobutton 2"
     type="radio"
   />
-</RadioButtonGroup>
+</InputGroup>
 ```

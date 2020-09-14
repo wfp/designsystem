@@ -28,6 +28,36 @@
     word-wrap: anywhere;
   }
 
+  .#{$prefix}--blockquote--toggleable {
+    .#{$prefix}--blockquote__title {
+      cursor: pointer;
+      &:after {
+        color: $interactive-01;
+        content: ' +';
+        font-weight: 800;
+      }
+    }
+    .#{$prefix}--blockquote__inside {
+      //display: none;
+      max-height: 0;
+      overflow: hidden;
+      transition: all 0.3;
+    }
+  }
+
+  .#{$prefix}--blockquote--toggle-open {
+    .#{$prefix}--blockquote__inside {
+      //display: block;
+      max-height: 1000px;
+    }
+    .#{$prefix}--blockquote__title {
+      &:after {
+        color: $interactive-01;
+        content: ' -';
+      }
+    }
+  }
+
   .#{$prefix}--blockquote--no-content {
     .#{$prefix}--blockquote__title {
       margin-bottom: 0;

@@ -18,6 +18,8 @@ import { scrollToElement } from './utils';
 
 import { Subtitle } from './Subtitle';
 import { Title } from './Title';
+import { ListItem, List } from '../../src/components/List';
+import Story from '../../src/components/Story';
 
 export interface DocsContainerProps {
   context: DocsContextProps;
@@ -48,7 +50,38 @@ export const DocsContainer: FunctionComponent<DocsContainerProps> = ({
     themeVars = options.theme;
   }
   const theme = ensureTheme(themeVars);
-  const allComponents = { ...defaultComponents, ...docs.components };
+
+  //TODO: just a test
+  const li = (props) => {
+    const kind =
+      typeof props.children === 'string' ? props.children.substring(0, 1) : '';
+
+    if (kind === '✓' || kind === '✗')
+      return (
+        <ListItem kind={kind === '✓' ? 'checkmark' : 'cross'} {...props}>
+          {props.children.substring(1, props.children.length)}
+        </ListItem>
+      );
+
+    return <li {...props}>{props.children}</li>;
+  };
+
+  const ul = (props) => {
+    return (
+      <List {...props} kind="bullets">
+        {props.children}
+      </List>
+    );
+  };
+
+  const wrapper = (props) => <Story {...props} />;
+  const allComponents = {
+    ...defaultComponents,
+    ...docs.components,
+    ul,
+    li,
+    wrapper,
+  };
 
   useEffect(() => {
     let url;

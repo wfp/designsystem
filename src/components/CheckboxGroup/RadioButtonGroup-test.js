@@ -1,15 +1,15 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
-import RadioButtonGroup from '../RadioButtonGroup';
+import InputGroup from '../InputGroup';
 import RadioButton from '../RadioButton';
 
-describe('RadioButtonGroup', () => {
+describe('InputGroup', () => {
   describe('renders as expected', () => {
     const wrapper = mount(
-      <RadioButtonGroup defaultSelected="female" name="gender">
+      <InputGroup defaultSelected="female" name="gender">
         <RadioButton labelText="Male" value="male" />
         <RadioButton labelText="Female" value="female" />
-      </RadioButtonGroup>
+      </InputGroup>
     );
 
     describe('wrapping div', () => {
@@ -38,26 +38,14 @@ describe('RadioButtonGroup', () => {
       });
 
       it('should set checked property based on defaultSelected prop', () => {
-        expect(
-          radioButton()
-            .last()
-            .props().checked
-        ).toEqual(true);
+        expect(radioButton().last().props().checked).toEqual(true);
       });
 
       it('should set checked property based on valueSelected prop', () => {
         wrapper.setProps({ valueSelected: 'male' });
-        expect(
-          radioButton()
-            .first()
-            .props().checked
-        ).toEqual(true);
+        expect(radioButton().first().props().checked).toEqual(true);
         wrapper.setProps({ valueSelected: 'female' });
-        expect(
-          radioButton()
-            .last()
-            .props().checked
-        ).toEqual(true);
+        expect(radioButton().last().props().checked).toEqual(true);
       });
 
       it('should set expected props on children', () => {
@@ -71,10 +59,10 @@ describe('RadioButtonGroup', () => {
   describe('onChange event', () => {
     const onChange = jest.fn();
     const wrapper = mount(
-      <RadioButtonGroup onChange={onChange} name="gender">
+      <InputGroup onChange={onChange} name="gender">
         <RadioButton labelText="Male" value="male" />
         <RadioButton labelText="Female" value="female" />
-      </RadioButtonGroup>
+      </InputGroup>
     );
 
     const firstRadio = wrapper.find(RadioButton).first();
@@ -87,12 +75,7 @@ describe('RadioButtonGroup', () => {
     it('invoking onChange sets checked on correct child', () => {
       firstRadio.props().onChange(...args);
       wrapper.update();
-      expect(
-        wrapper
-          .find(RadioButton)
-          .first()
-          .props().checked
-      ).toEqual(true);
+      expect(wrapper.find(RadioButton).first().props().checked).toEqual(true);
     });
 
     it('should invoke onChange with correct arguments', () => {
@@ -108,13 +91,10 @@ describe('RadioButtonGroup', () => {
 
   describe('Getting derived state from props', () => {
     const wrapper = shallow(
-      <RadioButtonGroup
-        valueSelected="male"
-        defaultSelected="female"
-        name="gender">
+      <InputGroup valueSelected="male" defaultSelected="female" name="gender">
         <RadioButton labelText="Male" value="male" />
         <RadioButton labelText="Female" value="female" />
-      </RadioButtonGroup>
+      </InputGroup>
     );
 
     it('should initialize the current selection from props', () => {

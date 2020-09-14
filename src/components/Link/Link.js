@@ -1,9 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-
 import settings from '../../globals/js/settings';
 const { prefix } = settings;
+
+/**
+ * _Buttons express what action will occur when the user clicks or touches it. Buttons are used to initialize an action, either in the background or foreground of an experience._ */
 
 export const Link = ({ children, className, href, ...other }) => {
   const classNames = classnames(

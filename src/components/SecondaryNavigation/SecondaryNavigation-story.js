@@ -16,23 +16,23 @@ import { text, select, withKnobs, boolean } from '@storybook/addon-knobs';
 const props = {
   secondaryNavigation: () => ({
     name: text(
-      'The form control name (name in <RadioButtonGroup>)',
+      'The form control name (name in <InputGroup>)',
       'radio-button-group'
     ),
     pageWidth: select(
-      'Value of the selected button (valueSelected in <RadioButtonGroup>)',
+      'Value of the selected button (valueSelected in <InputGroup>)',
       pageWidths,
       'default-selected'
     ),
     labelText: text(
-      'Label text (labelText in <RadioButtonGroup>)',
+      'Label text (labelText in <InputGroup>)',
       'Radio button group label'
     ),
     helperText: text(
-      'Helper text (labelText in <RadioButtonGroup>)',
+      'Helper text (labelText in <InputGroup>)',
       'Radio button group helper'
     ),
-    vertical: boolean('Vertical (vertical in <RadioButtonGroup>)', false),
+    vertical: boolean('Vertical (vertical in <InputGroup>)', false),
   }),
   tabs: {
     className: 'some-class',

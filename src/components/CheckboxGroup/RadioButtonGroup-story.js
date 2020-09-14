@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 
 import { withKnobs, boolean, select, text } from '@storybook/addon-knobs';
-import RadioButtonGroup from '../RadioButtonGroup';
+import InputGroup from '../InputGroup';
 import RadioButton from '../RadioButton';
 
 const values = {
@@ -15,20 +15,20 @@ const values = {
 const props = {
   group: () => ({
     name: text(
-      'The form control name (name in <RadioButtonGroup>)',
+      'The form control name (name in <InputGroup>)',
       'radio-button-group'
     ),
     valueSelected: select(
-      'Value of the selected button (valueSelected in <RadioButtonGroup>)',
+      'Value of the selected button (valueSelected in <InputGroup>)',
       values,
       'default-selected'
     ),
     labelText: text(
-      'Label text (labelText in <RadioButtonGroup>)',
+      'Label text (labelText in <InputGroup>)',
       'Radio button group label'
     ),
     helperText: text(
-      'Helper text (labelText in <RadioButtonGroup>)',
+      'Helper text (labelText in <InputGroup>)',
       'Radio button group helper'
     ),
     onChange: action('onChange'),
@@ -43,18 +43,18 @@ const props = {
   }),
 };
 
-storiesOf('Components|RadioButtonGroup', module)
+storiesOf('Components|InputGroup', module)
   .addDecorator(withKnobs)
   .add('Default', () => {
     const radioProps = props.radio();
     return (
-      <RadioButtonGroup
+      <InputGroup
         defaultSelected="default-selected"
         legend="Group Legend"
         {...props.group()}>
         <RadioButton value="standard" id="radio-1" {...radioProps} />
         <RadioButton value="default-selected" id="radio-2" {...radioProps} />
         <RadioButton value="disabled" id="radio-3" {...radioProps} />
-      </RadioButtonGroup>
+      </InputGroup>
     );
   });

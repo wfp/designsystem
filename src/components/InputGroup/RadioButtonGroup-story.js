@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 
 import { withKnobs, boolean, select, text } from '@storybook/addon-knobs';
-import RadioButtonGroup from '../RadioButtonGroup';
+import InputGroup from '../InputGroup';
 import RadioButton from '../RadioButton';
 import Checkbox from '../Checkbox';
 
@@ -16,23 +16,23 @@ const values = {
 const props = {
   group: () => ({
     name: text(
-      'The form control name (name in <RadioButtonGroup>)',
+      'The form control name (name in <InputGroup>)',
       'radio-button-group'
     ),
     valueSelected: select(
-      'Value of the selected button (valueSelected in <RadioButtonGroup>)',
+      'Value of the selected button (valueSelected in <InputGroup>)',
       values,
       'default-selected'
     ),
     labelText: text(
-      'Label text (labelText in <RadioButtonGroup>)',
+      'Label text (labelText in <InputGroup>)',
       'Radio button group label'
     ),
     helperText: text(
-      'Helper text (labelText in <RadioButtonGroup>)',
+      'Helper text (labelText in <InputGroup>)',
       'Radio button group helper'
     ),
-    vertical: boolean('Vertical (vertical in <RadioButtonGroup>)', false),
+    vertical: boolean('Vertical (vertical in <InputGroup>)', false),
     onChange: action('onChange'),
   }),
   radio: () => ({
@@ -50,12 +50,12 @@ const props = {
   }),
 };
 
-storiesOf('Components|RadioButtonGroup', module)
+storiesOf('Components|InputGroup', module)
   .addDecorator(withKnobs)
   .add('Default', () => {
     const radioProps = props.radio();
     return (
-      <RadioButtonGroup
+      <InputGroup
         defaultSelected="default-selected"
         legend="Group Legend"
         {...props.group()}>
@@ -77,19 +77,19 @@ storiesOf('Components|RadioButtonGroup', module)
           {...radioProps}
           labelText="Radio 1"
         />
-      </RadioButtonGroup>
+      </InputGroup>
     );
   })
   .add('Checkbox', () => {
     const checkProps = props.check();
     return (
-      <RadioButtonGroup
+      <InputGroup
         defaultSelected="default-selected"
         legend="Group Legend"
         {...props.group()}>
         <Checkbox value="standard" id="radio-1" {...checkProps} />
         <Checkbox value="default-selected" id="radio-2" {...checkProps} />
         <Checkbox value="disabled" id="radio-3" {...checkProps} />
-      </RadioButtonGroup>
+      </InputGroup>
     );
   });

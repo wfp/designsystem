@@ -64,7 +64,7 @@ export notificationStyle from './components/Notification';
 export NumberInput from './components/NumberInput';
 export Pagination from './components/Pagination';
 export RadioButton from './components/RadioButton';
-export RadioButtonGroup from './components/RadioButtonGroup';
+export InputGroup from './components/InputGroup';
 export ReadMore from './components/ReadMore';
 export ReduxFormWrapper from './components/ReduxFormWrapper';
 export Search from './components/Search';
