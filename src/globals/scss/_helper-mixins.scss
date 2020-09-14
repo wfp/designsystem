@@ -45,7 +45,7 @@
   border: $input-border;
   border-radius: $input-border-radius;
   box-shadow: none;
-  &::-webkit-input-placeholder {
+  &::placeholder {
     @include placeholder-colors;
   }
 

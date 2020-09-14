@@ -30,6 +30,10 @@
       align-items: center;
     }
 
+    code {
+      font-family: monospace;
+    }
+
     p {
       margin-top: $spacing-md;
       line-height: 1.6em;
