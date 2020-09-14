@@ -9,6 +9,7 @@ export default {
   component: User,
   parameters: {
     componentSubtitle: 'Component',
+    status: 'released',
     mdx: markdown,
   },
 };

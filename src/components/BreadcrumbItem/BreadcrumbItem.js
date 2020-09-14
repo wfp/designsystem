@@ -43,6 +43,10 @@ BreadcrumbItem.propTypes = {
    * Specify an link for the `BreadcrumbItem`
    */
   href: PropTypes.string,
+  /**
+   * Specify `BreadcrumbItem` to be interactive/enabled or non-interactive/disabled
+   */
+  disableLink: PropTypes.bool,
 };
 
 export default BreadcrumbItem;

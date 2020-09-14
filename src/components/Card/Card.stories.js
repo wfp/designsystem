@@ -9,6 +9,7 @@ export default {
   component: Card,
   parameters: {
     componentSubtitle: 'Component',
+    status: 'released',
     mdx: markdown,
   },
 };
@@ -22,6 +23,35 @@ Regular.args = {
     'Food security and climate change analyses, adaptation planning, and good practices in food security adaptation programming.',
   title: 'The Climate Adaption Mangement and Innovation Initiative',
   kind: 'landscape',
+};
+
+export const CardKinds = (args) => <></>;
+
+const cardkinds = `
+By changing the \`kind\` prop you can use different styles of the card.
+
+| kind   |  Description  |
+|----------|-------------|
+| \`landscape\` | A card designed to highlight a link using a landscape photograph and a title with metadata above.|
+| \`landscape-light\` | A card designed to highlight a link using a landscape photograph and  white-background section below with a title and a subtitle.   |
+| \`split\` | A card of the same dimension of the landscape photo card, but split in half. One half features a landscape photograph, the other half is a white-background section with a title and a subtitle. |
+| \`hero\` | Hero block with title and a background image. It can feature an optional subtitle. |
+| \`splash\` | Page middle content section. |
+| \`splash-image\` | Page middle content section with background image. |
+| \`splash-compact\` | A card content section without space around title and subtitle. |
+| \`related\` | A card designed with landscape photograph and a title with metadata on right side. |
+
+
+`;
+
+CardKinds.story = {
+  name: 'Card kinds',
+  parameters: {
+    markdown: 'hello',
+    docs: {
+      storyDescription: cardkinds,
+    },
+  },
 };
 
 export const Landscape = (args) => <Card {...args} />;
@@ -49,7 +79,7 @@ LandscapeLight.args = {
 LandscapeLight.story = {
   parameters: {
     docs: {
-      storyDescription: `A card designed to highlight a link using a landscape photograph and a title with metadata above.`,
+      storyDescription: `A card designed to highlight a link using a landscape photograph and  white-background section below with a title and a subtitle.`,
     },
   },
 };
@@ -110,7 +140,7 @@ SplashImage.args = {
 SplashImage.story = {
   parameters: {
     docs: {
-      storyDescription: `Page bottom content section with image.`,
+      storyDescription: `Page middle content section with background image.`,
     },
   },
 };
@@ -126,7 +156,7 @@ SplashCompact.args = {
 SplashCompact.story = {
   parameters: {
     docs: {
-      storyDescription: `Page bottom content section with image.`,
+      storyDescription: `A card content section without space around title and subtitle.`,
     },
   },
 };
@@ -141,7 +171,7 @@ Related.args = {
 Related.story = {
   parameters: {
     docs: {
-      storyDescription: `Page bottom content section with image.`,
+      storyDescription: `A card designed with landscape photograph and a title with metadata on right side.`,
     },
   },
 };

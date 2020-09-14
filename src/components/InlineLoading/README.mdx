@@ -1,6 +1,21 @@
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+
+## Usage
+
 **Inline loading** spinners are used when performing actions. They help notify user’s that their action is being processed. The waiting experience is a crucial design opportunity. Although it may not be obvious what is occurring on the back-end, we can communicate clearly to reassure the user that progress is happening.
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
 
 It is best practice to use an Inline loading component for any Create, Update, or Delete actions. The component provides feedback to the user about the progress of the action they took. This could be in a table, after a primary or secondary button click, or even in a modal.
+
+#### When to use
+
+- Use an inline loading component for any action that cannot be performed instantly and will only require a short time to process.
+- Use when retrieving or refreshing small data amounts, such as status.
+
+#### When not to use
+
+- Don’t use inline loading for full page loads, use skeleton states instead.
+- Don’t trigger inline loading on more than one item or action at a time, unless on initial page load or refresh.
 
 ### Usage with react
 

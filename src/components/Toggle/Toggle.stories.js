@@ -8,6 +8,7 @@ export default {
   component: Toggle,
   parameters: {
     componentSubtitle: 'Component',
+    status: 'released',
     mdx: markdown,
   },
 };

@@ -8,6 +8,7 @@ export default {
   component: Wrapper,
   parameters: {
     componentSubtitle: 'Component',
+    status: 'released',
     mdx: markdown,
   },
 };

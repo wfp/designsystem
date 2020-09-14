@@ -25,6 +25,9 @@ const iconLookup = {
   },
 };
 
+/**
+ *  The Blockquote element indicates that the enclosed text is an extended quotation or information. It is rendered visually by a surrounding box. */
+
 class Blockquote extends React.Component {
   constructor(props) {
     super(props);
@@ -34,7 +37,9 @@ class Blockquote extends React.Component {
   }
 
   toggleBlockquote = () => {
-    this.setState({ open: !this.state.open });
+    this.setState({ open: !this.state.open }, () => {
+      console.log('toogle', this.state.open);
+    });
   };
 
   /*showInnerHtml = content => {
@@ -49,7 +54,7 @@ class Blockquote extends React.Component {
       error,
       style,
       title,
-      toggleable,
+      toogleable,
       icon,
       //innerHtml,
       light,
@@ -61,7 +66,11 @@ class Blockquote extends React.Component {
     } = this.props;
     const blockquoteClass = classNames({
       'wfp--blockquote': true,
+<<<<<<< HEAD
       'wfp--blockquote--toggleable': toggleable,
+=======
+      'wfp--blockquote--toggleable': toogleable === true,
+>>>>>>> a6cfcd71a44b7c9294739834a260bbcb383d7f0c
       'wfp--blockquote--light': light,
       'wfp--blockquote--code': code,
       'wfp--blockquote--no-content': !children,
@@ -70,7 +79,11 @@ class Blockquote extends React.Component {
       'wfp--blockquote--success': kind === 'success',
       'wfp--blockquote--info': kind === 'info' || info,
       'wfp--blockquote--with-icon': withIcon || icon,
+<<<<<<< HEAD
       'wfp--blockquote--toggle-open': this.state.open,
+=======
+      'wfp--blockquote--toggle--open': this.state.open,
+>>>>>>> a6cfcd71a44b7c9294739834a260bbcb383d7f0c
       [`${className}`]: className,
     });
 
@@ -117,6 +130,16 @@ class Blockquote extends React.Component {
             </div>
           )}
           <div className="wfp--blockquote__inside">{children}</div>
+<<<<<<< HEAD
+=======
+
+          {/*innerHtml && (
+            <div
+              role="complementary"
+              dangerouslySetInnerHTML={this.showInnerHtml(innerHtml)}
+            />
+          )*/}
+>>>>>>> a6cfcd71a44b7c9294739834a260bbcb383d7f0c
         </div>
       </div>
     );
@@ -149,7 +172,7 @@ Blockquote.propTypes = {
    */
   light: PropTypes.bool,
   /**
-   * Show options to show and hide the Blockquote
+   * Show options to show and hide the Blockquote when title is clicked
    */
   toggleable: PropTypes.bool,
   /**

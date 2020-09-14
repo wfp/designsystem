@@ -12,11 +12,14 @@ export default {
   subcomponents: { BannerNavigationItem, Link },
   parameters: {
     componentSubtitle: 'Component',
+    status: 'released',
     mdx: markdown,
   },
 };
 
-export const Regular = (args) => <BannerNavigationWithContent {...args} />;
+export const RegularNavigation = (args) => (
+  <BannerNavigationWithContent {...args} />
+);
 
 export const CustomContent = (args) => (
   <BannerNavigation {...args}>

@@ -7,6 +7,8 @@ import settings from '../../globals/js/settings';
 
 const { prefix } = settings;
 
+/** FormHint allows you to add a longer explanation to an input element. */
+
 const FormHint = ({
   className,
   children,

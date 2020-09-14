@@ -1,6 +1,9 @@
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { useState } from 'react';
 import classNames from 'classnames';
+
+/**
+ * Checkboxes are used for a list of options where the user may select multiple options, including all or none. */
 
 const Checkbox = ({
   className,

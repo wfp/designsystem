@@ -8,6 +8,7 @@ export default {
   component: ReadMore,
   parameters: {
     componentSubtitle: 'Component',
+    status: 'released',
     mdx: markdown,
   },
 };

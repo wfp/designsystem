@@ -9,6 +9,7 @@ export default {
   component: InfoBar,
   parameters: {
     componentSubtitle: 'Component',
+    status: 'released',
     mdx: markdown,
   },
 };

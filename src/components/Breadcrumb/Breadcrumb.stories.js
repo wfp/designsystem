@@ -13,6 +13,7 @@ export default {
   subcomponents: { BreadcrumbHome, BreadcrumbItem },
   parameters: {
     componentSubtitle: 'Component',
+    status: 'released',
     mdx: markdown,
   },
 };

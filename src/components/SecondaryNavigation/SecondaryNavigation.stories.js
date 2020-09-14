@@ -19,6 +19,7 @@ export default {
   subcomponents: { SecondaryNavigationTitle },
   parameters: {
     componentSubtitle: 'Component',
+    status: 'released',
     mdx: markdown,
   },
 };

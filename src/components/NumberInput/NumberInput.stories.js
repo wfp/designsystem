@@ -8,6 +8,7 @@ export default {
   component: NumberInput,
   parameters: {
     componentSubtitle: 'Component',
+    status: 'released',
     mdx: markdown,
   },
 };
@@ -38,5 +39,5 @@ withError.args = {
   name: 'inputname',
   helperText: 'Optional helperText',
   labelText: 'The labelText',
-  invalid: { message: 'Please enter your first name' },
+  invalid: { message: 'Please enter your number' },
 };

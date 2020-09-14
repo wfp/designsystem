@@ -12,6 +12,8 @@ import initComponentBySearch from '../../globals/js/mixins/init-component-by-sea
 import handles from '../../globals/js/mixins/handles';
 import toggleAttribute from '../../globals/js/misc/toggle-attribute';
 
+/** kadskjbkj */
+
 class InlineLoading extends mixin(
   createComponent,
   initComponentBySearch,
@@ -41,7 +43,7 @@ class InlineLoading extends mixin(
    */
   setState(state) {
     const states = this.constructor.states;
-    const values = Object.keys(states).map(key => states[key]);
+    const values = Object.keys(states).map((key) => states[key]);
     if (values.indexOf(state) < 0) {
       throw new Error(
         `One of the following value should be given as the state: ${values.join(

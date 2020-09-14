@@ -24,6 +24,7 @@ export default {
   component: Blockquote,
   parameters: {
     componentSubtitle: 'Component',
+    status: 'released',
     mdx: markdown,
   },
 };
@@ -39,6 +40,39 @@ Default.argTypes = {
     control: {
       type: 'select',
       options: ['info', 'warning', 'error', 'success'],
+    },
+  },
+};
+
+export const toogleable = (args) => <Blockquote {...args} />;
+
+toogleable.args = {
+  ...props,
+  kind: 'info',
+  title: 'Title',
+  toogleable: true,
+};
+
+toogleable.story = {
+  parameters: {
+    docs: {
+      storyDescription: `Use \`toogleable\` property to show and hide blockquote when title is clicked`,
+    },
+  },
+};
+
+export const light = (args) => <Blockquote {...args} />;
+
+light.args = {
+  ...props,
+  light: true,
+  title: 'Title',
+};
+
+light.story = {
+  parameters: {
+    docs: {
+      storyDescription: `Use \`light\` property to display light version of blockquote`,
     },
   },
 };
@@ -101,7 +135,7 @@ CustomIcon.args = {
 CustomIcon.story = {
   parameters: {
     docs: {
-      storyDescription: `Use \`success\` for showing a successful message like after submitting a form`,
+      storyDescription: `Use \`icon\` to add custom icon to message`,
     },
   },
 };

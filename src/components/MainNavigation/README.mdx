@@ -1,35 +1,21 @@
-The Main Navigation is a Horizontal Menu which consists of multiple
-clickable items placed at the top of the page. The navigation stays
-unchanged when browswing through the site and is present on every page.
-The currently selected item is usually highlighted.
-
-The MainNavigation is used across all applications, it is the starting point of the application and offers the top level navigation items.
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
 
 ### Usage
 
+The MainNavigation is used across all applications, it is the starting point of the application and offers the top level navigation items.
+
 import { List, ListItem } from '../List';
 
-<List kind="bullet">
-  <ListItem kind="checkmark">Internal and external applications</ListItem>
-  <ListItem kind="checkmark">
-    The MainNavigation can be used for both internal and external websites.
-  </ListItem>
-  <ListItem kind="checkmark">
-    The MainNavigation can be used for both internal and external websites.
-  </ListItem>
-</List>
+#### When to use
 
-### Do not use
+- Internal and external applications
+- The MainNavigation can be used for both internal and external websites.
 
-<List kind="bullet">
-  <ListItem kind="cross">
-    External websites (wfp.org, etc.): The header might not be the right
-    solution for external websites. Please consult the #ux-ui channel on Slack.
-  </ListItem>
-  <ListItem kind="cross">
-    Do not use WFP's logo inside the MainNavigation.
-  </ListItem>
-</List>
+#### When not to use
+
+- External websites (wfp.org, etc.): The header might not be the right
+  solution for external websites. Please consult the #ux-ui channel on Slack.
+- Do not use WFP's logo inside the MainNavigation.
 
 ```js
 import { MainNavigation, MainNavigationItem } from '@wfp/ui';
