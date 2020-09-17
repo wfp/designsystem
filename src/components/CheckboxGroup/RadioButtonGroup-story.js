@@ -14,10 +14,7 @@ const values = {
 
 const props = {
   group: () => ({
-    name: text(
-      'The form control name (name in <InputGroup>)',
-      'radio-button-group'
-    ),
+    name: text('The form control name (name in <InputGroup>)', 'input-group'),
     valueSelected: select(
       'Value of the selected button (valueSelected in <InputGroup>)',
       values,

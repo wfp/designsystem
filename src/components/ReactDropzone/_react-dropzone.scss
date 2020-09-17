@@ -25,9 +25,7 @@ $css--helpers: true;
         border-color: $interactive-01;
         box-shadow: 0px 0px 10px rgba($interactive-01, 0.2);
       }
-      p {
-        @include typescale(zeta);
-      }
+      @include typescale(zeta);
       &:hover {
         border-color: $interactive-01;
       }

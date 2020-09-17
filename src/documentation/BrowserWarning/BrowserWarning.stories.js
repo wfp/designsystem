@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
-//import { withKnobs, boolean, select, text } from '@storybook/addon-knobs/react';
 
 import BrowserWarning from './BrowserWarning';
 
@@ -8,7 +7,6 @@ import Modal from '../../components/Modal';
 import Link from '../../components/Link';
 import InfoBar from '../../components/InfoBar';
 
-import { withKnobs, text } from '@storybook/addon-knobs';
 import markdown from './README.mdx';
 
 export default {

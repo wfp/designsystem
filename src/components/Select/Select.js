@@ -30,6 +30,7 @@ function Select(props) {
     invalidText,
     helperText,
     light,
+    name,
     inputRef,
     ...other
   } = props;
@@ -48,7 +49,8 @@ function Select(props) {
 
   const ariaProps = {};
   if (invalid) {
-    ariaProps['aria-describedby'] = errorId;
+    //TODO: check if correct
+    ariaProps['aria-describedby'] = usedId;
   }
   const input = (() => {
     return (
@@ -57,6 +59,7 @@ function Select(props) {
           {...other}
           {...ariaProps}
           id={usedId}
+          name={name}
           className={`${prefix}--select-input`}
           disabled={disabled || undefined}
           data-invalid={invalid || undefined}
