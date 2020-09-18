@@ -4,55 +4,86 @@
 @import './themes/light.scss';
 @import './themes/light-border.scss';
 
-.#{$namespace-prefix}-iOS {
+.#{$prefix}--tooltip {
   cursor: pointer !important;
   -webkit-tap-highlight-color: transparent;
-}
-
-.#{$namespace-prefix}-popper {
-  pointer-events: none;
-  max-width: calc(100vw - 10px);
+  background: #fff;
+  padding: $spacing-xs;
+  opacity: 0;
   transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
   transition-property: transform;
-}
-
-.#{$namespace-prefix}-tooltip {
-  position: relative;
-  color: white;
-  border-radius: 4px;
-  font-size: 14px;
-  line-height: 1.4;
-  background-color: #333;
   cursor: pointer;
-  transition-property: visibility, opacity, transform;
-  outline: 0;
+  border-radius: 7px;
+  @include layer('pop-out');
+  z-index: 1000;
 
-  @each $placement in $placements {
-    &[data-placement^='#{$placement}'] {
-      > .#{$namespace-prefix}-arrow {
-        @include arrow($placement, $arrow-size + 1, #333);
-        @include arrow-margin($placement);
-        @include arrow-transform-origin($placement, $arrow-size);
-        @include arrow-position($placement, $arrow-size, false);
-      }
+  &[data-popper-placement*='bottom'] {
+    .#{$prefix}--tooltip__arrow {
+      top: 0;
+      left: 0;
+      margin-top: -6px;
+      /*&::before {
+        border-width: 0 1.5em 1em 1.5em;
+        border-color: transparent transparent #232323 transparent;
+      }*/
     }
   }
-
-  &[data-interactive][data-state='visible'] {
-    pointer-events: auto;
+  &[data-popper-placement*='top'] {
+    .#{$prefix}--tooltip__arrow {
+      bottom: 0;
+      left: 0;
+      margin-bottom: -6px;
+      /*&::before {
+        border-width: 1em 1.5em 0 1.5em;
+        border-color: #232323 transparent transparent transparent;
+      }*/
+    }
   }
-
-  &[data-inertia][data-state='visible'] {
-    transition-timing-function: cubic-bezier(0.54, 1.5, 0.38, 1.11);
+  &[data-popper-placement*='right'] {
+    .#{$prefix}--tooltip__arrow {
+      left: 0;
+      margin-left: -6px;
+      /*&::before {
+        border-width: 1.5em 1em 1.5em 0;
+        border-color: transparent #232323 transparent transparent;
+      }*/
+    }
+  }
+  &[data-popper-placement*='left'] {
+    .#{$prefix}--tooltip__arrow {
+      right: 0;
+      margin-right: -6em;
+      /*&::before {
+        border-width: 1.5em 0 1.5em 1em;
+        border-color: transparent transparent transparent#232323;
+      }*/
+    }
   }
 }
 
-.#{$namespace-prefix}-arrow {
+.#{$prefix}--tooltip--dark {
+  color: $inverse-01;
+  background: $ui-05;
+}
+
+.#{$prefix}--tooltip--visible {
+  opacity: 1;
+}
+
+.#{$prefix}--tooltip__arrow {
+  width: 15px;
+  height: 15px;
   position: absolute;
-  border-color: transparent;
-  border-style: solid;
-}
-
-.#{$namespace-prefix}-content {
-  padding: 5px 9px;
+  z-index: -1;
+  &:before {
+    content: '';
+    transform: rotate(45deg);
+    background: #fff;
+    top: 0px;
+    left: 0px;
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    z-index: -1;
+  }
 }

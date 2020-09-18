@@ -107,7 +107,7 @@ storiesOf('Components|ModalWrapper', module)
         <SelectItem value="option-3" text="Option 3" />
       </Select>
       <br />
-      <InputGroup name="radio-button-group" defaultSelected="default-selected">
+      <InputGroup name="input-group" defaultSelected="default-selected">
         <RadioButton
           value="default-selected"
           id="radio-1"

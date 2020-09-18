@@ -7,6 +7,10 @@ import settings from '../../globals/js/settings';
 
 const { prefix } = settings;
 
+/**
+ * InputGroup allows you to organize and arange multiple input elements.
+ */
+
 export default class InputGroup extends React.Component {
   state = { selected: this.props.valueSelected || this.props.defaultSelected };
 
@@ -133,7 +137,7 @@ export default class InputGroup extends React.Component {
       controlled,
       vertical,
       hideLabel,
-      className = `${prefix}--radio-button-group`,
+      className = `${prefix}--input-group`,
     } = this.props;
 
     const labelClasses = classNames('wfp--label', {
@@ -141,7 +145,7 @@ export default class InputGroup extends React.Component {
     });
 
     const wrapperClasses = classNames(`${prefix}--form-item`, {
-      [`${prefix}--radio-button-group__vertical`]: vertical,
+      [`${prefix}--input-group__vertical`]: vertical,
     });
 
     const label = labelText ? (
@@ -157,7 +161,7 @@ export default class InputGroup extends React.Component {
         <div className={className} disabled={disabled}>
           {label}
           {helper}
-          <div className={`${prefix}--radio-button-group-inside`}>
+          <div className={`${prefix}--input-group-inside`}>
             {controlled ? this.getRadioButtons() : children}
           </div>
         </div>
