@@ -15,10 +15,7 @@ import { text, select, withKnobs, boolean } from '@storybook/addon-knobs';
 
 const props = {
   secondaryNavigation: () => ({
-    name: text(
-      'The form control name (name in <InputGroup>)',
-      'radio-button-group'
-    ),
+    name: text('The form control name (name in <InputGroup>)', 'input-group'),
     pageWidth: select(
       'Value of the selected button (valueSelected in <InputGroup>)',
       pageWidths,

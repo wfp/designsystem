@@ -330,7 +330,7 @@ export default class Modal extends Component {
       ...other
     } = this.props;
 
-    if (!open && lazyLoad) {
+    if (open === false && lazyLoad) {
       return null;
     }
 
