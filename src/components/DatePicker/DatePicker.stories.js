@@ -56,17 +56,73 @@ dateRangePicker.args = {
   helperText: 'Optional helper text.',
 };
 
-// export const datePickerField = (args) => (
-//   <Field
-//     format={(value) => (value ? moment(value) : undefined)}
-//     normalize={(data) => data && data.value && data.value.format()}
-//   />
-// );
-// datePickerField.args = {
-//   component: ReduxFormWrapper,
-//   inputComponent: SingleDatePickerInput,
-//   datePicker: SingleDatePicker,
-//   name: 'inputname',
-//   helperText: 'inputname',
-//   labelText: 'Select a date',
-// };
+export const datePickerField = (args) => (
+  <Field
+    {...args}
+    format={(value) => (value ? moment(value) : undefined)}
+    normalize={(data) => data && data.value && data.value.format()}
+  />
+);
+datePickerField.args = {
+  component: ReduxFormWrapper,
+  inputComponent: SingleDatePickerInput,
+  datePicker: SingleDatePicker,
+  name: 'inputname',
+  helperText: 'inputname',
+  labelText: 'Select a date',
+};
+
+datePickerField.decorators = [
+  (Story) => (
+    <Provider store={store}>
+      <FormWrapper
+        sampleData={{
+          datepicker: {
+            startDate: moment(),
+            endDate: moment().add(15, 'days'),
+          },
+          inputname: moment(),
+        }}>
+        <Story />
+      </FormWrapper>
+    </Provider>
+  ),
+];
+
+export const DateRangePickerField = (args) => (
+  <Field
+    {...args}
+    format={(value) =>
+      value
+        ? {
+            startDate: moment(value.startDate),
+            endDate: moment(value.endDate),
+          }
+        : undefined
+    }
+  />
+);
+DateRangePickerField.args = {
+  component: ReduxFormWrapper,
+  inputComponent: DateRangePickerInput,
+  datePicker: DateRangePicker,
+  name: 'datepicker',
+  labelText: 'Select a date range',
+};
+
+DateRangePickerField.decorators = [
+  (Story) => (
+    <Provider store={store}>
+      <FormWrapper
+        sampleData={{
+          datepicker: {
+            startDate: moment(),
+            endDate: moment().add(15, 'days'),
+          },
+          inputname: moment(),
+        }}>
+        <Story />
+      </FormWrapper>
+    </Provider>
+  ),
+];
