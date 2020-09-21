@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-
 import settings from '../../globals/js/settings';
 const { prefix } = settings;
 

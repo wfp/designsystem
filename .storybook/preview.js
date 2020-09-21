@@ -57,7 +57,15 @@ addParameters({
 
 // or global addParameters
 export const parameters = {
+  controls: { expanded: true },
   docs: {
     theme: theme,
+  },
+  previewTabs: {
+    'storybook/docs/panel': {
+      index: -1,
+      title: 'Docs',
+    },
+    canvas: { title: 'Code' },
   },
 };

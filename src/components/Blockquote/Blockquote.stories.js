@@ -139,3 +139,19 @@ CustomIcon.story = {
     },
   },
 };
+
+export const Tooglable = (args) => <Blockquote {...args} />;
+
+Tooglable.args = {
+  ...props,
+  title: 'Tooglable title',
+  toggleable: true,
+};
+
+Tooglable.story = {
+  parameters: {
+    docs: {
+      storyDescription: `Use \`success\` for showing a successful message like after submitting a form`,
+    },
+  },
+};

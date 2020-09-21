@@ -216,11 +216,63 @@ function ReactTableSorting({ columns, data, withBorder }) {
   );
 }
 
-export const TableRegular = (args) => {
+export const Regular = (args) => (
+  <Table>
+    <thead>
+      <tr>
+        <th>Header content 1</th>
+        <th>Header content 2</th>
+      </tr>
+    </thead>
+    <tfoot>
+      <tr>
+        <td>Footer content 1</td>
+        <td>Footer content 2</td>
+      </tr>
+    </tfoot>
+    <tbody>
+      <tr>
+        <td>Body content 1</td>
+        <td>Body content 2</td>
+      </tr>
+    </tbody>
+  </Table>
+);
+
+/*export const UsingWithoutThead = (args) => (
+  <Table>
+    <tr>
+      <th>Vorname</th>
+      <th>Nachname</th>
+    </tr>
+    <tr>
+      <td>Max</td>
+      <td>Mustermann</td>
+    </tr>
+    <tr>
+      <td>Maxine</td>
+      <td>Mustermann</td>
+    </tr>
+  </Table>
+);*/
+
+export const UsingReactTable = (args) => {
   const columns = React.useMemo(() => sampleColumns, []);
 
   const data = React.useMemo(() => makeData(3), []);
   return <ReactTable {...args} columns={columns} data={data} />;
+};
+
+const text = `
+We recommend [React-Table](https://react-table.js.org/) for tables with additional complexity. If you need Excel like features like cell editing row selection and copy/paste we recommend [ag-grid](https://www.ag-grid.com/).
+`;
+
+UsingReactTable.story = {
+  parameters: {
+    docs: {
+      storyDescription: text,
+    },
+  },
 };
 
 export const TableSortingHeader = (args) => {
@@ -228,6 +280,14 @@ export const TableSortingHeader = (args) => {
 
   const data = React.useMemo(() => makeData(8), []);
   return <ReactTableSorting {...args} columns={columns} data={data} />;
+};
+
+TableSortingHeader.story = {
+  parameters: {
+    docs: {
+      storyDescription: `Sorting`,
+    },
+  },
 };
 
 export const TablePagination = (args) => {
@@ -239,8 +299,20 @@ export const TablePagination = (args) => {
 };
 
 const hello = `
-Imagine this to be a \`much\` longer block of text that spans
-several lines.
+To use the custom Pagination you can use the TablePagination component. Additional props for the TablePagination can be directly added to the \`ReactTable\` component (see Pagination component).
+
+
+\`\`\`js
+import { TablePagination } from '@wfp/ui';
+
+// Replacing the Pagination Component of React-Table
+
+<ReactTable
+  {...yourTableProps}
+  PaginationComponent={TablePagination}
+  {...otherPropsForThePaginationToo}
+/>
+\`\`\`
 `;
 
 TablePagination.story = {

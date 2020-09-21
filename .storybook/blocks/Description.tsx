@@ -74,7 +74,6 @@ const DescriptionContainer: FunctionComponent<DescriptionProps> = (props) => {
   const context = useContext(DocsContext);
   const { markdown } = getDescriptionProps(props, context);
 
-  console.log('markdown', context.parameters.mdx);
   const Docs = context.parameters.mdx;
   return markdown || context.parameters.mdx ? (
     <>

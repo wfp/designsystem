@@ -7,7 +7,7 @@ import settings from '../../globals/js/settings';
 
 const { prefix } = settings;
 
-export default class RadioButtonGroup extends React.Component {
+export default class InputGroup extends React.Component {
   state = { selected: this.props.valueSelected || this.props.defaultSelected };
 
   static propTypes = {
@@ -85,14 +85,14 @@ export default class RadioButtonGroup extends React.Component {
   }
 
   getRadioButtons = () => {
-    const children = React.Children.map(this.props.children, radioButton => {
+    const children = React.Children.map(this.props.children, (radioButton) => {
       const { value, ...other } = radioButton.props;
       /* istanbul ignore if */
       if (radioButton.props.hasOwnProperty('checked')) {
         warning(
           false,
           `Instead of using the checked property on the RadioButton, set
-            the defaultSelected property or valueSelected property on the RadioButtonGroup.`
+            the defaultSelected property or valueSelected property on the InputGroup.`
         );
       }
 
@@ -126,7 +126,7 @@ export default class RadioButtonGroup extends React.Component {
       helperText,
       controlled,
       hideLabel,
-      className = `${prefix}--radio-button-group`,
+      className = `${prefix}--input-group`,
     } = this.props;
 
     const labelClasses = classNames('wfp--label', {
@@ -146,7 +146,7 @@ export default class RadioButtonGroup extends React.Component {
         <div className={className} disabled={disabled}>
           {label}
           {helper}
-          <div className={`${prefix}--radio-button-group-inside`}>
+          <div className={`${prefix}--input-group-inside`}>
             {controlled ? this.getRadioButtons() : children}
           </div>
         </div>

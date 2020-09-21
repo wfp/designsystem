@@ -20,7 +20,7 @@
       .#{$prefix}--list-item__icon {
         position: absolute;
         left: -1.4rem;
-        top: 0.3em;
+        top: 0.4em;
         path {
           fill: $support-02;
         }
@@ -58,8 +58,8 @@
     }
   }
 
-  .#{$prefix}--list--bullet {
-    //line-height: 1.7em;
+  .#{$prefix}--list--bullets {
+    line-height: 1.6em;
     list-style-type: disc;
     margin-left: 1.5em;
     .#{$prefix}--list__element__title {
@@ -67,7 +67,7 @@
       margin-right: rem(5px);
     }
     li {
-      margin-bottom: 1em;
+      margin-bottom: 0.7em;
       &:last-child {
         margin-bottom: 0;
       }

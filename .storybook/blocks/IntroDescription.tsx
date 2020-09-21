@@ -10,8 +10,16 @@ import {
 import { Component, CURRENT_SELECTION } from './types';
 import { str } from '@storybook/addon-docs/dist/lib/docgen';
 import ReactDOMServer from 'react-dom/server';
+import { MDXProvider } from '@mdx-js/react';
 
-import markdownd from './markdown.stories.mdx';
+import { CodeOrSourceMdx, AnchorMdx, HeadersMdx } from './mdx';
+
+const defaultComponents = {
+  code: CodeOrSourceMdx,
+  a: AnchorMdx,
+  ...HeadersMdx,
+};
+
 import Tag from '../../src/components/Tag';
 
 export enum DescriptionType {
@@ -72,6 +80,20 @@ ${extractComponentDescription(target) || ''}
   }
 };
 
+const em = (props) => {
+  return (
+    <span {...props} kind="bullets">
+      ddd
+      {props.children}
+    </span>
+  );
+};
+
+const allComponents = {
+  ...defaultComponents,
+  em,
+};
+
 const DescriptionContainer: FunctionComponent<DescriptionProps> = (props) => {
   const context = useContext(DocsContext);
   const { markdown } = getDescriptionProps(props, context);
@@ -84,6 +106,7 @@ const DescriptionContainer: FunctionComponent<DescriptionProps> = (props) => {
           Ready for production
         </Tag>
       )}
+
       <Description markdown={markdown} />
     </>
   ) : null;

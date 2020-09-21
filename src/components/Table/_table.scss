@@ -26,7 +26,8 @@
       }
     }
 
-    thead {
+    thead,
+    th {
       background: $ui-03;
       border-bottom: 2px solid #dfe3e6;
       font-weight: 600;
@@ -43,7 +44,7 @@
     }
   }
 
-  .#{$prefix}---table--with-border {
+  .#{$prefix}--table--with-border {
     border: 1px solid $ui-04;
   }
 

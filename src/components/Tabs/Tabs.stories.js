@@ -3,7 +3,6 @@ import markdown from './README.mdx';
 import { action } from '@storybook/addon-actions';
 import Tabs from '.';
 import Tab from '../Tab';
-import Tag from '../Tag';
 import TabsSkeleton from '../Tabs/Tabs.Skeleton';
 
 export default {
@@ -37,11 +36,28 @@ export const Regular = (args) => (
   </Tabs>
 );
 
+export const WithoutAnimation = (args) => (
+  <Tabs {...args}>
+    <Tab label={`${tab.label} 1`}>
+      <div className="some-content">Content for first tab goes here.</div>
+    </Tab>
+    <Tab label={`${tab.label} 2`}>
+      <div className="some-content">Content for second tab goes here.</div>
+    </Tab>
+    <Tab label={`${tab.label} 3`}>
+      <div className="some-content">Content for third tab goes here.</div>
+    </Tab>
+    <Tab disabled label={`${tab.label} 4 disabled`}>
+      <div className="some-content">Content for fourth tab goes here.</div>
+    </Tab>
+  </Tabs>
+);
+
 const description = `
 You can customize the content by using \`BannerNavigation\`.
 `;
 
-Regular.story = {
+WithoutAnimation.story = {
   parameters: {
     docs: {
       storyDescription: description,
