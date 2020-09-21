@@ -104,3 +104,14 @@ Disabled.story = {
     },
   },
 };
+
+export const Wahhh = (args) => (
+  <ModalWrapper
+    customButton={<button>Open modal</button>}
+    handleSubmit={() => {
+      console.log('submit');
+      return true;
+    }}>
+    Modal Content
+  </ModalWrapper>
+);

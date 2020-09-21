@@ -154,7 +154,7 @@ storiesOf('Components|Form', module)
       <FormGroup {...fieldsetRadioProps}>
         <InputGroup
           onChange={action('onChange')}
-          name="radio-button-group"
+          name="input-group"
           defaultSelected="default-selected">
           <RadioButton
             value="standard"

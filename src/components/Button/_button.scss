@@ -177,13 +177,13 @@
       transparent,
       transparent,
       $interactive-01,
-      $interactive-01,
-      $interactive-01
+      $ui-03,
+      $ui-05
     );
 
     &:hover,
     &:focus {
-      color: $inverse-01;
+      //color: $inverse-01;
 
       .#{$prefix}--btn__icon {
         fill: $inverse-01;
@@ -285,8 +285,9 @@
 
   .#{$prefix}--btn--sm {
     @include letter-spacing;
-    height: 2rem;
+    height: 1.8rem;
     padding: $button-padding-sm;
+    @include typescale(zeta);
   }
 
   .#{$prefix}--btn--secondary + .#{$prefix}--btn--primary,

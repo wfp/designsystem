@@ -13,7 +13,7 @@
 @import '../../globals/scss/css--reset';
 
 @mixin radio-button {
-  .#{$prefix}--radio-button-group {
+  .#{$prefix}--input-group {
     display: flex;
     flex-direction: column;
     flex: 1;
@@ -21,8 +21,8 @@
     width: 100%;
   }
 
-  .#{$prefix}--radio-button-group__vertical {
-    .#{$prefix}--radio-button-group-inside {
+  .#{$prefix}--input-group__vertical {
+    .#{$prefix}--input-group-inside {
       flex-direction: column;
       > * {
         margin-bottom: $spacing-xs * 1.5;
@@ -30,7 +30,7 @@
     }
   }
 
-  .#{$prefix}--radio-button-group-inside {
+  .#{$prefix}--input-group-inside {
     display: flex;
     flex-wrap: wrap;
     margin-top: $spacing-xs;
@@ -112,7 +112,7 @@
 }
 
 @mixin radio-button--experimental {
-  .#{$prefix}--radio-button-group {
+  .#{$prefix}--input-group {
     display: flex;
     align-items: center;
     margin-top: $spacing-xs;

@@ -71,13 +71,15 @@ export default class ModalWrapper extends React.Component {
   };
 
   handleClose = () => {
-    this.setState({ isOpen: false }, () => this.triggerButton.current.focus());
+    this.setState({ isOpen: false }, () => {
+      this.triggerButton.current && this.triggerButton.current.focus();
+    });
   };
 
   handleOnRequestSubmit = () => {
     const { handleSubmit, shouldCloseAfterSubmit } = this.props;
 
-    if (handleSubmit()) {
+    if (handleSubmit && handleSubmit()) {
       if (shouldCloseAfterSubmit) {
         this.handleClose();
       }

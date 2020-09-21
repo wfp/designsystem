@@ -126,7 +126,7 @@ export default class InputGroup extends React.Component {
       helperText,
       controlled,
       hideLabel,
-      className = `${prefix}--radio-button-group`,
+      className = `${prefix}--input-group`,
     } = this.props;
 
     const labelClasses = classNames('wfp--label', {
@@ -146,7 +146,7 @@ export default class InputGroup extends React.Component {
         <div className={className} disabled={disabled}>
           {label}
           {helper}
-          <div className={`${prefix}--radio-button-group-inside`}>
+          <div className={`${prefix}--input-group-inside`}>
             {controlled ? this.getRadioButtons() : children}
           </div>
         </div>
