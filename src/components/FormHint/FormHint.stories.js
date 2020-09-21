@@ -4,7 +4,7 @@ import { action } from '@storybook/addon-actions';
 import FormHint from '.';
 
 export default {
-  title: 'Components/FormHint',
+  title: 'Forms/FormHint',
   component: FormHint,
   parameters: {
     componentSubtitle: 'Component',
