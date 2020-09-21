@@ -4,7 +4,7 @@ import { action } from '@storybook/addon-actions';
 import TextInput from '.';
 
 export default {
-  title: 'Components/TextInput',
+  title: 'Forms/TextInput',
   component: TextInput,
   parameters: {
     componentSubtitle: 'Component',
