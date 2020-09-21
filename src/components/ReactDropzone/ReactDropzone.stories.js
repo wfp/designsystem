@@ -8,7 +8,7 @@ import { iconUpload } from '@wfp/icons';
 import classNames from 'classnames';
 
 export default {
-  title: 'Components/React-Dropzone',
+  title: 'Forms/React-Dropzone',
   component: List,
   parameters: {
     componentSubtitle: 'Component',

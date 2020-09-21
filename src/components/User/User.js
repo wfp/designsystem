@@ -111,8 +111,7 @@ User.propTypes = {
    */
   missingImage: PropTypes.oneOf(['avatar', 'letter']),
   /**
-   * Extended Description column can be added only use if the description
-   * is also set
+   * Extended Description column
    */
   extendedDescription: PropTypes.node,
   /**

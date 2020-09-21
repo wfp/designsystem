@@ -5,7 +5,7 @@ import RadioButton from '../RadioButton';
 import Checkbox from '../Checkbox';
 
 export default {
-  title: 'Components/InputGroup',
+  title: 'Forms/InputGroup',
   component: InputGroup,
   parameters: {
     componentSubtitle: 'Component',
