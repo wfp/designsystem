@@ -19,6 +19,10 @@ export const Regular = (args) => (
   </label>
 );
 
+Regular.args = {
+  children: 'The hint text',
+};
+
 const description = `
 You can customize the content by using \`BannerNavigation\`.
 `;

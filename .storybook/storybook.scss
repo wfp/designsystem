@@ -51,6 +51,12 @@
     font-size: 1rem;
     font-weight: 700;
   }
+  .intro-description {
+    .sbdocs-p {
+      font-size: 1.2rem;
+      font-style: italic;
+    }
+  }
 }
 
 $css--body: true;

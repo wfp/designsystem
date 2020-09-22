@@ -85,6 +85,7 @@ const Tooltip = ({
 
   const handleInsideClick = () => {
     setIsShown(false);
+    //document.body.addEventListener('click', handleOutsideClick!);
   };
 
   const handleOutsideClick = () => {
@@ -116,7 +117,11 @@ const Tooltip = ({
 
   return (
     <>
-      <span type="button" ref={setReferenceElement}>
+      <span
+        type="button"
+        ref={setReferenceElement}
+        onMouseEnter={() => setIsShown(true)}
+        onMouseLeave={() => setIsShown(false)}>
         {children}
       </span>
 
