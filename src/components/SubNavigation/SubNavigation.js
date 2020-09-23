@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
 
+/** The SubNavigation is a toogleable part of the MainNavigation */
 const SubNavigation = ({ children, ...other }) => {
   return <div {...other}>{children}</div>;
 };
@@ -50,6 +51,11 @@ const SubNavigationFilter = ({ children, className, ...other }) => {
   );
 };
 
+SubNavigationFilter.propTypes = {
+  children: PropTypes.node,
+  className: PropTypes.string,
+};
+
 const SubNavigationList = ({ children, className, ...other }) => {
   const classes = classNames('wfp--sub-navigation__list', {
     className,
@@ -79,6 +85,15 @@ const SubNavigationContent = ({ children, className, ...other }) => {
   );
 };
 
+SubNavigationContent.propTypes = {
+  /**
+   * Provide the content of link
+   */
+  children: PropTypes.node,
+
+  className: PropTypes.string,
+};
+
 const SubNavigationTitle = ({ children, className, ...other }) => {
   const classes = classNames('wfp--sub-navigation__title', {
     className,
@@ -89,6 +104,15 @@ const SubNavigationTitle = ({ children, className, ...other }) => {
       {children}
     </div>
   );
+};
+
+SubNavigationTitle.propTypes = {
+  /**
+   * Provide the content of link
+   */
+  children: PropTypes.string,
+
+  className: PropTypes.string,
 };
 
 const SubNavigationLink = ({ children, className, ...other }) => {

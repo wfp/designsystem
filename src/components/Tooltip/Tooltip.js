@@ -55,6 +55,7 @@ function useEventListener(eventName, handler, element = window) {
   );
 }
 
+/** Tooltips display additional information upon click, hover, or focus. The information should be contextual, useful, and nonessential. */
 const Tooltip = ({
   dark,
   children,

@@ -4,6 +4,7 @@ import classNames from 'classnames';
 import Icon from '../Icon';
 import { iconUser } from '@wfp/icons';
 
+/** The User is used inside the MainNavigation and form, and can display an avatar and username. */
 const User = ({
   alt,
   className,

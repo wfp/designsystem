@@ -11,6 +11,7 @@ const TYPES = {
   warning: 'Warning',
 };
 
+/** Tag is used to label, categorize, or organize items using keywords that describe them. */
 const Tag = ({ children, className, type, ...other }) => {
   const tagClass = `wfp--tag--${type}`;
   const tagClasses = classNames('wfp--tag', tagClass, className);

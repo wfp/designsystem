@@ -69,6 +69,8 @@ const defaultProps = {
 
 const moduleBodydefaultProps = {};
 
+/** A Module is identifiable as a single, contained unit. */
+
 const Module = ({
   dark,
   light,

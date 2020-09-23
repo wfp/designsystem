@@ -19,7 +19,7 @@ import Link from '../Link';
 export default {
   title: 'Components/SubNavigation',
   component: SubNavigation,
-  subcomponents: [
+  subcomponents: {
     SubNavigationHeader,
     SubNavigationTitle,
     SubNavigationLink,
@@ -28,7 +28,7 @@ export default {
     SubNavigationList,
     SubNavigationGroup,
     SubNavigationItem,
-  ],
+  },
   parameters: {
     componentSubtitle: 'Component',
     status: 'released',
@@ -36,7 +36,7 @@ export default {
   },
 };
 
-export const Regular = (args) => (
+export const RegularSubNavigation = (args) => (
   <SubNavigation {...args}>
     {' '}
     <SubNavigationHeader>
@@ -163,7 +163,8 @@ const description = `
 You can customize the content by using \`BannerNavigation\`.
 `;
 
-Regular.story = {
+RegularSubNavigation.story = {
+  name: 'Regular',
   parameters: {
     docs: {
       storyDescription: description,
