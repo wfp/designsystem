@@ -44,22 +44,22 @@ Default.argTypes = {
   },
 };
 
-export const toogleable = (args) => <Blockquote {...args} />;
+// export const toogleable = (args) => <Blockquote {...args} />;
 
-toogleable.args = {
-  ...props,
-  kind: 'info',
-  title: 'Title',
-  toogleable: true,
-};
+// toogleable.args = {
+//   ...props,
+//   kind: 'info',
+//   title: 'Title',
+//   toggleable: true,
+// };
 
-toogleable.story = {
-  parameters: {
-    docs: {
-      storyDescription: `Use \`toogleable\` property to show and hide blockquote when title is clicked`,
-    },
-  },
-};
+// toogleable.story = {
+//   parameters: {
+//     docs: {
+//       storyDescription: `Use \`toogleable\` property to show and hide blockquote when title is clicked`,
+//     },
+//   },
+// };
 
 export const light = (args) => <Blockquote {...args} />;
 
@@ -140,18 +140,18 @@ CustomIcon.story = {
   },
 };
 
-export const Tooglable = (args) => <Blockquote {...args} />;
+export const Togglable = (args) => <Blockquote {...args} />;
 
-Tooglable.args = {
+Togglable.args = {
   ...props,
-  title: 'Tooglable title',
+  title: 'Togglable title',
   toggleable: true,
 };
 
-Tooglable.story = {
+Togglable.story = {
   parameters: {
     docs: {
-      storyDescription: `Use \`success\` for showing a successful message like after submitting a form`,
+      storyDescription: `Use \`toogleable\` property to show and hide blockquote when title is clicked`,
     },
   },
 };
