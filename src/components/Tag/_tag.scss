@@ -46,7 +46,7 @@
   }
 
   .#{$prefix}--tag--warning {
-    @include tag-theme($support-light-03, $support-03);
+    @include tag-theme($support-light-03, darken($support-03, 18));
   }
 
   .#{$prefix}--tag--information {

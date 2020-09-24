@@ -20,6 +20,7 @@ const defaultComponents = {
   ...HeadersMdx,
 };
 import { Tag, List, ListItem } from '../../src';
+import Story from '../../src/components/Story/Story';
 
 export enum DescriptionType {
   INFO = 'info',
@@ -98,26 +99,29 @@ const DescriptionContainer: FunctionComponent<DescriptionProps> = (props) => {
 
   const lookup = {
     experimental: { name: 'Experimental component', type: 'warning' },
-    released: { name: 'Ready for production', type: 'wfps' },
+    released: { name: 'Ready for production', type: 'wfp' },
     legacy: { name: 'Legacy: do not use in new projects', type: 'warning' },
   };
 
   const componentsTableOfContent = {
     wrapper: ({ children, ...props }) => {
-      console.log(children.map((child) => child.props.mdxType));
-
-      const output = children.map((child) => {
-        if (['h1', 'h2', 'h3'].includes(child.props.mdxType)) {
-          return (
-            <ListItem>
-              <a href={`#${child.props.children.toLowerCase()}`} target="_self">
-                {child.props.children}
-              </a>
-            </ListItem>
-          );
-        }
-        return null;
-      });
+      console.log('children', children);
+      const output = Array.isArray(children)
+        ? children.map((child) => {
+            if (['h1', 'h2', 'h3'].includes(child.props.mdxType)) {
+              return (
+                <ListItem>
+                  <a
+                    href={`#${child.props.children.toLowerCase()}`}
+                    target="_self">
+                    {child.props.children}
+                  </a>
+                </ListItem>
+              );
+            }
+            return null;
+          })
+        : '';
 
       const reversedChildren = React.Children.toArray(children).reverse();
       return (
@@ -134,13 +138,15 @@ const DescriptionContainer: FunctionComponent<DescriptionProps> = (props) => {
   };
 
   return (
-    <>
+    <Story>
       {context.parameters.status && (
-        <Tag
-          className={`status__${context.parameters.status}`}
-          kind={lookup[context.parameters.status].kind}>
-          {lookup[context.parameters.status].name}
-        </Tag>
+        <div className="docs-status">
+          <Tag
+            className={`status__${context.parameters.status}`}
+            type={lookup[context.parameters.status].type}>
+            {lookup[context.parameters.status].name}
+          </Tag>
+        </div>
       )}
 
       <div className="intro-description">
@@ -149,7 +155,7 @@ const DescriptionContainer: FunctionComponent<DescriptionProps> = (props) => {
           <Docs />
         </MDXProvider>
       </div>
-    </>
+    </Story>
   );
 };
 

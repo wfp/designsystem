@@ -219,6 +219,7 @@ const Preview: FunctionComponent<PreviewProps> = ({
   subcomponents,
   ...props
 }) => {
+  console.log('props', storyComponent, subcomponents, props);
   const [expanded, setExpanded] = useState(isExpanded);
   const { source, actionItem, actionItemHtml } = getSource(
     withSource,
@@ -238,6 +239,10 @@ const Preview: FunctionComponent<PreviewProps> = ({
     logger.warn('Cannot use toolbar with multiple preview children, disabling');
   }
   const showToolbar = withToolbar && !Array.isArray(children);
+
+  var actionItems = [];
+  if (props.parameters.code !== false) actionItems.push(actionItem);
+  if (props.parameters.html !== false) actionItems.push(actionItemHtml);
   return (
     <PreviewContainer
       {...{ withSource, withToolbar: showToolbar }}
@@ -261,7 +266,7 @@ const Preview: FunctionComponent<PreviewProps> = ({
           )}
         </ChildrenContainer>
 
-        {withSource && <ActionBar actionItems={[actionItem, actionItemHtml]} />}
+        {withSource && <ActionBar actionItems={actionItems} />}
       </Relative>
       {withSource && source}
     </PreviewContainer>

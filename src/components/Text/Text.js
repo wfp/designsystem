@@ -17,11 +17,17 @@ export const textLookup = {
   p: 'p',
 };
 
-const Text = ({ children, className, kind }) => {
+/**
+ *Text is a component for displaying text. You can use Text to standardize text across your web app.
+ */
+
+const Text = ({ children, className, kind, spacingTop, spacingBottom }) => {
   const tagName = { name: textLookup[kind] ? textLookup[kind] : 'div' };
   const classNames = classnames({
     'wfp--text': true,
     [`${prefix}--story__${kind}`]: kind,
+    [`${prefix}--story__spacing-top-${spacingTop}`]: spacingTop,
+    [`${prefix}--story__spacing-bottom-${spacingBottom}`]: spacingBottom,
     [`${className}`]: className,
   });
   return <tagName.name className={classNames}>{children}</tagName.name>;
@@ -49,6 +55,40 @@ Text.propTypes = {
     'title',
     'subtitle',
     'p',
+    'i',
+    'bold',
+    'strong',
+    'sup',
+    'a',
+    'code',
+  ]),
+  /**
+    Override spacing on top
+  */
+  spacingTop: PropTypes.oneOf([
+    '3xs',
+    '2xs',
+    'xs',
+    'md',
+    'lg',
+    'xl',
+    '2xl',
+    '3xl',
+    '4xl',
+  ]),
+  /**
+  Override spacing on bottom
+*/
+  spacingBottom: PropTypes.oneOf([
+    '3xs',
+    '2xs',
+    'xs',
+    'md',
+    'lg',
+    'xl',
+    '2xl',
+    '3xl',
+    '4xl',
   ]),
 };
 

@@ -12,6 +12,8 @@ export default {
     status: 'released',
     introText: 'Description for components',
     mdx: markdown,
+    code: false,
+    html: false,
   },
 };
 

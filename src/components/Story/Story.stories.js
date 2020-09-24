@@ -1,31 +1,18 @@
 import React from 'react';
 import markdown from './README.mdx';
-import { action } from '@storybook/addon-actions';
 import Text from '../Text';
 import { textLookup } from '../Text/Text';
 import Story from '.';
 
 export default {
   title: 'Components/Story',
-  component: Text,
+  component: Story,
   parameters: {
     componentSubtitle: 'Component',
     status: 'released',
     mdx: markdown,
   },
 };
-
-export const Regular = (args) => <Text {...args} />;
-
-export const AllText = (args) => (
-  <>
-    {Object.keys(textLookup).map((e) => (
-      <Text kind={e}>{e}</Text>
-    ))}
-  </>
-);
-
-Regular.args = { children: 'Content', kind: 'h1' };
 
 export const StoryText = (args) => (
   <Story {...args}>
