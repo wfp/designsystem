@@ -55,11 +55,16 @@ export const getDescriptionProps = (
   if (children || markdown) {
     return { markdown: children || markdown };
   }
-  const { component, notes, info, docs } = parameters;
+  const { component, notes, info, docs, introText } = parameters;
   const { extractComponentDescription = noDescription } = docs || {};
   const target = of === CURRENT_SELECTION ? component : of;
+  const componentDescription = introText
+    ? introText
+    : extractComponentDescription(target, parameters);
+
+  return { markdown: componentDescription ? componentDescription : '' };
   switch (type) {
-    case DescriptionType.INFO:
+    /* case DescriptionType.INFO:
       return { markdown: getInfo(info) };
     case DescriptionType.NOTES:
       return { markdown: getNotes(notes) };
@@ -73,7 +78,7 @@ ${extractComponentDescription(target) || ''}
 `.trim(),
       };
     case DescriptionType.DOCGEN:
-    case DescriptionType.AUTO:
+    case DescriptionType.AUTO:*/
     default:
       return { markdown: extractComponentDescription(target, parameters) };
   }
@@ -88,6 +93,8 @@ const DescriptionContainer: FunctionComponent<DescriptionProps> = (props) => {
   const { markdown } = getDescriptionProps(props, context);
 
   const Docs = context.parameters.mdx;
+
+  console.log('docs', context.parameters);
 
   const lookup = {
     experimental: { name: 'Experimental component', type: 'warning' },
@@ -116,7 +123,7 @@ const DescriptionContainer: FunctionComponent<DescriptionProps> = (props) => {
       return (
         <List className="table-of-content">
           <ListItem>
-            <a href={`#anchor--${context.id}`} target="_self">
+            <a href={`#anchor--${context.parameters.id}`} target="_self">
               Demo
             </a>
           </ListItem>
@@ -126,9 +133,7 @@ const DescriptionContainer: FunctionComponent<DescriptionProps> = (props) => {
     },
   };
 
-  console.log('xonnnn', context.id);
-
-  return markdown || context.parameters.mdx ? (
+  return (
     <>
       {context.parameters.status && (
         <Tag
@@ -145,7 +150,7 @@ const DescriptionContainer: FunctionComponent<DescriptionProps> = (props) => {
         </MDXProvider>
       </div>
     </>
-  ) : null;
+  );
 };
 
 // since we are in the docs blocks, assume default description if for primary component story
