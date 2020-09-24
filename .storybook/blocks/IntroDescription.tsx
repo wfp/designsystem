@@ -19,8 +19,7 @@ const defaultComponents = {
   a: AnchorMdx,
   ...HeadersMdx,
 };
-
-import Tag from '../../src/components/Tag';
+import { Tag, List, ListItem } from '../../src';
 
 export enum DescriptionType {
   INFO = 'info',
@@ -80,18 +79,8 @@ ${extractComponentDescription(target) || ''}
   }
 };
 
-const em = (props) => {
-  return (
-    <span {...props} kind="bullets">
-      ddd
-      {props.children}
-    </span>
-  );
-};
-
 const allComponents = {
   ...defaultComponents,
-  em,
 };
 
 const DescriptionContainer: FunctionComponent<DescriptionProps> = (props) => {
@@ -105,6 +94,40 @@ const DescriptionContainer: FunctionComponent<DescriptionProps> = (props) => {
     released: { name: 'Ready for production', type: 'wfps' },
     legacy: { name: 'Legacy: do not use in new projects', type: 'warning' },
   };
+
+  const componentsTableOfContent = {
+    wrapper: ({ children, ...props }) => {
+      console.log(children.map((child) => child.props.mdxType));
+
+      const output = children.map((child) => {
+        if (['h1', 'h2', 'h3'].includes(child.props.mdxType)) {
+          return (
+            <ListItem>
+              <a href={`#${child.props.children.toLowerCase()}`} target="_self">
+                {child.props.children}
+              </a>
+            </ListItem>
+          );
+        }
+        return null;
+      });
+
+      const reversedChildren = React.Children.toArray(children).reverse();
+      return (
+        <List className="table-of-content">
+          <ListItem>
+            <a href={`#anchor--${context.id}`} target="_self">
+              Demo
+            </a>
+          </ListItem>
+          {output}
+        </List>
+      );
+    },
+  };
+
+  console.log('xonnnn', context.id);
+
   return markdown || context.parameters.mdx ? (
     <>
       {context.parameters.status && (
@@ -117,6 +140,9 @@ const DescriptionContainer: FunctionComponent<DescriptionProps> = (props) => {
 
       <div className="intro-description">
         <Description markdown={markdown} />
+        <MDXProvider components={componentsTableOfContent}>
+          <Docs />
+        </MDXProvider>
       </div>
     </>
   ) : null;

@@ -1,11 +1,13 @@
 import React from 'react';
 import markdown from './README.mdx';
 import { action } from '@storybook/addon-actions';
+import Text from '../Text';
+import { textLookup } from '../Text/Text';
 import Story from '.';
 
 export default {
   title: 'Components/Story',
-  component: Story,
+  component: Text,
   parameters: {
     componentSubtitle: 'Component',
     status: 'released',
@@ -13,10 +15,22 @@ export default {
   },
 };
 
-export const Regular = (args) => (
+export const Regular = (args) => <Text {...args} />;
+
+export const AllText = (args) => (
+  <>
+    {Object.keys(textLookup).map((e) => (
+      <Text kind={e}>{e}</Text>
+    ))}
+  </>
+);
+
+Regular.args = { children: 'Content', kind: 'h1' };
+
+export const StoryText = (args) => (
   <Story {...args}>
     {' '}
-    <h2 className="wfp--story__sub-title">
+    <h2 className="wfp--story__subtitle">
       Funding facility allows for scale-up of emergency operation
     </h2>
     <h1 className="wfp--story__title">WFP’s Immediate Response Account</h1>
@@ -81,7 +95,7 @@ const description = `
 You can customize the content by using \`BannerNavigation\`.
 `;
 
-Regular.story = {
+StoryText.story = {
   parameters: {
     docs: {
       storyDescription: description,

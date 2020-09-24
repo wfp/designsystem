@@ -130,7 +130,6 @@ const getSource = (
     }
 
     case expanded: {
-      console.log('withSource', withSource);
       let a = '';
 
       if (subcomponents)

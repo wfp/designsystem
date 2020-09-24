@@ -8,7 +8,7 @@ const Page = ({ children, pageWidth, subTitle, title }) => {
       style={{ margin: '4rem auto' }}
       className="wfp--story"
       pageWidth={pageWidth ? pageWidth : 'sm'}>
-      <h2 className="wfp--story__sub-title">{subTitle}</h2>
+      <h2 className="wfp--story__subtitle">{subTitle}</h2>
       <h1 className="wfp--story__title">{title}</h1>
       {children}
     </Wrapper>
