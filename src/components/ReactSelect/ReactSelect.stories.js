@@ -10,6 +10,7 @@ export default {
   parameters: {
     componentSubtitle: 'Component',
     status: 'released',
+    introductionText: 'Description for components',
     // mdx: markdown,
   },
 };
