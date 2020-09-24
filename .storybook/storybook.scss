@@ -16,7 +16,7 @@
 }
 .sbdocs {
   font-weight: 400;
-  @extend .wfp--story;
+  //@extend .wfp--story;
 
   .sbdocs-p {
     font-size: 1rem;
@@ -35,7 +35,7 @@
     @extend .wfp--story__title;
   }
   .sbdocs-subtitle {
-    @extend .wfp--story__sub-title;
+    @extend .wfp--story__subtitle;
     margin-top: 0;
   }
   .sbdocs-h2 {
@@ -57,6 +57,12 @@
       font-style: italic;
     }
   }
+}
+
+.table-of-content.wfp--list {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  line-height: 1.8rem;
 }
 
 $css--body: true;

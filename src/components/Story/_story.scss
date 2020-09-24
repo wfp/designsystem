@@ -12,174 +12,162 @@
 @import '../../globals/scss/css--typography';
 @import '../Link/link';
 
-@include exports('story') {
-  .#{$prefix}--story {
-    @include reset;
-    @include font-family;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    &__center {
-      text-align: center;
+@mixin text {
+  code {
+    font-family: monospace;
+  }
+
+  p {
+    margin-top: $spacing-md;
+    line-height: 1.6em;
+
+    &:last-child {
+      margin-bottom: 0;
     }
+  }
 
-    &__full-height {
-      min-height: 65vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+  h2 {
+    margin-top: $spacing-2xl;
+
+    &.before--img {
+      margin-bottom: 0;
     }
+  }
 
-    code {
-      font-family: monospace;
-    }
+  i {
+    font-style: italic;
+  }
 
-    p {
-      margin-top: $spacing-md;
-      line-height: 1.6em;
+  h3 {
+    margin-top: $spacing-2xl;
+  }
 
-      &:last-child {
-        margin-bottom: 0;
+  h4 {
+    margin-top: $spacing-md;
+    @include typescale('epsilon');
+  }
+
+  a {
+    @extend .wfp--link;
+  }
+
+  sup {
+    font-size: 0.7em;
+    background: $ui-03;
+    vertical-align: top;
+    position: relative;
+    top: -0.5em;
+
+    > a {
+      text-decoration: none;
+
+      &:before {
+        content: '[';
+      }
+
+      &:after {
+        content: ']';
       }
     }
+  }
 
-    h2 {
-      margin-top: $spacing-2xl;
+  b,
+  strong {
+    font-weight: 600;
+  }
 
-      &.before--img {
-        margin-bottom: 0;
-      }
-    }
+  /* All the line spacings */
 
-    i {
-      font-style: italic;
-    }
-
-    h3 {
-      margin-top: $spacing-2xl;
-    }
-
-    h4 {
-      margin-top: $spacing-md;
-      @include typescale('epsilon');
-    }
-
-    a {
-      @extend .wfp--link;
-    }
-
-    sup {
-      font-size: 0.7em;
-      background: $ui-03;
-      vertical-align: top;
-      position: relative;
-      top: -0.5em;
-
-      > a {
-        text-decoration: none;
-
-        &:before {
-          content: '[';
-        }
-
-        &:after {
-          content: ']';
-        }
-      }
-    }
-
-    b,
-    strong {
-      font-weight: 600;
-    }
-
-    /* All the line spacings */
-
-    .#{$prefix}--blockquote {
-      & + p,
-      & + h3 {
-        margin-top: $spacing-lg;
-      }
-    }
-
-    p + .#{$prefix}--blockquote {
-      margin-top: $spacing-sm;
-    }
-
-    p + h2 {
-      margin-top: $spacing-2xl;
-    }
-
-    ul + h2 {
-      margin-top: $spacing-xl;
-    }
-
-    p + h3 {
-      margin-top: $spacing-2xl;
-    }
-
-    h1 + h2 {
+  .#{$prefix}--blockquote {
+    & + p,
+    & + h3 {
       margin-top: $spacing-lg;
     }
+  }
 
-    h2 + h3 {
-      margin-top: $spacing-lg;
-    }
+  p + .#{$prefix}--blockquote {
+    margin-top: $spacing-sm;
+  }
 
-    p + ul,
-    h3 + ul,
-    h4 + ul {
-      margin-top: $spacing-md;
-    }
+  p + h2 {
+    margin-top: $spacing-2xl;
+  }
 
-    h3 + p {
-      margin-top: $spacing-sm;
-    }
+  ul + h2 {
+    margin-top: $spacing-xl;
+  }
 
-    button + p {
-      margin-top: $spacing-sm;
-    }
+  p + h3 {
+    margin-top: $spacing-2xl;
+  }
 
-    div + h4,
-    h3 + h4 {
-      margin-top: $spacing-lg;
-    }
+  h1 + h2 {
+    margin-top: $spacing-lg;
+  }
 
-    h4 + div {
-      margin-top: $spacing-md;
-    }
+  h2 + h3 {
+    margin-top: $spacing-lg;
+  }
 
-    h1 + .wfp--list,
-    h2 + .wfp--list,
-    h3 + .wfp--list,
-    h4 + .wfp--list,
-    h5 + .wfp--list {
-      margin-top: $spacing-md;
-    }
+  p + ul,
+  h3 + ul,
+  h4 + ul {
+    margin-top: $spacing-md;
+  }
 
-    /*.wfp--list+h1,
-    .wfp--list+h2,
-    .wfp--list+h3,
-    .wfp--list+h4,
-    .wfp--list+h5 {
-      margin-top: $spacing-lg;
-    }*/
+  h3 + p {
+    margin-top: $spacing-sm;
+  }
 
-    h1 + iframe,
-    h2 + iframe,
-    h3 + iframe,
-    h4 + iframe,
-    h5 + iframe {
-      margin-top: $spacing-xs;
-    }
+  button + p {
+    margin-top: $spacing-sm;
+  }
 
-    iframe + h1,
-    iframe + h2,
-    iframe + h3,
-    iframe + h4,
-    iframe + h5 {
-      margin-top: $spacing-md;
-    }
+  div + h4,
+  h3 + h4 {
+    margin-top: $spacing-lg;
+  }
+
+  .wfp--story__h4 + div,
+  h4 + div {
+    margin-top: $spacing-md;
+  }
+
+  h1 + .wfp--list,
+  h2 + .wfp--list,
+  h3 + .wfp--list,
+  h4 + .wfp--list,
+  h5 + .wfp--list,
+  .wfp--story__h1 + .wfp--list,
+  .wfp--story__h2 + .wfp--list,
+  .wfp--story__h3 + .wfp--list,
+  .wfp--story__h4 + .wfp--list,
+  .wfp--story__h5 + .wfp--list {
+    margin-top: $spacing-md;
+  }
+
+  /*.wfp--list+h1,
+  .wfp--list+h2,
+  .wfp--list+h3,
+  .wfp--list+h4,
+  .wfp--list+h5 {
+    margin-top: $spacing-lg;
+  }*/
+
+  h1 + iframe,
+  h2 + iframe,
+  h3 + iframe,
+  h4 + iframe,
+  h5 + iframe {
+    margin-top: $spacing-xs;
+  }
+
+  iframe + h1,
+  iframe + h2,
+  iframe + h3,
+  iframe + h4,
+  iframe + h5 {
+    margin-top: $spacing-md;
   }
 
   .#{$prefix}--story__list {
@@ -212,7 +200,7 @@
     margin-left: -0.058em;
   }
 
-  .#{$prefix}--story__sub-title {
+  .#{$prefix}--story__subtitle {
     @include typescale('zeta');
     font-weight: normal;
     color: $interactive-01;
@@ -259,5 +247,30 @@
 
   .#{$prefix}--story__divider--lg {
     border: 2px solid $ui-04;
+  }
+}
+
+@include exports('story') {
+  .#{$prefix}--story {
+    @include reset;
+    @include font-family;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    &__center {
+      text-align: center;
+    }
+
+    &__full-height {
+      min-height: 65vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    @include text;
+  }
+  .#{$prefix}--text {
+    color: red;
+    @include text;
   }
 }

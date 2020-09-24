@@ -2,6 +2,9 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import classnames from 'classnames';
 
+import settings from '../../globals/js/settings';
+const { prefix } = settings;
+
 const Story = ({ children, className, pageWidth, spacing }) => {
   const classNames = classnames({
     'wfp--story': true,
