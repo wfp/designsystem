@@ -10,11 +10,11 @@ import Button from '../Button';
 
 export default {
   title: 'Components/Notification',
-  component: Button,
+  component: ToastContainer,
   parameters: {
     componentSubtitle: 'Component',
     status: 'released',
-    mdx: markdown,
+    // mdx: markdown,
   },
 };
 
