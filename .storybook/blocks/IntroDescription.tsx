@@ -99,15 +99,25 @@ const DescriptionContainer: FunctionComponent<DescriptionProps> = (props) => {
   const { markdown } = getDescriptionProps(props, context);
 
   const Docs = context.parameters.mdx;
+
+  const lookup = {
+    experimental: { name: 'Experimental component', type: 'warning' },
+    released: { name: 'Ready for production', type: 'wfps' },
+    legacy: { name: 'Legacy: do not use in new projects', type: 'warning' },
+  };
   return markdown || context.parameters.mdx ? (
     <>
       {context.parameters.status && (
-        <Tag className={`status__${context.parameters.status}`}>
-          Ready for production
+        <Tag
+          className={`status__${context.parameters.status}`}
+          kind={lookup[context.parameters.status].kind}>
+          {lookup[context.parameters.status].name}
         </Tag>
       )}
 
-      <Description markdown={markdown} />
+      <div className="intro-description">
+        <Description markdown={markdown} />
+      </div>
     </>
   ) : null;
 };
