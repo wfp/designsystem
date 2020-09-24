@@ -2,6 +2,8 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import classnames from 'classnames';
 
+/** Form Label can be used whenever it is needed to show a label detached from a regular input. */
+
 const FormLabel = ({ className, children, id, ...other }) => {
   const classNames = classnames('wfp--label', className);
 

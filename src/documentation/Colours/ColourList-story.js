@@ -5,7 +5,7 @@ import { storiesOf } from '@storybook/react';
 import ColorDocs from './ColourDocs';
 import './_colours.scss';
 
-storiesOf('Getting started|Core', module)
+storiesOf('Design|Core', module)
   .addParameters({ options: { showPanel: false, isToolshown: false } })
   .add('Colours', () => {
     return <ColorDocs />;

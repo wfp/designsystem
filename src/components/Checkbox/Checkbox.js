@@ -1,6 +1,9 @@
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { useState } from 'react';
 import classNames from 'classnames';
+
+/**
+ * Checkboxes are used for a list of options where the user may select multiple options, including all or none. */
 
 const Checkbox = ({
   className,
@@ -10,9 +13,11 @@ const Checkbox = ({
   indeterminate,
   hideLabel,
   wrapperClassName,
+  inputRef,
   title = '',
   ...other
 }) => {
+  const customId = id ? id : other.name;
   let input;
   const labelClasses = classNames('wfp--checkbox-label', className);
   const innerLabelClasses = classNames({
@@ -29,19 +34,23 @@ const Checkbox = ({
       <input
         {...other}
         type="checkbox"
-        onChange={evt => {
-          onChange(input.checked, id, evt);
+        onChange={(evt) => {
+          onChange(evt.target.checked, customId, evt);
         }}
         className="wfp--checkbox"
-        id={id}
-        ref={el => {
-          input = el;
-          if (input) {
-            input.indeterminate = indeterminate;
+        id={customId}
+        ref={(el) => {
+          if (el) {
+            el.indeterminate = indeterminate;
+          }
+          if (typeof inputRef === 'function') {
+            inputRef(el);
+          } else if (Object(inputRef) === inputRef) {
+            inputRef.current = el;
           }
         }}
       />
-      <label htmlFor={id} className={labelClasses} title={title || null}>
+      <label htmlFor={customId} className={labelClasses} title={title || null}>
         <span className={innerLabelClasses}>{labelText}</span>
       </label>
     </div>

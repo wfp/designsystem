@@ -7,7 +7,7 @@ import TextInput from '../TextInput';
 import Select from '../Select';
 import Button from '../Button';
 import SelectItem from '../SelectItem';
-import RadioButtonGroup from '../RadioButtonGroup';
+import InputGroup from '../InputGroup';
 import RadioButton from '../RadioButton';
 
 const props = () => ({
@@ -107,9 +107,7 @@ storiesOf('Components|ModalWrapper', module)
         <SelectItem value="option-3" text="Option 3" />
       </Select>
       <br />
-      <RadioButtonGroup
-        name="radio-button-group"
-        defaultSelected="default-selected">
+      <InputGroup name="input-group" defaultSelected="default-selected">
         <RadioButton
           value="default-selected"
           id="radio-1"
@@ -129,7 +127,7 @@ storiesOf('Components|ModalWrapper', module)
           className="some-class"
           disabled
         />
-      </RadioButtonGroup>
+      </InputGroup>
     </ModalWrapper>
   ))
   .add('custom button', () => (

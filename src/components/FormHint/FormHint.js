@@ -2,64 +2,57 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { iconInfoSolid } from '@wfp/icons';
 import Icon from '../Icon';
-
-import { tooltipStyle } from '../Tooltip';
-
 import classNames from 'classnames';
 import settings from '../../globals/js/settings';
 
 const { prefix } = settings;
 
-export default class FormHint extends Component {
-  static propTypes = {
-    /**
-     * Specify an optional className to be applied to the wrapper node
-     */
-    className: PropTypes.string,
+/** FormHint allows you to add a longer explanation to an input element. */
 
-    /**
-     * The tooltips content can be a string or an component
-     */
+const FormHint = ({
+  className,
+  children,
+  description,
+  icon,
+  TooltipComponent,
+  ...other
+}) => {
+  const formHintClasses = classNames(`${prefix}--form-hint`, className);
+  return (
+    <div className={formHintClasses}>
+      <Icon
+        icon={iconInfoSolid}
+        width="15"
+        height="15"
+        description={children}
+      />
+    </div>
+  );
+};
 
-    children: PropTypes.node,
-    /**
-     * Specify a custom icon for the hint
-     */
-    icon: PropTypes.object,
-    /**
-     * Specify a component for the tooltip, usually `@tippy.js/react`
-     */
-    TooltipComponent: PropTypes.func.isRequired,
-  };
+FormHint.propTypes = {
+  /**
+   * Specify an optional className to be applied to the wrapper node
+   */
+  className: PropTypes.string,
 
-  static defaultProps = {
-    icon: iconInfoSolid,
-  };
+  /**
+   * The tooltips content can be a string or an component
+   */
 
-  render() {
-    const {
-      className,
-      children,
-      description,
-      icon,
-      TooltipComponent,
-      ...other
-    } = this.props;
+  children: PropTypes.node,
+  /**
+   * Specify a custom icon for the hint
+   */
+  icon: PropTypes.object,
+  /**
+   * Specify a component for the tooltip, usually `@tippy.js/react`
+   */
+  TooltipComponent: PropTypes.func.isRequired,
+};
 
-    const formHintClasses = classNames(`${prefix}--form-hint`, className);
+FormHint.defaultProps = {
+  icon: iconInfoSolid,
+};
 
-    return (
-      <div className={formHintClasses}>
-        <TooltipComponent
-          // options
-          title={children}
-          position="top"
-          trigger="click"
-          {...other}
-          {...tooltipStyle}>
-          <Icon icon={icon} width="15" height="15" description={children} />
-        </TooltipComponent>
-      </div>
-    );
-  }
-}
+export default FormHint;

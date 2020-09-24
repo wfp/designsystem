@@ -4,6 +4,8 @@ import Icon from '../Icon';
 import classNames from 'classnames';
 import { ButtonTypes } from '../../prop-types/types';
 
+/**
+ * Buttons express what action will occur when the user clicks or touches it. Buttons are used to initialize an action, either in the background or foreground of an experience. */
 const Button = ({
   children,
   className,
@@ -63,7 +65,7 @@ const Button = ({
     setCount(false);
   };
 
-  const onClickAnimation = e => {
+  const onClickAnimation = (e) => {
     if (onClick) {
       onClick(e);
     }
@@ -78,8 +80,9 @@ const Button = ({
       type={type}
       onClick={onClickAnimation}
       ref={other.inputref}>
+      {iconReverse && buttonImage}
       {children}
-      {buttonImage}
+      {!iconReverse && buttonImage}
     </button>
   );
 
@@ -123,12 +126,19 @@ Button.propTypes = {
   /**
    * Specify the kind of Button you want to create
    */
-  kind: ButtonTypes.buttonKind.isRequired,
+  kind: PropTypes.oneOf([
+    'primary',
+    'secondary',
+    'accent',
+    'danger',
+    'ghost',
+    'inverse',
+    'danger--primary',
+    'tertiary',
+    'navigation',
+  ]),
 
-  /**
-   * Optionally specify an href for your Button to become an <a> element
-   */
-  iconReverse: PropTypes.bool,
+  //ButtonTypes.buttonKind.isRequired,
 
   /**
    * Optionally specify an href for your Button to become an <a> element
@@ -163,7 +173,7 @@ Button.propTypes = {
    * If specifying the `icon` prop, provide a description for that icon that can
    * be read by screen readers
    */
-  iconDescription: props => {
+  iconDescription: (props) => {
     if (props.icon && !props.iconDescription) {
       return new Error(
         'icon property specified without also providing an iconDescription property.'
@@ -171,6 +181,11 @@ Button.propTypes = {
     }
     return undefined;
   },
+
+  /**
+   * Optionally specify an href for your Button to become an <a> element
+   */
+  iconReverse: PropTypes.bool,
 };
 
 Button.defaultProps = {

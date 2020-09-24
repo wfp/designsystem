@@ -10,13 +10,13 @@
 @include exports('checkbox') {
   .#{$prefix}--form-item.#{$prefix}--checkbox-wrapper {
     margin-bottom: $spacing-md;
-    &:first-of-type {
+    /*&:first-of-type {
       margin-top: $spacing-xs;
     }
 
     &:last-of-type {
       margin-bottom: 0;
-    }
+    }*/
 
     .#{$prefix}--fieldset__inline & {
       margin-right: $spacing-md;
@@ -52,7 +52,7 @@
     height: rem(18px);
     width: rem(18px);
     border: $checkbox-border-width solid $ui-05;
-    border-radius: $button-border-radius;
+    border-radius: $checkbox-border-radius;
     background-color: $ui-01;
   }
 

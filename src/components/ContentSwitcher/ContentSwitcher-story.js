@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 
-import { withKnobs, select, text } from '@storybook/addon-knobs';
+import { withKnobs, select, text, boolean } from '@storybook/addon-knobs';
 import { iconAddGlyph, iconSearch } from '@wfp/icons';
 import Icon from '../Icon';
 import ContentSwitcher from '../ContentSwitcher';
@@ -27,6 +27,7 @@ const kinds = {
 const props = {
   contentSwitcher: () => ({
     onChange: action('onChange'),
+    small: boolean('Small styling (small)', false),
   }),
   switch: () => ({
     onClick: action('onClick - Switch'),

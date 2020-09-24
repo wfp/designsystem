@@ -1,0 +1,36 @@
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+
+<Meta
+  title="Documentation/Page Speed"
+  parameters={{
+    componentSubtitle: 'Component',
+  }}
+/>
+
+WFP offices are often in remote and developing areas. Make sure the user experience is still acceptable.
+
+| Connection | Description                                              | Download speed | Latency           |
+| ---------- | -------------------------------------------------------- | -------------- | ----------------- |
+| VSAT       | around 400 WFP offices globally rely on VSAT connections | 50-60 Kbps     | 600ms up to 700ms |
+| 2G         | Usually found in rural areas of developing countries     | 250 Kbps       | 300 ms            |
+| Slow 3G    | Usually found in rural areas                             | 500 Kbps       | 100 ms            |
+| Fast 3G    | Usually found in cities                                  | >1500 Kbps     | 40 ms             |
+| WFP HQ     | Internet speed in WFPs Headquarter                       | > 50.000 Kbps  | 2m                |
+
+### Test with Google Chrome
+
+The Network tab in `Chrome DevTools` has an option to faux throttle your network, so you can experience what your users might experience visiting your application on 3G, 2G and GPRS connections. Besides the obvious, it’s also useful for visualising how the page load.
+
+1. Open DevTools (`cmd` + `alt` + `i`)
+2. Click the `Network` tab
+3. Select which type of connection you want to imitate
+4. Reload the page to see assets downloading at that connection speed
+
+You can make a custom Network Throttling Profile vor VSAT connections by clicking the option at the very top of the dropdown menu and use the values above.
+
+<!--
+#### How to test different page-Speeds
+
+1. For solutions that must work on VSAT connections (high latency)
+2. For solutions that must work with poor connectivity (frequent loss of connectivity)
+3. For solutions that are aimed at normal network conditions. -->

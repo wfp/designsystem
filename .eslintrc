@@ -1,13 +1,6 @@
 {
-  "extends": [
-    "react-app",
-    "plugin:jsx-a11y/recommended"
-  ],
-  "plugins": [
-    "react",
-    "jsdoc",
-    "jsx-a11y"
-  ],
+  "extends": ["react-app", "plugin:jsx-a11y/recommended"],
+  "plugins": ["react", "jsdoc", "jsx-a11y"],
   "rules": {
     "no-console": 2,
     "react/jsx-uses-vars": 1,
@@ -26,14 +19,9 @@
     "jsx-a11y/label-has-for": [
       1,
       {
-        "components": [
-          "Label"
-        ],
+        "components": ["Label"],
         "required": {
-          "some": [
-            "nesting",
-            "id"
-          ]
+          "some": ["nesting", "id"]
         },
         "allowChildren": true
       }
@@ -56,7 +44,7 @@
       }
     },
     "react": {
-      "version": "detect",
+      "version": "detect"
     }
   }
 }

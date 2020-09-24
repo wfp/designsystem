@@ -167,15 +167,15 @@ $easing: cubic-bezier(0.17, 0.89, 0.32, 1.1); //ease-in-out;
   flex-wrap: wrap;
   justify-content: center;
   .intro-animation--mobile & {
-    transform: translateY(-2vw) scale(1);
+    transform: translateY(-2.8vw) scale(1);
     //border-color: $color-intro-mobile;
   }
   .intro-animation--tablet & {
-    transform: translateY(-3vw) scale(1.3);
+    transform: translateY(-3.5vw) scale(1.3);
     //border-color: $color-intro-tablet;
   }
   .intro-animation--desktop & {
-    transform: translateY(-1vw) scale(1.5);
+    transform: translateY(-1.5vw) scale(1.5);
   }
 }
 

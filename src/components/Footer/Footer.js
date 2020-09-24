@@ -89,6 +89,8 @@ const sdgIcon = (
 //import logoExtended from '../../../assets/logos/extended/en/wfp-logo-extended-black-en.svg';
 //import logoVertical from '../../../assets/logos/vertical/en/wfp-logo-vertical-black-en.svg';
 
+/** A Footer is a section at the bottom of each page. It typically contains basic site information, copyright data or links to related pages. */
+
 const Footer = ({
   buttonText,
   className,
@@ -191,23 +193,54 @@ const Footer = ({
 };
 
 Footer.propTypes = {
+  /**
+   The content of the footer containing relevant links
+ */
   children: PropTypes.node,
+  /**
+   Additional className which will be added
+ */
   className: PropTypes.string,
+  /** 
+   Meta content, usually the copyright notice
+ */
+  external: PropTypes.bool,
+  /** 
+   Meta content, usually the copyright notice
+ */
+  metaContent: PropTypes.node,
+  /**
+   Optional WFP logo for mobile devices, can be used if the Logo should be provided by the CDN
+ */
+  logo: PropTypes.node,
+  /**
+   Optional WFP logo for desktop devices, can be used if the Logo should be provided by the CDN
+ */
+  logoExtended: PropTypes.node,
+  /**
+   * The width of the `Wrapper` component
+   */
+  pageWidth: PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'full']),
+  /**
+   The WFP logo
+ */
+  subTitle: PropTypes.node,
+  /*
   labelOne: PropTypes.string,
   linkTextOne: PropTypes.string,
   linkHrefOne: PropTypes.string,
   labelTwo: PropTypes.string,
   linkTextTwo: PropTypes.string,
-  linkHrefTwo: PropTypes.string,
+  linkHrefTwo: PropTypes.string,*/
 };
 
-Footer.defaultProps = {
+/*Footer.defaultProps = {
   labelOne: 'Need Help?',
   linkTextOne: 'Contact',
   linkHrefOne: '#',
   labelTwo: 'Second Link',
   linkTextTwo: 'About',
   linkHrefTwo: '#',
-};
+};*/
 
 export default Footer;

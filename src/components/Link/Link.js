@@ -1,19 +1,18 @@
-/**
- * Modified from https://github.com/IBM/carbon-components-react/
- *
- * This source code is licensed under the Apache-2.0 license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
-import PropTypes from 'prop-types';
 import React from 'react';
+import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import settings from '../../globals/js/settings';
-
 const { prefix } = settings;
 
-const Link = ({ children, className, href, ...other }) => {
-  const classNames = classnames(`${prefix}--link`, className);
+/** Links are used as navigational elements. They may appear on their own, within a sentence or paragraph, or directly following the content. */
+
+export const Link = ({ children, className, href, ...other }) => {
+  const classNames = classnames(
+    {
+      [`${prefix}--link`]: true,
+    },
+    className
+  );
   return (
     <a href={href} className={classNames} {...other}>
       {children}
@@ -25,7 +24,7 @@ Link.propTypes = {
   /**
    * Provide the content for the Link
    */
-  children: PropTypes.node,
+  children: PropTypes.string,
 
   /**
    * Provide a custom className to be applied to the containing <a> node

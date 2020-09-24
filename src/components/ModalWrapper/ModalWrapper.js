@@ -4,6 +4,8 @@ import Modal from '../Modal';
 import Button from '../Button';
 import { ButtonTypes } from '../../prop-types/types';
 
+/** Modal Wrapper component to encapsulate your Modal within a button. */
+
 export default class ModalWrapper extends React.Component {
   static propTypes = {
     status: PropTypes.string,
@@ -69,13 +71,15 @@ export default class ModalWrapper extends React.Component {
   };
 
   handleClose = () => {
-    this.setState({ isOpen: false }, () => this.triggerButton.current.focus());
+    this.setState({ isOpen: false }, () => {
+      this.triggerButton.current && this.triggerButton.current.focus();
+    });
   };
 
   handleOnRequestSubmit = () => {
     const { handleSubmit, shouldCloseAfterSubmit } = this.props;
 
-    if (handleSubmit()) {
+    if (handleSubmit && handleSubmit()) {
       if (shouldCloseAfterSubmit) {
         this.handleClose();
       }
@@ -116,7 +120,7 @@ export default class ModalWrapper extends React.Component {
       <div
         role="presentation"
         className="wfp--modal__wrapper"
-        onKeyDown={evt => {
+        onKeyDown={(evt) => {
           if (evt.which === 27) {
             this.handleClose();
             onKeyDown(evt);

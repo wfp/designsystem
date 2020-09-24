@@ -131,7 +131,7 @@ export class FileUploaderButton extends Component {
         };
   }
 
-  handleChange = evt => {
+  handleChange = (evt) => {
     const files = evt.target.files;
     const length = evt.target.files.length;
     if (files && !this.props.disableLabelChanges) {
@@ -171,7 +171,7 @@ export class FileUploaderButton extends Component {
           tabIndex={disabled ? -1 : tabIndex || 0}
           aria-disabled={disabled}
           className={classes}
-          onKeyDown={evt => {
+          onKeyDown={(evt) => {
             if (evt.which === 13 || evt.which === 32) {
               this.input.click();
             }
@@ -182,7 +182,7 @@ export class FileUploaderButton extends Component {
         </label>
         <input
           className={`${prefix}--visually-hidden`}
-          ref={input => (this.input = input)}
+          ref={(input) => (this.input = input)}
           id={this.uid}
           disabled={disabled}
           type="file"
@@ -191,7 +191,7 @@ export class FileUploaderButton extends Component {
           accept={accept}
           name={name}
           onChange={this.handleChange}
-          onClick={evt => {
+          onClick={(evt) => {
             evt.target.value = null;
           }}
         />
@@ -282,7 +282,7 @@ export default class FileUploader extends Component {
     /**
      * Specify the type of the <FileUploaderButton>
      */
-    //buttonKind: PropTypes.oneOf(ButtonKinds),
+    //buttonKind: PropTypes.oneOf(buttonKinds),
 
     /**
      * Specify the status of the File Upload
@@ -359,11 +359,11 @@ export default class FileUploader extends Component {
         };
   }
 
-  handleChange = evt => {
+  handleChange = (evt) => {
     evt.stopPropagation();
     this.setState({
       filenames: this.state.filenames.concat(
-        Array.prototype.map.call(evt.target.files, file => file.name)
+        Array.prototype.map.call(evt.target.files, (file) => file.name)
       ),
     });
     if (this.props.onChange) {
@@ -373,7 +373,7 @@ export default class FileUploader extends Component {
 
   handleClick = (evt, index) => {
     const filteredArray = this.state.filenames.filter(
-      filename => filename !== this.nodes[index].innerText.trim()
+      (filename) => filename !== this.nodes[index].innerText.trim()
     );
     this.setState({ filenames: filteredArray });
     this.props.onClick(evt);
@@ -424,19 +424,19 @@ export default class FileUploader extends Component {
                 <span
                   key={index}
                   className={`${prefix}--file__selected-file`}
-                  ref={node => (this.nodes[index] = node)} // eslint-disable-line
+                  ref={(node) => (this.nodes[index] = node)} // eslint-disable-line
                   {...other}>
                   <p className={`${prefix}--file-filename`}>{name}</p>
                   <span className={`${prefix}--file__state-container`}>
                     <Filename
                       iconDescription={iconDescription}
                       status={filenameStatus}
-                      onKeyDown={evt => {
+                      onKeyDown={(evt) => {
                         if (evt.which === 13 || evt.which === 32) {
                           this.handleClick(evt, index);
                         }
                       }}
-                      onClick={evt => {
+                      onClick={(evt) => {
                         if (filenameStatus === 'edit') {
                           this.handleClick(evt, index);
                         }

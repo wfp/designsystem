@@ -1,0 +1,71 @@
+@import '../src/globals/scss/colors';
+@import '../src/globals/scss/vars';
+@import '../src/globals/scss/layout';
+@import '../src/globals/scss/typography';
+@import '../src/globals/scss/helper-mixins';
+@import '../src/globals/scss/import-once';
+@import '../src/globals/scss/css--reset';
+@import '../src/globals/scss/text-gradient';
+@import '../src/components/Story/_story';
+@import '../src/components/Link/_link';
+
+.sb-show-main,
+.sbdocs,
+.sbdocs {
+  list-style: disc;
+}
+.sbdocs {
+  font-weight: 400;
+  @extend .wfp--story;
+
+  .sbdocs-p {
+    font-size: 1rem;
+  }
+  .sbdocs-a {
+    //@extend .wfp--link;
+    color: $interactive-01;
+    font-size: 1rem;
+    line-height: inherit;
+  }
+  .sbdocs-li {
+    font-size: 1rem;
+  }
+  .sbdocs-h1,
+  .sbdocs-title {
+    @extend .wfp--story__title;
+  }
+  .sbdocs-subtitle {
+    @extend .wfp--story__sub-title;
+    margin-top: 0;
+  }
+  .sbdocs-h2 {
+    border: none;
+    font-weight: 700;
+    margin-bottom: $spacing-md;
+  }
+  .sbdocs-h3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+  }
+  .sbdocs-h4 {
+    font-size: 1rem;
+    font-weight: 700;
+  }
+}
+
+$css--body: true;
+$css--reset: true;
+@import '../src/globals/scss/styles.scss';
+
+.status__released {
+}
+
+.sticky-preview-wrapper {
+  //display: flex;
+}
+
+.sticky-preview {
+  position: sticky !important;
+  top: -50px;
+  z-index: 100;
+}

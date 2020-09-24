@@ -9,7 +9,7 @@ import FormGroup from '../FormGroup';
 import FileUploader from '../FileUploader';
 import NumberInput from '../NumberInput';
 import RadioButton from '../RadioButton';
-import RadioButtonGroup from '../RadioButtonGroup';
+import InputGroup from '../InputGroup';
 import Button from '../Button';
 import Search from '../Search';
 import Select from '../Select';
@@ -21,7 +21,7 @@ import Toggle from '../Toggle';
 const additionalProps = {
   className: 'some-class',
   longForm: true,
-  onSubmit: e => {
+  onSubmit: (e) => {
     e.preventDefault();
     action('FormSubmitted')(e);
   },
@@ -152,9 +152,9 @@ storiesOf('Components|Form', module)
       </FormGroup>
 
       <FormGroup {...fieldsetRadioProps}>
-        <RadioButtonGroup
+        <InputGroup
           onChange={action('onChange')}
-          name="radio-button-group"
+          name="input-group"
           defaultSelected="default-selected">
           <RadioButton
             value="standard"
@@ -181,7 +181,7 @@ storiesOf('Components|Form', module)
             disabled
             {...radioProps}
           />
-        </RadioButtonGroup>
+        </InputGroup>
       </FormGroup>
 
       <FormGroup {...fieldsetSearchProps}>

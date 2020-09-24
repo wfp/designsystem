@@ -1,123 +1,99 @@
+const cssesc = require('cssesc');
+const normalizePath = require('normalize-path');
+const webpack = require('webpack');
+const {
+  stringifyRequest,
+  urlToRequest,
+  interpolateName,
+} = require('loader-utils');
+
 const path = require('path');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const TerserPlugin = require('terser-webpack-plugin');
 
-const useExperimentalFeatures =
-  process.env.WFP_UI_USE_EXPERIMENTAL_FEATURES === 'true';
+const filenameReservedRegex = /[<>:"/\\|?*\x00-\x1F]/g;
+const reControlChars = /[\u0000-\u001f\u0080-\u009f]/g;
+const reRelativePath = /^\.+/;
+const reFileName = /([^\/]+)(?=\.\w+$)/g;
 
-const useExternalCss =
-  process.env.WFP_UI_REACT_STORYBOOK_USE_EXTERNAL_CSS === 'true';
+function getLocalIdent(loaderContext, localIdentName, localName, options) {
+  if (!options.context) {
+    // eslint-disable-next-line no-param-reassign
+    options.context = loaderContext.rootContext;
+  }
 
-const useStyleSourceMap =
-  process.env.WFP_UI_REACT_STORYBOOK_USE_STYLE_SOURCEMAP === 'true';
+  var request = normalizePath(
+    path.relative(options.context || '', loaderContext.resourcePath)
+  );
 
-const replaceTable = {
-  componentsX: useExperimentalFeatures,
-};
+  const find =
+    loaderContext.resourcePath.match(reFileName)[0].replace('.module', '') ===
+    localName;
+  // eslint-disable-next-line no-param-reassign
+  options.content = `${options.hashPrefix + request}+${unescape(localName)}`;
 
-const styleLoaders = [
-  {
-    loader: 'css-loader',
-    options: {
-      importLoaders: 2,
-      sourceMap: useStyleSourceMap,
-    },
-  },
-  {
-    loader: 'postcss-loader',
-    options: {
-      plugins: () => [
-        require('autoprefixer')({
-          browsers: ['last 1 version', 'ie >= 11'],
-        }),
-      ],
-      sourceMap: useStyleSourceMap,
-    },
-  },
-  {
-    loader: 'sass-loader',
-    options: {
-      sassOptions: {
-        includePaths: [path.resolve(__dirname, '..', 'node_modules')],
-      },
-    },
-  },
-];
+  // Using `[path]` placeholder outputs `/` we need escape their
+  // Also directories can contains invalid characters for css we need escape their too
+  let name = cssesc(
+    interpolateName(loaderContext, localIdentName, options)
+      // For `[hash]` placeholder
+      .replace(/^((-?[0-9])|--)/, '_$1')
+      .replace(filenameReservedRegex, '-')
+      .replace(reControlChars, '-')
+      .replace(reRelativePath, '-')
+      .replace(/\./g, '-')
+      .replace('-module', ''),
+    { isIdentifier: true }
+  ).replace(/\\\[local\\\]/gi, localName);
 
+  if (find) name = name.replace('wfp--' + localName + '__', 'wfp--');
+  return name;
+}
+
+// Export a function. Accept the base config as the only param.
 module.exports = async ({ config, mode }) => {
-  config.module.rules.push({
-    test: /\-story\.jsx?$/,
-    loaders: [require.resolve('@storybook/addon-storysource/loader')],
-    enforce: 'pre',
-  });
+  // `mode` has a value of 'DEVELOPMENT' or 'PRODUCTION'
+  // You can change the configuration based on that.
+  // 'PRODUCTION' is used when building the static version of storybook.
 
-  config.devtool = useStyleSourceMap ? 'source-map' : '';
-  config.optimization = {
-    ...config.optimization,
-    minimizer: [
-      new TerserPlugin({
-        sourceMap: true,
-        terserOptions: {
-          mangle: false,
-        },
-      }),
-    ],
-  };
+  // Make whatever fine-grained changes you need
 
-  config.module.rules.push({
-    test: /(\/|\\)FeatureFlags\.js$/,
-    loader: 'string-replace-loader',
-    options: {
-      multiple: Object.keys(replaceTable).map(key => ({
-        search: `export\\s+const\\s+${key}\\s*=\\s*false`,
-        replace: `export const ${key} = ${replaceTable[key]}`,
-        flags: 'i',
-      })),
-    },
-  });
-
-  /* config.module.rules.push({
-    test: /-story\.jsx?$/,
-    loaders: [
+  config.module.rules.unshift({
+    test: /\.md$/i,
+    use: [
       {
-        loader: require.resolve('@storybook/addon-storysource/loader'),
+        loader: 'raw-loader',
         options: {
-          prettierConfig: {
-            parser: 'babel',
-            printWidth: 80,
-            tabWidth: 2,
-            bracketSpacing: true,
-            trailingComma: 'es5',
-            singleQuote: true,
-            sourceMaps: 'inline',
+          esModule: false,
+        },
+      },
+    ],
+  });
+
+  config.module.rules.push({
+    test: /\.module.scss$/,
+    loaders: [
+      require.resolve('style-loader'),
+      {
+        loader: require.resolve('css-loader'),
+        options: {
+          importLoaders: 1,
+          modules: {
+            mode: 'local',
+            localIdentName: 'wfp--[name]__[local]',
+            getLocalIdent,
+            context: path.resolve(__dirname, 'src'),
+            hashPrefix: 'my-custom-hash',
           },
         },
       },
-    ],
-    enforce: 'pre',
-  }); */
-
-  config.module.rules.push({
-    test: /\.scss$/,
-    sideEffects: true,
-    use: [
-      { loader: useExternalCss ? MiniCssExtractPlugin.loader : 'style-loader' },
-      ...styleLoaders,
+      require.resolve('fast-sass-loader'),
     ],
   });
 
   config.module.rules.push({
-    test: /\.hbs$/,
-    sideEffects: true,
-    loader: 'raw-loader',
+    test: /storybook.scss$/,
+    use: ['style-loader', 'css-loader', 'fast-sass-loader'],
+    include: path.resolve(__dirname, '../'),
   });
 
-  if (useExternalCss) {
-    config.plugins.push(
-      new MiniCssExtractPlugin({
-        filename: '[name].[contenthash].css',
-      })
-    );
-  }
   return config;
 };

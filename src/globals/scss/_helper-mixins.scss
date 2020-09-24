@@ -34,6 +34,47 @@
   color: $text-03;
 }
 
+@mixin input-base {
+  height: $input-height;
+  min-width: 10rem;
+  padding: 0 $spacing-xs;
+  color: $text-01;
+  appearance: none;
+  background-color: $field-01;
+  order: 2;
+  border: $input-border;
+  border-radius: $input-border-radius;
+  box-shadow: none;
+  &::placeholder {
+    @include placeholder-colors;
+  }
+
+  &:focus {
+    @include focus-outline('border');
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  &:disabled:hover {
+    border: $input-border;
+  }
+
+  &:read-only {
+    @include read-only('border');
+  }
+}
+
+@mixin input-error {
+  &:invalid,
+  &.#{$prefix}--input--invalid {
+    border-color: $support-01;
+    outline: 1px solid $support-01;
+  }
+}
+
 @mixin box-shadow($size: 'small') {
   // Large - For dropdowns
   @if ($size == 'large') {
@@ -59,7 +100,8 @@
 
 @mixin focus-outline($type: 'border') {
   @if ($type == 'border') {
-    outline: 2px solid $interactive-01;
+    border-color: $interactive-01;
+    outline: 1px solid $interactive-01;
     box-shadow: 0px 2px 8px 0 $focus;
   }
 

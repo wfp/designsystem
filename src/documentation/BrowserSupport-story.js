@@ -8,7 +8,9 @@ import Link from '../components/Link';
 import { linkTo } from '@storybook/addon-links';
 
 storiesOf('Getting started|Getting started', module)
-  .addParameters({ options: { showPanel: false, isToolshown: false } })
+  .addParameters({
+    options: { showPanel: false, isToolshown: false, sort: 'z' },
+  })
   .add('Browser support', () => (
     <Page title="Browser support" subTitle="Supported browsers">
       <Blockquote warning title="IE11 support">
@@ -17,7 +19,7 @@ storiesOf('Getting started|Getting started', module)
         properly or do not work at all in IE11 will need to include a warning
         message inviting the user to switch to a more modern browser. The
         warning can be found{' '}
-        <Link onClick={linkTo('Getting started|Templates', 'Browser Warning')}>
+        <Link onClick={linkTo('Design|Templates', 'Browser Warning')}>
           here
         </Link>
         .

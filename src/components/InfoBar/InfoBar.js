@@ -3,6 +3,8 @@ import React from 'react';
 import classNames from 'classnames';
 import Wrapper from '../Wrapper';
 
+/** The InfoBar shows very important information on top of the page. */
+
 const InfoBar = ({ children, className, id, pageWidth }) => {
   const wrapperClasses = classNames('wfp--info-bar', className);
 
@@ -19,7 +21,17 @@ InfoBar.propTypes = {
    * The CSS class name to be placed on the wrapping element.
    */
   className: PropTypes.string,
+  /**
+   * Additional `id` provided to the wrapping element
+   */
   id: PropTypes.string,
+  /**
+   *  `pageWidth` for the `<Wrapper />` component
+   */
+  pageWidth: PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'full']),
+  /**
+   * Additional `className` for the `<Wrapper />` component
+   */
   wrapperClassName: PropTypes.string,
 };
 

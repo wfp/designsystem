@@ -22,10 +22,53 @@
     }
   }
 
+  // .#{$prefix}--blockquote--toggleable {
+  //   .#{$prefix}--blockquote__inside {
+  //     display: none;
+  //   }
+  //   cursor: pointer;
+  // }
+
+  // .#{$prefix}--blockquote--toggle--open {
+  //   .#{$prefix}--blockquote__inside {
+  //     display: block;
+  //   }
+  // }
+
   .#{$prefix}--blockquote__content {
     padding: $spacing-md;
     line-height: 1.4;
     word-wrap: anywhere;
+  }
+
+  .#{$prefix}--blockquote--toggleable {
+    .#{$prefix}--blockquote__title {
+      cursor: pointer;
+      &:after {
+        color: $interactive-01;
+        content: ' +';
+        font-weight: 800;
+      }
+    }
+    .#{$prefix}--blockquote__inside {
+      //display: none;
+      max-height: 0;
+      overflow: hidden;
+      transition: all 0.3;
+    }
+  }
+
+  .#{$prefix}--blockquote--toggle--open {
+    .#{$prefix}--blockquote__inside {
+      //display: block;
+      max-height: 1000px;
+    }
+    .#{$prefix}--blockquote__title {
+      &:after {
+        color: $interactive-01;
+        content: ' -';
+      }
+    }
   }
 
   .#{$prefix}--blockquote--no-content {
@@ -64,6 +107,7 @@
 
   .#{$prefix}--blockquote--warning {
     border-left-color: $color__yellow;
+    background: $color__yellow-10;
 
     .#{$prefix}--blockquote__icon {
       fill: $color__yellow !important;

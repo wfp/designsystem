@@ -18,6 +18,7 @@
     display: flex;
     flex-direction: column;
     width: 100%;
+    order: 2;
   }
 
   .#{$prefix}--select-input {
@@ -27,7 +28,7 @@
     appearance: none;
     display: block;
     width: 100%;
-    padding: 0 $spacing-2xl 0 $spacing-xs;
+    padding: 0 $spacing-lg 0 $spacing-xs;
     color: $text-01;
     background-color: $field-01;
     border: $input-border;
@@ -85,7 +86,7 @@
   .#{$prefix}--select__arrow {
     fill: $interactive-01;
     position: absolute;
-    right: 1rem;
+    right: 0.6rem;
     bottom: 1rem;
     width: rem(10px);
     height: rem(5px);

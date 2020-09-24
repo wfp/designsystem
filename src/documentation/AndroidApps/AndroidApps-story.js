@@ -8,7 +8,7 @@ import Link from '../../components/Link';
 import Blockquote from '../../components/Blockquote';
 import Page from '../Page';
 
-storiesOf('Getting started|Guidelines', module)
+storiesOf('Design|Guidelines', module)
   .addParameters({ options: { showPanel: false, isToolshown: false } })
   .add('Android apps', () => (
     <Page title="Android apps" subTitle="UX Standards">
@@ -25,13 +25,13 @@ storiesOf('Getting started|Guidelines', module)
       <ul className="wfp--story__list">
         <li>
           Use{' '}
-          <Link onClick={linkTo('Getting started|Guidelines', 'Colours')}>
+          <Link onClick={linkTo('Design|Guidelines', 'Colours')}>
             WFP's branding colours
           </Link>
         </li>
         <li>
           Use{' '}
-          <Link onClick={linkTo('Getting started|Guidelines', 'Typography')}>
+          <Link onClick={linkTo('Design|Guidelines', 'Typography')}>
             Open Sans
           </Link>{' '}
           as font

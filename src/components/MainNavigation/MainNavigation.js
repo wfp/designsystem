@@ -4,6 +4,8 @@ import classNames from 'classnames';
 import Button from '../Button';
 import Wrapper from '../Wrapper';
 
+/** The Main Navigation is a Horizontal Menu which consists of multiple clickable items placed at the top of the page. The navigation stays unchanged when browswing through the site and is present on every page. The currently selected item is usually highlighted. */
+
 class MainNavigation extends Component {
   constructor(props) {
     super(props);
@@ -123,11 +125,11 @@ MainNavigation.propTypes = {
   /**
    * The Logo can be either a string or a component
    */
-  logo: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
+  logo: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   /**
    * See `Wrapper` component for more information
    */
-  pageWidth: PropTypes.string,
+  pageWidth: PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'full']),
   /**
    * See `Wrapper` component for more information
    */

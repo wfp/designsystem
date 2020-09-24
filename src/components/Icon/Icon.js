@@ -12,10 +12,11 @@ import isRequiredOneOf from '../../prop-types/isRequiredOneOf';
  * const svgData = getSvgData('copy-code');
  * svgShapes(svgData);
  */
+
 export function svgShapes(svgData) {
   const svgElements = Object.keys(svgData)
-    .filter(key => svgData[key])
-    .map(svgProp => {
+    .filter((key) => svgData[key])
+    .map((svgProp) => {
       const data = svgData[svgProp];
 
       if (svgProp === 'circles') {
@@ -48,6 +49,8 @@ export function isPrefixed(name) {
   }
   return name && name.split('--')[0] === 'icon';
 }
+
+/** Icons are visual representations of commands, devices, directories, or common actions. */
 
 const Icon = ({
   className,

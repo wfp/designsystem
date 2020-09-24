@@ -23,7 +23,6 @@
     width: 100%;
     position: relative;
     overflow: auto;
-    //padding: 1px;
     max-width: 100%;
   }
 
@@ -35,30 +34,6 @@
     height: 3px;
     bottom: 0;
   }
-
-  /*.#{$prefix}--tabs-trigger {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 $spacing-md;
-    height: $input-height;
-    cursor: pointer;
-    //background-color: $field-02;
-
-    svg {
-      width: rem(12px);
-      height: rem(12px);
-      fill: $interactive-01;
-    }
-
-    &:focus {
-      @include focus-outline('border');
-    }
-
-    @include breakpoint(bp--sm--major) {
-      display: none;
-    }
-  }*/
 
   .#{$prefix}--tabs-trigger-text {
     text-decoration: none;
@@ -79,20 +54,13 @@
     display: flex;
     flex-direction: column;
     z-index: z('dropdown');
-    //background: $ui-01;
-
     a {
       text-decoration: none;
     }
-
-    //@include breakpoint(bp--sm--major) {
     @include typescale('epsilon');
     flex-direction: row;
-    //margin-right: $spacing-md;
-    //margin-left: $spacing-md;
     box-shadow: none;
     z-index: auto;
-    //}
 
     @include breakpoint(bp--lg--major) {
       margin-left: 0;
@@ -105,30 +73,11 @@
     margin-right: 0;
   }
 
-  /*.#{$prefix}--tabs__nav--hidden {
-    display: none;
-
-    @include breakpoint(bp--sm--major) {
-      display: flex;
-    }
-  }*/
-
   .#{$prefix}--tabs__nav-item {
     @include typescale('zeta');
     padding: 0;
     cursor: pointer;
     white-space: nowrap;
-
-    &:hover,
-    &:focus {
-      //background-color: $hover-row;
-
-      //@include breakpoint(bp--sm--major) {
-      //outline: 1px solid transparent;
-      //background: transparent;
-      //}
-    }
-
     > a,
     > span {
       display: block;
@@ -141,11 +90,6 @@
   }
 
   .#{$prefix}--tabs__nav-item--selected {
-    //border: none;
-
-    //@include breakpoint(bp--sm--major) {
-    //border-bottom: 2px solid $interactive-01;
-
     .#{$prefix}--tabs__nav-link {
       color: $interactive-01;
 
@@ -153,13 +97,28 @@
         color: $interactive-01;
       }
     }
+  }
 
-    //}
+  .#{$prefix}--tabs--no-animation {
+    .#{$prefix}--tabs__nav__bar {
+      display: none;
+    }
+    .#{$prefix}--tabs__nav-item--selected {
+      position: relative;
+      &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        background: $interactive-01;
+        height: 3px;
+        bottom: 0;
+        left: 0;
+        right: 0;
+      }
+    }
   }
 
   .#{$prefix}--tabs__nav-item--disabled {
-    //border-bottom: 2px solid $interactive-01;
-
     .#{$prefix}--tabs__nav-link {
       color: $ui-05;
       cursor: not-allowed;
@@ -171,14 +130,6 @@
     }
   }
 
-  .#{$prefix}--tabs__nav-item:hover .#{$prefix}--tabs__nav-link {
-    //color: $text-01;
-
-    //@include breakpoint(bp--sm--major) {
-    color: $hover-secondary;
-    //}
-  }
-
   .#{$prefix}--tabs__nav-link {
     display: inline-block;
     color: $text-01;
@@ -187,29 +138,14 @@
     width: 100%;
     white-space: nowrap;
     text-overflow: ellipsis;
-
-    /*&:focus {
-      outline: 1px solid transparent;
-      background-color: $interactive-01;
-      color: $inverse-01;
-    }*/
-
-    //@include breakpoint(bp--sm--major) {
-    //padding: 0 $spacing-3xs;
-    //width: auto;
-
     &:focus {
-      //background-color: transparent;
       color: $text-01;
       outline: 1px solid transparent;
-      //box-shadow: 0 0 0 1px $interactive-01;
     }
 
     &:hover {
       color: $interactive-01;
     }
-
-    //}
   }
 
   // Skeleton state

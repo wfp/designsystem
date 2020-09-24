@@ -3,6 +3,7 @@ import React from 'react';
 import classNames from 'classnames';
 import TabContent from '../TabContent';
 
+/** Tabs allow users to navigate easily between views within the same context */
 class Tabs extends React.Component {
   static propTypes = {
     /**
@@ -28,6 +29,11 @@ class Tabs extends React.Component {
      * inside the Tabs
      */
     customTabContent: PropTypes.bool,
+
+    /**
+     * Specify whether the animation should be used
+     */
+    disableAnimation: PropTypes.bool,
 
     /**
      * Specify whether the Tabs are displayed inline
@@ -109,10 +115,10 @@ class Tabs extends React.Component {
   }
 
   getTabs() {
-    return React.Children.map(this.props.children, tab => tab);
+    return React.Children.map(this.props.children, (tab) => tab);
   }
 
-  getTabAt = index => {
+  getTabAt = (index) => {
     return (
       this[`tab${index}`] || React.Children.toArray(this.props.children)[index]
     );
@@ -142,7 +148,7 @@ class Tabs extends React.Component {
   };
 
   // following functions (handle*) are Props on Tab.js, see Tab.js for parameters
-  handleTabClick = onSelectionChange => {
+  handleTabClick = (onSelectionChange) => {
     return (index, label, evt) => {
       if (evt) {
         evt.preventDefault();
@@ -151,7 +157,7 @@ class Tabs extends React.Component {
     };
   };
 
-  handleTabKeyDown = onSelectionChange => {
+  handleTabKeyDown = (onSelectionChange) => {
     return (index, label, evt) => {
       const key = evt.key || evt.which;
 
@@ -161,8 +167,8 @@ class Tabs extends React.Component {
     };
   };
 
-  handleTabAnchorFocus = onSelectionChange => {
-    return index => {
+  handleTabAnchorFocus = (onSelectionChange) => {
+    return (index) => {
       const tabCount = React.Children.count(this.props.children) - 1;
       let tabIndex = index;
 
@@ -197,6 +203,7 @@ class Tabs extends React.Component {
   render() {
     const {
       ariaLabel,
+      disableAnimation,
       inline,
       className,
       customTabContent,
@@ -214,7 +221,7 @@ class Tabs extends React.Component {
         selected: index === selected,
         handleTabClick: this.handleTabClick(onSelectionChange),
         handleTabAnchorFocus: this.handleTabAnchorFocus(onSelectionChange),
-        ref: e => {
+        ref: (e) => {
           this.setTabAt(index, e);
         },
         handleTabKeyDown: this.handleTabKeyDown(onSelectionChange),
@@ -224,7 +231,7 @@ class Tabs extends React.Component {
     });
 
     const tabContentWithProps = !customTabContent
-      ? React.Children.map(tabsWithProps, tab => {
+      ? React.Children.map(tabsWithProps, (tab) => {
           const { children, selected } = tab.props;
           if (!children) {
             return null;
@@ -242,7 +249,11 @@ class Tabs extends React.Component {
       : null;
 
     const classes = {
-      tabs: classNames('wfp--tabs', className),
+      tabs: classNames(
+        'wfp--tabs',
+        { 'wfp--tabs--no-animation': disableAnimation },
+        className
+      ),
       tablist: classNames('wfp--tabs__nav', {
         'wfp--tabs__nav--inline': inline,
       }),

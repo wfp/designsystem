@@ -4,6 +4,7 @@ import classNames from 'classnames';
 import Icon from '../Icon';
 import { iconUser } from '@wfp/icons';
 
+/** The User is used inside the MainNavigation and form, and can display an avatar and username. */
 const User = ({
   alt,
   className,
@@ -12,6 +13,7 @@ const User = ({
   ellipsis,
   extendedDescription,
   image,
+  showName,
   small,
   missingImage,
   name,
@@ -67,7 +69,7 @@ const User = ({
   return (
     <div className={classes} {...other}>
       {avatar}
-      {name && (
+      {showName && (
         <span className={titleClasses}>
           <span>{name}</span>
           {description && (
@@ -110,8 +112,7 @@ User.propTypes = {
    */
   missingImage: PropTypes.oneOf(['avatar', 'letter']),
   /**
-   * Extended Description column can be added only use if the description
-   * is also set
+   * Extended Description column
    */
   extendedDescription: PropTypes.node,
   /**
@@ -119,6 +120,10 @@ User.propTypes = {
    * Provide at least 50px * 50px to support HiDPI displays.
    */
   image: PropTypes.string,
+  /**
+   * Show the name next to the avatar
+   */
+  showName: PropTypes.bool,
   /**
    * The username which will be displayed. Usually `Firstname Lastname`.
    */
@@ -129,6 +134,7 @@ User.defaultProps = {
   alt: 'User Icon',
   missingImage: 'avatar',
   ellipsis: false,
+  showName: true,
 };
 
 export default User;

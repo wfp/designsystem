@@ -2,6 +2,8 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
 
+/**
+ * Cards are a convenient means of displaying content composed of different types of objects. It is a multi usage component which creates boxes that are usually teasing some kind of content. */
 const Card = ({
   children,
   className,
@@ -21,14 +23,7 @@ const Card = ({
   };
 
   const wrapperClasses = classNames('wfp--photo-card', {
-    'wfp--photo-card--landscape': kind === 'landscape',
-    'wfp--photo-card--landscape-light': kind === 'landscape-light',
-    'wfp--photo-card--split': kind === 'split',
-    'wfp--photo-card--hero': kind === 'hero',
-    'wfp--photo-card--splash': kind === 'splash',
-    'wfp--photo-card--splash-image': kind === 'splash-image',
-    'wfp--photo-card--splash-compact': kind === 'splash-compact',
-    'wfp--photo-card--related': kind === 'related',
+    [`wfp--photo-card--${kind}`]: kind,
     'wfp--photo-card--no-background': !image,
     'wfp--photo-card--link': isLink,
     [`${className}`]: className,
@@ -84,13 +79,13 @@ const Card = ({
 
 Card.propTypes = {
   /**
-   List of `BannerNavigationItem` components
- */
-  children: PropTypes.node,
-  /**
    Additional className which will be added
  */
   className: PropTypes.string,
+  /**
+   The links target
+*/
+  href: PropTypes.string,
   /**
    An optimized photograph
  */
@@ -122,7 +117,16 @@ Card.propTypes = {
   /**
   Kind of Card
 */
-  kind: PropTypes.string,
+  kind: PropTypes.oneOf([
+    'landscape',
+    'landscape-light',
+    'split',
+    'hero',
+    'splash',
+    'splash-image',
+    'splash-compact',
+    'related',
+  ]).isRequired,
   /**
   The URL where the content uploaded is located.
 */

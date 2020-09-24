@@ -1,0 +1,58 @@
+@import './_mixins.scss';
+@import './_vars.scss';
+@import './animations/fade.scss';
+@import './themes/light.scss';
+@import './themes/light-border.scss';
+
+.#{$namespace-prefix}-iOS {
+  cursor: pointer !important;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.#{$namespace-prefix}-popper {
+  pointer-events: none;
+  max-width: calc(100vw - 10px);
+  transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition-property: transform;
+}
+
+.#{$namespace-prefix}-tooltip {
+  position: relative;
+  color: white;
+  border-radius: 4px;
+  font-size: 14px;
+  line-height: 1.4;
+  background-color: #333;
+  cursor: pointer;
+  transition-property: visibility, opacity, transform;
+  outline: 0;
+
+  @each $placement in $placements {
+    &[data-placement^='#{$placement}'] {
+      > .#{$namespace-prefix}-arrow {
+        @include arrow($placement, $arrow-size + 1, #333);
+        @include arrow-margin($placement);
+        @include arrow-transform-origin($placement, $arrow-size);
+        @include arrow-position($placement, $arrow-size, false);
+      }
+    }
+  }
+
+  &[data-interactive][data-state='visible'] {
+    pointer-events: auto;
+  }
+
+  &[data-inertia][data-state='visible'] {
+    transition-timing-function: cubic-bezier(0.54, 1.5, 0.38, 1.11);
+  }
+}
+
+.#{$namespace-prefix}-arrow {
+  position: absolute;
+  border-color: transparent;
+  border-style: solid;
+}
+
+.#{$namespace-prefix}-content {
+  padding: 5px 9px;
+}

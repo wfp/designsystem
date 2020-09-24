@@ -22,6 +22,7 @@ SecondaryNavigationTitle.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
+/** The SecondaryNavigation shows the page title and and optional tab navigation. */
 const SecondaryNavigation = ({
   additional,
   children,
@@ -54,6 +55,10 @@ SecondaryNavigation.propTypes = {
    */
   className: PropTypes.string,
   id: PropTypes.string,
+  /**
+   * The width of the SecondaryNavigation (same as Wrapper)
+   */
+  pageWidth: PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'full']),
   wrapperClassName: PropTypes.string,
 };
 

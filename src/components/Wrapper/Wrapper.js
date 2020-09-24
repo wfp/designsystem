@@ -2,7 +2,10 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
 
-const Wrapper = props => {
+export const pageWidths = ['xs', 'sm', 'md', 'lg', 'full'];
+
+/** Wrapper can wrap it's content in a specific width depending on if the application has a full or fixed width. */
+const Wrapper = (props) => {
   const {
     background,
     backgroundStyle,
@@ -58,7 +61,7 @@ Wrapper.propTypes = {
   /**
     `xs` `sm` `md` `lg`:  Set the maximum width of the Wrapper content `xs`: `500px` `sm`: `700px` `md`:`1000px` `lg`: `1200px` 
   */
-  pageWidth: PropTypes.string,
+  pageWidth: PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'full']),
   /**
     Width on mobile devices
   */

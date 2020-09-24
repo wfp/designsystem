@@ -18,40 +18,21 @@
   .#{$prefix}--number input[type='number'] {
     @include typescale('zeta');
     @include font-family;
+    @include input-base;
     box-sizing: border-box;
     display: inline-flex;
     width: 100%;
     min-width: 9.375rem;
     padding-left: $spacing-md;
     padding-right: $spacing-xl;
-    height: $input-height;
-    color: $text-01;
-    background-color: $field-01;
-    //border: none;
-    //box-shadow: 0 1px 0 0 $ui-05;
-    order: 2;
-    border: $input-border;
 
     & ~ .#{$prefix}--label {
       order: 1;
     }
 
-    &:focus {
-      outline: none;
-      //box-shadow: 0 2px 0 0 $interactive-01;
-    }
-
-    &:focus {
-      @include focus-outline('border');
-    }
     /* &:focus ~ .#{$prefix}--label {
       color: $interactive-01;
     } */
-
-    &:disabled {
-      opacity: 0.5;
-      cursor: not-allowed;
-    }
 
     &:disabled ~ .#{$prefix}--number__controls {
       opacity: 0.5;
@@ -73,7 +54,7 @@
   }
 
   .#{$prefix}--number input[type='number'] {
-    appearance: textfield; // Firefox: Hide spinner (up and down buttons)
+    //appearance: textfield; // Firefox: Hide spinner (up and down buttons)
 
     &::-ms-clear {
       display: none; // IE: Hide "clear-field" `x` button on input field
@@ -86,16 +67,19 @@
 
   .#{$prefix}--number__controls {
     @include reset;
-    position: absolute;
-    display: block;
-    left: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    left: auto;
-    right: 0.5rem;
-    bottom: 0.625rem;
+    order: 1;
+    position: relative;
+    &:hover {
+      .#{$prefix}--number__control-btn {
+        opacity: 1;
+      }
+    }
+  }
+
+  .#{$prefix}--number--nocontrols {
+    .#{$prefix}--number__control-btn {
+      display: none;
+    }
   }
 
   .#{$prefix}--number__control-btn {
@@ -104,11 +88,29 @@
     justify-content: center;
     align-items: center;
     position: relative;
-    width: rem(20px);
-    height: rem(10px);
+    min-width: $input-height;
+    max-width: $input-height;
+    height: $input-height;
+    margin-left:-1px;
+    font-weight: 600;
+    font-size: 1.5rem;
+   // border: 1px solid $input-border-color;
+    opacity: 0;
+    transition: all 0.1s;
+    border-left: $input-border;
+    //position: absolute;
+    order: 3;
+    position: absolute;
+    right:0;
+    span {
+      display: block;
+    }
+
 
     &:focus {
+      border-left-color: transparent;
       @include focus-outline;
+      z-index: 100;
     }
 
     &:hover {
@@ -118,6 +120,10 @@
     &:hover svg {
       fill: $hover-primary;
     }
+    &:nth-child(1) {
+      right: $input-height - 1px;
+    }
+
   }
 
   .#{$prefix}--number__controls svg {

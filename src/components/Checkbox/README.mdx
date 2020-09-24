@@ -1,0 +1,61 @@
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+
+## Usage
+
+Checkboxes are used for multiple choices, not for mutually exclusive choices. Each checkbox works independently from other checkboxes in the list, therefore checking an additional box does not affect any other selections.
+
+#### When to use
+
+**Forms**
+
+Can be used in forms on a full page, in modals, or on side panels.
+
+** Filtering and batch action **
+
+Used to filter data either on a page, in a menu, or within a component. Checkboxes are found in Data table for batch editing purposes.
+
+** Terms and conditions **
+
+Turning the checkbox input on or off can indicate whether you agree to the terms.
+
+** Lists with sub-selections **
+
+Used when there is a parent and child relationship. You can use a parent checkbox to make a bulk selection of all list items. Unchecking the parent deselects all of the list items. Alternatively, you can select children individually when the parent is not selected, which is where the indeterminate state comes in to play.
+
+#### When not to use
+
+If a user can select only one option from a list, radio buttons should be used instead of checkboxes. Checkboxes allow the user to select multiple items in a set whereas radio buttons allow the user to select only one option.
+
+![Image of Checkbox usage](https://github.com/wfp/ui/blob/component-updates/src/assets/formatting/Checkbox.png?raw=true)
+
+## Behaviour
+
+#### Checkbox States
+
+The checkbox control allows for three states: **selected**, **unselected**, and **indeterminate**. The indeterminate state comes into play when the checkbox contains a sublist of selections, some of which are selected, and some unselected.
+
+## Actions
+
+#### Click target
+
+Users should be able to select the checkbox by clicking on the box directly or by clicking on its label.
+
+#### Default selection
+
+The default view of a set of checkboxes is having no option selected.
+
+## Formatting
+
+![Image of Breadcrumb Format](https://github.com/wfp/ui/blob/component-updates/src/assets/formatting/Check.png?raw=true)
+
+1. **Checkbox input(1):** It indicates the checkbox state. By default it is set to unselected.
+
+2. **Checkbox label(2):** Describes the information you want to select or unselect.
+
+## Related
+
+[RadioButton](?path=/docs/components-radiobutton--regular)
+
+## Reference
+
+[Carbon Design System Usage for checkboxes](https://next.carbondesignsystem.com/components/checkbox)

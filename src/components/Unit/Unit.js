@@ -37,15 +37,17 @@ const components = {
   YearMonth,
 };
 
-const Unit = props => {
+/** The Unit component method returns a component with a language and unit sensitive representation of this number based on [Numbers and Unit from the Editorial Guidelines](https://cdn.wfp.org/guides/editorial/content/numbers-and-units/) the [Numbers and Units Reference on developer.mozilla.org](http://cdn.wfp.org/guides/editorial/content/numbers-and-units). */
+
+const Unit = (props) => {
   const { className, output, string, textAnchor, setup } = props;
-  const type = props.type ? props.type : 'None';
+  const type = props.type
+    ? props.type.charAt(0).toUpperCase() + props.type.slice(1)
+    : 'None';
   const Unit = components[type];
   //const unitHideClass = setup && setup.hideUnit ? 'wfp--unit--hide' : '';
   const textAnchorCalc = textAnchor ? textAnchor : 'start';
-  const unitClassName = props.type
-    ? 'wfp--unit--' + props.type.toLowerCase()
-    : '';
+  const unitClassName = type ? 'wfp--unit--' + type.toLowerCase() : '';
 
   const outputClassName =
     output && scaleLookup[output] ? 'wfp--unit--' + output : '';
@@ -107,27 +109,27 @@ Unit.propTypes = {
     The unit type  */
   type: PropTypes.oneOf([
     undefined,
-    'None',
-    'Narrow',
-    'Usd',
-    'Partners',
-    'Beneficiaries',
-    'Households',
-    'Months',
-    'Mt',
-    'MetricTons',
+    'none',
+    'narrow',
+    'usd',
+    'partners',
+    'beneficiaries',
+    'households',
+    'months',
+    'mt',
+    'metricTons',
     'kg',
-    'Num',
-    'YearMonth',
-    'Level',
-    'People',
-    'Countries',
-    'Percentage',
+    'num',
+    'yearMonth',
+    'level',
+    'people',
+    'countries',
+    'percentage',
   ]),
 };
 
 Unit.defaultProps = {
-  type: 'None',
+  type: 'none',
   svg: false,
 };
 

@@ -36,6 +36,7 @@ export Icon from './components/Icon';
 export InfoBar from './components/InfoBar';
 export Link from './components/Link';
 export Loading from './components/Loading';
+export Input from './components/Input';
 export InlineLoading from './components/InlineLoading';
 export { List, ListItem } from './components/List';
 export MainNavigation from './components/MainNavigation';
@@ -63,7 +64,7 @@ export notificationStyle from './components/Notification';
 export NumberInput from './components/NumberInput';
 export Pagination from './components/Pagination';
 export RadioButton from './components/RadioButton';
-export RadioButtonGroup from './components/RadioButtonGroup';
+export InputGroup from './components/InputGroup';
 export ReadMore from './components/ReadMore';
 export ReduxFormWrapper from './components/ReduxFormWrapper';
 export Search from './components/Search';
@@ -79,17 +80,6 @@ export SelectItemGroup from './components/SelectItemGroup';
 export Switch from './components/Switch';
 export Slider from './components/Slider';
 export Story from './components/Story';
-/*
-export {
-  StructuredListWrapper,
-  StructuredListHead,
-  StructuredListBody,
-  StructuredListRow,
-  StructuredListInput,
-  StructuredListCell,
-} from './components/StructuredList';
-*/
-
 export TablePagination from './components/TablePagination';
 export Tab from './components/Tab';
 export TabContent from './components/TabContent';
@@ -99,11 +89,8 @@ export TextArea from './components/TextArea';
 export TextInput from './components/TextInput';
 export { tooltipStyle, tooltipStyleDark } from './components/Tooltip';
 export Toggle from './components/Toggle';
-/*
-export ToggleSmall from './components/ToggleSmall';
-*/
 export User from './components/User';
 export Unit from './components/Unit';
 export Value from './components/Value';
-export Wrapper from './components/Wrapper';
-export colors from './globals/data/colors';
+//export Wrapper, { pageWidths } from './components/Wrapper';
+//export colors from './globals/data/colors';

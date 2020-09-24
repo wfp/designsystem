@@ -9,6 +9,8 @@ import { equals } from '../../tools/array';
 
 let instanceId = 0;
 
+/** Pagination is used for splitting up content or data into several pages, with a control for navigating to the next or previous page. */
+
 export default class Pagination extends Component {
   constructor(props) {
     super(props);
@@ -139,10 +141,12 @@ export default class Pagination extends Component {
     disabled: false,
     page: 1,
     pagesUnknown: false,
+    pageSize: 10,
+    pageSizes: [10, 20, 50],
     isLastPage: false,
     pageInputDisabled: false,
     itemText: (min, max) => `${min}-${max} items`,
-    pageText: page => `page ${page}`,
+    pageText: (page) => `page ${page}`,
   };
 
   static getDerivedStateFromProps({ pageSizes, page, pageSize }, state) {
@@ -171,17 +175,19 @@ export default class Pagination extends Component {
         };
   }
 
-  handleSizeChange = evt => {
+  handleSizeChange = (evt) => {
     const pageSize = Number(evt.target.value);
-    this.setState({ pageSize, page: 1 });
+    this.setState({ pageSize, page: 1 }, () => {
+      console.log('after size', pageSize, this.state.pageSize);
+    });
     this.props.onChange({ page: 1, pageSize });
   };
 
-  handlePageChange = evt => {
+  handlePageChange = (evt) => {
     this.setState({ page: evt.target.value });
   };
 
-  handlePageInputChange = evt => {
+  handlePageInputChange = (evt) => {
     const page = Number(evt.target.value);
     if (
       page > 0 &&
@@ -205,7 +211,7 @@ export default class Pagination extends Component {
     this.props.onChange({ page, pageSize: this.state.pageSize });
   };
 
-  renderSelectItems = total => {
+  renderSelectItems = (total) => {
     let counter = 1;
     let itemArr = [];
     while (counter <= total) {
@@ -243,7 +249,9 @@ export default class Pagination extends Component {
     } = this.props;
 
     const statePage = this.state.page;
-    const statePageSize = this.state.pageSize;
+    const statePageSize = this.props.pageSize
+      ? this.props.pageSize
+      : this.state.pageSize;
     const classNames = classnames('wfp--pagination', className);
     const backButtonClasses = classnames(
       'wfp--pagination__button',
@@ -270,8 +278,9 @@ export default class Pagination extends Component {
                 hideLabel
                 inline
                 onChange={this.handleSizeChange}
-                value={statePageSize}>
-                {pageSizes.map(size => (
+                // value={statePageSize}
+                value={this.state.pageSize}>
+                {pageSizes.map((size) => (
                   <SelectItem key={size} value={size} text={String(size)} />
                 ))}
               </Select>
@@ -285,8 +294,11 @@ export default class Pagination extends Component {
                   statePage * statePageSize
                 )
               : itemRangeText(
-                  Math.min(statePageSize * (statePage - 1) + 1, totalItems),
-                  Math.min(statePage * statePageSize, totalItems),
+                  Math.min(
+                    this.state.pageSize * (statePage - 1) + 1,
+                    totalItems
+                  ),
+                  Math.min(statePage * this.state.pageSize, totalItems),
                   totalItems
                 )}
           </span>

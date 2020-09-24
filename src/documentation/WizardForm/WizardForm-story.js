@@ -14,9 +14,9 @@ import Wrapper from '../../components/Wrapper';
 import RadioButton from '../../components/RadioButton/RadioButton';
 import RegularPage from '../RegularPage';
 
-const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
-const onSubmit = async values => {
+const onSubmit = async (values) => {
   await sleep(300);
   window.alert(JSON.stringify(values, 0, 2));
 };
@@ -28,9 +28,9 @@ const renderError = ({ meta: { touched, error } }) =>
     false
   );
 
-storiesOf('Getting started|Templates', module)
+storiesOf('Design|Templates', module)
   .addParameters({ hideProps: true })
-  .addDecorator(story => (
+  .addDecorator((story) => (
     <RegularPage title="Wizard form" withoutSecondaryTabs pageWidth="lg">
       {story()}
     </RegularPage>
@@ -92,8 +92,8 @@ storiesOf('Getting started|Templates', module)
           <FormGroup>
             <label htmlFor="sex">Sex</label>
             <FormGroup
-              className="wfp--radio-button-group"
-              name="radio-button-group"
+              className="wfp--input-group"
+              name="input-group"
               defaultSelected="default-selected"
               legend="Group Legend">
               <Field
@@ -127,7 +127,7 @@ storiesOf('Getting started|Templates', module)
         </Wizard.Page>
         <Wizard.Page
           label="Additional notes"
-          validate={values => {
+          validate={(values) => {
             const errors = {};
             if (!values.newNotes) {
               errors.newNotes = 'Required';
