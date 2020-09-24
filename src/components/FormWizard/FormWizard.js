@@ -4,6 +4,8 @@ import classNames from 'classnames';
 
 import { Module, ModuleBody, ModuleHeader, ModuleFooter } from '../Module';
 
+/** The FormWizard is a wrapper for creating Wizard forms. */
+
 export default class FormWizard extends React.Component {
   static propTypes = {
     /**
