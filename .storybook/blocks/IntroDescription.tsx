@@ -112,7 +112,9 @@ const DescriptionContainer: FunctionComponent<DescriptionProps> = (props) => {
               return (
                 <ListItem>
                   <a
-                    href={`#${child.props.children.toLowerCase()}`}
+                    href={`#${child.props.children
+                      .toLowerCase()
+                      .replace(/ /g, '-')}`}
                     target="_self">
                     {child.props.children}
                   </a>
