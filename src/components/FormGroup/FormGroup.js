@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import classnames from 'classnames';
 
+/** A FormGroup element is used to group several controls as well as labels  within a web form. It uses  `<fieldset>` */
 const FormGroup = ({
   legendText,
   inline,

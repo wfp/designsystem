@@ -6,6 +6,8 @@ import uid from '../../tools/uniqueId';
 
 const { prefix } = settings;
 
+/** Radio buttons represent a group of mutually exclusive choices */
+
 export default class RadioButton extends React.Component {
   static propTypes = {
     /**
@@ -64,7 +66,7 @@ export default class RadioButton extends React.Component {
     this.uid = this.props.id || uid();
   }
 
-  handleChange = evt => {
+  handleChange = (evt) => {
     this.props.onChange(this.props.value, this.props.name, evt);
   };
 

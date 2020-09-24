@@ -22,18 +22,18 @@
     }
   }
 
-  .#{$prefix}--blockquote--toggleable {
-    .#{$prefix}--blockquote__inside {
-      display: none;
-    }
-    cursor: pointer;
-  }
+  // .#{$prefix}--blockquote--toggleable {
+  //   .#{$prefix}--blockquote__inside {
+  //     display: none;
+  //   }
+  //   cursor: pointer;
+  // }
 
-  .#{$prefix}--blockquote--toggle--open {
-    .#{$prefix}--blockquote__inside {
-      display: block;
-    }
-  }
+  // .#{$prefix}--blockquote--toggle--open {
+  //   .#{$prefix}--blockquote__inside {
+  //     display: block;
+  //   }
+  // }
 
   .#{$prefix}--blockquote__content {
     padding: $spacing-md;
@@ -58,7 +58,7 @@
     }
   }
 
-  .#{$prefix}--blockquote--toggle-open {
+  .#{$prefix}--blockquote--toggle--open {
     .#{$prefix}--blockquote__inside {
       //display: block;
       max-height: 1000px;

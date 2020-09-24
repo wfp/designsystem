@@ -2,6 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
+/** Tables are used to make large volumes of data easy to understand and to access. */
 export default function Table({
   className,
   children,

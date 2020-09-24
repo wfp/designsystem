@@ -15,6 +15,8 @@ import settings from '../../globals/js/settings';
 import Input from '../Input';
 const { prefix } = settings;
 
+/** The select component allows users to choose one option from a list. It is used in forms for users to submit data. */
+
 function Select(props) {
   const {
     className,

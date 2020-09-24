@@ -33,6 +33,7 @@ const MoreLink = ({ handleToggleClick, link, text, showMore }) => {
   }
 };
 
+/** ReadMore component is a simple way to keep longer content from cluttering up your page, giving you more control over how much content is displayed to visitor */
 export default class ReadMore extends Component {
   constructor(props) {
     super(props);
@@ -78,10 +79,10 @@ export default class ReadMore extends Component {
     collapseText: 'Read less',
   };
 
-  handleToggleClick = e => {
+  handleToggleClick = (e) => {
     e.preventDefault();
     const innerHeight = this.divElement.clientHeight;
-    this.setState(prevState => ({
+    this.setState((prevState) => ({
       showMore: !prevState.showMore,
       innerHeight: innerHeight,
     }));
@@ -131,7 +132,7 @@ export default class ReadMore extends Component {
     return (
       <div className={classNames}>
         <div className={`${prefix}--read-more__content`} style={contentStyle}>
-          <div ref={divElement => (this.divElement = divElement)}>
+          <div ref={(divElement) => (this.divElement = divElement)}>
             {(showMore || !collapsed) && children}
             {collapsed && <div style={collapseStyle}>{collapsed}</div>}
           </div>

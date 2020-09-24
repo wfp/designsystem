@@ -4,6 +4,7 @@ import classNames from 'classnames';
 
 export const pageWidths = ['xs', 'sm', 'md', 'lg', 'full'];
 
+/** Wrapper can wrap it's content in a specific width depending on if the application has a full or fixed width. */
 const Wrapper = (props) => {
   const {
     background,

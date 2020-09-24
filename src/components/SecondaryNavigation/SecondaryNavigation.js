@@ -22,6 +22,7 @@ SecondaryNavigationTitle.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
+/** The SecondaryNavigation shows the page title and and optional tab navigation. */
 const SecondaryNavigation = ({
   additional,
   children,

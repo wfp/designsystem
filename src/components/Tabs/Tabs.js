@@ -3,6 +3,7 @@ import React from 'react';
 import classNames from 'classnames';
 import TabContent from '../TabContent';
 
+/** Tabs allow users to navigate easily between views within the same context */
 class Tabs extends React.Component {
   static propTypes = {
     /**

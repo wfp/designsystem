@@ -9,6 +9,8 @@ import { equals } from '../../tools/array';
 
 let instanceId = 0;
 
+/** Pagination is used for splitting up content or data into several pages, with a control for navigating to the next or previous page. */
+
 export default class Pagination extends Component {
   constructor(props) {
     super(props);

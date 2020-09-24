@@ -1,1 +1,1 @@
-export { tooltipStyle, tooltipStyleDark } from './Tooltip';
+// export { tooltipStyle, tooltipStyleDark } from './Tooltip';
