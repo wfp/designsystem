@@ -95,10 +95,9 @@ const getPreviewProps = (
 };
 
 export const Preview: FC<PreviewProps> = (props) => {
-  console.log(props);
   const docsContext = useContext(DocsContext);
   const sourceContext = useContext(SourceContext);
-  console.log('sourceContext', docsContext, sourceContext);
+
   const previewProps = getPreviewProps(props, docsContext, sourceContext);
   const { children } = props;
   return (
