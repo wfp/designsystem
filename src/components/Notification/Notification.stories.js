@@ -1,16 +1,16 @@
 import React from 'react';
+import {
+  ToastNotification,
+  InlineNotification,
+  NotificationActionButton,
+} from './Notification';
+
 import markdown from './README.mdx';
-
-import { ToastContainer, toast } from 'react-toastify';
-import notificationStyle from './Notification';
-import Icon from '../Icon';
-import { iconCheckmarkGlyph } from '@wfp/icons';
-
-import Button from '../Button';
 
 export default {
   title: 'Components/Notification',
-  component: ToastContainer,
+  component: NotificationActionButton,
+  subcomponents: { ToastNotification, InlineNotification },
   parameters: {
     componentSubtitle: 'Component',
     status: 'released',
@@ -18,28 +18,71 @@ export default {
   },
 };
 
-export const Regular = (args) => {
-  const notify = () => {
-    toast('A regular message');
-  };
+export const Toast = (args) => (
+  <ToastNotification
+    {...args}
+    caption={'00:00:00 AM'}
+    style={{ minWidth: '30rem', marginBottom: '.5rem' }}
+  />
+);
+Toast.args = {
+  kind: 'error',
+  lowContrast: false,
+  role: 'alert',
+  title: 'Notification title',
+  subtitle: 'Subtitle text goes here.',
+  iconDescription: 'describes the close button',
+  statusIconDescription: 'describes the status icon',
+  hideCloseButton: false,
+};
 
-  const notifyAll = () => {
-    toast.success(
-      <span>
-        <Icon icon={iconCheckmarkGlyph} /> Wow so easy!
-      </span>
-    );
-    toast.success('Wow so easy!');
-    toast.warn('Please check again!');
-    toast.error('Something went terribly wrong!');
-  };
-  return (
-    <>
-      <Button onClick={notify}>Regular notification</Button>{' '}
-      <Button kind="secondary" onClick={notifyAll}>
-        All Notifications
-      </Button>
-      <ToastContainer {...notificationStyle} {...args} />
-    </>
-  );
+export const ToastLowContrast = (args) => (
+  <ToastNotification
+    {...args}
+    caption={'00:00:00 AM'}
+    style={{ minWidth: '30rem', marginBottom: '.5rem' }}
+  />
+);
+ToastLowContrast.args = {
+  kind: 'error',
+  lowContrast: true,
+  role: 'alert',
+  title: 'Notification title',
+  subtitle: 'Subtitle text goes here.',
+  iconDescription: 'describes the close button',
+  statusIconDescription: 'describes the status icon',
+  hideCloseButton: false,
+};
+
+export const Inline = (args) => (
+  <InlineNotification
+    {...args}
+    actions={<NotificationActionButton>{'Action'}</NotificationActionButton>}
+  />
+);
+
+Inline.args = {
+  kind: 'info',
+  role: 'alert',
+  title: 'Notification title',
+  subtitle: 'Subtitle text goes here.',
+  iconDescription: 'describes the close button',
+  statusIconDescription: 'describes the status icon',
+};
+
+export const InlineLowContrast = (args) => (
+  <InlineNotification
+    {...args}
+    actions={<NotificationActionButton>{'Action'}</NotificationActionButton>}
+  />
+);
+
+InlineLowContrast.args = {
+  kind: 'info',
+  role: 'alert',
+  lowContrast: true,
+  title: 'Notification title',
+  subtitle: 'Subtitle text goes here.',
+  iconDescription: 'describes the close button',
+  statusIconDescription: 'describes the status icon',
 };

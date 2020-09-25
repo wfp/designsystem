@@ -60,7 +60,7 @@ export {
   ModuleHeader,
   ModuleFooter,
 } from './components/Module';
-export notificationStyle from './components/Notification';
+export notificationStyle from './components/Notification/Notification.legacy';
 export NumberInput from './components/NumberInput';
 export Pagination from './components/Pagination';
 export RadioButton from './components/RadioButton';
