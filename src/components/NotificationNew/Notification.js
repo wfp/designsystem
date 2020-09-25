@@ -62,7 +62,7 @@ export function NotificationButton({
   className,
   iconDescription,
   type,
-  renderIcon: IconTag,
+  renderIcon,
   name,
   notificationType,
   ...other
@@ -74,6 +74,7 @@ export function NotificationButton({
     [`${prefix}--${notificationType}-notification__close-icon`]: notificationType,
   });
 
+  //console.log('rendericon', IconTag);
   return (
     // eslint-disable-next-line react/button-has-type
     <button
@@ -82,8 +83,13 @@ export function NotificationButton({
       aria-label={iconDescription}
       title={iconDescription}
       className={buttonClassName}>
-      {IconTag && (
-        <IconTag aria-label={ariaLabel} className={iconClassName} name={name} />
+      {renderIcon && (
+        <Icon
+          icon={renderIcon}
+          aria-label={ariaLabel}
+          className={iconClassName}
+          name={name}
+        />
       )}
     </button>
   );
@@ -133,7 +139,7 @@ NotificationButton.defaultProps = {
   notificationType: 'toast',
   type: 'button',
   iconDescription: 'close icon',
-  renderIcon: <Icon icon={iconClose} />,
+  renderIcon: iconClose,
 };
 
 export function NotificationTextDetails({
