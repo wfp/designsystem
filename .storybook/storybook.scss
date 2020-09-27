@@ -80,9 +80,9 @@
   line-height: 1.8rem;
 }
 
-$css--body: true;
-$css--reset: true;
-@import '../src/globals/scss/styles.scss';
+$css--body: false;
+$css--reset: false;
+@import '../src/globals/scss/_styles.scss';
 
 .status__released {
 }

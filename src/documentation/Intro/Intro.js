@@ -81,9 +81,9 @@ export default class IntroAnimation extends Component {
 }
 
 storiesOf('Getting started|Getting started', module)
-  .addParameters({
+  /*.addParameters({
     options: { showPanel: false, isToolshown: false, sort: 'a' },
-  })
+  })*/
   .add('Introduction', () => (
     <div>
       <div className="intro">
