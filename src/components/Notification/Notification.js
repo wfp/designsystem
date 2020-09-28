@@ -8,7 +8,7 @@ import {
   iconCheckmarkGlyph,
   iconWarningSolid,
   WarningAltFilled20,
-  InformationFilled20,
+  iconInfoGlyph,
   InformationSquareFilled20,
 } from '@wfp/icons';
 
@@ -214,7 +214,7 @@ const iconTypes = {
   success: iconCheckmarkGlyph,
   warning: iconWarningSolid,
   ['warning-alt']: WarningAltFilled20,
-  info: InformationFilled20,
+  info: iconInfoGlyph,
   ['info-square']: InformationSquareFilled20,
 };
 
@@ -247,6 +247,7 @@ NotificationIcon.propTypes = {
   notificationType: PropTypes.oneOf(['inline', 'toast']).isRequired,
 };
 
+/** sdfghjk */
 export function ToastNotification({
   role,
   notificationType,
@@ -349,6 +350,7 @@ ToastNotification.propTypes = {
   /**
    * Specify what state the notification represents
    */
+
   kind: PropTypes.oneOf([
     'error',
     'info',

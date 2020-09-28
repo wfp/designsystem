@@ -6,6 +6,10 @@
 @import '../../globals/scss/import-once';
 @import '../../globals/scss/css--typography';
 
+@function cssColor($color-variable) {
+  @return var(--cds-inverse-support-02, #fa4d56);
+}
+
 .wfp--toast-notification {
   box-sizing: border-box;
   font-size: 100%;
@@ -41,13 +45,16 @@
     border: none;
     cursor: pointer;
     transition: outline 0.11s, background-color 0.11s;
+
+    .#{$prefix}--toast-notification__close-icon {
+      fill: var(--cds-inverse-01, #fff);
+    }
   }
 
   .#{$prefix}--toast-notification__icon {
     flex-shrink: 0;
     margin-top: 0.875rem;
     margin-right: 0.875rem;
-    fill: currentColor;
   }
 
   .#{$prefix}--toast-notification__details {
@@ -88,9 +95,62 @@
   background: #393939;
   border-left: 3px solid #4589ff;
 }
+.#{$prefix}--toast-notification--low-contrast
+  .#{$prefix}--toast-notification__close-button
+  .#{$prefix}--toast-notification__close-icon {
+  fill: #161616;
+}
 
-@function cssColor($color-variable) {
-  @return var(--cds-inverse-support-02, #42be65);
+.#{$prefix}--toast-notification--info-square
+  .#{$prefix}--inline-notification__icon,
+.#{$prefix}--toast-notification--info-square
+  .#{$prefix}--toast-notification__icon,
+.#{$prefix}--toast-notification--info .#{$prefix}--inline-notification__icon,
+.#{$prefix}--toast-notification--info .#{$prefix}--toast-notification__icon {
+  fill: var(--cds-inverse-support-04, #4589ff);
+}
+
+.#{$prefix}--toast-notification--low-contrast.#{$prefix}--toast-notification--info-square
+  .#{$prefix}--inline-notification__icon,
+.#{$prefix}--toast-notification--low-contrast.#{$prefix}--toast-notification--info-square
+  .#{$prefix}--toast-notification__icon,
+.#{$prefix}--toast-notification--low-contrast.#{$prefix}--toast-notification--info
+  .#{$prefix}--inline-notification__icon,
+.#{$prefix}--toast-notification--low-contrast.#{$prefix}--toast-notification--info
+  .#{$prefix}--toast-notification__icon {
+  fill: var(--cds-support-04, #0043ce);
+}
+
+.#{$prefix}--toast-notification--warning-alt
+  .#{$prefix}--inline-notification__icon,
+.#{$prefix}--toast-notification--warning-alt
+  .#{$prefix}--toast-notification__icon,
+.#{$prefix}--toast-notification--warning .#{$prefix}--inline-notification__icon,
+.#{$prefix}--toast-notification--warning .#{$prefix}--toast-notification__icon {
+  fill: var(--cds-inverse-support-03, #f1c21b);
+}
+
+.#{$prefix}--toast-notification--low-contrast.#{$prefix}--toast-notification--warning-alt
+  .#{$prefix}--inline-notification__icon,
+.#{$prefix}--toast-notification--low-contrast.#{$prefix}--toast-notification--warning-alt
+  .#{$prefix}--toast-notification__icon,
+.#{$prefix}--toast-notification--low-contrast.#{$prefix}--toast-notification--warning
+  .#{$prefix}--inline-notification__icon,
+.#{$prefix}--toast-notification--low-contrast.#{$prefix}--toast-notification--warning
+  .#{$prefix}--toast-notification__icon {
+  fill: var(--cds-support-03, #f1c21b);
+}
+
+.#{$prefix}--toast-notification--success .#{$prefix}--inline-notification__icon,
+.#{$prefix}--toast-notification--success .#{$prefix}--toast-notification__icon {
+  fill: var(--cds-inverse-support-02, #42be65);
+}
+
+.#{$prefix}--toast-notification--low-contrast.#{$prefix}--toast-notification--success
+  .#{$prefix}--inline-notification__icon,
+.#{$prefix}--toast-notification--low-contrast.#{$prefix}--toast-notification--success
+  .#{$prefix}--toast-notification__icon {
+  fill: var(--cds-support-02, #24a148);
 }
 
 .#{$prefix}--toast-notification--error {
@@ -98,6 +158,10 @@
   // border-left: 3px solid var(--cds-inverse-support-01, #fa4d56);
   border-left: 3px solid cssColor($support-01);
   color: $support-01;
+
+  .#{$prefix}--toast-notification__icon {
+    fill: currentColor;
+  }
 }
 .#{$prefix}--toast-notification--low-contrast {
   .#{$prefix}--toast-notification__details {
@@ -108,6 +172,17 @@
 .#{$prefix}--toast-notification--low-contrast.#{$prefix}--toast-notification--error {
   background: #fff1f1;
   border-left: 3px solid var(--cds-support-01, #da1e28);
+}
+
+.#{$prefix}--toast-notification--low-contrast.#{$prefix}--toast-notification--info,
+.#{$prefix}--toast-notification--low-contrast.#{$prefix}--toast-notification--info-square {
+  background: #edf5ff;
+  border-left: 3px solid var(--cds-support-04, #0043ce);
+}
+
+.#{$prefix}--toast-notification--low-contrast.#{$prefix}--toast-notification--success {
+  background: #defbe6;
+  border-left: 3px solid var(--cds-support-02, #24a148);
 }
 
 .#{$prefix}--toast-notification--success {
@@ -162,6 +237,7 @@
       flex-shrink: 0;
       margin-top: 0.875rem;
       margin-right: 1rem;
+      fill: var(--cds-inverse-support-04, #4589ff);
     }
 
     .#{$prefix}--inline-notification__text-wrapper {
@@ -192,6 +268,10 @@
     margin-bottom: 0.5rem;
     margin-left: 2.5rem;
     color: var(--cds-inverse-link, #78a9ff);
+
+    .#{$prefix}--inline-notification__close-icon {
+      fill: var(--cds-inverse-01, #fff);
+    }
   }
 }
 
@@ -220,6 +300,43 @@
 .#{$prefix}--inline-notification--low-contrast
   .#{$prefix}--inline-notification__action-button:active {
   color: var(--cds-interactive-01, #0f62fe);
+}
+
+.#{$prefix}--inline-notification__close-button {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  min-width: 3rem;
+  max-width: 3rem;
+  height: 3rem;
+  padding: 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: outline 0.11s cubic-bezier(0.2, 0, 0.38, 0.9),
+    background-color 0.11s cubic-bezier(0.2, 0, 0.38, 0.9);
+}
+
+.#{$prefix}--inline-notification__close-button
+  .#{$prefix}--inline-notification__close-icon {
+  fill: var(--cds-inverse-01, #fff);
+}
+
+.#{$prefix}--inline-notification--low-contrast
+  .#{$prefix}--inline-notification__close-button
+  .#{$prefix}--inline-notification__close-icon {
+  fill: #161616;
+}
+
+.#{$prefix}--inline-notification__action-button.#{$prefix}--btn--ghost:hover {
+  background-color: transparent;
 }
 
 // @include exports('notification') {
@@ -263,5 +380,9 @@
 
   .#{$prefix}--inline-notification__action-button.#{$prefix}--btn--ghost {
     margin: 0.5rem 0;
+  }
+
+  .#{$prefix}--inline-notification__close-button {
+    position: static;
   }
 }

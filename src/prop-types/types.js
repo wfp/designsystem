@@ -26,3 +26,5 @@ export const buttonKinds = [
   'inverse',
   'navigation',
 ];
+
+export const notificationtypes = ['info', 'success', 'warning', 'error'];

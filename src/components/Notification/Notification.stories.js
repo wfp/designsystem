@@ -4,6 +4,7 @@ import {
   InlineNotification,
   NotificationActionButton,
 } from './Notification';
+import { notificationtypes } from '../../prop-types/types';
 
 import markdown from './README.mdx';
 
@@ -36,6 +37,57 @@ Toast.args = {
   hideCloseButton: false,
 };
 
+export const NotificationTypes = (args) => (
+  <>
+    {notificationtypes.map((e) => (
+      <div
+        style={{
+          display: 'inline-block',
+          background: e === 'inverse' ? '#ccc' : '',
+          padding: '0.3rem',
+        }}>
+        <ToastNotification
+          {...args}
+          kind={e}
+          caption={'00:00:00 AM'}
+          style={{ minWidth: '30rem', marginBottom: '.5rem' }}
+        />
+      </div>
+    ))}
+  </>
+);
+NotificationTypes.args = {
+  kind: 'error',
+  lowContrast: false,
+  role: 'alert',
+  title: 'Notification title',
+  subtitle: 'Subtitle text goes here.',
+  iconDescription: 'describes the close button',
+  statusIconDescription: 'describes the status icon',
+  hideCloseButton: false,
+};
+
+const hello = `
+By changing the \`kind\` prop you can use different styles of the notification.
+
+| kind   |  Description  |
+|----------|-------------|
+| \`info\` | notification alert to give information |
+| \`success\` | notification alert to give success message  |
+| \`warning\` | notification alert to give warning message |
+| \`error\` | notification alert to give error message |
+`;
+
+NotificationTypes.story = {
+  name: 'NotificationTypes',
+  parameters: {
+    markdown: 'hello',
+    docs: {
+      storyDescription: hello,
+    },
+  },
+};
+
 export const ToastLowContrast = (args) => (
   <ToastNotification
     {...args}
@@ -54,6 +106,14 @@ ToastLowContrast.args = {
   hideCloseButton: false,
 };
 
+ToastLowContrast.story = {
+  parameters: {
+    docs: {
+      storyDescription: `Use \`lowContrast\` property to show notification in a low contrast styling`,
+    },
+  },
+};
+
 export const Inline = (args) => (
   <InlineNotification
     {...args}
@@ -68,6 +128,14 @@ Inline.args = {
   subtitle: 'Subtitle text goes here.',
   iconDescription: 'describes the close button',
   statusIconDescription: 'describes the status icon',
+};
+
+Inline.story = {
+  parameters: {
+    docs: {
+      storyDescription: `Set \`notificationType\` property to \`inline\` to style notifcation with an inline flow`,
+    },
+  },
 };
 
 export const InlineLowContrast = (args) => (
