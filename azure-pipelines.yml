@@ -42,20 +42,26 @@ steps:
       npm run build:storybook
     displayName: 'npm run build:storybook'
 
-  - task: ArchiveFiles@2
-    condition: or(eq(variables['Build.SourceBranch'], 'refs/heads/master'), startsWith(variables['Build.SourceBranch'], 'refs/heads/next'))
+  - task: PublishPipelineArtifact@1
     inputs:
-      rootFolderOrFile: "$(System.DefaultWorkingDirectory)/docs"
-      includeRootFolder: true
-      archiveType: "zip"
-      archiveFile: "$(Build.ArtifactStagingDirectory)/build-$(Build.BuildId).zip"
-      replaceExistingArchive: true
+      targetPath: "./docs"
+      artifact: "wfp-ui-kit-build"
+      publishLocation: "pipeline"
 
-  - task: PublishBuildArtifacts@1
-    inputs:
-      PathtoPublish: "$(Build.ArtifactStagingDirectory)"
-      ArtifactName: "wfp-ui-kit-build"
-      publishLocation: "Container"
+#  - task: ArchiveFiles@2
+#    condition: or(eq(variables['Build.SourceBranch'], 'refs/heads/master'), startsWith(variables['Build.SourceBranch'], 'refs/heads/next'))
+#    inputs:
+#     rootFolderOrFile: "$(System.DefaultWorkingDirectory)/docs"
+#      includeRootFolder: true
+#      archiveType: "zip"
+#      archiveFile: "$(Build.ArtifactStagingDirectory)/build-$(Build.BuildId).zip"
+#      replaceExistingArchive: true
+
+#  - task: PublishBuildArtifacts@1
+#    inputs:
+#      PathtoPublish: "$(Build.ArtifactStagingDirectory)"
+#      ArtifactName: "wfp-ui-kit-build"
+#      publishLocation: "Container"
 
 #  - task: Bash@3
 #    inputs:
