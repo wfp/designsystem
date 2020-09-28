@@ -14,8 +14,17 @@
 .sbdocs {
   list-style: disc;
 }
+
+.sbdocs-preview {
+  overflow: visible !important;
+  > div {
+    > div {
+      overflow: visible !important;
+    }
+  }
+}
 .sbdocs {
-  font-weight: 400;
+  //font-weight: 400;
   //@extend .wfp--story;
 
   .sbdocs-p {
@@ -38,25 +47,19 @@
     @extend .wfp--story__subtitle;
     margin-top: 0;
   }
-  .sbdocs-h2 {
-    border: none;
-    font-weight: 700;
-    margin-bottom: $spacing-md;
-  }
-  .sbdocs-h3 {
-    font-size: 1.4rem;
-    font-weight: 700;
-  }
-  .sbdocs-h4 {
-    font-size: 1rem;
-    font-weight: 700;
-  }
+
   .intro-description {
     .sbdocs-p {
       font-size: 1.2rem;
-      font-style: italic;
+      font-size: 1.75rem;
+      font-weight: 200;
+      //font-style: italic;
     }
   }
+}
+.docs-status {
+  margin-top: -1.5rem;
+  margin-bottom: 2rem;
 }
 
 .table-of-content.wfp--list {

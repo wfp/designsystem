@@ -40,8 +40,6 @@ export const DocsPage: FC = (props) => {
 
   return (
     <>
-      {/*<Subtitle />
-      {/*<Title />*/}
       <IntroDescription />
 
       <div className="sticky-preview-wrapper">

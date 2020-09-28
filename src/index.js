@@ -92,5 +92,5 @@ export Toggle from './components/Toggle';
 export User from './components/User';
 export Unit from './components/Unit';
 export Value from './components/Value';
-//export Wrapper, { pageWidths } from './components/Wrapper';
+export Wrapper, { pageWidths } from './components/Wrapper';
 //export colors from './globals/data/colors';

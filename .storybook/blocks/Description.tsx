@@ -10,7 +10,7 @@ import {
 import { Component, CURRENT_SELECTION } from './types';
 import { str } from '@storybook/addon-docs/dist/lib/docgen';
 
-import markdownd from './markdown.stories.mdx';
+import Story from '../../src/components/Story';
 
 export enum DescriptionType {
   INFO = 'info',
@@ -76,10 +76,10 @@ const DescriptionContainer: FunctionComponent<DescriptionProps> = (props) => {
 
   const Docs = context.parameters.mdx;
   return markdown || context.parameters.mdx ? (
-    <>
+    <Story>
       <Docs />
       {/*<Description markdown={markdown} />*/}
-    </>
+    </Story>
   ) : null;
 };
 

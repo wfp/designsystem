@@ -20,6 +20,7 @@ const defaultComponents = {
   ...HeadersMdx,
 };
 import { Tag, List, ListItem } from '../../src';
+import Story from '../../src/components/Story/Story';
 
 export enum DescriptionType {
   INFO = 'info',
@@ -55,11 +56,16 @@ export const getDescriptionProps = (
   if (children || markdown) {
     return { markdown: children || markdown };
   }
-  const { component, notes, info, docs } = parameters;
+  const { component, notes, info, docs, introText } = parameters;
   const { extractComponentDescription = noDescription } = docs || {};
   const target = of === CURRENT_SELECTION ? component : of;
+  const componentDescription = introText
+    ? introText
+    : extractComponentDescription(target, parameters);
+
+  return { markdown: componentDescription ? componentDescription : '' };
   switch (type) {
-    case DescriptionType.INFO:
+    /* case DescriptionType.INFO:
       return { markdown: getInfo(info) };
     case DescriptionType.NOTES:
       return { markdown: getNotes(notes) };
@@ -73,7 +79,7 @@ ${extractComponentDescription(target) || ''}
 `.trim(),
       };
     case DescriptionType.DOCGEN:
-    case DescriptionType.AUTO:
+    case DescriptionType.AUTO:*/
     default:
       return { markdown: extractComponentDescription(target, parameters) };
   }
@@ -89,34 +95,41 @@ const DescriptionContainer: FunctionComponent<DescriptionProps> = (props) => {
 
   const Docs = context.parameters.mdx;
 
+  console.log('docs', context.parameters);
+
   const lookup = {
     experimental: { name: 'Experimental component', type: 'warning' },
-    released: { name: 'Ready for production', type: 'wfps' },
+    released: { name: 'Ready for production', type: 'wfp' },
     legacy: { name: 'Legacy: do not use in new projects', type: 'warning' },
   };
 
   const componentsTableOfContent = {
     wrapper: ({ children, ...props }) => {
-      console.log(children.map((child) => child.props.mdxType));
-
-      const output = children.map((child) => {
-        if (['h1', 'h2', 'h3'].includes(child.props.mdxType)) {
-          return (
-            <ListItem>
-              <a href={`#${child.props.children.toLowerCase()}`} target="_self">
-                {child.props.children}
-              </a>
-            </ListItem>
-          );
-        }
-        return null;
-      });
+      console.log('children', children);
+      const output = Array.isArray(children)
+        ? children.map((child) => {
+            if (['h1', 'h2', 'h3'].includes(child.props.mdxType)) {
+              return (
+                <ListItem>
+                  <a
+                    href={`#${child.props.children
+                      .toLowerCase()
+                      .replace(/ /g, '-')}`}
+                    target="_self">
+                    {child.props.children}
+                  </a>
+                </ListItem>
+              );
+            }
+            return null;
+          })
+        : '';
 
       const reversedChildren = React.Children.toArray(children).reverse();
       return (
         <List className="table-of-content">
           <ListItem>
-            <a href={`#anchor--${context.id}`} target="_self">
+            <a href={`#anchor--${context.parameters.id}`} target="_self">
               Demo
             </a>
           </ListItem>
@@ -126,16 +139,16 @@ const DescriptionContainer: FunctionComponent<DescriptionProps> = (props) => {
     },
   };
 
-  console.log('xonnnn', context.id);
-
-  return markdown || context.parameters.mdx ? (
-    <>
+  return (
+    <Story>
       {context.parameters.status && (
-        <Tag
-          className={`status__${context.parameters.status}`}
-          kind={lookup[context.parameters.status].kind}>
-          {lookup[context.parameters.status].name}
-        </Tag>
+        <div className="docs-status">
+          <Tag
+            className={`status__${context.parameters.status}`}
+            type={lookup[context.parameters.status].type}>
+            {lookup[context.parameters.status].name}
+          </Tag>
+        </div>
       )}
 
       <div className="intro-description">
@@ -144,8 +157,8 @@ const DescriptionContainer: FunctionComponent<DescriptionProps> = (props) => {
           <Docs />
         </MDXProvider>
       </div>
-    </>
-  ) : null;
+    </Story>
+  );
 };
 
 // since we are in the docs blocks, assume default description if for primary component story

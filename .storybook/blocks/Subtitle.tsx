@@ -1,6 +1,7 @@
 import React, { useContext, FunctionComponent } from 'react';
 import { Subtitle as PureSubtitle } from '@storybook/components';
 import { DocsContext } from '@storybook/addon-docs/dist/blocks/DocsContext';
+import Text from '../../src/components/Text/Text';
 
 interface SubtitleProps {
   children?: JSX.Element | string;
@@ -8,12 +9,11 @@ interface SubtitleProps {
 
 export const Subtitle: FunctionComponent<SubtitleProps> = ({ children }) => {
   const context = useContext(DocsContext);
+  console.log('waf', context);
   const { parameters } = context;
   let text: JSX.Element | string = children;
   if (!text) {
     text = parameters?.componentSubtitle;
   }
-  return text ? (
-    <PureSubtitle className="sbdocs-subtitle">{text}</PureSubtitle>
-  ) : null;
+  return text ? <Text kind="subtitle">{text}</Text> : null;
 };
