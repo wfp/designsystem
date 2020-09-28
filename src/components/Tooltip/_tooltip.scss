@@ -16,12 +16,12 @@
   border-radius: 7px;
   @include layer('pop-out');
   z-index: 1000;
-
+  @include typescale('zeta');
   &[data-popper-placement*='bottom'] {
     .#{$prefix}--tooltip__arrow {
       top: 0;
       left: 0;
-      margin-top: -6px;
+      margin-top: -4px;
       /*&::before {
         border-width: 0 1.5em 1em 1.5em;
         border-color: transparent transparent #232323 transparent;
@@ -32,7 +32,7 @@
     .#{$prefix}--tooltip__arrow {
       bottom: 0;
       left: 0;
-      margin-bottom: -6px;
+      margin-bottom: -4px;
       /*&::before {
         border-width: 1em 1.5em 0 1.5em;
         border-color: #232323 transparent transparent transparent;
@@ -42,7 +42,7 @@
   &[data-popper-placement*='right'] {
     .#{$prefix}--tooltip__arrow {
       left: 0;
-      margin-left: -6px;
+      margin-left: -4px;
       /*&::before {
         border-width: 1.5em 1em 1.5em 0;
         border-color: transparent #232323 transparent transparent;
@@ -52,7 +52,7 @@
   &[data-popper-placement*='left'] {
     .#{$prefix}--tooltip__arrow {
       right: 0;
-      margin-right: -6em;
+      margin-right: -4px;
       /*&::before {
         border-width: 1.5em 0 1.5em 1em;
         border-color: transparent transparent transparent#232323;
@@ -63,7 +63,12 @@
 
 .#{$prefix}--tooltip--dark {
   color: $inverse-01;
-  background: $ui-05;
+  background: $ui-06;
+  .#{$prefix}--tooltip__arrow {
+    &:before {
+      background: $ui-06;
+    }
+  }
 }
 
 .#{$prefix}--tooltip--visible {
@@ -71,8 +76,8 @@
 }
 
 .#{$prefix}--tooltip__arrow {
-  width: 15px;
-  height: 15px;
+  width: 10px;
+  height: 10px;
   position: absolute;
   z-index: -1;
   &:before {
@@ -81,8 +86,8 @@
     background: #fff;
     top: 0px;
     left: 0px;
-    width: 15px;
-    height: 15px;
+    width: 10px;
+    height: 10px;
     position: absolute;
     z-index: -1;
   }

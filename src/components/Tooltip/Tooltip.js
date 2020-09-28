@@ -20,41 +20,6 @@ export const tooltipStyleDark = {
   arrow: true,
 };
 
-// Hook
-function useEventListener(eventName, handler, element = window) {
-  // Create a ref that stores handler
-  const savedHandler = useRef();
-
-  // Update ref.current value if handler changes.
-  // This allows our effect below to always get latest handler ...
-  // ... without us needing to pass it in effect deps array ...
-  // ... and potentially cause effect to re-run every render.
-  useEffect(() => {
-    savedHandler.current = handler;
-  }, [handler]);
-
-  useEffect(
-    () => {
-      // Make sure element supports addEventListener
-      // On
-      const isSupported = element && element.addEventListener;
-      if (!isSupported) return;
-
-      // Create event listener that calls handler function stored in ref
-      const eventListener = (event) => savedHandler.current(event);
-
-      // Add event listener
-      element.addEventListener(eventName, eventListener);
-
-      // Remove event listener on cleanup
-      return () => {
-        element.removeEventListener(eventName, eventListener);
-      };
-    },
-    [eventName, element] // Re-run if eventName or element changes
-  );
-}
-
 /** Tooltips display additional information upon click, hover, or focus. The information should be contextual, useful, and nonessential. */
 const Tooltip = ({
   dark,
@@ -62,72 +27,67 @@ const Tooltip = ({
   content,
   trigger = 'hover',
   modifiers,
-  placement = 'right',
+  placement = 'top',
   utlis,
 }) => {
-  const [referenceElement, setReferenceElement] = useState(null);
-  const [popperElement, setPopperElement] = useState(null);
+  const referenceElement = useRef(null);
+  const popperElement = useRef(null);
   const [arrowElement, setArrowElement] = useState(null);
   const [isShown, setIsShown] = useState(null);
 
-  useEffect(() => {
-    // Run! Like go get some data from an API.
-    //referenceElement.addEventListener('click', handleInsideClick);
-    //document.body.removeEventListener('touchend', handleOutsideClick!);
-  }, []);
-
-  /*
-
-  document.body.addEventListener('click', this.handleOutsideClick!);
-
-  document.body.removeEventListener('touchend', this.handleOutsideClick!);
-  document.body.removeEventListener('click', this.handleOutsideClick!);
-  */
-
   const handleInsideClick = () => {
-    setIsShown(false);
-    //document.body.addEventListener('click', handleOutsideClick!);
+    setIsShown(true);
+    document.addEventListener('mousedown', handleClickOutside);
   };
 
-  const handleOutsideClick = () => {
-    setIsShown(false);
+  const handleClickOutside = (event) => {
+    if (popperElement && !popperElement.current.contains(event.target)) {
+      setIsShown(false);
+      document.removeEventListener('mousedown', handleClickOutside, false);
+    }
   };
 
-  const { styles, attributes } = usePopper(referenceElement, popperElement, {
-    placement: placement,
-    modifiers: [
-      {
-        name: 'offset',
-        options: {
-          offset: [0, 10],
+  const { styles, attributes } = usePopper(
+    referenceElement.current,
+    popperElement.current,
+    {
+      placement: placement,
+      modifiers: [
+        {
+          name: 'offset',
+          options: {
+            offset: [0, 10],
+          },
+          ...modifiers,
         },
-        ...modifiers,
-      },
-      { name: 'arrow', options: { element: arrowElement } },
-    ],
-    ...utlis,
-  });
+        { name: 'arrow', options: { element: arrowElement, padding: 8 } },
+      ],
+      ...utlis,
+    }
+  );
 
   const classNames = classnames({
     [`${prefix}--tooltip`]: true,
     [`${prefix}--tooltip--visible`]: isShown,
     [`${prefix}--tooltip--dark`]: dark,
   });
-  /*onMouseEnter={() => setIsShown(true)}
-        onMouseLeave={() => setIsShown(false)}*/
+
+  const actions =
+    trigger === 'hover'
+      ? {
+          onMouseEnter: () => setIsShown(true),
+          onMouseLeave: () => setIsShown(false),
+        }
+      : { onClick: () => handleInsideClick(true) };
 
   return (
     <>
-      <span
-        type="button"
-        ref={setReferenceElement}
-        onMouseEnter={() => setIsShown(true)}
-        onMouseLeave={() => setIsShown(false)}>
+      <span type="button" ref={referenceElement} {...actions}>
         {children}
       </span>
 
       <div
-        ref={setPopperElement}
+        ref={popperElement}
         style={styles.popper}
         {...attributes.popper}
         className={classNames}>
@@ -160,11 +120,24 @@ Tooltip.propTypes = {
   /**
    * Provide the placement of the tooltip
    */
-  placement: PropTypes.string,
+  placement: PropTypes.oneOf([
+    'top',
+    'top-start',
+    'top-end',
+    'right',
+    'right-start',
+    'right-end',
+    'bottom',
+    'bottom-start',
+    'bottom-end',
+    'left',
+    'left-start',
+    'left-end',
+  ]),
   /**
    * Provide the placement of the tooltip
    */
-  trigger: PropTypes.string,
+  trigger: PropTypes.oneOf(['click', 'hover']),
 };
 
 export default Tooltip;
