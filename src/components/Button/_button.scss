@@ -208,6 +208,26 @@
     }
   }
 
+  .#{$prefix}--btn--inverse--primary {
+    @include button-theme($ui-01, $ui-01, $interactive-01, $ui-01, $text-01);
+
+    &:hover {
+      color: $interactive-02;
+      //border: $button-border-width solid $ui-01;
+    }
+
+    &:focus {
+      background: $ui-01;
+      color: $interactive-02;
+    }
+
+    &:hover:disabled,
+    &:focus:disabled {
+      color: $support-01;
+      border: $button-border-width solid $support-01;
+    }
+  }
+
   .#{$prefix}--btn--inverse {
     @include button-theme(
       transparent,
