@@ -5,7 +5,6 @@ tests
 .storybook
 .vscode
 config
-assets
 examples
 scripts
 *.stories.js
