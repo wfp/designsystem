@@ -25,12 +25,52 @@ export default {
     status: 'released',
     mdx: markdown,
   },
-  /*argTypes: {
-    children: { control: 'text' },
-  },*/
 };
 
 export const Default = (args) => {
+  return (
+    <Form {...args}>
+      <TextInput
+        id="testinput"
+        labelText="Text Input label"
+        placeholder="Placeholder text"
+      />
+      <br />
+
+      <TextArea
+        labelText="Text Area label"
+        placeholder="Placeholder text"
+        id="textarea5"
+        cols={50}
+        rows={3}
+      />
+
+      <Select id="select-12" defaultValue="placeholder-item">
+        <SelectItem
+          disabled
+          hidden
+          value="placeholder-item"
+          text="Choose an option"
+        />
+        <SelectItem value="option-1" text="Option 1" />
+        <SelectItem value="option-2" text="Option 2" />
+        <SelectItem value="option-3" text="Option 3" />
+      </Select>
+
+      <Button type="submit" className="some-class">
+        Submit
+      </Button>
+    </Form>
+  );
+};
+
+Default.args = {
+  children: 'Form',
+  className: 'some-class',
+  longForm: true,
+};
+
+export const DetailedForm = (args) => {
   return (
     <Form {...args}>
       <FormGroup legendText="Checkbox heading">
@@ -146,6 +186,9 @@ export const Default = (args) => {
         invalidText="Your password must be at least 6 characters as well as contain at least one uppercase, one lowercase, and one number."
       />
 
+      <br />
+      <br />
+
       <TextArea
         labelText="Text Area label"
         placeholder="Placeholder text"
@@ -161,7 +204,7 @@ export const Default = (args) => {
   );
 };
 
-Default.args = {
+DetailedForm.args = {
   children: 'Form',
   className: 'some-class',
   longForm: true,
@@ -244,7 +287,7 @@ export const Contact = (args) => {
           culpa qui officia deserunt mollit anim id est laborum."
           id="test5"
           cols={50}
-          rows={4}
+          rows={5}
         />
         <br />
         <br />
