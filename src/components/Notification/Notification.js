@@ -17,6 +17,7 @@ import Icon from '../Icon';
 
 const { prefix } = settings;
 
+/** Notifications are messages that communicate information to the user. The two main types of notifications are toast notifications and inline notifications. */
 export function NotificationActionButton({
   children,
   className: customClassName,

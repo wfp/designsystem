@@ -15,7 +15,7 @@ export default {
   parameters: {
     componentSubtitle: 'Component',
     status: 'released',
-    // mdx: markdown,
+    mdx: markdown,
   },
 };
 
@@ -68,6 +68,13 @@ NotificationTypes.args = {
 };
 
 const hello = `
+By specifying the \`notificationTypes\` prop with any of the types below, you can use different styles of the notification.
+
+| type   |  purpose  |
+|----------|-------------|
+| \`inline\` | Inline notifications show up in task flows, to notify users of the status of an action. They usually appear at the top of the primary content area. |
+| \`toast\` | Toasts are non-modal, time-based window elements used to display short messages; they usually appear at the top of the screen and disappear after a few seconds.  |
+
 By changing the \`kind\` prop you can use different styles of the notification.
 
 | kind   |  Description  |
