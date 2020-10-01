@@ -3,6 +3,7 @@ import Checkbox from '../Checkbox';
 import Form from './Form';
 import FormGroup from '../FormGroup';
 import FileUploader from '../FileUploader';
+import Dropzone, { useDropzone } from 'react-dropzone';
 import NumberInput from '../NumberInput';
 import RadioButton from '../RadioButton';
 import InputGroup from '../InputGroup';
@@ -17,7 +18,7 @@ import Toggle from '../Toggle';
 import markdown from './README.mdx';
 
 export default {
-  title: 'Forms/Form',
+  title: 'Components/Forms/Form',
   component: Form,
   parameters: {
     componentSubtitle: 'Component',
@@ -54,12 +55,29 @@ export const Default = (args) => {
         <Toggle disabled id="toggle-2" />
       </FormGroup>
 
-      <FormGroup>
+      <FormGroup legendText="File Upload Types">
+        <p>Legacy FileUploader</p>
         <FileUploader
           id="file-1"
           labelDescription="Choose Files..."
           buttonLabel="Add files"
+          labelText="Legacy"
         />
+
+        <p>Drag and Drop File Uploader</p>
+
+        <Dropzone onDrop={(acceptedFiles) => console.log(acceptedFiles)}>
+          {({ getRootProps, getInputProps }) => (
+            <section className="wfp--dropzone">
+              <div {...getRootProps({ className: 'wfp--dropzone__input' })}>
+                <input {...getInputProps()} />
+                <div>
+                  Drag 'n' drop some files here, or click to select files
+                </div>
+              </div>
+            </section>
+          )}
+        </Dropzone>
       </FormGroup>
 
       <FormGroup legendText="Radio Button heading">
@@ -144,6 +162,101 @@ export const Default = (args) => {
 };
 
 Default.args = {
+  children: 'Form',
   className: 'some-class',
   longForm: true,
+};
+
+export const Login = (args) => {
+  return (
+    <Form {...args}>
+      <FormGroup legendText="Login Form Example">
+        <TextInput
+          type="email"
+          id="email1"
+          labelText="Email"
+          placeholder="c*****@wfp.org"
+        />
+        <br />
+        <TextInput
+          type="password"
+          required
+          pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"
+          id="password2"
+          labelText="Password"
+        />
+        <br />
+        <Button type="submit" className="some-class">
+          Submit
+        </Button>
+      </FormGroup>
+    </Form>
+  );
+};
+
+Login.args = {
+  longForm: false,
+};
+
+export const Contact = (args) => {
+  return (
+    <Form {...args}>
+      <FormGroup legendText="Contact Form Example">
+        <div
+          style={{
+            width: '100%',
+            display: 'flex',
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+          }}>
+          <TextInput
+            type="text"
+            id="firstname"
+            labelText="Firstname"
+            placeholder="Noami"
+            style={{ width: '95%' }}
+          />
+
+          <TextInput
+            type="text"
+            id="lastname"
+            labelText="lastname"
+            placeholder="ADAMS"
+          />
+        </div>
+        <br />
+        <TextInput
+          type="email"
+          id="email4"
+          labelText="Email"
+          placeholder="c******@wfp.org"
+        />
+        <br />
+
+        <TextArea
+          labelText="Message"
+          placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+          culpa qui officia deserunt mollit anim id est laborum."
+          id="test5"
+          cols={50}
+          rows={4}
+        />
+        <br />
+        <br />
+        <>
+          <Button type="button" kind="secondary">
+            cancel
+          </Button>
+          <Button type="submit" className="some-class">
+            Send
+          </Button>
+        </>
+      </FormGroup>
+    </Form>
+  );
 };

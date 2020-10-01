@@ -4,7 +4,7 @@ import { action } from '@storybook/addon-actions';
 import NumberInput from '.';
 
 export default {
-  title: 'Forms/NumberInput',
+  title: 'Components/Forms/NumberInput',
   component: NumberInput,
   parameters: {
     componentSubtitle: 'Component',

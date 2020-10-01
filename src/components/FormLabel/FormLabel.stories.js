@@ -4,7 +4,7 @@ import { action } from '@storybook/addon-actions';
 import FormLabel from '.';
 
 export default {
-  title: 'Forms/FormLabel',
+  title: 'Components/Forms/FormLabel',
   component: FormLabel,
   parameters: {
     componentSubtitle: 'Component',
