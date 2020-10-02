@@ -30,10 +30,10 @@ import  '~@wfp/ui/assets/css/styles.css';
       <Blockquote title="Import scss via react" kind="code">
         <PrismCode component="pre" className="language-css">
           {`// Import all stylesheets
-import  '~@wfp/ui/source/globals/scss/styles';
+import  '~@wfp/ui/src/globals/scss/styles';
 
 // Only import the Button stylesheet
-import '~@wfp/ui/source/components/Button/button';
+import '~@wfp/ui/src/components/Button/button';
 `}
         </PrismCode>
       </Blockquote>
@@ -56,13 +56,13 @@ $color__main: #0076FF;
 $css--reset==false
 
 // Import all stylesheets
-@import "~@wfp/ui/source/globals/scss/styles";
+@import "~@wfp/ui/src/globals/scss/styles";
 
 // Only import the Button stylesheet
-@import "~@wfp/ui/source/components/Button/button";
+@import "~@wfp/ui/src/components/Button/button";
 
 // Only use variables
-@import "~@wfp/ui/source/globals/scss/vars";`}
+@import "~@wfp/ui/src/globals/scss/vars";`}
         </PrismCode>
       </Blockquote>
       <h3>CDN Usage</h3>

@@ -12,7 +12,7 @@ export class DateRangePickerInput extends PureComponent {
     endDate: this.props.endDate ? this.props.endDate : null,
   };
 
-  handleFocusChange = focusedInput => {
+  handleFocusChange = (focusedInput) => {
     if (!focusedInput && typeof this.props.onBlur === 'function') {
       this.props.onBlur();
     }

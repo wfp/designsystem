@@ -35,7 +35,7 @@ export const ButtonKind = (args) => (
       <div
         style={{
           display: 'inline-block',
-          background: e === 'inverse' ? '#ccc' : '',
+          background: e === 'inverse' || e === 'inverse--primary' ? '#ccc' : '',
           padding: '0.3rem',
         }}>
         <Button {...args} kind={e}>
@@ -63,6 +63,7 @@ By changing the \`kind\` prop you can use different styles of the button.
 | \`danger\` | a negative action (such as Delete) on the page |
 | \`danger--primary\` | a negative principle call to action (such as Delete) on the page |
 | \`ghost\` | in places where a regular button would draw too much attention and look similar to links |
+| \`inverse--primary\` | should be used on dark backgrounds |
 | \`inverse\` | should be used on dark backgrounds |
 | \`navigation\`| should be only used in the main navigation |
 `;

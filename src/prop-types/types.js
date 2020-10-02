@@ -8,6 +8,7 @@ export const ButtonTypes = {
     'accent',
     'danger',
     'ghost',
+    'inverse--primary',
     'inverse',
     'danger--primary',
     'tertiary',
@@ -23,6 +24,7 @@ export const buttonKinds = [
   'danger--primary',
   'danger',
   'ghost',
+  'inverse--primary',
   'inverse',
   'navigation',
 ];

@@ -4,29 +4,25 @@ import { iconInfoSolid } from '@wfp/icons';
 import Icon from '../Icon';
 import classNames from 'classnames';
 import settings from '../../globals/js/settings';
+import Tooltip from '../Tooltip/Tooltip';
 
 const { prefix } = settings;
 
 /** FormHint allows you to add a longer explanation to an input element. */
 
-const FormHint = ({
-  className,
-  children,
-  description,
-  icon,
-  TooltipComponent,
-  ...other
-}) => {
+const FormHint = ({ className, children, description, icon, ...other }) => {
   const formHintClasses = classNames(`${prefix}--form-hint`, className);
   return (
-    <div className={formHintClasses}>
-      <Icon
-        icon={iconInfoSolid}
-        width="15"
-        height="15"
-        description={children}
-      />
-    </div>
+    <Tooltip content={children}>
+      <div className={formHintClasses}>
+        <Icon
+          icon={iconInfoSolid}
+          width="15"
+          height="15"
+          description={children}
+        />
+      </div>
+    </Tooltip>
   );
 };
 
@@ -45,10 +41,6 @@ FormHint.propTypes = {
    * Specify a custom icon for the hint
    */
   icon: PropTypes.object,
-  /**
-   * Specify a component for the tooltip, usually `@tippy.js/react`
-   */
-  TooltipComponent: PropTypes.func.isRequired,
 };
 
 FormHint.defaultProps = {

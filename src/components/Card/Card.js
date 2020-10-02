@@ -18,9 +18,12 @@ const Card = ({
   url,
   ...other
 }) => {
-  const style = {
-    backgroundImage: `url(${image})`,
-  };
+  const style =
+    kind !== 'related'
+      ? {
+          backgroundImage: `url(${image})`,
+        }
+      : {};
 
   const wrapperClasses = classNames('wfp--photo-card', {
     [`wfp--photo-card--${kind}`]: kind,
@@ -120,6 +123,7 @@ Card.propTypes = {
   kind: PropTypes.oneOf([
     'landscape',
     'landscape-light',
+    'emergencies',
     'split',
     'hero',
     'splash',

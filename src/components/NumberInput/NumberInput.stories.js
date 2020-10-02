@@ -4,7 +4,7 @@ import { action } from '@storybook/addon-actions';
 import NumberInput from '.';
 
 export default {
-  title: 'Components/NumberInput',
+  title: 'Forms/NumberInput',
   component: NumberInput,
   parameters: {
     componentSubtitle: 'Component',
@@ -15,19 +15,53 @@ export default {
 
 export const Regular = (args) => <NumberInput {...args} />;
 
-const description = `
-You can customize the content by using \`BannerNavigation\`.
-`;
-
 Regular.args = {
   name: 'inputname',
   helperText: 'Optional helperText',
   labelText: 'The labelText',
 };
 
-export const withError = (args) => <NumberInput {...args} />;
+export const disabled = (args) => <NumberInput {...args} />;
 
-withError.story = {
+disabled.story = {
+  parameters: {
+    docs: {
+      storyDescription: `\`disabled\` property specify the input to be disabled or not. Set \`disabled\` to true to make input non-interative `,
+    },
+  },
+};
+
+disabled.args = {
+  name: 'inputname',
+  helperText: 'Optional helperText',
+  labelText: 'The labelText',
+  disabled: true,
+};
+
+export const hideLabel = (args) => <NumberInput {...args} />;
+
+hideLabel.story = {
+  parameters: {
+    docs: {
+      storyDescription: `\`hideLabel\` property specify hides the label text specified to describe the input`,
+    },
+  },
+};
+
+hideLabel.args = {
+  name: 'inputname',
+  helperText: 'Optional helperText',
+  labelText: 'The labelText',
+  hideLabel: true,
+};
+
+export const invalid = (args) => <NumberInput {...args} />;
+
+const description = `
+\`invalid\` property is applied to the \`NumberInput\` when the value expected is invalid.
+`;
+
+invalid.story = {
   parameters: {
     docs: {
       storyDescription: description,
@@ -35,7 +69,7 @@ withError.story = {
   },
 };
 
-withError.args = {
+invalid.args = {
   name: 'inputname',
   helperText: 'Optional helperText',
   labelText: 'The labelText',

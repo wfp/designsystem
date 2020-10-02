@@ -19,8 +19,8 @@ const defaultComponents = {
   a: AnchorMdx,
   ...HeadersMdx,
 };
-
-import Tag from '../../src/components/Tag';
+import { Tag, List, ListItem } from '../../src';
+import Story from '../../src/components/Story/Story';
 
 export enum DescriptionType {
   INFO = 'info',
@@ -56,11 +56,16 @@ export const getDescriptionProps = (
   if (children || markdown) {
     return { markdown: children || markdown };
   }
-  const { component, notes, info, docs } = parameters;
+  const { component, notes, info, docs, introText } = parameters;
   const { extractComponentDescription = noDescription } = docs || {};
   const target = of === CURRENT_SELECTION ? component : of;
+  const componentDescription = introText
+    ? introText
+    : extractComponentDescription(target, parameters);
+
+  return { markdown: componentDescription ? componentDescription : '' };
   switch (type) {
-    case DescriptionType.INFO:
+    /* case DescriptionType.INFO:
       return { markdown: getInfo(info) };
     case DescriptionType.NOTES:
       return { markdown: getNotes(notes) };
@@ -74,24 +79,14 @@ ${extractComponentDescription(target) || ''}
 `.trim(),
       };
     case DescriptionType.DOCGEN:
-    case DescriptionType.AUTO:
+    case DescriptionType.AUTO:*/
     default:
       return { markdown: extractComponentDescription(target, parameters) };
   }
 };
 
-const em = (props) => {
-  return (
-    <span {...props} kind="bullets">
-      ddd
-      {props.children}
-    </span>
-  );
-};
-
 const allComponents = {
   ...defaultComponents,
-  em,
 };
 
 const DescriptionContainer: FunctionComponent<DescriptionProps> = (props) => {
@@ -99,17 +94,71 @@ const DescriptionContainer: FunctionComponent<DescriptionProps> = (props) => {
   const { markdown } = getDescriptionProps(props, context);
 
   const Docs = context.parameters.mdx;
-  return markdown || context.parameters.mdx ? (
-    <>
+
+  console.log('docs', context.parameters);
+
+  const lookup = {
+    experimental: { name: 'Experimental component', type: 'warning' },
+    released: { name: 'Ready for production', type: 'wfp' },
+    legacy: { name: 'Legacy: do not use in new projects', type: 'warning' },
+  };
+
+  const componentsTableOfContent = {
+    wrapper: ({ children, ...props }) => {
+      console.log('children', children);
+      const output = Array.isArray(children)
+        ? children.map((child) => {
+            if (['h1', 'h2', 'h3'].includes(child.props.mdxType)) {
+              return (
+                <ListItem>
+                  <a
+                    href={`#${child.props.children
+                      .toLowerCase()
+                      .replace(/ /g, '-')}`}
+                    target="_self">
+                    {child.props.children}
+                  </a>
+                </ListItem>
+              );
+            }
+            return null;
+          })
+        : '';
+
+      const reversedChildren = React.Children.toArray(children).reverse();
+      return (
+        <List className="table-of-content">
+          <ListItem>
+            <a href={`#anchor--${context.parameters.id}`} target="_self">
+              Demo
+            </a>
+          </ListItem>
+          {output}
+        </List>
+      );
+    },
+  };
+
+  return (
+    <Story>
       {context.parameters.status && (
-        <Tag className={`status__${context.parameters.status}`}>
-          Ready for production
-        </Tag>
+        <div className="docs-status">
+          <Tag
+            className={`status__${context.parameters.status}`}
+            type={lookup[context.parameters.status].type}>
+            {lookup[context.parameters.status].name}
+          </Tag>
+        </div>
       )}
 
-      <Description markdown={markdown} />
-    </>
-  ) : null;
+      <div className="intro-description">
+        <Description markdown={markdown} />
+        <MDXProvider components={componentsTableOfContent}>
+          <Docs />
+        </MDXProvider>
+      </div>
+    </Story>
+  );
 };
 
 // since we are in the docs blocks, assume default description if for primary component story

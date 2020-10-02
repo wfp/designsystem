@@ -5,6 +5,8 @@ import FormItem from '../FormItem';
 import settings from '../../globals/js/settings';
 const { prefix } = settings;
 
+/** A textarea is an input dedicated for a large volume of text. It may be used in a variety of components like forms, comment sections, and forums. */
+
 const TextArea = ({
   className,
   formItemClassName,
@@ -22,12 +24,12 @@ const TextArea = ({
 }) => {
   const textareaProps = {
     id,
-    onChange: evt => {
+    onChange: (evt) => {
       if (!other.disabled) {
         onChange(evt);
       }
     },
-    onClick: evt => {
+    onClick: (evt) => {
       if (!other.disabled) {
         onClick(evt);
       }

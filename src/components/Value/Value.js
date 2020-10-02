@@ -12,6 +12,8 @@ import settings from '../../globals/js/settings';
 
 const { prefix } = settings;
 
+/** Value are typically used to show KPI values and additional information. */
+
 const Value = ({ value, secondaryValue, className, href, title, ...other }) => {
   const classNames = classnames(`${prefix}--value`, className);
   return (

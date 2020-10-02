@@ -4,6 +4,7 @@ import {
   DocsContext,
   DocsContextProps,
 } from '@storybook/addon-docs/dist/blocks/DocsContext';
+import Text from '../../src/components/Text/Text';
 
 interface TitleProps {
   children?: JSX.Element | string;
@@ -20,5 +21,5 @@ export const Title: FunctionComponent<TitleProps> = ({ children }) => {
   if (!text) {
     text = extractTitle(context);
   }
-  return text ? <PureTitle className="sbdocs-title">{text}</PureTitle> : null;
+  return text ? <Text kind="title">{text}</Text> : null;
 };

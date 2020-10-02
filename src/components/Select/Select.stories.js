@@ -4,7 +4,7 @@ import SelectItem from '../SelectItem';
 import markdown from './README.mdx';
 
 export default {
-  title: 'Components/Select',
+  title: 'Forms/Select',
   component: Select,
   parameters: {
     componentSubtitle: 'Component',

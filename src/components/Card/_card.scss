@@ -162,6 +162,7 @@
     }
   }
 
+  .#{$prefix}--photo-card--emergencies,
   .#{$prefix}--photo-card--splash,
   .#{$prefix}--photo-card--splash-image,
   .#{$prefix}--photo-card--splash-compact {
@@ -169,6 +170,9 @@
     display: flex;
     align-items: center;
     color: $ui-01;
+    a {
+      color: $ui-01;
+    }
     @include breakpoint(bp--md--major) {
       height: rem(500px);
     }
@@ -183,6 +187,12 @@
       @include breakpoint(bp--md--major) {
         padding: $spacing-4xl;
       }
+    }
+  }
+
+  .#{$prefix}--photo-card--splash {
+    .#{$prefix}--photo-card__info__title {
+      @include typescale('beta');
     }
   }
 
@@ -212,16 +222,27 @@
     }
   }
 
-  .#{$prefix}--photo-card--splash-compact {
+  .#{$prefix}--photo-card--splash-compact,
+  .#{$prefix}--photo-card--emergencies {
     height: rem(70px);
     .#{$prefix}--photo-card__info {
       justify-content: center;
     }
     .#{$prefix}--photo-card__info__title {
       margin-bottom: 0;
+      display: flex;
+      align-items: center;
     }
     .#{$prefix}--photo-card__info__more {
       margin-left: $spacing-xl;
+    }
+  }
+
+  .#{$prefix}--photo-card--emergencies {
+    background: $support-01;
+    .#{$prefix}--photo-card__info__title {
+      font-weight: normal;
+      @include typescale('p');
     }
   }
 

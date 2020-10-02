@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { usePopper } from 'react-popper';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
@@ -20,25 +20,51 @@ export const tooltipStyleDark = {
   arrow: true,
 };
 
-const Tooltip = ({ dark, children, content }) => {
-  const [referenceElement, setReferenceElement] = useState(null);
-  const [popperElement, setPopperElement] = useState(null);
+/** Tooltips display additional information upon click, hover, or focus. The information should be contextual, useful, and nonessential. */
+const Tooltip = ({
+  dark,
+  children,
+  content,
+  trigger = 'hover',
+  modifiers,
+  placement = 'top',
+  utlis,
+}) => {
+  const referenceElement = useRef(null);
+  const popperElement = useRef(null);
   const [arrowElement, setArrowElement] = useState(null);
   const [isShown, setIsShown] = useState(null);
 
-  const { styles, attributes } = usePopper(referenceElement, popperElement, {
-    placement: 'right',
+  const handleInsideClick = () => {
+    setIsShown(true);
+    document.addEventListener('mousedown', handleClickOutside);
+  };
 
-    modifiers: [
-      {
-        name: 'offset',
-        options: {
-          offset: [0, 10],
+  const handleClickOutside = (event) => {
+    if (popperElement && !popperElement.current.contains(event.target)) {
+      setIsShown(false);
+      document.removeEventListener('mousedown', handleClickOutside, false);
+    }
+  };
+
+  const { styles, attributes } = usePopper(
+    referenceElement.current,
+    popperElement.current,
+    {
+      placement: placement,
+      modifiers: [
+        {
+          name: 'offset',
+          options: {
+            offset: [0, 10],
+          },
+          ...modifiers,
         },
-      },
-      { name: 'arrow', options: { element: arrowElement } },
-    ],
-  });
+        { name: 'arrow', options: { element: arrowElement, padding: 8 } },
+      ],
+      ...utlis,
+    }
+  );
 
   const classNames = classnames({
     [`${prefix}--tooltip`]: true,
@@ -46,18 +72,22 @@ const Tooltip = ({ dark, children, content }) => {
     [`${prefix}--tooltip--dark`]: dark,
   });
 
+  const actions =
+    trigger === 'hover'
+      ? {
+          onMouseEnter: () => setIsShown(true),
+          onMouseLeave: () => setIsShown(false),
+        }
+      : { onClick: () => handleInsideClick(true) };
+
   return (
     <>
-      <span
-        type="button"
-        ref={setReferenceElement}
-        onMouseEnter={() => setIsShown(true)}
-        onMouseLeave={() => setIsShown(false)}>
+      <span type="button" ref={referenceElement} {...actions}>
         {children}
       </span>
 
       <div
-        ref={setPopperElement}
+        ref={popperElement}
         style={styles.popper}
         {...attributes.popper}
         className={classNames}>
@@ -84,9 +114,30 @@ Tooltip.propTypes = {
   content: PropTypes.node,
 
   /**
-   * Provide the `href` attribute for the <a> node
+   * Provide a dark styled tooltip
    */
   dark: PropTypes.bool,
+  /**
+   * Provide the placement of the tooltip
+   */
+  placement: PropTypes.oneOf([
+    'top',
+    'top-start',
+    'top-end',
+    'right',
+    'right-start',
+    'right-end',
+    'bottom',
+    'bottom-start',
+    'bottom-end',
+    'left',
+    'left-start',
+    'left-end',
+  ]),
+  /**
+   * Provide the placement of the tooltip
+   */
+  trigger: PropTypes.oneOf(['click', 'hover']),
 };
 
 export default Tooltip;

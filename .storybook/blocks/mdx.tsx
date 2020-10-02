@@ -43,7 +43,7 @@ export const CodeOrSourceMdx: FC<CodeOrSourceMdxProps> = ({
     typeof className !== 'string' &&
     (typeof children !== 'string' || !(children as string).match(/[\n\r]/g))
   ) {
-    return <Code>{children}</Code>;
+    return <>{children}</>;
   }
   // className: "lang-jsx"
   const language = className && className.split('-');

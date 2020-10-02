@@ -37,14 +37,9 @@ export const DocsPage: FC = (props) => {
       (fruit) =>
         fruit.search(new RegExp(contextName.replace(/\s/g, ''), 'i')) !== -1
     );
-  console.log('reqReadme', props, resultReadme);
-
-  console.log('props', props);
 
   return (
     <>
-      {/*<Subtitle />
-      {/*<Title />*/}
       <IntroDescription />
 
       <div className="sticky-preview-wrapper">

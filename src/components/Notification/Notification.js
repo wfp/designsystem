@@ -1,5 +1,6 @@
 import React from 'react';
 
+/** dkjnslknkjfndn */
 const CloseButton = ({ YouCanPassAnyProps, closeToast }) => (
   <button
     ariaLabel="close"
@@ -9,6 +10,7 @@ const CloseButton = ({ YouCanPassAnyProps, closeToast }) => (
   </button>
 );
 
+/** huyhuyghu */
 const notificationStyle = {
   position: 'bottom-right',
   closeButton: <CloseButton YouCanPassAnyProps="foo" />,

@@ -4,6 +4,7 @@ import classNames from 'classnames';
 import Icon from '../Icon';
 import { iconUser } from '@wfp/icons';
 
+/** The User is used inside the MainNavigation and form, and can display an avatar and username. */
 const User = ({
   alt,
   className,
@@ -111,8 +112,7 @@ User.propTypes = {
    */
   missingImage: PropTypes.oneOf(['avatar', 'letter']),
   /**
-   * Extended Description column can be added only use if the description
-   * is also set
+   * Extended Description column
    */
   extendedDescription: PropTypes.node,
   /**

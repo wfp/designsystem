@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useEffect } from 'react';
+import React, { FunctionComponent, useEffect, useContext } from 'react';
 import { document, window } from 'global';
 import deprecate from 'util-deprecate';
 import dedent from 'ts-dedent';
@@ -10,6 +10,7 @@ import {
   DocsContextProps,
   DocsContext,
 } from '@storybook/addon-docs/dist/blocks/DocsContext';
+import { Code, components } from '@storybook/components/html';
 import { anchorBlockIdFromId } from './Anchor';
 import { storyBlockIdFromId } from './Story';
 import { SourceContainer } from '@storybook/addon-docs/dist/blocks/SourceContainer';
@@ -20,6 +21,11 @@ import { Subtitle } from './Subtitle';
 import { Title } from './Title';
 import { ListItem, List } from '../../src/components/List';
 import Story from '../../src/components/Story';
+import {
+  Source as PureSource,
+  SourceError,
+  SourceProps as PureSourceProps,
+} from '@storybook/components';
 
 export interface DocsContainerProps {
   context: DocsContextProps;
@@ -74,6 +80,19 @@ export const DocsContainer: FunctionComponent<DocsContainerProps> = ({
     );
   };
 
+  const code = ({ children, className, ...other }) => {
+    const language = className && className.split('-');
+    return (
+      <PureSource
+        format={false}
+        dark
+        language={(language && language[1]) || 'plaintext'}
+        code={children as string}
+        {...other}
+      />
+    );
+  };
+
   const wrapper = (props) => <Story {...props} />;
   const allComponents = {
     ...defaultComponents,
@@ -81,6 +100,7 @@ export const DocsContainer: FunctionComponent<DocsContainerProps> = ({
     ul,
     li,
     wrapper,
+    code,
   };
 
   useEffect(() => {
@@ -117,6 +137,22 @@ export const DocsContainer: FunctionComponent<DocsContainerProps> = ({
       }
     }
   }, [storyId]);
+
+  const contexts = useContext(DocsContext);
+
+  console.log('contexta', context);
+
+  if (context.parameters.fullPage) {
+    return (
+      <DocsContext.Provider value={context}>
+        <SourceContainer>
+          <ThemeProvider theme={theme}>
+            <MDXProvider components={allComponents}>{children}</MDXProvider>
+          </ThemeProvider>
+        </SourceContainer>
+      </DocsContext.Provider>
+    );
+  }
 
   return (
     <DocsContext.Provider value={context}>

@@ -33,29 +33,22 @@ module.exports = {
       )
     );*/
 
-    /*config.plugins.push(
+    config.plugins.push(
       new webpack.NormalModuleReplacementPlugin(
         /StorybookLogo/,
         path.resolve(__dirname, 'Logo.js')
       )
-    );*/
+    );
     return config;
   },
 
   webpack: async (config, options) => {
-    /*config.plugins.push(
-      new webpack.NormalModuleReplacementPlugin(
-        /shared/,
-        path.resolve(__dirname, 'shared.tsx')
-      )
-    );*/
-
-    /*config.plugins.push(
+    config.plugins.push(
       new webpack.NormalModuleReplacementPlugin(
         /StorybookLogo/,
         path.resolve(__dirname, 'Logo.js')
       )
-    );*/
+    );
     return config;
   },
 
