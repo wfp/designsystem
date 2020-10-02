@@ -7,12 +7,14 @@ tests
 config
 examples
 scripts
+__tests__
 *.stories.js
 *-story.js
 *.snap
 *-test.js
 *.tgz
-*.md                                           
+*.md
+*.mdx
 .cfignore                                                         
 .editorconfig                                                     
 .eslintrc                                                         
