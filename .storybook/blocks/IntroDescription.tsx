@@ -126,6 +126,10 @@ const DescriptionContainer: FunctionComponent<DescriptionProps> = (props) => {
         : '';
 
       const reversedChildren = React.Children.toArray(children).reverse();
+
+      //console.log('contextddd', context.getOriginal['[[Scopes]]'][0]._stories);
+
+      console.log('contextdddd', context /*. subcomponents */);
       return (
         <List className="table-of-content">
           <ListItem>
