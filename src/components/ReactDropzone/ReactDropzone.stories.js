@@ -8,7 +8,7 @@ import { iconUpload } from '@wfp/icons';
 import classNames from 'classnames';
 
 export default {
-  title: 'Forms/FileUploader (react-dropzone)',
+  title: 'Components/Forms/FileUploader (react-dropzone)',
   parameters: {
     componentSubtitle: 'Component',
     status: 'released',

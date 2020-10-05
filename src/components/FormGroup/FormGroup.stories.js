@@ -5,7 +5,7 @@ import TextInput from '../TextInput';
 import markdown from './README.mdx';
 
 export default {
-  title: 'Forms/FormGroup',
+  title: 'Components/Forms/FormGroup',
   component: FormGroup,
   parameters: {
     componentSubtitle: 'Component',

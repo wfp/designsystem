@@ -4,7 +4,7 @@ import StepNavigationItem from '../StepNavigationItem';
 import markdown from './README.mdx';
 
 export default {
-  title: 'Components/StepNavigation',
+  title: 'Components/Navigations/StepNavigation',
   component: StepNavigation,
   subcomponents: { StepNavigationItem },
   parameters: {

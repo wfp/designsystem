@@ -5,6 +5,7 @@ import settings from '../../globals/js/settings';
 
 const { prefix } = settings;
 
+/** A form is a group of related input controls that allows users to provide data or configure options. */
 const Form = ({ className, children, longForm, ...other }) => {
   const classNames = classnames(
     `${prefix}--form`,
@@ -35,6 +36,10 @@ Form.propTypes = {
    * Default margin is added to each form input
    */
   longForm: PropTypes.bool,
+};
+
+Form.defaultProps = {
+  longForm: true,
 };
 
 export default Form;

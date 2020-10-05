@@ -21,7 +21,7 @@ import Link from '../Link';
 import User from '../User';
 
 export default {
-  title: 'Components/MainNavigation',
+  title: 'Components/Navigations/MainNavigation',
   component: MainNavigation,
   parameters: {
     componentSubtitle: 'Component',

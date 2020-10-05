@@ -1,1 +1,0 @@
-The **regular page** template is used for content pages showing mainly linear texts like blog articles, wikis or news. Avoid using it for dashboards with a lot of **Modules**.
