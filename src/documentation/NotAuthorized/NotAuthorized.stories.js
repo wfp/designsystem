@@ -7,7 +7,7 @@ import { iconWarningSolid } from '@wfp/icons';
 import markdown from './README.mdx';
 
 export default {
-  title: 'Examples/Not authorized',
+  title: 'Templates/Not authorized',
 
   parameters: {
     componentSubtitle: 'Example',

@@ -293,7 +293,7 @@ export const Contact = (args) => {
         <br />
         <>
           <Button type="button" kind="secondary">
-            cancel
+            Cancel
           </Button>
           <Button type="submit" className="some-class">
             Send
