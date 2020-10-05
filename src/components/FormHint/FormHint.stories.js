@@ -5,7 +5,7 @@ import FormHint from '.';
 import TextInput from '../TextInput';
 
 export default {
-  title: 'Forms/FormHint',
+  title: 'Components/Forms/FormHint',
   component: FormHint,
   parameters: {
     componentSubtitle: 'Component',
