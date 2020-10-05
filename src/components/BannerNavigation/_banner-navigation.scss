@@ -13,7 +13,7 @@
     @include reset;
     display: flex;
 
-    @include breakpointMax(bp--md--major) {
+    @include breakpointMax(bp--sm--major) {
       display: none;
     }
   }

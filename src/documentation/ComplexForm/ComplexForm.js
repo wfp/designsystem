@@ -2,16 +2,17 @@ import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 import Link from '../../components/Link';
 import Page from '../Page';
-import { useForm } from 'react-hook-form';
+import { Controller, useForm } from 'react-hook-form';
 import Select from '../../components/Select';
 import TextInput from '../../components/TextInput';
+import NumberInput from '../../components/NumberInput';
 import SelectItem from '../../components/SelectItem';
 import Button from '../../components/Button';
 import Form from '../../components/Form';
 import Blockquote from '../../components/Blockquote/Blockquote';
 
 const ComplexForm = () => {
-  const { handleSubmit, register, errors } = useForm();
+  const { control, handleSubmit, register, errors, reset } = useForm();
   const onSubmit = (values) => {
     console.log(values);
     setOutput(values);
@@ -32,26 +33,53 @@ const ComplexForm = () => {
         })}
       />
       {errors.email && errors.email.message}
-
       <TextInput
         labelText="TextInput"
-        name="username"
+        name="textinput"
         ref={register({
           validate: (value) => value !== 'admin' || 'Nice try!',
         })}
       />
+      {/*<Checkbox
+      onBlur={onBlur}
+      onChange={e => onChange(e.target.checked)}
+      checked={value}
+      name={name}
 
-      <Select name="repeat" inputRef={register} labelText="Select">
+                 onChange={e => {console.log("waaaaa", e)}}
+
+                  onChange={(e, l) => {
+              console.log('wqqqqqqaaa', e, e.target.value, l);
+              props.onChange(e.target.value);
+            }}
+
+    />*/}
+      <Controller
+        control={control}
+        name="numberinput"
+        render={(props) => (
+          <NumberInput
+            {...props}
+            labelText="Number input"
+            name="numberinput"
+            step="0.1"
+          />
+        )}
+      />
+      <Select name="select" inputRef={register} labelText="Select">
         <SelectItem value="" text="not selected" />
         <SelectItem value="daily" text="daily" />
         <SelectItem value="weekly" text="weekly" />
         <SelectItem value="monthly" text="monthly" />
       </Select>
-
       {errors.username && errors.username.message}
-
-      <Button type="submit">Submit</Button>
-
+      <Button type="submit">Submit</Button>{' '}
+      <Button
+        type="submit"
+        kind="secondary"
+        onClick={() => reset({ numberinput: 3 })}>
+        Reset
+      </Button>
       <Blockquote title="Output">{JSON.stringify(output)}</Blockquote>
     </Form>
   );
