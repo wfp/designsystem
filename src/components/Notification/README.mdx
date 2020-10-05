@@ -1,33 +1,26 @@
-We recommend [React-Toastify](https://github.com/fkhadra/react-toastify) for toast notifications.
+## Usage
 
-### Use Styling
+Use notifications to inform users of updates or changes to system status. Communicating with users and providing immediate feedback are important for building trust. While notifications are an effective method of communicating with users, they are disruptive and should be used sparingly.
 
-To use the styling from WFP don't import any css from `react-toastify` and add the `notificationStyle` object as a prop to the `ToastContainer` component.
+## Content
 
-```js
-import { notificationStyle } from '@wfp/ui';
-```
+Notifications provide limited space for content, and therefore the content must be short and concise. A user should be able to quickly scan the notification, be apprised of the situation, and know what to do next.
 
-```js
-const notify = () => {
-  toast('A regular message');
-};
+### Main elements
 
-const notifyAll = () => {
-  toast.success('Wow so easy!');
-  toast.warn('Please check again!');
-  toast.error('Something went terribly wrong!');
-};
+#### Title
 
-return (
-  <div>
-    <Button onClick={notify}>Regular notification</Button>{' '}
-    <Button kind="secondary" onClick={notifyAll}>
-      All Notifications
-    </Button>
-    <ToastContainer {...notificationStyle} />
-  </div>
-);
-```
+- The title should be short and descriptive, explaining the most important piece of information.
+  *When possible, communicate the main message using just the title.
+  *Use a period only if the title is a full sentence.
 
-<!-- NO PROPS -->
+#### Body content
+
+- Be concise and avoid repeating or paraphrasing the title.
+- Limit content to one or two short sentences.
+- Explain how to resolve the issue by including any troubleshooting actions or next steps. You can include links within the notification body that redirect the user to next steps.
+
+#### Action
+
+- Keep labels concise and clearly indicate the action the user can take.
+- Limit action labels to one or two words.
