@@ -1,5 +1,4 @@
 import React, { useRef } from 'react';
-import PrismCode from 'react-prism';
 import Link from '../../components/Link';
 import { List, ListItem } from '../../components/List';
 import Page from '../Page';
@@ -7,6 +6,7 @@ import Blockquote from '../../components/Blockquote';
 
 import { linkTo } from '@storybook/addon-links';
 import ColorList from './ColourList';
+import './colours.scss';
 // import styles from './colours.module.scss';
 
 export const Color = ({ color }) => (
