@@ -7,9 +7,9 @@ import Blockquote from '../../components/Blockquote';
 
 import { linkTo } from '@storybook/addon-links';
 import ColorList from './ColourList';
-//import styles from './colours.module.scss';
+// import styles from './colours.module.scss';
 
-const Color = ({ color }) => (
+export const Color = ({ color }) => (
   <h3>
     <div
       style={{
@@ -359,10 +359,11 @@ const ColourDocs = () => {
             {colorList(sdgColors)}
           </ul>
           */}
-      <h3 ref={linkRefs.symbolic}>Symbolic colours</h3>
+
+      {/* <h3 ref={linkRefs.symbolic}>Symbolic colours</h3>
       <ColorList filter="symbolic" />
-      <p />
-      <h3>Usage</h3>
+      <p /> */}
+      {/* <h3>Usage</h3>
       <p>The colours can be used via JavaScript or different frameworks.</p>
       <Blockquote title="Usage in JavaScript" code>
         <PrismCode component="pre" className="language-js">
@@ -390,7 +391,7 @@ body {
 }
 `}
         </PrismCode>
-      </Blockquote>
+      </Blockquote> */}
     </Page>
   );
 };

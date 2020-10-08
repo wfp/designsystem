@@ -6,7 +6,7 @@ import settings from '../../globals/js/settings';
 
 const { prefix } = settings;
 
-/** Links are used as navigational elements. They may appear on their own, within a sentence or paragraph, or directly following the content. */
+/** Step Navigation provide indications to help users reach their destination from their current position */
 
 export default function StepNavigation({
   children,

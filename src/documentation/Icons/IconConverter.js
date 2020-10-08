@@ -21,7 +21,7 @@ export default class FaviconGenerator extends Component {
     this.state = { dataurl: {} };
   }
 
-  onSubmit = async values => {
+  onSubmit = async (values) => {
     const result = getJSON(values.svg);
     const formatted = formatJS(result, { json: false });
     this.setState({
@@ -54,7 +54,9 @@ export default class FaviconGenerator extends Component {
                     labelText="SVG code"
                     placeholder="Your svg code"
                   />
-                  <Button type="submit">Generate Icon</Button>
+                  <Button type="submit" style={{ marginTop: '1em' }}>
+                    Generate Icon
+                  </Button>
 
                   {this.state.json && (
                     <div>

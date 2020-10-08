@@ -33,6 +33,57 @@ npm is a package manager for the JavaScript programming language. All
 versions of the UI Kit will be published there.
 [View package on npm](https://www.npmjs.com/package/@wfp/ui)
 
-import ColourDocs from './ColourDocs';
+import ColourDocs, { Color } from './ColourDocs';
+import ColorList from './ColourList';
 
 <ColourDocs />
+
+<Color color="support-01" />
+Use the error colour to indicate an error or to focus the attention on something
+which is crucial to see. Paired with a cross icon, red delivers the message that
+something went wrong.
+
+<Color color="support-02" />
+
+Use green to indicate success state. Paired with a checkmark icon the user
+knows that the operation was successfully completed.
+
+<Color color="support-03" />
+
+Use yellow to indicate a transient warning which is less important than an
+error message. Yellow typically consists of items which require the user’s
+immediate attention, or indicate a waiting period. Although this overlaps with
+the use of red, yellow is more transient in nature.
+
+### Symbolic colours
+
+<ColorList filter="symbolic" />
+
+### Usage
+
+The colours can be used via JavaScript or different frameworks.
+
+> #### Usage in JavaScript
+>
+> ```
+> // Import colours as json (needs a json loader)
+> import colors from '@wfp/ui/source/globals/data/colors.json'
+>
+> // Import colours as js
+> import colors from '@wfp/ui/source/globals/data/colors.js'
+>
+> const barChartColor = colors.navy;
+> ```
+
+Setting colour variables makes it easy to reuse colours, without the hassle of updating every single Hex colour code once they change.
+
+> #### Usage in scss
+>
+> ```
+> // Only use variables
+> @import "~@wfp/ui/source/globals/scss/vars";
+>
+> body {
+> background: \$ui-02;
+> }
+> ```
