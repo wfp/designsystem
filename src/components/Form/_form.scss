@@ -9,7 +9,6 @@
 @mixin form {
   .#{$prefix}--fieldset {
     @include reset;
-    margin-bottom: $spacing-xl;
   }
 
   .#{$prefix}--form-item {
@@ -124,7 +123,7 @@
 @mixin form--experimental {
   .#{$prefix}--fieldset {
     @include reset;
-    margin-bottom: $spacing-xl;
+    //margin-bottom: $spacing-xl;
   }
 
   .#{$prefix}--form-item {

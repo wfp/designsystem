@@ -1,14 +1,17 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import classnames from 'classnames';
+import { Vertical } from '../StepNavigation/StepNavigation.stories';
 
 /** A FormGroup element is used to group several controls as well as labels  within a web form. It uses  `<fieldset>` */
 const FormGroup = ({
+  align,
   legendText,
   inline,
   invalid,
   children,
   className,
+  inputSpacing,
   message,
   messageText,
   ...other
@@ -16,7 +19,11 @@ const FormGroup = ({
   const classNamesLegend = classnames('wfp--form-group__title', className);
   const classNamesFieldset = classnames(
     'wfp--fieldset',
-    { 'wfp--fieldset__inline': inline },
+    {
+      'wfp--fieldset__inline': inline,
+      [`wfp--fieldset__align-${align}`]: align,
+      [`wfp--fieldset__input-spacing-${inputSpacing}`]: inputSpacing,
+    },
     className
   );
 
@@ -26,7 +33,7 @@ const FormGroup = ({
       className={classNamesFieldset}
       {...other}>
       <legend className={classNamesLegend}>{legendText}</legend>
-      {children}
+      <div className="wfp--fieldset__content">{children}</div>
       {message ? (
         <div className="wfp--form__requirements">{messageText}</div>
       ) : null}
@@ -59,10 +66,20 @@ FormGroup.propTypes = {
    * Specify a message for the `fieldset`
    */
   messageText: PropTypes.string,
+  /**
+   * Specify a message for the `fieldset`
+   */
+  align: PropTypes.oneOf(['vertical', 'horizontal']),
+  /**
+   * Specify the spacing between horizontaly aligned inputs
+   */
+  inputSpacing: PropTypes.oneOf(['none', 'md', 'lg']),
 };
 
 FormGroup.defaultProps = {
+  align: 'vertical',
   invalid: false,
+  inputSpacing: 'lg',
   message: false,
   messageText: '',
 };

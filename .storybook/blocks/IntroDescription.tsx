@@ -12,6 +12,8 @@ import { str } from '@storybook/addon-docs/dist/lib/docgen';
 import ReactDOMServer from 'react-dom/server';
 import { MDXProvider } from '@mdx-js/react';
 
+import { getDocsStories } from './utils';
+
 import { CodeOrSourceMdx, AnchorMdx, HeadersMdx } from './mdx';
 
 const defaultComponents = {
@@ -129,7 +131,18 @@ const DescriptionContainer: FunctionComponent<DescriptionProps> = (props) => {
 
       //console.log('contextddd', context.getOriginal['[[Scopes]]'][0]._stories);
 
-      console.log('contextdddd', context /*. subcomponents */);
+      const componentStories = getDocsStories(context);
+      console.log('contextdddd', componentStories /*. subcomponents */);
+
+      const examplesList = componentStories.map((e) => (
+        <ListItem>
+          <a
+            href={`#${e.id.replace('components-module--', '')}`}
+            target="_self">
+            {e.name}
+          </a>
+        </ListItem>
+      ));
       return (
         <List className="table-of-content">
           <ListItem>
@@ -137,6 +150,7 @@ const DescriptionContainer: FunctionComponent<DescriptionProps> = (props) => {
               Demo
             </a>
           </ListItem>
+          {examplesList}
           {output}
         </List>
       );

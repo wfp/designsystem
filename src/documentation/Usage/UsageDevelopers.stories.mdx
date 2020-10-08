@@ -8,6 +8,11 @@ import Link from '../../components/Link';
 <Meta
   title="Getting started/Getting started/Usage for Developers"
   subTitle="How to use the UI Kit"
+  parameters={{
+    previewTabs: {
+      canvas: { hidden: true },
+    },
+  }}
 />
 
 The UI Kit provides developers with React.js components, scss, <Link onClick={linkTo('Design|Getting started', 'CSS')}>css</Link>, html and
@@ -21,7 +26,7 @@ If you create your first react project use [create-react-app](https://github.com
 
 Installing the UI Kit
 
-### Install via npm{' '}
+### Install via npm
 
 ```bash
 npm install @wfp/ui --save
@@ -45,12 +50,7 @@ import { Button } from '@wfp/ui';
 
 ### Polyfills
 
-Polyfills are needed for IE browsers. We recommend{' '}
-
-{' '}
-
-<Link href="https://babeljs.io/docs/en/babel-preset-env">babel-preset-env</Link> for
-it.
+Polyfills are needed for IE browsers. We recommend [https://babeljs.io/docs/en/babel-preset-env](babel-preset-env) for it.
 
 ## CSS
 
@@ -138,7 +138,9 @@ The JS components are built using React, but that does not limit their usage
 to just React applications. You can render any component in any JavaScript
 application with ReactDOM.render. Think of it like using a jQuery plugin.
 
-### Usage without react
+Make sure you have embeeded the CSS of the UI Kit in your web project.
+
+### Usage with react renderer
 
 ```js
 import ReactDOM from 'react-dom';
@@ -161,14 +163,18 @@ ReactDOM.render(
 
 To remove the component from the DOM and clean up, unmount it:
 
-### Unmount component{' '}
+### Unmount component
 
 ```
 
 ReactDOM.unmountComponentAtNode(myContainerElement);
 ```
 
-Check out the{' '}[React API docs](https://reactjs.org/docs/react-api.html) for more details.
+Check out the [React API docs](https://reactjs.org/docs/react-api.html) for more details.
+
+### html only
+
+Most components provide an automatically html preview of a component. You can see it if you click **`html`** tab in each preview.
 
 ### Usage with Google Chrome
 

@@ -84,3 +84,9 @@ $css--reset: true;
   top: -50px;
   z-index: 100;
 }
+
+/* Overflow fix for Safari */
+
+.os-host.os-host-foreign {
+  overflow: hidden !important;
+}
