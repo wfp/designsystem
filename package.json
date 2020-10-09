@@ -15,7 +15,7 @@
     "build:cssmin": "node-sass ./src/globals/scss/styles.scss ./assets/css/styles.min.css --output-style compressed && postcss ./assets/css/styles.min.css --no-map -u autoprefixer -rs",
     "build:css": "node-sass ./src/globals/scss -o ./assets/css --output-style compressed --source-map true && postcss ./assets/css/styles.css -d ./assets/css/ --use autoprefixer",
     "commitmsg": "validate-commit-msg",
-    "build:favicon": "convert assets/internal/wfp-favicon-png32.png assets/internal/wfp-favicon-png512.png -colors 256 docs/favicon.ico",
+    "build:favicon": "convert ./src/assets/internal/wfp-favicon-png32.png ./src/assets/internal/wfp-favicon-png512.png -colors 256 docs/favicon.ico",
     "contributors:add": "all-contributors add",
     "contributors:generate": "all-contributors generate",
     "lint": "eslint src",
