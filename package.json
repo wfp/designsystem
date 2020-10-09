@@ -8,7 +8,7 @@
   "main:scss": "source/globals/styles.scss",
   "sideEffects": false,
   "scripts": {
-    "build": "npm run build:rollup && npm run build:css && npm run build:cssmin && build:favicon",
+    "build": "npm run build:rollup && npm run build:css && npm run build:cssmin && npm run build:favicon",
     "build:rollup": "rollup -c",
     "build:storybook": "rm -r -f docs && build-storybook -s ./src/assets -o docs",
     "ci-check": "npm run prettier:diff && npm run lint && npm run test --runInBand && npm run test-ssr",
