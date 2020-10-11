@@ -17,4 +17,45 @@
   .#{$prefix}--fieldset__inline {
     display: flex;
   }
+
+  .#{$prefix}--fieldset__content {
+    > * {
+      // @include breakpointMax(bp--md--major) {
+      margin-bottom: $spacing-md;
+      //}
+    }
+  }
+
+  @include breakpoint(bp--md--major) {
+    .#{$prefix}--fieldset__align-horizontal {
+      &.wfp--fieldset__input-spacing-md {
+        .#{$prefix}--fieldset__content {
+          > * {
+            margin-right: $spacing-md;
+            &:last-child {
+              margin-right: 0;
+            }
+          }
+        }
+      }
+      &.wfp--fieldset__input-spacing-lg {
+        .#{$prefix}--fieldset__content {
+          > * {
+            margin-right: $spacing-lg;
+            &:last-child {
+              margin-right: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .#{$prefix}--fieldset__align-horizontal {
+    .#{$prefix}--fieldset__content {
+      @include breakpoint(bp--md--major) {
+        display: flex;
+      }
+    }
+  }
 }

@@ -1,0 +1,73 @@
+import Link from '../../components/Link';
+import Blockquote from '../../components/Blockquote';
+import Button from '../../components/Button';
+import { iconArrowRight } from '@wfp/icons';
+
+<Meta
+  title="Documentation/Navigation"
+  subtitle="3-Level Navigation"
+  parameters={{
+    previewTabs: {
+      canvas: { hidden: true },
+    },
+  }}
+/>
+
+### Main (Primary) Navigation
+
+The Main Navigation is a Horizontal Menu which consists of multiple
+clickable items placed at the top of the page. The navigation stays
+unchanged when browswing through the site and is present on every page.
+The currently selected item is usually highlighted.
+
+<Blockquote>
+  The maximum number of items is 6 to 8 items depending on the average word
+  length.
+</Blockquote>
+
+<Button
+  href="./?path=/docs/components-navigations-mainnavigation--regular"
+  small
+  icon={iconArrowRight}
+  style={{ marginTop: '1em' }}>
+  Go to MainNavigation
+</Button>
+
+### Sub Navigation
+
+Sub navigation is for content that is of secondary interest to the user.
+It is related to an item of the Main Navigation and usually presents a
+more detailed selection if the former. It is attached to the Main
+Navigation and present on every page.
+
+<Button
+  href=".//?path=/docs/components-navigations-subnavigation--regular-sub-navigation"
+  small
+  icon={iconArrowRight}>
+  Go to SubNavigation
+</Button>
+
+### Secondary Navigation
+
+The Secondary Navigation splits a page in logical sections. It's content is
+related to the selected page and it is optional.
+
+<Button
+  href="./?path=/docs/components-navigations-secondarynavigation--regular"
+  small
+  icon={iconArrowRight}>
+  Go to SecondaryNavigation
+</Button>
+
+### Banner Navigation
+
+The Banner Navigation adds additional links to other websites. Each Link
+should target to a new tab. It is additional and should only cover
+external links.
+
+<Button
+  href="./?path=/docs/components-navigations-bannernavigation--regular-navigation"
+  small
+  icon={iconArrowRight}>
+  Go to BannerNavigation
+</Button>

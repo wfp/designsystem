@@ -244,38 +244,28 @@ Login.args = {
 export const Contact = (args) => {
   return (
     <Form {...args}>
-      <FormGroup legendText="Contact Form Example">
-        <div
-          style={{
-            width: '100%',
-            display: 'flex',
-            flexDirection: 'row',
-            justifyContent: 'space-between',
-          }}>
-          <TextInput
-            type="text"
-            id="firstname"
-            labelText="Firstname"
-            placeholder="Noami"
-            style={{ width: '95%' }}
-          />
-
-          <TextInput
-            type="text"
-            id="lastname"
-            labelText="lastname"
-            placeholder="ADAMS"
-          />
-        </div>
-        <br />
+      <FormGroup align="horizontal" legendText="Contact Form Example: name">
         <TextInput
-          type="email"
-          id="email4"
-          labelText="Email"
-          placeholder="c******@wfp.org"
+          type="text"
+          id="firstname"
+          labelText="Firstname"
+          placeholder="Noami"
         />
-        <br />
+        <TextInput
+          type="text"
+          id="lastname"
+          labelText="lastname"
+          placeholder="ADAMS"
+        />
+      </FormGroup>
+      <TextInput
+        type="email"
+        id="email4"
+        labelText="Email"
+        placeholder="c******@wfp.org"
+      />
 
+      <FormGroup legendText="Additional details">
         <TextArea
           labelText="Message"
           placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -289,17 +279,15 @@ export const Contact = (args) => {
           cols={50}
           rows={5}
         />
-        <br />
-        <br />
-        <>
-          <Button type="button" kind="secondary">
-            Cancel
-          </Button>
-          <Button type="submit" className="some-class">
-            Send
-          </Button>
-        </>
       </FormGroup>
+      <>
+        <Button type="button" kind="secondary">
+          cancel
+        </Button>
+        <Button type="submit" className="some-class">
+          Send
+        </Button>
+      </>
     </Form>
   );
 };

@@ -9,7 +9,6 @@ interface SubtitleProps {
 
 export const Subtitle: FunctionComponent<SubtitleProps> = ({ children }) => {
   const context = useContext(DocsContext);
-  console.log('waf', context);
   const { parameters } = context;
   let text: JSX.Element | string = children;
   if (!text) {

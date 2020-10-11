@@ -144,7 +144,7 @@ npm run test
 
 ### Deployment
 
-The UI Kit uses [Standard Version](https://github.com/conventional-changelog/standard-version) for automate versioning and CHANGELOG generation.
+The UI Kit uses Azure Devops and [semantic-release](https://github.com/semantic-release/semantic-release) for automate versioning and CHANGELOG generation.
 
 ### Generate alpha release
 

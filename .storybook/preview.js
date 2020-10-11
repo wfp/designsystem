@@ -66,6 +66,6 @@ export const parameters = {
       index: -1,
       title: 'Documentation',
     },
-    canvas: { title: 'Code' },
+    canvas: { title: 'Code', hidden: false },
   },
 };

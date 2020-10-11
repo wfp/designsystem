@@ -1,23 +1,26 @@
 import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
 
+## Types
+There are two types of `BannerNavigation` that can be used:
+
+| Type      | React name | Description |
+| ----------- | ----------- | ----------- |
+| Default | `BannerNavigationWithContent` |Used exclusively by specific applications which are actually listed on the bar only to crosslink between them.|
+| Custom content| `BannerNavigation` | It allows you to use custom `BannerNavigationItem` components inside. |
+
 ## Usage
+The default component is used mainly to crosslink among specific WFP applications for **internal use only**. Thus, **the default component does not have to be used for external facing products**. The internal applications are: [WFPgo](https://go.wfp.org), [Self-Service](https://selfservice.go.wf.org), [Communities](https://duckduckgo.com), [Manuals](https://duckduckgo.com), [GoDocs](https://duckduckgo.com), [Data](https://duckduckgo.com), [OPweb](https://duckduckgo.com), [WeLearn](https://duckduckgo.com)
 
-The BannerNavigation is used on internal applications which are actually listed on the bar only to crosslink between the applications. It is hidden on Mobile devices.
+The **custom version** is used when the application has multiple pages to be visited by the user. This component allows these different pages to be easily accessible. Do not use BannerNavigation when you have only one page.
 
-#### Usage with default content
+## Usage with React
 
-`BannerNavigationWithContent` will contain the default links.
-
+** Default version **
 ```jsx
 import { BannerNavigationWithContent } from '@wfp/ui';
-
 <BannerNavigationWithContent pageWidth="md" />;
 ```
-
-#### Usage with custom content
-
-`BannerNavigation` allows you to use custom `BannerNavigationItem` components inside.
-
+** Custom version **
 ```jsx
 import { BannerNavigation } from '@wfp/ui';
 
@@ -39,14 +42,10 @@ import { BannerNavigation } from '@wfp/ui';
 </BannerNavigation>;
 ```
 
-#### When to use
+## Formatting
 
-BannerNaviagtions are used when the application has multiple pages to be visited by the user. This component allows these different pages to be easily accessible.
+## Mobile
+The component is hidden on mobile devices with size less than 768px.
 
-#### When not to use
-
-Do not use BannerNavigation when you have only one page.
-
-### Related
-
+## Related
 [Link](?path=/docs/components-link--link-regular)

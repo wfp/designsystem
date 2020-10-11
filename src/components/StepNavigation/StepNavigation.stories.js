@@ -28,7 +28,6 @@ export const StepNavigationRegular = (args) => (
 
 StepNavigationRegular.args = {
   children: 'StepNavigation',
-  href: '#',
 };
 
 export const DifferentStates = (args) => (
@@ -84,9 +83,6 @@ export const Vertical = (args) => (
     />
     <StepNavigationItem label="Warning Item" page={3} status="warning" />
     <StepNavigationItem label="Complete Item" page={4} status="complete" />
-    <StepNavigationItem label="Skipped Item" page={4} status="skip" />
-    <StepNavigationItem label="Disabled Item" page={5} status="disabled" />
-    <StepNavigationItem label="Locked Item" page={6} status="locked" />
   </StepNavigation>
 );
 
@@ -96,6 +92,33 @@ Vertical.story = {
   parameters: {
     docs: {
       storyDescription: ``,
+    },
+  },
+};
+
+export const Small = (args) => (
+  <StepNavigation {...args}>
+    <StepNavigationItem label="Item without Status" page={0} />
+    <StepNavigationItem label="Active Item" page={1} />
+    <StepNavigationItem
+      label="Not started Item"
+      page={2}
+      status="not-started"
+    />
+    <StepNavigationItem label="Warning Item" page={3} status="warning" />
+    <StepNavigationItem label="Complete Item" page={4} status="complete" />
+    <StepNavigationItem label="Skipped Item" page={4} status="skip" />
+    <StepNavigationItem label="Disabled Item" page={5} status="disabled" />
+    <StepNavigationItem label="Locked Item" page={6} status="locked" />
+  </StepNavigation>
+);
+
+Small.args = { vertical: true, small: true };
+
+Small.story = {
+  parameters: {
+    docs: {
+      storyDescription: `The \`small\` StepNavigation can be used in places the space is limited and the component is not used for navigation. Use it to indicate the progress of a flow.`,
     },
   },
 };
