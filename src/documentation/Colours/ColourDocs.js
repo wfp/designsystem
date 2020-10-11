@@ -1,5 +1,4 @@
 import React, { useRef } from 'react';
-import PrismCode from 'react-prism';
 import Link from '../../components/Link';
 import { List, ListItem } from '../../components/List';
 import Page from '../Page';
@@ -7,6 +6,7 @@ import Blockquote from '../../components/Blockquote';
 
 import { linkTo } from '@storybook/addon-links';
 import ColorList from './ColourList';
+import './colours.scss';
 // import styles from './colours.module.scss';
 
 export const Color = ({ color }) => (
@@ -334,7 +334,7 @@ const ColourDocs = () => {
 
       <ColorList filter="support" />
 
-      <Color color="support-01" />
+      {/* <Color color="support-01" />
       <p>
         Use the error colour to indicate an error or to focus the attention on
         something which is crucial to see. Paired with a cross icon, red
@@ -351,7 +351,7 @@ const ColourDocs = () => {
         an error message. Yellow typically consists of items which require the
         user’s immediate attention, or indicate a waiting period. Although this
         overlaps with the use of red, yellow is more transient in nature.
-      </p>
+      </p> */}
 
       {/*
           <h3>Sustainable development goals colours</h3>

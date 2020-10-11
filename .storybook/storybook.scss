@@ -68,10 +68,6 @@
   line-height: 1.8rem;
 }
 
-$css--body: true;
-$css--reset: true;
-@import '../src/globals/scss/styles.scss';
-
 .status__released {
 }
 
@@ -85,18 +81,21 @@ $css--reset: true;
   z-index: 100;
 }
 
-​ .color__interactive-01 {
+.color__interactive-01 {
   background: $interactive-01;
 }
+
 ​ .color__brand-01 {
   background: $brand-01;
 }
-​ .color__interactive-02 {
+.color__interactive-02 {
   background: $interactive-02;
 }
-​ .color__accent-01 {
+
+.color__accent-01 {
   background: $accent-01;
 }
+
 ​ .color__interactive-02 {
   background: $interactive-02;
 }
@@ -133,16 +132,13 @@ $css--reset: true;
 .color__support-01 {
   background: $support-01;
 }
-// ​ .color__support-01 {
-//   background: $support-01;
-// }
-​.color__support-02 {
+.color__support-02 {
   background: $support-02;
 }
-​ .color__support-03 {
+.color__support-03 {
   background: $support-03;
 }
-​ .color__field-01 {
+​.color__field-01 {
   background: $field-01;
 }
 ​ .color__field-02 {
@@ -364,3 +360,7 @@ $css--reset: true;
 ​ .color__magenta-80 {
   background: $color__magenta-80;
 }
+
+$css--body: true;
+$css--reset: true;
+@import '../src/globals/scss/styles.scss';
