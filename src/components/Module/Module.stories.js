@@ -4,7 +4,7 @@ import { action } from '@storybook/addon-actions';
 import { Module, ModuleHeader, ModuleBody, ModuleFooter } from '../Module';
 
 export default {
-  title: 'Components/Module',
+  title: 'Components/Content Related/Module',
   component: Module,
   parameters: {
     componentSubtitle: 'Component',

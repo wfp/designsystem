@@ -5,7 +5,7 @@ import Value from '.';
 import Unit from '../Unit';
 
 export default {
-  title: 'Components/Value',
+  title: 'Components/UI Elements/Value',
   component: Value,
   parameters: {
     componentSubtitle: 'Component',

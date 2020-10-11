@@ -10,7 +10,7 @@ import markdown from './README.mdx';
 import Button from '.';
 
 export default {
-  title: 'Components/Button',
+  title: 'Components/UI Elements/Button',
   component: Button,
   markdown: 'hello',
   parameters: {

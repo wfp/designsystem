@@ -4,7 +4,7 @@ import { action } from '@storybook/addon-actions';
 import Loading from '.';
 
 export default {
-  title: 'Components/Loading',
+  title: 'Components/UI Elements/Loading',
   component: Loading,
   parameters: {
     componentSubtitle: 'Component',

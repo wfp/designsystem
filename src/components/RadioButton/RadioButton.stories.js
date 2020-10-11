@@ -4,7 +4,7 @@ import { action } from '@storybook/addon-actions';
 import RadioButton from '.';
 
 export default {
-  title: 'Components/RadioButton',
+  title: 'Components/Forms/RadioButton',
   component: RadioButton,
   parameters: {
     componentSubtitle: 'RadioButton',

@@ -5,7 +5,7 @@ import InfoBar from '.';
 import Link from '../Link';
 
 export default {
-  title: 'Components/InfoBar',
+  title: 'Components/UI Elements/InfoBar',
   component: InfoBar,
   parameters: {
     componentSubtitle: 'Component',

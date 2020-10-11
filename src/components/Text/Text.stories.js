@@ -4,7 +4,7 @@ import Text from '.';
 import { textLookup } from './Text';
 
 export default {
-  title: 'Components/Text',
+  title: 'Components/UI Elements/Text',
   component: Text,
   parameters: {
     componentSubtitle: 'Component',

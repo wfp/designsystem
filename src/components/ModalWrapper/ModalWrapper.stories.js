@@ -4,7 +4,7 @@ import { action } from '@storybook/addon-actions';
 import ModalWrapper from '.';
 
 export default {
-  title: 'Components/ModalWrapper',
+  title: 'Components/Content Related/ModalWrapper',
   component: ModalWrapper,
   parameters: {
     componentSubtitle: 'Component',

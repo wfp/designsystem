@@ -16,7 +16,7 @@ const kinds = {
 };
 
 export default {
-  title: 'Components/Blockquote',
+  title: 'Components/Content Related/Blockquote',
   component: Blockquote,
   parameters: {
     componentSubtitle: 'Component',

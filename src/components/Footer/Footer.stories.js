@@ -6,7 +6,7 @@ import Footer from '.';
 import Link from '../Link';
 
 export default {
-  title: 'Components/Footer',
+  title: 'Components/UI Elements/Footer',
   component: Footer,
   parameters: {
     componentSubtitle: 'Component',
