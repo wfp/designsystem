@@ -41,12 +41,11 @@ export const DocsPage: FC = (props) => {
   return (
     <>
       <IntroDescription />
-
       <div className="sticky-preview-wrapper">
         <div className="sticky-preview">
           <Primary />
         </div>
-        <Props story={PRIMARY_STORY} />
+       {/* <Props story={PRIMARY_STORY} /> */}
       </div>
       <Stories title="Examples" />
       <Description />
