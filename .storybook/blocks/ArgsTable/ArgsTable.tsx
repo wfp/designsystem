@@ -355,23 +355,15 @@ export const ArgsTable: FC<ArgsTableProps> = (props) => {
 
   const context = useContext(DocsContext);
 
-  console.log('wwaaaa', context);
-
   const common = { updateArgs, compact, inAddonPanel, initialExpandedArgs };
 
-  context.parameters.extended = 'aft';
-  setTimeout(() => {
-    context.parameters.extended = 'aftmm';
-  }, 3000);
   return (
     <ResetWrapper>
       {context.parameters.extended}
 
-      <DocsContext.Provider value={{ args: 'cccccc', extended: extended }}>
+      <DocsContext.Provider value={context}>
         <Button
           onClick={() => {
-            context.parameters.extended = 'aftmm';
-            //context.forceRender();
             setExtended(!extended);
           }}>
           Show details

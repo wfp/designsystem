@@ -33,7 +33,7 @@ export const DocsPage: FC = (props) => {
         <div className="sticky-preview">
           <Primary />
         </div>
-       {/* <Props story={PRIMARY_STORY} /> */}
+        <Props story={PRIMARY_STORY} />
       </div>
       <Stories title="Examples" />
       <Description />

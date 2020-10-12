@@ -51,7 +51,7 @@
   }
 
   .sbdocs-h2 {
-    border-bottom:none;
+    border-bottom: none;
   }
 
   .intro-description {
@@ -68,10 +68,10 @@
   }
 
   &.sbdocs-wrapper {
-    padding-top:2rem;
+    padding-top: 2rem;
   }
   &.sbdocs-content {
-    width:80%;
+    width: 80%;
   }
 
   ol {
@@ -79,8 +79,8 @@
   }
 
   img {
-    border:1px solid #EFEFEF;
-    margin:1rem 0;
+    border: 1px solid #efefef;
+    margin: 1rem 0;
     display: block;
   }
 }
@@ -94,16 +94,13 @@
   margin-bottom: 2rem;
   padding-bottom: 2rem;
   line-height: 1.8rem;
-  border-bottom:1px solid rgba(0,0,0,.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 $css--body: true;
 $css--reset: true;
 @import '../src/globals/scss/styles.scss';
-
-.status__released {
-}
-
+/*
 .sticky-preview-wrapper {
   display: flex;
   align-items: stretch;
@@ -132,11 +129,11 @@ $css--reset: true;
   .os-host {
     height: 100%;
   }
-  /*position: sticky !important;
-  top: -50px;
-  z-index: 100;*/
+  //position: sticky !important;
+  //top: -50px;
+  //z-index: 100;
   min-width: 70%;
-}
+}*/
 
 /* Overflow fix for Safari */
 

@@ -138,6 +138,16 @@ Tooltip.propTypes = {
    * Provide the placement of the tooltip
    */
   trigger: PropTypes.oneOf(['click', 'hover']),
+
+  /**
+   * Provide additional modifiers as an object https://popper.js.org/docs/v2/modifiers/
+   */
+  modifiers: PropTypes.object,
+
+  /**
+   * Provide additional utils as an object https://popper.js.org/docs/v2/utils/
+   */
+  utils: PropTypes.object,
 };
 
 export default Tooltip;

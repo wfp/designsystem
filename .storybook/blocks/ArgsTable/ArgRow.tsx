@@ -85,7 +85,7 @@ export const ArgRow: FC<ArgRowProps> = (props) => {
   const defaultValue = table.defaultValue || row.defaultValue;
   const required = row.type?.required;
   const hasDescription = description != null && description !== '';
-  if (description.includes('FOR DESIGNERS') || extended === true)
+  if (description.includes('FOR DESIGNERS') || extended !== true)
     return (
       <tr>
         <StyledTd expandable={expandable}>
