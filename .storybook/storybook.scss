@@ -40,21 +40,38 @@
     font-size: 1rem;
   }
   .sbdocs-h1,
-  .sbdocs-title {
+  .sbdocs-title,
+  h1 {
     @extend .wfp--story__title;
+    font-size: 3rem;
   }
   .sbdocs-subtitle {
     @extend .wfp--story__subtitle;
     margin-top: 0;
   }
 
+  .sbdocs-h2 {
+    border-bottom:none;
+  }
+
   .intro-description {
     .sbdocs-p {
       font-size: 1.2rem;
-      font-size: 1.75rem;
+      font-size: 1.5rem;
       font-weight: 200;
       //font-style: italic;
     }
+  }
+
+  table {
+    width: 100%;
+  }
+
+  &.sbdocs-wrapper {
+    padding-top:2rem;
+  }
+  &.sbdocs-content {
+    width:80%;
   }
 }
 .docs-status {
@@ -64,8 +81,10 @@
 
 .table-of-content.wfp--list {
   margin-top: 1rem;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
   line-height: 1.8rem;
+  border-bottom:1px solid rgba(0,0,0,.1);
 }
 
 $css--body: true;

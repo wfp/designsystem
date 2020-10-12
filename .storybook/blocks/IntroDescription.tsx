@@ -148,7 +148,7 @@ const DescriptionContainer: FunctionComponent<DescriptionProps> = (props) => {
               Demo
             </a>
           </ListItem>
-          {examplesList}
+          {/*{examplesList}*/}
           {output}
         </List>
       );

@@ -17,7 +17,7 @@ BannerNavigationItem.propTypes = {
 };
 
 /**
- * The BannerNavigation is used on internal applications which are actually listed on the bar only to crosslink between the applications. It is hidden on Mobile devices.
+ * A thin bar on top of the main navigation used to crosslink among apps or pages.
  */
 const BannerNavigation = ({ children, className, ...props }) => {
   const wrapperClasses = classNames('wfp--banner-navigation', className);
