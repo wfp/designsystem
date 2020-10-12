@@ -23,6 +23,7 @@ Regular.args = {
   name: 'inputname',
   helperText: 'Optional helperText',
   labelText: 'The labelText',
+  placeholder: 'placeholder',
 };
 
 export const withError = (args) => <TextInput {...args} />;

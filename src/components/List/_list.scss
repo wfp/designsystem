@@ -58,7 +58,8 @@
     }
   }
 
-  .#{$prefix}--list--bullets {
+  .#{$prefix}--list--bullets,
+  .#{$prefix}--list--ordered {
     line-height: 1.6em;
     list-style-type: disc;
     margin-left: 1.5em;
@@ -72,6 +73,10 @@
         margin-bottom: 0;
       }
     }
+  }
+
+  .#{$prefix}--list--ordered {
+    list-style-type: decimal;
   }
 
   .#{$prefix}--list--simple-inline {

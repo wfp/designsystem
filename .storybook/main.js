@@ -54,7 +54,6 @@ module.exports = {
 
   /*
   webpackFinal: async (config, { configType }) => {
-    console.log('config', config.module.rules[1].use[0].options);
 
     return {
       ...config,

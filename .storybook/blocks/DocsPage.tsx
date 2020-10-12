@@ -11,9 +11,6 @@ import { IntroDescription } from './IntroDescription';
 import { Props } from './Props';
 
 import { Stories } from './Stories';
-/*
-import { PRIMARY_STORY } from './types';*/
-
 import { PRIMARY_STORY } from './types';
 
 import {
@@ -29,15 +26,6 @@ import {
 } from '@storybook/addon-docs/blocks';
 
 export const DocsPage: FC = (props) => {
-  const reqReadme = require.context('../../src', true, /\.md$/);
-  const contextName = 'Link';
-  const resultReadme = reqReadme
-    .keys()
-    .find(
-      (fruit) =>
-        fruit.search(new RegExp(contextName.replace(/\s/g, ''), 'i')) !== -1
-    );
-
   return (
     <>
       <IntroDescription />

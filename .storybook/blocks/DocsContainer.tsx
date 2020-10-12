@@ -80,6 +80,14 @@ export const DocsContainer: FunctionComponent<DocsContainerProps> = ({
     );
   };
 
+  const ol = (props) => {
+    return (
+      <List {...props} kind="ordered">
+        {props.children}
+      </List>
+    );
+  };
+
   const code = ({ children, className, ...other }) => {
     const language = className && className.split('-');
     return (
@@ -98,6 +106,7 @@ export const DocsContainer: FunctionComponent<DocsContainerProps> = ({
     ...defaultComponents,
     ...docs.components,
     ul,
+    ol,
     li,
     wrapper,
     code,
@@ -139,8 +148,6 @@ export const DocsContainer: FunctionComponent<DocsContainerProps> = ({
   }, [storyId]);
 
   const contexts = useContext(DocsContext);
-
-  console.log('contexta', context);
 
   if (context.parameters.fullPage) {
     return (

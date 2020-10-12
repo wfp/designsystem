@@ -76,13 +76,37 @@ $css--reset: true;
 }
 
 .sticky-preview-wrapper {
-  //display: flex;
+  display: flex;
+  align-items: stretch;
+
+  .docblock-argstable-head {
+    display: none;
+  }
+  .docblock-argstable-body {
+    td {
+      display: block;
+      width: 100% !important;
+    }
+  }
 }
 
 .sticky-preview {
-  position: sticky !important;
+  > div {
+    height: 100%;
+  }
+  .sbdocs-preview {
+    height: 100%;
+    > div {
+      height: 100%;
+    }
+  }
+  .os-host {
+    height: 100%;
+  }
+  /*position: sticky !important;
   top: -50px;
-  z-index: 100;
+  z-index: 100;*/
+  min-width: 70%;
 }
 
 /* Overflow fix for Safari */

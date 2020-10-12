@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, useState, useContext } from 'react';
 import pickBy from 'lodash/pickBy';
 import { styled, ignoreSsrWarning } from '@storybook/theming';
 import { opacify, transparentize, darken, lighten } from 'polished';
@@ -10,9 +10,15 @@ import { ArgType, ArgTypes, Args } from './types';
 //import { EmptyBlock } from '../EmptyBlock';
 import { EmptyBlock } from '@storybook/components/dist/blocks';
 
+import {
+  DocsContext,
+  DocsContextProps,
+} from '@storybook/addon-docs/dist/blocks/DocsContext';
+
 //import { Link } from '../../typography/link/link';
 //import { Link } from '@storybook/components';
 import { ResetWrapper } from '@storybook/components/dist/typography/DocumentFormatting';
+import Button from '../../../src/components/Button/Button';
 //import { ResetWrapper } from '../../typography/DocumentFormatting';
 
 export const TableWrapper = styled.table<{
@@ -345,10 +351,33 @@ export const ArgsTable: FC<ArgsTableProps> = (props) => {
   if (updateArgs) colSpan += 1;
   if (!compact) colSpan += 2;
   const expandable = Object.keys(groups.sections).length > 0;
+  const [extended, setExtended] = useState(true);
+
+  const context = useContext(DocsContext);
+
+  console.log('wwaaaa', context);
 
   const common = { updateArgs, compact, inAddonPanel, initialExpandedArgs };
+
+  context.parameters.extended = 'aft';
+  setTimeout(() => {
+    context.parameters.extended = 'aftmm';
+  }, 3000);
   return (
     <ResetWrapper>
+      {context.parameters.extended}
+
+      <DocsContext.Provider value={{ args: 'cccccc', extended: extended }}>
+        <Button
+          onClick={() => {
+            context.parameters.extended = 'aftmm';
+            //context.forceRender();
+            setExtended(!extended);
+          }}>
+          Show details
+        </Button>
+      </DocsContext.Provider>
+      {extended && <>Extended</>}
       <TableWrapper
         {...{ compact, inAddonPanel }}
         className="docblock-argstable">
@@ -379,6 +408,7 @@ export const ArgsTable: FC<ArgsTableProps> = (props) => {
               key={row.key}
               row={row}
               arg={args && args[row.key]}
+              extended={extended}
               {...common}
             />
           ))}
@@ -396,6 +426,7 @@ export const ArgsTable: FC<ArgsTableProps> = (props) => {
                     row={row}
                     arg={args && args[row.key]}
                     expandable={expandable}
+                    extended={extended}
                     {...common}
                   />
                 ))}
@@ -414,6 +445,7 @@ export const ArgsTable: FC<ArgsTableProps> = (props) => {
                   key={row.key}
                   row={row}
                   arg={args && args[row.key]}
+                  extended={extended}
                   {...common}
                 />
               ))}
@@ -430,6 +462,7 @@ export const ArgsTable: FC<ArgsTableProps> = (props) => {
                         row={row}
                         arg={args && args[row.key]}
                         expandable={expandable}
+                        extended={extended}
                         {...common}
                       />
                     ))}

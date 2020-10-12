@@ -21,7 +21,7 @@
   .#{$prefix}--banner-navigation__item {
     @include typescale('omega');
     @include font-family;
-    padding: 0 $spacing-sm;
+    padding: 0 $spacing-md;
 
     &:last-child {
       padding-right: 0;
@@ -51,7 +51,7 @@
   .#{$prefix}--banner-navigation__list {
     display: flex;
     justify-content: flex-end;
-    height: rem(30px);
+    height: rem(32px);
     align-items: center;
   }
 }

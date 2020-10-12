@@ -8,7 +8,7 @@ describe('Blockquote', () => {
       <Blockquote className="extra-class">Lorem Ipsum</Blockquote>
     );
     it('Renders children as expected', () => {
-      expect(wrapper.props().children.length).toEqual(2);
+      expect(wrapper.props().children.length).toEqual(3);
     });
 
     it('Should add extra classes via className', () => {

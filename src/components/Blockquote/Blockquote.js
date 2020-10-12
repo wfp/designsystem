@@ -111,16 +111,21 @@ class Blockquote extends React.Component {
           <div className="wfp--blockquote__icon-wrapper">{iconElement}</div>
         )}
         <div className={blockquoteContentClass} style={style}>
-          {title && (
-            <div
-              onClick={this.toggleBlockquote}
-              onKeyDown={this.toggleBlockquote}
-              className="wfp--blockquote__title"
-              role="button"
-              tabIndex={0}>
-              {title}
-            </div>
-          )}
+          {title ||
+            (toggleable && (
+              <div
+                onClick={this.toggleBlockquote}
+                onKeyDown={this.toggleBlockquote}
+                className="wfp--blockquote__title"
+                role="button"
+                tabIndex={0}>
+                {title
+                  ? title
+                  : this.state.open
+                  ? 'Hide content'
+                  : 'Show content'}
+              </div>
+            ))}
           <div className="wfp--blockquote__inside">{children}</div>
         </div>
       </div>

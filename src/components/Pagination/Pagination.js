@@ -17,8 +17,7 @@ export default class Pagination extends Component {
     const { pageSizes, page, pageSize } = this.props;
     this.state = {
       page: page,
-      pageSize:
-        pageSize && pageSizes.includes(pageSize) ? pageSize : pageSizes[0],
+      pageSize: pageSizes.includes(pageSize) ? pageSize : pageSizes[0],
       prevPageSizes: pageSizes,
       prevPage: page,
       prevPageSize: pageSize,
@@ -141,7 +140,6 @@ export default class Pagination extends Component {
     disabled: false,
     page: 1,
     pagesUnknown: false,
-    pageSize: 10,
     pageSizes: [10, 20, 50],
     isLastPage: false,
     pageInputDisabled: false,
@@ -177,9 +175,7 @@ export default class Pagination extends Component {
 
   handleSizeChange = (evt) => {
     const pageSize = Number(evt.target.value);
-    this.setState({ pageSize, page: 1 }, () => {
-      console.log('after size', pageSize, this.state.pageSize);
-    });
+    this.setState({ pageSize, page: 1 }, () => {});
     this.props.onChange({ page: 1, pageSize });
   };
 
