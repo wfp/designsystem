@@ -73,6 +73,16 @@
   &.sbdocs-content {
     width:80%;
   }
+
+  ol {
+    line-height: 25.6px;
+  }
+
+  img {
+    border:1px solid #EFEFEF;
+    margin:1rem 0;
+    display: block;
+  }
 }
 .docs-status {
   margin-top: -1.5rem;
