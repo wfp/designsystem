@@ -27,10 +27,10 @@ const CardNew = ({
         }
       : {};
 
-  const pagewidth = cardWidth ? cardWidth : '350px';
+  const pagewidth = cardWidth ? cardWidth : '300px';
   const pageheight = cardHeight ? cardHeight : '260px';
 
-  const wrapperClasses = classNames('wfp--photo-cardnew', {
+  const wrapperClasses = classNames('wfp--card-box', {
     [`wfp--photo-cardnew--${kind}`]: kind,
     'wfp--photo-cardnew--no-background': !image,
     'wfp--photo-cardnew--link': isLink,
@@ -38,7 +38,7 @@ const CardNew = ({
   });
 
   const content = (
-    <div style={{ width: pagewidth, minHeight: pageheight }}>
+    <>
       <div className="wfp--photo-cardnew__background" />
       {image && kind === 'related' && <img src={image} alt={title} />}
       <div className="wfp--photo-cardnew__info">
@@ -55,10 +55,17 @@ const CardNew = ({
         </div>
       </div>
       {children}
-    </div>
+    </>
   );
 
-  return content;
+  return (
+    <div
+      className={wrapperClasses}
+      {...other}
+      style={{ width: pagewidth, minHeight: pageheight }}>
+      {content}
+    </div>
+  );
 };
 
 CardNew.propTypes = {
@@ -101,7 +108,7 @@ CardNew.propTypes = {
   /**
   Kind of Card
 */
-  kind: PropTypes.oneOf(['simple']).isRequired,
+  kind: PropTypes.oneOf(['text-card']).isRequired,
   /**
   The URL where the content uploaded is located.
 */
