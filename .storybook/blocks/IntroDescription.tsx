@@ -97,8 +97,6 @@ const DescriptionContainer: FunctionComponent<DescriptionProps> = (props) => {
 
   const Docs = context.parameters.mdx;
 
-  console.log('docs', context.parameters);
-
   const lookup = {
     experimental: { name: 'Experimental component', type: 'warning' },
     released: { name: 'Ready for production', type: 'wfp' },
@@ -156,7 +154,7 @@ const DescriptionContainer: FunctionComponent<DescriptionProps> = (props) => {
       );
     },
   };
-
+  context.parameters.extended = 'legacy';
   return (
     <Story>
       {context.parameters.status && (
@@ -172,7 +170,7 @@ const DescriptionContainer: FunctionComponent<DescriptionProps> = (props) => {
       <div className="intro-description">
         <Description markdown={markdown} />
         <MDXProvider components={componentsTableOfContent}>
-          <Docs />
+          {Docs && <Docs />}
         </MDXProvider>
       </div>
     </Story>

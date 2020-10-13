@@ -153,6 +153,7 @@ Button.propTypes = {
   tabIndex: PropTypes.number,
 
   /**
+   * FOR DESIGNERS
    * Optional prop to specify the type of the Button
    */
   type: PropTypes.oneOf(['button', 'reset', 'submit']),

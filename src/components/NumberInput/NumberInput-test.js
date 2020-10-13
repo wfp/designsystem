@@ -25,12 +25,13 @@ describe('NumberInput', () => {
           className="extra-class"
           invalidText="invalid text"
           helperText="testHelper"
+          name="name"
         />
       );
 
       label = wrapper.find('label');
       numberInput = wrapper.find('input');
-      container = wrapper.find('.wfp--number');
+      container = wrapper.find('div.wfp--number');
       formItem = wrapper.find('.wfp--form-item');
       icons = wrapper.find(Icon);
       helper = wrapper.find('.wfp--form__helper-text');
@@ -90,13 +91,6 @@ describe('NumberInput', () => {
         expect(invalidText.length).toEqual(1);
         expect(invalidText.text()).toEqual('invalid text');
       });
-
-      it('should specify light number input as expected', () => {
-        expect(wrapper.props().light).toEqual(false);
-        wrapper.setProps({ light: true });
-        expect(wrapper.props().light).toEqual(true);
-      });
-
       it('should hide label as expected', () => {
         expect(numberInput.prop('min')).toEqual(0);
         wrapper.setProps({ hideLabel: true });
@@ -120,7 +114,7 @@ describe('NumberInput', () => {
               className="extra-class"
             />
           );
-        const getNumberInput = wrapper => wrapper.find('input');
+        const getNumberInput = (wrapper) => wrapper.find('input');
 
         it('should set value as expected when value > min', () => {
           const wrapper = getWrapper(-1, 100, 0);

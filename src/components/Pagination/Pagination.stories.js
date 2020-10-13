@@ -13,13 +13,14 @@ export default {
   },
 };
 
-export const Regular = (args) => <Pagination {...args}>Text</Pagination>;
+export const Regular = (args) => <Pagination {...args} />;
 
 const description = `
 You can customize the content by using \`BannerNavigation\`.
 `;
 
 Regular.args = {
+  pageSizes: [5, 20],
   totalItems: 30,
   onChange: () => {},
 };

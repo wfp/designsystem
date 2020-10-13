@@ -44,6 +44,7 @@
   .#{$prefix}--blockquote--toggleable {
     .#{$prefix}--blockquote__title {
       cursor: pointer;
+      user-select: none;
       &:after {
         color: $interactive-01;
         content: ' +';
@@ -71,7 +72,8 @@
     }
   }
 
-  .#{$prefix}--blockquote--no-content {
+  .#{$prefix}--blockquote--no-content,
+  .#{$prefix}--blockquote--toggleable:not(.#{$prefix}--blockquote--toggle--open) {
     .#{$prefix}--blockquote__title {
       margin-bottom: 0;
     }
@@ -98,8 +100,8 @@
       white-space: pre;
       line-height: 1.4;
 
-      pre {
-        font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, Courier,
+      .#{$prefix}--blockquote__inside {
+        font-family: 'SFMono-Regular', Consolas, Liberation Mono, Menlo, Courier,
           monospace;
       }
     }

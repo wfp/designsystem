@@ -1,13 +1,15 @@
 import React from 'react';
-import { Close20, ErrorFilled20, CheckmarkFilled20 } from '@carbon/icons-react';
+import { iconClose, ErrorFilled20, CheckmarkFilled20 } from '@wfp/icons';
 import {
   NotificationButton,
   NotificationTextDetails,
   ToastNotification,
   InlineNotification,
 } from '../Notification';
+import Icon from '../Icon';
+
 import { shallow, mount } from 'enzyme';
-import { settings } from 'carbon-components';
+import settings from '../../globals/js/settings';
 
 const { prefix } = settings;
 
@@ -20,15 +22,15 @@ describe('NotificationButton', () => {
     });
 
     it('renders only one Icon', () => {
-      const icon = wrapper.find(Close20);
+      const icon = wrapper.find(Icon);
       expect(icon.length).toEqual(1);
     });
 
     it('supports custom icon', () => {
       const iconButton = mount(
-        <NotificationButton renderIcon={Close20} iconDescription="Close" />
+        <NotificationButton renderIcon={iconClose} iconDescription="Close" />
       );
-      const originalIcon = mount(<Close20 />).find('svg');
+      const originalIcon = mount(<Icon icon={iconClose} />).find('svg');
       const icon = iconButton.find('svg');
       expect(icon.find(':not(svg):not(title)').html()).toBe(
         originalIcon.children().html()
@@ -43,7 +45,7 @@ describe('NotificationButton', () => {
       });
 
       it('icon should have correct className by default', () => {
-        const icon = wrapper.find(Close20);
+        const icon = wrapper.find(Icon);
         expect(icon.hasClass(`${prefix}--toast-notification__close-icon`)).toBe(
           true
         );
@@ -59,7 +61,7 @@ describe('NotificationButton', () => {
       });
 
       it('icon should have correct className', () => {
-        const icon = wrapper.find(Close20);
+        const icon = wrapper.find(Icon);
         expect(
           icon.hasClass(`${prefix}--inline-notification__close-icon`)
         ).toBe(true);
@@ -203,12 +205,12 @@ describe('InlineNotification', () => {
 
     it('renders success notification with matching kind and <icon name=""> values', () => {
       inline.setProps({ kind: 'success' });
-      expect(inline.find(CheckmarkFilled20).length).toBe(1);
+      expect(inline.find(Icon).length).toBe(2);
     });
 
     it('renders error notification with matching kind and <icon name=""> values', () => {
       inline.setProps({ kind: 'error' });
-      expect(inline.find(ErrorFilled20).length).toBe(1);
+      expect(inline.find(Icon).length).toBe(2);
     });
 
     it('renders warning notification with matching kind and <icon name=""> values', () => {

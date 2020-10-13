@@ -19,15 +19,7 @@ function PropTypeEmptyString(props, propName, componentName) {
   return null;
 }
 
-/*Number.prototype.countDecimals = function () {
-  console.log('wwwwwwwww');
-  if (Math.floor(this.valueOf()) === this.valueOf()) return 0;
-
-  return this.toString().split('.')[1].length || 0;
-};*/
-
 const countDecimals = (value) => {
-  console.log('wwwwwwwww');
   if (Math.floor(value) === value) return 0;
 
   return value.split('.')[1].length || 0;
@@ -80,7 +72,7 @@ function NumberInput(props) {
   var _inputRef = inputRef ? inputRef : newInputRef;
 
   const handleChange = (evt) => {
-    if (!props.disabled) {
+    if (!disabled) {
       evt.persist();
       evt.imaginaryTarget = _inputRef;
 

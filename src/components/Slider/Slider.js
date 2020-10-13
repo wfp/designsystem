@@ -160,8 +160,6 @@ export default class Slider extends Component {
   }
 
   shouldComponentUpdate(nextProps) {
-    console.log('next props', nextProps, this.props);
-    console.log('props', this.props);
     if (!sliderValuePropSync && !isEqual(nextProps, this.props)) {
       this.updatePosition();
     }
