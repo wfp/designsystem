@@ -252,27 +252,27 @@ the use of red, yellow is more transient in nature.
 
 The colours can be used via JavaScript or different frameworks.
 
-> #### Usage in JavaScript
->
-> ```
-> // Import colours as json (needs a json loader)
-> import colors from '@wfp/ui/source/globals/data/colors.json'
->
-> // Import colours as js
-> import colors from '@wfp/ui/source/globals/data/colors.js'
->
-> const barChartColor = colors.navy;
-> ```
+#### Usage in JavaScript
+
+```
+// Import colours as json (needs a json loader)
+import colors from '@wfp/ui/source/globals/data/colors.json'
+
+// Import colours as js
+import colors from '@wfp/ui/source/globals/data/colors.js'
+
+const barChartColor = colors.navy;
+```
 
 Setting colour variables makes it easy to reuse colours, without the hassle of updating every single Hex colour code once they change.
 
-> #### Usage in scss
->
-> ```
-> // Only use variables
-> @import "~@wfp/ui/source/globals/scss/vars";
->
-> body {
-> background: \$ui-02;
-> }
-> ```
+#### Usage in scss
+
+```
+ // Only use variables
+ @import "~@wfp/ui/source/globals/scss/vars";
+
+ body {
+ background: \$ui-02;
+ }
+```
