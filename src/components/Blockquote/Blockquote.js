@@ -149,7 +149,7 @@ Blockquote.propTypes = {
   /**
    * Show content formated as code
    */
-  // code: PropTypes.bool,
+  code: PropTypes.bool,
   /**
    * Display content as `dangerouslySetInnerHTML` content
    */
@@ -167,7 +167,7 @@ Blockquote.propTypes = {
    */
   title: PropTypes.node,
   /**
-   * Specify the type of your Blockquote Options are `info` `code` `error` `warning` `info`
+   * Specify the type of your Blockquote Options are `info` `error` `warning` `info`
    */
   kind: PropTypes.oneOf[('info', 'warning', 'error', 'success')],
   /**
