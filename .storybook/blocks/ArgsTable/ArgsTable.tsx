@@ -359,17 +359,14 @@ export const ArgsTable: FC<ArgsTableProps> = (props) => {
 
   return (
     <ResetWrapper>
-      {context.parameters.extended}
-
-      <DocsContext.Provider value={context}>
+      {/*<DocsContext.Provider value={context}>
         <Button
           onClick={() => {
             setExtended(!extended);
           }}>
           Show details
         </Button>
-      </DocsContext.Provider>
-      {extended && <>Extended</>}
+        </DocsContext.Provider>*/}
       <TableWrapper
         {...{ compact, inAddonPanel }}
         className="docblock-argstable">
