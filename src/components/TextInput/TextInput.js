@@ -10,7 +10,6 @@ const { prefix } = settings;
 /** Text inputs enable the user to interact with and input content and data. This component can be used for long and short form entries. */
 const TextInput = (props) => {
   const {
-    additional,
     disabled,
     labelText,
     className,
