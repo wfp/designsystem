@@ -18,4 +18,9 @@
     @include input-base;
     @include input-error;
   }
+
+  .#{$prefix}--text--required label::after {
+    content: ' *';
+    color: red;
+  }
 }

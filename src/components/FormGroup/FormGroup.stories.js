@@ -17,17 +17,17 @@ export default {
 export const Default = (args) => (
   <FormGroup {...args} className="wfp--form-long">
     <TextInput
-      id="test1"
+      id="test11"
       labelText="Text Input label"
       placeholder="Placeholder text"
     />
     <TextInput
-      id="test2"
+      id="test21"
       labelText="Text Input label"
       placeholder="Placeholder text"
     />
     <TextInput
-      id="test3"
+      id="test31"
       labelText="Text Input label"
       placeholder="Placeholder text"
     />
@@ -36,3 +36,56 @@ export const Default = (args) => (
 Default.args = {
   legendText: 'FormGroup heading',
 };
+
+export const AddressDetails = (args) => (
+  <>
+    <FormGroup
+      {...args}
+      className="wfp--form-long"
+      align="horizontal"
+      legendText="Personal Info">
+      <TextInput
+        id="Firstname1"
+        labelText="Firstname"
+        placeholder="Placeholder text"
+        required
+      />
+      <TextInput
+        id="Lastname2"
+        labelText="Lastname"
+        placeholder="Placeholder text"
+      />
+      <TextInput
+        id="phone3"
+        labelText="Phone Number"
+        placeholder="Placeholder text"
+      />
+    </FormGroup>
+    <FormGroup
+      {...args}
+      className="wfp--form-long"
+      align="horizontal"
+      legendText="Address Info"
+      style={{ marginTop: '1rem' }}>
+      <TextInput
+        id="address1"
+        labelText="Address line 1"
+        placeholder="Placeholder text"
+      />
+      <TextInput
+        id="address2"
+        labelText="Address line 2"
+        placeholder="Placeholder text"
+      />
+    </FormGroup>
+    <FormGroup {...args} className="wfp--form-long" align="horizontal">
+      <TextInput id="city" labelText="City" placeholder="Placeholder text" />
+      <TextInput id="state" labelText="State" placeholder="Placeholder text" />
+      <TextInput
+        id="zipcode"
+        labelText="Zip code"
+        placeholder="Placeholder text"
+      />
+    </FormGroup>
+  </>
+);
