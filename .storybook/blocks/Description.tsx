@@ -77,7 +77,7 @@ const DescriptionContainer: FunctionComponent<DescriptionProps> = (props) => {
   const Docs = context.parameters.mdx;
   return markdown || context.parameters.mdx ? (
     <Story>
-      <Docs />
+      {context.parameters.mdx && <Docs />}
       {/*<Description markdown={markdown} />*/}
     </Story>
   ) : null;

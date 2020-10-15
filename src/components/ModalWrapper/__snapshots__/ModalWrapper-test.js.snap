@@ -72,6 +72,7 @@ exports[`ModalWrapper should render 1`] = `
     <Modal
       iconDescription="close the modal"
       inPortal={true}
+      lazyLoad={false}
       modalHeading="Transactional Modal"
       modalLabel="Test Modal Label"
       onKeyDown={[Function]}
@@ -103,16 +104,18 @@ exports[`ModalWrapper should render 1`] = `
                   <div
                     class="wfp--modal-header"
                   >
-                    <h4
-                      class="wfp--modal-header__label"
-                    >
-                      Test Modal Label
-                    </h4>
-                    <h2
-                      class="wfp--modal-header__heading"
-                    >
-                      Transactional Modal
-                    </h2>
+                    <div>
+                      <h4
+                        class="wfp--modal-header__label"
+                      >
+                        Test Modal Label
+                      </h4>
+                      <h2
+                        class="wfp--modal-header__heading"
+                      >
+                        Transactional Modal
+                      </h2>
+                    </div>
                     <button
                       class="wfp--modal-close"
                       type="button"
@@ -192,16 +195,18 @@ exports[`ModalWrapper should render 1`] = `
               <div
                 className="wfp--modal-header"
               >
-                <h4
-                  className="wfp--modal-header__label"
-                >
-                  Test Modal Label
-                </h4>
-                <h2
-                  className="wfp--modal-header__heading"
-                >
-                  Transactional Modal
-                </h2>
+                <div>
+                  <h4
+                    className="wfp--modal-header__label"
+                  >
+                    Test Modal Label
+                  </h4>
+                  <h2
+                    className="wfp--modal-header__heading"
+                  >
+                    Transactional Modal
+                  </h2>
+                </div>
                 <button
                   className="wfp--modal-close"
                   onClick={[Function]}

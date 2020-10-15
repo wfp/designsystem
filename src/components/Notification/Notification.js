@@ -221,8 +221,6 @@ const iconTypes = {
 
 function NotificationIcon({ iconDescription, kind, notificationType }) {
   const iconForKind = iconTypes[kind];
-
-  console.log('kind', kind);
   if (!iconForKind) {
     return null;
   }

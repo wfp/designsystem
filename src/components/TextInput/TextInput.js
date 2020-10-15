@@ -155,7 +155,7 @@ TextInput.propTypes = {
 };
 
 TextInput.defaultProps = {
-  className: 'wfp--text__input',
+  className: 'wfp--text-input',
   disabled: false,
   type: 'text',
   onChange: () => {},

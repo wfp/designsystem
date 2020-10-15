@@ -26,9 +26,10 @@
     "semantic-release": "semantic-release",
     "start": "npm run storybook",
     "storybook": "STORYBOOK_INTERNAL_ASSETS=../ start-storybook -s ./src/assets -p 9000",
-    "test": "jest",
+    "test": "jest --watch",
     "test:generate-output": "jest --json --outputFile=.jest-test-results.json || true",
-    "test-ssr": "npm run build && node ssr-tests/*.js"
+    "test-ssr": "npm run build && node ssr-tests/*.js",
+    "jest-w": "jest --watch"
   },
   "keywords": [
     "WFP",

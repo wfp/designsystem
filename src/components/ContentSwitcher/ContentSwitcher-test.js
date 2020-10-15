@@ -66,18 +66,17 @@ describe('ContentSwitcher', () => {
 
     const children = wrapper.find(Switch);
 
-    children
-      .first()
-      .props()
-      .onClick(mockData);
+    children.first().props().onClick(mockData);
 
     it('should invoke onChange', () => {
       expect(onChange).toBeCalledWith(mockData);
     });
 
+    /* Not supported for functional components
     it('should set the correct selectedIndex', () => {
       expect(wrapper.state('selectedIndex')).toEqual(mockData.index);
     });
+    */
 
     it('should set selected to true on the correct child', () => {
       wrapper.update();
@@ -103,18 +102,16 @@ describe('ContentSwitcher', () => {
 
     const children = wrapper.find(Switch);
 
-    children
-      .first()
-      .props()
-      .onKeyDown(mockData);
+    children.first().props().onKeyDown(mockData);
 
     it('should invoke onChange', () => {
       expect(onChange).toBeCalledWith(mockData);
     });
-
+    /* Not supported for functional components
     it('should set the correct selectedIndex', () => {
       expect(wrapper.state('selectedIndex')).toEqual(mockData.index);
     });
+    */
 
     it('should set selected to true on the correct child', () => {
       wrapper.update();

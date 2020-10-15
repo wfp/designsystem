@@ -71,60 +71,68 @@ const StyledTd = styled.td<{ expandable: boolean }>(
 );
 
 export const ArgRow: FC<ArgRowProps> = (props) => {
-  const { row, updateArgs, compact, expandable, initialExpandedArgs } = props;
+  const {
+    row,
+    updateArgs,
+    compact,
+    expandable,
+    extended,
+    initialExpandedArgs,
+  } = props;
   const { name, description } = row;
   const table = (row.table || {}) as TableAnnotation;
   const type = table.type || row.type;
   const defaultValue = table.defaultValue || row.defaultValue;
   const required = row.type?.required;
   const hasDescription = description != null && description !== '';
-
-  return (
-    <tr>
-      <StyledTd expandable={expandable}>
-        <Name>{name}</Name>
-        {required ? <Required title="Required">*</Required> : null}
-      </StyledTd>
-      {compact ? null : (
-        <td>
-          {hasDescription && (
-            <Description>
-              <Markdown>{description}</Markdown>
-            </Description>
-          )}
-          {table.jsDocTags != null ? (
-            <>
-              <TypeWithJsDoc hasDescription={hasDescription}>
+  if (description.includes('FOR DESIGNERS') || extended !== true)
+    return (
+      <tr>
+        <StyledTd expandable={expandable}>
+          <Name>{name}</Name>
+          {required ? <Required title="Required">*</Required> : null}
+        </StyledTd>
+        {compact ? null : (
+          <td>
+            {hasDescription && (
+              <Description>
+                <Markdown>{description.replace('FOR DESIGNERS', '')}</Markdown>
+              </Description>
+            )}
+            {table.jsDocTags != null ? (
+              <>
+                <TypeWithJsDoc hasDescription={hasDescription}>
+                  <ArgValue
+                    value={type}
+                    initialExpandedArgs={initialExpandedArgs}
+                  />
+                </TypeWithJsDoc>
+                <ArgJsDoc tags={table.jsDocTags} />
+              </>
+            ) : (
+              <Type hasDescription={hasDescription}>
                 <ArgValue
                   value={type}
                   initialExpandedArgs={initialExpandedArgs}
                 />
-              </TypeWithJsDoc>
-              <ArgJsDoc tags={table.jsDocTags} />
-            </>
-          ) : (
-            <Type hasDescription={hasDescription}>
-              <ArgValue
-                value={type}
-                initialExpandedArgs={initialExpandedArgs}
-              />
-            </Type>
-          )}
-        </td>
-      )}
-      {compact ? null : (
-        <td>
-          <ArgValue
-            value={defaultValue}
-            initialExpandedArgs={initialExpandedArgs}
-          />
-        </td>
-      )}
-      {updateArgs ? (
-        <td>
-          <ArgControl {...(props as ArgControlProps)} />
-        </td>
-      ) : null}
-    </tr>
-  );
+              </Type>
+            )}
+          </td>
+        )}
+        {compact ? null : (
+          <td>
+            <ArgValue
+              value={defaultValue}
+              initialExpandedArgs={initialExpandedArgs}
+            />
+          </td>
+        )}
+        {updateArgs ? (
+          <td>
+            <ArgControl {...(props as ArgControlProps)} />
+          </td>
+        ) : null}
+      </tr>
+    );
+  return null;
 };
