@@ -13,7 +13,7 @@
 }
 
 .#{$prefix}--photo-cardnew--text-card {
-  padding: 1rem;
+  padding: $spacing-md;
 }
 
 .#{$prefix}--photo-cardnew__info__metadata {
@@ -36,5 +36,97 @@
   letter-spacing: 0.05em; */
   & + .#{$prefix}--photo-cardnew__info__subtitle {
     margin-top: $spacing-xs;
+  }
+}
+
+.#{$prefix}--photo-cardnew__background {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: inherit;
+  background-size: cover;
+  background-position: 50% 50%;
+  z-index: 100;
+  overflow: hidden;
+}
+
+.#{$prefix}--photo-cardnew--image-header {
+  .#{$prefix}--header-photo {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  .#{$prefix}--photo-cardnew__info {
+    background: $ui-01;
+    padding: $spacing-md;
+  }
+  .#{$prefix}--photo-cardnew__info__background {
+    display: none;
+  }
+  .#{$prefix}--photo-cardnew__info__title {
+    color: $interactive-01;
+  }
+}
+
+.#{$prefix}--photo-cardnew--overlay {
+  .#{$prefix}--photo-cardnew__info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: inherit;
+    padding: $spacing-md * 1.1 $spacing-md;
+    z-index: 100;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: $color__white;
+    background: rgba(#000000, 0.5);
+  }
+  // .#{$prefix}--photo-cardnew__info {
+
+  // }
+  .#{$prefix}--photo-cardnew__info__background {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    filter: blur(6px);
+    background-size: cover;
+    transform: scale(1.05);
+    z-index: -1;
+    height: rem(200px);
+    @include breakpoint(bp--md--major) {
+      height: rem(260px);
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      transition: all 0.1s;
+      background: #000000;
+      opacity: 0.6;
+    }
+  }
+}
+
+.#{$prefix}--photo-cardnew--overlay {
+  height: rem(300px);
+  @include breakpoint(bp--md--major) {
+    height: rem(500px);
+  }
+  box-shadow: none;
+  .#{$prefix}--photo-cardnew__info {
+    padding: $spacing-lg;
+  }
+  .#{$prefix}--photo-cardnew__info__background {
+    height: rem(300px);
+    @include breakpoint(bp--md--major) {
+      height: rem(500px);
+    }
   }
 }

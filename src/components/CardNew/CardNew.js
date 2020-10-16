@@ -21,7 +21,7 @@ const CardNew = ({
   ...other
 }) => {
   const style =
-    kind !== 'related'
+    kind == 'overlay'
       ? {
           backgroundImage: `url(${image})`,
         }
@@ -39,10 +39,18 @@ const CardNew = ({
 
   const content = (
     <>
-      <div className="wfp--photo-cardnew__background" />
-      {image && kind === 'related' && <img src={image} alt={title} />}
+      <div className="wfp--photo-cardnew__background" style={style} />
+      {image && kind === 'image-header' && (
+        <img src={image} alt={title} className="wfp--header-photo" />
+      )}
       <div className="wfp--photo-cardnew__info">
         <div>
+          {kind === 'overlay' && (
+            <div
+              className="wfp--photo-cardnew__info__background"
+              style={style}
+            />
+          )}
           {metadata && (
             <p className="wfp--photo-cardnew__info__metadata">{metadata}</p>
           )}
@@ -108,7 +116,7 @@ CardNew.propTypes = {
   /**
   Kind of Card
 */
-  kind: PropTypes.oneOf(['text-card']).isRequired,
+  kind: PropTypes.oneOf(['text-card', 'image-header', 'overlay']).isRequired,
   /**
   The URL where the content uploaded is located.
 */
