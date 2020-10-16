@@ -20,11 +20,11 @@ $css--helpers: true;
     @include reset;
     @include font-family;
     width: 100%;
-    background-color: $ui-01;
+    background-color: var(--ui-01);
     padding: $spacing-xs $spacing-md;
     display: flex;
     align-items: center;
-    border: 1px solid $ui-03;
+    border: 1px solid var(--ui-03);
     height: rem(46px);
 
     .#{$prefix}--form-item {
@@ -45,7 +45,7 @@ $css--helpers: true;
 
   .#{$prefix}--pagination__text {
     @include typescale('omega');
-    color: $text-02;
+    color: var(--text-02);
     display: none;
     padding-right: $spacing-2xs;
 
@@ -57,7 +57,7 @@ $css--helpers: true;
   .#{$prefix}--pagination__button-icon {
     height: rem(12px);
     width: rem(12px);
-    fill: $ui-05;
+    fill: var(--ui-05);
     pointer-events: none;
     transition: $transition--base;
     margin-top: $spacing-3xs;
@@ -83,7 +83,7 @@ $css--helpers: true;
       cursor: default;
 
       .#{$prefix}--pagination__button-icon {
-        fill: $ui-05;
+        fill: var(--ui-05);
       }
     }
   }
@@ -138,7 +138,7 @@ $css--helpers: true;
     }
 
     .#{$prefix}--text-input {
-      background-color: $field-01;
+      background-color: var(--field-01);
       height: rem(24px);
       min-width: rem(24px);
       width: rem(24px);
@@ -163,8 +163,8 @@ $css--helpers: true;
 
     .#{$prefix}--pagination__button {
       height: rem(46px);
-      border-left: 1px solid $ui-03;
-      border-right: 1px solid $ui-03;
+      border-left: 1px solid var(--ui-03);
+      border-right: 1px solid var(--ui-03);
       margin: 0;
     }
 

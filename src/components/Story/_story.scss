@@ -152,7 +152,7 @@
   .#{$prefix}--story__sub-heading {
     @include typescale('zeta');
     font-weight: normal;
-    color: $ui-05;
+    color: var(--ui-05);
     margin-top: $spacing-2xs !important;
     margin-bottom: $spacing-2xs;
     font-style: italic;
@@ -175,16 +175,16 @@
   .#{$prefix}--inline-highlight {
     display: inline-block;
     font-weight: 600;
-    background: $ui-03;
+    background: var(--ui-03);
     padding: 0.05em 0.1em;
   }
 
   .#{$prefix}--story__divider {
-    border: 1px solid $ui-04;
+    border: 1px solid var(--ui-04);
   }
 
   .#{$prefix}--story__divider--lg {
-    border: 2px solid $ui-04;
+    border: 2px solid var(--ui-04);
   }
 }
 
@@ -234,7 +234,7 @@
   .#{$prefix}--story__subtitle {
     @include typescale('zeta');
     font-weight: normal;
-    color: $interactive-01;
+    color: var(--interactive-01);
     margin-top: $spacing-xl;
     margin-bottom: $spacing-2xs;
     text-transform: uppercase;
@@ -286,7 +286,7 @@
 
   .#{$prefix}--story__sup {
     font-size: 0.7em;
-    background: $ui-03;
+    background: var(--ui-03);
     vertical-align: top;
     position: relative;
     top: -0.5em;

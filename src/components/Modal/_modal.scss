@@ -50,7 +50,7 @@
   }
 
   .#{$prefix}--modal--danger {
-    @include modal--color($support-01);
+    @include modal--color(var(--support-01));
   }
 
   .#{$prefix}--modal__wrapper {
@@ -72,7 +72,7 @@
     margin: auto;
     display: flex;
     flex-direction: column;
-    background-color: $ui-01;
+    background-color: var(--ui-01);
     //border-top: $modal-border-top;
     border-radius: $modal-border-radius;
     min-width: 100%;
@@ -123,7 +123,7 @@
   .#{$prefix}--modal-header__label {
     @include reset;
     @include typescale('omega');
-    color: $text-02;
+    color: var(--text-02);
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -134,7 +134,7 @@
     @include reset;
     @include typescale('beta');
     //font-weight: 300;
-    //color: $text-01;
+    //color: var(--text-01);
   }
 
   .#{$prefix}--modal-content {
@@ -183,7 +183,7 @@
 
   .#{$prefix}--modal-close__icon {
     transition: 200ms;
-    fill: $ui-05;
+    fill: var(--ui-05);
     width: rem(12px);
     height: rem(12px);
   }

@@ -32,7 +32,7 @@
   }
   .sbdocs-a {
     //@extend .wfp--link;
-    color: $interactive-01;
+    color: var(--interactive-01);
     font-size: 1rem;
     line-height: inherit;
   }
@@ -419,4 +419,10 @@ $css--reset: true;
 
 .os-host.os-host-foreign {
   overflow: hidden !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  .sbdocs-preview {
+    background: #000 !important;
+  }
 }

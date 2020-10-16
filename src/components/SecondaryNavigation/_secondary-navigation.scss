@@ -9,10 +9,10 @@
 
 @include exports('secondary-navigation') {
   .#{$prefix}--secondary-navigation {
-    background: $color__white;
+    background: var(ui-01);
     @include reset;
     display: flex;
-    border-bottom: 2px solid $color__navy-gray-8;
+    border-bottom: 2px solid var(ui-02);
 
     .#{$prefix}--tabs {
       margin-bottom: -2px;

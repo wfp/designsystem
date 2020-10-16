@@ -108,7 +108,8 @@
     "react-hook-form": "^6.8.2",
     "react-popper": "^2.2.3",
     "warning": "^4.0.3",
-    "window-or-global": "^1.0.1"
+    "window-or-global": "^1.0.1",
+    "wml": "^0.0.83"
   },
   "devDependencies": {
     "@babel/plugin-proposal-decorators": "^7.10.5",
@@ -217,6 +218,7 @@
     "sass-loader": "^9.0.3",
     "semantic-release": "^17.1.2",
     "story-description-loader": "^1.0.0",
+    "storybook-dark-mode": "^1.0.3",
     "storybook-readme": "^5.0.8",
     "string-replace-loader": "^2.3.0",
     "style-loader": "^1.2.1",

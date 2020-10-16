@@ -69,14 +69,14 @@ $css--reset: false;
     font-weight: 500;
   }
   &.colour__contrast--light {
-    color: #fff;
+    color: var(ui-01);
   }
   > div {
     @include typescale('caption');
     font-size: 0.7rem;
     margin-top: $spacing-2xs;
     padding: $spacing-2xs;
-    color: #fff;
+    color: var(ui-01);
     width: auto;
     background: rgba(#000, 0.7);
   }

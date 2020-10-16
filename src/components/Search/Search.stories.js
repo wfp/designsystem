@@ -15,6 +15,10 @@ export default {
 
 export const Regular = (args) => <Search {...args} />;
 
+Regular.args = {
+  name: 'search',
+};
+
 const description = `
 You can customize the content by using \`BannerNavigation\`.
 `;

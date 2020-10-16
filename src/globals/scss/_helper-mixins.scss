@@ -31,16 +31,16 @@
 }
 
 @mixin placeholder-colors {
-  color: $text-03;
+  color: var(--text-03);
 }
 
 @mixin input-base {
   height: $input-height;
   min-width: 10rem;
   padding: 0 $spacing-xs;
-  color: $text-01;
+  color: var(--text-01);
   appearance: none;
-  background-color: $field-01;
+  background-color: var(--field-01);
   order: 2;
   border: $input-border;
   border-radius: $input-border-radius;
@@ -70,8 +70,8 @@
 @mixin input-error {
   &:invalid,
   &.#{$prefix}--input--invalid {
-    border-color: $support-01;
-    outline: 1px solid $support-01;
+    border-color: var(--support-01);
+    outline: 1px solid var(--support-01);
   }
 }
 
@@ -88,10 +88,10 @@
 
 @mixin read-only($type: 'border') {
   @if ($type == 'border') {
-    border-color: $ui-02;
+    border-color: var(--ui-02);
     &:hover,
     &:focus {
-      border-color: $ui-02;
+      border-color: var(--ui-02);
       outline: none;
       box-shadow: none;
     }
@@ -100,18 +100,18 @@
 
 @mixin focus-outline($type: 'border') {
   @if ($type == 'border') {
-    border-color: $interactive-01;
-    outline: 1px solid $interactive-01;
+    border-color: var(--interactive-01);
+    outline: 1px solid var(--interactive-01);
     box-shadow: 0px 2px 8px 0 $focus;
   }
 
   @if ($type == 'border-small') {
-    outline: 2px solid $interactive-02;
+    outline: 2px solid var(--interactive-02);
     outline-offset: 2px;
   }
 
   @if ($type == 'border-important') {
-    outline: 2px solid $interactive-01 !important;
+    outline: 2px solid var(--interactive-01) !important;
     outline-offset: -1px;
   }
 
@@ -121,7 +121,7 @@
   }
 
   @if ($type == 'outline') {
-    outline: 2px solid $interactive-01;
+    outline: 2px solid var(--interactive-01);
     outline-offset: -2px;
   }
 }

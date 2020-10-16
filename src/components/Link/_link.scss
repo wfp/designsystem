@@ -16,7 +16,7 @@
     @include font-family;
     @include font-smoothing;
     cursor: pointer;
-    color: $interactive-01;
+    color: var(--interactive-01);
     text-decoration: none;
     transition: $transition--base;
     &:hover,
@@ -24,14 +24,14 @@
       text-decoration: underline;
     }
     &:visited {
-      color: $interactive-01;
+      color: var(--interactive-01);
     }
 
     &:active,
     &:hover,
     &:focus,
     &.#{$prefix}--link--active {
-      color: $interactive-02;
+      color: var(--interactive-02);
     }
 
     &:focus,

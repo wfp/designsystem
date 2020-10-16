@@ -122,7 +122,7 @@ const colors = {
   'interactive-01': {
     name: 'interactive-01',
     hex: '#0b77c2',
-    scss: '$interactive-01',
+    scss: 'var(--interactive-01)',
     css: 'color__interactive-01',
     type: 'brand',
     shortDescription: 'Primary interactive color, Primary buttons',
@@ -198,7 +198,7 @@ const colors = {
   'ui-02': {
     name: 'ui-02',
     hex: '#eff2f5',
-    scss: '$ui-02',
+    scss: 'var(--ui-02)',
     css: 'color__ui-02',
     type: 'ui',
     shortDescription: 'Primary page background; Secondary container background',

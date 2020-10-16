@@ -21,8 +21,8 @@
     min-width: 10rem;
     min-height: $input-height;
     padding: $spacing-xs;
-    color: $text-01;
-    background-color: $field-01;
+    color: var(--text-01);
+    background-color: var(--field-01);
     appearance: none;
     border: $input-border;
     border-radius: $input-border-radius;
@@ -50,11 +50,11 @@
       border: $input-border;
     }
     &:focus ~ .#{$prefix}--label {
-      color: $interactive-01;
+      color: var(--interactive-01);
     }
 
     &[data-invalid]:focus + .#{$prefix}--label {
-      color: $support-01;
+      color: var(--support-01);
     }
 
     &:read-only {
@@ -63,7 +63,7 @@
   }
 
   .#{$prefix}--text-area--light {
-    background: $field-02;
+    background: var(--field-02);
   }
 
   // Skeleton State

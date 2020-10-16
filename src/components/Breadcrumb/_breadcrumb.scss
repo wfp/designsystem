@@ -39,7 +39,7 @@
       margin-right: $spacing-sm;
     }
 
-    color: $text-03;
+    color: var(--text-03);
   }
 
   .#{$prefix}--breadcrumb--no-trailing-slash
@@ -72,8 +72,8 @@
     &:hover,
     &:focus {
       outline: none;
-      color: $interactive-01;
-      border-bottom: 1px solid $interactive-01;
+      color: var(--interactive-01);
+      border-bottom: 1px solid var(--interactive-01);
     }
 
     // Applies to Firefox only

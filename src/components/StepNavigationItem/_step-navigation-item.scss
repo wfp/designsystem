@@ -38,14 +38,14 @@
 
   .#{$prefix}--step-navigation__nav-item__text {
     text-decoration: underline;
-    color: $interactive-01;
+    color: var(--interactive-01);
   }
 
   .#{$prefix}--step-navigation__nav-item__helper-text {
     display: block;
     margin-top: $spacing-2xs;
     text-decoration: none;
-    color: $ui-05;
+    color: var(--ui-05);
     @include typescale('omega');
   }
 
@@ -59,7 +59,7 @@
 
   .#{$prefix}--step-navigation__section__indicator {
     display: block;
-    border: 2px solid $ui-05;
+    border: 2px solid var(--ui-05);
     border-radius: 30px;
     flex-shrink: 0;
     width: rem(34px);
@@ -74,8 +74,8 @@
     align-items: center;
     justify-content: center;
     position: relative;
-    //background: $ui-01;
-    border: 2px solid $interactive-01;
+    //background: var(--ui-01);
+    border: 2px solid var(--interactive-01);
     flex-shrink: 0;
     border-radius: 3em;
     width: 3em;
@@ -90,13 +90,13 @@
     margin: 0.7em 1em 0.7em 0;
     text-align: center;
     z-index: 2;
-    color: $interactive-01;
+    color: var(--interactive-01);
     transition: all 0.1s;
 
     > svg {
       position: relative;
       top: 1px;
-      fill: $interactive-01;
+      fill: var(--interactive-01);
       width: 1em;
       height: 1em;
 
@@ -137,14 +137,14 @@
       left: calc(50% - 0px);
       margin-left: -1px;
       content: '';
-      background: $ui-04;
+      background: var(--ui-04);
     }
   }
 
   .#{$prefix}--step-navigation__nav-item {
     display: flex;
     align-items: center;
-    color: $text-01;
+    color: var(--text-01);
     text-decoration: none;
     padding: $spacing-md;
     width: 100%;
@@ -161,7 +161,7 @@
 
       &:focus {
         background-color: transparent;
-        color: $text-01;
+        color: var(--text-01);
         outline: 1px solid transparent;
       }
     }
@@ -170,10 +170,10 @@
   /* Before State */
   .#{$prefix}--step-navigation__nav-item--before {
     .#{$prefix}--step-navigation__nav-item__indicator {
-      //background: $interactive-01;
-      //color: $ui-01;
+      //background: var(--interactive-01);
+      //color: var(--ui-01);
       &:after {
-        background-color: $interactive-01;
+        background-color: var(--interactive-01);
       }
     }
   }
@@ -182,50 +182,50 @@
   .#{$prefix}--step-navigation__nav-item--selected {
     .#{$prefix}--step-navigation__nav-item__text {
       text-decoration: none;
-      color: $text-01;
+      color: var(--text-01);
     }
 
     .#{$prefix}--step-navigation__nav-item__indicator {
-      background: $interactive-01;
-      border-color: $interactive-01 !important;
-      color: $ui-01;
+      background: var(--interactive-01);
+      border-color: var(--interactive-01) !important;
+      color: var(--ui-01);
 
       > svg {
-        fill: $ui-01 !important;
+        fill: var(--ui-01) !important;
       }
 
       &:after {
-        background-color: $interactive-01;
+        background-color: var(--interactive-01);
       }
     }
   }
 
   .#{$prefix}--step-navigation__nav-item--warning {
     .#{$prefix}--step-navigation__nav-item__indicator {
-      border-color: $support-03;
+      border-color: var(--support-03);
 
       .#{$prefix}--step-navigation--small & {
-        border-color: $support-03;
-        background: $support-03;
+        border-color: var(--support-03);
+        background: var(--support-03);
 
         > svg {
           top: -0.05em;
-          fill: $ui-01 !important;
+          fill: var(--ui-01) !important;
         }
       }
 
       > svg {
-        fill: $support-03 !important;
+        fill: var(--support-03) !important;
         top: -1px;
       }
     }
 
     /*&.#{$prefix}--step-navigation__nav-item--selected {
       .#{$prefix}--step-navigation__nav-item__indicator {
-        background: $support-03;
-        border-color: $support-03;
+        background: var(--support-03);
+        border-color: var(--support-03);
         > svg {
-          fill: $ui-01 !important;
+          fill: var(--ui-01) !important;
         }
       }
     }*/
@@ -233,19 +233,19 @@
 
   .#{$prefix}--step-navigation__nav-item--complete {
     .#{$prefix}--step-navigation__nav-item__indicator {
-      border-color: $support-02;
+      border-color: var(--support-02);
 
       .#{$prefix}--step-navigation--small & {
-        border-color: $support-02;
-        background: $support-02;
+        border-color: var(--support-02);
+        background: var(--support-02);
 
         > svg {
-          fill: $ui-01 !important;
+          fill: var(--ui-01) !important;
         }
       }
 
       > svg {
-        fill: $support-02 !important;
+        fill: var(--support-02) !important;
         position: relative;
         top: 1px;
       }
@@ -253,10 +253,10 @@
 
     /*&.#{$prefix}--step-navigation__nav-item--selected {
       .#{$prefix}--step-navigation__nav-item__indicator {
-        background: $support-02;
-        border-color: $support-02;
+        background: var(--support-02);
+        border-color: var(--support-02);
         > svg {
-          fill: $ui-01 !important;
+          fill: var(--ui-01) !important;
         }
       }
     }*/
@@ -274,57 +274,57 @@
   /* Locked State */
   .#{$prefix}--step-navigation__nav-item--locked {
     cursor: not-allowed;
-    color: $ui-03;
+    color: var(--ui-03);
 
     .#{$prefix}--step-navigation__nav-item__text {
-      color: $text-02;
+      color: var(--text-02);
       text-decoration: none;
     }
 
     .#{$prefix}--step-navigation__nav-item__indicator {
-      border-color: $ui-05;
+      border-color: var(--ui-05);
 
       > svg {
         top: 0px;
-        fill: $ui-05 !important;
+        fill: var(--ui-05) !important;
       }
     }
   }
 
   /* Summary State */
   .#{$prefix}--step-navigation__nav-item--summary {
-    //color: $ui-03;
+    //color: var(--ui-03);
     //margin-top: 1rem;
 
     .#{$prefix}--step-navigation__nav-item__text {
-      //color: $text-02;
+      //color: var(--text-02);
       //text-decoration: none;
     }
 
     .#{$prefix}--step-navigation__nav-item__indicator {
-      //border-color: $ui-05;
+      //border-color: var(--ui-05);
       /* &:after {
         display: none !important;
       } */
 
       > svg {
         top: -1px;
-        //fill: $ui-05 !important;
+        //fill: var(--ui-05) !important;
       }
     }
   }
 
   /* Skipped State */
   .#{$prefix}--step-navigation__nav-item--skip {
-    color: $ui-03;
+    color: var(--ui-03);
 
     .#{$prefix}--step-navigation__nav-item__text {
-      color: $text-02;
+      color: var(--text-02);
       text-decoration: none;
     }
 
     .#{$prefix}--step-navigation__nav-item__indicator {
-      border-color: $ui-04;
+      border-color: var(--ui-04);
 
       .#{$prefix}--step-navigation--regular & {
         clip-path: polygon(
@@ -340,7 +340,7 @@
 
       > svg {
         top: 0px;
-        fill: $ui-05 !important;
+        fill: var(--ui-05) !important;
       }
     }
   }
@@ -348,15 +348,15 @@
   /* Disabled State */
   .#{$prefix}--step-navigation__nav-item--disabled {
     cursor: not-allowed;
-    color: $ui-03;
+    color: var(--ui-03);
 
     .#{$prefix}--step-navigation__nav-item__text {
-      color: $text-02;
+      color: var(--text-02);
       text-decoration: none;
     }
 
     .#{$prefix}--step-navigation__nav-item__indicator {
-      border-color: $ui-04;
+      border-color: var(--ui-04);
 
       .#{$prefix}--step-navigation--regular & {
         clip-path: polygon(
@@ -372,7 +372,7 @@
 
       > svg {
         top: 0px;
-        fill: $ui-05 !important;
+        fill: var(--ui-05) !important;
       }
     }
   }

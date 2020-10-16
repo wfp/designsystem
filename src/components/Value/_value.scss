@@ -19,7 +19,7 @@
   }
   .#{$prefix}--title {
     @include typescale('epsilon');
-    color: $text-02;
+    color: var(--text-02);
     margin-bottom: $spacing-xs;
     font-weight: 600;
   }
