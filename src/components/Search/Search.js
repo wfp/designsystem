@@ -23,7 +23,7 @@ function NumberInput(props) {
     labelText,
     max,
     min,
-    kind,
+    kind = 'large',
     step = 1,
     invalid,
     invalidText,
