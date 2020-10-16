@@ -54,7 +54,7 @@
 
   &:focus {
     outline: none;
-    //border: $button-border-width solid $ui-02;
+    //border: $button-border-width solid var(--ui-02);
     //outline: $button-border-width solid $hover-bg-color;
   }
 
@@ -64,7 +64,7 @@
   }
 
   &:active {
-    background-color: darken($bg-color, 20%);
+    //background-color: darken($bg-color, 20%);
   }
 
   .#{$prefix}--btn__icon {

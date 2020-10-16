@@ -23,7 +23,7 @@
   // Animation (Spin by default)
   .#{$prefix}--loading__svg {
     fill: transparent;
-    stroke: $interactive-01;
+    stroke: var(--interactive-01);
     stroke-width: 7;
     stroke-linecap: butt;
     stroke-dasharray: 240;
@@ -39,7 +39,7 @@
     height: 2rem;
 
     .#{$prefix}--loading__svg {
-      stroke: $ui-05;
+      stroke: var(--ui-05);
     }
   }
 
@@ -49,7 +49,7 @@
     left: 0;
     height: 100%;
     width: 100%;
-    background-color: rgba($ui-01, 0.6);
+    background-color: rgba(var(--ui-01), 0.6);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -82,7 +82,7 @@
   }
 
   .#{$prefix}--loading__stroke {
-    stroke: $interactive-01;
+    stroke: var(--interactive-01);
     stroke-dashoffset: $loading__gap;
   }
 
@@ -96,11 +96,11 @@
   }
 
   .#{$prefix}--loading--small .#{$prefix}--loading__svg {
-    stroke: $interactive-01;
+    stroke: var(--interactive-01);
   }
 
   .#{$prefix}--loading__background {
-    stroke: $ui-03;
+    stroke: var(--ui-03);
     stroke-dashoffset: 0;
   }
 
@@ -110,7 +110,7 @@
     left: 0;
     height: 100%;
     width: 100%;
-    background-color: rgba($ui-02, 0.6);
+    background-color: rgba(var(--ui-02), 0.6);
     display: flex;
     justify-content: center;
     align-items: center;

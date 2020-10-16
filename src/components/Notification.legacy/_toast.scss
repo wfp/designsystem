@@ -16,7 +16,7 @@
   font-family: $rt-font-family;
   cursor: pointer;
   direction: ltr;
-  border-left: 4px solid $brand-01;
+  border-left: 4px solid var(--brand-01);
   color: $rt-text-color-default;
   &--rtl {
     direction: rtl;
@@ -29,7 +29,7 @@
   }
   &--success {
     background: $rt-color-success;
-    border-left-color: $support-02;
+    border-left-color: var(--support-02);
     svg {
       width: 20px;
       height: 20px;
@@ -37,16 +37,16 @@
       line-height: 1em;
       vertical-align: middle;
       margin-right: 0.5rem;
-      fill: $support-02;
+      fill: var(--support-02);
     }
   }
   &--warning {
     background: $rt-color-warning;
-    border-left-color: $support-03;
+    border-left-color: var(--support-03);
   }
   &--error {
     background: $rt-color-error;
-    border-left-color: $support-01;
+    border-left-color: var(--support-01);
   }
   &-body {
     margin: auto 0;

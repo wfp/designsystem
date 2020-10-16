@@ -4,7 +4,7 @@
   padding: 4px;
   width: $rt-toast-width;
   box-sizing: border-box;
-  color: rgba($text-01, 0.7);
+  color: rgba(var(--text-01), 0.7);
 
   &--top-left {
     top: 1em;
