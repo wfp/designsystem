@@ -43,30 +43,13 @@ export const AddressDetails = (args) => (
       {...args}
       className="wfp--form-long"
       align="horizontal"
-      legendText="Personal Info">
-      <TextInput
-        id="Firstname1"
-        labelText="Firstname"
-        placeholder="Placeholder text"
-        required
-      />
-      <TextInput
-        id="Lastname2"
-        labelText="Lastname"
-        placeholder="Placeholder text"
-      />
+      legendText="Address Info"
+      style={{ marginTop: '1rem' }}>
       <TextInput
         id="phone3"
         labelText="Phone Number"
         placeholder="Placeholder text"
       />
-    </FormGroup>
-    <FormGroup
-      {...args}
-      className="wfp--form-long"
-      align="horizontal"
-      legendText="Address Info"
-      style={{ marginTop: '1rem' }}>
       <TextInput
         id="address1"
         labelText="Address line 1"
