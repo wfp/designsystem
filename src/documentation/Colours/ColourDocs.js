@@ -386,7 +386,7 @@ const barChartColor = colors.navy;
 @import "~@wfp/ui/src/globals/scss/vars";
 
 body {
-  background: $ui-02;
+  background: var(--ui-02);
 }
 `}
         </PrismCode>

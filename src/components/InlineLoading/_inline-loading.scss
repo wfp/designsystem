@@ -43,7 +43,7 @@
 
   .#{$prefix}--inline-loading__checkmark {
     fill: none;
-    stroke: $interactive-01;
+    stroke: var(--interactive-01);
     transform-origin: 50% 50%;
     stroke-width: 2.1;
     stroke-dasharray: 12;
@@ -54,7 +54,7 @@
   }
 
   .#{$prefix}--loading--small .#{$prefix}--inline-loading__svg {
-    stroke: $interactive-01;
+    stroke: var(--interactive-01);
   }
   /* If IE11 Don't show check animation */
   @media screen and (-ms-high-contrast: active),
@@ -89,7 +89,7 @@
 
   .#{$prefix}--inline-loading__text {
     @include typescale('zeta');
-    color: $text-02;
+    color: var(--text-02);
   }
 
   .#{$prefix}--inline-loading__animation {
@@ -113,7 +113,7 @@
 
   .#{$prefix}--inline-loading__checkmark {
     fill: none;
-    stroke: $interactive-01;
+    stroke: var(--interactive-01);
     transform-origin: 50% 50%;
     stroke-width: 2.1;
     stroke-dasharray: 12;
@@ -124,7 +124,7 @@
   }
 
   .#{$prefix}--loading--small .#{$prefix}--inline-loading__svg {
-    stroke: $interactive-01;
+    stroke: var(--interactive-01);
   }
   /* If IE11 Don't show check animation */
   @media screen and (-ms-high-contrast: active),

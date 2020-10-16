@@ -35,13 +35,13 @@ body,
 .container {
   svg {
     path {
-      fill: $interactive-02;
+      fill: var(--interactive-02);
     }
   }
 
   section > a > div > svg {
     path {
-      fill: $interactive-01;
+      fill: var(--interactive-01);
     }
   }
 }

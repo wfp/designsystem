@@ -51,9 +51,9 @@
     top: calc(50% - 9px);
     height: rem(18px);
     width: rem(18px);
-    border: $checkbox-border-width solid $ui-05;
+    border: $checkbox-border-width solid var(--ui-05);
     border-radius: $checkbox-border-radius;
-    background-color: $ui-01;
+    background-color: var(--ui-01);
   }
 
   // Checkmark
@@ -62,8 +62,8 @@
     width: 10px;
     height: 5px;
     background: none;
-    border-left: 2px solid $inverse-01;
-    border-bottom: 2px solid $inverse-01;
+    border-left: 2px solid var(--inverse-01);
+    border-bottom: 2px solid var(--inverse-01);
     transform: scale(0) rotate(-45deg);
     position: absolute;
     left: rem(3px);
@@ -75,8 +75,8 @@
   .#{$prefix}--checkbox:indeterminate + .#{$prefix}--checkbox-label::before,
   .#{$prefix}--checkbox-label[data-contained-checkbox-state='true']::before,
   .#{$prefix}--checkbox-label[data-contained-checkbox-state='mixed']::before {
-    background-color: $interactive-01;
-    border-color: $interactive-01;
+    background-color: var(--interactive-01);
+    border-color: var(--interactive-01);
   }
 
   .#{$prefix}--checkbox:checked + .#{$prefix}--checkbox-label::after,
@@ -99,8 +99,8 @@
   .#{$prefix}--checkbox:indeterminate + .#{$prefix}--checkbox-label::after,
   .#{$prefix}--checkbox-label[data-contained-checkbox-state='mixed']::after {
     transform: scale(1) rotate(0deg);
-    border-left: 0 solid $inverse-01;
-    border-bottom: 2px solid $inverse-01;
+    border-left: 0 solid var(--inverse-01);
+    border-bottom: 2px solid var(--inverse-01);
     opacity: 1;
     width: rem(12px);
     margin-top: rem(-6px);
@@ -122,8 +122,8 @@
     height: rem(18px);
     width: rem(18px);
     margin-right: $spacing-xs;
-    background-color: $ui-01;
-    border: $checkbox-border-width solid $ui-05;
+    background-color: var(--ui-01);
+    border: $checkbox-border-width solid var(--ui-05);
     min-width: rem(18px);
   }
 
@@ -140,8 +140,8 @@
     .#{$prefix}--checkbox-appearance {
     display: flex;
     align-items: baseline;
-    background-color: $interactive-01;
-    border-color: $interactive-01;
+    background-color: var(--interactive-01);
+    border-color: var(--interactive-01);
   }
 
   .#{$prefix}--checkbox:focus
@@ -158,7 +158,7 @@
 
   .#{$prefix}--checkbox-checkmark {
     display: none;
-    fill: $inverse-01;
+    fill: var(--inverse-01);
     width: 100%;
     height: 100%;
   }
@@ -174,7 +174,7 @@
 
     @-moz-document url-prefix() {
       & {
-        stroke: $interactive-01;
+        stroke: var(--interactive-01);
       }
     }
   }

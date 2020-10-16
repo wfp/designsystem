@@ -67,7 +67,7 @@
 
   a {
     @include reset;
-    color: $interactive-01;
+    color: var(--interactive-01);
   }
 
   h1,

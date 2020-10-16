@@ -19,14 +19,14 @@
     height: 12px;
     transform: translateX(11px) translateY(-5px) rotate(45deg);
     display: block;
-    background: $text-01;
+    background: var(--text-01);
     position: absolute;
   }
   &:before {
     transform: translateX(11px) translateY(-5px) rotate(-45deg);
   }
   &--default {
-    color: $ui-05;
+    color: var(--ui-05);
     opacity: 0.3;
   }
 

@@ -46,7 +46,7 @@
   }
 
   .#{$prefix}--wrapper--background-dark {
-    background: $brand-01;
+    background: var(--brand-01);
   }
 
   .#{$prefix}--wrapper--width-md {

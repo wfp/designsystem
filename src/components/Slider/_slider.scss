@@ -46,14 +46,14 @@
       outline: none;
     }
     &:active {
-      background: $interactive-01;
+      background: var(--interactive-01);
       transform: translate(-50%, -50%);
     }
   }
 
   .#{$prefix}--slider__range-label {
     @include typescale('zeta');
-    color: $text-02;
+    color: var(--text-02);
 
     &:last-of-type {
       margin-right: $spacing-md;
@@ -64,7 +64,7 @@
     position: absolute;
     width: 100%;
     height: rem(4px);
-    background: $ui-05;
+    background: var(--ui-05);
     cursor: pointer;
     transform: translate(0%, -50%);
   }
@@ -73,7 +73,7 @@
     position: absolute;
     width: 100%;
     height: rem(4px);
-    background: $interactive-01;
+    background: var(--interactive-01);
     transform-origin: left;
     pointer-events: none;
     transform: translate(0%, -50%);
@@ -83,7 +83,7 @@
     position: absolute;
     height: rem(24px);
     width: rem(24px);
-    background: $interactive-01;
+    background: var(--interactive-01);
     border-radius: 50%;
     top: 0;
     transform: translate(-50%, -50%);
@@ -103,7 +103,7 @@
       @include focus-outline('blurred');
     }
     &:active {
-      background: darken($interactive-01, 5%);
+      background: var(--interactive-02);
       transform: translate(-50%, -50%) scale(1.25);
     }
   }

@@ -31,7 +31,7 @@
     }
 
     /* &:focus ~ .#{$prefix}--label {
-      color: $interactive-01;
+      color: var(--interactive-01);
     } */
 
     &:disabled ~ .#{$prefix}--number__controls {
@@ -42,7 +42,7 @@
 
     & ~ .#{$prefix}--form-requirement {
       order: 3;
-      color: $support-01;
+      color: var(--support-01);
       font-weight: 400;
       margin-top: $spacing-2xs;
       overflow: visible;
@@ -91,21 +91,20 @@
     min-width: $input-height;
     max-width: $input-height;
     height: $input-height;
-    margin-left:-1px;
+    margin-left: -1px;
     font-weight: 600;
     font-size: 1.5rem;
-   // border: 1px solid $input-border-color;
+    // border: 1px solid $input-border-color;
     opacity: 0;
     transition: all 0.1s;
     border-left: $input-border;
     //position: absolute;
     order: 3;
     position: absolute;
-    right:0;
+    right: 0;
     span {
       display: block;
     }
-
 
     &:focus {
       border-left-color: transparent;
@@ -123,11 +122,10 @@
     &:nth-child(1) {
       right: $input-height - 1px;
     }
-
   }
 
   .#{$prefix}--number__controls svg {
-    fill: $interactive-01;
+    fill: var(--interactive-01);
 
     // Hover styles for use with old HTML w/o button
     &:hover {
@@ -145,12 +143,12 @@
     input[type='number'],
     input[type='number']:focus {
       outline: none;
-      border-color: $support-01;
-      //box-shadow: 0 2px 0px 0px $support-01;
+      border-color: var(--support-01);
+      //box-shadow: 0 2px 0px 0px var(--support-01);
     }
 
     /* input[type='number']:focus ~ .#{$prefix}--label {
-      color: $support-01;
+      color: var(--support-01);
     } */
 
     .#{$prefix}--number__controls {
@@ -159,7 +157,7 @@
   }
 
   .#{$prefix}--number--light input[type='number'] {
-    background: $field-02;
+    background: var(--field-02);
   }
 
   // Skeleton State
