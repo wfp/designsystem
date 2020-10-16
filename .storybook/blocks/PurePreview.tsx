@@ -219,7 +219,6 @@ const Preview: FunctionComponent<PreviewProps> = ({
   subcomponents,
   ...props
 }) => {
-  console.log('props', storyComponent, subcomponents, props);
   const [expanded, setExpanded] = useState(isExpanded);
   const { source, actionItem, actionItemHtml } = getSource(
     withSource,
