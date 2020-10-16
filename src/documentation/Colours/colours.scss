@@ -1,34 +1,38 @@
-/*$css--reset: false;
-@import 'src/globals/scss/vars';
-@import 'src/globals/scss/spacing';
-@import 'src/globals/scss/helper-mixins';
+$css--reset: false;
+@import '../../globals/scss/vars';
+@import '../../globals/scss/spacing';
+@import '../../globals/scss/helper-mixins';
 
 .color--list {
   display: flex;
   flex-wrap: wrap;
-  width: 125%;
-  > li {
-    width: 31.333%;
-    width: 22%;
-    margin-right: 2%;
-    margin-bottom: 2%;
-    list-style-type: none;
-    outline: none;
-  }
-  h4 {
-    margin: 0;
-  }
+  width: 80%;
 
-  .wfp--story__sub-heading {
-    font-size: 0.9em;
-    margin-bottom: 0.5em;
-  }
+  span {
+    > li {
+      // width: 31.333%;
+      min-width: 100%;
+      margin-right: 5%;
+      margin-bottom: 5%;
+      list-style-type: none;
+      outline: none;
+    }
 
-  p {
-    font-weight: normal;
-    font-style: italic;
-    margin: 0;
-    font-size: 0.9em;
+    h4 {
+      margin: 0;
+    }
+
+    .wfp--story__sub-heading {
+      font-size: 0.9em;
+      margin-bottom: 0.5em;
+    }
+
+    p {
+      font-weight: normal;
+      font-style: italic;
+      margin: 0;
+      font-size: 0.9em;
+    }
   }
 }
 
@@ -51,6 +55,7 @@
   display: flex;
   justify-content: center;
   align-items: flex-end;
+  padding: 1rem;
 }
 
 .colour__contrast {
@@ -84,4 +89,3 @@
     width: 50%;
   }
 }
-+/

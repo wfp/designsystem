@@ -3,7 +3,7 @@ import Slider from '../Slider';
 import markdown from './README.mdx';
 
 export default {
-  title: 'Components/Slider',
+  title: 'Components/UI Elements/Slider',
   component: Slider,
   parameters: {
     componentSubtitle: 'Component',

@@ -5,7 +5,7 @@ import { textLookup } from '../Text/Text';
 import Story from '.';
 
 export default {
-  title: 'Components/Story',
+  title: 'Components/Content Related/Story',
   component: Story,
   parameters: {
     componentSubtitle: 'Component',

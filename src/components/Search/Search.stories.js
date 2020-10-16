@@ -4,7 +4,7 @@ import { action } from '@storybook/addon-actions';
 import Search from '.';
 
 export default {
-  title: 'Components/Search',
+  title: 'Components/UI Elements/Search',
   component: Search,
   parameters: {
     componentSubtitle: 'Component',

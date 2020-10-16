@@ -1,0 +1,72 @@
+import Link from '../../components/Link';
+import { linkTo } from '@storybook/addon-links';
+
+<Meta
+  title="Getting started/Getting started/CSS-SCSS Usage"
+  subTitle="CSS/SCSS Usage"
+/>
+
+Each components requires css. You can import the css/scss from npm or use it from the CDN.
+
+### React import
+
+You can also import the css directly from the npm package.
+
+#### Import css via react
+
+```
+// Import all stylesheets
+import '~@wfp/ui/assets/css/styles.css';
+
+```
+
+Make sure you have a scss loader installed.
+
+#### Import scss via react
+
+```
+// Import all stylesheets
+import '~@wfp/ui/source/globals/scss/styles';
+
+// Only import the Button stylesheet
+import '~@wfp/ui/source/components/Button/button';
+
+```
+
+### SCSS
+
+When using scss you can import the SCSS sources from the node_module. This allows you to use only parts of the SCSS, reuse common variables and functions from WFP UI or to override settings.
+
+#### Use Source scss
+
+```
+// Sample overriding settings
+$input-border-radius: 5px;
+$button-border-radius: 60px;
+$button-font-size: 25px;
+$button-padding: 10px 25px;
+$color__main: #0076FF;
+
+// Import all stylesheets
+@import "~@wfp/ui/source/globals/scss/styles";
+
+// Only import the Button stylesheet
+@import "~@wfp/ui/source/components/Button/button";
+
+// Only use variables
+@import "~@wfp/ui/source/globals/scss/vars";
+```
+
+### CDN Usage
+
+Import the WFP UI css from the WFP CDN. Change the version number to the UI Kit version you are using.
+
+#### CDN
+
+```
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="https://cdn.wfp.org/guides/ui/v1.1.16/assets/css/styles.min.css"
+/>
+```

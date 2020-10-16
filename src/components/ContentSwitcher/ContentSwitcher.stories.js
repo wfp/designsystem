@@ -6,7 +6,7 @@ import { iconAddGlyph } from '@wfp/icons';
 import Icon from '../Icon';
 
 export default {
-  title: 'Components/ContentSwitcher',
+  title: 'Components/Content Related/ContentSwitcher',
   component: ContentSwitcher,
   subcomponents: { Switch },
   parameters: {

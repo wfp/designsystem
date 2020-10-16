@@ -7,7 +7,7 @@ import Wrapper from '../../components/Wrapper';
 import { iconWfpHumEmergencyResponsePos } from '@wfp/icons';
 import markdown from './README.mdx';
 export default {
-  title: 'Examples/Not found (404)',
+  title: 'Templates/Not found (404)',
 
   parameters: {
     componentSubtitle: 'Example',

@@ -5,7 +5,7 @@ import Icon from '.';
 import { iconAdd, iconAddGlyph, iconAddOutline } from '@wfp/icons';
 
 export default {
-  title: 'Components/Icon',
+  title: 'Components/UI Elements/Icon',
   component: Icon,
   parameters: {
     componentSubtitle: 'Component',

@@ -26,6 +26,7 @@ const TextInput = (props) => {
     inputRef,
     light,
     pattern,
+    required,
     ...other
   } = props;
 
@@ -33,6 +34,7 @@ const TextInput = (props) => {
     [`${prefix}--text--light`]: light,
     [`${prefix}--text--helpertext`]: helperText,
     [`${prefix}--text--nolabel`]: hideLabel,
+    [`${prefix}--text--required`]: required,
   });
 
   const newProps = {

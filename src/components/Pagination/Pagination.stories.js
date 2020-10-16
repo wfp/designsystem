@@ -4,7 +4,7 @@ import { action } from '@storybook/addon-actions';
 import Pagination from '.';
 
 export default {
-  title: 'Components/Pagination',
+  title: 'Components/UI Elements/Pagination',
   component: Pagination,
   parameters: {
     componentSubtitle: 'Component',

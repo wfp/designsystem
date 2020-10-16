@@ -6,7 +6,7 @@ import Credits from '../Credits';
 import markdown from './README.mdx';
 
 export default {
-  title: 'Components/Credits',
+  title: 'Components/UI Elements/Credits',
   component: Credits,
   parameters: {
     componentSubtitle: 'Component',

@@ -6,11 +6,7 @@ import markdown from './README.mdx';
 import { extractComponentDescription } from '@storybook/addon-docs/dist/lib/docgen';
 
 const props = {
-  children: `Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-  eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
-  voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
-  clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
-  amet.`,
+  children: `Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.`,
 };
 
 const kinds = {
@@ -21,7 +17,7 @@ const kinds = {
 };
 
 export default {
-  title: 'Components/Blockquote',
+  title: 'Components/Content Related/Blockquote',
   component: Blockquote,
   parameters: {
     componentSubtitle: 'Component',
