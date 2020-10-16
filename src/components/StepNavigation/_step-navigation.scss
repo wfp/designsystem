@@ -17,7 +17,7 @@
     @include typescale('zeta');
     @include font-smoothing;
     @include font-family;
-    color: $text-01;
+    color: var(--text-01);
     font-weight: 600;
     height: auto;
     width: 100%;
@@ -36,12 +36,12 @@
     //padding: 0 $spacing-md;
     height: 2em;
     cursor: pointer;
-    //background-color: $field-02;
+    //background-color: var(--field-02);
 
     svg {
       width: 1em;
       height: 1em;
-      fill: $interactive-01;
+      fill: var(--interactive-01);
     }
 
     @include breakpoint(bp--sm--major) {
@@ -52,7 +52,7 @@
   .#{$prefix}--step-navigation-trigger-text {
     text-decoration: none;
     font-weight: 600;
-    color: $text-01;
+    color: var(--text-01);
     &:focus {
       @include focus-outline('border');
     }

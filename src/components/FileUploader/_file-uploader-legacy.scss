@@ -28,7 +28,7 @@
     @include reset;
     @include typescale('zeta');
     @include line-height('body');
-    color: $text-02;
+    color: var(--text-02);
     margin-bottom: $spacing-xs;
   }
 
@@ -44,7 +44,7 @@
     align-items: center;
     justify-content: space-between;
     min-height: rem(20px);
-    background-color: $field-01;
+    background-color: var(--field-01);
     //padding: 0 $spacing-md;
     margin-bottom: $spacing-3xs;
 
@@ -58,7 +58,7 @@
     @include text-overflow(100%);
     display: inline-flex;
     align-items: center;
-    color: $text-01;
+    color: var(--text-01);
     margin-right: $spacing-md;
     height: 1.875rem;
   }
@@ -74,7 +74,7 @@
     }
 
     .#{$prefix}--loading__svg {
-      stroke: $ui-05;
+      stroke: var(--ui-05);
     }
   }
 
@@ -82,7 +82,7 @@
   .#{$prefix}--file__state-container .#{$prefix}--file-complete {
     width: 1rem;
     height: 1rem;
-    fill: $text-01;
+    fill: var(--text-01);
     cursor: pointer;
 
     &:focus {
@@ -91,10 +91,10 @@
   }
 
   .#{$prefix}--file__state-container .#{$prefix}--file-close {
-    fill: $ui-05;
+    fill: var(--ui-05);
   }
 
   .#{$prefix}--file__state-container .#{$prefix}--file-complete {
-    fill: $support-02;
+    fill: var(--support-02);
   }
 }

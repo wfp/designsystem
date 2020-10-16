@@ -9,7 +9,7 @@
 
 @include exports('info-bar') {
   .#{$prefix}--info-bar {
-    background: $support-03;
+    background: var(--support-03);
     @include reset;
     display: flex;
     padding: 0.4em 0;

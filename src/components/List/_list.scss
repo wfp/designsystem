@@ -22,7 +22,7 @@
         left: -1.4rem;
         top: 0.4em;
         path {
-          fill: $support-02;
+          fill: var(--support-02);
         }
       }
     }
@@ -31,7 +31,7 @@
       .#{$prefix}--list-item__icon {
         top: 0.3em;
         path {
-          fill: $support-01;
+          fill: var(--support-01);
         }
       }
     }

@@ -3,36 +3,10 @@ import React, { useState, useRef, useEffect } from 'react';
 import classNames from 'classnames';
 import settings from '../../globals/js/settings';
 import Input from '../Input';
+import Icon from '../Icon';
+import { iconSearch, iconCloseGlyph } from '@wfp/icons';
 
 const { prefix } = settings;
-
-function PropTypeEmptyString(props, propName, componentName) {
-  componentName = componentName || 'ANONYMOUS';
-  if (props[propName]) {
-    let value = props[propName];
-    if (typeof value === 'string' && value !== '') {
-      return new Error(
-        propName + ' in ' + componentName + ' is not an empty string'
-      );
-    }
-  }
-  return null;
-}
-
-const countDecimals = (value) => {
-  if (Math.floor(value) === value) return 0;
-
-  return value.split('.')[1].length || 0;
-};
-
-const capMin = (min, value) =>
-  isNaN(min) || (!min && min !== 0) || isNaN(value) || (!value && value !== 0)
-    ? value
-    : Math.max(min, value);
-const capMax = (max, value) =>
-  isNaN(max) || (!max && max !== 0) || isNaN(value) || (!value && value !== 0)
-    ? value
-    : Math.min(max, value);
 
 /** The number input component is used for entering numeric values and includes controls for incrementally increasing or decreasing the value */
 
@@ -40,6 +14,7 @@ function NumberInput(props) {
   const {
     additional,
     className,
+    closeButtonLabelText,
     disabled,
     formItemClassName,
     id,
@@ -48,20 +23,21 @@ function NumberInput(props) {
     labelText,
     max,
     min,
+    kind,
     step = 1,
     invalid,
     invalidText,
     onChange = () => {},
     onClick = () => {},
+    onSearchIconClick = () => {},
     helperText,
     light,
     allowEmpty,
     inputRef,
-    pattern = '[0-9]*',
     ...other
   } = props;
 
-  const initialValue = capMax(max, capMin(min, props.value));
+  const initialValue = props.value;
   const [value, setValue] = useState(initialValue);
 
   useEffect(() => {
@@ -75,27 +51,25 @@ function NumberInput(props) {
     if (!disabled) {
       evt.persist();
       evt.imaginaryTarget = _inputRef;
-
       setValue(evt.target.value);
       onChange(parseFloat(evt.target.value), evt);
     }
+  };
+
+  const clearSearch = () => {
+    const valueState = '';
+    setValue(valueState);
+    onChange(valueState);
   };
 
   const handleArrowClick = (evt, direction) => {
     let valueState = typeof value === 'string' ? Number(value) : value;
     valueState = isNaN(valueState) ? 0 : valueState;
 
-    const conditional =
-      direction === 'down'
-        ? (min !== undefined && valueState > min) || min === undefined
-        : (max !== undefined && valueState < max) || max === undefined;
-
     valueState =
       direction === 'down' ? valueState - step : valueState + parseFloat(step);
-    valueState = capMax(max, capMin(min, valueState));
-    valueState = parseFloat(valueState.toFixed(countDecimals(step)));
 
-    if (!disabled && conditional) {
+    if (!disabled) {
       evt.persist();
       evt.imaginaryTarget = _inputRef;
       evt.target.value = parseFloat(valueState);
@@ -110,6 +84,12 @@ function NumberInput(props) {
     [`${prefix}--number--helpertext`]: helperText,
     [`${prefix}--number--nolabel`]: hideLabel,
     [`${prefix}--number--nocontrols`]: hideControls,
+    'wfp--search': true,
+    'wfp--search--lg': kind === 'large',
+    'wfp--search--sm': kind === 'small',
+    'wfp--search--main': kind === 'main',
+    'wfp--search--banner': kind === 'banner',
+    'wfp--search--light': kind === 'light',
   });
 
   const newProps = {
@@ -127,31 +107,36 @@ function NumberInput(props) {
     type: 'button',
   };
 
+  const clearClasses = classNames({
+    'wfp--search-close': true,
+    'wfp--search-close--hidden': !value,
+  });
+
   return (
     <Input {...props} formItemClassName={numberInputClasses}>
       {() => {
         return (
-          <div className={`${prefix}--number__controls`}>
-            <button
-              className={`${prefix}--number__control-btn up-icon`}
-              {...buttonProps}
-              onClick={(evt) => handleArrowClick(evt, 'up')}>
-              +
-            </button>
-            <button
-              className={`${prefix}--number__control-btn down-icon`}
-              {...buttonProps}
-              onClick={(evt) => handleArrowClick(evt, 'down')}>
-              −
-            </button>
+          <>
+            <Icon
+              icon={iconSearch}
+              description={labelText}
+              className="wfp--search-magnifier"
+              onClick={onSearchIconClick}
+            />
             <input
-              type="number"
-              pattern={pattern}
+              className="wfp--search-input"
               {...other}
               {...newProps}
               ref={_inputRef}
             />
-          </div>
+            <button
+              className={clearClasses}
+              onClick={clearSearch}
+              type="button"
+              aria-label={closeButtonLabelText}>
+              <Icon icon={iconCloseGlyph} description={closeButtonLabelText} />
+            </button>
+          </>
         );
       }}
     </Input>
@@ -222,9 +207,14 @@ NumberInput.propTypes = {
   step: PropTypes.number,
 
   /**
+   * Name property
+   */
+  name: PropTypes.string,
+
+  /**
    * Specify the value of the input, if undefined or null the value is empty
    */
-  value: PropTypes.oneOfType([PropTypeEmptyString, PropTypes.number]),
+  value: PropTypes.string,
 
   /**
    * Specify if the currently value is invalid.
@@ -255,6 +245,11 @@ NumberInput.propTypes = {
    * `true` to allow empty string.
    */
   allowEmpty: PropTypes.bool,
+
+  /**
+   * `true` to allow empty string.
+   */
+  closeButtonLabelText: PropTypes.string,
 };
 
 export default NumberInput;

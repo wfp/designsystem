@@ -37,7 +37,7 @@
       height: rem(28px);
       top: rem(-14px);
       border-radius: rem(28px);
-      background-color: $ui-05;
+      background-color: var(--ui-05);
       transition: $transition--base $carbon--standard-easing;
       cursor: pointer;
     }
@@ -46,12 +46,12 @@
       box-sizing: border-box;
       position: absolute;
       display: block;
-      border: 3px solid $ui-05;
+      border: 3px solid var(--ui-05);
       cursor: pointer;
       top: -14px;
       width: rem(28px);
       height: rem(28px);
-      background-color: $ui-01;
+      background-color: var(--ui-01);
       border-radius: 50%;
       content: '';
       transition: $transition--base $carbon--standard-easing;
@@ -74,14 +74,14 @@
       width: rem(32px);
       border-radius: 0.9375rem;
       background-color: transparent;
-      border: 2px solid $ui-05;
+      border: 2px solid var(--ui-05);
       top: 0;
     }
 
     &:after {
       width: rem(10px);
       height: rem(10px);
-      background-color: $ui-05;
+      background-color: var(--ui-05);
       border: none;
       top: 3px;
       left: 3px;
@@ -89,7 +89,7 @@
   }
 
   .#{$prefix}--toggle__check {
-    fill: $ui-05;
+    fill: var(--ui-05);
     position: absolute;
     left: 6px;
     top: 6px;
@@ -101,7 +101,7 @@
   .#{$prefix}--toggle--small:checked
     + .#{$prefix}--toggle__label
     .#{$prefix}--toggle__check {
-    fill: $interactive-01;
+    fill: var(--interactive-01);
     transform: scale(1) translateX(16px);
   }
 
@@ -123,14 +123,14 @@
     + .#{$prefix}--toggle__label
     .#{$prefix}--toggle__appearance {
     &:before {
-      background-color: $interactive-01;
+      background-color: var(--interactive-01);
     }
 
     &:after {
       transform: translateX(24px);
-      background-color: $ui-01;
+      background-color: var(--ui-01);
       box-shadow: none;
-      border-color: $interactive-01;
+      border-color: var(--interactive-01);
     }
   }
 
@@ -138,13 +138,13 @@
     + .#{$prefix}--toggle__label
     .#{$prefix}--toggle__appearance {
     &:before {
-      background-color: $interactive-01;
-      border-color: $interactive-01;
+      background-color: var(--interactive-01);
+      border-color: var(--interactive-01);
     }
 
     &:after {
-      background-color: $ui-01;
-      border-color: $ui-01;
+      background-color: var(--ui-01);
+      border-color: var(--ui-01);
       margin-left: 0px;
       transform: translateX(17px);
     }

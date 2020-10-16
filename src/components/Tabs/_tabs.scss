@@ -17,7 +17,7 @@
     @include typescale('zeta');
     @include font-smoothing;
     @include font-family;
-    color: $text-01;
+    color: var(--text-01);
     font-weight: 600;
     height: auto;
     width: 100%;
@@ -29,7 +29,7 @@
   .#{$prefix}--tabs__nav__bar {
     position: absolute;
     transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
-    background: $interactive-01;
+    background: var(--interactive-01);
     z-index: 10;
     height: 3px;
     bottom: 0;
@@ -38,7 +38,7 @@
   .#{$prefix}--tabs-trigger-text {
     text-decoration: none;
     font-weight: 600;
-    color: $text-01;
+    color: var(--text-01);
 
     &:focus {
       //@include focus-outline('border');
@@ -91,10 +91,10 @@
 
   .#{$prefix}--tabs__nav-item--selected {
     .#{$prefix}--tabs__nav-link {
-      color: $interactive-01;
+      color: var(--interactive-01);
 
       &:focus {
-        color: $interactive-01;
+        color: var(--interactive-01);
       }
     }
   }
@@ -109,7 +109,7 @@
         content: '';
         display: block;
         position: absolute;
-        background: $interactive-01;
+        background: var(--interactive-01);
         height: 3px;
         bottom: 0;
         left: 0;
@@ -120,31 +120,31 @@
 
   .#{$prefix}--tabs__nav-item--disabled {
     .#{$prefix}--tabs__nav-link {
-      color: $ui-05;
+      color: var(--ui-05);
       cursor: not-allowed;
 
       &:hover,
       &:focus {
-        color: $ui-05 !important;
+        color: var(--ui-05) !important;
       }
     }
   }
 
   .#{$prefix}--tabs__nav-link {
     display: inline-block;
-    color: $text-01;
+    color: var(--text-01);
     text-decoration: none;
     padding: $spacing-md $spacing-xs * 1.2;
     width: 100%;
     white-space: nowrap;
     text-overflow: ellipsis;
     &:focus {
-      color: $text-01;
+      color: var(--text-01);
       outline: 1px solid transparent;
     }
 
     &:hover {
-      color: $interactive-01;
+      color: var(--interactive-01);
     }
   }
 

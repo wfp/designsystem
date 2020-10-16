@@ -59,9 +59,9 @@
 
   .#{$prefix}--radio-button__appearance {
     @include reset;
-    background-color: $inverse-01;
+    background-color: var(--inverse-01);
     border-radius: 50%;
-    border: $radio-border-width solid $ui-05;
+    border: $radio-border-width solid var(--ui-05);
     flex-shrink: 0;
     height: rem(18px);
     width: rem(18px);
@@ -74,7 +74,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border-color: $interactive-01;
+    border-color: var(--interactive-01);
 
     &:before {
       content: '';
@@ -83,7 +83,7 @@
       width: 0.5rem;
       height: 0.5rem;
       border-radius: 50%;
-      background-color: $interactive-01;
+      background-color: var(--interactive-01);
     }
   }
 
@@ -134,9 +134,9 @@
 
   .#{$prefix}--radio-button__appearance {
     @include reset;
-    background-color: $inverse-01;
+    background-color: var(--inverse-01);
     border-radius: 50%;
-    border: $radio-border-width solid $ui-05;
+    border: $radio-border-width solid var(--ui-05);
     flex-shrink: 0;
     height: rem(18px);
     width: rem(18px);
@@ -149,7 +149,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border-color: $ui-05;
+    border-color: var(--ui-05);
 
     &:before {
       content: '';
@@ -158,7 +158,7 @@
       width: 0.5rem;
       height: 0.5rem;
       border-radius: 50%;
-      background-color: $ui-05;
+      background-color: var(--ui-05);
     }
   }
 
