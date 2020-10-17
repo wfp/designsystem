@@ -43,40 +43,45 @@ body {
 
 @media (prefers-color-scheme: dark) {
   body {
-    --interactive-01: #{$color__main-51}; // Main Link and Button Color
-    --accent-02: #{$color__yellow}; // Darker WFP Blue // $color__teal-20
-    --brand-01: #{$color__main}; // Main Link and Button Color
-    --interactive-02: #{$color__main-60}; // Main WFP Color //$color__blue-40
-    --accent-01: #{$color__yellow};
-    --inverse-01: #{$color__white};
-    --inverse-02: #{$color__white};
-    --inverse-03: #{$color__navy-gray-3};
-    --ui-01: #{$color__navy-gray-2};
-    --ui-02: #{$color__navy-gray-3};
-    --ui-03: #{$color__navy-gray-4};
-    --ui-04: #{$color__navy-gray-5};
-    --ui-05: #{$color__navy-gray-6};
-    --ui-06: #{$color__navy-gray-7};
-    --text-01: #{$color__white};
-    --text-02: #{$color__navy-gray-6};
-    --text-03: #{$color__navy-gray-7};
-    --field-01: #{$color__navy-gray-7};
-    --field-02: #{$color__navy-gray-4};
-    --support-01: #{$color__red};
-    --support-light-01: #{$color__red-20};
-    --support-02: #{$color__lime-60};
-    --support-light-02: #{$color__dark-green-20};
-    --support-03: #{$color__yellow};
-    --support-light-03: #{$color__yellow-20};
-    --support-04: #{$color__main-30};
-    --support-light-04: #{$color__main-20};
-    --nav-01: #{$color__navy-gray-1};
-    --nav-02: #{$color__main-80};
-    --nav-03: #{$color__magenta-30};
-    --nav-04: #{$color__magenta-60};
-    --disabled: #{$color__navy-gray-10};
-    --disabled-01: #{$color__navy-gray-10};
-    --disabled-02: #{$color__navy-gray-8};
+    &.wfp--theme-dark {
+      .sbdocs-preview {
+        background: #{$color__navy-gray-1};
+      }
+      --interactive-01: #{$color__main-51}; // Main Link and Button Color
+      --accent-02: #{$color__yellow}; // Darker WFP Blue // $color__teal-20
+      --brand-01: #{$color__main}; // Main Link and Button Color
+      --interactive-02: #{$color__main-60}; // Main WFP Color //$color__blue-40
+      --accent-01: #{$color__yellow};
+      --inverse-01: #{$color__white};
+      --inverse-02: #{$color__white};
+      --inverse-03: #{$color__navy-gray-3};
+      --ui-01: #{$color__navy-gray-2};
+      --ui-02: #{$color__navy-gray-3};
+      --ui-03: #{$color__navy-gray-4};
+      --ui-04: #{$color__navy-gray-5};
+      --ui-05: #{$color__navy-gray-6};
+      --ui-06: #{$color__navy-gray-7};
+      --text-01: #{$color__white};
+      --text-02: #{$color__navy-gray-6};
+      --text-03: #{$color__navy-gray-7};
+      --field-01: #{$color__navy-gray-7};
+      --field-02: #{$color__navy-gray-4};
+      --support-01: #{$color__red};
+      --support-light-01: #{$color__red-20};
+      --support-02: #{$color__lime-60};
+      --support-light-02: #{$color__dark-green-20};
+      --support-03: #{$color__yellow};
+      --support-light-03: #{$color__yellow-20};
+      --support-04: #{$color__main-30};
+      --support-light-04: #{$color__main-20};
+      --nav-01: #{$color__navy-gray-1};
+      --nav-02: #{$color__main-80};
+      --nav-03: #{$color__magenta-30};
+      --nav-04: #{$color__magenta-60};
+      --disabled: #{$color__navy-gray-10};
+      --disabled-01: #{$color__navy-gray-10};
+      --disabled-02: #{$color__navy-gray-8};
+    }
   }
 }
 

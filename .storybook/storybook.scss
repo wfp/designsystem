@@ -420,9 +420,3 @@ $css--reset: true;
 .os-host.os-host-foreign {
   overflow: hidden !important;
 }
-
-@media (prefers-color-scheme: dark) {
-  .sbdocs-preview {
-    background: #000 !important;
-  }
-}

@@ -8,6 +8,7 @@ module.exports = {
     //'./localAddon/register.tsx',
     //'./localAddon/preset.ts',
     '@storybook/addon-docs',
+    '@storybook/addon-toolbars',
     /*{
       name: '@storybook/addon-docs',
       /*options: {

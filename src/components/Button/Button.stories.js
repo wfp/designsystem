@@ -23,6 +23,9 @@ export default {
   },*/
 };
 
+export const StoryWithLocale = (args, { globals: { theme } }) => {
+  return <>{theme}</>;
+};
 export const ButtonRegular = (args) => <Button {...args} />;
 ButtonRegular.args = {
   children: 'Button',
