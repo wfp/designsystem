@@ -14,7 +14,7 @@
   .#{$prefix}--link {
     //@include reset;
     @include font-family;
-    @include font-smoothing;
+    //@include font-smoothing;
     cursor: pointer;
     color: var(--interactive-01);
     text-decoration: none;

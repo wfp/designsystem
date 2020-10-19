@@ -105,7 +105,6 @@ const DescriptionContainer: FunctionComponent<DescriptionProps> = (props) => {
 
   const componentsTableOfContent = {
     wrapper: ({ children, ...props }) => {
-      console.log('children', children);
       const output = Array.isArray(children)
         ? children.map((child) => {
             if (['h1', 'h2', 'h3'].includes(child.props.mdxType)) {
@@ -126,11 +125,7 @@ const DescriptionContainer: FunctionComponent<DescriptionProps> = (props) => {
         : '';
 
       const reversedChildren = React.Children.toArray(children).reverse();
-
-      //console.log('contextddd', context.getOriginal['[[Scopes]]'][0]._stories);
-
       const componentStories = getDocsStories(context);
-      console.log('contextdddd', componentStories /*. subcomponents */);
 
       const examplesList = componentStories.map((e) => (
         <ListItem>

@@ -1,6 +1,7 @@
 import React from 'react';
 import FormGroup from './FormGroup';
 import TextInput from '../TextInput';
+import NumberInput from '../NumberInput';
 
 import markdown from './README.mdx';
 
@@ -46,29 +47,24 @@ export const AddressDetails = (args) => (
       legendText="Address Info"
       style={{ marginTop: '1rem' }}>
       <TextInput
-        id="phone3"
-        labelText="Phone Number"
+        id="country"
+        labelText="Country"
         placeholder="Placeholder text"
       />
+      <TextInput id="city" labelText="City" placeholder="Placeholder text" />
       <TextInput
-        id="address1"
-        labelText="Address line 1"
-        placeholder="Placeholder text"
-      />
-      <TextInput
-        id="address2"
-        labelText="Address line 2"
-        placeholder="Placeholder text"
+        id="zipcode"
+        labelText="Postal code/ZIP code"
+        placeholder="eg: 13-3456"
       />
     </FormGroup>
     <FormGroup {...args} className="wfp--form-long" align="horizontal">
-      <TextInput id="city" labelText="City" placeholder="Placeholder text" />
-      <TextInput id="state" labelText="State" placeholder="Placeholder text" />
       <TextInput
-        id="zipcode"
-        labelText="Zip code"
-        placeholder="Placeholder text"
+        id="street"
+        labelText="Street"
+        placeholder="eg: Chemin Aime Steinlein"
       />
+      <NumberInput id="hno" labelText="House number" placeholder="5" />
     </FormGroup>
   </>
 );

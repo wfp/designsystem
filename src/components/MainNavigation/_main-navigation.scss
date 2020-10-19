@@ -21,6 +21,7 @@
   .#{$prefix}--main-navigation__item {
     @include typescale('epsilon');
     @include font-family;
+    font-weight: 500;
     &:last-child {
       padding-right: 0;
     }
