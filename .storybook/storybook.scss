@@ -40,10 +40,8 @@
     font-size: 1rem;
   }
   .sbdocs-h1,
-  .sbdocs-title,
-  h1 {
+  .sbdocs-title {
     @extend .wfp--story__title;
-    font-size: 3rem;
   }
   .sbdocs-subtitle {
     @extend .wfp--story__subtitle;
