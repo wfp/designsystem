@@ -26,6 +26,7 @@ import {
   SourceError,
   SourceProps as PureSourceProps,
 } from '@storybook/components';
+import Blockquote from '../../src/components/Blockquote/Blockquote';
 
 export interface DocsContainerProps {
   context: DocsContextProps;
@@ -88,6 +89,18 @@ export const DocsContainer: FunctionComponent<DocsContainerProps> = ({
     );
   };
 
+  const blockquote = (props) => {
+    if (Array.isArray(props.children) && props.children.length >= 2)
+      return (
+        <Blockquote {...props} title={props.children[0]}>
+          {props.children.map((e, i) => {
+            if (i > 0) return e;
+          })}
+        </Blockquote>
+      );
+    return <Blockquote {...props}>{props.children}</Blockquote>;
+  };
+
   const code = ({ children, className, ...other }) => {
     const language = className && className.split('-');
     return (
@@ -110,6 +123,7 @@ export const DocsContainer: FunctionComponent<DocsContainerProps> = ({
     li,
     wrapper,
     code,
+    blockquote,
   };
 
   useEffect(() => {
