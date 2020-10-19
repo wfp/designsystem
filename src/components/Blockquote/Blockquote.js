@@ -37,9 +37,10 @@ class Blockquote extends React.Component {
   }
 
   toggleBlockquote = () => {
-    this.setState({ open: !this.state.open }, () => {
-      console.log('toogle', this.state.open);
-    });
+    if (this.props.toggleable)
+      this.setState({ open: !this.state.open }, () => {
+        console.log('toogle', this.state.open);
+      });
   };
 
   /*showInnerHtml = content => {
@@ -111,21 +112,20 @@ class Blockquote extends React.Component {
           <div className="wfp--blockquote__icon-wrapper">{iconElement}</div>
         )}
         <div className={blockquoteContentClass} style={style}>
-          {title ||
-            (toggleable && (
-              <div
-                onClick={this.toggleBlockquote}
-                onKeyDown={this.toggleBlockquote}
-                className="wfp--blockquote__title"
-                role="button"
-                tabIndex={0}>
-                {title
-                  ? title
-                  : this.state.open
-                  ? 'Hide content'
-                  : 'Show content'}
-              </div>
-            ))}
+          {(title || toggleable) && (
+            <div
+              onClick={this.toggleBlockquote}
+              onKeyDown={this.toggleBlockquote}
+              className="wfp--blockquote__title"
+              role="button"
+              tabIndex={0}>
+              {title
+                ? title
+                : this.state.open
+                ? 'Hide content'
+                : 'Show content'}
+            </div>
+          )}
           <div className="wfp--blockquote__inside">{children}</div>
         </div>
       </div>
