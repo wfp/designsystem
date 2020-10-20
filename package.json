@@ -105,7 +105,7 @@
   "dependencies": {
     "@popperjs/core": "^2.4.4",
     "@storybook/addon-cssresources": "^6.1.0-alpha.25",
-    "@storybook/addon-toolbars":  "^6.1.0-alpha.25",
+    "@storybook/addon-toolbars": "^6.1.0-alpha.25",
     "invariant": "^2.2.4",
     "react-hook-form": "^6.8.2",
     "react-popper": "^2.2.3",
