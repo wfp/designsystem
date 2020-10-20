@@ -8,7 +8,7 @@ import { Module, ModuleHeader, ModuleBody } from '../../components/Module';
 import markdown from './README.mdx';
 
 export default {
-  title: 'Examples/Regular Page',
+  title: 'Templates/Regular Page',
 
   parameters: {
     componentSubtitle: 'Example',

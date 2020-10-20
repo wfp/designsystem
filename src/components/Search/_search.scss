@@ -28,9 +28,9 @@
     @include reset;
     @include font-family;
     appearance: none;
-    background-color: $field-01;
+    background-color: var(--field-01);
     border: none;
-    color: $text-01;
+    color: var(--text-01);
     font-weight: 600;
     padding: 0 $spacing-2xl;
     text-overflow: ellipsis;
@@ -42,11 +42,11 @@
     }
 
     &:focus ~ .#{$prefix}--search-magnifier {
-      fill: $interactive-01;
+      fill: var(--interactive-01);
     }
 
     &::placeholder {
-      color: $text-02;
+      color: var(--text-02);
       font-weight: 400;
     }
 
@@ -63,7 +63,7 @@
   }
 
   .#{$prefix}--search--light .#{$prefix}--search-input {
-    background: $field-02;
+    background: var(--field-02);
   }
 
   .#{$prefix}--search--sm .#{$prefix}--search-input {
@@ -88,7 +88,7 @@
 
   .#{$prefix}--search-magnifier {
     left: 0.75rem;
-    fill: $ui-05;
+    fill: var(--ui-05);
     z-index: 2;
   }
 
@@ -96,14 +96,14 @@
     @include button-reset(false);
 
     transition: opacity $transition--base;
-    fill: $ui-05;
+    fill: var(--ui-05);
     cursor: pointer;
     visibility: visible;
     opacity: 1;
   }
 
   .#{$prefix}--search-close:focus {
-    outline: 1px solid $interactive-01;
+    outline: 1px solid var(--interactive-01);
     outline-offset: 2px;
   }
 
@@ -123,7 +123,7 @@
     width: $input-height;
     min-width: $input-height;
     margin-left: $spacing-2xs;
-    background-color: $ui-01;
+    background-color: var(--ui-01);
     position: relative;
     padding: 0;
     outline: 1px solid transparent;
@@ -144,13 +144,13 @@
   .#{$prefix}--search-button:hover,
   .#{$prefix}--search-button:focus {
     cursor: pointer;
-    background-color: $interactive-01;
+    background-color: var(--interactive-01);
     outline: 1px solid transparent;
   }
 
   .#{$prefix}--search-button:hover svg,
   .#{$prefix}--search-button:focus svg {
-    fill: $ui-01;
+    fill: var(--ui-01);
   }
 
   .#{$prefix}--search-close--hidden {
@@ -190,21 +190,21 @@
     @include focus-outline('reset');
     appearance: none;
     border: none;
-    background-color: $field-01;
-    color: $text-01;
+    background-color: var(--field-01);
+    color: var(--text-01);
     padding: 0 $spacing-2xl;
     text-overflow: ellipsis;
     width: 100%;
     order: 1;
     transition: background-color $transition--base, outline $transition--base;
-    border-bottom: 1px solid $ui-04;
+    border-bottom: 1px solid var(--ui-04);
 
     &:focus {
       @include focus-outline('outline');
     }
 
     &::placeholder {
-      color: $text-03;
+      color: var(--text-03);
       font-weight: 400;
     }
 
@@ -230,7 +230,7 @@
   }
 
   .#{$prefix}--search--light .#{$prefix}--search-input {
-    background: $field-02;
+    background: var(--field-02);
   }
 
   .#{$prefix}--search--sm .#{$prefix}--search-input {
@@ -258,7 +258,7 @@
     top: 50%;
     transform: translateY(-50%);
     // Ensure clear icon is rendered in Firefox (#1127)
-    fill: $text-02;
+    fill: var(--text-02);
   }
 
   .#{$prefix}--search--xl .#{$prefix}--search-magnifier {

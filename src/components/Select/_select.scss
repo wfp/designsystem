@@ -29,8 +29,8 @@
     display: block;
     width: 100%;
     padding: 0 $spacing-lg 0 $spacing-xs;
-    color: $text-01;
-    background-color: $field-01;
+    color: var(--text-01);
+    background-color: var(--field-01);
     border: $input-border;
     order: 2;
     border-radius: 0;
@@ -51,15 +51,15 @@
 
     &[data-invalid],
     &[data-invalid]:focus {
-      // box-shadow: 0 2px 0 0 $support-01;
+      // box-shadow: 0 2px 0 0 var(--support-01);
     }
 
     &:focus ~ .#{$prefix}--label {
-      color: $interactive-01;
+      color: var(--interactive-01);
     }
 
     &[data-invalid]:focus ~ .#{$prefix}--label {
-      color: $support-01;
+      color: var(--support-01);
     }
 
     &:disabled {
@@ -69,7 +69,7 @@
 
     ~ .#{$prefix}--form-requirement {
       order: 3;
-      color: $support-01;
+      color: var(--support-01);
       font-weight: 400;
       margin-top: $spacing-2xs;
 
@@ -80,11 +80,11 @@
   }
 
   .#{$prefix}--select--light .#{$prefix}--select-input {
-    background: $field-02;
+    background: var(--field-02);
   }
 
   .#{$prefix}--select__arrow {
-    fill: $interactive-01;
+    fill: var(--interactive-01);
     position: absolute;
     right: 0.6rem;
     bottom: 1rem;
@@ -99,7 +99,7 @@
 
   .#{$prefix}--select-optgroup,
   .#{$prefix}--select-option {
-    color: $text-01; // For the options to show in IE11
+    color: var(--text-01); // For the options to show in IE11
   }
 
   .#{$prefix}--select-option[disabled] {
@@ -110,12 +110,12 @@
   // Override some Firefox user-agent styles
   @-moz-document url-prefix() {
     .#{$prefix}--select-option {
-      background-color: $ui-01;
-      color: $text-01;
+      background-color: var(--ui-01);
+      color: var(--text-01);
     }
 
     .#{$prefix}--select-optgroup {
-      color: $text-01;
+      color: var(--text-01);
     }
   }
 
@@ -152,7 +152,7 @@
 
     .#{$prefix}--select-input {
       background-color: transparent;
-      color: $interactive-01;
+      color: var(--interactive-01);
       font-weight: 600;
       box-shadow: none;
 
@@ -170,11 +170,11 @@
       }
 
       &[data-invalid] {
-        color: $text-01;
+        color: var(--text-01);
         outline-offset: 2px;
 
         &:focus {
-          outline: 1px solid $support-01;
+          outline: 1px solid var(--support-01);
           box-shadow: none;
         }
       }

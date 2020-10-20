@@ -4,7 +4,7 @@ import { action } from '@storybook/addon-actions';
 import { List, ListItem } from '../List';
 
 export default {
-  title: 'Components/List',
+  title: 'Components/UI Elements/List',
   component: List,
   parameters: {
     componentSubtitle: 'Component',

@@ -9,7 +9,7 @@ import Pagination from '../Pagination';
 import ReactDOMServer from 'react-dom/server';
 
 export default {
-  title: 'Components/Table',
+  title: 'Components/UI Elements/Table',
   component: Table,
   parameters: {
     componentSubtitle: 'Component',

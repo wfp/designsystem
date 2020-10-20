@@ -127,12 +127,14 @@ export default class FaviconGenerator extends Component {
                       <div className="wfp--form-item">
                         <Button onClick={this.onClick}>Generate files</Button>
                       </div>
-                      {Object.keys(this.state.dataurl).length > 0 && (
-                        <React.Fragment>
-                          <h4>Download</h4>
-                          {buttonElements}
-                        </React.Fragment>
-                      )}
+                      <div style={{ marginBottom: '1rem' }}>
+                        {Object.keys(this.state.dataurl).length > 0 && (
+                          <React.Fragment>
+                            <h4>Download</h4>
+                            {buttonElements}
+                          </React.Fragment>
+                        )}
+                      </div>
                     </div>
                     <div>
                       <label className="wfp--label">Preview</label>

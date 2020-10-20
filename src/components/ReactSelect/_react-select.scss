@@ -15,7 +15,7 @@
     .#{$prefix}--react-select__control {
       border-radius: 0;
       min-height: $input-height;
-      background-color: $field-01;
+      background-color: var(--field-01);
       border: $input-border;
 
       &:hover {

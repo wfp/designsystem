@@ -4,7 +4,7 @@ import { action } from '@storybook/addon-actions';
 import Wrapper from '.';
 
 export default {
-  title: 'Components/Wrapper',
+  title: 'Components/Content Related/Wrapper',
   component: Wrapper,
   parameters: {
     componentSubtitle: 'Component',

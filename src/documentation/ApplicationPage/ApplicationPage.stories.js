@@ -6,7 +6,7 @@ import ApplicationPage from './ApplicationPage';
 import DashboardPage from './Dashboard';
 
 export default {
-  title: 'Examples/Application page',
+  title: 'Templates/Application page',
   component: ApplicationPage,
   parameters: {
     componentSubtitle: 'Example',

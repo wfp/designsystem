@@ -21,7 +21,7 @@
   height: auto;
   margin: 0.5rem 1rem 0.5rem 0;
   padding: 0 0 0 0.875rem;
-  color: var(--cds-inverse-01, #fff);
+  color: var(--cds-inverse-01, var(ui-01));
   box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2);
 
   .#{$prefix}--toast-notification:first-child {
@@ -47,7 +47,7 @@
     transition: outline 0.11s, background-color 0.11s;
 
     .#{$prefix}--toast-notification__close-icon {
-      fill: var(--cds-inverse-01, #fff);
+      fill: var(--cds-inverse-01, var(ui-01));
     }
   }
 
@@ -59,7 +59,7 @@
 
   .#{$prefix}--toast-notification__details {
     margin-right: 1rem;
-    color: var(--cds-inverse-01, #fff);
+    color: var(--cds-inverse-01, var(ui-01));
     .#{$prefix}--toast-notification__title {
       font-size: 0.875rem;
       line-height: 1.29;
@@ -156,8 +156,8 @@
 .#{$prefix}--toast-notification--error {
   background: var(--cds-inverse-02, #393939);
   // border-left: 3px solid var(--cds-inverse-support-01, #fa4d56);
-  border-left: 3px solid cssColor($support-01);
-  color: $support-01;
+  border-left: 3px solid cssColor(var(--support-01));
+  color: var(--support-01);
 
   .#{$prefix}--toast-notification__icon {
     fill: currentColor;
@@ -170,7 +170,7 @@
 }
 
 .#{$prefix}--toast-notification--low-contrast.#{$prefix}--toast-notification--error {
-  background: #fff1f1;
+  background: var(ui-01) 1f1;
   border-left: 3px solid var(--cds-support-01, #da1e28);
 }
 
@@ -226,7 +226,7 @@
   height: auto;
   min-height: 3rem;
   margin: 1rem 0;
-  color: var(--cds-inverse-01, #fff);
+  color: var(--cds-inverse-01, var(ui-01));
 
   .#{$prefix}--inline-notification__details {
     display: flex;
@@ -270,7 +270,7 @@
     color: var(--cds-inverse-link, #78a9ff);
 
     .#{$prefix}--inline-notification__close-icon {
-      fill: var(--cds-inverse-01, #fff);
+      fill: var(--cds-inverse-01, var(ui-01));
     }
   }
 }
@@ -326,7 +326,7 @@
 
 .#{$prefix}--inline-notification__close-button
   .#{$prefix}--inline-notification__close-icon {
-  fill: var(--cds-inverse-01, #fff);
+  fill: var(--cds-inverse-01, var(ui-01));
 }
 
 .#{$prefix}--inline-notification--low-contrast
@@ -351,7 +351,7 @@
 //     height: auto;
 //     margin: 0.5rem 1rem 0.5rem 0;
 //     padding: 0 0 0 0.875rem;
-//     color: var(--cds-inverse-01, #fff);
+//     color: var(--cds-inverse-01, var(ui-01));
 //     box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2);
 
 //     .#{$prefix}--toast-notification--info,

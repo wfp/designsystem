@@ -56,6 +56,7 @@
     width: 100%;
     height: 200px;
     object-fit: cover;
+    margin: 0;
   }
   .#{$prefix}--photo-cardnew__info {
     background: $ui-01;

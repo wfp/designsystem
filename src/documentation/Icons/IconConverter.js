@@ -52,7 +52,9 @@ export default class FaviconGenerator extends Component {
                     labelText="SVG code"
                     placeholder="Your svg code"
                   />
-                  <Button type="submit">Generate Icon</Button>
+                  <Button type="submit" style={{ marginTop: '1em' }}>
+                    Generate Icon
+                  </Button>
 
                   {this.state.json && (
                     <div>

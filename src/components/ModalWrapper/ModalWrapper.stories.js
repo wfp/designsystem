@@ -4,7 +4,7 @@ import { action } from '@storybook/addon-actions';
 import ModalWrapper from '.';
 
 export default {
-  title: 'Components/ModalWrapper',
+  title: 'Components/Content Related/ModalWrapper',
   component: ModalWrapper,
   parameters: {
     componentSubtitle: 'Component',
@@ -104,14 +104,3 @@ Disabled.story = {
     },
   },
 };
-
-export const Wahhh = (args) => (
-  <ModalWrapper
-    customButton={<button>Open modal</button>}
-    handleSubmit={() => {
-      console.log('submit');
-      return true;
-    }}>
-    Modal Content
-  </ModalWrapper>
-);

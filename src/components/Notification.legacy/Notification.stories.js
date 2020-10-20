@@ -9,7 +9,7 @@ import { iconCheckmarkGlyph } from '@wfp/icons';
 import Button from '../Button';
 
 export default {
-  title: 'Components/Notification (legacy)',
+  title: 'Components/UI Elements/Notification (legacy)',
   component: ToastContainer,
   parameters: {
     componentSubtitle: 'Component',

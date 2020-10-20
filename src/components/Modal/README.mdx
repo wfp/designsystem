@@ -4,29 +4,16 @@ Use the Modal Wrapper component to encapsulate your Modal within a button.
 
 Modal is forked from [Carbon Components](https://www.carbondesignsystem.com/components/modal/code)
 
-### Do use
+## Usage
+
+#### When to use
 
 import { List, ListItem } from '../List';
 
-<List kind="bullet">
-  <ListItem kind="checkmark">
-    Grab the user’s attention: Use when you want to interrupt a user’s current
-    task to catch the user’s full attention to something more important.
-  </ListItem>
-  <ListItem kind="checkmark">
-    Need user input:Use when you want to get information from the user. Ex. sign
-    up or login form.
-  </ListItem>
-  <ListItem kind="checkmark">
-    Use when you want to show additional information without losing the context
-    of the parent page. Ex. showing larger images or videos.
-  </ListItem>
-  <ListItem kind="checkmark">
-    Use when you want to show information that is not directly related to the
-    parent page or other options that are “independent” from other pages. Ex.
-    notifications.
-  </ListItem>
-</List>
+- ✓ Grab the user’s attention: Use when you want to interrupt a user’s current task to catch the user’s full attention to something more important.
+- ✓ Need user input:Use when you want to get information from the user. Ex. sign up or login form.
+- ✓ Use when you want to show additional information without losing the context of the parent page. Ex. showing larger images or videos.
+- ✓ Use when you want to show information that is not directly related to the parent page or other options that are “independent” from other pages. Ex. notifications.
 
 <!--
 #### Grab the user’s attention
@@ -48,28 +35,17 @@ Use when you want to show information that is not directly related to the parent
 
 Source: [Best Practices for Modals / Overlays / Dialog Windows](https://uxplanet.org/best-practices-for-modals-overlays-dialog-windows-c00c66cddd8c), [Modal & Nonmodal Dialogs: When (& When Not) to Use Them](https://www.nngroup.com/articles/modal-nonmodal-dialog/)
 
-### Do not use
+#### When not to use
 
-<List kind="bullet">
-  <ListItem kind="cross">
-    Long content: Avoid using modal dialogs when the content needs a scrollbar.
-  </ListItem>
-  <ListItem kind="cross">
-    Long forms: Do not use when a long form is displayed.
-  </ListItem>
-  <ListItem kind="cross">
-  Complex decision making: Avoid modal dialogs for complex decision making that requires additional sources of information unavailable in the modal.
-
-  </ListItem>
-</List>
-
-### Usage
+- ✗ Long content: Avoid using modal dialogs when the content needs a scrollbar.
+- ✗ Long forms: Do not use when a long form is displayed.
+- ✗ Complex decision making: Avoid modal dialogs for complex decision making that requires additional sources of information unavailable in the modal.
 
 ```js
 import { Modal } from '@wfp/ui';
 ```
 
-#### Custom footer
+##### Custom footer
 
 To display custom footer content, pass a function (or React component) to `modalFooter` prop
 
@@ -128,7 +104,7 @@ class ModalWithControls extends React.Component {
 }
 ```
 
-### Disable closing the Modal if the user clicks on the background
+#### Disable closing the Modal if the user clicks on the background
 
 ```js
 onRequestClose={(evt, trigger) => {

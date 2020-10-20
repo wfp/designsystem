@@ -9,7 +9,7 @@ import { notificationtypes } from '../../prop-types/types';
 import markdown from './README.mdx';
 
 export default {
-  title: 'Components/Notification',
+  title: 'Components/UI Elements/Notification',
   component: NotificationActionButton,
   subcomponents: { ToastNotification, InlineNotification },
   parameters: {

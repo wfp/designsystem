@@ -1,12 +1,10 @@
 import React from 'react';
 import { List, ListItem } from '../../components/List';
+import Tooltip from '../../components/Tooltip';
 
 import { Module, ModuleBody } from '../../components/Module';
 import colors from '../../globals/data/colors';
 import { hex, score } from 'wcag-contrast';
-
-import Tippy from '@tippy.js/react';
-import { tooltipStyle } from '../../components/Tooltip';
 
 /*
 const tooltips = {
@@ -77,19 +75,18 @@ var mix = function(color_1, color_2, weight) {
 
 const colorList = ({ filter }) => {
   const filteredColors = Object.values(colors).filter(
-    ui_colors => ui_colors.type === filter
+    (ui_colors) => ui_colors.type === filter
   );
 
-  const list = filteredColors.map(color => (
-    <Tippy
+  const list = filteredColors.map((color) => (
+    <Tooltip
       // options
       content={
         <div>
           {color.description && <p>{color.description}</p>}
           {color.name}
         </div>
-      }
-      {...tooltipStyle}>
+      }>
       <li>
         <Module fullHeight noMargin light className="colour__item">
           <div className="colour__field" style={{ backgroundColor: color.hex }}>
@@ -202,7 +199,7 @@ const colorList = ({ filter }) => {
                 )}*/}
         </Module>
       </li>
-    </Tippy>
+    </Tooltip>
   ));
 
   return <ul className="color--list">{list}</ul>;

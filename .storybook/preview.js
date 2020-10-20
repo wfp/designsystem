@@ -69,3 +69,30 @@ export const parameters = {
     canvas: { title: 'Code', hidden: false },
   },
 };
+
+export const globalTypes = {
+  theme: {
+    name: 'Theme',
+    description: 'Global theme for components',
+    defaultValue: 'light',
+    toolbar: {
+      icon: 'circlehollow',
+      // array of plain string values or MenuItem shape (see below)
+      items: ['light', 'dark'],
+    },
+  },
+};
+
+const withThemeProvider = (Story, context) => {
+  const theme = context.globals.theme;
+  document.body.classList.remove(
+    `wfp--theme-${theme === 'light' ? 'dark' : 'light'}`
+  );
+  document.body.classList.add(`wfp--theme-${theme}`);
+  return (
+    <div className={`wfp--theme-${theme}`}>
+      <Story {...context} />
+    </div>
+  );
+};
+export const decorators = [withThemeProvider];

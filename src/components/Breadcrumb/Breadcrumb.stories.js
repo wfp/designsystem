@@ -8,7 +8,7 @@ import BreadcrumbItem from '../BreadcrumbItem';
 import BreadcrumbSkeleton from '../Breadcrumb/Breadcrumb.Skeleton';
 
 export default {
-  title: 'Components/Breadcrumb',
+  title: 'Components/Navigations/Breadcrumb',
   component: Breadcrumb,
   subcomponents: { BreadcrumbHome, BreadcrumbItem },
   parameters: {

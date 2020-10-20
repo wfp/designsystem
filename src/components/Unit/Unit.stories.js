@@ -4,7 +4,7 @@ import { action } from '@storybook/addon-actions';
 import Unit from '.';
 
 export default {
-  title: 'Components/Unit',
+  title: 'Components/Content Related/Unit',
   component: Unit,
   parameters: {
     componentSubtitle: 'Component',

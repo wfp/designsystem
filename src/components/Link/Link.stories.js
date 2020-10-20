@@ -3,7 +3,7 @@ import markdown from './README.mdx';
 import Link from '.';
 
 export default {
-  title: 'Components/Link',
+  title: 'Components/UI Elements/Link',
   component: Link,
   parameters: {
     componentSubtitle: 'Component',

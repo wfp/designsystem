@@ -4,7 +4,7 @@ import { tooltipStyle, tooltipStyleDark } from './Tooltip';
 import markdown from './README.mdx';
 
 export default {
-  title: 'Components/Tooltip',
+  title: 'Components/UI Elements/Tooltip',
   component: Tooltip,
   parameters: {
     status: 'released',

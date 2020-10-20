@@ -120,11 +120,13 @@ Button.propTypes = {
   disabled: PropTypes.bool,
 
   /**
+   * FOR DESIGNERS
    * Specify whether the Button should be a small variant
    */
   small: PropTypes.bool,
 
   /**
+   * FOR DESIGNERS
    * Specify the kind of Button you want to create
    */
   kind: PropTypes.oneOf([
@@ -153,7 +155,6 @@ Button.propTypes = {
   tabIndex: PropTypes.number,
 
   /**
-   * FOR DESIGNERS
    * Optional prop to specify the type of the Button
    */
   type: PropTypes.oneOf(['button', 'reset', 'submit']),

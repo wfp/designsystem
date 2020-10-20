@@ -8,7 +8,7 @@ import Modal from '../../components/Modal';
 import Link from '../../components/Link';
 
 export default {
-  title: 'Examples/Login',
+  title: 'Templates/Login',
 
   parameters: {
     componentSubtitle: 'Example',

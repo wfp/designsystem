@@ -4,7 +4,7 @@ import { action } from '@storybook/addon-actions';
 import Tag from '.';
 
 export default {
-  title: 'Components/Tag',
+  title: 'Components/UI Elements/Tag',
   component: Tag,
   parameters: {
     componentSubtitle: 'Component',

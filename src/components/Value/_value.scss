@@ -11,7 +11,7 @@
 @import '../../globals/scss/css--reset';
 
 @include exports('value') {
-  .#{$prefix}--link {
+  .#{$prefix}--value {
     @include reset;
     @include font-family;
     //@include typescale('epsilon');
@@ -19,7 +19,7 @@
   }
   .#{$prefix}--title {
     @include typescale('epsilon');
-    color: $text-02;
+    color: var(--text-02);
     margin-bottom: $spacing-xs;
     font-weight: 600;
   }

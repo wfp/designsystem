@@ -10,7 +10,7 @@ import markdown from './README.mdx';
 import Button from '.';
 
 export default {
-  title: 'Components/Button',
+  title: 'Components/UI Elements/Button',
   component: Button,
   markdown: 'hello',
   parameters: {
@@ -23,6 +23,9 @@ export default {
   },*/
 };
 
+export const StoryWithLocale = (args, { globals: { theme } }) => {
+  return <>{theme}</>;
+};
 export const ButtonRegular = (args) => <Button {...args} />;
 ButtonRegular.args = {
   children: 'Button',

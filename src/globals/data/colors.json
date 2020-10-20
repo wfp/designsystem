@@ -85,7 +85,7 @@
   "interactive-01": {
     "name": "interactive-01",
     "hex": "#0b77c2",
-    "scss": "$interactive-01",
+    "scss": "var(--interactive-01)",
     "css": "color__interactive-01",
     "type": "ui",
     "description": "Primary interactive color, Primary buttons"

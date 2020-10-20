@@ -21,6 +21,7 @@
   .#{$prefix}--main-navigation__item {
     @include typescale('epsilon');
     @include font-family;
+    font-weight: 500;
     &:last-child {
       padding-right: 0;
     }
@@ -40,7 +41,7 @@
       @include typescale('epsilon');
       text-decoration: none;
       &.active {
-        border-bottom: 3px solid rgba($ui-01, 0.5);
+        border-bottom: 3px solid rgba(var(--ui-01), 0.5);
       }
       &:hover,
       &:visited,
@@ -179,7 +180,7 @@
       overflow: auto;
       overflow-x: hidden;
       z-index: z('modal');
-      color: $text-01;
+      color: var(--text-01);
       background: $color__white;
       box-shadow: rgba(desaturate($color__main, 50%), 0.15) 0 3px 12px,
         rgba(desaturate($color__main, 40%), 0.15) 0 32px 78px;
@@ -218,7 +219,7 @@
 
     .#{$prefix}--main-navigation__sub--open {
       display: block;
-      color: $text-01;
+      color: var(--text-01);
       background: $color__white;
     }
 

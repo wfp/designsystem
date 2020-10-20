@@ -4,7 +4,7 @@ import { action } from '@storybook/addon-actions';
 import Toggle from '.';
 
 export default {
-  title: 'Components/Forms/Toggle',
+  title: 'Components/UI Elements/Toggle',
   component: Toggle,
   parameters: {
     componentSubtitle: 'Component',
