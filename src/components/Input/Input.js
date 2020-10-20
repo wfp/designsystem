@@ -24,6 +24,7 @@ const Input = ({
   invalidText,
   helperText,
   light,
+  required,
   ...other
 }) => {
   const inputProps = {
@@ -61,6 +62,7 @@ const Input = ({
   const label = (
     <label htmlFor={id} className={labelClasses}>
       {labelText && labelText}
+      {required && '*'}
     </label>
   );
 

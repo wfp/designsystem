@@ -50,8 +50,14 @@ export const AddressDetails = (args) => (
         id="country"
         labelText="Country"
         placeholder="Placeholder text"
+        required
       />
-      <TextInput id="city" labelText="City" placeholder="Placeholder text" />
+      <TextInput
+        id="city"
+        labelText="City"
+        placeholder="Placeholder text"
+        required
+      />
       <TextInput
         id="zipcode"
         labelText="Postal code/ZIP code"
