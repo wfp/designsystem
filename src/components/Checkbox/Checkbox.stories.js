@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import markdown from './README.mdx';
-import { action } from '@storybook/addon-actions';
 import Checkbox from '.';
+import FormGroup from '../FormGroup';
 
 export default {
   title: 'Components/Forms/Checkbox',
@@ -109,3 +109,25 @@ HideLabel.story = {
     },
   },
 };
+
+export const CheckboxGroup = (args) => (
+  <FormGroup legendText="Programming language preference">
+    <Checkbox {...args} defaultChecked labelText="ReactJs" id="react" />
+    <Checkbox {...args} defaultChecked labelText="ReactNative" id="native" />
+    <Checkbox {...args} labelText="Node.js" id="node" />
+    <Checkbox {...args} labelText="PHP" id="php" />
+    <Checkbox {...args} labelText="Java" id="java" />
+  </FormGroup>
+);
+
+CheckboxGroup.args = {};
+
+// const nolabel = `Specify whether the label should be hidden or not`;
+
+// CheckboxGroup.story = {
+//   parameters: {
+//     docs: {
+//       storyDescription: nolabel,
+//     },
+//   },
+// };
