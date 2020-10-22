@@ -68,6 +68,11 @@ export const parameters = {
     },
     canvas: { title: 'Code', hidden: false },
   },
+  options: {
+    storySort: {
+      order: ['Getting started', 'Documentation', 'Templates', 'Components'],
+    },
+  },
 };
 
 export const globalTypes = {

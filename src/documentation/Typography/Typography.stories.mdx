@@ -1,0 +1,97 @@
+import Blockquote from '../../components/Blockquote';
+import Link from '../../components/Link';
+import { List, ListItem } from '../../components/List';
+
+<Meta
+  title="Documentation/Typography"
+  subTitle="Typefaces & Spacings"
+  parameters={{
+    previewTabs: {
+      canvas: { hidden: true },
+    },
+  }}
+/>
+
+### Typefaces
+
+Open Sans is the typeface for user interfaces; it’s a round, humanist
+sans-serif, with incredibly warm appeal. It can be used for both headlines and
+paragraphs alike, as well as for interface elements.
+
+### How to use it
+
+Open Sans is already included in the WFP UI's CSS. If you don't want to
+include the font you can use set{' '}
+**\$css--font-face: false;** inside scss.
+
+### Other languages & styles
+
+Open Sans provides various font styles and special language character sets,
+which can be found on [Open Sans on fonts.google.com](https://fonts.google.com/specimen/Open+Sans)
+
+### DNS Naming
+
+[This guide](https://newgo.wfp.org/documents/dns-conventions/) explains rules for DNS namespace conventions.
+
+## Default formating
+
+See the [Story component](?path=/docs/components-content-related-story--story-text) for applying default styling
+
+## Headings
+
+Headings help to add a hierarchy to a page, and they are key identifiers for
+users reading a page. They should be used in an order that is relevant to the
+content of a page.
+
+<Blockquote>
+  <h1>Heading 1</h1>
+  <List kind="simple" colon small>
+    <ListItem title="font-size">2.25rem (36px)</ListItem>
+    <ListItem title="line-height">1.25</ListItem>
+    <ListItem title="font-weight">600</ListItem>
+  </List>
+  <h2>Heading 2</h2>
+  <List kind="simple" colon small>
+    <ListItem title="font-size">1.75rem (28px)</ListItem>
+    <ListItem title="line-height">1.25</ListItem>
+    <ListItem title="font-weight">600</ListItem>
+  </List>
+  <h3>Heading 3</h3>
+  <List kind="simple" colon small>
+    <ListItem title="font-size">1.25rem (20px)</ListItem>
+    <ListItem title="line-height">1.25</ListItem>
+    <ListItem title="font-weight">600</ListItem>
+  </List>
+  <h4>Heading 4</h4>
+  <List kind="simple" colon small>
+    <ListItem title="font-size">1.125rem (18px)</ListItem>
+    <ListItem title="line-height">1.25</ListItem>
+    <ListItem title="font-weight">600</ListItem>
+  </List>
+  <h5>Heading 5</h5>
+  <List kind="simple" colon small>
+    <ListItem title="font-size">1rem (16px)</ListItem>
+    <ListItem title="line-height">1.25</ListItem>
+    <ListItem title="font-weight">600</ListItem>
+  </List>
+</Blockquote>
+
+<Blockquote>
+  <h5>Paragraph</h5>
+  <p>
+    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+    eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+    voluptua.
+    <sup>
+      <a id="anker3" title="" href="#fn3">
+        3
+      </a>
+    </sup>. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
+    gubergren.
+  </p>
+  <List kind="simple" colon small>
+    <ListItem title="font-size">1rem (16px)</ListItem>
+    <ListItem title="line-height">1.6</ListItem>
+    <ListItem title="font-weight">400</ListItem>
+  </List>
+</Blockquote>
