@@ -7,7 +7,7 @@ import Button from '../Button';
 import Icon from '../Icon';
 
 export default {
-  title: 'Components/Content Related/Card',
+  title: 'Components/Content Related/Hero',
   component: Card,
   parameters: {
     componentSubtitle: 'Component',
