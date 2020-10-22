@@ -53,7 +53,7 @@
 
   .#{$prefix}--fieldset__align-horizontal {
     .#{$prefix}--fieldset__content {
-      @include breakpoint(bp--md--major) {
+      @include breakpoint(bp--sm--major) {
         display: flex;
       }
     }

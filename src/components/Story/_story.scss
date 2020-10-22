@@ -272,12 +272,12 @@
 
   .#{$prefix}--story__h4 {
     margin-top: $spacing-lg;
-    @include typescale('epsilon');
+    // @include typescale('epsilon');
   }
 
   .#{$prefix}--story__h5 {
     margin-top: $spacing-lg;
-    @include typescale('epsilon');
+    // @include typescale('epsilon');
   }
 
   .#{$prefix}--story__a {
