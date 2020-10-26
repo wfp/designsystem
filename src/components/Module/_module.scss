@@ -141,11 +141,11 @@
     }
 
     .#{$prefix}--module__header {
-      border-bottom-color: rgba(var(ui-01), 0.1);
+      border-bottom-color: rgba(var(--ui-01), 0.1);
     }
 
     .#{$prefix}--module__footer {
-      border-top-color: rgba(var(ui-01), 0.1);
+      border-top-color: rgba(var(--ui-01), 0.1);
     }
 
     .#{$prefix}--module__title {

@@ -56,7 +56,8 @@ export const External = (args) => (
         <br />
         00148 Rome, Italy
       </div>
-    }>
+    }
+    {...args}>
     <div>
       The United Nations World Food Programme - saving lives in emergencies and
       changing lives for millions through sustainable development. WFP works in

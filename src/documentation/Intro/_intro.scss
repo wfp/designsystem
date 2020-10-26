@@ -13,7 +13,7 @@ $easing: cubic-bezier(0.17, 0.89, 0.32, 1.1); //ease-in-out;
 .intro-content {
   //background: var(--brand-01);
   //background: var(--ui-02);
-  background: linear-gradient(-190deg, var(--ui-02) 0%, var(ui-01) 100%);
+  background: linear-gradient(-190deg, var(--ui-02) 0%, var(--ui-01) 100%);
   margin-top: 2%;
   padding-top: 0;
   @include breakpoint(bp--md--major) {
@@ -23,9 +23,9 @@ $easing: cubic-bezier(0.17, 0.89, 0.32, 1.1); //ease-in-out;
   }
   z-index: -1;
   position: relative;
-  /*color: var(ui-01);
+  /*color: var(--ui-01);
   .wfp--link {
-    color: var(ui-01);
+    color: var(--ui-01);
   }*/
   .wfp--blockquote {
     background: rgba(var(--brand-01), 0.1);
@@ -56,7 +56,7 @@ $easing: cubic-bezier(0.17, 0.89, 0.32, 1.1); //ease-in-out;
   }
   padding: 0 12% 0 14%;
 
-  //color: var(ui-01);
+  //color: var(--ui-01);
   &__name {
     font-weight: 100;
   }

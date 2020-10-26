@@ -26,7 +26,8 @@ import {
   SourceError,
   SourceProps as PureSourceProps,
 } from '@storybook/components';
-import Blockquote from '../../src/components/Blockquote/Blockquote';
+import Blockquote from '../../src/components/Blockquote';
+import mdxComponents from '../../src/components/MdxComponents';
 
 export interface DocsContainerProps {
   context: DocsContextProps;
@@ -58,49 +59,6 @@ export const DocsContainer: FunctionComponent<DocsContainerProps> = ({
   }
   const theme = ensureTheme(themeVars);
 
-  //TODO: just a test
-  const li = (props) => {
-    const kind =
-      typeof props.children === 'string' ? props.children.substring(0, 1) : '';
-
-    if (kind === '✓' || kind === '✗')
-      return (
-        <ListItem kind={kind === '✓' ? 'checkmark' : 'cross'} {...props}>
-          {props.children.substring(1, props.children.length)}
-        </ListItem>
-      );
-
-    return <li {...props}>{props.children}</li>;
-  };
-
-  const ul = (props) => {
-    return (
-      <List {...props} kind="bullets">
-        {props.children}
-      </List>
-    );
-  };
-
-  const ol = (props) => {
-    return (
-      <List {...props} kind="ordered">
-        {props.children}
-      </List>
-    );
-  };
-
-  const blockquote = (props) => {
-    if (Array.isArray(props.children) && props.children.length >= 2)
-      return (
-        <Blockquote {...props} title={props.children[0]}>
-          {props.children.map((e, i) => {
-            if (i > 0) return e;
-          })}
-        </Blockquote>
-      );
-    return <Blockquote {...props}>{props.children}</Blockquote>;
-  };
-
   const code = ({ children, className, ...other }) => {
     const language = className && className.split('-');
     return (
@@ -114,16 +72,11 @@ export const DocsContainer: FunctionComponent<DocsContainerProps> = ({
     );
   };
 
-  const wrapper = (props) => <Story {...props} />;
   const allComponents = {
     ...defaultComponents,
     ...docs.components,
-    ul,
-    ol,
-    li,
-    wrapper,
+    ...mdxComponents,
     code,
-    blockquote,
   };
 
   useEffect(() => {

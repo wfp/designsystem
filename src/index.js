@@ -1,3 +1,5 @@
+import MdxComponents from './components/MdxComponents/MdxComponents';
+
 export {
   BannerNavigation,
   BannerNavigationItem,
@@ -52,6 +54,7 @@ export {
   SubNavigationGroup,
   SubNavigationItem,
 } from './components/SubNavigation';
+export MdxComponents from './components/MdxComponents';
 export Modal from './components/Modal';
 export ModalWrapper from './components/ModalWrapper';
 export {

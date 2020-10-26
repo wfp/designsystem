@@ -1,17 +1,33 @@
 import { MixBarChartChart } from './MixBarChart.stories.js';
 import { PieChartExample } from './PieChart.js';
-import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+import { Canvas, Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+//import Button from '../../components/Button';
 
-<Meta title="Documentations/Charts" subTitle="How to use the UI Kit" />
+<Meta
+  title="Documentation/Charts"
+  subTitle="How to use the UI Kit"
+  id="core-layout-mdx"
+/>
 
-dasadsdasa
 [https://brand.manuals.wfp.org/en/data-visualization-guidance/](Visualization guidieline)
 
+<Canvas>
+  <Story name="MixBarChartChart" parameters={{ layout: 'centered' }}>
+    <MixBarChartChart />
+  </Story>
+</Canvas>
+
+<!--
 <MixBarChartChart />
 
-ddsassdadas
-
 <PieChartExample />
+-->
+
+<Canvas>
+  <Story name="PieChartExample" parameters={{ layout: 'centered' }}>
+    <PieChartExample />
+  </Story>
+</Canvas>
 
 ## Nine questions to help you visualize your data
 

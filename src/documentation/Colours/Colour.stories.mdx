@@ -11,38 +11,6 @@ import ReactDOMServer from 'react-dom/server';
   }}
 />
 
-[The World Food Programme’s (WFP) Branding Guidance](http://brand.manuals.wfp.org) was published first in 2009 and has now been effectively implemented across the organization, strengthening WFP’s brand image through consistent representation. This new version shall reflect the changes in technology.
-
-### The UI Kit is be heavily based on
-
-- [Carbon Design System by IBM](https://github.com/carbon-design-system/carbon-components)
-- [U.S. Webdesign System](https://designsystem.digital.gov/page-templates)
-- [Sketch Favicon Exporter Template!](https://github.com/frederik-jacques/sketch-favicon-exporter-template)
-
-### Contributing
-
-Development is made on a GitHub repository. Feel free create an Issue or
-submit a pull request.{' '}
-[Project on GitHub](https://github.com/wfp/ui)
-
-<iframe
-  title="GitHub Like"
-  src="https://ghbtns.com/github-btn.html?user=wfp&repo=ui&type=star&count=true&size=large"
-  frameBorder="0"
-  scrolling="0"
-  width="160px"
-  height="30px"
-/>
-
-### NPM
-
-npm is a package manager for the JavaScript programming language. All
-versions of the UI Kit will be published there.
-[View package on npm](https://www.npmjs.com/package/@wfp/ui)
-
-import ColourDocs, { Color } from './ColourDocs';
-import ColorList from './ColourList';
-
 WFP online visual identity includes the following colours:
 
 - ### [primary](#primary-colours)
@@ -254,12 +222,12 @@ The colours can be used via JavaScript or different frameworks.
 
 #### Usage in JavaScript
 
-```
+```jsx
 // Import colours as json (needs a json loader)
-import colors from '@wfp/ui/source/globals/data/colors.json'
+import colors from '@wfp/ui/source/globals/data/colors.json';
 
 // Import colours as js
-import colors from '@wfp/ui/source/globals/data/colors.js'
+import colors from '@wfp/ui/source/globals/data/colors.js';
 
 const barChartColor = colors.navy;
 ```
@@ -268,11 +236,11 @@ Setting colour variables makes it easy to reuse colours, without the hassle of u
 
 #### Usage in scss
 
-```
- // Only use variables
- @import "~@wfp/ui/source/globals/scss/vars";
+```css
+// Only use variables
+@import '~@wfp/ui/source/globals/scss/vars';
 
- body {
- background: \$ui-02;
- }
+body {
+  background: var(--ui-02);
+}
 ```
