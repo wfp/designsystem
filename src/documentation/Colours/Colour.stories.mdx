@@ -1,5 +1,7 @@
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
 import ReactDOMServer from 'react-dom/server';
+import { Colour } from './ColourDocs';
+import { ColourList } from './ColourList';
 
 <Meta
   title="Documentation/Colours"
@@ -47,9 +49,9 @@ actions and highlight information in your application. Yellow is the
 recommended **secondary accent colour**: to use a different colour please
 contact [wfp.publications@wfp.org](mailto:wfp.publications@wfp.org)
 
-<ColorList filter="brand" />
+<ColourList filter="brand" />
 
-<Color color="brand-01" />
+<Colour color="brand-01" />
 <h4 className="wfp--story__sub-heading">WFP's corporate colour</h4>
 
 The brand-01 colour is WFP’s corporate blue which is used in all
@@ -68,7 +70,7 @@ can also be used to accent elements.
 - ✗ interactive elements like buttons or links
 - ✗ Primary and secondary colours
 
-<Color color="interactive-01" />
+<Colour color="interactive-01" />
 
 <h4 className="wfp--story__sub-heading">
   Primary interactive colour, primary buttons
@@ -89,7 +91,7 @@ interactive and to be distinguishable from black.
   src={`${process.env.STORYBOOK_INTERNAL_ASSETS}internal/brand-color.png`}
 />
 
-<Color color="interactive-02" />
+<Colour color="interactive-02" />
 <h4 className="wfp--story__sub-heading">
   Interactive emphasis colour (e.g. hovers)
 </h4>
@@ -108,7 +110,7 @@ This colour is used for hover and active states.
 - ✗ other branding elements
 - ✗ non - interactive elements
 
-<Color color="accent-01" />
+<Colour color="accent-01" />
 
 <h4 className="wfp--story__sub-heading">Accent secondary colour</h4>
 <img
@@ -156,14 +158,14 @@ tints of the WFP brand colour. They can be used to increase the contrast
 of the UI elements to make them more or less visible compared to the
 rest of the interface.
 
-<ColorList filter="brand-extended" />
+<ColourList filter="brand-extended" />
 
 ### Neutral Colors
 
 Neutral colours are used for non-interactive elements, backgrounds,
 borders and texts.
 
-<ColorList filter="ui" />
+<ColourList filter="ui" />
 
 ### ui-01 and ui-02
 
@@ -188,24 +190,24 @@ Modules on top.
 
 ### Tints to use in graphs and charts
 
-<ColorList filter="communications" />
+<ColourList filter="communications" />
 
 ### Semantic colours
 
-<ColorList filter="support" />
+<ColourList filter="support" />
 
-<Color color="support-01" />
+<Colour color="support-01" />
 
 Use the error colour to indicate an error or to focus the attention on something
 which is crucial to see. Paired with a cross icon, red delivers the message that
 something went wrong.
 
-<Color color="support-02" />
+<Colour color="support-02" />
 
 Use green to indicate success state. Paired with a checkmark icon the user
 knows that the operation was successfully completed.
 
-<Color color="support-03" />
+<Colour color="support-03" />
 
 Use yellow to indicate a transient warning which is less important than an
 error message. Yellow typically consists of items which require the user’s
@@ -214,7 +216,7 @@ the use of red, yellow is more transient in nature.
 
 ### Symbolic colours
 
-<ColorList filter="symbolic" />
+<ColourList filter="symbolic" />
 
 ### Usage
 

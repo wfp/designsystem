@@ -9,7 +9,7 @@ import ColorList from './ColourList';
 import './colours.scss';
 // import styles from './colours.module.scss';
 
-export const Color = ({ color }) => (
+export const Colour = ({ color }) => (
   <h3>
     <div
       style={{

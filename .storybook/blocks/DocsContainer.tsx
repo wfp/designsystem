@@ -26,7 +26,6 @@ import {
   SourceError,
   SourceProps as PureSourceProps,
 } from '@storybook/components';
-import Blockquote from '../../src/components/Blockquote';
 import mdxComponents from '../../src/components/MdxComponents';
 
 export interface DocsContainerProps {

@@ -37,9 +37,14 @@ const ol = (props) => {
 };
 
 const blockquote = (props) => {
-  if (Array.isArray(props.children) && props.children.length >= 2)
+  console.log('props.children[0]', props.children);
+  if (
+    Array.isArray(props.children) &&
+    props.children.length >= 2 &&
+    props.children[0].props
+  )
     return (
-      <Blockquote {...props} title={props.children[0]}>
+      <Blockquote {...props} title={props.children[0].props.children}>
         {props.children.map((e, i) => {
           if (i > 0) return e;
         })}

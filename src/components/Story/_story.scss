@@ -192,8 +192,8 @@
   .#{$prefix}--story {
     @include reset;
     @include font-family;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    //-webkit-font-smoothing: antialiased;
+    //-moz-osx-font-smoothing: grayscale;
     &__center {
       text-align: center;
     }
@@ -272,12 +272,12 @@
 
   .#{$prefix}--story__h4 {
     margin-top: $spacing-lg;
-    @include typescale('epsilon');
+    // @include typescale('epsilon');
   }
 
   .#{$prefix}--story__h5 {
     margin-top: $spacing-lg;
-    @include typescale('epsilon');
+    // @include typescale('epsilon');
   }
 
   .#{$prefix}--story__a {
@@ -302,6 +302,10 @@
         content: ']';
       }
     }
+  }
+
+  .docblock-source {
+    margin-top: $spacing-xs !important;
   }
 
   .#{$prefix}--story__b,
