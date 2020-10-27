@@ -7,7 +7,7 @@
 .#{$prefix}--tooltip {
   cursor: pointer !important;
   -webkit-tap-highlight-color: transparent;
-  background: var(ui-01);
+  background: var(--ui-01);
   padding: $spacing-xs;
   opacity: 0;
   transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
@@ -83,7 +83,7 @@
   &:before {
     content: '';
     transform: rotate(45deg);
-    background: var(ui-01);
+    background: var(--ui-01);
     top: 0px;
     left: 0px;
     width: 10px;

@@ -6,6 +6,7 @@
 @mixin css--variables {
   body {
     --interactive-01: #{$color__main-51}; // Main Link and Button Color
+    --hover-primary: #{darken($color__main-51, 10%)};
     --accent-02: #{$color__yellow}; // Darker WFP Blue // $color__teal-20
     --brand-01: #{$color__main}; // Main Link and Button Color
     --interactive-02: #{$color__main-60}; // Main WFP Color //$color__blue-40
@@ -48,6 +49,7 @@
           background: #{$color__navy-gray-1};
         }
         --interactive-01: #{$color__main-51}; // Main Link and Button Color
+        --hover-primary: #{darken($color__main-51, 10%)};
         --accent-02: #{$color__yellow}; // Darker WFP Blue // $color__teal-20
         --brand-01: #{$color__main}; // Main Link and Button Color
         --interactive-02: #{$color__main-60}; // Main WFP Color //$color__blue-40
@@ -86,11 +88,23 @@
   }
 }
 
-@include exports('css--variables') {
-  @if not global-variable-exists('css--variables') or $css--variables == true {
-    @include css--variables;
+//$css--try: false !default;
+/*
+@if $css--try == true {
+  body {
+    border: 3px solid green;
   }
+} @else {
+  body {
+    border: 3px solid blue;
+  }
+}*/
+//@include exports('css--variables') {
+@if global-variable-exists(css--variables) ==false or $css--variables==true {
+  //@if global-variable-exists('css--variables') == true and $css--variables == true
+  @include css--variables;
 }
+//}
 
 @mixin theme() {
   // Color Theme Variables

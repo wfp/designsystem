@@ -88,7 +88,7 @@ $transparent-darker: rgba(0, 8, 16, 0.2);
     }
 
     > .#{$namespace-prefix}-arrow {
-      border-left-color: var(ui-01);
+      border-left-color: var(--ui-01);
 
       &::after {
         border-left: $arrow-size solid $color;
@@ -109,7 +109,7 @@ $transparent-darker: rgba(0, 8, 16, 0.2);
     }
 
     > .#{$namespace-prefix}-arrow {
-      border-right-color: var(ui-01);
+      border-right-color: var(--ui-01);
 
       &::after {
         border-right: $arrow-size solid $color;

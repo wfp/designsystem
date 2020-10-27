@@ -45,10 +45,10 @@ export const withReset = ({ theme }: { theme: Theme }): CSSObject => ({
   fontSize: theme.typography.size.s3,
   margin: 0,
 
-  WebkitFontSmoothing: 'antialiased',
+  /*WebkitFontSmoothing: 'antialiased',
   MozOsxFontSmoothing: 'grayscale',
   WebkitTapHighlightColor: 'rgba(0, 0, 0, 0)',
-  WebkitOverflowScrolling: 'touch',
+  WebkitOverflowScrolling: 'touch',*/
 });
 
 export const withMargin: CSSObject = {
