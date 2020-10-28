@@ -93,13 +93,7 @@ export const parameters = {
   },
   options: {
     storySort: {
-      order: [
-        'Getting started',
-        'Documentation',
-        'Templates',
-        'Contact',
-        'Components',
-      ],
+      order: ['Getting started', 'Documentation', 'Templates', 'Components'],
     },
   },
 };
