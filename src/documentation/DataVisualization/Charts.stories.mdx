@@ -1,14 +1,46 @@
 import { MixBarChartChart } from './MixBarChart.stories.js';
 import { PieChartExample } from './PieChart.js';
-import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+import { Canvas, Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+//import Button from '../../components/Button';
 
-<Meta title="Documentation/Charts" subTitle="How to use the UI Kit" />
+<Meta
+  title="Documentation/Charts"
+  subTitle="How to use the UI Kit"
+  id="core-layout-mdx"
+/>
 
 [Visualization guidieline](https://brand.manuals.wfp.org/en/data-visualization-guidance/)
 
-<MixBarChartChart />
+## Bar charts
 
-<PieChartExample />
+<Canvas>
+  <Story name="MixBarChartChart" parameters={{ layout: 'centered' }}>
+    <MixBarChartChart />
+  </Story>
+</Canvas>
+
+A bar chart is used when you want to show a distribution of data points or perform a comparison of metric values across different subgroups of your data.
+The primary variable of a bar chart is often a categorical variable.
+
+In addition, some non-categorical variables can be converted into groups, like aggregating temporal data based on date (eg. dividing by quarter into `20XX-Q1`, `20XX-Q2`, `20XX-Q3`, `20XX-Q4`, etc.) The important point for this primary variable is that the groups are distinct.
+
+In contrast, the secondary variable will be numeric in nature and determine the length of each bar.
+
+- ✓ Use a common zero-valued baseline
+- ✓ Maintain rectangular forms for your
+- ✓ Use distinctive colours
+
+https://chartio.com/learn/charts/bar-chart-complete-guide
+
+## Pie charts
+
+<Canvas>
+  <Story name="PieChartExample" parameters={{ layout: 'centered' }}>
+    <PieChartExample />
+  </Story>
+</Canvas>
+
+- ✗ Avoid using pie charts for charts with more then 5 sections
 
 ## Nine questions to help you visualize your data
 
@@ -76,3 +108,7 @@ Always use a legend when using colour.
 Despite being forgotten by many, text is also an important part of a good visualization. Pay attention to titles and legends and check if they help to understand the chart. Annotations can also be used to direct attention to key points. Make sure the text is clear and easy to read and is not truncated or overlapping.
 
 ... and finally some DO's and DON'Ts
+
+### Related
+
+[Visualization guideline](https://brand.manuals.wfp.org/en/data-visualization-guidance/)

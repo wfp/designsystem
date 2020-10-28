@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import { PieChart, Pie, Sector, Cell } from 'recharts';
 
-const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
+const COLORS = ['#0481C3', '#00B485', '#1A4262', '#EF404C'];
 
 const data = [
   { name: 'Group A', value: 400 },

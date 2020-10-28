@@ -68,13 +68,13 @@ export function MixBarChartChart() {
         bottom: 5,
       }}>
       <CartesianGrid strokeDasharray="3 3" />
-      <XAxis dataKey="name" />
-      <YAxis />
+      <XAxis dataKey="name" tick={{ fontSize: 12 }} />
+      <YAxis tick={{ fontSize: 12 }} />
       <Tooltip />
       <Legend />
-      <Bar dataKey="pv" stackId="a" fill="#8884d8" />
-      <Bar dataKey="amt" stackId="a" fill="#82ca9d" />
-      <Bar dataKey="uv" fill="#ffc658" />
+      <Bar dataKey="pv" stackId="a" fill="#4AA1E2" />
+      <Bar dataKey="amt" stackId="a" fill="#003F76" />
+      <Bar dataKey="uv" fill="#5FD79A" />
     </BarChart>
   );
 }
