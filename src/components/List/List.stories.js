@@ -87,7 +87,7 @@ export const Bullet = (args) => (
 );
 
 Bullet.args = {
-  kind: 'bullet',
+  kind: 'bullets',
 };
 
 const msgg = ` \`bullet\` \`kind\` shows bulleted list items`;

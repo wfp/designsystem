@@ -136,7 +136,7 @@
   .#{$prefix}--footer__info {
     order: 1;
     @include breakpoint(bp--sm--major) {
-      width: 50%;
+      width: 40%;
     }
     @include line-height('body');
   }
