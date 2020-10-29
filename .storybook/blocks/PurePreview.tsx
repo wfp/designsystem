@@ -279,9 +279,9 @@ const Preview: FunctionComponent<PreviewProps> = ({
   const showToolbar = withToolbar && !Array.isArray(children);
 
   var actionItems = [];
-  if (props.parameters.twig !== false) actionItems.push(actionItemTwig);
-  if (props.parameters.code !== false) actionItems.push(actionItem);
-  if (props.parameters.html !== false) actionItems.push(actionItemHtml);
+  if (parameters.twig !== false) actionItems.push(actionItemTwig);
+  if (parameters.code !== false) actionItems.push(actionItem);
+  if (parameters.html !== false) actionItems.push(actionItemHtml);
   return (
     <PreviewContainer
       {...{ withSource, withToolbar: showToolbar }}
