@@ -109,6 +109,7 @@
     "invariant": "^2.2.4",
     "react-hook-form": "^6.8.2",
     "react-popper": "^2.2.3",
+    "twig": "^1.15.2",
     "warning": "^4.0.3",
     "window-or-global": "^1.0.1",
     "wml": "^0.0.83"
