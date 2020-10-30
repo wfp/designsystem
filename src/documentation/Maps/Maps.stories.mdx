@@ -1,0 +1,64 @@
+<Meta
+  title="Documentation/Guidelines/Maps"
+  subTitle="Core"
+  parameters={{
+    previewTabs: {
+      canvas: { hidden: true },
+    },
+  }}
+/>
+
+### Official UN boundaries
+
+Make sure your map follows these rules:
+
+- use the official UN boundaries
+- use official UN country names
+- use the default base map
+
+### GeoCore API
+
+The [GeoCore](https://catalog.efs.wfp.org/store/apis/info) endpoints in the WFP API Store are providing different data sources for
+geocoding.
+
+### Recommended tools
+
+#### Mapbox.gl
+
+Mapbox GL JS is a JavaScript library that uses WebGL to render
+interactive maps from vector tiles and Mapbox styles. [react-map-gl](https://github.com/uber/react-map-gl)
+is a react friendly wrapper around Mapbox GL JS.
+
+<iframe
+  src="https://codesandbox.io/embed/mapbox-un-base-map-from-archgis-custom-q3g4k?fontsize=14&hidenavigation=1&view=preview"
+  title="@esri/react-arcgis example"
+  allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"
+  style={{
+    width: '100%',
+    height: '500px',
+    border: '0',
+    borderRadius: '4px',
+    overflow: 'hidden',
+  }}
+  sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"
+/>
+
+#### ArcGIS API for JavaScript
+
+The ArcGIS API for JavaScript is another way to embed maps in web
+applications. It is especially useful for more complex maps where the
+app needs to access ArchGIS functions, like editing the map.
+
+<iframe
+  src="https://codesandbox.io/embed/esrireact-arcgis-example-8ytym?fontsize=14&hidenavigation=1&view=preview"
+  title="@esri/react-arcgis example"
+  allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"
+  style={{
+    width: '100%',
+    height: '500px',
+    border: '0',
+    borderRadius: '4px',
+    overflow: 'hidden',
+  }}
+  sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"
+/>
