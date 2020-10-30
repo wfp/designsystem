@@ -59,7 +59,7 @@
     margin: 0;
   }
   .#{$prefix}--photo-cardnew__info {
-    background: $ui-01;
+    background: var(ui-01);
     padding: $spacing-md;
   }
   .#{$prefix}--photo-cardnew__info__background {
