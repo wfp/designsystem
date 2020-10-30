@@ -1,5 +1,3 @@
-import MdxComponents from './components/MdxComponents/MdxComponents';
-
 export {
   BannerNavigation,
   BannerNavigationItem,

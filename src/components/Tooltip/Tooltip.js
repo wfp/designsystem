@@ -22,6 +22,7 @@ export const tooltipStyleDark = {
 
 /** Tooltips display additional information upon click, hover, or focus. The information should be contextual, useful, and nonessential. */
 const Tooltip = ({
+  className,
   dark,
   children,
   content,
@@ -67,7 +68,7 @@ const Tooltip = ({
     }
   );
 
-  const classNames = classnames({
+  const classNames = classnames(className, {
     [`${prefix}--tooltip`]: true,
     [`${prefix}--tooltip--visible`]: isShown,
     [`${prefix}--tooltip--dark`]: dark,

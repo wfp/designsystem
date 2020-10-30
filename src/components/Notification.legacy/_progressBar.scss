@@ -36,15 +36,15 @@
   }
 
   &--info {
-    background: $ui-01;
+    background: var(ui-01);
   }
   &--success {
-    background: $ui-01;
+    background: var(ui-01);
   }
   &--warning {
-    background: $ui-01;
+    background: var(ui-01);
   }
   &--error {
-    background: $ui-01;
+    background: var(ui-01);
   }
 }
