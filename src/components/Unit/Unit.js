@@ -102,6 +102,10 @@ Unit.propTypes = {
   */
   maximumFractionDigits: PropTypes.number,
   /**
+   * A string with a BCP 47 language code, or an array of language codes. For the general form and interpretation of the locale argument see the [toLocaleString on developer.mozilla.org](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleString) page.
+   */
+  localeStringLanguage: PropTypes.string,
+  /**
     Render output as svg text 
   */
   svg: PropTypes.bool,
@@ -131,6 +135,7 @@ Unit.propTypes = {
 Unit.defaultProps = {
   type: 'none',
   svg: false,
+  localeStringLanguage: 'en-EN',
 };
 
 export default Unit;

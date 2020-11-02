@@ -284,6 +284,10 @@
     @extend .wfp--link;
   }
 
+  .#{$prefix}--story__caption {
+    @include typescale('caption');
+  }
+
   .#{$prefix}--story__sup {
     font-size: 0.7em;
     background: var(--ui-03);
