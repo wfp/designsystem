@@ -104,7 +104,7 @@ Unit.propTypes = {
   /**
    * A string with a BCP 47 language code, or an array of language codes. For the general form and interpretation of the locale argument see the [toLocaleString on developer.mozilla.org](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleString) page.
    */
-  localeStringLanguage: PropTypes.string,
+  locale: PropTypes.string,
   /**
     Render output as svg text 
   */
