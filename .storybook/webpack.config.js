@@ -68,6 +68,18 @@ module.exports = async ({ config, mode }) => {
     ],
   });
 
+  config.module.rules.unshift({
+    test: /\.twig$/i,
+    use: [
+      {
+        loader: 'raw-loader',
+        options: {
+          esModule: false,
+        },
+      },
+    ],
+  });
+
   /*config.module.rules.push({
     test: /\.module.scss$/,
     loaders: [

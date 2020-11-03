@@ -6,6 +6,7 @@ import { buttonKinds } from '../../prop-types/types';
 import { iconAddGlyph, iconSearch } from '@wfp/icons';
 
 import markdown from './README.mdx';
+import buttonTwig from './Button.twig';
 
 import Button from '.';
 
@@ -17,6 +18,7 @@ export default {
     componentSubtitle: 'Component',
     status: 'released',
     mdx: markdown,
+    twig: buttonTwig,
   },
   /*argTypes: {
     children: { control: 'text' },
