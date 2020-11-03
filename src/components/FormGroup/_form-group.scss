@@ -95,4 +95,29 @@
       @include formgroup-breakpoint(bp--sm--major);
     }
   }
+
+  @include breakpoint(bp--sm--major) {
+    .#{$prefix}--fieldset__align-horizontal {
+      &.wfp--fieldset__input-spacing-md {
+        .#{$prefix}--fieldset__content {
+          > * {
+            margin-right: $spacing-sm;
+            &:last-child {
+              margin-right: 0;
+            }
+          }
+        }
+      }
+      &.wfp--fieldset__input-spacing-lg {
+        .#{$prefix}--fieldset__content {
+          > * {
+            margin-right: $spacing-md;
+            &:last-child {
+              margin-right: 0;
+            }
+          }
+        }
+      }
+    }
+  }
 }

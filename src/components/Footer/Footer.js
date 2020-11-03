@@ -202,7 +202,7 @@ Footer.propTypes = {
  */
   className: PropTypes.string,
   /** 
-   Meta content, usually the copyright notice
+   When external is set to true, the logo will be left and description will right on the footer. It is false by default.
  */
   external: PropTypes.bool,
   /** 

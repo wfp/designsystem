@@ -38,7 +38,7 @@ List.propTypes = {
     'simple',
     'simple-inline',
     'details',
-    'bullet',
+    'bullets',
     'ordered',
   ]),
   /**

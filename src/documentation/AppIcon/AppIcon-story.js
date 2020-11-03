@@ -2,9 +2,9 @@
 
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import Page from './Page';
-import Blockquote from '../components/Blockquote';
-import Link from '../components/Link';
+import Page from '../Page';
+import Blockquote from '../../components/Blockquote';
+import Link from '../../components/Link';
 
 const fileSizes = [120, 152, 160, 167, 180, 192, 300];
 
@@ -52,7 +52,7 @@ storiesOf('Design|Guidelines', module)
         src={`${process.env.STORYBOOK_ASSETS}app/WFP_APP_ICON_300x300.png`}
       />
       <br />
-      {fileSizes.map(fileSize => (
+      {fileSizes.map((fileSize) => (
         <Link
           small
           style={{ marginRight: '0.5em', fontSize: '0.7em' }}
