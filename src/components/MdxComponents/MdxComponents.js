@@ -4,6 +4,8 @@ import React from 'react';
 import { List, ListItem } from '../List';
 import Blockquote from '../Blockquote';
 
+/** Links are used as navigational elements. They may appear on their own, within a sentence or paragraph, or directly following the content. */
+
 const wrapper = (props) => <Story {...props} />;
 
 const li = (props) => {
@@ -37,7 +39,6 @@ const ol = (props) => {
 };
 
 const blockquote = (props) => {
-  console.log('props.children[0]', props.children);
   if (
     Array.isArray(props.children) &&
     props.children.length >= 2 &&
@@ -66,7 +67,8 @@ const blockquote = (props) => {
     );
   };
   */
-const MdxComponents = {
+
+export const MdxComponents = {
   wrapper,
   li,
   ul,
