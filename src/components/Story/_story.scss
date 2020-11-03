@@ -304,13 +304,23 @@
     }
   }
 
+  .#{$prefix}--story__inline-highlight {
+    display: inline-block;
+    font-weight: 600;
+    background: var(--ui-03);
+    padding: 0.05em 0.1em;
+  }
+
   .docblock-source {
     margin-top: $spacing-xs !important;
+  }
+  .#{$prefix}--story__bold {
+    font-weight: 600;
   }
 
   .#{$prefix}--story__b,
   .#{$prefix}--story__strong {
-    font-weight: 600;
+    font-weight: 700;
   }
 
   @each $size, $glyph in $spacing-map {

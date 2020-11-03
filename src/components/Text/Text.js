@@ -61,6 +61,7 @@ Text.propTypes = {
     'sup',
     'a',
     'code',
+    'inline-highlight',
   ]),
   /**
     Override spacing on top
