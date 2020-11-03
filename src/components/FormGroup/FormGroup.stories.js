@@ -2,6 +2,7 @@ import React from 'react';
 import FormGroup from './FormGroup';
 import TextInput from '../TextInput';
 import NumberInput from '../NumberInput';
+import ReactSelect from 'react-select';
 
 import markdown from './README.mdx';
 
@@ -38,6 +39,16 @@ Default.args = {
   legendText: 'FormGroup heading',
 };
 
+const options = [
+  { value: 'afghanistan', label: 'Afghanistan (AF)', city: [''] },
+  {
+    value: 'albania',
+    label: 'Albania',
+    city: ['ballsh', 'Fier', 'Labinot-Mal', 'Lumalas', 'Mullias'],
+  },
+  { value: ' algeria', label: ' Algeria', city: [] },
+];
+
 export const AddressDetails = (args) => (
   <>
     <FormGroup
@@ -46,18 +57,29 @@ export const AddressDetails = (args) => (
       align="horizontal"
       legendText="Address Info"
       style={{ marginTop: '1rem' }}>
-      <TextInput
-        id="country"
-        labelText="Country"
-        placeholder="Placeholder text"
-        required
-      />
-      <TextInput
-        id="city"
-        labelText="City"
-        placeholder="Placeholder text"
-        required
-      />
+      <div className="wfp--form-item" style={{ minWidth: '100px' }}>
+        <label htmlFor="country" className="wfp--label">
+          Country*
+        </label>
+        <ReactSelect
+          className="wfp--react-select-container"
+          classNamePrefix="wfp--react-select"
+          id="country"
+          options={options}
+          required
+        />
+      </div>
+      <div className="wfp--form-item" style={{ minWidth: '100px' }}>
+        <label htmlFor="city" className="wfp--label">
+          City*
+        </label>
+        <ReactSelect
+          className="wfp--react-select-container"
+          classNamePrefix="wfp--react-select"
+          id="city"
+          required
+        />
+      </div>
       <TextInput
         id="zipcode"
         labelText="Postal code/ZIP code"
@@ -74,3 +96,7 @@ export const AddressDetails = (args) => (
     </FormGroup>
   </>
 );
+
+AddressDetails.story = {
+  name: 'Residence Address',
+};
