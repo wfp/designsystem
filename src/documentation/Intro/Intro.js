@@ -235,8 +235,8 @@ const Intro = () => (
                   new Issue
                 </Link>{' '}
                 on GitHub or send an email to{' '}
-                <Link href="mailto:robert.guehne@wfp.org">
-                  robert.guehne@wfp.org
+                <Link href="mailto:global.uikit@wfp.org">
+                  global.uikit@wfp.org
                 </Link>
                 .
               </p>
