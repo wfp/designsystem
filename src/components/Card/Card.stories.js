@@ -11,7 +11,7 @@ export default {
   component: Card,
   parameters: {
     componentSubtitle: 'Component',
-    status: 'released',
+    status: 'draft',
     mdx: markdown,
   },
 };

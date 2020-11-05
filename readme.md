@@ -2,10 +2,10 @@
 
 ## **[Click here to visit: Living Style Guide & Documentation](https://wfp.org/UIGuide)**
 
-| Branch | Build Status                                                                                       |
-| ------ | -------------------------------------------------------------------------------------------------- |
-| master | [![Build Status](https://travis-ci.org/wfp/ui.svg?branch=master)](https://travis-ci.org/wfp/ui)    |
-| v1.5   | [![Build Status](https://travis-ci.org/wfp/ui.svg?branch=feat/v1.5)](https://travis-ci.org/wfp/ui) |
+| Branch | Build Status          |
+| ------ | --------------------- |
+| master | [![Build Status]()]() |
+| v1.5   | [![Build Status]()]() |
 
 ## ![Usage](https://cdn.wfp.org/guides/ui/v1.2.0/assets/internal/toolkit.svg 'Usage') Usage
 

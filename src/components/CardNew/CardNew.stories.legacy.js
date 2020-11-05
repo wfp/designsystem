@@ -2,21 +2,19 @@ import React from 'react';
 
 import markdown from './README.mdx';
 
-import CardNew from '.';
-import Button from '../Button';
-import Icon from '../Icon';
+import Card from '.';
 
 export default {
   title: 'Components/Content Related/Card',
-  component: CardNew,
+  component: Card,
   parameters: {
     componentSubtitle: 'Component',
-    status: 'released',
+    status: 'draft',
     mdx: markdown,
   },
 };
 
-export const TextCard = (args) => <CardNew {...args} />;
+export const TextCard = (args) => <Card {...args} />;
 
 TextCard.args = {
   subTitle:
@@ -26,7 +24,7 @@ TextCard.args = {
   metadata: 'Publication',
 };
 
-export const PhotoHeader = (args) => <CardNew {...args} />;
+export const PhotoHeader = (args) => <Card {...args} />;
 
 PhotoHeader.args = {
   image: 'http://www1.wfp.org/sites/default/files/images/yemen-hero-min.jpg',
@@ -37,7 +35,7 @@ PhotoHeader.args = {
   metadata: 'Publication',
 };
 
-export const Overlay = (args) => <CardNew {...args} />;
+export const Overlay = (args) => <Card {...args} />;
 
 Overlay.args = {
   image: 'http://www1.wfp.org/sites/default/files/images/yemen-hero-min.jpg',
