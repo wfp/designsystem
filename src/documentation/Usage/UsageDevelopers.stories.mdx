@@ -51,53 +51,8 @@ To import the complete stylesheet through CDN, use:
 <link
   rel="stylesheet"
   type="text/css"
-  href="https://uikit.wfp.org/cdn/X.X.X/css/styles.min.css"
+  href="https://cdn.wfp.org/guides/ui/v1.8.2/assets/css/styles.min.css"
 />
-```
-
-## Decouple front- and backend
-
-Seperating the front end from the back end minimizes the overall complexity
-and allows the frontend and backend developers to work independently. It will
-also give Flexibility fo a constant evolution if the application is seperated
-highly decoupled, focussed microservices.
-
-## Vanilla.js
-
-The JS components are built using React, but that does not limit their usage
-to just React applications. You can render any component in any JavaScript
-application with ReactDOM.render. Think of it like using a jQuery plugin.
-
-Make sure you have embeeded the CSS of the UI Kit in your web project.
-
-### Usage with react renderer
-
-```js
-import ReactDOM from 'react-dom';
-import { Button } from '@wfp/ui';
-
-const myContainerElement = document.getElementById('container');
-
-// with JSX
-ReactDOM.render(<Button>Simple Button</Button>, myContainerElement);
-
-// with vanilla JS, use React.createElement
-ReactDOM.render(
-  React.createElement(Button, {
-    className: Classes.SMALL,
-    children: 'Simple button',
-  }),
-  myContainerElement
-);
-```
-
-To remove the component from the DOM and clean up, unmount it:
-
-### Unmount component
-
-```
-
-ReactDOM.unmountComponentAtNode(myContainerElement);
 ```
 ***
 ***
