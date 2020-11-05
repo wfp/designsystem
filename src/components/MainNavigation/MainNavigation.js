@@ -127,11 +127,11 @@ MainNavigation.propTypes = {
    */
   logo: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   /**
-   * See `Wrapper` component for more information
+   * Specify the max-width on desktop devices (same as \`Wrapper\` component)
    */
-  pageWidth: PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'full']),
+  pageWidth: PropTypes.oneOf(['sm', 'md', 'lg', 'full']),
   /**
-   * See `Wrapper` component for more information
+   * Specify the max-width on mobile devices (same as \`Wrapper\` component)
    */
   mobilePageWidth: PropTypes.string,
   /**
@@ -141,7 +141,7 @@ MainNavigation.propTypes = {
 };
 
 MainNavigation.defaultProps = {
-  pageWidth: 'md',
+  pageWidth: 'lg',
   mobilePageWidth: 'full',
   logo: 'WFP',
 };

@@ -13,6 +13,7 @@ export default {
     componentSubtitle: 'Component',
     status: 'released',
     mdx: markdown,
+    showFeedback: true,
   },
 };
 

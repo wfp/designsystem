@@ -15,6 +15,7 @@ export const textLookup = {
   title: 'h1',
   subtitle: 'h3',
   p: 'p',
+  caption: 'div',
 };
 
 /**
@@ -62,6 +63,7 @@ Text.propTypes = {
     'a',
     'code',
     'inline-highlight',
+    'caption',
   ]),
   /**
     Override spacing on top

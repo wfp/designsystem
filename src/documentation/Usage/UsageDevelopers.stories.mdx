@@ -6,9 +6,10 @@ import Blockquote from '../../components/Blockquote';
 import Link from '../../components/Link';
 
 <Meta
-  title="Getting started/Getting started/Usage for Developers"
+  title="Getting started/Usage for Developers"
   subTitle="How to use the UI Kit"
   parameters={{
+    componentSubtitle: 'Getting started',
     previewTabs: {
       canvas: { hidden: true },
     },
@@ -63,7 +64,7 @@ You can also import the css directly from the npm package.
 
 ```
 // Import all stylesheets
-import  '~@wfp/ui/assets/css/styles.css';
+import  '@wfp/ui/assets/css/styles.css';
 ```
 
 Make sure you have a scss loader installed.
@@ -72,10 +73,10 @@ Make sure you have a scss loader installed.
 
 ```js
 // Import all stylesheets
-import '~@wfp/ui/src/globals/scss/styles';
+import '@wfp/ui/src/globals/scss/styles.scss';
 
 // Only import the Button stylesheet
-import '~@wfp/ui/src/components/Button/button';
+import '@wfp/ui/src/components/Button/button.scss';
 ```
 
 ### SCSS
@@ -99,13 +100,13 @@ $button-padding: 10px 25px;
 $css--reset==false
 
 // Import all stylesheets
-@import "~@wfp/ui/src/globals/scss/styles";
+@import "~@wfp/ui/src/globals/scss/styles.scss";
 
 // Only import the Button stylesheet
-@import "~@wfp/ui/src/components/Button/button";
+@import "~@wfp/ui/src/components/Button/button.scss";
 
 // Only use variables
-@import "~@wfp/ui/src/globals/scss/vars";`}
+@import "~@wfp/ui/src/globals/scss/vars.scss";`}
 
 ```
 
@@ -120,7 +121,7 @@ Kit version you are using.
 <link
   rel="stylesheet"
   type="text/css"
-  href="https://cdn.wfp.org/guides/ui/v1.1.16/assets/css/styles.min.css"
+  href="https://cdn.wfp.org/guides/ui/v1.8.2/assets/css/styles.min.css"
 />`}
 ```
 

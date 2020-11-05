@@ -6,6 +6,7 @@ import { Module, ModuleHeader, ModuleBody, ModuleFooter } from '../Module';
 export default {
   title: 'Components/Content Related/Module',
   component: Module,
+  subcomponents: { ModuleHeader, ModuleBody, ModuleFooter },
   parameters: {
     componentSubtitle: 'Component',
     status: 'released',
@@ -13,26 +14,16 @@ export default {
   },
 };
 
-const BodyContent = () => (
-  <>
-    <p>
-      Lorem Ipsum is dummy text of the printing and typesetting industry. Lorem
-      Ipsum has been the industry's standard dummy text ever since the 1500s,
-      when an unknown printer took a galley of type and scrambled it to make a
-      type specimen book.
-    </p>
-    <p>
-      It has survived not only five centuries, but also the leap into electronic
-      typesetting, remaining essentially unchanged.
-    </p>
-  </>
-);
-
 export const Regular = (args) => (
   <Module {...args}>
     <ModuleHeader>Module example</ModuleHeader>
     <ModuleBody>
-      <BodyContent />
+      <p>
+        Lorem Ipsum is dummy text of the printing and typesetting industry.
+        Lorem Ipsum has been the industry's standard dummy text ever since the
+        1500s, when an unknown printer took a galley of type and scrambled it to
+        make a type specimen book.
+      </p>
     </ModuleBody>
     <ModuleFooter>Module footer</ModuleFooter>
   </Module>
@@ -54,7 +45,16 @@ export const Dark = (args) => (
   <Module dark>
     <ModuleHeader>Dark module example</ModuleHeader>
     <ModuleBody>
-      <BodyContent />
+      <p>
+        Lorem Ipsum is dummy text of the printing and typesetting industry.
+        Lorem Ipsum has been the industry's standard dummy text ever since the
+        1500s, when an unknown printer took a galley of type and scrambled it to
+        make a type specimen book.
+      </p>
+      <p>
+        It has survived not only five centuries, but also the leap into
+        electronic typesetting, remaining essentially unchanged.
+      </p>
     </ModuleBody>
     <ModuleFooter>Module footer</ModuleFooter>
   </Module>
@@ -72,7 +72,16 @@ export const Light = (args) => (
   <Module light>
     <ModuleHeader>Dark module example</ModuleHeader>
     <ModuleBody>
-      <BodyContent />
+      <p>
+        Lorem Ipsum is dummy text of the printing and typesetting industry.
+        Lorem Ipsum has been the industry's standard dummy text ever since the
+        1500s, when an unknown printer took a galley of type and scrambled it to
+        make a type specimen book.
+      </p>
+      <p>
+        It has survived not only five centuries, but also the leap into
+        electronic typesetting, remaining essentially unchanged.
+      </p>
     </ModuleBody>
     <ModuleFooter>Module footer</ModuleFooter>
   </Module>
@@ -89,7 +98,16 @@ Light.story = {
 export const WithHover = (args) => (
   <Module light withHover>
     <ModuleBody>
-      <BodyContent />
+      <p>
+        Lorem Ipsum is dummy text of the printing and typesetting industry.
+        Lorem Ipsum has been the industry's standard dummy text ever since the
+        1500s, when an unknown printer took a galley of type and scrambled it to
+        make a type specimen book.
+      </p>
+      <p>
+        It has survived not only five centuries, but also the leap into
+        electronic typesetting, remaining essentially unchanged.
+      </p>
     </ModuleBody>
   </Module>
 );

@@ -5,6 +5,7 @@ import classnames from 'classnames';
 /** A FormGroup element is used to group several controls as well as labels  within a web form. It uses  `<fieldset>` */
 const FormGroup = ({
   align,
+  breakpoint,
   legendText,
   inline,
   invalid,
@@ -21,6 +22,7 @@ const FormGroup = ({
     {
       'wfp--fieldset__inline': inline,
       [`wfp--fieldset__align-${align}`]: align,
+      [`wfp--fieldset__breakpoint-${breakpoint}`]: breakpoint,
       [`wfp--fieldset__input-spacing-${inputSpacing}`]: inputSpacing,
     },
     className
@@ -45,6 +47,10 @@ FormGroup.propTypes = {
    * Specify the contained form elements
    */
   children: PropTypes.node,
+  /**
+   * Specify a breakpoint to show containing inputs vertically on mobile devices
+   */
+  breakpoint: PropTypes.oneOf(['none', 'sm', 'md', 'lg']),
   /**
    * Specify a title for the `FormGroup`
    */
@@ -79,6 +85,7 @@ FormGroup.defaultProps = {
   align: 'vertical',
   invalid: false,
   inputSpacing: 'lg',
+  breakpoint: 'md',
   message: false,
   messageText: '',
 };

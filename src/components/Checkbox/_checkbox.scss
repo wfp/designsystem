@@ -39,8 +39,8 @@
     align-items: center;
     cursor: pointer;
     position: relative;
-    padding-left: $spacing-lg;
-    min-height: rem(16px);
+    padding-left: $spacing-lg + 0.1;
+    min-height: rem(18px);
   }
 
   .#{$prefix}--checkbox-label::before {

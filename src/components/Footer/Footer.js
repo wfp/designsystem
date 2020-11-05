@@ -218,29 +218,17 @@ Footer.propTypes = {
  */
   logoExtended: PropTypes.node,
   /**
-   * The width of the `Wrapper` component
+   * Specify the max-width on desktop devices (same as \`Wrapper\` component)
    */
-  pageWidth: PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'full']),
+  pageWidth: PropTypes.oneOf(['sm', 'md', 'lg', 'full']),
   /**
    The WFP logo
  */
   subTitle: PropTypes.node,
-  /*
-  labelOne: PropTypes.string,
-  linkTextOne: PropTypes.string,
-  linkHrefOne: PropTypes.string,
-  labelTwo: PropTypes.string,
-  linkTextTwo: PropTypes.string,
-  linkHrefTwo: PropTypes.string,*/
 };
 
-/*Footer.defaultProps = {
-  labelOne: 'Need Help?',
-  linkTextOne: 'Contact',
-  linkHrefOne: '#',
-  labelTwo: 'Second Link',
-  linkTextTwo: 'About',
-  linkHrefTwo: '#',
-};*/
+Footer.defaultProps = {
+  pageWidth: 'lg',
+};
 
 export default Footer;
