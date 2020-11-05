@@ -6,7 +6,7 @@ import Blockquote from '../../components/Blockquote';
 import Link from '../../components/Link';
 
 <Meta
-  title="Getting started/Usage for Developers"
+  title="Getting started/Installing the Kit"
   subTitle="How to use the UI Kit"
   parameters={{
     componentSubtitle: 'Getting started',
@@ -16,128 +16,37 @@ import Link from '../../components/Link';
   }}
 />
 
-STORYBOOK_INTERNAL_ASSETS
+> WFP front-end technology standards
+>
+> The WFP UI Kit uses [React](https://reactjs.org/) as the underlying JS framework, in line with the [WFP official guidelines for software development](https://newgo.wfp.org/documents/software-solutions-technology-stack). Therefore, all WFP applications should use it, together with the UI Kit. The only exceptions are off-the-shelf solutions (e.g. Saas) and/or non-apps (e.g. the external corporate website, and/or basic landing pages used for fundraising, etc).
 
-The UI Kit provides developers with React.js components, scss, <Link onClick={linkTo('Design|Getting started', 'CSS')}>css</Link>, html and
-assets.
+The UI Kit provides developers with **React.js components, scss, css, html and assets**.
 
-## Getting started with react.js
+### 1. Create a React app
+To kickstart your new project with the Kit, we do recommend to **generate a boilerplate React app** with the official [create-react-app](https://github.com/facebook/create-react-app) tool: you will be provided with a solid build setup with zero effort (that is, no configuration needed on your part).
 
-If you create your first react project use [create-react-app](https://github.com/facebook/create-react-app) to generate a boilerplate version.
+### 2. Add the Kit as a dependency
+The next step is to **add the Kit to your project as a dependancy**. You can choose to install it through `npm` or `yarn`: they are both valid package managers and we don't want to recommend one over the other, but once you pick your favourite tool, simply stick with it and avoid using them simultaneously.
 
-### Add dependencies
-
-### Install via npm
-
+To install the Kit through `npm`, run:
 ```bash
 npm install @wfp/ui @wfp/icons --save
 ```
-
-### Install via yarn
-
+To install the Kit through `yarn`, run:
 ```bash
 yarn add @wfp/ui @wfp/icons
 ```
 
-### Use a component
+### 3. Load the CSS
+This is a required step in case you want to load the full UI Kit stylesheet. If this is the case, you can choose between **importing it through React** or **through the CDN**. If this is not the case, you may then want to check the guidelines on [how to include only specific parts of the Kit CSS](https://uikit.wfp.org/docs/index.html?path=/story/getting-started-using-the-kit--page).
 
-```bash
-//Importing the React components
-import { Button } from '@wfp/ui';
-
-// Using the button
-<Button>ButtonText</Button>
-```
-
-### Polyfills
-
-Polyfills are needed for IE browsers. We recommend [https://babeljs.io/docs/en/babel-preset-env](babel-preset-env) for it.
-
-## CSS
-
-Each components requires css. You can import the css/scss from npm or use it
-from the CDN.
-
-### React import
-
-You can also import the css directly from the npm package.
-
-### Import css via react
-
-```
-// Import all stylesheets
-import  '@wfp/ui/assets/css/styles.css';
-```
-
-Make sure you have a scss loader installed.
-
-### Import scss via react
-
-```js
+To import the full CSS through React, first make sure to have a `scss` loader installed, then use the following code:
+```jsx
 // Import all stylesheets
 import '@wfp/ui/src/globals/scss/styles.scss';
-
-// Only import the Button stylesheet
-import '@wfp/ui/src/components/Button/button.scss';
 ```
 
-### SCSS
-
-When using scss you can import the SCSS sources from the node_module.
-This allows you to use only parts of the SCSS, reuse common variables
-and functions from WFP UI or to override settings.
-
-### Use Source scss
-
-```css
-{`// Sample overriding settings
-$input-border-radius: 5px;
-$button-border-radius: 60px;
-$button-font-size: 25px;
-$button-padding: 10px 25px;
-// new css variables used for colours
---interactive-01: #0076FF;
-
-// Disable css reset
-$css--reset==false
-
-// Import all stylesheets
-@import "~@wfp/ui/src/globals/scss/styles.scss";
-
-// Only import the Button stylesheet
-@import "~@wfp/ui/src/components/Button/button.scss";
-
-// Only use variables
-@import "~@wfp/ui/src/globals/scss/vars.scss";`}
-
-```
-
-### CDN Usage
-
-The WFP UI css can be imported from the WFP CDN. Change the version number to the UI
-Kit version you are using.
-
-> CDN files
->
-> <div>
->   <h5>Uncompressed css (do not use in production):</h5>
->   <a
->     href={`https://uikit.wfp.org/cdn/${process.env.STORYBOOK_NPM_VERSION}/css/styles.css`}
->     target="_blank">
->     https://uikit.wfp.org/cdn/{process.env.STORYBOOK_NPM_VERSION}
->     /css/styles.css
->   </a>
->   <h5>Compressed css (use in production):</h5>
->   <a
->     href={`https://uikit.wfp.org/cdn/${process.env.STORYBOOK_NPM_VERSION}/css/styles.min.css`}
->     target="_blank">
->     https://uikit.wfp.org/cdn/{process.env.STORYBOOK_NPM_VERSION}
->     /css/styles.css
->   </a>
-> </div>
-
-The css file can be directly embeeded in the `<head/>` section of your application.
-
+To import the complete stylesheet through CDN, use:
 ```html
 <link
   rel="stylesheet"
@@ -190,15 +99,8 @@ To remove the component from the DOM and clean up, unmount it:
 
 ReactDOM.unmountComponentAtNode(myContainerElement);
 ```
-
-Check out the [React API docs](https://reactjs.org/docs/react-api.html) for more details.
-
-### html only
-
-Most components provide an automatically html preview of a component. You can see it if you click **`html`** tab in each preview.
-
-### Usage with Google Chrome
-
-Many parts of the UI Kit can be used with html/css only.
-Download the [Google Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools).
-Right-click on any component, click `Inspect`, and you'll see the html of that component which can be copied and reused.
+***
+***
+### Help us improve
+If you have any suggestion on how to improve this page or if you are running into an issue, please [share your feedback on GitHub](https://github.com/wfp/ui).
+If you have a question about the WFP UI Kit, please [contact the team](mailto:global.uikit@wfp.org).

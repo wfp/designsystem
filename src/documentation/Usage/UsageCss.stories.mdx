@@ -2,7 +2,7 @@ import Link from '../../components/Link';
 import { linkTo } from '@storybook/addon-links';
 
 <Meta
-  title="Getting started/CSS and SCSS usage"
+  title="Getting started/Using the Kit"
   parameters={{
     componentSubtitle: 'Getting started',
     previewTabs: {
@@ -11,66 +11,88 @@ import { linkTo } from '@storybook/addon-links';
   }}
 />
 
-Each components requires css. You can import the css/scss from npm or use it from the CDN.
+> The following guidelines assume that you have already installed the Kit. If you haven't done it yet, please check our [step-by-step guide on how to install the Kit]().
 
-### React import
+## The components
+Let's pretend you want to use the `Button` component: you first need to import it through the `import` function, then to call that component through its name.
 
-You can also import the css directly from the npm package.
+```jsx
+// Import the Button component
+import { Button } from '@wfp/ui';
 
-#### Import css via react
-
+// Use the Button component
+<Button>Button label</Button>
 ```
-// Import all stylesheets
-import '@wfp/ui/assets/css/styles.css';
-```
 
-Make sure you have a scss loader installed.
-
-#### Import scss via react
-
-```
-// Import all stylesheets
-import '@wfp/ui/src/globals/scss/styles.scss';
-
-// Only import the Button stylesheet
+If you don't want to load the CSS globally but you want to include only this stylesheet, then use:
+```jsx
+// Import the Button component and its style
+import { Button } from '@wfp/ui';
 import '@wfp/ui/src/components/Button/button.scss';
 
+// Use the Button component
+<Button>Button label</Button>
 ```
 
-### SCSS
+## The templates
+The Kit provides with the code for different templates:
+- Application page
+- Dashboard page
 
-When using scss you can import the SCSS sources from the node_module. This allows you to use only parts of the SCSS, reuse common variables and functions from WFP UI or to override settings.
+## Usage with vanilla JS
 
-#### Use Source scss
+The JS components are built using React, but that does not limit their usage
+to just React applications. You can render any component in any JavaScript
+application with ReactDOM.render. Think of it like using a jQuery plugin.
+Make sure you have embedded the CSS of the UI Kit in your project.
 
+```js
+import ReactDOM from 'react-dom';
+import { Button } from '@wfp/ui';
+
+const myContainerElement = document.getElementById('container');
+
+// with JSX
+ReactDOM.render(<Button>Simple Button</Button>, myContainerElement);
+
+// with vanilla JS, use React.createElement
+ReactDOM.render(
+  React.createElement(Button, {
+    className: Classes.SMALL,
+    children: 'Simple button',
+  }),
+  myContainerElement
+);
 ```
+To remove the component from the DOM and clean up, unmount it:
+```
+ReactDOM.unmountComponentAtNode(myContainerElement);
+```
+
+Check out the [React API docs](https://reactjs.org/docs/react-api.html) for more details.
+
+## Usage with pure HTML
+We have included the HTML of every template and every component in this documentation: navigate through the item of your interest, search for a preview of the component or template, click on the HTML tab. For what concerns the styling, you can [load the CSS through the WFP CDN](). We are currently evaluating to expose the CSS for the single components and templates.
+
+## Using the Kit SCSS
+
+When using scss you can import the SCSS sources from the node_module.
+This allows you to use only parts of the SCSS, reuse common variables
+and functions from WFP UI or to override settings.
+
+```css
 // Sample overriding settings
 $input-border-radius: 5px;
 $button-border-radius: 60px;
 $button-font-size: 25px;
 $button-padding: 10px 25px;
-$color__main: #0076FF;
+// new css variables used for colours
+--interactive-01: #0076FF;
 
-// Import all stylesheets
-@import "~@wfp/ui/src/globals/scss/styles.scss";
-
-// Only import the Button stylesheet
-@import "~@wfp/ui/src/components/Button/button.scss";
+// Disable css reset
+$css--reset==false
 
 // Only use variables
 @import "~@wfp/ui/src/globals/scss/vars.scss";
-```
 
-### CDN Usage
-
-Import the WFP UI css from the WFP CDN. Change the version number to the UI Kit version you are using.
-
-#### CDN
-
-```
-<link
-  rel="stylesheet"
-  type="text/css"
-  href="https://cdn.wfp.org/guides/ui/v1.8.2/assets/css/styles.min.css"
-/>
 ```
