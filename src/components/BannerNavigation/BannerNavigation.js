@@ -47,7 +47,7 @@ BannerNavigation.propTypes = {
 };
 
 BannerNavigation.defaultProps = {
-  pageWidth: 'md',
+  pageWidth: 'lg',
 };
 
 export { BannerNavigationItem, BannerNavigation };

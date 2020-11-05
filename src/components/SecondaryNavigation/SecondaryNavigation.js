@@ -63,7 +63,7 @@ SecondaryNavigation.propTypes = {
 };
 
 SecondaryNavigation.defaultProps = {
-  pageWidth: 'narrower',
+  pageWidth: 'lg',
 };
 
 export { SecondaryNavigationTitle, SecondaryNavigation };

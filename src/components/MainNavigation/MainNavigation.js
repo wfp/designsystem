@@ -141,7 +141,7 @@ MainNavigation.propTypes = {
 };
 
 MainNavigation.defaultProps = {
-  pageWidth: 'md',
+  pageWidth: 'lg',
   mobilePageWidth: 'full',
   logo: 'WFP',
 };

@@ -27,14 +27,14 @@ yarn add @wfp/icons
 
 Import a react component
 
-```bash
+```jsx
 import { Breadcrumb, BreadcrumbItem, BreadcrumbHome } from '@wfp/ui';
 ```
 
 Import the CSS
 
-```bash
-@import '@wfp/ui/assets/css/styles';
+```jsx
+import '@wfp/ui/assets/css/styles.css';
 ```
 
 Additional information about the Usage can be found [here](https://wfp.org/UIGuide).

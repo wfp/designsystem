@@ -225,22 +225,10 @@ Footer.propTypes = {
    The WFP logo
  */
   subTitle: PropTypes.node,
-  /*
-  labelOne: PropTypes.string,
-  linkTextOne: PropTypes.string,
-  linkHrefOne: PropTypes.string,
-  labelTwo: PropTypes.string,
-  linkTextTwo: PropTypes.string,
-  linkHrefTwo: PropTypes.string,*/
 };
 
-/*Footer.defaultProps = {
-  labelOne: 'Need Help?',
-  linkTextOne: 'Contact',
-  linkHrefOne: '#',
-  labelTwo: 'Second Link',
-  linkTextTwo: 'About',
-  linkHrefTwo: '#',
-};*/
+Footer.defaultProps = {
+  pageWidth: 'lg',
+};
 
 export default Footer;
