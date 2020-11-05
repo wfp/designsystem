@@ -3,15 +3,13 @@ import React from 'react';
 import markdown from './README.mdx';
 
 import Card from '.';
-import Button from '../Button';
-import Icon from '../Icon';
 
 export default {
   title: 'Components/Content Related/Card',
   component: Card,
   parameters: {
     componentSubtitle: 'Component',
-    status: 'draft',
+    status: 'released',
     mdx: markdown,
   },
 };
