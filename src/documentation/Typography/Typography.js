@@ -2,7 +2,7 @@ import React from 'react';
 import Text from '../../components/Text';
 import Link from '../../components/Link';
 import { List, ListItem } from '../../components/List';
-import Card from '../../components/CardNew';
+import Card from '../../components/Card';
 import Story from '../../components/Story';
 
 const list = [
