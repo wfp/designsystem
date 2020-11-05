@@ -9,6 +9,7 @@ export BreadcrumbItem from './components/BreadcrumbItem';
 export BreadcrumbHome from './components/BreadcrumbHome';
 export Button from './components/Button';
 export Hero from './components/Hero';
+export Card from './components/Card';
 export Checkbox from './components/Checkbox';
 export Credits from './components/Credits';
 export ContentSwitcher from './components/ContentSwitcher';

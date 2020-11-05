@@ -121,6 +121,15 @@ Card.propTypes = {
   The URL where the content uploaded is located.
 */
   url: PropTypes.string,
+  /**
+   * override default card width with preferred width
+   */
+  cardWidth: PropTypes.string,
+
+  /**
+   * override default card width with preferred width
+   */
+  cardHeight: PropTypes.string,
 };
 
 Card.defaultProps = {
