@@ -6,10 +6,11 @@ const { prefix } = settings;
 
 /** Links are used as navigational elements. They may appear on their own, within a sentence or paragraph, or directly following the content. */
 
-export const Link = ({ children, className, href, ...other }) => {
+export const Link = ({ children, className, href, inline, ...other }) => {
   const classNames = classnames(
     {
       [`${prefix}--link`]: true,
+      [`${prefix}--link--inline`]: inline,
     },
     className
   );
@@ -24,7 +25,7 @@ Link.propTypes = {
   /**
    * Provide the content for the Link
    */
-  children: PropTypes.string,
+  children: PropTypes.node,
 
   /**
    * Provide a custom className to be applied to the containing <a> node
@@ -35,6 +36,10 @@ Link.propTypes = {
    * Provide the `href` attribute for the <a> node
    */
   href: PropTypes.string,
+  /**
+   * Inline links are used within a sentence or paragraph and are styled with an underline. They should not be paired with an icon.
+   */
+  inline: PropTypes.bool,
 };
 
 export default Link;

@@ -49,7 +49,7 @@
     border: 2px solid white;
     background-color: $color__navy-gray-7;
     text {
-      fill: $ui-01;
+      fill: var(--ui-01);
       font-weight: 600;
       font-family: 'Arial';
     }
@@ -57,13 +57,13 @@
 
   .#{$prefix}--user__description {
     @include typescale('delta');
-    //color: $text-02;
+    //color: var(--text-02);
   }
 
   .#{$prefix}--user__extended-description {
     margin-left: $spacing-lg;
     @include typescale('delta');
-    //color: $text-02;
+    //color: var(--text-02);
   }
 
   .#{$prefix}--user__title {

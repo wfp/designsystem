@@ -306,6 +306,7 @@ export default class Modal extends Component {
       modalHeading,
       modalLabel,
       modalFooter,
+      modalSecondaryAction,
       modalAriaLabel,
       passiveModal,
       secondaryButtonText,
@@ -372,10 +373,15 @@ export default class Modal extends Component {
         aria-label={modalAriaLabel}>
         <div className={`${prefix}--modal-header`}>
           {passiveModal && modalButton}
-          {modalLabel && (
-            <h4 className={`${prefix}--modal-header__label`}>{modalLabel}</h4>
-          )}
-          <h2 className={`${prefix}--modal-header__heading`}>{modalHeading}</h2>
+          <div>
+            {modalLabel && (
+              <h4 className={`${prefix}--modal-header__label`}>{modalLabel}</h4>
+            )}
+            <h2 className={`${prefix}--modal-header__heading`}>
+              {modalHeading}
+            </h2>
+          </div>
+          {modalSecondaryAction && <>{modalSecondaryAction}</>}
           {!passiveModal && modalButton}
         </div>
         <div className={`${prefix}--modal-content`}>{this.props.children}</div>

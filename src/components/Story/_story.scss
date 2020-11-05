@@ -14,66 +14,43 @@
 
 @mixin text {
   code {
-    font-family: monospace;
+    @extend .#{$prefix}--story__code;
   }
-
   p {
-    margin-top: $spacing-md;
-    line-height: 1.6em;
-
-    &:last-child {
-      margin-bottom: 0;
-    }
+    @extend .#{$prefix}--story__p;
   }
 
   h2 {
-    margin-top: $spacing-2xl;
-
-    &.before--img {
-      margin-bottom: 0;
-    }
+    @extend .#{$prefix}--story__h2;
   }
 
   i {
-    font-style: italic;
+    @extend .#{$prefix}--story__i;
   }
 
   h3 {
-    margin-top: $spacing-2xl;
+    @extend .#{$prefix}--story__h3;
   }
 
   h4 {
-    margin-top: $spacing-md;
-    @include typescale('epsilon');
+    @extend .#{$prefix}--story__h4;
+  }
+
+  h5 {
+    @extend .#{$prefix}--story__h5;
   }
 
   a {
-    @extend .wfp--link;
+    @extend .#{$prefix}--story__a;
   }
 
   sup {
-    font-size: 0.7em;
-    background: $ui-03;
-    vertical-align: top;
-    position: relative;
-    top: -0.5em;
-
-    > a {
-      text-decoration: none;
-
-      &:before {
-        content: '[';
-      }
-
-      &:after {
-        content: ']';
-      }
-    }
+    @extend .#{$prefix}--story__sup;
   }
 
   b,
   strong {
-    font-weight: 600;
+    @extend .#{$prefix}--story__b;
   }
 
   /* All the line spacings */
@@ -146,14 +123,6 @@
     margin-top: $spacing-md;
   }
 
-  /*.wfp--list+h1,
-  .wfp--list+h2,
-  .wfp--list+h3,
-  .wfp--list+h4,
-  .wfp--list+h5 {
-    margin-top: $spacing-lg;
-  }*/
-
   h1 + iframe,
   h2 + iframe,
   h3 + iframe,
@@ -173,10 +142,85 @@
   .#{$prefix}--story__list {
     list-style-position: outside;
     line-height: 1.6em;
-    margin: 1.5em 0 1.5em 1.5em;
+    margin: $spacing-md 0 $spacing-md 1.5em;
 
     li {
       list-style-type: disc;
+    }
+  }
+
+  .#{$prefix}--story__sub-heading {
+    @include typescale('zeta');
+    font-weight: normal;
+    color: var(--ui-05);
+    margin-top: $spacing-2xs !important;
+    margin-bottom: $spacing-2xs;
+    font-style: italic;
+    //text-transform: uppercase;
+    font-weight: 400;
+
+    //letter-spacing: 0.05em;
+  }
+
+  .#{$prefix}--story__type-beta {
+    margin-bottom: $spacing-lg;
+  }
+
+  .#{$prefix}--markup {
+    font-style: italic;
+    @include typescale('delta');
+    margin-bottom: $spacing-lg;
+  }
+
+  .#{$prefix}--inline-highlight {
+    display: inline-block;
+    font-weight: 600;
+    background: var(--ui-03);
+    padding: 0.05em 0.1em;
+  }
+
+  .#{$prefix}--story__divider {
+    border: 1px solid var(--ui-04);
+  }
+
+  .#{$prefix}--story__divider--lg {
+    border: 2px solid var(--ui-04);
+  }
+}
+
+@include exports('story') {
+  .#{$prefix}--story {
+    @include reset;
+    @include font-family;
+    //-webkit-font-smoothing: antialiased;
+    //-moz-osx-font-smoothing: grayscale;
+    &__center {
+      text-align: center;
+    }
+
+    &__full-height {
+      min-height: 65vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    @include text;
+  }
+  .#{$prefix}--text {
+    @include text;
+  }
+
+  .#{$prefix}--story__a {
+    &:hover {
+      text-decoration: underline;
+    }
+    //@extend .wfp--link;
+  }
+
+  a.#{$prefix}--btn {
+    &:hover {
+      text-decoration: none;
     }
   }
 
@@ -203,7 +247,7 @@
   .#{$prefix}--story__subtitle {
     @include typescale('zeta');
     font-weight: normal;
-    color: $interactive-01;
+    color: var(--interactive-01);
     margin-top: $spacing-xl;
     margin-bottom: $spacing-2xs;
     text-transform: uppercase;
@@ -211,66 +255,83 @@
     letter-spacing: 0.05em;
   }
 
-  .#{$prefix}--story__sub-heading {
-    @include typescale('zeta');
-    font-weight: normal;
-    color: $ui-05;
-    margin-top: $spacing-2xs !important;
-    margin-bottom: $spacing-2xs;
+  .#{$prefix}--story__code {
+    font-family: monospace;
+  }
+
+  .#{$prefix}--story__p {
+    margin-top: $spacing-md;
+    line-height: 1.6em;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .#{$prefix}--story__i {
     font-style: italic;
-    //text-transform: uppercase;
-    font-weight: 400;
+  }
+  .#{$prefix}--story__h2 {
+    margin-top: $spacing-xl;
 
-    //letter-spacing: 0.05em;
+    &.before--img {
+      margin-bottom: 0;
+    }
   }
 
-  .#{$prefix}--story__type-beta {
-    margin-bottom: $spacing-lg;
+  .#{$prefix}--story__h3 {
+    margin-top: $spacing-xl;
   }
 
-  .#{$prefix}--markup {
-    font-style: italic;
-    @include typescale('delta');
-    margin-bottom: $spacing-lg;
+  .#{$prefix}--story__h4 {
+    margin-top: $spacing-lg;
+    // @include typescale('epsilon');
   }
 
-  .#{$prefix}--inline-highlight {
-    display: inline-block;
+  .#{$prefix}--story__h5 {
+    margin-top: $spacing-lg;
+    // @include typescale('epsilon');
+  }
+
+  .#{$prefix}--story__caption {
+    @include typescale('caption');
+  }
+
+  .#{$prefix}--story__sup {
+    font-size: 0.7em;
+    background: var(--ui-03);
+    vertical-align: top;
+    position: relative;
+    top: -0.5em;
+
+    > a {
+      text-decoration: none;
+
+      &:before {
+        content: '[';
+      }
+
+      &:after {
+        content: ']';
+      }
+    }
+  }
+
+  .docblock-source {
+    margin-top: $spacing-xs !important;
+  }
+
+  .#{$prefix}--story__b,
+  .#{$prefix}--story__strong {
     font-weight: 600;
-    background: $ui-03;
-    padding: 0.05em 0.1em;
   }
 
-  .#{$prefix}--story__divider {
-    border: 1px solid $ui-04;
-  }
-
-  .#{$prefix}--story__divider--lg {
-    border: 2px solid $ui-04;
-  }
-}
-
-@include exports('story') {
-  .#{$prefix}--story {
-    @include reset;
-    @include font-family;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    &__center {
-      text-align: center;
+  @each $size, $glyph in $spacing-map {
+    .#{$prefix}--story__spacing-top-#{$size} {
+      margin-top: map-get($spacing-map, $size);
     }
-
-    &__full-height {
-      min-height: 65vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+    .#{$prefix}--story__spacing-bottom-#{$size} {
+      margin-bottom: map-get($spacing-map, $size);
     }
-    @include text;
-  }
-  .#{$prefix}--text {
-    color: red;
-    @include text;
   }
 }

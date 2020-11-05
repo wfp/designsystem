@@ -10,10 +10,11 @@ import InfoBar from '../../components/InfoBar';
 import markdown from './README.mdx';
 
 export default {
-  title: 'Documentation/Browser outdated warning',
+  title: 'Templates/Browser warning (outdated)',
   component: BrowserWarning,
   parameters: {
-    componentSubtitle: 'Example',
+    componentSubtitle: 'Template',
+    status: 'legacy',
     mdx: markdown,
   },
 };

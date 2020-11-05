@@ -68,7 +68,19 @@ module.exports = async ({ config, mode }) => {
     ],
   });
 
-  config.module.rules.push({
+  config.module.rules.unshift({
+    test: /\.twig$/i,
+    use: [
+      {
+        loader: 'raw-loader',
+        options: {
+          esModule: false,
+        },
+      },
+    ],
+  });
+
+  /*config.module.rules.push({
     test: /\.module.scss$/,
     loaders: [
       require.resolve('style-loader'),
@@ -87,6 +99,12 @@ module.exports = async ({ config, mode }) => {
       },
       require.resolve('fast-sass-loader'),
     ],
+  });*/
+
+  config.module.rules.push({
+    test: /\.scss$/,
+    use: ['style-loader', 'css-loader', 'fast-sass-loader'],
+    include: path.resolve(__dirname, '../src'),
   });
 
   config.module.rules.push({

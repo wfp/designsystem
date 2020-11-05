@@ -1,6 +1,6 @@
 /*
 Direct import via webpack-loader
-import '@wfp/ui/source/globals/scss/styles.scss';
+import '@wfp/ui/src/globals/scss/styles.scss';
 */
 
 import React, { Component } from 'react';

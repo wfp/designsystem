@@ -3,9 +3,11 @@ import React from 'react';
 import markdown from './README.mdx';
 
 import Card from '.';
+import Button from '../Button';
+import Icon from '../Icon';
 
 export default {
-  title: 'Components/Card',
+  title: 'Components/Content Related/Hero',
   component: Card,
   parameters: {
     componentSubtitle: 'Component',
@@ -13,6 +15,8 @@ export default {
     mdx: markdown,
   },
 };
+
+import { iconWfpHumEmergencyResponsePos } from '@wfp/icons';
 
 export const Regular = (args) => <Card {...args} />;
 
@@ -88,6 +92,7 @@ export const Split = (args) => <Card {...args} />;
 
 Split.args = {
   ...Regular.args,
+  metadata: 'Climate Change, Publication',
   kind: 'split',
 };
 
@@ -119,6 +124,15 @@ export const Splash = (args) => <Card {...args} />;
 Splash.args = {
   ...Regular.args,
   kind: 'splash',
+  subTitle: (
+    <>
+      <div style={{ marginBottom: '1rem' }}>
+        Cras dapibus. Aenean ut eros et nisl sagittis vestibulum. Fusce risus
+        nisl, viverra et, tempor et, pretium in.
+      </div>
+      <Button kind="inverse">Read more</Button>
+    </>
+  ),
   image: undefined,
 };
 
@@ -149,6 +163,15 @@ export const SplashCompact = (args) => <Card {...args} />;
 
 SplashCompact.args = {
   ...Regular.args,
+  title: (
+    <>
+      <span style={{ marginRight: '1rem' }}>
+        Nulla consequat massa quis enim
+      </span>
+      <Button kind="inverse--primary">Read more</Button>
+    </>
+  ),
+  subTitle: undefined,
   kind: 'splash-compact',
   image: undefined,
 };
@@ -165,6 +188,7 @@ export const Related = (args) => <Card {...args} />;
 
 Related.args = {
   ...Regular.args,
+  metadata: 'Climate Change, Publication',
   kind: 'related',
 };
 
@@ -172,6 +196,36 @@ Related.story = {
   parameters: {
     docs: {
       storyDescription: `A card designed with landscape photograph and a title with metadata on right side.`,
+    },
+  },
+};
+
+export const Emergencies = (args) => <Card {...args} />;
+
+Emergencies.args = {
+  ...Regular.args,
+  title: (
+    <>
+      <Icon
+        icon={iconWfpHumEmergencyResponsePos}
+        fill="#FFF"
+        style={{ marginRight: '1rem' }}
+      />
+      <span>
+        Curabitur ullamcorper ultricies nisi. Proin magna.{' '}
+        <a href="#">Etiam iaculis nunc ac metus</a>
+      </span>
+    </>
+  ),
+  subTitle: undefined,
+  image: undefined,
+  kind: 'emergencies',
+};
+
+Emergencies.story = {
+  parameters: {
+    docs: {
+      storyDescription: `A global card for highlighting important events, such as emergencies.`,
     },
   },
 };

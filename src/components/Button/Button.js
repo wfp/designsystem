@@ -41,6 +41,7 @@ const Button = ({
     'wfp--btn--secondary': kind === 'secondary',
     'wfp--btn--navigation': kind === 'navigation',
     'wfp--btn--ghost': kind === 'ghost',
+    'wfp--btn--inverse--primary': kind === 'inverse--primary',
     'wfp--btn--inverse': kind === 'inverse',
     'wfp--btn--danger--primary': kind === 'danger--primary',
     'wfp--btn--tertiary': kind === 'tertiary',
@@ -119,11 +120,13 @@ Button.propTypes = {
   disabled: PropTypes.bool,
 
   /**
+   * FOR DESIGNERS
    * Specify whether the Button should be a small variant
    */
   small: PropTypes.bool,
 
   /**
+   * FOR DESIGNERS
    * Specify the kind of Button you want to create
    */
   kind: PropTypes.oneOf([
@@ -132,6 +135,7 @@ Button.propTypes = {
     'accent',
     'danger',
     'ghost',
+    'inverse--primary',
     'inverse',
     'danger--primary',
     'tertiary',

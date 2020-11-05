@@ -5,7 +5,7 @@ $color__main-darker: darken($color__main, 9) !default;
 $color__gray-1: #dfe3e6 !default;
 $color__gray-2: #f0f3f6 !default;
 $color__gray-3: #f5f7fa !default;
-$color__white: #fbfcfc !default;
+$color__white: #ffffff !default;
 
 // UI Main Colors (see http://brand.manuals.wfp.org/en/core-elements/colours/colour-palette/)
 $color__navy: #19486a !default;
@@ -137,13 +137,30 @@ $color__magenta-40: mix(white, $color__magenta, 25%) !default;
 $color__magenta-60: mix(black, $color__magenta, 25%) !default;
 $color__magenta-70: mix(black, $color__magenta, 50%) !default;
 $color__magenta-80: mix(black, $color__magenta, 75%) !default;
+
+$color__magenta-20: mix(white, $color__magenta, 75%) !default;
+$color__magenta-30: mix(white, $color__magenta, 50%) !default;
+$color__magenta-40: mix(white, $color__magenta, 25%) !default;
+$color__magenta-60: mix(black, $color__magenta, 25%) !default;
+$color__magenta-70: mix(black, $color__magenta, 50%) !default;
+$color__magenta-80: mix(black, $color__magenta, 75%) !default;
+
 $color__navy-gray-1: #0f212e !default;
+
+$color__gray-10: mix(white, $color__navy-gray-1, 95%) !default; // ui-02
+$color__gray-20: mix(white, $color__navy-gray-1, 87%) !default; // ui-03
+$color__gray-30: mix(white, $color__navy-gray-1, 82%) !default; // ui-04
+$color__gray-40: mix(white, $color__navy-gray-1, 50%) !default;
+$color__gray-60: mix(black, $color__navy-gray-1, 25%) !default;
+$color__gray-70: mix(black, $color__navy-gray-1, 50%) !default;
+$color__gray-80: mix(black, $color__navy-gray-1, 75%) !default;
+
 $color__navy-gray-2: #20343e !default;
 $color__navy-gray-3: #2d3f49 !default;
 $color__navy-gray-4: #394b54 !default;
 $color__navy-gray-5: #42535c !default;
 $color__navy-gray-6: #5a6872 !default;
-$color__navy-gray-7: #8c9ba5 !default;
+$color__navy-gray-7: #818d94 !default; // #7E8990
 $color__navy-gray-8: #dfe6eb !default;
 $color__navy-gray-9: #eff2f5 !default;
 $color__navy-gray-10: #f9fbfc !default;

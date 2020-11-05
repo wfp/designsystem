@@ -4,7 +4,7 @@ import { action } from '@storybook/addon-actions';
 import { List, ListItem } from '../List';
 
 export default {
-  title: 'Components/List',
+  title: 'Components/UI Elements/List',
   component: List,
   parameters: {
     componentSubtitle: 'Component',
@@ -87,7 +87,7 @@ export const Bullet = (args) => (
 );
 
 Bullet.args = {
-  kind: 'bullet',
+  kind: 'bullets',
 };
 
 const msgg = ` \`bullet\` \`kind\` shows bulleted list items`;

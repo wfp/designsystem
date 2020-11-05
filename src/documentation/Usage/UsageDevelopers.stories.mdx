@@ -6,8 +6,14 @@ import Blockquote from '../../components/Blockquote';
 import Link from '../../components/Link';
 
 <Meta
-  title="Getting started/Getting started/Usage for Developers"
+  title="Getting started/Usage for Developers"
   subTitle="How to use the UI Kit"
+  parameters={{
+    componentSubtitle: 'Getting started',
+    previewTabs: {
+      canvas: { hidden: true },
+    },
+  }}
 />
 
 The UI Kit provides developers with React.js components, scss, <Link onClick={linkTo('Design|Getting started', 'CSS')}>css</Link>, html and
@@ -19,18 +25,16 @@ If you create your first react project use [create-react-app](https://github.com
 
 ### Add dependencies
 
-Installing the UI Kit
-
-### Install via npm{' '}
+### Install via npm
 
 ```bash
-npm install @wfp/ui --save
+npm install @wfp/ui @wfp/icons --save
 ```
 
 ### Install via yarn
 
 ```bash
-yarn add @wfp/ui
+yarn add @wfp/ui @wfp/icons
 ```
 
 ### Use a component
@@ -45,12 +49,7 @@ import { Button } from '@wfp/ui';
 
 ### Polyfills
 
-Polyfills are needed for IE browsers. We recommend{' '}
-
-{' '}
-
-<Link href="https://babeljs.io/docs/en/babel-preset-env">babel-preset-env</Link> for
-it.
+Polyfills are needed for IE browsers. We recommend [https://babeljs.io/docs/en/babel-preset-env](babel-preset-env) for it.
 
 ## CSS
 
@@ -74,10 +73,10 @@ Make sure you have a scss loader installed.
 
 ```js
 // Import all stylesheets
-import '~@wfp/ui/source/globals/scss/styles';
+import '~@wfp/ui/src/globals/scss/styles';
 
 // Only import the Button stylesheet
-import '~@wfp/ui/source/components/Button/button';
+import '~@wfp/ui/src/components/Button/button';
 ```
 
 ### SCSS
@@ -94,19 +93,20 @@ $input-border-radius: 5px;
 $button-border-radius: 60px;
 $button-font-size: 25px;
 $button-padding: 10px 25px;
-$color__main: #0076FF;
+// new css variables used for colours
+--interactive-01: #0076FF;
 
 // Disable css reset
 $css--reset==false
 
 // Import all stylesheets
-@import "~@wfp/ui/source/globals/scss/styles";
+@import "~@wfp/ui/src/globals/scss/styles";
 
 // Only import the Button stylesheet
-@import "~@wfp/ui/source/components/Button/button";
+@import "~@wfp/ui/src/components/Button/button";
 
 // Only use variables
-@import "~@wfp/ui/source/globals/scss/vars";`}
+@import "~@wfp/ui/src/globals/scss/vars";`}
 
 ```
 
@@ -121,7 +121,7 @@ Kit version you are using.
 <link
   rel="stylesheet"
   type="text/css"
-  href="https://cdn.wfp.org/guides/ui/v1.1.16/assets/css/styles.min.css"
+  href="https://cdn.wfp.org/guides/ui/v1.8.2/assets/css/styles.min.css"
 />`}
 ```
 
@@ -138,7 +138,9 @@ The JS components are built using React, but that does not limit their usage
 to just React applications. You can render any component in any JavaScript
 application with ReactDOM.render. Think of it like using a jQuery plugin.
 
-### Usage without react
+Make sure you have embeeded the CSS of the UI Kit in your web project.
+
+### Usage with react renderer
 
 ```js
 import ReactDOM from 'react-dom';
@@ -161,14 +163,18 @@ ReactDOM.render(
 
 To remove the component from the DOM and clean up, unmount it:
 
-### Unmount component{' '}
+### Unmount component
 
 ```
 
 ReactDOM.unmountComponentAtNode(myContainerElement);
 ```
 
-Check out the{' '}[React API docs](https://reactjs.org/docs/react-api.html) for more details.
+Check out the [React API docs](https://reactjs.org/docs/react-api.html) for more details.
+
+### html only
+
+Most components provide an automatically html preview of a component. You can see it if you click **`html`** tab in each preview.
 
 ### Usage with Google Chrome
 

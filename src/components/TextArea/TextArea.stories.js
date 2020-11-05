@@ -4,7 +4,7 @@ import { action } from '@storybook/addon-actions';
 import TextArea from '.';
 
 export default {
-  title: 'Forms/TextArea',
+  title: 'Components/Forms/TextArea',
   component: TextArea,
   parameters: {
     componentSubtitle: 'Component',

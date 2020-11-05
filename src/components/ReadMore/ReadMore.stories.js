@@ -4,7 +4,7 @@ import { action } from '@storybook/addon-actions';
 import ReadMore from '.';
 
 export default {
-  title: 'Components/ReadMore',
+  title: 'Components/UI Elements/ReadMore',
   component: ReadMore,
   parameters: {
     componentSubtitle: 'Component',

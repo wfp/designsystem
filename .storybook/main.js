@@ -5,9 +5,10 @@ module.exports = {
   stories: ['../src/**/*.stories.(js|mdx)'],
   addons: [
     //'/.storybook/addon-wfp/register',
-    './localAddon/register.tsx',
-    './localAddon/preset.ts',
+    //'./localAddon/register.tsx',
+    //'./localAddon/preset.ts',
     '@storybook/addon-docs',
+    '@storybook/addon-toolbars',
     /*{
       name: '@storybook/addon-docs',
       /*options: {
@@ -33,35 +34,27 @@ module.exports = {
       )
     );*/
 
-    /*config.plugins.push(
+    config.plugins.push(
       new webpack.NormalModuleReplacementPlugin(
         /StorybookLogo/,
         path.resolve(__dirname, 'Logo.js')
       )
-    );*/
+    );
     return config;
   },
 
   webpack: async (config, options) => {
-    /*config.plugins.push(
-      new webpack.NormalModuleReplacementPlugin(
-        /shared/,
-        path.resolve(__dirname, 'shared.tsx')
-      )
-    );*/
-
-    /*config.plugins.push(
+    config.plugins.push(
       new webpack.NormalModuleReplacementPlugin(
         /StorybookLogo/,
         path.resolve(__dirname, 'Logo.js')
       )
-    );*/
+    );
     return config;
   },
 
   /*
   webpackFinal: async (config, { configType }) => {
-    console.log('config', config.module.rules[1].use[0].options);
 
     return {
       ...config,

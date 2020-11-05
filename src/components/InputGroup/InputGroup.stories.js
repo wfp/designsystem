@@ -5,7 +5,7 @@ import RadioButton from '../RadioButton';
 import Checkbox from '../Checkbox';
 
 export default {
-  title: 'Forms/InputGroup',
+  title: 'Components/Forms/InputGroup',
   component: InputGroup,
   parameters: {
     componentSubtitle: 'Component',
@@ -16,7 +16,8 @@ export default {
 export const Regular = (args) => (
   <InputGroup
     defaultSelected="default-selected"
-    legend="Group Legend"
+    labelText="Group labelText"
+    helperText="Helper text"
     {...args}>
     <RadioButton
       name="radio"
@@ -42,7 +43,8 @@ export const Regular = (args) => (
 export const withCheckbox = (args) => (
   <InputGroup
     defaultSelected="default-selected"
-    legend="Group Legend"
+    labelText="Group labelText"
+    helperText="Helper text"
     {...args}>
     <Checkbox name="checkbox-1" value="standard" labelText="Checkbox label 1" />
     <Checkbox
@@ -66,7 +68,8 @@ export const vertical = (args) => (
   <>
     <InputGroup
       defaultSelected="default-selected"
-      legend="Group Legend"
+      labelText="Group labelText"
+      helperText="Helper text"
       vertical
       {...args}>
       <Checkbox

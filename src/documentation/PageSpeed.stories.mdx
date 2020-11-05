@@ -1,9 +1,12 @@
 import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
 
 <Meta
-  title="Documentation/Page Speed"
+  title="Documentation/Guidelines/Page Speed"
   parameters={{
-    componentSubtitle: 'Component',
+    componentSubtitle: 'Guidelines',
+    previewTabs: {
+      canvas: { hidden: true },
+    },
   }}
 />
 
@@ -22,8 +25,11 @@ WFP offices are often in remote and developing areas. Make sure the user experie
 The Network tab in `Chrome DevTools` has an option to faux throttle your network, so you can experience what your users might experience visiting your application on 3G, 2G and GPRS connections. Besides the obvious, it’s also useful for visualising how the page load.
 
 1. Open DevTools (`cmd` + `alt` + `i`)
+
 2. Click the `Network` tab
+
 3. Select which type of connection you want to imitate
+
 4. Reload the page to see assets downloading at that connection speed
 
 You can make a custom Network Throttling Profile vor VSAT connections by clicking the option at the very top of the dropdown menu and use the values above.

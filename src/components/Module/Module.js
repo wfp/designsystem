@@ -1,10 +1,48 @@
-import PropTypes from 'prop-types';
 import React from 'react';
-import classNames from 'classnames';
+import PropTypes from 'prop-types';
+import classnames from 'classnames';
+import settings from '../../globals/js/settings';
+const { prefix } = settings;
 
-const propTypes = {
+/** A Module is identifiable as a single, contained unit. */
+
+const Module = ({
+  dark,
+  light,
+  centered,
+  children,
+  className,
+  margin,
+  fullHeight,
+  noMargin,
+  withHover,
+  ...other
+}) => {
+  const wrapperClasses = classnames(
+    {
+      [`${prefix}--module--dark`]: dark,
+      [`${prefix}--module--no-margin`]: noMargin,
+      [`${prefix}--module--full-height`]: fullHeight,
+      [`${prefix}--module--margin-x`]: margin === 'xs',
+      [`${prefix}--module--margin-md`]: margin === 'md',
+      [`${prefix}--module--margin-lg`]: margin === 'lg',
+      [`${prefix}--module--light`]: light,
+      [`${prefix}--module--with-hover`]: withHover,
+    },
+    className,
+    [`${prefix}--module`]
+  );
+
+  return (
+    <div className={wrapperClasses} {...other}>
+      <div className={`${prefix}--module__inner`}>{children}</div>
+    </div>
+  );
+};
+
+Module.propTypes = {
   /**
-   * Specify the content of the `Module`, usually a `ModuleHeader` `ModuleBody` and `ModuleFooter`component.
+   * * Specify the content of the `Module`, usually a `ModuleHeader` `ModuleBody` and `ModuleFooter`component.
    */
   children: PropTypes.node,
   /**
@@ -33,117 +71,4 @@ const propTypes = {
   withHover: PropTypes.bool,
 };
 
-const moduleBodyPropTypes = {
-  /**
-   * Specify the content of the `ModuleBody`
-   */
-  children: PropTypes.node,
-  /**
-   * Specify wheater the content should be centered.
-   */
-  centered: PropTypes.bool,
-  /**
-   * Specify wheater the body should have no padding.
-   */
-  noPadding: PropTypes.bool,
-  /**
-   * The CSS class name for the slider.
-   */
-  className: PropTypes.string,
-};
-
-const moduleHeaderPropTypes = {
-  /**
-   * Specify the content of the `ModuleHeaders`
-   */
-  children: PropTypes.node,
-  /**
-   * The CSS class name for the slider.
-   */
-  className: PropTypes.string,
-};
-
-const defaultProps = {
-  centered: false,
-};
-
-const moduleBodydefaultProps = {};
-
-/** A Module is identifiable as a single, contained unit. */
-
-const Module = ({
-  dark,
-  light,
-  centered,
-  children,
-  className,
-  margin,
-  fullHeight,
-  noMargin,
-  withHover,
-  ...other
-}) => {
-  const wrapperClasses = classNames(
-    {
-      'wfp--module--dark': dark,
-      'wfp--module--no-margin': noMargin,
-      'wfp--module--full-height': fullHeight,
-      'wfp--module--margin-xs': margin === 'xs',
-      'wfp--module--margin-md': margin === 'md',
-      'wfp--module--margin-lg': margin === 'lg',
-      'wfp--module--light': light,
-      'wfp--module--with-hover': withHover,
-    },
-    className,
-    'wfp--module'
-  );
-
-  return (
-    <div className={wrapperClasses} {...other}>
-      <div className="wfp--module__inner">{children}</div>
-    </div>
-  );
-};
-
-const ModuleBody = ({ children, className, centered, noPadding, ...other }) => {
-  const wrapperClasses = classNames('wfp--module__content', className, {
-    'wfp--module__content--centered': centered,
-    'wfp--module__content--no-padding': noPadding,
-  });
-
-  return (
-    <div className={wrapperClasses} {...other}>
-      {children}
-    </div>
-  );
-};
-
-const ModuleHeader = ({ filter, children, className, ...other }) => {
-  const wrapperClasses = classNames('wfp--module__header', className);
-
-  return (
-    <div className={wrapperClasses} {...other}>
-      <h1 className="wfp--module__title">{children}</h1>
-      {filter && <div className="wfp--module__filter">{filter}</div>}
-    </div>
-  );
-};
-
-const ModuleFooter = ({ centered, children, className, ...other }) => {
-  const wrapperClasses = classNames('wfp--module__footer', className);
-
-  return (
-    <div className={wrapperClasses} {...other}>
-      {children}
-    </div>
-  );
-};
-
-Module.propTypes = propTypes;
-ModuleBody.propTypes = moduleBodyPropTypes;
-Module.defaultProps = defaultProps;
-ModuleBody.defaultProps = moduleBodydefaultProps;
-ModuleHeader.propTypes = moduleHeaderPropTypes;
-ModuleFooter.defaultProps = moduleBodydefaultProps;
-
-export { Module, ModuleBody, ModuleHeader, ModuleFooter };
+export default Module;

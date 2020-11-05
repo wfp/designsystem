@@ -27,3 +27,26 @@ $spacing-xl: $spacing-baseline * 2 !default;
 $spacing-2xl: $spacing-baseline * 2.5 !default;
 $spacing-3xl: $spacing-baseline * 3 !default;
 $spacing-4xl: $spacing-baseline * 4 !default;
+
+$spacing-map: (
+  '3xs': $spacing-3xs,
+  '2x': $spacing-2xs,
+  'xs': $spacing-xs,
+  'sm': $spacing-sm,
+  'md': $spacing-md,
+  'lg': $spacing-lg,
+  'xl': $spacing-xl,
+  '2xl': $spacing-2xl,
+  '3xl': $spacing-3xl,
+  '4xl': $spacing-4xl,
+);
+
+@mixin spacing($size, $position) {
+  @if map-has-key($spacing-map, $size) {
+    @if $positon = 'bottom' {
+      margin-bottom: map-get($spacing-map, $size);
+    }
+  } @else {
+    @warn 'This is not a step of the WFP Spacing Scale!';
+  }
+}

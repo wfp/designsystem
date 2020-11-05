@@ -2,7 +2,7 @@
 
 They are based on the [Carbon Design System Tabs](https://www.carbondesignsystem.com/components/tabs/usage/).
 
-### Usage
+## Usage
 
 #### Use tabs to alternate between views within the same context
 
@@ -24,59 +24,59 @@ that are parallel in nature. If the tabs are significantly dissimilar, users wil
 
 not on the sides or the bottom, where users often overlook them. The scope controlled by the tabs should be obvious from the visual design. Metaphorically, using tabs is like leafing through index cards in a drawer of an old-fashioned card catalog, so users must be able to tell at a glance what constitutes an "index card" (i.e., tab panel).
 
-
-### Do not use
+#### Do not use
 
 #### as an input
+
 Tabs should be only used to navigate between views and never as an input.
 
 Source: [Tabs, Used Right by Nielsen Normal Group](https://www.nngroup.com/articles/tabs-used-right/)
 
-### Usage with react
+#### Usage with react
+
 ```js
 import { Tabs, Tab, TabContent } from '@wfp/ui';
 ```
 
-### Use a custom Tab Link Component
+#### Use a custom Tab Link Component
 
-  A custom `renderAnchor` replaces the Link inside the `<Tab/>` Component
+A custom `renderAnchor` replaces the Link inside the `<Tab/>` Component
+
 ```js
-const el = props => {
-	return <a href={props.href}>{props.label}</div>;
+const el = (props) => {
+  return <a href={props.href}>{props.label}</div>;
 };
 ```
-  
+
 ```js
 <Tab
-	{...props.tab()}
-	label="Tab label 4"
-	href="http://www.fr.wfp.org"
-	renderAnchor={el}
+  {...props.tab()}
+  label="Tab label 4"
+  href="http://www.fr.wfp.org"
+  renderAnchor={el}
 />
 ```
 
-  A custom `renderListElement` replaces the whole tab element inside the `<Tab/>` Component, which is especially relevant if you use `<Tabs/>` with react-router, etc.
+A custom `renderListElement` replaces the whole tab element inside the `<Tab/>` Component, which is especially relevant if you use `<Tabs/>` with react-router, etc.
+
 ```js
-const  listEl  = (props) => (
-	<NavLink
-		{...props}
-		activeClassName="wfp--tabs__nav-item--selected"
-	>
-		{props.label}
-	</NavLink>
+const listEl = (props) => (
+  <NavLink {...props} activeClassName="wfp--tabs__nav-item--selected">
+    {props.label}
+  </NavLink>
 );
 ```
-  
+
 ```js
 <Tab
-	{...props.tab()}
-	label="Tab label 4"
-	href="http://www.fr.wfp.org"
-	renderListElement={listEl}
+  {...props.tab()}
+  label="Tab label 4"
+  href="http://www.fr.wfp.org"
+  renderListElement={listEl}
 />
 ```
 
-### Use with react-router
+#### Use with react-router
 
 Write a custom component to use Tabs with different route handlers like `react-router`.
 

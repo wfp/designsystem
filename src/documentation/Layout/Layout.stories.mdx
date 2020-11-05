@@ -1,0 +1,54 @@
+<Meta
+  title="Documentation/Guidelines/Layout"
+  subTitle="Guidelines"
+  parameters={{
+    componentSubtitle: 'Guidelines',
+    previewTabs: {
+      canvas: { hidden: true },
+    },
+  }}
+/>
+
+The basic structure of your webapplication is defined by the layout.
+To choose the right approach it is important to know about the data
+density and structure.
+
+## Option 1: Fluid width layout (for applications)
+
+Fluid width allows the design the expand based on the user's settings,
+which is a good thing.
+
+This is especially useful for productive application with a high data
+density, because no space is wasted.
+
+Unfortunally, in edge cases the line lengths may get too long to be
+easily readable.
+
+The width of the grid and content area grows exponentially and the
+margin always remain at 5%. The width of each column continuiously
+grows and gutters remain at 20px.
+
+### Use fluid width layout for:
+
+- ✓ dashboards
+- ✓ large tables
+- ✓ productive applications
+
+## Option 2: Max width (for text)
+
+[Add Image here]
+
+Fixed width layouts give you a maximum width of the content you are
+displaying. This helps avoiding edge cases and issues like too long
+text.
+
+The max width is 1200px, with the margins growing exponentially past
+that point. Content and columns are centered on page and the margins
+grow equally on left and right of content. If a side panel exists with
+a max width layout, then the panel should stick to the edges of the
+viewport with the exponential margin between the grid columns and the
+panel. This is not an ideal usecase.
+
+- ✓ blogs
+- ✓ news articles
+- ✓ in certain circumstances forms

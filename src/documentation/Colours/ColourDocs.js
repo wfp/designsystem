@@ -1,5 +1,4 @@
 import React, { useRef } from 'react';
-import PrismCode from 'react-prism';
 import Link from '../../components/Link';
 import { List, ListItem } from '../../components/List';
 import Page from '../Page';
@@ -7,9 +6,10 @@ import Blockquote from '../../components/Blockquote';
 
 import { linkTo } from '@storybook/addon-links';
 import ColorList from './ColourList';
-//import styles from './colours.module.scss';
+import './colours.scss';
+// import styles from './colours.module.scss';
 
-const Color = ({ color }) => (
+export const Colour = ({ color }) => (
   <h3>
     <div
       style={{
@@ -334,7 +334,7 @@ const ColourDocs = () => {
 
       <ColorList filter="support" />
 
-      <Color color="support-01" />
+      {/* <Color color="support-01" />
       <p>
         Use the error colour to indicate an error or to focus the attention on
         something which is crucial to see. Paired with a cross icon, red
@@ -351,7 +351,7 @@ const ColourDocs = () => {
         an error message. Yellow typically consists of items which require the
         user’s immediate attention, or indicate a waiting period. Although this
         overlaps with the use of red, yellow is more transient in nature.
-      </p>
+      </p> */}
 
       {/*
           <h3>Sustainable development goals colours</h3>
@@ -359,18 +359,19 @@ const ColourDocs = () => {
             {colorList(sdgColors)}
           </ul>
           */}
-      <h3 ref={linkRefs.symbolic}>Symbolic colours</h3>
+
+      {/* <h3 ref={linkRefs.symbolic}>Symbolic colours</h3>
       <ColorList filter="symbolic" />
-      <p />
-      <h3>Usage</h3>
+      <p /> */}
+      {/* <h3>Usage</h3>
       <p>The colours can be used via JavaScript or different frameworks.</p>
       <Blockquote title="Usage in JavaScript" code>
         <PrismCode component="pre" className="language-js">
           {`// Import colours as json (needs a json loader)
-import colors from '@wfp/ui/source/globals/data/colors.json'
+import colors from '@wfp/ui/src/globals/data/colors.json'
 
 // Import colours as js
-import colors from '@wfp/ui/source/globals/data/colors.js'
+import colors from '@wfp/ui/src/globals/data/colors.js'
 
 const barChartColor = colors.navy;
 `}
@@ -383,14 +384,14 @@ const barChartColor = colors.navy;
       <Blockquote title="Usage in scss" code>
         <PrismCode component="pre" className="language-css">
           {`// Only use variables
-@import "~@wfp/ui/source/globals/scss/vars";
+@import "~@wfp/ui/src/globals/scss/vars";
 
 body {
-  background: $ui-02;
+  background: var(--ui-02);
 }
 `}
         </PrismCode>
-      </Blockquote>
+      </Blockquote> */}
     </Page>
   );
 };

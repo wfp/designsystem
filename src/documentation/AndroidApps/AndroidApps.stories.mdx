@@ -1,0 +1,43 @@
+<Meta
+  title="Documentation/Guidelines/Android apps"
+  subTitle="Core"
+  parameters={{
+    componentSubtitle: 'Guidelines',
+    previewTabs: {
+      canvas: { hidden: true },
+    },
+  }}
+/>
+
+> In development
+>
+> This page is subject to change and will be updated soon.
+
+Internal Applications often only have to work on Android devices,
+therefor the design should be based the principles of the Googles
+Material UI.
+
+- Use [WFP's branding colours](?path=/docs/core-colours--page)
+- Use [Open Sans](?path=/docs/core-typography--page) as font
+- Use shadows only to highlight important elements
+- Keep in mind that applications often run on low-end devices with lacking network coverage
+
+<img
+  alt="Toolkit"
+  style={{
+    width: '110%',
+    height: 'auto',
+    marginTop: '2em',
+    marginBottom: '2em',
+    marginLeft: '-5%',
+  }}
+  src={`${process.env.STORYBOOK_INTERNAL_ASSETS}internal/mobile-android-general.png`}
+/>
+
+Use the [Android Material Editor](https://material.io/tools/) as a starting point.
+
+#### Supported devices
+
+Check your target audience before starting the development. Usually WFP's applications only need to work on Android.
+
+- [Google Material UI Android development](https://material.io/develop/android/)

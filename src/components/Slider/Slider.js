@@ -12,6 +12,8 @@ const defaultFormatLabel = (value, label) => {
   return typeof label === 'function' ? label(value) : `${value}${label}`;
 };
 
+/** Sliders provide a visual indication of adjustable content, where the user can move the handle along a horizontal track to increase or decrease the value. */
+
 export default class Slider extends Component {
   static propTypes = {
     /**
@@ -164,7 +166,7 @@ export default class Slider extends Component {
     return true;
   }
 
-  updatePosition = evt => {
+  updatePosition = (evt) => {
     if (evt && this.props.disabled) {
       return;
     }
@@ -318,7 +320,7 @@ export default class Slider extends Component {
     );
   };
 
-  handleChange = evt => {
+  handleChange = (evt) => {
     this.setState({ value: evt.target.value });
     this.updatePosition(evt);
   };
@@ -329,10 +331,7 @@ export default class Slider extends Component {
       className,
       hideTextInput,
       id = (this.inputId =
-        this.inputId ||
-        `__wfp-slider_${Math.random()
-          .toString(36)
-          .substr(2)}`),
+        this.inputId || `__wfp-slider_${Math.random().toString(36).substr(2)}`),
       min,
       minLabel,
       max,
@@ -410,7 +409,7 @@ export default class Slider extends Component {
           </span>
           <div
             className={sliderClasses}
-            ref={node => {
+            ref={(node) => {
               this.element = node;
             }}
             onClick={this.updatePosition}
@@ -420,7 +419,7 @@ export default class Slider extends Component {
             {...other}>
             <div
               className="wfp--slider__track"
-              ref={node => {
+              ref={(node) => {
                 this.track = node;
               }}
             />

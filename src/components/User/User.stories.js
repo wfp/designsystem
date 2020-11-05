@@ -5,7 +5,7 @@ import User from '.';
 import { List, ListItem } from '../List';
 
 export default {
-  title: 'Components/User',
+  title: 'Components/UI Elements/User',
   component: User,
   parameters: {
     componentSubtitle: 'Component',

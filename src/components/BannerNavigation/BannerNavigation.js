@@ -17,15 +17,17 @@ BannerNavigationItem.propTypes = {
 };
 
 /**
- * The BannerNavigation is used on internal applications which are actually listed on the bar only to crosslink between the applications. It is hidden on Mobile devices.
+ * A thin bar on top of the main navigation used to crosslink among apps or pages.
  */
 const BannerNavigation = ({ children, className, ...props }) => {
   const wrapperClasses = classNames('wfp--banner-navigation', className);
 
   return (
-    <Wrapper {...props} className={wrapperClasses}>
-      <ul className="wfp--banner-navigation__list">{children}</ul>
-    </Wrapper>
+    <div className={wrapperClasses}>
+      <Wrapper {...props}>
+        <ul className="wfp--banner-navigation__list">{children}</ul>
+      </Wrapper>
+    </div>
   );
 };
 
@@ -39,9 +41,9 @@ BannerNavigation.propTypes = {
    */
   className: PropTypes.string,
   /**
-   * The width of the `Wrapper` component
+   * Specify the max-width on desktop devices (same as \`Wrapper\` component)
    */
-  pageWidth: PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'full']),
+  pageWidth: PropTypes.oneOf(['sm', 'md', 'lg', 'full']),
 };
 
 BannerNavigation.defaultProps = {

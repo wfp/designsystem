@@ -4,6 +4,7 @@ import classNames from 'classnames';
 
 /**
  * Cards are a convenient means of displaying content composed of different types of objects. It is a multi usage component which creates boxes that are usually teasing some kind of content. */
+
 const Card = ({
   children,
   className,
@@ -18,9 +19,12 @@ const Card = ({
   url,
   ...other
 }) => {
-  const style = {
-    backgroundImage: `url(${image})`,
-  };
+  const style =
+    kind !== 'related'
+      ? {
+          backgroundImage: `url(${image})`,
+        }
+      : {};
 
   const wrapperClasses = classNames('wfp--photo-card', {
     [`wfp--photo-card--${kind}`]: kind,
@@ -120,6 +124,7 @@ Card.propTypes = {
   kind: PropTypes.oneOf([
     'landscape',
     'landscape-light',
+    'emergencies',
     'split',
     'hero',
     'splash',

@@ -34,7 +34,13 @@ List.propTypes = {
   /**
    * Specify a kind.
    */
-  kind: PropTypes.oneOf(['simple', 'simple-inline', 'details', 'bullet']),
+  kind: PropTypes.oneOf([
+    'simple',
+    'simple-inline',
+    'details',
+    'bullets',
+    'ordered',
+  ]),
   /**
    * Specify if the List should be small
    */

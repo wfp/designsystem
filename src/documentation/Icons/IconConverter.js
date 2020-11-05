@@ -8,9 +8,7 @@ import TextArea from '../../components/TextArea';
 import { Module, ModuleHeader, ModuleBody } from '../../components/Module';
 import ReduxFormWrapper from '../../components/ReduxFormWrapper';
 import { Form, Field } from 'react-final-form';
-
 import Blockquote from '../../components/Blockquote';
-import PrismCode from 'react-prism';
 
 const getJSON = require('./getJSON');
 const formatJS = require('./formatJS');
@@ -21,7 +19,7 @@ export default class FaviconGenerator extends Component {
     this.state = { dataurl: {} };
   }
 
-  onSubmit = async values => {
+  onSubmit = async (values) => {
     const result = getJSON(values.svg);
     const formatted = formatJS(result, { json: false });
     this.setState({
@@ -54,7 +52,9 @@ export default class FaviconGenerator extends Component {
                     labelText="SVG code"
                     placeholder="Your svg code"
                   />
-                  <Button type="submit">Generate Icon</Button>
+                  <Button type="submit" style={{ marginTop: '1em' }}>
+                    Generate Icon
+                  </Button>
 
                   {this.state.json && (
                     <div>
@@ -83,18 +83,18 @@ export default class FaviconGenerator extends Component {
                         </ModuleBody>
                       </Module>
                       <Blockquote title="Icon json" code>
-                        <PrismCode component="pre" className="language-json">
+                        <code component="pre" className="language-json">
                           {JSON.stringify(this.state.json, null, 2)}
-                        </PrismCode>
+                        </code>
                       </Blockquote>
 
                       <Blockquote title="Component code" code>
-                        <PrismCode component="pre" className="language-json">
+                        <code component="pre" className="language-json">
                           {`<Icon 
   icon={${JSON.stringify(this.state.json, null, 2)}}
 />
 `}
-                        </PrismCode>
+                        </code>
                       </Blockquote>
                     </div>
                   )}

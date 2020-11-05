@@ -14,7 +14,7 @@ import Tab from '../Tab';
 import { pageWidths } from '../Wrapper';
 
 export default {
-  title: 'Components/SecondaryNavigation',
+  title: 'Components/Navigations/SecondaryNavigation',
   component: SecondaryNavigation,
   subcomponents: { SecondaryNavigationTitle },
   parameters: {

@@ -4,7 +4,7 @@ import { action } from '@storybook/addon-actions';
 import InlineLoading from '.';
 
 export default {
-  title: 'Components/InlineLoading',
+  title: 'Components/UI Elements/InlineLoading',
   component: InlineLoading,
   parameters: {
     componentSubtitle: 'Component',

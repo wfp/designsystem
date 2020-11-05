@@ -13,6 +13,11 @@ const BannerNavigationWithContent = ({ searchOnChange, search, ...other }) => (
       </Link>
     </BannerNavigationItem>
     <BannerNavigationItem>
+      <Link href="https://selfservice.go.wfp.org" target="_blank">
+        Self-Service
+      </Link>
+    </BannerNavigationItem>
+    <BannerNavigationItem>
       <Link href="http://communities.wfp.org" target="_blank">
         Communities
       </Link>
@@ -28,18 +33,13 @@ const BannerNavigationWithContent = ({ searchOnChange, search, ...other }) => (
       </Link>
     </BannerNavigationItem>
     <BannerNavigationItem>
+      <Link href="https://newgo.wfp.org/topics/data" target="_blank">
+        Data
+      </Link>
+    </BannerNavigationItem>
+    <BannerNavigationItem>
       <Link href="http://opweb.wfp.org" target="_blank">
         OPweb
-      </Link>
-    </BannerNavigationItem>
-    <BannerNavigationItem>
-      <Link href="http://info.wfp.org" target="_blank">
-        IN/FO
-      </Link>
-    </BannerNavigationItem>
-    <BannerNavigationItem>
-      <Link href="https://selfservice.go.wfp.org" target="_blank">
-        Self-Service
       </Link>
     </BannerNavigationItem>
     <BannerNavigationItem>
@@ -74,9 +74,9 @@ BannerNavigationWithContent.propTypes = {
    */
   className: PropTypes.string,
   /**
-   * The CSS class name to be placed on the wrapping element.
+   * Specify the max-width on desktop devices (same as \`Wrapper\` component)
    */
-  pageWidth: PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'full']),
+  pageWidth: PropTypes.oneOf(['sm', 'md', 'lg', 'full']),
   /**
    * Allows to disable the search input
    */

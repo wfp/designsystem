@@ -27,7 +27,7 @@
     &.#{$prefix}--photo-card--link:hover {
       @include layer(pop-out--hover);
     }
-    color: $text-01;
+    color: var(--text-01);
     background-size: cover;
     background-position: 50% 50%;
     overflow: hidden;
@@ -49,7 +49,7 @@
   }
 
   .#{$prefix}--photo-card--no-background {
-    background: $interactive-02;
+    background: var(--interactive-02);
   }
 
   .#{$prefix}--photo-card__info {
@@ -94,7 +94,7 @@
 
   .#{$prefix}--photo-card--light {
     .#{$prefix}--photo-card__info {
-      background: rgba($ui-01, 0.8);
+      background: rgba(var(--ui-01), 0.8);
     }
   }
 
@@ -135,7 +135,7 @@
       }
       .#{$prefix}--photo-card__info__background {
         &:after {
-          background: $interactive-01;
+          background: var(--interactive-01);
           opacity: 1;
         }
       }
@@ -162,13 +162,17 @@
     }
   }
 
+  .#{$prefix}--photo-card--emergencies,
   .#{$prefix}--photo-card--splash,
   .#{$prefix}--photo-card--splash-image,
   .#{$prefix}--photo-card--splash-compact {
     height: rem(300px);
     display: flex;
     align-items: center;
-    color: $ui-01;
+    color: var(--ui-01);
+    a {
+      color: var(--ui-01);
+    }
     @include breakpoint(bp--md--major) {
       height: rem(500px);
     }
@@ -183,6 +187,12 @@
       @include breakpoint(bp--md--major) {
         padding: $spacing-4xl;
       }
+    }
+  }
+
+  .#{$prefix}--photo-card--splash {
+    .#{$prefix}--photo-card__info__title {
+      @include typescale('beta');
     }
   }
 
@@ -212,28 +222,39 @@
     }
   }
 
-  .#{$prefix}--photo-card--splash-compact {
+  .#{$prefix}--photo-card--splash-compact,
+  .#{$prefix}--photo-card--emergencies {
     height: rem(70px);
     .#{$prefix}--photo-card__info {
       justify-content: center;
     }
     .#{$prefix}--photo-card__info__title {
       margin-bottom: 0;
+      display: flex;
+      align-items: center;
     }
     .#{$prefix}--photo-card__info__more {
       margin-left: $spacing-xl;
     }
   }
 
+  .#{$prefix}--photo-card--emergencies {
+    background: var(--support-01);
+    .#{$prefix}--photo-card__info__title {
+      font-weight: normal;
+      @include typescale('p');
+    }
+  }
+
   .#{$prefix}--photo-card--landscape-light {
     .#{$prefix}--photo-card__info {
-      background: $ui-01;
+      background: var(--ui-01);
     }
     .#{$prefix}--photo-card__info__background {
       display: none;
     }
     .#{$prefix}--photo-card__info__title {
-      color: $interactive-01;
+      color: var(--interactive-01);
     }
     &.#{$prefix}--photo-card--link:hover {
       .#{$prefix}--photo-card__info__title {
@@ -241,7 +262,7 @@
       }
       .#{$prefix}--photo-card__info__background {
         &:after {
-          background: $interactive-01;
+          background: var(--interactive-01);
           opacity: 1;
         }
       }
@@ -267,7 +288,7 @@
       @include text-gradient();
     }
     .#{$prefix}--photo-card__info__title {
-      color: $interactive-01;
+      color: var(--interactive-01);
     }
     .#{$prefix}--photo-card__info__background {
       filter: blur(40px);

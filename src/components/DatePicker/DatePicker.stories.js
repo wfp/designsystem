@@ -14,7 +14,7 @@ import ReduxFormWrapper from '../ReduxFormWrapper';
 import markdown from './README.mdx';
 
 export default {
-  title: 'Components/DatePicker',
+  title: 'Components/UI Elements/DatePicker',
   component: SingleDatePickerInput,
   markdown: 'hello',
   parameters: {

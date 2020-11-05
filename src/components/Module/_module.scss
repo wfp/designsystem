@@ -13,7 +13,7 @@
 
 @include exports('modules') {
   .#{$prefix}--module__background {
-    background-color: $ui-02;
+    background-color: var(--ui-02);
   }
 
   .#{$prefix}--module {
@@ -29,7 +29,7 @@
       @include layer('raised');
       box-shadow: 0px 1px 4px rgba(#000000, 0.05),
         0px 25px 30px -15px rgba(#000000, 0.1);
-      background-color: $ui-01;
+      background-color: var(--ui-01);
       border-radius: 3px;
     }
 
@@ -38,7 +38,7 @@
       align-items: center;
       justify-content: space-between;
       padding: 0.9rem 1.2rem 0.8rem;
-      border-bottom: 1px solid $ui-04;
+      border-bottom: 1px solid var(--ui-04);
     }
 
     .#{$prefix}--module__filter {
@@ -49,7 +49,7 @@
       display: flex;
       align-items: center;
       padding: 0.7rem 1.2rem;
-      border-top: 1px solid $ui-04;
+      border-top: 1px solid var(--ui-04);
       @include typescale('omega');
     }
 
@@ -58,7 +58,7 @@
       @include font-smoothing;
       letter-spacing: 0;
       font-weight: 600;
-      color: $text-01;
+      color: var(--text-01);
     }
 
     .#{$prefix}--module__content {
@@ -120,7 +120,7 @@
       cursor: pointer;
       &:hover {
         .#{$prefix}--module__inner {
-          border-color: $interactive-01;
+          border-color: var(--interactive-01);
         }
       }
     }
@@ -136,20 +136,20 @@
   .#{$prefix}--module--dark {
     .#{$prefix}--module__inner {
       box-shadow: none;
-      background: $brand-01;
-      color: $ui-01;
+      background: var(--brand-01);
+      color: var(--ui-01);
     }
 
     .#{$prefix}--module__header {
-      border-bottom-color: rgba(#fff, 0.1);
+      border-bottom-color: rgba(var(--ui-01), 0.1);
     }
 
     .#{$prefix}--module__footer {
-      border-top-color: rgba(#fff, 0.1);
+      border-top-color: rgba(var(--ui-01), 0.1);
     }
 
     .#{$prefix}--module__title {
-      color: $ui-01;
+      color: var(--ui-01);
     }
   }
 }

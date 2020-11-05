@@ -1,7 +1,7 @@
 @import '../_mixins.scss';
 @import '../_vars.scss';
 
-$color: $ui-01;
+$color: var(--ui-01);
 $transparent-light: rgba(0, 8, 16, 0.08);
 $transparent-dark: rgba(0, 8, 16, 0.15);
 $transparent-darker: rgba(0, 8, 16, 0.2);
@@ -88,7 +88,7 @@ $transparent-darker: rgba(0, 8, 16, 0.2);
     }
 
     > .#{$namespace-prefix}-arrow {
-      border-left-color: #fff;
+      border-left-color: var(--ui-01);
 
       &::after {
         border-left: $arrow-size solid $color;
@@ -109,7 +109,7 @@ $transparent-darker: rgba(0, 8, 16, 0.2);
     }
 
     > .#{$namespace-prefix}-arrow {
-      border-right-color: #fff;
+      border-right-color: var(--ui-01);
 
       &::after {
         border-right: $arrow-size solid $color;

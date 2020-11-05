@@ -52,6 +52,7 @@ export {
   SubNavigationGroup,
   SubNavigationItem,
 } from './components/SubNavigation';
+export MdxComponents from './components/MdxComponents';
 export Modal from './components/Modal';
 export ModalWrapper from './components/ModalWrapper';
 export {
@@ -60,7 +61,7 @@ export {
   ModuleHeader,
   ModuleFooter,
 } from './components/Module';
-export notificationStyle from './components/Notification';
+export notificationStyle from './components/Notification/Notification.legacy';
 export NumberInput from './components/NumberInput';
 export Pagination from './components/Pagination';
 export RadioButton from './components/RadioButton';
@@ -87,10 +88,10 @@ export Tabs from './components/Tabs';
 export Tag from './components/Tag';
 export TextArea from './components/TextArea';
 export TextInput from './components/TextInput';
-export { tooltipStyle, tooltipStyleDark } from './components/Tooltip';
+export Tooltip, { tooltipStyle, tooltipStyleDark } from './components/Tooltip';
 export Toggle from './components/Toggle';
 export User from './components/User';
 export Unit from './components/Unit';
 export Value from './components/Value';
-//export Wrapper, { pageWidths } from './components/Wrapper';
+export Wrapper, { pageWidths } from './components/Wrapper';
 //export colors from './globals/data/colors';

@@ -3,7 +3,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import ColorDocs from './ColourDocs';
-import './_colours.scss';
+import './colours.scss';
 
 storiesOf('Design|Core', module)
   .addParameters({ options: { showPanel: false, isToolshown: false } })

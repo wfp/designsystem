@@ -10,7 +10,6 @@ const { prefix } = settings;
 /** Text inputs enable the user to interact with and input content and data. This component can be used for long and short form entries. */
 const TextInput = (props) => {
   const {
-    additional,
     disabled,
     labelText,
     className,
@@ -27,6 +26,7 @@ const TextInput = (props) => {
     inputRef,
     light,
     pattern,
+    required,
     ...other
   } = props;
 
@@ -34,6 +34,7 @@ const TextInput = (props) => {
     [`${prefix}--text--light`]: light,
     [`${prefix}--text--helpertext`]: helperText,
     [`${prefix}--text--nolabel`]: hideLabel,
+    [`${prefix}--text--required`]: required,
   });
 
   const newProps = {
@@ -155,7 +156,7 @@ TextInput.propTypes = {
 };
 
 TextInput.defaultProps = {
-  className: 'wfp--text__input',
+  className: 'wfp--text-input',
   disabled: false,
   type: 'text',
   onChange: () => {},

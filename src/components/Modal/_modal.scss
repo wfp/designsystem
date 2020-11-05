@@ -33,7 +33,7 @@
     overflow: auto;
     content: '';
     opacity: 0;
-    background-color: rgba(darken($ui-05, 40), 0.5);
+    background-color: rgba(var(--ui-07), 0.5);
     transition: opacity 200ms, z-index 0s 200ms, visibility 0s 200ms;
     visibility: hidden;
 
@@ -50,7 +50,7 @@
   }
 
   .#{$prefix}--modal--danger {
-    @include modal--color($support-01);
+    @include modal--color(var(--support-01));
   }
 
   .#{$prefix}--modal__wrapper {
@@ -72,8 +72,9 @@
     margin: auto;
     display: flex;
     flex-direction: column;
-    background-color: $ui-01;
-    border-top: $modal-border-top;
+    background-color: var(--ui-01);
+    //border-top: $modal-border-top;
+    border-radius: $modal-border-radius;
     min-width: 100%;
     //max-height: 100%;
     height: 100%;
@@ -115,12 +116,14 @@
 
   .#{$prefix}--modal-header {
     margin-bottom: $spacing-lg;
+    display: flex;
+    justify-content: space-between;
   }
 
   .#{$prefix}--modal-header__label {
     @include reset;
     @include typescale('omega');
-    color: $text-02;
+    color: var(--text-02);
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -131,7 +134,7 @@
     @include reset;
     @include typescale('beta');
     //font-weight: 300;
-    //color: $text-01;
+    //color: var(--text-01);
   }
 
   .#{$prefix}--modal-content {
@@ -150,7 +153,7 @@
     margin-left: rem(-24px);
     margin-right: rem(-24px);
     padding: $spacing-xl $spacing-xl;
-
+    border-radius: 0 0 $modal-border-radius $modal-border-radius;
     .#{$prefix}--link + .#{$prefix}--btn {
       margin-left: $spacing-md;
     }
@@ -180,7 +183,7 @@
 
   .#{$prefix}--modal-close__icon {
     transition: 200ms;
-    fill: $ui-05;
+    fill: var(--ui-05);
     width: rem(12px);
     height: rem(12px);
   }

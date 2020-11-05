@@ -3,13 +3,10 @@ import Blockquote from '.';
 import Icon from '../Icon';
 import { iconAddOutline } from '@wfp/icons';
 import markdown from './README.mdx';
+import { extractComponentDescription } from '@storybook/addon-docs/dist/lib/docgen';
 
 const props = {
-  children: `Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-  eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
-  voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
-  clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
-  amet.`,
+  children: `Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.`,
 };
 
 const kinds = {
@@ -20,7 +17,7 @@ const kinds = {
 };
 
 export default {
-  title: 'Components/Blockquote',
+  title: 'Components/Content Related/Blockquote',
   component: Blockquote,
   parameters: {
     componentSubtitle: 'Component',
@@ -152,6 +149,32 @@ Togglable.story = {
   parameters: {
     docs: {
       storyDescription: `Use \`toogleable\` property to show and hide blockquote when title is clicked`,
+    },
+  },
+};
+
+export const Code = (args) => <Blockquote {...args} />;
+
+Code.args = {
+  ...props,
+  code: true,
+  children: `<!DOCTYPE html>
+  <html>
+    <head>
+      <meta charset="utf-8">
+      <title>Untitled</title>
+      <meta name="description" content="This is an example of a meta description with a very long description so you have to scroll to the right to see the whole description.">
+      <link rel="stylesheet" type="text/css" href="theme.css">
+    </head>
+    <body>
+    </body>
+  </html>`,
+};
+
+Code.story = {
+  parameters: {
+    docs: {
+      storyDescription: `Use \`code\` property to show formated code`,
     },
   },
 };

@@ -4,14 +4,16 @@ import ReactSelect from 'react-select';
 import markdown from './README.mdx';
 
 export default {
-  title: 'Forms/ReactSelect',
+  title: 'Components/Forms/Dropdown/react-select',
   component: ReactSelect,
   markdown: 'hello',
   parameters: {
     componentSubtitle: 'Component',
     status: 'released',
-    introductionText: 'Description for components',
-    // mdx: markdown,
+    introText: 'Description for components',
+    mdx: markdown,
+    code: false,
+    html: false,
   },
 };
 

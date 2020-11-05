@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import classNames from 'classnames';
 import settings from '../../globals/js/settings';
 import Input from '../Input';
@@ -19,9 +19,10 @@ function PropTypeEmptyString(props, propName, componentName) {
   return null;
 }
 
-Number.prototype.countDecimals = function () {
-  if (Math.floor(this.valueOf()) === this.valueOf()) return 0;
-  return this.toString().split('.')[1].length || 0;
+const countDecimals = (value) => {
+  if (Math.floor(value) === value) return 0;
+
+  return value.split('.')[1].length || 0;
 };
 
 const capMin = (min, value) =>
@@ -62,36 +63,45 @@ function NumberInput(props) {
 
   const initialValue = capMax(max, capMin(min, props.value));
   const [value, setValue] = useState(initialValue);
+
+  useEffect(() => {
+    setValue(props.value);
+  }, [props.value]);
+
   const newInputRef = useRef(null);
   var _inputRef = inputRef ? inputRef : newInputRef;
 
   const handleChange = (evt) => {
-    if (!props.disabled) {
+    if (!disabled) {
       evt.persist();
       evt.imaginaryTarget = _inputRef;
 
       setValue(evt.target.value);
-      onChange(evt);
+      onChange(parseFloat(evt.target.value), evt);
     }
   };
 
   const handleArrowClick = (evt, direction) => {
     let valueState = typeof value === 'string' ? Number(value) : value;
     valueState = isNaN(valueState) ? 0 : valueState;
+
     const conditional =
       direction === 'down'
         ? (min !== undefined && valueState > min) || min === undefined
         : (max !== undefined && valueState < max) || max === undefined;
+
+    valueState =
+      direction === 'down' ? valueState - step : valueState + parseFloat(step);
+    valueState = capMax(max, capMin(min, valueState));
+    valueState = parseFloat(valueState.toFixed(countDecimals(step)));
+
     if (!disabled && conditional) {
-      console.log(valueState, step);
-      valueState = direction === 'down' ? valueState - step : valueState + step;
-      valueState = capMax(max, capMin(min, valueState));
-      valueState = valueState.toFixed(step.countDecimals());
       evt.persist();
       evt.imaginaryTarget = _inputRef;
+      evt.target.value = parseFloat(valueState);
       onClick(evt, direction);
-      onChange(value, evt, direction);
       setValue(valueState);
+      onChange(valueState, evt, direction);
     }
   };
 

@@ -202,7 +202,7 @@ Footer.propTypes = {
  */
   className: PropTypes.string,
   /** 
-   Meta content, usually the copyright notice
+   When external is set to true, the logo will be left and description will right on the footer. It is false by default.
  */
   external: PropTypes.bool,
   /** 
@@ -218,9 +218,9 @@ Footer.propTypes = {
  */
   logoExtended: PropTypes.node,
   /**
-   * The width of the `Wrapper` component
+   * Specify the max-width on desktop devices (same as \`Wrapper\` component)
    */
-  pageWidth: PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'full']),
+  pageWidth: PropTypes.oneOf(['sm', 'md', 'lg', 'full']),
   /**
    The WFP logo
  */

@@ -8,6 +8,7 @@ export const ButtonTypes = {
     'accent',
     'danger',
     'ghost',
+    'inverse--primary',
     'inverse',
     'danger--primary',
     'tertiary',
@@ -23,6 +24,9 @@ export const buttonKinds = [
   'danger--primary',
   'danger',
   'ghost',
+  'inverse--primary',
   'inverse',
   'navigation',
 ];
+
+export const notificationtypes = ['info', 'success', 'warning', 'error'];

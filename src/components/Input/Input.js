@@ -24,6 +24,7 @@ const Input = ({
   invalidText,
   helperText,
   light,
+  required,
   ...other
 }) => {
   const inputProps = {
@@ -50,7 +51,7 @@ const Input = ({
   });
 
   const labelClasses = classNames(`${prefix}--label`, {
-    [`${prefix}--visually-hidden`]: hideLabel,
+    [`${prefix}--visually-hidden`]: hideLabel || !labelText,
     [`${prefix}--label--disabled`]: other.disabled,
   });
 
@@ -58,11 +59,12 @@ const Input = ({
     [`${prefix}--form__helper-text--disabled`]: other.disabled,
   });
 
-  const label = labelText ? (
+  const label = (
     <label htmlFor={id} className={labelClasses}>
-      {labelText}
+      {labelText && labelText}
+      {required && '*'}
     </label>
-  ) : null;
+  );
 
   const error = invalid ? (
     <div className="wfp--form-requirement" id={errorId}>

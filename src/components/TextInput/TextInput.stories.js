@@ -4,7 +4,7 @@ import { action } from '@storybook/addon-actions';
 import TextInput from '.';
 
 export default {
-  title: 'Forms/TextInput',
+  title: 'Components/Forms/TextInput',
   component: TextInput,
   parameters: {
     componentSubtitle: 'Component',
@@ -23,6 +23,7 @@ Regular.args = {
   name: 'inputname',
   helperText: 'Optional helperText',
   labelText: 'The labelText',
+  placeholder: 'placeholder',
 };
 
 export const withError = (args) => <TextInput {...args} />;

@@ -1,0 +1,37 @@
+.#{$rt-namespace}__close-button {
+  font-size: 17px;
+  background: transparent;
+  outline: none;
+  border: none;
+  height: 18px;
+  width: 18px;
+  padding: 0;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: 0.3s ease;
+  align-self: flex-start;
+  position: relative;
+
+  &:before,
+  &:after {
+    content: '';
+    width: 2px;
+    height: 12px;
+    transform: translateX(11px) translateY(-5px) rotate(45deg);
+    display: block;
+    background: var(--text-01);
+    position: absolute;
+  }
+  &:before {
+    transform: translateX(11px) translateY(-5px) rotate(-45deg);
+  }
+  &--default {
+    color: var(--ui-05);
+    opacity: 0.3;
+  }
+
+  &:hover,
+  &:focus {
+    opacity: 1;
+  }
+}

@@ -11,7 +11,7 @@ jest.useFakeTimers();
 describe('Pagination', () => {
   describe('renders as expected', () => {
     const pagination = shallow(
-      <Pagination className="extra-class" pageSizes={[5, 10]} totalItems={50} />
+      <Pagination className="extra-class" pageSizes={[5, 20]} totalItems={50} />
     );
 
     beforeEach(() => {
@@ -54,7 +54,7 @@ describe('Pagination', () => {
         expect(select.length).toBe(1);
         expect(items.length).toBe(2);
         expect(items.at(0).props().value).toBe(5);
-        expect(items.at(1).props().value).toBe(10);
+        expect(items.at(1).props().value).toBe(20);
       });
 
       it('should label the dropdown', () => {
@@ -322,7 +322,7 @@ describe('Pagination', () => {
             />
           );
           const right = noTextInput.find(
-            '.wfp--pagination__right .wfp--text__input'
+            '.wfp--pagination__right .wfp--text-input'
           );
           expect(right.length).toEqual(0);
         });

@@ -15,13 +15,20 @@ export const textLookup = {
   title: 'h1',
   subtitle: 'h3',
   p: 'p',
+  caption: 'div',
 };
 
-const Text = ({ children, className, kind }) => {
+/**
+ *Text is a component for displaying paragraphs. You can use Text to standardize text across your web app. For longer sections or full articles use the <Story /> component instead.
+ */
+
+const Text = ({ children, className, kind, spacingTop, spacingBottom }) => {
   const tagName = { name: textLookup[kind] ? textLookup[kind] : 'div' };
   const classNames = classnames({
     'wfp--text': true,
     [`${prefix}--story__${kind}`]: kind,
+    [`${prefix}--story__spacing-top-${spacingTop}`]: spacingTop,
+    [`${prefix}--story__spacing-bottom-${spacingBottom}`]: spacingBottom,
     [`${className}`]: className,
   });
   return <tagName.name className={classNames}>{children}</tagName.name>;
@@ -49,6 +56,41 @@ Text.propTypes = {
     'title',
     'subtitle',
     'p',
+    'i',
+    'bold',
+    'strong',
+    'sup',
+    'a',
+    'code',
+    'caption',
+  ]),
+  /**
+    Override spacing on top
+  */
+  spacingTop: PropTypes.oneOf([
+    '3xs',
+    '2xs',
+    'xs',
+    'md',
+    'lg',
+    'xl',
+    '2xl',
+    '3xl',
+    '4xl',
+  ]),
+  /**
+  Override spacing on bottom
+*/
+  spacingBottom: PropTypes.oneOf([
+    '3xs',
+    '2xs',
+    'xs',
+    'md',
+    'lg',
+    'xl',
+    '2xl',
+    '3xl',
+    '4xl',
   ]),
 };
 

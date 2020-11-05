@@ -12,6 +12,7 @@ describe('TextInput', () => {
         className="extra-class"
         labelText="testlabel"
         helperText="testHelper"
+        name="name"
         light
       />
     );
@@ -31,10 +32,11 @@ describe('TextInput', () => {
         expect(textInput().hasClass('extra-class')).toEqual(true);
       });
 
+      /* No longer used
       it('has the expected classes for light', () => {
         wrapper.setProps({ light: true });
         expect(textInput().hasClass('wfp--text-input--light')).toEqual(true);
-      });
+      });*/
 
       it('should set type as expected', () => {
         expect(textInput().props().type).toEqual('text');
@@ -120,6 +122,7 @@ describe('TextInput', () => {
           onClick={onClick}
           onChange={onChange}
           disabled
+          name="name"
         />
       );
 
@@ -146,6 +149,7 @@ describe('TextInput', () => {
           id="test"
           onClick={onClick}
           onChange={onChange}
+          name="name"
         />
       );
 

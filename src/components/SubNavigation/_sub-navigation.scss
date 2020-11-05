@@ -18,7 +18,7 @@
   .#{$prefix}--sub-navigation__header {
     width: 100%;
     padding: $spacing-md;
-    background: $ui-03;
+    background: var(--ui-03);
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-between;
@@ -38,7 +38,7 @@
     @include font-smoothing;
     letter-spacing: 0;
     font-weight: 600;
-    color: $text-01;
+    color: var(--text-01);
 
     @include breakpointMax(bp--md--major) {
       display: none;

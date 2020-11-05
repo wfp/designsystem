@@ -3,7 +3,7 @@ import FormWizard from './FormWizard';
 import markdown from './README.mdx';
 
 export default {
-  title: 'Forms/FormWizard',
+  title: 'Components/Forms/FormWizard',
   component: FormWizard,
   markdown: 'hello',
   parameters: {

@@ -6,7 +6,7 @@ import Tab from '../Tab';
 import TabsSkeleton from '../Tabs/Tabs.Skeleton';
 
 export default {
-  title: 'Components/Tabs',
+  title: 'Components/Content Related/Tabs',
   component: Tabs,
   parameters: {
     componentSubtitle: 'Component',

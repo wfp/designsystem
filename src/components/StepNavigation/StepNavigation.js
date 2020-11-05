@@ -6,7 +6,7 @@ import settings from '../../globals/js/settings';
 
 const { prefix } = settings;
 
-/** Links are used as navigational elements. They may appear on their own, within a sentence or paragraph, or directly following the content. */
+/** Step Navigation provide indications to help users reach their destination from their current position */
 
 export default function StepNavigation({
   children,
@@ -121,6 +121,11 @@ export default function StepNavigation({
   );
 }
 
+StepNavigation.defaultProps = {
+  role: 'navigation',
+  selected: 0,
+};
+
 StepNavigation.propTypes = {
   /**
    * Pass in a collection of <StepNavigationItem> children to be rendered depending on the
@@ -133,12 +138,6 @@ StepNavigation.propTypes = {
    * <Tabs>
    */
   className: PropTypes.string,
-
-  /**
-   * Provide a customTabContent by using independent action triggers
-   * inside the Tabs
-   */
-  customTabContent: PropTypes.bool,
 
   /**
    * Specify whether the StepNavigation will be displayed small
@@ -157,12 +156,6 @@ StepNavigation.propTypes = {
   role: PropTypes.string.isRequired,
 
   /**
-   * Optionally provide an `onClick` handler that is invoked when a <Tab> is
-   * clicked
-   */
-  onClick: PropTypes.func,
-
-  /**
    * Provide an optional handler that is called whenever the selection
    * changes. This method is called with the index of the tab that was
    * selected
@@ -172,12 +165,4 @@ StepNavigation.propTypes = {
    * Optionally provide an index for the currently selected <Tab>
    */
   selected: PropTypes.number,
-};
-
-StepNavigation.defaultProps = {
-  iconDescription: 'show menu options',
-  role: 'navigation',
-  triggerHref: '#',
-  selected: 0,
-  ariaLabel: 'listbox',
 };

@@ -19,7 +19,7 @@
     }
 
     th {
-      border-right: 1px solid $ui-04;
+      border-right: 1px solid var(--ui-04);
       text-align: left;
       &:last-child {
         border-right-width: 0px;
@@ -28,7 +28,7 @@
 
     thead,
     th {
-      background: $ui-03;
+      background: var(--ui-03);
       border-bottom: 2px solid #dfe3e6;
       font-weight: 600;
       font-size: 0.85em;
@@ -36,7 +36,7 @@
 
     tbody {
       tr {
-        border-bottom: 1px solid $ui-04;
+        border-bottom: 1px solid var(--ui-04);
         &:last-child {
           border-bottom-width: 0px;
         }
@@ -45,7 +45,7 @@
   }
 
   .#{$prefix}--table--with-border {
-    border: 1px solid $ui-04;
+    border: 1px solid var(--ui-04);
   }
 
   /* Cell Classes in work */
@@ -69,7 +69,7 @@
       //width: auto;
       //height: 0.8rem;
       path {
-        fill: $interactive-01;
+        fill: var(--interactive-01);
       }
     }
   }
@@ -107,7 +107,7 @@
       }
 
       .rt-expander {
-        color: $interactive-01;
+        color: var(--interactive-01);
         margin: 0;
 
         &::after {

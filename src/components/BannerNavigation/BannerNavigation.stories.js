@@ -7,7 +7,7 @@ import Search from '../Search';
 import Link from '../Link';
 
 export default {
-  title: 'Components/BannerNavigation',
+  title: 'Components/Navigations/BannerNavigation',
   component: BannerNavigation,
   subcomponents: { BannerNavigationItem, Link },
   parameters: {
