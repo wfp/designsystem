@@ -77,7 +77,7 @@ $css--reset==false
           {`<link
 rel="stylesheet"
 type="text/css"
-href="https://cdn.wfp.org/guides/ui/v1.1.16/assets/css/styles.min.css"
+href="https://cdn.wfp.org/guides/ui/v1.8.2/assets/css/styles.min.css"
 />`}
         </PrismCode>
       </Blockquote>

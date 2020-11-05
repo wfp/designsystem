@@ -211,6 +211,19 @@
     @include text;
   }
 
+  .#{$prefix}--story__a {
+    &:hover {
+      text-decoration: underline;
+    }
+    //@extend .wfp--link;
+  }
+
+  a.#{$prefix}--btn {
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
   .#{$prefix}--blockquote {
     p {
       margin: 0;
@@ -278,10 +291,6 @@
   .#{$prefix}--story__h5 {
     margin-top: $spacing-lg;
     // @include typescale('epsilon');
-  }
-
-  .#{$prefix}--story__a {
-    @extend .wfp--link;
   }
 
   .#{$prefix}--story__caption {
