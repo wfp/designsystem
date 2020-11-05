@@ -112,7 +112,6 @@ const getSource = (
     }
 
     case expanded === 'twig': {
-      console.log('parametersbbb', parameters);
       const html = parameters.twig ? parameters.twig : 'not found';
       const htmlSource = {
         code: pretty(html),
@@ -121,13 +120,13 @@ const getSource = (
       };
       return {
         source: <StyledSource {...htmlSource} dark />,
-        actionItemTwig: {
-          title: 'Show Twig',
-          onClick: () => setExpanded('twig'),
+        actionItemtwig: {
+          title: 'twig',
+          onClick: () => setExpanded(false),
         },
-        actionItem: { title: 'Show code', onClick: () => setExpanded(true) },
+        actionItem: { title: 'react', onClick: () => setExpanded(true) },
         actionItemHtml: {
-          title: 'Hide html',
+          title: 'html',
           onClick: () => setExpanded(false),
         },
       };
@@ -145,13 +144,13 @@ const getSource = (
       };
       return {
         source: <StyledSource {...htmlSource} dark />,
-        actionItemTwig: {
-          title: 'Show Twig',
+        actionItemtwig: {
+          title: 'twig',
           onClick: () => setExpanded('twig'),
         },
-        actionItem: { title: 'Show code', onClick: () => setExpanded(true) },
+        actionItem: { title: 'react', onClick: () => setExpanded(true) },
         actionItemHtml: {
-          title: 'Hide html',
+          title: 'html',
           onClick: () => setExpanded(false),
         },
       };
@@ -173,13 +172,13 @@ ${withSource.code}`,
       };
       return {
         source: <StyledSource {...reactSource} dark />,
-        actionItemTwig: {
-          title: 'Show Twig',
+        actionItemtwig: {
+          title: 'twig',
           onClick: () => setExpanded('twig'),
         },
-        actionItem: { title: 'Hide code', onClick: () => setExpanded(false) },
+        actionItem: { title: 'react', onClick: () => setExpanded(false) },
         actionItemHtml: {
-          title: 'Show html',
+          title: 'html',
           onClick: () => setExpanded('html'),
         },
       };
@@ -187,13 +186,13 @@ ${withSource.code}`,
     default: {
       return {
         source: null,
-        actionItemTwig: {
-          title: 'Show twig',
+        actionItemtwig: {
+          title: 'twig',
           onClick: () => setExpanded('twig'),
         },
-        actionItem: { title: 'Show code', onClick: () => setExpanded(true) },
+        actionItem: { title: 'react', onClick: () => setExpanded(true) },
         actionItemHtml: {
-          title: 'Show html',
+          title: 'html',
           onClick: () => setExpanded('html'),
         },
       };
@@ -258,7 +257,7 @@ const Preview: FunctionComponent<PreviewProps> = ({
 }) => {
   console.log('props', parameters, storyComponent);
   const [expanded, setExpanded] = useState(isExpanded);
-  const { source, actionItem, actionItemHtml, actionItemTwig } = getSource(
+  const { source, actionItem, actionItemHtml, actionItemtwig } = getSource(
     withSource,
     expanded,
     setExpanded,
@@ -279,7 +278,7 @@ const Preview: FunctionComponent<PreviewProps> = ({
   const showToolbar = withToolbar && !Array.isArray(children);
 
   var actionItems = [];
-  if (parameters.twig !== false) actionItems.push(actionItemTwig);
+  if (parameters.twig) actionItems.push(actionItemtwig);
   if (parameters.code !== false) actionItems.push(actionItem);
   if (parameters.html !== false) actionItems.push(actionItemHtml);
   return (

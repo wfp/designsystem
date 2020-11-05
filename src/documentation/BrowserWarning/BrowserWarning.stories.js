@@ -13,7 +13,7 @@ export default {
   title: 'Templates/Browser warning (outdated)',
   component: BrowserWarning,
   parameters: {
-    componentSubtitle: 'Example',
+    componentSubtitle: 'Template',
     status: 'legacy',
     mdx: markdown,
   },

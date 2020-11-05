@@ -218,9 +218,9 @@ Footer.propTypes = {
  */
   logoExtended: PropTypes.node,
   /**
-   * The width of the `Wrapper` component
+   * Specify the max-width on desktop devices (same as \`Wrapper\` component)
    */
-  pageWidth: PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'full']),
+  pageWidth: PropTypes.oneOf(['sm', 'md', 'lg', 'full']),
   /**
    The WFP logo
  */
