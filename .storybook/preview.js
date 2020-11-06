@@ -95,7 +95,7 @@ export const parameters = {
     storySort: {
       order: [
         'Getting started',
-        ['Intro', 'Browser support', 'Designers'],
+          ['Intro', 'Installing the Kit','Using the Kit','Recommended libraries', 'Browser support', 'Design resources','Support and Feedback','Credits'],
         'Documentation',
         'Templates',
         'Components',

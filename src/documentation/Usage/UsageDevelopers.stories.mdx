@@ -18,14 +18,14 @@ import Link from '../../components/Link';
 
 > WFP front-end technology standards
 >
-> The WFP UI Kit uses [React](https://reactjs.org/) as the underlying JS framework, in line with the [WFP official guidelines for software development](https://newgo.wfp.org/documents/software-solutions-technology-stack). Therefore, all WFP applications should use it, together with the UI Kit. The only exceptions are off-the-shelf solutions (e.g. Saas) and/or non-apps (e.g. the external corporate website, and/or basic landing pages used for fundraising, etc).
+> The WFP UI Kit uses [React](https://reactjs.org/) as the underlying JS framework, in line with the [WFP official guidelines for software development](https://newgo.wfp.org/documents/software-solutions-technology-stack). Therefore, **all WFP applications should use it**, together with the UI Kit. The only **exceptions** are off-the-shelf solutions (e.g. Saas) and/or non-apps (e.g. the external corporate website, and/or basic landing pages used for fundraising, etc).
 
 The UI Kit provides developers with **React.js components, scss, css, html and assets**.
 
-### 1. Create a React app
+## 1. Create a React app
 To kickstart your new project with the Kit, we do recommend to **generate a boilerplate React app** with the official [create-react-app](https://github.com/facebook/create-react-app) tool: you will be provided with a solid build setup with zero effort (that is, no configuration needed on your part).
 
-### 2. Add the Kit as a dependency
+## 2. Add the Kit as a dependency
 The next step is to **add the Kit to your project as a dependancy**. You can choose to install it through `npm` or `yarn`: they are both valid package managers and we don't want to recommend one over the other, but once you pick your favourite tool, simply stick with it and avoid using them simultaneously.
 
 To install the Kit through `npm`, run:
@@ -37,7 +37,7 @@ To install the Kit through `yarn`, run:
 yarn add @wfp/ui @wfp/icons
 ```
 
-### 3. Load the CSS
+## 3. Load the CSS
 This is a required step in case you want to load the full UI Kit stylesheet. If this is the case, you can choose between **importing it through React** or **through the CDN**. If this is not the case, you may then want to check the guidelines on [how to include only specific parts of the Kit CSS](https://uikit.wfp.org/docs/index.html?path=/story/getting-started-using-the-kit--page).
 
 To import the full CSS through React, first make sure to have a `scss` loader installed, then use the following code:
@@ -54,8 +54,8 @@ To import the complete stylesheet through CDN, use:
   href="https://cdn.wfp.org/guides/ui/v1.8.2/assets/css/styles.min.css"
 />
 ```
+
 ***
-***
-### Help us improve
-If you have any suggestion on how to improve this page or if you are running into an issue, please [share your feedback on GitHub](https://github.com/wfp/ui).
-If you have a question about the WFP UI Kit, please [contact the team](mailto:global.uikit@wfp.org).
+## Help us improve!
+- If you are **running into an issue**, please [open an issue on GitHub](https://github.com/wfp/ui/issues).
+- If you have **any question about the WFP UI Kit**, please [contact the team](mailto:global.uikit@wfp.org).
