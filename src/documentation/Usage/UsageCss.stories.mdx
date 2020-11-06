@@ -11,10 +11,16 @@ import { linkTo } from '@storybook/addon-links';
   }}
 />
 
-> The following guidelines assume that you have already installed the Kit. If you haven't done it yet, please check our [step-by-step guide on how to install the Kit]().
+> WFP front-end technology standards
+>
+> The WFP UI Kit uses [React](https://reactjs.org/) as the underlying JS framework, in line with the [WFP official guidelines for software development](https://newgo.wfp.org/documents/software-solutions-technology-stack). Therefore, **all WFP applications should use it**, together with the UI Kit. The only **exceptions** are off-the-shelf solutions (e.g. Saas) and/or non-apps (e.g. the external corporate website, and/or basic landing pages used for fundraising, etc).
 
-## The components
-Let's pretend you want to use the `Button` component: you first need to import it through the `import` function, then to call that component through its name.
+> The following guidelines assume that you have already installed the Kit. If you haven't done it yet, please check our [step-by-step guide on how to install the Kit](https://uikit.wfp.org/docs/index.html?path=/docs/getting-started-installing-the-kit--page).
+
+There are **different ways you can use the Kit** in your applications.
+
+## Usage with React
+**Default and recommended usage.** You can use a component of the Kit like any other React component: first, import it through the `import` function, use it with the `<Nameofcomponent></Nameofcomponent>` syntax.
 
 ```jsx
 // Import the Button component
@@ -24,26 +30,23 @@ import { Button } from '@wfp/ui';
 <Button>Button label</Button>
 ```
 
-If you don't want to load the CSS globally but you want to include only this stylesheet, then use:
+If you need to import the stylesheet of the component, here is the complete example:
 ```jsx
 // Import the Button component and its style
 import { Button } from '@wfp/ui';
+// Import the stylesheet of the Button component
 import '@wfp/ui/src/components/Button/button.scss';
 
 // Use the Button component
 <Button>Button label</Button>
 ```
-
-## The templates
-The Kit provides with the code for different templates:
-- Application page
-- Dashboard page
+The Kit also provides a basic **template** to kickstart your project, please have a look at the [page template](https://uikit.wfp.org/docs/index.html?path=/docs/templates-application-page--default).
 
 ## Usage with vanilla JS
 
-The JS components are built using React, but that does not limit their usage
-to just React applications. You can render any component in any JavaScript
-application with ReactDOM.render. Think of it like using a jQuery plugin.
+The JS components are built using React, but that **does not limit their usage
+to just React applications**. You can render any component in any JavaScript
+application with `ReactDOM.render`. Think of it like using a jQuery plugin.
 Make sure you have embedded the CSS of the UI Kit in your project.
 
 ```js
@@ -72,7 +75,7 @@ ReactDOM.unmountComponentAtNode(myContainerElement);
 Check out the [React API docs](https://reactjs.org/docs/react-api.html) for more details.
 
 ## Usage with pure HTML
-We have included the HTML of every template and every component in this documentation: navigate through the item of your interest, search for a preview of the component or template, click on the HTML tab. For what concerns the styling, you can [load the CSS through the WFP CDN](). We are currently evaluating to expose the CSS for the single components and templates.
+**You can grab the HTML of every component or template** directly from these docs: simply navigate to the item you are looking for, search for the in-page preview under the "Documentation" tab and click on the HTML tab. For the styling, you can [load the CSS through the WFP CDN](https://uikit.wfp.org/docs/index.html?path=/docs/getting-started-installing-the-kit--page#3-load-the-css). We are currently evaluating to expose the CSS for the single components and templates.
 
 ## Using the Kit SCSS
 
@@ -94,5 +97,9 @@ $css--reset==false
 
 // Only use variables
 @import "~@wfp/ui/src/globals/scss/vars.scss";
-
 ```
+
+***
+## Help us improve!
+- If you are **running into an issue**, please [open an issue on GitHub](https://github.com/wfp/ui/issues).
+- If you have **any question about the WFP UI Kit**, please [contact the team](mailto:global.uikit@wfp.org).
