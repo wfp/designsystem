@@ -104,9 +104,10 @@
   },
   "dependencies": {
     "@popperjs/core": "^2.4.4",
+    "@semantic-release/git": "^9.0.0",
     "invariant": "^2.2.4",
-
     "react-popper": "^2.2.3",
+    "semantic-release-ado": "^1.2.2",
     "warning": "^4.0.3",
     "window-or-global": "^1.0.1"
   },
