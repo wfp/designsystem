@@ -59,8 +59,11 @@ const Normaltext = [
   { kind: 'p', text: 'Label (form)', styling: '16px, Regular' },
   { kind: 'code', text: 'Code', styling: 'Monospace, 13px, Regular' },
   { kind: 'sup', text: 'Sup', styling: '11px, Regular' },
-  { kind: 'subtitle', text: 'Overline', styling: '14px, SemiBold' },
-  { kind: 'p', text: 'Inline highlight', styling: '14px, SemiBold' },
+  {
+    kind: 'inline-highlight',
+    text: 'Inline highlight',
+    styling: '14px, SemiBold',
+  },
 ];
 
 export const text = (args) => (
@@ -76,21 +79,21 @@ export const text = (args) => (
   </>
 );
 
-export const link = (args) => (
+export const pagetitle = (args) => (
   <>
-    <>
-      <Link className="wfp--link--visted">Link</Link>
-      <div style={{ color: '#A9A9A9', marginBottom: '2rem' }}>
-        16px, Regular
-      </div>
-    </>
+    <Text kind="title">Title</Text>
+    <div style={{ color: '#A9A9A9', marginBottom: '2rem' }}>59px, Light</div>
+    <Text kind="subtitle">Overline</Text>
+    <div style={{ color: '#A9A9A9', marginBottom: '2rem' }}>14px, SemiBold</div>
+  </>
+);
 
-    <>
-      <Link className="wfp--link--hover">Link</Link>
-      <div style={{ color: '#A9A9A9', marginBottom: '2rem' }}>
-        16px, Regular
-      </div>
-    </>
+export const links = (args) => (
+  <>
+    <Text kind="a">Link</Text>
+    <div style={{ color: '#A9A9A9', marginBottom: '2rem' }}>16px, Regular</div>
+    <Link className="wfp--link--hover">Link</Link>
+    <div style={{ color: '#A9A9A9', marginBottom: '2rem' }}>16px, Regular</div>
   </>
 );
 
@@ -129,7 +132,7 @@ export const Lists = (args) => (
           <ListItem>Numbered List 2</ListItem>
           <ListItem>Numbered List 3</ListItem>
         </List>
-        <div style={{ color: '#A9A9A9', marginBottom: '3rem' }}>
+        <div style={{ color: '#A9A9A9', marginBottom: '2rem' }}>
           16px, Regular
         </div>
       </>

@@ -9,6 +9,7 @@ module.exports = {
     //'./localAddon/preset.ts',
     '@storybook/addon-docs',
     '@storybook/addon-toolbars',
+    '@storybook/addon-viewport',
     /*{
       name: '@storybook/addon-docs',
       /*options: {

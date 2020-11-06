@@ -62,6 +62,7 @@ Text.propTypes = {
     'sup',
     'a',
     'code',
+    'inline-highlight',
     'caption',
   ]),
   /**
