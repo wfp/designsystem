@@ -28,7 +28,6 @@
     "storybook": "STORYBOOK_ASSETS=https://cdn.wfp.org/guides/ui/assets/v0.0.1/ STORYBOOK_INTERNAL_ASSETS=../ start-storybook -s ./src/assets -p 9000",
     "test": "jest --watch",
     "test:generate-output": "jest --json --outputFile=.jest-test-results.json",
-    "prebuild:storybook": "npm run test:generate-output",
     "test-ssr": "npm run build && node ssr-tests/*.js",
     "jest-w": "jest --watch"
   },
