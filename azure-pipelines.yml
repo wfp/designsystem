@@ -49,45 +49,21 @@ jobs:
         echo "##vso[task.setvariable variable=versionNumber;isOutput=true]$(nextRelease)"
       name: setOutputVar
 
-- job: Documentation
-  dependsOn: SemanticRelease
-  pool:
-    vmImage: 'ubuntu-latest'
-  variables:
-    versionNumber: $[ dependencies.SemanticRelease.outputs['setOutputVar.versionNumber'] ]
+    - script: |
+        npm run build:storybook
+      displayName: 'npm run build:storybook'
 
-  steps:
-  - task: Cache@2
-    inputs:
-      key: 'npm | "$(Agent.OS)" | package-lock.json'
-      path: "$(NPM_CACHE_FOLDER)"
-      restoreKeys: |
-        npm | "$(Agent.OS)"
-        npm
-    displayName: 'Cache NPM packages'
+    - task: PublishPipelineArtifact@1
+      inputs:
+        targetPath: "./docs"
+        artifact: "wfp-ui-kit-build"
+        publishLocation: "pipeline"
 
-  - script: |
-      mkdir -p $(NPM_CACHE_FOLDER)
-      npm ci
-    displayName: 'npm install'
-  - script: echo $(versionNumber)
-    displayName: 'Show next version'
-
-  - script: |
-      npm run build:storybook
-    displayName: 'npm run build:storybook'
-
-  - task: PublishPipelineArtifact@1
-    inputs:
-      targetPath: "./docs"
-      artifact: "wfp-ui-kit-build"
-      publishLocation: "pipeline"
-
-  - task: PublishPipelineArtifact@1
-    inputs:
-      targetPath: "./assets"
-      artifact: "wfp-ui-kit-assets"
-      publishLocation: "pipeline"
+    - task: PublishPipelineArtifact@1
+      inputs:
+        targetPath: "./assets"
+        artifact: "wfp-ui-kit-assets"
+        publishLocation: "pipeline"
 
 #  - task: ArchiveFiles@2
 #    condition: or(eq(variables['Build.SourceBranch'], 'refs/heads/master'), startsWith(variables['Build.SourceBranch'], 'refs/heads/next'))
