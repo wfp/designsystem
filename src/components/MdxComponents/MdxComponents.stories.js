@@ -12,6 +12,16 @@ export default {
     componentSubtitle: 'Component',
     mdx: markdown,
     introText: `MDX is an authorable format that lets you seamlessly write JSX in your Markdown documents.`,
+
+    docs: {
+      source: {
+        code: `
+import { MdxComponents } from '@wfp/ui';
+import { MDXProvider } from '@mdx-js/react';
+
+<MDXProvider components={MdxComponents}>{children}</MDXProvider>`,
+      },
+    },
   },
 };
 
