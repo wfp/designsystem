@@ -27,6 +27,11 @@ import { Props } from './Props';
 import { Stories } from './Stories';
 import { PRIMARY_STORY } from './types';*/
 //import '../src/globals/scss/styles.scss';
+
+import { withTests } from '@storybook/addon-jest';
+
+import results from '../.jest-test-results.json';
+
 import './storybook.scss';
 
 /*
@@ -116,6 +121,14 @@ export const globalTypes = {
     },
   },
 };
+
+/*
+
+addDecorator(
+  withTests({
+    results,
+  })
+);*/
 
 const withThemeProvider = (Story, context) => {
   const theme = context.globals.theme;

@@ -9,7 +9,7 @@ module.exports = {
       'semantic-release-ado',
       {
         varName: 'nextRelease',
-        setOnlyOnRelease: true,
+        setOnlyOnRelease: false,
       },
     ],
     /*[
