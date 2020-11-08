@@ -26,6 +26,7 @@ import {
   SourceError,
   SourceProps as PureSourceProps,
 } from '@storybook/components';
+import mdxComponents from '../../src/components/MdxComponents';
 
 export interface DocsContainerProps {
   context: DocsContextProps;
@@ -57,37 +58,6 @@ export const DocsContainer: FunctionComponent<DocsContainerProps> = ({
   }
   const theme = ensureTheme(themeVars);
 
-  //TODO: just a test
-  const li = (props) => {
-    const kind =
-      typeof props.children === 'string' ? props.children.substring(0, 1) : '';
-
-    if (kind === '✓' || kind === '✗')
-      return (
-        <ListItem kind={kind === '✓' ? 'checkmark' : 'cross'} {...props}>
-          {props.children.substring(1, props.children.length)}
-        </ListItem>
-      );
-
-    return <li {...props}>{props.children}</li>;
-  };
-
-  const ul = (props) => {
-    return (
-      <List {...props} kind="bullets">
-        {props.children}
-      </List>
-    );
-  };
-
-  const ol = (props) => {
-    return (
-      <List {...props} kind="ordered">
-        {props.children}
-      </List>
-    );
-  };
-
   const code = ({ children, className, ...other }) => {
     const language = className && className.split('-');
     return (
@@ -101,14 +71,10 @@ export const DocsContainer: FunctionComponent<DocsContainerProps> = ({
     );
   };
 
-  const wrapper = (props) => <Story {...props} />;
   const allComponents = {
     ...defaultComponents,
     ...docs.components,
-    ul,
-    ol,
-    li,
-    wrapper,
+    ...mdxComponents,
     code,
   };
 

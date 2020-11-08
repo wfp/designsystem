@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
 import markdown from './README.mdx';
 import Text from '../Text';
@@ -16,7 +17,6 @@ export default {
 
 export const StoryText = (args) => (
   <Story {...args}>
-    {' '}
     <h2 className="wfp--story__subtitle">
       Funding facility allows for scale-up of emergency operation
     </h2>
@@ -89,3 +89,32 @@ StoryText.story = {
     },
   },
 };
+
+const headingText = [
+  { kind: 'h1', text: 'Heading 1', styling: '29px, SemiBold' },
+  { kind: 'h2', text: 'Heading 2', styling: '25px, SemiBold' },
+  { kind: 'h3', text: 'Heading 3', styling: '22px, SemiBold' },
+  { kind: 'h4', text: 'Heading 4', styling: '20px, SemiBold' },
+  { kind: 'h5', text: 'Heading 5', styling: '18px, SemiBold' },
+  { kind: 'h6', text: 'Heading 6', styling: '16px, SemiBold' },
+];
+
+export const Headings = (args) => (
+  <>
+    {headingText.map((e) => (
+      <>
+        <Story>
+          {e.kind === 'h1' ? (
+            <e.kind className="wfp--story__title">{e.text}</e.kind>
+          ) : (
+            <e.kind>{e.text}</e.kind>
+          )}
+
+          <div style={{ color: '#A9A9A9', marginBottom: '2rem' }}>
+            {e.styling}
+          </div>
+        </Story>
+      </>
+    ))}
+  </>
+);

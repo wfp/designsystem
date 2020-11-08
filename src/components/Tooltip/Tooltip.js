@@ -22,6 +22,7 @@ export const tooltipStyleDark = {
 
 /** Tooltips display additional information upon click, hover, or focus. The information should be contextual, useful, and nonessential. */
 const Tooltip = ({
+  className,
   dark,
   children,
   content,
@@ -29,6 +30,7 @@ const Tooltip = ({
   modifiers,
   placement = 'top',
   utlis,
+  useWrapper,
 }) => {
   const referenceElement = useRef(null);
   const popperElement = useRef(null);
@@ -66,7 +68,7 @@ const Tooltip = ({
     }
   );
 
-  const classNames = classnames({
+  const classNames = classnames(className, {
     [`${prefix}--tooltip`]: true,
     [`${prefix}--tooltip--visible`]: isShown,
     [`${prefix}--tooltip--dark`]: dark,
@@ -79,12 +81,17 @@ const Tooltip = ({
           onMouseLeave: () => setIsShown(false),
         }
       : { onClick: () => handleInsideClick(true) };
-
   return (
     <>
-      <span type="button" ref={referenceElement} {...actions}>
-        {children}
-      </span>
+      {useWrapper === true ? (
+        <span type="button" ref={referenceElement} {...actions}>
+          {children}
+        </span>
+      ) : (
+        <>
+          {React.cloneElement(children, { ref: referenceElement, ...actions })}
+        </>
+      )}
 
       <div
         ref={popperElement}
@@ -148,6 +155,11 @@ Tooltip.propTypes = {
    * Provide additional utils as an object https://popper.js.org/docs/v2/utils/
    */
   utils: PropTypes.object,
+
+  /**
+   * Use a wrapper html element aroud the trigger. Useful for components without `forwardRef` support.
+   */
+  useWrapper: PropTypes.bool,
 };
 
 export default Tooltip;

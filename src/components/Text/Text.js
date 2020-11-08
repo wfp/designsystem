@@ -15,10 +15,11 @@ export const textLookup = {
   title: 'h1',
   subtitle: 'h3',
   p: 'p',
+  caption: 'div',
 };
 
 /**
- *Text is a component for displaying text. You can use Text to standardize text across your web app.
+ *Text is a component for displaying paragraphs. You can use Text to standardize text across your web app. For longer sections or full articles use the <Story /> component instead.
  */
 
 const Text = ({ children, className, kind, spacingTop, spacingBottom }) => {
@@ -61,6 +62,8 @@ Text.propTypes = {
     'sup',
     'a',
     'code',
+    'inline-highlight',
+    'caption',
   ]),
   /**
     Override spacing on top

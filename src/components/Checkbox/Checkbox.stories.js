@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import markdown from './README.mdx';
-import { action } from '@storybook/addon-actions';
 import Checkbox from '.';
+import InputGroup from '../InputGroup';
 
 export default {
   title: 'Components/Forms/Checkbox',
@@ -109,3 +109,42 @@ HideLabel.story = {
     },
   },
 };
+
+export const VerticalGrouping = (args) => (
+  <InputGroup
+    helperText="select any that apply"
+    labelText="Programming language preference"
+    vertical>
+    <Checkbox {...args} defaultChecked labelText="ReactJs" id="react" />
+    <Checkbox {...args} defaultChecked labelText="ReactNative" id="native" />
+    <Checkbox {...args} labelText="Node.js" id="node" />
+    <Checkbox {...args} labelText="PHP" id="php" />
+    <Checkbox {...args} labelText="Java" id="java" />
+  </InputGroup>
+);
+
+VerticalGrouping.args = {};
+
+// const nolabel = `Specify whether the label should be hidden or not`;
+
+// CheckboxGroup.story = {
+//   parameters: {
+//     docs: {
+//       storyDescription: nolabel,
+//     },
+//   },
+// };
+
+export const HorizontalGrouping = (args) => (
+  <InputGroup
+    helperText="select any that apply"
+    labelText="Programming language preference">
+    <Checkbox {...args} defaultChecked labelText="ReactJs" id="react1" />
+    <Checkbox {...args} defaultChecked labelText="ReactNative" id="native1" />
+    <Checkbox {...args} labelText="Node.js" id="node1" />
+    <Checkbox {...args} defaultChecked labelText="PHP" id="php1" />
+    <Checkbox {...args} labelText="Java" id="java1" />
+  </InputGroup>
+);
+
+HorizontalGrouping.args = {};

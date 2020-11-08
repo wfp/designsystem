@@ -48,6 +48,29 @@ export const DocsPaged = (props) => {
 };
 
 addParameters({
+  /*options: {
+    showRoots: true,
+    storySort: (a, b) => {
+      console.log('sort', a[1].kind.split('/'));
+
+      const section = a[1].kind.split('/');
+
+      if (section[0] === 'Components') {
+        return -10100000;
+      }
+      if (a[0] === 'components-ui-elements-slider--regular-slider') {
+        return -1100000;
+      }
+      if (a.includes('Intro')) {
+        return -1000;
+      }
+      if (a.includes('Components')) {
+        return 900;
+      }
+      return 0;
+    },
+  },*/
+
   docs: {
     container: DocsContainer,
     page: DocsPage,
@@ -67,6 +90,17 @@ export const parameters = {
       title: 'Documentation',
     },
     canvas: { title: 'Code', hidden: false },
+  },
+  options: {
+    storySort: {
+      order: [
+        'Getting started',
+        ['Intro', 'Browser support', 'Designers'],
+        'Documentation',
+        'Templates',
+        'Components',
+      ],
+    },
   },
 };
 

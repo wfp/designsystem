@@ -33,17 +33,14 @@
   .sbdocs-a {
     //@extend .wfp--link;
     color: var(--interactive-01);
-    font-size: 1rem;
     line-height: inherit;
   }
   .sbdocs-li {
     font-size: 1rem;
   }
   .sbdocs-h1,
-  .sbdocs-title,
-  h1 {
+  .sbdocs-title {
     @extend .wfp--story__title;
-    font-size: 3rem;
   }
   .sbdocs-subtitle {
     @extend .wfp--story__subtitle;
@@ -157,43 +154,43 @@
   background: $inverse-02;
 }
 ​ .color__ui-01 {
-  background: $ui-01;
+  background: var(--ui-01);
 }
 ​ .color__ui-02 {
-  background: $ui-02;
+  background: var(--ui-02);
 }
 ​ .color__ui-03 {
-  background: $ui-03;
+  background: var(--ui-03);
 }
 ​ .color__ui-04 {
-  background: $ui-04;
+  background: var(--ui-04);
 }
 ​ .color__ui-05 {
-  background: $ui-05;
+  background: var(--ui-05);
 }
 ​ .color__text-01 {
-  background: $text-01;
+  background: var(--text-01);
 }
 ​ .color__text-02 {
-  background: $text-02;
+  background: var(--text-02);
 }
 ​ .color__text-03 {
-  background: $text-03;
+  background: var(--text-03);
 }
 .color__support-01 {
-  background: $support-01;
+  background: var(--support-01);
 }
 .color__support-02 {
-  background: $support-02;
+  background: var(--support-02);
 }
 .color__support-03 {
-  background: $support-03;
+  background: var(--support-03);
 }
 ​.color__field-01 {
-  background: $field-01;
+  background: var(--field-01);
 }
 ​ .color__field-02 {
-  background: $field-02;
+  background: var(--field-02);
 }
 ​ .color__main-20 {
   background: $color__main-20;

@@ -1,17 +1,60 @@
-import { MixBarChartChart } from './MixBarChart.stories.js';
+import { MixBarChartChart } from './MixBarChart.js';
 import { PieChartExample } from './PieChart.js';
-import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+import { Canvas, Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+//import Button from '../../components/Button';
 
-<Meta title="Documentations/Charts" subTitle="How to use the UI Kit" />
+<Meta
+  title="Documentation/Data Visualisation"
+  subTitle="How to use the UI Kit"
+  id="core-layout-mdx"
+  parameters={{
+    componentSubtitle: 'Guidelines',
+    status: 'draft',
+    previewTabs: {
+      canvas: { hidden: true },
+    },
+  }}
+/>
 
-dasadsdasa
-[https://brand.manuals.wfp.org/en/data-visualization-guidance/](Visualization guidieline)
+> Recommended library
+>
+> [Recharts](https://recharts.org/) is the recommended library for creating charts with react.js.
 
-<MixBarChartChart />
+## Bar charts
 
-ddsassdadas
+<Canvas>
+  <Story name="MixBarChartChart" parameters={{ layout: 'centered' }}>
+    <MixBarChartChart />
+  </Story>
+</Canvas>
 
-<PieChartExample />
+A bar chart is used when you want to show a distribution of data points or perform a comparison of metric values across different subgroups of your data.
+The primary variable of a bar chart is often a categorical variable.
+
+In addition, some non-categorical variables can be converted into groups, like aggregating temporal data based on date (eg. dividing by quarter into `20XX-Q1`, `20XX-Q2`, `20XX-Q3`, `20XX-Q4`, etc.) The important point for this primary variable is that the groups are distinct.
+
+In contrast, the secondary variable will be numeric in nature and determine the length of each bar.
+
+- ✓ Use a common zero-valued baseline
+- ✓ Maintain rectangular forms for your
+- ✓ Use distinctive colours
+
+Source: [bar chart guide on chartio.com](https://chartio.com/learn/charts/bar-chart-complete-guide)
+
+## Pie charts
+
+<Canvas>
+  <Story name="PieChartExample" parameters={{ layout: 'centered' }}>
+    <PieChartExample />
+  </Story>
+</Canvas>
+
+- ✓ The sections of the pie must contain the whole 100%
+- ✓ Donut plots are prefered over regular pie charts
+
+- ✗ Avoid using pie charts for charts with more then 5 sections
+
+Source: [pie chart guide on chartio.com](https://chartio.com/learn/charts/pie-chart-complete-guide/)
 
 ## Nine questions to help you visualize your data
 
@@ -19,7 +62,9 @@ ddsassdadas
 
 Before starting to work on a new data visualization, make sure you know why you’re doing it and remember: this is a process guided by data findings. Avoid cherry picking data to force a particular story.
 
-HINT: Use your questions to guide the analysis and once you have the answers, plan the narrative. You will be surprised by the number of patterns you had never expected to see.
+#### Hints:
+
+Use your questions to guide the analysis and once you have the answers, plan the narrative. You will be surprised by the number of patterns you had never expected to see.
 
 ### 2. What’s the hook? Why should people care about it?
 
@@ -29,13 +74,15 @@ Make your visualization impactful. Prioritize the main findings of your analysis
 
 Think about your audience needs and level of knowledge. Someone in the field will need to access data in a totally different way to someone in an executive position. Always keep in mind who will be consuming your visualization and in which context.
 
-HINT: As general advice, avoid technical jargon and abbreviations. Also, include a test as a step in the development process and be open to feedback. Your audience may see something you didn’t or have useful insights on how to improve the visualization.
+#### Hints:
+
+As general advice, avoid technical jargon and abbreviations. Also, include a test as a step in the development process and be open to feedback. Your audience may see something you didn’t or have useful insights on how to improve the visualization.
 
 ### 4. Where is your audience? Which medium are they using to consume the visualization?
 
 Are they using a phone? A computer? A tablet? Printed media? A banner? Can they interact with the visualization (for instance, can they click to filter charts or see more info)?
 
-HINT:
+#### Hints:
 
 Your chart may be printed. If it is a possibility, remember that all actions (like the values that appear when hovering over or filters) won't be available, so make important values visible. Also, keep in mind that it will probably be printed in black and white, so test the colors to check if there is the necessary contrast when printed.
 
@@ -43,7 +90,7 @@ Your chart may be printed. If it is a possibility, remember that all actions (li
 
 The type of data and the question to be answered should be used to define the best chart types. Line charts, for instance, are used to illustrate changes over time. Pie charts and bar charts, are great to compare categorical data. Scatter plots are good to display relationships between variables. For a more detailed guide on selecting chart types, click here.
 
-HINTS:
+#### Hints:
 
 Beware of pie charts! They can be useful to show part-to-whole comparisons but sometimes proportions can be difficult to distinguish. Never use more than five “slices”, preferably limiting it to a maximum of three.
 When using maps, check if there aren’t contested territories in the region. Avoid automatically generated maps when dealing with countries with contested borders and be sure to follow the latest WFP territorial guidelines. For further guidance on correct usage of maps please contact the GIS team at hq.gis@wfp.org
@@ -52,13 +99,15 @@ When using maps, check if there aren’t contested territories in the region. Av
 
 Avoid cluttering your visualizations with unnecessary metrics (or non-data ink) and superfluous elements such as grid lines or ornamentation. Create a visual hierarchy to make important data stand out and be easy to read. Choose wisely which charts should be used together and don’t try to use all at the same time. Most importantly: Keep it simple.
 
-HINT: Avoid 3D charts. They make it difficult for the eye to see comparisons or proportions, distorting the perception of the data.
+#### Hints:
+
+Avoid 3D charts. They make it difficult for the eye to see comparisons or proportions, distorting the perception of the data.
 
 ### 7. Which fonts should I use?
 
 Stick to the WFP corporate Open Sans font . It is a clean, contemporary font that makes it easier for the reader to scan the annotation. Be careful to not make the font too small (less than 8pt) and take advantage of sizes and bold to give hierarchy to the page.
 
-HINTS:
+#### Hints:
 
 Pay attention to the colour contrast of the text against the background. A good rule of thumb is black text on a white background  
 Label your axes and put titles in your charts so they are easy to read.
@@ -67,7 +116,7 @@ Label your axes and put titles in your charts so they are easy to read.
 
 WFP has a standard colour palette that should be used. Limit the use of colour and ensure there is good contrast between the selected shades.
 
-HINTS:
+#### Hints:
 
 Use different colours only when they correspond to different meanings, when highlighting or to represent variations in quantitative data.
 Use a neutral or, preferably, white background.
@@ -78,4 +127,6 @@ Always use a legend when using colour.
 
 Despite being forgotten by many, text is also an important part of a good visualization. Pay attention to titles and legends and check if they help to understand the chart. Annotations can also be used to direct attention to key points. Make sure the text is clear and easy to read and is not truncated or overlapping.
 
-... and finally some DO's and DON'Ts
+### Related
+
+[Visualization guideline](https://brand.manuals.wfp.org/en/data-visualization-guidance/)

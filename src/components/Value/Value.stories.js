@@ -9,7 +9,7 @@ export default {
   component: Value,
   parameters: {
     componentSubtitle: 'Component',
-    status: 'released',
+    status: 'experimental',
     mdx: markdown,
   },
 };

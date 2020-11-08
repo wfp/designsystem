@@ -28,7 +28,7 @@ InfoBar.propTypes = {
   /**
    *  `pageWidth` for the `<Wrapper />` component
    */
-  pageWidth: PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'full']),
+  pageWidth: PropTypes.oneOf(['sm', 'md', 'lg', 'full']),
   /**
    * Additional `className` for the `<Wrapper />` component
    */

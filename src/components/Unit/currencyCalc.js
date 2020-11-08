@@ -18,6 +18,7 @@ export const currencyCalc = (
     /* maximumSignificantDigits, */
     minimumFractionDigits,
     maximumFractionDigits,
+    localeStringLanguage = 'en-EN',
     calcOnly,
     string,
     svg,
@@ -43,38 +44,45 @@ export const currencyCalc = (
 
   value = value !== 0 && output ? value / outputCalc.pow : value;
 
+  const minimumFractionDigitsCalculated =
+    isAbsolute === true && output === undefined
+      ? minimumFractionDigits === 0
+      : /*: maximumFractionDigits === 0
+      ? 0*/
+      typeof minimumFractionDigits === 'number'
+      ? minimumFractionDigits
+      : outputCalc && outputCalc.defaultmaximumFractionDigits
+      ? outputCalc.defaultmaximumFractionDigits
+      : 2;
+
+  const maximumFractionDigitsCalculated =
+    isAbsolute === true && output === undefined
+      ? maximumFractionDigits === 0
+      : value <= 0.005
+      ? 4
+      : value <= 0.05
+      ? 3
+      : value <= 0.5
+      ? 2
+      : maximumFractionDigits === 0
+      ? 0
+      : typeof maximumFractionDigits === 'number'
+      ? maximumFractionDigits
+      : outputCalc && outputCalc.defaultmaximumFractionDigits
+      ? outputCalc.defaultmaximumFractionDigits
+      : 2;
+
   const toLocalStringConfig = {
     //maximumSignificantDigits: maximumSignificantDigits,
-    minimumFractionDigits:
-      isAbsolute === true && output === undefined
-        ? minimumFractionDigits === 0
-        : maximumFractionDigits === 0
-        ? 0
-        : minimumFractionDigits
-        ? minimumFractionDigits
-        : outputCalc && outputCalc.defaultmaximumFractionDigits
-        ? outputCalc.defaultmaximumFractionDigits
-        : 2,
+    minimumFractionDigits: minimumFractionDigitsCalculated,
     maximumFractionDigits:
-      isAbsolute === true && output === undefined
-        ? maximumFractionDigits === 0
-        : value <= 0.005
-        ? 4
-        : value <= 0.05
-        ? 3
-        : value <= 0.5
-        ? 2
-        : maximumFractionDigits === 0
-        ? 0
-        : maximumFractionDigits
-        ? maximumFractionDigits
-        : outputCalc && outputCalc.defaultmaximumFractionDigits
-        ? outputCalc.defaultmaximumFractionDigits
-        : 2,
+      maximumFractionDigitsCalculated > minimumFractionDigitsCalculated
+        ? maximumFractionDigitsCalculated
+        : minimumFractionDigitsCalculated,
   };
 
   // Convert to Locale String
-  value = value.toLocaleString('en-EN', toLocalStringConfig);
+  value = value.toLocaleString(localeStringLanguage, toLocalStringConfig);
 
   const calcObject = {
     value: value,

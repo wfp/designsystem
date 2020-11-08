@@ -74,9 +74,9 @@ BannerNavigationWithContent.propTypes = {
    */
   className: PropTypes.string,
   /**
-   * The CSS class name to be placed on the wrapping element.
+   * Specify the max-width on desktop devices (same as \`Wrapper\` component)
    */
-  pageWidth: PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'full']),
+  pageWidth: PropTypes.oneOf(['sm', 'md', 'lg', 'full']),
   /**
    * Allows to disable the search input
    */

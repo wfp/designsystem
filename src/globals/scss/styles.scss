@@ -10,9 +10,11 @@ $css--body: true !default;
 $css--use-layer: true !default;
 $css--reset: true !default;
 $css--typography: true !default;
+$css--variables: true !default;
 
 @import 'colors';
 @import 'vars';
+@import '_theme-tokens';
 @import 'mixins';
 @import 'layout';
 @import 'layer';
@@ -76,6 +78,7 @@ $deprecations--message: 'Deprecated code was found, this code will be removed be
 @import '../../components/FormHint/form-hint.scss';
 @import '../../components/Link/link';
 @import '../../components/Button/button.scss';
+@import '../../components/Hero/hero';
 @import '../../components/Card/card';
 @import '../../components/ContentSwitcher/content-switcher';
 @import '../../components/List/list';

@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import FormGroup from './FormGroup';
 import TextInput from '../TextInput';
-
+import NumberInput from '../NumberInput';
+import ReactSelect from 'react-select';
+import CreatableSelect from 'react-select/creatable';
 import markdown from './README.mdx';
 
 export default {
@@ -11,6 +13,7 @@ export default {
     componentSubtitle: 'Component',
     status: 'released',
     mdx: markdown,
+    showFeedback: true,
   },
 };
 
@@ -37,38 +40,112 @@ Default.args = {
   legendText: 'FormGroup heading',
 };
 
-export const AddressDetails = (args) => (
-  <>
-    <FormGroup
-      {...args}
-      className="wfp--form-long"
-      align="horizontal"
-      legendText="Address Info"
-      style={{ marginTop: '1rem' }}>
-      <TextInput
-        id="phone3"
-        labelText="Phone Number"
-        placeholder="Placeholder text"
-      />
-      <TextInput
-        id="address1"
-        labelText="Address line 1"
-        placeholder="Placeholder text"
-      />
-      <TextInput
-        id="address2"
-        labelText="Address line 2"
-        placeholder="Placeholder text"
-      />
-    </FormGroup>
-    <FormGroup {...args} className="wfp--form-long" align="horizontal">
-      <TextInput id="city" labelText="City" placeholder="Placeholder text" />
-      <TextInput id="state" labelText="State" placeholder="Placeholder text" />
-      <TextInput
-        id="zipcode"
-        labelText="Zip code"
-        placeholder="Placeholder text"
-      />
-    </FormGroup>
-  </>
-);
+const options = [
+  {
+    value: 'afghanistan',
+    label: 'Afghanistan (AF)',
+  },
+  {
+    value: 'albania',
+    label: 'Albania',
+  },
+  {
+    value: 'algeria',
+    label: 'Algeria',
+  },
+];
+
+const cities = [
+  {
+    country: 'afghanistan',
+    cityoptions: [
+      { value: 'kabul', label: 'Kabul' },
+      { value: 'kandahar', label: 'Kandahar' },
+      { value: 'kerat', label: 'Herat' },
+    ],
+  },
+  {
+    country: 'albania',
+    cityoptions: [
+      { value: 'ballsh', label: 'ballsh' },
+      { value: 'Fier', label: 'Fier' },
+      { value: 'Labinot-Mal', label: 'Labinot-Mal' },
+    ],
+  },
+  {
+    country: 'algeria',
+    cityoptions: [
+      { value: 'algiers', label: 'Algiers' },
+      { value: 'oran', label: 'Oran' },
+      { value: 'constantine', label: 'Constantine' },
+    ],
+  },
+];
+
+export const AddressDetails = (args) => {
+  const [cityoption, setcityoption] = useState(null);
+
+  const handleChange = (newValue) => {
+    console.log('neV', newValue);
+    const selectedCountry = cities.find(
+      (city) => city.country === newValue.value
+    );
+    setcityoption(selectedCountry.cityoptions);
+  };
+
+  const handleCityChange = (newValue) => {
+    // console.log(newValue);
+  };
+
+  return (
+    <>
+      <FormGroup
+        {...args}
+        className="wfp--form-long"
+        align="horizontal"
+        legendText="Address Info"
+        style={{ marginTop: '1rem' }}>
+        <div className="wfp--form-item" style={{ minWidth: '100px' }}>
+          <label htmlFor="country" className="wfp--label">
+            Country*
+          </label>
+          <CreatableSelect
+            className="wfp--react-select-container"
+            classNamePrefix="wfp--react-select"
+            onChange={handleChange}
+            options={options}
+          />
+        </div>
+        <div className="wfp--form-item" style={{ minWidth: '100px' }}>
+          <label htmlFor="city" className="wfp--label">
+            City*
+          </label>
+          <CreatableSelect
+            className="wfp--react-select-container"
+            classNamePrefix="wfp--react-select"
+            isClearable
+            onChange={handleCityChange}
+            options={cityoption}
+          />
+        </div>
+        <TextInput
+          id="zipcode"
+          labelText="Postal code/ZIP code"
+          placeholder="eg: 13-3456"
+        />
+      </FormGroup>
+      <FormGroup {...args} className="wfp--form-long" align="horizontal">
+        <TextInput
+          id="street"
+          labelText="Street"
+          placeholder="eg: Chemin Aime Steinlein"
+        />
+        <NumberInput id="hno" labelText="House number" placeholder="5" />
+      </FormGroup>
+    </>
+  );
+};
+
+AddressDetails.story = {
+  name: 'Residence Address',
+};

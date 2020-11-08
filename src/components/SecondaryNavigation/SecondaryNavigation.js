@@ -51,19 +51,19 @@ const SecondaryNavigation = ({
 SecondaryNavigation.propTypes = {
   children: PropTypes.node.isRequired,
   /**
-   * The CSS class name to be placed on the wrapping element.
+   * The CSS class name to be placed on the wrapping element
    */
   className: PropTypes.string,
   id: PropTypes.string,
   /**
-   * The width of the SecondaryNavigation (same as Wrapper)
+   * Specify the max-width on desktop devices (same as \`Wrapper\` component)
    */
-  pageWidth: PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'full']),
+  pageWidth: PropTypes.oneOf(['sm', 'md', 'lg', 'full']),
   wrapperClassName: PropTypes.string,
 };
 
 SecondaryNavigation.defaultProps = {
-  pageWidth: 'narrower',
+  pageWidth: 'lg',
 };
 
 export { SecondaryNavigationTitle, SecondaryNavigation };

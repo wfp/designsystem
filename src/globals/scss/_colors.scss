@@ -137,7 +137,24 @@ $color__magenta-40: mix(white, $color__magenta, 25%) !default;
 $color__magenta-60: mix(black, $color__magenta, 25%) !default;
 $color__magenta-70: mix(black, $color__magenta, 50%) !default;
 $color__magenta-80: mix(black, $color__magenta, 75%) !default;
+
+$color__magenta-20: mix(white, $color__magenta, 75%) !default;
+$color__magenta-30: mix(white, $color__magenta, 50%) !default;
+$color__magenta-40: mix(white, $color__magenta, 25%) !default;
+$color__magenta-60: mix(black, $color__magenta, 25%) !default;
+$color__magenta-70: mix(black, $color__magenta, 50%) !default;
+$color__magenta-80: mix(black, $color__magenta, 75%) !default;
+
 $color__navy-gray-1: #0f212e !default;
+
+$color__gray-10: mix(white, $color__navy-gray-1, 95%) !default; // ui-02
+$color__gray-20: mix(white, $color__navy-gray-1, 87%) !default; // ui-03
+$color__gray-30: mix(white, $color__navy-gray-1, 82%) !default; // ui-04
+$color__gray-40: mix(white, $color__navy-gray-1, 50%) !default;
+$color__gray-60: mix(black, $color__navy-gray-1, 25%) !default;
+$color__gray-70: mix(black, $color__navy-gray-1, 50%) !default;
+$color__gray-80: mix(black, $color__navy-gray-1, 75%) !default;
+
 $color__navy-gray-2: #20343e !default;
 $color__navy-gray-3: #2d3f49 !default;
 $color__navy-gray-4: #394b54 !default;

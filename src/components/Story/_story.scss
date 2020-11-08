@@ -192,8 +192,8 @@
   .#{$prefix}--story {
     @include reset;
     @include font-family;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    //-webkit-font-smoothing: antialiased;
+    //-moz-osx-font-smoothing: grayscale;
     &__center {
       text-align: center;
     }
@@ -209,6 +209,19 @@
   }
   .#{$prefix}--text {
     @include text;
+  }
+
+  .#{$prefix}--story__a {
+    &:hover {
+      text-decoration: underline;
+    }
+    //@extend .wfp--link;
+  }
+
+  a.#{$prefix}--btn {
+    &:hover {
+      text-decoration: none;
+    }
   }
 
   .#{$prefix}--blockquote {
@@ -272,16 +285,16 @@
 
   .#{$prefix}--story__h4 {
     margin-top: $spacing-lg;
-    @include typescale('epsilon');
+    // @include typescale('epsilon');
   }
 
   .#{$prefix}--story__h5 {
     margin-top: $spacing-lg;
-    @include typescale('epsilon');
+    // @include typescale('epsilon');
   }
 
-  .#{$prefix}--story__a {
-    @extend .wfp--link;
+  .#{$prefix}--story__caption {
+    @include typescale('caption');
   }
 
   .#{$prefix}--story__sup {
@@ -304,9 +317,23 @@
     }
   }
 
+  .#{$prefix}--story__inline-highlight {
+    display: inline-block;
+    font-weight: 600;
+    background: var(--ui-03);
+    padding: 0.05em 0.1em;
+  }
+
+  .docblock-source {
+    margin-top: $spacing-xs !important;
+  }
+  .#{$prefix}--story__bold {
+    font-weight: 600;
+  }
+
   .#{$prefix}--story__b,
   .#{$prefix}--story__strong {
-    font-weight: 600;
+    font-weight: 700;
   }
 
   @each $size, $glyph in $spacing-map {

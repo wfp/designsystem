@@ -1,0 +1,94 @@
+import { Module, ModuleHeader, ModuleBody } from '../../components/Module';
+
+<Meta
+  title="Documentation/Guidelines/Dashboard design"
+  subTitle="Guidelines"
+  parameters={{
+    componentSubtitle: 'Guidelines',
+    previewTabs: {
+      canvas: { hidden: true },
+    },
+  }}
+/>
+
+### When to use it?
+
+Use the Dashboard pattern whenever you have to display data with a high
+content density.
+
+#### Operational dashboard (Application)
+
+Operational dashboards aim to impart information quickly to users as
+they are engaged in time-sensitive tasks. Main goals of the operational
+dashboard are to present all the information the user needs to take
+action and provide him with the tools for entering the information. The
+dasboard should help users to be quick, proactive, and efficient.
+
+#### Analytical dashboard
+
+Analytical dashboards provide the user with information used for
+analysis and decision making, and are less time sensitive and not
+focused on taking action. A primary goal is to help users make the best
+sense of the data, analyze trends and drive decision making.
+
+### When not to use?
+
+Avoid using the dashboard pattern for editorial pages or pages where the
+content can't be structured.
+
+### How to use it?
+
+Place [Modules (sometimes called Cards)](?path=/docs/components-content-related-module--regular) inside a [Wrapper](?path=/docs/components-content-related-wrapper--regular) component.
+
+An example can be found [here](Application Page).
+
+#### What are Modules?
+
+Modules are surfaces that display content and actions on a single topic.
+They should be easy to scan for relevant and actionable information.
+Elements, like text and images, should be placed on them in a way that
+clearly indicates hierarchy.
+
+<div className="row">
+<Module light className="col-xs-12 col-md-4 col-lg-4">
+    <ModuleHeader>Contained</ModuleHeader>
+    <ModuleBody>
+    <p>A Module is identifiable as a single, contained unit.</p>
+    </ModuleBody>
+</Module>
+
+<Module light className="col-xs-12 col-md-4 col-lg-4">
+  <ModuleHeader>Independent</ModuleHeader>
+  <ModuleBody>
+    <p>
+      A Module can stand alone, without relying on surrounding elements for
+      context.
+    </p>
+  </ModuleBody>
+</Module>
+
+<Module light className="col-xs-12 col-md-4 col-lg-4">
+    <ModuleHeader>Individual</ModuleHeader>
+    <ModuleBody>
+    <p>
+        A card cannot merge with another card, or divide into multiple
+        cards.
+    </p>
+    </ModuleBody>
+</Module>
+</div>
+
+Source: https://material.io/design/components/cards.html#anatomy
+
+Put the name in the top left corner, align controls or actions to the
+top right corner of the Module and place the information in the content.
+The ModuleFooter can be used to show additional functionality like
+sharing or exporting.
+
+Using Modules has additional benefits of flexibility when it comes to
+responsive design.
+
+If possible use the full width of the screen as maximal width.
+
+- [10 rules for better dashboard design by UX Planet](https://uxplanet.org/10-rules-for-better-dashboard-design-ef68189d734c)
+- [Cards in Material UI](https://material.io/design/components/cards.html)

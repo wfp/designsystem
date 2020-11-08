@@ -1,0 +1,50 @@
+import Blockquote from '../../components/Blockquote';
+import Link from '../../components/Link';
+import { List, ListItem } from '../../components/List';
+import Typography from './Typography';
+
+<Meta
+  title="Documentation/Core/Typography"
+  subTitle="Typefaces & Spacings"
+  parameters={{
+    previewTabs: {
+      canvas: { hidden: true },
+    },
+  }}
+/>
+
+WFP's visual identity uses a single font family. Like the logo,
+WFP blue and the colour pallete, this font is characterizing element of WFP's brand.
+
+### Typefaces
+
+Open Sans is the typeface for user interfaces; it’s a round, humanist
+sans-serif, with incredibly warm appeal. It can be used for both headlines and
+paragraphs alike, as well as for interface elements.
+
+### How to use it
+
+Open Sans is already included in the WFP UI's CSS. If you don't want to
+include the font you can use set{' '}
+**\$css--font-face: false;** inside scss.
+
+### Other languages & styles
+
+Open Sans provides various font styles and special language character sets,
+which can be found on [Open Sans on fonts.google.com](https://fonts.google.com/specimen/Open+Sans)
+
+### DNS Naming
+
+[This guide](https://newgo.wfp.org/documents/dns-conventions/) explains rules for DNS namespace conventions.
+
+## Default formating
+
+See the [Story component](?path=/docs/components-content-related-story--story-text) for applying default styling
+
+## Headings
+
+Headings help to add a hierarchy to a page, and they are key identifiers for
+users reading a page. They should be used in an order that is relevant to the
+content of a page.
+
+<Typography />

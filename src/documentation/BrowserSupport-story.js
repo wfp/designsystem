@@ -57,7 +57,7 @@ storiesOf('Getting started|Getting started', module)
         about the browsers supported on WFP GO.
       </p>
 
-      <Blockquote>
+      <Blockquote title="Browserstack">
         Use{' '}
         <Link href="https://www.browserstack.com/" target="_blank">
           BrowserStack

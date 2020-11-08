@@ -8,7 +8,7 @@
 @include exports('blockquote') {
   // <button> elements cannot be used as flex containers
   .#{$prefix}--blockquote {
-    background-color: var(--ui-04);
+    background-color: var(--ui-02);
     border-left: 5px solid var(--interactive-01);
     margin: $spacing-xs 0;
     position: relative;
@@ -39,6 +39,9 @@
     padding: $spacing-md;
     line-height: 1.4;
     word-wrap: anywhere;
+    p:first-child {
+      margin-top: 0;
+    }
   }
 
   .#{$prefix}--blockquote--toggleable {

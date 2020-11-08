@@ -1,10 +1,10 @@
 $rt-namespace: 'Toastify';
 $rt-toast-width: 320px !default;
-$rt-toast-background: var(ui-01) fff !default;
+$rt-toast-background: var(--ui-01) fff !default;
 $rt-toast-min-height: 64px !default;
 $rt-toast-max-height: 800px !default;
 
-$rt-color-default: var(ui-01) !default;
+$rt-color-default: var(--ui-01) !default;
 $rt-color-info: var(--interactive-01) !default;
 $rt-color-success: var(--support-light-02) !default;
 $rt-color-warning: var(--support-light-03) !default;

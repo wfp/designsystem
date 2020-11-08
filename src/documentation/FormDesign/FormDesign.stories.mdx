@@ -1,0 +1,135 @@
+import Blockquote from '../../components/Blockquote';
+
+import TextInput from '../../components/TextInput';
+import { List, ListItem } from '../../components/List';
+
+<Meta
+  title="Documentation/Guidelines/Form design"
+  subTitle="Core"
+  parameters={{
+    componentSubtitle: 'Guidelines',
+    previewTabs: {
+      canvas: { hidden: true },
+    },
+  }}
+/>
+
+export const TextInputProps = {
+  className: 'some-class',
+  id: 'test2',
+  labelText: 'Text Input label',
+  helperText: 'Optional helper text.',
+  placeholder: 'Placeholder text',
+};
+
+export const InvalidPasswordProps = {
+  className: 'some-class',
+  id: 'test4',
+  labelText: 'Password',
+  invalid: true,
+  invalidText:
+    'Your password must be at least 6 characters as well as contain at least one uppercase, one lowercase, and one number.',
+};
+
+### Provide Autosave
+
+Especially longer forms should provide autosave by default. You should
+also provide a very clear feedback by displaying a message that shows
+when the last autosave happened or a Save-Button. The user should be
+always able to also save forms with an error.
+
+### Top-left aligned labels are best for readability & completion
+
+Placing labels above input fields is preferable since research show
+these are better trackable for users than left-aligned labels [read more](http://uxmovement.com/forms/why-infield-top-aligned-form-labels-are-quickest-to-scan/)
+
+<Blockquote title="Example">
+  <TextInput {...TextInputProps} />
+</Blockquote>
+
+### Avoid placing inputs side-by-side.
+
+User attention should always be directed on one task at a time, 2 items
+on the same line will compete for attention as there is no visual
+priority between them, resulting in a heavier task for the user.
+
+The only exception to this rule is when the input needs multiple field
+elements like asking for dates (day, month, year) or time (hours and
+minutes), where multiple fields are expected to be on one line. Read
+more about [principles in form design](https://uxplanet.org/the-18-must-do-principles-in-the-form-design-fe89d0127c92).
+
+#### 2 columns layout exceptions apply to:
+
+- ✓ dd – mm – yyyy (date picker)
+- ✓ amount – currency
+- ✓ national prefix - phone number
+- ✓ first name - second name - last name
+
+Information that people will find in the same place
+
+- ✓ CVV and credit card expiry date
+
+Information that are complementary and/or more meaningful if read
+together
+
+- ✓ currency - currency exchange rate
+
+When one field is non editable and used for comparison/reference purposes
+
+- ✓ country data input - RB data read only
+
+### Group related fields together into sections or steps
+
+If your form has more than six fields, it’s considered good practice to
+group questions into logical sections or steps. Use the `<FormGroup/>`
+component for this behaviour.
+
+### Validate Fields after Users Submit the Form
+
+Inline validation post submission minimizes completion times, form
+errors, and user frustration. Make sure you’re validating your fields
+when users are in revision mode, not completion mode, otherwise you’ll
+slow them down.[read more](http://uxmovement.com/forms/why-users-make-more-errors-with-instant-inline-validation/)
+
+### Avoid Multistep (Wizard) forms if not necessary
+
+It is okay to place more than 10 inputs on a page.
+
+### Multistep (Wizard) Forms
+
+Apply to these rules when developing a wizard form:
+
+- Keep the number of steps at the minimum [read more](https://uxplanet.org/wizard-design-pattern-8c86e14f2a38)
+- A review step is mandatory. This step should also do a server-side
+  check of all data entered and show a summary.
+- Show errors when the user wants to change a page (or do live
+  validation)
+- Stop the user from moving to another page when wrong content was
+  entered (make sure it is possible to move to other pages when no
+  content is entered, except when it is needed on the following pages)
+- Use checkmark indicator once wizard page is filled completely.
+- Use warning indicator if some content is filled
+
+### Be clear with your error messages
+
+It doesn’t matter what type of validation you use, you should always use
+inline errors. Use them ‘just right here’, in context. But not somewhere
+else on the pages. The natural mapping here is your best friend.
+
+<Blockquote title="Example">
+  <TextInput
+    type="password"
+    required
+    pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"
+    {...InvalidPasswordProps}
+  />
+</Blockquote>
+
+And, more importantly, always try to explain the root of the problem.
+Try to use a human language and explain what exactly the user/the system
+made wrong, and what exactly should be fixed/filled.
+
+### Before submitting content provide dialog modal
+
+Always ask the user before submitting input. Do not ask if the user only
+saves the input.
