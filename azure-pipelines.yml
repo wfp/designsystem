@@ -4,9 +4,6 @@ trigger:
   - hotfix/*
   - bugfix/*
 
-variables:
-  blubb: hello
-
 jobs:
 - job: SemanticRelease
   pool:
@@ -59,7 +56,7 @@ jobs:
 
     - script: |
         npm run build:storybook
-      displayName: 'STORYBOOK_INTERNAL_ASSETS=$(npmVersionString) npm run build:storybook'
+      displayName: 'STORYBOOK_NPM_VERSION=$(npmVersionString) npm run build:storybook'
 
     - task: PublishPipelineArtifact@1
       inputs:
