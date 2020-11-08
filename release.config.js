@@ -5,7 +5,13 @@ module.exports = {
     '@semantic-release/npm',
     '@semantic-release/changelog',
     '@semantic-release/git',
-    'semantic-release-ado',
+    [
+      'semantic-release-ado',
+      {
+        varName: 'nextRelease',
+        setOnlyOnRelease: true,
+      },
+    ],
     /*[
       '@semantic-release/exec',
       {
