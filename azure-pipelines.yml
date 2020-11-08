@@ -6,7 +6,7 @@ trigger:
 
 variables:
   blubb: hello
-  
+
 jobs:
 - job: SemanticRelease
   pool:
@@ -51,6 +51,11 @@ jobs:
     - powershell: |
         echo "##vso[task.setvariable variable=versionNumber;isOutput=true]$(nextRelease)"
       name: setOutputVar
+
+    - script: |
+        npmVersionString=$(node -p "require('./package.json').version") 
+        echo "##vso[build.updatebuildnumber]$npmVersionString"
+      displayName: 'set build number'
 
     - script: |
         npm run build:storybook
