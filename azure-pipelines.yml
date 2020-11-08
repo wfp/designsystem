@@ -57,6 +57,19 @@ jobs:
     versionNumber: $[ dependencies.SemanticRelease.outputs['setOutputVar.versionNumber'] ]
 
   steps:
+  - task: Cache@2
+    inputs:
+      key: 'npm | "$(Agent.OS)" | package-lock.json'
+      path: "$(NPM_CACHE_FOLDER)"
+      restoreKeys: |
+        npm | "$(Agent.OS)"
+        npm
+    displayName: 'Cache NPM packages'
+
+  - script: |
+      mkdir -p $(NPM_CACHE_FOLDER)
+      npm ci
+    displayName: 'npm install'
   - script: echo $(versionNumber)
     displayName: 'Show next version'
 
