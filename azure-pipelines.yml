@@ -10,31 +10,18 @@ pool:
 variables:
   NPM_CACHE_FOLDER: $(Pipeline.Workspace)/.npm
 jobs:
-- job: Job1
+- job: Build
   pool:
     vmImage: 'vs2017-win2016'
-
   steps:
+
   - script: >
-      npx  -p semantic-release
-      -p @semantic-release/changelog
+      npx -p semantic-release
       -p @semantic-release/git
       -p semantic-release-ado
       semantic-release
     env: { GH_TOKEN: $(GitHubToken) }
     displayName: 'Semantic release'
 
-  - powershell: |
-      echo "##vso[task.setvariable variable=versionNumber;isOutput=true]$(nextRelease)"
-    name: setOutputVar
-
-- job: Job2
-  dependsOn: Job1
-  pool:
-    vmImage: 'vs2017-win2016'
-  variables:
-    versionNumber: $[ dependencies.Job1.outputs['setOutputVar.versionNumber'] ]
-
-  steps:
-  - script: echo $(versionNumber)
+  - script: echo $(nextRelease)
     displayName: 'Show next version'
