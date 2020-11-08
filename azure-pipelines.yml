@@ -4,6 +4,9 @@ trigger:
   - hotfix/*
   - bugfix/*
 
+variables:
+  blubb: hello
+  
 jobs:
 - job: SemanticRelease
   pool:
