@@ -57,6 +57,8 @@ jobs:
     - script: |
         npm run build:storybook
       displayName: 'STORYBOOK_NPM_VERSION=hello npm run build:storybook'
+      env:
+        STORYBOOK_NPM_VERSION: $(nextRelease)
 
     - task: PublishPipelineArtifact@1
       inputs:
