@@ -67,7 +67,7 @@ export default class StepNavigationItem extends React.Component {
 
     const anchorProps = {
       className: 'wfp--step-navigation__nav-link',
-      ref: e => {
+      ref: (e) => {
         this.tabAnchor = e;
       },
     };
@@ -86,8 +86,10 @@ export default class StepNavigationItem extends React.Component {
       <li
         tabIndex={-1}
         className={classes}
-        onClick={evt => {
+        onClick={(evt) => {
+          console.log('internal onclick');
           if (status !== 'locked') {
+            console.log('internal onclick 2');
             handleTabClick(index, label, evt);
             onClick(evt);
           }

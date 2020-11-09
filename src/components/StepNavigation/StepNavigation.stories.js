@@ -14,17 +14,22 @@ export default {
   },
 };
 
-export const StepNavigationRegular = (args) => (
-  <StepNavigation {...args}>
-    <StepNavigationItem label="Item without Status" page={0} />
-    <StepNavigationItem label="Active Item" page={1} />
-    <StepNavigationItem
-      label="Not started Item"
-      page={2}
-      status="not-started"
-    />
-  </StepNavigation>
-);
+export const StepNavigationRegular = (args) => {
+  const handleClick = (e) => {
+    console.log('event', e);
+  };
+  return (
+    <StepNavigation {...args} handleTabClick={handleClick}>
+      <StepNavigationItem label="Item without Status" page={0} />
+      <StepNavigationItem label="Active Item" page={1} />
+      <StepNavigationItem
+        label="Not started Item"
+        page={2}
+        status="not-started"
+      />
+    </StepNavigation>
+  );
+};
 
 StepNavigationRegular.args = {
   children: 'StepNavigation',
