@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import StepNavigation from './StepNavigation';
 import StepNavigationItem from '../StepNavigationItem';
 import markdown from './README.mdx';
@@ -14,17 +14,23 @@ export default {
   },
 };
 
-export const StepNavigationRegular = (args) => (
-  <StepNavigation {...args}>
-    <StepNavigationItem label="Item without Status" page={0} />
-    <StepNavigationItem label="Active Item" page={1} />
-    <StepNavigationItem
-      label="Not started Item"
-      page={2}
-      status="not-started"
-    />
-  </StepNavigation>
-);
+export const StepNavigationRegular = (args) => {
+  const [step, setStep] = useState(0);
+  return (
+    <StepNavigation
+      {...args}
+      onSelectionChange={(e) => setStep(e)}
+      selectedPage={step}>
+      <StepNavigationItem label="Item without Status" page={0} />
+      <StepNavigationItem label="Active Item" page={1} />
+      <StepNavigationItem
+        label="Not started Item"
+        page={2}
+        status="not-started"
+      />
+    </StepNavigation>
+  );
+};
 
 StepNavigationRegular.args = {
   children: 'StepNavigation',
@@ -53,7 +59,7 @@ const description = `
 
 #### Default types of state
 
-| kind   |  Description  |
+| status   |  Description  |
 |----------|-------------|
 | \`warning\` | warning that there is information missing |
 | \`error\` | experimental   |
