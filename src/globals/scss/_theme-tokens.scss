@@ -41,6 +41,22 @@
     --disabled: #{$color__navy-gray-10};
     --disabled-01: #{$color__navy-gray-10};
     --disabled-02: #{$color__navy-gray-8};
+    // Sequential palette #1 (default)
+    --sequential-default-01: #{$color__blue-1};
+    --sequential-default-02: #{$color__blue-2};
+    --sequential-default-03: #{$color__blue-3};
+    --sequential-default-04: #{$color__blue-4};
+    --sequential-default-05: #{$color__blue-5};
+    --sequential-default-06: #{$color__blue-6};
+    --sequential-default-07: #{$color__blue-7};
+    // Sequential palette #2 (secondary)
+    --sequential-secondary-01: #{$color__green-1};
+    --sequential-secondary-02: #{$color__green-2};
+    --sequential-secondary-03: #{$color__green-3};
+    --sequential-secondary-04: #{$color__green-4};
+    --sequential-secondary-05: #{$color__green-5};
+    --sequential-secondary-06: #{$color__green-6};
+    --sequential-secondary-07: #{$color__green-7};
   }
 
   @media (prefers-color-scheme: dark) {

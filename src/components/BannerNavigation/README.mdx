@@ -1,14 +1,16 @@
 import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
 
 ## Types
+
 There are two types of `BannerNavigation` that can be used:
 
-| Type      | React name | Description |
-| ----------- | ----------- | ----------- |
-| Default | `BannerNavigationWithContent` |Used exclusively by specific applications which are actually listed on the bar only to crosslink between them.|
-| Custom content| `BannerNavigation` | It allows you to use custom `BannerNavigationItem` components inside. |
+| Type           | React name                    | Description                                                                                                    |
+| -------------- | ----------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| Default        | `BannerNavigationWithContent` | Used exclusively by specific applications which are actually listed on the bar only to crosslink between them. |
+| Custom content | `BannerNavigation`            | It allows you to use custom `BannerNavigationItem` components inside.                                          |
 
 ## Usage
+
 The default component is used mainly to crosslink among specific WFP applications for **internal use only**. Thus, **the default component does not have to be used for external facing products**. The internal applications are: [WFPgo](https://go.wfp.org), [Self-Service](https://selfservice.go.wf.org), [Communities](https://duckduckgo.com), [Manuals](https://duckduckgo.com), [GoDocs](https://duckduckgo.com), [Data](https://duckduckgo.com), [OPweb](https://duckduckgo.com), [WeLearn](https://duckduckgo.com)
 
 The **custom version** is used when the application has multiple pages to be visited by the user. This component allows these different pages to be easily accessible. Do not use BannerNavigation when you have only one page.
@@ -16,11 +18,14 @@ The **custom version** is used when the application has multiple pages to be vis
 ## Usage with React
 
 ** Default version **
+
 ```jsx
 import { BannerNavigationWithContent } from '@wfp/ui';
-<BannerNavigationWithContent pageWidth="md" />;
+<BannerNavigationWithContent pageWidth="lg" />;
 ```
+
 ** Custom version **
+
 ```jsx
 import { BannerNavigation } from '@wfp/ui';
 
@@ -43,13 +48,22 @@ import { BannerNavigation } from '@wfp/ui';
 ```
 
 ## Formatting
+
 ** Anatomy **
 ![Image of BannerNavigation Format](https://github.com/wfp/ui/blob/component-updates/src/assets/formatting/BannerNavigation.png?raw=true)
+
 1. Background
 2. Link
 
 ## Mobile
+
 The component is hidden when the viewport size is less than 768px.
 
 ## Related
+
 [Link](?path=/docs/components-link--link-regular)
+
+## Help us improve!
+
+- If you are **running into an issue**, please [open an issue on GitHub](https://github.com/wfp/ui/issues).
+- If you have **any question about the WFP UI Kit**, please [contact the team](mailto:global.uikit@wfp.org).

@@ -31,8 +31,8 @@ import { SingleDatePicker, DateRangePicker } from 'react-dates';
   component={ReduxFormWrapper}
   inputComponent={SingleDatePickerInput}
   datePicker={SingleDatePicker}
-  format={value => (value ? moment(value) : undefined)}
-  normalize={data => data && data.value && data.value.format()}
+  format={(value) => (value ? moment(value) : undefined)}
+  normalize={(data) => data && data.value && data.value.format()}
 />;
 ```
 
@@ -41,10 +41,15 @@ import { SingleDatePicker, DateRangePicker } from 'react-dates';
   component={ReduxFormWrapper}
   inputComponent={DateRangePickerInput}
   datePicker={DateRangePicker}
-  format={value =>
+  format={(value) =>
     value
       ? { startDate: moment(value.startDate), endDate: moment(value.endDate) }
       : undefined
   }
 />
 ```
+
+## Help us improve!
+
+- If you are **running into an issue**, please [open an issue on GitHub](https://github.com/wfp/ui/issues).
+- If you have **any question about the WFP UI Kit**, please [contact the team](mailto:global.uikit@wfp.org).

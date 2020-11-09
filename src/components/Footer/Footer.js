@@ -3,6 +3,7 @@ import React from 'react';
 import classnames from 'classnames';
 import Link from '../Link';
 import Wrapper from '../Wrapper';
+import ReactSelect from 'react-select';
 import Icon from '../Icon';
 import { iconWfpLogoExtendedEn, iconWfpLogoVerticalEn } from '@wfp/icons';
 
@@ -86,6 +87,20 @@ const sdgIcon = (
   </svg>
 );
 
+const options = [
+  {
+    value: 'afghanistan',
+    label: 'Afghanistan (AF)',
+  },
+  {
+    value: 'albania',
+    label: 'Albania',
+  },
+  {
+    value: 'algeria',
+    label: 'Algeria',
+  },
+];
 //import logoExtended from '../../../assets/logos/extended/en/wfp-logo-extended-black-en.svg';
 //import logoVertical from '../../../assets/logos/vertical/en/wfp-logo-vertical-black-en.svg';
 
@@ -120,6 +135,7 @@ const Footer = ({
     <footer className={classNames}>
       <Wrapper pageWidth={pageWidth}>
         <div className="wfp--footer__content">
+          {/* <div className="wfp--footer__info-content"> */}
           {children ? (
             <div className="wfp--footer__info">{children}</div>
           ) : (
@@ -142,6 +158,20 @@ const Footer = ({
               </div>
             </div>
           )}
+          {/* {!external && (
+              <div style={{ marginTop: '1rem' }}>
+                <label htmlFor="abc" className="wfp--label">
+                  Edition
+                </label>
+                <ReactSelect
+                  className="wfp--react-select-container"
+                  classNamePrefix="wfp--react-select"
+                  id="edition"
+                  options={options}
+                />
+              </div>
+            )} */}
+          {/* </div> */}
           <div className="wfp--footer__cta">
             {logoExtended ? (
               <img
