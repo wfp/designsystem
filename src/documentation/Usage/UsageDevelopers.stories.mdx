@@ -47,11 +47,30 @@ import '@wfp/ui/src/globals/scss/styles.scss';
 ```
 
 To import the complete stylesheet through CDN, use:
+
+> <div>
+>   <h5>Uncompressed css (do not use in production):</h5>
+>   <a
+>     href={`https://uikit.wfp.org/cdn/${process.env.STORYBOOK_NPM_VERSION}/css/styles.css`}
+>     target="_blank">
+>     https://uikit.wfp.org/cdn/{process.env.STORYBOOK_NPM_VERSION}
+>     /css/styles.css
+>   </a>
+>   <h5>Compressed css (use in production):</h5>
+>   <a
+>     href={`https://uikit.wfp.org/cdn/${process.env.STORYBOOK_NPM_VERSION}/css/styles.min.css`}
+>     target="_blank">
+>     https://uikit.wfp.org/cdn/{process.env.STORYBOOK_NPM_VERSION}
+>     /css/styles.css
+>   </a>
+> </div>
+
+The css file can be directly embedded in the `<head/>` section of your application.
 ```html
 <link
   rel="stylesheet"
   type="text/css"
-  href="https://cdn.wfp.org/guides/ui/v1.8.2/assets/css/styles.min.css"
+  href="https://uikit.wfp.org/cdn/X.X.X/css/styles.min.css"
 />
 ```
 
