@@ -15,14 +15,15 @@ import {
 export default class StepNavigationItem extends React.Component {
   static propTypes = {
     className: PropTypes.string,
-    handleTabClick: PropTypes.func,
     handleTabAnchorFocus: PropTypes.func,
     handleTabKeyDown: PropTypes.func,
     helperText: PropTypes.node,
-    href: PropTypes.string.isRequired,
     index: PropTypes.number,
     label: PropTypes.string,
     role: PropTypes.string.isRequired,
+    /*
+     * On click handler to change the currently active item.
+     **/
     onClick: PropTypes.func.isRequired,
     selected: PropTypes.bool.isRequired,
     tabIndex: PropTypes.number.isRequired,
@@ -38,7 +39,6 @@ export default class StepNavigationItem extends React.Component {
     role: 'presentation',
     label: 'provide a label',
     tabIndex: 0,
-    href: '#',
     selected: false,
     onClick: () => {},
   };
@@ -67,7 +67,7 @@ export default class StepNavigationItem extends React.Component {
 
     const anchorProps = {
       className: 'wfp--step-navigation__nav-link',
-      ref: e => {
+      ref: (e) => {
         this.tabAnchor = e;
       },
     };
@@ -86,7 +86,7 @@ export default class StepNavigationItem extends React.Component {
       <li
         tabIndex={-1}
         className={classes}
-        onClick={evt => {
+        onClick={(evt) => {
           if (status !== 'locked') {
             handleTabClick(index, label, evt);
             onClick(evt);
