@@ -171,5 +171,5 @@ StepNavigation.propTypes = {
   /**
    * Optionally provide an index for the currently selected <Tab>
    */
-  selected: PropTypes.number,
+  selectedPage: PropTypes.number,
 };

@@ -57,6 +57,28 @@
     --sequential-secondary-05: #{$color__green-5};
     --sequential-secondary-06: #{$color__green-6};
     --sequential-secondary-07: #{$color__green-7};
+    // Categorical palette (Corporate)
+    --categorical-corporate-01: #{$color__main-blue};
+    --categorical-corporate-02: #{$color__light-blue};
+    --categorical-corporate-03: #{$color__main-green};
+    --categorical-corporate-04: #{$color__dark-green-1};
+    --categorical-corporate-05: #{$color__dark-blue};
+    --categorical-corporate-06: #{$color__dark-pink};
+    --categorical-corporate-07: #{$color__bright-red};
+    --categorical-corporate-08: #{$color__bright-orange};
+    --categorical-corporate-09: #{$color__grey-orange};
+    --categorical-corporate-10: #{$color__soft-orange-2};
+    // Alert palette
+    --alert-01: #{$color__green-5};
+    --alert-02: #{$color__lime-green};
+    --alert-03: #{$color__soft-yellow-2};
+    --alert-04: #{$color__soft-yellow-1};
+    --alert-05: #{$color__soft-orange-1};
+    --alert-06: #{$color__soft-red};
+    --alert-07: #{$color__bright-red};
+    // Diverging palette
+    --diverging-01: #{$color__cyan};
+    --diverging-02: #{$color__soft-orange-2};
   }
 
   @media (prefers-color-scheme: dark) {

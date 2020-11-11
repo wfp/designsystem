@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
 import markdown from './README.mdx';
 import Text from '../Text';
@@ -16,7 +17,6 @@ export default {
 
 export const StoryText = (args) => (
   <Story {...args}>
-    {' '}
     <h2 className="wfp--story__subtitle">
       Funding facility allows for scale-up of emergency operation
     </h2>

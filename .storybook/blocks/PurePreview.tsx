@@ -164,7 +164,9 @@ const getSource = (
           a = `${a}, ${element}`;
         });
       const reactSource = {
-        code: `import {  ${name} ${a}  } from "@wfp/ui";
+        code: parameters.docs.source
+          ? withSource.code
+          : `import { ${name} ${a} } from "@wfp/ui";
         
 ${withSource.code}`,
         dark: false,
@@ -255,7 +257,7 @@ const Preview: FunctionComponent<PreviewProps> = ({
   parameters,
   ...props
 }) => {
-  console.log('props', parameters, storyComponent);
+  console.log('props', parameters);
   const [expanded, setExpanded] = useState(isExpanded);
   const { source, actionItem, actionItemHtml, actionItemtwig } = getSource(
     withSource,

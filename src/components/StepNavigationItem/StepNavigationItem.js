@@ -14,23 +14,44 @@ import {
 
 export default class StepNavigationItem extends React.Component {
   static propTypes = {
+    /**
+     * Provide a className that is applied to the StepNavigation component
+     *
+     */
     className: PropTypes.string,
-    handleTabClick: PropTypes.func,
-    handleTabAnchorFocus: PropTypes.func,
-    handleTabKeyDown: PropTypes.func,
+    /**
+     * Provide text that is used alongside the control label for additional help
+     *
+     */
     helperText: PropTypes.node,
-    href: PropTypes.string.isRequired,
+    /**
+     * Provide the index of the each item
+     *
+     */
     index: PropTypes.number,
+    /**
+     * Provide the text that will be read by a screen reader when visiting this control
+     *
+     */
     label: PropTypes.string,
+    /**
+     * By default, this value is "presentation". You can also provide an alternate
+     * role if it makes sense from the accessibility-side
+     */
     role: PropTypes.string.isRequired,
+    /**
+     * On click handler to change the currently active item.
+     **/
     onClick: PropTypes.func.isRequired,
-    selected: PropTypes.bool.isRequired,
-    tabIndex: PropTypes.number.isRequired,
-    /*
+    /**
+     * Optionally provide an index for the currently selected <Tab>
+     */
+    selectedPage: PropTypes.bool.isRequired,
+    /**
      * An optional parameter to allow overriding the anchor rendering.
      * Useful for using Tab along with react-router or other client
      * side router libraries.
-     **/
+     */
     renderAnchor: PropTypes.func,
   };
 
@@ -38,7 +59,6 @@ export default class StepNavigationItem extends React.Component {
     role: 'presentation',
     label: 'provide a label',
     tabIndex: 0,
-    href: '#',
     selected: false,
     onClick: () => {},
   };
@@ -87,9 +107,7 @@ export default class StepNavigationItem extends React.Component {
         tabIndex={-1}
         className={classes}
         onClick={(evt) => {
-          console.log('internal onclick');
           if (status !== 'locked') {
-            console.log('internal onclick 2');
             handleTabClick(index, label, evt);
             onClick(evt);
           }
