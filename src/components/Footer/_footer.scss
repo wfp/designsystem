@@ -101,21 +101,16 @@
   }
 }
 
-@include breakpointMax(bp--md--major) {
+@include breakpointMax(bp--sm--major) {
   .#{$prefix}--footer__cta-logo {
     display: none;
   }
-
-  .#{$prefix}--footer__cta {
-    flex-direction: column;
-  }
   .#{$prefix}--footer__sdg {
-    margin-top: $spacing-md;
-    margin-left: 0;
+    display: none;
   }
 }
 
-@include breakpoint(bp--md--major) {
+@include breakpoint(bp--sm--major) {
   .#{$prefix}--footer__cta-logo-small {
     display: none;
   }
@@ -136,34 +131,6 @@
     .#{$prefix}--footer__content {
       flex-direction: column;
     }
-
-    .#{$prefix}--footer__sdg {
-      display: none;
-    }
-    .#{$prefix}--footer__cta-logo {
-      display: none;
-    }
-  }
-
-  @include breakpointMax(bp--md--major) {
-    .#{$prefix}--footer__cta-logo {
-      display: flex !important;
-    }
-
-    .#{$prefix}--footer__cta {
-      flex-direction: row;
-    }
-
-    .#{$prefix}--footer__sdg {
-      margin-top: 0;
-      margin-left: $spacing-xl;
-    }
-  }
-
-  @include breakpoint(bp--sm--major) {
-    .#{$prefix}--footer__cta-logo-small {
-      display: none;
-    }
   }
 
   .#{$prefix}--footer__info {
@@ -178,7 +145,6 @@
     margin-left: inherit;
     @include breakpointMax(bp--sm--major) {
       display: flex;
-      flex-direction: row;
       width: 100%;
       margin-bottom: rem(20px);
       justify-content: space-between;
