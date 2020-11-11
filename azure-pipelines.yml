@@ -11,6 +11,7 @@ jobs:
 
   variables:
     NPM_CACHE_FOLDER: $(Pipeline.Workspace)/.npm
+    nextRelease: unknown
 
   steps:
     - task: NodeTool@0

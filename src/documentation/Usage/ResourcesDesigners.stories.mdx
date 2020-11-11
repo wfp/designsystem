@@ -2,11 +2,10 @@ import { storiesOf } from '@storybook/react';
 import Page from '../Page';
 import Button from '../../components/Button';
 import Link from '../../components/Link';
-
 import { iconAddGlyph } from '@wfp/icons';
 
 <Meta
-  title="Getting started/Designers"
+  title="Getting started/Design resources"
   subTitle="How to use the UI Kit"
   parameters={{
     componentSubtitle: 'Getting started',
@@ -16,54 +15,61 @@ import { iconAddGlyph } from '@wfp/icons';
   }}
 />
 
+
+
+<div class="intro-description">
+  <div>
+    <p class="sbdocs sbdocs-p">Designers can use the Sketch and AdobeXd libraries to kickstart their project. They contain the core visual styles, components and assets.</p>
+  </div>
+</div>
+
+<hr />
+<br />
+<br />
+
+> 🎉 New Sketch library, design it with us!
+> <strong>We are working on a <a href="https://www.sketch.com/s/421befd7-29f6-4fe9-9dae-7d2bce93e1af" target="_blank">new version</a> of the Sketch library</strong>, which will live and progress alongside the official library until the porting is finalised. If you would like to try it out, <a href="sketch://add-library/cloud/https%3A%2F%2Fwww.sketch.com%2Fs%2F421befd7-29f6-4fe9-9dae-7d2bce93e1af">add the library to Sketch</a> and <strong>share your feedback</strong> by leaving comments on the library directly or by <a href="https://github.com/wfp/ui-design-kit/issues/1" target="_blank">using this thread</a>, so that we know that what we are building is actually useful for you. Thank you!
+
+
+<br /><br /><h2>Sketch</h2>
+
+
 <p>
-  Designers can use the{' '}
-  <Link href="https://www.sketchapp.com/" target="_blank">
-    Sketch
-  </Link>{' '}
-  and{' '}
-  <Link href="https://www.adobe.com/en/products/xd.html" target="_blank">
-    Adobe xD
-  </Link>{' '}
-  library containing the core visual styles, components and patterns. All the
-  files can be found on{' '}
-  <Link href="https://github.com/wfp/ui-design-kit" target="_blank">
-    GitHub
-  </Link>
-  .
+  To get started with the UI Kit library, you must first have <a href="https://www.sketch.com" target="_blank">Sketch</a> installed. The UI Kit components and icons live in the design kit as Sketch symbols: <strong>the symbols are organized by component, and every component comes with its variations, states, and groups</strong>.
 </p>
-<h3>Template</h3>
-<h4>Sketch Cloud</h4>
 <p>
-  Use the Library on Sketch Cloud to always have access to the latest UI Kit.
-</p>
-<p>
-  <Button icon={iconAddGlyph} href="sketch://add-library/cloud/b8xxz">
-    Add WFP UI Template to Sketch
+  <Button href="sketch://add-library/cloud/b8xxz">
+    Add the library to Sketch
   </Button>{' '}
   <Button
     kind="secondary"
     href="https://www.sketch.com/s/57cd224c-35ac-47be-b269-e032c60dc6a4">
-    View WFP UI on Sketch Cloud
+    View it on Sketch Cloud
   </Button>
 </p>
-<h4>Adobe xD</h4>
+<br />
+
+
+<h3>Logos and favicons</h3>
 <p>
-  Download the Adobe xD Template, unlike in Sketch it is not possible to use the
-  template as a library.
+  Logos and favicons are available as a separate downlod from our repository.<br />
+  <a href="https://github.com/wfp/ui-design-kit/blob/master/WFP%20Logos.sketch?raw=true">Download the logos file</a><br />
+  <a href="https://github.com/wfp/ui-design-kit/blob/master/WFP%20Favicons.sketch?raw=true">Download the favicons file</a>
+</p>
+
+<h2>Adobe Xd</h2>
+<p>
+  To get started with the UI Kit library, you must first have <a href="https://www.adobe.com/products/xd.html" target="_blank">Adobe Xd</a> installed. <strong>The library is currently available for download only, we will soon provide it as a shared resource.</strong>
 </p>
 <p>
   <Button href="https://github.com/wfp/ui-design-kit/blob/master/WFP%20Template.xd?raw=true">
-    WFP UI Template (Adobe xD)
+    Download the library
   </Button>{' '}
 </p>
-<h3>Assets</h3>
-<p>All logo variations and Favicons</p>
-<p>
-  <Button href="https://github.com/wfp/ui-design-kit/blob/master/WFP%20Logos.sketch?raw=true">
-    Logos (Sketch)
-  </Button>{' '}
-  <Button href="https://github.com/wfp/ui-design-kit/blob/master/WFP%20Favicons.sketch?raw=true">
-    Favicons (Sketch)
-  </Button>
-</p>
+<br />
+<hr />
+
+## Help us improve!
+- If you are **running into a technical issue**, please [open an issue on GitHub](https://github.com/wfp/ui/issues).
+- If you are **running into a design issue**, please [open an issue on GitHub](https://github.com/wfp/ui-design-kit/issues) or comment on the library directly ([Sketch](https://www.sketch.com/s/421befd7-29f6-4fe9-9dae-7d2bce93e1af), AdobeXd).
+- If you have **any question about the WFP UI Kit**, please [contact the team](mailto:global.uikit@wfp.org).
