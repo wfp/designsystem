@@ -6,6 +6,8 @@ import FormItem from '../FormItem';
 
 const { prefix } = settings;
 
+/**
+ * Input is a wrapper for custom inputs providing the label, helperText and errors. */
 const Input = ({
   additional,
   addonBefore,

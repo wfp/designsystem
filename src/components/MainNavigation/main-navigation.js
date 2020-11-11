@@ -1,29 +1,30 @@
 /* Navigation toggle on mobile */
 
-(function() {
+(function () {
   var hamburger = {
     navToggle: document.querySelector('.wfp--main-navigation__button'),
     nav: document.querySelector('.wfp--main-navigation__list'),
 
-    doToggle: function(e) {
+    doToggle: function (e) {
       e.preventDefault();
       this.nav.classList.toggle('wfp--main-navigation__list--open');
     },
   };
 
-  hamburger.navToggle.addEventListener('click', function(e) {
+  hamburger.navToggle.addEventListener('click', function (e) {
     hamburger.doToggle(e);
   });
 })();
 
 /* Mobile Navigation activator */
 
-(function() {
+(function () {
   var open = false;
   var documentEvent = document;
 
-  const outsideClickListener = event => {
+  const outsideClickListener = (event) => {
     const element = document.querySelector('.wfp--main-navigation__sub--open');
+    if (element === null) return;
     if (!element.contains(event.target)) {
       subItem.doToggle(event, undefined);
     }
@@ -36,7 +37,7 @@
     nav: document.querySelectorAll('.wfp--main-navigation__item'),
     sub: document.querySelectorAll('.wfp--main-navigation__sub'),
 
-    doToggle: function(e, b) {
+    doToggle: function (e, b) {
       e.preventDefault();
       if (documentEvent !== undefined)
         documentEvent.removeEventListener('click', outsideClickListener, false);
@@ -54,7 +55,7 @@
         );
         this.nav[b].classList.toggle('wfp--main-navigation__item--open');
         this.sub[b].classList.toggle('wfp--main-navigation__sub--open');
-        setTimeout(function() {
+        setTimeout(function () {
           documentEvent.addEventListener('click', outsideClickListener, false);
         }, 500);
         open = b;
@@ -66,7 +67,7 @@
 
   for (var n = 0; n < subItem.navToggle.length; n++) {
     const u = n;
-    subItem.navToggle[n].addEventListener('click', function(e) {
+    subItem.navToggle[n].addEventListener('click', function (e) {
       subItem.doToggle(e, u);
     });
   }
