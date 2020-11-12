@@ -44,7 +44,7 @@ module.exports = {
     return config;
   },
 
-  webpack: async (config, options) => {
+  /*webpack: async (config, options) => {
     config.plugins.push(
       new webpack.NormalModuleReplacementPlugin(
         /StorybookLogo/,
@@ -52,7 +52,7 @@ module.exports = {
       )
     );
     return config;
-  },
+  },*/
 
   /*
   webpackFinal: async (config, { configType }) => {

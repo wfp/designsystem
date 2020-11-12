@@ -86,7 +86,9 @@ const Intro = () => (
       <div className="intro__left">
         <h1>
           WFP <span className="intro__name">UI-Kit</span>
-          <span className="intro__version">v1.4</span>
+          <span className="intro__version">
+            v{process.env.STORYBOOK_NPM_VERSION}
+          </span>
         </h1>
         <p>
           The World Food Programme’s User Interface Kit <br />
