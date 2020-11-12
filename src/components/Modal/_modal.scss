@@ -33,7 +33,8 @@
     overflow: auto;
     content: '';
     opacity: 0;
-    background-color: rgba(var(--ui-07), 0.5);
+    //background-color: rgba(var(--ui-07), 0.5);
+    background-color: var(--modal-background);
     transition: opacity 200ms, z-index 0s 200ms, visibility 0s 200ms;
     visibility: hidden;
 

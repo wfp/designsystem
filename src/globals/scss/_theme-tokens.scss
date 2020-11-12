@@ -79,6 +79,7 @@
     // Diverging palette
     --diverging-01: #{$color__cyan};
     --diverging-02: #{$color__soft-orange-2};
+    --modal-background: #{$color__modal-background};
   }
 
   @media (prefers-color-scheme: dark) {
