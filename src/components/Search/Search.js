@@ -8,7 +8,7 @@ import { iconSearch, iconCloseGlyph } from '@wfp/icons';
 
 const { prefix } = settings;
 
-/** The number input component is used for entering numeric values and includes controls for incrementally increasing or decreasing the value */
+/** Search enables users to specify a word or a phrase to find relevant pieces of content without the use of navigation. */
 
 function NumberInput(props) {
   const {
