@@ -41,6 +41,7 @@
     --disabled: #{$color__navy-gray-10};
     --disabled-01: #{$color__navy-gray-10};
     --disabled-02: #{$color__navy-gray-8};
+    --modal-background: #{$color__modal-background};
   }
 
   @media (prefers-color-scheme: dark) {
