@@ -79,6 +79,13 @@
     list-style-type: decimal;
   }
 
+  .#{$prefix}--list--tooltip {
+    li {
+      padding: $spacing-xs;
+      border-bottom: 1px solid var(--ui-02);
+    }
+  }
+
   .#{$prefix}--list--simple-inline {
     line-height: 1.5em;
     display: flex;

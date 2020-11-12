@@ -13,6 +13,7 @@ export default {
     componentSubtitle: 'Component',
     status: 'released',
     mdx: markdown,
+    introText: `[react-dropzone](https://github.com/react-dropzone/react-dropzone) for handling file uploads. It allows using simple react hooks to create a HTML5-compliant drag'n'drop zone for files.`,
   },
 };
 

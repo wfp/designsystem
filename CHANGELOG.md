@@ -1,3 +1,10 @@
+## [1.10.5](https://github.com/WFP/UI/compare/v1.10.4...v1.10.5) (2020-11-12)
+
+
+### Bug Fixes
+
+* **Tooltip:** hiding the tooltip added ([ca0c4d3](https://github.com/WFP/UI/commit/ca0c4d384c181db88a262949d802463126243b84))
+
 # Changelog
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.

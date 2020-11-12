@@ -1,6 +1,6 @@
 {
   "name": "@wfp/ui",
-  "version": "1.10.4",
+  "version": "1.10.5",
   "description": "WFP UI Kit Next",
   "license": "Apache-2",
   "main": "lib/index.js",
@@ -25,7 +25,7 @@
     "prettier:diff": "prettier --list-different \"**/*.{scss,css,js}\"",
     "semantic-release": "semantic-release",
     "start": "npm run storybook",
-    "storybook": "STORYBOOK_ASSETS=https://cdn.wfp.org/guides/ui/assets/ STORYBOOK_INTERNAL_ASSETS=../ start-storybook -s ./src/assets -p 9000",
+    "storybook": "STORYBOOK_ASSETS=https://cdn.wfp.org/guides/ui/assets/ STORYBOOK_NPM_VERSION=10.10.3 STORYBOOK_INTERNAL_ASSETS=../ start-storybook -s ./src/assets -p 9000",
     "test": "jest --watch",
     "test-ssr": "npm run build && node ssr-tests/*.js",
     "jest-w": "jest --watch"

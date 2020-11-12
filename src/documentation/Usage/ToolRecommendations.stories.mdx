@@ -12,15 +12,17 @@ import { linkTo } from '@storybook/addon-links';
   }}
 />
 
-This list provides a list of "recommended" solutions for common tasks, and serves as a starting point when looking for a library covering a given field.
+>Legacy libraries that we no longer recommend to use
+>- Forms: [react-final-form](https://github.com/final-form/react-final-form), [redux-form](https://github.com/erikras/redux-form)
+>- Charts: [Victory](https://formidable.com/open-source/victory/)
+
+A list of libraries that we recommend to use.
 
 ## CSS
 
 [scss/sass](https://sass-lang.com) is a CSS pre-processor with syntax advancements and variable, functions, etc. [Learn more](https://create-react-app.dev/docs/adding-a-sass-stylesheet) about how to use scss with create-react-app.
 
-## Recommended components
-
-### Application state handling
+## Application state handling
 
 [redux](https://redux.js.org) is a predictable state container for JavaScript apps. It helps you write
 applications that behave consistently, run in different environments (client,
@@ -31,7 +33,9 @@ server, and native), and are easy to test.
 [redux-saga](https://github.com/redux-saga/redux-saga) helps managing side effects when loading external data like link(asynchronous
 things)
 
-### Maps
+Please also have a look at the [React/Redux Style Guide](https://gist.github.com/datchley/4e0d05c526d532d1b05bf9b48b174faf)
+
+## Maps
 
 Please have a look at the [Map guidelines](Design|Guidelines).
 
@@ -41,38 +45,40 @@ Please have a look at the [Map guidelines](Design|Guidelines).
 
 [ArcGIS API for JavaScript](https://developers.arcgis.com/javascript) for complex maps with custom layers
 
-### Forms
+## Forms
 
 [react-hook-form](https://react-hook-form.com/) is a form library for react.
 
 [react-phone-input-2](https://www.npmjs.com/package/react-phone-input-2) is a customizable phone input library with auto formatting.
 
-### Microsoft Azure
+## Microsoft Azure
 
 [react-adal](https://github.com/salvoravida/react-adal) is a library which provides Azure Active Directory Library (ADAL) support for React.
 
-### Tables
+## Tables
 
 [react-table](https://github.com/react-tools/react-table) is a lightweight and fully customizable library to provide complex data tables.
 
 [ag-grid](https://ag-grid.com) is a grid library for complex tables with Excel-like features.
 
-### Linting & naming
+## Linting & naming
 
 Airbnb provides a [useful styling guide](https://github.com/airbnb/javascriptuseful) on how to style JavaScript and react code.
 
-### Charts
+## Charts
 
 [Recharts](https://recharts.org/) is a set of modular charting components for React.
 
-### Useful links
+## Polyfills
 
-- [React/Redux Style Guide](https://gist.github.com/datchley/4e0d05c526d532d1b05bf9b48b174faf)
+Polyfills are needed for IE browsers. We recommend [babel-preset-env](https://babeljs.io/docs/en/babel-preset-env) for it.
 
-### Legacy libraries
+## Next.js (for external apps only)
 
-These are libraries that are no longer recommended to use.
+[Next.js](https://nextjs.org/) is a modern front-end development web framework that enables functionality such as server-side rendering and generating static websites for React based web applications.
+The combination of server side rendering and client side hydration allows the creation of very performant websites. It can be easily connected to headless content management systems like Drupal or Wordpress.
 
-- [react-final-form](https://github.com/final-form/react-final-form) is a form library for react.
-- [redux-form](https://github.com/erikras/redux-form) works with React Redux to enable an html form in React to use Redux to store all of its state.
-- [Victory](https://formidable.com/open-source/victory/) is a set of modular charting components for React.
+***
+## Help us improve!
+- If you are **running into an issue**, please [open an issue on GitHub](https://github.com/wfp/ui/issues).
+- If you have **any question about the WFP UI Kit**, please [contact the team](mailto:global.uikit@wfp.org).

@@ -10,7 +10,7 @@ export default {
   parameters: {
     componentSubtitle: 'Component',
     status: 'released',
-    introText: 'Description for components',
+    introText: `[React Select](https://react-select.com) is recommended for multiselect, autocomplete or dynamic inputs.`,
     mdx: markdown,
     code: false,
     html: false,

@@ -21,6 +21,6 @@ module.exports = {
   ],
 
   release: {
-    branches: ['master', 'next', 'feat/sprint-6-minors'],
+    branches: ['master', 'next', 'feat/*'],
   },
 };
