@@ -1,3 +1,10 @@
+## [1.10.6](https://github.com/WFP/UI/compare/v1.10.5...v1.10.6) (2020-11-12)
+
+
+### Bug Fixes
+
+* **Modal:** background color now working ([901be30](https://github.com/WFP/UI/commit/901be3065a6902552fce8e713ad27b31bae76602))
+
 ## [1.10.5](https://github.com/WFP/UI/compare/v1.10.4...v1.10.5) (2020-11-12)
 
 
