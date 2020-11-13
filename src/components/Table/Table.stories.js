@@ -89,13 +89,7 @@ function ReactTablePagination({ columns, data, withBorder }) {
   );
 
   const changePage = (page) => {
-    //const nextPage = getSafePage(page.page - 1);
-
-    // Update Page
-    //if (page !== nextPage) {
     gotoPage(page.page - 1);
-    //}
-    console.log('update pageSize', page);
 
     // Update PageSize
     if (pageSize !== page.pageSize) {
