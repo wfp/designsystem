@@ -29,8 +29,9 @@ const Input = ({
   required,
   ...other
 }) => {
+  const calculatedId = id ? id : name;
   const inputProps = {
-    id,
+    id: calculatedId,
     onChange: (evt) => {
       if (!other.disabled && !other.readOnly) {
         onChange(evt);
@@ -45,7 +46,7 @@ const Input = ({
     type,
   };
 
-  const errorId = id + '-error-msg';
+  const errorId = calculatedId + '-error-msg';
 
   const inputClasses = classNames(`${prefix}--input`, className, {
     [`${prefix}--input--light`]: light,
@@ -62,17 +63,18 @@ const Input = ({
   });
 
   const label = (
-    <label htmlFor={id} className={labelClasses}>
+    <label htmlFor={calculatedId} className={labelClasses}>
       {labelText && labelText}
       {required && '*'}
     </label>
   );
 
-  const error = invalid ? (
-    <div className="wfp--form-requirement" id={errorId}>
-      {invalid.message ? invalid.message : invalidText}
-    </div>
-  ) : null;
+  const error =
+    invalid && typeof invalid === 'object' ? (
+      <div className="wfp--form-requirement" id={errorId}>
+        {invalid.message ? invalid.message : invalidText}
+      </div>
+    ) : null;
 
   const elementProps = invalid
     ? {
@@ -136,7 +138,7 @@ Input.propTypes = {
   /**
    * Specify a custom `id` for the &lt;input&gt;
    */
-  id: PropTypes.string.isRequired,
+  id: PropTypes.string,
 
   /**
    * Provide the text that will be read by a screen reader when visiting this
@@ -169,7 +171,11 @@ Input.propTypes = {
   /**
    * Specify the value of the &lt;input&gt;
    */
-  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  value: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+    PropTypes.object,
+  ]),
 
   /**
    * Specify whether you want the underlying label to be visually hidden
@@ -179,7 +185,7 @@ Input.propTypes = {
   /**
    * Specify whether the control is currently invalid
    */
-  invalid: PropTypes.bool,
+  invalid: PropTypes.oneOfType([PropTypes.bool, PropTypes.object]),
 
   /**
    * Provide the text that is displayed when the control is in an invalid state
