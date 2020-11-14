@@ -24,6 +24,7 @@ import {
   //types,
   //DocsContainer,
 } from '@storybook/addon-docs/blocks';
+import HelpUsImprove from '../HelpUsImprove';
 
 export const DocsPage: FC = (props) => {
   return (
@@ -37,6 +38,7 @@ export const DocsPage: FC = (props) => {
       </div>
       <Stories title="Examples" />
       <Description />
+      <HelpUsImprove />
     </>
   );
 };

@@ -41,7 +41,6 @@ const Toggle = ({
         id={htmlFor}
         className="wfp--toggle"
         onChange={(evt) => {
-          console.log('change', evt);
           onChange && onChange(evt);
           onToggle(input.checked, htmlFor, evt);
         }}

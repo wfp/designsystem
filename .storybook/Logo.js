@@ -1,5 +1,6 @@
 import React from 'react';
-import '!style-loader!css-loader!sass-loader!./storybook.scss';
+//import '!style-loader!css-loader!sass-loader!./storybook.scss';
+import '!style-loader!css-loader!../assets/css/styles.css';
 import { Button, Link, List, ListItem, Tooltip } from '../src';
 
 const legacyPreviousversions = [
@@ -21,8 +22,8 @@ export function StorybookLogo() {
       <Tooltip
         content={
           <List kind="tooltip">
-            {legacyPreviousversions.map((e) => (
-              <ListItem>
+            {legacyPreviousversions.map((e, i) => (
+              <ListItem key={i}>
                 <Link href={e.link} target="_blank">
                   {e.title}
                 </Link>

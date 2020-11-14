@@ -37,10 +37,7 @@ class Blockquote extends React.Component {
   }
 
   toggleBlockquote = () => {
-    if (this.props.toggleable)
-      this.setState({ open: !this.state.open }, () => {
-        console.log('toogle', this.state.open);
-      });
+    if (this.props.toggleable) this.setState({ open: !this.state.open });
   };
 
   /*showInnerHtml = content => {
@@ -169,7 +166,7 @@ Blockquote.propTypes = {
   /**
    * Specify the type of your Blockquote Options are `info` `error` `warning` `info`
    */
-  kind: PropTypes.oneOf[('info', 'warning', 'error', 'success')],
+  kind: PropTypes.oneOf(['info', 'warning', 'error', 'success']),
   /**
    * Specify if an Icon should be displayed
    */

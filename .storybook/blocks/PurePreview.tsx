@@ -257,7 +257,6 @@ const Preview: FunctionComponent<PreviewProps> = ({
   parameters,
   ...props
 }) => {
-  console.log('props', parameters);
   const [expanded, setExpanded] = useState(isExpanded);
   const { source, actionItem, actionItemHtml, actionItemtwig } = getSource(
     withSource,
