@@ -44,6 +44,7 @@ const Button = ({
     'wfp--btn--inverse--primary': kind === 'inverse--primary',
     'wfp--btn--inverse': kind === 'inverse',
     'wfp--btn--danger--primary': kind === 'danger--primary',
+    'wfp--btn--danger--secondary': kind === 'danger--secondary',
     'wfp--btn--tertiary': kind === 'tertiary',
     'wfp--btn--animating': count,
   });

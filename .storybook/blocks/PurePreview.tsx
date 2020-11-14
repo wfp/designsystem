@@ -120,11 +120,11 @@ const getSource = (
       };
       return {
         source: <StyledSource {...htmlSource} dark />,
+        actionItem: { title: 'react', onClick: () => setExpanded(true) },
         actionItemtwig: {
           title: 'twig',
           onClick: () => setExpanded(false),
         },
-        actionItem: { title: 'react', onClick: () => setExpanded(true) },
         actionItemHtml: {
           title: 'html',
           onClick: () => setExpanded(false),
@@ -144,11 +144,11 @@ const getSource = (
       };
       return {
         source: <StyledSource {...htmlSource} dark />,
+        actionItem: { title: 'react', onClick: () => setExpanded(true) },
         actionItemtwig: {
           title: 'twig',
           onClick: () => setExpanded('twig'),
         },
-        actionItem: { title: 'react', onClick: () => setExpanded(true) },
         actionItemHtml: {
           title: 'html',
           onClick: () => setExpanded(false),
@@ -174,11 +174,11 @@ ${withSource.code}`,
       };
       return {
         source: <StyledSource {...reactSource} dark />,
+        actionItem: { title: 'react', onClick: () => setExpanded(false) },
         actionItemtwig: {
           title: 'twig',
           onClick: () => setExpanded('twig'),
         },
-        actionItem: { title: 'react', onClick: () => setExpanded(false) },
         actionItemHtml: {
           title: 'html',
           onClick: () => setExpanded('html'),
@@ -188,11 +188,11 @@ ${withSource.code}`,
     default: {
       return {
         source: null,
+        actionItem: { title: 'react', onClick: () => setExpanded(true) },
         actionItemtwig: {
           title: 'twig',
           onClick: () => setExpanded('twig'),
         },
-        actionItem: { title: 'react', onClick: () => setExpanded(true) },
         actionItemHtml: {
           title: 'html',
           onClick: () => setExpanded('html'),
@@ -279,8 +279,8 @@ const Preview: FunctionComponent<PreviewProps> = ({
   const showToolbar = withToolbar && !Array.isArray(children);
 
   var actionItems = [];
-  if (parameters.twig) actionItems.push(actionItemtwig);
   if (parameters.code !== false) actionItems.push(actionItem);
+  if (parameters.twig) actionItems.push(actionItemtwig);
   if (parameters.html !== false) actionItems.push(actionItemHtml);
   return (
     <PreviewContainer

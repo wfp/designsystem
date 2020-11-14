@@ -25,7 +25,6 @@ export default {
 export const ButtonRegular = (args) => <Button {...args} />;
 ButtonRegular.args = {
   children: 'Button',
-  href: '#',
 };
 
 export const ButtonKind = (args) => (
@@ -46,7 +45,6 @@ export const ButtonKind = (args) => (
 );
 ButtonKind.args = {
   children: 'Button',
-  href: '#',
 };
 
 const hello = `

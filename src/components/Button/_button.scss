@@ -284,7 +284,8 @@
     }
 
     &:active {
-      color: var(--support-01);
+      color: darken($support-01, 10%);
+      border-color: darken($support-01, 10%);
     }
 
     &:hover:disabled,

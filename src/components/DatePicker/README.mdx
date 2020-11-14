@@ -31,8 +31,8 @@ import { SingleDatePicker, DateRangePicker } from 'react-dates';
   component={ReduxFormWrapper}
   inputComponent={SingleDatePickerInput}
   datePicker={SingleDatePicker}
-  format={value => (value ? moment(value) : undefined)}
-  normalize={data => data && data.value && data.value.format()}
+  format={(value) => (value ? moment(value) : undefined)}
+  normalize={(data) => data && data.value && data.value.format()}
 />;
 ```
 
@@ -41,7 +41,7 @@ import { SingleDatePicker, DateRangePicker } from 'react-dates';
   component={ReduxFormWrapper}
   inputComponent={DateRangePickerInput}
   datePicker={DateRangePicker}
-  format={value =>
+  format={(value) =>
     value
       ? { startDate: moment(value.startDate), endDate: moment(value.endDate) }
       : undefined

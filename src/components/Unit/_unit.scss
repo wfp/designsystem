@@ -63,6 +63,11 @@
     }
   }
 
+  .#{$prefix}--unit--metrictons {
+    &:after {
+      content: 'T';
+    }
+  }
   .#{$prefix}--unit--mt {
     &:after {
       content: 'MT';
@@ -95,6 +100,12 @@
   .#{$prefix}--unit--countries {
     &:after {
       content: 'Countries';
+    }
+  }
+
+  .#{$prefix}--unit--kg {
+    &:after {
+      content: 'Kg';
     }
   }
 

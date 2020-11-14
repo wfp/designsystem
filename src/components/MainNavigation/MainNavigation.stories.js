@@ -55,10 +55,11 @@ export const Regular = (args) => (
                       id="search-2"
                       labelText="Filter"
                       placeHolderText="Filter list"
-                      onChange={() => {
-                        alert('Apply Filter');
-                      }}
+                      
                     />
+                    {/* onChange={() => {
+                        alert('Apply Filter');
+                      }} */}
                   </SubNavigationFilter>
                 </SubNavigationHeader>
                 <SubNavigationContent>

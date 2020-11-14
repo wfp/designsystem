@@ -20,6 +20,7 @@ import { linkTo } from '@storybook/addon-links';
 There are **different ways you can use the Kit** in your applications.
 
 ## Usage with React
+
 **Default and recommended usage.** All components are available as modules and you can use them as any other React component.
 
 ```jsx
@@ -27,10 +28,11 @@ There are **different ways you can use the Kit** in your applications.
 import { Button } from '@wfp/ui';
 
 // Use the Button component
-<Button>Button label</Button>
+<Button>Button label</Button>;
 ```
 
 If you need to import the stylesheet of the component, here is the complete example:
+
 ```jsx
 // Import the Button component and its style
 import { Button } from '@wfp/ui';
@@ -38,8 +40,9 @@ import { Button } from '@wfp/ui';
 import '@wfp/ui/src/components/Button/button.scss';
 
 // Use the Button component
-<Button>Button label</Button>
+<Button>Button label</Button>;
 ```
+
 The Kit also provides a basic **template** to kickstart your project, please have a look at the [page template](https://uikit.wfp.org/docs/index.html?path=/docs/templates-application-page--default).
 
 ## Usage with vanilla JS
@@ -67,7 +70,9 @@ ReactDOM.render(
   myContainerElement
 );
 ```
+
 To remove the component from the DOM and clean up, unmount it:
+
 ```
 ReactDOM.unmountComponentAtNode(myContainerElement);
 ```
@@ -75,6 +80,7 @@ ReactDOM.unmountComponentAtNode(myContainerElement);
 Check out the [React API docs](https://reactjs.org/docs/react-api.html) for more details.
 
 ## Usage with pure HTML
+
 **You can grab the HTML of every component or template** directly from these docs: simply navigate to the item you are looking for, search for the in-page preview under the "Documentation" tab and click on the HTML tab. For the styling, you can [load the CSS through the WFP CDN](https://uikit.wfp.org/docs/index.html?path=/docs/getting-started-installing-the-kit--page#3-load-the-css). We are currently evaluating to expose the CSS for the single components and templates.
 
 ## Using the Kit SCSS
@@ -98,8 +104,3 @@ $css--reset==false
 // Only use variables
 @import "~@wfp/ui/src/globals/scss/vars.scss";
 ```
-
-***
-## Help us improve!
-- If you are **running into an issue**, please [open an issue on GitHub](https://github.com/wfp/ui/issues).
-- If you have **any question about the WFP UI Kit**, please [contact the team](mailto:global.uikit@wfp.org).
