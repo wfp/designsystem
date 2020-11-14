@@ -63,6 +63,12 @@ export {
   ModuleFooter,
 } from './components/Module';
 export notificationStyle from './components/Notification/Notification.legacy';
+export {
+  InlineNotification,
+  NotificationActionButton,
+  NotificationButton,
+  NotificationTextDetails,
+} from './components/Notification';
 export NumberInput from './components/NumberInput';
 export Pagination from './components/Pagination';
 export RadioButton from './components/RadioButton';
