@@ -15,6 +15,7 @@ const Input = ({
   labelText,
   children,
   className,
+  iconDescription,
   id,
   formItemClassName,
   placeholder,
