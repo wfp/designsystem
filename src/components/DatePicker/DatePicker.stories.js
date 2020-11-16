@@ -40,6 +40,36 @@ singleDatePicker.args = {
   helperText: 'Optional helper text.',
 };
 
+const singleSourceCode = `
+import 'react-dates/initialize';
+import { SingleDatePickerInput } from "@wfp/ui";
+import { SingleDatePicker } from 'react-dates';
+
+<SingleDatePickerInput
+  datePicker={SingleDatePicker}
+  helperText="Optional helper text."
+  inputIconPosition="after"
+  invalidText="A valid value is required"
+  labelText="Label datepicker"
+  onBlur={()=>{console.log("Blur")}}
+  onChange={()=>{console.log("onChange")}}
+  onFocus={()=>{console.log("onFocus")}}
+  placeholder="Placeholder text (placeholder)"
+  showDefaultInputIcon
+
+/>
+`
+
+singleDatePicker.story = {
+  parameters: {
+    docs: {
+      source: {
+        code: singleSourceCode
+      }
+    }
+  }
+}
+
 export const dateRangePicker = (args) => <DateRangePickerInput {...args} />;
 dateRangePicker.args = {
   datePicker: DateRangePicker,
@@ -55,6 +85,35 @@ dateRangePicker.args = {
   inputIconPosition: 'after',
   helperText: 'Optional helper text.',
 };
+const dateRangeSourceCode = `
+import 'react-dates/initialize';
+import { DateRangePickerInput } from "@wfp/ui";
+import { DateRangePicker } from 'react-dates';
+
+<DateRangePickerInput
+  datePicker={DateRangePicker}
+  helperText="Optional helper text."
+  inputIconPosition="after"
+  invalidText="A valid value is required"
+  labelText="Label datepicker"
+  onBlur={()=>{console.log("Blur")}}
+  onChange={()=>{console.log("onChange")}}
+  onFocus={()=>{console.log("onFocus")}}
+  placeholder="Placeholder text (placeholder)"
+  showDefaultInputIcon
+
+/>
+`
+
+dateRangePicker.story = {
+  parameters: {
+    docs: {
+      source: {
+        code: dateRangeSourceCode
+      }
+    }
+  }
+}
 
 export const datePickerField = (args) => (
   <Field

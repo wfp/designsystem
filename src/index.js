@@ -64,6 +64,7 @@ export {
 } from './components/Module';
 export notificationStyle from './components/Notification/Notification.legacy';
 export {
+  ToastNotification,
   InlineNotification,
   NotificationActionButton,
   NotificationButton,

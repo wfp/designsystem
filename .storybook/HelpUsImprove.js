@@ -14,7 +14,7 @@ export default function HelpUsImproveText() {
           .
         </ListItem>
         <ListItem>
-          If you have **any question about the WFP UI Kit**, please{' '}
+          If you have <b>any question about the WFP UI Kit</b>, please{' '}
           <a href="mailto:global.uikit@wfp.org">contact the team</a>.
         </ListItem>
       </List>
