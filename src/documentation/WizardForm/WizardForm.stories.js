@@ -14,7 +14,6 @@ import RegularPage from '../RegularPage';
 
 export default {
   title: 'Templates/WizardForm',
-
   parameters: {
     componentSubtitle: 'Example',
     status: 'released',
@@ -156,3 +155,11 @@ export const Regular = (args) => (
     </Wizard>
   </Wrapper>
 );
+
+Regular.decorators = [
+  (Story) => (
+    <RegularPage title="Wizard form" withoutSecondaryTabs pageWidth="lg">
+      <Story />
+    </RegularPage>
+  ),
+];
