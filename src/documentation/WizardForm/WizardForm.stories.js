@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Field } from 'react-final-form';
 import Wizard from './Wizard';
@@ -11,6 +10,7 @@ import Blockquote from '../../components/Blockquote';
 import Wrapper from '../../components/Wrapper';
 import RadioButton from '../../components/RadioButton/RadioButton';
 import RegularPage from '../RegularPage';
+import markdown from './README.mdx';
 
 export default {
   title: 'Templates/WizardForm',
@@ -30,6 +30,7 @@ const renderError = ({ meta: { touched, error } }) =>
 
 export const Regular = (args) => (
   <Wrapper background="lighter" pageWidth="lg" spacing="xl">
+
     <Wizard initialValues={{ employed: true, stooge: 'larry' }}>
       <Wizard.Page label="Name and last name">
         <Blockquote style={{ marginBottom: '2rem' }} title="Regular Blockquote">
