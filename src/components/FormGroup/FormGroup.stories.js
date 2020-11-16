@@ -86,7 +86,6 @@ export const AddressDetails = (args) => {
   const [cityoption, setcityoption] = useState(null);
 
   const handleChange = (newValue) => {
-    console.log('neV', newValue);
     const selectedCountry = cities.find(
       (city) => city.country === newValue.value
     );

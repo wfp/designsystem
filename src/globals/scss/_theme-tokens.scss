@@ -41,6 +41,7 @@
     --disabled: #{$color__navy-gray-10};
     --disabled-01: #{$color__navy-gray-10};
     --disabled-02: #{$color__navy-gray-8};
+
     // Sequential palette #1 (default)
     --sequential-default-01: #{$color__blue-1};
     --sequential-default-02: #{$color__blue-2};
@@ -79,7 +80,10 @@
     // Diverging palette
     --diverging-01: #{$color__cyan};
     --diverging-02: #{$color__soft-orange-2};
-    --modal-background: #{$color__modal-background};
+
+    // Semi-transparent backgrounds
+    --modal-background-01: #{$color__transparent-01};
+    --modal-background-02: #{$color__transparent-02};
   }
 
   @media (prefers-color-scheme: dark) {

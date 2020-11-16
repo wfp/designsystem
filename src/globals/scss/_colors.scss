@@ -164,7 +164,6 @@ $color__navy-gray-7: #818d94 !default; // #7E8990
 $color__navy-gray-8: #dfe6eb !default;
 $color__navy-gray-9: #eff2f5 !default;
 $color__navy-gray-10: #f9fbfc !default;
-$color__white: #fff !default;
 
 // New colors derived from the corporate blue #007DBC
 $color__blue-1: #002153;
@@ -206,4 +205,6 @@ $color__soft-orange-2: #ecdfbb;
 
 $color__soft-yellow-1: #fbe07a;
 $color__soft-yellow-2: #d0de85;
-$color__modal-background: rgba($color__gray-80, 0.8);
+
+$color__transparent-01: rgba($color__gray-80, 0.8);
+$color__transparent-02: rgba($color__white, 0.8);

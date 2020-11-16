@@ -180,11 +180,6 @@ NumberInput.propTypes = {
   hideLabel: PropTypes.bool,
 
   /**
-   * Provide a description for up/down icons that can be read by screen readers
-   */
-  iconDescription: PropTypes.string.isRequired,
-
-  /**
    * Specify a custom `id` for the input
    */
   id: PropTypes.string.isRequired,
