@@ -179,7 +179,7 @@ Input.propTypes = {
   /**
    * Specify whether the control is currently invalid
    */
-  invalid: PropTypes.bool,
+  invalid: PropTypes.oneOfType([PropTypes.object, PropTypes.bool]),
 
   /**
    * Provide the text that is displayed when the control is in an invalid state
