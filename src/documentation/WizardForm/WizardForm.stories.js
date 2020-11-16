@@ -12,6 +12,8 @@ import Wrapper from '../../components/Wrapper';
 import RadioButton from '../../components/RadioButton/RadioButton';
 import RegularPage from '../RegularPage';
 
+const markdown = 'TODO: sourcecode coming soon';
+
 export default {
   title: 'Templates/WizardForm',
 

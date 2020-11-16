@@ -63,6 +63,12 @@ export {
   ModuleFooter,
 } from './components/Module';
 export notificationStyle from './components/Notification/Notification.legacy';
+export {
+  InlineNotification,
+  NotificationActionButton,
+  NotificationButton,
+  NotificationTextDetails,
+} from './components/Notification';
 export NumberInput from './components/NumberInput';
 export Pagination from './components/Pagination';
 export RadioButton from './components/RadioButton';
@@ -82,6 +88,7 @@ export SelectItemGroup from './components/SelectItemGroup';
 export Switch from './components/Switch';
 export Slider from './components/Slider';
 export Story from './components/Story';
+export Table, { TableSorting } from './components/Table';
 export TablePagination from './components/TablePagination';
 export Tab from './components/Tab';
 export TabContent from './components/TabContent';
