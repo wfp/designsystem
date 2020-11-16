@@ -1,0 +1,77 @@
+import Link from '../../components/Link';
+import { linkTo } from '@storybook/addon-links';
+
+<Meta
+  title="Getting started/What's new"
+  parameters={{
+    componentSubtitle: 'Getting started',
+    previewTabs: {
+      canvas: { hidden: true },
+    },
+  }}
+/>
+
+<div class="intro-description">
+  <div>
+    <p class="sbdocs sbdocs-p">If you’re curious about what’s new in the Kit, and what’s changed, this is the right place.</p>
+  </div>
+</div>
+
+***
+
+<br />
+
+[View releases on Github](https://github.com/wfp/ui/releases)
+
+<br />
+
+## November 2020
+&nbsp;&nbsp;&nbsp;
+### Documentation
+- New **documentation structure**, it should now be easier for you to get to the info you are looking for
+- Improved documentation for **component**, with examples, do’s and don’ts, formatting and UX writing rules, best practices and references
+- **React** and **HTML** code are now provided for each example or template
+- The **typographic scale** has been updated, to better accommodate the contrast among the different headings
+- There is a **new guideline** about [page speed](https://uikit.wfp.org/next-docs/index.html?path=/docs/documentation-guidelines-page-speed--page)
+- The [data visualisation guideline](https://uikit.wfp.org/docs/index.html?path=/docs/core-layout-mdx--mix-bar-chart-chart) has been updated
+- The list of [recommended libraries](https://uikit.wfp.org/docs/index.html?path=/docs/getting-started-getting-started-recommended-libraries--page) has been updated
+- The bug that was causing the icon generator in the Icons page to not work properly has now been fixed
+
+### Design resources
+- Work in progress on a new Sketch library, available for initial testing
+
+### Testing and CI/CD
+- **Unit tests** - 583 jest unit tests running in 59 test suites
+- **Amazon Web Services** - the Kit is now hosted on AWS S3
+- **Azure DevOps** - automated publishing with Azure DevOps pipelines to AWS S3
+- **semantic-release** - [automated releases and change log generation based on commit messages](https://github.com/wfp/ui/releases)
+
+### CSS
+- There is a new color code for the `text-03` variable
+- The usage of sass variables has been dropped, in favour of **CSS native variables**, [complete list here](https://github.com/wfp/ui/blob/master/src/globals/scss/_theme-tokens.scss)
+
+### Dropped components
+- **RadioButtonGroup** - it has been merged into the more generic InputGroup component, which can - be used to generate groups of RadioButton or Checkbox elements, check it here
+- **ReduxFormWrapper** - it is no longer recommended to use redux-form but it is, for now, still available as a component in the package.
+
+### Updated/Fixed components
+- [BannerNavigation](https://uikit.wfp.org/docs/index.html?path=/docs/components-navigations-bannernavigation--regular-navigation) - fixed a bug where the component was hidden on tablets
+- [FileUploader](https://uikit.wfp.org/docs/index.html?path=/docs/components-forms-fileuploader-react-dropzone--regular)  - now using react-dropzone , to ensure the different use cases are covered
+- [FormHint](https://uikit.wfp.org/docs/index.html?path=/docs/components-forms-formhint--regular) - now has its own implementation, no more third party libraries
+- [Tooltip](https://uikit.wfp.org/docs/index.html?path=/docs/components-ui-elements-tooltip--regular) - now has its own implementation, no more third party libraries
+- [Card](https://uikit.wfp.org/docs/index.html?path=/docs/components-content-related-card--text-card) - it was holding variations that were more like heroes elements, so the two have been split and the Hero now is a component on its own
+- [Pagination](https://uikit.wfp.org/docs/index.html?path=/docs/components-ui-elements-pagination--regular) - improved the usability and the look and feel
+- [List](https://uikit.wfp.org/docs/index.html?path=/docs/components-ui-elements-list--regular) - now added multiple styles
+- [NumberInput](https://uikit.wfp.org/docs/index.html?path=/docs/components-forms-numberinput--regular) - better handling for developers, it should now be easier to use
+- [Notification, legacy](https://uikit.wfp.org/docs/index.html?path=/docs/components-ui-elements-notification-legacy--regular)  - now called Notification (legacy), as a new component is available (see below)
+
+### New components
+- [Hero](https://uikit.wfp.org/docs/index.html?path=/docs/components-content-related-hero--regular)  - several variations for your Hero needs.
+- [Input](https://uikit.wfp.org/docs/index.html?path=/docs/components-forms-input--regular) - a wrapper for creating custom inputs handling labels, form hints and error messages
+- [InputGroup](https://uikit.wfp.org/docs/index.html?path=/docs/components-forms-inputgroup--regular) - can be used to generate groups of RadioButton or Checkbox elements
+- [MdxComponent](https://uikit.wfp.org/docs/index.html?path=/docs/components-content-related-mdx-components--regular) - multiple components for rendering markdown with WFPs styling
+- [Notification](https://uikit.wfp.org/docs/index.html?path=/docs/components-ui-elements-notification--toast) -  it does not use react-toastify, updated look and feel
+- [Table](https://uikit.wfp.org/docs/index.html?path=/docs/components-ui-elements-table--regular) - it now has a basic implementation, not based on an external library, which is purely for data representation. We still recommend React-Table for additional features and ag-grid for even more advanced, Excel-like, functionalities.
+- [Text](https://uikit.wfp.org/docs/index.html?path=/docs/components-ui-elements-text--regular) - a utility component to align the text in your app to the official typography, avoiding global styling and the risk of side effects.
+- [Unit](https://uikit.wfp.org/docs/index.html?path=/docs/components-content-related-unit--regular) - a utility component that combines figures and their sensitive representation following the official editorial guidelines. Several units are provided, e.g. currency, metric tons, people, beneficiaries, etc.
+- [Value](https://uikit.wfp.org/docs/index.html?path=/docs/components-ui-elements-value--regular) - a utility component to display single KPIs with a description for dashboards
