@@ -1,3 +1,5 @@
+import RadioButtonGroup from './components/RadioButtonGroup/RadioButtonGroup';
+
 export {
   BannerNavigation,
   BannerNavigationItem,
@@ -67,6 +69,7 @@ export NumberInput from './components/NumberInput';
 export Pagination from './components/Pagination';
 export RadioButton from './components/RadioButton';
 export InputGroup from './components/InputGroup';
+export RadioButtonGroup from './components/RadioButtonGroup';
 export ReadMore from './components/ReadMore';
 export ReduxFormWrapper from './components/ReduxFormWrapper';
 export Search from './components/Search';
