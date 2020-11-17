@@ -40,11 +40,6 @@ export default class InputGroup extends React.Component {
     name: PropTypes.string.isRequired,
 
     /**
-     * Specify whether the group is disabled
-     */
-    disabled: PropTypes.bool,
-
-    /**
      * Provide an optional `onChange` hook that is called whenever the value of
      * the group changes
      */
