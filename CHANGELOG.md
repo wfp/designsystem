@@ -1,3 +1,10 @@
+## [1.10.7](https://github.com/WFP/UI/compare/v1.10.6...v1.10.7) (2020-11-16)
+
+
+### Bug Fixes
+
+* **Blockquote:** warning kind prop-type spelling issue fixed ([#323](https://github.com/WFP/UI/issues/323)) ([ef551e6](https://github.com/WFP/UI/commit/ef551e6d302635e26803b0867f85cf0091e4fd88))
+
 ## [1.10.6](https://github.com/WFP/UI/compare/v1.10.5...v1.10.6) (2020-11-12)
 
 
