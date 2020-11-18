@@ -8,7 +8,6 @@ import settings from '../../globals/js/settings';
 const { prefix } = settings;
 
 export default class RadioButtonGroup extends React.Component {
-  console.warn("RadioButtonGroup is depreciated and will be removed in the next versions. Use InputGroup instead");
   state = { selected: this.props.valueSelected || this.props.defaultSelected };
 
   static propTypes = {
@@ -92,7 +91,7 @@ export default class RadioButtonGroup extends React.Component {
   }
 
   getRadioButtons = () => {
-    const children = React.Children.map(this.props.children, radioButton => {
+    const children = React.Children.map(this.props.children, (radioButton) => {
       const { value, ...other } = radioButton.props;
       /* istanbul ignore if */
       if (radioButton.props.hasOwnProperty('checked')) {
@@ -152,6 +151,10 @@ export default class RadioButtonGroup extends React.Component {
     const helper = helperText ? (
       <div className="wfp--form__helper-text">{helperText}</div>
     ) : null;
+
+    console.warn(
+      'RadioButtonGroup is depreciated and will be removed in the next versions. Use InputGroup instead'
+    );
 
     return (
       <div className={wrapperClasses}>

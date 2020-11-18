@@ -3,7 +3,6 @@ import React from 'react';
 import classNames from 'classnames';
 
 export default class FormWizard extends React.Component {
-  console.warn("RadioButtonGroup is depreciated and will be removed in the next versions. Use InputGroup instead");
   static propTypes = {
     /**
      * Specify a custom css class
@@ -30,6 +29,10 @@ export default class FormWizard extends React.Component {
     const classes = {
       formControls: classNames('wfp--form-wizard', className),
     };
+
+    console.warn(
+      'RadioButtonGroup is depreciated and will be removed in the next versions. Use InputGroup instead'
+    );
 
     return (
       <div className={classes.formControls}>
