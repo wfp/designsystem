@@ -56,7 +56,6 @@ By changing the \`kind\` prop you can use different styles of the button.
 | \`secondary\` | secondary actions on each page   |
 | \`tertiary\` | simple actions on the page |
 | \`accent\` | very important actions and only once or twice on each page |
-| \`tertiary\` | simple actions on the page |
 | \`danger\` | a negative action (such as Delete) on the page |
 | \`danger--primary\` | a negative principle call to action (such as Delete) on the page |
 | \`ghost\` | in places where a regular button would draw too much attention and look similar to links |
