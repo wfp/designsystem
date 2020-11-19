@@ -8,7 +8,7 @@ export const Usd = props => {
   return currencyCalc(props, '', 'US$');
 };
 
-// Generate Partners
+// Generate People
 export const People = props => {
   return currencyCalc(props, 'People', undefined, true, true);
 };
@@ -23,12 +23,17 @@ export const Mt = props => {
   return currencyCalc(props, 'MT', undefined, true);
 };
 
-// Generate MT
+// Generate MetricTons
+export const MetricTons = props => {
+  return currencyCalc(props, 'MetricTons', undefined, true);
+};
+
+// Generate Months
 export const Months = props => {
   return currencyCalc(props, 'Months', undefined, true, 'Month');
 };
 
-// Generate MT
+// Generate Num
 export const Num = props => {
   return currencyCalc(props, '');
 };
@@ -46,6 +51,11 @@ export const Households = props => {
 // Generate Trips
 export const Trips = props => {
   return currencyCalc(props, 'Trips', undefined, true, true);
+};
+
+// Generate kg
+export const Kg = props => {
+  return SimpleCalc(props, 'kg');
 };
 
 // Generate Households

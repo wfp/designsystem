@@ -27,6 +27,9 @@ import { Props } from './Props';
 import { Stories } from './Stories';
 import { PRIMARY_STORY } from './types';*/
 //import '../src/globals/scss/styles.scss';
+
+import results from '../.jest-test-results.json';
+
 import './storybook.scss';
 
 /*
@@ -95,7 +98,7 @@ export const parameters = {
     storySort: {
       order: [
         'Getting started',
-        ['Intro', 'Browser support', 'Designers'],
+          ['Intro', 'Installing the Kit','Using the Kit','Recommended libraries', 'Design resources', 'Browser support',"What's new", 'Support and Feedback','Credits'],
         'Documentation',
         'Templates',
         'Components',
@@ -116,6 +119,14 @@ export const globalTypes = {
     },
   },
 };
+
+/*
+
+addDecorator(
+  withTests({
+    results,
+  })
+);*/
 
 const withThemeProvider = (Story, context) => {
   const theme = context.globals.theme;

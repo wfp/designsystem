@@ -8,11 +8,10 @@ import { iconSearch, iconCloseGlyph } from '@wfp/icons';
 
 const { prefix } = settings;
 
-/** The number input component is used for entering numeric values and includes controls for incrementally increasing or decreasing the value */
+/** Search enables users to specify a word or a phrase to find relevant pieces of content without the use of navigation. */
 
-function NumberInput(props) {
+function Search(props) {
   const {
-    additional,
     className,
     closeButtonLabelText,
     disabled,
@@ -21,18 +20,12 @@ function NumberInput(props) {
     hideLabel,
     hideControls,
     labelText,
-    max,
-    min,
     kind = 'large',
-    step = 1,
-    invalid,
-    invalidText,
     onChange = () => {},
     onClick = () => {},
     onSearchIconClick = () => {},
     helperText,
     light,
-    allowEmpty,
     inputRef,
     ...other
   } = props;
@@ -62,22 +55,6 @@ function NumberInput(props) {
     onChange(valueState);
   };
 
-  const handleArrowClick = (evt, direction) => {
-    let valueState = typeof value === 'string' ? Number(value) : value;
-    valueState = isNaN(valueState) ? 0 : valueState;
-
-    valueState =
-      direction === 'down' ? valueState - step : valueState + parseFloat(step);
-
-    if (!disabled) {
-      evt.persist();
-      evt.imaginaryTarget = _inputRef;
-      evt.target.value = parseFloat(valueState);
-      onClick(evt, direction);
-      setValue(valueState);
-      onChange(valueState, evt, direction);
-    }
-  };
 
   const numberInputClasses = classNames(`${prefix}--number`, className, {
     [`${prefix}--number--light`]: light,
@@ -95,17 +72,10 @@ function NumberInput(props) {
   const newProps = {
     disabled,
     id,
-    max,
-    min,
-    step,
     onChange: handleChange,
     value: value,
   };
 
-  const buttonProps = {
-    disabled,
-    type: 'button',
-  };
 
   const clearClasses = classNames({
     'wfp--search-close': true,
@@ -143,7 +113,7 @@ function NumberInput(props) {
   );
 }
 
-NumberInput.propTypes = {
+Search.propTypes = {
   /**
    * Specify an optional className to be applied to the wrapper node
    */
@@ -165,32 +135,17 @@ NumberInput.propTypes = {
   hideLabel: PropTypes.bool,
 
   /**
-   * Provide a description for up/down icons that can be read by screen readers
-   */
-  iconDescription: PropTypes.string.isRequired,
-
-  /**
    * Specify a custom `id` for the input
    */
   id: PropTypes.string.isRequired,
 
-  /**
+   /**
    * Generic `label` that will be used as the textual representation of what
    * this field is for
    */
   labelText: PropTypes.node,
 
-  /**
-   * The maximum value.
-   */
-  max: PropTypes.number,
-
-  /**
-   * The minimum value.
-   */
-  min: PropTypes.number,
-
-  /**
+   /**
    * The new value is available in 'imaginaryTarget.value'
    * i.e. to get the value: evt.imaginaryTarget.value
    */
@@ -202,54 +157,13 @@ NumberInput.propTypes = {
   onClick: PropTypes.func,
 
   /**
-   * Specify how much the valus should increase/decrease upon clicking on up/down button
-   */
-  step: PropTypes.number,
-
-  /**
-   * Name property
-   */
-  name: PropTypes.string,
-
-  /**
-   * Specify the value of the input, if undefined or null the value is empty
-   */
-  value: PropTypes.string,
-
-  /**
-   * Specify if the currently value is invalid.
-   */
-  invalid: PropTypes.bool,
-
-  /**
-   * Message which is displayed if the value is invalid.
-   */
-  invalidText: PropTypes.string,
-
-  /**
-   * Provide additional component that is used alongside the input for customization
-   */
-  additional: PropTypes.node,
-
-  /**
    * Provide text that is used alongside the control label for additional help
    */
   helperText: PropTypes.node,
-
   /**
    * `true` to use the light version.
    */
   light: PropTypes.bool,
-
-  /**
-   * `true` to allow empty string.
-   */
-  allowEmpty: PropTypes.bool,
-
-  /**
-   * `true` to allow empty string.
-   */
-  closeButtonLabelText: PropTypes.string,
 };
 
-export default NumberInput;
+export default Search;

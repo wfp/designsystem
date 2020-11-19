@@ -33,7 +33,8 @@
     overflow: auto;
     content: '';
     opacity: 0;
-    background-color: rgba(var(--ui-07), 0.5);
+    //background-color: rgba(var(--ui-07), 0.5);
+    background-color: var(--modal-background-01);
     transition: opacity 200ms, z-index 0s 200ms, visibility 0s 200ms;
     visibility: hidden;
 
@@ -73,6 +74,16 @@
     display: flex;
     flex-direction: column;
     background-color: var(--ui-01);
+    overflow: hidden;
+    &:before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      content: '';
+      background: var(--interactive-01);
+    }
     //border-top: $modal-border-top;
     border-radius: $modal-border-radius;
     min-width: 100%;

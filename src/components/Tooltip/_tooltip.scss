@@ -9,7 +9,14 @@
   -webkit-tap-highlight-color: transparent;
   background: var(--ui-01);
   padding: $spacing-xs;
+  &.#{$prefix}--tooltip--disable-padding {
+    padding: 0;
+  }
+  &.#{$prefix}--tooltip--click {
+    cursor: pointer;
+  }
   opacity: 0;
+  display: none;
   transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
   transition-property: transform;
   cursor: pointer;
@@ -73,6 +80,7 @@
 
 .#{$prefix}--tooltip--visible {
   opacity: 1;
+  display: block;
 }
 
 .#{$prefix}--tooltip__arrow {

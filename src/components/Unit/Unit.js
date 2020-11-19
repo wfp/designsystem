@@ -11,6 +11,8 @@ import {
   Months,
   Level,
   Mt,
+  Kg,
+  MetricTons,
   Trips,
   None,
   Num,
@@ -27,6 +29,8 @@ const components = {
   Households,
   Months,
   Mt,
+  Kg,
+  MetricTons,
   Num,
   Level,
   None,
@@ -67,7 +71,7 @@ const Unit = (props) => {
   }
 
   if (Unit === undefined) {
-    /* console.warn(`The unit "${type}" is undefined`); */
+     console.warn(`The unit "${type}" is undefined`); 
     return null;
   }
 
@@ -112,9 +116,7 @@ Unit.propTypes = {
   /**
     The unit type  */
   type: PropTypes.oneOf([
-    undefined,
     'none',
-    'narrow',
     'usd',
     'partners',
     'beneficiaries',

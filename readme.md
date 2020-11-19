@@ -2,10 +2,10 @@
 
 ## **[Click here to visit: Living Style Guide & Documentation](https://wfp.org/UIGuide)**
 
-| Branch | Build Status                                                                                       |
-| ------ | -------------------------------------------------------------------------------------------------- |
-| master | [![Build Status](https://travis-ci.org/wfp/ui.svg?branch=master)](https://travis-ci.org/wfp/ui)    |
-| v1.5   | [![Build Status](https://travis-ci.org/wfp/ui.svg?branch=feat/v1.5)](https://travis-ci.org/wfp/ui) |
+| Branch | Build Status          |
+| ------ | --------------------- |
+| master | [![Build Status]()]() |
+| v1.5   | [![Build Status]()]() |
 
 ## ![Usage](https://cdn.wfp.org/guides/ui/v1.2.0/assets/internal/toolkit.svg 'Usage') Usage
 
@@ -27,14 +27,14 @@ yarn add @wfp/icons
 
 Import a react component
 
-```bash
+```jsx
 import { Breadcrumb, BreadcrumbItem, BreadcrumbHome } from '@wfp/ui';
 ```
 
 Import the CSS
 
-```bash
-@import '@wfp/ui/assets/css/styles';
+```jsx
+import '@wfp/ui/assets/css/styles.css';
 ```
 
 Additional information about the Usage can be found [here](https://wfp.org/UIGuide).

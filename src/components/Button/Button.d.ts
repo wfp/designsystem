@@ -1,7 +1,7 @@
 import { bool } from 'prop-types';
 
-export interface IButton {
+export interface WFPButton {
   disabled: boolean;
   small: boolean;
-  href: string;
+  href: string | null;
 }

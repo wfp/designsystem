@@ -1,0 +1,48 @@
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+
+## Usage
+
+**NumberInput** are used to let the user enter a number. They include built-in validation to reject non-numerical entries. They provide stepper arrows to let the user increase and decrease the value using their mouse or by simply tapping with a fingertip.
+
+- Inputs with custom input elements but standardized labelText and helperText
+
+```jsx
+<Input
+    formItemClassName={classes}
+    invalid={invalid}
+    invalidText={invalid && invalid.message}
+    labelText={labelText}
+    >
+    {() => (
+        <Select
+        className="wfp--react-select-container"
+        classNamePrefix="wfp--react-select"
+        />
+    )}
+</Input>
+);
+```
+
+#### When not to use
+
+- Do not replace existing components
+
+## Related
+
+[TextInput](?path=/docs/components-forms-textinput--regular)
+
+[TextArea](?path=/docs/components-forms-textarea--regular)
+
+[Checkbox](?path=/docs/components-forms-checkbox--regular)
+
+[RadioButton](?path=/docs/components-forms-radiobutton--regular)
+
+[Search](?path=/docs/components-forms-search--regular)
+
+[NumberInput](?path=/docs/components-forms-numberinput--regular)
+
+[InputGroup](?path=/docs/components-forms-inputgroup--regular)
+
+```
+
+```

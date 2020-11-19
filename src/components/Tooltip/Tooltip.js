@@ -24,6 +24,7 @@ export const tooltipStyleDark = {
 const Tooltip = ({
   className,
   dark,
+  disablePadding,
   children,
   content,
   trigger = 'hover',
@@ -71,6 +72,8 @@ const Tooltip = ({
   const classNames = classnames(className, {
     [`${prefix}--tooltip`]: true,
     [`${prefix}--tooltip--visible`]: isShown,
+    [`${prefix}--tooltip--disable-padding`]: disablePadding,
+    [`${prefix}--tooltip--${trigger}`]: trigger,
     [`${prefix}--tooltip--dark`]: dark,
   });
 
@@ -124,6 +127,10 @@ Tooltip.propTypes = {
    * Provide a dark styled tooltip
    */
   dark: PropTypes.bool,
+  /**
+   * Disable the default inner padding of the tooltip
+   */
+  disablePadding: PropTypes.bool,
   /**
    * Provide the placement of the tooltip
    */

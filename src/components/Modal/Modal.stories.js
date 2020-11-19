@@ -13,4 +13,9 @@ export default {
   },
 };
 
-export const Regular = (args) => <Modal {...args}>Text</Modal>;
+export const Regular = (args) => (
+  <>
+    Use the open property in the table below to enable the preview.{' '}
+    <Modal {...args}>Text</Modal>
+  </>
+);

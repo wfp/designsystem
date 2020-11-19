@@ -4,7 +4,6 @@ import classNames from 'classnames';
 
 /**
  * Cards are a convenient means of displaying content composed of different types of objects. It is a multi usage component which creates boxes that are usually teasing some kind of content. */
-
 const Card = ({
   children,
   className,
@@ -17,65 +16,61 @@ const Card = ({
   title,
   kind,
   url,
+  cardWidth,
+  cardHeight,
   ...other
 }) => {
   const style =
-    kind !== 'related'
+    kind == 'overlay'
       ? {
           backgroundImage: `url(${image})`,
         }
       : {};
 
-  const wrapperClasses = classNames('wfp--photo-card', {
-    [`wfp--photo-card--${kind}`]: kind,
-    'wfp--photo-card--no-background': !image,
-    'wfp--photo-card--link': isLink,
+  const pagewidth = cardWidth ? cardWidth : '300px';
+  const pageheight = cardHeight ? cardHeight : '260px';
+
+  const wrapperClasses = classNames('wfp--card-box', {
+    [`wfp--photo-cardnew--${kind}`]: kind,
+    'wfp--photo-cardnew--no-background': !image,
+    'wfp--photo-cardnew--link': isLink,
     [`${className}`]: className,
   });
 
   const content = (
-    <React.Fragment>
-      <div className="wfp--photo-card__background" style={style} />
-      {image && kind === 'related' && <img src={image} alt={title} />}
-      <div className="wfp--photo-card__info">
+    <>
+      <div className="wfp--photo-cardnew__background" style={style} />
+      {image && kind === 'image-header' && (
+        <img src={image} alt={title} className="wfp--header-photo" />
+      )}
+      <div className="wfp--photo-cardnew__info">
         <div>
-          {(kind === 'landscape' || kind === 'hero') && (
-            <div className="wfp--photo-card__info__background" style={style} />
+          {kind === 'overlay' && (
+            <div
+              className="wfp--photo-cardnew__info__background"
+              style={style}
+            />
           )}
           {metadata && (
-            <p className="wfp--photo-card__info__metadata">{metadata}</p>
+            <p className="wfp--photo-cardnew__info__metadata">{metadata}</p>
           )}
-          {title && (kind === 'hero' || kind === 'page-splash') && (
-            <h2 className="wfp--photo-card__info__title">{title}</h2>
-          )}
-          {title && kind !== 'hero' && kind !== 'page-splash' && (
-            <h3 className="wfp--photo-card__info__title">{title}</h3>
+          {title && (
+            <h3 className="wfp--photo-cardnew__info__title">{title}</h3>
           )}
           {subTitle && (
-            <p className="wfp--photo-card__info__subtitle">{subTitle}</p>
+            <p className="wfp--photo-cardnew__info__subtitle">{subTitle}</p>
           )}
         </div>
-
-        {kind === 'hero' ||
-          kind === 'splash-image' ||
-          (kind === 'splash-compact' && (
-            <div className="wfp--photo-card__info__more">{more}</div>
-          ))}
       </div>
       {children}
-    </React.Fragment>
+    </>
   );
 
-  return isLink ? (
-    <a
-      href={url}
-      target={isExternal ? '_blank' : ''}
+  return (
+    <div
       className={wrapperClasses}
-      {...other}>
-      {content}
-    </a>
-  ) : (
-    <div className={wrapperClasses} {...other}>
+      {...other}
+      style={{ width: pagewidth, minHeight: pageheight }}>
       {content}
     </div>
   );
@@ -121,25 +116,24 @@ Card.propTypes = {
   /**
   Kind of Card
 */
-  kind: PropTypes.oneOf([
-    'landscape',
-    'landscape-light',
-    'emergencies',
-    'split',
-    'hero',
-    'splash',
-    'splash-image',
-    'splash-compact',
-    'related',
-  ]).isRequired,
+  kind: PropTypes.oneOf(['text-card', 'image-header', 'overlay']).isRequired,
   /**
   The URL where the content uploaded is located.
 */
   url: PropTypes.string,
+  /**
+   * override default card width with preferred width
+   */
+  cardWidth: PropTypes.string,
+
+  /**
+   * override default card width with preferred width
+   */
+  cardHeight: PropTypes.string,
 };
 
 Card.defaultProps = {
-  isLink: true,
+  isLink: false,
 };
 
 export default Card;
