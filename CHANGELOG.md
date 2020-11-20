@@ -1,3 +1,12 @@
+## [1.10.8](https://github.com/WFP/UI/compare/v1.10.7...v1.10.8) (2020-11-19)
+
+
+### Bug Fixes
+
+* **Dependencies:** moving dependencies to dev dependencies ([3dbb4fb](https://github.com/WFP/UI/commit/3dbb4fbc8cbc41053fd78b4141b2ec138b8dd7a1))
+* **Notification:** file was missing ([6d4473b](https://github.com/WFP/UI/commit/6d4473b318ead728832c850f0234203283c8789c))
+* **Package:** updated lock file ([c4432a4](https://github.com/WFP/UI/commit/c4432a43648120b1e17b1feb515d28743413ef34))
+
 ## [1.10.7](https://github.com/WFP/UI/compare/v1.10.6...v1.10.7) (2020-11-16)
 
 
