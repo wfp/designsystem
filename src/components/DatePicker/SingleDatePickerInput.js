@@ -12,6 +12,7 @@ export class SingleDatePickerInput extends PureComponent {
   };
 
   handleFocusChange = focusedInput => {
+    console.log("helloFocus: ", focusedInput)
     if (!focusedInput && typeof this.props.onBlur === 'function') {
       this.props.onBlur();
     }
@@ -73,6 +74,7 @@ export class SingleDatePickerInput extends PureComponent {
           focused={focused}
           hideKeyboardShortcutsPanel
           onDateChange={value => {
+            console.log("onchange here: ", value)
             if (onChange) {
               onChange({ value });
             }
