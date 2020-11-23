@@ -20,9 +20,16 @@
   > div {
     > div {
       overflow: visible !important;
+      /*&:first-child {
+        z-index: 1 !important;
+      }
+      &:last-child {
+        z-index: 0 !important;
+      }*/
     }
   }
 }
+
 .sbdocs {
   //font-weight: 400;
   //@extend .wfp--story;
@@ -68,7 +75,7 @@
     padding-top: 2rem;
   }
   &.sbdocs-content {
-    width: 80%;
+    width: 100%;
   }
 
   ol {

@@ -30,7 +30,7 @@ export const Regular = (args) => <Loading {...args}>Text</Loading>;
 export const withoutOverlay = (args) => <Loading {...args}>Text</Loading>;
 
 const description = `
-When loader is applied with an overlay. Don this by specifying \`false\` to \`withOverlay\` prop.
+When loader is applied with an overlay. Do this by specifying \`false\` to \`withOverlay\` prop.
 `;
 
 withoutOverlay.args = {

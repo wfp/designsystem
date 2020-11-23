@@ -61,10 +61,11 @@
     max-width: 500px;
   }
 
-  @include breakpointMax(bp--md--major) {
-    .#{$prefix}--wrapper--width-mobile-full {
-      padding-left: 0;
-      padding-right: 0;
-    }
-  }
+  // Commented out to maintain right and left padding on MainNavigation
+  // @include breakpointMax(bp--md--major) {
+  //   .#{$prefix}--wrapper--width-mobile-full {
+  //     padding-left: 0;
+  //     padding-right: 0;
+  //   }
+  // }
 }
