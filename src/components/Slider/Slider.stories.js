@@ -12,14 +12,13 @@ export default {
   },
 };
 
-export const RegularSlider = (args) => <Slider id="slider2" />;
+export const RegularSlider = (args) => <Slider id="slider2" {...args} />;
 
 RegularSlider.args = {
   name: 'Form item name (name)',
-  inputType: 'number',
-  value: 50,
+  value: 25,
   min: 0,
-  max: 100,
+  max: 50,
   step: 1,
   stepMuliplier: 4,
   labelText: 'Slider Label',
@@ -36,9 +35,9 @@ hideTextInput.args = {
   name: 'Form item name (name)',
   inputType: 'number',
   hideTextInput: true,
-  value: 50,
+  value: 25,
   min: 0,
-  max: 100,
+  max: 50,
   step: 1,
   stepMuliplier: 4,
   labelText: 'Slider Label',

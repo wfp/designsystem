@@ -1,81 +1,164 @@
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import classNames from 'classnames';
 import settings from '../../globals/js/settings';
-import FormItem from '../FormItem';
-import Input from '../Input/Input';
+import Input from '../Input';
+import TextInput from '../TextInput';
 
 const { prefix } = settings;
 
-/** Text inputs enable the user to interact with and input content and data. This component can be used for long and short form entries. */
-const Slider = (props) => {
+const defaultFormatLabel = (value, label) => {
+  return typeof label === 'function' ? label(value) : `${value}${label}`;
+};
+
+function PropTypeEmptyString(props, propName, componentName) {
+  componentName = componentName || 'ANONYMOUS';
+  if (props[propName]) {
+    let value = props[propName];
+    if (typeof value === 'string' && value !== '') {
+      return new Error(
+        propName + ' in ' + componentName + ' is not an empty string'
+      );
+    }
+  }
+  return null;
+}
+
+/** Sliders provide a visual indication of adjustable content, where the user can move the handle along a horizontal track to increase or decrease the value. */
+
+function NumberInput(props) {
   const {
-    disabled,
-    labelText,
+    additional,
+    ariaLabelInput,
     className,
-    id,
+    disabled,
+    formatLabel = defaultFormatLabel,
     formItemClassName,
-    placeholder,
-    type,
-    onChange,
-    onClick,
+    fullWidth,
+    id,
+    inputType,
     hideLabel,
+    hideControls,
+    hideTextInput,
+    labelText,
+    min,
+    minLabel,
+    max,
+    maxLabel,
+    step = 1,
     invalid,
     invalidText,
+    onChange = () => {},
+    onClick = () => {},
     helperText,
-    inputRef,
     light,
-    required,
+    allowEmpty,
+    inputRef,
     ...other
   } = props;
 
-  const textInputClasses = classNames(`${prefix}--text`, className, {
-    [`${prefix}--text--light`]: light,
-    [`${prefix}--text--helpertext`]: helperText,
-    [`${prefix}--text--nolabel`]: hideLabel,
-    [`${prefix}--text--required`]: required,
+  const initialValue = props.value;
+  const [value, setValue] = useState(initialValue);
+
+  useEffect(() => {
+    setValue(props.value);
+  }, [props.value]);
+
+  const newInputRef = useRef(null);
+  var _inputRef = inputRef ? inputRef : newInputRef;
+
+  const handleChange = (evt) => {
+    if (!disabled) {
+      evt.persist();
+      evt.imaginaryTarget = _inputRef;
+
+      setValue(evt.target.value);
+      onChange(parseFloat(evt.target.value), evt);
+    }
+  };
+
+  const numberInputClasses = classNames(
+    `${prefix}--slider--wrapper`,
+    className,
+    {
+      [`${prefix}--slider--light`]: light,
+      [`${prefix}--slider--helpertext`]: helperText,
+      [`${prefix}--slider--nolabel`]: hideLabel,
+      [`${prefix}--slider--nocontrols`]: hideControls,
+    }
+  );
+
+  const sliderContainerClasses = classNames('wfp--slider-container', {
+    'wfp--slider-container--full-width': fullWidth,
   });
 
   const newProps = {
     disabled,
     id,
+    max,
+    min,
+    step,
+    onChange: handleChange,
+    value: value,
   };
 
+  const inputClasses = classNames('wfp--input', 'wfp--slider-text-input', {
+    'wfp--text-input--light': light,
+  });
+
+  const sliderClasses = classNames(
+    'wfp--slider',
+    { 'wfp--slider--disabled': disabled },
+    className
+  );
+
   return (
-    <Input {...props} formItemClassName={formItemClassName}>
-      {(e) => {
+    <Input {...props} formItemClassName={numberInputClasses}>
+      {() => {
         return (
-          <input
-            min="1"
-            max="100"
-            value="50"
-            {...other}
-            {...newProps}
-            ref={inputRef}
-            className={textInputClasses}
-            {...e}
-          />
+          <div className={sliderContainerClasses}>
+            <span className="wfp--slider__range-label">
+              {formatLabel(min, minLabel)}
+            </span>
+            <input
+              className={sliderClasses}
+              type="range"
+              {...other}
+              {...newProps}
+              ref={_inputRef}
+            />
+            <span className="wfp--slider__range-label">
+              {formatLabel(max, maxLabel)}
+            </span>
+            {!hideTextInput && (
+              <TextInput
+                disabled={disabled}
+                type={inputType}
+                id="input-for-slider"
+                className={inputClasses}
+                value={value}
+                onChange={handleChange}
+                labelText=""
+                aria-label={ariaLabelInput}
+              />
+            )}
+          </div>
         );
       }}
     </Input>
   );
-};
+}
 
-Slider.propTypes = {
+NumberInput.propTypes = {
   /**
-   * Specify an optional className to be applied to the &lt;input&gt; node
+   * Specify an optional className to be applied to the wrapper node
    */
   className: PropTypes.string,
 
   /**
-   * Optionally provide the default value of the &lt;input&gt;
+   * `true` to hide the number input box.
    */
-  defaultValue: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-
-  /**
-   * Specify whether the &lt;input&gt; should be disabled
-   */
-  disabled: PropTypes.bool,
+  hideTextInput: PropTypes.bool,
 
   /**
    * Specify an optional className to be applied to the form-item node
@@ -83,47 +166,9 @@ Slider.propTypes = {
   formItemClassName: PropTypes.string,
 
   /**
-   * Specify a custom `id` for the &lt;input&gt;
+   * Specify if the control should be disabled, or not
    */
-  id: PropTypes.string,
-
-  /**
-   * Provide the text that will be read by a screen reader when visiting this
-   * control
-   */
-  labelText: PropTypes.node,
-
-  /**
-   * Specify a custom `name` for the &lt;input&gt;
-   */
-  name: PropTypes.string.isRequired,
-
-  /**
-   * Optionally provide an `onChange` handler that is called whenever &lt;input&gt;
-   * is updated
-   */
-  onChange: PropTypes.func,
-
-  /**
-   * Optionally provide an `onClick` handler that is called whenever the
-   * &lt;input&gt; is clicked
-   */
-  onClick: PropTypes.func,
-
-  /**
-   * Specify the placeholder attribute for the &lt;input&gt;
-   */
-  placeholder: PropTypes.string,
-
-  /**
-   * Specify the type of the &lt;input&gt;
-   */
-  type: PropTypes.string,
-
-  /**
-   * Specify the value of the &lt;input&gt;
-   */
-  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  disabled: PropTypes.bool,
 
   /**
    * Specify whether you want the underlying label to be visually hidden
@@ -131,12 +176,94 @@ Slider.propTypes = {
   hideLabel: PropTypes.bool,
 
   /**
-   * Specify whether the control is currently invalid
+   * Specify a custom `id` for the input
+   */
+  id: PropTypes.string.isRequired,
+
+  /**
+   * Generic `label` that will be used as the textual representation of what
+   * this field is for
+   */
+  labelText: PropTypes.node,
+
+  /**
+   * The minimum value.
+   */
+  min: PropTypes.number.isRequired,
+
+  /**
+   * The label associated with the minimum value.
+   */
+  minLabel: PropTypes.string,
+
+  /**
+   * The maximum value.
+   */
+  max: PropTypes.number.isRequired,
+
+  /**
+   * The label associated with the maximum value.
+   */
+  maxLabel: PropTypes.string,
+
+  /**
+   * The callback to format the label associated with the minimum/maximum value.
+   */
+  formatLabel: PropTypes.func,
+
+  /**
+   * The new value is available in 'imaginaryTarget.value'
+   * i.e. to get the value: evt.imaginaryTarget.value
+   */
+  onChange: PropTypes.func,
+
+  /**
+   * Provide an optional function to be called when the up/down button is clicked
+   */
+  onClick: PropTypes.func,
+
+  /**
+   * `true` to disable this slider.
+   */
+  disabled: PropTypes.bool,
+
+  /**
+   * The `name` attribute of the `<input>`.
+   */
+  name: PropTypes.string,
+
+  /**
+   * The `type` attribute of the `<input>`.
+   */
+  inputType: PropTypes.string,
+
+  /**
+   * The `ariaLabel` for the `<input>`.
+   */
+  ariaLabelInput: PropTypes.string,
+
+  /**
+   * A value determining how much the value should increase/decrease by moving the thumb by mouse.
+   */
+  step: PropTypes.number,
+
+  /**
+   * A value determining how much the value should increase/decrease by Shift+arrow keys, which will be `(max - min) / stepMuliplier`.
+   */
+  stepMuliplier: PropTypes.number,
+
+  /**
+   * Specify the value of the input, if undefined or null the value is empty
+   */
+  value: PropTypes.oneOfType([PropTypeEmptyString, PropTypes.number]),
+
+  /**
+   * Specify if the currently value is invalid.
    */
   invalid: PropTypes.bool,
 
   /**
-   * Provide the text that is displayed when the control is in an invalid state
+   * Message which is displayed if the value is invalid.
    */
   invalidText: PropTypes.string,
 
@@ -154,18 +281,28 @@ Slider.propTypes = {
    * `true` to use the light version.
    */
   light: PropTypes.bool,
+
+  /**
+   * `true` to allow empty string.
+   */
+  allowEmpty: PropTypes.bool,
+  /**
+   * Use the width of the parent element
+   */
+  fullWidth: PropTypes.bool,
 };
 
-Slider.defaultProps = {
-  className: 'wfp--slider-input',
+NumberInput.defaultProps = {
+  fullWidth: false,
+  hideTextInput: false,
+  step: 1,
+  stepMuliplier: 4,
   disabled: false,
-  type: 'range',
-  onChange: () => {},
-  onClick: () => {},
-  invalid: false,
-  invalidText: '',
-  helperText: '',
+  minLabel: '',
+  maxLabel: '',
+  inputType: 'number',
+  ariaLabelInput: 'Slider number input',
   light: false,
 };
 
-export default Slider;
+export default NumberInput;
