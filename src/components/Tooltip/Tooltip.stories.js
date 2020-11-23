@@ -2,6 +2,7 @@ import React from 'react';
 import Tooltip from './Tooltip';
 import { tooltipStyle, tooltipStyleDark } from './Tooltip';
 import markdown from './README.mdx';
+import TooltipTrigger from 'react-popper-tooltip';
 
 export default {
   title: 'Components/UI Elements/Tooltip',
@@ -38,14 +39,32 @@ Dark.args = {
   dark: true,
 };
 
-/*
-export const Dark = (args) => (
-  <Tippy
+Dark.story = {
+  parameters: {
+    docs: {
+      storyDescription: `Use the \`dark\` style as an alternative for small tooltips`,
+    },
+  },
+};
+
+export const UseWrapper = (args) => (
+  <Tooltip
     // options
-    content="Welcome to the tooltip"
-    trigger="click"
-    {...tooltipStyleDark}>
+    {...args}>
     <span>Click here to show tooltip</span>
-  </Tippy>
+  </Tooltip>
 );
-*/
+
+UseWrapper.story = {
+  parameters: {
+    docs: {
+      storyDescription: `By using the \`useWrapper\` prop a html element around the trigger will be added. This is useful for components without \`forwardRef\` support.`,
+    },
+  },
+};
+
+UseWrapper.args = {
+  content: 'Label text',
+  children: 'This is a helper text',
+  useWrapper: true,
+};
