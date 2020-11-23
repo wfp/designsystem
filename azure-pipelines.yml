@@ -60,6 +60,7 @@ jobs:
       displayName: 'npm run build:storybook'
       env:
         STORYBOOK_NPM_VERSION: $(nextRelease)
+        STORYBOOK_INTERNAL_ASSETS: 
         STORYBOOK_ASSETS: https://cdn.wfp.org/guides/ui/assets/v0.0.1/
 
 
