@@ -4,11 +4,11 @@ Using the **ReadMore** component is a simple way to keep longer content from clu
 
 Based on the type of content use [react-truncate](https://www.npmjs.com/package/react-truncate) or [react-truncate-html](https://www.npmjs.com/package/react-truncate-html) to truncate the collapsed content.
 
-```js
+```jsx
 import Truncate from 'react-truncate';
 ```
 
-```js
+```jsx
 <ReadMore
   collapsed={
     <Truncate lines={1} ellipsis="...">
@@ -23,7 +23,7 @@ import Truncate from 'react-truncate';
 
 The `maxHeight` prop will allow the content to be collapsed if it extends a specific height. It will only work without the `collapsed` prop.
 
-```js
+```jsx
 <ReadMore fade maxHeight={30}>
   The content
 </ReadMore>
