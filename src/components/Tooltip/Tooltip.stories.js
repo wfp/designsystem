@@ -39,6 +39,14 @@ Dark.args = {
   dark: true,
 };
 
+Dark.story = {
+  parameters: {
+    docs: {
+      storyDescription: `Use the \`dark\` style as an alternative for small tooltips`,
+    },
+  },
+};
+
 export const UseWrapper = (args) => (
   <Tooltip
     // options
@@ -46,6 +54,14 @@ export const UseWrapper = (args) => (
     <span>Click here to show tooltip</span>
   </Tooltip>
 );
+
+UseWrapper.story = {
+  parameters: {
+    docs: {
+      storyDescription: `By using the \`useWrapper\` prop a html element around the trigger will be added. This is useful for components without \`forwardRef\` support.`,
+    },
+  },
+};
 
 UseWrapper.args = {
   content: 'Label text',

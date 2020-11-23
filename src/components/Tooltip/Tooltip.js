@@ -155,7 +155,7 @@ Tooltip.propTypes = {
    */
   usePortal: PropTypes.bool,
   /**
-   * Use a wrapper html element aroud the trigger. Useful for components without `forwardRef` support.
+   * Use a wrapper html element around the trigger. Useful for components without `forwardRef` support.
    */
   useWrapper: PropTypes.bool,
 };
