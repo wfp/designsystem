@@ -94,6 +94,12 @@
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
+.storybook__fullWidth {
+  width: 97vw;
+  margin-left: calc((97vw - 100%) / -2);
+  //margin-left: calc((-100vw - 100%) / 2);
+}
+
 /*
 .sticky-preview-wrapper {
   display: flex;

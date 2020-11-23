@@ -27,6 +27,7 @@ export default {
     componentSubtitle: 'Component',
     status: 'released',
     mdx: markdown,
+    previewWidth: 'full',
   },
 };
 
@@ -55,7 +56,6 @@ export const Regular = (args) => (
                       id="search-2"
                       labelText="Filter"
                       placeHolderText="Filter list"
-                      
                     />
                     {/* onChange={() => {
                         alert('Apply Filter');
