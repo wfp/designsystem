@@ -1,3 +1,5 @@
+export Wizard from './documentation/WizardForm/Wizard';
+
 export {
   BannerNavigation,
   BannerNavigationItem,

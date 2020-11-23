@@ -28,7 +28,6 @@ export default {
 export const singleDatePicker = (args) => <SingleDatePickerInput {...args} />;
 singleDatePicker.args = {
   datePicker: SingleDatePicker,
-  date: moment(),
   labelText: 'Label text (labelText)',
   placeholder: 'Placeholder text (placeholder)',
   disabled: false,
@@ -129,7 +128,6 @@ export const DatePickerHookForm = (args) => {
           invalidText="A valid value is required"
           labelText="Label datepicker"
           onBlur={()=>{console.log("Blur")}}
-          onChange={()=>{console.log("onChange")}}
           onFocus={()=>{console.log("onFocus")}}
           placeholder="Placeholder text (placeholder)"
           showDefaultInputIcon
@@ -137,7 +135,7 @@ export const DatePickerHookForm = (args) => {
       }
       control={control}
       valueName="selected" // DateSelect value's name is selected
-      onChange={([selected]) => {console.log("selected is ", selected)}}
+      onChange={([selected]) =>  selected }
       name="SingleDatePicker"
       className="input"
       placeholderText="Select date"
@@ -147,7 +145,7 @@ export const DatePickerHookForm = (args) => {
 };
 
 export const DatePickerRangeHookForm = (args) => {
-  const { handleSubmit, register, reset, control } = useForm();
+  const { control } = useForm();
   return(
   <div>
     <Controller
@@ -169,7 +167,7 @@ export const DatePickerRangeHookForm = (args) => {
       control={control}
       valueName="selected" // DateSelect value's name is selected
       onChange={([selected]) => selected}
-      name="SingleDatePicker"
+      name="DateRangePicker"
       className="input"
       placeholderText="Select date"
     />

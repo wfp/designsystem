@@ -6,8 +6,9 @@ import settings from '../../globals/js/settings';
 const { prefix } = settings;
 
 export class SingleDatePickerInput extends PureComponent {
+  
   state = {
-    controlledValue: this.props.initialValue ? this.props.value : null,
+    controlledValue: this.props.value ? this.props.value : null,
     focusedInput: null,
   };
 
@@ -20,6 +21,8 @@ export class SingleDatePickerInput extends PureComponent {
   };
 
   render() {
+    console.log("controlledValue",this.props.value, this.state.controlledValue )
+  
     const {
       controlled,
       datePicker,
@@ -77,8 +80,11 @@ export class SingleDatePickerInput extends PureComponent {
             console.log("onchange here: ", value)
             if (onChange) {
               onChange({ value });
+              console.log("onchange clicked: ", value, this.props.value)
             }
-            this.setState({ controlledValue: value });
+            this.setState({ controlledValue: value },() => {
+              console.log("setstate conntrolledValue: ", this.state.controlledValue)
+          });
           }}
           onFocusChange={({ focused }) => {
             this.setState({ focused });
@@ -105,7 +111,7 @@ SingleDatePickerInput.propTypes = {
   datePicker: PropTypes.func.isRequired,
   /**
    * Provide a custom className that is applied directly to the underlying
-   * <textarea> node
+   * node
    */
   className: PropTypes.string,
   /**
@@ -125,27 +131,31 @@ SingleDatePickerInput.propTypes = {
   labelText: PropTypes.node.isRequired,
 
   /**
-   * Optionally provide an `onChange` handler that is called whenever <textarea>
+   * Optionally provide an `onChange` handler that is called whenever date
    * is updated
    */
   onChange: PropTypes.func,
 
   /**
    * Optionally provide an `onClick` handler that is called whenever the
-   * <textarea> is clicked
+   * date is clicked
    */
   onClick: PropTypes.func,
 
   /**
-   * Specify the placeholder attribute for the <textarea>
+   * Specify the placeholder attribute for the datepicker
    */
   placeholder: PropTypes.string,
 
   /**
-   * Specify the rows attribute for the <textarea>
+   * Specify whether to clear selected date or not
    */
-  rows: PropTypes.number,
+  showClearDate:PropTypes.bool,
 
+  /**
+   * Specify whether you want to show the calendar icon. It is true by default.
+   */
+  showDefaultInputIcon: PropTypes.bool,
   /**
    * Specify whether the control is currently invalid
    */
