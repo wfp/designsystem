@@ -33,7 +33,7 @@ const ChildrenContainer = styled.div<PreviewProps>(({ isColumn, columns }) => ({
   display: 'flex',
   position: 'relative',
   flexWrap: 'wrap',
-  padding: '10px 20px 30px 20px',
+  padding: '10px 10px 30px 10px',
   overflow: 'auto',
   flexDirection: isColumn ? 'column' : 'row',
 
