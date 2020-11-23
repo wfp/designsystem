@@ -15,6 +15,7 @@ export default {
     mdx: markdown,
     introText:
       'Not Found page is also known as an “error page” or “404” page. This page indicates that the user reached the domain they requested, but the URL path provided no information.',
+    previewWidth: 'full',
   },
 };
 
