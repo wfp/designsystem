@@ -216,7 +216,7 @@ const iconTypes = {
   warning: iconWarningSolid,
   ['warning-alt']: WarningAltFilled20,
   info: iconInfoGlyph,
-  ['info-square']: InformationSquareFilled20,
+  //['info-square']: InformationSquareFilled20,
 };
 
 function NotificationIcon({ iconDescription, kind, notificationType }) {
@@ -241,7 +241,7 @@ NotificationIcon.propTypes = {
     'warning',
     'warning-alt',
     'info',
-    'info-square',
+    //'info-square',
   ]).isRequired,
   notificationType: PropTypes.oneOf(['inline', 'toast']).isRequired,
 };
@@ -353,7 +353,7 @@ ToastNotification.propTypes = {
   kind: PropTypes.oneOf([
     'error',
     'info',
-    'info-square',
+    //'info-square',
     'success',
     'warning',
     'warning-alt',
@@ -506,7 +506,7 @@ InlineNotification.propTypes = {
   kind: PropTypes.oneOf([
     'error',
     'info',
-    'info-square',
+    //'info-square',
     'success',
     'warning',
     'warning-alt',
