@@ -1,4 +1,4 @@
-export Wizard from './documentation/WizardForm/Wizard';
+import Wizard from './documentation/WizardForm/Wizard';
 
 export {
   BannerNavigation,
