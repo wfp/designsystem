@@ -1,3 +1,11 @@
+## [1.10.10](https://github.com/WFP/UI/compare/v1.10.9...v1.10.10) (2020-11-24)
+
+
+### Bug Fixes
+
+* **colors:** added colors to export again ([6c431e6](https://github.com/WFP/UI/commit/6c431e6df20db641dae6cfe4f5a90ae9319925f0))
+* **Notification:** not existing icon removed ([#324](https://github.com/WFP/UI/issues/324)) ([d7ec782](https://github.com/WFP/UI/commit/d7ec782a8d7c5ed8b09119da31a5b9e808b34993))
+
 ## [1.10.9](https://github.com/WFP/UI/compare/v1.10.8...v1.10.9) (2020-11-23)
 
 
