@@ -7,9 +7,9 @@ import {
   iconError,
   iconCheckmarkGlyph,
   iconWarningSolid,
-  WarningAltFilled20,
+  //WarningAltFilled20,
   iconInfoGlyph,
-  InformationSquareFilled20,
+  //InformationSquareFilled20,
 } from '@wfp/icons';
 
 import Button from '../Button';
@@ -214,7 +214,7 @@ const iconTypes = {
   error: iconError,
   success: iconCheckmarkGlyph,
   warning: iconWarningSolid,
-  ['warning-alt']: WarningAltFilled20,
+  //['warning-alt']: WarningAltFilled20,
   info: iconInfoGlyph,
   //['info-square']: InformationSquareFilled20,
 };
