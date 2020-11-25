@@ -109,6 +109,10 @@ SingleDatePickerInput.propTypes = {
    * Provide the SingleDatePicker as a component
    */
   datePicker: PropTypes.func.isRequired,
+
+  onFocus: PropTypes.func,
+
+  onBlur: PropTypes.func,
   /**
    * Provide a custom className that is applied directly to the underlying
    * node
