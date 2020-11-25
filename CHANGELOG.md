@@ -1,3 +1,10 @@
+## [1.10.11](https://github.com/WFP/UI/compare/v1.10.10...v1.10.11) (2020-11-25)
+
+
+### Bug Fixes
+
+* **Notification:** icons were wrong ([592b961](https://github.com/WFP/UI/commit/592b9613ed8812119653d22eeca1efae8491d2d6))
+
 ## [1.10.10](https://github.com/WFP/UI/compare/v1.10.9...v1.10.10) (2020-11-24)
 
 
