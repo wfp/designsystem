@@ -3,7 +3,7 @@ import {
   ToastNotification,
   InlineNotification,
   NotificationActionButton,
-} from './Notification';
+} from '../Notification';
 import { notificationtypes } from '../../prop-types/types';
 
 import markdown from './README.mdx';

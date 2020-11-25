@@ -95,7 +95,7 @@ TextInput.propTypes = {
   /**
    * Specify a custom `name` for the &lt;input&gt;
    */
-  name: PropTypes.string.isRequired,
+  name: PropTypes.string,
 
   /**
    * Optionally provide an `onChange` handler that is called whenever &lt;input&gt;
@@ -132,7 +132,7 @@ TextInput.propTypes = {
   /**
    * Specify whether the control is currently invalid
    */
-  invalid: PropTypes.bool,
+  invalid: PropTypes.oneOfType([PropTypes.bool, PropTypes.object]),
 
   /**
    * Provide the text that is displayed when the control is in an invalid state

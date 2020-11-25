@@ -140,8 +140,8 @@ function ReactTablePagination({ columns, data, withBorder }) {
           })}
         </tbody>
       </Table>
-      {/* 
-        Pagination can be built however you'd like. 
+      {/*
+        Pagination can be built however you'd like.
         This is just a very basic UI implementation:
       */}
       <Pagination
@@ -258,7 +258,7 @@ export const UsingReactTable = (args) => {
 };
 
 const text = `
-We recommend [React-Table](https://react-table.js.org/) for tables with additional complexity. If you need Excel like features like cell editing row selection and copy/paste we recommend [ag-grid](https://www.ag-grid.com/).
+We recommend [React-Table](https://github.com/react-tools/react-table) for tables with additional complexity. If you need Excel like features like cell editing row selection and copy/paste we recommend [ag-grid](https://www.ag-grid.com/).
 `;
 
 UsingReactTable.story = {

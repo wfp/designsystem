@@ -77,9 +77,11 @@
 
   .#{$prefix}--user__title--ellipsis {
     display: inline-block;
-    @include breakpoint(bp--md--major) {
-      max-width: 130px;
-    }
+    // @include breakpoint-between(bp--sm--major, bp--md--major) {
+    //   max-width: 130px;
+    //   border: 1px solid red;
+    // }
+
     overflow: hidden;
     line-height: 1.5;
     white-space: nowrap;
@@ -90,5 +92,11 @@
     @include breakpoint(bp--md--major) {
       display: none;
     }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .#{$prefix}--user__title--ellipsis {
+    max-width: 70px;
   }
 }

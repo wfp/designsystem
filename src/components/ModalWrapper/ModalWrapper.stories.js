@@ -13,10 +13,17 @@ export default {
   },
 };
 
-export const Regular = (args) => <ModalWrapper {...args}>Text</ModalWrapper>;
+export const Regular = (args) => (
+  <ModalWrapper {...args}>{args.children}</ModalWrapper>
+);
 
 Regular.args = {
   buttonTriggerText: 'Open modal',
+  children:
+    'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy.',
+  modalLabel: 'Modal label',
+  modalHeading: 'Modal heading',
+  modalText: 'Modal text',
 };
 
 export const PassiveModal = (args) => (

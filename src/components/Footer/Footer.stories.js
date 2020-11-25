@@ -12,6 +12,7 @@ export default {
     componentSubtitle: 'Component',
     status: 'released',
     mdx: markdown,
+    previewWidth: 'full',
   },
 };
 
