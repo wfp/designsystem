@@ -1,3 +1,35 @@
+## [1.10.11](https://github.com/WFP/UI/compare/v1.10.10...v1.10.11) (2020-11-25)
+
+
+### Bug Fixes
+
+* **Notification:** icons were wrong ([592b961](https://github.com/WFP/UI/commit/592b9613ed8812119653d22eeca1efae8491d2d6))
+
+## [1.10.10](https://github.com/WFP/UI/compare/v1.10.9...v1.10.10) (2020-11-24)
+
+
+### Bug Fixes
+
+* **colors:** added colors to export again ([6c431e6](https://github.com/WFP/UI/commit/6c431e6df20db641dae6cfe4f5a90ae9319925f0))
+* **Notification:** not existing icon removed ([#324](https://github.com/WFP/UI/issues/324)) ([d7ec782](https://github.com/WFP/UI/commit/d7ec782a8d7c5ed8b09119da31a5b9e808b34993))
+
+## [1.10.9](https://github.com/WFP/UI/compare/v1.10.8...v1.10.9) (2020-11-23)
+
+
+### Bug Fixes
+
+* **Colors:** fixed color keys missing from colors json file ([ae31d32](https://github.com/WFP/UI/commit/ae31d32577c5143c0b44b565b2e19329bf8ddfc4))
+* **DatePicker:** resolving react-hook-form datepicker issue ([4dbca46](https://github.com/WFP/UI/commit/4dbca460011c35bac817be301fb7647453f9ffbb))
+* **Export:** export for TableSorting fixed ([dcd3d37](https://github.com/WFP/UI/commit/dcd3d37f54f1595e69dfaf4376071344ffaf5a1c))
+* **Loading:** now background color is provided via native css variable ([#327](https://github.com/WFP/UI/issues/327)) ([48eadcf](https://github.com/WFP/UI/commit/48eadcfb26af8b187eb8cecbf33c9404e22d2d41))
+* **Notification:** exported notification components ([fdca4c3](https://github.com/WFP/UI/commit/fdca4c319ad493cee602a209be43f5b32e5fa8a4))
+* **Notifiication:** export was not added ([#326](https://github.com/WFP/UI/issues/326)) ([9db0352](https://github.com/WFP/UI/commit/9db035298586993608366628a0e82973ffc90b70))
+* **NumberInput:** propType for invalid was wrong ([#322](https://github.com/WFP/UI/issues/322)) ([a8f079b](https://github.com/WFP/UI/commit/a8f079b020dfd4ab53eeb9e7189b7e6820046c83))
+* **Readmore:** added scrolling to div and improved readme ([#50864](https://github.com/WFP/UI/issues/50864), [#50846](https://github.com/WFP/UI/issues/50846)) ([33fecf7](https://github.com/WFP/UI/commit/33fecf7c0d3d21f99cf3e620e5a2e5de34406613))
+* **Slider:** rewrite Slider component as functional component and using native slider input ([#324](https://github.com/WFP/UI/issues/324)) ([e9f6e09](https://github.com/WFP/UI/commit/e9f6e09abf5450d9c9ea914c843702fd53eae8bb))
+* **Table:** added Table to export ([#325](https://github.com/WFP/UI/issues/325)) ([42e9ad6](https://github.com/WFP/UI/commit/42e9ad6140cdce8bd386837df3e826a07e321610))
+* **Tooltip:** rewrote Tooltip component ([#50816](https://github.com/WFP/UI/issues/50816), [#50817](https://github.com/WFP/UI/issues/50817)) ([40a31d9](https://github.com/WFP/UI/commit/40a31d9fc3fb12d586a4ac2019c523f7d3ecdae3))
+
 ## [1.10.8](https://github.com/WFP/UI/compare/v1.10.7...v1.10.8) (2020-11-19)
 
 

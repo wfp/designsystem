@@ -1,14 +1,15 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
+
 
 import { SingleDatePickerInput } from './SingleDatePickerInput';
 import { DateRangePickerInput } from './DateRangePickerInput';
+import Input from '../Input';
 import store from '../../internal/configureStore';
 import FormWrapper from '../../internal/RfFormWrapper';
 import moment from 'moment';
 import { Provider } from 'react-redux';
 import { Field } from 'redux-form';
-import Input from '../Input';
-import { useForm, Controller } from "react-hook-form";
+import { Controller, useForm } from 'react-hook-form';
 
 import 'react-dates/initialize';
 import { SingleDatePicker, DateRangePicker } from 'react-dates';
@@ -24,6 +25,60 @@ export default {
     status: 'released',
     mdx: markdown,
   },
+};
+
+export const singleDatePickerNew = (args) => {
+  const [date, setDate] = useState(moment());
+  const [focused, setFocused] = useState(false);
+  return (
+    <Input
+      labelText="Input using SingleDatePicker by Airbnb"
+      helperText="HelperText">
+      {(e) => (
+        <SingleDatePicker
+          onDateChange={(newDate) => setDate(newDate)}
+          focused={focused}
+          onFocusChange={({ focused }) => setFocused(focused)}
+          date={date}
+          id="your_unique_id"
+        />
+      )}
+    </Input>
+  );
+};
+
+export const singleDatePickerNewReactHookForm = (args) => {
+  const defaultValues = { test: '2020-12-01T11:00:00.000Z' };
+  const [focused, setFocused] = useState(false);
+  const { control, register, handleSubmit } = useForm({ defaultValues });
+
+  const onSubmit = (data) => alert(JSON.stringify(data));
+
+  return (
+    <form onSubmit={handleSubmit(onSubmit)}>
+      <Controller
+        control={control}
+        name="test"
+        render={({ onChange, onBlur, value, name, ref }) => (
+          <Input
+            labelText="Input using SingleDatePicker by Airbnb"
+            helperText="HelperText">
+            {(e) => (
+              <SingleDatePicker
+                onDateChange={(newDate) => onChange(newDate)}
+                focused={focused}
+                onFocusChange={({ focused }) => setFocused(focused)}
+                date={moment(value)}
+                id="another_unique_id"
+              />
+            )}
+          </Input>
+        )}
+      />
+
+      <input type="submit" />
+    </form>
+  );
 };
 
 export const singleDatePicker = (args) => <SingleDatePickerInput {...args} />;
