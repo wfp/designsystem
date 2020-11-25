@@ -1,3 +1,11 @@
+## [1.10.12](https://github.com/WFP/UI/compare/v1.10.11...v1.10.12) (2020-11-25)
+
+
+### Bug Fixes
+
+* **StepNavigation:** console.logs removed, RadioButtonGroup added as legacy implementation ([#334](https://github.com/WFP/UI/issues/334)) ([59385b5](https://github.com/WFP/UI/commit/59385b52a0103e750b64d6bb40d7a2ed703a14e1))
+* **Warning:** RadioButtonGroup warning added ([dd3ae6c](https://github.com/WFP/UI/commit/dd3ae6c2c1048043d57ebd5ded3d49bd7f25bc6e))
+
 ## [1.10.11](https://github.com/WFP/UI/compare/v1.10.10...v1.10.11) (2020-11-25)
 
 
