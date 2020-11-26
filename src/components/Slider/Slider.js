@@ -26,7 +26,7 @@ function PropTypeEmptyString(props, propName, componentName) {
 
 /** Sliders provide a visual indication of adjustable content, where the user can move the handle along a horizontal track to increase or decrease the value. */
 
-function NumberInput(props) {
+function Slider(props) {
   const {
     additional,
     ariaLabelInput,
@@ -149,7 +149,7 @@ function NumberInput(props) {
   );
 }
 
-NumberInput.propTypes = {
+Slider.propTypes = {
   /**
    * Specify an optional className to be applied to the wrapper node
    */
@@ -292,7 +292,7 @@ NumberInput.propTypes = {
   fullWidth: PropTypes.bool,
 };
 
-NumberInput.defaultProps = {
+Slider.defaultProps = {
   fullWidth: false,
   hideTextInput: false,
   step: 1,
@@ -305,4 +305,4 @@ NumberInput.defaultProps = {
   light: false,
 };
 
-export default NumberInput;
+export default Slider;

@@ -183,6 +183,31 @@
   }
 }
 
+@mixin track($fill: 0) {
+  // box-sizing: border-box;
+  // border: none;
+  // width: $track-w; height: $track-h;
+  // background: $track-c;
+  width: 250px;
+  height: 4px;
+  background: var(--ui-04);
+  transition: all 300ms $wfp--standard-easing;
+  border: none;
+  border-radius: 1px;
+  cursor: pointer;
+
+  @if $fill == 1 {
+    .js & {
+      background: linear-gradient(var(--interactive-01), var(--interactive-01))
+        0 /
+        var(--sx)
+        100%
+        no-repeat
+        var(--ui-04);
+    }
+  }
+}
+
 // 💀 Skeleton loading animation
 
 @mixin skeleton {

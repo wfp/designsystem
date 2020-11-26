@@ -13,14 +13,14 @@ export const ColourList = ({ filter }) => {
   );
 
   const list = filteredColors.map((color) => (
-    <Tooltip
-      // options
-      content={
-        <div>
-          {color.description && <p>{color.description}</p>}
-          {color.name}
-        </div>
-      }>
+    // <Tooltip
+    //   // options
+    //   content={
+    //     <div>
+    //       {color.description && <p>{color.description}</p>}
+    //       {color.name}
+    //     </div>
+    //   }>
       <li>
         <Module fullHeight noMargin light className="color__item">
           <div className="color__field" style={{ backgroundColor: color.hex }}>
@@ -61,7 +61,7 @@ export const ColourList = ({ filter }) => {
           </div>
         </Module>
       </li>
-    </Tooltip>
+    // </Tooltip>
   ));
 
   return <ul className="color--list">{list}</ul>;
