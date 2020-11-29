@@ -14,7 +14,6 @@ export const ColourList = ({ filter }) => {
 
   const list = filteredColors.map((color) => (
     <Tooltip
-      // options
       content={
         <div>
           {color.description && <p>{color.description}</p>}

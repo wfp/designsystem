@@ -31,12 +31,15 @@ const Tooltip = ({
   trigger = 'hover',
   modifiers = [],
   placement = 'top',
-  useWrapper,
+  useWrapper = true,
+  onVisibilityChange,
   ...others
 }) => {
+  const [visibility, setVisibility] = useState(false);
   const classNames = classnames(className, {
     [`${prefix}--tooltip`]: true,
     [`${prefix}--tooltip--disable-padding`]: disablePadding,
+    [`${prefix}--tooltip--visible`]: visibility,
     [`${prefix}--tooltip--${trigger}`]: trigger,
     [`${prefix}--tooltip--dark`]: dark,
   });
@@ -66,22 +69,38 @@ const Tooltip = ({
   );
 
   const Trigger = ({ getTriggerProps, triggerRef }) => {
-    if (useWrapper === true)
+    if (useWrapper === true) {
+      const elementClassNames = classnames(children?.props?.className, {
+        [`${prefix}--tooltip--trigger`]: true,
+      });
+
       return React.cloneElement(children, {
         ...getTriggerProps({
+          ...children.props,
           ref: triggerRef,
-          className: `${prefix}--tooltip--trigger`,
+          className: elementClassNames,
         }),
       });
+    }
+
+    const wrapperClassNames = classnames(className, {
+      [`${prefix}--tooltip--trigger`]: true,
+    });
+
     return (
-      <span
+      <div
         {...getTriggerProps({
           ref: triggerRef,
-          className: `${prefix}--tooltip--trigger`,
+          className: wrapperClassNames,
         })}>
         {children}
-      </span>
+      </div>
     );
+  };
+
+  const visibilityChange = (e) => {
+    setVisibility(e);
+    if (onVisibilityChange) onVisibilityChange(e);
   };
 
   return (
@@ -90,6 +109,7 @@ const Tooltip = ({
       trigger={trigger}
       tooltip={Tooltip}
       {...others}
+      onVisibilityChange={visibilityChange}
       modifiers={[
         {
           name: 'offset',
