@@ -7,11 +7,7 @@ import settings from '../../globals/js/settings';
 
 const { prefix } = settings;
 
-/**
- * InputGroup allows you to organize and arange multiple input elements.
- */
-
-export default class InputGroup extends React.Component {
+export default class RadioButtonGroup extends React.Component {
   state = { selected: this.props.valueSelected || this.props.defaultSelected };
 
   static propTypes = {
@@ -38,6 +34,11 @@ export default class InputGroup extends React.Component {
      * Specify the name of the underlying `input` nodes
      */
     name: PropTypes.string.isRequired,
+
+    /**
+     * Specify whether the group is disabled
+     */
+    disabled: PropTypes.bool,
 
     /**
      * Provide an optional `onChange` hook that is called whenever the value of
@@ -97,7 +98,7 @@ export default class InputGroup extends React.Component {
         warning(
           false,
           `Instead of using the checked property on the RadioButton, set
-            the defaultSelected property or valueSelected property on the InputGroup.`
+            the defaultSelected property or valueSelected property on the RadioButtonGroup.`
         );
       }
 
@@ -132,7 +133,7 @@ export default class InputGroup extends React.Component {
       controlled,
       vertical,
       hideLabel,
-      className = `${prefix}--input-group`,
+      className = `${prefix}--radio-button-group`,
     } = this.props;
 
     const labelClasses = classNames('wfp--label', {
@@ -140,7 +141,7 @@ export default class InputGroup extends React.Component {
     });
 
     const wrapperClasses = classNames(`${prefix}--form-item`, {
-      [`${prefix}--input-group__vertical`]: vertical,
+      [`${prefix}--radio-button-group__vertical`]: vertical,
     });
 
     const label = labelText ? (
@@ -151,12 +152,16 @@ export default class InputGroup extends React.Component {
       <div className="wfp--form__helper-text">{helperText}</div>
     ) : null;
 
+    console.warn(
+      'RadioButtonGroup is depreciated and will be removed in the next versions. Use InputGroup instead'
+    );
+
     return (
       <div className={wrapperClasses}>
         <div className={className} disabled={disabled}>
           {label}
           {helper}
-          <div className={`${prefix}--input-group-inside`}>
+          <div className={`${prefix}--radio-button-group-inside`}>
             {controlled ? this.getRadioButtons() : children}
           </div>
         </div>
