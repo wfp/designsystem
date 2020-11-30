@@ -52,7 +52,7 @@ export const singleDatePickerNewReactHookForm = (args) => {
   const [focused, setFocused] = useState(false);
   const { control, register, handleSubmit } = useForm({ defaultValues });
 
-  // const onSubmit = (data) => alert(JSON.stringify(data));
+  const onSubmit = (data) => alert(JSON.stringify(data));
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
