@@ -247,10 +247,6 @@ Slider.propTypes = {
    */
   step: PropTypes.number,
 
-  /**
-   * A value determining how much the value should increase/decrease by Shift+arrow keys, which will be `(max - min) / stepMuliplier`.
-   */
-  stepMuliplier: PropTypes.number,
 
   /**
    * Specify the value of the input, if undefined or null the value is empty
@@ -296,7 +292,6 @@ Slider.defaultProps = {
   fullWidth: false,
   hideTextInput: false,
   step: 1,
-  stepMuliplier: 4,
   disabled: false,
   minLabel: '',
   maxLabel: '',

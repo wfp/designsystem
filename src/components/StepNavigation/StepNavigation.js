@@ -23,7 +23,7 @@ export default function StepNavigation({
   const [elRefs, setElRefs] = useState({});
 
   const getTabAt = (index) => {
-    console.log('GetTabAt', index);
+    // console.log('GetTabAt', index);
     return elRefs[`tab${index}`] || React.Children.toArray(children)[index];
   };
 
@@ -48,7 +48,7 @@ export default function StepNavigation({
   };
 
   const handleTabClick = (onSelectionChange) => {
-    console.log('handleTabClick', onSelectionChange);
+    // console.log('handleTabClick', onSelectionChange);
     return (index, label, evt) => {
       evt.preventDefault();
       selectTabAt(index, onSelectionChange);
@@ -56,7 +56,7 @@ export default function StepNavigation({
   };
 
   const handleTabAnchorFocus = (onSelectionChange) => {
-    console.log('handleTabAnchorFocus', onSelectionChange);
+    // console.log('handleTabAnchorFocus', onSelectionChange);
     return (index) => {
       const tabCount = React.Children.count(children) - 1;
       let tabIndex = index;
@@ -130,7 +130,7 @@ export default function StepNavigation({
 
 StepNavigation.defaultProps = {
   role: 'navigation',
-  selected: 0,
+  selectedPage: 0,
 };
 
 StepNavigation.propTypes = {

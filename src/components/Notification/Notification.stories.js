@@ -103,7 +103,7 @@ export const ToastLowContrast = (args) => (
   />
 );
 ToastLowContrast.args = {
-  kind: 'error',
+  kind: 'success',
   lowContrast: true,
   role: 'alert',
   title: 'Notification title',
