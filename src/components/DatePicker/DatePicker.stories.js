@@ -105,9 +105,9 @@ import { SingleDatePicker } from 'react-dates';
   inputIconPosition="after"
   invalidText="A valid value is required"
   labelText="Label datepicker"
-  onBlur={()=>{console.log("Blur")}}
-  onChange={()=>{console.log("onChange")}}
-  onFocus={()=>{console.log("onFocus")}}
+  onBlur={()=>{}}
+  onChange={()=>{}}
+  onFocus={()=>{}}
   placeholder="Placeholder text (placeholder)"
   showDefaultInputIcon
 
@@ -150,9 +150,9 @@ import { DateRangePicker } from 'react-dates';
   inputIconPosition="after"
   invalidText="A valid value is required"
   labelText="Label datepicker"
-  onBlur={()=>{console.log("Blur")}}
-  onChange={()=>{console.log("onChange")}}
-  onFocus={()=>{console.log("onFocus")}}
+  onBlur={()=>{}}
+  onChange={()=>{}}
+  onFocus={()=>{}}
   placeholder="Placeholder text (placeholder)"
   showDefaultInputIcon
 
@@ -214,8 +214,8 @@ export const DatePickerHookForm = (args) => {
           inputIconPosition="after"
           invalidText="A valid value is required"
           labelText="Label datepicker"
-          onBlur={()=>{console.log("Blur")}}
-          onFocus={()=>{console.log("onFocus")}}
+          onBlur={()=>{}}
+          onFocus={()=>{}}
           placeholder="Placeholder text (placeholder)"
           showDefaultInputIcon
         />
@@ -243,9 +243,9 @@ export const DatePickerRangeHookForm = (args) => {
           inputIconPosition="after"
           invalidText="A valid value is required"
           labelText="Label datepicker"
-          onBlur={()=>{console.log("Blur")}}
-          onChange={()=>{console.log("onChange")}}
-          onFocus={()=>{console.log("onFocus")}}
+          onBlur={()=>{}}
+          onChange={()=>{}}
+          onFocus={()=>{}}
           placeholder="Placeholder text (placeholder)"
           showDefaultInputIcon
 

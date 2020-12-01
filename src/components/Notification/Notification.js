@@ -75,7 +75,6 @@ export function NotificationButton({
     [`${prefix}--${notificationType}-notification__close-icon`]: notificationType,
   });
 
-  //console.log('rendericon', IconTag);
   return (
     // eslint-disable-next-line react/button-has-type
     <button

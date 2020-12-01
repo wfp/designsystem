@@ -14,7 +14,6 @@ import Blockquote from '../../components/Blockquote/Blockquote';
 const ComplexForm = () => {
   const { control, handleSubmit, register, errors, reset } = useForm();
   const onSubmit = (values) => {
-    console.log(values);
     setOutput(values);
   };
   const [output, setOutput] = useState({});

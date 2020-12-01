@@ -85,7 +85,7 @@ $deprecations--message: 'Deprecated code was found, this code will be removed be
 @import '../../components/Loading/loading';
 @import '../../components/Modal/modal';
 @import '../../components/Module/module';
-@import '../../components/Notification/notification';
+@import '../../components/Notification.legacy/notification';
 @import '../../components/Notification/notification.scss';
 @import '../../components/User/user';
 @import '../../components/Value/value';

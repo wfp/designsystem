@@ -10,7 +10,7 @@ import Changelog from '../../../CHANGELOG.md';
 import ReactMarkdown from 'react-markdown';
 import './_changelog.scss';
 
-console.log(Changelog);
+
 
 storiesOf('Getting started|Getting started', module)
   .addParameters({
