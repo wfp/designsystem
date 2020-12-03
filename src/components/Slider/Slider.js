@@ -120,13 +120,20 @@ function NumberInput(props) {
             <span className="wfp--slider__range-label">
               {formatLabel(min, minLabel)}
             </span>
-            <input
-              className={sliderClasses}
-              type="range"
-              {...other}
-              {...newProps}
-              ref={_inputRef}
-            />
+
+            <div className="wfp--slider__range-wrapper">
+              <div
+                className="wfp--slider__range-before"
+                style={{ width: `${(100 * value) / max}%` }}
+              />
+              <input
+                className={sliderClasses}
+                type="range"
+                {...other}
+                {...newProps}
+                ref={_inputRef}
+              />
+            </div>
             <span className="wfp--slider__range-label">
               {formatLabel(max, maxLabel)}
             </span>
@@ -250,7 +257,7 @@ NumberInput.propTypes = {
   /**
    * A value determining how much the value should increase/decrease by Shift+arrow keys, which will be `(max - min) / stepMuliplier`.
    */
-  stepMuliplier: PropTypes.number,
+  //stepMuliplier: PropTypes.number,
 
   /**
    * Specify the value of the input, if undefined or null the value is empty
@@ -296,7 +303,7 @@ NumberInput.defaultProps = {
   fullWidth: false,
   hideTextInput: false,
   step: 1,
-  stepMuliplier: 4,
+  //stepMuliplier: 4,
   disabled: false,
   minLabel: '',
   maxLabel: '',
