@@ -18,22 +18,22 @@ const Page = ({children}) =>{
 const Wizard =({children, initialValues, onSubmit, ...other })=>{
   
   
-  const [page, setpage] = useState(0);
-  const [values, setvalues] = useState(initialValues || {})
+  const [page, setPage] = useState(0);
+  const [values, setValues] = useState(initialValues || {})
 
   const handleTabClick = (values) =>{
-    setpage(values);
-    setvalues(values);
+    setPage(values);
+    setValues(values);
   }
 
   
   const next = (values) =>{
-    setpage(Math.min(page + 1, children.length - 1));
-    setvalues(values);
+    setPage(Math.min(page + 1, children.length - 1));
+    setValues(values);
   }
 
   const previous = () => {
-    setpage(Math.max(page - 1, 0));
+    setPage(Math.max(page - 1, 0));
   }
 
 
