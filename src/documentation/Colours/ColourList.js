@@ -23,6 +23,9 @@ export const ColourList = ({ filter }) => {
       <li>
         <Module fullHeight noMargin light className="color__item">
           <div className="color__field" style={{ backgroundColor: color.hex }}>
+            <div
+              className="color__check"
+              style={{ backgroundColor: `var(--${color.name})` }}></div>
             <div className="color__contrast">
               <span>A</span>
               <div>>{score(hex(color.hex, '#000000'))}</div>
@@ -47,7 +50,10 @@ export const ColourList = ({ filter }) => {
                   </h4>
                 )}
                 <ListItem>
-                  <strong>Hex:</strong> {color.hex}
+                  <strong>Hex:</strong>{' '}
+                  {getComputedStyle(document.body).getPropertyValue(
+                    `--${color.name}`
+                  )}
                 </ListItem>
 
                 {color.css && (

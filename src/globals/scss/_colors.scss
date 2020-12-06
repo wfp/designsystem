@@ -161,9 +161,9 @@ $color__gray-80: mix(black, $color__navy-gray-1, 75%) !default;
 */
 
 $color__gray-10: desaturate(lighten($color__main, 57), 70) !default; // ui-02
-$color__gray-20: desaturate(lighten($color__main, 50), 70) !default; // ui-03
-$color__gray-30: desaturate(lighten($color__main, 45), 70) !default; // ui-04
-$color__gray-40: desaturate(lighten($color__main, 10), 5) !default;
+$color__gray-20: desaturate(lighten($color__main, 53), 70) !default; // ui-03
+$color__gray-30: desaturate(lighten($color__main, 50), 70) !default; // ui-04
+$color__gray-40: desaturate(lighten($color__main, 22), 70) !default;
 $color__gray-50: desaturate(darken($color__main, 10), 30) !default;
 $color__gray-60: desaturate(darken($color__main, 15), 30) !default;
 $color__gray-70: desaturate(darken($color__main, 20), 30) !default;

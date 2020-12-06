@@ -15,6 +15,10 @@
   list-style: disc;
 }
 
+.sbdocs.sbdocs-wrapper {
+  background: var(--ui-01);
+}
+
 .sbdocs-preview {
   overflow: visible !important;
   > div {
@@ -33,6 +37,20 @@
 .sbdocs {
   //font-weight: 400;
   //@extend .wfp--story;
+
+  .sbdocs-h1,
+  .sbdocs-h2,
+  .sbdocs-h3,
+  .sbdocs-h4,
+  .sbdocs-h5,
+  .sbdocs-p {
+    color: var(--text-01);
+    code {
+      color: var(--text-01);
+      border-color: var(--ui-03);
+      background: var(--ui-04);
+    }
+  }
 
   .sbdocs-p {
     font-size: 1rem;
