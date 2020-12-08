@@ -83,7 +83,6 @@ export const DetailedForm = (args) => {
         id="number-input-1"
         label="Number Input"
         labelText="Text Input label"
-        iconDescription="icon desc"
         min={0}
         max={100}
         value={50}
@@ -106,7 +105,7 @@ export const DetailedForm = (args) => {
 
         <p>Drag and Drop File Uploader</p>
 
-        <Dropzone onDrop={(acceptedFiles) => console.log(acceptedFiles)}>
+        <Dropzone onDrop={(acceptedFiles) => acceptedFiles}>
           {({ getRootProps, getInputProps }) => (
             <section className="wfp--dropzone">
               <div {...getRootProps({ className: 'wfp--dropzone__input' })}>

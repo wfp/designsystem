@@ -27,7 +27,7 @@ export default {
   },
 };
 
-export const singleDatePickerNew = (args) => {
+export const SingleDatePickerNew = (args) => {
   const [date, setDate] = useState(moment());
   const [focused, setFocused] = useState(false);
   return (
@@ -47,7 +47,7 @@ export const singleDatePickerNew = (args) => {
   );
 };
 
-export const singleDatePickerNewReactHookForm = (args) => {
+export const SingleDatePickerNewReactHookForm = (args) => {
   const defaultValues = { test: '2020-12-01T11:00:00.000Z' };
   const [focused, setFocused] = useState(false);
   const { control, register, handleSubmit } = useForm({ defaultValues });
@@ -79,8 +79,8 @@ export const singleDatePickerNewReactHookForm = (args) => {
   );
 };
 
-export const singleDatePicker = (args) => <SingleDatePickerInput {...args} />;
-singleDatePicker.args = {
+export const SingleDatePickerDefault = (args) => <SingleDatePickerInput {...args} />;
+SingleDatePickerDefault.args = {
   datePicker: SingleDatePicker,
   labelText: 'Label text (labelText)',
   placeholder: 'Placeholder text (placeholder)',
@@ -114,7 +114,7 @@ import { SingleDatePicker } from 'react-dates';
 />
 `
 
-singleDatePicker.story = {
+SingleDatePickerDefault.story = {
   parameters: {
     docs: {
       source: {
@@ -124,8 +124,8 @@ singleDatePicker.story = {
   }
 }
 
-export const dateRangePicker = (args) => <DateRangePickerInput {...args} />;
-dateRangePicker.args = {
+export const DateRangePickerDefault = (args) => <DateRangePickerInput {...args} />;
+DateRangePickerDefault.args = {
   datePicker: DateRangePicker,
   date: moment(),
   labelText: 'Label text (labelText)',
@@ -159,7 +159,7 @@ import { DateRangePicker } from 'react-dates';
 />
 `
 
-dateRangePicker.story = {
+DateRangePickerDefault.story = {
   parameters: {
     docs: {
       source: {

@@ -40,8 +40,7 @@ export const Regular = (args) => (
           nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
           sed diam voluptua.{' '}
         </Blockquote>
-        <div className="row">
-          <div className="col-md-6">
+        
             <Field
               id="firstName"
               name="firstName"
@@ -50,8 +49,7 @@ export const Regular = (args) => (
               inputComponent={TextInput}
               labelText="First Name"
             />
-          </div>
-          <div className="col-md-6">
+          
             <Field
               id="lastName"
               name="lastName"
@@ -60,9 +58,7 @@ export const Regular = (args) => (
               inputComponent={TextInput}
               labelText="Last Name"
             />
-          </div>
-        </div>
-
+        
         <Field
           component={ReduxFormWrapper}
           inputComponent={TextArea}
@@ -71,14 +67,14 @@ export const Regular = (args) => (
           placeholder="Notes"
         />
 
-        <Field
-          id="firstName"
-          name="firstName"
+        {/* <Field
+          id="firstName2"
+          name="firstName2"
           helperText="Enter your full first name"
           component={ReduxFormWrapper}
           inputComponent={TextInput}
           labelText="First Name"
-        />
+        /> */}
       </Page>
       <Page label="Contact data">
         <FormGroup>

@@ -233,7 +233,7 @@ const RegularPage = ({
               </a>
             </BreadcrumbItem>
             <BreadcrumbItem href="#">Breadcrumb 2</BreadcrumbItem>
-            <BreadcrumbItem href="#">Breadcrumb 3</BreadcrumbItem>
+            <BreadcrumbItem disableLink> Breadcrumb 3</BreadcrumbItem>
           </Breadcrumb>
           <SecondaryNavigationTitle>
             {title ? title : 'The page title'}
