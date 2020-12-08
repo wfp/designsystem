@@ -16,7 +16,6 @@ export default {
     mdx: markdown,
     introText:
       'Login page for legacy applications not using WFPs single sign-on',
-    previewWidth: 'full',
   },
 };
 

@@ -111,16 +111,18 @@
   }
 
   .#{$prefix}--blockquote--warning {
-    border-left-color: var(--support-03);
-    background: var(--support-light-03); //$color__yellow-10;
+    border-left-color: $color__yellow;
+    background: $color__yellow-10;
+
     .#{$prefix}--blockquote__icon {
       fill: $color__yellow !important;
     }
   }
 
   .#{$prefix}--blockquote--error {
-    border-left-color: var(--support-01);
-    background: var(--support-light-01);
+    border-left-color: $color__red;
+    background: $color__red-10;
+
     .#{$prefix}--blockquote__icon {
       fill: $color__red !important;
     }
@@ -128,7 +130,8 @@
 
   .#{$prefix}--blockquote--success {
     border-left-color: var(--support-02);
-    background: var(--support-light-02);
+    background: $color__dark-green-10;
+
     .#{$prefix}--blockquote__icon {
       fill: var(--support-02) !important;
     }

@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import React, { useRef, useState } from 'react';
+import React, { Component } from 'react';
 import classnames from 'classnames';
 
 import Link from '../Link';
@@ -34,133 +34,116 @@ const MoreLink = ({ handleToggleClick, link, text, showMore }) => {
 };
 
 /** ReadMore component is a simple way to keep longer content from cluttering up your page, giving you more control over how much content is displayed to visitor */
-export default function ReadMore({
-  collapseLink,
-  collapseText,
-  children,
-  collapsed,
-  className,
-  disableAutoscroll,
-  expandLink,
-  expandText,
-  fade,
-  maxHeight,
-}) {
-  const [showMore, setShowMore] = useState(false);
-  const [innerHeight, setInnerHeight] = useState(0);
-  const readMoreRef = useRef();
-  const readMoreFakeRef = useRef();
+export default class ReadMore extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      showMore: false,
+      innerHeight: 0,
+    };
+  }
 
-  const handleToggleClick = (e) => {
-    e.preventDefault();
-    const innerHeight = readMoreRef.current.clientHeight;
-
-    if (!showMore && !disableAutoscroll)
-      setTimeout(() => {
-        readMoreFakeRef.current.scrollIntoView({
-          behavior: 'smooth',
-          block: 'end',
-        });
-      }, 50);
-
-    setShowMore(!showMore);
-    setInnerHeight(innerHeight);
+  static propTypes = {
+    /**
+     * Specify an optional className to be applied to the wrapper node
+     */
+    className: PropTypes.string,
+    /**
+     * The content of the expanded element
+     */
+    children: PropTypes.node.isRequired,
+    /**
+     * The content of the collapsed content (optional)
+     */
+    collapsed: PropTypes.node,
+    /**
+     * A custom link for collapsing
+     */
+    collapseLink: PropTypes.node,
+    /**
+     * A custom link for expanding
+     */
+    expandLink: PropTypes.node,
+    /**
+     * Enables the fade effect when the content is collapsed (optional) when enabled collapsed will be ignored
+     */
+    fade: PropTypes.bool,
+    /**
+     * The maximum height when the content is collapsed (optional)
+     */
+    maxHeight: PropTypes.number,
   };
 
-  const classNames = classnames(className, {
-    [`${prefix}--read-more`]: true,
-    [`${prefix}--read-more--expanded`]: showMore,
-    [`${prefix}--read-more--fade`]: fade,
-    [`${prefix}--read-more--max-height`]: maxHeight,
-  });
+  static defaultProps = {
+    expandText: 'Read more',
+    collapseText: 'Read less',
+  };
 
-  const contentStyle = !maxHeight
-    ? {
-        undefined,
-      }
-    : maxHeight && !showMore
-    ? {
-        maxHeight: maxHeight,
-      }
-    : {
-        maxHeight: innerHeight + 20,
-      };
+  handleToggleClick = (e) => {
+    e.preventDefault();
+    const innerHeight = this.divElement.clientHeight;
+    this.setState((prevState) => ({
+      showMore: !prevState.showMore,
+      innerHeight: innerHeight,
+    }));
+  };
 
-  const collapseStyle = showMore
-    ? {
-        display: 'none',
-      }
-    : {
-        display: 'block',
-      };
+  render() {
+    const {
+      collapseLink,
+      collapseText,
+      children,
+      collapsed,
+      className,
+      expandLink,
+      expandText,
+      fade,
+      maxHeight,
+    } = this.props;
+    const { innerHeight, showMore } = this.state;
 
-  return (
-    <div className={classNames}>
-      <div className={`${prefix}--read-more__content`} style={contentStyle}>
-        <div
-          className={`${prefix}--read-more__fake-height`}
-          ref={readMoreFakeRef}
-          style={{ height: `${innerHeight + 30}px` }}></div>
-        <div ref={readMoreRef}>
-          {(showMore || !collapsed) && children}
-          {collapsed && <div style={collapseStyle}>{collapsed}</div>}
+    const classNames = classnames(className, {
+      [`${prefix}--read-more`]: true,
+      [`${prefix}--read-more--expanded`]: showMore,
+      [`${prefix}--read-more--fade`]: fade,
+      [`${prefix}--read-more--max-height`]: maxHeight,
+    });
+
+    const contentStyle = !maxHeight
+      ? {
+          undefined,
+        }
+      : maxHeight && !showMore
+      ? {
+          maxHeight: maxHeight,
+        }
+      : {
+          maxHeight: innerHeight + 20,
+        };
+
+    const collapseStyle = showMore
+      ? {
+          display: 'none',
+        }
+      : {
+          display: 'block',
+        };
+
+    return (
+      <div className={classNames}>
+        <div className={`${prefix}--read-more__content`} style={contentStyle}>
+          <div ref={(divElement) => (this.divElement = divElement)}>
+            {(showMore || !collapsed) && children}
+            {collapsed && <div style={collapseStyle}>{collapsed}</div>}
+          </div>
         </div>
+        <MoreLink
+          handleToggleClick={this.handleToggleClick}
+          showMore={showMore}
+          link={showMore ? collapseLink : expandLink}
+          text={showMore ? collapseText : expandText}
+        />
       </div>
-      <MoreLink
-        handleToggleClick={handleToggleClick}
-        showMore={showMore}
-        link={showMore ? collapseLink : expandLink}
-        text={showMore ? collapseText : expandText}
-      />
-    </div>
-  );
+    );
+  }
 }
-
-ReadMore.propTypes = {
-  /**
-   * Specify an optional className to be applied to the wrapper node
-   */
-  className: PropTypes.string,
-  /**
-   * The content of the expanded element
-   */
-  children: PropTypes.node.isRequired,
-  /**
-   * The content of the collapsed content (optional)
-   */
-  collapsed: PropTypes.node,
-
-  /**
-   * A custom link for collapsing
-   */
-  collapseLink: PropTypes.node,
-  /**
-   * Custom text for collapsing
-   */
-  collapseText: PropTypes.node,
-  /**
-   * Disable the scroll into view on expanding
-   */
-  disableAutoscroll: PropTypes.bool,
-  /**
-   * A custom link for expanding
-   */
-  expandLink: PropTypes.node,
-  /**
-   * Custom text for expanding
-   */
-  expandText: PropTypes.node,
-  /**
-   * Enables the fade effect when the content is collapsed (optional) when enabled collapsed will be ignored
-   */
-  fade: PropTypes.bool,
-  /**
-   * The maximum height when the content is collapsed (optional)
-   */
-  maxHeight: PropTypes.number,
-};
-
-ReadMore.defaultProps = {
-  expandText: 'Read more',
-  collapseText: 'Read less',
-};

@@ -12,13 +12,19 @@ export default {
   },
 };
 
-export const RegularSlider = (args) => <Slider id="slider2" {...args} />;
+export const RegularSlider = (args) => (
+  <div style={{ marginTop: '2rem' }}>
+    <Slider id="slider2" {...args} />
+  </div>
+);
 
 RegularSlider.args = {
+  children: 'Slider',
   name: 'Form item name (name)',
-  value: 25,
+  inputType: 'number',
+  value: 50,
   min: 0,
-  max: 50,
+  max: 100,
   step: 1,
   labelText: 'Slider Label',
   helperText: 'Additional helper text',
@@ -31,12 +37,13 @@ export const hideTextInput = (args) => (
 );
 
 hideTextInput.args = {
+  children: 'Slider',
   name: 'Form item name (name)',
   inputType: 'number',
   hideTextInput: true,
-  value: 25,
+  value: 50,
   min: 0,
-  max: 50,
+  max: 100,
   step: 1,
   labelText: 'Slider Label',
   helperText: 'Additional helper text',
@@ -58,6 +65,7 @@ export const Disabled = (args) => (
 );
 
 Disabled.args = {
+  children: 'Slider',
   name: 'Form item name (name)',
   inputType: 'number',
   disabled: true,
@@ -84,6 +92,7 @@ export const Fullwidth = (args) => (
 );
 
 Fullwidth.args = {
+  children: 'Slider',
   name: 'Form item name (name)',
   inputType: 'number',
   fullWidth: true,

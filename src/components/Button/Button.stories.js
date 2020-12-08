@@ -68,7 +68,6 @@ ButtonKind.story = {
   name: 'Button kinds',
   parameters: {
     markdown: 'hello',
-    layout: 'centered',
     docs: {
       storyDescription: hello,
     },

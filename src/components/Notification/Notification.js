@@ -7,9 +7,9 @@ import {
   iconError,
   iconCheckmarkGlyph,
   iconWarningSolid,
-  //WarningAltFilled20,
+  WarningAltFilled20,
   iconInfoGlyph,
-  //InformationSquareFilled20,
+  InformationSquareFilled20,
 } from '@wfp/icons';
 
 import Button from '../Button';
@@ -213,9 +213,9 @@ const iconTypes = {
   error: iconError,
   success: iconCheckmarkGlyph,
   warning: iconWarningSolid,
-  //['warning-alt']: WarningAltFilled20,
+  ['warning-alt']: WarningAltFilled20,
   info: iconInfoGlyph,
-  //['info-square']: InformationSquareFilled20,
+  ['info-square']: InformationSquareFilled20,
 };
 
 function NotificationIcon({ iconDescription, kind, notificationType }) {
@@ -240,7 +240,7 @@ NotificationIcon.propTypes = {
     'warning',
     'warning-alt',
     'info',
-    //'info-square',
+    'info-square',
   ]).isRequired,
   notificationType: PropTypes.oneOf(['inline', 'toast']).isRequired,
 };
@@ -352,7 +352,7 @@ ToastNotification.propTypes = {
   kind: PropTypes.oneOf([
     'error',
     'info',
-    //'info-square',
+    'info-square',
     'success',
     'warning',
     'warning-alt',
@@ -505,7 +505,7 @@ InlineNotification.propTypes = {
   kind: PropTypes.oneOf([
     'error',
     'info',
-    //'info-square',
+    'info-square',
     'success',
     'warning',
     'warning-alt',

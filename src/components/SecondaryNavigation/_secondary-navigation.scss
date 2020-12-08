@@ -12,7 +12,7 @@
     background: var(--ui-01);
     @include reset;
     display: flex;
-    border-bottom: 2px solid var(--ui-03);
+    border-bottom: 2px solid var(ui-02);
 
     .#{$prefix}--tabs {
       margin-bottom: -2px;
