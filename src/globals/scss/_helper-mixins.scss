@@ -102,7 +102,7 @@
   @if ($type == 'border') {
     border-color: var(--interactive-01);
     outline: 1px solid var(--interactive-01);
-    box-shadow: 0px 2px 8px 0 var(--focus-01);
+    box-shadow: 0px 2px 8px 0 $focus;
   }
 
   @if ($type == 'border-small') {
@@ -116,7 +116,7 @@
   }
 
   @if ($type == 'blurred') {
-    box-shadow: 0 0 0 3px var(--focus-01);
+    box-shadow: 0 0 0 3px $focus;
     outline: 1px solid transparent;
   }
 

@@ -42,7 +42,7 @@
   }
 
   .#{$prefix}--wrapper--background-lighter {
-    background: var(--ui-02); //$color__navy-gray-9;
+    background: $color__navy-gray-9;
   }
 
   .#{$prefix}--wrapper--background-dark {
@@ -61,11 +61,10 @@
     max-width: 500px;
   }
 
-  // Commented out to maintain right and left padding on MainNavigation
-  // @include breakpointMax(bp--md--major) {
-  //   .#{$prefix}--wrapper--width-mobile-full {
-  //     padding-left: 0;
-  //     padding-right: 0;
-  //   }
-  // }
+  @include breakpointMax(bp--md--major) {
+    .#{$prefix}--wrapper--width-mobile-full {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
 }

@@ -16,7 +16,6 @@ export default {
     componentSubtitle: 'Template',
     status: 'legacy',
     mdx: markdown,
-    previewWidth: 'full',
   },
 };
 

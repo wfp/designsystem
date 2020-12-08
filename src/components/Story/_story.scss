@@ -333,7 +333,7 @@
 
   .#{$prefix}--story__b,
   .#{$prefix}--story__strong {
-    font-weight: 600;
+    font-weight: 700;
   }
 
   @each $size, $glyph in $spacing-map {

@@ -23,6 +23,7 @@ export default function StepNavigation({
   const [elRefs, setElRefs] = useState({});
 
   const getTabAt = (index) => {
+    console.log('GetTabAt', index);
     return elRefs[`tab${index}`] || React.Children.toArray(children)[index];
   };
 
@@ -33,6 +34,7 @@ export default function StepNavigation({
         .fill()
         .map((_, i) => elRefs[i] || createRef())
     );
+    console.log('useEffect arraylength', arrLength);
   }, [arrLength]);
 
   const getTabs = () => {
@@ -46,6 +48,7 @@ export default function StepNavigation({
   };
 
   const handleTabClick = (onSelectionChange) => {
+    console.log('handleTabClick', onSelectionChange);
     return (index, label, evt) => {
       evt.preventDefault();
       selectTabAt(index, onSelectionChange);
@@ -53,6 +56,7 @@ export default function StepNavigation({
   };
 
   const handleTabAnchorFocus = (onSelectionChange) => {
+    console.log('handleTabAnchorFocus', onSelectionChange);
     return (index) => {
       const tabCount = React.Children.count(children) - 1;
       let tabIndex = index;
@@ -64,6 +68,8 @@ export default function StepNavigation({
       }
 
       const tab = getTabAt(tabIndex);
+
+      console.log('handleTabAnchorFocus:tab', onSelectionChange);
 
       if (tab) {
         selectTabAt(tabIndex, onSelectionChange);
@@ -79,6 +85,7 @@ export default function StepNavigation({
   };
 
   const selectTabAt = (index, onSelectionChange) => {
+    console.log('selectTabAt', index, onSelectionChange);
     handleTabClick(index);
     if (typeof onSelectionChange === 'function') {
       onSelectionChange(index);

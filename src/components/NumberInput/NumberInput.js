@@ -182,7 +182,7 @@ NumberInput.propTypes = {
   /**
    * Specify a custom `id` for the input
    */
-  id: PropTypes.string,
+  id: PropTypes.string.isRequired,
 
   /**
    * Generic `label` that will be used as the textual representation of what
@@ -224,7 +224,7 @@ NumberInput.propTypes = {
   /**
    * Specify if the currently value is invalid.
    */
-  invalid: PropTypes.oneOfType([PropTypes.object, PropTypes.bool]),
+  invalid: PropTypes.bool,
 
   /**
    * Message which is displayed if the value is invalid.

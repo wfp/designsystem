@@ -33,7 +33,7 @@ const ChildrenContainer = styled.div<PreviewProps>(({ isColumn, columns }) => ({
   display: 'flex',
   position: 'relative',
   flexWrap: 'wrap',
-  padding: '10px 10px 30px 10px',
+  padding: '10px 20px 30px 20px',
   overflow: 'auto',
   flexDirection: isColumn ? 'column' : 'row',
 
@@ -222,7 +222,7 @@ const Scale = styled.div<{ scale: number }>(
   ({ scale }) =>
     scale
       ? {
-          transform: scale !== 1 ? `scale(${1 / scale})` : undefined,
+          transform: `scale(${1 / scale})`,
           transformOrigin: 'top left',
         }
       : {}

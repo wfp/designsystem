@@ -11,7 +11,10 @@ const Story = ({ children, className, pageWidth, spacing }) => {
     [`${className}`]: className,
   });
   return (
-    <div className={classNames} spacing={spacing}>
+    <div
+      className={classNames}
+      pageWidth={pageWidth ? pageWidth : 'md'}
+      spacing={spacing}>
       {children}
     </div>
   );
