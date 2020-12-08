@@ -60,7 +60,7 @@ export const ColourList = ({ filter }) => {
           </div>
         </Module>
       </li>
-    </Tooltip>
+     </Tooltip>
   ));
 
   return <ul className="color--list">{list}</ul>;

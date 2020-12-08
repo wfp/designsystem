@@ -13,7 +13,7 @@ export class SingleDatePickerInput extends PureComponent {
   };
 
   handleFocusChange = focusedInput => {
-    console.log("helloFocus: ", focusedInput)
+ 
     if (!focusedInput && typeof this.props.onBlur === 'function') {
       this.props.onBlur();
     }
@@ -21,7 +21,6 @@ export class SingleDatePickerInput extends PureComponent {
   };
 
   render() {
-    console.log("controlledValue",this.props.value, this.state.controlledValue )
   
     const {
       controlled,
@@ -77,13 +76,10 @@ export class SingleDatePickerInput extends PureComponent {
           focused={focused}
           hideKeyboardShortcutsPanel
           onDateChange={value => {
-            console.log("onchange here: ", value)
             if (onChange) {
               onChange({ value });
-              console.log("onchange clicked: ", value, this.props.value)
             }
             this.setState({ controlledValue: value },() => {
-              console.log("setstate conntrolledValue: ", this.state.controlledValue)
           });
           }}
           onFocusChange={({ focused }) => {
@@ -109,6 +105,10 @@ SingleDatePickerInput.propTypes = {
    * Provide the SingleDatePicker as a component
    */
   datePicker: PropTypes.func.isRequired,
+
+  onFocus: PropTypes.func,
+
+  onBlur: PropTypes.func,
   /**
    * Provide a custom className that is applied directly to the underlying
    * node

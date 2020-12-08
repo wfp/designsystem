@@ -12,6 +12,9 @@ export default {
     status: 'released',
     mdx: markdown,
   },
+  argTypes: {
+    anObjectProperty: { control: { type: "object" }, defaultValue: { value: "my value" } },
+  },
 };
 
 export const TextCard = (args) => <Card {...args} />;

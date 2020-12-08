@@ -123,7 +123,7 @@ export default function StepNavigation({
 
 StepNavigation.defaultProps = {
   role: 'navigation',
-  selected: 0,
+  selectedPage: 0,
 };
 
 StepNavigation.propTypes = {

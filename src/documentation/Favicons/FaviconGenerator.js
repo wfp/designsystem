@@ -54,7 +54,6 @@ class FaviconCanvas extends React.Component {
   download = () => {
     const canvas = document.getElementById('canvas');
     const dataurl = Package.generate(canvas);
-    console.log('dataurl', dataurl);
     //const dataurl = ico.generate([16, 32, 48]);
 
     this.props.updateUrl(dataurl);

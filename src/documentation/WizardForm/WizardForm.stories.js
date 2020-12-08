@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Field } from 'react-final-form';
-import Wizard from './Wizard';
+import {Wizard,Page} from './Wizard';
 import ReduxFormWrapper from '../../components/ReduxFormWrapper';
 import TextInput from '../../components/TextInput';
 import TextArea from '../../components/TextArea';
@@ -34,7 +34,7 @@ export const Regular = (args) => (
   <Wrapper background="lighter" pageWidth="lg" spacing="xl">
 
     <Wizard initialValues={{ employed: true, stooge: 'larry' }}>
-      <Wizard.Page label="Name and last name">
+      <Page label="Name and last name">
         <Blockquote style={{ marginBottom: '2rem' }} title="Regular Blockquote">
           Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
           nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
@@ -79,8 +79,8 @@ export const Regular = (args) => (
           inputComponent={TextInput}
           labelText="First Name"
         />
-      </Wizard.Page>
-      <Wizard.Page label="Contact data">
+      </Page>
+      <Page label="Contact data">
         <FormGroup>
           <label htmlFor="sex">Sex</label>
           <FormGroup
@@ -116,8 +116,8 @@ export const Regular = (args) => (
           </FormGroup>
           <Field name="sex" component={renderError} />
         </FormGroup>
-      </Wizard.Page>
-      <Wizard.Page
+      </Page>
+      <Page
         label="Additional notes"
         validate={(values) => {
           const errors = {};
@@ -133,8 +133,8 @@ export const Regular = (args) => (
           labelText="Notes"
           placeholder="Notes"
         />
-      </Wizard.Page>
-      <Wizard.Page label="Sulamen mon anmen">
+      </Page>
+      <Page label="Sulamen mon anmen">
         <Field
           component={ReduxFormWrapper}
           inputComponent={TextArea}
@@ -142,8 +142,8 @@ export const Regular = (args) => (
           labelText="Notes"
           placeholder="Notes"
         />
-      </Wizard.Page>
-      <Wizard.Page
+      </Page>
+      <Page
         label="Summary"
         helperText="Check & validate"
         status={'summary'}>
@@ -154,7 +154,7 @@ export const Regular = (args) => (
           labelText="Summary"
           placeholder="Summary"
         />
-      </Wizard.Page>
+      </Page>
     </Wizard>
   </Wrapper>
 );
@@ -167,151 +167,3 @@ Regular.decorators = [
   ),
 ];
 
-const sourceCode = `
-import { Field } from 'react-final-form';
-import Wizard from './Wizard';
-import ReduxFormWrapper from '../../components/ReduxFormWrapper';
-import TextInput from '../../components/TextInput';
-import TextArea from '../../components/TextArea';
-import FormGroup from '../../components/FormGroup';
-import Blockquote from '../../components/Blockquote';
-import Wrapper from '../../components/Wrapper';
-import RadioButton from '../../components/RadioButton/RadioButton';
-
-<Wrapper background="lighter" pageWidth="lg" spacing="xl">
-
-    <Wizard initialValues={{ employed: true, stooge: 'larry' }}>
-      <Wizard.Page label="Name and last name">
-        <Blockquote style={{ marginBottom: '2rem' }} title="Regular Blockquote">
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-          nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-          sed diam voluptua.{' '}
-        </Blockquote>
-        <div className="row">
-          <div className="col-md-6">
-            <Field
-              id="firstName"
-              name="firstName"
-              helperText="Enter your full first name"
-              component={ReduxFormWrapper}
-              inputComponent={TextInput}
-              labelText="First Name"
-            />
-          </div>
-          <div className="col-md-6">
-            <Field
-              id="lastName"
-              name="lastName"
-              helperText="Some more requirements"
-              component={ReduxFormWrapper}
-              inputComponent={TextInput}
-              labelText="Last Name"
-            />
-          </div>
-        </div>
-
-        <Field
-          component={ReduxFormWrapper}
-          inputComponent={TextArea}
-          name="notes"
-          labelText="Notes"
-          placeholder="Notes"
-        />
-
-        <Field
-          id="firstName"
-          name="firstName"
-          helperText="Enter your full first name"
-          component={ReduxFormWrapper}
-          inputComponent={TextInput}
-          labelText="First Name"
-        />
-      </Wizard.Page>
-      <Wizard.Page label="Contact data">
-        <FormGroup>
-          <label htmlFor="sex">Sex</label>
-          <FormGroup
-            className="wfp--input-group"
-            name="input-group"
-            defaultSelected="default-selected"
-            legend="Group Legend">
-            <Field
-              name="sex"
-              component={ReduxFormWrapper}
-              inputComponent={RadioButton}
-              type="radio"
-              value="male"
-              labelText="Male"
-            />
-            <Field
-              name="sex"
-              component={ReduxFormWrapper}
-              inputComponent={RadioButton}
-              type="radio"
-              value="female"
-              labelText="Female"
-            />
-          </FormGroup>
-          <FormGroup>
-            <Field
-              component={ReduxFormWrapper}
-              inputComponent={TextArea}
-              name="notes"
-              labelText="Notes"
-              placeholder="Notes"
-            />
-          </FormGroup>
-          <Field name="sex" component={renderError} />
-        </FormGroup>
-      </Wizard.Page>
-      <Wizard.Page
-        label="Additional notes"
-        validate={(values) => {
-          const errors = {};
-          if (!values.newNotes) {
-            errors.newNotes = 'Required';
-          }
-          return errors;
-        }}>
-        <Field
-          component={ReduxFormWrapper}
-          inputComponent={TextArea}
-          name="newNotes"
-          labelText="Notes"
-          placeholder="Notes"
-        />
-      </Wizard.Page>
-      <Wizard.Page label="Sulamen mon anmen">
-        <Field
-          component={ReduxFormWrapper}
-          inputComponent={TextArea}
-          name="newNotes"
-          labelText="Notes"
-          placeholder="Notes"
-        />
-      </Wizard.Page>
-      <Wizard.Page
-        label="Summary"
-        helperText="Check & validate"
-        status={'summary'}>
-        <Field
-          component={ReduxFormWrapper}
-          inputComponent={TextArea}
-          name="newNotes"
-          labelText="Summary"
-          placeholder="Summary"
-        />
-      </Wizard.Page>
-    </Wizard>
-  </Wrapper>
-`
-
-Regular.story = {
-  parameters: {
-    docs: {
-      source: {
-        code: sourceCode
-      }
-    }
-  }
-}
