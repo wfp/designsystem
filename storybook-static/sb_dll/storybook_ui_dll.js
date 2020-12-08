@@ -46797,7 +46797,7 @@ var storybook_ui_dll = (function(e) {
       var a = u[t];
       if ('function' != typeof a) throw new i('unknown record type: ' + t);
       if (!a(e, r)) throw new o(n + ' must be a ' + t);
-      console.log(a(e, r), r);
+      // console.log(a(e, r), r);
     };
   },
   pu3o: function(e, t, n) {

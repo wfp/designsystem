@@ -326,7 +326,7 @@ const ColourDocs = () => {
         }}
         src={`${process.env.STORYBOOK_INTERNAL_ASSETS}internal/background-contrast.png`}
       />
-      <h3 ref={linkRefs.dataviz}>Tints to use in graphs and charts</h3>
+      <h3 ref={linkRefs.dataviz}>Data visualisation palettes</h3>
 
       <ColorList filter="communications" />
 

@@ -26,7 +26,7 @@ export const StepNavigationRegular = (args) => {
         onSelectionChange={(e) => setStep(e)}
         selectedPage={step}>
         <StepNavigationItem label="Item without Status" page={0} />
-        <StepNavigationItem label="Active Item" page={1} />
+        <StepNavigationItem label="Active Item" page={1}  />
         <StepNavigationItem
           label="Not started Item"
           page={2}

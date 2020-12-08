@@ -44,7 +44,7 @@ $easing: cubic-bezier(0.17, 0.89, 0.32, 1.1); //ease-in-out;
   //background: linear-gradient(90deg, var(--brand-01), 0%, lighten(var(--brand-01), 5) 100%);
   @include breakpoint(bp--md--major) {
     height: 90vh;
-    width: 100vw;
+    width: 99vw;
   }
   display: flex;
   //box-shadow: inset 0px -22px 22px rgba(#000, 0.015);

@@ -109,7 +109,6 @@ const Table = ({ simpleSearch, search }) => {
       keys: ['age'],
     };
     var fuseAge = new Fuse(dataFiltered, optionsAge);
-    console.log('fuse', fuseAge);
     dataFiltered = fuseAge.search(search.age);
   }
 
@@ -218,7 +217,6 @@ class TableWithFilter extends Component {
   };
 
   setSearch = event => {
-    console.log('search', event);
     this.setState({ search: event });
   };
 

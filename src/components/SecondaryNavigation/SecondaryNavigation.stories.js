@@ -35,7 +35,7 @@ export const Regular = (args) => (
       <BreadcrumbItem href="#">Breadcrumb 2</BreadcrumbItem>
       <BreadcrumbItem disableLink>Breadcrumb 3</BreadcrumbItem>
     </Breadcrumb>
-    <SecondaryNavigationTitle>The Page Title</SecondaryNavigationTitle>
+    <SecondaryNavigationTitle>The page title</SecondaryNavigationTitle>
     <Tabs customTabContent={true}>
       <Tab label="Tab label 1" href="#" />
       <Tab label="Tab label 2" href="#" />
@@ -68,7 +68,7 @@ export const HeadingOnly = (args) => (
       <BreadcrumbItem href="#">Breadcrumb 2</BreadcrumbItem>
       <BreadcrumbItem disableLink>Breadcrumb 3</BreadcrumbItem>
     </Breadcrumb>
-    <SecondaryNavigationTitle>The Page Title</SecondaryNavigationTitle>
+    <SecondaryNavigationTitle>The page title</SecondaryNavigationTitle>
   </SecondaryNavigation>
 );
 

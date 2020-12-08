@@ -26,7 +26,6 @@ RegularSlider.args = {
   min: 0,
   max: 100,
   step: 1,
-  stepMuliplier: 4,
   labelText: 'Slider Label',
   helperText: 'Additional helper text',
 };
@@ -46,7 +45,6 @@ hideTextInput.args = {
   min: 0,
   max: 100,
   step: 1,
-  stepMuliplier: 4,
   labelText: 'Slider Label',
   helperText: 'Additional helper text',
 };
@@ -75,7 +73,6 @@ Disabled.args = {
   min: 0,
   max: 100,
   step: 1,
-  stepMuliplier: 4,
   labelText: 'Slider Label',
   helperText: 'Additional helper text',
 };
@@ -103,7 +100,6 @@ Fullwidth.args = {
   min: 0,
   max: 100,
   step: 1,
-  stepMuliplier: 4,
   labelText: 'Slider Label',
   helperText: 'Additional helper text',
 };
