@@ -9,6 +9,7 @@
   -webkit-tap-highlight-color: transparent;
   background: var(--ui-01);
   padding: $spacing-xs;
+  max-width: 300px;
   &.#{$prefix}--tooltip--disable-padding {
     padding: 0;
   }

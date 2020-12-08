@@ -111,26 +111,26 @@
   }
 
   .#{$prefix}--blockquote--warning {
-    border-left-color: $color__yellow;
-    background: $color__yellow-10;
+    border-left-color: var(--support-03);
+    background: var(--support-light-03);
 
     .#{$prefix}--blockquote__icon {
-      fill: $color__yellow !important;
+      fill: var(--support-03) !important;
     }
   }
 
   .#{$prefix}--blockquote--error {
-    border-left-color: $color__red;
-    background: $color__red-10;
+    border-left-color: var(--support-01);
+    background: var(--support-light-01);
 
     .#{$prefix}--blockquote__icon {
-      fill: $color__red !important;
+      fill: var(--support-01) !important;
     }
   }
 
   .#{$prefix}--blockquote--success {
     border-left-color: var(--support-02);
-    background: $color__dark-green-10;
+    background: var(--support-light-02);
 
     .#{$prefix}--blockquote__icon {
       fill: var(--support-02) !important;
