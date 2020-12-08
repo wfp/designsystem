@@ -1,3 +1,14 @@
+## [1.10.13](https://github.com/WFP/UI/compare/v1.10.12...v1.10.13) (2020-12-08)
+
+
+### Bug Fixes
+
+* **Colors:** calculating all colors ([6a79a9f](https://github.com/WFP/UI/commit/6a79a9fcf5f3adb16432f407f8766d50ffeb5d94))
+* **Darkmode:** addedd dark mode ([1476e89](https://github.com/WFP/UI/commit/1476e89a98c92b2a91f64327eeeb2afa1a25db7b))
+* **Darkmode:** preview for dark mode ([fd18e42](https://github.com/WFP/UI/commit/fd18e4245ce13e2d24dfc5e1d9dbeea93c00a9be))
+* **Slider:** range before added ([#350](https://github.com/WFP/UI/issues/350)) ([f77bf1f](https://github.com/WFP/UI/commit/f77bf1f3d91e3b13a6d47f924a316fe8ed6388cf))
+* **Tooltip:** classes added automatically to wrapping div ([7ce751d](https://github.com/WFP/UI/commit/7ce751d9774b0064217f334c605b8db10613c736))
+
 ## [1.10.7](https://github.com/WFP/UI/compare/v1.10.6...v1.10.7) (2020-11-16)
 
 
