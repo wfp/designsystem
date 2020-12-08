@@ -1,9 +1,11 @@
-<!--## Use with React Final Form (Redux form)
+Legacy note: RadioButtonGroup is depreciated and will be removed in the next versions. Use InputGroup instead.
+
+## Use with React Final Form (Redux form)
 
 Add `controlled={false}` to allow final-form to hand the state.
 
 ```js
-<InputGroup
+<RadioButtonGroup
   controlled={false}
   labelText="Tracking frequency"
   helperText="How often the position will be updated">
@@ -25,25 +27,5 @@ Add `controlled={false}` to allow final-form to hand the state.
     labelText="Radiobutton 2"
     type="radio"
   />
-</InputGroup>
-```-->
-
-## Usage
-
-InputGroup should be used inside `<Form>`s and can contain multiple inputs.
-
-#### When to use
-
-Use InputGroup to structure multiple inputs
-
-#### When not to use
-
-Do not nest multiple Inputs. Each input should only have one label text.
-
-## Related
-
-[Form](?path=/docs/components-form--regular)
-
-[Checkbox](?path=/docs/components-checkbox--regular)
-
-[RadioButton](?path=/docs/components-radiobutton--regular)
+</RadioButtonGroup>
+```

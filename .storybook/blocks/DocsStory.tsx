@@ -28,11 +28,13 @@ export const DocsStory: FunctionComponent<DocsStoryProps> = ({
       parameters.docs.storyDescription && (
         <Description markdown={parameters.docs.storyDescription} />
       )}
-    <Preview
-      parameters={parameters}
-      withToolbar={withToolbar}
-      storyComponent={storyFn}>
-      <Story id={id} />
-    </Preview>
+    <div className={parameters.previewWidth ? 'storybook__fullWidth' : ''}>
+      <Preview
+        parameters={parameters}
+        withToolbar={withToolbar}
+        storyComponent={storyFn}>
+        <Story id={id} />
+      </Preview>
+    </div>
   </Anchor>
 );

@@ -44,3 +44,38 @@ export const Regular = (args) => (
     </Story>
   </Wrapper>
 );
+
+Regular.story = {
+  parameters: {
+    docs: {
+      source: {
+        code: `
+import { Wrapper, Story, Icon} from "@wfp/ui";
+import { iconWfpHumEmergencyResponsePos } from '@wfp/icons';
+
+<Wrapper pageWidth="lg" spacing="md">
+  <Story className="wfp--story__center wfp--story__full-height">
+    <Icon
+      icon={iconWarningSolid}
+      fill="#0a6eb4"
+      width={100}
+      height={100}
+      style={{
+        marginBottom: '3rem'
+      }}
+    />
+    <h1 className="wfp--story__title">Not authorized</h1>
+    <p>
+      Sorry, you are not authorized to access this page.
+      <br />
+      To request access please write to{' '}
+      <Link href="mailto:example@wfp.org">example@wfp.org</Link>.<br />
+      Go back to <Link href="http://www.wfp.org">Homepage</Link>
+    </p>
+  </Story>
+</Wrapper>
+      `,
+      },
+    },
+  },
+};
