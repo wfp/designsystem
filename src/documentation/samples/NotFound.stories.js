@@ -46,9 +46,15 @@ Regular.decorators = [
   ),
 ];
 
-const notfoundcode = `
-import React from 'react'
-import {Link, Story, Icon, Wrapper} from '@wfp/ui';
+Regular.args = {};
+
+Regular.story = {
+  parameters: {
+    docs: {
+      source: {
+        code: `
+
+import { Wrapper, Story, Icon} from "@wfp/ui";
 import { iconWfpHumEmergencyResponsePos } from '@wfp/icons';
 
 <Wrapper pageWidth="lg" spacing="md">
@@ -67,17 +73,8 @@ import { iconWfpHumEmergencyResponsePos } from '@wfp/icons';
     </p>
   </Story>
 </Wrapper>
-    
-`
-
-Regular.story = {
-  parameters: {
-    docs: {
-      source: {
-        code: notfoundcode
-      }
-    }
-  }
-}
-
-
+      `,
+      },
+    },
+  },
+};

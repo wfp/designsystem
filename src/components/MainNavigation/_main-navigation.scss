@@ -181,9 +181,13 @@
       overflow-x: hidden;
       z-index: z('modal');
       color: var(--text-01);
-      background: $color__white;
+      background: var(--ui-01);
       box-shadow: rgba(desaturate($color__main, 50%), 0.15) 0 3px 12px,
         rgba(desaturate($color__main, 40%), 0.15) 0 32px 78px;
+      .#{$prefix}--theme-dark & {
+        box-shadow: var(--modal-background-01) 0 3px 12px,
+          var(--modal-background-01) 0 32px 78px;
+      }
       .#{$prefix}--main-navigation__user & {
         left: inherit;
         right: 0;
@@ -220,7 +224,7 @@
     .#{$prefix}--main-navigation__sub--open {
       display: block;
       color: var(--text-01);
-      background: $color__white;
+      background: var(--ui-01);
     }
 
     .#{$prefix}--main-navigation__trigger {

@@ -222,7 +222,7 @@ const Scale = styled.div<{ scale: number }>(
   ({ scale }) =>
     scale
       ? {
-          transform: `scale(${1 / scale})`,
+          transform: scale !== 1 ? `scale(${1 / scale})` : undefined,
           transformOrigin: 'top left',
         }
       : {}

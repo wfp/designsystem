@@ -120,13 +120,20 @@ function Slider(props) {
             <span className="wfp--slider__range-label">
               {formatLabel(min, minLabel)}
             </span>
-            <input
-              className={sliderClasses}
-              type="range"
-              {...other}
-              {...newProps}
-              ref={_inputRef}
-            />
+
+            <div className="wfp--slider__range-wrapper">
+              <div
+                className="wfp--slider__range-before"
+                style={{ width: `${(100 * value) / max}%` }}
+              />
+              <input
+                className={sliderClasses}
+                type="range"
+                {...other}
+                {...newProps}
+                ref={_inputRef}
+              />
+            </div>
             <span className="wfp--slider__range-label">
               {formatLabel(max, maxLabel)}
             </span>
@@ -246,7 +253,6 @@ Slider.propTypes = {
    * A value determining how much the value should increase/decrease by moving the thumb by mouse.
    */
   step: PropTypes.number,
-
 
   /**
    * Specify the value of the input, if undefined or null the value is empty

@@ -42,7 +42,7 @@
   }
 
   .#{$prefix}--wrapper--background-lighter {
-    background: $color__navy-gray-9;
+    background: var(--ui-02); //$color__navy-gray-9;
   }
 
   .#{$prefix}--wrapper--background-dark {
