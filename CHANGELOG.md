@@ -1,3 +1,14 @@
+## [1.10.14](https://github.com/WFP/UI/compare/v1.10.13...v1.10.14) (2020-12-08)
+
+
+### Bug Fixes
+
+* **Colors:** correct color variables ([b153db8](https://github.com/WFP/UI/commit/b153db8559c24d45a2d5ac0bf03ba8ae9beac1f6))
+* **DatePicker:** onsubmit error after merge ([be5eb7b](https://github.com/WFP/UI/commit/be5eb7b6eca1e8c80cc9a406ef37d62eea00767d))
+* **Notification:** notification legacy scss import and removed all console logs ([11f698b](https://github.com/WFP/UI/commit/11f698ba2909e28c457d76215f70aa2d88d833f1))
+* **Slider:** added new Slider ([994395f](https://github.com/WFP/UI/commit/994395f4d660438c446fd44bfd5742fa1785964d))
+* **Tooltip:** width changed ([9b3fe58](https://github.com/WFP/UI/commit/9b3fe58507dea7ba679c1d1f8b6466d2a7aad4dc))
+
 ## [1.10.13](https://github.com/WFP/UI/compare/v1.10.12...v1.10.13) (2020-12-08)
 
 
