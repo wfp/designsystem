@@ -1,0 +1,36 @@
+import Blockquote from '../../components/Blockquote';
+import Link from '../../components/Link';
+import { List, ListItem } from '../../components/List';
+
+<Meta
+  title="Documentation/Guidelines/Darkmode (custom colours)"
+  subTitle="Guidelines"
+  parameters={{
+    componentSubtitle: 'Guidelines',
+    previewTabs: {
+      canvas: { hidden: true },
+    },
+  }}
+/>
+
+## Using dark mode
+
+To enable the automatic dark mode you can add the `wfp--theme-dark--auto` class to `body`. It enables the automated color change depending on the operating systems appearance:
+
+```html
+<body class="wfp--theme-dark--auto"></body>
+```
+
+To enable the darkmode manually or only for a specific section addd the class `wfp--theme-dark`.
+
+```html
+<div class="wfp--theme-dark"></div>
+```
+
+## Override colors
+
+All css colors can be overridden via css variables. For more information please visit [CSS custom properties on developer.mozilla.org](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties).
+
+## Related
+
+[Colours](?path=/docs/documentation-core-colours--page)

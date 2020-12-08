@@ -5,7 +5,6 @@
 @import 'spacing';
 
 @mixin darkTheme {
-  //background: #{$color__navy-gray-1} !important;
   --interactive-01: #{$color__main}; // Main Link and Button Color
   --interactive-02: #{$color__main-51}; // Main WFP Color //$color__blue-40
   --hover-primary: #{$color__main-51};
@@ -13,8 +12,7 @@
   --brand-01: #{$color__main}; // Main Link and Button Color
   --accent-01: #{$color__yellow};
   --inverse-01: #{$color__white};
-  --inverse-02: #{$color__white};
-  --inverse-03: #{$color__navy-gray-3};
+  --inverse-02: #{$color__navy-gray-3};
   --ui-01: #{$color__gray-90};
   --ui-02: #{$color__gray-80}; //#{$color__navy-gray-2};
   --ui-03: #{$color__gray-70}; //#{$color__navy-gray-3};
@@ -59,8 +57,8 @@
     --brand-01: #{$color__main}; // Main Link and Button Color
     --accent-01: #{$color__yellow};
     --inverse-01: #{$color__white}; // Maybe rename to text ?
-    --inverse-02: #{$color__white}; // Remove
-    --inverse-03: #{$color__navy-gray-3}; // Review
+    //--inverse-02: #{$color__white}; // Remove
+    --inverse-02: #{$color__navy-gray-9}; // Review
     --ui-01: #{$color__white};
     --ui-02: #{$color__gray-10}; //#{$color__navy-gray-60} //#{$color__gray-10};
     --ui-03: #{$color__gray-20};

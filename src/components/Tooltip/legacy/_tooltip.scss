@@ -45,12 +45,12 @@
     0 4px 80px -8px rgba(36, 40, 47, 0.25),
     0 4px 4px -2px rgba(91, 94, 105, 0.15); */
 
-    background-color: var(--inverse-03);
+    background-color: var(--inverse-02);
 
     @each $placement in $placements {
       &[x-placement^='#{$placement}'] {
         .#{$namespace-prefix}-arrow {
-          @include arrow($placement, 8px, var(--inverse-03));
+          @include arrow($placement, 8px, var(--inverse-02));
         }
       }
     }
