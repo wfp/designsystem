@@ -12,20 +12,15 @@ export default {
   },
 };
 
-export const RegularSlider = (args) => (
-  <div style={{ marginTop: '2rem' }}>
-    <Slider id="slider2" {...args} />
-  </div>
-);
+export const RegularSlider = (args) => <Slider id="slider2" {...args} />;
 
 RegularSlider.args = {
-  children: 'Slider',
   name: 'Form item name (name)',
-  inputType: 'number',
-  value: 50,
+  value: 25,
   min: 0,
-  max: 100,
+  max: 50,
   step: 1,
+  stepMuliplier: 4,
   labelText: 'Slider Label',
   helperText: 'Additional helper text',
 };
@@ -37,14 +32,14 @@ export const hideTextInput = (args) => (
 );
 
 hideTextInput.args = {
-  children: 'Slider',
   name: 'Form item name (name)',
   inputType: 'number',
   hideTextInput: true,
-  value: 50,
+  value: 25,
   min: 0,
-  max: 100,
+  max: 50,
   step: 1,
+  stepMuliplier: 4,
   labelText: 'Slider Label',
   helperText: 'Additional helper text',
 };
@@ -65,7 +60,6 @@ export const Disabled = (args) => (
 );
 
 Disabled.args = {
-  children: 'Slider',
   name: 'Form item name (name)',
   inputType: 'number',
   disabled: true,
@@ -73,6 +67,7 @@ Disabled.args = {
   min: 0,
   max: 100,
   step: 1,
+  stepMuliplier: 4,
   labelText: 'Slider Label',
   helperText: 'Additional helper text',
 };
@@ -92,7 +87,6 @@ export const Fullwidth = (args) => (
 );
 
 Fullwidth.args = {
-  children: 'Slider',
   name: 'Form item name (name)',
   inputType: 'number',
   fullWidth: true,
@@ -100,6 +94,7 @@ Fullwidth.args = {
   min: 0,
   max: 100,
   step: 1,
+  stepMuliplier: 4,
   labelText: 'Slider Label',
   helperText: 'Additional helper text',
 };

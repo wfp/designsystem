@@ -26,7 +26,7 @@ function PropTypeEmptyString(props, propName, componentName) {
 
 /** Sliders provide a visual indication of adjustable content, where the user can move the handle along a horizontal track to increase or decrease the value. */
 
-function Slider(props) {
+function NumberInput(props) {
   const {
     additional,
     ariaLabelInput,
@@ -156,7 +156,7 @@ function Slider(props) {
   );
 }
 
-Slider.propTypes = {
+NumberInput.propTypes = {
   /**
    * Specify an optional className to be applied to the wrapper node
    */
@@ -255,6 +255,11 @@ Slider.propTypes = {
   step: PropTypes.number,
 
   /**
+   * A value determining how much the value should increase/decrease by Shift+arrow keys, which will be `(max - min) / stepMuliplier`.
+   */
+  //stepMuliplier: PropTypes.number,
+
+  /**
    * Specify the value of the input, if undefined or null the value is empty
    */
   value: PropTypes.oneOfType([PropTypeEmptyString, PropTypes.number]),
@@ -294,10 +299,11 @@ Slider.propTypes = {
   fullWidth: PropTypes.bool,
 };
 
-Slider.defaultProps = {
+NumberInput.defaultProps = {
   fullWidth: false,
   hideTextInput: false,
   step: 1,
+  //stepMuliplier: 4,
   disabled: false,
   minLabel: '',
   maxLabel: '',
@@ -306,4 +312,4 @@ Slider.defaultProps = {
   light: false,
 };
 
-export default Slider;
+export default NumberInput;
