@@ -111,22 +111,22 @@ We recommend the use of [React Storybook](https://github.com/storybooks/react-st
 1. Generate new tests
 
 ```
-npm run test
+yarn test
 ```
 
 2. Start the server:
 
 ```
-npm run storybook
+yarn storybook
 ```
 
 3. Open browser to `http://localhost:9000/`.
 4. Develop components in the `/components` folder. Add the export to `index.js` to include them into the build.
-5. Write stories for your components in `/.components` with `.stories.js` or `stories.mdx` ending.
+5. Write stories for your components in `/.components` with `-story.js` ending.
 
 ### Commits
 
-Use [Conventional Commits](https://www.conventionalcommits.org) for commit messages and pre-commit hooks for commiting.
+Use [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0-beta.4/) for commit messages and pre-commit hooks for commiting.
 
 Make sure your commit does not produce any errors while checking:
 
@@ -145,11 +145,6 @@ npm run test
 ### Deployment
 
 The UI Kit uses Azure Devops and [semantic-release](https://github.com/semantic-release/semantic-release) for automate versioning and CHANGELOG generation.
-
-#### npm release
-
-- Commits on the `master` branch will be released as `@lastest` if a relevant commit is included (e.g. feat, fix, perf, breaking)
-- Commits on `next` branch will be released as `@next` if a relevant commit is included
 
 ### Generate alpha release
 

@@ -21,11 +21,6 @@
       opacity: 0.5;
       pointer-events: none;
     }
-    &.#{$prefix}--read-more--expanded {
-      .#{$prefix}--read-more__fake-height {
-        display: block;
-      }
-    }
   }
 
   .#{$prefix}--read-more__trigger {
@@ -38,13 +33,6 @@
 
   .#{$prefix}--read-more__content {
     padding-bottom: $spacing-xs;
-  }
-
-  .#{$prefix}--read-more__fake-height {
-    opacity: 0;
-    width: 1px;
-    position: absolute;
-    display: none;
   }
 
   .#{$prefix}--read-more--fade {

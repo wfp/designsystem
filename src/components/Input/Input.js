@@ -15,7 +15,6 @@ const Input = ({
   labelText,
   children,
   className,
-  iconDescription,
   id,
   formItemClassName,
   placeholder,
@@ -30,9 +29,8 @@ const Input = ({
   required,
   ...other
 }) => {
-  const calculatedId = id ? id : name;
   const inputProps = {
-    id: calculatedId,
+    id,
     onChange: (evt) => {
       if (!other.disabled && !other.readOnly) {
         onChange(evt);
@@ -47,7 +45,7 @@ const Input = ({
     type,
   };
 
-  const errorId = calculatedId + '-error-msg';
+  const errorId = id + '-error-msg';
 
   const inputClasses = classNames(`${prefix}--input`, className, {
     [`${prefix}--input--light`]: light,
@@ -64,18 +62,17 @@ const Input = ({
   });
 
   const label = (
-    <label htmlFor={calculatedId} className={labelClasses}>
+    <label htmlFor={id} className={labelClasses}>
       {labelText && labelText}
       {required && '*'}
     </label>
   );
 
-  const error =
-    invalid && typeof invalid === 'object' ? (
-      <div className="wfp--form-requirement" id={errorId}>
-        {invalid.message ? invalid.message : invalidText}
-      </div>
-    ) : null;
+  const error = invalid ? (
+    <div className="wfp--form-requirement" id={errorId}>
+      {invalid.message ? invalid.message : invalidText}
+    </div>
+  ) : null;
 
   const elementProps = invalid
     ? {
@@ -139,7 +136,7 @@ Input.propTypes = {
   /**
    * Specify a custom `id` for the &lt;input&gt;
    */
-  id: PropTypes.string,
+  id: PropTypes.string.isRequired,
 
   /**
    * Provide the text that will be read by a screen reader when visiting this
@@ -172,11 +169,7 @@ Input.propTypes = {
   /**
    * Specify the value of the &lt;input&gt;
    */
-  value: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.number,
-    PropTypes.object,
-  ]),
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 
   /**
    * Specify whether you want the underlying label to be visually hidden
@@ -186,7 +179,7 @@ Input.propTypes = {
   /**
    * Specify whether the control is currently invalid
    */
-  invalid: PropTypes.oneOfType([PropTypes.bool, PropTypes.object]),
+  invalid: PropTypes.bool,
 
   /**
    * Provide the text that is displayed when the control is in an invalid state

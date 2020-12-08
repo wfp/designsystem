@@ -1,7 +1,8 @@
 import React from 'react';
-import markdown from './README.mdx';
+import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import MainNavigation from '.';
+
+import MainNavigation from '../MainNavigation';
 import MainNavigationItem from '../MainNavigationItem';
 
 import {
@@ -20,18 +21,8 @@ import Search from '../Search';
 import Link from '../Link';
 import User from '../User';
 
-export default {
-  title: 'Components/Navigations/MainNavigation',
-  component: MainNavigation,
-  parameters: {
-    componentSubtitle: 'Component',
-    status: 'released',
-    mdx: markdown,
-  },
-};
-
-export const Regular = (args) => (
-  <MainNavigation {...args}>
+storiesOf('Components|MainNavigation', module).add('default', () => (
+  <MainNavigation logo={<a href="http://www.wfp.org">Application name</a>}>
     {({ onChangeSub }) => {
       return (
         <React.Fragment>
@@ -55,11 +46,10 @@ export const Regular = (args) => (
                       id="search-2"
                       labelText="Filter"
                       placeHolderText="Filter list"
-                      
-                    />
-                    {/* onChange={() => {
+                      onChange={() => {
                         alert('Apply Filter');
-                      }} */}
+                      }}
+                    />
                   </SubNavigationFilter>
                 </SubNavigationHeader>
                 <SubNavigationContent>
@@ -158,16 +148,4 @@ export const Regular = (args) => (
       );
     }}
   </MainNavigation>
-);
-
-const description = `
-You can customize the content by using \`BannerNavigation\`.
-`;
-
-Regular.story = {
-  parameters: {
-    docs: {
-      storyDescription: description,
-    },
-  },
-};
+));

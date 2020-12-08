@@ -16,13 +16,6 @@ export default {
 export const Regular = (args) => (
   <>
     Use the open property in the table below to enable the preview.{' '}
-    <Modal {...args}>{args.children}</Modal>
+    <Modal {...args}>Text</Modal>
   </>
 );
-
-Regular.args = {
-  children: 'Text',
-  modalLabel: 'Modal label',
-  modalHeading: 'Modal heading',
-  modalText: 'Modal text',
-};

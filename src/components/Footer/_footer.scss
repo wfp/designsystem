@@ -20,7 +20,7 @@
 .#{$prefix}--footer {
   @include reset;
   @include font-family;
-  border-top: 2px solid var(--ui-03);
+  border-top: 2px solid $color__navy-gray-8;
   background-color: var(--ui-01);
   z-index: z('footer');
   padding: rem(20px) 0;
@@ -98,13 +98,6 @@
   @include rtl {
     margin-left: 0;
     margin-right: auto;
-  }
-}
-
-.#{$prefix}--theme-dark {
-  .#{$prefix}--footer__cta-logo,
-  .#{$prefix}--footer__cta-logo-small {
-    filter: invert(1);
   }
 }
 

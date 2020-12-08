@@ -126,9 +126,7 @@ describe('TextInput', () => {
         />
       );
 
-      const input = wrapper.children();
-
-      console.log(input);
+      const input = wrapper.find('input');
 
       it('should not invoke onClick', () => {
         input.simulate('click');

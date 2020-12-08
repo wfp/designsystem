@@ -40,7 +40,6 @@ List.propTypes = {
     'details',
     'bullets',
     'ordered',
-    'tooltip',
   ]),
   /**
    * Specify if the List should be small
