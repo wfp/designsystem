@@ -75,8 +75,6 @@ export const singleDatePickerNewReactHookForm = (args) => {
           </Input>
         )}
       />
-
-      <input type="submit" />
     </form>
   );
 };
@@ -107,9 +105,9 @@ import { SingleDatePicker } from 'react-dates';
   inputIconPosition="after"
   invalidText="A valid value is required"
   labelText="Label datepicker"
-  onBlur={()=>{console.log("Blur")}}
-  onChange={()=>{console.log("onChange")}}
-  onFocus={()=>{console.log("onFocus")}}
+  onBlur={()=>{}}
+  onChange={()=>{}}
+  onFocus={()=>{}}
   placeholder="Placeholder text (placeholder)"
   showDefaultInputIcon
 
@@ -152,9 +150,9 @@ import { DateRangePicker } from 'react-dates';
   inputIconPosition="after"
   invalidText="A valid value is required"
   labelText="Label datepicker"
-  onBlur={()=>{console.log("Blur")}}
-  onChange={()=>{console.log("onChange")}}
-  onFocus={()=>{console.log("onFocus")}}
+  onBlur={()=>{}}
+  onChange={()=>{}}
+  onFocus={()=>{}}
   placeholder="Placeholder text (placeholder)"
   showDefaultInputIcon
 
@@ -171,6 +169,39 @@ dateRangePicker.story = {
   }
 }
 
+// export const singleDatePickerNewReactHookForm = (args) => {
+//   const defaultValues = { test: '2020-12-01T11:00:00.000Z' };
+//   const [focused, setFocused] = useState(false);
+//   const { control, register, handleSubmit } = useForm({ defaultValues });
+//   const onSubmit = (data) => alert(JSON.stringify(data));
+//   return (
+//     <form onSubmit={handleSubmit(onSubmit)}>
+//       <Controller
+//         control={control}
+//         name="test"
+//         render={({ onChange, onBlur, value, name, ref }) => (
+//           <Input
+//             labelText="Input using SingleDatePicker by Airbnb"
+//             helperText="HelperText">
+//             {(e) => (
+//               <SingleDatePicker
+//                 onDateChange={(newDate) => onChange(newDate)}
+//                 focused={focused}
+//                 onFocusChange={({ focused }) => setFocused(focused)}
+//                 showDefaultInputIcon
+//                 inputIconPosition='after'
+//                 date={moment(value)}
+//                 id="another_unique_id"
+//               />
+//             )}
+//           </Input>
+//         )}
+//       />
+//       <input type="submit" />
+//     </form>
+//   );
+// };
+
 export const DatePickerHookForm = (args) => {
   const {  control } = useForm();
   return(
@@ -183,8 +214,8 @@ export const DatePickerHookForm = (args) => {
           inputIconPosition="after"
           invalidText="A valid value is required"
           labelText="Label datepicker"
-          onBlur={()=>{console.log("Blur")}}
-          onFocus={()=>{console.log("onFocus")}}
+          onBlur={()=>{}}
+          onFocus={()=>{}}
           placeholder="Placeholder text (placeholder)"
           showDefaultInputIcon
         />
@@ -212,9 +243,9 @@ export const DatePickerRangeHookForm = (args) => {
           inputIconPosition="after"
           invalidText="A valid value is required"
           labelText="Label datepicker"
-          onBlur={()=>{console.log("Blur")}}
-          onChange={()=>{console.log("onChange")}}
-          onFocus={()=>{console.log("onFocus")}}
+          onBlur={()=>{}}
+          onChange={()=>{}}
+          onFocus={()=>{}}
           placeholder="Placeholder text (placeholder)"
           showDefaultInputIcon
 

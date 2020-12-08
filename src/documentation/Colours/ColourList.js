@@ -59,7 +59,6 @@ export const ColourList = ({ filter }) => {
                     <strong>Hex:</strong>{' '}
                     {computedColor ? computedColor : color.hex}
                   </ListItem>
-
                   {color.css && (
                     <ListItem>
                       <strong>CSS:</strong>
@@ -74,6 +73,7 @@ export const ColourList = ({ filter }) => {
       </Tooltip>
     );
   });
+
 
   return <ul className="color--list">{list}</ul>;
 };

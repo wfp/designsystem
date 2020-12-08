@@ -145,7 +145,7 @@ Input.propTypes = {
    * Provide the text that will be read by a screen reader when visiting this
    * control
    */
-  labelText: PropTypes.node.isRequired,
+  labelText: PropTypes.node,
 
   /**
    * Optionally provide an `onChange` handler that is called whenever &lt;input&gt;

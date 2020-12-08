@@ -204,7 +204,7 @@
       height: rem(55px);
       flex-direction: row-reverse;
       justify-content: space-between;
-      padding: 0 $page-padding-mobile;
+      // padding: 0 $page-padding-mobile;
     }
 
     .#{$prefix}--main-navigation__logo {

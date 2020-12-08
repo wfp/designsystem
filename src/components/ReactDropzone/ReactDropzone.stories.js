@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import markdown from './README.mdx';
 import { action } from '@storybook/addon-actions';
 import { List, ListItem } from '../List';
@@ -17,8 +17,18 @@ export default {
   },
 };
 
-export const Regular = (args) => (
-  <Dropzone onDrop={(acceptedFiles) => console.log(acceptedFiles)}>
+export const Regular = (args) => {
+  const [file, setfile] = useState([])
+
+  const files = file.map((file) => (
+    <ListItem key={file.path}>
+      {file.path} - {Math.round(file.size / 1000)} kB
+    </ListItem>
+  ));
+
+  return(
+  <>
+  <Dropzone onDrop={(acceptedFiles) => setfile(acceptedFiles)}>
     {({ getRootProps, getInputProps }) => (
       <section className="wfp--dropzone">
         <div {...getRootProps({ className: 'wfp--dropzone__input' })}>
@@ -28,7 +38,14 @@ export const Regular = (args) => (
       </section>
     )}
   </Dropzone>
-);
+  <aside className="wfp--dropzone__file-list">
+        <h4>Files</h4>
+        <List>{files}</List>
+  </aside>
+  </>
+  
+)
+};
 
 Regular.parameters = {
   html: false,
@@ -36,16 +53,35 @@ Regular.parameters = {
     source: {
       code: ` import Dropzone from 'react-dropzone';
 
-<Dropzone onDrop={(acceptedFiles) => console.log(acceptedFiles)}>
-{({ getRootProps, getInputProps }) => (
-  <section className="wfp--dropzone">
-    <div {...getRootProps({ className: 'wfp--dropzone__input' })}>
-      <input {...getInputProps()} />
-      <div>Drag 'n' drop some files here, or click to select files</div>
-    </div>
-  </section>
-)}
-</Dropzone>`,
+      export const Regular = (args) => {
+        const [file, setfile] = useState([])
+      
+        const files = file.map((file) => (
+          <ListItem key={file.path}>
+            {file.path} - {Math.round(file.size / 1000)} kB
+          </ListItem>
+        ));
+      
+        return(
+        <>
+        <Dropzone onDrop={(acceptedFiles) => setfile(acceptedFiles)}>
+          {({ getRootProps, getInputProps }) => (
+            <section className="wfp--dropzone">
+              <div {...getRootProps({ className: 'wfp--dropzone__input' })}>
+                <input {...getInputProps()} />
+                <div>Drag 'n' drop some files here, or click to select files</div>
+              </div>
+            </section>
+          )}
+        </Dropzone>
+        <aside className="wfp--dropzone__file-list">
+              <h4>Files</h4>
+              <List>{files}</List>
+        </aside>
+        </>
+        
+      )
+      };`,
     },
   },
 };

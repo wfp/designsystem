@@ -46,7 +46,7 @@ export default class StepNavigationItem extends React.Component {
     /**
      * Optionally provide an index for the currently selected <Tab>
      */
-    selectedPage: PropTypes.bool.isRequired,
+    selectedPage: PropTypes.number.isRequired,
     /**
      * An optional parameter to allow overriding the anchor rendering.
      * Useful for using Tab along with react-router or other client
@@ -59,7 +59,7 @@ export default class StepNavigationItem extends React.Component {
     role: 'presentation',
     label: 'provide a label',
     tabIndex: 0,
-    selected: false,
+    selectedPage:0,
     onClick: () => {},
   };
 

@@ -49,9 +49,12 @@
 @mixin css--variables {
   body {
     --interactive-01: #{$color__main-51}; // Main Link and Button Color
-    --interactive-02: #{$color__main-60}; // Main WFP Color //$color__blue-40
-    //--hover-primary: #{darken($color__main-51, 10%)}; // Remove
 
+    // --hover-primary: #{darken($color__main-51, 10%)};
+    --accent-02: #{$color__yellow}; // Darker WFP Blue // $color__teal-20
+    --brand-01: #{$color__main}; // Main Link and Button Color
+    --interactive-02: #{$color__main-60}; //$color__blue-40
+    //--hover-primary: #{darken($color__main-51, 10%)}; // Remove
     //--hover-primary: #{$color__main-60};
     --accent-02: #{$color__yellow}; // Darker WFP Blue // $color__teal-20 // Remove
     --brand-01: #{$color__main}; // Main Link and Button Color
@@ -59,6 +62,7 @@
     --inverse-01: #{$color__white}; // Maybe rename to text ?
     //--inverse-02: #{$color__white}; // Remove
     --inverse-02: #{$color__navy-gray-9}; // Review
+
     --ui-01: #{$color__white};
     --ui-02: #{$color__gray-10}; //#{$color__navy-gray-60} //#{$color__gray-10};
     --ui-03: #{$color__gray-20};
@@ -80,11 +84,7 @@
     --support-light-03: #{$color__yellow-20};
     --support-04: #{$color__main-30};
     --support-light-04: #{$color__main-20};
-    --nav-01: #{$color__navy-gray-1}; // Remove
-    --nav-02: #{$color__main-80}; // Remove
-    --nav-03: #{$color__magenta-30}; // Remove
-    --nav-04: #{$color__magenta-60}; // Remove
-    --disabled: #{$color__navy-gray-10}; // Remove
+
     --disabled-01: #{$color__navy-gray-10};
     --disabled-02: #{$color__navy-gray-8};
 

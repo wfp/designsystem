@@ -24,6 +24,8 @@
   > div {
     > div {
       overflow: visible !important;
+      position: inherit;
+      justify-content: flex-end;
       /*&:first-child {
         z-index: 1 !important;
       }
