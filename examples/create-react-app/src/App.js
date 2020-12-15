@@ -1,67 +1,50 @@
 import '@wfp/ui/src/globals/scss/styles.scss';
 
 import React, { Component } from 'react';
-import { Icon, Card, Hero, Button } from '@wfp/ui';
-import {
-  Module,
-  ModuleHeader,
-  ModuleBody,
-  BodyContent,
-  ModuleFooter,
-} from '@wfp/ui';
+import { Link, Footer, Tooltip } from '@wfp/ui';
+import Navigation from './components/Navigation';
+import SecondaryNavigation from './components/SecondaryNavigation';
+import TableTest from './components/ToolTipTest';
 
-import { iconAddGlyph } from '@wfp/icons';
 import './App.scss';
 
 class App extends Component {
   render() {
     return (
       <>
-        <Icon className="some-class" href="#" icon={iconAddGlyph} />
-        <h3>Card example</h3>
-        <Card
-          isLink={false}
-          kind="text-card"
-          metadata="Publication"
-          subTitle="Food security and climate change analyses, adaptation planning, and good practices in food security adaptation programming."
-          title="The Climate Adaption Mangement and Innovation Initiative"
-        />
-
-        <h3>Hero example</h3>
-        <Hero
-          href="#"
-          isLink
-          kind="splash"
-          subTitle={
-            <>
-              <div style={{ marginBottom: '1rem' }}>
-                Cras dapibus. Aenean ut eros et nisl sagittis vestibulum. Fusce
-                risus nisl, viverra et, tempor et, pretium in.
-              </div>
-              <Button
-                disabled={false}
-                iconDescription="Provide icon description if icon is used"
-                iconReverse={false}
-                kind="inverse"
-                small={false}
-                tabIndex={0}
-                type="button">
-                Read more
-              </Button>
-            </>
-          }
-          title="The Climate Adaption Mangement and Innovation Initiative"
-        />
-
-        <h3>Module Example</h3>
-        {/* <Module centered={false}>
-          <ModuleHeader>Module example</ModuleHeader>
-          <ModuleBody>
-            <BodyContent />
-          </ModuleBody>
-          <ModuleFooter>Module footer</ModuleFooter>
-        </Module> */}
-      </>
+      <Navigation />
+      <SecondaryNavigation /> 
+      <div className="maincontent">
+        <TableTest/>
+      </div>
+      
+      <Footer pageWidth="lg">
+        <div className="wfp--footer__info">
+          <div className="wfp--footer__info__item">
+            <p className="wfp--footer__label">A label</p>
+            <ul className="wfp--footer__list">
+              <li>
+                <Link href="http://www.wfp.org">First Link</Link>
+              </li>
+              <li>
+                <Link href="http://www.wfp.org">Second Link</Link>
+              </li>
+            </ul>
+          </div>
+          <div className="wfp--footer__info__item">
+            <p className="wfp--footer__label">Another label</p>
+            <ul className="wfp--footer__list">
+              <li>
+                <Link href="http://www.wfp.org">First Link</Link>
+              </li>
+              <li>
+                <Link href="http://www.wfp.org">Second Link</Link>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </Footer>
+  </>
     );
   }
 }

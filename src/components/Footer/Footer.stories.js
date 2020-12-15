@@ -74,10 +74,10 @@ export const External = (args) => (
       </div>
     }>
     <div>
-      The United Nations World Food Programme - saving lives in emergencies and
-      changing lives for millions through sustainable development. WFP works in
-      more than 80 countries around the world, feeding people caught in conflict
-      and disasters, and laying the foundations for a better future.
+      The United Nations World Food Programme is the 2020 Nobel Peace Prize Laureate. 
+      We are the world's largest humanitarian organization, 
+      saving lives in emergencies and using food assistance to build a pathway to peace, 
+      stability and prosperity for people recovering from conflict, disasters
       <br />
       <Link href="http://www.wfp.org">Custom Links</Link>
     </div>

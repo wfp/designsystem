@@ -1,9 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import ReactTable from 'react-table';
-import Blockquote from '../Blockquote';
-import TablePagination from '../TablePagination';
 import Unit from './Unit';
 import { withKnobs, select, text, number } from '@storybook/addon-knobs/react';
 

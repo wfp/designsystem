@@ -1,8 +1,6 @@
 import React from 'react';
 import Tooltip from './Tooltip';
-import { tooltipStyle, tooltipStyleDark } from './Tooltip';
 import markdown from './README.mdx';
-import TooltipTrigger from 'react-popper-tooltip';
 
 export default {
   title: 'Components/UI Elements/Tooltip',

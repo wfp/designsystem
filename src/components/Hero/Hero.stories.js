@@ -215,7 +215,7 @@ Emergencies.args = {
       />
       <span>
         Curabitur ullamcorper ultricies nisi. Proin magna.{' '}
-        <a href="#">Etiam iaculis nunc ac metus</a>
+        <a>Etiam iaculis nunc ac metus</a>
       </span>
     </>
   ),

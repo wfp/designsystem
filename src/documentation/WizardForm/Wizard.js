@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
 import { Form, FormSpy } from 'react-final-form';
 import FormWizard from '../../components/FormWizard';
 import FormControls from '../../components/FormControls';
@@ -69,7 +68,7 @@ const Wizard =({children, initialValues, onSubmit, ...other })=>{
           <form onSubmit={handleSubmit}>
             <FormWizard
               stickySidebar
-              formHeader={`Step: ${page}/4 ${activePage.props.label}`}
+              formHeader={`Step ${page}/4: ${activePage.props.label}`}
               formControls={
                 <FormControls
                   onPreviousClick={previous}

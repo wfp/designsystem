@@ -35,12 +35,13 @@ export const Regular = (args) => (
 
     <Wizard initialValues={{ employed: true, stooge: 'larry' }}>
       <Page label="Name and last name">
-        <Blockquote style={{ marginBottom: '2rem' }} title="Regular Blockquote">
+        <div style={{marginBottom:'2rem'}}>
+        <Blockquote title="Regular Blockquote">
           Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
           nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-          sed diam voluptua.{' '}
+          sed diam voluptua.
         </Blockquote>
-        
+        </div>
             <Field
               id="firstName"
               name="firstName"
@@ -134,7 +135,7 @@ export const Regular = (args) => (
         <Field
           component={ReduxFormWrapper}
           inputComponent={TextArea}
-          name="newNotes"
+          name="newNotes2"
           labelText="Notes"
           placeholder="Notes"
         />
@@ -146,7 +147,7 @@ export const Regular = (args) => (
         <Field
           component={ReduxFormWrapper}
           inputComponent={TextArea}
-          name="newNotes"
+          name="summary"
           labelText="Summary"
           placeholder="Summary"
         />

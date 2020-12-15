@@ -3,7 +3,7 @@ import Checkbox from '../Checkbox';
 import Form from './Form';
 import FormGroup from '../FormGroup';
 import FileUploader from '../FileUploader';
-import Dropzone, { useDropzone } from 'react-dropzone';
+import Dropzone from 'react-dropzone';
 import NumberInput from '../NumberInput';
 import RadioButton from '../RadioButton';
 import InputGroup from '../InputGroup';

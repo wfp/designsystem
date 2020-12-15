@@ -60,7 +60,7 @@ const RegularPage = ({
     <div>
       <MainNavigation
         pageWidth={pageWidth}
-        logo={<a href="http://www.wfp.org">Application name</a>}>
+        logo={<a href="#">Application name</a>}>
         <MainNavigationItem>
           <Link href="http://communities.wfp.org" target="_blank">
             Section 1

@@ -1,7 +1,4 @@
 import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
-import Link from '../../components/Link';
-import Page from '../Page';
 import { Controller, useForm } from 'react-hook-form';
 import Select from '../../components/Select';
 import TextInput from '../../components/TextInput';
