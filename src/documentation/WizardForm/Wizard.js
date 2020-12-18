@@ -23,7 +23,7 @@ const Wizard =({children, initialValues, onSubmit, ...other })=>{
   const handleTabClick = (values) =>{
     
     if(Object.keys(validate(values)).length > 0){
-      console.log("not valid",validate(values))
+      // console.log("not valid",validate(values))
     }else{
       setPage(values);
       setValues(values);
