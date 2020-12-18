@@ -87,7 +87,7 @@
   .#{$prefix}--form-requirement {
     @include reset;
     @include typescale('omega');
-    margin: $spacing-xs 0 0;
+    margin: $spacing-2xs 0 0;
     max-height: 0;
     //overflow: hidden;
     font-weight: 600;
