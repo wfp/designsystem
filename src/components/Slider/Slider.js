@@ -222,10 +222,6 @@ Slider.propTypes = {
    */
   onClick: PropTypes.func,
 
-  /**
-   * `true` to disable this slider.
-   */
-  disabled: PropTypes.bool,
 
   /**
    * The `name` attribute of the `<input>`.

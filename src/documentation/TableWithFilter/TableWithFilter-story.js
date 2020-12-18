@@ -58,21 +58,21 @@ const data = [
   },
 ];
 
-const columns = [
-  {
-    Header: 'Name',
-    accessor: 'name', // String-based value accessors!
-  },
-  {
-    Header: 'Age',
-    accessor: 'age',
-    Cell: props => <span className="number">{props.value}</span>, // Custom cell components!
-  },
-  {
-    Header: 'City',
-    accessor: 'city', // String-based value accessors!
-  },
-];
+// const columns = [
+//   {
+//     Header: 'Name',
+//     accessor: 'name', // String-based value accessors!
+//   },
+//   {
+//     Header: 'Age',
+//     accessor: 'age',
+//     Cell: props => <span className="number">{props.value}</span>, // Custom cell components!
+//   },
+//   {
+//     Header: 'City',
+//     accessor: 'city', // String-based value accessors!
+//   },
+// ];
 
 const Table = ({ simpleSearch, search }) => {
   var dataFiltered = data;

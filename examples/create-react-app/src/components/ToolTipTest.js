@@ -24,17 +24,15 @@ function ToolTipTest() {
                     <Tooltip       
                         trigger="click"
                         placement={"bottom"}
-                        useWrapper 
+                        useWrapper={false}
                         content="Label Text" 
                         >
-                        <span>
                             <Icon
                             description="options"
                             icon={iconOverflowMenu}
                             width="17px"
                             height="17px"
                             />
-                        </span>
                         
                     </Tooltip>
                   </td>

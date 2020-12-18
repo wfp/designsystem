@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { sliderValuePropSync } from '../../internal/FeatureFlags';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import isEqual from 'lodash.isequal';
 import Input from '../Input';
 import TextInput from '../TextInput';
 
@@ -19,7 +17,7 @@ export default function Slider(props) {
   const [dragging, setDragging] = useState(false);
   const [value, setValue] = useState(props.value);
   const [left, setLeft] = useState(0);
-  var track;
+  // var track;
   var element;
 
   /*componentDidMount() {

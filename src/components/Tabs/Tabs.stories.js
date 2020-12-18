@@ -1,9 +1,7 @@
 import React from 'react';
 import markdown from './README.mdx';
-import { action } from '@storybook/addon-actions';
 import Tabs from '.';
 import Tab from '../Tab';
-import TabsSkeleton from '../Tabs/Tabs.Skeleton';
 
 export default {
   title: 'Components/Content Related/Tabs',

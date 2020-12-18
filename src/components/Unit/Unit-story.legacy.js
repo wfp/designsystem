@@ -4,167 +4,167 @@ import { storiesOf } from '@storybook/react';
 import Unit from './Unit';
 import { withKnobs, select, text, number } from '@storybook/addon-knobs/react';
 
-const units = [
-  {
-    description: 'generate USD based on USD',
-    sample: 12345.12345,
-    setup: {
-      type: 'Usd',
-    },
-  },
-  {
-    type: 'Usd',
-    description: 'generate million USD based on USD and round to integer',
-    sample: 12345.12345,
-    setup: {
-      type: 'Usd',
-      input: 'million',
-      output: 'million',
-      maximumFractionDigits: 0,
-      showZero: true,
-    },
-  },
-  {
-    description: 'generate Million USD based on USD, external style',
-    sample: 12345.12345,
-    setup: {
-      type: 'Usd',
-      input: 'external',
-      output: 'million',
-    },
-  },
-  {
-    description: 'generate USD based on million USD',
-    sample: 1,
-    setup: {
-      type: 'Usd',
-      input: 'million',
-      showZero: true,
-    },
-  },
-  {
-    description: 'generate Million USD based on thousands USD',
-    sample: 12345.12345,
-    setup: {
-      type: 'Usd',
-      output: 'million',
-      input: 'thousand',
-      showZero: true,
-    },
-  },
-  {
-    description: 'level',
-    sample: 3,
-    setup: {
-      type: 'Level',
-    },
-  },
-  {
-    description: 'partners',
-    sample: 12345,
-    setup: {
-      type: 'Partners',
-    },
-  },
-  {
-    description: 'beneficaries',
-    sample: 12345,
-    setup: {
-      type: 'Beneficiaries',
-    },
-  },
-  {
-    description: 'generate billion USD based on USD',
-    sample: 12345,
-    setup: {
-      type: 'Households',
-    },
-  },
-  {
-    description: 'display months',
-    sample: 12,
-    setup: {
-      type: 'Months',
-    },
-  },
-  {
-    description: 'months singular',
-    sample: 1,
-    setup: {
-      type: 'Months',
-    },
-  },
-  {
-    description: 'no settings',
-    sample: 'Lorem Ipsum et jomen',
-    setup: {},
-  },
-  {
-    description: 'generate megaton',
-    sample: 12345,
-    setup: {
-      type: 'Mt',
-    },
-  },
-  {
-    description: 'generate billion USD based on USD',
-    sample: 12345,
-    setup: {
-      type: 'People',
-    },
-  },
-  {
-    description: 'million without a Type',
-    sample: 12345,
-    setup: {
-      type: 'Num',
-      output: 'million',
-    },
-  },
-  {
-    description: 'generate billion USD based on USD',
-    sample: 5,
-    setup: {
-      type: 'Percentage',
-      from: 100,
-    },
-  },
-  {
-    description: 'generate billion USD based on USD',
-    sample: 12345,
-    setup: {
-      type: 'Percentage',
-    },
-  },
-  {
-    description: 'generate billion USD based on USD',
-    sample: 201807,
-    setup: {
-      type: 'YearMonth',
-    },
-  },
-  {
-    description: 'returns no Unit',
-    sample: 'Hello World',
-    setup: {
-      type: 'None',
-    },
-  },
-  {
-    description: 'Adds thousands comma and Trips',
-    sample: 12345,
-    setup: {
-      type: 'Trips',
-    },
-  },
-  {
-    description: 'Generate billion USD based on USD',
-    sample: 12345,
-    setup: {
-      type: 'Countries',
-    },
-  },
-];
+// const units = [
+//   {
+//     description: 'generate USD based on USD',
+//     sample: 12345.12345,
+//     setup: {
+//       type: 'Usd',
+//     },
+//   },
+//   {
+//     type: 'Usd',
+//     description: 'generate million USD based on USD and round to integer',
+//     sample: 12345.12345,
+//     setup: {
+//       type: 'Usd',
+//       input: 'million',
+//       output: 'million',
+//       maximumFractionDigits: 0,
+//       showZero: true,
+//     },
+//   },
+//   {
+//     description: 'generate Million USD based on USD, external style',
+//     sample: 12345.12345,
+//     setup: {
+//       type: 'Usd',
+//       input: 'external',
+//       output: 'million',
+//     },
+//   },
+//   {
+//     description: 'generate USD based on million USD',
+//     sample: 1,
+//     setup: {
+//       type: 'Usd',
+//       input: 'million',
+//       showZero: true,
+//     },
+//   },
+//   {
+//     description: 'generate Million USD based on thousands USD',
+//     sample: 12345.12345,
+//     setup: {
+//       type: 'Usd',
+//       output: 'million',
+//       input: 'thousand',
+//       showZero: true,
+//     },
+//   },
+//   {
+//     description: 'level',
+//     sample: 3,
+//     setup: {
+//       type: 'Level',
+//     },
+//   },
+//   {
+//     description: 'partners',
+//     sample: 12345,
+//     setup: {
+//       type: 'Partners',
+//     },
+//   },
+//   {
+//     description: 'beneficaries',
+//     sample: 12345,
+//     setup: {
+//       type: 'Beneficiaries',
+//     },
+//   },
+//   {
+//     description: 'generate billion USD based on USD',
+//     sample: 12345,
+//     setup: {
+//       type: 'Households',
+//     },
+//   },
+//   {
+//     description: 'display months',
+//     sample: 12,
+//     setup: {
+//       type: 'Months',
+//     },
+//   },
+//   {
+//     description: 'months singular',
+//     sample: 1,
+//     setup: {
+//       type: 'Months',
+//     },
+//   },
+//   {
+//     description: 'no settings',
+//     sample: 'Lorem Ipsum et jomen',
+//     setup: {},
+//   },
+//   {
+//     description: 'generate megaton',
+//     sample: 12345,
+//     setup: {
+//       type: 'Mt',
+//     },
+//   },
+//   {
+//     description: 'generate billion USD based on USD',
+//     sample: 12345,
+//     setup: {
+//       type: 'People',
+//     },
+//   },
+//   {
+//     description: 'million without a Type',
+//     sample: 12345,
+//     setup: {
+//       type: 'Num',
+//       output: 'million',
+//     },
+//   },
+//   {
+//     description: 'generate billion USD based on USD',
+//     sample: 5,
+//     setup: {
+//       type: 'Percentage',
+//       from: 100,
+//     },
+//   },
+//   {
+//     description: 'generate billion USD based on USD',
+//     sample: 12345,
+//     setup: {
+//       type: 'Percentage',
+//     },
+//   },
+//   {
+//     description: 'generate billion USD based on USD',
+//     sample: 201807,
+//     setup: {
+//       type: 'YearMonth',
+//     },
+//   },
+//   {
+//     description: 'returns no Unit',
+//     sample: 'Hello World',
+//     setup: {
+//       type: 'None',
+//     },
+//   },
+//   {
+//     description: 'Adds thousands comma and Trips',
+//     sample: 12345,
+//     setup: {
+//       type: 'Trips',
+//     },
+//   },
+//   {
+//     description: 'Generate billion USD based on USD',
+//     sample: 12345,
+//     setup: {
+//       type: 'Countries',
+//     },
+//   },
+// ];
 
 storiesOf('Components|Unit', module)
   .addDecorator(withKnobs)

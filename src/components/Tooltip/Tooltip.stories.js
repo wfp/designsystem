@@ -1,6 +1,8 @@
 import React from 'react';
 import Tooltip from './Tooltip';
 import markdown from './README.mdx';
+import Icon from '../Icon';
+import {iconOverflowMenu} from '@wfp/icons';
 
 export default {
   title: 'Components/UI Elements/Tooltip',
@@ -14,7 +16,7 @@ export const Regular = (args) => (
   <Tooltip
     // options
     {...args}>
-    <span className="hello">Click here to show tooltip</span>
+    Click here to show tooltip
   </Tooltip>
 );
 
@@ -46,11 +48,25 @@ Dark.story = {
 };
 
 export const UseWrapper = (args) => (
-  <Tooltip
-    // options
-    {...args}>
-    <span>Click here to show tooltip</span>
-  </Tooltip>
+  // <Tooltip
+  //   // options
+  //   {...args}>
+  //   <span>Click here to show tooltip</span>
+  // </Tooltip>
+  <Tooltip 
+  {...args}      
+  trigger="hover"
+  placement={"bottom"}
+  content="Label Text" 
+  >
+      <Icon
+      description="options"
+      icon={iconOverflowMenu}
+      width="17px"
+      height="17px"
+      />
+  
+</Tooltip>
 );
 
 UseWrapper.story = {
@@ -64,5 +80,5 @@ UseWrapper.story = {
 UseWrapper.args = {
   content: 'Label text',
   children: 'This is a helper text',
-  useWrapper: true,
+  createRefWrapper: true,
 };

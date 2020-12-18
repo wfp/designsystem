@@ -1,8 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
 import markdown from './README.mdx';
-import Text from '../Text';
-import { textLookup } from '../Text/Text';
 import Story from '.';
 
 export default {

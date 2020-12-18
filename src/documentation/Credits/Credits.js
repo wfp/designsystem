@@ -1,7 +1,5 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import Link from '../../components/Link';
-import Page from '../Page';
 
 export default function Credits() {
   return (

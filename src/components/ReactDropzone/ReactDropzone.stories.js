@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import markdown from './README.mdx';
-import { action } from '@storybook/addon-actions';
 import { List, ListItem } from '../List';
 import Dropzone, { useDropzone } from 'react-dropzone';
 import Icon from '../Icon';
@@ -38,10 +37,14 @@ export const Regular = (args) => {
       </section>
     )}
   </Dropzone>
-  <aside className="wfp--dropzone__file-list">
+  {
+    (file.length > 0) &&
+    <aside className="wfp--dropzone__file-list">
         <h4>Files</h4>
         <List>{files}</List>
   </aside>
+  }
+  
   </>
   
 )
@@ -112,10 +115,12 @@ export const Advanced = (args) => {
         <Icon className="wfp--dropzone__icon" icon={iconUpload} />
         <div>Drop files or click here to upload</div>
       </div>
+      {(files.length > 0) &&
       <aside className="wfp--dropzone__file-list">
         <h4>Files</h4>
         <List>{files}</List>
       </aside>
+      }
     </section>
   );
 };

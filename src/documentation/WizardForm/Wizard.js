@@ -21,8 +21,14 @@ const Wizard =({children, initialValues, onSubmit, ...other })=>{
   const [values, setValues] = useState(initialValues || {})
 
   const handleTabClick = (values) =>{
-    setPage(values);
-    setValues(values);
+    
+    if(Object.keys(validate(values)).length > 0){
+      console.log("not valid",validate(values))
+    }else{
+      setPage(values);
+      setValues(values);
+    }
+    
   }
 
   
@@ -81,6 +87,7 @@ const Wizard =({children, initialValues, onSubmit, ...other })=>{
               sidebar={
                 <StepNavigation
                   selectedPage={page}
+                  onSelectionChange={handleTabClick}
                   handleTabClick={handleTabClick}>
                   {/* You may also generate these steps from the pages */}
 
@@ -95,28 +102,6 @@ const Wizard =({children, initialValues, onSubmit, ...other })=>{
                       />
                     );
                   })}
-
-                  {/*<StepNavigationItem
-                    label="Name and last name"
-                    page={0}
-                    status={page >= 1 ? 'complete' : 'not-started'}
-                  />
-                  <StepNavigationItem
-                    label="Additional information"
-                    page={1}
-                    status={page >= 2 ? 'complete' : 'not-started'}
-                  />
-                  <StepNavigationItem
-                    label="Sulamen mon anmen"
-                    page={2}
-                    status={page >= 1 ? 'complete' : 'locked'}
-                  />
-                  <StepNavigationItem
-                    label="Summary"
-                    helperText="Check & validate"
-                    page={3}
-                    status={'summary'}
-                  />*/}
                 </StepNavigation>
               }>
               {/* Adding the wfp--form-long class is important */}
