@@ -1,6 +1,5 @@
 import React from 'react';
 import markdown from './README.mdx';
-import { action } from '@storybook/addon-actions';
 import {
   SecondaryNavigation,
   SecondaryNavigationTitle,
@@ -11,7 +10,6 @@ import BreadcrumbHome from '../BreadcrumbHome';
 
 import Tabs from '../Tabs';
 import Tab from '../Tab';
-import { pageWidths } from '../Wrapper';
 
 export default {
   title: 'Components/Navigations/SecondaryNavigation',

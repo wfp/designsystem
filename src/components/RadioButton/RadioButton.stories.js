@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import markdown from './README.mdx';
-import { action } from '@storybook/addon-actions';
 import RadioButton from '.';
-import FormGroup from '../FormGroup';
 import InputGroup from '../InputGroup';
 
 export default {

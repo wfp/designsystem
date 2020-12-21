@@ -3,9 +3,6 @@ import StepNavigation from './StepNavigation';
 import StepNavigationItem from '../StepNavigationItem';
 import markdown from './README.mdx';
 
-import { Source } from '@storybook/addon-docs/blocks';
-import dedent from 'ts-dedent';
-
 export default {
   title: 'Components/Navigations/StepNavigation',
   component: StepNavigation,

@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import classnames from 'classnames';
-import Icon from '../Icon';
 
 /** List component show a number of connected items written consecutively, typically one below the other. */
 

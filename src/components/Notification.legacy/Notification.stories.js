@@ -1,5 +1,4 @@
 import React from 'react';
-import markdown from './README.mdx';
 
 import { ToastContainer, toast } from 'react-toastify';
 import notificationStyle from './Notification';

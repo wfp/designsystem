@@ -1,9 +1,8 @@
 import React from 'react';
-import { action } from '@storybook/addon-actions';
 
 import { buttonKinds } from '../../prop-types/types';
 
-import { iconAddGlyph, iconSearch } from '@wfp/icons';
+import { iconAddGlyph } from '@wfp/icons';
 
 import markdown from './README.mdx';
 import buttonTwig from './Button.twig';
