@@ -147,13 +147,15 @@ $color__magenta-80: mix(black, $color__magenta, 75%) !default;
 
 $color__navy-gray-1: #0f212e !default;
 
-$color__gray-10: mix(white, $color__navy-gray-1, 95%) !default; // ui-02
-$color__gray-20: mix(white, $color__navy-gray-1, 87%) !default; // ui-03
-$color__gray-30: mix(white, $color__navy-gray-1, 82%) !default; // ui-04
-$color__gray-40: mix(white, $color__navy-gray-1, 50%) !default;
-$color__gray-60: mix(black, $color__navy-gray-1, 25%) !default;
-$color__gray-70: mix(black, $color__navy-gray-1, 50%) !default;
-$color__gray-80: mix(black, $color__navy-gray-1, 75%) !default;
+$color__gray-10: desaturate(lighten($color__main, 57), 70) !default; // ui-02
+$color__gray-20: desaturate(lighten($color__main, 53), 70) !default; // ui-03
+$color__gray-30: desaturate(lighten($color__main, 50), 70) !default; // ui-04
+$color__gray-40: desaturate(lighten($color__main, 22), 70) !default;
+$color__gray-50: desaturate(darken($color__main, 10), 30) !default;
+$color__gray-60: desaturate(darken($color__main, 15), 30) !default;
+$color__gray-70: desaturate(darken($color__main, 20), 30) !default;
+$color__gray-80: desaturate(darken($color__main, 25), 30) !default;
+$color__gray-90: desaturate(darken($color__main, 30), 20) !default;
 
 $color__navy-gray-2: #20343e !default;
 $color__navy-gray-3: #2d3f49 !default;

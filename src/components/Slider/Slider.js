@@ -31,6 +31,7 @@ function Slider(props) {
     additional,
     ariaLabelInput,
     className,
+    children,
     disabled,
     formatLabel = defaultFormatLabel,
     formItemClassName,
@@ -228,7 +229,6 @@ Slider.propTypes = {
    * Provide an optional function to be called when the up/down button is clicked
    */
   onClick: PropTypes.func,
-
 
   /**
    * The `name` attribute of the `<input>`.
