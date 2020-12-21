@@ -57,6 +57,7 @@ export const UseWrapper = (args) => (
   {...args}      
   trigger="hover"
   placement={"bottom"}
+  createRefWrapper={true}
   content="Label Text" 
   >
       <Icon
@@ -80,5 +81,4 @@ UseWrapper.story = {
 UseWrapper.args = {
   content: 'Label text',
   children: 'This is a helper text',
-  createRefWrapper: true,
 };
