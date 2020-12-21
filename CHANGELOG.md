@@ -1,37 +1,43 @@
-## [1.10.13](https://github.com/WFP/UI/compare/v1.10.12...v1.10.13) (2020-12-08)
+# [1.11.0](https://github.com/WFP/UI/compare/v1.10.20...v1.11.0) (2020-12-08)
 
+### Features
 
-
-### Bug Fixes
-
-* **Colors:** calculating all colors ([6a79a9f](https://github.com/WFP/UI/commit/6a79a9fcf5f3adb16432f407f8766d50ffeb5d94))
-* **Darkmode:** addedd dark mode ([1476e89](https://github.com/WFP/UI/commit/1476e89a98c92b2a91f64327eeeb2afa1a25db7b))
-* **Darkmode:** preview for dark mode ([fd18e42](https://github.com/WFP/UI/commit/fd18e4245ce13e2d24dfc5e1d9dbeea93c00a9be))
-* **DatePicker:** onsubmit error after merge ([be5eb7b](https://github.com/WFP/UI/commit/be5eb7b6eca1e8c80cc9a406ef37d62eea00767d))
-* **Notification:** notification legacy scss import and removed all console logs ([11f698b](https://github.com/WFP/UI/commit/11f698ba2909e28c457d76215f70aa2d88d833f1))
-* **Slider:** range before added ([#350](https://github.com/WFP/UI/issues/350)) ([f77bf1f](https://github.com/WFP/UI/commit/f77bf1f3d91e3b13a6d47f924a316fe8ed6388cf))
-* **Tooltip:** classes added automatically to wrapping div ([7ce751d](https://github.com/WFP/UI/commit/7ce751d9774b0064217f334c605b8db10613c736))
+- **package:** trigger release ([cbabcd3](https://github.com/WFP/UI/commit/cbabcd387543fec65dcc63a2b6f5ddf0846bdb93))
 
 ## [1.10.12](https://github.com/WFP/UI/compare/v1.10.11...v1.10.12) (2020-11-25)
 
+### Bug Fixes
+
+- **StepNavigation:** console.logs removed, RadioButtonGroup added as legacy implementation ([#334](https://github.com/WFP/UI/issues/334)) ([59385b5](https://github.com/WFP/UI/commit/59385b52a0103e750b64d6bb40d7a2ed703a14e1))
+- **Warning:** RadioButtonGroup warning added ([dd3ae6c](https://github.com/WFP/UI/commit/dd3ae6c2c1048043d57ebd5ded3d49bd7f25bc6e))
 
 ### Bug Fixes
 
-* **Blockquote:** warning kind prop-type spelling issue fixed ([#323](https://github.com/WFP/UI/issues/323)) ([ef551e6](https://github.com/WFP/UI/commit/ef551e6d302635e26803b0867f85cf0091e4fd88))
+- **Colors:** calculating all colors ([6a79a9f](https://github.com/WFP/UI/commit/6a79a9fcf5f3adb16432f407f8766d50ffeb5d94))
+- **Darkmode:** addedd dark mode ([1476e89](https://github.com/WFP/UI/commit/1476e89a98c92b2a91f64327eeeb2afa1a25db7b))
+- **Darkmode:** preview for dark mode ([fd18e42](https://github.com/WFP/UI/commit/fd18e4245ce13e2d24dfc5e1d9dbeea93c00a9be))
+- **DatePicker:** onsubmit error after merge ([be5eb7b](https://github.com/WFP/UI/commit/be5eb7b6eca1e8c80cc9a406ef37d62eea00767d))
+- **Notification:** notification legacy scss import and removed all console logs ([11f698b](https://github.com/WFP/UI/commit/11f698ba2909e28c457d76215f70aa2d88d833f1))
+- **Slider:** range before added ([#350](https://github.com/WFP/UI/issues/350)) ([f77bf1f](https://github.com/WFP/UI/commit/f77bf1f3d91e3b13a6d47f924a316fe8ed6388cf))
+- **Tooltip:** classes added automatically to wrapping div ([7ce751d](https://github.com/WFP/UI/commit/7ce751d9774b0064217f334c605b8db10613c736))
+
+## [1.10.12](https://github.com/WFP/UI/compare/v1.10.11...v1.10.12) (2020-11-25)
+
+### Bug Fixes
+
+- **Blockquote:** warning kind prop-type spelling issue fixed ([#323](https://github.com/WFP/UI/issues/323)) ([ef551e6](https://github.com/WFP/UI/commit/ef551e6d302635e26803b0867f85cf0091e4fd88))
 
 ## [1.10.6](https://github.com/WFP/UI/compare/v1.10.5...v1.10.6) (2020-11-12)
 
-
 ### Bug Fixes
 
-* **Modal:** background color now working ([901be30](https://github.com/WFP/UI/commit/901be3065a6902552fce8e713ad27b31bae76602))
+- **Modal:** background color now working ([901be30](https://github.com/WFP/UI/commit/901be3065a6902552fce8e713ad27b31bae76602))
 
 ## [1.10.5](https://github.com/WFP/UI/compare/v1.10.4...v1.10.5) (2020-11-12)
 
-
 ### Bug Fixes
 
-* **Tooltip:** hiding the tooltip added ([ca0c4d3](https://github.com/WFP/UI/commit/ca0c4d384c181db88a262949d802463126243b84))
+- **Tooltip:** hiding the tooltip added ([ca0c4d3](https://github.com/WFP/UI/commit/ca0c4d384c181db88a262949d802463126243b84))
 
 # Changelog
 

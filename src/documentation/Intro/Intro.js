@@ -3,7 +3,6 @@
 /* eslint-disable no-console */
 
 import React, { Component } from 'react';
-import { storiesOf } from '@storybook/react';
 import { linkTo } from '@storybook/addon-links';
 import Link from '../../components/Link';
 import classnames from 'classnames';

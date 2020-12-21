@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
+import { usePopper } from 'react-popper';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
 
@@ -29,9 +30,8 @@ const Tooltip = ({
   trigger = 'hover',
   modifiers,
   placement = 'top',
-  createRefWrapper,
-  onVisibilityChange,
-  ...others
+  utlis,
+  useWrapper,
 }) => {
   const referenceElement = useRef(null);
   const popperElement = useRef(null);
@@ -77,84 +77,38 @@ const Tooltip = ({
     [`${prefix}--tooltip--dark`]: dark,
   });
 
-  const Tooltip = ({
-    arrowRef,
-    tooltipRef,
-    getArrowProps,
-    getTooltipProps,
-    placement,
-  }) => (
-    <div
-      {...getTooltipProps({
-        ref: tooltipRef,
-        className: classNames,
-        'data-placement': placement,
-      })}>
-      <div
-        {...getArrowProps({
-          ref: arrowRef,
-          className: `${prefix}--tooltip__arrow`,
-          'data-placement': placement,
-        })}
-      />
-      {content}
-    </div>
-  );
-
-  const Trigger = ({ getTriggerProps, triggerRef }) => {
-  // console.log("children type",typeof children === string)
-    if (!createRefWrapper && typeof children !== 'string') {
-      const elementClassNames = classnames(children?.props?.className, {
-        [`${prefix}--tooltip--trigger`]: true,
-      });
-
-      return React.cloneElement(children, {
-        ...getTriggerProps({
-          ...children.props,
-          ref: triggerRef,
-          className: elementClassNames,
-        }),
-      });
-    }
-
-    const wrapperClassNames = classnames(className, {
-      [`${prefix}--tooltip--trigger`]: true,
-    });
-
-    return (
-      <span
-        {...getTriggerProps({
-          ref: triggerRef,
-          className: wrapperClassNames,
-        })}>
-        {children}
-      </span>
-    );
-  };
-
-  const visibilityChange = (e) => {
-    setVisibility(e);
-    if (onVisibilityChange) onVisibilityChange(e);
-  };
-
+  const actions =
+    trigger === 'hover'
+      ? {
+          onMouseEnter: () => setIsShown(true),
+          onMouseLeave: () => setIsShown(false),
+        }
+      : { onClick: () => handleInsideClick(true) };
   return (
-    <TooltipTrigger
-      placement={placement}
-      trigger={trigger}
-      tooltip={Tooltip}
-      {...others}
-      onVisibilityChange={visibilityChange}
-      modifiers={[
-        {
-          name: 'offset',
-          options: {
-            offset: [0, 5],
-          },
-        },
-        ...modifiers,
-      ]}>
-      {Trigger}
-    </TooltipTrigger>
+    <>
+      {useWrapper === true ? (
+        <span type="button" ref={referenceElement} {...actions}>
+          {children}
+        </span>
+      ) : (
+        <>
+          {React.cloneElement(children, { ref: referenceElement, ...actions })}
+        </>
+      )}
+
+      <div
+        ref={popperElement}
+        style={styles.popper}
+        {...attributes.popper}
+        className={classNames}>
+        {content}
+        <div
+          ref={setArrowElement}
+          style={styles.arrow}
+          className={`${prefix}--tooltip__arrow`}
+        />
+      </div>
+    </>
   );
 };
 
@@ -212,7 +166,7 @@ Tooltip.propTypes = {
   /**
    * Use a wrapper html element aroud the trigger. Useful for components without `forwardRef` support.
    */
-  createRefWrapper: PropTypes.bool,
+  useWrapper: PropTypes.bool,
 };
 
 export default Tooltip;

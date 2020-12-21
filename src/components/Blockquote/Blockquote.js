@@ -135,10 +135,7 @@ Blockquote.propTypes = {
    * Specify a className of your `Blockquote`
    */
   className: PropTypes.string,
-  /**
-   * Specify a className of the inner Blockquote content
-   */
-  children: PropTypes.string,
+ 
   /**
    * Specify the content of your `Blockquote`
    */

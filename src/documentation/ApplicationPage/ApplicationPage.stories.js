@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
+import React from 'react';
 
 import markdown from './README.mdx';
 import ApplicationPage from './ApplicationPage';

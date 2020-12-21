@@ -1,4 +1,4 @@
-import PropTypes, { func } from 'prop-types';
+import PropTypes from 'prop-types';
 import React, { useState, createRef } from 'react';
 import classNames from 'classnames';
 
@@ -43,9 +43,9 @@ export default function StepNavigation({
 
   const arrLength = getTabs().length;
 
-  const setTabAt = (index, tabRef) => {
-    //setElRefs({ ...elRefs, [`tab${index}`]: tabRef });
-  };
+  // const setTabAt = (index, tabRef) => {
+  //   //setElRefs({ ...elRefs, [`tab${index}`]: tabRef });
+  // };
 
   const handleTabClick = (onSelectionChange) => {
     console.log('handleTabClick', onSelectionChange);
@@ -80,9 +80,9 @@ export default function StepNavigation({
     };
   };
 
-  const handleDropdownClick = () => {
-    setDropdownHidden(!dropdownHidden);
-  };
+  // const handleDropdownClick = () => {
+  //   setDropdownHidden(!dropdownHidden);
+  // };
 
   const selectTabAt = (index, onSelectionChange) => {
     console.log('selectTabAt', index, onSelectionChange);

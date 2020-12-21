@@ -1,8 +1,7 @@
 import React from 'react';
 import markdown from './README.mdx';
-import { action } from '@storybook/addon-actions';
 import Icon from '.';
-import { iconAdd, iconAddGlyph, iconAddOutline } from '@wfp/icons';
+import { iconAdd} from '@wfp/icons';
 
 export default {
   title: 'Components/UI Elements/Icon',

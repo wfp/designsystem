@@ -1,6 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import SingleComponent from '../../documentation/SingleComponent';
 
 import Credits from '../Credits';
 import markdown from './README.mdx';

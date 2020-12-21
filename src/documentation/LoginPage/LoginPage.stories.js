@@ -1,7 +1,5 @@
 import React from 'react';
 import markdown from './README.mdx';
-import Text from '../../components/Text';
-import { textLookup } from '../../components/Text';
 import TextInput from '../../components/TextInput';
 import Button from '../../components/Button';
 import Modal from '../../components/Modal';

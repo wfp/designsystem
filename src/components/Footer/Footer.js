@@ -3,7 +3,6 @@ import React from 'react';
 import classnames from 'classnames';
 import Link from '../Link';
 import Wrapper from '../Wrapper';
-import ReactSelect from 'react-select';
 import Icon from '../Icon';
 import { iconWfpLogoExtendedEn, iconWfpLogoVerticalEn } from '@wfp/icons';
 
@@ -87,20 +86,20 @@ const sdgIcon = (
   </svg>
 );
 
-const options = [
-  {
-    value: 'afghanistan',
-    label: 'Afghanistan (AF)',
-  },
-  {
-    value: 'albania',
-    label: 'Albania',
-  },
-  {
-    value: 'algeria',
-    label: 'Algeria',
-  },
-];
+// const options = [
+//   {
+//     value: 'afghanistan',
+//     label: 'Afghanistan (AF)',
+//   },
+//   {
+//     value: 'albania',
+//     label: 'Albania',
+//   },
+//   {
+//     value: 'algeria',
+//     label: 'Algeria',
+//   },
+// ];
 //import logoExtended from '../../../assets/logos/extended/en/wfp-logo-extended-black-en.svg';
 //import logoVertical from '../../../assets/logos/vertical/en/wfp-logo-vertical-black-en.svg';
 

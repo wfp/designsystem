@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import FormGroup from './FormGroup';
 import TextInput from '../TextInput';
 import NumberInput from '../NumberInput';
-import ReactSelect from 'react-select';
 import CreatableSelect from 'react-select/creatable';
 import markdown from './README.mdx';
 

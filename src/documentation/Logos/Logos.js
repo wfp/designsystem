@@ -1,10 +1,5 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import Link from '../../components/Link';
-import Blockquote from '../../components/Blockquote';
-import Page from '../Page';
-
-import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
 
 const LogoElement = ({ color, logoKind, src }) => {
   const fileTypes = ['.svg', /*'.png', '@4x.png',*/ '.png'];

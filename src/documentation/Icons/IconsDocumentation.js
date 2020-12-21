@@ -1,10 +1,8 @@
 /* eslint-disable no-console */
 
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { linkTo } from '@storybook/addon-links';
 
-import Page from '../Page';
 import Blockquote from '../../components/Blockquote';
 import Link from '../../components/Link';
 import Icon from '../../components/Icon';
