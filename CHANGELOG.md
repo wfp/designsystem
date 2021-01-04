@@ -1,3 +1,10 @@
+# [1.11.0](https://github.com/WFP/UI/compare/v1.10.20...v1.11.0) (2021-01-04)
+
+
+### Features
+
+* **package:** trigger release ([cbabcd3](https://github.com/WFP/UI/commit/cbabcd387543fec65dcc63a2b6f5ddf0846bdb93))
+
 ## [1.10.12](https://github.com/WFP/UI/compare/v1.10.11...v1.10.12) (2020-11-25)
 
 
