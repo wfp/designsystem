@@ -1,3 +1,10 @@
+## [1.11.3](https://github.com/WFP/UI/compare/v1.11.2...v1.11.3) (2021-01-04)
+
+
+### Bug Fixes
+
+* **package:** description changed ([10ec7c8](https://github.com/WFP/UI/commit/10ec7c839408e120db3e8d2dd13b6a5fe0b4fa60))
+
 # [1.11.0](https://github.com/WFP/UI/compare/v1.10.20...v1.11.0) (2021-01-04)
 
 
