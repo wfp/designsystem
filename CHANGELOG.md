@@ -1,6 +1,18 @@
 # [1.11.0](https://github.com/WFP/UI/compare/v1.10.20...v1.11.0) (2021-01-04)
 
 
+### Bug Fixes
+
+* **Search:** onChange was returning a wrong target value ([#368](https://github.com/WFP/UI/issues/368)) ([d422086](https://github.com/WFP/UI/commit/d422086c89bb116edfa0a793543407ae6f0e355d))
+
+
+### Features
+
+* **package:** trigger release ([cbabcd3](https://github.com/WFP/UI/commit/cbabcd387543fec65dcc63a2b6f5ddf0846bdb93))
+
+# [1.11.0](https://github.com/WFP/UI/compare/v1.10.20...v1.11.0) (2021-01-04)
+
+
 ### Features
 
 * **package:** trigger release ([cbabcd3](https://github.com/WFP/UI/commit/cbabcd387543fec65dcc63a2b6f5ddf0846bdb93))
