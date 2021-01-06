@@ -106,10 +106,10 @@ const DescriptionContainer: FunctionComponent<DescriptionProps> = (props) => {
   const componentsTableOfContent = {
     wrapper: ({ children, ...props }) => {
       const output = Array.isArray(children)
-        ? children.map((child) => {
+        ? children.map((child, i) => {
             if (['h1', 'h2', 'h3'].includes(child.props.mdxType)) {
               return (
-                <ListItem>
+                <ListItem key={i}>
                   <a
                     href={`#${child.props.children
                       .toLowerCase()

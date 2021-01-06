@@ -139,3 +139,45 @@ Internal.story = {
     },
   },
 };
+
+export const OverrideLogos = (args) => (
+  <Footer
+    {...args}
+    logo={<div>Logo</div>}
+    logoExtended={<div>LogoExtended</div>}
+    sdgLogo={<div>SdgLogo</div>}>
+    <div className="wfp--footer__info">
+      <div className="wfp--footer__info__item">
+        <p className="wfp--footer__label">A label</p>
+        <ul className="wfp--footer__list">
+          <li>
+            <Link href="http://www.wfp.org">First Link</Link>
+          </li>
+          <li>
+            <Link href="http://www.wfp.org">Second Link</Link>
+          </li>
+        </ul>
+      </div>
+      <div className="wfp--footer__info__item">
+        <p className="wfp--footer__label">Another label</p>
+        <ul className="wfp--footer__list">
+          <li>
+            <Link href="http://www.wfp.org">First Link</Link>
+          </li>
+          <li>
+            <Link href="http://www.wfp.org">Second Link</Link>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </Footer>
+);
+
+OverrideLogos.story = {
+  parameters: {
+    docs: {
+      storyDescription:
+        'The logos for `logo`, `logoExtended` or `sdgLogo`  can be replaced by a custom react component.',
+    },
+  },
+};
