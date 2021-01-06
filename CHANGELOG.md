@@ -1,3 +1,10 @@
+## [1.11.4](https://github.com/WFP/UI/compare/v1.11.3...v1.11.4) (2021-01-06)
+
+
+### Bug Fixes
+
+* **Slider:** fullWidth prop works now ([#375](https://github.com/WFP/UI/issues/375)), Footer accepts custom components for Logos ([04289e3](https://github.com/WFP/UI/commit/04289e31516c3af25fb79e4b509b875f7dac93bc))
+
 ## [1.11.3](https://github.com/WFP/UI/compare/v1.11.2...v1.11.3) (2021-01-04)
 
 
