@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import TooltipTrigger from 'react-popper-tooltip';

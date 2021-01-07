@@ -45,7 +45,7 @@ function Search(props) {
       evt.persist();
       evt.imaginaryTarget = _inputRef;
       setValue(evt.target.value);
-      onChange(parseFloat(evt.target.value), evt);
+      onChange(evt.target.value, evt);
     }
   };
 
@@ -54,7 +54,6 @@ function Search(props) {
     setValue(valueState);
     onChange(valueState);
   };
-
 
   const numberInputClasses = classNames(`${prefix}--number`, className, {
     [`${prefix}--number--light`]: light,
@@ -75,7 +74,6 @@ function Search(props) {
     onChange: handleChange,
     value: value,
   };
-
 
   const clearClasses = classNames({
     'wfp--search-close': true,
@@ -139,13 +137,13 @@ Search.propTypes = {
    */
   id: PropTypes.string.isRequired,
 
-   /**
+  /**
    * Generic `label` that will be used as the textual representation of what
    * this field is for
    */
   labelText: PropTypes.node,
 
-   /**
+  /**
    * The new value is available in 'imaginaryTarget.value'
    * i.e. to get the value: evt.imaginaryTarget.value
    */
