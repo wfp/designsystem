@@ -27,7 +27,6 @@ class FaviconCanvas extends React.Component {
   updateCanvas() {
     const context = this.refs.canvas.getContext('2d');
     context.clearRect(0, 0, 300, 300);
-
     var mainColor = colors.main.hex;
 
     const name =

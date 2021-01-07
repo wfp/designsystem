@@ -112,9 +112,9 @@ const Wizard =({children, initialValues, onSubmit, ...other })=>{
               subscription={{ active: true, values: true }}
               component={handleValidation}
             />
+            {/* <br />
             <br />
-            <br />
-            <pre>{JSON.stringify(values, 0, 2)}</pre>
+            <pre>{JSON.stringify(values, 0, 2)}</pre> */}
           </form>
         )}
       </Form>
