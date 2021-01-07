@@ -1,4 +1,66 @@
-# [1.11.0](https://github.com/WFP/UI/compare/v1.10.20...v1.11.0) (2020-12-08)
+## [1.11.4](https://github.com/WFP/UI/compare/v1.11.3...v1.11.4) (2021-01-06)
+
+### Bug Fixes
+
+- **Slider:** fullWidth prop works now ([#375](https://github.com/WFP/UI/issues/375)), Footer accepts custom components for Logos ([04289e3](https://github.com/WFP/UI/commit/04289e31516c3af25fb79e4b509b875f7dac93bc))
+
+## [1.11.3](https://github.com/WFP/UI/compare/v1.11.2...v1.11.3) (2021-01-04)
+
+### Bug Fixes
+
+- **package:** description changed ([10ec7c8](https://github.com/WFP/UI/commit/10ec7c839408e120db3e8d2dd13b6a5fe0b4fa60))
+
+# [1.11.0](https://github.com/WFP/UI/compare/v1.10.20...v1.11.0) (2021-01-04)
+
+### Bug Fixes
+
+- **package:** manual version bump ([c1b0185](https://github.com/WFP/UI/commit/c1b0185183c44ffd2ee57ad4e760398d1820772c))
+- **Search:** onChange was returning a wrong target value ([#368](https://github.com/WFP/UI/issues/368)) ([d422086](https://github.com/WFP/UI/commit/d422086c89bb116edfa0a793543407ae6f0e355d))
+
+### Features
+
+- **package:** trigger release ([cbabcd3](https://github.com/WFP/UI/commit/cbabcd387543fec65dcc63a2b6f5ddf0846bdb93))
+
+# [1.11.0](https://github.com/WFP/UI/compare/v1.10.20...v1.11.0) (2021-01-04)
+
+### Bug Fixes
+
+- **Search:** onChange was returning a wrong target value ([#368](https://github.com/WFP/UI/issues/368)) ([d422086](https://github.com/WFP/UI/commit/d422086c89bb116edfa0a793543407ae6f0e355d))
+
+### Features
+
+- **package:** trigger release ([cbabcd3](https://github.com/WFP/UI/commit/cbabcd387543fec65dcc63a2b6f5ddf0846bdb93))
+
+# [1.11.0](https://github.com/WFP/UI/compare/v1.10.20...v1.11.0) (2021-01-04)
+
+### Bug Fixes
+
+- **Search:** onChange was returning a wrong target value ([#368](https://github.com/WFP/UI/issues/368)) ([d422086](https://github.com/WFP/UI/commit/d422086c89bb116edfa0a793543407ae6f0e355d))
+
+### Features
+
+- **package:** trigger release ([cbabcd3](https://github.com/WFP/UI/commit/cbabcd387543fec65dcc63a2b6f5ddf0846bdb93))
+
+# [1.11.0](https://github.com/WFP/UI/compare/v1.10.20...v1.11.0) (2021-01-04)
+
+### Features
+
+- **package:** trigger release ([cbabcd3](https://github.com/WFP/UI/commit/cbabcd387543fec65dcc63a2b6f5ddf0846bdb93))
+
+## [1.10.12](https://github.com/WFP/UI/compare/v1.10.11...v1.10.12) (2020-11-25)
+
+### Bug Fixes
+
+- **StepNavigation:** console.logs removed, RadioButtonGroup added as legacy implementation ([#334](https://github.com/WFP/UI/issues/334)) ([59385b5](https://github.com/WFP/UI/commit/59385b52a0103e750b64d6bb40d7a2ed703a14e1))
+- **Warning:** RadioButtonGroup warning added ([dd3ae6c](https://github.com/WFP/UI/commit/dd3ae6c2c1048043d57ebd5ded3d49bd7f25bc6e))
+
+## [1.10.11](https://github.com/WFP/UI/compare/v1.10.10...v1.10.11) (2020-11-25)
+
+### Bug Fixes
+
+- **Notification:** icons were wrong ([592b961](https://github.com/WFP/UI/commit/592b9613ed8812119653d22eeca1efae8491d2d6))
+
+## [1.10.10](https://github.com/WFP/UI/compare/v1.10.9...v1.10.10) (2020-11-24)
 
 ### Features
 
