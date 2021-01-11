@@ -35,6 +35,7 @@ const Footer = ({
     { 'wfp--footer--external': external },
     className
   );
+  const standardLogo = `${process.env.STORYBOOK_ASSETS}logos/standard/en/wfp-logo-standard-black-en.svg`
 
   const footer = (
     <footer className={classNames}>
@@ -87,11 +88,11 @@ const Footer = ({
             ) : logoExtended ? (
               logoExtended
             ) : (
-              <Icon
-                icon={iconWfpLogoExtendedEn}
-                description="WFP"
-                className="wfp--footer__cta-logo"
-              />
+              <img
+              className="wfp--footer__cta-logo"	
+              src={standardLogo}
+              alt="WFP"
+            />
             )}
 
             {logo && typeof logo === 'string' ? (
@@ -109,7 +110,6 @@ const Footer = ({
                 className="wfp--footer__cta-logo-small"
               />
             )}
-            {sdgLogo ? sdgLogo : sdgIconStandard}
             {secondary && (
               <div className="wfp--footer__secondary">{secondary}</div>
             )}
