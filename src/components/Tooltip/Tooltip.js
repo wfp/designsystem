@@ -1,5 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { usePopper } from 'react-popper';
+import React, { useState, useRef } from 'react';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import TooltipTrigger from 'react-popper-tooltip';
@@ -31,7 +30,7 @@ const Tooltip = ({
   trigger = 'hover',
   modifiers = [],
   placement = 'top',
-  useWrapper = true,
+  createRefWrapper,
   onVisibilityChange,
   ...others
 }) => {
@@ -69,7 +68,8 @@ const Tooltip = ({
   );
 
   const Trigger = ({ getTriggerProps, triggerRef }) => {
-    if (useWrapper === true) {
+  // console.log("children type",typeof children === string)
+    if (!createRefWrapper && typeof children !== 'string') {
       const elementClassNames = classnames(children?.props?.className, {
         [`${prefix}--tooltip--trigger`]: true,
       });
@@ -88,13 +88,13 @@ const Tooltip = ({
     });
 
     return (
-      <div
+      <span
         {...getTriggerProps({
           ref: triggerRef,
           className: wrapperClassNames,
         })}>
         {children}
-      </div>
+      </span>
     );
   };
 
@@ -177,7 +177,7 @@ Tooltip.propTypes = {
   /**
    * Use a wrapper html element around the trigger. Useful for components without `forwardRef` support.
    */
-  useWrapper: PropTypes.bool,
+  createRefWrapper: PropTypes.bool,
 };
 
 export default Tooltip;
