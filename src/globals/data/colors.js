@@ -1,5 +1,10 @@
 const colors = {
-
+  main: {
+    name: 'main',
+    hex: '#0A6EB4',
+    scss: '$color__main',
+    type: 'communications',
+    },
   'sequential-default-01': {
     name: 'sequential-default-01',
     hex: '#002153',
