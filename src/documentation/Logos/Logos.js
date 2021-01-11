@@ -27,6 +27,7 @@ const LogoElement = ({ color, logoKind, src }) => {
           style={{
             width: width,
             height: height,
+            border: 'none',
           }}
           src={`${process.env.STORYBOOK_ASSETS}${src}.svg`}
         />
