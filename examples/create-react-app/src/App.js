@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 import { Link, Footer, Tooltip, BannerNavigation , BannerNavigationItem, Search} from '@wfp/ui';
 import Navigation from './components/Navigation';
 import SecondaryNavigation from './components/SecondaryNavigation';
-import TableTest from './components/ToolTipTest';
+import TableTest from './containers/ToolTipTest';
 
 import './App.scss';
 

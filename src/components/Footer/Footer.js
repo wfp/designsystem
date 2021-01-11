@@ -7,6 +7,8 @@ import Icon from '../Icon';
 import sdgIconStandard from './SdgLogo';
 import { iconWfpLogoExtendedEn, iconWfpLogoVerticalEn } from '@wfp/icons';
 
+const standardLogo = `${process.env.STORYBOOK_ASSETS}logos/standard/en/wfp-logo-standard-black-en.svg`
+
 /** A Footer is a section at the bottom of each page. It typically contains basic site information, copyright data or links to related pages. */
 
 const Footer = ({
@@ -86,11 +88,16 @@ const Footer = ({
             ) : logoExtended ? (
               logoExtended
             ) : (
-              <Icon
-                icon={iconWfpLogoExtendedEn}
-                description="WFP"
+              <img
                 className="wfp--footer__cta-logo"
+                src={standardLogo}
+                alt="WFP"
               />
+              // <Icon
+              //   icon={iconWfpLogoExtendedEn}
+              //   description="WFP"
+              //   className="wfp--footer__cta-logo"
+              // />
             )}
 
             {logo && typeof logo === 'string' ? (
@@ -108,7 +115,7 @@ const Footer = ({
                 className="wfp--footer__cta-logo-small"
               />
             )}
-            {sdgLogo ? sdgLogo : sdgIconStandard}
+            {/* {sdgLogo ? sdgLogo : sdgIconStandard}  */}
             {secondary && (
               <div className="wfp--footer__secondary">{secondary}</div>
             )}
