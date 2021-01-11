@@ -1,8 +1,8 @@
 import React from 'react';
 import Tooltip from './Tooltip';
-import { tooltipStyle, tooltipStyleDark } from './Tooltip';
 import markdown from './README.mdx';
-import TooltipTrigger from 'react-popper-tooltip';
+import Icon from '../Icon';
+import {iconOverflowMenu} from '@wfp/icons';
 
 export default {
   title: 'Components/UI Elements/Tooltip',
@@ -47,24 +47,33 @@ Dark.story = {
   },
 };
 
-export const UseWrapper = (args) => (
-  <Tooltip
-    // options
-    {...args}>
-    <span>Click here to show tooltip</span>
-  </Tooltip>
+export const WithIcon = (args) => (
+  <Tooltip 
+  {...args}      
+  trigger="hover"
+  placement={"bottom"}
+  createRefWrapper={true}
+  content="Label Text" 
+  >
+      <Icon
+      description="options"
+      icon={iconOverflowMenu}
+      width="17px"
+      height="17px"
+      />
+  
+</Tooltip>
 );
 
-UseWrapper.story = {
+WithIcon.story = {
   parameters: {
     docs: {
-      storyDescription: `By using the \`useWrapper\` prop a html element around the trigger will be added. This is useful for components without \`forwardRef\` support.`,
+      storyDescription: `By using the \`createRefWrapper\` prop a html element around the trigger will be added. This is useful for components without \`forwardRef\` support.`,
     },
   },
 };
 
-UseWrapper.args = {
+WithIcon.args = {
   content: 'Label text',
   children: 'This is a helper text',
-  useWrapper: true,
 };
