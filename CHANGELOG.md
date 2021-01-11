@@ -42,10 +42,6 @@
 - **package:** trigger release ([cbabcd3](https://github.com/WFP/UI/commit/cbabcd387543fec65dcc63a2b6f5ddf0846bdb93))
 
 # [1.11.0](https://github.com/WFP/UI/compare/v1.10.20...v1.11.0) (2021-01-04)
-<<<<<<< HEAD
-=======
-
->>>>>>> 1b5c8453d892659d6f36bbd94bb46aa4d425f859
 
 ### Features
 
