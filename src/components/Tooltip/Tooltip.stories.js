@@ -68,3 +68,25 @@ UseWrapper.args = {
   children: 'This is a helper text',
   useWrapper: true,
 };
+
+export const WithIcon = (args) => (
+  <Tooltip
+    {...args}
+    trigger="hover"
+    placement={'bottom'}
+    createRefWrapper={true}
+    content="Label Text">
+    <Icon
+      description="options"
+      icon={iconOverflowMenu}
+      width="17px"
+      height="17px"
+    />
+  </Tooltip>
+);
+
+WithIcon.args = {
+  content: 'Label text',
+  children: 'This is a helper text',
+  useWrapper: true,
+};
