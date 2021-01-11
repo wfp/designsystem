@@ -54,6 +54,9 @@
     &--full-width {
       width: 100%;
       max-width: inherit;
+      .wfp--slider__range-wrapper {
+        width: 100%;
+      }
     }
   }
 

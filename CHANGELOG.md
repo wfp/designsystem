@@ -1,4 +1,55 @@
-# [1.11.0](https://github.com/WFP/UI/compare/v1.10.20...v1.11.0) (2020-12-08)
+## [1.11.4](https://github.com/WFP/UI/compare/v1.11.3...v1.11.4) (2021-01-06)
+
+
+### Bug Fixes
+
+* **Slider:** fullWidth prop works now ([#375](https://github.com/WFP/UI/issues/375)), Footer accepts custom components for Logos ([04289e3](https://github.com/WFP/UI/commit/04289e31516c3af25fb79e4b509b875f7dac93bc))
+
+## [1.11.3](https://github.com/WFP/UI/compare/v1.11.2...v1.11.3) (2021-01-04)
+
+
+### Bug Fixes
+
+* **package:** description changed ([10ec7c8](https://github.com/WFP/UI/commit/10ec7c839408e120db3e8d2dd13b6a5fe0b4fa60))
+
+# [1.11.0](https://github.com/WFP/UI/compare/v1.10.20...v1.11.0) (2021-01-04)
+
+
+### Bug Fixes
+
+* **package:** manual version bump ([c1b0185](https://github.com/WFP/UI/commit/c1b0185183c44ffd2ee57ad4e760398d1820772c))
+* **Search:** onChange was returning a wrong target value ([#368](https://github.com/WFP/UI/issues/368)) ([d422086](https://github.com/WFP/UI/commit/d422086c89bb116edfa0a793543407ae6f0e355d))
+
+
+### Features
+
+* **package:** trigger release ([cbabcd3](https://github.com/WFP/UI/commit/cbabcd387543fec65dcc63a2b6f5ddf0846bdb93))
+
+# [1.11.0](https://github.com/WFP/UI/compare/v1.10.20...v1.11.0) (2021-01-04)
+
+
+### Bug Fixes
+
+* **Search:** onChange was returning a wrong target value ([#368](https://github.com/WFP/UI/issues/368)) ([d422086](https://github.com/WFP/UI/commit/d422086c89bb116edfa0a793543407ae6f0e355d))
+
+
+### Features
+
+* **package:** trigger release ([cbabcd3](https://github.com/WFP/UI/commit/cbabcd387543fec65dcc63a2b6f5ddf0846bdb93))
+
+# [1.11.0](https://github.com/WFP/UI/compare/v1.10.20...v1.11.0) (2021-01-04)
+
+
+### Bug Fixes
+
+* **Search:** onChange was returning a wrong target value ([#368](https://github.com/WFP/UI/issues/368)) ([d422086](https://github.com/WFP/UI/commit/d422086c89bb116edfa0a793543407ae6f0e355d))
+
+
+### Features
+
+* **package:** trigger release ([cbabcd3](https://github.com/WFP/UI/commit/cbabcd387543fec65dcc63a2b6f5ddf0846bdb93))
+
+# [1.11.0](https://github.com/WFP/UI/compare/v1.10.20...v1.11.0) (2021-01-04)
 
 
 ### Features
