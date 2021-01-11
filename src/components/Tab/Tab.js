@@ -87,7 +87,7 @@ export default class Tab extends React.Component {
     /*
      * An optional parameter to allow overriding the list element rendering.
      **/
-    renderListElement: PropTypes.node,
+    renderListElement: PropTypes.oneOfType([PropTypes.node, PropTypes.func]),
   };
 
   static defaultProps = {
