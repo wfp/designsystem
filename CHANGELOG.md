@@ -1,3 +1,10 @@
+## [1.11.5](https://github.com/WFP/UI/compare/v1.11.4...v1.11.5) (2021-01-13)
+
+
+### Bug Fixes
+
+* **Tooltip:** replaced div with span to fix placement issue on icon in tooltip ([8f41baf](https://github.com/WFP/UI/commit/8f41baf7418581efe4971f50cd5ccadce3e2ef68))
+
 ## [1.11.4](https://github.com/WFP/UI/compare/v1.11.3...v1.11.4) (2021-01-06)
 
 
