@@ -98,7 +98,17 @@ export const parameters = {
     storySort: {
       order: [
         'Getting started',
-          ['Intro', 'Installing the Kit','Using the Kit','Recommended libraries', 'Design resources', 'Browser support',"What's new", 'Support and Feedback','Credits'],
+        [
+          'Intro',
+          'Installing the Kit',
+          'Using the Kit',
+          'Recommended libraries',
+          'Design resources',
+          'Browser support',
+          "What's new",
+          'Support and Feedback',
+          'Credits',
+        ],
         'Documentation',
         'Templates',
         'Components',
@@ -118,6 +128,18 @@ export const globalTypes = {
       items: ['light', 'dark'],
     },
   },
+  locale: {
+    name: 'Locale',
+    description: 'Internationalization locale',
+    defaultValue: 'en',
+    toolbar: {
+      icon: 'globe',
+      items: [
+        { value: 'ltr', title: 'left-to-right' },
+        { value: 'rtl', title: 'right-to-left' },
+      ],
+    },
+  },
 };
 
 /*
@@ -129,13 +151,15 @@ addDecorator(
 );*/
 
 const withThemeProvider = (Story, context) => {
-  const theme = context.globals.theme;
+  const { locale, theme } = context.globals;
   document.body.classList.remove(
     `wfp--theme-${theme === 'light' ? 'dark' : 'light'}`
   );
   document.body.classList.add(`wfp--theme-${theme}`);
   return (
-    <div className={`wfp--theme-${theme}`}>
+    <div
+      className={`wfp--theme-${theme} wfp--theme-${locale}`}
+      dir={locale === 'rtl' ? 'rtl' : null}>
       <Story {...context} />
     </div>
   );

@@ -37,6 +37,10 @@
     .#{$prefix}--btn__icon {
       margin-left: 0;
       margin-right: $spacing-xs;
+      @include rtl {
+        margin-left: $spacing-xs;
+        margin-right: 0;
+      }
     }
   }
 
@@ -48,6 +52,10 @@
       float: left;
       margin-left: 0;
       margin-right: $spacing-xs;
+      @include rtl {
+        margin-left: $spacing-xs;
+        margin-right: 0;
+      }
     }
   }
 
@@ -202,6 +210,10 @@
 
     .#{$prefix}--btn__icon {
       margin-left: $spacing-xs;
+      @include rtl {
+        margin-left: initial;
+        margin-right: $spacing-xs;
+      }
     }
 
     &:hover:disabled,

@@ -9,7 +9,7 @@
 }
 
 @mixin rtl() {
-  body[dir='rtl'] & {
+  [dir='rtl'] & {
     @content;
   }
 }
