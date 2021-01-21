@@ -6,7 +6,7 @@ import Wrapper from '../Wrapper';
 import ReactSelect from 'react-select';
 import Icon from '../Icon';
 import sdgIconStandard from './SdgLogo';
-import { iconWfpLogoExtendedEn, iconWfpLogoVerticalEn } from '@wfp/icons';
+import { iconWfpLogoStandardBlackEn, iconWfpLogoVerticalEn } from '@wfp/icons';
 
 /** A Footer is a section at the bottom of each page. It typically contains basic site information, copyright data or links to related pages. */
 
@@ -88,9 +88,9 @@ const Footer = ({
             ) : logoExtended ? (
               logoExtended
             ) : (
-              <img
+              <Icon
               className="wfp--footer__cta-logo"	
-              src={standardLogo}
+              icon={iconWfpLogoStandardBlackEn}
               alt="WFP"
             />
             )}
