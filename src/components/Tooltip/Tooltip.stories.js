@@ -16,7 +16,7 @@ export const Regular = (args) => (
   <Tooltip
     // options
     {...args}>
-    <span className="hello">Click here to show tooltip</span>
+    Click here to show tooltip
   </Tooltip>
 );
 
