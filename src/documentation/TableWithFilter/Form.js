@@ -78,7 +78,7 @@ function Form() {
                 </div>
                 
             </FormGroup>
-            <FormGroup className="wfp--form-long" align="horizontal">
+            <FormGroup className="wfp--form-long" align="horizontal" style={{ marginTop: '1rem' }}>
                 <TextInput
                 id="firstname"
                 name="firstname"
@@ -101,7 +101,7 @@ function Form() {
             style={{
                 display: 'flex',
                 justifyContent: 'flex-end',
-                marginTop: '1em',
+                marginTop: '2em',
             }}>
             <Button
                 type="button"
