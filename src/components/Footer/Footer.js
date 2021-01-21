@@ -6,7 +6,7 @@ import Wrapper from '../Wrapper';
 import ReactSelect from 'react-select';
 import Icon from '../Icon';
 import sdgIconStandard from './SdgLogo';
-import { iconWfpLogoExtendedEn, iconWfpLogoVerticalEn } from '@wfp/icons';
+import { iconWfpLogoStandardBlackEn, iconWfpLogoVerticalEn } from '@wfp/icons';
 
 /** A Footer is a section at the bottom of each page. It typically contains basic site information, copyright data or links to related pages. */
 
@@ -35,6 +35,7 @@ const Footer = ({
     { 'wfp--footer--external': external },
     className
   );
+  const standardLogo = `${process.env.STORYBOOK_ASSETS}logos/standard/en/wfp-logo-standard-black-en.svg`
 
   const footer = (
     <footer className={classNames}>
@@ -88,10 +89,10 @@ const Footer = ({
               logoExtended
             ) : (
               <Icon
-                icon={iconWfpLogoExtendedEn}
-                description="WFP"
-                className="wfp--footer__cta-logo"
-              />
+              className="wfp--footer__cta-logo"	
+              icon={iconWfpLogoStandardBlackEn}
+              alt="WFP"
+            />
             )}
 
             {logo && typeof logo === 'string' ? (
@@ -109,7 +110,6 @@ const Footer = ({
                 className="wfp--footer__cta-logo-small"
               />
             )}
-            {sdgLogo ? sdgLogo : sdgIconStandard}
             {secondary && (
               <div className="wfp--footer__secondary">{secondary}</div>
             )}
