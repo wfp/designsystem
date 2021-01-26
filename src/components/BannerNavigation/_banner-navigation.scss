@@ -12,7 +12,7 @@
     background: $color__main-60;
     @include reset;
     display: flex;
-
+    @include font-smoothing;
     @include breakpointMax(bp--sm--major) {
       display: none;
     }

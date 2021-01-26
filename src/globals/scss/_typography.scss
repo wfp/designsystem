@@ -54,8 +54,8 @@ $typescale-map: (
 
 // Only applied to bold weight text
 @mixin font-smoothing {
-  //-webkit-font-smoothing: antialiased;
-  //-moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 @mixin letter-spacing {

@@ -16,12 +16,13 @@
     @media print {
       display: none;
     }
+    @include font-smoothing;
   }
 
   .#{$prefix}--main-navigation__item {
     @include typescale('epsilon');
     @include font-family;
-    font-weight: 500;
+    font-weight: 600;
     &:last-child {
       padding-right: 0;
     }
@@ -130,7 +131,7 @@
 
     .#{$prefix}--main-navigation__logo {
       flex-grow: 1;
-      font-weight: 600;
+      font-weight: 700;
       white-space: nowrap;
     }
 
