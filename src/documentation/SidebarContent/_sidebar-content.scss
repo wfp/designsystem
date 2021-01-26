@@ -1,0 +1,21 @@
+@import '../../globals/scss/vars';
+@import '../../globals/scss/colors';
+@import '../../globals/scss/typography';
+@import '../../globals/scss/spacing';
+@import '../../globals/scss/import-once';
+@import '../../globals/scss/css--reset';
+
+@include exports('sidebar-content') {
+  .#{$prefix}--sidebar-content__container {
+    display: flex;
+    width: 100%;
+    background-color: var(--ui-02);
+    height: 100vh;
+  }
+
+  .#{$prefix}--sidebar-item-content {
+    width: 35%;
+    border-right: 1px solid var(--ui-04);
+    overflow: scroll;
+  }
+}
