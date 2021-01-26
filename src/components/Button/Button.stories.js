@@ -47,6 +47,10 @@ ButtonKind.args = {
   children: 'Button',
 };
 
+ButtonKind.parameters = {
+  code: false,
+};
+
 const hello = `
 By changing the \`kind\` prop you can use different styles of the button.
 
