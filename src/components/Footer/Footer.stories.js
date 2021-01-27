@@ -144,8 +144,7 @@ export const OverrideLogos = (args) => (
   <Footer
     {...args}
     logo={<div>Logo</div>}
-    logoExtended={<div>LogoExtended</div>}
-    sdgLogo={<div>SdgLogo</div>}>
+    logoExtended={<div>LogoExtended</div>}>
     <div className="wfp--footer__info">
       <div className="wfp--footer__info__item">
         <p className="wfp--footer__label">A label</p>
@@ -177,7 +176,7 @@ OverrideLogos.story = {
   parameters: {
     docs: {
       storyDescription:
-        'The logos for `logo`, `logoExtended` or `sdgLogo`  can be replaced by a custom react component.',
+        'The logos for `logo`, `logoExtended`  can be replaced by a custom react component.',
     },
   },
 };

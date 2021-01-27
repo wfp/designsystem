@@ -1,3 +1,17 @@
+# [1.13.0](https://github.com/WFP/UI/compare/v1.12.0...v1.13.0) (2021-01-26)
+
+
+### Features
+
+* **Empty:** added empty component and illustrations ([324d573](https://github.com/WFP/UI/commit/324d5736202165544be0f57270ae76287fe34a11))
+
+# [1.12.0](https://github.com/WFP/UI/compare/v1.11.5...v1.12.0) (2021-01-20)
+
+
+### Features
+
+* **Button:** added right to left support ([1137b01](https://github.com/WFP/UI/commit/1137b01ff4c07a5ddfade92b9c031c7dc8ac0554))
+
 ## [1.11.5](https://github.com/WFP/UI/compare/v1.11.4...v1.11.5) (2021-01-13)
 
 
