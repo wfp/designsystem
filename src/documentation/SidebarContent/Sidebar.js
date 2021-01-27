@@ -1,5 +1,6 @@
 import React from 'react';
-import SidebarItem from '../SidebarItem/SidebarItem';
+import PropTypes from 'prop-types';
+import SidebarItem from '../../components/SidebarItem/SidebarItem';
 import Search from '../../components/Search';
 
 function Sidebar({data, content, sidebarItemSchema, updateContent, enableSearch, ...other}) {

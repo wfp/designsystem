@@ -8,7 +8,7 @@ import DATA from './PHONEBOOK.json'
 import Footer from '../../components/Footer';
 import Link from '../../components/Link';
 import EmptyContent from './EmptyContent';
-import SidebarItem from '../SidebarItem/SidebarItem';
+import SidebarItem from '../../components/SidebarItem/SidebarItem';
 
 //This layout is the sidebar and content section that accept children
 

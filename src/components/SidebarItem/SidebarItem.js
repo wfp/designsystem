@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types';
 import { iconUser } from '@wfp/icons';
 import Icon from '../../components/Icon';
 
@@ -50,5 +51,32 @@ function SidebarItem({
         </div>
     )
 }
+
+SidebarItem.propTypes = {
+    /**
+     The image will be placed in place of the avatar
+   */
+    image: PropTypes.string,
+    /**
+     title is the string given to the first text, usually name
+   */
+    title: PropTypes.string,
+    /** 
+     content is what follows the text
+   */
+    content: PropTypes.string,
+    /** 
+    subContent, usually additional information below the content
+   */
+    subContent: PropTypes.string,
+    /**
+     additional info section is mainly for any short text like job title
+   */
+    additionalInfo: PropTypes.string,
+    /**
+     noImage is passed if the user wants to remove the avatar section
+   */
+    noImage: PropTypes.boolean,
+  };
 
 export default SidebarItem;
