@@ -3,6 +3,7 @@ import React from 'react';
 import markdown from './README.mdx';
 
 import SidebarItem from './SidebarItem';
+import Tag from '../../components/Tag';
 
 export default {
   title: 'Components/UI Elements/SidebarItem',
@@ -15,24 +16,34 @@ export default {
 };
 
 export const Regular = (args) => (
+  <div style={{width: '40%'}}>
     <SidebarItem {...args}/>
+  </div>
+    
 )
 
 Regular.args = {
-    title:"Cassandra",
-    content:"cassie@wfp.org",
-    subContent:'0987654323456',
-    additionalInfo: 'Developer'
+    title:"Title",
+    content:"content",
+    subContent:'sub content',
+    additionalInfo: 'Additional',
+    hintInfo:(<Tag>hint</Tag>),
 }
 
 export const NoImage = (args) => (
-  <SidebarItem {...args}/>
+  <div style={{width: '40%'}}>
+    <SidebarItem {...args}/>
+  </div>
 )
 
+
+
 NoImage.args = {
-  title:"Cassandra",
-  content:"cassie@wfp.org",
-  subContent:'0987654323456',
-  additionalInfo: 'Developer',
-  noImage: true
+  title:"831 students",
+  content:"409 boys, 422 girls",
+  subContent:'meal served',
+  additionalInfo: 'Friday, 21.02.20',
+  noImage: true,
+  hintInfo:(<Tag type="warning">not synced</Tag>)
+
 }

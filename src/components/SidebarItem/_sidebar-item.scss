@@ -12,7 +12,7 @@
     background: var(--ui-01);
     height: 95px;
     padding: $spacing-md;
-    border-bottom: 1px solid var(--ui-02);
+    // border-bottom: 1px solid var(--ui-02);
     cursor: pointer;
     box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15);
     justify-content: space-between;
@@ -54,16 +54,16 @@
     .#{$prefix}--sidebar-content-wrapper {
       flex-direction: column;
       margin-right: 0.5rem;
+      line-height: 22px;
 
       .#{$prefix}--item-title {
         font-weight: 600;
         font-size: 16px;
-        line-height: 22px;
+        // line-height: 22px;
       }
 
       .#{$prefix}--item-content {
         font-size: 14px;
-        line-height: 21px;
       }
 
       .#{$prefix}--item-subcontent {
@@ -76,5 +76,12 @@
       font-size: 12px;
       color: var(--text-02);
     }
+  }
+
+  .#{$prefix}--sidebar-right-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
   }
 }

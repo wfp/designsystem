@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types';
 import { iconUser } from '@wfp/icons';
 import Icon from '../../components/Icon';
+import Tag from '../../components/Tag';
 
 function SidebarItem({
     image, 
@@ -10,6 +11,7 @@ function SidebarItem({
     subContent,
     additionalInfo,
     noImage,
+    hintInfo,
     ...other
 }) {
 
@@ -44,9 +46,15 @@ function SidebarItem({
                 {subContent && <div className="wfp--item-subcontent">{subContent}</div>}
             </div>
             </div>
-            
-            <div className="wfp--sidebar-info-wrapper">
-                <span>additional info</span>
+
+            <div className="wfp--sidebar-right-content-wrapper">
+                <div className="wfp--sidebar-info-wrapper">
+                    <span>additional</span>
+                </div>
+                <div>
+                    {hintInfo}
+                </div>
+                
             </div>
             
 
@@ -80,6 +88,10 @@ SidebarItem.propTypes = {
      noImage is passed if the user wants to remove the avatar section
    */
     noImage: PropTypes.boolean,
+    /**
+     hintInfo is passed to give additonal hint to your content, optional
+   */
+    hintInfo: PropTypes.node,
   };
 
   SidebarItem.defaultProps = {
