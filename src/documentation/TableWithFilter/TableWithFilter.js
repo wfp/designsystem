@@ -14,6 +14,10 @@ function TableWithFilter() {
     const [filterActivated, setFilterActivated] = useState(false);
     const [search, setSearch] = useState({})
 
+    const handleOnFormSubmit = (formdata) => {
+      setSearch(formdata)
+    }
+
     const handleSearchOnchange = (value) =>{
         setSimpleSearch(value)
     }
@@ -49,10 +53,10 @@ function TableWithFilter() {
         </ModuleHeader>
         {filterActivated && (
           <ModuleBody>
-            <MyForm />
+            <MyForm onFormChange={handleOnFormSubmit}/>
           </ModuleBody>
         )}
-        <Table filterText={simpleSearch}/> 
+        <Table filterText={simpleSearch} advanceFilter={search} /> 
       </Module>
     )
 }

@@ -5,7 +5,7 @@ import { COLUMNS } from './columns';
 import Table from '../../components/Table'
 import Pagination from '../../components/Pagination';
 
-function DataTable({filterText}) {
+function DataTable({filterText, advanceFilter}) {
     const columns = useMemo(()=> COLUMNS, [])
     const data = useMemo(()=> MOCKDATA, [])
 
@@ -36,6 +36,7 @@ function DataTable({filterText}) {
     if(filterText){
         setGlobalFilter(filterText)
     }else{
+        console.log("advance",advanceFilter)
         setGlobalFilter(undefined)
     }
     },[filterText])

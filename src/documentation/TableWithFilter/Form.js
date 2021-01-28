@@ -5,6 +5,7 @@ import TextInput from '../../components/TextInput';
 import NumberInput from '../../components/NumberInput';
 import Button from '../../components/Button';
 import ReactSelect from 'react-select';
+import ReactSelectWrapper from './ReactSelectWrapper';
 
 const options = [
     { value: 'male', label: 'Male' },
@@ -25,12 +26,13 @@ const countryOptions = [
     
 ]
 
-function Form() {
+function Form({ onFormChange }) {
     const { handleSubmit, register, errors, control } = useForm();
 
     const handleFilter = (formdata) => {
-        console.log("data: ", formdata);
+        onFormChange(formdata)
     }
+
 
     return (
         <form onSubmit={handleSubmit(handleFilter)}>
@@ -38,42 +40,19 @@ function Form() {
                 align="horizontal"
                 style={{ marginTop: '1rem' }}>
                 <div className="wfp--form-item" style={{ minWidth: '100px' }}>
-                <label htmlFor="country" className="wfp--label">
-                    Gender
-                </label>
                 <Controller
-                    as={ReactSelect}
+                    as={<ReactSelectWrapper control={control} options={options} />}
                     name="gender"
-                    className="wfp--react-select-container"
-                    classNamePrefix="wfp--react-select"
+                    labelText="Gender"
                     control={control}
-                    onChange={([selected]) => {
-                    return { selected };
-                    }}
-                    options={options}
-                    defaultValue={{}}
                 />
-                {/* <ReactSelect
-                    className="wfp--react-select-container"
-                    classNamePrefix="wfp--react-select"
-                    id="gender"
-                    name="gender"
-                    options={options}
-                    ref={register}
-                /> */}
                 </div>
                 <div className="wfp--form-item" style={{ minWidth: '100px' }}>
-                <label htmlFor="city" className="wfp--label">
-                    Country
-                </label>
-                <ReactSelect
-                    className="wfp--react-select-container"
-                    classNamePrefix="wfp--react-select"
-                    id="country"
+                <Controller
+                    as={<ReactSelectWrapper control={control} options={countryOptions} />}
                     name="country"
-                    // onChange={handleCityChange}
-                    options={countryOptions}
-                    ref={register}
+                    labelText="Country"
+                    control={control}
                 />
                 </div>
                 
