@@ -32,25 +32,28 @@ function SidebarItem({
 
     return (
         <div className="wfp--sidebar-item-wrapper" {...other}>
+            <div className="wfp--sidebar-item__content">   
             { !noImage ? 
             (<div className="wfp--profile-image">
                 {profile_image} 
             </div> )
             : '' }
-            <div className="wfp--sidebar-item__content">
-                <div className="wfp--sidebar-content-wrapper">
-                    {title && <div className="wfp--item-title">{title}</div>}
-                    {content && <div className="wfp--item-content">{content}</div>}
-                    {subContent && <div className="wfp--item-subcontent">{subContent}</div>}
-                </div>
-                <div className="wfp--sidebar-info-wrapper">
-                    <span>additional info</span>
-                </div>
+            <div className="wfp--sidebar-content-wrapper">
+                {title && <div className="wfp--item-title">{title}</div>}
+                {content && <div className="wfp--item-content">{content}</div>}
+                {subContent && <div className="wfp--item-subcontent">{subContent}</div>}
             </div>
+            </div>
+            
+            <div className="wfp--sidebar-info-wrapper">
+                <span>additional info</span>
+            </div>
+            
 
         </div>
     )
 }
+// wfp--sidebar-item__content
 
 SidebarItem.propTypes = {
     /**
@@ -77,6 +80,10 @@ SidebarItem.propTypes = {
      noImage is passed if the user wants to remove the avatar section
    */
     noImage: PropTypes.boolean,
+  };
+
+  SidebarItem.defaultProps = {
+      noImage:false
   };
 
 export default SidebarItem;

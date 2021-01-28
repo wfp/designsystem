@@ -24,3 +24,15 @@ Regular.args = {
     subContent:'0987654323456',
     additionalInfo: 'Developer'
 }
+
+export const NoImage = (args) => (
+  <SidebarItem {...args}/>
+)
+
+NoImage.args = {
+  title:"Cassandra",
+  content:"cassie@wfp.org",
+  subContent:'0987654323456',
+  additionalInfo: 'Developer',
+  noImage: true
+}
