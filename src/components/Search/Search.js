@@ -144,8 +144,8 @@ Search.propTypes = {
   labelText: PropTypes.node,
 
   /**
-   * The new value is available in 'imaginaryTarget.value'
-   * i.e. to get the value: evt.imaginaryTarget.value
+   * The new value is available in 'evt'
+   * i.e. to get the value: evt
    */
   onChange: PropTypes.func,
 
