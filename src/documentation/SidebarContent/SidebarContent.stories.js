@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 
 import markdown from './README.mdx';
-import SidebarContent from './SidebarContent';
 import Sidebar from './Sidebar';
 import DATA from './PHONEBOOK.json'
 import User from '../../components/User';
@@ -18,7 +17,7 @@ export default {
   };
 
 export const Regular = (args) => (
-  <SidebarContent />
+  <Sidebar />
 )
 
 
@@ -74,7 +73,13 @@ export const Sidebarr = (args) => {
   return(
       <>
       <MainNavigation />
-      <Sidebar data={DATA} content={content} updateContent={updateContent} sidebarItemSchema={dataSchema} enableSearch={false}/>
+      <Sidebar 
+        data={DATA} 
+        content={content} 
+        updateContent={updateContent} 
+        sidebarItemSchema={dataSchema} 
+        enableSearch={false}
+        />
       </>
   )
 }

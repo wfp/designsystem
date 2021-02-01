@@ -25,7 +25,7 @@ function Sidebar({
                 }
                 
                 {
-                    data.map((user, key) => {
+                    data && data.map((user, key) => {
                         return (
                             <SidebarItem
                                 key={key}
