@@ -24,11 +24,7 @@ export default class InputGroup extends React.Component {
      * Provide an optional className to be applied to the container node
      */
     className: PropTypes.string,
-    /**
-     * Provide an optional className to be applied to the container node
-     */
-    controlled: PropTypes.bool,
-
+    
     /**
      * Specify the <RadioButton> to be selected by default
      */
