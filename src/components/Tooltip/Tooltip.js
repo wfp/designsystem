@@ -125,12 +125,12 @@ const Tooltip = ({
 
 Tooltip.propTypes = {
   /**
-   * Provide the content for the Link
+   * Provide the children on which the tooltip will show on
    */
   children: PropTypes.node,
 
   /**
-   * Provide a custom className to be applied to the containing <a> node
+   * Provide the content for the tooltip
    */
   content: PropTypes.node,
 

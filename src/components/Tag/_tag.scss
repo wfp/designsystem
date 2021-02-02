@@ -29,7 +29,7 @@
     }
   }
 
-  .#{$prefix}--tag--wfp {
+  .#{$prefix}--tag--info {
     @include tag-theme($color__brand-01-10, $color__brand-01-60);
   }
 
@@ -49,7 +49,7 @@
     @include tag-theme(var(--support-light-03), darken($support-03, 18));
   }
 
-  .#{$prefix}--tag--information {
+  .#{$prefix}--tag--custom {
     @include tag-theme(var(--support-light-04), $support-04);
   }
 

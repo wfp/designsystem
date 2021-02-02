@@ -5,7 +5,7 @@ import classNames from 'classnames';
 const TYPES = {
   beta: 'Beta',
   custom: 'Custom',
-  wfp: 'WFP',
+  info: 'Info',
   error: 'error',
   success: 'Success',
   warning: 'Warning',
@@ -40,7 +40,7 @@ Tag.propTypes = {
 };
 
 Tag.defaultProps = {
-  type: 'wfp',
+  type: 'info',
 };
 
 export const types = Object.keys(TYPES);
