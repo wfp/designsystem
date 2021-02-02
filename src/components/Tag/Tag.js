@@ -3,8 +3,6 @@ import React from 'react';
 import classNames from 'classnames';
 
 const TYPES = {
-  beta: 'Beta',
-  custom: 'Custom',
   info: 'Info',
   error: 'error',
   success: 'Success',
