@@ -7,6 +7,7 @@ const TYPES = {
   error: 'error',
   success: 'Success',
   warning: 'Warning',
+  custom: 'Custom'
 };
 
 /** Tag is used to label, categorize, or organize items using keywords that describe them. */

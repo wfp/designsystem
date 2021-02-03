@@ -24,14 +24,12 @@ const TextInput = (props) => {
     invalidText,
     helperText,
     inputRef,
-    light,
     pattern,
     required,
     ...other
   } = props;
 
   const textInputClasses = classNames(`${prefix}--text`, className, {
-    [`${prefix}--text--light`]: light,
     [`${prefix}--text--helpertext`]: helperText,
     [`${prefix}--text--nolabel`]: hideLabel,
     [`${prefix}--text--required`]: required,
@@ -148,11 +146,6 @@ TextInput.propTypes = {
    * Provide text that is used alongside the control label for additional help
    */
   helperText: PropTypes.node,
-
-  /**
-   * `true` to use the light version.
-   */
-  light: PropTypes.bool,
 };
 
 TextInput.defaultProps = {
@@ -164,7 +157,6 @@ TextInput.defaultProps = {
   invalid: false,
   invalidText: '',
   helperText: '',
-  light: false,
 };
 
 export default TextInput;
