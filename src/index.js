@@ -96,6 +96,7 @@ export Tab from './components/Tab';
 export TabContent from './components/TabContent';
 export Tabs from './components/Tabs';
 export Tag from './components/Tag';
+export Text from './components/Text';
 export TextArea from './components/TextArea';
 export TextInput from './components/TextInput';
 export Tooltip, { tooltipStyle, tooltipStyleDark } from './components/Tooltip';
