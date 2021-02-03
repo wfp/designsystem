@@ -6,12 +6,14 @@ const { prefix } = settings;
 
 /** The item component can be used whenever a section should indicate that there is no content available. This can be the case for a item list table or search results. */
 export const Item = ({
+  additional,
   button,
   children,
   className,
   href,
   subText,
   icon,
+  hint,
   title,
   kind = 'large',
   ...other
@@ -27,11 +29,28 @@ export const Item = ({
     <div className={classNames} {...other}>
       <div className={`${prefix}--item__icon`}>{icon}</div>
       <div className={`${prefix}--item__content`}>
-        {title && <h2 className={`${prefix}--item__title`}>{title}</h2>}
-        {children && <div className={`${prefix}--item__text`}>{children}</div>}
-        {subText && <div className={`${prefix}--item__subtext`}>{subText}</div>}
+        {title && (
+          <h2 className={`${prefix}--item__title`}>
+            {title}
+            {additional && (
+              <div className={`${prefix}--item__additional`}>{additional}</div>
+            )}
+          </h2>
+        )}
+        <div className={`${prefix}--item__textwrapper`}>
+          <div>
+            {children && (
+              <div className={`${prefix}--item__text`}>{children}</div>
+            )}
+            {subText && (
+              <div className={`${prefix}--item__subtext`}>{subText}</div>
+            )}
+          </div>
+          <div className={`${prefix}--item__right`}>
+            {hint && <div className={`${prefix}--item__hint`}>{hint}</div>}
+          </div>
+        </div>
       </div>
-      <div className={`${prefix}--item__button`}>{button}</div>
     </div>
   );
 };

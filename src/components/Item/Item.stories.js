@@ -2,6 +2,7 @@ import React from 'react';
 import markdown from './README.mdx';
 import Item from '.';
 import Button from '../Button';
+import Tag from '../Tag';
 
 export default {
   title: 'Components/UI Elements/Item',
@@ -31,9 +32,9 @@ Regular.args = {
 export const Horizontal = (args) => <Item {...args} />;
 
 Horizontal.args = {
-  title: 'No entries found',
-  children: `You haven't yet created an entry`,
-  subText: `You haven't yet created an entry`,
+  title: 'A title is shown',
+  children: `nonumy eirmod tempor invidunt`,
+  subText: `This is the subText. Lorem ipsum dolor sit amet, consetetur sadipscing elitr`,
   kind: 'horizontal',
   icon: (
     <img
@@ -41,5 +42,6 @@ Horizontal.args = {
       src="https://www.wfp.org/sites/default/files/images/27DA6743-41A0-4970-A9BA-B4B1415CDD2E_0.jpeg"
     />
   ),
-  button: <Button kind="accent">New entry</Button>,
+  additional: 'Yesterday',
+  hint: <Tag kind="wfp">Hint</Tag>,
 };
