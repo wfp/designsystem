@@ -1,3 +1,10 @@
+## [1.13.1](https://github.com/WFP/UI/compare/v1.13.0...v1.13.1) (2021-02-01)
+
+
+### Bug Fixes
+
+* **BannerNavigation:** font-weight changed ([7d8d4ab](https://github.com/WFP/UI/commit/7d8d4abc5d6d7001b5c528983de2595f613ebc19))
+
 # [1.13.0](https://github.com/WFP/UI/compare/v1.12.0...v1.13.0) (2021-01-26)
 
 

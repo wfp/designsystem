@@ -22,6 +22,7 @@
     @include typescale('omega');
     @include font-family;
     padding: 0 $spacing-xs;
+    font-weight: 600;
     @include breakpoint(bp--lg--major) {
       padding: 0 $spacing-md;
     }
