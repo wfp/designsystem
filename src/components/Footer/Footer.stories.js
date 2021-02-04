@@ -86,7 +86,7 @@ export const External = (args) => (
 
 External.args = {
   metaContent: '2019 © World Food Programme',
-  metaLinks:'jsdbhab, dbhsjhfdbshb',
+  metaLinks:<Link href="http://www.wfp.org">meta link</Link>,
   external: true,
 };
 

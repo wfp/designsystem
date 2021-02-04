@@ -29,7 +29,7 @@ ModuleBody.propTypes = {
    */
   noPadding: PropTypes.bool,
   /**
-   * The CSS class name for the slider.
+   * The CSS class name for the `ModuleBody`.
    */
   className: PropTypes.string,
 };

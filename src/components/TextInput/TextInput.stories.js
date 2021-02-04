@@ -15,9 +15,7 @@ export default {
 
 export const Regular = (args) => <TextInput {...args} />;
 
-const description = `
-You can customize the content by using \`BannerNavigation\`.
-`;
+
 
 Regular.args = {
   name: 'inputname',
@@ -28,13 +26,7 @@ Regular.args = {
 
 export const withError = (args) => <TextInput {...args} />;
 
-withError.story = {
-  parameters: {
-    docs: {
-      storyDescription: description,
-    },
-  },
-};
+
 
 withError.args = {
   name: 'inputname',
@@ -44,14 +36,6 @@ withError.args = {
 };
 
 export const withDisabled = (args) => <TextInput {...args} />;
-
-withDisabled.story = {
-  parameters: {
-    docs: {
-      storyDescription: description,
-    },
-  },
-};
 
 withDisabled.args = {
   name: 'inputname',
