@@ -2,9 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import settings from '../../globals/js/settings';
+import Icon from '../Icon';
 const { prefix } = settings;
+import { iconChevronRight } from '@wfp/icons';
 
-/** The item component can be used whenever a section should indicate that there is no content available. This can be the case for a item list table or search results. */
+/** The item component to show entries inside a list, like a sidebar or an overview page. */
 export const Item = ({
   additional,
   button,
@@ -14,14 +16,17 @@ export const Item = ({
   subText,
   icon,
   hint,
+  showAdditionalIcon,
   title,
   kind = 'large',
+  wrapper = 'none',
   ...other
 }) => {
   const classNames = classnames(
     {
       [`${prefix}--item`]: true,
       [`${prefix}--item--${kind}`]: kind,
+      [`${prefix}--item--${wrapper}`]: wrapper,
     },
     className
   );
@@ -30,14 +35,22 @@ export const Item = ({
       <div className={`${prefix}--item__icon`}>{icon}</div>
       <div className={`${prefix}--item__content`}>
         {title && (
-          <h2 className={`${prefix}--item__title`}>
-            {title}
+          <div className={`${prefix}--item__title-wrapper`}>
+            <h2 className={`${prefix}--item__title`}>{title}</h2>
             {additional && (
-              <div className={`${prefix}--item__additional`}>{additional}</div>
+              <div className={`${prefix}--item__additional`}>
+                {additional}
+                {showAdditionalIcon && (
+                  <Icon
+                    icon={iconChevronRight}
+                    className={`${prefix}--item__additional-icon`}
+                  />
+                )}
+              </div>
             )}
-          </h2>
+          </div>
         )}
-        <div className={`${prefix}--item__textwrapper`}>
+        <div className={`${prefix}--item__text-wrapper`}>
           <div>
             {children && (
               <div className={`${prefix}--item__text`}>{children}</div>
@@ -85,6 +98,11 @@ Item.propTypes = {
    * Provide a kind to use different appearances.
    */
   kind: PropTypes.oneOf(['undefined', 'large']),
+
+  /**
+   * Provide a wrap to use different borders.
+   */
+  wrapper: PropTypes.oneOf(['undefined', 'sidebar']),
 };
 
 export default Item;

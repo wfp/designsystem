@@ -17,16 +17,19 @@ export default {
 export const Regular = (args) => <Item {...args} />;
 
 Regular.args = {
-  title: 'No entries found',
-  children: `You haven't yet created an entry`,
-  kind: 'large',
+  title: 'A title is shown',
+  children: `nonumy eirmod tempor invidunt`,
+  subText: `This is the subText. Lorem ipsum dolor sit amet, consetetur sadipscing elitr.  At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. `,
   icon: (
     <img
       alt="Moving van"
-      src="https://www.wfp.org/sites/default/files/images/27DA6743-41A0-4970-A9BA-B4B1415CDD2E_0.jpeg"
+      src="https://www.wfp.org/sites/default/files/styles/medium/public/images/publication/YiR_banner.jpg"
     />
   ),
-  button: <Button kind="accent">New entry</Button>,
+  showAdditionalIcon: true,
+  additional: 'Yesterday',
+  hint: <Tag kind="wfp">Hint</Tag>,
+  wrapper: 'button',
 };
 
 export const Horizontal = (args) => <Item {...args} />;
@@ -34,14 +37,16 @@ export const Horizontal = (args) => <Item {...args} />;
 Horizontal.args = {
   title: 'A title is shown',
   children: `nonumy eirmod tempor invidunt`,
-  subText: `This is the subText. Lorem ipsum dolor sit amet, consetetur sadipscing elitr`,
+  subText: `This is the subText. Lorem ipsum dolor sit amet, consetetur sadipscing elitr.  At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. `,
   kind: 'horizontal',
   icon: (
     <img
       alt="Moving van"
-      src="https://www.wfp.org/sites/default/files/images/27DA6743-41A0-4970-A9BA-B4B1415CDD2E_0.jpeg"
+      src="https://www.wfp.org/sites/default/files/styles/medium/public/images/publication/YiR_banner.jpg"
     />
   ),
+  showAdditionalIcon: true,
   additional: 'Yesterday',
   hint: <Tag kind="wfp">Hint</Tag>,
+  wrapper: 'sidebar',
 };
