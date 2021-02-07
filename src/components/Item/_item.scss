@@ -46,6 +46,9 @@
         width: 9em;
         margin-bottom: 1em;
       }
+      .#{$prefix}--item__title-wrapper {
+        justify-content: center;
+      }
     }
 
     &--sidebar {
@@ -93,7 +96,7 @@
       margin-bottom: $spacing-2xs;
       font-size: 1em;
       display: flex;
-      justify-content: center;
+      //justify-content: center;
 
       align-items: center;
     }
