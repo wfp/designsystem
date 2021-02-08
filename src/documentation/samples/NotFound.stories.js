@@ -34,7 +34,7 @@ export const Regular = (args) => (
         Apologies for the inconvenience; we are performing maintenance at the moment.
         <br/> [Name of solution] should be back shortly. 
       </p>
-      <p>Please contact <Link href="https://IT.ServiceDesk@wfp.org"> IT.ServiceDesk@wfp.org </Link> if you have any questions or comments.</p>
+      <p>Please contact <Link href="mailto:IT.ServiceDesk@wfp.org"> IT.ServiceDesk@wfp.org </Link> if you have any questions or comments.</p>
       <p>[Name] Team</p>
     </Story>
   </Wrapper>

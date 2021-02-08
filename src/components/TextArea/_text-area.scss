@@ -17,8 +17,7 @@
     @include reset;
     @include font-family;
     @include typescale('zeta');
-    width: 100%;
-    min-width: 10rem;
+    min-width: 20rem;
     min-height: $input-height;
     padding: $spacing-xs;
     color: var(--text-01);
@@ -28,6 +27,10 @@
     border-radius: $input-border-radius;
     order: 2;
     resize: vertical;
+
+    .#{$prefix}--textarea-fullwidth{
+      width: 100%;
+    }
 
     & ~ .#{$prefix}--label {
       order: 1;

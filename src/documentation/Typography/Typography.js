@@ -2,8 +2,6 @@ import React from 'react';
 import Text from '../../components/Text';
 import Link from '../../components/Link';
 import { List, ListItem } from '../../components/List';
-import Card from '../../components/Card';
-import Story from '../../components/Story';
 
 const list = [
   { kind: 'simple', heading: 'Ordered lists' },
@@ -44,7 +42,7 @@ const Typography = () => {
     <>
       <h3>Headings</h3>
       <p>Typographic scale when using headings in text component</p>
-      <Card cardWidth="100%">
+      <div className="wfp--card-box">
         {headingText.map((e) => (
           <div style={{ paddingLeft: '0.5rem' }}>
             <Text kind={e.kind}>{e.text}</Text>
@@ -53,11 +51,11 @@ const Typography = () => {
             </div>
           </div>
         ))}
-      </Card>
+      </div>
 
       <h3>Text</h3>
       <p>Typographic scale for normal text</p>
-      <Card cardWidth="100%">
+      <div className="wfp--card-box">
         {Normaltext.map((e) => (
           <div style={{ paddingLeft: '0.5rem' }}>
             <Text kind={e.kind}>{e.text}</Text>
@@ -66,11 +64,11 @@ const Typography = () => {
             </div>
           </div>
         ))}
-      </Card>
+      </div>
 
       <h3>Page title</h3>
       <p>Typographic scale for page title and overline</p>
-      <Card cardWidth="100%">
+      <div className="wfp--card-box">
         <div style={{ paddingLeft: '0.5rem' }}>
           <Text kind="title">Title</Text>
           <div style={{ color: '#A9A9A9', marginBottom: '2rem' }}>
@@ -81,11 +79,11 @@ const Typography = () => {
             14px, SemiBold
           </div>
         </div>
-      </Card>
+      </div>
 
       <h3>Links</h3>
       <Text kind="p">Typographic scale for links</Text>
-      <Card cardWidth="100%">
+      <div className="wfp--card-box">
         <div style={{ paddingLeft: '0.5rem' }}>
           <Text kind="a">Link</Text>
           <div style={{ color: '#A9A9A9', marginBottom: '2rem' }}>
@@ -96,11 +94,11 @@ const Typography = () => {
             16px, Regular
           </div>
         </div>
-      </Card>
+      </div>
 
       <h3>Emphasis</h3>
       <p>Typographic scale for to put empahasis on text</p>
-      <Card cardWidth="100%">
+      <div className="wfp--card-box">
         {emphasisText.map((e) => (
           <div style={{ paddingLeft: '0.5rem' }}>
             <Text kind={e.kind}>{e.text}</Text>
@@ -109,14 +107,14 @@ const Typography = () => {
             </div>
           </div>
         ))}
-      </Card>
+      </div>
 
       <h3>Lists</h3>
       <p>
         Typographic scale for lists of items int he different variations:
         ordered, unordered and bullets
       </p>
-      <Card cardWidth="100%">
+      <div className="wfp--card-box">
         {list.map((e) => (
           <div style={{ paddingLeft: '0.5rem' }}>
             <Text kind="h4">{e.heading}</Text>
@@ -127,11 +125,11 @@ const Typography = () => {
             </List>
           </div>
         ))}
-      </Card>
+      </div>
 
       <h3>Colors</h3>
       <p>Color accents to use on normal text</p>
-      <Card cardWidth="100%">
+      <div className="wfp--card-box">
         {colors.map((e) => (
           <div style={{ display: 'flex', paddingLeft: '0.5rem' }}>
             <div>
@@ -150,7 +148,7 @@ const Typography = () => {
               }}></div>
           </div>
         ))}
-      </Card>
+      </div>
     </>
   );
 };

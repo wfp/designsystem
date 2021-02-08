@@ -19,7 +19,7 @@ const TextArea = ({
   invalidText,
   inputRef,
   helperText,
-  light,
+  fullWidth,
   ...other
 }) => {
   const textareaProps = {
@@ -36,8 +36,8 @@ const TextArea = ({
     },
   };
 
-  const textareaClasses = classNames('wfp--text-area', className, {
-    'wfp--text-area--light': light,
+  const textareaClasses = classNames('wfp--text-area', className,{
+    [`${prefix}--textarea-fullwidth`]: fullWidth,
   });
   const labelClasses = classNames(`${prefix}--label`, {
     [`${prefix}--visually-hidden`]: hideLabel,
@@ -170,9 +170,9 @@ TextArea.propTypes = {
   hideLabel: PropTypes.bool,
 
   /**
-   * Specify whether you want the light version of this control
+   * Specify whether you want `textarea` width to be 100%, this will overide cols set
    */
-  light: PropTypes.bool,
+  fullWIdth: PropTypes.bool,
 };
 
 TextArea.defaultProps = {
@@ -181,11 +181,11 @@ TextArea.defaultProps = {
   onClick: () => {},
   placeholder: '',
   rows: 4,
-  cols: 50,
+  // cols: 50,
   invalid: false,
   invalidText: '',
   helperText: '',
-  light: false,
+  fullWidth:true
 };
 
 export default TextArea;
