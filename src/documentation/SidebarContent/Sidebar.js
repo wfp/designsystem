@@ -41,7 +41,7 @@ function Sidebar({
                 }
                 
             </div>
-            <div style={{width: '65%'}}>
+            <div className="wfp--content-section">
                 {content}
             </div>
         </div>

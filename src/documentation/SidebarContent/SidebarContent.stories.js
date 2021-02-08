@@ -6,6 +6,9 @@ import DATA from './PHONEBOOK.json'
 import User from '../../components/User';
 import {List, ListItem} from '../../components/List'
 import MainNavigation from '../../components/MainNavigation';
+import Item from '../../components/SidebarItem/SidebarItem';
+import Tag from '../../components/Tag';
+import Text from '../../components/Text';
 
 export default {
     title: 'Templates/SidebarContent',
@@ -16,17 +19,15 @@ export default {
     },
   };
 
-export const Regular = (args) => (
-  <Sidebar />
-)
 
 
-export const Sidebarr = (args) => {
+
+export const Phonebook = (args) => {
   const [content, setContent] = useState(null);
 
   const updateContent = (user) => {
     const sidebarContent = (
-      <div style={{backgroundColor:'#fff', overflow:'scroll', padding:'1rem'}}>
+      <div style={{backgroundColor:'#fff', overflow:'scroll', padding:'1rem', height:'100vh'}}>
       <User
       id={user.staff_id}
       alt="avatar"
@@ -84,3 +85,32 @@ export const Sidebarr = (args) => {
   )
 }
 
+export const Regular = (args) => {
+  const sidebarSchema = {
+    title: 'full_name',
+    content:'email',
+    subContent: 'phone_number'
+  }
+
+  const content = (
+    <div style={{padding: '1rem'}}>
+      <div>
+        <Text kind="title">Report preview year 2020</Text>
+      </div>
+      <Item
+        additionalInfo="Friday, 21.02.20"
+        content="409 boys, 422 girls"
+        hintInfo={<Tag type="warning">not synced</Tag>}
+        noImage
+        subContent="meal served"
+        title="831 students"
+      />
+    </div>
+  )
+  return(
+    <>
+      <MainNavigation />
+      <Sidebar data={DATA} sidebarItemSchema={sidebarSchema} content={content} />
+    </>
+)
+}

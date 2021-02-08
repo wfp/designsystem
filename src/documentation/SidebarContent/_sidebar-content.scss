@@ -18,4 +18,12 @@
     border-right: 1px solid var(--ui-04);
     overflow: scroll;
   }
+  .#{$prefix}--content-section{
+    width: 65%;
+    overflow: auto;
+  }
+
+  @include breakpointMax(bp--sm--major) {
+    
+  }
 }
