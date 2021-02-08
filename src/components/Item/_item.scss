@@ -42,7 +42,7 @@
       .#{$prefix}--item__text-wrapper {
         flex-direction: column;
       }
-      .#{$prefix}--item__icon {
+      .#{$prefix}--item__image {
         width: 9em;
         margin-bottom: 1em;
       }
@@ -52,6 +52,7 @@
     }
 
     &--sidebar {
+      cursor: pointer;
       border-bottom: 1px solid var(--ui-03);
     }
     &--button {
@@ -62,7 +63,6 @@
     }
     &--horizontal {
       padding: 1em;
-      height: 100%;
       width: 100%;
       flex-direction: row;
 
@@ -75,7 +75,7 @@
       .#{$prefix}--item__title-wrapper {
         justify-content: space-between;
       }
-      .#{$prefix}--item__icon {
+      .#{$prefix}--item__image {
         width: 5rem;
         margin-right: 1em;
       }
@@ -105,7 +105,7 @@
       color: var(--text-02);
       margin-left: 1em;
     }
-    .#{$prefix}--item__additional-icon {
+    .#{$prefix}--item__additional-image {
       font-weight: normal;
       height: 0.6em;
       width: auto;
@@ -142,7 +142,7 @@
     }
   }
 
-  .#{$prefix}--item__icon {
+  .#{$prefix}--item__image {
     svg,
     .svg-inline--fa,
     img {

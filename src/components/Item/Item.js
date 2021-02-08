@@ -13,9 +13,10 @@ export const Item = ({
   children,
   className,
   href,
-  subText,
-  icon,
+  subContent,
+  image,
   hint,
+  noImage,
   showAdditionalIcon,
   title,
   kind = 'large',
@@ -32,7 +33,14 @@ export const Item = ({
   );
   return (
     <div className={classNames} {...other}>
-      <div className={`${prefix}--item__icon`}>{icon}</div>
+      {image ? (
+        <div className={`${prefix}--item__image`}>{image}</div>
+      ) : noImage ? (
+        <div className={`${prefix}--item__image ${prefix}--item__image-empty`}>
+          Empty
+        </div>
+      ) : null}
+
       <div className={`${prefix}--item__content`}>
         {title && (
           <div className={`${prefix}--item__title-wrapper`}>
@@ -55,8 +63,8 @@ export const Item = ({
             {children && (
               <div className={`${prefix}--item__text`}>{children}</div>
             )}
-            {subText && (
-              <div className={`${prefix}--item__subtext`}>{subText}</div>
+            {subContent && (
+              <div className={`${prefix}--item__subContent`}>{subContent}</div>
             )}
           </div>
           <div className={`${prefix}--item__right`}>

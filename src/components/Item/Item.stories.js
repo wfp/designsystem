@@ -19,7 +19,7 @@ export const Regular = (args) => <Item {...args} />;
 Regular.args = {
   title: 'A title is shown',
   children: `nonumy eirmod tempor invidunt`,
-  subText: `This is the subText. Lorem ipsum dolor sit amet, consetetur sadipscing elitr.  At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. `,
+  subContent: `This is the subContent. Lorem ipsum dolor sit amet, consetetur sadipscing elitr.  At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. `,
   icon: (
     <img
       alt="Moving van"
@@ -37,7 +37,7 @@ export const Horizontal = (args) => <Item {...args} />;
 Horizontal.args = {
   title: 'A title is shown',
   children: `nonumy eirmod tempor invidunt`,
-  subText: `This is the subText. Lorem ipsum dolor sit amet, consetetur sadipscing elitr.  At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. `,
+  subContent: `This is the subContent. Lorem ipsum dolor sit amet, consetetur sadipscing elitr.  At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. `,
   kind: 'horizontal',
   icon: (
     <img
