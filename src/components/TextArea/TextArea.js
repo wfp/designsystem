@@ -172,7 +172,7 @@ TextArea.propTypes = {
   /**
    * Specify whether you want `textarea` width to be 100%, this will overide cols set
    */
-  fullWIdth: PropTypes.bool,
+  fullWidth: PropTypes.bool,
 };
 
 TextArea.defaultProps = {
@@ -181,7 +181,6 @@ TextArea.defaultProps = {
   onClick: () => {},
   placeholder: '',
   rows: 4,
-  // cols: 50,
   invalid: false,
   invalidText: '',
   helperText: '',

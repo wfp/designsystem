@@ -28,10 +28,6 @@
     order: 2;
     resize: vertical;
 
-    .#{$prefix}--textarea-fullwidth{
-      width: 100%;
-    }
-
     & ~ .#{$prefix}--label {
       order: 1;
     }
@@ -63,6 +59,10 @@
     &:read-only {
       @include read-only('border');
     }
+  }
+
+  .#{$prefix}--textarea-fullwidth{
+    width: 100%;
   }
 
   .#{$prefix}--text-area--light {
