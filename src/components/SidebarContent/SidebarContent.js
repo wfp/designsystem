@@ -21,7 +21,7 @@ export function SidebarContent({
         <div className="wfp--sidebar-content-mobile-header">
           {sidebarMobileHeader}
         </div>
-        <div style={{backgroundColor:'#fff', height:'100vh'}}>
+        <div className="wfp--sidebar-children-content" >
           {children}
         </div>
         

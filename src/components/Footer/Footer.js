@@ -118,11 +118,12 @@ const Footer = ({
       </Wrapper>
 
       <Wrapper className="wfp--footer__meta" pageWidth={pageWidth}>
-        {metaContent && (
-          <div className="wfp--footer__meta__content">{metaContent}</div>
-        )}
+        
         {metaLinks && (
           <div className="wfp--footer__meta__links">{metaLinks}</div>
+        )}
+        {metaContent && (
+          <div className="wfp--footer__meta__content">{metaContent}</div>
         )}
       </Wrapper>
     </footer>

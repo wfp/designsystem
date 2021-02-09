@@ -12,4 +12,15 @@ const ModuleFooter = ({ centered, children, className, ...other }) => {
   );
 };
 
+ModuleFooter.propTypes = {
+  /**
+   * Specify the content of the `ModuleFooter`
+   */
+  children: PropTypes.node,
+  /**
+   * The CSS class name for the `ModuleFooter`.
+   */
+  className: PropTypes.string,
+};
+
 export default ModuleFooter;

@@ -17,8 +17,7 @@
     @include reset;
     @include font-family;
     @include typescale('zeta');
-    width: 100%;
-    min-width: 10rem;
+    min-width: 20rem;
     min-height: $input-height;
     padding: $spacing-xs;
     color: var(--text-01);
@@ -60,6 +59,10 @@
     &:read-only {
       @include read-only('border');
     }
+  }
+
+  .#{$prefix}--textarea-fullwidth{
+    width: 100%;
   }
 
   .#{$prefix}--text-area--light {

@@ -51,7 +51,6 @@ function Slider(props) {
     onChange = () => {},
     onClick = () => {},
     helperText,
-    light,
     allowEmpty,
     inputRef,
     ...other
@@ -81,7 +80,6 @@ function Slider(props) {
     `${prefix}--slider--wrapper`,
     className,
     {
-      [`${prefix}--slider--light`]: light,
       [`${prefix}--slider--helpertext`]: helperText,
       [`${prefix}--slider--nolabel`]: hideLabel,
       [`${prefix}--slider--nocontrols`]: hideControls,
@@ -102,9 +100,7 @@ function Slider(props) {
     value: value,
   };
 
-  const inputClasses = classNames('wfp--input', 'wfp--slider-text-input', {
-    'wfp--text-input--light': light,
-  });
+  const inputClasses = classNames('wfp--input', 'wfp--slider-text-input');
 
   const sliderClasses = classNames(
     'wfp--slider',
@@ -280,11 +276,6 @@ Slider.propTypes = {
   helperText: PropTypes.node,
 
   /**
-   * `true` to use the light version.
-   */
-  light: PropTypes.bool,
-
-  /**
    * `true` to allow empty string.
    */
   allowEmpty: PropTypes.bool,
@@ -303,7 +294,6 @@ Slider.defaultProps = {
   maxLabel: '',
   inputType: 'number',
   ariaLabelInput: 'Slider number input',
-  light: false,
 };
 
 export default Slider;

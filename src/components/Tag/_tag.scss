@@ -29,13 +29,13 @@
     }
   }
 
-  .#{$prefix}--tag--wfp {
+  .#{$prefix}--tag--info {
     @include tag-theme($color__brand-01-10, $color__brand-01-60);
   }
 
-  .#{$prefix}--tag--beta {
-    @include tag-theme($color__gray-1, $color__navy-gray-4);
-  }
+  // .#{$prefix}--tag--beta {
+  //   @include tag-theme($color__gray-1, $color__navy-gray-4);
+  // }
 
   .#{$prefix}--tag--error {
     @include tag-theme(var(--support-light-01), var(--support-01));
@@ -49,9 +49,9 @@
     @include tag-theme(var(--support-light-03), darken($support-03, 18));
   }
 
-  .#{$prefix}--tag--information {
-    @include tag-theme(var(--support-light-04), $support-04);
-  }
+  // .#{$prefix}--tag--information {
+  //   @include tag-theme(var(--support-light-04), $support-04);
+  // }
 
   // Skeleton state
   .#{$prefix}--tag.#{$prefix}--skeleton {
