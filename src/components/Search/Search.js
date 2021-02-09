@@ -144,8 +144,12 @@ Search.propTypes = {
   labelText: PropTypes.node,
 
   /**
-   * The new value is available in 'imaginaryTarget.value'
-   * i.e. to get the value: evt.imaginaryTarget.value
+   * The new value is available first arg 'searchValue' and evt object if needed is on second arg. 
+   * i.e. 
+   * const handleChange = (searchValue, evt) => {
+   * console.log("searchValue", searchValue); // a string
+    * console.log("evt", evt); // the whole event object
+   * }
    */
   onChange: PropTypes.func,
 

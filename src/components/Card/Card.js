@@ -11,7 +11,6 @@ const Card = ({
   isExternal,
   isLink,
   metadata,
-  more,
   subTitle,
   title,
   kind,
@@ -109,10 +108,6 @@ Card.propTypes = {
   Additional metadatas
 */
   metadata: PropTypes.string,
-  /**
-  Additional more content
-*/
-  more: PropTypes.node,
   /**
   Kind of Card
 */
