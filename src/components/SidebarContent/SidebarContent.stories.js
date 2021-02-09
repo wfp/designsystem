@@ -23,40 +23,74 @@ export default {
   },
 };
 
-export const Regular = (args) => (
+export const Regular = (args) => {
+  const [active, setActive] = useState(false);
+  const content =(
+    <>
+    <SidebarHeader>
+      <Search/>
+    </SidebarHeader>
+    <Item
+    additional="Yesterday"
+    hint={<Tag kind="wfp">Hint</Tag>}
+    kind="horizontal"
+    subContent="subcontent"
+    title="A title is shown"
+    wrapper="sidebar"
+  />
+  </>
+  )
+  return(
   <>
       <MainNavigation pageWidth="full" />
       <SidebarContent {...args} 
-      sidebarContent={content} 
+      active={active}
+      sidebarContent={
+        <>
+          <SidebarHeader>
+            <Search/>
+          </SidebarHeader>
+          <Item
+          additional="Yesterday"
+          hint={<Tag kind="wfp">Hint</Tag>}
+          kind="horizontal"
+          subContent="subcontent"
+          title="A title is shown"
+          wrapper="sidebar"
+          onClick={() => setActive(true)}
+        />
+      </>
+      } 
       sidebarMobileHeader={
           <>
-            <SidebarBackButton>
+            <SidebarBackButton onClick={() => setActive(false)}>
               Back
             </SidebarBackButton>
             <div>Detail page</div>
           </>
-        }>
-        <Empty title="Content here">When an item is selected, its corresponding content will be shown here</Empty>
+        }
+        >
+        {
+         active ? <Item
+         additional="Yesterday"
+         hint={<Tag kind="wfp">Hint</Tag>}
+         kind="large"
+         showAdditionalIcon
+         subContent="This is the subContent. Lorem ipsum dolor sit amet, consetetur sadipscing elitr.  At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. "
+         title="A title is shown"
+         wrapper="button"
+       >
+         nonumy eirmod tempor invidunt
+       </Item> :
+         <Empty title="Content here">When an item is selected, its corresponding content will be shown here</Empty>
+          
+        }  
       </SidebarContent>
   </>
 )
 
-const content =(
-  <>
-  <SidebarHeader>
-    <Search/>
-  </SidebarHeader>
-  <Item
-  additional="Yesterday"
-  hint={<Tag kind="wfp">Hint</Tag>}
-  kind="horizontal"
-  subContent="subcontent"
-  title="A title is shown"
-  wrapper="sidebar"
-/>
-</>
-)
 
+}
 
 
 export const Phonebook = (args) => {

@@ -21,7 +21,10 @@ export function SidebarContent({
         <div className="wfp--sidebar-content-mobile-header">
           {sidebarMobileHeader}
         </div>
-        {children}
+        <div style={{backgroundColor:'#fff', height:'100vh'}}>
+          {children}
+        </div>
+        
       </div>
     </div>
   );
@@ -32,6 +35,10 @@ SidebarContent.propTypes = {
    The children of content area
  */
   children: PropTypes.node,
+  /**
+   The `active` prop show the content section when an item is clicked. It's useful in mobile view 
+ */
+  active: PropTypes.bool,
   /**
    The sidebarContent is usually where the sidebar items will be. 
    `<SidebarHeader/>` can be called in `sidebarContent` and example search can be used in here

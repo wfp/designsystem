@@ -20,6 +20,12 @@
     border-bottom: 1px solid var(--ui-03);
   }
 
+  .#{$prefix}--sidebar-children-content{
+    background-color:var(--ui-01);
+    height:100vh
+  }
+  
+
   .#{$prefix}--sidebar-item-content {
     width: 35%;
     @include breakpointMax(bp--sm--major) {
