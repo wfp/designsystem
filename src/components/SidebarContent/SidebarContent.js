@@ -1,18 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import SidebarItem from '../SidebarItem/SidebarItem';
 import Icon from '../Icon';
 import { iconChevronLeft } from '@wfp/icons';
 
-function Sidebar({
-  //data,
+export function SidebarContent({
   active,
   children,
   sidebarMobileHeader,
-  sidebarMobileHeaderLink,
   sidebarContent,
-  //updateContent,
-  //enableSearch,
   ...other
 }) {
   return (
@@ -26,18 +21,41 @@ function Sidebar({
         <div className="wfp--sidebar-content-mobile-header">
           {sidebarMobileHeader}
         </div>
-
         {children}
       </div>
     </div>
   );
 }
 
-export default Sidebar;
+SidebarContent.propTypes = {
+  /**
+   The children of content area
+ */
+  children: PropTypes.node,
+  /**
+   The sidebarContent is usually where the sidebar items will be. 
+   `<SidebarHeader/>` can be called in `sidebarContent` and example search can be used in here
+ */
+  sidebarContent: PropTypes.node,
+  /**
+     The sidebarMobileHeader is shwon when view is in mobile version. 
+     `<SidebarBackButton/>` can used in the `sidebarMobileHeader` prop
+  */
+  sidebarMobileHeader: PropTypes.node
+};
+
+
 
 export function SidebarHeader({ children }) {
   return <div className="wfp--sidebar-content__header">{children}</div>;
 }
+
+SidebarHeader.propTypes = {
+  /**
+   The children of header of content area
+ */
+  children: PropTypes.node,
+};
 
 export function SidebarBackButton({ children, ...other }) {
   return (
@@ -47,3 +65,12 @@ export function SidebarBackButton({ children, ...other }) {
     </div>
   );
 }
+
+
+SidebarBackButton.propTypes = {
+  /**
+   The children of back button of content area
+ */
+  children: PropTypes.node,
+};
+

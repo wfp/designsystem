@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 
 import markdown from './README.mdx';
-import Sidebar from './Sidebar';
-import { SidebarHeader, SidebarBackButton } from './Sidebar';
+// import Sidebar from './SidebarContent';
+import { SidebarContent, SidebarHeader, SidebarBackButton } from './SidebarContent';
 import DATA from './PHONEBOOK.json';
 import User from '../User';
 import { List, ListItem } from '../List';
@@ -10,15 +10,54 @@ import MainNavigation from '../MainNavigation';
 import Item from '../Item';
 import Empty from '../Empty';
 import Search from '../Search';
+import Tag from '../Tag';
 
 export default {
-  title: 'Templates/SidebarContent',
+  title: 'Components/Content Related/SidebarContent',
+  component: SidebarContent,
+  subcomponents: { SidebarHeader, SidebarBackButton },
   parameters: {
     status: 'released',
     mdx: markdown,
     previewWidth: 'full',
   },
 };
+
+export const Regular = (args) => (
+  <>
+      <MainNavigation pageWidth="full" />
+      <SidebarContent {...args} 
+      sidebarContent={content} 
+      sidebarMobileHeader={
+          <>
+            <SidebarBackButton>
+              Back
+            </SidebarBackButton>
+            <div>Detail page</div>
+          </>
+        }>
+        <Empty title="Content here">When an item is selected, its corresponding content will be shown here</Empty>
+      </SidebarContent>
+  </>
+)
+
+const content =(
+  <>
+  <SidebarHeader>
+    <Search/>
+  </SidebarHeader>
+  <Item
+  additional="Yesterday"
+  hint={<Tag kind="wfp">Hint</Tag>}
+  kind="horizontal"
+  subContent="subcontent"
+  title="A title is shown"
+  wrapper="sidebar"
+/>
+</>
+)
+
+
 
 export const Phonebook = (args) => {
   const [selectedUserId, setSelectedUserId] = useState(null);
@@ -34,7 +73,7 @@ export const Phonebook = (args) => {
   return (
     <>
       <MainNavigation pageWidth="full" />
-      <Sidebar
+      <SidebarContent
         active={selectedUserId}
         sidebarMobileHeader={
           <>
@@ -48,7 +87,6 @@ export const Phonebook = (args) => {
           <>
             <SidebarHeader>
               <Search
-                placeHolderText="Type to search user"
                 onChange={(e) => setSearch(e)}
               />
             </SidebarHeader>
@@ -134,41 +172,8 @@ export const Phonebook = (args) => {
         ) : (
           <Empty title="No user selected">Please select a user</Empty>
         )}
-      </Sidebar>
+      </SidebarContent>
     </>
   );
 };
-/*
-export const Regular = (args) => {
-  const sidebarSchema = {
-    title: 'full_name',
-    content: 'email',
-    subContent: 'phone_number',
-  };
 
-  const content = (
-    <div style={{ padding: '1rem' }}>
-      <div>
-        <Text kind="title">Report preview year 2020</Text>
-      </div>
-      <Item
-        additionalInfo="Friday, 21.02.20"
-        content="409 boys, 422 girls"
-        hintInfo={<Tag type="warning">not synced</Tag>}
-        noImage
-        subContent="meal served"
-        title="831 students"
-      />
-    </div>
-  );
-  return (
-    <>
-      <MainNavigation />
-      <Sidebar
-        data={DATA}
-        sidebarItemSchema={sidebarSchema}
-        content={content}
-      />
-    </>
-  );
-};*/
