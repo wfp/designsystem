@@ -8,6 +8,7 @@ import { iconChevronRight } from '@wfp/icons';
 
 /** The item component to show entries inside a list, like a sidebar or an overview page. */
 export const Item = ({
+  active,
   additional,
   button,
   children,
@@ -28,6 +29,7 @@ export const Item = ({
       [`${prefix}--item`]: true,
       [`${prefix}--item--${kind}`]: kind,
       [`${prefix}--item--${wrapper}`]: wrapper,
+      [`${prefix}--item--active`]: active,
     },
     className
   );

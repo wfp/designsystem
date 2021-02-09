@@ -8,6 +8,7 @@ export Breadcrumb from './components/Breadcrumb';
 export BreadcrumbItem from './components/BreadcrumbItem';
 export BreadcrumbHome from './components/BreadcrumbHome';
 export Button from './components/Button';
+export Empty from './components/Empty';
 export Hero from './components/Hero';
 export Card from './components/Card';
 export Checkbox from './components/Checkbox';
@@ -90,6 +91,11 @@ export SelectItemGroup from './components/SelectItemGroup';
 export Switch from './components/Switch';
 export Slider from './components/Slider';
 export Story from './components/Story';
+export Sidebar, {
+  SidebarHeader,
+  SidebarContent,
+  SidebarBackButton,
+} from './components/Sidebar';
 export Item from './components/Item';
 export Table, { TableSorting } from './components/Table';
 export TablePagination from './components/TablePagination';

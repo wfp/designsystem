@@ -39,6 +39,10 @@ export function SidebarHeader({ children }) {
   return <div className="wfp--sidebar-content__header">{children}</div>;
 }
 
+export function SidebarContent({ children }) {
+  return <div className="wfp--sidebar-content__content">{children}</div>;
+}
+
 export function SidebarBackButton({ children, ...other }) {
   return (
     <div className="wfp--sidebar-content__back-button" {...other}>

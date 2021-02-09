@@ -22,7 +22,7 @@ export default {
 
 export const Phonebook = (args) => {
   const [selectedUserId, setSelectedUserId] = useState(null);
-  const [search, setSearch] = useState(null);
+  const [search, setSearch] = useState();
   const selectedUserData = DATA.find((e) => e.id === selectedUserId);
 
   const searchResults = search

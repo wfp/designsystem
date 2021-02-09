@@ -8,10 +8,9 @@
 @include exports('sidebar-content') {
   .#{$prefix}--sidebar-content__container {
     display: flex;
-    width: 100%;
-    //background-color: var(--ui-02);
-    height: 100vh;
-    position: relative;
+    flex: 1;
+    flex-shrink: 1;
+    overflow: hidden;
   }
 
   .#{$prefix}--sidebar-content__header {
@@ -20,41 +19,53 @@
     border-bottom: 1px solid var(--ui-03);
   }
 
+  .#{$prefix}--sidebar-content__content {
+    overflow: auto;
+  }
+
   .#{$prefix}--sidebar-item-content {
-    width: 35%;
-    @include breakpointMax(bp--sm--major) {
-      width: 100%;
+    @include breakpoint(bp--md--major) {
+      width: 30%;
+      min-width: 30%;
     }
+    display: flex;
+    flex-direction: column;
+    height: 100%;
     border-right: 1px solid var(--ui-04);
-    overflow: scroll;
+    @include breakpointMax(bp--md--major) {
+      top: 0;
+      overflow: auto;
+    }
   }
   .#{$prefix}--content-section {
-    width: 65%;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    flex: 1;
     overflow: auto;
-    @include breakpointMax(bp--sm--major) {
+
+    @include breakpointMax(bp--md--major) {
       position: fixed;
       top: 0;
-      left: 0;
+      background: var(--ui-01);
       width: 100%;
       transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+      transform: translateX(0%);
       z-index: 100;
-      transform: translate(100%);
-      .#{$prefix}--sidebar-content__container-active & {
-        transform: translate(0%);
-      }
-    }
-    .#{$prefix}--sidebar-content-mobile-header {
-      display: none;
-      @include breakpointMax(bp--sm--major) {
-        display: block;
-        padding: 1em;
-        display: flex;
-        justify-content: space-between;
-        background: var(--ui-01);
-        border-bottom: 1px solid var(--ui-02);
-      }
     }
   }
+  .#{$prefix}--sidebar-content-mobile-header {
+    display: none;
+    @include breakpointMax(bp--sm--major) {
+      display: block;
+      padding: 1em;
+      display: flex;
+      justify-content: space-between;
+      background: var(--ui-01);
+      border-bottom: 1px solid var(--ui-02);
+    }
+  }
+
   .#{$prefix}--sidebar-content__back-button {
     font-weight: 500;
     color: var(--interactive-01);
