@@ -51,14 +51,17 @@
     //height: 100vh;
     flex: 1;
     overflow: auto;
-
     @include breakpointMax(bp--md--major) {
+      .#{$prefix}--sidebar-content__container-active & {
+        transform: translateX(0%);
+      }
+      transform: translateX(100%);
       position: fixed;
       top: 0;
       background: var(--ui-01);
       width: 100%;
+      min-height: 100%;
       transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
-      transform: translateX(0%);
       z-index: 100;
     }
   }
