@@ -1,7 +1,12 @@
 import React, { useState } from 'react';
 
 import markdown from './README.mdx';
-import { SidebarContent, SidebarHeader, SidebarBackButton } from './Sidebar';
+import {
+  SidebarContent,
+  SidebarHeader,
+  SidebarBackButton,
+  SidebarScroll,
+} from './Sidebar';
 import DATA from './PHONEBOOK.json';
 import User from '../User';
 import { List, ListItem } from '../List';
@@ -24,73 +29,58 @@ export default {
 
 export const Regular = (args) => {
   const [active, setActive] = useState(false);
-  const content =(
-    <>
-    <SidebarHeader>
-      <Search/>
-    </SidebarHeader>
-    <Item
-    additional="Yesterday"
-    hint={<Tag kind="wfp">Hint</Tag>}
-    kind="horizontal"
-    subContent="subcontent"
-    title="A title is shown"
-    wrapper="sidebar"
-  />
-  </>
-  )
-  return(
-  <>
+
+  return (
+    <div style={{ display: 'flex', height: '100vh', flexDirection: 'column' }}>
       <MainNavigation pageWidth="full" />
-      <SidebarContent {...args} 
-      active={active}
-      sidebarContent={
-        <>
-          <SidebarHeader>
-            <Search/>
-          </SidebarHeader>
-          <Item
-          additional="Yesterday"
-          hint={<Tag kind="wfp">Hint</Tag>}
-          kind="horizontal"
-          subContent="subcontent"
-          title="A title is shown"
-          wrapper="sidebar"
-          onClick={() => setActive(true)}
-        />
-      </>
-      } 
-      sidebarMobileHeader={
+      <SidebarContent
+        {...args}
+        active={active}
+        sidebarContent={
+          <>
+            <SidebarHeader>
+              <Search />
+            </SidebarHeader>
+            <Item
+              additional="Yesterday"
+              hint={<Tag kind="wfp">Hint</Tag>}
+              kind="horizontal"
+              subContent="subcontent"
+              title="A title is shown"
+              wrapper="sidebar"
+              onClick={() => setActive(true)}
+            />
+          </>
+        }
+        sidebarMobileHeader={
           <>
             <SidebarBackButton onClick={() => setActive(false)}>
               Back
             </SidebarBackButton>
             <div>Detail page</div>
           </>
-        }
-        >
-        {
-         active ? <Item
-         additional="Yesterday"
-         hint={<Tag kind="wfp">Hint</Tag>}
-         kind="large"
-         showAdditionalIcon
-         subContent="This is the subContent. Lorem ipsum dolor sit amet, consetetur sadipscing elitr.  At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. "
-         title="A title is shown"
-         wrapper="button"
-       >
-         nonumy eirmod tempor invidunt
-       </Item> :
-         <Empty title="Content here">When an item is selected, its corresponding content will be shown here</Empty>
-          
-        }  
+        }>
+        {active ? (
+          <Item
+            additional="Yesterday"
+            hint={<Tag kind="wfp">Hint</Tag>}
+            kind="large"
+            showAdditionalIcon
+            subContent="This is the subContent. Lorem ipsum dolor sit amet, consetetur sadipscing elitr.  At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. "
+            title="A title is shown"
+            wrapper="button">
+            nonumy eirmod tempor invidunt
+          </Item>
+        ) : (
+          <Empty title="Content here">
+            When an item is selected, its corresponding content will be shown
+            here
+          </Empty>
+        )}
       </SidebarContent>
-  </>
-)
-
-
-}
-
+    </div>
+  );
+};
 
 export const Phonebook = (args) => {
   const [selectedUserId, setSelectedUserId] = useState(null);
@@ -104,7 +94,7 @@ export const Phonebook = (args) => {
     : DATA;
 
   return (
-    <>
+    <div style={{ display: 'flex', height: '100vh', flexDirection: 'column' }}>
       <MainNavigation pageWidth="full" />
       <SidebarContent
         active={selectedUserId}
@@ -119,40 +109,39 @@ export const Phonebook = (args) => {
         sidebarContent={
           <>
             <SidebarHeader>
-              <Search
-                onChange={(e) => setSearch(e)}
-              />
+              <Search onChange={(e) => setSearch(e)} />
             </SidebarHeader>
-            {searchResults && searchResults.length > 0 ? (
-              searchResults.map((user, key) => (
-                <Item
-                  key={key}
-                  image={
-                    user.profile_image ? (
-                      <img alt={user.full_name} src={user.profile_image} />
-                    ) : undefined
-                  }
-                  title={user.full_name}
-                  children={user.email}
-                  subContent={user.phone_number}
-                  kind="horizontal"
-                  wrapper="sidebar"
-                  onClick={() => setSelectedUserId(user.id)}
-                  noImage
-                />
-              ))
-            ) : (
-              <Empty title="No results">Please check your search</Empty>
-            )}
+            <SidebarScroll>
+              {searchResults && searchResults.length > 0 ? (
+                searchResults.map((user, key) => (
+                  <Item
+                    active={selectedUserId === user.id}
+                    key={key}
+                    image={
+                      user.profile_image ? (
+                        <img alt={user.full_name} src={user.profile_image} />
+                      ) : undefined
+                    }
+                    title={user.full_name}
+                    children={user.email}
+                    subContent={user.phone_number}
+                    kind="horizontal"
+                    wrapper="sidebar"
+                    onClick={() => setSelectedUserId(user.id)}
+                    noImage
+                  />
+                ))
+              ) : (
+                <Empty title="No results">Please check your search</Empty>
+              )}
+            </SidebarScroll>
           </>
         }>
         {selectedUserData ? (
           <div
             style={{
               backgroundColor: '#fff',
-              overflow: 'scroll',
               padding: '1rem',
-              height: '100vh',
             }}>
             <User
               id={selectedUserData.staff_id}
@@ -206,7 +195,6 @@ export const Phonebook = (args) => {
           <Empty title="No user selected">Please select a user</Empty>
         )}
       </SidebarContent>
-    </>
+    </div>
   );
 };
-

@@ -88,7 +88,12 @@ export StepNavigationItem from './components/StepNavigationItem';
 export Select from './components/Select';
 export SelectItem from './components/SelectItem';
 export SelectItemGroup from './components/SelectItemGroup';
-export { Sidebar, SidebarHeader, SidebarBackButton} from './components/Sidebar';
+export Sidebar, {
+  SidebarHeader,
+  SidebarScroll,
+  SidebarBackButton,
+} from './components/Sidebar';
+
 export Switch from './components/Switch';
 export Slider from './components/Slider';
 export Story from './components/Story';

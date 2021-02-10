@@ -21,10 +21,7 @@ export function SidebarContent({
         <div className="wfp--sidebar-content-mobile-header">
           {sidebarMobileHeader}
         </div>
-        <div className="wfp--sidebar-children-content" >
-          {children}
-        </div>
-        
+        <div className="wfp--sidebar-content__children">{children}</div>
       </div>
     </div>
   );
@@ -48,16 +45,25 @@ SidebarContent.propTypes = {
      The sidebarMobileHeader is shwon when view is in mobile version. 
      `<SidebarBackButton/>` can used in the `sidebarMobileHeader` prop
   */
-  sidebarMobileHeader: PropTypes.node
+  sidebarMobileHeader: PropTypes.node,
 };
-
-
 
 export function SidebarHeader({ children }) {
   return <div className="wfp--sidebar-content__header">{children}</div>;
 }
 
 SidebarHeader.propTypes = {
+  /**
+   The children of header of content area
+ */
+  children: PropTypes.node,
+};
+
+export function SidebarScroll({ children }) {
+  return <div className="wfp--sidebar-content__scroll">{children}</div>;
+}
+
+SidebarScroll.propTypes = {
   /**
    The children of header of content area
  */
@@ -73,11 +79,9 @@ export function SidebarBackButton({ children, ...other }) {
   );
 }
 
-
 SidebarBackButton.propTypes = {
   /**
    The children of back button of content area
  */
   children: PropTypes.node,
 };
-

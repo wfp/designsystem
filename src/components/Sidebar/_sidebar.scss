@@ -11,6 +11,7 @@
     flex: 1;
     flex-shrink: 1;
     overflow: hidden;
+    height: 100%;
   }
 
   .#{$prefix}--sidebar-content__header {
@@ -19,13 +20,14 @@
     border-bottom: 1px solid var(--ui-03);
   }
 
-  // .#{$prefix}--sidebar-children-content{
-  //   background-color:var(--ui-01);
-  //   height:100vh
-  // }
-  
-  .#{$prefix}--sidebar-content__content {
+  .#{$prefix}--sidebar-content__children {
+    background-color: var(--ui-01);
+    flex: 1;
+  }
+
+  .#{$prefix}--sidebar-content__scroll {
     overflow: auto;
+    flex: 1;
   }
 
   .#{$prefix}--sidebar-item-content {
@@ -45,7 +47,8 @@
   .#{$prefix}--content-section {
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    align-items: stretch;
+    //height: 100vh;
     flex: 1;
     overflow: auto;
 
