@@ -21,6 +21,11 @@ module.exports = {
   ],
 
   release: {
-    branches: ['master', 'next', 'feat/*'],
+    branches: [
+      'master',
+      'next',
+      'feat/*',
+      { name: 'alpha/*', prerelease: true },
+    ],
   },
 };
