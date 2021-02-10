@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Icon from '../Icon';
 import { iconChevronLeft } from '@wfp/icons';
 
-export function SidebarContent({
+export default function SidebarContent({
   active,
   children,
   sidebarMobileHeader,
