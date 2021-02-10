@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 
 import markdown from './README.mdx';
-// import Sidebar from './SidebarContent';
-import { SidebarContent, SidebarHeader, SidebarBackButton } from './SidebarContent';
+import { SidebarContent, SidebarHeader, SidebarBackButton } from './Sidebar';
 import DATA from './PHONEBOOK.json';
 import User from '../User';
 import { List, ListItem } from '../List';
@@ -95,7 +94,7 @@ export const Regular = (args) => {
 
 export const Phonebook = (args) => {
   const [selectedUserId, setSelectedUserId] = useState(null);
-  const [search, setSearch] = useState(null);
+  const [search, setSearch] = useState();
   const selectedUserData = DATA.find((e) => e.id === selectedUserId);
 
   const searchResults = search
