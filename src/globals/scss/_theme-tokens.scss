@@ -22,9 +22,9 @@
   --text-01: #{$color__white};
   --text-02: #{$color__navy-gray-8};
   --text-03: #{$color__navy-gray-9};
-  --field-01: #{$color__navy-gray-2};
+  --field-01: #{$color__gray-80};
   --field-02: #{$color__navy-gray-2};
-  --field-border-01: #{$color__navy-gray-4};
+  --field-border-01: #{$color__gray-60};
   --focus-01: #{$color__navy-gray-1};
   --support-01: #{$color__red};
   --support-light-01: #{saturate(darken($color__red, 20), 40)}; //#{$color__red-60};
@@ -136,12 +136,12 @@
     @include darkTheme();
     background-color: var(--ui-01) !important;
   }
-}
 
-@media (prefers-color-scheme: dark) {
-  body {
-    &.wfp--theme-dark--auto {
-      @include darkTheme();
+  @media (prefers-color-scheme: dark) {
+    body {
+      &.wfp--theme-dark--auto {
+        @include darkTheme();
+      }
     }
   }
 }

@@ -38,9 +38,8 @@ export const Item = ({
       {image ? (
         <div className={`${prefix}--item__image`}>{image}</div>
       ) : noImage ? (
-        <div className={`${prefix}--item__image ${prefix}--item__image-empty`}>
-          Empty
-        </div>
+        <div
+          className={`${prefix}--item__image ${prefix}--item__image-empty`}></div>
       ) : null}
 
       <div className={`${prefix}--item__content`}>

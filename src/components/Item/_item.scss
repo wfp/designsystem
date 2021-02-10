@@ -59,6 +59,11 @@
         background: var(--ui-02);
       }
     }
+    &--repeater {
+      cursor: pointer;
+      background: var(--ui-02);
+      margin-bottom: 1em;
+    }
     &--button {
       padding: 1em;
       &:hover {
@@ -149,7 +154,8 @@
   .#{$prefix}--item__image {
     svg,
     .svg-inline--fa,
-    img {
+    img,
+    video {
       margin: 0;
       display: block;
       width: 100%;
