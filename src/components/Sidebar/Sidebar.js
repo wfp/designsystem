@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Icon from '../Icon';
 import { iconChevronLeft } from '@wfp/icons';
 
-export default function SidebarContent({
+export function SidebarContent({
   active,
   children,
   sidebarMobileHeader,
@@ -85,3 +85,4 @@ SidebarBackButton.propTypes = {
  */
   children: PropTypes.node,
 };
+
