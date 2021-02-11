@@ -30,7 +30,7 @@ jobs:
 
     - script: |
         mkdir -p $(NPM_CACHE_FOLDER)
-        npm ci
+        npm ci --legacy-peer-deps
       displayName: 'npm install'
 
     - script: |
