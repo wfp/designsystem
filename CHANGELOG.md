@@ -1,3 +1,34 @@
+# [1.14.0-alpha.1](https://github.com/WFP/UI/compare/v1.13.1...v1.14.0-alpha.1) (2021-02-11)
+
+
+### Bug Fixes
+
+* **package:** downgrade wfp ([b7bbd4a](https://github.com/WFP/UI/commit/b7bbd4a9eefcba5b6aa3aaa7a35654733af70d65))
+* **package:** downgraded npm version ([1a23754](https://github.com/WFP/UI/commit/1a237545247786635541a3d8ae87ef62de5e88f4))
+* **package:** updated lock file ([b04fd9e](https://github.com/WFP/UI/commit/b04fd9e32a022fa3b75bcd986509ecd0f3a73d83))
+* **package:** updated lock file ([4ad70e3](https://github.com/WFP/UI/commit/4ad70e3910ee0938e299c4dc201d28d95cdba17a))
+* **package:** updated lock file ([52b5eba](https://github.com/WFP/UI/commit/52b5eba76a17a92d46585f63ac343b56a260c786))
+* **package:** updated lock file ([a15bfad](https://github.com/WFP/UI/commit/a15bfad152500a4cb89349c2b245efa88b6075b6))
+* **package:** upgrade node-sass to be compatible with more recent Intel Macs and node v15 ([6d0d37c](https://github.com/WFP/UI/commit/6d0d37cba4dc1295abbbe88f0aa26306a2b34025))
+* **pipeline:** alpha channel added ([c4a311b](https://github.com/WFP/UI/commit/c4a311b46ed76ee38efd28296d40e4c024d29b88))
+* **release:** alpha channel added ([7e3aec3](https://github.com/WFP/UI/commit/7e3aec3162ac3a908521f99f3c48ce5403dd0bb3))
+* **Sidebar:** default export added ([f57d968](https://github.com/WFP/UI/commit/f57d968c2efaed325ece27f853153eddfbeb4229))
+* **Sidebar:** mobile fix ([5dcc5cf](https://github.com/WFP/UI/commit/5dcc5cf7e6e7285ca1e2e824dc1e5a7a038fdacb))
+* **Text:** component export added ([cb25eb1](https://github.com/WFP/UI/commit/cb25eb11f5082a5ee23c833a3faeca6b3dfae7bd))
+
+
+### Features
+
+* **Item:** added Item component which can be displayed inside the sidebar ([21979ec](https://github.com/WFP/UI/commit/21979ecfd47f52fd133155f8e39b861ffa304ee1))
+* **Item:** added item component wip ([f96a85e](https://github.com/WFP/UI/commit/f96a85e0ea0a02ce15dad8f877ca2de6f9e410fd))
+* **Item:** alignment of the Item component ([6cbb4b6](https://github.com/WFP/UI/commit/6cbb4b6c159dbd653a59de735b4afa0c41748286))
+* **package:** version bump of icons ([62fa20b](https://github.com/WFP/UI/commit/62fa20b61b8912496630896c52a3120be6665796))
+* **Semantic:** initial try for seperate alpha releases ([81ad44a](https://github.com/WFP/UI/commit/81ad44a73835ca4369675eb2752cc911ca8279d9))
+* **Sidebar:** height improvment using flexbox ([9d25547](https://github.com/WFP/UI/commit/9d25547456f7600f1badb89df1f1965e168c1909))
+* **Sidebar:** minor fixes on the height of the total sidebar and improved import of css vars ([a5e6565](https://github.com/WFP/UI/commit/a5e6565b7d8b2cd87d021301eba0512a90f259cb))
+* **Sidebar:** mobile support added ([ae21bcf](https://github.com/WFP/UI/commit/ae21bcf9126b62f757a793a6b9aa8b88ef4ea8e8))
+* **Sidebar:** Sidebar scrolling improved, the SidebarHeader can be now fixed on top ([47d76d6](https://github.com/WFP/UI/commit/47d76d645f1def8c3942b5a6f527e3b35ecb04a3))
+
 ## [1.13.1](https://github.com/WFP/UI/compare/v1.13.0...v1.13.1) (2021-02-01)
 
 
