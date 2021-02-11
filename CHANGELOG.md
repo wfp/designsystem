@@ -1,3 +1,11 @@
+# [1.14.0-alpha.2](https://github.com/WFP/UI/compare/v1.14.0-alpha.1...v1.14.0-alpha.2) (2021-02-11)
+
+
+### Bug Fixes
+
+* **Colors:** added accent color css variables ([0229a8c](https://github.com/WFP/UI/commit/0229a8ce7dd5b5c4478e924b8d6782fb60c88eb8))
+* **package:** alpha release ([499eff2](https://github.com/WFP/UI/commit/499eff22dc95a3e5c36b9543edf073f0b890f778))
+
 # [1.14.0-alpha.1](https://github.com/WFP/UI/compare/v1.13.1...v1.14.0-alpha.1) (2021-02-11)
 
 
