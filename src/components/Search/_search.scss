@@ -20,9 +20,9 @@
     width: 100%;
   }
 
-  .#{$prefix}--search .#{$prefix}--label {
-    @include hidden;
-  }
+  // .#{$prefix}--search .#{$prefix}--label {
+  //   @include hidden;
+  // }
 
   .#{$prefix}--search-input {
     @include reset;
@@ -38,7 +38,8 @@
     order: 1;
 
     &:focus {
-      outline: none;
+      @include focus-outline('border');
+      // outline: none;
     }
 
     &:focus ~ .#{$prefix}--search-magnifier {

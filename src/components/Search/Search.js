@@ -85,12 +85,15 @@ function Search(props) {
       {() => {
         return (
           <>
-            <Icon
+          <span>
+          <Icon
               icon={iconSearch}
               description={labelText}
               className="wfp--search-magnifier"
               onClick={onSearchIconClick}
             />
+          </span>
+            
             <input
               className="wfp--search-input"
               {...other}
@@ -162,10 +165,7 @@ Search.propTypes = {
    * Provide text that is used alongside the control label for additional help
    */
   helperText: PropTypes.node,
-  /**
-   * `true` to use the light version.
-   */
-  light: PropTypes.bool,
+  
 };
 
 export default Search;

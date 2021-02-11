@@ -3,6 +3,8 @@ import React from 'react';
 import classNames from 'classnames';
 import settings from '../../globals/js/settings';
 import FormItem from '../FormItem';
+import { iconWarningGlyph } from '@wfp/icons';
+import Icon from '../Icon';
 
 const { prefix } = settings;
 
@@ -63,19 +65,27 @@ const Input = ({
     [`${prefix}--form__helper-text--disabled`]: other.disabled,
   });
 
+  const errorIcon  =  (
+    <Icon icon={iconWarningGlyph} fill="#c5192d" />
+  )
+
   const label = (
     <label htmlFor={calculatedId} className={labelClasses}>
       {labelText && labelText}
-      {required && '*'}
+      {required && errorIcon}
     </label>
   );
 
   const error =
     invalid && typeof invalid === 'object' ? (
       <div className="wfp--form-requirement" id={errorId}>
-        {invalid.message ? invalid.message : invalidText}
+        {errorIcon} {invalid.message ? invalid.message : invalidText}
       </div>
-    ) : null;
+    ) :  invalid  ? (
+  <div className="wfp--form-requirement" id={errorId}>
+        {errorIcon} {invalidText ? invalidText : 'invalid text'}
+  </div> 
+) : null;
 
   const elementProps = invalid
     ? {
@@ -191,7 +201,7 @@ Input.propTypes = {
   /**
    * Provide the text that is displayed when the control is in an invalid state
    */
-  invalidText: PropTypes.string,
+  invalidText: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
 
   /**
    * Provide additional component that is used alongside the input for customization

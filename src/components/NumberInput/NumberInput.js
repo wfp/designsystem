@@ -227,9 +227,9 @@ NumberInput.propTypes = {
   invalid: PropTypes.oneOfType([PropTypes.object, PropTypes.bool]),
 
   /**
-   * Message which is displayed if the value is invalid.
+   * Provide the text that is displayed when the control is in an invalid state
    */
-  invalidText: PropTypes.string,
+  invalidText: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
 
   /**
    * Provide additional component that is used alongside the input for customization
