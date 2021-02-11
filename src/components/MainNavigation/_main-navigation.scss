@@ -9,8 +9,8 @@
 
 @include exports('main-navigation') {
   .#{$prefix}--main-navigation {
-    color: $color__white;
-    background: $color__main;
+    color: var(--text-03);
+    background: var(--interactive-01);
     @include reset;
     //display: flex;
     @media print {
