@@ -70,9 +70,15 @@ function Slider(props) {
     if (!disabled) {
       evt.persist();
       evt.imaginaryTarget = _inputRef;
-
-      setValue(evt.target.value);
-      onChange(parseFloat(evt.target.value), evt);
+      if(evt.target.value > max){
+        setValue(max);
+        onChange(parseFloat(max), evt);
+      }else{
+        setValue(evt.target.value);
+        onChange(parseFloat(evt.target.value), evt);
+      }
+      // setValue(evt.target.value);
+      // onChange(parseFloat(evt.target.value), evt);
     }
   };
 

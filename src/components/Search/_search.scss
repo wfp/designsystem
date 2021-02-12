@@ -38,8 +38,12 @@
     order: 1;
 
     &:focus {
-      @include focus-outline('border');
       // outline: none;
+    }
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
     }
 
     &:focus ~ .#{$prefix}--search-magnifier {

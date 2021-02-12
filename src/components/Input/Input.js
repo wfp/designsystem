@@ -72,7 +72,7 @@ const Input = ({
   const label = (
     <label htmlFor={calculatedId} className={labelClasses}>
       {labelText && labelText}
-      {required && errorIcon}
+      {required && '*'}
     </label>
   );
 

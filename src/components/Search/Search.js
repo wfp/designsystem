@@ -116,6 +116,32 @@ function Search(props) {
 
 Search.propTypes = {
   /**
+   * Specify if the control should be disabled, or not
+   */
+  disabled: PropTypes.bool,
+
+    /**
+   * Generic `label` that will be used as the textual representation of what
+   * this field is for
+   */
+  labelText: PropTypes.node,
+
+  /**
+   * Specify whether you want the underlying label to be visually hidden
+   */
+  hideLabel: PropTypes.bool,
+
+   /**
+   * Provide text that is used alongside the control label for additional help
+   */
+  helperText: PropTypes.node,
+
+  /**
+   * Specify the placeholder attribute for the &lt;input&gt;
+   */
+  placeholder: PropTypes.string,
+
+  /**
    * Specify an optional className to be applied to the wrapper node
    */
   className: PropTypes.string,
@@ -126,25 +152,9 @@ Search.propTypes = {
   formItemClassName: PropTypes.string,
 
   /**
-   * Specify if the control should be disabled, or not
-   */
-  disabled: PropTypes.bool,
-
-  /**
-   * Specify whether you want the underlying label to be visually hidden
-   */
-  hideLabel: PropTypes.bool,
-
-  /**
    * Specify a custom `id` for the input
    */
   id: PropTypes.string.isRequired,
-
-  /**
-   * Generic `label` that will be used as the textual representation of what
-   * this field is for
-   */
-  labelText: PropTypes.node,
 
   /**
    * The new value is available first arg 'searchValue' and evt object if needed is on second arg. 
@@ -161,11 +171,12 @@ Search.propTypes = {
    */
   onClick: PropTypes.func,
 
-  /**
-   * Provide text that is used alongside the control label for additional help
-   */
-  helperText: PropTypes.node,
+ 
   
+};
+
+Search.defaultProps = {
+  disabled: false,
 };
 
 export default Search;
