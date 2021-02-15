@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 
 import markdown from './README.mdx';
-import {
-  Sidebar,
+import Sidebar, {
   SidebarHeader,
   SidebarBackButton,
   SidebarScroll,
@@ -36,7 +35,7 @@ export const Regular = (args) => {
       <Sidebar
         {...args}
         active={active}
-        sidebarContent={
+        sidebar={
           <>
             <SidebarHeader>
               <Search />
@@ -82,6 +81,7 @@ export const Regular = (args) => {
   );
 };
 
+/*
 export const Phonebook = (args) => {
   const [selectedUserId, setSelectedUserId] = useState(null);
   const [search, setSearch] = useState();
@@ -106,7 +106,7 @@ export const Phonebook = (args) => {
             <div>Detail page</div>
           </>
         }
-        sidebarContent={
+        Sidebar={
           <>
             <SidebarHeader>
               <Search onChange={(e) => setSearch(e)} />
@@ -198,3 +198,4 @@ export const Phonebook = (args) => {
     </div>
   );
 };
+*/

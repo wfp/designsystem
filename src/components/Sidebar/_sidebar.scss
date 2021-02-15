@@ -18,6 +18,9 @@
     padding: 1em;
     background-color: var(--ui-02);
     border-bottom: 1px solid var(--ui-03);
+    &.#{$prefix}--sidebar-content__header--no-padding {
+      padding: 0;
+    }
   }
 
   .#{$prefix}--sidebar-content__children {
