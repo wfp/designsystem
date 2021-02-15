@@ -70,12 +70,17 @@ const Input = ({
     </label>
   );
 
-  const error =
-    invalid && typeof invalid === 'object' ? (
-      <div className="wfp--form-requirement" id={errorId}>
-        {invalid.message ? invalid.message : invalidText}
-      </div>
-    ) : null;
+  const error = invalid ? (
+    <div className="wfp--form-requirement" id={errorId}>
+      {typeof invalid === 'object' && invalid.message
+        ? invalid.message
+        : typeof invalid === 'string'
+        ? invalid
+        : invalidText
+        ? invalidText
+        : 'required'}
+    </div>
+  ) : null;
 
   const elementProps = invalid
     ? {

@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 
 import markdown from './README.mdx';
-import {
-  SidebarContent,
+import Sidebar, {
   SidebarHeader,
   SidebarBackButton,
   SidebarScroll,
@@ -17,9 +16,9 @@ import Search from '../Search';
 import Tag from '../Tag';
 
 export default {
-  title: 'Components/Content Related/SidebarContent',
-  component: SidebarContent,
-  subcomponents: { SidebarHeader, SidebarBackButton },
+  title: 'Components/Content Related/Sidebar',
+  component: Sidebar,
+  subcomponents: { SidebarHeader, SidebarBackButton, SidebarScroll },
   parameters: {
     status: 'released',
     mdx: markdown,
@@ -33,10 +32,10 @@ export const Regular = (args) => {
   return (
     <div style={{ display: 'flex', height: '100vh', flexDirection: 'column' }}>
       <MainNavigation pageWidth="full" />
-      <SidebarContent
+      <Sidebar
         {...args}
         active={active}
-        sidebarContent={
+        sidebar={
           <>
             <SidebarHeader>
               <Search />
@@ -77,11 +76,12 @@ export const Regular = (args) => {
             here
           </Empty>
         )}
-      </SidebarContent>
+      </Sidebar>
     </div>
   );
 };
 
+/*
 export const Phonebook = (args) => {
   const [selectedUserId, setSelectedUserId] = useState(null);
   const [search, setSearch] = useState();
@@ -96,7 +96,7 @@ export const Phonebook = (args) => {
   return (
     <div style={{ display: 'flex', height: '100vh', flexDirection: 'column' }}>
       <MainNavigation pageWidth="full" />
-      <SidebarContent
+      <Sidebar
         active={selectedUserId}
         sidebarMobileHeader={
           <>
@@ -106,7 +106,7 @@ export const Phonebook = (args) => {
             <div>Detail page</div>
           </>
         }
-        sidebarContent={
+        Sidebar={
           <>
             <SidebarHeader>
               <Search onChange={(e) => setSearch(e)} />
@@ -194,7 +194,8 @@ export const Phonebook = (args) => {
         ) : (
           <Empty title="No user selected">Please select a user</Empty>
         )}
-      </SidebarContent>
+      </Sidebar>
     </div>
   );
 };
+*/

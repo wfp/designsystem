@@ -1,13 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Icon from '../Icon';
+import classNames from 'classnames';
 import { iconChevronLeft } from '@wfp/icons';
+import settings from '../../globals/js/settings';
+const { prefix } = settings;
 
-export default function SidebarContent({
+export default function Sidebar({
   active,
   children,
   sidebarMobileHeader,
-  sidebarContent,
+  sidebar,
   ...other
 }) {
   return (
@@ -16,8 +19,8 @@ export default function SidebarContent({
         active ? 'active' : ''
       }`}
       {...other}>
-      <div className="wfp--sidebar-item-content">{sidebarContent}</div>
-      <div className="wfp--content-section">
+      <div className="wfp--sidebar-item-content">{sidebar}</div>
+      <div id="scroll-container" className="wfp--content-section">
         <div className="wfp--sidebar-content-mobile-header">
           {sidebarMobileHeader}
         </div>
@@ -27,7 +30,7 @@ export default function SidebarContent({
   );
 }
 
-SidebarContent.propTypes = {
+Sidebar.propTypes = {
   /**
    The children of content area
  */
@@ -37,10 +40,10 @@ SidebarContent.propTypes = {
  */
   active: PropTypes.bool,
   /**
-   The sidebarContent is usually where the sidebar items will be. 
-   `<SidebarHeader/>` can be called in `sidebarContent` and example search can be used in here
+   The Sidebar is usually where the sidebar items will be. 
+   `<SidebarHeader/>` can be called in `Sidebar` and example search can be used in here
  */
-  sidebarContent: PropTypes.node,
+  Sidebar: PropTypes.node,
   /**
      The sidebarMobileHeader is shwon when view is in mobile version. 
      `<SidebarBackButton/>` can used in the `sidebarMobileHeader` prop
@@ -48,8 +51,16 @@ SidebarContent.propTypes = {
   sidebarMobileHeader: PropTypes.node,
 };
 
-export function SidebarHeader({ children }) {
-  return <div className="wfp--sidebar-content__header">{children}</div>;
+export function SidebarHeader({ className, children, noPadding, ...other }) {
+  const classes = classNames(`${prefix}--sidebar-content__header`, className, {
+    [`${prefix}--sidebar-content__header--no-padding`]: noPadding,
+  });
+
+  return (
+    <div className={classes} {...other}>
+      {children}
+    </div>
+  );
 }
 
 SidebarHeader.propTypes = {
@@ -57,10 +68,18 @@ SidebarHeader.propTypes = {
    The children of header of content area
  */
   children: PropTypes.node,
+  /**
+   Disable the default padding of the SidebarHeader
+ */
+  noPadding: PropTypes.bool,
 };
 
-export function SidebarScroll({ children }) {
-  return <div className="wfp--sidebar-content__scroll">{children}</div>;
+export function SidebarScroll({ children, ...other }) {
+  return (
+    <div className="wfp--sidebar-content__scroll" {...other}>
+      {children}
+    </div>
+  );
 }
 
 SidebarScroll.propTypes = {

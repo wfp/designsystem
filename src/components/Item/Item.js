@@ -65,7 +65,7 @@ export const Item = ({
               <div className={`${prefix}--item__text`}>{children}</div>
             )}
             {subContent && (
-              <div className={`${prefix}--item__subContent`}>{subContent}</div>
+              <div className={`${prefix}--item__sub-content`}>{subContent}</div>
             )}
           </div>
           <div className={`${prefix}--item__right`}>
