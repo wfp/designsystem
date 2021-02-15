@@ -55,7 +55,7 @@
     flex: 1;
     overflow: auto;
     @include breakpointMax(bp--md--major) {
-      .#{$prefix}--sidebar-content__container-active & {
+      .#{$prefix}--sidebar-content__container--active & {
         transform: translateX(0%);
       }
       transform: translateX(100%);

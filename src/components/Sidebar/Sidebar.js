@@ -9,22 +9,27 @@ const { prefix } = settings;
 export default function Sidebar({
   active,
   children,
+  className,
   sidebarMobileHeader,
   sidebar,
   ...other
 }) {
+  const classes = classNames(
+    `${prefix}--sidebar-content__container`,
+    className,
+    {
+      [`${prefix}--sidebar-sidebar-content__container--active`]: active,
+    }
+  );
+
   return (
-    <div
-      className={`wfp--sidebar-content__container wfp--sidebar-content__container-${
-        active ? 'active' : ''
-      }`}
-      {...other}>
-      <div className="wfp--sidebar-item-content">{sidebar}</div>
-      <div id="scroll-container" className="wfp--content-section">
-        <div className="wfp--sidebar-content-mobile-header">
+    <div className={classes} {...other}>
+      <div className={`${prefix}--sidebar-item-content`}>{sidebar}</div>
+      <div id="scroll-container" className={`${prefix}--content-section`}>
+        <div className={`${prefix}--sidebar-content-mobile-header`}>
           {sidebarMobileHeader}
         </div>
-        <div className="wfp--sidebar-content__children">{children}</div>
+        <div className={`${prefix}--sidebar-content__children`}>{children}</div>
       </div>
     </div>
   );
@@ -76,7 +81,7 @@ SidebarHeader.propTypes = {
 
 export function SidebarScroll({ children, ...other }) {
   return (
-    <div className="wfp--sidebar-content__scroll" {...other}>
+    <div className={`${prefix}--sidebar-content__scroll`} {...other}>
       {children}
     </div>
   );
@@ -91,7 +96,7 @@ SidebarScroll.propTypes = {
 
 export function SidebarBackButton({ children, ...other }) {
   return (
-    <div className="wfp--sidebar-content__back-button" {...other}>
+    <div className={`${prefix}--sidebar-content__back-button`} {...other}>
       <Icon icon={iconChevronLeft} />
       {children}
     </div>
