@@ -84,7 +84,7 @@ export function SidebarScroll({ children, ...other }) {
 
 SidebarScroll.propTypes = {
   /**
-   The children of header of content area
+  children will be sidebar items beneath the header. `SidebarScroll` wraps around the children to keep them scrolling while the header content is fixed
  */
   children: PropTypes.node,
 };
