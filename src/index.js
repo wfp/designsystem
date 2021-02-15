@@ -89,7 +89,7 @@ export Select from './components/Select';
 export SelectItem from './components/SelectItem';
 export SelectItemGroup from './components/SelectItemGroup';
 export {
-  SidebarContent,
+  Sidebar,
   SidebarHeader,
   SidebarScroll,
   SidebarBackButton,

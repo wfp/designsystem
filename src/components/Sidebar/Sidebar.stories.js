@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import markdown from './README.mdx';
 import {
-  SidebarContent,
+  Sidebar,
   SidebarHeader,
   SidebarBackButton,
   SidebarScroll,
@@ -17,8 +17,8 @@ import Search from '../Search';
 import Tag from '../Tag';
 
 export default {
-  title: 'Components/Content Related/SidebarContent',
-  component: SidebarContent,
+  title: 'Components/Content Related/Sidebar',
+  component: Sidebar,
   subcomponents: { SidebarHeader, SidebarBackButton, SidebarScroll },
   parameters: {
     status: 'released',
@@ -33,7 +33,7 @@ export const Regular = (args) => {
   return (
     <div style={{ display: 'flex', height: '100vh', flexDirection: 'column' }}>
       <MainNavigation pageWidth="full" />
-      <SidebarContent
+      <Sidebar
         {...args}
         active={active}
         sidebarContent={
@@ -77,7 +77,7 @@ export const Regular = (args) => {
             here
           </Empty>
         )}
-      </SidebarContent>
+      </Sidebar>
     </div>
   );
 };
@@ -96,7 +96,7 @@ export const Phonebook = (args) => {
   return (
     <div style={{ display: 'flex', height: '100vh', flexDirection: 'column' }}>
       <MainNavigation pageWidth="full" />
-      <SidebarContent
+      <Sidebar
         active={selectedUserId}
         sidebarMobileHeader={
           <>
@@ -194,7 +194,7 @@ export const Phonebook = (args) => {
         ) : (
           <Empty title="No user selected">Please select a user</Empty>
         )}
-      </SidebarContent>
+      </Sidebar>
     </div>
   );
 };
