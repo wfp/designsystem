@@ -20,6 +20,7 @@ const Input = ({
   iconDescription,
   id,
   formItemClassName,
+  inputWrapperClassName,
   placeholder,
   type,
   onChange,
@@ -61,13 +62,16 @@ const Input = ({
     [`${prefix}--label--disabled`]: other.disabled,
   });
 
+  const inputWrapperClasses = classNames(
+    `${prefix}--input-wrapper`,
+    inputWrapperClassName
+  );
+
   const helperTextClasses = classNames(`${prefix}--form__helper-text`, {
     [`${prefix}--form__helper-text--disabled`]: other.disabled,
   });
 
-  const errorIcon  =  (
-    <Icon icon={iconWarningGlyph} fill="#c5192d" />
-  )
+  const errorIcon = <Icon icon={iconWarningGlyph} fill="#c5192d" />;
 
   const label = (
     <label htmlFor={calculatedId} className={labelClasses}>
@@ -81,11 +85,11 @@ const Input = ({
       <div className="wfp--form-requirement" id={errorId}>
         {errorIcon} {invalid.message ? invalid.message : invalidText}
       </div>
-    ) :  invalid  ? (
-  <div className="wfp--form-requirement" id={errorId}>
+    ) : invalid ? (
+      <div className="wfp--form-requirement" id={errorId}>
         {errorIcon} {invalidText ? invalidText : 'invalid text'}
-  </div> 
-) : null;
+      </div>
+    ) : null;
 
   const elementProps = invalid
     ? {
@@ -111,7 +115,7 @@ const Input = ({
       {label}
       {helper}
       {additional}
-      <div className={`${prefix}--input-wrapper`}>
+      <div className={inputWrapperClasses}>
         {addonBefore && (
           <div className={`${prefix}--input-addon-before`}>{addonBefore}</div>
         )}
@@ -145,6 +149,11 @@ Input.propTypes = {
    * Specify an optional className to be applied to the form-item node
    */
   formItemClassName: PropTypes.string,
+
+  /**
+   * Specify an optional className to be applied to the input wrapper node
+   */
+  inputWrapperClassName: PropTypes.string,
 
   /**
    * Specify a custom `id` for the &lt;input&gt;

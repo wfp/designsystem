@@ -60,6 +60,10 @@
     }
   }
 
+  .wfp--search-input__wrapper {
+    position: relative;
+  }
+
   .#{$prefix}--search--lg {
     .#{$prefix}--search-input {
       border: $input-border;

@@ -81,19 +81,20 @@ function Search(props) {
   });
 
   return (
-    <Input {...props} formItemClassName={numberInputClasses}>
+    <Input
+      {...props}
+      formItemClassName={numberInputClasses}
+      inputWrapperClassName="wfp--search-input__wrapper">
       {() => {
         return (
           <>
-          <span>
-          <Icon
+            <Icon
               icon={iconSearch}
               description={labelText}
               className="wfp--search-magnifier"
               onClick={onSearchIconClick}
             />
-          </span>
-            
+
             <input
               className="wfp--search-input"
               {...other}
@@ -120,7 +121,7 @@ Search.propTypes = {
    */
   disabled: PropTypes.bool,
 
-    /**
+  /**
    * Generic `label` that will be used as the textual representation of what
    * this field is for
    */
@@ -131,7 +132,7 @@ Search.propTypes = {
    */
   hideLabel: PropTypes.bool,
 
-   /**
+  /**
    * Provide text that is used alongside the control label for additional help
    */
   helperText: PropTypes.node,
@@ -157,11 +158,11 @@ Search.propTypes = {
   id: PropTypes.string.isRequired,
 
   /**
-   * The new value is available first arg 'searchValue' and evt object if needed is on second arg. 
-   * i.e. 
+   * The new value is available first arg 'searchValue' and evt object if needed is on second arg.
+   * i.e.
    * const handleChange = (searchValue, evt) => {
    * console.log("searchValue", searchValue); // a string
-    * console.log("evt", evt); // the whole event object
+   * console.log("evt", evt); // the whole event object
    * }
    */
   onChange: PropTypes.func,
@@ -170,9 +171,6 @@ Search.propTypes = {
    * Provide an optional function to be called when the up/down button is clicked
    */
   onClick: PropTypes.func,
-
- 
-  
 };
 
 Search.defaultProps = {
