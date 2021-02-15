@@ -8,6 +8,7 @@ export Breadcrumb from './components/Breadcrumb';
 export BreadcrumbItem from './components/BreadcrumbItem';
 export BreadcrumbHome from './components/BreadcrumbHome';
 export Button from './components/Button';
+export Empty from './components/Empty';
 export Hero from './components/Hero';
 export Card from './components/Card';
 export Checkbox from './components/Checkbox';
@@ -87,15 +88,23 @@ export StepNavigationItem from './components/StepNavigationItem';
 export Select from './components/Select';
 export SelectItem from './components/SelectItem';
 export SelectItemGroup from './components/SelectItemGroup';
+export Sidebar, {
+  SidebarHeader,
+  SidebarScroll,
+  SidebarBackButton,
+} from './components/Sidebar';
+
 export Switch from './components/Switch';
 export Slider from './components/Slider';
 export Story from './components/Story';
+export Item from './components/Item';
 export Table, { TableSorting } from './components/Table';
 export TablePagination from './components/TablePagination';
 export Tab from './components/Tab';
 export TabContent from './components/TabContent';
 export Tabs from './components/Tabs';
 export Tag from './components/Tag';
+export Text from './components/Text';
 export TextArea from './components/TextArea';
 export TextInput from './components/TextInput';
 export Tooltip, { tooltipStyle, tooltipStyleDark } from './components/Tooltip';

@@ -13,7 +13,11 @@ export default {
   },
 };
 
-export const Regular = (args) => <Input {...args}>{() => <input />}</Input>;
+export const Regular = (args) => (
+  <Input {...args}>
+    {() => <input placeholder="This can be any type of custom input" />}
+  </Input>
+);
 
 Regular.args = {
   name: 'inputname',
