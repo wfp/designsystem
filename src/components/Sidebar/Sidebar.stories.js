@@ -19,7 +19,7 @@ import Tag from '../Tag';
 export default {
   title: 'Components/Content Related/SidebarContent',
   component: SidebarContent,
-  subcomponents: { SidebarHeader, SidebarBackButton },
+  subcomponents: { SidebarHeader, SidebarBackButton, SidebarScroll },
   parameters: {
     status: 'released',
     mdx: markdown,
