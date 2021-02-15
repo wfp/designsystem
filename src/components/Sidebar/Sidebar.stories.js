@@ -81,7 +81,7 @@ export const Regular = (args) => {
   );
 };
 
-/*
+
 export const Phonebook = (args) => {
   const [selectedUserId, setSelectedUserId] = useState(null);
   const [search, setSearch] = useState();
@@ -92,7 +92,7 @@ export const Phonebook = (args) => {
         e.full_name.toLocaleLowerCase().includes(search.toLocaleLowerCase())
       )
     : DATA;
-
+console.log("sdfghj", searchResults, DATA);
   return (
     <div style={{ display: 'flex', height: '100vh', flexDirection: 'column' }}>
       <MainNavigation pageWidth="full" />
@@ -106,7 +106,7 @@ export const Phonebook = (args) => {
             <div>Detail page</div>
           </>
         }
-        Sidebar={
+        sidebar={
           <>
             <SidebarHeader>
               <Search onChange={(e) => setSearch(e)} />
@@ -198,4 +198,4 @@ export const Phonebook = (args) => {
     </div>
   );
 };
-*/
+
