@@ -60,9 +60,10 @@ FormGroup.propTypes = {
    */
   className: PropTypes.string,
   /**
-   * Specify an invalid attribute for the `fieldset`
+   * Specify whether the control is currently invalid.
+   * Either a boolean in combination with `invalidText` or an `object`( eg. { message: "Message", …otherErrorProperties }) can be passed.
    */
-  invalid: PropTypes.bool,
+  invalid: PropTypes.oneOfType([PropTypes.object, PropTypes.bool]),
   /**
    * Specify if a message is shown for the `fieldset`
    */

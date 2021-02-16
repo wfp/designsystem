@@ -107,9 +107,10 @@ export default class NumberInput extends Component {
     value: PropTypes.oneOfType([PropTypeEmptyString, PropTypes.number]),
 
     /**
-     * Specify if the currently value is invalid.
+     * Specify whether the control is currently invalid.
+     * Either a boolean in combination with `invalidText` or an `object`( eg. { message: "Message", …otherErrorProperties }) can be passed.
      */
-    invalid: PropTypes.bool,
+    invalid: PropTypes.oneOfType([PropTypes.object, PropTypes.bool]),
 
     /**
      * Message which is displayed if the value is invalid.
@@ -169,7 +170,7 @@ export default class NumberInput extends Component {
         };
   }
 
-  handleChange = evt => {
+  handleChange = (evt) => {
     if (!this.props.disabled) {
       evt.persist();
       evt.imaginaryTarget = this._inputRef;
@@ -215,7 +216,7 @@ export default class NumberInput extends Component {
    * Preserves the DOM node ref of `<input>`.
    * @param {HTMLInputElement} ref The DOM node ref of `<input>`.
    */
-  _handleInputRef = ref => {
+  _handleInputRef = (ref) => {
     this._inputRef = ref;
   };
 
@@ -292,7 +293,7 @@ export default class NumberInput extends Component {
             <button
               className={`${prefix}--number__control-btn up-icon`}
               {...buttonProps}
-              onClick={evt => this.handleArrowClick(evt, 'up')}>
+              onClick={(evt) => this.handleArrowClick(evt, 'up')}>
               <Icon
                 className="up-icon"
                 icon={iconCaretUp}
@@ -303,7 +304,7 @@ export default class NumberInput extends Component {
             <button
               className={`${prefix}--number__control-btn down-icon`}
               {...buttonProps}
-              onClick={evt => this.handleArrowClick(evt, 'down')}>
+              onClick={(evt) => this.handleArrowClick(evt, 'down')}>
               <Icon
                 className="down-icon"
                 icon={iconCaretDown}

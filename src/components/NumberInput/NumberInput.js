@@ -222,7 +222,8 @@ NumberInput.propTypes = {
   value: PropTypes.oneOfType([PropTypeEmptyString, PropTypes.number]),
 
   /**
-   * Specify if the currently value is invalid.
+   * Specify whether the control is currently invalid.
+   * Either a boolean in combination with `invalidText` or an `object`( eg. { message: "Message", …otherErrorProperties }) can be passed.
    */
   invalid: PropTypes.oneOfType([PropTypes.object, PropTypes.bool]),
 
@@ -251,6 +252,5 @@ NumberInput.propTypes = {
    */
   allowEmpty: PropTypes.bool,
 };
-
 
 export default NumberInput;

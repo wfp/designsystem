@@ -207,7 +207,8 @@ Input.propTypes = {
   hideLabel: PropTypes.bool,
 
   /**
-   * Specify whether the control is currently invalid. boolean or an object( eg. { message: "Input is too long", …otherErrorproperties }) can be passed
+   * Specify whether the control is currently invalid.
+   * Either a boolean in combination with `invalidText` or an `object`( eg. { message: "Message", …otherErrorProperties }) can be passed.
    */
   invalid: PropTypes.oneOfType([PropTypes.bool, PropTypes.object]),
 
