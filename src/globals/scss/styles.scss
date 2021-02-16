@@ -83,6 +83,7 @@ $deprecations--message: 'Deprecated code was found, this code will be removed be
 @import '../../components/Card/card';
 @import '../../components/ContentSwitcher/content-switcher';
 @import '../../components/List/list';
+@import '../../components/Item/item.scss';
 @import '../../components/Loading/loading';
 @import '../../components/Modal/modal';
 @import '../../components/Module/module';
@@ -108,6 +109,8 @@ $deprecations--message: 'Deprecated code was found, this code will be removed be
 @import '../../components/Slider/slider.scss';
 @import '../../components/Unit/unit.scss';
 
+@import '../../components/Sidebar/sidebar.scss';
+@import '../../components/SidebarItem/sidebar-item.scss';
 //-------------------------------------
 
 // 🙈 Page Elements
