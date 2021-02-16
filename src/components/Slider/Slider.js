@@ -68,7 +68,7 @@ function Slider(props) {
 
   const handleChange = (evt) => {
     if (!disabled) {
-      evt.persist();
+     evt.persist();
       evt.imaginaryTarget = _inputRef;
       if(evt.target.value > max){
         setValue(max);
@@ -77,8 +77,7 @@ function Slider(props) {
         setValue(evt.target.value);
         onChange(parseFloat(evt.target.value), evt);
       }
-      // setValue(evt.target.value);
-      // onChange(parseFloat(evt.target.value), evt);
+      
     }
   };
 
@@ -300,6 +299,7 @@ Slider.defaultProps = {
   maxLabel: '',
   inputType: 'number',
   ariaLabelInput: 'Slider number input',
+  min:0
 };
 
 export default Slider;

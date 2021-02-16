@@ -43,7 +43,7 @@ const Card = ({
       (
         <img src={image} alt={title} className="wfp--header-photo" />
       ): kind === 'image-header' && (
-      <img src="http://www1.wfp.org/sites/default/files/images/yemen-hero-min.jpg" 
+      <img src={`${process.env.STORYBOOK_INTERNAL_ASSETS}internal/yemen-hero-min.jpg`} 
       alt={title} className="wfp--header-photo" />)
     }
 
