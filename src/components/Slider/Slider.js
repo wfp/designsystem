@@ -68,16 +68,18 @@ function Slider(props) {
 
   const handleChange = (evt) => {
     if (!disabled) {
-     evt.persist();
+      evt.persist();
       evt.imaginaryTarget = _inputRef;
       if (evt.target.value > max) {
         setValue(max);
         onChange(parseFloat(max), evt);
-      } else {
+      } /* else if (evt.target.value < min) {
+        setValue(evt.target.value);
+        onChange(parseFloat(min), evt);
+      }*/ else {
         setValue(evt.target.value);
         onChange(parseFloat(evt.target.value), evt);
       }
-      
     }
   };
 
@@ -113,6 +115,8 @@ function Slider(props) {
     className
   );
 
+  const valueMinimal = value < min ? min : value;
+  console.log('value', min, max);
   return (
     <Input {...props} formItemClassName={numberInputClasses}>
       {() => {
@@ -125,7 +129,9 @@ function Slider(props) {
             <div className="wfp--slider__range-wrapper">
               <div
                 className="wfp--slider__range-before"
-                style={{ width: `${(100 * value) / max}%` }}
+                style={{
+                  width: `${((valueMinimal - min) / (max - min)) * 100}%`,
+                }}
               />
               <input
                 className={sliderClasses}
@@ -300,7 +306,7 @@ Slider.defaultProps = {
   maxLabel: '',
   inputType: 'number',
   ariaLabelInput: 'Slider number input',
-  min:0
+  min: 0,
 };
 
 export default Slider;
