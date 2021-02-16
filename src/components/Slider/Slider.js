@@ -306,6 +306,7 @@ Slider.defaultProps = {
   maxLabel: '',
   inputType: 'number',
   ariaLabelInput: 'Slider number input',
+  min: 0,
 };
 
 export default Slider;
