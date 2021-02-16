@@ -52,10 +52,3 @@ Overlay.args = {
   cardHeight: '400px',
 };
 
-// ImageHeader.story = {
-//   parameters: {
-//     docs: {
-//       storyDescription: `A card designed to highlight a link using a landscape photograph and  white-background section below with a title and a subtitle.`,
-//     },
-//   },
-// };
