@@ -1,3 +1,27 @@
+# [1.15.0](https://github.com/WFP/UI/compare/v1.14.0...v1.15.0) (2021-02-16)
+
+
+### Bug Fixes
+
+* **Icons:** version changed ([901c58d](https://github.com/WFP/UI/commit/901c58dc41c9710eae60dba012a84430467f663e))
+* **Input:** added prop type description for all Inputs ([f86ad11](https://github.com/WFP/UI/commit/f86ad114476135f4892f39a2ccd39d85b90a3150))
+* **Input:** merge conflicts solved ([c52d7a7](https://github.com/WFP/UI/commit/c52d7a76aa1513b6f3c15fc432deebfa6eb9a4d6))
+* **package:** added lockfile ([c78e915](https://github.com/WFP/UI/commit/c78e915f8bf101d8542818f45acac39d8c88cfe1))
+* **package:** downgrade wfp ([b7bbd4a](https://github.com/WFP/UI/commit/b7bbd4a9eefcba5b6aa3aaa7a35654733af70d65))
+* **package:** downgraded npm version ([1a23754](https://github.com/WFP/UI/commit/1a237545247786635541a3d8ae87ef62de5e88f4))
+* **package:** lockfile updated ([e625a4c](https://github.com/WFP/UI/commit/e625a4c1e6f80a1f5e48e2730e7adb46eaa6b23b))
+* **package:** updated lock file ([a15bfad](https://github.com/WFP/UI/commit/a15bfad152500a4cb89349c2b245efa88b6075b6))
+* **package:** updated lock file ([b04fd9e](https://github.com/WFP/UI/commit/b04fd9e32a022fa3b75bcd986509ecd0f3a73d83))
+* **package:** updated lock file ([52b5eba](https://github.com/WFP/UI/commit/52b5eba76a17a92d46585f63ac343b56a260c786))
+* **release:** alpha channel added ([7e3aec3](https://github.com/WFP/UI/commit/7e3aec3162ac3a908521f99f3c48ce5403dd0bb3))
+* **Search:** added optional inputWrapperClassName for the wrapper of the input element ([031e1bb](https://github.com/WFP/UI/commit/031e1bb1ba5e6655cc6ca39ab7c67eda80a6830e))
+* **Slider:** Slider min no reflects the correct percentage on the slider ([4875d6c](https://github.com/WFP/UI/commit/4875d6ce351a363ca6e2bc5be382dfd7ffd35565))
+
+
+### Features
+
+* **Semantic:** initial try for seperate alpha releases ([81ad44a](https://github.com/WFP/UI/commit/81ad44a73835ca4369675eb2752cc911ca8279d9))
+
 # [1.14.0](https://github.com/WFP/UI/compare/v1.13.1...v1.14.0) (2021-02-15)
 
 
