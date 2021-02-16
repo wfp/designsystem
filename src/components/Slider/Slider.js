@@ -70,10 +70,10 @@ function Slider(props) {
     if (!disabled) {
      evt.persist();
       evt.imaginaryTarget = _inputRef;
-      if(evt.target.value > max){
+      if (evt.target.value > max) {
         setValue(max);
         onChange(parseFloat(max), evt);
-      }else{
+      } else {
         setValue(evt.target.value);
         onChange(parseFloat(evt.target.value), evt);
       }
@@ -261,9 +261,10 @@ Slider.propTypes = {
   value: PropTypes.oneOfType([PropTypeEmptyString, PropTypes.number]),
 
   /**
-   * Specify if the currently value is invalid.
+   * Specify whether the control is currently invalid.
+   * Either a boolean in combination with `invalidText` or an `object`( eg. { message: "Message", …otherErrorProperties }) can be passed.
    */
-  invalid: PropTypes.bool,
+  invalid: PropTypes.oneOfType([PropTypes.object, PropTypes.bool]),
 
   /**
    * Message which is displayed if the value is invalid.

@@ -36,7 +36,7 @@ const TextArea = ({
     },
   };
 
-  const textareaClasses = classNames('wfp--text-area', className,{
+  const textareaClasses = classNames('wfp--text-area', className, {
     [`${prefix}--textarea-fullwidth`]: fullWidth,
   });
   const labelClasses = classNames(`${prefix}--label`, {
@@ -150,9 +150,10 @@ TextArea.propTypes = {
   value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 
   /**
-   * Specify whether the control is currently invalid
+   * Specify whether the control is currently invalid.
+   * Either a boolean in combination with `invalidText` or an `object`( eg. { message: "Message", …otherErrorProperties }) can be passed.
    */
-  invalid: PropTypes.bool,
+  invalid: PropTypes.oneOfType([PropTypes.object, PropTypes.bool]),
 
   /**
    * Provide the text that is displayed when the control is in an invalid state
@@ -184,7 +185,7 @@ TextArea.defaultProps = {
   invalid: false,
   invalidText: '',
   helperText: '',
-  fullWidth:true
+  fullWidth: true,
 };
 
 export default TextArea;
