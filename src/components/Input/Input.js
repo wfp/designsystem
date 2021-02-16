@@ -80,16 +80,20 @@ const Input = ({
     </label>
   );
 
-  const error =
-    invalid && typeof invalid === 'object' ? (
-      <div className="wfp--form-requirement" id={errorId}>
-        {errorIcon} {invalid.message ? invalid.message : invalidText}
-      </div>
-    ) : invalid ? (
-      <div className="wfp--form-requirement" id={errorId}>
-        {errorIcon} {invalidText ? invalidText : 'invalid text'}
-      </div>
-    ) : null;
+  const error = invalid ? (
+    <div className="wfp--form-requirement" id={errorId}>
+      {errorIcon}{' '}
+      <span>
+        {typeof invalid === 'object' && invalid.message
+          ? invalid.message
+          : typeof invalid === 'string'
+          ? invalid
+          : invalidText
+          ? invalidText
+          : 'required'}
+      </span>
+    </div>
+  ) : null;
 
   const elementProps = invalid
     ? {
