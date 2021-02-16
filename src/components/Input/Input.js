@@ -3,6 +3,8 @@ import React from 'react';
 import classNames from 'classnames';
 import settings from '../../globals/js/settings';
 import FormItem from '../FormItem';
+import { iconWarningGlyph } from '@wfp/icons';
+import Icon from '../Icon';
 
 const { prefix } = settings;
 
@@ -18,6 +20,7 @@ const Input = ({
   iconDescription,
   id,
   formItemClassName,
+  inputWrapperClassName,
   placeholder,
   type,
   onChange,
@@ -59,9 +62,16 @@ const Input = ({
     [`${prefix}--label--disabled`]: other.disabled,
   });
 
+  const inputWrapperClasses = classNames(
+    `${prefix}--input-wrapper`,
+    inputWrapperClassName
+  );
+
   const helperTextClasses = classNames(`${prefix}--form__helper-text`, {
     [`${prefix}--form__helper-text--disabled`]: other.disabled,
   });
+
+  const errorIcon = <Icon icon={iconWarningGlyph} fill="#c5192d" />;
 
   const label = (
     <label htmlFor={calculatedId} className={labelClasses}>
@@ -72,13 +82,16 @@ const Input = ({
 
   const error = invalid ? (
     <div className="wfp--form-requirement" id={errorId}>
-      {typeof invalid === 'object' && invalid.message
-        ? invalid.message
-        : typeof invalid === 'string'
-        ? invalid
-        : invalidText
-        ? invalidText
-        : 'required'}
+      {errorIcon}{' '}
+      <span>
+        {typeof invalid === 'object' && invalid.message
+          ? invalid.message
+          : typeof invalid === 'string'
+          ? invalid
+          : invalidText
+          ? invalidText
+          : 'required'}
+      </span>
     </div>
   ) : null;
 
@@ -106,7 +119,7 @@ const Input = ({
       {label}
       {helper}
       {additional}
-      <div className={`${prefix}--input-wrapper`}>
+      <div className={inputWrapperClasses}>
         {addonBefore && (
           <div className={`${prefix}--input-addon-before`}>{addonBefore}</div>
         )}
@@ -140,6 +153,11 @@ Input.propTypes = {
    * Specify an optional className to be applied to the form-item node
    */
   formItemClassName: PropTypes.string,
+
+  /**
+   * Specify an optional className to be applied to the input wrapper node
+   */
+  inputWrapperClassName: PropTypes.string,
 
   /**
    * Specify a custom `id` for the &lt;input&gt;
@@ -189,14 +207,15 @@ Input.propTypes = {
   hideLabel: PropTypes.bool,
 
   /**
-   * Specify whether the control is currently invalid
+   * Specify whether the control is currently invalid.
+   * Either a boolean in combination with `invalidText` or an `object`( eg. { message: "Message", …otherErrorProperties }) can be passed.
    */
   invalid: PropTypes.oneOfType([PropTypes.bool, PropTypes.object]),
 
   /**
    * Provide the text that is displayed when the control is in an invalid state
    */
-  invalidText: PropTypes.string,
+  invalidText: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
 
   /**
    * Provide additional component that is used alongside the input for customization

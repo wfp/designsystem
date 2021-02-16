@@ -17,7 +17,7 @@ export const RegularSlider = (args) => <Slider id="slider2" {...args} />;
 RegularSlider.args = {
   name: 'Form item name (name)',
   value: 25,
-  min: 0,
+  min: 10,
   max: 50,
   step: 1,
   labelText: 'Slider Label',

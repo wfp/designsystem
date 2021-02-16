@@ -98,7 +98,10 @@ const DescriptionContainer: FunctionComponent<DescriptionProps> = (props) => {
   const Docs = context.parameters.mdx;
 
   const lookup = {
-    experimental: { name: 'Experimental component', type: 'warning' },
+    experimental: {
+      name: 'Experimental: do not use in production!',
+      type: 'warning',
+    },
     released: { name: 'Ready for production', type: 'wfp' },
     legacy: { name: 'Legacy: do not use in new projects', type: 'warning' },
   };

@@ -37,7 +37,7 @@ export default function FileUploaderItem({
           iconDescription={iconDescription}
           status={status}
           invalid={invalid}
-          onKeyDown={evt => {
+          onKeyDown={(evt) => {
             /*
             if (matches(evt, [keys.Enter, keys.Space])) {
               if (status === 'edit') {
@@ -46,7 +46,7 @@ export default function FileUploaderItem({
             }
           }*/
           }}
-          onClick={evt => {
+          onClick={(evt) => {
             if (status === 'edit') {
               onDelete(evt, { uuid });
             }
@@ -91,9 +91,10 @@ FileUploaderItem.propTypes = {
   iconDescription: PropTypes.string,
 
   /**
-   * Specify if the currently uploaded file is invalid
+   * Specify whether the control is currently invalid.
+   * Either a boolean in combination with `invalidText` or an `object`( eg. { message: "Message", …otherErrorProperties }) can be passed.
    */
-  invalid: PropTypes.bool,
+  invalid: PropTypes.oneOfType([PropTypes.object, PropTypes.bool]),
 
   /**
    * Event handler that is called after removing a file from the file uploader

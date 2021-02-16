@@ -41,7 +41,7 @@ const TextInput = (props) => {
   };
 
   return (
-    <Input {...props} formItemClassName={formItemClassName} >
+    <Input {...props} formItemClassName={formItemClassName}>
       {(e) => {
         return (
           <input
@@ -128,14 +128,15 @@ TextInput.propTypes = {
   hideLabel: PropTypes.bool,
 
   /**
-   * Specify whether the control is currently invalid
+   * Specify whether the control is currently invalid.
+   * Either a boolean in combination with `invalidText` or an `object`( eg. { message: "Message", …otherErrorProperties }) can be passed.
    */
   invalid: PropTypes.oneOfType([PropTypes.bool, PropTypes.object]),
 
   /**
    * Provide the text that is displayed when the control is in an invalid state
    */
-  invalidText: PropTypes.string,
+  invalidText: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
 
   /**
    * Provide additional component that is used alongside the input for customization
