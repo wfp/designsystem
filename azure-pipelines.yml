@@ -3,6 +3,7 @@ trigger:
   - next
   - hotfix/*
   - bugfix/*
+  - alpha/*
 
 jobs:
 - job: SemanticRelease
@@ -30,6 +31,7 @@ jobs:
 
     - script: |
         mkdir -p $(NPM_CACHE_FOLDER)
+        npm -v
         npm ci
       displayName: 'npm install'
 
