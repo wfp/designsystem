@@ -39,12 +39,11 @@ const Card = ({
   const content = (
     <>
       <div className="wfp--photo-cardnew__background" style={style} />
-      {image && kind === 'image-header' ?
+      {image && kind === 'simple-card' ?
       (
         <img src={image} alt={title} className="wfp--header-photo" />
-      ): kind === 'image-header' && (
-      <img src={`${process.env.STORYBOOK_INTERNAL_ASSETS}internal/yemen-hero-min.jpg`} 
-      alt={title} className="wfp--header-photo" />)
+      )
+      : null
     }
 
       
@@ -118,7 +117,7 @@ Card.propTypes = {
   /**
   Kind of Card
 */
-  kind: PropTypes.oneOf(['text-card', 'image-header', 'overlay']).isRequired,
+  kind: PropTypes.oneOf(['simple-card', 'overlay']).isRequired,
   /**
   The URL where the content uploaded is located.
 */
