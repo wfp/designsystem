@@ -1,3 +1,27 @@
+# [1.14.0](https://github.com/WFP/UI/compare/v1.13.1...v1.14.0) (2021-02-15)
+
+
+### Bug Fixes
+
+* **Input:** minor placeholder added to show how to customize the input ([7e4056a](https://github.com/WFP/UI/commit/7e4056a5f3f674eea727b706da272b202c53d68f))
+* **package:** upgrade node-sass to be compatible with more recent Intel Macs and node v15 ([6d0d37c](https://github.com/WFP/UI/commit/6d0d37cba4dc1295abbbe88f0aa26306a2b34025))
+* **Sidebar:** default export added ([f57d968](https://github.com/WFP/UI/commit/f57d968c2efaed325ece27f853153eddfbeb4229))
+* **Sidebar:** mobile fix ([5dcc5cf](https://github.com/WFP/UI/commit/5dcc5cf7e6e7285ca1e2e824dc1e5a7a038fdacb))
+* **SIdebar:** minor fixes and variable css classNames ([3e4abd3](https://github.com/WFP/UI/commit/3e4abd3becd28de17323893f6430c4a2129d7330))
+* **Text:** component export added ([cb25eb1](https://github.com/WFP/UI/commit/cb25eb11f5082a5ee23c833a3faeca6b3dfae7bd))
+
+
+### Features
+
+* **Item:** added Item component which can be displayed inside the sidebar ([21979ec](https://github.com/WFP/UI/commit/21979ecfd47f52fd133155f8e39b861ffa304ee1))
+* **Item:** added item component wip ([f96a85e](https://github.com/WFP/UI/commit/f96a85e0ea0a02ce15dad8f877ca2de6f9e410fd))
+* **Item:** alignment of the Item component ([6cbb4b6](https://github.com/WFP/UI/commit/6cbb4b6c159dbd653a59de735b4afa0c41748286))
+* **Sidebar:** added some style fixes ([da56c85](https://github.com/WFP/UI/commit/da56c8515b10896a105e1c0846df523fb9f5155c))
+* **Sidebar:** height improvment using flexbox ([9d25547](https://github.com/WFP/UI/commit/9d25547456f7600f1badb89df1f1965e168c1909))
+* **Sidebar:** minor fixes on the height of the total sidebar and improved import of css vars ([a5e6565](https://github.com/WFP/UI/commit/a5e6565b7d8b2cd87d021301eba0512a90f259cb))
+* **Sidebar:** mobile support added ([ae21bcf](https://github.com/WFP/UI/commit/ae21bcf9126b62f757a793a6b9aa8b88ef4ea8e8))
+* **Sidebar:** Sidebar scrolling improved, the SidebarHeader can be now fixed on top ([47d76d6](https://github.com/WFP/UI/commit/47d76d645f1def8c3942b5a6f527e3b35ecb04a3))
+
 ## [1.13.1](https://github.com/WFP/UI/compare/v1.13.0...v1.13.1) (2021-02-01)
 
 
