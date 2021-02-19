@@ -1,7 +1,7 @@
 {
   "name": "@wfp/ui",
-  "version": "1.11.1",
-  "description": "WFP UI Kit Next",
+  "version": "1.15.0",
+  "description": "WFP UI Kit",
   "license": "Apache-2",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -97,7 +97,7 @@
     }
   },
   "peerDependencies": {
-    "@wfp/icons": "^0.0.82",
+    "@wfp/icons": "^0.0.84",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   },
@@ -140,7 +140,7 @@
     "@tippy.js/react": "^3.1.1",
     "@typescript-eslint/eslint-plugin": "^4.9.0",
     "@typescript-eslint/parser": "^3.8.0",
-    "@wfp/icons": "^0.0.82",
+    "@wfp/icons": "0.0.84",
     "add": "^2.0.6",
     "all-contributors-cli": "^6.17.0",
     "autoprefixer": "^9.8.6",
@@ -180,7 +180,7 @@
     "lodash.omit": "^4.5.0",
     "mini-css-extract-plugin": "^0.9.0",
     "moment": "^2.27.0",
-    "node-sass": "4.14.1",
+    "node-sass": "5.0.0",
     "object-assign": "^4.1.1",
     "postcss": "^7.0.32",
     "postcss-cli": "^7.1.1",

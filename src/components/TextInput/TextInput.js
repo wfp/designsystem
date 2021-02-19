@@ -23,14 +23,12 @@ const TextInput = (props) => {
     invalidText,
     helperText,
     inputRef,
-    light,
     pattern,
     required,
     ...other
   } = props;
 
   const textInputClasses = classNames(`${prefix}--text`, className, {
-    [`${prefix}--text--light`]: light,
     [`${prefix}--text--helpertext`]: helperText,
     [`${prefix}--text--nolabel`]: hideLabel,
     [`${prefix}--text--required`]: required,
@@ -42,7 +40,7 @@ const TextInput = (props) => {
   };
 
   return (
-    <Input {...props} formItemClassName={formItemClassName} >
+    <Input {...props} formItemClassName={formItemClassName}>
       {(e) => {
         return (
           <input
@@ -129,14 +127,15 @@ TextInput.propTypes = {
   hideLabel: PropTypes.bool,
 
   /**
-   * Specify whether the control is currently invalid
+   * Specify whether the control is currently invalid.
+   * Either a boolean in combination with `invalidText` or an `object`( eg. { message: "Message", …otherErrorProperties }) can be passed.
    */
   invalid: PropTypes.oneOfType([PropTypes.bool, PropTypes.object]),
 
   /**
    * Provide the text that is displayed when the control is in an invalid state
    */
-  invalidText: PropTypes.string,
+  invalidText: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
 
   /**
    * Provide additional component that is used alongside the input for customization
@@ -147,11 +146,6 @@ TextInput.propTypes = {
    * Provide text that is used alongside the control label for additional help
    */
   helperText: PropTypes.node,
-
-  /**
-   * `true` to use the light version.
-   */
-  light: PropTypes.bool,
 };
 
 TextInput.defaultProps = {
@@ -163,7 +157,6 @@ TextInput.defaultProps = {
   invalid: false,
   invalidText: '',
   helperText: '',
-  light: false,
 };
 
 export default TextInput;

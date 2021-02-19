@@ -1,6 +1,7 @@
-import React from 'react';
+import React, {useState} from 'react';
 import markdown from './README.mdx';
 import Loading from '.';
+import Button from '../Button';
 
 export default {
   title: 'Components/UI Elements/Loading',
@@ -13,30 +14,34 @@ export default {
 };
 
 export const Regular = (args) => <Loading {...args}>Text</Loading>;
-
-// const description = `
-// You can customize the content by using \`BannerNavigation\`.
-// `;
-
-// Regular.story = {
-//   parameters: {
-//     docs: {
-//       storyDescription: description,
-//     },
-//   },
-// };
-
-export const withoutOverlay = (args) => <Loading {...args}>Text</Loading>;
-
-const description = `
-When loader is applied with an overlay. Do this by specifying \`false\` to \`withOverlay\` prop.
-`;
-
-withoutOverlay.args = {
+Regular.args = {
   withOverlay: false,
 };
 
-withoutOverlay.story = {
+
+export const overlay = (args) => {
+  const [loading, setLoading] = useState(false);
+  
+  return(
+    <>
+      <Button onClick={()=>setLoading(true)}>Load with overlay     </Button>
+      {
+        loading && ( <Loading withOverlay={true} >Text</Loading> )
+      }
+    </>
+  )
+
+}
+
+const description = `
+When loader is applied with an overlay. Do this by specifying \`true\` to \`withOverlay\` prop.
+`;
+
+overlay.args = {
+  withOverlay: false,
+};
+
+overlay.story = {
   parameters: {
     docs: {
       storyDescription: description,

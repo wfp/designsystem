@@ -29,24 +29,17 @@ export const Regular = (args) => (
         height={200}
         style={{ marginBottom: '3rem', transform: 'rotate(10deg)' }}
       />
-      <h1 className="wfp--story__title">Sorry, we couldn't find that page</h1>
+      <h1 className="wfp--story__title">Under maintenance</h1>
       <p>
-        Go back to <Link href="http://www.wfp.org">Homepage</Link> or visit{' '}
-        <Link href="http://www.wfp.org">another Page</Link>
+        Apologies for the inconvenience; we are performing maintenance at the moment.
+        <br/> [Name of solution] should be back shortly. 
       </p>
+      <p>Please contact <Link href="mailto:IT.ServiceDesk@wfp.org"> IT.ServiceDesk@wfp.org </Link> if you have any questions or comments.</p>
+      <p>[Name] Team</p>
     </Story>
   </Wrapper>
 );
 
-Regular.decorators = [
-  (Story) => (
-    <RegularPage withoutSecondary>
-      <Story />
-    </RegularPage>
-  ),
-];
-
-Regular.args = {};
 
 Regular.story = {
   parameters: {
@@ -66,11 +59,13 @@ import { iconWfpHumEmergencyResponsePos } from '@wfp/icons';
       height={200}
       style={{ marginBottom: '3rem', transform: 'rotate(10deg)' }}
     />
-    <h1 className="wfp--story__title">Sorry, we couldn't find that page</h1>
-    <p>
-      Go back to <Link href="http://www.wfp.org">Homepage</Link> or visit{' '}
-      <Link href="http://www.wfp.org">another Page</Link>
-    </p>
+    <h1 className="wfp--story__title">Under maintenance</h1>
+      <p>
+        Apologies for the inconvenience; we are performing maintenance at the moment.
+        <br/> [Name of solution] should be back shortly. 
+      </p>
+      <p>Please contact <Link href="https://IT.ServiceDesk@wfp.org"> IT.ServiceDesk@wfp.org </Link> if you have any questions or comments.</p>
+      <p>[Name] Team</p>
   </Story>
 </Wrapper>
       `,

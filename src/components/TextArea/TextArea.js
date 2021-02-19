@@ -19,7 +19,7 @@ const TextArea = ({
   invalidText,
   inputRef,
   helperText,
-  light,
+  fullWidth,
   ...other
 }) => {
   const textareaProps = {
@@ -37,7 +37,7 @@ const TextArea = ({
   };
 
   const textareaClasses = classNames('wfp--text-area', className, {
-    'wfp--text-area--light': light,
+    [`${prefix}--textarea-fullwidth`]: fullWidth,
   });
   const labelClasses = classNames(`${prefix}--label`, {
     [`${prefix}--visually-hidden`]: hideLabel,
@@ -150,9 +150,10 @@ TextArea.propTypes = {
   value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 
   /**
-   * Specify whether the control is currently invalid
+   * Specify whether the control is currently invalid.
+   * Either a boolean in combination with `invalidText` or an `object`( eg. { message: "Message", …otherErrorProperties }) can be passed.
    */
-  invalid: PropTypes.bool,
+  invalid: PropTypes.oneOfType([PropTypes.object, PropTypes.bool]),
 
   /**
    * Provide the text that is displayed when the control is in an invalid state
@@ -170,9 +171,9 @@ TextArea.propTypes = {
   hideLabel: PropTypes.bool,
 
   /**
-   * Specify whether you want the light version of this control
+   * Specify whether you want `textarea` width to be 100%, this will overide cols set
    */
-  light: PropTypes.bool,
+  fullWidth: PropTypes.bool,
 };
 
 TextArea.defaultProps = {
@@ -181,11 +182,10 @@ TextArea.defaultProps = {
   onClick: () => {},
   placeholder: '',
   rows: 4,
-  cols: 50,
   invalid: false,
   invalidText: '',
   helperText: '',
-  light: false,
+  fullWidth: true,
 };
 
 export default TextArea;

@@ -19,7 +19,7 @@ ModuleHeader.propTypes = {
    */
   children: PropTypes.node,
   /**
-   * The CSS class name for the slider.
+   * The CSS class name for the `ModuleHeaders`.
    */
   className: PropTypes.string,
 };

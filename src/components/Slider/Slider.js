@@ -51,7 +51,6 @@ function Slider(props) {
     onChange = () => {},
     onClick = () => {},
     helperText,
-    light,
     allowEmpty,
     inputRef,
     ...other
@@ -71,9 +70,16 @@ function Slider(props) {
     if (!disabled) {
       evt.persist();
       evt.imaginaryTarget = _inputRef;
-
-      setValue(evt.target.value);
-      onChange(parseFloat(evt.target.value), evt);
+      if (evt.target.value > max) {
+        setValue(max);
+        onChange(parseFloat(max), evt);
+      } /* else if (evt.target.value < min) {
+        setValue(evt.target.value);
+        onChange(parseFloat(min), evt);
+      }*/ else {
+        setValue(evt.target.value);
+        onChange(parseFloat(evt.target.value), evt);
+      }
     }
   };
 
@@ -81,7 +87,6 @@ function Slider(props) {
     `${prefix}--slider--wrapper`,
     className,
     {
-      [`${prefix}--slider--light`]: light,
       [`${prefix}--slider--helpertext`]: helperText,
       [`${prefix}--slider--nolabel`]: hideLabel,
       [`${prefix}--slider--nocontrols`]: hideControls,
@@ -102,9 +107,7 @@ function Slider(props) {
     value: value,
   };
 
-  const inputClasses = classNames('wfp--input', 'wfp--slider-text-input', {
-    'wfp--text-input--light': light,
-  });
+  const inputClasses = classNames('wfp--input', 'wfp--slider-text-input');
 
   const sliderClasses = classNames(
     'wfp--slider',
@@ -112,6 +115,8 @@ function Slider(props) {
     className
   );
 
+  const valueMinimal = value < min ? min : value;
+  console.log('value', min, max);
   return (
     <Input {...props} formItemClassName={numberInputClasses}>
       {() => {
@@ -124,7 +129,9 @@ function Slider(props) {
             <div className="wfp--slider__range-wrapper">
               <div
                 className="wfp--slider__range-before"
-                style={{ width: `${(100 * value) / max}%` }}
+                style={{
+                  width: `${((valueMinimal - min) / (max - min)) * 100}%`,
+                }}
               />
               <input
                 className={sliderClasses}
@@ -256,9 +263,10 @@ Slider.propTypes = {
   value: PropTypes.oneOfType([PropTypeEmptyString, PropTypes.number]),
 
   /**
-   * Specify if the currently value is invalid.
+   * Specify whether the control is currently invalid.
+   * Either a boolean in combination with `invalidText` or an `object`( eg. { message: "Message", …otherErrorProperties }) can be passed.
    */
-  invalid: PropTypes.bool,
+  invalid: PropTypes.oneOfType([PropTypes.object, PropTypes.bool]),
 
   /**
    * Message which is displayed if the value is invalid.
@@ -274,11 +282,6 @@ Slider.propTypes = {
    * Provide text that is used alongside the control label for additional help
    */
   helperText: PropTypes.node,
-
-  /**
-   * `true` to use the light version.
-   */
-  light: PropTypes.bool,
 
   /**
    * `true` to allow empty string.
@@ -299,7 +302,7 @@ Slider.defaultProps = {
   maxLabel: '',
   inputType: 'number',
   ariaLabelInput: 'Slider number input',
-  light: false,
+  min: 0,
 };
 
 export default Slider;

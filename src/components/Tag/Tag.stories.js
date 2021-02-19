@@ -12,7 +12,11 @@ export default {
   },
 };
 
-export const Regular = (args) => <Tag {...args}>Text</Tag>;
+export const Regular = (args) => <Tag {...args}></Tag>;
+
+Regular.args ={
+  children:'Text'
+}
 
 const description = `
 You can customize the content by using \`BannerNavigation\`.

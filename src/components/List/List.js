@@ -11,10 +11,20 @@ export const List = ({ children, className, colon, kind, small, ...other }) => {
     'wfp--list--colon': colon,
   });
   return (
-    <ul className={classNames} {...other}>
-      {children}
-    </ul>
-  );
+    <>
+      {
+        kind == "ordered" ? (
+          <ol className={classNames} {...other}>
+          {children}
+          </ol>
+        ) : (
+          <ul className={classNames} {...other}>
+          {children}
+          </ul>
+          )
+      }  
+    </>
+  )
 };
 
 List.propTypes = {
@@ -34,10 +44,10 @@ List.propTypes = {
    * Specify a kind.
    */
   kind: PropTypes.oneOf([
-    'simple',
+    'unstyled',
     'simple-inline',
     'details',
-    'bullets',
+    'unordered',
     'ordered',
     'tooltip',
   ]),
@@ -48,7 +58,7 @@ List.propTypes = {
 };
 
 List.defaultProps = {
-  kind: 'simple',
+  kind: 'unstyled',
   colon: false,
   small: false,
 };

@@ -98,7 +98,10 @@ const DescriptionContainer: FunctionComponent<DescriptionProps> = (props) => {
   const Docs = context.parameters.mdx;
 
   const lookup = {
-    experimental: { name: 'Experimental component', type: 'warning' },
+    experimental: {
+      name: 'Experimental: do not use in production!',
+      type: 'warning',
+    },
     released: { name: 'Ready for production', type: 'wfp' },
     legacy: { name: 'Legacy: do not use in new projects', type: 'warning' },
   };
@@ -106,10 +109,10 @@ const DescriptionContainer: FunctionComponent<DescriptionProps> = (props) => {
   const componentsTableOfContent = {
     wrapper: ({ children, ...props }) => {
       const output = Array.isArray(children)
-        ? children.map((child) => {
+        ? children.map((child, i) => {
             if (['h1', 'h2', 'h3'].includes(child.props.mdxType)) {
               return (
-                <ListItem>
+                <ListItem key={i}>
                   <a
                     href={`#${child.props.children
                       .toLowerCase()

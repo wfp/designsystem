@@ -21,6 +21,7 @@
 
 .sbdocs-preview {
   overflow: visible !important;
+  background: var(--ui-01) !important;
   > div {
     > div {
       overflow: visible !important;
@@ -465,4 +466,8 @@ $css--reset: true;
 
 .os-host.os-host-foreign {
   overflow: hidden !important;
+}
+
+.wfp--theme-rtl {
+  direction: rtl;
 }

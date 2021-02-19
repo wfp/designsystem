@@ -9,10 +9,10 @@
 
 @include exports('banner-navigation') {
   .#{$prefix}--banner-navigation {
-    background: $color__main-60;
+    background: var(--interactive-02);
     @include reset;
     display: flex;
-
+    @include font-smoothing;
     @include breakpointMax(bp--sm--major) {
       display: none;
     }
@@ -22,6 +22,7 @@
     @include typescale('omega');
     @include font-family;
     padding: 0 $spacing-xs;
+    font-weight: 600;
     @include breakpoint(bp--lg--major) {
       padding: 0 $spacing-md;
     }

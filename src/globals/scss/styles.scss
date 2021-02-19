@@ -73,6 +73,7 @@ $deprecations--message: 'Deprecated code was found, this code will be removed be
 @import '../../components/TextInput/text-input.scss';
 @import '../../components/TextArea/text-area.scss';
 @import '../../components/NumberInput/number-input.scss';
+@import '../../components/Empty/empty.scss';
 @import '../../components/Form/form.scss';
 @import '../../components/FormGroup/form-group.scss';
 @import '../../components/FormHint/form-hint.scss';
@@ -82,6 +83,7 @@ $deprecations--message: 'Deprecated code was found, this code will be removed be
 @import '../../components/Card/card';
 @import '../../components/ContentSwitcher/content-switcher';
 @import '../../components/List/list';
+@import '../../components/Item/item.scss';
 @import '../../components/Loading/loading';
 @import '../../components/Modal/modal';
 @import '../../components/Module/module';
@@ -107,6 +109,8 @@ $deprecations--message: 'Deprecated code was found, this code will be removed be
 @import '../../components/Slider/slider.scss';
 @import '../../components/Unit/unit.scss';
 
+@import '../../components/Sidebar/sidebar.scss';
+@import '../../components/SidebarItem/sidebar-item.scss';
 //-------------------------------------
 
 // 🙈 Page Elements

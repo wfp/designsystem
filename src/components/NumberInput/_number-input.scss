@@ -24,12 +24,12 @@
     width: 100%;
     min-width: 9.375rem;
     padding-left: $spacing-md;
-    padding-right: $spacing-xl;
-
+    padding-right: $spacing-md;
     & ~ .#{$prefix}--label {
       order: 1;
     }
 
+    
     /* &:focus ~ .#{$prefix}--label {
       color: var(--interactive-01);
     } */
@@ -60,9 +60,11 @@
       display: none; // IE: Hide "clear-field" `x` button on input field
     }
 
-    &::-webkit-inner-spin-button {
-      appearance: none; // Safari: Hide number spinner
+    &::-webkit-inner-spin-button,
+    ::-webkit-inner-spin-button {
+      -webkit-appearance: none; // Safari: Hide number spinner
     }
+
   }
 
   .#{$prefix}--number__controls {
@@ -102,6 +104,13 @@
     order: 3;
     position: absolute;
     right: 0;
+    @include rtl {
+      left: 0;
+      right: initial;
+      border-left: none;
+      border-right: $input-border;
+    }
+
     span {
       display: block;
     }
@@ -121,6 +130,10 @@
     }
     &:nth-child(1) {
       right: $input-height - 1px;
+      @include rtl {
+        right: initial;
+        left: $input-height - 1px;
+      }
     }
   }
 

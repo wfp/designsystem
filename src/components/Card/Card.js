@@ -11,7 +11,6 @@ const Card = ({
   isExternal,
   isLink,
   metadata,
-  more,
   subTitle,
   title,
   kind,
@@ -32,7 +31,7 @@ const Card = ({
 
   const wrapperClasses = classNames('wfp--card-box', {
     [`wfp--photo-cardnew--${kind}`]: kind,
-    'wfp--photo-cardnew--no-background': !image,
+    // 'wfp--photo-cardnew--no-background': !image,
     'wfp--photo-cardnew--link': isLink,
     [`${className}`]: className,
   });
@@ -40,9 +39,14 @@ const Card = ({
   const content = (
     <>
       <div className="wfp--photo-cardnew__background" style={style} />
-      {image && kind === 'image-header' && (
+      {image && kind === 'simple-card' ?
+      (
         <img src={image} alt={title} className="wfp--header-photo" />
-      )}
+      )
+      : null
+    }
+
+      
       <div className="wfp--photo-cardnew__info">
         <div>
           {kind === 'overlay' && (
@@ -109,14 +113,11 @@ Card.propTypes = {
   Additional metadatas
 */
   metadata: PropTypes.string,
-  /**
-  Additional more content
-*/
-  more: PropTypes.node,
+
   /**
   Kind of Card
 */
-  kind: PropTypes.oneOf(['text-card', 'image-header', 'overlay']).isRequired,
+  kind: PropTypes.oneOf(['simple-card', 'overlay']).isRequired,
   /**
   The URL where the content uploaded is located.
 */

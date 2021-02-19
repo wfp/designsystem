@@ -68,7 +68,6 @@ const Tooltip = ({
   );
 
   const Trigger = ({ getTriggerProps, triggerRef }) => {
-  // console.log("children type",typeof children === string)
     if (!createRefWrapper && typeof children !== 'string') {
       const elementClassNames = classnames(children?.props?.className, {
         [`${prefix}--tooltip--trigger`]: true,
@@ -126,12 +125,12 @@ const Tooltip = ({
 
 Tooltip.propTypes = {
   /**
-   * Provide the content for the Link
+   * Provide the children on which the tooltip will show on
    */
   children: PropTypes.node,
 
   /**
-   * Provide a custom className to be applied to the containing <a> node
+   * Provide the content for the tooltip
    */
   content: PropTypes.node,
 
@@ -174,7 +173,7 @@ Tooltip.propTypes = {
    * Whether to use React.createPortal for creating tooltip.
    */
   usePortal: PropTypes.bool,
-  /**
+    /**
    * Use a wrapper html element around the trigger. Useful for components without `forwardRef` support.
    */
   createRefWrapper: PropTypes.bool,

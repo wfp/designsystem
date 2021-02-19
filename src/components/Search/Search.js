@@ -45,7 +45,7 @@ function Search(props) {
       evt.persist();
       evt.imaginaryTarget = _inputRef;
       setValue(evt.target.value);
-      onChange(parseFloat(evt.target.value), evt);
+      onChange(evt.target.value, evt);
     }
   };
 
@@ -54,7 +54,6 @@ function Search(props) {
     setValue(valueState);
     onChange(valueState);
   };
-
 
   const numberInputClasses = classNames(`${prefix}--number`, className, {
     [`${prefix}--number--light`]: light,
@@ -76,14 +75,16 @@ function Search(props) {
     value: value,
   };
 
-
   const clearClasses = classNames({
     'wfp--search-close': true,
     'wfp--search-close--hidden': !value,
   });
 
   return (
-    <Input {...props} formItemClassName={numberInputClasses}>
+    <Input
+      {...props}
+      formItemClassName={numberInputClasses}
+      inputWrapperClassName="wfp--search-input__wrapper">
       {() => {
         return (
           <>
@@ -93,6 +94,7 @@ function Search(props) {
               className="wfp--search-magnifier"
               onClick={onSearchIconClick}
             />
+
             <input
               className="wfp--search-input"
               {...other}
@@ -115,6 +117,32 @@ function Search(props) {
 
 Search.propTypes = {
   /**
+   * Specify if the control should be disabled, or not
+   */
+  disabled: PropTypes.bool,
+
+  /**
+   * Generic `label` that will be used as the textual representation of what
+   * this field is for
+   */
+  labelText: PropTypes.node,
+
+  /**
+   * Specify whether you want the underlying label to be visually hidden
+   */
+  hideLabel: PropTypes.bool,
+
+  /**
+   * Provide text that is used alongside the control label for additional help
+   */
+  helperText: PropTypes.node,
+
+  /**
+   * Specify the placeholder attribute for the &lt;input&gt;
+   */
+  placeholder: PropTypes.string,
+
+  /**
    * Specify an optional className to be applied to the wrapper node
    */
   className: PropTypes.string,
@@ -125,29 +153,17 @@ Search.propTypes = {
   formItemClassName: PropTypes.string,
 
   /**
-   * Specify if the control should be disabled, or not
-   */
-  disabled: PropTypes.bool,
-
-  /**
-   * Specify whether you want the underlying label to be visually hidden
-   */
-  hideLabel: PropTypes.bool,
-
-  /**
    * Specify a custom `id` for the input
    */
   id: PropTypes.string.isRequired,
 
-   /**
-   * Generic `label` that will be used as the textual representation of what
-   * this field is for
-   */
-  labelText: PropTypes.node,
-
-   /**
-   * The new value is available in 'imaginaryTarget.value'
-   * i.e. to get the value: evt.imaginaryTarget.value
+  /**
+   * The new value is available first arg 'searchValue' and evt object if needed is on second arg.
+   * i.e.
+   * const handleChange = (searchValue, evt) => {
+   * console.log("searchValue", searchValue); // a string
+   * console.log("evt", evt); // the whole event object
+   * }
    */
   onChange: PropTypes.func,
 
@@ -155,15 +171,10 @@ Search.propTypes = {
    * Provide an optional function to be called when the up/down button is clicked
    */
   onClick: PropTypes.func,
+};
 
-  /**
-   * Provide text that is used alongside the control label for additional help
-   */
-  helperText: PropTypes.node,
-  /**
-   * `true` to use the light version.
-   */
-  light: PropTypes.bool,
+Search.defaultProps = {
+  disabled: false,
 };
 
 export default Search;

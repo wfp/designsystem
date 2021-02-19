@@ -102,7 +102,7 @@
     }
 
     &::before {
-      content: '*';
+      // content: '-';
       display: inline-block;
       color: var(--support-01);
     }

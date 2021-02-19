@@ -3,12 +3,11 @@ import React from 'react';
 import classNames from 'classnames';
 
 const TYPES = {
-  beta: 'Beta',
-  custom: 'Custom',
-  wfp: 'WFP',
+  info: 'Info',
   error: 'error',
   success: 'Success',
   warning: 'Warning',
+  custom: 'Custom'
 };
 
 /** Tag is used to label, categorize, or organize items using keywords that describe them. */
@@ -40,7 +39,7 @@ Tag.propTypes = {
 };
 
 Tag.defaultProps = {
-  type: 'wfp',
+  type: 'info',
 };
 
 export const types = Object.keys(TYPES);
