@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import markdown from './README.mdx';
-import { action } from '@storybook/addon-actions';
 import Loading from '.';
 import Button from '../Button';
 

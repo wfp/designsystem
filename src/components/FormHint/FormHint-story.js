@@ -4,8 +4,6 @@ import { storiesOf } from '@storybook/react';
 import { withKnobs, text } from '@storybook/addon-knobs';
 import FormHint from './FormHint';
 
-import Tippy from '@tippy.js/react';
-
 const props = () => ({
   className: 'some-class',
   children: text('Label text (labelText)', 'Lorem Ipsum'),

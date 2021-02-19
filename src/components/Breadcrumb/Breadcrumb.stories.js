@@ -5,7 +5,6 @@ import markdown from './README.mdx';
 import Breadcrumb from '.';
 import BreadcrumbHome from '../BreadcrumbHome';
 import BreadcrumbItem from '../BreadcrumbItem';
-import BreadcrumbSkeleton from '../Breadcrumb/Breadcrumb.Skeleton';
 
 export default {
   title: 'Components/Navigations/Breadcrumb',

@@ -2,7 +2,6 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
 import settings from '../../globals/js/settings';
-import FormItem from '../FormItem';
 import Input from '../Input/Input';
 
 const { prefix } = settings;

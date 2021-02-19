@@ -5,8 +5,6 @@ import Icon from '../Icon';
 import {
   iconCaretDown,
   iconCaretUp,
-  iconArrowDown,
-  iconArrowUp,
 } from '@wfp/icons';
 
 export default function TableSorting({

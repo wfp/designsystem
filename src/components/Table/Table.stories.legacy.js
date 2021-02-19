@@ -1,10 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import ReactTable from 'react-table';
 import { useTable } from 'react-table';
 import { withKnobs } from '@storybook/addon-knobs';
-
-import TablePagination from '../TablePagination';
 import Table from './Table';
 import Pagination from '../Pagination';
 

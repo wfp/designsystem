@@ -1,6 +1,6 @@
-import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
+import PropTypes from 'prop-types';
 
 const ModuleFooter = ({ centered, children, className, ...other }) => {
   const wrapperClasses = classNames('wfp--module__footer', className);
