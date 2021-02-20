@@ -1,3 +1,51 @@
+# [1.15.0](https://github.com/WFP/UI/compare/v1.14.0...v1.15.0) (2021-02-16)
+
+
+### Bug Fixes
+
+* **Icons:** version changed ([901c58d](https://github.com/WFP/UI/commit/901c58dc41c9710eae60dba012a84430467f663e))
+* **Input:** added prop type description for all Inputs ([f86ad11](https://github.com/WFP/UI/commit/f86ad114476135f4892f39a2ccd39d85b90a3150))
+* **Input:** merge conflicts solved ([c52d7a7](https://github.com/WFP/UI/commit/c52d7a76aa1513b6f3c15fc432deebfa6eb9a4d6))
+* **package:** added lockfile ([c78e915](https://github.com/WFP/UI/commit/c78e915f8bf101d8542818f45acac39d8c88cfe1))
+* **package:** downgrade wfp ([b7bbd4a](https://github.com/WFP/UI/commit/b7bbd4a9eefcba5b6aa3aaa7a35654733af70d65))
+* **package:** downgraded npm version ([1a23754](https://github.com/WFP/UI/commit/1a237545247786635541a3d8ae87ef62de5e88f4))
+* **package:** lockfile updated ([e625a4c](https://github.com/WFP/UI/commit/e625a4c1e6f80a1f5e48e2730e7adb46eaa6b23b))
+* **package:** updated lock file ([a15bfad](https://github.com/WFP/UI/commit/a15bfad152500a4cb89349c2b245efa88b6075b6))
+* **package:** updated lock file ([b04fd9e](https://github.com/WFP/UI/commit/b04fd9e32a022fa3b75bcd986509ecd0f3a73d83))
+* **package:** updated lock file ([52b5eba](https://github.com/WFP/UI/commit/52b5eba76a17a92d46585f63ac343b56a260c786))
+* **release:** alpha channel added ([7e3aec3](https://github.com/WFP/UI/commit/7e3aec3162ac3a908521f99f3c48ce5403dd0bb3))
+* **Search:** added optional inputWrapperClassName for the wrapper of the input element ([031e1bb](https://github.com/WFP/UI/commit/031e1bb1ba5e6655cc6ca39ab7c67eda80a6830e))
+* **Slider:** Slider min no reflects the correct percentage on the slider ([4875d6c](https://github.com/WFP/UI/commit/4875d6ce351a363ca6e2bc5be382dfd7ffd35565))
+
+
+### Features
+
+* **Semantic:** initial try for seperate alpha releases ([81ad44a](https://github.com/WFP/UI/commit/81ad44a73835ca4369675eb2752cc911ca8279d9))
+
+# [1.14.0](https://github.com/WFP/UI/compare/v1.13.1...v1.14.0) (2021-02-15)
+
+
+### Bug Fixes
+
+* **Input:** minor placeholder added to show how to customize the input ([7e4056a](https://github.com/WFP/UI/commit/7e4056a5f3f674eea727b706da272b202c53d68f))
+* **package:** upgrade node-sass to be compatible with more recent Intel Macs and node v15 ([6d0d37c](https://github.com/WFP/UI/commit/6d0d37cba4dc1295abbbe88f0aa26306a2b34025))
+* **Sidebar:** default export added ([f57d968](https://github.com/WFP/UI/commit/f57d968c2efaed325ece27f853153eddfbeb4229))
+* **Sidebar:** mobile fix ([5dcc5cf](https://github.com/WFP/UI/commit/5dcc5cf7e6e7285ca1e2e824dc1e5a7a038fdacb))
+* **SIdebar:** minor fixes and variable css classNames ([3e4abd3](https://github.com/WFP/UI/commit/3e4abd3becd28de17323893f6430c4a2129d7330))
+* **Text:** component export added ([cb25eb1](https://github.com/WFP/UI/commit/cb25eb11f5082a5ee23c833a3faeca6b3dfae7bd))
+
+
+### Features
+
+* **Item:** added Item component which can be displayed inside the sidebar ([21979ec](https://github.com/WFP/UI/commit/21979ecfd47f52fd133155f8e39b861ffa304ee1))
+* **Item:** added item component wip ([f96a85e](https://github.com/WFP/UI/commit/f96a85e0ea0a02ce15dad8f877ca2de6f9e410fd))
+* **Item:** alignment of the Item component ([6cbb4b6](https://github.com/WFP/UI/commit/6cbb4b6c159dbd653a59de735b4afa0c41748286))
+* **Sidebar:** added some style fixes ([da56c85](https://github.com/WFP/UI/commit/da56c8515b10896a105e1c0846df523fb9f5155c))
+* **Sidebar:** height improvment using flexbox ([9d25547](https://github.com/WFP/UI/commit/9d25547456f7600f1badb89df1f1965e168c1909))
+* **Sidebar:** minor fixes on the height of the total sidebar and improved import of css vars ([a5e6565](https://github.com/WFP/UI/commit/a5e6565b7d8b2cd87d021301eba0512a90f259cb))
+* **Sidebar:** mobile support added ([ae21bcf](https://github.com/WFP/UI/commit/ae21bcf9126b62f757a793a6b9aa8b88ef4ea8e8))
+* **Sidebar:** Sidebar scrolling improved, the SidebarHeader can be now fixed on top ([47d76d6](https://github.com/WFP/UI/commit/47d76d645f1def8c3942b5a6f527e3b35ecb04a3))
+
 ## [1.13.1](https://github.com/WFP/UI/compare/v1.13.0...v1.13.1) (2021-02-01)
 
 

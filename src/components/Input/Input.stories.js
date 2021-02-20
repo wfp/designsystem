@@ -1,6 +1,5 @@
 import React from 'react';
 import markdown from './README.mdx';
-import { action } from '@storybook/addon-actions';
 import Input from '.';
 
 export default {
@@ -13,7 +12,11 @@ export default {
   },
 };
 
-export const Regular = (args) => <Input {...args}>{() => <input />}</Input>;
+export const Regular = (args) => (
+  <Input {...args}>
+    {() => <input placeholder="This can be any type of custom input" />}
+  </Input>
+);
 
 Regular.args = {
   name: 'inputname',

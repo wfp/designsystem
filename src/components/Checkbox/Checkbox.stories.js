@@ -64,6 +64,7 @@ export const Indeterminate = (args) => <Checkbox {...args} />;
 Indeterminate.args = {
   labelText: 'Indeterminate Input',
   indeterminate: true,
+  id: 'check-3',
 };
 
 const indeterminate = `Is a state that is neither checked nor unchecked. It’s that in-between state that we might consider the “Maybe” between “Yes” and “No” options`;
@@ -81,6 +82,7 @@ export const DisabledInput = (args) => <Checkbox {...args} />;
 DisabledInput.args = {
   labelText: 'Disabled Input',
   disabled: true,
+  id: 'check-4',
 };
 
 const disabled = `Specify whether the Checkbox should be interactive or not`;
@@ -98,6 +100,7 @@ export const HideLabel = (args) => <Checkbox {...args} />;
 HideLabel.args = {
   labelText: 'Hidden Label',
   hideLabel: true,
+  id: 'check-5',
 };
 
 const nolabel = `Specify whether the label should be hidden or not`;

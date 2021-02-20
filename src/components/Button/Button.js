@@ -2,7 +2,6 @@ import PropTypes from 'prop-types';
 import React, { useEffect, useState } from 'react';
 import Icon from '../Icon';
 import classNames from 'classnames';
-import { ButtonTypes } from '../../prop-types/types';
 
 /**
  * Buttons express what action will occur when the user clicks or touches it. Buttons are used to initialize an action, either in the background or foreground of an experience. */

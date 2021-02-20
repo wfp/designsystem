@@ -3,7 +3,6 @@ import React from 'react';
 import classnames from 'classnames';
 import Link from '../Link';
 import Wrapper from '../Wrapper';
-import ReactSelect from 'react-select';
 import Icon from '../Icon';
 import sdgIconStandard from './SdgLogo';
 import { iconWfpLogoStandardBlackEn, iconWfpLogoVerticalEn } from '@wfp/icons';

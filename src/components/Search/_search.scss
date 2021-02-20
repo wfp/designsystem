@@ -20,9 +20,9 @@
     width: 100%;
   }
 
-  .#{$prefix}--search .#{$prefix}--label {
-    @include hidden;
-  }
+  // .#{$prefix}--search .#{$prefix}--label {
+  //   @include hidden;
+  // }
 
   .#{$prefix}--search-input {
     @include reset;
@@ -38,7 +38,12 @@
     order: 1;
 
     &:focus {
-      outline: none;
+      // outline: none;
+    }
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
     }
 
     &:focus ~ .#{$prefix}--search-magnifier {
@@ -53,6 +58,10 @@
     &::-ms-clear {
       display: none;
     }
+  }
+
+  .wfp--search-input__wrapper {
+    position: relative;
   }
 
   .#{$prefix}--search--lg {

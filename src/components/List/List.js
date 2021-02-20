@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import classnames from 'classnames';
-import Icon from '../Icon';
 
 /** List component show a number of connected items written consecutively, typically one below the other. */
 
@@ -12,10 +11,20 @@ export const List = ({ children, className, colon, kind, small, ...other }) => {
     'wfp--list--colon': colon,
   });
   return (
-    <ul className={classNames} {...other}>
-      {children}
-    </ul>
-  );
+    <>
+      {
+        kind == "ordered" ? (
+          <ol className={classNames} {...other}>
+          {children}
+          </ol>
+        ) : (
+          <ul className={classNames} {...other}>
+          {children}
+          </ul>
+          )
+      }  
+    </>
+  )
 };
 
 List.propTypes = {
@@ -35,10 +44,10 @@ List.propTypes = {
    * Specify a kind.
    */
   kind: PropTypes.oneOf([
-    'simple',
+    'unstyled',
     'simple-inline',
     'details',
-    'bullets',
+    'unordered',
     'ordered',
     'tooltip',
   ]),
@@ -49,7 +58,7 @@ List.propTypes = {
 };
 
 List.defaultProps = {
-  kind: 'simple',
+  kind: 'unstyled',
   colon: false,
   small: false,
 };

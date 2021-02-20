@@ -6,14 +6,12 @@ import settings from '../../globals/js/settings';
 const { prefix } = settings;
 
 export class SingleDatePickerInput extends PureComponent {
-  
   state = {
     controlledValue: this.props.value ? this.props.value : null,
     focusedInput: null,
   };
 
-  handleFocusChange = focusedInput => {
- 
+  handleFocusChange = (focusedInput) => {
     if (!focusedInput && typeof this.props.onBlur === 'function') {
       this.props.onBlur();
     }
@@ -21,7 +19,6 @@ export class SingleDatePickerInput extends PureComponent {
   };
 
   render() {
-  
     const {
       controlled,
       datePicker,
@@ -75,12 +72,11 @@ export class SingleDatePickerInput extends PureComponent {
           date={onChange && value ? value : controlledValue}
           focused={focused}
           hideKeyboardShortcutsPanel
-          onDateChange={value => {
+          onDateChange={(value) => {
             if (onChange) {
               onChange({ value });
             }
-            this.setState({ controlledValue: value },() => {
-          });
+            this.setState({ controlledValue: value }, () => {});
           }}
           onFocusChange={({ focused }) => {
             this.setState({ focused });
@@ -150,16 +146,17 @@ SingleDatePickerInput.propTypes = {
   /**
    * Specify whether to clear selected date or not
    */
-  showClearDate:PropTypes.bool,
+  showClearDate: PropTypes.bool,
 
   /**
    * Specify whether you want to show the calendar icon. It is true by default.
    */
   showDefaultInputIcon: PropTypes.bool,
   /**
-   * Specify whether the control is currently invalid
+   * Specify whether the control is currently invalid.
+   * Either a boolean in combination with `invalidText` or an `object`( eg. { message: "Message", …otherErrorProperties }) can be passed.
    */
-  invalid: PropTypes.bool,
+  invalid: PropTypes.oneOfType([PropTypes.object, PropTypes.bool]),
 
   /**
    * Provide the text that is displayed when the control is in an invalid state

@@ -40,7 +40,7 @@ export const Default = (args) => (
 );
 Default.args = {
   placeholder: 'Placeholder',
-  isSearch: true,
+  isSearchable: false,
   isMulti: true,
   isDisabled: false,
 };

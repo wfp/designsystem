@@ -35,13 +35,13 @@ export const Regular = (args) => (
 
     <Wizard initialValues={{ employed: true, stooge: 'larry' }}>
       <Page label="Name and last name">
-        <Blockquote style={{ marginBottom: '2rem' }} title="Regular Blockquote">
+        <div style={{marginBottom:'2rem'}}>
+        <Blockquote title="Regular Blockquote">
           Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
           nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-          sed diam voluptua.{' '}
+          sed diam voluptua.
         </Blockquote>
-        <div className="row">
-          <div className="col-md-6">
+        </div>
             <Field
               id="firstName"
               name="firstName"
@@ -50,8 +50,7 @@ export const Regular = (args) => (
               inputComponent={TextInput}
               labelText="First Name"
             />
-          </div>
-          <div className="col-md-6">
+          
             <Field
               id="lastName"
               name="lastName"
@@ -60,9 +59,7 @@ export const Regular = (args) => (
               inputComponent={TextInput}
               labelText="Last Name"
             />
-          </div>
-        </div>
-
+        
         <Field
           component={ReduxFormWrapper}
           inputComponent={TextArea}
@@ -71,14 +68,14 @@ export const Regular = (args) => (
           placeholder="Notes"
         />
 
-        <Field
-          id="firstName"
-          name="firstName"
+        {/* <Field
+          id="firstName2"
+          name="firstName2"
           helperText="Enter your full first name"
           component={ReduxFormWrapper}
           inputComponent={TextInput}
           labelText="First Name"
-        />
+        /> */}
       </Page>
       <Page label="Contact data">
         <FormGroup>
@@ -138,7 +135,7 @@ export const Regular = (args) => (
         <Field
           component={ReduxFormWrapper}
           inputComponent={TextArea}
-          name="newNotes"
+          name="newNotes2"
           labelText="Notes"
           placeholder="Notes"
         />
@@ -150,7 +147,7 @@ export const Regular = (args) => (
         <Field
           component={ReduxFormWrapper}
           inputComponent={TextArea}
-          name="newNotes"
+          name="summary"
           labelText="Summary"
           placeholder="Summary"
         />

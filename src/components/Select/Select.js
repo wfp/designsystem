@@ -110,7 +110,7 @@ Select.propTypes = {
 
   /**
    * Provide an optional `onChange` hook that is called each time the value of
-   * the underlying <input> changes
+   * the underlying `<input>` changes
    */
   onChange: PropTypes.func,
 
@@ -135,9 +135,10 @@ Select.propTypes = {
   hideLabel: PropTypes.bool,
 
   /**
-   * Specify if the currently value is invalid.
+   * Specify whether the control is currently invalid.
+   * Either a boolean in combination with `invalidText` or an `object`( eg. { message: "Message", …otherErrorProperties }) can be passed.
    */
-  invalid: PropTypes.bool,
+  invalid: PropTypes.oneOfType([PropTypes.object, PropTypes.bool]),
 
   /**
    * Message which is displayed if the value is invalid.

@@ -71,7 +71,7 @@ const Unit = (props) => {
   }
 
   if (Unit === undefined) {
-     console.warn(`The unit "${type}" is undefined`); 
+    //  console.warn(`The unit "${type}" is undefined`); 
     return null;
   }
 

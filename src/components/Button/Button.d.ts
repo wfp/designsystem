@@ -1,4 +1,4 @@
-import { bool } from 'prop-types';
+
 
 export interface WFPButton {
   disabled: boolean;

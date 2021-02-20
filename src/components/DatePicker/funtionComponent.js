@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
-import React, { PureComponent, memo, useState } from 'react';
+import React, { memo, useState } from 'react';
+import { DateRangePickerInput } from './DateRangePickerInput';
 import classNames from 'classnames';
 import settings from '../../globals/js/settings';
 

@@ -29,6 +29,7 @@
       order: 1;
     }
 
+    
     /* &:focus ~ .#{$prefix}--label {
       color: var(--interactive-01);
     } */
@@ -59,9 +60,11 @@
       display: none; // IE: Hide "clear-field" `x` button on input field
     }
 
-    &::-webkit-inner-spin-button {
-      appearance: none; // Safari: Hide number spinner
+    &::-webkit-inner-spin-button,
+    ::-webkit-inner-spin-button {
+      -webkit-appearance: none; // Safari: Hide number spinner
     }
+
   }
 
   .#{$prefix}--number__controls {

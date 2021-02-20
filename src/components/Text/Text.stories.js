@@ -3,7 +3,6 @@ import markdown from './README.mdx';
 import Text from '.';
 import Link from '../Link';
 import { List, ListItem } from '../List';
-import { textLookup } from './Text';
 
 export default {
   title: 'Components/UI Elements/Text',

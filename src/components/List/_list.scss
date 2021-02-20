@@ -45,7 +45,9 @@
     }
   }
 
-  .#{$prefix}--list--simple {
+  .#{$prefix}--list--unstyled, 
+  .#{$prefix}--list--simple  //renamed simple to unstyled, keeping simple styling to prevent legacy code from breaking
+  {
     line-height: 1.5em;
 
     li {
@@ -58,7 +60,8 @@
     }
   }
 
-  .#{$prefix}--list--bullets,
+  .#{$prefix}--list--unordered,
+  .#{$prefix}--list--bullets, //renamed bullets to unordered, keeping bullets styling to prevent legacy code from breaking
   .#{$prefix}--list--ordered {
     line-height: 1.6em;
     list-style-type: disc;

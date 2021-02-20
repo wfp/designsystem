@@ -6,7 +6,6 @@ import markdown from './README.mdx';
 import Table from './Table';
 import TableSorting from './TableSorting';
 import Pagination from '../Pagination';
-import ReactDOMServer from 'react-dom/server';
 
 export default {
   title: 'Components/UI Elements/Table',
@@ -72,11 +71,8 @@ function ReactTablePagination({ columns, data, withBorder }) {
     // The rest of these things are super handy, too ;)
     canPreviousPage,
     canNextPage,
-    pageOptions,
     pageCount,
     gotoPage,
-    nextPage,
-    previousPage,
     setPageSize,
     state: { pageIndex, pageSize },
   } = useTable(

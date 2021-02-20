@@ -13,11 +13,14 @@ import { linkTo } from '@storybook/addon-links';
 
 <div class="intro-description">
   <div>
-    <p class="sbdocs sbdocs-p">If you’re curious about what’s new in the Kit, and what’s changed, this is the right place.</p>
+    <p class="sbdocs sbdocs-p">
+      If you’re curious about what’s new in the Kit, and what’s changed, this is
+      the right place.
+    </p>
   </div>
 </div>
 
-***
+---
 
 <br />
 
@@ -25,9 +28,48 @@ import { linkTo } from '@storybook/addon-links';
 
 <br />
 
-## November 2020
-&nbsp;&nbsp;&nbsp;
+## December 2020
+
+#### v1.11.0
+
 ### Documentation
+
+- UI Kit version switcher is now available by clicking the version number beside the Kit label at the top of the sidebar
+- A **What’s new** page is now available, with a list of the latest changes and updates
+- A basic **UIKit-create-react-app** is now available, please check the doc [here](?path=/docs/getting-started-installing-the-kit--page)
+- A tool is now available to easily switch viewport size and check the components behaviour (components docs, “Code” tab)
+- Minor fixes to the previews of the components
+- Adjusted keys in **colors.json** [github: #328](https://github.com/wfp/ui/issues/328)
+
+### Components
+
+- Blockquote - fixed the propType spelling issue [github: #323](https://github.com/wfp/ui/issues/323)
+- CardNew - renamed the component to Card and fixed an issue that was preventing the component to properly render
+- Darkmode - optional darkmode added show documentation
+- FormGroup - align property added, to easily toggle horizontal and vertical alignment
+- InputGroup - added label and helper text, previously missing
+- Loading - the background color is now provided via native css variable [github: #327](https://github.com/wfp/ui/issues/327)
+- MainNavigation - added vanilla JS code example
+- Modal - fixed the background color code
+- Notification - export added [github: #326](https://github.com/wfp/ui/issues/326)
+- NumberInput - propType for prop invalid is now correct [github: #322](https://github.com/wfp/ui/issues/322)
+- RadioButtonGroup - added legacy package
+- ReactSelect - updated examples
+- ReadMore -automatically scrolls content into view when getting extended
+- Slider - rewritten using native html5 range slider and hooks [github: #340](https://github.com/wfp/ui/issues/340)
+- StepNavigation - updated props and color variables, removed console.logs [github: #334](https://github.com/wfp/ui/issues/334)
+- Table - export added [github: #325](https://github.com/wfp/ui/issues/325)
+- TextInput - fixed bug for prop name [github: #321](https://github.com/wfp/ui/issues/321)
+- Unit - locale prop renamed and num-type with same input [github: #307](https://github.com/wfp/ui/issues/307)
+
+<br />
+
+## November 2020
+
+&nbsp;&nbsp;&nbsp;
+
+### Documentation
+
 - New **documentation structure**, it should now be easier for you to get to the info you are looking for
 - Improved documentation for **component**, with examples, do’s and don’ts, formatting and UX writing rules, best practices and references
 - **React** and **HTML** code are now provided for each example or template
@@ -38,39 +80,45 @@ import { linkTo } from '@storybook/addon-links';
 - The bug that was causing the icon generator in the Icons page to not work properly has now been fixed
 
 ### Design resources
+
 - Work in progress on a new Sketch library, available for initial testing
 
 ### Testing and CI/CD
+
 - **Unit tests** - 583 jest unit tests running in 59 test suites
 - **Amazon Web Services** - the Kit is now hosted on AWS S3
 - **Azure DevOps** - automated publishing with Azure DevOps pipelines to AWS S3
 - **semantic-release** - [automated releases and change log generation based on commit messages](https://github.com/wfp/ui/releases)
 
 ### CSS
+
 - There is a new color code for the `text-03` variable
 - The usage of sass variables has been dropped, in favour of **CSS native variables**, [complete list here](https://github.com/wfp/ui/blob/master/src/globals/scss/_theme-tokens.scss)
 
 ### Dropped components
+
 - **RadioButtonGroup** - it has been merged into the more generic InputGroup component, which can - be used to generate groups of RadioButton or Checkbox elements, check it here
 - **ReduxFormWrapper** - it is no longer recommended to use redux-form but it is, for now, still available as a component in the package.
 
 ### Updated/Fixed components
+
 - [BannerNavigation](https://uikit.wfp.org/docs/index.html?path=/docs/components-navigations-bannernavigation--regular-navigation) - fixed a bug where the component was hidden on tablets
-- [FileUploader](https://uikit.wfp.org/docs/index.html?path=/docs/components-forms-fileuploader-react-dropzone--regular)  - now using react-dropzone , to ensure the different use cases are covered
+- [FileUploader](https://uikit.wfp.org/docs/index.html?path=/docs/components-forms-fileuploader-react-dropzone--regular) - now using react-dropzone , to ensure the different use cases are covered
 - [FormHint](https://uikit.wfp.org/docs/index.html?path=/docs/components-forms-formhint--regular) - now has its own implementation, no more third party libraries
 - [Tooltip](https://uikit.wfp.org/docs/index.html?path=/docs/components-ui-elements-tooltip--regular) - now has its own implementation, no more third party libraries
 - [Card](https://uikit.wfp.org/docs/index.html?path=/docs/components-content-related-card--text-card) - it was holding variations that were more like heroes elements, so the two have been split and the Hero now is a component on its own
 - [Pagination](https://uikit.wfp.org/docs/index.html?path=/docs/components-ui-elements-pagination--regular) - improved the usability and the look and feel
 - [List](https://uikit.wfp.org/docs/index.html?path=/docs/components-ui-elements-list--regular) - now added multiple styles
 - [NumberInput](https://uikit.wfp.org/docs/index.html?path=/docs/components-forms-numberinput--regular) - better handling for developers, it should now be easier to use
-- [Notification, legacy](https://uikit.wfp.org/docs/index.html?path=/docs/components-ui-elements-notification-legacy--regular)  - now called Notification (legacy), as a new component is available (see below)
+- [Notification, legacy](https://uikit.wfp.org/docs/index.html?path=/docs/components-ui-elements-notification-legacy--regular) - now called Notification (legacy), as a new component is available (see below)
 
 ### New components
-- [Hero](https://uikit.wfp.org/docs/index.html?path=/docs/components-content-related-hero--regular)  - several variations for your Hero needs.
+
+- [Hero](https://uikit.wfp.org/docs/index.html?path=/docs/components-content-related-hero--regular) - several variations for your Hero needs.
 - [Input](https://uikit.wfp.org/docs/index.html?path=/docs/components-forms-input--regular) - a wrapper for creating custom inputs handling labels, form hints and error messages
 - [InputGroup](https://uikit.wfp.org/docs/index.html?path=/docs/components-forms-inputgroup--regular) - can be used to generate groups of RadioButton or Checkbox elements
 - [MdxComponent](https://uikit.wfp.org/docs/index.html?path=/docs/components-content-related-mdx-components--regular) - multiple components for rendering markdown with WFPs styling
-- [Notification](https://uikit.wfp.org/docs/index.html?path=/docs/components-ui-elements-notification--toast) -  it does not use react-toastify, updated look and feel
+- [Notification](https://uikit.wfp.org/docs/index.html?path=/docs/components-ui-elements-notification--toast) - it does not use react-toastify, updated look and feel
 - [Table](https://uikit.wfp.org/docs/index.html?path=/docs/components-ui-elements-table--regular) - it now has a basic implementation, not based on an external library, which is purely for data representation. We still recommend React-Table for additional features and ag-grid for even more advanced, Excel-like, functionalities.
 - [Text](https://uikit.wfp.org/docs/index.html?path=/docs/components-ui-elements-text--regular) - a utility component to align the text in your app to the official typography, avoiding global styling and the risk of side effects.
 - [Unit](https://uikit.wfp.org/docs/index.html?path=/docs/components-content-related-unit--regular) - a utility component that combines figures and their sensitive representation following the official editorial guidelines. Several units are provided, e.g. currency, metric tons, people, beneficiaries, etc.

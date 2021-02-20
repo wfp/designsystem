@@ -87,7 +87,7 @@ export const Bullet = (args) => (
 );
 
 Bullet.args = {
-  kind: 'bullets',
+  kind: 'unordered',
 };
 
 const msgg = ` \`bullet\` \`kind\` shows bulleted list items`;
@@ -144,7 +144,7 @@ ListColumns.story = {
 };
 
 export const ListitemBullets = (args) => (
-  <List kind="bullets">
+  <List kind="unordered">
     <ListItem kind="checkmark">checkmark</ListItem>
 
     <ListItem kind="cross">cross</ListItem>
@@ -152,7 +152,7 @@ export const ListitemBullets = (args) => (
   </List>
 );
 
-const listItemDescription = ` \`bullets\` List with ListItems can have \`checkmark\` and \`cross\` kinds`;
+const listItemDescription = ` \`unordered\` List with ListItems can have \`checkmark\` and \`cross\` kinds`;
 
 ListitemBullets.story = {
   parameters: {

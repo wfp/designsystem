@@ -2,7 +2,6 @@ import React, { useRef } from 'react';
 import Link from '../../components/Link';
 import { List, ListItem } from '../../components/List';
 import Page from '../Page';
-import Blockquote from '../../components/Blockquote';
 
 import { linkTo } from '@storybook/addon-links';
 import ColorList from './ColourList';
@@ -124,7 +123,7 @@ const ColourDocs = () => {
 
       <ColorList filter="brand" />
 
-      <Color color="brand-01" />
+      <Colour color="brand-01" />
       <h4 className="wfp--story__sub-heading">WFP's corporate colour</h4>
       <p>
         The brand-01 colour is WFP’s corporate blue which is used in all
@@ -156,7 +155,7 @@ const ColourDocs = () => {
         </div>
       </section>
 
-      <Color color="interactive-01" />
+      <Colour color="interactive-01" />
       <h4 className="wfp--story__sub-heading">
         Primary interactive colour, primary buttons
       </h4>
@@ -176,7 +175,7 @@ const ColourDocs = () => {
         src={`${process.env.STORYBOOK_INTERNAL_ASSETS}internal/brand-color.png`}
       />
 
-      <Color color="interactive-02" />
+      <Colour color="interactive-02" />
       <h4 className="wfp--story__sub-heading">
         Interactive emphasis colour (e.g. hovers)
       </h4>
@@ -217,7 +216,7 @@ const ColourDocs = () => {
         </div>
       </section>
 
-      <Color color="accent-01" />
+      <Colour color="accent-01" />
       <h4 className="wfp--story__sub-heading">Accent secondary colour</h4>
       <img
         alt="Brand colour"
@@ -334,18 +333,18 @@ const ColourDocs = () => {
 
       <ColorList filter="support" />
 
-      {/* <Color color="support-01" />
+      {/* <Colour color="support-01" />
       <p>
         Use the error colour to indicate an error or to focus the attention on
         something which is crucial to see. Paired with a cross icon, red
         delivers the message that something went wrong.{' '}
       </p>
-      <Color color="support-02" />
+      <Color colour="support-02" />
       <p>
         Use green to indicate success state. Paired with a checkmark icon the
         user knows that the operation was successfully completed.
       </p>
-      <Color color="support-03" />
+      <Colour color="support-03" />
       <p>
         Use yellow to indicate a transient warning which is less important than
         an error message. Yellow typically consists of items which require the

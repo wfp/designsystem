@@ -5,6 +5,7 @@ import markdown from './README.mdx';
 import Hero from '.';
 import Button from '../Button';
 import Icon from '../Icon';
+import { iconWfpHumEmergencyResponsePos } from '@wfp/icons';
 
 export default {
   title: 'Components/Content Related/Hero',
@@ -16,7 +17,7 @@ export default {
   },
 };
 
-import { iconWfpHumEmergencyResponsePos } from '@wfp/icons';
+
 
 export const Regular = (args) => <Hero {...args} />;
 
@@ -214,7 +215,7 @@ Emergencies.args = {
       />
       <span>
         Curabitur ullamcorper ultricies nisi. Proin magna.{' '}
-        <a href="#">Etiam iaculis nunc ac metus</a>
+        <a>Etiam iaculis nunc ac metus</a>
       </span>
     </>
   ),

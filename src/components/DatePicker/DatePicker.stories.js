@@ -4,16 +4,11 @@ import React, { useState } from 'react';
 import { SingleDatePickerInput } from './SingleDatePickerInput';
 import { DateRangePickerInput } from './DateRangePickerInput';
 import Input from '../Input';
-import store from '../../internal/configureStore';
-import FormWrapper from '../../internal/RfFormWrapper';
 import moment from 'moment';
-import { Provider } from 'react-redux';
-import { Field } from 'redux-form';
 import { Controller, useForm } from 'react-hook-form';
 
 import 'react-dates/initialize';
 import { SingleDatePicker, DateRangePicker } from 'react-dates';
-import ReduxFormWrapper from '../ReduxFormWrapper';
 import markdown from './README.mdx';
 
 export default {
@@ -27,7 +22,7 @@ export default {
   },
 };
 
-export const singleDatePickerNew = (args) => {
+export const SingleDatePickerNew = (args) => {
   const [date, setDate] = useState(moment());
   const [focused, setFocused] = useState(false);
   return (
@@ -47,10 +42,10 @@ export const singleDatePickerNew = (args) => {
   );
 };
 
-export const singleDatePickerNewReactHookForm = (args) => {
+export const SingleDatePickerNewReactHookForm = (args) => {
   const defaultValues = { test: '2020-12-01T11:00:00.000Z' };
   const [focused, setFocused] = useState(false);
-  const { control, register, handleSubmit } = useForm({ defaultValues });
+  const { control,  handleSubmit } = useForm({ defaultValues });
 
   const onSubmit = (data) => alert(JSON.stringify(data));
 
@@ -79,8 +74,8 @@ export const singleDatePickerNewReactHookForm = (args) => {
   );
 };
 
-export const singleDatePicker = (args) => <SingleDatePickerInput {...args} />;
-singleDatePicker.args = {
+export const SingleDatePickerDefault = (args) => <SingleDatePickerInput {...args} />;
+SingleDatePickerDefault.args = {
   datePicker: SingleDatePicker,
   labelText: 'Label text (labelText)',
   placeholder: 'Placeholder text (placeholder)',
@@ -114,7 +109,7 @@ import { SingleDatePicker } from 'react-dates';
 />
 `
 
-singleDatePicker.story = {
+SingleDatePickerDefault.story = {
   parameters: {
     docs: {
       source: {
@@ -124,8 +119,8 @@ singleDatePicker.story = {
   }
 }
 
-export const dateRangePicker = (args) => <DateRangePickerInput {...args} />;
-dateRangePicker.args = {
+export const DateRangePickerDefault = (args) => <DateRangePickerInput {...args} />;
+DateRangePickerDefault.args = {
   datePicker: DateRangePicker,
   date: moment(),
   labelText: 'Label text (labelText)',
@@ -159,7 +154,7 @@ import { DateRangePicker } from 'react-dates';
 />
 `
 
-dateRangePicker.story = {
+DateRangePickerDefault.story = {
   parameters: {
     docs: {
       source: {

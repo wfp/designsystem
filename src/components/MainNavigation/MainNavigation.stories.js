@@ -95,7 +95,6 @@ export const Regular = (args) => (
             <Search
               kind="main"
               id="search-2"
-              labelText="Search"
               placeHolderText="Search"
               onChange={action('onChange')}
             />
@@ -241,7 +240,6 @@ const sourcecode =(type)=>{
           <Search
           kind="main"
           id="search-2"
-          labelText="Search"
           placeHolderText="Search"
           />
       </MainNavigationItem>
@@ -387,7 +385,6 @@ export const RegularWithButton = (args) => (
             <Search
               kind="main"
               id="search-2"
-              labelText="Search"
               placeHolderText="Search"
               onChange={action('onChange')}
             />

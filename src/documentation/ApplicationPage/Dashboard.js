@@ -1,7 +1,6 @@
 /* eslint-disable no-console */
 
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import Link from '../../components/Link';
 import { Module, ModuleHeader, ModuleBody } from '../../components/Module';
 import Page from '../Page';
