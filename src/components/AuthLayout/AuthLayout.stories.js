@@ -23,7 +23,7 @@ export default {
 export const Regular = (args) => (
   <AuthLayout {...args}>
     <FormGroup style={{width:'80%'}}>
-        <Button icon={iconArrowLeft} iconReverse kind="tertiary" style={{marginBottom:'3rem'}}>
+        <Button icon={iconArrowLeft} iconReverse kind="secondary" style={{marginBottom:'3rem'}}>
         Back to lorem
         </Button>
         <TextInput
@@ -72,7 +72,7 @@ Regular.args ={
 export const WithImage = (args) => (
     <AuthLayout {...args}>
       <FormGroup style={{width:'80%'}}>
-          <Button icon={iconArrowLeft} iconReverse kind="tertiary" style={{marginBottom:'3rem'}}>
+          <Button icon={iconArrowLeft} iconReverse kind="secondary" style={{marginBottom:'3rem'}}>
           Back to lorem
           </Button>
           <TextInput
