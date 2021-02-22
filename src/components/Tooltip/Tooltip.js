@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
-import TooltipTrigger from 'react-popper-tooltip';
+import TooltipTrigger, { usePopperTooltip } from 'react-popper-tooltip';
 
 import settings from '../../globals/js/settings';
 const { prefix } = settings;
@@ -24,7 +24,7 @@ export const tooltipStyleDark = {
 const Tooltip = ({
   className,
   dark,
-  disablePadding,
+  noPadding,
   children,
   content,
   trigger = 'hover',
@@ -37,7 +37,7 @@ const Tooltip = ({
   const [visibility, setVisibility] = useState(false);
   const classNames = classnames(className, {
     [`${prefix}--tooltip`]: true,
-    [`${prefix}--tooltip--disable-padding`]: disablePadding,
+    [`${prefix}--tooltip--disable-padding`]: noPadding,
     [`${prefix}--tooltip--visible`]: visibility,
     [`${prefix}--tooltip--${trigger}`]: trigger,
     [`${prefix}--tooltip--dark`]: dark,
@@ -50,12 +50,7 @@ const Tooltip = ({
     getTooltipProps,
     placement,
   }) => (
-    <div
-      {...getTooltipProps({
-        ref: tooltipRef,
-        className: classNames,
-        'data-placement': placement,
-      })}>
+    <div ref={tooltipRef} className={classNames} dataPlacement={placement}>
       <div
         {...getArrowProps({
           ref: arrowRef,
@@ -63,22 +58,31 @@ const Tooltip = ({
           'data-placement': placement,
         })}
       />
-      {content}
+      <span onClick={setVisibility(false)}>CLOSE</span>
+      {typeof content === 'function'
+        ? content({ setVisibility, visibilityChange })
+        : content}
     </div>
   );
 
-  const Trigger = ({ getTriggerProps, triggerRef }) => {
+  const {
+    getArrowProps,
+    getTooltipProps,
+    setTooltipRef,
+    setTriggerRef,
+    visible,
+  } = usePopperTooltip({ trigger: 'click', delayHide: 1000 });
+
+  const Trigger = ({ getTriggerProps, setTriggerRef }) => {
     if (!createRefWrapper && typeof children !== 'string') {
       const elementClassNames = classnames(children?.props?.className, {
         [`${prefix}--tooltip--trigger`]: true,
       });
 
       return React.cloneElement(children, {
-        ...getTriggerProps({
-          ...children.props,
-          ref: triggerRef,
-          className: elementClassNames,
-        }),
+        ...children.props,
+        ref: setTriggerRef,
+        className: elementClassNames,
       });
     }
 
@@ -87,11 +91,7 @@ const Tooltip = ({
     });
 
     return (
-      <span
-        {...getTriggerProps({
-          ref: triggerRef,
-          className: wrapperClassNames,
-        })}>
+      <span ref={setTriggerRef} className={wrapperClassNames}>
         {children}
       </span>
     );
@@ -102,8 +102,8 @@ const Tooltip = ({
     if (onVisibilityChange) onVisibilityChange(e);
   };
 
-  return (
-    <TooltipTrigger
+  /*
+  <TooltipTrigger
       placement={placement}
       trigger={trigger}
       tooltip={Tooltip}
@@ -118,8 +118,26 @@ const Tooltip = ({
         },
         ...modifiers,
       ]}>
-      {Trigger}
-    </TooltipTrigger>
+      */
+
+  return (
+    <>
+      {/*trigger*/}
+
+      <button type="button" ref={setTriggerRef}>
+        Trigger element
+      </button>
+      {visible && (
+        <div
+          ref={setTooltipRef}
+          {...getTooltipProps({ className: classNames })}>
+          {typeof content === 'function'
+            ? content({ setVisibility, visibilityChange })
+            : content}
+          <div {...getArrowProps({ className: `${prefix}--tooltip__arrow` })} />
+        </div>
+      )}
+    </>
   );
 };
 
@@ -141,7 +159,7 @@ Tooltip.propTypes = {
   /**
    * Disable the default inner padding of the tooltip
    */
-  disablePadding: PropTypes.bool,
+  noPadding: PropTypes.bool,
   /**
    * Provide the placement of the tooltip
    */
@@ -173,7 +191,7 @@ Tooltip.propTypes = {
    * Whether to use React.createPortal for creating tooltip.
    */
   usePortal: PropTypes.bool,
-    /**
+  /**
    * Use a wrapper html element around the trigger. Useful for components without `forwardRef` support.
    */
   createRefWrapper: PropTypes.bool,

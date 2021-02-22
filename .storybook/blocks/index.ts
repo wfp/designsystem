@@ -24,6 +24,5 @@ export * from './Subheading';
 export * from './Subtitle';
 export * from './Title';
 export * from './Wrapper';
-
 export * from './types';
 export * from './mdx';

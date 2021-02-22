@@ -26,7 +26,7 @@
   @include layer('pop-out');
   z-index: 1000;
   @include typescale('zeta');
-  &[data-placement*='bottom'] {
+  &[data-popper-placement*='bottom'] {
     .#{$prefix}--tooltip__arrow {
       top: 0;
       left: 0;
@@ -37,7 +37,7 @@
       }*/
     }
   }
-  &[data-placement*='top'] {
+  &[data-popper-placement*='top'] {
     .#{$prefix}--tooltip__arrow {
       bottom: 0;
       left: 0;
@@ -48,7 +48,7 @@
       }*/
     }
   }
-  &[data-placement*='right'] {
+  &[data-popper-placement*='right'] {
     .#{$prefix}--tooltip__arrow {
       left: 0;
       margin-left: -4px;
@@ -58,7 +58,7 @@
       }*/
     }
   }
-  &[data-placement*='left'] {
+  &[data-popper-placement*='left'] {
     .#{$prefix}--tooltip__arrow {
       right: 0;
       margin-right: -4px;

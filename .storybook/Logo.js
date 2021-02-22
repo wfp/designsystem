@@ -31,7 +31,7 @@ export function StorybookLogo() {
             ))}
           </List>
         }
-        disablePadding
+        noPadding
         trigger="click">
         <span
           style={{

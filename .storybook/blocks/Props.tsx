@@ -240,7 +240,11 @@ export const Props: FC<PropsProps> = (props) => {
         : subcomponents;
   }
   if (story) {
-    return <StoryTable {...(props as StoryProps)} components={allComponents} />;
+    if (main) {
+      return (
+        <StoryTable {...(props as StoryProps)} components={allComponents} />
+      );
+    } else return null;
   }
 
   if (!components && !subcomponents) {

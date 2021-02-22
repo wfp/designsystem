@@ -103,7 +103,7 @@
   },
   "dependencies": {
     "invariant": "^2.2.4",
-    "react-popper-tooltip": "^3.1.1",
+    "react-popper-tooltip": "^4.1.0",
     "warning": "^4.0.3",
     "window-or-global": "^1.0.1"
   },

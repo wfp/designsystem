@@ -59,10 +59,20 @@
         background: var(--ui-02);
       }
     }
+    &--sidebar {
+      cursor: pointer;
+      border-bottom: 1px solid var(--ui-03);
+      &.#{$prefix}--item--active {
+        background: var(--ui-02);
+      }
+    }
     &--repeater {
       cursor: pointer;
-      background: var(--ui-02);
-      margin-bottom: 1em;
+      background: var(--ui-04);
+      margin-bottom: 0.3em;
+      &.#{$prefix}--item--active {
+        background: var(--ui-04);
+      }
     }
     &--button {
       padding: 1em;
