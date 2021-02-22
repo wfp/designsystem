@@ -230,7 +230,7 @@ const colors = {
     hex: '#f7b825',
     scss: '$accent-01',
     css: 'color__accent-01',
-    type: 'brand',
+    type: 'brand-accent', //replaced type brand to brand-accent to prevent it from showing it
     shortDescription: 'Accent colour (recommended)',
   },
   'brand-01-20': {

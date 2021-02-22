@@ -116,8 +116,8 @@ const ColourDocs = () => {
         actions and highlight information in your application. Yellow is the
         recommended <b>secondary accent colour</b>: to use a different colour
         please contact{' '}
-        <Link href="mailto:wfp.publications@wfp.org">
-          wfp.publications@wfp.org
+        <Link href="mailto:hq.creativestudio@wfp.org">
+          hq.creativestudio@wfp.org
         </Link>
       </p>
 
@@ -238,16 +238,16 @@ const ColourDocs = () => {
         be maximum 10 % of colour of the whole product. Yellow is the
         recommended accent colour. To use a different accent colour then yellow
         please contact{' '}
-        <Link href="mailto:wfp.publications@wfp.org">
-          wfp.publications@wfp.org
+        <Link href="mailto:hq.creativestudio@wfp.org">
+          hq.creativestudio@wfp.org
         </Link>
         .
       </p>
       {/*<p>
         Yellow is the recommmended accent colour. To use a different accent
         colour then yellow please contact{' '}
-        <Link href="mailto:wfp.publications@wfp.org">
-          wfp.publications@wfp.org
+        <Link href="mailto:hq.creativestudio@wfp.org">
+          hq.creativestudio@wfp.org
         </Link>
       </p>*/}
       <section className="dodonot">

@@ -10,7 +10,7 @@ export default {
   parameters: {
     componentSubtitle: 'Example',
     mdx: markdown,
-    status: 'experimental',
+    status: 'released',
     previewWidth: 'full'
   },
 };
