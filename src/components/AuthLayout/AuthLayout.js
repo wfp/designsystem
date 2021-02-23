@@ -30,17 +30,17 @@ export default function AuthLayout({
 
 AuthLayout.propTypes = {
     /**
-     * The content usually consisting out of `BannerNavigationItem`
+     * The content usually consisting out of forms
      */
     children: PropTypes.node.isRequired,
 
     /**
-     * The content usually consisting out of `BannerNavigationItem`
+     * The image is set as background on the left section when provided
      */
     image: PropTypes.node,
 
     /**
-     * The content usually consisting out of `BannerNavigationItem`
+     * This usually consist of `<BackgroundContent/>` if you wish to provide content and background color instead of an image
      */
     backgroundContent: PropTypes.node,
 
@@ -53,14 +53,14 @@ AuthLayout.propTypes = {
 
 export function BackgroundContent({children, ...other}){
     return(
-        <div {...other}>{children}</div>
+        <div {...other} className="wfp--auth-background-content">{children}</div>
     )
 }
 
 
 BackgroundContent.propTypes = {
     /**
-     * The content usually consisting out of `BannerNavigationItem`
+     * The content usually consisting out of `<BackgroundContent/>`
      */
     children: PropTypes.node.isRequired,
     /**

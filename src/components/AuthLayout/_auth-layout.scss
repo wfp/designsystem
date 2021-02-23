@@ -24,6 +24,11 @@
             
         }
 
+        .#{$prefix}--auth-background-content{
+            width: 100%;
+            height: 100vh;
+        }
+
         .#{$prefix}--auth-background-image{
             object-fit: cover;
             background-size: cover;
@@ -39,4 +44,6 @@
             align-items: center;
         }
     }
+
+    
 }

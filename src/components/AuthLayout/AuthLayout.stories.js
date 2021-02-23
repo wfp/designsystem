@@ -20,7 +20,25 @@ export default {
   },
 };
 
-export const Regular = (args) => (
+
+export const Regular = (args) =>{
+    return(
+        <AuthLayout {...args}
+        backgroundContent={
+            <BackgroundContent style={{
+            background: '#0A6EB4', 
+            color:'#fff', 
+            padding:'3rem'}}>
+                Image can be placed here or just give a background with content like this
+            </BackgroundContent>
+        }
+        >
+            <div>Forms will be here</div>
+        </AuthLayout>
+    )
+}
+
+export const RegularNoImage = (args) => (
   <AuthLayout {...args}>
     <FormGroup style={{width:'80%'}}>
         <Button icon={iconArrowLeft} iconReverse kind="secondary" style={{marginBottom:'3rem'}}>
@@ -48,12 +66,10 @@ export const Regular = (args) => (
   </AuthLayout>
 );
 
-Regular.args ={
+RegularNoImage.args ={
     backgroundContent:(
         <BackgroundContent style={{
             background: 'linear-gradient(0.13deg, #357DB6 0.17%, #5DB2C2 99.95%)', 
-            width:'100%', 
-            height:'100vh', 
             color:'#fff', 
             padding:'3rem'}}>
             <Icon 
