@@ -1,7 +1,7 @@
 const colors = {
   main: {
     name: 'main',
-    hex: '#0A6EB4',
+    hex: '#007DBC', // previously 0A6EB4
     scss: '$color__main',
     type: 'communications',
     },
@@ -203,7 +203,7 @@ const colors = {
   },
   'brand-01': {
     name: 'brand-01',
-    hex: '#0A6EB4',
+    hex: '#007DBC', //previously 0A6EB4
     scss: '$brand-01',
     css: 'color__brand-01',
     type: 'brand',

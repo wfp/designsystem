@@ -1,7 +1,7 @@
 {
   "brand": {
     "name": "brand-01",
-    "hex": "#0A6EB4",
+    "hex": "#007DBC",
     "scss": "$color__brand"
   },
   "navy": {
@@ -194,7 +194,7 @@
   },
   "main": {
     "name": "main",
-    "hex": "#0A6EB4",
+    "hex": "#007DBC",
     "scss": "$color__main",
     "type": "communications"
   },

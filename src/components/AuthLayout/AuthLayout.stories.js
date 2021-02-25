@@ -26,7 +26,7 @@ export const Regular = (args) =>{
         <AuthLayout {...args}
         backgroundContent={
             <BackgroundContent style={{
-            background: '#0A6EB4', 
+            background: '#007DBC', 
             color:'#fff', 
             padding:'3rem'}}>
                 Image can be placed here or just give a background with content like this
