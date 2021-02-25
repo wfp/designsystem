@@ -2,7 +2,8 @@
   "brand": {
     "name": "brand-01",
     "hex": "#007DBC",
-    "scss": "$color__brand"
+    "scss": "$color__brand",
+    "css": "color__brand-01"
   },
   "navy": {
     "name": "navy",
