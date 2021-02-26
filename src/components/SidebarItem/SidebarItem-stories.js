@@ -3,7 +3,7 @@ import React from 'react';
 import markdown from './README.mdx';
 
 import SidebarItem from './SidebarItem';
-import Tag from '../../components/Tag';
+import Tag from '../Tag';
 
 export default {
   title: 'Components/UI Elements/SidebarItem',

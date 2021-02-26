@@ -155,15 +155,15 @@ storiesOf('Design|Core', module)
         be maximum 10 % of colour of the whole product. Yellow is the
         recommended accent colour. To use a different accent colour then yellow
         please contact{' '}
-        <Link href="mailto:wfp.publications@wfp.org">
-          wfp.publications@wfp.org
+        <Link href="mailto:hq.creativestudio@wfp.org">
+          hq.creativestudio@wfp.org
         </Link>
         .
       </p>
       <p>
         Yellow is the recommmended accent colour. <br />
         To use a different accent colour then yellow please contact
-        wfp.publications@wfp.org
+        hq.creativestudio@wfp.org
       </p>
       <h4>Secondary colours are best for:</h4>
       <List kind="bullet">

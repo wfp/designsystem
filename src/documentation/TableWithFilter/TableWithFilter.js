@@ -18,6 +18,10 @@ function TableWithFilter() {
       setSearch(formdata)
     }
 
+    const handleClearFilters = () =>{
+      setSearch({});
+    }
+
     const handleSearchOnchange = (value) =>{
         setSimpleSearch(value)
     }
@@ -53,7 +57,7 @@ function TableWithFilter() {
         </ModuleHeader>
         {filterActivated && (
           <ModuleBody>
-            <MyForm onFormChange={handleOnFormSubmit}/>
+            <MyForm onFormChange={handleOnFormSubmit} clearFilters={handleClearFilters}/>
           </ModuleBody>
         )}
         <Table filterText={simpleSearch} advanceFilter={search} /> 

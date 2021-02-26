@@ -24,7 +24,7 @@ export const Regular = (args) => (
     <Story className="wfp--story__center wfp--story__full-height">
       <Icon
         icon={iconWfpHumEmergencyResponsePos}
-        fill="#0a6eb4"
+        fill="#007DBC"
         width={200}
         height={200}
         style={{ marginBottom: '3rem', transform: 'rotate(10deg)' }}
@@ -54,7 +54,7 @@ import { iconWfpHumEmergencyResponsePos } from '@wfp/icons';
   <Story className="wfp--story__center wfp--story__full-height">
     <Icon
       icon={iconWfpHumEmergencyResponsePos}
-      fill="#0a6eb4"
+      fill="#007DBC"
       width={200}
       height={200}
       style={{ marginBottom: '3rem', transform: 'rotate(10deg)' }}

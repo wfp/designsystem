@@ -1,7 +1,7 @@
 const colors = {
   main: {
     name: 'main',
-    hex: '#0A6EB4',
+    hex: '#007DBC', // previously 0A6EB4
     scss: '$color__main',
     type: 'communications',
     },
@@ -203,8 +203,8 @@ const colors = {
   },
   'brand-01': {
     name: 'brand-01',
-    hex: '#0A6EB4',
-    scss: '$brand-01',
+    hex: '#007DBC', //previously 0A6EB4
+    scss: 'var(--brand-01)',
     css: 'color__brand-01',
     type: 'brand',
     shortDescription: 'WFP brand color',
@@ -230,7 +230,7 @@ const colors = {
     hex: '#f7b825',
     scss: '$accent-01',
     css: 'color__accent-01',
-    type: 'brand',
+    type: 'brand-accent', //replaced type brand to brand-accent to prevent it from showing it
     shortDescription: 'Accent colour (recommended)',
   },
   'brand-01-20': {

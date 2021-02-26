@@ -5,7 +5,7 @@ import { ColourList } from './ColourList';
 
 <Meta
   title="Documentation/Core/Colours"
-  subtitle=""
+  subtitle="subtitle"
   parameters={{
     previewTabs: {
       canvas: { hidden: true },
@@ -13,18 +13,20 @@ import { ColourList } from './ColourList';
   }}
 />
 
+<hr/>
+
 WFP online visual identity includes the following colours:
 
 - [primary](#primary-colours)
 - [extended primary](#extended-primary-palette)
 - [neutrals](#neutral-colors)
-- [dataviz](#tints-to-use-in-graphs-and-charts)
+- [dataviz](#data-visualisation-palettes)
 - [semantic](#semantic-colours)
 - [symbolic](#symbolic-colours)
 
 The WFP official branding palette can be found [here](http://brand.manuals.wfp.org/en/core-elements/colours/colour-palette/).
 
-Use the _70–25–5_ rule to create sense of balance and allow the eye to
+<!-- Use the _70–25–5_ rule to create sense of balance and allow the eye to
 move comfortably from one focal point to the next.
 
 <img
@@ -36,7 +38,7 @@ move comfortably from one focal point to the next.
     marginLeft: '0em',
   }}
   src={`${process.env.STORYBOOK_INTERNAL_ASSETS}internal/colors.png`}
-/>
+/> -->
 
 ### Primary Colours
 
@@ -45,9 +47,8 @@ frequently in the interface. **Brand-01 is the base branding colour**,
 corresponding to WFP’s corporate blue: it is used for brand elements and
 non-interactive elements. **Interactive colours** are used for primary
 links and action items that can be clicked or touched, to emphasize important
-actions and highlight information in your application. Yellow is the
-recommended **secondary accent colour**: to use a different colour please
-contact [wfp.publications@wfp.org](mailto:wfp.publications@wfp.org)
+actions and highlight information in your application. 
+
 
 <ColourList filter="brand" />
 
@@ -110,28 +111,6 @@ This colour is used for hover and active states.
 - ✗ other branding elements
 - ✗ non - interactive elements
 
-<Colour color="accent-01" />
-
-<h4 className="wfp--story__sub-heading">Accent secondary colour</h4>
-<img
-  alt="Brand colour"
-  style={{
-    width: '100%',
-    height: 'auto',
-    marginTop: '1em',
-    marginLeft: '0em',
-  }}
-  src={`${process.env.STORYBOOK_INTERNAL_ASSETS}internal/secondary-color.png`}
-/>
-
-Use to emphasize important actions and highlighted information in your
-application.It can help encourage visitors to make more interactions
-with the elements of your design.
-
-Be playful and crazy here but don't forget that the accent colour should
-be maximum 10 % of colour of the whole product. Yellow is the
-recommended accent colour. To use a different accent colour then yellow
-please contact [wfp.publications@wfp.org](mailto:wfp.publications@wfp.org).
 
 #### Secondary colours are best for:
 
