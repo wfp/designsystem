@@ -1,8 +1,8 @@
 import React from 'react';
-import Link from '../Link';
+import Empty from '../Empty';
 import { shallow } from 'enzyme';
 
-describe('Link', () => {
+describe('Empty', () => {
   describe('Renders as expected', () => {
     const link = shallow(
       <Link href="www.google.com" className="some-class">
