@@ -9,6 +9,7 @@ export default function ReactSelectWrapper(props) {
   return (
     <Input
       labelText={labelText}
+      
     >
       {() => (
           <Select

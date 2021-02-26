@@ -15,7 +15,7 @@ export const extractTitle = ({ kind, parameters }: DocsContextProps) => {
   return (groups && groups[groups.length - 1]) || kind;
 };
 
-export const Title: FunctionComponent<TitleProps> = ({ children }) => {
+export const Title: FunctionComponent<TitleProps> = ({ children}) => {
   const context = useContext(DocsContext);
   let text: JSX.Element | string = children;
   if (!text) {

@@ -202,7 +202,6 @@ const RegularPage = ({
           <Search
             kind="main"
             id="search-2"
-            labelText="Search"
             placeHolderText="Search"
           />
         </MainNavigationItem>
