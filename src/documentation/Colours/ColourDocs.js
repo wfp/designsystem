@@ -17,8 +17,8 @@ export const Colour = ({ color }) => (
         borderRadius: '3px',
         width: '0.9em',
         height: '0.9em',
+        background: `var(--${color})`
       }}
-      className={`color__${color}`}
     />
     {color}
   </h3>

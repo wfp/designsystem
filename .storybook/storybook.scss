@@ -114,6 +114,13 @@
   margin-bottom: 2rem;
 }
 
+.docs-divider {
+    border: 0 none;
+    border-top: 1px solid rgba(0,0,0,.1);
+    height: 4px;
+    padding: 0;
+}
+
 .table-of-content.wfp--list {
   margin-top: 1rem;
   margin-bottom: 2rem;
@@ -184,7 +191,7 @@
 }
 
 ​.color__brand-01 {
-  background: $brand-01;
+  background: var(--brand-01);
 }
 .color__interactive-02 {
   background: $interactive-02;
@@ -194,9 +201,9 @@
   background: $accent-01;
 }
 
-​ .color__interactive-02 {
-  background: $interactive-02;
-}
+// ​ .color__interactive-02 {
+//   background: $interactive-02;
+// }
 ​ .color__inverse-01 {
   background: $inverse-01;
 }

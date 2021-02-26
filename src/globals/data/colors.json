@@ -83,6 +83,14 @@
     "type": "symbolic",
     "description": "Indicate international staff"
   },
+  "brand-01": {
+    "name": "brand-01",
+    "hex": "#007DBC",
+    "scss": "var(--brand-01)",
+    "css": "color__brand-01",
+    "type": "ui",
+    "description": "WFP's corporate colour"
+  },
   "interactive-01": {
     "name": "interactive-01",
     "hex": "#0b77c2",

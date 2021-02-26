@@ -204,7 +204,7 @@ const colors = {
   'brand-01': {
     name: 'brand-01',
     hex: '#007DBC', //previously 0A6EB4
-    scss: '$brand-01',
+    scss: 'var(--brand-01)',
     css: 'color__brand-01',
     type: 'brand',
     shortDescription: 'WFP brand color',
