@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
-import TooltipTrigger, { usePopperTooltip } from 'react-popper-tooltip';
+import { usePopperTooltip } from 'react-popper-tooltip';
 
 import settings from '../../globals/js/settings';
 const { prefix } = settings;
