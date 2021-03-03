@@ -4,7 +4,6 @@ import FormGroup from '../../components/FormGroup';
 import TextInput from '../../components/TextInput';
 import NumberInput from '../../components/NumberInput';
 import Button from '../../components/Button';
-import ReactSelect from 'react-select';
 import ReactSelectWrapper from './ReactSelectWrapper';
 
 const options = [
@@ -27,7 +26,7 @@ const countryOptions = [
 ]
 
 function Form({ onFormChange }) {
-    const { handleSubmit, register, errors, control } = useForm();
+    const { handleSubmit, register, reset, control } = useForm();
 
     const handleFilter = (formdata) => {
         onFormChange(formdata)
@@ -39,22 +38,21 @@ function Form({ onFormChange }) {
             <FormGroup className="wfp--form-long"
                 align="horizontal"
                 style={{ marginTop: '1rem' }}>
-                <div className="wfp--form-item" style={{ minWidth: '100px' }}>
+
                 <Controller
                     as={<ReactSelectWrapper control={control} options={options} />}
                     name="gender"
                     labelText="Gender"
                     control={control}
                 />
-                </div>
-                <div className="wfp--form-item" style={{ minWidth: '100px' }}>
+
                 <Controller
                     as={<ReactSelectWrapper control={control} options={countryOptions} />}
                     name="country"
                     labelText="Country"
                     control={control}
                 />
-                </div>
+
                 
             </FormGroup>
             <FormGroup className="wfp--form-long" align="horizontal" style={{ marginTop: '1rem' }}>
@@ -66,10 +64,10 @@ function Form({ onFormChange }) {
                 inputRef={register}
                 />
                 <TextInput
-                id="street"
-                name="street"
-                labelText="Street"
-                placeholder="eg: Chemin Aime Steinlein"
+                id="lastname"
+                name="lastname"
+                labelText="lastname"
+                placeholder="eg: Chemin"
                 inputRef={register}
                 />
                 <NumberInput id="age" name="age" labelText="Age" placeholder="" inputRef={register} />
@@ -85,7 +83,8 @@ function Form({ onFormChange }) {
             <Button
                 type="button"
                 kind="ghost"
-                style={{ marginRight: '0.5em' }}>
+                style={{ marginRight: '0.5em' }}
+                onClick={()=> reset()}>
                 Clear filters
             </Button>
             <Button type="submit">Apply</Button>
