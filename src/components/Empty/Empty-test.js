@@ -4,22 +4,66 @@ import { shallow } from 'enzyme';
 
 describe('Empty', () => {
   describe('Renders as expected', () => {
-    const link = shallow(
-      <Link href="www.google.com" className="some-class">
-        A simple link
-      </Link>
+    const wrapper = shallow(
+      <Empty title="title" kind="large" />
     );
-    it('should use the appropriate link class', () => {
-      expect(link.hasClass('wfp--link')).toEqual(true);
+
+    const emptyWrapper = () => wrapper.find('div.wfp--empty');
+
+    describe('emptyWrapper', () => {
+      it('renders as expected', () => {
+        expect(emptyWrapper().length).toBe(1);
+      });
+
+      it('has the expected classes', () => {
+        expect(emptyWrapper().hasClass('wfp--empty')).toEqual(true);
+      });
     });
-    it('should inherit the href property', () => {
-      expect(link.props().href).toEqual('www.google.com');
+
+    const emptyIcon = () => wrapper.find('div.wfp--empty__icon');
+
+    describe('emptyIcon', () => {
+      it('renders as expected', () => {
+        expect(emptyIcon().length).toBe(1);
+      });
+
+      it('has the expected classes', () => {
+        expect(emptyIcon().hasClass('wfp--empty__icon')).toEqual(true);
+      });
     });
-    it('should include child content', () => {
-      expect(link.text()).toEqual('A simple link');
+
+    const emptyText = () => wrapper.find('div.wfp--empty__text');
+
+    describe('emptyText', () => {
+      it('renders as expected', () => {
+        expect(emptyText().length).toBe(1);
+      });
+      it('renders children as expected', () => {
+        expect(emptyText().props().children).toEqual(
+          [<h2>title</h2>, <p/>]
+        )
+      });
+
+      it('renders title as expected', () => {
+        expect(emptyText().find("h2").length).toBe(1);
+      });
+
+      it('renders additional content as expected', () => {
+        expect(emptyText().find("p").length).toBe(1);
+      });
+
+      it('has the expected classes', () => {
+        expect(emptyText().hasClass('wfp--empty__text')).toEqual(true);
+      });
     });
-    it('should all for custom classes to be applied', () => {
-      expect(link.hasClass('some-class')).toEqual(true);
-    });
+
+    const emptyButton = () => wrapper.find('div.wfp--empty__button');
+
+    describe('emptyButton', () => {
+      it('has the expected classes', () => {
+        expect(emptyButton().hasClass('wfp--empty__button')).toEqual(true);
+      });
+    })
+    
   });
 });
