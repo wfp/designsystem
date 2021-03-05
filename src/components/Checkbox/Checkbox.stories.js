@@ -59,7 +59,17 @@ CheckedInput.story = {
   },
 };
 
-export const Indeterminate = (args) => <Checkbox {...args} />;
+export const Indeterminate = (args) => (
+  <>
+  <Checkbox {...args} />
+  <InputGroup vertical style={{marginLeft:'16px'}}>
+    <Checkbox  labelText="Label text" id="lab1" />
+    <Checkbox defaultChecked labelText="Label text" id="lab2" />
+    <Checkbox  defaultChecked labelText="Label text" id="lab3" />
+    <Checkbox  labelText="Label text" id="lab4" />
+  </InputGroup>
+</>
+);
 
 Indeterminate.args = {
   labelText: 'Indeterminate Input',

@@ -21,10 +21,10 @@ export const SimpleCard = (args) => <Card {...args} />;
 
 SimpleCard.args = {
   subTitle:
-    'Food security and climate change analyses, adaptation planning, and good practices in food security adaptation programming.',
-  title: 'The Climate Adaption Mangement and Innovation Initiative',
+    'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
+  title: 'Title content',
   kind: 'simple-card',
-  metadata: 'Publication',
+  metadata: 'Outline',
 };
 
 export const SimpleCardWithImage = (args) => <Card {...args} />;

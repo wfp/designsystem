@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import Text from '../Text';
 import classNames from 'classnames';
 
 /**
@@ -56,6 +57,7 @@ const Card = ({
             />
           )}
           {metadata && (
+            // <Text className="wfp--photo-cardnew__info__title" kind="subtitle">{metadata}</Text>
             <p className="wfp--photo-cardnew__info__metadata">{metadata}</p>
           )}
           {title && (

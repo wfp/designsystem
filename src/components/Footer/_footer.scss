@@ -187,8 +187,9 @@
 
   .#{$prefix}--footer__secondary {
     margin-top: rem(20px);
-    font-weight: 600;
-    @include typescale('caption');
+    font-weight: 400;
+    font-size: rem(14px);
+    // @include typescale('caption');
     @include breakpoint(bp--md--major) {
       width: 100%;
     }

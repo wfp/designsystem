@@ -84,8 +84,10 @@ export const External = (args) => (
   </Footer>
 );
 
+const currentYear = new Date().getFullYear();
+
 External.args = {
-  metaContent: '2019 © World Food Programme',
+  metaContent: `${currentYear} © World Food Programme`,
   metaLinks:<Link href="http://www.wfp.org">meta link</Link>,
   external: true,
 };

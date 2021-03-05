@@ -129,6 +129,7 @@ export default class InputGroup extends React.Component {
       vertical,
       hideLabel,
       className = `${prefix}--input-group`,
+      ...other
     } = this.props;
 
     const labelClasses = classNames('wfp--label', {
@@ -148,7 +149,7 @@ export default class InputGroup extends React.Component {
     ) : null;
 
     return (
-      <div className={wrapperClasses}>
+      <div className={wrapperClasses} {...other}>
         <div className={className} disabled={disabled}>
           {label}
           {helper}
