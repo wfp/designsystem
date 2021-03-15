@@ -12,9 +12,9 @@ SubNavigation.propTypes = {
 };
 
 const SubNavigationItem = ({ children, className, ...other }) => {
-  const classes = classNames('wfp--sub-navigation__item', {
+  const classes = classNames('wfp--sub-navigation__item', 
     className,
-  });
+  );
 
   return (
     <div className={classes} {...other}>
@@ -23,12 +23,16 @@ const SubNavigationItem = ({ children, className, ...other }) => {
   );
 };
 
-SubNavigationItem.propTypes = {};
+SubNavigationItem.propTypes = {
+  children: PropTypes.node,
+
+  className: PropTypes.string,
+};
 
 const SubNavigationHeader = ({ children, className, ...other }) => {
-  const classes = classNames('wfp--sub-navigation__header', {
+  const classes = classNames('wfp--sub-navigation__header', 
     className,
-  });
+  );
 
   return (
     <div className={classes} {...other}>
@@ -37,12 +41,16 @@ const SubNavigationHeader = ({ children, className, ...other }) => {
   );
 };
 
-SubNavigationHeader.propTypes = {};
+SubNavigationHeader.propTypes = {
+  children: PropTypes.node,
+
+  className: PropTypes.string,
+};
 
 const SubNavigationFilter = ({ children, className, ...other }) => {
-  const classes = classNames('wfp--sub-navigation__filter', {
+  const classes = classNames('wfp--sub-navigation__filter', 
     className,
-  });
+  );
 
   return (
     <div className={classes} {...other}>
@@ -57,9 +65,9 @@ SubNavigationFilter.propTypes = {
 };
 
 const SubNavigationList = ({ children, className, ...other }) => {
-  const classes = classNames('wfp--sub-navigation__list', {
+  const classes = classNames('wfp--sub-navigation__list', 
     className,
-  });
+  );
 
   return (
     <div className={classes} {...other}>
@@ -74,9 +82,9 @@ SubNavigationList.propTypes = {
 };
 
 const SubNavigationContent = ({ children, className, ...other }) => {
-  const classes = classNames('wfp--sub-navigation__content', {
+  const classes = classNames('wfp--sub-navigation__content', 
     className,
-  });
+  );
 
   return (
     <div className={classes} {...other}>
@@ -95,9 +103,9 @@ SubNavigationContent.propTypes = {
 };
 
 const SubNavigationTitle = ({ children, className, ...other }) => {
-  const classes = classNames('wfp--sub-navigation__title', {
+  const classes = classNames('wfp--sub-navigation__title', 
     className,
-  });
+  );
 
   return (
     <div className={classes} {...other}>
@@ -116,9 +124,9 @@ SubNavigationTitle.propTypes = {
 };
 
 const SubNavigationLink = ({ children, className, ...other }) => {
-  const classes = classNames('wfp--sub-navigation__link', {
+  const classes = classNames('wfp--sub-navigation__link', 
     className,
-  });
+  );
 
   return (
     <div className={classes} {...other}>
@@ -132,6 +140,8 @@ SubNavigationLink.propTypes = {
    * Provide the content of link
    */
   children: PropTypes.string,
+
+  className: PropTypes.string,
 };
 
 const SubNavigationGroup = ({

@@ -1,6 +1,6 @@
 import React from 'react';
 import Sidebar, {SidebarHeader, SidebarScroll, SidebarBackButton} from '../Sidebar';
-import { shallow, mount } from 'enzyme';
+import { shallow } from 'enzyme';
 
 describe('Sidebar', () => {
     describe('Renders as expected', () => {

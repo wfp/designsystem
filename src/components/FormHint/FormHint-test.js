@@ -4,7 +4,7 @@ import { shallow, mount } from 'enzyme';
 
 describe('FormHint', () => {
     describe('Renders as expected', () => {
-        const wrapper = mount(<FormHint>formhint</FormHint>);
+        const wrapper = shallow(<FormHint>formhint</FormHint>);
 
         it('renders <Tooltip> as the main wrapper', () => {
             expect(wrapper.exists('.wfp--form-hint')).toBe(true);
