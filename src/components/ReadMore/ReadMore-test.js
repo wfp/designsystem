@@ -2,7 +2,7 @@ import React from 'react';
 import ReadMore from '../ReadMore';
 import { shallow } from 'enzyme';
 
-describe('Link', () => {
+describe('ReadMore', () => {
   describe('Renders as expected', () => {
     const readMore = shallow(
       <ReadMore className="some-class">Content</ReadMore>

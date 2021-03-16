@@ -5,7 +5,7 @@ import settings from '../../globals/js/settings';
 const { prefix } = settings;
 
 /** The Story component adds a default style, formatting and spacing for a longer text with main focus on readability. */
-const Story = ({ children, className, pageWidth, spacing }) => {
+const Story = ({ children, className, spacing }) => {
   const classNames = classnames({
     'wfp--story': true,
     [`${className}`]: className,

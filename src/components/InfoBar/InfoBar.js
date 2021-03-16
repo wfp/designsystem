@@ -36,7 +36,7 @@ InfoBar.propTypes = {
 };
 
 InfoBar.defaultProps = {
-  pageWidth: 'narrower',
+  pageWidth: 'lg',
 };
 
 export default InfoBar;

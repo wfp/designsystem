@@ -19,7 +19,7 @@ BannerNavigationItem.propTypes = {
 /**
  * A thin bar on top of the main navigation used to crosslink among apps or pages.
  */
-const BannerNavigation = ({ children, className, ...props }) => {
+const BannerNavigation = ({ children, className, pageWidth, ...props }) => {
   const wrapperClasses = classNames('wfp--banner-navigation', className);
 
   return (
