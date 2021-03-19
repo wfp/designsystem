@@ -90,7 +90,7 @@ Bullet.args = {
   kind: 'unordered',
 };
 
-const msgg = ` \`bullet\` \`kind\` shows bulleted list items`;
+const msgg = ` \`undordered\` \`kind\` shows bulleted list items`;
 
 Bullet.story = {
   parameters: {
@@ -155,6 +155,32 @@ export const ListitemBullets = (args) => (
 const listItemDescription = ` \`unordered\` List with ListItems can have \`checkmark\` and \`cross\` kinds`;
 
 ListitemBullets.story = {
+  parameters: {
+    docs: {
+      storyDescription: listItemDescription,
+    },
+  },
+};
+
+
+export const NestedListItems = (args) => (
+  <List kind="unordered">
+    <ListItem>Item label</ListItem>
+    <ListItem>Item label</ListItem>
+    <List kind="ordered">
+        <ListItem>Item label 2</ListItem>
+        <ListItem>Item label 2</ListItem>
+        <List>
+          <ListItem>Item label 3</ListItem>
+          <ListItem>Item label 3</ListItem>
+        </List>
+    </List>
+  </List>
+);
+
+const nestedItemDescription = ` \`unordered\` List with ListItems can have \`checkmark\` and \`cross\` kinds`;
+
+NestedListItems.story = {
   parameters: {
     docs: {
       storyDescription: listItemDescription,
