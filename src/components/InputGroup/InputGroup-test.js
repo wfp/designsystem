@@ -73,16 +73,6 @@ describe('InputGroup', () => {
       expect(firstRadio.props().checked).toEqual(false);
     });
 
-    // it('invoking onChange sets checked on correct child', () => {
-    //   firstRadio.props().onChange(...args);
-    //   wrapper.update();
-    //   expect(wrapper.find(RadioButton).first().props().checked).toEqual(true);
-    // });
-
-    // it('should invoke onChange with correct arguments', () => {
-    //   expect(onChange).toBeCalledWith(...args);
-    // });
-
     it('calling onChange with same args should not call onChange prop', () => {
       onChange.mockClear();
       firstRadio.props().onChange(...args);

@@ -12,19 +12,16 @@ describe('Search', () => {
         className="extra-class"
         label="Search Field"
         labelText="testlabel"
+        light={false}
       />
     );
 
     const label = wrapper.find('label');
     const textInput = wrapper.find('input');
-    const container = wrapper.find('[role="search"]');
 
     describe('container', () => {
       it('should add extra classes that are passed via className', () => {
-        expect(container.hasClass('extra-class')).toEqual(true);
-      });
-      it('should have the role of search', () => {
-        expect(container.props().role).toEqual('search');
+        expect(wrapper.hasClass('extra-class')).toEqual(true);
       });
     });
 
@@ -51,8 +48,7 @@ describe('Search', () => {
       });
 
       it('should set placeholder as expected', () => {
-        expect(textInput.props().placeholder).toEqual('');
-        wrapper.setProps({ placeHolderText: 'Enter text' });
+        wrapper.setProps({ placeholder: 'Enter text' });
         expect(wrapper.find('input').props().placeholder).toEqual('Enter text');
       });
 
@@ -102,13 +98,8 @@ describe('Search', () => {
       });
 
       describe('icons', () => {
-        /*it('renders "search" icon', () => {
-          const icons = wrapper.find(Icon);
-          expect(icons.at(0).props().name).toEqual('search');
-        });*/
 
         it('renders two Icons', () => {
-          wrapper.setProps({ small: false });
           const icons = wrapper.find(Icon);
           expect(icons.length).toEqual(2);
         });
@@ -126,16 +117,10 @@ describe('Search', () => {
         />
       );
 
-      const smallContainer = small.find('[role="search"]');
 
-      /*it('renders correct search icon', () => {
-        const icons = small.find(Icon);
-        expect(icons.at(0).props().name).toEqual('search');
-      });*/
-
-      it('should have the expected small class', () => {
-        expect(smallContainer.hasClass('wfp--search--sm')).toEqual(true);
-      });
+      // it('should have the expected small class', () => {
+      //   expect(small.hasClass('wfp--search--sm')).toEqual(true);
+      // });
 
       it('should only have 1 button (clear)', () => {
         const btn = small.find('button');
@@ -171,12 +156,12 @@ describe('Search', () => {
       };
 
       it('should invoke onClick when input is clicked', () => {
-        input.simulate('click');
+        wrapper.simulate('click');
         expect(onClick).toBeCalled();
       });
 
       it('should invoke onChange when input value is changed', () => {
-        input.simulate('change', eventObject);
+        wrapper.simulate('change', eventObject);
         expect(onChange).toBeCalledWith(eventObject);
       });
     });

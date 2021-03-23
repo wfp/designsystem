@@ -97,6 +97,7 @@ function Search(props) {
 
             <input
               className="wfp--search-input"
+              type="text"
               {...other}
               {...newProps}
               ref={_inputRef}

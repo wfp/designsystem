@@ -36,11 +36,6 @@ describe('TextArea', () => {
         expect(textarea().props().rows).toEqual(10);
       });
 
-      it('should set cols as expected', () => {
-        expect(textarea().props().cols).toEqual(50);
-        wrapper.setProps({ cols: 200 });
-        expect(textarea().props().cols).toEqual(200);
-      });
 
       it('should set disabled as expected', () => {
         expect(textarea().props().disabled).toEqual(false);
@@ -63,11 +58,6 @@ describe('TextArea', () => {
         expect(textarea().props().defaultValue).toEqual('default value');
       });
 
-      it('should specify light version as expected', () => {
-        expect(wrapper.props().light).toEqual(false);
-        wrapper.setProps({ light: true });
-        expect(wrapper.props().light).toEqual(true);
-      });
     });
 
     describe('label', () => {
