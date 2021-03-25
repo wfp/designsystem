@@ -2,7 +2,6 @@ import React from 'react';
 import markdown from './README.mdx';
 import ContextMenu, { ContextMenuGroup, ContextMenuItem } from './ContextMenu';
 import Link from '../Link';
-import Button from '../Button';
 
 export default {
   title: 'Components/UI Elements/ContextMenu',

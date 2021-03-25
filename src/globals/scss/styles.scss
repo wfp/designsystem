@@ -129,8 +129,7 @@ $deprecations--message: 'Deprecated code was found, this code will be removed be
   $deprecations--message: '';
 
   @each $reason in $deprecations--reasons {
-    $deprecations--message: '#{$deprecations--message}
-REASON: #{$reason}';
+    $deprecations--message: '#{$deprecations--message} REASON: #{$reason}';
   }
 
   @warn $deprecations--message;

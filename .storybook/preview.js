@@ -12,21 +12,13 @@ import {
   types,
   //DocsContainer,
 } from '@storybook/addon-docs/blocks';
+
 import { DocsPage } from './blocks/DocsPage';
-import { DocsContainer } from './blocks/DocsContainer';
+import { DocsContainer } from './blocks/DocsContainer'; /*
 import { Subtitle } from './blocks/Subtitle';
+import Description from './blocks/Description'; /*/
 
 import React, { FC } from 'react';
-//import { Title } from '@storybook/addon-docs/Title';
-/*import { Subtitle } from './Subtitle';*/
-import Description from './blocks/Description'; /*
-//import { Primary } from './blocks-old/Primary';
-//import { Props } from './blocks/Props';
-/*
-import { Props } from './Props';
-import { Stories } from './Stories';
-import { PRIMARY_STORY } from './types';*/
-//import '../src/globals/scss/styles.scss';
 
 import results from '../.jest-test-results.json';
 
@@ -37,43 +29,7 @@ const githubPath = resultReadme
   ? resultReadme.replace('./src/', './').replace('README.md', '')
   : undefined;*/
 
-export const DocsPaged = (props) => {
-  return (
-    <>
-      <Title />
-      <Subtitle />
-      <Description />
-      <Primary />
-      <Props />
-      <Stories />
-    </>
-  );
-};
-
 addParameters({
-  /*options: {
-    showRoots: true,
-    storySort: (a, b) => {
-      console.log('sort', a[1].kind.split('/'));
-
-      const section = a[1].kind.split('/');
-
-      if (section[0] === 'Components') {
-        return -10100000;
-      }
-      if (a[0] === 'components-ui-elements-slider--regular-slider') {
-        return -1100000;
-      }
-      if (a.includes('Intro')) {
-        return -1000;
-      }
-      if (a.includes('Components')) {
-        return 900;
-      }
-      return 0;
-    },
-  },*/
-
   docs: {
     container: DocsContainer,
     page: DocsPage,

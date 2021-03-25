@@ -31,7 +31,16 @@ const Tooltip = ({
   modifiers = [],
   placement = 'top',
   createRefWrapper,
-  onVisibilityChange,
+  closeOnOutsideClick,
+  closeOnTriggerHidden,
+  defaultVisible,
+  delayHide,
+  delayShow,
+  followCursor,
+  interactive,
+  mutationObserverOptions,
+  offset,
+  onVisibleChange,
   ...others
 }) => {
   const [visibility, setVisibility] = useState(false);
@@ -43,90 +52,55 @@ const Tooltip = ({
     [`${prefix}--tooltip--dark`]: dark,
   });
 
-  const Tooltip = ({
-    arrowRef,
-    tooltipRef,
-    getArrowProps,
-    getTooltipProps,
-    placement,
-  }) => (
-    <div ref={tooltipRef} className={classNames} dataPlacement={placement}>
-      <div
-        {...getArrowProps({
-          ref: arrowRef,
-          className: `${prefix}--tooltip__arrow`,
-          'data-placement': placement,
-        })}
-      />
-      <span onClick={setVisibility(false)}>CLOSE</span>
-      {typeof content === 'function'
-        ? content({ setVisibility, visibilityChange })
-        : content}
-    </div>
-  );
-
   const {
     getArrowProps,
     getTooltipProps,
     setTooltipRef,
     setTriggerRef,
     visible,
-  } = usePopperTooltip({ trigger: 'click', delayHide: 1000 });
+  } = usePopperTooltip({
+    closeOnOutsideClick,
+    closeOnTriggerHidden,
+    defaultVisible,
+    delayHide,
+    delayShow,
+    followCursor,
+    interactive,
+    mutationObserverOptions,
+    offset,
+    onVisibleChange,
+    placement,
+    trigger,
+  });
 
-  const Trigger = ({ getTriggerProps, setTriggerRef }) => {
-    if (!createRefWrapper && typeof children !== 'string') {
-      const elementClassNames = classnames(children?.props?.className, {
-        [`${prefix}--tooltip--trigger`]: true,
-      });
+  const elementClassNames = classnames(children?.props?.className, {
+    [`${prefix}--tooltip--trigger`]: true,
+  });
 
-      return React.cloneElement(children, {
-        ...children.props,
+  const wrapperClassNames = classnames(className, {
+    [`${prefix}--tooltip--trigger`]: true,
+  });
+
+  const triggerElement =
+    !createRefWrapper && typeof children !== 'string' ? (
+      React.cloneElement(children, {
         ref: setTriggerRef,
         className: elementClassNames,
-      });
-    }
-
-    const wrapperClassNames = classnames(className, {
-      [`${prefix}--tooltip--trigger`]: true,
-    });
-
-    return (
+      })
+    ) : (
       <span ref={setTriggerRef} className={wrapperClassNames}>
         {children}
       </span>
     );
-  };
 
   const visibilityChange = (e) => {
     setVisibility(e);
     if (onVisibilityChange) onVisibilityChange(e);
   };
 
-  /*
-  <TooltipTrigger
-      placement={placement}
-      trigger={trigger}
-      tooltip={Tooltip}
-      {...others}
-      onVisibilityChange={visibilityChange}
-      modifiers={[
-        {
-          name: 'offset',
-          options: {
-            offset: [0, 5],
-          },
-        },
-        ...modifiers,
-      ]}>
-      */
-
   return (
     <>
-      {/*trigger*/}
-
-      <button type="button" ref={setTriggerRef}>
-        Trigger element
-      </button>
+      {triggerElement}
       {visible && (
         <div
           ref={setTooltipRef}
