@@ -216,6 +216,7 @@ describe('NumberInput', () => {
             id="test"
             onClick={onClick}
             onChange={onChange}
+            value={0}
             min={0}
             max={100}
           />
@@ -246,25 +247,7 @@ describe('NumberInput', () => {
         expect(onClick).not.toBeCalled();
       });
 
-      // it('should increase by the value of step', () => {
-      //   wrapper.setProps({
-      //     step: 10,
-      //     value: 0,
-      //   });
-      //   expect(wrapper.prop('value')).toEqual(0);
-      //   upArrow.simulate('click');
-      //   expect(wrapper.prop('value')).toEqual(10);
-      // });
 
-      // it('should decrease by the value of step', () => {
-      //   wrapper.setProps({
-      //     step: 10,
-      //     value: 100,
-      //   });
-      //   expect(wrapper.prop('value')).toEqual(100);
-      //   downArrow.simulate('click');
-      //   expect(wrapper.prop('value')).toEqual(90);
-      // });
 
       it('should not invoke onClick when down arrow is clicked and value is 0', () => {
         downArrow.simulate('click');
