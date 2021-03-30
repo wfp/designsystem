@@ -2,6 +2,7 @@ import React from 'react';
 import ContentSwitcher from '../ContentSwitcher';
 import Switch from '../Switch';
 import { mount, shallow } from 'enzyme';
+import { act } from 'react-dom/test-utils';
 
 describe('ContentSwitcher', () => {
   describe('component initial rendering', () => {
@@ -65,18 +66,14 @@ describe('ContentSwitcher', () => {
     );
 
     const children = wrapper.find(Switch);
-
-    children.first().props().onClick(mockData);
+    act(() => {
+      children.first().props().onClick(mockData);
+    });
 
     it('should invoke onChange', () => {
       expect(onChange).toBeCalledWith(mockData);
     });
 
-    /* Not supported for functional components
-    it('should set the correct selectedIndex', () => {
-      expect(wrapper.state('selectedIndex')).toEqual(mockData.index);
-    });
-    */
 
     it('should set selected to true on the correct child', () => {
       wrapper.update();
@@ -102,16 +99,13 @@ describe('ContentSwitcher', () => {
 
     const children = wrapper.find(Switch);
 
-    children.first().props().onKeyDown(mockData);
+    act(() => {
+      children.first().props().onKeyDown(mockData);
+    });
 
     it('should invoke onChange', () => {
       expect(onChange).toBeCalledWith(mockData);
     });
-    /* Not supported for functional components
-    it('should set the correct selectedIndex', () => {
-      expect(wrapper.state('selectedIndex')).toEqual(mockData.index);
-    });
-    */
 
     it('should set selected to true on the correct child', () => {
       wrapper.update();

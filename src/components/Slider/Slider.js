@@ -116,7 +116,6 @@ function Slider(props) {
   );
 
   const valueMinimal = value < min ? min : value;
-  console.log('value', min, max);
   return (
     <Input {...props} formItemClassName={numberInputClasses}>
       {() => {
