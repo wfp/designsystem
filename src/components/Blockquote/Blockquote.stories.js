@@ -125,7 +125,7 @@ export const CustomIcon = (args) => <Blockquote {...args} />;
 
 CustomIcon.args = {
   ...props,
-  icon: <Icon icon={iconAddOutline} height={50} width={50} />,
+  icon: <Icon icon={iconAddOutline} height={48} width={48} />,
 };
 
 CustomIcon.story = {

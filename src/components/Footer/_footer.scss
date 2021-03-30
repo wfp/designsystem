@@ -58,7 +58,7 @@
   margin-top: rem(20px);
   font-style: italic;
   @include breakpointMax(bp--md--major) {
-    display: none;
+    // display: none;
   }
 }
 
@@ -196,21 +196,19 @@
   }
 
   .#{$prefix}--footer__meta {
-    @include typescale('zeta');
+    // @include typescale('zeta');
+    font-size: rem(12px);
     border-top: 1px solid $color__navy-gray-8;
     margin-top: $spacing-md;
     padding-top: $spacing-md;
-    @include breakpoint(bp--md--major) {
-      display: flex;
-    }
+    display: flex;
     justify-content: space-between;
     font-style: normal;
   }
 
   .#{$prefix}--footer__meta__links {
     .#{$prefix}--link {
-      font-weight: 600;
-      margin-left: rem(10px);
+      font-weight: 400;
     }
   }
 }

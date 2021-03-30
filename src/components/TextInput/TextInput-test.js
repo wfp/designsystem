@@ -13,7 +13,6 @@ describe('TextInput', () => {
         labelText="testlabel"
         helperText="testHelper"
         name="name"
-        light
       />
     );
 
@@ -24,19 +23,9 @@ describe('TextInput', () => {
         expect(textInput().length).toBe(1);
       });
 
-      it('has the expected classes', () => {
-        expect(textInput().hasClass('wfp--text-input')).toEqual(true);
-      });
-
       it('should add extra classes that are passed via className', () => {
         expect(textInput().hasClass('extra-class')).toEqual(true);
       });
-
-      /* No longer used
-      it('has the expected classes for light', () => {
-        wrapper.setProps({ light: true });
-        expect(textInput().hasClass('wfp--text-input--light')).toEqual(true);
-      });*/
 
       it('should set type as expected', () => {
         expect(textInput().props().type).toEqual('text');
@@ -115,7 +104,7 @@ describe('TextInput', () => {
       const onClick = jest.fn();
       const onChange = jest.fn();
 
-      const wrapper = shallow(
+      const wrapper = mount(
         <TextInput
           id="test"
           labelText="testlabel"
@@ -144,7 +133,7 @@ describe('TextInput', () => {
       const onClick = jest.fn();
       const onChange = jest.fn();
 
-      const wrapper = shallow(
+      const wrapper = mount(
         <TextInput
           labelText="testlabel"
           id="test"
@@ -154,22 +143,14 @@ describe('TextInput', () => {
         />
       );
 
-      const input = wrapper.find('input');
-      const eventObject = {
-        target: {
-          defaultValue: 'test',
-        },
-      };
+      const inputt = wrapper.find('input');
 
       it('should invoke onClick when input is clicked', () => {
-        input.simulate('click');
+        inputt.simulate('click');
         expect(onClick).toBeCalled();
       });
 
-      it('should invoke onChange when input value is changed', () => {
-        input.simulate('change', eventObject);
-        expect(onChange).toBeCalledWith(eventObject);
-      });
+  
     });
   });
 });

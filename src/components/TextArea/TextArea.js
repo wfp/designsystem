@@ -96,10 +96,10 @@ TextArea.propTypes = {
    */
   className: PropTypes.string,
 
-  /**
-   * Specify the `cols` attribute for the underlying &lt;textarea&gt; node
-   */
-  cols: PropTypes.number,
+  // /**
+  //  * Specify the `cols` attribute for the underlying &lt;textarea&gt; node
+  //  */
+  // cols: PropTypes.number,
 
   /**
    * Optionally provide the default value of the &lt;textarea&gt;
