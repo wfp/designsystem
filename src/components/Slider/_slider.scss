@@ -129,6 +129,18 @@
       &::-webkit-slider-runnable-track {
         background: var(--ui-04);
       }
+
+      // Safari
+      &::-moz-range-track {
+        background-color: var(--ui-04);
+        overflow: hidden;
+      }
+    }
+  }
+  // prevent double line on safari
+  @-moz-document url-prefix() {
+    .#{$prefix}--slider {
+      margin-top: 4px;
     }
   }
 

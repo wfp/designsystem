@@ -38,15 +38,10 @@ export default function Dashboard() {
       </p>
       <h3>How to use it?</h3>
       <p>
-        Place{' '}
-        <Link onClick={linkTo('Components', 'Module')}>
+        Place <Link onClick={linkTo('Components', 'Module')}>
           Modules (sometimes called Cards)
-        </Link>{' '}
-        inside a <Link onClick={linkTo('Components', 'Wrapper')}>Wrapper</Link>{' '}
-        component.
-        <br /> An example can be found{' '}
-        <Link onClick={linkTo('Design|Templates', 'Application Page')}>
-          here
+        </Link> inside a <Link onClick={linkTo('Components', 'Wrapper')}>Wrapper</Link> component.
+        <br /> An example can be found <Link onClick={linkTo('Templates', 'Application Page')}> here
         </Link>
         .
       </p>

@@ -98,7 +98,7 @@ const Intro = () => (
           kind="primary"
           icon={iconLightGlyph}
           style={{ marginRight: '0.5em' }}
-          onClick={linkTo('Getting started|Getting started', 'Developers')}>
+          onClick={linkTo('Getting started/Installing the Kit', 'UsageDevelopers')}>
           Getting started
         </Button>
 
