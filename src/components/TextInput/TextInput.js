@@ -45,6 +45,7 @@ const TextInput = (props) => {
         return (
           <input
             pattern={pattern}
+            type={type}
             {...other}
             {...newProps}
             ref={inputRef}
@@ -151,7 +152,6 @@ TextInput.propTypes = {
 TextInput.defaultProps = {
   className: 'wfp--text-input',
   disabled: false,
-  type: 'text',
   onChange: () => {},
   onClick: () => {},
   invalid: false,

@@ -67,7 +67,7 @@ describe('FileUploaderButton', () => {
     });
 
     it('does not have default role', () => {
-      expect(mountWrapper.props().role).not.toBeTruthy();
+      expect(mountWrapper.props().role).toEqual('button');
     });
 
     it('resets the input value onClick', () => {
