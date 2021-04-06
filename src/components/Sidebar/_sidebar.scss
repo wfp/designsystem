@@ -34,15 +34,16 @@
   }
 
   .#{$prefix}--sidebar-item-content {
+    width: 100%;
     @include breakpoint(bp--md--major) {
       width: 30%;
       min-width: 30%;
+      border-right: 1px solid var(--ui-04);
     }
-    width: 100%;
     display: flex;
     flex-direction: column;
     height: 100%;
-    border-right: 1px solid var(--ui-04);
+
     @include breakpointMax(bp--md--major) {
       top: 0;
       overflow: auto;

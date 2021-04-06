@@ -124,6 +124,11 @@
     }
   }
 
+  @include breakpointMax(bp--sm--major) {
+    .#{$prefix}--main-navigation__wrapper {
+      padding: 0;
+    }
+  }
   @include breakpoint(bp--sm--major) {
     .#{$prefix}--main-navigation__logo-wrapper {
       flex-grow: 1;
@@ -205,7 +210,7 @@
       height: rem(55px);
       flex-direction: row-reverse;
       justify-content: space-between;
-      // padding: 0 $page-padding-mobile;
+      padding: 0 $spacing-xs 0 $spacing-md;
     }
 
     .#{$prefix}--main-navigation__logo {

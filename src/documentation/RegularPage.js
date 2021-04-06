@@ -45,7 +45,7 @@ const props = {
   },
 };
 
-const renderAnchor = props => {
+const renderAnchor = (props) => {
   return <a href={props.href}>{props.label}</a>;
 };
 
@@ -79,6 +79,7 @@ const RegularPage = ({
                   <Search
                     className="some-class"
                     small
+                    label={null}
                     id="search-2"
                     placeHolderText="Filter List"
                   />
