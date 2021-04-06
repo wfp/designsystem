@@ -3,6 +3,7 @@ import markdown from './README.mdx';
 import { action } from '@storybook/addon-actions';
 import MainNavigation from '.';
 import MainNavigationItem from '../MainNavigationItem';
+import mainNavigationTwig from './MainNavigation.twig'
 
 import {
   SubNavigation,
@@ -28,6 +29,7 @@ export default {
     status: 'released',
     mdx: markdown,
     previewWidth: 'full',
+    twig: mainNavigationTwig
   },
 };
 
