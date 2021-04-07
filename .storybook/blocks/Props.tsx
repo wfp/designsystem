@@ -249,6 +249,7 @@ export const Props: FC<PropsProps> = (props) => {
 
   if (!components && !subcomponents) {
     let mainProps;
+    
     try {
       mainProps = {
         rows: extractComponentArgTypes(main, context, include, exclude),

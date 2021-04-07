@@ -60,7 +60,7 @@ const RegularPage = ({
     <div>
       <MainNavigation
         pageWidth={pageWidth}
-        logo={<a href="http://www.wfp.org">Application name</a>}>
+        logo={<a href="#">Application name</a>}>
         <MainNavigationItem>
           <Link href="http://communities.wfp.org" target="_blank">
             Section 1
@@ -203,7 +203,6 @@ const RegularPage = ({
           <Search
             kind="main"
             id="search-2"
-            labelText="Search"
             placeHolderText="Search"
           />
         </MainNavigationItem>
@@ -234,7 +233,7 @@ const RegularPage = ({
               </a>
             </BreadcrumbItem>
             <BreadcrumbItem href="#">Breadcrumb 2</BreadcrumbItem>
-            <BreadcrumbItem href="#">Breadcrumb 3</BreadcrumbItem>
+            <BreadcrumbItem disableLink> Breadcrumb 3</BreadcrumbItem>
           </Breadcrumb>
           <SecondaryNavigationTitle>
             {title ? title : 'The page title'}

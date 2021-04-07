@@ -1,8 +1,9 @@
 {
   "brand": {
     "name": "brand-01",
-    "hex": "#0A6EB4",
-    "scss": "$color__brand"
+    "hex": "#007DBC",
+    "scss": "$color__brand",
+    "css": "color__brand-01"
   },
   "navy": {
     "name": "navy",
@@ -81,6 +82,14 @@
     "scss": "$color__international",
     "type": "symbolic",
     "description": "Indicate international staff"
+  },
+  "brand-01": {
+    "name": "brand-01",
+    "hex": "#007DBC",
+    "scss": "var(--brand-01)",
+    "css": "color__brand-01",
+    "type": "ui",
+    "description": "WFP's corporate colour"
   },
   "interactive-01": {
     "name": "interactive-01",
@@ -194,7 +203,7 @@
   },
   "main": {
     "name": "main",
-    "hex": "#0A6EB4",
+    "hex": "#007DBC",
     "scss": "$color__main",
     "type": "communications"
   },

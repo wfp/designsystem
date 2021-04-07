@@ -1,10 +1,10 @@
 import React from 'react';
 import { List, ListItem } from '../List';
-import { shallow } from 'enzyme';
+import { mount } from 'enzyme';
 
 describe('List', () => {
   describe('Renders as expected', () => {
-    const list = shallow(
+    const list = mount(
       <List className="some-class">
         <ListItem>First Item</ListItem>
         <ListItem>Second Item</ListItem>
@@ -12,7 +12,8 @@ describe('List', () => {
     );
 
     it('should use the appropriate link class', () => {
-      expect(list.hasClass('wfp--list')).toEqual(true);
+      const listClass = list.find('.wfp--list');
+      expect(listClass.hasClass('wfp--list')).toEqual(true);
     });
 
     it('Renders children as expected', () => {

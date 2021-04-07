@@ -122,7 +122,6 @@ function Slider(props) {
   );
 
   const valueMinimal = value < min ? min : value;
-  console.log('value', min, max);
   return (
     <Input {...props} formItemClassName={numberInputClasses}>
       {() => {
@@ -242,10 +241,6 @@ Slider.propTypes = {
    */
   onClick: PropTypes.func,
 
-  /**
-   * `true` to disable this slider.
-   */
-  disabled: PropTypes.bool,
 
   /**
    * The `name` attribute of the `<input>`.

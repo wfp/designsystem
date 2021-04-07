@@ -1,5 +1,4 @@
 import Story from '../Story';
-import PropTypes from 'prop-types';
 import React from 'react';
 import { List, ListItem } from '../List';
 import Blockquote from '../Blockquote';

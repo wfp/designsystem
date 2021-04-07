@@ -3,7 +3,7 @@ import Checkbox from '../Checkbox';
 import Form from './Form';
 import FormGroup from '../FormGroup';
 import FileUploader from '../FileUploader';
-import Dropzone, { useDropzone } from 'react-dropzone';
+import Dropzone from 'react-dropzone';
 import NumberInput from '../NumberInput';
 import RadioButton from '../RadioButton';
 import InputGroup from '../InputGroup';
@@ -83,7 +83,6 @@ export const DetailedForm = (args) => {
         id="number-input-1"
         label="Number Input"
         labelText="Text Input label"
-        iconDescription="icon desc"
         min={0}
         max={100}
         value={50}
@@ -106,7 +105,7 @@ export const DetailedForm = (args) => {
 
         <p>Drag and Drop File Uploader</p>
 
-        <Dropzone onDrop={(acceptedFiles) => console.log(acceptedFiles)}>
+        <Dropzone onDrop={(acceptedFiles) => acceptedFiles}>
           {({ getRootProps, getInputProps }) => (
             <section className="wfp--dropzone">
               <div {...getRootProps({ className: 'wfp--dropzone__input' })}>

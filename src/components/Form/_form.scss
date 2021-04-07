@@ -108,6 +108,10 @@
     }
   }
 
+  .#{prefix}--form__helper-text--disabled {
+    opacity: 0.5;
+  }
+
   .#{$prefix}--form__helper-text {
     @include typescale('omega');
     color: var(--text-02);
@@ -115,7 +119,7 @@
     line-height: 1.5;
     z-index: 0;
     max-height: 3rem;
-    opacity: 1;
+    // opacity: 1;
     margin-bottom: $spacing-xs;
   }
 }
@@ -215,6 +219,10 @@
     opacity: 1;
     margin-top: $spacing-2xs;
     margin-bottom: $spacing-xs;
+  }
+
+  .#{prefix}--form__helper-text--disabled {
+    opacity: 0.5;
   }
 }
 

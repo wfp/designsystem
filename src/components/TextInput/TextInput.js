@@ -2,7 +2,6 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
 import settings from '../../globals/js/settings';
-import FormItem from '../FormItem';
 import Input from '../Input/Input';
 
 const { prefix } = settings;
@@ -46,6 +45,7 @@ const TextInput = (props) => {
         return (
           <input
             pattern={pattern}
+            type={type}
             {...other}
             {...newProps}
             ref={inputRef}
@@ -152,7 +152,6 @@ TextInput.propTypes = {
 TextInput.defaultProps = {
   className: 'wfp--text-input',
   disabled: false,
-  type: 'text',
   onChange: () => {},
   onClick: () => {},
   invalid: false,

@@ -8,12 +8,12 @@ const props = {
   children: `Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.`,
 };
 
-const kinds = {
-  'Info (info)': 'info',
-  'Warning (warning)': 'warning',
-  'Error (error)': 'error',
-  'Success (success)': 'success',
-};
+// const kinds = {
+//   'Info (info)': 'info',
+//   'Warning (warning)': 'warning',
+//   'Error (error)': 'error',
+//   'Success (success)': 'success',
+// };
 
 export default {
   title: 'Components/Content Related/Blockquote',
@@ -125,7 +125,7 @@ export const CustomIcon = (args) => <Blockquote {...args} />;
 
 CustomIcon.args = {
   ...props,
-  icon: <Icon icon={iconAddOutline} height={50} width={50} />,
+  icon: <Icon icon={iconAddOutline} height={48} width={48} />,
 };
 
 CustomIcon.story = {

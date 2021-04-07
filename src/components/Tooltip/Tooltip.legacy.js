@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { usePopper } from 'react-popper';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';

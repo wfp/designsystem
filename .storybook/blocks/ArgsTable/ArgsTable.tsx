@@ -373,6 +373,7 @@ export const ArgsTable: FC<ArgsTableProps> = (props) => {
         <thead className="docblock-argstable-head">
           <tr>
             <th>Name</th>
+            {/* <th>Type</th> */}
             {compact ? null : <th>Description</th>}
             {compact ? null : <th>Default</th>}
             {updateArgs ? (

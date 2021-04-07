@@ -1,6 +1,5 @@
 import React from 'react';
 import markdown from './README.mdx';
-import { action } from '@storybook/addon-actions';
 import TextArea from '.';
 
 export default {

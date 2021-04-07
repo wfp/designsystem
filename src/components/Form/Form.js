@@ -15,8 +15,7 @@ const Form = ({ className, children, longForm, ...other }) => {
 
   return (
     <form className={classNames} {...other}>
-      {' '}
-      {children}{' '}
+      {children}
     </form>
   );
 };

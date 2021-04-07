@@ -41,7 +41,7 @@ const defaultComponents = {
 
 export const DocsContainer: FunctionComponent<DocsContainerProps> = ({
   context,
-  children,
+  children
 }) => {
   const { id: storyId = null, parameters = {} } = context || {};
   const { options = {}, docs = {} } = parameters;

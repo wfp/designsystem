@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
+import React from 'react';
 
 import markdown from './README.mdx';
 import ApplicationPage from './ApplicationPage';
@@ -11,7 +10,7 @@ export default {
   parameters: {
     componentSubtitle: 'Example',
     mdx: markdown,
-    status: 'experimental',
+    status: 'released',
     previewWidth: 'full'
   },
 };

@@ -1,5 +1,5 @@
 import React,{ useMemo, useEffect } from 'react'
-import { useTable, usePagination, useGlobalFilter } from 'react-table'
+import { useTable, usePagination, useGlobalFilter, useFilters } from 'react-table'
 import MOCKDATA from './MockData.json'
 import { COLUMNS } from './columns';
 import Table from '../../components/Table'
@@ -21,14 +21,16 @@ function DataTable({filterText, advanceFilter}) {
         previousPage,
         prepareRow,
         setPageSize,
-        state: { pageIndex, pageSize, globalFilter },
-        setGlobalFilter
+        state: { pageIndex, pageSize,},
+        setGlobalFilter,
+        setAllFilters,
     }= useTable(
         {
         columns,
         data
         },
         useGlobalFilter,
+        useFilters,
         usePagination
     )
 
@@ -36,10 +38,23 @@ function DataTable({filterText, advanceFilter}) {
     if(filterText){
         setGlobalFilter(filterText)
     }else{
-        console.log("advance",advanceFilter)
         setGlobalFilter(undefined)
     }
-    },[filterText])
+   
+    if(advanceFilter.gender || advanceFilter.country ||  advanceFilter.firstname || advanceFilter.lastname || advanceFilter.age){
+        console.log("advance", advanceFilter)
+        setAllFilters([
+            {id:'gender',value:advanceFilter.gender}, 
+            {id:'country',value:advanceFilter.country},
+            {id:'first_name',value:advanceFilter.firstname},
+            {id:'last_name',value:advanceFilter.lastname},
+            {id:'age',value:advanceFilter.age}
+        ])
+    }else{
+        setAllFilters([])
+    }
+
+    },[filterText, advanceFilter])
 
     const changePage = (page) => {
         gotoPage(page.page - 1);

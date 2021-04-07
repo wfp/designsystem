@@ -102,7 +102,7 @@ const DescriptionContainer: FunctionComponent<DescriptionProps> = (props) => {
       name: 'Experimental: do not use in production!',
       type: 'warning',
     },
-    released: { name: 'Ready for production', type: 'wfp' },
+    released: { name: 'Ready for production', type: 'info' },
     legacy: { name: 'Legacy: do not use in new projects', type: 'warning' },
   };
 

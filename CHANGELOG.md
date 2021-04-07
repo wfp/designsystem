@@ -1,3 +1,43 @@
+## [1.15.1](https://github.com/WFP/UI/compare/v1.15.0...v1.15.1) (2021-03-30)
+
+
+### Bug Fixes
+
+* **Form:** reverted top padding spacing to previous on error message in Form component ([81d1243](https://github.com/WFP/UI/commit/81d12438518f026ef1f9336d020e7d6f21dafe87))
+* **ReactSelect:** reduced top margin of dropdown to hide required error message ([5d06c84](https://github.com/WFP/UI/commit/5d06c84fa227bbacd87173deafddcf8395fa5063))
+
+## [1.15.1](https://github.com/WFP/UI/compare/v1.15.0...v1.15.1) (2021-03-30)
+
+
+### Bug Fixes
+
+* **Form:** reverted top padding spacing to previous on error message in Form component ([81d1243](https://github.com/WFP/UI/commit/81d12438518f026ef1f9336d020e7d6f21dafe87))
+* **ReactSelect:** reduced top margin of dropdown to hide required error message ([5d06c84](https://github.com/WFP/UI/commit/5d06c84fa227bbacd87173deafddcf8395fa5063))
+
+## [1.15.1](https://github.com/WFP/UI/compare/v1.15.0...v1.15.1) (2021-03-30)
+
+
+### Bug Fixes
+
+* **Form:** reverted top padding spacing to previous on error message in Form component ([81d1243](https://github.com/WFP/UI/commit/81d12438518f026ef1f9336d020e7d6f21dafe87))
+* **ReactSelect:** reduced top margin of dropdown to hide required error message ([5d06c84](https://github.com/WFP/UI/commit/5d06c84fa227bbacd87173deafddcf8395fa5063))
+
+## [1.15.1](https://github.com/WFP/UI/compare/v1.15.0...v1.15.1) (2021-03-16)
+
+
+### Bug Fixes
+
+* **Form:** reverted top padding spacing to previous on error message in Form component ([81d1243](https://github.com/WFP/UI/commit/81d12438518f026ef1f9336d020e7d6f21dafe87))
+* **ReactSelect:** reduced top margin of dropdown to hide required error message ([5d06c84](https://github.com/WFP/UI/commit/5d06c84fa227bbacd87173deafddcf8395fa5063))
+
+## [1.15.1](https://github.com/WFP/UI/compare/v1.15.0...v1.15.1) (2021-02-26)
+
+
+### Bug Fixes
+
+* **Form:** reverted top padding spacing to previous on error message in Form component ([81d1243](https://github.com/WFP/UI/commit/81d12438518f026ef1f9336d020e7d6f21dafe87))
+* **ReactSelect:** reduced top margin of dropdown to hide required error message ([5d06c84](https://github.com/WFP/UI/commit/5d06c84fa227bbacd87173deafddcf8395fa5063))
+
 # [1.15.0](https://github.com/WFP/UI/compare/v1.14.0...v1.15.0) (2021-02-16)
 
 

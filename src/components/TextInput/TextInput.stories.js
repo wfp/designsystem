@@ -1,6 +1,5 @@
 import React from 'react';
 import markdown from './README.mdx';
-import { action } from '@storybook/addon-actions';
 import TextInput from '.';
 
 export default {
@@ -18,10 +17,21 @@ export const Regular = (args) => <TextInput {...args} />;
 
 
 Regular.args = {
+  type:"text",
   name: 'inputname',
   helperText: 'Optional helperText',
   labelText: 'The labelText',
   placeholder: 'placeholder',
+};
+
+export const PasswordInput = (args) => <TextInput  {...args} />;
+
+
+
+PasswordInput.args = {
+  type:"password",
+  name: 'password',
+  labelText: 'The labelText',
 };
 
 export const withError = (args) => <TextInput {...args} />;
@@ -31,7 +41,7 @@ export const withError = (args) => <TextInput {...args} />;
 withError.args = {
   name: 'inputname',
   helperText: 'Optional helperText',
-  labelText: 'The labelText',
+  labelText: 'Enter password',
   invalid: { message: 'Please enter your first name' },
 };
 

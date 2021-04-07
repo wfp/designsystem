@@ -104,7 +104,7 @@
   }
 
   img {
-    border: 1px solid #efefef;
+    // border: 1px solid #efefef;
     margin: 1rem 0;
     display: block;
   }
@@ -112,6 +112,13 @@
 .docs-status {
   margin-top: -1.5rem;
   margin-bottom: 2rem;
+}
+
+.docs-divider {
+    border: 0 none;
+    border-top: 1px solid rgba(0,0,0,.1);
+    height: 4px;
+    padding: 0;
 }
 
 .table-of-content.wfp--list {
@@ -183,8 +190,8 @@
   background: $interactive-01;
 }
 
-​ .color__brand-01 {
-  background: $brand-01;
+​.color__brand-01 {
+  background: var(--brand-01);
 }
 .color__interactive-02 {
   background: $interactive-02;
@@ -194,9 +201,9 @@
   background: $accent-01;
 }
 
-​ .color__interactive-02 {
-  background: $interactive-02;
-}
+// ​ .color__interactive-02 {
+//   background: $interactive-02;
+// }
 ​ .color__inverse-01 {
   background: $inverse-01;
 }
@@ -242,6 +249,9 @@
 ​ .color__field-02 {
   background: var(--field-02);
 }
+// .color__main {
+//   background: $color__brand-01;
+// }
 ​ .color__main-20 {
   background: $color__main-20;
 }
