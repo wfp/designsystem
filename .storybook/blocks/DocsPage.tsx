@@ -13,17 +13,7 @@ import { Props } from './Props';
 import { Stories } from './Stories';
 import { PRIMARY_STORY } from './types';
 
-import {
-  //DocsPage,
-  Title,
-  //Subtitle,
-  //Description,
-  //Primary,
-  //Props,
-  //Stories,
-  //types,
-  //DocsContainer,
-} from '@storybook/addon-docs/blocks';
+import { Title } from '@storybook/addon-docs/blocks';
 import HelpUsImprove from '../HelpUsImprove';
 
 export const DocsPage: FC = (props) => {

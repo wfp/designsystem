@@ -18,7 +18,7 @@
   .#{$prefix}--sub-navigation__header {
     width: 100%;
     padding: $spacing-md;
-    background: var(--ui-02);
+    border-bottom: 1px solid var(--ui-04);
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-between;
