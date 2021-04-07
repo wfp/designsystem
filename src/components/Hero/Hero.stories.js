@@ -6,6 +6,7 @@ import Hero from '.';
 import Button from '../Button';
 import Icon from '../Icon';
 import { iconWfpHumEmergencyResponsePos } from '@wfp/icons';
+import heroTwig from './Hero.twig'
 
 export default {
   title: 'Components/Content Related/Hero',
@@ -14,6 +15,7 @@ export default {
     componentSubtitle: 'Component',
     status: 'released',
     mdx: markdown,
+    twig: heroTwig
   },
 };
 
