@@ -1,12 +1,9 @@
 import React from 'react';
-
 import { buttonKinds } from '../../prop-types/types';
-
 import { iconAddGlyph } from '@wfp/icons';
-
 import markdown from './README.mdx';
 import buttonTwig from './Button.twig';
-
+import { twig } from 'twig';
 import Button from '.';
 
 export default {
@@ -22,8 +19,16 @@ export default {
 };
 
 export const ButtonRegular = (args) => <Button {...args} />;
+
 ButtonRegular.args = {
   children: 'Button',
+};
+
+ButtonRegular.parameters = {
+  design: {
+    type: 'figma',
+    url: 'https://www.figma.com/file/jtKqyyMTOKgUTstiGvPZMl/?node-id=0%3A1',
+  },
 };
 
 export const ButtonKind = (args) => (

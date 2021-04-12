@@ -104,6 +104,7 @@
   "dependencies": {
     "invariant": "^2.2.4",
     "react-popper-tooltip": "^4.1.0",
+    "storybook-addon-designs": "^6.0.0-alpha.3",
     "warning": "^4.0.3",
     "window-or-global": "^1.0.1"
   },
@@ -226,7 +227,7 @@
     "story-description-loader": "^1.0.0",
     "style-loader": "^1.2.1",
     "terser-webpack-plugin": "^4.0.0",
-    "twig": "^1.15.2",
+    "twig": "^1.15.4",
     "validate-commit-msg": "^2.14.0",
     "wcag-contrast": "^3.0.0",
     "webpack": "^4.44.1",

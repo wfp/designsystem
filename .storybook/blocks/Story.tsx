@@ -51,7 +51,6 @@ export const getStoryProps = (
     ? context.storyStore.fromId(previewId) || {}
     : {};
   const { height, inline } = props;
-
   const {
     storyFn = undefined,
     name: storyName = undefined,
