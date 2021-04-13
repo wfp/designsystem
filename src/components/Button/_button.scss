@@ -335,6 +335,11 @@
     @include typescale(zeta);
   }
 
+  .#{$prefix}--btn--lg {
+    height: 3.25rem;
+    @include typescale(delta);
+  }
+
   .#{$prefix}--btn--secondary + .#{$prefix}--btn--primary,
   .#{$prefix}--btn--tertiary + .#{$prefix}--btn--danger--primary {
     margin-left: $spacing-xs;

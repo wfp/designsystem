@@ -22,6 +22,52 @@ export default {
   },
 };
 
+export const SingleDatePickerDefault = (args) => <SingleDatePickerInput {...args} />;
+SingleDatePickerDefault.args = {
+  datePicker: SingleDatePicker,
+  labelText: 'Label text (labelText)',
+  placeholder: 'Placeholder text (placeholder)',
+  disabled: false,
+  hideLabel: false,
+  showClearDate: false,
+  invalid: false,
+  invalidText: 'A valid value is required',
+  showDefaultInputIcon: true,
+  inputIconPosition: 'after',
+  helperText: 'Optional helper text.',
+};
+
+const singleSourceCode = `
+import 'react-dates/initialize';
+import { SingleDatePickerInput } from "@wfp/ui";
+import { SingleDatePicker } from 'react-dates';
+
+<SingleDatePickerInput
+  datePicker={SingleDatePicker}
+  helperText="Optional helper text."
+  inputIconPosition="after"
+  invalidText="A valid value is required"
+  labelText="Label datepicker"
+  onBlur={()=>{}}
+  onChange={()=>{}}
+  onFocus={()=>{}}
+  placeholder="Placeholder text (placeholder)"
+  showDefaultInputIcon
+
+/>
+`
+
+SingleDatePickerDefault.story = {
+  parameters: {
+    docs: {
+      source: {
+        code: singleSourceCode
+      }
+    }
+  }
+}
+
+
 export const SingleDatePickerNew = (args) => {
   const [date, setDate] = useState(moment());
   const [focused, setFocused] = useState(false);
@@ -74,50 +120,6 @@ export const SingleDatePickerNewReactHookForm = (args) => {
   );
 };
 
-export const SingleDatePickerDefault = (args) => <SingleDatePickerInput {...args} />;
-SingleDatePickerDefault.args = {
-  datePicker: SingleDatePicker,
-  labelText: 'Label text (labelText)',
-  placeholder: 'Placeholder text (placeholder)',
-  disabled: false,
-  hideLabel: false,
-  showClearDate: false,
-  invalid: false,
-  invalidText: 'A valid value is required',
-  showDefaultInputIcon: true,
-  inputIconPosition: 'after',
-  helperText: 'Optional helper text.',
-};
-
-const singleSourceCode = `
-import 'react-dates/initialize';
-import { SingleDatePickerInput } from "@wfp/ui";
-import { SingleDatePicker } from 'react-dates';
-
-<SingleDatePickerInput
-  datePicker={SingleDatePicker}
-  helperText="Optional helper text."
-  inputIconPosition="after"
-  invalidText="A valid value is required"
-  labelText="Label datepicker"
-  onBlur={()=>{}}
-  onChange={()=>{}}
-  onFocus={()=>{}}
-  placeholder="Placeholder text (placeholder)"
-  showDefaultInputIcon
-
-/>
-`
-
-SingleDatePickerDefault.story = {
-  parameters: {
-    docs: {
-      source: {
-        code: singleSourceCode
-      }
-    }
-  }
-}
 
 export const DateRangePickerDefault = (args) => <DateRangePickerInput {...args} />;
 DateRangePickerDefault.args = {

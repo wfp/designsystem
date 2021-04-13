@@ -10,6 +10,7 @@ const Button = ({
   className,
   disabled,
   small,
+  large,
   kind,
   href,
   iconReverse,
@@ -32,6 +33,7 @@ const Button = ({
   const buttonClasses = classNames(className, {
     'wfp--btn': true,
     'wfp--btn--sm': small,
+    'wfp--btn--lg': large,
     'wfp--btn--icon-reverse': iconReverse,
     'wfp--btn--icon-only': icon && children === undefined,
     'wfp--btn--primary': kind === 'primary',
@@ -127,6 +129,13 @@ Button.propTypes = {
 
   /**
    * FOR DESIGNERS
+   * Specify whether the Button should be a large variant
+   */
+  large: PropTypes.bool,
+
+
+  /**
+   * FOR DESIGNERS
    * Specify the kind of Button you want to create
    */
   kind: PropTypes.oneOf([
@@ -199,6 +208,7 @@ Button.defaultProps = {
   type: 'button',
   disabled: false,
   small: false,
+  large:false,
   kind: 'primary',
 };
 
