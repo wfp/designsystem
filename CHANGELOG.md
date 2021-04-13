@@ -1,3 +1,34 @@
+# [1.16.0](https://github.com/WFP/UI/compare/v1.15.2...v1.16.0) (2021-04-07)
+
+
+### Bug Fixes
+
+* **Illustrations:** added new illustrations ([24b71a9](https://github.com/WFP/UI/commit/24b71a9e20e7320d8032f6aa18b5cae638520071))
+* **package:** packages with vulnerabilities updated ([9aadbf2](https://github.com/WFP/UI/commit/9aadbf27ee96d9d97a80f64f166f8aa4892510bd))
+* **Slider:** Firefox styling and MainNavigation mobile view ([22f31c5](https://github.com/WFP/UI/commit/22f31c5eabe7895920172947d30e495d32460346))
+* **Tooltip:** removed old dependencies and other changes ([3e7ac23](https://github.com/WFP/UI/commit/3e7ac234d9a5881f3a47ebf2258f14b47173402a))
+
+
+### Features
+
+* **ContextMenu:** added context menu ([2ddd49a](https://github.com/WFP/UI/commit/2ddd49a26f4db3d516da557cc592f907f715872e))
+
+## [1.15.1](https://github.com/WFP/UI/compare/v1.15.0...v1.15.1) (2021-03-30)
+
+
+### Bug Fixes
+
+* **Form:** reverted top padding spacing to previous on error message in Form component ([81d1243](https://github.com/WFP/UI/commit/81d12438518f026ef1f9336d020e7d6f21dafe87))
+* **ReactSelect:** reduced top margin of dropdown to hide required error message ([5d06c84](https://github.com/WFP/UI/commit/5d06c84fa227bbacd87173deafddcf8395fa5063))
+
+## [1.15.1](https://github.com/WFP/UI/compare/v1.15.0...v1.15.1) (2021-03-30)
+
+
+### Bug Fixes
+
+* **Form:** reverted top padding spacing to previous on error message in Form component ([81d1243](https://github.com/WFP/UI/commit/81d12438518f026ef1f9336d020e7d6f21dafe87))
+* **ReactSelect:** reduced top margin of dropdown to hide required error message ([5d06c84](https://github.com/WFP/UI/commit/5d06c84fa227bbacd87173deafddcf8395fa5063))
+
 ## [1.15.1](https://github.com/WFP/UI/compare/v1.15.0...v1.15.1) (2021-03-30)
 
 

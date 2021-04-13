@@ -18,7 +18,7 @@ export default function Sidebar({
     `${prefix}--sidebar-content__container`,
     className,
     {
-      [`${prefix}--sidebar-sidebar-content__container--active`]: active,
+      [`${prefix}--sidebar-content__container--active`]: active,
     }
   );
 

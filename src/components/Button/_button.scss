@@ -89,10 +89,10 @@
 
   .#{$prefix}--btn--accent {
     @include button-theme(
-      $accent-01,
+      var(--accent-01),
       transparent,
       var(--text-01),
-      darken($accent-01, 5),
+      var(--accent-02),
       var(--text-01)
     );
 

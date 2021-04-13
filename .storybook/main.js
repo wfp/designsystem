@@ -2,11 +2,12 @@ const webpack = require('webpack');
 const path = require('path');
 
 module.exports = {
+  core: {
+    // builder: 'webpack5',
+  },
   stories: ['../src/**/*.stories.(js|mdx)'],
   addons: [
-    //'/.storybook/addon-wfp/register',
-    //'./localAddon/register.tsx',
-    //'./localAddon/preset.ts',
+    'storybook-addon-designs',
     '@storybook/addon-docs',
     '@storybook/addon-toolbars',
     '@storybook/addon-viewport',

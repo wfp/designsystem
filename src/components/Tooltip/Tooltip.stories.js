@@ -2,7 +2,7 @@ import React from 'react';
 import Tooltip from './Tooltip';
 import markdown from './README.mdx';
 import Icon from '../Icon';
-import {iconOverflowMenu} from '@wfp/icons';
+import { iconOverflowMenu } from '@wfp/icons';
 
 export default {
   title: 'Components/UI Elements/Tooltip',
@@ -48,21 +48,19 @@ Dark.story = {
 };
 
 export const WithIcon = (args) => (
-  <Tooltip 
-  {...args}      
-  trigger="hover"
-  placement={"bottom"}
-  createRefWrapper={true}
-  content="Label Text" 
-  >
-      <Icon
+  <Tooltip
+    {...args}
+    trigger="click"
+    placement={'bottom'}
+    createRefWrapper={true}
+    content="Label Text">
+    <Icon
       description="options"
       icon={iconOverflowMenu}
       width="17px"
       height="17px"
-      />
-  
-</Tooltip>
+    />
+  </Tooltip>
 );
 
 WithIcon.story = {

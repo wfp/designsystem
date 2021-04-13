@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from 'react';
-import { H2 } from '@storybook/components/html';
+import { H2 } from '@storybook/components';
 import { HeaderMdx } from './mdx';
 
 export interface HeadingProps {
@@ -7,7 +7,10 @@ export interface HeadingProps {
   disableAnchor?: boolean;
 }
 
-export const Heading: FunctionComponent<HeadingProps> = ({ children, disableAnchor }) => {
+export const Heading: FunctionComponent<HeadingProps> = ({
+  children,
+  disableAnchor,
+}) => {
   if (disableAnchor || typeof children !== 'string') {
     return <H2>{children}</H2>;
   }

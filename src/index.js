@@ -14,6 +14,10 @@ export Card from './components/Card';
 export Checkbox from './components/Checkbox';
 export Credits from './components/Credits';
 export ContentSwitcher from './components/ContentSwitcher';
+export ContextMenu, {
+  ContextMenuGroup,
+  ContextMenuItem,
+} from './components/ContextMenu';
 export {
   SingleDatePickerInput,
   DateRangePickerInput,

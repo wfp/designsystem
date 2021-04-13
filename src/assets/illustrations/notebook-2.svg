@@ -1,0 +1,18 @@
+<svg width="535" height="829" viewBox="0 0 535 829" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="6" y="65" width="523" height="758" rx="14" fill="#ECC086" stroke="black" stroke-width="12" stroke-linejoin="round"/>
+<rect x="37" y="105" width="462" height="678" fill="white" stroke="black" stroke-width="12" stroke-linejoin="round"/>
+<line x1="109" y1="262" x2="427" y2="262" stroke="black" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="109" y1="317" x2="427" y2="317" stroke="black" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="109" y1="371" x2="427" y2="371" stroke="black" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="109" y1="424" x2="427" y2="424" stroke="black" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="109" y1="479" x2="427" y2="479" stroke="black" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="109" y1="534" x2="427" y2="534" stroke="black" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="109" y1="588" x2="427" y2="588" stroke="black" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="109" y1="641" x2="427" y2="641" stroke="black" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+<mask id="path-11-inside-1" fill="white">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M267.5 0C248.998 0 234 14.9985 234 33.5V49H180C174.477 49 170 53.4772 170 59V112C170 117.523 174.477 122 180 122H355C360.523 122 365 117.523 365 112V59C365 53.4772 360.523 49 355 49H301V33.5C301 14.9985 286.002 0 267.5 0Z"/>
+</mask>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M267.5 0C248.998 0 234 14.9985 234 33.5V49H180C174.477 49 170 53.4772 170 59V112C170 117.523 174.477 122 180 122H355C360.523 122 365 117.523 365 112V59C365 53.4772 360.523 49 355 49H301V33.5C301 14.9985 286.002 0 267.5 0Z" fill="#C4C4C4"/>
+<path d="M234 49V61H246V49H234ZM301 49H289V61H301V49ZM246 33.5C246 21.6259 255.626 12 267.5 12V-12C242.371 -12 222 8.37105 222 33.5H246ZM246 49V33.5H222V49H246ZM180 61H234V37H180V61ZM182 59C182 60.1046 181.105 61 180 61V37C167.85 37 158 46.8497 158 59H182ZM182 112V59H158V112H182ZM180 110C181.105 110 182 110.895 182 112H158C158 124.15 167.85 134 180 134V110ZM355 110H180V134H355V110ZM353 112C353 110.895 353.895 110 355 110V134C367.15 134 377 124.15 377 112H353ZM353 59V112H377V59H353ZM355 61C353.895 61 353 60.1046 353 59H377C377 46.8497 367.15 37 355 37V61ZM301 61H355V37H301V61ZM289 33.5V49H313V33.5H289ZM267.5 12C279.374 12 289 21.6259 289 33.5H313C313 8.37105 292.629 -12 267.5 -12V12Z" fill="black" mask="url(#path-11-inside-1)"/>
+<circle cx="268" cy="38" r="11" fill="black"/>
+</svg>

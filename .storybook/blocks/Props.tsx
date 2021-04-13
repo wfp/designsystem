@@ -2,22 +2,22 @@
 import React, { FC, useContext, useEffect, useState, useCallback } from 'react';
 import mapValues from 'lodash/mapValues';
 import pickBy from 'lodash/pickBy';
-import {
+/*import {
   ArgsTable,
   ArgsTableProps,
   ArgsTableError,
   ArgTypes,
   TabbedArgsTable,
 } from './ArgsTable';
+*/
 
-/*
 import {
   ArgsTable,
   ArgsTableProps,
   ArgsTableError,
   ArgTypes,
   TabbedArgsTable,
-} from '@storybook/components';*/
+} from '@storybook/components';
 import { Args } from '@storybook/addons';
 import { StoryStore } from '@storybook/client-api';
 import Events from '@storybook/core-events';
@@ -25,10 +25,10 @@ import Events from '@storybook/core-events';
 import {
   DocsContext,
   DocsContextProps,
-} from '@storybook/addon-docs/dist/blocks/DocsContext';
+} from '@storybook/addon-docs/dist/esm/blocks/DocsContext';
 import { Component, CURRENT_SELECTION, PRIMARY_STORY } from './types';
 import { getComponentName, getDocsStories } from './utils';
-import { ArgTypesExtractor } from '@storybook/addon-docs/dist/lib/docgen/types';
+import { ArgTypesExtractor } from '@storybook/addon-docs/dist/esm/lib/docgen/types';
 import { lookupStoryId } from './Story';
 
 type PropDescriptor = string[] | RegExp;
@@ -240,7 +240,11 @@ export const Props: FC<PropsProps> = (props) => {
         : subcomponents;
   }
   if (story) {
-    return <StoryTable {...(props as StoryProps)} components={allComponents} />;
+    if (main) {
+      return (
+        <StoryTable {...(props as StoryProps)} components={allComponents} />
+      );
+    } else return null;
   }
 
   if (!components && !subcomponents) {

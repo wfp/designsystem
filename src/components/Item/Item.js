@@ -111,7 +111,7 @@ Item.propTypes = {
   /**
    * Provide a wrap to use different borders.
    */
-  wrapper: PropTypes.oneOf(['undefined', 'sidebar']),
+  wrapper: PropTypes.oneOf(['undefined', 'sidebar', 'repeater']),
 };
 
 export default Item;
