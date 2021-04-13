@@ -19,6 +19,7 @@ import { Toolbar } from '@storybook/components/dist/esm/blocks/Toolbar';
 
 import ReactDOMServer from 'react-dom/server';
 import pretty from 'pretty';
+import { twig } from 'twig';
 
 export interface PreviewProps {
   isColumn?: boolean;
@@ -113,11 +114,19 @@ const getSource = (
 
     case expanded === 'twig': {
       const html = parameters.twig ? parameters.twig : 'not found';
+
+      const htmlSourceCode = parameters.docs.source
+        ? withSource.code
+        : `// @wfp/ui/src/components/${name}/${name}.twig
+
+${pretty(html)}`;
+
       const htmlSource = {
-        code: pretty(html),
+        code: htmlSourceCode,
         dark: false,
         language: 'jsx',
       };
+
       return {
         source: <StyledSource {...htmlSource} dark />,
         actionItem: { title: 'react', onClick: () => setExpanded(true) },
@@ -158,7 +167,6 @@ const getSource = (
 
     case expanded: {
       let a = '';
-
       if (subcomponents)
         Object.keys(subcomponents).forEach((element) => {
           a = `${a}, ${element}`;
@@ -253,6 +261,8 @@ const Preview: FunctionComponent<PreviewProps> = ({
   isExpanded = false,
   className,
   storyComponent,
+  docsContext,
+  sourceContext,
   subcomponents,
   parameters,
   ...props
@@ -268,6 +278,7 @@ const Preview: FunctionComponent<PreviewProps> = ({
     subcomponents,
     parameters
   );
+
   const [scale, setScale] = useState(1);
   const previewClasses = className
     ? `${className} sbdocs sbdocs-preview`
@@ -282,6 +293,7 @@ const Preview: FunctionComponent<PreviewProps> = ({
   if (parameters.code !== false) actionItems.push(actionItem);
   if (parameters.twig) actionItems.push(actionItemtwig);
   if (parameters.html !== false) actionItems.push(actionItemHtml);
+
   return (
     <PreviewContainer
       {...{ withSource, withToolbar: showToolbar }}
@@ -298,7 +310,15 @@ const Preview: FunctionComponent<PreviewProps> = ({
       )}
       <Relative>
         <ChildrenContainer isColumn={isColumn} columns={columns}>
-          {Array.isArray(children) ? (
+          {expanded === 'twig' ? (
+            <div
+              dangerouslySetInnerHTML={{
+                __html: twig({ data: parameters.twig }).render(
+                  docsContext.args
+                ),
+              }}
+            />
+          ) : Array.isArray(children) ? (
             children.map((child, i) => <div key={i.toString()}>{child}</div>)
           ) : (
             <Scale scale={scale}>{children}</Scale>
