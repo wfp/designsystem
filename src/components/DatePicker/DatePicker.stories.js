@@ -77,6 +77,8 @@ export const SingleDatePickerNew = (args) => {
       helperText="HelperText">
       {(e) => (
         <SingleDatePicker
+          showDefaultInputIcon={true}
+          inputIconPosition='after'
           onDateChange={(newDate) => setDate(newDate)}
           focused={focused}
           onFocusChange={({ focused }) => setFocused(focused)}
@@ -111,6 +113,8 @@ export const SingleDatePickerNewReactHookForm = (args) => {
                 onFocusChange={({ focused }) => setFocused(focused)}
                 date={moment(value)}
                 id="another_unique_id"
+                showDefaultInputIcon={true}
+                inputIconPosition='after'
               />
             )}
           </Input>

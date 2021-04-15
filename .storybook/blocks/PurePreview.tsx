@@ -136,7 +136,7 @@ ${pretty(html)}`;
         },
         actionItemHtml: {
           title: 'html',
-          onClick: () => setExpanded(false),
+          onClick: () => setExpanded('html'),
         },
       };
     }
@@ -156,7 +156,7 @@ ${pretty(html)}`;
         actionItem: { title: 'react', onClick: () => setExpanded(true) },
         actionItemtwig: {
           title: 'twig',
-          onClick: () => setExpanded('twig'),
+          onClick: () => setExpanded(false),
         },
         actionItemHtml: {
           title: 'html',
