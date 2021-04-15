@@ -210,7 +210,6 @@ Button.defaultProps = {
   type: 'button',
   disabled: false,
   small: false,
-  large:false,
   kind: 'primary',
 };
 
