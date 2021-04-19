@@ -1,3 +1,15 @@
+# [1.17.0](https://github.com/WFP/UI/compare/v1.16.0...v1.17.0) (2021-04-19)
+
+
+### Bug Fixes
+
+* **Button:** fix test failing in wrapper due to addition of large prop to default proptypes ([8e83208](https://github.com/WFP/UI/commit/8e832086567478fdcc1a4397ab33aaefbdc0d27d))
+
+
+### Features
+
+* **Twig:** twig loading added, Ilustrations added, Figma preview added ([4a64ddb](https://github.com/WFP/UI/commit/4a64ddb14dc3f20dcd25a4f8140eb05651cd11b6))
+
 # [1.16.0](https://github.com/WFP/UI/compare/v1.15.2...v1.16.0) (2021-04-07)
 
 
