@@ -1,8 +1,4 @@
 import React, { FC } from 'react';
-/*import { Title } from './Title';
-import { Subtitle } from './Subtitle';
-import { Description } from './Description';
-*/
 import { Subtitle } from './Subtitle';
 import { Primary } from './Primary';
 import { Description } from './Description';
