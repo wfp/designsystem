@@ -1,9 +1,17 @@
 ## [1.17.1](https://github.com/WFP/UI/compare/v1.17.0...v1.17.1) (2021-04-19)
 
+## [1.15.1](https://github.com/WFP/UI/compare/v1.15.0...v1.15.1) (2021-02-19)
 
 ### Bug Fixes
 
-* **next:** branch was not aligned to master ([4fd1177](https://github.com/WFP/UI/commit/4fd1177f49792674b6522a9b46ef9094df2ef21b))
+- **Form:** reverted top padding spacing to previous on error message in Form component ([81d1243](https://github.com/WFP/UI/commit/81d12438518f026ef1f9336d020e7d6f21dafe87))
+- **ReactSelect:** reduced top margin of dropdown to hide required error message ([5d06c84](https://github.com/WFP/UI/commit/5d06c84fa227bbacd87173deafddcf8395fa5063))
+
+# [1.15.0](https://github.com/WFP/UI/compare/v1.14.0...v1.15.0) (2021-02-16)
+
+### Bug Fixes
+
+- **next:** branch was not aligned to master ([4fd1177](https://github.com/WFP/UI/commit/4fd1177f49792674b6522a9b46ef9094df2ef21b))
 
 # [1.17.0](https://github.com/WFP/UI/compare/v1.16.0...v1.17.0) (2021-04-19)
 
