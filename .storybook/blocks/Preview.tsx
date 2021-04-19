@@ -95,13 +95,12 @@ const getPreviewProps = (
 };
 
 export const Preview: FC<PreviewProps> = (props) => {
-  console.log('props', props);
   const docsContext = useContext(DocsContext);
   const sourceContext = useContext(SourceContext);
   const previewProps = getPreviewProps(props, docsContext, sourceContext);
   const { children } = props;
 
-  console.log('waaahh', docsContext, previewProps);
+
   return (
     <MDXProvider components={resetComponents}>
       <PurePreview

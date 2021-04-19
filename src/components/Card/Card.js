@@ -38,7 +38,10 @@ const Card = ({
 
   const content = (
     <>
-      <div className="wfp--photo-cardnew__background" style={style} />
+      {
+        kind === 'overlay' ? <div className="wfp--photo-cardnew__background" style={style} /> : null
+      }
+      
       {image && kind === 'simple-card' ?
       (
         <img src={image} alt={title} className="wfp--header-photo" />

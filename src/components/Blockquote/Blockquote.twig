@@ -1,9 +1,25 @@
-<div class="wfp--blockquote wfp--blockquote--with-icon">
-  <div class="wfp--blockquote__icon-wrapper">
-    <div class="wfp--blockquote__icon wfp--blockquote__icon--custom"><svg fill-rule="evenodd" height="50" viewBox="0 0 16 16" width="50">
-        <path d="M8 14.5c3.6 0 6.5-2.9 6.5-6.5S11.6 1.5 8 1.5 1.5 4.4 1.5 8s2.9 6.5 6.5 6.5zM8 16c-4.4 0-8-3.6-8-8s3.6-8 8-8 8 3.6 8 8-3.6 8-8 8z"></path>
-        <path d="M7 7V4h2v3h3v2H9v3H7V9H4V7h3z"></path>
-      </svg></div>
+<div class="wfp--theme-light wfp--theme-en">
+  <div class="wfp--blockquote wfp--blockquote--{{kind}}  {{ withIcon ? 'wfp--blockquote--with-icon'}} {{ light ? 'wfp--blockquote--light' }}">
+
+    {% if withIcon %}
+      <div class="wfp--blockquote__icon-wrapper">
+        {% if icon %}
+          {{icon}}
+        {% else %}
+          <svg class="wfp--blockquote__icon" fill-rule="evenodd" height="48" viewBox="0 0 24 21" width="48" aria-label="Blockquote Icon" alt="Blockquote Icon">
+            <title>Blockquote Icon</title>
+            <path d="M12 0L0 21h24L12 0zm0 3l9 16H3l9-16z"></path>
+            <path d="M11.2 8.4V10l.4 4h.8l.4-4V8.4zM11.2 16a.8.8 0 111.6 0 .8.8 0 11-1.6 0"></path>
+          </svg>
+        {% endif %}
+      </div>
+    {% endif %}
+
+    <div class="wfp--blockquote__content">
+      {% if toggleable %}
+        <div class="wfp--blockquote__title" tabindex="0">{{title}}</div>
+      {% endif %}
+      <div class="wfp--blockquote__inside">{{children}}</div>
+    </div>
   </div>
-  <div class="wfp--blockquote__content">{{ text }}</div>
 </div>
