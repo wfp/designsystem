@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
-import TooltipTrigger from 'react-popper-tooltip';
+import { usePopperTooltip } from 'react-popper-tooltip';
 
 import settings from '../../globals/js/settings';
 const { prefix } = settings;
@@ -24,78 +24,74 @@ export const tooltipStyleDark = {
 const Tooltip = ({
   className,
   dark,
-  disablePadding,
+  noPadding,
   children,
   content,
   trigger = 'hover',
   modifiers = [],
   placement = 'top',
   createRefWrapper,
-  onVisibilityChange,
+  closeOnOutsideClick,
+  closeOnTriggerHidden,
+  defaultVisible,
+  delayHide,
+  delayShow,
+  followCursor,
+  interactive,
+  mutationObserverOptions,
+  offset,
+  onVisibleChange,
   ...others
 }) => {
   const [visibility, setVisibility] = useState(false);
   const classNames = classnames(className, {
     [`${prefix}--tooltip`]: true,
-    [`${prefix}--tooltip--disable-padding`]: disablePadding,
+    [`${prefix}--tooltip--disable-padding`]: noPadding,
     [`${prefix}--tooltip--visible`]: visibility,
     [`${prefix}--tooltip--${trigger}`]: trigger,
     [`${prefix}--tooltip--dark`]: dark,
   });
 
-  const Tooltip = ({
-    arrowRef,
-    tooltipRef,
+  const {
     getArrowProps,
     getTooltipProps,
+    setTooltipRef,
+    setTriggerRef,
+    visible,
+  } = usePopperTooltip({
+    closeOnOutsideClick,
+    closeOnTriggerHidden,
+    defaultVisible,
+    delayHide,
+    delayShow,
+    followCursor,
+    interactive,
+    mutationObserverOptions,
+    offset,
+    onVisibleChange,
     placement,
-  }) => (
-    <div
-      {...getTooltipProps({
-        ref: tooltipRef,
-        className: classNames,
-        'data-placement': placement,
-      })}>
-      <div
-        {...getArrowProps({
-          ref: arrowRef,
-          className: `${prefix}--tooltip__arrow`,
-          'data-placement': placement,
-        })}
-      />
-      {content}
-    </div>
-  );
+    trigger,
+  });
 
-  const Trigger = ({ getTriggerProps, triggerRef }) => {
-    if (!createRefWrapper && typeof children !== 'string') {
-      const elementClassNames = classnames(children?.props?.className, {
-        [`${prefix}--tooltip--trigger`]: true,
-      });
+  const elementClassNames = classnames(children?.props?.className, {
+    [`${prefix}--tooltip--trigger`]: true,
+  });
 
-      return React.cloneElement(children, {
-        ...getTriggerProps({
-          ...children.props,
-          ref: triggerRef,
-          className: elementClassNames,
-        }),
-      });
-    }
+  const wrapperClassNames = classnames(className, {
+    [`${prefix}--tooltip--trigger`]: true,
+  });
 
-    const wrapperClassNames = classnames(className, {
-      [`${prefix}--tooltip--trigger`]: true,
-    });
-
-    return (
-      <span
-        {...getTriggerProps({
-          ref: triggerRef,
-          className: wrapperClassNames,
-        })}>
+  const triggerElement =
+    !createRefWrapper && typeof children !== 'string' ? (
+      React.cloneElement(children, {
+        ref: setTriggerRef,
+        className: elementClassNames,
+      })
+    ) : (
+      <span ref={setTriggerRef} className={wrapperClassNames}>
         {children}
       </span>
     );
-  };
 
   const visibilityChange = (e) => {
     setVisibility(e);
@@ -103,23 +99,19 @@ const Tooltip = ({
   };
 
   return (
-    <TooltipTrigger
-      placement={placement}
-      trigger={trigger}
-      tooltip={Tooltip}
-      {...others}
-      onVisibilityChange={visibilityChange}
-      modifiers={[
-        {
-          name: 'offset',
-          options: {
-            offset: [0, 5],
-          },
-        },
-        ...modifiers,
-      ]}>
-      {Trigger}
-    </TooltipTrigger>
+    <>
+      {triggerElement}
+      {visible && (
+        <div
+          ref={setTooltipRef}
+          {...getTooltipProps({ className: classNames })}>
+          {typeof content === 'function'
+            ? content({ setVisibility, visibilityChange })
+            : content}
+          <div {...getArrowProps({ className: `${prefix}--tooltip__arrow` })} />
+        </div>
+      )}
+    </>
   );
 };
 
@@ -141,7 +133,7 @@ Tooltip.propTypes = {
   /**
    * Disable the default inner padding of the tooltip
    */
-  disablePadding: PropTypes.bool,
+  noPadding: PropTypes.bool,
   /**
    * Provide the placement of the tooltip
    */
@@ -173,7 +165,7 @@ Tooltip.propTypes = {
    * Whether to use React.createPortal for creating tooltip.
    */
   usePortal: PropTypes.bool,
-    /**
+  /**
    * Use a wrapper html element around the trigger. Useful for components without `forwardRef` support.
    */
   createRefWrapper: PropTypes.bool,

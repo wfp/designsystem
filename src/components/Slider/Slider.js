@@ -115,8 +115,13 @@ function Slider(props) {
     className
   );
 
+  const sliderRangeWrapperClasses = classNames(
+    'wfp--slider__range-wrapper',
+    { 'wfp--slider__range-wrapper--disabled': disabled },
+    className
+  );
+
   const valueMinimal = value < min ? min : value;
-  console.log('value', min, max);
   return (
     <Input {...props} formItemClassName={numberInputClasses}>
       {() => {
@@ -126,7 +131,7 @@ function Slider(props) {
               {formatLabel(min, minLabel)}
             </span>
 
-            <div className="wfp--slider__range-wrapper">
+            <div className={sliderRangeWrapperClasses}>
               <div
                 className="wfp--slider__range-before"
                 style={{

@@ -3,6 +3,7 @@ import Blockquote from '.';
 import Icon from '../Icon';
 import { iconAddOutline } from '@wfp/icons';
 import markdown from './README.mdx';
+import blockquoteTwig from './Blockquote.twig'
 
 const props = {
   children: `Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.`,
@@ -22,6 +23,7 @@ export default {
     componentSubtitle: 'Component',
     status: 'released',
     mdx: markdown,
+    twig: blockquoteTwig,
   },
 };
 
@@ -125,7 +127,7 @@ export const CustomIcon = (args) => <Blockquote {...args} />;
 
 CustomIcon.args = {
   ...props,
-  icon: <Icon icon={iconAddOutline} height={50} width={50} />,
+  icon: <Icon icon={iconAddOutline} height={48} width={48} />,
 };
 
 CustomIcon.story = {

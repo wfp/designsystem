@@ -89,10 +89,10 @@
 
   .#{$prefix}--btn--accent {
     @include button-theme(
-      $accent-01,
+      var(--accent-01),
       transparent,
       var(--text-01),
-      darken($accent-01, 5),
+      var(--accent-02),
       var(--text-01)
     );
 
@@ -333,6 +333,11 @@
     height: 1.8rem;
     padding: $button-padding-sm;
     @include typescale(zeta);
+  }
+
+  .#{$prefix}--btn--lg {
+    height: 3.25rem;
+    @include typescale(delta);
   }
 
   .#{$prefix}--btn--secondary + .#{$prefix}--btn--primary,

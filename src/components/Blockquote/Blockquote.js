@@ -98,6 +98,8 @@ class Blockquote extends React.Component {
     ) : withIcon || icon ? (
       <Icon
         icon={icon ? icon : lookup.icon}
+        width={48}
+        height={48}
         description="Blockquote Icon"
         className="wfp--blockquote__icon"
       />
@@ -144,10 +146,6 @@ Blockquote.propTypes = {
    * Show content formated as code
    */
   code: PropTypes.bool,
-  /**
-   * Display content as `dangerouslySetInnerHTML` content
-   */
-  //innerHtml: PropTypes.string,
   /**
    * Display light version of Blockquote
    */

@@ -8,7 +8,7 @@ export {
 
 export * from './Anchor';
 export * from './Description';
-export * from '@storybook/addon-docs/dist/blocks/DocsContext';
+export * from '@storybook/addon-docs/dist/esm/blocks/DocsContext';
 export * from './DocsPage';
 export * from './DocsContainer';
 export * from './DocsStory';
@@ -24,6 +24,5 @@ export * from './Subheading';
 export * from './Subtitle';
 export * from './Title';
 export * from './Wrapper';
-
 export * from './types';
 export * from './mdx';

@@ -115,10 +115,10 @@
 }
 
 .docs-divider {
-    border: 0 none;
-    border-top: 1px solid rgba(0,0,0,.1);
-    height: 4px;
-    padding: 0;
+  border: 0 none;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  height: 4px;
+  padding: 0;
 }
 
 .table-of-content.wfp--list {
@@ -133,6 +133,10 @@
   width: 97vw;
   margin-left: calc((97vw - 100%) / -2);
   //margin-left: calc((-100vw - 100%) / 2);
+}
+
+.docblock-source {
+  margin: 0 !important;
 }
 
 /*.sticky-preview {

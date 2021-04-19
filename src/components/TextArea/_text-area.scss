@@ -17,7 +17,8 @@
     @include reset;
     @include font-family;
     @include typescale('zeta');
-    min-width: 20rem;
+    //TODO: check why min-width was used
+    //min-width: 20rem;
     min-height: $input-height;
     padding: $spacing-xs;
     color: var(--text-01);
@@ -61,7 +62,7 @@
     }
   }
 
-  .#{$prefix}--textarea-fullwidth{
+  .#{$prefix}--textarea-fullwidth {
     width: 100%;
   }
 

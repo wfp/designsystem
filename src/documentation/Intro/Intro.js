@@ -4,6 +4,7 @@
 
 import React, { Component } from 'react';
 import { linkTo } from '@storybook/addon-links';
+import LinkTo from '@storybook/addon-links/react';
 import Link from '../../components/Link';
 import classnames from 'classnames';
 import Page from '../Page';
@@ -94,13 +95,14 @@ const Intro = () => (
           provides you with guidelines, components and templates
           <br /> to boost the user experience of your products.
         </p>
-        <Button
-          kind="primary"
-          icon={iconLightGlyph}
-          style={{ marginRight: '0.5em' }}
-          onClick={linkTo('Getting started|Getting started', 'Developers')}>
-          Getting started
-        </Button>
+        <LinkTo kind="getting-started-installing-the-kit--page">
+          <Button
+            kind="primary"
+            icon={iconLightGlyph}
+            style={{ marginRight: '0.5em' }}>
+              Getting started
+          </Button>
+        </LinkTo>
 
         <Button
           kind="secondary"

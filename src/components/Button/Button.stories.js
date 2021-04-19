@@ -1,12 +1,9 @@
 import React from 'react';
-
 import { buttonKinds } from '../../prop-types/types';
-
 import { iconAddGlyph } from '@wfp/icons';
-
 import markdown from './README.mdx';
 import buttonTwig from './Button.twig';
-
+import { twig } from 'twig';
 import Button from '.';
 
 export default {
@@ -22,8 +19,16 @@ export default {
 };
 
 export const ButtonRegular = (args) => <Button {...args} />;
+
 ButtonRegular.args = {
   children: 'Button',
+};
+
+ButtonRegular.parameters = {
+  design: {
+    type: 'figma',
+    url: 'https://www.figma.com/file/jtKqyyMTOKgUTstiGvPZMl/?node-id=0%3A1',
+  },
 };
 
 export const ButtonKind = (args) => (
@@ -116,7 +121,7 @@ export const Small = (args) => (
     <Button small>Small button</Button>{' '}
     <Button {...args} icon={iconAddGlyph} kind="tertiary" small>
       With icon
-    </Button>{' '}
+    </Button>
   </>
 );
 
@@ -131,6 +136,31 @@ Small.story = {
   parameters: {
     docs: {
       storyDescription: helloButtonSmall,
+    },
+  },
+};
+
+
+export const Large = (args) => (
+  <>
+    <Button large>Large button</Button>{' '}
+    <Button {...args} icon={iconAddGlyph} kind="tertiary" large>
+      With icon
+    </Button>
+  </>
+);
+
+const helloButtonLarge = `
+Small buttons may be used when there is not enough space for a
+regular sized button. This issue is most found in tables. Small button should have three words
+or less.
+`;
+
+Large.story = {
+  name: 'large Button',
+  parameters: {
+    docs: {
+      storyDescription: helloButtonLarge,
     },
   },
 };

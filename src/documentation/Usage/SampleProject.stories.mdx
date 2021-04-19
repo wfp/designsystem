@@ -1,0 +1,36 @@
+import PrismCode from 'react-prism';
+import { linkTo } from '@storybook/addon-links';
+
+import Page from '../Page';
+import Blockquote from '../../components/Blockquote';
+import Link from '../../components/Link';
+
+<Meta
+  title="Getting started/Sample project"
+  subTitle="react.js SPA example"
+  parameters={{
+    componentSubtitle: 'Getting started',
+    previewTabs: {
+      canvas: { hidden: true },
+    },
+  }}
+/>
+
+> WFP global telephone directory example
+>
+> Use the repository of [Global telephone directory](https://dev.azure.com/worldfoodprogramme/GTD) as an example and starting point for the implementation. The repository is only available for WFP users.
+
+The example is a full feature applcation using **react.js**.
+
+### Features
+
+- Multilingual support using `react-i18next`
+- `react-router` for internal routing
+- `redux` and `redux toolkit` for state management
+- `redux-persist` for offline support
+- `axios` and `redux-saga` for API handling
+- `@azur/msal-react` for authentification
+
+### Preview
+
+[Online preview](https://dev.gtd.wfp.org/)

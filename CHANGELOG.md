@@ -1,214 +1,254 @@
-## [1.15.1](https://github.com/WFP/UI/compare/v1.15.0...v1.15.1) (2021-02-19)
+## [1.17.1](https://github.com/WFP/UI/compare/v1.17.0...v1.17.1) (2021-04-19)
 
+## [1.15.1](https://github.com/WFP/UI/compare/v1.15.0...v1.15.1) (2021-02-19)
 
 ### Bug Fixes
 
-* **Form:** reverted top padding spacing to previous on error message in Form component ([81d1243](https://github.com/WFP/UI/commit/81d12438518f026ef1f9336d020e7d6f21dafe87))
-* **ReactSelect:** reduced top margin of dropdown to hide required error message ([5d06c84](https://github.com/WFP/UI/commit/5d06c84fa227bbacd87173deafddcf8395fa5063))
+- **Form:** reverted top padding spacing to previous on error message in Form component ([81d1243](https://github.com/WFP/UI/commit/81d12438518f026ef1f9336d020e7d6f21dafe87))
+- **ReactSelect:** reduced top margin of dropdown to hide required error message ([5d06c84](https://github.com/WFP/UI/commit/5d06c84fa227bbacd87173deafddcf8395fa5063))
 
 # [1.15.0](https://github.com/WFP/UI/compare/v1.14.0...v1.15.0) (2021-02-16)
 
+### Bug Fixes
+
+- **next:** branch was not aligned to master ([4fd1177](https://github.com/WFP/UI/commit/4fd1177f49792674b6522a9b46ef9094df2ef21b))
+
+# [1.17.0](https://github.com/WFP/UI/compare/v1.16.0...v1.17.0) (2021-04-19)
 
 ### Bug Fixes
 
-* **Icons:** version changed ([901c58d](https://github.com/WFP/UI/commit/901c58dc41c9710eae60dba012a84430467f663e))
-* **Input:** added prop type description for all Inputs ([f86ad11](https://github.com/WFP/UI/commit/f86ad114476135f4892f39a2ccd39d85b90a3150))
-* **Input:** merge conflicts solved ([c52d7a7](https://github.com/WFP/UI/commit/c52d7a76aa1513b6f3c15fc432deebfa6eb9a4d6))
-* **package:** added lockfile ([c78e915](https://github.com/WFP/UI/commit/c78e915f8bf101d8542818f45acac39d8c88cfe1))
-* **package:** downgrade wfp ([b7bbd4a](https://github.com/WFP/UI/commit/b7bbd4a9eefcba5b6aa3aaa7a35654733af70d65))
-* **package:** downgraded npm version ([1a23754](https://github.com/WFP/UI/commit/1a237545247786635541a3d8ae87ef62de5e88f4))
-* **package:** lockfile updated ([e625a4c](https://github.com/WFP/UI/commit/e625a4c1e6f80a1f5e48e2730e7adb46eaa6b23b))
-* **package:** updated lock file ([a15bfad](https://github.com/WFP/UI/commit/a15bfad152500a4cb89349c2b245efa88b6075b6))
-* **package:** updated lock file ([b04fd9e](https://github.com/WFP/UI/commit/b04fd9e32a022fa3b75bcd986509ecd0f3a73d83))
-* **package:** updated lock file ([52b5eba](https://github.com/WFP/UI/commit/52b5eba76a17a92d46585f63ac343b56a260c786))
-* **release:** alpha channel added ([7e3aec3](https://github.com/WFP/UI/commit/7e3aec3162ac3a908521f99f3c48ce5403dd0bb3))
-* **Search:** added optional inputWrapperClassName for the wrapper of the input element ([031e1bb](https://github.com/WFP/UI/commit/031e1bb1ba5e6655cc6ca39ab7c67eda80a6830e))
-* **Slider:** Slider min no reflects the correct percentage on the slider ([4875d6c](https://github.com/WFP/UI/commit/4875d6ce351a363ca6e2bc5be382dfd7ffd35565))
-
+- **Button:** fix test failing in wrapper due to addition of large prop to default proptypes ([8e83208](https://github.com/WFP/UI/commit/8e832086567478fdcc1a4397ab33aaefbdc0d27d))
 
 ### Features
 
-* **Semantic:** initial try for seperate alpha releases ([81ad44a](https://github.com/WFP/UI/commit/81ad44a73835ca4369675eb2752cc911ca8279d9))
+- **Twig:** twig loading added, Ilustrations added, Figma preview added ([4a64ddb](https://github.com/WFP/UI/commit/4a64ddb14dc3f20dcd25a4f8140eb05651cd11b6))
+
+# [1.16.0](https://github.com/WFP/UI/compare/v1.15.2...v1.16.0) (2021-04-07)
+
+### Bug Fixes
+
+- **Illustrations:** added new illustrations ([24b71a9](https://github.com/WFP/UI/commit/24b71a9e20e7320d8032f6aa18b5cae638520071))
+- **package:** packages with vulnerabilities updated ([9aadbf2](https://github.com/WFP/UI/commit/9aadbf27ee96d9d97a80f64f166f8aa4892510bd))
+- **Slider:** Firefox styling and MainNavigation mobile view ([22f31c5](https://github.com/WFP/UI/commit/22f31c5eabe7895920172947d30e495d32460346))
+- **Tooltip:** removed old dependencies and other changes ([3e7ac23](https://github.com/WFP/UI/commit/3e7ac234d9a5881f3a47ebf2258f14b47173402a))
+
+### Features
+
+- **ContextMenu:** added context menu ([2ddd49a](https://github.com/WFP/UI/commit/2ddd49a26f4db3d516da557cc592f907f715872e))
+
+## [1.15.1](https://github.com/WFP/UI/compare/v1.15.0...v1.15.1) (2021-03-30)
+
+### Bug Fixes
+
+- **Form:** reverted top padding spacing to previous on error message in Form component ([81d1243](https://github.com/WFP/UI/commit/81d12438518f026ef1f9336d020e7d6f21dafe87))
+- **ReactSelect:** reduced top margin of dropdown to hide required error message ([5d06c84](https://github.com/WFP/UI/commit/5d06c84fa227bbacd87173deafddcf8395fa5063))
+
+## [1.15.1](https://github.com/WFP/UI/compare/v1.15.0...v1.15.1) (2021-03-30)
+
+### Bug Fixes
+
+- **Form:** reverted top padding spacing to previous on error message in Form component ([81d1243](https://github.com/WFP/UI/commit/81d12438518f026ef1f9336d020e7d6f21dafe87))
+- **ReactSelect:** reduced top margin of dropdown to hide required error message ([5d06c84](https://github.com/WFP/UI/commit/5d06c84fa227bbacd87173deafddcf8395fa5063))
+
+## [1.15.1](https://github.com/WFP/UI/compare/v1.15.0...v1.15.1) (2021-03-30)
+
+### Bug Fixes
+
+- **Form:** reverted top padding spacing to previous on error message in Form component ([81d1243](https://github.com/WFP/UI/commit/81d12438518f026ef1f9336d020e7d6f21dafe87))
+- **ReactSelect:** reduced top margin of dropdown to hide required error message ([5d06c84](https://github.com/WFP/UI/commit/5d06c84fa227bbacd87173deafddcf8395fa5063))
+
+## [1.15.1](https://github.com/WFP/UI/compare/v1.15.0...v1.15.1) (2021-03-16)
+
+### Bug Fixes
+
+- **Form:** reverted top padding spacing to previous on error message in Form component ([81d1243](https://github.com/WFP/UI/commit/81d12438518f026ef1f9336d020e7d6f21dafe87))
+- **ReactSelect:** reduced top margin of dropdown to hide required error message ([5d06c84](https://github.com/WFP/UI/commit/5d06c84fa227bbacd87173deafddcf8395fa5063))
+
+## [1.15.1](https://github.com/WFP/UI/compare/v1.15.0...v1.15.1) (2021-02-26)
+
+### Bug Fixes
+
+- **Form:** reverted top padding spacing to previous on error message in Form component ([81d1243](https://github.com/WFP/UI/commit/81d12438518f026ef1f9336d020e7d6f21dafe87))
+- **ReactSelect:** reduced top margin of dropdown to hide required error message ([5d06c84](https://github.com/WFP/UI/commit/5d06c84fa227bbacd87173deafddcf8395fa5063))
+
+# [1.15.0](https://github.com/WFP/UI/compare/v1.14.0...v1.15.0) (2021-02-16)
+
+### Bug Fixes
+
+- **Icons:** version changed ([901c58d](https://github.com/WFP/UI/commit/901c58dc41c9710eae60dba012a84430467f663e))
+- **Input:** added prop type description for all Inputs ([f86ad11](https://github.com/WFP/UI/commit/f86ad114476135f4892f39a2ccd39d85b90a3150))
+- **Input:** merge conflicts solved ([c52d7a7](https://github.com/WFP/UI/commit/c52d7a76aa1513b6f3c15fc432deebfa6eb9a4d6))
+- **package:** added lockfile ([c78e915](https://github.com/WFP/UI/commit/c78e915f8bf101d8542818f45acac39d8c88cfe1))
+- **package:** downgrade wfp ([b7bbd4a](https://github.com/WFP/UI/commit/b7bbd4a9eefcba5b6aa3aaa7a35654733af70d65))
+- **package:** downgraded npm version ([1a23754](https://github.com/WFP/UI/commit/1a237545247786635541a3d8ae87ef62de5e88f4))
+- **package:** lockfile updated ([e625a4c](https://github.com/WFP/UI/commit/e625a4c1e6f80a1f5e48e2730e7adb46eaa6b23b))
+- **package:** updated lock file ([a15bfad](https://github.com/WFP/UI/commit/a15bfad152500a4cb89349c2b245efa88b6075b6))
+- **package:** updated lock file ([b04fd9e](https://github.com/WFP/UI/commit/b04fd9e32a022fa3b75bcd986509ecd0f3a73d83))
+- **package:** updated lock file ([52b5eba](https://github.com/WFP/UI/commit/52b5eba76a17a92d46585f63ac343b56a260c786))
+- **release:** alpha channel added ([7e3aec3](https://github.com/WFP/UI/commit/7e3aec3162ac3a908521f99f3c48ce5403dd0bb3))
+- **Search:** added optional inputWrapperClassName for the wrapper of the input element ([031e1bb](https://github.com/WFP/UI/commit/031e1bb1ba5e6655cc6ca39ab7c67eda80a6830e))
+- **Slider:** Slider min no reflects the correct percentage on the slider ([4875d6c](https://github.com/WFP/UI/commit/4875d6ce351a363ca6e2bc5be382dfd7ffd35565))
+
+### Features
+
+- **Semantic:** initial try for seperate alpha releases ([81ad44a](https://github.com/WFP/UI/commit/81ad44a73835ca4369675eb2752cc911ca8279d9))
 
 # [1.14.0](https://github.com/WFP/UI/compare/v1.13.1...v1.14.0) (2021-02-15)
 
-
 ### Bug Fixes
 
-* **Input:** minor placeholder added to show how to customize the input ([7e4056a](https://github.com/WFP/UI/commit/7e4056a5f3f674eea727b706da272b202c53d68f))
-* **package:** upgrade node-sass to be compatible with more recent Intel Macs and node v15 ([6d0d37c](https://github.com/WFP/UI/commit/6d0d37cba4dc1295abbbe88f0aa26306a2b34025))
-* **Sidebar:** default export added ([f57d968](https://github.com/WFP/UI/commit/f57d968c2efaed325ece27f853153eddfbeb4229))
-* **Sidebar:** mobile fix ([5dcc5cf](https://github.com/WFP/UI/commit/5dcc5cf7e6e7285ca1e2e824dc1e5a7a038fdacb))
-* **SIdebar:** minor fixes and variable css classNames ([3e4abd3](https://github.com/WFP/UI/commit/3e4abd3becd28de17323893f6430c4a2129d7330))
-* **Text:** component export added ([cb25eb1](https://github.com/WFP/UI/commit/cb25eb11f5082a5ee23c833a3faeca6b3dfae7bd))
-
+- **Input:** minor placeholder added to show how to customize the input ([7e4056a](https://github.com/WFP/UI/commit/7e4056a5f3f674eea727b706da272b202c53d68f))
+- **package:** upgrade node-sass to be compatible with more recent Intel Macs and node v15 ([6d0d37c](https://github.com/WFP/UI/commit/6d0d37cba4dc1295abbbe88f0aa26306a2b34025))
+- **Sidebar:** default export added ([f57d968](https://github.com/WFP/UI/commit/f57d968c2efaed325ece27f853153eddfbeb4229))
+- **Sidebar:** mobile fix ([5dcc5cf](https://github.com/WFP/UI/commit/5dcc5cf7e6e7285ca1e2e824dc1e5a7a038fdacb))
+- **SIdebar:** minor fixes and variable css classNames ([3e4abd3](https://github.com/WFP/UI/commit/3e4abd3becd28de17323893f6430c4a2129d7330))
+- **Text:** component export added ([cb25eb1](https://github.com/WFP/UI/commit/cb25eb11f5082a5ee23c833a3faeca6b3dfae7bd))
 
 ### Features
 
-* **Item:** added Item component which can be displayed inside the sidebar ([21979ec](https://github.com/WFP/UI/commit/21979ecfd47f52fd133155f8e39b861ffa304ee1))
-* **Item:** added item component wip ([f96a85e](https://github.com/WFP/UI/commit/f96a85e0ea0a02ce15dad8f877ca2de6f9e410fd))
-* **Item:** alignment of the Item component ([6cbb4b6](https://github.com/WFP/UI/commit/6cbb4b6c159dbd653a59de735b4afa0c41748286))
-* **Sidebar:** added some style fixes ([da56c85](https://github.com/WFP/UI/commit/da56c8515b10896a105e1c0846df523fb9f5155c))
-* **Sidebar:** height improvment using flexbox ([9d25547](https://github.com/WFP/UI/commit/9d25547456f7600f1badb89df1f1965e168c1909))
-* **Sidebar:** minor fixes on the height of the total sidebar and improved import of css vars ([a5e6565](https://github.com/WFP/UI/commit/a5e6565b7d8b2cd87d021301eba0512a90f259cb))
-* **Sidebar:** mobile support added ([ae21bcf](https://github.com/WFP/UI/commit/ae21bcf9126b62f757a793a6b9aa8b88ef4ea8e8))
-* **Sidebar:** Sidebar scrolling improved, the SidebarHeader can be now fixed on top ([47d76d6](https://github.com/WFP/UI/commit/47d76d645f1def8c3942b5a6f527e3b35ecb04a3))
+- **Item:** added Item component which can be displayed inside the sidebar ([21979ec](https://github.com/WFP/UI/commit/21979ecfd47f52fd133155f8e39b861ffa304ee1))
+- **Item:** added item component wip ([f96a85e](https://github.com/WFP/UI/commit/f96a85e0ea0a02ce15dad8f877ca2de6f9e410fd))
+- **Item:** alignment of the Item component ([6cbb4b6](https://github.com/WFP/UI/commit/6cbb4b6c159dbd653a59de735b4afa0c41748286))
+- **Sidebar:** added some style fixes ([da56c85](https://github.com/WFP/UI/commit/da56c8515b10896a105e1c0846df523fb9f5155c))
+- **Sidebar:** height improvment using flexbox ([9d25547](https://github.com/WFP/UI/commit/9d25547456f7600f1badb89df1f1965e168c1909))
+- **Sidebar:** minor fixes on the height of the total sidebar and improved import of css vars ([a5e6565](https://github.com/WFP/UI/commit/a5e6565b7d8b2cd87d021301eba0512a90f259cb))
+- **Sidebar:** mobile support added ([ae21bcf](https://github.com/WFP/UI/commit/ae21bcf9126b62f757a793a6b9aa8b88ef4ea8e8))
+- **Sidebar:** Sidebar scrolling improved, the SidebarHeader can be now fixed on top ([47d76d6](https://github.com/WFP/UI/commit/47d76d645f1def8c3942b5a6f527e3b35ecb04a3))
 
 ## [1.13.1](https://github.com/WFP/UI/compare/v1.13.0...v1.13.1) (2021-02-01)
 
-
 ### Bug Fixes
 
-* **BannerNavigation:** font-weight changed ([7d8d4ab](https://github.com/WFP/UI/commit/7d8d4abc5d6d7001b5c528983de2595f613ebc19))
+- **BannerNavigation:** font-weight changed ([7d8d4ab](https://github.com/WFP/UI/commit/7d8d4abc5d6d7001b5c528983de2595f613ebc19))
 
 # [1.13.0](https://github.com/WFP/UI/compare/v1.12.0...v1.13.0) (2021-01-26)
 
-
 ### Features
 
-* **Empty:** added empty component and illustrations ([324d573](https://github.com/WFP/UI/commit/324d5736202165544be0f57270ae76287fe34a11))
+- **Empty:** added empty component and illustrations ([324d573](https://github.com/WFP/UI/commit/324d5736202165544be0f57270ae76287fe34a11))
 
 # [1.12.0](https://github.com/WFP/UI/compare/v1.11.5...v1.12.0) (2021-01-20)
 
-
 ### Features
 
-* **Button:** added right to left support ([1137b01](https://github.com/WFP/UI/commit/1137b01ff4c07a5ddfade92b9c031c7dc8ac0554))
+- **Button:** added right to left support ([1137b01](https://github.com/WFP/UI/commit/1137b01ff4c07a5ddfade92b9c031c7dc8ac0554))
 
 ## [1.11.5](https://github.com/WFP/UI/compare/v1.11.4...v1.11.5) (2021-01-13)
 
-
 ### Bug Fixes
 
-* **Tooltip:** replaced div with span to fix placement issue on icon in tooltip ([8f41baf](https://github.com/WFP/UI/commit/8f41baf7418581efe4971f50cd5ccadce3e2ef68))
+- **Tooltip:** replaced div with span to fix placement issue on icon in tooltip ([8f41baf](https://github.com/WFP/UI/commit/8f41baf7418581efe4971f50cd5ccadce3e2ef68))
 
 ## [1.11.4](https://github.com/WFP/UI/compare/v1.11.3...v1.11.4) (2021-01-06)
 
-
 ### Bug Fixes
 
-* **Slider:** fullWidth prop works now ([#375](https://github.com/WFP/UI/issues/375)), Footer accepts custom components for Logos ([04289e3](https://github.com/WFP/UI/commit/04289e31516c3af25fb79e4b509b875f7dac93bc))
+- **Slider:** fullWidth prop works now ([#375](https://github.com/WFP/UI/issues/375)), Footer accepts custom components for Logos ([04289e3](https://github.com/WFP/UI/commit/04289e31516c3af25fb79e4b509b875f7dac93bc))
 
 ## [1.11.3](https://github.com/WFP/UI/compare/v1.11.2...v1.11.3) (2021-01-04)
 
-
 ### Bug Fixes
 
-* **package:** description changed ([10ec7c8](https://github.com/WFP/UI/commit/10ec7c839408e120db3e8d2dd13b6a5fe0b4fa60))
+- **package:** description changed ([10ec7c8](https://github.com/WFP/UI/commit/10ec7c839408e120db3e8d2dd13b6a5fe0b4fa60))
 
 # [1.11.0](https://github.com/WFP/UI/compare/v1.10.20...v1.11.0) (2021-01-04)
 
-
 ### Bug Fixes
 
-* **package:** manual version bump ([c1b0185](https://github.com/WFP/UI/commit/c1b0185183c44ffd2ee57ad4e760398d1820772c))
-* **Search:** onChange was returning a wrong target value ([#368](https://github.com/WFP/UI/issues/368)) ([d422086](https://github.com/WFP/UI/commit/d422086c89bb116edfa0a793543407ae6f0e355d))
-
+- **package:** manual version bump ([c1b0185](https://github.com/WFP/UI/commit/c1b0185183c44ffd2ee57ad4e760398d1820772c))
+- **Search:** onChange was returning a wrong target value ([#368](https://github.com/WFP/UI/issues/368)) ([d422086](https://github.com/WFP/UI/commit/d422086c89bb116edfa0a793543407ae6f0e355d))
 
 ### Features
 
-* **package:** trigger release ([cbabcd3](https://github.com/WFP/UI/commit/cbabcd387543fec65dcc63a2b6f5ddf0846bdb93))
+- **package:** trigger release ([cbabcd3](https://github.com/WFP/UI/commit/cbabcd387543fec65dcc63a2b6f5ddf0846bdb93))
 
 # [1.11.0](https://github.com/WFP/UI/compare/v1.10.20...v1.11.0) (2021-01-04)
 
-
 ### Bug Fixes
 
-* **Search:** onChange was returning a wrong target value ([#368](https://github.com/WFP/UI/issues/368)) ([d422086](https://github.com/WFP/UI/commit/d422086c89bb116edfa0a793543407ae6f0e355d))
-
+- **Search:** onChange was returning a wrong target value ([#368](https://github.com/WFP/UI/issues/368)) ([d422086](https://github.com/WFP/UI/commit/d422086c89bb116edfa0a793543407ae6f0e355d))
 
 ### Features
 
-* **package:** trigger release ([cbabcd3](https://github.com/WFP/UI/commit/cbabcd387543fec65dcc63a2b6f5ddf0846bdb93))
+- **package:** trigger release ([cbabcd3](https://github.com/WFP/UI/commit/cbabcd387543fec65dcc63a2b6f5ddf0846bdb93))
 
 # [1.11.0](https://github.com/WFP/UI/compare/v1.10.20...v1.11.0) (2021-01-04)
 
-
 ### Bug Fixes
 
-* **Search:** onChange was returning a wrong target value ([#368](https://github.com/WFP/UI/issues/368)) ([d422086](https://github.com/WFP/UI/commit/d422086c89bb116edfa0a793543407ae6f0e355d))
-
+- **Search:** onChange was returning a wrong target value ([#368](https://github.com/WFP/UI/issues/368)) ([d422086](https://github.com/WFP/UI/commit/d422086c89bb116edfa0a793543407ae6f0e355d))
 
 ### Features
 
-* **package:** trigger release ([cbabcd3](https://github.com/WFP/UI/commit/cbabcd387543fec65dcc63a2b6f5ddf0846bdb93))
+- **package:** trigger release ([cbabcd3](https://github.com/WFP/UI/commit/cbabcd387543fec65dcc63a2b6f5ddf0846bdb93))
 
 # [1.11.0](https://github.com/WFP/UI/compare/v1.10.20...v1.11.0) (2021-01-04)
 
-
 ### Features
 
-* **package:** trigger release ([cbabcd3](https://github.com/WFP/UI/commit/cbabcd387543fec65dcc63a2b6f5ddf0846bdb93))
+- **package:** trigger release ([cbabcd3](https://github.com/WFP/UI/commit/cbabcd387543fec65dcc63a2b6f5ddf0846bdb93))
 
 ## [1.10.12](https://github.com/WFP/UI/compare/v1.10.11...v1.10.12) (2020-11-25)
 
-
 ### Bug Fixes
 
-* **StepNavigation:** console.logs removed, RadioButtonGroup added as legacy implementation ([#334](https://github.com/WFP/UI/issues/334)) ([59385b5](https://github.com/WFP/UI/commit/59385b52a0103e750b64d6bb40d7a2ed703a14e1))
-* **Warning:** RadioButtonGroup warning added ([dd3ae6c](https://github.com/WFP/UI/commit/dd3ae6c2c1048043d57ebd5ded3d49bd7f25bc6e))
+- **StepNavigation:** console.logs removed, RadioButtonGroup added as legacy implementation ([#334](https://github.com/WFP/UI/issues/334)) ([59385b5](https://github.com/WFP/UI/commit/59385b52a0103e750b64d6bb40d7a2ed703a14e1))
+- **Warning:** RadioButtonGroup warning added ([dd3ae6c](https://github.com/WFP/UI/commit/dd3ae6c2c1048043d57ebd5ded3d49bd7f25bc6e))
 
 ## [1.10.11](https://github.com/WFP/UI/compare/v1.10.10...v1.10.11) (2020-11-25)
 
-
 ### Bug Fixes
 
-* **Notification:** icons were wrong ([592b961](https://github.com/WFP/UI/commit/592b9613ed8812119653d22eeca1efae8491d2d6))
+- **Notification:** icons were wrong ([592b961](https://github.com/WFP/UI/commit/592b9613ed8812119653d22eeca1efae8491d2d6))
 
 ## [1.10.10](https://github.com/WFP/UI/compare/v1.10.9...v1.10.10) (2020-11-24)
 
-
 ### Bug Fixes
 
-* **colors:** added colors to export again ([6c431e6](https://github.com/WFP/UI/commit/6c431e6df20db641dae6cfe4f5a90ae9319925f0))
-* **Notification:** not existing icon removed ([#324](https://github.com/WFP/UI/issues/324)) ([d7ec782](https://github.com/WFP/UI/commit/d7ec782a8d7c5ed8b09119da31a5b9e808b34993))
+- **colors:** added colors to export again ([6c431e6](https://github.com/WFP/UI/commit/6c431e6df20db641dae6cfe4f5a90ae9319925f0))
+- **Notification:** not existing icon removed ([#324](https://github.com/WFP/UI/issues/324)) ([d7ec782](https://github.com/WFP/UI/commit/d7ec782a8d7c5ed8b09119da31a5b9e808b34993))
 
 ## [1.10.9](https://github.com/WFP/UI/compare/v1.10.8...v1.10.9) (2020-11-23)
 
-
 ### Bug Fixes
 
-* **Colors:** fixed color keys missing from colors json file ([ae31d32](https://github.com/WFP/UI/commit/ae31d32577c5143c0b44b565b2e19329bf8ddfc4))
-* **DatePicker:** resolving react-hook-form datepicker issue ([4dbca46](https://github.com/WFP/UI/commit/4dbca460011c35bac817be301fb7647453f9ffbb))
-* **Export:** export for TableSorting fixed ([dcd3d37](https://github.com/WFP/UI/commit/dcd3d37f54f1595e69dfaf4376071344ffaf5a1c))
-* **Loading:** now background color is provided via native css variable ([#327](https://github.com/WFP/UI/issues/327)) ([48eadcf](https://github.com/WFP/UI/commit/48eadcfb26af8b187eb8cecbf33c9404e22d2d41))
-* **Notification:** exported notification components ([fdca4c3](https://github.com/WFP/UI/commit/fdca4c319ad493cee602a209be43f5b32e5fa8a4))
-* **Notifiication:** export was not added ([#326](https://github.com/WFP/UI/issues/326)) ([9db0352](https://github.com/WFP/UI/commit/9db035298586993608366628a0e82973ffc90b70))
-* **NumberInput:** propType for invalid was wrong ([#322](https://github.com/WFP/UI/issues/322)) ([a8f079b](https://github.com/WFP/UI/commit/a8f079b020dfd4ab53eeb9e7189b7e6820046c83))
-* **Readmore:** added scrolling to div and improved readme ([#50864](https://github.com/WFP/UI/issues/50864), [#50846](https://github.com/WFP/UI/issues/50846)) ([33fecf7](https://github.com/WFP/UI/commit/33fecf7c0d3d21f99cf3e620e5a2e5de34406613))
-* **Slider:** rewrite Slider component as functional component and using native slider input ([#324](https://github.com/WFP/UI/issues/324)) ([e9f6e09](https://github.com/WFP/UI/commit/e9f6e09abf5450d9c9ea914c843702fd53eae8bb))
-* **Table:** added Table to export ([#325](https://github.com/WFP/UI/issues/325)) ([42e9ad6](https://github.com/WFP/UI/commit/42e9ad6140cdce8bd386837df3e826a07e321610))
-* **Tooltip:** rewrote Tooltip component ([#50816](https://github.com/WFP/UI/issues/50816), [#50817](https://github.com/WFP/UI/issues/50817)) ([40a31d9](https://github.com/WFP/UI/commit/40a31d9fc3fb12d586a4ac2019c523f7d3ecdae3))
+- **Colors:** fixed color keys missing from colors json file ([ae31d32](https://github.com/WFP/UI/commit/ae31d32577c5143c0b44b565b2e19329bf8ddfc4))
+- **DatePicker:** resolving react-hook-form datepicker issue ([4dbca46](https://github.com/WFP/UI/commit/4dbca460011c35bac817be301fb7647453f9ffbb))
+- **Export:** export for TableSorting fixed ([dcd3d37](https://github.com/WFP/UI/commit/dcd3d37f54f1595e69dfaf4376071344ffaf5a1c))
+- **Loading:** now background color is provided via native css variable ([#327](https://github.com/WFP/UI/issues/327)) ([48eadcf](https://github.com/WFP/UI/commit/48eadcfb26af8b187eb8cecbf33c9404e22d2d41))
+- **Notification:** exported notification components ([fdca4c3](https://github.com/WFP/UI/commit/fdca4c319ad493cee602a209be43f5b32e5fa8a4))
+- **Notifiication:** export was not added ([#326](https://github.com/WFP/UI/issues/326)) ([9db0352](https://github.com/WFP/UI/commit/9db035298586993608366628a0e82973ffc90b70))
+- **NumberInput:** propType for invalid was wrong ([#322](https://github.com/WFP/UI/issues/322)) ([a8f079b](https://github.com/WFP/UI/commit/a8f079b020dfd4ab53eeb9e7189b7e6820046c83))
+- **Readmore:** added scrolling to div and improved readme ([#50864](https://github.com/WFP/UI/issues/50864), [#50846](https://github.com/WFP/UI/issues/50846)) ([33fecf7](https://github.com/WFP/UI/commit/33fecf7c0d3d21f99cf3e620e5a2e5de34406613))
+- **Slider:** rewrite Slider component as functional component and using native slider input ([#324](https://github.com/WFP/UI/issues/324)) ([e9f6e09](https://github.com/WFP/UI/commit/e9f6e09abf5450d9c9ea914c843702fd53eae8bb))
+- **Table:** added Table to export ([#325](https://github.com/WFP/UI/issues/325)) ([42e9ad6](https://github.com/WFP/UI/commit/42e9ad6140cdce8bd386837df3e826a07e321610))
+- **Tooltip:** rewrote Tooltip component ([#50816](https://github.com/WFP/UI/issues/50816), [#50817](https://github.com/WFP/UI/issues/50817)) ([40a31d9](https://github.com/WFP/UI/commit/40a31d9fc3fb12d586a4ac2019c523f7d3ecdae3))
 
 ## [1.10.8](https://github.com/WFP/UI/compare/v1.10.7...v1.10.8) (2020-11-19)
 
-
 ### Bug Fixes
 
-* **Dependencies:** moving dependencies to dev dependencies ([3dbb4fb](https://github.com/WFP/UI/commit/3dbb4fbc8cbc41053fd78b4141b2ec138b8dd7a1))
-* **Notification:** file was missing ([6d4473b](https://github.com/WFP/UI/commit/6d4473b318ead728832c850f0234203283c8789c))
-* **Package:** updated lock file ([c4432a4](https://github.com/WFP/UI/commit/c4432a43648120b1e17b1feb515d28743413ef34))
+- **Dependencies:** moving dependencies to dev dependencies ([3dbb4fb](https://github.com/WFP/UI/commit/3dbb4fbc8cbc41053fd78b4141b2ec138b8dd7a1))
+- **Notification:** file was missing ([6d4473b](https://github.com/WFP/UI/commit/6d4473b318ead728832c850f0234203283c8789c))
+- **Package:** updated lock file ([c4432a4](https://github.com/WFP/UI/commit/c4432a43648120b1e17b1feb515d28743413ef34))
 
 ## [1.10.7](https://github.com/WFP/UI/compare/v1.10.6...v1.10.7) (2020-11-16)
 
-
 ### Bug Fixes
 
-* **Blockquote:** warning kind prop-type spelling issue fixed ([#323](https://github.com/WFP/UI/issues/323)) ([ef551e6](https://github.com/WFP/UI/commit/ef551e6d302635e26803b0867f85cf0091e4fd88))
+- **Blockquote:** warning kind prop-type spelling issue fixed ([#323](https://github.com/WFP/UI/issues/323)) ([ef551e6](https://github.com/WFP/UI/commit/ef551e6d302635e26803b0867f85cf0091e4fd88))
 
 ## [1.10.6](https://github.com/WFP/UI/compare/v1.10.5...v1.10.6) (2020-11-12)
 
-
 ### Bug Fixes
 
-* **Modal:** background color now working ([901be30](https://github.com/WFP/UI/commit/901be3065a6902552fce8e713ad27b31bae76602))
+- **Modal:** background color now working ([901be30](https://github.com/WFP/UI/commit/901be3065a6902552fce8e713ad27b31bae76602))
 
 ## [1.10.5](https://github.com/WFP/UI/compare/v1.10.4...v1.10.5) (2020-11-12)
 
-
 ### Bug Fixes
 
-* **Tooltip:** hiding the tooltip added ([ca0c4d3](https://github.com/WFP/UI/commit/ca0c4d384c181db88a262949d802463126243b84))
+- **Tooltip:** hiding the tooltip added ([ca0c4d3](https://github.com/WFP/UI/commit/ca0c4d384c181db88a262949d802463126243b84))
 
 # Changelog
 
