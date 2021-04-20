@@ -5,6 +5,7 @@ import markdown from './README.mdx';
 import Breadcrumb from '.';
 import BreadcrumbHome from '../BreadcrumbHome';
 import BreadcrumbItem from '../BreadcrumbItem';
+import breadcrumbTwig from './Breadcrumb.twig';
 
 export default {
   title: 'Components/Navigations/Breadcrumb',
@@ -14,6 +15,7 @@ export default {
     componentSubtitle: 'Component',
     status: 'released',
     mdx: markdown,
+    twig: breadcrumbTwig
   },
 };
 

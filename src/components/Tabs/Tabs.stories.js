@@ -2,6 +2,7 @@ import React from 'react';
 import markdown from './README.mdx';
 import Tabs from '.';
 import Tab from '../Tab';
+import tabTwig from './Tabs.twig';
 
 export default {
   title: 'Components/Content Related/Tabs',
@@ -10,6 +11,7 @@ export default {
     componentSubtitle: 'Component',
     status: 'released',
     mdx: markdown,
+    twig: tabTwig
   },
 };
 

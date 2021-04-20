@@ -1,0 +1,21 @@
+<div class="wfp--theme-light wfp--theme-en">
+  <nav class="wfp--tabs">
+    <div class="wfp--tabs__nav__bar"></div>
+    <ul class="wfp--tabs__nav">
+        {% for tab in tabs %}
+        <li tabindex="-1" class="wfp--tabs__nav-item {{ selected ? 'wfp--tabs__nav-item--selected' }}  {{ disabled ? 'wfp--tabs__nav-item--disabled' }}" selected="">
+            <a class="wfp--tabs__nav-link" href="{{ tab.path }}" label="{{tab.label}}" tabindex="0" aria-selected="true">{{tab.label}}</a>
+        </li>
+        {% endfor %}
+    </ul>
+  </nav>
+
+{% if contents %}
+  {% for content in contents %}
+    <div class="wfp--tab-content" aria-hidden="false" {{ selected ? 'selected' : 'hidden' }}>
+        <div class="some-content">{content}</div>
+    </div>
+  {% endfor %}
+{% endif %} 
+
+</div>

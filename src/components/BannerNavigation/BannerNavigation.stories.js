@@ -3,6 +3,7 @@ import markdown from './README.mdx';
 import { action } from '@storybook/addon-actions';
 import { BannerNavigation, BannerNavigationItem } from './BannerNavigation';
 import { BannerNavigationWithContent } from './BannerNavigationWithContent';
+import BannerTwig from './BannerNavigation.twig'
 import Search from '../Search';
 import Link from '../Link';
 
@@ -13,6 +14,7 @@ export default {
   parameters: {
     componentSubtitle: 'Component',
     status: 'released',
+    twig:BannerTwig,
     mdx: markdown,
     previewWidth: 'full',
   },

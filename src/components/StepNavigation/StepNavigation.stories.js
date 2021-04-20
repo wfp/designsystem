@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
+import stepNavigationTwig from './StepNavigation.twig';
 import StepNavigation from './StepNavigation';
 import StepNavigationItem from '../StepNavigationItem';
 import markdown from './README.mdx';
+
 
 export default {
   title: 'Components/Navigations/StepNavigation',
@@ -11,6 +13,7 @@ export default {
     componentSubtitle: 'Component',
     status: 'released',
     mdx: markdown,
+    twig: stepNavigationTwig
   },
 };
 

@@ -1,15 +1,10 @@
 <div class="wfp--theme-light wfp--theme-en">
   <div class="wfp--banner-navigation">
-    <div class="wfp--wrapper">
+    <div class="wfp--wrapper wfp--wrapper--width-lg">
       <ul class="wfp--banner-navigation__list">
-        <li class="wfp--banner-navigation__item"><a href="https://newgo.wfp.org" class="wfp--link" target="_blank">WFPgo</a></li>
-        <li class="wfp--banner-navigation__item"><a href="https://selfservice.go.wfp.org" class="wfp--link" target="_blank">Self-Service</a></li>
-        <li class="wfp--banner-navigation__item"><a href="http://communities.wfp.org" class="wfp--link" target="_blank">Communities</a></li>
-        <li class="wfp--banner-navigation__item"><a href="http://manuals.wfp.org" class="wfp--link" target="_blank">Manuals</a></li>
-        <li class="wfp--banner-navigation__item"><a href="https://go.docs.wfp.org" class="wfp--link" target="_blank">GoDocs</a></li>
-        <li class="wfp--banner-navigation__item"><a href="https://newgo.wfp.org/topics/data" class="wfp--link" target="_blank">Data</a></li>
-        <li class="wfp--banner-navigation__item"><a href="http://opweb.wfp.org" class="wfp--link" target="_blank">OPweb</a></li>
-        <li class="wfp--banner-navigation__item"><a href="https://welearn.wfp.org" class="wfp--link" target="_blank">WeLearn</a></li>
+        {% for item in items %}
+          <li class="wfp--banner-navigation__item"><a href="{{ item.href }}" class="wfp--link" target="_blank">{{ item.label }}</a></li>
+        {% endfor %}
       </ul>
     </div>
   </div>

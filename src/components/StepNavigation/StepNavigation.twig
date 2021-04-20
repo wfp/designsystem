@@ -1,0 +1,21 @@
+<div class="wfp--theme-light wfp--theme-en">
+  <nav class="wfp--step-navigation wfp--step-navigation--regular">
+    <ul class="wfp--step-navigation__nav wfp--step-navigation__nav--hidden">
+        {% for step in steps %}
+        <li tabindex="-1" class="wfp--step-navigation__nav-item {{selected ? 'wfp--step-navigation__nav-item--selected'}} ">
+            <div class="wfp--step-navigation__nav-item__indicator">
+            {% if icon %}
+                <svg fill-rule="evenodd" height="14" viewBox="0 0 16 16" width="14" aria-label="Step Item" alt="Step Item">
+                    <title>Step Item</title>
+                    <path d="M9.5 8.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zm5-1.5a1.5 1.5 0 100 3 1.5 1.5 0 000-3zm-13 0a1.5 1.5 0 100 3 1.5 1.5 0 000-3z"></path>
+                </svg>
+            {% else %}
+                <span>{{step.number}}</span>
+            {% endif %}
+            </div>
+            <div><span class="wfp--step-navigation__nav-item__text">{step.label}</span></div>
+        </li>
+        {% endfor %}
+    </ul>
+  </nav>
+</div>
