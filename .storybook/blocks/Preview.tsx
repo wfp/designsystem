@@ -99,7 +99,7 @@ export const Preview: FC<PreviewProps> = (props) => {
   const sourceContext = useContext(SourceContext);
   const previewProps = getPreviewProps(props, docsContext, sourceContext);
   const { children } = props;
-
+  
   return (
     <MDXProvider components={resetComponents}>
       <PurePreview

@@ -1,6 +1,6 @@
 {
   "name": "@wfp/ui",
-  "version": "1.15.1",
+  "version": "1.17.1",
   "description": "WFP UI Kit",
   "license": "Apache-2",
   "main": "lib/index.js",
@@ -26,7 +26,7 @@
     "semantic-release": "semantic-release",
     "start": "npm run storybook",
     "storybook": "STORYBOOK_ASSETS=https://cdn.wfp.org/guides/ui/assets/v0.0.1/ STORYBOOK_NPM_VERSION=10.10.3 STORYBOOK_INTERNAL_ASSETS=../ start-storybook -s ./src/assets -p 9000",
-    "test": "jest --watch",
+    "test": "jest",
     "test-ssr": "npm run build && node ssr-tests/*.js",
     "jest-w": "jest --watch"
   },

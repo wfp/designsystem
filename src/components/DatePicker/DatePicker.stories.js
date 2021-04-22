@@ -22,58 +22,6 @@ export default {
   },
 };
 
-export const SingleDatePickerNew = (args) => {
-  const [date, setDate] = useState(moment());
-  const [focused, setFocused] = useState(false);
-  return (
-    <Input
-      labelText="Input using SingleDatePicker by Airbnb"
-      helperText="HelperText">
-      {(e) => (
-        <SingleDatePicker
-          onDateChange={(newDate) => setDate(newDate)}
-          focused={focused}
-          onFocusChange={({ focused }) => setFocused(focused)}
-          date={date}
-          id="your_unique_id"
-        />
-      )}
-    </Input>
-  );
-};
-
-export const SingleDatePickerNewReactHookForm = (args) => {
-  const defaultValues = { test: '2020-12-01T11:00:00.000Z' };
-  const [focused, setFocused] = useState(false);
-  const { control,  handleSubmit } = useForm({ defaultValues });
-
-  const onSubmit = (data) => alert(JSON.stringify(data));
-
-  return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <Controller
-        control={control}
-        name="test"
-        render={({ onChange, onBlur, value, name, ref }) => (
-          <Input
-            labelText="Input using SingleDatePicker by Airbnb"
-            helperText="HelperText">
-            {(e) => (
-              <SingleDatePicker
-                onDateChange={(newDate) => onChange(newDate)}
-                focused={focused}
-                onFocusChange={({ focused }) => setFocused(focused)}
-                date={moment(value)}
-                id="another_unique_id"
-              />
-            )}
-          </Input>
-        )}
-      />
-    </form>
-  );
-};
-
 export const SingleDatePickerDefault = (args) => <SingleDatePickerInput {...args} />;
 SingleDatePickerDefault.args = {
   datePicker: SingleDatePicker,
@@ -118,6 +66,64 @@ SingleDatePickerDefault.story = {
     }
   }
 }
+
+
+export const SingleDatePickerNew = (args) => {
+  const [date, setDate] = useState(moment());
+  const [focused, setFocused] = useState(false);
+  return (
+    <Input
+      labelText="Input using SingleDatePicker by Airbnb"
+      helperText="HelperText">
+      {(e) => (
+        <SingleDatePicker
+          showDefaultInputIcon={true}
+          inputIconPosition='after'
+          onDateChange={(newDate) => setDate(newDate)}
+          focused={focused}
+          onFocusChange={({ focused }) => setFocused(focused)}
+          date={date}
+          id="your_unique_id"
+        />
+      )}
+    </Input>
+  );
+};
+
+export const SingleDatePickerNewReactHookForm = (args) => {
+  const defaultValues = { test: '2020-12-01T11:00:00.000Z' };
+  const [focused, setFocused] = useState(false);
+  const { control,  handleSubmit } = useForm({ defaultValues });
+
+  const onSubmit = (data) => alert(JSON.stringify(data));
+
+  return (
+    <form onSubmit={handleSubmit(onSubmit)}>
+      <Controller
+        control={control}
+        name="test"
+        render={({ onChange, onBlur, value, name, ref }) => (
+          <Input
+            labelText="Input using SingleDatePicker by Airbnb"
+            helperText="HelperText">
+            {(e) => (
+              <SingleDatePicker
+                onDateChange={(newDate) => onChange(newDate)}
+                focused={focused}
+                onFocusChange={({ focused }) => setFocused(focused)}
+                date={moment(value)}
+                id="another_unique_id"
+                showDefaultInputIcon={true}
+                inputIconPosition='after'
+              />
+            )}
+          </Input>
+        )}
+      />
+    </form>
+  );
+};
+
 
 export const DateRangePickerDefault = (args) => <DateRangePickerInput {...args} />;
 DateRangePickerDefault.args = {

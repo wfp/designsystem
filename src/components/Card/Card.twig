@@ -1,0 +1,21 @@
+<div class="wfp--theme-light wfp--theme-en">
+  <div class="wfp--card-box wfp--photo-cardnew--{{kind}}" style="width:300px;min-height:260px">
+    {% if kind == 'simple-card' %}
+        {% if image %}
+        <img src={{image}} alt="alt" class="wfp--header-photo" />
+        {% endif %}   
+    {% endif %}
+    {% if kind == 'overlay' %}
+        {% if image %}
+        <div class="wfp--photo-cardnew__background" style="background-image:url({{image}})"></div>
+        {% endif %}  
+    {% endif %}
+    <div class="wfp--photo-cardnew__info">
+      <div>
+        <p class="wfp--photo-cardnew__info__metadata">{{metadata}}</p>
+        <h3 class="wfp--photo-cardnew__info__title">{{title}}</h3>
+        <p class="wfp--photo-cardnew__info__subtitle">{{subTitle}}</p>
+      </div>
+    </div>
+  </div>
+</div>
