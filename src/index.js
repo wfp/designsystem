@@ -95,9 +95,10 @@ export SelectItemGroup from './components/SelectItemGroup';
 export Sidebar, {
   SidebarHeader,
   SidebarScroll,
+  SidebarContentHeader,
+  SidebarContentBody,
   SidebarBackButton,
 } from './components/Sidebar';
-
 export Switch from './components/Switch';
 export Slider from './components/Slider';
 export Story from './components/Story';

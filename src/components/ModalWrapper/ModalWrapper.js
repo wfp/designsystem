@@ -78,8 +78,8 @@ export default class ModalWrapper extends React.Component {
 
   handleOnRequestSubmit = () => {
     const { handleSubmit, shouldCloseAfterSubmit } = this.props;
-
-    if (handleSubmit && handleSubmit()) {
+    if (handleSubmit) {
+      handleSubmit();
       if (shouldCloseAfterSubmit) {
         this.handleClose();
       }

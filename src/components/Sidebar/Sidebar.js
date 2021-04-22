@@ -26,10 +26,7 @@ export default function Sidebar({
     <div className={classes} {...other}>
       <div className={`${prefix}--sidebar-item-content`}>{sidebar}</div>
       <div id="scroll-container" className={`${prefix}--content-section`}>
-        <div className={`${prefix}--sidebar-content-mobile-header`}>
-          {sidebarMobileHeader}
-        </div>
-        <div className={`${prefix}--sidebar-content__children`}>{children}</div>
+        {children}
       </div>
     </div>
   );
@@ -77,6 +74,58 @@ SidebarHeader.propTypes = {
    Disable the default padding of the SidebarHeader
  */
   noPadding: PropTypes.bool,
+};
+
+export function SidebarContentHeader({
+  className,
+  children,
+  noPadding,
+  ...other
+}) {
+  const classes = classNames(
+    `${prefix}--sidebar-content-mobile-header`,
+    className,
+    {}
+  );
+
+  return (
+    <div className={classes} {...other}>
+      {children}
+    </div>
+  );
+}
+
+SidebarContentHeader.propTypes = {
+  /**
+   The children of header of content area
+ */
+  children: PropTypes.node,
+};
+
+export function SidebarContentBody({
+  className,
+  children,
+  noPadding,
+  ...other
+}) {
+  const classes = classNames(
+    `${prefix}--sidebar-content__children`,
+    className,
+    {}
+  );
+
+  return (
+    <div className={classes} {...other}>
+      {children}
+    </div>
+  );
+}
+
+SidebarContentBody.propTypes = {
+  /**
+   The children of header of content area
+ */
+  children: PropTypes.node,
 };
 
 export function SidebarScroll({ children, ...other }) {
