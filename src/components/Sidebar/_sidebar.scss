@@ -83,6 +83,8 @@
       border-bottom: 1px solid var(--ui-02);
       z-index: 10000;
       width: 100%;
+      position: sticky;
+      top: 0;
     }
   }
 
