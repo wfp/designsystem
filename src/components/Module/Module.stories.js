@@ -1,6 +1,7 @@
 import React from 'react';
 import markdown from './README.mdx';
 import { Module, ModuleHeader, ModuleBody, ModuleFooter } from '../Module';
+import moduleTwig from './Module.twig';
 
 export default {
   title: 'Components/Content Related/Module',
@@ -10,6 +11,7 @@ export default {
     componentSubtitle: 'Component',
     status: 'released',
     mdx: markdown,
+    twig: moduleTwig
   },
 };
 

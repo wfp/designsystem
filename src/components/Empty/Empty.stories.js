@@ -2,6 +2,7 @@ import React from 'react';
 import markdown from './README.mdx';
 import Empty from '.';
 import Button from '../Button';
+import emptyTwig from './Empty.twig';
 
 export default {
   title: 'Components/UI Elements/Empty',
@@ -10,6 +11,7 @@ export default {
     componentSubtitle: 'Component',
     status: 'experimental',
     mdx: markdown,
+    twig: emptyTwig
   },
 };
 

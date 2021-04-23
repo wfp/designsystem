@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Credits from '../Credits';
+import creditsTwig from './Credits.twig';
 import markdown from './README.mdx';
 
 export default {
@@ -10,6 +11,7 @@ export default {
     componentSubtitle: 'Component',
     status: 'released',
     mdx: markdown,
+    twig: creditsTwig
   },
   /*argTypes: {
       children: { control: 'text' },

@@ -1,0 +1,13 @@
+<div class="wfp--theme-light wfp--theme-en">
+  <ul class="wfp--list wfp--list--{{kind}}">
+    {% if children %}
+        {% for child in children %}
+        <li class="wfp--list__element">
+            {% if child.title %}
+            <span class="wfp--list__element__title">{{child.title}}</span>
+            {% endif %}
+            <span class="wfp--list__element__content">{{child.content}}</span></li>
+        {% endfor %}
+    {% endif %}
+  </ul>
+</div>

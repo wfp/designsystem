@@ -2,6 +2,7 @@ import React from 'react';
 import markdown from './README.mdx';
 import InfoBar from '.';
 import Link from '../Link';
+import infoBarTwig from './InfoBar.twig';
 
 export default {
   title: 'Components/UI Elements/InfoBar',
@@ -10,6 +11,7 @@ export default {
     componentSubtitle: 'Component',
     status: 'released',
     mdx: markdown,
+    twig: infoBarTwig
   },
 };
 

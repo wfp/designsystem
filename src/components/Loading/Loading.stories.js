@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import markdown from './README.mdx';
 import Loading from '.';
 import Button from '../Button';
+import loadingTwig from './Loading.twig';
 
 export default {
   title: 'Components/UI Elements/Loading',
@@ -10,6 +11,7 @@ export default {
     componentSubtitle: 'Component',
     status: 'released',
     mdx: markdown,
+    twig: loadingTwig
   },
 };
 

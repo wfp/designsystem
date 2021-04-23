@@ -2,6 +2,7 @@ import React from 'react';
 import markdown from './README.mdx';
 import { action } from '@storybook/addon-actions';
 import { List, ListItem } from '../List';
+import listTwig from './List.twig'
 
 export default {
   title: 'Components/UI Elements/List',
@@ -11,6 +12,7 @@ export default {
     status: 'released',
     mdx: markdown,
     subcomponents: { ListItem },
+    twig: listTwig
   },
 };
 

@@ -5,6 +5,7 @@ import {
   NotificationActionButton,
 } from '../Notification';
 import { notificationtypes } from '../../prop-types/types';
+import notificationTwig from './Notification.twig';
 
 import markdown from './README.mdx';
 
@@ -16,6 +17,7 @@ export default {
     componentSubtitle: 'Component',
     status: 'released',
     mdx: markdown,
+    twig: notificationTwig
   },
 };
 

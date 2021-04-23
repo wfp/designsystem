@@ -3,6 +3,7 @@ import React from 'react';
 import markdown from './README.mdx';
 
 import Footer from '.';
+import footerTwig from './Footer.twig';
 import Link from '../Link';
 
 export default {
@@ -13,6 +14,7 @@ export default {
     status: 'released',
     mdx: markdown,
     previewWidth: 'full',
+    twig: footerTwig
   },
 };
 

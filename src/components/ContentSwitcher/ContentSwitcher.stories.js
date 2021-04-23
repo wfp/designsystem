@@ -1,5 +1,6 @@
 import React from 'react';
 import ContentSwitcher from './ContentSwitcher';
+import contentSwitcherTwig from './ContentSwitcher.twig';
 import markdown from './README.mdx';
 import Switch from '../Switch';
 import { iconAddGlyph } from '@wfp/icons';
@@ -13,6 +14,7 @@ export default {
     componentSubtitle: 'Component',
     status: 'released',
     mdx: markdown,
+    twig: contentSwitcherTwig
   },
 };
 

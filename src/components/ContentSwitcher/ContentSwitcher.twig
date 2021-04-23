@@ -1,0 +1,9 @@
+<div class="wfp--theme-light wfp--theme-en">
+  <div class="wfp--content-switcher">
+    {% if contents %}
+    {% for content in contents%}
+    <a href="{{content.href}}" class="wfp--content-switcher-btn {{selected ? 'wfp--content-switcher--selected'}}">{{content.label}}</a>
+    {% endfor %}
+    {% endif %}
+    </div>
+</div>

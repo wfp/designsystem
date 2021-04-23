@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 
 import { SingleDatePickerInput } from './SingleDatePickerInput';
 import { DateRangePickerInput } from './DateRangePickerInput';
+import datePickerTwig from './Datepicker.twig';
 import Input from '../Input';
 import moment from 'moment';
 import { Controller, useForm } from 'react-hook-form';
@@ -19,6 +20,7 @@ export default {
     componentSubtitle: 'Component',
     status: 'released',
     mdx: markdown,
+    twig: datePickerTwig
   },
 };
 

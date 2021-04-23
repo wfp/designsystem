@@ -1,6 +1,7 @@
 import React from 'react';
 import markdown from './README.mdx';
 import Link from '.';
+import linkTwig from './Link.twig';
 
 export default {
   title: 'Components/UI Elements/Link',
@@ -9,6 +10,7 @@ export default {
     componentSubtitle: 'Component',
     status: 'released',
     mdx: markdown,
+    twig: linkTwig
   },
 };
 
