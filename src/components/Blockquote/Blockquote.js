@@ -147,10 +147,6 @@ Blockquote.propTypes = {
    */
   code: PropTypes.bool,
   /**
-   * Display content as `dangerouslySetInnerHTML` content
-   */
-  //innerHtml: PropTypes.string,
-  /**
    * Display light version of Blockquote
    */
   light: PropTypes.bool,

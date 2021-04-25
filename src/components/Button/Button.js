@@ -10,6 +10,7 @@ const Button = ({
   className,
   disabled,
   small,
+  large,
   kind,
   href,
   iconReverse,
@@ -33,6 +34,7 @@ const Button = ({
   const buttonClasses = classNames(className, {
     'wfp--btn': true,
     'wfp--btn--sm': small,
+    'wfp--btn--lg': large,
     'wfp--btn--icon-reverse': iconReverse,
     'wfp--btn--flexbox': useFlexbox,
     'wfp--btn--icon-only': icon && children === undefined,
@@ -126,6 +128,13 @@ Button.propTypes = {
    * Specify whether the Button should be a small variant
    */
   small: PropTypes.bool,
+
+  /**
+   * FOR DESIGNERS
+   * Specify whether the Button should be a large variant
+   */
+  large: PropTypes.bool,
+
 
   /**
    * FOR DESIGNERS

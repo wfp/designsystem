@@ -113,14 +113,14 @@
         background: var(--ui-04);
       }
 
-      // Safari
+      // firefox
       &::-moz-range-track {
         background-color: var(--ui-04);
         overflow: hidden;
       }
     }
   }
-  // prevent double line on safari
+  // prevent double line on firefox
   @-moz-document url-prefix() {
     .#{$prefix}--slider {
       margin-top: 4px;
