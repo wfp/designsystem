@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import markdown from './README.mdx';
 import RadioButton from '.';
+import radioButtonTwig from './RadioButton.twig'
 import InputGroup from '../InputGroup';
 
 export default {
@@ -10,6 +11,7 @@ export default {
     componentSubtitle: 'RadioButton',
     status: 'released',
     mdx: markdown,
+    twig: radioButtonTwig
   },
 };
 

@@ -2,6 +2,7 @@ import React from 'react';
 import Select from './Select';
 import SelectItem from '../SelectItem';
 import markdown from './README.mdx';
+import selectTwig from './Select.twig'
 
 export default {
   title: 'Components/Forms/Dropdown/select',
@@ -10,6 +11,7 @@ export default {
     componentSubtitle: 'Component',
     status: 'released',
     mdx: markdown,
+    twig: selectTwig
   },
 };
 

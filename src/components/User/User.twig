@@ -1,0 +1,14 @@
+<div class="wfp--theme-light wfp--theme-en">
+  <div class="wfp--user">
+    {% if image %}
+    <div class="wfp--user__icon">
+    <img alt="{{alt}}" src="{{image}}" />
+    </div>
+    {% else %}
+    <svg class="wfp--user__icon wfp--user__icon--empty" fill="#ffffff" fill-rule="evenodd" height="14" viewBox="0 0 16 16" width="14" aria-label="User Icon" alt="User Icon">
+      <title>{{alt}}</title>
+      <path d="M6.123 9.455a3.5 3.5 0 113.754 0c1.958.97 3.571 3.424 4.436 6.64-5.852-.027-6.488-.027-12.62-.027.867-3.203 2.477-5.645 4.43-6.613z"></path>
+    </svg>
+    {% endif %}
+    <span class="wfp--user__title"><span></span></span>{{children}}</div>
+</div>

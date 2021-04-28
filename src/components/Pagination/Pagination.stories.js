@@ -1,6 +1,7 @@
 import React from 'react';
 import markdown from './README.mdx';
 import Pagination from '.';
+import paginationTwig from './Pagination.twig';
 
 export default {
   title: 'Components/UI Elements/Pagination',
@@ -9,6 +10,7 @@ export default {
     componentSubtitle: 'Component',
     status: 'released',
     mdx: markdown,
+    twig: paginationTwig
   },
 };
 

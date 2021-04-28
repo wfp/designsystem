@@ -1,6 +1,7 @@
 import React from 'react';
 import markdown from './README.mdx';
 import Toggle from '.';
+import toggleTwig from './Toggle.twig';
 
 export default {
   title: 'Components/UI Elements/Toggle',
@@ -9,6 +10,7 @@ export default {
     componentSubtitle: 'Component',
     status: 'released',
     mdx: markdown,
+    twig: toggleTwig
   },
 };
 

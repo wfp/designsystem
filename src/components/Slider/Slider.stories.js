@@ -1,5 +1,6 @@
 import React from 'react';
 import Slider from '../Slider';
+import sliderTwig from './Slider.twig'
 import markdown from './README.mdx';
 
 export default {
@@ -9,6 +10,7 @@ export default {
     componentSubtitle: 'Component',
     status: 'released',
     mdx: markdown,
+    twig: sliderTwig
   },
 };
 

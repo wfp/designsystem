@@ -4,6 +4,7 @@ import TextInput from '../TextInput';
 import NumberInput from '../NumberInput';
 import CreatableSelect from 'react-select/creatable';
 import markdown from './README.mdx';
+import formGroupTwig from './FormGroup.twig'
 
 export default {
   title: 'Components/Forms/FormGroup',
@@ -13,6 +14,7 @@ export default {
     status: 'released',
     mdx: markdown,
     showFeedback: true,
+    twig: formGroupTwig
   },
 };
 

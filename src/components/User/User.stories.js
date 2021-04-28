@@ -1,6 +1,7 @@
 import React from 'react';
 import markdown from './README.mdx';
 import User from '.';
+import userTwig from './User.twig';
 import { List, ListItem } from '../List';
 
 export default {
@@ -10,6 +11,7 @@ export default {
     componentSubtitle: 'Component',
     status: 'released',
     mdx: markdown,
+    twig: userTwig
   },
 };
 

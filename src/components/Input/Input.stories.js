@@ -1,6 +1,7 @@
 import React from 'react';
 import markdown from './README.mdx';
 import Input from '.';
+import inputTwig from './Input.twig';
 
 export default {
   title: 'Components/Forms/Input',
@@ -9,6 +10,7 @@ export default {
     componentSubtitle: 'Component',
     status: 'experimental',
     mdx: markdown,
+    twig: inputTwig
   },
 };
 

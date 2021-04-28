@@ -1,6 +1,7 @@
 import React from 'react';
 import markdown from './README.mdx';
 import Tag from '.';
+import tagTwig from './Tag.twig';
 
 export default {
   title: 'Components/UI Elements/Tag',
@@ -9,6 +10,7 @@ export default {
     componentSubtitle: 'Component',
     status: 'released',
     mdx: markdown,
+    twig: tagTwig
   },
 };
 

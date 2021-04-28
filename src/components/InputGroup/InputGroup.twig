@@ -1,0 +1,12 @@
+<div class="wfp--theme-light wfp--theme-en">
+  <div class="wfp--form-item">
+    <div class="wfp--input-group"><span class="wfp--label">{{labelText}}</span>
+      <div class="wfp--form__helper-text">{{helperText}}</div>
+      <div class="wfp--input-group-inside">
+        {% for item in items %}
+        <div class="radioButtonWrapper"><input type="radio" name="radio" value="standard" id="radio-1" class="wfp--radio-button" /><label for="radio-1" class="wfp--radio-button__label"><span class="wfp--radio-button__appearance"></span>{{item.label}}</label></div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>

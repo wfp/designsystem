@@ -1,0 +1,44 @@
+<div class="wfp--theme-light wfp--theme-en">
+  <div class="wfp--pagination">
+    <div class="wfp--pagination__left"><span class="wfp--pagination__text">{{itemsPerPageText}}</span>
+      <div class="wfp--form-item wfp--form-item--invalid"><label for="wfp-pagination-select-2" class="wfp--label wfp--visually-hidden">{{itemsPerPageText}}</label>
+        <div class="wfp--input-wrapper">
+          <div class="wfp--select wfp--select--inline"><select id="wfp-pagination-select-2" class="wfp--select-input">
+          {% if pageSizes %}
+            {% for pageSize in pageSizes%}
+              <option {{selected ? selected}} class="wfp--select-option" value="{{pagesize.value}}">{{pagesize.value}}</option>
+            {% endfor %}
+            </select><svg class="wfp--select__arrow" fill-rule="evenodd" height="5" viewBox="0 0 10 5" width="10" aria-label="open list of options" alt="open list of options">
+              <title>open list of options</title>
+              <path d="M0 0l5 4.998L10 0z"></path>
+            </svg>
+          {% endif %}
+          </div>
+        </div>
+      </div><span class="wfp--pagination__text"> |  </span><span class="wfp--pagination__text">1-5 of {{totalItems}} items</span>
+    </div>
+    <div class="wfp--pagination__right wfp--pagination--inline"><span class="wfp--pagination__text">{{page}} of {{totalPages}} pages</span><button class="wfp--pagination__button wfp--pagination__button--backward" disabled=""><svg class="wfp--pagination__button-icon" fill-rule="evenodd" height="12" viewBox="0 0 7 12" width="7" aria-label="Backward" alt="Backward">
+          <title>Backward</title>
+          <path d="M1.45 6.002L7 11.27l-.685.726L0 6.003 6.315 0 7 .726z"></path>
+        </svg></button>
+      <div class="wfp--form-item wfp--form-item--invalid"><label for="wfp-pagination-select-4" class="wfp--label wfp--visually-hidden">Items per page:</label>
+        <div class="wfp--input-wrapper">
+          <div class="wfp--select wfp--select--inline"><select id="wfp-pagination-select-4" class="wfp--select-input">
+          {% if items %}
+            {% for item in items %}
+              <option {{selected ? selected}} class="wfp--select-option" value="{{item.value}}">{{item.value}}</option>
+            {% endfor %}
+            </select><svg class="wfp--select__arrow" fill-rule="evenodd" height="5" viewBox="0 0 10 5" width="10" aria-label="open list of options" alt="open list of options">
+              <title>open list of options</title>
+              <path d="M0 0l5 4.998L10 0z"></path>
+            </svg>
+          {% endif %}
+          </div>
+        </div>
+      </div><button class="wfp--pagination__button wfp--pagination__button--forward"><svg class="wfp--pagination__button-icon" fill-rule="evenodd" height="12" viewBox="0 0 7 12" width="7" aria-label="Forward" alt="Forward">
+          <title>Forward</title>
+          <path d="M5.569 5.994L0 .726.687 0l6.336 5.994-6.335 6.002L0 11.27z"></path>
+        </svg></button>
+    </div>
+  </div>
+</div>

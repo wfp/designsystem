@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import markdown from './README.mdx';
 import Checkbox from '.';
+import checkboxTwig from './Checkbox.twig';
 import InputGroup from '../InputGroup';
 
 export default {
@@ -10,6 +11,7 @@ export default {
     componentSubtitle: 'Component',
     status: 'released',
     mdx: markdown,
+    twig: checkboxTwig
   },
 };
 

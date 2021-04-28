@@ -1,6 +1,7 @@
 import React from 'react';
 import FormWizard from './FormWizard';
 import markdown from './README.mdx';
+import formWizardTwig from './FormWizard.twig'
 
 export default {
   title: 'Components/Forms/FormWizard',
@@ -10,6 +11,7 @@ export default {
     componentSubtitle: 'Component',
     status: 'released',
     mdx: markdown,
+    twig: formWizardTwig
   },
 };
 

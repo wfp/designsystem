@@ -1,0 +1,20 @@
+<div class="wfp--theme-light wfp--theme-en">
+  <div class="wfp--form-item wfp--form-item--invalid"><label for="" class="wfp--label">{{labelText}}</label>
+    <div class="wfp--form__helper-text">{{helperText}}</div>
+    <div class="wfp--input-wrapper">
+      <div class="wfp--select {{small ? 'wfp--select--small'}}">
+        <select class="wfp--select-input ">
+        {% if options %}
+        {% for option in options %}
+          <option class="wfp--select-option" value="{{option.value}}">{{option.value}}</option>
+        {% endfor %}
+        {% endif %}
+        </select>
+        <svg class="wfp--select__arrow" fill-rule="evenodd" height="5" viewBox="0 0 10 5" width="10" aria-label="open list of options" alt="open list of options">
+          <title>open list of options</title>
+          <path d="M0 0l5 4.998L10 0z"></path>
+        </svg>
+        </div>
+    </div>
+  </div>
+</div>

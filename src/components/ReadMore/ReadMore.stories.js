@@ -1,6 +1,7 @@
 import React from 'react';
 import markdown from './README.mdx';
 import ReadMore from '.';
+import readMoreTwig from './ReadMore.twig';
 
 export default {
   title: 'Components/UI Elements/ReadMore',
@@ -9,6 +10,7 @@ export default {
     componentSubtitle: 'Component',
     status: 'released',
     mdx: markdown,
+    twig: readMoreTwig
   },
 };
 

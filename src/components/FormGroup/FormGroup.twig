@@ -1,0 +1,14 @@
+<div class="wfp--theme-light wfp--theme-en">
+  <div class="wfp--fieldset wfp--fieldset__align-vertical wfp--fieldset__breakpoint-md wfp--fieldset__input-spacing-lg wfp--form-long">
+    <legend class="wfp--form-group__title wfp--form-long">{{legendText}}</legend>
+    <div class="wfp--fieldset__content">
+    {% if children %}
+    {% for child in children %}
+      <div class="wfp--form-item wfp--form-item--invalid"><label for="test11" class="wfp--label">{{child.label}}</label>
+        <div class="wfp--input-wrapper"><input type="text" id="test11" class="wfp--input wfp--text-input" placeholder="{{child.placeholder}}" /></div>
+      </div>
+    {% endfor %}
+    {% endif %}
+    </div>
+  </div>
+</div>

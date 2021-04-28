@@ -1,5 +1,6 @@
 import React from 'react';
 import InputGroup from '.';
+import inputGroupTwig from './InputGroup.twig';
 import markdown from './README.mdx';
 import RadioButton from '../RadioButton';
 import Checkbox from '../Checkbox';
@@ -10,6 +11,7 @@ export default {
   parameters: {
     componentSubtitle: 'Component',
     mdx: markdown,
+    twig: inputGroupTwig
   },
 };
 

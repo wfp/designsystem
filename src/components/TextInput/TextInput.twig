@@ -1,0 +1,16 @@
+<div class="wfp--theme-light wfp--theme-en">
+  <div class="wfp--form-item wfp--form-item--invalid"><label for="" class="wfp--label">{{labelText}}</label>
+    <div class="wfp--form__helper-text">{{helperText}}</div>
+    <div class="wfp--input-wrapper">
+    <input type="text" name="inputname" id="" class="wfp--input wfp--text-input {{invalid ? 'wfp--input--invalid'}}" placeholder="{{placeholder}}" />
+    </div>
+    {% if invalid %}
+        <div class="wfp--form-requirement" id="-error-msg"><svg fill="#c5192d" fill-rule="evenodd" height="16" viewBox="0 0 16 16" width="16" aria-label="Provide a description that will be used as the title" alt="Provide a description that will be used as the title">
+        <title>Provide a description that will be used as the title</title>
+        <path d="M8 1L0 15h16L8 1zm-.8 5h1.5v1.4L8.3 11h-.8l-.4-3.6V6h.1zm.8 8c-.6 0-1-.4-1-1s.4-1 1-1 1 .4 1 1-.4 1-1 1z"></path>
+      </svg> <span>{{message}}</span></div>
+
+    {% endif %}
+    
+  </div>
+</div>

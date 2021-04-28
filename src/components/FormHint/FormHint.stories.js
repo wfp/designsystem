@@ -2,6 +2,7 @@ import React from 'react';
 import markdown from './README.mdx';
 import FormHint from '.';
 import TextInput from '../TextInput';
+import formHintTwig from './FormHint.twig'
 
 export default {
   title: 'Components/Forms/FormHint',
@@ -10,6 +11,7 @@ export default {
     componentSubtitle: 'Component',
     status: 'released',
     mdx: markdown,
+    twig: formHintTwig
   },
 };
 
