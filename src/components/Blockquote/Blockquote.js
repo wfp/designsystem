@@ -2,6 +2,9 @@ import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import Icon from '../Icon';
+import settings from '../../globals/js/settings';
+
+const { prefix } = settings;
 
 import {
   iconCheckmark,
@@ -63,21 +66,21 @@ class Blockquote extends React.Component {
       kind,
     } = this.props;
     const blockquoteClass = classNames({
-      'wfp--blockquote': true,
-      'wfp--blockquote--toggleable': toggleable,
-      'wfp--blockquote--light': light,
-      'wfp--blockquote--code': code,
-      'wfp--blockquote--no-content': !children,
-      'wfp--blockquote--error': kind === 'error' || error,
-      'wfp--blockquote--warning': kind === 'warning' || warning,
-      'wfp--blockquote--success': kind === 'success',
-      'wfp--blockquote--info': kind === 'info' || info,
-      'wfp--blockquote--with-icon': withIcon || icon,
-      'wfp--blockquote--toggle--open': this.state.open,
+      [`${prefix}--blockquote`]: true,
+      [`${prefix}--blockquote--toggleable`]: toggleable,
+      [`${prefix}--blockquote--light`]: light,
+      [`${prefix}--blockquote--code`]: code,
+      [`${prefix}--blockquote--no-content`]: !children,
+      [`${prefix}--blockquote--error`]: kind === 'error' || error,
+      [`${prefix}--blockquote--warning`]: kind === 'warning' || warning,
+      [`${prefix}--blockquote--success`]: kind === 'success',
+      [`${prefix}--blockquote--info`]: kind === 'info' || info,
+      [`${prefix}--blockquote--with-icon`]: withIcon || icon,
+      [`${prefix}--blockquote--toggle--open`]: this.state.open,
       [`${className}`]: className,
     });
 
-    const blockquoteContentClass = classNames('wfp--blockquote__content', {
+    const blockquoteContentClass = classNames(`${prefix}--blockquote__content`, {
       [`${className}`]: contentClassName,
     });
 

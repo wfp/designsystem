@@ -1,6 +1,9 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
+import settings from '../../globals/js/settings';
+
+const { prefix } = settings;
 
 /**
  * Cards are a convenient means of displaying content composed of different types of objects. It is a multi usage component which creates boxes that are usually teasing some kind of content. */
@@ -29,10 +32,10 @@ const Card = ({
   const pagewidth = cardWidth ? cardWidth : '300px';
   const pageheight = cardHeight ? cardHeight : '260px';
 
-  const wrapperClasses = classNames('wfp--card-box', {
-    [`wfp--photo-cardnew--${kind}`]: kind,
+  const wrapperClasses = classNames([`${prefix}--card-box`], {
+    [`${prefix}--photo-cardnew--${kind}`]: kind,
     // 'wfp--photo-cardnew--no-background': !image,
-    'wfp--photo-cardnew--link': isLink,
+    [`${prefix}--photo-cardnew--link`]: isLink,
     [`${className}`]: className,
   });
 
