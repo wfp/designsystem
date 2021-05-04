@@ -33,8 +33,8 @@ const Footer = ({
   ...other
 }) => {
   const classNames = classnames(
-    'wfp--footer',
-    { 'wfp--footer--external': external },
+    `${prefix}--footer`,
+    { [`${prefix}--footer--external`]: external },
     className
   );
   const standardLogo = `${process.env.STORYBOOK_ASSETS}logos/standard/en/wfp-logo-standard-black-en.svg`
@@ -42,23 +42,23 @@ const Footer = ({
   const footer = (
     <footer className={classNames}>
       <Wrapper pageWidth={pageWidth}>
-        <div className="wfp--footer__content">
+        <div className={`${prefix}--footer__content`}>
           {/* <div className="wfp--footer__info-content"> */}
           {children ? (
-            <div className="wfp--footer__info">{children}</div>
+            <div className={`${prefix}--footer__info`}>{children}</div>
           ) : (
-            <div className="wfp--footer__info">
-              <div className="wfp--footer__info__item">
-                <p className="wfp--footer__label">{labelOne}</p>
-                <ul className="wfp--footer__list">
+            <div className={`${prefix}--footer__info`}>
+              <div className={`${prefix}--footer__info__item`}>
+                <p className={`${prefix}--footer__label`}>{labelOne}</p>
+                <ul className={`${prefix}--footer__list`}>
                   <li>
                     <Link href={linkHrefOne}>{linkTextOne}</Link>
                   </li>
                 </ul>
               </div>
-              <div className="wfp--footer__info__item">
-                <p className="wfp--footer__label">{labelTwo}</p>
-                <ul className="wfp--footer__list">
+              <div className={`${prefix}--footer__info__item`}>
+                <p className={`${prefix}--footer__label`}>{labelTwo}</p>
+                <ul className={`${prefix}--footer__list`}>
                   <li>
                     <Link href={linkHrefTwo}>{linkTextTwo}</Link>
                   </li>
@@ -80,10 +80,10 @@ const Footer = ({
               </div>
             )} */}
           {/* </div> */}
-          <div className="wfp--footer__cta">
+          <div className={`${prefix}--footer__cta`}>
             {logoExtended && typeof logoExtended === 'string' ? (
               <img
-                className="wfp--footer__cta-logo"
+                className={`${prefix}--footer__cta-logo`}
                 src={logoExtended}
                 alt="World Food Programme Logo"
               />
@@ -91,7 +91,7 @@ const Footer = ({
               logoExtended
             ) : (
               <Icon
-              className="wfp--footer__cta-logo"	
+              className={`${prefix}--footer__cta-logo`}	
               icon={iconWfpLogoStandardBlackEn}
               alt="WFP"
             />
@@ -99,7 +99,7 @@ const Footer = ({
 
             {logo && typeof logo === 'string' ? (
               <img
-                className="wfp--footer__cta-logo-small"
+                className={`${prefix}--footer__cta-logo-small`}
                 src={logo}
                 alt="World Food Programme Logo"
               />
@@ -109,23 +109,23 @@ const Footer = ({
               <Icon
                 icon={iconWfpLogoVerticalEn}
                 description="WFP"
-                className="wfp--footer__cta-logo-small"
+                className={`${prefix}--footer__cta-logo-small`}
               />
             )}
             {secondary && (
-              <div className="wfp--footer__secondary">{secondary}</div>
+              <div className={`${prefix}--footer__secondary`}>{secondary}</div>
             )}
           </div>
         </div>
       </Wrapper>
 
-      <Wrapper className="wfp--footer__meta" pageWidth={pageWidth}>
+      <Wrapper className={`${prefix}--footer__meta`} pageWidth={pageWidth}>
         
         {metaLinks && (
-          <div className="wfp--footer__meta__links">{metaLinks}</div>
+          <div className={`${prefix}--footer__meta__links`}>{metaLinks}</div>
         )}
         {metaContent && (
-          <div className="wfp--footer__meta__content">{metaContent}</div>
+          <div className={`${prefix}--footer__meta__content`}>{metaContent}</div>
         )}
       </Wrapper>
     </footer>
