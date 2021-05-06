@@ -25,7 +25,7 @@ export const textLookup = {
 const Text = ({ children, className, kind, spacingTop, spacingBottom }) => {
   const tagName = { name: textLookup[kind] ? textLookup[kind] : 'div' };
   const classNames = classnames({
-    'wfp--text': true,
+    [`${prefix}--text`]: true,
     [`${prefix}--story__${kind}`]: kind,
     [`${prefix}--story__spacing-top-${spacingTop}`]: spacingTop,
     [`${prefix}--story__spacing-bottom-${spacingBottom}`]: spacingBottom,

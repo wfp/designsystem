@@ -1,6 +1,9 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
+import settings from '../../globals/js/settings';
+
+const { prefix } = settings;
 
 const SkeletonText = ({
   paragraph,
@@ -11,8 +14,8 @@ const SkeletonText = ({
   ...other
 }) => {
   const skeletonTextClasses = classNames({
-    'wfp--skeleton__text': true,
-    'wfp--skeleton__heading': heading,
+    [`${prefix}--skeleton__text`]: true,
+    [`${prefix}--skeleton__heading`]: heading,
     [className]: className,
   });
 

@@ -78,15 +78,15 @@ export default class StepNavigationItem extends React.Component {
     } = this.props;
 
     const classes = classNames(
-      'wfp--step-navigation__nav-item',
-      { 'wfp--step-navigation__nav-item--before': page < selectedPage },
-      { 'wfp--step-navigation__nav-item--selected': page === selectedPage },
-      { [`wfp--step-navigation__nav-item--${status}`]: status },
+      `${prefix}--step-navigation__nav-item`,
+      { [`${prefix}--step-navigation__nav-item--before`]: page < selectedPage },
+      { [`${prefix}--step-navigation__nav-item--selected`]: page === selectedPage },
+      { [`${prefix}--step-navigation__nav-item--${status}`]: status },
       className
     );
 
     const anchorProps = {
-      className: 'wfp--step-navigation__nav-link',
+      className: `${prefix}--step-navigation__nav-link`,
       ref: (e) => {
         this.tabAnchor = e;
       },
@@ -117,7 +117,7 @@ export default class StepNavigationItem extends React.Component {
           renderAnchor(anchorProps)
         ) : (
           <React.Fragment>
-            <div className="wfp--step-navigation__nav-item__indicator">
+            <div className={`${prefix}--step-navigation__nav-item__indicator`}>
               {status && page !== selectedPage ? (
                 <Icon
                   icon={icon[status].icon}
@@ -130,11 +130,11 @@ export default class StepNavigationItem extends React.Component {
               )}
             </div>
             <div>
-              <span className="wfp--step-navigation__nav-item__text">
+              <span className={`${prefix}--step-navigation__nav-item__text`}>
                 {label}
               </span>
               {helperText && (
-                <span className="wfp--step-navigation__nav-item__helper-text">
+                <span className={`${prefix}--step-navigation__nav-item__helper-text`}>
                   {helperText}
                 </span>
               )}

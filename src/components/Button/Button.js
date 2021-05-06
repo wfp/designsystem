@@ -65,7 +65,7 @@ const Button = ({
       icon={Object(icon) === icon ? icon : undefined}
       name={Object(icon) !== icon ? icon : undefined}
       description={iconDescription}
-      className="wfp--btn__icon"
+      className={`${prefix}--btn__icon`}
     />
   ) : null;
 

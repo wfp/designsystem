@@ -24,9 +24,9 @@ export default function AuthLayout({
       });
 
     return (
-        <div className="wfp--auth-wrapper" {...other}>
+        <div className={`${prefix}--auth-wrapper`} {...other}>
             <div className={wrapperClasses} style={style}>{backgroundContent}</div>
-            <div className="wfp--auth-content-wrapper">{children}</div>
+            <div className={`${prefix}--auth-content-wrapper`}>{children}</div>
         </div>
     )
 }
@@ -56,7 +56,7 @@ AuthLayout.propTypes = {
 
 export function BackgroundContent({children, ...other}){
     return(
-        <div {...other} className="wfp--auth-background-content">{children}</div>
+        <div {...other} className={`${prefix}--auth-background-content`}>{children}</div>
     )
 }
 

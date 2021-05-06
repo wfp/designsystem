@@ -95,7 +95,7 @@ class Blockquote extends React.Component {
         : iconLookup['info'];
 
     const iconElement = React.isValidElement(icon) ? (
-      <div className="wfp--blockquote__icon wfp--blockquote__icon--custom">
+      <div className={`${prefix}--blockquote__icon ${prefix}--blockquote__icon--custom`}>
         {icon}
       </div>
     ) : withIcon || icon ? (
@@ -104,21 +104,21 @@ class Blockquote extends React.Component {
         width={48}
         height={48}
         description="Blockquote Icon"
-        className="wfp--blockquote__icon"
+        className={`${prefix}--blockquote__icon`}
       />
     ) : null;
 
     return (
       <div className={blockquoteClass}>
         {iconElement && (
-          <div className="wfp--blockquote__icon-wrapper">{iconElement}</div>
+          <div className={`${prefix}--blockquote__icon-wrapper`}>{iconElement}</div>
         )}
         <div className={blockquoteContentClass} style={style}>
           {(title || toggleable) && (
             <div
               onClick={this.toggleBlockquote}
               onKeyDown={this.toggleBlockquote}
-              className="wfp--blockquote__title"
+              className={`${prefix}--blockquote__title`}
               role="button"
               tabIndex={0}>
               {title
@@ -128,7 +128,7 @@ class Blockquote extends React.Component {
                 : 'Show content'}
             </div>
           )}
-          <div className="wfp--blockquote__inside">{children}</div>
+          <div className={`${prefix}--blockquote__inside`}>{children}</div>
         </div>
       </div>
     );
