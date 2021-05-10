@@ -1,6 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import settings from '../../globals/js/settings';
+
+const { prefix } = settings;
 
 export default function AuthLayout({
     image,
@@ -15,8 +18,8 @@ export default function AuthLayout({
       }
     : {};
     
-    const wrapperClasses = classNames("wfp--auth-background-wrapper",{
-        'wfp--auth-background-image': image,
+    const wrapperClasses = classNames(`${prefix}--auth-background-wrapper`,{
+        [`${prefix}--auth-background-image`]: image,
         [`${className}`]: className,
       });
 

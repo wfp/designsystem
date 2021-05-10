@@ -1,9 +1,12 @@
 import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
+import settings from '../../globals/js/settings';
+
+const { prefix } = settings;
 
 function AnchorNavigation({title, children, className, ...other}) {
-    const wrapperClasses = classNames('wfp--anchor-navigation', className);
+    const wrapperClasses = classNames(`${prefix}--anchor-navigation`, className);
     return (
         <div className={wrapperClasses}  {...other} >
             <div className="wfp--anchor-header-title"> 

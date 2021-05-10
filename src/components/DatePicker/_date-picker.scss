@@ -115,9 +115,13 @@
     }
   }
   .SingleDatePickerInput_calendarIcon_svg {
-    fill: var(--interactive-01);
+    fill: var(--field-border-01);
     height: 15px;
     width: 14px;
+    &:focus {
+      fill: var(--interactive-01);
+      outline: none;
+    }
   }
   .SingleDatePicker {
     position: relative;

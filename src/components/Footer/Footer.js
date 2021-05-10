@@ -6,6 +6,9 @@ import Wrapper from '../Wrapper';
 import Icon from '../Icon';
 import sdgIconStandard from './SdgLogo';
 import { iconWfpLogoStandardBlackEn, iconWfpLogoVerticalEn } from '@wfp/icons';
+import settings from '../../globals/js/settings';
+
+const { prefix } = settings;
 
 /** A Footer is a section at the bottom of each page. It typically contains basic site information, copyright data or links to related pages. */
 
