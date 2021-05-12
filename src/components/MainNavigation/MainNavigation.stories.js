@@ -3,8 +3,6 @@ import markdown from './README.mdx';
 import { action } from '@storybook/addon-actions';
 import MainNavigation from '.';
 import MainNavigationItem from '../MainNavigationItem';
-import mainNavigationTwig from './MainNavigation.twig'
-
 import {
   SubNavigation,
   SubNavigationHeader,
@@ -20,6 +18,7 @@ import Button from '../Button';
 import Search from '../Search';
 import Link from '../Link';
 import User from '../User';
+import mainNavigationTwig from './MainNavigation.twig';
 
 export default {
   title: 'Components/Navigations/MainNavigation',
@@ -28,8 +27,8 @@ export default {
     componentSubtitle: 'Component',
     status: 'released',
     mdx: markdown,
+    twig: mainNavigationTwig,
     previewWidth: 'full',
-    twig: mainNavigationTwig
   },
 };
 
