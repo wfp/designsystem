@@ -75,8 +75,6 @@ const Navigation = () => {
                 <MainNavigationItem>
                     <Search
                     kind="main"
-                    id="search-2"
-                    labelText="Search"
                     placeHolderText="Search"
                     />
                     {/* onChange={action('onChange')} */}
