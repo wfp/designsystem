@@ -1,10 +1,13 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
+import settings from '../../globals/js/settings';
+
+const { prefix } = settings;
 
 const SelectItem = ({ className, value, disabled, hidden, text, ...other }) => {
   const selectItemClasses = classNames({
-    'wfp--select-option': true,
+    [`${prefix}--select-option`]: true,
     [className]: className,
   });
 

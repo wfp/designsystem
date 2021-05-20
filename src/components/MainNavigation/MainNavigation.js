@@ -3,6 +3,9 @@ import React, { Component } from 'react';
 import classNames from 'classnames';
 import Button from '../Button';
 import Wrapper from '../Wrapper';
+import settings from '../../globals/js/settings';
+
+const { prefix } = settings;
 
 /** The Main Navigation is a Horizontal Menu which consists of multiple clickable items placed at the top of the page. The navigation stays unchanged when browswing through the site and is present on every page. The currently selected item is usually highlighted. */
 
@@ -62,10 +65,10 @@ class MainNavigation extends Component {
       pageWidth,
     } = this.props;
 
-    const wrapperClasses = classNames('wfp--main-navigation', className);
+    const wrapperClasses = classNames(`${prefix}--main-navigation`, className);
 
-    const listClasses = classNames('wfp--main-navigation__list', {
-      'wfp--main-navigation__list--open': this.state.openMobile,
+    const listClasses = classNames(`${prefix}--main-navigation__list`, {
+      [`${prefix}--main-navigation__list--open`]: this.state.openMobile,
     });
 
     const parentProps = {
@@ -83,14 +86,14 @@ class MainNavigation extends Component {
         <Wrapper
           pageWidth={pageWidth}
           mobilePageWidth={mobilePageWidth}
-          className="wfp--main-navigation__wrapper">
-          <div className="wfp--main-navigation__logo-wrapper">
+          className={`${prefix}--main-navigation__wrapper`}>
+          <div className={`${prefix}--main-navigation__logo-wrapper`}>
             <Button
-              className="wfp--main-navigation__button"
+              className={`${prefix}--main-navigation__button`}
               onClick={this.toggleMenu}>
               Menu
             </Button>
-            <div className="wfp--main-navigation__logo">{logo}</div>
+            <div className={`${prefix}--main-navigation__logo`}>{logo}</div>
           </div>
           <ul className={listClasses}>
             {React.Children.map(childrenSelect, (child, i) => {

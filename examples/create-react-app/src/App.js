@@ -57,7 +57,6 @@ class App extends Component {
     <Search
       id="search-2"
       kind="banner"
-      labelText="Search"
       onChange={()=>{}}
       placeHolderText="Search"
     />

@@ -1,6 +1,9 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import classnames from 'classnames';
+import settings from '../../globals/js/settings';
+
+const { prefix } = settings;
 
 const SelectItemGroup = ({
   children,
@@ -9,7 +12,7 @@ const SelectItemGroup = ({
   label,
   ...other
 }) => {
-  const classNames = classnames('wfp--select-optgroup', className);
+  const classNames = classnames(`${prefix}--select-optgroup`, className);
   return (
     <optgroup
       className={classNames}

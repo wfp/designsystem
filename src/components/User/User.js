@@ -3,6 +3,8 @@ import React from 'react';
 import classNames from 'classnames';
 import Icon from '../Icon';
 import { iconUser } from '@wfp/icons';
+import settings from '../../globals/js/settings';
+const { prefix } = settings;
 
 /** The User is used inside the MainNavigation and form, and can display an avatar and username. */
 const User = ({
@@ -28,7 +30,7 @@ const User = ({
         width="14"
         height="14"
         description={alt}
-        className="wfp--user__icon wfp--user__icon--empty"
+        className={`${prefix}--user__icon ${prefix}--user__icon--empty`}
         {...other}
       />
     );
@@ -36,7 +38,7 @@ const User = ({
     avatar = (
       <svg
         id="Layer_1"
-        className="wfp--user__icon wfp--user__icon--empty wfp--user__icon--letter"
+        className={`${prefix}--user__icon ${prefix}--user__icon--empty ${prefix}--user__icon--letter`}
         x="0px"
         y="0px"
         viewBox="0 0 25 25"
@@ -49,21 +51,21 @@ const User = ({
     );
   } else {
     avatar = (
-      <div className="wfp--user__icon">
+      <div className={`${prefix}--user__icon`}>
         <img alt={alt} src={image} />
       </div>
     );
   }
 
-  const classes = classNames('wfp--user', className, {
-    'wfp--user--has-description': description,
-    'wfp--user--has-extended-description': extendedDescription,
+  const classes = classNames(`${prefix}--user`, className, {
+    [`${prefix}--user--has-description`]: description,
+    [`${prefix}--user--has-extended-description`]: extendedDescription,
   });
 
   const titleClasses = classNames({
-    'wfp--user__title': true,
-    'wfp--user__title--ellipsis': ellipsis,
-    'wfp--user__title--small': small,
+    [`${prefix}--user__title`]: true,
+    [`${prefix}--user__title--ellipsis`]: ellipsis,
+    [`${prefix}--user__title--small`]: small,
   });
 
   return (
@@ -73,13 +75,13 @@ const User = ({
         <span className={titleClasses}>
           <span>{name}</span>
           {description && (
-            <div className="wfp--user__description">{description}</div>
+            <div className={`${prefix}--user__description`}>{description}</div>
           )}
         </span>
       )}
       {children}
       {extendedDescription && (
-        <div className="wfp--user__extended-description">
+        <div className={`${prefix}--user__extended-description`}>
           {extendedDescription}
         </div>
       )}

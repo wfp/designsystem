@@ -28,7 +28,7 @@ const BannerNavigation = ({ children, className, pageWidth, ...props }) => {
   return (
     <div className={wrapperClasses}>
       <Wrapper {...props}>
-        <ul className="wfp--banner-navigation__list">{children}</ul>
+        <ul className={`${prefix}--banner-navigation__list`}>{children}</ul>
       </Wrapper>
     </div>
   );

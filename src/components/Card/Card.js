@@ -42,33 +42,33 @@ const Card = ({
   const content = (
     <>
       {
-        kind === 'overlay' ? <div className="wfp--photo-cardnew__background" style={style} /> : null
+        kind === 'overlay' ? <div className={`${prefix}--photo-cardnew__background`} style={style} /> : null
       }
       
       {image && kind === 'simple-card' ?
       (
-        <img src={image} alt={title} className="wfp--header-photo" />
+        <img src={image} alt={title} className={`${prefix}--header-photo`} />
       )
       : null
     }
 
       
-      <div className="wfp--photo-cardnew__info">
+      <div className={`${prefix}--photo-cardnew__info`}>
         <div>
           {kind === 'overlay' && (
             <div
-              className="wfp--photo-cardnew__info__background"
+              className={`${prefix}--photo-cardnew__info__background`}
               style={style}
             />
           )}
           {metadata && (
-            <p className="wfp--photo-cardnew__info__metadata">{metadata}</p>
+            <p className={`${prefix}--photo-cardnew__info__metadata`}>{metadata}</p>
           )}
           {title && (
-            <h3 className="wfp--photo-cardnew__info__title">{title}</h3>
+            <h3 className={`${prefix}--photo-cardnew__info__title`}>{title}</h3>
           )}
           {subTitle && (
-            <p className="wfp--photo-cardnew__info__subtitle">{subTitle}</p>
+            <p className={`${prefix}--photo-cardnew__info__subtitle`}>{subTitle}</p>
           )}
         </div>
       </div>

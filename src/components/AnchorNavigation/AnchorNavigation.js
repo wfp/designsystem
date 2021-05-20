@@ -9,10 +9,10 @@ function AnchorNavigation({title, children, className, ...other}) {
     const wrapperClasses = classNames(`${prefix}--anchor-navigation`, className);
     return (
         <div className={wrapperClasses}  {...other} >
-            <div className="wfp--anchor-header-title"> 
+            <div className={`${prefix}--anchor-header-title`}> 
                 {title}
             </div>
-            <div className="wfp--anchor-content"> 
+            <div className={`${prefix}--anchor-content`}> 
                 {children}
             </div>
             

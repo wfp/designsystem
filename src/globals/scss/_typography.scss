@@ -3,6 +3,8 @@
 $font-family-mono: 'Courier New', 'Menlo', 'DejaVu Sans Mono',
   'Bitstream Vera Sans Mono', Courier, monospace !default;
 $font-family-sans-serif: 'Open Sans', sans-serif !default;
+$font-family-tajawal: 'Tajawal', sans-serif !default;
+
 
 $base-font-size: 16px !default; // Default, Use with em() and rem() functions
 
@@ -39,6 +41,11 @@ $typescale-map: (
 
 @mixin font-family {
   font-family: $font-family-sans-serif;
+
+  &:lang(ar) {
+    font-family: $font-family-tajawal;
+  }
+  
 }
 
 // There are two line heights to choose from. One for headings and one for body text
