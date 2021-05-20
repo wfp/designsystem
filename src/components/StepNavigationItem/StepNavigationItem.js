@@ -11,6 +11,9 @@ import {
   iconMenu,
   iconOverflowMenu,
 } from '@wfp/icons';
+import settings from '../../globals/js/settings';
+
+const { prefix } = settings;
 
 export default class StepNavigationItem extends React.Component {
   static propTypes = {

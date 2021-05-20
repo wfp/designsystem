@@ -34,7 +34,7 @@ const SecondaryNavigation = ({
   id,
   pageWidth,
 }) => {
-  const wrapperClasses = classNames(`'${prefix}--secondary-navigation`, className);
+  const wrapperClasses = classNames(`${prefix}--secondary-navigation`, className);
 
   return (
     <div id={id} className={wrapperClasses}>
