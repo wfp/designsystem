@@ -8,6 +8,7 @@ import Link from './../Link';
 import FormGroup from './../FormGroup';
 import Icon from './../Icon';
 import { iconArrowLeft, iconWfpLogoStandardBlackEn } from '@wfp/icons';
+import authLayoutTwig from './AuthLayout.twig';
 
 export default {
   title: 'Components/Content Related/AuthLayout',
@@ -17,6 +18,7 @@ export default {
     componentSubtitle: 'Component',
     status: 'released',
     mdx: markdown,
+    twig: authLayoutTwig
   },
 };
 

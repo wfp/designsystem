@@ -1,0 +1,32 @@
+
+<div class="wfp--theme-light wfp--theme-en">
+  <div>
+    <div class="wfp--sub-navigation__header">
+      <div class="wfp--sub-navigation__title">{{ navigationTitle }}</div>
+      <div class="wfp--sub-navigation__link"><button tabindex="0" class="wfp--btn wfp--btn--sm wfp--btn--primary" type="button">{{ navigationLink }}</button></div>
+      <div class="wfp--sub-navigation__filter">
+        <div class="wfp--form-item wfp--form-item--invalid wfp--number some-class wfp--search wfp--search--lg"><label for="search-2" class="wfp--label">{{label}}</label>
+          <div class="wfp--input-wrapper wfp--search-input__wrapper"><svg class="wfp--search-magnifier" fill-rule="evenodd" height="16" viewBox="0 0 16 16" width="16" aria-label="Filter" alt="Filter">
+              <title>Filter</title>
+              <path d="M11.435 10.063h-.728l-.251-.252a5.89 5.89 0 001.437-3.865 5.946 5.946 0 10-5.947 5.947 5.91 5.91 0 003.865-1.432l.252.251v.723L14.637 16 16 14.637l-4.565-4.574zm-5.489 0a4.117 4.117 0 110-8.234 4.117 4.117 0 010 8.234z"></path>
+            </svg><input type="text" class="wfp--search-input" placeHolderText="Filter" id="search-2" /><button class="wfp--search-close wfp--search-close--hidden" type="button"><svg fill-rule="evenodd" height="16" viewBox="0 0 16 16" width="16" aria-label="Provide a description that will be used as the title" alt="Provide a description that will be used as the title">
+                <title>Provide a description that will be used as the title</title>
+                <path d="M8 0C3.6 0 0 3.6 0 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8zm3.5 10.1l-1.4 1.4L8 9.4l-2.1 2.1-1.4-1.4L6.6 8 4.5 5.9l1.4-1.4L8 6.6l2.1-2.1 1.4 1.4L9.4 8l2.1 2.1z"></path>
+              </svg></button></div>
+        </div>
+      </div>
+    </div>
+    <div class="wfp--sub-navigation__content">
+      <div class="wfp--sub-navigation__list">
+        <div class="wfp--sub-navigation__group wfp--sub-navigation__group--columns">
+          <h3 class="wfp--sub-navigation__group__title">{{navigation__group__title}}</h3>
+          <div>
+            {% for item in items %}
+            <div class="wfp--sub-navigation__item"><a href="https://go.docs.wfp.org" class="wfp--link" target="_blank">{{item.label}}</a></div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

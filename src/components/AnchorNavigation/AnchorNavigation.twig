@@ -1,0 +1,12 @@
+<div class="wfp--theme-light wfp--theme-en">
+  <div class="wfp--anchor-navigation">
+    <div class="wfp--anchor-header-title">{{title}}</div>
+    <div class="wfp--anchor-content">
+    {% if children %}
+    {% for child in children %}
+    <a href="#" class="wfp--link">{{child.link}}</a>
+    {% endfor %}
+    {% endif %}
+    </div>
+  </div>
+</div>

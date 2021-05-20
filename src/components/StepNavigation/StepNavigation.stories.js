@@ -41,28 +41,7 @@ StepNavigationRegular.args = {
   children: 'StepNavigation',
 };
 
-StepNavigationRegular.story = {
-  parameters: {
-    docs: {
-      source: {
-        code: `
-        import { StepNavigation , StepNavigationItem } from "@wfp/ui";
-        
-const StepNavigationExample = (args) => {
-  const [step, setStep] = useState(0);
-  return (
-    <StepNavigation onSelectionChange={(e) => setStep(e)} selectedPage={step}>
-      <StepNavigationItem label="Item without Status" page={0} />
-      <StepNavigationItem label="Active Item" page={1} />
-      <StepNavigationItem label="Not started Item" page={2} status="not-started" />
-    </StepNavigation> 
-  ) 
-}
-      `,
-      },
-    },
-  },
-};
+
 
 export const DifferentStates = (args) => (
   <StepNavigation {...args}>

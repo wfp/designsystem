@@ -2,6 +2,7 @@ import React from 'react';
 import markdown from './README.mdx';
 import AnchorNavigation from '.';
 import Link from '../Link';
+import anchorNavigationTwig from './AnchorNavigation.twig';
 
 export default {
   title: 'Components/Navigations/AnchorNavigation',
@@ -10,6 +11,7 @@ export default {
     componentSubtitle: 'Component',
     status: 'experimental',
     mdx: markdown,
+    twig: anchorNavigationTwig
   },
 };
 

@@ -14,6 +14,7 @@ import {
 import Search from '../Search';
 import Button from '../Button';
 import Link from '../Link';
+import subNavigationTwig from './SubNavigation.twig';
 
 export default {
   title: 'Components/Navigations/SubNavigation',
@@ -32,6 +33,7 @@ export default {
     componentSubtitle: 'Component',
     status: 'released',
     mdx: markdown,
+    twig: subNavigationTwig
   },
 };
 

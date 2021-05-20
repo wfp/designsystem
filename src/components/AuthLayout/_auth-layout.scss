@@ -43,6 +43,9 @@
             justify-content: center;
             align-items: center;
             overflow: scroll;
+            @include breakpointMax(bp--sm--major) {
+                width: 100%;
+            }
         }
     }
 
