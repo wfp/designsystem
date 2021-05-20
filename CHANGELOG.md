@@ -1,3 +1,10 @@
+## [1.18.1](https://github.com/WFP/UI/compare/v1.18.0...v1.18.1) (2021-05-20)
+
+
+### Bug Fixes
+
+* **component:** fix error from wrong prefix initiation ([372b988](https://github.com/WFP/UI/commit/372b98842c194fe5a3a670c35f1aa5b035d0a3cf))
+
 # [1.18.0](https://github.com/WFP/UI/compare/v1.17.1...v1.18.0) (2021-04-25)
 
 
