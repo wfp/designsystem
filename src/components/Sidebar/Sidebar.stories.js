@@ -14,6 +14,7 @@ import Item from '../Item';
 import Empty from '../Empty';
 import Search from '../Search';
 import Tag from '../Tag';
+import sidebarTwig from './Sidebar.twig';
 
 export default {
   title: 'Components/Content Related/Sidebar',
@@ -23,6 +24,7 @@ export default {
     status: 'released',
     mdx: markdown,
     previewWidth: 'full',
+    twig: sidebarTwig
   },
 };
 
