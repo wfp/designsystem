@@ -36,7 +36,7 @@ const capMax = (max, value) =>
 
 /** The number input component is used for entering numeric values and includes controls for incrementally increasing or decreasing the value */
 
-function NumberInput(props) {
+const NumberInput = React.forwardRef((props, ref) => {
   const {
     additional,
     className,
@@ -56,7 +56,7 @@ function NumberInput(props) {
     helperText,
     light,
     allowEmpty,
-    inputRef,
+    inputRef = ref,
     pattern = '[0-9]*',
     ...other
   } = props;
@@ -156,7 +156,7 @@ function NumberInput(props) {
       }}
     </Input>
   );
-}
+});
 
 NumberInput.propTypes = {
   /**

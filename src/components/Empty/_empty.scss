@@ -41,7 +41,7 @@
           width: 5rem;
           height: 5rem;
           path {
-            fill: $interactive-01;
+            fill: var(--interactive-01);
           }
           margin-bottom: $spacing-xs;
         }

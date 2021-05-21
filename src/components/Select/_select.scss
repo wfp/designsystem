@@ -93,7 +93,8 @@
     pointer-events: none;
   }
 
-  &[data-invalid] ~ .#{$prefix}--select__arrow {
+  //TODO: Check validity
+  [data-invalid] ~ .#{$prefix}--select__arrow {
     bottom: 2.25rem;
   }
 

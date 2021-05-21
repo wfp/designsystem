@@ -39,6 +39,7 @@ export default class ModalWrapper extends React.Component {
      * Specify a `function` which is triggered when submitting the `Modal`.
      */
     handleSubmit: PropTypes.func,
+    handleClose: PropTypes.func,
     disabled: PropTypes.bool,
     triggerButtonKind: ButtonTypes.buttonKind,
     /**
@@ -73,6 +74,7 @@ export default class ModalWrapper extends React.Component {
   handleClose = () => {
     this.setState({ isOpen: false }, () => {
       this.triggerButton.current && this.triggerButton.current.focus();
+      if (this.props.handleClose) this.props.handleClose();
     });
   };
 

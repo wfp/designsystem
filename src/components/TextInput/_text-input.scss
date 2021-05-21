@@ -12,13 +12,6 @@
 @import '../Form/form';
 
 @include exports('text-input') {
-  .#{$prefix}--text input {
-    @include typescale('zeta');
-    @include font-family;
-    @include input-base;
-    @include input-error;
-  }
-
   .#{$prefix}--text--required label::after {
     content: ' *';
     color: red;

@@ -25,9 +25,7 @@ export default function Sidebar({
   return (
     <div className={classes} {...other}>
       <div className={`${prefix}--sidebar-item-content`}>{sidebar}</div>
-      <div id="scroll-container" className={`${prefix}--content-section`}>
-        {children}
-      </div>
+      <div className={`${prefix}--content-section`}>{children}</div>
     </div>
   );
 }
@@ -115,7 +113,7 @@ export function SidebarContentBody({
   );
 
   return (
-    <div className={classes} {...other}>
+    <div id="scroll-container" className={classes} {...other}>
       {children}
     </div>
   );

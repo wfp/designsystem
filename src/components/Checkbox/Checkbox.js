@@ -5,18 +5,19 @@ import classNames from 'classnames';
 /**
  * Checkboxes are used for a list of options where the user may select multiple options, including all or none. */
 
-const Checkbox = ({
-  className,
-  id,
-  labelText,
-  onChange,
-  indeterminate,
-  hideLabel,
-  wrapperClassName,
-  inputRef,
-  title = '',
-  ...other
-}) => {
+const Checkbox = React.forwardRef((props, ref) => {
+  const {
+    className,
+    id,
+    labelText,
+    onChange,
+    indeterminate,
+    hideLabel,
+    wrapperClassName,
+    inputRef = ref,
+    title = '',
+    ...other
+  } = props;
   const customId = id ? id : other.name;
   let input;
   const labelClasses = classNames('wfp--checkbox-label', className);
@@ -35,7 +36,7 @@ const Checkbox = ({
         {...other}
         type="checkbox"
         onChange={(evt) => {
-          onChange(evt.target.checked, customId, evt);
+          onChange(evt, evt.target.checked, customId);
         }}
         className="wfp--checkbox"
         id={customId}
@@ -55,7 +56,7 @@ const Checkbox = ({
       </label>
     </div>
   );
-};
+});
 
 Checkbox.propTypes = {
   /**

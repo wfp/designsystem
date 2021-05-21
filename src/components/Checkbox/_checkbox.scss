@@ -28,6 +28,8 @@
 
   .#{$prefix}--checkbox {
     @include hidden;
+    //TODO: replace hidden include
+    display: none;
   }
 
   .#{$prefix}--checkbox-label {
