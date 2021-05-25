@@ -76,14 +76,27 @@ const Card = ({
     </>
   );
 
-  return (
-    <div
+  return isLink ? (
+    <div 
+    className={wrapperClasses}
+    style={{ width: pagewidth, minHeight: pageheight }}>
+    <a
+      href={url}
+      target={isExternal ? '_blank' : ''}
+      style={{width: pagewidth, minHeight: pageheight}}
+      {...other}>
+      {content}
+    </a>
+    </div>
+  ) : (
+      <div
       className={wrapperClasses}
       {...other}
       style={{ width: pagewidth, minHeight: pageheight }}>
       {content}
     </div>
   );
+
 };
 
 Card.propTypes = {
@@ -92,15 +105,11 @@ Card.propTypes = {
  */
   className: PropTypes.string,
   /**
-   The links target
-*/
-  href: PropTypes.string,
-  /**
    An optimized photograph
  */
   image: PropTypes.string,
   /**
-  External link flag
+  isExternal if true, opens link in a different window
 */
   isExternal: PropTypes.bool,
   /**
@@ -140,7 +149,7 @@ Card.propTypes = {
 };
 
 Card.defaultProps = {
-  isLink: false,
+  isLink: true,
 };
 
 export default Card;

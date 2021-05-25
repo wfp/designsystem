@@ -294,7 +294,7 @@
   }
 
   .#{$prefix}--story__caption {
-    @include typescale('caption');
+    @include typescale('omega');
   }
 
   .#{$prefix}--story__sup {
