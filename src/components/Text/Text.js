@@ -26,9 +26,9 @@ const Text = ({ children, className, kind, spacingTop, spacingBottom }) => {
   const tagName = { name: textLookup[kind] ? textLookup[kind] : 'div' };
   const classNames = classnames({
     [`${prefix}--text`]: true,
-    [`${prefix}--story__${kind}`]: kind,
-    [`${prefix}--story__spacing-top-${spacingTop}`]: spacingTop,
-    [`${prefix}--story__spacing-bottom-${spacingBottom}`]: spacingBottom,
+    [`${prefix}--text__${kind}`]: kind,
+    [`${prefix}--text__spacing-top-${spacingTop}`]: spacingTop,
+    [`${prefix}--text__spacing-bottom-${spacingBottom}`]: spacingBottom,
     [`${className}`]: className,
   });
   return <tagName.name className={classNames}>{children}</tagName.name>;

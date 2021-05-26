@@ -14,43 +14,43 @@
 
 @mixin text {
   code {
-    @extend .#{$prefix}--story__code;
+    @extend .#{$prefix}--text__code;
   }
   p {
-    @extend .#{$prefix}--story__p;
+    @extend .#{$prefix}--text__p;
   }
 
   h2 {
-    @extend .#{$prefix}--story__h2;
+    @extend .#{$prefix}--text__h2;
   }
 
   i {
-    @extend .#{$prefix}--story__i;
+    @extend .#{$prefix}--text__i;
   }
 
   h3 {
-    @extend .#{$prefix}--story__h3;
+    @extend .#{$prefix}--text__h3;
   }
 
   h4 {
-    @extend .#{$prefix}--story__h4;
+    @extend .#{$prefix}--text__h4;
   }
 
   h5 {
-    @extend .#{$prefix}--story__h5;
+    @extend .#{$prefix}--text__h5;
   }
 
   a {
-    @extend .#{$prefix}--story__a;
+    @extend .#{$prefix}--text__a;
   }
 
   sup {
-    @extend .#{$prefix}--story__sup;
+    @extend .#{$prefix}--text__sup;
   }
 
   b,
   strong {
-    @extend .#{$prefix}--story__b;
+    @extend .#{$prefix}--text__b;
   }
 
   /* All the line spacings */
@@ -105,7 +105,7 @@
     margin-top: $spacing-lg;
   }
 
-  .wfp--story__h4 + div,
+  .wfp--text__h4 + div,
   h4 + div {
     margin-top: $spacing-md;
   }
@@ -115,11 +115,11 @@
   h3 + .wfp--list,
   h4 + .wfp--list,
   h5 + .wfp--list,
-  .wfp--story__h1 + .wfp--list,
-  .wfp--story__h2 + .wfp--list,
-  .wfp--story__h3 + .wfp--list,
-  .wfp--story__h4 + .wfp--list,
-  .wfp--story__h5 + .wfp--list {
+  .wfp--text__h1 + .wfp--list,
+  .wfp--text__h2 + .wfp--list,
+  .wfp--text__h3 + .wfp--list,
+  .wfp--text__h4 + .wfp--list,
+  .wfp--text__h5 + .wfp--list {
     margin-top: $spacing-md;
   }
 
@@ -139,7 +139,7 @@
     margin-top: $spacing-md;
   }
 
-  .#{$prefix}--story__list {
+  .#{$prefix}--text__list {
     list-style-position: outside;
     line-height: 1.6em;
     margin: $spacing-md 0 $spacing-md 1.5em;
@@ -149,7 +149,7 @@
     }
   }
 
-  .#{$prefix}--story__sub-heading {
+  .#{$prefix}--text__sub-heading {
     @include typescale('zeta');
     font-weight: normal;
     color: var(--ui-05);
@@ -162,7 +162,7 @@
     //letter-spacing: 0.05em;
   }
 
-  .#{$prefix}--story__type-beta {
+  .#{$prefix}--text__type-beta {
     margin-bottom: $spacing-lg;
   }
 
@@ -179,21 +179,19 @@
     padding: 0.05em 0.1em;
   }
 
-  .#{$prefix}--story__divider {
+  .#{$prefix}--text__divider {
     border: 1px solid var(--ui-04);
   }
 
-  .#{$prefix}--story__divider--lg {
+  .#{$prefix}--text__divider--lg {
     border: 2px solid var(--ui-04);
   }
 }
 
-@include exports('story') {
-  .#{$prefix}--story {
+@include exports('text') {
+  .#{$prefix}--text {
     @include reset;
     @include font-family;
-    //-webkit-font-smoothing: antialiased;
-    //-moz-osx-font-smoothing: grayscale;
     &__center {
       text-align: center;
     }
@@ -211,7 +209,7 @@
     @include text;
   }
 
-  .#{$prefix}--story__a {
+  .#{$prefix}--text__a {
     &:hover {
       text-decoration: underline;
     }
@@ -230,21 +228,21 @@
     }
   }
 
-  .#{$prefix}--story__title {
+  .#{$prefix}--text__title {
     @include typescale('mega');
     font-weight: 300;
     margin-bottom: $spacing-xl;
     margin-left: -0.058em;
   }
 
-  .#{$prefix}--story__content-title {
+  .#{$prefix}--text__content-title {
     @include typescale('alpha');
     font-weight: 300;
     margin-bottom: $spacing-lg;
     margin-left: -0.058em;
   }
 
-  .#{$prefix}--story__subtitle {
+  .#{$prefix}--text__subtitle {
     @include typescale('zeta');
     font-weight: normal;
     color: var(--interactive-01);
@@ -255,12 +253,12 @@
     letter-spacing: 0.05em;
   }
 
-  .#{$prefix}--story__code {
+  .#{$prefix}--text__code {
     @include typescale('epsilon');
     font-family: monospace;
   }
 
-  .#{$prefix}--story__p {
+  .#{$prefix}--text__p {
     margin-top: $spacing-md;
     line-height: 1.6em;
 
@@ -269,10 +267,10 @@
     }
   }
 
-  .#{$prefix}--story__i {
+  .#{$prefix}--text__i {
     font-style: italic;
   }
-  .#{$prefix}--story__h2 {
+  .#{$prefix}--text__h2 {
     margin-top: $spacing-xl;
 
     &.before--img {
@@ -280,25 +278,25 @@
     }
   }
 
-  .#{$prefix}--story__h3 {
+  .#{$prefix}--text__h3 {
     margin-top: $spacing-xl;
   }
 
-  .#{$prefix}--story__h4 {
+  .#{$prefix}--text__h4 {
     margin-top: $spacing-lg;
     // @include typescale('epsilon');
   }
 
-  .#{$prefix}--story__h5 {
+  .#{$prefix}--text__h5 {
     margin-top: $spacing-lg;
     // @include typescale('epsilon');
   }
 
-  .#{$prefix}--story__caption {
+  .#{$prefix}--text__caption {
     @include typescale('omega');
   }
 
-  .#{$prefix}--story__sup {
+  .#{$prefix}--text__sup {
     font-size: 0.7em;
     background: var(--ui-03);
     vertical-align: top;
@@ -318,7 +316,7 @@
     }
   }
 
-  .#{$prefix}--story__inline-highlight {
+  .#{$prefix}--text__inline-highlight {
     display: inline-block;
     font-weight: 600;
     background: var(--ui-03);
@@ -328,20 +326,20 @@
   .docblock-source {
     margin-top: $spacing-xs !important;
   }
-  .#{$prefix}--story__bold {
+  .#{$prefix}--text__bold {
     font-weight: 600;
   }
 
-  .#{$prefix}--story__b,
-  .#{$prefix}--story__strong {
+  .#{$prefix}--text__b,
+  .#{$prefix}--text__strong {
     font-weight: 600;
   }
 
   @each $size, $glyph in $spacing-map {
-    .#{$prefix}--story__spacing-top-#{$size} {
+    .#{$prefix}--text-top-#{$size} {
       margin-top: map-get($spacing-map, $size);
     }
-    .#{$prefix}--story__spacing-bottom-#{$size} {
+    .#{$prefix}--text__spacing-bottom-#{$size} {
       margin-bottom: map-get($spacing-map, $size);
     }
   }

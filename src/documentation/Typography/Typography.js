@@ -12,7 +12,7 @@ const list = [
 const Normaltext = [
   { kind: 'p', text: 'Body copy, paragraph', styling: '16px, Regular' },
   { kind: 'p', text: 'Label (form)', styling: '14px, SemiBold' },
-  { kind: 'code', text: 'Code', styling: 'Monospace, 13px, Regular' },
+  { kind: 'code', text: 'Code', styling: 'Monospace, 16px, Regular' },
   { kind: 'sup', text: 'Sup', styling: '11px, Regular' },
   { kind: 'p', text: 'Inline highlight', styling: '14px, SemiBold' },
 ];
