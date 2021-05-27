@@ -1,3 +1,10 @@
+## [1.18.2](https://github.com/WFP/UI/compare/v1.18.1...v1.18.2) (2021-05-27)
+
+
+### Bug Fixes
+
+* **components:** refactored card component and updated typography typescale ([efc3969](https://github.com/WFP/UI/commit/efc3969b90202276ca3c017a2addc95f6eb45c94))
+
 ## [1.18.1](https://github.com/WFP/UI/compare/v1.18.0...v1.18.1) (2021-05-20)
 
 
