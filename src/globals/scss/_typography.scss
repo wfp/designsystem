@@ -2,6 +2,7 @@
 
 $font-family-mono: 'Courier New', 'Menlo', 'DejaVu Sans Mono',
   'Bitstream Vera Sans Mono', Courier, monospace !default;
+$font-family-mono-code: 'SFMono-Regular', 'Consolas', 'Liberation Mono', 'Menlo', 'Courier', monospace !default;
 $font-family-sans-serif: 'Open Sans', sans-serif !default;
 $font-family-tajawal: 'Tajawal', sans-serif !default;
 
@@ -9,18 +10,18 @@ $font-family-tajawal: 'Tajawal', sans-serif !default;
 $base-font-size: 16px !default; // Default, Use with em() and rem() functions
 
 $typescale-map: (
-  'giga': 4.75rem,
-  'mega': 3.375rem,
+  'giga': 4.625rem,
+  'mega': 3.625rem,
   'alpha': 2.25rem,
   'beta': 1.75rem,
+  'omicron': 1.5625rem,
+  'sigma': 1.375rem,
   'gamma': 1.25rem,
   'delta': 1.125rem,
   'epsilon': 1rem,
   'zeta': 0.875rem,
   'omega': 0.75rem,
-  'caption': 0.75rem,
-  'legal': 0.6875rem,
-  'p': 1rem,
+  'theta': 0.6875rem, //replaced legal with the greek work theta
 );
 
 @mixin typescale($size) {
@@ -70,10 +71,12 @@ $typescale-map: (
 }
 
 $font-size-map: (
-  '76': 4.75rem,
-  '54': 3.375rem,
+  '74': 4.625rem,  //74px rather => 4.625rem
+  '58': 3.625rem, //58px rather => 3.625rem
   '36': 2.25rem,
   '28': 1.75rem,
+  '25': 1.5625rem,
+  '22': 1.375rem,
   '20': 1.25rem,
   '18': 1.125rem,
   '16': 1rem,
@@ -81,6 +84,7 @@ $font-size-map: (
   '12': 0.75rem,
   '11': 0.6875rem,
 );
+
 
 @mixin font-size($size) {
   @if map-has-key($font-size-map, $size) {

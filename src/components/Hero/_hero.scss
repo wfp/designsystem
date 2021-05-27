@@ -242,7 +242,7 @@
     background: var(--support-01);
     .#{$prefix}--photo-card__info__title {
       font-weight: normal;
-      @include typescale('p');
+      @include typescale('epsilon');
     }
   }
 

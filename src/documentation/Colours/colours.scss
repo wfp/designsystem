@@ -78,7 +78,7 @@ $css--reset: false;
     color: var(--ui-01);
   }
   > div {
-    @include typescale('caption');
+    @include typescale('omega');
     font-size: 0.7rem;
     margin-top: $spacing-2xs;
     padding: $spacing-2xs;
