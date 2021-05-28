@@ -68,7 +68,7 @@ export default memo(function DateRangePickerInput({
   ) : null;
 
   return (
-    <div className="wfp--form-item">
+    <div className={`${prefix}--form-item`}>
       {label}
       {helper}
       <DateRangePicker

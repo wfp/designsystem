@@ -1,7 +1,9 @@
 import React from 'react';
 import classnames from 'classnames';
-
 import Pagination from '../Pagination';
+import settings from '../../globals/js/settings';
+
+const { prefix } = settings;
 
 const ReactTablePagination = ({
   // Computed
@@ -73,7 +75,7 @@ const ReactTablePagination = ({
     <div
       className={classnames(paginationClassName, '-pagination')}
       style={style}>
-      <div className="wfp-pagination">
+      <div className={`${prefix}-pagination`}>
         <Pagination
           onChange={changePage}
           pageSizes={pageSizeOptions}

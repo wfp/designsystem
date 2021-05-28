@@ -1,12 +1,15 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import classnames from 'classnames';
+import settings from '../../globals/js/settings';
+
+const { prefix } = settings;
 
 const FormItem = ({ className, children, invalid, ...other }) => {
   const classNames = classnames(
-    'wfp--form-item',
+    `${prefix}--form-item`,
     {
-      'wfp--form-item--invalid': invalid,
+      [`${prefix}--form-item--invalid`]: invalid,
     },
     className
   );

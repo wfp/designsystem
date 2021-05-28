@@ -12,10 +12,7 @@ export default {
     status: 'released',
     mdx: markdown,
     twig: cardTwig
-  },
-  argTypes: {
-    anObjectProperty: { control: { type: "object" }, defaultValue: { value: "my value" } },
-  },
+  }
 };
 
 export const SimpleCard = (args) => <Card {...args} />;
@@ -26,6 +23,8 @@ SimpleCard.args = {
   title: 'The Climate Adaption Mangement and Innovation Initiative',
   kind: 'simple-card',
   metadata: 'Publication',
+  url:'https://www.wfp.org',
+  isExternal:true,
 };
 
 export const SimpleCardWithImage = (args) => <Card {...args} />;

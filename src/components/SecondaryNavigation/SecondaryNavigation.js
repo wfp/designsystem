@@ -2,10 +2,13 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
 import Wrapper from '../Wrapper';
+import settings from '../../globals/js/settings';
+
+const { prefix } = settings;
 
 const SecondaryNavigationTitle = ({ className, children }) => {
   const wrapperClasses = classNames(
-    'wfp--secondary-navigation__title',
+    `${prefix}--secondary-navigation__title`,
     className
   );
   return <h1 className={wrapperClasses}>{children}</h1>;
@@ -31,16 +34,16 @@ const SecondaryNavigation = ({
   id,
   pageWidth,
 }) => {
-  const wrapperClasses = classNames('wfp--secondary-navigation', className);
+  const wrapperClasses = classNames(`${prefix}--secondary-navigation`, className);
 
   return (
     <div id={id} className={wrapperClasses}>
       <Wrapper
         pageWidth={pageWidth}
-        className="wfp--secondary-navigation__wrapper">
-        <div className="wfp--secondary-navigation__list">{children}</div>
+        className={`${prefix}--secondary-navigation__wrapper`}>
+        <div className={`${prefix}--secondary-navigation__list`}>{children}</div>
         {additional && (
-          <div className="wfp--secondary-navigation__additional">
+          <div className={`${prefix}--secondary-navigation__additional`}>
             {additional}
           </div>
         )}

@@ -1,7 +1,9 @@
 import PropTypes from 'prop-types';
 import React, { useState } from 'react';
 import classNames from 'classnames';
+import settings from '../../globals/js/settings';
 
+const { prefix } = settings;
 /** ContentSwitcher manipulates the content shown following an exclusive or “either/or” pattern. It is used to toggle between two or more content sections within the same space on screen. Only one section can be shown at a time.
  */
 export default function ContentSwitcher({
@@ -33,8 +35,8 @@ export default function ContentSwitcher({
     }
   };
 
-  const classes = classNames('wfp--content-switcher', className, {
-    'wfp--content-switcher--sm': small,
+  const classes = classNames(`${prefix}--content-switcher`, className, {
+    [`${prefix}--content-switcher--sm`]: small,
   });
 
   return (

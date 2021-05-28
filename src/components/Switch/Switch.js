@@ -1,6 +1,9 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
+import settings from '../../globals/js/settings';
+
+const { prefix } = settings;
 
 const Switch = props => {
   const {
@@ -30,8 +33,8 @@ const Switch = props => {
     }
   };
 
-  const classes = classNames(className, 'wfp--content-switcher-btn', {
-    'wfp--content-switcher--selected': selected,
+  const classes = classNames(className, `${prefix}--content-switcher-btn`, {
+    [`${prefix}--content-switcher--selected`]: selected,
   });
 
   const commonProps = {
@@ -44,7 +47,7 @@ const Switch = props => {
     ? React.cloneElement(icon, {
         className: classNames(
           icon.props.className,
-          ' wfp--content-switcher__icon'
+          `${prefix}--content-switcher__icon`
         ),
       })
     : null;

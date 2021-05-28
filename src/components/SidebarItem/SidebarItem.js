@@ -2,7 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types';
 import { iconUser } from '@wfp/icons';
 import Icon from '../../components/Icon';
-import Tag from '../../components/Tag';
+import settings from '../../globals/js/settings';
+
+const { prefix } = settings;
 
 function SidebarItem({
     image, 
@@ -26,29 +28,29 @@ function SidebarItem({
                 fill="#ffffff"
                 width="14"
                 height="14"
-                className="wfp--profile-image--empty"
+                className={`${prefix}--profile-image--empty`}
                 {...other}
             />)
     }
     
 
     return (
-        <div className="wfp--sidebar-item-wrapper" {...other}>
-            <div className="wfp--sidebar-item__content">   
+        <div className={`${prefix}--sidebar-item-wrapper`} {...other}>
+            <div className={`${prefix}--sidebar-item__content`}>   
             { !noImage ? 
-            (<div className="wfp--profile-image">
+            (<div className={`${prefix}--profile-image`}>
                 {profile_image} 
             </div> )
             : '' }
-            <div className="wfp--sidebar-content-wrapper">
-                {title && <div className="wfp--item-title">{title}</div>}
-                {content && <div className="wfp--item-content">{content}</div>}
-                {subContent && <div className="wfp--item-subcontent">{subContent}</div>}
+            <div className={`${prefix}--sidebar-content-wrapper`}>
+                {title && <div className={`${prefix}--item-title`}>{title}</div>}
+                {content && <div className={`${prefix}--item-content`}>{content}</div>}
+                {subContent && <div className={`${prefix}--item-subcontent`}>{subContent}</div>}
             </div>
             </div>
 
-            <div className="wfp--sidebar-right-content-wrapper">
-                <div className="wfp--sidebar-info-wrapper">
+            <div className={`${prefix}--sidebar-right-content-wrapper`}>
+                <div className={`${prefix}--sidebar-info-wrapper`}>
                     <span>additional</span>
                 </div>
                 <div>

@@ -1,2 +1,8 @@
 export default from './Sidebar';
-export { SidebarHeader, SidebarScroll, SidebarBackButton } from './Sidebar';
+export {
+  SidebarHeader,
+  SidebarContentHeader,
+  SidebarContentBody,
+  SidebarScroll,
+  SidebarBackButton,
+} from './Sidebar';
