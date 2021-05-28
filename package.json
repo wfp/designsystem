@@ -183,7 +183,7 @@
     "moment": "^2.27.0",
     "node-sass": "5.0.0",
     "object-assign": "^4.1.1",
-    "postcss": "^7.0.32",
+    "postcss": "^8.2.10",
     "postcss-cli": "^7.1.1",
     "postcss-loader": "^3.0.0",
     "prettier": "^2.0.5",
