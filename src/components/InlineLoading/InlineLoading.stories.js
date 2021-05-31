@@ -1,6 +1,7 @@
 import React from 'react';
 import markdown from './README.mdx';
 import InlineLoading from '.';
+import inlineLoadingTwig from './InlineLoading.twig';
 
 export default {
   title: 'Components/UI Elements/InlineLoading',
@@ -9,6 +10,7 @@ export default {
     componentSubtitle: 'Component',
     status: 'released',
     mdx: markdown,
+    twig: inlineLoadingTwig
   },
 };
 

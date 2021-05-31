@@ -3,6 +3,7 @@ import markdown from './README.mdx';
 import Unit from '.';
 import Table from '../Table';
 import Text from '../Text';
+import unitTwig from './Unit.twig';
 
 export default {
   title: 'Components/Content Related/Unit',
@@ -11,6 +12,7 @@ export default {
     componentSubtitle: 'Component',
     status: 'released',
     mdx: markdown,
+    twig: unitTwig
   },
 };
 
