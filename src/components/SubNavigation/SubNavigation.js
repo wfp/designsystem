@@ -1,6 +1,9 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
+import settings from '../../globals/js/settings';
+
+const { prefix } = settings;
 
 /** The SubNavigation is a toogleable part of the MainNavigation */
 const SubNavigation = ({ children, ...other }) => {
@@ -12,7 +15,7 @@ SubNavigation.propTypes = {
 };
 
 const SubNavigationItem = ({ children, className, ...other }) => {
-  const classes = classNames('wfp--sub-navigation__item', 
+  const classes = classNames(`${prefix}--sub-navigation__item`, 
     className,
   );
 
@@ -30,7 +33,7 @@ SubNavigationItem.propTypes = {
 };
 
 const SubNavigationHeader = ({ children, className, ...other }) => {
-  const classes = classNames('wfp--sub-navigation__header', 
+  const classes = classNames(`${prefix}--sub-navigation__header`, 
     className,
   );
 
@@ -48,7 +51,7 @@ SubNavigationHeader.propTypes = {
 };
 
 const SubNavigationFilter = ({ children, className, ...other }) => {
-  const classes = classNames('wfp--sub-navigation__filter', 
+  const classes = classNames(`${prefix}--sub-navigation__filter`, 
     className,
   );
 
@@ -65,7 +68,7 @@ SubNavigationFilter.propTypes = {
 };
 
 const SubNavigationList = ({ children, className, ...other }) => {
-  const classes = classNames('wfp--sub-navigation__list', 
+  const classes = classNames(`${prefix}--sub-navigation__list`, 
     className,
   );
 
@@ -82,7 +85,7 @@ SubNavigationList.propTypes = {
 };
 
 const SubNavigationContent = ({ children, className, ...other }) => {
-  const classes = classNames('wfp--sub-navigation__content', 
+  const classes = classNames(`${prefix}--sub-navigation__content`, 
     className,
   );
 
@@ -103,7 +106,7 @@ SubNavigationContent.propTypes = {
 };
 
 const SubNavigationTitle = ({ children, className, ...other }) => {
-  const classes = classNames('wfp--sub-navigation__title', 
+  const classes = classNames(`${prefix}--sub-navigation__title`, 
     className,
   );
 
@@ -124,7 +127,7 @@ SubNavigationTitle.propTypes = {
 };
 
 const SubNavigationLink = ({ children, className, ...other }) => {
-  const classes = classNames('wfp--sub-navigation__link', 
+  const classes = classNames(`${prefix}--sub-navigation__link`, 
     className,
   );
 
@@ -152,16 +155,16 @@ const SubNavigationGroup = ({
   ...other
 }) => {
   const classes = classNames(
-    'wfp--sub-navigation__group',
+    `${prefix}--sub-navigation__group`,
     {
       className,
     },
-    { 'wfp--sub-navigation__group--columns': columns }
+    { [`${prefix}--sub-navigation__group--columns`]: columns }
   );
 
   return (
     <div className={classes} {...other}>
-      {title && <h3 className="wfp--sub-navigation__group__title">{title}</h3>}
+      {title && <h3 className={`${prefix}--sub-navigation__group__title`}>{title}</h3>}
       <div>{children}</div>
     </div>
   );

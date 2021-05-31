@@ -104,9 +104,9 @@ export default function StepNavigation({
       [`${prefix}--step-navigation--small`]: small,
       [`${prefix}--step-navigation--regular`]: !small,
     }),
-    tablist: classNames('wfp--step-navigation__nav', {
-      'wfp--step-navigation__nav--hidden': dropdownHidden,
-      'wfp--step-navigation__nav--inline': inline,
+    tablist: classNames(`${prefix}--step-navigation__nav`, {
+      [`${prefix}--step-navigation__nav--hidden`]: dropdownHidden,
+      [`${prefix}--step-navigation__nav--inline`]: inline,
     }),
   };
 

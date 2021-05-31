@@ -30,14 +30,14 @@
   }
 
   .#{$prefix}--type-caption {
-    @include typescale('caption');
+    @include typescale('omega');
     @include reset;
     @include line-height('body');
     font-weight: 400;
   }
 
   .#{$prefix}--type-legal {
-    @include typescale('legal');
+    @include typescale('theta');
     @include reset;
     @include line-height('body');
     font-weight: 400;
@@ -55,7 +55,6 @@
 
   p {
     @include reset;
-    //@include typescale('p');
     @include line-height('body');
     font-weight: 400;
   }
@@ -73,8 +72,7 @@
   h1,
   .#{$prefix}--type-alpha {
     @include reset;
-    // @include typescale('alpha');
-    font-size: 1.75rem;
+    @include typescale('beta');
     @include line-height('heading');
     font-weight: 600;
   }
@@ -82,8 +80,7 @@
   h2,
   .#{$prefix}--type-beta {
     @include reset;
-    // @include typescale('beta');
-    font-size: 1.5625rem;
+    @include typescale('omicron');
     @include line-height('heading');
     font-weight: 600;
   }
@@ -91,8 +88,7 @@
   h3,
   .#{$prefix}--type-gamma {
     @include reset;
-    // @include typescale('gamma');
-    font-size: 1.4375rem;
+    @include typescale('sigma');
     @include line-height('heading');
     font-weight: 600;
   }
@@ -100,8 +96,7 @@
   h4,
   .#{$prefix}--type-delta {
     @include reset;
-    // @include typescale('delta');
-    font-size: 1.25rem;
+    @include typescale('gamma');
     @include line-height('heading');
     font-weight: 600;
   }
@@ -109,8 +104,7 @@
   h5,
   .#{$prefix}--type-epsilon {
     @include reset;
-    // @include typescale('epsilon');
-    font-size: 1.125rem;
+    @include typescale('delta');
     @include line-height('heading');
     font-weight: 600;
   }
@@ -118,8 +112,7 @@
   h6,
   .#{$prefix}--type-zeta {
     @include reset;
-    // @include typescale('zeta');
-    font-size: 1rem;
+    @include typescale('epsilon');
     @include line-height('heading');
     font-weight: 600;
   }

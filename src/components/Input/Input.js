@@ -81,7 +81,7 @@ const Input = ({
   );
 
   const error = invalid ? (
-    <div className="wfp--form-requirement" id={errorId}>
+    <div className={`${prefix}--form-requirement`} id={errorId}>
       {errorIcon}{' '}
       <span>
         {typeof invalid === 'object' && invalid.message
