@@ -3,6 +3,8 @@ import React from 'react';
 import classNames from 'classnames';
 import Button from '../Button';
 import { iconArrowLeft, iconArrowRight } from '@wfp/icons';
+import settings from '../../globals/js/settings';
+const { prefix } = settings;
 
 export default class FormControls extends React.Component {
   static propTypes = {
@@ -56,16 +58,16 @@ export default class FormControls extends React.Component {
       submitText,
     } = this.props;
 
-    const formControlsClasses = classNames('wfp--form-controls', className);
+    const formControlsClasses = classNames(`${prefix}--form-controls`, className);
 
     return (
       <div className={formControlsClasses}>
-        <div className="wfp--form-controls__steps">
+        <div className={`${prefix}--form-controls__steps`}>
           {!previousHidden && (
             <Button
               disabled={previousDisabled}
               kind="secondary"
-              className="wfp--form-controls__prev"
+              className={`${prefix}--form-controls__prev`}
               icon={previousIcon}
               onClick={onPreviousClick}>
               {previousText}
@@ -77,7 +79,7 @@ export default class FormControls extends React.Component {
             <Button
               disabled={nextDisabled}
               kind="secondary"
-              className="wfp--form-controls__next"
+              className={`${prefix}--form-controls__next`}
               icon={nextIcon}
               type="submit"
               onClick={onNextClick}>

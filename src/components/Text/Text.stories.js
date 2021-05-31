@@ -57,7 +57,7 @@ export const Headings = (args) => (
 
 const Normaltext = [
   { kind: 'p', text: 'Body copy, paragraph', styling: '16px, Regular' },
-  { kind: 'p', text: 'Label (form)', styling: '16px, Regular' },
+  { kind: 'p', text: 'Label (form)', styling: '14px, Regular' },
   { kind: 'code', text: 'Code', styling: 'Monospace, 13px, Regular' },
   { kind: 'sup', text: 'Sup', styling: '11px, Regular' },
   {

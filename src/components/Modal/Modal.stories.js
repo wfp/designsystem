@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import markdown from './README.mdx';
 import Modal from '.';
 
@@ -12,12 +12,20 @@ export default {
   },
 };
 
-export const Regular = (args) => (
+export const Regular = (args) => {
+  const [isOpen, setOpen] = useState(args.open);
+
+  const handleModalClose = () => {
+      setOpen(!isOpen);
+  }
+
+  return(
   <>
     Use the open property in the table below to enable the preview.{' '}
-    <Modal {...args}>{args.children}</Modal>
+    <Modal {...args} onRequestClose={handleModalClose} open={isOpen} >{args.children}</Modal>
   </>
 );
+}
 
 Regular.args = {
   children: 'Text',

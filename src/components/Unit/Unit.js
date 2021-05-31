@@ -20,6 +20,8 @@ import {
   YearMonth,
 } from './UnitList';
 import PropTypes from 'prop-types';
+import settings from '../../globals/js/settings';
+const { prefix } = settings;
 // All Unit Components together in <Unit type="Unitname" />
 
 const components = {
@@ -51,20 +53,13 @@ const Unit = (props) => {
   const Unit = components[type];
   //const unitHideClass = setup && setup.hideUnit ? 'wfp--unit--hide' : '';
   const textAnchorCalc = textAnchor ? textAnchor : 'start';
-  const unitClassName = type ? 'wfp--unit--' + type.toLowerCase() : '';
+  const unitClassName = type ? `${prefix}--unit--${type.toLowerCase()}` : '';
 
   const outputClassName =
-    output && scaleLookup[output] ? 'wfp--unit--' + output : '';
-  const setupClassName = setup ? 'wfp--unit--' + setup : '';
-  const classNameCalc =
-    'wfp--unit ' +
-    className +
-    ' ' +
-    unitClassName +
-    ' ' +
-    outputClassName +
-    ' ' +
-    setupClassName;
+    output && scaleLookup[output] ? `${prefix}--unit--${output}` : '';
+  const setupClassName = setup ? `${prefix}--unit--${setup}` : '';
+  const classNameCalc = `${prefix}--unit ${className} ${unitClassName} ${outputClassName} ${setupClassName}`;
+
 
   if (string) {
     return Unit(props);

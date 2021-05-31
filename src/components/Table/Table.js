@@ -1,6 +1,9 @@
 import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
+import settings from '../../globals/js/settings';
+
+const { prefix } = settings;
 
 /** Tables are used to make large volumes of data easy to understand and to access. */
 export default function Table({
@@ -11,10 +14,10 @@ export default function Table({
   ...other
 }) {
   const classes = classNames(
-    'wfp--table',
+    `${prefix}--table`,
     {
-      'wfp--table--responsive': responsive,
-      'wfp--table--with-border': withBorder,
+      [`${prefix}--table--responsive`]: responsive,
+      [`${prefix}--table--with-border`]: withBorder,
     },
     className
   );

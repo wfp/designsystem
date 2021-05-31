@@ -7,7 +7,7 @@ const { prefix } = settings;
 /** The Story component adds a default style, formatting and spacing for a longer text with main focus on readability. */
 const Story = ({ children, className, spacing }) => {
   const classNames = classnames({
-    'wfp--story': true,
+    [`${prefix}--story`]: true,
     [`${className}`]: className,
   });
   return (

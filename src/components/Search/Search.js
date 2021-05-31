@@ -84,14 +84,14 @@ function Search(props) {
     <Input
       {...props}
       formItemClassName={numberInputClasses}
-      inputWrapperClassName="wfp--search-input__wrapper">
+      inputWrapperClassName={`${prefix}--search-input__wrapper`}>
       {() => {
         return (
           <>
             <Icon
               icon={iconSearch}
               description={labelText}
-              className="wfp--search-magnifier"
+              className={`${prefix}--search-magnifier`}
               onClick={onSearchIconClick}
             />
 

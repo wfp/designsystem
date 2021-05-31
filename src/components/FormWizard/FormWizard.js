@@ -3,6 +3,9 @@ import React from 'react';
 import classNames from 'classnames';
 
 import { Module, ModuleBody, ModuleHeader, ModuleFooter } from '../Module';
+import settings from '../../globals/js/settings';
+
+const { prefix } = settings;
 
 /** The FormWizard is a wrapper for creating Wizard forms. */
 
@@ -16,16 +19,16 @@ const FormWizard = ({
 }) => {
   const classes = {
     formControls: classNames(
-      'wfp--form-wizard',
-      { 'wfp--form-wizard--sticky': stickySidebar },
+      `${prefix}--form-wizard`,
+      { [`${prefix}--form-wizard--sticky`]: stickySidebar },
       className
     ),
   };
 
   return (
     <div className={classes.formControls}>
-      <div className="wfp--form-wizard__sidebar">{sidebar}</div>
-      <Module className="wfp--form-wizard__content" noMargin>
+      <div className={`${prefix}--form-wizard__sidebar`}>{sidebar}</div>
+      <Module className={`${prefix}--form-wizard__content`} noMargin>
         {formHeader && <ModuleHeader>{formHeader}</ModuleHeader>}
         <ModuleBody>{children}</ModuleBody>
         {formControls && <ModuleFooter>{formControls}</ModuleFooter>}

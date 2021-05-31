@@ -27,9 +27,8 @@ export default {
     componentSubtitle: 'Component',
     status: 'released',
     mdx: markdown,
-    twig: mainNavigationTwig,
-    previewWidth: 'full',
-  },
+    previewWidth: 'full'
+  }
 };
 
 

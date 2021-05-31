@@ -1,6 +1,9 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
+import settings from '../../globals/js/settings';
+
+const { prefix } = settings;
 
 /**
  * Checkboxes are used for a list of options where the user may select multiple options, including all or none. */
@@ -19,13 +22,13 @@ const Checkbox = ({
 }) => {
   const customId = id ? id : other.name;
   let input;
-  const labelClasses = classNames('wfp--checkbox-label', className);
+  const labelClasses = classNames(`${prefix}--checkbox-label`, className);
   const innerLabelClasses = classNames({
-    'wfp--visually-hidden': hideLabel,
+    [`${prefix}--visually-hidden`]: hideLabel,
   });
   const wrapperClasses = classNames(
-    'wfp--form-item',
-    'wfp--checkbox-wrapper',
+    `${prefix}--form-item`,
+    `${prefix}--checkbox-wrapper`,
     wrapperClassName
   );
 
