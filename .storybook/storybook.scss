@@ -3,7 +3,7 @@
 @import '../src/globals/scss/layout';
 @import '../src/globals/scss/typography';
 @import '../src/globals/scss/helper-mixins';
-@import '../src/globals/scss/import-once';
+@import '@carbon/import-once/scss/import-once';
 @import '../src/globals/scss/css--reset';
 @import '../src/globals/scss/text-gradient';
 @import '../src/components/Story/_story';

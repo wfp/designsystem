@@ -3,34 +3,33 @@
 @import '../../globals/scss/typography';
 @import '../../globals/scss/spacing';
 @import '../../globals/scss/helper-mixins';
-@import '../../globals/scss/import-once';
+@import '@carbon/import-once/scss/import-once';
 @import '../../globals/scss/css--reset';
 @import '../Form/form';
 
 @include exports('anchor-navigation') {
-    .#{$prefix}--anchor-navigation{
-        width:rem(300px);
-        min-height: rem(350px);
-        border: 2px solid var(--field-border-01);
-        border-radius: rem(5px);
+  .#{$prefix}--anchor-navigation {
+    width: rem(300px);
+    min-height: rem(350px);
+    border: 2px solid var(--field-border-01);
+    border-radius: rem(5px);
+  }
+
+  .#{$prefix}--anchor-header-title {
+    min-height: rem(40px);
+    border-bottom: 1px solid var(--field-border-01);
+    padding: $spacing-md;
+    font-weight: 600;
+    color: var(--interactive-01);
+  }
+
+  .#{$prefix}--anchor-content {
+    padding: $spacing-md;
+    display: flex;
+    flex-direction: column;
+
+    a {
+      margin-bottom: $spacing-md;
     }
-
-    .#{$prefix}--anchor-header-title{
-        min-height: rem(40px);
-        border-bottom: 1px solid var(--field-border-01);
-        padding: $spacing-md;
-        font-weight: 600;
-        color: var(--interactive-01);
-    }
-
-    .#{$prefix}--anchor-content{
-        padding: $spacing-md;
-        display: flex;
-        flex-direction: column;
-
-        a{
-            margin-bottom: $spacing-md;
-        }
-    }
-
+  }
 }
