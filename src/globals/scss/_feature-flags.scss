@@ -11,7 +11,7 @@ $default-feature-flags: (
   ui-shell: false,
 );
 
-$did-warn-diverged-feature-flags: false !default !global;
+$did-warn-diverged-feature-flags: false !default /* !global */;
 
 /// Look for user-defined feature flags that are different from default ones,
 /// and warn them before merging them.
@@ -32,7 +32,7 @@ $did-warn-diverged-feature-flags: false !default !global;
 
     @if (length($diverged) > 0) {
       @warn 'Usage of non-default feature flags was found: #{$diverged}. ' + 'Feature/code under non-default feature flags are either experimental, deprecated, or support for edge cases. ' + 'They are subject to change any time. Use them at your own risk.';
-      $did-warn-diverged-feature-flags: true !global;
+      $did-warn-diverged-feature-flags: true /* !global */;
     }
   }
 

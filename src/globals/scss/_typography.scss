@@ -1,3 +1,5 @@
+@use "sass:math";
+
 @import 'vars';
 
 $font-family-mono: 'Courier New', 'Menlo', 'DejaVu Sans Mono',
@@ -30,11 +32,11 @@ $typescale-map: (
 }
 
 @function rem($px) {
-  @return ($px / $base-font-size) * 1rem;
+  @return math.div($px, $base-font-size) * 1rem;
 }
 
 @function em($px) {
-  @return ($px / $base-font-size) * 1em;
+  @return math.div($px, $base-font-size) * 1em;
 }
 
 @mixin font-family {

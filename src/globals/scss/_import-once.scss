@@ -8,7 +8,7 @@ $imported-modules: () !default;
 /// @require $imported-modules
 @mixin exports($name, $warn: false) {
   @if (index($imported-modules, $name) == null) {
-    $imported-modules: append($imported-modules, $name) !global;
+    $imported-modules: append($imported-modules, $name) /* !global */;
     @content;
   } @else if $warn == true {
     @warn 'Module `#{$name}` has already been imported.';

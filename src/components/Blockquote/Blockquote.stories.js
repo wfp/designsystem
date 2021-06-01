@@ -1,9 +1,10 @@
 import React from 'react';
 import Blockquote from '.';
 import Icon from '../Icon';
+import Button from '../Button';
 import { iconAddOutline } from '@wfp/icons';
 import markdown from './README.mdx';
-import blockquoteTwig from './Blockquote.twig'
+import blockquoteTwig from './Blockquote.twig';
 
 const props = {
   children: `Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.`,
@@ -154,6 +155,30 @@ Togglable.story = {
   },
 };
 
+export const WithButtons = (args) => (
+  <Blockquote
+    {...args}
+    actionButtons={
+      <>
+        <Button>Accept</Button>
+        <Button kind="danger--primary">Reject</Button>
+      </>
+    }
+  />
+);
+
+WithButtons.args = {
+  ...props,
+  withIcon: true,
+};
+
+WithButtons.story = {
+  parameters: {
+    docs: {
+      storyDescription: `Use \`actionButtons\` for showing buttons for inline dialogs`,
+    },
+  },
+};
 export const Code = (args) => <Blockquote {...args} />;
 
 Code.args = {

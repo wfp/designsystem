@@ -151,4 +151,12 @@
       padding: $spacing-sm;
     }
   }
+
+  .#{$prefix}--blockquote__action-buttons {
+    margin-right: $spacing-md;
+    white-space: nowrap;
+    > * {
+      margin-left: $spacing-xs;
+    }
+  }
 }

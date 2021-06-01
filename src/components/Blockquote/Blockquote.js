@@ -46,6 +46,7 @@ class Blockquote extends React.Component {
 
   render() {
     const {
+      actionButtons,
       className,
       contentClassName,
       children,
@@ -127,6 +128,9 @@ class Blockquote extends React.Component {
           )}
           <div className="wfp--blockquote__inside">{children}</div>
         </div>
+        {actionButtons && (
+          <div className="wfp--blockquote__action-buttons">{actionButtons}</div>
+        )}
       </div>
     );
   }
@@ -137,7 +141,7 @@ Blockquote.propTypes = {
    * Specify a className of your `Blockquote`
    */
   className: PropTypes.string,
- 
+
   /**
    * Specify the content of your `Blockquote`
    */
