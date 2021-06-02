@@ -1,6 +1,8 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
+import settings from '../../globals/js/settings';
+const { prefix } = settings;
 
 /** A toggle is used to quickly switch between two possible states. They are commonly used for “on/off” switches */
 
@@ -18,7 +20,7 @@ const Toggle = ({
 }) => {
   let input;
   const wrapperClasses = classNames({
-    'wfp--form-item': true,
+    [`${prefix}--form-item`]: true,
     [className]: className,
   });
 
@@ -39,7 +41,7 @@ const Toggle = ({
         {...checkedProps}
         type="checkbox"
         id={htmlFor}
-        className="wfp--toggle"
+        className={`${prefix}--toggle`}
         onChange={(evt) => {
           onChange && onChange(evt);
           onToggle(input.checked, htmlFor, evt);
@@ -49,10 +51,10 @@ const Toggle = ({
         }}
       />
 
-      <label className="wfp--toggle__label" htmlFor={htmlFor}>
-        <span className="wfp--toggle__text--left">{labelA}</span>
-        <span className="wfp--toggle__appearance" />
-        <span className="wfp--toggle__text--right">{labelB}</span>
+      <label className={`${prefix}--toggle__label`} htmlFor={htmlFor}>
+        <span className={`${prefix}--toggle__text--left`}>{labelA}</span>
+        <span className={`${prefix}--toggle__appearance`}/>
+        <span className={`${prefix}--toggle__text--right`}>{labelB}</span>
       </label>
     </div>
   );

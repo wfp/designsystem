@@ -1,6 +1,9 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import classnames from 'classnames';
+import settings from '../../globals/js/settings';
+
+const { prefix } = settings;
 
 /** A FormGroup element is used to group several controls as well as labels  within a web form. It uses  `<fieldset>` */
 const FormGroup = ({
@@ -16,14 +19,14 @@ const FormGroup = ({
   messageText,
   ...other
 }) => {
-  const classNamesLegend = classnames('wfp--form-group__title', className);
+  const classNamesLegend = classnames(`${prefix}--form-group__title`, className);
   const classNamesFieldset = classnames(
-    'wfp--fieldset',
+    `${prefix}--fieldset`,
     {
-      'wfp--fieldset__inline': inline,
-      [`wfp--fieldset__align-${align}`]: align,
-      [`wfp--fieldset__breakpoint-${breakpoint}`]: breakpoint,
-      [`wfp--fieldset__input-spacing-${inputSpacing}`]: inputSpacing,
+      [`${prefix}--fieldset__inline`]: inline,
+      [`${prefix}--fieldset__align-${align}`]: align,
+      [`${prefix}--fieldset__breakpoint-${breakpoint}`]: breakpoint,
+      [`${prefix}--fieldset__input-spacing-${inputSpacing}`]: inputSpacing,
     },
     className
   );
@@ -34,9 +37,9 @@ const FormGroup = ({
       className={classNamesFieldset}
       {...other}>
       <legend className={classNamesLegend}>{legendText}</legend>
-      <div className="wfp--fieldset__content">{children}</div>
+      <div className={`${prefix}--fieldset__content`}>{children}</div>
       {message ? (
-        <div className="wfp--form__requirements">{messageText}</div>
+        <div className={`${prefix}--form__requirements`}>{messageText}</div>
       ) : null}
     </div>
   );

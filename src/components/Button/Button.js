@@ -2,6 +2,9 @@ import PropTypes from 'prop-types';
 import React, { useEffect, useState } from 'react';
 import Icon from '../Icon';
 import classNames from 'classnames';
+import settings from '../../globals/js/settings';
+
+const { prefix } = settings;
 
 /**
  * Buttons express what action will occur when the user clicks or touches it. Buttons are used to initialize an action, either in the background or foreground of an experience. */
@@ -32,24 +35,24 @@ const Button = ({
   }, [count]);
 
   const buttonClasses = classNames(className, {
-    'wfp--btn': true,
-    'wfp--btn--sm': small,
-    'wfp--btn--lg': large,
-    'wfp--btn--icon-reverse': iconReverse,
-    'wfp--btn--flexbox': useFlexbox,
-    'wfp--btn--icon-only': icon && children === undefined,
-    'wfp--btn--primary': kind === 'primary',
-    'wfp--btn--danger': kind === 'danger',
-    'wfp--btn--accent': kind === 'accent',
-    'wfp--btn--secondary': kind === 'secondary',
-    'wfp--btn--navigation': kind === 'navigation',
-    'wfp--btn--ghost': kind === 'ghost',
-    'wfp--btn--inverse--primary': kind === 'inverse--primary',
-    'wfp--btn--inverse': kind === 'inverse',
-    'wfp--btn--danger--primary': kind === 'danger--primary',
-    'wfp--btn--danger--secondary': kind === 'danger--secondary',
-    'wfp--btn--tertiary': kind === 'tertiary',
-    'wfp--btn--animating': count,
+    [`${prefix}--btn`]: true,
+    [`${prefix}--btn--sm`]: small,
+    [`${prefix}--btn--lg`]: large,
+    [`${prefix}--btn--icon-reverse`]: iconReverse,
+    [`${prefix}--btn--flexbox`]: useFlexbox,
+    [`${prefix}--btn--icon-only`]: icon && children === undefined,
+    [`${prefix}--btn--primary`]: kind === 'primary',
+    [`${prefix}--btn--danger`]: kind === 'danger',
+    [`${prefix}--btn--accent`]: kind === 'accent',
+    [`${prefix}--btn--secondary`]: kind === 'secondary',
+    [`${prefix}--btn--navigation`]: kind === 'navigation',
+    [`${prefix}--btn--ghost`]: kind === 'ghost',
+    [`${prefix}--btn--inverse--primary`]: kind === 'inverse--primary',
+    [`${prefix}--btn--inverse`]: kind === 'inverse',
+    [`${prefix}--btn--danger--primary`]: kind === 'danger--primary',
+    [`${prefix}--btn--danger--secondary`]: kind === 'danger--secondary',
+    [`${prefix}--btn--tertiary`]: kind === 'tertiary',
+    [`${prefix}--btn--animating`]: count,
   });
 
   const commonProps = {
@@ -62,7 +65,7 @@ const Button = ({
       icon={Object(icon) === icon ? icon : undefined}
       name={Object(icon) !== icon ? icon : undefined}
       description={iconDescription}
-      className="wfp--btn__icon"
+      className={`${prefix}--btn__icon`}
     />
   ) : null;
 

@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@wfp/icons": "^0.0.82",
-    "@wfp/ui": "1.11.0",
+    "@wfp/icons": "0.0.86",
+    "@wfp/ui": "^1.17.1",
     "moment": "^2.29.1",
     "node-sass": "^4.14.1",
     "react": "^17.0.1",

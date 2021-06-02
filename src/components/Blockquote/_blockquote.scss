@@ -105,8 +105,7 @@
       line-height: 1.4;
 
       .#{$prefix}--blockquote__inside {
-        font-family: 'SFMono-Regular', Consolas, Liberation Mono, Menlo, Courier,
-          monospace;
+        font-family: $font-family-mono-code;
       }
     }
   }

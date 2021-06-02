@@ -1,6 +1,8 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
+import settings from '../../globals/js/settings';
+const { prefix } = settings;
 
 export const pageWidths = ['sm', 'md', 'lg', 'full'];
 
@@ -17,20 +19,20 @@ const Wrapper = (props) => {
     ...other
   } = props;
   const wrapperClasses = classNames({
-    'wfp--wrapper': true,
-    'wfp--wrapper--width-lg': pageWidth === 'narrow' || pageWidth === 'lg',
-    'wfp--wrapper--width-md': pageWidth === 'narrower' || pageWidth === 'md',
-    'wfp--wrapper--width-sm': pageWidth === 'narrowest' || pageWidth === 'sm',
-    'wfp--wrapper--width-xs': pageWidth === 'narrowest' || pageWidth === 'xs',
-    'wfp--wrapper--width-mobile-full': mobilePageWidth === 'full',
-    'wfp--wrapper--spacing-md': spacing === 'md',
-    'wfp--wrapper--spacing-xl': spacing === 'xl',
+    [`${prefix}--wrapper`]: true,
+    [`${prefix}--wrapper--width-lg`]: pageWidth === 'narrow' || pageWidth === 'lg',
+    [`${prefix}--wrapper--width-md`]: pageWidth === 'narrower' || pageWidth === 'md',
+    [`${prefix}--wrapper--width-sm`]: pageWidth === 'narrowest' || pageWidth === 'sm',
+    [`${prefix}--wrapper--width-xs`]: pageWidth === 'narrowest' || pageWidth === 'xs',
+    [`${prefix}--wrapper--width-mobile-full`]: mobilePageWidth === 'full',
+    [`${prefix}--wrapper--spacing-md`]: spacing === 'md',
+    [`${prefix}--wrapper--spacing-xl`]: spacing === 'xl',
     [`${className}`]: className,
   });
   if (background || backgroundStyle) {
     const backgroundClasses = classNames({
-      'wfp--wrapper--background-lighter': background === 'lighter',
-      'wfp--wrapper--background-dark': background === 'dark',
+      [`${prefix}--wrapper--background-lighter`]: background === 'lighter',
+      [`${prefix}--wrapper--background-dark`]: background === 'dark',
     });
 
     return (

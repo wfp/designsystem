@@ -2,6 +2,9 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import classnames from 'classnames';
 import Link from '../Link';
+import settings from '../../globals/js/settings';
+
+const { prefix } = settings;
 
 const newChild = (children, disableLink, href) => {
   if (disableLink === true) {
@@ -10,7 +13,7 @@ const newChild = (children, disableLink, href) => {
     return <Link href={href}>{children}</Link>;
   } else {
     return React.cloneElement(React.Children.only(children), {
-      className: 'wfp--link',
+      className: `${prefix}--link`,
     });
   }
 };
@@ -22,7 +25,7 @@ const BreadcrumbItem = ({
   href,
   ...other
 }) => {
-  const classNames = classnames('wfp--breadcrumb-item', className);
+  const classNames = classnames(`${prefix}--breadcrumb-item`, className);
   return (
     <div className={classNames} {...other}>
       {newChild(children, disableLink, href)}

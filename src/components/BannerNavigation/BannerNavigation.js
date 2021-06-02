@@ -2,9 +2,12 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
 import Wrapper from '../Wrapper';
+import settings from '../../globals/js/settings';
+
+const { prefix } = settings;
 
 const BannerNavigationItem = ({ className, children }) => {
-  const wrapperClasses = classNames('wfp--banner-navigation__item', className);
+  const wrapperClasses = classNames(`${prefix}--banner-navigation__item`, className);
   return <li className={wrapperClasses}>{children}</li>;
 };
 
@@ -20,12 +23,12 @@ BannerNavigationItem.propTypes = {
  * A thin bar on top of the main navigation used to crosslink among apps or pages.
  */
 const BannerNavigation = ({ children, className, pageWidth, ...props }) => {
-  const wrapperClasses = classNames('wfp--banner-navigation', className);
+  const wrapperClasses = classNames(`${prefix}--banner-navigation`, className);
 
   return (
     <div className={wrapperClasses}>
       <Wrapper {...props}>
-        <ul className="wfp--banner-navigation__list">{children}</ul>
+        <ul className={`${prefix}--banner-navigation__list`}>{children}</ul>
       </Wrapper>
     </div>
   );

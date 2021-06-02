@@ -17,7 +17,7 @@
     height: rem(24px);
     .#{$prefix}--content-switcher-btn {
       padding: 0 $spacing-sm 0 $spacing-sm;
-      @include typescale(caption);
+      @include typescale('omega');
     }
   }
 

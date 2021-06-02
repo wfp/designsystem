@@ -1,6 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import settings from '../../globals/js/settings';
+
+const { prefix } = settings;
 
 export default function AuthLayout({
     image,
@@ -15,15 +18,15 @@ export default function AuthLayout({
       }
     : {};
     
-    const wrapperClasses = classNames("wfp--auth-background-wrapper",{
-        'wfp--auth-background-image': image,
+    const wrapperClasses = classNames(`${prefix}--auth-background-wrapper`,{
+        [`${prefix}--auth-background-image`]: image,
         [`${className}`]: className,
       });
 
     return (
-        <div className="wfp--auth-wrapper" {...other}>
+        <div className={`${prefix}--auth-wrapper`} {...other}>
             <div className={wrapperClasses} style={style}>{backgroundContent}</div>
-            <div className="wfp--auth-content-wrapper">{children}</div>
+            <div className={`${prefix}--auth-content-wrapper`}>{children}</div>
         </div>
     )
 }
@@ -53,7 +56,7 @@ AuthLayout.propTypes = {
 
 export function BackgroundContent({children, ...other}){
     return(
-        <div {...other} className="wfp--auth-background-content">{children}</div>
+        <div {...other} className={`${prefix}--auth-background-content`}>{children}</div>
     )
 }
 

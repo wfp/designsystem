@@ -115,9 +115,13 @@
     }
   }
   .SingleDatePickerInput_calendarIcon_svg {
-    fill: var(--interactive-01);
+    fill: var(--field-border-01);
     height: 15px;
     width: 14px;
+    &:focus {
+      fill: var(--interactive-01);
+      outline: none;
+    }
   }
   .SingleDatePicker {
     position: relative;
@@ -695,6 +699,13 @@
   }
   .DateInput_input__focused {
     @include focus-outline('border');
+
+  }
+  .DateInput_input__focused, .SingleDatePickerInput_calendarIcon_svg{
+      &:focus{
+        fill: var(--interactive-01);
+      }
+      
   }
   .DateInput_input__disabled {
     background: #f2f2f2;

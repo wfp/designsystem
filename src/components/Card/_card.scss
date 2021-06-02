@@ -9,7 +9,11 @@
 
 .#{$prefix}--card-box {
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.15);
-  // font-size: 12px;
+
+  a{
+    color: var(--text-01);
+    text-decoration: none;
+  }
 }
 
 .#{$prefix}--photo-cardnew--simple-card {
@@ -21,13 +25,17 @@
   }
   .#{$prefix}--photo-cardnew__info {
     background: var(ui-01);
-    padding: $spacing-md;
+    padding: $spacing-md;  
   }
   .#{$prefix}--photo-cardnew__info__background {
     display: none;
   }
   .#{$prefix}--photo-cardnew__info__title {
     color: $interactive-01;
+
+    &:hover{
+      text-decoration: underline;
+    }
   }
 }
 

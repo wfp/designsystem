@@ -2,6 +2,9 @@ import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import Icon from '../Icon';
+import settings from '../../globals/js/settings';
+
+const { prefix } = settings;
 
 import {
   iconCheckmark,
@@ -64,21 +67,21 @@ class Blockquote extends React.Component {
       kind,
     } = this.props;
     const blockquoteClass = classNames({
-      'wfp--blockquote': true,
-      'wfp--blockquote--toggleable': toggleable,
-      'wfp--blockquote--light': light,
-      'wfp--blockquote--code': code,
-      'wfp--blockquote--no-content': !children,
-      'wfp--blockquote--error': kind === 'error' || error,
-      'wfp--blockquote--warning': kind === 'warning' || warning,
-      'wfp--blockquote--success': kind === 'success',
-      'wfp--blockquote--info': kind === 'info' || info,
-      'wfp--blockquote--with-icon': withIcon || icon,
-      'wfp--blockquote--toggle--open': this.state.open,
+      [`${prefix}--blockquote`]: true,
+      [`${prefix}--blockquote--toggleable`]: toggleable,
+      [`${prefix}--blockquote--light`]: light,
+      [`${prefix}--blockquote--code`]: code,
+      [`${prefix}--blockquote--no-content`]: !children,
+      [`${prefix}--blockquote--error`]: kind === 'error' || error,
+      [`${prefix}--blockquote--warning`]: kind === 'warning' || warning,
+      [`${prefix}--blockquote--success`]: kind === 'success',
+      [`${prefix}--blockquote--info`]: kind === 'info' || info,
+      [`${prefix}--blockquote--with-icon`]: withIcon || icon,
+      [`${prefix}--blockquote--toggle--open`]: this.state.open,
       [`${className}`]: className,
     });
 
-    const blockquoteContentClass = classNames('wfp--blockquote__content', {
+    const blockquoteContentClass = classNames(`${prefix}--blockquote__content`, {
       [`${className}`]: contentClassName,
     });
 
@@ -93,7 +96,7 @@ class Blockquote extends React.Component {
         : iconLookup['info'];
 
     const iconElement = React.isValidElement(icon) ? (
-      <div className="wfp--blockquote__icon wfp--blockquote__icon--custom">
+      <div className={`${prefix}--blockquote__icon ${prefix}--blockquote__icon--custom`}>
         {icon}
       </div>
     ) : withIcon || icon ? (
@@ -102,21 +105,21 @@ class Blockquote extends React.Component {
         width={48}
         height={48}
         description="Blockquote Icon"
-        className="wfp--blockquote__icon"
+        className={`${prefix}--blockquote__icon`}
       />
     ) : null;
 
     return (
       <div className={blockquoteClass}>
         {iconElement && (
-          <div className="wfp--blockquote__icon-wrapper">{iconElement}</div>
+          <div className={`${prefix}--blockquote__icon-wrapper`}>{iconElement}</div>
         )}
         <div className={blockquoteContentClass} style={style}>
           {(title || toggleable) && (
             <div
               onClick={this.toggleBlockquote}
               onKeyDown={this.toggleBlockquote}
-              className="wfp--blockquote__title"
+              className={`${prefix}--blockquote__title`}
               role="button"
               tabIndex={0}>
               {title
@@ -126,7 +129,7 @@ class Blockquote extends React.Component {
                 : 'Show content'}
             </div>
           )}
-          <div className="wfp--blockquote__inside">{children}</div>
+          <div className={`${prefix}--blockquote__inside`}>{children}</div>
         </div>
         {actionButtons && (
           <div className="wfp--blockquote__action-buttons">{actionButtons}</div>

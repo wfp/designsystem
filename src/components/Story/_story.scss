@@ -256,6 +256,7 @@
   }
 
   .#{$prefix}--story__code {
+    @include typescale('epsilon');
     font-family: monospace;
   }
 
@@ -294,7 +295,7 @@
   }
 
   .#{$prefix}--story__caption {
-    @include typescale('caption');
+    @include typescale('omega');
   }
 
   .#{$prefix}--story__sup {
