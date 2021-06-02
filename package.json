@@ -317,7 +317,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/WFP/UI"
+    "url": "https://github.com/wfp/ui.git"
   },
   "types": "src/types/index.d.ts",
   "jest": {
