@@ -13,7 +13,7 @@
     "build:storybook": "rm -r -f docs && build-storybook -s ./src/assets -o docs  && npm run build:favicon",
     "ci-check": "npm run prettier:diff && npm run lint && npm run test --runInBand && npm run test-ssr",
     "build:cssmin": "sass --load-path=node_modules ./src/globals/scss/styles.scss ./assets/css/styles.min.css && postcss ./assets/css/styles.min.css --no-map -u autoprefixer -rs",
-    "build:css": "sass --load-path=node_modules ./src/globals/scss ./assets/css && postcss ./assets/css/styles.css -d ./assets/css/ --use autoprefixer",
+    "build:css": "sass --load-path=node_modules ./src/globals/scss/styles.scss ./assets/css && postcss ./assets/css/styles.css -d ./assets/css/ --use autoprefixer",
     "commitmsg": "validate-commit-msg",
     "build:favicon": "convert ./src/assets/internal/wfp-favicon-png32.png ./src/assets/internal/wfp-favicon-png512.png -colors 256 docs/favicon.ico",
     "contributors:add": "all-contributors add",
