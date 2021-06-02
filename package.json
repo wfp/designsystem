@@ -13,7 +13,7 @@
     "build:storybook": "rm -r -f docs && build-storybook -s ./src/assets -o docs  && npm run build:favicon",
     "ci-check": "npm run prettier:diff && npm run lint && npm run test --runInBand && npm run test-ssr",
     "build:cssmin": "sass --load-path=node_modules ./src/globals/scss/styles.scss ./assets/css/styles.min.css && postcss ./assets/css/styles.min.css --no-map -u autoprefixer -rs",
-    "build:css": "sass --load-path=node_modules ./src/globals/scss/styles.scss ./assets/css && postcss ./assets/css/styles.css -d ./assets/css/ --use autoprefixer",
+    "build:css": "sass --load-path=node_modules ./src/globals/scss/styles.scss ./assets/css/styles.css && postcss ./assets/css/styles.css --output ./assets/css/styles.css --use autoprefixer",
     "commitmsg": "validate-commit-msg",
     "build:favicon": "convert ./src/assets/internal/wfp-favicon-png32.png ./src/assets/internal/wfp-favicon-png512.png -colors 256 docs/favicon.ico",
     "contributors:add": "all-contributors add",
@@ -31,7 +31,9 @@
     "jest-w": "jest --watch"
   },
   "sass": {
-    "includePaths": ["./node_modules"]
+    "includePaths": [
+      "./node_modules"
+    ]
   },
   "keywords": [
     "WFP",
@@ -187,9 +189,9 @@
     "mini-css-extract-plugin": "^0.9.0",
     "moment": "^2.27.0",
     "object-assign": "^4.1.1",
-    "postcss": "^7.0.32",
-    "postcss-cli": "^7.1.1",
-    "postcss-loader": "^3.0.0",
+    "postcss": "^8.3.0",
+    "postcss-cli": "^8.3.1",
+    "postcss-loader": "^5.3.0",
     "prettier": "^2.0.5",
     "pretty": "^2.0.0",
     "prismjs": "^1.20.0",
