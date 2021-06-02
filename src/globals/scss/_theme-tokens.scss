@@ -1,5 +1,5 @@
 @import 'feature-flags';
-@import 'import-once';
+@import '@carbon/import-once/scss/import-once';
 @import 'functions';
 @import 'colors';
 @import 'spacing';
@@ -173,7 +173,7 @@ $ui-06: $color__navy-gray-2 !default /* !global */;
 $text-01: $color__main-80 !default /* !global */;
 $text-02: $color__navy-gray-6 !default /* !global */;
 $text-03: $color__navy-gray-7 !default /* !global */;
-$field-01: $color__white /*$ui-01*/ !default /* !global */; //TODO: Fix color
+$field-01: $color__white !default /* !global */; //TODO: Fix color
 $field-02: $color__white !default /* !global */;
 $support-01: $color__red !default /* !global */;
 $support-light-01: $color__red-20 !default /* !global */;

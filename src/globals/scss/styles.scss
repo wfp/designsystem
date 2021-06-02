@@ -21,7 +21,7 @@ $css--variables: true !default;
 @import 'rtl';
 @import 'spacing';
 @import 'typography';
-@import 'import-once';
+@import '@carbon/import-once/scss/import-once';
 @import 'css--reset';
 @import 'css--font-face';
 @import 'css--helpers';

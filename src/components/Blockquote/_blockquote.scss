@@ -39,6 +39,7 @@
     padding: $spacing-md;
     line-height: 1.4;
     word-wrap: anywhere;
+    flex-grow: 1;
     p:first-child {
       margin-top: 0;
     }

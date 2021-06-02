@@ -3,7 +3,7 @@
 @import 'mixins';
 @import 'typography';
 @import 'css--reset';
-@import 'import-once';
+@import '@carbon/import-once/scss/import-once';
 
 @mixin css-body {
   body {

@@ -16,7 +16,7 @@
 @import 'vars';
 @import 'css--reset';
 @import 'typography';
-@import 'import-once';
+@import '@carbon/import-once/scss/import-once';
 
 @mixin text-overflow($width: false) {
   display: block;
