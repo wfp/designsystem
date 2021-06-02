@@ -1,3 +1,18 @@
+# [1.19.0](https://github.com/WFP/UI/compare/v1.18.2...v1.19.0) (2021-06-02)
+
+
+### Bug Fixes
+
+* **pipeline:** deployment quick fix for urgent test ([5e58be3](https://github.com/WFP/UI/commit/5e58be353f783887e362d5a98ecc8f0d7dfad539))
+* **sass:** upgrade pipelines for building sass ([1cce109](https://github.com/WFP/UI/commit/1cce1097eba306b7202ccca3ac3e6bbc8f83abba))
+
+
+### Features
+
+* **importOnce:** upgrade to external importOnce dependency provided by carbon ([3b0edef](https://github.com/WFP/UI/commit/3b0edefa8c703080dac59f82bf5f7fd7846f4c86))
+* **sass:** alignment to new version of sass ([59966f0](https://github.com/WFP/UI/commit/59966f04fbf03a0a40715c594de53905bd97bac8))
+* **scss:** added dart-sass compatibility and loader for webpack, updated inputs for compatiblity with latest version of react-hook-form ([8ce010f](https://github.com/WFP/UI/commit/8ce010fae8941c5e96b981c7c253232b50d64f3f))
+
 ## [1.18.2](https://github.com/WFP/UI/compare/v1.18.1...v1.18.2) (2021-05-27)
 
 
