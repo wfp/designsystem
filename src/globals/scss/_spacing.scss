@@ -43,7 +43,7 @@ $spacing-map: (
 
 @mixin spacing($size, $position) {
   @if map-has-key($spacing-map, $size) {
-    @if $positon = 'bottom' {
+    @if $positon == 'bottom' {
       margin-bottom: map-get($spacing-map, $size);
     }
   } @else {

@@ -119,3 +119,5 @@ export Unit from './components/Unit';
 export Value from './components/Value';
 export Wrapper, { pageWidths } from './components/Wrapper';
 export colors from './globals/data/colors';
+export useDetectPrint from './internal/useDetectPrint';
+export { uniqueId } from './tools/uniqueId';

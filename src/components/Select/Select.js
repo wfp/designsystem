@@ -17,7 +17,7 @@ const { prefix } = settings;
 
 /** The select component allows users to choose one option from a list. It is used in forms for users to submit data. */
 
-function Select(props) {
+const Select = React.forwardRef((props, ref) => {
   const {
     className,
     id,
@@ -33,7 +33,7 @@ function Select(props) {
     helperText,
     light,
     name,
-    inputRef,
+    inputRef = ref,
     ...other
   } = props;
 
@@ -79,7 +79,7 @@ function Select(props) {
   })();
 
   return <Input {...props}>{() => input}</Input>;
-}
+});
 
 Select.propTypes = {
   /**

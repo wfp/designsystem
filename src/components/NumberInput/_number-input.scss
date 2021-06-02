@@ -3,7 +3,7 @@
 @import '../../globals/scss/typography';
 @import '../../globals/scss/spacing';
 @import '../../globals/scss/helper-mixins';
-@import '../../globals/scss/import-once';
+@import '@carbon/import-once/scss/import-once';
 @import '../../globals/scss/css--reset';
 @import '../Form/form';
 
@@ -29,7 +29,6 @@
       order: 1;
     }
 
-    
     /* &:focus ~ .#{$prefix}--label {
       color: var(--interactive-01);
     } */
@@ -64,7 +63,6 @@
     ::-webkit-inner-spin-button {
       -webkit-appearance: none; // Safari: Hide number spinner
     }
-
   }
 
   .#{$prefix}--number__controls {

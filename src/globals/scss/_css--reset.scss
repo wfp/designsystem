@@ -1,4 +1,4 @@
-@import 'import-once';
+@import '@carbon/import-once/scss/import-once';
 
 @mixin reset {
   @if global-variable-exists(css--reset) ==false or $css--reset==false {

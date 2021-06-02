@@ -14,6 +14,7 @@ const TYPES = {
 };
 
 /** Tag is used to label, categorize, or organize items using keywords that describe them. */
+
 const Tag = ({ children, className, type, ...other }) => {
   const tagClass = `${prefix}--tag--${type}`;
   const tagClasses = classNames(`${prefix}--tag`, tagClass, className);
@@ -39,6 +40,11 @@ Tag.propTypes = {
    * Specify the type of the <Tag>
    */
   type: PropTypes.oneOf(Object.keys(TYPES)).isRequired,
+
+  /**
+   * Wrap the line if too long.
+   */
+  wrap: PropTypes.bool,
 };
 
 Tag.defaultProps = {

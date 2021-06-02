@@ -8,7 +8,7 @@ const { prefix } = settings;
 
 /** Radio buttons represent a group of mutually exclusive choices */
 
-export default class RadioButton extends React.Component {
+class RadioButton extends React.Component {
   static propTypes = {
     /**
      * Specify whether the <RadioButton> is currently checked
@@ -58,16 +58,12 @@ export default class RadioButton extends React.Component {
     value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
   };
 
-  static defaultProps = {
-    onChange: () => {},
-  };
-
   UNSAFE_componentWillMount() {
     this.uid = this.props.id || uid();
   }
 
   handleChange = (evt) => {
-    this.props.onChange(this.props.value, this.props.name, evt);
+    this.props.onChange(evt, this.props.value, this.props.name);
   };
 
   render() {
@@ -78,6 +74,12 @@ export default class RadioButton extends React.Component {
 
     const { labelText, inputRef, ...other } = this.props;
 
+    const handleChange = this.props.onChange
+      ? {
+          onChange: this.handleChange,
+        }
+      : {};
+
     return (
       <div className={wrapperClasses}>
         <input
@@ -85,7 +87,7 @@ export default class RadioButton extends React.Component {
           ref={inputRef}
           type="radio"
           className={`${prefix}--radio-button`}
-          onChange={this.handleChange}
+          {...handleChange}
           id={this.uid}
         />
         <label htmlFor={this.uid} className={`${prefix}--radio-button__label`}>
@@ -95,4 +97,12 @@ export default class RadioButton extends React.Component {
       </div>
     );
   }
+
 }
+
+export default (() => {
+  const forwardRef = (props, ref) => <RadioButton {...props} inputRef={ref} />;
+  forwardRef.displayName = 'RadioButton';
+  return React.forwardRef(forwardRef);
+})();
+
