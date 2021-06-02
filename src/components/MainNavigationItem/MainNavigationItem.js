@@ -3,6 +3,9 @@ import React, { Component } from 'react';
 import classNames from 'classnames';
 import Icon from '../Icon';
 import { iconClose, iconCaretDown } from '@wfp/icons';
+import settings from '../../globals/js/settings';
+
+const { prefix } = settings;
 
 class MainNavigationItem extends Component {
   UNSAFE_componentWillReceiveProps = nextProps => {
@@ -35,15 +38,15 @@ class MainNavigationItem extends Component {
     } = this.props;
 
     const wrapperClasses = classNames(className, {
-      'wfp--main-navigation__item': true,
-      'wfp--main-navigation__item--open': menuItem === activeMenuItem,
-      'wfp--content-width': subNavigation && subNavWideAsContent,
+      [`${prefix}--main-navigation__item`]: true,
+      [`${prefix}--main-navigation__item--open`]: menuItem === activeMenuItem,
+      [`${prefix}--content-width`]: subNavigation && subNavWideAsContent,
     });
 
     const triggerClasses = classNames({
-      'wfp--main-navigation__trigger': true,
-      'wfp--main-navigation__trigger--has-sub': subNavigation,
-      'wfp--main-navigation__trigger--open': menuItem === activeMenuItem,
+      [`${prefix}--main-navigation__trigger`]: true,
+      [`${prefix}--main-navigation__trigger--has-sub`]: subNavigation,
+      [`${prefix}--main-navigation__trigger--open`]: menuItem === activeMenuItem,
     });
 
     const childrenWithProps = subNavigation
@@ -52,7 +55,7 @@ class MainNavigationItem extends Component {
             <React.Fragment>
               {children.props.children}
               <Icon
-                className="wfp--main-navigation__trigger__icon"
+                className={`${prefix}--main-navigation__trigger__icon`}
                 icon={menuItem === activeMenuItem ? iconClose : iconCaretDown}
                 fill="#FFFFFF"
                 description="expand icon"
@@ -64,8 +67,8 @@ class MainNavigationItem extends Component {
       : children;
 
     const subClasses = classNames({
-      'wfp--main-navigation__sub': true,
-      'wfp--main-navigation__sub--open': menuItem === activeMenuItem,
+      [`${prefix}--main-navigation__sub`]: true,
+      [`${prefix}--main-navigation__sub--open`]: menuItem === activeMenuItem,
     });
 
     return (

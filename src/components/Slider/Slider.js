@@ -93,8 +93,8 @@ function Slider(props) {
     }
   );
 
-  const sliderContainerClasses = classNames('wfp--slider-container', {
-    'wfp--slider-container--full-width': fullWidth,
+  const sliderContainerClasses = classNames(`${prefix}--slider-container`, {
+    [`${prefix}--slider-container--full-width`]: fullWidth,
   });
 
   const newProps = {
@@ -107,17 +107,17 @@ function Slider(props) {
     value: value,
   };
 
-  const inputClasses = classNames('wfp--input', 'wfp--slider-text-input');
+  const inputClasses = classNames(`${prefix}--input`, `${prefix}--slider-text-input`);
 
   const sliderClasses = classNames(
-    'wfp--slider',
-    { 'wfp--slider--disabled': disabled },
+    `${prefix}--slider`,
+    { [`${prefix}--slider--disabled`]: disabled },
     className
   );
 
   const sliderRangeWrapperClasses = classNames(
-    'wfp--slider__range-wrapper',
-    { 'wfp--slider__range-wrapper--disabled': disabled },
+    `${prefix}--slider__range-wrapper`,
+    { [`${prefix}--slider__range-wrapper--disabled`]: disabled },
     className
   );
 
@@ -127,13 +127,13 @@ function Slider(props) {
       {() => {
         return (
           <div className={sliderContainerClasses}>
-            <span className="wfp--slider__range-label">
+            <span className={`${prefix}--slider__range-label`}>
               {formatLabel(min, minLabel)}
             </span>
 
             <div className={sliderRangeWrapperClasses}>
               <div
-                className="wfp--slider__range-before"
+                className={`${prefix}--slider__range-before`}
                 style={{
                   width: `${((valueMinimal - min) / (max - min)) * 100}%`,
                 }}
@@ -146,7 +146,7 @@ function Slider(props) {
                 ref={_inputRef}
               />
             </div>
-            <span className="wfp--slider__range-label">
+            <span className={`${prefix}--slider__range-label`}>
               {formatLabel(max, maxLabel)}
             </span>
             {!hideTextInput && (

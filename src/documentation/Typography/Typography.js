@@ -11,8 +11,8 @@ const list = [
 
 const Normaltext = [
   { kind: 'p', text: 'Body copy, paragraph', styling: '16px, Regular' },
-  { kind: 'p', text: 'Label (form)', styling: '16px, Regular' },
-  { kind: 'code', text: 'Code', styling: 'Monospace, 13px, Regular' },
+  { kind: 'p', text: 'Label (form)', styling: '14px, SemiBold' },
+  { kind: 'code', text: 'Code', styling: 'Monospace, 16px, Regular' },
   { kind: 'sup', text: 'Sup', styling: '11px, Regular' },
   { kind: 'p', text: 'Inline highlight', styling: '14px, SemiBold' },
 ];
@@ -72,7 +72,7 @@ const Typography = () => {
         <div style={{ paddingLeft: '0.5rem' }}>
           <Text kind="title">Title</Text>
           <div style={{ color: '#A9A9A9', marginBottom: '2rem' }}>
-            59px, Light
+            58px, Light
           </div>
           <Text kind="subtitle">Overline</Text>
           <div style={{ color: '#A9A9A9', marginBottom: '2rem' }}>

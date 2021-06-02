@@ -40,7 +40,7 @@ const TextArea = ({
     },
   };
 
-  const textareaClasses = classNames('wfp--text-area', className, {
+  const textareaClasses = classNames(`${prefix}--text-area`, className, {
     [`${prefix}--textarea-fullwidth`]: fullWidth,
   });
   const labelClasses = classNames(`${prefix}--label`, {

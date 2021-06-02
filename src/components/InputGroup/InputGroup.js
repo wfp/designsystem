@@ -131,8 +131,8 @@ export default class InputGroup extends React.Component {
       className = `${prefix}--input-group`,
     } = this.props;
 
-    const labelClasses = classNames('wfp--label', {
-      'wfp--visually-hidden': hideLabel,
+    const labelClasses = classNames(`${prefix}--label`, {
+      [`${prefix}--visually-hidden`]: hideLabel,
     });
 
     const wrapperClasses = classNames(`${prefix}--form-item`, {
@@ -144,7 +144,7 @@ export default class InputGroup extends React.Component {
     ) : null;
 
     const helper = helperText ? (
-      <div className="wfp--form__helper-text">{helperText}</div>
+      <div className={`${prefix}--form__helper-text`}>{helperText}</div>
     ) : null;
 
     return (

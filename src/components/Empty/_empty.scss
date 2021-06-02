@@ -31,7 +31,7 @@
       }
       p {
         opacity: 0.6;
-        @include typescale('caption');
+        @include typescale('omega');
       }
       .#{$prefix}--empty__icon {
         margin-bottom: 1em;

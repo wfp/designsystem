@@ -9,7 +9,7 @@ const { prefix } = settings;
 const Form = ({ className, children, longForm, ...other }) => {
   const classNames = classnames(
     `${prefix}--form`,
-    { 'wfp--form-long': longForm === true },
+    { [`${prefix}--form-long`]: longForm === true },
     className
   );
 

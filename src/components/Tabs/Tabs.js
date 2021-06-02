@@ -2,6 +2,9 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
 import TabContent from '../TabContent';
+import settings from '../../globals/js/settings';
+
+const { prefix } = settings;
 
 /** Tabs allow users to navigate easily between views within the same context */
 class Tabs extends React.Component {
@@ -238,7 +241,7 @@ class Tabs extends React.Component {
           }
           return (
             <TabContent
-              className="wfp--tab-content"
+              className={`${prefix}--tab-content`}
               aria-hidden={!selected}
               hidden={!selected}
               selected={selected}>
@@ -250,12 +253,12 @@ class Tabs extends React.Component {
 
     const classes = {
       tabs: classNames(
-        'wfp--tabs',
-        { 'wfp--tabs--no-animation': disableAnimation },
+        `${prefix}--tabs`,
+        { [`${prefix}--tabs--no-animation`]: disableAnimation },
         className
       ),
-      tablist: classNames('wfp--tabs__nav', {
-        'wfp--tabs__nav--inline': inline,
+      tablist: classNames(`${prefix}--tabs__nav`, {
+        [`${prefix}--tabs__nav--inline`]: inline,
       }),
     };
 
@@ -264,7 +267,7 @@ class Tabs extends React.Component {
     return (
       <>
         <nav {...other} className={classes.tabs} role={role}>
-          <div className="wfp--tabs__nav__bar" style={sizeBar}></div>
+          <div className={`${prefix}--tabs__nav__bar`} style={sizeBar}></div>
           <ul ref={this.rootRef} role="tablist" className={classes.tablist}>
             {tabsWithProps}
           </ul>

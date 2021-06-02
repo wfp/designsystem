@@ -97,6 +97,7 @@ class RadioButton extends React.Component {
       </div>
     );
   }
+
 }
 
 export default (() => {
@@ -104,3 +105,4 @@ export default (() => {
   forwardRef.displayName = 'RadioButton';
   return React.forwardRef(forwardRef);
 })();
+

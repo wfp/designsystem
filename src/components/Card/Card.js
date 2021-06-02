@@ -1,6 +1,9 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
+import settings from '../../globals/js/settings';
+
+const { prefix } = settings;
 
 /**
  * Cards are a convenient means of displaying content composed of different types of objects. It is a multi usage component which creates boxes that are usually teasing some kind of content. */
@@ -29,43 +32,43 @@ const Card = ({
   const pagewidth = cardWidth ? cardWidth : '300px';
   const pageheight = cardHeight ? cardHeight : '260px';
 
-  const wrapperClasses = classNames('wfp--card-box', {
-    [`wfp--photo-cardnew--${kind}`]: kind,
+  const wrapperClasses = classNames([`${prefix}--card-box`], {
+    [`${prefix}--photo-cardnew--${kind}`]: kind,
     // 'wfp--photo-cardnew--no-background': !image,
-    'wfp--photo-cardnew--link': isLink,
+    [`${prefix}--photo-cardnew--link`]: isLink,
     [`${className}`]: className,
   });
 
   const content = (
     <>
       {
-        kind === 'overlay' ? <div className="wfp--photo-cardnew__background" style={style} /> : null
+        kind === 'overlay' ? <div className={`${prefix}--photo-cardnew__background`} style={style} /> : null
       }
       
       {image && kind === 'simple-card' ?
       (
-        <img src={image} alt={title} className="wfp--header-photo" />
+        <img src={image} alt={title} className={`${prefix}--header-photo`} />
       )
       : null
     }
 
       
-      <div className="wfp--photo-cardnew__info">
+      <div className={`${prefix}--photo-cardnew__info`}>
         <div>
           {kind === 'overlay' && (
             <div
-              className="wfp--photo-cardnew__info__background"
+              className={`${prefix}--photo-cardnew__info__background`}
               style={style}
             />
           )}
           {metadata && (
-            <p className="wfp--photo-cardnew__info__metadata">{metadata}</p>
+            <p className={`${prefix}--photo-cardnew__info__metadata`}>{metadata}</p>
           )}
           {title && (
-            <h3 className="wfp--photo-cardnew__info__title">{title}</h3>
+            <h3 className={`${prefix}--photo-cardnew__info__title`}>{title}</h3>
           )}
           {subTitle && (
-            <p className="wfp--photo-cardnew__info__subtitle">{subTitle}</p>
+            <p className={`${prefix}--photo-cardnew__info__subtitle`}>{subTitle}</p>
           )}
         </div>
       </div>
@@ -73,14 +76,27 @@ const Card = ({
     </>
   );
 
-  return (
-    <div
+  return isLink ? (
+    <div 
+    className={wrapperClasses}
+    style={{ width: pagewidth, minHeight: pageheight }}>
+    <a
+      href={url}
+      target={isExternal ? '_blank' : ''}
+      style={{width: pagewidth, minHeight: pageheight}}
+      {...other}>
+      {content}
+    </a>
+    </div>
+  ) : (
+      <div
       className={wrapperClasses}
       {...other}
       style={{ width: pagewidth, minHeight: pageheight }}>
       {content}
     </div>
   );
+
 };
 
 Card.propTypes = {
@@ -89,15 +105,11 @@ Card.propTypes = {
  */
   className: PropTypes.string,
   /**
-   The links target
-*/
-  href: PropTypes.string,
-  /**
    An optimized photograph
  */
   image: PropTypes.string,
   /**
-  External link flag
+  isExternal if true, opens link in a different window
 */
   isExternal: PropTypes.bool,
   /**
@@ -137,7 +149,7 @@ Card.propTypes = {
 };
 
 Card.defaultProps = {
-  isLink: false,
+  isLink: true,
 };
 
 export default Card;

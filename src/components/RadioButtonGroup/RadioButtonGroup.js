@@ -136,8 +136,8 @@ export default class RadioButtonGroup extends React.Component {
       className = `${prefix}--radio-button-group`,
     } = this.props;
 
-    const labelClasses = classNames('wfp--label', {
-      'wfp--visually-hidden': hideLabel,
+    const labelClasses = classNames(`${prefix}--label`, {
+      [`${prefix}--visually-hidden`]: hideLabel,
     });
 
     const wrapperClasses = classNames(`${prefix}--form-item`, {

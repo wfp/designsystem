@@ -1,6 +1,9 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
+import settings from '../../globals/js/settings';
+
+const { prefix } = settings;
 
 export default class Tab extends React.Component {
   static propTypes = {
@@ -131,15 +134,15 @@ export default class Tab extends React.Component {
     } = this.props;
 
     const classes = classNames(
-      'wfp--tabs__nav-item',
-      { 'wfp--tabs__nav-item--disabled': disabled },
-      { 'wfp--tabs__nav-item--selected': selected },
+      `${prefix}--tabs__nav-item`,
+      { [`${prefix}--tabs__nav-item--disabled`]: disabled },
+      { [`${prefix}--tabs__nav-item--selected`]: selected },
       className
     );
 
     const selectedClasses = classNames(
-      'wfp--tabs__nav-item',
-      'wfp--tabs__nav-item--selected',
+      `${prefix}--tabs__nav-item`,
+      `${prefix}--tabs__nav-item--selected`,
       className
     );
 

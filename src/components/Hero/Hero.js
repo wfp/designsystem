@@ -1,7 +1,9 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
+import settings from '../../globals/js/settings';
 
+const { prefix } = settings;
 /**
  * Hero are a convenient means of displaying content composed of different types of objects. It is a multi usage component which creates boxes that are usually teasing some kind of content. */
 
@@ -26,40 +28,40 @@ const Hero = ({
         }
       : {};
 
-  const wrapperClasses = classNames('wfp--photo-card', {
-    [`wfp--photo-card--${kind}`]: kind,
-    'wfp--photo-card--no-background': !image,
-    'wfp--photo-card--link': isLink,
+  const wrapperClasses = classNames(`${prefix}--photo-card`, {
+    [`${prefix}--photo-card--${kind}`]: kind,
+    [`${prefix}--photo-card--no-background`]: !image,
+    [`${prefix}--photo-card--link`]: isLink,
     [`${className}`]: className,
   });
 
   const content = (
     <React.Fragment>
-      <div className="wfp--photo-card__background" style={style} />
+      <div className={`${prefix}--photo-card__background`} style={style} />
       {image && kind === 'related' && <img src={image} alt={title} />}
-      <div className="wfp--photo-card__info">
+      <div className={`${prefix}--photo-card__info`}>
         <div>
           {(kind === 'landscape' || kind === 'hero') && (
-            <div className="wfp--photo-card__info__background" style={style} />
+            <div className={`${prefix}--photo-card__info__background`} style={style} />
           )}
           {metadata && (
-            <p className="wfp--photo-card__info__metadata">{metadata}</p>
+            <p className={`${prefix}--photo-card__info__metadata`}>{metadata}</p>
           )}
           {title && (kind === 'hero' || kind === 'page-splash') && (
-            <h2 className="wfp--photo-card__info__title">{title}</h2>
+            <h2 className={`${prefix}--photo-card__info__title`}>{title}</h2>
           )}
           {title && kind !== 'hero' && kind !== 'page-splash' && (
-            <h3 className="wfp--photo-card__info__title">{title}</h3>
+            <h3 className={`${prefix}--photo-card__info__title`}>{title}</h3>
           )}
           {subTitle && (
-            <p className="wfp--photo-card__info__subtitle">{subTitle}</p>
+            <p className={`${prefix}--photo-card__info__subtitle`}>{subTitle}</p>
           )}
         </div>
 
         {kind === 'hero' ||
           kind === 'splash-image' ||
           (kind === 'splash-compact' && (
-            <div className="wfp--photo-card__info__more">{more}</div>
+            <div className={`${prefix}--photo-card__info__more`}>{more}</div>
           ))}
       </div>
       {children}

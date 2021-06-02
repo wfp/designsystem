@@ -43,16 +43,11 @@ const LogoElement = ({ color, logoKind, src }) => {
   );
 };
 
+// extended logo versions are removed from documentation based on recommendations from CAM, but they still exist in assets for developers already using them in their code.
 export default function Logos() {
   const logoKinds = [
     {
       key: 'standard',
-      description: '',
-      link:
-        'http://brand.manuals.wfp.org/en/core-elements/logo/english-versions/',
-    },
-    {
-      key: 'extended',
       description: '',
       link:
         'http://brand.manuals.wfp.org/en/core-elements/logo/english-versions/',
