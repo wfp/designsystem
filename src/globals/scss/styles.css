@@ -19315,6 +19315,7 @@ $color__gray-80: mix(black, $color__navy-gray-1, 75%) !default;
   padding: 1rem;
   line-height: 1.4;
   word-wrap: anywhere;
+  flex-grow: 1;
 }
 .wfp--blockquote__content p:first-child {
   margin-top: 0;
