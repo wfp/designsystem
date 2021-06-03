@@ -4,7 +4,7 @@
 @import '../../globals/scss/spacing';
 @import '../../globals/scss/helper-mixins';
 @import '../../globals/scss/typography';
-@import '../../globals/scss/import-once';
+@import '@carbon/import-once/scss/import-once';
 @import 'mixins';
 
 @mixin tags {

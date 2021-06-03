@@ -1,6 +1,6 @@
 {
   "name": "@wfp/ui",
-  "version": "1.18.2",
+  "version": "1.19.0",
   "description": "WFP UI Kit",
   "license": "Apache-2",
   "main": "lib/index.js",
@@ -12,8 +12,8 @@
     "build:rollup": "rollup -c",
     "build:storybook": "rm -r -f docs && build-storybook -s ./src/assets -o docs  && npm run build:favicon",
     "ci-check": "npm run prettier:diff && npm run lint && npm run test --runInBand && npm run test-ssr",
-    "build:cssmin": "node-sass ./src/globals/scss/styles.scss ./assets/css/styles.min.css --output-style compressed && postcss ./assets/css/styles.min.css --no-map -u autoprefixer -rs",
-    "build:css": "node-sass ./src/globals/scss -o ./assets/css --output-style compressed --source-map true && postcss ./assets/css/styles.css -d ./assets/css/ --use autoprefixer",
+    "build:cssmin": "sass --load-path=node_modules ./src/globals/scss/styles.scss ./assets/css/styles.min.css && postcss ./assets/css/styles.min.css --no-map -u autoprefixer -rs",
+    "build:css": "sass --load-path=node_modules ./src/globals/scss/styles.scss ./assets/css/styles.css && postcss ./assets/css/styles.css --output ./assets/css/styles.css --use autoprefixer",
     "commitmsg": "validate-commit-msg",
     "build:favicon": "convert ./src/assets/internal/wfp-favicon-png32.png ./src/assets/internal/wfp-favicon-png512.png -colors 256 docs/favicon.ico",
     "contributors:add": "all-contributors add",
@@ -29,6 +29,11 @@
     "test": "jest",
     "test-ssr": "npm run build && node ssr-tests/*.js",
     "jest-w": "jest --watch"
+  },
+  "sass": {
+    "includePaths": [
+      "./node_modules"
+    ]
   },
   "keywords": [
     "WFP",
@@ -102,9 +107,10 @@
     "react-dom": "^16.13.1"
   },
   "dependencies": {
+    "@carbon/import-once": "^10.5.0",
     "invariant": "^2.2.4",
     "react-popper-tooltip": "^4.1.0",
-    "sass": "1.32.12",
+    "sass": "^1.33.0",
     "storybook-addon-designs": "^6.0.0-alpha.3",
     "warning": "^4.0.3",
     "window-or-global": "^1.0.1"
@@ -182,11 +188,10 @@
     "lodash.omit": "^4.5.0",
     "mini-css-extract-plugin": "^0.9.0",
     "moment": "^2.27.0",
-    "node-sass": "5.0.0",
     "object-assign": "^4.1.1",
-    "postcss": "^7.0.32",
-    "postcss-cli": "^7.1.1",
-    "postcss-loader": "^3.0.0",
+    "postcss": "^8.3.0",
+    "postcss-cli": "^8.3.1",
+    "postcss-loader": "^5.3.0",
     "prettier": "^2.0.5",
     "pretty": "^2.0.0",
     "prismjs": "^1.20.0",
@@ -312,7 +317,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/WFP/UI"
+    "url": "https://github.com/wfp/ui.git"
   },
   "types": "src/types/index.d.ts",
   "jest": {

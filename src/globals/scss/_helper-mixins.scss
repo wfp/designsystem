@@ -16,7 +16,7 @@
 @import 'vars';
 @import 'css--reset';
 @import 'typography';
-@import 'import-once';
+@import '@carbon/import-once/scss/import-once';
 
 @mixin text-overflow($width: false) {
   display: block;
@@ -181,7 +181,7 @@
   $deprecations--entry: false !default;
 
   @if ($deprecations--entry == true) {
-    $deprecations--reasons: append($deprecations--reasons, $reason) !global;
+    $deprecations--reasons: append($deprecations--reasons, $reason) /* !global */;
     @content;
   } @else {
     @warn 'Deprecated code was found, this code will be removed before the next release of Carbon. REASON: #{$reason}';
