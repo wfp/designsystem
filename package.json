@@ -104,7 +104,7 @@
   "dependencies": {
     "invariant": "^2.2.4",
     "react-popper-tooltip": "^4.1.0",
-    "sass": "^1.33.0",
+    "sass": "1.32.12",
     "storybook-addon-designs": "^6.0.0-alpha.3",
     "warning": "^4.0.3",
     "window-or-global": "^1.0.1"

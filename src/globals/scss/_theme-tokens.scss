@@ -69,9 +69,10 @@
     --ui-04: #{$color__gray-30};
     --ui-05: #{$color__gray-40};
     --ui-06: #{$color__gray-60};
-    --text-01: #{$color__main-80};
+    --text-01: #{$color__dark-text-01};
     --text-02: #{$color__navy-gray-6};
     --text-03: #{$color__navy-gray-8};
+    --text-04: #{$color__white};
     --field-01: #{$color__white};
     --field-02: #{$color__white}; // Change color
     --field-border-01: #{$color__gray-40};
@@ -155,50 +156,40 @@
 
 //@mixin theme() {
 // Color Theme Variables
-$interactive-01: $color__main-51 !default !global;
-$bg-color: $color__main-51 !default !global;
-$accent-02: $color__yellow !default !global; // Darker WFP Blue // $color__teal-20
-$brand-01: $color__main !default !global; // Main Link and Button Color
-$interactive-02: $color__main-60 !default !global; // Main WFP Color //$color__blue-40
-$accent-01: $color__yellow !default !global;
-$inverse-01: $color__white !default !global;
-$inverse-02: $color__white !default !global;
-$inverse-03: $color__navy-gray-3 !default !global;
-/*$ui-01: $color__white !default !global;
-$ui-02: $color__navy-gray-9 !default !global;
-$ui-03: $color__gray-2 !default !global;
-$ui-04: $color__gray-1 !default !global;
-$ui-05: $color__navy-gray-7 !default !global;
-$ui-06: $color__navy-gray-2 !default !global;
-$text-01: $color__main-80 !default !global;
-$text-02: $color__navy-gray-6 !default !global;
-$text-03: $color__navy-gray-7 !default !global;
-$field-01: $ui-01 !default !global;
-$field-02: $color__white !default !global;*/
-$support-01: $color__red !default !global;
-$support-light-01: $color__red-20 !default !global;
-$support-02: $color__lime-60 !default !global;
-$support-light-02: $color__dark-green-20 !default !global;
-$support-03: $color__yellow !default !global;
-$support-light-03: $color__yellow-20 !default !global;
-$support-04: $color__main-30 !default !global;
-$support-light-04: $color__main-20 !default !global;
-$nav-01: $color__navy-gray-1 !default !global;
-$nav-02: $color__main-80 !default !global;
-$nav-03: $color__magenta-30 !default !global;
-$nav-04: $color__magenta-60 !default !global;
-$disabled: $color__navy-gray-10 !default !global;
-$disabled-01: $color__navy-gray-10 !default !global;
-$disabled-02: $color__navy-gray-8 !default !global;
+$interactive-01: $color__main-51 !default;
+$bg-color: $color__main-51 !default;
+$accent-02: $color__yellow !default; // Darker WFP Blue // $color__teal-20
+$brand-01: $color__main !default; // Main Link and Button Color
+$interactive-02: $color__main-60 !default; // Main WFP Color //$color__blue-40
+$accent-01: $color__yellow !default;
+$inverse-01: $color__white !default;
+$inverse-02: $color__white !default;
+$inverse-03: $color__navy-gray-3 !default;
 
-$hover-primary: darken($interactive-01, 10%) !default !global;
-$hover-primary-text: darken($interactive-01, 15%) !default !global;
-$hover-danger: darken($support-01, 10%) !default !global;
-$hover-secondary: var(--interactive-01) !default !global;
-$hover-row: rgba($interactive-02, 0.1) !default !global;
+$support-01: $color__red !default;
+$support-light-01: $color__red-20 !default;
+$support-02: $color__lime-60 !default;
+$support-light-02: $color__dark-green-20 !default;
+$support-03: $color__yellow !default ;
+$support-light-03: $color__yellow-20 !default;
+$support-04: $color__main-30 !default ;
+$support-light-04: $color__main-20 !default;
+$nav-01: $color__navy-gray-1 !default;
+$nav-02: $color__main-80 !default;
+$nav-03: $color__magenta-30 !default;
+$nav-04: $color__magenta-60 !default;
+$disabled: $color__navy-gray-10 !default;
+$disabled-01: $color__navy-gray-10 !default;
+$disabled-02: $color__navy-gray-8 !default;
+
+$hover-primary: darken($interactive-01, 10%) !default;
+$hover-primary-text: darken($interactive-01, 15%) !default ;
+$hover-danger: darken($support-01, 10%) !default;
+$hover-secondary: var(--interactive-01) !default ;
+$hover-row: rgba($interactive-02, 0.1) !default ;
 
 // Global
-$focus: $color__brand-01-20 !default !global;
+$focus: $color__brand-01-20 !default ;
 
 $input-border: 1px solid var(--field-border-01) !default;
 $input-label-weight: 600 !default;
@@ -206,70 +197,70 @@ $input-border-radius: 0px !default;
 $input-height: 40px !default;
 
 // Button Theme Variables
-$button-font-weight: 700 !default !global;
-$button-font-size: 0.875rem !default !global;
-$button-border-radius: 4px !default !global;
-$button-height: 40px !default !global;
-$button-padding: 0 $spacing-md * 0.8 !default !global;
-$button-padding-sm: 0 $spacing-xs * 0.7 !default !global;
-$button-border-width: 2px !default !global;
-$button-outline-width: 1px !default !global;
+$button-font-weight: 700 !default;
+$button-font-size: 0.875rem !default ;
+$button-border-radius: 4px !default ;
+$button-height: 40px !default ;
+$button-padding: 0 $spacing-md * 0.8 !default ;
+$button-padding-sm: 0 $spacing-xs * 0.7 !default ;
+$button-border-width: 2px !default ;
+$button-outline-width: 1px !default;
 
 // Checkbox
-$checkbox-border-width: 2px !default !global;
-$checkbox-border-radius: 4px !default !global;
+$checkbox-border-width: 2px !default ;
+$checkbox-border-radius: 4px !default ;
 
 // Code Snippet
-$snippet-background-color: var(--ui-01) !default !global;
-$snippet-border-color: var(--ui-03) !default !global;
+$snippet-background-color: var(--ui-01) !default;
+$snippet-border-color: var(--ui-03) !default;
 
 // Content Switcher
-$content-switcher-border-radius: 6px !default !global;
-$content-switcher-option-border: 2px solid var(--interactive-01) !default !global;
+$content-switcher-border-radius: 6px !default;
+$content-switcher-option-border: 2px solid var(--interactive-01) !default;
 
 // Data Table
-$data-table-heading-transform: uppercase !default !global;
-$data-table-heading-border-bottom: 1px solid var(--interactive-01) !default !global;
-$data-table-row-height: 2rem !default !global;
+$data-table-heading-transform: uppercase !default ;
+$data-table-heading-border-bottom: 1px solid var(--interactive-01) !default ;
+$data-table-row-height: 2rem !default ;
 
 // Modal
-$modal-border-top: var(--interactive-01) 4px solid !default !global;
-$modal-border-radius: 6px !global;
-$modal-footer-background-color: var(--ui-02) !default !global;
+$modal-border-top: var(--interactive-01) 4px solid !default;
+$modal-border-radius: 6px;
+$modal-footer-background-color: var(--ui-02) !default;
 
 // Progress Indicator
-$progress-indicator-bar-width: 1px inset transparent !default !global;
-$progress-indicator-stroke-width: 5 !default !global;
-$progress-indicator-line-offset: 0.625rem !default !global;
+$progress-indicator-bar-width: 1px inset transparent !default;
+$progress-indicator-stroke-width: 5 !default;
+$progress-indicator-line-offset: 0.625rem !default;
 
 // Radio Button
-$radio-border-width: 2px !default !global;
+$radio-border-width: 2px !default;
 
 // Structured Theme Variables
-$structured-list-padding: 2rem !default !global;
-$structured-list-text-transform: none !default !global;
+$structured-list-padding: 2rem !default;
+$structured-list-text-transform: none !default;
 
 $css--font-face: true;
 // Skeleton Loading
-$skeleton: rgba($color__main-51, 0.1) !default !global; //old $field-01
+$skeleton: rgba($color__main-51, 0.1) !default; //old $field-01
 
-$sdg-01: $color__red !default !global;
-$sdg-02: $color__ochre !default !global;
-$sdg-03: #4c9f38 !default !global;
-$sdg-04: #c5192d !default !global;
-$sdg-05: #ff3a21 !default !global;
-$sdg-06: $color__aqua !default !global;
-$sdg-07: $color__yellow !default !global;
-$sdg-08: $color__dark-red !default !global;
-$sdg-09: $color__orange !default !global;
-$sdg-10: $color__magenta !default !global;
-$sdg-11: #fd9d24 !default !global;
-$sdg-12: #bf8b2e !default !global;
-$sdg-13: $color__dark-green !default !global;
-$sdg-14: #0a97d9 !default !global;
-$sdg-15: #56c02b !default !global;
-$sdg-16: #00689d !default !global;
-$sdg-17: $color__navy !default !global;
+$sdg-01: $color__red !default;
+$sdg-02: $color__ochre !default;
+$sdg-03: #4c9f38 !default;
+$sdg-04: #c5192d !default;
+$sdg-05: #ff3a21 !default;
+$sdg-06: $color__aqua !default;
+$sdg-07: $color__yellow !default;
+$sdg-08: $color__dark-red !default;
+$sdg-09: $color__orange !default;
+$sdg-10: $color__magenta !default;
+$sdg-11: #fd9d24 !default;
+$sdg-12: #bf8b2e !default;
+$sdg-13: $color__dark-green !default;
+$sdg-14: #0a97d9 !default;
+$sdg-15: #56c02b !default;
+$sdg-16: #00689d !default;
+$sdg-17: $color__navy !default;
 //}
 
 /* @include exports('theme') {
