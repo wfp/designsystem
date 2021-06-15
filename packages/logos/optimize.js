@@ -70,11 +70,11 @@ function optimizeFile(file) {
   });
 }
 
-FS.rmdirSync(PATH.resolve(__dirname, 'optimized'), { recursive: true });
-
-if (!FS.existsSync(PATH.resolve(__dirname, 'optimized'))) {
-  FS.mkdirSync(PATH.resolve(__dirname, 'optimized'));
+if (FS.existsSync(PATH.resolve(__dirname, 'optimized'))) {
+  FS.rmdirSync(PATH.resolve(__dirname, 'optimized'), { recursive: true });
 }
+
+FS.mkdirSync(PATH.resolve(__dirname, 'optimized'));
 
 FS.readdir(PATH.resolve(__dirname, 'src'), function (err, files) {
   if (err) {
