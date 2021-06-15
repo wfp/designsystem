@@ -53,3 +53,8 @@ jobs:
       displayName: 'set build number'
       workingDirectory: 'packages/logos'
 
+    - task: PublishPipelineArtifact@1
+      inputs:
+        targetPath: "./optimized"
+        artifact: "wfp-ui-logos"
+        publishLocation: "pipeline"
