@@ -4,6 +4,7 @@ trigger:
   - hotfix/*
   - bugfix/*
   - alpha/*
+  
 
 jobs:
 - job: SemanticRelease
@@ -25,6 +26,7 @@ jobs:
         npm -v
         npm install
       displayName: 'npm install'
+      workingDirectory: 'packages/logos'
 
     - script: |
         npm run build
