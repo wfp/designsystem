@@ -31,6 +31,7 @@ jobs:
     - script: |
         npm run build
       displayName: 'npm run optimize'
+      workingDirectory: 'packages/logos'
 
     - script: >
         npx -p semantic-release
@@ -40,6 +41,7 @@ jobs:
         semantic-release
       env: { GH_TOKEN: $(GitHubToken) }
       displayName: 'Semantic release'
+      workingDirectory: 'packages/logos'
     
     - powershell: |
         echo "##vso[task.setvariable variable=versionNumber;isOutput=true]$(nextRelease)"
@@ -49,4 +51,5 @@ jobs:
         npmVersionString=$(node -p "require('./package.json').version") 
         echo "##vso[build.updatebuildnumber]$npmVersionString"
       displayName: 'set build number'
+      workingDirectory: 'packages/logos'
 
