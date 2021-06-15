@@ -1,0 +1,15 @@
+{
+  "name": "@wfp/logos",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "optimize": "node optimize.js"
+  },
+  "author": "World Food Programme",
+  "license": "ISC",
+  "dependencies": {
+    "svgo": "^2.3.0"
+  }
+}
