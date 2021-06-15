@@ -14,6 +14,7 @@ const replace = require('rollup-plugin-replace');
 const stripBanner = require('rollup-plugin-strip-banner');
 const { terser } = require('rollup-plugin-terser');
 const packageJson = require('./package.json');
+const { visualizer } = require('rollup-plugin-visualizer');
 
 const baseConfig = {
   input: './src/index.js',
@@ -34,6 +35,12 @@ const baseConfig = {
           'Fragment',
           'PropTypes',
           'createElement',
+          'cloneElement',
+          'useCallback',
+          'useEffect',
+          'useState',
+          'useReducer',
+          'useRef',
         ],
         'react-dom/index.js': ['render'],
         'react-is/index.js': ['isForwardRef'],
@@ -64,6 +71,8 @@ const baseConfig = {
       ],
     }),
     stripBanner(),
+    //analyze(),
+    visualizer(),
   ],
 };
 
@@ -73,6 +82,10 @@ const umdExternalDependencies = Object.keys(
 
 const umdBundleConfig = {
   input: baseConfig.input,
+  treeshake: {
+    propertyReadSideEffects: false,
+    moduleSideEffects: 'no-external',
+  },
   external: [...umdExternalDependencies, 'prop-types'],
   output: {
     name: 'WfpUiReact',
@@ -82,7 +95,7 @@ const umdBundleConfig = {
       'prop-types': 'PropTypes',
       react: 'React',
       'react-dom': 'ReactDOM',
-      '@wfp/icons': '@wfp/icons',
+      '@wfp/icons': 'WfpIcons',
     },
   },
 };

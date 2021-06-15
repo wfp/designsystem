@@ -4,10 +4,10 @@
 
 $font-family-mono: 'Courier New', 'Menlo', 'DejaVu Sans Mono',
   'Bitstream Vera Sans Mono', Courier, monospace !default;
-$font-family-mono-code: 'SFMono-Regular', 'Consolas', 'Liberation Mono', 'Menlo', 'Courier', monospace !default;
+$font-family-mono-code: 'SFMono-Regular', 'Consolas', 'Liberation Mono', 'Menlo',
+  'Courier', monospace !default;
 $font-family-sans-serif: 'Open Sans', sans-serif !default;
 $font-family-tajawal: 'Tajawal', sans-serif !default;
-
 
 $base-font-size: 16px !default; // Default, Use with em() and rem() functions
 
@@ -21,9 +21,12 @@ $typescale-map: (
   'gamma': 1.25rem,
   'delta': 1.125rem,
   'epsilon': 1rem,
+  'caption': 0.875rem,
+  //TODO: Validate usage of caption
   'zeta': 0.875rem,
   'omega': 0.75rem,
-  'theta': 0.6875rem, //replaced legal with the greek work theta
+  'theta': 0.6875rem,
+  //replaced legal with the greek work theta
 );
 
 @mixin typescale($size) {
@@ -48,7 +51,6 @@ $typescale-map: (
   &:lang(ar) {
     font-family: $font-family-tajawal;
   }
-  
 }
 
 // There are two line heights to choose from. One for headings and one for body text
@@ -73,8 +75,10 @@ $typescale-map: (
 }
 
 $font-size-map: (
-  '74': 4.625rem,  //74px rather => 4.625rem
-  '58': 3.625rem, //58px rather => 3.625rem
+  '74': 4.625rem,
+  //74px rather => 4.625rem
+  '58': 3.625rem,
+  //58px rather => 3.625rem
   '36': 2.25rem,
   '28': 1.75rem,
   '25': 1.5625rem,
@@ -86,7 +90,6 @@ $font-size-map: (
   '12': 0.75rem,
   '11': 0.6875rem,
 );
-
 
 @mixin font-size($size) {
   @if map-has-key($font-size-map, $size) {

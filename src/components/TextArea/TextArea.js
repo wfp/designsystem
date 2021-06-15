@@ -3,7 +3,7 @@ import React from 'react';
 import classNames from 'classnames';
 import FormItem from '../FormItem';
 import settings from '../../globals/js/settings';
-import useDetectPrint from '../../internal/useDetectPrint';
+//import useDetectPrint from '../../internal/useDetectPrint';
 const { prefix } = settings;
 
 /** A textarea is an input dedicated for a large volume of text. It may be used in a variety of components like forms, comment sections, and forums. */
@@ -24,7 +24,9 @@ const TextArea = ({
   viewOnly,
   ...other
 }) => {
+  /* TODO: Implement print preview for inputs with automated overflow
   const isPrinting = useDetectPrint();
+  */
 
   const textareaProps = {
     id,
@@ -87,11 +89,11 @@ const TextArea = ({
     <FormItem className={formItemClassName}>
       {label}
       {input}
-      {isPrinting && (
+      {/*isPrinting && (
         <div {...other} {...textareaProps} className={textareaClasses}>
           {other.value}
         </div>
-      )}
+      )*/}
       {helper}
       {error}
     </FormItem>
