@@ -55,6 +55,6 @@ jobs:
 
     - task: PublishPipelineArtifact@1
       inputs:
-        targetPath: "./optimized"
+        targetPath: "packages/logos/optimized"
         artifact: "wfp-ui-logos"
         publishLocation: "pipeline"
