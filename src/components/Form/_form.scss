@@ -20,6 +20,11 @@
     //margin-bottom: 2rem;
   }
 
+  .#{$prefix}--form-item--inline {
+    flex-direction: row;
+    align-items: center;
+  }
+
   .#{$prefix}--form-long {
     margin-bottom: -1rem;
 

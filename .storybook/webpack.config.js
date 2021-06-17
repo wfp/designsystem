@@ -52,9 +52,12 @@ module.exports = async ({ config, mode }) => {
       'style-loader',
       'css-loader',
       {
-        loader: 'sass-loader',
+        loader: 'fast-sass-loader',
         options: {
-          // Prefer `dart-sass`
+          includePaths: ['node_modules'],
+          sassOptions: {
+            includePaths: ['node_modules'],
+          },
           implementation: require('sass'),
         },
       },
@@ -68,9 +71,12 @@ module.exports = async ({ config, mode }) => {
       'style-loader',
       'css-loader',
       {
-        loader: 'sass-loader',
+        loader: 'fast-sass-loader',
         options: {
-          // Prefer `dart-sass`
+          includePaths: ['node_modules'],
+          sassOptions: {
+            includePaths: ['node_modules'],
+          },
           implementation: require('sass'),
         },
       },

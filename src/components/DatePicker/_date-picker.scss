@@ -699,13 +699,12 @@
   }
   .DateInput_input__focused {
     @include focus-outline('border');
-
   }
-  .DateInput_input__focused, .SingleDatePickerInput_calendarIcon_svg{
-      &:focus{
-        fill: var(--interactive-01);
-      }
-      
+  .DateInput_input__focused,
+  .SingleDatePickerInput_calendarIcon_svg {
+    &:focus {
+      fill: var(--interactive-01);
+    }
   }
   .DateInput_input__disabled {
     background: #f2f2f2;

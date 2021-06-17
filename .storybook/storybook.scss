@@ -1,3 +1,5 @@
+/*@use "sass:math";
+
 @import '../src/globals/scss/colors';
 @import '../src/globals/scss/vars';
 @import '../src/globals/scss/layout';
@@ -7,7 +9,11 @@
 @import '../src/globals/scss/css--reset';
 @import '../src/globals/scss/text-gradient';
 @import '../src/components/Story/_story';
-@import '../src/components/Link/_link';
+@import '../src/components/Link/_link';*/
+
+$css--body: true;
+$css--reset: true;
+@import '../src/globals/scss/styles.scss';
 
 .sb-show-main,
 .sbdocs,
@@ -473,9 +479,6 @@
   background: $color__magenta-80;
 }
 
-$css--body: true;
-$css--reset: true;
-@import '../src/globals/scss/styles.scss';
 /* Overflow fix for Safari */
 
 .os-host.os-host-foreign {

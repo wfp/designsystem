@@ -5,10 +5,11 @@ import settings from '../../globals/js/settings';
 
 const { prefix } = settings;
 
-const FormItem = ({ className, children, invalid, ...other }) => {
+const FormItem = ({ className, children, invalid, inline, ...other }) => {
   const classNames = classnames(
     `${prefix}--form-item`,
     {
+      [`${prefix}--form-item--inline`]: inline,
       [`${prefix}--form-item--invalid`]: invalid,
     },
     className

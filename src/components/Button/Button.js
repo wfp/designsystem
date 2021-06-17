@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import Icon from '../Icon';
 import classNames from 'classnames';
 import settings from '../../globals/js/settings';
-
+import styles from './button.module.scss';
 const { prefix } = settings;
 
 /**
@@ -106,7 +106,6 @@ const Button = ({
       {buttonImage}
     </a>
   );
-
   return href ? anchor : button;
 };
 
@@ -137,7 +136,6 @@ Button.propTypes = {
    * Specify whether the Button should be a large variant
    */
   large: PropTypes.bool,
-
 
   /**
    * FOR DESIGNERS

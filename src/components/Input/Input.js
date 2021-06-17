@@ -115,7 +115,7 @@ const Input = ({
   ) : null;
 
   return (
-    <FormItem className={formItemClassName} invalid>
+    <FormItem className={formItemClassName} inline={other.inline}>
       {label}
       {helper}
       {additional}
