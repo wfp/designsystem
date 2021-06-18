@@ -55,8 +55,8 @@ export const Headings = (args) => (
 
 const Normaltext = [
   { kind: 'p', text: 'Body copy, paragraph', styling: '16px, Regular' },
-  { kind: 'p', text: 'Label (form)', styling: '14px, Regular' },
-  { kind: 'code', text: 'Code', styling: 'Monospace, 13px, Regular' },
+  { kind: 'p', text: 'Label (form)', styling: '14px, SemiBold' },
+  { kind: 'code', text: 'Code', styling: 'Monospace, 16px, Regular' },
   { kind: 'sup', text: 'Sup', styling: '11px, Regular' },
   {
     kind: 'inline-highlight',
@@ -81,7 +81,7 @@ export const text = (args) => (
 export const pagetitle = (args) => (
   <>
     <Text kind="title">Title</Text>
-    <div style={{ color: '#A9A9A9', marginBottom: '2rem' }}>59px, Light</div>
+    <div style={{ color: '#A9A9A9', marginBottom: '2rem' }}>58px, Light</div>
     <Text kind="subtitle">Overline</Text>
     <div style={{ color: '#A9A9A9', marginBottom: '2rem' }}>14px, SemiBold</div>
   </>
