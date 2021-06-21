@@ -4,8 +4,26 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:copyassets-tajawal": "cp -R ./node_modules/@fontsource/tajawal/files ./dist/tajawal",
+    "build:copyassets-open-sans": "cp -R ./node_modules/@fontsource/open-sans/files ./dist/open-sans",
+    "build": "mkdir -p ./dist && npm run build:copyassets-tajawal &&  npm run build:copyassets-open-sans ",
+    "semantic-release": "semantic-release"
   },
   "author": "World Food Programme",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@fontsource/open-sans": "^4.4.5",
+    "@fontsource/tajawal": "^4.4.5",
+    "@semantic-release/changelog": "^5.0.1",
+    "@semantic-release/commit-analyzer": "^8.0.1",
+    "@semantic-release/exec": "^5.0.0",
+    "@semantic-release/git": "^9.0.0",
+    "@semantic-release/npm": "^7.0.6",
+    "@semantic-release/release-notes-generator": "^9.0.1",
+    "semantic-release": "^17.2.3",
+    "semantic-release-ado": "^1.2.2",
+    "semantic-release-monorepo": "^7.0.5",
+    "svgo": "^2.3.0"
+  }
 }
