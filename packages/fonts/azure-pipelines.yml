@@ -55,6 +55,6 @@ jobs:
 
     - task: PublishPipelineArtifact@1
       inputs:
-        targetPath: "packages/fonts"
+        targetPath: "packages/fonts/dist"
         artifact: "wfp-ui-fonts"
         publishLocation: "pipeline"
