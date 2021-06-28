@@ -25,6 +25,11 @@ yarn add @wfp/ui
 yarn add @wfp/icons
 ```
 
+### Dependencies for sass
+
+For v1.19.0 or higher, install sass instead of node-sass
+
+
 Import a react component
 
 ```jsx
