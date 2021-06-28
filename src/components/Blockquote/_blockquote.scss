@@ -2,7 +2,7 @@
 @import '../../globals/scss/colors';
 @import '../../globals/scss/typography';
 @import '../../globals/scss/spacing';
-@import '../../globals/scss/import-once';
+@import '@carbon/import-once/scss/import-once';
 @import '../../globals/scss/css--reset';
 
 @include exports('blockquote') {
@@ -39,6 +39,7 @@
     padding: $spacing-md;
     line-height: 1.4;
     word-wrap: anywhere;
+    flex-grow: 1;
     p:first-child {
       margin-top: 0;
     }
@@ -148,6 +149,14 @@
 
     .#{$prefix}--blockquote__content {
       padding: $spacing-sm;
+    }
+  }
+
+  .#{$prefix}--blockquote__action-buttons {
+    margin-right: $spacing-md;
+    white-space: nowrap;
+    > * {
+      margin-left: $spacing-xs;
     }
   }
 }

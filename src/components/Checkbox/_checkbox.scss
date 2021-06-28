@@ -3,7 +3,7 @@
 @import '../../globals/scss/typography';
 @import '../../globals/scss/spacing';
 @import '../../globals/scss/helper-mixins';
-@import '../../globals/scss/import-once';
+@import '@carbon/import-once/scss/import-once';
 @import '../Form/form';
 @import '../../globals/scss/css--reset';
 
@@ -28,6 +28,8 @@
 
   .#{$prefix}--checkbox {
     @include hidden;
+    //TODO: replace hidden include
+    display: none;
   }
 
   .#{$prefix}--checkbox-label {

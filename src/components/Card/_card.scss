@@ -3,7 +3,7 @@
 @import '../../globals/scss/layout';
 @import '../../globals/scss/typography';
 @import '../../globals/scss/helper-mixins';
-@import '../../globals/scss/import-once';
+@import '@carbon/import-once/scss/import-once';
 @import '../../globals/scss/css--reset';
 @import '../../globals/scss/text-gradient';
 
@@ -17,7 +17,6 @@
 }
 
 .#{$prefix}--photo-cardnew--simple-card {
-
   .#{$prefix}--header-photo {
     width: 100%;
     height: 200px;

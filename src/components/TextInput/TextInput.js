@@ -7,7 +7,8 @@ import Input from '../Input/Input';
 const { prefix } = settings;
 
 /** Text inputs enable the user to interact with and input content and data. This component can be used for long and short form entries. */
-const TextInput = (props) => {
+
+const TextInput = React.forwardRef((props, ref) => {
   const {
     disabled,
     labelText,
@@ -22,7 +23,7 @@ const TextInput = (props) => {
     invalid,
     invalidText,
     helperText,
-    inputRef,
+    inputRef = ref,
     pattern,
     required,
     ...other
@@ -56,7 +57,7 @@ const TextInput = (props) => {
       }}
     </Input>
   );
-};
+});
 
 TextInput.propTypes = {
   /**

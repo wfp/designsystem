@@ -4,7 +4,7 @@
 @import '../../globals/scss/spacing';
 @import '../../globals/scss/helper-mixins';
 @import '../../globals/scss/typography';
-@import '../../globals/scss/import-once';
+@import '@carbon/import-once/scss/import-once';
 @import 'mixins';
 
 @mixin tags {
@@ -17,6 +17,7 @@
     height: 1.5rem;
     margin: $spacing-3xs;
     border-radius: rem(15px);
+    white-space: nowrap;
 
     &:not(:first-child) {
       margin-left: 0;
@@ -47,6 +48,10 @@
 
   .#{$prefix}--tag--warning {
     @include tag-theme(var(--support-light-03), darken($support-03, 18));
+  }
+
+  .#{$prefix}--tag--wrap {
+    white-space: normal;
   }
 
   // .#{$prefix}--tag--information {

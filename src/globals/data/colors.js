@@ -353,6 +353,14 @@ const colors = {
     type: 'ui',
     shortDescription: 'Placeholder text',
   },
+  'text-04': {
+    name: 'text-04',
+    hex: '#ffffff',
+    scss: '$text-04',
+    css: 'color__text-04',
+    type: 'ui',
+    shortDescription: '',
+  },
   'inverse-01': {
     name: 'inverse-01',
     hex: '#ffffff',

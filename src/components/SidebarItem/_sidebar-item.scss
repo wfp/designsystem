@@ -2,7 +2,7 @@
 @import '../../globals/scss/colors';
 @import '../../globals/scss/typography';
 @import '../../globals/scss/spacing';
-@import '../../globals/scss/import-once';
+@import '@carbon/import-once/scss/import-once';
 @import '../../globals/scss/css--reset';
 
 @include exports('sidebar-item') {
@@ -42,7 +42,7 @@
         border-radius: 50%;
         background-size: 100%;
         border: 2px solid white;
-        background-color: $color__navy-gray-7;
+        background-color: $color__navy-gray-7; 
         text {
           fill: var(--ui-01);
           font-weight: 600;

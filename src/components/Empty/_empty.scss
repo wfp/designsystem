@@ -7,7 +7,7 @@
 @import '../../globals/scss/layout';
 @import '../../globals/scss/typography';
 @import '../../globals/scss/helper-mixins';
-@import '../../globals/scss/import-once';
+@import '@carbon/import-once/scss/import-once';
 @import '../../globals/scss/css--reset';
 
 @include exports('empty') {
@@ -41,7 +41,7 @@
           width: 5rem;
           height: 5rem;
           path {
-            fill: $interactive-01;
+            fill: var(--interactive-01);
           }
           margin-bottom: $spacing-xs;
         }

@@ -18,7 +18,6 @@ import Button from '../Button';
 import Search from '../Search';
 import Link from '../Link';
 import User from '../User';
-import mainNavigationTwig from './MainNavigation.twig';
 
 export default {
   title: 'Components/Navigations/MainNavigation',
