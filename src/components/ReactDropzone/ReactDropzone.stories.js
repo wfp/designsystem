@@ -17,7 +17,7 @@ export default {
 };
 
 export const Regular = (args) => {
-  const [file, setfile] = useState([])
+  const [file, setfile] = useState([]);
 
   const files = file.map((file) => (
     <ListItem key={file.path}>
@@ -25,29 +25,26 @@ export const Regular = (args) => {
     </ListItem>
   ));
 
-  return(
-  <>
-  <Dropzone onDrop={(acceptedFiles) => setfile(acceptedFiles)}>
-    {({ getRootProps, getInputProps }) => (
-      <section className="wfp--dropzone">
-        <div {...getRootProps({ className: 'wfp--dropzone__input' })}>
-          <input {...getInputProps()} />
-          <div>Drag 'n' drop some files here, or click to select files</div>
-        </div>
-      </section>
-    )}
-  </Dropzone>
-  {
-    (file.length > 0) &&
-    <aside className="wfp--dropzone__file-list">
-        <h4>Files</h4>
-        <List>{files}</List>
-  </aside>
-  }
-  
-  </>
-  
-)
+  return (
+    <>
+      <Dropzone onDrop={(acceptedFiles) => setfile(acceptedFiles)}>
+        {({ getRootProps, getInputProps }) => (
+          <section className="wfp--dropzone">
+            <div {...getRootProps({ className: 'wfp--dropzone__input' })}>
+              <input {...getInputProps()} />
+              <div>Drag 'n' drop some files here, or click to select files</div>
+            </div>
+          </section>
+        )}
+      </Dropzone>
+      {file.length > 0 && (
+        <aside className="wfp--dropzone__file-list">
+          <h4>Files</h4>
+          <List>{files}</List>
+        </aside>
+      )}
+    </>
+  );
 };
 
 Regular.parameters = {
@@ -103,24 +100,23 @@ export const Advanced = (args) => {
     </ListItem>
   ));
 
-  const className = classNames('wfp--dropzone__input', {
+  const wrapperClassNames = classNames('wfp--dropzone__input', {
     'wfp--dropzone__input--drag-active': isDragActive,
-    [className]: className,
   });
 
   return (
     <section className="wfp--dropzone">
-      <div {...getRootProps({ isDragActive, className: className })}>
+      <div {...getRootProps({ isDragActive, className: wrapperClassNames })}>
         <input {...getInputProps()} />
         <Icon className="wfp--dropzone__icon" icon={iconUpload} />
         <div>Drop files or click here to upload</div>
       </div>
-      {(files.length > 0) &&
-      <aside className="wfp--dropzone__file-list">
-        <h4>Files</h4>
-        <List>{files}</List>
-      </aside>
-      }
+      {files.length > 0 && (
+        <aside className="wfp--dropzone__file-list">
+          <h4>Files</h4>
+          <List>{files}</List>
+        </aside>
+      )}
     </section>
   );
 };
@@ -149,14 +145,13 @@ export const Advanced = (args) => {
     </ListItem>
   ));
 
-  const className = classNames('wfp--dropzone__input', {
-    'wfp--dropzone__input--drag-active': isDragActive,
-    [className]: className,
+  const wrapperClassNames = classNames('wfp--dropzone__input', {
+    'wfp--dropzone__input--drag-active': isDragActive
   });
 
   return (
     <section className="wfp--dropzone">
-      <div {...getRootProps({ isDragActive, className: className })}>
+      <div {...getRootProps({ isDragActive, className: wrapperClassNames })}>
         <input {...getInputProps()} />
         <Icon className="wfp--dropzone__icon" icon={iconUpload} />
         <div>Drop files or click here to upload</div>

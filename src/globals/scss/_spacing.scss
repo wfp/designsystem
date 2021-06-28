@@ -27,6 +27,8 @@ $spacing-xl: $spacing-baseline * 2 !default;
 $spacing-2xl: $spacing-baseline * 2.5 !default;
 $spacing-3xl: $spacing-baseline * 3 !default;
 $spacing-4xl: $spacing-baseline * 4 !default;
+$spacing-5xl: $spacing-baseline * 5 !default;
+$spacing-6xl: $spacing-baseline * 6 !default;
 
 $spacing-map: (
   '3xs': $spacing-3xs,
@@ -39,11 +41,13 @@ $spacing-map: (
   '2xl': $spacing-2xl,
   '3xl': $spacing-3xl,
   '4xl': $spacing-4xl,
+  '5xl': $spacing-5xl,
+  '6xl': $spacing-6xl,
 );
 
 @mixin spacing($size, $position) {
   @if map-has-key($spacing-map, $size) {
-    @if $positon = 'bottom' {
+    @if $positon == 'bottom' {
       margin-bottom: map-get($spacing-map, $size);
     }
   } @else {

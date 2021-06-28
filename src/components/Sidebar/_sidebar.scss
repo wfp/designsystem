@@ -2,7 +2,7 @@
 @import '../../globals/scss/colors';
 @import '../../globals/scss/typography';
 @import '../../globals/scss/spacing';
-@import '../../globals/scss/import-once';
+@import '@carbon/import-once/scss/import-once';
 @import '../../globals/scss/css--reset';
 
 @include exports('sidebar-content') {
@@ -36,10 +36,18 @@
 
   .#{$prefix}--sidebar-item-content {
     width: 100%;
+    @media print {
+      display: none;
+    }
     @include breakpoint(bp--md--major) {
       width: 30%;
-      min-width: 30%;
+      min-width: 20rem;
+      max-width: 30rem;
       border-right: 1px solid var(--ui-04);
+    }
+    @include breakpoint(bp--md--major) {
+      //min-width: auto;
+      max-width: 30rem;
     }
     display: flex;
     flex-direction: column;

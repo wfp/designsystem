@@ -1,3 +1,5 @@
+@use "sass:math";
+
 .#{$rt-namespace}__toast-container {
   z-index: $rt-z-index;
   position: fixed;
@@ -14,7 +16,7 @@
   &--top-center {
     top: 1em;
     left: 50%;
-    margin-left: -($rt-toast-width / 2);
+    margin-left: -(math.div($rt-toast-width, 2));
   }
 
   &--top-right {
@@ -30,7 +32,7 @@
   &--bottom-center {
     bottom: 1em;
     left: 50%;
-    margin-left: -($rt-toast-width / 2);
+    margin-left: -(math.div($rt-toast-width, 2));
   }
 
   &--bottom-right {

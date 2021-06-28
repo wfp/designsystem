@@ -16,7 +16,7 @@
 @import 'vars';
 @import 'css--reset';
 @import 'typography';
-@import 'import-once';
+@import '@carbon/import-once/scss/import-once';
 
 @mixin text-overflow($width: false) {
   display: block;
@@ -45,6 +45,13 @@
   border: $input-border;
   border-radius: $input-border-radius;
   box-shadow: none;
+
+  @include print {
+    background: var(--ui-01) !important;
+    border-color: var(--ui-06);
+    padding: 0 $spacing-2xs;
+    height: $input-height * 0.7;
+  }
   &::placeholder {
     @include placeholder-colors;
   }
@@ -174,11 +181,10 @@
   $deprecations--entry: false !default;
 
   @if ($deprecations--entry == true) {
-    $deprecations--reasons: append($deprecations--reasons, $reason) !global;
+    $deprecations--reasons: append($deprecations--reasons, $reason) /* !global */;
     @content;
   } @else {
-    @warn 'Deprecated code was found,
-      this code will be removed before the next release of Carbon. REASON: #{$reason}';
+    @warn 'Deprecated code was found, this code will be removed before the next release of Carbon. REASON: #{$reason}';
     @content;
   }
 }

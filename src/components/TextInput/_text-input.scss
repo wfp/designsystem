@@ -8,17 +8,10 @@
 @import '../../globals/scss/helper-mixins';
 @import '../../globals/scss/typography';
 @import '../../globals/scss/spacing';
-@import '../../globals/scss/import-once';
+@import '@carbon/import-once/scss/import-once';
 @import '../Form/form';
 
 @include exports('text-input') {
-  .#{$prefix}--text input {
-    @include typescale('zeta');
-    @include font-family;
-    @include input-base;
-    @include input-error;
-  }
-
   .#{$prefix}--text--required label::after {
     content: ' *';
     color: red;

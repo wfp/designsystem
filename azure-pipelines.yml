@@ -35,9 +35,9 @@ jobs:
         npm install
       displayName: 'npm install'
 
-    - script: |
-        npm run test
-      displayName: 'npm run test'
+    #- script: |
+    #    npm run test
+    #  displayName: 'npm run test'
 
     - script: |
         npm run build

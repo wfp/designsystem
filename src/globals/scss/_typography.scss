@@ -1,3 +1,5 @@
+@use "sass:math";
+
 @import 'vars';
 
 $font-family-mono: 'Courier New', 'Menlo', 'DejaVu Sans Mono',
@@ -33,11 +35,11 @@ $typescale-map: (
 }
 
 @function rem($px) {
-  @return ($px / $base-font-size) * 1rem;
+  @return math.div($px, $base-font-size) * 1rem;
 }
 
 @function em($px) {
-  @return ($px / $base-font-size) * 1em;
+  @return math.div($px, $base-font-size) * 1em;
 }
 
 @mixin font-family {
@@ -90,15 +92,6 @@ $font-size-map: (
   @if map-has-key($font-size-map, $size) {
     font-size: map-get($font-size-map, $size);
   } @else {
-    @warn 'This is not a step of the WFP Type Scale! Valid sizes are 11,
-      12,
-      14,
-      16,
-      18,
-      20,
-      28,
-      36,
-      54,
-      and 76';
+    @warn 'This is not a step of the WFP Type Scale! Valid sizes are 11, 12, 14, 16, 18, 20, 28, 36, 54, and 76';
   }
 }
