@@ -25,7 +25,7 @@ module.exports = {
       'master',
       'next',
       'feat/*',
-      { name: 'alpha', prerelease: true },
+      { name: 'alpha/*', prerelease: true },
     ],
   },
 };
