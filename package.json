@@ -8,8 +8,9 @@
   "main:scss": "source/globals/styles.scss",
   "sideEffects": false,
   "scripts": {
-    "build": "npm run build:rollup && npm run build:css && npm run build:cssmin && mkdir -p ./assets/fonts && npm run build:copyassets-tajawal &&  npm run build:copyassets-open-sans ",
+    "build": "npm run build:rollup && npm run build:script && npm run build:css && npm run build:cssmin && mkdir -p ./assets/fonts && npm run build:copyassets-tajawal &&  npm run build:copyassets-open-sans ",
     "build:rollup": "rollup -c",
+    "build:script": "node scripts/build.js",
     "build:copyassets-tajawal": "cp -R ./node_modules/@fontsource/tajawal/files ./assets/fonts/tajawal",
     "build:copyassets-open-sans": "cp -R ./node_modules/@fontsource/open-sans/files ./assets/fonts/open-sans",
     "build:storybook": "rm -r -f docs && build-storybook -s ./src/assets -o docs  && npm run build:favicon",
@@ -112,21 +113,23 @@
   "dependencies": {
     "@carbon/import-once": "^10.5.0",
     "invariant": "^2.2.4",
+    "npm-which": "^3.0.1",
     "react-popper-tooltip": "^4.1.0",
     "warning": "^4.0.3",
     "window-or-global": "^1.0.1"
   },
   "devDependencies": {
-    "@babel/plugin-proposal-decorators": "^7.10.5",
-    "@babel/plugin-proposal-do-expressions": "^7.10.4",
-    "@babel/plugin-proposal-export-default-from": "^7.10.4",
-    "@babel/plugin-proposal-export-namespace-from": "^7.10.4",
-    "@babel/plugin-proposal-function-sent": "^7.10.4",
-    "@babel/plugin-proposal-logical-assignment-operators": "^7.11.0",
-    "@babel/plugin-proposal-pipeline-operator": "^7.10.5",
-    "@babel/plugin-proposal-throw-expressions": "^7.10.4",
-    "@babel/plugin-syntax-export-default-from": "^7.10.4",
+    "@babel/cli": "^7.13.16",
+    "@babel/core": "^7.14.2",
+    "@babel/plugin-external-helpers": "^7.12.13",
+    "@babel/plugin-proposal-class-properties": "^7.13.0",
+    "@babel/plugin-proposal-export-default-from": "^7.12.13",
+    "@babel/plugin-proposal-export-namespace-from": "^7.14.2",
+    "@babel/plugin-syntax-dynamic-import": "^7.8.3",
     "@babel/plugin-syntax-import-meta": "^7.10.4",
+    "@babel/plugin-transform-object-assign": "^7.12.13",
+    "@babel/preset-env": "^7.14.2",
+    "@babel/preset-react": "^7.13.13",
     "@fontsource/open-sans": "^4.4.5",
     "@fontsource/tajawal": "^4.4.5",
     "@popperjs/core": "^2.4.4",
@@ -155,10 +158,11 @@
     "add": "^2.0.6",
     "all-contributors-cli": "^6.17.0",
     "autoprefixer": "^9.8.6",
-    "babel-eslint": "^10.1.0",
-    "babel-loader": "^8.1.0",
+    "babel-loader": "^8.2.2",
     "babel-plugin-dev-expression": "^0.2.2",
-    "browserslist-config-carbon": "^10.4.0",
+    "babel-plugin-react-docgen": "^4.2.1",
+    "babel-plugin-transform-inline-environment-variables": "^0.4.3",
+    "browserslist-config-carbon": "^10.6.1",
     "classnames": "2.2.6",
     "clean-webpack-plugin": "^3.0.0",
     "core-js": "^3.6.5",
@@ -226,7 +230,7 @@
     "rimraf": "^3.0.2",
     "rollup": "^2.23.0",
     "rollup-plugin-analyzer": "^4.0.0",
-    "rollup-plugin-babel": "^4.4.0",
+    "@rollup/plugin-babel": "^5.3.0",
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-replace": "^2.2.0",
@@ -259,30 +263,9 @@
       "dev-expression",
       "@babel/plugin-syntax-dynamic-import",
       "@babel/plugin-syntax-import-meta",
-      "@babel/plugin-syntax-export-default-from",
       "@babel/plugin-proposal-class-properties",
-      "@babel/plugin-proposal-json-strings",
-      [
-        "@babel/plugin-proposal-decorators",
-        {
-          "legacy": true
-        }
-      ],
-      "@babel/plugin-proposal-function-sent",
       "@babel/plugin-proposal-export-namespace-from",
-      "@babel/plugin-proposal-numeric-separator",
-      "@babel/plugin-proposal-throw-expressions",
-      "@babel/plugin-proposal-export-default-from",
-      "@babel/plugin-proposal-logical-assignment-operators",
-      "@babel/plugin-proposal-optional-chaining",
-      [
-        "@babel/plugin-proposal-pipeline-operator",
-        {
-          "proposal": "minimal"
-        }
-      ],
-      "@babel/plugin-proposal-nullish-coalescing-operator",
-      "@babel/plugin-proposal-do-expressions"
+      "@babel/plugin-proposal-export-default-from"
     ]
   },
   "prettier": {

@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import Icon from '../Icon';
 import classNames from 'classnames';
 import settings from '../../globals/js/settings';
-import styles from './button.module.scss';
+
 const { prefix } = settings;
 
 /**

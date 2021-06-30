@@ -9,6 +9,7 @@ assets
 !src/assets
 css
 dist
+build
 
 # Logs
 *.log

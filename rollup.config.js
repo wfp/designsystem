@@ -1,20 +1,12 @@
-/**
- * Copyright IBM Corp. 2016, 2018
- *
- * This source code is licensed under the Apache-2.0 license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
 ('use strict');
 
-const babel = require('rollup-plugin-babel');
-const commonjs = require('rollup-plugin-commonjs');
-const resolve = require('rollup-plugin-node-resolve');
-const replace = require('rollup-plugin-replace');
+const { babel } = require('@rollup/plugin-babel');
+const commonjs = require('@rollup/plugin-commonjs');
+const { nodeResolve } = require('@rollup/plugin-node-resolve');
+const replace = require('@rollup/plugin-replace');
 const stripBanner = require('rollup-plugin-strip-banner');
 const { terser } = require('rollup-plugin-terser');
 const packageJson = require('./package.json');
-const { visualizer } = require('rollup-plugin-visualizer');
 
 const baseConfig = {
   input: './src/index.js',
@@ -24,27 +16,9 @@ const baseConfig = {
     'prop-types',
   ],
   plugins: [
-    resolve(),
+    nodeResolve(),
     commonjs({
       include: /node_modules/,
-      namedExports: {
-        'react/index.js': [
-          'Children',
-          'Component',
-          'PureComponent',
-          'Fragment',
-          'PropTypes',
-          'createElement',
-          'cloneElement',
-          'useCallback',
-          'useEffect',
-          'useState',
-          'useReducer',
-          'useRef',
-        ],
-        'react-dom/index.js': ['render'],
-        'react-is/index.js': ['isForwardRef'],
-      },
     }),
     babel({
       babelrc: false,
@@ -69,10 +43,9 @@ const baseConfig = {
         '@babel/plugin-proposal-export-namespace-from',
         '@babel/plugin-proposal-export-default-from',
       ],
+      babelHelpers: 'bundled',
     }),
     stripBanner(),
-    //analyze(),
-    visualizer(),
   ],
 };
 
@@ -107,7 +80,7 @@ module.exports = [
   // Generates the following bundles:
   // ESM:       es/index.js
   // CommonJS: lib/index.js
-  {
+  /*{
     ...baseConfig,
     output: [
       {
@@ -119,7 +92,7 @@ module.exports = [
         file: 'lib/index.js',
       },
     ],
-  },
+  },*/
 
   // Generate the development UMD bundle:
   // UMD: umd/carbon-components-react.js
