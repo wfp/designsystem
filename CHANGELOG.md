@@ -1,3 +1,10 @@
+# [1.20.0-alpha.1](https://github.com/wfp/ui/compare/v1.19.0...v1.20.0-alpha.1) (2021-06-30)
+
+
+### Features
+
+* **twig:** trigger feature commit for semantic-release ([70647f9](https://github.com/wfp/ui/commit/70647f9decccaeb74338a37198c1c501922055e1))
+
 # [1.19.0](https://github.com/wfp/ui/compare/v1.18.2...v1.19.0) (2021-06-02)
 
 
