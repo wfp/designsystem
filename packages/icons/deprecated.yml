@@ -1,0 +1,3 @@
+deprecated:
+  - name: workspace
+    reason: The app switcher icon has been replaced by switcher

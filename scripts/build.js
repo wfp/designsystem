@@ -18,9 +18,12 @@ const exec = (command, extraEnv) =>
     env: Object.assign({}, process.env, extraEnv),
   });
 
-const ignoreGlobs = ['**/__tests__/*', '**/*-test.js', '**/*-story.js'].join(
-  ','
-);
+const ignoreGlobs = [
+  '**/__tests__/*',
+  '**/*-test.js',
+  '**/*-story.js',
+  '**/*.stories.js',
+].join(',');
 
 try {
   exec(`${babelPath} src --quiet -d es --ignore "${ignoreGlobs}"`, {

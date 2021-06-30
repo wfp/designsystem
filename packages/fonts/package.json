@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build:copyassets-tajawal": "cp -R ./node_modules/@fontsource/tajawal/files ./dist/tajawal",
-    "build:copyassets-open-sans": "cp -R ./node_modules/@fontsource/open-sans/files ./dist/open-sans",
+    "build:copyassets-tajawal": "cp -R ../../node_modules/@fontsource/tajawal/files ./dist/tajawal",
+    "build:copyassets-open-sans": "cp -R ../../node_modules/@fontsource/open-sans/files ./dist/open-sans",
     "build": "mkdir -p ./dist && npm run build:copyassets-tajawal &&  npm run build:copyassets-open-sans ",
     "semantic-release": "semantic-release"
   },

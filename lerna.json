@@ -1,0 +1,24 @@
+{
+  "version": "independent",
+  "npmClient": "yarn",
+  "npmClientArgs": [
+    "--frozen-lockfile"
+  ],
+  "useWorkspaces": true,
+  "ignoreChanges": [
+    "actions/**",
+    "codemods/**",
+    "**/__fixtures__/**",
+    "**/__tests__/**",
+    "**/docs/**",
+    "**/e2e/**",
+    "**/examples/**",
+    "**/*.md"
+  ],
+  "packages": [
+    "actions/*",
+    "codemods",
+    "config/*",
+    "packages/*"
+  ]
+}

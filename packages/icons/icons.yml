@@ -1,0 +1,26 @@
+- name: workspace
+  friendly_name: Workspace
+  aliases:
+    - Watson
+    - IBM Watson
+    - Watson Health
+    - 3D cursor
+    - cursor
+    - health
+    - cube
+    - 3D cube
+  sizes:
+    - 32
+- name: arrows
+  friendly_name: arrows
+  aliases:
+    - Watson
+    - IBM Watson
+    - Watson Health
+    - 3D cursor
+    - cursor
+    - health
+    - cube
+    - 3D cube
+  sizes:
+    - glyph

@@ -1,0 +1,7 @@
+categories:
+  - name: Actions
+    subcategories:
+      - name: Controls
+        members:
+          - workspace
+          - arrows

@@ -7,9 +7,17 @@
   "module": "es/index.js",
   "main:scss": "source/globals/styles.scss",
   "sideEffects": false,
+  "private": true,
+  "workspaces": [
+    "actions/*",
+    "codemods",
+    "config/*",
+    "packages/*"
+  ],
   "scripts": {
-    "build": "npm run build:rollup && npm run build:script && npm run build:css && npm run build:cssmin && mkdir -p ./assets/fonts && npm run build:copyassets-tajawal &&  npm run build:copyassets-open-sans ",
+    "build:legacy": "npm run build:rollup && npm run build:script && npm run build:css && npm run build:cssmin && mkdir -p ./assets/fonts && npm run build:copyassets-tajawal &&  npm run build:copyassets-open-sans ",
     "build:rollup": "rollup -c",
+    "build-lerna": "lerna run build --stream --prefix --npm-client yarn",
     "build:script": "node scripts/build.js",
     "build:copyassets-tajawal": "cp -R ./node_modules/@fontsource/tajawal/files ./assets/fonts/tajawal",
     "build:copyassets-open-sans": "cp -R ./node_modules/@fontsource/open-sans/files ./assets/fonts/open-sans",
@@ -113,6 +121,7 @@
   "dependencies": {
     "@carbon/import-once": "^10.5.0",
     "invariant": "^2.2.4",
+    "lerna": "^4.0.0",
     "npm-which": "^3.0.1",
     "react-popper-tooltip": "^4.1.0",
     "warning": "^4.0.3",
@@ -154,7 +163,7 @@
     "@tippy.js/react": "^3.1.1",
     "@typescript-eslint/eslint-plugin": "^4.9.0",
     "@typescript-eslint/parser": "^3.8.0",
-    "@wfp/icons": "0.0.84",
+    "@wfp/icons": "^10.34.0",
     "add": "^2.0.6",
     "all-contributors-cli": "^6.17.0",
     "autoprefixer": "^9.8.6",
