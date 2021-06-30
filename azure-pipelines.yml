@@ -6,7 +6,7 @@ trigger:
   - alpha/*
 
 jobs:
-- job: SemanticRelease
+- job: UI-Kit build and deploy
   pool:
     vmImage: 'ubuntu-latest'
 
