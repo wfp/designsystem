@@ -7,8 +7,8 @@
 
 'use strict';
 
-const { builders } = require('@carbon/icon-build-helpers');
-const metadata = require('@carbon/icons/metadata.json');
+const { builders } = require('@wfp/icon-build-helpers');
+const metadata = require('@wfp/icons/metadata.json');
 
 async function build() {
   await builders.react.run(metadata, {

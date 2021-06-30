@@ -41,7 +41,7 @@
     "svgson": "^5.2.1"
   },
   "devDependencies": {
-    "@wfp/cli": "^10.25.0",
+    "@carbon/cli": "^10.25.0",
     "@wfp/icon-build-helpers": "^0.23.0",
     "rimraf": "^3.0.2"
   }
