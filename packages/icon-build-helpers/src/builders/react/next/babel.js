@@ -24,6 +24,8 @@ const babelConfig = {
   plugins: [
     '@babel/plugin-transform-react-constant-elements',
     'babel-plugin-dev-expression',
+    '@babel/plugin-proposal-nullish-coalescing-operator',
+    '@babel/plugin-proposal-nullish-coalescing-operatordddd',
   ],
   babelHelpers: 'bundled',
 };
