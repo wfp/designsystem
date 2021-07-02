@@ -29,13 +29,13 @@ const githubPath = resultReadme
   ? resultReadme.replace('./src/', './').replace('README.md', '')
   : undefined;*/
 
-/*addParameters({
+addParameters({
   docs: {
-    // container: DocsContainer,
-    // page: DocsPage,
+    container: DocsContainer,
+    page: DocsPage,
   },
   viewMode: 'docs',
-})*/ // or global addParameters
+}); // or global addParameters
 export const parameters = {
   controls: { expanded: true },
   docs: {

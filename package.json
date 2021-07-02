@@ -98,7 +98,7 @@
     "@babel/preset-env": "^7.14.2",
     "@babel/preset-react": "^7.13.13",
     "@babel/runtime": "^7.14.0",
-    "@carbon/cli": "workspace:packages/cli",
+    "@carbon/cli": "10.25.0",
     "@commitlint/cli": "^8.3.5",
     "@commitlint/config-conventional": "^8.3.4",
     "@percy/cli": "^1.0.0-beta.48",

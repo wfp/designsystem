@@ -74,9 +74,9 @@ module.exports = async ({ config, mode }) => {
       {
         loader: 'fast-sass-loader',
         options: {
-          includePaths: ['node_modules', '../../node_modules'],
+          includePaths: ['node_modules'],
           sassOptions: {
-            includePaths: ['node_modules', '../../node_modules'],
+            includePaths: ['node_modules'],
           },
           implementation: require('sass'),
         },
