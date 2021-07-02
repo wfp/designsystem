@@ -128,7 +128,7 @@ async function builder(metadata, { output }) {
 
   const bundle = await rollup({
     input,
-    external: ['@carbon/icon-helpers', 'react', 'prop-types'],
+    external: ['@wfp/icon-helpers', 'react', 'prop-types'],
     plugins: [
       // We use a "virtual" plugin to pass all of our components that we
       // created from our metadata to rollup instead of rollup trying to read
@@ -301,7 +301,7 @@ function createIconSource(moduleName, sizes, preamble = []) {
   const ifStatements = sizeVariants.filter(({ size }) => {
     return size !== maxSize;
   });
-  console.log('wwwwwweeee');
+
   // The "default" icon that will be rendered, based on the max size
   const returnStatement =
     sizeVariants.find(({ size }) => {
