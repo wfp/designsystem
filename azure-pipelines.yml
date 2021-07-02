@@ -37,7 +37,7 @@ jobs:
       displayName: 'yarn install'
 
     - script: |
-        npm run build
+        yarn build:lerna
       displayName: 'yarn build:lerna'
 
     - script: >
