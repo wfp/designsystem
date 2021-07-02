@@ -38,7 +38,7 @@ jobs:
 
     - script: |
         npm run build
-      displayName: 'npm run build:lerna'
+      displayName: 'yarn build:lerna'
 
     - script: >
         npx -p semantic-release --dryRun

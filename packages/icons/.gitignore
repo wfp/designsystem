@@ -6,3 +6,6 @@ metadata.json
 
 # Generated files from src/svg
 /svg
+
+es
+lib
