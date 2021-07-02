@@ -301,7 +301,7 @@ function createIconSource(moduleName, sizes, preamble = []) {
   const ifStatements = sizeVariants.filter(({ size }) => {
     return size !== maxSize;
   });
-
+  console.log('wwwwwweeee');
   // The "default" icon that will be rendered, based on the max size
   const returnStatement =
     sizeVariants.find(({ size }) => {
