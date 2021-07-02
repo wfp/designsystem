@@ -15,7 +15,7 @@
     "packages/*"
   ],
   "scripts": {
-    "build-lerna": "lerna run build --stream --prefix --npm-client yarn",
+    "build:lerna": "lerna run build --stream --prefix --npm-client yarn",
     "test": "jest"
   },
   "sass": {
