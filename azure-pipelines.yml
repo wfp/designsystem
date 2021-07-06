@@ -4,6 +4,7 @@ trigger:
   - hotfix/*
   - bugfix/*
   - alpha/*
+  - feat/performance-optimization
 
 jobs:
 - job: SemanticRelease
@@ -17,7 +18,7 @@ jobs:
   steps:
     - task: NodeTool@0
       inputs:
-        versionSpec: '10.x'
+        versionSpec: '14.x'
       displayName: 'Install Node.js'
 
 #    - task: Cache@2
@@ -31,9 +32,13 @@ jobs:
 
     - script: |
         mkdir -p $(NPM_CACHE_FOLDER)
-        npm -v
-        npm install
-      displayName: 'npm install'
+        yarn -v
+        yarn install
+      displayName: 'yarn install'
+
+    - script: |
+        yarn build:lerna
+      displayName: 'yarn build:lerna'
 
     - script: >
         npx -p semantic-release --dryRun
@@ -50,7 +55,7 @@ jobs:
 
     - script: |
         npm run build
-      displayName: 'npm run build'
+      displayName: 'npm run build:lerna'
 
     - script: >
         npx -p semantic-release

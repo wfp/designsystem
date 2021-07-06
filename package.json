@@ -3,10 +3,6 @@
   "version": "1.18.2",
   "description": "WFP UI Kit",
   "license": "Apache-2",
-  "main": "lib/index.js",
-  "module": "es/index.js",
-  "main:scss": "source/globals/styles.scss",
-  "sideEffects": false,
   "private": true,
   "workspaces": [
     "actions/*",
@@ -15,13 +11,8 @@
     "packages/*"
   ],
   "scripts": {
-    "build-lerna": "lerna run build --stream --prefix --npm-client yarn",
+    "build:lerna": "lerna run build --stream --prefix --npm-client yarn",
     "test": "jest"
-  },
-  "sass": {
-    "includePaths": [
-      "./node_modules"
-    ]
   },
   "keywords": [
     "WFP",
@@ -89,7 +80,15 @@
       }
     }
   },
-  "dependencies": {
+  "resolutions": {
+    "ast-types": "^0.14.0",
+    "node-sass": "^6.0.0",
+    "react": "~16.9.0",
+    "react-dom": "~16.9.0",
+    "react-is": "~16.9.0",
+    "react-test-renderer": "~16.9.0"
+  },
+  "devDependencies": {
     "@babel/core": "^7.14.2",
     "@babel/plugin-proposal-class-properties": "^7.13.0",
     "@babel/plugin-proposal-export-default-from": "^7.12.13",
