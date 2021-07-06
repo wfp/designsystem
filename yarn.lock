@@ -1140,7 +1140,7 @@
   dependencies:
     chalk "^4.1.1"
 
-"@carbon/cli@^10.25.0", "@carbon/cli@workspace:packages/cli":
+"@carbon/cli@10.25.0", "@carbon/cli@^10.25.0":
   version "10.25.0"
   resolved "https://registry.yarnpkg.com/@carbon/cli/-/cli-10.25.0.tgz#569a671a08958ddf4bcf943a282e2881a4002bd1"
   integrity sha512-llqZVKk4rvhC9bwUxGAIvGA3ShBkJuAs3Fdc1j+E8CsostZCT5WnR/GAGYejHv2SXtr5rsI3Zt1k4K68QlaQww==
