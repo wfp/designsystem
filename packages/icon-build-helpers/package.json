@@ -2,7 +2,7 @@
   "name": "@wfp/icon-build-helpers",
   "private": true,
   "description": "Build helpers for the Carbon Design System icon library",
-  "version": "0.23.1",
+  "version": "0.23.2",
   "license": "Apache-2.0",
   "main": "src/index.js",
   "repository": {
@@ -32,7 +32,7 @@
     "@carbon/icon-helpers": "^10.19.0",
     "@rollup/plugin-babel": "^5.3.0",
     "@rollup/plugin-replace": "^2.4.2",
-    "browserslist-config-carbon": "^10.6.2",
+    "browserslist-config-carbon": "^10.6.3",
     "change-case": "^4.1.1",
     "core-js": "^3.6.5",
     "fs-extra": "^8.1.0",
