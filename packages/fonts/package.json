@@ -26,5 +26,6 @@
     "semantic-release-ado": "^1.2.2",
     "semantic-release-monorepo": "^7.0.5",
     "svgo": "^2.3.0"
-  }
+  },
+  "gitHead": "6c46980c68ce47f3d5271024398d2537512d05ac"
 }

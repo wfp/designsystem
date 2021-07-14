@@ -353,5 +353,6 @@
       "enzyme-to-json/serializer"
     ]
   },
-  "bundleSizeThreshold": 80000
+  "bundleSizeThreshold": 80000,
+  "gitHead": "6c46980c68ce47f3d5271024398d2537512d05ac"
 }
