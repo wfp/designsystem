@@ -1,6 +1,6 @@
 {
   "name": "@wfp/logos",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Logos of the World Food Programme",
   "main": "index.js",
   "scripts": {
