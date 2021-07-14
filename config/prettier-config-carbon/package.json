@@ -1,7 +1,7 @@
 {
   "name": "prettier-config-carbon",
   "description": "Prettier config for the Carbon Design System",
-  "version": "0.6.2",
+  "version": "0.6.3",
   "license": "Apache-2.0",
   "main": "index.js",
   "repository": {
