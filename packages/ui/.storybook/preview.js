@@ -1,29 +1,20 @@
+import React, { FC } from 'react';
 import { addParameters } from '@storybook/react';
+import './styles.scss';
 import theme from './theme';
 
 import {
-  //DocsPage,
   Title,
-  //Subtitle,
-  //Description,
   Primary,
   Props,
   Stories,
   types,
-  //DocsContainer,
 } from '@storybook/addon-docs/blocks';
 
 import { DocsPage } from './blocks/DocsPage';
-import { DocsContainer } from './blocks/DocsContainer'; /*
-import { Subtitle } from './blocks/Subtitle';
-import Description from './blocks/Description'; /*/
+import { DocsContainer } from './blocks/DocsContainer';
 
-import React, { FC } from 'react';
-
-import results from '../.jest-test-results.json';
-
-import './storybook.scss';
-
+//console.log(ccc);
 /*
 const githubPath = resultReadme
   ? resultReadme.replace('./src/', './').replace('README.md', '')
@@ -78,7 +69,6 @@ export const globalTypes = {
     defaultValue: 'light',
     toolbar: {
       icon: 'circlehollow',
-      // array of plain string values or MenuItem shape (see below)
       items: ['light', 'dark'],
     },
   },
@@ -95,14 +85,6 @@ export const globalTypes = {
     },
   },
 };
-
-/*
-
-addDecorator(
-  withTests({
-    results,
-  })
-);*/
 
 const withThemeProvider = (Story, context) => {
   const { locale, theme } = context.globals;

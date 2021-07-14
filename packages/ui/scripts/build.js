@@ -1,16 +1,17 @@
 'use strict';
 
 const { execSync } = require('child_process');
-//const { inInstall } = require('in-publish');
+const { inInstall } = require('in-publish');
 const fs = require('fs');
 const mapValues = require('lodash/mapValues');
 const which = require('npm-which')(__dirname);
 
-/*if (inInstall()) {
+if (inInstall()) {
   process.exit(0);
-}*/
+}
 
 const babelPath = which.sync('babel');
+console.log('babelPath', babelPath);
 
 const exec = (command, extraEnv) =>
   execSync(command, {

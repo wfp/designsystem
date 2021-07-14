@@ -11,7 +11,7 @@
     "packages/*"
   ],
   "scripts": {
-    "build:lerna": "lerna run build --stream --prefix --npm-client yarn",
+    "build": "lerna run build --stream --prefix --npm-client yarn",
     "test": "jest"
   },
   "keywords": [
@@ -113,9 +113,10 @@
     "fs-extra": "^8.1.0",
     "glob": "^7.1.4",
     "husky": "^4.0.10",
+    "in-publish": "^2.0.0",
     "jest": "^27.0.5",
     "jest-junit": "^10.0.0",
-    "lerna": "^3.20.2",
+    "lerna": "^3.22.1",
     "lint-staged": "^9.5.0",
     "node-gyp": "^7.1.2",
     "prettier": "^2.2.1",

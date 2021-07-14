@@ -1,20 +1,10 @@
-/*@use "sass:math";
-
-@import '../src/globals/scss/colors';
-@import '../src/globals/scss/vars';
-@import '../src/globals/scss/layout';
-@import '../src/globals/scss/typography';
-@import '../src/globals/scss/helper-mixins';
-@import '@carbon/import-once/scss/import-once';
-@import '../src/globals/scss/css--reset';
-@import '../src/globals/scss/text-gradient';
-@import '../src/components/Story/_story';
-@import '../src/components/Link/_link';*/
-
 $css--body: true;
 $css--reset: true;
 @import '../src/globals/scss/styles.scss';
 
+body {
+  background: green;
+}
 .sb-show-main,
 .sbdocs,
 .sbdocs {
@@ -33,20 +23,11 @@ $css--reset: true;
       overflow: visible !important;
       position: inherit;
       justify-content: flex-end;
-      /*&:first-child {
-        z-index: 1 !important;
-      }
-      &:last-child {
-        z-index: 0 !important;
-      }*/
     }
   }
 }
 
 .sbdocs {
-  //font-weight: 400;
-  //@extend .wfp--story;
-
   .sbdocs-h1,
   .sbdocs-h2,
   .sbdocs-h3,
@@ -65,7 +46,6 @@ $css--reset: true;
     font-size: 1rem;
   }
   .sbdocs-a {
-    //@extend .wfp--link;
     color: var(--interactive-01);
     line-height: inherit;
   }
@@ -90,7 +70,6 @@ $css--reset: true;
       font-size: 1.2rem;
       font-size: 1.5rem;
       font-weight: 200;
-      //font-style: italic;
     }
   }
 
@@ -110,7 +89,6 @@ $css--reset: true;
   }
 
   img {
-    // border: 1px solid #efefef;
     margin: 1rem 0;
     display: block;
   }

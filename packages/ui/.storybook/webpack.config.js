@@ -48,42 +48,28 @@ module.exports = async ({ config, mode }) => {
   });
 
   config.module.rules.push({
-    test: /\.scss$/,
+    test: /\.s[ac]ss$/i,
+    use: ['style-loader', 'css-loader', 'sass-loader'],
+  });
+
+  /*config.module.rules.push({
+    test: /\.s[ac]ss$/i,
     use: [
       'style-loader',
       'css-loader',
       {
-        loader: 'fast-sass-loader',
+        loader: 'sass-loader',
         options: {
-          includePaths: ['node_modules', '../../node_modules'],
+          //includePaths: ['node_modules', '../../node_modules'],
           sassOptions: {
             includePaths: ['node_modules', '../../node_modules'],
           },
-          implementation: require('sass'),
-        },
-      },
-    ],
-    include: path.resolve(__dirname, '../src'),
-  });
-
-  config.module.rules.push({
-    test: /storybook.scss$/,
-    use: [
-      'style-loader',
-      'css-loader',
-      {
-        loader: 'fast-sass-loader',
-        options: {
-          includePaths: ['node_modules'],
-          sassOptions: {
-            includePaths: ['node_modules'],
-          },
-          implementation: require('sass'),
+          //implementation: require('sass'),
         },
       },
     ],
     include: path.resolve(__dirname, '../'),
-  });
+  });*/
 
   return config;
 };

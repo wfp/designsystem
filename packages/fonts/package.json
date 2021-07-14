@@ -13,6 +13,7 @@
   "author": "World Food Programme",
   "license": "ISC",
   "dependencies": {
+    "@babel/core": "^7.14.6",
     "@fontsource/open-sans": "^4.4.5",
     "@fontsource/tajawal": "^4.4.5",
     "@semantic-release/changelog": "^5.0.1",
