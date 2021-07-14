@@ -3,6 +3,11 @@
   "npmClient": "yarn",
   "npmClientArgs": ["--frozen-lockfile"],
   "useWorkspaces": true,
+  "command": {
+    "publish": {
+      "message": "chore(release): publish"
+    }
+  },
   "ignoreChanges": [
     "actions/**",
     "codemods/**",
