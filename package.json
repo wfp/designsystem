@@ -8,7 +8,12 @@
     "actions/*",
     "codemods",
     "config/*",
-    "packages/*"
+    "packages/fonts",
+    "packages/icons-react",
+    "packages/icons",
+    "packages/icon-build-helpers",
+    "packages/logos",
+    "packages/ui"
   ],
   "scripts": {
     "build": "lerna run build --stream --prefix --npm-client yarn",

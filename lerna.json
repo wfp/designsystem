@@ -1,9 +1,7 @@
 {
   "version": "independent",
   "npmClient": "yarn",
-  "npmClientArgs": [
-    "--frozen-lockfile"
-  ],
+  "npmClientArgs": ["--frozen-lockfile"],
   "useWorkspaces": true,
   "ignoreChanges": [
     "actions/**",
@@ -19,6 +17,11 @@
     "actions/*",
     "codemods",
     "config/*",
-    "packages/*"
+    "packages/fonts",
+    "packages/icons-react",
+    "packages/icons",
+    "packages/icon-build-helpers",
+    "packages/logos",
+    "packages/ui"
   ]
 }
