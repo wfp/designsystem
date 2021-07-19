@@ -1,7 +1,7 @@
 {
   "name": "eslint-config-carbon",
   "description": "ESLint configuration for Carbon",
-  "version": "2.6.0",
+  "version": "2.6.4",
   "license": "Apache-2.0",
   "main": "index.js",
   "repository": {
@@ -48,5 +48,6 @@
   },
   "devDependencies": {
     "prettier": "^2.2.1"
-  }
+  },
+  "gitHead": "6c46980c68ce47f3d5271024398d2537512d05ac"
 }

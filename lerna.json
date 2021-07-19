@@ -5,6 +5,11 @@
     "--frozen-lockfile"
   ],
   "useWorkspaces": true,
+  "command": {
+    "publish": {
+      "message": "chore(release): publish"
+    }
+  },
   "ignoreChanges": [
     "actions/**",
     "codemods/**",
@@ -18,7 +23,12 @@
   "packages": [
     "actions/*",
     "codemods",
-    "config/*",
-    "packages/*"
+    "config/babel-preset-carbon",
+    "packages/fonts",
+    "packages/icons-react",
+    "packages/icons",
+    "packages/icon-build-helpers",
+    "packages/logos",
+    "packages/ui"
   ]
 }
