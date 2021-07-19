@@ -1,122 +1,160 @@
-const webpack = require('webpack');
+'use strict';
+
 const path = require('path');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const customProperties = require('postcss-custom-properties');
+const rtlcss = require('rtlcss');
+
+const {
+  CARBON_REACT_STORYBOOK_USE_CUSTOM_PROPERTIES = 'false',
+  CARBON_REACT_STORYBOOK_USE_RTL,
+  CARBON_REACT_STORYBOOK_USE_SASS_LOADER,
+  NODE_ENV = 'development',
+} = process.env;
+
+const useSassLoader = CARBON_REACT_STORYBOOK_USE_SASS_LOADER === 'true';
+const useExternalCss = NODE_ENV === 'production';
+const useRtl = CARBON_REACT_STORYBOOK_USE_RTL === 'true';
 
 module.exports = {
-  /*core: {
-    builder: 'webpack5',
-  },*/
-  stories: ['../src/**/*.stories.(js|mdx)'],
-  addons: [
-    'storybook-addon-designs',
-    '@storybook/addon-docs',
-    '@storybook/addon-toolbars',
-    '@storybook/addon-viewport',
-    /*{
-      name: '@storybook/addon-docs',
-      /*options: {
-        configureJSX: true,
-        babelOptions: {
-          presets: [
-            '@babel/preset-env',
-            '@babel/preset-react',
-            '@babel/preset-typescript',
-          ],
+  addons: ['@storybook/addon-docs', ,],
+  stories: ['../src/**/*.stories.mdx'],
+
+  webpack(config) {
+    const babelLoader = config.module.rules.find((rule) => {
+      return rule.use.some(({ loader }) => {
+        return loader.includes('babel-loader');
+      });
+    });
+
+    // This is a temporary trick to get `babel-loader` to ignore packages that
+    // are brought in that have an es, lib, or umd directory.
+    //
+    // Typically this is covered by /node_modules/ (which is the default), but
+    // in our case it seems like these dependencies are resolving to where their
+    // symlink points to. In other words, `@carbon/icons-react` becomes
+    // `../icons-react/es/index.js`.
+    //
+    // This results in these files being included in `babel-loader` and causing
+    // the build times to increase dramatically
+    babelLoader.exclude = [/node_modules/, /packages\/.*\/(es|lib|umd)/];
+
+    const sassLoader = {
+      loader: require.resolve('sass-loader'),
+      options: {
+        additionalData(content) {
+          return `
+             $feature-flags: (
+               ui-shell: true,
+               enable-css-custom-properties: ${CARBON_REACT_STORYBOOK_USE_CUSTOM_PROPERTIES},
+             );
+             ${content}
+           `;
         },
-        sourceLoaderOptions: null,
+        sassOptions: {
+          implementation: require('sass'),
+          includePaths: [path.resolve(__dirname, '..', 'node_modules')],
+        },
+        sourceMap: true,
       },
-    },*/
-    '@storybook/addon-controls',
-  ],
+    };
 
-  managerWebpack: async (config, options) => {
-    /*config.plugins.push(
-      new webpack.NormalModuleReplacementPlugin(
-        /Tree/,
-        path.resolve(__dirname, 'Tree.tsx')
-      )
-    );*/
-
-    config.plugins.push(
-      new webpack.NormalModuleReplacementPlugin(
-        /StorybookLogo/,
-        path.resolve(__dirname, 'Logo.js')
-      )
-    );
-    return config;
-  },
-
-  /*webpack: async (config, options) => {
-    config.plugins.push(
-      new webpack.NormalModuleReplacementPlugin(
-        /StorybookLogo/,
-        path.resolve(__dirname, 'Logo.js')
-      )
-    );
-    return config;
-  },*/
-
-  /*
-  webpackFinal: async (config, { configType }) => {
-
-    return {
-      ...config,
-      module: {
-        ...config.module,
-        rules: [
-          ...config.module.rules.slice(1),
-
-          {
-            test: /\.(mjs|js?|jsx?|tsx?)$/,
-            use: [
-              {
-                loader: 'babel-loader',
-                options: {
-                  cacheDirectory: `.cache/storybook`,
-                  presets: [
-                    [
-                      '@babel/preset-env',
-                      {
-                        shippedProposals: true,
-                        useBuiltIns: 'usage',
-                        corejs: 3,
-                      },
-                    ],
-                    '@babel/preset-typescript',
-                    configType === 'PRODUCTION' && [
-                      'babel-preset-minify',
-                      { builtIns: false, mangle: false },
-                    ],
-                    '@babel/preset-react',
-                    '@babel/preset-flow',
-                  ].filter(Boolean),
-                  plugins: [
-                    '@babel/plugin-proposal-object-rest-spread',
-                    '@babel/plugin-proposal-class-properties',
-                    '@babel/plugin-syntax-dynamic-import',
-                    [
-                      'babel-plugin-emotion',
-                      { sourceMap: true, autoLabel: true },
-                    ],
-                    'babel-plugin-macros',
-                    'babel-plugin-add-react-displayname',
-                    [
-                      'babel-plugin-react-docgen',
-                      {
-                        DOC_GEN_COLLECTION_NAME: 'STORYBOOK_REACT_CLASSES',
-                        handlers: [
-                          'react-docgen-deprecation-handler',
-                          'react-docgen-external-proptypes-handler'
-                        ],
-                      },
-                    ],
-                  ],
-                },
-              },
-            ],
-            exclude: [/node_modules/, /dist/],
-          },
+    const fastSassLoader = {
+      loader: require.resolve('fast-sass-loader'),
+      options: {
+        data: `
+           $feature-flags: (
+             ui-shell: true,
+             enable-css-custom-properties: ${CARBON_REACT_STORYBOOK_USE_CUSTOM_PROPERTIES},
+           );
+         `,
+        implementation: require('sass'),
+        includePaths: [
+          path.resolve(
+            __dirname,
+            '..',
+            '..',
+            '../',
+            '../../../node_modules',
+            'node_modules'
+          ),
         ],
       },
     };
-  },*/
+
+    console.log(
+      path.resolve(
+        __dirname,
+        '..',
+        '..',
+        '../',
+        '../../../node_modules',
+        'node_modules'
+      )
+    );
+
+    config.module.rules.push({
+      test: /-story\.jsx?$/,
+      loaders: [
+        {
+          loader: require.resolve('@storybook/source-loader'),
+          options: {
+            prettierConfig: {
+              parser: 'babylon',
+              printWidth: 80,
+              tabWidth: 2,
+              bracketSpacing: true,
+              trailingComma: 'es5',
+              singleQuote: true,
+            },
+          },
+        },
+      ],
+      enforce: 'pre',
+    });
+
+    config.module.rules.push({
+      test: /\.scss$/,
+      sideEffects: true,
+      use: [
+        {
+          loader: useExternalCss ? MiniCssExtractPlugin.loader : 'style-loader',
+        },
+        {
+          loader: 'css-loader',
+          options: {
+            importLoaders: 2,
+            sourceMap: true,
+          },
+        },
+        {
+          loader: 'postcss-loader',
+          /*options: {
+            plugins: () => {
+              const autoPrefixer = require('autoprefixer')({
+                overrideBrowserslist: ['last 1 version', 'ie >= 11'],
+              });
+              return [
+                customProperties(),
+                autoPrefixer,
+                ...(useRtl ? [rtlcss] : []),
+              ];
+            },
+            sourceMap: true,
+          },*/
+        },
+        NODE_ENV === 'production' || useSassLoader ? sassLoader : sassLoader, //fastSassLoader,
+      ],
+    });
+
+    if (useExternalCss) {
+      config.plugins.push(
+        new MiniCssExtractPlugin({
+          filename: '[name].[contenthash].css',
+        })
+      );
+    }
+
+    return config;
+  },
 };

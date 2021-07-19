@@ -12,6 +12,7 @@
   ],
   "scripts": {
     "build": "lerna run build --stream --prefix --npm-client yarn",
+    "publish:alpha": "lerna publish --dist-tag alpha",
     "test": "jest"
   },
   "keywords": [

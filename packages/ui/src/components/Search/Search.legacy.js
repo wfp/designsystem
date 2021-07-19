@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import classNames from 'classnames';
 import Icon from '../Icon';
-import { iconSearch, iconCloseGlyph } from '@wfp/icons';
+import { iconSearch, iconCloseGlyph } from '@wfp/icons-react';
 import Input from '../Input/Input';
 
 /** Search enables users to specify a word or a phrase to find particular relevant pieces of content without the use of navigation. Search can be used as the primary means of discovering content, or as a filter to aid the user in finding content. */
@@ -74,7 +74,7 @@ export default class Search extends Component {
   render() {
     const {
       className,
-            closeButtonLabelText,
+      closeButtonLabelText,
       formItemClassName,
       type,
       id = (this._inputId =
@@ -106,45 +106,46 @@ export default class Search extends Component {
       'wfp--search-close': true,
       'wfp--search-close--hidden': !hasContent,
     });
-  /*<div className={searchClasses} role="search">*/
+    /*<div className={searchClasses} role="search">*/
     return (
-    
-
-<Input {...this.props} formItemClassName={searchClasses}>
-      {(e) => {
-        return(
-        <>
-        <Icon
-          icon={iconSearch}
-          description={labelText}
-          className="wfp--search-magnifier"
-          onClick={onSearchIconClick}
-        />
-        {/*<label htmlFor={id} className="wfp--label">
+      <Input {...this.props} formItemClassName={searchClasses}>
+        {(e) => {
+          return (
+            <>
+              <Icon
+                icon={iconSearch}
+                description={labelText}
+                className="wfp--search-magnifier"
+                onClick={onSearchIconClick}
+              />
+              {/*<label htmlFor={id} className="wfp--label">
           {labelText}
       </label>*/}
-        <input
-          {...other}
-          type={type}
-          className="wfp--search-input"
-          id={id}
-          placeholder={placeHolderText}
-          onChange={this.handleChange}
-          ref={(input) => {
-            this.input = input;
-          }}
-        />
-        <button
-          className={clearClasses}
-          onClick={this.clearInput}
-          type="button"
-          aria-label={closeButtonLabelText}>
-          <Icon icon={iconCloseGlyph} description={closeButtonLabelText} />
-        </button>
-        </>
-      );
-      }}
-        </Input>
+              <input
+                {...other}
+                type={type}
+                className="wfp--search-input"
+                id={id}
+                placeholder={placeHolderText}
+                onChange={this.handleChange}
+                ref={(input) => {
+                  this.input = input;
+                }}
+              />
+              <button
+                className={clearClasses}
+                onClick={this.clearInput}
+                type="button"
+                aria-label={closeButtonLabelText}>
+                <Icon
+                  icon={iconCloseGlyph}
+                  description={closeButtonLabelText}
+                />
+              </button>
+            </>
+          );
+        }}
+      </Input>
     );
   }
 }

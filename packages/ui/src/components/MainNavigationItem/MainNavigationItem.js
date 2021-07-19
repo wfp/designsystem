@@ -1,14 +1,13 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import classNames from 'classnames';
-import Icon from '../Icon';
-import { iconClose, iconCaretDown } from '@wfp/icons';
+import { Close16, CaretDown16 } from '@wfp/icons-react';
 import settings from '../../globals/js/settings';
 
 const { prefix } = settings;
 
 class MainNavigationItem extends Component {
-  UNSAFE_componentWillReceiveProps = nextProps => {
+  UNSAFE_componentWillReceiveProps = (nextProps) => {
     if (nextProps.menuItem === nextProps.activeMenuItem) {
       document.addEventListener('mousedown', this.handleClickOutside);
     } else {
@@ -16,11 +15,11 @@ class MainNavigationItem extends Component {
     }
   };
 
-  setWrapperRef = node => {
+  setWrapperRef = (node) => {
     this.wrapperRef = node;
   };
 
-  handleClickOutside = e => {
+  handleClickOutside = (e) => {
     if (this.wrapperRef && !this.wrapperRef.contains(e.target)) {
       this.props.onChangeSub('close');
     }
@@ -46,8 +45,11 @@ class MainNavigationItem extends Component {
     const triggerClasses = classNames({
       [`${prefix}--main-navigation__trigger`]: true,
       [`${prefix}--main-navigation__trigger--has-sub`]: subNavigation,
-      [`${prefix}--main-navigation__trigger--open`]: menuItem === activeMenuItem,
+      [`${prefix}--main-navigation__trigger--open`]:
+        menuItem === activeMenuItem,
     });
+
+    const Icon = menuItem === activeMenuItem ? Close16 : CaretDown16;
 
     const childrenWithProps = subNavigation
       ? React.cloneElement(children, {
@@ -56,13 +58,12 @@ class MainNavigationItem extends Component {
               {children.props.children}
               <Icon
                 className={`${prefix}--main-navigation__trigger__icon`}
-                icon={menuItem === activeMenuItem ? iconClose : iconCaretDown}
                 fill="#FFFFFF"
                 description="expand icon"
               />
             </React.Fragment>
           ),
-          onClick: e => onChangeSub('toggle', menuItem, e),
+          onClick: (e) => onChangeSub('toggle', menuItem, e),
         })
       : children;
 

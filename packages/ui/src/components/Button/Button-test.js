@@ -1,5 +1,5 @@
 import React from 'react';
-import { iconSearch } from '@wfp/icons';
+import { iconSearch } from '@wfp/icons-react';
 import Button from '../Button';
 import ButtonSkeleton from '../Button/Button.Skeleton';
 import { shallow, mount } from 'enzyme';

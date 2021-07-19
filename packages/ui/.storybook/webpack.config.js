@@ -41,7 +41,7 @@ module.exports = async ({ config, mode }) => {
     ],
   });
 
-  /*config.module.rules.push({
+  /*config.module.rules.unshift({
     test: /\.s[ac]ss$/i,
     use: ['style-loader', 'css-loader', 'sass-loader'],
   });*/
@@ -52,13 +52,13 @@ module.exports = async ({ config, mode }) => {
       'style-loader',
       'css-loader',
       {
-        loader: 'sass-loader',
+        loader: 'fast-sass-loader',
         options: {
           //includePaths: ['node_modules', '../../node_modules'],
           sassOptions: {
             includePaths: ['node_modules', '../../node_modules'],
           },
-          //implementation: require('sass'),
+          implementation: require('sass'),
         },
       },
     ],

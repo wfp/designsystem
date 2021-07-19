@@ -3,8 +3,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import classNames from 'classnames';
 import settings from '../../globals/js/settings';
 import Input from '../Input';
-import Icon from '../Icon';
-import { iconSearch, iconCloseGlyph } from '@wfp/icons';
+import { Search16, CloseGlyph16 } from '@wfp/icons-react';
 
 const { prefix } = settings;
 
@@ -88,8 +87,7 @@ function Search(props) {
       {() => {
         return (
           <>
-            <Icon
-              icon={iconSearch}
+            <Search16
               description={labelText}
               className={`${prefix}--search-magnifier`}
               onClick={onSearchIconClick}
@@ -107,7 +105,7 @@ function Search(props) {
               onClick={clearSearch}
               type="button"
               aria-label={closeButtonLabelText}>
-              <Icon icon={iconCloseGlyph} description={closeButtonLabelText} />
+              <CloseGlyph16 description={closeButtonLabelText} />
             </button>
           </>
         );

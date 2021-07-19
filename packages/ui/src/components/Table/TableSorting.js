@@ -2,10 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import Icon from '../Icon';
-import {
-  iconCaretDown,
-  iconCaretUp,
-} from '@wfp/icons';
+import { CaretDown16, CaretUp16 } from '@wfp/icons-react';
 
 export default function TableSorting({
   className,
@@ -20,15 +17,7 @@ export default function TableSorting({
   });
   return (
     <span className={classes}>
-      {isSorted ? (
-        isSortedDesc ? (
-          <Icon icon={iconCaretDown} />
-        ) : (
-          <Icon icon={iconCaretUp} />
-        )
-      ) : (
-        ''
-      )}
+      {isSorted ? isSortedDesc ? <CaretDown16 /> : <CaretUp16 /> : ''}
     </span>
   );
 }

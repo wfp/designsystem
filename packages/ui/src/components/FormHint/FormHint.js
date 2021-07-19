@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import { iconInfoSolid } from '@wfp/icons';
-import Icon from '../Icon';
+import { InfoSolid16 } from '@wfp/icons-react';
 import classNames from 'classnames';
 import settings from '../../globals/js/settings';
 import Tooltip from '../Tooltip/Tooltip';
@@ -15,12 +14,7 @@ const FormHint = ({ className, children, description, icon, ...other }) => {
   return (
     <Tooltip content={children}>
       <div className={formHintClasses}>
-        <Icon
-          icon={iconInfoSolid}
-          width="15"
-          height="15"
-          description={children}
-        />
+        <InfoSolid16 width="15" height="15" description={children} />
       </div>
     </Tooltip>
   );
@@ -44,7 +38,7 @@ FormHint.propTypes = {
 };
 
 FormHint.defaultProps = {
-  icon: iconInfoSolid,
+  icon: InfoSolid16,
 };
 
 export default FormHint;

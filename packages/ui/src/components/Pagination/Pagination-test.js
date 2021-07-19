@@ -1,5 +1,5 @@
 import React from 'react';
-import { iconChevronLeft, iconChevronRight } from '@wfp/icons';
+import { iconChevronLeft, iconChevronRight } from '@wfp/icons-react';
 import Icon from '../Icon';
 import Pagination from '../Pagination';
 import Select from '../Select';

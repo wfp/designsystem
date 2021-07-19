@@ -10,18 +10,12 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import settings from '../../globals/js/settings';
-/* import {
-  Close16,
-  WarningFilled16,
-  CheckmarkFilled16,
-} from '@carbon/icons-react'; */
 
 import {
-  iconCheckmarkGlyph,
-  iconCloseGlyph,
-  iconWarningGlyph,
-} from '@wfp/icons';
-import Icon from '../Icon';
+  CheckmarkGlyph16,
+  CloseGlyph16,
+  WarningGlyph16,
+} from '@wfp/icons-react';
 import Loading from '../Loading';
 import uid from '../../tools/uniqueId';
 import { ButtonTypes } from '../../prop-types/types';

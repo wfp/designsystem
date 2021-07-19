@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
 import Button from '../Button';
-import { iconArrowLeft, iconArrowRight } from '@wfp/icons';
+import { ArrowLeft16, ArrowRight16 } from '@wfp/icons-react';
 import settings from '../../globals/js/settings';
 const { prefix } = settings;
 
@@ -31,9 +31,9 @@ export default class FormControls extends React.Component {
   };
 
   static defaultProps = {
-    nextIcon: iconArrowRight,
+    nextIcon: ArrowRight16,
     nextText: 'Next',
-    previousIcon: iconArrowLeft,
+    previousIcon: ArrowLeft16,
     previousText: 'Previous',
     submitText: 'Submit',
   };
@@ -58,7 +58,10 @@ export default class FormControls extends React.Component {
       submitText,
     } = this.props;
 
-    const formControlsClasses = classNames(`${prefix}--form-controls`, className);
+    const formControlsClasses = classNames(
+      `${prefix}--form-controls`,
+      className
+    );
 
     return (
       <div className={formControlsClasses}>

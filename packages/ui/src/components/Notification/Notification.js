@@ -3,17 +3,14 @@ import React, { useState, useEffect } from 'react';
 import classnames from 'classnames';
 import settings from '../../globals/js/settings';
 import {
-  iconClose,
-  iconError,
-  iconCheckmarkGlyph,
-  iconWarningSolid,
-  //WarningAltFilled20,
-  iconInfoGlyph,
-  //InformationSquareFilled20,
-} from '@wfp/icons';
+  Close16,
+  Error16,
+  CheckmarkGlyph16,
+  WarningSolid16,
+  InfoGlyph16,
+} from '@wfp/icons-react';
 
 import Button from '../Button';
-import Icon from '../Icon';
 
 const { prefix } = settings;
 
@@ -69,11 +66,15 @@ export function NotificationButton({
   ...other
 }) {
   const buttonClassName = classnames(className, {
-    [`${prefix}--${notificationType}-notification__close-button`]: notificationType,
+    [`${prefix}--${notificationType}-notification__close-button`]:
+      notificationType,
   });
   const iconClassName = classnames({
-    [`${prefix}--${notificationType}-notification__close-icon`]: notificationType,
+    [`${prefix}--${notificationType}-notification__close-icon`]:
+      notificationType,
   });
+
+  const Icon = renderIcon;
 
   return (
     // eslint-disable-next-line react/button-has-type
@@ -84,12 +85,7 @@ export function NotificationButton({
       title={iconDescription}
       className={buttonClassName}>
       {renderIcon && (
-        <Icon
-          icon={renderIcon}
-          aria-label={ariaLabel}
-          className={iconClassName}
-          name={name}
-        />
+        <Icon aria-label={ariaLabel} className={iconClassName} name={name} />
       )}
     </button>
   );
@@ -139,7 +135,7 @@ NotificationButton.defaultProps = {
   notificationType: 'toast',
   type: 'button',
   iconDescription: 'close icon',
-  renderIcon: iconClose,
+  renderIcon: Close16,
 };
 
 export function NotificationTextDetails({
@@ -210,12 +206,10 @@ NotificationTextDetails.defaultProps = {
 };
 
 const iconTypes = {
-  error: iconError,
-  success: iconCheckmarkGlyph,
-  warning: iconWarningSolid,
-  //['warning-alt']: WarningAltFilled20,
-  info: iconInfoGlyph,
-  //['info-square']: InformationSquareFilled20,
+  error: Error16,
+  success: CheckmarkGlyph16,
+  warning: WarningSolid16,
+  info: InfoGlyph16,
 };
 
 function NotificationIcon({ iconDescription, kind, notificationType }) {

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Icon from '../Icon';
 import classNames from 'classnames';
-import { iconChevronLeft } from '@wfp/icons';
+import { ChevronLeft16 } from '@wfp/icons-react';
 import settings from '../../globals/js/settings';
 const { prefix } = settings;
 
@@ -144,7 +144,7 @@ SidebarScroll.propTypes = {
 export function SidebarBackButton({ children, ...other }) {
   return (
     <div className={`${prefix}--sidebar-content__back-button`} {...other}>
-      <Icon icon={iconChevronLeft} />
+      <ChevronLeft16 />
       {children}
     </div>
   );

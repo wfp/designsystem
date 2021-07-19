@@ -1,30 +1,29 @@
 import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-import Icon from '../Icon';
 import settings from '../../globals/js/settings';
 
 const { prefix } = settings;
 
 import {
-  iconCheckmark,
-  iconWarning,
-  iconWarningSolid,
-  iconInfoSolid,
-} from '@wfp/icons';
+  Checkmark16,
+  Warning16,
+  WarningSolid16,
+  InfoSolid16,
+} from '@wfp/icons-react';
 
 const iconLookup = {
   warning: {
-    icon: iconWarning,
+    icon: Warning16,
   },
   error: {
-    icon: iconWarningSolid,
+    icon: WarningSolid16,
   },
   info: {
-    icon: iconInfoSolid,
+    icon: InfoSolid16,
   },
   success: {
-    icon: iconCheckmark,
+    icon: Checkmark16,
   },
 };
 
@@ -81,9 +80,12 @@ class Blockquote extends React.Component {
       [`${className}`]: className,
     });
 
-    const blockquoteContentClass = classNames(`${prefix}--blockquote__content`, {
-      [`${className}`]: contentClassName,
-    });
+    const blockquoteContentClass = classNames(
+      `${prefix}--blockquote__content`,
+      {
+        [`${className}`]: contentClassName,
+      }
+    );
 
     // @deprecated Only kind is allowed
     const lookup =
@@ -95,13 +97,15 @@ class Blockquote extends React.Component {
         ? iconLookup['success']
         : iconLookup['info'];
 
+    const Icon = lookup.icon;
+
     const iconElement = React.isValidElement(icon) ? (
-      <div className={`${prefix}--blockquote__icon ${prefix}--blockquote__icon--custom`}>
+      <div
+        className={`${prefix}--blockquote__icon ${prefix}--blockquote__icon--custom`}>
         {icon}
       </div>
     ) : withIcon || icon ? (
       <Icon
-        icon={icon ? icon : lookup.icon}
         width={48}
         height={48}
         description="Blockquote Icon"
@@ -112,7 +116,9 @@ class Blockquote extends React.Component {
     return (
       <div className={blockquoteClass}>
         {iconElement && (
-          <div className={`${prefix}--blockquote__icon-wrapper`}>{iconElement}</div>
+          <div className={`${prefix}--blockquote__icon-wrapper`}>
+            {iconElement}
+          </div>
         )}
         <div className={blockquoteContentClass} style={style}>
           {(title || toggleable) && (

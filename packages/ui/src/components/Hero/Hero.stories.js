@@ -4,9 +4,8 @@ import markdown from './README.mdx';
 
 import Hero from '.';
 import Button from '../Button';
-import Icon from '../Icon';
-import { iconWfpHumEmergencyResponsePos } from '@wfp/icons';
-import heroTwig from './Hero.twig'
+import { WfpHumEmergencyResponsePos16 } from '@wfp/icons-react';
+import heroTwig from './Hero.twig';
 
 export default {
   title: 'Components/Content Related/Hero',
@@ -15,11 +14,9 @@ export default {
     componentSubtitle: 'Component',
     status: 'released',
     mdx: markdown,
-    twig: heroTwig
+    twig: heroTwig,
   },
 };
-
-
 
 export const Regular = (args) => <Hero {...args} />;
 
@@ -210,8 +207,7 @@ Emergencies.args = {
   ...Regular.args,
   title: (
     <>
-      <Icon
-        icon={iconWfpHumEmergencyResponsePos}
+      <WfpHumEmergencyResponsePos16
         fill="#FFF"
         style={{ marginRight: '1rem' }}
       />

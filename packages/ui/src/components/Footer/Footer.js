@@ -5,7 +5,10 @@ import Link from '../Link';
 import Wrapper from '../Wrapper';
 import Icon from '../Icon';
 import sdgIconStandard from './SdgLogo';
-import { iconWfpLogoStandardBlackEn, iconWfpLogoVerticalEn } from '@wfp/icons';
+import {
+  WfpLogoStandardBlackEn16,
+  WfpLogoVerticalEn16,
+} from '@wfp/icons-react';
 import settings from '../../globals/js/settings';
 
 const { prefix } = settings;
@@ -37,7 +40,7 @@ const Footer = ({
     { [`${prefix}--footer--external`]: external },
     className
   );
-  const standardLogo = `${process.env.STORYBOOK_ASSETS}logos/standard/en/wfp-logo-standard-black-en.svg`
+  const standardLogo = `${process.env.STORYBOOK_ASSETS}logos/standard/en/wfp-logo-standard-black-en.svg`;
 
   const footer = (
     <footer className={classNames}>
@@ -90,11 +93,10 @@ const Footer = ({
             ) : logoExtended ? (
               logoExtended
             ) : (
-              <Icon
-              className={`${prefix}--footer__cta-logo`}	
-              icon={iconWfpLogoStandardBlackEn}
-              alt="WFP"
-            />
+              <WfpLogoStandardBlackEn16
+                className={`${prefix}--footer__cta-logo`}
+                alt="WFP"
+              />
             )}
 
             {logo && typeof logo === 'string' ? (
@@ -106,8 +108,7 @@ const Footer = ({
             ) : logo ? (
               logo
             ) : (
-              <Icon
-                icon={iconWfpLogoVerticalEn}
+              <WfpLogoVerticalEn16
                 description="WFP"
                 className={`${prefix}--footer__cta-logo-small`}
               />
@@ -120,12 +121,13 @@ const Footer = ({
       </Wrapper>
 
       <Wrapper className={`${prefix}--footer__meta`} pageWidth={pageWidth}>
-        
         {metaLinks && (
           <div className={`${prefix}--footer__meta__links`}>{metaLinks}</div>
         )}
         {metaContent && (
-          <div className={`${prefix}--footer__meta__content`}>{metaContent}</div>
+          <div className={`${prefix}--footer__meta__content`}>
+            {metaContent}
+          </div>
         )}
       </Wrapper>
     </footer>

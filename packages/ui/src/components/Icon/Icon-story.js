@@ -1,5 +1,5 @@
 import React from 'react';
-import { iconAdd, iconAddGlyph, iconAddOutline } from '@wfp/icons';
+import { iconAdd, iconAddGlyph, iconAddOutline } from '@wfp/icons-react';
 import { storiesOf } from '@storybook/react';
 
 import { withKnobs, select, text } from '@storybook/addon-knobs';
