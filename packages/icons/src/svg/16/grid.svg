@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="15px" height="15px" viewBox="0 0 15 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>grid</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="grid" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M1,1 L1,5 L5,5 L5,1 L1,1 Z M1,0 L5,0 C5.55228475,-1.01453063e-16 6,0.44771525 6,1 L6,5 C6,5.55228475 5.55228475,6 5,6 L1,6 C0.44771525,6 2.8967998e-16,5.55228475 2.22044605e-16,5 L0,1 C-6.76353751e-17,0.44771525 0.44771525,1.01453063e-16 1,0 Z" id="square" fill="#000000" fill-rule="nonzero"></path>
+        <path d="M1,10 L1,14 L5,14 L5,10 L1,10 Z M1,9 L5,9 C5.55228475,9 6,9.44771525 6,10 L6,14 C6,14.5522847 5.55228475,15 5,15 L1,15 C0.44771525,15 2.8967998e-16,14.5522847 2.22044605e-16,14 L0,10 C-6.76353751e-17,9.44771525 0.44771525,9 1,9 Z" id="square" fill="#000000" fill-rule="nonzero"></path>
+        <path d="M10,1 L10,5 L14,5 L14,1 L10,1 Z M10,0 L14,0 C14.5522847,-1.01453063e-16 15,0.44771525 15,1 L15,5 C15,5.55228475 14.5522847,6 14,6 L10,6 C9.44771525,6 9,5.55228475 9,5 L9,1 C9,0.44771525 9.44771525,1.01453063e-16 10,0 Z" id="square" fill="#000000" fill-rule="nonzero"></path>
+        <path d="M10,14 L14,14 L14,10 L10,10 L10,14 Z M10,9 L14,9 C14.5522847,9 15,9.44771525 15,10 L15,14 C15,14.5522847 14.5522847,15 14,15 L10,15 C9.44771525,15 9,14.5522847 9,14 L9,10 C9,9.44771525 9.44771525,9 10,9 Z" id="square" fill="#000000" fill-rule="nonzero"></path>
+    </g>
+</svg>

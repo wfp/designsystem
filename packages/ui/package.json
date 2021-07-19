@@ -124,6 +124,7 @@
     "react-dom": "^16.13.1"
   },
   "dependencies": {
+    "@storybook/manager-webpack5": "^6.3.4",
     "invariant": "^2.2.4",
     "lerna": "^4.0.0",
     "npm-which": "^3.0.1",
@@ -251,7 +252,7 @@
     "rollup-plugin-terser": "^6.1.0",
     "rollup-plugin-visualizer": "^5.5.0",
     "sass": "^1.33.0",
-    "sass-loader": "^12.1.0",
+    "sass-loader": "^10.1.1",
     "semantic-release": "^17.2.3",
     "semantic-release-ado": "^1.2.2",
     "source-map-explorer": "^2.5.2",
@@ -265,6 +266,7 @@
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12",
     "whatwg-fetch": "^3.3.1",
+
     "xml2js": "^0.4.23"
   },
   "prettier": {

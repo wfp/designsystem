@@ -5,7 +5,7 @@ import Page from '../Page';
 
 import { linkTo } from '@storybook/addon-links';
 import ColorList from './ColourList';
-import './colours.scss';
+//import './colours.scss';
 // import styles from './colours.module.scss';
 
 export const Colour = ({ color }) => (

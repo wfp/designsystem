@@ -10,7 +10,7 @@ import classnames from 'classnames';
 import Page from '../Page';
 import Blockquote from '../../components/Blockquote';
 import Button from '../../components/Button';
-import './_intro.scss';
+//import './_intro.scss';
 import { iconLightGlyph } from '@wfp/icons';
 
 function Icon() {

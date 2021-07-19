@@ -1,6 +1,6 @@
 import React from 'react';
 //import '!style-loader!css-loader!sass-loader!./storybook.scss';
-import '!style-loader!css-loader!../assets/css/styles.css';
+//import '!style-loader!css-loader!../assets/css/styles.css';
 import { Button, Link, List, ListItem, Tooltip } from '../src';
 
 const legacyPreviousversions = [
