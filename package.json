@@ -13,6 +13,7 @@
     "packages/icons",
     "packages/icon-build-helpers",
     "packages/logos",
+    "packages/type",
     "packages/ui"
   ],
   "scripts": {

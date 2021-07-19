@@ -47,7 +47,7 @@
   },
   "eyeglass": {
     "exports": false,
-    "name": "@carbon/type",
+    "name": "@wfp/type",
     "sassDir": "scss",
     "needs": "^1.3.0"
   }
