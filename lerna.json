@@ -24,11 +24,6 @@
     "actions/*",
     "codemods",
     "config/babel-preset-carbon",
-    "packages/fonts",
-    "packages/icons-react",
-    "packages/icons",
-    "packages/icon-build-helpers",
-    "packages/logos",
-    "packages/ui"
+    "packages/*"
   ]
 }

@@ -9,14 +9,8 @@ const {
 
 const path = require('path');
 
-const filenameReservedRegex = /[<>:"/\\|?*\x00-\x1F]/g;
-const reControlChars = /[\u0000-\u001f\u0080-\u009f]/g;
-const reRelativePath = /^\.+/;
-const reFileName = /([^\/]+)(?=\.\w+$)/g;
-
 // Export a function. Accept the base config as the only param.
 module.exports = async ({ config, mode }) => {
-  console.log('config', config);
   // `mode` has a value of 'DEVELOPMENT' or 'PRODUCTION'
   // You can change the configuration based on that.
   // 'PRODUCTION' is used when building the static version of storybook.
@@ -47,10 +41,10 @@ module.exports = async ({ config, mode }) => {
     ],
   });
 
-  config.module.rules.push({
+  /*config.module.rules.push({
     test: /\.s[ac]ss$/i,
     use: ['style-loader', 'css-loader', 'sass-loader'],
-  });
+  });*/
 
   /*config.module.rules.push({
     test: /\.s[ac]ss$/i,

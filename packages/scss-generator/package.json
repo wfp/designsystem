@@ -1,0 +1,28 @@
+{
+  "name": "@carbon/scss-generator",
+  "private": true,
+  "version": "10.13.0",
+  "license": "Apache-2.0",
+  "main": "src/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/carbon-design-system/carbon.git",
+    "directory": "packages/scss-generator"
+  },
+  "bugs": "https://github.com/carbon-design-system/carbon/issues",
+  "keywords": [
+    "ibm",
+    "elements",
+    "carbon",
+    "carbon-elements",
+    "carbon-design-system",
+    "components",
+    "react"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "prettier": "^2.2.1"
+  }
+}

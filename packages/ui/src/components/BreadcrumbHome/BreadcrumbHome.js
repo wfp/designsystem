@@ -1,8 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import classnames from 'classnames';
-import { iconHome } from '@wfp/icons';
-import Icon from '../Icon';
+import { Home16 } from '@wfp/icons-react';
 import settings from '../../globals/js/settings';
 
 const { prefix } = settings;
@@ -10,8 +9,8 @@ const { prefix } = settings;
 const BreadcrumbHome = ({ className, hometext, ...other }) => {
   const classNames = classnames(`${prefix}--breadcrumb-home`, className);
   return (
-    <Icon
-      icon={iconHome}
+    <Home16
+      //icon={iconHome}
       fill="#0b77c2"
       width="14"
       height="14"

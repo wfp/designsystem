@@ -5,7 +5,7 @@ import Tooltip from '../../components/Tooltip';
 import { Module, ModuleBody } from '../../components/Module';
 import colors from '../../globals/data/colors';
 import { hex, score } from 'wcag-contrast';
-import './colours.scss';
+//import './colours.scss';
 
 export const ColourList = ({ filter }) => {
   const filteredColors = Object.values(colors).filter(

@@ -34,6 +34,7 @@
   "scripts": {
     "build": "yarn clean && node tasks/build.js",
     "ci-check": "node tasks/ci-check.js",
+    "create-iconlist": "node tasks/create-iconlist.js",
     "clean": "rimraf es lib metadata.json svg",
     "prepublishOnly": "yarn build"
   },
@@ -42,7 +43,7 @@
     "svgson": "^5.2.1"
   },
   "devDependencies": {
-    "@carbon/cli": "^10.25.0",
+    "@wfp/cli": "^10.25.0",
     "@wfp/icon-build-helpers": "^0.23.4",
     "rimraf": "^3.0.2"
   },

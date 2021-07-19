@@ -8,13 +8,7 @@
     "actions/*",
     "codemods",
     "config/babel-preset-carbon",
-    "packages/fonts",
-    "packages/icons-react",
-    "packages/icons",
-    "packages/icon-build-helpers",
-    "packages/logos",
-    "packages/type",
-    "packages/ui"
+    "packages/*"
   ],
   "scripts": {
     "build": "lerna run build --stream --prefix --npm-client yarn",
@@ -46,7 +40,7 @@
     "@babel/preset-env": "^7.14.2",
     "@babel/preset-react": "^7.13.13",
     "@babel/runtime": "^7.14.0",
-    "@carbon/cli": "10.25.0",
+    "@wfp/cli": "10.25.0",
     "@commitlint/cli": "^8.3.5",
     "@commitlint/config-conventional": "^8.3.4",
     "@percy/cli": "^1.0.0-beta.48",

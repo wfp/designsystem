@@ -2,9 +2,10 @@ import React from 'react';
 import RegularPage from '../RegularPage';
 import Link from '../../components/Link';
 import Story from '../../components/Story';
-import Icon from '../../components/Icon';
+//import Icon from '../../components/Icon';
 import Wrapper from '../../components/Wrapper';
-import { iconWfpHumEmergencyResponsePos } from '@wfp/icons';
+//import { iconWfpHumEmergencyResponsePos } from '@wfp/icons';
+import { WfpHumEmergencyResponsePos16 } from '@wfp/icons-react';
 import markdown from './README.mdx';
 export default {
   title: 'Templates/Not found (404)',
@@ -22,8 +23,7 @@ export default {
 export const Regular = (args) => (
   <Wrapper pageWidth="lg" spacing="md">
     <Story className="wfp--story__center wfp--story__full-height">
-      <Icon
-        icon={iconWfpHumEmergencyResponsePos}
+      <WfpHumEmergencyResponsePos16
         fill="#007DBC"
         width={200}
         height={200}
@@ -31,15 +31,22 @@ export const Regular = (args) => (
       />
       <h1 className="wfp--story__title">Under maintenance</h1>
       <p>
-        Apologies for the inconvenience; we are performing maintenance at the moment.
-        <br/> [Name of solution] should be back shortly. 
+        Apologies for the inconvenience; we are performing maintenance at the
+        moment.
+        <br /> [Name of solution] should be back shortly.
       </p>
-      <p>Please contact <Link href="mailto:IT.ServiceDesk@wfp.org"> IT.ServiceDesk@wfp.org </Link> if you have any questions or comments.</p>
+      <p>
+        Please contact{' '}
+        <Link href="mailto:IT.ServiceDesk@wfp.org">
+          {' '}
+          IT.ServiceDesk@wfp.org{' '}
+        </Link>{' '}
+        if you have any questions or comments.
+      </p>
       <p>[Name] Team</p>
     </Story>
   </Wrapper>
 );
-
 
 Regular.story = {
   parameters: {
