@@ -1,6 +1,6 @@
 {
   "name": "@wfp/ui",
-  "version": "1.18.8",
+  "version": "1.18.9",
   "description": "WFP UI Kit",
   "license": "Apache-2",
   "main": "lib/index.js",
@@ -175,7 +175,7 @@
     "autoprefixer": "^9.8.6",
     "babel-loader": "^8.2.2",
     "babel-plugin-dev-expression": "^0.2.2",
-    "babel-preset-carbon": "^0.1.5",
+    "babel-preset-carbon": "^0.1.6",
     "browserslist-config-carbon": "^10.6.1",
     "classnames": "2.2.6",
     "clean-webpack-plugin": "^3.0.0",
