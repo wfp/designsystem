@@ -119,7 +119,6 @@
     }
   },
   "peerDependencies": {
-    "@wfp/icons": "^0.0.84",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   },
@@ -177,7 +176,7 @@
     "babel-loader": "^8.2.2",
     "babel-plugin-dev-expression": "^0.2.2",
     "babel-preset-carbon": "^0.1.5",
-    "browserslist-config-carbon": "^10.6.5",
+    "browserslist-config-carbon": "^10.6.1",
     "classnames": "2.2.6",
     "clean-webpack-plugin": "^3.0.0",
     "core-js": "^3.6.5",
@@ -213,6 +212,7 @@
     "moment": "^2.27.0",
     "object-assign": "^4.1.1",
     "postcss": "^8.2.14",
+    "postcss-cli": "^8.3.1",
     "postcss-custom-properties": "^11.0.0",
     "postcss-loader": "4",
     "prettier": "^2.0.5",
