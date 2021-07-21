@@ -18,7 +18,7 @@ const useRtl = CARBON_REACT_STORYBOOK_USE_RTL === 'true';
 
 module.exports = {
   addons: ['@storybook/addon-docs', ,],
-  stories: ['../src/**/*.stories.mdx'],
+  stories: ['../src/**/*.stories.(js|mdx)'],
 
   webpack(config) {
     const babelLoader = config.module.rules.find((rule) => {
