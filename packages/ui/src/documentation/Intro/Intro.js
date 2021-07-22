@@ -100,7 +100,7 @@ const Intro = () => (
             kind="primary"
             icon={iconLightGlyph}
             style={{ marginRight: '0.5em' }}>
-              Getting started
+            Getting started
           </Button>
         </LinkTo>
 

@@ -74,6 +74,5 @@ export const ColourList = ({ filter }) => {
     );
   });
 
-
   return <ul className="color--list">{list}</ul>;
 };
