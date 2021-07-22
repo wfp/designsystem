@@ -172,6 +172,11 @@ SingleDatePickerInput.propTypes = {
    * Specify whether you want the underlying label to be visually hidden
    */
   hideLabel: PropTypes.bool,
+
+  /**
+   * Specify whether you want datepicker to show `vertical` on mobile when using `react-dates`. It is horizontal by default
+   */
+  orientation: PropTypes.string
 };
 
 export default SingleDatePickerInput;

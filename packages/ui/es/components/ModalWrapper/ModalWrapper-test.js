@@ -1,0 +1,73 @@
+import React from 'react';
+import { mount } from 'enzyme';
+import ModalWrapper from '../ModalWrapper';
+describe('ModalWrapper', function () {
+  var mockProps = {};
+  beforeEach(function () {
+    mockProps = {
+      id: 'modal',
+      buttonTriggerText: 'Test Modal',
+      buttonTriggerClassName: 'btn-trigger',
+      modalHeading: 'Transactional Modal',
+      modalLabel: 'Test Modal Label',
+      primaryButtonText: 'Save',
+      secondaryButtonText: 'Cancel',
+      handleSubmit: jest.fn(function () {
+        return true;
+      }),
+      shouldCloseAfterSubmit: true
+    };
+  });
+  it('should render', function () {
+    var wrapper = mount( /*#__PURE__*/React.createElement(ModalWrapper, mockProps, /*#__PURE__*/React.createElement("p", {
+      className: "wfp--modal-content__text"
+    }, "Text")));
+    expect(wrapper).toMatchSnapshot();
+  });
+  it('should close after a successful submit action', function () {
+    var wrapper = mount( /*#__PURE__*/React.createElement(ModalWrapper, mockProps, /*#__PURE__*/React.createElement("p", {
+      className: "wfp--modal-content__text"
+    }, "Text")));
+    wrapper.find({
+      children: mockProps.buttonTriggerText
+    }).simulate('click');
+    expect(wrapper.state('isOpen')).toBe(true);
+    wrapper.find({
+      children: mockProps.primaryButtonText
+    }).simulate('click');
+    expect(wrapper.state('isOpen')).toBe(false);
+  });
+  it('should return focus to the trigger button after closing', function () {
+    var wrapper = mount( /*#__PURE__*/React.createElement(ModalWrapper, mockProps, /*#__PURE__*/React.createElement("p", {
+      className: "wfp--modal-content__text"
+    }, "Text")));
+
+    var _wrapper$instance = wrapper.instance(),
+        triggerButton = _wrapper$instance.triggerButton;
+
+    jest.spyOn(triggerButton.current, 'focus');
+    wrapper.find({
+      children: mockProps.buttonTriggerText
+    }).simulate('click');
+    wrapper.find({
+      children: mockProps.primaryButtonText
+    }).simulate('click');
+    expect(triggerButton.current.focus).toHaveBeenCalledTimes(1);
+  });
+  it('should not close after an unsuccessful submit action', function () {
+    mockProps.handleSubmit = jest.fn(function () {
+      return false;
+    });
+    var wrapper = mount( /*#__PURE__*/React.createElement(ModalWrapper, mockProps, /*#__PURE__*/React.createElement("p", {
+      className: "wfp--modal-content__text"
+    }, "Text")));
+    wrapper.find({
+      children: mockProps.buttonTriggerText
+    }).simulate('click');
+    expect(wrapper.state('isOpen')).toBe(true);
+    wrapper.find({
+      children: mockProps.primaryButtonText
+    }).simulate('click');
+    expect(wrapper.state('isOpen')).toBe(true);
+  });
+});

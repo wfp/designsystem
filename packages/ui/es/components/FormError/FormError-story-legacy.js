@@ -1,0 +1,30 @@
+import React from 'react';
+import { storiesOf } from '@storybook/react';
+import { withKnobs, boolean, object } from '@storybook/addon-knobs';
+import FormError from '../FormError';
+var props = {
+  formError: function formError() {
+    return {
+      className: 'some-class',
+      message: object('Error message (message)', {
+        generic: 'Something went very terribly wrong.',
+        fields: [{
+          key: 'fieldkey',
+          message: 'Please enter your name.'
+        }, {
+          key: 'anotherfieldkey',
+          message: 'The selected e-mail could not be validated.'
+        }, {
+          key: 'anotherfieldkey',
+          message: 'Something else went terribly wrong.'
+        }]
+      }),
+      submitFailed: boolean('Submit failed (submitFailed)', true)
+    };
+  }
+};
+storiesOf('Components|FormError', module).addDecorator(withKnobs).addParameters({
+  jest: ['FormError-test']
+}).add('Default (experimental)', function () {
+  return /*#__PURE__*/React.createElement(FormError, props.formError());
+});
