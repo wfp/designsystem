@@ -1,5 +1,5 @@
 import React from 'react';
-import { iconClose, ErrorFilled20, CheckmarkFilled20 } from '@wfp/icons';
+import { iconClose, ErrorFilled20, CheckmarkFilled20 } from '@wfp/icons-react';
 import {
   NotificationButton,
   NotificationTextDetails,

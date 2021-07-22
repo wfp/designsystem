@@ -1,11 +1,10 @@
 import React from 'react';
 import markdown from './README.mdx';
-import Icon from '.';
-import { iconAdd} from '@wfp/icons';
+import { Add16 } from '@wfp/icons-react';
 
 export default {
   title: 'Components/UI Elements/Icon',
-  component: Icon,
+  component: Add16,
   parameters: {
     componentSubtitle: 'Component',
     status: 'released',
@@ -13,10 +12,10 @@ export default {
   },
 };
 
-export const Regular = (args) => <Icon {...args} />;
+export const Regular = (args) => <Add16 {...args} />;
 
 Regular.args = {
-  icon: iconAdd,
+  icon: Add16,
 };
 
 const description = `

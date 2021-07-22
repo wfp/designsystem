@@ -3,7 +3,7 @@ import React from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import notificationStyle from './Notification';
 import Icon from '../Icon';
-import { iconCheckmarkGlyph } from '@wfp/icons';
+import { CheckmarkGlyph16 } from '@wfp/icons-react';
 
 import Button from '../Button';
 
@@ -25,7 +25,7 @@ export const Regular = (args) => {
   const notifyAll = () => {
     toast.success(
       <span>
-        <Icon icon={iconCheckmarkGlyph} /> Wow so easy!
+        <Icon icon={CheckmarkGlyph16} /> Wow so easy!
       </span>
     );
     toast.success('Wow so easy!');

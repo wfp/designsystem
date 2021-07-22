@@ -8,7 +8,7 @@ import Link from '../../components/Link';
 import Icon from '../../components/Icon';
 import { Module, ModuleFooter } from '../../components/Module';
 import iconList from '@wfp/icons/dist/carbon-icons.json';
-import { iconDownloadGlyph } from '@wfp/icons';
+import { iconDownloadGlyph } from '@wfp/icons-react';
 
 import Button from '../../components/Button';
 
@@ -67,7 +67,7 @@ const IconList = ({ icon }) => {
             }}>
             {`import
   {${camelCaseFromHyphnated('icon--' + iconName)}}
-from '@wfp/icons'`}
+from '@wfp/icons-react'`}
           </div>
           <Button
             icon={iconDownloadGlyph}

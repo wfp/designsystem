@@ -11,7 +11,7 @@ import Page from '../Page';
 import Blockquote from '../../components/Blockquote';
 import Button from '../../components/Button';
 //import './_intro.scss';
-import { iconLightGlyph } from '@wfp/icons';
+//import { LightGlyph16 } from '@wfp/icons-react';
 
 function Icon() {
   return (
@@ -98,7 +98,7 @@ const Intro = () => (
         <LinkTo kind="getting-started-installing-the-kit--page">
           <Button
             kind="primary"
-            icon={iconLightGlyph}
+            //           icon={LightGlyph16}
             style={{ marginRight: '0.5em' }}>
             Getting started
           </Button>

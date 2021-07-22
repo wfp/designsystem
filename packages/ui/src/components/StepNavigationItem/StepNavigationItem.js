@@ -1,16 +1,15 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
-import Icon from '../Icon';
 import {
-  iconEllipsis,
-  iconWarningGlyph,
-  iconLocked,
-  iconErrorGlyph,
-  iconCheckmark,
-  iconMenu,
-  iconOverflowMenu,
-} from '@wfp/icons';
+  Ellipsis16,
+  WarningGlyph16,
+  Locked16,
+  ErrorGlyph16,
+  Checkmark16,
+  Menu16,
+  OverflowMenu16,
+} from '@wfp/icons-react';
 import settings from '../../globals/js/settings';
 
 const { prefix } = settings;
@@ -62,7 +61,7 @@ export default class StepNavigationItem extends React.Component {
     role: 'presentation',
     label: 'provide a label',
     tabIndex: 0,
-    selectedPage:0,
+    selectedPage: 0,
     onClick: () => {},
   };
 
@@ -83,7 +82,10 @@ export default class StepNavigationItem extends React.Component {
     const classes = classNames(
       `${prefix}--step-navigation__nav-item`,
       { [`${prefix}--step-navigation__nav-item--before`]: page < selectedPage },
-      { [`${prefix}--step-navigation__nav-item--selected`]: page === selectedPage },
+      {
+        [`${prefix}--step-navigation__nav-item--selected`]:
+          page === selectedPage,
+      },
       { [`${prefix}--step-navigation__nav-item--${status}`]: status },
       className
     );
@@ -96,15 +98,16 @@ export default class StepNavigationItem extends React.Component {
     };
 
     const icon = {
-      'not-started': { icon: iconEllipsis },
-      warning: { icon: iconWarningGlyph },
-      locked: { icon: iconLocked },
-      skip: { icon: iconOverflowMenu },
-      disabled: { icon: iconErrorGlyph },
-      complete: { icon: iconCheckmark },
-      summary: { icon: iconMenu },
+      'not-started': { icon: Ellipsis16 },
+      warning: { icon: WarningGlyph16 },
+      locked: { icon: Locked16 },
+      skip: { icon: OverflowMenu16 },
+      disabled: { icon: ErrorGlyph16 },
+      complete: { icon: Checkmark16 },
+      summary: { icon: Menu16 },
     };
 
+    const Icon = icon[status]?.icon;
     return (
       <li
         tabIndex={-1}
@@ -122,12 +125,7 @@ export default class StepNavigationItem extends React.Component {
           <React.Fragment>
             <div className={`${prefix}--step-navigation__nav-item__indicator`}>
               {status && page !== selectedPage ? (
-                <Icon
-                  icon={icon[status].icon}
-                  width="14"
-                  height="14"
-                  description="Step Item"
-                />
+                <Icon width="14" height="14" description="Step Item" />
               ) : (
                 <span>{page + 1}</span>
               )}
@@ -137,7 +135,8 @@ export default class StepNavigationItem extends React.Component {
                 {label}
               </span>
               {helperText && (
-                <span className={`${prefix}--step-navigation__nav-item__helper-text`}>
+                <span
+                  className={`${prefix}--step-navigation__nav-item__helper-text`}>
                   {helperText}
                 </span>
               )}

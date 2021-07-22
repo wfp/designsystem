@@ -1,8 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
-import Icon from '../Icon';
-import { iconUser } from '@wfp/icons';
+import { User16 } from '@wfp/icons-react';
 import settings from '../../globals/js/settings';
 const { prefix } = settings;
 
@@ -24,8 +23,7 @@ const User = ({
   var avatar;
   if (!image && missingImage === 'avatar') {
     avatar = (
-      <Icon
-        icon={iconUser}
+      <User16
         fill="#ffffff"
         width="14"
         height="14"

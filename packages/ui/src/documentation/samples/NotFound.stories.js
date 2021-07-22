@@ -4,7 +4,7 @@ import Link from '../../components/Link';
 import Story from '../../components/Story';
 //import Icon from '../../components/Icon';
 import Wrapper from '../../components/Wrapper';
-//import { iconWfpHumEmergencyResponsePos } from '@wfp/icons';
+//import { iconWfpHumEmergencyResponsePos } from '@wfp/icons-react';
 import { WfpHumEmergencyResponsePos16 } from '@wfp/icons-react';
 import markdown from './README.mdx';
 export default {
@@ -55,7 +55,7 @@ Regular.story = {
         code: `
 
 import { Wrapper, Story, Icon} from "@wfp/ui";
-import { iconWfpHumEmergencyResponsePos } from '@wfp/icons';
+import { iconWfpHumEmergencyResponsePos } from '@wfp/icons-react';
 
 <Wrapper pageWidth="lg" spacing="md">
   <Story className="wfp--story__center wfp--story__full-height">

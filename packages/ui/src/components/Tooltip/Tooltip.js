@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import ReactDOM from 'react-dom';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import { usePopperTooltip } from 'react-popper-tooltip';
@@ -41,6 +42,7 @@ const Tooltip = ({
   mutationObserverOptions,
   offset,
   onVisibleChange,
+  usePortal,
   ...others
 }) => {
   const [visibility, setVisibility] = useState(false);
@@ -98,19 +100,20 @@ const Tooltip = ({
     if (onVisibilityChange) onVisibilityChange(e);
   };
 
+  const tooltip = (
+    <div ref={setTooltipRef} {...getTooltipProps({ className: classNames })}>
+      {typeof content === 'function'
+        ? content({ setVisibility, visibilityChange })
+        : content}
+      <div {...getArrowProps({ className: `${prefix}--tooltip__arrow` })} />
+    </div>
+  );
+
   return (
     <>
       {triggerElement}
-      {visible && (
-        <div
-          ref={setTooltipRef}
-          {...getTooltipProps({ className: classNames })}>
-          {typeof content === 'function'
-            ? content({ setVisibility, visibilityChange })
-            : content}
-          <div {...getArrowProps({ className: `${prefix}--tooltip__arrow` })} />
-        </div>
-      )}
+      {visible && usePortal && <TooltipPortal>{tooltip}</TooltipPortal>}
+      {visible && !usePortal && tooltip}
     </>
   );
 };
@@ -172,3 +175,7 @@ Tooltip.propTypes = {
 };
 
 export default Tooltip;
+
+function TooltipPortal({ children }) {
+  return ReactDOM.createPortal(children, document.body);
+}

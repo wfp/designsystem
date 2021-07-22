@@ -3,10 +3,10 @@ import React, { useRef, useState } from 'react';
 import classnames from 'classnames';
 
 import Link from '../Link';
-import { iconCaretUp, iconCaretDown } from '@wfp/icons';
+import { iconCaretUp, iconCaretDown } from '@wfp/icons-react';
 import Icon from '../Icon';
 import settings from '../../globals/js/settings';
-import { Workspace32 } from '@wfp/icons-react';
+import { CaretUp16, CaretDown16 } from '@wfp/icons-react';
 
 const { prefix } = settings;
 
@@ -17,14 +17,14 @@ const MoreLink = ({ handleToggleClick, link, text, showMore }) => {
     });
     return clonedLink;
   } else {
+    const Icon = showMore ? CaretUp16 : CaretDown16;
     return (
       <Link
         className={`${prefix}--read-more__trigger`}
         small
         onClick={handleToggleClick}>
         {text}
-        <Workspace32
-          icon={showMore ? iconCaretUp : iconCaretDown}
+        <Icon
           width="10"
           height="10"
           description={showMore ? 'icon up' : 'icon down'}

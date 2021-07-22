@@ -1,8 +1,7 @@
 import React from 'react';
 import Tooltip from './Tooltip';
 import markdown from './README.mdx';
-import Icon from '../Icon';
-import { iconOverflowMenu } from '@wfp/icons';
+import { OverflowMenu16 } from '@wfp/icons-react';
 
 export default {
   title: 'Components/UI Elements/Tooltip',
@@ -54,12 +53,7 @@ export const WithIcon = (args) => (
     placement={'bottom'}
     createRefWrapper={true}
     content="Label Text">
-    <Icon
-      description="options"
-      icon={iconOverflowMenu}
-      width="17px"
-      height="17px"
-    />
+    <OverflowMenu16 description="options" width="17px" height="17px" />
   </Tooltip>
 );
 

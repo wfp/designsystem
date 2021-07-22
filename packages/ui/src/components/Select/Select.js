@@ -8,9 +8,8 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
-import { iconCaretDown } from '@wfp/icons';
+import { CaretDown16 } from '@wfp/icons-react';
 
-import Icon from '../Icon';
 import settings from '../../globals/js/settings';
 import Input from '../Input';
 const { prefix } = settings;
@@ -69,8 +68,7 @@ const Select = React.forwardRef((props, ref) => {
           ref={inputRef}>
           {children}
         </select>
-        <Icon
-          icon={iconCaretDown}
+        <CaretDown16
           className={`${prefix}--select__arrow`}
           description={iconDescription}
         />

@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import markdown from './README.mdx';
 import { List, ListItem } from '../List';
 import Dropzone, { useDropzone } from 'react-dropzone';
-import Icon from '../Icon';
-import { iconUpload } from '@wfp/icons';
+import { Upload16 } from '@wfp/icons-react';
 import classNames from 'classnames';
 
 export default {
@@ -87,12 +86,8 @@ Regular.parameters = {
 };
 
 export const Advanced = (args) => {
-  const {
-    acceptedFiles,
-    getRootProps,
-    getInputProps,
-    isDragActive,
-  } = useDropzone();
+  const { acceptedFiles, getRootProps, getInputProps, isDragActive } =
+    useDropzone();
 
   const files = acceptedFiles.map((file) => (
     <ListItem key={file.path}>
@@ -108,7 +103,7 @@ export const Advanced = (args) => {
     <section className="wfp--dropzone">
       <div {...getRootProps({ isDragActive, className: wrapperClassNames })}>
         <input {...getInputProps()} />
-        <Icon className="wfp--dropzone__icon" icon={iconUpload} />
+        <Icon className="wfp--dropzone__icon" icon={Upload16} />
         <div>Drop files or click here to upload</div>
       </div>
       {files.length > 0 && (
@@ -128,7 +123,7 @@ Advanced.parameters = {
       code: `
 import Dropzone, { useDropzone } from 'react-dropzone';
 import { Icon, List, ListItem } from '@wfp/ui';
-import { iconUpload } from '@wfp/icons';
+import { Upload16 } from '@wfp/icons-react';
 import classNames from 'classnames';
 
 export const Advanced = (args) => {
@@ -153,7 +148,7 @@ export const Advanced = (args) => {
     <section className="wfp--dropzone">
       <div {...getRootProps({ isDragActive, className: wrapperClassNames })}>
         <input {...getInputProps()} />
-        <Icon className="wfp--dropzone__icon" icon={iconUpload} />
+        <Upload16 className="wfp--dropzone__icon" />
         <div>Drop files or click here to upload</div>
       </div>
       <aside className="wfp--dropzone__file-list">

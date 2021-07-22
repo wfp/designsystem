@@ -3,8 +3,7 @@ import React from 'react';
 import classNames from 'classnames';
 import settings from '../../globals/js/settings';
 import FormItem from '../FormItem';
-import { iconWarningGlyph } from '@wfp/icons';
-import Icon from '../Icon';
+import { WarningGlyph16 } from '@wfp/icons-react';
 
 const { prefix } = settings;
 
@@ -71,7 +70,7 @@ const Input = ({
     [`${prefix}--form__helper-text--disabled`]: other.disabled,
   });
 
-  const errorIcon = <Icon icon={iconWarningGlyph} fill="#c5192d" />;
+  const errorIcon = <WarningGlyph16 fill="#c5192d" />;
 
   const label = (
     <label htmlFor={calculatedId} className={labelClasses}>

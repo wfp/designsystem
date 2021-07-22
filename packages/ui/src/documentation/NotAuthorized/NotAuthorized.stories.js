@@ -48,7 +48,7 @@ Regular.story = {
       source: {
         code: `
 import { Wrapper, Story, Icon} from "@wfp/ui";
-import { iconWfpHumEmergencyResponsePos } from '@wfp/icons';
+import { iconWfpHumEmergencyResponsePos } from '@wfp/icons-react';
 
 <Wrapper pageWidth="lg" spacing="md">
   <Story className="wfp--story__center wfp--story__full-height">

@@ -16,7 +16,7 @@ import Select from '../../components/Select';
 import SelectItem from '../../components/SelectItem';
 import Button from '../../components/Button';
 
-import { iconFilterAlt, iconSubtractGlyph } from '@wfp/icons';
+import { iconFilterAlt, iconSubtractGlyph } from '@wfp/icons-react';
 
 import { Module, ModuleHeader, ModuleBody } from '../../components/Module';
 
@@ -212,11 +212,11 @@ class TableWithFilter extends Component {
     this.setState({ filterActivated: !this.state.filterActivated });
   };
 
-  setSimpleSearch = event => {
+  setSimpleSearch = (event) => {
     this.setState({ simpleSearch: event.target.value });
   };
 
-  setSearch = event => {
+  setSearch = (event) => {
     this.setState({ search: event });
   };
 

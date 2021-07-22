@@ -2,9 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import settings from '../../globals/js/settings';
-import Icon from '../Icon';
 const { prefix } = settings;
-import { iconChevronRight } from '@wfp/icons';
+import { ChevronRight16 } from '@wfp/icons-react';
 
 /** The item component to show entries inside a list, like a sidebar or an overview page. */
 export const Item = ({
@@ -50,8 +49,7 @@ export const Item = ({
               <div className={`${prefix}--item__additional`}>
                 {additional}
                 {showAdditionalIcon && (
-                  <Icon
-                    icon={iconChevronRight}
+                  <ChevronRight16
                     className={`${prefix}--item__additional-icon`}
                   />
                 )}

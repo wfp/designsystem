@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { withKnobs, boolean, object, text } from '@storybook/addon-knobs';
-import { iconArrowLeft, iconArrowRight } from '@wfp/icons';
+import { iconArrowLeft, iconArrowRight } from '@wfp/icons-react';
 
 import FormControls from '.';
 
@@ -59,7 +59,7 @@ const props = {
 
 storiesOf('Components|FormControls', module)
   .addDecorator(withKnobs)
-  .addDecorator(story => <div style={{ width: '60vw' }}>{story()}</div>)
+  .addDecorator((story) => <div style={{ width: '60vw' }}>{story()}</div>)
   .add('Default (legacy, wizard)', () => (
     <FormControls {...props.formControls()} />
   ))

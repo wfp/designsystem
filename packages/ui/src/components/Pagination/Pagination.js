@@ -1,8 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import classnames from 'classnames';
-import { iconChevronLeft, iconChevronRight } from '@wfp/icons';
-import Icon from '../Icon';
+import { ChevronLeft16, ChevronRight16 } from '@wfp/icons-react';
 import Select from '../Select';
 import SelectItem from '../SelectItem';
 import { equals } from '../../tools/array';
@@ -309,9 +308,8 @@ export default class Pagination extends Component {
             className={backButtonClasses}
             onClick={this.decrementPage}
             disabled={this.props.disabled || statePage === 1}>
-            <Icon
+            <ChevronLeft16
               className="wfp--pagination__button-icon"
-              icon={iconChevronLeft}
               description={backwardText}
             />
           </button>
@@ -332,9 +330,8 @@ export default class Pagination extends Component {
             disabled={
               this.props.disabled || statePage === totalPages || isLastPage
             }>
-            <Icon
+            <ChevronRight16
               className="wfp--pagination__button-icon"
-              icon={iconChevronRight}
               description={forwardText}
             />
           </button>

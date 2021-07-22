@@ -5,7 +5,7 @@ import { withKnobs, number, select, boolean } from '@storybook/addon-knobs';
 import { ToastContainer, toast } from 'react-toastify';
 import notificationStyle from './Notification';
 import Icon from '../Icon';
-import { iconCheckmarkGlyph } from '@wfp/icons';
+import { iconCheckmarkGlyph } from '@wfp/icons-react';
 
 import Button from '../Button';
 

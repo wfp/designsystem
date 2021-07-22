@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 
 import { withKnobs, select, text, boolean } from '@storybook/addon-knobs';
-import { iconAddGlyph, iconSearch } from '@wfp/icons';
+import { iconAddGlyph, iconSearch } from '@wfp/icons-react';
 import Icon from '../Icon';
 import ContentSwitcher from '../ContentSwitcher';
 import Switch from '../Switch';
