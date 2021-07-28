@@ -343,6 +343,11 @@
   .#{$prefix}--btn--secondary + .#{$prefix}--btn--primary,
   .#{$prefix}--btn--tertiary + .#{$prefix}--btn--danger--primary {
     margin-left: $spacing-xs;
+
+    @include rtl {
+      margin-left: 0;
+      margin-right: $spacing-xs;
+    }
   }
 
   // Skeleton State

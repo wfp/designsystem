@@ -27,14 +27,23 @@ $css--helpers: true;
     border: 1px solid var(--ui-03);
     height: rem(46px);
 
+    // @include rtl{
+    //   flex-direction: row-reverse;
+    // }
+
     .#{$prefix}--form-item {
       flex: auto;
+
     }
   }
 
   .#{$prefix}--pagination__left {
     display: flex;
     align-items: center;
+
+    @include rtl{
+      flex-direction: row-reverse;
+    }
   }
 
   .#{$prefix}--pagination__right {
@@ -161,6 +170,12 @@ $css--helpers: true;
     margin-bottom: -0.5rem;
     margin-right: -1rem;
 
+    @include rtl{
+      flex-direction: row-reverse;
+      margin-right: auto;
+      margin-left: 0;
+    }
+
     .#{$prefix}--pagination__button {
       height: rem(46px);
       border-left: 1px solid var(--ui-03);
@@ -172,6 +187,7 @@ $css--helpers: true;
       border-right: 0;
       padding: 0 $spacing-md;
       margin-left: $spacing-md;
+
     }
 
     .#{$prefix}--pagination__button--backward {

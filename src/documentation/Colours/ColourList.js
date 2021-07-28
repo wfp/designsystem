@@ -13,9 +13,11 @@ export const ColourList = ({ filter }) => {
   );
 
   const list = filteredColors.map((color) => {
+    // console.log("hex",color.hex);
     const computedColor = getComputedStyle(document.body).getPropertyValue(
       `--${color.name}`
     );
+
     return (
       <Tooltip
         content={
@@ -57,7 +59,8 @@ export const ColourList = ({ filter }) => {
                   )}
                   <ListItem>
                     <strong>Hex:</strong>{' '}
-                    {computedColor ? computedColor : color.hex}
+                    
+                    {color.hex ? color.hex : computedColor}
                   </ListItem>
                   {color.css && (
                     <ListItem>
