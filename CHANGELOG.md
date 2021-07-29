@@ -1,3 +1,12 @@
+## [1.19.1](https://github.com/wfp/ui/compare/v1.19.0...v1.19.1) (2021-07-29)
+
+
+### Bug Fixes
+
+* **Button:** resolved sibling button issue in arabic ([d917bd8](https://github.com/wfp/ui/commit/d917bd8291622a4daf4d6c82f96658cb9b4a94ad))
+* **colours:** minor changes to colors ([a070697](https://github.com/wfp/ui/commit/a070697b7d29e7cac3f6ed7231dd370407f2c2a0))
+* **components:** fix github issues and color code issue ([e612201](https://github.com/wfp/ui/commit/e6122010fa1aaed6567e58f1864bcdd2dd3ea501))
+
 # [1.19.0](https://github.com/wfp/ui/compare/v1.18.2...v1.19.0) (2021-06-02)
 
 
