@@ -30,7 +30,7 @@ $color__gray-70: mix(black, $color__navy-gray-1, 10%) !default;
 $color__gray-80: mix(black, $color__navy-gray-1, 75%) !default;
 */
 body {
-  --interactive-01: #0087cb;
+  --interactive-01: #0b77c2;
   --accent-02: #f7b825;
   --brand-01: #007dbc;
   --interactive-02: #005e8d;
@@ -101,7 +101,7 @@ body {
 }
 
 .wfp--theme-dark {
-  --interactive-01: #007dbc;
+  --interactive-01: #0b77c2;
   --interactive-02: #0087cb;
   --hover-primary: #0087cb;
   --accent-02: #f7b825;
@@ -144,7 +144,7 @@ body {
 
 @media (prefers-color-scheme: dark) {
   body.wfp--theme-dark--auto {
-    --interactive-01: #007dbc;
+    --interactive-01: #0b77c2;
     --interactive-02: #0087cb;
     --hover-primary: #0087cb;
     --accent-02: #f7b825;

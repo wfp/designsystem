@@ -35,6 +35,9 @@ $css--helpers: true;
   .#{$prefix}--pagination__left {
     display: flex;
     align-items: center;
+    @include rtl{
+      flex-direction: row-reverse;
+    }
   }
 
   .#{$prefix}--pagination__right {
@@ -160,6 +163,11 @@ $css--helpers: true;
     margin-top: -0.5rem;
     margin-bottom: -0.5rem;
     margin-right: -1rem;
+    @include rtl{
+      flex-direction: row-reverse;
+      margin-right: auto;
+      margin-left: 0;
+    }
 
     .#{$prefix}--pagination__button {
       height: rem(46px);
