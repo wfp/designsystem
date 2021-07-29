@@ -7,7 +7,7 @@
   "workspaces": [
     "actions/*",
     "codemods",
-    "config/babel-preset-carbon",
+    "config/*",
     "packages/*"
   ],
   "scripts": {
