@@ -8,10 +8,17 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
-import { CaretDown16 } from '@wfp/icons-react';
+import { CaretDown } from '@wfp/icons-react';
 
 import settings from '../../globals/js/settings';
 import Input from '../Input';
+
+import {
+  ChevronDown16,
+  WarningFilled16,
+  WarningAltFilled16,
+} from '@carbon/icons-react';
+
 const { prefix } = settings;
 
 /** The select component allows users to choose one option from a list. It is used in forms for users to submit data. */
@@ -68,7 +75,7 @@ const Select = React.forwardRef((props, ref) => {
           ref={inputRef}>
           {children}
         </select>
-        <CaretDown16
+        <ChevronDown16
           className={`${prefix}--select__arrow`}
           description={iconDescription}
         />

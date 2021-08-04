@@ -58,7 +58,7 @@ export const Item = ({
           </div>
         )}
         <div className={`${prefix}--item__text-wrapper`}>
-          <div>
+          <div className={`${prefix}--item__text-wrapper__inner`}>
             {children && (
               <div className={`${prefix}--item__text`}>{children}</div>
             )}
@@ -104,7 +104,7 @@ Item.propTypes = {
   /**
    * Provide a kind to use different appearances.
    */
-  kind: PropTypes.oneOf(['undefined', 'large']),
+  kind: PropTypes.oneOf(['undefined', 'horizontal', 'large']),
 
   /**
    * Provide a wrap to use different borders.

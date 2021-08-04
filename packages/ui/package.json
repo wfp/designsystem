@@ -143,6 +143,7 @@
     "@babel/plugin-transform-object-assign": "^7.12.13",
     "@babel/preset-env": "^7.14.2",
     "@babel/preset-react": "^7.13.13",
+    "@carbon/icons-react": "^10.36.0",
     "@carbon/import-once": "^10.5.0",
     "@fontsource/open-sans": "^4.4.5",
     "@fontsource/tajawal": "^4.4.5",

@@ -1,7 +1,9 @@
 {
   "version": "independent",
   "npmClient": "yarn",
-  "npmClientArgs": ["--frozen-lockfile"],
+  "npmClientArgs": [
+    "--frozen-lockfile"
+  ],
   "useWorkspaces": true,
   "command": {
     "publish": {
@@ -18,5 +20,10 @@
     "**/examples/**",
     "**/*.md"
   ],
-  "packages": ["actions/*", "codemods", "config/*", "packages/*"]
+  "packages": [
+    "actions/*",
+    "codemods",
+    "config/*",
+    "packages/*"
+  ]
 }

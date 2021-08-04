@@ -83,19 +83,37 @@
     background: var(--field-02);
   }
 
-  .#{$prefix}--select__arrow {
+  /*.#{$prefix}--select__arrow {
     fill: var(--interactive-01);
     position: absolute;
     right: 0.6rem;
-    bottom: 1rem;
-    width: rem(10px);
-    height: rem(5px);
+    bottom: 0.5rem;
+    width: 1rem;
+    height: 1rem;
     pointer-events: none;
-  }
+  }*/
 
   //TODO: Check validity
-  [data-invalid] ~ .#{$prefix}--select__arrow {
+  /*[data-invalid] ~ .#{$prefix}--select__arrow {
     bottom: 2.25rem;
+  }*/
+
+  .#{$prefix}--select__arrow {
+    position: absolute;
+    top: 0;
+    right: 0.7em;
+    height: 100%;
+    fill: $interactive-01;
+    pointer-events: none;
+
+    // Windows, Firefox HCM Fix
+    @media screen and (-ms-high-contrast: active),
+      screen and (prefers-contrast) {
+      // `ButtonText` is a CSS2 system color to help improve colors in HCM
+      path {
+        fill: ButtonText;
+      }
+    }
   }
 
   .#{$prefix}--select-optgroup,

@@ -124,11 +124,13 @@
       color: var(--text-02);
       margin-left: 1em;
     }
-    .#{$prefix}--item__additional-image {
+    .#{$prefix}--item__additional-icon {
       font-weight: normal;
-      height: 0.6em;
+      height: 0.9em;
       width: auto;
       margin-left: 0.3em;
+      position: relative;
+      top: 0.3em;
       path {
         fill: var(--text-02);
       }
@@ -147,6 +149,9 @@
       display: flex;
       justify-content: space-between;
       align-items: stretch;
+    }
+    .#{$prefix}--item__text-wrapper__inner {
+      flex: 1;
     }
     .#{$prefix}--item__text {
       flex: 1;

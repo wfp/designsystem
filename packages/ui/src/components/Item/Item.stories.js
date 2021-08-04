@@ -50,3 +50,22 @@ Horizontal.args = {
   hint: <Tag kind="wfp">Hint</Tag>,
   wrapper: 'sidebar',
 };
+
+export const HorizontalRepeater = (args) => <Item {...args} />;
+
+HorizontalRepeater.args = {
+  title: 'A title is shown',
+  children: `nonumy eirmod tempor invidunt`,
+  subContent: `This is the subContent. Lorem ipsum dolor sit amet, consetetur sadipscing elitr.`,
+  kind: 'horizontal',
+  icon: (
+    <img
+      alt="Moving van"
+      src="https://www.wfp.org/sites/default/files/styles/medium/public/images/publication/YiR_banner.jpg"
+    />
+  ),
+  showAdditionalIcon: true,
+  additional: 'Yesterday',
+  hint: <Tag kind="wfp">Hint</Tag>,
+  wrapper: 'repeater',
+};
