@@ -1,12 +1,21 @@
 const fs = require('fs');
 const path = require('path');
-const testFolder = path.resolve(__dirname, '../src/svg/16');
+const testFolder = path.resolve(__dirname, '../src/svg');
+const testFolder16 = path.resolve(__dirname, '../src/svg/16');
 
-var categoryList = '';
+var categoryList = `categories:
+- name: Actions
+  subcategories:
+    - name: Controls
+      members:`;
 var icons = '';
+
 fs.readdirSync(testFolder).forEach((file) => {
+  const fileending = file.split('.').pop();
+  if (fileending !== 'svg') return;
+
   categoryList = `${categoryList}
-  - ${file.replace('.svg', '')}`;
+        - ${file.replace('.svg', '')}`;
 
   icons = `${icons}
 - name: ${file.replace('.svg', '')}
@@ -14,13 +23,31 @@ fs.readdirSync(testFolder).forEach((file) => {
   aliases:
     - WFP legacy icons
   sizes:
+    - glyph`;
+});
+
+fs.readdirSync(testFolder16).forEach((file) => {
+  const fileending = file.split('.').pop();
+  if (fileending !== 'svg') return;
+
+  categoryList = `${categoryList}
+        - ${file.replace('.svg', '')}`;
+
+  icons = `${icons}
+- name: ${file.replace('.svg', '')}
+  friendly_name: ${file.replace('.svg', '')}
+  aliases:
+    - Carbon icons
+  sizes:
     - 16`;
 });
 
-console.log(icons);
+fs.writeFile('../icons.yml', icons, (err) => {
+  if (err) throw err;
+});
 
 // Write data in 'Output.txt' .
-fs.writeFile('icons-output.yml', icons, (err) => {
-  // In case of a error throw err.
+
+fs.writeFile('../categories.yml', categoryList, (err) => {
   if (err) throw err;
 });

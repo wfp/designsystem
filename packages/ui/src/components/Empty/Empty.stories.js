@@ -2,6 +2,7 @@ import React from 'react';
 import markdown from './README.mdx';
 import Empty from '.';
 import Button from '../Button';
+import { IllustrationsMovingVanWithBackground } from '@wfp/pictograms-react';
 
 export default {
   title: 'Components/UI Elements/Empty',
@@ -20,9 +21,9 @@ Regular.args = {
   children: `You haven't yet created an entry`,
   kind: 'large',
   icon: (
-    <img
+    <IllustrationsMovingVanWithBackground
       alt="Moving van"
-      src={`${process.env.STORYBOOK_INTERNAL_ASSETS}illustrations/moving-van.svg`}
+      //src={`${process.env.STORYBOOK_INTERNAL_ASSETS}illustrations/moving-van.svg`}
     />
   ),
   button: <Button kind="accent">New entry</Button>,

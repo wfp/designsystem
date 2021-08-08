@@ -256,24 +256,24 @@ function _objectWithoutProperties(source, excluded) {
   return target;
 }
 
-//   fontSize: rem(scale[0]),
-//   fontWeight: fontWeights.regular,
-//   lineHeight: 1.34,
-//   letterSpacing: px(0.32),
-// };
-
+var caption01$1 = {
+  fontSize: rem(scale[0]),
+  fontWeight: fontWeights.regular,
+  lineHeight: 1.34,
+  letterSpacing: px(0.32)
+};
 var caption02$1 = {
   fontSize: rem(scale[1]),
   fontWeight: fontWeights.regular,
   lineHeight: 1.29,
   letterSpacing: px(0.32)
-}; // export const label01 = {
-//   fontSize: rem(scale[0]),
-//   fontWeight: fontWeights.regular,
-//   lineHeight: 1.34,
-//   letterSpacing: px(0.32),
-// };
-
+};
+var label01$1 = {
+  fontSize: rem(scale[0]),
+  fontWeight: fontWeights.regular,
+  lineHeight: 1.34,
+  letterSpacing: px(0.32)
+};
 var label02$1 = {
   fontSize: rem(scale[1]),
   fontWeight: fontWeights.regular,
@@ -284,43 +284,43 @@ var helperText01$1 = {
   fontSize: rem(scale[0]),
   lineHeight: 1.34,
   letterSpacing: px(0.32)
-}; // export const helperText02 = {
-//   fontSize: rem(scale[1]),
-//   lineHeight: 1.29,
-//   letterSpacing: px(0.32),
-// };
-// export const bodyShort01 = {
-//   fontSize: rem(scale[1]),
-//   fontWeight: fontWeights.regular,
-//   lineHeight: 1.29,
-//   letterSpacing: px(0.16),
-// };
-// export const bodyLong01 = {
-//   fontSize: rem(scale[1]),
-//   fontWeight: fontWeights.regular,
-//   lineHeight: 1.43,
-//   letterSpacing: px(0.16),
-// };
-// export const bodyShort02 = {
-//   fontSize: rem(scale[2]),
-//   fontWeight: fontWeights.regular,
-//   lineHeight: 1.375,
-//   letterSpacing: 0,
-// };
-
+};
+var helperText02$1 = {
+  fontSize: rem(scale[1]),
+  lineHeight: 1.29,
+  letterSpacing: px(0.32)
+};
+var bodyShort01$1 = {
+  fontSize: rem(scale[1]),
+  fontWeight: fontWeights.regular,
+  lineHeight: 1.29,
+  letterSpacing: px(0.16)
+};
+var bodyLong01$1 = {
+  fontSize: rem(scale[1]),
+  fontWeight: fontWeights.regular,
+  lineHeight: 1.43,
+  letterSpacing: px(0.16)
+};
+var bodyShort02$1 = {
+  fontSize: rem(scale[2]),
+  fontWeight: fontWeights.regular,
+  lineHeight: 1.375,
+  letterSpacing: 0
+};
 var bodyLong02$1 = {
   fontSize: rem(scale[2]),
   fontWeight: fontWeights.regular,
   lineHeight: 1.5,
   letterSpacing: 0
-}; // export const code01 = {
-//   fontFamily: fontFamilies.mono,
-//   fontSize: rem(scale[0]),
-//   fontWeight: fontWeights.regular,
-//   lineHeight: 1.34,
-//   letterSpacing: px(0.32),
-// };
-
+};
+var code01 = {
+  fontFamily: fontFamilies.mono,
+  fontSize: rem(scale[0]),
+  fontWeight: fontWeights.regular,
+  lineHeight: 1.34,
+  letterSpacing: px(0.32)
+};
 var code02$1 = {
   fontFamily: fontFamilies.mono,
   fontSize: rem(scale[2]),
@@ -368,130 +368,128 @@ var productiveHeading06$1 = {
   fontWeight: fontWeights.light,
   lineHeight: 1.199,
   letterSpacing: 0
-}; // export const productiveHeading07 = {
-//   fontSize: rem(scale[11]),
-//   fontWeight: fontWeights.light,
-//   lineHeight: 1.19,
-//   letterSpacing: 0,
-// };
-// export const expressiveHeading01 = {
-//   ...heading01,
-//   lineHeight: 1.25,
-// };
-// export const expressiveHeading02 = {
-//   ...heading02,
-//   lineHeight: 1.5,
-// };
-// export const expressiveHeading03 = {
-//   fontSize: rem(scale[4]),
-//   fontWeight: fontWeights.regular,
-//   lineHeight: 1.4,
-//   letterSpacing: 0,
-//   breakpoints: {
-//     xlg: {
-//       fontSize: rem(scale[4]),
-//       lineHeight: 1.25,
-//     },
-//     max: {
-//       fontSize: rem(scale[5]),
-//       lineHeight: 1.334,
-//     },
-//   },
-// };
-// export const expressiveHeading04 = {
-//   fontSize: rem(scale[6]),
-//   fontWeight: fontWeights.regular,
-//   lineHeight: 1.29,
-//   letterSpacing: 0,
-//   breakpoints: {
-//     xlg: {
-//       fontSize: rem(scale[6]),
-//       lineHeight: 1.25,
-//     },
-//     max: {
-//       fontSize: rem(scale[7]),
-//     },
-//   },
-// };
-// export const expressiveHeading05 = {
-//   fontSize: rem(scale[7]),
-//   fontWeight: fontWeights.regular,
-//   lineHeight: 1.25,
-//   letterSpacing: 0,
-//   breakpoints: {
-//     md: {
-//       fontSize: rem(scale[8]),
-//       fontWeight: fontWeights.light,
-//       lineHeight: 1.22,
-//       letterSpacing: 0,
-//     },
-//     lg: {
-//       fontSize: rem(scale[9]),
-//       fontWeight: fontWeights.light,
-//       lineHeight: 1.19,
-//       letterSpacing: 0,
-//     },
-//     xlg: {
-//       fontSize: rem(scale[10]),
-//       fontWeight: fontWeights.light,
-//       lineHeight: 1.17,
-//       letterSpacing: 0,
-//     },
-//     max: {
-//       fontSize: rem(scale[12]),
-//       fontWeight: fontWeights.light,
-//       letterSpacing: 0,
-//     },
-//   },
-// };
-// export const expressiveHeading06 = {
-//   fontSize: rem(scale[7]),
-//   fontWeight: fontWeights.semibold,
-//   lineHeight: 1.25,
-//   letterSpacing: 0,
-//   breakpoints: {
-//     md: {
-//       fontSize: rem(scale[8]),
-//       fontWeight: fontWeights.semibold,
-//       lineHeight: 1.22,
-//       letterSpacing: 0,
-//     },
-//     lg: {
-//       fontSize: rem(scale[9]),
-//       fontWeight: fontWeights.semibold,
-//       lineHeight: 1.19,
-//       letterSpacing: 0,
-//     },
-//     xlg: {
-//       fontSize: rem(scale[10]),
-//       fontWeight: fontWeights.semibold,
-//       lineHeight: 1.17,
-//       letterSpacing: 0,
-//     },
-//     max: {
-//       fontSize: rem(scale[12]),
-//       fontWeight: fontWeights.semibold,
-//       letterSpacing: 0,
-//     },
-//   },
-// };
-// export const expressiveParagraph01 = {
-//   fontSize: rem(scale[5]),
-//   fontWeight: fontWeights.light,
-//   lineHeight: 1.334,
-//   letterSpacing: 0,
-//   breakpoints: {
-//     lg: {
-//       fontSize: rem(scale[6]),
-//       lineHeight: 1.29,
-//     },
-//     max: {
-//       fontSize: rem(scale[7]),
-//       lineHeight: 1.25,
-//     },
-//   },
-// };
-
+};
+var productiveHeading07$1 = {
+  fontSize: rem(scale[11]),
+  fontWeight: fontWeights.light,
+  lineHeight: 1.19,
+  letterSpacing: 0
+};
+var expressiveHeading01$1 = _objectSpread2(_objectSpread2({}, heading01$1), {}, {
+  lineHeight: 1.25
+});
+var expressiveHeading02$1 = _objectSpread2(_objectSpread2({}, heading02$1), {}, {
+  lineHeight: 1.5
+});
+var expressiveHeading03$1 = {
+  fontSize: rem(scale[4]),
+  fontWeight: fontWeights.regular,
+  lineHeight: 1.4,
+  letterSpacing: 0,
+  breakpoints: {
+    xlg: {
+      fontSize: rem(scale[4]),
+      lineHeight: 1.25
+    },
+    max: {
+      fontSize: rem(scale[5]),
+      lineHeight: 1.334
+    }
+  }
+};
+var expressiveHeading04$1 = {
+  fontSize: rem(scale[6]),
+  fontWeight: fontWeights.regular,
+  lineHeight: 1.29,
+  letterSpacing: 0,
+  breakpoints: {
+    xlg: {
+      fontSize: rem(scale[6]),
+      lineHeight: 1.25
+    },
+    max: {
+      fontSize: rem(scale[7])
+    }
+  }
+};
+var expressiveHeading05$1 = {
+  fontSize: rem(scale[7]),
+  fontWeight: fontWeights.regular,
+  lineHeight: 1.25,
+  letterSpacing: 0,
+  breakpoints: {
+    md: {
+      fontSize: rem(scale[8]),
+      fontWeight: fontWeights.light,
+      lineHeight: 1.22,
+      letterSpacing: 0
+    },
+    lg: {
+      fontSize: rem(scale[9]),
+      fontWeight: fontWeights.light,
+      lineHeight: 1.19,
+      letterSpacing: 0
+    },
+    xlg: {
+      fontSize: rem(scale[10]),
+      fontWeight: fontWeights.light,
+      lineHeight: 1.17,
+      letterSpacing: 0
+    },
+    max: {
+      fontSize: rem(scale[12]),
+      fontWeight: fontWeights.light,
+      letterSpacing: 0
+    }
+  }
+};
+var expressiveHeading06$1 = {
+  fontSize: rem(scale[7]),
+  fontWeight: fontWeights.semibold,
+  lineHeight: 1.25,
+  letterSpacing: 0,
+  breakpoints: {
+    md: {
+      fontSize: rem(scale[8]),
+      fontWeight: fontWeights.semibold,
+      lineHeight: 1.22,
+      letterSpacing: 0
+    },
+    lg: {
+      fontSize: rem(scale[9]),
+      fontWeight: fontWeights.semibold,
+      lineHeight: 1.19,
+      letterSpacing: 0
+    },
+    xlg: {
+      fontSize: rem(scale[10]),
+      fontWeight: fontWeights.semibold,
+      lineHeight: 1.17,
+      letterSpacing: 0
+    },
+    max: {
+      fontSize: rem(scale[12]),
+      fontWeight: fontWeights.semibold,
+      letterSpacing: 0
+    }
+  }
+};
+var expressiveParagraph01$1 = {
+  fontSize: rem(scale[5]),
+  fontWeight: fontWeights.light,
+  lineHeight: 1.334,
+  letterSpacing: 0,
+  breakpoints: {
+    lg: {
+      fontSize: rem(scale[6]),
+      lineHeight: 1.29
+    },
+    max: {
+      fontSize: rem(scale[7]),
+      lineHeight: 1.25
+    }
+  }
+};
 var quotation01$1 = {
   fontSize: rem(scale[4]),
   fontWeight: fontWeights.regular,
@@ -646,10 +644,17 @@ var display04$1 = {
 
 var styles = /*#__PURE__*/Object.freeze({
   __proto__: null,
+  caption01: caption01$1,
   caption02: caption02$1,
+  label01: label01$1,
   label02: label02$1,
   helperText01: helperText01$1,
+  helperText02: helperText02$1,
+  bodyShort01: bodyShort01$1,
+  bodyLong01: bodyLong01$1,
+  bodyShort02: bodyShort02$1,
   bodyLong02: bodyLong02$1,
+  code01: code01,
   code02: code02$1,
   heading01: heading01$1,
   heading02: heading02$1,
@@ -659,6 +664,14 @@ var styles = /*#__PURE__*/Object.freeze({
   productiveHeading04: productiveHeading04$1,
   productiveHeading05: productiveHeading05$1,
   productiveHeading06: productiveHeading06$1,
+  productiveHeading07: productiveHeading07$1,
+  expressiveHeading01: expressiveHeading01$1,
+  expressiveHeading02: expressiveHeading02$1,
+  expressiveHeading03: expressiveHeading03$1,
+  expressiveHeading04: expressiveHeading04$1,
+  expressiveHeading05: expressiveHeading05$1,
+  expressiveHeading06: expressiveHeading06$1,
+  expressiveParagraph01: expressiveParagraph01$1,
   quotation01: quotation01$1,
   quotation02: quotation02$1,
   display01: display01$1,
@@ -741,16 +754,16 @@ function subtract(a, b) {
  * This source code is licensed under the Apache-2.0 license found in the
  * LICENSE file in the root directory of this source tree.
  */
-// Unstable tokens
-// export const caption01 = 'caption01';
-var caption02 = 'caption02'; // export const label01 = 'label01';
 
+var caption01 = 'caption01';
+var caption02 = 'caption02';
+var label01 = 'label01';
 var label02 = 'label02';
-var helperText01 = 'helperText01'; // export const helperText02 = 'helperText02';
-// export const bodyShort01 = 'bodyShort01';
-// export const bodyLong01 = 'bodyLong01';
-// export const bodyShort02 = 'bodyShort02';
-
+var helperText01 = 'helperText01';
+var helperText02 = 'helperText02';
+var bodyShort01 = 'bodyShort01';
+var bodyLong01 = 'bodyLong01';
+var bodyShort02 = 'bodyShort02';
 var bodyLong02 = 'bodyLong02';
 var code02 = 'code02';
 var heading01 = 'heading01';
@@ -760,21 +773,21 @@ var productiveHeading02 = 'productiveHeading02';
 var productiveHeading03 = 'productiveHeading03';
 var productiveHeading04 = 'productiveHeading04';
 var productiveHeading05 = 'productiveHeading05';
-var productiveHeading06 = 'productiveHeading06'; // export const productiveHeading07 = 'productiveHeading07';
-// export const expressiveHeading01 = 'expressiveHeading01';
-// export const expressiveHeading02 = 'expressiveHeading02';
-// export const expressiveHeading03 = 'expressiveHeading03';
-// export const expressiveHeading04 = 'expressiveHeading04';
-// export const expressiveHeading05 = 'expressiveHeading05';
-// export const expressiveHeading06 = 'expressiveHeading06';
-// export const expressiveParagraph01 = 'expressiveParagraph01';
-
+var productiveHeading06 = 'productiveHeading06';
+var productiveHeading07 = 'productiveHeading07';
+var expressiveHeading01 = 'expressiveHeading01';
+var expressiveHeading02 = 'expressiveHeading02';
+var expressiveHeading03 = 'expressiveHeading03';
+var expressiveHeading04 = 'expressiveHeading04';
+var expressiveHeading05 = 'expressiveHeading05';
+var expressiveHeading06 = 'expressiveHeading06';
+var expressiveParagraph01 = 'expressiveParagraph01';
 var quotation01 = 'quotation01';
 var quotation02 = 'quotation02';
 var display01 = 'display01';
 var display02 = 'display02';
 var display03 = 'display03';
 var display04 = 'display04';
-var unstable_tokens = [caption02, label02, helperText01, bodyLong02, code02, heading01, heading02, productiveHeading01, productiveHeading02, productiveHeading03, productiveHeading04, productiveHeading05, productiveHeading06, quotation01, quotation02, display01, display02, display03, display04];
+var unstable_tokens = [caption01, caption02, label01, label02, helperText01, helperText02, bodyShort01, bodyLong01, bodyShort02, bodyLong02, code01, code02, heading01, heading02, productiveHeading01, productiveHeading02, productiveHeading03, productiveHeading04, productiveHeading05, productiveHeading06, productiveHeading07, expressiveHeading01, expressiveHeading02, expressiveHeading03, expressiveHeading04, expressiveHeading05, expressiveHeading06, expressiveParagraph01, quotation01, quotation02, display01, display02, display03, display04];
 
-export { bodyLong02$1 as bodyLong02, caption02$1 as caption02, code02$1 as code02, display01$1 as display01, display02$1 as display02, display03$1 as display03, display04$1 as display04, fluid, fontFamilies, fontFamily, fontWeight, fontWeights, getTypeSize, heading01$1 as heading01, heading02$1 as heading02, helperText01$1 as helperText01, label02$1 as label02, print, productiveHeading01$1 as productiveHeading01, productiveHeading02$1 as productiveHeading02, productiveHeading03$1 as productiveHeading03, productiveHeading04$1 as productiveHeading04, productiveHeading05$1 as productiveHeading05, productiveHeading06$1 as productiveHeading06, quotation01$1 as quotation01, quotation02$1 as quotation02, reset, scale, styles, unstable_tokens };
+export { bodyLong01$1 as bodyLong01, bodyLong02$1 as bodyLong02, bodyShort01$1 as bodyShort01, bodyShort02$1 as bodyShort02, caption01$1 as caption01, caption02$1 as caption02, code01, code02$1 as code02, display01$1 as display01, display02$1 as display02, display03$1 as display03, display04$1 as display04, expressiveHeading01$1 as expressiveHeading01, expressiveHeading02$1 as expressiveHeading02, expressiveHeading03$1 as expressiveHeading03, expressiveHeading04$1 as expressiveHeading04, expressiveHeading05$1 as expressiveHeading05, expressiveHeading06$1 as expressiveHeading06, expressiveParagraph01$1 as expressiveParagraph01, fluid, fontFamilies, fontFamily, fontWeight, fontWeights, getTypeSize, heading01$1 as heading01, heading02$1 as heading02, helperText01$1 as helperText01, helperText02$1 as helperText02, label01$1 as label01, label02$1 as label02, print, productiveHeading01$1 as productiveHeading01, productiveHeading02$1 as productiveHeading02, productiveHeading03$1 as productiveHeading03, productiveHeading04$1 as productiveHeading04, productiveHeading05$1 as productiveHeading05, productiveHeading06$1 as productiveHeading06, productiveHeading07$1 as productiveHeading07, quotation01$1 as quotation01, quotation02$1 as quotation02, reset, scale, styles, unstable_tokens };

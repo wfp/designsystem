@@ -217,7 +217,22 @@ const svgo = new SVGO({
   multipass: true,
 });
 
+let pictogramsPlugins = plugins.filter((e) => !e.removeAttrs);
+
+pictogramsPlugins.push({
+  removeAttrs: {
+    attrs: ['class', 'data-name'],
+  },
+});
+
+const svgoPictograms = new SVGO({
+  plugins: pictogramsPlugins,
+  full: true,
+  multipass: true,
+});
+
 module.exports = {
   svgo,
+  svgoPictograms,
   plugins,
 };

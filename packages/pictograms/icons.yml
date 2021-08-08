@@ -1,0 +1,661 @@
+
+- name: emergency--l2-large
+  friendly_name: emergency--l2-large
+  aliases:
+    - WFP legacy icons
+  sizes:
+    - glyph
+- name: emergency--l2-small
+  friendly_name: emergency--l2-small
+  aliases:
+    - WFP legacy icons
+  sizes:
+    - glyph
+- name: emergency--l3-large
+  friendly_name: emergency--l3-large
+  aliases:
+    - WFP legacy icons
+  sizes:
+    - glyph
+- name: emergency--l3-small
+  friendly_name: emergency--l3-small
+  aliases:
+    - WFP legacy icons
+  sizes:
+    - glyph
+- name: emergency--m-large
+  friendly_name: emergency--m-large
+  aliases:
+    - WFP legacy icons
+  sizes:
+    - glyph
+- name: emergency--m-small
+  friendly_name: emergency--m-small
+  aliases:
+    - WFP legacy icons
+  sizes:
+    - glyph
+- name: sdg-logo-circle
+  friendly_name: sdg-logo-circle
+  aliases:
+    - WFP legacy icons
+  sizes:
+    - glyph
+- name: wfp-hum--affected-population-neg
+  friendly_name: wfp-hum--affected-population-neg
+  aliases:
+    - WFP legacy icons
+  sizes:
+    - glyph
+- name: wfp-hum--affected-population-pos
+  friendly_name: wfp-hum--affected-population-pos
+  aliases:
+    - WFP legacy icons
+  sizes:
+    - glyph
+- name: wfp-hum--aids-neg
+  friendly_name: wfp-hum--aids-neg
+  aliases:
+    - WFP legacy icons
+  sizes:
+    - glyph
+- name: wfp-hum--aids-pos
+  friendly_name: wfp-hum--aids-pos
+  aliases:
+    - WFP legacy icons
+  sizes:
+    - glyph
+- name: wfp-hum--airport-neg
+  friendly_name: wfp-hum--airport-neg
+  aliases:
+    - WFP legacy icons
+  sizes:
+    - glyph
+- name: wfp-hum--airport-pos
+  friendly_name: wfp-hum--airport-pos
+  aliases:
+    - WFP legacy icons
+  sizes:
+    - glyph
+- name: wfp-hum--beneficaries-neg
+  friendly_name: wfp-hum--beneficaries-neg
+  aliases:
+    - WFP legacy icons
+  sizes:
+    - glyph
+- name: wfp-hum--beneficaries-pos
+  friendly_name: wfp-hum--beneficaries-pos
+  aliases:
+    - WFP legacy icons
+  sizes:
+    - glyph
+- name: wfp-hum--breast-feeding-neg
+  friendly_name: wfp-hum--breast-feeding-neg
+  aliases:
+    - WFP legacy icons
+  sizes:
+    - glyph
+- name: wfp-hum--breast-feeding-pos
+  friendly_name: wfp-hum--breast-feeding-pos
+  aliases:
+    - WFP legacy icons
+  sizes:
+    - glyph
+- name: wfp-hum--cash-based-transfers-neg
+  friendly_name: wfp-hum--cash-based-transfers-neg
+  aliases:
+    - WFP legacy icons
+  sizes:
+    - glyph
+- name: wfp-hum--cash-based-transfers-pos
+  friendly_name: wfp-hum--cash-based-transfers-pos
+  aliases:
+    - WFP legacy icons
+  sizes:
+    - glyph
+- name: wfp-hum--cash-neg
+  friendly_name: wfp-hum--cash-neg
+  aliases:
+    - WFP legacy icons
+  sizes:
+    - glyph
+- name: wfp-hum--cash-pos
+  friendly_name: wfp-hum--cash-pos
+  aliases:
+    - WFP legacy icons
+  sizes:
+    - glyph
+- name: wfp-hum--children-neg
+  friendly_name: wfp-hum--children-neg
+  aliases:
+    - WFP legacy icons
+  sizes:
+    - glyph
+- name: wfp-hum--children-pos
+  friendly_name: wfp-hum--children-pos
+  aliases:
+    - WFP legacy icons
+  sizes:
+    - glyph
+- name: wfp-hum--civil-military-coordination-neg
+  friendly_name: wfp-hum--civil-military-coordination-neg
+  aliases:
+    - WFP legacy icons
+  sizes:
+    - glyph
+- name: wfp-hum--civil-military-coordination-pos
+  friendly_name: wfp-hum--civil-military-coordination-pos
+  aliases:
+    - WFP legacy icons
+  sizes:
+    - glyph
+- name: wfp-hum--conflict-neg
+  friendly_name: wfp-hum--conflict-neg
+  aliases:
+    - WFP legacy icons
+  sizes:
+    - glyph
+- name: wfp-hum--conflict-pos
+  friendly_name: wfp-hum--conflict-pos
+  aliases:
+    - WFP legacy icons
+  sizes:
+    - glyph
+- name: wfp-hum--drought-neg
+  friendly_name: wfp-hum--drought-neg
+  aliases:
+    - WFP legacy icons
+  sizes:
+    - glyph
+- name: wfp-hum--drought-pos
+  friendly_name: wfp-hum--drought-pos
+  aliases:
+    - WFP legacy icons
+  sizes:
+    - glyph
+- name: wfp-hum--earthquake-neg
+  friendly_name: wfp-hum--earthquake-neg
+  aliases:
+    - WFP legacy icons
+  sizes:
+    - glyph
+- name: wfp-hum--earthquake-pos
+  friendly_name: wfp-hum--earthquake-pos
+  aliases:
+    - WFP legacy icons
+  sizes:
+    - glyph
+- name: wfp-hum--email-contact-neg
+  friendly_name: wfp-hum--email-contact-neg
+  aliases:
+    - WFP legacy icons
+  sizes:
+    - glyph
+- name: wfp-hum--email-contact-pos
+  friendly_name: wfp-hum--email-contact-pos
+  aliases:
+    - WFP legacy icons
+  sizes:
+    - glyph
+- name: wfp-hum--emergency-response-neg
+  friendly_name: wfp-hum--emergency-response-neg
+  aliases:
+    - WFP legacy icons
+  sizes:
+    - glyph
+- name: wfp-hum--emergency-response-pos
+  friendly_name: wfp-hum--emergency-response-pos
+  aliases:
+    - WFP legacy icons
+  sizes:
+    - glyph
+- name: wfp-hum--emergency-telecommunications-cluster-neg
+  friendly_name: wfp-hum--emergency-telecommunications-cluster-neg
+  aliases:
+    - WFP legacy icons
+  sizes:
+    - glyph
+- name: wfp-hum--emergency-telecommunications-cluster-pos
+  friendly_name: wfp-hum--emergency-telecommunications-cluster-pos
+  aliases:
+    - WFP legacy icons
+  sizes:
+    - glyph
+- name: wfp-hum--evacuation-neg
+  friendly_name: wfp-hum--evacuation-neg
+  aliases:
+    - WFP legacy icons
+  sizes:
+    - glyph
+- name: wfp-hum--evacuation-pos
+  friendly_name: wfp-hum--evacuation-pos
+  aliases:
+    - WFP legacy icons
+  sizes:
+    - glyph
+- name: wfp-hum--evaluation-neg
+  friendly_name: wfp-hum--evaluation-neg
+  aliases:
+    - WFP legacy icons
+  sizes:
+    - glyph
+- name: wfp-hum--evaluation-pos
+  friendly_name: wfp-hum--evaluation-pos
+  aliases:
+    - WFP legacy icons
+  sizes:
+    - glyph
+- name: wfp-hum--floods-neg
+  friendly_name: wfp-hum--floods-neg
+  aliases:
+    - WFP legacy icons
+  sizes:
+    - glyph
+- name: wfp-hum--floods-pos
+  friendly_name: wfp-hum--floods-pos
+  aliases:
+    - WFP legacy icons
+  sizes:
+    - glyph
+- name: wfp-hum--food-assistance-for-assets-neg
+  friendly_name: wfp-hum--food-assistance-for-assets-neg
+  aliases:
+    - WFP legacy icons
+  sizes:
+    - glyph
+- name: wfp-hum--food-assistance-for-assets-pos
+  friendly_name: wfp-hum--food-assistance-for-assets-pos
+  aliases:
+    - WFP legacy icons
+  sizes:
+    - glyph
+- name: wfp-hum--food-distribution-neg
+  friendly_name: wfp-hum--food-distribution-neg
+  aliases:
+    - WFP legacy icons
+  sizes:
+    - glyph
+- name: wfp-hum--food-distribution-pos
+  friendly_name: wfp-hum--food-distribution-pos
+  aliases:
+    - WFP legacy icons
+  sizes:
+    - glyph
+- name: wfp-hum--food-neg
+  friendly_name: wfp-hum--food-neg
+  aliases:
+    - WFP legacy icons
+  sizes:
+    - glyph
+- name: wfp-hum--food-pos
+  friendly_name: wfp-hum--food-pos
+  aliases:
+    - WFP legacy icons
+  sizes:
+    - glyph
+- name: wfp-hum--food-security-cluster-neg
+  friendly_name: wfp-hum--food-security-cluster-neg
+  aliases:
+    - WFP legacy icons
+  sizes:
+    - glyph
+- name: wfp-hum--food-security-cluster-pos
+  friendly_name: wfp-hum--food-security-cluster-pos
+  aliases:
+    - WFP legacy icons
+  sizes:
+    - glyph
+- name: wfp-hum--gender-neg
+  friendly_name: wfp-hum--gender-neg
+  aliases:
+    - WFP legacy icons
+  sizes:
+    - glyph
+- name: wfp-hum--gender-pos
+  friendly_name: wfp-hum--gender-pos
+  aliases:
+    - WFP legacy icons
+  sizes:
+    - glyph
+- name: wfp-hum--infant-neg
+  friendly_name: wfp-hum--infant-neg
+  aliases:
+    - WFP legacy icons
+  sizes:
+    - glyph
+- name: wfp-hum--infant-pos
+  friendly_name: wfp-hum--infant-pos
+  aliases:
+    - WFP legacy icons
+  sizes:
+    - glyph
+- name: wfp-hum--logistics-cluster-neg
+  friendly_name: wfp-hum--logistics-cluster-neg
+  aliases:
+    - WFP legacy icons
+  sizes:
+    - glyph
+- name: wfp-hum--logistics-cluster-pos
+  friendly_name: wfp-hum--logistics-cluster-pos
+  aliases:
+    - WFP legacy icons
+  sizes:
+    - glyph
+- name: wfp-hum--medical-evacuations-neg
+  friendly_name: wfp-hum--medical-evacuations-neg
+  aliases:
+    - WFP legacy icons
+  sizes:
+    - glyph
+- name: wfp-hum--medical-evacuations-pos
+  friendly_name: wfp-hum--medical-evacuations-pos
+  aliases:
+    - WFP legacy icons
+  sizes:
+    - glyph
+- name: wfp-hum--monitorin-neg
+  friendly_name: wfp-hum--monitorin-neg
+  aliases:
+    - WFP legacy icons
+  sizes:
+    - glyph
+- name: wfp-hum--monitoring-pos
+  friendly_name: wfp-hum--monitoring-pos
+  aliases:
+    - WFP legacy icons
+  sizes:
+    - glyph
+- name: wfp-hum--monsoon-neg
+  friendly_name: wfp-hum--monsoon-neg
+  aliases:
+    - WFP legacy icons
+  sizes:
+    - glyph
+- name: wfp-hum--monsoon-pos
+  friendly_name: wfp-hum--monsoon-pos
+  aliases:
+    - WFP legacy icons
+  sizes:
+    - glyph
+- name: wfp-hum--mvam-neg
+  friendly_name: wfp-hum--mvam-neg
+  aliases:
+    - WFP legacy icons
+  sizes:
+    - glyph
+- name: wfp-hum--mvam-pos
+  friendly_name: wfp-hum--mvam-pos
+  aliases:
+    - WFP legacy icons
+  sizes:
+    - glyph
+- name: wfp-hum--nutrition-cluster-neg
+  friendly_name: wfp-hum--nutrition-cluster-neg
+  aliases:
+    - WFP legacy icons
+  sizes:
+    - glyph
+- name: wfp-hum--nutrition-cluster-pos
+  friendly_name: wfp-hum--nutrition-cluster-pos
+  aliases:
+    - WFP legacy icons
+  sizes:
+    - glyph
+- name: wfp-hum--p4p-neg
+  friendly_name: wfp-hum--p4p-neg
+  aliases:
+    - WFP legacy icons
+  sizes:
+    - glyph
+- name: wfp-hum--p4p-pos
+  friendly_name: wfp-hum--p4p-pos
+  aliases:
+    - WFP legacy icons
+  sizes:
+    - glyph
+- name: wfp-hum--partnership-neg
+  friendly_name: wfp-hum--partnership-neg
+  aliases:
+    - WFP legacy icons
+  sizes:
+    - glyph
+- name: wfp-hum--partnership-pos
+  friendly_name: wfp-hum--partnership-pos
+  aliases:
+    - WFP legacy icons
+  sizes:
+    - glyph
+- name: wfp-hum--population-displacement-neg
+  friendly_name: wfp-hum--population-displacement-neg
+  aliases:
+    - WFP legacy icons
+  sizes:
+    - glyph
+- name: wfp-hum--population-displacement-pos
+  friendly_name: wfp-hum--population-displacement-pos
+  aliases:
+    - WFP legacy icons
+  sizes:
+    - glyph
+- name: wfp-hum--population-return-neg
+  friendly_name: wfp-hum--population-return-neg
+  aliases:
+    - WFP legacy icons
+  sizes:
+    - glyph
+- name: wfp-hum--population-return-pos
+  friendly_name: wfp-hum--population-return-pos
+  aliases:
+    - WFP legacy icons
+  sizes:
+    - glyph
+- name: wfp-hum--powerplant-neg
+  friendly_name: wfp-hum--powerplant-neg
+  aliases:
+    - WFP legacy icons
+  sizes:
+    - glyph
+- name: wfp-hum--powerplant-pos
+  friendly_name: wfp-hum--powerplant-pos
+  aliases:
+    - WFP legacy icons
+  sizes:
+    - glyph
+- name: wfp-hum--pregnant-neg
+  friendly_name: wfp-hum--pregnant-neg
+  aliases:
+    - WFP legacy icons
+  sizes:
+    - glyph
+- name: wfp-hum--pregnant-pos
+  friendly_name: wfp-hum--pregnant-pos
+  aliases:
+    - WFP legacy icons
+  sizes:
+    - glyph
+- name: wfp-hum--procurement-neg
+  friendly_name: wfp-hum--procurement-neg
+  aliases:
+    - WFP legacy icons
+  sizes:
+    - glyph
+- name: wfp-hum--procurement-pos
+  friendly_name: wfp-hum--procurement-pos
+  aliases:
+    - WFP legacy icons
+  sizes:
+    - glyph
+- name: wfp-hum--protection-cluster-neg
+  friendly_name: wfp-hum--protection-cluster-neg
+  aliases:
+    - WFP legacy icons
+  sizes:
+    - glyph
+- name: wfp-hum--protection-cluster-pos
+  friendly_name: wfp-hum--protection-cluster-pos
+  aliases:
+    - WFP legacy icons
+  sizes:
+    - glyph
+- name: wfp-hum--public-information-neg
+  friendly_name: wfp-hum--public-information-neg
+  aliases:
+    - WFP legacy icons
+  sizes:
+    - glyph
+- name: wfp-hum--public-information-pos
+  friendly_name: wfp-hum--public-information-pos
+  aliases:
+    - WFP legacy icons
+  sizes:
+    - glyph
+- name: wfp-hum--refugee-camp-neg
+  friendly_name: wfp-hum--refugee-camp-neg
+  aliases:
+    - WFP legacy icons
+  sizes:
+    - glyph
+- name: wfp-hum--refugee-camp-pos
+  friendly_name: wfp-hum--refugee-camp-pos
+  aliases:
+    - WFP legacy icons
+  sizes:
+    - glyph
+- name: wfp-hum--relief-goods-neg
+  friendly_name: wfp-hum--relief-goods-neg
+  aliases:
+    - WFP legacy icons
+  sizes:
+    - glyph
+- name: wfp-hum--relief-goods-pos
+  friendly_name: wfp-hum--relief-goods-pos
+  aliases:
+    - WFP legacy icons
+  sizes:
+    - glyph
+- name: wfp-hum--resourcing-neg
+  friendly_name: wfp-hum--resourcing-neg
+  aliases:
+    - WFP legacy icons
+  sizes:
+    - glyph
+- name: wfp-hum--resourcing-pos
+  friendly_name: wfp-hum--resourcing-pos
+  aliases:
+    - WFP legacy icons
+  sizes:
+    - glyph
+- name: wfp-hum--school-feeding-neg
+  friendly_name: wfp-hum--school-feeding-neg
+  aliases:
+    - WFP legacy icons
+  sizes:
+    - glyph
+- name: wfp-hum--school-feeding-pos
+  friendly_name: wfp-hum--school-feeding-pos
+  aliases:
+    - WFP legacy icons
+  sizes:
+    - glyph
+- name: wfp-hum--security-neg
+  friendly_name: wfp-hum--security-neg
+  aliases:
+    - WFP legacy icons
+  sizes:
+    - glyph
+- name: wfp-hum--security-pos
+  friendly_name: wfp-hum--security-pos
+  aliases:
+    - WFP legacy icons
+  sizes:
+    - glyph
+- name: wfp-hum--ship-neg
+  friendly_name: wfp-hum--ship-neg
+  aliases:
+    - WFP legacy icons
+  sizes:
+    - glyph
+- name: wfp-hum--ship-pos
+  friendly_name: wfp-hum--ship-pos
+  aliases:
+    - WFP legacy icons
+  sizes:
+    - glyph
+- name: wfp-hum--truck-neg
+  friendly_name: wfp-hum--truck-neg
+  aliases:
+    - WFP legacy icons
+  sizes:
+    - glyph
+- name: wfp-hum--truck-pos
+  friendly_name: wfp-hum--truck-pos
+  aliases:
+    - WFP legacy icons
+  sizes:
+    - glyph
+- name: wfp-hum--vam-neg
+  friendly_name: wfp-hum--vam-neg
+  aliases:
+    - WFP legacy icons
+  sizes:
+    - glyph
+- name: wfp-hum--vam-pos
+  friendly_name: wfp-hum--vam-pos
+  aliases:
+    - WFP legacy icons
+  sizes:
+    - glyph
+- name: wfp-hum--voucher-neg
+  friendly_name: wfp-hum--voucher-neg
+  aliases:
+    - WFP legacy icons
+  sizes:
+    - glyph
+- name: wfp-hum--voucher-pos
+  friendly_name: wfp-hum--voucher-pos
+  aliases:
+    - WFP legacy icons
+  sizes:
+    - glyph
+- name: wfp-hum--warehouse-neg
+  friendly_name: wfp-hum--warehouse-neg
+  aliases:
+    - WFP legacy icons
+  sizes:
+    - glyph
+- name: wfp-hum--warehouse-pos
+  friendly_name: wfp-hum--warehouse-pos
+  aliases:
+    - WFP legacy icons
+  sizes:
+    - glyph
+- name: wfp-logo--acronym
+  friendly_name: wfp-logo--acronym
+  aliases:
+    - WFP legacy icons
+  sizes:
+    - glyph
+- name: wfp-logo--emblem
+  friendly_name: wfp-logo--emblem
+  aliases:
+    - WFP legacy icons
+  sizes:
+    - glyph
+- name: wfp-logo--extended--en
+  friendly_name: wfp-logo--extended--en
+  aliases:
+    - WFP legacy icons
+  sizes:
+    - glyph
+- name: wfp-logo--standard-black-en
+  friendly_name: wfp-logo--standard-black-en
+  aliases:
+    - WFP legacy icons
+  sizes:
+    - glyph
+- name: wfp-logo--vertical--en
+  friendly_name: wfp-logo--vertical--en
+  aliases:
+    - WFP legacy icons
+  sizes:
+    - glyph

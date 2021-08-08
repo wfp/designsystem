@@ -4,11 +4,10 @@ import classnames from 'classnames';
 import Link from '../Link';
 import Wrapper from '../Wrapper';
 import Icon from '../Icon';
-import sdgIconStandard from './SdgLogo';
 import {
-  WfpLogoStandardBlackEn16,
-  WfpLogoVerticalEn16,
-} from '@wfp/icons-react';
+  WfpLogoStandardBlackEn,
+  WfpLogoVerticalEn,
+} from '@wfp/pictograms-react';
 import settings from '../../globals/js/settings';
 
 const { prefix } = settings;
@@ -93,7 +92,7 @@ const Footer = ({
             ) : logoExtended ? (
               logoExtended
             ) : (
-              <WfpLogoStandardBlackEn16
+              <WfpLogoStandardBlackEn
                 className={`${prefix}--footer__cta-logo`}
                 alt="WFP"
               />
@@ -108,7 +107,7 @@ const Footer = ({
             ) : logo ? (
               logo
             ) : (
-              <WfpLogoVerticalEn16
+              <WfpLogoVerticalEn
                 description="WFP"
                 className={`${prefix}--footer__cta-logo-small`}
               />

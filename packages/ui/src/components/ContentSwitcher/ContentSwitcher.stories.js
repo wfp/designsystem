@@ -2,7 +2,7 @@ import React from 'react';
 import ContentSwitcher from './ContentSwitcher';
 import markdown from './README.mdx';
 import Switch from '../Switch';
-import { AddGlyph16 } from '@wfp/icons-react';
+import { AddGlyph } from '@wfp/icons-react';
 
 export default {
   title: 'Components/Content Related/ContentSwitcher',
@@ -73,19 +73,9 @@ export const withIcon = (args) => {
   };
   return (
     <ContentSwitcher {...args} onChange={handleChange}>
-      <Switch kind="button" name="one" text="First section" icon={AddGlyph16} />
-      <Switch
-        kind="button"
-        name="two"
-        text="Second section"
-        icon={AddGlyph16}
-      />
-      <Switch
-        kind="button"
-        name="three"
-        text="Third section"
-        icon={AddGlyph16}
-      />
+      <Switch kind="button" name="one" text="First section" icon={AddGlyph} />
+      <Switch kind="button" name="two" text="Second section" icon={AddGlyph} />
+      <Switch kind="button" name="three" text="Third section" icon={AddGlyph} />
     </ContentSwitcher>
   );
 };

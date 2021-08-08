@@ -5,25 +5,33 @@ import settings from '../../globals/js/settings';
 
 const { prefix } = settings;
 
+/*
 import {
-  Checkmark16,
-  Warning16,
-  WarningSolid16,
-  InfoSolid16,
+  CheckmarkOutline32,
+  WarningAlt32,
+  Information32,
+} from '@carbon/icons-react';
+*/
+
+import {
+  CheckmarkGlyph,
+  WarningAlt32,
+  WarningSolidGlyph,
+  InfoSolidGlyph,
 } from '@wfp/icons-react';
 
 const iconLookup = {
   warning: {
-    icon: Warning16,
+    icon: WarningAlt32,
   },
   error: {
-    icon: WarningSolid16,
+    icon: WarningSolidGlyph,
   },
   info: {
-    icon: InfoSolid16,
+    icon: InfoSolidGlyph,
   },
   success: {
-    icon: Checkmark16,
+    icon: CheckmarkGlyph,
   },
 };
 

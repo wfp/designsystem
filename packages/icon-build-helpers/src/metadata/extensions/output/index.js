@@ -8,7 +8,7 @@
 'use strict';
 
 const svg2js = require('svgo/lib/svgo/svg2js');
-const { svgo } = require('./optimizer');
+const { svgoPictograms, svgo } = require('./optimizer');
 const { getModuleName } = require('./getModuleName');
 
 // Icon size targets and default size. Not used with pictograms
@@ -33,7 +33,8 @@ const output = (options = defaultOptions) => {
     async extend(metadata) {
       for (const icon of metadata.icons) {
         for (const asset of icon.assets) {
-          asset.optimized = await svgo.optimize(asset.source, {
+          const svgOptimizer = icon.color === true ? svgoPictograms : svgo;
+          asset.optimized = await svgOptimizer.optimize(asset.source, {
             path: asset.filepath,
           });
         }
@@ -130,6 +131,8 @@ const output = (options = defaultOptions) => {
  */
 async function createDescriptor(name, data, size, original) {
   const info = await parse(data, name);
+
+  //console.log('info', info);
   const { attrs } = info;
   const descriptor = {
     ...info,
@@ -139,7 +142,6 @@ async function createDescriptor(name, data, size, original) {
       fill: 'currentColor',
     },
   };
-
   if (size) {
     descriptor.size = size;
     if (size !== 'glyph') {
@@ -156,6 +158,11 @@ async function createDescriptor(name, data, size, original) {
   } else {
     descriptor.attrs.width = 64;
     descriptor.attrs.height = 64;
+    if (info.attrs.viewBox) {
+      const [width, height] = info.attrs.viewBox.split(' ').slice(2);
+      descriptor.attrs.width = width;
+      descriptor.attrs.height = height;
+    }
   }
 
   return descriptor;

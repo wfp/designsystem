@@ -23,6 +23,7 @@ const pictograms = () => {
         name: Joi.string().required(),
         friendly_name: Joi.string().required(),
         aliases: Joi.array().items(Joi.string()),
+        color: Joi.boolean(),
       })
     ),
 
@@ -32,6 +33,7 @@ const pictograms = () => {
           name: pictogram.name,
           friendlyName: pictogram.friendly_name,
           aliases: pictogram.aliases,
+          color: pictogram.color,
         };
       });
 

@@ -5,9 +5,9 @@ import settings from '../../globals/js/settings';
 import {
   Close16,
   Error16,
-  CheckmarkGlyph16,
+  CheckmarkGlyph,
   WarningSolid16,
-  InfoGlyph16,
+  InfoGlyph,
 } from '@wfp/icons-react';
 
 import Button from '../Button';
@@ -207,9 +207,9 @@ NotificationTextDetails.defaultProps = {
 
 const iconTypes = {
   error: Error16,
-  success: CheckmarkGlyph16,
+  success: CheckmarkGlyph,
   warning: WarningSolid16,
-  info: InfoGlyph16,
+  info: InfoGlyph,
 };
 
 function NotificationIcon({ iconDescription, kind, notificationType }) {

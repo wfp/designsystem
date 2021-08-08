@@ -4,8 +4,7 @@ import Link from '../../components/Link';
 import Story from '../../components/Story';
 //import Icon from '../../components/Icon';
 import Wrapper from '../../components/Wrapper';
-//import { iconWfpHumEmergencyResponsePos } from '@wfp/icons-react';
-import { WfpHumEmergencyResponsePos16 } from '@wfp/icons-react';
+import { WfpHumEmergencyResponsePos } from '@wfp/pictograms-react';
 import markdown from './README.mdx';
 export default {
   title: 'Templates/Not found (404)',

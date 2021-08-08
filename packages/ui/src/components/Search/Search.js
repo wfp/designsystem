@@ -3,7 +3,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import classNames from 'classnames';
 import settings from '../../globals/js/settings';
 import Input from '../Input';
-import { Search16, CloseGlyph16 } from '@wfp/icons-react';
+import { Search16, CloseGlyph } from '@wfp/icons-react';
 
 const { prefix } = settings;
 
@@ -105,7 +105,7 @@ function Search(props) {
               onClick={clearSearch}
               type="button"
               aria-label={closeButtonLabelText}>
-              <CloseGlyph16 description={closeButtonLabelText} />
+              <CloseGlyph description={closeButtonLabelText} />
             </button>
           </>
         );

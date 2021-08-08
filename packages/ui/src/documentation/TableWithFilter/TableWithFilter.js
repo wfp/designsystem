@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import Search from '../../components/Search';
 import Button from '../../components/Button';
 
-import { FilterAlt16, SubtractGlyph16 } from '@wfp/icons-react';
+import { Filter16, SubtractGlyph } from '@wfp/icons-react';
 
 import { Module, ModuleHeader, ModuleBody } from '../../components/Module';
 import Table from './DataTable';
@@ -46,7 +46,7 @@ function TableWithFilter() {
             />
             <Button
               onClick={toggleFilter}
-              icon={filterActivated ? SubtractGlyph16 : FilterAlt16}
+              icon={filterActivated ? SubtractGlyph : Filter16}
               kind="secondary"
               style={{ marginLeft: '1em' }}>
               {filterActivated ? 'Hide filters' : 'Advanced filters'}

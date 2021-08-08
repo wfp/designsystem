@@ -1,6 +1,6 @@
 import React from 'react';
 import { buttonKinds } from '../../prop-types/types';
-import { AddGlyph16 } from '@wfp/icons-react';
+import { Add16, AddGlyph } from '@wfp/icons-react';
 import markdown from './README.mdx';
 import buttonTwig from './Button.twig';
 import { twig } from 'twig';
@@ -85,11 +85,11 @@ ButtonKind.story = {
 
 export const ButtonIcon = (args) => (
   <>
-    <Button {...args} icon={iconAddGlyph}>
+    <Button {...args} icon={<Add16 />}>
       Button with icon
     </Button>
-    {''} <Button {...args} icon={AddGlyph16} kind="tertiary"></Button>{' '}
-    <Button {...args} icon={AddGlyph16} iconReverse kind="tertiary">
+    {''} <Button {...args} icon={<Add16 />} kind="tertiary"></Button>{' '}
+    <Button {...args} icon={<Add16 />} iconReverse kind="tertiary">
       With iconReverse
     </Button>
   </>
@@ -119,7 +119,7 @@ ButtonIcon.story = {
 export const Small = (args) => (
   <>
     <Button small>Small button</Button>{' '}
-    <Button {...args} icon={AddGlyph16} kind="tertiary" small>
+    <Button {...args} icon={AddGlyph} kind="tertiary" small>
       With icon
     </Button>
   </>

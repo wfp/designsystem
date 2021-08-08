@@ -2,13 +2,13 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
 import {
-  Ellipsis16,
-  WarningGlyph16,
-  Locked16,
-  ErrorGlyph16,
-  Checkmark16,
-  Menu16,
-  OverflowMenu16,
+  EllipsisGlyph,
+  WarningOutlineGlyph,
+  LockedGlyph,
+  ErrorGlyph,
+  CheckmarkGlyph,
+  MenuGlyph,
+  OverflowMenuGlyph,
 } from '@wfp/icons-react';
 import settings from '../../globals/js/settings';
 
@@ -98,13 +98,13 @@ export default class StepNavigationItem extends React.Component {
     };
 
     const icon = {
-      'not-started': { icon: Ellipsis16 },
-      warning: { icon: WarningGlyph16 },
-      locked: { icon: Locked16 },
-      skip: { icon: OverflowMenu16 },
-      disabled: { icon: ErrorGlyph16 },
-      complete: { icon: Checkmark16 },
-      summary: { icon: Menu16 },
+      'not-started': { icon: EllipsisGlyph },
+      warning: { icon: WarningOutlineGlyph },
+      locked: { icon: LockedGlyph },
+      skip: { icon: OverflowMenuGlyph },
+      disabled: { icon: ErrorGlyph },
+      complete: { icon: CheckmarkGlyph },
+      summary: { icon: MenuGlyph },
     };
 
     const Icon = icon[status]?.icon;
