@@ -38,10 +38,10 @@ $sdg-16: #00689d;
 $sdg-17: $color__navy;
 
 //  Symbolic colors
-$color__female: #3f7e44 !default /* !global */;
-$color__male: #26bde2 !default /* !global */;
-$color__national: #3c5979 !default /* !global */;
-$color__international: #fcc30b !default /* !global */;
+$color__female: #3f7e44 !default;
+$color__male: #26bde2 !default;
+$color__national: #3c5979 !default;
+$color__international: #fcc30b !default;
 
 // Color Array
 $colors: (
@@ -56,6 +56,9 @@ $colors: (
   dark-red: $color__dark-red,
   magenta: $color__magenta,
 );
+
+// Text color
+$color__dark-text-01: #031c2d;
 
 // UI Color Scheme Extended
 $color__main-10: mix(white, $color__main, 85%) !default;

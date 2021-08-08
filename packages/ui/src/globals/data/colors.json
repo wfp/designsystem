@@ -173,6 +173,14 @@
     "type": "ui",
     "shortDescription": "Secondary text; Input labels; Help text"
   },
+  "text-04": {
+    "name": "text-04",
+    "hex": "#ffffff",
+    "scss": "$text-04",
+    "css": "color__text-04",
+    "type": "ui",
+    "shortDescription": ""
+  },
   "inverse-01": {
     "name": "inverse-01",
     "hex": "#fbfcfc",
@@ -242,8 +250,7 @@
     "css": "color__support-01",
     "type": "support",
     "shortDescription": "Error (same as color__red)",
-    "description":
-      "Use the error color to indicate an error or to focus the attention on something which is crucial to see. Paired with a cross icon, red delivers the message that something went wrong."
+    "description": "Use the error color to indicate an error or to focus the attention on something which is crucial to see. Paired with a cross icon, red delivers the message that something went wrong."
   },
   "support-02": {
     "name": "support-02",
@@ -252,8 +259,7 @@
     "css": "color__support-02",
     "type": "support",
     "shortDescription": "Success",
-    "description":
-      "Use green to indicate success state. Paired with a checkmark icon the user knows that the operation was successfully completed."
+    "description": "Use green to indicate success state. Paired with a checkmark icon the user knows that the operation was successfully completed."
   },
   "support-03": {
     "name": "support-03",
@@ -262,7 +268,6 @@
     "css": "color__support-03",
     "type": "support",
     "shortDescription": "Warning (same as color__yellow)",
-    "description":
-      "Use yellow to indicate a transient warning which is less important than an error message. Yellow typically consists of items which require the user’s immediate attention, or indicate a waiting period. Although this overlaps with the use of red, yellow is more transient in nature."
+    "description": "Use yellow to indicate a transient warning which is less important than an error message. Yellow typically consists of items which require the user’s immediate attention, or indicate a waiting period. Although this overlaps with the use of red, yellow is more transient in nature."
   }
 }

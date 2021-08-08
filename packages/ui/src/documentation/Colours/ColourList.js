@@ -56,8 +56,8 @@ export const ColourList = ({ filter }) => {
                     </h4>
                   )}
                   <ListItem>
-                    <strong>Hex:</strong>{' '}
-                    {computedColor ? computedColor : color.hex}
+                    <strong>Hex:</strong>
+                    {color.hex ? color.hex : computedColor}
                   </ListItem>
                   {color.css && (
                     <ListItem>

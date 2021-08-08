@@ -15,7 +15,7 @@ export const Regular = (args) => (
   <Tooltip
     // options
     {...args}>
-    Click here to show tooltip
+    Hover here to show tooltip
   </Tooltip>
 );
 
@@ -27,7 +27,8 @@ Regular.args = {
 export const Dark = (args) => (
   <Tooltip
     // options
-    {...args}>
+    {...args}
+    trigger="click">
     <span>Click here to show tooltip</span>
   </Tooltip>
 );

@@ -199,6 +199,10 @@
         right: 0;
         width: 25%;
         min-width: 250px;
+        @include rtl {
+          left: 0;
+          right: inherit;
+        }
       }
     }
   }

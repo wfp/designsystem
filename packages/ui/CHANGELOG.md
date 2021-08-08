@@ -1,29 +1,33 @@
-## [1.18.2](https://github.com/WFP/UI/compare/v1.18.1...v1.18.2) (2021-05-27)
-
+## [1.19.1](https://github.com/wfp/ui/compare/v1.19.0...v1.19.1) (2021-07-29)
 
 ### Bug Fixes
 
-* **components:** refactored card component and updated typography typescale ([efc3969](https://github.com/WFP/UI/commit/efc3969b90202276ca3c017a2addc95f6eb45c94))
+- **Button:** resolved sibling button issue in arabic ([d917bd8](https://github.com/wfp/ui/commit/d917bd8291622a4daf4d6c82f96658cb9b4a94ad))
+- **colours:** minor changes to colors ([a070697](https://github.com/wfp/ui/commit/a070697b7d29e7cac3f6ed7231dd370407f2c2a0))
+- **components:** fix github issues and color code issue ([e612201](https://github.com/wfp/ui/commit/e6122010fa1aaed6567e58f1864bcdd2dd3ea501))
+
+## [1.18.2](https://github.com/WFP/UI/compare/v1.18.1...v1.18.2) (2021-05-27)
+
+### Bug Fixes
+
+- **components:** refactored card component and updated typography typescale ([efc3969](https://github.com/WFP/UI/commit/efc3969b90202276ca3c017a2addc95f6eb45c94))
 
 ## [1.18.1](https://github.com/WFP/UI/compare/v1.18.0...v1.18.1) (2021-05-20)
 
-
 ### Bug Fixes
 
-* **component:** fix error from wrong prefix initiation ([372b988](https://github.com/WFP/UI/commit/372b98842c194fe5a3a670c35f1aa5b035d0a3cf))
+- **component:** fix error from wrong prefix initiation ([372b988](https://github.com/WFP/UI/commit/372b98842c194fe5a3a670c35f1aa5b035d0a3cf))
 
 # [1.18.0](https://github.com/WFP/UI/compare/v1.17.1...v1.18.0) (2021-04-25)
 
-
 ### Bug Fixes
 
-* **ModalWrapper:** submit button test was failing ([4772a5b](https://github.com/WFP/UI/commit/4772a5b9cdc29c2869349cd79f645701dbfdf5c1))
-* **Sidebar:** sticky header ([bfcff60](https://github.com/WFP/UI/commit/bfcff608c1b03f0690a307c352201ff8376be956))
-
+- **ModalWrapper:** submit button test was failing ([4772a5b](https://github.com/WFP/UI/commit/4772a5b9cdc29c2869349cd79f645701dbfdf5c1))
+- **Sidebar:** sticky header ([bfcff60](https://github.com/WFP/UI/commit/bfcff608c1b03f0690a307c352201ff8376be956))
 
 ### Features
 
-* **Sidebar:** improved mobile handler ([962323e](https://github.com/WFP/UI/commit/962323ecce95c9733f64a8f6a364cd96218d8876))
+- **Sidebar:** improved mobile handler ([962323e](https://github.com/WFP/UI/commit/962323ecce95c9733f64a8f6a364cd96218d8876))
 
 ## [1.17.1](https://github.com/WFP/UI/compare/v1.17.0...v1.17.1) (2021-04-19)
 
