@@ -8,7 +8,8 @@
   "main:scss": "source/globals/styles.scss",
   "sideEffects": false,
   "scripts": {
-    "build": "npm run build:rollup && npm run build:script && npm run build:css && npm run build:cssmin",
+    "build": "npm run copy-vendor-styles && npm run build:rollup && npm run build:script && npm run build:css && npm run build:cssmin",
+    "copy-vendor-styles": "sh ./tasks/copy-vendor-styles.sh",
     "build:rollup": "rollup -c",
     "build:script": "node scripts/build.js",
     "whichtest": "node scripts/whichTest.js",

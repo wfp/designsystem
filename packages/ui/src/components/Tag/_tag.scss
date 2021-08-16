@@ -4,7 +4,7 @@
 @import '../../globals/scss/spacing';
 @import '../../globals/scss/helper-mixins';
 @import '../../globals/scss/typography';
-@import '@carbon/import-once/scss/import-once';
+@import '../../globals/scss/vendor/@wfp/import-once/scss/import-once';
 @import 'mixins';
 
 @mixin tags {
@@ -39,15 +39,15 @@
   // }
 
   .#{$prefix}--tag--error {
-    @include tag-theme(var(--support-light-01), var(--support-01));
+    @include tag-theme(var(--support-light-01), var(--support-dark-01));
   }
 
   .#{$prefix}--tag--success {
-    @include tag-theme(var(--support-light-02), darken($support-02, 14));
+    @include tag-theme(var(--support-light-02), var(--support-dark-02));
   }
 
   .#{$prefix}--tag--warning {
-    @include tag-theme(var(--support-light-03), darken($support-03, 18));
+    @include tag-theme(var(--support-light-03), var(--support-dark-03));
   }
 
   .#{$prefix}--tag--wrap {

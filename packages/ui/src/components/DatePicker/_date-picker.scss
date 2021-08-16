@@ -9,7 +9,7 @@
 @import '../../globals/scss/helper-mixins';
 @import '../../globals/scss/typography';
 @import '../../globals/scss/spacing';
-@import '@carbon/import-once/scss/import-once';
+@import '../../globals/scss/vendor/@wfp/import-once/scss/import-once';
 
 @include exports('date-picker') {
   .PresetDateRangePicker_panel {

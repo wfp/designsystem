@@ -7,7 +7,7 @@
 @import '../../globals/scss/layout';
 @import '../../globals/scss/typography';
 @import '../../globals/scss/helper-mixins';
-@import '@carbon/import-once/scss/import-once';
+@import '../../globals/scss/vendor/@wfp/import-once/scss/import-once';
 @import '../../globals/scss/css--reset';
 
 @include exports('item') {

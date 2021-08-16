@@ -296,8 +296,8 @@
     }
 
     &:active {
-      color: darken($support-01, 10%);
-      border-color: darken($support-01, 10%);
+      color: var(--support-dark-01);
+      border-color: var(--support-dark-01);
     }
 
     &:hover:disabled,
@@ -317,7 +317,7 @@
       var(--support-01),
       transparent,
       var(--inverse-01),
-      darken($support-01, 10%),
+      var(--support-dark-01),
       var(--ui-01)
     );
 

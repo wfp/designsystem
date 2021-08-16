@@ -1,5 +1,5 @@
 @import 'feature-flags';
-@import '@carbon/import-once/scss/import-once';
+@import './vendor/@wfp/import-once/scss/import-once';
 @import 'functions';
 @import 'colors';
 @import 'spacing';
@@ -28,10 +28,13 @@
   --focus-01: #{$color__navy-gray-1};
   --support-01: #{$color__red};
   --support-light-01: #{saturate(darken($color__red, 20), 40)}; //#{$color__red-60};
+  --support-dark-01: #{desaturate(lighten($color__red, 20), 40)}; //#{$color__red-60};
   --support-02: #{$color__lime-60};
   --support-light-02: #{saturate(darken($color__lime, 20), 40)};
+  --support-dark-02: #{desaturate(lighten($color__lime, 20), 40)};
   --support-03: #{lighten($color__yellow, 5)};
   --support-light-03: #{saturate(darken($color__yellow, 15), 40)};
+  --support-dark-03: #{desaturate(lighten($color__yellow, 15), 40)};
   --support-04: #{$color__main-30};
   --support-light-04: #{$color__main-20};
   --nav-01: #{$color__navy-gray-1};
@@ -85,10 +88,13 @@
     --focus-01: #{$color__brand-01-20};
     --support-01: #{$color__red};
     --support-light-01: #{$color__red-20};
+    --support-dark-01: #{$color__red-60};
     --support-02: #{$color__lime-60};
     --support-light-02: #{$color__dark-green-20};
+    --support-dark-02: #{$color__dark-green-60};
     --support-03: #{$color__yellow};
     --support-light-03: #{$color__yellow-20};
+    --support-dark-03: #{$color__yellow-60};
     --support-04: #{$color__main-30};
     --support-light-04: #{$color__main-20};
 

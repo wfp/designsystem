@@ -19,16 +19,11 @@ export default {
 
 function ReactTable({ columns, data, withBorder }) {
   // Use the state and functions returned from useTable to build your UI
-  const {
-    getTableProps,
-    getTableBodyProps,
-    headerGroups,
-    rows,
-    prepareRow,
-  } = useTable({
-    columns,
-    data,
-  });
+  const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
+    useTable({
+      columns,
+      data,
+    });
 
   // Render the UI for your table
   return (
@@ -152,27 +147,22 @@ function ReactTablePagination({ columns, data, withBorder }) {
 }
 
 function ReactTableSorting({ columns, data, withBorder }) {
-  const {
-    getTableProps,
-    getTableBodyProps,
-    headerGroups,
-    rows,
-    prepareRow,
-  } = useTable(
-    {
-      columns,
-      data,
-      initialState: {
-        sortBy: [
-          {
-            id: 'age',
-            desc: false,
-          },
-        ],
+  const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
+    useTable(
+      {
+        columns,
+        data,
+        initialState: {
+          sortBy: [
+            {
+              id: 'age',
+              desc: false,
+            },
+          ],
+        },
       },
-    },
-    useSortBy
-  );
+      useSortBy
+    );
   return (
     <Table {...getTableProps()}>
       <thead>
@@ -228,23 +218,6 @@ export const Regular = (args) => (
     </tbody>
   </Table>
 );
-
-/*export const UsingWithoutThead = (args) => (
-  <Table>
-    <tr>
-      <th>Vorname</th>
-      <th>Nachname</th>
-    </tr>
-    <tr>
-      <td>Max</td>
-      <td>Mustermann</td>
-    </tr>
-    <tr>
-      <td>Maxine</td>
-      <td>Mustermann</td>
-    </tr>
-  </Table>
-);*/
 
 export const UsingReactTable = (args) => {
   const columns = React.useMemo(() => sampleColumns, []);

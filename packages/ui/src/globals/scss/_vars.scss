@@ -31,7 +31,7 @@ $transition--expansion: 100ms;
 // TODO: Align Colors
 $hover-primary: darken($interactive-01, 10%) !default;
 $hover-primary-text: darken($interactive-01, 15%) !default;
-$hover-danger: darken($support-01, 10%) !default;
+$hover-danger: var(--support-dark-01) !default;
 $hover-secondary: var(--interactive-01) !default;
 $hover-row: rgba(var(--interactive-02), 0.1) !default;
 // Global

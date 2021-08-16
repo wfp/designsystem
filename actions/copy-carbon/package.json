@@ -1,0 +1,28 @@
+{
+  "name": "copy-carbon",
+  "private": true,
+  "version": "0.1.6",
+  "license": "Apache-2.0",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/carbon-design-system/carbon.git",
+    "directory": "config/babel-preset-carbon"
+  },
+  "bugs": "https://github.com/carbon-design-system/carbon/issues",
+  "keywords": [
+    "ibm",
+    "carbon",
+    "carbon-design-system",
+    "components",
+    "react"
+  ],
+  "scripts": {
+    "copy-carbon": "node index.js"
+  },
+  "dependencies": {
+    "request": "^2.88.2",
+    "unzip": "^0.1.11",
+    "unzipper": "^0.10.11"
+  }
+}

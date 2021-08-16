@@ -85,11 +85,11 @@ ButtonKind.story = {
 
 export const ButtonIcon = (args) => (
   <>
-    <Button {...args} icon={<Add16 />}>
+    <Button {...args} icon={AddGlyph}>
       Button with icon
     </Button>
-    {''} <Button {...args} icon={<Add16 />} kind="tertiary"></Button>{' '}
-    <Button {...args} icon={<Add16 />} iconReverse kind="tertiary">
+    {''} <Button {...args} icon={AddGlyph} kind="tertiary"></Button>{' '}
+    <Button {...args} icon={AddGlyph} iconReverse kind="tertiary">
       With iconReverse
     </Button>
   </>
@@ -143,7 +143,7 @@ Small.story = {
 export const Large = (args) => (
   <>
     <Button large>Large button</Button>{' '}
-    <Button {...args} icon={AddGlyph16} kind="tertiary" large>
+    <Button {...args} icon={AddGlyph} kind="tertiary" large>
       With icon
     </Button>
   </>
@@ -160,6 +160,29 @@ Large.story = {
   parameters: {
     docs: {
       storyDescription: helloButtonLarge,
+    },
+  },
+};
+
+export const CustomIcon = (args) => (
+  <>
+    <Button large icon={<div>Hello</div>}>
+      Large button
+    </Button>
+  </>
+);
+
+const CustomIconText = `
+Small buttons may be used when there is not enough space for a
+regular sized button. This issue is most found in tables. Small button should have three words
+or less.
+`;
+
+CustomIcon.story = {
+  name: 'large Button',
+  parameters: {
+    docs: {
+      storyDescription: CustomIconText,
     },
   },
 };

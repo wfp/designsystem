@@ -7,7 +7,7 @@ $css--helpers: true;
 @import '../../globals/scss/typography';
 @import '../../globals/scss/layout';
 @import '../../globals/scss/css--helpers';
-@import '@carbon/import-once/scss/import-once';
+@import '../../globals/scss/vendor/@wfp/import-once/scss/import-once';
 @import '../Select/select';
 //@import '../TextInput/text-input';
 
@@ -137,7 +137,7 @@ $css--helpers: true;
       .#{$prefix}--select-input
       ~ .#{$prefix}--select__arrow {
       right: 0.3rem;
-      top: 0.625rem;
+      top: 0;
     }
 
     .#{$prefix}--text-input {

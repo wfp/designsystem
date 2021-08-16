@@ -689,11 +689,11 @@ $tokens: (
 }
 
 // TODO move following variable and `custom-property` mixin into shared file for
-// both `@carbon/type` and `@carbon/themes`
+// both `@carbon/type` and `@wfp/themes`
 
 /// @access private
 /// @group @carbon/type
-$custom-property-prefix: 'cds' !default;
+$custom-property-prefix: 'wfp' !default;
 
 /// @access private
 /// @group @carbon/type

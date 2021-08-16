@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
 import React, { useEffect, useState } from 'react';
-import Icon from '../Icon';
 import classNames from 'classnames';
 import settings from '../../globals/js/settings';
 
@@ -60,14 +59,16 @@ const Button = ({
     className: buttonClasses,
   };
 
-  const buttonImage = icon ? (
-    <Icon
-      icon={Object(icon) === icon ? icon : undefined}
-      name={Object(icon) !== icon ? icon : undefined}
-      description={iconDescription}
-      className={`${prefix}--btn__icon`}
-    />
-  ) : null;
+  const Icon = icon;
+
+  console.log('icon', icon, React.isValidElement(icon));
+
+  const buttonImage =
+    icon && React.isValidElement(icon) ? (
+      <span className={`${prefix}--btn__icon`}>{icon}</span>
+    ) : icon ? (
+      <Icon description={iconDescription} className={`${prefix}--btn__icon`} />
+    ) : null;
 
   const endAnimation = () => {
     setCount(false);
@@ -179,12 +180,7 @@ Button.propTypes = {
   /**
    * Specify an `icon` to include in the Button through an object representing the SVG data of the icon, similar to the `Icon` component
    */
-  icon: PropTypes.shape({
-    width: PropTypes.string,
-    height: PropTypes.string,
-    viewBox: PropTypes.string.isRequired,
-    svgData: PropTypes.object.isRequired,
-  }),
+  icon: PropTypes.component,
   /**
    * If specifying the `icon` prop, provide a description for that icon that can
    * be read by screen readers

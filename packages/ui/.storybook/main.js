@@ -18,7 +18,7 @@ const useRtl = CARBON_REACT_STORYBOOK_USE_RTL === 'true';
 
 module.exports = {
   addons: ['@storybook/addon-docs', ,],
-  stories: ['../src/**/*.stories.(js|mdx)'],
+  stories: ['../src/**/*.stories.@(js|mdx)'],
 
   webpack(config) {
     const babelLoader = config.module.rules.find((rule) => {
@@ -129,21 +129,23 @@ module.exports = {
         },
         {
           loader: 'postcss-loader',
-          /*options: {
-            plugins: () => {
-              const autoPrefixer = require('autoprefixer')({
-                overrideBrowserslist: ['last 1 version', 'ie >= 11'],
-              });
-              return [
-                customProperties(),
-                autoPrefixer,
-                ...(useRtl ? [rtlcss] : []),
-              ];
+          options: {
+            postcssOptions: {
+              plugins: () => {
+                const autoPrefixer = require('autoprefixer')({
+                  overrideBrowserslist: ['last 1 version', 'ie >= 11'],
+                });
+                return [
+                  customProperties(),
+                  autoPrefixer,
+                  ...(useRtl ? [rtlcss] : []),
+                ];
+              },
             },
             sourceMap: true,
-          },*/
+          },
         },
-        NODE_ENV === 'production' || useSassLoader ? sassLoader : sassLoader, //fastSassLoader,
+        NODE_ENV === 'production' || useSassLoader ? sassLoader : sassLoader,
       ],
     });
 

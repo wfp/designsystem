@@ -1,5 +1,5 @@
 {
-  "name": "@carbon/scss-generator",
+  "name": "@wfp/scss-generator",
   "private": true,
   "version": "10.13.1",
   "license": "Apache-2.0",

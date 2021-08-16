@@ -7,7 +7,7 @@ export default {
   component: Add16,
   parameters: {
     componentSubtitle: 'Component',
-    status: 'released',
+    status: 'legacy',
     mdx: markdown,
   },
 };

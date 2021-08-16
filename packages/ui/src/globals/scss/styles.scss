@@ -14,6 +14,10 @@ $css--typography: true !default;
 $css--variables: true !default;
 
 @use "sass:math";
+//@use '../../../../styles/scss/components/button/button';
+//@import '~@wfp/styles/scss/components/button/button';
+//@import '~carbon-components/src/components/button/button';
+
 @import 'colors';
 @import 'vars';
 @import '_theme-tokens';
@@ -23,7 +27,7 @@ $css--variables: true !default;
 @import 'rtl';
 @import 'spacing';
 @import 'typography';
-@import '@carbon/import-once/scss/import-once';
+@import './vendor/@wfp/import-once/scss/import-once';
 @import 'css--reset';
 @import 'css--font-face';
 @import 'css--helpers';
@@ -56,6 +60,8 @@ $deprecations--message: 'Deprecated code was found, this code will be removed be
 // 🍕 Components
 //-------------------------
 
+//@import '~carbon-components/src/components/button/button';
+
 @import '../../components/Wrapper/wrapper.scss';
 @import '../../components/Credits/credits.scss';
 @import '../../components/DatePicker/date-picker.scss';
@@ -80,7 +86,8 @@ $deprecations--message: 'Deprecated code was found, this code will be removed be
 @import '../../components/FormGroup/form-group.scss';
 @import '../../components/FormHint/form-hint.scss';
 @import '../../components/Link/link';
-@import '../../components/Button/button.scss';
+//@import '../../components/Button/button.scss';
+
 @import '../../components/ContextMenu/context-menu.scss';
 @import '../../components/Hero/hero';
 @import '../../components/Card/card';

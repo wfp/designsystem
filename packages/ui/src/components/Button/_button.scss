@@ -4,7 +4,7 @@
 @import '../../globals/scss/typography';
 @import '../../globals/scss/spacing';
 @import '../../globals/scss/helper-mixins';
-@import '@carbon/import-once/scss/import-once';
+@import '../../globals/scss/vendor/@wfp/import-once/scss/import-once';
 @import 'mixins';
 @import '../../globals/scss/css--reset';
 
@@ -26,6 +26,8 @@
     position: relative;
     vertical-align: middle;
     top: -1px;
+    height: 1em;
+    width: 1em;
 
     // Targets IE10+ browsers: Reset <svg> position for vertical centering
     @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
@@ -296,8 +298,8 @@
     }
 
     &:active {
-      color: darken($support-01, 10%);
-      border-color: darken($support-01, 10%);
+      color: var(--support-dark-01);
+      border-color: var(--support-dark-01);
     }
 
     &:hover:disabled,
@@ -317,7 +319,7 @@
       var(--support-01),
       transparent,
       var(--inverse-01),
-      darken($support-01, 10%),
+      var(--support-dark-01),
       var(--ui-01)
     );
 
