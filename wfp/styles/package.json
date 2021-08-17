@@ -1,0 +1,53 @@
+{
+  "name": "@wfp/styles-subpackage",
+  "description": "Typography for digital and software products using the UN Core",
+  "version": "10.30.2",
+  "license": "Apache-2.0",
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/carbon-design-system/carbon.git",
+    "directory": "packages/type"
+  },
+  "bugs": "https://github.com/carbon-design-system/carbon/issues",
+  "files": [
+    "es",
+    "lib",
+    "scss",
+    "src",
+    "umd"
+  ],
+  "keywords": [
+    "eyeglass-module",
+    "ibm",
+    "elements",
+    "carbon",
+    "carbon-elements",
+    "carbon-design-system",
+    "components",
+    "react"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "cp -R ../../node_modules/@wfp/type uttt",
+    "clean": "rimraf uttt"
+  },
+  "dependencies": {
+    "@wfp/styles": "^10.26.0"
+  },
+  "devDependencies": {
+    "@carbon/test-utils": "^10.3.0",
+    "@wfp/cli": "^10.25.1",
+    "change-case": "^4.1.1",
+    "rimraf": "^3.0.0"
+  },
+  "eyeglass": {
+    "exports": false,
+    "name": "@wfp/type",
+    "sassDir": "scss",
+    "needs": "^1.3.0"
+  }
+}

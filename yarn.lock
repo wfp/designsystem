@@ -11338,6 +11338,11 @@ es6-promisify@^5.0.0:
   dependencies:
     es6-promise "^4.0.3"
 
+es6-promisify@^6.1.1:
+  version "6.1.1"
+  resolved "https://registry.yarnpkg.com/es6-promisify/-/es6-promisify-6.1.1.tgz#46837651b7b06bf6fff893d03f29393668d01621"
+  integrity sha512-HBL8I3mIki5C1Cc9QjKUenHtnG0A5/xA8Q/AllRcfiwl2CZFXGK7ddBiCoRwAix4i2KxcQfjtIVcrVbB3vbmwg==
+
 es6-shim@^0.35.5:
   version "0.35.6"
   resolved "https://registry.yarnpkg.com/es6-shim/-/es6-shim-0.35.6.tgz#d10578301a83af2de58b9eadb7c2c9945f7388a0"
@@ -14148,6 +14153,11 @@ is-binary-path@~2.1.0:
   integrity sha512-ZMERYes6pDydyuGidse7OsHxtbI7WVeUEozgR/g7rd0xUimYNlvZRE/K2MgZTjWy725IfelLeVcEM97mmtRGXw==
   dependencies:
     binary-extensions "^2.0.0"
+
+is-binary@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/is-binary/-/is-binary-0.1.0.tgz#8e7d327a7ab907a838f8113e9ce5168dfdbbf3ab"
+  integrity sha1-jn0yenq5B6g4+BE+nOUWjf2786s=
 
 is-boolean-object@^1.0.1, is-boolean-object@^1.1.0:
   version "1.1.1"
@@ -21113,7 +21123,7 @@ replace-ext@^1.0.0:
   resolved "https://registry.yarnpkg.com/replace-ext/-/replace-ext-1.0.1.tgz#2d6d996d04a15855d967443631dd5f77825b016a"
   integrity sha512-yD5BHCe7quCgBph4rMQ+0KkIRKwWCrHDOX1p1Gp6HwjPM5kVoCdKGNhN7ydqqsX6lJEnQDKZ/tFMiEdQ1dvPEw==
 
-replace-in-file@^6.1.0:
+replace-in-file@^6.1.0, replace-in-file@^6.2.0:
   version "6.2.0"
   resolved "https://registry.yarnpkg.com/replace-in-file/-/replace-in-file-6.2.0.tgz#9c0e381b0e02f27f83d5ba500bb4046f63d18566"
   integrity sha512-Im2AF9G/qgkYneOc9QwWwUS/efyyonTUBvzXS2VXuxPawE5yQIjT/e6x4CTijO0Quq48lfAujuo+S89RR2TP2Q==
@@ -21121,6 +21131,17 @@ replace-in-file@^6.1.0:
     chalk "^4.1.0"
     glob "^7.1.6"
     yargs "^16.2.0"
+
+replace-in-files@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/replace-in-files/-/replace-in-files-3.0.0.tgz#535f6311c5188b2fb95b488304348a5d989517f2"
+  integrity sha512-f3lb8Fac0JZ56BrebGFoRaGvmSAF+M6Zcj0NZl3Qrd6L8HT2LA8/LObCjbTb4Sof/J/gg0tC9pUD/loW4X5u6w==
+  dependencies:
+    co "^4.6.0"
+    es6-promisify "^6.1.1"
+    globby "^11.0.1"
+    is-binary "^0.1.0"
+    lodash "^4.17.20"
 
 request@^2.88.0, request@^2.88.2:
   version "2.88.2"

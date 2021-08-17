@@ -1,3 +1,4 @@
+/* Do not modify this file. The file is comming from IBM Carbon and created by copy-carbon */
 /**
  * Copyright IBM Corp. 2016, 2018
  *
@@ -15,12 +16,11 @@ module.exports = () => {
         {
           modules: false,
           targets: {
-            browsers: ['extends browserslist-config-carbon'],
+            browsers: ['extends browserslist-config-wfp'],
           },
         },
       ],
       '@babel/preset-react',
-      '@babel/preset-typescript',
     ],
     plugins: [
       'dev-expression',

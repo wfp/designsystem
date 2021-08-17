@@ -18,9 +18,17 @@
     "react"
   ],
   "scripts": {
-    "copy-carbon": "node index.js"
+    "build-carbon": "node index.js",
+    "download-carbon": "node download.js",
+    "extract-carbon": "node extract.js",
+    "copy-carbon": "node copy.js"
   },
   "dependencies": {
+    "del": "^6.0.0",
+    "fs-extra": "^10.0.0",
+    "node-fetch": "^2.6.1",
+    "replace-in-file": "^6.2.0",
+    "replace-in-files": "^3.0.0",
     "request": "^2.88.2",
     "unzip": "^0.1.11",
     "unzipper": "^0.10.11"

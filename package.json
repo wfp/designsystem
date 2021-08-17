@@ -8,7 +8,8 @@
     "actions/*",
     "codemods",
     "config/*",
-    "packages/*"
+    "packages/*",
+    "wfp/*"
   ],
   "scripts": {
     "start:ui": "cd packages/ui && yarn start",

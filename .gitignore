@@ -107,3 +107,4 @@ packages/icons/src/legacy/warning--glyph.svg
 packages/icons/src/legacy/warning.svg
 packages/pictograms/es/*
 actions/copy-carbon/output/*
+actions/copy-carbon/carbon-design-system.zip
