@@ -32,7 +32,7 @@
     "access": "public"
   },
   "scripts": {
-    "build": "cp -R ../../node_modules/@wfp/type uttt",
+    "buildcc": "cp -R ../../node_modules/@wfp/type uttt",
     "clean": "rimraf uttt"
   },
   "dependencies": {

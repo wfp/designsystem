@@ -43,6 +43,14 @@ async function get_request() {
           to: () => 'wfp',
         })
         .pipe({
+          from: /@wfp\/cli-reporter/g,
+          to: () => '@carbon/cli-reporter',
+        })
+        .pipe({
+          from: /prettier-config-wfp/g,
+          to: () => 'prettier-config-carbon',
+        })
+        .pipe({
           from: /browserslist-config-wfp/g,
           to: () => 'browserslist-config-carbon',
         });
@@ -59,6 +67,10 @@ async function get_request() {
       await replaceInFiles({
         ...options,
         files: ['output/**/*.js'],
+        optionsForFiles: {
+          // default
+          ignore: ['**/node_modules/**', '**/carbon-cli.js'],
+        },
         from: /^/g,
         to: () =>
           '/** \n* Do not modify this file. The file is comming from IBM Carbon and created by copy-carbon \n**/\n',

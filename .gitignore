@@ -34,8 +34,7 @@ a11y/results
 jest-test-results.json
 
 # Carbon generated
-config/babel-preset-wfp/*
 packages/icons/src/legacy/*
 packages/pictograms/es/*
 actions/copy-carbon/output/*
-actions/copy-carbon/carbon-design-system.zip
+packages/cli/*
