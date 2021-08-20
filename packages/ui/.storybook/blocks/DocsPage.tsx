@@ -12,19 +12,22 @@ import { PRIMARY_STORY } from './types';
 import { Title } from '@storybook/addon-docs/blocks';
 import HelpUsImprove from '../HelpUsImprove';
 
+/*export const DocsPage: FunctionComponent<DocsStoryProps> = (props) => {
 export const DocsPage: FC = (props) => {
   return (
-    <>
-      <IntroDescription />
-      <div className="sticky-preview-wrapper">
-        <div className="sticky-preview">
-          <Primary />
-        </div>
-        <Props story={PRIMARY_STORY} />
+*/
+export const DocsPage: FC = () => (
+  <>
+    <IntroDescription />
+    <div className="sticky-preview-wrapper">
+      <div className="sticky-preview">
+        <Primary />
       </div>
-      <Stories title="Examples" />
-      <Description />
-      <HelpUsImprove />
-    </>
-  );
-};
+      <Props story={PRIMARY_STORY} />
+    </div>
+    <Stories title="Examples" />
+    <Description />
+    <HelpUsImprove />
+  </>
+);
+//};

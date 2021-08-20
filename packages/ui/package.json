@@ -177,7 +177,7 @@
     "autoprefixer": "^9.8.6",
     "babel-loader": "^8.2.2",
     "babel-plugin-dev-expression": "^0.2.2",
-    "babel-preset-carbon": "^0.1.6",
+    "babel-preset-wfp": "^0.1.0",
     "browserslist-config-carbon": "^10.6.1",
     "classnames": "2.2.6",
     "clean-webpack-plugin": "^3.0.0",

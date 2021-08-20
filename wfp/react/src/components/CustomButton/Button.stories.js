@@ -7,7 +7,7 @@ import { twig } from 'twig';
 import Button from '.';
 
 export default {
-  title: 'Components/UI Elements/Button',
+  title: 'Components/UI Elements/CustomButton',
   component: Button,
   markdown: 'hello',
   parameters: {

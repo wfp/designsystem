@@ -20,7 +20,7 @@ module.exports = {
   addons: ['@storybook/addon-docs', ,],
   stories: [
     '../src/**/*.stories.(js|mdx)',
-    '@wfp/ui/src/**/*.stories.(js|mdx)',
+    '@wfp/ui/src/components/Button/**/*.stories.(js|mdx)',
   ],
 
   webpack(config) {

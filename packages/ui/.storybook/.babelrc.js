@@ -5,8 +5,8 @@
  * LICENSE file in the root directory of this source tree.
  */
 
- 'use strict';
+'use strict';
 
- module.exports = {
-   presets: ['babel-preset-carbon'],
- };
+module.exports = {
+  presets: ['babel-preset-wfp'],
+};

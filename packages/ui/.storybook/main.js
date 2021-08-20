@@ -114,6 +114,26 @@ module.exports = {
     });
 
     config.module.rules.push({
+      test: /-story\.tsx?$/,
+      loaders: [
+        {
+          loader: require.resolve('@storybook/source-loader'),
+          options: {
+            prettierConfig: {
+              parser: 'typescript',
+              printWidth: 80,
+              tabWidth: 2,
+              bracketSpacing: true,
+              trailingComma: 'es5',
+              singleQuote: true,
+            },
+          },
+        },
+      ],
+      enforce: 'pre',
+    });
+
+    config.module.rules.push({
       test: /\.scss$/,
       sideEffects: true,
       use: [
@@ -156,7 +176,7 @@ module.exports = {
         })
       );
     }
-
+    console.log(config.module.rules);
     return config;
   },
 };
