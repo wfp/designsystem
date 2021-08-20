@@ -1,3 +1,10 @@
+# [1.20.0](https://github.com/wfp/ui/compare/v1.19.1...v1.20.0) (2021-08-20)
+
+
+### Features
+
+* **BannerNavigation:** new content added ([5ed2159](https://github.com/wfp/ui/commit/5ed2159ab7428463d04d85e7de387f5eb0126368))
+
 ## [1.19.1](https://github.com/wfp/ui/compare/v1.19.0...v1.19.1) (2021-07-29)
 
 
