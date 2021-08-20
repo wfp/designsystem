@@ -4,66 +4,28 @@ import { BannerNavigation, BannerNavigationItem } from './BannerNavigation';
 import Search from '../Search';
 import Link from '../Link';
 
+const linkList = [
+  { name: 'WFPgo', link: 'https://go.wfp.org/' },
+  { name: 'Communities', link: 'https://communities.wfp.org/' },
+  { name: 'Manuals', link: 'https://manuals.wfp.org/' },
+  { name: 'GoDocs', link: 'https://godocs.wfp.org/' },
+  { name: 'WeLearn', link: 'https://welearn.wfp.org/' },
+  { name: 'Dashboard', link: 'https://dashboard.wfp.org/' },
+  { name: 'OPweb', link: 'https://opweb.wfp.org/' },
+  { name: 'Self-Service', link: 'https://selfservice.go.wfp.org/' },
+  { name: 'UN Booking Hub', link: 'https://humanitarianbooking.wfp.org/' },
+  { name: 'WFP.org', link: 'https://wfp.org/' },
+];
+
 const BannerNavigationWithContent = ({ searchOnChange, search, ...other }) => (
   <BannerNavigation {...other}>
-    <BannerNavigationItem>
-      <Link href="https://newgo.wfp.org" target="_blank">
-        WFPgo
-      </Link>
-    </BannerNavigationItem>
-    <BannerNavigationItem>
-      <Link href="https://selfservice.go.wfp.org" target="_blank">
-        Self-Service
-      </Link>
-    </BannerNavigationItem>
-    <BannerNavigationItem>
-      <Link href="http://communities.wfp.org" target="_blank">
-        Communities
-      </Link>
-    </BannerNavigationItem>
-    <BannerNavigationItem>
-      <Link href="http://manuals.wfp.org" target="_blank">
-        Manuals
-      </Link>
-    </BannerNavigationItem>
-    <BannerNavigationItem>
-      <Link href="https://go.docs.wfp.org" target="_blank">
-        GoDocs
-      </Link>
-    </BannerNavigationItem>
-    <BannerNavigationItem>
-      <Link href="https://newgo.wfp.org/topics/data" target="_blank">
-        Data
-      </Link>
-    </BannerNavigationItem>
-    <BannerNavigationItem>
-      <Link href="http://opweb.wfp.org" target="_blank">
-        OPweb
-      </Link>
-    </BannerNavigationItem>
-    <BannerNavigationItem>
-      <Link href="https://welearn.wfp.org" target="_blank">
-        WeLearn
-      </Link>
-    </BannerNavigationItem>
-    {search && (
+    {linkList.map((e) => (
       <BannerNavigationItem>
-        <form
-          action="http://gtd.wfp.org"
-          method="GET"
-          acceptCharset="UTF-8"
-          target="_blank">
-          <Search
-            kind="banner"
-            id="search-2"
-            labelText="Find People"
-            name="q"
-            placeHolderText="Find People"
-            onChange={searchOnChange}
-          />
-        </form>
+        <Link href={e.link} target="_blank">
+          {e.name}
+        </Link>
       </BannerNavigationItem>
-    )}
+    ))}
   </BannerNavigation>
 );
 
