@@ -4,6 +4,9 @@ $css--reset: true;
 @use '@wfp/styles/index';
 
 @import '@wfp/themes/scss/themes';
+//@import '@wfp/themes/scss/index.scss';
+
+@import '../src/globals/scss/styles.scss';
 
 $carbon--theme: $carbon--theme--g10;
 
@@ -14,4 +17,8 @@ $carbon--theme: $carbon--theme--g10;
     // @include emit-component-tokens($tag-colors);
     // @include emit-component-tokens($notification-colors);
   }
+}
+
+body {
+  border: 30px solid red;
 }

@@ -1,0 +1,125 @@
+@use '../../config' as *;
+@use '../../motion' as *;
+@use '../../spacing' as *;
+@use '../../theme' as *;
+@use '../../type';
+@use '../../utilities/component-reset';
+@use '../../utilities/focus-outline' as *;
+
+/// Read more styles
+/// @access public
+/// @group link
+@mixin read-more {
+  .#{$prefix}--link {
+    @include component-reset.reset;
+    @include type.type-style('body-short-01');
+
+    display: inline-flex;
+    color: $link-primary;
+    outline: none;
+    text-decoration: none;
+    transition: color $duration-fast-01 motion(standard, productive);
+
+    &:hover {
+      color: $link-primary-hover;
+      text-decoration: underline;
+    }
+
+    &:active,
+    &:active:visited,
+    &:active:visited:hover {
+      color: $text-primary;
+      text-decoration: underline;
+    }
+
+    &:focus {
+      @include focus-outline;
+    }
+
+    &:visited {
+      color: $link-primary;
+    }
+
+    &:visited:hover {
+      color: $link-primary-hover;
+    }
+  }
+
+  .#{$prefix}--read-more {
+    @include component-reset.reset;
+    max-height: 400px;
+    overflow: hidden;
+    transition: all 0.3s;
+
+    &[aria-disabled='true'] {
+      opacity: 0.5;
+      pointer-events: none;
+    }
+    &.#{$prefix}--read-more--expanded {
+      .#{$prefix}--read-more__fake-height {
+        display: block;
+      }
+    }
+  }
+
+  .#{$prefix}--read-more__trigger {
+    display: block;
+    svg {
+      margin-left: 0.2em;
+      fill: var(--interactive-01);
+    }
+  }
+
+  .#{$prefix}--read-more__content {
+    padding-bottom: $spacing-02; // $spacing-xs;
+  }
+
+  .#{$prefix}--read-more__fake-height {
+    opacity: 0;
+    width: 1px;
+    position: absolute;
+    display: none;
+  }
+
+  .#{$prefix}--read-more--fade {
+    position: relative;
+    .#{$prefix}--read-more__content {
+      position: relative;
+      overflow: hidden;
+      margin-bottom: $spacing-02; // $spacing-xs;
+      &:after {
+        content: '';
+        z-index: 10;
+        outline: 0;
+        display: block;
+        height: 40px;
+        width: 100%;
+        transition: all 1.7s;
+        opacity: 1;
+        position: absolute;
+        bottom: -5px;
+        background: linear-gradient(
+          to bottom,
+          rgba(255, 255, 255, 0) 0%,
+          white 100%
+        );
+      }
+    }
+    &.#{$prefix}--read-more--expanded {
+      .#{$prefix}--read-more__content {
+        margin-bottom: 0;
+        &:after {
+          opacity: 0;
+        }
+      }
+    }
+  }
+
+  .#{$prefix}--read-more--max-height {
+    .#{$prefix}--read-more__content {
+      overflow: hidden;
+      padding-bottom: $spacing-02; // $spacing-xs;
+      transition: all 0.3s;
+    }
+  }
+}

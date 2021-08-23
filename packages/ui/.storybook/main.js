@@ -113,8 +113,8 @@ module.exports = {
       enforce: 'pre',
     });
 
-    config.module.rules.push({
-      test: /-story\.tsx?$/,
+    /*config.module.rules.push({
+      test: /\.tsx?$/,
       loaders: [
         {
           loader: require.resolve('@storybook/source-loader'),
@@ -132,7 +132,7 @@ module.exports = {
       ],
       enforce: 'pre',
     });
-
+*/
     config.module.rules.push({
       test: /\.scss$/,
       sideEffects: true,
@@ -169,6 +169,18 @@ module.exports = {
       ],
     });
 
+    config.module.rules.unshift({
+      test: /\.twig$/i,
+      use: [
+        {
+          loader: 'raw-loader',
+          options: {
+            esModule: false,
+          },
+        },
+      ],
+    });
+
     if (useExternalCss) {
       config.plugins.push(
         new MiniCssExtractPlugin({
@@ -176,6 +188,17 @@ module.exports = {
         })
       );
     }
+
+    config.module.rules = config.module.rules.filter(
+      (e) => {
+        console.log(
+          ' e.test ',
+          e.test.toString(),
+          e.test.toString() == `/\.tsx?$/`
+        );
+        return e.test !== '/.tsx?$/';
+      } /* && e.test !== '/.(mjs|tsx?|jsx?)$/'*/
+    );
     console.log(config.module.rules);
     return config;
   },

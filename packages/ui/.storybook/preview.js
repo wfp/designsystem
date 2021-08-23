@@ -3,13 +3,13 @@ import { addParameters } from '@storybook/react';
 import './storybook.scss';
 import theme from './theme';
 
-import {
+/*import {
   Title,
   Primary,
   Props,
   Stories,
   types,
-} from '@storybook/addon-docs/blocks';
+} from '@storybook/addon-docs/blocks';*/
 
 import { DocsPage } from './blocks/DocsPage';
 import { DocsContainer } from './blocks/DocsContainer';
