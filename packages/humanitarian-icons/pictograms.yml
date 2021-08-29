@@ -1,0 +1,326 @@
+- name: affected population (negative)
+  friendly_name: Affected population (negative)
+  aliases: []
+- name: aids (negative)
+  friendly_name: Aids (negative)
+  aliases: []
+  color: true
+- name: airport (negative)
+  friendly_name: Airport (negative)
+  aliases: []
+- name: beneficiaries (negative)
+  friendly_name: Beneficiaries (negative)
+  aliases: []
+- name: breast feeding (negative)
+  friendly_name: Breast feeding (negative)
+  aliases: []
+- name: cash based transfers (negative)
+  friendly_name: Cash based transfers (negative)
+  aliases: []
+- name: cash (negative)
+  friendly_name: Cash (negative)
+  aliases: []
+- name: children (negative)
+  friendly_name: Children (negative)
+  aliases: []
+- name: civil military coordination (negative)
+  friendly_name: Civil military coordination (negative)
+  aliases: []
+- name: conflict (negative)
+  friendly_name: Conflict (negative)
+  aliases: []
+- name: drone (negative)
+  friendly_name: Drone (negative)
+  aliases: []
+- name: drought (negative)
+  friendly_name: Drought (negative)
+  aliases: []
+- name: earthquake (negative)
+  friendly_name: Earthquake (negative)
+  aliases: []
+- name: email contact (negative)
+  friendly_name: Email contact (negative)
+  aliases: []
+- name: emergency response (negative)
+  friendly_name: Emergency response (negative)
+  aliases: []
+- name: emergency telecommunications cluster (negative)
+  friendly_name: Emergency telecommunications cluster (negative)
+  aliases: []
+- name: evacuation (negative)
+  friendly_name: Evacuation (negative)
+  aliases: []
+- name: evaluation (negative)
+  friendly_name: Evaluation (negative)
+  aliases: []
+- name: floods (negative)
+  friendly_name: Floods (negative)
+  aliases: []
+- name: food assistance for assets (negative)
+  friendly_name: Food assistance For Assets (negative)
+  aliases: []
+- name: food distribution (negative)
+  friendly_name: Food distribution (negative)
+  aliases: []
+- name: food (negative)
+  friendly_name: Food (negative)
+  aliases: []
+- name: food security cluster (negative)
+  friendly_name: Food security cluster (negative)
+  aliases: []
+- name: gender (negative)
+  friendly_name: Gender (negative)
+  aliases: []
+- name: greenhouse gas emissions (negative)
+  friendly_name: Greenhouse gas emissions (negative)
+  aliases: []
+- name: infant (negative)
+  friendly_name: Infant (negative)
+  aliases: []
+- name: logistics cluster (negative)
+  friendly_name: Logistics cluster (negative)
+  aliases: []
+- name: medical evacuations (negative)
+  friendly_name: Medical evacuations (negative)
+  aliases: []
+- name: monitoring (negative)
+  friendly_name: Monitoring (negative)
+  aliases: []
+- name: monsoon (negative)
+  friendly_name: Monsoon (negative)
+  aliases: []
+- name: m-vam (negative)
+  friendly_name: mVAM (negative)
+  aliases: []
+- name: nutrition cluster (negative)
+  friendly_name: Nutrition cluster (negative)
+  aliases: []
+- name: p4p (negative)
+  friendly_name: P4P (negative)
+  aliases: []
+- name: parnership (negative)
+  friendly_name: Parnership (negative)
+  aliases: []
+- name: population displacement (negative)
+  friendly_name: Population displacement (negative)
+  aliases: []
+- name: population return (negative)
+  friendly_name: Population return (negative)
+  aliases: []
+- name: powerplant (negative)
+  friendly_name: Powerplant (negative)
+  aliases: []
+- name: pregnant (negative)
+  friendly_name: Pregnant (negative)
+  aliases: []
+- name: procurement (negative)
+  friendly_name: Procurement (negative)
+  aliases: []
+- name: protection cluster (negative)
+  friendly_name: Protection cluster (negative)
+  aliases: []
+- name: public information (negative)
+  friendly_name: Public information (negative)
+  aliases: []
+- name: refugee camp (negative)
+  friendly_name: Refugee camp (negative)
+  aliases: []
+- name: relief goods (negative)
+  friendly_name: Relief goods (negative)
+  aliases: []
+- name: resourcing (negative)
+  friendly_name: Resourcing (negative)
+  aliases: []
+- name: school feeding (negative)
+  friendly_name: School feeding (negative)
+  aliases: []
+- name: security (negative)
+  friendly_name: Security (negative)
+  aliases: []
+- name: ship (negative)
+  friendly_name: Ship (negative)
+  aliases: []
+- name: sustaninable procurement (negative)
+  friendly_name: Sustaninable procurement (negative)
+  aliases: []
+- name: truck (negative)
+  friendly_name: Truck (negative)
+  aliases: []
+- name: vam (negative)
+  friendly_name: VAM (negative)
+  aliases: []
+- name: voucher (negative)
+  friendly_name: Voucher (negative)
+  aliases: []
+- name: warehouse (negative)
+  friendly_name: Warehouse (negative)
+  aliases: []
+- name: waste (negative)
+  friendly_name: Waste (negative)
+  aliases: []
+- name: water (negative)
+  friendly_name: Water (negative)
+  aliases: []
+- name: affected population (positive)
+  friendly_name: Affected population (positive)
+  aliases: []
+- name: aids (positive)
+  friendly_name: Aids (positive)
+  aliases: []
+  color: true
+- name: airport (positive)
+  friendly_name: Airport (positive)
+  aliases: []
+- name: beneficiaris (positive)
+  friendly_name: Beneficiaris (positive)
+  aliases: []
+- name: breast feeding (positive)
+  friendly_name: Breast feeding (positive)
+  aliases: []
+- name: cash based transfers (positive)
+  friendly_name: Cash based transfers (positive)
+  aliases: []
+- name: cash (positive)
+  friendly_name: Cash (positive)
+  aliases: []
+- name: children (positive)
+  friendly_name: Children (positive)
+  aliases: []
+- name: civil military coordination (positive)
+  friendly_name: Civil military coordination (positive)
+  aliases: []
+- name: conflict (positive)
+  friendly_name: Conflict (positive)
+  aliases: []
+- name: drone (positive)
+  friendly_name: Drone (positive)
+  aliases: []
+- name: drought (positive)
+  friendly_name: Drought (positive)
+  aliases: []
+- name: earthquake (positive)
+  friendly_name: Earthquake (positive)
+  aliases: []
+- name: email contact (positive)
+  friendly_name: Email contact (positive)
+  aliases: []
+- name: emergency response (positive)
+  friendly_name: Emergency response (positive)
+  aliases: []
+- name: emergency telecommunications cluster (positive)
+  friendly_name: Emergency telecommunications cluster (positive)
+  aliases: []
+- name: evacuation (positive)
+  friendly_name: Evacuation (positive)
+  aliases: []
+- name: evaluation (positive)
+  friendly_name: Evaluation (positive)
+  aliases: []
+- name: floods (positive)
+  friendly_name: Floods (positive)
+  aliases: []
+- name: food for assets (positive)
+  friendly_name: Food for Assets (positive)
+  aliases: []
+- name: food distribution (positive)
+  friendly_name: Food distribution (positive)
+  aliases: []
+- name: food (positive)
+  friendly_name: Food (positive)
+  aliases: []
+- name: food security cluster (positive)
+  friendly_name: Food security cluster (positive)
+  aliases: []
+- name: gender (positive)
+  friendly_name: Gender (positive)
+  aliases: []
+- name: greenhouse gas emissions (positive)
+  friendly_name: Greenhouse gas emissions (positive)
+  aliases: []
+- name: infant (positive)
+  friendly_name: Infant (positive)
+  aliases: []
+- name: logistics clusters (positive)
+  friendly_name: Logistics clusters (positive)
+  aliases: []
+- name: medical evacuations (positive)
+  friendly_name: Medical evacuations (positive)
+  aliases: []
+- name: monitoring (positive)
+  friendly_name: Monitoring (positive)
+  aliases: []
+- name: monsoon (positive)
+  friendly_name: Monsoon (positive)
+  aliases: []
+- name: m-vam (positive)
+  friendly_name: mVAM (positive)
+  aliases: []
+- name: nutrition cluster (positive)
+  friendly_name: Nutrition cluster (positive)
+  aliases: []
+- name: p4p (positive)
+  friendly_name: P4P (positive)
+  aliases: []
+- name: partnership (positive)
+  friendly_name: Partnership (positive)
+  aliases: []
+- name: population displacement (positive)
+  friendly_name: Population displacement (positive)
+  aliases: []
+- name: population return (positive)
+  friendly_name: Population return (positive)
+  aliases: []
+- name: powerplant (positive)
+  friendly_name: Powerplant (positive)
+  aliases: []
+- name: pregnant (positive)
+  friendly_name: Pregnant (positive)
+  aliases: []
+- name: procurement (positive)
+  friendly_name: Procurement (positive)
+  aliases: []
+- name: protection cluster (positive)
+  friendly_name: Protection cluster (positive)
+  aliases: []
+- name: public information (positive)
+  friendly_name: Public information (positive)
+  aliases: []
+- name: refugee camp (positive)
+  friendly_name: Refugee camp (positive)
+  aliases: []
+- name: relief goods (positive)
+  friendly_name: Relief goods (positive)
+  aliases: []
+- name: resourcing (positive)
+  friendly_name: Resourcing (positive)
+  aliases: []
+- name: school feeding (positive)
+  friendly_name: School feeding (positive)
+  aliases: []
+- name: security (positive)
+  friendly_name: Security (positive)
+  aliases: []
+- name: ship (positive)
+  friendly_name: Ship (positive)
+  aliases: []
+- name: sustainable procurement (positive)
+  friendly_name: Sustainable procurement (positive)
+  aliases: []
+- name: truck (positive)
+  friendly_name: Truck (positive)
+  aliases: []
+- name: vam (positive)
+  friendly_name: VAM (positive)
+  aliases: []
+- name: voucher (positive)
+  friendly_name: Voucher (positive)
+  aliases: []
+- name: warehouse (positive)
+  friendly_name: Warehouse (positive)
+  aliases: []
+- name: waste (positive)
+  friendly_name: Waste (positive)
+  aliases: []
+- name: water (positive)
+  friendly_name: Water (positive)
+  aliases: []

@@ -220,6 +220,7 @@ export const Regular = (args) => (
 );
 
 export const UsingReactTable = (args) => {
+  console.log(ReactTable.toString());
   const columns = React.useMemo(() => sampleColumns, []);
 
   const data = React.useMemo(() => makeData(3), []);

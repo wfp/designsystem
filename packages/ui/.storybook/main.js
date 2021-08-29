@@ -17,7 +17,12 @@ const useExternalCss = NODE_ENV === 'production';
 const useRtl = CARBON_REACT_STORYBOOK_USE_RTL === 'true';
 
 module.exports = {
-  addons: ['@storybook/addon-docs', ,],
+  addons: [
+    '@storybook/addon-docs',
+    'storybook-addon-designs',
+    '@storybook/addon-toolbars',
+    '@storybook/addon-viewport',
+  ],
   stories: ['../src/**/*.stories.@(js|mdx)'],
 
   webpack(config) {
