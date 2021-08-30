@@ -2,7 +2,7 @@
 
 ## Getting Started
 
-Export your SVGs that are in your Figma project easily via CLI.
+Export your SVGs that are in your Figma project easily via CLI or node.js.
 
 ![Gif of exporting process](documentation/export-in-action.gif)
 
@@ -27,8 +27,18 @@ Your SVGs will be generated in `src/svg` folder
 6. Add your DEV_TOKEN from step 5 into `.env` file
 7. Run `node src/index.js` and your SVGs will be generated into `src/svg` folder
 
-### Filtering Private Components (starting with a . or a _)
-1. If you want to ignore / filter private components that start with a . or _, change the FILTER_PRIVATE_COMPONENTS variable to `true`. Thanks to [lennertVanSever for their contribution to this](https://github.com/jacobtyq/export-figma-svg/pull/27)
+### Usage with node.js
+
+```js
+const { svgExporter } = require('@wfp/export-figma-svg');
+
+svgExporter();
+```
+
+### Filtering Private Components (starting with a . or a \_)
+
+1. If you want to ignore / filter private components that start with a . or \_, change the FILTER_PRIVATE_COMPONENTS variable to `true`. Thanks to [lennertVanSever for their contribution to this](https://github.com/jacobtyq/export-figma-svg/pull/27)
+
 ### Limitations
 
 Figma API has a fixed number of requests (rate limits) you can call per minute. This script will process a 20 requests per 45 seconds to avoid hitting that limit.
