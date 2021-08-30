@@ -1,26 +1,26 @@
-# @carbon/pictograms
+# @wfp/humanitarian-icons
 
-> Pictograms for digital and software products using the Carbon Design System
+> The WFP humanitarian icons are largly based on [UN OCHA Humanitarian Icons](https://brand.unocha.org/d/xEPytAUjC3sH/icons).
 
 ## Getting started
 
-To install `@carbon/pictograms` in your project, you will need to run the
+To install `@wfp/humanitarian-icons` in your project, you will need to run the
 following command using [npm](https://www.npmjs.com/):
 
 ```bash
-npm install -S @carbon/pictograms
+npm install -S @wfp/humanitarian-icons
 ```
 
 If you prefer [Yarn](https://yarnpkg.com/en/), use the following command
 instead:
 
 ```bash
-yarn add @carbon/pictograms
+yarn add @wfp/humanitarian-icons
 ```
 
 ## 📖 API Documentation
 
-If you're looking for `@carbon/pictograms` API documentation, check out:
+If you're looking for `@wfp/humanitarian-icons` API documentation, check out:
 
 - [Contributing](./docs/contributing.md)
 
