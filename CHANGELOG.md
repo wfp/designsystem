@@ -1,3 +1,10 @@
+## [1.20.1](https://github.com/wfp/ui/compare/v1.20.0...v1.20.1) (2021-08-31)
+
+
+### Bug Fixes
+
+* **Table:** documentation fixed ([a6b6eb7](https://github.com/wfp/ui/commit/a6b6eb7786074d231e33d57b96f0b330a208aa99))
+
 # [1.20.0](https://github.com/wfp/ui/compare/v1.19.1...v1.20.0) (2021-08-20)
 
 
