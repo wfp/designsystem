@@ -72,9 +72,7 @@
     "stylelint": "^13.13.1"
   },
   "husky": {
-    "hooks": {
-     
-    }
+    "hooks": {}
   },
   "commitlint": {
     "extends": [
