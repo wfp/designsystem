@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import settings from '../../globals/js/settings';
+import { settings } from '../../globals/js';
 import uid from '../../tools/uniqueId';
 import { ButtonTypes } from '../../prop-types/types';
 //import Filename from '../FileUploader/Filename';
@@ -111,7 +111,7 @@ export class FileUploaderButton extends Component {
         };
   }
 
-  handleChange = evt => {
+  handleChange = (evt) => {
     const files = evt.target.files;
     const length = evt.target.files.length;
     if (files && !this.props.disableLabelChanges) {
@@ -152,7 +152,7 @@ export class FileUploaderButton extends Component {
           role="button"
           tabIndex={tabIndex || 0}
           className={classes}
-          onKeyDown={evt => {
+          onKeyDown={(evt) => {
             if (evt.which === 13 || evt.which === 32) {
               this.input.click();
             }
@@ -163,7 +163,7 @@ export class FileUploaderButton extends Component {
         </label>
         <input
           className={`${prefix}--visually-hidden`}
-          ref={input => (this.input = input)}
+          ref={(input) => (this.input = input)}
           id={this.uid}
           disabled={disabled}
           type="file"
@@ -172,7 +172,7 @@ export class FileUploaderButton extends Component {
           accept={accept}
           name={name}
           onChange={this.handleChange}
-          onClick={evt => {
+          onClick={(evt) => {
             evt.target.value = null;
           }}
         />

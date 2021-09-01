@@ -3,7 +3,7 @@ import React from 'react';
 import classNames from 'classnames';
 
 import { Module, ModuleBody, ModuleHeader, ModuleFooter } from '../Module';
-import settings from '../../globals/js/settings';
+import { settings } from '../../globals/js';
 
 const { prefix } = settings;
 

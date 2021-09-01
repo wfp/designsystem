@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import settings from '../../globals/js/settings';
+import { settings } from '../../globals/js';
 const { prefix } = settings;
 
 /** A Module is identifiable as a single, contained unit. */

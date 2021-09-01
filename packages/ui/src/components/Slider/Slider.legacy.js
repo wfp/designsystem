@@ -5,7 +5,7 @@ import classNames from 'classnames';
 import isEqual from 'lodash.isequal';
 import TextInput from '../TextInput';
 
-import settings from '../../globals/js/settings';
+import { settings } from '../../globals/js';
 const { prefix } = settings;
 
 const defaultFormatLabel = (value, label) => {

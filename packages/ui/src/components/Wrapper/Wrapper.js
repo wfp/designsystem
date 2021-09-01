@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
-import settings from '../../globals/js/settings';
+import { settings } from '../../globals/js';
 const { prefix } = settings;
 
 export const pageWidths = ['sm', 'md', 'lg', 'full'];
@@ -20,10 +20,14 @@ const Wrapper = (props) => {
   } = props;
   const wrapperClasses = classNames({
     [`${prefix}--wrapper`]: true,
-    [`${prefix}--wrapper--width-lg`]: pageWidth === 'narrow' || pageWidth === 'lg',
-    [`${prefix}--wrapper--width-md`]: pageWidth === 'narrower' || pageWidth === 'md',
-    [`${prefix}--wrapper--width-sm`]: pageWidth === 'narrowest' || pageWidth === 'sm',
-    [`${prefix}--wrapper--width-xs`]: pageWidth === 'narrowest' || pageWidth === 'xs',
+    [`${prefix}--wrapper--width-lg`]:
+      pageWidth === 'narrow' || pageWidth === 'lg',
+    [`${prefix}--wrapper--width-md`]:
+      pageWidth === 'narrower' || pageWidth === 'md',
+    [`${prefix}--wrapper--width-sm`]:
+      pageWidth === 'narrowest' || pageWidth === 'sm',
+    [`${prefix}--wrapper--width-xs`]:
+      pageWidth === 'narrowest' || pageWidth === 'xs',
     [`${prefix}--wrapper--width-mobile-full`]: mobilePageWidth === 'full',
     [`${prefix}--wrapper--spacing-md`]: spacing === 'md',
     [`${prefix}--wrapper--spacing-xl`]: spacing === 'xl',

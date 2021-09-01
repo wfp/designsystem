@@ -4,7 +4,7 @@
 // import Icon from '../Icon';
 // import FormItem from '../FormItem';
 // import classNames from 'classnames';
-// import settings from '../../globals/js/settings';
+// import { settings } from '../../globals/js';
 
 // const { prefix } = settings;
 

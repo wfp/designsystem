@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { InfoSolid16 } from '@wfp/icons-react';
 import classNames from 'classnames';
-import settings from '../../globals/js/settings';
+import { settings } from '../../globals/js';
 import Tooltip from '../Tooltip/Tooltip';
 
 const { prefix } = settings;

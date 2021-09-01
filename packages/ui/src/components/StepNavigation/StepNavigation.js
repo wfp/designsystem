@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React, { useState, createRef } from 'react';
 import classNames from 'classnames';
 
-import settings from '../../globals/js/settings';
+import { settings } from '../../globals/js';
 
 const { prefix } = settings;
 

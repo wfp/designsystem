@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import classnames from 'classnames';
-import settings from '../../globals/js/settings';
+import { settings } from '../../globals/js';
 const { prefix } = settings;
 
 /** The Story component adds a default style, formatting and spacing for a longer text with main focus on readability. */

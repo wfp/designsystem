@@ -10,7 +10,7 @@ import React from 'react';
 import classNames from 'classnames';
 import { useFeatureFlag } from '../FeatureFlags';
 //import { settings } from 'carbon-components';
-import settings from '../../globals/js/settings';
+import { settings } from '../../globals/js';
 
 const { prefix } = settings;
 

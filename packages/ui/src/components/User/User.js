@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
 import { User16 } from '@wfp/icons-react';
-import settings from '../../globals/js/settings';
+import { settings } from '../../globals/js';
 const { prefix } = settings;
 
 /** The User is used inside the MainNavigation and form, and can display an avatar and username. */

@@ -10,7 +10,7 @@ import React from 'react';
 import classNames from 'classnames';
 import { CaretDownGlyph } from '@wfp/icons-react';
 
-import settings from '../../globals/js/settings';
+import { settings } from '../../globals/js';
 import Input from '../Input';
 
 import {

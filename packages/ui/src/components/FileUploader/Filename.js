@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Icon from '../Icon';
 import { iconCloseGlyph, iconCheckmarkGlyph } from '@wfp/icons-react';
-import settings from '../../globals/js/settings';
+import { settings } from '../../globals/js';
 
 const { prefix } = settings;
 

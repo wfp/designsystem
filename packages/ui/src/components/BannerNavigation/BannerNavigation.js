@@ -2,12 +2,15 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
 import Wrapper from '../Wrapper';
-import settings from '../../globals/js/settings';
+import { settings } from '../../globals/js';
 
 const { prefix } = settings;
 
 const BannerNavigationItem = ({ className, children }) => {
-  const wrapperClasses = classNames(`${prefix}--banner-navigation__item`, className);
+  const wrapperClasses = classNames(
+    `${prefix}--banner-navigation__item`,
+    className
+  );
   return <li className={wrapperClasses}>{children}</li>;
 };
 

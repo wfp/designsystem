@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
-import settings from '../../globals/js/settings';
+import { settings } from '../../globals/js';
 import uid from '../../tools/uniqueId';
 
 const { prefix } = settings;
@@ -97,7 +97,6 @@ class RadioButton extends React.Component {
       </div>
     );
   }
-
 }
 
 export default (() => {
@@ -105,4 +104,3 @@ export default (() => {
   forwardRef.displayName = 'RadioButton';
   return React.forwardRef(forwardRef);
 })();
-

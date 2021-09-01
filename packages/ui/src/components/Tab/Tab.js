@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
-import settings from '../../globals/js/settings';
+import { settings } from '../../globals/js';
 
 const { prefix } = settings;
 
@@ -153,7 +153,7 @@ export default class Tab extends React.Component {
       role: 'tab',
       tabIndex,
       'aria-selected': selected,
-      ref: e => {
+      ref: (e) => {
         this.tabAnchor = e;
       },
     };
@@ -162,13 +162,13 @@ export default class Tab extends React.Component {
     const liProps = {
       tabIndex: -1,
       className: classes,
-      onClick: evt => {
+      onClick: (evt) => {
         if (!disabled) {
           handleTabClick(index, label, evt);
           onClick(evt);
         }
       },
-      onKeyDown: evt => {
+      onKeyDown: (evt) => {
         if (!disabled) {
           this.setTabFocus(evt);
           handleTabKeyDown(index, label, evt);

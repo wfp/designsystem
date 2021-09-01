@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { useState, useEffect } from 'react';
 import classnames from 'classnames';
-import settings from '../../globals/js/settings';
+import { settings } from '../../globals/js';
 import {
   Close16,
   Error16,

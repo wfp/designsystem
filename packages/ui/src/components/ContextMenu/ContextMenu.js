@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Tooltip from '../Tooltip';
 import classnames from 'classnames';
-import settings from '../../globals/js/settings';
+import { settings } from '../../globals/js';
 const { prefix } = settings;
 
 /** Context menu are used as navigational elements. They should contain commands that apply to the target object. */
