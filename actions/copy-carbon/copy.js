@@ -21,11 +21,27 @@ async function get_request() {
   );
 
   // CLI
-  await del(['../../packages/cli', '../../packages/cli'], { force: true });
-  fs.rename(
-    'output/carbon-main/packages/cli/bin/carbon-cli.js',
-    'output/carbon-main/packages/cli/bin/wfp-cli.js'
+
+  let oldRawdata = fs.readFileSync('../../packages/cli/package.json');
+  let oldPackageJson = JSON.parse(oldRawdata);
+
+  let rawdata = fs.readFileSync('output/carbon-main/packages/cli/package.json');
+  let packageJson = JSON.parse(rawdata);
+  packageJson.version = oldPackageJson.version;
+  console.log('packageJson', packageJson);
+
+  fs.writeFileSync(
+    'output/carbon-main/packages/cli/package.json',
+    JSON.stringify(packageJson, null, 4)
   );
+
+  await del(['../../packages/cli', '../../packages/cli'], { force: true });
+
+  if (fs.existsSync('output/carbon-main/packages/cli/bin/carbon-cli.js'))
+    fs.rename(
+      'output/carbon-main/packages/cli/bin/carbon-cli.js',
+      'output/carbon-main/packages/cli/bin/wfp-cli.js'
+    );
 
   fs.copy(
     'output/carbon-main/packages/cli',

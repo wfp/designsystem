@@ -7,7 +7,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import settings from '../../globals/js/settings';
+import { settings } from '../../globals/js';
 import classNames from 'classnames';
 import { Filename } from './FileUploader';
 //import { keys, matches } from '../../internal/keyboard';

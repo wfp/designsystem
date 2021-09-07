@@ -22,19 +22,6 @@
     }
   }
 
-  // .#{$prefix}--blockquote--toggleable {
-  //   .#{$prefix}--blockquote__inside {
-  //     display: none;
-  //   }
-  //   cursor: pointer;
-  // }
-
-  // .#{$prefix}--blockquote--toggle--open {
-  //   .#{$prefix}--blockquote__inside {
-  //     display: block;
-  //   }
-  // }
-
   .#{$prefix}--blockquote__content {
     padding: $spacing-md;
     line-height: 1.4;

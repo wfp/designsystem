@@ -39,6 +39,15 @@ import '@wfp/ui/assets/css/styles.css';
 
 Additional information about the Usage can be found [here](https://wfp.org/UIGuide).
 
+### Development
+
+Please refer to the [Contribution Guidelines](./.github/CONTRIBUTING.md) before starting any work.
+Use the `feat/` branches for active development.
+
+#### Installation
+
+The project is using a lerna/yarn mono repository for development. After cloning the repository, run `yarn` to install all packages needed.
+
 ### Documentation & list of components available
 
 View available Components [here](https://wfp.org/UIGuide). Usage information is available when you click the blue **Show Info** icon in the top right corner of the selected component.
@@ -98,11 +107,6 @@ All the logo files can be found in https://github.com/wfp/ui-assets.
 The [Sketch App](https://www.sketchapp.com/) and [Adobe xD](https://www.adobe.com/en/products/xd.html) library can be used to easily create new User interfaces.
 
 The downloads are available here: [UI Design Kit on GitHub](https://github.com/wfp/ui-design-kit).
-
-## Development
-
-Please refer to the [Contribution Guidelines](./.github/CONTRIBUTING.md) before starting any work.
-Use the `feat/` branches for active development.
 
 ### Using the server
 

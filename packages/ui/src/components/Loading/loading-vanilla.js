@@ -5,7 +5,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import settings from '../../globals/js/settings';
+import { settings } from '../../globals/js';
 import mixin from '../../globals/js/misc/mixin';
 import createComponent from '../../globals/js/mixins/create-component';
 import initComponentBySearch from '../../globals/js/mixins/init-component-by-search';
@@ -81,7 +81,7 @@ class Loading extends mixin(createComponent, initComponentBySearch, handles) {
   end() {
     this.set(false);
     let handleAnimationEnd = this.manage(
-      on(this.element, 'animationend', evt => {
+      on(this.element, 'animationend', (evt) => {
         if (handleAnimationEnd) {
           handleAnimationEnd = this.unmanage(handleAnimationEnd).release();
         }

@@ -1,7 +1,7 @@
 //-----------------------------
 // Footer
 //-----------------------------
-
+/*here
 @import '../../globals/scss/vars';
 @import '../../globals/scss/colors';
 @import '../../globals/scss/helper-mixins';
@@ -130,9 +130,12 @@
 .#{$prefix}--footer__info__item {
   margin-right: rem(20px);
 }
+end
+*/
 
 /* External */
 
+/* here
 .#{$prefix}--footer--external {
   @include breakpointMax(bp--sm--major) {
     .#{$prefix}--footer__content {
@@ -212,3 +215,4 @@
     }
   }
 }
+end */

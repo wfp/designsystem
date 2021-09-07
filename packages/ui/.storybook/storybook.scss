@@ -6,7 +6,8 @@ $css--reset: true;
 @import '@wfp/themes/scss/themes';
 //@import '@wfp/themes/scss/index.scss';
 
-@import '../src/globals/scss/styles.scss';
+// Legacy theme
+// @import '../src/globals/scss/styles.scss';
 
 $carbon--theme: $carbon--theme--g10;
 
@@ -20,5 +21,5 @@ $carbon--theme: $carbon--theme--g10;
 }
 
 body {
-  border: 30px solid red;
+  // border: 30px solid red;
 }

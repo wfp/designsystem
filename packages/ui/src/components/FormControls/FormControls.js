@@ -3,7 +3,7 @@ import React from 'react';
 import classNames from 'classnames';
 import Button from '../Button';
 import { ArrowLeft16, ArrowRight16 } from '@wfp/icons-react';
-import settings from '../../globals/js/settings';
+import { settings } from '../../globals/js';
 const { prefix } = settings;
 
 export default class FormControls extends React.Component {

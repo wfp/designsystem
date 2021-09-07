@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { iconUser } from '@wfp/icons-react';
 import Icon from '../../components/Icon';
-import settings from '../../globals/js/settings';
+import { settings } from '../../globals/js';
 
 const { prefix } = settings;
 

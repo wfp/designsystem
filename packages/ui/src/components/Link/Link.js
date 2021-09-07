@@ -1,23 +1,50 @@
-import React from 'react';
+/**
+ * Copyright IBM Corp. 2016, 2018
+ *
+ * This source code is licensed under the Apache-2.0 license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
 import PropTypes from 'prop-types';
+import React from 'react';
 import classnames from 'classnames';
-import settings from '../../globals/js/settings';
+import { settings } from '../../globals/js';
+
 const { prefix } = settings;
 
-/** Links are used as navigational elements. They may appear on their own, within a sentence or paragraph, or directly following the content. */
+const Link = ({
+  children,
+  className,
+  href,
+  disabled,
+  inline,
+  visited,
+  renderIcon: Icon,
+  size,
+  ...other
+}) => {
+  const classNames = classnames(`${prefix}--link`, className, {
+    [`${prefix}--link--disabled`]: disabled,
+    [`${prefix}--link--inline`]: inline,
+    [`${prefix}--link--visited`]: visited,
+    [`${prefix}--link--${size}`]: size,
+  });
 
-export const Link = ({ children, className, href, inline, ...other }) => {
-  const classNames = classnames(
-    {
-      [`${prefix}--link`]: true,
-      [`${prefix}--link--inline`]: inline,
-    },
-    className
-  );
+  const Tag = disabled ? 'p' : 'a';
+  const rel = other.target === '_blank' ? 'noopener' : null;
   return (
-    <a href={href} className={classNames} {...other}>
+    <Tag
+      href={disabled ? null : href}
+      className={classNames}
+      rel={rel}
+      {...other}>
       {children}
-    </a>
+      {!inline && Icon && (
+        <div className={`${prefix}--link__icon`}>
+          <Icon />
+        </div>
+      )}
+    </Tag>
   );
 };
 
@@ -28,18 +55,40 @@ Link.propTypes = {
   children: PropTypes.node,
 
   /**
-   * Provide a custom className to be applied to the containing <a> node
+   * Provide a custom className to be applied to the containing `<a>` node
    */
   className: PropTypes.string,
 
   /**
-   * Provide the `href` attribute for the <a> node
+   * Specify if the control should be disabled, or not
+   */
+  disabled: PropTypes.bool,
+
+  /**
+   * Provide the `href` attribute for the `<a>` node
    */
   href: PropTypes.string,
+
   /**
-   * Inline links are used within a sentence or paragraph and are styled with an underline. They should not be paired with an icon.
+   * Specify whether you want the inline version of this control
    */
   inline: PropTypes.bool,
+
+  /**
+   * Optional prop to render an icon next to the link.
+   * Can be a React component class
+   */
+  renderIcon: PropTypes.oneOfType([PropTypes.func, PropTypes.object]),
+
+  /**
+   * Specify the size of the Link. Currently supports either `sm`, 'md' (default) or 'lg` as an option.
+   */
+  size: PropTypes.oneOf(['sm', 'md', 'lg']),
+
+  /**
+   * Specify whether you want the link to receive visited styles after the link has been clicked
+   */
+  visited: PropTypes.bool,
 };
 
 export default Link;

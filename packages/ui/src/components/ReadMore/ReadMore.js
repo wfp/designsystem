@@ -5,7 +5,7 @@ import classnames from 'classnames';
 import Link from '../Link';
 import { iconCaretUp, iconCaretDown } from '@wfp/icons-react';
 import Icon from '../Icon';
-import settings from '../../globals/js/settings';
+import { settings } from '../../globals/js';
 import { CaretUp16, CaretDown16 } from '@wfp/icons-react';
 
 const { prefix } = settings;

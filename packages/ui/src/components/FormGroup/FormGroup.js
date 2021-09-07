@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import classnames from 'classnames';
-import settings from '../../globals/js/settings';
+import { settings } from '../../globals/js';
 
 const { prefix } = settings;
 
@@ -19,7 +19,10 @@ const FormGroup = ({
   messageText,
   ...other
 }) => {
-  const classNamesLegend = classnames(`${prefix}--form-group__title`, className);
+  const classNamesLegend = classnames(
+    `${prefix}--form-group__title`,
+    className
+  );
   const classNamesFieldset = classnames(
     `${prefix}--fieldset`,
     {

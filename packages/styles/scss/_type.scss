@@ -6,7 +6,7 @@
 //
 
 @use 'config';
-@forward '@carbon/type' show
+@forward '@wfp/type' show
   // Mixins
   reset,
   type-style,
@@ -15,6 +15,7 @@
   // Variables
   $caption-01,
   $label-01,
+  $label-02,
   $helper-text-01,
   $body-short-01,
   $body-short-02,

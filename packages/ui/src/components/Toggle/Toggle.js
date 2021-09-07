@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
-import settings from '../../globals/js/settings';
+import { settings } from '../../globals/js';
 const { prefix } = settings;
 
 /** A toggle is used to quickly switch between two possible states. They are commonly used for “on/off” switches */
@@ -53,7 +53,7 @@ const Toggle = ({
 
       <label className={`${prefix}--toggle__label`} htmlFor={htmlFor}>
         <span className={`${prefix}--toggle__text--left`}>{labelA}</span>
-        <span className={`${prefix}--toggle__appearance`}/>
+        <span className={`${prefix}--toggle__appearance`} />
         <span className={`${prefix}--toggle__text--right`}>{labelB}</span>
       </label>
     </div>

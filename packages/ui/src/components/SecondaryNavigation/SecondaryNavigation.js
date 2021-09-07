@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
 import Wrapper from '../Wrapper';
-import settings from '../../globals/js/settings';
+import { settings } from '../../globals/js';
 
 const { prefix } = settings;
 
@@ -34,14 +34,19 @@ const SecondaryNavigation = ({
   id,
   pageWidth,
 }) => {
-  const wrapperClasses = classNames(`${prefix}--secondary-navigation`, className);
+  const wrapperClasses = classNames(
+    `${prefix}--secondary-navigation`,
+    className
+  );
 
   return (
     <div id={id} className={wrapperClasses}>
       <Wrapper
         pageWidth={pageWidth}
         className={`${prefix}--secondary-navigation__wrapper`}>
-        <div className={`${prefix}--secondary-navigation__list`}>{children}</div>
+        <div className={`${prefix}--secondary-navigation__list`}>
+          {children}
+        </div>
         {additional && (
           <div className={`${prefix}--secondary-navigation__additional`}>
             {additional}

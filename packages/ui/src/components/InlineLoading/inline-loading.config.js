@@ -5,7 +5,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-const { prefix } = require('../../globals/js/settings');
+const { prefix } = require('../../globals/js');
 const { componentsX } = require('../../globals/js/feature-flags');
 
 module.exports = {

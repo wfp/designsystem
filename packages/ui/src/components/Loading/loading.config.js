@@ -5,7 +5,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import settings from '../../globals/js/settings';
+import { settings } from '../../globals/js';
 const { prefix } = settings;
 
 module.exports = {

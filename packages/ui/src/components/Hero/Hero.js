@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
-import settings from '../../globals/js/settings';
+import { settings } from '../../globals/js';
 
 const { prefix } = settings;
 /**
@@ -42,10 +42,15 @@ const Hero = ({
       <div className={`${prefix}--photo-card__info`}>
         <div>
           {(kind === 'landscape' || kind === 'hero') && (
-            <div className={`${prefix}--photo-card__info__background`} style={style} />
+            <div
+              className={`${prefix}--photo-card__info__background`}
+              style={style}
+            />
           )}
           {metadata && (
-            <p className={`${prefix}--photo-card__info__metadata`}>{metadata}</p>
+            <p className={`${prefix}--photo-card__info__metadata`}>
+              {metadata}
+            </p>
           )}
           {title && (kind === 'hero' || kind === 'page-splash') && (
             <h2 className={`${prefix}--photo-card__info__title`}>{title}</h2>
@@ -54,7 +59,9 @@ const Hero = ({
             <h3 className={`${prefix}--photo-card__info__title`}>{title}</h3>
           )}
           {subTitle && (
-            <p className={`${prefix}--photo-card__info__subtitle`}>{subTitle}</p>
+            <p className={`${prefix}--photo-card__info__subtitle`}>
+              {subTitle}
+            </p>
           )}
         </div>
 

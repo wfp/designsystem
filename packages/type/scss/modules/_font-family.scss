@@ -13,16 +13,16 @@
 $font-families: (
   'mono':
     unquote(
-      "'IBM Plex Mono', 'Menlo', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', Courier, monospace"
+      "'Menlo', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', Courier, monospace"
     ),
-  'sans': unquote("'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif"),
+  'sans': unquote("'Open Sans', sans-serif"),
   'sans-condensed':
-    unquote("'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif"),
+    unquote("'Open Sans Condensed', 'Helvetica Neue', Arial, sans-serif"),
   'sans-hebrew':
     unquote(
-      "'IBM Plex Sans Hebrew', 'Helvetica Hebrew', 'Arial Hebrew', sans-serif"
+      "'Helvetica Hebrew', 'Arial Hebrew', sans-serif"
     ),
-  'serif': unquote("'IBM Plex Serif', 'Georgia', Times, serif"),
+  'sans-tajawal': unquote("'Tajawal', sans-serif")
 ) !default;
 
 /// Get the font-family for an IBM Plex font
@@ -50,6 +50,8 @@ $font-weights: (
   'light': 300,
   'regular': 400,
   'semibold': 600,
+  'bold': 700,
+  'extrabold': 800,
 ) !default;
 
 /// Retrieve the font-weight value for a given name

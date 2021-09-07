@@ -18,8 +18,8 @@
     "react"
   ],
   "scripts": {
-    "build": "npm run download-carbon && npm run extract-carbon && npm run build-carbon && npm run copy-carbon",
-    "build-carbon": "node index.js",
+    "build-carbon": "npm run download-carbon && npm run extract-carbon && npm run rename-carbon && npm run copy-carbon",
+    "rename-carbon": "node index.js",
     "download-carbon": "node download.js",
     "extract-carbon": "node extract.js",
     "copy-carbon": "node copy.js"

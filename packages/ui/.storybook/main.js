@@ -23,7 +23,7 @@ module.exports = {
     '@storybook/addon-toolbars',
     '@storybook/addon-viewport',
   ],
-  stories: ['../src/**/*.stories.@(js|mdx)'],
+  stories: ['../src/**/*.stories.@(js|mdx)', '../src/**/*-story.@(js|mdx)'],
 
   webpack(config) {
     const babelLoader = config.module.rules.find((rule) => {

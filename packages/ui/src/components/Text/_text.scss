@@ -10,7 +10,7 @@
 @import '../../globals/scss/vendor/@wfp/import-once/scss/import-once';
 @import '../../globals/scss/css--reset';
 @import '../../globals/scss/css--typography';
-@import '../Link/link';
+@import '../Link.legacy/link';
 
 @mixin text {
   code {

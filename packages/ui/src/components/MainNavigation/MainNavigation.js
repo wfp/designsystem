@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import classNames from 'classnames';
 import Button from '../Button';
 import Wrapper from '../Wrapper';
-import settings from '../../globals/js/settings';
+import { settings } from '../../globals/js';
 
 const { prefix } = settings;
 
@@ -56,14 +56,8 @@ class MainNavigation extends Component {
   };
 
   render() {
-    const {
-      children,
-      className,
-      id,
-      logo,
-      mobilePageWidth,
-      pageWidth,
-    } = this.props;
+    const { children, className, id, logo, mobilePageWidth, pageWidth } =
+      this.props;
 
     const wrapperClasses = classNames(`${prefix}--main-navigation`, className);
 

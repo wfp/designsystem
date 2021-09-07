@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
 import FormItem from '../FormItem';
-import settings from '../../globals/js/settings';
+import { settings } from '../../globals/js';
 //import useDetectPrint from '../../internal/useDetectPrint';
 const { prefix } = settings;
 

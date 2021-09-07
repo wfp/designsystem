@@ -7845,40 +7845,6 @@
     "@webassemblyjs/wast-parser" "1.9.0"
     "@xtuc/long" "4.2.2"
 
-"@wfp/cli@10.25.1", "@wfp/cli@^10.25.1":
-  version "10.25.1"
-  resolved "https://registry.yarnpkg.com/@wfp/cli/-/cli-10.25.1.tgz#b891d763e1c9ab5c573cac14607beecbc9cc99ca"
-  integrity sha512-FxL+7B6i8fGGAX2PSRnMkkOhn5O4m3VnCEioYggeqpQOaNPQ9//GEG0F/mC8fEDjuQvLUXGJ1l9y6ji8pGJWaA==
-  dependencies:
-    "@babel/core" "^7.14.6"
-    "@carbon/cli-reporter" "^10.5.0"
-    "@octokit/plugin-retry" "^3.0.7"
-    "@octokit/plugin-throttling" "^2.6.0"
-    "@octokit/rest" "^16.28.1"
-    "@rollup/plugin-babel" "^5.3.0"
-    "@rollup/plugin-commonjs" "^18.0.0"
-    "@rollup/plugin-node-resolve" "^11.2.1"
-    chalk "^4.1.1"
-    change-case "^4.1.2"
-    child-process-promise "^2.2.1"
-    clipboardy "^2.1.0"
-    enquirer "^2.3.6"
-    fast-glob "^3.2.2"
-    fs-extra "^8.0.1"
-    inquirer "^6.4.1"
-    klaw-sync "^6.0.0"
-    lodash.template "^4.5.0"
-    markdown-toc "^1.2.0"
-    prettier "^2.2.1"
-    prettier-config-carbon "^0.6.0"
-    progress-estimator "^0.2.2"
-    remark "^10.0.1"
-    replace-in-file "^6.1.0"
-    rollup "^2.46.0"
-    sass "^1.32.4"
-    sassdoc "^2.7.3"
-    yargs "^15.1.0"
-
 "@xtuc/ieee754@^1.2.0":
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/@xtuc/ieee754/-/ieee754-1.2.0.tgz#eef014a3145ae477a1cbc00cd1e552336dceb790"
@@ -12680,7 +12646,7 @@ fast-glob@^2.2.6:
     merge2 "^1.2.3"
     micromatch "^3.1.10"
 
-fast-glob@^3.0.3, fast-glob@^3.1.1, fast-glob@^3.2.2, fast-glob@^3.2.4, fast-glob@^3.2.5:
+fast-glob@^3.0.3, fast-glob@^3.1.1, fast-glob@^3.2.4, fast-glob@^3.2.5, fast-glob@^3.2.7:
   version "3.2.7"
   resolved "https://registry.yarnpkg.com/fast-glob/-/fast-glob-3.2.7.tgz#fd6cb7a2d7e9aa7a7846111e85a196d6b2f766a1"
   integrity sha512-rYGMRwip6lUMvYD3BTScMwT1HtAs2d71SMv66Vrxs0IekGZEjhM0pcMfjQPnknBt2zeCwQMEupiN02ZP4DiT1Q==
@@ -22336,7 +22302,7 @@ sass-loader@10:
     schema-utils "^3.0.0"
     semver "^7.3.2"
 
-sass@^1.32.4, sass@^1.33.0:
+sass@^1.33.0, sass@^1.36.0:
   version "1.38.0"
   resolved "https://registry.yarnpkg.com/sass/-/sass-1.38.0.tgz#2f3e60a1efdcdc910586fa79dc89d3399a145b4f"
   integrity sha512-WBccZeMigAGKoI+NgD7Adh0ab1HUq+6BmyBUEaGxtErbUtWUevEbdgo5EZiJQofLUGcKtlNaO2IdN73AHEua5g==
@@ -25823,7 +25789,7 @@ yargs@^14.2.2:
     y18n "^4.0.0"
     yargs-parser "^15.0.1"
 
-yargs@^15.0.1, yargs@^15.1.0, yargs@^15.4.1:
+yargs@^15.0.1, yargs@^15.4.1:
   version "15.4.1"
   resolved "https://registry.yarnpkg.com/yargs/-/yargs-15.4.1.tgz#0d87a16de01aee9d8bec2bfbf74f67851730f4f8"
   integrity sha512-aePbxDmcYW++PaqBsJ+HYUFwCdv4LVvdnhBy78E57PIor8/OVvhMrADFFEDh8DHDFRv/O9i3lPhsENjO7QX0+A==
@@ -25844,6 +25810,19 @@ yargs@^16.0.0, yargs@^16.0.3, yargs@^16.1.1, yargs@^16.2.0:
   version "16.2.0"
   resolved "https://registry.yarnpkg.com/yargs/-/yargs-16.2.0.tgz#1c82bf0f6b6a66eafce7ef30e376f49a12477f66"
   integrity sha512-D1mvvtDG0L5ft/jGWkLpG1+m0eQxOfaBvTNELraWj22wSVUMWxZUvYgJYcKh6jGGIkJFhH4IZPQhR4TKpc8mBw==
+  dependencies:
+    cliui "^7.0.2"
+    escalade "^3.1.1"
+    get-caller-file "^2.0.5"
+    require-directory "^2.1.1"
+    string-width "^4.2.0"
+    y18n "^5.0.5"
+    yargs-parser "^20.2.2"
+
+yargs@^17.0.1:
+  version "17.1.1"
+  resolved "https://registry.yarnpkg.com/yargs/-/yargs-17.1.1.tgz#c2a8091564bdb196f7c0a67c1d12e5b85b8067ba"
+  integrity sha512-c2k48R0PwKIqKhPMWjeiF6y2xY/gPMUlro0sgxqXpbOIohWiLNXWslsootttv7E1e73QPAMQSg5FeySbVcpsPQ==
   dependencies:
     cliui "^7.0.2"
     escalade "^3.1.1"

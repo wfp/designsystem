@@ -11,7 +11,6 @@ if (inInstall()) {
 }
 
 const babelPath = which.sync('babel');
-console.log('babelPath', babelPath);
 
 const exec = (command, extraEnv) =>
   execSync(command, {

@@ -1,4 +1,4 @@
-import settings from './settings';
+import { settings } from './settings';
 import * as components from './components';
 
 /**
@@ -16,10 +16,10 @@ const lazyInitHandles = [];
  */
 const init = () => {
   const componentClasses = Object.keys(components)
-    .map(key => components[key])
-    .filter(component => typeof component.init === 'function');
+    .map((key) => components[key])
+    .filter((component) => typeof component.init === 'function');
   if (!settings.disableAutoInit) {
-    componentClasses.forEach(Clz => {
+    componentClasses.forEach((Clz) => {
       const h = Clz.init();
       if (h) {
         lazyInitHandles.push(h);

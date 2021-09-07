@@ -1,0 +1,237 @@
+//
+// Copyright IBM Corp. 2016, 2018
+//
+// This source code is licensed under the Apache-2.0 license found in the
+// LICENSE file in the root directory of this source tree.
+//
+
+@use '../../config' as *;
+@use '../../spacing' as *;
+@use '../../theme' as *;
+@use '../../type' as *;
+@use '../../breakpoint' as *;
+@use '../../utilities/convert' as *;
+@use '../../utilities/focus-outline';
+@use '../../utilities/high-contrast-mode' as *;
+@use '../../utilities/skeleton' as *;
+@use '../../utilities/tooltip' as *;
+@use '../../utilities/visually-hidden' as *;
+@use '../../utilities/z-index' as *;
+
+@mixin footer {
+  .#{$prefix}--footer--bottom-fixed {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+  }
+  
+  .#{$prefix}--footer {
+    @include reset;
+    @include font-family('sans');
+    border-top: 2px solid var(--ui-03);
+    background-color: var(--ui-01);
+    z-index: z('footer');
+    padding: rem(20px) 0;
+    @media print {
+      display: none;
+    }
+  }
+  
+  .#{$prefix}--footer__content {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    min-height: 3.5rem;
+    width: 100%;
+  }
+  
+  .#{$prefix}--footer__info {
+    display: flex;
+  
+    @media screen and (max-width: 600px) {
+      flex-direction: column;
+    }
+  }
+  
+  .#{$prefix}--footer__sdg {
+    //margin-top: 0.45rem;
+    margin-left: $spacing-01 ;//$spacing-xl;
+    width: 50px;
+    height: 50px;
+  }
+  
+  .#{$prefix}--footer__meta {
+    // @include typescale('zeta');
+    // @include line-height('body');
+    @include type-style('body-short-01');
+    margin-top: rem(20px);
+    font-style: italic;
+    @include breakpoint-down(lg) {
+      display: none;
+    }
+    // @include breakpointMax(bp--md--major) {
+    //   // display: none;
+    // }
+  }
+  
+  .#{$prefix}--footer__info__item {
+    //@include typescale('delta');
+    // @include line-height('body');
+    line-height: 1.5;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    margin-right: rem(64px);
+    // @include rtl {
+    //   margin-left: rem(64px);
+    //   margin-right: 0;
+    // }
+  }
+  
+  .#{$prefix}--footer__info__item > .#{$prefix}--link {
+    font-weight: 600;
+  }
+  
+  .#{$prefix}--footer__info__item > .#{$prefix}--footer__label {
+    // @include typescale('zeta');
+    // @include line-height('body');
+    @include type-style('label-02');
+    font-weight: 600;
+    margin: 0;
+  
+    @media screen and (max-width: 600px) {
+      display: none;
+    }
+  }
+  
+  .#{$prefix}--footer__cta {
+    margin-left: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    // @include rtl {
+    //   margin-left: 0;
+    //   margin-right: auto;
+    // }
+  }
+  
+  .#{$prefix}--theme-dark {
+    .#{$prefix}--footer__cta-logo,
+    .#{$prefix}--footer__cta-logo-small {
+      filter: invert(1);
+    }
+  }
+  
+  @include breakpoint-down(md) {
+    .#{$prefix}--footer__cta-logo {
+        display: none;
+      
+    }
+    .#{$prefix}--footer__sdg {
+        display: none;
+    }
+ }
+
+  //breakpoint
+  
+
+
+  
+  @include breakpoint(md) {
+    .#{$prefix}--footer__cta-logo-small {
+          display: none;
+    }
+  }
+  
+  .#{$prefix}--footer__info {
+    display: flex;
+  }
+  
+  .#{$prefix}--footer__info__item {
+    margin-right: rem(20px);
+  }
+  
+  /* External */
+  
+  .#{$prefix}--footer--external {
+    @include breakpoint-down(md) {
+      .#{$prefix}--footer__content {
+        flex-direction: column;
+      }
+    }
+  
+    .#{$prefix}--footer__info {
+      order: 1;
+      @include breakpoint(md) {
+        width: 40%;
+      }
+      // @include line-height('body');
+      line-height: 1.5;
+    }
+  
+    .#{$prefix}--footer__cta {
+      margin-left: inherit;
+      @include breakpoint-down(md) {
+        display: flex;
+        width: 100%;
+        margin-bottom: rem(20px);
+        justify-content: space-between;
+        > img {
+          margin-right: rem(30px);
+        }
+      }
+      @include breakpoint(md) {
+        margin-right: auto;
+      }
+    }
+  
+    .#{$prefix}--footer__info__item {
+      //@include typescale('delta');
+      // @include line-height('body');
+      line-height: 1.5;
+      display: block;
+      margin: 0;
+      margin-right: rem(64px);
+      // @include rtl {
+      //   margin-left: rem(64px);
+      //   margin-right: 0;
+      // }
+    }
+  
+    .#{$prefix}--footer__info__item > .#{$prefix}--link {
+      font-weight: 600;
+      margin-right: rem(10px);
+      // @include typescale('zeta');
+      @include breakpoint-down(lg) {
+        display: block;
+      }
+    }
+  
+    .#{$prefix}--footer__secondary {
+      margin-top: rem(20px);
+      font-weight: 600 !important;
+      @include type-style('caption-01');
+      @include breakpoint(lg) {
+        width: 100%;
+      }
+    }
+  
+    .#{$prefix}--footer__meta {
+      // @include typescale('zeta');
+      font-size: rem(12px);
+      // border-top: 1px solid $color__navy-gray-8;
+      margin-top: $spacing-03;
+      padding-top: $spacing-03;
+      display: flex;
+      justify-content: space-between;
+      font-style: normal;
+    }
+  
+    .#{$prefix}--footer__meta__links {
+      .#{$prefix}--link {
+        font-weight: 400;
+      }
+    }
+  }
+  
+}

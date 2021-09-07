@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { useState, useRef, useEffect } from 'react';
 import classNames from 'classnames';
-import settings from '../../globals/js/settings';
+import { settings } from '../../globals/js';
 import Input from '../Input';
 import TextInput from '../TextInput';
 
@@ -107,7 +107,10 @@ function Slider(props) {
     value: value,
   };
 
-  const inputClasses = classNames(`${prefix}--input`, `${prefix}--slider-text-input`);
+  const inputClasses = classNames(
+    `${prefix}--input`,
+    `${prefix}--slider-text-input`
+  );
 
   const sliderClasses = classNames(
     `${prefix}--slider`,
@@ -240,7 +243,6 @@ Slider.propTypes = {
    * Provide an optional function to be called when the up/down button is clicked
    */
   onClick: PropTypes.func,
-
 
   /**
    * The `name` attribute of the `<input>`.

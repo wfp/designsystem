@@ -20,7 +20,7 @@ import {
   YearMonth,
 } from './UnitList';
 import PropTypes from 'prop-types';
-import settings from '../../globals/js/settings';
+import { settings } from '../../globals/js';
 const { prefix } = settings;
 // All Unit Components together in <Unit type="Unitname" />
 
@@ -60,13 +60,12 @@ const Unit = (props) => {
   const setupClassName = setup ? `${prefix}--unit--${setup}` : '';
   const classNameCalc = `${prefix}--unit ${className} ${unitClassName} ${outputClassName} ${setupClassName}`;
 
-
   if (string) {
     return Unit(props);
   }
 
   if (Unit === undefined) {
-    //  console.warn(`The unit "${type}" is undefined`); 
+    //  console.warn(`The unit "${type}" is undefined`);
     return null;
   }
 

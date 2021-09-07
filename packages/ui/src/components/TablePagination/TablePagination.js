@@ -1,7 +1,7 @@
 import React from 'react';
 import classnames from 'classnames';
 import Pagination from '../Pagination';
-import settings from '../../globals/js/settings';
+import { settings } from '../../globals/js';
 
 const { prefix } = settings;
 

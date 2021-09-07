@@ -1,0 +1,71 @@
+//
+// Copyright IBM Corp. 2016, 2018
+//
+// This source code is licensed under the Apache-2.0 license found in the
+// LICENSE file in the root directory of this source tree.
+//
+
+@use '../../config' as *;
+@use '../../spacing' as *;
+@use '../../theme' as *;
+@use '../../type' as *;
+@use '../../breakpoint' as *;
+@use '../../utilities/convert' as *;
+@use '../../utilities/focus-outline';
+@use '../../utilities/high-contrast-mode' as *;
+@use '../../utilities/skeleton' as *;
+@use '../../utilities/tooltip' as *;
+@use '../../utilities/visually-hidden' as *;
+@use '../../utilities/z-index' as *;
+
+@mixin wrapper {
+  .#{$prefix}--wrapper {
+    margin: auto;
+    width: 100%;
+    padding-left: $spacing-03;
+    padding-right: $spacing-03;
+
+    @include breakpoint(sm) {
+      padding-left: $spacing-03;
+      padding-right: $spacing-03;
+    }
+  }
+
+  .#{$prefix}--wrapper--width-full {
+    max-width: 100%;
+  }
+
+  .#{$prefix}--wrapper--width-lg {
+    max-width: 1200px;
+  }
+
+  .#{$prefix}--wrapper--spacing-md {
+    padding-top: $spacing-03;
+    padding-bottom: $spacing-03;
+  }
+
+  .#{$prefix}--wrapper--spacing-xl {
+    padding-top: $spacing-05;
+    padding-bottom: $spacing-05;
+  }
+
+  .#{$prefix}--wrapper--background-lighter {
+    background: var(--ui-02); //$color__navy-gray-9;
+  }
+
+  .#{$prefix}--wrapper--background-dark {
+    background: var(--brand-01);
+  }
+
+  .#{$prefix}--wrapper--width-md {
+    max-width: 1000px;
+  }
+
+  .#{$prefix}--wrapper--width-sm {
+    max-width: 700px;
+  }
+
+  .#{$prefix}--wrapper--width-xs {
+    max-width: 500px;
+  }
+}
