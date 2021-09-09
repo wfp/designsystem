@@ -46,7 +46,9 @@ Use the `feat/` branches for active development.
 
 #### Installation
 
-The project is using a lerna/yarn mono repository for development. After cloning the repository, run `yarn` to install all packages needed.
+The project is using a `lerna/yarn` mono repository for development. After cloning the repository, run `yarn` to install all packages needed.
+
+After installation run `yarn build` to build all packages.
 
 ### Documentation & list of components available
 

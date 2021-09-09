@@ -5,6 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "build:images": "node src/index.js",
+    "extract:colors": "node src/colors.js",
     "setup": "node src/setupEnv.js",
     "test": "TZ=Asia/Singapore jest"
   },

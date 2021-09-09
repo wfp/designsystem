@@ -178,7 +178,12 @@ async function builder(metadata, { output }) {
   // one file: `index.esm.js`
   const esmBundle = await rollup({
     input: 'index.js',
-    external: ['@carbon/icon-helpers', 'react', 'prop-types'],
+    external: [
+      '@wfp/icon-helpers',
+      '@carbon/icon-helpers',
+      'react',
+      'prop-types',
+    ],
     plugins: [
       virtual({
         ...defaultVirtualOptions,

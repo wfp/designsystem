@@ -1,0 +1,29 @@
+//
+// Copyright IBM Corp. 2016, 2018
+//
+// This source code is licensed under the Apache-2.0 license found in the
+// LICENSE file in the root directory of this source tree.
+//
+
+@use '../../config' as *;
+@use '../../motion' as *;
+@use '../../spacing' as *;
+@use '../../theme' as *;
+@use '../../type';
+@use '../../utilities/component-reset';
+@use '../../utilities/focus-outline' as *;
+
+/// Link styles
+/// @access public
+/// @group link
+@mixin link {
+  .#{$prefix}--info-bar {
+    @include component-reset.reset;
+    @include type.type-style('body-short-01');
+    background: $support-warning;
+    @include reset;
+    display: flex;
+    padding: 0.5rem 0;
+    line-height: 22px;
+  }
+}

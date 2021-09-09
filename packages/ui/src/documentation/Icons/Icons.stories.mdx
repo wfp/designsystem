@@ -1,0 +1,33 @@
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+import Button from '../../components/Button';
+import Blockquote from '../../components/Blockquote';
+import Link from '../../components/Link';
+import IconsComponent from './IconsDocumentation';
+import IconList from './IconList';
+
+import metadata from '@wfp/pictograms/metadata.json';
+import * as pictograms from '@wfp/pictograms-react';
+
+import metadataHumanitarianIcons from '@wfp/pictograms/metadata.json';
+import * as humanitarianIcons from '@wfp/pictograms-react';
+
+<Meta
+  title="Documentation/Core/Icons"
+  subTitle="Icons & Logos for User Interfaces"
+  parameters={{
+    previewTabs: {
+      canvas: { hidden: true },
+    },
+  }}
+/>
+
+<hr />
+
+<!---
+ <IconsComponent />
+-->
+
+<h3>Pictograms</h3>
+<IconList iconsReact={pictograms} metadata={metadata} />
+<h3>Humanitarian icons</h3>
+<IconList iconsReact={humanitarianIcons} metadata={metadataHumanitarianIcons} />

@@ -2,6 +2,7 @@ require('dotenv').config();
 const axios = require('axios');
 const figmaRestApi = require('./util/figmaRestApi');
 const Utils = require('./util/utils');
+const colorsExporter = require('./util/colorsExporter');
 const outputFolder = './src/svg/';
 const rateLimit = 20;
 const waitTimeInSeconds = 45;
@@ -95,4 +96,5 @@ const svgExporter = async () => {
 
 module.exports = {
   svgExporter,
+  colorsExporter,
 };

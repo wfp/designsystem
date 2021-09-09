@@ -6,7 +6,7 @@
 //
 
 @use 'config';
-@forward '@carbon/type' show
+@forward '@wfp/type' show
   // Mixins
   reset,
   type-style,

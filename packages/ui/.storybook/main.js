@@ -87,16 +87,11 @@ module.exports = {
       },
     };
 
-    console.log(
-      path.resolve(
-        __dirname,
-        '..',
-        '..',
-        '../',
-        '../../../node_modules',
-        'node_modules'
-      )
-    );
+    config.module.rules.push({
+      test: /\.ya?ml$/,
+      type: 'json', // Required by Webpack v4
+      use: 'yaml-loader',
+    });
 
     config.module.rules.push({
       test: /-story\.jsx?$/,

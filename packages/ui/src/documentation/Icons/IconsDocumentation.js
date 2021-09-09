@@ -7,8 +7,12 @@ import Blockquote from '../../components/Blockquote';
 import Link from '../../components/Link';
 import Icon from '../../components/Icon';
 import { Module, ModuleFooter } from '../../components/Module';
-import iconList from '@wfp/icons/dist/carbon-icons.json';
-import { iconDownloadGlyph } from '@wfp/icons-react';
+import metadata from '@wfp/icons/metadata.json';
+import * as Icons from '@wfp/icons-react';
+import { DownloadGlyph } from '@wfp/icons-react';
+/*import moduleInfo, {
+  getModuleName,
+} from '@wfp/icon-build-helpers/src/metadata/extensions/module-info';*/
 
 import Button from '../../components/Button';
 
@@ -17,12 +21,18 @@ import IconConverter from './IconConverter';
 import Tippy from '@tippy.js/react';
 import { tooltipStyle } from '../../components/Tooltip';
 
+const iconList = metadata.icons;
+
 function camelCaseFromHyphnated(s) {
   return s.replace(/-+([A-z])/g, (match, token) => token.toUpperCase());
 }
 
 const IconList = ({ icon }) => {
+  console.log(icon);
   const iconName = icon.name.replace('icon--', '');
+  const Icon = Icons[`${icon.moduleInfo.global}Glyph`];
+
+  if (!Icon) return null;
   return (
     <Tippy
       interactive
@@ -37,8 +47,7 @@ const IconList = ({ icon }) => {
             flexDirection: 'column',
             alignItems: 'center',
           }}>
-          <Icon
-            icon={icon}
+          <DownloadGlyph
             description="WFP"
             width="150"
             height="150"
@@ -70,7 +79,7 @@ const IconList = ({ icon }) => {
 from '@wfp/icons-react'`}
           </div>
           <Button
-            icon={iconDownloadGlyph}
+            icon={DownloadGlyph}
             href={`https://github.com/wfp/carbon-icons/blob/master/src/svg/${iconName}.svg`}
             small>
             View on GitHub
@@ -93,12 +102,7 @@ from '@wfp/icons-react'`}
               width: '100%',
               height: '55px',
             }}>
-            <Icon
-              icon={icon}
-              description="WFP"
-              width="39"
-              className="wfp--footer-cta-logo"
-            />
+            <Icon description="WFP" width="39" />
           </div>
           <ModuleFooter
             style={{

@@ -32,7 +32,7 @@
     "access": "public"
   },
   "scripts": {
-    "buildss": "yarn clean && wfp-cli bundle src/index.js --name CarbonType && wfp-cli inline && wfp-cli check \"scss/*.scss\"",
+    "build": "yarn clean && wfp-cli bundle src/index.js --name CarbonType && wfp-cli inline && wfp-cli check \"scss/*.scss\"",
     "clean": "rimraf css es lib umd scss/_inlined scss/vendor"
   },
   "dependencies": {

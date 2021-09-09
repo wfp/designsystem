@@ -269,7 +269,8 @@
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12",
     "whatwg-fetch": "^3.3.1",
-    "xml2js": "^0.4.23"
+    "xml2js": "^0.4.23",
+    "yaml-loader": "^0.6.0"
   },
   "prettier": {
     "jsxBracketSameLine": true,
