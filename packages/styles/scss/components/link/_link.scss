@@ -20,7 +20,7 @@
     @include font-family('sans');
     //@include font-smoothing;
     cursor: pointer;
-    color: var(--interactive-01);
+    color: $link-primary;
     text-decoration: none;
     transition: color $duration-fast-01 motion(standard, productive);
 

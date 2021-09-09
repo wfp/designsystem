@@ -52,11 +52,18 @@ function camelize(str) {
   var result = str.substring(n + 1);
   return result;*/
 
-  str = str.replace(/(?:^\w|[A-Z]|\b\w|\s+)/g, function (match, index) {
-    if (+match === 0) return ''; // or if (/\s+/.test(match)) for white spaces
-    return index === 0 ? match.toLowerCase() : match.toUpperCase();
-  });
-  return str.replace('/', '');
+  str = str.replace('Primary/', '').toLowerCase();
+  str = str.replace('/', ' ');
+
+  str = str
+    .toLowerCase()
+    .replace(/(?:^\w|[A-Z]|\b\w|\s+)/g, function (match, index) {
+      if (+match === 0) return ''; // or if (/\s+/.test(match)) for white spaces
+      return index === 0 ? match.toLowerCase() : match.toUpperCase();
+    });
+
+  console.log(str);
+  return str;
 }
 
 const doFetch = (url) =>
@@ -122,16 +129,21 @@ const fetchAllColorStyles = async () => {
     ca.forEach((c) => {
       if (c.type === 'RECTANGLE' || c.type === 'ELLIPSE') {
         const { r, g, b } = c.fills[0].color;
-        const nodeId = c.styles.fill;
+        //console.log(c);
+        const nodeId = c.styles?.fill;
 
         const foundStyles = styles.find(([node_id]) => node_id === nodeId);
-        if (foundStyles)
+        if (
+          foundStyles &&
+          foundStyles[1].name.toLowerCase().indexOf('legacy') === -1
+        ) {
           colorList.push({
             // Cross reference to the array of styles, since Figma doesn't
             // give us the HEX color codes in their /styles endpoint .. :(
             ...foundStyles[1],
             color: rgbToHex(r * 256, g * 256, b * 256),
           });
+        }
       }
       if (c.children !== undefined && Array.isArray(c.children)) {
         runCanvas(c.children);
@@ -168,7 +180,6 @@ const fetchAllColorStyles = async () => {
  */
 const writeColorsFromFigma = async ({ fileName }) => {
   const styles = await fetchAllColorStyles();
-  console.log(styles);
 
   if (!styles) {
     throw new Error('No styles found');
@@ -179,7 +190,7 @@ const writeColorsFromFigma = async ({ fileName }) => {
     .map(
       (s) =>
         (s.description ? `    /** ${s.description} */\n` : '') +
-        `const ${camelize(s.name)} = '${s.color}';`
+        `export const ${camelize(s.name)} = '${s.color}';`
     )
     .join('\n');
 
