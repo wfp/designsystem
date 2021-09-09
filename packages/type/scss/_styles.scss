@@ -14,7 +14,7 @@
 /// @group @carbon/type
 $caption-01: (
   font-size: carbon--type-scale(1),
-  font-weight: carbon--font-weight('regular'),
+  font-weight: wfp--font-weight('regular'),
   line-height: 1.34,
   letter-spacing: 0.32px,
 ) !default;
@@ -24,7 +24,7 @@ $caption-01: (
 /// @group @carbon/type
 $caption-02: (
   font-size: carbon--type-scale(2),
-  font-weight: carbon--font-weight('regular'),
+  font-weight: wfp--font-weight('regular'),
   line-height: 1.29,
   letter-spacing: 0.32px,
 ) !default;
@@ -34,7 +34,7 @@ $caption-02: (
 /// @group @carbon/type
 $label-01: (
   font-size: carbon--type-scale(1),
-  font-weight: carbon--font-weight('regular'),
+  font-weight: wfp--font-weight('regular'),
   line-height: 1.34,
   letter-spacing: 0.32px,
 ) !default;
@@ -44,7 +44,7 @@ $label-01: (
 /// @group @carbon/type
 $label-02: (
   font-size: carbon--type-scale(2),
-  font-weight: carbon--font-weight('regular'),
+  font-weight: wfp--font-weight('regular'),
   line-height: 1.29,
   letter-spacing: 0.32px,
 ) !default;
@@ -63,7 +63,7 @@ $helper-text-01: (
 /// @group @carbon/type
 $helper-text-02: (
   font-size: carbon--type-scale(2),
-  font-weight: carbon--font-weight('regular'),
+  font-weight: wfp--font-weight('regular'),
   line-height: 1.29,
   letter-spacing: 0.32px,
 ) !default;
@@ -73,7 +73,7 @@ $helper-text-02: (
 /// @group @carbon/type
 $body-short-01: (
   font-size: carbon--type-scale(2),
-  font-weight: carbon--font-weight('regular'),
+  font-weight: wfp--font-weight('regular'),
   line-height: 1.29,
   letter-spacing: 0.16px,
 ) !default;
@@ -83,7 +83,7 @@ $body-short-01: (
 /// @group @carbon/type
 $body-long-01: (
   font-size: carbon--type-scale(2),
-  font-weight: carbon--font-weight('regular'),
+  font-weight: wfp--font-weight('regular'),
   line-height: 1.43,
   letter-spacing: 0.16px,
 ) !default;
@@ -93,7 +93,7 @@ $body-long-01: (
 /// @group @carbon/type
 $body-short-02: (
   font-size: carbon--type-scale(3),
-  font-weight: carbon--font-weight('regular'),
+  font-weight: wfp--font-weight('regular'),
   line-height: 1.375,
   letter-spacing: 0,
 ) !default;
@@ -103,7 +103,7 @@ $body-short-02: (
 /// @group @carbon/type
 $body-long-02: (
   font-size: carbon--type-scale(3),
-  font-weight: carbon--font-weight('regular'),
+  font-weight: wfp--font-weight('regular'),
   line-height: 1.5,
   letter-spacing: 0,
 ) !default;
@@ -112,9 +112,9 @@ $body-long-02: (
 /// @access public
 /// @group @carbon/type
 $code-01: (
-  font-family: carbon--font-family('mono'),
+  font-family: wfp--font-family('mono'),
   font-size: carbon--type-scale(1),
-  font-weight: carbon--font-weight('regular'),
+  font-weight: wfp--font-weight('regular'),
   line-height: 1.34,
   letter-spacing: 0.32px,
 ) !default;
@@ -123,9 +123,9 @@ $code-01: (
 /// @access public
 /// @group @carbon/type
 $code-02: (
-  font-family: carbon--font-family('mono'),
+  font-family: wfp--font-family('mono'),
   font-size: carbon--type-scale(2),
-  font-weight: carbon--font-weight('regular'),
+  font-weight: wfp--font-weight('regular'),
   line-height: 1.43,
   letter-spacing: 0.32px,
 ) !default;
@@ -135,7 +135,7 @@ $code-02: (
 /// @group @carbon/type
 $heading-01: (
   font-size: carbon--type-scale(2),
-  font-weight: carbon--font-weight('semibold'),
+  font-weight: wfp--font-weight('semibold'),
   line-height: 1.29,
   letter-spacing: 0.16px,
 ) !default;
@@ -150,7 +150,7 @@ $productive-heading-01: $heading-01 !default;
 /// @group @carbon/type
 $heading-02: (
   font-size: carbon--type-scale(3),
-  font-weight: carbon--font-weight('semibold'),
+  font-weight: wfp--font-weight('semibold'),
   line-height: 1.375,
   letter-spacing: 0,
 ) !default;
@@ -165,7 +165,7 @@ $productive-heading-02: $heading-02 !default;
 /// @group @carbon/type
 $productive-heading-03: (
   font-size: carbon--type-scale(5),
-  font-weight: carbon--font-weight('regular'),
+  font-weight: wfp--font-weight('semibold'),
   line-height: 1.4,
   letter-spacing: 0,
 ) !default;
@@ -175,7 +175,7 @@ $productive-heading-03: (
 /// @group @carbon/type
 $productive-heading-04: (
   font-size: carbon--type-scale(7),
-  font-weight: carbon--font-weight('regular'),
+  font-weight: wfp--font-weight('regular'),
   line-height: 1.29,
   letter-spacing: 0,
 ) !default;
@@ -185,7 +185,7 @@ $productive-heading-04: (
 /// @group @carbon/type
 $productive-heading-05: (
   font-size: carbon--type-scale(8),
-  font-weight: carbon--font-weight('regular'),
+  font-weight: wfp--font-weight('regular'),
   line-height: 1.25,
   letter-spacing: 0,
 ) !default;
@@ -195,7 +195,7 @@ $productive-heading-05: (
 /// @group @carbon/type
 $productive-heading-06: (
   font-size: carbon--type-scale(8),
-  font-weight: carbon--font-weight('light'),
+  font-weight: wfp--font-weight('light'),
   // Extra digit needed for precision in Chrome
   line-height: 1.199,
   letter-spacing: 0,
@@ -206,7 +206,7 @@ $productive-heading-06: (
 /// @group @carbon/type
 $productive-heading-07: (
   font-size: carbon--type-scale(10),
-  font-weight: carbon--font-weight('light'),
+  font-weight: wfp--font-weight('light'),
   line-height: 1.19,
   letter-spacing: 0,
 ) !default;
@@ -236,7 +236,7 @@ $expressive-heading-02: map-merge(
 /// @group @carbon/type
 $expressive-heading-03: (
   font-size: carbon--type-scale(5),
-  font-weight: carbon--font-weight('regular'),
+  font-weight: wfp--font-weight('regular'),
   line-height: 1.4,
   letter-spacing: 0,
   breakpoints: (
@@ -256,7 +256,7 @@ $expressive-heading-03: (
 /// @group @carbon/type
 $expressive-heading-04: (
   font-size: carbon--type-scale(7),
-  font-weight: carbon--font-weight('regular'),
+  font-weight: wfp--font-weight('regular'),
   line-height: 1.29,
   letter-spacing: 0,
   breakpoints: (
@@ -275,13 +275,13 @@ $expressive-heading-04: (
 /// @group @carbon/type
 $expressive-heading-05: (
   font-size: carbon--type-scale(8),
-  font-weight: carbon--font-weight('regular'),
+  font-weight: wfp--font-weight('regular'),
   line-height: 1.25,
   letter-spacing: 0,
   breakpoints: (
     md: (
       font-size: carbon--type-scale(9),
-      font-weight: carbon--font-weight('light'),
+      font-weight: wfp--font-weight('light'),
       line-height: 1.22,
     ),
     lg: (
@@ -303,7 +303,7 @@ $expressive-heading-05: (
 /// @group @carbon/type
 $expressive-heading-06: (
   font-size: carbon--type-scale(8),
-  font-weight: carbon--font-weight('semibold'),
+  font-weight: wfp--font-weight('semibold'),
   line-height: 1.25,
   letter-spacing: 0,
   breakpoints: (
@@ -330,7 +330,7 @@ $expressive-heading-06: (
 /// @group @carbon/type
 $expressive-paragraph-01: (
   font-size: carbon--type-scale(6),
-  font-weight: carbon--font-weight('light'),
+  font-weight: wfp--font-weight('light'),
   line-height: 1.334,
   letter-spacing: 0,
   breakpoints: (
@@ -350,7 +350,7 @@ $expressive-paragraph-01: (
 /// @group @carbon/type
 $quotation-01: (
   font-size: carbon--type-scale(5),
-  font-weight: carbon--font-weight('regular'),
+  font-weight: wfp--font-weight('regular'),
   line-height: 1.3,
   letter-spacing: 0,
   breakpoints: (
@@ -377,7 +377,7 @@ $quotation-01: (
 /// @group @carbon/type
 $quotation-02: (
   font-size: carbon--type-scale(8),
-  font-weight: carbon--font-weight('light'),
+  font-weight: wfp--font-weight('light'),
   line-height: 1.25,
   letter-spacing: 0,
   breakpoints: (
@@ -404,7 +404,7 @@ $quotation-02: (
 /// @group @carbon/type
 $display-01: (
   font-size: carbon--type-scale(10),
-  font-weight: carbon--font-weight('light'),
+  font-weight: wfp--font-weight('light'),
   line-height: 1.19,
   letter-spacing: 0,
   breakpoints: (
@@ -430,7 +430,7 @@ $display-01: (
 /// @group @carbon/type
 $display-02: (
   font-size: carbon--type-scale(10),
-  font-weight: carbon--font-weight('semibold'),
+  font-weight: wfp--font-weight('semibold'),
   line-height: 1.19,
   letter-spacing: 0,
   breakpoints: (
@@ -456,7 +456,7 @@ $display-02: (
 /// @group @carbon/type
 $display-03: (
   font-size: carbon--type-scale(10),
-  font-weight: carbon--font-weight('light'),
+  font-weight: wfp--font-weight('light'),
   line-height: 1.19,
   letter-spacing: 0,
   breakpoints: (
@@ -487,7 +487,7 @@ $display-03: (
 /// @group @carbon/type
 $display-04: (
   font-size: carbon--type-scale(10),
-  font-weight: carbon--font-weight('semibold'),
+  font-weight: wfp--font-weight('semibold'),
   line-height: 1.19,
   letter-spacing: 0,
   breakpoints: (

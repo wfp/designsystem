@@ -12,16 +12,16 @@
 /// Create type classes for font families, weights, styles
 /// @access public
 /// @group @carbon/type
-@mixin carbon--type-classes {
+@mixin wfp--type-classes {
   // Font families
-  @each $name, $value in $carbon--font-families {
+  @each $name, $value in $wfp--font-families {
     .#{$prefix}--type-#{$name} {
       font-family: $value;
     }
   }
 
   // Font weights
-  @each $name, $value in $carbon--font-weights {
+  @each $name, $value in $wfp--font-weights {
     .#{$prefix}--type-#{$name} {
       font-weight: $value;
     }

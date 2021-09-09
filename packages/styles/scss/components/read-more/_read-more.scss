@@ -10,40 +10,6 @@
 /// @access public
 /// @group link
 @mixin read-more {
-  .#{$prefix}--link {
-    @include component-reset.reset;
-    @include type.type-style('body-short-01');
-
-    display: inline-flex;
-    color: $link-primary;
-    outline: none;
-    text-decoration: none;
-    transition: color $duration-fast-01 motion(standard, productive);
-
-    &:hover {
-      color: $link-primary-hover;
-      text-decoration: underline;
-    }
-
-    &:active,
-    &:active:visited,
-    &:active:visited:hover {
-      color: $text-primary;
-      text-decoration: underline;
-    }
-
-    &:focus {
-      @include focus-outline;
-    }
-
-    &:visited {
-      color: $link-primary;
-    }
-
-    &:visited:hover {
-      color: $link-primary-hover;
-    }
-  }
 
   .#{$prefix}--read-more {
     @include component-reset.reset;

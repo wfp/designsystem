@@ -57,6 +57,7 @@ const filepaths = [
   'scss/components/dropdown',
   'scss/components/file-uploader',
   'scss/components/form',
+  'scss/components/footer',
   'scss/components/inline-loading',
   'scss/components/link',
   'scss/components/list',

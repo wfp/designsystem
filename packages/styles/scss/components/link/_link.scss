@@ -7,10 +7,8 @@
 
 @use '../../config' as *;
 @use '../../motion' as *;
-@use '../../spacing' as *;
 @use '../../theme' as *;
-@use '../../type';
-@use '../../utilities/component-reset';
+@use '../../type' as *;
 @use '../../utilities/focus-outline' as *;
 
 /// Link styles
@@ -18,83 +16,40 @@
 /// @group link
 @mixin link {
   .#{$prefix}--link {
-    @include component-reset.reset;
-    @include type.type-style('body-short-01');
-
-    display: inline-flex;
-    color: $link-primary;
-    outline: none;
+    //@include reset;
+    @include font-family('sans');
+    //@include font-smoothing;
+    cursor: pointer;
+    color: var(--interactive-01);
     text-decoration: none;
     transition: color $duration-fast-01 motion(standard, productive);
 
-    &:hover {
-      color: $link-primary-hover;
+    &:hover,
+    &.#{$prefix}--link--hover {
       text-decoration: underline;
+    }
+    &:visited {
+      color: var(--interactive-01);
     }
 
     &:active,
-    &:active:visited,
-    &:active:visited:hover {
-      color: $text-primary;
-      text-decoration: underline;
+    &:hover,
+    &:focus,
+    &.#{$prefix}--link--active {
+      color: var(--interactive-02);
     }
 
-    &:focus {
+    &:focus,
+    &.#{$prefix}--link--focus {
       @include focus-outline;
     }
 
-    &:visited {
-      color: $link-primary;
-    }
-
-    &:visited:hover {
-      color: $link-primary-hover;
+    &[aria-disabled='true'] {
+      opacity: 0.5;
+      pointer-events: none;
     }
   }
-
-  .#{$prefix}--link--disabled,
-  .#{$prefix}--link--disabled:hover {
-    @include component-reset.reset;
-    @include type.type-style('body-short-01');
-
-    color: $text-disabled;
-    cursor: not-allowed;
-    font-weight: 400;
-    text-decoration: none;
-  }
-
-  .#{$prefix}--link.#{$prefix}--link--visited:visited {
-    color: $link-visited;
-  }
-
-  .#{$prefix}--link.#{$prefix}--link--visited:visited:hover {
-    color: $link-primary-hover;
-  }
-
-  .#{$prefix}--link.#{$prefix}--link--inline {
+  .#{$prefix}--link--inline {
     text-decoration: underline;
-
-    &:focus,
-    &:visited {
-      text-decoration: none;
-    }
-  }
-
-  .#{$prefix}--link--disabled.#{$prefix}--link--inline {
-    text-decoration: underline;
-  }
-
-  .#{$prefix}--link--sm {
-    @include type.type-style('helper-text-01');
-  }
-
-  .#{$prefix}--link--lg {
-    @include type.type-style('body-short-02');
-  }
-
-  .#{$prefix}--link__icon {
-    display: inline-flex;
-    align-self: center;
-    margin-left: $spacing-03;
   }
 }
