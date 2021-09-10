@@ -62,7 +62,6 @@ function camelize(str) {
       return index === 0 ? match.toLowerCase() : match.toUpperCase();
     });
 
-  console.log(str);
   return str;
 }
 
@@ -119,7 +118,6 @@ const fetchAllColorStyles = async () => {
   const file = await fetchFile(FILE_KEY);
 
   const styles = Object.entries(file.styles);
-  console.log(Object.entries(styles));
 
   const canvas = file.document.children.find((page) => page.id === PAGE_ID);
 
@@ -129,8 +127,11 @@ const fetchAllColorStyles = async () => {
     ca.forEach((c) => {
       if (c.type === 'RECTANGLE' || c.type === 'ELLIPSE') {
         const { r, g, b } = c.fills[0].color;
-        //console.log(c);
         const nodeId = c.styles?.fill;
+
+        const meta = ca[1].children.map((e) => {
+          return [`${e.name}`, e.characters];
+        });
 
         const foundStyles = styles.find(([node_id]) => node_id === nodeId);
         if (
@@ -141,6 +142,7 @@ const fetchAllColorStyles = async () => {
             // Cross reference to the array of styles, since Figma doesn't
             // give us the HEX color codes in their /styles endpoint .. :(
             ...foundStyles[1],
+            meta: Object.fromEntries(meta),
             color: rgbToHex(r * 256, g * 256, b * 256),
           });
         }
@@ -160,7 +162,6 @@ const fetchAllColorStyles = async () => {
       .map((c) => c.children.filter((c) => c.type === 'RECTANGLE')[0])
       .filter((c) => !!c.styles && !!c.styles.fill)
       .map((c) => {
-        console.log(c.fills[0].color);
         const { r, g, b } = c.fills[0].color;
         const nodeId = c.styles.fill;
 
@@ -185,6 +186,19 @@ const writeColorsFromFigma = async ({ fileName }) => {
     throw new Error('No styles found');
   }
 
+  colorMeta = {};
+
+  styles
+    .sort((a, b) => (a.sort_position < b.sort_position ? -1 : 1))
+    .forEach((s) => {
+      colorMeta[camelize(s.name)] = {
+        description: s.description,
+        ...s.meta,
+        color: s.color,
+        category: s.name.split('/')[0],
+      };
+    });
+
   const colors = styles
     .sort((a, b) => (a.sort_position < b.sort_position ? -1 : 1))
     .map(
@@ -199,6 +213,11 @@ const writeColorsFromFigma = async ({ fileName }) => {
 
 
 ${colors}
+
+export const meta = ${JSON.stringify(colorMeta, null, 2).replace(
+    /"([^"]+)":/g,
+    '$1:'
+  )};
 `;
 
   await writeFile(/*path.resolve(__dirname + */ fileName, fileContents);
