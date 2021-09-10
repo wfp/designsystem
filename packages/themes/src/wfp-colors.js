@@ -1,5 +1,5 @@
 /* eslint-disable */
-/* Updated at Thu, 09 Sep 2021 15:47:39 GMT*/
+/* Updated at Fri, 10 Sep 2021 13:58:01 GMT*/
 
 
 export const background = '#010100';
@@ -31,7 +31,7 @@ export const textOnColorDisabled = '#010100';
 export const textInverse = '#010100';
 export const textDisabled = '#97a2a9';
 export const linkPrimary = '#0b77c2';
-export const linkPrimaryHover = '#0b77c2';
+export const linkPrimaryHover = '#085387';
 export const linkSecondary = '#085387';
 export const linkVisited = '#007dbc';
 export const linkInverse = '#8cd100';
@@ -66,7 +66,7 @@ export const buttonDangerPrimary = '#c5192d';
 export const buttonDangerSecondary = '#c5192d';
 export const buttonDangerHover = '#c5192d';
 export const buttonDangerActive = '#c5192d';
-
+/*
 export const meta = {
   background: {
     description: "default page background",
@@ -261,7 +261,7 @@ export const meta = {
     description: "Primary links;\nGhost button",
     variable: "linkPrimaryHover",
     former: "link-01",
-    color: "#0b77c2",
+    color: "#085387",
     category: "Link"
   },
   linkSecondary: {
@@ -503,3 +503,4 @@ export const meta = {
     category: "Button"
   }
 };
+*/

@@ -213,12 +213,12 @@ const writeColorsFromFigma = async ({ fileName }) => {
 
 
 ${colors}
-
+/*
 export const meta = ${JSON.stringify(colorMeta, null, 2).replace(
     /"([^"]+)":/g,
     '$1:'
   )};
-`;
+*/`;
 
   await writeFile(/*path.resolve(__dirname + */ fileName, fileContents);
 
