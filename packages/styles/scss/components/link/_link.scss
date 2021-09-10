@@ -10,6 +10,8 @@
 @use '../../theme' as *;
 @use '../../type' as *;
 @use '../../utilities/focus-outline' as *;
+@use '../../utilities/convert' as *;
+@use '../../utilities/placeholder-colors' as *;
 
 /// Link styles
 /// @access public
@@ -20,7 +22,7 @@
     @include font-family('sans');
     //@include font-smoothing;
     cursor: pointer;
-    color: var(--interactive-01);
+    color: $background-brand;
     text-decoration: none;
     transition: color $duration-fast-01 motion(standard, productive);
 
