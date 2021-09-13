@@ -28,7 +28,7 @@
 
     thead,
     th {
-      background: var(--ui-03);
+      background: var(--wfp-layer); //var(--ui-03);
       border-bottom: 2px solid #dfe3e6;
       font-weight: 600;
       font-size: 0.85em;
@@ -36,7 +36,7 @@
 
     tbody {
       tr {
-        border-bottom: 1px solid var(--ui-04);
+        border-bottom: 1px solid var(--wfp-border-subtle); //var(--ui-04);
         &:last-child {
           border-bottom-width: 0px;
         }

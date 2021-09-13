@@ -255,7 +255,13 @@
 
   .#{$prefix}--text__code {
     @include typescale('epsilon');
-    font-family: monospace;
+    font-family: 'ui-monospace', 'SFMono-Regular', 'SF Mono, Menlo', 'Consolas',
+      'Liberation Mono', 'monospace';
+    padding: 0.2em 0.4em;
+    margin: 0;
+    font-size: 85%;
+    border-radius: 0.2em;
+    background: var(--ui-02);
   }
 
   .#{$prefix}--text__p {

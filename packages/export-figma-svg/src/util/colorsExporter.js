@@ -143,7 +143,8 @@ const fetchAllColorStyles = async () => {
             // give us the HEX color codes in their /styles endpoint .. :(
             ...foundStyles[1],
             meta: Object.fromEntries(meta),
-            color: rgbToHex(r * 256, g * 256, b * 256),
+            color: rgbToHex(r * 255, g * 255, b * 255),
+            rgba: c.fills[0].color,
           });
         }
       }
@@ -169,7 +170,7 @@ const fetchAllColorStyles = async () => {
           // Cross reference to the array of styles, since Figma doesn't
           // give us the HEX color codes in their /styles endpoint .. :(
           ...styles.find((s) => s.node_id === nodeId),
-          color: rgbToHex(r * 256, g * 256, b * 256),
+          color: rgbToHex(r * 255, g * 255, b * 255),
         };
       })
       .filter((c) => !!c.name)
@@ -179,7 +180,7 @@ const fetchAllColorStyles = async () => {
 /**
  * Calls Figma's API and saves to a `colors.js` file in the project root.
  */
-const writeColorsFromFigma = async ({ fileName }) => {
+const writeColorsFromFigma = async ({ fileName, fileNameMeta }) => {
   const styles = await fetchAllColorStyles();
 
   if (!styles) {
@@ -194,7 +195,8 @@ const writeColorsFromFigma = async ({ fileName }) => {
       colorMeta[camelize(s.name)] = {
         description: s.description,
         ...s.meta,
-        color: s.color,
+        hex: s.color,
+        rgba: s.rgba,
         category: s.name.split('/')[0],
       };
     });
@@ -209,18 +211,23 @@ const writeColorsFromFigma = async ({ fileName }) => {
     .join('\n');
 
   const fileContents = `/* eslint-disable */
-/* Updated at ${new Date().toUTCString()}*/
-
+/* Do not edit file! Updated at ${new Date().toUTCString()} from Figma */
 
 ${colors}
-/*
-export const meta = ${JSON.stringify(colorMeta, null, 2).replace(
+`;
+
+  const fileContentsMeta = `/* eslint-disable */
+/* Do not edit file! Updated at ${new Date().toUTCString()} from Figma */
+
+const meta = ${JSON.stringify(colorMeta, null, 2).replace(
     /"([^"]+)":/g,
     '$1:'
   )};
-*/`;
+export default meta;
+`;
 
   await writeFile(/*path.resolve(__dirname + */ fileName, fileContents);
+  await writeFile(/*path.resolve(__dirname + */ fileNameMeta, fileContentsMeta);
 
   console.log(`Wrote ${styles.length} colors to colors.js`);
 };

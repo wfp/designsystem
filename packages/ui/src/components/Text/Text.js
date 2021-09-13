@@ -16,6 +16,7 @@ export const textLookup = {
   subtitle: 'h3',
   p: 'p',
   caption: 'div',
+  code: 'code',
 };
 
 /**

@@ -7,7 +7,7 @@ $css--reset: true;
 //@import '@wfp/themes/scss/index.scss';
 
 // Legacy theme
-// @import '../src/globals/scss/styles.scss';
+@import '../src/globals/scss/styles.scss';
 
 $carbon--theme: $carbon--theme--wfp;
 
