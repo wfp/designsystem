@@ -61,8 +61,6 @@ const Button = ({
 
   const Icon = icon;
 
-  console.log('icon', icon, React.isValidElement(icon));
-
   const buttonImage =
     icon && React.isValidElement(icon) ? (
       <span className={`${prefix}--btn__icon`}>{icon}</span>

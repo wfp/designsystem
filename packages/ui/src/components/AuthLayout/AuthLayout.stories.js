@@ -9,7 +9,7 @@ import FormGroup from './../FormGroup';
 import { ArrowLeft, WfpLogoStandardBlackEn } from '@wfp/icons-react';
 
 export default {
-  title: 'Components/Content Related/AuthLayout',
+  title: 'Components/Content Related/AuthLayoutB',
   component: AuthLayout,
   subcomponents: { BackgroundContent },
   parameters: {
@@ -97,6 +97,7 @@ RegularNoImage.args = {
   ),
 };
 
+/*
 export const WithImage = (args) => (
   <AuthLayout {...args}>
     <FormGroup style={{ width: '80%' }}>
@@ -135,3 +136,4 @@ export const WithImage = (args) => (
 WithImage.args = {
   image: 'http://www1.wfp.org/sites/default/files/images/yemen-hero-min.jpg',
 };
+*/
