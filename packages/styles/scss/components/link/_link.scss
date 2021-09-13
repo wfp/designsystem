@@ -22,7 +22,7 @@
     @include font-family('sans');
     //@include font-smoothing;
     cursor: pointer;
-    color: $background-brand;
+    color: $link-primary;
     text-decoration: none;
     transition: color $duration-fast-01 motion(standard, productive);
 
@@ -31,14 +31,14 @@
       text-decoration: underline;
     }
     &:visited {
-      color: var(--interactive-01);
+      color: $link-visited;
     }
 
     &:active,
     &:hover,
     &:focus,
     &.#{$prefix}--link--active {
-      color: var(--interactive-02);
+      color: $link-secondary;
     }
 
     &:focus,

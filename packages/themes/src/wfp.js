@@ -112,6 +112,12 @@ export const skeletonElement = skeleton02;*/
 //////////////////////////////////////
 // Old tokens needed to pass tests  //
 //////////////////////////////////////
+
+// TODO: set colors
+const gray50 = '#cccccc';
+const gray60 = '#cccccc';
+const gray70 = '#cccccc';
+
 export const interactive01 = wfpColors.backgroundBrand;
 export const interactive02 = wfpColors.buttonSecondary;
 export const interactive03 = wfpColors.buttonTertiary;
@@ -120,7 +126,7 @@ export const interactive04 = wfpColors.interactive;
 export const uiBackground = wfpColors.background;
 
 export const ui01 = wfpColors.layer;
-export const ui02 = wfpColors.gray70;
+export const ui02 = gray70;
 export const ui03 = wfpColors.layerAccent;
 export const ui04 = wfpColors.borderStrong;
 export const ui05 = wfpColors.borderInverse;
@@ -141,7 +147,7 @@ export const link02 = wfpColors.linkSecondary;
 export const inverseLink = wfpColors.linkInverse;
 
 export const field01 = wfpColors.field;
-export const field02 = wfpColors.gray60;
+export const field02 = gray60;
 
 export const inverse01 = wfpColors.textInverse;
 export const inverse02 = wfpColors.backgroundInverse;
@@ -178,15 +184,15 @@ export const activeTertiary = wfpColors.buttonTertiaryActive;
 export const hoverUI = wfpColors.backgroundHover;
 export const hoverLightUI = '#5E5E5E';
 export const activeUI = wfpColors.backgroundActive;
-export const activeLightUI = wfpColors.gray50;
+export const activeLightUI = gray50;
 export const selectedUI = wfpColors.backgroundSelected;
-export const selectedLightUI = wfpColors.gray50;
+export const selectedLightUI = gray50;
 export const inverseHoverUI = wfpColors.backgroundInverseHover;
 
 export const hoverSelectedUI = wfpColors.layerSelectedHover;
 
 export const hoverDanger = wfpColors.buttonDangerHover;
-export const activeDanger = buttonDangerActive;
+export const activeDanger = wfpColors.buttonDangerActive;
 
 export const hoverRow = wfpColors.layerHover;
 
@@ -196,7 +202,7 @@ export const disabled01 = wfpColors.layerDisabled;
 export const disabled02 = wfpColors.textDisabled;
 export const disabled03 = wfpColors.textOnColorDisabled;
 
-export const decorative01 = wfpColors.gray60;
+export const decorative01 = gray60;
 
 export const skeleton01 = wfpColors.skeletonBackground;
 export const skeleton02 = wfpColors.skeletonElement;

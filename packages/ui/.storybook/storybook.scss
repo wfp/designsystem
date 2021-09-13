@@ -9,12 +9,12 @@ $css--reset: true;
 // Legacy theme
 // @import '../src/globals/scss/styles.scss';
 
-$carbon--theme: $carbon--theme--g10;
+$carbon--theme: $carbon--theme--wfp;
 
 // Use the gray 10 theme
 
 :root {
-  @include carbon--theme($carbon--theme--white, true) {
+  @include carbon--theme($carbon--theme--wfp, true) {
     // @include emit-component-tokens($tag-colors);
     // @include emit-component-tokens($notification-colors);
   }

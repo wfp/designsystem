@@ -52,11 +52,17 @@ function camelize(str) {
   var result = str.substring(n + 1);
   return result;*/
 
-  str = str.replace(/(?:^\w|[A-Z]|\b\w|\s+)/g, function (match, index) {
-    if (+match === 0) return ''; // or if (/\s+/.test(match)) for white spaces
-    return index === 0 ? match.toLowerCase() : match.toUpperCase();
-  });
-  return str.replace('/', '');
+  str = str.replace('Primary/', '').toLowerCase();
+  str = str.replace('/', ' ');
+
+  str = str
+    .toLowerCase()
+    .replace(/(?:^\w|[A-Z]|\b\w|\s+)/g, function (match, index) {
+      if (+match === 0) return ''; // or if (/\s+/.test(match)) for white spaces
+      return index === 0 ? match.toLowerCase() : match.toUpperCase();
+    });
+
+  return str;
 }
 
 const doFetch = (url) =>
@@ -112,7 +118,6 @@ const fetchAllColorStyles = async () => {
   const file = await fetchFile(FILE_KEY);
 
   const styles = Object.entries(file.styles);
-  console.log(Object.entries(styles));
 
   const canvas = file.document.children.find((page) => page.id === PAGE_ID);
 
@@ -122,16 +127,25 @@ const fetchAllColorStyles = async () => {
     ca.forEach((c) => {
       if (c.type === 'RECTANGLE' || c.type === 'ELLIPSE') {
         const { r, g, b } = c.fills[0].color;
-        const nodeId = c.styles.fill;
+        const nodeId = c.styles?.fill;
+
+        const meta = ca[1].children.map((e) => {
+          return [`${e.name}`, e.characters];
+        });
 
         const foundStyles = styles.find(([node_id]) => node_id === nodeId);
-        if (foundStyles)
+        if (
+          foundStyles &&
+          foundStyles[1].name.toLowerCase().indexOf('legacy') === -1
+        ) {
           colorList.push({
             // Cross reference to the array of styles, since Figma doesn't
             // give us the HEX color codes in their /styles endpoint .. :(
             ...foundStyles[1],
+            meta: Object.fromEntries(meta),
             color: rgbToHex(r * 256, g * 256, b * 256),
           });
+        }
       }
       if (c.children !== undefined && Array.isArray(c.children)) {
         runCanvas(c.children);
@@ -148,7 +162,6 @@ const fetchAllColorStyles = async () => {
       .map((c) => c.children.filter((c) => c.type === 'RECTANGLE')[0])
       .filter((c) => !!c.styles && !!c.styles.fill)
       .map((c) => {
-        console.log(c.fills[0].color);
         const { r, g, b } = c.fills[0].color;
         const nodeId = c.styles.fill;
 
@@ -168,18 +181,30 @@ const fetchAllColorStyles = async () => {
  */
 const writeColorsFromFigma = async ({ fileName }) => {
   const styles = await fetchAllColorStyles();
-  console.log(styles);
 
   if (!styles) {
     throw new Error('No styles found');
   }
+
+  colorMeta = {};
+
+  styles
+    .sort((a, b) => (a.sort_position < b.sort_position ? -1 : 1))
+    .forEach((s) => {
+      colorMeta[camelize(s.name)] = {
+        description: s.description,
+        ...s.meta,
+        color: s.color,
+        category: s.name.split('/')[0],
+      };
+    });
 
   const colors = styles
     .sort((a, b) => (a.sort_position < b.sort_position ? -1 : 1))
     .map(
       (s) =>
         (s.description ? `    /** ${s.description} */\n` : '') +
-        `const ${camelize(s.name)} = '${s.color}';`
+        `export const ${camelize(s.name)} = '${s.color}';`
     )
     .join('\n');
 
@@ -188,7 +213,12 @@ const writeColorsFromFigma = async ({ fileName }) => {
 
 
 ${colors}
-`;
+/*
+export const meta = ${JSON.stringify(colorMeta, null, 2).replace(
+    /"([^"]+)":/g,
+    '$1:'
+  )};
+*/`;
 
   await writeFile(/*path.resolve(__dirname + */ fileName, fileContents);
 
