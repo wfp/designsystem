@@ -15,7 +15,10 @@ const fs = require('fs');
 async function build() {
   /*rimraf.sync('./src');
    await fs.promises.mkdir('./src');*/
-  colorsExporter({ fileName: './src/wfp-colors.js' });
+  colorsExporter({
+    fileName: './src/wfpColors.js',
+    fileNameMeta: './src/wfpColorsMeta.js',
+  });
 }
 
 build().catch((error) => {

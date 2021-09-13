@@ -13,7 +13,7 @@ import { ColourList } from './ColourList';
   }}
 />
 
-<hr/>
+<hr />
 
 WFP online visual identity includes the following colours:
 
@@ -26,20 +26,6 @@ WFP online visual identity includes the following colours:
 
 The WFP official branding palette can be found [here](http://brand.manuals.wfp.org/en/core-elements/colours/colour-palette/).
 
-<!-- Use the _70–25–5_ rule to create sense of balance and allow the eye to
-move comfortably from one focal point to the next.
-
-<img
-  alt="Brand colour"
-  style={{
-    width: '100%',
-    height: 'auto',
-    marginTop: '1em',
-    marginLeft: '0em',
-  }}
-  src={`${process.env.STORYBOOK_INTERNAL_ASSETS}internal/colors.png`}
-/> -->
-
 ### Primary Colours
 
 Primary colours are the base colours of the UI, the ones that are used most
@@ -47,10 +33,9 @@ frequently in the interface. **Brand-01 is the base branding colour**,
 corresponding to WFP’s corporate blue: it is used for brand elements and
 non-interactive elements. **Interactive colours** are used for primary
 links and action items that can be clicked or touched, to emphasize important
-actions and highlight information in your application. 
+actions and highlight information in your application.
 
-
-<ColourList filter="brand" />
+<ColourList filter="Primary" />
 
 <Colour color="brand-01" />
 <h4 className="wfp--story__sub-heading">WFP's corporate colour</h4>
@@ -99,7 +84,7 @@ interactive and to be distinguishable from black.
 
 This colour is used for hover and active states.
 
-#### Use interactive - 01 for:
+#### Use $interactive for:
 
 - ✓ links
 - ✓ buttons
@@ -110,7 +95,6 @@ This colour is used for hover and active states.
 - ✗ MainNavigation, since it is a branding element and not interactive as a whole.
 - ✗ other branding elements
 - ✗ non - interactive elements
-
 
 #### Secondary colours are best for:
 
@@ -137,14 +121,13 @@ tints of the WFP brand colour. They can be used to increase the contrast
 of the UI elements to make them more or less visible compared to the
 rest of the interface.
 
-<ColourList filter="brand-extended" />
+<ColourList filter="Layer" />
 
-### Neutral Colors
+### Text Colors
 
-Neutral colours are used for non-interactive elements, backgrounds,
-borders and texts.
+<ColourList filter="Text" />
 
-<ColourList filter="ui" />
+<!--
 
 ### ui-01 and ui-02
 
@@ -166,24 +149,27 @@ Modules on top.
   }}
   src={`${process.env.STORYBOOK_INTERNAL_ASSETS}internal/background-contrast.png`}
 />
+-->
 
+<!--
 ### Data visualisation palettes
 
 #### Sequential palette #1 (default)
 
-<ColourList filter="sequential-default" />
+<ColourList filter="Links" />
 
 #### Sequential palette #2 (secondary)
 
-<ColourList filter="sequential-secondary" />
+<ColourList filter="Icons" />
+-->
 
-#### Categorical palette
+#### Borders
 
-<ColourList filter="categorical" />
+<ColourList filter="Borders" />
 
-### Semantic colours
+### Support colours
 
-<ColourList filter="support" />
+<ColourList filter="Support" />
 
 <Colour color="support-01" />
 
@@ -203,9 +189,13 @@ error message. Yellow typically consists of items which require the user’s
 immediate attention, or indicate a waiting period. Although this overlaps with
 the use of red, yellow is more transient in nature.
 
-### Symbolic colours
+### Skeleton colours
 
-<ColourList filter="symbolic" />
+<ColourList filter="Skeleton" />
+
+### Buttons
+
+<ColourList filter="Button" />
 
 ### Usage
 

@@ -13,14 +13,14 @@
 @import '../Link.legacy/link';
 
 @mixin text {
-  code {
+  > code {
     @extend .#{$prefix}--story__code;
   }
   p {
     @extend .#{$prefix}--story__p;
   }
 
-  h2 {
+  > h2 {
     @extend .#{$prefix}--story__h2;
   }
 
@@ -257,7 +257,13 @@
 
   .#{$prefix}--story__code {
     @include typescale('epsilon');
-    font-family: monospace;
+    font-family: 'ui-monospace', 'SFMono-Regular', 'SF Mono, Menlo', 'Consolas',
+      'Liberation Mono', 'monospace';
+    padding: 0.2em 0.4em;
+    margin: 0;
+    font-size: 85%;
+    border-radius: 0.2em;
+    background: var(--ui-02);
   }
 
   .#{$prefix}--story__p {

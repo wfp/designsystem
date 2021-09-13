@@ -4,18 +4,6 @@ $css--reset: false;
 @import '../../globals/scss/helper-mixins';
 
 .color--list {
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-
-  > li {
-    width: 23%;
-    margin-right: 2%;
-    margin-bottom: 2%;
-    list-style-type: none;
-    outline: none;
-  }
-
   h4 {
     margin: 0;
   }
@@ -25,35 +13,57 @@ $css--reset: false;
     margin-bottom: 0.5em;
   }
 
-  p {
+  /*p {
     font-weight: normal;
     font-style: italic;
     margin: 0;
     font-size: 0.9em;
-  }
+  }*/
 }
 
 .color__item {
-  display: flex;
+  /*display: flex;
   //  WebkitColumnBreakInside: 'avoid
   page-break-inside: avoid;
   break-inside: avoid-column;
   flex-wrap: wrap;
-  height: 100%;
+
+  width: 100%;*/
 }
 
 .color__field {
-  width: 100%;
-  height: 8.5rem;
+  width: 4.5rem;
+  height: 4.5rem;
   margin-top: 0em;
   margin-right: 1em;
-  border-radius: 3px 3px 0 0;
-  box-shadow: inset 0 -2px 0 rgba(#000, 0.03);
+  border-radius: 100%;
+
   display: flex;
   justify-content: center;
   align-items: flex-end;
   padding: 1rem;
   position: relative;
+}
+
+.color__field__light {
+  box-shadow: inset 0 0 0 1px rgba(#000, 0.1);
+}
+
+.color__field__description {
+  width: 4.5rem;
+  margin-top: 0em;
+  margin-right: 1em;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  font-size: 0.7em;
+  padding: 0.7rem 1rem;
+  position: relative;
+  white-space: nowrap;
+  > * {
+    margin: 0 0.5em;
+  }
 }
 
 .color__check {
@@ -79,7 +89,7 @@ $css--reset: false;
   }
   > div {
     @include typescale('omega');
-    font-size: 0.7rem;
+    font-size: 0.5rem;
     margin-top: $spacing-2xs;
     padding: $spacing-2xs;
     color: var(--ui-01);

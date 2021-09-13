@@ -27,3 +27,5 @@ export const themes = {
   v9,
   wfp,
 };
+
+export { default as wfpColorsMeta } from './wfpColorsMeta';

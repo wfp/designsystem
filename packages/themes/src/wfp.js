@@ -11,8 +11,8 @@ import {
   rgba,
 } from '@carbon/colors';
 
-import * as wfpColors from './wfp-colors';
-export * from './wfp-colors';
+import * as wfpColors from './wfpColors';
+export * from './wfpColors';
 
 // New color tokens
 // TO-DO: remove fallback color when v11 is released and assign carbon colors to new tokens
