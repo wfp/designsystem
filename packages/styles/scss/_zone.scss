@@ -16,10 +16,10 @@
 /// and the value will be a map used to emit CSS Custom Properties for all color
 /// values
 $zones: (
-  white: themes.$white,
-  g10: themes.$g10,
+  wfp: themes.$wfp,
+  /*g10: themes.$g10,
   g90: themes.$g90,
-  g100: themes.$g100,
+  g100: themes.$g100,*/
 ) !default;
 
 @each $name, $theme in $zones {
