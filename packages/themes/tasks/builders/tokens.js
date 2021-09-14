@@ -40,7 +40,6 @@ function buildTokensFile(tokens, metadata, defaultTheme) {
             return tok.name === token;
           })) ||
         {};
-
       return [
         t.Newline(),
         tokenData.role && t.Comment(`/ ${tokenData.role.join('; ')}`),

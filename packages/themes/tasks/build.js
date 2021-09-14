@@ -25,7 +25,7 @@ const buildModulesThemesFile = require('./builders/modules-themes');
 const buildModulesTokensFile = require('./builders/modules-tokens');
 const buildMixinsFile = require('./builders/mixins');
 
-const defaultTheme = 'white';
+const defaultTheme = 'wfp';
 const defaultThemeMapName = 'carbon--theme';
 
 async function build() {
