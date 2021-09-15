@@ -1,3 +1,10 @@
+## [1.20.2](https://github.com/wfp/ui/compare/v1.20.1...v1.20.2) (2021-09-15)
+
+
+### Bug Fixes
+
+* **Accessiblity:** page was missing ([2e2825c](https://github.com/wfp/ui/commit/2e2825ca3ddf8283952e0de72f16f0f96c6d4a92))
+
 ## [1.20.1](https://github.com/wfp/ui/compare/v1.20.0...v1.20.1) (2021-08-31)
 
 
