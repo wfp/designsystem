@@ -14,5 +14,8 @@
     display: flex;
     padding: 0.5rem 0;
     line-height: 22px;
+    .#{$prefix}--theme-dark & {
+      color: var(--text-04);
+    }
   }
 }
