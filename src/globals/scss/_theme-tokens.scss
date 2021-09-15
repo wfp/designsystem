@@ -22,6 +22,7 @@
   --text-01: #{$color__white};
   --text-02: #{$color__navy-gray-8};
   --text-03: #{$color__navy-gray-9};
+  --text-04: #{$color__dark-text-01};
   --field-01: #{$color__gray-80};
   --field-02: #{$color__navy-gray-2};
   --field-border-01: #{$color__gray-50};
@@ -175,12 +176,12 @@ $inverse-02: $color__white !default;
 $inverse-03: $color__navy-gray-3 !default;
 /*$ui-01: $color__white !default /* !global */
 
-$ui-02: $color__navy-gray-9 !default ;
+$ui-02: $color__navy-gray-9 !default;
 $ui-03: $color__gray-2 !default;
 $ui-04: $color__gray-1 !default;
 $ui-05: $color__navy-gray-7 !default;
-$ui-06: $color__navy-gray-2 !default ;
-$text-01: $color__main-80 !default ;
+$ui-06: $color__navy-gray-2 !default;
+$text-01: $color__main-80 !default;
 $text-02: $color__navy-gray-6 !default;
 $text-03: $color__navy-gray-7 !default;
 $field-01: $color__white !default; //TODO: Fix color
@@ -190,9 +191,9 @@ $support-01: $color__red !default;
 $support-light-01: $color__red-20 !default;
 $support-02: $color__lime-60 !default;
 $support-light-02: $color__dark-green-20 !default;
-$support-03: $color__yellow !default ;
+$support-03: $color__yellow !default;
 $support-light-03: $color__yellow-20 !default;
-$support-04: $color__main-30 !default ;
+$support-04: $color__main-30 !default;
 $support-light-04: $color__main-20 !default;
 $nav-01: $color__navy-gray-1 !default;
 $nav-02: $color__main-80 !default;
@@ -203,13 +204,13 @@ $disabled-01: $color__navy-gray-10 !default;
 $disabled-02: $color__navy-gray-8 !default;
 
 $hover-primary: darken($interactive-01, 10%) !default;
-$hover-primary-text: darken($interactive-01, 15%) !default ;
+$hover-primary-text: darken($interactive-01, 15%) !default;
 $hover-danger: darken($support-01, 10%) !default;
-$hover-secondary: var(--interactive-01) !default ;
-$hover-row: rgba($interactive-02, 0.1) !default ;
+$hover-secondary: var(--interactive-01) !default;
+$hover-row: rgba($interactive-02, 0.1) !default;
 
 // Global
-$focus: $color__brand-01-20 !default ;
+$focus: $color__brand-01-20 !default;
 
 $input-border: 1px solid var(--field-border-01) !default;
 $input-label-weight: 600 !default;
@@ -218,17 +219,17 @@ $input-height: 40px !default;
 
 // Button Theme Variables
 $button-font-weight: 700 !default;
-$button-font-size: 0.875rem !default ;
-$button-border-radius: 4px !default ;
-$button-height: 40px !default ;
-$button-padding: 0 $spacing-md * 0.8 !default ;
-$button-padding-sm: 0 $spacing-xs * 0.7 !default ;
-$button-border-width: 2px !default ;
+$button-font-size: 0.875rem !default;
+$button-border-radius: 4px !default;
+$button-height: 40px !default;
+$button-padding: 0 $spacing-md * 0.8 !default;
+$button-padding-sm: 0 $spacing-xs * 0.7 !default;
+$button-border-width: 2px !default;
 $button-outline-width: 1px !default;
 
 // Checkbox
-$checkbox-border-width: 2px !default ;
-$checkbox-border-radius: 4px !default ;
+$checkbox-border-width: 2px !default;
+$checkbox-border-radius: 4px !default;
 
 // Code Snippet
 $snippet-background-color: var(--ui-01) !default;
@@ -239,9 +240,9 @@ $content-switcher-border-radius: 6px !default;
 $content-switcher-option-border: 2px solid var(--interactive-01) !default;
 
 // Data Table
-$data-table-heading-transform: uppercase !default ;
-$data-table-heading-border-bottom: 1px solid var(--interactive-01) !default ;
-$data-table-row-height: 2rem !default ;
+$data-table-heading-transform: uppercase !default;
+$data-table-heading-border-bottom: 1px solid var(--interactive-01) !default;
+$data-table-row-height: 2rem !default;
 
 // Modal
 $modal-border-top: var(--interactive-01) 4px solid !default;
