@@ -1,5 +1,5 @@
 /* eslint-disable */
-/* Do not edit file! Updated at Mon, 13 Sep 2021 19:23:42 GMT from Figma */
+/* Do not edit file! Updated at Tue, 14 Sep 2021 13:32:31 GMT from Figma */
 
 export const background = '#ffffff';
 export const backgroundHover = '#ffffff';
