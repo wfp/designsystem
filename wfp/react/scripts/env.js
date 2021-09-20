@@ -2,16 +2,28 @@
 
 const BABEL_ENV = process.env.BABEL_ENV;
 
+const docgenConfig = {
+  plugins: [
+    [
+      'babel-plugin-react-docgen',
+      {
+        removeMethods: true,
+      },
+    ],
+  ],
+};
+
 module.exports = () => ({
   presets: [
     [
-      '@babel/preset-env',
+      require.resolve('@babel/preset-env'),
       {
         modules: BABEL_ENV === 'es' ? false : 'commonjs',
         targets: {
-          browsers: ['last 1 versions', 'Firefox ESR'],
+          browsers: ['extends browserslist-config-carbon'],
         },
       },
     ],
   ],
+  ...(BABEL_ENV === 'docgen' && docgenConfig),
 });

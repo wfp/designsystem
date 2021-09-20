@@ -1,0 +1,19 @@
+{
+  "name": "@wfp/create-design-system",
+  "version": "1.0.6",
+  "description": "",
+  "main": "index.js",
+  "bin": {
+    "create-design-system": "./install.js"
+  },
+  "scripts": {
+    "create-design-system": "node install.js"
+
+  },
+  "author": "World Food Programme",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "github-files-fetcher": "^1.6.0"
+  }
+}

@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 import { addParameters } from '@storybook/react';
 import './storybook.scss';
+import './storybook-legacy.scss';
 import theme from './theme';
 
 /*import {

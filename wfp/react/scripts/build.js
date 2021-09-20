@@ -11,7 +11,6 @@ if (inInstall()) {
 }
 
 const babelPath = which.sync('babel');
-console.log('babelPath', babelPath);
 
 const exec = (command, extraEnv) =>
   execSync(command, {
@@ -19,12 +18,9 @@ const exec = (command, extraEnv) =>
     env: Object.assign({}, process.env, extraEnv),
   });
 
-const ignoreGlobs = [
-  '**/__tests__/*',
-  '**/*-test.js',
-  '**/*-story.js',
-  '**/*.stories.js',
-].join(',');
+const ignoreGlobs = ['**/__tests__/*', '**/*-test.js', '**/*-story.js'].join(
+  ','
+);
 
 try {
   exec(`${babelPath} src --quiet -d es --ignore "${ignoreGlobs}"`, {

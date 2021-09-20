@@ -1,4 +1,5 @@
 module.exports = {
+  extends: 'semantic-release-monorepo',
   plugins: [
     '@semantic-release/commit-analyzer',
     '@semantic-release/release-notes-generator',
@@ -12,20 +13,9 @@ module.exports = {
         setOnlyOnRelease: false,
       },
     ],
-    /*[
-      '@semantic-release/exec',
-      {
-        prepareCmd: './my-build-script.sh ${nextRelease.version}',
-      },
-    ],*/
   ],
 
   release: {
-    branches: [
-      'master',
-      'next',
-      'feat/*',
-      { name: 'alpha/*', prerelease: true },
-    ],
+    branches: ['master', 'next', 'feat/*', { name: 'alpha', prerelease: true }],
   },
 };

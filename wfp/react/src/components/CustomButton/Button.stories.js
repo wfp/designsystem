@@ -1,5 +1,5 @@
 import React from 'react';
-import { buttonKinds } from '../../prop-types/types';
+import { buttonKinds } from '@wfp/ui/src/prop-types/types';
 import { AddGlyph16 } from '@wfp/icons-react';
 import markdown from './README.mdx';
 import buttonTwig from './Button.twig';

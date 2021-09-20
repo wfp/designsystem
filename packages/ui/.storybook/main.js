@@ -41,7 +41,10 @@ module.exports = {
     //
     // This results in these files being included in `babel-loader` and causing
     // the build times to increase dramatically
-    babelLoader.exclude = [/node_modules/, /packages\/.*\/(es|lib|umd)/];
+    babelLoader.exclude = [
+      /node_modules\/(?!@wfp).*/,
+      /packages\/.*\/(es|lib|umd)/,
+    ];
 
     const sassLoader = {
       loader: require.resolve('sass-loader'),
