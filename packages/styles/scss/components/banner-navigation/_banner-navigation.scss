@@ -1,0 +1,63 @@
+@use '../../breakpoint' as *;
+@use '../../config' as *;
+@use '../../motion' as *;
+@use '../../theme' as *;
+@use '../../spacing' as *;
+@use '../../type' as *;
+@use '../../utilities/component-reset';
+@use '../../utilities/convert';
+
+
+@mixin banner-navigation{
+  .#{$prefix}--banner-navigation {
+    background: var(--interactive-02); //TODO
+    @include reset;
+    display: flex;
+    // @include font-smoothing; //added to reset mixin
+    @include breakpoint-down('sm') {
+      display: none;
+    }
+  }
+
+  .#{$prefix}--banner-navigation__item {
+    @include type-style('label-01');
+    @include font-family('sans');
+    padding: 0 $spacing-03;
+    font-weight: 600;
+    @include breakpoint('xlg') {
+      padding: 0 $spacing-05;
+    }
+
+    &:last-child {
+      padding-right: 0;
+    }
+
+    a {
+      @include type-style('label-01');
+      color: rgba(#ffffff, 0.9); //TODO
+      text-decoration: none;
+      font-weight: 600;
+
+      &:hover {
+        color: $field-hover;
+        text-decoration: underline;
+      }
+
+      &:focus {
+        color: $background;
+      }
+
+      &:visited,
+      &:active {
+        color: rgba(#ffffff, 0.8); //TODO
+      }
+    }
+  }
+
+  .#{$prefix}--banner-navigation__list {
+    display: flex;
+    justify-content: flex-end;
+    height: 2rem;
+    align-items: center;
+  }
+}

@@ -21,7 +21,7 @@
     transition: $transition--base;
     &:hover,
     &.#{$prefix}--link--hover {
-      text-decoration: underline;
+      text-decoration: underline; //TODO look into this stylesheet
     }
     &:visited {
       color: var(--interactive-01);

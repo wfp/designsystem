@@ -6,20 +6,17 @@
 //
 
 @use '../../config' as *;
-@use '../../motion' as *;
 @use '../../spacing' as *;
 @use '../../theme' as *;
-@use '../../type';
-@use '../../utilities/component-reset';
-@use '../../utilities/focus-outline' as *;
+@use '../../type' as *;
+@use '../../breakpoint' as *;
+@use '../../utilities/convert' as *;
 
 /// Link styles
 /// @access public
-/// @group link
-@mixin link {
+/// @group info-bar
+@mixin info-bar {
   .#{$prefix}--info-bar {
-    @include component-reset.reset;
-    @include type.type-style('body-short-01');
     background: $support-warning;
     @include reset;
     display: flex;

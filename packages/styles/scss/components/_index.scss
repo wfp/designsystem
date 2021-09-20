@@ -6,10 +6,14 @@
 //
 
 /*@use 'accordion';
-@use 'breadcrumb';
+
 */
-@use 'button'; /*
+@use 'button'; 
+@use 'banner-navigation';
+@use 'blockquote';
+@use 'breadcrumb';
 @use 'checkbox';
+/*
 @use 'code-snippet';
 @use 'combo-box';
 @use 'content-switcher';
@@ -25,14 +29,15 @@
 @use 'form';
 @use 'inline-loading';*/
 @use 'link';
-/*
 @use 'list';
+@use 'notification';
+/*
 @use 'list-box';
 @use 'loading';
 @use 'menu';
 @use 'modal';
 @use 'multiselect';
-@use 'notification';
+
 @use 'number-input';
 @use 'overflow-menu';
 @use 'pagination';
@@ -41,7 +46,6 @@
 @use 'progress-bar';
 @use 'progress-indicator';
 @use 'radio-button';
-@use 'search';
 @use 'select';
 @use 'slider';
 @use 'structured-list';
@@ -61,3 +65,5 @@
 @use 'wrapper';
 @use 'footer';
 @use 'read-more';
+@use 'search';
+@use 'info-bar';

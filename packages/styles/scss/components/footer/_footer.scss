@@ -30,7 +30,7 @@
     @include reset;
     @include font-family('sans');
     border-top: 2px solid var(--ui-03);
-    background-color: var(--ui-01);
+    background-color: $background;
     z-index: z('footer');
     padding: rem(20px) 0;
     @media print {
