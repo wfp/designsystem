@@ -25,6 +25,7 @@ module.exports = {
         sourceLoaderOptions: null,
       },
     },*/
+    '@storybook/addon-queryparams',
     '@storybook/addon-controls',
   ],
 

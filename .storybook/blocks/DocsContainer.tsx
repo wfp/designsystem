@@ -27,6 +27,7 @@ import {
   SourceProps as PureSourceProps,
 } from '@storybook/components';
 import mdxComponents from '../../src/components/MdxComponents';
+// import { withQuery } from "@storybook/addon-queryparams";
 
 export interface DocsContainerProps {
   context: DocsContextProps;
@@ -38,6 +39,17 @@ const defaultComponents = {
   a: AnchorMdx,
   ...HeadersMdx,
 };
+
+export const WithMockedSearch = () => {
+  const urlParams = new URLSearchParams(document.location.search);
+  const mockedParam = urlParams.get("embed");
+  if (mockedParam == "min"){
+    return true;
+  } else {
+    return false;
+  }
+};
+
 
 export const DocsContainer: FunctionComponent<DocsContainerProps> = ({
   context,
@@ -134,8 +146,7 @@ export const DocsContainer: FunctionComponent<DocsContainerProps> = ({
           <MDXProvider components={allComponents}>
             <DocsWrapper className="sbdocs sbdocs-wrapper">
               <DocsContent className="sbdocs sbdocs-content">
-                <Subtitle />
-                <Title />
+                {WithMockedSearch() ? '' : <><Subtitle /><Title /></>}
                 {children}
               </DocsContent>
             </DocsWrapper>
