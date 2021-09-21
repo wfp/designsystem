@@ -27,7 +27,6 @@ import {
   SourceProps as PureSourceProps,
 } from '@storybook/components';
 import mdxComponents from '../../src/components/MdxComponents';
-// import { withQuery } from "@storybook/addon-queryparams";
 
 export interface DocsContainerProps {
   context: DocsContextProps;
