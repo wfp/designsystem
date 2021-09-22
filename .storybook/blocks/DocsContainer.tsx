@@ -39,6 +39,16 @@ const defaultComponents = {
   ...HeadersMdx,
 };
 
+export const WithMockedSearch = () => {
+  const urlParams = new URLSearchParams(document.location.search);
+  const mockedParam = urlParams.get("embed");
+  if (mockedParam == "min"){
+    return true;
+  } else {
+    return false;
+  }
+};
+
 export const DocsContainer: FunctionComponent<DocsContainerProps> = ({
   context,
   children
@@ -134,8 +144,7 @@ export const DocsContainer: FunctionComponent<DocsContainerProps> = ({
           <MDXProvider components={allComponents}>
             <DocsWrapper className="sbdocs sbdocs-wrapper">
               <DocsContent className="sbdocs sbdocs-content">
-                <Subtitle />
-                <Title />
+                { WithMockedSearch() ? '' : <><Subtitle /><Title /></>}
                 {children}
               </DocsContent>
             </DocsWrapper>

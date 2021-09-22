@@ -12,19 +12,35 @@ import { PRIMARY_STORY } from './types';
 import { Title } from '@storybook/addon-docs/blocks';
 import HelpUsImprove from '../HelpUsImprove';
 
+export const WithMockedSearch = () => {
+  const urlParams = new URLSearchParams(document.location.search);
+  const mockedParam = urlParams.get("embed");
+  if (mockedParam == "min"){
+    return true;
+  } else {
+    return false;
+  }
+};
+
 export const DocsPage: FC = (props) => {
   return (
     <>
-      <IntroDescription />
+      {WithMockedSearch() ? '' : <>
+         <IntroDescription />
+         </>}
       <div className="sticky-preview-wrapper">
         <div className="sticky-preview">
           <Primary />
         </div>
-        <Props story={PRIMARY_STORY} />
+        {WithMockedSearch() ? '' : <>
+           <Props story={PRIMARY_STORY} />
+         </>}
       </div>
-      <Stories title="Examples" />
-      <Description />
-      <HelpUsImprove />
+      {WithMockedSearch() ? '' : <>
+         <Stories title="Examples" />
+         <Description />
+         <HelpUsImprove />
+         </>}
     </>
   );
 };
