@@ -145,7 +145,7 @@ export const DocsContainer: FunctionComponent<DocsContainerProps> = ({
           <MDXProvider components={allComponents}>
             <DocsWrapper className="sbdocs sbdocs-wrapper">
               <DocsContent className="sbdocs sbdocs-content">
-                {WithMockedSearch() ? '' : <><Subtitle /><Title /></>}
+                { WithMockedSearch() ? '' : <><Subtitle /><Title /></>}
                 {children}
               </DocsContent>
             </DocsWrapper>
