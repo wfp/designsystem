@@ -14,7 +14,7 @@ if (process.argv.length < 3) {
 const projectName = process.argv[2];
 const currentPath = process.cwd();
 const projectPath = path.join(currentPath, projectName);
-const git_repo = 'https://github.com/wfp/designsystem';
+const git_repo = 'https://github.com/wfp/designsystem/tree/un-core-v1/wfp';
 
 try {
   fs.mkdirSync(projectPath);
@@ -32,19 +32,34 @@ try {
 async function main() {
   try {
     console.log('Downloading files...');
-    proc.execSync(`fetcher  --url="${git_repo}" --out="~/bbb"`);
+    //proc.execSync(`fetcher  --url="${git_repo}" --out="~/bbb"`);
+
+    var fetcher = proc.spawn(
+      `fetcher  --url="${git_repo}" --out="./my-design-system"`,
+      {
+        shell: true,
+        stdio: 'inherit',
+      }
+    );
+
+    fetcher.on('exit', function (code) {
+      console.log(
+        `Downloaded from GitHub (${git_repo})process exited with code ${code.toString()}`
+      );
+
+      process.chdir(projectPath);
+
+      console.log('Installing dependencies...');
+      proc.execSync('yarn install');
+
+      console.log('Removing useless files');
+      proc.execSync('npx rimraf ./.git');
+      fs.rmdirSync(path.join(projectPath, 'bin'), { recursive: true });
+
+      console.log('The installation is done, this is ready to use !');
+    });
+
     //execSync(`git clone --depth 1 ${git_repo} ${projectPath}`);
-
-    process.chdir(projectPath);
-
-    console.log('Installing dependencies...');
-    proc.execSync('yarn install');
-
-    console.log('Removing useless files');
-    proc.execSync('npx rimraf ./.git');
-    fs.rmdirSync(path.join(projectPath, 'bin'), { recursive: true });
-
-    console.log('The installation is done, this is ready to use !');
   } catch (error) {
     console.log(error);
   }
