@@ -31,7 +31,7 @@ try {
 
 async function main() {
   try {
-    console.log('Downloading files...');
+    console.log(`Downloading files to project path: ${projectPath}`);
     //proc.execSync(`fetcher  --url="${git_repo}" --out="~/bbb"`);
 
     var fetcher = proc.spawn(
