@@ -7,7 +7,7 @@
 
 'use strict';
 
-const { colorsExporter } = require('@wfp/export-figma-svg');
+const { colorsExporter } = require('@wfp/figma-connect');
 const path = require('path');
 const rimraf = require('rimraf');
 const fs = require('fs');

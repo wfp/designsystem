@@ -1,5 +1,5 @@
 {
-  "name": "@wfp/export-figma-svg",
+  "name": "@wfp/figma-connect",
   "version": "0.0.1",
   "description": "Export SVGs from Figma",
   "main": "src/index.js",

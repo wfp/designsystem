@@ -30,14 +30,14 @@ Your SVGs will be generated in `src/svg` folder
 ### Usage with node.js
 
 ```js
-const { svgExporter } = require('@wfp/export-figma-svg');
+const { svgExporter } = require('@wfp/figma-connect');
 
 svgExporter();
 ```
 
 ### Filtering Private Components (starting with a . or a \_)
 
-1. If you want to ignore / filter private components that start with a . or \_, change the FILTER_PRIVATE_COMPONENTS variable to `true`. Thanks to [lennertVanSever for their contribution to this](https://github.com/jacobtyq/export-figma-svg/pull/27)
+1. If you want to ignore / filter private components that start with a . or \_, change the FILTER_PRIVATE_COMPONENTS variable to `true`. Thanks to [lennertVanSever for their contribution to this](https://github.com/jacobtyq/figma-connect/pull/27)
 
 ### Limitations
 
