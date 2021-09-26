@@ -7,7 +7,7 @@ const proc = require('child_process');
 if (process.argv.length < 3) {
   console.log('You have to provide a name to your app.');
   console.log('For example :');
-  console.log('    npx create-my-design-system my-design-system');
+  console.log('    npx @wfp/create-my-design-system my-design-system');
   process.exit(1);
 }
 
@@ -35,7 +35,7 @@ async function main() {
     //proc.execSync(`fetcher  --url="${git_repo}" --out="~/bbb"`);
 
     var fetcher = proc.spawn(
-      `fetcher  --url="${git_repo}" --out="./my-design-system"`,
+      `fetcher  --url="${git_repo}" --out="${projectPath}"`,
       {
         shell: true,
         stdio: 'inherit',
