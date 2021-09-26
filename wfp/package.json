@@ -1,15 +1,11 @@
 {
-  "name": "@wfp/designsystem",
+  "name": "@wfp/designsystem-example",
   "version": "1.18.2",
-  "description": "WFP UI Kit",
+  "description": "WFP UI Kit Example",
   "license": "Apache-2",
   "private": true,
   "workspaces": [
-    "actions/*",
-    "codemods",
-    "config/*",
-    "packages/*",
-    "wfp/packages/*"
+    "packages/*"
   ],
   "scripts": {
     "start:ui": "cd packages/ui && yarn start",
@@ -73,7 +69,10 @@
     "stylelint": "^13.13.1"
   },
   "husky": {
-    "hooks": {}
+    "hooks": {
+      "commit-msg": "commitlint -e $HUSKY_GIT_PARAMS",
+      "pre-commit": "lint-staged"
+    }
   },
   "commitlint": {
     "extends": [
@@ -117,17 +116,14 @@
   "lint-staged": {
     "**/*.js": [
       "prettier --write",
-      "eslint",
-      "git add"
+      "eslint"
     ],
     "**/*.scss": [
       "prettier --write",
-      "stylelint --report-needless-disables --report-invalid-scope-disables --allow-empty-input",
-      "git add"
+      "stylelint --report-needless-disables --report-invalid-scope-disables --allow-empty-input"
     ],
     "!(*sass).md": [
-      "prettier --write",
-      "git add"
+      "prettier --write"
     ]
   },
   "eslintConfig": {
@@ -139,81 +135,5 @@
     "extends": [
       "./config/stylelint-config-carbon"
     ]
-  },
-  "prettier": {
-    "jsxBracketSameLine": true,
-    "printWidth": 80,
-    "singleQuote": true,
-    "trailingComma": "es5"
-  },
-  "config": {
-    "validate-commit-msg": {
-      "types": [
-        "feat",
-        "fix",
-        "docs",
-        "style",
-        "refactor",
-        "perf",
-        "test",
-        "chore",
-        "revert"
-      ],
-      "warnOnFail": false,
-      "maxSubjectLength": 100,
-      "subjectPattern": ".+",
-      "subjectPatternErrorMsg": "Subject does not match subject pattern!"
-    },
-    "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog-components"
-    }
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/wfp/ui.git"
-  },
-  "types": "src/types/index.d.ts",
-  "jest": {
-    "collectCoverageFrom": [
-      "src/components/**/*.js",
-      "!src/components/**/*-story.js"
-    ],
-    "coverageDirectory": "coverage",
-    "coverageReporters": [
-      "text",
-      "html"
-    ],
-    "setupFiles": [
-      "<rootDir>/config/jest/setup.js"
-    ],
-    "testMatch": [
-      "<rootDir>/**/__tests__/**/*.js?(x)",
-      "<rootDir>/**/?(*-)(spec|test).js?(x)"
-    ],
-    "testURL": "http://localhost",
-    "transform": {
-      "^.+\\.(js|jsx)$": "<rootDir>/config/jest/jsTransform.js",
-      "^.+\\.s?css$": "<rootDir>/config/jest/cssTransform.js",
-      "^(?!.*\\.(js|jsx|css|json)$)": "<rootDir>/config/jest/fileTransform.js"
-    },
-    "testPathIgnorePatterns": [
-      "/node_modules/",
-      "/examples/",
-      "/config/",
-      "/lib/",
-      "/es/",
-      "/cjs/"
-    ],
-    "transformIgnorePatterns": [
-      "[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"
-    ],
-    "moduleFileExtensions": [
-      "js",
-      "json"
-    ],
-    "snapshotSerializers": [
-      "enzyme-to-json/serializer"
-    ]
-  },
-  "bundleSizeThreshold": 80000
+  }
 }
