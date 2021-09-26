@@ -1,3 +1,3 @@
 # UN Core Design System
 
-This package shows the usage of UN Core for creating your own design system.
+This package is a sample implementation of the UN Core for creating your own design system.
