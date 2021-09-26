@@ -71,6 +71,7 @@
     left: rem(3px);
     top: 50%;
     margin-top: rem(-5px);
+    box-sizing: content-box;
   }
 
   .#{$prefix}--checkbox:checked + .#{$prefix}--checkbox-label::before,
