@@ -1,6 +1,6 @@
 {
-  "name": "babel-preset-wfp",
-  "private": true,
+  "name": "@wfp/babel-preset-wfp",
+  "private": false,
   "version": "0.1.1",
   "license": "Apache-2.0",
   "main": "index.js",
