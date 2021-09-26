@@ -1,6 +1,6 @@
 {
   "name": "@wfp/create-design-system",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "",
   "main": "index.js",
   "bin": {
@@ -8,7 +8,6 @@
   },
   "scripts": {
     "create-design-system": "node install.js"
-
   },
   "author": "World Food Programme",
   "license": "ISC",
