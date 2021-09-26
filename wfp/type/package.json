@@ -1,10 +1,11 @@
 {
-  "name": "@wfp/type-subpackage",
+  "name": "@wfp/type-example",
   "description": "Typography for digital and software products using the UN Core",
   "version": "10.30.2",
   "license": "Apache-2.0",
   "main": "lib/index.js",
   "module": "es/index.js",
+  "private": true,
   "repository": {
     "type": "git",
     "url": "https://github.com/carbon-design-system/carbon.git",
