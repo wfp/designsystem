@@ -1,67 +1,106 @@
 #!/usr/bin/env node
+'use strict';
 const chalk = require('chalk');
 const path = require('path');
 const fs = require('fs');
 const proc = require('child_process');
+const githubFilesFetcher = require('./fetcher');
+const prompts = require('prompts');
+const shell = require('shelljs');
 
-if (process.argv.length < 3) {
-  console.log('You have to provide a name to your app.');
-  console.log('For example :');
-  console.log('    npx @wfp/create-my-design-system my-design-system');
-  process.exit(1);
-}
-
-const projectName = process.argv[2];
+var projectName = process.argv[2];
 const currentPath = process.cwd();
-const projectPath = path.join(currentPath, projectName);
 const git_repo = 'https://github.com/wfp/designsystem/tree/un-core-v1/wfp';
 
-try {
-  fs.mkdirSync(projectPath);
-} catch (err) {
-  if (err.code === 'EEXIST') {
-    console.log(
-      `The file ${projectName} already exist in the current directory, please give it another name.`
-    );
-  } else {
-    console.log(err);
-  }
-  process.exit(1);
-}
-
 async function main() {
-  try {
-    console.log(`Downloading files to project path: ${projectPath}`);
-    //proc.execSync(`fetcher  --url="${git_repo}" --out="~/bbb"`);
+  console.log(
+    chalk.blue.bold('UN core'),
+    chalk.white('| Create-Design-System CLI')
+  );
 
-    var fetcher = proc.spawn(
-      `fetcher  --url="${git_repo}" --out="${projectPath}"`,
-      {
-        shell: true,
-        stdio: 'inherit',
-      }
-    );
+  const onCancel = (prompt) => {
+    return true;
+  };
 
-    fetcher.on('exit', function (code) {
-      console.log(
-        `Downloaded from GitHub (${git_repo})process exited with code ${code.toString()}`
-      );
-
-      process.chdir(projectPath);
-
-      console.log('Installing dependencies...');
-      proc.execSync('yarn install');
-
-      console.log('Removing useless files');
-      proc.execSync('npx rimraf ./.git');
-      fs.rmdirSync(path.join(projectPath, 'bin'), { recursive: true });
-
-      console.log('The installation is done, this is ready to use !');
+  if (process.argv.length < 3) {
+    const project = await prompts({
+      type: 'text',
+      name: 'value',
+      hint: 'For example: npx @wfp/create-my-design-system my-design-system',
+      message: `You have to provide a name to your design system. What's your project name?`,
+      onCancel,
     });
-
-    //execSync(`git clone --depth 1 ${git_repo} ${projectPath}`);
-  } catch (error) {
-    console.log(error);
+    projectName = project.value;
+    if (!projectName) process.exit();
   }
+
+  const projectPath = path.join(currentPath, projectName);
+
+  // Enable to detect CTRL+C
+  process.on('SIGINT', () => {
+    if (projectPath !== '') cleanUpOutputDirectory(projectPath);
+  });
+
+  function cleanUpOutputDirectory(projectPath) {
+    if (projectPath !== undefined) {
+      //shell.rm('-rf', projectPath);
+      process.exit();
+      return;
+    }
+  }
+
+  try {
+    fs.mkdirSync(projectPath);
+  } catch (err) {
+    if (err.code === 'EEXIST') {
+      const response = await prompts({
+        type: 'confirm',
+        name: 'value',
+        message: `The folder ${projectName} already exist in the current directory, do you want to use override the existing directory?`,
+        initial: true,
+        onCancel,
+      });
+    } else {
+      if (!response) {
+        cleanUpOutputDirectory(projectPath);
+      }
+    }
+  }
+
+  console.log(`Downloading files to project path: ${projectPath}`);
+
+  const response = await prompts({
+    type: 'multiselect',
+    name: 'value',
+    message: 'What repository style do you want to use?',
+    choices: [
+      { title: 'Yarn/lerna mono repository', value: '#ff0000' },
+      { title: 'npm (simple)', value: '#00ff00', disabled: true },
+      { title: 'npm (simple)', value: '#00ff00', disabled: true },
+    ],
+    max: 2,
+    hint: '- Space to select. Return to submit',
+    onCancel,
+  });
+
+  const fetcher = await githubFilesFetcher({
+    url: git_repo,
+    out: projectPath,
+  });
+
+  console.log('Installing dependencies...');
+
+  process.chdir(projectPath);
+
+  proc.execSync('yarn install');
+
+  console.log('Removing useless files');
+
+  proc.execSync('npx rimraf ./.git');
+  fs.rmdirSync(path.join(projectPath, 'bin'), { recursive: true });
+
+  console.log('The installation is done, this is ready to use!');
+
+  process.exit();
 }
 main();
