@@ -155,7 +155,7 @@
     "babel-plugin-dev-expression": "^0.2.2",
     "babel-plugin-react-docgen": "^4.2.1",
     "babel-plugin-transform-inline-environment-variables": "^0.4.3",
-    "babel-preset-wfp": "^0.1.1",
+    "@wfp/babel-preset-wfp": "^0.1.1",
     "browserslist-config-carbon": "^10.6.1",
     "chalk": "^4.1.1",
     "cli-table": "^0.3.0",
