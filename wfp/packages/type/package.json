@@ -1,7 +1,7 @@
 {
   "name": "@wfp/type-example",
   "description": "Typography for digital and software products using the UN Core",
-  "version": "10.30.3",
+  "version": "10.30.4",
   "license": "Apache-2.0",
   "main": "lib/index.js",
   "module": "es/index.js",
