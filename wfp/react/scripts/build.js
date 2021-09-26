@@ -18,26 +18,29 @@ const exec = (command, extraEnv) =>
     env: Object.assign({}, process.env, extraEnv),
   });
 
-const ignoreGlobs = ['**/__tests__/*', '**/*-test.js', '**/*-story.js'].join(
-  ','
-);
+const ignoreGlobs = [
+  '**/__tests__/*',
+  '**/*-test.js',
+  '**/*-story.js',
+  '**/*.stories.js',
+].join(',');
 
 try {
-  exec(`${babelPath} src --quiet -d es --ignore "${ignoreGlobs}"`, {
+  exec(`${babelPath} src -d es --ignore "${ignoreGlobs}"`, {
     BABEL_ENV: 'es',
   });
-  exec(`${babelPath} src --quiet -d lib --ignore "${ignoreGlobs}"`, {
+  exec(`${babelPath} src -d lib --ignore "${ignoreGlobs}"`, {
     BABEL_ENV: 'cjs',
   });
 
   // Create docgen metadata
-  exec(`${babelPath} src --quiet -d build/docgen --ignore "${ignoreGlobs}"`, {
+  /*exec(`${babelPath} src -d build/docgen --ignore "${ignoreGlobs}"`, {
     BABEL_ENV: 'docgen',
   });
   fs.writeFileSync(
     'react-docgen.json',
     JSON.stringify(mapValues(require(`../build/docgen`), '__docgenInfo'))
-  );
+  );*/
 } catch (error) {
   console.error('One of the commands failed:', error.stack); // eslint-disable-line no-console
   process.exit(1);

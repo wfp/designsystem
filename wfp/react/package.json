@@ -1,5 +1,5 @@
 {
-  "name": "@wfp/ui-library-example",
+  "name": "@wfp/react-example",
   "version": "1.18.10",
   "description": "WFP UI Kit",
   "license": "Apache-2",
@@ -112,7 +112,6 @@
     "invariant": "^2.2.4",
     "lerna": "^4.0.0",
     "npm-which": "^3.0.1",
-    "react-popper-tooltip": "^4.1.0",
     "warning": "^4.0.3",
     "window-or-global": "^1.0.1"
   },
@@ -238,43 +237,6 @@
     "url": "https://github.com/wfp/ui.git"
   },
   "types": "src/types/index.d.ts",
-  "jest": {
-    "collectCoverageFrom": [
-      "src/components/**/*.js",
-      "!src/components/**/*-story.js"
-    ],
-    "coverageDirectory": "coverage",
-    "coverageReporters": [
-      "text",
-      "html"
-    ],
-    "setupFiles": [
-      "<rootDir>/config/jest/setup.js"
-    ],
-    "testMatch": [
-      "<rootDir>/**/__tests__/**/*.js?(x)",
-      "<rootDir>/**/?(*-)(spec|test).js?(x)"
-    ],
-    "testURL": "http://localhost",
-    "testPathIgnorePatterns": [
-      "/node_modules/",
-      "/examples/",
-      "/config/",
-      "/lib/",
-      "/es/",
-      "/cjs/"
-    ],
-    "transformIgnorePatterns": [
-      "[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"
-    ],
-    "moduleFileExtensions": [
-      "js",
-      "json"
-    ],
-    "snapshotSerializers": [
-      "enzyme-to-json/serializer"
-    ]
-  },
   "bundleSizeThreshold": 80000,
   "gitHead": "6c46980c68ce47f3d5271024398d2537512d05ac"
 }

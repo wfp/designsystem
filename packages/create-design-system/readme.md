@@ -1,6 +1,6 @@
-# Create Design System [![Build Status](https://dev.azure.com/worldfoodprogramme/ui/_apis/build/status/wfp.ui?branchName=main)](https://dev.azure.com/worldfoodprogramme/ui/_build?definitionId=242) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-green.svg)](https://github.com/facebook/create-react-app/blob/main/CONTRIBUTING.md)
+# Create Design System [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-green.svg)](https://github.com/facebook/create-react-app/blob/main/CONTRIBUTING.md)
 
-Create Design System with no build configuration.
+Create Design System is a tool to initialize a design-system boilerplate with no build configuration.
 
 ## Quick Overview
 
