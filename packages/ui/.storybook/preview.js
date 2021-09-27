@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 import { addParameters } from '@storybook/react';
 import './storybook.scss';
+import './storybook-legacy.scss';
 import theme from './theme';
 
 /*import {
@@ -16,8 +17,8 @@ import { DocsContainer } from './blocks/DocsContainer';
 
 addParameters({
   docs: {
-    // container: DocsContainer,
-    // page: DocsPage,
+    container: DocsContainer,
+    page: DocsPage,
   },
   viewMode: 'docs',
 }); // or global addParameters
@@ -33,7 +34,7 @@ export const parameters = {
     },
     canvas: { title: 'Code', hidden: false },
   },
-  /*options: {
+  options: {
     storySort: {
       order: [
         'Getting started',
@@ -53,7 +54,7 @@ export const parameters = {
         'Components',
       ],
     },
-  },*/
+  },
 };
 
 export const globalTypes = {

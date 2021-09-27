@@ -12,9 +12,9 @@ import classNames from 'classnames';
 import { settings } from '../../globals/js';
 
 import {
-  CheckmarkGlyph16,
-  CloseGlyph16,
-  WarningGlyph16,
+  CheckmarkGlyph,
+  CloseGlyph,
+  WarningSolidGlyph,
 } from '@wfp/icons-react';
 import Loading from '../Loading';
 import uid from '../../tools/uniqueId';
@@ -204,13 +204,9 @@ export function Filename({ iconDescription, status, invalid, ...other }) {
       return (
         <>
           {invalid && (
-            <Icon
-              icon={iconWarningGlyph}
-              className={`${prefix}--file-invalid`}
-            />
+            <WarningSolidGlyph className={`${prefix}--file-invalid`} />
           )}
-          <Icon
-            icon={iconCloseGlyph}
+          <CloseGlyph
             className={`${prefix}--file-close`}
             aria-label={iconDescription}
             {...other}
@@ -225,8 +221,7 @@ export function Filename({ iconDescription, status, invalid, ...other }) {
       );
     case 'complete':
       return (
-        <Icon
-          icon={iconCheckmarkGlyph}
+        <CheckmarkGlyph
           className={`${prefix}--file-complete`}
           aria-label={iconDescription}
           {...other}

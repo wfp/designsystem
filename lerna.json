@@ -18,5 +18,11 @@
     "**/examples/**",
     "**/*.md"
   ],
-  "packages": ["actions/*", "codemods", "config/*", "packages/*", "wfp/*"]
+  "packages": [
+    "actions/*",
+    "codemods",
+    "config/*",
+    "packages/*",
+    "wfp/packages/*"
+  ]
 }

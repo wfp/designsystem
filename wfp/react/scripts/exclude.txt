@@ -1,6 +1,0 @@
-documentation
-rtl-addon
-*-story.js
-*-test.js
-__tests__
-.md

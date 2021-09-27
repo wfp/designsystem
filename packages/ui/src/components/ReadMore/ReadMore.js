@@ -3,10 +3,9 @@ import React, { useRef, useState } from 'react';
 import classnames from 'classnames';
 
 import Link from '../Link';
-import { iconCaretUp, iconCaretDown } from '@wfp/icons-react';
 import Icon from '../Icon';
 import { settings } from '../../globals/js';
-import { CaretUp16, CaretDown16 } from '@wfp/icons-react';
+import { CaretUpGlyph, CaretDownGlyph } from '@wfp/icons-react';
 
 const { prefix } = settings;
 
@@ -17,7 +16,7 @@ const MoreLink = ({ handleToggleClick, link, text, showMore }) => {
     });
     return clonedLink;
   } else {
-    const Icon = showMore ? CaretUp16 : CaretDown16;
+    const Icon = showMore ? CaretUpGlyph : CaretDownGlyph;
     return (
       <Link
         className={`${prefix}--read-more__trigger`}

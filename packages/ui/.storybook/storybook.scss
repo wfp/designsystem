@@ -6,20 +6,12 @@ $css--reset: true;
 @import '@wfp/themes/scss/themes';
 //@import '@wfp/themes/scss/index.scss';
 
-// Legacy theme
-@import '../src/globals/scss/styles.scss';
-
 $carbon--theme: $carbon--theme--wfp;
 
-// Use the gray 10 theme
-
+// Use the WFP theme
 :root {
   @include carbon--theme($carbon--theme--wfp, true) {
     // @include emit-component-tokens($tag-colors);
     // @include emit-component-tokens($notification-colors);
   }
-}
-
-body {
-  // border: 30px solid red;
 }

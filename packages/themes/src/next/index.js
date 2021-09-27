@@ -9,6 +9,7 @@ import * as white from './white';
 import * as g10 from './g10';
 import * as g90 from './g90';
 import * as g100 from './g100';
+import * as wfp from './wfp';
 import { TokenFormat, group, set } from './tokens';
 
 export const themes = {
@@ -16,6 +17,7 @@ export const themes = {
   g10,
   g90,
   g100,
+  wfp,
 };
 
 export { TokenFormat, group, set };

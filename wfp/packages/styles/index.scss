@@ -1,0 +1,11 @@
+@forward '@wfp/styles/scss/config';
+@forward '@wfp/styles/scss/colors' hide $white;
+@forward '@wfp/styles/scss/font-face';
+@forward '@wfp/styles/scss/grid';
+@forward '@wfp/styles/scss/motion';
+@forward '@wfp/styles/scss/type';
+@forward '@wfp/styles/scss/themes';
+@forward '@wfp/styles/scss/theme';
+
+@use '@wfp/styles/scss/reset';
+@use '@wfp/styles/scss/components';

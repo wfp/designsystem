@@ -13,8 +13,8 @@
 @use './themes';
 
 @forward '@wfp/themes/scss/modules/theme' with (
-  $fallback: themes.$white !default,
-  $theme: compat.$white !default,
+  $fallback: themes.$wfp !default,
+  $theme: compat.$wfp !default,
 );
 @forward '@wfp/themes/scss/modules/tokens';
 @use '@wfp/themes/scss/modules/tokens';

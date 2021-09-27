@@ -1,0 +1,242 @@
+{
+  "name": "@wfp/react-example",
+  "version": "1.18.12",
+  "description": "WFP UI Kit",
+  "license": "Apache-2",
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "private": true,
+  "sideEffects": false,
+  "scripts": {
+    "build": "yarn clean && node scripts/build.js && rollup -c",
+    "build-storybook": "cross-env NODE_ENV=production build-storybook -s ./.storybook/assets",
+    "clean": "rimraf es lib umd storybook-static build react-docgen.json",
+    "prepublish": "yarn build",
+    "start": "yarn storybook",
+    "storybook": "rimraf node_modules/.cache/storybook && start-storybook -p 9000 -s ./.storybook/assets",
+    "snapshot": "build-storybook && percy-storybook --widths=320,1280",
+    "test:e2e": "cypress run-ct --config video=false,screenshotOnRunFailure=false"
+  },
+  "sass": {
+    "includePaths": [
+      "./node_modules"
+    ]
+  },
+  "keywords": [
+    "WFP",
+    "World Food Programme",
+    "UN",
+    "United Nations",
+    "react",
+    "ui-kit",
+    "components"
+  ],
+  "babel": {
+    "presets": [
+      "@babel/preset-react",
+      "./scripts/env"
+    ],
+    "plugins": [
+      "dev-expression",
+      "@babel/plugin-syntax-dynamic-import",
+      "@babel/plugin-syntax-import-meta",
+      "@babel/plugin-proposal-class-properties",
+      "@babel/plugin-proposal-export-namespace-from",
+      "@babel/plugin-proposal-export-default-from"
+    ]
+  },
+  "eslintConfig": {
+    "parser": "babel-eslint",
+    "extends": [
+      "eslint:recommended",
+      "plugin:jsx-a11y/recommended"
+    ],
+    "plugins": [
+      "react",
+      "jsdoc",
+      "jsx-a11y"
+    ],
+    "rules": {
+      "react/jsx-uses-vars": 1,
+      "react/jsx-uses-react": 1,
+      "react/no-find-dom-node": 1,
+      "jsdoc/check-param-names": 2,
+      "jsdoc/check-tag-names": 2,
+      "jsdoc/check-types": 2,
+      "jsx-a11y/no-static-element-interactions": 1,
+      "jsx-a11y/no-noninteractive-element-interactions": 1,
+      "jsx-a11y/click-events-have-key-events": 1,
+      "jsx-a11y/anchor-is-valid": 1,
+      "jsx-a11y/interactive-supports-focus": 1,
+      "jsx-a11y/label-has-for": [
+        1,
+        {
+          "components": [
+            "Label"
+          ],
+          "required": {
+            "some": [
+              "nesting",
+              "id"
+            ]
+          },
+          "allowChildren": true
+        }
+      ]
+    },
+    "env": {
+      "node": true,
+      "browser": true,
+      "es6": true,
+      "jest": true,
+      "jasmine": true
+    },
+    "globals": {
+      "__DEV__": true
+    },
+    "settings": {
+      "jsdoc": {
+        "tagNamePreference": {
+          "augments": "extends"
+        }
+      }
+    }
+  },
+  "peerDependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "dependencies": {
+    "@storybook/manager-webpack5": "^6.3.4",
+    "@wfp/icons-react": "10.34.7",
+    "@wfp/ui": "1.18.12",
+    "invariant": "^2.2.4",
+    "lerna": "^4.0.0",
+    "npm-which": "^3.0.1",
+    "warning": "^4.0.3",
+    "window-or-global": "^1.0.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.14.5",
+    "@babel/core": "^7.14.6",
+    "@babel/plugin-external-helpers": "^7.14.5",
+    "@babel/plugin-proposal-class-properties": "^7.14.5",
+    "@babel/plugin-proposal-export-default-from": "^7.14.5",
+    "@babel/plugin-proposal-export-namespace-from": "^7.14.5",
+    "@babel/plugin-syntax-dynamic-import": "^7.8.3",
+    "@babel/plugin-syntax-import-meta": "^7.10.4",
+    "@babel/plugin-transform-object-assign": "^7.14.5",
+    "@babel/preset-env": "^7.14.7",
+    "@babel/preset-react": "^7.14.5",
+    "classnames": "^2.2.6",
+    "@carbon/test-utils": "^10.3.0",
+    "@cypress/react": "^5.4.0",
+    "@cypress/webpack-dev-server": "^1.1.5",
+    "@percy/cypress": "^3.1.1",
+    "@percy/storybook": "^3.3.1",
+    "@rollup/plugin-babel": "^5.3.0",
+    "@rollup/plugin-commonjs": "^18.0.0",
+    "@rollup/plugin-node-resolve": "^11.2.1",
+    "@rollup/plugin-replace": "^2.4.2",
+    "@storybook/addon-actions": "^6.3.6",
+    "@storybook/addon-docs": "^6.3.6",
+    "@storybook/addon-knobs": "^6.3.0",
+    "@storybook/addon-links": "^6.3.6",
+    "@storybook/addon-notes": "^5.3.21",
+    "@storybook/addon-storysource": "^6.3.6",
+    "@storybook/addons": "^6.3.6",
+    "@storybook/react": "^6.3.6",
+    "@storybook/source-loader": "^6.3.6",
+    "@storybook/theming": "^6.3.6",
+    "@testing-library/cypress": "^8.0.0",
+    "@wfp/styles": "^10.26.1",
+    "@wfp/themes": "^10.40.1",
+    "babel-loader": "^8.2.2",
+    "babel-plugin-dev-expression": "^0.2.2",
+    "babel-plugin-react-docgen": "^4.2.1",
+    "babel-plugin-transform-inline-environment-variables": "^0.4.3",
+    "@wfp/babel-preset-wfp": "^0.1.2",
+    "browserslist-config-carbon": "^10.6.1",
+    "chalk": "^4.1.1",
+    "cli-table": "^0.3.0",
+    "core-js": "^3.16.0",
+    "cross-env": "^5.2.0",
+    "css-loader": "^3.4.2",
+    "cypress": "^8.1.0",
+    "cypress-real-events": "^1.5.1",
+    "fast-sass-loader": "^1.5.0",
+    "gzip-size": "^6.0.0",
+    "lcov2badge": "^0.1.0",
+    "mini-css-extract-plugin": "^0.9.0",
+    "npm-which": "^3.0.1",
+    "object-assign": "^4.1.1",
+    "postcss-custom-properties": "^9.0.2",
+    "postcss-loader": "^3.0.0",
+    "promise": "^8.0.1",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-test-renderer": "^16.8.6",
+    "requestanimationframe": "^0.0.23",
+    "rimraf": "^3.0.0",
+    "rollup": "^2.46.0",
+    "rollup-plugin-sizes": "^1.0.4",
+    "rollup-plugin-strip-banner": "^2.0.0",
+    "rollup-plugin-terser": "^7.0.2",
+    "rtlcss": "^2.4.0",
+    "sass": "^1.36.0",
+    "sass-loader": "^10.1.1",
+    "storybook-readme": "^5.0.9",
+    "string-replace-loader": "^2.1.0",
+    "terser-webpack-plugin": "^2.3.2",
+    "webpack": "^4.41.5",
+    "webpack-dev-server": "^3.11.2",
+    "whatwg-fetch": "^3.6.2"
+  },
+  "prettier": {
+    "jsxBracketSameLine": true,
+    "printWidth": 80,
+    "singleQuote": true,
+    "trailingComma": "es5"
+  },
+  "lint-staged": {
+    "*.js": [
+      "npm prettier",
+      "npm lint",
+      "git add"
+    ],
+    "*.{css,scss}": [
+      "npm prettier",
+      "git add"
+    ]
+  },
+  "config": {
+    "validate-commit-msg": {
+      "types": [
+        "feat",
+        "fix",
+        "docs",
+        "style",
+        "refactor",
+        "perf",
+        "test",
+        "chore",
+        "revert"
+      ],
+      "warnOnFail": false,
+      "maxSubjectLength": 100,
+      "subjectPattern": ".+",
+      "subjectPatternErrorMsg": "Subject does not match subject pattern!"
+    },
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog-components"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wfp/ui.git"
+  },
+  "types": "src/types/index.d.ts",
+  "bundleSizeThreshold": 80000,
+  "gitHead": "6c46980c68ce47f3d5271024398d2537512d05ac"
+}

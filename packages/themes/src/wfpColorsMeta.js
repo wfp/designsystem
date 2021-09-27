@@ -1,5 +1,5 @@
 /* eslint-disable */
-/* Do not edit file! Updated at Sun, 12 Sep 2021 21:32:58 GMT from Figma */
+/* Do not edit file! Updated at Tue, 14 Sep 2021 13:32:31 GMT from Figma */
 
 const meta = {
   background: {
@@ -42,9 +42,9 @@ const meta = {
     category: "Primary"
   },
   backgroundInverse: {
-    description: "default page background",
+    description: "inverse background",
     variable: "backgroundInverse",
-    former: "ui-02",
+    former: "inverse-02",
     hex: "#313c44",
     rgba: {
       r: 0.1944444477558136,
@@ -55,9 +55,9 @@ const meta = {
     category: "Primary"
   },
   backgroundInverseHover: {
-    description: "default page background",
+    description: "inverse background hover",
     variable: "backgroundInverseHover",
-    former: "ui-02",
+    former: "inverseHoverUI",
     hex: "#313c44",
     rgba: {
       r: 0.1944444477558136,
@@ -68,9 +68,22 @@ const meta = {
     category: "Primary"
   },
   backgroundSelected: {
-    description: "default page background",
+    description: "selected background",
     variable: "backgroundSelected",
-    former: "ui-02",
+    former: "selectedUI",
+    hex: "#ffffff",
+    rgba: {
+      r: 1,
+      g: 1,
+      b: 1,
+      a: 1
+    },
+    category: "Primary"
+  },
+  backgroundSelectedHover: {
+    description: "selected background",
+    variable: "backgroundSelectedHover",
+    former: "selectedUI",
     hex: "#ffffff",
     rgba: {
       r: 1,
@@ -81,9 +94,9 @@ const meta = {
     category: "Primary"
   },
   backgroundBrand: {
-    description: "default page background",
+    description: "brand background",
     variable: "backgroundBrand",
-    former: "ui-02",
+    former: "interactive-01",
     hex: "#0b77c2",
     rgba: {
       r: 0.04313725605607033,
@@ -94,9 +107,9 @@ const meta = {
     category: "Primary"
   },
   interactive: {
-    description: "default page background",
+    description: "Primary interactive color;\nPrimary buttons",
     variable: "interactive",
-    former: "ui-02",
+    former: "interactive-01",
     hex: "#0b77c2",
     rgba: {
       r: 0.04313725605607033,
@@ -107,9 +120,9 @@ const meta = {
     category: "Primary"
   },
   field: {
-    description: "default page background",
+    description: "Default input fields;\nFields on $ui-backgrounds",
     variable: "field",
-    former: "ui-02",
+    former: "field-01",
     hex: "#ffffff",
     rgba: {
       r: 1,
@@ -119,10 +132,75 @@ const meta = {
     },
     category: "Primary"
   },
+  fieldDisabled: {
+    description: "Default input fields;\nFields on $ui-backgrounds",
+    variable: "fieldDisabled",
+    former: "field-01",
+    hex: "#ffffff",
+    rgba: {
+      r: 1,
+      g: 1,
+      b: 1,
+      a: 1
+    },
+    category: "Primary"
+  },
+  fieldHover: {
+    description: "Default input fields;\nFields on $ui-backgrounds",
+    variable: "fieldHover",
+    former: "field-01",
+    hex: "#ffffff",
+    rgba: {
+      r: 1,
+      g: 1,
+      b: 1,
+      a: 1
+    },
+    category: "Primary"
+  },
+  focus: {
+    description: "Focus on high contrast moments",
+    variable: "focus",
+    former: "inverseFocusUi",
+    hex: "#0b77c2",
+    rgba: {
+      r: 0.04313725605607033,
+      g: 0.46666666865348816,
+      b: 0.7607843279838562,
+      a: 1
+    },
+    category: "Primary"
+  },
   focusInverse: {
-    description: "default page background",
+    description: "Focus on high contrast moments",
     variable: "focusInverse",
-    former: "ui-02",
+    former: "inverseFocusUi",
+    hex: "#0b77c2",
+    rgba: {
+      r: 0.04313725605607033,
+      g: 0.46666666865348816,
+      b: 0.7607843279838562,
+      a: 1
+    },
+    category: "Primary"
+  },
+  focusInset: {
+    description: "Focus on high contrast moments",
+    variable: "focusInset",
+    former: "inverseFocusUi",
+    hex: "#0b77c2",
+    rgba: {
+      r: 0.04313725605607033,
+      g: 0.46666666865348816,
+      b: 0.7607843279838562,
+      a: 1
+    },
+    category: "Primary"
+  },
+  highlight: {
+    description: "Focus on high contrast moments",
+    variable: "highlight",
+    former: "inverseFocusUi",
     hex: "#0b77c2",
     rgba: {
       r: 0.04313725605607033,
@@ -145,9 +223,35 @@ const meta = {
     },
     category: "Primary"
   },
+  layerActive: {
+    description: "Container background on $ui-background;\nSecondary page background",
+    variable: "layerActive",
+    former: "ui-02",
+    hex: "#f0f2f4",
+    rgba: {
+      r: 0.9414583444595337,
+      g: 0.9494975209236145,
+      b: 0.9585416316986084,
+      a: 1
+    },
+    category: "Layer"
+  },
   layerHover: {
     description: "Container background on $ui-background;\nSecondary page background",
     variable: "layerHover",
+    former: "ui-02",
+    hex: "#0b77c2",
+    rgba: {
+      r: 0.04313725605607033,
+      g: 0.46666666865348816,
+      b: 0.7607843279838562,
+      a: 1
+    },
+    category: "Primary"
+  },
+  layerSelected: {
+    description: "Container background on $ui-background;\nSecondary page background",
+    variable: "layerSelected",
     former: "ui-02",
     hex: "#0b77c2",
     rgba: {
@@ -170,6 +274,32 @@ const meta = {
       a: 1
     },
     category: "Primary"
+  },
+  layerSelectedInverse: {
+    description: "Container background on $ui-background;\nSecondary page background",
+    variable: "layerSelectedInverse",
+    former: "ui-02",
+    hex: "#0b77c2",
+    rgba: {
+      r: 0.04313725605607033,
+      g: 0.46666666865348816,
+      b: 0.7607843279838562,
+      a: 1
+    },
+    category: "Layer"
+  },
+  layerSelectedDisabled: {
+    description: "Container background on $ui-background;\nSecondary page background",
+    variable: "layerSelectedDisabled",
+    former: "ui-02",
+    hex: "#0b77c2",
+    rgba: {
+      r: 0.04313725605607033,
+      g: 0.46666666865348816,
+      b: 0.7607843279838562,
+      a: 1
+    },
+    category: "Layer"
   },
   layerAccent: {
     description: "Tertiary background",
@@ -340,6 +470,19 @@ const meta = {
     },
     category: "Text"
   },
+  textLaura: {
+    description: "disabled text",
+    variable: "textLaura",
+    former: "disabled-02",
+    hex: "#26ff3b",
+    rgba: {
+      r: 0.1499999761581421,
+      g: 1,
+      b: 0.2349998950958252,
+      a: 1
+    },
+    category: "Text"
+  },
   linkPrimary: {
     description: "Primary links;\nGhost button",
     variable: "linkPrimary",
@@ -444,6 +587,19 @@ const meta = {
     },
     category: "Icon"
   },
+  iconOnColorDisabled: {
+    description: "Icons on interactive colors;\nIcons on non-ui colors",
+    variable: "iconOnColorDisabled",
+    former: "icon-03",
+    hex: "#ffffff",
+    rgba: {
+      r: 1,
+      g: 1,
+      b: 1,
+      a: 1
+    },
+    category: "Icon"
+  },
   iconInverse: {
     description: "Inverse text color;\nInverse icon color",
     variable: "iconInverse",
@@ -456,6 +612,45 @@ const meta = {
       a: 1
     },
     category: "Icon"
+  },
+  iconDisabled: {
+    description: "Inverse text color;\nInverse icon color",
+    variable: "iconDisabled",
+    former: "inverse-01",
+    hex: "#ffffff",
+    rgba: {
+      r: 1,
+      g: 1,
+      b: 1,
+      a: 1
+    },
+    category: "Icon"
+  },
+  borderSubtle: {
+    description: "Subtle border;\nTertiary background",
+    variable: "borderSubtle",
+    former: "ui-03",
+    hex: "#f0f3f6",
+    rgba: {
+      r: 0.9411764740943909,
+      g: 0.9529411792755127,
+      b: 0.9647058844566345,
+      a: 1
+    },
+    category: "Border"
+  },
+  borderSubtleSelected: {
+    description: "Subtle border;\nTertiary background",
+    variable: "borderSubtleSelected",
+    former: "ui-03",
+    hex: "#f0f3f6",
+    rgba: {
+      r: 0.9411764740943909,
+      g: 0.9529411792755127,
+      b: 0.9647058844566345,
+      a: 1
+    },
+    category: "Border"
   },
   borderStrong: {
     description: "3:1 aa element contrast;\nMedium contrast border",
@@ -479,6 +674,32 @@ const meta = {
       r: 0.5490196347236633,
       g: 0.6078431606292725,
       b: 0.6470588445663452,
+      a: 1
+    },
+    category: "Border"
+  },
+  borderInteractive: {
+    description: "3:1 AA contrast;\nSelected elements;\nActive elements;\nAccent icons",
+    variable: "borderInteractive",
+    former: "interactive-04",
+    hex: "#007dbc",
+    rgba: {
+      r: 0,
+      g: 0.4901960790157318,
+      b: 0.7372549176216125,
+      a: 1
+    },
+    category: "Border"
+  },
+  borderDisabled: {
+    description: "3:1 AA contrast;\nSelected elements;\nActive elements;\nAccent icons",
+    variable: "borderDisabled",
+    former: "interactive-04",
+    hex: "#007dbc",
+    rgba: {
+      r: 0,
+      g: 0.4901960790157318,
+      b: 0.7372549176216125,
       a: 1
     },
     category: "Border"
@@ -682,11 +903,11 @@ const meta = {
     description: "Secondary interactive color;\nSecondary button",
     variable: "buttonSecondary",
     former: "interactive-02",
-    hex: "#085387",
+    hex: "#007dbc",
     rgba: {
-      r: 0.0313725508749485,
-      g: 0.32549020648002625,
-      b: 0.529411792755127,
+      r: 0,
+      g: 0.4901960790157318,
+      b: 0.7372549176216125,
       a: 1
     },
     category: "Button"
@@ -798,6 +1019,32 @@ const meta = {
   buttonDangerActive: {
     description: "Active of $danger",
     variable: "buttonDangerActive",
+    former: "danger-02",
+    hex: "#c5192d",
+    rgba: {
+      r: 0.772549033164978,
+      g: 0.09803921729326248,
+      b: 0.1764705926179886,
+      a: 1
+    },
+    category: "Button"
+  },
+  buttonSeparator: {
+    description: "Active of $danger",
+    variable: "buttonSeparator",
+    former: "danger-02",
+    hex: "#c5192d",
+    rgba: {
+      r: 0.772549033164978,
+      g: 0.09803921729326248,
+      b: 0.1764705926179886,
+      a: 1
+    },
+    category: "Button"
+  },
+  buttonDisabled: {
+    description: "Active of $danger",
+    variable: "buttonDisabled",
     former: "danger-02",
     hex: "#c5192d",
     rgba: {
