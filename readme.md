@@ -2,10 +2,10 @@
 
 ## **[Click here to visit: Living Style Guide & Documentation](https://wfp.org/UIGuide)**
 
-| Branch | Build Status          |
-| ------ | --------------------- |
-| master | [![Build Status]()]() |
-| v1.5   | [![Build Status]()]() |
+| Branch | Build Status                                                                                                                                                                                                                                                       |
+| ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| master | [![Build Status](https://dev.azure.com/worldfoodprogramme/ui/_apis/build/status/wfp.ui?repoName=wfp%2Fdesignsystem&branchName=master)](https://dev.azure.com/worldfoodprogramme/ui/_build/latest?definitionId=242&repoName=wfp%2Fdesignsystem&branchName=master)() |
+| next   | [![Build Status](https://dev.azure.com/worldfoodprogramme/ui/_apis/build/status/wfp.ui?repoName=wfp%2Fdesignsystem&branchName=next)](https://dev.azure.com/worldfoodprogramme/ui/_build/latest?definitionId=242&repoName=wfp%2Fdesignsystem&branchName=next)       |
 
 ## ![Usage](https://cdn.wfp.org/guides/ui/v1.2.0/assets/internal/toolkit.svg 'Usage') Usage
 

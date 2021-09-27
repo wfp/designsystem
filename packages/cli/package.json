@@ -1,7 +1,7 @@
 {
     "name": "@wfp/cli",
     "description": "Task automation for working with the WFP Design System",
-    "version": "10.25.1",
+    "version": "10.25.2",
     "license": "Apache-2.0",
     "bin": {
         "wfp-cli": "./bin/wfp-cli.js"

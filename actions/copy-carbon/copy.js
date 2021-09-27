@@ -20,6 +20,25 @@ async function get_request() {
     }
   );
 
+  // babel-preset-wfp
+  // TODO: optimize code
+  let oldRawdataBabel = fs.readFileSync(
+    '../../config/babel-preset-carbon/package.json'
+  );
+  let oldPackageJsonBabel = JSON.parse(oldRawdataBabel);
+
+  let rawdataBabel = fs.readFileSync(
+    'output/carbon-main/config/babel-preset-carbon/package.json'
+  );
+  let packageJsonBabel = JSON.parse(rawdataBabel);
+  packageJsonBabel.private = false;
+  console.log('packageJson', packageJsonBabel);
+
+  fs.writeFileSync(
+    'output/carbon-main/packages/babel-preset-carbon/package.json',
+    JSON.stringify(packageJsonBabel, null, 4)
+  );
+
   // CLI
 
   let oldRawdata = fs.readFileSync('../../packages/cli/package.json');

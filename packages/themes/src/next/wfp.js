@@ -38,10 +38,15 @@ import {
   white,
   whiteHover,
 } from '@carbon/colors';
+
+import * as wfpColors from '../wfpColors';
+export * from '../wfpColors';
+
 import { adjustLightness } from '../tools';
 
+//TODO: investigate different layer numbers and there purpose
 // Background
-export const background = white;
+/*export const background = white;
 export const backgroundInverse = gray80;
 export const backgroundBrand = blue60;
 export const backgroundActive = gray30;
@@ -49,14 +54,15 @@ export const backgroundHover = whiteHover;
 export const backgroundInverseHover = adjustLightness(backgroundInverse, 6);
 export const backgroundSelected = gray20;
 export const backgroundSelectedHover = adjustLightness(backgroundSelected, -6);
+*/
 
 // Layer
 // layer-01
-export const layer01 = gray10;
-export const layerActive01 = gray30;
-export const layerHover01 = adjustLightness(layer01, -5);
-export const layerSelected01 = gray20;
-export const layerSelectedHover01 = gray20Hover;
+export const layer01 = wfpColors.layer;
+export const layerActive01 = wfpColors.layerActive;
+export const layerHover01 = wfpColors.layerHover;
+export const layerSelected01 = wfpColors.layerSelected;
+export const layerSelectedHover01 = wfpColors.layerSelectedHover;
 
 // layer-02
 export const layer02 = white;
@@ -73,14 +79,15 @@ export const layerSelected03 = gray20;
 export const layerSelectedHover03 = gray20Hover;
 
 // layer
+/*
 export const layerDisabled = gray10;
 export const layerSelectedInverse = gray100;
 export const layerSelectedDisabled = gray50;
-
+*/
 // layer-accent-01
-export const layerAccent01 = gray20;
-export const layerAccentActive01 = gray40;
-export const layerAccentHover01 = adjustLightness(layerAccent01, -6);
+export const layerAccent01 = wfpColors.layerAccent;
+export const layerAccentActive01 = wfpColors.layerAccentActive;
+export const layerAccentHover01 = wfpColors.layerAccentHover;
 
 // layer-accent-02
 export const layerAccent02 = gray20;
@@ -94,8 +101,8 @@ export const layerAccentHover03 = adjustLightness(layerAccent01, -6);
 
 // Field
 // field-01
-export const field01 = gray10;
-export const fieldHover01 = adjustLightness(field01, -5);
+export const field01 = wfpColors.field;
+export const fieldHover01 = wfpColors.fieldHover;
 
 // field-02
 export const field02 = white;
@@ -106,15 +113,15 @@ export const field03 = gray10;
 export const fieldHover03 = adjustLightness(field01, -5);
 
 // field
-export const fieldDisabled = gray10;
+/* export const fieldDisabled = gray10; */
 
 // Border
 // border-subtle-00
-export const borderSubtle00 = gray20;
+export const borderSubtle00 = wfpColors.borderSubtle;
 
 // border-subtle-01
-export const borderSubtle01 = gray20;
-export const borderSubtleSelected01 = gray30;
+export const borderSubtle01 = wfpColors.borderSubtle;
+export const borderSubtleSelected01 = wfpColors.borderSubtleSelected;
 
 // border-subtle-02
 export const borderSubtle02 = gray20;
@@ -125,10 +132,10 @@ export const borderSubtle03 = gray20;
 export const borderSubtleSelected03 = gray30;
 
 // border-strong
-export const borderStrong01 = gray50;
+export const borderStrong01 = wfpColors.borderStrong;
 export const borderStrong02 = gray50;
 export const borderStrong03 = gray50;
-
+/*
 // border-inverse
 export const borderInverse = gray100;
 
@@ -173,10 +180,11 @@ export const supportErrorInverse = red50;
 export const supportSuccessInverse = green40;
 export const supportWarningInverse = yellow30;
 export const supportInfoInverse = blue50;
+*/
 export const supportCautionMinor = yellow30;
 export const supportCautionMajor = orange40;
 export const supportCautionUndefined = purple60;
-
+/*
 // Focus
 export const focus = blue60;
 export const focusInset = white;
@@ -191,7 +199,7 @@ export const interactive = blue60;
 export const highlight = blue20;
 export const overlay = 'rgba(22, 22, 22, 0.5)';
 export const toggleOff = gray50;
-
+*/
 // Type
 export {
   caption01,

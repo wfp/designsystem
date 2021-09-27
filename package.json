@@ -9,7 +9,7 @@
     "codemods",
     "config/*",
     "packages/*",
-    "wfp/*"
+    "wfp/packages/*"
   ],
   "scripts": {
     "start:ui": "cd packages/ui && yarn start",
