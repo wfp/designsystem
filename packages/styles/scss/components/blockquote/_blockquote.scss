@@ -1,0 +1,153 @@
+@use '../../breakpoint' as *;
+@use '../../config' as *;
+@use '../../motion' as *;
+@use '../../theme' as *;
+@use '../../spacing' as *;
+@use '../../type' as *;
+@use '../../utilities/component-reset';
+@use '../../utilities/convert';
+
+//TODO - handle customise icon showing different color
+
+@mixin blockquote{
+  // <button> elements cannot be used as flex containers
+  .#{$prefix}--blockquote {
+    background-color: $layer;
+    border-left: 5px solid $border-interactive;
+    margin: $spacing-03 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+    border-radius: 3px;
+
+    pre[class*='language-'] {
+      background: none;
+      padding: 0;
+    }
+  }
+
+  .#{$prefix}--blockquote__content {
+    padding: $spacing-05;
+    line-height: 1.4;
+    word-wrap: anywhere;
+    flex-grow: 1;
+    p:first-child {
+      margin-top: 0;
+    }
+  }
+
+  .#{$prefix}--blockquote--toggleable {
+    .#{$prefix}--blockquote__title {
+      cursor: pointer;
+      user-select: none;
+      &:after {
+        color: $interactive;
+        content: ' +';
+        font-weight: 800;
+      }
+    }
+    .#{$prefix}--blockquote__inside {
+      //display: none;
+      max-height: 0;
+      overflow: hidden;
+      transition: all 0.3;
+    }
+  }
+
+  .#{$prefix}--blockquote--toggle--open {
+    .#{$prefix}--blockquote__inside {
+      //display: block;
+      max-height: 1000px;
+    }
+    .#{$prefix}--blockquote__title {
+      &:after {
+        color: $interactive;
+        content: ' -';
+      }
+    }
+  }
+
+  .#{$prefix}--blockquote--no-content,
+  .#{$prefix}--blockquote--toggleable:not(.#{$prefix}--blockquote--toggle--open) {
+    .#{$prefix}--blockquote__title {
+      margin-bottom: 0;
+    }
+  }
+
+  .#{$prefix}--blockquote--with-icon {
+    //padding-left: 4rem;
+  }
+
+  .#{$prefix}--blockquote__icon {
+    margin-left: $spacing-08;
+    fill: $interactive;
+    min-width: 3rem;
+    height: auto;
+    flex-shrink: 0;
+    margin-right: $spacing-08;
+    //margin-top: -15px;
+  }
+
+  .#{$prefix}--blockquote--code {
+    overflow: auto;
+
+    .#{$prefix}--blockquote__content {
+      white-space: pre;
+      line-height: 1.4;
+
+      .#{$prefix}--blockquote__inside {
+        font-family: font-family('mono');
+      }
+    }
+  }
+
+  .#{$prefix}--blockquote--warning {
+    border-left-color: $support-warning;
+    background: $support-warning; //$color__yellow-10;
+    .#{$prefix}--blockquote__icon {
+      fill: $support-warning !important;
+    }
+  }
+
+  .#{$prefix}--blockquote--error {
+    border-left-color: $support-error;
+    background: $support-error;
+    .#{$prefix}--blockquote__icon {
+      fill: $support-error !important;
+    }
+  }
+
+  .#{$prefix}--blockquote--success {
+    border-left-color: $support-success;
+    background: $support-success;
+    .#{$prefix}--blockquote__icon {
+      fill: $support-success !important;
+    }
+  }
+
+  .#{$prefix}--blockquote__title {
+    display: block;
+    font-weight: 600;
+    margin-bottom: $spacing-03;
+
+    &:focus {
+      outline: 0;
+    }
+  }
+
+  .#{$prefix}--blockquote--light {
+    border-left: 0;
+
+    .#{$prefix}--blockquote__content {
+      padding: $spacing-04;
+    }
+  }
+
+  .#{$prefix}--blockquote__action-buttons {
+    margin-right: $spacing-05;
+    white-space: nowrap;
+    > * {
+      margin-left: $spacing-03;
+    }
+  }
+}

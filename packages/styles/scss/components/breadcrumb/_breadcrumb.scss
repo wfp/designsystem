@@ -16,36 +16,39 @@
 
 @mixin breadcrumb {
   .#{$prefix}--breadcrumb {
-    @include reset;
-    @include type-style('body-short-01');
+    @include type-style('label-02');
+    @include font-family('sans');
+    display: none;
 
-    display: inline;
-
-    @include breakpoint(md) {
+    @include breakpoint('sm') {
       display: flex;
       flex-wrap: wrap;
     }
   }
 
-  .#{$prefix}--breadcrumb-item {
-    position: relative;
-    display: flex;
-    align-items: center;
-    margin-right: $spacing-03;
+  .#{$prefix}--breadcrumb-home {
+    margin-top: 2px;
   }
 
-  .#{$prefix}--breadcrumb-item .#{$prefix}--link:visited {
-    color: $link-primary;
-
-    &:hover {
-      color: $link-primary-hover;
-    }
+  .#{$prefix}--breadcrumb-item {
+    margin-right: $spacing-04;
+    display: flex;
+    align-items: center;
   }
 
   .#{$prefix}--breadcrumb-item::after {
-    margin-left: $spacing-03;
-    color: $text-primary;
-    content: '/';
+    content: '›';
+    font-weight: 600;
+    margin-top: rem(-2px);
+    margin-left: $spacing-04;
+
+    // TODO on rtl
+    // @include rtl {
+    //   margin-left: 0;
+    //   margin-right: $spacing-04;
+    // }
+
+    color: $text-placeholder;
   }
 
   .#{$prefix}--breadcrumb--no-trailing-slash
@@ -53,97 +56,41 @@
     content: '';
   }
 
-  .#{$prefix}--breadcrumb-item:last-child,
-  .#{$prefix}--breadcrumb-item:last-child::after {
-    margin-right: 0;
+  // TODO on rtl
+  .#{$prefix}--breadcrumb-item:last-child {
+    // @include ltr {
+    //   margin-right: 0;
+    //   &::after {
+    //     margin-right: 0;
+    //   }
+    // }
+    // @include rtl {
+    //   margin-left: 0;
+    //   &::after {
+    //     margin-left: 0;
+    //   }
+    // }
   }
 
   .#{$prefix}--breadcrumb .#{$prefix}--link {
     white-space: nowrap;
-  }
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
 
-  .#{$prefix}--breadcrumb-item [aria-current='page'],
-  .#{$prefix}--breadcrumb-item.#{$prefix}--breadcrumb-item--current
-    .#{$prefix}--link {
-    color: $text-primary;
-    cursor: auto;
-
-    &:hover {
-      text-decoration: none;
-    }
-  }
-
-  // Overflow Menu overrides
-  .#{$prefix}--breadcrumb-item .#{$prefix}--overflow-menu {
-    position: relative;
-    width: rem(20px);
-    height: rem(18px);
-
+    &:hover,
     &:focus {
-      outline: 1px solid $focus;
+      outline: none;
+      color: $interactive;
+      border-bottom: 1px solid $interactive;
     }
 
-    &:hover {
-      background: transparent;
+    // Applies to Firefox only
+    @-moz-document url-prefix() {
+      & {
+        border-bottom: none;
+      }
     }
-
-    // Used to mimic link underline
-    &::after {
-      position: absolute;
-      bottom: 2px;
-      width: rem(12px);
-      height: 1px;
-      background: $link-primary-hover;
-      content: '';
-      opacity: 0;
-      transition: opacity $duration-fast-01 motion(standard, productive);
-    }
-  }
-
-  .#{$prefix}--breadcrumb-item .#{$prefix}--overflow-menu:hover::after {
-    opacity: 1;
-  }
-
-  .#{$prefix}--breadcrumb-item
-    .#{$prefix}--overflow-menu.#{$prefix}--overflow-menu--open {
-    background: transparent;
-    box-shadow: none;
-  }
-
-  .#{$prefix}--breadcrumb-item .#{$prefix}--overflow-menu__icon {
-    position: relative;
-    fill: $link-primary;
-    transform: translateY(4px);
-  }
-
-  .#{$prefix}--breadcrumb-item
-    .#{$prefix}--overflow-menu:hover
-    .#{$prefix}--overflow-menu__icon {
-    fill: $link-primary-hover;
-  }
-
-  .#{$prefix}--breadcrumb-menu-options:focus {
-    outline: none;
-  }
-
-  $caret-size: rem(7px);
-  .#{$prefix}--breadcrumb-menu-options.#{$prefix}--overflow-menu-options::after {
-    top: -$caret-size;
-    left: $caret-size * 2;
-    width: 0;
-    height: 0;
-    border-right: $caret-size solid transparent;
-    border-bottom: $caret-size solid $field;
-    border-left: $caret-size solid transparent;
-    margin: 0 auto;
-    background: transparent;
-  }
-
-  // Skeleton State
-  .#{$prefix}--breadcrumb.#{$prefix}--skeleton .#{$prefix}--link {
-    @include skeleton;
-
-    width: rem(100px);
-    height: 1rem;
   }
 }

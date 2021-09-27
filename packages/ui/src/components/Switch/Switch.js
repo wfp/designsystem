@@ -6,6 +6,7 @@ import { settings } from '../../globals/js';
 const { prefix } = settings;
 
 const Switch = (props) => {
+  
   const {
     className,
     index,
@@ -19,6 +20,7 @@ const Switch = (props) => {
     href,
     ...other
   } = props;
+  console.log("iconsprops", icon.props);
 
   const handleClick = (e) => {
     e.preventDefault();
@@ -51,6 +53,7 @@ const Switch = (props) => {
         ),
       })
     : null;
+  
 
   if (kind === 'button') {
     return (

@@ -16,177 +16,114 @@
 
 @mixin content-switcher {
   .#{$prefix}--content-switcher {
+    @include font-family('sans');
     display: flex;
-    width: 100%;
-    height: rem(40px);
-    justify-content: space-evenly;
+    height: $input-height;
   }
 
   .#{$prefix}--content-switcher--sm {
-    height: rem(32px);
-  }
-
-  // TODO V11: Remove xl selector
-  .#{$prefix}--content-switcher--xl,
-  .#{$prefix}--content-switcher--lg {
-    height: rem(48px);
+    height: rem(24px);
+    .#{$prefix}--content-switcher-btn {
+      padding: 0 $spacing-sm 0 $spacing-sm;
+      @include typescale('omega');
+    }
   }
 
   .#{$prefix}--content-switcher-btn {
     @include reset;
-    @include font-family('sans');
-    @include focus-outline('reset');
-    @include type-style('body-short-01');
-
-    position: relative;
-    display: inline-flex;
-    overflow: hidden;
-    width: 100%;
-    align-items: center;
-    padding: $spacing-03 $spacing-05;
-    border: none;
-    border-top: rem(1px) solid $border-inverse;
-    border-bottom: rem(1px) solid $border-inverse;
-    margin: 0;
+    @include font-smoothing;
+    @include typescale('zeta');
+    @include font-family;
     background-color: transparent;
-    color: $text-secondary;
-    text-align: left;
+    display: flex;
+    align-items: center;
+    padding: 0 $spacing-xl;
+    margin: 0;
+    font-weight: 600;
     text-decoration: none;
-    transition: all $duration-fast-01 motion(standard, productive);
-    white-space: nowrap;
+    border: 2px solid var(--interactive-01);
+    color: var(--interactive-01);
 
     &:focus {
-      z-index: 3;
-      border-color: $focus;
-      box-shadow: inset 0 0 0 2px $focus, inset 0 0 0 3px $focus-inset;
+      outline: 1px solid transparent;
+      // box-shadow: 0 2px 0 0 $color__blue-20, 0 -2px 0 0 $color__blue-20;
+      //background-color: $hover-primary;
+      z-index: 2;
+      //border-color: $hover-primary;
+      text-decoration: none;
+      //color: var(--inverse-01);
     }
 
     &:hover {
-      color: $text-primary;
       cursor: pointer;
     }
 
     &:hover,
     &:active {
-      z-index: 3;
-      background-color: $layer-hover;
-      color: $text-primary;
+      //background-color: $hover-primary;
+      //border-color: $hover-primary;
+      //color: var(--inverse-01);
     }
-
-    &:disabled {
-      border-color: $border-disabled;
-      background-color: transparent;
-      color: $text-disabled;
-
-      &:hover {
-        cursor: not-allowed;
-      }
-    }
-
-    &:disabled:first-child,
-    &:disabled:last-child {
-      border-color: $border-disabled;
-    }
-  }
-
-  .#{$prefix}--content-switcher-btn:first-child {
-    border-left: rem(1px) solid $border-inverse;
-    border-bottom-left-radius: rem(4px);
-    border-top-left-radius: rem(4px);
-  }
-
-  .#{$prefix}--content-switcher-btn:last-child {
-    border-right: rem(1px) solid $border-inverse;
-    border-bottom-right-radius: rem(4px);
-    border-top-right-radius: rem(4px);
-  }
-
-  .#{$prefix}--content-switcher--selected,
-  .#{$prefix}--content-switcher--selected:first-child,
-  .#{$prefix}--content-switcher--selected:last-child {
-    border: 0;
-  }
-
-  .#{$prefix}--content-switcher-btn::before {
-    position: absolute;
-    z-index: 2;
-    left: 0;
-    display: block;
-    width: rem(1px);
-    height: rem(16px);
-    background-color: $border-subtle;
-    content: '';
-  }
-
-  .#{$prefix}--content-switcher-btn:first-of-type::before {
-    display: none;
-  }
-
-  .#{$prefix}--content-switcher-btn:focus::before,
-  .#{$prefix}--content-switcher-btn:focus
-    + .#{$prefix}--content-switcher-btn::before,
-  .#{$prefix}--content-switcher-btn:hover::before,
-  .#{$prefix}--content-switcher-btn:hover
-    + .#{$prefix}--content-switcher-btn::before,
-  .#{$prefix}--content-switcher--selected::before,
-  .#{$prefix}--content-switcher--selected
-    + .#{$prefix}--content-switcher-btn::before {
-    background-color: transparent;
-  }
-
-  .#{$prefix}--content-switcher-btn:disabled::before,
-  .#{$prefix}--content-switcher-btn:disabled:hover
-    + .#{$prefix}--content-switcher-btn:disabled::before {
-    background-color: $border-disabled;
-  }
-
-  .#{$prefix}--content-switcher-btn.#{$prefix}--content-switcher--selected:disabled
-    + .#{$prefix}--content-switcher-btn::before,
-  .#{$prefix}--content-switcher-btn.#{$prefix}--content-switcher--selected:disabled:hover
-    + .#{$prefix}--content-switcher-btn::before {
-    background-color: transparent;
   }
 
   .#{$prefix}--content-switcher__icon {
-    fill: $icon-secondary;
-    transition: fill $duration-fast-01 motion(standard, productive);
-  }
-
-  .#{$prefix}--content-switcher__icon + span {
-    margin-left: $spacing-03;
-  }
-
-  .#{$prefix}--content-switcher__label {
-    overflow: hidden;
-    max-width: 100%;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
-
-  .#{$prefix}--content-switcher-btn:hover .#{$prefix}--content-switcher__icon,
-  .#{$prefix}--content-switcher-btn:focus .#{$prefix}--content-switcher__icon {
-    fill: $icon-primary;
-  }
-
-  .#{$prefix}--content-switcher-btn.#{$prefix}--content-switcher--selected {
-    z-index: 3;
-    background-color: $layer-selected-inverse;
-    color: $text-inverse;
-
-    &:disabled {
-      background-color: $layer-selected-disabled;
-      color: $text-disabled;
+    margin-right: $spacing-xs;
+    fill: currentColor;
+    // need to color any child path or g
+    * {
+      fill: currentColor;
     }
   }
 
-  .#{$prefix}--content-switcher-btn.#{$prefix}--content-switcher--selected
-    .#{$prefix}--content-switcher__icon {
-    fill: $icon-inverse;
+  .#{$prefix}--content-switcher-btn:not(:last-of-type) {
+    border-right: none;
   }
 
-  // Windows HCM fix
-  // stylelint-disable-next-line no-duplicate-selectors
-  .#{$prefix}--content-switcher-btn:focus {
-    @include high-contrast-mode('focus');
+  .#{$prefix}--content-switcher-btn:not(:first-of-type) {
+    border-left: $content-switcher-option-border;
+
+    &:hover {
+      //border-left-color: $hover-primary;
+    }
+  }
+
+  .#{$prefix}--content-switcher-btn:first-of-type {
+    border-bottom-left-radius: $content-switcher-border-radius;
+    border-top-left-radius: $content-switcher-border-radius;
+
+    &:hover {
+      //border-color: $hover-primary;
+    }
+
+    &:focus {
+      // box-shadow: -2px 0 0 0 $color__blue-20, 0 2px 0 0 $color__blue-20, 0 -2px 0 0 $color__blue-20;
+      z-index: 0;
+    }
+  }
+
+  .#{$prefix}--content-switcher-btn:last-of-type {
+    border-top-right-radius: $content-switcher-border-radius;
+    border-bottom-right-radius: $content-switcher-border-radius;
+
+    &:hover {
+      //border-color: $hover-primary;
+    }
+
+    &:focus {
+      // box-shadow: 2px 0 0 0 $color__blue-20, 0 2px 0 0 $color__blue-20, 0 -2px 0 0 $color__blue-20;
+      z-index: 0;
+    }
+  }
+
+  .#{$prefix}--content-switcher-btn.#{$prefix}--content-switcher--selected {
+    background-color: var(--interactive-01);
+    color: var(--inverse-01);
+    outline: 1px solid transparent;
+
+    &:hover,
+    &:focus {
+      //border-color: $hover-primary;
+      //background-color: $hover-primary;
+    }
   }
 }

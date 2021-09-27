@@ -20,81 +20,182 @@
 @use 'tokens' as *;
 
 @mixin button {
-  .#{$prefix}--btn {
-    @include button-base;
+  // <button> elements cannot be used as flex containers
+  button.#{$prefix}--btn {
+    display: inline-block;
+    line-height: initial;
   }
 
   // Reset intrisic padding in Firefox (see #731)
-  .#{$prefix}--btn::-moz-focus-inner {
+  button.#{$prefix}--btn::-moz-focus-inner {
     padding: 0;
     border: 0;
+  }
+
+  // Vertically center icon inside <button>
+  button.#{$prefix}--btn .#{$prefix}--btn__icon {
+    position: relative;
+    vertical-align: middle;
+    top: -1px;
+    height: 1em;
+    width: 1em;
+
+    // Targets IE10+ browsers: Reset <svg> position for vertical centering
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+      top: 0;
+    }
+  }
+
+  button.#{$prefix}--btn--icon-reverse {
+    .#{$prefix}--btn__icon {
+      margin-left: 0;
+      margin-right: $spacing-03;
+      // @include rtl { //TODO
+      //   margin-left: $spacing-03;
+      //   margin-right: 0;
+      // }
+    }
+  }
+
+  a.#{$prefix}--btn--icon-reverse {
+    display: inline-flex;
+    flex-direction: row-reverse;
+
+    .#{$prefix}--btn__icon {
+      float: left;
+      margin-left: 0;
+      margin-right: $spacing-03;
+      // @include rtl { //TODO
+      //   margin-left: $spacing-03;
+      //   margin-right: 0;
+      // }
+    }
+  }
+
+  a,
+  button {
+    &.#{$prefix}--btn--icon-only {
+      padding: 0 $spacing-05;
+
+      .#{$prefix}--btn__icon {
+        margin-left: 0;
+        margin-right: 0;
+      }
+    }
+  }
+
+  /* Standard syntax */
+
+  .#{$prefix}--btn {
+    @include button-base;
   }
 
   .#{$prefix}--btn--primary {
     @include button-theme(
       $button-primary,
       transparent,
-      $text-on-color,
-      $button-primary-hover,
-      currentColor,
-      $button-primary-active
+      $text-inverse,
+      $button-secondary-hover,
+      $text-on-color
+    );
+  }
+
+  .#{$prefix}--btn--accent {
+    @include button-theme(
+      var(--accent-01),
+      transparent,
+      var(--text-01),
+      var(--accent-02),
+      var(--text-01)
     );
 
-    &:hover {
-      color: $text-on-color;
+    .#{$prefix}--btn__icon,
+    &:hover > .#{$prefix}--btn__icon,
+    &:focus > .#{$prefix}--btn__icon {
+      fill: var(--text-01);
     }
   }
 
+  @keyframes slidein {
+    from {
+      box-shadow: 0 0 0 0px rgba(var(--ui-05), 0.7);
+    }
+
+    to {
+      box-shadow: 0 0 0 7px rgba(var(--ui-05), 0);
+    }
+  }
+
+  .#{$prefix}--btn--animating {
+    animation-duration: 0.5s;
+    animation-name: slidein;
+  }
+
+  // .#{$prefix}--btn--navigation {
+  //   @include button-theme(
+  //     saturate($color__main-40, 10%),
+  //     transparent,
+  //     var(--inverse-01),
+  //     saturate(lighten($color__main-40, 5), 10%),
+  //     var(--ui-01)
+  //   );
+  // }
+
   .#{$prefix}--btn--secondary {
     @include button-theme(
-      $button-secondary,
       transparent,
-      $text-on-color,
-      $button-secondary-hover,
-      currentColor,
-      $button-secondary-active
+      $button-primary,
+      $button-primary,
+      $button-primary-hover,
+      $button-primary
     );
 
     &:hover,
     &:focus {
-      color: $text-on-color;
+      color: $text-inverse;
+    }
+
+    &:active {
+      color: $button-primary-active;
+    }
+
+    &:hover > .#{$prefix}--btn__icon,
+    &:focus > .#{$prefix}--btn__icon {
+      fill: $icon-inverse;
+    }
+
+    &:hover:disabled,
+    &:focus:disabled {
+      color: $button-primary; //TODO button disabled color
     }
   }
 
   .#{$prefix}--btn--tertiary {
     @include button-theme(
       transparent,
-      $button-tertiary,
-      $button-tertiary,
-      $button-tertiary-hover,
-      currentColor,
-      $button-tertiary-active
+      $text-secondary,
+      $text-secondary,
+      var(--ui-02),
+      $text-secondary
     );
 
-    &:hover {
-      color: $text-inverse;
-    }
-
+    &:hover,
     &:focus {
-      background-color: $button-tertiary;
-      color: $text-inverse;
+      color: var(--text-01);
     }
 
     &:active {
-      border-color: transparent;
-      background-color: $button-tertiary-active;
-      color: $text-inverse;
+      color: var(--ui-05);
     }
 
-    &:disabled,
     &:hover:disabled,
-    &:focus:disabled,
-    &.#{$prefix}--btn--disabled,
-    &.#{$prefix}--btn--disabled:hover,
-    &.#{$prefix}--btn--disabled:focus {
-      background: transparent;
-      color: $text-on-color-disabled;
-      outline: none;
+    &:focus:disabled {
+      color: var(--ui-05);
+    }
+
+    &:hover > .#{$prefix}--btn__icon,
+    &:focus > .#{$prefix}--btn__icon {
+      fill: var(--text-01);
     }
   }
 
@@ -102,427 +203,170 @@
     @include button-theme(
       transparent,
       transparent,
-      $link-primary,
-      $background-hover,
-      currentColor,
-      $background-active
+      var(--interactive-01),
+      var(--ui-03),
+      var(--ui-05)
     );
 
-    padding: $button-padding-ghost;
-
-    .#{$prefix}--btn__icon {
-      position: static;
-      margin-left: $spacing-03;
-    }
-
     &:hover,
-    &:active {
-      color: $link-primary-hover;
+    &:focus {
+      //color: var(--inverse-01);
+
+      .#{$prefix}--btn__icon {
+        fill: var(--inverse-01);
+      }
     }
 
     &:active {
-      background-color: $background-active;
+      color: var(--ui-05);
     }
 
-    &:disabled,
+    .#{$prefix}--btn__icon {
+      margin-left: $spacing-03;
+      // @include rtl {
+      //   margin-left: initial;
+      //   margin-right: $spacing-03;
+      // } //TODO
+    }
+
     &:hover:disabled,
-    &:focus:disabled,
-    &.#{$prefix}--btn--disabled,
-    &.#{$prefix}--btn--disabled:hover,
-    &.#{$prefix}--btn--disabled:focus {
-      border-color: transparent;
-      background: transparent;
-      color: $text-on-color-disabled;
-      outline: none;
-    }
+    &:focus:disabled {
+      color: var(--interactive-01);
 
-    &.#{$prefix}--btn--sm {
-      padding: $button-padding-ghost-sm;
-    }
-
-    // V11: remove field
-    &.#{$prefix}--btn--field,
-    &.#{$prefix}--btn--md {
-      padding: $button-padding-ghost-field;
+      .#{$prefix}--btn__icon {
+        fill: var(--interactive-01);
+      }
     }
   }
 
-  .#{$prefix}--btn.#{$prefix}--btn--icon-only.#{$prefix}--tooltip__trigger {
-    @include tooltip--trigger('icon', 'bottom');
+  .#{$prefix}--btn--inverse--primary {
+    @include button-theme(
+      var(--ui-01),
+      var(--ui-01),
+      var(--interactive-01),
+      var(--ui-01),
+      var(--text-01)
+    );
 
-    svg,
-    &:hover svg,
-    &:focus svg {
-      fill: currentColor;
+    &:hover {
+      color: var(--interactive-02);
+      //border: $button-border-width solid var(--ui-01);
     }
 
-    &.#{$prefix}--btn--disabled.#{$prefix}--tooltip--a11y::before,
-    &.#{$prefix}--btn--disabled.#{$prefix}--tooltip--a11y::after,
-    &.#{$prefix}--btn--disabled .#{$prefix}--assistive-text {
-      overflow: hidden;
-      margin: -1px;
-      clip: rect(0, 0, 0, 0);
-      opacity: 0;
-    }
-  }
-
-  // Allow pointer events on tooltip when tooltip is visible
-  .#{$prefix}--btn.#{$prefix}--btn--icon-only:not(.#{$prefix}--tooltip--hidden)
-    .#{$prefix}--assistive-text {
-    pointer-events: all;
-  }
-
-  .#{$prefix}--btn.#{$prefix}--btn--icon-only.#{$prefix}--tooltip__trigger:focus {
-    border-color: $focus;
-  }
-
-  .#{$prefix}--btn.#{$prefix}--btn--icon-only.#{$prefix}--tooltip__trigger:active:not([disabled]) {
-    border-color: transparent;
-  }
-
-  .#{$prefix}--btn.#{$prefix}--btn--icon-only.#{$prefix}--tooltip__trigger:focus
-    svg {
-    outline-color: transparent;
-  }
-
-  .#{$prefix}--btn.#{$prefix}--btn--icon-only.#{$prefix}--tooltip__trigger[disabled]:hover,
-  .#{$prefix}--btn.#{$prefix}--btn--icon-only.#{$prefix}--tooltip__trigger[disabled]:focus,
-  .#{$prefix}--btn.#{$prefix}--btn--icon-only.#{$prefix}--tooltip__trigger[disabled]:active {
-    cursor: not-allowed;
-    fill: $icon-on-color-disabled;
-  }
-
-  .#{$prefix}--tooltip__trigger.#{$prefix}--btn--icon-only--top {
-    @include tooltip--trigger('icon', 'top');
-    @include tooltip--placement('icon', 'top', 'center');
-
-    &.#{$prefix}--tooltip--align-start {
-      @include tooltip--placement('icon', 'top', 'start');
+    &:focus {
+      background: var(--ui-01);
+      color: var(--interactive-02);
     }
 
-    &.#{$prefix}--tooltip--align-center {
-      @include tooltip--placement('icon', 'top', 'center');
-    }
-
-    &.#{$prefix}--tooltip--align-end {
-      @include tooltip--placement('icon', 'top', 'end');
+    &:hover:disabled,
+    &:focus:disabled {
+      color: var(--support-01);
+      border: $button-border-width solid var(--support-01);
     }
   }
 
-  .#{$prefix}--tooltip__trigger.#{$prefix}--btn--icon-only--right {
-    @include tooltip--trigger('icon', 'right');
-    @include tooltip--placement('icon', 'right', 'center');
+  .#{$prefix}--btn--inverse {
+    @include button-theme(
+      transparent,
+      var(--ui-01),
+      var(--ui-01),
+      rgba(var(--ui-01), 0.1),
+      var(--ui-01)
+    );
 
-    &.#{$prefix}--tooltip--align-start {
-      @include tooltip--placement('icon', 'right', 'start');
+    &:hover {
+      color: var(--inverse-01);
+      border: $button-border-width solid var(--ui-01);
     }
 
-    &.#{$prefix}--tooltip--align-center {
-      @include tooltip--placement('icon', 'right', 'center');
+    &:focus {
+      color: var(--inverse-01);
     }
 
-    &.#{$prefix}--tooltip--align-end {
-      @include tooltip--placement('icon', 'right', 'end');
+    &:hover:disabled,
+    &:focus:disabled {
+      color: var(--support-01);
+      border: $button-border-width solid var(--support-01);
     }
-  }
-
-  .#{$prefix}--tooltip__trigger.#{$prefix}--btn--icon-only--bottom {
-    @include tooltip--trigger('icon', 'bottom');
-    @include tooltip--placement('icon', 'bottom', 'center');
-
-    &.#{$prefix}--tooltip--align-start {
-      @include tooltip--placement('icon', 'bottom', 'start');
-    }
-
-    &.#{$prefix}--tooltip--align-center {
-      @include tooltip--placement('icon', 'bottom', 'center');
-    }
-
-    &.#{$prefix}--tooltip--align-end {
-      @include tooltip--placement('icon', 'bottom', 'end');
-    }
-  }
-
-  .#{$prefix}--tooltip__trigger.#{$prefix}--btn--icon-only--left {
-    @include tooltip--trigger('icon', 'left');
-    @include tooltip--placement('icon', 'left', 'center');
-
-    &.#{$prefix}--tooltip--align-start {
-      @include tooltip--placement('icon', 'left', 'start');
-    }
-
-    &.#{$prefix}--tooltip--align-center {
-      @include tooltip--placement('icon', 'left', 'center');
-    }
-
-    &.#{$prefix}--tooltip--align-end {
-      @include tooltip--placement('icon', 'left', 'end');
-    }
-  }
-
-  .#{$prefix}--btn--icon-only {
-    padding-right: rem(15px);
-    padding-left: rem(15px);
-
-    .#{$prefix}--btn__icon {
-      position: static;
-    }
-
-    &.#{$prefix}--btn--ghost .#{$prefix}--btn__icon,
-    &.#{$prefix}--btn--danger--ghost .#{$prefix}--btn__icon {
-      margin: 0;
-    }
-  }
-
-  .#{$prefix}--btn--icon-only.#{$prefix}--btn--selected {
-    background: $background-selected;
-  }
-
-  .#{$prefix}--btn path[data-icon-path='inner-path'] {
-    fill: none;
-  }
-
-  .#{$prefix}--btn--ghost.#{$prefix}--btn--icon-only
-    .#{$prefix}--btn__icon
-    path:not([data-icon-path]):not([fill='none']),
-  .#{$prefix}--btn--ghost.#{$prefix}--btn--icon-only .#{$prefix}--btn__icon {
-    fill: $icon-primary;
-  }
-
-  .#{$prefix}--btn--ghost.#{$prefix}--btn--icon-only[disabled]
-    .#{$prefix}--btn__icon
-    path:not([data-icon-path]):not([fill='none']),
-  .#{$prefix}--btn--ghost.#{$prefix}--btn--icon-only[disabled]
-    .#{$prefix}--btn__icon,
-  .#{$prefix}--btn.#{$prefix}--btn--icon-only.#{$prefix}--btn--ghost[disabled]:hover
-    .#{$prefix}--btn__icon {
-    fill: $icon-on-color-disabled;
-  }
-
-  .#{$prefix}--btn--ghost.#{$prefix}--btn--icon-only[disabled] {
-    cursor: not-allowed;
-  }
-
-  // V11: remove field
-  .#{$prefix}--btn--field.#{$prefix}--btn--icon-only,
-  .#{$prefix}--btn--md.#{$prefix}--btn--icon-only {
-    padding-right: rem(11px);
-    padding-left: rem(11px);
-  }
-
-  .#{$prefix}--btn--sm.#{$prefix}--btn--icon-only {
-    padding-right: rem(7px);
-    padding-left: rem(7px);
   }
 
   .#{$prefix}--btn--danger {
     @include button-theme(
-      $button-danger-primary,
       transparent,
-      $text-on-color,
-      $button-danger-hover,
-      currentColor,
-      $button-danger-active
+      var(--support-01),
+      var(--support-01),
+      var(--support-01),
+      var(--support-01)
     );
 
     &:hover {
-      color: $text-on-color;
+      color: var(--inverse-01);
+      border: $button-border-width solid transparent;
     }
 
-    // TODO: deprecate single dash tertiary
-    &-tertiary,
-    &--tertiary {
-      @include button-theme(
-        transparent,
-        $button-danger-secondary,
-        $button-danger-secondary,
-        $button-danger-hover,
-        currentColor,
-        $button-danger-active
-      );
-
-      &:hover {
-        border-color: $button-danger-hover;
-        color: $text-on-color;
-      }
-
-      &:focus {
-        background-color: $button-danger-primary;
-        color: $text-on-color;
-      }
-
-      &:active {
-        border-color: $button-danger-active;
-        color: $text-on-color;
-      }
-
-      &:disabled,
-      &:hover:disabled,
-      &:focus:disabled,
-      &.#{$prefix}--btn--disabled,
-      &.#{$prefix}--btn--disabled:hover,
-      &.#{$prefix}--btn--disabled:focus {
-        background: transparent;
-        color: $text-on-color-disabled;
-        outline: none;
-      }
+    &:focus {
+      color: var(--inverse-01);
     }
 
-    // TODO: deprecate single dash ghost
-    &-ghost,
-    &--ghost {
-      @include button-theme(
-        transparent,
-        transparent,
-        $button-danger-secondary,
-        $button-danger-hover,
-        currentColor,
-        $button-danger-active
-      );
+    &:active {
+      color: var(--support-dark-01);
+      border-color: var(--support-dark-01);
+    }
 
-      padding: $button-padding-ghost;
+    &:hover:disabled,
+    &:focus:disabled {
+      color: var(--support-01);
+      border: $button-border-width solid var(--support-01);
+    }
 
-      .#{$prefix}--btn__icon {
-        position: static;
-        margin-left: $spacing-03;
-      }
+    &:hover > .#{$prefix}--btn__icon,
+    &:focus > .#{$prefix}--btn__icon {
+      fill: var(--inverse-01);
+    }
+  }
 
-      &:hover,
-      &:active {
-        color: $text-on-color;
-      }
+  .#{$prefix}--btn--danger--primary {
+    @include button-theme(
+      var(--support-01),
+      transparent,
+      var(--inverse-01),
+      var(--support-dark-01),
+      var(--ui-01)
+    );
 
-      &:disabled,
-      &:hover:disabled,
-      &:focus:disabled,
-      &.#{$prefix}--btn--disabled,
-      &.#{$prefix}--btn--disabled:hover,
-      &.#{$prefix}--btn--disabled:focus {
-        border-color: transparent;
-        background: transparent;
-        color: $text-disabled;
-        outline: none;
-      }
-
-      &.#{$prefix}--btn--sm {
-        padding: $button-padding-ghost-sm;
-      }
-
-      // V11: Remove field
-      &.#{$prefix}--btn--field,
-      &.#{$prefix}--btn--md {
-        padding: $button-padding-ghost-field;
-      }
+    &:hover:disabled,
+    &:focus:disabled {
+      color: var(--ui-01);
+      border: $button-border-width solid var(--support-01);
     }
   }
 
   .#{$prefix}--btn--sm {
-    min-height: rem(32px);
     padding: $button-padding-sm;
+    @include type-style('body-short-01');
   }
 
-  // V11: change xl to 2xl
-  .#{$prefix}--btn--xl:not(.#{$prefix}--btn--icon-only) {
-    @include button-padding-large;
-
-    min-height: rem(80px);
+  .#{$prefix}--btn--lg {
+    height: 3.25rem;
+    font-size: rem(18px); //TODO
   }
 
-  // V11: change lg to xl
-  .#{$prefix}--btn--lg:not(.#{$prefix}--btn--icon-only) {
-    @include button-padding-large;
-
-    min-height: rem(64px);
-  }
-
-  // V11: Remove field
-  .#{$prefix}--btn--field,
-  .#{$prefix}--btn--md {
-    min-height: rem(40px);
-    padding: $button-padding-field;
-  }
-
-  //expressive styles
-  .#{$prefix}--btn--expressive {
-    @include type-style('body-short-02');
-
-    min-height: 3rem;
-  }
-
-  .#{$prefix}--btn--icon-only.#{$prefix}--btn--expressive {
-    padding: 12px 13px;
-    //default size 48px
-  }
-
-  .#{$prefix}--btn.#{$prefix}--btn--expressive .#{$prefix}--btn__icon {
-    width: rem(20px);
-    height: rem(20px);
-  }
-
-  .#{$prefix}--btn-set .#{$prefix}--btn.#{$prefix}--btn--expressive {
-    max-width: rem(320px);
+  .#{$prefix}--btn--secondary + .#{$prefix}--btn--primary,
+  .#{$prefix}--btn--tertiary + .#{$prefix}--btn--danger--primary {
+    margin-left: $spacing-03;
+    // @include rtl {
+    //   margin-left: 0;
+    //   margin-right: $spacing-xs;
+    // } //TODO
   }
 
   // Skeleton State
   .#{$prefix}--btn.#{$prefix}--skeleton {
     @include skeleton;
-
     width: rem(150px);
   }
-
-  // button set styles
-  .#{$prefix}--btn-set {
-    display: flex;
-  }
-
-  .#{$prefix}--btn-set--stacked {
-    flex-direction: column;
-  }
-
-  .#{$prefix}--btn-set .#{$prefix}--btn {
-    width: 100%;
-    // 196px from design kit
-    max-width: rem(196px);
-
-    &:not(:focus) {
-      box-shadow: rem(-1px) 0 0 0 $button-separator;
-    }
-
-    &:first-of-type:not(:focus) {
-      box-shadow: inherit;
-    }
-  }
-
-  .#{$prefix}--btn-set .#{$prefix}--btn:focus + .#{$prefix}--btn {
-    box-shadow: inherit;
-  }
-
-  .#{$prefix}--btn-set--stacked .#{$prefix}--btn:not(:focus) {
-    box-shadow: 0 rem(-1px) 0 0 $button-separator;
-  }
-
-  .#{$prefix}--btn-set--stacked .#{$prefix}--btn:first-of-type:not(:focus) {
-    box-shadow: inherit;
-  }
-
-  .#{$prefix}--btn-set .#{$prefix}--btn.#{$prefix}--btn--disabled {
-    box-shadow: rem(-1px) 0 0 0 $icon-on-color-disabled;
-
-    &:first-of-type {
-      box-shadow: none;
-    }
-  }
-
-  .#{$prefix}--btn-set--stacked .#{$prefix}--btn.#{$prefix}--btn--disabled {
-    box-shadow: 0 rem(-1px) 0 0 $layer-selected-disabled;
-
-    &:first-of-type {
-      box-shadow: none;
-    }
-  }
-
-  // Windows HCM fix
-  .#{$prefix}--btn:focus {
-    @include high-contrast-mode('focus');
-  }
 }
+
+// @include exports('button') {
+//   @include button;
+// }

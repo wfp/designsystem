@@ -11,6 +11,7 @@ import {
 } from '@wfp/icons-react';
 
 import Button from '../Button';
+import Icon from '../Icon';
 
 const { prefix } = settings;
 

@@ -1,0 +1,19 @@
+/**
+ * Right to left Support added
+ */
+
+ /// Adds text overflow styling
+/// @access public
+/// @group utilities
+
+@mixin ltr() {
+  body[dir='ltr'] & {
+    @content;
+  }
+}
+
+@mixin rtl() {
+  [dir='rtl'] & {
+    @content;
+  }
+}
