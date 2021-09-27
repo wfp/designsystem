@@ -94,6 +94,10 @@ async function main() {
 
   proc.execSync('yarn install');
 
+  console.log('Lerna init...');
+
+  proc.execSync('lerna init');
+
   console.log('Removing useless files');
 
   proc.execSync('npx rimraf ./.git');
