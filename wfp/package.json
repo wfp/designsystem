@@ -8,7 +8,7 @@
     "packages/*"
   ],
   "scripts": {
-    "start:ui": "cd packages/ui && yarn start",
+    "start:react": "cd packages/react && yarn start",
     "build": "lerna run build --stream --prefix --npm-client yarn",
     "publish:alpha": "lerna publish --dist-tag alpha",
     "publish": "lerna publish",

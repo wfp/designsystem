@@ -1,9 +1,7 @@
 import React from 'react';
 import { buttonKinds } from '@wfp/ui/src/prop-types/types';
-import { AddGlyph16 } from '@wfp/icons-react';
+import { AddGlyph } from '@wfp/icons-react';
 import markdown from './README.mdx';
-import buttonTwig from './Button.twig';
-import { twig } from 'twig';
 import Button from '.';
 
 export default {
@@ -14,7 +12,6 @@ export default {
     componentSubtitle: 'Component',
     status: 'released',
     mdx: markdown,
-    twig: buttonTwig,
   },
 };
 
@@ -85,11 +82,11 @@ ButtonKind.story = {
 
 export const ButtonIcon = (args) => (
   <>
-    <Button {...args} icon={iconAddGlyph}>
+    <Button {...args} icon={AddGlyph}>
       Button with icon
     </Button>
-    {''} <Button {...args} icon={AddGlyph16} kind="tertiary"></Button>{' '}
-    <Button {...args} icon={AddGlyph16} iconReverse kind="tertiary">
+    {''} <Button {...args} icon={AddGlyph} kind="tertiary"></Button>{' '}
+    <Button {...args} icon={AddGlyph} iconReverse kind="tertiary">
       With iconReverse
     </Button>
   </>
@@ -119,7 +116,7 @@ ButtonIcon.story = {
 export const Small = (args) => (
   <>
     <Button small>Small button</Button>{' '}
-    <Button {...args} icon={AddGlyph16} kind="tertiary" small>
+    <Button {...args} icon={AddGlyph} kind="tertiary" small>
       With icon
     </Button>
   </>
@@ -143,7 +140,7 @@ Small.story = {
 export const Large = (args) => (
   <>
     <Button large>Large button</Button>{' '}
-    <Button {...args} icon={AddGlyph16} kind="tertiary" large>
+    <Button {...args} icon={AddGlyph} kind="tertiary" large>
       With icon
     </Button>
   </>

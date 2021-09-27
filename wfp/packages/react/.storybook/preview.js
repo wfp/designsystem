@@ -4,20 +4,20 @@ import './styles.scss';
 
 //export { globalTypes, decorators } from '@wfp/ui/.storybook/preview';
 
-import { DocsPage } from '@wfp/ui/.storybook/blocks/DocsPage';
-import { DocsContainer } from '@wfp/ui/.storybook/blocks/DocsContainer';
+//import { DocsPage } from '@wfp/ui/.storybook/blocks/DocsPage';
+//import { DocsContainer } from '@wfp/ui/.storybook/blocks/DocsContainer';
 
 addParameters({
-  docs: {
+  /*docs: {
     container: DocsContainer,
     page: DocsPage,
-  },
+  },*/
   viewMode: 'docs',
 }); // or global addParameters
 export const parameters = {
   controls: { expanded: true },
   docs: {
-    theme: theme,
+    // theme: theme,
   },
   previewTabs: {
     'storybook/docs/panel': {

@@ -17,12 +17,12 @@ const baseConfig = {
   ],
   plugins: [
     nodeResolve(),
-    commonjs({
-      include: /node_modules/,
-    }),
+
     babel({
       babelrc: false,
-      exclude: ['node_modules/**'],
+      //exclude: ['node_modules/**'],
+      include: ['src/**', /node_modules\/@wfp/],
+      exclude: [],
       presets: [
         [
           '@babel/preset-env',
@@ -44,6 +44,9 @@ const baseConfig = {
         '@babel/plugin-proposal-export-default-from',
       ],
       babelHelpers: 'bundled',
+    }),
+    commonjs({
+      include: /node_modules/,
     }),
     stripBanner(),
   ],
