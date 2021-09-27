@@ -32,12 +32,12 @@
     display: block;
     svg {
       margin-left: 0.2em;
-      fill: var(--interactive-01);
+      fill: $interactive;
     }
   }
 
   .#{$prefix}--read-more__content {
-    padding-bottom: $spacing-02; // $spacing-xs;
+    padding-bottom: $spacing-03; // $spacing-xs;
   }
 
   .#{$prefix}--read-more__fake-height {
@@ -52,7 +52,7 @@
     .#{$prefix}--read-more__content {
       position: relative;
       overflow: hidden;
-      margin-bottom: $spacing-02; // $spacing-xs;
+      margin-bottom: $spacing-03; // $spacing-xs;
       &:after {
         content: '';
         z-index: 10;
@@ -84,7 +84,7 @@
   .#{$prefix}--read-more--max-height {
     .#{$prefix}--read-more__content {
       overflow: hidden;
-      padding-bottom: $spacing-02; // $spacing-xs;
+      padding-bottom: $spacing-03; // $spacing-xs;
       transition: all 0.3s;
     }
   }
