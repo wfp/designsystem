@@ -4,16 +4,17 @@ import './styles.scss';
 
 //export { globalTypes, decorators } from '@wfp/ui/.storybook/preview';
 
-//import { DocsPage } from '@wfp/ui/.storybook/blocks/DocsPage';
-//import { DocsContainer } from '@wfp/ui/.storybook/blocks/DocsContainer';
+// import { DocsPage } from '@wfp/ui/.storybook/blocks/DocsPage';
+// import { DocsContainer } from '@wfp/ui/.storybook/blocks/DocsContainer';
 
 addParameters({
-  /*docs: {
-    container: DocsContainer,
-    page: DocsPage,
-  },*/
+  docs: {
+    // container: DocsContainer,
+    // page: DocsPage,
+  },
   viewMode: 'docs',
 }); // or global addParameters
+
 export const parameters = {
   controls: { expanded: true },
   docs: {
@@ -30,17 +31,7 @@ export const parameters = {
     storySort: {
       order: [
         'Getting started',
-        [
-          'Intro',
-          'Installing the Kit',
-          'Using the Kit',
-          'Recommended libraries',
-          'Design resources',
-          'Browser support',
-          "What's new",
-          'Support and Feedback',
-          'Credits',
-        ],
+        ['Intro', 'Installing the Design Systemm'],
         'Documentation',
         'Templates',
         'Components',
