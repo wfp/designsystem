@@ -44,9 +44,30 @@ Additional information about the Usage can be found [here](https://wfp.org/UIGui
 Please refer to the [Contribution Guidelines](./.github/CONTRIBUTING.md) before starting any work.
 Use the `feat/` branches for active development.
 
+Clone the development branch for the un-core monorepo.
+
 ```bash
 git clone --branch un-core-v1 https://github.com/wfp/designsystem.git
 ```
+
+### Packages
+
+All packages can be found in `packages/`.
+
+- `figma connect`: Downloading assets and color values from the Figma library
+- `fonts`: All Fonts used by WFP
+- `humanitarian-icons`: OCHA humanitarian icons customized by the Publications Unit of wfp
+- `layout`: breakpoints, spacings, etc.
+- `pictograms`: pictogram icons
+- `colors` no longer used!
+- `styles`: all components styles
+- `themes`: theming (colors, etc.)
+- `type`: typescales
+- `ui`: the "old" react components, probably getting renamed to `react`
+
+### UN Core Examples
+
+All Examples can be found in `wfp/`.
 
 #### Installation
 
