@@ -30,6 +30,7 @@ export FileUploader, {
   FileUploaderDropContainer,
 } from './components/FileUploader';
 export Footer from './components/Footer';
+export FooterV2 from './components/FooterV2';
 export Form from './components/Form';
 export FormControls from './components/FormControls';
 export FormError from './components/FormError';
@@ -121,5 +122,3 @@ export Wrapper, { pageWidths } from './components/Wrapper';
 export colors from './globals/data/colors';
 export useDetectPrint from './internal/useDetectPrint';
 export { uniqueId } from './tools/uniqueId';
-
-
