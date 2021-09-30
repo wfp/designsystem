@@ -51,6 +51,7 @@
 
     .#{$prefix}--react-select__option--is-focused {
       background: var(--ui-02);
+      color: var(--text-01)
     }
 
     .#{$prefix}--react-select__dropdown-indicator {
