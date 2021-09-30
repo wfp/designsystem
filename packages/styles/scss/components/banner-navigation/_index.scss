@@ -1,0 +1,4 @@
+@forward 'banner-navigation';
+@use 'banner-navigation';
+
+@include banner-navigation.banner-navigation;

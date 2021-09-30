@@ -1,0 +1,144 @@
+//
+// Copyright IBM Corp. 2016, 2018
+//
+// This source code is licensed under the Apache-2.0 license found in the
+// LICENSE file in the root directory of this source tree.
+//
+
+@use '../../config' as *;
+@use '../../spacing' as *;
+@use '../../theme' as *;
+@use '../../type' as *;
+@use '../../breakpoint' as *;
+@use '../../utilities/convert' as *;
+@use '../../utilities/skeleton' as *;
+@use '../../utilities/visually-hidden' as *;
+@use '../../utilities/focus-outline' as *;
+
+@mixin card {
+  .#{$prefix}--card-box {
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.15);
+  
+    a {
+      color:$text-primary;
+      text-decoration: none;
+    }
+  }
+  
+  .#{$prefix}--photo-cardnew--simple-card {
+    .#{$prefix}--header-photo {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      margin: 0;
+    }
+    .#{$prefix}--photo-cardnew__info {
+      background: $background;
+      padding: $spacing-05;
+    }
+    .#{$prefix}--photo-cardnew__info__background {
+      display: none;
+    }
+    .#{$prefix}--photo-cardnew__info__title {
+      color: $interactive;
+  
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  
+  .#{$prefix}--photo-cardnew__info__metadata {
+    margin: 0;
+    margin-bottom: $spacing-03;
+    @include type-style('caption-01');
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  
+  .#{$prefix}--photo-cardnew__info__subtitle {
+    margin: 0;
+    @include type-style('body-short-01');
+  }
+  
+  .#{$prefix}--photo-cardnew__info__title {
+    margin: 0;
+    & + .#{$prefix}--photo-cardnew__info__subtitle {
+      margin-top: $spacing-03;
+    }
+  }
+  
+  .#{$prefix}--photo-cardnew__background {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: inherit;
+    background-size: cover;
+    background-position: 50% 50%;
+    z-index: 100;
+    overflow: hidden;
+  }
+  
+  .#{$prefix}--photo-cardnew--overlay {
+    .#{$prefix}--photo-cardnew__info {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: inherit;
+      padding: $spacing-05 * 1.1 $spacing-05;
+      z-index: 100;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: $text-on-color;
+      background: rgba(#000000, 0.5);
+    }
+    // .#{$prefix}--photo-cardnew__info {
+  
+    // }
+    .#{$prefix}--photo-cardnew__info__background {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      filter: blur(6px);
+      background-size: cover;
+      transform: scale(1.05);
+      z-index: -1;
+      height: rem(200px);
+      @include breakpoint('lg') {
+        height: rem(260px);
+      }
+      &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        transition: all 0.1s;
+        background: #000000;
+        opacity: 0.6;
+      }
+    }
+  }
+  
+  .#{$prefix}--photo-cardnew--overlay {
+    height: rem(300px);
+    @include breakpoint('lg') {
+      height: rem(500px);
+    }
+    box-shadow: none;
+    .#{$prefix}--photo-cardnew__info {
+      padding: $spacing-06;
+    }
+    .#{$prefix}--photo-cardnew__info__background {
+      height: rem(300px);
+      @include breakpoint('lg') {
+        height: rem(500px);
+      }
+    }
+  }
+}

@@ -11,16 +11,10 @@
 @use '../../type' as *;
 @use '../../breakpoint' as *;
 @use '../../utilities/convert' as *;
+@use '../../utilities/skeleton' as *;
+@use '../../utilities/visually-hidden' as *;
+@use '../../utilities/focus-outline' as *;
 
-/// Link styles
-/// @access public
-/// @group info-bar
-@mixin info-bar {
-  .#{$prefix}--info-bar {
-    background: $support-warning;
-    @include reset;
-    display: flex;
-    padding: 0.5rem 0;
-    line-height: 22px;
-  }
+@mixin context-menu {
+//   Previous code uses link. ask more
 }

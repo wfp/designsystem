@@ -44,6 +44,10 @@ Additional information about the Usage can be found [here](https://wfp.org/UIGui
 Please refer to the [Contribution Guidelines](./.github/CONTRIBUTING.md) before starting any work.
 Use the `feat/` branches for active development.
 
+```bash
+git clone --branch un-core-v1 https://github.com/wfp/designsystem.git
+```
+
 #### Installation
 
 The project is using a `lerna/yarn` mono repository for development. After cloning the repository, run `yarn` to install all packages needed.

@@ -10,6 +10,8 @@
 @use '../../theme' as *;
 @use '../../type' as *;
 @use '../../utilities/focus-outline' as *;
+@use '../../utilities/convert' as *;
+@use '../../utilities/placeholder-colors' as *;
 
 /// Link styles
 /// @access public
@@ -29,14 +31,14 @@
       text-decoration: underline;
     }
     &:visited {
-      color: var(--interactive-01);
+      color: $link-visited;
     }
 
     &:active,
     &:hover,
     &:focus,
     &.#{$prefix}--link--active {
-      color: var(--interactive-02);
+      color: $link-secondary;
     }
 
     &:focus,

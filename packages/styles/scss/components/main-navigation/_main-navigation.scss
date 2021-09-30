@@ -13,6 +13,7 @@
 @use '../../colors' as *;
 @use '../../compat/theme' as *;
 @use '../../type' as *;
+@use '../../breakpoint' as *;
 @use '../../spacing' as *;
 @use '../../motion' as *;
 @use '../../utilities/box-shadow' as *;
@@ -46,23 +47,23 @@ $main-navigation-menu-width: rem(300px);
 /// @access public
 /// @group main-navigation
 @mixin main-navigation {
-  /*
+  
   // The overall container element for a `main-navigation`. Has two variants,
   // `disabled` and `inline`.
   .#{$prefix}--main-navigation {
-    color: $color__white;
-    background: $color__main;
+    color: $text-on-color;
+    background: $background-brand;
     @include reset;
     //display: flex;
     @media print {
       display: none;
     }
-    @include font-smoothing;
+    // @include font-smoothing;
   }
 
   .#{$prefix}--main-navigation__item {
-    @include typescale('epsilon');
-    @include font-family;
+    @include type-style('body-short-02');
+    @include font-family('sans');
     font-weight: 600;
     &:last-child {
       padding-right: 0;
@@ -79,8 +80,8 @@ $main-navigation-menu-width: rem(300px);
     //vertical-align: middle;
     white-space: nowrap;
     a {
-      color: $color__white;
-      @include typescale('epsilon');
+      color: $text-on-color;
+      @include type-style('body-short-02');
       text-decoration: none;
       &.active {
         border-bottom: 3px solid rgba(var(--ui-01), 0.5);
@@ -88,11 +89,11 @@ $main-navigation-menu-width: rem(300px);
       &:hover,
       &:visited,
       &:active {
-        color: $color__white;
+        color: $text-on-color;
         text-decoration: underline;
       }
       &:focus {
-        color: $color__white;
+        color: $text-on-color;
       }
     }
   }
@@ -114,10 +115,10 @@ $main-navigation-menu-width: rem(300px);
     top: rem(-1px);
     vertical-align: middle;
     margin-left: 0.3em;
-    @include rtl {
-      margin-left: 0;
-      margin-right: 0.3em;
-    }
+    // @include rtl { //TODO
+    //   margin-left: 0;
+    //   margin-right: 0.3em;
+    // }
   }
 
   .#{$prefix}--main-navigation__trigger--has-sub.#{$prefix}--main-navigation__trigger--open {
@@ -128,26 +129,26 @@ $main-navigation-menu-width: rem(300px);
 
   .#{$prefix}--main-navigation__logo {
     a {
-      color: $color__white;
+      color: $text-on-color;
       text-decoration: none;
       &:hover,
       &:visited,
       &:active {
-        color: $color__white;
+        color: $text-on-color;
         text-decoration: underline;
       }
       &:focus {
-        color: $color__white;
+        color: $text-on-color;
       }
     }
   }
 
-  @include breakpointMax(bp--sm--major) {
+  @include breakpoint-down('md') {
     .#{$prefix}--main-navigation__wrapper {
       padding: 0;
     }
   }
-  @include breakpoint(bp--sm--major) {
+  @include breakpoint('md') {
     .#{$prefix}--main-navigation__logo-wrapper {
       flex-grow: 1;
     }
@@ -166,7 +167,7 @@ $main-navigation-menu-width: rem(300px);
     }
 
     .#{$prefix}--main-navigation__item {
-      padding: 0 $spacing-sm;
+      padding: 0 $spacing-04;
 
       // Relate the sub navigation dropdown to the parent navigation item
       &.#{$prefix}--content-width {
@@ -206,10 +207,10 @@ $main-navigation-menu-width: rem(300px);
       z-index: z('modal');
       color: var(--text-01);
       background: var(--ui-01);
-      box-shadow: rgba(desaturate($color__main, 50%), 0.15) 0 3px 12px,
-        rgba(desaturate($color__main, 40%), 0.15) 0 32px 78px;
+      box-shadow: rgba(desaturate(#0B77C2, 50%), 0.15) 0 3px 12px, //TODO - convert raw color hex into color token in figma
+        rgba(desaturate(#0B77C2, 40%), 0.15) 0 32px 78px;
       .#{$prefix}--theme-dark & {
-        box-shadow: var(--modal-background-01) 0 3px 12px,
+        box-shadow: var(--modal-background-01) 0 3px 12px, //TODO - create token for this color
           var(--modal-background-01) 0 32px 78px;
       }
       .#{$prefix}--main-navigation__user & {
@@ -217,22 +218,22 @@ $main-navigation-menu-width: rem(300px);
         right: 0;
         width: 25%;
         min-width: 250px;
-        @include rtl {
-          left: 0;
-          right: inherit;
-        }
+        // @include rtl {
+        //   left: 0;
+        //   right: inherit;
+        // } //TODO
       }
     }
   }
 
-  @include breakpointMax(bp--sm--major) {
+  @include breakpoint-down('md') {
     .#{$prefix}--main-navigation__logo-wrapper {
       display: flex;
       align-items: center;
       height: rem(55px);
       flex-direction: row-reverse;
       justify-content: space-between;
-      padding: 0 $spacing-xs 0 $spacing-md;
+      padding: 0 $spacing-03 0 $spacing-05;
     }
 
     .#{$prefix}--main-navigation__logo {
@@ -260,9 +261,9 @@ $main-navigation-menu-width: rem(300px);
         display: block;
         width: 100%;
       }
-      padding: $spacing-md $page-padding-mobile;
-      background-color: $color__brand-01-60;
-      border-bottom: 1px solid lighten($color__brand-01-60, 5);
+      padding: $spacing-05 1em;
+      background-color: $button-secondary-active;
+      border-bottom: 1px solid lighten(#085387, 5); //TODO create color in figma
     }
-  }*/
+  }
 }

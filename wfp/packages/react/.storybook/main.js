@@ -202,17 +202,10 @@ module.exports = {
       );
     }
 
-    config.module.rules = config.module.rules.filter(
-      (e) => {
-        console.log(
-          ' e.test ',
-          e.test.toString(),
-          e.test.toString() == `/\.tsx?$/`
-        );
-        return e.test !== '/.tsx?$/';
-      } /* && e.test !== '/.(mjs|tsx?|jsx?)$/'*/
-    );
-    console.log(config.module.rules);
+    config.module.rules = config.module.rules.filter((e) => {
+      return e.test !== '/.tsx?$/';
+    });
+
     return config;
   },
 };

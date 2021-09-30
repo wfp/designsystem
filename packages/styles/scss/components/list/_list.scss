@@ -12,83 +12,138 @@
 @use '../../config' as *;
 @use '../../spacing' as *;
 @use '../../theme' as *;
-@use '../../type';
-@use '../../utilities/component-reset';
-@use '../../utilities/convert';
+@use '../../type' as *;
+@use '../../breakpoint' as *;
+@use '../../utilities/convert' as *;
 
 /// List styles
 /// @access public
 /// @group list
 @mixin list {
-  .#{$prefix}--list--nested,
-  .#{$prefix}--list--unordered,
-  .#{$prefix}--list--ordered,
-  .#{$prefix}--list--ordered--native {
-    @include component-reset.reset;
-    @include type.type-style('body-long-01');
+  .#{$prefix}--list {
+    @include reset;
+    @include font-family('sans');
+    .#{$prefix}--list-item--checkmark,
+    .#{$prefix}--list-item--cross {
+      list-style-type: none;
+      position: relative;
+      .#{$prefix}--list-item__icon {
+        position: absolute;
+        left: -1.4rem;
+        top: 0.4em;
+        path {
+          fill: var(--support-02);
+        }
+      }
+    }
 
-    list-style: none;
-  }
-
-  .#{$prefix}--list--expressive,
-  .#{$prefix}--list--expressive .#{$prefix}--list--nested {
-    @include type.type-style('body-long-02');
-  }
-
-  .#{$prefix}--list--ordered--native {
-    list-style: decimal;
-  }
-
-  .#{$prefix}--list__item {
-    color: $text-primary;
-  }
-
-  .#{$prefix}--list--nested {
-    margin-left: convert.rem(32px);
-  }
-
-  .#{$prefix}--list--nested .#{$prefix}--list__item {
-    padding-left: $spacing-02;
-  }
-
-  .#{$prefix}--list--ordered:not(.#{$prefix}--list--nested) {
-    counter-reset: item;
-  }
-
-  .#{$prefix}--list--ordered:not(.#{$prefix}--list--nested)
-    > .#{$prefix}--list__item {
-    position: relative;
-  }
-
-  .#{$prefix}--list--ordered:not(.#{$prefix}--list--nested)
-    > .#{$prefix}--list__item::before {
-    position: absolute;
-    left: convert.rem(-24px);
-    content: counter(item) '.';
-    counter-increment: item;
-  }
-
-  .#{$prefix}--list--ordered.#{$prefix}--list--nested,
-  .#{$prefix}--list--ordered--native.#{$prefix}--list--nested {
-    list-style-type: lower-latin;
-  }
-
-  .#{$prefix}--list--unordered > .#{$prefix}--list__item {
-    position: relative;
-
-    &::before {
-      position: absolute;
-      left: calc(-1 * #{$spacing-05});
-      // – en dash
-      content: '\002013';
+    .#{$prefix}--list-item--cross {
+      .#{$prefix}--list-item__icon {
+        top: 0.3em;
+        path {
+          fill: var(--support-01);
+        }
+      }
     }
   }
 
-  .#{$prefix}--list--unordered.#{$prefix}--list--nested
-    > .#{$prefix}--list__item::before {
-    // offset to account for smaller ▪ vs –
-    left: calc(-1 * #{$spacing-04});
-    // ▪ square
-    content: '\0025AA';
+  .#{$prefix}--list--colon {
+    .#{$prefix}--list__element__title {
+      &:after {
+        content: ':';
+      }
+    }
+  }
+
+  .#{$prefix}--list--unstyled, 
+  .#{$prefix}--list--simple  //renamed simple to unstyled, keeping simple styling to prevent legacy code from breaking
+  {
+    line-height: 1.5em;
+
+    li {
+      display: flex;
+    }
+
+    .#{$prefix}--list__element__title {
+      font-weight: 700;
+      margin-right: rem(5px);
+    }
+  }
+
+  .#{$prefix}--list--unordered,
+  .#{$prefix}--list--bullets, //renamed bullets to unordered, keeping bullets styling to prevent legacy code from breaking
+  .#{$prefix}--list--ordered {
+    line-height: 1.6em;
+    list-style-type: disc;
+    margin-left: 1.5em;
+    .#{$prefix}--list__element__title {
+      font-weight: 700;
+      margin-right: rem(5px);
+    }
+    li {
+      margin-bottom: 0.7em;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .#{$prefix}--list--ordered {
+    list-style-type: decimal;
+  }
+
+  .#{$prefix}--list--tooltip {
+    li {
+      padding: $spacing-02;
+      border-bottom: 1px solid var(--ui-02);
+    }
+  }
+
+  .#{$prefix}--list--simple-inline {
+    line-height: 1.5em;
+    display: flex;
+    flex-wrap: wrap;
+
+    li {
+      display: flex;
+      margin-right: 1em;
+    }
+
+    .#{$prefix}--list__element__title {
+      font-weight: 700;
+      margin-right: rem(5px);
+    }
+  }
+
+  .#{$prefix}--list--small {
+    font-size: 0.8em;
+  }
+
+  .#{$prefix}--list--details {
+    line-height: 1.5rem;
+    list-style-type: none;
+    margin: 0;
+
+    li {
+      break-inside: avoid-column;
+    }
+
+    .#{$prefix}--list__element__title {
+      font-weight: 600;
+      display: block;
+      @include type-style('heading-02'); //TODO previous font was 18, 
+      margin-bottom: $spacing-02;
+    }
+
+    .#{$prefix}--list__element__content {
+      @include type-style('body-short-02');
+      display: block;
+    }
+    .#{$prefix}--list__element {
+      margin-bottom: $spacing-02;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
   }
 }
