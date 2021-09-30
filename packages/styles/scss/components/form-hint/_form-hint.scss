@@ -1,0 +1,31 @@
+//
+// Copyright IBM Corp. 2016, 2018
+//
+// This source code is licensed under the Apache-2.0 license found in the
+// LICENSE file in the root directory of this source tree.
+//
+
+@use '../../config' as *;
+@use '../../spacing' as *;
+@use '../../theme' as *;
+@use '../../type' as *;
+@use '../../breakpoint' as *;
+@use '../../utilities/convert' as *;
+@use '../../utilities/focus-outline' as *;
+@use '../../utilities/skeleton' as *;
+
+
+@mixin form-hint {
+  .#{$prefix}--form-hint {
+    display: inline;
+    vertical-align: middle;
+    margin: 0 $spacing-02;
+    user-select: none;
+    svg {
+      fill: $interactive;
+    }
+    &:hover {
+      box-shadow: 0 1px 0 $interactive;
+    }
+  }
+}
