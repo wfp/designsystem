@@ -1,5 +1,6 @@
 'use strict';
 
+const webpack = require('webpack');
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const customProperties = require('postcss-custom-properties');
@@ -24,6 +25,15 @@ module.exports = {
     '@storybook/addon-viewport',
   ],
   stories: ['../src/**/*.stories.@(js|mdx)', '../src/**/*-story.@(js|mdx)'],
+  managerWebpack: async (config, options) => {
+    config.plugins.push(
+      new webpack.NormalModuleReplacementPlugin(
+        /StorybookLogo/,
+        path.resolve(__dirname, 'Logo.js')
+      )
+    );
+    return config;
+  },
   webpack(config) {
     const babelLoader = config.module.rules.find((rule) => {
       return rule.use.some(({ loader }) => {

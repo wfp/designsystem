@@ -48,6 +48,8 @@ Clone the development branch for the un-core monorepo.
 
 ```bash
 git clone --branch un-core-v1 https://github.com/wfp/designsystem.git
+yarn install
+lerna init
 ```
 
 ### Packages
