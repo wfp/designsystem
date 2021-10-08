@@ -1,6 +1,6 @@
 {
   "name": "@wfp/create-design-system",
-  "version": "1.0.10",
+  "version": "1.0.12",
   "description": "",
   "main": "index.js",
   "bin": {
@@ -21,5 +21,6 @@
     "is-online": "^9.0.1",
     "prompts": "^2.4.1",
     "shelljs": "^0.8.4"
-  }
+  },
+  "gitHead": "2531a29ada41d9a4313551d96698be43a431ed29"
 }

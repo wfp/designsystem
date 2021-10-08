@@ -1,5 +1,6 @@
 'use strict';
 
+const webpack = require('webpack');
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const customProperties = require('postcss-custom-properties');
@@ -24,6 +25,15 @@ module.exports = {
     '@storybook/addon-viewport',
   ],
   stories: ['../src/**/*.stories.@(js|mdx)', '../src/**/*-story.@(js|mdx)'],
+  managerWebpack: async (config, options) => {
+    config.plugins.push(
+      new webpack.NormalModuleReplacementPlugin(
+        /StorybookLogo/,
+        path.resolve(__dirname, 'Logo.js')
+      )
+    );
+    return config;
+  },
   webpack(config) {
     const babelLoader = config.module.rules.find((rule) => {
       return rule.use.some(({ loader }) => {
@@ -191,17 +201,9 @@ module.exports = {
       );
     }
 
-    config.module.rules = config.module.rules.filter(
-      (e) => {
-        console.log(
-          ' e.test ',
-          e.test.toString(),
-          e.test.toString() == `/\.tsx?$/`
-        );
-        return e.test !== '/.tsx?$/';
-      } /* && e.test !== '/.(mjs|tsx?|jsx?)$/'*/
-    );
-    console.log(config.module.rules);
+    config.module.rules = config.module.rules.filter((e) => {
+      return e.test !== '/.tsx?$/';
+    });
     return config;
   },
 };

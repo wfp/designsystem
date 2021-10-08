@@ -15,7 +15,7 @@ const git_repo = 'https://github.com/wfp/designsystem/tree/un-core-v1/wfp';
 async function main() {
   console.log(
     chalk.blue.bold('UN core'),
-    chalk.white('| Create-Design-System CLI')
+    chalk.white('| create-design-system CLI')
   );
 
   const onCancel = (prompt) => {
@@ -67,16 +67,15 @@ async function main() {
     }
   }
 
-  console.log(`Downloading files to project path: ${projectPath}`);
+  console.log('Downloading files to project path:', chalk.blue(projectPath));
 
   const response = await prompts({
     type: 'multiselect',
     name: 'value',
     message: 'What repository style do you want to use?',
     choices: [
-      { title: 'Yarn/lerna mono repository', value: '#ff0000' },
-      { title: 'npm (simple)', value: '#00ff00', disabled: true },
-      { title: 'npm (simple)', value: '#00ff00', disabled: true },
+      { title: 'Yarn/lerna mono repository', value: 'yarn' },
+      { title: 'npm (not available yet)', value: 'npm', disabled: true },
     ],
     max: 2,
     hint: '- Space to select. Return to submit',
@@ -94,12 +93,15 @@ async function main() {
 
   proc.execSync('yarn install');
 
-  console.log('Removing useless files');
+  console.log('Lerna init...');
 
-  proc.execSync('npx rimraf ./.git');
-  fs.rmdirSync(path.join(projectPath, 'bin'), { recursive: true });
+  proc.execSync('lerna init');
 
-  console.log('The installation is done, this is ready to use!');
+  //console.log('Removing useless files');
+  //proc.execSync('npx rimraf ./.git');
+  //fs.rmdirSync(path.join(projectPath, 'bin'), { recursive: true });
+
+  console.log(chalk.green('The installation is done, this is ready to use!'));
 
   process.exit();
 }
