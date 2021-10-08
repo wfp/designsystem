@@ -2,7 +2,8 @@ import React from 'react';
 
 import markdown from './README.mdx';
 
-import Footer from '.';
+import { Footer, FooterExternal } from '.';
+
 import Link from '../Link';
 
 export default {
@@ -63,32 +64,7 @@ Regular.args = {
   external: false,
 };
 
-export const External = (args) => (
-  <Footer
-    {...args}
-    secondary={
-      <div>
-        Via C. G. Viola 68 Parco dei Medici
-        <br />
-        00148 Rome, Italy
-      </div>
-    }>
-    <div>
-      The United Nations World Food Programme is the 2020 Nobel Peace Prize Laureate. 
-      We are the world's largest humanitarian organization, 
-      saving lives in emergencies and using food assistance to build a pathway to peace, 
-      stability and prosperity for people recovering from conflict, disasters
-      <br />
-      <Link href="http://www.wfp.org">Custom Links</Link>
-    </div>
-  </Footer>
-);
-
-External.args = {
-  metaContent: '2019 © World Food Programme',
-  metaLinks:<Link href="http://www.wfp.org">meta link</Link>,
-  external: true,
-};
+export const External = () => <FooterExternal />;
 
 External.story = {
   parameters: {
