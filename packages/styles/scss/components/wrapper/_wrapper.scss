@@ -23,12 +23,12 @@
   .#{$prefix}--wrapper {
     margin: auto;
     width: 100%;
-    padding-left: $spacing-03;
-    padding-right: $spacing-03;
+    padding-left: $spacing-05;
+    padding-right: $spacing-05;
 
-    @include breakpoint(sm) {
-      padding-left: $spacing-03;
-      padding-right: $spacing-03;
+    @include breakpoint('lg') {
+      padding-left: $spacing-05;
+      padding-right: $spacing-05;
     }
   }
 
@@ -41,13 +41,13 @@
   }
 
   .#{$prefix}--wrapper--spacing-md {
-    padding-top: $spacing-03;
-    padding-bottom: $spacing-03;
+    padding-top: $spacing-05;
+    padding-bottom: $spacing-05;
   }
 
   .#{$prefix}--wrapper--spacing-xl {
-    padding-top: $spacing-05;
-    padding-bottom: $spacing-05;
+    padding-top: $spacing-08;
+    padding-bottom: $spacing-08;
   }
 
   .#{$prefix}--wrapper--background-lighter {

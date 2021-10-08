@@ -1,0 +1,55 @@
+@use '../theme' as *;
+@use '../spacing' as *;
+@use '../utilities/placeholder-colors' as *;
+@use '../utilities/focus-outline' as *;
+@use '../utilities/read-only' as *;
+
+/// Adds placeholder text color
+/// @access public
+/// @example @include input-base;
+/// @group utilities
+
+$input-border: 1px solid var(--field-border-01); //TODO
+$input-height: 40px;
+$input-border-radius: 0px;
+
+@mixin input-base {
+    height: $input-height;
+    min-width: 10rem;
+    padding: 0 $spacing-03;
+    color: var(--text-01);
+    appearance: none;
+    background-color: var(--field-01);
+    order: 2;
+    border: $input-border;
+    border-radius: $input-border-radius;
+    box-shadow: none;
+  
+    //TODO
+    // @include print {
+    //   background: var(--ui-01) !important;
+    //   border-color: var(--ui-06);
+    //   padding: 0 $spacing-02;
+    //   height: $input-height * 0.7;
+    // }
+    &::placeholder {
+      @include placeholder-colors;
+    }
+  
+    &:focus {
+      @include focus-outline('border');
+    }
+  
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  
+    &:disabled:hover {
+      border: $input-border;
+    }
+  
+    &:read-only {
+      @include read-only('border');
+    }
+  }

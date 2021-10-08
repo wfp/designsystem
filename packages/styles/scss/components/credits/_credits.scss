@@ -1,0 +1,30 @@
+//
+// Copyright IBM Corp. 2016, 2018
+//
+// This source code is licensed under the Apache-2.0 license found in the
+// LICENSE file in the root directory of this source tree.
+//
+
+@use '../../config' as *;
+@use '../../theme' as *;
+@use '../../utilities/component-reset' as *;
+@use '../../utilities/convert' as *;
+
+@mixin credits {
+  .#{$prefix}--credits {
+    @include reset;
+    position: relative;
+    > img {
+      width: 100%;
+    }
+  }
+
+  .#{$prefix}--credits__info {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: rem(5px) rem(7px);
+    color: $text-on-color;
+    background: rgba(#000000, 0.5);
+  }
+}
