@@ -69,20 +69,21 @@ jobs:
         echo "##vso[build.updatebuildnumber]$npmVersionString"
       displayName: 'set build number'
 
-    - script: |
-        yarn build:storybook
-      workingDirectory: './packages/ui/'
-      displayName: 'yarn build:storybook'
-      env:
-        STORYBOOK_INTERNAL_ASSETS: 
-        STORYBOOK_NPM_VERSION: $(nextRelease)
-        STORYBOOK_ASSETS: https://cdn.wfp.org/guides/ui/assets/v0.0.1/
+# TODO: Needs to reimplemented, probably in it's own package
+#    - script: |
+#        yarn build:storybook
+#      workingDirectory: './packages/ui/'
+#      displayName: 'yarn build:storybook'
+#      env:
+#        STORYBOOK_INTERNAL_ASSETS: 
+#        STORYBOOK_NPM_VERSION: $(nextRelease)
+#        STORYBOOK_ASSETS: https://cdn.wfp.org/guides/ui/assets/v0.0.1/
 
-    - task: PublishPipelineArtifact@1
-      inputs:
-        targetPath: "./packages/ui/docs"
-        artifact: "wfp-ui-kit-build"
-        publishLocation: "pipeline"
+#    - task: PublishPipelineArtifact@1
+#      inputs:
+#        targetPath: "./packages/ui/docs"
+#        artifact: "wfp-ui-kit-build"
+#        publishLocation: "pipeline"
 
     - task: PublishPipelineArtifact@1
       inputs:
