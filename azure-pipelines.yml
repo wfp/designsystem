@@ -71,6 +71,7 @@ jobs:
 
     - script: |
         yarn build:storybook
+      workingDirectory: './packages/ui/'
       displayName: 'yarn build:storybook'
       env:
         STORYBOOK_INTERNAL_ASSETS: 
