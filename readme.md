@@ -41,6 +41,8 @@ Additional information about the Usage can be found [here](https://wfp.org/UIGui
 
 ### Development
 
+#### WARNING: This branch is experimental and in current development. Things could easily break!
+
 Please refer to the [Contribution Guidelines](./.github/CONTRIBUTING.md) before starting any work.
 Use the `feat/` branches for active development.
 
@@ -49,7 +51,7 @@ Clone the development branch for the un-core monorepo.
 ```bash
 git clone --branch un-core-v1 https://github.com/wfp/designsystem.git
 yarn install
-lerna init
+yarn build
 ```
 
 ### Packages
