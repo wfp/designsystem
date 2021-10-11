@@ -45,9 +45,14 @@ jobs:
       displayName: 'yarn build'
 
     - script: |
+        yarn publish:cli
+      displayName: 'yarn build:cli'
+      condition: eq(variables['Build.SourceBranch'], 'refs/heads/master')
+
+    - script: |
         yarn publish:alpha-cli
       displayName: 'yarn build:alpha-cli'
-      condition: eq(variables['Build.SourceBranch'], 'refs/heads/master')
+      condition: eq(variables['Build.SourceBranch'], 'refs/heads/develop', 'refs/heads/next')
 
     - task: GitHubRelease@1
       inputs:
@@ -85,8 +90,8 @@ jobs:
 #        artifact: "wfp-ui-kit-build"
 #        publishLocation: "pipeline"
 
-    - task: PublishPipelineArtifact@1
-      inputs:
-        targetPath: ".packages/ui/assets"
-        artifact: "wfp-ui-kit-assets"
-        publishLocation: "pipeline"
+#    - task: PublishPipelineArtifact@1
+#      inputs:
+#        targetPath: ".packages/ui/assets"
+#        artifact: "wfp-ui-kit-assets"
+#        publishLocation: "pipeline"
