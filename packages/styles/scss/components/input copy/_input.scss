@@ -1,0 +1,85 @@
+//
+// Copyright IBM Corp. 2016, 2018
+//
+// This source code is licensed under the Apache-2.0 license found in the
+// LICENSE file in the root directory of this source tree.
+//
+
+@use 'vars' as *;
+@use '../form' as * ;
+@use '../../config' as *;
+@use '../../spacing' as *;
+@use '../../theme' as *;
+@use '../../type' as *;
+@use '../../breakpoint' as *;
+@use '../../utilities/convert' as *;
+@use '../../utilities/placeholder-colors' as *;
+@use '../../utilities/read-only' as *;
+@use '../../utilities/focus-outline' as *;
+@use '../../utilities/skeleton' as *;
+
+
+@mixin input {
+  .#{$prefix}--input-wrapper {
+    display: flex;
+    order: 3;
+    width: 100%;
+  }
+  .#{$prefix}--input {
+    @include reset;
+    @include font-family('sans');
+    @include type-style('body-short-01');
+    display: block;
+    width: 100%;
+    height: $input-height;
+    min-width: 7rem;
+    padding: 0 $spacing-03;
+    color: $text-primary;
+    appearance: none;
+    background-color: $field;
+    order: 2;
+    border: $input-border; //var(--field-border-01);
+    border-radius: $input-border-radius;
+
+    &::-webkit-input-placeholder {
+      @include placeholder-colors;
+    }
+
+    &:focus {
+      @include focus-outline('border');
+    }
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    &:disabled:hover {
+      border: $input-border;
+    }
+
+    &:read-only {
+      @include read-only('border');
+    }
+  }
+  .#{$prefix}--input-addon-before,
+  .#{$prefix}--input-addon-after {
+    height: $input-height;
+    line-height: $input-height;
+    padding: 0 $spacing-03;
+    background-color: $border-strong;
+    border: $input-border;
+    order: 2;
+  }
+
+  .#{$prefix}--input-addon-after {
+    border-left: 0;
+  }
+
+  .#{$prefix}--input-addon-before {
+    padding: 0 $spacing-03;
+    background-color: $border-strong;
+    border-right: 0;
+    order: 1;
+  }
+}

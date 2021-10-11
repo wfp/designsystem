@@ -9,6 +9,7 @@ export const backgroundInverseHover = '#313c44';
 export const backgroundSelected = '#ffffff';
 export const backgroundSelectedHover = '#ffffff';
 export const backgroundBrand = '#0b77c2';
+export const backgroundBrandDark = '#1A4262';
 export const interactive = '#0b77c2';
 export const field = '#ffffff';
 export const fieldDisabled = '#ffffff';

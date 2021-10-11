@@ -1,0 +1,31 @@
+@use '../../theme' as *;
+
+/// @type Value
+/// @access public
+/// @group input
+$input-label-weight: 600 !default;
+
+/// @type Value
+/// @access public
+/// @group input
+$input-border-radius: 0px !default;
+
+/// @type Value
+/// @access public
+/// @group input
+$input-height: 40px !default;
+
+/// @type Value
+/// @access public
+/// @group input
+$page-padding-mobile: 1em;
+
+/// @type Value
+/// @access public
+/// @group input
+$page-padding: 1em;
+
+/// @type Value
+/// @access public
+/// @group input
+$input-border: 1px solid var(--field-border-01);
