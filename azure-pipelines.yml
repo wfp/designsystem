@@ -7,7 +7,7 @@ trigger:
   - feat/performance-optimization
 
 jobs:
-- job: WFP Design System publish
+- job: WFP-Design-System-publish
   pool:
     vmImage: 'ubuntu-latest'
 
