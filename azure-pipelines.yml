@@ -65,7 +65,7 @@ jobs:
       name: setOutputVar
 
     - script: |
-        npmVersionString=$(node -p "require('.packages/ui/package.json').version") 
+        npmVersionString=$(node -p "require('./packages/ui/package.json').version") 
         echo "##vso[build.updatebuildnumber]$npmVersionString"
       displayName: 'set build number'
 
