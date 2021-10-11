@@ -47,7 +47,7 @@ jobs:
     - script: |
         yarn publish:alpha-cli
       displayName: 'yarn build:alpha-cli'
-      condition: and(succeeded(), ne(variables['Build.SourceBranch'], 'refs/heads/master', 'refs/heads/develop'))
+      condition: eq(variables['Build.SourceBranch'], 'refs/heads/master')
 
     - task: GitHubRelease@1
       inputs:
@@ -58,7 +58,7 @@ jobs:
         tagSource: 'gitTag'
         changeLogCompareToRelease: 'lastFullRelease'
         changeLogType: 'commitBased'
-      condition: and(succeeded(), ne(variables['Build.SourceBranch'], 'refs/heads/master', 'refs/heads/develop'))
+      condition: eq(variables['Build.SourceBranch'], 'refs/heads/master')
 
     - powershell: |
         echo "##vso[task.setvariable variable=versionNumber;isOutput=true]$(nextRelease)"
