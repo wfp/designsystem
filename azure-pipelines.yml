@@ -7,7 +7,7 @@ trigger:
   - feat/performance-optimization
 
 jobs:
-- job: SemanticRelease
+- job: WFP Design System publish
   pool:
     vmImage: 'ubuntu-latest'
 
@@ -36,114 +36,55 @@ jobs:
         yarn install
       displayName: 'yarn install'
 
-    - script: |
-        yarn build:lerna
-      displayName: 'yarn build:lerna'
+#    - script: |
+#        yarn test
+#      displayName: 'yarn test'
 
-    - script: >
-        npx -p semantic-release --dryRun
-        semantic-release
-      displayName: 'Semantic release'
+    - script: |
+        yarn build
+      displayName: 'yarn build'
+
+    - script: |
+        yarn publish:alpha-cli
+      displayName: 'yarn build:alpha-cli'
+      condition: $[eq(variables['Build.SourceBranch'], 'refs/heads/main')] 
+
+    - task: GitHubRelease@1
+      inputs:
+        gitHubConnection: 'Utzel-Butzel'
+        repositoryName: '$(Build.Repository.Name)'
+        action: 'create'
+        target: '$(Build.SourceVersion)'
+        tagSource: 'gitTag'
+        changeLogCompareToRelease: 'lastFullRelease'
+        changeLogType: 'commitBased'
+      condition: $[eq(variables['Build.SourceBranch'], 'refs/heads/main')] 
 
     - powershell: |
         echo "##vso[task.setvariable variable=versionNumber;isOutput=true]$(nextRelease)"
       name: setOutputVar
 
     - script: |
-        npm run test
-      displayName: 'npm run test'
-
-    - script: |
-        npm run build
-      displayName: 'npm run build:lerna'
-
-    - script: >
-        npx -p semantic-release
-        -p @semantic-release/git
-        -p @semantic-release/changelog
-        -p semantic-release-ado
-        semantic-release
-      env: { GH_TOKEN: $(GitHubToken) }
-      displayName: 'Semantic release'
-
-    #- powershell: |
-    #    echo "##vso[task.setvariable variable=versionNumber;isOutput=true]$(nextRelease)"
-    #  name: setOutputVar
-
-    - script: |
-        npmVersionString=$(node -p "require('./package.json').version") 
+        npmVersionString=$(node -p "require('.packages/ui/package.json').version") 
         echo "##vso[build.updatebuildnumber]$npmVersionString"
       displayName: 'set build number'
 
     - script: |
-        npm run build:storybook
-      displayName: 'npm run build:storybook'
+        yarn build:storybook
+      displayName: 'yarn build:storybook'
       env:
         STORYBOOK_INTERNAL_ASSETS: 
         STORYBOOK_NPM_VERSION: $(nextRelease)
         STORYBOOK_ASSETS: https://cdn.wfp.org/guides/ui/assets/v0.0.1/
 
-
     - task: PublishPipelineArtifact@1
       inputs:
-        targetPath: "./docs"
+        targetPath: "./packages/ui/docs"
         artifact: "wfp-ui-kit-build"
         publishLocation: "pipeline"
 
     - task: PublishPipelineArtifact@1
       inputs:
-        targetPath: "./assets"
+        targetPath: ".packages/ui/assets"
         artifact: "wfp-ui-kit-assets"
         publishLocation: "pipeline"
-
-#  - task: ArchiveFiles@2
-#    condition: or(eq(variables['Build.SourceBranch'], 'refs/heads/master'), startsWith(variables['Build.SourceBranch'], 'refs/heads/next'))
-#    inputs:
-#     rootFolderOrFile: "$(System.DefaultWorkingDirectory)/docs"
-#      includeRootFolder: true
-#      archiveType: "zip"
-#      archiveFile: "$(Build.ArtifactStagingDirectory)/build-$(Build.BuildId).zip"
-#      replaceExistingArchive: true
-
-#  - task: PublishBuildArtifacts@1
-#    inputs:
-#      PathtoPublish: "$(Build.ArtifactStagingDirectory)"
-#      ArtifactName: "wfp-ui-kit-build"
-#      publishLocation: "Container"
-
-#  - task: Bash@3
-#    inputs:
-#      targetType: 'inline'
-#      script: |
-#        PACKAGE_VERSION=$(sed -nE 's/^\s*"version": "(.*?)",$/\1/p' package.json)
-#        echo "Package version"
-#        echo $PACKAGE_VERSION
-#        NPM_VERSION=${PACKAGE_VERSION//./-}
-#        echo $NPM_VERSION
-#        echo '##vso[task.setvariable variable=NPM_VAR]'$NPM_VERSION' 
-
-#  - task: S3Upload@1
-#    inputs:
-#      awsCredentials: 'WFP UI-Kit'
-#      regionName: 'eu-west-1'
-#      bucketName: 'uikit.wfp.org'
-#      sourceFolder: './dist'
-#      globExpressions: '**'
-#      targetFolder: 'cdn/$(NPM_VAR)'
-#      filesAcl: 'public-read'
-#      createBucket: true
-#      logRequest: true
-#      logResponse: true
-
-#  - task: S3Upload@1
-#    inputs:
-#      awsCredentials: 'WFP UI-Kit'
-#      regionName: 'eu-west-1'
-#      bucketName: 'uikit.wfp.org'
-#      sourceFolder: './docs'
-#      globExpressions: '**'
-#      targetFolder: 'next-docs'
-#      filesAcl: 'public-read'
-#      createBucket: true
-#      logRequest: true
-#      logResponse: true
