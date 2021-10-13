@@ -67,7 +67,7 @@ jobs:
       env:
         STORYBOOK_INTERNAL_ASSETS: 
         STORYBOOK_NPM_VERSION: $(nextRelease)
-        STORYBOOK_ASSETS: https://cdn.wfp.org/guides/ui/assets/v0.0.1/
+        STORYBOOK_ASSETS: https://uikit.wfp.org/cdn/
 
 
     - task: PublishPipelineArtifact@1
