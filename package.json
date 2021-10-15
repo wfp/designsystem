@@ -15,6 +15,7 @@
     "start:ui": "cd packages/ui && yarn start",
     "build": "lerna run build --stream --prefix --npm-client yarn",
     "publish:alpha": "lerna publish --dist-tag alpha",
+    "publish:alpha-cli": "lerna publish --dist-tag alpha --no-verify",
     "publish:alpha-recover": "lerna exec -- \"npm publish --tag alpha || exit 0\"",
     "publish": "lerna publish",
     "test": "jest"
