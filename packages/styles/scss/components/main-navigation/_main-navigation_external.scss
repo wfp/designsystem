@@ -1,0 +1,494 @@
+@use '../../config' as *;
+@use '../../spacing' as *;
+@use '../../theme' as *;
+@use '../../type' as *;
+@use '../../breakpoint' as *;
+
+@mixin main_navigation_external {
+  /* Custom local Sass variables */
+  $wfp-logo-wrapper-width: 88px;
+  $nav-main-padding-bottom: $spacing-04;
+
+  .#{$prefix}--main-navigation-ext {
+    background-color: $background;
+    box-shadow: 0 5px 26px 0 rgb(21 41 53 / 8%);
+    display: flex;
+    position: relative;
+  }
+
+  .#{$prefix}--main-navigation-ext__wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0;
+    margin-top: 0;
+    min-height: 88px;
+
+    @include breakpoint-down(lg) {
+      &.#{$prefix}--wrapper {
+        padding-left: 0;
+      }
+    }
+
+    @include breakpoint-down(md) {
+      min-height: auto;
+      max-height: 60px;
+    }
+  }
+
+  .#{$prefix}--main-navigation-ext__branding {
+    position: relative;
+
+    @include breakpoint-down(md) {
+      align-items: center;
+      display: flex;
+    }
+  }
+
+  // [1] Overflow the Header to cover the entire Breadcrumb banner's height (40px)
+  .#{$prefix}--main-navigation-ext__wfp-logo {
+    align-items: center;
+    background-color: $background-brand;
+    display: flex;
+    height: calc(100% + 40px); // [1]
+    left: 0;
+    padding: $spacing-04;
+    position: absolute;
+    top: 0;
+    width: $wfp-logo-wrapper-width;
+
+    @include breakpoint-down(md) {
+      height: 100%;
+      padding: $spacing-02;
+      position: static;
+      width: auto;
+    }
+  }
+
+  .#{$prefix}--main-navigation-ext__wfp-logo-svg {
+    fill: $icon-on-color;
+    height: auto;
+    width: 100%;
+
+    @include breakpoint-down(md) {
+      height: 100%;
+      width: auto;
+    }
+  }
+
+  // [1] Move the product name next to the WFP logo
+  .#{$prefix}--main-navigation-ext__product-name {
+    align-items: center;
+    color: #0b77c2; //  TODO: Create a token for the product logo's color
+    display: flex;
+    font-size: 18px;
+    font-weight: 700;
+    height: 100%;
+    justify-content: flex-start;
+    line-height: 1.25;
+    margin-left: calc(#{$wfp-logo-wrapper-width} + #{$spacing-05}); // [1]
+    text-transform: uppercase;
+
+    @include breakpoint-down(md) {
+      font-size: 14px;
+      margin-left: $spacing-03;
+    }
+  }
+
+  .#{$prefix}--main-navigation-ext__main {
+    align-self: flex-end;
+    padding: $spacing-05 0 $nav-main-padding-bottom;
+
+    @include breakpoint-down(md) {
+      align-items: baseline;
+      align-self: center;
+      display: flex;
+    }
+  }
+
+  .#{$prefix}--main-navigation-ext__settings {
+    align-items: center;
+    display: flex;
+    justify-content: flex-end;
+
+    @include breakpoint-down(md) {
+      display: none;
+    }
+
+    // Apply horizontal space between any settings element
+    & > * + * {
+      margin-left: $spacing-07;
+    }
+  }
+
+  /* Block Language styles */
+  .#{$prefix}--language-ext {
+    color: $text-secondary;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.36px;
+    position: relative;
+    text-transform: uppercase;
+  }
+
+  .#{$prefix}--language-ext__trigger {
+    align-items: center;
+    display: flex;
+    user-select: none;
+
+    @include breakpoint-down(md) {
+      color: $text-on-color;
+      font-size: 14px;
+      padding: 1rem;
+    }
+  }
+
+  .#{$prefix}--language-ext-chevron {
+    margin-left: $spacing-02;
+  }
+
+  .#{$prefix}--language-ext__dropdown {
+    background-color: $background;
+    border-bottom: 5px solid #006aa0;
+    box-shadow: 0 1px 8px rgb(0 0 0 / 30%);
+    display: none;
+    padding: $spacing-03 $spacing-02;
+    position: absolute;
+    right: 0;
+    top: calc(100% + #{$spacing-02});
+    width: 12rem;
+    z-index: 8100;
+
+    @include breakpoint-down(md) {
+      border-bottom: none;
+      box-shadow: none;
+      padding: $spacing-03;
+      position: static;
+      width: 100%;
+    }
+
+    &.#{$prefix}--language-ext__dropdown--is-shown {
+      display: block;
+    }
+  }
+
+  .#{$prefix}--language-ext-dropdown-option {
+    padding: $spacing-03;
+
+    @include breakpoint-down(md) {
+      @include type-style('body-short-01');
+
+      font-weight: 700;
+      padding: $spacing-05 $spacing-03;
+    }
+
+    &:hover {
+      @include breakpoint-up(md) {
+        background-color: $link-primary;
+      }
+
+      & > a {
+        @include breakpoint-up(md) {
+          color: $text-on-color;
+        }
+      }
+    }
+
+    &:active {
+      @include breakpoint-down(md) {
+        background-color: #007dbc;
+
+        & > a {
+          color: $text-on-color;
+        }
+      }
+    }
+
+    & > a {
+      color: $text-secondary;
+    }
+  }
+  /* End block Language styles */
+
+  /* Block User styles */
+  .#{$prefix}--user-ext {
+    position: relative;
+  }
+
+  .#{$prefix}--user-ext__trigger {
+    align-items: center;
+    color: $text-secondary;
+    cursor: pointer;
+    display: flex;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.36px;
+    text-transform: uppercase;
+    user-select: none;
+
+    @include breakpoint-down(md) {
+      color: $text-on-color;
+      font-size: 14px;
+      padding: 1rem;
+    }
+  }
+
+  .#{$prefix}--user-ext__chevron {
+    margin-left: $spacing-02;
+  }
+
+  .#{$prefix}--user-ext__dropdown {
+    background-color: $background;
+    border-bottom: 5px solid #006aa0;
+    box-shadow: 0 1px 8px rgb(0 0 0 / 30%);
+    display: none;
+    padding: $spacing-05;
+    position: absolute;
+    right: 0;
+    top: calc(100% + #{$spacing-02});
+    width: 18rem;
+    z-index: 8100;
+
+    @include breakpoint-down(md) {
+      border-bottom: none;
+      box-shadow: none;
+      position: static;
+      width: 100%;
+    }
+
+    &.#{$prefix}--user-ext__dropdown--is-shown {
+      display: block;
+    }
+  }
+
+  .#{$prefix}--user-ext__profile-item {
+    align-items: baseline;
+    display: flex;
+    font-size: 12px;
+
+    & + .#{$prefix}--user-ext__profile-item {
+      margin-top: $spacing-03;
+    }
+  }
+
+  .#{$prefix}--user-ext__profile-label {
+    font-weight: 600;
+  }
+
+  .#{$prefix}--user-ext__profile-value {
+    margin-left: $spacing-02;
+  }
+
+  .#{$prefix}--user-ext__profile-actions {
+    align-items: baseline;
+    border-top: 1px solid $border-subtle;
+    display: flex;
+    justify-content: space-between;
+    margin-top: $spacing-04;
+    padding-top: $spacing-04;
+  }
+
+  .#{$prefix}--user-ext__profile-edit {
+    font-size: 14px;
+  }
+  /* End block User styles */
+
+  .#{$prefix}--main-navigation-ext__nav {
+    align-items: baseline;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: $spacing-04;
+
+    @include breakpoint-down(md) {
+      margin-top: 0;
+    }
+  }
+
+  .#{$prefix}--main-navigation-ext__mobile-menu-button {
+    display: none;
+
+    @include breakpoint-down(lg) {
+      display: block;
+    }
+  }
+
+  // Wrap all nav links in a dropdown on small mobile devices
+  .#{$prefix}--main-navigation-ext__nav-wrapper {
+    align-items: baseline;
+    display: flex;
+    justify-content: flex-end;
+
+    @include breakpoint-down(md) {
+      background-color: #00547f;
+      box-shadow: 0 1px 8px rgb(0 0 0 / 20%);
+      display: none;
+      left: 0;
+      position: absolute;
+      top: 100%;
+      width: 100%;
+    }
+
+    &.#{$prefix}--main-navigation-ext--is-shown {
+      @include breakpoint-down(md) {
+        display: block;
+      }
+    }
+  }
+
+  // Wrap only site nav links in a dropdown on medium mobile devices
+  .#{$prefix}--main-navigation-ext__site-nav {
+    @include breakpoint-between(md, lg) {
+      background-color: #00547f;
+      box-shadow: 0 1px 8px rgb(0 0 0 / 20%);
+      display: none;
+      left: 0;
+      position: absolute;
+      top: 100%;
+      width: 100%;
+    }
+
+    &.#{$prefix}--main-navigation-ext--is-shown {
+      @include breakpoint-between(md, lg) {
+        display: block;
+      }
+    }
+  }
+
+  .#{$prefix}--main-navigation-ext__site-nav-list {
+    align-items: baseline;
+    display: flex;
+    justify-content: flex-end;
+
+    @include breakpoint-down(lg) {
+      flex-direction: column;
+    }
+  }
+
+  .#{$prefix}--main-navigation-ext__site-link {
+    position: relative;
+    user-select: none;
+
+    // Styles to apply when the site link is the current page
+    &.#{$prefix}--main-navigation-ext__site-link--current::after {
+      background-color: $interactive;
+      content: '';
+      height: 4px;
+      left: 0;
+      position: absolute;
+      top: calc(100% + #{$nav-main-padding-bottom} - 4px);
+      width: 100%;
+    }
+
+    @include breakpoint-down(lg) {
+      width: 100%;
+    }
+
+    & + .#{$prefix}--main-navigation-ext__site-link {
+      margin-left: $spacing-07;
+
+      @include breakpoint-down(lg) {
+        border-top: 1px solid $border-interactive;
+        margin-left: 0;
+      }
+    }
+
+    & > a {
+      @include type-style('body-short-01');
+
+      color: $text-primary;
+      cursor: pointer;
+      font-weight: 700;
+      text-transform: uppercase;
+
+      @include breakpoint-down(lg) {
+        align-items: center;
+        color: $text-on-color;
+        display: inline-flex;
+        height: 50px;
+        padding: 0 $spacing-05;
+        width: 100%;
+      }
+
+      &:hover {
+        color: $interactive;
+
+        @include breakpoint-down(lg) {
+          color: $text-on-color;
+        }
+      }
+
+      &:active {
+        @include breakpoint-down(lg) {
+          background-color: #007dbc;
+        }
+      }
+    }
+
+    & > button {
+      @include breakpoint-down(lg) {
+        margin: $spacing-04 $spacing-05 $spacing-05;
+      }
+    }
+  }
+
+  .#{$prefix}--main-navigation-ext__mobile-settings {
+    display: none;
+    width: 100%;
+
+    @include breakpoint-down(md) {
+      display: flex;
+      flex-direction: column-reverse;
+    }
+
+    &
+      .#{$prefix}--main-navigation-ext__site-link
+      + .#{$prefix}--main-navigation-ext__site-link {
+      // Add a border to the bottom since the flex direction is reversed
+      border-bottom: 1px solid $border-interactive;
+    }
+
+    & .#{$prefix}--language-ext__trigger,
+    & .#{$prefix}--user-ext__trigger {
+      @include breakpoint-down(md) {
+        align-items: center;
+        display: flex;
+        height: 50px;
+      }
+
+      &:active {
+        @include breakpoint-down(md) {
+          background-color: #007dbc;
+        }
+      }
+    }
+  }
+
+  .#{$prefix}--main-navigation-ext__auth {
+    margin-left: $spacing-07;
+
+    @include breakpoint-down(md) {
+      margin-left: 0;
+    }
+  }
+
+  .#{$prefix}--main-navigation-ext__auth-list {
+    align-items: baseline;
+    display: flex;
+    justify-content: flex-end;
+
+    @include breakpoint-down(md) {
+      justify-content: flex-start;
+      padding: $spacing-04 $spacing-05 $spacing-05;
+    }
+  }
+
+  .#{$prefix}--main-navigation-ext__auth-action {
+    & + .#{$prefix}--main-navigation-ext__auth-action {
+      margin-left: $spacing-05;
+
+      @include breakpoint-down(md) {
+        margin-left: $spacing-06;
+      }
+    }
+  }
+}
