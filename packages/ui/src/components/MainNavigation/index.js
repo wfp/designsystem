@@ -1,1 +1,2 @@
-export default from './MainNavigation';
+export MainNavigation from './MainNavigation';
+export MainNavigationExternal from './MainNavigationExternal';

@@ -1,7 +1,7 @@
 import React from 'react';
 import markdown from './README.mdx';
 import { action } from '@storybook/addon-actions';
-import MainNavigation from '.';
+import { MainNavigation, MainNavigationExternal } from '.';
 import MainNavigationItem from '../MainNavigationItem';
 
 import {
@@ -27,11 +27,9 @@ export default {
     componentSubtitle: 'Component',
     status: 'released',
     mdx: markdown,
-    previewWidth: 'full'
-  }
+    previewWidth: 'full',
+  },
 };
-
-
 
 export const Regular = (args) => (
   <MainNavigation {...args}>
@@ -165,10 +163,10 @@ const description = `
 You can customize the content by using \`BannerNavigation\`.
 `;
 
-const sourcecode =(type)=>{
+const sourcecode = (type) => {
   return `import { Button,User, Search } from "@wfp/ui";
   import {
-    MainNavigation,
+    MainNavigationExternal,
     MainNavigationItem,
     SubNavigation,
     SubNavigationHeader,
@@ -180,11 +178,11 @@ const sourcecode =(type)=>{
     SubNavigationGroup,
     SubNavigationItem
   } from "@wfp/ui";
-  
+
   const Navigation = () => {
     return (
       <MainNavigation >
-                  
+
       <MainNavigationItem>
         <Link href="http://communities.wfp.org" target="_blank">
           Section 1
@@ -198,7 +196,7 @@ const sourcecode =(type)=>{
               <SubNavigationLink>
                   <Button small>The SubPage Link</Button>
               </SubNavigationLink>
-  
+
               <SubNavigationFilter>
                   <Search
                   small
@@ -259,7 +257,7 @@ const sourcecode =(type)=>{
               Additional content can be placed here.
               <br />
               Demo for internal close action:{' '}
-              <Link >Close Menu</Link> 
+              <Link >Close Menu</Link>
               </SubNavigationContent>
           </SubNavigation>
           }>
@@ -301,13 +299,10 @@ const sourcecode =(type)=>{
       </MainNavigationItem>
       )
     }
-  
+
   export default Navigation;
-  `
-}
-
-
-
+  `;
+};
 
 Regular.story = {
   parameters: {
@@ -316,12 +311,11 @@ Regular.story = {
       source: {
         code: sourcecode(`<Link href="http://opweb.wfp.org" target="_blank">
             Section 4
-          </Link>`)
-      }
+          </Link>`),
+      },
     },
   },
 };
-
 
 export const RegularWithButton = (args) => (
   <MainNavigation {...args}>
@@ -458,8 +452,24 @@ RegularWithButton.story = {
       source: {
         code: sourcecode(`<Button kind="navigation" type="button">
             Button
-          </Button>`)
-      }
+          </Button>`),
+      },
     },
   },
+};
+
+export const External = () => <MainNavigationExternal />;
+
+// Increase the size of the story's wrapper to show the mobile menu
+const externalStoryStyles = {
+  height: '500px',
+};
+
+External.story = {
+  parameters: {
+    docs: {
+      storyDescription: 'Add a description',
+    },
+  },
+  decorators: [(storyFn) => <div style={externalStoryStyles}>{storyFn()}</div>],
 };
