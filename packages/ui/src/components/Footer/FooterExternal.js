@@ -10,12 +10,15 @@ import { settings } from '../../globals/js';
 
 const { prefix } = settings;
 
-const FooterExternal = ({className, productName, children, metaContent, metaLinks}) => {
-  const externalClasses = classnames(
-    `${prefix}--footer-ext`,
-    className
-  );
-  return(
+const FooterExternal = ({
+  className,
+  productName,
+  children,
+  metaContent,
+  metaLinks,
+}) => {
+  const externalClasses = classnames(`${prefix}--footer-ext`, className);
+  return (
     <footer className={externalClasses}>
       <Wrapper pageWidth="lg">
         <div className={`${prefix}--footer-ext__content`}>
@@ -23,7 +26,7 @@ const FooterExternal = ({className, productName, children, metaContent, metaLink
             <div className={`${prefix}--footer-ext__branding`}>
               <WfpLogoVerticalEn alt="WFP" />
               <div className={`${prefix}--footer-ext__product-name`}>
-                  {productName}
+                {productName}
               </div>
             </div>
             <div className={`${prefix}--footer-ext__address`}>
@@ -61,9 +64,9 @@ const FooterExternal = ({className, productName, children, metaContent, metaLink
             </div>
           </div>
           <div className={`${prefix}--footer-ext__nav-wrapper`}>
-                {children}
+            <LinksColumn />
+            <LinksColumn />
           </div>
-              
         </div>
         <div className={`${prefix}--footer-ext__legal`}>
           <span>{new Date().getFullYear()} © World Food Programme</span>
@@ -76,7 +79,7 @@ const FooterExternal = ({className, productName, children, metaContent, metaLink
       </Wrapper>
     </footer>
   );
-}
+};
 
 FooterExternal.propTypes = {
   /**
@@ -89,7 +92,33 @@ FooterExternal.propTypes = {
   metaLinks: PropTypes.node,
 };
 
-
+const LinksColumn = () => {
+  return (
+    <div className={`${prefix}--links-column`}>
+      {/* Title is optional */}
+      <p className={`${prefix}--links-column__title`}>Title</p>
+      <nav>
+        <ul className={`${prefix}--links-column__nav-list`}>
+          <li className={`${prefix}--links-column-link`}>
+            <Link>First link</Link>
+          </li>
+          <li className={`${prefix}--links-column-link`}>
+            <Link>Second link</Link>
+          </li>
+          <li className={`${prefix}--links-column-link`}>
+            <Link>Third link</Link>
+          </li>
+          <li className={`${prefix}--links-column-link`}>
+            <Link>Fourth link</Link>
+          </li>
+          <li className={`${prefix}--links-column-link`}>
+            <Link>Fifth link</Link>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  );
+};
 
 const FooterMetaLink = ({ className, href, children }) => {
   const wrapperClasses = classnames(
@@ -97,10 +126,10 @@ const FooterMetaLink = ({ className, href, children }) => {
     className
   );
   return (
-      <li className={wrapperClasses}>
-        <Link href={href} >{children}</Link>
-      </li>
-    );
+    <li className={wrapperClasses}>
+      <Link href={href}>{children}</Link>
+    </li>
+  );
 };
 
 FooterMetaLink.propTypes = {
@@ -112,4 +141,4 @@ FooterMetaLink.propTypes = {
   children: PropTypes.node,
 };
 
-export {FooterExternal, FooterMetaLink};
+export { FooterExternal, LinksColumn, FooterMetaLink };

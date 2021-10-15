@@ -17,7 +17,7 @@
     grid-template-columns: 2fr 3fr;
     padding-bottom: $spacing-05;
 
-    @include breakpoint-down(md) {
+    @media (max-width: 860px) {
       grid-template-columns: 1fr;
     }
   }
@@ -68,29 +68,40 @@
   }
 
   .#{$prefix}--footer-ext__nav-wrapper {
-    display: grid;
-    gap: $spacing-07;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
 
     @include breakpoint-down(md) {
-      grid-template-columns: 1fr;
+      flex-direction: column;
     }
   }
 
-  .#{$prefix}--footer-ext__nav-title {
+  /* Block LinksColumn */
+  // Give each column equal width
+  .#{$prefix}--links-column {
+    flex: 1;
+
+    // Apply space between any column
+    & + .#{$prefix}--links-column {
+      margin-left: $spacing-07;
+
+      @include breakpoint-down(md) {
+        margin-left: 0;
+        margin-top: $spacing-07;
+      }
+    }
+  }
+
+  .#{$prefix}--links-column__title {
     color: #36b5c5; // TODO: Use the token
     font-weight: 700; // TODO: Use the token
+    margin-bottom: $spacing-05;
     text-transform: uppercase;
   }
 
-  .#{$prefix}--footer-ext__nav-list {
-    margin-top: $spacing-05;
-  }
-
-  .#{$prefix}--footer-ext__nav-link {
+  .#{$prefix}--links-column-link {
     font-weight: 600; // TODO: Use the token
 
-    & + .#{$prefix}--footer-ext__nav-link {
+    & + .#{$prefix}--links-column-link {
       margin-top: $spacing-04;
     }
 
@@ -102,6 +113,7 @@
       }
     }
   }
+  /* End block LinksColumn */
 
   .#{$prefix}--footer-ext__legal {
     @include type-style('body-short-01');
