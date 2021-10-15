@@ -44,7 +44,7 @@
     @include reset;
     @include font-family('sans');
     appearance: none;
-    background-color: $layer; //TODO
+    background-color: $background;
     border: none;
     color: $text-primary;
     font-weight: 600;

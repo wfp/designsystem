@@ -19,3 +19,8 @@ $circumference: $radius * 2 * 3.1416;
 /// @access private
 /// @group loading
 $loading-size: 5.5rem;
+
+/// @type Number
+/// @access private
+/// @group loading
+$loading__gap: 40;

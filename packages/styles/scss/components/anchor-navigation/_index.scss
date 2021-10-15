@@ -1,0 +1,4 @@
+@forward 'anchor-navigation';
+@use 'anchor-navigation';
+
+@include anchor-navigation.anchor-navigation;

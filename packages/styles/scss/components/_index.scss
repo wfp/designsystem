@@ -8,6 +8,8 @@
 /*@use 'accordion';
 
 */
+@use 'anchor-navigation';
+@use 'auth-layout';
 @use 'button'; 
 @use 'banner-navigation';
 @use 'blockquote';
@@ -36,15 +38,19 @@
 @use 'form-hint';
 @use 'link';
 @use 'list';
+@use 'loading'; // TODO look into it more
 @use 'input';
 @use 'notification';
 @use 'text-input';
 @use 'text-area';
+@use 'modal';
+@use 'module';
+
 /*
 @use 'list-box';
-@use 'loading';
+
 @use 'menu';
-@use 'modal';
+
 @use 'multiselect';
 
 
@@ -56,10 +62,9 @@
 @use 'progress-indicator';
 
 @use 'select';
-@use 'slider';
 @use 'structured-list';
-@use 'tabs';
-@use 'tag';
+
+
 
 
 @use 'tile';
@@ -69,6 +74,14 @@
 @use 'treeview';
 @use 'ui-shell';
 */
+@use 'secondary-navigation';
+@use 'story';
+@use 'slider';
+@use 'sidebar';
+@use 'sub-navigation';
+@use 'table';
+@use 'tabs';
+@use 'tag';
 @use 'number-input';
 @use 'radio-button';
 @use 'main-navigation';
@@ -77,3 +90,7 @@
 @use 'read-more';
 @use 'search';
 @use 'info-bar';
+@use 'item';
+@use 'unit';
+@use 'user';
+@use 'value';

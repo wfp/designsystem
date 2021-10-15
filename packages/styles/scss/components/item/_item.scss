@@ -1,0 +1,204 @@
+//
+// Copyright IBM Corp. 2016, 2018
+//
+// This source code is licensed under the Apache-2.0 license found in the
+// LICENSE file in the root directory of this source tree.
+//
+
+//-----------------------------
+// List
+//-----------------------------
+
+@use '../../config' as *;
+@use '../../spacing' as *;
+@use '../../theme' as *;
+@use '../../type' as *;
+@use '../../breakpoint' as *;
+@use '../../utilities/convert' as *;
+
+/// List styles
+/// @access public
+/// @group item
+@mixin item {
+  .#{$prefix}--item {
+    padding: $spacing-06;
+    margin: 0;
+    text-decoration: none;
+    display: flex !important;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: $text-primary;
+
+    &--section {
+      padding: $spacing-08 0;
+      text-align: left;
+      flex-direction: row;
+      justify-content: space-between;
+      h2 {
+        @include type-style('heading-02');
+      }
+      p {
+        opacity: 0.6;
+        @include type-style('caption-01');
+      }
+    }
+    &--large {
+      min-height: 17rem;
+      padding: 2rem 0;
+      height: 100%;
+      width: 100%;
+      .#{$prefix}--item__text-wrapper {
+        flex-direction: column;
+      }
+      .#{$prefix}--item__image {
+        width: 9em;
+        margin-bottom: 1em;
+      }
+      .#{$prefix}--item__title-wrapper {
+        justify-content: center;
+      }
+    }
+
+    &--sidebar {
+      cursor: pointer;
+      border-bottom: 1px solid $border-subtle;
+      &.#{$prefix}--item--active {
+        background: $layer;
+      }
+    }
+    &--sidebar {
+      cursor: pointer;
+      border-bottom: 1px solid $border-subtle;
+      &.#{$prefix}--item--active {
+        background: $layer;
+      }
+    }
+    &--repeater {
+      cursor: pointer;
+      background: $border-strong;
+      margin-bottom: 0.3em;
+      &.#{$prefix}--item--active {
+        background: $border-strong;
+      }
+    }
+    &--button {
+      padding: 1em;
+      &:hover {
+        background: $layer;
+      }
+    }
+    &--horizontal {
+      padding: 1em;
+      width: 100%;
+      flex-direction: row;
+
+      text-align: left;
+
+      > div {
+        margin-top: 0rem;
+      }
+
+      .#{$prefix}--item__title-wrapper {
+        justify-content: space-between;
+      }
+      .#{$prefix}--item__image {
+        max-width: 5rem;
+        margin-right: 0.8em;
+      }
+
+      p {
+        color: $text-placeholder;
+      }
+      .#{$prefix}--item__button {
+        .wfp--btn {
+          margin: $spacing-02;
+        }
+      }
+    }
+    .#{$prefix}--item__content {
+      flex: 1;
+    }
+    .#{$prefix}--item__title-wrapper {
+      margin-bottom: 0; // $spacing-2xs;
+      font-size: 1em;
+      display: flex;
+      //justify-content: center;
+
+      align-items: center;
+    }
+    .#{$prefix}--item__additional {
+      font-size: 0.9em;
+      color: $text-secondary;
+      margin-left: 1em;
+    }
+    .#{$prefix}--item__additional-icon {
+      font-weight: normal;
+      height: 0.9em;
+      width: auto;
+      margin-left: 0.3em;
+      position: relative;
+      top: 0.3em;
+      path {
+        fill: $text-secondary;
+      }
+    }
+    .#{$prefix}--item__title {
+      font-size: 1em;
+    }
+    .#{$prefix}--item__right {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      text-align: right;
+      margin-left: 1em;
+    }
+    .#{$prefix}--item__text-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: stretch;
+    }
+    .#{$prefix}--item__text-wrapper__inner {
+      flex: 1;
+    }
+    .#{$prefix}--item__text {
+      flex: 1;
+      font-size: 0.85em;
+      line-height: 1.5;
+    }
+    .#{$prefix}--item__sub-content {
+      color: $text-secondary;
+      //margin-top: $spacing-3xs;
+      line-height: 1.3;
+      font-size: 0.85em;
+    }
+  }
+
+  .#{$prefix}--item__image {
+    svg,
+    .svg-inline--fa,
+    img,
+    video {
+      margin: 0;
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+    .#{$prefix}--item--large & {
+      width: 6rem;
+      /*img {
+        width: 35rem;
+        max-width: 100%;
+        max-height: 15rem;
+        height: auto;
+      }
+      svg,
+      .svg-inline--fa {
+        width: 15rem;
+        height: 15rem;
+      }*/
+      margin-bottom: $spacing-08;
+    }
+  }
+}

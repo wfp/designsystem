@@ -92,46 +92,46 @@ $deprecations--message: 'Deprecated code was found, this code will be removed be
 @import '../../components/Hero/hero';
 // @import '../../components/Card/card';
 @import '../../components/ContentSwitcher/content-switcher';
-@import '../../components/List/list';
-@import '../../components/Item/item.scss';
-@import '../../components/Loading/loading';
-@import '../../components/Modal/modal';
-@import '../../components/Module/module';
+// @import '../../components/List/list';
+// @import '../../components/Item/item.scss';
+// @import '../../components/Loading/loading'; TODO - look into it more
+// @import '../../components/Modal/modal';
+// @import '../../components/Module/module';
 @import '../../components/Notification/notification';
-@import '../../components/User/user';
-@import '../../components/Value/value';
+// @import '../../components/User/user';
+// @import '../../components/Value/value';
 @import '../../components/InlineLoading/inline-loading';
 @import '../../components/StepNavigation/step-navigation';
 @import '../../components/StepNavigationItem/step-navigation-item';
 @import '../../components/SkeletonText/skeleton';
 
 @import '../../components/Tooltip/tooltip';
-@import '../../components/Tabs/tabs';
-@import '../../components/Tag/tag';
+// @import '../../components/Tabs/tabs'; //TODO reuse ours or inherit from carbon
+// @import '../../components/Tag/tag';
 
 @import '../../components/Pagination/pagination';
 // @import '../../components/ReadMore/read-more';
-@import '../../components/Story/story';
+// @import '../../components/Story/story';
 @import '../../components/Text/text.scss';
 // @import '../../components/Breadcrumb/breadcrumb.scss';
 // @import '../../components/Blockquote/blockquote.scss';
-@import '../../components/Table/table.scss';
-@import '../../components/Slider/slider.scss';
-@import '../../components/Unit/unit.scss';
+// @import '../../components/Table/table.scss';
+// @import '../../components/Slider/slider.scss';
+// @import '../../components/Unit/unit.scss';
 
-@import '../../components/Sidebar/sidebar.scss';
+// @import '../../components/Sidebar/sidebar.scss';
 @import '../../components/SidebarItem/sidebar-item.scss';
-@import '../../components/AuthLayout/auth-layout.scss';
+// @import '../../components/AuthLayout/auth-layout.scss';
 //-------------------------------------
 
 // 🙈 Page Elements
 //-------------------------------------
 // @import '../../components/BannerNavigation/banner-navigation';
 // @import '../../components/MainNavigation/main-navigation';
-@import '../../components/SubNavigation/sub-navigation';
-@import '../../components/SecondaryNavigation/secondary-navigation';
+// @import '../../components/SubNavigation/sub-navigation';
+// @import '../../components/SecondaryNavigation/secondary-navigation';
 // @import '../../components/Footer/footer';
-@import '../../components/AnchorNavigation/anchor-navigation';
+// @import '../../components/AnchorNavigation/anchor-navigation';
 /*@import '../../components/fab/fab'; */
 
 // Cycle through all the deprecation reasons, if any exist, that have been

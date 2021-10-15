@@ -32,7 +32,7 @@
         left: -1.4rem;
         top: 0.4em;
         path {
-          fill: var(--support-02);
+          fill: $support-success;
         }
       }
     }
@@ -41,7 +41,7 @@
       .#{$prefix}--list-item__icon {
         top: 0.3em;
         path {
-          fill: var(--support-01);
+          fill: $support-error;
         }
       }
     }
@@ -95,7 +95,7 @@
   .#{$prefix}--list--tooltip {
     li {
       padding: $spacing-02;
-      border-bottom: 1px solid var(--ui-02);
+      border-bottom: 1px solid $border-subtle;
     }
   }
 
@@ -132,7 +132,7 @@
       font-weight: 600;
       display: block;
       @include type-style('heading-02'); //TODO previous font was 18, 
-      margin-bottom: $spacing-02;
+      margin-bottom: $spacing-03;
     }
 
     .#{$prefix}--list__element__content {
@@ -140,7 +140,7 @@
       display: block;
     }
     .#{$prefix}--list__element {
-      margin-bottom: $spacing-02;
+      margin-bottom: $spacing-03;
       &:last-child {
         margin-bottom: 0;
       }
