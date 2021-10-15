@@ -29,7 +29,6 @@
 
   .#{$prefix}--footer-ext__product-name {
     @include type-style('productive-heading-03');
-
     font-weight: 700; // TODO: Use the token
     margin-left: $spacing-07;
     text-transform: uppercase;

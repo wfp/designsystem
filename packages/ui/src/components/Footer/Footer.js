@@ -4,6 +4,7 @@ import classnames from 'classnames';
 import Link from '../Link';
 import Wrapper from '../Wrapper';
 import Icon from '../Icon';
+import {FooterExternal} from './FooterExternal';
 import {
   WfpLogoStandardBlackEn,
   WfpLogoVerticalEn,
@@ -32,17 +33,22 @@ const Footer = ({
   secondary,
   sdgLogo,
   pageWidth,
+  productName,
   ...other
 }) => {
   const classNames = classnames(
     `${prefix}--footer`,
-    { [`${prefix}--footer--external`]: external },
+    // { [`${prefix}--footer--external`]: external },
     className
   );
   const standardLogo = `${process.env.STORYBOOK_ASSETS}logos/standard/en/wfp-logo-standard-black-en.svg`;
 
-  const footer = (
-    <footer className={classNames}>
+  const footer = 
+    external ? (
+    <FooterExternal productName={productName} metaContent={metaContent} metaLinks={metaLinks}>{children}</FooterExternal> 
+    ) : 
+    (
+      <footer className={classNames}>
       <Wrapper pageWidth={pageWidth}>
         <div className={`${prefix}--footer__content`}>
           {/* <div className="wfp--footer__info-content"> */}
@@ -129,9 +135,12 @@ const Footer = ({
           </div>
         )}
       </Wrapper>
-    </footer>
-  );
+     </footer>
+    );
 
+   
+  
+  
   return footer;
 };
 
@@ -140,6 +149,10 @@ Footer.propTypes = {
    The content of the footer containing relevant links
  */
   children: PropTypes.node,
+  /**
+   `productName` prop is to be used in external footers.
+  */
+  productName: PropTypes.node,
   /**
    Additional className which will be added
  */
@@ -152,6 +165,11 @@ Footer.propTypes = {
    Meta content, usually the copyright notice
  */
   metaContent: PropTypes.node,
+
+  /** 
+   Meta links, usually are leagal links like privacy, terms of use.
+ */
+  metaLinks: PropTypes.node,
   /**
    Optional WFP logo for mobile devices, can be used if the Logo should be provided by the CDN
  */
