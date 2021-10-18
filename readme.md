@@ -61,6 +61,7 @@ In version 2.0 some paths will change due to the new monorepo architecture which
 - `<Icon icon={iconName} />` becones `<IconName />` imported from `import { IconName } from @wfp/icons-react``
 - `import { Component } from "@wfp/ui"` becomes `import { Component } from "@wfp/react"`
 - `@import '@wfp/ui/scss/globals/scss/styles.scss';` becomes `@import '@wfp/TODO:DEFINEPACKAGENAME';"`
+- Multiple variables like `$ui-01` becomes `$layer` to provide better readability. A full list can be found here. TODO:ENTERURLTOCOLOURS
 
 ### Packages
 
