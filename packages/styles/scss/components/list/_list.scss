@@ -23,6 +23,7 @@
   .#{$prefix}--list {
     @include reset;
     @include font-family('sans');
+    color: $text-primary;
     .#{$prefix}--list-item--checkmark,
     .#{$prefix}--list-item--cross {
       list-style-type: none;

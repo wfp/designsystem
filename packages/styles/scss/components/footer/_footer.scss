@@ -29,7 +29,8 @@
   .#{$prefix}--footer {
     @include reset;
     @include font-family('sans');
-    border-top: 2px solid var(--ui-03);
+    border-top: 2px solid $border-subtle;
+    color: $text-primary;
     background-color: $background;
     z-index: z('footer');
     padding: rem(20px) 0;

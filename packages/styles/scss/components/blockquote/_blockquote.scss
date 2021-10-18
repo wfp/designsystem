@@ -13,7 +13,7 @@
   // <button> elements cannot be used as flex containers
   .#{$prefix}--blockquote {
     background-color: $layer;
-    border-left: 5px solid $border-interactive;
+    border-left: 5px solid $support-info;
     margin: $spacing-03 0;
     position: relative;
     display: flex;
@@ -27,6 +27,7 @@
   }
 
   .#{$prefix}--blockquote__content {
+    color: $text-primary;
     padding: $spacing-05;
     line-height: 1.4;
     word-wrap: anywhere;
@@ -80,7 +81,7 @@
 
   .#{$prefix}--blockquote__icon {
     margin-left: $spacing-08;
-    fill: $interactive;
+    fill: $support-info;
     min-width: 3rem;
     height: auto;
     flex-shrink: 0;
@@ -103,7 +104,7 @@
 
   .#{$prefix}--blockquote--warning {
     border-left-color: $support-warning;
-    background: $support-warning; //$color__yellow-10;
+    background: $support-warning; //$support-warning-light;
     .#{$prefix}--blockquote__icon {
       fill: $support-warning !important;
     }
@@ -111,7 +112,7 @@
 
   .#{$prefix}--blockquote--error {
     border-left-color: $support-error;
-    background: $support-error;
+    background: $support-error; //$support-error-light;
     .#{$prefix}--blockquote__icon {
       fill: $support-error !important;
     }

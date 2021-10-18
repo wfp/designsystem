@@ -29,6 +29,7 @@
     &:hover,
     &.#{$prefix}--link--hover {
       text-decoration: underline;
+      color: $link-primary-hover;
     }
     &:visited {
       color: $link-visited;
@@ -38,7 +39,7 @@
     &:hover,
     &:focus,
     &.#{$prefix}--link--active {
-      color: $link-secondary;
+      color: $link-primary-hover;
     }
 
     &:focus,
