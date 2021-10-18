@@ -54,6 +54,14 @@ yarn install
 yarn build
 ```
 
+### Upgrade to 2.0 for existing solutions
+
+In version 2.0 some paths will change due to the new monorepo architecture which is inline with Carbon Design System.
+
+- `<Icon icon={iconName} />` becones `<IconName />` imported from `import { IconName } from @wfp/icons-react``
+- `import { Component } from "@wfp/ui"` becomes `import { Component } from "@wfp/react"`
+- `@import '@wfp/ui/scss/globals/scss/styles.scss';` becomes `@import '@wfp/TODO:DEFINEPACKAGENAME';"`
+
 ### Packages
 
 All packages can be found in `packages/`.
