@@ -71,14 +71,14 @@ export default function Logos() {
         "The acronym WFP is used globally, and must not be translated. It is usually used as part of WFP's logo. However, where the upmost simplicity and immediate recognition are necessary, the acronym can be used alone if it will aid legibility.",
       link: 'http://brand.manuals.wfp.org/en/core-elements/logo/acronym/',
     },
-    {
-      key: 'sdg',
-      title: 'The Sustainable Development Goals (SDGs)',
-      description:
-        "The Sustainable Development Goals (SDGs) logo, including the colour wheel can be used in addition to WFP's logo.",
-      link:
-        'https://www.un.org/sustainabledevelopment/news/communications-material/',
-    },
+    // {
+    //   key: 'sdg',
+    //   title: 'The Sustainable Development Goals (SDGs)',
+    //   description:
+    //     "The Sustainable Development Goals (SDGs) logo, including the colour wheel can be used in addition to WFP's logo.",
+    //   link:
+    //     'https://www.un.org/sustainabledevelopment/news/communications-material/',
+    // },
   ];
   const colors = ['blue', 'black', 'white'];
   const colorsSdg = ['colour'];
@@ -100,13 +100,13 @@ export default function Logos() {
                 <LogoElement
                   color={color}
                   logoKind={logoKind.key}
-                  src={`logos/${logoKind.key}/sdg-logo-circle`}
+                  src={`logos/latest/sdg-logo-circle`}
                 />
               ) : logoKind.key === 'emblem' || logoKind.key === 'acronym' ? (
                 <LogoElement
                   color={color}
                   logoKind={logoKind.key}
-                  src={`logos/${logoKind.key}/wfp-logo-${logoKind.key}-${color}`}
+                  src={`logos/latest/wfp-logo-${logoKind.key}-${color}-all`}
                 />
               ) : (
                 <div>
@@ -114,7 +114,7 @@ export default function Logos() {
                     <LogoElement
                       color={color}
                       logoKind={logoKind.key}
-                      src={`logos/${logoKind.key}/${language}/wfp-logo-${logoKind.key}-${color}-${language}`}
+                      src={`logos/latest/wfp-logo-${logoKind.key}-${color}-${language}`}
                     />
                   ))}
                 </div>
