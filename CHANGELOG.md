@@ -1,3 +1,10 @@
+## [1.20.3](https://github.com/wfp/ui/compare/v1.20.2...v1.20.3) (2021-10-19)
+
+
+### Bug Fixes
+
+* **style:** fixed color of selected item on react select ([daf5b6f](https://github.com/wfp/ui/commit/daf5b6f5053574276f25d73bc1453afc0d97bcc8))
+
 ## [1.20.2](https://github.com/wfp/ui/compare/v1.20.1...v1.20.2) (2021-09-15)
 
 
