@@ -21,7 +21,7 @@
 /// @access public
 /// @group text-area
 
-$input-border: 1px solid var(--field-border-01) !default;
+$input-border: 1px solid var(--field-border-01) !default; //TODO change to current token $field-border
 $input-border-radius: 0px !default;
 $input-height: 40px !default;
 
@@ -74,7 +74,7 @@ $input-height: 40px !default;
   }
 
   &[data-invalid]:focus + .#{$prefix}--label {
-    color: $support-error;
+    color: $support-error; // TODO $text-error
   }
 
   &:read-only {

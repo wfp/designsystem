@@ -8,6 +8,7 @@
 @use '../../config' as *;
 @use '../../spacing' as *;
 @use '../../theme' as *;
+@use '../../feature-flags' as *;
 @use '../../type' as *;
 @use '../../utilities/convert' as *;
 @use '../../utilities/focus-outline' as *;
@@ -32,6 +33,20 @@ $input-label-weight: 400 !default;
     //margin-bottom: 2rem;
   }
 
+  
+
+  .#{$prefix}--label {
+    @include reset;
+    @include font-family('sans');
+    @include type-style('body-short-01');
+    color: $text-primary;
+    font-weight: $input-label-weight;
+    font-weight: 600 !important;
+    display: inline-block;
+    vertical-align: baseline;
+    margin-bottom: $spacing-03;
+  }
+
   .#{$prefix}--form-item--inline {
     flex-direction: row;
     align-items: center;
@@ -44,21 +59,9 @@ $input-label-weight: 400 !default;
       margin-bottom: 1.3rem;
     }
   }
-
   .#{$prefix}--form-item--light input,
   .#{$prefix}--form-item--light input[type='number'] {
     background: var(--field-02) !important;
-  }
-
-  .#{$prefix}--label {
-    @include reset;
-    @include font-family('sans');
-    @include type-style('body-short-01');
-    color: var(--text-01);
-    font-weight: $input-label-weight;
-    display: inline-block;
-    vertical-align: baseline;
-    margin-bottom: $spacing-03;
   }
 
   .#{$prefix}--label .#{$prefix}--tooltip__trigger {
@@ -80,7 +83,7 @@ $input-label-weight: 400 !default;
   textarea[data-invalid],
   select[data-invalid],
   .#{$prefix}--list-box[data-invalid] {
-    border-color: var(--support-01);
+    border-color: $support-error; //$border-error
     //box-shadow: 0 2px 0px 0px var(--support-01);
 
     ~ .#{$prefix}--form-requirement {
@@ -105,12 +108,12 @@ $input-label-weight: 400 !default;
     @include reset;
     @include type-style('caption-01');
     margin: $spacing-02 0 0;
-    max-height: 0;
     font-weight: 600;
+    max-height: 0;
     line-height: 1.5;
     display: none;
     order: 3;
-    color: var(--support-01);
+    color: $support-error;
 
     &.invalid {
       max-height: rem(200px);
@@ -120,7 +123,7 @@ $input-label-weight: 400 !default;
     &::before {
       // content: '-';
       display: inline-block;
-      color: var(--support-01);
+      color: $support-error; //$text-error
     }
   }
 
@@ -130,7 +133,7 @@ $input-label-weight: 400 !default;
 
   .#{$prefix}--form__helper-text {
     @include type-style('helper-text-01');
-    color: $text-secondary;
+    color: $text-helper;
     order: 1;
     line-height: 1.5;
     z-index: 0;
@@ -138,6 +141,8 @@ $input-label-weight: 400 !default;
     // opacity: 1;
     margin-bottom: $spacing-03;
   }
+
+  
 }
 
 @mixin form--experimental {
@@ -158,7 +163,7 @@ $input-label-weight: 400 !default;
     @include reset;
     @include font-family;
     @include type-style('label-01');
-    color: var(--text-01);
+    color: $text-primary;
     font-weight: $input-label-weight;
     display: inline-block;
     vertical-align: baseline;
@@ -200,7 +205,7 @@ $input-label-weight: 400 !default;
   select[data-invalid],
   .#{$prefix}--form-item--invalid,
   .#{$prefix}--list-box[data-invalid] {
-    border-color: $support-error;
+    border-color: $support-error; // TODO $border-error 
     //box-shadow: 0 2px 0px 0px var(--support-01);
 
     ~ .#{$prefix}--form-requirement {
@@ -232,8 +237,8 @@ $input-label-weight: 400 !default;
     line-height: 1.5;
     z-index: 0;
     max-height: 3rem;
-    opacity: 1;
-    margin-top: $spacing-02;
+    opacity: 1; //NA-form
+    margin-top: $spacing-02; //NA-form
     margin-bottom: $spacing-03;
   }
 
@@ -241,3 +246,20 @@ $input-label-weight: 400 !default;
     opacity: 0.5;
   }
 }
+
+// @include exports('form') {
+//   @if feature-flag-enabled('components-x') {
+//     @include form--experimental;
+//   } @else {
+//     @include form;
+//   }
+// }
+
+/*
+@if feature-flag-enabled('components-x') {
+    
+
+} @else {
+  
+}
+*/

@@ -29,7 +29,7 @@
 
 @mixin module {
   .#{$prefix}--module__background {
-    background-color: var(--ui-02);
+    background-color: $background;
   }
 
   .#{$prefix}--module {
@@ -84,6 +84,7 @@
       align-items: flex-start;*/
       flex: 3;
       padding: 0.8rem 1.2rem;
+      
       > * {
         &:first-child {
           margin-top: 0;
@@ -154,19 +155,19 @@
     .#{$prefix}--module__inner {
       box-shadow: none;
       background: $background-brand;
-      color: $background;
+      color: $text-on-color;
     }
 
     .#{$prefix}--module__header {
-      border-bottom-color: rgba(var(--ui-01), 0.1);
+      border-bottom-color: $border-subtle;
     }
 
     .#{$prefix}--module__footer {
-      border-top-color: rgba(var(--ui-01), 0.1);
+      border-top-color: $border-subtle;
     }
 
     .#{$prefix}--module__title {
-      color: $field;
+      color: $text-on-color;
     }
   }
 }
