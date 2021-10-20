@@ -2,7 +2,7 @@ import React from 'react';
 
 import markdown from './README.mdx';
 import cardTwig from './Card.twig';
-import Card from '.';
+import { Card, CardExternal } from '.';
 
 export default {
   title: 'Components/Content Related/Card',
@@ -11,8 +11,8 @@ export default {
     componentSubtitle: 'Component',
     status: 'released',
     mdx: markdown,
-    twig: cardTwig
-  }
+    twig: cardTwig,
+  },
 };
 
 export const SimpleCard = (args) => <Card {...args} />;
@@ -23,8 +23,8 @@ SimpleCard.args = {
   title: 'The Climate Adaption Mangement and Innovation Initiative',
   kind: 'simple-card',
   metadata: 'Publication',
-  url:'https://www.wfp.org',
-  isExternal:true,
+  url: 'https://www.wfp.org',
+  isExternal: true,
 };
 
 export const SimpleCardWithImage = (args) => <Card {...args} />;
@@ -37,7 +37,6 @@ SimpleCardWithImage.args = {
   metadata: 'Publication',
   image: 'http://www1.wfp.org/sites/default/files/images/yemen-hero-min.jpg',
 };
-
 
 export const Overlay = (args) => <Card {...args} />;
 
@@ -52,3 +51,12 @@ Overlay.args = {
   cardHeight: '400px',
 };
 
+export const External = () => <CardExternal truncated />;
+
+External.story = {
+  parameters: {
+    docs: {
+      storyDescription: 'Add a description',
+    },
+  },
+};
