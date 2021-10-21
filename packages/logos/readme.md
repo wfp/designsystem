@@ -39,6 +39,7 @@ By using `latest` your application will always show the latest logos. Otherwise 
 
 
 
+
 <!---CDN Urls-->
 - https://uikit.wfp.org/cdn/logos/latest/wfpLogoAcronymBlackAll.svg
 - https://uikit.wfp.org/cdn/logos/latest/wfpLogoAcronymBlueAll.svg

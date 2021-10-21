@@ -29,13 +29,15 @@
 @use 'data-table/sort';
 @use 'date-picker';
 @use 'dropdown';
-@use 'file-uploader';
 
-@use 'inline-loading';*/
+
+@use 'inline-loading';
+@use 'file-uploader';*/
 @use 'form';
 @use 'form-error';
 @use 'form-group';
 @use 'form-hint';
+@use 'hero';
 @use 'link';
 @use 'list';
 @use 'loading'; // TODO look into it more
@@ -55,13 +57,13 @@
 
 
 @use 'overflow-menu';
-@use 'pagination';
+
 @use 'pagination-nav';
 @use 'popover';
 @use 'progress-bar';
 @use 'progress-indicator';
 
-@use 'select';
+
 @use 'structured-list';
 
 
@@ -69,11 +71,12 @@
 
 @use 'tile';
 @use 'time-picker';
-@use 'toggle';
 
 @use 'treeview';
 @use 'ui-shell';
 */
+@use 'pagination';
+@use 'select';
 @use 'secondary-navigation';
 @use 'story';
 @use 'slider';
@@ -84,7 +87,7 @@
 @use 'table';
 @use 'tabs';
 @use 'tag';
-// @use 'tooltip';
+@use 'tooltip';
 @use 'toggle';
 @use 'number-input';
 @use 'radio-button';
@@ -92,6 +95,7 @@
 @use 'wrapper';
 @use 'footer';
 @use 'read-more';
+@use 'react-select';
 @use 'search';
 @use 'info-bar';
 @use 'item';

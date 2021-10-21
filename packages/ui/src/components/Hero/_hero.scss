@@ -1,7 +1,7 @@
 //-----------------------------
 // Link
 //-----------------------------
-
+/*
 @import '../../globals/scss/colors';
 @import '../../globals/scss/vars';
 @import '../../globals/scss/layout';
@@ -84,9 +84,9 @@
 
   .#{$prefix}--photo-card__info__title {
     margin: 0;
-    /* @include typescale('zeta');
-    text-transform: uppercase;
-    letter-spacing: 0.05em; */
+    //  @include typescale('zeta');
+    // text-transform: uppercase;
+    // letter-spacing: 0.05em; 
     & + .#{$prefix}--photo-card__info__subtitle {
       margin-top: $spacing-xs;
     }
@@ -312,3 +312,4 @@
     }
   }
 }
+*/
