@@ -1,37 +1,44 @@
-//-----------------------------
-// Link
-//-----------------------------
-/*
-@import '../../globals/scss/colors';
-@import '../../globals/scss/vars';
-@import '../../globals/scss/layout';
-@import '../../globals/scss/typography';
-@import '../../globals/scss/helper-mixins';
-@import '../../globals/scss/vendor/@wfp/import-once/scss/import-once';
-@import '../../globals/scss/css--reset';
+//
+// Copyright IBM Corp. 2016, 2018
+//
+// This source code is licensed under the Apache-2.0 license found in the
+// LICENSE file in the root directory of this source tree.
+//
 
-@include exports('empty') {
+@use '../../config' as *;
+@use '../../spacing' as *;
+@use '../../theme' as *;
+@use '../../breakpoint' as *;
+@use '../../type' as *;
+@use '../../utilities/convert' as *;
+
+/// Empty styles
+/// @access public
+/// @group empty
+
+
+@mixin empty {
   .#{$prefix}--empty {
-    padding: $spacing-lg;
+    padding: $spacing-06;
     margin: 0;
     display: flex !important;
-    background: var(--ui-02);
+    background: $layer;
     text-align: center;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 
     &--section {
-      padding: $spacing-xl 0;
+      padding: $spacing-07 0;
       text-align: left;
       flex-direction: row;
       justify-content: space-between;
       h2 {
-        @include typescale('epsilon');
+        @include type-style('heading-02');
       }
       p {
         opacity: 0.6;
-        @include typescale('omega');
+        @include type-style('label-01');
       }
       .#{$prefix}--empty__icon {
         margin-bottom: 1em;
@@ -43,7 +50,7 @@
           path {
             // fill: var(--interactive-01);
           }
-          margin-bottom: $spacing-xs;
+          margin-bottom: $spacing-03;
         }
       }
     }
@@ -58,16 +65,16 @@
       }
 
       h2 {
-        margin-bottom: $spacing-xs;
+        margin-bottom: $spacing-03;
       }
 
       p {
-        color: var(--ui-05);
+        color: $text-disabled;
       }
       .#{$prefix}--empty__button {
-        margin-top: $spacing-md;
+        margin-top: $spacing-05;
         .wfp--btn {
-          margin: $spacing-2xs;
+          margin: $spacing-02;
         }
       }
     }
@@ -81,7 +88,7 @@
       path {
         //fill: $interactive-01;
       }
-      margin-bottom: $spacing-xs;
+      margin-bottom: $spacing-03;
     }
     .#{$prefix}--empty--large & {
       padding: 0 2rem;
@@ -97,8 +104,7 @@
         width: 15rem;
         height: 15rem;
       }
-      margin-bottom: $spacing-lg;
+      margin-bottom: $spacing-06;
     }
   }
 }
-*/
