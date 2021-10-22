@@ -1,5 +1,5 @@
 /* eslint-disable */
-/* Do not edit file! Updated at Tue, 19 Oct 2021 15:10:07 GMT from Figma */
+/* Do not edit file! Updated at Fri, 22 Oct 2021 14:24:36 GMT from Figma */
 
 export const brand = '#0b77c2';
 export const brandDark = '#1a4262';
@@ -16,7 +16,7 @@ export const backgroundInverse = '#0b1923';
 export const backgroundInverseHover = '#313c44';
 export const backgroundSelected = '#ffffff';
 export const backgroundSelectedHover = '#ffffff';
-export const backgroundBrand = '#0b1923';
+export const backgroundBrand = '#0b77c2';
 export const layer = '#f0f2f4';
 export const layerActive = '#dfe3e6';
 export const layerHover = '#0b77c2';
@@ -85,7 +85,7 @@ export const iconOnColorDisabled = '#ffffff';
 export const iconInverse = '#ffffff';
 export const iconDisabled = '#8c9ba5';
 export const borderSubtle = '#f0f3f6';
-export const borderStrong = '#dfe3e6';
+export const borderStrong = '#77a0b6';
 export const borderInverse = '#8c9ba5';
 export const borderInteractive = '#007dbc';
 export const borderError = '#c5192d';

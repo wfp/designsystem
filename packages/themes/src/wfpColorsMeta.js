@@ -1,10 +1,10 @@
 /* eslint-disable */
-/* Do not edit file! Updated at Tue, 19 Oct 2021 15:10:07 GMT from Figma */
+/* Do not edit file! Updated at Fri, 22 Oct 2021 14:24:36 GMT from Figma */
 
 const meta = {
   brand: {
     description: "WFP corporate blue",
-    variable: "brand",
+    variable: "brand (not working, check if interactive is not good eenough))",
     former: "Previous token: brand-01",
     hex: "#0b77c2",
     rgba: {
@@ -198,14 +198,14 @@ const meta = {
     category: "Background"
   },
   backgroundBrand: {
-    description: "Background overlay",
+    description: "Brand background color used in Navigation",
     variable: "backgroundBrand",
-    former: "Previous token: none",
-    hex: "#0b1923",
+    former: "Previous token: interactive-01",
+    hex: "#0b77c2",
     rgba: {
       r: 0.04313725605607033,
-      g: 0.09803921729326248,
-      b: 0.13725490868091583,
+      g: 0.46666666865348816,
+      b: 0.7607843279838562,
       a: 1
     },
     category: "Background"
@@ -914,7 +914,7 @@ const meta = {
   },
   fieldBorder: {
     description: "Border color for input fields",
-    variable: "fieldBorder",
+    variable: "fieldBorder (not working)",
     former: "Previous token: field-border-01",
     hex: "#77a0b6",
     rgba: {
@@ -1072,11 +1072,11 @@ const meta = {
     description: "Medium contrast border (3:1 AA)\nInput fields border",
     variable: "borderStrong",
     former: "Previous token: ui-04",
-    hex: "#dfe3e6",
+    hex: "#77a0b6",
     rgba: {
-      r: 0.8745098114013672,
-      g: 0.8901960849761963,
-      b: 0.9019607901573181,
+      r: 0.46666666865348816,
+      g: 0.6274510025978088,
+      b: 0.7137255072593689,
       a: 1
     },
     category: "Border"
@@ -1109,7 +1109,7 @@ const meta = {
   },
   borderError: {
     description: "3:1 AA contrast border for danger",
-    variable: "borderError",
+    variable: "borderError (not working use supportError instead)",
     former: "Previous token: none",
     hex: "#c5192d",
     rgba: {
