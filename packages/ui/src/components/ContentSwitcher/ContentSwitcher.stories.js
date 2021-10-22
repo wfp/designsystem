@@ -66,7 +66,7 @@ ButtonSwitch.story = {
     },
   },
 };
-
+/*
 export const withIcon = (args) => {
   const handleChange = () => {
     // console.log('handle any onChange here');
@@ -93,3 +93,4 @@ withIcon.story = {
     },
   },
 };
+*/

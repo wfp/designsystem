@@ -1,0 +1,58 @@
+//
+// Copyright IBM Corp. 2016, 2018
+//
+// This source code is licensed under the Apache-2.0 license found in the
+// LICENSE file in the root directory of this source tree.
+//
+
+@use '../../config' as *;
+@use '../../motion' as *;
+@use '../../spacing' as *;
+@use '../../theme' as *;
+@use '../../type' as *;
+@use '../../utilities/convert' as *;
+
+@use '../select';
+
+/// React dropzone styles
+/// @access public
+/// @group react-dropzone
+@mixin react-dropzone {
+  .#{$prefix}--dropzone {
+    &__input {
+      padding: $spacing-05;
+      border: 2px dashed $border-inverse;
+      border-radius: 4px;
+      background: $layer;
+      text-align: center;
+      cursor: pointer;
+      &--drag-active {
+        background: $border-subtle;
+        border-color: $interactive;
+        box-shadow: 0px 0px 10px rgba(#0b77c2, 0.2);
+      }
+      @include type-style('body-short-01');
+      &:hover {
+        border-color: $interactive;
+      }
+      &:focus {
+        outline: none;
+        background: $layer;
+      }
+    }
+    &__icon {
+      margin-bottom: $spacing-04;
+      path {
+        fill: $interactive;
+      }
+    }
+    &__file-list {
+      h4 {
+        @include type-style('body-short-01');
+        margin-bottom: $spacing-02;
+      }
+      margin-top: $spacing-03;
+      @include type-style('body-short-01');
+    }
+  }
+}

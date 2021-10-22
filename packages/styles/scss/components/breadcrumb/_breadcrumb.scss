@@ -34,6 +34,7 @@
     margin-right: $spacing-04;
     display: flex;
     align-items: center;
+    color: $text-primary; //TODO look into this 
   }
 
   .#{$prefix}--breadcrumb-item::after {
@@ -48,7 +49,7 @@
     //   margin-right: $spacing-04;
     // }
 
-    color: $text-placeholder;
+    color: $text-placeholder; //$icon-secondary
   }
 
   .#{$prefix}--breadcrumb--no-trailing-slash

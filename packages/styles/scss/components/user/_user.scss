@@ -59,10 +59,10 @@
   .#{$prefix}--user__icon--empty {
     border-radius: 50%;
     background-size: 100%;
-    border: 2px solid $background;
-    background-color: $text-placeholder;
+    border: 2px solid $border-subtle;
+    background-color: $icon-secondary;
     text {
-      fill: $background;
+      fill: $background; // TODO $text-on-color
       font-weight: 600;
       font-family: 'Arial';
     }

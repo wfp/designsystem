@@ -1,7 +1,7 @@
 //-----------------------------
 // Select
 //-----------------------------
-
+/*
 @import '../../globals/scss/vars';
 @import '../../globals/scss/colors';
 @import '../../globals/scss/css--reset';
@@ -83,20 +83,20 @@
     background: var(--field-02);
   }
 
-  /*.#{$prefix}--select__arrow {
-    fill: var(--interactive-01);
-    position: absolute;
-    right: 0.6rem;
-    bottom: 0.5rem;
-    width: 1rem;
-    height: 1rem;
-    pointer-events: none;
-  }*/
+  // .#{$prefix}--select__arrow {
+  //   fill: var(--interactive-01);
+  //   position: absolute;
+  //   right: 0.6rem;
+  //   bottom: 0.5rem;
+  //   width: 1rem;
+  //   height: 1rem;
+  //   pointer-events: none;
+  // }
 
   //TODO: Check validity
-  /*[data-invalid] ~ .#{$prefix}--select__arrow {
-    bottom: 2.25rem;
-  }*/
+  // [data-invalid] ~ .#{$prefix}--select__arrow {
+  //   bottom: 2.25rem;
+  // }
 
   .#{$prefix}--select__arrow {
     position: absolute;
@@ -230,3 +230,4 @@
     display: none;
   }
 }
+*/

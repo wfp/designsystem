@@ -58,6 +58,7 @@ HeroKinds.story = {
   },
 };
 
+
 export const Landscape = (args) => <Hero {...args} />;
 
 Landscape.args = {
@@ -200,7 +201,7 @@ Related.story = {
     },
   },
 };
-
+/* TODO learn more about changes done to Icon component by Robert
 export const Emergencies = (args) => <Hero {...args} />;
 
 Emergencies.args = {
@@ -229,3 +230,4 @@ Emergencies.story = {
     },
   },
 };
+*/

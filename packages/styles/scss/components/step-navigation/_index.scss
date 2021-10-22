@@ -1,0 +1,4 @@
+@forward 'step-navigation';
+@use 'step-navigation';
+
+@include step-navigation.step-navigation;

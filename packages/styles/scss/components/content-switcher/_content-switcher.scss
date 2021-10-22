@@ -14,6 +14,10 @@
 @use '../../utilities/focus-outline' as *;
 @use '../../utilities/high-contrast-mode' as *;
 
+$input-height: 40px !default;
+$content-switcher-border-radius: 6px !default;
+$content-switcher-option-border: 2px solid $focus !default;
+
 @mixin content-switcher {
   .#{$prefix}--content-switcher {
     @include font-family('sans');
@@ -24,25 +28,24 @@
   .#{$prefix}--content-switcher--sm {
     height: rem(24px);
     .#{$prefix}--content-switcher-btn {
-      padding: 0 $spacing-sm 0 $spacing-sm;
-      @include typescale('omega');
+      padding: 0 $spacing-04 0 $spacing-04;
+      @include type-style('label-01');
     }
   }
 
   .#{$prefix}--content-switcher-btn {
     @include reset;
-    @include font-smoothing;
-    @include typescale('zeta');
-    @include font-family;
+    @include type-style('body-short-01');
+    @include font-family('sans');
     background-color: transparent;
     display: flex;
     align-items: center;
-    padding: 0 $spacing-xl;
+    padding: 0 $spacing-07;
     margin: 0;
     font-weight: 600;
     text-decoration: none;
-    border: 2px solid var(--interactive-01);
-    color: var(--interactive-01);
+    border: 2px solid $interactive;
+    color: $interactive;
 
     &:focus {
       outline: 1px solid transparent;
@@ -67,7 +70,7 @@
   }
 
   .#{$prefix}--content-switcher__icon {
-    margin-right: $spacing-xs;
+    margin-right: $spacing-03;
     fill: currentColor;
     // need to color any child path or g
     * {
@@ -116,8 +119,8 @@
   }
 
   .#{$prefix}--content-switcher-btn.#{$prefix}--content-switcher--selected {
-    background-color: var(--interactive-01);
-    color: var(--inverse-01);
+    background-color: $interactive;
+    color: $text-on-color;
     outline: 1px solid transparent;
 
     &:hover,

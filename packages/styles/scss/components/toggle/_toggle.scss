@@ -15,601 +15,185 @@
 @use '../../utilities/convert' as *;
 @use '../../utilities/high-contrast-mode' as *;
 @use '../../utilities/visually-hidden' as *;
+@use '../../utilities/focus-outline' as *;
+@import '../form';
 
 /// Toggle styles
 /// @access public
 /// @group toggle
 @mixin toggle {
-  @if enabled('enable-v11-release') {
-    .#{$prefix}--toggle__label-text {
-      @include type-style('label-01');
+  .#{$prefix}--toggle {
+    @include visually-hidden;
+  }
 
+  .#{$prefix}--toggle__label {
+    @include font-family('sans');
+    position: relative;
+    display: flex;
+    align-items: center;
+    transition: $transition--base $standard-easing;
+    cursor: pointer;
+    margin: $spacing-05 0;
+  }
+
+  .#{$prefix}--toggle__appearance {
+    position: relative;
+    width: rem(48px);
+
+    &:before {
+      position: absolute;
       display: block;
-      margin-bottom: $spacing-05;
-      color: $text-secondary;
-    }
-
-    .#{$prefix}--toggle__button {
-      @include visually-hidden;
-
-      &:focus {
-        outline: none;
-      }
-    }
-
-    .#{$prefix}--toggle__appearance {
-      display: grid;
-      align-items: center;
-      column-gap: $spacing-03;
+      content: '';
+      width: 100%;
+      height: rem(28px);
+      top: rem(-14px);
+      border-radius: rem(28px);
+      background-color: $border-inverse; //TODO create token for ui-05 to cater for background
+      transition: $transition--base $standard-easing;
       cursor: pointer;
-      grid-template-columns: max-content max-content;
     }
 
-    .#{$prefix}--toggle__switch {
-      position: relative;
-      width: rem(48px);
-      height: rem(24px);
-      background-color: $toggle-off;
-      border-radius: rem(12px);
-      transition: background-color $duration-fast-01 motion(exit, productive);
-
-      &::before {
-        position: absolute;
-        top: rem(3px);
-        left: rem(3px);
-        width: rem(18px);
-        height: rem(18px);
-        background-color: $icon-on-color;
-        border-radius: 50%;
-        content: '';
-        transition: transform $duration-fast-01 motion(exit, productive);
-      }
+    &:after {
+      box-sizing: border-box;
+      position: absolute;
+      display: block;
+      border: 3px solid $border-inverse;
+      cursor: pointer;
+      top: -14px;
+      width: rem(28px);
+      height: rem(28px);
+      background-color: $background;
+      border-radius: 50%;
+      content: '';
+      transition: $transition--base $standard-easing;
     }
+  }
 
-    .#{$prefix}--toggle__button:focus
-      + .#{$prefix}--toggle__label
-      .#{$prefix}--toggle__switch,
-    .#{$prefix}--toggle__button:active
-      + .#{$prefix}--toggle__label
-      .#{$prefix}--toggle__switch {
-      box-shadow: 0 0 0 1px $focus-inset, 0 0 0 3px $focus;
-    }
+  .#{$prefix}--toggle--small + .#{$prefix}--toggle__label {
+    width: rem(32px);
+  }
 
-    .#{$prefix}--toggle__switch--checked {
-      background-color: $support-success;
+  .#{$prefix}--toggle--small
+    + .#{$prefix}--toggle__label
+    .#{$prefix}--toggle__appearance {
+    width: rem(32px);
+    height: rem(16px);
 
-      &::before {
-        transform: translateX(rem(24px));
-      }
-    }
-
-    .#{$prefix}--toggle__text {
-      @include type-style('body-long-01');
-
-      color: $text-primary;
-    }
-
-    .#{$prefix}--toggle__appearance--sm .#{$prefix}--toggle__switch {
-      width: rem(32px);
+    &:before {
+      box-sizing: border-box;
       height: rem(16px);
-
-      &::before {
-        width: rem(10px);
-        height: rem(10px);
-      }
+      width: rem(32px);
+      border-radius: 0.9375rem;
+      background-color: transparent;
+      border: 2px solid $border-inverse;
+      top: 0;
     }
 
-    .#{$prefix}--toggle__appearance--sm
-      .#{$prefix}--toggle__switch--checked::before {
-      transform: translateX(rem(16px));
+    &:after {
+      width: rem(10px);
+      height: rem(10px);
+      background-color: $border-inverse; //TODO create token for ui-05 to cater for background
+      border: none;
+      top: 3px;
+      left: 3px;
     }
+  }
 
+  .#{$prefix}--toggle__check {
+    fill: $border-inverse;
+    position: absolute;
+    left: 6px;
+    top: 6px;
+    z-index: 1;
+    transition: $transition--base $standard-easing;
+    transform: scale(0.2);
+  }
+
+  .#{$prefix}--toggle--small:checked
+    + .#{$prefix}--toggle__label
     .#{$prefix}--toggle__check {
-      position: absolute;
-      top: rem(6px);
-      right: rem(5px);
-      fill: $support-success;
-      visibility: hidden;
-    }
+    fill: $interactive;
+    transform: scale(1) translateX(16px);
+  }
 
-    .#{$prefix}--toggle__switch--checked .#{$prefix}--toggle__check {
-      visibility: visible;
-    }
+  .#{$prefix}--toggle__text--left,
+  .#{$prefix}--toggle__text--right {
+    @include type-style('body-short-01');
+    position: relative;
+  }
 
-    .#{$prefix}--toggle--disabled .#{$prefix}--toggle__appearance {
-      cursor: not-allowed;
-    }
+  .#{$prefix}--toggle__text--left {
+    margin-right: $spacing-03;
+  }
 
-    .#{$prefix}--toggle--disabled .#{$prefix}--toggle__label-text,
-    .#{$prefix}--toggle--disabled .#{$prefix}--toggle__text {
-      color: $text-disabled;
-    }
+  .#{$prefix}--toggle__text--right {
+    margin-left: $spacing-03;
+  }
 
-    .#{$prefix}--toggle--disabled .#{$prefix}--toggle__switch {
-      background-color: button.$button-disabled;
-
-      &::before {
-        background-color: $icon-on-color-disabled;
-      }
-    }
-
-    .#{$prefix}--toggle--disabled .#{$prefix}--toggle__check {
-      fill: button.$button-disabled;
-    }
-
-    // HCM
-
-    .#{$prefix}--toggle__switch,
-    .#{$prefix}--toggle__switch::before {
-      @include high-contrast-mode('outline');
-    }
-
-    // stylelint-disable-next-line no-duplicate-selectors
-    .#{$prefix}--toggle__button:focus
-      + .#{$prefix}--toggle__label
-      .#{$prefix}--toggle__switch,
-    .#{$prefix}--toggle__button:active
-      + .#{$prefix}--toggle__label
-      .#{$prefix}--toggle__switch {
-      @include high-contrast-mode('focus');
-    }
-  } @else {
-    .#{$prefix}--toggle {
-      @include visually-hidden;
-
-      &:focus {
-        outline: none;
-      }
-    }
-
-    .#{$prefix}--toggle__label {
-      @include type-style('label-01');
-
-      position: relative;
-      display: flex;
-      align-items: center;
-      margin: $spacing-03 0;
-      cursor: pointer;
-    }
-
-    // V11: It looks like this block no longer applies to any element.
-    // May need to check with Vue/Angular implementations,
-    // but I do not see any `toggle__appearance` in the rendered HTML.
-    // There seem to be quite a few references throughout this file.
+  .#{$prefix}--toggle:checked
+    + .#{$prefix}--toggle__label
     .#{$prefix}--toggle__appearance {
-      position: relative;
-      width: rem(48px);
-      height: rem(24px);
-
-      // Toggle background oval
-      &::before {
-        position: absolute;
-        top: 0;
-        display: block;
-        width: rem(48px);
-        height: rem(24px);
-        box-sizing: border-box;
-        background-color: $toggle-off;
-        border-radius: rem(15px);
-        // Corresponds to the double-border for focused state (`0 0 0 1px $ui-02, 0 0 0 3px $focus`)
-        box-shadow: 0 0 0 1px transparent, 0 0 0 3px transparent;
-        content: '';
-        cursor: pointer;
-        transition: box-shadow $duration-fast-01 motion(exit, productive),
-          background-color $duration-fast-01 motion(exit, productive);
-        will-change: box-shadow;
-      }
-
-      // Toggle circle
-      &::after {
-        position: absolute;
-        top: rem(3px);
-        left: rem(3px);
-        display: block;
-        width: rem(18px);
-        height: rem(18px);
-        box-sizing: border-box;
-        background-color: $icon-on-color;
-        border-radius: 50%;
-        content: '';
-        cursor: pointer;
-        transition: transform $duration-fast-01 motion(exit, productive);
-      }
+    &:before {
+      background-color: $interactive;
     }
 
-    .#{$prefix}--toggle__check {
-      position: absolute;
-      z-index: 1;
-      top: rem(6px);
-      left: rem(6px);
-      width: rem(6px);
-      height: rem(5px);
-      fill: $icon-on-color;
-      transform: scale(0.2);
-      transition: $duration-fast-01 motion(exit, productive);
+    &:after {
+      transform: translateX(24px);
+      background-color: $background;
+      box-shadow: none;
+      border-color: $border-interactive;
+    }
+  }
+
+  .#{$prefix}--toggle--small:checked
+    + .#{$prefix}--toggle__label
+    .#{$prefix}--toggle__appearance {
+    &:before {
+      background-color: $interactive;
+      border-color: $border-interactive;
     }
 
-    .#{$prefix}--toggle__text--left,
-    .#{$prefix}--toggle__text--right {
-      @include type-style('body-short-01');
+    &:after {
+      background-color: $background;
+      border-color: $background;
+      margin-left: 0px;
+      transform: translateX(17px);
+    }
+  }
 
-      position: relative;
-      margin-left: $spacing-03;
+  .#{$prefix}--toggle:focus + .#{$prefix}--toggle__label {
+    .#{$prefix}--toggle__appearance:before {
+      outline: 1px solid transparent;
     }
 
-    .#{$prefix}--toggle__text--left {
-      position: absolute;
-      left: rem(48px);
+    .#{$prefix}--toggle__appearance:after {
+      @include focus-outline('blurred');
+    }
+  }
+
+  .#{$prefix}--toggle--small:focus + .#{$prefix}--toggle__label {
+    .#{$prefix}--toggle__appearance:before {
+      @include focus-outline('blurred');
     }
 
-    .#{$prefix}--toggle:checked
-      + .#{$prefix}--toggle__label
-      .#{$prefix}--toggle__text--left,
-    .#{$prefix}--toggle:not(:checked)
-      + .#{$prefix}--toggle__label
-      .#{$prefix}--toggle__text--right {
-      visibility: hidden;
-    }
-
-    .#{$prefix}--toggle:checked
-      + .#{$prefix}--toggle__label
-      .#{$prefix}--toggle__text--right,
-    .#{$prefix}--toggle:not(:checked)
-      + .#{$prefix}--toggle__label
-      .#{$prefix}--toggle__text--left {
-      display: inline;
-    }
-
-    .#{$prefix}--toggle:checked
-      + .#{$prefix}--toggle__label
-      .#{$prefix}--toggle__appearance {
-      &::before {
-        background-color: $support-success;
-      }
-
-      &::after {
-        background-color: $icon-on-color;
-        transform: translateX(rem(24px));
-      }
-    }
-
-    //----------------------------------------------
-    // Focus
-    // ---------------------------------------------
-    .#{$prefix}--toggle
-      + .#{$prefix}--toggle__label
-      .#{$prefix}--toggle__appearance::before {
-      // Corresponds to the double-border for focused state (`0 0 0 1px $ui-02, 0 0 0 3px $focus`)
-      box-shadow: 0 0 0 1px transparent, 0 0 0 3px transparent;
-    }
-
-    .#{$prefix}--toggle:focus + .#{$prefix}--toggle__label,
-    .#{$prefix}--toggle:active
-      + .#{$prefix}--toggle__label
-      .#{$prefix}--toggle__appearance::before {
-      box-shadow: 0 0 0 1px $layer-accent, 0 0 0 3px $focus;
-    }
-
-    //----------------------------------------------
-    // Disabled
-    // ---------------------------------------------
-    .#{$prefix}--toggle:disabled + .#{$prefix}--toggle__label {
-      cursor: not-allowed;
-    }
-
-    .#{$prefix}--toggle:disabled
-      + .#{$prefix}--toggle__label
-      .#{$prefix}--toggle__appearance {
-      &::before {
-        background-color: $layer-disabled;
-      }
-
-      &::after {
-        background-color: button.$button-disabled;
-      }
-
-      &::before,
-      &::after {
-        cursor: not-allowed;
-        transition: $duration-fast-01 motion(exit, productive);
-      }
-    }
-
-    .#{$prefix}--toggle:disabled
-      + .#{$prefix}--toggle__label
-      .#{$prefix}--toggle__text--left,
-    .#{$prefix}--toggle:disabled
-      + .#{$prefix}--toggle__label
-      .#{$prefix}--toggle__text--right {
-      color: $text-disabled;
-    }
-
-    .#{$prefix}--toggle:disabled:active
-      + .#{$prefix}--toggle__label
-      .#{$prefix}--toggle__appearance:before {
+    .#{$prefix}--toggle__appearance:after {
+      outline: none;
       box-shadow: none;
     }
+  }
 
-    .#{$prefix}--toggle:disabled
-      + .#{$prefix}--toggle__label
-      .#{$prefix}--toggle__check {
-      fill: $icon-disabled;
-    }
+  .#{$prefix}--toggle:disabled + .#{$prefix}--toggle__label {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
 
-    //----------------------------------------------
-    // Small toggle
-    // ---------------------------------------------
-
-    .#{$prefix}--toggle--small
-      + .#{$prefix}--toggle__label
-      .#{$prefix}--toggle__appearance {
-      width: rem(32px);
-      height: rem(16px);
-
-      &::before {
-        top: 0;
-        width: rem(32px);
-        height: rem(16px);
-        box-sizing: border-box;
-        border-radius: 0.9375rem;
-      }
-
-      &::after {
-        top: rem(3px);
-        left: rem(3px);
-        width: rem(10px);
-        height: rem(10px);
-      }
-    }
-
-    .#{$prefix}--toggle--small:checked
-      + .#{$prefix}--toggle__label
-      .#{$prefix}--toggle__check {
-      fill: $support-success;
-      transform: scale(1) translateX(rem(16px));
-    }
-
-    .#{$prefix}--toggle--small
-      + .#{$prefix}--toggle__label
-      .#{$prefix}--toggle__text--left {
-      left: rem(32px);
-    }
-
-    .#{$prefix}--toggle--small:checked
-      + .#{$prefix}--toggle__label
-      .#{$prefix}--toggle__appearance {
-      &::after {
-        margin-left: 0;
-        transform: translateX(rem(17px));
-      }
-    }
-
-    // -----------------------------------------------------
-    // new accessible toggle
-    // TODO: deprecate styles above this line
-    // -----------------------------------------------------
-
-    .#{$prefix}--toggle-input {
-      @include visually-hidden;
-
-      &:focus {
-        outline: none;
-      }
-    }
-
-    .#{$prefix}--toggle-input__label {
-      @include type-style('label-01');
-
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      color: $text-secondary;
-      cursor: pointer;
-    }
-
-    .#{$prefix}--toggle__switch {
-      position: relative;
-      display: flex;
-      width: rem(48px);
-      height: rem(24px);
-      align-items: center;
-      cursor: pointer;
-
-      // Toggle background oval
-      &::before {
-        position: absolute;
-        top: 0;
-        display: block;
-        width: rem(48px);
-        height: rem(24px);
-        box-sizing: border-box;
-        background-color: $toggle-off;
-        border-radius: rem(15px);
-        // Corresponds to the double-border for focused state (`0 0 0 1px $ui-02, 0 0 0 3px $focus`)
-        box-shadow: 0 0 0 1px transparent, 0 0 0 3px transparent;
-        content: '';
-        transition: box-shadow $duration-fast-01 motion(exit, productive),
-          background-color $duration-fast-01 motion(exit, productive);
-        will-change: box-shadow;
-      }
-
-      // Toggle circle
-      &::after {
-        position: absolute;
-        top: rem(3px);
-        left: rem(3px);
-        display: block;
-        width: rem(18px);
-        height: rem(18px);
-        box-sizing: border-box;
-        background-color: $icon-on-color;
-        border-radius: 50%;
-        content: '';
-        transition: transform $duration-fast-01 motion(exit, productive);
-      }
-
-      .#{$prefix}--toggle-input__label & {
-        margin-top: $spacing-05;
-      }
-    }
-
-    .#{$prefix}--toggle__text--off,
-    .#{$prefix}--toggle__text--on {
-      @include type-style('body-short-01');
-
-      position: absolute;
-      // top offset needed to vertically center absolutely positioned flex child in IE11
-      top: 50%;
-      margin-left: rem(56px);
-      transform: translateY(-50%);
-      user-select: none;
-      white-space: nowrap;
-    }
-
-    //----------------------------------------------
-    // Checked
-    // ---------------------------------------------
-    .#{$prefix}--toggle-input:checked
-      + .#{$prefix}--toggle-input__label
-      > .#{$prefix}--toggle__switch
-      > .#{$prefix}--toggle__text--off,
-    .#{$prefix}--toggle-input:not(:checked)
-      + .#{$prefix}--toggle-input__label
-      > .#{$prefix}--toggle__switch
-      > .#{$prefix}--toggle__text--on {
-      visibility: hidden;
-    }
-
-    .#{$prefix}--toggle-input:checked
-      + .#{$prefix}--toggle-input__label
-      > .#{$prefix}--toggle__switch {
-      &::before {
-        background-color: $support-success;
-      }
-
-      &::after {
-        background-color: $icon-on-color;
-        transform: translateX(rem(24px));
-      }
-    }
-
-    //----------------------------------------------
-    // Focus and active
-    // ---------------------------------------------
-    .#{$prefix}--toggle-input:focus
-      + .#{$prefix}--toggle-input__label
-      > .#{$prefix}--toggle__switch::before,
-    .#{$prefix}--toggle-input:active
-      + .#{$prefix}--toggle-input__label
-      > .#{$prefix}--toggle__switch::before {
-      box-shadow: 0 0 0 1px $focus-inset, 0 0 0 3px $focus;
-    }
-
-    //----------------------------------------------
-    // Disabled
-    // ---------------------------------------------
-    .#{$prefix}--toggle-input:disabled + .#{$prefix}--toggle-input__label {
-      color: $text-disabled;
+  .#{$prefix}--toggle:disabled
+    + .#{$prefix}--toggle__label
+    .#{$prefix}--toggle__appearance {
+    &:before,
+    &:after {
       cursor: not-allowed;
-    }
-
-    .#{$prefix}--toggle-input:disabled
-      + .#{$prefix}--toggle-input__label
-      > .#{$prefix}--toggle__switch {
-      cursor: not-allowed;
-
-      &::before {
-        background-color: button.$button-disabled;
-      }
-
-      &::after {
-        background-color: $icon-on-color-disabled;
-      }
-
-      &::before,
-      &::after {
-        cursor: not-allowed;
-        transition: $duration-fast-01 motion(exit, productive);
-      }
-    }
-
-    .#{$prefix}--toggle-input:disabled:active
-      + .#{$prefix}--toggle-input__label
-      > .#{$prefix}--toggle__switch::before {
-      box-shadow: none;
-    }
-
-    //----------------------------------------------
-    // Small toggle
-    // ---------------------------------------------
-    .#{$prefix}--toggle-input--small + .#{$prefix}--toggle-input__label {
-      > .#{$prefix}--toggle__switch {
-        width: rem(32px);
-        height: rem(16px);
-
-        &::before {
-          width: rem(32px);
-          height: rem(16px);
-          border-radius: 0.9375rem;
-        }
-
-        &::after {
-          width: rem(10px);
-          height: rem(10px);
-        }
-      }
-
-      .#{$prefix}--toggle__text--off,
-      .#{$prefix}--toggle__text--on {
-        margin-left: rem(40px);
-      }
-    }
-
-    .#{$prefix}--toggle-input--small:checked
-      + .#{$prefix}--toggle-input__label {
-      > .#{$prefix}--toggle__switch::after {
-        transform: translateX(rem(17px));
-      }
-
-      .#{$prefix}--toggle__check {
-        fill: $support-success;
-        transform: scale(1) translateX(rem(16px));
-      }
-    }
-
-    .#{$prefix}--toggle-input--small:disabled:checked
-      + .#{$prefix}--toggle-input__label
-      .#{$prefix}--toggle__check {
-      fill: $layer-disabled;
-    }
-
-    //----------------------------------------------
-    // Skeleton
-    // ---------------------------------------------
-
-    .#{$prefix}--toggle__label.#{$prefix}--skeleton {
-      flex-direction: column;
-      align-items: flex-start;
-
-      .#{$prefix}--toggle__label-text {
-        margin-bottom: $spacing-03;
-      }
-    }
-
-    // Windows HCM fix
-    .#{$prefix}--toggle__switch::after,
-    .#{$prefix}--toggle__switch::before {
-      @include high-contrast-mode('outline');
-    }
-
-    // stylelint-disable-next-line no-duplicate-selectors
-    .#{$prefix}--toggle-input:focus
-      + .#{$prefix}--toggle-input__label
-      > .#{$prefix}--toggle__switch::before,
-    .#{$prefix}--toggle-input:active
-      + .#{$prefix}--toggle-input__label
-      > .#{$prefix}--toggle__switch::before {
-      @include high-contrast-mode('focus');
+      transition: $transition--base $standard-easing;
     }
   }
 }

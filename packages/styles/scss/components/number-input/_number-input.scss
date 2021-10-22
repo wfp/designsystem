@@ -57,7 +57,7 @@ $input-border: 1px solid var(--field-border-01);
 
     & ~ .#{$prefix}--form-requirement {
       order: 3;
-      color: var(--support-01);
+      color: $support-error; //TODO change $border-error
       font-weight: 400;
       margin-top: $spacing-02;
       overflow: visible;
@@ -170,7 +170,7 @@ $input-border: 1px solid var(--field-border-01);
     input[type='number'],
     input[type='number']:focus {
       outline: none;
-      border-color: var(--support-01);
+      border-color: $support-error;
       //box-shadow: 0 2px 0px 0px var(--support-01);
     }
 

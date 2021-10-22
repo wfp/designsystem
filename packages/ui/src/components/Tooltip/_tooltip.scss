@@ -1,3 +1,4 @@
+/*
 @import './_mixins.scss';
 @import './_vars.scss';
 @import './animations/fade.scss';
@@ -19,8 +20,8 @@
     &--trigger {
       cursor: pointer;
     }
-    /*opacity: 0;
-  display: none;*/
+  //   opacity: 0;
+  // display: none;
     //transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
     //transition-property: transform;
     cursor: pointer;
@@ -35,10 +36,10 @@
         top: 0;
         left: 0;
         margin-top: -4px;
-        /*&::before {
-        border-width: 0 1.5em 1em 1.5em;
-        border-color: transparent transparent #232323 transparent;
-      }*/
+      //   &::before {
+      //   border-width: 0 1.5em 1em 1.5em;
+      //   border-color: transparent transparent #232323 transparent;
+      // }
       }
     }
     &[data-popper-placement*='top'] {
@@ -46,30 +47,30 @@
         bottom: 0;
         left: 0;
         margin-bottom: -4px;
-        /*&::before {
-        border-width: 1em 1.5em 0 1.5em;
-        border-color: #232323 transparent transparent transparent;
-      }*/
+        // &::before {
+        // border-width: 1em 1.5em 0 1.5em;
+        // border-color: #232323 transparent transparent transparent;
+        // }
       }
     }
     &[data-popper-placement*='right'] {
       .#{$prefix}--tooltip__arrow {
         left: 0;
         margin-left: -4px;
-        /*&::before {
-        border-width: 1.5em 1em 1.5em 0;
-        border-color: transparent #232323 transparent transparent;
-      }*/
+      //   &::before {
+      //   border-width: 1.5em 1em 1.5em 0;
+      //   border-color: transparent #232323 transparent transparent;
+      // }
       }
     }
     &[data-popper-placement*='left'] {
       .#{$prefix}--tooltip__arrow {
         right: 0;
         margin-right: -4px;
-        /*&::before {
-        border-width: 1.5em 0 1.5em 1em;
-        border-color: transparent transparent transparent#232323;
-      }*/
+      //   &::before {
+      //   border-width: 1.5em 0 1.5em 1em;
+      //   border-color: transparent transparent transparent#232323;
+      // }
       }
     }
   }
@@ -107,3 +108,5 @@
     }
   }
 }
+
+*/

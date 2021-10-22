@@ -5,18 +5,19 @@
 // LICENSE file in the root directory of this source tree.
 //
 
-@use 'vars' as *;
-@use '../form' as * ;
+
 @use '../../config' as *;
 @use '../../spacing' as *;
 @use '../../theme' as *;
 @use '../../type' as *;
+@use 'vars' as *;
 @use '../../breakpoint' as *;
 @use '../../utilities/convert' as *;
 @use '../../utilities/placeholder-colors' as *;
 @use '../../utilities/read-only' as *;
 @use '../../utilities/focus-outline' as *;
 @use '../../utilities/skeleton' as *;
+@use '../form';
 
 $input-border: 1px solid var(--field-border-01); // TODO
 

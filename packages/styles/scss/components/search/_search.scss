@@ -44,7 +44,7 @@
     @include reset;
     @include font-family('sans');
     appearance: none;
-    background-color: $background;
+    background-color: $field;
     border: none;
     color: $text-primary;
     font-weight: 600;
@@ -82,13 +82,13 @@
 
   .#{$prefix}--search--lg {
     .#{$prefix}--search-input {
-      border: 1px solid $border-strong; //ToDO
+      border: 1px solid $border-strong; //ToDO replace with $field-border
     }
     border-radius: rem(4px);
   }
 
   .#{$prefix}--search--light .#{$prefix}--search-input {
-    background: $background;
+    background: $field;
   }
 
   .#{$prefix}--search--sm .#{$prefix}--search-input {
@@ -113,7 +113,7 @@
 
   .#{$prefix}--search-magnifier {
     left: 0.75rem;
-    fill: var(--ui-05);
+    fill: var(--ui-05); //icon-tertiary
     z-index: 2;
   }
 
@@ -121,7 +121,7 @@
     @include button-reset.reset(false);
 
     transition:  background-color $duration-fast-02 motion(standard, productive);
-    fill: var(--ui-05);
+    fill: var(--ui-05); //icon-tertiary
     cursor: pointer;
     visibility: visible;
     opacity: 1;
@@ -229,7 +229,7 @@
     }
 
     &::placeholder {
-      color: var(--text-03);
+      color: $text-helper;
       font-weight: 400;
     }
 

@@ -1,0 +1,110 @@
+//
+// Copyright IBM Corp. 2016, 2018
+//
+// This source code is licensed under the Apache-2.0 license found in the
+// LICENSE file in the root directory of this source tree.
+//
+
+@use '../../config' as *;
+@use '../../spacing' as *;
+@use '../../theme' as *;
+@use '../../breakpoint' as *;
+@use '../../type' as *;
+@use '../../utilities/convert' as *;
+
+/// Empty styles
+/// @access public
+/// @group empty
+
+
+@mixin empty {
+  .#{$prefix}--empty {
+    padding: $spacing-06;
+    margin: 0;
+    display: flex !important;
+    background: $layer;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    &--section {
+      padding: $spacing-07 0;
+      text-align: left;
+      flex-direction: row;
+      justify-content: space-between;
+      h2 {
+        @include type-style('heading-02');
+      }
+      p {
+        opacity: 0.6;
+        @include type-style('label-01');
+      }
+      .#{$prefix}--empty__icon {
+        margin-bottom: 1em;
+        display: none;
+        svg,
+        .svg-inline--fa {
+          width: 5rem;
+          height: 5rem;
+          path {
+            // fill: var(--interactive-01);
+          }
+          margin-bottom: $spacing-03;
+        }
+      }
+    }
+    &--large {
+      min-height: 17rem;
+      padding: 2rem 0;
+      height: 100%;
+      width: 100%;
+
+      > div {
+        margin-top: 0rem;
+      }
+
+      h2 {
+        margin-bottom: $spacing-03;
+      }
+
+      p {
+        color: $text-disabled;
+      }
+      .#{$prefix}--empty__button {
+        margin-top: $spacing-05;
+        .wfp--btn {
+          margin: $spacing-02;
+        }
+      }
+    }
+  }
+
+  .#{$prefix}--empty__icon {
+    svg,
+    .svg-inline--fa {
+      width: 5rem;
+      height: 5rem;
+      path {
+        //fill: $interactive-01;
+      }
+      margin-bottom: $spacing-03;
+    }
+    .#{$prefix}--empty--large & {
+      padding: 0 2rem;
+      //height: 100%;
+      img {
+        width: 35rem;
+        max-width: 100%;
+        max-height: 15rem;
+        height: auto;
+      }
+      svg,
+      .svg-inline--fa {
+        width: 15rem;
+        height: 15rem;
+      }
+      margin-bottom: $spacing-06;
+    }
+  }
+}

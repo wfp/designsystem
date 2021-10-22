@@ -26,9 +26,9 @@
 /// @group modal
 
 // Modal
-$modal-border-top: var(--interactive-01) 4px solid !default;
+$modal-border-top: $background-brand 4px solid !default;
 $modal-border-radius: 6px;
-$modal-footer-background-color: var(--ui-02) !default;
+$modal-footer-background-color: var(--ui-02) !default; //TODO use $layer token
 
 @mixin modal {
   .#{$prefix}--modal {
@@ -47,7 +47,7 @@ $modal-footer-background-color: var(--ui-02) !default;
     content: '';
     opacity: 0;
     //background-color: rgba(var(--ui-07), 0.5);
-    background-color: rgba(#092533, 0.8);; // TODO add this to figma to genrate token
+    background-color: rgba(#0B1923, 0.8);; // using current token of $overlay
     transition: opacity 200ms, z-index 0s 200ms, visibility 0s 200ms;
     visibility: hidden;
 
@@ -146,7 +146,7 @@ $modal-footer-background-color: var(--ui-02) !default;
   .#{$prefix}--modal-header__label {
     @include reset;
     @include type-style('label-01');
-    color: var(--text-02);
+    color: $text-secondary;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -157,12 +157,13 @@ $modal-footer-background-color: var(--ui-02) !default;
     @include reset;
     @include type-style('productive-heading-04');
     font-weight: 600;
-    //color: var(--text-01);
+    color: $text-primary;
   }
 
   .#{$prefix}--modal-content {
     //overflow-y: auto;
     margin-bottom: $spacing-08;
+    color: $text-primary;
 
     > * {
       @include reset;
@@ -206,7 +207,7 @@ $modal-footer-background-color: var(--ui-02) !default;
 
   .#{$prefix}--modal-close__icon {
     transition: 200ms;
-    fill: var(--ui-05);
+    fill: var(--ui-05); // TODO change $icon-tertiary
     width: rem(12px);
     height: rem(12px);
   }

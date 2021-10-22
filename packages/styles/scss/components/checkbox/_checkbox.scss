@@ -5,7 +5,6 @@
 // LICENSE file in the root directory of this source tree.
 //
 
-@use '../form';
 @use '../../config' as *;
 @use '../../spacing' as *;
 @use '../../theme' as *;
@@ -14,6 +13,8 @@
 @use '../../utilities/skeleton' as *;
 @use '../../utilities/visually-hidden' as *;
 @use '../../utilities/focus-outline' as *;
+
+@use '../form';
 
 @mixin checkbox {
   .#{$prefix}--form-item.#{$prefix}--checkbox-wrapper {
@@ -125,7 +126,7 @@
     height: rem(18px);
     width: rem(18px);
     margin-right: $spacing-03;
-    background-color: $background;
+    background-color: $field;
     border: 2px solid $border-inverse;
     min-width: rem(18px);
   }
@@ -143,7 +144,7 @@
     .#{$prefix}--checkbox-appearance {
     display: flex;
     align-items: baseline;
-    background-color: $background-brand;
+    background-color: $interactive;
     border-color: $border-interactive;
   }
 

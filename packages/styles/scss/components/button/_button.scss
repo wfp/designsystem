@@ -21,19 +21,19 @@
 
 @mixin button {
   // <button> elements cannot be used as flex containers
-  button.#{$prefix}--btn {
+  #{$prefix}--btn {
     display: inline-block;
     line-height: initial;
   }
 
   // Reset intrisic padding in Firefox (see #731)
-  button.#{$prefix}--btn::-moz-focus-inner {
+  #{$prefix}--btn::-moz-focus-inner {
     padding: 0;
     border: 0;
   }
 
   // Vertically center icon inside <button>
-  button.#{$prefix}--btn .#{$prefix}--btn__icon {
+  #{$prefix}--btn .#{$prefix}--btn__icon {
     position: relative;
     vertical-align: middle;
     top: -1px;
@@ -46,7 +46,7 @@
     }
   }
 
-  button.#{$prefix}--btn--icon-reverse {
+  #{$prefix}--btn--icon-reverse {
     .#{$prefix}--btn__icon {
       margin-left: 0;
       margin-right: $spacing-03;
@@ -75,7 +75,7 @@
   a,
   button {
     &.#{$prefix}--btn--icon-only {
-      padding: 0 $spacing-05;
+      padding: 0 $spacing-04;
 
       .#{$prefix}--btn__icon {
         margin-left: 0;
@@ -95,24 +95,24 @@
       $button-primary,
       transparent,
       $text-inverse,
-      $button-secondary-hover,
+      $button-secondary-hover, //TODO $button-primary-hover (#same color as secondary)
       $text-on-color
     );
   }
 
   .#{$prefix}--btn--accent {
     @include button-theme(
-      var(--accent-01),
+      $support-warning,
       transparent,
-      var(--text-01),
-      var(--accent-02),
-      var(--text-01)
+      $text-primary,
+      $support-warning,
+      $text-primary
     );
 
     .#{$prefix}--btn__icon,
     &:hover > .#{$prefix}--btn__icon,
     &:focus > .#{$prefix}--btn__icon {
-      fill: var(--text-01);
+      fill: $text-primary;
     }
   }
 
@@ -146,7 +146,7 @@
       transparent,
       $button-primary,
       $button-primary,
-      $button-primary-hover,
+      $button-primary-hover, // TODO rename to $button-secondary-hover
       $button-primary
     );
 
@@ -156,7 +156,7 @@
     }
 
     &:active {
-      color: $button-primary-active;
+      color: $button-primary-active;// TODO rename to $button-secondary-active
     }
 
     &:hover > .#{$prefix}--btn__icon,
@@ -181,7 +181,7 @@
 
     &:hover,
     &:focus {
-      color: var(--text-01);
+      color: $text-primary;
     }
 
     &:active {
@@ -195,7 +195,7 @@
 
     &:hover > .#{$prefix}--btn__icon,
     &:focus > .#{$prefix}--btn__icon {
-      fill: var(--text-01);
+      fill: $text-primary;
     }
   }
 
@@ -203,8 +203,8 @@
     @include button-theme(
       transparent,
       transparent,
-      var(--interactive-01),
-      var(--ui-03),
+      $interactive,
+      $border-subtle,
       var(--ui-05)
     );
 
@@ -231,119 +231,120 @@
 
     &:hover:disabled,
     &:focus:disabled {
-      color: var(--interactive-01);
+      color: $interactive;
 
       .#{$prefix}--btn__icon {
-        fill: var(--interactive-01);
+        fill: $interactive;
       }
     }
   }
 
   .#{$prefix}--btn--inverse--primary {
     @include button-theme(
-      var(--ui-01),
-      var(--ui-01),
-      var(--interactive-01),
-      var(--ui-01),
-      var(--text-01)
+      $field,
+      $field,
+      $button-primary,
+      $background,
+      $text-primary
     );
 
     &:hover {
-      color: var(--interactive-02);
+      color: $button-primary-hover;
       //border: $button-border-width solid var(--ui-01);
     }
 
     &:focus {
-      background: var(--ui-01);
-      color: var(--interactive-02);
+      background: $field;
+      color: $button-primary-hover;
     }
 
     &:hover:disabled,
     &:focus:disabled {
-      color: var(--support-01);
-      border: $button-border-width solid var(--support-01);
+      color: $support-error;
+      border: $button-border-width solid $support-error;
     }
   }
 
   .#{$prefix}--btn--inverse {
     @include button-theme(
       transparent,
-      var(--ui-01),
-      var(--ui-01),
-      rgba(var(--ui-01), 0.1),
-      var(--ui-01)
+      $field,
+      $text-on-color,
+      rgba(#ffffff, 0.1),
+      $icon-on-color
     );
 
     &:hover {
-      color: var(--inverse-01);
-      border: $button-border-width solid var(--ui-01);
+      color: $text-on-color;
+      border: $button-border-width solid $field;
     }
 
     &:focus {
-      color: var(--inverse-01);
+      color: $text-on-color;
     }
 
     &:hover:disabled,
     &:focus:disabled {
-      color: var(--support-01);
-      border: $button-border-width solid var(--support-01);
+      color: $support-error;
+      border: $button-border-width solid $support-error;
     }
   }
 
   .#{$prefix}--btn--danger {
     @include button-theme(
       transparent,
-      var(--support-01),
-      var(--support-01),
-      var(--support-01),
-      var(--support-01)
+      $support-error,
+      $support-error,
+      $support-error,
+      $support-error
     );
 
     &:hover {
-      color: var(--inverse-01);
+      color: $text-on-color;
       border: $button-border-width solid transparent;
     }
 
     &:focus {
-      color: var(--inverse-01);
+      color: $text-on-color;
     }
 
     &:active {
-      color: var(--support-dark-01);
-      border-color: var(--support-dark-01);
+      color: $button-danger-hover;
+      border-color: $button-danger-hover;
     }
 
     &:hover:disabled,
     &:focus:disabled {
-      color: var(--support-01);
-      border: $button-border-width solid var(--support-01);
+      color: $support-error;
+      border: $button-border-width solid $support-error;
     }
 
     &:hover > .#{$prefix}--btn__icon,
     &:focus > .#{$prefix}--btn__icon {
-      fill: var(--inverse-01);
+      fill: $icon-on-color;
     }
   }
 
   .#{$prefix}--btn--danger--primary {
     @include button-theme(
-      var(--support-01),
+      $support-error,
       transparent,
-      var(--inverse-01),
-      var(--support-dark-01),
-      var(--ui-01)
+      $text-on-color,
+      $button-danger-hover,
+      $icon-on-color
     );
 
     &:hover:disabled,
     &:focus:disabled {
-      color: var(--ui-01);
-      border: $button-border-width solid var(--support-01);
+      color: $text-on-color;
+      border: $button-border-width solid $support-error;
     }
   }
 
   .#{$prefix}--btn--sm {
     padding: $button-padding-sm;
     @include type-style('body-short-01');
+    font-weight: 700;
   }
 
   .#{$prefix}--btn--lg {

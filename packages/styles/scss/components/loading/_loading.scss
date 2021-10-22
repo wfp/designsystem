@@ -12,17 +12,18 @@
 @use '../../utilities/component-reset';
 @use '../../utilities/convert';
 @use '../../utilities/z-index' as *;
-@use 'vars' as *;
-@use 'functions' as *;
-@use 'animation';
+@use './vars' as *;
+@use './keyframes';
+@use './mixins' as *;
 
 /// Loading styles
 /// @access private
 /// @group loading
+
 @mixin loading {
   .#{$prefix}--loading {
     @include component-reset.reset;
-    @include animation.spin;
+    @include animation__loading--spin;
     width: $loading-size;
     height: $loading-size;
   }
@@ -30,15 +31,15 @@
   // Animation (Spin by default)
   .#{$prefix}--loading__svg {
     fill: transparent;
-    stroke: var(--interactive-01);
+    stroke: $interactive;
     stroke-width: 7;
     stroke-linecap: butt;
     stroke-dasharray: 240;
-    stroke-dashoffset: $loading__gap;
+    stroke-dashoffset: $loading-gap;
   }
 
   .#{$prefix}--loading--stop {
-    @include animation.stop;
+    @include animation__loading--stop;
   }
 
   .#{$prefix}--loading--small {
@@ -50,105 +51,90 @@
     }
   }
 
- 
-
   .#{$prefix}--loading-overlay {
     position: fixed;
-    z-index: z('overlay');
     top: 0;
     left: 0;
-    display: flex;
-    width: 100%;
     height: 100%;
-    align-items: center;
+    width: 100%;
+    background-color: var(--modal-background-02);
+    display: flex;
     justify-content: center;
-    background-color: $overlay;
-    transition: background-color $duration-slow-02 motion(standard, expressive);
+    align-items: center;
+    transition: background-color 2000ms $standard-easing;
+    z-index: z('overlay');
   }
 
   .#{$prefix}--loading-overlay--stop {
     display: none;
   }
+}
 
-  .#{$prefix}--loading__background {
-    stroke: $layer-accent;
-    stroke-dashoffset: -22;
+@mixin loading--x {
+  .#{$prefix}--loading {
+    @include reset;
+    @include animation__loading--spin;
+    width: $loading-size;
+    height: $loading-size;
+  }
+
+  // Animation (Spin by default)
+  .#{$prefix}--loading__svg {
+    fill: transparent;
   }
 
   .#{$prefix}--loading__svg circle {
-    stroke-dasharray: $circumference $circumference;
+    stroke-width: 8;
     stroke-linecap: butt;
-    stroke-width: 10;
+    stroke-dasharray: 240;
   }
 
   .#{$prefix}--loading__stroke {
-    stroke: $interactive;
-    stroke-dashoffset: loading-progress($circumference, 81);
+    stroke: var(--interactive-01);
+    stroke-dashoffset: $loading-gap;
   }
 
-  .#{$prefix}--loading--small .#{$prefix}--loading__stroke {
-    stroke-dashoffset: loading-progress($circumference, 48);
+  .#{$prefix}--loading--stop {
+    @include animation__loading--stop;
   }
 
-  
+  .#{$prefix}--loading--small {
+    width: 2rem;
+    height: 2rem;
+  }
 
   .#{$prefix}--loading--small .#{$prefix}--loading__svg {
     stroke: $interactive;
   }
 
-  
-
-  // Negative values for `stroke-dashoffset` are not supported in Safari
-  @media not all and (min-resolution: 0.001dpcm) {
-    @supports (-webkit-appearance: none) and (stroke-color: transparent) {
-      circle.#{$prefix}--loading__background {
-        stroke-dasharray: 265;
-        stroke-dashoffset: 0;
-      }
-    }
+  .#{$prefix}--loading__background {
+    stroke: $border-subtle;
+    stroke-dashoffset: 0;
   }
 
-  
-
-  
-
-  @keyframes rotate {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
+  .#{$prefix}--loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: var(--modal-background-02);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 2000ms $standard-easing;
+    z-index: z('overlay');
   }
 
-  @keyframes rotate-end-p1 {
-    100% {
-      transform: rotate(360deg);
-    }
-  }
-
-  @keyframes rotate-end-p2 {
-    100% {
-      transform: rotate(-360deg);
-    }
-  }
-
-  /* Stroke animations */
-  @keyframes init-stroke {
-    0% {
-      stroke-dashoffset: loading-progress($circumference, 0);
-    }
-    100% {
-      stroke-dashoffset: loading-progress($circumference, 81);
-    }
-  }
-
-  @keyframes stroke-end {
-    0% {
-      stroke-dashoffset: loading-progress($circumference, 81);
-    }
-    100% {
-      stroke-dashoffset: loading-progress($circumference, 0);
-    }
+  .#{$prefix}--loading-overlay--stop {
+    display: none;
   }
 }
+
+// @include exports('loading') {
+//   @if feature-flag-enabled('components-x') {
+//     @include loading--x;
+//   } @else {
+//     @include loading;
+//   }
+// }
