@@ -164,6 +164,20 @@ Large.story = {
   },
 };
 
+export const AllCaps = (args) => <Button allCaps>All caps button</Button>;
+
+const allCapsDescription =
+  'All caps buttons may be used either on external products or to highlight specific CTAs.';
+
+AllCaps.story = {
+  name: 'All caps Button',
+  parameters: {
+    docs: {
+      storyDescription: allCapsDescription,
+    },
+  },
+};
+
 export const CustomIcon = (args) => (
   <>
     <Button large icon={<div>Hello</div>}>

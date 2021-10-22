@@ -14,6 +14,7 @@ const Button = ({
   small,
   large,
   kind,
+  allCaps,
   href,
   iconReverse,
   tabIndex,
@@ -52,6 +53,7 @@ const Button = ({
     [`${prefix}--btn--danger--secondary`]: kind === 'danger--secondary',
     [`${prefix}--btn--tertiary`]: kind === 'tertiary',
     [`${prefix}--btn--animating`]: count,
+    [`${prefix}--btn--all-caps`]: allCaps,
   });
 
   const commonProps = {

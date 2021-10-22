@@ -343,6 +343,11 @@
     @include typescale(delta);
   }
 
+  .#{$prefix}--btn--all-caps {
+    letter-spacing: 0.05rem;
+    text-transform: uppercase;
+  }
+
   .#{$prefix}--btn--secondary + .#{$prefix}--btn--primary,
   .#{$prefix}--btn--tertiary + .#{$prefix}--btn--danger--primary {
     margin-left: $spacing-xs;
