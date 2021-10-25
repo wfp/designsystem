@@ -21,6 +21,10 @@ jobs:
       inputs:
         versionSpec: '14.x'
       displayName: 'Install Node.js'
+    - task: CmdLine@2
+      displayName: Checkout $(Build.SourceBranchName)
+      inputs:
+        script: 'git checkout $(Build.SourceBranchName)'
 
 #    - script: |
 #        npm config set '//registry.npmjs.org/:_authToken' "$(NPM_TOKEN)"
