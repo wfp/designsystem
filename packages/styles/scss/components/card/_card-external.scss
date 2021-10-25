@@ -33,12 +33,25 @@
   }
 
   .#{$prefix}--card-ext__media {
+    overflow: hidden;
+
     & .#{$prefix}--card-ext__image {
       height: 130px;
       margin: 0;
       object-fit: cover;
       width: 100%;
     }
+  }
+
+  // If the card is interactive, set up the properties for the animation.
+  .#{$prefix}--card-ext--interactive .#{$prefix}--card-ext__image {
+    transition: transform 0.3s ease 0s;
+    will-change: transform;
+  }
+
+  // If the card is interactive, animate the image on hover event.
+  .#{$prefix}--card-ext--interactive:hover .#{$prefix}--card-ext__image {
+    transform: scale(1.15);
   }
 
   .#{$prefix}--card-ext__info-wrapper {

@@ -45,7 +45,13 @@ const CardExternal = (props) => {
 
   return (
     /* Also expose a custom classname prop */
-    <div className={`${prefix}--card-ext`}>
+    /**
+     * A prop will establish if the card is either informative (default) or
+     * interactive.
+     * If interactive, a modifier will be added and an animation will be shown
+     * on hover event ("${prefix}--card-ext--interactive").
+     */
+    <div className={`${prefix}--card-ext ${prefix}--card-ext--interactive`}>
       {/*
        * Label is optional.
        * It can be either 'neutral' (default) or 'success'
