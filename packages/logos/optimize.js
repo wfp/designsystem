@@ -45,7 +45,7 @@ const config = {
 var readmeCdnLinks = '';
 
 function optimizeFile(file) {
-  const filepath = PATH.resolve(__dirname, `src/${file}`);
+  const filepath = PATH.resolve(__dirname, `src/logos/${file}`);
 
   const newName = file
     .replace('Type=', '')
@@ -75,7 +75,7 @@ if (FS.existsSync(PATH.resolve(__dirname, 'optimized'))) {
 
 FS.mkdirSync(PATH.resolve(__dirname, 'optimized'));
 
-FS.readdir(PATH.resolve(__dirname, 'src'), function (err, files) {
+FS.readdir(PATH.resolve(__dirname, 'src/logos'), function (err, files) {
   if (err) {
     console.error('Could not list the directory.', err);
     process.exit(1);

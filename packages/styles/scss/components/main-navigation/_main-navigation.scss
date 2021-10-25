@@ -3,12 +3,7 @@
 //
 // This source code is licensed under the Apache-2.0 license found in the
 // LICENSE file in the root directory of this source tree.
-//
 
-@use '../button/tokens' as *;
-@use '../text-input';
-@use '../tag';
-@use '../tag/mixins' as *;
 @use '../../config' as *;
 @use '../../colors' as *;
 @use '../../compat/theme' as *;
@@ -22,6 +17,8 @@
 @use '../../utilities/focus-outline' as *;
 @use '../../utilities/high-contrast-mode' as *;
 @use '../../utilities/z-index' as *;
+
+@import '../form';
 
 /// @type Number
 /// @access public
@@ -80,7 +77,7 @@ $main-navigation-menu-width: rem(300px);
     //vertical-align: middle;
     white-space: nowrap;
     a {
-      color: $text-on-color;
+      color: $text-on-color; // TODO change to $link_on_color token
       @include type-style('body-short-02');
       text-decoration: none;
       &.active {
@@ -252,8 +249,8 @@ $main-navigation-menu-width: rem(300px);
 
     .#{$prefix}--main-navigation__sub--open {
       display: block;
-      color: var(--text-01);
-      background: var(--ui-01);
+      color: $text-on-color;
+      background: $background;
     }
 
     .#{$prefix}--main-navigation__trigger {
@@ -262,7 +259,7 @@ $main-navigation-menu-width: rem(300px);
         width: 100%;
       }
       padding: $spacing-05 1em;
-      background-color: $button-secondary-active;
+      background-color: #005e8d; // TODO create a token for this color
       border-bottom: 1px solid lighten(#085387, 5); //TODO create color in figma
     }
   }

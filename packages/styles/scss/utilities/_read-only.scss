@@ -1,0 +1,19 @@
+
+@use '../theme' as *;
+
+/// Adds placeholder text color
+/// @access public
+/// @example @include read-only;
+/// @group utilities
+
+@mixin read-only($type: 'border') {
+    @if ($type == 'border') {
+      border-color: $border-subtle;
+      &:hover,
+      &:focus {
+        border-color: $border-subtle;
+        outline: none;
+        box-shadow: none;
+      }
+    }
+  }

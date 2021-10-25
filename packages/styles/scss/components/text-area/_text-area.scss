@@ -14,92 +14,109 @@
 @use '../../utilities/convert' as *;
 @use '../../utilities/focus-outline' as *;
 @use '../../utilities/placeholder-colors' as *;
+@use '../../utilities/read-only' as *;
 @use '../../utilities/skeleton' as *;
 
 /// Text area styles
 /// @access public
 /// @group text-area
+
+$input-border: 1px solid var(--field-border-01) !default; //TODO change to current token $field-border
+$input-border-radius: 0px !default;
+$input-height: 40px !default;
+
+
 @mixin text-area {
   .#{$prefix}--text-area {
     @include reset;
+    @include font-family('sans');
     @include type-style('body-long-01');
-    @include focus-outline('reset');
-
-    width: 100%;
-    min-width: 10rem;
+    //TODO: check why min-width was used
+    //min-width: 10rem;
+    // width: 100%;
+    // min-width: 10rem;
     height: 100%;
-    min-height: rem(40px);
-    padding: rem(11px) $spacing-05;
-    border: none;
-    border-bottom: 1px solid $border-strong;
+    min-height: $input-height;
+    padding: $spacing-03;
     background-color: $field;
     color: $text-primary;
-    font-family: inherit;
+    appearance: none;
+    border: $input-border;
+    border-radius: $input-border-radius;
+    order: 2;
     resize: vertical;
     transition: background-color $duration-fast-01 motion(standard, productive),
       outline $duration-fast-01 motion(standard, productive);
+  
+
+  & ~ .#{$prefix}--label {
+    order: 1;
   }
 
-  .#{$prefix}--text-area:focus,
-  .#{$prefix}--text-area:active {
-    @include focus-outline('outline');
+  &:focus {
+    @include focus-outline('border');
   }
 
-  .#{$prefix}--text-area::placeholder {
+  &::placeholder {
     @include placeholder-colors;
-    @include type-style('body-long-01');
   }
 
-  // V11: Possibly deprecate
-  .#{$prefix}--text-area--light {
-    background-color: $field-02;
-  }
-
-  .#{$prefix}--text-area--invalid {
-    padding-right: $spacing-08;
-  }
-
-  .#{$prefix}--text-area__wrapper {
-    position: relative;
-    display: flex;
-    width: 100%;
-  }
-
-  .#{$prefix}--text-area__invalid-icon {
-    position: absolute;
-    top: $spacing-04;
-    right: $spacing-05;
-    fill: $support-error;
-  }
-
-  //-----------------------------
-  // Disabled
-  //-----------------------------
-  .#{$prefix}--text-area:disabled {
-    border-bottom: 1px solid transparent;
-    background-color: $field-disabled;
-    color: $text-disabled;
+  &:disabled {
+    opacity: 0.5;
     cursor: not-allowed;
-    outline: none;
   }
 
-  .#{$prefix}--text-area:disabled::placeholder {
-    color: $text-disabled;
+  &:disabled:hover {
+    border: $input-border;
+  }
+  &:focus ~ .#{$prefix}--label {
+    color: $interactive;
   }
 
-  // V11: Possibly deprecate
-  .#{$prefix}--text-area.#{$prefix}--text-area--light:disabled {
-    background-color: $field-02;
+  &[data-invalid]:focus + .#{$prefix}--label {
+    color: $support-error; // TODO $text-error
   }
 
-  // Skeleton State
-  .#{$prefix}--text-area.#{$prefix}--skeleton {
-    @include skeleton;
-
-    height: rem(100px);
-
-    &::placeholder {
-      color: transparent;
-    }
+  &:read-only {
+    @include read-only('border');
   }
+}
+
+.#{$prefix}--textarea-fullwidth {
+  width: 100%;
+}
+
+.#{$prefix}--text-area--light {
+  background: var(--field-02);
+}
+
+// Skeleton State
+#{$prefix}--text-area.#{$prefix}--skeleton {
+  @include skeleton;
+  height: rem(100px);
+
+  &::-webkit-input-placeholder {
+    color: transparent;
+  }
+}
+
+// Skeleton State
+#{$prefix}--text-area.#{$prefix}--skeleton {
+  @include skeleton;
+  height: rem(100px);
+
+  &::-webkit-input-placeholder {
+    color: transparent;
+  }
+}
+
+// Skeleton State
+#{$prefix}--text-area.#{$prefix}--skeleton {
+  @include skeleton;
+  height: rem(100px);
+
+  &::-webkit-input-placeholder {
+    color: transparent;
+  }
+}
 }

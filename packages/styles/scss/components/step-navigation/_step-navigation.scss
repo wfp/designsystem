@@ -1,0 +1,139 @@
+@use '../form' as *;
+@use '../../breakpoint' as *;
+@use '../../config' as *;
+@use '../../motion' as *;
+@use '../../theme' as *;
+@use '../../spacing' as *;
+@use '../../type' as *;
+@use '../../utilities/convert';
+@use '../../utilities/visually-hidden' as *;
+@use '../../utilities/focus-outline' as *;
+@use '../../utilities/skeleton' as *;
+
+
+@mixin step-navigation{
+  .#{$prefix}--step-navigation {
+    @include type-style('caption-02');
+    @include font-family('sans');
+    color: $text-primary;
+    font-weight: 600;
+    height: auto;
+    width: 100%;
+    position: relative;
+
+    @include breakpoint('md') {
+      background: none;
+      min-height: rem(49px);
+    }
+  }
+
+  .#{$prefix}--step-navigation-trigger {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    //padding: 0 $spacing-md;
+    height: 2em;
+    cursor: pointer;
+    //background-color: var(--field-02);
+
+    svg {
+      width: 1em;
+      height: 1em;
+      fill: $interactive;
+    }
+
+    @include breakpoint('md') {
+      display: none;
+    }
+  }
+
+  .#{$prefix}--step-navigation-trigger-text {
+    text-decoration: none;
+    font-weight: 600;
+    color: $text-primary;
+    &:focus {
+      @include focus-outline('border');
+    }
+  }
+
+  .#{$prefix}--step-navigation__nav {
+    margin: 0;
+    padding: 0;
+    //position: absolute;
+    width: 100%;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    a {
+      text-decoration: none;
+    }
+
+    /* @include breakpoint(bp--sm--major) {
+      @include typescale('epsilon');
+      flex-direction: column;
+      margin-right: $spacing-md;
+      margin-left: $spacing-md;
+      background: none;
+      box-shadow: none;
+      z-index: auto;
+    }*/
+  }
+
+  .#{$prefix}--step-navigation__nav--inline {
+    position: relative;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .#{$prefix}--step-navigation__nav--hidden {
+    display: none;
+
+    @include breakpoint('md') {
+      display: flex;
+    }
+  }
+
+  // Small StepNavigation
+  .#{$prefix}--step-navigation--small {
+    font-size: 0.5rem;
+    .#{$prefix}--step-navigation__nav-item__text {
+      display: none;
+    }
+  }
+
+  // Vertical StepNavigation
+  .#{$prefix}--step-navigation--vertical {
+    ul {
+      flex-direction: row;
+    }
+    .#{$prefix}--step-navigation__nav-item__text {
+      margin-right: 0.5em;
+    }
+  }
+
+  // Skeleton state
+  .#{$prefix}--step-navigation.#{$prefix}--skeleton {
+    pointer-events: none;
+    cursor: default;
+  }
+
+  .#{$prefix}--step-navigation.#{$prefix}--skeleton
+    .#{$prefix}--step-navigation__nav-link {
+    @include skeleton;
+    width: rem(75px);
+    height: rem(12px);
+  }
+
+  .#{$prefix}--step-navigation.#{$prefix}--skeleton
+    .#{$prefix}--step-navigation-trigger {
+    @include skeleton;
+    width: rem(100px);
+  }
+
+  .#{$prefix}--step-navigation.#{$prefix}--skeleton
+    .#{$prefix}--step-navigation-trigger
+    svg {
+    @include visually-hidden;
+  }
+}
+

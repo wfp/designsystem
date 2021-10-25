@@ -1,0 +1,10 @@
+//----------------------------------------------
+// Modal
+// ---------------------------------------------
+@use '../../config' as *;
+
+@mixin modal--color($color) {
+    .#{$prefix}--modal-container {
+      border-top-color: $color;
+    }
+}

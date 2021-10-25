@@ -14,15 +14,16 @@ import IconConverter from './IconConverter';
 import Tippy from '@tippy.js/react';
 import { tooltipStyle } from '../../components/Tooltip';
 
-const IconPreview = ({ icon, iconsReact }) => {
+const IconPreview = ({ i, icon, iconsReact }) => {
   const iconName = icon.name;
 
   const name = icon.moduleInfo?.global
-    ? `${icon.moduleInfo.global}Glyph`
+    ? `${icon.moduleInfo.global}`
     : icon.output[0].moduleName;
   const Icon = iconsReact[name];
 
   if (!Icon) return null;
+  if (i !== 10) return null;
   return (
     <Tippy
       interactive
@@ -93,6 +94,7 @@ from '@wfp/icons-react'`}
               height: '55px',
             }}>
             <Icon
+              color="red"
               description="WFP"
               width="39"
               className="wfp--footer-cta-logo"
@@ -118,11 +120,12 @@ from '@wfp/icons-react'`}
 const wrapperStyle = { display: 'flex', flexWrap: 'wrap', margin: '0 -0.7em' };
 
 const IconList = ({ iconsReact, metadata }) => {
+  console.log(iconsReact, metadata);
   console.log('metadata', iconsReact);
   return (
     <div style={wrapperStyle}>
-      {metadata.icons.map((icon) => {
-        return <IconPreview icon={icon} iconsReact={iconsReact} />;
+      {metadata.icons.map((icon, i) => {
+        return <IconPreview i={i} icon={icon} iconsReact={iconsReact} />;
       })}
     </div>
   );

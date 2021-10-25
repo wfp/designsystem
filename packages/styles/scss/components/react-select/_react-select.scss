@@ -1,0 +1,79 @@
+//
+// Copyright IBM Corp. 2016, 2018
+//
+// This source code is licensed under the Apache-2.0 license found in the
+// LICENSE file in the root directory of this source tree.
+//
+
+@use '../../config' as *;
+@use '../../spacing' as *;
+@use '../../motion' as *;
+@use '../../type' as *;
+@use '../../breakpoint' as *;
+@use '../../theme' as *;
+@use '../../utilities/component-reset';
+@use '../../utilities/convert' as *;
+@use '../../utilities/focus-outline' as *;
+@use '../../utilities/high-contrast-mode' as *;
+@use '../../utilities/skeleton' as *;
+@use '../form';
+
+/// React Select styles
+/// @access public
+/// @group react-select
+
+$input-height: 40px !default;
+$input-border: 1px solid var(--field-border-01); 
+
+@mixin react-select {
+  .#{$prefix}--react-select-container {
+    width: 100%;
+    order: 2;
+
+    .#{$prefix}--react-select__control {
+      border-radius: 0;
+      min-height: $input-height;
+      background-color: $field;
+      border: $input-border;
+
+      &:hover {
+        border: $input-border;
+      }
+    }
+
+    .#{$prefix}--react-select__single-value {
+      overflow: visible;
+    }
+
+    .#{$prefix}--react-select__control--is-focused,
+    .#{$prefix}--react-select__control--is-focused:hover {
+      //border: $input-border;
+      box-shadow: none;
+      //border-color: red;
+      @include focus-outline('border-important');
+    }
+
+    .#{$prefix}--react-select__control--is-disabled,
+    .#{$prefix}--react-select__control--is-disabled:hover {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    .#{$prefix}--react-select__menu {
+      margin-top: 2px;
+      border-radius: 0;
+      //box-shadow: none;
+      box-shadow: 0px 2px 5px rgba(#000, 0.1);
+      border: 1px solid $border-strong;
+    }
+
+    .#{$prefix}--react-select__option--is-focused {
+      background: $layer;
+      color: $text-primary;
+    }
+
+    .#{$prefix}--react-select__dropdown-indicator {
+      color: $interactive;
+    }
+  }
+}

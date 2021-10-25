@@ -54,6 +54,7 @@
     @include type-style('caption-01');
     text-transform: uppercase;
     letter-spacing: 0.05em;
+    // color: $text-primary;
   }
   
   .#{$prefix}--photo-cardnew__info__subtitle {
@@ -93,7 +94,7 @@
       align-items: center;
       justify-content: space-between;
       color: $text-on-color;
-      background: rgba(#000000, 0.5);
+      background: rgba(#0B1923, 0.9); // hex is for $overlay token
     }
     // .#{$prefix}--photo-cardnew__info {
   

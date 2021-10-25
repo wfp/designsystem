@@ -4,7 +4,7 @@
 // This source code is licensed under the Apache-2.0 license found in the
 // LICENSE file in the root directory of this source tree.
 //
-
+/*
 @import '../../globals/scss/vars';
 @import '../../globals/scss/css--reset';
 @import '../../globals/scss/css--typography';
@@ -56,7 +56,7 @@
   .#{$prefix}--loading--small .#{$prefix}--inline-loading__svg {
     stroke: var(--interactive-01);
   }
-  /* If IE11 Don't show check animation */
+  // If IE11 Don't show check animation 
   @media screen and (-ms-high-contrast: active),
     screen and (-ms-high-contrast: none) {
     .#{$prefix}--inline-loading__checkmark-container {
@@ -126,7 +126,7 @@
   .#{$prefix}--loading--small .#{$prefix}--inline-loading__svg {
     stroke: var(--interactive-01);
   }
-  /* If IE11 Don't show check animation */
+  // If IE11 Don't show check animation 
   @media screen and (-ms-high-contrast: active),
     screen and (-ms-high-contrast: none) {
     .#{$prefix}--inline-loading__checkmark-container {
@@ -149,3 +149,4 @@
     @include inline-loading;
   }
 }
+*/

@@ -27,7 +27,6 @@
   "scripts": {
     "build": "yarn clean && node tasks/build.js",
     "download-figma": "yarn clean && node tasks/download.js",
-    "download-figma2": "yarn @wfp/figma-connect",
     "ci-check": "node tasks/ci-check.js",
     "clean": "rimraf es lib build-info.json metadata.json",
     "prepublishOnly": "yarn build"
