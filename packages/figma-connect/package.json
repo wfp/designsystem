@@ -21,5 +21,6 @@
   },
   "devDependencies": {
     "yaml": "^1.10.2"
-  }
+  },
+  "gitHead": "c64887690da970e0de7cd352ba0593be27cb6c44"
 }

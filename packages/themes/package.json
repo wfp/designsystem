@@ -51,5 +51,6 @@
     "node-sass": "^6.0.1",
     "rimraf": "^3.0.0"
   },
-  "sideEffects": false
+  "sideEffects": false,
+  "gitHead": "c64887690da970e0de7cd352ba0593be27cb6c44"
 }

@@ -35,5 +35,6 @@
     "@wfp/figma-connect": "^0.0.3",
     "@wfp/icon-build-helpers": "^0.23.7",
     "rimraf": "^3.0.2"
-  }
+  },
+  "gitHead": "c64887690da970e0de7cd352ba0593be27cb6c44"
 }
