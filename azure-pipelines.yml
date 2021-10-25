@@ -31,8 +31,9 @@ jobs:
 #          npm
 #      displayName: 'Cache NPM packages'
 
+#        mkdir -p $(NPM_CACHE_FOLDER)
+
     - script: |
-        mkdir -p $(NPM_CACHE_FOLDER)
         yarn -v
         yarn install
       displayName: 'yarn install'
