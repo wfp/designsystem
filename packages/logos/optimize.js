@@ -100,7 +100,7 @@ FS.readFile('readme.md', 'utf8', function (err, data) {
 
   FS.writeFile(
     `readme.md`,
-    readmeSplit[0] + '\n<!---CDN Urls-->\n' + readmeCdnLinks,
+    readmeSplit[0] + '<!---CDN Urls-->\n' + readmeCdnLinks,
     (err) => {
       if (err) throw err;
       console.log('readme written!');
