@@ -5,6 +5,7 @@ trigger:
   - bugfix/*
   - alpha/*
   - feat/performance-optimization
+  - un-core-v1
 
 jobs:
 - job: WFP_Design_System_publish
