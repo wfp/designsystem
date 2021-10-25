@@ -43,6 +43,7 @@
     "@wfp/cli": "^10.25.2",
     "@wfp/figma-connect": "^0.0.2",
     "@wfp/scss-generator": "^10.13.2",
+    "@@wfp/type": "^10.30.4",
     "change-case": "^4.1.1",
     "core-js": "^3.16.0",
     "fs-extra": "^8.1.0",
