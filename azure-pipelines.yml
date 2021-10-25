@@ -60,7 +60,12 @@ jobs:
       condition: eq(variables['Build.SourceBranch'], 'refs/heads/master')
 
     - script: |
-        lerna publish --dist-tag alpha --registry https://registry.npmjs.org/:_authToken=${NPM_TOKEN}
+        lerna version patch --yes
+      displayName: 'yarn build:alpha-cli'
+      condition: in(variables['Build.SourceBranch'], 'refs/heads/develop', 'refs/heads/next', 'refs/heads/un-core-v1')
+    
+    - script: |
+        lerna publish from-package --dist-tag alpha --registry https://registry.npmjs.org/:_authToken=${NPM_TOKEN}
       displayName: 'yarn build:alpha-cli'
       condition: in(variables['Build.SourceBranch'], 'refs/heads/develop', 'refs/heads/next', 'refs/heads/un-core-v1')
 
