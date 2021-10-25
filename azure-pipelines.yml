@@ -53,7 +53,7 @@ jobs:
     - script: |
         yarn publish:alpha-cli
       displayName: 'yarn build:alpha-cli'
-      condition: eq(variables['Build.SourceBranch'], 'refs/heads/develop', 'refs/heads/next', 'refs/heads/un-core-v1')
+      condition: in(variables['Build.SourceBranch'], 'refs/heads/develop', 'refs/heads/next', 'refs/heads/un-core-v1')
 
     - task: GitHubRelease@1
       inputs:
