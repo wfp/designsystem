@@ -22,6 +22,14 @@ jobs:
         versionSpec: '14.x'
       displayName: 'Install Node.js'
 
+    - script: |
+        npm config set '//registry.npmjs.org/:_authToken' "$(NPM_TOKEN)"
+      displayName: 'npm config set'
+
+#    - task: npmAuthenticate@0
+#      inputs:
+#        workingFile: './.npmrc'
+
 #    - task: Cache@2
 #      inputs:
 #        key: 'npm | "$(Agent.OS)" | package-lock.json'
