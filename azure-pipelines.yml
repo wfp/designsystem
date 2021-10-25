@@ -22,9 +22,9 @@ jobs:
         versionSpec: '14.x'
       displayName: 'Install Node.js'
 
-    - script: |
-        npm config set '//registry.npmjs.org/:_authToken' "$(NPM_TOKEN)"
-      displayName: 'npm config set'
+#    - script: |
+#        npm config set '//registry.npmjs.org/:_authToken' "$(NPM_TOKEN)"
+#      displayName: 'npm config set'
 
 #    - task: npmAuthenticate@0
 #      inputs:
@@ -60,7 +60,7 @@ jobs:
       condition: eq(variables['Build.SourceBranch'], 'refs/heads/master')
 
     - script: |
-        yarn publish:alpha-cli
+        lerna publish --dist-tag alpha --registry https://registry.npmjs.org/:_authToken=${NPM_TOKEN}
       displayName: 'yarn build:alpha-cli'
       condition: in(variables['Build.SourceBranch'], 'refs/heads/develop', 'refs/heads/next', 'refs/heads/un-core-v1')
 
