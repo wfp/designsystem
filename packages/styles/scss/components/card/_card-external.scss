@@ -10,7 +10,7 @@
 
   .#{$prefix}--card-ext {
     border-radius: 4px;
-    box-shadow: 0 1px 8px rgb(0 0 0 / 15%);
+    box-shadow: 0 1px 8px rgb(0 0 0 / 15%); // TODO: Create new token
     display: flex;
     flex-direction: column;
     width: 268px;
@@ -27,8 +27,8 @@
     }
 
     &.#{$prefix}--card-ext__label--success {
-      background-color: #ccdbcd;
-      color: #3f600f;
+      background-color: #ccdbcd; // TODO: Create new token
+      color: #3f600f; // TODO: Use $text-success token
     }
   }
 
