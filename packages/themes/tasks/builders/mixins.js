@@ -8,7 +8,9 @@
 'use strict';
 
 const { types: t } = require('@wfp/scss-generator');
-const { formatTokenName } = require('../../lib');
+const { formatTokenName } = process.env.sourceLib
+  ? require(process.env.sourceLib)
+  : require('../../lib');
 const { FILE_BANNER } = require('./shared');
 
 function buildMixinsFile(themes, tokens, defaultTheme, defaultThemeMapName) {

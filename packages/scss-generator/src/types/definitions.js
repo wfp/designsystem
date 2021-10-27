@@ -328,13 +328,18 @@ const SassFunctionCall = defineType('SassFunctionCall', {
     if (Array.isArray(node.params)) {
       for (let i = 0; i < node.params.length; i++) {
         const param = node.params[i];
-        if (param.type === Identifier.type) {
-          printer.token('$');
-        }
-        printer.print(param, node);
-        if (i !== node.params.length - 1) {
-          printer.token(',');
-          printer.space();
+
+        if (param) {
+          if (param.type === Identifier.type) {
+            printer.token('$');
+          }
+          printer.print(param, node);
+          if (i !== node.params.length - 1) {
+            printer.token(',');
+            printer.space();
+          }
+        } else {
+          console.warn(`No param found for`, node.params[0].right.params);
         }
       }
     }

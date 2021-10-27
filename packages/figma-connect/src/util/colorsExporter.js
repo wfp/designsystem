@@ -19,7 +19,7 @@ var replaceall = require('replaceall');
 const PAGE_ID = '0:1';
 // Get this from the URL of a single file:
 // https://www.figma.com/file/<file key>/Some-Name?node-id=182%3A0
-const FILE_KEY = '38aMNOGrknPq3zLfaMq6Ya'; // 'z4l4k7wgPxaeHZFW6iIvxo'; // wkqsvO8Jr0WNiokusGudaO
+const FILE_KEY = process.env.FIGMA_PROJECT_ID; // 'z4l4k7wgPxaeHZFW6iIvxo'; // wkqsvO8Jr0WNiokusGudaO
 
 const fetch = require('node-fetch');
 const fs = require('fs');
@@ -29,11 +29,6 @@ const path = require('path');
 const writeFile = promisify(fs.writeFile);
 
 const personalToken = process.env.DEV_ACCESS_TOKEN;
-
-if (!personalToken) {
-  console.error('Please pass FIGMA_PERSONAL_TOKEN to this script and re-run');
-  process.exit(1);
-}
 
 const figmaBase = 'https://api.figma.com/';
 
@@ -195,6 +190,11 @@ const fetchAllColorStyles = async () => {
  * Calls Figma's API and saves to a `colors.js` file in the project root.
  */
 const writeColorsFromFigma = async ({ fileName, fileNameMeta }) => {
+  if (!personalToken) {
+    console.error('Please pass FIGMA_PERSONAL_TOKEN to this script and re-run');
+    process.exit(1);
+  }
+
   let styles = await fetchAllColorStyles();
 
   if (!styles) {
@@ -242,8 +242,9 @@ const meta = ${JSON.stringify(colorMeta, null, 2).replace(
 export default meta;
 `;
 
-  await writeFile(/*path.resolve(__dirname + */ fileName, fileContents);
-  await writeFile(/*path.resolve(__dirname + */ fileNameMeta, fileContentsMeta);
+  console.log(fileName, fileNameMeta);
+  await writeFile(fileName, fileContents);
+  await writeFile(fileNameMeta, fileContentsMeta);
 
   console.log(`Wrote ${styles.length} colors to colors.js`);
 };
