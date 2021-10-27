@@ -47,15 +47,13 @@
   }
 
   .#{$prefix}--footer-ext__social-icons-list {
+    align-items: center;
     display: flex;
+    gap: $spacing-04;
     margin-top: $spacing-03;
   }
 
   .#{$prefix}--footer-ext__social-icon {
-    & + .#{$prefix}--footer-ext__social-icon {
-      margin-left: $spacing-03;
-    }
-
     & a {
       cursor: pointer;
     }
