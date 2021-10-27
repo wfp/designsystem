@@ -6,7 +6,7 @@
 
 @mixin footer_external {
   .#{$prefix}--footer-ext {
-    background-color: #1a4262; // TODO: Use the token $background-brand-dark
+    background-color: #1a4262; // TODO: Use the token $brand-dark
     color: $text-on-color;
     padding: $spacing-07 $spacing-03;
   }
@@ -28,8 +28,9 @@
   }
 
   .#{$prefix}--footer-ext__product-name {
-    @include type-style('productive-heading-03');
-    font-weight: 700; // TODO: Use the token
+    @include type-style('expressive-heading-03');
+
+    font-weight: 700;
     margin-left: $spacing-07;
     text-transform: uppercase;
   }
@@ -89,15 +90,19 @@
     }
   }
 
+  // [1] TODO: Create a token for the all caps title.
+  //     It's used for links titles on the Footer and for bookmarks on the Landing page.
   .#{$prefix}--links-column__title {
     color: #36b5c5; // TODO: Use the token
-    font-weight: 700; // TODO: Use the token
+    font-size: 1rem; // [1]
+    font-weight: 700; // [1]
+    letter-spacing: 0.05rem; // [1]
     margin-bottom: $spacing-05;
-    text-transform: uppercase;
+    text-transform: uppercase; // [1]
   }
 
   .#{$prefix}--links-column-link {
-    font-weight: 600; // TODO: Use the token
+    font-weight: 600;
 
     & + .#{$prefix}--links-column-link {
       margin-top: $spacing-04;
@@ -128,14 +133,11 @@
   }
 
   .#{$prefix}--footer-ext__legal-links {
+    gap: $spacing-07;
     display: flex;
   }
 
   .#{$prefix}--footer-ext__legal-link {
-    & + .#{$prefix}--footer-ext__legal-link {
-      margin-left: $spacing-07;
-    }
-
     & > a {
       color: $text-on-color;
 
