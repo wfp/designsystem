@@ -47,13 +47,13 @@ const LanguageExternal = () => {
             ? 'wfp--language-ext__dropdown--is-shown'
             : ''
         }`}>
-        <li className={`${prefix}--language-ext-dropdown-option`}>
+        <li className={`${prefix}--language-ext__dropdown-option`}>
           <a>English</a>
         </li>
-        <li className={`${prefix}--language-ext-dropdown-option`}>
+        <li className={`${prefix}--language-ext__dropdown-option`}>
           <a>French</a>
         </li>
-        <li className={`${prefix}--language-ext-dropdown-option`}>
+        <li className={`${prefix}--language-ext__dropdown-option`}>
           <a>Spanish</a>
         </li>
       </ul>
