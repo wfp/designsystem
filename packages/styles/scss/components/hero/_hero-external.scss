@@ -21,16 +21,17 @@
     }
   }
 
+  // [1] TODO: Create new type-style token for the Hero heading
   .#{$prefix}--hero-ext__heading {
     color: $text-on-color;
-    font-size: 48px;
-    font-weight: 800;
-    line-height: 1.15;
+    font-size: 48px; // [1]
+    font-weight: 800; // [1]
+    line-height: 1.15; // [1]
     text-align: center;
-    text-transform: uppercase;
+    text-transform: uppercase; // [1]
 
     @include breakpoint-down(lg) {
-      font-size: 36px;
+      font-size: 36px; // [1]
 
       & > br {
         display: none;
@@ -38,7 +39,7 @@
     }
 
     @include breakpoint-down(md) {
-      font-size: 30px;
+      font-size: 30px; // [1]
       text-align: left;
     }
   }

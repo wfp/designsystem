@@ -12,6 +12,7 @@ const HeroExternal = (props) => {
     // TODO: Provide a prop [string] to set the backgrond position (optional).
     <div
       className={`${prefix}--hero-ext`}
+      // TODO: do we need a token for the linear gradient?
       style={{
         backgroundImage: `linear-gradient(rgba(26, 66, 98, 0.8), rgba(26, 66, 98, 0.8)), url(http://www1.wfp.org/sites/default/files/images/yemen-hero-min.jpg)`,
         backgroundPosition: 'center right',
