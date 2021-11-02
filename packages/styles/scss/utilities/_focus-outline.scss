@@ -64,4 +64,9 @@
     outline: 2px solid theme.$focus !important;
     outline-offset: -1px;
   }
+
+  @if ($type == 'border-small') {
+    outline: 2px solid theme.$link-primary-hover;
+    outline-offset: 2px;
+  }
 }

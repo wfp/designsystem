@@ -47,6 +47,9 @@
       justify-content: center;
       align-items: center;
       overflow: scroll;
+      @include breakpoint-down('md') {
+        width: 100%;
+      }
     }
   }
 }

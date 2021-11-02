@@ -1,7 +1,7 @@
 //-----------------------------
 // Modals
 //-----------------------------
-
+/*
 @import '../../globals/scss/vars';
 @import '../../globals/scss/helper-mixins';
 @import '../../globals/scss/colors';
@@ -38,9 +38,9 @@
     transition: opacity 200ms, z-index 0s 200ms, visibility 0s 200ms;
     visibility: hidden;
 
-    /*&.#{$prefix}--modal--tall {
-      align-items: flex;
-    }*/
+    // &.#{$prefix}--modal--tall {
+    //   align-items: flex;
+    // }
 
     &.is-visible {
       z-index: z('modal');
@@ -203,3 +203,4 @@
     background-size: cover;
   }
 }
+*/

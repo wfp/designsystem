@@ -1,3 +1,4 @@
+/*
 @import '../../globals/scss/vars';
 @import '../../globals/scss/colors';
 @import '../../globals/scss/typography';
@@ -29,9 +30,9 @@
       order: 1;
     }
 
-    /* &:focus ~ .#{$prefix}--label {
-      color: var(--interactive-01);
-    } */
+    //  &:focus ~ .#{$prefix}--label {
+    //   color: var(--interactive-01);
+    // } 
 
     &:disabled ~ .#{$prefix}--number__controls {
       opacity: 0.5;
@@ -158,9 +159,9 @@
       //box-shadow: 0 2px 0px 0px var(--support-01);
     }
 
-    /* input[type='number']:focus ~ .#{$prefix}--label {
-      color: var(--support-01);
-    } */
+    // input[type='number']:focus ~ .#{$prefix}--label {
+    //   color: var(--support-01);
+    // } 
 
     .#{$prefix}--number__controls {
       bottom: 2rem;
@@ -182,3 +183,4 @@
     }
   }
 }
+*/

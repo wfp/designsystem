@@ -1,7 +1,7 @@
 //-----------------------------
-// Link
+// Table
 //-----------------------------
-
+/*
 @import '../../globals/scss/colors';
 @import '../../globals/scss/vars';
 @import '../../globals/scss/layout';
@@ -48,7 +48,7 @@
     border: 1px solid var(--ui-04);
   }
 
-  /* Cell Classes in work */
+  // Cell Classes in work 
   .#{$prefix}--cell--bold {
     font-weight: 700;
   }
@@ -77,74 +77,75 @@
   .#{$prefix}--table--is-sortable {
     min-width: 25px;
   }
-  /*
-  @include breakpointMax(bp--sm--major) {
-    .ReactTable--responsive {
-      .rt-thead,
-      .rt-tbody {
-        min-width: inherit !important;
-      }
+  
+  // @include breakpointMax(bp--sm--major) {
+  //   .ReactTable--responsive {
+  //     .rt-thead,
+  //     .rt-tbody {
+  //       min-width: inherit !important;
+  //     }
 
-      .rt-thead {
-        display: none;
-      }
+  //     .rt-thead {
+  //       display: none;
+  //     }
 
-      .rt-tr {
-        display: block;
-        display: flex;
-        flex-direction: column;
-      }
+  //     .rt-tr {
+  //       display: block;
+  //       display: flex;
+  //       flex-direction: column;
+  //     }
 
-      .rt-th,
-      .rt-td {
-        width: 100% !important;
-        max-width: inherit !important;
-      }
+  //     .rt-th,
+  //     .rt-td {
+  //       width: 100% !important;
+  //       max-width: inherit !important;
+  //     }
 
-      .rt-expandable {
-        height: inherit !important; // TODO: Write custom Expander Component
-        width: inherit !important;
-      }
+  //     .rt-expandable {
+  //       height: inherit !important; // TODO: Write custom Expander Component
+  //       width: inherit !important;
+  //     }
 
-      .rt-expander {
-        color: var(--interactive-01);
-        margin: 0;
+  //     .rt-expander {
+  //       color: var(--interactive-01);
+  //       margin: 0;
 
-        &::after {
-          display: none;
-        }
-      }
-    }
+  //       &::after {
+  //         display: none;
+  //       }
+  //     }
+  //   }
 
-    .ReactTable--responsive__cell {
-      //display: flex;
-    }
+  //   .ReactTable--responsive__cell {
+  //     //display: flex;
+  //   }
 
-    .ReactTable--responsive__cell__title {
-      display: block;
-      font-weight: 600;
-      margin-top: rem(5px);
-      margin-bottom: rem(5px);
-      width: 100%;
-    }
+  //   .ReactTable--responsive__cell__title {
+  //     display: block;
+  //     font-weight: 600;
+  //     margin-top: rem(5px);
+  //     margin-bottom: rem(5px);
+  //     width: 100%;
+  //   }
 
-    .ReactTable--responsive__cell__content {
-    }
-  }
+  //   .ReactTable--responsive__cell__content {
+  //   }
+  // }
 
-  @include breakpoint(bp--sm--major) {
-    .ReactTable--responsive__cell__title {
-      display: none;
-    }
+  // @include breakpoint(bp--sm--major) {
+  //   .ReactTable--responsive__cell__title {
+  //     display: none;
+  //   }
 
-    .rt-expander {
-      button {
-        display: none;
-      }
-    }
-  }
+  //   .rt-expander {
+  //     button {
+  //       display: none;
+  //     }
+  //   }
+  // }
 
-  .ReactTable__subcomponent {
-    padding: rem(20px);
-  }*/
+  // .ReactTable__subcomponent {
+  //   padding: rem(20px);
+  // }
 }
+*/

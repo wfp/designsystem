@@ -17,6 +17,7 @@
 @use '../../utilities/visually-hidden' as *;
 @use '../../utilities/skeleton' as *;
 @use '../../utilities/convert' as *;
+@use '../../utilities/rtl' as *;
 @use '../../config' as *;
 @use '../../spacing' as *;
 
@@ -54,11 +55,10 @@ $radio-border-width: 2px !default;
     width: 100%;
     > * {
       margin-right: $spacing-06;
-      // TODO
-      // @include rtl {
-      //   margin-left: $spacing-06;
-      //   margin-right: 0;
-      // }
+      @include rtl {
+        margin-left: $spacing-06;
+        margin-right: 0;
+      }
     }
     .#{$prefix}--form-item {
       flex: none;
@@ -87,11 +87,10 @@ $radio-border-width: 2px !default;
     height: rem(18px);
     width: rem(18px);
     margin-right: $spacing-03;
-    // TODO
-    // @include rtl {
-    //   margin-left: $spacing-03;
-    //   margin-right: 0;
-    // }
+    @include rtl {
+      margin-left: $spacing-03;
+      margin-right: 0;
+    }
   }
 
   .#{$prefix}--radio-button:checked

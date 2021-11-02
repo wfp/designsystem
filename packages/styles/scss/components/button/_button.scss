@@ -15,25 +15,26 @@
 @use '../../utilities/focus-outline';
 @use '../../utilities/high-contrast-mode' as *;
 @use '../../utilities/skeleton' as *;
+@use '../../utilities/rtl' as *;
 @use '../../utilities/tooltip' as *;
 @use '../../utilities/visually-hidden' as *;
 @use 'tokens' as *;
 
 @mixin button {
   // <button> elements cannot be used as flex containers
-  #{$prefix}--btn {
+  button.#{$prefix}--btn {
     display: inline-block;
     line-height: initial;
   }
 
   // Reset intrisic padding in Firefox (see #731)
-  #{$prefix}--btn::-moz-focus-inner {
+  button.#{$prefix}--btn::-moz-focus-inner {
     padding: 0;
     border: 0;
   }
 
   // Vertically center icon inside <button>
-  #{$prefix}--btn .#{$prefix}--btn__icon {
+  button.#{$prefix}--btn .#{$prefix}--btn__icon {
     position: relative;
     vertical-align: middle;
     top: -1px;
@@ -46,14 +47,14 @@
     }
   }
 
-  #{$prefix}--btn--icon-reverse {
+  button.#{$prefix}--btn--icon-reverse {
     .#{$prefix}--btn__icon {
       margin-left: 0;
       margin-right: $spacing-03;
-      // @include rtl { //TODO
-      //   margin-left: $spacing-03;
-      //   margin-right: 0;
-      // }
+      @include rtl { 
+        margin-left: $spacing-03;
+        margin-right: 0;
+      }
     }
   }
 
@@ -65,10 +66,10 @@
       float: left;
       margin-left: 0;
       margin-right: $spacing-03;
-      // @include rtl { //TODO
-      //   margin-left: $spacing-03;
-      //   margin-right: 0;
-      // }
+      @include rtl {
+        margin-left: $spacing-03;
+        margin-right: 0;
+      }
     }
   }
 
@@ -131,15 +132,15 @@
     animation-name: slidein;
   }
 
-  // .#{$prefix}--btn--navigation {
-  //   @include button-theme(
-  //     saturate($color__main-40, 10%),
-  //     transparent,
-  //     var(--inverse-01),
-  //     saturate(lighten($color__main-40, 5), 10%),
-  //     var(--ui-01)
-  //   );
-  // }
+  .#{$prefix}--btn--navigation {
+    @include button-theme(
+      saturate(#34a2d9, 10%),
+      transparent,
+      $text-on-color,
+      saturate(lighten(#34a2d9, 5), 10%),
+      $icon-on-color
+    );
+  }
 
   .#{$prefix}--btn--secondary {
     @include button-theme(
@@ -223,10 +224,10 @@
 
     .#{$prefix}--btn__icon {
       margin-left: $spacing-03;
-      // @include rtl {
-      //   margin-left: initial;
-      //   margin-right: $spacing-03;
-      // } //TODO
+      @include rtl {
+        margin-left: initial;
+        margin-right: $spacing-03;
+      }
     }
 
     &:hover:disabled,
@@ -344,7 +345,9 @@
   .#{$prefix}--btn--sm {
     padding: $button-padding-sm;
     @include type-style('body-short-01');
+    letter-spacing: 0;
     font-weight: 700;
+    height:1.8rem;
   }
 
   .#{$prefix}--btn--lg {
@@ -355,10 +358,10 @@
   .#{$prefix}--btn--secondary + .#{$prefix}--btn--primary,
   .#{$prefix}--btn--tertiary + .#{$prefix}--btn--danger--primary {
     margin-left: $spacing-03;
-    // @include rtl {
-    //   margin-left: 0;
-    //   margin-right: $spacing-xs;
-    // } //TODO
+    @include rtl {
+      margin-left: 0;
+      margin-right: $spacing-03;
+    }
   }
 
   // Skeleton State

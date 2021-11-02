@@ -201,14 +201,14 @@ Related.story = {
     },
   },
 };
-/* TODO learn more about changes done to Icon component by Robert
+// TODO learn more about changes done to Icon component by Robert
 export const Emergencies = (args) => <Hero {...args} />;
 
 Emergencies.args = {
   ...Regular.args,
   title: (
     <>
-      <WfpHumEmergencyResponsePos16
+      <WfpHumEmergencyResponsePos
         fill="#FFF"
         style={{ marginRight: '1rem' }}
       />
@@ -230,4 +230,3 @@ Emergencies.story = {
     },
   },
 };
-*/

@@ -1,7 +1,7 @@
 //-----------------------------
 // Slider
 //-----------------------------
-
+/*
 @import '../../globals/scss/vars';
 @import '../../globals/scss/colors';
 @import '../../globals/scss/spacing';
@@ -82,7 +82,7 @@
       background: var(--interactive-01);
     }
 
-    /* IE*/
+    // IE
     &::-ms-fill-lower {
       height: rem(4px);
       background: var(--interactive-01);
@@ -254,3 +254,4 @@
     }
   }
 }
+*/

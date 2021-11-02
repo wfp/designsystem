@@ -4,7 +4,7 @@
 // This source code is licensed under the Apache-2.0 license found in the
 // LICENSE file in the root directory of this source tree.
 //
-@use '../form' as *;
+
 @use '../../colors' as *;
 @use '../../config' as *;
 @use '../../motion' as *;
@@ -15,8 +15,10 @@
 @use '../../utilities/button-reset';
 @use '../../utilities/high-contrast-mode' as *;
 @use '../../utilities/focus-outline' as *;
+@use '../../utilities/rtl' as *;
 @use '../../utilities/convert' as *;
 @use '../../utilities/input-base' as *;
+@use '../form' as *;
 
 
 $input-height: 40px;
@@ -66,15 +68,18 @@ $input-border: 1px solid var(--field-border-01);
         display: none;
       }
     }
+  }
 
-    // IE: Hide "clear-field" `x` button on input field
+  .#{$prefix}--number input[type='number'] {
+    //appearance: textfield; // Firefox: Hide spinner (up and down buttons)
+
     &::-ms-clear {
-      display: none;
+      display: none; // IE: Hide "clear-field" `x` button on input field
     }
 
-    // Safari: Hide number spinner
-    &::-webkit-inner-spin-button {
-      appearance: none;
+    &::-webkit-inner-spin-button,
+    ::-webkit-inner-spin-button {
+      -webkit-appearance: none; // Safari: Hide number spinner
     }
   }
 
@@ -116,13 +121,12 @@ $input-border: 1px solid var(--field-border-01);
     position: absolute;
     right: 0;
 
-    // TODO
-    // @include rtl {
-    //   left: 0;
-    //   right: initial;
-    //   border-left: none;
-    //   border-right: $input-border;
-    // }
+    @include rtl {
+      left: 0;
+      right: initial;
+      border-left: none;
+      border-right: $input-border;
+    }
 
     span {
       display: block;
@@ -143,16 +147,15 @@ $input-border: 1px solid var(--field-border-01);
     }
     &:nth-child(1) {
       right: $input-height - 1px;
-      // TODO
-      // @include rtl {
-      //   right: initial;
-      //   left: $input-height - 1px;
-      // }
+      @include rtl {
+        right: initial;
+        left: $input-height - 1px;
+      }
     }
   }
 
   .#{$prefix}--number__controls svg {
-    fill: var(--interactive-01);
+    fill: $interactive;
 
     // Hover styles for use with old HTML w/o button
     &:hover {

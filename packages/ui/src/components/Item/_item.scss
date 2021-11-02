@@ -1,7 +1,7 @@
 //-----------------------------
-// Link
+// Item
 //-----------------------------
-
+/*
 @import '../../globals/scss/colors';
 @import '../../globals/scss/vars';
 @import '../../globals/scss/layout';
@@ -178,18 +178,19 @@
     }
     .#{$prefix}--item--large & {
       width: 6rem;
-      /*img {
-        width: 35rem;
-        max-width: 100%;
-        max-height: 15rem;
-        height: auto;
-      }
-      svg,
-      .svg-inline--fa {
-        width: 15rem;
-        height: 15rem;
-      }*/
+      // img {
+      //   width: 35rem;
+      //   max-width: 100%;
+      //   max-height: 15rem;
+      //   height: auto;
+      // }
+      // svg,
+      // .svg-inline--fa {
+      //   width: 15rem;
+      //   height: 15rem;
+      // }
       margin-bottom: $spacing-lg;
     }
   }
 }
+*/

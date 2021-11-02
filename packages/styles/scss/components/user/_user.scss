@@ -13,6 +13,7 @@
 @use '../../theme' as *;
 @use '../../utilities/component-reset';
 @use '../../utilities/convert' as *;
+@use '../../utilities/rtl' as *;
 @use '../../utilities/high-contrast-mode' as *;
 
 /// User styles
@@ -42,18 +43,16 @@
       width: rem(60px);
       height: rem(60px);
       margin-right: $spacing-06;
-      // TODO
-      // @include rtl {
-      //   margin-left: $spacing-06;
-      //   margin-right: inherit;
-      // }
+      @include rtl {
+        margin-left: $spacing-06;
+        margin-right: inherit;
+      }
     }
 
-    // TODO
-    // @include rtl {
-    //   margin-left: rem(10px);
-    //   margin-right: inherit;
-    // }
+    @include rtl {
+      margin-left: rem(10px);
+      margin-right: inherit;
+    }
   }
 
   .#{$prefix}--user__icon--empty {
