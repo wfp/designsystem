@@ -36,7 +36,7 @@ export const Regular = (args) => (
   <MainNavigation {...args}>
     {({ onChangeSub }) => {
       return (
-        <React.Fragment>
+        <>
           <MainNavigationItem>
             <Link href="http://communities.wfp.org" target="_blank">
               Section 1
@@ -65,7 +65,7 @@ export const Regular = (args) => (
                 </SubNavigationHeader>
                 <SubNavigationContent>
                   <SubNavigationList>
-                    <SubNavigationGroup title="First List" columns>
+                    <SubNavigationGroup title="First List" columns={1}>
                       <SubNavigationItem>
                         <Link href="https://go.docs.wfp.org" target="_blank">
                           Lorem Ipsum et jomen
@@ -105,7 +105,7 @@ export const Regular = (args) => (
                 <SubNavigationHeader>
                   <SubNavigationTitle>Welcome Lorem!</SubNavigationTitle>
                   <SubNavigationLink>
-                    <Button secondary small>
+                    <Button kind="secondary" small>
                       Logout
                     </Button>
                   </SubNavigationLink>
@@ -154,7 +154,7 @@ export const Regular = (args) => (
             }>
             <span>EN</span>
           </MainNavigationItem>
-        </React.Fragment>
+        </>
       );
     }}
   </MainNavigation>
@@ -249,7 +249,7 @@ const sourcecode = (type) => {
               <SubNavigationHeader>
               <SubNavigationTitle>Welcome Lorem!</SubNavigationTitle>
               <SubNavigationLink>
-                  <Button secondary small>
+                  <Button kind="secondary" small>
                   Logout
                   </Button>
               </SubNavigationLink>
@@ -322,7 +322,7 @@ export const RegularWithButton = (args) => (
   <MainNavigation {...args}>
     {({ onChangeSub }) => {
       return (
-        <React.Fragment>
+        <>
           <MainNavigationItem>
             <Link href="http://communities.wfp.org" target="_blank">
               Section 1
@@ -351,7 +351,7 @@ export const RegularWithButton = (args) => (
                 </SubNavigationHeader>
                 <SubNavigationContent>
                   <SubNavigationList>
-                    <SubNavigationGroup title="First List" columns>
+                    <SubNavigationGroup title="First List" columns={1}>
                       <SubNavigationItem>
                         <Link href="https://go.docs.wfp.org" target="_blank">
                           Lorem Ipsum et jomen
@@ -391,7 +391,7 @@ export const RegularWithButton = (args) => (
                 <SubNavigationHeader>
                   <SubNavigationTitle>Welcome Lorem!</SubNavigationTitle>
                   <SubNavigationLink>
-                    <Button secondary small>
+                    <Button kind="secondary" small>
                       Logout
                     </Button>
                   </SubNavigationLink>
@@ -440,7 +440,7 @@ export const RegularWithButton = (args) => (
             }>
             <span>EN</span>
           </MainNavigationItem>
-        </React.Fragment>
+        </>
       );
     }}
   </MainNavigation>
@@ -547,5 +547,9 @@ External.story = {
       storyDescription: 'Add a description',
     },
   },
-  decorators: [(storyFn) => <div style={externalStoryStyles}>{storyFn()}</div>],
+  decorators: [(Story) => (
+    <div style={externalStoryStyles}>
+      <Story/>
+    </div>
+  )],
 };

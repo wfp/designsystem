@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { useEffect, useRef } from "react";
 import { WfpLogoVerticalEn } from '@wfp/pictograms-react';
 import { ChevronDownGlyph  } from '@wfp/icons-react';
 
@@ -14,10 +14,26 @@ import { settings } from '../../globals/js';
 const { prefix } = settings;
 
 const LanguageExternal = ({children, primaryLanguage}) => {
+  const ref = useRef();
   const languageTogglable = useTogglable();
 
+  useEffect(() => {
+    const checkIfClickedOutside = e => {
+      // If the menu is open and the clicked target is not within the menu,
+      // then close the menu
+      if (languageTogglable.isOpen && ref.current && !ref.current.contains(e.target)) {
+        languageTogglable.close();
+      }
+    }
+    document.addEventListener("mousedown", checkIfClickedOutside)
+    return () => {
+      // Cleanup the event listener
+      document.removeEventListener("mousedown", checkIfClickedOutside)
+    }
+  }, [languageTogglable.isOpen])
+
   return (
-    <div className={`${prefix}--language-ext`}>
+    <div className={`${prefix}--language-ext`} ref={ref}>
       <div
         className={`${prefix}--language-ext__trigger`}
         onClick={() =>
@@ -41,17 +57,33 @@ const LanguageExternal = ({children, primaryLanguage}) => {
 };
 
 const UserExternal = ({username, children, userImage}) => {
+  const ref = useRef();
   const userTogglable = useTogglable();
 
+  useEffect(() => {
+    const checkIfClickedOutside = e => {
+      // If the menu is open and the clicked target is not within the menu,
+      // then close the menu
+      if (userTogglable.isOpen && ref.current && !ref.current.contains(e.target)) {
+        userTogglable.close();
+      }
+    }
+    document.addEventListener("mousedown", checkIfClickedOutside)
+    return () => {
+      // Cleanup the event listener
+      document.removeEventListener("mousedown", checkIfClickedOutside)
+    }
+  }, [userTogglable.isOpen])
+
   return (
-    <div className={`${prefix}--user-ext`}>
+    <div className={`${prefix}--user-ext`} ref={ref}>
       <div
         className={`${prefix}--user-ext__trigger`}
         onClick={() =>
           userTogglable.isOpen ? userTogglable.close() : userTogglable.open()
         }>
         <User alt="User avatar" name={username} image={userImage}/>
-         <ChevronDownGlyph/>
+        <ChevronDownGlyph/>
       </div>
       <ul
         className={`${prefix}--user-ext__dropdown ${
@@ -63,8 +95,33 @@ const UserExternal = ({username, children, userImage}) => {
   );
 };
 
-const MainNavigationExternal = ({productName, primaryLanguage, languageList, username, userImage, userDetails, children}) => {
+const MainNavigationExternal = ({
+  productName, 
+  primaryLanguage, 
+  languageList, 
+  username, 
+  userImage, 
+  userDetails, 
+  children}) => {
+
+  const ref = useRef();
   const navTogglable = useTogglable();
+
+  useEffect(() => {
+    const checkIfClickedOutside = e => {
+      // If the menu is open and the clicked target is not within the menu,
+      // then close the menu
+      if (navTogglable.isOpen && ref.current && !ref.current.contains(e.target)) {
+        navTogglable.close();
+      }
+    }
+    document.addEventListener("mousedown", checkIfClickedOutside)
+    return () => {
+      // Cleanup the event listener
+      document.removeEventListener("mousedown", checkIfClickedOutside)
+    }
+  }, [navTogglable.isOpen])
+
 
   return (
     <header className={`${prefix}--main-navigation-ext`}>
@@ -88,7 +145,7 @@ const MainNavigationExternal = ({productName, primaryLanguage, languageList, use
             <LanguageExternal primaryLanguage={primaryLanguage}>{languageList}</LanguageExternal>
             <UserExternal username={username} userImage={userImage}>{userDetails}</UserExternal>
           </div>
-          <div className={`${prefix}--main-navigation-ext__nav`}>
+          <div className={`${prefix}--main-navigation-ext__nav`} ref={ref}>
             <div
               className={`${prefix}--main-navigation-ext__mobile-menu-button`}>
               <Button
