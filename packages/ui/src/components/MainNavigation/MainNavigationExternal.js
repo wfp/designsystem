@@ -119,7 +119,7 @@ const MainNavigationExternal = ({productName, primaryLanguage, languageList, use
                   <div
                     className={`${prefix}--main-navigation-ext__mobile-settings`}>
                     <li className={`${prefix}--main-navigation-ext__site-link`}>
-                      <LanguageExternal>{languageList}</LanguageExternal>
+                      <LanguageExternal primaryLanguage={primaryLanguage}>{languageList}</LanguageExternal>
                     </li>
                     <li className={`${prefix}--main-navigation-ext__site-link`}>
                       <UserExternal username={username} userImage={userImage}>{userDetails}</UserExternal>
