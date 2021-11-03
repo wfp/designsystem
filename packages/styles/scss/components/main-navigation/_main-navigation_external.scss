@@ -136,6 +136,10 @@
     display: flex;
     user-select: none;
 
+    svg{
+      margin-left: 0.3em;
+    }
+
     @include breakpoint-down(md) {
       color: $text-on-color;
       font-size: 14px;
@@ -226,11 +230,17 @@
     text-transform: uppercase;
     user-select: none;
 
+    svg{
+      margin-left: 0.3em;
+    }
+
     @include breakpoint-down(md) {
       color: $text-on-color;
       font-size: 14px;
       padding: 1rem;
     }
+
+    
   }
 
   .#{$prefix}--user-ext__chevron {

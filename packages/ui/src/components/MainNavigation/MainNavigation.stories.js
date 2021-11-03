@@ -23,6 +23,7 @@ import User from '../User';
 export default {
   title: 'Components/Navigations/MainNavigation',
   component: MainNavigation,
+  subcomponents: {MainNavigationExternal},
   parameters: {
     componentSubtitle: 'Component',
     status: 'released',
@@ -458,11 +459,86 @@ RegularWithButton.story = {
   },
 };
 
-export const External = () => <MainNavigationExternal />;
+export const External = (args) => (<MainNavigationExternal  {...args}>
+  <>
+  <li className={`wfp--main-navigation-ext__site-link`}>
+  <a>First link</a>
+  </li>
+  <li className={`wfp--main-navigation-ext__site-link`}>
+  <a>Second link</a>
+  </li> 
+  {/* <li className={`wfp--main-navigation-ext__site-link`}>
+    <Button kind="accent" small>
+      Accent link
+    </Button>
+  </li> */}
+  </>
+</MainNavigationExternal>);
+
+const Languages = () =>
+(
+<>
+<li className={`wfp--language-ext-dropdown-option`}>
+  <a>English</a>
+</li>
+<li className={`wfp--language-ext-dropdown-option`}>
+  <a>French</a>
+</li>
+<li className={`wfp--language-ext-dropdown-option`}>
+  <a>Spanish</a>
+</li>
+</>
+)
+
+const UserDropdownDetails =() => (
+  <>
+    <li className={`wfp--user-ext__profile-item`}>
+      <span className={`wfp--user-ext__profile-label`}>Email:</span>
+      <span className={`wfp--user-ext__profile-value`}>
+        <Link inline>user@wfp.com</Link>
+      </span>
+    </li>
+    <li className={`wfp--user-ext__profile-item`}>
+      <span className={`wfp--user-ext__profile-label`}>
+        Job title:
+      </span>
+      <span className={`wfp--user-ext__profile-value`}>
+        Supply chain
+      </span>
+    </li>
+    <li className={`wfp--user-ext__profile-item`}>
+      <span className={`wfp--user-ext__profile-label`}>Country:</span>
+      <span className={`wfp--user-ext__profile-value`}>Somalia</span>
+    </li>
+    <li className={`wfp--user-ext__profile-item`}>
+      <span className={`wfp--user-ext__profile-label`}>
+        Organization:
+      </span>
+      <span className={`wfp--user-ext__profile-value`}>
+        The United Nations World food Programme (WFP)
+      </span>
+    </li>
+    <div className={`wfp--user-ext__profile-actions`}>
+      <Link className={`wfp--user-ext__profile-edit`} inline>
+        Edit profile
+      </Link>
+      <Button kind="secondary" small>
+        Log out
+      </Button>
+    </div>
+  </>
+)
+
+External.args = {
+  productName: <>Product <br/> Name</>,
+  languageList: <Languages/>,
+  userDetails: <UserDropdownDetails/>,
+  username: 'Max Mustermann'
+};
 
 // Increase the size of the story's wrapper to show the mobile menu
 const externalStoryStyles = {
-  height: '500px',
+  height: '400px',
 };
 
 External.story = {

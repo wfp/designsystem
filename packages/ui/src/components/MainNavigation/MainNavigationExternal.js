@@ -1,18 +1,19 @@
 import React from 'react';
 
 import { WfpLogoVerticalEn } from '@wfp/pictograms-react';
+import { CaretDownGlyph } from '@wfp/icons-react';
 
 import Button from '../Button';
-import Link from '../Link';
 import User from '../User';
 import Wrapper from '../Wrapper';
+import PropTypes from 'prop-types';
 
 import { useTogglable } from '../../hooks';
 import { settings } from '../../globals/js';
 
 const { prefix } = settings;
 
-const LanguageExternal = () => {
+const LanguageExternal = ({children}) => {
   const languageTogglable = useTogglable();
 
   return (
@@ -25,21 +26,7 @@ const LanguageExternal = () => {
             : languageTogglable.open()
         }>
         <span>English</span>
-        {/*
-         * TODO: The WFP kit's ChevronDown icon presents an issue where
-         * the path is aligned on the top left of the viewbox, and for this
-         * reason it cannot be centrally aligned with the label.
-         * Replace the following custom icon with the ChevronDown once the
-         * issue is solved.
-         */}
-        <svg
-          className={`${prefix}--language-ext-chevron`}
-          fill="currentColor"
-          width="12"
-          height="12"
-          viewBox="0 0 32 32">
-          <path d="M16 22L6 12 7.4 10.6 16 19.2 24.6 10.6 26 12z"></path>
-        </svg>
+         <CaretDownGlyph/>
       </div>
       <ul
         className={`${prefix}--language-ext__dropdown ${
@@ -47,21 +34,13 @@ const LanguageExternal = () => {
             ? 'wfp--language-ext__dropdown--is-shown'
             : ''
         }`}>
-        <li className={`${prefix}--language-ext-dropdown-option`}>
-          <a>English</a>
-        </li>
-        <li className={`${prefix}--language-ext-dropdown-option`}>
-          <a>French</a>
-        </li>
-        <li className={`${prefix}--language-ext-dropdown-option`}>
-          <a>Spanish</a>
-        </li>
+        {children}
       </ul>
     </div>
   );
 };
 
-const UserExternal = () => {
+const UserExternal = ({username, children, userImage}) => {
   const userTogglable = useTogglable();
 
   return (
@@ -71,68 +50,20 @@ const UserExternal = () => {
         onClick={() =>
           userTogglable.isOpen ? userTogglable.close() : userTogglable.open()
         }>
-        <User showName={false} alt="User avatar" />
-        <span>Max Mustermann</span>
-        {/*
-         * TODO: The WFP kit's ChevronDown icon presents an issue where
-         * the path is aligned on the top left of the viewbox, and for this
-         * reason it cannot be centrally aligned with the label.
-         * Replace the following custom icon with the ChevronDown once the
-         * issue is solved.
-         */}
-        <svg
-          className={`${prefix}--user-ext__chevron`}
-          fill="currentColor"
-          width="12"
-          height="12"
-          viewBox="0 0 32 32">
-          <path d="M16 22L6 12 7.4 10.6 16 19.2 24.6 10.6 26 12z"></path>
-        </svg>
+        <User alt="User avatar" name={username} image={userImage}/>
+         <CaretDownGlyph/>
       </div>
       <ul
         className={`${prefix}--user-ext__dropdown ${
           userTogglable.isOpen ? 'wfp--user-ext__dropdown--is-shown' : ''
         }`}>
-        <li className={`${prefix}--user-ext__profile-item`}>
-          <span className={`${prefix}--user-ext__profile-label`}>Email:</span>
-          <span className={`${prefix}--user-ext__profile-value`}>
-            <Link inline>user@wfp.com</Link>
-          </span>
-        </li>
-        <li className={`${prefix}--user-ext__profile-item`}>
-          <span className={`${prefix}--user-ext__profile-label`}>
-            Job title:
-          </span>
-          <span className={`${prefix}--user-ext__profile-value`}>
-            Supply chain
-          </span>
-        </li>
-        <li className={`${prefix}--user-ext__profile-item`}>
-          <span className={`${prefix}--user-ext__profile-label`}>Country:</span>
-          <span className={`${prefix}--user-ext__profile-value`}>Somalia</span>
-        </li>
-        <li className={`${prefix}--user-ext__profile-item`}>
-          <span className={`${prefix}--user-ext__profile-label`}>
-            Organization:
-          </span>
-          <span className={`${prefix}--user-ext__profile-value`}>
-            The United Nations World food Programme (WFP)
-          </span>
-        </li>
-        <div className={`${prefix}--user-ext__profile-actions`}>
-          <Link className={`${prefix}--user-ext__profile-edit`} inline>
-            Edit profile
-          </Link>
-          <Button kind="secondary" small>
-            Log out
-          </Button>
-        </div>
+          {children}
       </ul>
     </div>
   );
 };
 
-const MainNavigationExternal = () => {
+const MainNavigationExternal = ({productName, languageList, username, userImage, userDetails, children}) => {
   const navTogglable = useTogglable();
 
   return (
@@ -149,15 +80,13 @@ const MainNavigationExternal = () => {
             />
           </div>
           <div className={`${prefix}--main-navigation-ext__product-name`}>
-            Service
-            <br />
-            Marketplace
+            {productName}
           </div>
         </div>
         <div className={`${prefix}--main-navigation-ext__main`}>
           <div className={`${prefix}--main-navigation-ext__settings`}>
-            <LanguageExternal />
-            <UserExternal />
+            <LanguageExternal>{languageList}</LanguageExternal>
+            <UserExternal username={username} userImage={userImage}>{userDetails}</UserExternal>
           </div>
           <div className={`${prefix}--main-navigation-ext__nav`}>
             <div
@@ -186,24 +115,14 @@ const MainNavigationExternal = () => {
                     : ''
                 }`}>
                 <ul className={`${prefix}--main-navigation-ext__site-nav-list`}>
-                  <li className={`${prefix}--main-navigation-ext__site-link`}>
-                    <a>First link</a>
-                  </li>
-                  <li className={`${prefix}--main-navigation-ext__site-link`}>
-                    <a>Second link</a>
-                  </li>
-                  {/* <li className={`${prefix}--main-navigation-ext__site-link`}>
-                    <Button kind="accent" small>
-                      Accent link
-                    </Button>
-                  </li> */}
+                  {children}
                   <div
                     className={`${prefix}--main-navigation-ext__mobile-settings`}>
                     <li className={`${prefix}--main-navigation-ext__site-link`}>
-                      <LanguageExternal />
+                      <LanguageExternal>{languageList}</LanguageExternal>
                     </li>
                     <li className={`${prefix}--main-navigation-ext__site-link`}>
-                      <UserExternal />
+                      <UserExternal username={username} userImage={userImage}>{userDetails}</UserExternal>
                     </li>
                   </div>
                 </ul>
@@ -229,6 +148,40 @@ const MainNavigationExternal = () => {
       </Wrapper>
     </header>
   );
+};
+
+MainNavigationExternal.propTypes = {
+  /**
+   * The name of your product can be applied to this prop
+   */
+  productName: PropTypes.node,
+
+  /**
+   * The CSS class name to be placed on the wrapping element.
+   */
+  className: PropTypes.string,
+
+  /**
+   * List of laguages your site support
+   */
+  languageList: PropTypes.node,
+
+  /**
+   * The name of signed in user can be applied to this prop
+   */
+  username: PropTypes.node,
+
+  /**
+   * The image of signed in user can be applied to this prop
+   */
+  userImage: PropTypes.string,
+
+  /**
+   * The dropdown details of user can be applied to this prop
+   */
+  userDetails: PropTypes.node,
+  
+  
 };
 
 export default MainNavigationExternal;
