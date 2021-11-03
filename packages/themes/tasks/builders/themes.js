@@ -79,7 +79,7 @@ function buildThemesFile(
               ]),
               t.Identifier(name),
               t.SassFunctionCall(t.Identifier('map-get'), [
-                t.Identifier('carbon--theme--wfp'),
+                t.Identifier(`carbon--theme--${defaultThemeName}`),
                 t.SassString(name),
               ]),
             ])

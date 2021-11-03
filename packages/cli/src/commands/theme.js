@@ -14,10 +14,41 @@ const execa = require('execa');
 
 const logger = createLogger('bundle');
 
-async function theme({ entrypoint, name, globals }) {
+async function theme({ entrypoint, name, source, output, globals }) {
+  const cwd = process.cwd();
+
+  async function buildSass() {
+    const stream = execa(
+      'babel-node',
+      [
+        '--presets',
+        '@babel/preset-env',
+        '--ignore',
+        '/node_modules/',
+        path.resolve(__dirname, '../../../themes/tasks/build.js'),
+      ],
+      {
+        env: {
+          sourceLib: path.join(cwd, source),
+          outputDir: path.join(cwd, output),
+          defaultTheme: 'memo',
+          //stdio: 'inherit',
+        },
+      }
+    );
+
+    if (stream.stdout !== undefined) {
+      stream.stdout.on('data', (chunk) => {
+        console.log(chunk.toString());
+      });
+      stream.stderr.on('data', (chunk) => {
+        console.log(chunk.toString());
+      });
+    }
+  }
+
   logger.start('bundle');
 
-  const cwd = process.cwd();
   const extension = path.extname(entrypoint);
 
   if (!bundlers.has(extension)) {
@@ -44,36 +75,6 @@ async function theme({ entrypoint, name, globals }) {
   logger.stop();
 }
 
-async function buildSass() {
-  const stream = execa(
-    'babel-node',
-    [
-      '--presets',
-      '@babel/preset-env',
-      '--ignore',
-      '/node_modules/',
-      path.resolve(__dirname, '../../../themes/tasks/build.js'),
-    ],
-    {
-      env: {
-        sourceLib: '/Applications/MAMP/htdocs/memo-web/lib',
-        outputDir: '/Applications/MAMP/htdocs/memo-web/src/themes/output',
-        defaultTheme: 'memo',
-        //stdio: 'inherit',
-      },
-    }
-  );
-
-  if (stream.stdout !== undefined) {
-    stream.stdout.on('data', (chunk) => {
-      console.log(chunk.toString());
-    });
-    stream.stderr.on('data', (chunk) => {
-      console.log(chunk.toString());
-    });
-  }
-}
-
 module.exports = {
   command: 'theme <entrypoint>',
   desc: 'creates a theme from the given .js entrypoint',
@@ -86,6 +87,16 @@ module.exports = {
     yargs.options({
       n: {
         alias: 'name',
+        describe: 'the name of the module for the UMD build',
+        type: 'string',
+      },
+      s: {
+        alias: 'source',
+        describe: 'the name of the module for the UMD build',
+        type: 'string',
+      },
+      o: {
+        alias: 'output',
         describe: 'the name of the module for the UMD build',
         type: 'string',
       },

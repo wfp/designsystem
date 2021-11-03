@@ -9,18 +9,15 @@
 
 const { types: t } = require('@wfp/scss-generator');
 const { TokenFormat } = require('../../../src/next');
-const { wfp, /*white, g10, g90, g100,*/ tokens } = require('../../../src');
+//const { wfp, /*white, g10, g90, g100,*/ tokens } = require('../../../src');
+const { themes, tokens } = require('../../../src');
 const { FILE_BANNER, primitive } = require('../shared');
 const { shouldIncludeToken } = require('./shared');
 
 function buildCompatFile() {
-  const themes = {
+  /* const themes = {
     wfp,
-    /*white,
-    g10,
-    g90,
-    g100,*/
-  };
+  }; */
   const variables = Object.entries(themes).flatMap(([key, theme]) => {
     return [
       t.Newline(),

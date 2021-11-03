@@ -16,7 +16,7 @@
 require('dotenv').config();
 var replaceall = require('replaceall');
 
-const PAGE_ID = '0:1';
+const PAGE_ID = process.env.FIGMA_PROJECT_NODE_ID;
 // Get this from the URL of a single file:
 // https://www.figma.com/file/<file key>/Some-Name?node-id=182%3A0
 const FILE_KEY = process.env.FIGMA_PROJECT_ID; // 'z4l4k7wgPxaeHZFW6iIvxo'; // wkqsvO8Jr0WNiokusGudaO
@@ -48,14 +48,18 @@ function camelize(str) {
   /*var n = str.lastIndexOf('/');
   var result = str.substring(n + 1);
   return result;*/
+
+  str = str.replace('dark/', '').toLowerCase();
+
   strSplit = str.split('/');
   // Check if Groupname equals LayerName
   if (strSplit[0].toLowerCase() === strSplit[1].toLowerCase()) {
     str = str.replace(`${strSplit[0]}/`, '').toLowerCase();
   }
 
-  str = str.replace('Form/', '').toLowerCase();
+  str = str.replace('form/', '').toLowerCase();
   str = str.replace('primary/', '').toLowerCase();
+
   str = replaceall('_', ' ', str);
   str = replaceall('-', ' ', str);
   str = replaceall('/', ' ', str);
@@ -120,11 +124,18 @@ const fetchFile = async (key) => await doFetch(`/files/${key}`);
  ```
  */
 const fetchAllColorStyles = async () => {
+  console.log('read file from', FILE_KEY);
   const file = await fetchFile(FILE_KEY);
 
   const styles = Object.entries(file.styles);
 
   const canvas = file.document.children.find((page) => page.id === PAGE_ID);
+
+  if (canvas === undefined) {
+    console.error('no canvas found. Available canvases are');
+
+    file.document.children.forEach((page) => console.log(page.id));
+  }
 
   var colorList = [];
 

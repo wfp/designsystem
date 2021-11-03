@@ -5,8 +5,8 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import { unstable_tokens as type } from '@carbon/type';
-import { unstable_tokens as layout } from '@carbon/layout';
+import { unstable_tokens as type } from '@wfp/type';
+import { unstable_tokens as layout } from '@wfp/layout';
 
 // The color token names for a Carbon theme, value corresponds to what they're
 // exported as in JavaScript

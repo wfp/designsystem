@@ -14,8 +14,8 @@ const { FILE_BANNER, primitive } = require('./shared');
 function buildThemesFile() {
   const imports = [
     t.SassModule('sass:map'),
-    t.SassModule('@carbon/layout'),
-    t.SassModule('@carbon/type'),
+    t.SassModule('@wfp/layout'),
+    t.SassModule('@wfp/type'),
     process.env.sourceLib
       ? t.SassModule('@wfp/themes/scss/modules/utilities')
       : t.SassModule('../utilities'),

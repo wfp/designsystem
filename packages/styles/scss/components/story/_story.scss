@@ -22,6 +22,7 @@
 /// @access public
 /// @group story
 @mixin text {
+  /* TODO: Apply changes
   > code {
     @extend .#{$prefix}--story__code;
   }
@@ -60,7 +61,7 @@
   b,
   strong {
     @extend .#{$prefix}--story__b;
-  }
+  }*/
 
   /* All the line spacings */
 
@@ -197,7 +198,7 @@
   }
 }
 
-@mixin story{
+@mixin story {
   .#{$prefix}--story {
     @include reset;
     @include font-family('sans');

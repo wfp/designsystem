@@ -5,8 +5,6 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import { code01 } from './styles';
-
 // Unstable tokens
 export const caption01 = 'caption01';
 export const caption02 = 'caption02';
@@ -18,6 +16,7 @@ export const bodyShort01 = 'bodyShort01';
 export const bodyLong01 = 'bodyLong01';
 export const bodyShort02 = 'bodyShort02';
 export const bodyLong02 = 'bodyLong02';
+export const code01 = 'code01';
 export const code02 = 'code02';
 export const heading01 = 'heading01';
 export const heading02 = 'heading02';
