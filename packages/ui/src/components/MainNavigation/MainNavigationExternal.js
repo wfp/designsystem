@@ -1,7 +1,7 @@
 import React from 'react';
 import { useEffect, useRef } from "react";
 import { WfpLogoVerticalEn } from '@wfp/pictograms-react';
-import { ChevronDownGlyph  } from '@wfp/icons-react';
+import { ChevronDownGlyph, ChevronUpGlyph  } from '@wfp/icons-react';
 
 import Button from '../Button';
 import User from '../User';
@@ -42,7 +42,9 @@ const LanguageExternal = ({children, primaryLanguage}) => {
             : languageTogglable.open()
         }>
         <span>{primaryLanguage}</span>
-         <ChevronDownGlyph/>
+        {
+          languageTogglable.isOpen ? <ChevronUpGlyph/> : <ChevronDownGlyph/>
+        }
       </div>
       <ul
         className={`${prefix}--language-ext__dropdown ${
@@ -83,7 +85,9 @@ const UserExternal = ({username, children, userImage}) => {
           userTogglable.isOpen ? userTogglable.close() : userTogglable.open()
         }>
         <User alt="User avatar" name={username} image={userImage}/>
-        <ChevronDownGlyph/>
+        {
+          userTogglable.isOpen ? <ChevronUpGlyph/> : <ChevronDownGlyph/>
+        }
       </div>
       <ul
         className={`${prefix}--user-ext__dropdown ${
