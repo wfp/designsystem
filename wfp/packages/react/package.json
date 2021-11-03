@@ -1,6 +1,6 @@
 {
   "name": "@wfp/react-example",
-  "version": "1.18.16",
+  "version": "1.18.17",
   "description": "WFP UI Kit",
   "license": "Apache-2",
   "main": "lib/index.js",
@@ -109,7 +109,7 @@
   "dependencies": {
     "@storybook/manager-webpack5": "^6.3.4",
     "@wfp/icons-react": "^10.34.9",
-    "@wfp/ui": "^1.18.16",
+    "@wfp/ui": "^1.18.17",
     "invariant": "^2.2.4",
     "lerna": "^4.0.0",
     "npm-which": "^3.0.1",
