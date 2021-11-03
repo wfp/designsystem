@@ -478,13 +478,13 @@ export const External = (args) => (<MainNavigationExternal  {...args}>
 const Languages = () =>
 (
 <>
-<li className={`wfp--language-ext-dropdown-option`}>
+<li className={`wfp--language-ext__dropdown-option`}>
   <a>English</a>
 </li>
-<li className={`wfp--language-ext-dropdown-option`}>
+<li className={`wfp--language-ext__dropdown-option`}>
   <a>French</a>
 </li>
-<li className={`wfp--language-ext-dropdown-option`}>
+<li className={`wfp--language-ext__dropdown-option`}>
   <a>Spanish</a>
 </li>
 </>

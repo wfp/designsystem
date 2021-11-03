@@ -4,7 +4,7 @@
 // This source code is licensed under the Apache-2.0 license found in the
 // LICENSE file in the root directory of this source tree.
 //
-
+@use 'mixins' as *;
 @use '../../breakpoint' as *;
 @use '../../config' as *;
 @use '../../motion' as *;
@@ -12,381 +12,207 @@
 @use '../../theme' as *;
 @use '../../type' as *;
 @use '../../utilities/convert' as *;
-@use '../../utilities/component-reset' as *;
+@use '../../utilities/component-reset';
 @use '../../utilities/focus-outline' as *;
 @use '../../utilities/high-contrast-mode' as *;
 @use '../../utilities/z-index' as *;
+@use '../../utilities/layer' as *;
+
 
 @use '../button';
 
 /// Modal styles
 /// @access public
 /// @group modal
+
+// Modal
+$modal-border-top: $background-brand 4px solid !default;
+$modal-border-radius: 6px;
+$modal-footer-background-color: var(--ui-02) !default; //TODO use $layer token
+
 @mixin modal {
   .#{$prefix}--modal {
+    @include component-reset.reset;
+    @include font-family('sans');
     position: fixed;
-    z-index: z('modal');
     top: 0;
+    right: 0;
+    bottom: 0;
     left: 0;
+    z-index: z('hidden');
     display: flex;
-    width: 100vw;
-    height: 100vh;
     align-items: center;
     justify-content: center;
-    background-color: $overlay;
+    overflow: auto;
     content: '';
     opacity: 0;
-    transition: opacity $duration-moderate-02 motion(exit, expressive),
-      visibility 0ms linear $duration-moderate-02;
+    //background-color: rgba(var(--ui-07), 0.5);
+    background-color: rgba(#0B1923, 0.8);; // using current token of $overlay
+    transition: opacity 200ms, z-index 0s 200ms, visibility 0s 200ms;
     visibility: hidden;
 
-    &.is-visible {
-      opacity: 1;
-      transition: opacity $duration-moderate-02 motion(entrance, expressive),
-        visibility 0ms linear;
-      visibility: inherit;
-    }
+    /*&.#{$prefix}--modal--tall {
+      align-items: flex;
+    }*/
 
-    // V11: Question for design: do we have an updated tokens for fields that exist on `layer`?
-    .#{$prefix}--pagination,
-    .#{$prefix}--pagination__control-buttons,
-    .#{$prefix}--text-input,
-    .#{$prefix}--text-area,
-    .#{$prefix}--search-input,
-    .#{$prefix}--select-input,
-    .#{$prefix}--dropdown,
-    .#{$prefix}--dropdown-list,
-    .#{$prefix}--number input[type='number'],
-    .#{$prefix}--date-picker__input {
-      background-color: $field-02;
+    &.is-visible {
+      z-index: z('modal');
+      opacity: 1;
+      transition: opacity 200ms;
+      visibility: visible;
     }
   }
 
-  .#{$prefix}--modal.is-visible .#{$prefix}--modal-container {
-    transform: translate3d(0, 0, 0);
-    transition: transform $duration-moderate-02 motion(entrance, expressive);
+  .#{$prefix}--modal--danger {
+    @include modal--color($support-error);
+  }
+
+  .#{$prefix}--modal__wrapper {
+    display: inline;
+  }
+
+  .#{$prefix}--modal-inner {
+    max-height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
   }
 
   .#{$prefix}--modal-container {
-    position: fixed;
-    top: 0;
-    display: grid;
+    @include reset;
+    @include layer('pop-out');
+    //box-shadow: 0 20px 30px -10px $box-shadow;
+    position: relative;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    background-color: $background;
     overflow: hidden;
-    width: 100%;
+    &:before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      content: '';
+      background: $interactive;
+    }
+    //border-top: $modal-border-top;
+    // border-radius: $modal-border-radius;
+    min-width: 100%;
+    //max-height: 100%;
     height: 100%;
-    max-height: 100%;
-    background-color: $layer;
-    grid-template-columns: 100%;
-    grid-template-rows: auto 1fr auto;
-    // make modal edge visible on high contrast themes (#3880)
-    outline: 3px solid transparent;
-    outline-offset: -3px;
-    transform: translate3d(0, -24px, 0);
-    transform-origin: top center;
-    transition: transform $duration-moderate-02 motion(exit, expressive);
+    padding: $spacing-08 3% 0rem 3%;
 
-    @include breakpoint(md) {
-      position: static;
-      width: 84%;
+    @include breakpoint('md') {
       height: auto;
-      max-height: 90%;
+      min-width: 500px;
+      max-width: 75%;
 
-      .#{$prefix}--modal-header,
-      .#{$prefix}--modal-content,
-      .#{$prefix}--modal-content__regular-content {
-        padding-right: 20%;
+      .#{$prefix}--modal--wide & {
+        max-width: 100%;
+        width: 100%;
+        min-width: 768px;
       }
 
-      .#{$prefix}--modal-content--with-form {
-        // Override for `.#{$prefix}--modal-content`
-        padding-right: $spacing-05;
-      }
+      padding: $spacing-08 $spacing-09 0 $spacing-09;
     }
 
-    @include breakpoint(lg) {
-      width: 60%;
-      max-height: 84%;
-    }
+    @media (min-width: 1024px) {
+      max-width: 55%;
+      //max-height: 100%;
 
-    @include breakpoint(xlg) {
-      width: 48%;
-    }
-  }
-
-  .#{$prefix}--modal-header,
-  .#{$prefix}--modal-content {
-    padding-left: $spacing-05;
-  }
-
-  .#{$prefix}--modal-header,
-  .#{$prefix}--modal-content,
-  .#{$prefix}--modal-content__regular-content {
-    padding-right: $spacing-05;
-  }
-
-  .#{$prefix}--modal-content--with-form {
-    padding-right: $spacing-05;
-  }
-
-  .#{$prefix}--modal-container--xs {
-    .#{$prefix}--modal-header {
-      padding-right: $spacing-09;
-    }
-
-    .#{$prefix}--modal-content,
-    .#{$prefix}--modal-content__regular-content,
-    .#{$prefix}--modal-content--with-form {
-      padding-right: $spacing-05;
-    }
-
-    @include breakpoint(md) {
-      width: 48%;
-    }
-
-    @include breakpoint(lg) {
-      width: 32%;
-      max-height: 48%;
-    }
-
-    @include breakpoint(xlg) {
-      width: 24%;
-    }
-  }
-
-  .#{$prefix}--modal-container--sm {
-    .#{$prefix}--modal-header {
-      padding-right: $spacing-09;
-    }
-
-    .#{$prefix}--modal-content,
-    .#{$prefix}--modal-content__regular-content,
-    .#{$prefix}--modal-content--with-form {
-      padding-right: $spacing-05;
-    }
-
-    @include breakpoint(md) {
-      width: 60%;
-    }
-
-    @include breakpoint(lg) {
-      width: 42%;
-      max-height: 72%;
-    }
-
-    @include breakpoint(xlg) {
-      width: 36%;
-
-      .#{$prefix}--modal-header,
-      .#{$prefix}--modal-content,
-      .#{$prefix}--modal-content__regular-content {
-        padding-right: 20%;
-      }
-
-      .#{$prefix}--modal-content--with-form {
-        // Override for `.#{$prefix}--modal-content`
-        padding-right: $spacing-05;
-      }
-    }
-  }
-
-  .#{$prefix}--modal-container--lg {
-    .#{$prefix}--modal-header {
-      padding-right: $spacing-09;
-    }
-
-    .#{$prefix}--modal-content,
-    .#{$prefix}--modal-content__regular-content,
-    .#{$prefix}--modal-content--with-form {
-      padding-right: $spacing-05;
-    }
-
-    @include breakpoint(md) {
-      width: 96%;
-
-      .#{$prefix}--modal-header,
-      .#{$prefix}--modal-content,
-      .#{$prefix}--modal-content__regular-content {
-        padding-right: 20%;
-      }
-
-      .#{$prefix}--modal-content--with-form {
-        // Override for `.#{$prefix}--modal-content`
-        padding-right: $spacing-05;
+      .#{$prefix}--modal--wide & {
+        max-width: 90%;
       }
     }
 
-    @include breakpoint(lg) {
-      width: 84%;
-      max-height: 96%;
-    }
+    @media (min-width: 1600px) {
+      max-width: 50%;
+      //max-height: 100%;
 
-    @include breakpoint(xlg) {
-      width: 72%;
+      .#{$prefix}--modal--wide & {
+        max-width: 80%;
+      }
     }
   }
 
   .#{$prefix}--modal-header {
-    padding-top: $spacing-05;
-    padding-right: $spacing-09;
-    margin-bottom: $spacing-03;
-    grid-column: 1/-1;
-    grid-row: 1/1;
+    margin-bottom: $spacing-06;
+    display: flex;
+    justify-content: space-between;
   }
 
   .#{$prefix}--modal-header__label {
+    @include reset;
     @include type-style('label-01');
-
-    margin-bottom: $spacing-02;
     color: $text-secondary;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: $spacing-03;
   }
 
   .#{$prefix}--modal-header__heading {
-    @include type-style('productive-heading-03');
-
+    @include reset;
+    @include type-style('productive-heading-04');
+    font-weight: 600;
     color: $text-primary;
   }
 
   .#{$prefix}--modal-content {
-    @include type-style('body-long-01');
-
-    position: relative;
-    // Required to accommodate focus outline's negative offset:
-    padding-top: $spacing-03;
-    margin-bottom: $spacing-09;
+    //overflow-y: auto;
+    margin-bottom: $spacing-08;
     color: $text-primary;
-    font-weight: 400;
-    grid-column: 1/-1;
-    grid-row: 2/-2;
-    overflow-y: auto;
 
-    &:focus {
-      @include focus-outline('outline');
-    }
-  }
-
-  .#{$prefix}--modal-content > p {
-    @include type-style('body-long-01');
-  }
-
-  // Required so overflow-indicator disappears at end of content
-  .#{$prefix}--modal-scroll-content > *:last-child {
-    padding-bottom: $spacing-07;
-  }
-
-  .#{$prefix}--modal-content--overflow-indicator {
-    position: absolute;
-    bottom: $spacing-09;
-    left: 0;
-    width: 100%;
-    height: rem(32px);
-    background-image: linear-gradient(to bottom, transparent, $layer);
-    content: '';
-    grid-column: 1/-1;
-    grid-row: 2/-2;
-    pointer-events: none;
-  }
-
-  // Safari-only media query
-  // won't appear correctly with CSS custom properties
-  // see: code snippet and tabs overflow indicators
-  @media not all and (min-resolution: 0.001dpcm) {
-    @supports (-webkit-appearance: none) and (stroke-color: transparent) {
-      .#{$prefix}--modal-content--overflow-indicator {
-        background-image: linear-gradient(to bottom, rgba($layer, 0), $layer);
-      }
-    }
-  }
-
-  .#{$prefix}--modal-content:focus
-    ~ .#{$prefix}--modal-content--overflow-indicator {
-    width: calc(100% - 4px);
-    margin: 0 2px 2px;
-  }
-
-  @media screen and (-ms-high-contrast: active) {
-    .#{$prefix}--modal-scroll-content > *:last-child {
-      padding-bottom: 0;
-    }
-
-    .#{$prefix}--modal-content--overflow-indicator {
-      display: none;
+    > * {
+      @include reset;
     }
   }
 
   .#{$prefix}--modal-footer {
-    display: flex;
-    height: rem(64px);
-    justify-content: flex-end;
     margin-top: auto;
-    grid-column: 1/-1;
-    grid-row: -1/-1;
-  }
+    text-align: right;
+    background-color: $modal-footer-background-color;
+    margin-left: rem(-24px);
+    margin-right: rem(-24px);
+    padding: $spacing-08 $spacing-08;
+    border-radius: 0 0 $modal-border-radius $modal-border-radius;
+    .#{$prefix}--link + .#{$prefix}--btn {
+      margin-left: $spacing-05;
+    }
 
-  .#{$prefix}--modal-footer .#{$prefix}--btn {
-    max-width: none;
-    height: rem(64px);
-    flex: 0 1 50%;
-    padding-top: $spacing-05;
-    padding-bottom: $spacing-07;
-    margin: 0;
-  }
-
-  .#{$prefix}--modal-footer--three-button .#{$prefix}--btn {
-    flex: 0 1 25%;
-    align-items: flex-start;
+    @include breakpoint('md') {
+      margin-left: rem(-48px);
+      margin-right: rem(-48px);
+      padding: $spacing-07 $spacing-09;
+    }
   }
 
   .#{$prefix}--modal-close {
     position: absolute;
-    z-index: 2;
-    top: 0;
-    right: 0;
+    top: rem(16px);
+    right: rem(16px);
+    padding: 0;
     overflow: hidden;
-    width: 3rem;
-    height: 3rem;
-    padding: rem(12px);
-    border: 2px solid transparent;
-    background-color: transparent;
     cursor: pointer;
-    transition: background-color $duration-fast-02 motion(standard, productive);
-
-    &:hover {
-      background-color: $layer-hover;
-    }
+    background-color: transparent;
+    border: none;
+    padding: 0.25rem 0.25rem 0.125rem;
 
     &:focus {
-      border-color: $focus;
-      outline: none;
+      @include focus-outline('border');
     }
   }
 
-  .#{$prefix}--modal-close::-moz-focus-inner {
-    border: 0;
-  }
-
   .#{$prefix}--modal-close__icon {
-    width: rem(20px);
-    height: rem(20px);
-    fill: $icon-primary;
+    transition: 200ms;
+    fill: var(--ui-05); // TODO change $icon-tertiary
+    width: rem(12px);
+    height: rem(12px);
   }
 
-  .#{$prefix}--body--with-modal-open {
-    overflow: hidden;
+  .#{$prefix}--modal--background-image {
+    background-size: cover;
   }
-
-  .#{$prefix}--body--with-modal-open .#{$prefix}--tooltip,
-  .#{$prefix}--body--with-modal-open .#{$prefix}--overflow-menu-options {
-    z-index: z('modal');
-  }
-
-  // Windows HCM fix
-  /* stylelint-disable */
-  .#{$prefix}--modal-close__icon {
-    @include high-contrast-mode('icon-fill');
-  }
-
-  .#{$prefix}--modal-close:focus {
-    @include high-contrast-mode('focus');
-  }
-  /* stylelint-enable */
 }

@@ -1,0 +1,52 @@
+//
+// Copyright IBM Corp. 2016, 2018
+//
+// This source code is licensed under the Apache-2.0 license found in the
+// LICENSE file in the root directory of this source tree.
+//
+
+@use '../../config' as *;
+@use '../../breakpoint' as *;
+@use '../../spacing' as *;
+@use '../../theme' as *;
+@use '../../utilities/component-reset' as *;
+@use '../../utilities/convert' as *;
+
+@mixin auth-layout {
+  .#{$prefix}--auth-wrapper {
+    width: 100%;
+    height: 100vh;
+    background-color: $background;
+    display: flex;
+    flex-direction: row;
+
+    .#{$prefix}--auth-background-wrapper {
+      width: 60%;
+      border-right: 1px solid $border-subtle;
+      @include breakpoint-down('md') {
+        display: none;
+      }
+    }
+
+    .#{$prefix}--auth-background-content {
+      width: 100%;
+      height: 100vh;
+    }
+
+    .#{$prefix}--auth-background-image {
+      object-fit: cover;
+      background-size: cover;
+      margin: 0;
+    }
+
+    .#{$prefix}--auth-content-wrapper {
+      width: 40%;
+      padding: $spacing-04;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      overflow: scroll;
+    }
+  }
+}

@@ -1,6 +1,6 @@
 {
   "name": "@wfp/ui",
-  "version": "1.18.13",
+  "version": "1.18.15",
   "description": "WFP UI Kit",
   "license": "Apache-2",
   "main": "lib/index.js",
@@ -13,12 +13,12 @@
     "build:rollup": "rollup -c",
     "build:script": "node scripts/build.js",
     "whichtest": "node scripts/whichTest.js",
-    "build:storybook": "rm -r -f docs && build-storybook -s ./src/assets -o docs  && npm run build:favicon",
+    "build:storybook": "rm -r -f docs && build-storybook -s ../logos/optimized -o docs  && npm run build:favicon",
     "ci-check": "npm run prettier:diff && npm run lint && npm run test --runInBand && npm run test-ssr",
     "build:cssmin": "sass --load-path=node_modules --load-path=../../node_modules ./src/globals/scss/styles.scss ./assets/css/styles.min.css && postcss ./assets/css/styles.min.css --no-map -u autoprefixer -rs",
     "build:css": "sass --load-path=node_modules --load-path=../../node_modules  ./src/globals/scss/styles.scss ./assets/css/styles.css && postcss ./assets/css/styles.css --output ./assets/css/styles.css --use autoprefixer",
     "commitmsg": "validate-commit-msg",
-    "build:favicon": "convert ./src/assets/internal/wfp-favicon-png32.png ./src/assets/internal/wfp-favicon-png512.png -colors 256 docs/favicon.ico",
+    "build:favicon": "convert ../logos/src/favicons/favicon-32x32.png ../logos/src/favicons/favicon-260x260.png -colors 256 docs/favicon.ico",
     "contributors:add": "all-contributors add",
     "contributors:generate": "all-contributors generate",
     "analyze": "source-map-explorer 'es/index.js'",
@@ -182,8 +182,8 @@
     "@tippy.js/react": "^3.1.1",
     "@typescript-eslint/eslint-plugin": "^4.9.0",
     "@typescript-eslint/parser": "^3.8.0",
-    "@wfp/babel-preset-wfp": "^0.1.2",
-    "@wfp/icons": "^10.34.7",
+    "@wfp/babel-preset-wfp": "^0.1.4",
+    "@wfp/icons": "^10.34.8",
     "add": "^2.0.6",
     "all-contributors-cli": "^6.17.0",
     "autoprefixer": "^9.8.6",
@@ -370,5 +370,5 @@
     ]
   },
   "bundleSizeThreshold": 80000,
-  "gitHead": "6c46980c68ce47f3d5271024398d2537512d05ac"
+  "gitHead": "1f06c355bfc57d62c4516f9daed57564730537f5"
 }

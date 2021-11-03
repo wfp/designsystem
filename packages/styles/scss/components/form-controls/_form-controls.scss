@@ -1,0 +1,53 @@
+//
+// Copyright IBM Corp. 2016, 2018
+//
+// This source code is licensed under the Apache-2.0 license found in the
+// LICENSE file in the root directory of this source tree.
+//
+
+@use '../../config' as *;
+@use '../../spacing' as *;
+@use '../../theme' as *;
+@use '../../breakpoint' as *;
+@use '../../type' as *;
+@use '../../utilities/convert' as *;
+
+/// formControls styles
+/// @access public
+/// @group form-controls
+
+
+@mixin form-controls {
+  .#{$prefix}--form-controls {
+    @include breakpoint('md') {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+    }
+    .#{$prefix}--btn {
+      //margin-right: $spacing-xs;
+    }
+    .#{$prefix}--form-controls__submit {
+      margin-right: 0;
+    }
+
+    @include breakpoint('md') {
+      background: none;
+    }
+  }
+
+  .wfp--form-controls__steps {
+    @include breakpoint-down('md') {
+      margin-bottom: $spacing-03;
+    }
+  }
+
+  .#{$prefix}--form-controls__prev {
+    display: inline-flex !important;
+    flex-direction: row-reverse;
+    .#{$prefix}--btn__icon {
+      margin-left: 0;
+      margin-right: 0.5em;
+    }
+  }
+}

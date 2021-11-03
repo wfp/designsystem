@@ -1,0 +1,363 @@
+//
+// Copyright IBM Corp. 2016, 2018
+//
+// This source code is licensed under the Apache-2.0 license found in the
+// LICENSE file in the root directory of this source tree.
+//
+
+@use '../../config' as *;
+@use '../../spacing' as *;
+@use '../../motion' as *;
+@use '../../type' as *;
+@use '../../breakpoint' as *;
+@use '../../theme' as *;
+@use '../../utilities/component-reset';
+@use '../../utilities/convert' as *;
+@use '../../utilities/focus-outline' as *;
+@use '../../utilities/high-contrast-mode' as *;
+@use '../../utilities/skeleton' as *;
+@use '../link';
+
+/// Story styles
+/// @access public
+/// @group story
+@mixin text {
+  > code {
+    @extend .#{$prefix}--story__code;
+  }
+  p {
+    @extend .#{$prefix}--story__p;
+  }
+
+  > h2 {
+    @extend .#{$prefix}--story__h2;
+  }
+
+  i {
+    @extend .#{$prefix}--story__i;
+  }
+
+  h3 {
+    @extend .#{$prefix}--story__h3;
+  }
+
+  h4 {
+    @extend .#{$prefix}--story__h4;
+  }
+
+  h5 {
+    @extend .#{$prefix}--story__h5;
+  }
+
+  a {
+    @extend .#{$prefix}--story__a;
+  }
+
+  sup {
+    @extend .#{$prefix}--story__sup;
+  }
+
+  b,
+  strong {
+    @extend .#{$prefix}--story__b;
+  }
+
+  /* All the line spacings */
+
+  .#{$prefix}--blockquote {
+    & + p,
+    & + h3 {
+      margin-top: $spacing-06;
+    }
+  }
+
+  p + .#{$prefix}--blockquote {
+    margin-top: $spacing-04;
+  }
+
+  p + h2 {
+    margin-top: $spacing-08;
+  }
+
+  ul + h2 {
+    margin-top: $spacing-07;
+  }
+
+  p + h3 {
+    margin-top: $spacing-08;
+  }
+
+  h1 + h2 {
+    margin-top: $spacing-06;
+  }
+
+  h2 + h3 {
+    margin-top: $spacing-06;
+  }
+
+  p + ul,
+  h3 + ul,
+  h4 + ul {
+    margin-top: $spacing-05;
+  }
+
+  h3 + p {
+    margin-top: $spacing-04;
+  }
+
+  button + p {
+    margin-top: $spacing-04;
+  }
+
+  div + h4,
+  h3 + h4 {
+    margin-top: $spacing-06;
+  }
+
+  .wfp--story__h4 + div,
+  h4 + div {
+    margin-top: $spacing-05;
+  }
+
+  h1 + .wfp--list,
+  h2 + .wfp--list,
+  h3 + .wfp--list,
+  h4 + .wfp--list,
+  h5 + .wfp--list,
+  .wfp--story__h1 + .wfp--list,
+  .wfp--story__h2 + .wfp--list,
+  .wfp--story__h3 + .wfp--list,
+  .wfp--story__h4 + .wfp--list,
+  .wfp--story__h5 + .wfp--list {
+    margin-top: $spacing-05;
+  }
+
+  h1 + iframe,
+  h2 + iframe,
+  h3 + iframe,
+  h4 + iframe,
+  h5 + iframe {
+    margin-top: $spacing-03;
+  }
+
+  iframe + h1,
+  iframe + h2,
+  iframe + h3,
+  iframe + h4,
+  iframe + h5 {
+    margin-top: $spacing-05;
+  }
+
+  .#{$prefix}--story__list {
+    list-style-position: outside;
+    line-height: 1.6em;
+    margin: $spacing-05 0 $spacing-05 1.5em;
+
+    li {
+      list-style-type: disc;
+    }
+  }
+
+  .#{$prefix}--story__sub-heading {
+    @include type-style('heading-01');
+    font-weight: normal;
+    color: var(--ui-05);
+    margin-top: $spacing-02 !important;
+    margin-bottom: $spacing-02;
+    font-style: italic;
+    //text-transform: uppercase;
+    font-weight: 400;
+
+    //letter-spacing: 0.05em;
+  }
+
+  .#{$prefix}--story__type-beta {
+    margin-bottom: $spacing-06;
+  }
+
+  .#{$prefix}--markup {
+    font-style: italic;
+    @include type-style('heading-02');
+    margin-bottom: $spacing-06;
+  }
+
+  .#{$prefix}--inline-highlight {
+    display: inline-block;
+    font-weight: 600;
+    background: var(--ui-03);
+    padding: 0.05em 0.1em;
+  }
+
+  .#{$prefix}--story__divider {
+    border: 1px solid var(--ui-04);
+  }
+
+  .#{$prefix}--story__divider--lg {
+    border: 2px solid var(--ui-04);
+  }
+}
+
+@mixin story{
+  .#{$prefix}--story {
+    @include reset;
+    @include font-family('sans');
+    //-webkit-font-smoothing: antialiased;
+    //-moz-osx-font-smoothing: grayscale;
+    &__center {
+      text-align: center;
+    }
+
+    &__full-height {
+      min-height: 65vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    @include text;
+  }
+  .#{$prefix}--text {
+    @include text;
+  }
+
+  .#{$prefix}--story__a {
+    &:hover {
+      text-decoration: underline;
+    }
+    //@extend .wfp--link;
+  }
+
+  a.#{$prefix}--btn {
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  .#{$prefix}--blockquote {
+    p {
+      margin: 0;
+    }
+  }
+
+  .#{$prefix}--story__title {
+    @include type-style('productive-heading-07');
+    font-weight: 300;
+    margin-bottom: $spacing-07;
+    margin-left: -0.058em;
+  }
+
+  .#{$prefix}--story__content-title {
+    @include type-style('productive-heading-05');
+    font-weight: 300;
+    margin-bottom: $spacing-06;
+    margin-left: -0.058em;
+  }
+
+  .#{$prefix}--story__subtitle {
+    @include type-style('caption-02');
+    font-weight: normal;
+    color: $interactive;
+    margin-top: $spacing-07;
+    margin-bottom: $spacing-02;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+  }
+
+  .#{$prefix}--story__code {
+    @include type-style('code-02');
+    @include font-family('code');
+    padding: 0.2em 0.4em;
+    margin: 0;
+    font-size: 85%;
+    border-radius: 0.2em;
+    background: var(--ui-02);
+  }
+
+  .#{$prefix}--story__p {
+    margin-top: $spacing-05;
+    line-height: 1.6em;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .#{$prefix}--story__i {
+    font-style: italic;
+  }
+  .#{$prefix}--story__h2 {
+    margin-top: $spacing-07;
+
+    &.before--img {
+      margin-bottom: 0;
+    }
+  }
+
+  .#{$prefix}--story__h3 {
+    margin-top: $spacing-07;
+  }
+
+  .#{$prefix}--story__h4 {
+    margin-top: $spacing-06;
+    // @include typescale('epsilon');
+  }
+
+  .#{$prefix}--story__h5 {
+    margin-top: $spacing-06;
+    // @include typescale('epsilon');
+  }
+
+  .#{$prefix}--story__caption {
+    @include type-style('caption-01');
+  }
+
+  .#{$prefix}--story__sup {
+    font-size: 0.7em;
+    background: var(--ui-03);
+    vertical-align: top;
+    position: relative;
+    top: -0.5em;
+
+    > a {
+      text-decoration: none;
+
+      &:before {
+        content: '[';
+      }
+
+      &:after {
+        content: ']';
+      }
+    }
+  }
+
+  .#{$prefix}--story__inline-highlight {
+    display: inline-block;
+    font-weight: 600;
+    background: var(--ui-03);
+    padding: 0.05em 0.1em;
+  }
+
+  .docblock-source {
+    margin-top: $spacing-03 !important;
+  }
+  .#{$prefix}--story__bold {
+    font-weight: 600;
+  }
+
+  .#{$prefix}--story__b,
+  .#{$prefix}--story__strong {
+    font-weight: 600;
+  }
+
+  // TODO Look into it later
+  // @each $size, $glyph in $spacing-map {
+  //   .#{$prefix}--story__spacing-top-#{$size} {
+  //     margin-top: map-get($spacing-map, $size);
+  //   }
+  //   .#{$prefix}--story__spacing-bottom-#{$size} {
+  //     margin-bottom: map-get($spacing-map, $size);
+  //   }
+  // }
+}

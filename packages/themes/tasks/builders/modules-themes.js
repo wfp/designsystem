@@ -16,7 +16,9 @@ function buildThemesFile() {
     t.SassModule('sass:map'),
     t.SassModule('@carbon/layout'),
     t.SassModule('@carbon/type'),
-    t.SassModule('../utilities'),
+    process.env.sourceLib
+      ? t.SassModule('@wfp/themes/scss/modules/utilities')
+      : t.SassModule('../utilities'),
   ];
   const variables = Object.entries(themes).flatMap(([key, theme]) => {
     return [
@@ -38,7 +40,10 @@ function buildThemesFile() {
                 name: token,
                 format: TokenFormat.formats.scss,
               });
-              return t.SassMapProperty(t.Identifier(id), primitive(value));
+              return t.SassMapProperty(
+                t.Identifier(id),
+                primitive(value, token)
+              );
             }),
         }),
         default: true,

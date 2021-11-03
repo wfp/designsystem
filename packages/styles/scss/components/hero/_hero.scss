@@ -1,0 +1,321 @@
+//
+// Copyright IBM Corp. 2016, 2018
+//
+// This source code is licensed under the Apache-2.0 license found in the
+// LICENSE file in the root directory of this source tree.
+//
+
+@use '../../config' as *;
+@use '../../spacing' as *;
+@use '../../theme' as *;
+@use '../../type';
+@use '../../breakpoint' as *;
+@use '../../utilities/convert' as *;
+@use '../../utilities/skeleton' as *;
+@use '../../utilities/visually-hidden' as *;
+@use '../../utilities/focus-outline' as *;
+@use '../../utilities/component-reset';
+@use '../../utilities/layer' as *;
+@use '../../utilities/text-gradient' as *;
+
+@mixin hero {
+  .#{$prefix}--photo-card {
+    @include component-reset.reset;
+    position: relative;
+    display: block;
+    width: 100%;
+    text-decoration: none;
+    height: rem(200px);
+    @include breakpoint('lg') {
+      height: rem(260px);
+    }
+    transition: all 0.1s;
+    @include layer(pop-out);
+    &.#{$prefix}--photo-card--link:hover {
+      @include layer(pop-out--hover);
+    }
+    color: $text-primary;
+    background-size: cover;
+    background-position: 50% 50%;
+    overflow: hidden;
+    .#{$prefix}--photo-card__info__title {
+      margin-top: 0;
+    }
+  }
+
+  .#{$prefix}--photo-card__background {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-size: cover;
+    background-position: 50% 50%;
+    z-index: 100;
+    overflow: hidden;
+  }
+
+  .#{$prefix}--photo-card--no-background {
+    background: var(--interactive-02);
+  }
+
+  .#{$prefix}--photo-card__info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: $spacing-05 * 1.1 $spacing-05;
+    z-index: 100;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .#{$prefix}--photo-card__info__more {
+    margin-right: $spacing-05;
+  }
+
+  .#{$prefix}--photo-card__info__metadata {
+    margin: 0;
+    margin-bottom: $spacing-02;
+    @include type.type-style('label-01');
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .#{$prefix}--photo-card__info__subtitle {
+    margin: 0;
+    @include type.type-style('body-short-02');
+  }
+
+  .#{$prefix}--photo-card__info__title {
+    margin: 0;
+    /* @include typescale('zeta');
+    text-transform: uppercase;
+    letter-spacing: 0.05em; */
+    & + .#{$prefix}--photo-card__info__subtitle {
+      margin-top: $spacing-03;
+    }
+  }
+
+  .#{$prefix}--photo-card--light {
+    .#{$prefix}--photo-card__info {
+      background: rgba(var(--ui-01), 0.8);
+    }
+  }
+
+  .#{$prefix}--photo-card--landscape,
+  .#{$prefix}--photo-card--hero {
+    .#{$prefix}--photo-card__info {
+      color: $text-on-color;
+      background: rgba(#000000, 0.5);
+    }
+    .#{$prefix}--photo-card__info__background {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      filter: blur(6px);
+      background-size: cover;
+      transform: scale(1.05);
+      z-index: -1;
+      height: rem(200px);
+      @include breakpoint('lg') {
+        height: rem(260px);
+      }
+      &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        transition: all 0.1s;
+        background: #000000;
+        opacity: 0.6;
+      }
+    }
+    &.#{$prefix}--photo-card--link:hover {
+      .#{$prefix}--photo-card__info__title {
+        text-decoration: underline;
+      }
+      .#{$prefix}--photo-card__info__background {
+        &:after {
+          background: $interactive;
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  .#{$prefix}--photo-card--hero {
+    height: rem(300px);
+    @include breakpoint('lg') {
+      height: rem(500px);
+    }
+    box-shadow: none;
+    &.#{$prefix}--photo-card--link:hover {
+      box-shadow: none;
+    }
+    .#{$prefix}--photo-card__info {
+      padding: $spacing-06;
+    }
+    .#{$prefix}--photo-card__info__background {
+      height: rem(300px);
+      @include breakpoint('lg') {
+        height: rem(500px);
+      }
+    }
+  }
+
+  .#{$prefix}--photo-card--emergencies,
+  .#{$prefix}--photo-card--splash,
+  .#{$prefix}--photo-card--splash-image,
+  .#{$prefix}--photo-card--splash-compact {
+    height: rem(300px);
+    display: flex;
+    align-items: center;
+    color: $text-on-color;
+    a {
+      color: $text-on-color;
+    }
+    @include breakpoint('lg') {
+      height: rem(500px);
+    }
+    box-shadow: none;
+    &.#{$prefix}--photo-card--link:hover {
+      box-shadow: none;
+    }
+    .#{$prefix}--photo-card__info {
+      position: relative;
+      text-align: center;
+      padding: $spacing-08;
+      @include breakpoint('lg') {
+        padding: $spacing-10;
+      }
+    }
+  }
+
+  .#{$prefix}--photo-card--splash {
+    .#{$prefix}--photo-card__info__title {
+      @include type.type-style('productive-heading-04');
+    }
+  }
+
+  .#{$prefix}--photo-card--splash-image {
+    .#{$prefix}--photo-card__info {
+      text-align: right;
+      align-items: flex-end;
+    }
+    .#{$prefix}--photo-card__info__more {
+      margin-top: $spacing-05;
+      margin-right: 0;
+    }
+    .#{$prefix}--photo-card__background {
+      &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 3;
+        background: rgba(#000000, 0.4);
+      }
+    }
+    .#{$prefix}--photo-card__info {
+      flex-direction: column;
+    }
+  }
+
+  .#{$prefix}--photo-card--splash-compact,
+  .#{$prefix}--photo-card--emergencies {
+    height: rem(70px);
+    .#{$prefix}--photo-card__info {
+      justify-content: center;
+    }
+    .#{$prefix}--photo-card__info__title {
+      margin-bottom: 0;
+      display: flex;
+      align-items: center;
+    }
+    .#{$prefix}--photo-card__info__more {
+      margin-left: $spacing-07;
+    }
+  }
+
+  .#{$prefix}--photo-card--emergencies {
+    background: $support-error;
+    .#{$prefix}--photo-card__info__title {
+      font-weight: normal;
+      @include type.type-style('heading-02');
+    }
+  }
+
+  .#{$prefix}--photo-card--landscape-light {
+    .#{$prefix}--photo-card__info {
+      background: $background;
+    }
+    .#{$prefix}--photo-card__info__background {
+      display: none;
+    }
+    .#{$prefix}--photo-card__info__title {
+      color: $interactive;
+    }
+    &.#{$prefix}--photo-card--link:hover {
+      .#{$prefix}--photo-card__info__title {
+        text-decoration: underline;
+      }
+      .#{$prefix}--photo-card__info__background {
+        &:after {
+          background: $overlay;
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  .#{$prefix}--photo-card--split {
+    .#{$prefix}--photo-card__background {
+      width: 30%;
+      @include breakpoint('md') {
+        width: 50%;
+      }
+    }
+    .#{$prefix}--photo-card__info {
+      width: 70%;
+      @include breakpoint('md') {
+        width: 50%;
+      }
+      left: inherit;
+      bottom: 0;
+      top: 0;
+      right: 0;
+      @include text-gradient();
+    }
+    .#{$prefix}--photo-card__info__title {
+      color: $interactive;
+    }
+    .#{$prefix}--photo-card__info__background {
+      filter: blur(40px);
+      transform: scale(-1.2, 1.2);
+    }
+    &.#{$prefix}--photo-card--link:hover {
+      .#{$prefix}--photo-card__info__title {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .#{$prefix}--photo-card--related {
+    display: flex;
+    img {
+      height: 100%;
+      width: auto;
+    }
+    .#{$prefix}--photo-card__info {
+      position: relative;
+    }
+  }
+}

@@ -1,0 +1,49 @@
+//
+// Copyright IBM Corp. 2016, 2018
+//
+// This source code is licensed under the Apache-2.0 license found in the
+// LICENSE file in the root directory of this source tree.
+//
+
+@use '../../config' as *;
+@use '../../spacing' as *;
+@use '../../theme' as *;
+@use '../../breakpoint' as *;
+@use '../../type' as *;
+@use '../../utilities/convert' as *;
+
+/// Formwizard styles
+/// @access public
+/// @group form-wizard
+
+
+@mixin form-wizard {
+  .#{$prefix}--form-wizard {
+    display: flex;
+    @include breakpoint('md') {
+      background: none;
+    }
+    &--sticky {
+      .#{$prefix}--step-navigation {
+        @include breakpoint('md') {
+          position: sticky;
+          top: 0;
+        }
+      }
+    }
+  }
+
+  .#{$prefix}--form-wizard__sidebar {
+    width: rem(300px);
+    margin-top: $spacing-05;
+    margin-right: $spacing-06;
+  }
+
+  .#{$prefix}--form-wizard__content {
+    flex-grow: 1;
+    width: 100%;
+  }
+  .#{$prefix}--form-controls {
+    margin: $spacing-04 0;
+  }
+}

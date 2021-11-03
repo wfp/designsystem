@@ -1,7 +1,7 @@
 {
   "name": "@wfp/type",
   "description": "Typography for digital and software products using the Carbon Design System",
-  "version": "10.30.4",
+  "version": "10.30.5",
   "license": "Apache-2.0",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -42,7 +42,7 @@
   },
   "devDependencies": {
     "@carbon/test-utils": "^10.3.0",
-    "@wfp/cli": "^10.25.2",
+    "@wfp/cli": "^10.25.3",
     "change-case": "^4.1.1",
     "rimraf": "^3.0.0"
   },
@@ -51,5 +51,6 @@
     "name": "@wfp/type",
     "sassDir": "scss",
     "needs": "^1.3.0"
-  }
+  },
+  "gitHead": "1f06c355bfc57d62c4516f9daed57564730537f5"
 }

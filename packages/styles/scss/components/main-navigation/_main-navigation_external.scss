@@ -11,7 +11,7 @@
 
   .#{$prefix}--main-navigation-ext {
     background-color: $background;
-    box-shadow: 0 5px 26px 0 rgb(21 41 53 / 8%);
+    box-shadow: 0 5px 26px 0 rgb(21 41 53 / 8%); // TODO: Create new token for the shadow
     display: flex;
     position: relative;
   }
@@ -77,19 +77,21 @@
 
   // [1] Move the product name next to the WFP logo
   .#{$prefix}--main-navigation-ext__product-name {
+    @include type-style('expressive-heading-03');
+
     align-items: center;
-    color: #0b77c2; //  TODO: Create a token for the product logo's color
+    color: #0b77c2; //  TODO: Use $brand token
     display: flex;
-    font-size: 18px;
     font-weight: 700;
     height: 100%;
     justify-content: flex-start;
-    line-height: 1.25;
     margin-left: calc(#{$wfp-logo-wrapper-width} + #{$spacing-05}); // [1]
     text-transform: uppercase;
 
     @include breakpoint-down(md) {
-      font-size: 14px;
+      @include type-style('expressive-heading-01');
+
+      font-weight: 700;
       margin-left: $spacing-03;
     }
   }
@@ -108,27 +110,25 @@
   .#{$prefix}--main-navigation-ext__settings {
     align-items: center;
     display: flex;
+    gap: 2rem;
     justify-content: flex-end;
 
     @include breakpoint-down(md) {
       display: none;
     }
-
-    // Apply horizontal space between any settings element
-    & > * + * {
-      margin-left: $spacing-07;
-    }
   }
 
   /* Block Language styles */
+  // [1] TODO: Create a token for menu settings type-styles
   .#{$prefix}--language-ext {
     color: $text-secondary;
     cursor: pointer;
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 0.36px;
+    font-size: 12px; // [1]
+    font-weight: 700; // [1]
+    letter-spacing: 0.36px; // [1]
+    line-height: 1; // [1]
     position: relative;
-    text-transform: uppercase;
+    text-transform: uppercase; // [1]
   }
 
   .#{$prefix}--language-ext__trigger {
@@ -153,8 +153,8 @@
 
   .#{$prefix}--language-ext__dropdown {
     background-color: $background;
-    border-bottom: 5px solid #006aa0;
-    box-shadow: 0 1px 8px rgb(0 0 0 / 30%);
+    border-bottom: 5px solid #0b77c2; // TODO: Use $brand token
+    box-shadow: 0 1px 8px rgb(0 0 0 / 30%); // TODO: Create a token for this shadow
     display: none;
     padding: $spacing-03 $spacing-02;
     position: absolute;
@@ -176,7 +176,7 @@
     }
   }
 
-  .#{$prefix}--language-ext-dropdown-option {
+  .#{$prefix}--language-ext__dropdown-option {
     padding: $spacing-03;
 
     @include breakpoint-down(md) {
@@ -200,7 +200,7 @@
 
     &:active {
       @include breakpoint-down(md) {
-        background-color: #007dbc;
+        background-color: #007dbc; // TODO: Create a token for this color
 
         & > a {
           color: $text-on-color;
@@ -240,7 +240,6 @@
       padding: 1rem;
     }
 
-    
   }
 
   .#{$prefix}--user-ext__chevron {
@@ -249,8 +248,8 @@
 
   .#{$prefix}--user-ext__dropdown {
     background-color: $background;
-    border-bottom: 5px solid #006aa0;
-    box-shadow: 0 1px 8px rgb(0 0 0 / 30%);
+    border-bottom: 5px solid #0b77c2; // TODO: Use $brand token
+    box-shadow: 0 1px 8px rgb(0 0 0 / 30%); // TODO: Create a token for this shadow
     display: none;
     padding: $spacing-05;
     position: absolute;
@@ -329,8 +328,8 @@
     justify-content: flex-end;
 
     @include breakpoint-down(md) {
-      background-color: #00547f;
-      box-shadow: 0 1px 8px rgb(0 0 0 / 20%);
+      background-color: #00547f; // TODO: Create a token for this color
+      box-shadow: 0 1px 8px rgb(0 0 0 / 20%); // TODO: Create a token for this shadow
       display: none;
       left: 0;
       position: absolute;
@@ -348,8 +347,8 @@
   // Wrap only site nav links in a dropdown on medium mobile devices
   .#{$prefix}--main-navigation-ext__site-nav {
     @include breakpoint-between(md, lg) {
-      background-color: #00547f;
-      box-shadow: 0 1px 8px rgb(0 0 0 / 20%);
+      background-color: #00547f; // TODO: Create a token for this color
+      box-shadow: 0 1px 8px rgb(0 0 0 / 20%); // TODO: Create a token for this shadow
       display: none;
       left: 0;
       position: absolute;
@@ -429,7 +428,7 @@
 
       &:active {
         @include breakpoint-down(lg) {
-          background-color: #007dbc;
+          background-color: #007dbc; // TODO: Create a token for this color
         }
       }
     }
@@ -467,7 +466,7 @@
 
       &:active {
         @include breakpoint-down(md) {
-          background-color: #007dbc;
+          background-color: #007dbc; // TODO: Create a token for this color
         }
       }
     }

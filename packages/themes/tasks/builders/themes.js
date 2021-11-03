@@ -8,7 +8,9 @@
 'use strict';
 
 const { types: t } = require('@wfp/scss-generator');
-const { formatTokenName } = require('../../lib');
+const { formatTokenName } = process.env.sourceLib
+  ? require(process.env.sourceLib)
+  : require('../../lib');
 const { FILE_BANNER, primitive } = require('./shared');
 
 function buildThemesFile(
@@ -24,7 +26,7 @@ function buildThemesFile(
       properties: Object.keys(defaultTheme).map((token) => {
         return t.SassMapProperty(
           t.Identifier(formatTokenName(token)),
-          primitive(defaultTheme[token])
+          primitive(defaultTheme[token], token)
         );
       }),
     }),
@@ -53,7 +55,7 @@ function buildThemesFile(
                 .map((token) => {
                   return t.SassMapProperty(
                     t.Identifier(formatTokenName(token)),
-                    primitive(theme[token])
+                    primitive(theme[token], token)
                   );
                 }),
             }),

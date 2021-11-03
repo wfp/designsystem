@@ -1,0 +1,41 @@
+//
+// Copyright IBM Corp. 2016, 2018
+//
+// This source code is licensed under the Apache-2.0 license found in the
+// LICENSE file in the root directory of this source tree.
+//
+
+@use '../../config' as *;
+@use '../../spacing' as *;
+@use '../../motion' as *;
+@use '../../type' as *;
+@use '../../breakpoint' as *;
+@use '../../theme' as *;
+@use '../../utilities/component-reset';
+@use '../../utilities/convert' as *;
+@use '../../utilities/high-contrast-mode' as *;
+
+/// Value styles
+/// @access public
+/// @group value
+@mixin value {
+  .#{$prefix}--value {
+    @include reset;
+    @include font-family('sans');
+    //@include typescale('epsilon');
+    // @include font-smoothing;
+  }
+  .#{$prefix}--title {
+    @include type-style('heading-02');
+    color: $text-secondary;
+    margin-bottom: $spacing-03;
+    font-weight: 600;
+  }
+  .#{$prefix}--primary-value {
+    @include type-style('productive-heading-04');
+    margin-bottom: $spacing-03;
+  }
+  .#{$prefix}--secondary-value {
+    @include type-style('body-short-02');
+  }
+}

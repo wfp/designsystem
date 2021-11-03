@@ -8,6 +8,7 @@
 @use '../../config' as *;
 @use '../../spacing' as *;
 @use '../../theme' as *;
+@use '../../feature-flags' as *;
 @use '../../type' as *;
 @use '../../utilities/convert' as *;
 @use '../../utilities/focus-outline' as *;
@@ -21,125 +22,81 @@ $input-label-weight: 400 !default;
 @mixin form {
   .#{$prefix}--fieldset {
     @include reset;
-
-    margin-bottom: $spacing-07;
-  }
-
-  .#{$prefix}--fieldset--no-margin {
-    margin-bottom: 0;
   }
 
   .#{$prefix}--form-item {
-    @include type-style('body-short-01');
-
+    @include font-family('sans');
     display: flex;
-    // We specify `auto` as the default value so that the form item does
-    // not collapse in IE11 due to a `flex-basis` of 0 only working with
-    // `flex-direction: row`
-    flex: 1 1 auto;
     flex-direction: column;
+    flex: 1;
     align-items: flex-start;
+    //margin-bottom: 2rem;
   }
+
+  
 
   .#{$prefix}--label {
     @include reset;
-    @include type-style('label-01');
-
-    display: inline-block;
-    margin-bottom: $spacing-03;
-    color: $text-secondary;
+    @include font-family('sans');
+    @include type-style('body-short-01');
+    color: $text-primary;
     font-weight: $input-label-weight;
-    line-height: 1rem;
+    font-weight: 600 !important;
+    display: inline-block;
     vertical-align: baseline;
+    margin-bottom: $spacing-03;
+  }
+
+  .#{$prefix}--form-item--inline {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .#{$prefix}--form-long {
+    margin-bottom: -1rem;
+
+    > .#{$prefix}--form-item {
+      margin-bottom: 1.3rem;
+    }
+  }
+  .#{$prefix}--form-item--light input,
+  .#{$prefix}--form-item--light input[type='number'] {
+    background: var(--field-02) !important;
   }
 
   .#{$prefix}--label .#{$prefix}--tooltip__trigger {
-    // When tooltip trigger is put in form label the trigger button should fit in the size of label
-    // https://github.com/IBM/carbon-components-react/issues/115
-    @include type-style('label-01');
+    @include type-style('label-02');
+  }
+
+  .#{$prefix}--label--disabled {
+    opacity: 0.5;
   }
 
   // Skeleton State
   .#{$prefix}--label.#{$prefix}--skeleton {
     @include skeleton;
-
     width: rem(75px);
     height: rem(14px);
   }
 
-  input[type='number'] {
-    font-family: carbon--font-family('mono');
-  }
-
-  input[data-invalid]:not(:focus),
-  .#{$prefix}--number[data-invalid] input[type='number']:not(:focus),
-  .#{$prefix}--text-input__field-wrapper[data-invalid]
-    > .#{$prefix}--text-input--invalid:not(:focus),
-  .#{$prefix}--text-area__wrapper[data-invalid]
-    > .#{$prefix}--text-area--invalid:not(:focus),
-  .#{$prefix}--select-input__wrapper[data-invalid]
-    .#{$prefix}--select-input:not(:focus),
-  .#{$prefix}--list-box[data-invalid]:not(:focus),
-  .#{$prefix}--combo-box[data-invalid] .#{$prefix}--text-input:not(:focus) {
-    @include focus-outline('invalid');
-  }
-
   input[data-invalid],
-  .#{$prefix}--number[data-invalid] .#{$prefix}--number__input-wrapper,
-  .#{$prefix}--number__input-wrapper--warning,
-  .#{$prefix}--date-picker-input__wrapper,
-  .#{$prefix}--date-picker-input__wrapper--warn,
-  .#{$prefix}--date-picker-input__wrapper--invalid,
-  .#{$prefix}--time-picker--invalid,
-  .#{$prefix}--text-input__field-wrapper[data-invalid],
-  .#{$prefix}--text-input__field-wrapper--warning,
-  .#{$prefix}--text-input__field-wrapper--warning > .#{$prefix}--text-input,
-  .#{$prefix}--text-area__wrapper[data-invalid],
-  .#{$prefix}--select-input__wrapper[data-invalid],
-  .#{$prefix}--select--warning .#{$prefix}--select-input__wrapper,
-  .#{$prefix}--time-picker[data-invalid],
-  .#{$prefix}--list-box[data-invalid],
-  .#{$prefix}--list-box--warning {
-    ~ .#{$prefix}--form-requirement {
-      display: block;
-      overflow: visible;
-      max-height: rem(200px);
-      font-weight: 400;
-    }
-  }
-
-  input[data-invalid],
-  .#{$prefix}--number[data-invalid] .#{$prefix}--number__input-wrapper,
-  .#{$prefix}--date-picker-input__wrapper,
-  .#{$prefix}--date-picker-input__wrapper--invalid,
-  .#{$prefix}--time-picker--invalid,
-  .#{$prefix}--text-input__field-wrapper[data-invalid],
-  .#{$prefix}--text-area__wrapper[data-invalid],
-  .#{$prefix}--select-input__wrapper[data-invalid],
-  .#{$prefix}--time-picker[data-invalid],
+  textarea[data-invalid],
+  select[data-invalid],
   .#{$prefix}--list-box[data-invalid] {
+    border-color: $support-error; //$border-error
+    //box-shadow: 0 2px 0px 0px var(--support-01);
+
     ~ .#{$prefix}--form-requirement {
-      color: $text-error;
+      //max-height: rem(200px);
+      display: block;
     }
   }
 
-  //Fluid Form
-  .#{$prefix}--form--fluid .#{$prefix}--text-input__field-wrapper[data-invalid],
-  .#{$prefix}--form--fluid .#{$prefix}--text-input__field-wrapper--warning {
-    display: block;
-  }
-
-  .#{$prefix}--form--fluid .#{$prefix}--fieldset {
-    margin: 0;
-  }
-
-  .#{$prefix}--form--fluid input[data-invalid] {
-    outline: none;
-  }
-
-  .#{$prefix}--form--fluid .#{$prefix}--form-requirement {
-    padding: $spacing-03 rem(40px) $spacing-03 $spacing-05;
-    margin: 0;
+  .#{$prefix}--form-item--invalid {
+    .#{$prefix}--form-requirement {
+      //max-height: rem(200px);
+      display: block;
+    }
   }
 
   // Fix for red ring when input is marked required in Firefox, refs #744
@@ -150,36 +107,159 @@ $input-label-weight: 400 !default;
   .#{$prefix}--form-requirement {
     @include reset;
     @include type-style('caption-01');
-
-    display: none;
-    overflow: hidden;
-    max-height: 0;
     margin: $spacing-02 0 0;
+    font-weight: 600;
+    max-height: 0;
+    line-height: 1.5;
+    display: none;
+    order: 3;
+    color: $support-error;
+
+    &.invalid {
+      max-height: rem(200px);
+      display: block;
+    }
+
+    &::before {
+      // content: '-';
+      display: inline-block;
+      color: $support-error; //$text-error
+    }
   }
 
-  .#{$prefix}--select--inline .#{$prefix}--form__helper-text {
-    margin-top: 0;
+  .#{prefix}--form__helper-text--disabled {
+    opacity: 0.5;
   }
 
   .#{$prefix}--form__helper-text {
     @include type-style('helper-text-01');
-
+    color: $text-helper;
+    order: 1;
+    line-height: 1.5;
     z-index: 0;
-    // Added to prevent error text from displaying under helper text in Safari (#6392)
-    width: 100%;
-    margin-top: $spacing-02;
+    max-height: 3rem;
+    // opacity: 1;
+    margin-bottom: $spacing-03;
+  }
+
+  
+}
+
+@mixin form--experimental {
+  .#{$prefix}--fieldset {
+    @include reset;
+    //margin-bottom: $spacing-xl;
+  }
+
+  .#{$prefix}--form-item {
+    @include font-family('sans');
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    align-items: flex-start;
+  }
+
+  .#{$prefix}--label {
+    @include reset;
+    @include font-family;
+    @include type-style('label-01');
+    color: $text-primary;
+    font-weight: $input-label-weight;
+    display: inline-block;
+    vertical-align: baseline;
+    margin-bottom: $spacing-03;
+  }
+
+  .#{$prefix}--label__required {
+    @include reset;
+    display: inline-block;
+    padding-left: $spacing-03;
+    color: $support-error;
+    font-weight: 600;
+
+    &::before {
+      content: '*';
+      display: inline-block;
+      color: $support-error;
+    }
+  }
+
+  .#{$prefix}--label .#{$prefix}--tooltip__trigger {
+    @include type-style('label-02');
+  }
+
+  .#{$prefix}--label--disabled {
+    color: $text-disabled;
+    cursor: not-allowed;
+  }
+
+  // Skeleton State
+  .#{$prefix}--label.#{$prefix}--skeleton {
+    @include skeleton;
+    width: rem(75px);
+    height: rem(14px);
+  }
+
+  input[data-invalid],
+  textarea[data-invalid],
+  select[data-invalid],
+  .#{$prefix}--form-item--invalid,
+  .#{$prefix}--list-box[data-invalid] {
+    border-color: $support-error; // TODO $border-error 
+    //box-shadow: 0 2px 0px 0px var(--support-01);
+
+    ~ .#{$prefix}--form-requirement {
+      max-height: rem(200px);
+      display: block;
+      color: $support-error;
+    }
+  }
+
+  // Fix for red ring when input is marked required in Firefox, refs #744
+  input:not(output):not([data-invalid]):-moz-ui-invalid {
+    box-shadow: none;
+  }
+
+  .#{$prefix}--form-requirement {
+    @include reset;
+    @include type-style('caption-01');
+    margin: $spacing-02 0 0;
+    max-height: 0;
+    overflow: hidden;
+    line-height: 1.5;
+    display: none;
+  }
+
+  .#{$prefix}--form__helper-text {
+    @include type-style('helper-text-01');
     color: $text-secondary;
-    opacity: 1;
+    order: 1;
+    line-height: 1.5;
+    z-index: 0;
+    max-height: 3rem;
+    opacity: 1; //NA-form
+    margin-top: $spacing-02; //NA-form
+    margin-bottom: $spacing-03;
   }
 
-  .#{$prefix}--label--disabled,
-  .#{$prefix}--form__helper-text--disabled {
-    color: $text-disabled;
-  }
-
-  // If a FormGroup is disabled, Form labels and helper text nested inside should also be disabled
-  fieldset[disabled] .#{$prefix}--label,
-  fieldset[disabled] .#{$prefix}--form__helper-text {
-    color: $text-disabled;
+  .#{prefix}--form__helper-text--disabled {
+    opacity: 0.5;
   }
 }
+
+// @include exports('form') {
+//   @if feature-flag-enabled('components-x') {
+//     @include form--experimental;
+//   } @else {
+//     @include form;
+//   }
+// }
+
+/*
+@if feature-flag-enabled('components-x') {
+    
+
+} @else {
+  
+}
+*/

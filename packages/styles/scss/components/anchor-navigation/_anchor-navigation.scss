@@ -1,0 +1,38 @@
+@use '../form' as *;
+@use '../../breakpoint' as *;
+@use '../../config' as *;
+@use '../../motion' as *;
+@use '../../theme' as *;
+@use '../../spacing' as *;
+@use '../../type' as *;
+@use '../../utilities/button-reset';
+@use '../../utilities/component-reset';
+@use '../../utilities/convert';
+
+
+@mixin anchor-navigation{
+  .#{$prefix}--anchor-navigation {
+    width: 300px;
+    min-height: 350px;
+    border: 2px solid #77a0b6; // TODO create token for var(--field-border-01)
+    border-radius: 5px;
+  }
+
+  .#{$prefix}--anchor-header-title {
+    min-height: 40px;
+    border-bottom: 1px solid #77a0b6; // TODO create token for var(--field-border-01)
+    padding: $spacing-05;
+    font-weight: 600;
+    color: $interactive;
+  }
+
+  .#{$prefix}--anchor-content {
+    padding: $spacing-05;
+    display: flex;
+    flex-direction: column;
+
+    a {
+      margin-bottom: $spacing-05;
+    }
+  }
+}

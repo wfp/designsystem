@@ -1,7 +1,8 @@
 import React from 'react';
 //import '!style-loader!css-loader!sass-loader!./storybook.scss';
-//import '!style-loader!css-loader!../assets/css/styles.css';
+import '!style-loader!css-loader!../assets/css/styles.css';
 import { Button, Link, List, ListItem, Tooltip } from '../src';
+import { version } from '../package.json';
 
 const legacyPreviousversions = [
   {
@@ -30,7 +31,7 @@ export function StorybookLogo() {
     <div className="wfp-logo">
       WFP{' '}
       <span style={{ fontWeight: '400', textTransform: 'uppercase' }}>
-        UI-Kit
+        Digital Design System
       </span>
       <Tooltip
         content={
@@ -53,7 +54,7 @@ export function StorybookLogo() {
             color: 'grey',
             marginLeft: '0.5em',
           }}>
-          v{process.env.STORYBOOK_NPM_VERSION}
+          {version}
         </span>
       </Tooltip>
     </div>

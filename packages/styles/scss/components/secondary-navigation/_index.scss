@@ -1,0 +1,4 @@
+@forward 'secondary-navigation';
+@use 'secondary-navigation';
+
+@include secondary-navigation.secondary-navigation;

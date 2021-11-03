@@ -1,0 +1,4 @@
+@forward 'sub-navigation';
+@use 'sub-navigation';
+
+@include sub-navigation.sub-navigation;

@@ -1,0 +1,25 @@
+//
+// Copyright IBM Corp. 2016, 2018
+//
+// This source code is licensed under the Apache-2.0 license found in the
+// LICENSE file in the root directory of this source tree.
+//
+
+@use '../../config' as *;
+@use '../../spacing' as *;
+@use '../../utilities/convert' as *;
+
+/// @type Number
+/// @access public
+/// @group global-themes
+
+@mixin form-error {
+  .#{$prefix}--form-error__title {
+    margin-bottom: $spacing-03;
+  }
+
+  .#{$prefix}--form-error__list {
+    list-style-type: disc;
+    margin-left: 1.3rem;
+  }
+}

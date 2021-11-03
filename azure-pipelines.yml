@@ -5,6 +5,7 @@ trigger:
   - bugfix/*
   - alpha/*
   - feat/performance-optimization
+  - un-core-v1
 
 jobs:
 - job: WFP_Design_System_publish
@@ -20,6 +21,18 @@ jobs:
       inputs:
         versionSpec: '14.x'
       displayName: 'Install Node.js'
+    - task: CmdLine@2
+      displayName: Checkout $(Build.SourceBranchName)
+      inputs:
+        script: 'git checkout $(Build.SourceBranchName)'
+
+#    - script: |
+#        npm config set '//registry.npmjs.org/:_authToken' "$(NPM_TOKEN)"
+#      displayName: 'npm config set'
+
+#    - task: npmAuthenticate@0
+#      inputs:
+#        workingFile: './.npmrc'
 
 #    - task: Cache@2
 #      inputs:
@@ -30,8 +43,9 @@ jobs:
 #          npm
 #      displayName: 'Cache NPM packages'
 
+#        mkdir -p $(NPM_CACHE_FOLDER)
+
     - script: |
-        mkdir -p $(NPM_CACHE_FOLDER)
         yarn -v
         yarn install
       displayName: 'yarn install'
@@ -49,10 +63,15 @@ jobs:
       displayName: 'yarn build:cli'
       condition: eq(variables['Build.SourceBranch'], 'refs/heads/master')
 
+#    - script: |
+#        lerna version patch --yes
+#      displayName: 'yarn build:alpha-cli'
+#      condition: in(variables['Build.SourceBranch'], 'refs/heads/develop', 'refs/heads/next', 'refs/heads/un-core-v1')
+    
     - script: |
-        yarn publish:alpha-cli
+        lerna publish from-package --dist-tag alpha
       displayName: 'yarn build:alpha-cli'
-      condition: eq(variables['Build.SourceBranch'], 'refs/heads/develop', 'refs/heads/next')
+      condition: in(variables['Build.SourceBranch'], 'refs/heads/develop', 'refs/heads/next', 'refs/heads/un-core-v1')
 
     - task: GitHubRelease@1
       inputs:
@@ -63,7 +82,6 @@ jobs:
         tagSource: 'gitTag'
         changeLogCompareToRelease: 'lastFullRelease'
         changeLogType: 'commitBased'
-      condition: eq(variables['Build.SourceBranch'], 'refs/heads/master')
 
     - powershell: |
         echo "##vso[task.setvariable variable=versionNumber;isOutput=true]$(nextRelease)"

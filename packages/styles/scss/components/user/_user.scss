@@ -1,0 +1,117 @@
+//
+// Copyright IBM Corp. 2016, 2018
+//
+// This source code is licensed under the Apache-2.0 license found in the
+// LICENSE file in the root directory of this source tree.
+//
+
+@use '../../config' as *;
+@use '../../spacing' as *;
+@use '../../motion' as *;
+@use '../../type' as *;
+@use '../../breakpoint' as *;
+@use '../../theme' as *;
+@use '../../utilities/component-reset';
+@use '../../utilities/convert' as *;
+@use '../../utilities/high-contrast-mode' as *;
+
+/// User styles
+/// @access public
+/// @group user
+@mixin user {
+  .#{$prefix}--user {
+    display: flex;
+    align-items: center;
+  }
+
+  .#{$prefix}--user__icon {
+    @include reset;
+    width: rem(25px);
+    height: rem(25px);
+    border-radius: 50%;
+    margin-right: rem(10px);
+    overflow: hidden;
+
+    > img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+
+    .#{$prefix}--user--has-description & {
+      width: rem(60px);
+      height: rem(60px);
+      margin-right: $spacing-06;
+      // TODO
+      // @include rtl {
+      //   margin-left: $spacing-06;
+      //   margin-right: inherit;
+      // }
+    }
+
+    // TODO
+    // @include rtl {
+    //   margin-left: rem(10px);
+    //   margin-right: inherit;
+    // }
+  }
+
+  .#{$prefix}--user__icon--empty {
+    border-radius: 50%;
+    background-size: 100%;
+    border: 2px solid $border-subtle;
+    background-color: $icon-secondary;
+    text {
+      fill: $background; // TODO $text-on-color
+      font-weight: 600;
+      font-family: 'Arial';
+    }
+  }
+
+  .#{$prefix}--user__description {
+    @include type-style('productive-heading-03');
+    font-size: rem(18px);
+    //color: var(--text-02);
+  }
+
+  .#{$prefix}--user__extended-description {
+    margin-left: $spacing-06;
+    @include type-style('productive-heading-03');
+    font-size: rem(18px);
+    //color: var(--text-02);
+  }
+
+  .#{$prefix}--user__title {
+    > span {
+      .#{$prefix}--user--has-description & {
+        font-weight: bold;
+        line-height: 1.4em;
+      }
+    }
+  }
+
+  .#{$prefix}--user__title--ellipsis {
+    display: inline-block;
+    // @include breakpoint-between(bp--sm--major, bp--md--major) {
+    //   max-width: 130px;
+    //   border: 1px solid red;
+    // }
+
+    overflow: hidden;
+    line-height: 1.5;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  .#{$prefix}--user__title--small {
+    @include breakpoint('lg') {
+      display: none;
+    }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .#{$prefix}--user__title--ellipsis {
+    max-width: 70px;
+  }
+}

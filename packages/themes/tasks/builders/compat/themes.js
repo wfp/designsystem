@@ -37,7 +37,10 @@ function buildCompatFile() {
                 name: token,
                 format: TokenFormat.formats.scss,
               });
-              return t.SassMapProperty(t.Identifier(id), primitive(value));
+              return t.SassMapProperty(
+                t.Identifier(id),
+                primitive(value, token)
+              );
             }),
         }),
         default: true,

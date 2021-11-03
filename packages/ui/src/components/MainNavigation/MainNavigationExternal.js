@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { WfpLogoVerticalEn } from '@wfp/pictograms-react';
-import { CaretDownGlyph } from '@wfp/icons-react';
+import { ChevronDownGlyph  } from '@wfp/icons-react';
 
 import Button from '../Button';
 import User from '../User';
@@ -13,7 +13,7 @@ import { settings } from '../../globals/js';
 
 const { prefix } = settings;
 
-const LanguageExternal = ({children}) => {
+const LanguageExternal = ({children, primaryLanguage}) => {
   const languageTogglable = useTogglable();
 
   return (
@@ -25,8 +25,8 @@ const LanguageExternal = ({children}) => {
             ? languageTogglable.close()
             : languageTogglable.open()
         }>
-        <span>English</span>
-         <CaretDownGlyph/>
+        <span>{primaryLanguage}</span>
+         <ChevronDownGlyph/>
       </div>
       <ul
         className={`${prefix}--language-ext__dropdown ${
@@ -51,7 +51,7 @@ const UserExternal = ({username, children, userImage}) => {
           userTogglable.isOpen ? userTogglable.close() : userTogglable.open()
         }>
         <User alt="User avatar" name={username} image={userImage}/>
-         <CaretDownGlyph/>
+         <ChevronDownGlyph/>
       </div>
       <ul
         className={`${prefix}--user-ext__dropdown ${
@@ -63,7 +63,7 @@ const UserExternal = ({username, children, userImage}) => {
   );
 };
 
-const MainNavigationExternal = ({productName, languageList, username, userImage, userDetails, children}) => {
+const MainNavigationExternal = ({productName, primaryLanguage, languageList, username, userImage, userDetails, children}) => {
   const navTogglable = useTogglable();
 
   return (
@@ -85,7 +85,7 @@ const MainNavigationExternal = ({productName, languageList, username, userImage,
         </div>
         <div className={`${prefix}--main-navigation-ext__main`}>
           <div className={`${prefix}--main-navigation-ext__settings`}>
-            <LanguageExternal>{languageList}</LanguageExternal>
+            <LanguageExternal primaryLanguage={primaryLanguage}>{languageList}</LanguageExternal>
             <UserExternal username={username} userImage={userImage}>{userDetails}</UserExternal>
           </div>
           <div className={`${prefix}--main-navigation-ext__nav`}>
@@ -180,8 +180,17 @@ MainNavigationExternal.propTypes = {
    * The dropdown details of user can be applied to this prop
    */
   userDetails: PropTypes.node,
+
+  /**
+   * This prop accepts the first language your website is in. Default: English
+   */
+  primaryLanguage: PropTypes.string
   
   
+};
+
+MainNavigationExternal.defaultProps = {
+  primaryLanguage: 'English',
 };
 
 export default MainNavigationExternal;

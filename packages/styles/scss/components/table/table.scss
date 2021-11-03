@@ -1,0 +1,89 @@
+//
+// Copyright IBM Corp. 2016, 2018
+//
+// This source code is licensed under the Apache-2.0 license found in the
+// LICENSE file in the root directory of this source tree.
+//
+
+@use '../../config' as *;
+@use '../../motion' as *;
+@use '../../spacing' as *;
+@use '../../compat/theme' as *;
+@use '../../type' as *;
+@use '../button/tokens' as button;
+@use '../../utilities/focus-outline' as *;
+@use '../../utilities/high-contrast-mode' as *;
+@use '../../utilities/visually-hidden' as *;
+
+/// Table styles
+/// @access public
+/// @group Table
+@mixin table {
+  .#{$prefix}--table {
+    width: 100%;
+
+    th,
+    td {
+      padding: $spacing-03;
+    }
+
+    th {
+      border-right: 1px solid $border-strong;
+      text-align: left;
+      &:last-child {
+        border-right-width: 0px;
+      }
+    }
+
+    thead,
+    th {
+      background: $layer-accent; //var(--ui-03);
+      border-bottom: 2px solid #dfe3e6;
+      font-weight: 600;
+      font-size: 0.85em;
+    }
+
+    tbody {
+      tr {
+        border-bottom: 1px solid $border-subtle; //var(--ui-04);
+        &:last-child {
+          border-bottom-width: 0px;
+        }
+      }
+    }
+  }
+
+  .#{$prefix}--table--with-border {
+    border: 1px solid $border-strong;
+  }
+
+  /* Cell Classes in work */
+  .#{$prefix}--cell--bold {
+    font-weight: 700;
+  }
+
+  .#{$prefix}--cell--large-number {
+    font-size: 2.5rem;
+  }
+
+  .#{$prefix}--cell--list {
+    line-height: 1.5rem;
+  }
+
+  .#{$prefix}--table--sorting {
+    margin-left: $spacing-02;
+    vertical-align: text-top;
+    display: inline-block;
+    svg {
+      //width: auto;
+      //height: 0.8rem;
+      path {
+        fill: var(--interactive-01);
+      }
+    }
+  }
+
+  .#{$prefix}--table--is-sortable {
+    min-width: 25px;
+  }
+}

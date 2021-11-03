@@ -14,7 +14,6 @@
 @use '../../utilities/convert' as *;
 @use '../../utilities/high-contrast-mode' as *;
 @use '../../spacing' as *;
-@use './tokens' as *;
 @use './mixins' as *;
 @use '../../utilities/skeleton';
 
@@ -23,246 +22,114 @@
 /// @group tag
 @mixin tag {
   .#{$prefix}--tag {
-    @include type-style('label-01');
-    @include tag-theme($tag-background-gray, $tag-color-gray, $tag-hover-gray);
-
+    @include font-family('sans');
+    @include type-style('caption-01');
     display: inline-flex;
-    // ensures tag stays pill shaped;
-    min-width: rem(32px);
-    // restricts size of contained elements
-    max-width: 100%;
-    min-height: rem(24px);
     align-items: center;
-    justify-content: center;
-    padding: $spacing-02 $spacing-03;
-    margin: $spacing-02;
+    padding: 0 $spacing-03;
+    height: 1.5rem;
+    margin: $spacing-01;
     border-radius: rem(15px);
-    cursor: default;
-    vertical-align: middle;
-    word-break: break-word;
+    white-space: nowrap;
 
     &:not(:first-child) {
       margin-left: 0;
     }
-  }
-
-  .#{$prefix}--tag--red {
-    @include tag-theme($tag-background-red, $tag-color-red, $tag-hover-red);
-  }
-
-  .#{$prefix}--tag--magenta {
-    @include tag-theme(
-      $tag-background-magenta,
-      $tag-color-magenta,
-      $tag-hover-magenta
-    );
-  }
-
-  .#{$prefix}--tag--purple {
-    @include tag-theme(
-      $tag-background-purple,
-      $tag-color-purple,
-      $tag-hover-purple
-    );
-  }
-
-  .#{$prefix}--tag--blue {
-    @include tag-theme($tag-background-blue, $tag-color-blue, $tag-hover-blue);
-  }
-
-  .#{$prefix}--tag--cyan {
-    @include tag-theme($tag-background-cyan, $tag-color-cyan, $tag-hover-cyan);
-  }
-
-  .#{$prefix}--tag--teal {
-    @include tag-theme($tag-background-teal, $tag-color-teal, $tag-hover-teal);
-  }
-
-  .#{$prefix}--tag--green {
-    @include tag-theme(
-      $tag-background-green,
-      $tag-color-green,
-      $tag-hover-green
-    );
-  }
-
-  .#{$prefix}--tag--gray {
-    @include tag-theme($tag-background-gray, $tag-color-gray, $tag-hover-gray);
-  }
-
-  .#{$prefix}--tag--cool-gray {
-    @include tag-theme(
-      $tag-background-cool-gray,
-      $tag-color-cool-gray,
-      $tag-hover-cool-gray
-    );
-  }
-
-  .#{$prefix}--tag--warm-gray {
-    @include tag-theme(
-      $tag-background-warm-gray,
-      $tag-color-warm-gray,
-      $tag-hover-warm-gray
-    );
-  }
-
-  .#{$prefix}--tag--high-contrast {
-    @include tag-theme(
-      $background-inverse,
-      $text-inverse,
-      $background-inverse-hover
-    );
-  }
-
-  .#{$prefix}--tag--disabled,
-  .#{$prefix}--tag--filter.#{$prefix}--tag--disabled,
-  .#{$prefix}--tag--interactive.#{$prefix}--tag--disabled {
-    @include tag-theme($layer-disabled, $text-disabled);
-
-    &:hover {
-      cursor: not-allowed;
-    }
-  }
-
-  .#{$prefix}--tag__label {
-    overflow: hidden;
-    max-width: 100%;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
-
-  .#{$prefix}--tag--interactive:focus {
-    box-shadow: inset 0 0 0 1px $focus;
-    outline: none;
-  }
-
-  .#{$prefix}--tag--interactive:hover {
-    cursor: pointer;
-  }
-
-  // tags used for filtering
-  .#{$prefix}--tag--filter {
-    padding-top: 0;
-    padding-right: 0;
-    padding-bottom: 0;
-    cursor: pointer;
-
-    &:hover {
-      outline: none;
-    }
-  }
-
-  .#{$prefix}--tag--interactive {
-    transition: background-color $duration-fast-01 motion(entrance, productive);
-  }
-
-  .#{$prefix}--tag__close-icon {
-    display: flex;
-    width: rem(24px);
-    height: rem(24px);
-    flex-shrink: 0;
-    align-items: center;
-    justify-content: center;
-    padding: 0;
-    border: 0;
-    margin: 0 0 0 rem(2px);
-    background-color: transparent;
-    border-radius: 50%;
-    color: currentColor;
-    cursor: pointer;
-    transition: background-color $duration-fast-01 motion(standard, productive),
-      box-shadow $duration-fast-01 motion(standard, productive);
-    svg {
-      fill: currentColor;
-    }
-  }
-
-  .#{$prefix}--tag__custom-icon {
-    width: rem(16px);
-    height: rem(16px);
-    flex-shrink: 0;
-    padding: 0;
-    border: 0;
-    margin-right: $spacing-02;
-    background-color: transparent;
-    color: currentColor;
-    outline: none;
-
-    svg {
-      fill: currentColor;
-    }
-  }
-
-  .#{$prefix}--tag--disabled .#{$prefix}--tag__close-icon {
-    cursor: not-allowed;
-  }
-
-  .#{$prefix}--tag__close-icon:focus {
-    border-radius: 50%;
-    box-shadow: inset 0 0 0 1px $focus;
-    outline: none;
-  }
-
-  .#{$prefix}--tag--high-contrast .#{$prefix}--tag__close-icon:focus {
-    box-shadow: inset 0 0 0 1px $focus-inverse;
-  }
-
-  .#{$prefix}--tag--filter.#{$prefix}--tag--disabled
-    .#{$prefix}--tag__close-icon:hover {
-    background-color: transparent;
-  }
-
-  .#{$prefix}--tag--filter.#{$prefix}--tag--disabled svg {
-    fill: $icon-disabled;
-  }
-
-  // small tags
-  .#{$prefix}--tag--sm {
-    min-height: rem(18px);
-    padding: 0 $spacing-03;
-  }
-
-  .#{$prefix}--tag--sm.#{$prefix}--tag--filter {
-    padding-right: 0;
-  }
-
-  .#{$prefix}--tag--sm .#{$prefix}--tag__close-icon {
-    width: rem(18px);
-    height: rem(18px);
-    margin-left: rem(5px);
-  }
-
-  // Skeleton state
-  .#{$prefix}--tag.#{$prefix}--skeleton {
-    @include tag-theme(
-      $bg-color: $skeleton-background,
-      $text-color: $text-primary
-    );
-
-    overflow: hidden;
-    width: rem(60px);
-
-    // Safari specific bug (#7672)
-    @media not all and (min-resolution: 0.001dpcm) {
-      @supports (-webkit-appearance: none) and (stroke-color: transparent) {
-        transform: translateZ(0);
+    > a {
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
       }
     }
   }
 
-  // Windows HCM fix
-  /* stylelint-disable */
-  .#{$prefix}--tag {
-    @include high-contrast-mode('outline');
+  .#{$prefix}--tag--info {
+    @include tag-theme(#005e8d, #d9ecf5); // TODO create token for these colors
   }
 
-  .#{$prefix}--tag__close-icon svg,
-  .#{$prefix}--tag__custom-icon svg {
-    @include high-contrast-mode('icon-fill');
+  // .#{$prefix}--tag--beta {
+  //   @include tag-theme($color__gray-1, $color__navy-gray-4);
+  // }
+
+  // TODO create new token for support-dark-color
+
+  .#{$prefix}--tag--error {
+    @include tag-theme(var(--support-light-01), var(--support-dark-01));
   }
 
-  .#{$prefix}--tag__close-icon:focus {
-    @include high-contrast-mode('focus');
+  .#{$prefix}--tag--success {
+    @include tag-theme(var(--support-light-02), var(--support-dark-02));
   }
-  /* stylelint-enable */
+
+  .#{$prefix}--tag--warning {
+    @include tag-theme(var(--support-light-03), var(--support-dark-03));
+  }
+
+  .#{$prefix}--tag--wrap {
+    white-space: normal;
+  }
+
+  // .#{$prefix}--tag--information {
+  //   @include tag-theme(var(--support-light-04), $support-04);
+  // }
+
+  // Skeleton state
+  // .#{$prefix}--tag.#{$prefix}--skeleton {
+  //   @include tag-theme($color__gray-1, $color__navy-gray-4);
+  //   width: rem(60px);
+
+  //   &:after {
+  //     @include skeleton;
+  //     content: '';
+  //     height: rem(6px);
+  //     width: 100%;
+  //   }
+  // }
 }
+
+@mixin tag--x {
+  .#{$prefix}--tag {
+    @include font-family('sans');
+    @include type-style('caption-01');
+    display: inline-flex;
+    align-items: center;
+    padding: 0 $spacing-03;
+    height: 1.5rem;
+    margin: $spacing-02;
+    border-radius: rem(15px);
+
+    &:not(:first-child) {
+      margin-left: 0;
+    }
+
+    &[disabled] {
+      @include tag-theme--x($ibm-colors__gray--10, $ibm-colors__gray--30);
+    }
+  }
+
+  .#{$prefix}--tag--basic {
+    @include tag-theme--x($ibm-colors__gray--10, $ibm-colors__gray--100);
+  }
+
+
+  // Skeleton state TODO
+  // .#{$prefix}--tag.#{$prefix}--skeleton {
+  //   @include tag-theme--x($color__gray-1, $color__navy-gray-4);
+  //   width: rem(60px);
+
+  //   &:after {
+  //     @include skeleton;
+  //     content: '';
+  //     height: rem(6px);
+  //     width: 100%;
+  //   }
+  // }
+}
+
+// @include exports('tag') {
+//   @if feature-flag-enabled('components-x') {
+//     @include tag--x;
+//   } @else {
+//     @include tag;
+//   }
+// }

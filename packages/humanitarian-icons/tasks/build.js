@@ -22,6 +22,7 @@ async function build() {
       Metadata.extensions.deprecated,
       [Metadata.extensions.output, { target: 'pictograms' }],
       Metadata.extensions.categories,
+      Metadata.extensions.moduleInfo,
     ],
   });
 

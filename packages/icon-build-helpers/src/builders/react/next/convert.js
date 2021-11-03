@@ -8,6 +8,7 @@
 'use strict';
 
 const t = require('@babel/types');
+const convertStylesStringToObject = require('./stylesStringToObject');
 
 function jsToAST(value) {
   if (typeof value === 'string') {
@@ -65,6 +66,17 @@ function svgToJSX(node) {
         return attributeDenylist.every((prefix) => !key.startsWith(prefix));
       })
       .map(([key, value]) => {
+        if (t.jSXIdentifier(key).name === 'style') {
+          console.log(
+            t.jSXIdentifier(key),
+            t.jSXExpressionContainer(convertStylesStringToObject(value)),
+            convertStylesStringToObject(value)
+          );
+          return t.jSXAttribute(
+            t.jSXIdentifier(key),
+            t.jSXExpressionContainer(convertStylesStringToObject(value))
+          );
+        }
         if (typeof value === 'string') {
           return t.jSXAttribute(t.jSXIdentifier(key), t.stringLiteral(value));
         }

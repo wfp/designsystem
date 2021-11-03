@@ -1,0 +1,109 @@
+//
+// Copyright IBM Corp. 2016, 2018
+//
+// This source code is licensed under the Apache-2.0 license found in the
+// LICENSE file in the root directory of this source tree.
+//
+
+@use '../../config' as *;
+@use '../../spacing' as *;
+@use '../../theme' as *;
+@use '../../type' as *;
+@use '../../breakpoint' as *;
+@use '../../utilities/convert' as *;
+@use '../../utilities/focus-outline' as *;
+@use '../../utilities/skeleton' as *;
+
+@mixin formgroup-breakpoint($breakpoint) {
+  .#{$prefix}--fieldset__content {
+    @include breakpoint($breakpoint) {
+      display: flex;
+    }
+    @include breakpoint-down($breakpoint) {
+      &.#{$prefix}--fieldset__content {
+        > * {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}
+
+@mixin form-group {
+  .#{$prefix}--form-group__title {
+    @include type-style('productive-heading-03');
+    @include font-family('sans');
+    font-weight: 600;
+    margin-bottom: $spacing-05 !important;
+  }
+
+  .#{$prefix}--fieldset__inline {
+    display: flex;
+  }
+
+  .#{$prefix}--fieldset__content {
+    > * {
+      margin-bottom: $spacing-05;
+    }
+  }
+
+  .#{$prefix}--fieldset__align-horizontal {
+    &.wfp--fieldset__input-spacing-md {
+      .#{$prefix}--fieldset__content {
+        > * {
+          margin-right: $spacing-05;
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+    &.wfp--fieldset__input-spacing-lg {
+      .#{$prefix}--fieldset__content {
+        > * {
+          margin-right: $spacing-06;
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+  }
+
+  .#{$prefix}--fieldset__align-horizontal {
+    &.#{$prefix}--fieldset__breakpoint-lg {
+      @include formgroup-breakpoint('xlg');
+    }
+    &.#{$prefix}--fieldset__breakpoint-md {
+      @include formgroup-breakpoint('lg');
+    }
+    &.#{$prefix}--fieldset__breakpoint-sm {
+      @include formgroup-breakpoint('md');
+    }
+  }
+
+  @include breakpoint('md') {
+    .#{$prefix}--fieldset__align-horizontal {
+      &.wfp--fieldset__input-spacing-md {
+        .#{$prefix}--fieldset__content {
+          > * {
+            margin-right: $spacing-04;
+            &:last-child {
+              margin-right: 0;
+            }
+          }
+        }
+      }
+      &.wfp--fieldset__input-spacing-lg {
+        .#{$prefix}--fieldset__content {
+          > * {
+            margin-right: $spacing-05;
+            &:last-child {
+              margin-right: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}

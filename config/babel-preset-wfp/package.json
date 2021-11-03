@@ -1,7 +1,7 @@
 {
   "name": "@wfp/babel-preset-wfp",
   "private": false,
-  "version": "0.1.2",
+  "version": "0.1.4",
   "license": "Apache-2.0",
   "main": "index.js",
   "repository": {
@@ -27,5 +27,6 @@
     "@babel/preset-react": "^7.14.5",
     "babel-plugin-dev-expression": "^0.2.2",
     "browserslist-config-carbon": "^10.6.1"
-  }
+  },
+  "gitHead": "1f06c355bfc57d62c4516f9daed57564730537f5"
 }

@@ -16,7 +16,10 @@ const { generate } = require('@wfp/scss-generator');
 const fs = require('fs-extra');
 const path = require('path');
 const yaml = require('js-yaml');
-const { formatTokenName, themes, tokens } = require('../lib');
+const { formatTokenName, themes, tokens } = process.env.sourceLib
+  ? require(process.env.sourceLib)
+  : require('../lib');
+
 const buildTokensFile = require('./builders/tokens');
 const buildThemesFile = require('./builders/themes');
 const buildCompatThemesFile = require('./builders/compat/themes');
@@ -25,8 +28,12 @@ const buildModulesThemesFile = require('./builders/modules-themes');
 const buildModulesTokensFile = require('./builders/modules-tokens');
 const buildMixinsFile = require('./builders/mixins');
 
-const defaultTheme = 'wfp';
-const defaultThemeMapName = 'carbon--theme';
+const defaultTheme = process.env.defaultTheme
+  ? process.env.defaultTheme
+  : 'wfp';
+const defaultThemeMapName = process.env.defaultThemeMapName
+  ? process.env.defaultThemeMapName
+  : 'carbon--theme';
 
 async function build() {
   reporter.info('Building scss files for themes...');
@@ -36,7 +43,9 @@ async function build() {
     yaml.safeLoad(fs.readFileSync(METADATA_FILE, 'utf8'))
   );
 
-  const SCSS_DIR = path.resolve(__dirname, '../scss/generated');
+  const SCSS_DIR = process.env.outputDir
+    ? process.env.outputDir
+    : path.resolve(__dirname, '../scss/generated');
   const files = [
     {
       filepath: path.join(SCSS_DIR, '_tokens.scss'),

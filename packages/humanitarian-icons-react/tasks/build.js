@@ -8,10 +8,13 @@
 'use strict';
 
 const { builders } = require('@wfp/icon-build-helpers');
-const metadata = require('@wfp/pictograms/metadata.json');
+const metadata = require('@wfp/humanitarian-icons/metadata.json');
 
 async function build() {
   await builders.react.run(metadata, {
+    output: process.cwd(),
+  });
+  await builders.reactNext.run(metadata, {
     output: process.cwd(),
   });
 }

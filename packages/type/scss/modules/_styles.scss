@@ -23,6 +23,16 @@ $caption-01: (
 /// @type Map
 /// @access public
 /// @group @carbon/type
+$caption-02: (
+  font-size: scale.type-scale(2),
+  font-weight: font-family.font-weight('regular'),
+  line-height: 1.29,
+  letter-spacing: 0.32px,
+) !default;
+
+/// @type Map
+/// @access public
+/// @group @carbon/type
 $label-01: (
   font-size: scale.type-scale(1),
   font-weight: font-family.font-weight('regular'),
@@ -500,6 +510,7 @@ $display-04: (
 /// @group @carbon/type
 $tokens: (
   caption-01: $caption-01,
+  caption-02: $caption-02,
   label-01: $label-01,
   label-02: $label-02,
   helper-text-01: $helper-text-01,

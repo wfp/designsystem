@@ -8,7 +8,9 @@
 'use strict';
 
 const { types: t } = require('@wfp/scss-generator');
-const { formatTokenName } = require('../../lib');
+const { formatTokenName } = process.env.sourceLib
+  ? require(process.env.sourceLib)
+  : require('../../lib');
 const { FILE_BANNER, primitive } = require('./shared');
 
 /**
@@ -40,6 +42,7 @@ function buildTokensFile(tokens, metadata, defaultTheme) {
             return tok.name === token;
           })) ||
         {};
+
       return [
         t.Newline(),
         tokenData.role && t.Comment(`/ ${tokenData.role.join('; ')}`),
@@ -65,7 +68,7 @@ function buildTokensFile(tokens, metadata, defaultTheme) {
               t.Identifier('carbon--theme'),
               t.SassString(name),
             ]),
-            primitive(defaultTheme[token]),
+            primitive(defaultTheme[token], token),
           ]),
           default: true,
         }),
