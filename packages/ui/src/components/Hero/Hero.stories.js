@@ -231,22 +231,24 @@ Emergencies.story = {
 };
 */
 
-export const External = () => (
-  <HeroExternal
-    heading={[
-      'A headline that can be used ',
-      <br />,
-      'for the value proposition',
-    ]}
-    body={[
-      'A description that can contain a ',
-      <a>link</a>,
-      ' and ',
-      <strong>a bold text</strong>,
-      ' to highlight important content. We have room for one or more sentences. Like this.',
-    ]}
-  />
+export const External = (args) => (
+  <HeroExternal {...args}>
+    <div className={`wfp--hero-ext__actions`}>
+      <Button allCaps large kind="accent">
+        Accent action
+      </Button>
+      <Button allCaps large kind="inverse">
+        Secondary action
+      </Button>
+    </div>
+  </HeroExternal>
 );
+
+External.args = {
+  title: (<>A headline that can be used  <br /> for the value proposition</>),
+  subTitle: (<>A description that can contain a <a>link</a> and <strong>a bold text</strong> to highlight important content. We have room for one or more sentences. Like this.</>),
+  image:'http://www1.wfp.org/sites/default/files/images/yemen-hero-min.jpg'
+}
 
 External.story = {
   parameters: {
