@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-
-import { StarSolid16 } from '@wfp/icons-react';
+import PropTypes from 'prop-types';
 
 import Button from '../Button';
 import Tag from '../Tag';
@@ -9,7 +8,7 @@ import { settings } from '../../globals/js';
 
 const { prefix } = settings;
 
-const CardExternal = (props) => {
+const CardExternal = ({ label , labelStatus, heading , subHeading , caption , tag, children, ...other}) => {
   const myRef = useRef();
   const supportiveTextFontSize = 14;
   const supportiveTextLineHeight = 1.5;
@@ -18,6 +17,9 @@ const CardExternal = (props) => {
   const [supportiveTextHeight, setsupportiveTextHeight] = useState(
     supportiveTextFontSize * supportiveTextLineHeight * 3
   );
+
+  // statusStyle apply different style(color, backgroundColor) based on its active state 
+  const statusStyle = labelStatus ? `success`: `neutral`;
 
   /**
    * Get the height of the supportive text element.
@@ -57,8 +59,8 @@ const CardExternal = (props) => {
        * It can be either 'neutral' (default) or 'success'
        */}
       <div
-        className={`${prefix}--card-ext__label ${prefix}--card-ext__label--success`}>
-        Label
+        className={`${prefix}--card-ext__label ${prefix}--card-ext__label--${statusStyle}`}>
+        {label}
       </div>
       <figure className={`${prefix}--card-ext__media`}>
         <img
@@ -72,13 +74,13 @@ const CardExternal = (props) => {
         className={`${prefix}--card-ext__info-wrapper ${prefix}--card-ext__info-wrapper--with-divider`}>
         <div className={`${prefix}--card-ext__primary-title`}>
           {/* Subheading is optional */}
-          <p className={`${prefix}--card-ext__subheading`}>Subheading</p>
-          <p className={`${prefix}--card-ext__heading`}>Heading</p>
+          {subHeading && ( <p className={`${prefix}--card-ext__subheading`}>{subHeading}</p>)}
+          {heading && (<p className={`${prefix}--card-ext__heading`}>{heading}</p>)} 
         </div>
         {/* Supportive text is optional */}
         <div
           className={
-            props.truncated
+            other.truncated
               ? `${prefix}--card-ext__supportive-text ${prefix}--card-ext__supportive-text--truncated`
               : `${prefix}--card-ext__supportive-text`
           }
@@ -91,48 +93,40 @@ const CardExternal = (props) => {
                   supportiveTextFontSize
               ),
             }}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
-            vitae congue magna. Mauris vitae velit lacinia, porttitor tellus sit
-            amet, hendrerit ipsum. Vivamus sagittis leo ut erat eleifend, sed
-            bibendum metus porttitor. Nam ac consectetur dui. Aliquam
-            vestibulum, justo ac condimentum dignissim, odio sapien iaculis
-            risus, ac rhoncus dolor metus a nulla. Suspendisse potenti. Donec
-            lectus ante, mattis a tellus in, semper rhoncus metus. Ut pulvinar
-            et nisi nec vulputate. Morbi in ante finibus tortor vehicula
-            convallis congue vel justo.
+            {caption}
           </p>
         </div>
         {/* Tags are optional */}
+        {tag && (
         <div className={`${prefix}--card-ext__tags`}>
           <Tag className={`${prefix}--card-ext__tag`} type="custom">
-            Tag
+            {tag}
           </Tag>
-        </div>
+        </div>)
+        }
+        
       </div>
       {/* Better to allow only small buttons for alignment reasons */}
-      <div className={`${prefix}--card-ext__actions`}>
-        <Button
-          className={`${prefix}--card-ext__action`}
-          kind="ghost"
-          small
-          style={{ textTransform: 'uppercase' }}>
-          Action 1
-        </Button>
-        <Button className={`${prefix}--card-ext__action`} kind="ghost" small>
-          Action 2
-        </Button>
-        {/* Last action can be aligned to the right with a dedicated modifier handled with a boolean prop (alignToRight) */}
-        {/* TODO: Provide the Star icon (outline version) from the kit */}
-        <Button
-          className={`${prefix}--card-ext__action ${prefix}--card-ext__action--align-to-right`}
-          kind="ghost"
-          small
-          icon={StarSolid16}
-          iconDescription="FavoriteOutline16"
-        />
-      </div>
+      {children}
     </div>
   );
 };
+
+CardExternal.propTypes = {
+  /**
+   label description for card if any
+  */
+  label: PropTypes.string, 
+
+  /**
+   labelStatus is either true or false, it applies  for card if any
+  */
+  labelStatus: PropTypes.bool,
+  heading: PropTypes.string, 
+  subHeading: PropTypes.string, 
+  caption: PropTypes.string, 
+  tag: PropTypes.string, 
+  children: PropTypes.node
+}
 
 export default CardExternal;

@@ -2,7 +2,10 @@ import React from 'react';
 
 import markdown from './README.mdx';
 import cardTwig from './Card.twig';
+import Button from '../Button';
 import { Card, CardExternal } from '.';
+
+import { StarSolidGlyph } from '@wfp/icons-react';
 
 export default {
   title: 'Components/Content Related/Card',
@@ -51,7 +54,41 @@ Overlay.args = {
   cardHeight: '400px',
 };
 
-export const External = () => <CardExternal truncated />;
+export const External = (args) => (
+<CardExternal truncated {...args}>
+  <div className={`wfp--card-ext__actions`}>
+    <Button
+      className={`wfp--card-ext__action`}
+      kind="ghost"
+      small
+      style={{ textTransform: 'uppercase' }}>
+      Action 1
+    </Button>
+    <Button className={`wfp--card-ext__action`} kind="ghost" small>
+      Action 2
+    </Button>
+    {/* Last action can be aligned to the right with a dedicated modifier handled with a boolean prop (alignToRight) */}
+    {/* TODO: Provide the Star icon (outline version) from the kit */}
+    <Button
+      className={`wfp--card-ext__action wfp--card-ext__action--align-to-right`}
+      kind="ghost"
+      small
+      icon={StarSolidGlyph}
+      iconDescription="FavoriteOutline16"
+    />
+  </div>
+</CardExternal>
+);
+
+
+External.args ={
+  label:'Label',
+  heading: 'Heading',
+  subHeading: 'subheading',
+  caption:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vitae congue magna. Mauris vitae velit lacinia, porttitor tellus sit amet, hendrerit ipsum. Vivamus sagittis leo ut erat eleifend, sed',
+  tag:'tag',
+  labelStatus: true
+}
 
 External.story = {
   parameters: {
