@@ -10,6 +10,7 @@ import { StarSolidGlyph } from '@wfp/icons-react';
 export default {
   title: 'Components/Content Related/Card',
   component: Card,
+  subcomponents: {CardExternal},
   parameters: {
     componentSubtitle: 'Component',
     status: 'released',
