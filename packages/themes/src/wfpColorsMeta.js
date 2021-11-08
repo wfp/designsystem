@@ -1,16 +1,172 @@
 /* eslint-disable */
-/* Do not edit file! Updated at Fri, 22 Oct 2021 14:24:36 GMT from Figma */
+/* Do not edit file! Updated at Mon, 08 Nov 2021 15:17:29 GMT from Figma */
 
 const meta = {
+  corporate1: {
+    description: "#007DBC (corporate blue)",
+    variable: "corporate01",
+    former: "Previous token: brand-01",
+    hex: "#007dbc",
+    rgba: {
+      r: 0,
+      g: 0.4901960790157318,
+      b: 0.7372549176216125,
+      a: 1
+    },
+    category: "Corporate"
+  },
+  corporate2: {
+    description: "#000000 (full black)",
+    variable: "corporate02",
+    former: "Previous token: none",
+    hex: "#000000",
+    rgba: {
+      r: 0,
+      g: 0,
+      b: 0,
+      a: 1
+    },
+    category: "Corporate"
+  },
+  corporate3: {
+    description: "#FFFFFF (full white)",
+    variable: "corporate03",
+    former: "Previous token: none",
+    hex: "#ffffff",
+    rgba: {
+      r: 1,
+      g: 1,
+      b: 1,
+      a: 1
+    },
+    category: "Corporate"
+  },
+  corporate4: {
+    description: "#36B5C5",
+    variable: "corporate04",
+    former: "Previous token: none",
+    hex: "#36b5c5",
+    rgba: {
+      r: 0.21176470816135406,
+      g: 0.7098039388656616,
+      b: 0.772549033164978,
+      a: 1
+    },
+    category: "Corporate"
+  },
+  corporate5: {
+    description: "#00B485",
+    variable: "corporate05",
+    former: "Previous token: none",
+    hex: "#00b485",
+    rgba: {
+      r: 0,
+      g: 0.7058823704719543,
+      b: 0.5215686559677124,
+      a: 1
+    },
+    category: "Corporate"
+  },
+  corporate6: {
+    description: "#008868",
+    variable: "corporate06",
+    former: "Previous token: none",
+    hex: "#008868",
+    rgba: {
+      r: 0,
+      g: 0.5333333611488342,
+      b: 0.40784314274787903,
+      a: 1
+    },
+    category: "Corporate"
+  },
+  corporate7: {
+    description: "#1A4262",
+    variable: "corporate07",
+    former: "Previous token: none",
+    hex: "#1a4262",
+    rgba: {
+      r: 0.10196078568696976,
+      g: 0.25882354378700256,
+      b: 0.3843137323856354,
+      a: 1
+    },
+    category: "Corporate"
+  },
+  corporate8: {
+    description: "#982B56",
+    variable: "corporate08",
+    former: "Previous token: none",
+    hex: "#982b56",
+    rgba: {
+      r: 0.5960784554481506,
+      g: 0.16862745583057404,
+      b: 0.33725491166114807,
+      a: 1
+    },
+    category: "Corporate"
+  },
+  corporate9: {
+    description: "#EF404C",
+    variable: "corporate09",
+    former: "Previous token: none",
+    hex: "#ef404c",
+    rgba: {
+      r: 0.9372549057006836,
+      g: 0.250980406999588,
+      b: 0.2980392277240753,
+      a: 1
+    },
+    category: "Corporate"
+  },
+  corporate10: {
+    description: "#F47847",
+    variable: "corporate10",
+    former: "Previous token: none",
+    hex: "#f47847",
+    rgba: {
+      r: 0.95686274766922,
+      g: 0.47058823704719543,
+      b: 0.27843138575553894,
+      a: 1
+    },
+    category: "Corporate"
+  },
+  corporate11: {
+    description: "#B79F8D",
+    variable: "corporate11",
+    former: "Previous token: none",
+    hex: "#b79f8d",
+    rgba: {
+      r: 0.7176470756530762,
+      g: 0.6235294342041016,
+      b: 0.5529412031173706,
+      a: 1
+    },
+    category: "Corporate"
+  },
+  corporate12: {
+    description: "#ECDFBB",
+    variable: "corporate12",
+    former: "Previous token: none",
+    hex: "#ecdfbb",
+    rgba: {
+      r: 0.9254902005195618,
+      g: 0.8745098114013672,
+      b: 0.7333333492279053,
+      a: 1
+    },
+    category: "Corporate"
+  },
   brand: {
     description: "WFP corporate blue",
-    variable: "brand (not working, check if interactive is not good eenough))",
+    variable: "brand",
     former: "Previous token: brand-01",
-    hex: "#0b77c2",
+    hex: "#007dbc",
     rgba: {
-      r: 0.04313725605607033,
-      g: 0.46666666865348816,
-      b: 0.7607843279838562,
+      r: 0,
+      g: 0.4901960790157318,
+      b: 0.7372549176216125,
       a: 1
     },
     category: "Primary"
@@ -42,33 +198,20 @@ const meta = {
     category: "Primary"
   },
   overlay: {
-    description: "Interactive color for all non-links and non-buttons elements",
+    description: "Overlay color",
     variable: "overlay",
-    former: "Previous token: interactive-01",
-    hex: "#0b77c2",
+    former: "Previous token: none",
+    hex: "#0b1923",
     rgba: {
       r: 0.04313725605607033,
-      g: 0.46666666865348816,
-      b: 0.7607843279838562,
-      a: 1
-    },
-    category: "Primary"
-  },
-  highlight: {
-    description: "Interactive color for all non-links and non-buttons elements",
-    variable: "highlight",
-    former: "Previous token: interactive-01",
-    hex: "#0b77c2",
-    rgba: {
-      r: 0.04313725605607033,
-      g: 0.46666666865348816,
-      b: 0.7607843279838562,
+      g: 0.09803921729326248,
+      b: 0.13725490868091583,
       a: 1
     },
     category: "Primary"
   },
   focus: {
-    description: "Interactive color for all non-links and non-buttons elements",
+    description: "focus for all interactive tokens",
     variable: "focus",
     former: "Previous token: interactive-01",
     hex: "#0b77c2",
@@ -81,9 +224,9 @@ const meta = {
     category: "Primary"
   },
   focusInverse: {
-    description: "Interactive color for all non-links and non-buttons elements",
+    description: "focus for all interactive elements  (** to be checked)",
     variable: "focusInverse",
-    former: "Previous token: interactive-01",
+    former: "Previous token: none",
     hex: "#0b77c2",
     rgba: {
       r: 0.04313725605607033,
@@ -97,11 +240,24 @@ const meta = {
     description: "Interactive color for all non-links and non-buttons elements",
     variable: "focusInset",
     former: "Previous token: interactive-01",
-    hex: "#0b77c2",
+    hex: "#ffffff",
     rgba: {
-      r: 0.04313725605607033,
-      g: 0.46666666865348816,
-      b: 0.7607843279838562,
+      r: 1,
+      g: 1,
+      b: 1,
+      a: 1
+    },
+    category: "Primary"
+  },
+  highlight: {
+    description: "Interactive color for all non-links and non-buttons elements",
+    variable: "highlight",
+    former: "Previous token: interactive-01",
+    hex: "#bbe3ff",
+    rgba: {
+      r: 0.7333333492279053,
+      g: 0.8907103538513184,
+      b: 1,
       a: 1
     },
     category: "Primary"
@@ -135,7 +291,7 @@ const meta = {
   backgroundActive: {
     description: "Active color for background",
     variable: "backgroundActive",
-    former: "ui-02",
+    former: "Previous token: tbc",
     hex: "#ffffff",
     rgba: {
       r: 1,
@@ -149,11 +305,24 @@ const meta = {
     description: "Inverse background Dark mode background",
     variable: "backgroundInverse",
     former: "Previous token: ui-06",
-    hex: "#0b1923",
+    hex: "#333945",
     rgba: {
-      r: 0.04313725605607033,
-      g: 0.09803921729326248,
-      b: 0.13725490868091583,
+      r: 0.20000000298023224,
+      g: 0.2235294133424759,
+      b: 0.2705882489681244,
+      a: 1
+    },
+    category: "Background"
+  },
+  backgroundInverseMax: {
+    description: "Inverse background Dark mode background",
+    variable: "backgroundInverseMax",
+    former: "Previous token: ui-06",
+    hex: "#232831",
+    rgba: {
+      r: 0.13725490868091583,
+      g: 0.1568627506494522,
+      b: 0.1921568661928177,
       a: 1
     },
     category: "Background"
@@ -185,9 +354,9 @@ const meta = {
     category: "Background"
   },
   backgroundSelectedHover: {
-    description: "selected background",
+    description: "Hover to selected background",
     variable: "backgroundSelectedHover",
-    former: "selectedUI",
+    former: "Previous token: none",
     hex: "#ffffff",
     rgba: {
       r: 1,
@@ -200,7 +369,7 @@ const meta = {
   backgroundBrand: {
     description: "Brand background color used in Navigation",
     variable: "backgroundBrand",
-    former: "Previous token: interactive-01",
+    former: "Previous token: brand-01",
     hex: "#0b77c2",
     rgba: {
       r: 0.04313725605607033,
@@ -214,11 +383,11 @@ const meta = {
     description: "Secondary page background Container background on background",
     variable: "layer",
     former: "Previous token: ui-02",
-    hex: "#f0f2f4",
+    hex: "#ebf1f4",
     rgba: {
-      r: 0.9414583444595337,
-      g: 0.9494975209236145,
-      b: 0.9585416316986084,
+      r: 0.9215686321258545,
+      g: 0.9450980424880981,
+      b: 0.95686274766922,
       a: 1
     },
     category: "Layer"
@@ -237,9 +406,9 @@ const meta = {
     category: "Layer"
   },
   layerHover: {
-    description: "Container background on $ui-background;\nSecondary page background",
+    description: "** Hover state to layer",
     variable: "layerHover",
-    former: "ui-02",
+    former: "Previous token: none",
     hex: "#0b77c2",
     rgba: {
       r: 0.04313725605607033,
@@ -250,9 +419,9 @@ const meta = {
     category: "Layer"
   },
   layerSelected: {
-    description: "Container background on $ui-background;\nSecondary page background",
+    description: "Selected state to token",
     variable: "layerSelected",
-    former: "ui-02",
+    former: "Previous token: none",
     hex: "#0b77c2",
     rgba: {
       r: 0.04313725605607033,
@@ -263,9 +432,9 @@ const meta = {
     category: "Layer"
   },
   layerSelectedHover: {
-    description: "Container background on $ui-background;\nSecondary page background",
+    description: "Hover state to selected hover token",
     variable: "layerSelectedHover",
-    former: "ui-02",
+    former: "Previous token: none",
     hex: "#0b77c2",
     rgba: {
       r: 0.04313725605607033,
@@ -276,9 +445,9 @@ const meta = {
     category: "Layer"
   },
   layerSelectedInverse: {
-    description: "Container background on $ui-background;\nSecondary page background",
+    description: "Inverse state to selected layer",
     variable: "layerSelectedInverse",
-    former: "ui-02",
+    former: "Previous token: none",
     hex: "#0b77c2",
     rgba: {
       r: 0.04313725605607033,
@@ -289,9 +458,9 @@ const meta = {
     category: "Layer"
   },
   layerSelectedDisabled: {
-    description: "Container background on $ui-background;\nSecondary page background",
+    description: "Disabled state to selected layer",
     variable: "layerSelectedDisabled",
-    former: "ui-02",
+    former: "Previous token: none",
     hex: "#0b77c2",
     rgba: {
       r: 0.04313725605607033,
@@ -302,9 +471,9 @@ const meta = {
     category: "Layer"
   },
   layerAccent: {
-    description: "Tertiary background",
+    description: "** Tertiary background (to be confirmed)",
     variable: "layerAccent",
-    former: "ui-03",
+    former: "Previous token: ui-03 (to be checked)",
     hex: "#d7dfe7",
     rgba: {
       r: 0.843993067741394,
@@ -315,9 +484,9 @@ const meta = {
     category: "Layer"
   },
   layerAccentActive: {
-    description: "Secondary interactive color (e.g. hover)",
+    description: "Missing description",
     variable: "layerAccentActive",
-    former: "no former color",
+    former: "Previous token: none",
     hex: "#7e8b93",
     rgba: {
       r: 0.4941176474094391,
@@ -328,9 +497,9 @@ const meta = {
     category: "Layer"
   },
   layerAccentHover: {
-    description: "Secondary interactive color (e.g. hover)",
+    description: "Hover to accent layer",
     variable: "layerAccentHover",
-    former: "adjustLightness(layerAccent, -6)",
+    former: "Previous token: none",
     hex: "#586b77",
     rgba: {
       r: 0.34611111879348755,
@@ -341,9 +510,9 @@ const meta = {
     category: "Layer"
   },
   layerDisabled: {
-    description: "Secondary interactive color (e.g. hover)",
+    description: "Disabled to layer",
     variable: "layerDisabled",
-    former: "disabled01",
+    former: "Previous token: disabled-01 (**)",
     hex: "#586b77",
     rgba: {
       r: 0.34611111879348755,
@@ -393,7 +562,7 @@ const meta = {
     category: "Text"
   },
   textHelper: {
-    description: "Helper text",
+    description: "Helper text, e.g. in input fields",
     variable: "textHelper",
     former: "Previous token: text-02",
     hex: "#5a6872",
@@ -497,9 +666,9 @@ const meta = {
     category: "Text"
   },
   textOnColorDisabled: {
-    description: "Text on interactive colors",
+    description: "Missing description",
     variable: "textOnColorDisabled",
-    former: "Previous token: text-04",
+    former: "Previous token: none",
     hex: "#5a6872",
     rgba: {
       r: 0.3529411852359772,
@@ -601,7 +770,7 @@ const meta = {
     category: "Button"
   },
   buttonTertiaryHover: {
-    description: "Hover state for tertiary button",
+    description: "Hover state to tertiary button",
     variable: "buttonTertiaryHover",
     former: "Previous token: \nbackground: ui-02\nborder: text-02\nlabel: text-01",
     hex: "#031c2d",
@@ -744,9 +913,9 @@ const meta = {
     category: "Button"
   },
   buttonMainNavigation: {
-    description: "Inverse button",
+    description: "Button for MainNavigation component",
     variable: "buttonMainNavigation",
-    former: "Previous token: inverse-01",
+    former: "Previous token: none",
     hex: "#3b94d3",
     rgba: {
       r: 0.23137255012989044,
@@ -757,9 +926,9 @@ const meta = {
     category: "Button"
   },
   buttonMainNavigationHover: {
-    description: "Inverse button",
+    description: "Hover state to button for MainNavigation component",
     variable: "buttonMainNavigationHover",
-    former: "Previous token: inverse-01",
+    former: "Previous token: none",
     hex: "#509fd8",
     rgba: {
       r: 0.3137255012989044,
@@ -809,7 +978,7 @@ const meta = {
     category: "Link"
   },
   linkPrimaryHover: {
-    description: "Primary links, ghost button",
+    description: "Hover to primary links, ghost button",
     variable: "linkPrimaryHover",
     former: "Previous token: interactive-02",
     hex: "#085387",
@@ -874,7 +1043,7 @@ const meta = {
     category: "Link"
   },
   field: {
-    description: "Background color for input fields\nFields on $ui-backgrounds",
+    description: "Background color for input fields",
     variable: "field",
     former: "Previous token: field-01",
     hex: "#ffffff",
@@ -887,9 +1056,9 @@ const meta = {
     category: "Form"
   },
   fieldHover: {
-    description: "Default input fields;\nFields on $ui-backgrounds",
+    description: "**Usage to be specified",
     variable: "fieldHover",
-    former: "hoverUI",
+    former: "Previous token: none",
     hex: "#ffffff",
     rgba: {
       r: 1,
@@ -899,8 +1068,21 @@ const meta = {
     },
     category: "Form"
   },
+  fieldBorder: {
+    description: "Border color for input fields",
+    variable: "fieldBorder",
+    former: "Previous token: field-border-01",
+    hex: "#77a0b6",
+    rgba: {
+      r: 0.46666666865348816,
+      g: 0.6274510025978088,
+      b: 0.7137255072593689,
+      a: 1
+    },
+    category: "Form"
+  },
   fieldOptionHover: {
-    description: "Missing description",
+    description: "Hover to dropdown option ",
     variable: "fieldOptionHover",
     former: "Previous token: none",
     hex: "#e0ebfd",
@@ -908,19 +1090,6 @@ const meta = {
       r: 0.8784313797950745,
       g: 0.9215686321258545,
       b: 0.9921568632125854,
-      a: 1
-    },
-    category: "Form"
-  },
-  fieldBorder: {
-    description: "Border color for input fields",
-    variable: "fieldBorder (not working)",
-    former: "Previous token: field-border-01",
-    hex: "#77a0b6",
-    rgba: {
-      r: 0.46666666865348816,
-      g: 0.6274510025978088,
-      b: 0.7137255072593689,
       a: 1
     },
     category: "Form"
@@ -939,9 +1108,9 @@ const meta = {
     category: "Form"
   },
   fieldDisabled: {
-    description: "Default input fields;\nFields on $ui-backgrounds",
+    description: "Default input fields;",
     variable: "fieldDisabled",
-    former: "disabled01",
+    former: "Previous token: disabled01",
     hex: "#f9fbfc",
     rgba: {
       r: 0.9764705896377563,
@@ -952,9 +1121,9 @@ const meta = {
     category: "Form"
   },
   toggleOff: {
-    description: "3:1 aa element contrast;\nMedium contrast border",
+    description: "3:1 aa element contrast",
     variable: "toggleOff",
-    former: "ui-04",
+    former: "Previous token: none",
     hex: "#8c9ba5",
     rgba: {
       r: 0.5490196347236633,
@@ -965,7 +1134,7 @@ const meta = {
     category: "Form"
   },
   iconPrimary: {
-    description: "Primary icons",
+    description: "Primary color for icons",
     variable: "iconPrimary",
     former: "Previous token: none",
     hex: "#1d2023",
@@ -978,7 +1147,7 @@ const meta = {
     category: "Icon"
   },
   iconSecondary: {
-    description: "Secondary icons",
+    description: "Secondary color for icons",
     variable: "iconSecondary",
     former: "Previous token: none",
     hex: "#97a2a9",
@@ -991,7 +1160,7 @@ const meta = {
     category: "Icon"
   },
   iconTertiary: {
-    description: "Secondary icons",
+    description: "Tertiary color for icons\nIcons in input fields",
     variable: "iconTertiary",
     former: "Previous token: ui-05",
     hex: "#77a0b6",
@@ -1004,7 +1173,7 @@ const meta = {
     category: "Icon"
   },
   iconOnColor: {
-    description: "White icon on colored background\nInner fill of an icon",
+    description: "White icon on colored background",
     variable: "iconOnColor",
     former: "Previous token: none",
     hex: "#ffffff",
@@ -1043,7 +1212,7 @@ const meta = {
     category: "Icon"
   },
   iconDisabled: {
-    description: "Inverse icon color",
+    description: "Disabled icon on white background",
     variable: "iconDisabled",
     former: "Previous token: none",
     hex: "#8c9ba5",
@@ -1056,7 +1225,7 @@ const meta = {
     category: "Icon"
   },
   borderSubtle: {
-    description: "Subtle border, dividers, rules\nTertiary background",
+    description: "Subtle border, e.g. dividers",
     variable: "borderSubtle",
     former: "Previous token: ui-03",
     hex: "#f0f3f6",
@@ -1069,14 +1238,14 @@ const meta = {
     category: "Border"
   },
   borderStrong: {
-    description: "Medium contrast border (3:1 AA)\nInput fields border",
+    description: "Medium contrast border (3:1 AA)",
     variable: "borderStrong",
     former: "Previous token: ui-04",
-    hex: "#77a0b6",
+    hex: "#d3e1e8",
     rgba: {
-      r: 0.46666666865348816,
-      g: 0.6274510025978088,
-      b: 0.7137255072593689,
+      r: 0.8274509906768799,
+      g: 0.8823529481887817,
+      b: 0.9098039269447327,
       a: 1
     },
     category: "Border"
@@ -1095,7 +1264,7 @@ const meta = {
     category: "Border"
   },
   borderInteractive: {
-    description: "3:1 AA contrast;\nSelected elements;\nActive elements;\nAccent icons",
+    description: "3:1 AA contrast\nSelected elements\nActive elements",
     variable: "borderInteractive",
     former: "Previous token: none",
     hex: "#007dbc",
@@ -1107,23 +1276,10 @@ const meta = {
     },
     category: "Border"
   },
-  borderError: {
-    description: "3:1 AA contrast border for danger",
-    variable: "borderError (not working use supportError instead)",
-    former: "Previous token: none",
-    hex: "#c5192d",
-    rgba: {
-      r: 0.772549033164978,
-      g: 0.09803921729326248,
-      b: 0.1764705926179886,
-      a: 1
-    },
-    category: "Border"
-  },
   borderSubtleSelected: {
-    description: "Subtle border;\nTertiary background",
+    description: "Subtle border;\nTertiary background (???)",
     variable: "borderSubtleSelected",
-    former: "Previous token: active-ui",
+    former: "Previous token: none",
     hex: "#f0f3f6",
     rgba: {
       r: 0.9411764740943909,
@@ -1134,7 +1290,7 @@ const meta = {
     category: "Border"
   },
   borderDisabled: {
-    description: "3:1 AA contrast;\nSelected elements;\nActive elements;\nAccent icons",
+    description: "Border for disabled elements, e.g. disabled input fields",
     variable: "borderDisabled",
     former: "Previous token: disabled-02",
     hex: "#dfe6eb",
@@ -1160,7 +1316,7 @@ const meta = {
     category: "Support"
   },
   supportSuccess: {
-    description: "Indicates succes",
+    description: "Indicates succes state",
     variable: "supportSuccess",
     former: "Previous token: support-02",
     hex: "#689e18",
@@ -1173,7 +1329,7 @@ const meta = {
     category: "Support"
   },
   supportWarning: {
-    description: "Indicates warning",
+    description: "Indicates warning state",
     variable: "supportWarning",
     former: "Previous token: support-03",
     hex: "#f7b825",
@@ -1186,7 +1342,7 @@ const meta = {
     category: "Support"
   },
   supportInfo: {
-    description: "Indicates information",
+    description: "Indicates information state",
     variable: "supportInfo",
     former: "Previous token: support-04",
     hex: "#007dbc",
@@ -1199,7 +1355,7 @@ const meta = {
     category: "Support"
   },
   supportErrorLight: {
-    description: "Low contrast color for error",
+    description: "Low contrast color for error or invalid state",
     variable: "supportErrorLight",
     former: "Previous token: support-light-01",
     hex: "#f1c6cb",
@@ -1212,7 +1368,7 @@ const meta = {
     category: "Support"
   },
   supportSuccessLight: {
-    description: "Low contrast color for success",
+    description: "Low contrast color for success state",
     variable: "supportSuccessLight",
     former: "Previous token: support-light-02",
     hex: "#ccdbcd",
@@ -1225,7 +1381,7 @@ const meta = {
     category: "Support"
   },
   supportWarningLight: {
-    description: "Low contrast color for warning",
+    description: "Low contrast color for warning state",
     variable: "supportWarningLight",
     former: "Previous token: support-light-03",
     hex: "#fdedc9",
@@ -1238,7 +1394,7 @@ const meta = {
     category: "Support"
   },
   supportInfoLight: {
-    description: "Low contrast color for info",
+    description: "Low contrast color for info state",
     variable: "supportInfoLight",
     former: "Previous token: support-info-04",
     hex: "#dae9f4",
@@ -1253,7 +1409,7 @@ const meta = {
   supportErrorInverse: {
     description: "Danger in high contrast moments",
     variable: "supportErrorInverse",
-    former: "inverse-support-01",
+    former: "Previous token: none",
     hex: "#ff4056",
     rgba: {
       r: 1,
@@ -1266,7 +1422,7 @@ const meta = {
   supportSuccessInverse: {
     description: "Success in high contrast moments",
     variable: "supportSuccessInverse",
-    former: "inverse-support-02",
+    former: "Previous token: none",
     hex: "#9eea2d",
     rgba: {
       r: 0.6208752989768982,
@@ -1279,7 +1435,7 @@ const meta = {
   supportWarningInverse: {
     description: "Warning in high contrast moments",
     variable: "supportWarningInverse",
-    former: "inverse-support-03",
+    former: "Previous token: none",
     hex: "#ffcf60",
     rgba: {
       r: 1,
@@ -1292,7 +1448,7 @@ const meta = {
   supportInfoInverse: {
     description: "Information in high contrast moments",
     variable: "supportInfoInverse",
-    former: "inverse-support-04",
+    former: "Previous token: none",
     hex: "#17b1ff",
     rgba: {
       r: 0.09166663885116577,
@@ -1303,7 +1459,7 @@ const meta = {
     category: "Support"
   },
   skeletonBackground: {
-    description: "Usage to be specified ",
+    description: "**Usage to be specified ",
     variable: "background",
     former: "Previous token: none",
     hex: "#8c9ba5",
@@ -1316,7 +1472,7 @@ const meta = {
     category: "Skeleton"
   },
   skeletonElement: {
-    description: "Usage to be specified",
+    description: "**Usage to be specified",
     variable: "element",
     former: "Previous token: none",
     hex: "#dfe3e6",
@@ -1328,60 +1484,8 @@ const meta = {
     },
     category: "Skeleton"
   },
-  focusFocus: {
-    description: "Focus on high contrast moments",
-    variable: "focus",
-    former: "blue60",
-    hex: "#0b77c2",
-    rgba: {
-      r: 0.04313725605607033,
-      g: 0.46666666865348816,
-      b: 0.7607843279838562,
-      a: 1
-    },
-    category: "Focus"
-  },
-  focusFocusInverse: {
-    description: "Focus on high contrast moments",
-    variable: "focusInverse",
-    former: "inverseFocusUi",
-    hex: "#0b77c2",
-    rgba: {
-      r: 0.04313725605607033,
-      g: 0.46666666865348816,
-      b: 0.7607843279838562,
-      a: 1
-    },
-    category: "Focus"
-  },
-  focusHighlight: {
-    description: "Focus on high contrast moments",
-    variable: "highlight",
-    former: "blue20",
-    hex: "#bbe3ff",
-    rgba: {
-      r: 0.7333333492279053,
-      g: 0.8907103538513184,
-      b: 1,
-      a: 1
-    },
-    category: "Focus"
-  },
-  focusFocusInset: {
-    description: "Focus on high contrast moments",
-    variable: "focusInset",
-    former: "inverse01",
-    hex: "#ffffff",
-    rgba: {
-      r: 1,
-      g: 1,
-      b: 1,
-      a: 1
-    },
-    category: "Focus"
-  },
   logoWhite: {
-    description: "Logos on colored background",
+    description: "Logos on colored background, full white",
     variable: "white",
     former: "Previous token: none",
     hex: "#ffffff",
@@ -1394,7 +1498,7 @@ const meta = {
     category: "Logo"
   },
   logoBlack: {
-    description: "Logos on white background",
+    description: "Logos on white background, full black",
     variable: "black",
     former: "Previous token: none",
     hex: "#000000",
@@ -1407,7 +1511,7 @@ const meta = {
     category: "Logo"
   },
   logoBlue: {
-    description: "Standard blue",
+    description: "Logos on white background, with corporate blue",
     variable: "blue",
     former: "Previous token: none",
     hex: "#0b77c2",
@@ -1418,435 +1522,6 @@ const meta = {
       a: 1
     },
     category: "Logo"
-  },
-  datavisSequentialDefaultSequentialDefault1: {
-    description: "Swatch n.1 in the serie",
-    variable: "sequential-default-01",
-    former: "Previous ",
-    hex: "#9deaff",
-    rgba: {
-      r: 0.615686297416687,
-      g: 0.9176470637321472,
-      b: 1,
-      a: 1
-    },
-    category: "DataVis "
-  },
-  datavisSequentialDefaultSequentialDefault2: {
-    description: "Swatch n.2 in the serie",
-    variable: "sequential-default-02",
-    former: "no former color",
-    hex: "#73c3fe",
-    rgba: {
-      r: 0.45098039507865906,
-      g: 0.7647058963775635,
-      b: 0.9960784316062927,
-      a: 1
-    },
-    category: "DataVis "
-  },
-  datavisSequentialDefaultSequentialDefault3: {
-    description: "Swatch n.3 in the serie",
-    variable: "sequential-default-03",
-    former: "no former color",
-    hex: "#4aa1e2",
-    rgba: {
-      r: 0.29019609093666077,
-      g: 0.6313725709915161,
-      b: 0.886274516582489,
-      a: 1
-    },
-    category: "DataVis "
-  },
-  datavisSequentialDefaultSequentialDefault4: {
-    description: "Swatch n.4 in the serie",
-    variable: "sequential-default-04",
-    former: "no former color",
-    hex: "#0780c0",
-    rgba: {
-      r: 0.027450980618596077,
-      g: 0.501960813999176,
-      b: 0.7529411911964417,
-      a: 1
-    },
-    category: "DataVis "
-  },
-  datavisSequentialDefaultSequentialDefault5: {
-    description: "Swatch n.5 in the serie",
-    variable: "sequential-default-05",
-    former: "no former color",
-    hex: "#005f9b",
-    rgba: {
-      r: 0,
-      g: 0.37254902720451355,
-      b: 0.6078431606292725,
-      a: 1
-    },
-    category: "DataVis "
-  },
-  datavisSequentialDefaultSequentialDefault6: {
-    description: "Swatch n.6 in the serie",
-    variable: "sequential-default-06",
-    former: "no former color",
-    hex: "#003f76",
-    rgba: {
-      r: 0,
-      g: 0.24705882370471954,
-      b: 0.4627451002597809,
-      a: 1
-    },
-    category: "DataVis "
-  },
-  datavisSequentialDefaultSequentialDefault7: {
-    description: "Swatch n.7 in the serie",
-    variable: "sequential-default-07",
-    former: "no former color",
-    hex: "#002153",
-    rgba: {
-      r: 0,
-      g: 0.12941177189350128,
-      b: 0.32549020648002625,
-      a: 1
-    },
-    category: "DataVis "
-  },
-  datavisSequentialSecondarySequentialSecondary1: {
-    description: "Swatch n.1 in the serie",
-    variable: "sequential-secondary-01",
-    former: "no former color",
-    hex: "#bdf9c4",
-    rgba: {
-      r: 0.7411764860153198,
-      g: 0.9764705896377563,
-      b: 0.7686274647712708,
-      a: 1
-    },
-    category: "DataVis "
-  },
-  datavisSequentialSecondarySequentialSecondary2: {
-    description: "Swatch n.2 in the serie",
-    variable: "sequential-secondary-02",
-    former: "no former color",
-    hex: "#89eaa8",
-    rgba: {
-      r: 0.5372549295425415,
-      g: 0.9176470637321472,
-      b: 0.658823549747467,
-      a: 1
-    },
-    category: "DataVis "
-  },
-  datavisSequentialSecondarySequentialSecondary3: {
-    description: "Swatch n.3 in the serie",
-    variable: "sequential-secondary-03",
-    former: "no former color",
-    hex: "#5fd79a",
-    rgba: {
-      r: 0.37254902720451355,
-      g: 0.843137264251709,
-      b: 0.6039215922355652,
-      a: 1
-    },
-    category: "DataVis "
-  },
-  datavisSequentialSecondarySequentialSecondary4: {
-    description: "Swatch n.4 in the serie",
-    variable: "sequential-secondary-04",
-    former: "no former color",
-    hex: "#41c196",
-    rgba: {
-      r: 0.2549019753932953,
-      g: 0.7568627595901489,
-      b: 0.5882353186607361,
-      a: 1
-    },
-    category: "DataVis "
-  },
-  datavisSequentialSecondarySequentialSecondary5: {
-    description: "Swatch n.5 in the serie",
-    variable: "sequential-secondary-05",
-    former: "no former color",
-    hex: "#33aa96",
-    rgba: {
-      r: 0.20000000298023224,
-      g: 0.6666666865348816,
-      b: 0.5882353186607361,
-      a: 1
-    },
-    category: "DataVis "
-  },
-  datavisSequentialSecondarySequentialSecondary6: {
-    description: "Swatch n.6 in the serie",
-    variable: "sequential-secondary-06",
-    former: "no former color",
-    hex: "#319298",
-    rgba: {
-      r: 0.1921568661928177,
-      g: 0.572549045085907,
-      b: 0.5960784554481506,
-      a: 1
-    },
-    category: "DataVis "
-  },
-  datavisSequentialSecondarySequentialSecondary7: {
-    description: "Swatch n.7 in the serie",
-    variable: "sequential-secondary-07",
-    former: "no former color",
-    hex: "#367a96",
-    rgba: {
-      r: 0.21176470816135406,
-      g: 0.47843137383461,
-      b: 0.5882353186607361,
-      a: 1
-    },
-    category: "DataVis "
-  },
-  datavisCategoricalCategorical1: {
-    description: "Swatch n.1 in the serie",
-    variable: "categorical-01",
-    former: "no former color",
-    hex: "#007dbc",
-    rgba: {
-      r: 0,
-      g: 0.4901960790157318,
-      b: 0.7372549176216125,
-      a: 1
-    },
-    category: "DataVis "
-  },
-  datavisCategoricalCategorical2: {
-    description: "Swatch n.2 in the serie",
-    variable: "categorical-02",
-    former: "no former color",
-    hex: "#36b5c5",
-    rgba: {
-      r: 0.21176470816135406,
-      g: 0.7098039388656616,
-      b: 0.772549033164978,
-      a: 1
-    },
-    category: "DataVis "
-  },
-  datavisCategoricalCategorical3: {
-    description: "Swatch n.3 in the serie",
-    variable: "categorical-03",
-    former: "no former color",
-    hex: "#00b485",
-    rgba: {
-      r: 0,
-      g: 0.7058823704719543,
-      b: 0.5215686559677124,
-      a: 1
-    },
-    category: "DataVis "
-  },
-  datavisCategoricalCategorical4: {
-    description: "Swatch n.4 in the serie",
-    variable: "categorical-04",
-    former: "no former color",
-    hex: "#008868",
-    rgba: {
-      r: 0,
-      g: 0.5333333611488342,
-      b: 0.40784314274787903,
-      a: 1
-    },
-    category: "DataVis "
-  },
-  datavisCategoricalCategorical5: {
-    description: "Swatch n.5 in the serie",
-    variable: "categorical-05",
-    former: "no former color",
-    hex: "#1a4262",
-    rgba: {
-      r: 0.10196078568696976,
-      g: 0.25882354378700256,
-      b: 0.3843137323856354,
-      a: 1
-    },
-    category: "DataVis"
-  },
-  datavisCategoricalCategorical6: {
-    description: "Swatch n.6 in the serie",
-    variable: "categorical-06",
-    former: "no former color",
-    hex: "#982b56",
-    rgba: {
-      r: 0.5960784554481506,
-      g: 0.16862745583057404,
-      b: 0.33725491166114807,
-      a: 1
-    },
-    category: "DataVis "
-  },
-  datavisCategoricalCategorical7: {
-    description: "Swatch n.7 in the serie",
-    variable: "categorical-07",
-    former: "no former color",
-    hex: "#ef404c",
-    rgba: {
-      r: 0.9372549057006836,
-      g: 0.250980406999588,
-      b: 0.2980392277240753,
-      a: 1
-    },
-    category: "DataVis "
-  },
-  datavisCategoricalCategorical8: {
-    description: "Swatch n.8 in the serie",
-    variable: "categorical-08",
-    former: "no former color",
-    hex: "#f47847",
-    rgba: {
-      r: 0.95686274766922,
-      g: 0.47058823704719543,
-      b: 0.27843138575553894,
-      a: 1
-    },
-    category: "DataVis "
-  },
-  datavisCategoricalCategorical9: {
-    description: "Swatch n.9 in the serie",
-    variable: "categorical-09",
-    former: "no former color",
-    hex: "#b79f8d",
-    rgba: {
-      r: 0.7176470756530762,
-      g: 0.6235294342041016,
-      b: 0.5529412031173706,
-      a: 1
-    },
-    category: "DataVis "
-  },
-  datavisCategoricalCategorical10: {
-    description: "Swatch n.10 in the serie",
-    variable: "categorical-10",
-    former: "no former color",
-    hex: "#ecdfbb",
-    rgba: {
-      r: 0.9254902005195618,
-      g: 0.8745098114013672,
-      b: 0.7333333492279053,
-      a: 1
-    },
-    category: "DataVis "
-  },
-  datavisDivergingDiverging1: {
-    description: "Swatch n.1 in the serie",
-    variable: "diverging-01",
-    former: "no former color",
-    hex: "#73c5d0",
-    rgba: {
-      r: 0.45098039507865906,
-      g: 0.772549033164978,
-      b: 0.8156862854957581,
-      a: 1
-    },
-    category: "DataVis "
-  },
-  datavisDivergingDiverging2: {
-    description: "Swatch n.2 in the serie",
-    variable: "diverging-02",
-    former: "no former color",
-    hex: "#ecdfbb",
-    rgba: {
-      r: 0.9254902005195618,
-      g: 0.8745098114013672,
-      b: 0.7333333492279053,
-      a: 1
-    },
-    category: "DataVis "
-  },
-  datavisAlertAlert1: {
-    description: "Swatch n.1 in the serie",
-    variable: "alert-01",
-    former: "no former color",
-    hex: "#5fd79a",
-    rgba: {
-      r: 0.37254902720451355,
-      g: 0.843137264251709,
-      b: 0.6039215922355652,
-      a: 1
-    },
-    category: "DataVis "
-  },
-  datavisAlertAlert2: {
-    description: "Swatch n.2 in the serie",
-    variable: "alert-02",
-    former: "no former color",
-    hex: "#a0db90",
-    rgba: {
-      r: 0.6274510025978088,
-      g: 0.8588235378265381,
-      b: 0.5647059082984924,
-      a: 1
-    },
-    category: "DataVis "
-  },
-  datavisAlertAlert3: {
-    description: "Swatch n.3 in the serie",
-    variable: "alert-03",
-    former: "no former color",
-    hex: "#d0de85",
-    rgba: {
-      r: 0.8156862854957581,
-      g: 0.8705882430076599,
-      b: 0.5215686559677124,
-      a: 1
-    },
-    category: "DataVis "
-  },
-  datavisAlertAlert4: {
-    description: "Swatch n.4 in the serie",
-    variable: "alert-04",
-    former: "no former color",
-    hex: "#fbe07a",
-    rgba: {
-      r: 0.9843137264251709,
-      g: 0.8784313797950745,
-      b: 0.47843137383461,
-      a: 1
-    },
-    category: "DataVis "
-  },
-  datavisAlertAlert5: {
-    description: "Swatch n.5 in the serie",
-    variable: "alert-05",
-    former: "no former color",
-    hex: "#fbb16a",
-    rgba: {
-      r: 0.9843137264251709,
-      g: 0.6941176652908325,
-      b: 0.4156862795352936,
-      a: 1
-    },
-    category: "DataVis "
-  },
-  datavisAlertAlert6: {
-    description: "Swatch n.6 in the serie",
-    variable: "alert-06",
-    former: "no former color",
-    hex: "#f77f5b",
-    rgba: {
-      r: 0.9686274528503418,
-      g: 0.49803921580314636,
-      b: 0.35686275362968445,
-      a: 1
-    },
-    category: "DataVis "
-  },
-  datavisAlertAlert7: {
-    description: "Swatch n.7 in the serie",
-    variable: "alert-07",
-    former: "no former color",
-    hex: "#ef404c",
-    rgba: {
-      r: 0.9372549057006836,
-      g: 0.250980406999588,
-      b: 0.2980392277240753,
-      a: 1
-    },
-    category: "DataVis "
   }
 };
 export default meta;
