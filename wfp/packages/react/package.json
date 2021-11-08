@@ -1,6 +1,6 @@
 {
   "name": "@wfp/react-example",
-  "version": "1.18.19",
+  "version": "1.18.20",
   "description": "WFP UI Kit",
   "license": "Apache-2",
   "main": "lib/index.js",
@@ -149,7 +149,7 @@
     "@storybook/theming": "^6.3.6",
     "@testing-library/cypress": "^8.0.0",
     "@wfp/babel-preset-wfp": "^0.1.5",
-    "@wfp/styles": "^10.26.6",
+    "@wfp/styles": "^10.26.7",
     "@wfp/themes": "^10.40.5",
     "babel-loader": "^8.2.2",
     "babel-plugin-dev-expression": "^0.2.2",
