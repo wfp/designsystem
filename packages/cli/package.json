@@ -24,7 +24,10 @@
     },
     "dependencies": {
         "@babel/core": "^7.14.6",
+        "@babel/node": "^7.16.0",
+        "@wfp/themes": "^10.40.3",
         "@carbon/cli-reporter": "^10.5.0",
+        "@commitlint/parse": "^14.0.0",
         "@octokit/plugin-retry": "^3.0.7",
         "@octokit/plugin-throttling": "^2.6.0",
         "@octokit/rest": "^16.28.1",

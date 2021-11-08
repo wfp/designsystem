@@ -54,6 +54,14 @@ yarn install
 yarn build
 ```
 
+Usage of alpha versions
+
+Install the latest alpha versions to use the Design System with your project
+
+````
+npm install @wfp/ui@alpha @wfp/icons@alpha  @wfp/icons-react@alpha  @wfp/layout@alpha  @wfp/styles@alpha  @wfp/themes@alpha  @wfp/type@alpha
+```
+
 ### Upgrade to 2.0 for existing solutions
 
 In version 2.0 some paths will change due to the new monorepo architecture which is inline with Carbon Design System.
@@ -226,3 +234,4 @@ Edit the `website-redirect-location` meta tag of `index.html` to point [wfp.org/
 Edit the first line of `assets/depreciation-warning.html` to point to the latest version of the UI Kit.
 
 Clear the Server cache with [Cloudfront Purge Tool](https://chrome.google.com/webstore/detail/cloudfront-purge-tool).
+````

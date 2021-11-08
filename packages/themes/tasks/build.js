@@ -133,6 +133,8 @@ async function build() {
   for (const { filepath, builder } of files) {
     await fs.ensureFile(filepath);
 
+    console.log(filepath);
+
     const { code } = generate(builder());
     await fs.writeFile(filepath, code);
   }

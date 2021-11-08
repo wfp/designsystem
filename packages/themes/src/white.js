@@ -315,7 +315,7 @@ export {
   // Icon sizes
   iconSize01,
   iconSize02,
-} from '@carbon/layout';
+} from '@wfp/layout';
 
 // Deprecated ☠️
 export const brand01 = interactive01;

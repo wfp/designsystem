@@ -31,8 +31,7 @@
   },
   "dependencies": {
     "@carbon/colors": "^10.30.0",
-    "@carbon/layout": "^10.29.0",
-    "@carbon/type": "10.33.0",
+    "@wfp/layout": "^10.29.0",
     "@wfp/type": "^10.30.6",
     "color": "^3.1.2"
   },

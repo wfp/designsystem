@@ -10,44 +10,56 @@
 const path = require('path');
 const { createLogger } = require('../logger');
 const bundlers = require('./bundle/bundlers');
+const { rollup } = require('rollup');
+const { babel } = require('@rollup/plugin-babel');
+const commonjs = require('@rollup/plugin-commonjs');
+const { nodeResolve } = require('@rollup/plugin-node-resolve');
 const execa = require('execa');
+const pathToThemes = path.dirname(require.resolve('@wfp/themes/package.json'));
+
+require('@babel/register')({
+  presets: ['@babel/preset-env'],
+});
+
+var exec = require('child_process').exec;
 
 const logger = createLogger('bundle');
 
 async function theme({ entrypoint, name, source, output, globals }) {
+  logger.start('bundle');
+
   const cwd = process.cwd();
 
   async function buildSass() {
     const stream = execa(
-      'babel-node',
+      'npx',
       [
+        'babel-node',
         '--presets',
         '@babel/preset-env',
         '--ignore',
         '/node_modules/',
-        path.resolve(__dirname, '../../../themes/tasks/build.js'),
+        path.resolve(pathToThemes, './tasks/build.js'),
       ],
       {
+        cwd: path.resolve(__dirname),
         env: {
           sourceLib: path.join(cwd, source),
           outputDir: path.join(cwd, output),
           defaultTheme: 'memo',
-          //stdio: 'inherit',
         },
       }
     );
 
-    if (stream.stdout !== undefined) {
+    if (stream !== undefined) {
       stream.stdout.on('data', (chunk) => {
-        console.log(chunk.toString());
+        logger.info(chunk.toString());
       });
       stream.stderr.on('data', (chunk) => {
-        console.log(chunk.toString());
+        logger.info(chunk.toString());
       });
     }
   }
-
-  logger.start('bundle');
 
   const extension = path.extname(entrypoint);
 
@@ -64,13 +76,34 @@ async function theme({ entrypoint, name, source, output, globals }) {
       name,
       globals,
     });
+
+    /*console.log(path.resolve(__dirname, 'theme/entry.js'));
+
+    const bundled = await rollup({
+      //input: './theme/entry.js',
+      input: path.resolve(__dirname, 'theme/entry.js'),
+      plugins: [
+        babel({
+          //exclude: 'node_modules/**',
+          //ignore: ['/node_modules/'],
+          //babelrc: false,
+          presets: [['@babel/preset-env']],
+          //babelHelpers: 'bundled',
+        }),
+        nodeResolve(),
+        /*commonjs({
+          include: [/node_modules/],
+          extensions: ['.js'],
+        }),
+      ],
+    });*/
+
+    await buildSass();
   } catch (error) {
     logger.info(`Unexpected error occurred while bundling ${entrypoint}:`);
     console.log(error);
     process.exit(1);
   }
-
-  await buildSass();
 
   logger.stop();
 }

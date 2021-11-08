@@ -1,0 +1,41 @@
+@use "sass:map";
+@use "sass:meta";
+
+/// Include the CSS Custom Properties for the active theme or a given theme on
+/// a selector
+@mixin theme($active-theme: $theme, $component-tokens...) {
+  @each $token, $value in $active-theme {
+    @include -custom-property($token, $value);
+  }
+
+  @each $group in $component-tokens {
+    @each $token, $value in $group {
+      @include -custom-property($token, $value);
+    }
+  }
+}
+
+/// Retrieve the value for the given $token from the current $theme
+/// @param {String} $token
+@function get($token) {
+  @if map.has-key($theme, $token) {
+    @return map.get($theme, $token);
+  }
+  @error "Unable to find token: #{$token} in current $theme";
+}
+
+/// @access private
+/// @group @wfp/themes
+@mixin -custom-property($name, $value) {
+  @if meta.type-of($value) == map {
+    @each $property, $property-value in $value {
+      // Only support one-level of depth for values that are maps. This is to
+      // avoid bringing properties like `breakpoints` on type tokens
+      @if type-of($property-value) != map {
+        @include -custom-property('#{$name}-#{$property}', $property-value);
+      }
+    }
+  } @else {
+    --#{config.$prefix}-#{$name}: #{$value};
+  }
+}

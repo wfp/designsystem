@@ -1,6 +1,6 @@
-/** 
-* Do not modify this file. The file is comming from IBM Carbon and created by copy-carbon 
-**/
+/**
+ * Do not modify this file. The file is comming from IBM Carbon and created by copy-carbon
+ **/
 /**
  * Copyright IBM Corp. 2018, 2018
  *
@@ -92,7 +92,6 @@ async function bundle(entrypoint, options) {
           ...globals,
         };
       }
-
       return bundle.write(outputOptions);
     })
   );

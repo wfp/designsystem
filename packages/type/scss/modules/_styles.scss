@@ -6,7 +6,7 @@
 //
 
 @use 'sass:map';
-@use '@carbon/layout';
+@use '@wfp/layout';
 @use 'font-family';
 @use 'scale';
 
@@ -49,7 +49,6 @@ $label-02: (
   line-height: 1.48,
   letter-spacing: 0.32px,
 ) !default;
-
 
 /// @type Map
 /// @access public
