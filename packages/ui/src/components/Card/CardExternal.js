@@ -8,7 +8,7 @@ import { settings } from '../../globals/js';
 
 const { prefix } = settings;
 
-const CardExternal = ({ label , labelStatus, heading , subHeading , caption , tag, children, ...other}) => {
+const CardExternal = ({ label , labelStatus, image, heading , subHeading , caption , tag, children, ...other}) => {
   const myRef = useRef();
   const supportiveTextFontSize = 14;
   const supportiveTextLineHeight = 1.5;
@@ -58,14 +58,16 @@ const CardExternal = ({ label , labelStatus, heading , subHeading , caption , ta
        * Label is optional.
        * It can be either 'neutral' (default) or 'success'
        */}
+       {label &&
       <div
         className={`${prefix}--card-ext__label ${prefix}--card-ext__label--${statusStyle}`}>
         {label}
       </div>
+      }
       <figure className={`${prefix}--card-ext__media`}>
         <img
           className={`${prefix}--card-ext__image`}
-          src="http://www1.wfp.org/sites/default/files/images/yemen-hero-min.jpg"
+          src={image}
           alt="Card picture"
         />
       </figure>
@@ -122,6 +124,7 @@ CardExternal.propTypes = {
    labelStatus is either true or false, it applies  for card if any
   */
   labelStatus: PropTypes.bool,
+  image: PropTypes.string,
   heading: PropTypes.string, 
   subHeading: PropTypes.string, 
   caption: PropTypes.string, 
