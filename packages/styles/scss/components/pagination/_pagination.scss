@@ -12,8 +12,8 @@
 @use '../../breakpoint' as *;
 @use '../../theme' as *;
 @use '../../utilities/component-reset';
-@use '../../utilities/button-reset';
 @use '../../utilities/convert' as *;
+@use '../../utilities/rtl' as *;
 @use '../../utilities/focus-outline' as *;
 @use '../../utilities/high-contrast-mode' as *;
 
@@ -46,9 +46,9 @@
   .#{$prefix}--pagination__left {
     display: flex;
     align-items: center;
-    // @include rtl {
-    //   flex-direction: row-reverse;
-    // }
+    @include rtl {
+      flex-direction: row-reverse;
+    }
   }
 
   .#{$prefix}--pagination__right {
@@ -79,7 +79,7 @@
   }
 
   .#{$prefix}--pagination__button {
-    @include button-reset.reset;
+    @include component-reset.reset;
     border: none;
     background: none;
     cursor: pointer;
@@ -175,11 +175,11 @@
     margin-top: -0.5rem;
     margin-bottom: -0.5rem;
     margin-right: -1rem;
-    // @include rtl {
-    //   flex-direction: row-reverse;
-    //   margin-right: auto;
-    //   margin-left: 0;
-    // }
+    @include rtl {
+      flex-direction: row-reverse;
+      margin-right: auto;
+      margin-left: 0;
+    }
 
     .#{$prefix}--pagination__button {
       height: rem(46px);

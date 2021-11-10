@@ -23,6 +23,7 @@ Regular.args = {
   icon: (
     <IllustrationsMovingVanWithBackground
       alt="Moving van"
+      width="25rem"
       //src={`${process.env.STORYBOOK_INTERNAL_ASSETS}illustrations/moving-van.svg`}
     />
   ),

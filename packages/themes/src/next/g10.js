@@ -170,6 +170,7 @@ export const supportError = red60;
 export const supportSuccess = green50;
 export const supportWarning = yellow30;
 export const supportInfo = blue70;
+
 export const supportErrorInverse = red50;
 export const supportSuccessInverse = green40;
 export const supportWarningInverse = yellow30;

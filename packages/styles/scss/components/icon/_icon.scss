@@ -5,22 +5,15 @@
 // LICENSE file in the root directory of this source tree.
 //
 
+@use '../form';
 @use '../../config' as *;
 @use '../../spacing' as *;
 @use '../../theme' as *;
 @use '../../type' as *;
-@use '../../breakpoint' as *;
 @use '../../utilities/convert' as *;
 @use '../../utilities/skeleton' as *;
+@use '../../utilities/visually-hidden' as *;
 
-@mixin context-menu {
-.#{$prefix}--context-menu__group {
-    border-bottom: 1px solid $border-strong; 
-    &:last-child {
-      border-bottom: none;
-    }
-  }
-  .#{$prefix}--context-menu__item {
-    padding: $spacing-03;
-  }
+@mixin icon {
+  
 }

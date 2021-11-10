@@ -12,7 +12,7 @@
 @use '../../breakpoint' as *;
 @use '../../utilities/convert' as *;
 @use '../../utilities/focus-outline';
-@use '../../utilities/rtl';
+@use '../../utilities/rtl' as *;
 @use '../../utilities/high-contrast-mode' as *;
 @use '../../utilities/skeleton' as *;
 @use '../../utilities/tooltip' as *;
@@ -77,10 +77,10 @@
     flex-direction: column;
     margin: 0;
     margin-right: rem(64px);
-    // @include rtl {
-    //   margin-left: rem(64px);
-    //   margin-right: 0;
-    // }
+    @include rtl {
+      margin-left: rem(64px);
+      margin-right: 0;
+    }
   }
   
   .#{$prefix}--footer__info__item > .#{$prefix}--link {
@@ -104,10 +104,10 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    // @include rtl {
-    //   margin-left: 0;
-    //   margin-right: auto;
-    // }
+    @include rtl {
+      margin-left: 0;
+      margin-right: auto;
+    }
   }
   
   .#{$prefix}--theme-dark {
@@ -117,7 +117,7 @@
     }
   }
   
-  @include breakpoint-down(md) {
+  @include breakpoint-down('md') {
     .#{$prefix}--footer__cta-logo {
         display: none;
       
@@ -132,7 +132,7 @@
 
 
   
-  @include breakpoint(md) {
+  @include breakpoint('md') {
     .#{$prefix}--footer__cta-logo-small {
           display: none;
     }
@@ -149,7 +149,7 @@
   /* External */
   
   .#{$prefix}--footer--external {
-    @include breakpoint-down(md) {
+    @include breakpoint-down('md') {
       .#{$prefix}--footer__content {
         flex-direction: column;
       }
@@ -157,7 +157,7 @@
   
     .#{$prefix}--footer__info {
       order: 1;
-      @include breakpoint(md) {
+      @include breakpoint('md') {
         width: 40%;
       }
       // @include line-height('body');
@@ -166,7 +166,7 @@
   
     .#{$prefix}--footer__cta {
       margin-left: inherit;
-      @include breakpoint-down(md) {
+      @include breakpoint-down('md') {
         display: flex;
         width: 100%;
         margin-bottom: rem(20px);
@@ -175,7 +175,7 @@
           margin-right: rem(30px);
         }
       }
-      @include breakpoint(md) {
+      @include breakpoint('md') {
         margin-right: auto;
       }
     }
@@ -187,10 +187,10 @@
       display: block;
       margin: 0;
       margin-right: rem(64px);
-      // @include rtl {
-      //   margin-left: rem(64px);
-      //   margin-right: 0;
-      // }
+      @include rtl {
+        margin-left: rem(64px);
+        margin-right: 0;
+      }
     }
   
     .#{$prefix}--footer__info__item > .#{$prefix}--link {

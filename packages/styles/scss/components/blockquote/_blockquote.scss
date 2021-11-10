@@ -104,7 +104,7 @@
 
   .#{$prefix}--blockquote--warning {
     border-left-color: $support-warning;
-    background: $support-warning; //$support-warning-light;
+    background: #fdedc9; //$support-warning-light;
     .#{$prefix}--blockquote__icon {
       fill: $support-warning !important;
     }
@@ -112,7 +112,7 @@
 
   .#{$prefix}--blockquote--error {
     border-left-color: $support-error;
-    background: $support-error; //$support-error-light;
+    background: #f1c6cb; //$support-error-light;
     .#{$prefix}--blockquote__icon {
       fill: $support-error !important;
     }
@@ -120,7 +120,7 @@
 
   .#{$prefix}--blockquote--success {
     border-left-color: $support-success;
-    background: $support-success;
+    background: #ccdbcd; //$support-success-light
     .#{$prefix}--blockquote__icon {
       fill: $support-success !important;
     }

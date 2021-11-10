@@ -20,7 +20,7 @@
 @use '../../utilities/high-contrast-mode' as *;
 @use '../../utilities/convert' as *;
 
-@use '../form';
+@use '../input';
 @use '../text-input';
 
 /// Slider styles
@@ -52,7 +52,7 @@
     &::-webkit-slider-runnable-track {
       width: 250px;
       height: 4px;
-      background: $border-strong; //TODO create new token
+      background: $border-subtle; //TODO create new token
       transition: all 300ms $standard-easing;
       border: none;
       border-radius: 1px;
@@ -60,7 +60,7 @@
     }
 
     &::-moz-range-track {
-      background: $border-strong;
+      background: $border-subtle;
       height: 4px;
       cursor: pointer;
     }
@@ -123,12 +123,12 @@
       outline: none;
 
       &::-webkit-slider-runnable-track {
-        background: $border-strong;
+        background: $border-subtle;
       }
 
       // firefox
       &::-moz-range-track {
-        background-color: $border-strong;
+        background-color: $border-subtle;
         overflow: hidden;
       }
     }

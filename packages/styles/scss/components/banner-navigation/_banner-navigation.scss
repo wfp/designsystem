@@ -11,7 +11,7 @@
 
 @mixin banner-navigation{
   .#{$prefix}--banner-navigation {
-    background: var(--interactive-02); //TODO use $brand-dark
+    background: $link-primary-hover; //TODO use a new background token for interactive-02
     @include reset;
     display: flex;
     // @include font-smoothing; //added to reset mixin
