@@ -6,6 +6,9 @@
 //
 
 @forward 'hero';
+@forward 'hero-external';
 @use 'hero';
+@use 'hero-external';
 
 @include hero.hero;
+@include hero-external.hero-external;

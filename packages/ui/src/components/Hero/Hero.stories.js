@@ -2,7 +2,7 @@ import React from 'react';
 
 import markdown from './README.mdx';
 
-import Hero from '.';
+import { Hero, HeroExternal } from '.';
 import Button from '../Button';
 import { WfpHumEmergencyResponsePos } from '@wfp/pictograms-react';
 import heroTwig from './Hero.twig';
@@ -57,7 +57,6 @@ HeroKinds.story = {
     },
   },
 };
-
 
 export const Landscape = (args) => <Hero {...args} />;
 
@@ -231,3 +230,30 @@ Emergencies.story = {
   },
 };
 */
+
+export const External = (args) => (
+  <HeroExternal {...args}>
+    <div className={`wfp--hero-ext__actions`}>
+      <Button allCaps large kind="accent">
+        Accent action
+      </Button>
+      <Button allCaps large kind="inverse">
+        Secondary action
+      </Button>
+    </div>
+  </HeroExternal>
+);
+
+External.args = {
+  title: (<>A headline that can be used  <br /> for the value proposition</>),
+  subTitle: (<>A description that can contain a <a>link</a> and <strong>a bold text</strong> to highlight important content. We have room for one or more sentences. Like this.</>),
+  image:'http://www1.wfp.org/sites/default/files/images/yemen-hero-min.jpg'
+}
+
+External.story = {
+  parameters: {
+    docs: {
+      storyDescription: 'Add a description',
+    },
+  },
+};
