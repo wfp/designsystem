@@ -1,7 +1,7 @@
 import React from 'react';
 import markdown from './README.mdx';
 import { action } from '@storybook/addon-actions';
-import MainNavigation from '.';
+import { MainNavigation, MainNavigationExternal } from '.';
 import MainNavigationItem from '../MainNavigationItem';
 
 import {
@@ -23,21 +23,20 @@ import User from '../User';
 export default {
   title: 'Components/Navigations/MainNavigation',
   component: MainNavigation,
+  subcomponents: {MainNavigationExternal},
   parameters: {
     componentSubtitle: 'Component',
     status: 'released',
     mdx: markdown,
-    previewWidth: 'full'
-  }
+    previewWidth: 'full',
+  },
 };
-
-
 
 export const Regular = (args) => (
   <MainNavigation {...args}>
     {({ onChangeSub }) => {
       return (
-        <React.Fragment>
+        <>
           <MainNavigationItem>
             <Link href="http://communities.wfp.org" target="_blank">
               Section 1
@@ -66,7 +65,7 @@ export const Regular = (args) => (
                 </SubNavigationHeader>
                 <SubNavigationContent>
                   <SubNavigationList>
-                    <SubNavigationGroup title="First List" columns>
+                    <SubNavigationGroup title="First List" columns={1}>
                       <SubNavigationItem>
                         <Link href="https://go.docs.wfp.org" target="_blank">
                           Lorem Ipsum et jomen
@@ -106,7 +105,7 @@ export const Regular = (args) => (
                 <SubNavigationHeader>
                   <SubNavigationTitle>Welcome Lorem!</SubNavigationTitle>
                   <SubNavigationLink>
-                    <Button secondary small>
+                    <Button kind="secondary" small>
                       Logout
                     </Button>
                   </SubNavigationLink>
@@ -155,7 +154,7 @@ export const Regular = (args) => (
             }>
             <span>EN</span>
           </MainNavigationItem>
-        </React.Fragment>
+        </>
       );
     }}
   </MainNavigation>
@@ -165,10 +164,10 @@ const description = `
 You can customize the content by using \`BannerNavigation\`.
 `;
 
-const sourcecode =(type)=>{
+const sourcecode = (type) => {
   return `import { Button,User, Search } from "@wfp/ui";
   import {
-    MainNavigation,
+    MainNavigationExternal,
     MainNavigationItem,
     SubNavigation,
     SubNavigationHeader,
@@ -180,11 +179,11 @@ const sourcecode =(type)=>{
     SubNavigationGroup,
     SubNavigationItem
   } from "@wfp/ui";
-  
+
   const Navigation = () => {
     return (
       <MainNavigation >
-                  
+
       <MainNavigationItem>
         <Link href="http://communities.wfp.org" target="_blank">
           Section 1
@@ -198,7 +197,7 @@ const sourcecode =(type)=>{
               <SubNavigationLink>
                   <Button small>The SubPage Link</Button>
               </SubNavigationLink>
-  
+
               <SubNavigationFilter>
                   <Search
                   small
@@ -250,7 +249,7 @@ const sourcecode =(type)=>{
               <SubNavigationHeader>
               <SubNavigationTitle>Welcome Lorem!</SubNavigationTitle>
               <SubNavigationLink>
-                  <Button secondary small>
+                  <Button kind="secondary" small>
                   Logout
                   </Button>
               </SubNavigationLink>
@@ -259,7 +258,7 @@ const sourcecode =(type)=>{
               Additional content can be placed here.
               <br />
               Demo for internal close action:{' '}
-              <Link >Close Menu</Link> 
+              <Link >Close Menu</Link>
               </SubNavigationContent>
           </SubNavigation>
           }>
@@ -301,13 +300,10 @@ const sourcecode =(type)=>{
       </MainNavigationItem>
       )
     }
-  
+
   export default Navigation;
-  `
-}
-
-
-
+  `;
+};
 
 Regular.story = {
   parameters: {
@@ -316,18 +312,17 @@ Regular.story = {
       source: {
         code: sourcecode(`<Link href="http://opweb.wfp.org" target="_blank">
             Section 4
-          </Link>`)
-      }
+          </Link>`),
+      },
     },
   },
 };
-
 
 export const RegularWithButton = (args) => (
   <MainNavigation {...args}>
     {({ onChangeSub }) => {
       return (
-        <React.Fragment>
+        <>
           <MainNavigationItem>
             <Link href="http://communities.wfp.org" target="_blank">
               Section 1
@@ -356,7 +351,7 @@ export const RegularWithButton = (args) => (
                 </SubNavigationHeader>
                 <SubNavigationContent>
                   <SubNavigationList>
-                    <SubNavigationGroup title="First List" columns>
+                    <SubNavigationGroup title="First List" columns={1}>
                       <SubNavigationItem>
                         <Link href="https://go.docs.wfp.org" target="_blank">
                           Lorem Ipsum et jomen
@@ -396,7 +391,7 @@ export const RegularWithButton = (args) => (
                 <SubNavigationHeader>
                   <SubNavigationTitle>Welcome Lorem!</SubNavigationTitle>
                   <SubNavigationLink>
-                    <Button secondary small>
+                    <Button kind="secondary" small>
                       Logout
                     </Button>
                   </SubNavigationLink>
@@ -445,7 +440,7 @@ export const RegularWithButton = (args) => (
             }>
             <span>EN</span>
           </MainNavigationItem>
-        </React.Fragment>
+        </>
       );
     }}
   </MainNavigation>
@@ -458,8 +453,103 @@ RegularWithButton.story = {
       source: {
         code: sourcecode(`<Button kind="navigation" type="button">
             Button
-          </Button>`)
-      }
+          </Button>`),
+      },
     },
   },
+};
+
+export const External = (args) => (<MainNavigationExternal  {...args}>
+  <>
+  <li className={`wfp--main-navigation-ext__site-link`}>
+  <a>First link</a>
+  </li>
+  <li className={`wfp--main-navigation-ext__site-link`}>
+  <a>Second link</a>
+  </li> 
+  {/* <li className={`wfp--main-navigation-ext__site-link`}>
+    <Button kind="accent" small>
+      Accent link
+    </Button>
+  </li> */}
+  </>
+</MainNavigationExternal>);
+
+const Languages = () =>
+(
+<>
+<li className={`wfp--language-ext__dropdown-option`}>
+  <a>English</a>
+</li>
+<li className={`wfp--language-ext__dropdown-option`}>
+  <a>French</a>
+</li>
+<li className={`wfp--language-ext__dropdown-option`}>
+  <a>Spanish</a>
+</li>
+</>
+)
+
+const UserDropdownDetails =() => (
+  <>
+    <li className={`wfp--user-ext__profile-item`}>
+      <span className={`wfp--user-ext__profile-label`}>Email:</span>
+      <span className={`wfp--user-ext__profile-value`}>
+        <Link inline>user@wfp.com</Link>
+      </span>
+    </li>
+    <li className={`wfp--user-ext__profile-item`}>
+      <span className={`wfp--user-ext__profile-label`}>
+        Job title:
+      </span>
+      <span className={`wfp--user-ext__profile-value`}>
+        Supply chain
+      </span>
+    </li>
+    <li className={`wfp--user-ext__profile-item`}>
+      <span className={`wfp--user-ext__profile-label`}>Country:</span>
+      <span className={`wfp--user-ext__profile-value`}>Somalia</span>
+    </li>
+    <li className={`wfp--user-ext__profile-item`}>
+      <span className={`wfp--user-ext__profile-label`}>
+        Organization:
+      </span>
+      <span className={`wfp--user-ext__profile-value`}>
+        The United Nations World food Programme (WFP)
+      </span>
+    </li>
+    <div className={`wfp--user-ext__profile-actions`}>
+      <Link className={`wfp--user-ext__profile-edit`} inline>
+        Edit profile
+      </Link>
+      <Button kind="secondary" small>
+        Log out
+      </Button>
+    </div>
+  </>
+)
+
+External.args = {
+  productName: <>Product <br/> Name</>,
+  languageList: <Languages/>,
+  userDetails: <UserDropdownDetails/>,
+  username: 'Max Mustermann'
+};
+
+// Increase the size of the story's wrapper to show the mobile menu
+const externalStoryStyles = {
+  height: '400px',
+};
+
+External.story = {
+  parameters: {
+    docs: {
+      storyDescription: 'Add a description',
+    },
+  },
+  decorators: [(Story) => (
+    <div style={externalStoryStyles}>
+      <Story/>
+    </div>
+  )],
 };
