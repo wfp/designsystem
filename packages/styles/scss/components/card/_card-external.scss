@@ -1,0 +1,148 @@
+@use '../tag/mixins' as *;
+@use '../../config' as *;
+@use '../../spacing' as *;
+@use '../../theme' as *;
+@use '../../type' as *;
+@use '../../breakpoint' as *;
+
+@mixin card-external {
+  @include reset;
+
+  .#{$prefix}--card-ext {
+    border-radius: 4px;
+    box-shadow: 0 1px 8px rgb(0 0 0 / 15%); // TODO: Create new token
+    display: flex;
+    flex-direction: column;
+    width: 268px;
+  }
+
+  .#{$prefix}--card-ext__label {
+    @include type-style('caption-01');
+
+    padding: $spacing-02 $spacing-05;
+
+    &.#{$prefix}--card-ext__label--neutral {
+      background-color: $layer; // Provide its own token
+      color: $text-secondary;
+    }
+
+    &.#{$prefix}--card-ext__label--success {
+      background-color: #ccdbcd; // TODO: Create new token
+      color: #3f600f; // TODO: Use $text-success token
+    }
+  }
+
+  .#{$prefix}--card-ext__media {
+    overflow: hidden;
+
+    & .#{$prefix}--card-ext__image {
+      height: 130px;
+      margin: 0;
+      object-fit: cover;
+      width: 100%;
+    }
+  }
+
+  // If the card is interactive, set up the properties for the animation.
+  .#{$prefix}--card-ext--interactive .#{$prefix}--card-ext__image {
+    transition: transform 0.3s ease 0s;
+    will-change: transform;
+  }
+
+  // If the card is interactive, animate the image on hover event.
+  .#{$prefix}--card-ext--interactive:hover .#{$prefix}--card-ext__image {
+    transform: scale(1.15);
+  }
+
+  .#{$prefix}--card-ext__info-wrapper {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    margin: 0 $spacing-05;
+    padding-bottom: $spacing-05;
+
+    // Show the divider only if the card has actions
+    &.#{$prefix}--card-ext__info-wrapper--with-divider {
+      border-bottom: 1px solid $border-strong;
+    }
+  }
+
+  .#{$prefix}--card-ext__primary-title {
+    padding-top: $spacing-05;
+  }
+
+  .#{$prefix}--card-ext__subheading {
+    @include type-style('caption-01');
+
+    color: $text-secondary;
+    font-weight: 700;
+    margin-bottom: $spacing-02;
+    overflow: hidden;
+    text-transform: uppercase;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .#{$prefix}--card-ext__heading {
+    @include type-style('expressive-heading-03');
+
+    color: $text-primary;
+    font-weight: 700;
+    line-height: 1.25;
+  }
+
+  .#{$prefix}--card-ext__supportive-text {
+    @include type-style('body-short-01');
+
+    color: $text-secondary;
+    flex-grow: 1;
+    padding-top: $spacing-03;
+
+    &.#{$prefix}--card-ext__supportive-text--truncated {
+      & > p {
+        display: -webkit-box;
+        overflow: hidden;
+        -webkit-box-orient: vertical;
+      }
+    }
+  }
+
+  .#{$prefix}--card-ext__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $spacing-03;
+    padding-top: $spacing-05;
+
+    & .#{$prefix}--card-ext__tag {
+      @include tag-theme(
+        $layer,
+        $text-secondary
+      ); // Provide its own token in replacement of 'layer'
+
+      display: block;
+      min-height: 0;
+      overflow: hidden;
+      padding: $spacing-02 $spacing-03;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+
+  .#{$prefix}--card-ext__actions {
+    align-items: center;
+    display: flex;
+    gap: $spacing-03;
+    padding: $spacing-03;
+  }
+
+  .#{$prefix}--card-ext__action {
+    // Whether the last action is aligned to the right
+    &.#{$prefix}--card-ext__action--align-to-right {
+      margin-left: auto;
+    }
+
+    &.#{$prefix}--btn--icon-only {
+      padding: 0 0.35rem;
+    }
+  }
+}

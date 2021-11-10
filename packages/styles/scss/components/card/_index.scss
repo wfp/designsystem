@@ -6,6 +6,9 @@
 //
 
 @forward 'card';
+@forward 'card-external';
 @use 'card';
+@use 'card-external';
 
 @include card.card;
+@include card-external.card-external;
