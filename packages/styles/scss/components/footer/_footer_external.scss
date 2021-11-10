@@ -1,0 +1,149 @@
+@use '../../config' as *;
+@use '../../spacing' as *;
+@use '../../theme' as *;
+@use '../../type' as *;
+@use '../../breakpoint' as *;
+
+@mixin footer_external {
+  .#{$prefix}--footer-ext {
+    background-color: #1a4262; // TODO: Use the token $brand-dark
+    color: $text-on-color;
+    padding: $spacing-07 $spacing-03;
+  }
+
+  .#{$prefix}--footer-ext__content {
+    display: grid;
+    gap: $spacing-07;
+    grid-template-columns: 2fr 3fr;
+    padding-bottom: $spacing-05;
+
+    @media (max-width: 860px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .#{$prefix}--footer-ext__branding {
+    align-items: center;
+    display: flex;
+  }
+
+  .#{$prefix}--footer-ext__product-name {
+    @include type-style('expressive-heading-03');
+
+    font-weight: 700;
+    margin-left: $spacing-07;
+    text-transform: uppercase;
+  }
+
+  .#{$prefix}--footer-ext__address {
+    @include type-style('body-short-01');
+
+    margin-top: $spacing-05;
+  }
+
+  .#{$prefix}--footer-ext__social-wrapper {
+    @include type-style('body-short-01');
+
+    margin-top: $spacing-06;
+  }
+
+  .#{$prefix}--footer-ext__social-icons-list {
+    align-items: center;
+    display: flex;
+    gap: $spacing-04;
+    margin-top: $spacing-03;
+  }
+
+  .#{$prefix}--footer-ext__social-icon {
+    & a {
+      cursor: pointer;
+    }
+
+    // [1] Remove a small gap at the bottom of the svg that extends the <a> height
+    & svg {
+      fill: $text-on-color;
+      vertical-align: bottom; // [1]
+    }
+  }
+
+  .#{$prefix}--footer-ext__nav-wrapper {
+    display: flex;
+
+    @include breakpoint-down(md) {
+      flex-direction: column;
+    }
+  }
+
+  /* Block LinksColumn */
+  // Give each column equal width
+  .#{$prefix}--links-column {
+    flex: 1;
+
+    // Apply space between any column
+    & + .#{$prefix}--links-column {
+      margin-left: $spacing-07;
+
+      @include breakpoint-down(md) {
+        margin-left: 0;
+        margin-top: $spacing-07;
+      }
+    }
+  }
+
+  // [1] TODO: Create a token for the all caps title.
+  //     It's used for links titles on the Footer and for bookmarks on the Landing page.
+  .#{$prefix}--links-column__title {
+    color: #36b5c5; // TODO: Use the token
+    font-size: 1rem; // [1]
+    font-weight: 700; // [1]
+    letter-spacing: 0.05rem; // [1]
+    margin-bottom: $spacing-05;
+    text-transform: uppercase; // [1]
+  }
+
+  .#{$prefix}--links-column-link {
+    font-weight: 600;
+
+    & + .#{$prefix}--links-column-link {
+      margin-top: $spacing-04;
+    }
+
+    & > a {
+      color: $text-on-color;
+
+      &:hover {
+        color: $text-on-color;
+      }
+    }
+  }
+  /* End block LinksColumn */
+
+  .#{$prefix}--footer-ext__legal {
+    @include type-style('body-short-01');
+
+    border-top: 1px solid rgba(255, 255, 255, 0.3); // TODO: use token
+    display: grid;
+    gap: $spacing-03;
+    grid-template-columns: 1fr max-content;
+    padding-top: $spacing-05;
+
+    @include breakpoint-down(md) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .#{$prefix}--footer-ext__legal-links {
+    gap: $spacing-07;
+    display: flex;
+  }
+
+  .#{$prefix}--footer-ext__legal-link {
+    & > a {
+      color: $text-on-color;
+
+      &:hover {
+        color: $text-on-color;
+      }
+    }
+  }
+}

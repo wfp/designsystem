@@ -2,12 +2,15 @@ import React from 'react';
 
 import markdown from './README.mdx';
 
-import Footer from '.';
+import { Footer } from '.';
+import { FooterMetaLink } from './FooterExternal';
+
 import Link from '../Link';
 
 export default {
   title: 'Components/UI Elements/Footer',
   component: Footer,
+
   parameters: {
     componentSubtitle: 'Component',
     status: 'released',
@@ -19,7 +22,6 @@ export default {
 export const Regular = (args) => {
   return (
     <Footer {...args}>
-      {!args.external ? (
         <div className="wfp--footer__info">
           <div className="wfp--footer__info__item">
             <p className="wfp--footer__label">A label</p>
@@ -44,17 +46,6 @@ export const Regular = (args) => {
             </ul>
           </div>
         </div>
-      ) : (
-        <div>
-          The United Nations World Food Programme - saving lives in emergencies
-          and changing lives for millions through sustainable development. WFP
-          works in more than 80 countries around the world, feeding people
-          caught in conflict and disasters, and laying the foundations for a
-          better future.
-          <br />
-          <Link href="http://www.wfp.org">Custom Links</Link>
-        </div>
-      )}
     </Footer>
   );
 };
@@ -63,31 +54,69 @@ Regular.args = {
   external: false,
 };
 
-export const External = (args) => (
-  <Footer
-    {...args}
-    secondary={
-      <div>
-        Via C. G. Viola 68 Parco dei Medici
-        <br />
-        00148 Rome, Italy
-      </div>
-    }>
-    <div>
-      The United Nations World Food Programme is the 2020 Nobel Peace Prize Laureate. 
-      We are the world's largest humanitarian organization, 
-      saving lives in emergencies and using food assistance to build a pathway to peace, 
-      stability and prosperity for people recovering from conflict, disasters
-      <br />
-      <Link href="http://www.wfp.org">Custom Links</Link>
-    </div>
-  </Footer>
+export const External = (args) => 
+(
+<Footer {...args} 
+ metaLinks={
+  <>
+    <FooterMetaLink href="hh.com">First legal link</FooterMetaLink>
+    <FooterMetaLink href="hh.com">Second legal link</FooterMetaLink>
+  </>
+}
+>
+  <div className={`wfp--footer-ext__nav-column`}>
+    <p className={`wfp--footer-ext__nav-title`}>First title</p>
+    <nav>
+      <ul className={`wfp--footer-ext__nav-list`}>
+        <li className={`wfp--footer-ext__nav-link`}>
+          <Link>First link</Link>
+        </li>
+        <li className={`wfp--footer-ext__nav-link`}>
+          <Link>Second link</Link>
+        </li>
+        <li className={`wfp--footer-ext__nav-link`}>
+          <Link>Third link</Link>
+        </li>
+        <li className={`wfp--footer-ext__nav-link`}>
+          <Link>Fourth link</Link>
+        </li>
+        <li className={`wfp--footer-ext__nav-link`}>
+          <Link>Fifth link</Link>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  <div className={`wfp--footer-ext__nav-column`}>
+    <p className={`wfp--footer-ext__nav-title`}>Second title</p>
+    <nav>
+      <ul className={`wfp--footer-ext__nav-list`}>
+        <li className={`wfp--footer-ext__nav-link`}>
+          <Link>First link</Link>
+        </li>
+        <li className={`wfp--footer-ext__nav-link`}>
+          <Link>Second link</Link>
+        </li>
+        <li className={`wfp--footer-ext__nav-link`}>
+          <Link>Third link</Link>
+        </li>
+        <li className={`wfp--footer-ext__nav-link`}>
+          <Link>Fourth link</Link>
+        </li>
+        <li className={`wfp--footer-ext__nav-link`}>
+          <Link>Fifth link</Link>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</Footer>
 );
 
+
+
 External.args = {
-  metaContent: '2019 © World Food Programme',
-  metaLinks:<Link href="http://www.wfp.org">meta link</Link>,
   external: true,
+  productName: <span>Service <br/> Marketplace</span>,
+  metaContent: 'Via C. G. Viola 68 Parco dei Medici, 00148 Rome, Italy'
 };
 
 External.story = {

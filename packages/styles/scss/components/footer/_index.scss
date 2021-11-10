@@ -6,6 +6,9 @@
 //
 
 @forward 'footer';
+@forward 'footer_external';
 @use 'footer';
+@use 'footer_external';
 
 @include footer.footer;
+@include footer_external.footer_external;
