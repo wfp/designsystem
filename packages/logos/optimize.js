@@ -82,7 +82,6 @@ FS.readdir(PATH.resolve(__dirname, 'src/logos'), function (err, files) {
   }
 
   files.forEach(function (file, index) {
-    console.log(file);
     if (file.split('.').pop().toLowerCase() === 'svg') {
       readmeCdnLinks = readmeCdnLinks + optimizeFile(file);
     }

@@ -3,7 +3,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import classNames from 'classnames';
 import { settings } from '../../globals/js';
 import Input from '../Input';
-import { Search16, CloseGlyph } from '@wfp/icons-react';
+import { SearchGlyph, CloseGlyph } from '@wfp/icons-react';
 
 const { prefix } = settings;
 
@@ -87,7 +87,7 @@ function Search(props) {
       {() => {
         return (
           <>
-            <Search16
+            <SearchGlyph
               description={labelText}
               className={`${prefix}--search-magnifier`}
               onClick={onSearchIconClick}

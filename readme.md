@@ -54,11 +54,13 @@ yarn install
 yarn build
 ```
 
-Usage of alpha versions
+For developing on Windows please follow this guide: https://github.com/carbon-design-system/carbon/blob/b5d615e05bc1c062337e8aca3a84e25a6f49b559/docs/guides/setup/windows.md
 
-Install the latest alpha versions to use the Design System with your project
+### Usage of alpha versions in your project
 
-````
+Install the latest alpha versions to use the Design System Alpha within your project
+
+```bash
 npm install @wfp/ui@alpha @wfp/icons@alpha  @wfp/icons-react@alpha  @wfp/layout@alpha  @wfp/styles@alpha  @wfp/themes@alpha  @wfp/type@alpha
 ```
 
@@ -66,7 +68,7 @@ npm install @wfp/ui@alpha @wfp/icons@alpha  @wfp/icons-react@alpha  @wfp/layout@
 
 In version 2.0 some paths will change due to the new monorepo architecture which is inline with Carbon Design System.
 
-- `<Icon icon={iconName} />` becones `<IconName />` imported from `import { IconName } from @wfp/icons-react``
+- `<Icon icon={iconName} />` becomes `<IconName />` imported from `import { IconName } from @wfp/icons-react``
 - `import { Component } from "@wfp/ui"` becomes `import { Component } from "@wfp/react"`
 - `@import '@wfp/ui/scss/globals/scss/styles.scss';` becomes `@import '@wfp/TODO:DEFINEPACKAGENAME';"`
 - Multiple variables like `$ui-01` becomes `$layer` to provide better readability. A full list can be found here. TODO:ENTERURLTOCOLOURS
@@ -234,4 +236,7 @@ Edit the `website-redirect-location` meta tag of `index.html` to point [wfp.org/
 Edit the first line of `assets/depreciation-warning.html` to point to the latest version of the UI Kit.
 
 Clear the Server cache with [Cloudfront Purge Tool](https://chrome.google.com/webstore/detail/cloudfront-purge-tool).
-````
+
+```
+
+```

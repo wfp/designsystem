@@ -131,8 +131,6 @@ const output = (options = defaultOptions) => {
  */
 async function createDescriptor(name, data, size, original) {
   const info = await parse(data, name);
-
-  //console.log('info', info);
   const { attrs } = info;
   const descriptor = {
     ...info,
