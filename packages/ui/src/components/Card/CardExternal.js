@@ -1,14 +1,25 @@
 import React, { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
-
-import Button from '../Button';
+import classNames from 'classnames';
 import Tag from '../Tag';
 
 import { settings } from '../../globals/js';
 
 const { prefix } = settings;
 
-const CardExternal = ({ label , labelStatus, image, heading , subHeading , caption , tag, children, ...other}) => {
+const CardExternal = ({ 
+  label, 
+  labelStatus,
+  interactive, 
+  image, 
+  heading , 
+  subHeading , 
+  caption , 
+  tag, 
+  children,
+  className, 
+  ...other}) => {
+
   const myRef = useRef();
   const supportiveTextFontSize = 14;
   const supportiveTextLineHeight = 1.5;
@@ -20,6 +31,12 @@ const CardExternal = ({ label , labelStatus, image, heading , subHeading , capti
 
   // statusStyle apply different style(color, backgroundColor) based on its active state 
   const statusStyle = labelStatus ? `success`: `neutral`;
+
+  const wrapperClasses = classNames(`${prefix}--card-ext`, {
+    [`${prefix}--card-ext--interactive`]: interactive,
+    [`${className}`]: className,
+  });
+
 
   /**
    * Get the height of the supportive text element.
@@ -53,7 +70,7 @@ const CardExternal = ({ label , labelStatus, image, heading , subHeading , capti
      * If interactive, a modifier will be added and an animation will be shown
      * on hover event ("${prefix}--card-ext--interactive").
      */
-    <div className={`${prefix}--card-ext ${prefix}--card-ext--interactive`}>
+    <div className={wrapperClasses}>
       {/*
        * Label is optional.
        * It can be either 'neutral' (default) or 'success'
@@ -129,7 +146,9 @@ CardExternal.propTypes = {
   subHeading: PropTypes.string, 
   caption: PropTypes.string, 
   tag: PropTypes.string, 
-  children: PropTypes.node
+  children: PropTypes.node,
+  interactive: PropTypes.bool,
+  className: PropTypes.string
 }
 
 export default CardExternal;
