@@ -48,6 +48,8 @@ Use the `feat/` branches for active development.
 
 Clone the development branch for the un-core monorepo.
 
+The project is using a `lerna/yarn` mono repository for development. Make sure you have [yarn](https://yarnpkg.com/) installed globally on your machine.
+
 ```bash
 git clone --branch un-core-v1 https://github.com/wfp/designsystem.git
 yarn install
@@ -87,17 +89,11 @@ All packages can be found in `packages/`.
 - `styles`: all components styles
 - `themes`: theming (colors, etc.)
 - `type`: typescales
-- `ui`: the "old" react components, probably getting renamed to `react`
+- `ui`: the "old" react components, TODO: rename to `react`
 
 ### UN Core Examples
 
 All Examples can be found in `wfp/`.
-
-#### Installation
-
-The project is using a `lerna/yarn` mono repository for development. After cloning the repository, run `yarn` to install all packages needed.
-
-After installation run `yarn build` to build all packages.
 
 ### Documentation & list of components available
 
