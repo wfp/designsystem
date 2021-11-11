@@ -14,13 +14,13 @@
   .#{$prefix}--anchor-navigation {
     width: 300px;
     min-height: 350px;
-    border: 2px solid #77a0b6; // TODO create token for var(--field-border-01)
+    border: 2px solid $border-strong; 
     border-radius: 5px;
   }
 
   .#{$prefix}--anchor-header-title {
     min-height: 40px;
-    border-bottom: 1px solid #77a0b6; // TODO create token for var(--field-border-01)
+    border-bottom: 1px solid $border-strong;
     padding: $spacing-05;
     font-weight: 600;
     color: $interactive;

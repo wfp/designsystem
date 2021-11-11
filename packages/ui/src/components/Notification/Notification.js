@@ -1,13 +1,14 @@
 import PropTypes from 'prop-types';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import classnames from 'classnames';
 import { settings } from '../../globals/js';
 import {
-  Close16,
-  Error16,
-  CheckmarkGlyph,
-  WarningSolid16,
-  InfoGlyph,
+  CloseGlyph,
+  ErrorGlyph,
+  CheckmarkCircleGlyph,
+  WarningSolidGlyph,
+  //WarningAltFilled20,
+  InfoCircleGlyph,
 } from '@wfp/icons-react';
 
 import Button from '../Button';
@@ -61,7 +62,7 @@ export function NotificationButton({
   className,
   iconDescription,
   type,
-  renderIcon,
+  renderIcon: IconTag,
   name,
   notificationType,
   ...other
@@ -75,7 +76,7 @@ export function NotificationButton({
       notificationType,
   });
 
-  const Icon = renderIcon;
+  // const Icon = renderIcon;
 
   return (
     // eslint-disable-next-line react/button-has-type
@@ -85,8 +86,8 @@ export function NotificationButton({
       aria-label={iconDescription}
       title={iconDescription}
       className={buttonClassName}>
-      {renderIcon && (
-        <Icon aria-label={ariaLabel} className={iconClassName} name={name} />
+      {IconTag && (
+        <IconTag aria-label={ariaLabel} className={iconClassName} name={name} />
       )}
     </button>
   );
@@ -136,7 +137,7 @@ NotificationButton.defaultProps = {
   notificationType: 'toast',
   type: 'button',
   iconDescription: 'close icon',
-  renderIcon: Close16,
+  renderIcon: CloseGlyph,
 };
 
 export function NotificationTextDetails({
@@ -202,28 +203,26 @@ NotificationTextDetails.propTypes = {
 
 NotificationTextDetails.defaultProps = {
   title: 'title',
-  caption: 'caption',
   notificationType: 'toast',
 };
 
 const iconTypes = {
-  error: Error16,
-  success: CheckmarkGlyph,
-  warning: WarningSolid16,
-  info: InfoGlyph,
+  error: ErrorGlyph,
+  success: CheckmarkCircleGlyph,
+  warning: WarningSolidGlyph,
+  info: InfoCircleGlyph,
 };
 
 function NotificationIcon({ iconDescription, kind, notificationType }) {
-  const iconForKind = iconTypes[kind];
-  if (!iconForKind) {
+  const IconForKind = iconTypes[kind];
+  if (!IconForKind) {
     return null;
   }
   return (
-    <Icon
-      icon={iconForKind}
+    <IconForKind
       className={`${prefix}--${notificationType}-notification__icon`}>
       <title>{iconDescription}</title>
-    </Icon>
+    </IconForKind>
   );
 }
 
@@ -244,6 +243,7 @@ NotificationIcon.propTypes = {
 export function ToastNotification({
   role,
   notificationType,
+  onClose,
   onCloseButtonClick,
   iconDescription,
   statusIconDescription,
@@ -265,25 +265,39 @@ export function ToastNotification({
     [`${prefix}--toast-notification--${kind}`]: kind,
   });
 
+  const handleClose = (evt) => {
+    if (!onClose || onClose(evt) !== false) {
+      setIsOpen(false);
+    }
+  };
+
   function handleCloseButtonClick(event) {
-    setIsOpen(false);
     onCloseButtonClick(event);
+    handleClose(event);
   }
+
+  const savedOnClose = useRef(onClose);
+
+  useEffect(() => {
+    savedOnClose.current = onClose;
+  });
 
   useEffect(() => {
     if (!timeout) {
       return;
     }
 
-    const timeoutId = window.setTimeout(() => {
+    const timeoutId = window.setTimeout((event) => {
       setIsOpen(false);
-      onCloseButtonClick(event);
+      if (savedOnClose.current) {
+        savedOnClose.current(event);
+      }
     }, timeout);
 
     return () => {
       window.clearTimeout(timeoutId);
     };
-  }, [onCloseButtonClick, timeout]);
+  }, [timeout]);
 
   if (!isOpen) {
     return null;
@@ -367,6 +381,11 @@ ToastNotification.propTypes = {
   /**
    * Provide a function that is called when menu is closed
    */
+  onClose: PropTypes.func,
+
+  /**
+   * Provide a function that is called when menu is closed
+   */
   onCloseButtonClick: PropTypes.func,
 
   /**
@@ -432,9 +451,15 @@ export function InlineNotification({
     [`${prefix}--inline-notification--hide-close-button`]: hideCloseButton,
   });
 
+  const handleClose = (evt) => {
+    if (!onClose || onClose(evt) !== false) {
+      setIsOpen(false);
+    }
+  };
+
   function handleCloseButtonClick(event) {
-    setIsOpen(false);
     onCloseButtonClick(event);
+    handleClose(event);
   }
 
   if (!isOpen) {

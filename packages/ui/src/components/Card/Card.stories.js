@@ -88,7 +88,8 @@ External.args ={
   subHeading: 'subheading',
   caption:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vitae congue magna. Mauris vitae velit lacinia, porttitor tellus sit amet, hendrerit ipsum. Vivamus sagittis leo ut erat eleifend, sed',
   tag:'tag',
-  labelStatus: true
+  labelStatus: true,
+  image: "http://www1.wfp.org/sites/default/files/images/yemen-hero-min.jpg"
 }
 
 External.story = {

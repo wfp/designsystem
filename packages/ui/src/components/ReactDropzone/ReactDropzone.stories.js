@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import markdown from './README.mdx';
 import { List, ListItem } from '../List';
 import Dropzone, { useDropzone } from 'react-dropzone';
-import { Upload16 } from '@wfp/icons-react';
+import { UploadGlyph } from '@wfp/icons-react';
 import classNames from 'classnames';
 
 export default {
@@ -103,7 +103,7 @@ export const Advanced = (args) => {
     <section className="wfp--dropzone">
       <div {...getRootProps({ isDragActive, className: wrapperClassNames })}>
         <input {...getInputProps()} />
-        <Icon className="wfp--dropzone__icon" icon={Upload16} />
+        <UploadGlyph className="wfp--dropzone__icon"/>
         <div>Drop files or click here to upload</div>
       </div>
       {files.length > 0 && (

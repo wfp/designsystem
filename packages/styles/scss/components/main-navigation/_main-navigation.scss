@@ -12,9 +12,10 @@
 @use '../../spacing' as *;
 @use '../../motion' as *;
 @use '../../utilities/box-shadow' as *;
-@use '../../utilities/button-reset';
+@use '../../utilities/component-reset';
 @use '../../utilities/convert' as *;
 @use '../../utilities/focus-outline' as *;
+@use '../../utilities/rtl' as *;
 @use '../../utilities/high-contrast-mode' as *;
 @use '../../utilities/z-index' as *;
 
@@ -112,10 +113,10 @@ $main-navigation-menu-width: rem(300px);
     top: rem(-1px);
     vertical-align: middle;
     margin-left: 0.3em;
-    // @include rtl { //TODO
-    //   margin-left: 0;
-    //   margin-right: 0.3em;
-    // }
+    @include rtl { 
+      margin-left: 0;
+      margin-right: 0.3em;
+    }
   }
 
   .#{$prefix}--main-navigation__trigger--has-sub.#{$prefix}--main-navigation__trigger--open {
@@ -215,10 +216,10 @@ $main-navigation-menu-width: rem(300px);
         right: 0;
         width: 25%;
         min-width: 250px;
-        // @include rtl {
-        //   left: 0;
-        //   right: inherit;
-        // } //TODO
+        @include rtl {
+          left: 0;
+          right: inherit;
+        }
       }
     }
   }

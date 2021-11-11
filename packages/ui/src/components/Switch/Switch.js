@@ -20,7 +20,6 @@ const Switch = (props) => {
     href,
     ...other
   } = props;
-  // console.log("iconsprops", icon.props);
 
   const handleClick = (e) => {
     e.preventDefault();

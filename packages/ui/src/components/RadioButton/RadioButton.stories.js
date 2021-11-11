@@ -37,7 +37,9 @@ export const VerticalGrouping = (args) => {
   const [gender, setgender] = useState('female');
 
   const handleOnchange = (e) => {
+    
     setgender(e.target.value);
+    console.log('eg', e.target.value);
   };
 
   return (
@@ -48,7 +50,7 @@ export const VerticalGrouping = (args) => {
       vertical>
       <RadioButton
         {...args}
-        value={gender}
+        value="female"
         id="female"
         labelText="Female"
         name="gender"
@@ -56,7 +58,7 @@ export const VerticalGrouping = (args) => {
       />
       <RadioButton
         {...args}
-        value={gender}
+        value="male"
         labelText="Male"
         id="male"
         name="gender"
@@ -64,7 +66,7 @@ export const VerticalGrouping = (args) => {
       />
       <RadioButton
         {...args}
-        value={gender}
+        value="other"
         labelText="Other"
         id="other"
         name="gender"

@@ -1,7 +1,7 @@
 //-----------------------------
-// Tabs
+// step-navigation
 //-----------------------------
-
+/*
 @import '../../globals/scss/vars';
 @import '../../globals/scss/colors';
 @import '../../globals/scss/spacing';
@@ -70,15 +70,15 @@
       text-decoration: none;
     }
 
-    /* @include breakpoint(bp--sm--major) {
-      @include typescale('epsilon');
-      flex-direction: column;
-      margin-right: $spacing-md;
-      margin-left: $spacing-md;
-      background: none;
-      box-shadow: none;
-      z-index: auto;
-    }*/
+    // @include breakpoint(bp--sm--major) {
+    //   @include typescale('epsilon');
+    //   flex-direction: column;
+    //   margin-right: $spacing-md;
+    //   margin-left: $spacing-md;
+    //   background: none;
+    //   box-shadow: none;
+    //   z-index: auto;
+    // }
   }
 
   .#{$prefix}--step-navigation__nav--inline {
@@ -138,3 +138,4 @@
     @include hidden;
   }
 }
+*/

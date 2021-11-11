@@ -44,7 +44,7 @@
   }
 
   .#{$prefix}--tag--info {
-    @include tag-theme(#005e8d, #d9ecf5); // TODO create token for these colors
+    @include tag-theme( #d9ecf5, #005e8d); // TODO create token for these colors
   }
 
   // .#{$prefix}--tag--beta {

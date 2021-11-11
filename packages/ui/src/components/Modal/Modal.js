@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import classNames from 'classnames';
-import { Close16 } from '@wfp/icons-react';
+import { CloseGlyph } from '@wfp/icons-react';
 import Button from '../Button';
 import { settings } from '../../globals/js';
 
@@ -356,7 +356,7 @@ export default class Modal extends Component {
         type="button"
         onClick={this.handleCloseButton}
         ref={this.button}>
-        <Close16
+        <CloseGlyph
           className={`${prefix}--modal-close__icon`}
           description={iconDescription}
         />
