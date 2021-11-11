@@ -1,7 +1,7 @@
 {
   "name": "@wfp/layout",
   "description": "Layout helpers for digital and software products using the Carbon Design System",
-  "version": "10.26.6",
+  "version": "10.26.7",
   "license": "Apache-2.0",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -31,7 +31,7 @@
   "devDependencies": {
     "@carbon/cli-reporter": "^10.5.0",
     "@carbon/test-utils": "^10.3.0",
-    "@wfp/cli": "^10.25.5",
+    "@wfp/cli": "^10.25.7",
     "@wfp/scss-generator": "^10.13.4",
     "core-js": "^3.6.5",
     "rimraf": "^3.0.0"
