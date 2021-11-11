@@ -268,7 +268,7 @@ export {
   display02,
   display03,
   display04,
-} from '@carbon/type';
+} from '@wfp/type';
 
 // Layout
 // Spacing
