@@ -12,6 +12,7 @@
 @use '../../theme' as *;
 @use '../../type' as *;
 @use '../../utilities/convert' as *;
+@use '../../utilities/rtl' as *;
 @use '../../utilities/skeleton' as *;
 
 @mixin breadcrumb {
@@ -34,7 +35,6 @@
     margin-right: $spacing-04;
     display: flex;
     align-items: center;
-    color: $text-primary; //TODO look into this 
   }
 
   .#{$prefix}--breadcrumb-item::after {
@@ -43,11 +43,10 @@
     margin-top: rem(-2px);
     margin-left: $spacing-04;
 
-    // TODO on rtl
-    // @include rtl {
-    //   margin-left: 0;
-    //   margin-right: $spacing-04;
-    // }
+    @include rtl {
+      margin-left: 0;
+      margin-right: $spacing-04;
+    }
 
     color: $text-placeholder; //$icon-secondary
   }
@@ -57,20 +56,20 @@
     content: '';
   }
 
-  // TODO on rtl
+ 
   .#{$prefix}--breadcrumb-item:last-child {
-    // @include ltr {
-    //   margin-right: 0;
-    //   &::after {
-    //     margin-right: 0;
-    //   }
-    // }
-    // @include rtl {
-    //   margin-left: 0;
-    //   &::after {
-    //     margin-left: 0;
-    //   }
-    // }
+    @include ltr {
+      margin-right: 0;
+      &::after {
+        margin-right: 0;
+      }
+    }
+    @include rtl {
+      margin-left: 0;
+      &::after {
+        margin-left: 0;
+      }
+    }
   }
 
   .#{$prefix}--breadcrumb .#{$prefix}--link {
@@ -84,7 +83,7 @@
     &:focus {
       outline: none;
       color: $interactive;
-      border-bottom: 1px solid $interactive;
+      // border-bottom: 1px solid $interactive;
     }
 
     // Applies to Firefox only

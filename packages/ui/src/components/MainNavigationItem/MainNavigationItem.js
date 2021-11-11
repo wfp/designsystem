@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import classNames from 'classnames';
-import { Close16, CaretDown16 } from '@wfp/icons-react';
+import { CloseGlyph, CaretDownGlyph } from '@wfp/icons-react';
 import { settings } from '../../globals/js';
 
 const { prefix } = settings;
@@ -49,7 +49,7 @@ class MainNavigationItem extends Component {
         menuItem === activeMenuItem,
     });
 
-    const Icon = menuItem === activeMenuItem ? Close16 : CaretDown16;
+    const Icon = menuItem === activeMenuItem ? CloseGlyph : CaretDownGlyph;
 
     const childrenWithProps = subNavigation
       ? React.cloneElement(children, {

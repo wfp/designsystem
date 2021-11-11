@@ -72,7 +72,7 @@
 
 @mixin loading--x {
   .#{$prefix}--loading {
-    @include reset;
+    @include component-reset.reset;
     @include animation__loading--spin;
     width: $loading-size;
     height: $loading-size;
@@ -90,7 +90,7 @@
   }
 
   .#{$prefix}--loading__stroke {
-    stroke: var(--interactive-01);
+    stroke: $interactive;
     stroke-dashoffset: $loading-gap;
   }
 
@@ -131,10 +131,9 @@
   }
 }
 
-// @include exports('loading') {
-//   @if feature-flag-enabled('components-x') {
-//     @include loading--x;
-//   } @else {
-//     @include loading;
-//   }
-// }
+
+  @if feature-flag-enabled('components-x') {
+    @include loading--x;
+  } @else {
+    @include loading;
+  }

@@ -103,7 +103,7 @@
       .#{$prefix}--toast-notification--info,
       .#{$prefix}--toast-notification--info-square {
         background: #393939;
-        border-left: 3px solid var(--interactive-01);
+        border-left: 3px solid $interactive;
       }
       .#{$prefix}--toast-notification--low-contrast
         .#{$prefix}--toast-notification__close-button
@@ -114,45 +114,45 @@
       .#{$prefix}--toast-notification--info-square
         .#{$prefix}--toast-notification__icon,
       .#{$prefix}--toast-notification--info {
-        fill: var(--interactive-01);
+        fill: $interactive;
       }
       
       .#{$prefix}--toast-notification--low-contrast.#{$prefix}--toast-notification--info
         .#{$prefix}--toast-notification__icon {
-        fill: var(--interactive-01);
+        fill: $interactive;
       }
       
       .#{$prefix}--toast-notification--warning-alt
         .#{$prefix}--toast-notification__icon,
       .#{$prefix}--toast-notification--warning .#{$prefix}--inline-notification__icon,
       .#{$prefix}--toast-notification--warning .#{$prefix}--toast-notification__icon {
-        fill: var(--support-03);
+        fill: $support-warning;
       }
       
       .#{$prefix}--toast-notification--low-contrast.#{$prefix}--toast-notification--warning-alt
         .#{$prefix}--toast-notification__icon,
       .#{$prefix}--toast-notification--low-contrast.#{$prefix}--toast-notification--warning
         .#{$prefix}--toast-notification__icon {
-        fill: var(--support-03);
+        fill: $support-warning;
       }
       
       .#{$prefix}--toast-notification--success .#{$prefix}--inline-notification__icon,
       .#{$prefix}--toast-notification--success .#{$prefix}--toast-notification__icon {
-        fill: var(--support-02);
+        fill: $support-success;
       }
       
       .#{$prefix}--toast-notification--low-contrast.#{$prefix}--toast-notification--success
         .#{$prefix}--inline-notification__icon,
       .#{$prefix}--toast-notification--low-contrast.#{$prefix}--toast-notification--success
         .#{$prefix}--toast-notification__icon {
-        fill: var(--support-02);
+        fill: $support-success;
       }
       
       .#{$prefix}--toast-notification--error {
         background: var(--cds-inverse-02, #393939);
         // border-left: 3px solid var(--cds-inverse-support-01, #fa4d56);
-        border-left: 3px solid var(--support-01);
-        color: var(--support-01);
+        border-left: 3px solid $support-error;
+        color: $support-error;
       
         .#{$prefix}--toast-notification__icon {
           fill: currentColor;
@@ -166,35 +166,35 @@
       
       .#{$prefix}--toast-notification--low-contrast.#{$prefix}--toast-notification--error {
         background: var(--support-light-01);
-        border-left: 3px solid var(--support-01);
+        border-left: 3px solid $support-error;
       }
       
       .#{$prefix}--toast-notification--low-contrast.#{$prefix}--toast-notification--info,
       .#{$prefix}--toast-notification--low-contrast.#{$prefix}--toast-notification--info-square {
         background: var(--support-light-04);
-        border-left: 3px solid var(--interactive-01);
+        border-left: 3px solid $interactive;
       }
       
       .#{$prefix}--toast-notification--low-contrast.#{$prefix}--toast-notification--success {
         background: var(--support-light-02);
-        border-left: 3px solid var(--support-02);
+        border-left: 3px solid $support-success;
       }
       
       .#{$prefix}--toast-notification--success {
         background: var(--cds-inverse-02, #393939);
-        border-left: 3px solid var(--support-02);
+        border-left: 3px solid $support-success;
       }
       
       .#{$prefix}--toast-notification--warning,
       .#{$prefix}--toast-notification--warning-alt {
         background: var(--cds-inverse-02, #393939);
-        border-left: 3px solid var(--support-03);
+        border-left: 3px solid $support-warning;
       }
       
       .#{$prefix}--toast-notification--low-contrast.#{$prefix}--toast-notification--warning,
       .#{$prefix}--toast-notification--low-contrast.#{$prefix}--toast-notification--warning-alt {
         background: var(--support-light-03);
-        border-left: 3px solid var(--support-03);
+        border-left: 3px solid $support-warning;
       }
       .#{$prefix}--toast-notification:first-child {
         margin-top: 1rem;
@@ -202,7 +202,7 @@
       .#{$prefix}--toast-notification--warning,
       .#{$prefix}--toast-notification--warning-alt {
         background: var(--cds-inverse-02, #393939);
-        border-left: 3px solid var(--support-03);
+        border-left: 3px solid $support-warning;
       }
       
       .#{$prefix}--inline-notification {
@@ -273,66 +273,66 @@
       .#{$prefix}--inline-notification--info,
       .#{$prefix}--inline-notification--info-square {
         background: var(--cds-inverse-02, #393939);
-        border-left: 3px solid var(--interactive-01);
+        border-left: 3px solid $interactive;
       }
       
       .#{$prefix}--inline-notification--low-contrast.#{$prefix}--inline-notification--info,
       .#{$prefix}--inline-notification--low-contrast.#{$prefix}--inline-notification--info-square {
         background: var(--support-light-04);
-        border-left: 3px solid var(--interactive-01);
+        border-left: 3px solid $interactive;
       }
       .#{$prefix}--inline-notification--info .#{$prefix}--inline-notification__icon {
-        fill: var(--interactive-01);
+        fill: $interactive;
       }
       
       .#{$prefix}--inline-notification--success,
       .#{$prefix}--inline-notification--success-square {
         background: var(--cds-inverse-02, #393939);
-        border-left: 3px solid var(--support-02);
+        border-left: 3px solid $support-success;
       }
       
       .#{$prefix}--inline-notification--low-contrast.#{$prefix}--inline-notification--success,
       .#{$prefix}--inline-notification--low-contrast.#{$prefix}--inline-notification--success-square {
         background: var(--support-light-02);
-        border-left: 3px solid var(--support-02);
+        border-left: 3px solid $support-success;
       }
       
       .#{$prefix}--inline-notification--success
         .#{$prefix}--inline-notification__icon {
-        fill: var(--support-02);
+        fill: $support-success;
       }
       
       .#{$prefix}--inline-notification--error,
       .#{$prefix}--inline-notification--error-square {
         background: var(--cds-inverse-02, #393939);
-        border-left: 3px solid var(--support-01);
+        border-left: 3px solid $support-error;
       }
       
       .#{$prefix}--inline-notification--low-contrast.#{$prefix}--inline-notification--error,
       .#{$prefix}--inline-notification--low-contrast.#{$prefix}--inline-notification--error-square {
         background: var(--support-light-01);
-        border-left: 3px solid var(--support-01);
+        border-left: 3px solid $support-error;
       }
       
       .#{$prefix}--inline-notification--error .#{$prefix}--inline-notification__icon {
-        fill: var(--support-01);
+        fill: $support-error;
       }
       
       .#{$prefix}--inline-notification--warning,
       .#{$prefix}--inline-notification--warning-square {
         background: var(--cds-inverse-02, #393939);
-        border-left: 3px solid var(--support-03);
+        border-left: 3px solid $support-warning;
       }
       
       .#{$prefix}--inline-notification--low-contrast.#{$prefix}--inline-notification--warning,
       .#{$prefix}--inline-notification--low-contrast.#{$prefix}--inline-notification--warning-square {
         background: var(--support-light-03);
-        border-left: 3px solid var(--support-03);
+        border-left: 3px solid $support-warning;
       }
       
       .#{$prefix}--inline-notification--warning
         .#{$prefix}--inline-notification__icon {
-        fill: var(--support-03);
+        fill: $support-warning;
       }
       
       .#{$prefix}--inline-notification--low-contrast {
@@ -347,7 +347,7 @@
         .#{$prefix}--inline-notification__action-button,
       .#{$prefix}--inline-notification--low-contrast
         .#{$prefix}--inline-notification__action-button:active {
-        color: var(--interactive-01);
+        color: $interactive;
       }
       
       .#{$prefix}--inline-notification__close-button {

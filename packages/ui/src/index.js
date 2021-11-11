@@ -9,8 +9,8 @@ export BreadcrumbItem from './components/BreadcrumbItem';
 export BreadcrumbHome from './components/BreadcrumbHome';
 export Button from './components/Button';
 export Empty from './components/Empty';
-export Hero from './components/Hero';
-export Card from './components/Card';
+export { Hero, HeroExternal} from './components/Hero';
+export { Card, CardExternal} from './components/Card';
 export Checkbox from './components/Checkbox';
 export Credits from './components/Credits';
 export ContentSwitcher from './components/ContentSwitcher';
@@ -45,7 +45,7 @@ export Loading from './components/Loading';
 export Input from './components/Input';
 export InlineLoading from './components/InlineLoading';
 export { List, ListItem } from './components/List';
-export MainNavigation from './components/MainNavigation';
+export {MainNavigation, MainNavigationExternal} from './components/MainNavigation';
 export MainNavigationItem from './components/MainNavigationItem';
 export {
   SubNavigation,

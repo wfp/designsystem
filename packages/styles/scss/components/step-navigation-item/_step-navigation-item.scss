@@ -1,4 +1,4 @@
-@use '../form' as *;
+
 @use '../../breakpoint' as *;
 @use '../../config' as *;
 @use '../../motion' as *;
@@ -45,7 +45,7 @@
     display: block;
     margin-top: $spacing-02;
     text-decoration: none;
-    color: var(--ui-05);
+    color: $border-inverse; //ui-05
   }
 
   /*

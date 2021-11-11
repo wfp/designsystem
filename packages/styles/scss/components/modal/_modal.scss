@@ -207,7 +207,7 @@ $modal-footer-background-color: var(--ui-02) !default; //TODO use $layer token
 
   .#{$prefix}--modal-close__icon {
     transition: 200ms;
-    fill: var(--ui-05); // TODO change $icon-tertiary
+    fill: var(--ui-05); // TODO change $field-border
     width: rem(12px);
     height: rem(12px);
   }

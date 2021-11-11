@@ -1,7 +1,7 @@
 //-----------------------------
 // Modules
 //-----------------------------
-
+/*
 @import '../../globals/scss/vars';
 @import '../../globals/scss/colors';
 @import '../../globals/scss/helper-mixins';
@@ -53,7 +53,7 @@
     @extend .#{$prefix}--story__b;
   }
 
-  /* All the line spacings */
+  // All the line spacings 
 
   .#{$prefix}--blockquote {
     & + p,
@@ -352,3 +352,4 @@
     }
   }
 }
+*/

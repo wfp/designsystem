@@ -1,4 +1,4 @@
-@use '../form' as *;
+
 @use '../../breakpoint' as *;
 @use '../../config' as *;
 @use '../../motion' as *;
@@ -95,7 +95,7 @@
 
   // Small StepNavigation
   .#{$prefix}--step-navigation--small {
-    font-size: 0.5rem;
+    // font-size: 0.5rem;
     .#{$prefix}--step-navigation__nav-item__text {
       display: none;
     }

@@ -56,7 +56,7 @@
   }
 
   .#{$prefix}--photo-card--no-background {
-    background: var(--interactive-02);
+    background: var(--interactive-02); //TODO add from token
   }
 
   .#{$prefix}--photo-card__info {
@@ -101,7 +101,7 @@
 
   .#{$prefix}--photo-card--light {
     .#{$prefix}--photo-card__info {
-      background: rgba(var(--ui-01), 0.8);
+      background: rgba(#ffffff, 0.8);
     }
   }
 
