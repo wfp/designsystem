@@ -6,6 +6,9 @@
 //
 
 @forward 'main-navigation';
+@forward 'main-navigation_external';
 @use 'main-navigation';
+@use 'main-navigation_external';
 
 @include main-navigation.main-navigation;
+@include main-navigation_external.main-navigation_external;
