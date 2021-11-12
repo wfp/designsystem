@@ -42,12 +42,12 @@ fs.readdirSync(testFolder16).forEach((file) => {
     - 16`;
 });
 
-fs.writeFile('../icons.yml', icons, (err) => {
+fs.writeFile('./icons.yml', icons, (err) => {
   if (err) throw err;
 });
 
 // Write data in 'Output.txt' .
 
-fs.writeFile('../categories.yml', categoryList, (err) => {
+fs.writeFile('./categories.yml', categoryList, (err) => {
   if (err) throw err;
 });

@@ -3,6 +3,7 @@ categories:
   subcategories:
     - name: Controls
       members:
+        - abcdef
         - add--circle
         - add--outline
         - add
