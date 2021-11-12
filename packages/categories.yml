@@ -11,6 +11,8 @@ categories:
         - arrow--right
         - arrow--up
         - arrows
+        - asleep
+        - awake
         - back-to-top
         - caret--down
         - caret--left
@@ -22,9 +24,14 @@ categories:
         - checkmark
         - chevron--down
         - chevron--left
+        - chevron--mini
         - chevron--right
+        - chevron--sort--down
+        - chevron--sort--up
+        - chevron--sort
         - chevron--up
         - close--circle
+        - close--filled
         - close--outline
         - close
         - delete
@@ -32,8 +39,12 @@ categories:
         - draggable
         - edit--glyph
         - ellipsis
+        - error--filled
+        - error--outline
         - error--solid
         - error
+        - export
+        - fade
         - favorite--outline
         - favorite--solid
         - favorite
@@ -50,26 +61,67 @@ categories:
         - info--outline
         - info--solid
         - info
+        - information
+        - interactions
+        - launch
+        - light
+        - list--bulleted
         - locked
         - male
+        - maximize
         - menu
+        - minimize
+        - misuse--outline
+        - misuse
+        - new-tab
+        - nominal
+        - notification--off
+        - notification
+        - ordinal
         - overflow-menu
+        - pause--outline--filled
+        - pause--outline
+        - pause
+        - play--filled
+        - play--outline--filled
+        - play--outline
         - play
+        - power
         - print
+        - redo
+        - restart
+        - save
         - search--solid
         - search
         - settings
+        - star--filled
+        - star--half
         - star--solid
+        - star
+        - stop--filled
+        - stop--outline--filled
+        - stop--outline
+        - stop
         - subtract--outline
         - subtract
+        - undo
+        - unlocked
         - upload
+        - user--avatar
         - user
+        - view--off
+        - view
+        - warning--alt
+        - warning--filled
         - warning--outline
         - warning--solid
+        - warning
         - wfp-logo--acronym
         - wfp-logo--emblem
         - wfp-logo--extended--en
         - wfp-logo--standard-black-en
         - wfp-logo--vertical--en
+        - zoom--in
+        - zoom--out
         - warning--alt
         - warning--filled
