@@ -208,7 +208,6 @@ const attributeDenylist = ['data', 'aria'];
  * @returns {boolean}
  */
 function shouldTransformAttribute(attribute) {
-  console.log(attribute);
   return attributeDenylist.every((prefix) => !attribute.startsWith(prefix));
 }
 

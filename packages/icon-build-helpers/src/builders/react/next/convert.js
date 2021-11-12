@@ -67,11 +67,6 @@ function svgToJSX(node) {
       })
       .map(([key, value]) => {
         if (t.jSXIdentifier(key).name === 'style') {
-          console.log(
-            t.jSXIdentifier(key),
-            t.jSXExpressionContainer(convertStylesStringToObject(value)),
-            convertStylesStringToObject(value)
-          );
           return t.jSXAttribute(
             t.jSXIdentifier(key),
             t.jSXExpressionContainer(convertStylesStringToObject(value))

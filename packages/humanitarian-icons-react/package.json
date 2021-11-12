@@ -1,7 +1,7 @@
 {
   "name": "@wfp/humanitarian-icons-react",
   "description": "React components for pictograms in digital and software products using the Carbon Design System",
-  "version": "11.14.3",
+  "version": "11.14.4",
   "license": "Apache-2.0",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -42,8 +42,8 @@
     "prop-types": "^15.7.2"
   },
   "devDependencies": {
-    "@wfp/icon-build-helpers": "^0.23.7",
-    "@wfp/pictograms": "^11.14.3"
+    "@wfp/icon-build-helpers": "^0.23.8",
+    "@wfp/pictograms": "^11.14.4"
   },
   "sideEffects": false,
   "gitHead": "1f06c355bfc57d62c4516f9daed57564730537f5"

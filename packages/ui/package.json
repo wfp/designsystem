@@ -1,6 +1,6 @@
 {
   "name": "@wfp/ui",
-  "version": "1.18.18",
+  "version": "1.18.19",
   "description": "WFP UI Kit",
   "license": "Apache-2",
   "main": "lib/index.js",
@@ -8,7 +8,9 @@
   "main:scss": "source/globals/styles.scss",
   "sideEffects": false,
   "scripts": {
-    "build": "npm run copy-vendor-styles && npm run build:rollup && npm run build:script && npm run build:css && npm run build:cssmin",
+    "build:legacy": "npm run copy-vendor-styles && npm run build:rollup && npm run build:script && npm run build:css && npm run build:cssmin",
+    "build": "yarn clean && node scripts/build.js && rollup -c",
+    "clean": "rimraf es lib umd storybook-static build react-docgen.json",
     "copy-vendor-styles": "sh ./tasks/copy-vendor-styles.sh",
     "build:rollup": "rollup -c",
     "build:script": "node scripts/build.js",
@@ -181,7 +183,7 @@
     "@typescript-eslint/eslint-plugin": "^4.9.0",
     "@typescript-eslint/parser": "^3.8.0",
     "@wfp/babel-preset-wfp": "^0.1.5",
-    "@wfp/icons": "^10.34.10",
+    "@wfp/icons": "^10.34.11",
     "add": "^2.0.6",
     "all-contributors-cli": "^6.17.0",
     "autoprefixer": "^9.8.6",
