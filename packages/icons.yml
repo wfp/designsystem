@@ -47,18 +47,6 @@
     - WFP legacy icons
   sizes:
     - glyph
-- name: asleep
-  friendly_name: asleep
-  aliases:
-    - WFP legacy icons
-  sizes:
-    - glyph
-- name: awake
-  friendly_name: awake
-  aliases:
-    - WFP legacy icons
-  sizes:
-    - glyph
 - name: back-to-top
   friendly_name: back-to-top
   aliases:
