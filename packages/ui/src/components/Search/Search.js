@@ -89,7 +89,7 @@ function Search(props) {
           <>
             <SearchGlyph
               description={labelText}
-              className={`${prefix}--search-magnifier`}
+              className={`${prefix}--search-magnifier-icon`}
               onClick={onSearchIconClick}
             />
 

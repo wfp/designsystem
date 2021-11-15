@@ -24,6 +24,12 @@ export {
 } from './components/DatePicker';
 
 //export * from './FileUploader.Skeleton';
+export {
+  FeatureFlags,
+  FeatureFlagContext,
+  useFeatureFlags,
+  useFeatureFlag,
+} from './components/FeatureFlags';
 export FileUploader, {
   FileUploaderButton,
   FileUploaderItem,
