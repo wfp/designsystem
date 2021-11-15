@@ -58,6 +58,11 @@ yarn build
 
 For developing on Windows please follow this guide: https://github.com/carbon-design-system/carbon/blob/b5d615e05bc1c062337e8aca3a84e25a6f49b559/docs/guides/setup/windows.md
 
+### Use Figma extract
+
+Use figma-connect to extract svgs and tokens from Figma. The documentation to set it up can be found in /packages/figma-connect.
+TODO: improve documentation
+
 ### Usage of alpha versions in your project
 
 Install the latest alpha versions to use the Design System Alpha within your project
