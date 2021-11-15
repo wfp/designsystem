@@ -1,6 +1,6 @@
 import React from 'react';
-//import '!style-loader!css-loader!sass-loader!./storybook.scss';
-import '!style-loader!css-loader!../assets/css/styles.css';
+//TODO: avoid importing the Kit here
+//import '!style-loader!css-loader!../assets/css/styles.css';
 import { Button, Link, List, ListItem, Tooltip } from '../src';
 import { version } from '../package.json';
 

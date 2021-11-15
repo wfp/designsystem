@@ -83,12 +83,6 @@
     - WFP legacy icons
   sizes:
     - glyph
-- name: checkmark--filled
-  friendly_name: checkmark--filled
-  aliases:
-    - WFP legacy icons
-  sizes:
-    - glyph
 - name: checkmark--outline
   friendly_name: checkmark--outline
   aliases:
@@ -113,32 +107,8 @@
     - WFP legacy icons
   sizes:
     - glyph
-- name: chevron--mini
-  friendly_name: chevron--mini
-  aliases:
-    - WFP legacy icons
-  sizes:
-    - glyph
 - name: chevron--right
   friendly_name: chevron--right
-  aliases:
-    - WFP legacy icons
-  sizes:
-    - glyph
-- name: chevron--sort--down
-  friendly_name: chevron--sort--down
-  aliases:
-    - WFP legacy icons
-  sizes:
-    - glyph
-- name: chevron--sort--up
-  friendly_name: chevron--sort--up
-  aliases:
-    - WFP legacy icons
-  sizes:
-    - glyph
-- name: chevron--sort
-  friendly_name: chevron--sort
   aliases:
     - WFP legacy icons
   sizes:
@@ -151,12 +121,6 @@
     - glyph
 - name: close--circle
   friendly_name: close--circle
-  aliases:
-    - WFP legacy icons
-  sizes:
-    - glyph
-- name: close--filled
-  friendly_name: close--filled
   aliases:
     - WFP legacy icons
   sizes:
@@ -203,18 +167,6 @@
     - WFP legacy icons
   sizes:
     - glyph
-- name: error--filled
-  friendly_name: error--filled
-  aliases:
-    - WFP legacy icons
-  sizes:
-    - glyph
-- name: error--outline
-  friendly_name: error--outline
-  aliases:
-    - WFP legacy icons
-  sizes:
-    - glyph
 - name: error--solid
   friendly_name: error--solid
   aliases:
@@ -223,18 +175,6 @@
     - glyph
 - name: error
   friendly_name: error
-  aliases:
-    - WFP legacy icons
-  sizes:
-    - glyph
-- name: export
-  friendly_name: export
-  aliases:
-    - WFP legacy icons
-  sizes:
-    - glyph
-- name: fade
-  friendly_name: fade
   aliases:
     - WFP legacy icons
   sizes:
@@ -335,36 +275,6 @@
     - WFP legacy icons
   sizes:
     - glyph
-- name: information
-  friendly_name: information
-  aliases:
-    - WFP legacy icons
-  sizes:
-    - glyph
-- name: interactions
-  friendly_name: interactions
-  aliases:
-    - WFP legacy icons
-  sizes:
-    - glyph
-- name: launch
-  friendly_name: launch
-  aliases:
-    - WFP legacy icons
-  sizes:
-    - glyph
-- name: light
-  friendly_name: light
-  aliases:
-    - WFP legacy icons
-  sizes:
-    - glyph
-- name: list--bulleted
-  friendly_name: list--bulleted
-  aliases:
-    - WFP legacy icons
-  sizes:
-    - glyph
 - name: locked
   friendly_name: locked
   aliases:
@@ -377,62 +287,8 @@
     - WFP legacy icons
   sizes:
     - glyph
-- name: maximize
-  friendly_name: maximize
-  aliases:
-    - WFP legacy icons
-  sizes:
-    - glyph
 - name: menu
   friendly_name: menu
-  aliases:
-    - WFP legacy icons
-  sizes:
-    - glyph
-- name: minimize
-  friendly_name: minimize
-  aliases:
-    - WFP legacy icons
-  sizes:
-    - glyph
-- name: misuse--outline
-  friendly_name: misuse--outline
-  aliases:
-    - WFP legacy icons
-  sizes:
-    - glyph
-- name: misuse
-  friendly_name: misuse
-  aliases:
-    - WFP legacy icons
-  sizes:
-    - glyph
-- name: new-tab
-  friendly_name: new-tab
-  aliases:
-    - WFP legacy icons
-  sizes:
-    - glyph
-- name: nominal
-  friendly_name: nominal
-  aliases:
-    - WFP legacy icons
-  sizes:
-    - glyph
-- name: notification--off
-  friendly_name: notification--off
-  aliases:
-    - WFP legacy icons
-  sizes:
-    - glyph
-- name: notification
-  friendly_name: notification
-  aliases:
-    - WFP legacy icons
-  sizes:
-    - glyph
-- name: ordinal
-  friendly_name: ordinal
   aliases:
     - WFP legacy icons
   sizes:
@@ -443,74 +299,14 @@
     - WFP legacy icons
   sizes:
     - glyph
-- name: pause--outline--filled
-  friendly_name: pause--outline--filled
-  aliases:
-    - WFP legacy icons
-  sizes:
-    - glyph
-- name: pause--outline
-  friendly_name: pause--outline
-  aliases:
-    - WFP legacy icons
-  sizes:
-    - glyph
-- name: pause
-  friendly_name: pause
-  aliases:
-    - WFP legacy icons
-  sizes:
-    - glyph
-- name: play--filled
-  friendly_name: play--filled
-  aliases:
-    - WFP legacy icons
-  sizes:
-    - glyph
-- name: play--outline--filled
-  friendly_name: play--outline--filled
-  aliases:
-    - WFP legacy icons
-  sizes:
-    - glyph
-- name: play--outline
-  friendly_name: play--outline
-  aliases:
-    - WFP legacy icons
-  sizes:
-    - glyph
 - name: play
   friendly_name: play
   aliases:
     - WFP legacy icons
   sizes:
     - glyph
-- name: power
-  friendly_name: power
-  aliases:
-    - WFP legacy icons
-  sizes:
-    - glyph
 - name: print
   friendly_name: print
-  aliases:
-    - WFP legacy icons
-  sizes:
-    - glyph
-- name: redo
-  friendly_name: redo
-  aliases:
-    - WFP legacy icons
-  sizes:
-    - glyph
-- name: restart
-  friendly_name: restart
-  aliases:
-    - WFP legacy icons
-  sizes:
-    - glyph
-- name: save
-  friendly_name: save
   aliases:
     - WFP legacy icons
   sizes:
@@ -533,50 +329,8 @@
     - WFP legacy icons
   sizes:
     - glyph
-- name: star--filled
-  friendly_name: star--filled
-  aliases:
-    - WFP legacy icons
-  sizes:
-    - glyph
-- name: star--half
-  friendly_name: star--half
-  aliases:
-    - WFP legacy icons
-  sizes:
-    - glyph
 - name: star--solid
   friendly_name: star--solid
-  aliases:
-    - WFP legacy icons
-  sizes:
-    - glyph
-- name: star
-  friendly_name: star
-  aliases:
-    - WFP legacy icons
-  sizes:
-    - glyph
-- name: stop--filled
-  friendly_name: stop--filled
-  aliases:
-    - WFP legacy icons
-  sizes:
-    - glyph
-- name: stop--outline--filled
-  friendly_name: stop--outline--filled
-  aliases:
-    - WFP legacy icons
-  sizes:
-    - glyph
-- name: stop--outline
-  friendly_name: stop--outline
-  aliases:
-    - WFP legacy icons
-  sizes:
-    - glyph
-- name: stop
-  friendly_name: stop
   aliases:
     - WFP legacy icons
   sizes:
@@ -593,56 +347,14 @@
     - WFP legacy icons
   sizes:
     - glyph
-- name: undo
-  friendly_name: undo
-  aliases:
-    - WFP legacy icons
-  sizes:
-    - glyph
-- name: unlocked
-  friendly_name: unlocked
-  aliases:
-    - WFP legacy icons
-  sizes:
-    - glyph
 - name: upload
   friendly_name: upload
   aliases:
     - WFP legacy icons
   sizes:
     - glyph
-- name: user--avatar
-  friendly_name: user--avatar
-  aliases:
-    - WFP legacy icons
-  sizes:
-    - glyph
 - name: user
   friendly_name: user
-  aliases:
-    - WFP legacy icons
-  sizes:
-    - glyph
-- name: view--off
-  friendly_name: view--off
-  aliases:
-    - WFP legacy icons
-  sizes:
-    - glyph
-- name: view
-  friendly_name: view
-  aliases:
-    - WFP legacy icons
-  sizes:
-    - glyph
-- name: warning--alt
-  friendly_name: warning--alt
-  aliases:
-    - WFP legacy icons
-  sizes:
-    - glyph
-- name: warning--filled
-  friendly_name: warning--filled
   aliases:
     - WFP legacy icons
   sizes:
@@ -655,12 +367,6 @@
     - glyph
 - name: warning--solid
   friendly_name: warning--solid
-  aliases:
-    - WFP legacy icons
-  sizes:
-    - glyph
-- name: warning
-  friendly_name: warning
   aliases:
     - WFP legacy icons
   sizes:
@@ -691,18 +397,6 @@
     - glyph
 - name: wfp-logo--vertical--en
   friendly_name: wfp-logo--vertical--en
-  aliases:
-    - WFP legacy icons
-  sizes:
-    - glyph
-- name: zoom--in
-  friendly_name: zoom--in
-  aliases:
-    - WFP legacy icons
-  sizes:
-    - glyph
-- name: zoom--out
-  friendly_name: zoom--out
   aliases:
     - WFP legacy icons
   sizes:
