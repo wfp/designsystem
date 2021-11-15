@@ -17,7 +17,6 @@ categories:
         - caret--right
         - caret--up
         - checkmark--circle
-        - checkmark--filled
         - checkmark--outline
         - checkmark
         - chevron--down
@@ -59,7 +58,9 @@ categories:
         - search--solid
         - search
         - settings
+        - star--filled
         - star--solid
+        - star
         - subtract--outline
         - subtract
         - upload
