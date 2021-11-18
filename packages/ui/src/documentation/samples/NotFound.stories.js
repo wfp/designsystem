@@ -22,7 +22,7 @@ export default {
 export const Regular = (args) => (
   <Wrapper pageWidth="lg" spacing="md">
     <Story className="wfp--story__center wfp--story__full-height">
-      <WfpHumEmergencyResponsePos16
+      <WfpHumEmergencyResponsePos
         fill="#007DBC"
         width={200}
         height={200}

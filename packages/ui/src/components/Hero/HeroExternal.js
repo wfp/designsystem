@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Button from '../Button';
+import classNames from 'classnames';
 import Wrapper from '../Wrapper';
 
 import { settings } from '../../globals/js';

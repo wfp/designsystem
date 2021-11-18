@@ -154,7 +154,7 @@ Search.propTypes = {
   /**
    * Specify a custom `id` for the input
    */
-  id: PropTypes.string.isRequired,
+  id: PropTypes.string,
 
   /**
    * The new value is available first arg 'searchValue' and evt object if needed is on second arg.
