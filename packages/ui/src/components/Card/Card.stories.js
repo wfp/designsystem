@@ -5,7 +5,7 @@ import cardTwig from './Card.twig';
 import Button from '../Button';
 import { Card, CardExternal } from '.';
 
-import { StarSolidGlyph } from '@wfp/icons-react';
+import { StarSolidGlyph, StarGlyph } from '@wfp/icons-react';
 
 export default {
   title: 'Components/Content Related/Card',
@@ -74,7 +74,7 @@ export const External = (args) => (
       className={`wfp--card-ext__action wfp--card-ext__action--align-to-right`}
       kind="ghost"
       small
-      icon={StarSolidGlyph}
+      icon={StarGlyph}
       iconDescription="FavoriteOutline16"
     />
   </div>
