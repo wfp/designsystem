@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 import Link from '../components/Link';
-import Footer from '../components/Footer';
+import {Footer} from '../components/Footer';
 import Search from '../components/Search';
 
 import {
@@ -18,7 +18,7 @@ import Tab from '../components/Tab';
 
 import Button from '../components/Button';
 
-import MainNavigation from '../components/MainNavigation';
+import { MainNavigation } from '../components/MainNavigation';
 import MainNavigationItem from '../components/MainNavigationItem';
 
 import {
@@ -272,7 +272,8 @@ const RegularPage = ({
       {children}
       <Footer
         pageWidth={pageWidth}
-        metaContent="WFP UI Kit version 1.0 – powered by RMT with full support of concerned divisions which are responsible for the accuracy of the content">
+        metaContent="WFP UI Kit version 1.0 – powered by RMT with full support of concerned divisions which are responsible for the accuracy of the content"
+        >
         <div className="wfp--footer__info">
           <div className="wfp--footer__info__item">
             <p className="wfp--footer__label">A label</p>

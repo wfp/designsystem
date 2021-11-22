@@ -101,7 +101,7 @@ export const Regular = (args) => (
           <MainNavigationItem
             className="wfp--main-navigation__user"
             subNavigation={
-              <SubNavigation style={{width: '40px'}}>
+              <SubNavigation>
                 <SubNavigationHeader>
                   <SubNavigationTitle>Welcome Lorem!</SubNavigationTitle>
                   <SubNavigationLink>

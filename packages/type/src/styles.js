@@ -10,6 +10,7 @@ import { fontWeights } from './fontWeight';
 import { fontFamilies } from './fontFamily';
 import { scale } from './scale';
 
+// 12px
 export const caption01 = {
   fontSize: rem(scale[0]),
   fontWeight: fontWeights.regular,
@@ -17,6 +18,7 @@ export const caption01 = {
   letterSpacing: px(0.32),
 };
 
+// 14px
 export const caption02 = {
   fontSize: rem(scale[1]),
   fontWeight: fontWeights.regular,
@@ -24,6 +26,7 @@ export const caption02 = {
   letterSpacing: px(0.32),
 };
 
+// 12px
 export const label01 = {
   fontSize: rem(scale[0]),
   fontWeight: fontWeights.regular,
@@ -31,6 +34,7 @@ export const label01 = {
   letterSpacing: px(0.32),
 };
 
+// 14px
 export const label02 = {
   fontSize: rem(scale[1]),
   fontWeight: fontWeights.regular,
@@ -38,46 +42,49 @@ export const label02 = {
   letterSpacing: px(0.32),
 };
 
+// 12px
 export const helperText01 = {
   fontSize: rem(scale[0]),
   lineHeight: 1.34,
   letterSpacing: px(0.32),
 };
 
+// 14px
 export const helperText02 = {
   fontSize: rem(scale[1]),
   lineHeight: 1.29,
   letterSpacing: px(0.32),
 };
 
+// 14px
 export const bodyShort01 = {
   fontSize: rem(scale[1]),
   fontWeight: fontWeights.regular,
   lineHeight: 1.29,
   letterSpacing: px(0.16),
 };
-
+// 14px
 export const bodyLong01 = {
   fontSize: rem(scale[1]),
   fontWeight: fontWeights.regular,
   lineHeight: 1.43,
   letterSpacing: px(0.16),
 };
-
+// 16px
 export const bodyShort02 = {
   fontSize: rem(scale[2]),
   fontWeight: fontWeights.regular,
   lineHeight: 1.375,
   letterSpacing: 0,
 };
-
+// 16px
 export const bodyLong02 = {
   fontSize: rem(scale[2]),
   fontWeight: fontWeights.regular,
   lineHeight: 1.5,
   letterSpacing: 0,
 };
-
+// 12px
 export const code01 = {
   fontFamily: fontFamilies.mono,
   fontSize: rem(scale[0]),
@@ -85,7 +92,7 @@ export const code01 = {
   lineHeight: 1.34,
   letterSpacing: px(0.32),
 };
-
+// 14px
 export const code02 = {
   fontFamily: fontFamilies.mono,
   fontSize: rem(scale[2]),
@@ -93,14 +100,14 @@ export const code02 = {
   lineHeight: 1.43,
   letterSpacing: px(0.32),
 };
-
+// 14px
 export const heading01 = {
   fontSize: rem(scale[1]),
   fontWeight: fontWeights.semibold,
   lineHeight: 1.29,
   letterSpacing: px(0.16),
 };
-
+// 16px
 export const heading02 = {
   fontSize: rem(scale[2]),
   fontWeight: fontWeights.semibold,
@@ -116,6 +123,7 @@ export const productiveHeading02 = {
   fontSize: rem(scale[3]),
 };
 
+// 20px
 export const productiveHeading03 = {
   fontSize: rem(scale[4]),
   fontWeight: fontWeights.semibold,
@@ -123,30 +131,31 @@ export const productiveHeading03 = {
   letterSpacing: 0,
 };
 
+// 28px
 export const productiveHeading04 = {
   fontSize: rem(scale[6]),
   fontWeight: fontWeights.semibold,
   lineHeight: 1.29,
   letterSpacing: 0,
 };
-
+// 32px
 export const productiveHeading05 = {
   fontSize: rem(scale[5]),
   fontWeight: fontWeights.semibold,
   lineHeight: 1.25,
   letterSpacing: 0,
 };
-
+// 42px
 export const productiveHeading06 = {
   fontSize: rem(scale[9]),
-  fontWeight: fontWeights.light,
+  fontWeight: fontWeights.semibold,
   lineHeight: 1.199,
   letterSpacing: 0,
 };
-
+// 54px
 export const productiveHeading07 = {
   fontSize: rem(scale[11]),
-  fontWeight: fontWeights.light,
+  fontWeight: fontWeights.semibold,
   lineHeight: 1.19,
   letterSpacing: 0,
 };
