@@ -89,8 +89,8 @@ StoryText.story = {
 };
 
 const headingText = [
-  { kind: 'h1', text: 'Heading 1', styling: '29px, SemiBold' },
-  { kind: 'h2', text: 'Heading 2', styling: '25px, SemiBold' },
+  { kind: 'h1', text: 'Heading 1', styling: '28px, SemiBold' },
+  { kind: 'h2', text: 'Heading 2', styling: '24px, SemiBold' },
   { kind: 'h3', text: 'Heading 3', styling: '22px, SemiBold' },
   { kind: 'h4', text: 'Heading 4', styling: '20px, SemiBold' },
   { kind: 'h5', text: 'Heading 5', styling: '18px, SemiBold' },

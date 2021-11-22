@@ -118,6 +118,7 @@ export const heading02 = {
 // customize productiveHeading01 to be prev heading01
 export const productiveHeading01 = heading02;
 
+// 18px
 export const productiveHeading02 = {
   ...heading02,
   fontSize: rem(scale[3]),
@@ -131,23 +132,23 @@ export const productiveHeading03 = {
   letterSpacing: 0,
 };
 
-// 28px
+// 22px prev:28px
 export const productiveHeading04 = {
-  fontSize: rem(scale[6]),
+  fontSize: rem(22),
   fontWeight: fontWeights.semibold,
   lineHeight: 1.29,
   letterSpacing: 0,
 };
-// 32px
+// 24px prev:32px
 export const productiveHeading05 = {
   fontSize: rem(scale[5]),
   fontWeight: fontWeights.semibold,
   lineHeight: 1.25,
   letterSpacing: 0,
 };
-// 42px
+// 28 prev:42px
 export const productiveHeading06 = {
-  fontSize: rem(scale[9]),
+  fontSize: rem(scale[6]),
   fontWeight: fontWeights.semibold,
   lineHeight: 1.199,
   letterSpacing: 0,
