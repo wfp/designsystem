@@ -53,7 +53,7 @@ const Input = ({
 
   const inputClasses = classNames(`${prefix}--input`, className, {
     [`${prefix}--input--light`]: light,
-    [`${prefix}--input--invalid`]: invalid,
+    [`${prefix}--input--invalid`]: invalid, // legacy className
   });
 
   const labelClasses = classNames(`${prefix}--label`, {
@@ -63,6 +63,7 @@ const Input = ({
 
   const inputWrapperClasses = classNames(
     `${prefix}--input-wrapper`,
+    { [`${prefix}--form-item--invalid`]: invalid },
     inputWrapperClassName
   );
 

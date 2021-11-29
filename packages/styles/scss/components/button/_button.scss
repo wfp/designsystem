@@ -51,7 +51,7 @@
     .#{$prefix}--btn__icon {
       margin-left: 0;
       margin-right: $spacing-03;
-      @include rtl { 
+      @include rtl {
         margin-left: $spacing-03;
         margin-right: 0;
       }
@@ -96,8 +96,7 @@
       $button-primary,
       transparent,
       $text-inverse,
-      $button-secondary-hover,
-      //TODO $button-primary-hover (#same color as secondary)
+      $button-primary-hover,
       $text-on-color
     );
   }
@@ -146,22 +145,22 @@
   .#{$prefix}--btn--secondary {
     @include button-theme(
       transparent,
-      $button-primary,
-      $button-primary,
-      $button-primary-hover,
+      $button-secondary,
+      $button-secondary,
+      transparent,
       // TODO rename to $button-secondary-hover
-      $button-primary
+      $button-secondary-hover
     );
 
     &:hover,
     &:focus {
-      color: $text-inverse;
+      border-color: $button-secondary-hover;
+      color: $button-secondary-hover;
     }
 
     &:active {
-      color: $button-primary-active; // TODO rename to $button-secondary-active
+      color: $button-secondary-active; // TODO rename to $button-secondary-active
     }
-
     &:hover > .#{$prefix}--btn__icon,
     &:focus > .#{$prefix}--btn__icon {
       fill: $icon-inverse;
@@ -169,17 +168,17 @@
 
     &:hover:disabled,
     &:focus:disabled {
-      color: $button-primary; //TODO button disabled color
+      color: $button-disabled; //TODO button disabled color
     }
   }
 
   .#{$prefix}--btn--tertiary {
     @include button-theme(
+      $button-tertiary,
       transparent,
-      $text-secondary,
-      $text-secondary,
-      var(--ui-02),
-      $text-secondary
+      $text-primary,
+      $button-tertiary-hover,
+      $text-primary
     );
 
     &:hover,
@@ -349,7 +348,7 @@
     @include type-style('body-short-01');
     letter-spacing: 0;
     font-weight: 700;
-    height:1.8rem;
+    height: 1.8rem;
   }
 
   .#{$prefix}--btn--lg {

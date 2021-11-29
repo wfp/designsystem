@@ -1,5 +1,5 @@
 /* eslint-disable */
-/* Do not edit file! Updated at Mon, 08 Nov 2021 15:17:29 GMT from Figma */
+/* Do not edit file! Updated at Mon, 29 Nov 2021 19:56:07 GMT from Figma */
 
 export const corporate1 = '#007dbc';
 export const corporate2 = '#000000';
@@ -61,9 +61,9 @@ export const buttonPrimaryActive = '#1a4262';
 export const buttonSecondary = '#0b77c2';
 export const buttonSecondaryHover = '#085387';
 export const buttonSecondaryActive = '#1a4262';
-export const buttonTertiary = '#5a6872';
-export const buttonTertiaryHover = '#031c2d';
-export const buttonTertiaryActive = '#031c2d';
+export const buttonTertiary = '#d7dfe7';
+export const buttonTertiaryHover = '#c5d0db';
+export const buttonTertiaryActive = '#c5d0dc';
 export const buttonDangerPrimary = '#c5192d';
 export const buttonDangerSecondary = '#c5192d';
 export const buttonDangerHover = '#981323';
@@ -120,3 +120,36 @@ export const skeletonElement = '#dfe3e6';
 export const logoWhite = '#ffffff';
 export const logoBlack = '#000000';
 export const logoBlue = '#0b77c2';
+export const datavisSequentialDefaultSequentialDefault1 = '#9deaff';
+export const datavisSequentialDefaultSequentialDefault2 = '#73c3fe';
+export const datavisSequentialDefaultSequentialDefault3 = '#4aa1e2';
+export const datavisSequentialDefaultSequentialDefault4 = '#0780c0';
+export const datavisSequentialDefaultSequentialDefault5 = '#005f9b';
+export const datavisSequentialDefaultSequentialDefault6 = '#003f76';
+export const datavisSequentialDefaultSequentialDefault7 = '#002153';
+export const datavisSequentialSecondarySequentialSecondary1 = '#bdf9c4';
+export const datavisSequentialSecondarySequentialSecondary2 = '#89eaa8';
+export const datavisSequentialSecondarySequentialSecondary3 = '#5fd79a';
+export const datavisSequentialSecondarySequentialSecondary4 = '#41c196';
+export const datavisSequentialSecondarySequentialSecondary5 = '#33aa96';
+export const datavisSequentialSecondarySequentialSecondary6 = '#319298';
+export const datavisSequentialSecondarySequentialSecondary7 = '#367a96';
+export const datavisCategoricalCategorical1 = '#007dbc';
+export const datavisCategoricalCategorical2 = '#36b5c5';
+export const datavisCategoricalCategorical3 = '#00b485';
+export const datavisCategoricalCategorical4 = '#008868';
+export const datavisCategoricalCategorical5 = '#1a4262';
+export const datavisCategoricalCategorical6 = '#982b56';
+export const datavisCategoricalCategorical7 = '#ef404c';
+export const datavisCategoricalCategorical8 = '#f47847';
+export const datavisCategoricalCategorical9 = '#b79f8d';
+export const datavisCategoricalCategorical10 = '#ecdfbb';
+export const datavisDivergingDiverging1 = '#73c5d0';
+export const datavisDivergingDiverging2 = '#ecdfbb';
+export const datavisAlertAlert1 = '#5fd79a';
+export const datavisAlertAlert2 = '#a0db90';
+export const datavisAlertAlert3 = '#d0de85';
+export const datavisAlertAlert4 = '#fbe07a';
+export const datavisAlertAlert5 = '#fbb16a';
+export const datavisAlertAlert6 = '#f77f5b';
+export const datavisAlertAlert7 = '#ef404c';
