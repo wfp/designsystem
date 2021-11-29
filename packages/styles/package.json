@@ -1,7 +1,7 @@
 {
   "name": "@wfp/styles",
   "description": "Styles for the Carbon Design System",
-  "version": "10.26.13",
+  "version": "10.26.14",
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
@@ -24,10 +24,10 @@
     "@carbon/grid": "^10.33.0",
     "@carbon/motion": "^10.22.0",
     "@ibm/plex": "6.0.0-next.6",
-    "@wfp/colors": "^10.30.8",
-    "@wfp/layout": "^10.26.11",
-    "@wfp/themes": "^10.40.10",
-    "@wfp/type": "^10.30.12"
+    "@wfp/colors": "^10.30.9",
+    "@wfp/layout": "^10.26.12",
+    "@wfp/themes": "^10.40.11",
+    "@wfp/type": "^10.30.13"
   },
   "devDependencies": {
     "@carbon/test-utils": "^10.3.0",
