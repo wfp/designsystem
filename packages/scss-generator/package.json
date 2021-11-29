@@ -1,6 +1,5 @@
 {
   "name": "@wfp/scss-generator",
-  "private": true,
   "version": "10.13.4",
   "license": "Apache-2.0",
   "main": "src/index.js",

@@ -16,24 +16,26 @@ const glob = require('fast-glob');
 const path = require('path');
 const findUp = require('find-up');
 // TODO: improve package finder
-const packageJson = findUp('package.json' {path: "../../../"});
+const packageJson = findUp('package.json', { path: '../../../' });
 //const packageJson = require('../../../package.json');
 
 const WORKSPACE_ROOT = path.resolve(__dirname, '../../../');
-const packagePaths = packageJson.workspaces ? glob
-  .sync(packageJson.workspaces.map((pattern) => `${pattern}/package.json`))
-  .map((match) => {
-    const packageJsonPath = path.join(WORKSPACE_ROOT, match);
-    return {
-      packageJsonPath,
-      packageJson: fs.readJsonSync(packageJsonPath),
-      packagePath: path.dirname(packageJsonPath),
-      packageFolder: path.relative(
-        WORKSPACE_ROOT,
-        path.dirname(packageJsonPath)
-      ),
-    };
-  }): [];
+const packagePaths = packageJson.workspaces
+  ? glob
+      .sync(packageJson.workspaces.map((pattern) => `${pattern}/package.json`))
+      .map((match) => {
+        const packageJsonPath = path.join(WORKSPACE_ROOT, match);
+        return {
+          packageJsonPath,
+          packageJson: fs.readJsonSync(packageJsonPath),
+          packagePath: path.dirname(packageJsonPath),
+          packageFolder: path.relative(
+            WORKSPACE_ROOT,
+            path.dirname(packageJsonPath)
+          ),
+        };
+      })
+  : [];
 
 const env = {
   root: {

@@ -33,7 +33,8 @@
     "@carbon/colors": "^10.30.0",
     "@wfp/layout": "^10.26.11",
     "@wfp/type": "^10.30.12",
-    "color": "^3.1.2"
+    "color": "^3.1.2",
+    "@wfp/scss-generator": "^10.13.4"
   },
   "devDependencies": {
     "@babel/node": "^7.14.2",
@@ -42,7 +43,6 @@
     "@carbon/test-utils": "^10.3.0",
     "@wfp/cli": "^10.25.11",
     "@wfp/figma-connect": "^0.0.5",
-    "@wfp/scss-generator": "^10.13.4",
     "change-case": "^4.1.1",
     "core-js": "^3.16.0",
     "fs-extra": "^8.1.0",
