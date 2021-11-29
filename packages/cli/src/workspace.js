@@ -1,6 +1,6 @@
-/** 
-* Do not modify this file. The file is comming from IBM Carbon and created by copy-carbon 
-**/
+/**
+ * Do not modify this file. The file is comming from IBM Carbon and created by copy-carbon
+ **/
 /**
  * Copyright IBM Corp. 2019, 2019
  *
@@ -14,7 +14,10 @@ const execa = require('execa');
 const fs = require('fs-extra');
 const glob = require('fast-glob');
 const path = require('path');
-const packageJson = require('../../../package.json');
+const { findUp, pathExists } = require('find-up');
+// TODO: improve package finder
+const packageJson = findUpSync('package.json' {path: "../../../"});
+//const packageJson = require('../../../package.json');
 
 const WORKSPACE_ROOT = path.resolve(__dirname, '../../../');
 const packagePaths = glob
