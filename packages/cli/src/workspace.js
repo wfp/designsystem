@@ -14,13 +14,13 @@ const execa = require('execa');
 const fs = require('fs-extra');
 const glob = require('fast-glob');
 const path = require('path');
-const { findUp, pathExists } = require('find-up');
+const findUp = require('find-up');
 // TODO: improve package finder
-const packageJson = findUpSync('package.json' {path: "../../../"});
+const packageJson = findUp('package.json' {path: "../../../"});
 //const packageJson = require('../../../package.json');
 
 const WORKSPACE_ROOT = path.resolve(__dirname, '../../../');
-const packagePaths = glob
+const packagePaths = packageJson.workspaces ? glob
   .sync(packageJson.workspaces.map((pattern) => `${pattern}/package.json`))
   .map((match) => {
     const packageJsonPath = path.join(WORKSPACE_ROOT, match);
@@ -33,7 +33,7 @@ const packagePaths = glob
         path.dirname(packageJsonPath)
       ),
     };
-  });
+  }): [];
 
 const env = {
   root: {
