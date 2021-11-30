@@ -4,6 +4,7 @@ import {
   InlineNotification,
   NotificationActionButton,
 } from '../Notification';
+import Button from '../Button';
 import { notificationtypes } from '../../prop-types/types';
 
 import markdown from './README.mdx';
@@ -98,32 +99,32 @@ NotificationTypes.story = {
 
 export const ToastLowContrast = (args) => (
   <>
-  <ToastNotification
-    {...args}
-    kind="success"
-    style={{ minWidth: '30rem', marginBottom: '.5rem' }}
-  />
-  <ToastNotification
-    {...args}
-    kind="error"
-    style={{ minWidth: '30rem', marginBottom: '.5rem' }}
-  />
-  <ToastNotification
-    {...args}
-    kind="warning"
-    style={{ minWidth: '30rem', marginBottom: '.5rem' }}
-  />
-  <ToastNotification
-    {...args}
-    kind="info"
-    style={{ minWidth: '30rem', marginBottom: '.5rem' }}
-  />
+    <ToastNotification
+      {...args}
+      kind="success"
+      style={{ minWidth: '30rem', marginBottom: '.5rem' }}
+    />
+    <ToastNotification
+      {...args}
+      kind="error"
+      style={{ minWidth: '30rem', marginBottom: '.5rem' }}
+    />
+    <ToastNotification
+      {...args}
+      kind="warning"
+      style={{ minWidth: '30rem', marginBottom: '.5rem' }}
+    />
+    <ToastNotification
+      {...args}
+      kind="info"
+      style={{ minWidth: '30rem', marginBottom: '.5rem' }}
+    />
   </>
 );
 
 ToastLowContrast.args = {
   lowContrast: true,
-  caption:'00:00:00 AM',
+  caption: '00:00:00 AM',
   role: 'alert',
   title: 'Notification title',
   subtitle: 'Subtitle text goes here.',
@@ -142,26 +143,26 @@ ToastLowContrast.story = {
 
 export const Inline = (args) => (
   <>
-  <InlineNotification
-    {...args}
-    kind="success"
-    actions={<NotificationActionButton>{'Action'}</NotificationActionButton>}
-  />
-  <InlineNotification
-    {...args}
-    kind="error"
-    actions={<NotificationActionButton>{'Action'}</NotificationActionButton>}
-  />
-  <InlineNotification
-    {...args}
-    kind="warning"
-    actions={<NotificationActionButton>{'Action'}</NotificationActionButton>}
-  />
-  <InlineNotification
-    {...args}
-    kind="info"
-    actions={<NotificationActionButton>{'Action'}</NotificationActionButton>}
-  />
+    <InlineNotification
+      {...args}
+      kind="success"
+      actions={<NotificationActionButton>{'Action'}</NotificationActionButton>}
+    />
+    <InlineNotification
+      {...args}
+      kind="error"
+      actions={<NotificationActionButton>{'Action'}</NotificationActionButton>}
+    />
+    <InlineNotification
+      {...args}
+      kind="warning"
+      actions={<NotificationActionButton>{'Action'}</NotificationActionButton>}
+    />
+    <InlineNotification
+      {...args}
+      kind="info"
+      actions={<NotificationActionButton>{'Action'}</NotificationActionButton>}
+    />
   </>
 );
 
@@ -183,32 +184,70 @@ Inline.story = {
 
 export const InlineLowContrast = (args) => (
   <>
-  <InlineNotification
-    {...args}
-    kind="success"
-    actions={<NotificationActionButton>{'Action'}</NotificationActionButton>}
-  />
-  <InlineNotification
-    {...args}
-    kind="error"
-    actions={<NotificationActionButton>{'Action'}</NotificationActionButton>}
-  />
-  <InlineNotification
-    {...args}
-    kind="warning"
-    actions={<NotificationActionButton>{'Action'}</NotificationActionButton>}
-  />
-  <InlineNotification
-    {...args}
-    kind="info"
-    actions={<NotificationActionButton>{'Action'}</NotificationActionButton>}
-  />
+    <InlineNotification
+      {...args}
+      kind="success"
+      actions={<NotificationActionButton>{'Action'}</NotificationActionButton>}
+    />
+    <InlineNotification
+      {...args}
+      kind="error"
+      actions={<NotificationActionButton>{'Action'}</NotificationActionButton>}
+    />
+    <InlineNotification
+      {...args}
+      kind="warning"
+      actions={<NotificationActionButton>{'Action'}</NotificationActionButton>}
+    />
+    <InlineNotification
+      {...args}
+      kind="info"
+      actions={<NotificationActionButton>{'Action'}</NotificationActionButton>}
+    />
   </>
 );
 
 InlineLowContrast.args = {
   role: 'alert',
   lowContrast: true,
+  title: 'Notification title',
+  subtitle: 'Subtitle text goes here.',
+  iconDescription: 'describes the close button',
+  statusIconDescription: 'describes the status icon',
+};
+
+export const InlineBlockquote = (args) => (
+  <>
+    <InlineNotification
+      {...args}
+      kind="success"
+      actions={<NotificationActionButton>{'Action'}</NotificationActionButton>}
+    />
+    <InlineNotification
+      {...args}
+      kind="error"
+      actions={<NotificationActionButton>{'Action'}</NotificationActionButton>}>
+      Lorem ipsum dolor sit amet, consectetur adipiscing
+    </InlineNotification>
+    <InlineNotification
+      {...args}
+      kind="warning"
+      icon={false}
+      actions={<Button>{'Action'}</Button>}
+    />
+    <InlineNotification
+      {...args}
+      kind="info"
+      icon={<div>Icon</div>}
+      actions={<NotificationActionButton>{'Action'}</NotificationActionButton>}
+    />
+  </>
+);
+
+InlineBlockquote.args = {
+  role: 'alert',
+  lowContrast: true,
+  hideCloseButton: true,
   title: 'Notification title',
   subtitle: 'Subtitle text goes here.',
   iconDescription: 'describes the close button',

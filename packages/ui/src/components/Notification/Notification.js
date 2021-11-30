@@ -239,7 +239,6 @@ NotificationIcon.propTypes = {
   notificationType: PropTypes.oneOf(['inline', 'toast']).isRequired,
 };
 
-/** sdfghjk */
 export function ToastNotification({
   role,
   notificationType,
@@ -432,6 +431,7 @@ export function InlineNotification({
   role,
   notificationType,
   onCloseButtonClick,
+  icon,
   iconDescription,
   statusIconDescription,
   className,
@@ -469,19 +469,27 @@ export function InlineNotification({
   return (
     <div {...other} role={role} kind={kind} className={containerClassName}>
       <div className={`${prefix}--inline-notification__details`}>
-        <NotificationIcon
-          notificationType={notificationType}
-          kind={kind}
-          iconDescription={statusIconDescription || `${kind} icon`}
-        />
+        {icon === undefined && (
+          <NotificationIcon
+            notificationType={notificationType}
+            kind={kind}
+            iconDescription={statusIconDescription || `${kind} icon`}
+          />
+        )}
+        {icon && (
+          <div className={`${prefix}--${notificationType}-notification__icon`}>
+            {icon}
+          </div>
+        )}
         <NotificationTextDetails
           title={title}
           subtitle={subtitle}
           notificationType={notificationType}>
           {children}
+          {actions}
         </NotificationTextDetails>
       </div>
-      {actions}
+
       {!hideCloseButton && (
         <NotificationButton
           iconDescription={iconDescription}
@@ -513,6 +521,11 @@ InlineNotification.propTypes = {
    * Specify the close button should be disabled, or not
    */
   hideCloseButton: PropTypes.bool,
+
+  /**
+   * Pass in the icon that will be rendered within the ToastNotification or set icon to false to hide
+   */
+  icon: PropTypes.oneOf([PropTypes.node, PropTypes.bool]),
 
   /**
    * Provide a description for "close" icon that can be read by screen readers

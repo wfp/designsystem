@@ -192,7 +192,7 @@
   }
 
   .#{$prefix}--inline-notification__text-wrapper {
-    display: flex;
+    //TODO: check usage display: flex;
     flex-wrap: wrap;
     padding: rem(15px) 0;
   }
