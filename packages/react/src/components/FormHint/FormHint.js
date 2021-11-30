@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import { InfoSolid16 } from '@wfp/icons-react';
+import { InfoSolid16 } from '@unitednations/icons-react';
 import classNames from 'classnames';
 import { settings } from '../../globals/js';
 import Tooltip from '../Tooltip/Tooltip';

@@ -7,7 +7,7 @@
     "develop": "next"
   },
   "dependencies": {
-    "@wfp/colors": "file:../../",
+    "@unitednations/colors": "file:../../",
     "next": "^10.0.3",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",

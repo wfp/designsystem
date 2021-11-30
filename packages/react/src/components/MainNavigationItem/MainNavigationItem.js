@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import classNames from 'classnames';
-import { CloseGlyph, CaretDownGlyph } from '@wfp/icons-react';
+import { CloseGlyph, CaretDownGlyph } from '@unitednations/icons-react';
 import { settings } from '../../globals/js';
 
 const { prefix } = settings;

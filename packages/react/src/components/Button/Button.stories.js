@@ -1,6 +1,6 @@
 import React from 'react';
 import { buttonKinds } from '../../prop-types/types';
-import { AddCircleGlyph } from '@wfp/icons-react';
+import { AddCircleGlyph } from '@unitednations/icons-react';
 import markdown from './README.mdx';
 import buttonTwig from './Button.twig';
 import { twig } from 'twig';
@@ -85,9 +85,13 @@ ButtonKind.story = {
 
 export const ButtonIcon = (args) => (
   <>
-    <Button icon={AddCircleGlyph} kind="primary">Button with icon</Button> {' '}
-    <Button {...args}  kind="tertiary" icon={AddCircleGlyph}></Button> {' '}
-    <Button {...args}  iconReverse kind="tertiary" icon={AddCircleGlyph}>With iconReverse</Button>
+    <Button icon={AddCircleGlyph} kind="primary">
+      Button with icon
+    </Button>{' '}
+    <Button {...args} kind="tertiary" icon={AddCircleGlyph}></Button>{' '}
+    <Button {...args} iconReverse kind="tertiary" icon={AddCircleGlyph}>
+      With iconReverse
+    </Button>
   </>
 );
 
@@ -162,7 +166,7 @@ Large.story = {
 
 export const CustomIcon = (args) => (
   <>
-    <Button large icon={<div>Hello</div>} >
+    <Button large icon={<div>Hello</div>}>
       Large button
     </Button>
   </>

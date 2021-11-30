@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import classnames from 'classnames';
-import { HomeGlyph } from '@wfp/icons-react';
+import { HomeGlyph } from '@unitednations/icons-react';
 import { settings } from '../../globals/js';
 
 const { prefix } = settings;

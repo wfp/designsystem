@@ -9,7 +9,7 @@ import {
   WarningSolidGlyph,
   //WarningAltFilled20,
   InfoCircleGlyph,
-} from '@wfp/icons-react';
+} from '@unitednations/icons-react';
 
 import Button from '../Button';
 import Icon from '../Icon';

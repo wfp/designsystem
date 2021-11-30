@@ -15,7 +15,7 @@ const { group, themes } = require('../src/next');
 const { render } = SassRenderer.create(__dirname);
 const tokens = group.getTokens();
 
-describe('@wfp/themes/scss', () => {
+describe('@unitednations/themes/scss', () => {
   test('index.scss', async () => {
     const tokenVariables = tokens.map((token) => {
       const variable = `themes.$${token.name}`;

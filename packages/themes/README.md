@@ -1,27 +1,27 @@
-# @wfp/themes
+# @unitednations/themes
 
 > Themes for applying color in the Carbon Design System
 
 ## Getting started
 
-To install `@wfp/themes` in your project, you will need to run the following
+To install `@unitednations/themes` in your project, you will need to run the following
 command using [npm](https://www.npmjs.com/):
 
 ```bash
-npm install -S @wfp/themes
+npm install -S @unitednations/themes
 ```
 
 If you prefer [Yarn](https://yarnpkg.com/en/), use the following command
 instead:
 
 ```bash
-yarn add @wfp/themes
+yarn add @unitednations/themes
 ```
 
 ## Usage
 
-You can use `@wfp/themes` in JavaScript or Sass by including this package in
-your project. By default, `@wfp/themes` provides a set of color tokens that
+You can use `@unitednations/themes` in JavaScript or Sass by including this package in
+your project. By default, `@unitednations/themes` provides a set of color tokens that
 are pre-defined for a specific theme. Currently, we offer the following color
 themes: white, gray 10, gray 90, gray 100 .
 
@@ -35,7 +35,7 @@ If your project is using Sass, you can include this package and the
 corresponding default theme by writing the following in your Sass file:
 
 ```scss
-@import '@wfp/themes/scss/themes';
+@import '@unitednations/themes/scss/themes';
 ```
 
 By default, the white theme will be initialized. If you would like to include
@@ -43,7 +43,7 @@ another theme, you can do so by setting the global theme variable and then
 calling our mixin. For example:
 
 ```scss
-@import '@wfp/themes/scss/themes';
+@import '@unitednations/themes/scss/themes';
 
 $carbon--theme: $carbon--theme--g10;
 
@@ -54,7 +54,7 @@ $carbon--theme: $carbon--theme--g10;
 Inline theming can be done by using the mixin. For example:
 
 ```scss
-@import '@wfp/themes/scss/themes';
+@import '@unitednations/themes/scss/themes';
 
 // Use the default white theme here
 
@@ -90,18 +90,18 @@ import {
   // Specific token values
   interactive01,
   interactive02,
-} from '@wfp/themes';
+} from '@unitednations/themes';
 ```
 
 ## 📖 API Documentation
 
-If you're looking for `@wfp/themes` API documentation, check out:
+If you're looking for `@unitednations/themes` API documentation, check out:
 
 - [Sass](./docs/sass.md)
 
 ## 📚 Examples
 
-If you're looking for more examples on how to use `@wfp/themes`, we have some
+If you're looking for more examples on how to use `@unitednations/themes`, we have some
 examples that you can check out:
 
 - [preview-v11](./examples/preview-v11)

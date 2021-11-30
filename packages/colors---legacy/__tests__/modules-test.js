@@ -13,7 +13,7 @@ const { SassRenderer } = require('@carbon/test-utils/scss');
 
 const { render } = SassRenderer.create(__dirname);
 
-describe('@wfp/colors', () => {
+describe('@unitednations/colors', () => {
   test('Public API', async () => {
     const { getValue } = await render(`
       @use 'sass:meta';

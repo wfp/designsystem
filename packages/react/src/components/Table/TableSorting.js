@@ -2,7 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import Icon from '../Icon';
-import { CaretDown16, CaretUp16 } from '@wfp/icons-react';
+import { CaretDown16, CaretUp16 } from '@unitednations/icons-react';
 
 export default function TableSorting({
   className,

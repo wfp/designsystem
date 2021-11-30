@@ -1,4 +1,4 @@
-@import './vendor/@wfp/import-once/scss/import-once';
+@import './vendor/@unitednations/import-once/scss/import-once';
 
 @mixin reset {
   @if global-variable-exists(css--reset) ==false or $css--reset==false {

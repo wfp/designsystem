@@ -1,5 +1,5 @@
 {
-  "name": "@wfp/type",
+  "name": "@unitednations/type",
   "description": "Typography for digital and software products using the Carbon Design System",
   "version": "10.30.13",
   "license": "Apache-2.0",
@@ -38,17 +38,17 @@
   },
   "dependencies": {
     "@carbon/import-once": "^10.6.0",
-    "@wfp/layout": "^10.26.12"
+    "@unitednations/layout": "^10.26.12"
   },
   "devDependencies": {
     "@carbon/test-utils": "^10.3.0",
-    "@wfp/cli": "^10.25.12",
+    "@unitednations/cli": "^10.25.12",
     "change-case": "^4.1.1",
     "rimraf": "^3.0.0"
   },
   "eyeglass": {
     "exports": false,
-    "name": "@wfp/type",
+    "name": "@unitednations/type",
     "sassDir": "scss",
     "needs": "^1.3.0"
   },

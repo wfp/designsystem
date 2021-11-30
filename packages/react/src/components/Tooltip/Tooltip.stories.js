@@ -1,7 +1,7 @@
 import React from 'react';
 import Tooltip from './Tooltip';
 import markdown from './README.mdx';
-import { OverflowMenuGlyph, MenuGlyph } from '@wfp/icons-react';
+import { OverflowMenuGlyph, MenuGlyph } from '@unitednations/icons-react';
 
 export default {
   title: 'Components/UI Elements/Tooltip',

@@ -52,7 +52,7 @@ module.exports = {
     // This results in these files being included in `babel-loader` and causing
     // the build times to increase dramatically
     babelLoader.exclude = [
-      /node_modules\/(?!@wfp).*/,
+      /node_modules\/(?!@unitednations).*/,
       /packages\/.*\/(es|lib|umd)/,
     ];
 

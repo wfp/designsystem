@@ -5,7 +5,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import { breakpoint as bp, breakpoints } from '@wfp/layout';
+import { breakpoint as bp, breakpoints } from '@unitednations/layout';
 
 const breakpointNames = Object.keys(breakpoints);
 

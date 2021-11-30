@@ -1,26 +1,26 @@
-# @wfp/colors
+# @unitednations/colors
 
 > Colors for digital and software products using the Carbon Design System
 
 ## Getting started
 
-To install `@wfp/colors` in your project, you will need to run the following
+To install `@unitednations/colors` in your project, you will need to run the following
 command using [npm](https://www.npmjs.com/):
 
 ```bash
-npm install -S @wfp/colors
+npm install -S @unitednations/colors
 ```
 
 If you prefer [Yarn](https://yarnpkg.com/en/), use the following command
 instead:
 
 ```bash
-yarn add @wfp/colors
+yarn add @unitednations/colors
 ```
 
 ## Usage
 
-You can use the `@wfp/colors` module in your JavaScript, in addition to your
+You can use the `@unitednations/colors` module in your JavaScript, in addition to your
 Sass.
 
 ### Sass
@@ -28,7 +28,7 @@ Sass.
 In Sass, you can import the files individual by doing:
 
 ```scss
-@import '@wfp/colors/scss/colors';
+@import '@unitednations/colors/scss/colors';
 ```
 
 This file automatically includes the `carbon--colors` mixin which initializes
@@ -62,7 +62,7 @@ If you would like you choose when these variables are defined, then you can call
 the `carbon--colors` mixin directly by importing the following file:
 
 ```scss
-@import '@wfp/colors/scss/mixins';
+@import '@unitednations/colors/scss/mixins';
 
 // ...
 @include carbon--colors();
@@ -87,7 +87,7 @@ $carbon--colors: (
 
 <!-- prettier-ignore-end -->
 
-You can include this variable by including `@wfp/colors/scss/colors` or
+You can include this variable by including `@unitednations/colors/scss/colors` or
 calling the `carbon--colors()` mixin directly.
 
 #### Migrating from previous versions
@@ -110,7 +110,7 @@ If you would like a mixin to conditionally include these variables, you can
 include the mixin by using:
 
 ```scss
-@import '@wfp/colors/scss/mixins';
+@import '@unitednations/colors/scss/mixins';
 
 @include ibm--colors();
 ```
@@ -122,10 +122,10 @@ your code:
 
 ```js
 // ESM
-import { black, blue, warmGray } from '@wfp/colors';
+import { black, blue, warmGray } from '@unitednations/colors';
 
 // CommonJS
-const { black, blue, warmGray } = require('@wfp/colors');
+const { black, blue, warmGray } = require('@unitednations/colors');
 ```
 
 Each color swatch is exported as a variable, and each color name is also
@@ -139,7 +139,7 @@ warmGray100; // Using the `warmGray100` variable.
 
 ## 📚 Examples
 
-If you're looking for more examples on how to use `@wfp/colors`, we have some
+If you're looking for more examples on how to use `@unitednations/colors`, we have some
 examples that you can check out:
 
 - [sass-modules](./examples/sass-modules)

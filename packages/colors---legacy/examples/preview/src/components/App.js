@@ -1,5 +1,5 @@
 import React from 'react';
-import { colors, unstable_hoverColors } from '@wfp/colors';
+import { colors, unstable_hoverColors } from '@unitednations/colors';
 
 function getHoverColor(swatch, grade) {
   for (const [key, value] of Object.entries(unstable_hoverColors)) {

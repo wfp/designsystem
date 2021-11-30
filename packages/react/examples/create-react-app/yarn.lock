@@ -1170,14 +1170,14 @@
     "@webassemblyjs/wast-parser" "1.7.6"
     "@xtuc/long" "4.2.1"
 
-"@wfp/icons@^0.0.57":
+"@unitednations/icons@^0.0.57":
   version "0.0.57"
-  resolved "https://registry.yarnpkg.com/@wfp/icons/-/icons-0.0.57.tgz#a8042f75e2017ef46470f983f9d3e1ad20c2f9b6"
+  resolved "https://registry.yarnpkg.com/@unitednations/icons/-/icons-0.0.57.tgz#a8042f75e2017ef46470f983f9d3e1ad20c2f9b6"
   integrity sha512-pynCNsZfkmZeDQWaEQnMFkQ5Vc4wAkKG0ERiuiMx+vtWyn6ZhhO4YhOYshRZizMvrpEA5bKXz3NRVeVojT7g/Q==
 
-"@wfp/ui@^1.2.0-alpha.4":
+"@unitednations/ui@^1.2.0-alpha.4":
   version "1.4.0"
-  resolved "https://registry.yarnpkg.com/@wfp/ui/-/ui-1.4.0.tgz#d75daf24b41bf3b78fcfab360f005ad54993f1b7"
+  resolved "https://registry.yarnpkg.com/@unitednations/ui/-/ui-1.4.0.tgz#d75daf24b41bf3b78fcfab360f005ad54993f1b7"
   integrity sha512-dElbLKQQfU5SrgvmzXkfKPmoxSeFk4+15YVs46EbrSWucuXTSm51xjznVeANMb3PnzUDNMAFVUuuC/yonkLGEw==
   dependencies:
     classnames "2.2.6"

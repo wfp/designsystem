@@ -44,7 +44,7 @@ $theme: map.merge($fallback, $theme);
 }
 
 /// @access private
-/// @group @wfp/themes
+/// @group @unitednations/themes
 @mixin -custom-property($name, $value) {
   @if meta.type-of($value) == map {
     @each $property, $property-value in $value {

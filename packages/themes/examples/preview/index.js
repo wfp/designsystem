@@ -9,7 +9,11 @@ import cx from 'classnames';
 import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 import * as colors from '@carbon/colors';
-import { themes, formatTokenName, unstable__meta as meta } from '@wfp/themes';
+import {
+  themes,
+  formatTokenName,
+  unstable__meta as meta,
+} from '@unitednations/themes';
 
 const mountNode = document.getElementById('root');
 function render(element) {
@@ -33,7 +37,7 @@ function App() {
         <div className="bx--row">
           <div className="bx--col">
             <h1>
-              <code>@wfp/themes</code>
+              <code>@unitednations/themes</code>
             </h1>
           </div>
         </div>

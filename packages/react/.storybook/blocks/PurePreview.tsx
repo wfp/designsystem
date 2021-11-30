@@ -117,7 +117,7 @@ const getSource = (
 
       const htmlSourceCode = parameters.docs.source
         ? withSource.code
-        : `// @wfp/ui/src/components/${name}/${name}.twig
+        : `// @unitednations/ui/src/components/${name}/${name}.twig
 
 ${pretty(html)}`;
 
@@ -174,7 +174,7 @@ ${pretty(html)}`;
       const reactSource = {
         code: parameters.docs.source
           ? withSource.code
-          : `import { ${name} ${a} } from "@wfp/ui";
+          : `import { ${name} ${a} } from "@unitednations/ui";
         
 ${withSource.code}`,
         dark: false,

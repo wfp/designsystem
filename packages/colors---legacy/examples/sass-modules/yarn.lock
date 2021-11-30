@@ -90,7 +90,7 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
-"@wfp/colors@file:../..":
+"@unitednations/colors@file:../..":
   version "10.17.0"
 
 "@hapi/accept@5.0.1":

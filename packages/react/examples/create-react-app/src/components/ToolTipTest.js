@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from 'react';
-import { Table, Tooltip, Icon, Search } from '@wfp/ui';
-import { OverflowMenu16 } from '@wfp/icons-react';
+import { Table, Tooltip, Icon, Search } from '@unitednations/ui';
+import { OverflowMenu16 } from '@unitednations/icons-react';
 
 function ToolTipTest() {
   const searchRef = useRef(null);

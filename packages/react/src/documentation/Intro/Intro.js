@@ -11,7 +11,7 @@ import Page from '../Page';
 import Blockquote from '../../components/Blockquote';
 import Button from '../../components/Button';
 import './_intro.scss';
-//import { LightGlyph16 } from '@wfp/icons-react';
+//import { LightGlyph16 } from '@unitednations/icons-react';
 
 function Icon() {
   return (

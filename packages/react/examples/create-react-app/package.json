@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@wfp/icons-react": "10.34.6",
-    "@wfp/ui": "1.18.9",
+    "@unitednations/icons-react": "10.34.6",
+    "@unitednations/ui": "1.18.9",
     "carbon-components": "^10.38.0",
     "carbon-components-react": "^7.38.0",
     "carbon-icons": "^7.0.7",

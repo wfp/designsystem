@@ -15,7 +15,7 @@ import {
   CheckmarkGlyph,
   CloseGlyph,
   WarningSolidGlyph,
-} from '@wfp/icons-react';
+} from '@unitednations/icons-react';
 import Loading from '../Loading';
 import uid from '../../tools/uniqueId';
 import { ButtonTypes } from '../../prop-types/types';

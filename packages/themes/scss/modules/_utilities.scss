@@ -8,7 +8,7 @@
 @use 'sass:map';
 
 /// @access private
-/// @group @wfp/themes
+/// @group @unitednations/themes
 @function merge($map, $maps...) {
   $result: $map;
   @each $map in $maps {

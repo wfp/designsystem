@@ -267,7 +267,7 @@ To use the custom Pagination you can use the TablePagination component. Addition
 
 
 \`\`\`js
-import { TablePagination } from '@wfp/ui';
+import { TablePagination } from '@unitednations/ui';
 
 // Replacing the Pagination Component of React-Table
 

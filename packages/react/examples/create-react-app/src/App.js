@@ -1,4 +1,4 @@
-import '@wfp/ui/src/globals/scss/styles.scss';
+import '@unitednations/ui/src/globals/scss/styles.scss';
 
 import React, { Component } from 'react';
 import {
@@ -8,7 +8,7 @@ import {
   BannerNavigation,
   BannerNavigationItem,
   Search,
-} from '@wfp/ui';
+} from '@unitednations/ui';
 import Navigation from './components/Navigation';
 import SecondaryNavigation from './components/SecondaryNavigation';
 import TableTest from './components/ToolTipTest';

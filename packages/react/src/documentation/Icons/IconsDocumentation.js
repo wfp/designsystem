@@ -7,12 +7,12 @@ import Blockquote from '../../components/Blockquote';
 import Link from '../../components/Link';
 import Icon from '../../components/Icon';
 import { Module, ModuleFooter } from '../../components/Module';
-import metadata from '@wfp/icons/metadata.json';
-import * as Icons from '@wfp/icons-react';
-import { DownloadGlyph } from '@wfp/icons-react';
+import metadata from '@unitednations/icons/metadata.json';
+import * as Icons from '@unitednations/icons-react';
+import { DownloadGlyph } from '@unitednations/icons-react';
 /*import moduleInfo, {
   getModuleName,
-} from '@wfp/icon-build-helpers/src/metadata/extensions/module-info';*/
+} from '@unitednations/icon-build-helpers/src/metadata/extensions/module-info';*/
 
 import Button from '../../components/Button';
 
@@ -76,7 +76,7 @@ const IconList = ({ icon }) => {
             }}>
             {`import
   {${camelCaseFromHyphnated('icon--' + iconName)}}
-from '@wfp/icons-react'`}
+from '@unitednations/icons-react'`}
           </div>
           <Button
             icon={DownloadGlyph}

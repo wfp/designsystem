@@ -148,7 +148,7 @@ export {
   display02,
   display03,
   display04,
-} from '@wfp/type';
+} from '@unitednations/type';
 
 // Layout
 // Spacing
@@ -195,7 +195,7 @@ export {
   // Icon sizes
   iconSize01,
   iconSize02,
-} from '@wfp/layout';
+} from '@unitednations/layout';
 
 // Deprecated ☠️
 export const brand01 = interactive01;

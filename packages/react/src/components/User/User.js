@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
-import { User16 } from '@wfp/icons-react';
+import { User16 } from '@unitednations/icons-react';
 import { settings } from '../../globals/js';
 const { prefix } = settings;
 

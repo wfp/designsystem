@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Link from '../Link';
 import Wrapper from '../Wrapper';
 import classnames from 'classnames';
-import { WfpLogoVerticalEn } from '@wfp/pictograms-react';
+import { WfpLogoVerticalEn } from '@unitednations/pictograms-react';
 
 import { settings } from '../../globals/js';
 

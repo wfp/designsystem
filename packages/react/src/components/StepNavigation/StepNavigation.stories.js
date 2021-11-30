@@ -22,8 +22,12 @@ export const StepNavigationRegular = (args) => {
         {...args}
         onSelectionChange={(e) => setStep(e)}
         selectedPage={step}>
-        <StepNavigationItem label="Item without Status" helperText="dbsajjh" page={0} />
-        <StepNavigationItem label="Active Item" page={1}  />
+        <StepNavigationItem
+          label="Item without Status"
+          helperText="dbsajjh"
+          page={0}
+        />
+        <StepNavigationItem label="Active Item" page={1} />
         <StepNavigationItem
           label="Not started Item"
           page={2}
@@ -43,7 +47,7 @@ StepNavigationRegular.story = {
     docs: {
       source: {
         code: `
-        import { StepNavigation , StepNavigationItem } from "@wfp/ui";
+        import { StepNavigation , StepNavigationItem } from "@unitednations/ui";
         
 const StepNavigationExample = (args) => {
   const [step, setStep] = useState(0);

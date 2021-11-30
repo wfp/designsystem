@@ -1,6 +1,6 @@
 import React from 'react';
 import markdown from './README.mdx';
-import { Add16, Home20 } from '@wfp/icons-react';
+import { Add16, Home20 } from '@unitednations/icons-react';
 
 export default {
   title: 'Components/UI Elements/Icon',
@@ -29,6 +29,5 @@ Regular.story = {
     },
   },
 };
-
 
 export const Trial = (args) => <Home20 icon={Home20} {...args} />;

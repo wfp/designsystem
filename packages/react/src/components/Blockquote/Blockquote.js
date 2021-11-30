@@ -18,7 +18,7 @@ import {
   WarningAlt32,
   WarningSolidGlyph,
   InfoSolidGlyph,
-} from '@wfp/icons-react';
+} from '@unitednations/icons-react';
 
 const iconLookup = {
   warning: {

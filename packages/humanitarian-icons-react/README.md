@@ -1,4 +1,4 @@
-# @wfp/humanitarian-icons-react
+# @unitednations/humanitarian-icons-react
 
 > React components for Humanitarian icons. The WFP humanitarian icons are largly based on [UN OCHA Humanitarian Icons](https://brand.unocha.org/d/xEPytAUjC3sH/icons).
 

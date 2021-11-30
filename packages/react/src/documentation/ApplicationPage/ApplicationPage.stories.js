@@ -11,7 +11,7 @@ export default {
     componentSubtitle: 'Example',
     mdx: markdown,
     status: 'released',
-    previewWidth: 'full'
+    previewWidth: 'full',
   },
 };
 
@@ -22,7 +22,7 @@ Default.story = {
     docs: {
       source: {
         code: `
-import { Wrapper, Module, ModuleHeader, ModuleBody, ModuleFooter } from "@wfp/ui";
+import { Wrapper, Module, ModuleHeader, ModuleBody, ModuleFooter } from "@unitednations/ui";
 
 <Wrapper background="lighter" pageWidth="lg" spacing="md">
 <div className="row">

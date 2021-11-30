@@ -2,7 +2,7 @@ import React from 'react';
 import ContentSwitcher from './ContentSwitcher';
 import markdown from './README.mdx';
 import Switch from '../Switch';
-import { Add16, AddCircleGlyph } from '@wfp/icons-react';
+import { Add16, AddCircleGlyph } from '@unitednations/icons-react';
 
 export default {
   title: 'Components/Content Related/ContentSwitcher',

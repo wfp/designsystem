@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { iconUser } from '@wfp/icons-react';
+import { iconUser } from '@unitednations/icons-react';
 import Icon from '../../components/Icon';
 import { settings } from '../../globals/js';
 

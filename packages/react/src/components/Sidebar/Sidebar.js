@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Icon from '../Icon';
 import classNames from 'classnames';
-import { ChevronLeft16 } from '@wfp/icons-react';
+import { ChevronLeft16 } from '@unitednations/icons-react';
 import { settings } from '../../globals/js';
 const { prefix } = settings;
 

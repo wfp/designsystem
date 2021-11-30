@@ -4,11 +4,11 @@ import classnames from 'classnames';
 import Link from '../Link';
 import Wrapper from '../Wrapper';
 import Icon from '../Icon';
-import {FooterExternal} from './FooterExternal';
+import { FooterExternal } from './FooterExternal';
 import {
   WfpLogoStandardBlackEn,
   WfpLogoVerticalEn,
-} from '@wfp/pictograms-react';
+} from '@unitednations/pictograms-react';
 import { settings } from '../../globals/js';
 
 const { prefix } = settings;
@@ -43,12 +43,15 @@ const Footer = ({
   );
   const standardLogo = `${process.env.STORYBOOK_ASSETS}logos/standard/en/wfp-logo-standard-black-en.svg`;
 
-  const footer = 
-    external ? (
-    <FooterExternal productName={productName} metaContent={metaContent} metaLinks={metaLinks}>{children}</FooterExternal> 
-    ) : 
-    (
-      <footer className={classNames}>
+  const footer = external ? (
+    <FooterExternal
+      productName={productName}
+      metaContent={metaContent}
+      metaLinks={metaLinks}>
+      {children}
+    </FooterExternal>
+  ) : (
+    <footer className={classNames}>
       <Wrapper pageWidth={pageWidth}>
         <div className={`${prefix}--footer__content`}>
           {/* <div className="wfp--footer__info-content"> */}
@@ -135,12 +138,9 @@ const Footer = ({
           </div>
         )}
       </Wrapper>
-     </footer>
-    );
+    </footer>
+  );
 
-   
-  
-  
   return footer;
 };
 

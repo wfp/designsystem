@@ -1,5 +1,5 @@
 {
-  "name": "@wfp/humanitarian-icons",
+  "name": "@unitednations/humanitarian-icons",
   "description": "Pictograms for digital and software products using the Carbon Design System",
   "version": "11.14.5",
   "license": "Apache-2.0",
@@ -32,8 +32,8 @@
     "prepublishOnly": "yarn build"
   },
   "devDependencies": {
-    "@wfp/figma-connect": "^0.0.5",
-    "@wfp/icon-build-helpers": "^0.23.8",
+    "@unitednations/figma-connect": "^0.0.5",
+    "@unitednations/icon-build-helpers": "^0.23.8",
     "rimraf": "^3.0.2"
   },
   "gitHead": "1f06c355bfc57d62c4516f9daed57564730537f5"

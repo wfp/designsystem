@@ -6,7 +6,7 @@
 //
 
 @use 'sass:map';
-@use '@wfp/layout';
+@use '@unitednations/layout';
 @use 'font-family';
 @use 'scale';
 
@@ -679,7 +679,7 @@ $tokens: (
 }
 
 // TODO move following variable and `custom-property` mixin into shared file for
-// both `@carbon/type` and `@wfp/themes`
+// both `@carbon/type` and `@unitednations/themes`
 
 /// @access private
 /// @group @carbon/type

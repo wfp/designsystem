@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 
-
 import { SingleDatePickerInput } from './SingleDatePickerInput';
 import { DateRangePickerInput } from './DateRangePickerInput';
 import Input from '../Input';
@@ -22,7 +21,9 @@ export default {
   },
 };
 
-export const SingleDatePickerDefault = (args) => <SingleDatePickerInput {...args} />;
+export const SingleDatePickerDefault = (args) => (
+  <SingleDatePickerInput {...args} />
+);
 SingleDatePickerDefault.args = {
   datePicker: SingleDatePicker,
   labelText: 'Label text (labelText)',
@@ -39,7 +40,7 @@ SingleDatePickerDefault.args = {
 
 const singleSourceCode = `
 import 'react-dates/initialize';
-import { SingleDatePickerInput } from "@wfp/ui";
+import { SingleDatePickerInput } from "@unitednations/ui";
 import { SingleDatePicker } from 'react-dates';
 
 <SingleDatePickerInput
@@ -55,18 +56,17 @@ import { SingleDatePicker } from 'react-dates';
   showDefaultInputIcon
 
 />
-`
+`;
 
 SingleDatePickerDefault.story = {
   parameters: {
     docs: {
       source: {
-        code: singleSourceCode
-      }
-    }
-  }
-}
-
+        code: singleSourceCode,
+      },
+    },
+  },
+};
 
 export const SingleDatePickerNew = (args) => {
   const [date, setDate] = useState(moment());
@@ -78,7 +78,7 @@ export const SingleDatePickerNew = (args) => {
       {(e) => (
         <SingleDatePicker
           showDefaultInputIcon={true}
-          inputIconPosition='after'
+          inputIconPosition="after"
           onDateChange={(newDate) => setDate(newDate)}
           focused={focused}
           onFocusChange={({ focused }) => setFocused(focused)}
@@ -93,7 +93,7 @@ export const SingleDatePickerNew = (args) => {
 export const SingleDatePickerNewReactHookForm = (args) => {
   const defaultValues = { test: '2020-12-01T11:00:00.000Z' };
   const [focused, setFocused] = useState(false);
-  const { control,  handleSubmit } = useForm({ defaultValues });
+  const { control, handleSubmit } = useForm({ defaultValues });
 
   const onSubmit = (data) => alert(JSON.stringify(data));
 
@@ -114,7 +114,7 @@ export const SingleDatePickerNewReactHookForm = (args) => {
                 date={moment(value)}
                 id="another_unique_id"
                 showDefaultInputIcon={true}
-                inputIconPosition='after'
+                inputIconPosition="after"
               />
             )}
           </Input>
@@ -124,8 +124,9 @@ export const SingleDatePickerNewReactHookForm = (args) => {
   );
 };
 
-
-export const DateRangePickerDefault = (args) => <DateRangePickerInput {...args} />;
+export const DateRangePickerDefault = (args) => (
+  <DateRangePickerInput {...args} />
+);
 DateRangePickerDefault.args = {
   datePicker: DateRangePicker,
   date: moment(),
@@ -142,7 +143,7 @@ DateRangePickerDefault.args = {
 };
 const dateRangeSourceCode = `
 import 'react-dates/initialize';
-import { DateRangePickerInput } from "@wfp/ui";
+import { DateRangePickerInput } from "@unitednations/ui";
 import { DateRangePicker } from 'react-dates';
 
 <DateRangePickerInput
@@ -158,17 +159,17 @@ import { DateRangePicker } from 'react-dates';
   showDefaultInputIcon
 
 />
-`
+`;
 
 DateRangePickerDefault.story = {
   parameters: {
     docs: {
       source: {
-        code: dateRangeSourceCode
-      }
-    }
-  }
-}
+        code: dateRangeSourceCode,
+      },
+    },
+  },
+};
 
 // export const singleDatePickerNewReactHookForm = (args) => {
 //   const defaultValues = { test: '2020-12-01T11:00:00.000Z' };
@@ -204,63 +205,62 @@ DateRangePickerDefault.story = {
 // };
 
 export const DatePickerHookForm = (args) => {
-  const {  control } = useForm();
-  return(
-  <div>
-    <Controller
-      as={
-        <SingleDatePickerInput
-          datePicker={SingleDatePicker}
-          helperText="Optional helper text."
-          inputIconPosition="after"
-          invalidText="A valid value is required"
-          labelText="Label datepicker"
-          onBlur={()=>{}}
-          onFocus={()=>{}}
-          placeholder="Placeholder text (placeholder)"
-          showDefaultInputIcon
-        />
-      }
-      control={control}
-      valueName="selected" // DateSelect value's name is selected
-      onChange={([selected]) =>  selected }
-      name="SingleDatePicker"
-      className="input"
-      placeholderText="Select date"
-    />
-  </div>
-)
+  const { control } = useForm();
+  return (
+    <div>
+      <Controller
+        as={
+          <SingleDatePickerInput
+            datePicker={SingleDatePicker}
+            helperText="Optional helper text."
+            inputIconPosition="after"
+            invalidText="A valid value is required"
+            labelText="Label datepicker"
+            onBlur={() => {}}
+            onFocus={() => {}}
+            placeholder="Placeholder text (placeholder)"
+            showDefaultInputIcon
+          />
+        }
+        control={control}
+        valueName="selected" // DateSelect value's name is selected
+        onChange={([selected]) => selected}
+        name="SingleDatePicker"
+        className="input"
+        placeholderText="Select date"
+      />
+    </div>
+  );
 };
 
 export const DatePickerRangeHookForm = (args) => {
   const { control } = useForm();
-  return(
-  <div>
-    <Controller
-      as={
-        <DateRangePickerInput
-          datePicker={DateRangePicker}
-          helperText="Optional helper text."
-          inputIconPosition="after"
-          invalidText="A valid value is required"
-          labelText="Label datepicker"
-          onBlur={()=>{}}
-          onChange={()=>{}}
-          onFocus={()=>{}}
-          placeholder="Placeholder text (placeholder)"
-          showDefaultInputIcon
-
-        />
-      }
-      control={control}
-      valueName="selected" // DateSelect value's name is selected
-      onChange={([selected]) => selected}
-      name="DateRangePicker"
-      className="input"
-      placeholderText="Select date"
-    />
-  </div>
-)
+  return (
+    <div>
+      <Controller
+        as={
+          <DateRangePickerInput
+            datePicker={DateRangePicker}
+            helperText="Optional helper text."
+            inputIconPosition="after"
+            invalidText="A valid value is required"
+            labelText="Label datepicker"
+            onBlur={() => {}}
+            onChange={() => {}}
+            onFocus={() => {}}
+            placeholder="Placeholder text (placeholder)"
+            showDefaultInputIcon
+          />
+        }
+        control={control}
+        valueName="selected" // DateSelect value's name is selected
+        onChange={([selected]) => selected}
+        name="DateRangePicker"
+        className="input"
+        placeholderText="Select date"
+      />
+    </div>
+  );
 };
 // singleDatePickerHookForm.args = {
 //   datePicker: SingleDatePicker,

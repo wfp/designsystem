@@ -2,7 +2,7 @@ import React from 'react';
 import Link from '../../components/Link';
 import Story from '../../components/Story';
 import Wrapper from '../../components/Wrapper';
-import { WarningSolid16 } from '@wfp/icons-react';
+import { WarningSolid16 } from '@unitednations/icons-react';
 import markdown from './README.mdx';
 
 export default {
@@ -47,8 +47,8 @@ Regular.story = {
     docs: {
       source: {
         code: `
-import { Wrapper, Story, Icon} from "@wfp/ui";
-import { iconWfpHumEmergencyResponsePos } from '@wfp/icons-react';
+import { Wrapper, Story, Icon} from "@unitednations/ui";
+import { iconWfpHumEmergencyResponsePos } from '@unitednations/icons-react';
 
 <Wrapper pageWidth="lg" spacing="md">
   <Story className="wfp--story__center wfp--story__full-height">

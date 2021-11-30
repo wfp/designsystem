@@ -7759,9 +7759,9 @@
     "@webassemblyjs/wast-parser" "1.9.0"
     "@xtuc/long" "4.2.2"
 
-"@wfp/cli@10.25.1":
+"@unitednations/cli@10.25.1":
   version "10.25.1"
-  resolved "https://registry.yarnpkg.com/@wfp/cli/-/cli-10.25.1.tgz#b891d763e1c9ab5c573cac14607beecbc9cc99ca"
+  resolved "https://registry.yarnpkg.com/@unitednations/cli/-/cli-10.25.1.tgz#b891d763e1c9ab5c573cac14607beecbc9cc99ca"
   integrity sha512-FxL+7B6i8fGGAX2PSRnMkkOhn5O4m3VnCEioYggeqpQOaNPQ9//GEG0F/mC8fEDjuQvLUXGJ1l9y6ji8pGJWaA==
   dependencies:
     "@babel/core" "^7.14.6"

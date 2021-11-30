@@ -1,10 +1,10 @@
 $css--body: true;
 $css--reset: true;
 
-@use '@wfp/styles/index';
+@use '@unitednations/styles/index';
 
-@import '@wfp/themes/scss/themes';
-//@import '@wfp/themes/scss/index.scss';
+@import '@unitednations/themes/scss/themes';
+//@import '@unitednations/themes/scss/index.scss';
 
 $carbon--theme: $carbon--theme--wfp;
 

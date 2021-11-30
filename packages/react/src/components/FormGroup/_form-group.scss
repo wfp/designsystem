@@ -3,7 +3,7 @@
 @import '../../globals/scss/mixins';
 @import '../../globals/scss/typography';
 @import '../../globals/scss/spacing';
-@import '../../globals/scss/vendor/@wfp/import-once/scss/import-once';
+@import '../../globals/scss/vendor/@unitednations/import-once/scss/import-once';
 @import '../../globals/scss/css--typography';
 
 @mixin formgroup-breakpoint($breakpoint) {

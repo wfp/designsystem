@@ -5,7 +5,7 @@ import classnames from 'classnames';
 import Link from '../Link';
 import Icon from '../Icon';
 import { settings } from '../../globals/js';
-import { CaretUpGlyph, CaretDownGlyph } from '@wfp/icons-react';
+import { CaretUpGlyph, CaretDownGlyph } from '@unitednations/icons-react';
 
 const { prefix } = settings;
 

@@ -1,4 +1,4 @@
-declare module '@wfp/ui';
+declare module '@unitednations/ui';
 
 declare const AnchorNavigation: any;
 declare const BackgroundContent: any;

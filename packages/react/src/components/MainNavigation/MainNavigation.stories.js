@@ -23,7 +23,7 @@ import User from '../User';
 export default {
   title: 'Components/Navigations/MainNavigation',
   component: MainNavigation,
-  subcomponents: {MainNavigationExternal},
+  subcomponents: { MainNavigationExternal },
   parameters: {
     componentSubtitle: 'Component',
     status: 'released',
@@ -165,7 +165,7 @@ You can customize the content by using \`BannerNavigation\`.
 `;
 
 const sourcecode = (type) => {
-  return `import { Button,User, Search } from "@wfp/ui";
+  return `import { Button,User, Search } from "@unitednations/ui";
   import {
     MainNavigationExternal,
     MainNavigationItem,
@@ -178,7 +178,7 @@ const sourcecode = (type) => {
     SubNavigationList,
     SubNavigationGroup,
     SubNavigationItem
-  } from "@wfp/ui";
+  } from "@unitednations/ui";
 
   const Navigation = () => {
     return (
@@ -459,38 +459,39 @@ RegularWithButton.story = {
   },
 };
 
-export const External = (args) => (<MainNavigationExternal  {...args}>
-  <>
-  <li className={`wfp--main-navigation-ext__site-link`}>
-  <a>First link</a>
-  </li>
-  <li className={`wfp--main-navigation-ext__site-link`}>
-  <a>Second link</a>
-  </li> 
-  {/* <li className={`wfp--main-navigation-ext__site-link`}>
+export const External = (args) => (
+  <MainNavigationExternal {...args}>
+    <>
+      <li className={`wfp--main-navigation-ext__site-link`}>
+        <a>First link</a>
+      </li>
+      <li className={`wfp--main-navigation-ext__site-link`}>
+        <a>Second link</a>
+      </li>
+      {/* <li className={`wfp--main-navigation-ext__site-link`}>
     <Button kind="accent" small>
       Accent link
     </Button>
   </li> */}
+    </>
+  </MainNavigationExternal>
+);
+
+const Languages = () => (
+  <>
+    <li className={`wfp--language-ext__dropdown-option`}>
+      <a>English</a>
+    </li>
+    <li className={`wfp--language-ext__dropdown-option`}>
+      <a>French</a>
+    </li>
+    <li className={`wfp--language-ext__dropdown-option`}>
+      <a>Spanish</a>
+    </li>
   </>
-</MainNavigationExternal>);
+);
 
-const Languages = () =>
-(
-<>
-<li className={`wfp--language-ext__dropdown-option`}>
-  <a>English</a>
-</li>
-<li className={`wfp--language-ext__dropdown-option`}>
-  <a>French</a>
-</li>
-<li className={`wfp--language-ext__dropdown-option`}>
-  <a>Spanish</a>
-</li>
-</>
-)
-
-const UserDropdownDetails =() => (
+const UserDropdownDetails = () => (
   <>
     <li className={`wfp--user-ext__profile-item`}>
       <span className={`wfp--user-ext__profile-label`}>Email:</span>
@@ -499,21 +500,15 @@ const UserDropdownDetails =() => (
       </span>
     </li>
     <li className={`wfp--user-ext__profile-item`}>
-      <span className={`wfp--user-ext__profile-label`}>
-        Job title:
-      </span>
-      <span className={`wfp--user-ext__profile-value`}>
-        Supply chain
-      </span>
+      <span className={`wfp--user-ext__profile-label`}>Job title:</span>
+      <span className={`wfp--user-ext__profile-value`}>Supply chain</span>
     </li>
     <li className={`wfp--user-ext__profile-item`}>
       <span className={`wfp--user-ext__profile-label`}>Country:</span>
       <span className={`wfp--user-ext__profile-value`}>Somalia</span>
     </li>
     <li className={`wfp--user-ext__profile-item`}>
-      <span className={`wfp--user-ext__profile-label`}>
-        Organization:
-      </span>
+      <span className={`wfp--user-ext__profile-label`}>Organization:</span>
       <span className={`wfp--user-ext__profile-value`}>
         The United Nations World food Programme (WFP)
       </span>
@@ -527,13 +522,17 @@ const UserDropdownDetails =() => (
       </Button>
     </div>
   </>
-)
+);
 
 External.args = {
-  productName: <>Product <br/> Name</>,
-  languageList: <Languages/>,
-  userDetails: <UserDropdownDetails/>,
-  username: 'Max Mustermann'
+  productName: (
+    <>
+      Product <br /> Name
+    </>
+  ),
+  languageList: <Languages />,
+  userDetails: <UserDropdownDetails />,
+  username: 'Max Mustermann',
 };
 
 // Increase the size of the story's wrapper to show the mobile menu
@@ -547,9 +546,11 @@ External.story = {
       storyDescription: 'Add a description',
     },
   },
-  decorators: [(Story) => (
-    <div style={externalStoryStyles}>
-      <Story/>
-    </div>
-  )],
+  decorators: [
+    (Story) => (
+      <div style={externalStoryStyles}>
+        <Story />
+      </div>
+    ),
+  ],
 };
