@@ -95,7 +95,7 @@ async function main() {
 
   console.log('Lerna init...');
 
-  proc.execSync('lerna init');
+  proc.execSync('npx lerna init');
 
   //console.log('Removing useless files');
   //proc.execSync('npx rimraf ./.git');

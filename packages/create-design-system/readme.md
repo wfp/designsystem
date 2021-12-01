@@ -7,7 +7,7 @@ Create Design System is a tool to initialize a design-system boilerplate with no
 ```sh
 npx @wfp/create-design-system my-design-system
 cd my-design-system
-yarn react:start
+yarn start:react
 ```
 
 ### Alpha releases
