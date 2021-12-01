@@ -329,8 +329,20 @@
     - WFP legacy icons
   sizes:
     - glyph
+- name: star--filled
+  friendly_name: star--filled
+  aliases:
+    - WFP legacy icons
+  sizes:
+    - glyph
 - name: star--solid
   friendly_name: star--solid
+  aliases:
+    - WFP legacy icons
+  sizes:
+    - glyph
+- name: star
+  friendly_name: star
   aliases:
     - WFP legacy icons
   sizes:

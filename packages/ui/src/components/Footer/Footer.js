@@ -34,6 +34,7 @@ const Footer = ({
   sdgLogo,
   pageWidth,
   productName,
+  socialIcons,
   ...other
 }) => {
   const classNames = classnames(
@@ -45,7 +46,7 @@ const Footer = ({
 
   const footer = 
     external ? (
-    <FooterExternal productName={productName} metaContent={metaContent} metaLinks={metaLinks}>{children}</FooterExternal> 
+    <FooterExternal productName={productName} metaContent={metaContent} metaLinks={metaLinks} socialIcons={socialIcons}>{children}</FooterExternal> 
     ) : 
     (
       <footer className={classNames}>
@@ -161,13 +162,19 @@ Footer.propTypes = {
    When external is set to true, the logo will be left and description will right on the footer. It is false by default.
  */
   external: PropTypes.bool,
+
+  /**
+   * This prop can only be called on external footer. It can be used to apply social icons to your footer
+   */
+  socialIcons: PropTypes.node,
+
   /** 
    Meta content, usually the copyright notice
  */
   metaContent: PropTypes.node,
 
   /** 
-   Meta links, usually are leagal links like privacy, terms of use.
+   Meta links, usually are legal links like privacy, terms of use.
  */
   metaLinks: PropTypes.node,
   /**

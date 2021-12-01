@@ -200,6 +200,7 @@
   .#{$prefix}--photo-card--splash {
     .#{$prefix}--photo-card__info__title {
       @include type.type-style('productive-heading-04');
+      font-weight: 600;
     }
   }
 
