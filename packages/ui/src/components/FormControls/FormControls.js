@@ -3,10 +3,9 @@ import React from 'react';
 import classNames from 'classnames';
 import Button from '../Button';
 import { ArrowLeft16, ArrowRight16 } from '@wfp/icons-react';
-import { settings } from '../../globals/js';
-const { prefix } = settings;
+import { withUNCoreSettings } from '../UNCoreSettings';
 
-export default class FormControls extends React.Component {
+class FormControls extends React.Component {
   static propTypes = {
     /**
      * Specify the text to be read by screen-readers when visiting the <Tabs>
@@ -19,6 +18,7 @@ export default class FormControls extends React.Component {
     nextHidden: PropTypes.bool,
     nextText: PropTypes.node,
     onPreviousClick: PropTypes.func,
+    prefix: PropTypes.string.isRequired,
     previousDisabled: PropTypes.bool,
     previousIcon: PropTypes.object,
     previousHidden: PropTypes.bool,
@@ -63,6 +63,8 @@ export default class FormControls extends React.Component {
       className
     );
 
+    const { prefix } = this.props;
+
     return (
       <div className={formControlsClasses}>
         <div className={`${prefix}--form-controls__steps`}>
@@ -104,3 +106,5 @@ export default class FormControls extends React.Component {
     );
   }
 }
+
+export default withUNCoreSettings(FormControls);
