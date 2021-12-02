@@ -3,7 +3,7 @@
 ### Usage with react
 
 ```js
-import { FormControls } from '@unitednations/ui';
+import { FormControls } from '@unitednations/react';
 ```
 
 | Setting          | Default        | Options         | Role                               |

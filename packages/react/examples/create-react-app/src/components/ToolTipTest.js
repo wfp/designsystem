@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from 'react';
-import { Table, Tooltip, Icon, Search } from '@unitednations/ui';
+import { Table, Tooltip, Icon, Search } from '@unitednations/react';
 import { OverflowMenu16 } from '@unitednations/icons-react';
 
 function ToolTipTest() {

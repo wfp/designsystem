@@ -53,7 +53,7 @@ Regular.story = {
       source: {
         code: `
 
-import { Wrapper, Story, Icon} from "@unitednations/ui";
+import { Wrapper, Story, Icon} from "@unitednations/react";
 import { iconWfpHumEmergencyResponsePos } from '@unitednations/icons-react';
 
 <Wrapper pageWidth="lg" spacing="md">

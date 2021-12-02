@@ -1,7 +1,7 @@
 /*
 
 TODO: use file instead
-const mainStorybook = require('@unitednations/ui/.storybook/main');
+const mainStorybook = require('@unitednations/react/.storybook/main');
 module.exports = mainStorybook;
 */
 

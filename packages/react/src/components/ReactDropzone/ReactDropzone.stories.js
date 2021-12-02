@@ -122,7 +122,7 @@ Advanced.parameters = {
     source: {
       code: `
 import Dropzone, { useDropzone } from 'react-dropzone';
-import { Icon, List, ListItem } from '@unitednations/ui';
+import { Icon, List, ListItem } from '@unitednations/react';
 import { Upload16 } from '@unitednations/icons-react';
 import classNames from 'classnames';
 

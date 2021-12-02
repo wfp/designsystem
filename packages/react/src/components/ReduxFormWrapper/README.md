@@ -1,7 +1,7 @@
 ReduxFormWrapper allows you to use Input components as a `component` prop inside a [redux-form](https://redux-form.com) `Field`.
 
 ```js
-import { TextArea, ReduxFormWrapper } from '@unitednations/ui';
+import { TextArea, ReduxFormWrapper } from '@unitednations/react';
 ```
 
 ```js

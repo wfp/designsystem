@@ -3,7 +3,7 @@ The **FormError** is displayed at the top of the form if a form is not valid whe
 ### Usage with react
 
 ```js
-import { FormError } from '@unitednations/ui';
+import { FormError } from '@unitednations/react';
 ```
 
 ### Props

@@ -2,10 +2,10 @@ import React, { FC } from 'react';
 import { addParameters } from '@storybook/react';
 import './styles.scss';
 
-//export { globalTypes, decorators } from '@unitednations/ui/.storybook/preview';
+//export { globalTypes, decorators } from '@unitednations/react/.storybook/preview';
 
-// import { DocsPage } from '@unitednations/ui/.storybook/blocks/DocsPage';
-// import { DocsContainer } from '@unitednations/ui/.storybook/blocks/DocsContainer';
+// import { DocsPage } from '@unitednations/react/.storybook/blocks/DocsPage';
+// import { DocsContainer } from '@unitednations/react/.storybook/blocks/DocsContainer';
 
 addParameters({
   docs: {

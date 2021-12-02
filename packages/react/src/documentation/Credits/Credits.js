@@ -60,7 +60,7 @@ export default function Credits() {
         npm is a package manager for the JavaScript programming language. All
         versions of the UI Kit will be published there.{' '}
         <Link
-          href="https://www.npmjs.com/package/@unitednations/ui"
+          href="https://www.npmjs.com/package/@unitednations/react"
           target="_blank">
           View package on npm
         </Link>

@@ -1,4 +1,4 @@
-declare module '@unitednations/ui';
+declare module '@unitednations/react';
 
 declare const AnchorNavigation: any;
 declare const BackgroundContent: any;

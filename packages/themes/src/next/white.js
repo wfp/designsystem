@@ -228,7 +228,7 @@ export {
   display02,
   display03,
   display04,
-} from '@wfp/type';
+} from '@unitednations/type';
 
 // Layout
 // Spacing

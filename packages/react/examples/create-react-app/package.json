@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "@unitednations/icons-react": "10.34.6",
-    "@unitednations/ui": "1.18.9",
+    "@unitednations/react": "1.18.9",
     "carbon-components": "^10.38.0",
     "carbon-components-react": "^7.38.0",
     "carbon-icons": "^7.0.7",

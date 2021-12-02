@@ -1,4 +1,4 @@
-Closes @unitednations/ui#
+Closes @unitednations/react#
 
 {{short description}}
 

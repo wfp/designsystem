@@ -22,7 +22,7 @@ Default.story = {
     docs: {
       source: {
         code: `
-import { Wrapper, Module, ModuleHeader, ModuleBody, ModuleFooter } from "@unitednations/ui";
+import { Wrapper, Module, ModuleHeader, ModuleBody, ModuleFooter } from "@unitednations/react";
 
 <Wrapper background="lighter" pageWidth="lg" spacing="md">
 <div className="row">
