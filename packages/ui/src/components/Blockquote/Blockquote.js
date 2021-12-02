@@ -1,9 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-import { settings } from '../../globals/js';
-
-const { prefix } = settings;
+import { withUNCoreSettings } from '../UNCoreSettings';
 
 /*
 import {
@@ -55,6 +53,7 @@ class Blockquote extends React.Component {
   };*/
 
   render() {
+    const { prefix } = this.props;
     const {
       actionButtons,
       className,
@@ -193,4 +192,4 @@ Blockquote.propTypes = {
   icon: PropTypes.oneOfType([PropTypes.node, PropTypes.object]),
 };
 
-export default Blockquote;
+export default withUNCoreSettings(Blockquote);
