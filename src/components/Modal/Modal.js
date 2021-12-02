@@ -6,7 +6,6 @@ import { iconClose } from '@wfp/icons';
 import Icon from '../Icon';
 import Button from '../Button';
 import settings from '../../globals/js/settings';
-import { console } from 'window-or-global';
 
 const { prefix } = settings;
 
@@ -223,8 +222,6 @@ export default class Modal extends Component {
   };
 
   handleClick = (evt) => {
-
-    console.log("see here giving issues");
     if (
       this.innerModal.current &&
       !this.innerModal.current.contains(evt.target) &&
