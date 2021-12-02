@@ -6,6 +6,7 @@ import { iconClose } from '@wfp/icons';
 import Icon from '../Icon';
 import Button from '../Button';
 import settings from '../../globals/js/settings';
+import { console } from 'window-or-global';
 
 const { prefix } = settings;
 
@@ -222,6 +223,8 @@ export default class Modal extends Component {
   };
 
   handleClick = (evt) => {
+
+    console.log("see here giving issues");
     if (
       this.innerModal.current &&
       !this.innerModal.current.contains(evt.target) &&
@@ -417,7 +420,9 @@ export default class Modal extends Component {
       <div
         {...other}
         onKeyDown={this.handleKeyDown}
-        onClick={this.handleClick}
+        // onClick={this.handleClick} 
+        //using onMouseDown instead of onClick to prevent modal from closing when releasing mouse on background 
+        onMouseDown={this.handleClick}
         onBlur={this.handleBlur}
         className={modalClasses}
         style={

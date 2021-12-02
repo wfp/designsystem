@@ -128,7 +128,7 @@ export const Regular = (args) => (
           <MainNavigationItem
             className="wfp--main-navigation__user"
             subNavigation={
-              <SubNavigation>
+              <SubNavigation style={{width: '100px'}}>
                 <SubNavigationHeader>
                   <SubNavigationTitle>Choose language</SubNavigationTitle>
                 </SubNavigationHeader>
