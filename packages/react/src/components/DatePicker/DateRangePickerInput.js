@@ -79,6 +79,7 @@ export class DateRangePickerInput extends PureComponent {
           focusedInput={focusedInput}
           hideKeyboardShortcutsPanel
           onDatesChange={({ startDate, endDate }) => {
+            console.log('dates changed');
             if (onChange) {
               onChange({ startDate, endDate });
             }

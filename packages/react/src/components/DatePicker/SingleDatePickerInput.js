@@ -74,7 +74,7 @@ export class SingleDatePickerInput extends PureComponent {
           hideKeyboardShortcutsPanel
           onDateChange={(value) => {
             if (onChange) {
-              onChange({ value });
+              onChange(value);
             }
             this.setState({ controlledValue: value }, () => {});
           }}
