@@ -3,7 +3,7 @@ import { addParameters } from '@storybook/react';
 import './storybook.scss';
 import './storybook-legacy.scss';
 import theme from './theme';
-import UNCoreProvider from '../src/components/UNCoreProvider';
+import { UNCoreProvider } from '../src/components/UNCoreSettings';
 
 /*import {
   Title,
