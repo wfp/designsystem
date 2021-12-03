@@ -12,3 +12,5 @@ export default function useSettings() {
 
   return settings;
 }
+
+useSettings();

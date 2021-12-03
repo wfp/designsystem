@@ -13,7 +13,7 @@ import { cleanup, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { describe, document } from 'window-or-global';
 
-const { prefix } = settings;
+const { prefix } = useSettings();
 
 describe('Link', () => {
   afterEach(cleanup);

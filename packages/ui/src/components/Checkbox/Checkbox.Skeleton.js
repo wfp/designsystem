@@ -10,9 +10,9 @@ import React from 'react';
 import cx from 'classnames';
 import { settings } from 'carbon-components';
 
-const { prefix } = settings;
 
 const CheckboxSkeleton = ({ className, ...rest }) => (
+  const { prefix } = useSettings();
   <div
     className={cx(
       `${prefix}--form-item`,

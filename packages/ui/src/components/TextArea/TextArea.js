@@ -2,9 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
 import FormItem from '../FormItem';
-import { settings } from '../../globals/js';
-//import useDetectPrint from '../../internal/useDetectPrint';
-const { prefix } = settings;
+import useSettings from '../../hooks/useSettings'; //import useDetectPrint from '../../internal/useDetectPrint';
 
 /** A textarea is an input dedicated for a large volume of text. It may be used in a variety of components like forms, comment sections, and forums. */
 
@@ -29,6 +27,7 @@ const TextArea = React.forwardRef((props, ref) => {
   /* TODO: Implement print preview for inputs with automated overflow
   const isPrinting = useDetectPrint();
   */
+  const { prefix } = useSettings();
 
   const textareaProps = {
     id,

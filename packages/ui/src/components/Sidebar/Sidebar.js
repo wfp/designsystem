@@ -3,8 +3,7 @@ import PropTypes from 'prop-types';
 import Icon from '../Icon';
 import classNames from 'classnames';
 import { ChevronLeft16 } from '@wfp/icons-react';
-import { settings } from '../../globals/js';
-const { prefix } = settings;
+import useSettings from '../../hooks/useSettings';
 
 export default function Sidebar({
   active,
@@ -14,6 +13,7 @@ export default function Sidebar({
   sidebar,
   ...other
 }) {
+  const { prefix } = useSettings();
   const classes = classNames(
     `${prefix}--sidebar-content__container`,
     className,
@@ -36,16 +36,16 @@ Sidebar.propTypes = {
  */
   children: PropTypes.node,
   /**
-   The `active` prop show the content section when an item is clicked. It's useful in mobile view 
+   The `active` prop show the content section when an item is clicked. It's useful in mobile view
  */
   active: PropTypes.bool,
   /**
-   The Sidebar is usually where the sidebar items will be. 
+   The Sidebar is usually where the sidebar items will be.
    `<SidebarHeader/>` can be called in `Sidebar` and example search can be used in here
  */
   Sidebar: PropTypes.node,
   /**
-     The sidebarMobileHeader is shwon when view is in mobile version. 
+     The sidebarMobileHeader is shwon when view is in mobile version.
      `<SidebarBackButton/>` can used in the `sidebarMobileHeader` prop
   */
   sidebarMobileHeader: PropTypes.node,

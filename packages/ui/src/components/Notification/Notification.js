@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { useState, useRef, useEffect } from 'react';
 import classnames from 'classnames';
-import { settings } from '../../globals/js';
+import useSettings from '../../hooks/useSettings';
 import {
   CloseGlyph,
   ErrorGlyph,
@@ -14,8 +14,6 @@ import {
 import Button from '../Button';
 import Icon from '../Icon';
 
-const { prefix } = settings;
-
 /** Notifications are messages that communicate information to the user. The two main types of notifications are toast notifications and inline notifications. */
 export function NotificationActionButton({
   children,
@@ -23,6 +21,8 @@ export function NotificationActionButton({
   onClick,
   ...other
 }) {
+  const { prefix } = useSettings();
+
   const className = classnames(
     customClassName,
     `${prefix}--inline-notification__action-button`
@@ -67,6 +67,8 @@ export function NotificationButton({
   notificationType,
   ...other
 }) {
+  const { prefix } = useSettings();
+
   const buttonClassName = classnames(className, {
     [`${prefix}--${notificationType}-notification__close-button`]:
       notificationType,
@@ -148,6 +150,8 @@ export function NotificationTextDetails({
   children,
   ...other
 }) {
+  const { prefix } = useSettings();
+
   if (notificationType === 'toast') {
     return (
       <div {...other} className={`${prefix}--toast-notification__details`}>
@@ -214,6 +218,7 @@ const iconTypes = {
 };
 
 function NotificationIcon({ iconDescription, kind, notificationType }) {
+  const { prefix } = useSettings();
   const IconForKind = iconTypes[kind];
   if (!IconForKind) {
     return null;
@@ -258,6 +263,7 @@ export function ToastNotification({
   timeout,
   ...other
 }) {
+  const { prefix } = useSettings();
   const [isOpen, setIsOpen] = useState(true);
   const containerClassName = classnames(className, {
     [`${prefix}--toast-notification`]: true,
@@ -443,6 +449,7 @@ export function InlineNotification({
   children,
   ...other
 }) {
+  const { prefix } = useSettings();
   const [isOpen, setIsOpen] = useState(true);
   const containerClassName = classnames(className, {
     [`${prefix}--inline-notification`]: true,

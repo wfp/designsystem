@@ -1,9 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { PureComponent } from 'react';
 import classNames from 'classnames';
-import { settings } from '../../globals/js';
-
-const { prefix } = settings;
+import { withUNCoreSettings } from '../UNCoreSettings';
 
 export class SingleDatePickerInput extends PureComponent {
   state = {
@@ -20,6 +18,7 @@ export class SingleDatePickerInput extends PureComponent {
 
   render() {
     const {
+      prefix,
       controlled,
       datePicker,
       labelText,
@@ -174,4 +173,4 @@ SingleDatePickerInput.propTypes = {
   hideLabel: PropTypes.bool,
 };
 
-export default SingleDatePickerInput;
+export default withUNCoreSettings(SingleDatePickerInput);

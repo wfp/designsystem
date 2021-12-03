@@ -10,9 +10,7 @@ import React from 'react';
 import classNames from 'classnames';
 import { useFeatureFlag } from '../FeatureFlags';
 //import { settings } from 'carbon-components';
-import { settings } from '../../globals/js';
-
-const { prefix } = settings;
+import useSettings from '../../hooks/useSettings';
 
 const Checkbox = React.forwardRef(function Checkbox(
   {
@@ -28,6 +26,7 @@ const Checkbox = React.forwardRef(function Checkbox(
   },
   ref
 ) {
+  const { prefix } = useSettings();
   const labelClasses = classNames(`${prefix}--checkbox-label`, className);
   const innerLabelClasses = classNames(`${prefix}--checkbox-label-text`, {
     [`${prefix}--visually-hidden`]: hideLabel,

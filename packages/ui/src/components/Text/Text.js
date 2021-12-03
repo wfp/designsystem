@@ -2,8 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import classnames from 'classnames';
 
-import { settings } from '../../globals/js';
-const { prefix } = settings;
+import useSettings from '../../hooks/useSettings';
 
 export const textLookup = {
   h1: 'h1',
@@ -24,6 +23,7 @@ export const textLookup = {
  */
 
 const Text = ({ children, className, kind, spacingTop, spacingBottom }) => {
+  const { prefix } = useSettings();
   const tagName = { name: textLookup[kind] ? textLookup[kind] : 'div' };
   const classNames = classnames({
     [`${prefix}--text`]: true,

@@ -1,11 +1,11 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
-import { settings } from '../../globals/js';
+import useSettings from '../../hooks/useSettings';
 import FormItem from '../FormItem';
 import { WarningSolidGlyph } from '@wfp/icons-react';
 
-const { prefix } = settings;
+const { prefix } = useSettings();
 
 /**
  * Input is a wrapper for custom inputs providing the label, helperText and errors. */

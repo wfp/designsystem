@@ -1,9 +1,8 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import classnames from 'classnames';
-import { settings } from '../../globals/js';
-
-const { prefix } = settings;
+import useSettings from '../../hooks/useSettings';
+const { prefix } = useSettings();
 
 /** List component show a number of connected items written consecutively, typically one below the other. */
 

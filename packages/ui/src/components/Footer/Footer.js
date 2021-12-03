@@ -4,14 +4,12 @@ import classnames from 'classnames';
 import Link from '../Link';
 import Wrapper from '../Wrapper';
 import Icon from '../Icon';
-import {FooterExternal} from './FooterExternal';
+import { FooterExternal } from './FooterExternal';
 import {
   WfpLogoStandardBlackEn,
   WfpLogoVerticalEn,
 } from '@wfp/pictograms-react';
-import { settings } from '../../globals/js';
-
-const { prefix } = settings;
+import useSettings from '../../hooks/useSettings';
 
 /** A Footer is a section at the bottom of each page. It typically contains basic site information, copyright data or links to related pages. */
 
@@ -36,6 +34,8 @@ const Footer = ({
   productName,
   ...other
 }) => {
+  const { prefix } = useSettings();
+
   const classNames = classnames(
     `${prefix}--footer`,
     // { [`${prefix}--footer--external`]: external },
@@ -43,12 +43,15 @@ const Footer = ({
   );
   const standardLogo = `${process.env.STORYBOOK_ASSETS}logos/standard/en/wfp-logo-standard-black-en.svg`;
 
-  const footer = 
-    external ? (
-    <FooterExternal productName={productName} metaContent={metaContent} metaLinks={metaLinks}>{children}</FooterExternal> 
-    ) : 
-    (
-      <footer className={classNames}>
+  const footer = external ? (
+    <FooterExternal
+      productName={productName}
+      metaContent={metaContent}
+      metaLinks={metaLinks}>
+      {children}
+    </FooterExternal>
+  ) : (
+    <footer className={classNames}>
       <Wrapper pageWidth={pageWidth}>
         <div className={`${prefix}--footer__content`}>
           {/* <div className="wfp--footer__info-content"> */}
@@ -135,12 +138,9 @@ const Footer = ({
           </div>
         )}
       </Wrapper>
-     </footer>
-    );
+    </footer>
+  );
 
-   
-  
-  
   return footer;
 };
 
@@ -157,16 +157,16 @@ Footer.propTypes = {
    Additional className which will be added
  */
   className: PropTypes.string,
-  /** 
+  /**
    When external is set to true, the logo will be left and description will right on the footer. It is false by default.
  */
   external: PropTypes.bool,
-  /** 
+  /**
    Meta content, usually the copyright notice
  */
   metaContent: PropTypes.node,
 
-  /** 
+  /**
    Meta links, usually are leagal links like privacy, terms of use.
  */
   metaLinks: PropTypes.node,

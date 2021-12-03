@@ -2,11 +2,10 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import classnames from 'classnames';
 import Link from '../Link';
-import { settings } from '../../globals/js';
-
-const { prefix } = settings;
+import useSettings from '../../hooks/useSettings';
 
 const newChild = (children, disableLink, href) => {
+  const { prefix } = useSettings();
   if (disableLink === true) {
     return <span>{children}</span>;
   } else if (typeof children === 'string' && !(href === undefined)) {
@@ -25,6 +24,7 @@ const BreadcrumbItem = ({
   href,
   ...other
 }) => {
+  const { prefix } = useSettings();
   const classNames = classnames(`${prefix}--breadcrumb-item`, className);
   return (
     <div className={classNames} {...other}>

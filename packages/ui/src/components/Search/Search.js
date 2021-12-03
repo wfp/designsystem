@@ -1,15 +1,15 @@
 import PropTypes from 'prop-types';
 import React, { useState, useRef, useEffect } from 'react';
 import classNames from 'classnames';
-import { settings } from '../../globals/js';
+import useSettings from '../../hooks/useSettings';
 import Input from '../Input';
 import { SearchGlyph, CloseGlyph } from '@wfp/icons-react';
-
-const { prefix } = settings;
 
 /** Search enables users to specify a word or a phrase to find relevant pieces of content without the use of navigation. */
 
 function Search(props) {
+  const { prefix } = useSettings();
+
   const {
     className,
     closeButtonLabelText,
