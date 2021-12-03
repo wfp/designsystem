@@ -76,6 +76,7 @@
     "react-docgen.json"
   ],
   "eslintConfig": {
+    "root": true,
     "parser": "babel-eslint",
     "extends": [
       "eslint:recommended",
