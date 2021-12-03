@@ -1,6 +1,6 @@
 import React from 'react';
-import { buttonKinds } from '@wfp/ui/src/prop-types/types';
-import { AddGlyph } from '@wfp/icons-react';
+import { buttonKinds } from '@unitednations/react/src/prop-types/types';
+import { AddGlyph } from '@unitednations/icons-react';
 import markdown from './README.mdx';
 import Button from '.';
 

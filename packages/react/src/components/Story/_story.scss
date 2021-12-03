@@ -1,0 +1,355 @@
+//-----------------------------
+// Modules
+//-----------------------------
+/*
+@import '../../globals/scss/vars';
+@import '../../globals/scss/colors';
+@import '../../globals/scss/helper-mixins';
+@import '../../globals/scss/layer';
+@import '../../globals/scss/typography';
+@import '../../globals/scss/vendor/@unitednations/import-once/scss/import-once';
+@import '../../globals/scss/css--reset';
+@import '../../globals/scss/css--typography';
+@import '../Link.legacy/link';
+
+@mixin text {
+  > code {
+    @extend .#{$prefix}--story__code;
+  }
+  p {
+    @extend .#{$prefix}--story__p;
+  }
+
+  > h2 {
+    @extend .#{$prefix}--story__h2;
+  }
+
+  i {
+    @extend .#{$prefix}--story__i;
+  }
+
+  h3 {
+    @extend .#{$prefix}--story__h3;
+  }
+
+  h4 {
+    @extend .#{$prefix}--story__h4;
+  }
+
+  h5 {
+    @extend .#{$prefix}--story__h5;
+  }
+
+  a {
+    @extend .#{$prefix}--story__a;
+  }
+
+  sup {
+    @extend .#{$prefix}--story__sup;
+  }
+
+  b,
+  strong {
+    @extend .#{$prefix}--story__b;
+  }
+
+  // All the line spacings 
+
+  .#{$prefix}--blockquote {
+    & + p,
+    & + h3 {
+      margin-top: $spacing-lg;
+    }
+  }
+
+  p + .#{$prefix}--blockquote {
+    margin-top: $spacing-sm;
+  }
+
+  p + h2 {
+    margin-top: $spacing-2xl;
+  }
+
+  ul + h2 {
+    margin-top: $spacing-xl;
+  }
+
+  p + h3 {
+    margin-top: $spacing-2xl;
+  }
+
+  h1 + h2 {
+    margin-top: $spacing-lg;
+  }
+
+  h2 + h3 {
+    margin-top: $spacing-lg;
+  }
+
+  p + ul,
+  h3 + ul,
+  h4 + ul {
+    margin-top: $spacing-md;
+  }
+
+  h3 + p {
+    margin-top: $spacing-sm;
+  }
+
+  button + p {
+    margin-top: $spacing-sm;
+  }
+
+  div + h4,
+  h3 + h4 {
+    margin-top: $spacing-lg;
+  }
+
+  .wfp--story__h4 + div,
+  h4 + div {
+    margin-top: $spacing-md;
+  }
+
+  h1 + .wfp--list,
+  h2 + .wfp--list,
+  h3 + .wfp--list,
+  h4 + .wfp--list,
+  h5 + .wfp--list,
+  .wfp--story__h1 + .wfp--list,
+  .wfp--story__h2 + .wfp--list,
+  .wfp--story__h3 + .wfp--list,
+  .wfp--story__h4 + .wfp--list,
+  .wfp--story__h5 + .wfp--list {
+    margin-top: $spacing-md;
+  }
+
+  h1 + iframe,
+  h2 + iframe,
+  h3 + iframe,
+  h4 + iframe,
+  h5 + iframe {
+    margin-top: $spacing-xs;
+  }
+
+  iframe + h1,
+  iframe + h2,
+  iframe + h3,
+  iframe + h4,
+  iframe + h5 {
+    margin-top: $spacing-md;
+  }
+
+  .#{$prefix}--story__list {
+    list-style-position: outside;
+    line-height: 1.6em;
+    margin: $spacing-md 0 $spacing-md 1.5em;
+
+    li {
+      list-style-type: disc;
+    }
+  }
+
+  .#{$prefix}--story__sub-heading {
+    @include typescale('zeta');
+    font-weight: normal;
+    color: var(--ui-05);
+    margin-top: $spacing-2xs !important;
+    margin-bottom: $spacing-2xs;
+    font-style: italic;
+    //text-transform: uppercase;
+    font-weight: 400;
+
+    //letter-spacing: 0.05em;
+  }
+
+  .#{$prefix}--story__type-beta {
+    margin-bottom: $spacing-lg;
+  }
+
+  .#{$prefix}--markup {
+    font-style: italic;
+    @include typescale('delta');
+    margin-bottom: $spacing-lg;
+  }
+
+  .#{$prefix}--inline-highlight {
+    display: inline-block;
+    font-weight: 600;
+    background: var(--ui-03);
+    padding: 0.05em 0.1em;
+  }
+
+  .#{$prefix}--story__divider {
+    border: 1px solid var(--ui-04);
+  }
+
+  .#{$prefix}--story__divider--lg {
+    border: 2px solid var(--ui-04);
+  }
+}
+
+@include exports('story') {
+  .#{$prefix}--story {
+    @include reset;
+    @include font-family;
+    //-webkit-font-smoothing: antialiased;
+    //-moz-osx-font-smoothing: grayscale;
+    &__center {
+      text-align: center;
+    }
+
+    &__full-height {
+      min-height: 65vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    @include text;
+  }
+  .#{$prefix}--text {
+    @include text;
+  }
+
+  .#{$prefix}--story__a {
+    &:hover {
+      text-decoration: underline;
+    }
+    //@extend .wfp--link;
+  }
+
+  a.#{$prefix}--btn {
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  .#{$prefix}--blockquote {
+    p {
+      margin: 0;
+    }
+  }
+
+  .#{$prefix}--story__title {
+    @include typescale('mega');
+    font-weight: 300;
+    margin-bottom: $spacing-xl;
+    margin-left: -0.058em;
+  }
+
+  .#{$prefix}--story__content-title {
+    @include typescale('alpha');
+    font-weight: 300;
+    margin-bottom: $spacing-lg;
+    margin-left: -0.058em;
+  }
+
+  .#{$prefix}--story__subtitle {
+    @include typescale('zeta');
+    font-weight: normal;
+    color: var(--interactive-01);
+    margin-top: $spacing-xl;
+    margin-bottom: $spacing-2xs;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+  }
+
+  .#{$prefix}--story__code {
+    @include typescale('epsilon');
+    font-family: 'ui-monospace', 'SFMono-Regular', 'SF Mono, Menlo', 'Consolas',
+      'Liberation Mono', 'monospace';
+    padding: 0.2em 0.4em;
+    margin: 0;
+    font-size: 85%;
+    border-radius: 0.2em;
+    background: var(--ui-02);
+  }
+
+  .#{$prefix}--story__p {
+    margin-top: $spacing-md;
+    line-height: 1.6em;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .#{$prefix}--story__i {
+    font-style: italic;
+  }
+  .#{$prefix}--story__h2 {
+    margin-top: $spacing-xl;
+
+    &.before--img {
+      margin-bottom: 0;
+    }
+  }
+
+  .#{$prefix}--story__h3 {
+    margin-top: $spacing-xl;
+  }
+
+  .#{$prefix}--story__h4 {
+    margin-top: $spacing-lg;
+    // @include typescale('epsilon');
+  }
+
+  .#{$prefix}--story__h5 {
+    margin-top: $spacing-lg;
+    // @include typescale('epsilon');
+  }
+
+  .#{$prefix}--story__caption {
+    @include typescale('omega');
+  }
+
+  .#{$prefix}--story__sup {
+    font-size: 0.7em;
+    background: var(--ui-03);
+    vertical-align: top;
+    position: relative;
+    top: -0.5em;
+
+    > a {
+      text-decoration: none;
+
+      &:before {
+        content: '[';
+      }
+
+      &:after {
+        content: ']';
+      }
+    }
+  }
+
+  .#{$prefix}--story__inline-highlight {
+    display: inline-block;
+    font-weight: 600;
+    background: var(--ui-03);
+    padding: 0.05em 0.1em;
+  }
+
+  .docblock-source {
+    margin-top: $spacing-xs !important;
+  }
+  .#{$prefix}--story__bold {
+    font-weight: 600;
+  }
+
+  .#{$prefix}--story__b,
+  .#{$prefix}--story__strong {
+    font-weight: 600;
+  }
+
+  @each $size, $glyph in $spacing-map {
+    .#{$prefix}--story__spacing-top-#{$size} {
+      margin-top: map-get($spacing-map, $size);
+    }
+    .#{$prefix}--story__spacing-bottom-#{$size} {
+      margin-bottom: map-get($spacing-map, $size);
+    }
+  }
+}
+*/

@@ -1,0 +1,54 @@
+/*
+$css--helpers: true;
+
+@import '../../globals/scss/vars';
+@import '../../globals/scss/colors';
+@import '../../globals/scss/spacing';
+@import '../../globals/scss/helper-mixins';
+@import '../../globals/scss/typography';
+@import '../../globals/scss/layout';
+@import '../../globals/scss/css--helpers';
+@import '../../globals/scss/vendor/@unitednations/import-once/scss/import-once';
+@import '../Select/select';
+//@import '../TextInput/text-input';
+
+@include exports('react-dropzone') {
+  .#{$prefix}--dropzone {
+    &__input {
+      padding: $spacing-md;
+      border: 2px dashed var(--ui-05);
+      border-radius: $button-border-radius;
+      background: var(--ui-02);
+      text-align: center;
+      cursor: pointer;
+      &--drag-active {
+        background: var(--ui-03);
+        border-color: var(--interactive-01);
+        box-shadow: 0px 0px 10px rgba(var(--interactive-01), 0.2);
+      }
+      @include typescale(zeta);
+      &:hover {
+        border-color: var(--interactive-01);
+      }
+      &:focus {
+        outline: none;
+        background: var(--ui-02);
+      }
+    }
+    &__icon {
+      margin-bottom: $spacing-sm;
+      path {
+        fill: var(--interactive-01);
+      }
+    }
+    &__file-list {
+      h4 {
+        @include typescale(zeta);
+        margin-bottom: $spacing-2xs;
+      }
+      margin-top: $spacing-xs;
+      @include typescale(zeta);
+    }
+  }
+}
+*/

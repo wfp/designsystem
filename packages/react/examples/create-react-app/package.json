@@ -1,0 +1,37 @@
+{
+  "name": "create-react-app-v2",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@unitednations/icons-react": "10.34.6",
+    "@unitednations/react": "1.18.9",
+    "carbon-components": "^10.38.0",
+    "carbon-components-react": "^7.38.0",
+    "carbon-icons": "^7.0.7",
+    "moment": "^2.29.1",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-final-form": "^6.5.2",
+    "react-scripts": "4.0.0",
+    "sass": "^1.34.1",
+    "twig": "^1.15.2"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app",
+    "globals": {
+      "__DEV__": true
+    }
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}

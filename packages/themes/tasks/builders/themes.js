@@ -7,7 +7,7 @@
 
 'use strict';
 
-const { types: t } = require('@wfp/scss-generator');
+const { types: t } = require('@unitednations/scss-generator');
 const { formatTokenName } = process.env.sourceLib
   ? require(process.env.sourceLib)
   : require('../../lib');
@@ -39,7 +39,7 @@ function buildThemesFile(
       const comment = t.Comment(`/ Carbon's ${name} color theme
 / @type Map
 / @access public
-/ @group @wfp/themes`);
+/ @group @unitednations/themes`);
       return [
         t.Newline(),
         comment,
@@ -100,7 +100,7 @@ function buildThemesFile(
 / @type Map
 / @access public
 / @alias carbon--theme--${defaultThemeName}
-/ @group @wfp/themes`),
+/ @group @unitednations/themes`),
     carbonTheme,
   ]);
 }

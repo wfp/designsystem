@@ -1,0 +1,123 @@
+@import '../../globals/scss/vars';
+@import '../../globals/scss/colors';
+@import '../../globals/scss/mixins';
+@import '../../globals/scss/typography';
+@import '../../globals/scss/spacing';
+@import '../../globals/scss/vendor/@unitednations/import-once/scss/import-once';
+@import '../../globals/scss/css--typography';
+
+@mixin formgroup-breakpoint($breakpoint) {
+  .#{$prefix}--fieldset__content {
+    @include breakpoint($breakpoint) {
+      display: flex;
+    }
+    @include breakpointMax($breakpoint) {
+      &.#{$prefix}--fieldset__content {
+        > * {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+  /*&.#{$prefix}--fieldset__align-horizontal {
+    &.wfp--fieldset__input-spacing-md {
+      .#{$prefix}--fieldset__content {
+        > * {
+          margin-right: $spacing-md;
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+    &.wfp--fieldset__input-spacing-lg {
+      .#{$prefix}--fieldset__content {
+        > * {
+          margin-right: $spacing-lg;
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+  }*/
+}
+
+@include exports('formgroup') {
+  .#{$prefix}--form-group__title {
+    @include typescale('gamma');
+    @include font-family;
+    font-weight: 600;
+    margin-bottom: $spacing-md;
+  }
+
+  .#{$prefix}--fieldset__inline {
+    display: flex;
+  }
+
+  .#{$prefix}--fieldset__content {
+    > * {
+      margin-bottom: $spacing-md;
+    }
+  }
+
+  .#{$prefix}--fieldset__align-horizontal {
+    &.wfp--fieldset__input-spacing-md {
+      .#{$prefix}--fieldset__content {
+        > * {
+          margin-right: $spacing-md;
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+    &.wfp--fieldset__input-spacing-lg {
+      .#{$prefix}--fieldset__content {
+        > * {
+          margin-right: $spacing-lg;
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+  }
+
+  .#{$prefix}--fieldset__align-horizontal {
+    &.#{$prefix}--fieldset__breakpoint-lg {
+      @include formgroup-breakpoint(bp--lg--major);
+    }
+    &.#{$prefix}--fieldset__breakpoint-md {
+      @include formgroup-breakpoint(bp--md--major);
+    }
+    &.#{$prefix}--fieldset__breakpoint-sm {
+      @include formgroup-breakpoint(bp--sm--major);
+    }
+  }
+
+  @include breakpoint(bp--sm--major) {
+    .#{$prefix}--fieldset__align-horizontal {
+      &.wfp--fieldset__input-spacing-md {
+        .#{$prefix}--fieldset__content {
+          > * {
+            margin-right: $spacing-sm;
+            &:last-child {
+              margin-right: 0;
+            }
+          }
+        }
+      }
+      &.wfp--fieldset__input-spacing-lg {
+        .#{$prefix}--fieldset__content {
+          > * {
+            margin-right: $spacing-md;
+            &:last-child {
+              margin-right: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}

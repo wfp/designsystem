@@ -82,7 +82,6 @@ export const support02 = green60;
 export const support03 = yellow;
 export const support04 = blue70;
 
-
 export const inverseSupport01 = red50;
 export const inverseSupport02 = green40;
 export const inverseSupport03 = yellow;
@@ -269,7 +268,7 @@ export {
   display02,
   display03,
   display04,
-} from '@wfp/type';
+} from '@unitednations/type';
 
 // Layout
 // Spacing
@@ -316,7 +315,7 @@ export {
   // Icon sizes
   iconSize01,
   iconSize02,
-} from '@wfp/layout';
+} from '@unitednations/layout';
 
 // Deprecated ☠️
 export const brand01 = interactive01;

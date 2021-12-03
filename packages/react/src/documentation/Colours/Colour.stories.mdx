@@ -1,0 +1,231 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import ReactDOMServer from 'react-dom/server';
+import { Colour } from './ColourDocs';
+import { ColourList } from './ColourList';
+
+<Meta
+  title="Documentation/Core/Colours"
+  subtitle="subtitle"
+  parameters={{
+    previewTabs: {
+      canvas: { hidden: true },
+    },
+  }}
+/>
+
+<hr />
+
+WFP online visual identity includes the following colours:
+
+- [primary](#primary-colours)
+- [extended primary](#extended-primary-palette)
+- [neutrals](#neutral-colors)
+- [dataviz](#data-visualisation-palettes)
+- [semantic](#semantic-colours)
+- [symbolic](#symbolic-colours)
+
+The WFP official branding palette can be found [here](http://brand.manuals.wfp.org/en/core-elements/colours/colour-palette/).
+
+### Primary Colours
+
+Primary colours are the base colours of the UI, the ones that are used most
+frequently in the interface. **Brand-01 is the base branding colour**,
+corresponding to WFP’s corporate blue: it is used for brand elements and
+non-interactive elements. **Interactive colours** are used for primary
+links and action items that can be clicked or touched, to emphasize important
+actions and highlight information in your application.
+
+<ColourList filter="Primary" />
+
+<Colour color="brand-01" />
+<h4 className="wfp--story__sub-heading">WFP's corporate colour</h4>
+
+The brand-01 colour is WFP’s corporate blue which is used in all
+(non-interactive) branding elements. It is the colour displayed most
+frequently across your App’s screens and components. The primary colour
+can also be used to accent elements.
+
+#### Use brand-01 for:
+
+- ✓ MainNavigation
+- ✓ brand elements
+- ✓ dark background
+
+#### Do not use for:
+
+- ✗ interactive elements like buttons or links
+- ✗ Primary and secondary colours
+
+<Colour color="interactive-01" />
+
+<h4 className="wfp--story__sub-heading">
+  Primary interactive colour, primary buttons
+</h4>
+
+Used for primary links and action elements that can be clicked or touched. It
+is slightly lighter then the main WFP blue to communicate that an element is
+interactive and to be distinguishable from black.
+
+<img
+  alt="Brand colour"
+  style={{
+    width: '100%',
+    height: 'auto',
+    marginTop: '1em',
+    marginLeft: '0em',
+  }}
+  src={`${process.env.STORYBOOK_INTERNAL_ASSETS}internal/brand-color.png`}
+/>
+
+<Colour color="interactive-02" />
+<h4 className="wfp--story__sub-heading">
+  Interactive emphasis colour (e.g. hovers)
+</h4>
+
+This colour is used for hover and active states.
+
+#### Use $interactive for:
+
+- ✓ links
+- ✓ buttons
+- ✓ other interactive elements
+
+#### Do not use for:
+
+- ✗ MainNavigation, since it is a branding element and not interactive as a whole.
+- ✗ other branding elements
+- ✗ non - interactive elements
+
+#### Secondary colours are best for:
+
+- ✓ floating action buttons (mobile devices)
+- ✓ progress bars
+- ✓ important highlights
+- ✓ call-to-action buttons and links
+- ✓ yellow makes a good button colour in placed in isolation
+- ✓ external websites where colour creates interest and meaning and
+  improves the conversion rate
+
+#### Do not use it:
+
+- ✗ for regular actions
+- ✗ multiple actions / times on the same webpage
+- ✗ limit the use of yellow to the elements you want to emphasize
+  related to the audience priority
+- ✗ limit usage for texts and navigation elements
+
+### Extended primary palette
+
+This palette extends the primary palette by providing lighter and darker
+tints of the WFP brand colour. They can be used to increase the contrast
+of the UI elements to make them more or less visible compared to the
+rest of the interface.
+
+<ColourList filter="Layer" />
+
+### Text Colors
+
+<ColourList filter="Text" />
+
+<!--
+
+### ui-01 and ui-02
+
+<h4 className="wfp--story__sub-heading">
+  Container and page background colors
+</h4>
+
+**ui-01** is used as the page background if there are not Modules on
+top of it, while ui-02 is used as the page background when there are
+Modules on top.
+
+<img
+  alt="Brand colour"
+  style={{
+    width: '100%',
+    height: 'auto',
+    marginTop: '3em',
+    marginLeft: '0em',
+  }}
+  src={`${process.env.STORYBOOK_INTERNAL_ASSETS}internal/background-contrast.png`}
+/>
+-->
+
+<!--
+### Data visualisation palettes
+
+#### Sequential palette #1 (default)
+
+<ColourList filter="Links" />
+
+#### Sequential palette #2 (secondary)
+
+<ColourList filter="Icons" />
+-->
+
+#### Borders
+
+<ColourList filter="Borders" />
+
+### Support colours
+
+<ColourList filter="Support" />
+
+<Colour color="support-01" />
+
+Use the error colour to indicate an error or to focus the attention on something
+which is crucial to see. Paired with a cross icon, red delivers the message that
+something went wrong.
+
+<Colour color="support-02" />
+
+Use green to indicate success state. Paired with a checkmark icon the user
+knows that the operation was successfully completed.
+
+<Colour color="support-03" />
+
+Use yellow to indicate a transient warning which is less important than an
+error message. Yellow typically consists of items which require the user’s
+immediate attention, or indicate a waiting period. Although this overlaps with
+the use of red, yellow is more transient in nature.
+
+### Skeleton colours
+
+<ColourList filter="Skeleton" />
+
+### Buttons
+
+<ColourList filter="Button" />
+
+### Usage
+
+The colours can be used via JavaScript or different frameworks.
+
+#### Usage in JavaScript
+
+```jsx
+// Import colours as json (needs a json loader)
+import colors from '@unitednations/react/src/globals/data/colors.json';
+
+// Import colours as js
+import colors from '@unitednations/react/src/globals/data/colors.js';
+
+const barChartColor = colors.navy;
+```
+
+Setting colour variables makes it easy to reuse colours, without the hassle of updating every single Hex colour code once they change.
+
+#### Usage in scss
+
+```css
+// Only use variables
+@import '~@unitednations/react/src/globals/scss/vars';
+
+body {
+  background: var(--ui-02);
+}
+```
+
+## Related
+
+[Dark mode](?path=/docs/documentation-guidelines-darkmode-custom-colours--page)

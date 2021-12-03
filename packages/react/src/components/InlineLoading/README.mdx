@@ -1,0 +1,92 @@
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+
+## Usage
+
+**Inline loading** spinners are used when performing actions. They help notify user’s that their action is being processed. The waiting experience is a crucial design opportunity. Although it may not be obvious what is occurring on the back-end, we can communicate clearly to reassure the user that progress is happening.
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+
+It is best practice to use an Inline loading component for any Create, Update, or Delete actions. The component provides feedback to the user about the progress of the action they took. This could be in a table, after a primary or secondary button click, or even in a modal.
+
+#### When to use
+
+- Use an inline loading component for any action that cannot be performed instantly and will only require a short time to process.
+- Use when retrieving or refreshing small data amounts, such as status.
+
+#### When not to use
+
+- Don’t use inline loading for full page loads, use skeleton states instead.
+- Don’t trigger inline loading on more than one item or action at a time, unless on initial page load or refresh.
+
+### Usage with react
+
+```js
+import { InlineLoading } from '@unitednations/react';
+```
+
+```js
+
+{loading ?(<InlineLoading
+  iconDescription="Active loading indicator"
+  description="Loading data..."
+  success={false}
+  onSuccess={onSuccess}
+/>) : <TheContentAfterLoading />
+)}
+```
+
+### JavaScript
+
+#### Getting component class reference
+
+##### ES2015
+
+```javascript
+import { InlineLoading } from 'carbon-components';
+```
+
+##### With pre-build bundle (`carbon-components.min.js`)
+
+```javascript
+var InlineLoading = CarbonComponents.InlineLoading;
+```
+
+#### Instantiating
+
+```javascript
+// `#my-inline-loading` is an element with `[data-inline-loading]` attribute
+InlineLoading.create(document.getElementById('my-inline-loading'));
+```
+
+#### Static properties
+
+| Name   | Type   | Description                                                                  |
+| ------ | ------ | ---------------------------------------------------------------------------- |
+| states | Object | The loading states. Contains `INACTIVE`, `ACTIVE` and `FINISHED` properties. |
+
+#### Public Methods
+
+| Name     | Params         | Description                             |
+| -------- | -------------- | --------------------------------------- |
+| release  |                | Deletes the instance                    |
+| setState | state : string | Sets the active/inactive/finished state |
+
+##### Example - Transitioning the loading spinner to the finished state
+
+```javascript
+// `#my-inline-loading` is an element with `[data-inline-loading]` attribute
+var inlineLoadingInstance = InlineLoading.create(
+  document.getElementById('my-inline-loading')
+);
+inlineLoadingInstance.setState(InlineLoading.states.FINISHED);
+```
+
+#### Options
+
+| Option               | Default Selector                    | Description                                                     |
+| -------------------- | ----------------------------------- | --------------------------------------------------------------- |
+| selectorInit         | [data-inline-loading]               | The CSS selector to find the inline loading components          |
+| selectorSpinner      | [data-inline-loading-spinner]       | The CSS selector to find the spinner                            |
+| selectorFinished     | [data-inline-loading-finished]      | The CSS selector to find the "finished" icon                    |
+| selectorTextActive   | [data-inline-loading-text-active]   | The CSS selector to find the text describing the active state   |
+| selectorTextFinished | [data-inline-loading-text-finished] | The CSS selector to find the text describing the finished state |
+| classLoadingStop     | .wfp--loading--stop                 | The CSS class for spinner's stopped state                       |

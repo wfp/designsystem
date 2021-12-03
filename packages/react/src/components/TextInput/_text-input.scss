@@ -1,0 +1,19 @@
+//-----------------------------
+// Text
+//-----------------------------
+
+@import '../../globals/scss/vars';
+@import '../../globals/scss/colors';
+@import '../../globals/scss/css--reset';
+@import '../../globals/scss/helper-mixins';
+@import '../../globals/scss/typography';
+@import '../../globals/scss/spacing';
+@import '../../globals/scss/vendor/@unitednations/import-once/scss/import-once';
+@import '../Form/form';
+
+@include exports('text-input') {
+  .#{$prefix}--text--required label::after {
+    content: ' *';
+    color: red;
+  }
+}

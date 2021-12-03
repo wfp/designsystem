@@ -1,0 +1,17 @@
+$css--body: true;
+$css--reset: true;
+
+@use '@unitednations/styles/index';
+
+@import '@unitednations/themes/scss/themes';
+//@import '@unitednations/themes/scss/index.scss';
+
+$carbon--theme: $carbon--theme--wfp;
+
+// Use the WFP theme
+:root {
+  @include carbon--theme($carbon--theme--wfp, true) {
+    // @include emit-component-tokens($tag-colors);
+    // @include emit-component-tokens($notification-colors);
+  }
+}

@@ -1,4 +1,3 @@
-const { svg } = require('@wfp/icon-build-helpers/src/builders');
 const fs = require('fs');
 const YAML = require('yaml');
 

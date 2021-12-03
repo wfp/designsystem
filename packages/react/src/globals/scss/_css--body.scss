@@ -1,0 +1,22 @@
+@import 'colors';
+@import 'vars';
+@import 'mixins';
+@import 'typography';
+@import 'css--reset';
+@import './vendor/@unitednations/import-once/scss/import-once';
+
+@mixin css-body {
+  body {
+    @include reset;
+    @include font-family;
+    color: var(--text-01);
+    background-color: var(--ui-01);
+    line-height: 1;
+  }
+}
+
+@include exports('css--body') {
+  @if global-variable-exists('css--body') == false or $css--body == true {
+    @include css-body;
+  }
+}

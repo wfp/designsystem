@@ -1,5 +1,5 @@
 {
-  "name": "@wfp/icon-build-helpers",
+  "name": "@unitednations/icon-build-helpers",
   "private": true,
   "description": "Build helpers for the Carbon Design System icon library",
   "version": "0.23.8",

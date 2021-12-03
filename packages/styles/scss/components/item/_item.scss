@@ -77,10 +77,10 @@
     }
     &--repeater {
       cursor: pointer;
-      background: $border-strong;
+      background: $layer;
       margin-bottom: 0.3em;
       &.#{$prefix}--item--active {
-        background: $border-strong;
+        background: $layer-active;
       }
     }
     &--button {

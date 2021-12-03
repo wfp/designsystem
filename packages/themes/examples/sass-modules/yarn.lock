@@ -118,9 +118,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@wfp/themes@link:../../::locator=sass-modules%40workspace%3A.":
+"@unitednations/themes@link:../../::locator=sass-modules%40workspace%3A.":
   version: 0.0.0-use.local
-  resolution: "@wfp/themes@link:../../::locator=sass-modules%40workspace%3A."
+  resolution: "@unitednations/themes@link:../../::locator=sass-modules%40workspace%3A."
   languageName: node
   linkType: soft
 
@@ -2776,7 +2776,7 @@ fsevents@~2.3.1:
   version: 0.0.0-use.local
   resolution: "sass-modules@workspace:."
   dependencies:
-    "@wfp/themes": "link:../../"
+    "@unitednations/themes": "link:../../"
     next: ^10.0.6
     react: ^17.0.1
     react-dom: ^17.0.1

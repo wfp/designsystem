@@ -1,0 +1,147 @@
+//-------------------------
+// 🌍 Global
+//-------------------------
+
+$css--font-face: true !default;
+$css--arabic-font-face: false !default;
+$css--helpers: true !default;
+$css--body: true !default;
+//$css--use-experimental-grid: false !default;
+//$css--use-experimental-grid-fallback: false !default;
+$css--use-layer: true !default;
+$css--reset: true !default;
+$css--typography: true !default;
+$css--variables: true !default;
+
+@use "sass:math";
+//@use '../../../../styles/scss/components/button/button';
+//@import '~@unitednations/styles/scss/components/button/button';
+//@import '~carbon-components/src/components/button/button';
+
+@import 'colors';
+@import 'vars';
+@import '_theme-tokens';
+@import 'mixins';
+@import 'layout';
+@import 'layer';
+@import 'rtl';
+@import 'spacing';
+@import 'typography';
+@import './vendor/@unitednations/import-once/scss/import-once';
+@import 'css--reset';
+@import 'css--font-face';
+@import 'css--helpers';
+@import 'css--body';
+@import 'css--typography';
+
+@import 'text-gradient';
+//@import '../grid/grid';
+
+//-------------------------
+// ☠️  Manage deprecations
+//-------------------------
+
+/**
+ * We flag this variable as true if someone uses the globals/scss/styles.scss
+ * entry-point. This allows us to collect all the messages and display them at
+ * the end of the file instead of bringing it up per-component.
+ *
+ * If a consumer instead gets the components by importing the partial directly,
+ * this variable _will not_ be set to true, so the deprecation message will be
+ * displayed after the @import.
+ */
+$deprecations--entry: true;
+// Collect all deprecation reasons into this list throughout the import cycle.
+$deprecations--reasons: ();
+// This message will be prepended to any deprecation notice
+$deprecations--message: 'Deprecated code was found, this code will be removed before the next release of the UI Kit.';
+
+//-------------------------
+// 🍕 Components
+//-------------------------
+
+//@import '~carbon-components/src/components/button/button';
+
+// @import '../../components/Wrapper/wrapper.scss';
+// @import '../../components/Credits/credits.scss';
+// @import '../../components/DatePicker/date-picker.scss';
+// @import '../../components/FormControls/form-controls.scss';
+// @import '../../components/FormWizard/form-wizard.scss';
+// @import '../../components/FormError/form-error';
+// @import '../../components/FileUploader/file-uploader';
+// @import '../../components/InfoBar/info-bar';
+// @import '../../components/Input/input';
+// @import '../../components/Checkbox/checkbox.scss';
+// @import '../../components/RadioButton/radio-button';
+// @import '../../components/Toggle/toggle.scss';
+// @import '../../components/Search/search.scss';
+// @import '../../components/Select/select.scss';
+// @import '../../components/ReactDropzone/react-dropzone.scss';
+// @import '../../components/ReactSelect/react-select.scss';
+// @import '../../components/TextInput/text-input.scss';
+// @import '../../components/TextArea/text-area.scss';
+// @import '../../components/NumberInput/number-input.scss';
+// @import '../../components/Empty/empty.scss';
+// @import '../../components/Form/form.scss';
+// @import '../../components/FormGroup/form-group.scss';
+// @import '../../components/FormHint/form-hint.scss';
+//@import '../../components/Link/link';
+//@import '../../components/Button/button.scss';
+
+// @import '../../components/ContextMenu/context-menu.scss';
+// @import '../../components/Hero/hero';
+// @import '../../components/Card/card';
+// @import '../../components/ContentSwitcher/content-switcher';
+// @import '../../components/List/list';
+// @import '../../components/Item/item.scss';
+// @import '../../components/Loading/loading'; TODO - look into it more
+// @import '../../components/Modal/modal';
+// @import '../../components/Module/module';
+// @import '../../components/Notification/notification';
+// @import '../../components/User/user';
+// @import '../../components/Value/value';
+// @import '../../components/InlineLoading/inline-loading';
+// @import '../../components/StepNavigation/step-navigation';
+// @import '../../components/StepNavigationItem/step-navigation-item';
+@import '../../components/SkeletonText/skeleton';
+
+// @import '../../components/Tooltip/tooltip';
+// @import '../../components/Tabs/tabs'; //TODO reuse ours or inherit from carbon
+// @import '../../components/Tag/tag';
+
+// @import '../../components/Pagination/pagination';
+// @import '../../components/ReadMore/read-more';
+// @import '../../components/Story/story';
+@import '../../components/Text/text.scss';
+// @import '../../components/Breadcrumb/breadcrumb.scss';
+// @import '../../components/Blockquote/blockquote.scss';
+// @import '../../components/Table/table.scss';
+// @import '../../components/Slider/slider.scss';
+// @import '../../components/Unit/unit.scss';
+
+// @import '../../components/Sidebar/sidebar.scss';
+@import '../../components/SidebarItem/sidebar-item.scss';
+// @import '../../components/AuthLayout/auth-layout.scss';
+//-------------------------------------
+
+// 🙈 Page Elements
+//-------------------------------------
+// @import '../../components/BannerNavigation/banner-navigation';
+// @import '../../components/MainNavigation/main-navigation';
+// @import '../../components/SubNavigation/sub-navigation';
+// @import '../../components/SecondaryNavigation/secondary-navigation';
+// @import '../../components/Footer/footer';
+// @import '../../components/AnchorNavigation/anchor-navigation';
+/*@import '../../components/fab/fab'; */
+
+// Cycle through all the deprecation reasons, if any exist, that have been
+// accumulated through the @import process.
+@if (length($deprecations--reasons) > 0) {
+  $deprecations--message: '';
+
+  @each $reason in $deprecations--reasons {
+    $deprecations--message: '#{$deprecations--message} REASON: #{$reason}';
+  }
+
+  @warn $deprecations--message;
+}

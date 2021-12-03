@@ -21,7 +21,7 @@ const baseConfig = {
     babel({
       babelrc: false,
       //exclude: ['node_modules/**'],
-      include: ['src/**', /node_modules\/@wfp/],
+      include: ['src/**', /node_modules\/@unitednations/],
       exclude: [],
       presets: [
         [
@@ -71,7 +71,7 @@ const umdBundleConfig = {
       'prop-types': 'PropTypes',
       react: 'React',
       'react-dom': 'ReactDOM',
-      //'@wfp/icons': 'WfpIcons',
+      //'@unitednations/icons': 'WfpIcons',
     },
   },
 };

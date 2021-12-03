@@ -1173,9 +1173,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@wfp/themes-examples-preview@workspace:.":
+"@unitednations/themes-examples-preview@workspace:.":
   version: 0.0.0-use.local
-  resolution: "@wfp/themes-examples-preview@workspace:."
+  resolution: "@unitednations/themes-examples-preview@workspace:."
   dependencies:
     classnames: ^2.2.6
     parcel-bundler: ^1.12.4

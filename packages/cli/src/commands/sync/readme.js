@@ -1,6 +1,6 @@
-/** 
-* Do not modify this file. The file is comming from IBM Carbon and created by copy-carbon 
-**/
+/**
+ * Do not modify this file. The file is comming from IBM Carbon and created by copy-carbon
+ **/
 /**
  * Copyright IBM Corp. 2019, 2019
  *
@@ -20,9 +20,9 @@ const monorepo = require('./remark/remark-monorepo');
 const packageDenyList = new Set([
   'wfp-components',
   'wfp-components-react',
-  '@wfp/react',
-  '@wfp/sketch',
-  '@wfp/styles',
+  '@unitednations/react',
+  '@unitednations/sketch',
+  '@unitednations/styles',
 ]);
 
 function run({ root, packagePaths }) {

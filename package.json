@@ -1,5 +1,5 @@
 {
-  "name": "@wfp/designsystem",
+  "name": "@unitednations/designsystem",
   "version": "1.18.2",
   "description": "WFP UI Kit",
   "license": "Apache-2",
@@ -12,7 +12,7 @@
     "wfp/packages/*"
   ],
   "scripts": {
-    "start:ui": "cd packages/ui && yarn start",
+    "start:react": "cd packages/react && yarn start",
     "build": "lerna run build --stream --prefix --npm-client yarn",
     "publish:alpha": "lerna publish --dist-tag alpha",
     "publish:alpha-cli": "lerna publish --dist-tag alpha --no-verify-access",
@@ -53,7 +53,7 @@
     "@testing-library/jest-dom": "^5.11.5",
     "@testing-library/react": "^11.1.1",
     "@testing-library/user-event": "^13.1.9",
-    "@wfp/cli": "10.25.1",
+    "@unitednations/cli": "10.25.12",
     "all-contributors-cli": "^6.19.0",
     "cross-env": "^5.2.0",
     "cross-spawn": "^6.0.5",
@@ -65,7 +65,7 @@
     "in-publish": "^2.0.0",
     "jest": "^27.0.5",
     "jest-junit": "^10.0.0",
-    "lerna": "^3.22.1",
+    "lerna": "^4.0.0",
     "lint-staged": "^9.5.0",
     "node-gyp": "^7.1.2",
     "prettier": "^2.2.1",

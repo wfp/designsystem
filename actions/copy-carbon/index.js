@@ -43,7 +43,7 @@ async function get_request() {
           to: () => 'wfp',
         })
         .pipe({
-          from: /@wfp\/cli-reporter/g,
+          from: /@unitednations\/cli-reporter/g,
           to: () => '@carbon/cli-reporter',
         })
         .pipe({

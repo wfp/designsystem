@@ -1,0 +1,140 @@
+//-----------------------------
+// List
+//-----------------------------
+/*
+@import '../../globals/scss/colors';
+@import '../../globals/scss/vars';
+@import '../../globals/scss/layout';
+@import '../../globals/scss/typography';
+@import '../../globals/scss/helper-mixins';
+@import '../../globals/scss/vendor/@unitednations/import-once/scss/import-once';
+
+@include exports('list') {
+  .#{$prefix}--list {
+    @include reset;
+    @include font-family;
+    .#{$prefix}--list-item--checkmark,
+    .#{$prefix}--list-item--cross {
+      list-style-type: none;
+      position: relative;
+      .#{$prefix}--list-item__icon {
+        position: absolute;
+        left: -1.4rem;
+        top: 0.4em;
+        path {
+          fill: var(--support-02);
+        }
+      }
+    }
+
+    .#{$prefix}--list-item--cross {
+      .#{$prefix}--list-item__icon {
+        top: 0.3em;
+        path {
+          fill: var(--support-01);
+        }
+      }
+    }
+  }
+
+  .#{$prefix}--list--colon {
+    .#{$prefix}--list__element__title {
+      &:after {
+        content: ':';
+      }
+    }
+  }
+
+  .#{$prefix}--list--unstyled, 
+  .#{$prefix}--list--simple  //renamed simple to unstyled, keeping simple styling to prevent legacy code from breaking
+  {
+    line-height: 1.5em;
+
+    li {
+      display: flex;
+    }
+
+    .#{$prefix}--list__element__title {
+      font-weight: 700;
+      margin-right: rem(5px);
+    }
+  }
+
+  .#{$prefix}--list--unordered,
+  .#{$prefix}--list--bullets, //renamed bullets to unordered, keeping bullets styling to prevent legacy code from breaking
+  .#{$prefix}--list--ordered {
+    line-height: 1.6em;
+    list-style-type: disc;
+    margin-left: 1.5em;
+    .#{$prefix}--list__element__title {
+      font-weight: 700;
+      margin-right: rem(5px);
+    }
+    li {
+      margin-bottom: 0.7em;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .#{$prefix}--list--ordered {
+    list-style-type: decimal;
+  }
+
+  .#{$prefix}--list--tooltip {
+    li {
+      padding: $spacing-xs;
+      border-bottom: 1px solid var(--ui-02);
+    }
+  }
+
+  .#{$prefix}--list--simple-inline {
+    line-height: 1.5em;
+    display: flex;
+    flex-wrap: wrap;
+
+    li {
+      display: flex;
+      margin-right: 1em;
+    }
+
+    .#{$prefix}--list__element__title {
+      font-weight: 700;
+      margin-right: rem(5px);
+    }
+  }
+
+  .#{$prefix}--list--small {
+    font-size: 0.8em;
+  }
+
+  .#{$prefix}--list--details {
+    @include line-height('body');
+    list-style-type: none;
+    margin: 0;
+
+    li {
+      break-inside: avoid-column;
+    }
+
+    .#{$prefix}--list__element__title {
+      font-weight: 600;
+      display: block;
+      @include typescale('delta');
+      margin-bottom: $spacing-xs;
+    }
+
+    .#{$prefix}--list__element__content {
+      @include typescale('epsilon');
+      display: block;
+    }
+    .#{$prefix}--list__element {
+      margin-bottom: $spacing-xs;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+*/

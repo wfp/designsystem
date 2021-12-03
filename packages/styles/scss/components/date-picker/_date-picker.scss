@@ -101,7 +101,7 @@ $input-height: 40px !default;
     visibility: hidden;
   }
   .SingleDatePickerInput_clearDate_svg {
-    fill: #82888a;
+    fill: $interactive;
     height: 12px;
     width: 12px;
     vertical-align: middle;
@@ -319,7 +319,7 @@ $input-height: 40px !default;
   }
   .DayPickerKeyboardShortcuts_closeSvg:focus,
   .DayPickerKeyboardShortcuts_closeSvg:hover {
-    fill: #82888a;
+    fill: $interactive;
   }
   .CalendarDay {
     -moz-box-sizing: border-box;
@@ -378,7 +378,7 @@ $input-height: 40px !default;
     color: #484848;
   }
   .CalendarDay__selected_span {
-    background:  #80bede;
+    background: #80bede;
     border: 1px double darken(#80bede, 5);
     color: $text-on-color;
   }
@@ -415,7 +415,7 @@ $input-height: 40px !default;
   .CalendarDay__blocked_calendar:hover {
     background: #cacccd;
     border: 1px solid #cacccd;
-    color: #82888a;
+    color: $interactive;
   }
   .CalendarDay__blocked_out_of_range,
   .CalendarDay__blocked_out_of_range:active,
@@ -565,7 +565,7 @@ $input-height: 40px !default;
   .DayPickerNavigation_svg__horizontal {
     height: 19px;
     width: 19px;
-    fill: $interactive;
+    fill: var(--field-border-01);
     display: block;
   }
   .DayPickerNavigation_svg__vertical {
@@ -753,6 +753,9 @@ $input-height: 40px !default;
     //display: inline-block;
     display: flex;
     align-items: center;
+    .DateInput_input {
+      padding: 0 $spacing-03;
+    }
   }
   .DateRangePickerInput__disabled {
     background: #f2f2f2;
@@ -807,7 +810,7 @@ $input-height: 40px !default;
     visibility: hidden;
   }
   .DateRangePickerInput_clearDates_svg {
-    fill: #82888a;
+    fill: $interactive;
     height: 12px;
     width: 15px;
     vertical-align: middle;
@@ -829,7 +832,7 @@ $input-height: 40px !default;
     margin: 0 5px 0 5px;
   }
   .DateRangePickerInput_calendarIcon_svg {
-    fill: #82888a;
+    fill: var(--field-border-01);
     height: 15px;
     width: 14px;
     vertical-align: middle;

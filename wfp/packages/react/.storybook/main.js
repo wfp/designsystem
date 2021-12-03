@@ -1,7 +1,7 @@
 /*
 
 TODO: use file instead
-const mainStorybook = require('@wfp/ui/.storybook/main');
+const mainStorybook = require('@unitednations/react/.storybook/main');
 module.exports = mainStorybook;
 */
 
@@ -52,7 +52,7 @@ module.exports = {
     // TODO: Check loader validity
     babelLoader.exclude = [
       // /node_modules\/(?!@wfpd).*/,
-      /node_modules\/(?!@wfp).*/,
+      /node_modules\/(?!@unitednations).*/,
       /node_modules\/.*\/(es|lib|umd)/,
       /packages\/.*\/(es|lib|umd)/,
     ];

@@ -1,5 +1,5 @@
 /* eslint-disable */
-/* Do not edit file! Updated at Mon, 08 Nov 2021 15:17:29 GMT from Figma */
+/* Do not edit file! Updated at Mon, 29 Nov 2021 19:56:07 GMT from Figma */
 
 const meta = {
   corporate1: {
@@ -760,11 +760,11 @@ const meta = {
     description: "Tertiary button",
     variable: "buttonTertiary",
     former: "Previous token:\nbackground: none (transparent)\nborder and label: text-02",
-    hex: "#5a6872",
+    hex: "#d7dfe7",
     rgba: {
-      r: 0.3529411852359772,
-      g: 0.40784314274787903,
-      b: 0.4470588266849518,
+      r: 0.843137264251709,
+      g: 0.8745098114013672,
+      b: 0.9058823585510254,
       a: 1
     },
     category: "Button"
@@ -773,11 +773,11 @@ const meta = {
     description: "Hover state to tertiary button",
     variable: "buttonTertiaryHover",
     former: "Previous token: \nbackground: ui-02\nborder: text-02\nlabel: text-01",
-    hex: "#031c2d",
+    hex: "#c5d0db",
     rgba: {
-      r: 0.0117647061124444,
-      g: 0.10980392247438431,
-      b: 0.1764705926179886,
+      r: 0.772656261920929,
+      g: 0.817578136920929,
+      b: 0.862500011920929,
       a: 1
     },
     category: "Button"
@@ -786,11 +786,11 @@ const meta = {
     description: "Active state to tertiary button",
     variable: "buttonTertiaryActive",
     former: "Previous token:\nbackground: transparent\nborder: text-02\ntext: ui-05",
-    hex: "#031c2d",
+    hex: "#c5d0dc",
     rgba: {
-      r: 0.0117647061124444,
-      g: 0.10980392247438431,
-      b: 0.1764705926179886,
+      r: 0.772549033164978,
+      g: 0.8156862854957581,
+      b: 0.8627451062202454,
       a: 1
     },
     category: "Button"
@@ -1522,6 +1522,435 @@ const meta = {
       a: 1
     },
     category: "Logo"
+  },
+  datavisSequentialDefaultSequentialDefault1: {
+    description: "Swatch n.1 in the serie",
+    variable: "sequential-default-01",
+    former: "Previous ",
+    hex: "#9deaff",
+    rgba: {
+      r: 0.615686297416687,
+      g: 0.9176470637321472,
+      b: 1,
+      a: 1
+    },
+    category: "DataVis "
+  },
+  datavisSequentialDefaultSequentialDefault2: {
+    description: "Swatch n.2 in the serie",
+    variable: "sequential-default-02",
+    former: "no former color",
+    hex: "#73c3fe",
+    rgba: {
+      r: 0.45098039507865906,
+      g: 0.7647058963775635,
+      b: 0.9960784316062927,
+      a: 1
+    },
+    category: "DataVis "
+  },
+  datavisSequentialDefaultSequentialDefault3: {
+    description: "Swatch n.3 in the serie",
+    variable: "sequential-default-03",
+    former: "no former color",
+    hex: "#4aa1e2",
+    rgba: {
+      r: 0.29019609093666077,
+      g: 0.6313725709915161,
+      b: 0.886274516582489,
+      a: 1
+    },
+    category: "DataVis "
+  },
+  datavisSequentialDefaultSequentialDefault4: {
+    description: "Swatch n.4 in the serie",
+    variable: "sequential-default-04",
+    former: "no former color",
+    hex: "#0780c0",
+    rgba: {
+      r: 0.027450980618596077,
+      g: 0.501960813999176,
+      b: 0.7529411911964417,
+      a: 1
+    },
+    category: "DataVis "
+  },
+  datavisSequentialDefaultSequentialDefault5: {
+    description: "Swatch n.5 in the serie",
+    variable: "sequential-default-05",
+    former: "no former color",
+    hex: "#005f9b",
+    rgba: {
+      r: 0,
+      g: 0.37254902720451355,
+      b: 0.6078431606292725,
+      a: 1
+    },
+    category: "DataVis "
+  },
+  datavisSequentialDefaultSequentialDefault6: {
+    description: "Swatch n.6 in the serie",
+    variable: "sequential-default-06",
+    former: "no former color",
+    hex: "#003f76",
+    rgba: {
+      r: 0,
+      g: 0.24705882370471954,
+      b: 0.4627451002597809,
+      a: 1
+    },
+    category: "DataVis "
+  },
+  datavisSequentialDefaultSequentialDefault7: {
+    description: "Swatch n.7 in the serie",
+    variable: "sequential-default-07",
+    former: "no former color",
+    hex: "#002153",
+    rgba: {
+      r: 0,
+      g: 0.12941177189350128,
+      b: 0.32549020648002625,
+      a: 1
+    },
+    category: "DataVis "
+  },
+  datavisSequentialSecondarySequentialSecondary1: {
+    description: "Swatch n.1 in the serie",
+    variable: "sequential-secondary-01",
+    former: "no former color",
+    hex: "#bdf9c4",
+    rgba: {
+      r: 0.7411764860153198,
+      g: 0.9764705896377563,
+      b: 0.7686274647712708,
+      a: 1
+    },
+    category: "DataVis "
+  },
+  datavisSequentialSecondarySequentialSecondary2: {
+    description: "Swatch n.2 in the serie",
+    variable: "sequential-secondary-02",
+    former: "no former color",
+    hex: "#89eaa8",
+    rgba: {
+      r: 0.5372549295425415,
+      g: 0.9176470637321472,
+      b: 0.658823549747467,
+      a: 1
+    },
+    category: "DataVis "
+  },
+  datavisSequentialSecondarySequentialSecondary3: {
+    description: "Swatch n.3 in the serie",
+    variable: "sequential-secondary-03",
+    former: "no former color",
+    hex: "#5fd79a",
+    rgba: {
+      r: 0.37254902720451355,
+      g: 0.843137264251709,
+      b: 0.6039215922355652,
+      a: 1
+    },
+    category: "DataVis "
+  },
+  datavisSequentialSecondarySequentialSecondary4: {
+    description: "Swatch n.4 in the serie",
+    variable: "sequential-secondary-04",
+    former: "no former color",
+    hex: "#41c196",
+    rgba: {
+      r: 0.2549019753932953,
+      g: 0.7568627595901489,
+      b: 0.5882353186607361,
+      a: 1
+    },
+    category: "DataVis "
+  },
+  datavisSequentialSecondarySequentialSecondary5: {
+    description: "Swatch n.5 in the serie",
+    variable: "sequential-secondary-05",
+    former: "no former color",
+    hex: "#33aa96",
+    rgba: {
+      r: 0.20000000298023224,
+      g: 0.6666666865348816,
+      b: 0.5882353186607361,
+      a: 1
+    },
+    category: "DataVis "
+  },
+  datavisSequentialSecondarySequentialSecondary6: {
+    description: "Swatch n.6 in the serie",
+    variable: "sequential-secondary-06",
+    former: "no former color",
+    hex: "#319298",
+    rgba: {
+      r: 0.1921568661928177,
+      g: 0.572549045085907,
+      b: 0.5960784554481506,
+      a: 1
+    },
+    category: "DataVis "
+  },
+  datavisSequentialSecondarySequentialSecondary7: {
+    description: "Swatch n.7 in the serie",
+    variable: "sequential-secondary-07",
+    former: "no former color",
+    hex: "#367a96",
+    rgba: {
+      r: 0.21176470816135406,
+      g: 0.47843137383461,
+      b: 0.5882353186607361,
+      a: 1
+    },
+    category: "DataVis "
+  },
+  datavisCategoricalCategorical1: {
+    description: "Swatch n.1 in the serie",
+    variable: "categorical-01",
+    former: "no former color",
+    hex: "#007dbc",
+    rgba: {
+      r: 0,
+      g: 0.4901960790157318,
+      b: 0.7372549176216125,
+      a: 1
+    },
+    category: "DataVis "
+  },
+  datavisCategoricalCategorical2: {
+    description: "Swatch n.2 in the serie",
+    variable: "categorical-02",
+    former: "no former color",
+    hex: "#36b5c5",
+    rgba: {
+      r: 0.21176470816135406,
+      g: 0.7098039388656616,
+      b: 0.772549033164978,
+      a: 1
+    },
+    category: "DataVis "
+  },
+  datavisCategoricalCategorical3: {
+    description: "Swatch n.3 in the serie",
+    variable: "categorical-03",
+    former: "no former color",
+    hex: "#00b485",
+    rgba: {
+      r: 0,
+      g: 0.7058823704719543,
+      b: 0.5215686559677124,
+      a: 1
+    },
+    category: "DataVis "
+  },
+  datavisCategoricalCategorical4: {
+    description: "Swatch n.4 in the serie",
+    variable: "categorical-04",
+    former: "no former color",
+    hex: "#008868",
+    rgba: {
+      r: 0,
+      g: 0.5333333611488342,
+      b: 0.40784314274787903,
+      a: 1
+    },
+    category: "DataVis "
+  },
+  datavisCategoricalCategorical5: {
+    description: "Swatch n.5 in the serie",
+    variable: "categorical-05",
+    former: "no former color",
+    hex: "#1a4262",
+    rgba: {
+      r: 0.10196078568696976,
+      g: 0.25882354378700256,
+      b: 0.3843137323856354,
+      a: 1
+    },
+    category: "DataVis"
+  },
+  datavisCategoricalCategorical6: {
+    description: "Swatch n.6 in the serie",
+    variable: "categorical-06",
+    former: "no former color",
+    hex: "#982b56",
+    rgba: {
+      r: 0.5960784554481506,
+      g: 0.16862745583057404,
+      b: 0.33725491166114807,
+      a: 1
+    },
+    category: "DataVis "
+  },
+  datavisCategoricalCategorical7: {
+    description: "Swatch n.7 in the serie",
+    variable: "categorical-07",
+    former: "no former color",
+    hex: "#ef404c",
+    rgba: {
+      r: 0.9372549057006836,
+      g: 0.250980406999588,
+      b: 0.2980392277240753,
+      a: 1
+    },
+    category: "DataVis "
+  },
+  datavisCategoricalCategorical8: {
+    description: "Swatch n.8 in the serie",
+    variable: "categorical-08",
+    former: "no former color",
+    hex: "#f47847",
+    rgba: {
+      r: 0.95686274766922,
+      g: 0.47058823704719543,
+      b: 0.27843138575553894,
+      a: 1
+    },
+    category: "DataVis "
+  },
+  datavisCategoricalCategorical9: {
+    description: "Swatch n.9 in the serie",
+    variable: "categorical-09",
+    former: "no former color",
+    hex: "#b79f8d",
+    rgba: {
+      r: 0.7176470756530762,
+      g: 0.6235294342041016,
+      b: 0.5529412031173706,
+      a: 1
+    },
+    category: "DataVis "
+  },
+  datavisCategoricalCategorical10: {
+    description: "Swatch n.10 in the serie",
+    variable: "categorical-10",
+    former: "no former color",
+    hex: "#ecdfbb",
+    rgba: {
+      r: 0.9254902005195618,
+      g: 0.8745098114013672,
+      b: 0.7333333492279053,
+      a: 1
+    },
+    category: "DataVis "
+  },
+  datavisDivergingDiverging1: {
+    description: "Swatch n.1 in the serie",
+    variable: "diverging-01",
+    former: "no former color",
+    hex: "#73c5d0",
+    rgba: {
+      r: 0.45098039507865906,
+      g: 0.772549033164978,
+      b: 0.8156862854957581,
+      a: 1
+    },
+    category: "DataVis "
+  },
+  datavisDivergingDiverging2: {
+    description: "Swatch n.2 in the serie",
+    variable: "diverging-02",
+    former: "no former color",
+    hex: "#ecdfbb",
+    rgba: {
+      r: 0.9254902005195618,
+      g: 0.8745098114013672,
+      b: 0.7333333492279053,
+      a: 1
+    },
+    category: "DataVis "
+  },
+  datavisAlertAlert1: {
+    description: "Swatch n.1 in the serie",
+    variable: "alert-01",
+    former: "no former color",
+    hex: "#5fd79a",
+    rgba: {
+      r: 0.37254902720451355,
+      g: 0.843137264251709,
+      b: 0.6039215922355652,
+      a: 1
+    },
+    category: "DataVis "
+  },
+  datavisAlertAlert2: {
+    description: "Swatch n.2 in the serie",
+    variable: "alert-02",
+    former: "no former color",
+    hex: "#a0db90",
+    rgba: {
+      r: 0.6274510025978088,
+      g: 0.8588235378265381,
+      b: 0.5647059082984924,
+      a: 1
+    },
+    category: "DataVis "
+  },
+  datavisAlertAlert3: {
+    description: "Swatch n.3 in the serie",
+    variable: "alert-03",
+    former: "no former color",
+    hex: "#d0de85",
+    rgba: {
+      r: 0.8156862854957581,
+      g: 0.8705882430076599,
+      b: 0.5215686559677124,
+      a: 1
+    },
+    category: "DataVis "
+  },
+  datavisAlertAlert4: {
+    description: "Swatch n.4 in the serie",
+    variable: "alert-04",
+    former: "no former color",
+    hex: "#fbe07a",
+    rgba: {
+      r: 0.9843137264251709,
+      g: 0.8784313797950745,
+      b: 0.47843137383461,
+      a: 1
+    },
+    category: "DataVis "
+  },
+  datavisAlertAlert5: {
+    description: "Swatch n.5 in the serie",
+    variable: "alert-05",
+    former: "no former color",
+    hex: "#fbb16a",
+    rgba: {
+      r: 0.9843137264251709,
+      g: 0.6941176652908325,
+      b: 0.4156862795352936,
+      a: 1
+    },
+    category: "DataVis "
+  },
+  datavisAlertAlert6: {
+    description: "Swatch n.6 in the serie",
+    variable: "alert-06",
+    former: "no former color",
+    hex: "#f77f5b",
+    rgba: {
+      r: 0.9686274528503418,
+      g: 0.49803921580314636,
+      b: 0.35686275362968445,
+      a: 1
+    },
+    category: "DataVis "
+  },
+  datavisAlertAlert7: {
+    description: "Swatch n.7 in the serie",
+    variable: "alert-07",
+    former: "no former color",
+    hex: "#ef404c",
+    rgba: {
+      r: 0.9372549057006836,
+      g: 0.250980406999588,
+      b: 0.2980392277240753,
+      a: 1
+    },
+    category: "DataVis "
   }
 };
 export default meta;

@@ -1,0 +1,14 @@
+@import './vendor/@unitednations/import-once/scss/import-once';
+@import 'tajawal';
+
+$css--arabic-font-face: true;
+
+@include exports('css--arabic-font-face') {
+  @if not
+    global-variable-exists('css--arabic-font-face') or
+    $css--arabic-font-face ==
+    true
+  {
+    @include tajawal-font-face;
+  }
+}

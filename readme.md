@@ -14,27 +14,27 @@
 Run the following command using [npm](https://www.npmjs.com/):
 
 ```bash
-npm install @wfp/ui
-npm install @wfp/icons
+npm install @unitednations/react
+npm install @unitednations/icons
 ```
 
 or [yarn](https://yarnpkg.com/lang/en/):
 
 ```bash
-yarn add @wfp/ui
-yarn add @wfp/icons
+yarn add @unitednations/react
+yarn add @unitednations/icons
 ```
 
 Import a react component
 
 ```jsx
-import { Breadcrumb, BreadcrumbItem, BreadcrumbHome } from '@wfp/ui';
+import { Breadcrumb, BreadcrumbItem, BreadcrumbHome } from '@unitednations/react';
 ```
 
 Import the CSS
 
 ```jsx
-import '@wfp/ui/assets/css/styles.css';
+import '@unitednations/react/assets/css/styles.css';
 ```
 
 Additional information about the Usage can be found [here](https://wfp.org/UIGuide).
@@ -68,16 +68,16 @@ TODO: improve documentation
 Install the latest alpha versions to use the Design System Alpha within your project
 
 ```bash
-npm install @wfp/ui@alpha @wfp/icons@alpha  @wfp/icons-react@alpha  @wfp/layout@alpha  @wfp/styles@alpha  @wfp/themes@alpha  @wfp/type@alpha
+npm install @unitednations/react@alpha @unitednations/icons@alpha  @unitednations/icons-react@alpha  @unitednations/layout@alpha  @unitednations/styles@alpha  @unitednations/themes@alpha  @unitednations/type@alpha
 ```
 
 ### Upgrade to 2.0 for existing solutions
 
 In version 2.0 some paths will change due to the new monorepo architecture which is inline with Carbon Design System.
 
-- `<Icon icon={iconName} />` becomes `<IconName />` imported from `import { IconName } from @wfp/icons-react``
-- `import { Component } from "@wfp/ui"` becomes `import { Component } from "@wfp/react"`
-- `@import '@wfp/ui/scss/globals/scss/styles.scss';` becomes `@import '@wfp/TODO:DEFINEPACKAGENAME';"`
+- `<Icon icon={iconName} />` becomes `<IconName />` imported from `import { IconName } from @unitednations/icons-react``
+- `import { Component } from "@unitednations/react"` becomes `import { Component } from "@unitednations/react"`
+- `@import '@unitednations/react/scss/globals/scss/styles.scss';` becomes `@import '@unitednations/TODO:DEFINEPACKAGENAME';"`
 - Multiple variables like `$ui-01` becomes `$layer` to provide better readability. A full list can be found here. TODO:ENTERURLTOCOLOURS
 - `inputRef` is deprecated. Use `ref` instead.
 

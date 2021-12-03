@@ -1,0 +1,22 @@
+//-----------------------------
+// Link
+//-----------------------------
+
+@import '../../globals/scss/colors';
+@import '../../globals/scss/vars';
+@import '../../globals/scss/layout';
+@import '../../globals/scss/typography';
+@import '../../globals/scss/helper-mixins';
+@import '../../globals/scss/vendor/@unitednations/import-once/scss/import-once';
+@import '../../globals/scss/css--reset';
+
+@include exports('form-error') {
+  .#{$prefix}--form-error__title {
+    margin-bottom: $spacing-xs;
+  }
+
+  .#{$prefix}--form-error__list {
+    list-style-type: disc;
+    margin-left: 1.3rem;
+  }
+}

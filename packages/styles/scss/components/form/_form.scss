@@ -33,8 +33,6 @@ $input-label-weight: 400 !default;
     //margin-bottom: 2rem;
   }
 
-  
-
   .#{$prefix}--label {
     @include reset;
     @include font-family('sans');
@@ -93,7 +91,7 @@ $input-label-weight: 400 !default;
   }
 
   .#{$prefix}--form-item--invalid {
-    .#{$prefix}--form-requirement {
+    ~ .#{$prefix}--form-requirement {
       //max-height: rem(200px);
       display: block;
     }
@@ -114,7 +112,11 @@ $input-label-weight: 400 !default;
     display: none;
     order: 3;
     color: $support-error;
-
+    // TODO: check if there is a better auto sizing for icons
+    > svg {
+      width: auto;
+      height: 1em;
+    }
     &.invalid {
       max-height: rem(200px);
       display: block;
@@ -141,8 +143,6 @@ $input-label-weight: 400 !default;
     // opacity: 1;
     margin-bottom: $spacing-03;
   }
-
-  
 }
 
 // @mixin form--experimental {
@@ -205,7 +205,7 @@ $input-label-weight: 400 !default;
 //   select[data-invalid],
 //   .#{$prefix}--form-item--invalid,
 //   .#{$prefix}--list-box[data-invalid] {
-//     border-color: $support-error; // TODO $border-error 
+//     border-color: $support-error; // TODO $border-error
 //     //box-shadow: 0 2px 0px 0px var(--support-01);
 
 //     ~ .#{$prefix}--form-requirement {
@@ -255,10 +255,8 @@ $input-label-weight: 400 !default;
 //   }
 // }
 
-
 // @if feature-flag-enabled('components-x') {
 //     @include form--experimental;
 //   } @else {
 //     @include form;
 // }
-

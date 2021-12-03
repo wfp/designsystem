@@ -1,0 +1,104 @@
+//-----------------------------
+// Link
+//-----------------------------
+/*
+@import '../../globals/scss/colors';
+@import '../../globals/scss/vars';
+@import '../../globals/scss/layout';
+@import '../../globals/scss/typography';
+@import '../../globals/scss/helper-mixins';
+@import '../../globals/scss/vendor/@unitednations/import-once/scss/import-once';
+@import '../../globals/scss/css--reset';
+
+@include exports('empty') {
+  .#{$prefix}--empty {
+    padding: $spacing-lg;
+    margin: 0;
+    display: flex !important;
+    background: var(--ui-02);
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    &--section {
+      padding: $spacing-xl 0;
+      text-align: left;
+      flex-direction: row;
+      justify-content: space-between;
+      h2 {
+        @include typescale('epsilon');
+      }
+      p {
+        opacity: 0.6;
+        @include typescale('omega');
+      }
+      .#{$prefix}--empty__icon {
+        margin-bottom: 1em;
+        display: none;
+        svg,
+        .svg-inline--fa {
+          width: 5rem;
+          height: 5rem;
+          path {
+            // fill: var(--interactive-01);
+          }
+          margin-bottom: $spacing-xs;
+        }
+      }
+    }
+    &--large {
+      min-height: 17rem;
+      padding: 2rem 0;
+      height: 100%;
+      width: 100%;
+
+      > div {
+        margin-top: 0rem;
+      }
+
+      h2 {
+        margin-bottom: $spacing-xs;
+      }
+
+      p {
+        color: var(--ui-05);
+      }
+      .#{$prefix}--empty__button {
+        margin-top: $spacing-md;
+        .wfp--btn {
+          margin: $spacing-2xs;
+        }
+      }
+    }
+  }
+
+  .#{$prefix}--empty__icon {
+    svg,
+    .svg-inline--fa {
+      width: 5rem;
+      height: 5rem;
+      path {
+        //fill: $interactive-01;
+      }
+      margin-bottom: $spacing-xs;
+    }
+    .#{$prefix}--empty--large & {
+      padding: 0 2rem;
+      //height: 100%;
+      img {
+        width: 35rem;
+        max-width: 100%;
+        max-height: 15rem;
+        height: auto;
+      }
+      svg,
+      .svg-inline--fa {
+        width: 15rem;
+        height: 15rem;
+      }
+      margin-bottom: $spacing-lg;
+    }
+  }
+}
+*/
