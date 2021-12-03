@@ -417,7 +417,9 @@ export default class Modal extends Component {
       <div
         {...other}
         onKeyDown={this.handleKeyDown}
-        onClick={this.handleClick}
+        // onClick={this.handleClick} 
+        //using onMouseDown instead of onClick to prevent modal from closing when releasing mouse on background 
+        onMouseDown={this.handleClick}
         onBlur={this.handleBlur}
         className={modalClasses}
         style={
