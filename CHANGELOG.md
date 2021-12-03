@@ -1,3 +1,11 @@
+## [1.20.5](https://github.com/wfp/ui/compare/v1.20.4...v1.20.5) (2021-12-03)
+
+
+### Bug Fixes
+
+* **DatePicker:** input onChange handler updated ([#488](https://github.com/wfp/ui/issues/488)) ([e809fe5](https://github.com/wfp/ui/commit/e809fe5f73a955aa401dae793ebffd69d51659f4))
+* **DateRangerPicker:** removed console.log ([768136f](https://github.com/wfp/ui/commit/768136f2f92a77aee51012a7eae0f12d9ff0b497))
+
 ## [1.20.4](https://github.com/wfp/ui/compare/v1.20.3...v1.20.4) (2021-12-03)
 
 
