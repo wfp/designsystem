@@ -8,17 +8,17 @@
 /* eslint-disable no-console */
 
 import React from 'react';
-import { action } from '@storybook/addon-actions';
+// import { action } from '@storybook/addon-actions';
 //import { withKnobs, text, boolean, select } from '@storybook/addon-knobs';
-import { Download16 } from '@carbon/icons-react';
+// import { Download16 } from '@carbon/icons-react';
 import Link from '../Link';
-import mdx from './Link.mdx';
+// import mdx from './Link.mdx';
 
-const sizes = {
-  'Small  (sm)': 'sm',
-  'Medium (md) - default': undefined,
-  'Large  (lg)': 'lg',
-};
+// const sizes = {
+//   'Small  (sm)': 'sm',
+//   'Medium (md) - default': undefined,
+//   'Large  (lg)': 'lg',
+// };
 
 export default {
   title: 'Components/Link',
@@ -40,8 +40,8 @@ _Default.story = {
   name: 'Link',
 };
 
-export const PairedWithIcon = () => (
-  <Link href="http://www.carbondesignsystem.com" renderIcon={Download16}>
-    Download
-  </Link>
-);
+// export const PairedWithIcon = () => (
+//   <Link href="http://www.carbondesignsystem.com" renderIcon={Download16}>
+//     Download
+//   </Link>
+// );
