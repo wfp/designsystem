@@ -1,3 +1,12 @@
+## [1.20.4](https://github.com/wfp/ui/compare/v1.20.3...v1.20.4) (2021-12-03)
+
+
+### Bug Fixes
+
+* **Modal:** remove console log ([3680780](https://github.com/wfp/ui/commit/368078068b7faac8bbaf0f6263d557e9a83f5e23))
+* **Modal:** remove width assigned to subnavigation in MainNavigationstories ([932a3dc](https://github.com/wfp/ui/commit/932a3dc51483b11f430b6ead06a5b92978f49189))
+* **Modal:** Use onMouseDown instead of onClick for backdrop click detection ([ec923ea](https://github.com/wfp/ui/commit/ec923ea98569cced7e6f72df0466c636a10da0b3))
+
 ## [1.20.3](https://github.com/wfp/ui/compare/v1.20.2...v1.20.3) (2021-10-19)
 
 
