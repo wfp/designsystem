@@ -1,9 +1,11 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
+import { withUNCoreSettings } from '../UNCoreSettings';
 
-export default class FormWizard extends React.Component {
+class FormWizard extends React.Component {
   static propTypes = {
+    prefix: PropTypes.string.isRequired,
     /**
      * Specify a custom css class
      * which is added to the container
@@ -30,11 +32,15 @@ export default class FormWizard extends React.Component {
       formControls: classNames('wfp--form-wizard', className),
     };
 
+    const { prefix } = this.props;
+
     return (
       <div className={classes.formControls}>
-        <div className="wfp--form-wizard__sidebar">{sidebar}</div>
-        <div className="wfp--form-wizard__content">{children}</div>
+        <div className={`${prefix}--form-wizard__sidebar`}>{sidebar}</div>
+        <div className={`${prefix}--form-wizard__content`}>{children}</div>
       </div>
     );
   }
 }
+
+export default withUNCoreSettings(FormWizard);

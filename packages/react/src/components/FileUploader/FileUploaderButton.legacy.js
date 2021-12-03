@@ -2,14 +2,12 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { settings } from '../../globals/js';
+import { withUNCoreSettings } from '../UNCoreSettings';
 import uid from '../../tools/uniqueId';
 import { ButtonTypes } from '../../prop-types/types';
 //import Filename from '../FileUploader/Filename';
 
-const { prefix } = settings;
-
-export class FileUploaderButton extends Component {
+class FileUploaderButton extends Component {
   state = {};
 
   static propTypes = {
@@ -126,6 +124,7 @@ export class FileUploaderButton extends Component {
 
   render() {
     const {
+      prefix,
       className,
       disableLabelChanges, // eslint-disable-line
       labelText, // eslint-disable-line
@@ -180,3 +179,7 @@ export class FileUploaderButton extends Component {
     );
   }
 }
+
+const FileUploaderButtonWithSettings = withUNCoreSettings(FileUploaderButton);
+
+export { FileUploaderButtonWithSettings as FileUploaderButton };

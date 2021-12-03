@@ -1,7 +1,7 @@
 import React from 'react';
+import useSettings from '../../hooks/useSettings';
 
-export default class TagSkeleton extends React.Component {
-  render() {
-    return <span className="wfp--tag wfp--skeleton" />;
-  }
-}
+const TagSkeleton = () => {
+  const { prefix } = useSettings();
+  return <span className={`${prefix}--tag ${prefix}--skeleton`} />;
+};

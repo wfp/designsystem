@@ -1,12 +1,12 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import classnames from 'classnames';
-import { settings } from '../../globals/js';
-
-const { prefix } = settings;
+import useSettings from '../../hooks/useSettings';
 
 /** A form is a group of related input controls that allows users to provide data or configure options. */
 const Form = ({ className, children, longForm, ...other }) => {
+  const { prefix } = useSettings();
+
   const classNames = classnames(
     `${prefix}--form`,
     { [`${prefix}--form-long`]: longForm === true },

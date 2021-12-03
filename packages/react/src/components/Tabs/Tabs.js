@@ -2,13 +2,12 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
 import TabContent from '../TabContent';
-import { settings } from '../../globals/js';
-
-const { prefix } = settings;
+import { withUNCoreSettings } from '../UNCoreSettings';
 
 /** Tabs allow users to navigate easily between views within the same context */
 class Tabs extends React.Component {
   static propTypes = {
+    prefix: PropTypes.string.isRequired,
     /**
      * Specify the text to be read by screen-readers when visiting the <Tabs>
      * component
@@ -205,6 +204,7 @@ class Tabs extends React.Component {
 
   render() {
     const {
+      prefix,
       ariaLabel,
       disableAnimation,
       inline,
@@ -278,4 +278,4 @@ class Tabs extends React.Component {
   }
 }
 
-export default Tabs;
+export default withUNCoreSettings(Tabs);

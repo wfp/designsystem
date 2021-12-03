@@ -3,18 +3,17 @@ import PropTypes from 'prop-types';
 import Button from '../Button';
 import Wrapper from '../Wrapper';
 
-import { settings } from '../../globals/js';
-const { prefix } = settings;
+import useSettings from '../../hooks/useSettings';
+const { prefix } = useSettings();
 
 const HeroExternal = ({
-  title, 
-  subTitle, 
-  image, 
+  title,
+  subTitle,
+  image,
   children,
   className,
   ...other
 }) => {
-
   const wrapperClasses = classNames(`${prefix}--hero-ext`, {
     [`${className}`]: className,
   });
@@ -32,7 +31,9 @@ const HeroExternal = ({
       <Wrapper pageWidth="md">
         <div className={`${prefix}--hero-ext__content`}>
           {title && <h1 className={`${prefix}--hero-ext__heading`}>{title}</h1>}
-          {subTitle && <p className={`${prefix}--hero-ext__body-copy`}>{subTitle}</p>}
+          {subTitle && (
+            <p className={`${prefix}--hero-ext__body-copy`}>{subTitle}</p>
+          )}
         </div>
         {children}
       </Wrapper>
@@ -41,11 +42,11 @@ const HeroExternal = ({
 };
 
 HeroExternal.propTypes = {
-  title: PropTypes.node, 
-  subTitle: PropTypes.node, 
-  image: PropTypes.string, 
+  title: PropTypes.node,
+  subTitle: PropTypes.node,
+  image: PropTypes.string,
   children: PropTypes.node,
-  className: PropTypes.string
-}
+  className: PropTypes.string,
+};
 
 export default HeroExternal;

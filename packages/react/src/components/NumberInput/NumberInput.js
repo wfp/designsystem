@@ -1,10 +1,8 @@
 import PropTypes from 'prop-types';
 import React, { useState, useRef, useEffect } from 'react';
 import classNames from 'classnames';
-import { settings } from '../../globals/js';
+import useSettings from '../../hooks/useSettings';
 import Input from '../Input';
-
-const { prefix } = settings;
 
 function PropTypeEmptyString(props, propName, componentName) {
   componentName = componentName || 'ANONYMOUS';
@@ -60,6 +58,7 @@ const NumberInput = React.forwardRef((props, ref) => {
     pattern = '[0-9]*',
     ...other
   } = props;
+  const { prefix } = useSettings();
 
   const initialValue = capMax(max, capMin(min, props.value));
   const [value, setValue] = useState(initialValue);
