@@ -9,7 +9,6 @@ import { Controller, useForm } from 'react-hook-form';
 import 'react-dates/initialize';
 import { SingleDatePicker, DateRangePicker } from 'react-dates';
 import markdown from './README.mdx';
-import { field } from '../../../../themes/src/wfpColors';
 
 export default {
   title: 'Components/UI Elements/DatePicker',
