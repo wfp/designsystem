@@ -1,9 +1,7 @@
 import React from 'react';
 import classnames from 'classnames';
 import Pagination from '../Pagination';
-import { settings } from '../../globals/js';
-
-const { prefix } = settings;
+import useSettings from '../../hooks/useSettings';
 
 const ReactTablePagination = ({
   // Computed
@@ -32,6 +30,8 @@ const ReactTablePagination = ({
   itemText,
   pageNumberText,
 }) => {
+  const { prefix } = useSettings();
+
   const getSafePage = (newPage) => {
     if (isNaN(newPage)) {
       newPage = page;

@@ -3,11 +3,9 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Icon from '../Icon';
 import { iconCloseGlyph, iconCheckmarkGlyph } from '@unitednations/icons-react';
-import { settings } from '../../globals/js';
+import { withUNCoreSettings } from '../UNCoreSettings';
 
-const { prefix } = settings;
-
-export class Filename extends Component {
+class Filename extends Component {
   static propTypes = {
     /**
      * Specify an optional object of styles to be applied inline to the root
@@ -34,7 +32,7 @@ export class Filename extends Component {
   };
 
   render() {
-    const { iconDescription, status, style, ...other } = this.props;
+    const { prefix, iconDescription, status, style, ...other } = this.props;
 
     if (status === 'uploading') {
       return (
@@ -72,3 +70,5 @@ export class Filename extends Component {
     }
   }
 }
+
+export default withUNCoreSettings(Filename);

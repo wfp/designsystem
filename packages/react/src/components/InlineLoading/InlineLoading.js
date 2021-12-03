@@ -8,13 +8,13 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
-import { settings } from '../../globals/js';
+import useSettings from '../../hooks/useSettings';
 import Loading from '../Loading';
+import { withUNCoreSettings } from '../UNCoreSettings';
 
-const { prefix } = settings;
-
-export default class InlineLoading extends React.Component {
+class InlineLoading extends React.Component {
   static propTypes = {
+    prefix: PropTypes.string.isRequired,
     /**
      * Specify a custom className to be applied to the container node
      */
@@ -49,6 +49,7 @@ export default class InlineLoading extends React.Component {
 
   render() {
     const {
+      prefix,
       className,
       success,
       description,
@@ -97,3 +98,5 @@ export default class InlineLoading extends React.Component {
     );
   }
 }
+
+export default withUNCoreSettings(InlineLoading);

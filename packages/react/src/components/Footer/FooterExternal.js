@@ -5,9 +5,8 @@ import Wrapper from '../Wrapper';
 import classnames from 'classnames';
 import { WfpLogoVerticalEn } from '@unitednations/pictograms-react';
 
-import { settings } from '../../globals/js';
-
-const { prefix } = settings;
+import useSettings from '../../hooks/useSettings';
+const { prefix } = useSettings();
 
 const FooterExternal = ({
   className,
@@ -16,6 +15,8 @@ const FooterExternal = ({
   metaContent,
   metaLinks,
 }) => {
+  const { prefix } = useSettings();
+
   const externalClasses = classnames(`${prefix}--footer-ext`, className);
   return (
     <footer className={externalClasses}>

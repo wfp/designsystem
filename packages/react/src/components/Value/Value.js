@@ -8,13 +8,12 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import classnames from 'classnames';
-import { settings } from '../../globals/js';
-
-const { prefix } = settings;
+import useSettings from '../../hooks/useSettings';
 
 /** Value are typically used to show KPI values and additional information. */
 
 const Value = ({ value, secondaryValue, className, href, title, ...other }) => {
+  const { prefix } = useSettings();
   const classNames = classnames(`${prefix}--value`, className);
   return (
     <div className={classNames} {...other}>

@@ -1,11 +1,10 @@
 import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-import { settings } from '../../globals/js';
-
-const { prefix } = settings;
+import useSettings from '../../hooks/useSettings';
 
 function AnchorNavigation({ title, children, className, ...other }) {
+  const { prefix } = useSettings();
   const wrapperClasses = classNames(`${prefix}--anchor-navigation`, className);
   return (
     <div className={wrapperClasses} {...other}>

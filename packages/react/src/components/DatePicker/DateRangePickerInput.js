@@ -1,9 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { PureComponent } from 'react';
 import classNames from 'classnames';
-import { settings } from '../../globals/js';
-
-const { prefix } = settings;
+import { withUNCoreSettings } from '../UNCoreSettings';
 
 export class DateRangePickerInput extends PureComponent {
   state = {
@@ -21,6 +19,7 @@ export class DateRangePickerInput extends PureComponent {
 
   render() {
     const {
+      prefix,
       controlled,
       datePicker,
       labelText,
@@ -119,4 +118,4 @@ DateRangePickerInput.propTypes = {
   endDatePlaceholderText: PropTypes.string,
 };
 
-export default DateRangePickerInput;
+export default withUNCoreSettings(DateRangePickerInput);

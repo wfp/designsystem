@@ -1,9 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
-import { settings } from '../../globals/js';
-
-const { prefix } = settings;
+import useSettings from '../../hooks/useSettings';
 /**
  * Hero are a convenient means of displaying content composed of different types of objects. It is a multi usage component which creates boxes that are usually teasing some kind of content. */
 
@@ -21,6 +19,8 @@ const Hero = ({
   url,
   ...other
 }) => {
+  const { prefix } = useSettings();
+
   const style =
     kind !== 'related'
       ? {
@@ -112,11 +112,11 @@ Hero.propTypes = {
 */
   isLink: PropTypes.bool,
   /**
-  A short sentence to explain the content of the node (max 180 characters) 
+  A short sentence to explain the content of the node (max 180 characters)
 */
   subTitle: PropTypes.node,
   /**
-   A search-friendly title (ideally 50 characters, max 100) 
+   A search-friendly title (ideally 50 characters, max 100)
 */
   title: PropTypes.node,
   /**

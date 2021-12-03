@@ -20,8 +20,7 @@ import {
   YearMonth,
 } from './UnitList';
 import PropTypes from 'prop-types';
-import { settings } from '../../globals/js';
-const { prefix } = settings;
+import useSettings from '../../hooks/useSettings';
 // All Unit Components together in <Unit type="Unitname" />
 
 const components = {
@@ -46,6 +45,8 @@ const components = {
 /** The Unit component method returns a component with a language and unit sensitive representation of this number based on [Numbers and Unit from the Editorial Guidelines](https://cdn.wfp.org/guides/editorial/content/numbers-and-units/) the [Numbers and Units Reference on developer.mozilla.org](http://cdn.wfp.org/guides/editorial/content/numbers-and-units). */
 
 const Unit = (props) => {
+  const { prefix } = useSettings();
+
   const { className, output, string, textAnchor, setup } = props;
   const type = props.type
     ? props.type.charAt(0).toUpperCase() + props.type.slice(1)
@@ -88,7 +89,7 @@ Unit.propTypes = {
   */
   hideEmpty: PropTypes.bool,
   /**
-    The minimum number of fraction digits to use. Possible values are from 0 to 20. Only used on numeric types 
+    The minimum number of fraction digits to use. Possible values are from 0 to 20. Only used on numeric types
   */
   minimumFractionDigits: PropTypes.number,
   /**
@@ -96,7 +97,7 @@ Unit.propTypes = {
   */
   maximumSignificantDigits: PropTypes.number,
   /**
-    A value between 1-21, The minimum number of fraction digits to use. Possible values are from 0 to 20. Only used on numeric types 
+    A value between 1-21, The minimum number of fraction digits to use. Possible values are from 0 to 20. Only used on numeric types
   */
   maximumFractionDigits: PropTypes.number,
   /**
@@ -104,7 +105,7 @@ Unit.propTypes = {
    */
   locale: PropTypes.string,
   /**
-    Render output as svg text 
+    Render output as svg text
   */
   svg: PropTypes.bool,
   /**

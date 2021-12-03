@@ -1,9 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
-import { settings } from '../../globals/js';
-
-const { prefix } = settings;
+import useSettings from '../../hooks/useSettings';
 
 const TYPES = {
   info: 'Info',
@@ -16,6 +14,7 @@ const TYPES = {
 /** Tag is used to label, categorize, or organize items using keywords that describe them. */
 
 const Tag = ({ children, className, type, ...other }) => {
+  const { prefix } = useSettings();
   const tagClass = `${prefix}--tag--${type}`;
   const tagClasses = classNames(`${prefix}--tag`, tagClass, className);
   return (

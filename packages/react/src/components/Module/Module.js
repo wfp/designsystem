@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import { settings } from '../../globals/js';
-const { prefix } = settings;
+import useSettings from '../../hooks/useSettings';
 
 /** A Module is identifiable as a single, contained unit. */
 
@@ -18,6 +17,7 @@ const Module = ({
   withHover,
   ...other
 }) => {
+  const { prefix } = useSettings();
   const wrapperClasses = classnames(
     {
       [`${prefix}--module--dark`]: dark,

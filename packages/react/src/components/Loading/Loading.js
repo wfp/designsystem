@@ -8,15 +8,14 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
-import { settings } from '../../globals/js';
 import { componentsX } from '../../internal/FeatureFlags';
-
-const { prefix } = settings;
+import { withUNCoreSettings } from '../UNCoreSettings';
 
 /** Loading spinners are used when retrieving data or performing slow computations, and help to notify users that loading is underway. */
 
-export default class Loading extends React.Component {
+class Loading extends React.Component {
   static propTypes = {
+    prefix: PropTypes.string.isRequired,
     /**
      * Specify whether you want the loading indicator to be spinning or not
      */
@@ -45,7 +44,8 @@ export default class Loading extends React.Component {
   };
 
   render() {
-    const { active, className, withOverlay, small, ...other } = this.props;
+    const { prefix, active, className, withOverlay, small, ...other } =
+      this.props;
 
     const loadingClasses = classNames(`${prefix}--loading`, className, {
       [`${prefix}--loading--small`]: small,
@@ -88,3 +88,5 @@ export default class Loading extends React.Component {
     );
   }
 }
+
+export default withUNCoreSettings(Loading);

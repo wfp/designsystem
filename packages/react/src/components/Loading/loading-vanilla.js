@@ -5,7 +5,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import { settings } from '../../globals/js';
+import useSettings from '../../hooks/useSettings';
 import mixin from '../../globals/js/misc/mixin';
 import createComponent from '../../globals/js/mixins/create-component';
 import initComponentBySearch from '../../globals/js/mixins/init-component-by-search';
@@ -121,7 +121,7 @@ class Loading extends mixin(createComponent, initComponentBySearch, handles) {
    * @property {string} selectorInit The CSS selector to find spinners.
    */
   static get options() {
-    const { prefix } = settings;
+    const { prefix } = useSettings();
     return {
       selectorInit: '[data-loading]',
       selectorLoadingOverlay: `.${prefix}--loading-overlay`,

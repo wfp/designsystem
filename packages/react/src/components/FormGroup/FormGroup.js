@@ -1,9 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import classnames from 'classnames';
-import { settings } from '../../globals/js';
-
-const { prefix } = settings;
+import useSettings from '../../hooks/useSettings';
 
 /** A FormGroup element is used to group several controls as well as labels  within a web form. It uses  `<fieldset>` */
 const FormGroup = ({
@@ -19,6 +17,8 @@ const FormGroup = ({
   messageText,
   ...other
 }) => {
+  const { prefix } = useSettings();
+
   const classNamesLegend = classnames(
     `${prefix}--form-group__title`,
     className

@@ -1,9 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
-import { settings } from '../../globals/js';
-
-const { prefix } = settings;
+import useSettings from '../../hooks/useSettings';
 
 /**
  * Checkboxes are used for a list of options where the user may select multiple options, including all or none. */
@@ -21,6 +19,7 @@ const Checkbox = React.forwardRef((props, ref) => {
     title = '',
     ...other
   } = props;
+  const { prefix } = useSettings();
   const customId = id ? id : other.name;
   let input;
   const labelClasses = classNames(`${prefix}--checkbox-label`, className);

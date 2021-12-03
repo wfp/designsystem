@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import { settings } from '../../globals/js';
-const { prefix } = settings;
+import useSettings from '../../hooks/useSettings';
+const { prefix } = useSettings();
 
 /** Links are used as navigational elements. They may appear on their own, within a sentence or paragraph, or directly following the content. */
 

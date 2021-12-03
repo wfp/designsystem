@@ -9,9 +9,7 @@ import {
   WfpLogoStandardBlackEn,
   WfpLogoVerticalEn,
 } from '@unitednations/pictograms-react';
-import { settings } from '../../globals/js';
-
-const { prefix } = settings;
+import useSettings from '../../hooks/useSettings';
 
 /** A Footer is a section at the bottom of each page. It typically contains basic site information, copyright data or links to related pages. */
 
@@ -36,6 +34,8 @@ const Footer = ({
   productName,
   ...other
 }) => {
+  const { prefix } = useSettings();
+
   const classNames = classnames(
     `${prefix}--footer`,
     // { [`${prefix}--footer--external`]: external },
@@ -157,16 +157,16 @@ Footer.propTypes = {
    Additional className which will be added
  */
   className: PropTypes.string,
-  /** 
+  /**
    When external is set to true, the logo will be left and description will right on the footer. It is false by default.
  */
   external: PropTypes.bool,
-  /** 
+  /**
    Meta content, usually the copyright notice
  */
   metaContent: PropTypes.node,
 
-  /** 
+  /**
    Meta links, usually are leagal links like privacy, terms of use.
  */
   metaLinks: PropTypes.node,

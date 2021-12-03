@@ -1,12 +1,11 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import classnames from 'classnames';
-import { settings } from '../../globals/js';
-
-const { prefix } = settings;
+import useSettings from '../../hooks/useSettings';
 
 /** Credits are mostly used when a photo need a source attribution. */
 const Credits = ({ children, className, info, ...other }) => {
+  const { prefix } = useSettings();
   const classNames = classnames(`${prefix}--credits`, className);
   return (
     <div className={classNames} {...other}>

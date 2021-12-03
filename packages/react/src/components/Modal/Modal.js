@@ -4,9 +4,7 @@ import ReactDOM from 'react-dom';
 import classNames from 'classnames';
 import { CloseGlyph } from '@unitednations/icons-react';
 import Button from '../Button';
-import { settings } from '../../globals/js';
-
-const { prefix } = settings;
+import { withUNCoreSettings } from '../UNCoreSettings';
 
 const matchesFuncName =
   typeof Element !== 'undefined' &&
@@ -18,8 +16,9 @@ const modalRoot = typeof document !== 'undefined' ? document.body : undefined;
 
 /** Modals focus the user’s attention exclusively on one task or piece of information via a window that sits on top of the page content. */
 
-export default class Modal extends Component {
+class Modal extends Component {
   static propTypes = {
+    prefix: PropTypes.string.isRequired,
     /**
      * Provide the contents of your Modal
      */
@@ -183,8 +182,8 @@ export default class Modal extends Component {
   elementOrParentIsFloatingMenu = (target) => {
     const {
       selectorsFloatingMenus = [
-        `.${prefix}--overflow-menu-options`,
-        `.${prefix}--tooltip`,
+        `.${this.props.prefix}--overflow-menu-options`,
+        `.${this.props.prefix}--tooltip`,
         '.flatpickr-calendar',
       ],
     } = this.props;
@@ -302,6 +301,7 @@ export default class Modal extends Component {
 
   render() {
     const {
+      prefix,
       modalHeading,
       modalLabel,
       modalFooter,
@@ -437,3 +437,5 @@ export default class Modal extends Component {
     }
   }
 }
+
+export default withUNCoreSettings(Modal);

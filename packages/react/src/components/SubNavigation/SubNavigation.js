@@ -1,9 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
-import { settings } from '../../globals/js';
-
-const { prefix } = settings;
+import useSettings from '../../hooks/useSettings';
 
 /** The SubNavigation is a toogleable part of the MainNavigation */
 const SubNavigation = ({ children, ...other }) => {
@@ -15,6 +13,7 @@ SubNavigation.propTypes = {
 };
 
 const SubNavigationItem = ({ children, className, ...other }) => {
+  const { prefix } = useSettings();
   const classes = classNames(`${prefix}--sub-navigation__item`, className);
 
   return (
@@ -31,6 +30,7 @@ SubNavigationItem.propTypes = {
 };
 
 const SubNavigationHeader = ({ children, className, ...other }) => {
+  const { prefix } = useSettings();
   const classes = classNames(`${prefix}--sub-navigation__header`, className);
 
   return (
@@ -47,6 +47,7 @@ SubNavigationHeader.propTypes = {
 };
 
 const SubNavigationFilter = ({ children, className, ...other }) => {
+  const { prefix } = useSettings();
   const classes = classNames(`${prefix}--sub-navigation__filter`, className);
 
   return (
@@ -62,6 +63,7 @@ SubNavigationFilter.propTypes = {
 };
 
 const SubNavigationList = ({ children, className, ...other }) => {
+  const { prefix } = useSettings();
   const classes = classNames(`${prefix}--sub-navigation__list`, className);
 
   return (
@@ -77,6 +79,7 @@ SubNavigationList.propTypes = {
 };
 
 const SubNavigationContent = ({ children, className, ...other }) => {
+  const { prefix } = useSettings();
   const classes = classNames(`${prefix}--sub-navigation__content`, className);
 
   return (
@@ -96,6 +99,7 @@ SubNavigationContent.propTypes = {
 };
 
 const SubNavigationTitle = ({ children, className, ...other }) => {
+  const { prefix } = useSettings();
   const classes = classNames(`${prefix}--sub-navigation__title`, className);
 
   return (
@@ -115,6 +119,7 @@ SubNavigationTitle.propTypes = {
 };
 
 const SubNavigationLink = ({ children, className, ...other }) => {
+  const { prefix } = useSettings();
   const classes = classNames(`${prefix}--sub-navigation__link`, className);
 
   return (
@@ -140,6 +145,7 @@ const SubNavigationGroup = ({
   title,
   ...other
 }) => {
+  const { prefix } = useSettings();
   const classes = classNames(
     `${prefix}--sub-navigation__group`,
     {

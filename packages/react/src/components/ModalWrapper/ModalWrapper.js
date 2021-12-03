@@ -3,11 +3,13 @@ import React from 'react';
 import Modal from '../Modal';
 import Button from '../Button';
 import { ButtonTypes } from '../../prop-types/types';
+import { withUNCoreSettings } from '../UNCoreSettings';
 
 /** Modal Wrapper component to encapsulate your Modal within a button. */
 
-export default class ModalWrapper extends React.Component {
+class ModalWrapper extends React.Component {
   static propTypes = {
+    prefix: PropTypes.string.isRequired,
     status: PropTypes.string,
     /**
      * Specify a function to open the Modal.
@@ -89,6 +91,7 @@ export default class ModalWrapper extends React.Component {
 
   render() {
     const {
+      prefix,
       children,
       customButton,
       id,
@@ -145,3 +148,5 @@ export default class ModalWrapper extends React.Component {
     );
   }
 }
+
+export default withUNCoreSettings(ModalWrapper);

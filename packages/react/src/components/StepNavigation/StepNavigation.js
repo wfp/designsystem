@@ -2,9 +2,7 @@ import PropTypes from 'prop-types';
 import React, { useState, createRef } from 'react';
 import classNames from 'classnames';
 
-import { settings } from '../../globals/js';
-
-const { prefix } = settings;
+import useSettings from '../../hooks/useSettings';
 
 /** Step Navigation provide indications to help users reach their destination from their current position */
 
@@ -19,6 +17,7 @@ export default function StepNavigation({
   onSelectionChange,
   ...other
 }) {
+  const { prefix } = useSettings();
   const [dropdownHidden, setDropdownHidden] = useState(true);
   const [elRefs, setElRefs] = useState({});
 
