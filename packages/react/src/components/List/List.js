@@ -2,11 +2,12 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import classnames from 'classnames';
 import useSettings from '../../hooks/useSettings';
-const { prefix } = useSettings();
 
 /** List component show a number of connected items written consecutively, typically one below the other. */
 
 export const List = ({ children, className, colon, kind, small, ...other }) => {
+  const { prefix } = useSettings();
+
   const classNames = classnames(`${prefix}--list`, className, {
     [`${prefix}--list--${kind}`]: kind,
     [`${prefix}--list--small`]: small,

@@ -3,11 +3,12 @@ import React from 'react';
 import classNames from 'classnames';
 import Wrapper from '../Wrapper';
 import useSettings from '../../hooks/useSettings';
-const { prefix } = useSettings();
 
 /** The InfoBar shows very important information on top of the page. */
 
 const InfoBar = ({ children, className, id, pageWidth }) => {
+  const { prefix } = useSettings();
+
   const wrapperClasses = classNames(`${prefix}--info-bar`, className);
 
   return (

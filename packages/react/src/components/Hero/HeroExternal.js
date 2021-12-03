@@ -1,10 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Button from '../Button';
+// import Button from '../Button';
 import Wrapper from '../Wrapper';
 
 import useSettings from '../../hooks/useSettings';
-const { prefix } = useSettings();
 
 const HeroExternal = ({
   title,
@@ -12,8 +11,10 @@ const HeroExternal = ({
   image,
   children,
   className,
-  ...other
+  // ...other
 }) => {
+  const { prefix } = useSettings();
+
   const wrapperClasses = classNames(`${prefix}--hero-ext`, {
     [`${className}`]: className,
   });

@@ -28,7 +28,7 @@ const Tooltip = ({
   children,
   content,
   trigger = 'hover',
-  modifiers = [],
+  // modifiers = [],
   placement = 'top',
   createRefWrapper,
   closeOnOutsideClick,
@@ -42,7 +42,7 @@ const Tooltip = ({
   offset,
   onVisibleChange,
   usePortal,
-  ...others
+  // ...others
 }) => {
   const { prefix } = useSettings();
   const [visibility, setVisibility] = useState(false);

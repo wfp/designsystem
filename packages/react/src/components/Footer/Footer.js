@@ -3,7 +3,7 @@ import React from 'react';
 import classnames from 'classnames';
 import Link from '../Link';
 import Wrapper from '../Wrapper';
-import Icon from '../Icon';
+// import Icon from '../Icon';
 import { FooterExternal } from './FooterExternal';
 import {
   WfpLogoStandardBlackEn,
@@ -14,7 +14,7 @@ import useSettings from '../../hooks/useSettings';
 /** A Footer is a section at the bottom of each page. It typically contains basic site information, copyright data or links to related pages. */
 
 const Footer = ({
-  buttonText,
+  // buttonText,
   className,
   children,
   external,
@@ -29,10 +29,10 @@ const Footer = ({
   metaContent,
   metaLinks,
   secondary,
-  sdgLogo,
+  // sdgLogo,
   pageWidth,
   productName,
-  ...other
+  //...other
 }) => {
   const { prefix } = useSettings();
 
@@ -41,7 +41,7 @@ const Footer = ({
     // { [`${prefix}--footer--external`]: external },
     className
   );
-  const standardLogo = `${process.env.STORYBOOK_ASSETS}logos/standard/en/wfp-logo-standard-black-en.svg`;
+  // const standardLogo = `${process.env.STORYBOOK_ASSETS}logos/standard/en/wfp-logo-standard-black-en.svg`;
 
   const footer = external ? (
     <FooterExternal

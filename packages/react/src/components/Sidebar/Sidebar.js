@@ -9,7 +9,7 @@ export default function Sidebar({
   active,
   children,
   className,
-  sidebarMobileHeader,
+  // sidebarMobileHeader,
   sidebar,
   ...other
 }) {

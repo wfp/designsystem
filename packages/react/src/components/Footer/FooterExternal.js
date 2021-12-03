@@ -6,12 +6,11 @@ import classnames from 'classnames';
 import { WfpLogoVerticalEn } from '@unitednations/pictograms-react';
 
 import useSettings from '../../hooks/useSettings';
-const { prefix } = useSettings();
 
 const FooterExternal = ({
   className,
   productName,
-  children,
+  // children,
   metaContent,
   metaLinks,
 }) => {
@@ -116,6 +115,8 @@ FooterExternal.propTypes = {
 };
 
 const LinksColumn = () => {
+  const { prefix } = useSettings();
+
   return (
     <div className={`${prefix}--links-column`}>
       {/* Title is optional */}
@@ -144,6 +145,8 @@ const LinksColumn = () => {
 };
 
 const FooterMetaLink = ({ className, href, children }) => {
+  const { prefix } = useSettings();
+
   const wrapperClasses = classnames(
     `${prefix}--footer-ext__legal-link`,
     className

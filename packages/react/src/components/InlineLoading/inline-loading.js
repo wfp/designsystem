@@ -5,12 +5,14 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import useSettings from '../../hooks/useSettings';
+import { settings } from '../../globals/js';
 import mixin from '../../globals/js/misc/mixin';
 import createComponent from '../../globals/js/mixins/create-component';
 import initComponentBySearch from '../../globals/js/mixins/init-component-by-search';
 import handles from '../../globals/js/mixins/handles';
 import toggleAttribute from '../../globals/js/misc/toggle-attribute';
+
+const { prefix } = settings;
 
 /** kadskjbkj */
 
@@ -119,7 +121,6 @@ class InlineLoading extends mixin(
    * @property {string} classLoadingStop The CSS class for spinner's stopped state.
    */
   static get options() {
-    const { prefix } = useSettings();
     return {
       selectorInit: '[data-inline-loading]',
       selectorSpinner: '[data-inline-loading-spinner]',

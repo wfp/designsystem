@@ -5,8 +5,6 @@ import useSettings from '../../hooks/useSettings';
 import FormItem from '../FormItem';
 import { WarningSolidGlyph } from '@unitednations/icons-react';
 
-const { prefix } = useSettings();
-
 /**
  * Input is a wrapper for custom inputs providing the label, helperText and errors. */
 const Input = ({
@@ -16,7 +14,7 @@ const Input = ({
   labelText,
   children,
   className,
-  iconDescription,
+  // iconDescription,
   id,
   formItemClassName,
   inputWrapperClassName,
@@ -32,6 +30,8 @@ const Input = ({
   required,
   ...other
 }) => {
+  const { prefix } = useSettings();
+
   const calculatedId = id ? id : name;
   const inputProps = {
     id: calculatedId,

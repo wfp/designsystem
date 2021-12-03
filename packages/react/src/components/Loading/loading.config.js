@@ -5,8 +5,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import useSettings from '../../hooks/useSettings';
-const { prefix } = useSettings();
+const { prefix } = require('../../globals/js');
 
 module.exports = {
   context: {

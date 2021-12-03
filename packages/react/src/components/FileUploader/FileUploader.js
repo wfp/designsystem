@@ -450,3 +450,5 @@ export {
   Filename,
   FileUploaderWithSettings as FileUploader,
 };
+
+export default FileUploaderWithSettings;
