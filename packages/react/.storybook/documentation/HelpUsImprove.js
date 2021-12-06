@@ -1,5 +1,5 @@
 import React from 'react';
-import { Story, List, ListItem } from '../src';
+import { Story, List, ListItem } from '../../src';
 
 export default function HelpUsImproveText() {
   return (
@@ -21,10 +21,3 @@ export default function HelpUsImproveText() {
     </Story>
   );
 }
-/*
-
-TODO: add design switcher
-## Help us improve!
-- If you are **running into a technical issue**, please [open an issue on GitHub](https://github.com/wfp/ui/issues).
-- If you are **running into a design issue**, please [open an issue on GitHub](https://github.com/wfp/ui-design-kit/issues) or comment on the library directly ([Sketch](https://www.sketch.com/s/421befd7-29f6-4fe9-9dae-7d2bce93e1af), AdobeXd).
-*/

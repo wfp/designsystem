@@ -5,6 +5,9 @@ import Link from '../../components/Link';
 import IconsComponent from './IconsDocumentation';
 import IconList from './IconList';
 
+import metadataIcons from '@unitednations/icons/metadata.json';
+import * as icons from '@unitednations/icons-react';
+
 import metadata from '@unitednations/pictograms/metadata.json';
 import * as pictograms from '@unitednations/pictograms-react';
 
@@ -21,17 +24,11 @@ import * as humanitarianIcons from '@unitednations/humanitarian-icons-react';
   }}
 />
 
-<hr />
-
-<!---
- <IconsComponent />
--->
+<h3>Icons</h3>
+<IconList iconsReact={icons} metadata={metadataIcons} />
 
 <h3>Pictograms</h3>
-
-<!--
 <IconList iconsReact={pictograms} metadata={metadata} />
--->
 
 <h3>Humanitarian icons</h3>
 <IconList iconsReact={humanitarianIcons} metadata={metadataHumanitarianIcons} />

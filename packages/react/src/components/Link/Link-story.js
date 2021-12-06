@@ -10,7 +10,7 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
 //import { withKnobs, text, boolean, select } from '@storybook/addon-knobs';
-import { Download16 } from '@carbon/icons-react';
+import { Download16 } from '@unitednations/icons-react';
 import Link from '../Link';
 import mdx from './Link.mdx';
 

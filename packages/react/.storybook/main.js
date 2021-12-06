@@ -125,26 +125,6 @@ module.exports = {
       enforce: 'pre',
     });
 
-    /*config.module.rules.push({
-      test: /\.tsx?$/,
-      loaders: [
-        {
-          loader: require.resolve('@storybook/source-loader'),
-          options: {
-            prettierConfig: {
-              parser: 'typescript',
-              printWidth: 80,
-              tabWidth: 2,
-              bracketSpacing: true,
-              trailingComma: 'es5',
-              singleQuote: true,
-            },
-          },
-        },
-      ],
-      enforce: 'pre',
-    });
-*/
     config.module.rules.push({
       test: /\.scss$/,
       sideEffects: true,

@@ -20,10 +20,7 @@ const IconPreview = ({ i, icon, iconsReact }) => {
   const name = icon.moduleInfo?.global
     ? `${icon.moduleInfo.global}`
     : icon.output[0].moduleName;
-  const Icon = iconsReact[name];
-
-  if (!Icon) return null;
-  if (i !== 10) return null;
+  const Icon = iconsReact[name] ? iconsReact[name] : iconsReact[`${name}Glyph`];
   return (
     <Tippy
       interactive
@@ -93,12 +90,14 @@ from '@unitednations/icons-react'`}
               width: '100%',
               height: '55px',
             }}>
-            <Icon
-              color="red"
-              description="WFP"
-              width="39"
-              className="wfp--footer-cta-logo"
-            />
+            {Icon && (
+              <Icon
+                color="black"
+                description="WFP"
+                width="39"
+                className="wfp--footer-cta-logo"
+              />
+            )}
           </div>
           <ModuleFooter
             style={{

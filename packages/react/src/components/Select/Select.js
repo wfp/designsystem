@@ -13,12 +13,6 @@ import { CaretDownGlyph } from '@unitednations/icons-react';
 import { settings } from '../../globals/js';
 import Input from '../Input';
 
-import {
-  ChevronDown16,
-  WarningFilled16,
-  WarningAltFilled16,
-} from '@carbon/icons-react';
-
 const { prefix } = settings;
 
 /** The select component allows users to choose one option from a list. It is used in forms for users to submit data. */

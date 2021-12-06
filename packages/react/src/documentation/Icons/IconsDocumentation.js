@@ -28,7 +28,6 @@ function camelCaseFromHyphnated(s) {
 }
 
 const IconList = ({ icon }) => {
-  console.log(icon);
   const iconName = icon.name.replace('icon--', '');
   const Icon = Icons[`${icon.moduleInfo.global}Glyph`];
 
