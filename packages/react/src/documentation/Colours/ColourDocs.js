@@ -367,10 +367,10 @@ const ColourDocs = () => {
       <Blockquote title="Usage in JavaScript" code>
         <PrismCode component="pre" className="language-js">
           {`// Import colours as json (needs a json loader)
-import colors from '@unitednations/react/src/globals/data/colors.json'
+import colors from '@un/react/src/globals/data/colors.json'
 
 // Import colours as js
-import colors from '@unitednations/react/src/globals/data/colors.js'
+import colors from '@un/react/src/globals/data/colors.js'
 
 const barChartColor = colors.navy;
 `}
@@ -383,7 +383,7 @@ const barChartColor = colors.navy;
       <Blockquote title="Usage in scss" code>
         <PrismCode component="pre" className="language-css">
           {`// Only use variables
-@import "~@unitednations/react/src/globals/scss/vars";
+@import "~@un/react/src/globals/scss/vars";
 
 body {
   background: var(--ui-02);

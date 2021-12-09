@@ -11,11 +11,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { settings } from '../../globals/js';
 
-import {
-  CheckmarkGlyph,
-  CloseGlyph,
-  WarningSolidGlyph,
-} from '@unitednations/icons-react';
+import { CheckmarkGlyph, CloseGlyph, WarningSolidGlyph } from '@un/icons-react';
 import Loading from '../Loading';
 import uid from '../../tools/uniqueId';
 import { ButtonTypes } from '../../prop-types/types';

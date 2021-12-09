@@ -7,17 +7,17 @@
 
 'use strict';
 
-const { types: t } = require('@unitednations/scss-generator');
+const { types: t } = require('@un/scss-generator');
 const { TokenFormat, themes, group } = require('../../src/next');
 const { FILE_BANNER, primitive } = require('./shared');
 
 function buildThemesFile() {
   const imports = [
     t.SassModule('sass:map'),
-    t.SassModule('@unitednations/layout'),
-    t.SassModule('@unitednations/type'),
+    t.SassModule('@un/layout'),
+    t.SassModule('@un/type'),
     process.env.sourceLib
-      ? t.SassModule('@unitednations/themes/scss/modules/utilities')
+      ? t.SassModule('@un/themes/scss/modules/utilities')
       : t.SassModule('../utilities'),
   ];
   const variables = Object.entries(themes).flatMap(([key, theme]) => {

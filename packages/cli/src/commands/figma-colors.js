@@ -12,7 +12,7 @@ const { createLogger } = require('../logger');
 const bundlers = require('./bundle/bundlers');
 const execa = require('execa');
 
-const { colorsExporter } = require('@unitednations/figma-connect');
+const { colorsExporter } = require('@un/figma-connect');
 const rimraf = require('rimraf');
 const fs = require('fs');
 

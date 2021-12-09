@@ -30,7 +30,7 @@ Your SVGs will be generated in `src/svg` folder
 ### Usage with node.js
 
 ```js
-const { svgExporter } = require('@unitednations/figma-connect');
+const { svgExporter } = require('@un/figma-connect');
 
 svgExporter();
 ```

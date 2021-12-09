@@ -1,26 +1,26 @@
-# @unitednations/pictograms-react
+# @un/pictograms-react
 
 > React components for pictograms and illustrations in digital and software products using the
 > WFP Design System
 
-# @unitednations/pictograms-react
+# @un/pictograms-react
 
 This package is largly based on the [Carbon Design System](https://www.carbondesignsystem.com/).
 
 ## Getting started
 
-To install `@unitednations/pictograms-react` in your project, you will need to run the
+To install `@un/pictograms-react` in your project, you will need to run the
 following command using [npm](https://www.npmjs.com/):
 
 ```bash
-npm install -S @unitednations/pictograms-react
+npm install -S @un/pictograms-react
 ```
 
 If you prefer [Yarn](https://yarnpkg.com/en/), use the following command
 instead:
 
 ```bash
-yarn add @unitednations/pictograms-react
+yarn add @un/pictograms-react
 ```
 
 ## Usage
@@ -28,7 +28,7 @@ yarn add @unitednations/pictograms-react
 You can import a pictogram component into your project by referring to its name:
 
 ```jsx
-import { SdgLogo } from '@unitednations/pictograms-react';
+import { SdgLogo } from '@un/pictograms-react';
 ```
 
 We also provide CommonJS and UMD files in the `lib` and `umd` directories,
@@ -37,7 +37,7 @@ respectively.
 To import using CommonJS, you can do the following:
 
 ```js
-const { Airplane } = require('@unitednations/pictograms-react');
+const { Airplane } = require('@un/pictograms-react');
 ```
 
 _Note: if you would like to find the import path for a pictogram, you can
@@ -58,7 +58,7 @@ svg.my-custom-class {
 ```
 
 ```jsx
-import { Airplane } from '@unitednations/pictograms-react';
+import { Airplane } from '@un/pictograms-react';
 
 function MyComponent() {
   return (
@@ -71,7 +71,7 @@ function MyComponent() {
 
 ### Focus and `aria-label`
 
-By default, the icon components from `@unitednations/pictograms-react` are treated as
+By default, the icon components from `@un/pictograms-react` are treated as
 decorative content. This means that we set `aria-hidden="true"` unless certain
 props are passed to the component.
 
@@ -79,7 +79,7 @@ If you would like the icon to be announced by a screen reader, you can supply an
 `aria-label` or `aria-labelledby`. For example:
 
 ```jsx
-import { Airplane } from '@unitednations/pictograms-react';
+import { Airplane } from '@un/pictograms-react';
 
 function MyComponent() {
   return (
@@ -96,7 +96,7 @@ If you would like the `<svg>` to receive focus, you will need to pass in a
 `tabIndex` value. For example:
 
 ```jsx
-import { Airplane } from '@unitednations/pictograms-react';
+import { Airplane } from '@un/pictograms-react';
 
 function MyComponent() {
   return <Airplane aria-label="Add" tabIndex="0" />;

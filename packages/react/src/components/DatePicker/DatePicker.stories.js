@@ -40,7 +40,7 @@ SingleDatePickerDefault.args = {
 
 const singleSourceCode = `
 import 'react-dates/initialize';
-import { SingleDatePickerInput } from "@unitednations/react";
+import { SingleDatePickerInput } from "@un/react";
 import { SingleDatePicker } from 'react-dates';
 
 <SingleDatePickerInput
@@ -143,7 +143,7 @@ DateRangePickerDefault.args = {
 };
 const dateRangeSourceCode = `
 import 'react-dates/initialize';
-import { DateRangePickerInput } from "@unitednations/react";
+import { DateRangePickerInput } from "@un/react";
 import { DateRangePicker } from 'react-dates';
 
 <DateRangePickerInput

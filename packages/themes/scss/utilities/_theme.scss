@@ -25,7 +25,7 @@
 }
 
 /// @access private
-/// @group @unitednations/themes
+/// @group @un/themes
 @mixin -custom-property($name, $value) {
   @if meta.type-of($value) == map {
     @each $property, $property-value in $value {

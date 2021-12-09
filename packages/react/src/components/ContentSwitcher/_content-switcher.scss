@@ -5,7 +5,7 @@
 @import '../../globals/scss/spacing';
 @import '../../globals/scss/helper-mixins';
 @import '../../globals/scss/css--reset';
-@import '../../globals/scss/vendor/@unitednations/import-once/scss/import-once';
+@import '../../globals/scss/vendor/@un/import-once/scss/import-once';
 
 @include exports('content-switcher') {
   .#{$prefix}--content-switcher {

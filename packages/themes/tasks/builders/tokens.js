@@ -7,7 +7,7 @@
 
 'use strict';
 
-const { types: t } = require('@unitednations/scss-generator');
+const { types: t } = require('@un/scss-generator');
 const { formatTokenName } = process.env.sourceLib
   ? require(process.env.sourceLib)
   : require('../../lib');
@@ -48,7 +48,7 @@ function buildTokensFile(tokens, metadata, defaultTheme) {
         tokenData.role && t.Comment(`/ ${tokenData.role.join('; ')}`),
         t.Comment(`/ @type {${typesByGroup[group]}}
 / @access public
-/ @group @unitednations/themes`),
+/ @group @un/themes`),
         tokenData.alias && t.Comment(`/ @alias ${tokenData.alias}`),
         tokenData.deprecated && t.Comment(`/ @deprecated`),
         t.Assignment({

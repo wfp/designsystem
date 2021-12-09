@@ -6,18 +6,18 @@
 //
 
 @use './config' as *;
-@use '@unitednations/themes/scss/modules/config' with (
+@use '@un/themes/scss/modules/config' with (
   $prefix: $prefix,
 );
 @use './compat/themes' as compat;
 @use './themes';
 
-@forward '@unitednations/themes/scss/modules/theme' with (
+@forward '@un/themes/scss/modules/theme' with (
   $fallback: themes.$wfp !default,
   $theme: compat.$wfp !default,
 );
-@forward '@unitednations/themes/scss/modules/tokens';
-@use '@unitednations/themes/scss/modules/tokens';
+@forward '@un/themes/scss/modules/tokens';
+@use '@un/themes/scss/modules/tokens';
 @use './utilities/custom-property';
 @use './utilities/layer-set' with (
   $layer-sets: (

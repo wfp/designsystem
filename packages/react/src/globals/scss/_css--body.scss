@@ -3,7 +3,7 @@
 @import 'mixins';
 @import 'typography';
 @import 'css--reset';
-@import './vendor/@unitednations/import-once/scss/import-once';
+@import './vendor/@un/import-once/scss/import-once';
 
 @mixin css-body {
   body {

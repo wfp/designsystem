@@ -1,5 +1,5 @@
 {
-  "name": "@unitednations/type-example",
+  "name": "@un/type-example",
   "description": "Typography for digital and software products using the UN Core",
   "version": "10.30.15",
   "license": "Apache-2.0",
@@ -33,21 +33,21 @@
     "access": "public"
   },
   "scripts": {
-    "buildcc": "cp -R ../../node_modules/@unitednations/type uttt",
+    "buildcc": "cp -R ../../node_modules/@un/type uttt",
     "clean": "rimraf uttt"
   },
   "dependencies": {
-    "@unitednations/type": "^10.30.14"
+    "@un/type": "^10.30.14"
   },
   "devDependencies": {
     "@carbon/test-utils": "^10.3.0",
-    "@unitednations/cli": "^10.25.13",
+    "@un/cli": "^10.25.13",
     "change-case": "^4.1.1",
     "rimraf": "^3.0.0"
   },
   "eyeglass": {
     "exports": false,
-    "name": "@unitednations/type",
+    "name": "@un/type",
     "sassDir": "scss",
     "needs": "^1.3.0"
   }

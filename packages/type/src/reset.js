@@ -5,7 +5,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import { baseFontSize, px } from '@unitednations/layout';
+import { baseFontSize, px } from '@un/layout';
 import { fontFamilies } from './fontFamily';
 import { fontWeights } from './fontWeight';
 

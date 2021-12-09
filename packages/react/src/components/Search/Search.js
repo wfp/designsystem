@@ -3,7 +3,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import classNames from 'classnames';
 import { settings } from '../../globals/js';
 import Input from '../Input';
-import { SearchGlyph, CloseGlyph } from '@unitednations/icons-react';
+import { SearchGlyph, CloseGlyph } from '@un/icons-react';
 
 const { prefix } = settings;
 

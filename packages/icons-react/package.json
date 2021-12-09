@@ -1,5 +1,5 @@
 {
-  "name": "@unitednations/icons-react",
+  "name": "@un/icons-react",
   "description": "React components for icons in digital and software products using the Carbon Design System",
   "version": "10.34.18",
   "license": "Apache-2.0",
@@ -44,8 +44,8 @@
     "prop-types": "^15.7.2"
   },
   "devDependencies": {
-    "@unitednations/icon-build-helpers": "^0.23.9",
-    "@unitednations/icons": "^10.34.18",
+    "@un/icon-build-helpers": "^0.23.9",
+    "@un/icons": "^10.34.18",
     "rimraf": "^3.0.2"
   },
   "sideEffects": false,

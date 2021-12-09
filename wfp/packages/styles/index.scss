@@ -1,11 +1,11 @@
-@forward '@unitednations/styles/scss/config';
-@forward '@unitednations/styles/scss/colors' hide $white;
-@forward '@unitednations/styles/scss/font-face';
-@forward '@unitednations/styles/scss/grid';
-@forward '@unitednations/styles/scss/motion';
-@forward '@unitednations/styles/scss/type';
-@forward '@unitednations/styles/scss/themes';
-@forward '@unitednations/styles/scss/theme';
+@forward '@un/styles/scss/config';
+@forward '@un/styles/scss/colors' hide $white;
+@forward '@un/styles/scss/font-face';
+@forward '@un/styles/scss/grid';
+@forward '@un/styles/scss/motion';
+@forward '@un/styles/scss/type';
+@forward '@un/styles/scss/themes';
+@forward '@un/styles/scss/theme';
 
-@use '@unitednations/styles/scss/reset';
-@use '@unitednations/styles/scss/components';
+@use '@un/styles/scss/reset';
+@use '@un/styles/scss/components';

@@ -8,7 +8,7 @@ import { FooterExternal } from './FooterExternal';
 import {
   WfpLogoStandardBlackEn,
   WfpLogoVerticalEn,
-} from '@unitednations/pictograms-react';
+} from '@un/pictograms-react';
 import { settings } from '../../globals/js';
 
 const { prefix } = settings;

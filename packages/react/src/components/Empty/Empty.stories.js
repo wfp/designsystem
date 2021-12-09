@@ -2,7 +2,7 @@ import React from 'react';
 import markdown from './README.mdx';
 import Empty from '.';
 import Button from '../Button';
-import { IllustrationsMovingVanWithBackground } from '@unitednations/pictograms-react';
+import { IllustrationsMovingVanWithBackground } from '@un/pictograms-react';
 
 export default {
   title: 'Components/UI Elements/Empty',

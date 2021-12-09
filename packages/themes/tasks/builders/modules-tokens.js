@@ -7,7 +7,7 @@
 
 'use strict';
 
-const { types: t } = require('@unitednations/scss-generator');
+const { types: t } = require('@un/scss-generator');
 const { group } = require('../../src/next');
 const { FILE_BANNER } = require('./shared');
 

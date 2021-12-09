@@ -7,7 +7,7 @@
 
 'use strict';
 
-const { colorsExporter } = require('@unitednations/figma-connect');
+const { colorsExporter } = require('@un/figma-connect');
 const path = require('path');
 const rimraf = require('rimraf');
 const fs = require('fs');

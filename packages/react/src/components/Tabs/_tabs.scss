@@ -9,7 +9,7 @@
 @import '../../globals/scss/layer';
 @import '../../globals/scss/typography';
 @import '../../globals/scss/layout';
-@import '../../globals/scss/vendor/@unitednations/import-once/scss/import-once';
+@import '../../globals/scss/vendor/@un/import-once/scss/import-once';
 @import '../../globals/scss/css--typography';
 
 @include exports('tabs') {

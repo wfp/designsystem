@@ -2,9 +2,9 @@ $css--body: true;
 $css--reset: true;
 
 // Importing the styles package, this can be either your own or the generic @un/styles.
-@use '@unitednations/styles-example/index';
+@use '@un/styles-example/index';
 // Importing the themes package, this can be either your own or the generic @un/themes.
-@import '@unitednations/themes/scss/themes';
+@import '@un/themes/scss/themes';
 /*
 $carbon--theme: $carbon--theme--wfp;
 

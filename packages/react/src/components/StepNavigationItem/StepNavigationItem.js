@@ -9,7 +9,7 @@ import {
   CheckmarkGlyph,
   MenuGlyph,
   OverflowMenuGlyph,
-} from '@unitednations/icons-react';
+} from '@un/icons-react';
 import { settings } from '../../globals/js';
 
 const { prefix } = settings;

@@ -8,5 +8,5 @@
 'use strict';
 
 module.exports = {
-  presets: ['@unitednations/babel-preset-wfp', '@babel/preset-typescript'],
+  presets: ['@un/babel-preset-wfp', '@babel/preset-typescript'],
 };

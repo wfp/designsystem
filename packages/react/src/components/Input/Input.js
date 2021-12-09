@@ -3,7 +3,7 @@ import React from 'react';
 import classNames from 'classnames';
 import { settings } from '../../globals/js';
 import FormItem from '../FormItem';
-import { WarningSolidGlyph } from '@unitednations/icons-react';
+import { WarningSolidGlyph } from '@un/icons-react';
 
 const { prefix } = settings;
 

@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import Search from '../../components/Search';
 import Button from '../../components/Button';
 
-import { Filter16, SubtractGlyph } from '@unitednations/icons-react';
+import { Filter16, SubtractGlyph } from '@un/icons-react';
 
 import { Module, ModuleHeader, ModuleBody } from '../../components/Module';
 import Table from './DataTable';

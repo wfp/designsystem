@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import markdown from './README.mdx';
 import { List, ListItem } from '../List';
 import Dropzone, { useDropzone } from 'react-dropzone';
-import { UploadGlyph } from '@unitednations/icons-react';
+import { UploadGlyph } from '@un/icons-react';
 import classNames from 'classnames';
 
 export default {
@@ -122,8 +122,8 @@ Advanced.parameters = {
     source: {
       code: `
 import Dropzone, { useDropzone } from 'react-dropzone';
-import { Icon, List, ListItem } from '@unitednations/react';
-import { Upload16 } from '@unitednations/icons-react';
+import { Icon, List, ListItem } from '@un/react';
+import { Upload16 } from '@un/icons-react';
 import classNames from 'classnames';
 
 export const Advanced = (args) => {

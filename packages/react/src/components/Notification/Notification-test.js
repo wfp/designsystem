@@ -1,9 +1,5 @@
 import React from 'react';
-import {
-  iconClose,
-  ErrorFilled20,
-  CheckmarkFilled20,
-} from '@unitednations/icons-react';
+import { iconClose, ErrorFilled20, CheckmarkFilled20 } from '@un/icons-react';
 import {
   NotificationButton,
   NotificationTextDetails,
