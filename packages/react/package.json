@@ -1,6 +1,6 @@
 {
   "name": "@un/react",
-  "version": "1.18.26",
+  "version": "1.18.27",
   "description": "WFP UI Kit",
   "license": "Apache-2",
   "main": "lib/index.js",
@@ -177,8 +177,8 @@
     "@tippy.js/react": "^3.1.1",
     "@typescript-eslint/eslint-plugin": "^4.9.0",
     "@typescript-eslint/parser": "^3.8.0",
-    "@un/babel-preset-wfp": "^0.1.6",
-    "@un/icons": "^10.34.18",
+    "@un/babel-preset-wfp": "^0.1.7",
+    "@un/icons": "^10.34.19",
     "add": "^2.0.6",
     "all-contributors-cli": "^6.17.0",
     "autoprefixer": "^9.8.6",

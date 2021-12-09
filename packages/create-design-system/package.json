@@ -1,6 +1,6 @@
 {
   "name": "@un/create-design-system",
-  "version": "1.0.15",
+  "version": "1.0.16",
   "description": "",
   "main": "index.js",
   "bin": {
