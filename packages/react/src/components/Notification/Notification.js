@@ -486,10 +486,9 @@ export function InlineNotification({
           subtitle={subtitle}
           notificationType={notificationType}>
           {children}
-          {actions}
         </NotificationTextDetails>
       </div>
-
+      {actions}
       {!hideCloseButton && (
         <NotificationButton
           iconDescription={iconDescription}
