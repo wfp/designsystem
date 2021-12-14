@@ -98,8 +98,3 @@ const svgExporter = async ({
     console.error(err);
   }
 };
-
-module.exports = {
-  svgExporter,
-  colorsExporter,
-};

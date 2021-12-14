@@ -13,10 +13,6 @@ Export your SVGs that are in your Figma project easily via CLI or node.js.
 - Each icon is a Figma Component (Select Icon and use the shortcut key ⌥⌘K)
   ![Screenshot of Icon as a Figma Component](documentation/this-is-a-component.png)
 
-### Output
-
-Your SVGs will be generated in `src/svg` folder
-
 ### Setup
 
 1. `yarn install`
@@ -27,12 +23,43 @@ Your SVGs will be generated in `src/svg` folder
 6. Add your DEV_TOKEN from step 5 into `.env` file
 7. Run `node src/index.js` and your SVGs will be generated into `src/svg` folder
 
+### Environment Variables
+
+The tool needs the following environment variables.
+
+```
+FIGMA_PROJECT_ID=73iYBLNZ4LnSXe43cWUPDz
+FIGMA_PROJECT_NODE_ID=0:1
+DEV_ACCESS_TOKEN=
+FILTER_PRIVATE_COMPONENTS=false
+SVG_OUTPUT_FOLDER=./svg/
+```
+
 ### Usage with node.js
+
+#### SVG export
 
 ```js
 const { svgExporter } = require('@un/figma-connect');
 
-svgExporter();
+svgExporter({ outputFolder: './outputFolder' });
+```
+
+Your SVGs will be generated in `src/svg` folder
+
+#### Color export
+
+```js
+const { colorsExporter } = require('@un/figma-connect');
+
+colorsExporter({
+  fileName: './src/wfpColors.js',
+  fileNameMeta: './src/wfpColorsMeta.js',
+
+  figmaProjectId: '73iYBLNZ4LnSXe43cWUPDz',
+  figmaProjectNodeId: '0:1',
+  filterPrivateComponents: false,
+});
 ```
 
 ### Filtering Private Components (starting with a . or a \_)
@@ -42,3 +69,7 @@ svgExporter();
 ### Limitations
 
 Figma API has a fixed number of requests (rate limits) you can call per minute. This script will process a 20 requests per 45 seconds to avoid hitting that limit.
+
+```
+
+```
