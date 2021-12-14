@@ -88,6 +88,7 @@ export const SingleDatePickerNew = (args) => {
   );
 };
 
+/*
 export const SingleDatePickerNewReactHookForm = (args) => {
   const defaultValues = { test: '2020-12-01T11:00:00.000Z' };
   const [focused, setFocused] = useState(false);
@@ -120,7 +121,7 @@ export const SingleDatePickerNewReactHookForm = (args) => {
       />
     </form>
   );
-};
+};*/
 
 export const DateRangePickerDefault = (args) => (
   <DateRangePickerInput {...args} />
@@ -176,6 +177,7 @@ export const DatePickerHookForm = (args) => {
   return (
     <>
       {JSON.stringify(input)}
+      <br />
       <Controller
         control={control}
         name="test"
@@ -238,6 +240,7 @@ export const DatePickerRangeHookForm = (args) => {
   return (
     <>
       {JSON.stringify(datePickerRange)}
+      <br />
       <Controller
         control={control}
         name="datePickerRange"
