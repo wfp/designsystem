@@ -8,10 +8,10 @@
 import React from 'react';
 import Link from '../Link';
 import { shallow } from 'enzyme';
-import { settings } from 'carbon-components';
 import { cleanup, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { describe, document } from 'window-or-global';
+import settings from '../../globals/js/settings';
 
 const { prefix } = settings;
 

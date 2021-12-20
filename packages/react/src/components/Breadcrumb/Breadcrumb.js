@@ -1,14 +1,13 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import classnames from 'classnames';
-import { settings } from '../../globals/js';
-
-const { prefix } = settings;
+import useSettings from '../../hooks/useSettings';
 
 /**
  * The breadcrumb is a secondary navigation pattern that helps a user understand the hierarchy among levels and navigate back through them. */
 
 const Breadcrumb = ({ children, className, ...other }) => {
+  const { prefix } = useSettings();
   const classNames = classnames(className, {
     [`${prefix}--breadcrumb`]: true,
     [`${prefix}--breadcrumb--no-trailing-slash`]: true,

@@ -4,8 +4,7 @@ import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import { usePopperTooltip } from 'react-popper-tooltip';
 
-import { settings } from '../../globals/js';
-const { prefix } = settings;
+import useSettings from '../../hooks/useSettings';
 
 export const tooltipStyle = {
   duration: 100,
@@ -29,7 +28,7 @@ const Tooltip = ({
   children,
   content,
   trigger = 'hover',
-  modifiers = [],
+  // modifiers = [],
   placement = 'top',
   createRefWrapper,
   closeOnOutsideClick,
@@ -43,8 +42,9 @@ const Tooltip = ({
   offset,
   onVisibleChange,
   usePortal,
-  ...others
+  // ...others
 }) => {
+  const { prefix } = useSettings();
   const [visibility, setVisibility] = useState(false);
   const classNames = classnames(className, {
     [`${prefix}--tooltip`]: true,

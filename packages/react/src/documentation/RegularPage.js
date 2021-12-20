@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 import Link from '../components/Link';
-import Footer from '../components/Footer';
+import { Footer } from '../components/Footer';
 import Search from '../components/Search';
 
 import {
@@ -200,11 +200,7 @@ const RegularPage = ({
           </Link>
         </MainNavigationItem>
         <MainNavigationItem>
-          <Search
-            kind="main"
-            id="search-2"
-            placeHolderText="Search"
-          />
+          <Search kind="main" id="search-2" placeHolderText="Search" />
         </MainNavigationItem>
         <MainNavigationItem
           className="wfp--main-navigation__user"

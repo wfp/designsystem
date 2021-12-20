@@ -7,13 +7,11 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import { settings } from '../../globals/js';
+import useSettings from '../../hooks/useSettings';
 import classNames from 'classnames';
 import { Filename } from './FileUploader';
 //import { keys, matches } from '../../internal/keyboard';
 import uid from '../../tools/uniqueId';
-
-const { prefix } = settings;
 
 export default function FileUploaderItem({
   uuid,
@@ -26,6 +24,8 @@ export default function FileUploaderItem({
   errorBody,
   ...other
 }) {
+  const { prefix } = useSettings();
+
   const classes = classNames(`${prefix}--file__selected-file`, {
     [`${prefix}--file__selected-file--invalid`]: invalid,
   });

@@ -1,12 +1,11 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
-import { settings } from '../../globals/js';
+import { withUNCoreSettings } from '../UNCoreSettings';
 
-const { prefix } = settings;
-
-export default class Tab extends React.Component {
+class Tab extends React.Component {
   static propTypes = {
+    prefix: PropTypes.string.isRequired,
     /**
      * Specify an optional className to be added to your Tab
      */
@@ -117,6 +116,7 @@ export default class Tab extends React.Component {
 
   render() {
     const {
+      prefix,
       className,
       disabled,
       handleTabClick,
@@ -203,3 +203,5 @@ export default class Tab extends React.Component {
     );
   }
 }
+
+export default withUNCoreSettings(Tab);

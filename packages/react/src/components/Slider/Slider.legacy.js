@@ -4,9 +4,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import isEqual from 'lodash.isequal';
 import TextInput from '../TextInput';
-
-import { settings } from '../../globals/js';
-const { prefix } = settings;
+import { withUNCoreSettings } from '../UNCoreSettings';
 
 const defaultFormatLabel = (value, label) => {
   return typeof label === 'function' ? label(value) : `${value}${label}`;
@@ -14,7 +12,7 @@ const defaultFormatLabel = (value, label) => {
 
 /** Sliders provide a visual indication of adjustable content, where the user can move the handle along a horizontal track to increase or decrease the value. */
 
-export default class Slider extends Component {
+class Slider extends Component {
   static propTypes = {
     /**
      * The CSS class name for the slider.
@@ -327,6 +325,7 @@ export default class Slider extends Component {
 
   render() {
     const {
+      prefix,
       ariaLabelInput,
       className,
       hideTextInput,
@@ -472,3 +471,5 @@ export default class Slider extends Component {
     );
   }
 }
+
+export default withUNCoreSettings(Slider);

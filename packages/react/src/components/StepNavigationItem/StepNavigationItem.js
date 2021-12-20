@@ -10,11 +10,9 @@ import {
   MenuGlyph,
   OverflowMenuGlyph,
 } from '@un/icons-react';
-import { settings } from '../../globals/js';
+import { withUNCoreSettings } from '../UNCoreSettings';
 
-const { prefix } = settings;
-
-export default class StepNavigationItem extends React.Component {
+class StepNavigationItem extends React.Component {
   static propTypes = {
     /**
      * Provide a className that is applied to the StepNavigation component
@@ -67,6 +65,7 @@ export default class StepNavigationItem extends React.Component {
 
   render() {
     const {
+      prefix,
       className,
       handleTabClick,
       index,
@@ -147,3 +146,5 @@ export default class StepNavigationItem extends React.Component {
     );
   }
 }
+
+export default withUNCoreSettings(StepNavigationItem);

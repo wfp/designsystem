@@ -8,9 +8,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import classnames from 'classnames';
-import { settings } from '../../globals/js';
-
-const { prefix } = settings;
+import useSettings from '../../hooks/useSettings';
 
 const Link = ({
   children,
@@ -23,6 +21,8 @@ const Link = ({
   size,
   ...other
 }) => {
+  const { prefix } = useSettings();
+
   const classNames = classnames(`${prefix}--link`, className, {
     [`${prefix}--link--disabled`]: disabled,
     [`${prefix}--link--inline`]: inline,

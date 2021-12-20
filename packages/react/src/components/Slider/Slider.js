@@ -1,11 +1,9 @@
 import PropTypes from 'prop-types';
 import React, { useState, useRef, useEffect } from 'react';
 import classNames from 'classnames';
-import { settings } from '../../globals/js';
+import useSettings from '../../hooks/useSettings';
 import Input from '../Input';
 import TextInput from '../TextInput';
-
-const { prefix } = settings;
 
 const defaultFormatLabel = (value, label) => {
   return typeof label === 'function' ? label(value) : `${value}${label}`;
@@ -55,6 +53,8 @@ function Slider(props) {
     inputRef,
     ...other
   } = props;
+
+  const { prefix } = useSettings();
 
   const initialValue = props.value;
   const [value, setValue] = useState(initialValue);

@@ -1,9 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-import { settings } from '../../globals/js';
-
-const { prefix } = settings;
+import useSettings from '../../hooks/useSettings';
 
 /** Tables are used to make large volumes of data easy to understand and to access. */
 export default function Table({
@@ -13,6 +11,7 @@ export default function Table({
   withBorder,
   ...other
 }) {
+  const { prefix } = useSettings();
   const classes = classNames(
     `${prefix}--table`,
     {

@@ -1,9 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
-import { settings } from '../../globals/js';
-
-const { prefix } = settings;
+import useSettings from '../../hooks/useSettings';
 
 const SkeletonText = ({
   paragraph,
@@ -13,6 +11,8 @@ const SkeletonText = ({
   className,
   ...other
 }) => {
+  const { prefix } = useSettings();
+
   const skeletonTextClasses = classNames({
     [`${prefix}--skeleton__text`]: true,
     [`${prefix}--skeleton__heading`]: heading,

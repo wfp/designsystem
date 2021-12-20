@@ -7,13 +7,11 @@ import Button from '../Button';
 import User from '../User';
 import Wrapper from '../Wrapper';
 import PropTypes from 'prop-types';
-
 import { useTogglable } from '../../hooks';
-import { settings } from '../../globals/js';
-
-const { prefix } = settings;
+import useSettings from '../../hooks/useSettings';
 
 const LanguageExternal = ({ children, primaryLanguage }) => {
+  const { prefix } = useSettings();
   const ref = useRef();
   const languageTogglable = useTogglable();
 
@@ -51,7 +49,7 @@ const LanguageExternal = ({ children, primaryLanguage }) => {
       <ul
         className={`${prefix}--language-ext__dropdown ${
           languageTogglable.isOpen
-            ? 'wfp--language-ext__dropdown--is-shown'
+            ? `${prefix}--language-ext__dropdown--is-shown`
             : ''
         }`}>
         {children}
@@ -61,6 +59,8 @@ const LanguageExternal = ({ children, primaryLanguage }) => {
 };
 
 const UserExternal = ({ username, children, userImage }) => {
+  const { prefix } = useSettings();
+
   const ref = useRef();
   const userTogglable = useTogglable();
 
@@ -95,7 +95,7 @@ const UserExternal = ({ username, children, userImage }) => {
       </div>
       <ul
         className={`${prefix}--user-ext__dropdown ${
-          userTogglable.isOpen ? 'wfp--user-ext__dropdown--is-shown' : ''
+          userTogglable.isOpen ? `${prefix}--user-ext__dropdown--is-shown` : ''
         }`}>
         {children}
       </ul>
@@ -112,6 +112,7 @@ const MainNavigationExternal = ({
   userDetails,
   children,
 }) => {
+  const { prefix } = useSettings();
   const ref = useRef();
   const navTogglable = useTogglable();
 

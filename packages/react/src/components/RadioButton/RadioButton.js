@@ -1,15 +1,14 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
-import { settings } from '../../globals/js';
 import uid from '../../tools/uniqueId';
-
-const { prefix } = settings;
+import { withUNCoreSettings } from '../UNCoreSettings';
 
 /** Radio buttons represent a group of mutually exclusive choices */
 
 class RadioButton extends React.Component {
   static propTypes = {
+    prefix: PropTypes.string.isRequired,
     /**
      * Specify whether the <RadioButton> is currently checked
      */
@@ -72,7 +71,7 @@ class RadioButton extends React.Component {
       this.props.className
     );
 
-    const { labelText, inputRef, ...other } = this.props;
+    const { prefix, labelText, inputRef, ...other } = this.props;
 
     const handleChange = this.props.onChange
       ? {
@@ -99,8 +98,12 @@ class RadioButton extends React.Component {
   }
 }
 
+const WrappedRadioButton = withUNCoreSettings(RadioButton);
+
 export default (() => {
-  const forwardRef = (props, ref) => <RadioButton {...props} inputRef={ref} />;
+  const forwardRef = (props, ref) => (
+    <WrappedRadioButton {...props} inputRef={ref} />
+  );
   forwardRef.displayName = 'RadioButton';
   return React.forwardRef(forwardRef);
 })();

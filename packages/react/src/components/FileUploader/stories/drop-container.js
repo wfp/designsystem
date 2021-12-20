@@ -6,15 +6,14 @@
  */
 
 import React, { useState, useCallback } from 'react';
-import { settings } from '../../../globals/js';
+import useSettings from '../../../hooks/useSettings';
 import FileUploaderItem from '../FileUploaderItem';
 import FileUploaderDropContainer from '../FileUploaderDropContainer';
 import FormItem from '../../FormItem';
 import uid from '../../../tools/uniqueId';
 
-const { prefix } = settings;
-
 function ExampleDropContainerApp(props) {
+  const { prefix } = useSettings();
   const [files, setFiles] = useState([]);
   const uploadFile = async (fileToUpload) => {
     // file size validation

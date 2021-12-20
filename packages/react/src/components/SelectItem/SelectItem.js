@@ -1,11 +1,10 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
-import { settings } from '../../globals/js';
-
-const { prefix } = settings;
+import useSettings from '../../hooks/useSettings';
 
 const SelectItem = ({ className, value, disabled, hidden, text, ...other }) => {
+  const { prefix } = useSettings();
   const selectItemClasses = classNames({
     [`${prefix}--select-option`]: true,
     [className]: className,

@@ -9,7 +9,7 @@ import Sidebar, {
 import DATA from './PHONEBOOK.json';
 import User from '../User';
 import { List, ListItem } from '../List';
-import MainNavigation from '../MainNavigation';
+import { MainNavigation } from '../MainNavigation';
 import Item from '../Item';
 import Empty from '../Empty';
 import Search from '../Search';

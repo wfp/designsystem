@@ -76,6 +76,7 @@
     "react-docgen.json"
   ],
   "eslintConfig": {
+    "root": true,
     "parser": "babel-eslint",
     "extends": [
       "eslint:recommended",
@@ -182,6 +183,7 @@
     "add": "^2.0.6",
     "all-contributors-cli": "^6.17.0",
     "autoprefixer": "^9.8.6",
+    "babel-eslint": "^10.1.0",
     "babel-loader": "^8.2.2",
     "babel-plugin-dev-expression": "^0.2.2",
     "browserslist-config-carbon": "^10.6.1",
