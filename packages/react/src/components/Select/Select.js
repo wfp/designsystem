@@ -10,10 +10,8 @@ import React from 'react';
 import classNames from 'classnames';
 import { CaretDownGlyph } from '@un/icons-react';
 
-import { settings } from '../../globals/js';
+import useSettings from '../../hooks/useSettings';
 import Input from '../Input';
-
-const { prefix } = settings;
 
 /** The select component allows users to choose one option from a list. It is used in forms for users to submit data. */
 
@@ -22,20 +20,22 @@ const Select = React.forwardRef((props, ref) => {
     className,
     id,
     inline,
-    labelText,
+    // labelText,
     disabled,
     children,
     iconDescription,
-    hideLabel,
+    // hideLabel,
     small,
     invalid,
-    invalidText,
-    helperText,
+    // invalidText,
+    // helperText,
     light,
     name,
     inputRef = ref,
     ...other
   } = props;
+
+  const { prefix } = useSettings();
 
   const usedId = id ? id : name;
 

@@ -1,9 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { settings } from '../../globals/js';
-
-const { prefix } = settings;
+import useSettings from '../../hooks/useSettings';
 
 export default function AuthLayout({
   image,
@@ -12,6 +10,7 @@ export default function AuthLayout({
   className,
   ...other
 }) {
+  const { prefix } = useSettings();
   const style = image
     ? {
         backgroundImage: `url(${image})`,

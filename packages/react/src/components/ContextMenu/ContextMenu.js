@@ -2,8 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Tooltip from '../Tooltip';
 import classnames from 'classnames';
-import { settings } from '../../globals/js';
-const { prefix } = settings;
+import useSettings from '../../hooks/useSettings';
 
 /** Context menu are used as navigational elements. They should contain commands that apply to the target object. */
 
@@ -16,6 +15,7 @@ export const ContextMenu = ({
   trigger = 'click',
   ...other
 }) => {
+  const { prefix } = useSettings();
   const classNames = classnames(
     {
       [`${prefix}--context-menu`]: true,

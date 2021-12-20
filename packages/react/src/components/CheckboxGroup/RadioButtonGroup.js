@@ -3,14 +3,13 @@ import React from 'react';
 import classNames from 'classnames';
 import RadioButton from '../RadioButton';
 import warning from 'warning';
-import { settings } from '../../globals/js';
+import { withUNCoreSettings } from '../UNCoreSettings';
 
-const { prefix } = settings;
-
-export default class InputGroup extends React.Component {
+class InputGroup extends React.Component {
   state = { selected: this.props.valueSelected || this.props.defaultSelected };
 
   static propTypes = {
+    prefix: PropTypes.string.isRequired,
     /**
      * Provide a collection of <RadioButton> components to render in the group
      */
@@ -119,6 +118,7 @@ export default class InputGroup extends React.Component {
   };
 
   render() {
+    const { prefix } = this.props;
     const {
       children,
       disabled,
@@ -154,3 +154,5 @@ export default class InputGroup extends React.Component {
     );
   }
 }
+
+export default withUNCoreSettings(InputGroup);

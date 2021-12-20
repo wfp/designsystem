@@ -2,9 +2,7 @@ import PropTypes from 'prop-types';
 import React, { memo, useState } from 'react';
 import { DateRangePickerInput } from './DateRangePickerInput';
 import classNames from 'classnames';
-import { settings } from '../../globals/js';
-
-const { prefix } = settings;
+import useSettings from '../../hooks/useSettings';
 
 export default memo(function DateRangePickerInput({
   startDate,
@@ -34,6 +32,7 @@ export default memo(function DateRangePickerInput({
   onFocus,
   ...other
 }) {
+  const { prefix } = useSettings();
   const [focusedInput, setfocusedInput] = useState(null);
   const [stateStartDate, setstartDate] = useState(startDate ? startDate : null);
   const [stateEndDate, setendDate] = useState(endDate ? endDate : null);

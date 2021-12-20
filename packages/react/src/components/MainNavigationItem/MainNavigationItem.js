@@ -2,9 +2,7 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import classNames from 'classnames';
 import { CloseGlyph, CaretDownGlyph } from '@un/icons-react';
-import { settings } from '../../globals/js';
-
-const { prefix } = settings;
+import { withUNCoreSettings } from '../UNCoreSettings';
 
 class MainNavigationItem extends Component {
   UNSAFE_componentWillReceiveProps = (nextProps) => {
@@ -27,6 +25,7 @@ class MainNavigationItem extends Component {
 
   render() {
     const {
+      prefix,
       activeMenuItem,
       className,
       children,
@@ -100,4 +99,4 @@ MainNavigationItem.propTypes = {
   subNavigation: PropTypes.node,
 };
 
-export default MainNavigationItem;
+export default withUNCoreSettings(MainNavigationItem);

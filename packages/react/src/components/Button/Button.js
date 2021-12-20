@@ -1,9 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { useEffect, useState } from 'react';
 import classNames from 'classnames';
-import { settings } from '../../globals/js';
-
-const { prefix } = settings;
+import useSettings from '../../hooks/useSettings';
 
 /**
  * Buttons express what action will occur when the user clicks or touches it. Buttons are used to initialize an action, either in the background or foreground of an experience. */
@@ -25,6 +23,7 @@ const Button = ({
   onClick,
   ...other
 }) => {
+  const { prefix } = useSettings();
   const [count, setCount] = useState(0);
 
   useEffect(() => {

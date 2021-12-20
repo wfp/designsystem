@@ -2,9 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { iconUser } from '@un/icons-react';
 import Icon from '../../components/Icon';
-import { settings } from '../../globals/js';
-
-const { prefix } = settings;
+import useSettings from '../../hooks/useSettings';
 
 function SidebarItem({
   image,
@@ -16,6 +14,8 @@ function SidebarItem({
   hintInfo,
   ...other
 }) {
+  const { prefix } = useSettings();
+
   var profile_image;
   if (image) {
     profile_image = <img alt="img" src={image} />;
@@ -71,11 +71,11 @@ SidebarItem.propTypes = {
      title is the string given to the first text, usually name
    */
   title: PropTypes.string,
-  /** 
+  /**
      content is what follows the text
    */
   content: PropTypes.string,
-  /** 
+  /**
     subContent, usually additional information below the content
    */
   subContent: PropTypes.string,

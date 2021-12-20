@@ -3,10 +3,7 @@ import React, { Component } from 'react';
 import classNames from 'classnames';
 import Button from '../Button';
 import Wrapper from '../Wrapper';
-import { settings } from '../../globals/js';
-
-const { prefix } = settings;
-
+import { withUNCoreSettings } from '../UNCoreSettings';
 /** The Main Navigation is a Horizontal Menu which consists of multiple clickable items placed at the top of the page. The navigation stays unchanged when browswing through the site and is present on every page. The currently selected item is usually highlighted. */
 
 class MainNavigation extends Component {
@@ -56,8 +53,15 @@ class MainNavigation extends Component {
   };
 
   render() {
-    const { children, className, id, logo, mobilePageWidth, pageWidth } =
-      this.props;
+    const {
+      prefix,
+      children,
+      className,
+      id,
+      logo,
+      mobilePageWidth,
+      pageWidth,
+    } = this.props;
 
     const wrapperClasses = classNames(`${prefix}--main-navigation`, className);
 
@@ -143,4 +147,4 @@ MainNavigation.defaultProps = {
   logo: 'WFP',
 };
 
-export default MainNavigation;
+export default withUNCoreSettings(MainNavigation);

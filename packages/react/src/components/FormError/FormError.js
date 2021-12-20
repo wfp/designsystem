@@ -1,11 +1,12 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { settings } from '../../globals/js';
-const { prefix } = settings;
+import useSettings from '../../hooks/useSettings';
 
 import Blockquote from '../Blockquote';
 
 const FormError = ({ className, message, submitFailed }) => {
+  const { prefix } = useSettings();
+
   if (message && submitFailed === true) {
     return (
       <Blockquote className={className} warning withIcon={false}>

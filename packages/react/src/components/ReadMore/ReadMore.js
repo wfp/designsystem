@@ -1,15 +1,14 @@
 import PropTypes from 'prop-types';
 import React, { useRef, useState } from 'react';
 import classnames from 'classnames';
-
 import Link from '../Link';
 import Icon from '../Icon';
-import { settings } from '../../globals/js';
 import { CaretUpGlyph, CaretDownGlyph } from '@un/icons-react';
-
-const { prefix } = settings;
+import useSettings from '../../hooks/useSettings';
 
 const MoreLink = ({ handleToggleClick, link, text, showMore }) => {
+  const { prefix } = useSettings();
+
   if (link) {
     var clonedLink = React.cloneElement(link, {
       onClick: handleToggleClick,
@@ -46,6 +45,7 @@ export default function ReadMore({
   fade,
   maxHeight,
 }) {
+  const { prefix } = useSettings();
   const [showMore, setShowMore] = useState(false);
   const [innerHeight, setInnerHeight] = useState(0);
   const readMoreRef = useRef();

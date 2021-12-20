@@ -12,6 +12,8 @@ import initComponentBySearch from '../../globals/js/mixins/init-component-by-sea
 import handles from '../../globals/js/mixins/handles';
 import toggleAttribute from '../../globals/js/misc/toggle-attribute';
 
+const { prefix } = settings;
+
 /** kadskjbkj */
 
 class InlineLoading extends mixin(
@@ -25,7 +27,7 @@ class InlineLoading extends mixin(
    * @extends InitComponentBySearch
    * @extends Handles
    * @param {HTMLElement} element The element working as a spinner.
-   * @param {Object} [options] The component options.
+   * @param {object} [options] The component options.
    * @param {string} [options.initialState] The initial state, should be `inactive`, `active` or `finished`.
    */
   constructor(element, options) {
@@ -89,7 +91,7 @@ class InlineLoading extends mixin(
 
   /**
    * The list of states.
-   * @type {Object<string, string>}
+   * @type {object<string, string>}
    */
   static states /* #__PURE_CLASS_PROPERTY__ */ = {
     INACTIVE: 'inactive',
@@ -110,7 +112,7 @@ class InlineLoading extends mixin(
    * or {@linkcode InlineLoading.init .init()},
    * properties in this object are overriden for the instance being create and how {@linkcode InlineLoading.init .init()} works.
    * @member InlineLoading.options
-   * @type {Object}
+   * @type {object}
    * @property {string} selectorInit The CSS selector to find inline loading components.
    * @property {string} selectorSpinner The CSS selector to find the spinner.
    * @property {string} selectorFinished The CSS selector to find the "finished" icon.
@@ -119,7 +121,6 @@ class InlineLoading extends mixin(
    * @property {string} classLoadingStop The CSS class for spinner's stopped state.
    */
   static get options() {
-    const { prefix } = settings;
     return {
       selectorInit: '[data-inline-loading]',
       selectorSpinner: '[data-inline-loading-spinner]',

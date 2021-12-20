@@ -3,20 +3,18 @@ import React from 'react';
 import classnames from 'classnames';
 import Link from '../Link';
 import Wrapper from '../Wrapper';
-import Icon from '../Icon';
+// import Icon from '../Icon';
 import { FooterExternal } from './FooterExternal';
 import {
   WfpLogoStandardBlackEn,
   WfpLogoVerticalEn,
 } from '@un/pictograms-react';
-import { settings } from '../../globals/js';
-
-const { prefix } = settings;
+import useSettings from '../../hooks/useSettings';
 
 /** A Footer is a section at the bottom of each page. It typically contains basic site information, copyright data or links to related pages. */
 
 const Footer = ({
-  buttonText,
+  // buttonText,
   className,
   children,
   external,
@@ -31,17 +29,19 @@ const Footer = ({
   metaContent,
   metaLinks,
   secondary,
-  sdgLogo,
+  // sdgLogo,
   pageWidth,
   productName,
-  ...other
+  //...other
 }) => {
+  const { prefix } = useSettings();
+
   const classNames = classnames(
     `${prefix}--footer`,
     // { [`${prefix}--footer--external`]: external },
     className
   );
-  const standardLogo = `${process.env.STORYBOOK_ASSETS}logos/standard/en/wfp-logo-standard-black-en.svg`;
+  // const standardLogo = `${process.env.STORYBOOK_ASSETS}logos/standard/en/wfp-logo-standard-black-en.svg`;
 
   const footer = external ? (
     <FooterExternal
@@ -157,16 +157,16 @@ Footer.propTypes = {
    Additional className which will be added
  */
   className: PropTypes.string,
-  /** 
+  /**
    When external is set to true, the logo will be left and description will right on the footer. It is false by default.
  */
   external: PropTypes.bool,
-  /** 
+  /**
    Meta content, usually the copyright notice
  */
   metaContent: PropTypes.node,
 
-  /** 
+  /**
    Meta links, usually are leagal links like privacy, terms of use.
  */
   metaLinks: PropTypes.node,

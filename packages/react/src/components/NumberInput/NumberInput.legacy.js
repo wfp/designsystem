@@ -4,9 +4,8 @@
 // import Icon from '../Icon';
 // import FormItem from '../FormItem';
 // import classNames from 'classnames';
-// import { settings } from '../../globals/js';
-
-// const { prefix } = settings;
+// import useSettings from '../../hooks/useSettings';
+// const { prefix } = useSettings();
 
 // function PropTypeEmptyString(props, propName, componentName) {
 //   componentName = componentName || 'ANONYMOUS';

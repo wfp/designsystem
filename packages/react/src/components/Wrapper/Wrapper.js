@@ -1,13 +1,14 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
-import { settings } from '../../globals/js';
-const { prefix } = settings;
+import useSettings from '../../hooks/useSettings';
 
 export const pageWidths = ['sm', 'md', 'lg', 'full'];
 
 /** Wrapper can wrap it's content in a specific width depending on if the application has a full or fixed width. */
 const Wrapper = (props) => {
+  const { prefix } = useSettings();
+
   const {
     background,
     backgroundStyle,
@@ -65,7 +66,7 @@ Wrapper.propTypes = {
 */
   className: PropTypes.string,
   /**
-    `xs` `sm` `md` `lg`:  Set the maximum width of the Wrapper content `xs`: `500px` `sm`: `700px` `md`:`1000px` `lg`: `1200px` 
+    `xs` `sm` `md` `lg`:  Set the maximum width of the Wrapper content `xs`: `500px` `sm`: `700px` `md`:`1000px` `lg`: `1200px`
   */
   pageWidth: PropTypes.oneOf(['sm', 'md', 'lg', 'full']),
   /**
@@ -73,7 +74,7 @@ Wrapper.propTypes = {
   */
   mobilePageWidth: PropTypes.string,
   /**
-    `full` `sm` `md` `lg`:  Width on mobile devices `full`: `100%`      
+    `full` `sm` `md` `lg`:  Width on mobile devices `full`: `100%`
   */
   spacing: PropTypes.string,
 };

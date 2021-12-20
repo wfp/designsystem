@@ -1,19 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Icon from '../Icon';
+// import Icon from '../Icon';
 import classNames from 'classnames';
 import { ChevronLeft16 } from '@un/icons-react';
-import { settings } from '../../globals/js';
-const { prefix } = settings;
+import useSettings from '../../hooks/useSettings';
 
 export default function Sidebar({
   active,
   children,
   className,
-  sidebarMobileHeader,
+  // sidebarMobileHeader,
   sidebar,
   ...other
 }) {
+  const { prefix } = useSettings();
   const classes = classNames(
     `${prefix}--sidebar-content__container`,
     className,
@@ -36,22 +36,23 @@ Sidebar.propTypes = {
  */
   children: PropTypes.node,
   /**
-   The `active` prop show the content section when an item is clicked. It's useful in mobile view 
+   The `active` prop show the content section when an item is clicked. It's useful in mobile view
  */
   active: PropTypes.bool,
   /**
-   The Sidebar is usually where the sidebar items will be. 
+   The Sidebar is usually where the sidebar items will be.
    `<SidebarHeader/>` can be called in `Sidebar` and example search can be used in here
  */
   Sidebar: PropTypes.node,
   /**
-     The sidebarMobileHeader is shwon when view is in mobile version. 
+     The sidebarMobileHeader is shwon when view is in mobile version.
      `<SidebarBackButton/>` can used in the `sidebarMobileHeader` prop
   */
   sidebarMobileHeader: PropTypes.node,
 };
 
 export function SidebarHeader({ className, children, noPadding, ...other }) {
+  const { prefix } = useSettings();
   const classes = classNames(`${prefix}--sidebar-content__header`, className, {
     [`${prefix}--sidebar-content__header--no-padding`]: noPadding,
   });
@@ -80,6 +81,7 @@ export function SidebarContentHeader({
   noPadding,
   ...other
 }) {
+  const { prefix } = useSettings();
   const classes = classNames(
     `${prefix}--sidebar-content-mobile-header`,
     className,
@@ -106,6 +108,7 @@ export function SidebarContentBody({
   noPadding,
   ...other
 }) {
+  const { prefix } = useSettings();
   const classes = classNames(
     `${prefix}--sidebar-content__children`,
     className,
@@ -127,6 +130,7 @@ SidebarContentBody.propTypes = {
 };
 
 export function SidebarScroll({ children, ...other }) {
+  const { prefix } = useSettings();
   return (
     <div className={`${prefix}--sidebar-content__scroll`} {...other}>
       {children}
@@ -142,6 +146,7 @@ SidebarScroll.propTypes = {
 };
 
 export function SidebarBackButton({ children, ...other }) {
+  const { prefix } = useSettings();
   return (
     <div className={`${prefix}--sidebar-content__back-button`} {...other}>
       <ChevronLeft16 />

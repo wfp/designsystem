@@ -3,9 +3,7 @@ import React from 'react';
 import classNames from 'classnames';
 
 import { Module, ModuleBody, ModuleHeader, ModuleFooter } from '../Module';
-import { settings } from '../../globals/js';
-
-const { prefix } = settings;
+import useSettings from '../../hooks/useSettings';
 
 /** The FormWizard is a wrapper for creating Wizard forms. */
 
@@ -17,6 +15,8 @@ const FormWizard = ({
   sidebar,
   stickySidebar,
 }) => {
+  const { prefix } = useSettings();
+
   const classes = {
     formControls: classNames(
       `${prefix}--form-wizard`,

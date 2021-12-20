@@ -130,3 +130,7 @@ export Wrapper, { pageWidths } from './components/Wrapper';
 export colors from './globals/data/colors';
 export useDetectPrint from './internal/useDetectPrint';
 export { uniqueId } from './tools/uniqueId';
+export {
+  UNCoreProvider,
+  withUNCoreSettings,
+} from './components/UNCoreSettings';

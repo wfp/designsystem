@@ -2,13 +2,13 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
 import Wrapper from '../Wrapper';
-import { settings } from '../../globals/js';
-
-const { prefix } = settings;
+import useSettings from '../../hooks/useSettings';
 
 /** The InfoBar shows very important information on top of the page. */
 
 const InfoBar = ({ children, className, id, pageWidth }) => {
+  const { prefix } = useSettings();
+
   const wrapperClasses = classNames(`${prefix}--info-bar`, className);
 
   return (

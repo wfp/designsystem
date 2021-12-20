@@ -2,8 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
 import { User16 } from '@un/icons-react';
-import { settings } from '../../globals/js';
-const { prefix } = settings;
+import useSettings from '../../hooks/useSettings';
 
 /** The User is used inside the MainNavigation and form, and can display an avatar and username. */
 const User = ({
@@ -20,6 +19,8 @@ const User = ({
   name,
   ...other
 }) => {
+  const { prefix } = useSettings();
+
   var avatar;
   if (!image && missingImage === 'avatar') {
     avatar = (
