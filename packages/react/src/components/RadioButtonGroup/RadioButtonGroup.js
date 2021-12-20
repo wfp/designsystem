@@ -3,14 +3,13 @@ import React from 'react';
 import classNames from 'classnames';
 import RadioButton from '../RadioButton';
 import warning from 'warning';
-import { settings } from '../../globals/js';
+import { withUNCoreSettings } from '../UNCoreSettings';
 
-const { prefix } = settings;
-
-export default class RadioButtonGroup extends React.Component {
+class RadioButtonGroup extends React.Component {
   state = { selected: this.props.valueSelected || this.props.defaultSelected };
 
   static propTypes = {
+    prefix: PropTypes.string.isRequired,
     /**
      * Provide a collection of <RadioButton> components to render in the group
      */
@@ -126,6 +125,7 @@ export default class RadioButtonGroup extends React.Component {
 
   render() {
     const {
+      prefix,
       children,
       disabled,
       labelText,
@@ -169,3 +169,5 @@ export default class RadioButtonGroup extends React.Component {
     );
   }
 }
+
+export default withUNCoreSettings(RadioButtonGroup);

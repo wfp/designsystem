@@ -2,14 +2,14 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { InfoSolid16 } from '@unitednations/icons-react';
 import classNames from 'classnames';
-import { settings } from '../../globals/js';
+import useSettings from '../../hooks/useSettings';
 import Tooltip from '../Tooltip/Tooltip';
-
-const { prefix } = settings;
 
 /** FormHint allows you to add a longer explanation to an input element. */
 
 const FormHint = ({ className, children, description, icon, ...other }) => {
+  const { prefix } = useSettings();
+
   const formHintClasses = classNames(`${prefix}--form-hint`, className);
   return (
     <Tooltip content={children}>

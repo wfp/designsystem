@@ -1,13 +1,13 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import classnames from 'classnames';
-import { settings } from '../../globals/js';
-
-const { prefix } = settings;
+import useSettings from '../../hooks/useSettings';
 
 /** Form Label can be used whenever it is needed to show a label detached from a regular input. */
 
 const FormLabel = ({ className, children, id, ...other }) => {
+  const { prefix } = useSettings();
+
   const classNames = classnames(`${prefix}--label`, className);
 
   return (

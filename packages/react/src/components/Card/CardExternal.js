@@ -3,23 +3,22 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import Tag from '../Tag';
 
-import { settings } from '../../globals/js';
+import useSettings from '../../hooks/useSettings';
 
-const { prefix } = settings;
-
-const CardExternal = ({ 
-  label, 
+const CardExternal = ({
+  label,
   labelStatus,
-  interactive, 
-  image, 
-  heading , 
-  subHeading , 
-  caption , 
-  tag, 
+  interactive,
+  image,
+  heading,
+  subHeading,
+  caption,
+  tag,
   children,
-  className, 
-  ...other}) => {
-
+  className,
+  ...other
+}) => {
+  const { prefix } = useSettings();
   const myRef = useRef();
   const supportiveTextFontSize = 14;
   const supportiveTextLineHeight = 1.5;
@@ -29,14 +28,13 @@ const CardExternal = ({
     supportiveTextFontSize * supportiveTextLineHeight * 3
   );
 
-  // statusStyle apply different style(color, backgroundColor) based on its active state 
-  const statusStyle = labelStatus ? `success`: `neutral`;
+  // statusStyle apply different style(color, backgroundColor) based on its active state
+  const statusStyle = labelStatus ? `success` : `neutral`;
 
   const wrapperClasses = classNames(`${prefix}--card-ext`, {
     [`${prefix}--card-ext--interactive`]: interactive,
     [`${className}`]: className,
   });
-
 
   /**
    * Get the height of the supportive text element.
@@ -75,12 +73,12 @@ const CardExternal = ({
        * Label is optional.
        * It can be either 'neutral' (default) or 'success'
        */}
-       {label &&
-      <div
-        className={`${prefix}--card-ext__label ${prefix}--card-ext__label--${statusStyle}`}>
-        {label}
-      </div>
-      }
+      {label && (
+        <div
+          className={`${prefix}--card-ext__label ${prefix}--card-ext__label--${statusStyle}`}>
+          {label}
+        </div>
+      )}
       <figure className={`${prefix}--card-ext__media`}>
         <img
           className={`${prefix}--card-ext__image`}
@@ -93,8 +91,12 @@ const CardExternal = ({
         className={`${prefix}--card-ext__info-wrapper ${prefix}--card-ext__info-wrapper--with-divider`}>
         <div className={`${prefix}--card-ext__primary-title`}>
           {/* Subheading is optional */}
-          {subHeading && ( <p className={`${prefix}--card-ext__subheading`}>{subHeading}</p>)}
-          {heading && (<p className={`${prefix}--card-ext__heading`}>{heading}</p>)} 
+          {subHeading && (
+            <p className={`${prefix}--card-ext__subheading`}>{subHeading}</p>
+          )}
+          {heading && (
+            <p className={`${prefix}--card-ext__heading`}>{heading}</p>
+          )}
         </div>
         {/* Supportive text is optional */}
         <div
@@ -117,13 +119,12 @@ const CardExternal = ({
         </div>
         {/* Tags are optional */}
         {tag && (
-        <div className={`${prefix}--card-ext__tags`}>
-          <Tag className={`${prefix}--card-ext__tag`} type="custom">
-            {tag}
-          </Tag>
-        </div>)
-        }
-        
+          <div className={`${prefix}--card-ext__tags`}>
+            <Tag className={`${prefix}--card-ext__tag`} type="custom">
+              {tag}
+            </Tag>
+          </div>
+        )}
       </div>
       {/* Better to allow only small buttons for alignment reasons */}
       {children}
@@ -135,20 +136,20 @@ CardExternal.propTypes = {
   /**
    label description for card if any
   */
-  label: PropTypes.string, 
+  label: PropTypes.string,
 
   /**
    labelStatus is either true or false, it applies  for card if any
   */
   labelStatus: PropTypes.bool,
   image: PropTypes.string,
-  heading: PropTypes.string, 
-  subHeading: PropTypes.string, 
-  caption: PropTypes.string, 
-  tag: PropTypes.string, 
+  heading: PropTypes.string,
+  subHeading: PropTypes.string,
+  caption: PropTypes.string,
+  tag: PropTypes.string,
   children: PropTypes.node,
   interactive: PropTypes.bool,
-  className: PropTypes.string
-}
+  className: PropTypes.string,
+};
 
 export default CardExternal;

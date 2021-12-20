@@ -5,17 +5,17 @@ import Wrapper from '../Wrapper';
 import classnames from 'classnames';
 import { WfpLogoVerticalEn } from '@unitednations/pictograms-react';
 
-import { settings } from '../../globals/js';
-
-const { prefix } = settings;
+import useSettings from '../../hooks/useSettings';
 
 const FooterExternal = ({
   className,
   productName,
-  children,
+  // children,
   metaContent,
   metaLinks,
 }) => {
+  const { prefix } = useSettings();
+
   const externalClasses = classnames(`${prefix}--footer-ext`, className);
   return (
     <footer className={externalClasses}>
@@ -115,6 +115,8 @@ FooterExternal.propTypes = {
 };
 
 const LinksColumn = () => {
+  const { prefix } = useSettings();
+
   return (
     <div className={`${prefix}--links-column`}>
       {/* Title is optional */}
@@ -143,6 +145,8 @@ const LinksColumn = () => {
 };
 
 const FooterMetaLink = ({ className, href, children }) => {
+  const { prefix } = useSettings();
+
   const wrapperClasses = classnames(
     `${prefix}--footer-ext__legal-link`,
     className

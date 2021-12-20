@@ -9,8 +9,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { settings } from '../../globals/js';
-
+import { withUNCoreSettings } from '../UNCoreSettings';
+import useSettings from '../../hooks/useSettings';
 import {
   CheckmarkGlyph,
   CloseGlyph,
@@ -20,9 +20,7 @@ import Loading from '../Loading';
 import uid from '../../tools/uniqueId';
 import { ButtonTypes } from '../../prop-types/types';
 
-const { prefix } = settings;
-
-export class FileUploaderButton extends Component {
+class FileUploaderButton extends Component {
   state = {};
 
   static propTypes = {
@@ -140,6 +138,7 @@ export class FileUploaderButton extends Component {
 
   render() {
     const {
+      prefix,
       className,
       disableLabelChanges, // eslint-disable-line
       labelText, // eslint-disable-line
@@ -194,7 +193,10 @@ export class FileUploaderButton extends Component {
   }
 }
 
-export function Filename({ iconDescription, status, invalid, ...other }) {
+const FileUploaderButtonWithSettings = withUNCoreSettings(FileUploaderButton);
+
+function Filename({ iconDescription, status, invalid, ...other }) {
+  const { prefix } = useSettings();
   switch (status) {
     case 'uploading':
       return (
@@ -255,7 +257,7 @@ Filename.defaultProps = {
   tabIndex: '0',
 };
 
-export default class FileUploader extends Component {
+class FileUploader extends Component {
   static propTypes = {
     /**
      * Provide a description for the complete/close icon that can be read by screen readers
@@ -375,6 +377,7 @@ export default class FileUploader extends Component {
 
   render() {
     const {
+      prefix,
       iconDescription,
       buttonLabel,
       buttonKind,
@@ -439,3 +442,13 @@ export default class FileUploader extends Component {
     );
   }
 }
+
+const FileUploaderWithSettings = withUNCoreSettings(FileUploader);
+
+export {
+  FileUploaderButtonWithSettings as FileUploaderButton,
+  Filename,
+  FileUploaderWithSettings as FileUploader,
+};
+
+export default FileUploaderWithSettings;

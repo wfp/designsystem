@@ -8,13 +8,12 @@
 import React, { useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { settings } from '../../globals/js';
-//import { keys, matches } from '../../internal/keyboard';
+import useSettings from '../../hooks/useSettings'; //import { keys, matches } from '../../internal/keyboard';
 import uniqueId from '../../tools/uniqueId';
 
-const { prefix } = settings;
-
 export default function FileUploaderDropContainer(props) {
+  const { prefix } = useSettings();
+
   const inputRef = useRef();
   const {
     accept,

@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import { settings } from '../../globals/js';
-const { prefix } = settings;
+import useSettings from '../../hooks/useSettings';
 
 /** The Empty component can be used whenever a section should indicate that there is no content available. This can be the case for a empty list table or search results. */
 export const Empty = ({
@@ -15,6 +14,8 @@ export const Empty = ({
   kind = 'large',
   ...other
 }) => {
+  const { prefix } = useSettings();
+
   const classNames = classnames(
     {
       [`${prefix}--empty`]: true,

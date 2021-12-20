@@ -5,8 +5,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import { settings } from '../../globals/js';
-const { prefix } = settings;
+const { prefix } = require('../../globals/js');
 
 module.exports = {
   context: {

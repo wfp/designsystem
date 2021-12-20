@@ -1,10 +1,8 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
-import { settings } from '../../globals/js';
+import useSettings from '../../hooks/useSettings';
 import Input from '../Input/Input';
-
-const { prefix } = settings;
 
 /** Text inputs enable the user to interact with and input content and data. This component can be used for long and short form entries. */
 
@@ -28,6 +26,8 @@ const TextInput = React.forwardRef((props, ref) => {
     required,
     ...other
   } = props;
+
+  const { prefix } = useSettings();
 
   const textInputClasses = classNames(`${prefix}--text`, className, {
     [`${prefix}--text--helpertext`]: helperText,

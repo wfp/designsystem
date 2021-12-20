@@ -1,9 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import { settings } from '../../globals/js';
-const { prefix } = settings;
 import { ChevronRight16 } from '@unitednations/icons-react';
+import useSettings from '../../hooks/useSettings';
 
 /** The item component to show entries inside a list, like a sidebar or an overview page. */
 export const Item = ({
@@ -23,6 +22,8 @@ export const Item = ({
   wrapper = 'none',
   ...other
 }) => {
+  const { prefix } = useSettings();
+
   const classNames = classnames(
     {
       [`${prefix}--item`]: true,

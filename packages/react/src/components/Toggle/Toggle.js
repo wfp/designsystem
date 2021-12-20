@@ -1,8 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
-import { settings } from '../../globals/js';
-const { prefix } = settings;
+import useSettings from '../../hooks/useSettings';
 
 /** A toggle is used to quickly switch between two possible states. They are commonly used for “on/off” switches */
 
@@ -18,6 +17,7 @@ const Toggle = ({
   labelB,
   ...other
 }) => {
+  const { prefix } = useSettings();
   let input;
   const wrapperClasses = classNames({
     [`${prefix}--form-item`]: true,
