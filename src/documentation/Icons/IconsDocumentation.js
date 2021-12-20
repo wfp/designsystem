@@ -119,7 +119,7 @@ from '@wfp/icons'`}
 
 const wrapperStyle = { display: 'flex', flexWrap: 'wrap', margin: '0 -0.7em' };
 
-const IconsComponent = () => (
+const IconsDocumentation = () => (
   <>
     <p>
       For Usage please take a look at the{' '}
@@ -221,4 +221,4 @@ const IconsComponent = () => (
   </>
 );
 
-export default IconsComponent;
+export default IconsDocumentation;
