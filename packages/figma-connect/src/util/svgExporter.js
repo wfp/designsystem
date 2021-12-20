@@ -1,9 +1,8 @@
 require('dotenv').config();
 const axios = require('axios');
-const figmaRestApi = require('./util/figmaRestApi');
-const Utils = require('./util/utils');
-const colorsExporter = require('./util/colorsExporter');
-const svgExporter = require('./util/svgExporter');
+const figmaRestApi = require('./figmaRestApi');
+const Utils = require('./utils');
+const colorsExporter = require('./colorsExporter');
 
 const rateLimit = 20;
 const waitTimeInSeconds = 45;

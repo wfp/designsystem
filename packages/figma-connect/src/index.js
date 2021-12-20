@@ -21,7 +21,7 @@ const getSVGURL = async (id) => {
   );
 };
 
-const svgExporter = async ({
+/*const svgExporter = async ({
   figmaProjectId = process.env.FIGMA_PROJECT_ID,
   figmaProjectNodeId = process.env.FIGMA_PROJECT_NODE_ID,
   filterPrivateComponents = process.env.FILTER_PRIVATE_COMPONENTS,
@@ -98,7 +98,7 @@ const svgExporter = async ({
     console.error(err);
   }
 };
-
+*/
 module.exports = {
   svgExporter,
   colorsExporter,

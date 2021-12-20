@@ -129,6 +129,7 @@ export default class InputGroup extends React.Component {
       vertical,
       hideLabel,
       className = `${prefix}--input-group`,
+      wrapperClassName,
     } = this.props;
 
     const labelClasses = classNames(`${prefix}--label`, {
@@ -137,6 +138,7 @@ export default class InputGroup extends React.Component {
 
     const wrapperClasses = classNames(`${prefix}--form-item`, {
       [`${prefix}--input-group__vertical`]: vertical,
+      wrapperClassName,
     });
 
     const label = labelText ? (
