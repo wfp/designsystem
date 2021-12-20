@@ -1,3 +1,10 @@
+## [1.20.6](https://github.com/wfp/ui/compare/v1.20.5...v1.20.6) (2021-12-20)
+
+
+### Bug Fixes
+
+* **DatePicker:** removed old react-hook-form datepicker ([1ab3327](https://github.com/wfp/ui/commit/1ab33277c59f62738e622a1026754ccccdeefe1c))
+
 ## [1.20.5](https://github.com/wfp/ui/compare/v1.20.4...v1.20.5) (2021-12-03)
 
 
