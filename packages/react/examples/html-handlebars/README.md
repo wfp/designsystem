@@ -1,6 +1,6 @@
 # `examples/html-handlebars`
 
-> How to integrate `@unitednations/react` and `@unitednations/icons` into a project
+> How to integrate `@un/react` and `@un/icons` into a project
 
 > using plain html
 

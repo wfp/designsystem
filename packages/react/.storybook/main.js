@@ -52,7 +52,7 @@ module.exports = {
     // This results in these files being included in `babel-loader` and causing
     // the build times to increase dramatically
     babelLoader.exclude = [
-      /node_modules\/(?!@unitednations).*/,
+      /node_modules\/(?!@un).*/,
       /packages\/.*\/(es|lib|umd)/,
     ];
 
@@ -125,26 +125,6 @@ module.exports = {
       enforce: 'pre',
     });
 
-    /*config.module.rules.push({
-      test: /\.tsx?$/,
-      loaders: [
-        {
-          loader: require.resolve('@storybook/source-loader'),
-          options: {
-            prettierConfig: {
-              parser: 'typescript',
-              printWidth: 80,
-              tabWidth: 2,
-              bracketSpacing: true,
-              trailingComma: 'es5',
-              singleQuote: true,
-            },
-          },
-        },
-      ],
-      enforce: 'pre',
-    });
-*/
     config.module.rules.push({
       test: /\.scss$/,
       sideEffects: true,

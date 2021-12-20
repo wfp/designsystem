@@ -1,6 +1,6 @@
 import React from 'react';
 import { buttonKinds } from '../../prop-types/types';
-import { AddCircleGlyph } from '@unitednations/icons-react';
+import { AddCircleGlyph } from '@un/icons-react';
 import markdown from './README.mdx';
 import buttonTwig from './Button.twig';
 import { twig } from 'twig';

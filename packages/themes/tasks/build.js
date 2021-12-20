@@ -12,7 +12,7 @@
 require('core-js/features/array/flat-map');
 
 const { reporter } = require('@carbon/cli-reporter');
-const { generate } = require('@unitednations/scss-generator');
+const { generate } = require('@un/scss-generator');
 const fs = require('fs-extra');
 const path = require('path');
 const yaml = require('js-yaml');

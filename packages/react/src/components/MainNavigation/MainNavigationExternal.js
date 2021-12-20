@@ -1,7 +1,8 @@
 import React from 'react';
 import { useEffect, useRef } from 'react';
-import { WfpLogoVerticalEn } from '@unitednations/pictograms-react';
-import { ChevronDownGlyph, ChevronUpGlyph } from '@unitednations/icons-react';
+import { WfpLogoVerticalEn } from '@un/pictograms-react';
+import { ChevronDownGlyph, ChevronUpGlyph } from '@un/icons-react';
+
 import Button from '../Button';
 import User from '../User';
 import Wrapper from '../Wrapper';

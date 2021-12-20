@@ -1,6 +1,6 @@
 {
-  "name": "@unitednations/scss-generator",
-  "version": "10.13.5",
+  "name": "@un/scss-generator",
+  "version": "10.13.7",
   "license": "Apache-2.0",
   "main": "src/index.js",
   "repository": {

@@ -179,7 +179,7 @@ async function builder(metadata, { output }) {
   const esmBundle = await rollup({
     input: 'index.js',
     external: [
-      '@unitednations/icon-helpers',
+      '@un/icon-helpers',
       '@carbon/icon-helpers',
       'react',
       'prop-types',

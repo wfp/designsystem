@@ -3,7 +3,7 @@ import React from 'react';
 import classNames from 'classnames';
 import useSettings from '../../hooks/useSettings';
 import FormItem from '../FormItem';
-import { WarningSolidGlyph } from '@unitednations/icons-react';
+import { WarningSolidGlyph } from '@un/icons-react';
 
 /**
  * Input is a wrapper for custom inputs providing the label, helperText and errors. */

@@ -16,7 +16,7 @@ export default {
     docs: {
       source: {
         code: `
-import { MdxComponents } from '@unitednations/react';
+import { MdxComponents } from '@un/react';
 import { MDXProvider } from '@mdx-js/react';
 
 <MDXProvider components={MdxComponents}>{children}</MDXProvider>`,

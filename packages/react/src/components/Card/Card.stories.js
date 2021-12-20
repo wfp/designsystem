@@ -5,7 +5,7 @@ import cardTwig from './Card.twig';
 import Button from '../Button';
 import { Card, CardExternal } from '.';
 
-import { StarSolidGlyph } from '@unitednations/icons-react';
+import { StarSolidGlyph } from '@un/icons-react';
 
 export default {
   title: 'Components/Content Related/Card',

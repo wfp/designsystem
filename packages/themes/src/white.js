@@ -268,7 +268,7 @@ export {
   display02,
   display03,
   display04,
-} from '@unitednations/type';
+} from '@un/type';
 
 // Layout
 // Spacing
@@ -315,7 +315,7 @@ export {
   // Icon sizes
   iconSize01,
   iconSize02,
-} from '@unitednations/layout';
+} from '@un/layout';
 
 // Deprecated ☠️
 export const brand01 = interactive01;

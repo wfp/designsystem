@@ -26,7 +26,7 @@ storiesOf('Getting started|Getting started', module)
         <PrismCode component="pre" className="language-js">
           {`// Sample overriding settings
 import ReactDOM from 'react-dom';
-import { Button } from "@unitednations/react";
+import { Button } from "@un/react";
 
 const myContainerElement = document.getElementById("container");
 

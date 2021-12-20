@@ -20,9 +20,9 @@ const monorepo = require('./remark/remark-monorepo');
 const packageDenyList = new Set([
   'wfp-components',
   'wfp-components-react',
-  '@unitednations/react',
-  '@unitednations/sketch',
-  '@unitednations/styles',
+  '@un/react',
+  '@un/sketch',
+  '@un/styles',
 ]);
 
 function run({ root, packagePaths }) {

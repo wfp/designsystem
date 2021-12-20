@@ -1,6 +1,6 @@
 import React from 'react';
 import markdown from './README.mdx';
-import { Add16, Home20 } from '@unitednations/icons-react';
+import { Add16, Home20 } from '@un/icons-react';
 
 export default {
   title: 'Components/UI Elements/Icon',

@@ -7,7 +7,7 @@
 
 'use strict';
 
-const { types: t } = require('@unitednations/scss-generator');
+const { types: t } = require('@un/scss-generator');
 const { formatTokenName } = process.env.sourceLib
   ? require(process.env.sourceLib)
   : require('../../lib');
@@ -36,7 +36,7 @@ function buildMixinsFile(themes, tokens, defaultTheme, defaultThemeMapName) {
 /     }
 /   }
 /
-/ @group @unitednations/themes`);
+/ @group @un/themes`);
 
   // Create carbon--theme mixin, takes a theme as input and assigns all theme
   // variables using the `!global` flag before resetting at the end of the

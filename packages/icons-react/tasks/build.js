@@ -7,8 +7,8 @@
 
 'use strict';
 
-const { builders } = require('@unitednations/icon-build-helpers');
-const metadata = require('@unitednations/icons/metadata.json');
+const { builders } = require('@un/icon-build-helpers');
+const metadata = require('@un/icons/metadata.json');
 
 async function build() {
   await builders.react.run(metadata, {

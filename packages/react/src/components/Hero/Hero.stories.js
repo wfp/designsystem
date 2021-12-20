@@ -4,7 +4,7 @@ import markdown from './README.mdx';
 
 import { Hero, HeroExternal } from '.';
 import Button from '../Button';
-import { WfpHumEmergencyResponsePos } from '@unitednations/pictograms-react';
+import { WfpHumEmergencyResponsePos } from '@un/pictograms-react';
 import heroTwig from './Hero.twig';
 
 export default {

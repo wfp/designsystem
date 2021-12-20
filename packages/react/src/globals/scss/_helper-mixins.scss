@@ -16,7 +16,7 @@
 @import 'vars';
 @import 'css--reset';
 @import 'typography';
-@import './vendor/@unitednations/import-once/scss/import-once';
+@import './vendor/@un/import-once/scss/import-once';
 
 @mixin text-overflow($width: false) {
   display: block;

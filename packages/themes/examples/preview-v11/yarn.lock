@@ -58,9 +58,9 @@ __metadata:
   languageName: node
   linkType: soft
 
-"@unitednations/themes@link:../../::locator=themes-examples-preview-v11%40workspace%3A.":
+"@un/themes@link:../../::locator=themes-examples-preview-v11%40workspace%3A.":
   version: 0.0.0-use.local
-  resolution: "@unitednations/themes@link:../../::locator=themes-examples-preview-v11%40workspace%3A."
+  resolution: "@un/themes@link:../../::locator=themes-examples-preview-v11%40workspace%3A."
   languageName: node
   linkType: soft
 
@@ -2977,7 +2977,7 @@ __metadata:
   resolution: "themes-examples-preview-v11@workspace:."
   dependencies:
     "@carbon/colors": "link:../../../colors"
-    "@unitednations/themes": "link:../../"
+    "@un/themes": "link:../../"
     next: ^10.0.7
     react: ^17.0.1
     react-dom: ^17.0.1

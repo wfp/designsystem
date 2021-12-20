@@ -1,6 +1,6 @@
 $font-path: 'https://cdn.wfp.org/guides/ui/assets/v0.0.1/fonts' !default;
 
-@import './vendor/@unitednations/import-once/scss/import-once';
+@import './vendor/@un/import-once/scss/import-once';
 
 @mixin open-sans-font-face {
   @font-face {

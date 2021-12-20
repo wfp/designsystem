@@ -3,7 +3,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import classNames from 'classnames';
 import useSettings from '../../hooks/useSettings';
 import Input from '../Input';
-import { SearchGlyph, CloseGlyph } from '@unitednations/icons-react';
+import { SearchGlyph, CloseGlyph } from '@un/icons-react';
 
 /** Search enables users to specify a word or a phrase to find relevant pieces of content without the use of navigation. */
 

@@ -45,10 +45,6 @@ function rgbToHex(r, g, b) {
 const slugify = (str) => str.toLowerCase().replace(/\s+/, '-');
 
 function camelize(str) {
-  /*var n = str.lastIndexOf('/');
-  var result = str.substring(n + 1);
-  return result;*/
-
   str = str.replace('dark/', '').toLowerCase();
 
   strSplit = str.split('/');

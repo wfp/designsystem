@@ -9,13 +9,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import { CheckmarkGlyph, CloseGlyph, WarningSolidGlyph } from '@un/icons-react';
 import { withUNCoreSettings } from '../UNCoreSettings';
 import useSettings from '../../hooks/useSettings';
-import {
-  CheckmarkGlyph,
-  CloseGlyph,
-  WarningSolidGlyph,
-} from '@unitednations/icons-react';
+
 import Loading from '../Loading';
 import uid from '../../tools/uniqueId';
 import { ButtonTypes } from '../../prop-types/types';

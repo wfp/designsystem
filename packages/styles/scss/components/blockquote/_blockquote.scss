@@ -9,7 +9,7 @@
 
 //TODO - handle customise icon showing different color
 
-@mixin blockquote{
+@mixin blockquote {
   // <button> elements cannot be used as flex containers
   .#{$prefix}--blockquote {
     background-color: $layer;

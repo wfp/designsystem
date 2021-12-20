@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 // import Icon from '../Icon';
 import classNames from 'classnames';
-import { ChevronLeft16 } from '@unitednations/icons-react';
+import { ChevronLeft16 } from '@un/icons-react';
 import useSettings from '../../hooks/useSettings';
 
 export default function Sidebar({

@@ -16,7 +16,7 @@ import {
   WarningAlt32,
   WarningSolidGlyph,
   InfoSolidGlyph,
-} from '@unitednations/icons-react';
+} from '@un/icons-react';
 
 const iconLookup = {
   warning: {

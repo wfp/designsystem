@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import { ChevronRight16 } from '@unitednations/icons-react';
+import { ChevronRight16 } from '@un/icons-react';
 import useSettings from '../../hooks/useSettings';
 
 /** The item component to show entries inside a list, like a sidebar or an overview page. */

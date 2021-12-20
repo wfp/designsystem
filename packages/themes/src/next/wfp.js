@@ -236,7 +236,7 @@ export {
   display02,
   display03,
   display04,
-} from '@unitednations/type';
+} from '@un/type';
 
 // Layout
 // Spacing

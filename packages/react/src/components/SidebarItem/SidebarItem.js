@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { iconUser } from '@unitednations/icons-react';
+import { iconUser } from '@un/icons-react';
 import Icon from '../../components/Icon';
 import useSettings from '../../hooks/useSettings';
 

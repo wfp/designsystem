@@ -7,7 +7,7 @@
 
 'use strict';
 
-const { types: t } = require('@unitednations/scss-generator');
+const { types: t } = require('@un/scss-generator');
 const { TokenFormat } = require('../../../src/next');
 const { tokens } = require('../../../src');
 const { FILE_BANNER } = require('../shared');

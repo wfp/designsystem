@@ -7,7 +7,7 @@ import {
   BreadcrumbHome,
   Tabs,
   Tab,
-} from '@unitednations/react';
+} from '@un/react';
 
 function NavigationSecondary() {
   return (

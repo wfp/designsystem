@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import classNames from 'classnames';
-import { CloseGlyph } from '@unitednations/icons-react';
+import { CloseGlyph } from '@un/icons-react';
 import Button from '../Button';
 import { withUNCoreSettings } from '../UNCoreSettings';
 

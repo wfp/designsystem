@@ -165,7 +165,7 @@ You can customize the content by using \`BannerNavigation\`.
 `;
 
 const sourcecode = (type) => {
-  return `import { Button,User, Search } from "@unitednations/react";
+  return `import { Button,User, Search } from "@un/react";
   import {
     MainNavigationExternal,
     MainNavigationItem,
@@ -178,7 +178,7 @@ const sourcecode = (type) => {
     SubNavigationList,
     SubNavigationGroup,
     SubNavigationItem
-  } from "@unitednations/react";
+  } from "@un/react";
 
   const Navigation = () => {
     return (

@@ -1,5 +1,5 @@
 /* Export all WFP components */
-//export * from '@unitednations/react';
+//export * from '@un/react';
 
 /* Export custom components */
 export CustomButton from './components/CustomButton';

@@ -8,7 +8,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
-import { CaretDownGlyph } from '@unitednations/icons-react';
+import { CaretDownGlyph } from '@un/icons-react';
 
 import useSettings from '../../hooks/useSettings';
 import Input from '../Input';

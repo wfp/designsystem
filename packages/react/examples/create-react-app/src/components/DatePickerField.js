@@ -2,7 +2,7 @@ import React from 'react';
 import { Field, Form } from 'react-final-form';
 import moment from 'moment';
 import { SingleDatePicker } from 'react-dates';
-import { SingleDatePickerInput } from '@unitednations/ui';
+import { SingleDatePickerInput } from '@un/ui';
 
 // const FieldWrapper = styled.div`
 //   .datepicker-invalid .DateInput_input {

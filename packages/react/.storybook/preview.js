@@ -13,12 +13,12 @@ import { UNCoreProvider } from '../src/components/UNCoreSettings';
   types,
 } from '@storybook/addon-docs/blocks';*/
 
-import { DocsPage } from './blocks/DocsPage';
+import DocsPage from './documentation/DocsPage';
 import { DocsContainer } from './blocks/DocsContainer';
 
 addParameters({
   docs: {
-    container: DocsContainer,
+    //container: DocsContainer,
     page: DocsPage,
   },
   viewMode: 'docs',

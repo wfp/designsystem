@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
 import Button from '../Button';
-import { ArrowLeft16, ArrowRight16 } from '@unitednations/icons-react';
+import { ArrowLeft16, ArrowRight16 } from '@un/icons-react';
 import { withUNCoreSettings } from '../UNCoreSettings';
 
 class FormControls extends React.Component {

@@ -15,9 +15,7 @@ const { babel } = require('@rollup/plugin-babel');
 const commonjs = require('@rollup/plugin-commonjs');
 const { nodeResolve } = require('@rollup/plugin-node-resolve');
 const execa = require('execa');
-const pathToThemes = path.dirname(
-  require.resolve('@unitednations/themes/package.json')
-);
+const pathToThemes = path.dirname(require.resolve('@un/themes/package.json'));
 
 require('@babel/register')({
   presets: ['@babel/preset-env'],

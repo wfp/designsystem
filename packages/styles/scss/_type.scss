@@ -6,7 +6,7 @@
 //
 
 @use 'config';
-@forward '@unitednations/type' show
+@forward '@un/type' show
   // Mixins
   reset,
   type-style,

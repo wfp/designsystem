@@ -1,6 +1,6 @@
 {
-  "name": "@unitednations/create-design-system",
-  "version": "1.0.14",
+  "name": "@un/create-design-system",
+  "version": "1.0.16",
   "description": "",
   "main": "index.js",
   "bin": {

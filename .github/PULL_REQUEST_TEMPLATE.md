@@ -1,4 +1,4 @@
-Closes @unitednations/react#
+Closes @un/react#
 
 {{short description}}
 

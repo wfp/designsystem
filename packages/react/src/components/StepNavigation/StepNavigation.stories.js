@@ -47,7 +47,7 @@ StepNavigationRegular.story = {
     docs: {
       source: {
         code: `
-        import { StepNavigation , StepNavigationItem } from "@unitednations/react";
+        import { StepNavigation , StepNavigationItem } from "@un/react";
         
 const StepNavigationExample = (args) => {
   const [step, setStep] = useState(0);

@@ -68,7 +68,7 @@ const umdBundleConfig = {
       'prop-types': 'PropTypes',
       react: 'React',
       'react-dom': 'ReactDOM',
-      //'@unitednations/icons': 'WfpIcons',
+      //'@un/icons': 'WfpIcons',
     },
   },
 };

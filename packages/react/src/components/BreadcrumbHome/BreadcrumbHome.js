@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import classnames from 'classnames';
-import { HomeGlyph } from '@wfp/icons-react';
+import { HomeGlyph } from '@un/icons-react';
 import useSettings from '../../hooks/useSettings';
 
 const BreadcrumbHome = ({ className, hometext, ...other }) => {

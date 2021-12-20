@@ -9,7 +9,7 @@ import {
   WarningSolidGlyph,
   //WarningAltFilled20,
   InfoCircleGlyph,
-} from '@unitednations/icons-react';
+} from '@un/icons-react';
 
 import Button from '../Button';
 import Icon from '../Icon';
@@ -493,10 +493,9 @@ export function InlineNotification({
           subtitle={subtitle}
           notificationType={notificationType}>
           {children}
-          {actions}
         </NotificationTextDetails>
       </div>
-
+      {actions}
       {!hideCloseButton && (
         <NotificationButton
           iconDescription={iconDescription}

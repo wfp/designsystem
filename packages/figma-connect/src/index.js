@@ -3,17 +3,15 @@ const axios = require('axios');
 const figmaRestApi = require('./util/figmaRestApi');
 const Utils = require('./util/utils');
 const colorsExporter = require('./util/colorsExporter');
-const outputFolder = './src/svg/';
+const svgExporter = require('./util/svgExporter');
+
 const rateLimit = 20;
 const waitTimeInSeconds = 45;
 const fs = require('fs');
 
-const getProjectNode = async () => {
+const getProjectNode = async ({ figmaProjectId, figmaProjectNodeId }) => {
   return await figmaRestApi.get(
-    'files/' +
-      process.env.FIGMA_PROJECT_ID +
-      '/nodes?ids=' +
-      process.env.FIGMA_PROJECT_NODE_ID
+    'files/' + figmaProjectId + '/nodes?ids=' + figmaProjectNodeId
   );
 };
 
@@ -23,16 +21,25 @@ const getSVGURL = async (id) => {
   );
 };
 
-const svgExporter = async () => {
-  try {
-    const response = await getProjectNode();
-    const children = await response.data.nodes[
-      process.env.FIGMA_PROJECT_NODE_ID
-    ].document.children;
+/*const svgExporter = async ({
+  figmaProjectId = process.env.FIGMA_PROJECT_ID,
+  figmaProjectNodeId = process.env.FIGMA_PROJECT_NODE_ID,
+  filterPrivateComponents = process.env.FILTER_PRIVATE_COMPONENTS,
+  svgOutputFolderEntry = process.env.SVG_OUTPUT_FOLDER,
+}) => {
+  const svgOutputFolder = svgOutputFolderEntry
+    ? svgOutputFolderEntry
+    : './src/svg/';
 
-    const components = await response.data.nodes[
-      process.env.FIGMA_PROJECT_NODE_ID
-    ].components;
+  try {
+    const response = await getProjectNode({
+      figmaProjectId,
+      figmaProjectNodeId,
+    });
+    const children = await response.data.nodes[figmaProjectNodeId].document
+      .children;
+
+    const components = await response.data.nodes[figmaProjectNodeId].components;
 
     // If ignoring private components
     let svgs;
@@ -91,9 +98,7 @@ const svgExporter = async () => {
     console.error(err);
   }
 };
-
-//svgExporter();
-
+*/
 module.exports = {
   svgExporter,
   colorsExporter,
