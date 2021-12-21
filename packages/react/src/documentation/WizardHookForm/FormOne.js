@@ -4,6 +4,7 @@ import TextArea from '../../components/TextArea';
 import Blockquote from '../../components/Blockquote';
 
 function FormOne(props) {
+  console.log('propsme', props)
 
     return (
         <>
@@ -16,10 +17,9 @@ function FormOne(props) {
               </div>
               <TextInput
                 id="firstName"
-                name="firstName"
                 helperText="Enter your full first name"
                 labelText="First Name"
-                inputRef={props.register}
+                {...props.register('firstName')}
               />
                 {/* <input
                 name="firstName"
@@ -27,11 +27,10 @@ function FormOne(props) {
                 /> */}
               <TextInput
                 id="lastName"
-                name="lastName"
                 labelText="Last Name"
                 helperText="Enter your last name"
                 placeholder="Placeholder text"
-                inputRef={props.register}
+                {...props.register('lastName')}
               />
               {/* <input
                 name="lastName"
@@ -39,8 +38,7 @@ function FormOne(props) {
                 /> */}
               <TextArea
                 labelText="Notes"
-                name="notes"
-                inputRef={props.register}
+                {...props.register('notes')}
               />
         </>
     )

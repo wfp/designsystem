@@ -9,7 +9,7 @@ import Form from '../../components/Form';
 import Blockquote from '../../components/Blockquote/Blockquote';
 
 const ComplexForm = () => {
-  const { control, handleSubmit, register, errors, reset } = useForm();
+  const { control, handleSubmit, register, formState:{errors}, reset } = useForm();
   const onSubmit = (values) => {
     setOutput(values);
   };
@@ -19,37 +19,17 @@ const ComplexForm = () => {
     <Form longForm onSubmit={handleSubmit(onSubmit)}>
       <TextInput
         labelText="Email TextInput"
-        name="email"
-        ref={register({
-          required: 'Required',
-          pattern: {
-            value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-            message: 'invalid email address',
-          },
-        })}
+        {...register('email', { required: true, pattern: {
+          value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+          message: 'invalid email address',
+        }})}
+        invalid={errors.email && {message: errors.email.message}}
       />
-      {errors.email && errors.email.message}
+      
       <TextInput
         labelText="TextInput"
-        name="textinput"
-        ref={register({
-          validate: (value) => value !== 'admin' || 'Nice try!',
-        })}
+        {...register('textinput',{validate: (value) => value !== 'admin' || 'Nice try!'})}
       />
-      {/*<Checkbox
-      onBlur={onBlur}
-      onChange={e => onChange(e.target.checked)}
-      checked={value}
-      name={name}
-
-                 onChange={e => {console.log("waaaaa", e)}}
-
-                  onChange={(e, l) => {
-              console.log('wqqqqqqaaa', e, e.target.value, l);
-              props.onChange(e.target.value);
-            }}
-
-    />*/}
       <Controller
         control={control}
         name="numberinput"
@@ -62,13 +42,13 @@ const ComplexForm = () => {
           />
         )}
       />
-      <Select name="select" inputRef={register} labelText="Select">
+      <Select {...register('select')} labelText="Select">
         <SelectItem value="" text="not selected" />
         <SelectItem value="daily" text="daily" />
         <SelectItem value="weekly" text="weekly" />
         <SelectItem value="monthly" text="monthly" />
       </Select>
-      {errors.username && errors.username.message}
+    
       <Button type="submit">Submit</Button>{' '}
       <Button
         type="submit"

@@ -44,7 +44,7 @@ const WizardHook =({ content })=>{
                 formHeader={`Step ${page + 1}/${content.length}`}
                 stickySidebar
                 formControls={
-                    <FormControls
+                    <FormControls 
                     onPreviousClick={previous}
                     previousHidden={page > 0 ? false : true}
                     nextHidden={isLastPage}
