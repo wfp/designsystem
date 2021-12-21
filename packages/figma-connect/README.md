@@ -28,9 +28,11 @@ Export your SVGs that are in your Figma project easily via CLI or node.js.
 The tool needs the following environment variables.
 
 ```
+FIGMA_DEV_ACCESS_TOKEN=XXXX-XXXX-XXXX-XXXX-XXXX
+
+#Optional
 FIGMA_PROJECT_ID=73iYBLNZ4LnSXe43cWUPDz
 FIGMA_PROJECT_NODE_ID=0:1
-DEV_ACCESS_TOKEN=
 FILTER_PRIVATE_COMPONENTS=false
 SVG_OUTPUT_FOLDER=./svg/
 ```
@@ -42,7 +44,11 @@ SVG_OUTPUT_FOLDER=./svg/
 ```js
 const { svgExporter } = require('@un/figma-connect');
 
-svgExporter({ outputFolder: './outputFolder' });
+svgExporter({
+  svgOutputFolder: './outputFolder',
+  figmaProjectId: '73iYBLNZ4LnSXe43cWUPDz',
+  figmaProjectNodeId: '0:1',
+});
 ```
 
 Your SVGs will be generated in `src/svg` folder

@@ -4,7 +4,7 @@ const figmaRestApi = axios.create({
     ? process.env.FIGMA_BASE_URL
     : 'https://api.figma.com/v1/',
   headers: {
-    'X-Figma-Token': process.env.DEV_ACCESS_TOKEN,
+    'X-Figma-Token': process.env.FIGMA_DEV_ACCESS_TOKEN,
   },
 });
 

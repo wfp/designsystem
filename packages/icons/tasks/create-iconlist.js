@@ -46,8 +46,6 @@ fs.writeFile('./icons.yml', icons, (err) => {
   if (err) throw err;
 });
 
-// Write data in 'Output.txt' .
-
 fs.writeFile('./categories.yml', categoryList, (err) => {
   if (err) throw err;
 });

@@ -1,6 +1,7 @@
 require('dotenv').config();
 const axios = require('axios');
 const figmaRestApi = require('./figmaRestApi');
+const path = require('path');
 const Utils = require('./utils');
 const colorsExporter = require('./colorsExporter');
 
@@ -8,27 +9,28 @@ const rateLimit = 20;
 const waitTimeInSeconds = 45;
 const fs = require('fs');
 
-const getProjectNode = async ({ figmaProjectId, figmaProjectNodeId }) => {
-  return await figmaRestApi.get(
-    'files/' + figmaProjectId + '/nodes?ids=' + figmaProjectNodeId
-  );
-};
-
-const getSVGURL = async (id) => {
-  return await figmaRestApi.get(
-    'images/' + process.env.FIGMA_PROJECT_ID + '/?ids=' + id + '&format=svg'
-  );
-};
-
 const svgExporter = async ({
-  figmaProjectId = process.env.FIGMA_PROJECT_ID,
-  figmaProjectNodeId = process.env.FIGMA_PROJECT_NODE_ID,
-  filterPrivateComponents = process.env.FILTER_PRIVATE_COMPONENTS,
-  svgOutputFolderEntry = process.env.SVG_OUTPUT_FOLDER,
+  figmaProjectId,
+  figmaProjectNodeId,
+  filterPrivateComponents,
+  svgOutputFolder,
 }) => {
-  const svgOutputFolder = svgOutputFolderEntry
-    ? svgOutputFolderEntry
-    : './src/svg/';
+  /*figmaProjectId = process.env.FIGMA_PROJECT_ID,
+    figmaProjectNodeId = process.env.FIGMA_PROJECT_NODE_ID,
+    filterPrivateComponents = process.env.FILTER_PRIVATE_COMPONENTS,
+    svgOutputFolderEntry = process.env.SVG_OUTPUT_FOLDER,*/
+
+  const getProjectNode = async ({ figmaProjectId, figmaProjectNodeId }) => {
+    return await figmaRestApi.get(
+      'files/' + figmaProjectId + '/nodes?ids=' + figmaProjectNodeId
+    );
+  };
+
+  const getSVGURL = async (id) => {
+    return await figmaRestApi.get(
+      'images/' + figmaProjectId + '/?ids=' + id + '&format=svg'
+    );
+  };
 
   try {
     const response = await getProjectNode({
@@ -59,7 +61,7 @@ const svgExporter = async ({
 
     console.log('Number of SVGs', numOfSvgs);
 
-    Utils.createFolder(outputFolder);
+    Utils.createFolder(svgOutputFolder);
 
     for (i = 0; i < numOfSvgs; i += rateLimit) {
       const requests = svgs.slice(i, i + rateLimit).map(async (svg) => {
@@ -75,8 +77,12 @@ const svgExporter = async ({
 
         // Get SVG DOM
         const svgDOM = await axios.get(svgURL.data.images[svg.id]);
+
         Utils.writeToFile(
-          outputFolder + `${Utils.camelCaseToDash(svgName)}.svg`,
+          path.resolve(
+            svgOutputFolder,
+            `${Utils.camelCaseToDash(svgName)}.svg`
+          ),
           svgDOM.data
         );
       });
@@ -97,3 +103,5 @@ const svgExporter = async ({
     console.error(err);
   }
 };
+
+module.exports = svgExporter;

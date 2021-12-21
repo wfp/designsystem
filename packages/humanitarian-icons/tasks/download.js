@@ -1,21 +1,24 @@
-/**
- * Copyright IBM Corp. 2018, 2018
- *
- * This source code is licensed under the Apache-2.0 license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
 'use strict';
 
-const { svgExporter } = require('@un/figma-connect');
 const path = require('path');
 const rimraf = require('rimraf');
 const fs = require('fs');
+require('dotenv').config({ path: path.resolve(__dirname, '../../../.env') });
 
+const { svgExporter } = require('@un/figma-connect');
+
+const folder = path.resolve(__dirname, '../src/svg/');
 async function build() {
-  /*rimraf.sync('./src');
-  await fs.promises.mkdir('./src');*/
-  svgExporter();
+  if (fs.existsSync(folder)) {
+    rimraf.sync(folder);
+  }
+  await fs.promises.mkdir(folder, { recursive: true });
+
+  svgExporter({
+    svgOutputFolder: folder,
+    figmaProjectId: '73iYBLNZ4LnSXe43cWUPDz',
+    figmaProjectNodeId: '0:1',
+  });
 }
 
 build().catch((error) => {

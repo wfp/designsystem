@@ -58,7 +58,7 @@ const addDescription = (svgs, components) => {
     let description = {};
     try {
       description = JSON.parse(components[e.id].description);
-      console.log('descriptionsssss', description);
+      console.log('Add description: ', description);
     } catch (e) {
       // Anweisungen für jeden Fehler
     }
