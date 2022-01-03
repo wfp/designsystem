@@ -1,7 +1,7 @@
 {
   "name": "@un/themes",
   "description": "Themes for applying color in the Carbon Design System",
-  "version": "10.40.13",
+  "version": "10.40.14",
   "license": "Apache-2.0",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -31,9 +31,9 @@
   },
   "dependencies": {
     "@carbon/colors": "^10.30.0",
-    "@un/layout": "^10.26.14",
+    "@un/layout": "^10.26.15",
     "@un/scss-generator": "^10.13.7",
-    "@un/type": "^10.30.15",
+    "@un/type": "^10.30.16",
     "color": "^3.1.2"
   },
   "devDependencies": {
@@ -41,8 +41,8 @@
     "@babel/preset-env": "^7.14.2",
     "@carbon/cli-reporter": "^10.5.0",
     "@carbon/test-utils": "^10.3.0",
-    "@un/cli": "^10.25.14",
-    "@un/figma-connect": "^0.0.7",
+    "@un/cli": "^10.25.15",
+    "@un/figma-connect": "^0.0.8",
     "change-case": "^4.1.1",
     "core-js": "^3.16.0",
     "fs-extra": "^8.1.0",
