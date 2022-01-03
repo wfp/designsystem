@@ -31,6 +31,7 @@
  */
 const settings = {
   prefix: 'wfp',
+  touch: false,
   selectorTabbable: `
     a[href], area[href], input:not([disabled]):not([tabindex='-1']),
     button:not([disabled]):not([tabindex='-1']),select:not([disabled]):not([tabindex='-1']),

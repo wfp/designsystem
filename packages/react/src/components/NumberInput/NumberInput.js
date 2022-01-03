@@ -92,6 +92,7 @@ const NumberInput = React.forwardRef((props, ref) => {
     valueState =
       direction === 'down' ? valueState - step : valueState + parseFloat(step);
     valueState = capMax(max, capMin(min, valueState));
+    // TODO: fix Integer Steps
     valueState = parseFloat(valueState.toFixed(countDecimals(step)));
 
     if (!disabled && conditional) {

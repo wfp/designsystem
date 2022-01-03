@@ -209,6 +209,15 @@
     border-left: 3px solid $support-warning;
   }
 
+  .#{$prefix}--toast-notification--block {
+    box-shadow: none;
+    width: 100%;
+    margin: 0;
+    .#{$prefix}--toast-notification__details {
+      flex: 1;
+    }
+  }
+
   .#{$prefix}--inline-notification {
     box-sizing: border-box;
     padding: 0;

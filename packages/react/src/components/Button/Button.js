@@ -9,6 +9,7 @@ const Button = ({
   children,
   className,
   disabled,
+  disableFocus,
   small,
   large,
   kind,
@@ -23,11 +24,11 @@ const Button = ({
   onClick,
   ...other
 }) => {
-  const { prefix } = useSettings();
+  const { prefix, touch } = useSettings();
   const [count, setCount] = useState(0);
 
   useEffect(() => {
-    let timer = setTimeout(() => endAnimation(), 500);
+    let timer = setTimeout(() => endAnimation(), 200);
     return () => {
       clearTimeout(timer);
     };
@@ -52,6 +53,7 @@ const Button = ({
     [`${prefix}--btn--danger--secondary`]: kind === 'danger--secondary',
     [`${prefix}--btn--tertiary`]: kind === 'tertiary',
     [`${prefix}--btn--animating`]: count,
+    [`${prefix}--btn--disable-focus`]: disableFocus || touch,
     [`${prefix}--btn--all-caps`]: allCaps,
   });
 
@@ -88,9 +90,8 @@ const Button = ({
       type={type}
       onClick={onClickAnimation}
       ref={other.inputref}>
-      {iconReverse && buttonImage}
       {children}
-      {!iconReverse && buttonImage}
+      {buttonImage}
     </button>
   );
 

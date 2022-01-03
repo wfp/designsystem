@@ -218,20 +218,24 @@ InlineLowContrast.args = {
 
 export const InlineBlockquote = (args) => (
   <>
-    <InlineNotification
+    <ToastNotification
       {...args}
       kind="success"
+      block
+      caption="provide a caption"
       actions={<NotificationActionButton>{'Action'}</NotificationActionButton>}
     />
-    <InlineNotification
+    <ToastNotification
       {...args}
       kind="error"
+      block
       actions={<NotificationActionButton>{'Action'}</NotificationActionButton>}>
       Lorem ipsum dolor sit amet, consectetur adipiscing
-    </InlineNotification>
-    <InlineNotification
+    </ToastNotification>
+    <ToastNotification
       {...args}
       kind="warning"
+      block
       icon={false}
       actions={<Button>{'Action'}</Button>}
     />

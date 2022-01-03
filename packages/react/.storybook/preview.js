@@ -98,7 +98,7 @@ const withThemeProvider = (Story, context) => {
 };
 
 const withUNCoreProvider = (Story) => (
-  <UNCoreProvider>
+  <UNCoreProvider touch>
     <Story />
   </UNCoreProvider>
 );

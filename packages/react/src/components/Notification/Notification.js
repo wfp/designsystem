@@ -158,11 +158,11 @@ export function NotificationTextDetails({
         <h3 className={`${prefix}--toast-notification__title`}>{title}</h3>
         <div className={`${prefix}--toast-notification__subtitle`}>
           {subtitle}
+          {children}
         </div>
         <div className={`${prefix}--toast-notification__caption`}>
           {caption}
         </div>
-        {children}
       </div>
     );
   }
@@ -251,6 +251,8 @@ export function ToastNotification({
   onCloseButtonClick,
   iconDescription,
   statusIconDescription,
+  actions,
+  block,
   className,
   caption,
   subtitle,
@@ -267,6 +269,7 @@ export function ToastNotification({
   const containerClassName = classnames(className, {
     [`${prefix}--toast-notification`]: true,
     [`${prefix}--toast-notification--low-contrast`]: lowContrast,
+    [`${prefix}--toast-notification--block`]: block,
     [`${prefix}--toast-notification--${kind}`]: kind,
   });
 
@@ -322,6 +325,7 @@ export function ToastNotification({
         notificationType={notificationType}>
         {children}
       </NotificationTextDetails>
+      {actions}
       {!hideCloseButton && (
         <NotificationButton
           iconDescription={iconDescription}
@@ -423,7 +427,7 @@ ToastNotification.propTypes = {
 ToastNotification.defaultProps = {
   kind: 'error',
   title: 'provide a title',
-  caption: 'provide a caption',
+  //caption: 'provide a caption',
   role: 'alert',
   notificationType: 'toast',
   iconDescription: 'closes notification',

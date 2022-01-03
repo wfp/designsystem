@@ -166,8 +166,8 @@ Large.story = {
 
 export const CustomIcon = (args) => (
   <>
-    <Button large icon={<div>Hello</div>}>
-      Large button
+    <Button icon={<span style={{ color: 'yellow' }}>Hello</span>}>
+      Custom icon
     </Button>
   </>
 );
@@ -183,6 +183,27 @@ CustomIcon.story = {
   parameters: {
     docs: {
       storyDescription: CustomIconText,
+    },
+  },
+};
+
+export const DisableFocus = (args) => (
+  <>
+    <Button disableFocus>Animating button</Button>
+  </>
+);
+
+const disableFocusText = `
+Small buttons may be used when there is not enough space for a
+regular sized button. This issue is most found in tables. Small button should have three words
+or less.
+`;
+
+DisableFocus.story = {
+  name: 'large Button',
+  parameters: {
+    docs: {
+      storyDescription: disableFocusText,
     },
   },
 };

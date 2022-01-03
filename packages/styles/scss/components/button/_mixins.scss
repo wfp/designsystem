@@ -21,12 +21,14 @@
   @include font-family('sans');
   cursor: pointer;
   display: inline-flex;
+  vertical-align: top;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
   font-size: $button-font-size;
   font-weight: $button-font-weight;
   height: $button-height;
+  line-height: $button-height;
   padding: $button-padding;
   border-radius: $button-border-radius;
   text-align: center;
@@ -34,7 +36,7 @@
   transition-duration: $transition--base;
   transition-timing-function: ease-in;
   white-space: nowrap;
-  line-height: 16px;
+  //line-height: 16px;
 
   &:disabled {
     cursor: not-allowed;
@@ -42,8 +44,9 @@
   }
 
   .#{$prefix}--btn__icon {
-    width: rem(16px);
-    height: rem(16px);
+    //TODO: add again
+    /*width: rem(16px);
+    height: rem(16px);*/
     margin-left: 0.5rem;
     @include rtl {
       margin-left: initial;
@@ -70,6 +73,23 @@
   &:focus,
   &:hover {
     background-color: $hover-bg-color;
+  }
+
+  &.#{$prefix}--btn--disable-focus {
+    &:focus {
+      background-color: $bg-color;
+    }
+  }
+  &.#{$prefix}--btn--disable-focus {
+    &:hover {
+      background-color: $bg-color;
+    }
+  }
+
+  &.#{$prefix}--btn--disable-focus.#{$prefix}--btn--animating {
+    &:hover {
+      background-color: $hover-bg-color;
+    }
   }
 
   &:focus {

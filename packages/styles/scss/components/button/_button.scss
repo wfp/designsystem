@@ -22,10 +22,9 @@
 
 @mixin button {
   // <button> elements cannot be used as flex containers
-  button.#{$prefix}--btn {
-    display: inline-block;
+  /*button.#{$prefix}--btn {
     line-height: initial;
-  }
+  }*/
 
   // Reset intrisic padding in Firefox (see #731)
   button.#{$prefix}--btn::-moz-focus-inner {
@@ -37,9 +36,9 @@
   button.#{$prefix}--btn .#{$prefix}--btn__icon {
     position: relative;
     vertical-align: middle;
-    top: -1px;
-    height: 1em;
-    width: 1em;
+    //top: -1px;
+    /*height: 1em;
+    width: 1em;*/
 
     // Targets IE10+ browsers: Reset <svg> position for vertical centering
     @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
@@ -48,6 +47,7 @@
   }
 
   button.#{$prefix}--btn--icon-reverse {
+    flex-direction: row-reverse;
     .#{$prefix}--btn__icon {
       margin-left: 0;
       margin-right: $spacing-03;
@@ -59,11 +59,9 @@
   }
 
   a.#{$prefix}--btn--icon-reverse {
-    display: inline-flex;
     flex-direction: row-reverse;
 
     .#{$prefix}--btn__icon {
-      float: left;
       margin-left: 0;
       margin-right: $spacing-03;
       @include rtl {
@@ -374,6 +372,11 @@
   .#{$prefix}--btn.#{$prefix}--skeleton {
     @include skeleton;
     width: rem(150px);
+  }
+  .#{$prefix}--btn--disable-focus {
+    &:focus {
+      box-shadow: 3px 3px 3px solid rgba(0, 0, 0, 0.3);
+    }
   }
 }
 
