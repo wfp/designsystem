@@ -1,48 +1,55 @@
 import PropTypes from 'prop-types';
-import React, { PureComponent } from 'react';
+import React, { useState } from 'react';
 import classNames from 'classnames';
 import { withUNCoreSettings } from '../UNCoreSettings';
+import useSettings from '../../hooks/useSettings';
 
-export class SingleDatePickerInput extends PureComponent {
-  state = {
-    controlledValue: this.props.value ? this.props.value : null,
-    focusedInput: null,
-  };
+const SingleDatePickerInput = ({
+  controlled,
+  datePicker,
+  labelText,
+  className,
+  id,
+  placeholder,
+  type,
+  onChange,
+  onClick,
+  hideLabel,
+  invalid,
+  invalidText,
+  helperText,
+  active,
+  value,
+  name,
+  onFocus,
+  onBlur,
+  onDragStart,
+  onDrop,
+  ...other
+}) => {
 
-  handleFocusChange = (focusedInput) => {
-    if (!focusedInput && typeof this.props.onBlur === 'function') {
-      this.props.onBlur();
+  const { prefix } = useSettings();
+  const [controlledValue, setControlledValue] = useState(value ? value : null);
+  const [focusedInput, setFocusedInput] = useState(null)
+
+  const handleDateChange = (value) => {
+    console.log("hello value", value);
+    console.log("hello onchange", typeof onChange);
+    if (onChange) {
+      
+      onChange(value);
     }
-    this.setState({ focusedInput });
+    setControlledValue(value);
   };
 
-  render() {
-    const {
-      prefix,
-      controlled,
-      datePicker,
-      labelText,
-      className,
-      id,
-      placeholder,
-      type,
-      onChange,
-      onClick,
-      hideLabel,
-      invalid,
-      invalidText,
-      helperText,
-      active,
-      value,
-      name,
-      onFocus,
-      onBlur,
-      onDragStart,
-      onDrop,
-      ...other
-    } = this.props;
+  const handleFocusChange = (focusedInput) => {
+    if (!focusedInput && typeof onBlur === 'function') {
+      onBlur();
+    }
+    setFocusedInput(focusedInput);
+  };
 
-    const { controlledValue, focused } = this.state;
+
     const SingleDatePicker = datePicker;
 
     const labelClasses = classNames(`${prefix}--label`, {
@@ -69,31 +76,24 @@ export class SingleDatePickerInput extends PureComponent {
         {helper}
         <SingleDatePicker
           date={onChange && value ? value : controlledValue}
-          focused={focused}
+          focused={focusedInput}
           hideKeyboardShortcutsPanel
-          onDateChange={(value) => {
+          onDateChange={(value)=>{
             if (onChange) {
               onChange(value);
             }
-            this.setState({ controlledValue: value }, () => {});
+            setControlledValue({value}, ()=>{});
           }}
-          onFocusChange={({ focused }) => {
-            this.setState({ focused });
-            focused ? onFocus(true) : onBlur(true);
-          }}
+          onFocusChange={handleFocusChange}
           {...other}
         />
         {errorMessage}
       </div>
     );
-  }
+  
 }
 
-SingleDatePickerInput.defaultProps = {
-  onFocus: () => {},
-  onBlur: () => {},
-  onChange: () => {},
-};
+
 
 SingleDatePickerInput.propTypes = {
   /**
@@ -173,4 +173,10 @@ SingleDatePickerInput.propTypes = {
   hideLabel: PropTypes.bool,
 };
 
-export default withUNCoreSettings(SingleDatePickerInput);
+SingleDatePickerInput.defaultProps = {
+  onFocus: () => {},
+  onBlur: () => {},
+  onChange: () => {},
+};
+
+export {SingleDatePickerInput};

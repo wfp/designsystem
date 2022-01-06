@@ -42,7 +42,7 @@ const ComplexForm = () => {
           />
         )}
       />
-      <Select {...register('select')} labelText="Select">
+      <Select {...register('select')} labelText="Select" >
         <SelectItem value="" text="not selected" />
         <SelectItem value="daily" text="daily" />
         <SelectItem value="weekly" text="weekly" />

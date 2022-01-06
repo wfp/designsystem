@@ -68,6 +68,8 @@ SingleDatePickerDefault.story = {
   },
 };
 
+
+
 export const SingleDatePickerNew = (args) => {
   const [date, setDate] = useState(moment());
   const [focused, setFocused] = useState(false);
@@ -90,6 +92,37 @@ export const SingleDatePickerNew = (args) => {
   );
 };
 
+export const DatePickerHookForm = (args) => {
+  const { control, watch } = useForm();
+  const input = watch('test');
+
+  return (
+    <>
+      {JSON.stringify(input)}
+      <Controller
+        control={control}
+        name="test"
+        render={({ field, fieldState, formState }) => (
+          <SingleDatePickerInput
+            {...field}
+            {...fieldState}
+            datePicker={SingleDatePicker}
+            helperText="Optional helper text."
+            inputIconPosition="after"
+            invalidText="A valid value is required"
+            labelText="Label datepicker"
+            placeholder="Placeholder text (placeholder)"
+            showDefaultInputIcon
+          />
+        )}
+      />
+    </>
+  );
+};
+
+
+
+/*
 export const SingleDatePickerNewReactHookForm = (args) => {
   const defaultValues = { test: '2020-12-01T11:00:00.000Z' };
   const [focused, setFocused] = useState(false);
@@ -102,7 +135,10 @@ export const SingleDatePickerNewReactHookForm = (args) => {
       <Controller
         control={control}
         name="test"
-        render={({ onChange, onBlur, value, name, ref }) => (
+        render={({ onChange, onBlur, value, name, ref }) => {
+          console.log('onChnage checker', typeof onChange);
+          return(
+         
           <Input
             labelText="Input using SingleDatePicker by Airbnb"
             helperText="HelperText">
@@ -118,11 +154,12 @@ export const SingleDatePickerNewReactHookForm = (args) => {
               />
             )}
           </Input>
-        )}
+        )}}
       />
     </form>
   );
 };
+*/
 
 export const DateRangePickerDefault = (args) => (
   <DateRangePickerInput {...args} />
@@ -171,33 +208,6 @@ DateRangePickerDefault.story = {
   },
 };
 
-export const DatePickerHookForm = (args) => {
-  const { control, watch } = useForm();
-  const input = watch('test');
-
-  return (
-    <>
-      {JSON.stringify(input)}
-      <Controller
-        control={control}
-        name="test"
-        render={({ field, fieldState, formState }) => (
-          <SingleDatePickerInput
-            {...field}
-            {...fieldState}
-            datePicker={SingleDatePicker}
-            helperText="Optional helper text."
-            inputIconPosition="after"
-            invalidText="A valid value is required"
-            labelText="Label datepicker"
-            placeholder="Placeholder text (placeholder)"
-            showDefaultInputIcon
-          />
-        )}
-      />
-    </>
-  );
-};
 
 export const DatePickerRangeHookForm = (args) => {
   const { control, watch } = useForm();
@@ -225,6 +235,9 @@ export const DatePickerRangeHookForm = (args) => {
     </>
   );
 };
+
+
+
 // singleDatePickerHookForm.args = {
 //   datePicker: SingleDatePicker,
 //   date: moment(),
