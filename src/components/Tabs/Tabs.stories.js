@@ -35,7 +35,7 @@ export const Regular = (args) => (
 );
 
 export const WithoutAnimation = (args) => (
-  <Tabs {...args}>
+  <Tabs {...args} disableAnimation>
     <Tab label={`${tab.label} 1`}>
       <div className="some-content">Content for first tab goes here.</div>
     </Tab>
