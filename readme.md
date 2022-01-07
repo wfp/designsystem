@@ -1,11 +1,8 @@
-# World Food Programme UI Kit (WFP-UI)
+# UN Core (World Food Programme UI Kit) (WFP-UI)
 
 ## **[Click here to visit: Living Style Guide & Documentation](https://wfp.org/UIGuide)**
 
-| Branch | Build Status                                                                                                                                                                                                                                                       |
-| ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| master | [![Build Status](https://dev.azure.com/worldfoodprogramme/ui/_apis/build/status/wfp.ui?repoName=wfp%2Fdesignsystem&branchName=master)](https://dev.azure.com/worldfoodprogramme/ui/_build/latest?definitionId=242&repoName=wfp%2Fdesignsystem&branchName=master)() |
-| next   | [![Build Status](https://dev.azure.com/worldfoodprogramme/ui/_apis/build/status/wfp.ui?repoName=wfp%2Fdesignsystem&branchName=next)](https://dev.azure.com/worldfoodprogramme/ui/_build/latest?definitionId=242&repoName=wfp%2Fdesignsystem&branchName=next)       |
+#### WARNING: This branch is experimental and in current development. Things could easily break!
 
 ## ![Usage](https://cdn.wfp.org/guides/ui/v1.2.0/assets/internal/toolkit.svg 'Usage') Usage
 
@@ -40,8 +37,6 @@ import '@un/react/assets/css/styles.css';
 Additional information about the Usage can be found [here](https://wfp.org/UIGuide).
 
 ### Development
-
-#### WARNING: This branch is experimental and in current development. Things could easily break!
 
 Please refer to the [Contribution Guidelines](./.github/CONTRIBUTING.md) before starting any work.
 Use the `feat/` branches for active development.
@@ -85,16 +80,29 @@ In version 2.0 some paths will change due to the new monorepo architecture which
 
 All packages can be found in `packages/`.
 
-- `figma connect`: Downloading assets and color values from the Figma library
-- `fonts`: All Fonts used by WFP
-- `humanitarian-icons`: OCHA humanitarian icons customized by the Publications Unit of wfp
+- [cli](/packages/cli): CLI tools for executing different tasks
+- `figma-connect`: Tool for downloading assets and color values from your Figma library
+- `humanitarian-icons`: OCHA humanitarian icons customized by the Publications Unit of WFP
+- `humanitarian-icons-react`: humanitarian icons for react.js usage
+- `icon-build-helper`: helper library to generate icons and pictograms for different usages
 - `layout`: breakpoints, spacings, etc.
-- `pictograms`: pictogram icons
-- `colors` no longer used!
+- `icons`: icons used by the components
+- `icons-react`: icons for react.js usage
+- ~~`colors` no longer used!~~
 - `styles`: all components styles
 - `themes`: theming (colors, etc.)
 - `type`: typescales
-- `ui`: the "old" react components, TODO: rename to `react`
+- `react`: react components
+
+WFP packages can be found in `wfp/` (temporary) and are also an example for customizing the UN Core
+
+- `logos`: Logos used by WFP
+- `fonts`: All Fonts currently used by WFP
+- `react`: react components using the UN core with WFP customizations
+- `styles`: all components styles with WFP customizations (also includes type and layout overrides if needed)
+- `themes`: all WFP themes (white, dark, field)
+- `pictograms`: pictogram icons
+- `pictograms-react`: pictogram icons for react.js usage
 
 ### UN Core Examples
 

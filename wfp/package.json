@@ -10,6 +10,7 @@
   "scripts": {
     "start:react": "cd packages/react && yarn start",
     "build": "lerna run build --stream --prefix --npm-client yarn",
+    "build:all": "yarn build && cd packages/react && yarn build-storybook",
     "publish:alpha": "lerna publish --dist-tag alpha",
     "publish": "lerna publish",
     "test": "jest"
@@ -46,7 +47,7 @@
     "@testing-library/jest-dom": "^5.11.5",
     "@testing-library/react": "^11.1.1",
     "@testing-library/user-event": "^13.1.9",
-    "@un/cli": "10.25.1",
+    "@un/cli": "10.25.15",
     "all-contributors-cli": "^6.19.0",
     "cross-env": "^5.2.0",
     "cross-spawn": "^6.0.5",

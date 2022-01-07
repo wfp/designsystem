@@ -9,7 +9,8 @@
   "sideEffects": false,
   "scripts": {
     "build": "yarn clean && node scripts/build.js && rollup -c",
-    "build-storybook": "cross-env NODE_ENV=production build-storybook -s ./.storybook/assets",
+    "build-storybook": "cross-env NODE_ENV=production build-storybook",
+    "build:all": "yarn build-storybook",
     "clean": "rimraf es lib umd storybook-static build react-docgen.json",
     "prepublish": "yarn build",
     "start": "yarn storybook",
@@ -110,6 +111,7 @@
     "@storybook/manager-webpack5": "^6.3.4",
     "@un/icons-react": "^10.34.20",
     "@un/react": "^1.18.29",
+    "in-publish": "^2.0.1",
     "invariant": "^2.2.4",
     "lerna": "^4.0.0",
     "npm-which": "^3.0.1",
