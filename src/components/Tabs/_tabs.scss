@@ -27,12 +27,13 @@
   }
 
   .#{$prefix}--tabs__nav__bar {
-    position: absolute;
-    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
-    background: var(--interactive-01);
-    z-index: 10;
-    height: 3px;
-    bottom: 0;
+    &__bar {
+      background: var(--interactive-01);
+      height: 3px;
+      transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+      transform: translateX(0px);
+      width: 100%;
+    }
   }
 
   .#{$prefix}--tabs-trigger-text {
@@ -78,6 +79,7 @@
     padding: 0;
     cursor: pointer;
     white-space: nowrap;
+
     > a,
     > span {
       display: block;

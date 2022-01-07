@@ -2,10 +2,11 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
 import settings from '../../globals/js/settings';
+import TabContext from '../Tabs/TabContext';
 
 const { prefix } = settings;
 
-export default class Tab extends React.Component {
+class Tab extends React.Component {
   static propTypes = {
     /**
      * Specify an optional className to be added to your Tab
@@ -103,6 +104,11 @@ export default class Tab extends React.Component {
     onKeyDown: () => {},
   };
 
+  constructor(props) {
+    super(props);
+    this.ref = React.createRef();
+  }
+
   setTabFocus(evt) {
     const leftKey = 37;
     const rightKey = 39;
@@ -153,7 +159,7 @@ export default class Tab extends React.Component {
       role: 'tab',
       tabIndex,
       'aria-selected': selected,
-      ref: e => {
+      ref: (e) => {
         this.tabAnchor = e;
       },
     };
@@ -162,13 +168,13 @@ export default class Tab extends React.Component {
     const liProps = {
       tabIndex: -1,
       className: classes,
-      onClick: evt => {
+      onClick: (evt) => {
         if (!disabled) {
           handleTabClick(index, label, evt);
           onClick(evt);
         }
       },
-      onKeyDown: evt => {
+      onKeyDown: (evt) => {
         if (!disabled) {
           this.setTabFocus(evt);
           handleTabKeyDown(index, label, evt);
@@ -178,6 +184,21 @@ export default class Tab extends React.Component {
       role: 'presentation',
       selected: selected,
     };
+
+    const barStyle = {
+      transformOrigin: `0 0`,
+      opacity: selected ? 1 : 0,
+    };
+
+    // Calculate the transform for the indicator bar
+    if (this.context.prevTab !== null) {
+      const prevOffset = this.context.prevTab.offsetLeft;
+      const x = this.ref.current ? this.ref.current.offsetLeft : 0;
+      const currOffset = x;
+      const diff = prevOffset - currOffset;
+      const tx = selected ? `0px` : `${diff}px`;
+      barStyle['transform'] = `translateX(${tx})`;
+    }
 
     return (
       <React.Fragment>
@@ -189,7 +210,7 @@ export default class Tab extends React.Component {
             selectedClasses: selectedClasses,
           })
         ) : (
-          <li {...liProps}>
+          <li {...liProps} ref={this.ref}>
             {renderAnchor ? (
               renderAnchor(anchorProps)
             ) : disabled ? (
@@ -197,9 +218,19 @@ export default class Tab extends React.Component {
             ) : (
               <a {...anchorProps}>{label}</a>
             )}
+            <div className={`${prefix}--tabs__nav__bar`}>
+              <div
+                className={`${prefix}--tabs__nav__bar__bar`}
+                style={barStyle}
+              />
+            </div>
           </li>
         )}
       </React.Fragment>
     );
   }
 }
+
+Tab.contextType = TabContext;
+
+export default Tab;

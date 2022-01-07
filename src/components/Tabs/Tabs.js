@@ -3,6 +3,8 @@ import React from 'react';
 import classNames from 'classnames';
 import TabContent from '../TabContent';
 import settings from '../../globals/js/settings';
+import TabContext from './TabContext';
+import isEqual from 'lodash.isequal';
 
 const { prefix } = settings;
 
@@ -108,46 +110,17 @@ class Tabs extends React.Component {
         };
   }
 
-  componentDidMount() {
-    this.getSizes();
-    window.addEventListener('resize', this.getSizes);
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener('resize', this.getSizes);
-  }
-
   getTabs() {
     return React.Children.map(this.props.children, (tab) => tab);
   }
 
   getTabAt = (index) => {
-    return (
-      this[`tab${index}`] || React.Children.toArray(this.props.children)[index]
-    );
-  };
-
-  getSizes = () => {
-    if (this.rootRef.current === null || this.rootRef.current.length > 1) {
-      return null;
-    }
-    const rootBounds = this.rootRef.current.getBoundingClientRect();
-    const sizes = {};
-    Object.values(this.rootRef.current.children).forEach((el, key) => {
-      const bounds = el.children[0].getBoundingClientRect();
-
-      const left = bounds.left - rootBounds.left;
-      const right = rootBounds.right - bounds.right;
-
-      sizes[key] = { left, right };
-    });
-
-    this.setState({ sizes });
-    return sizes;
+    const prop = this.state[`tab${index}`];
+    return prop || React.Children.toArray(this.props.children)[index];
   };
 
   setTabAt = (index, tabRef) => {
-    this[`tab${index}`] = tabRef;
+    this.setState({ ...this.state, [`tab${index}`]: tabRef });
   };
 
   // following functions (handle*) are Props on Tab.js, see Tab.js for parameters
@@ -203,7 +176,7 @@ class Tabs extends React.Component {
     }
   };
 
-  render() {
+  recalculateTabs = () => {
     const {
       ariaLabel,
       disableAnimation,
@@ -215,9 +188,7 @@ class Tabs extends React.Component {
       onSelectionChange,
       ...other
     } = this.props;
-
-    const { selected, sizes } = this.state;
-
+    const { selected } = this.state;
     const tabsWithProps = this.getTabs().map((tab, index) => {
       const newTab = React.cloneElement(tab, {
         index,
@@ -229,7 +200,6 @@ class Tabs extends React.Component {
         },
         handleTabKeyDown: this.handleTabKeyDown(onSelectionChange),
       });
-
       return newTab;
     });
 
@@ -251,6 +221,41 @@ class Tabs extends React.Component {
         })
       : null;
 
+    this.setState({
+      ...this.state,
+      tabsWithProps,
+      tabContentWithProps,
+    });
+  };
+
+  componentDidMount() {
+    this.recalculateTabs();
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (
+      !isEqual(this.props.children, prevProps.children) ||
+      !isEqual(prevState.selected, this.state.selected)
+    ) {
+      this.recalculateTabs();
+    }
+  }
+
+  render() {
+    const {
+      ariaLabel,
+      disableAnimation,
+      inline,
+      className,
+      customTabContent,
+      triggerHref,
+      role,
+      onSelectionChange,
+      ...other
+    } = this.props;
+
+    const { tabsWithProps, tabContentWithProps } = this.state;
+
     const classes = {
       tabs: classNames(
         `${prefix}--tabs`,
@@ -262,18 +267,18 @@ class Tabs extends React.Component {
       }),
     };
 
-    const sizeBar = sizes ? sizes[selected] : undefined;
+    const st = this.getTabAt(this.state.selected)?.ref?.current ?? null;
+    const selectedTab = st ?? null;
 
     return (
-      <>
+      <TabContext.Provider value={{ prevTab: selectedTab }}>
         <nav {...other} className={classes.tabs} role={role}>
-          <div className={`${prefix}--tabs__nav__bar`} style={sizeBar}></div>
           <ul ref={this.rootRef} role="tablist" className={classes.tablist}>
             {tabsWithProps}
           </ul>
         </nav>
         {tabContentWithProps}
-      </>
+      </TabContext.Provider>
     );
   }
 }
