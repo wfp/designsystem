@@ -5,7 +5,7 @@
 // LICENSE file in the root directory of this source tree.
 //
 
-@forward 'scss/config';
+@forward 'scss/config'/* with($prefix: $prefix) */;
 @forward 'scss/colors' hide $white;
 @forward 'scss/font-face';
 @forward 'scss/grid';

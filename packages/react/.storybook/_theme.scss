@@ -1,0 +1,17 @@
+@use '@un/style-dictionary/build/scss/css-variables' as */*with (
+  $color-base-gray-dark: "#cccccc",
+)*/;
+$prefixd: 'wfp' !default;
+$color-base-gray-light: var(--color-base-gray-light, #cccccc) !default;
+$color-base-gray-medium: var(--color-base-gray-medium, #999999) !default;
+$color-base-gray-dark: var(--color-base-gray-dark, #52ff42) !default;
+$color-base-red: var(--color-base-red, #ff0000) !default;
+$color-base-green: var(--color-base-green, #00ff00) !default;
+$color-font-base: var(--color-font-base, #ff0000) !default;
+$color-font-secondary: var(--color-font-secondary, #00ff00) !default;
+$color-font-tertiary: var(--color-font-tertiary, #cccccc) !default;
+$new-button-primary: var(--new-button-primary, #cccccc) !default;
+$size-font-small: var(--size-font-small, 0.75rem) !default;
+$size-font-medium: var(--size-font-medium, 1rem) !default;
+$size-font-large: var(--size-font-large, 2rem) !default;
+$size-font-base: var(--size-font-base, 1rem) !default;

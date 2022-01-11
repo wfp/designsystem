@@ -1,17 +1,45 @@
 $css--body: true;
 $css--reset: true;
+$css--variables: true;
+
+/*@forward '@un/style-dictionary/build/scss/css-variables' with (
+  $color-base-gray-dark: "#cccccc",
+);*/
+/*@use '@un/style-dictionary/build/scss/css-variables' as * with (
+  $color-base-gray-dark: "#cccccc",
+)*/
+
+//css-variables.$color-base-gray-dark: '#ffffff';
+
+@use './theme' as *;
+
+@forward '@un/styles/scss/config' with (
+  $prefix: "wfp",
+);
+
+//css-variables.$color-base-gray-dark: #ff0000;
+
+//@use '@un/style-dictionary/build/scss/variables';
+
+@use '@un/themes/scss/themes';
+//@use "@un/styles/scss/themes";
+@use "@un/styles/scss/theme" with (
+  //$theme: themes.$carbon--theme--wfp,
+  $fallback: themes.$carbon--theme--wfp,
+  $theme: (
+    custom-token-01: #000000,
+    button-primary: "#000000"
+  )
+);
 
 @import '@un/styles';
 
-@import '@un/themes/scss/themes';
-//@import '@un/themes/scss/index.scss';
-
-$carbon--theme: $carbon--theme--wfp;
+.sbdocs-wrapper {
+  background: $color-base-gray-dark !important;
+}
 
 // Use the WFP theme
 :root {
-  @include carbon--theme($carbon--theme--wfp, true) {
-    // @include emit-component-tokens($tag-colors);
-    // @include emit-component-tokens($notification-colors);
+  @include themes.carbon--theme(themes.$carbon--theme--wfp, true) {
   }
 }

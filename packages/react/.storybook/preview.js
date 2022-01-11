@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { addParameters } from '@storybook/react';
 import './storybook.scss';
-import './storybook-legacy.scss';
+//import './storybook-legacy.scss';
 import theme from './theme';
 import { UNCoreProvider } from '../src/components/UNCoreSettings';
 
@@ -98,7 +98,7 @@ const withThemeProvider = (Story, context) => {
 };
 
 const withUNCoreProvider = (Story) => (
-  <UNCoreProvider touch>
+  <UNCoreProvider touch prefix="wfp">
     <Story />
   </UNCoreProvider>
 );

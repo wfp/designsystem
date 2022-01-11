@@ -94,7 +94,7 @@ All packages can be found in `packages/`.
 - `type`: typescales
 - `react`: react components
 
-WFP packages can be found in `wfp/` (temporary) and are also an example for customizing the UN Core
+`WFP digital design system` packages can be found in `wfp/` (temporary) and are also an example for customizing the UN Core to your needs.
 
 - `logos`: Logos used by WFP
 - `fonts`: All Fonts currently used by WFP
@@ -103,6 +103,52 @@ WFP packages can be found in `wfp/` (temporary) and are also an example for cust
 - `themes`: all WFP themes (white, dark, field)
 - `pictograms`: pictogram icons
 - `pictograms-react`: pictogram icons for react.js usage
+
+### How to load the css
+
+Import a sass file from a single source to have all basic styles and the theme available.
+
+`styles` to import all component styles and `themes` with
+
+```scss
+// scss/ui.scss
+// Generates global stylesheet containing the styles and theme
+$css--variables: true;
+$css--reset: true;
+$css--body: true;
+@use "./meta" as meta;
+@use "@un/styles/scss/themes";
+@use "@un/styles/scss/theme" with (
+  $theme: meta.$carbon--theme--wfp
+);
+```
+
+When using css-modules with scss for your own components you can create a helper file to forward the needed mixins and variables.
+
+```scss
+// scss/meta.scss file
+// Forward the needed tools to your css-module
+@forward "@un/styles/scss/breakpoint";
+@forward "@un/styles/scss/motion";
+@forward "@un/styles/scss/spacing";
+@forward "@un/styles/scss/type";
+@forward "@un/styles/scss/utilities/convert";
+
+// Forward the theme tokens
+@import '@un/themes/scss';
+```
+
+```scss
+// component.module.scss
+// Uses the UN Core mixins and variables
+@use "scss/meta" as *;
+
+.element {
+    background: $button-primary;
+    @include breakpoint-up(md) {
+        background: $button-secondary;
+    }
+}
 
 ### UN Core Examples
 
@@ -175,13 +221,17 @@ We recommend the use of [React Storybook](https://github.com/storybooks/react-st
 1. Generate new tests
 
 ```
+
 npm run test
+
 ```
 
 2. Start the server:
 
 ```
+
 npm run storybook
+
 ```
 
 3. Open browser to `http://localhost:9000/`.
@@ -203,7 +253,9 @@ Make sure your commit does not produce any errors while checking:
 Use jest for testing the components. Once commited the branches will be also tested on [Travis CI](https://travis-ci.org/wfp/ui).
 
 ```
+
 npm run test
+
 ```
 
 ### Deployment
@@ -218,18 +270,22 @@ The UI Kit uses Azure Devops and [semantic-release](https://github.com/semantic-
 ### Generate alpha release
 
 ```
+
 npm run release -- --prerelease alpha
 npm publish --tag alpha
 
 or
 git push --follow-tags origin next && npm publish --tag alpha
+
 ```
 
 ### Generate full release
 
 ```
+
 npm run release
 npm publish
+
 ```
 
 ### Releasing Storybook (documentation) to AWS S3
@@ -237,7 +293,9 @@ npm publish
 Create a new build for the documentation and copy the `assets` and `docs` folder manually to [WFP`s AWS S3 instance](https://cdn.wfp.org/guides/ui/) following the naming scheme (for example: v1.2.1).
 
 ```
+
 npm run build:storybook
+
 ```
 
 Edit the `website-redirect-location` meta tag of `index.html` to point [wfp.org/UIGuide](https://wfp.org/UIGuide) to the latest documentation folder. This can be done with [MountainDuck](https://mountainduck.io/).
@@ -245,6 +303,8 @@ Edit the `website-redirect-location` meta tag of `index.html` to point [wfp.org/
 Edit the first line of `assets/depreciation-warning.html` to point to the latest version of the UI Kit.
 
 Clear the Server cache with [Cloudfront Purge Tool](https://chrome.google.com/webstore/detail/cloudfront-purge-tool).
+
+```
 
 ```
 

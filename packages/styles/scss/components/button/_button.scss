@@ -91,7 +91,8 @@
 
   .#{$prefix}--btn--primary {
     @include button-theme(
-      $button-primary,
+      $color-base-gray-dark,
+      //$color-base-green,
       transparent,
       $text-inverse,
       $button-primary-hover,

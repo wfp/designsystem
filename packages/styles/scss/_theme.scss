@@ -89,6 +89,9 @@
   ),
 );
 
+@forward '@un/style-dictionary/build/scss/css-variables';
+//@use '@un/style-dictionary/build/scss/variables';
+
 // Layer sets
 $layer: custom-property.get-var('layer');
 $layer-active: custom-property.get-var('layer-active');
