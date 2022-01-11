@@ -12,7 +12,14 @@ export const UNCoreProvider = ({ children, ...props }) => {
 };
 
 UNCoreProvider.propTypes = {
+  /**
+   * Set the prefix for all css classes, default is 'un'.
+   */
   prefix: propTypes.string,
   selectorTabbable: propTypes.string,
   selectorFocusable: propTypes.string,
+  /**
+   * Enable customizations for touch displays
+   */
+  touch: propTypes.bool,
 };

@@ -53,7 +53,8 @@ const Button = ({
     [`${prefix}--btn--danger--secondary`]: kind === 'danger--secondary',
     [`${prefix}--btn--tertiary`]: kind === 'tertiary',
     [`${prefix}--btn--animating`]: count,
-    [`${prefix}--btn--disable-focus`]: disableFocus || touch,
+    [`${prefix}--btn--disable-focus`]:
+      disableFocus || (disableFocus === undefined && touch),
     [`${prefix}--btn--all-caps`]: allCaps,
   });
 
@@ -172,6 +173,10 @@ Button.propTypes = {
    */
   type: PropTypes.oneOf(['button', 'reset', 'submit']),
 
+  /**
+   * Disable the focus state, can be globally defined by using `touch` in settings
+   */
+  disableFocus: PropTypes.bool,
   /**
    * Optional prop to specify the role of the Button
    */
