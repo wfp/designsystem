@@ -38,6 +38,7 @@ const LanguageExternal = ({ children, primaryLanguage }) => {
     <div className={`${prefix}--language-ext`} ref={ref}>
       <div
         className={`${prefix}--language-ext__trigger`}
+        role="presentation"
         onClick={() =>
           languageTogglable.isOpen
             ? languageTogglable.close()
@@ -87,6 +88,7 @@ const UserExternal = ({ username, children, userImage }) => {
     <div className={`${prefix}--user-ext`} ref={ref}>
       <div
         className={`${prefix}--user-ext__trigger`}
+        role="presentation"
         onClick={() =>
           userTogglable.isOpen ? userTogglable.close() : userTogglable.open()
         }>

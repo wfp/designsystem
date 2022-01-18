@@ -1,2 +1,2 @@
-export default from './Wrapper';
-export { pageWidths } from './Wrapper';
+export Wrapper from './Wrapper';
+// export { pageWidths } from './Wrapper';

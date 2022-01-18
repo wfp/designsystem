@@ -56,7 +56,7 @@ export const Regular = (args) => (
                       small
                       id="search-2"
                       labelText="Filter"
-                      placeHolderText="Filter list"
+                      placeholder="Filter list"
                     />
                     {/* onChange={() => {
                         alert('Apply Filter');
@@ -94,7 +94,7 @@ export const Regular = (args) => (
             <Search
               kind="main"
               id="search-2"
-              placeHolderText="Search"
+              placeholder="Search"
               onChange={action('onChange')}
             />
           </MainNavigationItem>
@@ -203,7 +203,7 @@ const sourcecode = (type) => {
                   small
                   id="search-2"
                   labelText="Filter"
-                  placeHolderText="Filter list"
+                  placeholder="Filter list"
                   onChange={() => {
                       alert('Apply Filter');
                   }}
@@ -239,7 +239,7 @@ const sourcecode = (type) => {
           <Search
           kind="main"
           id="search-2"
-          placeHolderText="Search"
+          placeholder="Search"
           />
       </MainNavigationItem>
       <MainNavigationItem
@@ -342,7 +342,7 @@ export const RegularWithButton = (args) => (
                       small
                       id="search-2"
                       labelText="Filter"
-                      placeHolderText="Filter list"
+                      placeholder="Filter list"
                     />
                     {/* onChange={() => {
                         alert('Apply Filter');
@@ -380,7 +380,7 @@ export const RegularWithButton = (args) => (
             <Search
               kind="main"
               id="search-2"
-              placeHolderText="Search"
+              placeholder="Search"
               onChange={action('onChange')}
             />
           </MainNavigationItem>

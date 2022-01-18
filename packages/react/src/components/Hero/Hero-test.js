@@ -1,6 +1,6 @@
 import React from 'react';
 import Hero from '../Hero';
-import { shallow, mount } from 'enzyme';
+import { shallow } from 'enzyme';
 
 describe('Hero', () => {
   describe('Renders as expected', () => {
@@ -51,11 +51,11 @@ describe('Hero', () => {
         expect(contentWrapper().hasClass('wfp--photo-card__background')).toEqual(true)
       })
 
-      it("renders card info class as expected", () => {
+      it("renders hero info class as expected", () => {
         expect(infoWrapper().hasClass('wfp--photo-card__info')).toEqual(true)
       })
 
-      it("renders card info content as expected", () => {
+      it("renders hero info content as expected", () => {
         expect(infoWrapper().props().children.length).toBe(2)
       })
     
