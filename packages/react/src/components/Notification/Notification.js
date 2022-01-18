@@ -599,3 +599,195 @@ InlineNotification.defaultProps = {
   onCloseButtonClick: () => {},
   hideCloseButton: false,
 };
+
+export function BlockNotification({
+  role,
+  notificationType,
+  onClose,
+  onCloseButtonClick,
+  iconDescription,
+  statusIconDescription,
+  actions,
+  className,
+  caption,
+  subtitle,
+  title,
+  kind,
+  lowContrast,
+  hideCloseButton,
+  children,
+  timeout,
+  ...other
+}) {
+  const { prefix } = useSettings();
+  const [isOpen, setIsOpen] = useState(true);
+  const containerClassName = classnames(className, {
+    [`${prefix}--toast-notification`]: true,
+    [`${prefix}--toast-notification--low-contrast`]: lowContrast,
+    [`${prefix}--toast-notification--block`]: true,
+    [`${prefix}--toast-notification--${kind}`]: kind,
+  });
+
+  const handleClose = (evt) => {
+    if (!onClose || onClose(evt) !== false) {
+      setIsOpen(false);
+    }
+  };
+
+  function handleCloseButtonClick(event) {
+    onCloseButtonClick(event);
+    handleClose(event);
+  }
+
+  const savedOnClose = useRef(onClose);
+
+  useEffect(() => {
+    savedOnClose.current = onClose;
+  });
+
+  useEffect(() => {
+    if (!timeout) {
+      return;
+    }
+
+    const timeoutId = window.setTimeout((event) => {
+      setIsOpen(false);
+      if (savedOnClose.current) {
+        savedOnClose.current(event);
+      }
+    }, timeout);
+
+    return () => {
+      window.clearTimeout(timeoutId);
+    };
+  }, [timeout]);
+
+  if (!isOpen) {
+    return null;
+  }
+
+  return (
+    <div {...other} role={role} kind={kind} className={containerClassName}>
+      <NotificationIcon
+        notificationType={notificationType}
+        kind={kind}
+        iconDescription={statusIconDescription || `${kind} icon`}
+      />
+      <NotificationTextDetails
+        title={title}
+        subtitle={subtitle}
+        caption={caption}
+        notificationType={notificationType}>
+        {children}
+      </NotificationTextDetails>
+      {actions}
+      {!hideCloseButton && (
+        <NotificationButton
+          iconDescription={iconDescription}
+          notificationType={notificationType}
+          onClick={handleCloseButtonClick}
+        />
+      )}
+    </div>
+  );
+}
+
+BlockNotification.propTypes = {
+  /**
+   * Specify the caption
+   */
+  caption: PropTypes.node,
+
+  /**
+   * Pass in the children that will be rendered within the ToastNotification
+   */
+  children: PropTypes.node,
+
+  /**
+   * Specify an optional className to be applied to the notification box
+   */
+  className: PropTypes.string,
+
+  /**
+   * Specify the close button should be disabled, or not
+   */
+  hideCloseButton: PropTypes.bool,
+
+  /**
+   * Provide a description for "close" icon that can be read by screen readers
+   */
+  iconDescription: PropTypes.string,
+
+  /**
+   * Specify what state the notification represents
+   */
+
+  kind: PropTypes.oneOf([
+    'error',
+    'info',
+    //'info-square',
+    'success',
+    'warning',
+    'warning-alt',
+  ]).isRequired,
+
+  /**
+   * Specify whether you are using the low contrast variant of the ToastNotification.
+   */
+  lowContrast: PropTypes.bool,
+
+  /**
+   * By default, this value is "toast". You can also provide an alternate type
+   * if it makes sense for the underlying `<NotificationTextDetails>` and `<NotificationButton>`
+   */
+  notificationType: PropTypes.string,
+
+  /**
+   * Provide a function that is called when menu is closed
+   */
+  onClose: PropTypes.func,
+
+  /**
+   * Provide a function that is called when menu is closed
+   */
+  onCloseButtonClick: PropTypes.func,
+
+  /**
+   * By default, this value is "alert". You can also provide an alternate
+   * role if it makes sense from the accessibility-side
+   */
+  role: PropTypes.string.isRequired,
+
+  /**
+   * Provide a description for "status" icon that can be read by screen readers
+   */
+  statusIconDescription: PropTypes.string,
+
+  /**
+   * Specify the sub-title
+   */
+  subtitle: PropTypes.node,
+
+  /**
+   * Specify an optional duration the notification should be closed in
+   */
+  timeout: PropTypes.number,
+
+  /**
+   * Specify the title
+   */
+  title: PropTypes.string.isRequired,
+};
+
+BlockNotification.defaultProps = {
+  kind: 'error',
+  title: 'provide a title',
+  //caption: 'provide a caption',
+  role: 'alert',
+  lowContrast: true,
+  notificationType: 'toast',
+  iconDescription: 'closes notification',
+  onCloseButtonClick: () => {},
+  hideCloseButton: false,
+  timeout: 0,
+};

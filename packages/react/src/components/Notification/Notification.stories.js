@@ -216,7 +216,7 @@ InlineLowContrast.args = {
   statusIconDescription: 'describes the status icon',
 };
 
-export const InlineBlockquote = (args) => (
+export const BlockNotification = (args) => (
   <>
     <ToastNotification
       {...args}
@@ -248,7 +248,7 @@ export const InlineBlockquote = (args) => (
   </>
 );
 
-InlineBlockquote.args = {
+BlockNotification.args = {
   role: 'alert',
   lowContrast: true,
   hideCloseButton: true,
