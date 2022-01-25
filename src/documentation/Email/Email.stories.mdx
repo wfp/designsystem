@@ -3,8 +3,8 @@ import Page from '../Page';
 import Button from '../../components/Button';
 
 <Meta
-  title="Documentation/Guidelines/Email template"
-  subtitle="Newsletter & transactional"
+  title="Documentation/Guidelines/Email templates"
+  subtitle=""
   parameters={{
     componentSubtitle: 'Guidelines',
     previewTabs: {
@@ -14,65 +14,32 @@ import Button from '../../components/Button';
 />
 
 <hr/>
+<br/>
 
+<h2>Corporate announcements</h2>
 <p>
-  The eMail template can be used for application related notifications. It is
-  responsive and works in Microsoft Outlook,{' '}
-  <a
-    href="https://outlook.office365.com/owa/?realm=wfp.org&exsvurl=1&ll-cc=1031&modurl=0"
-    rel="noopener noreferrer"
-    target="_blank">
-    Microsoft Outlook on the web
-  </a>{' '}
-  and most other eMail clients.
+  Ready-to-edit templates are available for <b>internal email communications targeted to WFP employees</b>:
+</p> 
+<p>
+  <ul>
+    <li><strong>Pure text announcement</strong>, suitable for narrative, short announcements, with no or just one link in the body, e.g. senior staff announcements.</li>
+    <li><strong>Text announcement with highlight box</strong>, suitable to emphasize a piece of information in the body of the message, e.g. WFP directive announcement.</li>
+    <li><strong>Announcement with image, call-to-action link and teaser</strong>, suitable to promote products or services, to foster participation in campaigns, or whenever you want your audience to take an action.</li>
+  </ul>
+  <br/>
+  The templates are available as Outlook email templates, for both Windows and Mac, and rely on a simple, usable layout with minimal and effective branding. They work in Microsoft Outlook, Microsoft Outlook on the Web and most other email clients. <br/>
+  <br/><a href="https://newgo.wfp.org/documents/email-templates-for-announcement">Download the template files and the the guidance (access restricted to WFP employees)</a>.
 </p>
+
+<!-- Contact Antonio to get the name of the person to contact -->
+<h2>System notifications</h2>
 <p>
-  Make sure to also provide a text-only version of your eMail and consider using
-  a css inliner tool like{' '}
-  <a
-    href="https://templates.mailchimp.com/resources/inline-css/"
-    rel="noopener noreferrer"
-    target="_blank">
-    Mailchimp CSS Inliner Tool
-  </a>
-  .
-</p>
-<h3>External mail templates</h3>
-<p>
-  <Button
-    small
-    kind="secondary"
-    href={`${process.env.STORYBOOK_INTERNAL_ASSETS}email/newsletter-external-email.html`}>
-    Newsletter
-  </Button>
-  &nbsp;
-  <Button
-    small
-    kind="secondary"
-    href={`${process.env.STORYBOOK_INTERNAL_ASSETS}email/transaction-external-email.html`}>
-    Transaction
-  </Button>
-</p>
-<h3>Internal mail templates</h3>
-<p>
-  <Button
-    small
-    kind="secondary"
-    href={`${process.env.STORYBOOK_INTERNAL_ASSETS}email/transaction-internal-email.html`}>
-    Transaction
-  </Button>
-</p>
-<h3>Use with Outlook</h3>
-<p>
-  <Button
-    small
-    kind="secondary"
-    href={`${process.env.STORYBOOK_INTERNAL_ASSETS}email/newsletter-external-email.html`}>
-    Newsletter (internal & external)
-  </Button>
-</p>
-<p>
-  The template can be used as copy & paste from Google Chrome into Microsoft
-  Outlook. This method is not recommended and shall be only used if there is no
-  other mail service available.
+  A template for <b>automated notifications issued from corporate systems</b> is also available in an HTML format: it is useful to inform selected users about specific activities in the system.<br />
+  <br />Examples of <b>use cases</b> are:<br/> ​
+  <ul>
+    <li>A new record is added in the system and assigned a unique identifier – users need to be notified about the successful registration.​</li>
+    <li>The status of a record is updated – users need to be notified about the changes and progress in the workflow.</li>
+    <li>An action is needed – users need to take action for the workflow to be completed, e.g. approve, reject, request more info​.</li>
+  </ul>
+  <br />To use the template, please contact <a href="mailto:global.uikit@wfp.org">global.uikit@wfp.org</a>.
 </p>

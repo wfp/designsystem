@@ -1,3 +1,34 @@
+## [1.20.6](https://github.com/wfp/ui/compare/v1.20.5...v1.20.6) (2021-12-20)
+
+
+### Bug Fixes
+
+* **DatePicker:** removed old react-hook-form datepicker ([1ab3327](https://github.com/wfp/ui/commit/1ab33277c59f62738e622a1026754ccccdeefe1c))
+
+## [1.20.5](https://github.com/wfp/ui/compare/v1.20.4...v1.20.5) (2021-12-03)
+
+
+### Bug Fixes
+
+* **DatePicker:** input onChange handler updated ([#488](https://github.com/wfp/ui/issues/488)) ([e809fe5](https://github.com/wfp/ui/commit/e809fe5f73a955aa401dae793ebffd69d51659f4))
+* **DateRangerPicker:** removed console.log ([768136f](https://github.com/wfp/ui/commit/768136f2f92a77aee51012a7eae0f12d9ff0b497))
+
+## [1.20.4](https://github.com/wfp/ui/compare/v1.20.3...v1.20.4) (2021-12-03)
+
+
+### Bug Fixes
+
+* **Modal:** remove console log ([3680780](https://github.com/wfp/ui/commit/368078068b7faac8bbaf0f6263d557e9a83f5e23))
+* **Modal:** remove width assigned to subnavigation in MainNavigationstories ([932a3dc](https://github.com/wfp/ui/commit/932a3dc51483b11f430b6ead06a5b92978f49189))
+* **Modal:** Use onMouseDown instead of onClick for backdrop click detection ([ec923ea](https://github.com/wfp/ui/commit/ec923ea98569cced7e6f72df0466c636a10da0b3))
+
+## [1.20.3](https://github.com/wfp/ui/compare/v1.20.2...v1.20.3) (2021-10-19)
+
+
+### Bug Fixes
+
+* **style:** fixed color of selected item on react select ([daf5b6f](https://github.com/wfp/ui/commit/daf5b6f5053574276f25d73bc1453afc0d97bcc8))
+
 ## [1.20.2](https://github.com/wfp/ui/compare/v1.20.1...v1.20.2) (2021-09-15)
 
 
