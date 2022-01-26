@@ -92,7 +92,6 @@ export const AddressDetails = (args) => {
   };
 
   const handleCityChange = (newValue) => {
-    // console.log(newValue);
   };
 
   return (

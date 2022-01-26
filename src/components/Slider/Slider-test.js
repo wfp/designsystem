@@ -111,7 +111,6 @@ describe('Slider', () => {
     //     type: 'keydown',
     //     which: '38',
     //   };
-    //   console.log(wrapper.instance())
     //   wrapper.update(evt);
     //   expect(mockFn).lastCalledWith(51);
     //   expect(wrapper.state().value).toEqual(51);
