@@ -1,3 +1,10 @@
+## [1.20.7](https://github.com/wfp/ui/compare/v1.20.6...v1.20.7) (2022-01-26)
+
+
+### Bug Fixes
+
+* **components:** making sure azure release new version ([8263901](https://github.com/wfp/ui/commit/826390166f0d2c330f55846252a58fa88f5d907b))
+
 ## [1.20.6](https://github.com/wfp/ui/compare/v1.20.5...v1.20.6) (2021-12-20)
 
 
