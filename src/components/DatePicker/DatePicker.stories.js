@@ -101,7 +101,8 @@ export const SingleDatePickerNewReactHookForm = (args) => {
       <Controller
         control={control}
         name="test"
-        render={({ onChange, onBlur, value, name, ref }) => (
+        render={({ onChange, onBlur, value, name, ref }) => {
+          return(
           <Input
             labelText="Input using SingleDatePicker by Airbnb"
             helperText="HelperText">
@@ -117,7 +118,7 @@ export const SingleDatePickerNewReactHookForm = (args) => {
               />
             )}
           </Input>
-        )}
+        )}}
       />
     </form>
   );
