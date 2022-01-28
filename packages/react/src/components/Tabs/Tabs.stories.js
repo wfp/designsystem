@@ -52,7 +52,7 @@ export const WithoutAnimation = (args) => (
 );
 
 const description = `
-You can customize the content by using \`BannerNavigation\`.
+You can have tabs without animations.
 `;
 
 WithoutAnimation.story = {

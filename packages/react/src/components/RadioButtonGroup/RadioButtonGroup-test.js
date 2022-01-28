@@ -37,23 +37,6 @@ describe('RadioButtonGroup', () => {
         expect(radioButton().length).toEqual(2);
       });
 
-
-      // it('should set checked property based on valueSelected prop', () => {
-      //   wrapper.setProps({ valueSelected: 'male' });
-      //   console.log("vcbnmhgfa",radioButton().first().props())
-      //   expect(
-      //     radioButton()
-      //       .first()
-      //       .props().checked
-      //   ).toEqual(true);
-      //   wrapper.setProps({ valueSelected: 'female' });
-      //   expect(
-      //     radioButton()
-      //       .last()
-      //       .props().checked
-      //   ).toEqual(true);
-      // });
-
       it('should set expected props on children', () => {
         const firstChild = radioButton().first();
         expect(firstChild.props().value).toEqual('male');
@@ -61,27 +44,7 @@ describe('RadioButtonGroup', () => {
     });
   });
 
-  describe('onChange event', () => {
-    const onChange = jest.fn();
-    const wrapper = mount(
-      <RadioButtonGroup onChange={onChange} name="gender">
-        <RadioButton labelText="Male" value="male" />
-        <RadioButton labelText="Female" value="female" />
-      </RadioButtonGroup>
-    );
 
-    const firstRadio = wrapper.find(RadioButton).first();
-    console.log("onchangefirst", onChange);
-   
-    const args = ['male', 'gender', { test: 'test event' }];
-
-    it('calling onChange with same args should not call onChange prop', () => {
-      onChange.mockClear();
-      console.log("onchange", onChange);
-      firstRadio.props().onChange(...args);
-      expect(onChange).not.toHaveBeenCalled();
-    });
-  });
 
   describe('Getting derived state from props', () => {
     const wrapper = shallow(
@@ -98,19 +61,5 @@ describe('RadioButtonGroup', () => {
       expect(wrapper.state().selected).toEqual('male');
     });
 
-    // undo
-    // it('should change the current selection upon change in props', () => {
-    //   wrapper.setProps({ valueSelected: 'male' });
-    //   wrapper.setState({ selected: 'male' });
-    //   wrapper.setProps({ valueSelected: undefined });
-    //   expect(wrapper.state().selected).toEqual('female');
-    // });
-
-    // it('should avoid change the current selection upon setting props, unless there the value actually changes', () => {
-    //   wrapper.setProps({ valueSelected: 'female' });
-    //   wrapper.setState({ selected: 'male' });
-    //   wrapper.setProps({ valueSelected: 'female' });
-    //   expect(wrapper.state().selected).toEqual('male');
-    // });
   });
 });

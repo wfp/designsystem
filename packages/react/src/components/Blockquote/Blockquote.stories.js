@@ -1,6 +1,5 @@
 import React from 'react';
 import Blockquote from '.';
-import Icon from '../Icon';
 import Button from '../Button';
 import { AddOutlineGlyph } from '@un/icons-react';
 import markdown from './README.mdx';

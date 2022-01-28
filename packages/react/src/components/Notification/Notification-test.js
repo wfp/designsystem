@@ -1,12 +1,10 @@
 import React from 'react';
-import { iconClose, ErrorFilled20, CheckmarkFilled20 } from '@un/icons-react';
 import {
   NotificationButton,
   NotificationTextDetails,
   ToastNotification,
   InlineNotification,
 } from '../Notification';
-import Icon from '../Icon';
 
 import { shallow, mount } from 'enzyme';
 import { settings } from '../../globals/js';
@@ -21,21 +19,6 @@ describe('NotificationButton', () => {
       expect(wrapper.hasClass('some-class')).toBe(true);
     });
 
-    it('renders only one Icon', () => {
-      const icon = wrapper.find(Icon);
-      expect(icon.length).toEqual(1);
-    });
-
-    it('supports custom icon', () => {
-      const iconButton = mount(
-        <NotificationButton renderIcon={iconClose} iconDescription="Close" />
-      );
-      const originalIcon = mount(<Icon icon={iconClose} />).find('svg');
-      const icon = iconButton.find('svg');
-      expect(icon.find(':not(svg):not(title)').html()).toBe(
-        originalIcon.find('path').html()
-      );
-    });
 
     describe('When notificationType equals "toast"', () => {
       it('button should have correct className by default', () => {
@@ -44,12 +27,6 @@ describe('NotificationButton', () => {
         ).toBe(true);
       });
 
-      it('icon should have correct className by default', () => {
-        const icon = wrapper.find(Icon);
-        expect(icon.hasClass(`${prefix}--toast-notification__close-icon`)).toBe(
-          true
-        );
-      });
     });
 
     describe('When notificationType equals "inline"', () => {
@@ -60,12 +37,6 @@ describe('NotificationButton', () => {
         ).toBe(true);
       });
 
-      it('icon should have correct className', () => {
-        const icon = wrapper.find(Icon);
-        expect(
-          icon.hasClass(`${prefix}--inline-notification__close-icon`)
-        ).toBe(true);
-      });
     });
   });
 });
@@ -201,16 +172,6 @@ describe('InlineNotification', () => {
 
     it('renders itself', () => {
       expect(inline.length).toEqual(1);
-    });
-
-    it('renders success notification with matching kind and <icon name=""> values', () => {
-      inline.setProps({ kind: 'success' });
-      expect(inline.find(Icon).length).toBe(2);
-    });
-
-    it('renders error notification with matching kind and <icon name=""> values', () => {
-      inline.setProps({ kind: 'error' });
-      expect(inline.find(Icon).length).toBe(2);
     });
 
     it('renders warning notification with matching kind and <icon name=""> values', () => {

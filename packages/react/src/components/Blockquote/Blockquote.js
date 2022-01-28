@@ -3,14 +3,6 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import { withUNCoreSettings } from '../UNCoreSettings';
 
-/*
-import {
-  CheckmarkOutline32,
-  WarningAlt32,
-  Information32,
-} from '@carbon/icons-react';
-*/
-
 import {
   CheckmarkGlyph,
   WarningAlt32,
@@ -71,6 +63,7 @@ class Blockquote extends React.Component {
       withIcon,
       info,
       kind,
+      testid
     } = this.props;
     const blockquoteClass = classNames({
       [`${prefix}--blockquote`]: true,
@@ -121,13 +114,13 @@ class Blockquote extends React.Component {
     ) : null;
 
     return (
-      <div className={blockquoteClass}>
+      <div data-testid={testid} className={blockquoteClass}> 
         {iconElement && (
           <div className={`${prefix}--blockquote__icon-wrapper`}>
             {iconElement}
           </div>
         )}
-        <div className={blockquoteContentClass} style={style}>
+        <div className={blockquoteContentClass} style={style} >
           {(title || toggleable) && (
             <div
               onClick={this.toggleBlockquote}

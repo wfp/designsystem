@@ -1,30 +1,43 @@
+import '@testing-library/jest-dom/extend-expect';
 import React from 'react';
-import Hero from '../Hero';
+import Hero from './Hero';
 import { shallow } from 'enzyme';
+import { cleanup, render, screen } from '@testing-library/react';
 
 describe('Hero', () => {
+  
   describe('Renders as expected', () => {
-    const wrapper = shallow(
-      <Hero href="www.google.com" className="some-class" kind="landscape">
-        A simple link
-      </Hero>
-    );
-    it('should use the appropriate link class', () => {
-      expect(wrapper.length).toBe(1);
+    afterEach(cleanup);
+    // const wrapper = shallow(
+      
+    // );
+    it('should render content as ecpected', () => {
+      render(<Hero href="www.google.com" className="some-class" kind="landscape">
+      A simple link
+    </Hero>)
+      expect(screen.getByText('A simple link')).toBeInTheDocument();
     });
+
     it('should use the appropriate link class', () => {
-      expect(wrapper.hasClass('wfp--photo-card')).toEqual(true);
+      render(<Hero href="www.google.com" className="some-class" kind="landscape">
+      A simple link
+    </Hero>)
+      expect(screen.getByText('A simple link')).toHaveClass('wfp--photo-card');
     });
+    
     it('Renders as an <a> element with an href', () => {
-      expect(wrapper.is('a')).toBe(true);
+      render(<Hero data-testid="hero" href="www.google.com" className="some-class" kind="landscape">
+      A simple link
+    </Hero>)
+      expect(screen.getByText('A simple link')).toHaveAttribute('href','www.google.com');
     });
+  
     
-    it('should inherit the href property', () => {
-      expect(wrapper.props().href).toEqual('www.google.com');
-    });
-    
-    it('should all for custom classes to be applied', () => {
-      expect(wrapper.hasClass('some-class')).toEqual(true);
+    it('should call for custom classes to be applied', () => {
+      render(<Hero href="www.google.com" className="some-class" kind="landscape">
+      A simple link
+    </Hero>)
+      expect(screen.getByText('A simple link')).toHaveClass('some-class');
     });
 
   });
@@ -58,11 +71,6 @@ describe('Hero', () => {
       it("renders hero info content as expected", () => {
         expect(infoWrapper().props().children.length).toBe(2)
       })
-    
-      // it('render kind props as expected', () => {
-      //   wrapper.setProps({ kind: 'related' });
-      //   expect(wrapper.props().kind).toEqual('related');
-      // });
     })
 
     

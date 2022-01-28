@@ -5,15 +5,13 @@
  * LICENSE file in the root directory of this source tree.
  */
 
+import '@testing-library/jest-dom/extend-expect';
 import React from 'react';
 import Checkbox from '../Checkbox';
 import CheckboxSkeleton from '../Checkbox/Checkbox.Skeleton';
 import { mount } from 'enzyme';
-import { settings } from 'carbon-components';
 import { cleanup, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-
-const { prefix } = settings;
 
 describe('Checkbox', () => {
   describe('Renders as expected', () => {
@@ -28,7 +26,7 @@ describe('Checkbox', () => {
       });
 
       it('has the expected classes', () => {
-        expect(label.hasClass(`${prefix}--checkbox-label`)).toEqual(true);
+        expect(label.hasClass(`wfp--checkbox-label`)).toEqual(true);
       });
 
       it('has the expected htmlFor value', () => {
@@ -85,7 +83,7 @@ describe('Checkbox', () => {
     const label = wrapper.find('label');
     expect(label.length).toEqual(1);
     const span = wrapper.find('span');
-    expect(span.hasClass(`${prefix}--visually-hidden`)).toEqual(true);
+    expect(span.hasClass(`wfp--visually-hidden`)).toEqual(true);
   });
 
   describe('events', () => {
@@ -186,8 +184,8 @@ describe('CheckboxSkeleton', () => {
       });
 
       it('has the expected classes', () => {
-        expect(label.hasClass(`${prefix}--checkbox-label-text`)).toEqual(true);
-        expect(label.hasClass(`${prefix}--skeleton`)).toEqual(true);
+        expect(label.hasClass(`wfp--checkbox-label-text`)).toEqual(true);
+        expect(label.hasClass(`wfp--skeleton`)).toEqual(true);
       });
     });
   });
@@ -195,24 +193,6 @@ describe('CheckboxSkeleton', () => {
 
 describe('Checkbox accessibility', () => {
   afterEach(cleanup);
-
-  it('should have no Axe violations', async () => {
-    render(<Checkbox labelText="Checkbox label" id="test_id" />);
-    await expect(
-      screen.getByLabelText('Checkbox label')
-    ).toHaveNoAxeViolations();
-  });
-
-  it('should have no Accessibility Checker violations', async () => {
-    render(
-      <main>
-        <Checkbox labelText="Checkbox label" id="test_id" />
-      </main>
-    );
-    await expect(screen.getByLabelText('Checkbox label')).toHaveNoACViolations(
-      'Checkbox'
-    );
-  });
 
   it('can receive keyboard focus', () => {
     render(<Checkbox labelText="Checkbox label" id="test_id" />);

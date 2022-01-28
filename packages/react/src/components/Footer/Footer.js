@@ -4,7 +4,7 @@ import classnames from 'classnames';
 import Link from '../Link';
 import Wrapper from '../Wrapper';
 // import Icon from '../Icon';
-import FooterExternal from './FooterExternal';
+import {FooterExternal} from './FooterExternal';
 import {
   WfpLogoStandardBlackEn,
   WfpLogoVerticalEn,
