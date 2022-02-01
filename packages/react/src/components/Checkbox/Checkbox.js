@@ -37,19 +37,13 @@ const Checkbox = React.forwardRef(function Checkbox(
     wrapperClassName
   );
 
-  const enabled = useFeatureFlag('enable-v11-release');
-
   return (
     <div className={wrapperClasses}>
       <input
         {...other}
         type="checkbox"
         onChange={(evt) => {
-          if (enabled) {
-            onChange(evt, { checked: evt.target.checked, id });
-          } else {
-            onChange(evt.target.checked, id, evt);
-          }
+          onChange(evt, { checked: evt.target.checked, id });
         }}
         className={`${prefix}--checkbox`}
         id={id}

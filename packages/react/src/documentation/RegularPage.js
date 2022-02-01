@@ -18,7 +18,7 @@ import Tab from '../components/Tab';
 
 import Button from '../components/Button';
 
-import MainNavigation from '../components/MainNavigation';
+import { MainNavigation } from '../components/MainNavigation';
 import MainNavigationItem from '../components/MainNavigationItem';
 
 import {
