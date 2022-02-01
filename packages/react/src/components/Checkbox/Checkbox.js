@@ -8,8 +8,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
-import { useFeatureFlag } from '../FeatureFlags';
-//import { settings } from 'carbon-components';
 import useSettings from '../../hooks/useSettings';
 
 const Checkbox = React.forwardRef(function Checkbox(
