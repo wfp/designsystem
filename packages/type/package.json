@@ -1,7 +1,7 @@
 {
   "name": "@un/type",
   "description": "Typography for digital and software products using the Carbon Design System",
-  "version": "10.30.15",
+  "version": "10.30.16",
   "license": "Apache-2.0",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -38,11 +38,11 @@
   },
   "dependencies": {
     "@carbon/import-once": "^10.6.0",
-    "@un/layout": "^10.26.14"
+    "@un/layout": "^10.26.15"
   },
   "devDependencies": {
     "@carbon/test-utils": "^10.3.0",
-    "@un/cli": "^10.25.14",
+    "@un/cli": "^10.25.15",
     "change-case": "^4.1.1",
     "rimraf": "^3.0.0"
   },
