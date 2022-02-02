@@ -24,6 +24,7 @@ export function BlockNotification({
   const { prefix } = useSettings();
   const containerClassName = classnames(className, {
     [`${prefix}--inline-notification`]: true,
+    [`${prefix}--block-notification`]: true,
     [`${prefix}--inline-notification--low-contrast`]: lowContrast,
     [`${prefix}--inline-notification--${kind}`]: kind,
     [`${prefix}--inline-notification--hide-close-button`]: hideCloseButton,
@@ -51,7 +52,9 @@ export function BlockNotification({
           {children}
         </NotificationTextDetails>
       </div>
+      {/*<div className={`${prefix}--inline-notification__actions-wrapper`}>*/}
       {actions}
+      {/*</div>*/}
     </div>
   );
 }
@@ -143,4 +146,5 @@ BlockNotification.defaultProps = {
   iconDescription: 'closes notification',
   onCloseButtonClick: () => {},
   hideCloseButton: false,
+  lowContrast: true,
 };

@@ -417,3 +417,15 @@
     }
   }
 }
+
+.#{$prefix}--block-notification {
+  .#{$prefix}--inline-notification__text-wrapper {
+    flex-direction: column;
+  }
+  .#{$prefix}--inline-notification__action-button {
+    padding: 0 0.4em;
+    &.#{$prefix}--btn/*--ghost*/ {
+      margin: 0.5em 0.4em;
+    }
+  }
+}

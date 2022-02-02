@@ -241,8 +241,6 @@ export const BlockNotificationElement = (args) => (
 
 BlockNotificationElement.args = {
   role: 'alert',
-  lowContrast: true,
-  hideCloseButton: true,
   title: 'Notification title',
   subtitle: 'Subtitle text goes here.',
   iconDescription: 'describes the close button',
