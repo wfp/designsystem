@@ -102,8 +102,9 @@ const Button = ({
       role="button"
       onClick={onClickAnimation}
       ref={other.inputref}>
+      {iconReverse && buttonImage}
       {children}
-      {buttonImage}
+      {!iconReverse && buttonImage}
     </a>
   );
   return href ? anchor : button;

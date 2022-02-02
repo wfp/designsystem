@@ -23,8 +23,11 @@
 @mixin button {
   // <button> elements cannot be used as flex containers
   button.#{$prefix}--btn {
-    display: inline-block;
-    line-height: initial;
+    // TODO: use inline-flex for all buttons
+    // display: inline-block;
+    /*vertical-align: middle;
+    display: inline-flex;
+    line-height: initial;*/
   }
 
   // Reset intrisic padding in Firefox (see #731)
@@ -37,7 +40,6 @@
   button.#{$prefix}--btn .#{$prefix}--btn__icon {
     position: relative;
     vertical-align: middle;
-    top: -1px;
     height: 1em;
     width: 1em;
 
@@ -47,7 +49,8 @@
     }
   }
 
-  button.#{$prefix}--btn--icon-reverse {
+  button.#{$prefix}--btn--icon-reverse,
+  a.#{$prefix}--btn--icon-reverse {
     .#{$prefix}--btn__icon {
       margin-left: 0;
       margin-right: $spacing-03;
@@ -58,7 +61,7 @@
     }
   }
 
-  a.#{$prefix}--btn--icon-reverse {
+  /*a.#{$prefix}--btn--icon-reverse {
     display: inline-flex;
     flex-direction: row-reverse;
 
@@ -71,7 +74,7 @@
         margin-right: 0;
       }
     }
-  }
+  }*/
 
   a,
   button {

@@ -91,6 +91,18 @@ export const ButtonIcon = (args) => (
     <Button {...args} kind="tertiary" icon={AddCircleGlyph}></Button>{' '}
     <Button {...args} iconReverse kind="tertiary" icon={AddCircleGlyph}>
       With iconReverse
+    </Button>{' '}
+    <Button href="#" icon={AddCircleGlyph} kind="primary">
+      Button with icon link
+    </Button>{' '}
+    <Button {...args} href="#" kind="tertiary" icon={AddCircleGlyph}></Button>{' '}
+    <Button
+      {...args}
+      href="#"
+      iconReverse
+      kind="tertiary"
+      icon={AddCircleGlyph}>
+      With iconReverse link
     </Button>
   </>
 );
