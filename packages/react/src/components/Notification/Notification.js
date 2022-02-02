@@ -217,7 +217,7 @@ const iconTypes = {
   info: InfoCircleGlyph,
 };
 
-function NotificationIcon({ iconDescription, kind, notificationType }) {
+export function NotificationIcon({ iconDescription, kind, notificationType }) {
   const { prefix } = useSettings();
   const IconForKind = iconTypes[kind];
   if (!IconForKind) {

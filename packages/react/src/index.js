@@ -83,6 +83,7 @@ export {
   NotificationActionButton,
   NotificationButton,
   NotificationTextDetails,
+  BlockNotification,
 } from './components/Notification';
 export NumberInput from './components/NumberInput';
 export Pagination from './components/Pagination';

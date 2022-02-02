@@ -3,6 +3,7 @@ import {
   ToastNotification,
   InlineNotification,
   NotificationActionButton,
+  BlockNotification,
 } from '../Notification';
 import Button from '../Button';
 import { notificationtypes } from '../../prop-types/types';
@@ -216,26 +217,20 @@ InlineLowContrast.args = {
   statusIconDescription: 'describes the status icon',
 };
 
-export const InlineBlockquote = (args) => (
+export const BlockNotificationElement = (args) => (
   <>
-    <InlineNotification
+    <BlockNotification
       {...args}
       kind="success"
       actions={<NotificationActionButton>{'Action'}</NotificationActionButton>}
     />
-    <InlineNotification
-      {...args}
-      kind="error"
-      actions={<NotificationActionButton>{'Action'}</NotificationActionButton>}>
-      Lorem ipsum dolor sit amet, consectetur adipiscing
-    </InlineNotification>
-    <InlineNotification
+    <BlockNotification
       {...args}
       kind="warning"
       icon={false}
       actions={<Button>{'Action'}</Button>}
     />
-    <InlineNotification
+    <BlockNotification
       {...args}
       kind="info"
       icon={<div>Icon</div>}
@@ -244,7 +239,7 @@ export const InlineBlockquote = (args) => (
   </>
 );
 
-InlineBlockquote.args = {
+BlockNotificationElement.args = {
   role: 'alert',
   lowContrast: true,
   hideCloseButton: true,

@@ -44,7 +44,7 @@ const Checkbox = React.forwardRef(function Checkbox(
           onChange(evt, { checked: evt.target.checked, id });
         }}
         className={`${prefix}--checkbox`}
-        id={id}
+        id={id || other.name}
         ref={(el) => {
           if (el) {
             el.indeterminate = indeterminate;
@@ -107,7 +107,7 @@ Checkbox.propTypes = {
 
   /**
    * Receives three arguments: true/false, the checkbox's id, and the dom event.
-   * `(value, id, event) => console.log({value, id, event})`
+   * `(evt, { checked: evt.target.checked, id }) => console.log(evt, checked, id)`
    */
   onChange: PropTypes.func,
 
