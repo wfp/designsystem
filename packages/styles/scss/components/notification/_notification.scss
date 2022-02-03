@@ -236,6 +236,7 @@
         flex-shrink: 0;
         margin-top: 0.875rem;
         margin-right: 1rem;
+        margin-bottom: 0.875rem;
       }
 
       .#{$prefix}--inline-notification__text-wrapper {
@@ -419,6 +420,8 @@
 }
 
 .#{$prefix}--block-notification {
+  max-width: inherit;
+  width: 100%;
   .#{$prefix}--inline-notification__text-wrapper {
     flex-direction: column;
   }
