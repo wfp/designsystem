@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TextArea mock textarea should render text area field 1`] = `
+<TextArea
+  disabled={false}
+  fullWidth={true}
+  helperText="Helper text"
+  invalid={false}
+  invalidText=""
+  labelText="Test"
+  onChange={[Function]}
+  onClick={[Function]}
+  placeholder=""
+  rows={4}
+>
+  <FormItem>
+    <div
+      className="wfp--form-item"
+    >
+      <label
+        className="wfp--label"
+      >
+        Test
+      </label>
+      <textarea
+        className="wfp--text-area wfp--textarea-fullwidth"
+        disabled={false}
+        onChange={[Function]}
+        onClick={[Function]}
+        placeholder=""
+        rows={4}
+      />
+      <div
+        className="wfp--form__helper-text"
+      >
+        Helper text
+      </div>
+    </div>
+  </FormItem>
+</TextArea>
+`;

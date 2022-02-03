@@ -44,6 +44,11 @@ export class DateRangePickerInput extends PureComponent {
       onDragStart,
       onDrop,
       onFocus,
+      showClearDate,
+      isDirty,
+      isTouched,
+      error,
+      date,
       ...other
     } = this.props;
     const { focusedInput, startDate, endDate } = this.state;
@@ -107,7 +112,7 @@ DateRangePickerInput.propTypes = {
   /**
    * Provide the SingleDatePicker as a component
    */
-  datePicker: PropTypes.func.isRequired,
+  datePicker: PropTypes.oneOfType([PropTypes.func, PropTypes.object]),
   /**
    * Provide the placeholder for the start input
    */

@@ -2,9 +2,23 @@
 /* eslint-disable jsx-a11y/href-no-hash */
 import React from 'react';
 import { mount, shallow } from 'enzyme';
-import TextArea from '../TextArea';
+import TextArea from './TextArea';
 
 describe('TextArea', () => {
+  describe('mock textarea', () => {
+    
+    it('should render text area field', () => {
+      const wrapper = mount(
+        
+          <TextArea
+            labelText="Test"
+            helperText="Helper text"
+          />
+      )
+      expect(wrapper).toMatchSnapshot();
+    })
+  })
+
   describe('should render as expected', () => {
     const wrapper = mount(
       <TextArea
@@ -104,8 +118,7 @@ describe('TextArea', () => {
         const renderedHelper = wrapper.find('.wfp--form__helper-text');
         expect(renderedHelper.text()).toEqual('Helper text');
       });
-    });
-  });
+    }); 
 
   describe('events', () => {
     describe('disabled textarea', () => {
@@ -164,4 +177,5 @@ describe('TextArea', () => {
       });
     });
   });
+});
 });

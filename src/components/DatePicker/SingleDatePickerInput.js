@@ -40,6 +40,11 @@ export class SingleDatePickerInput extends PureComponent {
       onBlur,
       onDragStart,
       onDrop,
+      showClearDate,
+      isDirty,
+      isTouched,
+      error,
+      date,
       ...other
     } = this.props;
 
@@ -100,7 +105,7 @@ SingleDatePickerInput.propTypes = {
   /**
    * Provide the SingleDatePicker as a component
    */
-  datePicker: PropTypes.func.isRequired,
+  datePicker: PropTypes.oneOfType([PropTypes.func, PropTypes.object]),
 
   onFocus: PropTypes.func,
 

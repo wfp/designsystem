@@ -3,7 +3,7 @@ import * as ReactHook from 'react-hook-form'
 
 declare namespace SingleDatePickerInput  {
   interface SingleDatePickerInputProps extends React.InputHTMLAttributes<SingleDatePickerInput> {
-    datePicker: ()=> void
+    datePicker: () => void | {}
     labelText: string
     placeholder?: string
     hideLabel?: boolean
