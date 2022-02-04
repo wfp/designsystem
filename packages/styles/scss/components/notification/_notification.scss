@@ -419,8 +419,11 @@
   }
 }
 
-.#{$prefix}--block-notification {
+.#{$prefix}--block-notification.#{$prefix}--inline-notification {
   max-width: inherit;
+  @include breakpoint(md) {
+    max-width: inherit;
+  }
   width: 100%;
   .#{$prefix}--inline-notification__text-wrapper {
     flex-direction: column;
