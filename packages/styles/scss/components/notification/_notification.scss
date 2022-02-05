@@ -286,7 +286,7 @@
 
   .#{$prefix}--inline-notification--low-contrast.#{$prefix}--inline-notification--info,
   .#{$prefix}--inline-notification--low-contrast.#{$prefix}--inline-notification--info-square {
-    background: var(--support-light-04);
+    background: $layer; //var(--support-light-04);
     border-left: 3px solid $interactive;
   }
   .#{$prefix}--inline-notification--info
@@ -427,8 +427,14 @@
     .#{$prefix}--inline-notification__text-wrapper {
       flex-direction: column;
     }
-    .#{$prefix}--inline-notification__action-button {
-      padding: 0 0.4em;
+    .#{$prefix}--inline-notification__actions-wrapper {
+      > * {
+        margin-left: 0.5em;
+      }
+      .#{$prefix}--btn--tertiary {
+        //background: rgba(255, 255, 255, 0.2);
+      }
+      padding: 0.8em;
       &.#{$prefix}--btn/*--ghost*/ {
         margin: 0.5em 0.4em;
       }

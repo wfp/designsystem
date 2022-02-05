@@ -5,6 +5,7 @@ import useSettings from '../../hooks/useSettings';
 import { NotificationIcon, NotificationTextDetails } from '../Notification';
 export function BlockNotification({
   actions,
+  advancedActions,
   role,
   notificationType,
   onCloseButtonClick,
@@ -52,9 +53,13 @@ export function BlockNotification({
           {children}
         </NotificationTextDetails>
       </div>
-      {/*<div className={`${prefix}--inline-notification__actions-wrapper`}>*/}
-      {actions}
-      {/*</div>*/}
+      {advancedActions ? (
+        <div className={`${prefix}--inline-notification__actions-wrapper`}>
+          {actions}
+        </div>
+      ) : (
+        actions
+      )}
     </div>
   );
 }

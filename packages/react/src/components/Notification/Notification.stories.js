@@ -225,14 +225,20 @@ export const BlockNotificationElement = (args) => (
       actions={<NotificationActionButton>{'Action'}</NotificationActionButton>}
     />
     <BlockNotification
+      advancedActions
       {...args}
-      kind="warning"
+      kind="info"
       icon={false}
-      actions={<Button>{'Action'}</Button>}
+      actions={
+        <>
+          <Button>Accept</Button>
+          <Button kind="tertiary">Reject</Button>
+        </>
+      }
     />
     <BlockNotification
       {...args}
-      kind="info"
+      kind="warning"
       icon={<div>Icon</div>}
       actions={<NotificationActionButton>{'Action'}</NotificationActionButton>}
     />
