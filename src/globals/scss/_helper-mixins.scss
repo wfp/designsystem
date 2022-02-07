@@ -78,7 +78,7 @@
   &:invalid,
   &.#{$prefix}--input--invalid {
     border-color: var(--support-01);
-    outline: 1px solid var(--support-01);
+    // outline: 1px solid var(--support-01);
   }
 }
 

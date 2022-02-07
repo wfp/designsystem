@@ -66,6 +66,19 @@ SingleDatePickerDefault.story = {
   },
 };
 
+export const InvalidDatePicker = (args) => (
+  <SingleDatePickerInput {...args} />
+);
+InvalidDatePicker.args = {
+  datePicker: SingleDatePicker,
+  labelText: 'Label text (labelText)',
+  invalid: true,
+  invalidText: 'A valid value is required',
+  showDefaultInputIcon: true,
+  inputIconPosition: 'after',
+  helperText: 'Optional helper text.',
+};
+
 export const SingleDatePickerNew = (args) => {
   const [date, setDate] = useState(moment());
   const [focused, setFocused] = useState(false);
@@ -135,7 +148,7 @@ DateRangePickerDefault.args = {
   disabled: false,
   hideLabel: false,
   showClearDate: false,
-  invalid: false,
+  invalid: true,
   invalidText: 'A valid value is required',
   showDefaultInputIcon: true,
   inputIconPosition: 'after',

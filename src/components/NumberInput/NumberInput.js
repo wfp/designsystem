@@ -112,6 +112,10 @@ const NumberInput = React.forwardRef((props, ref) => {
     [`${prefix}--number--nocontrols`]: hideControls,
   });
 
+  const innerInputClasses = classNames( className, {
+    [`${prefix}--input--invalid`]: invalid,
+  });
+
   const newProps = {
     disabled,
     id,
@@ -150,6 +154,7 @@ const NumberInput = React.forwardRef((props, ref) => {
               {...other}
               {...newProps}
               ref={_inputRef}
+              className={innerInputClasses}
             />
           </div>
         );

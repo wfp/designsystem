@@ -95,7 +95,7 @@
 
   //TODO: Check validity
   [data-invalid] ~ .#{$prefix}--select__arrow {
-    bottom: 2.25rem;
+    // bottom: 2.25rem;  //remove, it displaces the arrow icon
   }
 
   .#{$prefix}--select-optgroup,
