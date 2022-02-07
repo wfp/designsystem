@@ -3,14 +3,15 @@ import React from 'react';
 import markdown from './README.mdx';
 
 import { Footer } from '.';
-import { FooterMetaLink } from './FooterExternal';
+
+import {FooterExternal, FooterMetaLink, LinksColumn } from './FooterExternal';
 
 import Link from '../Link';
 
 export default {
   title: 'Components/UI Elements/Footer',
   component: Footer,
-
+  subcomponents: { FooterExternal, FooterMetaLink, LinksColumn },
   parameters: {
     componentSubtitle: 'Component',
     status: 'released',
@@ -56,7 +57,7 @@ Regular.args = {
 
 export const External = (args) => 
 (
-<Footer {...args} 
+<FooterExternal {...args} 
  metaLinks={
   <>
     <FooterMetaLink href="hh.com">First legal link</FooterMetaLink>
@@ -64,57 +65,49 @@ export const External = (args) =>
   </>
 }
 >
-  <div className={`wfp--footer-ext__nav-column`}>
-    <p className={`wfp--footer-ext__nav-title`}>First title</p>
-    <nav>
-      <ul className={`wfp--footer-ext__nav-list`}>
-        <li className={`wfp--footer-ext__nav-link`}>
-          <Link>First link</Link>
-        </li>
-        <li className={`wfp--footer-ext__nav-link`}>
-          <Link>Second link</Link>
-        </li>
-        <li className={`wfp--footer-ext__nav-link`}>
-          <Link>Third link</Link>
-        </li>
-        <li className={`wfp--footer-ext__nav-link`}>
-          <Link>Fourth link</Link>
-        </li>
-        <li className={`wfp--footer-ext__nav-link`}>
-          <Link>Fifth link</Link>
-        </li>
-      </ul>
-    </nav>
-  </div>
-  <div className={`wfp--footer-ext__nav-column`}>
-    <p className={`wfp--footer-ext__nav-title`}>Second title</p>
-    <nav>
-      <ul className={`wfp--footer-ext__nav-list`}>
-        <li className={`wfp--footer-ext__nav-link`}>
-          <Link>First link</Link>
-        </li>
-        <li className={`wfp--footer-ext__nav-link`}>
-          <Link>Second link</Link>
-        </li>
-        <li className={`wfp--footer-ext__nav-link`}>
-          <Link>Third link</Link>
-        </li>
-        <li className={`wfp--footer-ext__nav-link`}>
-          <Link>Fourth link</Link>
-        </li>
-        <li className={`wfp--footer-ext__nav-link`}>
-          <Link>Fifth link</Link>
-        </li>
-      </ul>
-    </nav>
-  </div>
-</Footer>
+  <>
+  <LinksColumn title="Title">
+      <li className={`wfp--links-column-link`}>
+        <Link>First link</Link>
+      </li>
+      <li className={`wfp--links-column-link`}>
+        <Link>Second link</Link>
+      </li>
+      <li className={`wfp--links-column-link`}>
+        <Link>Third link</Link>
+      </li>
+      <li className={`wfp--links-column-link`}>
+        <Link>Fourth link</Link>
+      </li>
+      <li className={`wfp--links-column-link`}>
+        <Link>Fifth link</Link>
+      </li>
+  </LinksColumn>
+
+  <LinksColumn title="Title 2">
+      <li className={`wfp--links-column-link`}>
+        <Link>First link 2</Link>
+      </li>
+      <li className={`wfp--links-column-link`}>
+        <Link>Second link 2</Link>
+      </li>
+      <li className={`wfp--links-column-link`}>
+        <Link>Third link 2</Link>
+      </li>
+      <li className={`wfp--links-column-link`}>
+        <Link>Fourth link 2</Link>
+      </li>
+      <li className={`wfp--links-column-link`}>
+        <Link>Fifth link 2</Link>
+      </li>
+  </LinksColumn>
+  </> 
+</FooterExternal>
 );
 
 
 
 External.args = {
-  external: true,
   productName: <span>Service <br/> Marketplace</span>,
   metaContent: 'Via C. G. Viola 68 Parco dei Medici, 00148 Rome, Italy'
 };

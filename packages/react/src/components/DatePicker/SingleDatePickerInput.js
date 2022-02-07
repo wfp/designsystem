@@ -33,8 +33,6 @@ const SingleDatePickerInput = ({
   const [focusedInput, setFocusedInput] = useState(null)
 
   const handleDateChange = (value) => {
-    console.log("hello value", value);
-    console.log("hello onchange", typeof onChange);
     if (onChange) {
       
       onChange(value);
@@ -99,7 +97,7 @@ SingleDatePickerInput.propTypes = {
   /**
    * Provide the SingleDatePicker as a component
    */
-  datePicker: PropTypes.func.isRequired,
+  datePicker: PropTypes.oneOfType([PropTypes.func.isRequired, PropTypes.object.isRequired]),
 
   onFocus: PropTypes.func,
 

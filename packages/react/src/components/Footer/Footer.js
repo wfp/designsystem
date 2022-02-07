@@ -17,7 +17,6 @@ const Footer = ({
   // buttonText,
   className,
   children,
-  external,
   labelOne,
   linkTextOne,
   linkHrefOne,
@@ -31,7 +30,6 @@ const Footer = ({
   secondary,
   // sdgLogo,
   pageWidth,
-  productName,
   //...other
 }) => {
   const { prefix } = useSettings();
@@ -43,16 +41,6 @@ const Footer = ({
   );
   // const standardLogo = `${process.env.STORYBOOK_ASSETS}logos/standard/en/wfp-logo-standard-black-en.svg`;
 
-  if(external){
-    return(
-      <FooterExternal
-      productName={productName}
-      metaContent={metaContent}
-      metaLinks={metaLinks}>
-      {children}
-    </FooterExternal>
-    )
-  }else {
  return(
     <footer className={classNames}>
       <Wrapper pageWidth={pageWidth}>
@@ -144,7 +132,7 @@ const Footer = ({
     </footer>
   
  )
-}
+
 };
 
 Footer.propTypes = {
