@@ -6,7 +6,7 @@
     "@wfp/icons": "0.0.86",
     "@wfp/ui": "^1.17.1",
     "moment": "^2.29.1",
-    "node-sass": "^4.14.1",
+    "node-sass": "^7.0.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-final-form": "^6.5.2",
