@@ -32,6 +32,10 @@ function Form({ onFormChange }) {
         onFormChange(formdata)
     }
 
+    const firstname = register('firstname');
+    const lastname = register('lastname');
+    const age = register('age');
+    
 
     return (
         <form onSubmit={handleSubmit(handleFilter)}>
@@ -40,17 +44,22 @@ function Form({ onFormChange }) {
                 style={{ marginTop: '1rem' }}>
 
                 <Controller
-                    as={<ReactSelectWrapper control={control} options={options} />}
+                    control={control}
+                    render={({ field }) => {
+                    return <ReactSelectWrapper {...field} options={options} />;   
+                    }} 
                     name="gender"
                     labelText="Gender"
-                    control={control}
+                    
                 />
 
                 <Controller
-                    as={<ReactSelectWrapper control={control} options={countryOptions} />}
+                    control={control}
+                    render={({ field }) => {
+                    return <ReactSelectWrapper {...field} options={countryOptions} />;   
+                    }} 
                     name="country"
                     labelText="Country"
-                    control={control}
                 />
 
                 
@@ -61,16 +70,16 @@ function Form({ onFormChange }) {
                 name="firstname"
                 labelText="Firstname"
                 placeholder="eg: Edith"
-                inputRef={register}
+                inputRef={firstname.ref}
                 />
                 <TextInput
                 id="lastname"
                 name="lastname"
                 labelText="lastname"
                 placeholder="eg: Chemin"
-                inputRef={register}
+                inputRef={lastname.ref}
                 />
-                <NumberInput id="age" name="age" labelText="Age" placeholder="" inputRef={register} />
+                <NumberInput id="age" name="age" labelText="Age" placeholder="" inputRef={age.ref} />
             </FormGroup>
 
             <div
