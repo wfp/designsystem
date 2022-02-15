@@ -10,7 +10,7 @@ import useSettings from '../../hooks/useSettings';
 const FooterExternal = ({
   className,
   productName,
-  // children,
+  children,
   metaContent,
   metaLinks,
 }) => {
@@ -86,8 +86,7 @@ const FooterExternal = ({
             </div>
           </div>
           <div className={`${prefix}--footer-ext__nav-wrapper`}>
-            <LinksColumn />
-            <LinksColumn />
+            {children}
           </div>
         </div>
         <div className={`${prefix}--footer-ext__legal`}>
@@ -114,35 +113,30 @@ FooterExternal.propTypes = {
   metaLinks: PropTypes.node,
 };
 
-const LinksColumn = () => {
+const LinksColumn = ({title, children}) => {
   const { prefix } = useSettings();
 
   return (
     <div className={`${prefix}--links-column`}>
-      {/* Title is optional */}
-      <p className={`${prefix}--links-column__title`}>Title</p>
+      {title && <p className={`${prefix}--links-column__title`}> {title} </p>}
+      
       <nav>
         <ul className={`${prefix}--links-column__nav-list`}>
-          <li className={`${prefix}--links-column-link`}>
-            <Link>First link</Link>
-          </li>
-          <li className={`${prefix}--links-column-link`}>
-            <Link>Second link</Link>
-          </li>
-          <li className={`${prefix}--links-column-link`}>
-            <Link>Third link</Link>
-          </li>
-          <li className={`${prefix}--links-column-link`}>
-            <Link>Fourth link</Link>
-          </li>
-          <li className={`${prefix}--links-column-link`}>
-            <Link>Fifth link</Link>
-          </li>
+          {children}
         </ul>
       </nav>
     </div>
   );
 };
+
+LinksColumn.propTypes = {
+  /**
+   * The heading or title of the list of links.
+   */
+  title: PropTypes.string,
+  children: PropTypes.node,
+};
+
 
 const FooterMetaLink = ({ className, href, children }) => {
   const { prefix } = useSettings();

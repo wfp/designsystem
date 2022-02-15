@@ -32,4 +32,6 @@ Regular.args = {
   modalLabel: 'Modal label',
   modalHeading: 'Modal heading',
   modalText: 'Modal text',
+  className:'some-class',
+  open:true
 };

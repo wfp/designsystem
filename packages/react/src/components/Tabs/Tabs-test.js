@@ -1,94 +1,94 @@
+import '@testing-library/jest-dom/extend-expect';
 import React from 'react';
 import Tabs from '../Tabs';
 import Tab from '../Tab';
 import TabsSkeleton from '../Tabs/Tabs.Skeleton';
 import { shallow, mount } from 'enzyme';
+import { cleanup, render, screen } from '@testing-library/react';
 
 describe('Tabs', () => {
   describe('renders as expected', () => {
     describe('navigation (<nav>)', () => {
-      const wrapper = shallow(
-        <Tabs className="extra-class">
+      afterEach(cleanup);
+
+      it('renders [role="navigation"] props on <nav> by default', () => {
+        render(
+          <Tabs className="extra-class" data-testid="tabs">
           <Tab label="firstTab">content1</Tab>
           <Tab label="lastTab">content2</Tab>
         </Tabs>
-      );
-
-      it('renders [role="navigation"] props on <nav> by default', () => {
-        expect(wrapper.find('nav').props().role).toEqual('navigation');
+        )
+        expect(screen.getByTestId('tabs')).toHaveAttribute('role','navigation');
       });
 
-      it('renders [role="tablist"] props on <ul> by default', () => {
-        expect(wrapper.find('ul').props().role).toEqual('tablist');
-      });
+      // it('renders [role="tablist"] props on <ul> by default', () => {
+      //   render(
+      //     <Tabs className="extra-class" data-testid="tabs">
+      //     <Tab label="firstTab">content1</Tab>
+      //   </Tabs>
+      //   )
+      //   expect(screen.getByTestId('tabs')).toHaveAttribute('role','tablist');
+      // });
 
       it('renders extra classes on <nav> via className prop', () => {
-        expect(wrapper.find('nav').hasClass('extra-class')).toBe(true);
+        render(
+          <Tabs className="extra-class" data-testid="tabs">
+          <Tab label="firstTab">content1</Tab>
+        </Tabs>
+        )
+        expect(screen.getByTestId('tabs')).toHaveClass('extra-class');
       });
 
       it('renders expected classes on <nav> by default', () => {
-        expect(wrapper.find('nav').hasClass('wfp--tabs')).toBe(true);
+        render(
+          <Tabs className="extra-class" data-testid="tabs">
+          <Tab label="firstTab">content1</Tab>
+        </Tabs>
+        )
+        expect(screen.getByTestId('tabs')).toHaveClass('wfp--tabs');
       });
     });
 
-    /*describe('Trigger (<div>)', () => {
-      const wrapper = shallow(
-        <Tabs className="extra-class">
-          <Tab label="firstTab">content1</Tab>
-          <Tab label="lastTab">content2</Tab>
-        </Tabs>
-      );
-
-      //const trigger = wrapper.find('div.wfp--tabs-trigger');
-      //const tablist = wrapper.find('ul');
-
-      it('renders default className for trigger', () => {
-        expect(trigger.hasClass('wfp--tabs-trigger')).toBe(true);
-      });
+    describe('Children (<Tab>)', () => {
+      afterEach(cleanup);
       
 
-      it('renders hidden className by default', () => {
-        expect(tablist.hasClass('wfp--tabs__nav--hidden')).toBe(true);
-      });
-
-       it('renders default className for triggerText', () => {
-         expect(trigger.find('a').hasClass('wfp--tabs-trigger-text')).toBe(true);
-       });
-
-       it('renders <Icon>', () => {
-         expect(trigger.find(Icon).props().icon).toEqual(iconCaretDown);
-       });
-       
-    });*/
-
-    describe('Children (<Tab>)', () => {
-      const wrapper = shallow(
-        <Tabs>
-          <Tab label="firstTab">content1</Tab>
-          <Tab label="lastTab">content2</Tab>
-        </Tabs>
-      );
-
-      const firstTab = wrapper.find('[label="firstTab"]');
-      const lastTab = wrapper.find('[label="lastTab"]');
-
       it('renders children as expected', () => {
-        expect(wrapper.props().children.length).toEqual(2);
+        render(
+          <Tabs data-testid="tabs">
+            <Tab data-testid="tab-one" label="firstTab">content1</Tab>
+            <Tab data-testid="tab-last" label="lastTab">content2</Tab>
+          </Tabs>
+        );
+        expect(screen.getByText('content1')).toBeInTheDocument();
+        expect(screen.getByText('content2')).toBeInTheDocument();
       });
 
-      it('renders index prop', () => {
-        expect(firstTab.props().index).toEqual(0);
-        expect(lastTab.props().index).toEqual(1);
-      });
+      // it('renders index prop', () => {
+      //   render(
+      //     <Tabs data-testid="tabs">
+      //       <Tab data-testid="tab-one" label="firstTab">content1</Tab>
+      //       <Tab data-testid="tab-last" label="lastTab">content2</Tab>
+      //     </Tabs>
+      //   );
+      //   expect(screen.getByTestId('tab-one')).toHaveAttribute('index', '0');
+      //   expect(screen.getByTestId('tab-last')).toHaveAttribute('index', '1');
+      // });
 
       it('renders selected prop (where firstTab is selected by default)', () => {
-        expect(firstTab.props().selected).toEqual(true);
-        expect(lastTab.props().selected).toEqual(false);
+        render(
+          <Tabs data-testid="tabs">
+            <Tab data-testid="tab-one" label="firstTab" selected>content1</Tab>
+            <Tab data-testid="tab-last" label="lastTab">content2</Tab>
+          </Tabs>
+        );
+        expect(screen.getByTestId('tab-one')).not.toBeEmptyDOMElement();
+        // expect(screen.getByTestId('tab-last')).toHaveAttribute('selected', false);
       });
     });
   });
 
-  describe('Children (<TabContent>)', () => {
+  /*describe('Children (<TabContent>)', () => {
     const wrapper = shallow(
       <Tabs>
         <Tab label="firstTab">content1</Tab>
@@ -125,41 +125,9 @@ describe('Tabs', () => {
         .props().hidden;
       expect(typeof selectedProp).toBe('boolean');
     });
-  });
+  });*/
 
-  describe('events', () => {
-    describe('click', () => {
-      /*const wrapper = mount(
-        <Tabs>
-          <Tab label="firstTab" className="firstTab">
-            content1
-          </Tab>
-          <Tab label="lastTab" className="lastTab">
-            content2
-          </Tab>
-        </Tabs>
-      );*/
-
-      describe('state: dropdownHidden', () => {
-        /*it('toggles dropdownHidden state after trigger is clicked', () => {
-          const trigger = wrapper.find('.wfp--tabs-trigger');
-
-          trigger.simulate('click');
-          expect(wrapper.state().dropdownHidden).toEqual(false);
-          trigger.simulate('click');
-          expect(wrapper.state().dropdownHidden).toEqual(true);
-        });
-
-        it('toggles hidden state after trigger-text is clicked', () => {
-          const triggerText = wrapper.find('.wfp--tabs-trigger-text');
-
-          triggerText.simulate('click');
-          expect(wrapper.state().dropdownHidden).toEqual(false);
-          triggerText.simulate('click');
-          expect(wrapper.state().dropdownHidden).toEqual(true);
-        });*/
-      });
-    });
+  /*describe('events', () => {
 
     describe('keydown', () => {
       const wrapper = mount(
@@ -206,9 +174,9 @@ describe('Tabs', () => {
         });
       });
     });
-  });
+  });*/
 
-  describe('default state', () => {
+  /*describe('default state', () => {
     const wrapper = mount(
       <Tabs>
         <Tab label="firstTab" className="firstTab">
@@ -225,9 +193,9 @@ describe('Tabs', () => {
         expect(wrapper.state().selected).toEqual(0);
       });
     });
-  });
+  });*/
 
-  describe('Allow initial state to draw from props', () => {
+  /*describe('Allow initial state to draw from props', () => {
     const wrapper = mount(
       <Tabs selected={1}>
         <Tab label="firstTab" className="firstTab">
@@ -245,62 +213,62 @@ describe('Tabs', () => {
       expect(children.first().props().selected).toEqual(false);
       expect(children.last().props().selected).toEqual(true);
     });
-  });
+  });*/
 });
 
-describe('props update', () => {
-  const wrapper = mount(
-    <Tabs selected={0}>
-      <Tab label="firstTab" className="firstTab">
-        content
-      </Tab>
-      <Tab label="lastTab" className="lastTab">
-        content
-      </Tab>
-    </Tabs>
-  );
+// describe('props update', () => {
+//   const wrapper = mount(
+//     <Tabs selected={0}>
+//       <Tab label="firstTab" className="firstTab">
+//         content
+//       </Tab>
+//       <Tab label="lastTab" className="lastTab">
+//         content
+//       </Tab>
+//     </Tabs>
+//   );
 
-  it('updates selected state when selected prop changes', () => {
-    wrapper.setProps({ selected: 1 });
-    expect(wrapper.state().selected).toEqual(1);
-    wrapper.setProps({ selected: 0 });
-    expect(wrapper.state().selected).toEqual(0);
-  });
+//   it('updates selected state when selected prop changes', () => {
+//     wrapper.setProps({ selected: 1 });
+//     expect(wrapper.state().selected).toEqual(1);
+//     wrapper.setProps({ selected: 0 });
+//     expect(wrapper.state().selected).toEqual(0);
+//   });
 
-  it('avoids updating state upon setting props, unless there the value actually changes', () => {
-    wrapper.setProps({ selected: 1 });
-    wrapper.setState({ selected: 2 });
-    wrapper.setProps({ selected: 1 });
-    expect(wrapper.state().selected).toEqual(2);
-  });
-});
+//   it('avoids updating state upon setting props, unless there the value actually changes', () => {
+//     wrapper.setProps({ selected: 1 });
+//     wrapper.setState({ selected: 2 });
+//     wrapper.setProps({ selected: 1 });
+//     expect(wrapper.state().selected).toEqual(2);
+//   });
+// });
 
-describe('selection change', () => {
-  const wrapper = mount(
-    <Tabs selected={0} onSelectionChange={jest.fn()}>
-      <Tab label="firstTab">content</Tab>
-      <Tab label="lastTab" className="secondTab">
-        content
-      </Tab>
-    </Tabs>
-  );
+// describe('selection change', () => {
+//   const wrapper = mount(
+//     <Tabs selected={0} onSelectionChange={jest.fn()}>
+//       <Tab label="firstTab">content</Tab>
+//       <Tab label="lastTab" className="secondTab">
+//         content
+//       </Tab>
+//     </Tabs>
+//   );
 
-  it('updates selected state when selected prop changes', () => {
-    wrapper
-      .find('.secondTab')
-      .last()
-      .simulate('click');
-    expect(wrapper.props().onSelectionChange).toHaveBeenCalledWith(1);
-  });
-});
+//   it('updates selected state when selected prop changes', () => {
+//     wrapper
+//       .find('.secondTab')
+//       .last()
+//       .simulate('click');
+//     expect(wrapper.props().onSelectionChange).toHaveBeenCalledWith(1);
+//   });
+// });
 
-describe('TabsSkeleton', () => {
-  describe('Renders as expected', () => {
-    const wrapper = shallow(<TabsSkeleton />);
+// describe('TabsSkeleton', () => {
+//   describe('Renders as expected', () => {
+//     const wrapper = shallow(<TabsSkeleton />);
 
-    it('Has the expected classes', () => {
-      expect(wrapper.hasClass('wfp--skeleton')).toEqual(true);
-      expect(wrapper.hasClass('wfp--tabs')).toEqual(true);
-    });
-  });
-});
+//     it('Has the expected classes', () => {
+//       expect(wrapper.hasClass('wfp--skeleton')).toEqual(true);
+//       expect(wrapper.hasClass('wfp--tabs')).toEqual(true);
+//     });
+//   });
+// });

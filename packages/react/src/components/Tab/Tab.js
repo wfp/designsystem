@@ -131,6 +131,7 @@ class Tab extends React.Component {
       onKeyDown,
       renderAnchor,
       renderListElement,
+      ...other
     } = this.props;
 
     const classes = classNames(
@@ -177,6 +178,7 @@ class Tab extends React.Component {
       },
       role: 'presentation',
       selected: selected,
+      ...other
     };
 
     return (

@@ -2,7 +2,6 @@ import PropTypes from 'prop-types';
 import React, { useRef, useState } from 'react';
 import classnames from 'classnames';
 import Link from '../Link';
-import Icon from '../Icon';
 import { CaretUpGlyph, CaretDownGlyph } from '@un/icons-react';
 import useSettings from '../../hooks/useSettings';
 

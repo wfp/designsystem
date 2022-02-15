@@ -78,16 +78,14 @@ const RegularPage = ({
                 <SubNavigationFilter>
                   <Search
                     className="some-class"
-                    small
                     label={null}
                     id="search-2"
-                    placeHolderText="Filter List"
                   />
                 </SubNavigationFilter>
               </SubNavigationHeader>
               <SubNavigationContent>
                 <SubNavigationList>
-                  <SubNavigationGroup title="First List" columns>
+                  <SubNavigationGroup title="First List" columns={3}>
                     <SubNavigationItem>
                       <Link href="https://go.docs.wfp.org" target="_blank">
                         Lorem Ipsum et jomen
@@ -134,7 +132,7 @@ const RegularPage = ({
                       </Link>
                     </SubNavigationItem>
                   </SubNavigationGroup>
-                  <SubNavigationGroup title="Second List of Items" columns>
+                  <SubNavigationGroup title="Second List of Items" columns={3}>
                     <SubNavigationItem>
                       <Link href="https://go.docs.wfp.org" target="_blank">
                         At vero eos
@@ -200,7 +198,7 @@ const RegularPage = ({
           </Link>
         </MainNavigationItem>
         <MainNavigationItem>
-          <Search kind="main" id="search-2" placeHolderText="Search" />
+          <Search kind="main" id="search-2" />
         </MainNavigationItem>
         <MainNavigationItem
           className="wfp--main-navigation__user"

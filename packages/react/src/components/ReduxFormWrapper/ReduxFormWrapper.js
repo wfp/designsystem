@@ -74,7 +74,7 @@ ReduxFormWrapper.propTypes = {
   /**
    * Specify the input component which is getting connected
    */
-  inputComponent: PropTypes.func.isRequired,
+  inputComponent: PropTypes.oneOfType([PropTypes.func.isRequired, PropTypes.object.isRequired]),
   /**
    * Specify whether the control is disabled
    */

@@ -15,23 +15,20 @@ function FormTwo(props) {
                   <RadioButton
                     id="female"
                     labelText="Female"
-                    name="sex"
                     value="female"
-                    inputRef={props.register}
+                    {...props.register('sex')}
                   />
                   <RadioButton
                     id="male"
                     labelText="Male"
-                    name="sex"
                     value="male"
-                    inputRef={props.register}
+                    {...props.register('sex')}
                   />
                 </InputGroup>
                 <FormGroup>
                   <TextArea
                     labelText="Notes"
-                    name="notes2"
-                    inputRef={props.register}
+                    {...props.register('notes2')}
                   />
                 </FormGroup>
             </FormGroup>

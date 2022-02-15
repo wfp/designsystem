@@ -1,77 +1,60 @@
 import PropTypes from 'prop-types';
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import classNames from 'classnames';
 import Button from '../Button';
 import Wrapper from '../Wrapper';
-import { withUNCoreSettings } from '../UNCoreSettings';
+import useSettings from '../../hooks/useSettings';
 /** The Main Navigation is a Horizontal Menu which consists of multiple clickable items placed at the top of the page. The navigation stays unchanged when browswing through the site and is present on every page. The currently selected item is usually highlighted. */
 
-class MainNavigation extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      openMobile: false,
-      activeMenuItem: undefined,
-    };
-  }
+const MainNavigation = ({
+  children,
+  className,
+  id,
+  logo,
+  mobilePageWidth,
+  pageWidth,
+}) => {
+  const { prefix } = useSettings();
+  const [openMobile, setOpenMobile] = useState(false);
+  const [activeMenuItem, setActiveMenuItem] = useState(undefined);
 
-  onChangeSub = (action, i, e) => {
+  const onChangeSub = (action, i, e) => {
     if (e) {
       e.preventDefault();
     }
 
     if (action === 'close') {
-      this.setState({
-        activeMenuItem: undefined,
-      });
+      setActiveMenuItem(undefined)
     } else if (action === 'toggle') {
-      const newI =
-        this.state.activeMenuItem === undefined ||
-        this.state.activeMenuItem !== i
+      const newI = activeMenuItem === undefined || activeMenuItem !== i
           ? i
           : undefined;
-      this.setState({
-        activeMenuItem: newI,
-      });
+          setActiveMenuItem(newI);
     }
   };
 
-  toggleMenu = () => {
-    this.setState({ openMobile: !this.state.openMobile });
+  const toggleMenu = () => {
+    setOpenMobile(!openMobile);
   };
 
-  triggerSubNavigation = () => {
-    this.setState({
-      activeMenuItem: undefined,
-    });
-  };
+  // const triggerSubNavigation = () => {
+  //   setActiveMenuItem(undefined);
+  // };
 
-  handleClickOutside = () => {
-    this.setState({
-      activeMenuItem: undefined,
-    });
-  };
+  // const handleClickOutside = () => {
+  //   setActiveMenuItem(undefined);
+  // };
 
-  render() {
-    const {
-      prefix,
-      children,
-      className,
-      id,
-      logo,
-      mobilePageWidth,
-      pageWidth,
-    } = this.props;
 
     const wrapperClasses = classNames(`${prefix}--main-navigation`, className);
 
     const listClasses = classNames(`${prefix}--main-navigation__list`, {
-      [`${prefix}--main-navigation__list--open`]: this.state.openMobile,
+      [`${prefix}--main-navigation__list--open`]: openMobile,
     });
 
     const parentProps = {
-      onChangeSub: this.onChangeSub,
-      toggleMenu: this.toggleMenu,
+      onChangeSub: onChangeSub,
+      toggleMenu: toggleMenu,
     };
 
     const childrenSelect =
@@ -88,7 +71,7 @@ class MainNavigation extends Component {
           <div className={`${prefix}--main-navigation__logo-wrapper`}>
             <Button
               className={`${prefix}--main-navigation__button`}
-              onClick={this.toggleMenu}>
+              onClick={toggleMenu}>
               Menu
             </Button>
             <div className={`${prefix}--main-navigation__logo`}>{logo}</div>
@@ -97,9 +80,9 @@ class MainNavigation extends Component {
             {React.Children.map(childrenSelect, (child, i) => {
               if (child) {
                 return React.cloneElement(child, {
-                  activeMenuItem: this.state.activeMenuItem,
+                  activeMenuItem: activeMenuItem,
                   menuItem: i,
-                  onChangeSub: this.onChangeSub,
+                  onChangeSub: onChangeSub,
                 });
               } else return null;
             })}
@@ -107,7 +90,7 @@ class MainNavigation extends Component {
         </Wrapper>
       </div>
     );
-  }
+  
 }
 
 MainNavigation.propTypes = {
@@ -147,4 +130,4 @@ MainNavigation.defaultProps = {
   logo: 'WFP',
 };
 
-export default withUNCoreSettings(MainNavigation);
+export default MainNavigation;

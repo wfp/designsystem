@@ -1,6 +1,4 @@
 import React from 'react';
-import { iconChevronLeft, iconChevronRight } from '@un/icons-react';
-import Icon from '../Icon';
 import Pagination from '../Pagination';
 import Select from '../Select';
 import SelectItem from '../SelectItem';
@@ -16,22 +14,6 @@ describe('Pagination', () => {
 
     beforeEach(() => {
       pagination.setProps({ itemsPerPageFollowsText: undefined });
-    });
-
-    describe('icons', () => {
-      const icons = pagination.find(Icon);
-
-      it('should have 3 icons', () => {
-        expect(icons.length).toEqual(2);
-      });
-
-      it('should use correct "backward" icon', () => {
-        expect(icons.first().props().icon).toEqual(iconChevronLeft);
-      });
-
-      it('should use correct "forward" icon', () => {
-        expect(icons.last().props().icon).toEqual(iconChevronRight);
-      });
     });
 
     describe('pagination container', () => {
