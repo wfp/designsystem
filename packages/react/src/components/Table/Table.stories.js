@@ -248,29 +248,29 @@ const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
 
 // Render the UI for your table
 return (
-  <Table {...getTableProps()} withBorder={withBorder}>
-    <thead>
-      {headerGroups.map((headerGroup) => (
-        <tr {...headerGroup.getHeaderGroupProps()}>
-          {headerGroup.headers.map((column) => (
-            <th {...column.getHeaderProps()}>{column.render('Header')}</th>
-          ))}
-        </tr>
-      ))}
+<Table {...getTableProps()} withBorder={withBorder}>
+  <thead>
+    {headerGroups.map((headerGroup) => (
+      <tr {...headerGroup.getHeaderGroupProps()}>
+        {headerGroup.headers.map((column) => (
+          <th {...column.getHeaderProps()}>{column.render('Header')}</th>
+        ))}
+      </tr>
+    ))}
     </thead>
     <tbody {...getTableBodyProps()}>
       {rows.map((row, i) => {
         prepareRow(row);
         return (
-          <tr {...row.getRowProps()}>
-            {row.cells.map((cell) => {
-              return <td {...cell.getCellProps()}>{cell.render('Cell')}</td>;
-            })}
-          </tr>
-        );
-      })}
-    </tbody>
-  </Table>
+        <tr {...row.getRowProps()}>
+          {row.cells.map((cell) => {
+            return <td {...cell.getCellProps()}>{cell.render('Cell')}</td>;
+          })}
+        </tr>
+      );
+    })}
+  </tbody>
+</Table>
 )`,
       }, //ReactTable.toString(),
     },
