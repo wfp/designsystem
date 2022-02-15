@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import TextInput from '../../components/TextInput';
 import TextArea from '../../components/TextArea';
 import Blockquote from '../../components/Blockquote';
@@ -16,10 +16,9 @@ function FormOne(props) {
               </div>
               <TextInput
                 id="firstName"
-                name="firstName"
+                {...props.register("firstName")}
                 helperText="Enter your full first name"
                 labelText="First Name"
-                inputRef={props.register}
               />
                 {/* <input
                 name="firstName"
@@ -27,20 +26,16 @@ function FormOne(props) {
                 /> */}
               <TextInput
                 id="lastName"
-                name="lastName"
+                {...props.register("lastName")}
                 labelText="Last Name"
                 helperText="Enter your last name"
-                placeholder="Placeholder text"
-                inputRef={props.register}
               />
-              {/* <input
-                name="lastName"
-                ref={register}
-                /> */}
+              
               <TextArea
+                id="noteone"
+                {...props.register("notes")}
                 labelText="Notes"
-                name="notes"
-                inputRef={props.register}
+                helperText="Enter first notes here"
               />
         </>
     )

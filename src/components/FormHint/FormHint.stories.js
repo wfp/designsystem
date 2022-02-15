@@ -23,17 +23,7 @@ Regular.args = {
   children: 'The hint text',
 };
 
-const description = `
-You can customize the content by using \`BannerNavigation\`.
-`;
 
-Regular.story = {
-  parameters: {
-    docs: {
-      storyDescription: description,
-    },
-  },
-};
 
 export const Input = (args) => (
   <TextInput

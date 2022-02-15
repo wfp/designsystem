@@ -31,10 +31,6 @@ function Form({ onFormChange }) {
     const handleFilter = (formdata) => {
         onFormChange(formdata)
     }
-
-    const firstname = register('firstname');
-    const lastname = register('lastname');
-    const age = register('age');
     
 
     return (
@@ -66,20 +62,18 @@ function Form({ onFormChange }) {
             </FormGroup>
             <FormGroup className="wfp--form-long" align="horizontal" style={{ marginTop: '1rem' }}>
                 <TextInput
+                {...register("firstname")}
                 id="firstname"
-                name="firstname"
                 labelText="Firstname"
                 placeholder="eg: Edith"
-                inputRef={firstname.ref}
                 />
                 <TextInput
+                {...register("lastname")}
                 id="lastname"
-                name="lastname"
                 labelText="lastname"
                 placeholder="eg: Chemin"
-                inputRef={lastname.ref}
                 />
-                <NumberInput id="age" name="age" labelText="Age" placeholder="" inputRef={age.ref} />
+                <NumberInput {...register("age")} id="age"  labelText="Age" />
             </FormGroup>
 
             <div

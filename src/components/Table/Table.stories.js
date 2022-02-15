@@ -10,6 +10,10 @@ import Pagination from '../Pagination';
 export default {
   title: 'Components/UI Elements/Table',
   component: Table,
+  subcomponents: {
+    TableSorting, 
+    Pagination 
+  },
   parameters: {
     componentSubtitle: 'Component',
     status: 'released',
@@ -370,18 +374,19 @@ export const TablePagination = (args) => {
 };
 
 const hello = `
-To use the custom Pagination you can use the TablePagination component. Additional props for the TablePagination can be directly added to the \`ReactTable\` component (see Pagination component).
-
+To add Pagination to your table, you can use the Pagination sub component. Pagination can also be directly added to the \`ReactTable\`  by using the \`usePagination\` and adding the pagination component.
+For more details please visit [React-Table](https://github.com/react-tools/react-table);
 
 \`\`\`js
-import { TablePagination } from '@wfp/ui';
+import { Pagination } from '@wfp/ui';
 
-// Replacing the Pagination Component of React-Table
 
-<ReactTable
-  {...yourTableProps}
-  PaginationComponent={TablePagination}
-  {...otherPropsForThePaginationToo}
+<Pagination
+  pageSize={pageSize}
+  pageSizes={[10, 20, 30]}
+  page={pageIndex + 1}
+  totalItems={data.length}
+  onChange={changePage}
 />
 \`\`\`
 `;

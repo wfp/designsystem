@@ -75,9 +75,8 @@ const NumberInput = React.forwardRef((props, ref) => {
     if (!disabled) {
       evt.persist();
       evt.imaginaryTarget = _inputRef;
-
       setValue(evt.target.value);
-      onChange(parseFloat(evt.target.value), evt);
+      onChange(evt, parseFloat(evt.target.value)); //Had to reverse the arguments passed because onChange accepts evt before the value
     }
   };
 

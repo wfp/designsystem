@@ -9,29 +9,25 @@ function FormTwo(props) {
             <FormGroup>
                 <InputGroup
                   labelText="Sex"
-                  name="input-group"
                   vertical
                 >
                   <RadioButton
                     id="female"
+                    {...props.register("sex")}
                     labelText="Female"
-                    name="sex"
                     value="female"
-                    inputRef={props.register}
                   />
                   <RadioButton
                     id="male"
+                    {...props.register("sex")}
                     labelText="Male"
-                    name="sex"
                     value="male"
-                    inputRef={props.register}
                   />
                 </InputGroup>
                 <FormGroup>
                   <TextArea
+                    {...props.register("notes2")}
                     labelText="Notes"
-                    name="notes2"
-                    inputRef={props.register}
                   />
                 </FormGroup>
             </FormGroup>

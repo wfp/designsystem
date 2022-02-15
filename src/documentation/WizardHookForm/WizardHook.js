@@ -10,7 +10,7 @@ import StepNavigationItem from '../../components/StepNavigationItem';
 
 const WizardHook =({ content })=>{
     const form = useForm();
-    const { handleSubmit, register, errors } = form;
+    const { handleSubmit, register } = form;
     const [page, setPage] = useState(0);
     const [allFormData, setFormData] = useState()
 
@@ -22,10 +22,10 @@ const WizardHook =({ content })=>{
         setPage(page + 1);
     }
 
-    const handleFormSubmit = (data) => {
+    const handleFormSubmit = (data, e) => {
         const isLastPage = page === content.length - 1
         if (isLastPage) {
-            setFormData(data);
+            setFormData()
           } else {
             next();
         }
@@ -59,7 +59,7 @@ const WizardHook =({ content })=>{
                   handleTabClick={handleTabClick}
                   >
                     {content.map((element, i)=>(
-                    <StepNavigationItem label={element.label} page={i} />
+                    <StepNavigationItem label={element.label} page={i} key={i} />
                     )
                     )}
                 </StepNavigation>
@@ -67,10 +67,12 @@ const WizardHook =({ content })=>{
             {
                 content.map((element, i)=>{
                     return (
-                    <div className="wfp--form-long" style={{display:page===i?'block':'none'}}>
+                    <div className="wfp--form-long" style={{display:page===i?'block':'none'}} key={i}>
+                    
                         {React.cloneElement(element.content, {register})}
                     </div>
                     )
+
                 })
             }
               
