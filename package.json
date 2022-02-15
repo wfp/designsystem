@@ -103,8 +103,8 @@
   },
   "peerDependencies": {
     "@wfp/icons": "0.2.1",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   },
   "dependencies": {
     "@carbon/import-once": "^10.5.0",
@@ -198,9 +198,9 @@
     "promise": "^8.1.0",
     "prop-types": "^15.7.2",
     "raw-loader": "^4.0.1",
-    "react": "^16.14.0",
+    "react":"^17.0.2",
     "react-dates": "^21.8.0",
-    "react-dom": "^16.14.0",
+    "react-dom": "^17.0.2",
     "react-dropzone": "^11.0.2",
     "react-final-form": "^6.5.1",
     "react-hook-form": "^7.20.5",
@@ -211,10 +211,8 @@
     "react-redux": "^7.2.1",
     "react-select": "^3.1.0",
     "react-table": "7.5.0",
-    "react-test-renderer": "^16.13.1",
     "react-toastify": "^6.0.8",
     "react-truncate": "^2.4.0",
-    "react-truncate-html": "^0.1.7",
     "recharts": "^2.0.0-beta.6",
     "redux-form": "^8.3.6",
     "redux-form-website-template": "^1.0.13",
