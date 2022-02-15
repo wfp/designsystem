@@ -1,3 +1,14 @@
+## [1.20.8](https://github.com/wfp/ui/compare/v1.20.7...v1.20.8) (2022-02-15)
+
+
+### Bug Fixes
+
+* **components:** console warnings and error and minor fixes ([e32e4b6](https://github.com/wfp/ui/commit/e32e4b627b794049d623d9204df871bbd6b94994))
+* **components:** fixed templates using react-hook-form that werent rending and updating table docs ([7af1036](https://github.com/wfp/ui/commit/7af103682e87e08382c18236e2b687c9f96d6825))
+* **components:** minor fixes to remove console errors and warnings ([ff6188f](https://github.com/wfp/ui/commit/ff6188f311618da7c4d616b2338b63daacdbef9e))
+* **react:** version bump to version 17 ([7e3744a](https://github.com/wfp/ui/commit/7e3744a85f2355dcb2ef88594e6d20ac999a060b))
+* **table:** fix error in tablewithfilter template with upgraded react-table version ([f1cfc89](https://github.com/wfp/ui/commit/f1cfc89201f82ab7346a72d33b3da9e9d39e4aed))
+
 ## [1.20.7](https://github.com/wfp/ui/compare/v1.20.6...v1.20.7) (2022-01-26)
 
 
