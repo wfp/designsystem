@@ -55,10 +55,6 @@ export class SingleDatePickerInput extends PureComponent {
       [`${prefix}--visually-hidden`]: hideLabel,
     });
 
-    const errorInputClasses = classNames( className, {
-      [`${prefix}--input--invalid`]: invalid,
-    });
-
     const label = labelText ? (
       <label htmlFor={id} className={labelClasses}>
         {labelText}
@@ -91,7 +87,6 @@ export class SingleDatePickerInput extends PureComponent {
             this.setState({ focused });
             focused ? onFocus(true) : onBlur(true);
           }}
-          className={errorInputClasses}
           {...other}
         />
         {errorMessage}

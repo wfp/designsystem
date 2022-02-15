@@ -25,7 +25,7 @@ const WizardHook =({ content })=>{
     const handleFormSubmit = (data, e) => {
         const isLastPage = page === content.length - 1
         if (isLastPage) {
-            setFormData()
+            setFormData(data)
           } else {
             next();
         }
