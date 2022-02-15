@@ -59,10 +59,6 @@ export class DateRangePickerInput extends PureComponent {
       [`${prefix}--visually-hidden`]: hideLabel,
     });
 
-    const errorInputClasses = classNames( className, {
-      [`${prefix}--input--invalid`]: invalid,
-    });
-
     const label = labelText ? (
       <label htmlFor={id} className={labelClasses}>
         {labelText}
@@ -97,7 +93,6 @@ export class DateRangePickerInput extends PureComponent {
           startDateId={startDateId}
           startDate={onChange && value ? value.startDate : startDate}
           startDatePlaceholderText={startDatePlaceholderText}
-          className={errorInputClasses}
           {...other}
         />
         {errorMessage}
