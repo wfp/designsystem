@@ -1,3 +1,10 @@
+## [1.20.9](https://github.com/wfp/ui/compare/v1.20.8...v1.20.9) (2022-02-15)
+
+
+### Bug Fixes
+
+* **datepicker:** removed classname warning showing in datepicker ([c8b08a0](https://github.com/wfp/ui/commit/c8b08a0da937db2b9672df618da2121b2bf3a0bd))
+
 ## [1.20.8](https://github.com/wfp/ui/compare/v1.20.7...v1.20.8) (2022-02-15)
 
 
