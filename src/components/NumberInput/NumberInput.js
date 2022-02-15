@@ -75,9 +75,8 @@ const NumberInput = React.forwardRef((props, ref) => {
     if (!disabled) {
       evt.persist();
       evt.imaginaryTarget = _inputRef;
-
       setValue(evt.target.value);
-      onChange(parseFloat(evt.target.value), evt);
+      onChange(evt, parseFloat(evt.target.value)); //Had to reverse the arguments passed because onChange accepts evt before the value
     }
   };
 
@@ -110,6 +109,10 @@ const NumberInput = React.forwardRef((props, ref) => {
     [`${prefix}--number--helpertext`]: helperText,
     [`${prefix}--number--nolabel`]: hideLabel,
     [`${prefix}--number--nocontrols`]: hideControls,
+  });
+
+  const innerInputClasses = classNames( className, {
+    [`${prefix}--input--invalid`]: invalid,
   });
 
   const newProps = {
@@ -150,6 +153,7 @@ const NumberInput = React.forwardRef((props, ref) => {
               {...other}
               {...newProps}
               ref={_inputRef}
+              className={innerInputClasses}
             />
           </div>
         );

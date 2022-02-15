@@ -44,6 +44,11 @@ export class DateRangePickerInput extends PureComponent {
       onDragStart,
       onDrop,
       onFocus,
+      showClearDate,
+      isDirty,
+      isTouched,
+      error,
+      date,
       ...other
     } = this.props;
     const { focusedInput, startDate, endDate } = this.state;
@@ -52,6 +57,10 @@ export class DateRangePickerInput extends PureComponent {
 
     const labelClasses = classNames(`${prefix}--label`, {
       [`${prefix}--visually-hidden`]: hideLabel,
+    });
+
+    const errorInputClasses = classNames( className, {
+      [`${prefix}--input--invalid`]: invalid,
     });
 
     const label = labelText ? (
@@ -88,6 +97,7 @@ export class DateRangePickerInput extends PureComponent {
           startDateId={startDateId}
           startDate={onChange && value ? value.startDate : startDate}
           startDatePlaceholderText={startDatePlaceholderText}
+          className={errorInputClasses}
           {...other}
         />
         {errorMessage}
@@ -107,7 +117,7 @@ DateRangePickerInput.propTypes = {
   /**
    * Provide the SingleDatePicker as a component
    */
-  datePicker: PropTypes.func.isRequired,
+  datePicker: PropTypes.oneOfType([PropTypes.func, PropTypes.object]),
   /**
    * Provide the placeholder for the start input
    */

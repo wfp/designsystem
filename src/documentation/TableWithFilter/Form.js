@@ -31,7 +31,7 @@ function Form({ onFormChange }) {
     const handleFilter = (formdata) => {
         onFormChange(formdata)
     }
-
+    
 
     return (
         <form onSubmit={handleSubmit(handleFilter)}>
@@ -40,37 +40,40 @@ function Form({ onFormChange }) {
                 style={{ marginTop: '1rem' }}>
 
                 <Controller
-                    as={<ReactSelectWrapper control={control} options={options} />}
+                    control={control}
+                    render={({ field }) => {
+                    return <ReactSelectWrapper {...field} options={options} />;   
+                    }} 
                     name="gender"
                     labelText="Gender"
-                    control={control}
+                    
                 />
 
                 <Controller
-                    as={<ReactSelectWrapper control={control} options={countryOptions} />}
+                    control={control}
+                    render={({ field }) => {
+                    return <ReactSelectWrapper {...field} options={countryOptions} />;   
+                    }} 
                     name="country"
                     labelText="Country"
-                    control={control}
                 />
 
                 
             </FormGroup>
             <FormGroup className="wfp--form-long" align="horizontal" style={{ marginTop: '1rem' }}>
                 <TextInput
+                {...register("firstname")}
                 id="firstname"
-                name="firstname"
                 labelText="Firstname"
                 placeholder="eg: Edith"
-                inputRef={register}
                 />
                 <TextInput
+                {...register("lastname")}
                 id="lastname"
-                name="lastname"
                 labelText="lastname"
                 placeholder="eg: Chemin"
-                inputRef={register}
                 />
-                <NumberInput id="age" name="age" labelText="Age" placeholder="" inputRef={register} />
+                <NumberInput {...register("age")} id="age"  labelText="Age" />
             </FormGroup>
 
             <div

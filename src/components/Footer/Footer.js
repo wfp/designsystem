@@ -37,7 +37,6 @@ const Footer = ({
     { [`${prefix}--footer--external`]: external },
     className
   );
-  const standardLogo = `${process.env.STORYBOOK_ASSETS}logos/latest/wfp-logo-standard-black-en.svg`
 
   const footer = (
     <footer className={classNames}>

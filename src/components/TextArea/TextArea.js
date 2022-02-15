@@ -3,13 +3,13 @@ import React from 'react';
 import classNames from 'classnames';
 import FormItem from '../FormItem';
 import settings from '../../globals/js/settings';
-import useDetectPrint from '../../internal/useDetectPrint';
 const { prefix } = settings;
 
 /** A textarea is an input dedicated for a large volume of text. It may be used in a variety of components like forms, comment sections, and forums. */
 
-const TextArea = ({
-  className,
+const TextArea = React.forwardRef((props, ref) => {
+  const {
+    className,
   formItemClassName,
   id,
   labelText,
@@ -18,13 +18,14 @@ const TextArea = ({
   onClick,
   invalid,
   invalidText,
-  inputRef,
+  inputRef = ref,
   helperText,
   fullWidth,
   viewOnly,
-  ...other
-}) => {
-  const isPrinting = useDetectPrint();
+  ...other 
+} = props
+
+
 
   const textareaProps = {
     id,
@@ -87,16 +88,13 @@ const TextArea = ({
     <FormItem className={formItemClassName}>
       {label}
       {input}
-      {isPrinting && (
-        <div {...other} {...textareaProps} className={textareaClasses}>
-          {other.value}
-        </div>
-      )}
+      
       {helper}
       {error}
     </FormItem>
   );
-};
+});
+
 
 TextArea.propTypes = {
   /**

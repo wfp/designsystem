@@ -40,6 +40,11 @@ export class SingleDatePickerInput extends PureComponent {
       onBlur,
       onDragStart,
       onDrop,
+      showClearDate,
+      isDirty,
+      isTouched,
+      error,
+      date,
       ...other
     } = this.props;
 
@@ -48,6 +53,10 @@ export class SingleDatePickerInput extends PureComponent {
 
     const labelClasses = classNames(`${prefix}--label`, {
       [`${prefix}--visually-hidden`]: hideLabel,
+    });
+
+    const errorInputClasses = classNames( className, {
+      [`${prefix}--input--invalid`]: invalid,
     });
 
     const label = labelText ? (
@@ -82,6 +91,7 @@ export class SingleDatePickerInput extends PureComponent {
             this.setState({ focused });
             focused ? onFocus(true) : onBlur(true);
           }}
+          className={errorInputClasses}
           {...other}
         />
         {errorMessage}
@@ -100,7 +110,7 @@ SingleDatePickerInput.propTypes = {
   /**
    * Provide the SingleDatePicker as a component
    */
-  datePicker: PropTypes.func.isRequired,
+  datePicker: PropTypes.oneOfType([PropTypes.func, PropTypes.object]),
 
   onFocus: PropTypes.func,
 

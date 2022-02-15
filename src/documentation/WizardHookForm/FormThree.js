@@ -7,13 +7,11 @@ function FormThree(props) {
         <>
             <TextArea
                 labelText="Notes"
-                name="newnotes2"
-                inputRef={props.register}
+                {...props.register("newnotes2")}
               />
               <TextArea
                 labelText="Summary"
-                name="summary"
-                inputRef={props.register}
+                {...props.register("summary")}
               />
         </>
     )

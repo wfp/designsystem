@@ -19,6 +19,7 @@
     @include typescale('zeta');
     @include font-family;
     @include input-base;
+    @include input-error;
     box-sizing: border-box;
     display: inline-flex;
     width: 100%;
@@ -38,6 +39,10 @@
       cursor: not-allowed;
       pointer-events: none;
     }
+
+    // &[data-invalid]:focus ~ .#{$prefix}--label {
+    //   color: var(--support-01);
+    // }
 
     & ~ .#{$prefix}--form-requirement {
       order: 3;
@@ -63,6 +68,10 @@
     ::-webkit-inner-spin-button {
       -webkit-appearance: none; // Safari: Hide number spinner
     }
+
+    &[data-invalid]:focus ~ .#{$prefix}--label {
+      color: var(--support-01);
+    }
   }
 
   .#{$prefix}--number__controls {
@@ -74,6 +83,10 @@
         opacity: 1;
       }
     }
+
+    // &[data-invalid]:focus + .#{$prefix}--label {
+    //   color: var(--support-01);
+    // }
   }
 
   .#{$prefix}--number--nocontrols {

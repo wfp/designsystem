@@ -142,7 +142,7 @@ SubNavigationLink.propTypes = {
   /**
    * Provide the content of link
    */
-  children: PropTypes.string,
+  children: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
 
   className: PropTypes.string,
 };
@@ -176,7 +176,7 @@ SubNavigationGroup.propTypes = {
    */
   columns: PropTypes.number,
   /**
-   * Provide a title for the grop
+   * Provide a title for the group
    */
   title: PropTypes.node,
   /**

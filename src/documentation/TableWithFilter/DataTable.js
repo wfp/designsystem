@@ -42,7 +42,6 @@ function DataTable({filterText, advanceFilter}) {
     }
    
     if(advanceFilter.gender || advanceFilter.country ||  advanceFilter.firstname || advanceFilter.lastname || advanceFilter.age){
-        console.log("advance", advanceFilter)
         setAllFilters([
             {id:'gender',value:advanceFilter.gender}, 
             {id:'country',value:advanceFilter.country},
