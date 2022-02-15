@@ -117,7 +117,7 @@ function ReactTablePagination({ columns, data, withBorder }) {
           ))}
         </thead>
         <tbody {...getTableBodyProps()}>
-          {page.map((row, i) => {
+          {page.map((row) => {
             prepareRow(row);
             return (
               <tr {...row.getRowProps()}>
@@ -181,7 +181,7 @@ function ReactTableSorting({ columns, data, withBorder }) {
         ))}
       </thead>
       <tbody {...getTableBodyProps()}>
-        {rows.map((row, i) => {
+        {rows.map((row) => {
           prepareRow(row);
           return (
             <tr {...row.getRowProps()}>
@@ -220,7 +220,6 @@ export const Regular = (args) => (
 );
 
 export const UsingReactTable = (args) => {
-  console.log(ReactTable.toString());
   const columns = React.useMemo(() => sampleColumns, []);
 
   const data = React.useMemo(() => makeData(3), []);
@@ -235,6 +234,45 @@ UsingReactTable.story = {
   parameters: {
     docs: {
       storyDescription: text,
+
+      source: {
+        code: `
+import { Table } from "@un/react";
+
+// Use the state and functions returned from useTable to build your UI
+const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
+  useTable({
+    columns,
+    data,
+  });
+
+// Render the UI for your table
+return (
+  <Table {...getTableProps()} withBorder={withBorder}>
+    <thead>
+      {headerGroups.map((headerGroup) => (
+        <tr {...headerGroup.getHeaderGroupProps()}>
+          {headerGroup.headers.map((column) => (
+            <th {...column.getHeaderProps()}>{column.render('Header')}</th>
+          ))}
+        </tr>
+      ))}
+    </thead>
+    <tbody {...getTableBodyProps()}>
+      {rows.map((row, i) => {
+        prepareRow(row);
+        return (
+          <tr {...row.getRowProps()}>
+            {row.cells.map((cell) => {
+              return <td {...cell.getCellProps()}>{cell.render('Cell')}</td>;
+            })}
+          </tr>
+        );
+      })}
+    </tbody>
+  </Table>
+)`,
+      }, //ReactTable.toString(),
     },
   },
 };
