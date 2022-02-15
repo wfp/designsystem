@@ -9,7 +9,7 @@ class RadioButtonGroup extends React.Component {
   state = { selected: this.props.valueSelected || this.props.defaultSelected };
 
   static propTypes = {
-    prefix: PropTypes.string.isRequired,
+    prefix: PropTypes.string,
     /**
      * Provide a collection of <RadioButton> components to render in the group
      */
@@ -170,4 +170,4 @@ class RadioButtonGroup extends React.Component {
   }
 }
 
-export default withUNCoreSettings(RadioButtonGroup);
+export default RadioButtonGroup;

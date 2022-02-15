@@ -1,7 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable jsx-a11y/href-no-hash */
 import React from 'react';
-import Icon from '../Icon';
 import Select from '../Select';
 import SelectItem from '../SelectItem';
 import SelectSkeleton from '../Select/Select.Skeleton';
@@ -36,14 +35,6 @@ describe('Select', () => {
         expect(selectContainer.length).toEqual(1);
       });
 
-      it('renders the down arrow icon', () => {
-        expect(selectContainer.find(Icon).length).toEqual(1);
-      });
-
-      it('should use correct icon', () => {
-        const icon = wrapper.find(Icon);
-        expect(icon.props().icon).toEqual(iconCaretDown);
-      });
 
       it('has the expected classes', () => {
         expect(selectWrapper.hasClass('wfp--select')).toEqual(true);
@@ -60,13 +51,6 @@ describe('Select', () => {
       it('adds new iconDescription when passed via props', () => {
         wrapper.setProps({ iconDescription: 'new description' });
         expect(wrapper.props().iconDescription).toEqual('new description');
-      });
-
-      it('should have iconDescription match Icon component description prop', () => {
-        const matches =
-          wrapper.props().iconDescription ===
-          wrapper.find(Icon).props().description;
-        expect(matches).toEqual(true);
       });
 
       it('should specify light select as expected', () => {

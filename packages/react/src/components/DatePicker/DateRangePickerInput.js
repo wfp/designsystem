@@ -1,51 +1,55 @@
 import PropTypes from 'prop-types';
-import React, { PureComponent } from 'react';
+import React, { useState } from 'react';
 import classNames from 'classnames';
-import { withUNCoreSettings } from '../UNCoreSettings';
+import useSettings from '../../hooks/useSettings';
 
-export class DateRangePickerInput extends PureComponent {
-  state = {
-    focusedInput: null,
-    startDate: this.props.startDate ? this.props.startDate : null,
-    endDate: this.props.endDate ? this.props.endDate : null,
-  };
+const DateRangePickerInput = ({
+  controlled,
+  datePicker,
+  labelText,
+  className,
+  id,
+  placeholder,
+  type,
+  onChange,
+  onClick,
+  hideLabel,
+  invalid,
+  invalidText,
+  helperText,
+  value,
+  startDateId,
+  startDatePlaceholderText,
+  endDateId,
+  endDatePlaceholderText,
+  name,
+  onBlur,
+  onDragStart,
+  onDrop,
+  onFocus,
+  ...other}) => {
+  
+    const { prefix } = useSettings();
+    const [focusedInput, setFocusedInput] = useState(null)
+    const [startDate, setStartDate] = useState(startDate ? startDate : null);
+    const [endDate, setEndDate] = useState(endDate ? endDate : null);
+    
+    
+  // state = {
+  //   focusedInput: null,
+  //   startDate: this.props.startDate ? this.props.startDate : null,
+  //   endDate: this.props.endDate ? this.props.endDate : null,
+  // };
 
-  handleFocusChange = (focusedInput) => {
-    if (!focusedInput && typeof this.props.onBlur === 'function') {
-      this.props.onBlur();
+  const handleFocusChange = (focusedInput) => {
+    if (!focusedInput && typeof onBlur === 'function') {
+      onBlur();
     }
-    this.setState({ focusedInput });
+    setFocusedInput(focusedInput);
   };
 
-  render() {
-    const {
-      prefix,
-      controlled,
-      datePicker,
-      labelText,
-      className,
-      id,
-      placeholder,
-      type,
-      onChange,
-      onClick,
-      hideLabel,
-      invalid,
-      invalidText,
-      helperText,
-      value,
-      startDateId,
-      startDatePlaceholderText,
-      endDateId,
-      endDatePlaceholderText,
-      name,
-      onBlur,
-      onDragStart,
-      onDrop,
-      onFocus,
-      ...other
-    } = this.props;
-    const { focusedInput, startDate, endDate } = this.state;
+
+    // const { focusedInput, startDate, endDate } = this.state;
 
     const DateRangePicker = datePicker;
 
@@ -78,13 +82,15 @@ export class DateRangePickerInput extends PureComponent {
           focusedInput={focusedInput}
           hideKeyboardShortcutsPanel
           onDatesChange={({ startDate, endDate }) => {
-            console.log('dates changed');
+            // console.log('dates changed');
             if (onChange) {
               onChange({ startDate, endDate });
             }
-            this.setState({ startDate, endDate });
+            setStartDate(startDate);
+            setEndDate(endDate)
+            // this.setState({ startDate, endDate });
           }}
-          onFocusChange={this.handleFocusChange}
+          onFocusChange={handleFocusChange}
           startDateId={startDateId}
           startDate={onChange && value ? value.startDate : startDate}
           startDatePlaceholderText={startDatePlaceholderText}
@@ -93,7 +99,7 @@ export class DateRangePickerInput extends PureComponent {
         {errorMessage}
       </div>
     );
-  }
+  
 }
 
 DateRangePickerInput.defaultProps = {
@@ -118,4 +124,4 @@ DateRangePickerInput.propTypes = {
   endDatePlaceholderText: PropTypes.string,
 };
 
-export default withUNCoreSettings(DateRangePickerInput);
+export {DateRangePickerInput};

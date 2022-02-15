@@ -1,2 +1,2 @@
 export Footer from './Footer';
-//TODO: Add external footer again export FooterExternal from './FooterExternal';
+export {FooterExternal, LinksColumn, FooterMetaLink } from './FooterExternal';

@@ -436,6 +436,7 @@ export function InlineNotification({
   actions,
   role,
   notificationType,
+  onClose,
   onCloseButtonClick,
   icon,
   iconDescription,

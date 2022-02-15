@@ -1,6 +1,6 @@
 import React from 'react';
-import Footer from '../Footer';
-import { mount } from 'enzyme';
+import Footer from './Footer';
+import { shallow, mount } from 'enzyme';
 
 describe('Footer', () => {
   describe('Renders as expected', () => {
@@ -55,7 +55,7 @@ describe('Footer', () => {
   });
 
   describe('Renders children as expected', () => {
-    const footer = mount(
+    const footer = shallow(
       <Footer>
         <div className="test">This is a test.</div>
         <div className="test">This is a test.</div>

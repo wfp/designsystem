@@ -80,7 +80,7 @@ describe('NumberInput', () => {
         wrapper.setProps({ invalid: true });
         const invalidText = wrapper.find('.wfp--form-requirement');
         expect(invalidText.length).toEqual(1);
-        expect(invalidText.text()).toEqual('Provide a description that will be used as the title invalid text');
+        expect(invalidText.text()).toEqual(' invalid text');
       });
       it('should hide label as expected', () => {
         expect(numberInput.prop('min')).toEqual(0);

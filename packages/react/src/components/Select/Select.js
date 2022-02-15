@@ -20,15 +20,15 @@ const Select = React.forwardRef((props, ref) => {
     className,
     id,
     inline,
-    // labelText,
+    labelText, // eslint-disable-line  
     disabled,
     children,
     iconDescription,
     // hideLabel,
     small,
     invalid,
-    // invalidText,
-    // helperText,
+    invalidText,  // eslint-disable-line 
+    helperText,  // eslint-disable-line 
     light,
     name,
     inputRef = ref,

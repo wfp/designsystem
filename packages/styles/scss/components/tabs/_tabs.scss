@@ -48,7 +48,7 @@
   .#{$prefix}--tabs__nav__bar {
     position: absolute;
     transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
-    background: $overlay;
+    background: $interactive;
     z-index: 10;
     height: 3px;
     bottom: 0;

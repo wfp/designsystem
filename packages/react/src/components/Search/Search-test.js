@@ -1,5 +1,4 @@
 import React from 'react';
-import Icon from '../Icon';
 import Search from '../Search';
 import SearchSkeleton from '../Search/Search.Skeleton';
 import { mount, shallow } from 'enzyme';
@@ -97,13 +96,6 @@ describe('Search', () => {
         });
       });
 
-      describe('icons', () => {
-
-        it('renders two Icons', () => {
-          const icons = wrapper.find(Icon);
-          expect(icons.length).toEqual(2);
-        });
-      });
     });
 
     describe('Small Search', () => {
@@ -125,11 +117,6 @@ describe('Search', () => {
       it('should only have 1 button (clear)', () => {
         const btn = small.find('button');
         expect(btn.length).toEqual(1);
-      });
-
-      it('renders one Icon', () => {
-        const icons = small.find(Icon);
-        expect(icons.length).toEqual(2);
       });
     });
   });

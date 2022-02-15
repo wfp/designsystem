@@ -4,7 +4,7 @@ import classnames from 'classnames';
 import Link from '../Link';
 import Wrapper from '../Wrapper';
 // import Icon from '../Icon';
-import { FooterExternal } from './FooterExternal';
+import {FooterExternal} from './FooterExternal';
 import {
   WfpLogoStandardBlackEn,
   WfpLogoVerticalEn,
@@ -17,7 +17,6 @@ const Footer = ({
   // buttonText,
   className,
   children,
-  external,
   labelOne,
   linkTextOne,
   linkHrefOne,
@@ -31,7 +30,6 @@ const Footer = ({
   secondary,
   // sdgLogo,
   pageWidth,
-  productName,
   //...other
 }) => {
   const { prefix } = useSettings();
@@ -43,14 +41,7 @@ const Footer = ({
   );
   // const standardLogo = `${process.env.STORYBOOK_ASSETS}logos/standard/en/wfp-logo-standard-black-en.svg`;
 
-  const footer = external ? (
-    <FooterExternal
-      productName={productName}
-      metaContent={metaContent}
-      metaLinks={metaLinks}>
-      {children}
-    </FooterExternal>
-  ) : (
+ return(
     <footer className={classNames}>
       <Wrapper pageWidth={pageWidth}>
         <div className={`${prefix}--footer__content`}>
@@ -139,9 +130,9 @@ const Footer = ({
         )}
       </Wrapper>
     </footer>
-  );
+  
+ )
 
-  return footer;
 };
 
 Footer.propTypes = {
