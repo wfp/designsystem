@@ -27,6 +27,10 @@ const DateRangePickerInput = ({
   onDragStart,
   onDrop,
   onFocus,
+  showClearDate,
+  isDirty,
+  isTouched,
+  error,
   ...other}) => {
   
     const { prefix } = useSettings();
@@ -113,7 +117,7 @@ DateRangePickerInput.propTypes = {
   /**
    * Provide the SingleDatePicker as a component
    */
-  datePicker: PropTypes.func.isRequired,
+  datePicker: PropTypes.oneOfType([PropTypes.func.isRequired, PropTypes.object.isRequired]),
   /**
    * Provide the placeholder for the start input
    */

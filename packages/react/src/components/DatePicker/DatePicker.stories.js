@@ -102,7 +102,7 @@ export const DatePickerHookForm = (args) => {
       <Controller
         control={control}
         name="test"
-        render={({ field, fieldState, formState }) => (
+        render={({ field, fieldState }) => (
           <SingleDatePickerInput
             {...field}
             {...fieldState}
@@ -122,44 +122,7 @@ export const DatePickerHookForm = (args) => {
 
 
 
-/*
-export const SingleDatePickerNewReactHookForm = (args) => {
-  const defaultValues = { test: '2020-12-01T11:00:00.000Z' };
-  const [focused, setFocused] = useState(false);
-  const { control, handleSubmit } = useForm({ defaultValues });
 
-  const onSubmit = (data) => alert(JSON.stringify(data));
-
-  return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <Controller
-        control={control}
-        name="test"
-        render={({ onChange, onBlur, value, name, ref }) => {
-          console.log('onChnage checker', typeof onChange);
-          return(
-         
-          <Input
-            labelText="Input using SingleDatePicker by Airbnb"
-            helperText="HelperText">
-            {(e) => (
-              <SingleDatePicker
-                onDateChange={(newDate) => onChange(newDate)}
-                focused={focused}
-                onFocusChange={({ focused }) => setFocused(focused)}
-                date={moment(value)}
-                id="another_unique_id"
-                showDefaultInputIcon={true}
-                inputIconPosition="after"
-              />
-            )}
-          </Input>
-        )}}
-      />
-    </form>
-  );
-};
-*/
 
 export const DateRangePickerDefault = (args) => (
   <DateRangePickerInput {...args} />
@@ -218,7 +181,7 @@ export const DatePickerRangeHookForm = (args) => {
       <Controller
         control={control}
         name="datePickerRange"
-        render={({ field, fieldState, formState }) => (
+        render={({ field, fieldState }) => (
           <DateRangePickerInput
             {...fieldState}
             {...field}
@@ -237,89 +200,3 @@ export const DatePickerRangeHookForm = (args) => {
 };
 
 
-
-// singleDatePickerHookForm.args = {
-//   datePicker: SingleDatePicker,
-//   date: moment(),
-//   labelText: 'Label text (labelText)',
-//   placeholder: 'Placeholder text (placeholder)',
-//   disabled: false,
-//   hideLabel: false,
-//   showClearDate: false,
-//   invalid: false,
-//   invalidText: 'A valid value is required',
-//   showDefaultInputIcon: true,
-//   inputIconPosition: 'after',
-//   helperText: 'Optional helper text.',
-// };
-
-// export const datePickerField = (args) => (
-//   <Field
-//     {...args}
-//     format={(value) => (value ? moment(value) : undefined)}
-//     normalize={(data) => data && data.value && data.value.format()}
-//   />
-// );
-// datePickerField.args = {
-//   component: ReduxFormWrapper,
-//   inputComponent: SingleDatePickerInput,
-//   datePicker: SingleDatePicker,
-//   name: 'inputname',
-//   helperText: 'inputname',
-//   labelText: 'Select a date',
-// };
-
-// datePickerField.decorators = [
-//   (Story) => (
-//     <Provider store={store}>
-//       <FormWrapper
-//         sampleData={{
-//           datepicker: {
-//             startDate: moment(),
-//             endDate: moment().add(15, 'days'),
-//           },
-//           inputname: moment(),
-//         }}>
-//         <Story />
-//       </FormWrapper>
-//     </Provider>
-//   ),
-// ];
-
-// export const DateRangePickerField = (args) => (
-//   <Field
-//     {...args}
-//     format={(value) =>
-//       value
-//         ? {
-//             startDate: moment(value.startDate),
-//             endDate: moment(value.endDate),
-//           }
-//         : undefined
-//     }
-//   />
-// );
-// DateRangePickerField.args = {
-//   component: ReduxFormWrapper,
-//   inputComponent: DateRangePickerInput,
-//   datePicker: DateRangePicker,
-//   name: 'datepicker',
-//   labelText: 'Select a date range',
-// };
-
-// DateRangePickerField.decorators = [
-//   (Story) => (
-//     <Provider store={store}>
-//       <FormWrapper
-//         sampleData={{
-//           datepicker: {
-//             startDate: moment(),
-//             endDate: moment().add(15, 'days'),
-//           },
-//           inputname: moment(),
-//         }}>
-//         <Story />
-//       </FormWrapper>
-//     </Provider>
-//   ),
-// ];

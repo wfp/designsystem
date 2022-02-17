@@ -76,7 +76,7 @@ const NumberInput = React.forwardRef((props, ref) => {
       evt.imaginaryTarget = _inputRef;
 
       setValue(evt.target.value);
-      onChange(parseFloat(evt.target.value), evt);
+      onChange(evt, parseFloat(evt.target.value));
     }
   };
 

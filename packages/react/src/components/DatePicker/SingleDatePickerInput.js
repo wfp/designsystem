@@ -25,6 +25,9 @@ const SingleDatePickerInput = ({
   onBlur,
   onDragStart,
   onDrop,
+  isDirty,
+  isTouched,
+  error,
   ...other
 }) => {
 
