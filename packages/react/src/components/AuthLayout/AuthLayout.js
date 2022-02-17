@@ -55,6 +55,7 @@ AuthLayout.propTypes = {
 };
 
 export function BackgroundContent({ children, ...other }) {
+  const { prefix } = useSettings();
   return (
     <div {...other} className={`${prefix}--auth-background-content`}>
       {children}

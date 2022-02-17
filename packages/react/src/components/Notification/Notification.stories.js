@@ -233,13 +233,13 @@ export const InlineBlockquote = (args) => (
       {...args}
       kind="warning"
       icon={false}
-      actions={<Button>{'Action'}</Button>}
+      actions={<NotificationActionButton>{'Action'}</NotificationActionButton>}
     />
     <InlineNotification
       {...args}
       kind="info"
       icon={<div>Icon</div>}
-      actions={<NotificationActionButton>{'Action'}</NotificationActionButton>}
+      actions={<Button small style={{margin:'auto'}}>{'Action'}</Button>}
     />
   </>
 );

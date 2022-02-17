@@ -76,7 +76,7 @@ export {
   ModuleHeader,
   ModuleFooter,
 } from './components/Module';
-export notificationStyle from './components/Notification/Notification.legacy';
+// export notificationStyle from './components/Notification/Notification.legacy';
 export {
   ToastNotification,
   InlineNotification,
