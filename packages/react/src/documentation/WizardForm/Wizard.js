@@ -56,7 +56,7 @@ const Wizard =({children, initialValues, onSubmit, ...other })=>{
   const handleFormSubmit = values => {
     const isLastPage = page === React.Children.count(children) - 1;
     if (isLastPage) {
-      return onSubmit(values);
+      setValues(values);
     } else {
       next(values);
     }
@@ -70,7 +70,7 @@ const Wizard =({children, initialValues, onSubmit, ...other })=>{
         initialValues={values}
         validate={validate}
         onSubmit={handleFormSubmit}>
-        {({ handleSubmit, submitting, values }) => (
+        {({ handleSubmit }) => (
           <form onSubmit={handleSubmit}>
             <FormWizard
               stickySidebar
@@ -81,7 +81,6 @@ const Wizard =({children, initialValues, onSubmit, ...other })=>{
                   previousHidden={page > 0 ? false : true}
                   nextHidden={isLastPage}
                   submitHidden={!isLastPage}
-                  onSubmitClick={handleSubmit}
                 />
               }
               sidebar={
@@ -112,9 +111,9 @@ const Wizard =({children, initialValues, onSubmit, ...other })=>{
               subscription={{ active: true, values: true }}
               component={handleValidation}
             />
-            {/* <br />
             <br />
-            <pre>{JSON.stringify(values, 0, 2)}</pre> */}
+            <br />
+            <pre>{JSON.stringify(values, 0, 2)}</pre>
           </form>
         )}
       </Form>
