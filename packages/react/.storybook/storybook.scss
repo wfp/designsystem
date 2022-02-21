@@ -3,7 +3,7 @@ $css--reset: true;
 
 @use './theme' as coretheme;
 @use '@un/themes-core/dist/scss/default-css-theme' as defaulttheme;
-@use './default-´´css-theme' as darkTheme;
+@use './default-css-theme' as darkTheme;
 
 @use "@un/styles/scss/theme" /*with (
   $coretheme: coretheme
