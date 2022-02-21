@@ -21,6 +21,7 @@ export function DateRangePickerInput({
           selectsStart
           startDate={startDate}
           endDate={endDate}
+          wrapperClassName={`${prefix}--date-picker__wrapper`}
         />
         <CalendarAltRegularGlyph
           className={`${prefix}--date-ranger-picker__icon`}
@@ -36,6 +37,7 @@ export function DateRangePickerInput({
           startDate={startDate}
           endDate={endDate}
           minDate={startDate}
+          wrapperClassName={`${prefix}--date-picker__wrapper`}
         />
         <CalendarAltRegularGlyph
           className={`${prefix}--date-ranger-picker__icon`}

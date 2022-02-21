@@ -10,7 +10,7 @@ import 'react-dates/initialize';
 import { SingleDatePicker, DateRangePicker } from 'react-dates';
 import markdown from './README.mdx';
 
-import 'react-datepicker/dist/react-datepicker.css';
+//import 'react-datepicker/dist/react-datepicker.css';
 
 export default {
   title: 'Components/UI Elements/DatePickerNew',
