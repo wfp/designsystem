@@ -12,18 +12,25 @@ import { wfpColorsMeta } from '@un/themes';
 import { hex, score } from 'wcag-contrast';
 import './colours.scss';
 
-export const ColourList = ({ tokens }) => {
-  /*console.log('tokens', tokens);
+import tokens from '@un/themes-core/tokens/design-tokens.tokens.json';
 
-  const colors = tokens.color[filter];*/
-  if (!tokens) return <>No tokens found</>;
+export const ColourList = ({ filter }) => {
+  console.log(wfpColorsMeta);
 
-  const list = Object.entries(tokens).map(([key, color]) => {
+  const filteredColors = Object.values(wfpColorsMeta).filter(
+    (ui_colors) => ui_colors.category === filter
+  );
+
+  const list = filteredColors.map((color) => {
+    const computedColor = getComputedStyle(document.body).getPropertyValue(
+      `--${color.name}`
+    );
+
     return (
       <tr className="color__item" kind="horizontal">
         <td>
           <h5>
-            <Tag>{color.name}</Tag>
+            <Tag>${color.variable}</Tag>
           </h5>
         </td>
         <td>
@@ -37,39 +44,33 @@ export const ColourList = ({ tokens }) => {
           </Story>
         </td>
         <td>
-          <Text kind="code">{color.value}</Text>
+          <Text kind="code">{color.hex}</Text>
           <br />
         </td>
-        {color.attributes?.rgb && (
-          <td>
-            <div
-              className={`color__field ${
-                color.attributes.rgb.r +
-                  color.attributes.rgb.g +
-                  color.attributes.rgb.b >
-                2.5
-                  ? 'color__field__light'
-                  : ''
-              }`}
-              style={{ backgroundColor: color.value }}>
-              <div className="color__contrast">
-                <span>A</span>
-                <div>{score(hex(color.value, '#000000'))}</div>
-              </div>
-              <div className="color__contrast color__contrast--light">
-                <span>A</span>
-                <div>{score(hex(color.value, '#FFFFFF'))}</div>
-              </div>
-            </div>
 
-            {color.attributes.rgb && (
-              <div className="color__field__description">
-                <div>{score(hex(color.value, '#000000'))}</div>
-                <div>{score(hex(color.value, '#FFFFFF'))}</div>
-              </div>
-            )}
-          </td>
-        )}
+        <td>
+          <div
+            className={`color__field ${
+              color.rgba.r + color.rgba.g + color.rgba.b > 2.5
+                ? 'color__field__light'
+                : ''
+            }`}
+            style={{ backgroundColor: color.hex }}>
+            <div className="color__contrast">
+              <span>A</span>
+              {/*<div>{score(hex(color.hex, '#000000'))}</div>*/}
+            </div>
+            <div className="color__contrast color__contrast--light">
+              <span>A</span>
+              {/*<div>{score(hex(color.hex, '#FFFFFF'))}</div> */}
+            </div>
+          </div>
+
+          <div className="color__field__description">
+            <div>>{score(hex(color.hex, '#000000'))}</div>
+            <div>{score(hex(color.hex, '#FFFFFF'))}</div>
+          </div>
+        </td>
 
         {/*<div
           style={{

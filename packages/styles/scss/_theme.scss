@@ -6,11 +6,21 @@
 //
 
 @use './config' as *;
+
+//@use './config' as *;
+
 @use '@un/themes/scss/modules/config' with (
   $prefix: $prefix,
 );
 @use './compat/themes' as compat;
 @use './themes';
+
+
+//@use '@un/themes/scss/modules/tokens' as coretheme;
+//$coretheme: 'sdsadasd' !default;
+
+//@use '@un/themes-core/dist/scss/variables' as *;
+@forward '@un/themes-core/dist/scss/theme';
 
 @forward '@un/themes/scss/modules/theme' with (
   $fallback: themes.$wfp !default,

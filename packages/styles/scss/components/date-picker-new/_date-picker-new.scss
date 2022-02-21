@@ -1,0 +1,30 @@
+//
+// Copyright IBM Corp. 2016, 2018
+//
+// This source code is licensed under the Apache-2.0 license found in the
+// LICENSE file in the root directory of this source tree.
+//
+
+@use '../../colors' as *;
+@use '../../config' as *;
+@use '../../motion' as *;
+@use '../../compat/theme' as *;
+@use '../../spacing' as *;
+@use '../../type' as *;
+@use '../../utilities/component-reset';
+@use '../../utilities/convert' as *;
+@use '../../utilities/focus-outline' as *;
+@use '../../utilities/high-contrast-mode' as *;
+@use '../../utilities/placeholder-colors' as *;
+@use '../../utilities/skeleton' as *;
+
+/// Date picker styles
+/// @access public
+/// @group date-picker
+
+$input-border-radius: 0px !default;
+$input-border: 1px solid var(--field-border-01) !default;
+$input-height: 40px !default;
+
+@mixin date-picker {
+}

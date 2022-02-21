@@ -23,6 +23,7 @@
 @mixin button {
   // <button> elements cannot be used as flex containers
   button.#{$prefix}--btn {
+    background: $color-corporate-09 !important;
     // TODO: use inline-flex for all buttons
     // display: inline-block;
     /*vertical-align: middle;
