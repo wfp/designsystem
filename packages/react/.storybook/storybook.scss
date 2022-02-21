@@ -37,3 +37,14 @@ $color-corporate-09: 'green';
 .wfp--theme-dark {
   @include darkTheme.theme-default();
 }
+
+.docs-story {
+  overflow: visible !important;
+}
+.docs-story > * {
+  overflow: visible !important;
+}
+
+.docs-story > div:last-child {
+  z-index: 0 !important;
+}

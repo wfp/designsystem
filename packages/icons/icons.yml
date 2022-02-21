@@ -53,6 +53,12 @@
     - WFP legacy icons
   sizes:
     - glyph
+- name: calendar-alt-regular
+  friendly_name: calendar-alt-regular
+  aliases:
+    - WFP legacy icons
+  sizes:
+    - glyph
 - name: caret--down
   friendly_name: caret--down
   aliases:

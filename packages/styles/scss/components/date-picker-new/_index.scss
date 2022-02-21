@@ -5,7 +5,7 @@
 // LICENSE file in the root directory of this source tree.
 //
 
-@forward 'date-picker';
-@use 'date-picker';
+@forward 'date-picker-new';
+@use 'date-picker-new';
 
-@include date-picker.date-picker;
+@include date-picker-new.date-picker-new;

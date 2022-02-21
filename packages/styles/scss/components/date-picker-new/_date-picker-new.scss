@@ -22,9 +22,31 @@
 /// @access public
 /// @group date-picker
 
-$input-border-radius: 0px !default;
-$input-border: 1px solid var(--field-border-01) !default;
-$input-height: 40px !default;
-
-@mixin date-picker {
+@mixin date-picker-new {
+  .#{$prefix}--date-ranger-picker {
+    display: inline-flex;
+  }
+  .#{$prefix}--date-ranger-picker__arrow {
+    width: 0.8em;
+    height: auto;
+    margin: 0 0.7em;
+    color: $color-form-field-border; //var(--field-border-01);
+  }
+  .#{$prefix}--date-ranger-picker__input {
+    position: relative;
+    input {
+      min-width: 10em !important;
+      max-width: 10em !important;
+      //padding-left: 2.5em;
+    }
+  }
+  .#{$prefix}--date-ranger-picker__icon {
+    position: absolute;
+    top: 0.75em;
+    right: 0.7em;
+    width: 0.9em;
+    height: auto;
+    pointer-events: none;
+    color: $interactive;
+  }
 }
