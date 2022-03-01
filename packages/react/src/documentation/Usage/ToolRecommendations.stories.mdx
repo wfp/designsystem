@@ -12,15 +12,22 @@ import { linkTo } from '@storybook/addon-links';
   }}
 />
 
+Make sure your application follows the mandatory [IT software solution quality standards](https://newgo.wfp.org/documents/it-solution-quality-standards).
+
 > Legacy libraries that we no longer recommend to use
 >
 > - Forms: [react-final-form](https://github.com/final-form/react-final-form), [redux-form](https://github.com/erikras/redux-form)
 > - Charts: [Victory](https://formidable.com/open-source/victory/)
 > - Redux-Saga: [redux-saga](https://github.com/redux-saga/redux-saga)
+> - LibSass and Node Sass: [node-sass](https://www.npmjs.com/package/node-sass), deprecated in favor of [dart-sass](https://sass-lang.com/dart-sass)
 
-Below, you’ll find a list of recommended libraries that are commonly used inside WFP. t's up to you to exchange them with your choices.
+Below, you’ll find a list of recommended libraries that are commonly used inside WFP. It's up to you to exchange them with your choices.
 
-## CSS
+## Create-React-App
+
+[create-react-app](https://create-react-app.dev/) is a starting point to set up your React applications with no build configuration.
+
+## CSS Preprocessors
 
 [scss/sass](https://sass-lang.com) is a CSS pre-processor with syntax advancements and variable, functions, etc. [Learn more](https://create-react-app.dev/docs/adding-a-sass-stylesheet) about how to use scss with create-react-app.
 
@@ -34,11 +41,9 @@ server, and native), and are easy to test.
 
 [rtk-query](https://redux-toolkit.js.org/rtk-query/overview): RTK Query is a powerful data fetching and caching tool. It is designed to simplify common cases for loading data in a web application, eliminating the need to hand-write data fetching & caching logic yourself.
 
-Please also have a look at the [React/Redux Style Guide](https://gist.github.com/datchley/4e0d05c526d532d1b05bf9b48b174faf)
-
 ## Maps
 
-Please have a look at the [Map guidelines](Design|Guidelines).
+<!-- Please have a look at the [Map guidelines](Design|Guidelines). -->
 
 [react-simple-maps](https://www.react-simple-maps.io) is a map component to generate simple political maps
 
@@ -72,9 +77,4 @@ Airbnb provides a [useful styling guide](https://github.com/airbnb/javascriptuse
 
 ## Polyfills
 
-Polyfills are needed for IE browsers. We recommend [babel-preset-env](https://babeljs.io/docs/en/babel-preset-env) for it.
-
-## Next.js (for external apps only)
-
-[Next.js](https://nextjs.org/) is a modern front-end development web framework that enables functionality such as server-side rendering and generating static websites for React based web applications.
-The combination of server side rendering and client side hydration allows the creation of very performant websites. It can be easily connected to headless content management systems like Drupal or Wordpress.
+Polyfills are needed for older browsers. We recommend [babel-preset-env](https://babeljs.io/docs/en/babel-preset-env) for it.
