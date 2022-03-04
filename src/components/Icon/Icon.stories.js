@@ -19,14 +19,20 @@ Regular.args = {
   icon: iconAdd,
 };
 
-const description = `
-You can customize the content by using \`BannerNavigation\`.
-`;
+
+const iconsourcecode = `
+import { Icon  } from "@wfp/ui";
+import { iconAdd} from '@wfp/icons';
+
+<Icon icon={iconAdd} />
+`
 
 Regular.story = {
   parameters: {
     docs: {
-      storyDescription: description,
+      source:{
+        code: iconsourcecode
+      }
     },
   },
 };

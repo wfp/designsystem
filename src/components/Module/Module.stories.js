@@ -28,17 +28,7 @@ export const Regular = (args) => (
   </Module>
 );
 
-const description = `
-You can customize the content by using \`BannerNavigation\`.
-`;
 
-Regular.story = {
-  parameters: {
-    docs: {
-      storyDescription: description,
-    },
-  },
-};
 
 export const Dark = (args) => (
   <Module dark>

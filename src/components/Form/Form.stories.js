@@ -290,3 +290,65 @@ export const Contact = (args) => {
     </Form>
   );
 };
+
+const contactsourcecode = `
+import { Form, FormGroup, TextInput, Button  } from "@wfp/ui";
+
+
+<Form>
+  <FormGroup align="horizontal" legendText="Contact Form Example: name">
+    <TextInput
+      type="text"
+      id="firstname"
+      labelText="Firstname"
+      placeholder="Noami"
+    />
+    <TextInput
+      type="text"
+      id="lastname"
+      labelText="lastname"
+      placeholder="ADAMS"
+    />
+  </FormGroup>
+  <TextInput
+    type="email"
+    id="email4"
+    labelText="Email"
+    placeholder="c******@wfp.org"
+  />
+
+  <FormGroup legendText="Additional details">
+    <TextArea
+      labelText="Message"
+      placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+      eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+      minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+      aliquip ex ea commodo consequat. Duis aute irure dolor in
+      reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+      pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+      culpa qui officia deserunt mollit anim id est laborum."
+      id="test5"
+      cols={50}
+      rows={5}
+    />
+  </FormGroup>
+  <>
+    <Button type="button" kind="secondary">
+      cancel
+    </Button>
+    <Button type="submit" className="some-class">
+      Send
+    </Button>
+  </>
+</Form>
+`
+
+Contact.story = {
+  parameters:{
+    docs:{
+      source:{
+        code:contactsourcecode
+      }
+    }
+  }
+}

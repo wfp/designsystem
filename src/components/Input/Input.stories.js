@@ -23,3 +23,25 @@ Regular.args = {
   helperText: 'Optional helperText',
   labelText: 'The labelText',
 };
+
+const inputsourcecode= `
+import { Input  } from "@wfp/ui";
+
+<Input
+  helperText="Optional helperText"
+  labelText="The labelText"
+  name="inputname"
+>
+{() => <input placeholder="This can be any type of custom input" />}
+</Input>
+`
+
+Regular.story = {
+  parameters:{
+    docs:{
+      source:{
+        code: inputsourcecode
+      }
+    }
+  }
+}

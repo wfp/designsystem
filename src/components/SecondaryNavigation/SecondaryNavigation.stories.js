@@ -44,14 +44,51 @@ export const Regular = (args) => (
   </SecondaryNavigation>
 );
 
-const description = `
-You can customize the content by using \`BannerNavigation\`.
-`;
+
+
+const sourcecode =(importstatement, additional)=>{
+  return `
+  
+${importstatement}
+        
+<SecondaryNavigation additional="additional Information">
+  <Breadcrumb>
+    <BreadcrumbItem>
+      <a href="/#">
+        <BreadcrumbHome />
+      </a>
+    </BreadcrumbItem>
+    <BreadcrumbItem href="#">
+      Breadcrumb 2
+    </BreadcrumbItem>
+    <BreadcrumbItem disableLink>
+      Breadcrumb 3
+    </BreadcrumbItem>
+  </Breadcrumb>
+  <SecondaryNavigationTitle>
+    The page title
+  </SecondaryNavigationTitle>
+  ${additional}
+</SecondaryNavigation>
+  `
+}
+
+const tabsection = `
+  <Tabs customTabContent>
+    <Tab label="Tab label 1" />
+    <Tab label="Tab label 2" />
+    <Tab label="Tab label 3" />
+    <Tab label="Tab label 4" />
+  </Tabs>
+`
 
 Regular.story = {
   parameters: {
     docs: {
-      storyDescription: description,
+      source: {
+        code: sourcecode(`import {SecondaryNavigation, SecondaryNavigationTitle, Breadcrumb, BreadcrumbHome, BreadcrumbItem, Tabs, Tab } from "@wfp/ui";`, 
+        tabsection)
+      }
     },
   },
 };
@@ -79,6 +116,9 @@ HeadingOnly.story = {
   parameters: {
     docs: {
       storyDescription: descriptionHeadingOnly,
+      source: {
+        code: sourcecode(`import {SecondaryNavigation, SecondaryNavigationTitle, Breadcrumb, BreadcrumbHome, BreadcrumbItem } from "@wfp/ui";`)
+      }
     },
   },
 };

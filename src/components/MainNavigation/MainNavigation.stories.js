@@ -54,10 +54,10 @@ export const Regular = (args) => (
 
                   <SubNavigationFilter>
                     <Search
-                      small
+                      kind='small'
                       id="search-2"
                       labelText="Filter"
-                      placeHolderText="Filter list"
+                      placeholder="Filter list"
                     />
                     {/* onChange={() => {
                         alert('Apply Filter');
@@ -66,7 +66,7 @@ export const Regular = (args) => (
                 </SubNavigationHeader>
                 <SubNavigationContent>
                   <SubNavigationList>
-                    <SubNavigationGroup title="First List" columns>
+                    <SubNavigationGroup title="First List" columns={3}>
                       <SubNavigationItem>
                         <Link href="https://go.docs.wfp.org" target="_blank">
                           Lorem Ipsum et jomen
@@ -95,7 +95,7 @@ export const Regular = (args) => (
             <Search
               kind="main"
               id="search-2"
-              placeHolderText="Search"
+              placeholder="Search"
               onChange={action('onChange')}
             />
           </MainNavigationItem>
@@ -106,7 +106,7 @@ export const Regular = (args) => (
                 <SubNavigationHeader>
                   <SubNavigationTitle>Welcome Lorem!</SubNavigationTitle>
                   <SubNavigationLink>
-                    <Button secondary small>
+                    <Button kind='secondary' small>
                       Logout
                     </Button>
                   </SubNavigationLink>
@@ -201,10 +201,10 @@ const sourcecode =(type)=>{
   
               <SubNavigationFilter>
                   <Search
-                  small
+                  kind='small'
                   id="search-2"
                   labelText="Filter"
-                  placeHolderText="Filter list"
+                  placeholder="Filter list"
                   onChange={() => {
                       alert('Apply Filter');
                   }}
@@ -240,7 +240,7 @@ const sourcecode =(type)=>{
           <Search
           kind="main"
           id="search-2"
-          placeHolderText="Search"
+          placeholder="Search"
           />
       </MainNavigationItem>
       <MainNavigationItem
@@ -250,7 +250,7 @@ const sourcecode =(type)=>{
               <SubNavigationHeader>
               <SubNavigationTitle>Welcome Lorem!</SubNavigationTitle>
               <SubNavigationLink>
-                  <Button secondary small>
+                  <Button kind='secondary' small>
                   Logout
                   </Button>
               </SubNavigationLink>
@@ -299,6 +299,7 @@ const sourcecode =(type)=>{
           }>
           <span>EN</span>
       </MainNavigationItem>
+      </MainNavigation>
       )
     }
   
@@ -344,10 +345,10 @@ export const RegularWithButton = (args) => (
 
                   <SubNavigationFilter>
                     <Search
-                      small
+                      kind='small'
                       id="search-2"
                       labelText="Filter"
-                      placeHolderText="Filter list"
+                      placeholder="Filter list"
                     />
                     {/* onChange={() => {
                         alert('Apply Filter');
@@ -356,7 +357,7 @@ export const RegularWithButton = (args) => (
                 </SubNavigationHeader>
                 <SubNavigationContent>
                   <SubNavigationList>
-                    <SubNavigationGroup title="First List" columns>
+                    <SubNavigationGroup title="First List" columns={3}>
                       <SubNavigationItem>
                         <Link href="https://go.docs.wfp.org" target="_blank">
                           Lorem Ipsum et jomen
@@ -385,7 +386,7 @@ export const RegularWithButton = (args) => (
             <Search
               kind="main"
               id="search-2"
-              placeHolderText="Search"
+              placeholder="Search"
               onChange={action('onChange')}
             />
           </MainNavigationItem>
@@ -396,7 +397,7 @@ export const RegularWithButton = (args) => (
                 <SubNavigationHeader>
                   <SubNavigationTitle>Welcome Lorem!</SubNavigationTitle>
                   <SubNavigationLink>
-                    <Button secondary small>
+                    <Button kind='secondary' small>
                       Logout
                     </Button>
                   </SubNavigationLink>

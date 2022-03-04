@@ -52,6 +52,7 @@ Regular.parameters = {
   docs: {
     source: {
       code: ` import Dropzone from 'react-dropzone';
+      import { List, ListItem } from '@wfp/ui';
 
       export const Regular = (args) => {
         const [file, setfile] = useState([])

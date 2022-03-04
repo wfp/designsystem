@@ -41,11 +41,12 @@ StepNavigationRegular.args = {
 StepNavigationRegular.story = {
   parameters: {
     docs: {
+      storyDescription: `Using \`onSelectionChange\` and \`selectedPage\` props in this StepNavigation example`,
       source: {
         code: `
         import { StepNavigation , StepNavigationItem } from "@wfp/ui";
         
-const StepNavigationExample = (args) => {
+const StepNavigationExample = () => {
   const [step, setStep] = useState(0);
   return (
     <StepNavigation onSelectionChange={(e) => setStep(e)} selectedPage={step}>
@@ -122,7 +123,7 @@ Vertical.args = { vertical: true };
 Vertical.story = {
   parameters: {
     docs: {
-      storyDescription: ``,
+      storyDescription: `Vertical StepNavigation with the different status`,
     },
   },
 };

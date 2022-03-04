@@ -142,7 +142,7 @@ SubNavigationLink.propTypes = {
   /**
    * Provide the content of link
    */
-  children: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
+  children: PropTypes.oneOfType([PropTypes.node, PropTypes.string, PropTypes.object]),
 
   className: PropTypes.string,
 };

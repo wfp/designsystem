@@ -37,6 +37,24 @@ const description = `
 When loader is applied with an overlay. Do this by specifying \`true\` to \`withOverlay\` prop.
 `;
 
+const overlaysourcecode=`
+import { Loading, Button  } from "@wfp/ui";
+
+export const overlay = (args) => {
+  const [loading, setLoading] = useState(false);
+  
+  return(
+    <>
+      <Button onClick={()=>setLoading(true)}>Load with overlay </Button>
+      {
+        loading && ( <Loading withOverlay={true} >Text</Loading> )
+      }
+    </>
+  )
+
+}
+`
+
 overlay.args = {
   withOverlay: false,
 };
@@ -45,6 +63,9 @@ overlay.story = {
   parameters: {
     docs: {
       storyDescription: description,
+      source:{
+        code:overlaysourcecode
+      }
     },
   },
 };

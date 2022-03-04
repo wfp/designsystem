@@ -116,7 +116,7 @@ MainNavigation.propTypes = {
   /**
    * Usually multiple `MainNavigationItem` elements
    */
-  children: PropTypes.node.isRequired,
+  children: PropTypes.oneOfType([PropTypes.node.isRequired, PropTypes.func.isRequired]),
   /**
    * The CSS class name to be placed on the wrapping element.
    */

@@ -140,10 +140,33 @@ Splash.args = {
   image: undefined,
 };
 
+
+const splashsourcecode =
+  `
+  import { Hero, Button } from "@wfp/ui"; 
+
+  <Hero
+    href="#"
+    kind="splash"
+    subTitle={
+        <>
+        <div style={{marginBottom: '1rem'}}>
+        Cras dapibus. Aenean ut eros et nisl sagittis vestibulum. Fusce risus nisl, viverra et, tempor et, pretium in.
+        </div>
+        <Button kind="inverse">Read more</Button>
+        </>
+        }
+    title="The Climate Adaption Mangement and Innovation Initiative"
+  />
+`
+
 Splash.story = {
   parameters: {
     docs: {
       storyDescription: `Page middle content section.`,
+      source:{
+        code: splashsourcecode
+      }
     },
   },
 };
@@ -180,10 +203,23 @@ SplashCompact.args = {
   image: undefined,
 };
 
+const splashcompactcode = `
+  import { Hero, Button } from "@wfp/ui";
+
+  <Hero
+  href="#"
+  kind="splash-compact"
+  title={<><span style={{marginRight: '1rem'}}>Nulla consequat massa quis enim</span><Button kind="inverse--primary">Read more</Button></>}
+  />
+`
+
 SplashCompact.story = {
   parameters: {
     docs: {
       storyDescription: `A card content section without space around title and subtitle.`,
+      source:{
+        code:splashcompactcode
+      }
     },
   },
 };
@@ -216,8 +252,7 @@ Emergencies.args = {
         style={{ marginRight: '1rem' }}
       />
       <span>
-        Curabitur ullamcorper ultricies nisi. Proin magna.{' '}
-        <a>Etiam iaculis nunc ac metus</a>
+        Curabitur ullamcorper ultricies nisi. Proin magna. Etiam iaculis nunc ac metus
       </span>
     </>
   ),
@@ -226,10 +261,36 @@ Emergencies.args = {
   kind: 'emergencies',
 };
 
+const sourcecode = `
+import { Hero, Icon } from "@wfp/ui";
+import { iconWfpHumEmergencyResponsePos } from '@wfp/icons';
+        
+<Hero
+  href="#"
+  kind="emergencies"
+  title={
+    <>
+    <Icon
+      icon={iconWfpHumEmergencyResponsePos}
+      fill="#FFF"
+      style={{ marginRight: '1rem' }}
+    />
+    <span>
+      Curabitur ullamcorper ultricies nisi. Proin magna. Etiam iaculis nunc ac metus
+    </span>
+    </>
+    }
+/>
+
+`
+
 Emergencies.story = {
   parameters: {
     docs: {
       storyDescription: `A global card for highlighting important events, such as emergencies.`,
+      source:{
+        code: sourcecode
+      }
     },
   },
 };

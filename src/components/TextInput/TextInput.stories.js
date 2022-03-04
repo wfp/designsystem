@@ -31,7 +31,7 @@ export const PasswordInput = (args) => <TextInput  {...args} />;
 PasswordInput.args = {
   type:"password",
   name: 'password',
-  labelText: 'The labelText',
+  labelText: 'Password Label',
 };
 
 export const withError = (args) => <TextInput {...args} />;

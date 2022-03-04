@@ -14,17 +14,6 @@ export default {
 
 export const Regular = (args) => <InlineLoading {...args}>Text</InlineLoading>;
 
-const description = `
-You can customize the content by using \`BannerNavigation\`.
-`;
-
-Regular.story = {
-  parameters: {
-    docs: {
-      storyDescription: description,
-    },
-  },
-};
 
 export const Description = (args) => (
   <InlineLoading {...args}>Text</InlineLoading>

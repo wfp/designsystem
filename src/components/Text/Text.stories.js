@@ -31,6 +31,27 @@ Regular.decorators = [
 
 Regular.args = { children: 'Content', kind: 'h1' };
 
+const regularsourcecode = `
+<div
+  style={{
+    display: 'flex',
+    borderTop: '1px solid #EFEFEF',
+    borderBottom: '2px solid #EFEFEF',
+  }}>
+  <Text kind='h1'>Content</Text>
+</div>
+`
+
+Regular.story={
+  parameters:{
+    docs:{
+      source:{
+        code:regularsourcecode
+      }
+    }
+  }
+}
+
 const headingText = [
   { kind: 'h1', text: 'Heading 1', styling: '29px, SemiBold' },
   { kind: 'h2', text: 'Heading 2', styling: '25px, SemiBold' },
@@ -138,6 +159,50 @@ export const Lists = (args) => (
     ))}
   </>
 );
+
+const listsourcecode = `
+import { Text, List, ListItem  } from "@wfp/ui";
+
+const list = [
+    { kind: 'simple', heading: 'Ordered lists' },
+    { kind: 'bullets', heading: 'Bullet lists' },
+    { kind: 'ordered', heading: 'Unordered lists' },
+  ];
+
+const Lists = () => {
+    return(
+        
+    <>
+      {list.map((e) => (
+        <>
+          <Text kind="h4">{e.heading}</Text>
+          <List kind={e.kind}>
+            <ListItem>Numbered List 1</ListItem>
+            <ListItem>Numbered List 2</ListItem>
+            <ListItem>Numbered List 3</ListItem>
+          </List>
+          <div style={{ color: '#A9A9A9', marginBottom: '2rem' }}>
+            16px, Regular
+          </div>
+        </>
+      ))}
+    </>
+  );
+
+}
+
+export default Lists;
+`
+
+Lists.story = {
+  parameters:{
+    docs:{
+      source:{
+        code: listsourcecode
+      }
+    }
+  }
+}
 
 const colors = [
   { color: '#031C2D', text: '#text-01' },

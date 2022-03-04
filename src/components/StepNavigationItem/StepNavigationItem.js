@@ -23,6 +23,11 @@ export default class StepNavigationItem extends React.Component {
      */
     className: PropTypes.string,
     /**
+     * Provide status one of these status prop type to your step to give more meaning. 
+     *
+     */
+     status: PropTypes.oneOf(['not-stated', 'warning', 'complete', 'skip', 'disabled', 'locked']),
+    /**
      * Provide text that is used alongside the control label for additional help
      *
      */

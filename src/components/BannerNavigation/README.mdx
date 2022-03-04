@@ -27,7 +27,7 @@ import { BannerNavigationWithContent } from '@wfp/ui';
 ** Custom version **
 
 ```jsx
-import { BannerNavigation } from '@wfp/ui';
+import { BannerNavigation, BannerNavigationItem, Link, Search } from '@wfp/ui';
 
 <BannerNavigation>
   <BannerNavigationItem>
@@ -37,11 +37,10 @@ import { BannerNavigation } from '@wfp/ui';
   </BannerNavigationItem>
   <BannerNavigationItem>
     <Search
-      banner
       id="search-2"
-      labelText="Search"
+      kind="banner"
+      onChange={() => {}}
       placeHolderText="Search"
-      onChange={action('onChange')}
     />
   </BannerNavigationItem>
 </BannerNavigation>;

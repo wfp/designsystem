@@ -20,17 +20,6 @@ Regular.args = {
   id: 'check-1',
 };
 
-const description = `
-You can customize the content by using \`BannerNavigation\`.
-`;
-
-Regular.story = {
-  parameters: {
-    docs: {
-      storyDescription: description,
-    },
-  },
-};
 
 export const CheckedInput = (args) => {
   const [isChecked, setChecked] = useState(true);
@@ -51,10 +40,36 @@ CheckedInput.args = {
 
 const check = `Specify whether the underlying input should be checked.`;
 
+const checkinoutsourcecode = `
+
+import { Checkbox } from "@wfp/ui";
+
+
+const CheckedInput = () => {
+    const [isChecked, setChecked] = useState(true);
+    return(
+        <Checkbox
+        id="check-2"
+        labelText="Checked Input"
+        onChange={() => setChecked(!isChecked)}
+        checked={isChecked}
+        />
+    )
+;
+
+}
+
+export default CheckedInput;
+
+`
+
 CheckedInput.story = {
   parameters: {
     docs: {
       storyDescription: check,
+      source:{
+        code: checkinoutsourcecode
+      }
     },
   },
 };

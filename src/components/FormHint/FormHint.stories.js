@@ -42,3 +42,33 @@ export const Input = (args) => (
     helperText="The helper text provides additional information"
   />
 );
+
+const formhintsourcecode = `
+import { FormHint, TextInput  } from "@wfp/ui";
+
+<TextInput
+  labelText={
+    <>
+      The label
+      <FormHint>
+        A longer description. Lorem ipsum dolor sit amet, consetetur
+        sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
+        dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
+        et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
+        takimata sanctus est{' '}
+      </FormHint>
+    </>
+  }
+  helperText="The helper text provides additional information"
+/>
+`
+
+Input.story= {
+  parameters:{
+    docs:{
+      source:{
+        code: formhintsourcecode
+      }
+    }
+  }
+}

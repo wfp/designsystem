@@ -41,6 +41,19 @@ export function ContextMenuGroup({ className, ...other }) {
   return <div className={classNames} {...other} />;
 }
 
+ContextMenuGroup.propTypes = {
+  /**
+   * Provide the content for the ContentMenu
+   */
+  children: PropTypes.node,
+
+  /**
+   * Provide a custom className 
+   */
+  className: PropTypes.string,
+};
+
+
 export function ContextMenuItem({ className, ...other }) {
   const classNames = classnames(
     {
@@ -54,14 +67,20 @@ export function ContextMenuItem({ className, ...other }) {
 
 ContextMenu.propTypes = {
   /**
-   * Provide the content for the Link
+   * Provide the content for the ContentMenu
    */
   children: PropTypes.node,
 
   /**
-   * Provide a custom className to be applied to the containing <a> node
+   * Provide a custom className 
    */
   className: PropTypes.string,
+
+  /**
+   * Provide content to display when contextMenu is clicked
+   */
+  content: PropTypes.node,
+
   /**
    * Inline links are used within a sentence or paragraph and are styled with an underline. They should not be paired with an icon.
    */

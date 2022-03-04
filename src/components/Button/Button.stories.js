@@ -107,11 +107,27 @@ To show the Icon on the left side use the \`iconReverse\` prop.
 Using an Button with only an Icon while not beeing recommended can be achieved by leaving the Button text blank.
 `;
 
+const buttoniconsnippet = `
+import { iconAddGlyph } from '@wfp/icons';
+  <>
+    <Button icon={iconAddGlyph}>
+      Button with icon
+    </Button>
+    {''} <Button  icon={iconAddGlyph} kind="tertiary"></Button>{' '}
+    <Button icon={iconAddGlyph} iconReverse kind="tertiary">
+      With iconReverse
+    </Button>
+  </>
+`
+
 ButtonIcon.story = {
   name: 'Button with icon',
   parameters: {
     docs: {
       storyDescription: helloButtonIcon,
+      source:{
+        code: buttoniconsnippet
+      }
     },
   },
 };
@@ -131,11 +147,24 @@ regular sized button. This issue is most found in tables. Small button should ha
 or less.
 `;
 
+const smallbuttonsnippet =`
+import { iconAddGlyph } from '@wfp/icons';
+  <>
+    <Button small>Small button</Button>{' '}
+    <Button icon={iconAddGlyph} kind="tertiary" small>
+      With icon
+    </Button>
+  </>
+`
+
 Small.story = {
   name: 'small Button',
   parameters: {
     docs: {
       storyDescription: helloButtonSmall,
+      source:{
+        code:smallbuttonsnippet
+      }
     },
   },
 };
@@ -156,11 +185,24 @@ regular sized button. This issue is most found in tables. Small button should ha
 or less.
 `;
 
+const largebuttonsnippet =`
+import { iconAddGlyph } from '@wfp/icons';
+  <>
+    <Button large>Large button</Button>{' '}
+    <Button icon={iconAddGlyph} kind="tertiary" large>
+      With icon
+    </Button>
+  </>
+`
+
 Large.story = {
   name: 'large Button',
   parameters: {
     docs: {
       storyDescription: helloButtonLarge,
+      source:{
+        code:largebuttonsnippet
+      }
     },
   },
 };

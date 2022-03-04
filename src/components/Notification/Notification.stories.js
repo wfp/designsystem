@@ -11,7 +11,7 @@ import markdown from './README.mdx';
 export default {
   title: 'Components/UI Elements/Notification',
   component: NotificationActionButton,
-  subcomponents: { ToastNotification, InlineNotification },
+  subcomponents: { ToastNotification, InlineNotification, NotificationActionButton, },
   parameters: {
     componentSubtitle: 'Component',
     status: 'released',
