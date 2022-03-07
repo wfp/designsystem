@@ -94,10 +94,39 @@ export const withCheckbox = (args) => (
   </InputGroup>
 );
 
+const withcheckboxsourcecode=`
+import { InputGroup, Checkbox } from "@wfp/ui";
+        
+<InputGroup
+  defaultSelected="default-selected"
+  helperText="Helper text"
+  labelText="Group labelText"
+>
+  <Checkbox
+    labelText="Checkbox label 1"
+    name="checkbox-1"
+    value="standard"
+  />
+  <Checkbox
+    labelText="Checkbox label 2"
+    name="checkbox-2"
+    value="default-selected"
+  />
+  <Checkbox
+    labelText="Checkbox label 3"
+    name="checkbox-3"
+    value="disabled"
+  />
+</InputGroup>
+`
+
 withCheckbox.story = {
   parameters: {
     docs: {
       storyDescription: 'The InputGroup can be used with checkboxes',
+      source:{
+        code: withcheckboxsourcecode
+      }
     },
   },
 };
