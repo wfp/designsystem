@@ -141,18 +141,30 @@ export const VerticalGrouping = (args) => (
   </InputGroup>
 );
 
-VerticalGrouping.args = {};
+const verticalsourcecode = `
+import { Checkbox, InputGroup  } from "@wfp/ui";
 
-// const nolabel = `Specify whether the label should be hidden or not`;
+<InputGroup
+  helperText="select any that apply"
+  labelText="Programming language preference"
+  vertical>
+  <Checkbox defaultChecked labelText="ReactJs" id="react" />
+  <Checkbox defaultChecked labelText="ReactNative" id="native" />
+  <Checkbox labelText="Node.js" id="node" />
+  <Checkbox labelText="PHP" id="php" />
+  <Checkbox labelText="Java" id="java" />
+</InputGroup>
+`
 
-// CheckboxGroup.story = {
-//   parameters: {
-//     docs: {
-//       storyDescription: nolabel,
-//     },
-//   },
-// };
-
+VerticalGrouping.story = {
+  parameters:{
+    docs:{
+      source:{
+        code: verticalsourcecode
+      }
+    }
+  }
+};
 export const HorizontalGrouping = (args) => (
   <InputGroup
     helperText="select any that apply"
@@ -165,4 +177,26 @@ export const HorizontalGrouping = (args) => (
   </InputGroup>
 );
 
-HorizontalGrouping.args = {};
+const horizontalsourcecode = `
+import { Checkbox, InputGroup  } from "@wfp/ui";
+
+<InputGroup
+  helperText="select any that apply"
+  labelText="Programming language preference">
+  <Checkbox defaultChecked labelText="ReactJs" id="react1" />
+  <Checkbox defaultChecked labelText="ReactNative" id="native1" />
+  <Checkbox labelText="Node.js" id="node1" />
+  <Checkbox defaultChecked labelText="PHP" id="php1" />
+  <Checkbox labelText="Java" id="java1" />
+</InputGroup>
+`
+
+HorizontalGrouping.story = {
+  parameters:{
+    docs:{
+      source:{
+        code: horizontalsourcecode
+      }
+    }
+  }
+};
