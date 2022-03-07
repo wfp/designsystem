@@ -5,13 +5,13 @@ import settings from '../../globals/js/settings';
 
 const { prefix } = settings;
 
-export default function AuthLayout({
+const AuthLayout = ({
     image,
     backgroundContent, 
     children,
     className, 
     ...other
-}) 
+}) =>
 {
     const style = image ? {
         backgroundImage: `url(${image})`,
@@ -54,7 +54,7 @@ AuthLayout.propTypes = {
   };
 
 
-export function BackgroundContent({children, ...other}){
+const BackgroundContent = ({children, ...other}) => {
     return(
         <div {...other} className={`${prefix}--auth-background-content`}>{children}</div>
     )
@@ -72,3 +72,4 @@ BackgroundContent.propTypes = {
     className: PropTypes.string,
   };
   
+  export { AuthLayout, BackgroundContent };
