@@ -8,7 +8,7 @@ function useDetectPrint() {
       typeof window !== 'undefined' &&
       window.matchMedia &&
       window.matchMedia('print');
-    
+
     const mqEvent = (mqList) => toggleStatus(!!mqList.matches);
     printMq.addListener(mqEvent);
     return () => printMq.removeListener(mqEvent);

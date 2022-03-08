@@ -20,7 +20,8 @@ const MoreLink = ({ handleToggleClick, link, text, showMore }) => {
       <Link
         className={`${prefix}--read-more__trigger`}
         small
-        onClick={handleToggleClick}>
+        onClick={handleToggleClick}
+      >
         {text}
         <Icon
           icon={showMore ? iconCaretUp : iconCaretDown}
@@ -100,7 +101,8 @@ export default function ReadMore({
         <div
           className={`${prefix}--read-more__fake-height`}
           ref={readMoreFakeRef}
-          style={{ height: `${innerHeight + 30}px` }}></div>
+          style={{ height: `${innerHeight + 30}px` }}
+        ></div>
         <div ref={readMoreRef}>
           {(showMore || !collapsed) && children}
           {collapsed && <div style={collapseStyle}>{collapsed}</div>}

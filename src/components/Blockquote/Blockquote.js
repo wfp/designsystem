@@ -81,9 +81,12 @@ class Blockquote extends React.Component {
       [`${className}`]: className,
     });
 
-    const blockquoteContentClass = classNames(`${prefix}--blockquote__content`, {
-      [`${className}`]: contentClassName,
-    });
+    const blockquoteContentClass = classNames(
+      `${prefix}--blockquote__content`,
+      {
+        [`${className}`]: contentClassName,
+      }
+    );
 
     // @deprecated Only kind is allowed
     const lookup =
@@ -96,7 +99,9 @@ class Blockquote extends React.Component {
         : iconLookup['info'];
 
     const iconElement = React.isValidElement(icon) ? (
-      <div className={`${prefix}--blockquote__icon ${prefix}--blockquote__icon--custom`}>
+      <div
+        className={`${prefix}--blockquote__icon ${prefix}--blockquote__icon--custom`}
+      >
         {icon}
       </div>
     ) : withIcon || icon ? (
@@ -112,7 +117,9 @@ class Blockquote extends React.Component {
     return (
       <div className={blockquoteClass}>
         {iconElement && (
-          <div className={`${prefix}--blockquote__icon-wrapper`}>{iconElement}</div>
+          <div className={`${prefix}--blockquote__icon-wrapper`}>
+            {iconElement}
+          </div>
         )}
         <div className={blockquoteContentClass} style={style}>
           {(title || toggleable) && (
@@ -121,7 +128,8 @@ class Blockquote extends React.Component {
               onKeyDown={this.toggleBlockquote}
               className={`${prefix}--blockquote__title`}
               role="button"
-              tabIndex={0}>
+              tabIndex={0}
+            >
               {title
                 ? title
                 : this.state.open

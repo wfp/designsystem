@@ -37,7 +37,6 @@ describe('RadioButtonGroup', () => {
         expect(radioButton().length).toEqual(2);
       });
 
-
       // it('should set checked property based on valueSelected prop', () => {
       //   wrapper.setProps({ valueSelected: 'male' });
       //   console.log("vcbnmhgfa",radioButton().first().props())
@@ -104,7 +103,8 @@ describe('RadioButtonGroup', () => {
       <RadioButtonGroup
         valueSelected="male"
         defaultSelected="female"
-        name="gender">
+        name="gender"
+      >
         <RadioButton labelText="Male" value="male" />
         <RadioButton labelText="Female" value="female" />
       </RadioButtonGroup>

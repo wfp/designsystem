@@ -41,18 +41,14 @@ const Card = ({
 
   const content = (
     <>
-      {
-        kind === 'overlay' ? <div className={`${prefix}--photo-cardnew__background`} style={style} /> : null
-      }
-      
-      {image && kind === 'simple-card' ?
-      (
-        <img src={image} alt={title} className={`${prefix}--header-photo`} />
-      )
-      : null
-    }
+      {kind === 'overlay' ? (
+        <div className={`${prefix}--photo-cardnew__background`} style={style} />
+      ) : null}
 
-      
+      {image && kind === 'simple-card' ? (
+        <img src={image} alt={title} className={`${prefix}--header-photo`} />
+      ) : null}
+
       <div className={`${prefix}--photo-cardnew__info`}>
         <div>
           {kind === 'overlay' && (
@@ -62,13 +58,17 @@ const Card = ({
             />
           )}
           {metadata && (
-            <p className={`${prefix}--photo-cardnew__info__metadata`}>{metadata}</p>
+            <p className={`${prefix}--photo-cardnew__info__metadata`}>
+              {metadata}
+            </p>
           )}
           {title && (
             <h3 className={`${prefix}--photo-cardnew__info__title`}>{title}</h3>
           )}
           {subTitle && (
-            <p className={`${prefix}--photo-cardnew__info__subtitle`}>{subTitle}</p>
+            <p className={`${prefix}--photo-cardnew__info__subtitle`}>
+              {subTitle}
+            </p>
           )}
         </div>
       </div>
@@ -77,26 +77,28 @@ const Card = ({
   );
 
   return isLink ? (
-    <div 
-    className={wrapperClasses}
-    style={{ width: pagewidth, minHeight: pageheight }}>
-    <a
-      href={url}
-      target={isExternal ? '_blank' : ''}
-      style={{width: pagewidth, minHeight: pageheight}}
-      {...other}>
-      {content}
-    </a>
+    <div
+      className={wrapperClasses}
+      style={{ width: pagewidth, minHeight: pageheight }}
+    >
+      <a
+        href={url}
+        target={isExternal ? '_blank' : ''}
+        style={{ width: pagewidth, minHeight: pageheight }}
+        {...other}
+      >
+        {content}
+      </a>
     </div>
   ) : (
-      <div
+    <div
       className={wrapperClasses}
       {...other}
-      style={{ width: pagewidth, minHeight: pageheight }}>
+      style={{ width: pagewidth, minHeight: pageheight }}
+    >
       {content}
     </div>
   );
-
 };
 
 Card.propTypes = {

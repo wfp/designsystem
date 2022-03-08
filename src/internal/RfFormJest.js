@@ -22,7 +22,7 @@ let Form = reduxForm({
 
 // You have to connect() to any reducers that you wish to connect to yourself
 Form = connect(
-  state => ({
+  (state) => ({
     initialValues: state.account.data, // pull initial values from account reducer
   }),
   { load: loadAccount } // bind account loading action creator

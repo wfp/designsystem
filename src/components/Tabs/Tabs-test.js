@@ -99,10 +99,7 @@ describe('Tabs', () => {
     it('renders expected className', () => {
       const tabContentClass = 'wfp--tab-content';
       expect(
-        wrapper
-          .find('.wfp--tab-content')
-          .first()
-          .hasClass(tabContentClass)
+        wrapper.find('.wfp--tab-content').first().hasClass(tabContentClass)
       ).toBe(true);
     });
 
@@ -286,10 +283,7 @@ describe('selection change', () => {
   );
 
   it('updates selected state when selected prop changes', () => {
-    wrapper
-      .find('.secondTab')
-      .last()
-      .simulate('click');
+    wrapper.find('.secondTab').last().simulate('click');
     expect(wrapper.props().onSelectionChange).toHaveBeenCalledWith(1);
   });
 });

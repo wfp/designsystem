@@ -96,6 +96,31 @@ export const withIcon = (args) => {
   );
 };
 
+const sourcecode = ` 
+import { ContentSwitcher , Switch, Icon } from "@wfp/ui";
+import { iconAddGlyph } from '@wfp/icons'; 
+
+<ContentSwitcher onChange={()=>{}}>
+<Switch
+  kind="button"
+  name="one"
+  text="First section"
+  icon={<Icon icon={iconAddGlyph} />}
+/>
+<Switch
+  kind="button"
+  name="two"
+  text="Second section"
+  icon={<Icon icon={iconAddGlyph} />}
+/>
+<Switch
+  kind="button"
+  name="three"
+  text="Third section"
+  icon={<Icon icon={iconAddGlyph} />}
+/>
+</ContentSwitcher>`;
+
 withIcon.args = {
   children: 'ContentSwitcher',
 };
@@ -106,6 +131,9 @@ withIcon.story = {
   parameters: {
     docs: {
       storyDescription: desc,
+      source: {
+        code: sourcecode,
+      },
     },
   },
 };

@@ -126,7 +126,8 @@ export default class ModalWrapper extends React.Component {
             this.handleClose();
             onKeyDown(evt);
           }
-        }}>
+        }}
+      >
         {customButton ? (
           <React.Fragment>{customButtonEl}</React.Fragment>
         ) : (
@@ -136,7 +137,8 @@ export default class ModalWrapper extends React.Component {
             disabled={disabled}
             kind={triggerButtonKind}
             onClick={this.handleOpen}
-            inputref={this.triggerButton}>
+            inputref={this.triggerButton}
+          >
             {buttonTriggerText}
           </Button>
         )}

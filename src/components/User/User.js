@@ -43,7 +43,8 @@ const User = ({
         y="0px"
         viewBox="0 0 25 25"
         height="25px"
-        width="25px">
+        width="25px"
+      >
         <text x="50%" y="57%" dominantBaseline="middle" textAnchor="middle">
           {name && name.toUpperCase()[0]}
         </text>

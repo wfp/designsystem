@@ -42,7 +42,7 @@ export default function FileUploaderDropContainer(props) {
    * Filters the array of added files based on file type restrictions
    * @param {Event} evt - Event object, used to get the list of files added
    */
-  const validateFiles = evt => {
+  const validateFiles = (evt) => {
     if (evt.type === 'drop') {
       const transferredFiles = [...evt.dataTransfer.files];
       if (!accept.length) {
@@ -61,14 +61,14 @@ export default function FileUploaderDropContainer(props) {
     }
     return [...evt.target.files];
   };
-  const handleChange = evt => {
+  const handleChange = (evt) => {
     const addedFiles = validateFiles(evt);
     return onAddFiles(evt, { addedFiles });
   };
   return (
     <div
       className={`${prefix}--file`}
-      onDragOver={evt => {
+      onDragOver={(evt) => {
         evt.stopPropagation();
         evt.preventDefault();
         if (disabled) {
@@ -77,7 +77,7 @@ export default function FileUploaderDropContainer(props) {
         setActive(true);
         evt.dataTransfer.dropEffect = 'copy';
       }}
-      onDragLeave={evt => {
+      onDragLeave={(evt) => {
         evt.stopPropagation();
         evt.preventDefault();
         if (disabled) {
@@ -86,7 +86,7 @@ export default function FileUploaderDropContainer(props) {
         setActive(false);
         evt.dataTransfer.dropEffect = 'move';
       }}
-      onDrop={evt => {
+      onDrop={(evt) => {
         evt.stopPropagation();
         evt.preventDefault();
         if (disabled) {
@@ -94,17 +94,19 @@ export default function FileUploaderDropContainer(props) {
         }
         setActive(false);
         handleChange(evt);
-      }}>
+      }}
+    >
       <label
         className={labelClasses}
         htmlFor={id || uid.current}
         tabIndex={tabIndex || 0}
-        onKeyDown={evt => {
+        onKeyDown={(evt) => {
           /*if (matches(evt, [keys.Enter, keys.Space])) {
             inputRef.current.click();
           }*/
         }}
-        {...other}>
+        {...other}
+      >
         <div className={dropareaClasses} role={role || 'button'}>
           {labelText}
           <input
@@ -118,7 +120,7 @@ export default function FileUploaderDropContainer(props) {
             name={name}
             multiple={multiple}
             onChange={handleChange}
-            onClick={evt => {
+            onClick={(evt) => {
               evt.target.value = null;
             }}
           />

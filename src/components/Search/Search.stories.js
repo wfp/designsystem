@@ -13,25 +13,26 @@ export default {
   },
 };
 
-export const Regular = (args) => <Search {...args}/>
+export const Regular = (args) => <Search {...args} />;
 
 Regular.args = {
   name: 'search',
-  id:'regular'
+  id: 'regular',
 };
 
-
 export const RegularWithButton = (args) => (
-<div style={{width:'50%',display:'flex'}} >
-  <Search {...args} />
-  <Button kind="primary" style={{margin:'0 0.5rem'}}>Apply search</Button>
-</div>);
+  <div style={{ width: '50%', display: 'flex' }}>
+    <Search {...args} />
+    <Button kind="primary" style={{ margin: '0 0.5rem' }}>
+      Apply search
+    </Button>
+  </div>
+);
 
 RegularWithButton.args = {
   name: 'search',
-  id:"butonsearch"
+  id: 'butonsearch',
 };
-
 
 const descriptionsearch = `
 You can add a button to initate search action
@@ -61,7 +62,7 @@ export const SmallSearch = (args) => <Search {...args} />;
 
 SmallSearch.args = {
   kind: 'small',
-  id:'small'
+  id: 'small',
 };
 
 SmallSearch.story = {

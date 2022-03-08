@@ -10,7 +10,7 @@ import Link from '../Link';
 import User from '../User';
 
 storiesOf('Components|MainNavigation', module)
-  .addDecorator(story => <div style={{ direction: 'rtl' }}>{story()}</div>)
+  .addDecorator((story) => <div style={{ direction: 'rtl' }}>{story()}</div>)
   .add(
     'Right to left',
     /*`
@@ -35,7 +35,8 @@ storiesOf('Components|MainNavigation', module)
                 est Lorem ipsum dolor sit amet.
               </p>
             </div>
-          }>
+          }
+        >
           <Link href="http://communities.wfp.org" target="_blank">
             التاريخ
           </Link>
@@ -45,7 +46,8 @@ storiesOf('Components|MainNavigation', module)
             <div>
               <h3>أحكم</h3>
             </div>
-          }>
+          }
+        >
           <Link href="http://manuals.wfp.org" target="_blank">
             ذات
           </Link>
@@ -87,7 +89,8 @@ storiesOf('Components|MainNavigation', module)
                 est Lorem ipsum dolor sit amet.
               </p>
             </div>
-          }>
+          }
+        >
           <User title="والنفيس" />
         </MainNavigationItem>
       </MainNavigation>

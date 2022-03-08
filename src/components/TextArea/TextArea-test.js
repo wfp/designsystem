@@ -6,18 +6,13 @@ import TextArea from './TextArea';
 
 describe('TextArea', () => {
   describe('mock textarea', () => {
-    
     it('should render text area field', () => {
       const wrapper = mount(
-        
-          <TextArea
-            labelText="Test"
-            helperText="Helper text"
-          />
-      )
+        <TextArea labelText="Test" helperText="Helper text" />
+      );
       expect(wrapper).toMatchSnapshot();
-    })
-  })
+    });
+  });
 
   describe('should render as expected', () => {
     const wrapper = mount(
@@ -50,7 +45,6 @@ describe('TextArea', () => {
         expect(textarea().props().rows).toEqual(10);
       });
 
-
       it('should set disabled as expected', () => {
         expect(textarea().props().disabled).toEqual(false);
         wrapper.setProps({ disabled: true });
@@ -71,7 +65,6 @@ describe('TextArea', () => {
         wrapper.setProps({ defaultValue: 'default value' });
         expect(textarea().props().defaultValue).toEqual('default value');
       });
-
     });
 
     describe('label', () => {
@@ -118,64 +111,64 @@ describe('TextArea', () => {
         const renderedHelper = wrapper.find('.wfp--form__helper-text');
         expect(renderedHelper.text()).toEqual('Helper text');
       });
-    }); 
-
-  describe('events', () => {
-    describe('disabled textarea', () => {
-      const onClick = jest.fn();
-      const onChange = jest.fn();
-
-      const wrapper = shallow(
-        <TextArea
-          id="test"
-          labelText="testlabel"
-          onClick={onClick}
-          onChange={onChange}
-          disabled
-        />
-      );
-
-      const textarea = wrapper.find('textarea');
-
-      it('should not invoke onClick when textarea is clicked', () => {
-        textarea.simulate('click');
-        expect(onClick).not.toBeCalled();
-      });
-
-      it('should not invoke onChange', () => {
-        textarea.simulate('change');
-        expect(onChange).not.toBeCalled();
-      });
     });
 
-    describe('enabled textarea', () => {
-      const onClick = jest.fn();
-      const onChange = jest.fn();
-      const eventObject = {
-        target: { value: 'test' },
-      };
+    describe('events', () => {
+      describe('disabled textarea', () => {
+        const onClick = jest.fn();
+        const onChange = jest.fn();
 
-      const wrapper = shallow(
-        <TextArea
-          id="test"
-          labelText="testlabel"
-          onClick={onClick}
-          onChange={onChange}
-        />
-      );
+        const wrapper = shallow(
+          <TextArea
+            id="test"
+            labelText="testlabel"
+            onClick={onClick}
+            onChange={onChange}
+            disabled
+          />
+        );
 
-      const textarea = wrapper.find('textarea');
+        const textarea = wrapper.find('textarea');
 
-      it('should invoke onClick when textarea is clicked', () => {
-        textarea.simulate('click');
-        expect(onClick).toBeCalled();
+        it('should not invoke onClick when textarea is clicked', () => {
+          textarea.simulate('click');
+          expect(onClick).not.toBeCalled();
+        });
+
+        it('should not invoke onChange', () => {
+          textarea.simulate('change');
+          expect(onChange).not.toBeCalled();
+        });
       });
 
-      it('should invoke onChange when textarea value is changed', () => {
-        textarea.simulate('change', eventObject);
-        expect(onChange).toBeCalledWith(eventObject);
+      describe('enabled textarea', () => {
+        const onClick = jest.fn();
+        const onChange = jest.fn();
+        const eventObject = {
+          target: { value: 'test' },
+        };
+
+        const wrapper = shallow(
+          <TextArea
+            id="test"
+            labelText="testlabel"
+            onClick={onClick}
+            onChange={onChange}
+          />
+        );
+
+        const textarea = wrapper.find('textarea');
+
+        it('should invoke onClick when textarea is clicked', () => {
+          textarea.simulate('click');
+          expect(onClick).toBeCalled();
+        });
+
+        it('should invoke onChange when textarea value is changed', () => {
+          textarea.simulate('change', eventObject);
+          expect(onChange).toBeCalledWith(eventObject);
+        });
       });
     });
   });
-});
 });

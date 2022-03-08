@@ -3,7 +3,7 @@ import RadioButton from '../RadioButton';
 import RadioButtonSkeleton from '../RadioButton/RadioButton.Skeleton';
 import { mount, shallow } from 'enzyme';
 
-const render = props =>
+const render = (props) =>
   mount(
     <RadioButton
       {...props}

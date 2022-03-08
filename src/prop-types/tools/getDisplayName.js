@@ -5,7 +5,7 @@ const cachedDisplayNames = new WeakMap();
  * component type. It supports names from React elements, Stateless Functional
  * Components, and Class-based Components
  */
-const getDisplayName = type => {
+const getDisplayName = (type) => {
   if (typeof type === 'string') {
     return type;
   }

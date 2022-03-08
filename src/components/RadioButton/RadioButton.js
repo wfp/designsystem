@@ -58,9 +58,6 @@ class RadioButton extends React.Component {
     value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
   };
 
-
-  
-
   UNSAFE_componentWillMount() {
     this.uid = this.props.id || uid();
   }
@@ -101,7 +98,6 @@ class RadioButton extends React.Component {
     );
   }
 }
-
 
 export default (() => {
   const forwardRef = (props, ref) => <RadioButton {...props} inputRef={ref} />;

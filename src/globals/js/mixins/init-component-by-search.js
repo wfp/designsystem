@@ -1,4 +1,4 @@
-export default function(ToMix) {
+export default function (ToMix) {
   /**
    * Mix-in class to instantiate components by searching for their root elements.
    * @class InitComponentBySearch
@@ -32,7 +32,7 @@ export default function(ToMix) {
         this.create(target, options);
       } else {
         [...target.querySelectorAll(effectiveOptions.selectorInit)].forEach(
-          element => this.create(element, options)
+          (element) => this.create(element, options)
         );
       }
     }

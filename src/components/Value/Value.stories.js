@@ -29,14 +29,29 @@ export const Regular = (args) => (
   />
 );
 
-const description = `
-You can customize the content by using \`BannerNavigation\`.
+const valuesourcecode = `
+import { Value, Unit } from "@wfp/ui";
+
+<Value
+    value={
+      <Unit type="Usd" input="thousand" output="million" showZero hideEmpty>
+        1234567
+      </Unit>
+    }
+    secondaryValue={
+      <Unit type="Usd" input="thousand" output="million" showZero hideEmpty>
+        1234567
+      </Unit>
+    }
+/>
 `;
 
 Regular.story = {
   parameters: {
     docs: {
-      storyDescription: description,
+      source: {
+        code: valuesourcecode,
+      },
     },
   },
 };

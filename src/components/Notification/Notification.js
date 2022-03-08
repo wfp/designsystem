@@ -35,7 +35,8 @@ export function NotificationActionButton({
       kind="ghost"
       onClick={onClick}
       size="small"
-      {...other}>
+      {...other}
+    >
       {children}
     </Button>
   );
@@ -69,10 +70,12 @@ export function NotificationButton({
   ...other
 }) {
   const buttonClassName = classnames(className, {
-    [`${prefix}--${notificationType}-notification__close-button`]: notificationType,
+    [`${prefix}--${notificationType}-notification__close-button`]:
+      notificationType,
   });
   const iconClassName = classnames({
-    [`${prefix}--${notificationType}-notification__close-icon`]: notificationType,
+    [`${prefix}--${notificationType}-notification__close-icon`]:
+      notificationType,
   });
 
   return (
@@ -82,7 +85,8 @@ export function NotificationButton({
       type={type}
       aria-label={iconDescription}
       title={iconDescription}
-      className={buttonClassName}>
+      className={buttonClassName}
+    >
       {renderIcon && (
         <Icon
           icon={renderIcon}
@@ -169,7 +173,8 @@ export function NotificationTextDetails({
     return (
       <div
         {...other}
-        className={`${prefix}--inline-notification__text-wrapper`}>
+        className={`${prefix}--inline-notification__text-wrapper`}
+      >
         <p className={`${prefix}--inline-notification__title`}>{title}</p>
         <div className={`${prefix}--inline-notification__subtitle`}>
           {subtitle}
@@ -226,7 +231,8 @@ function NotificationIcon({ iconDescription, kind, notificationType }) {
   return (
     <Icon
       icon={iconForKind}
-      className={`${prefix}--${notificationType}-notification__icon`}>
+      className={`${prefix}--${notificationType}-notification__icon`}
+    >
       <title>{iconDescription}</title>
     </Icon>
   );
@@ -305,7 +311,8 @@ export function ToastNotification({
         title={title}
         subtitle={subtitle}
         caption={caption}
-        notificationType={notificationType}>
+        notificationType={notificationType}
+      >
         {children}
       </NotificationTextDetails>
       {!hideCloseButton && (
@@ -457,7 +464,8 @@ export function InlineNotification({
         <NotificationTextDetails
           title={title}
           subtitle={subtitle}
-          notificationType={notificationType}>
+          notificationType={notificationType}
+        >
           {children}
         </NotificationTextDetails>
       </div>

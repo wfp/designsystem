@@ -12,10 +12,11 @@ export default {
   },
 };
 
-export const RegularSlider = (args) => 
-<div style={{ marginTop: '2rem' }}>
+export const RegularSlider = (args) => (
+  <div style={{ marginTop: '2rem' }}>
     <Slider id="slider2" {...args} />
-</div>;
+  </div>
+);
 
 RegularSlider.args = {
   name: 'Form item name (name)',
@@ -54,7 +55,6 @@ hideTextInput.story = {
   },
 };
 
-
 export const Fullwidth = (args) => (
   <div style={{ marginTop: '2rem' }}>
     <Slider id="slider3" {...args} />
@@ -80,7 +80,6 @@ Fullwidth.story = {
     },
   },
 };
-
 
 export const Disabled = (args) => (
   <div style={{ marginTop: '2rem' }}>

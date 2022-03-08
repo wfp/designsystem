@@ -36,7 +36,8 @@ export const Regular = (args) => (
         <Button>{primaryButtonText}</Button>
       </div>
     )}
-    backgroundImage="https://password.go.wfp.org/images/MAU_20150202_WFP-Agron_Dragaj_0018.jpg">
+    backgroundImage="https://password.go.wfp.org/images/MAU_20150202_WFP-Agron_Dragaj_0018.jpg"
+  >
     <p className="wfp--modal-content__text wfp--form-long">
       <TextInput
         id="emailinput"
@@ -61,7 +62,8 @@ Regular.decorators = [
       style={{
         position: 'relative',
         height: '700px',
-      }}>
+      }}
+    >
       <Story />
     </div>
   ),

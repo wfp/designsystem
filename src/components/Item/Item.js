@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
+import { iconChevronRight } from '@wfp/icons';
 import settings from '../../globals/js/settings';
 import Icon from '../Icon';
 const { prefix } = settings;
-import { iconChevronRight } from '@wfp/icons';
 
 /** The item component to show entries inside a list, like a sidebar or an overview page. */
 export const Item = ({
@@ -39,7 +39,8 @@ export const Item = ({
         <div className={`${prefix}--item__image`}>{image}</div>
       ) : noImage ? (
         <div
-          className={`${prefix}--item__image ${prefix}--item__image-empty`}></div>
+          className={`${prefix}--item__image ${prefix}--item__image-empty`}
+        ></div>
       ) : null}
 
       <div className={`${prefix}--item__content`}>
@@ -106,7 +107,7 @@ Item.propTypes = {
   /**
    * Provide a kind to use different appearances.
    */
-  kind: PropTypes.oneOf(['undefined', 'large']),
+  kind: PropTypes.oneOf(['undefined', 'large', 'horizontal']),
 
   /**
    * Provide a wrap to use different borders.

@@ -44,7 +44,8 @@ storiesOf('Components|ReduxFormWrapper', module)
               <Button
                 type="button"
                 onClick={form.reset}
-                disabled={submitting || pristine}>
+                disabled={submitting || pristine}
+              >
                 Reset
               </Button>
             </div>

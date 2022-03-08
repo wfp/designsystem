@@ -58,7 +58,8 @@ storiesOf('Components|RadioButtonGroup', module)
       <RadioButtonGroup
         defaultSelected="default-selected"
         legend="Group Legend"
-        {...props.group()}>
+        {...props.group()}
+      >
         <RadioButton
           value="standard"
           id="radio-1"
@@ -86,7 +87,8 @@ storiesOf('Components|RadioButtonGroup', module)
       <RadioButtonGroup
         defaultSelected="default-selected"
         legend="Group Legend"
-        {...props.group()}>
+        {...props.group()}
+      >
         <Checkbox value="standard" id="radio-1" {...checkProps} />
         <Checkbox value="default-selected" id="radio-2" {...checkProps} />
         <Checkbox value="disabled" id="radio-3" {...checkProps} />

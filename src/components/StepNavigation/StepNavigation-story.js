@@ -5,7 +5,7 @@ import { withKnobs, boolean, number } from '@storybook/addon-knobs';
 import StepNavigation from '../StepNavigation';
 import StepNavigationItem from '../StepNavigationItem';
 
-const handleTabClick = index => {
+const handleTabClick = (index) => {
   this.setState({ page: index });
 };
 

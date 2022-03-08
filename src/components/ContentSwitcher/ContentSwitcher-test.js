@@ -38,7 +38,8 @@ describe('ContentSwitcher', () => {
       <ContentSwitcher
         selectedIndex={1}
         onChange={() => {}}
-        className="extra-class">
+        className="extra-class"
+      >
         <Switch kind="anchor" text="one" />
         <Switch kind="anchor" text="two" />
       </ContentSwitcher>
@@ -73,7 +74,6 @@ describe('ContentSwitcher', () => {
     it('should invoke onChange', () => {
       expect(onChange).toBeCalledWith(mockData);
     });
-
 
     it('should set selected to true on the correct child', () => {
       wrapper.update();

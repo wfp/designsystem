@@ -25,7 +25,8 @@ storiesOf('Components|ReduxFormWrapper', module)
               InputComponent={Select}
               type="text"
               labelText="Label"
-              placeholder="First Name">
+              placeholder="First Name"
+            >
               <SelectItem value="option-1" text="Option 1" />
               <SelectItem value="option-2" text="Option 2" />
             </Field>
@@ -36,7 +37,8 @@ storiesOf('Components|ReduxFormWrapper', module)
               <Button
                 type="button"
                 onClick={form.reset}
-                disabled={submitting || pristine}>
+                disabled={submitting || pristine}
+              >
                 Reset
               </Button>
             </div>

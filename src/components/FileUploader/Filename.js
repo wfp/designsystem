@@ -41,7 +41,8 @@ export class Filename extends Component {
         <div
           className={`${prefix}--loading`}
           style={{ ...style, width: '1rem', height: '1rem' }}
-          {...other}>
+          {...other}
+        >
           <svg className={`${prefix}--loading__svg`} viewBox="-42 -42 84 84">
             <circle cx="0" cy="0" r="37.5" />
           </svg>

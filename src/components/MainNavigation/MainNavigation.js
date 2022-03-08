@@ -56,14 +56,8 @@ class MainNavigation extends Component {
   };
 
   render() {
-    const {
-      children,
-      className,
-      id,
-      logo,
-      mobilePageWidth,
-      pageWidth,
-    } = this.props;
+    const { children, className, id, logo, mobilePageWidth, pageWidth } =
+      this.props;
 
     const wrapperClasses = classNames(`${prefix}--main-navigation`, className);
 
@@ -86,11 +80,13 @@ class MainNavigation extends Component {
         <Wrapper
           pageWidth={pageWidth}
           mobilePageWidth={mobilePageWidth}
-          className={`${prefix}--main-navigation__wrapper`}>
+          className={`${prefix}--main-navigation__wrapper`}
+        >
           <div className={`${prefix}--main-navigation__logo-wrapper`}>
             <Button
               className={`${prefix}--main-navigation__button`}
-              onClick={this.toggleMenu}>
+              onClick={this.toggleMenu}
+            >
               Menu
             </Button>
             <div className={`${prefix}--main-navigation__logo`}>{logo}</div>
@@ -116,7 +112,10 @@ MainNavigation.propTypes = {
   /**
    * Usually multiple `MainNavigationItem` elements
    */
-  children: PropTypes.node.isRequired,
+  children: PropTypes.oneOfType([
+    PropTypes.node.isRequired,
+    PropTypes.func.isRequired,
+  ]),
   /**
    * The CSS class name to be placed on the wrapping element.
    */

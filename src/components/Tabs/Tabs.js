@@ -244,7 +244,8 @@ class Tabs extends React.Component {
               className={`${prefix}--tab-content`}
               aria-hidden={!selected}
               hidden={!selected}
-              selected={selected}>
+              selected={selected}
+            >
               {children}
             </TabContent>
           );

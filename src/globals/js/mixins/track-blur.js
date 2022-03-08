@@ -17,7 +17,7 @@ function trackBlur(ToMix) {
         on(
           this.element.ownerDocument,
           focusinEventName,
-          event => {
+          (event) => {
             if (!this.element.contains(event.target)) {
               this.handleBlur(event);
             }

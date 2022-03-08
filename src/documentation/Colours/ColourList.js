@@ -23,12 +23,14 @@ export const ColourList = ({ filter }) => {
             {color.description && <p>{color.description}</p>}
             {color.name}
           </div>
-        }>
+        }
+      >
         <li>
           <Module fullHeight noMargin light className="color__item">
             <div
               className="color__field"
-              style={{ backgroundColor: color.hex }}>
+              style={{ backgroundColor: color.hex }}
+            >
               {/*<div
                 className="color__check"
               style={{ backgroundColor: `var(--${color.name})` }}></div>*/}
@@ -46,7 +48,8 @@ export const ColourList = ({ filter }) => {
                 flexGrow: '1',
                 fontSize: '0.7em',
                 lineHeight: '2em',
-              }}>
+              }}
+            >
               <ModuleBody>
                 <h4>{color.name}</h4>
                 <List colon kind="simple">
@@ -73,7 +76,6 @@ export const ColourList = ({ filter }) => {
       </Tooltip>
     );
   });
-
 
   return <ul className="color--list">{list}</ul>;
 };

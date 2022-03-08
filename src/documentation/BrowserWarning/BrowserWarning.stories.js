@@ -49,7 +49,8 @@ export const ErrorDialog = (args) => {
           onRequestSubmit={submitAndClose}
           modalHeading="Outdated browser"
           onRequestClose={toggleModal}
-          danger>
+          danger
+        >
           <p className="wfp--modal-content__text">
             It looks like you are using Internet Explorer 11 or older as your
             favourite browser. We recommend that you switch to a more modern

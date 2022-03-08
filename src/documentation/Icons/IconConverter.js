@@ -64,7 +64,8 @@ export default class FaviconGenerator extends Component {
                       <Module
                         light
                         className="some-class"
-                        style={{ padding: '1em 0' }}>
+                        style={{ padding: '1em 0' }}
+                      >
                         <ModuleBody>
                           <Icon name="your icon" icon={this.state.json} />
                           <Icon

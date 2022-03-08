@@ -74,7 +74,7 @@ export default class Search extends Component {
   render() {
     const {
       className,
-            closeButtonLabelText,
+      closeButtonLabelText,
       formItemClassName,
       type,
       id = (this._inputId =
@@ -106,45 +106,47 @@ export default class Search extends Component {
       'wfp--search-close': true,
       'wfp--search-close--hidden': !hasContent,
     });
-  /*<div className={searchClasses} role="search">*/
+    /*<div className={searchClasses} role="search">*/
     return (
-    
-
-<Input {...this.props} formItemClassName={searchClasses}>
-      {(e) => {
-        return(
-        <>
-        <Icon
-          icon={iconSearch}
-          description={labelText}
-          className="wfp--search-magnifier"
-          onClick={onSearchIconClick}
-        />
-        {/*<label htmlFor={id} className="wfp--label">
+      <Input {...this.props} formItemClassName={searchClasses}>
+        {(e) => {
+          return (
+            <>
+              <Icon
+                icon={iconSearch}
+                description={labelText}
+                className="wfp--search-magnifier"
+                onClick={onSearchIconClick}
+              />
+              {/*<label htmlFor={id} className="wfp--label">
           {labelText}
       </label>*/}
-        <input
-          {...other}
-          type={type}
-          className="wfp--search-input"
-          id={id}
-          placeholder={placeHolderText}
-          onChange={this.handleChange}
-          ref={(input) => {
-            this.input = input;
-          }}
-        />
-        <button
-          className={clearClasses}
-          onClick={this.clearInput}
-          type="button"
-          aria-label={closeButtonLabelText}>
-          <Icon icon={iconCloseGlyph} description={closeButtonLabelText} />
-        </button>
-        </>
-      );
-      }}
-        </Input>
+              <input
+                {...other}
+                type={type}
+                className="wfp--search-input"
+                id={id}
+                placeholder={placeHolderText}
+                onChange={this.handleChange}
+                ref={(input) => {
+                  this.input = input;
+                }}
+              />
+              <button
+                className={clearClasses}
+                onClick={this.clearInput}
+                type="button"
+                aria-label={closeButtonLabelText}
+              >
+                <Icon
+                  icon={iconCloseGlyph}
+                  description={closeButtonLabelText}
+                />
+              </button>
+            </>
+          );
+        }}
+      </Input>
     );
   }
 }

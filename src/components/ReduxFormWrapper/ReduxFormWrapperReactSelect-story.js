@@ -19,13 +19,13 @@ const options = [
 storiesOf('Components|ReduxFormWrapper', module)
   .addDecorator(withKnobs)
 
-  .addDecorator(story => (
+  .addDecorator((story) => (
     <Provider store={store}>
       <FormWrapper>{story()}</FormWrapper>
     </Provider>
   ))
   .add('react-select', () => {
-    const ReactSelectHelper = props => (
+    const ReactSelectHelper = (props) => (
       <div className="wfp--form-item">
         <label htmlFor={props.id} className="wfp--label">
           {props.labelText}

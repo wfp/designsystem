@@ -48,7 +48,8 @@ storiesOf('Components|SecondaryNavigation', module)
     return (
       <SecondaryNavigation
         {...secondaryNavigationProps}
-        additional="additional Information">
+        additional="additional Information"
+      >
         <Breadcrumb>
           <BreadcrumbItem>
             <a href="/#">

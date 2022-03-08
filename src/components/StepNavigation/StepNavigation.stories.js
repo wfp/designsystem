@@ -21,9 +21,10 @@ export const StepNavigationRegular = (args) => {
       <StepNavigation
         {...args}
         onSelectionChange={(e) => setStep(e)}
-        selectedPage={step}>
+        selectedPage={step}
+      >
         <StepNavigationItem label="Item without Status" page={0} />
-        <StepNavigationItem label="Active Item" page={1}  />
+        <StepNavigationItem label="Active Item" page={1} />
         <StepNavigationItem
           label="Not started Item"
           page={2}
@@ -41,11 +42,12 @@ StepNavigationRegular.args = {
 StepNavigationRegular.story = {
   parameters: {
     docs: {
+      storyDescription: `Using \`onSelectionChange\` and \`selectedPage\` props in this StepNavigation example`,
       source: {
         code: `
         import { StepNavigation , StepNavigationItem } from "@wfp/ui";
         
-const StepNavigationExample = (args) => {
+const StepNavigationExample = () => {
   const [step, setStep] = useState(0);
   return (
     <StepNavigation onSelectionChange={(e) => setStep(e)} selectedPage={step}>
@@ -122,7 +124,7 @@ Vertical.args = { vertical: true };
 Vertical.story = {
   parameters: {
     docs: {
-      storyDescription: ``,
+      storyDescription: `Vertical StepNavigation with the different status`,
     },
   },
 };

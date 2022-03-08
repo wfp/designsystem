@@ -149,7 +149,8 @@ storiesOf('Design|Guidelines', module)
           Keep the number of steps at the minimum{' '}
           <Link
             href="https://uxplanet.org/wizard-design-pattern-8c86e14f2a38"
-            target="_blank">
+            target="_blank"
+          >
             read more
           </Link>
         </li>

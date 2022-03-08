@@ -16,10 +16,10 @@ describe('Item', () => {
 
     it('has inner wrapper content', () => {
       expect(wrapper.exists('.wfp--item__content')).toBe(true);
-  })
+    });
     it('has inner text wrapper', () => {
       expect(wrapper.exists('.wfp--item__text-wrapper')).toBe(true);
-    })
+    });
 
     // describe('renders Image as expected', () => {
     //   const imageWrapper = shallow(<Item image="" >A simple link</Item>);
@@ -28,6 +28,5 @@ describe('Item', () => {
     //       expect(imageWrapper.exists('.wfp--item__image')).toBe(true);
     //   })
     // });
-
   });
 });

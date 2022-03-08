@@ -47,19 +47,16 @@ export const RegularSubNavigation = (args) => (
       <SubNavigationFilter>
         <Search
           className="some-class"
-          small
           id="search-2"
           labelText="Filter"
-          placeHolderText="Filter"
-          onChange={() => {
-            alert('Apply Filter');
-          }}
+          placeholder="Filter"
+          onChange={() => {}}
         />
       </SubNavigationFilter>
     </SubNavigationHeader>
     <SubNavigationContent>
       <SubNavigationList>
-        <SubNavigationGroup title="First List" columns>
+        <SubNavigationGroup title="First List" columns={3}>
           <SubNavigationItem>
             <Link href="https://go.docs.wfp.org" target="_blank">
               GoDocs
@@ -158,15 +155,93 @@ export const RegularSubNavigation = (args) => (
   </SubNavigation>
 );
 
-const description = `
-You can customize the content by using \`BannerNavigation\`.
+const sourcecode = `
+import {
+  SubNavigation , SubNavigationHeader, SubNavigationTitle, SubNavigationLink, SubNavigationFilter, SubNavigationContent, SubNavigationList, SubNavigationGroup, SubNavigationItem,
+  Button, Search, Link
+} from "@wfp/ui";
+
+<SubNavigation>
+  <SubNavigationHeader>
+    <SubNavigationTitle>
+      The Title
+    </SubNavigationTitle>
+    <SubNavigationLink>
+      <Button small>
+        The SubPage Link
+      </Button>
+    </SubNavigationLink>
+    <SubNavigationFilter>
+      <Search
+        className="some-class"
+        id="search-2"
+        labelText="Filter"
+        onChange={() => {}}
+        placeholder="Filter"
+      />
+    </SubNavigationFilter>
+  </SubNavigationHeader>
+  <SubNavigationContent>
+    <SubNavigationList>
+      <SubNavigationGroup
+        columns={3}
+        title="First List"
+      >
+        <SubNavigationItem>
+          <Link
+            href="https://go.docs.wfp.org"
+            target="_blank"
+          >
+            GoDocs
+          </Link>
+        </SubNavigationItem>
+        <SubNavigationItem>
+          <Link
+            href="https://go.docs.wfp.org"
+            target="_blank"
+          >
+            GoDocs
+          </Link>
+        </SubNavigationItem>
+        <SubNavigationItem>
+          <Link
+            href="https://go.docs.wfp.org"
+            target="_blank"
+          >
+            GoDocs
+          </Link>
+        </SubNavigationItem>
+      </SubNavigationGroup>
+      <SubNavigationGroup title="Second List of Items">
+        <SubNavigationItem>
+          <Link
+            href="https://go.docs.wfp.org"
+            target="_blank"
+          >
+            GoDocs
+          </Link>
+        </SubNavigationItem>
+        <SubNavigationItem>
+          <Link
+            href="https://go.docs.wfp.org"
+            target="_blank"
+          >
+            GoDocs
+          </Link>
+        </SubNavigationItem>
+      </SubNavigationGroup>
+    </SubNavigationList>
+  </SubNavigationContent>
+</SubNavigation>
 `;
 
 RegularSubNavigation.story = {
   name: 'Regular',
   parameters: {
     docs: {
-      storyDescription: description,
+      source: {
+        code: sourcecode,
+      },
     },
   },
 };

@@ -5,7 +5,7 @@ import settings from '../../globals/js/settings';
 
 const { prefix } = settings;
 
-const Switch = props => {
+const Switch = (props) => {
   const {
     className,
     index,
@@ -20,12 +20,12 @@ const Switch = props => {
     ...other
   } = props;
 
-  const handleClick = e => {
+  const handleClick = (e) => {
     e.preventDefault();
     onClick({ index, name, text });
   };
 
-  const handleKeyDown = e => {
+  const handleKeyDown = (e) => {
     const key = e.key || e.which;
 
     if (key === 'Enter' || key === 13 || key === ' ' || key === 32) {

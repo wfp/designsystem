@@ -27,7 +27,8 @@ class SingleComponent extends Component {
       <div className={classNames}>
         <div
           id="container"
-          style={{ flexBasis: flexBasis ? flexBasis : 'auto' }}>
+          style={{ flexBasis: flexBasis ? flexBasis : 'auto' }}
+        >
           {children}
         </div>
       </div>

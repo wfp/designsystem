@@ -45,7 +45,8 @@ storiesOf('Components|Wrapper', module)
       <Wrapper
         pageWidth={pageWidth}
         mobilePageWidth={mobilePageWidth}
-        spacing={spacing}>
+        spacing={spacing}
+      >
         Assisting 91.4 million people in around 83 countries each year, the
         World Food Programme (WFP) is the leading humanitarian organization
         saving lives and changing lives, delivering food assistance in

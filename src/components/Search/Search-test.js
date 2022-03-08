@@ -84,21 +84,14 @@ describe('Search', () => {
         });
 
         it('should have type="button"', () => {
-          const type1 = btns
-            .first()
-            .instance()
-            .getAttribute('type');
-          const type2 = btns
-            .last()
-            .instance()
-            .getAttribute('type');
+          const type1 = btns.first().instance().getAttribute('type');
+          const type2 = btns.last().instance().getAttribute('type');
           expect(type1).toEqual('button');
           expect(type2).toEqual('button');
         });
       });
 
       describe('icons', () => {
-
         it('renders two Icons', () => {
           const icons = wrapper.find(Icon);
           expect(icons.length).toEqual(2);
@@ -116,7 +109,6 @@ describe('Search', () => {
           labelText="testlabel"
         />
       );
-
 
       // it('should have the expected small class', () => {
       //   expect(small.hasClass('wfp--search--sm')).toEqual(true);

@@ -21,7 +21,8 @@ const Label = ({
       <label
         {...other}
         className={labelClasses}
-        htmlFor={id ? id : input ? input.name : ''}>
+        htmlFor={id ? id : input ? input.name : ''}
+      >
         {children ? children : label}
       </label>
     );

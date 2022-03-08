@@ -11,8 +11,8 @@ export default {
   title: 'Components/UI Elements/Table',
   component: Table,
   subcomponents: {
-    TableSorting, 
-    Pagination 
+    TableSorting,
+    Pagination,
   },
   parameters: {
     componentSubtitle: 'Component',
@@ -23,16 +23,11 @@ export default {
 
 function ReactTable({ columns, data, withBorder }) {
   // Use the state and functions returned from useTable to build your UI
-  const {
-    getTableProps,
-    getTableBodyProps,
-    headerGroups,
-    rows,
-    prepareRow,
-  } = useTable({
-    columns,
-    data,
-  });
+  const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
+    useTable({
+      columns,
+      data,
+    });
 
   // Render the UI for your table
   return (
@@ -156,27 +151,22 @@ function ReactTablePagination({ columns, data, withBorder }) {
 }
 
 function ReactTableSorting({ columns, data, withBorder }) {
-  const {
-    getTableProps,
-    getTableBodyProps,
-    headerGroups,
-    rows,
-    prepareRow,
-  } = useTable(
-    {
-      columns,
-      data,
-      initialState: {
-        sortBy: [
-          {
-            id: 'age',
-            desc: false,
-          },
-        ],
+  const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
+    useTable(
+      {
+        columns,
+        data,
+        initialState: {
+          sortBy: [
+            {
+              id: 'age',
+              desc: false,
+            },
+          ],
+        },
       },
-    },
-    useSortBy
-  );
+      useSortBy
+    );
   return (
     <Table {...getTableProps()}>
       <thead>

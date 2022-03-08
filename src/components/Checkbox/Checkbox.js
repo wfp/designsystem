@@ -104,7 +104,7 @@ Checkbox.propTypes = {
   hideLabel: PropTypes.bool,
 
   /**
-   * Receives three arguments: true/false, the checkbox's id, and the dom event.
+   * Receives three arguments: the dom event, true/false and the checkbox's id.
    */
   onChange: PropTypes.func,
 

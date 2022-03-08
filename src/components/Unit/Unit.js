@@ -60,13 +60,12 @@ const Unit = (props) => {
   const setupClassName = setup ? `${prefix}--unit--${setup}` : '';
   const classNameCalc = `${prefix}--unit ${className} ${unitClassName} ${outputClassName} ${setupClassName}`;
 
-
   if (string) {
     return Unit(props);
   }
 
   if (Unit === undefined) {
-    //  console.warn(`The unit "${type}" is undefined`); 
+    //  console.warn(`The unit "${type}" is undefined`);
     return null;
   }
 

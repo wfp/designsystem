@@ -23,7 +23,8 @@ const customIcon = (
     width="50"
     height="50"
     viewBox="0 0 50 50"
-    xmlns="http://www.w3.org/2000/svg">
+    xmlns="http://www.w3.org/2000/svg"
+  >
     <g fillRule="evenodd">
       <path
         d="M47 15.2l-9.4 4.2c.5 1.3.9 2.6 1 3.9L49 22a24 24 0 0 0-1.9-6.8z"

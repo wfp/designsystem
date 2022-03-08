@@ -43,7 +43,8 @@ export default function Illustrations() {
             justifyContent: 'center',
             alignItems: 'center',
             width: '50%',
-          }}>
+          }}
+        >
           <ModuleBody>
             <a
               href={`${process.env.STORYBOOK_INTERNAL_ASSETS}illustrations/${e.filename}.svg`}
@@ -54,7 +55,8 @@ export default function Illustrations() {
                 alignItems: 'center',
                 width: '100%',
                 height: '300px',
-              }}>
+              }}
+            >
               <img
                 alt={e.filename}
                 style={{ width: '80%', height: '200px', objectFit: 'contain' }}

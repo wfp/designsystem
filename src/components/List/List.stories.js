@@ -162,18 +162,17 @@ ListitemBullets.story = {
   },
 };
 
-
 export const NestedListItems = (args) => (
   <List kind="unordered">
     <ListItem>Item label</ListItem>
     <ListItem>Item label</ListItem>
     <List kind="ordered">
-        <ListItem>Item label 2</ListItem>
-        <ListItem>Item label 2</ListItem>
-        <List>
-          <ListItem>Item label 3</ListItem>
-          <ListItem>Item label 3</ListItem>
-        </List>
+      <ListItem>Item label 2</ListItem>
+      <ListItem>Item label 2</ListItem>
+      <List>
+        <ListItem>Item label 3</ListItem>
+        <ListItem>Item label 3</ListItem>
+      </List>
     </List>
   </List>
 );

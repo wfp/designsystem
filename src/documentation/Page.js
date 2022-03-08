@@ -7,7 +7,8 @@ const Page = ({ children, pageWidth, subTitle, title }) => {
     <Wrapper
       style={{ margin: '4rem auto' }}
       className="wfp--story"
-      pageWidth={pageWidth ? pageWidth : 'sm'}>
+      pageWidth={pageWidth ? pageWidth : 'sm'}
+    >
       <h2 className="wfp--story__subtitle">{subTitle}</h2>
       <h1 className="wfp--story__title">{title}</h1>
       {children}

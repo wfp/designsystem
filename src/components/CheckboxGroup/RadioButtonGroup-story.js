@@ -48,7 +48,8 @@ storiesOf('Components|InputGroup', module)
       <InputGroup
         defaultSelected="default-selected"
         legend="Group Legend"
-        {...props.group()}>
+        {...props.group()}
+      >
         <RadioButton value="standard" id="radio-1" {...radioProps} />
         <RadioButton value="default-selected" id="radio-2" {...radioProps} />
         <RadioButton value="disabled" id="radio-3" {...radioProps} />

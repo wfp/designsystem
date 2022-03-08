@@ -1,4 +1,4 @@
-export default function(ToMix) {
+export default function (ToMix) {
   /**
    * Mix-in class to manage handles in component.
    * Managed handles are automatically released when the component with this class mixed in is released.
@@ -34,7 +34,7 @@ export default function(ToMix) {
     }
 
     release() {
-      this.handles.forEach(handle => {
+      this.handles.forEach((handle) => {
         handle.release();
         this.handles.delete(handle);
       });

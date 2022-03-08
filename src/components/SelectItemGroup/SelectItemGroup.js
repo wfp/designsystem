@@ -18,7 +18,8 @@ const SelectItemGroup = ({
       className={classNames}
       label={label}
       disabled={disabled}
-      {...other}>
+      {...other}
+    >
       {children}
     </optgroup>
   );

@@ -18,15 +18,14 @@ describe('Hero', () => {
     it('Renders as an <a> element with an href', () => {
       expect(wrapper.is('a')).toBe(true);
     });
-    
+
     it('should inherit the href property', () => {
       expect(wrapper.props().href).toEqual('www.google.com');
     });
-    
+
     it('should all for custom classes to be applied', () => {
       expect(wrapper.hasClass('some-class')).toEqual(true);
     });
-
   });
 
   describe('Renders as expected', () => {
@@ -34,7 +33,7 @@ describe('Hero', () => {
       <Hero className="some-class" kind="related" isLink={false}>
         A simple link
       </Hero>
-    )
+    );
     it('Renders as expected', () => {
       expect(wrapper.length).toBe(1);
     });
@@ -44,30 +43,28 @@ describe('Hero', () => {
     });
 
     describe('Renders content as expected', () => {
-      const contentWrapper = () => wrapper.find('div.wfp--photo-card__background');
+      const contentWrapper = () =>
+        wrapper.find('div.wfp--photo-card__background');
       const infoWrapper = () => wrapper.find('div.wfp--photo-card__info');
 
-      it("renders content background class as expected", () => {
-        expect(contentWrapper().hasClass('wfp--photo-card__background')).toEqual(true)
-      })
+      it('renders content background class as expected', () => {
+        expect(
+          contentWrapper().hasClass('wfp--photo-card__background')
+        ).toEqual(true);
+      });
 
-      it("renders card info class as expected", () => {
-        expect(infoWrapper().hasClass('wfp--photo-card__info')).toEqual(true)
-      })
+      it('renders card info class as expected', () => {
+        expect(infoWrapper().hasClass('wfp--photo-card__info')).toEqual(true);
+      });
 
-      it("renders card info content as expected", () => {
-        expect(infoWrapper().props().children.length).toBe(2)
-      })
-    
+      it('renders card info content as expected', () => {
+        expect(infoWrapper().props().children.length).toBe(2);
+      });
+
       // it('render kind props as expected', () => {
       //   wrapper.setProps({ kind: 'related' });
       //   expect(wrapper.props().kind).toEqual('related');
       // });
-    })
-
-    
-  })
-
-
-  
+    });
+  });
 });

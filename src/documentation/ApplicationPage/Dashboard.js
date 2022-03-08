@@ -10,7 +10,8 @@ export default function Dashboard() {
   return (
     <Page
       title="Dashboard design"
-      subTitle="Operational & Analytical applications">
+      subTitle="Operational & Analytical applications"
+    >
       <h3>When to use it?</h3>
       <p>
         Use the Dashboard pattern whenever you have to display data with a high
@@ -38,12 +39,14 @@ export default function Dashboard() {
       </p>
       <h3>How to use it?</h3>
       <p>
-        Place <Link onClick={linkTo('Components', 'Module')}>
+        Place{' '}
+        <Link onClick={linkTo('Components', 'Module')}>
           Modules (sometimes called Cards)
-        </Link> inside a <Link onClick={linkTo('Components', 'Wrapper')}>Wrapper</Link> component.
-        <br /> An example can be found <Link onClick={linkTo('Templates', 'Application Page')}> here
-        </Link>
-        .
+        </Link>{' '}
+        inside a <Link onClick={linkTo('Components', 'Wrapper')}>Wrapper</Link>{' '}
+        component.
+        <br /> An example can be found{' '}
+        <Link onClick={linkTo('Templates', 'Application Page')}> here</Link>.
       </p>
       <h4>What are Modules?</h4>
       <p>
@@ -95,14 +98,16 @@ export default function Dashboard() {
         <li>
           <Link
             href="https://uxplanet.org/10-rules-for-better-dashboard-design-ef68189d734c"
-            target="_blank">
+            target="_blank"
+          >
             10 rules for better dashboard design by UX Planet
           </Link>
         </li>
         <li>
           <Link
             href="https://material.io/design/components/cards.html"
-            target="_blank">
+            target="_blank"
+          >
             Cards in Material UI
           </Link>
         </li>

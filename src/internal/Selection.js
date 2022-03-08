@@ -44,18 +44,18 @@ export default class Selection extends React.Component {
     });
   };
 
-  handleSelectItem = item => {
-    this.internalSetState(state => ({
+  handleSelectItem = (item) => {
+    this.internalSetState((state) => ({
       selectedItems: state.selectedItems.concat(item),
     }));
   };
 
-  handleRemoveItem = index => {
-    this.internalSetState(state => ({
+  handleRemoveItem = (index) => {
+    this.internalSetState((state) => ({
       selectedItems: removeAtIndex(state.selectedItems, index),
     }));
   };
-  handleOnItemChange = item => {
+  handleOnItemChange = (item) => {
     if (this.props.disabled) {
       return;
     }

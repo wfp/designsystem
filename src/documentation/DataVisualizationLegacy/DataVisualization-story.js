@@ -12,7 +12,8 @@ storiesOf('Design|Guidelines', module)
       <p>
         <Link
           href="https://brand.manuals.wfp.org/en/data-visualization-guidance/"
-          target="_blank">
+          target="_blank"
+        >
           More Information
         </Link>{' '}
         on data visualization.

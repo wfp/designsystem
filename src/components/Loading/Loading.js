@@ -60,7 +60,8 @@ export default class Loading extends React.Component {
       <div
         {...other}
         aria-live={active ? 'assertive' : 'off'}
-        className={loadingClasses}>
+        className={loadingClasses}
+      >
         <svg className={`${prefix}--loading__svg`} viewBox="-75 -75 150 150">
           <title>Loading</title>
           {componentsX && small ? (
