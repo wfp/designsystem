@@ -155,10 +155,6 @@ export const RegularSubNavigation = (args) => (
   </SubNavigation>
 );
 
-const description = `
-You can customize the content by using \`BannerNavigation\`.
-`;
-
 const sourcecode = `
 import {
   SubNavigation , SubNavigationHeader, SubNavigationTitle, SubNavigationLink, SubNavigationFilter, SubNavigationContent, SubNavigationList, SubNavigationGroup, SubNavigationItem,
@@ -243,7 +239,6 @@ RegularSubNavigation.story = {
   name: 'Regular',
   parameters: {
     docs: {
-      storyDescription: description,
       source: {
         code: sourcecode,
       },
