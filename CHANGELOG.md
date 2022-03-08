@@ -1,3 +1,10 @@
+## [1.20.10](https://github.com/wfp/ui/compare/v1.20.9...v1.20.10) (2022-03-08)
+
+
+### Bug Fixes
+
+* **AuthLayout:** AuthLayout import and export correctly done ([0beb398](https://github.com/wfp/ui/commit/0beb3985a4a7b35a9582026e6749d7e93c0c6696))
+
 ## [1.20.9](https://github.com/wfp/ui/compare/v1.20.8...v1.20.9) (2022-02-15)
 
 
