@@ -17,6 +17,6 @@ Object.assign = require('object-assign');
 
 // Starting with React 16, we'll have to polyfill this in test environments.
 // Defining this earlier than loading Enzyme to avoid "React depends on requestAnimationFrame" warning.
-global.requestAnimationFrame = function(callback) {
+global.requestAnimationFrame = function (callback) {
   callback();
 };

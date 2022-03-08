@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-const TabContent = props => {
+const TabContent = (props) => {
   const { selected, children, ...other } = props;
 
   return (

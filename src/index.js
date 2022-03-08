@@ -1,8 +1,5 @@
 export AnchorNavigation from './components/AnchorNavigation';
-export {
-  AuthLayout,
-  BackgroundContent,
-} from './components/AuthLayout';
+export { AuthLayout, BackgroundContent } from './components/AuthLayout';
 export {
   BannerNavigation,
   BannerNavigationItem,

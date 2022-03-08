@@ -111,7 +111,7 @@ export class FileUploaderButton extends Component {
         };
   }
 
-  handleChange = evt => {
+  handleChange = (evt) => {
     const files = evt.target.files;
     const length = evt.target.files.length;
     if (files && !this.props.disableLabelChanges) {
@@ -152,18 +152,19 @@ export class FileUploaderButton extends Component {
           role="button"
           tabIndex={tabIndex || 0}
           className={classes}
-          onKeyDown={evt => {
+          onKeyDown={(evt) => {
             if (evt.which === 13 || evt.which === 32) {
               this.input.click();
             }
           }}
           htmlFor={this.uid}
-          {...other}>
+          {...other}
+        >
           {this.state.labelText}
         </label>
         <input
           className={`${prefix}--visually-hidden`}
-          ref={input => (this.input = input)}
+          ref={(input) => (this.input = input)}
           id={this.uid}
           disabled={disabled}
           type="file"
@@ -172,7 +173,7 @@ export class FileUploaderButton extends Component {
           accept={accept}
           name={name}
           onChange={this.handleChange}
-          onClick={evt => {
+          onClick={(evt) => {
             evt.target.value = null;
           }}
         />

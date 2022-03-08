@@ -7,7 +7,7 @@ import SingleComponent from '../../documentation/SingleComponent';
 import Credits from '../Credits';
 
 storiesOf('Components|Credits', module)
-  .addDecorator(story => <SingleComponent>{story()}</SingleComponent>)
+  .addDecorator((story) => <SingleComponent>{story()}</SingleComponent>)
 
   .add('Default (depreciated)', () => (
     <Credits info="Photo: WFP/ Rein Skullerud">

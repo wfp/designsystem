@@ -111,7 +111,7 @@ const NumberInput = React.forwardRef((props, ref) => {
     [`${prefix}--number--nocontrols`]: hideControls,
   });
 
-  const innerInputClasses = classNames( className, {
+  const innerInputClasses = classNames(className, {
     [`${prefix}--input--invalid`]: invalid,
   });
 
@@ -138,13 +138,15 @@ const NumberInput = React.forwardRef((props, ref) => {
             <button
               className={`${prefix}--number__control-btn up-icon`}
               {...buttonProps}
-              onClick={(evt) => handleArrowClick(evt, 'up')}>
+              onClick={(evt) => handleArrowClick(evt, 'up')}
+            >
               +
             </button>
             <button
               className={`${prefix}--number__control-btn down-icon`}
               {...buttonProps}
-              onClick={(evt) => handleArrowClick(evt, 'down')}>
+              onClick={(evt) => handleArrowClick(evt, 'down')}
+            >
               −
             </button>
             <input

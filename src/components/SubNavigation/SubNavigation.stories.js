@@ -215,112 +215,8 @@ import {
             GoDocs
           </Link>
         </SubNavigationItem>
-        <SubNavigationItem>
-          <Link
-            href="https://go.docs.wfp.org"
-            target="_blank"
-          >
-            GoDocs
-          </Link>
-        </SubNavigationItem>
-        <SubNavigationItem>
-          <Link
-            href="https://go.docs.wfp.org"
-            target="_blank"
-          >
-            GoDocs
-          </Link>
-        </SubNavigationItem>
-        <SubNavigationItem>
-          <Link
-            href="https://go.docs.wfp.org"
-            target="_blank"
-          >
-            GoDocs
-          </Link>
-        </SubNavigationItem>
-        <SubNavigationItem>
-          <Link
-            href="https://go.docs.wfp.org"
-            target="_blank"
-          >
-            GoDocs
-          </Link>
-        </SubNavigationItem>
-        <SubNavigationItem>
-          <Link
-            href="https://go.docs.wfp.org"
-            target="_blank"
-          >
-            GoDocs
-          </Link>
-        </SubNavigationItem>
-        <SubNavigationItem>
-          <Link
-            href="https://go.docs.wfp.org"
-            target="_blank"
-          >
-            GoDocs
-          </Link>
-        </SubNavigationItem>
       </SubNavigationGroup>
       <SubNavigationGroup title="Second List of Items">
-        <SubNavigationItem>
-          <Link
-            href="https://go.docs.wfp.org"
-            target="_blank"
-          >
-            GoDocs
-          </Link>
-        </SubNavigationItem>
-        <SubNavigationItem>
-          <Link
-            href="https://go.docs.wfp.org"
-            target="_blank"
-          >
-            GoDocs
-          </Link>
-        </SubNavigationItem>
-        <SubNavigationItem>
-          <Link
-            href="https://go.docs.wfp.org"
-            target="_blank"
-          >
-            GoDocs
-          </Link>
-        </SubNavigationItem>
-        <SubNavigationItem>
-          <Link
-            href="https://go.docs.wfp.org"
-            target="_blank"
-          >
-            GoDocs
-          </Link>
-        </SubNavigationItem>
-        <SubNavigationItem>
-          <Link
-            href="https://go.docs.wfp.org"
-            target="_blank"
-          >
-            GoDocs
-          </Link>
-        </SubNavigationItem>
-        <SubNavigationItem>
-          <Link
-            href="https://go.docs.wfp.org"
-            target="_blank"
-          >
-            GoDocs
-          </Link>
-        </SubNavigationItem>
-        <SubNavigationItem>
-          <Link
-            href="https://go.docs.wfp.org"
-            target="_blank"
-          >
-            GoDocs
-          </Link>
-        </SubNavigationItem>
         <SubNavigationItem>
           <Link
             href="https://go.docs.wfp.org"
@@ -341,16 +237,16 @@ import {
     </SubNavigationList>
   </SubNavigationContent>
 </SubNavigation>
-`
+`;
 
 RegularSubNavigation.story = {
   name: 'Regular',
   parameters: {
     docs: {
       storyDescription: description,
-      source:{
-        code: sourcecode
-      }
+      source: {
+        code: sourcecode,
+      },
     },
   },
 };

@@ -100,7 +100,8 @@ const Tooltip = ({
         ref={popperElement}
         style={styles.popper}
         {...attributes.popper}
-        className={classNames}>
+        className={classNames}
+      >
         {content}
         <div
           ref={setArrowElement}

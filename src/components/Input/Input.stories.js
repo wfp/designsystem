@@ -24,7 +24,7 @@ Regular.args = {
   labelText: 'The labelText',
 };
 
-const inputsourcecode= `
+const inputsourcecode = `
 import { Input  } from "@wfp/ui";
 
 <Input
@@ -34,14 +34,14 @@ import { Input  } from "@wfp/ui";
 >
 {() => <input placeholder="This can be any type of custom input" />}
 </Input>
-`
+`;
 
 Regular.story = {
-  parameters:{
-    docs:{
-      source:{
-        code: inputsourcecode
-      }
-    }
-  }
-}
+  parameters: {
+    docs: {
+      source: {
+        code: inputsourcecode,
+      },
+    },
+  },
+};

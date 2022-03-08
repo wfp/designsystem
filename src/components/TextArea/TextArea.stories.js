@@ -22,7 +22,7 @@ Regular.args = {
   name: 'inputname',
   helperText: 'Optional helperText',
   labelText: 'The labelText',
-  cols:50
+  cols: 50,
 };
 
 export const withError = (args) => <TextArea {...args} />;

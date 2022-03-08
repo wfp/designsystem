@@ -71,7 +71,8 @@ export default class InlineLoading extends React.Component {
           <svg
             className={`${prefix}--inline-loading__checkmark-container ${prefix}--inline-loading__svg`}
             xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 10 10">
+            viewBox="0 0 10 10"
+          >
             <polyline
               className={`${prefix}--inline-loading__checkmark`}
               points="0.74 3.4 3.67 6.34 9.24 0.74"

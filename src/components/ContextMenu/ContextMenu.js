@@ -48,11 +48,10 @@ ContextMenuGroup.propTypes = {
   children: PropTypes.node,
 
   /**
-   * Provide a custom className 
+   * Provide a custom className
    */
   className: PropTypes.string,
 };
-
 
 export function ContextMenuItem({ className, ...other }) {
   const classNames = classnames(
@@ -72,7 +71,7 @@ ContextMenu.propTypes = {
   children: PropTypes.node,
 
   /**
-   * Provide a custom className 
+   * Provide a custom className
    */
   className: PropTypes.string,
 

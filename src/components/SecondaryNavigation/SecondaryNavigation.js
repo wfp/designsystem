@@ -34,14 +34,20 @@ const SecondaryNavigation = ({
   id,
   pageWidth,
 }) => {
-  const wrapperClasses = classNames(`${prefix}--secondary-navigation`, className);
+  const wrapperClasses = classNames(
+    `${prefix}--secondary-navigation`,
+    className
+  );
 
   return (
     <div id={id} className={wrapperClasses}>
       <Wrapper
         pageWidth={pageWidth}
-        className={`${prefix}--secondary-navigation__wrapper`}>
-        <div className={`${prefix}--secondary-navigation__list`}>{children}</div>
+        className={`${prefix}--secondary-navigation__wrapper`}
+      >
+        <div className={`${prefix}--secondary-navigation__list`}>
+          {children}
+        </div>
         {additional && (
           <div className={`${prefix}--secondary-navigation__additional`}>
             {additional}

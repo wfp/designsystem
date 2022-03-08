@@ -105,17 +105,17 @@ import { Form, TextInput, TextArea, Select, SelectItem, Button } from "@wfp/ui";
     Submit
   </Button>
 </Form>
-`
+`;
 
-Default.story={
-  parameters:{
-    docs:{
-      source:{
-        code: defaultformsourcecode
-      }
-    }
-  }
-}
+Default.story = {
+  parameters: {
+    docs: {
+      source: {
+        code: defaultformsourcecode,
+      },
+    },
+  },
+};
 
 export const DetailedForm = (args) => {
   return (
@@ -386,16 +386,16 @@ import Dropzone from 'react-dropzone';
         Submit
       </Button>
     </Form>
-`
-DetailedForm.story={
-  parameters:{
-    docs:{
-      source:{
-        code: detailedforsourcecode
-      }
-    }
-  }
-}
+`;
+DetailedForm.story = {
+  parameters: {
+    docs: {
+      source: {
+        code: detailedforsourcecode,
+      },
+    },
+  },
+};
 
 export const Login = (args) => {
   return (
@@ -428,7 +428,7 @@ Login.args = {
   longForm: false,
 };
 
-const loginsourcecode= `
+const loginsourcecode = `
 import { Form, FormGroup, TextInput, Button } from "@wfp/ui";
 
 <Form>
@@ -453,17 +453,17 @@ import { Form, FormGroup, TextInput, Button } from "@wfp/ui";
     </Button>
   </FormGroup>
 </Form>
-`
+`;
 
-Login.story={
-  parameters:{
-    docs:{
-      source:{
-        code: loginsourcecode
-      }
-    }
-  }
-}
+Login.story = {
+  parameters: {
+    docs: {
+      source: {
+        code: loginsourcecode,
+      },
+    },
+  },
+};
 
 export const Contact = (args) => {
   return (
@@ -566,14 +566,14 @@ import { Form, FormGroup, TextInput, Button  } from "@wfp/ui";
     </Button>
   </>
 </Form>
-`
+`;
 
 Contact.story = {
-  parameters:{
-    docs:{
-      source:{
-        code:contactsourcecode
-      }
-    }
-  }
-}
+  parameters: {
+    docs: {
+      source: {
+        code: contactsourcecode,
+      },
+    },
+  },
+};

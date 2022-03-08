@@ -32,7 +32,7 @@ Regular.args = {
   wrapper: 'button',
 };
 
-const itemsourcecode = (kind, wrapper) => (`
+const itemsourcecode = (kind, wrapper) => `
 import { Item, Tag } from "@wfp/ui";
 
 <Item
@@ -48,17 +48,17 @@ import { Item, Tag } from "@wfp/ui";
   nonumy eirmod tempor invidunt
 </Item>
 
-`)
+`;
 
-Regular.story={
-  parameters:{
-    docs:{
-      source:{
-        code:itemsourcecode('large', 'button')
-      }
-    }
-  }
-}
+Regular.story = {
+  parameters: {
+    docs: {
+      source: {
+        code: itemsourcecode('large', 'button'),
+      },
+    },
+  },
+};
 
 export const Horizontal = (args) => <Item {...args} />;
 
@@ -79,12 +79,12 @@ Horizontal.args = {
   wrapper: 'sidebar',
 };
 
-Horizontal.story={
-  parameters:{
-    docs:{
-      source:{
-        code:itemsourcecode('horizontal', 'sidebar')
-      }
-    }
-  }
-}
+Horizontal.story = {
+  parameters: {
+    docs: {
+      source: {
+        code: itemsourcecode('horizontal', 'sidebar'),
+      },
+    },
+  },
+};

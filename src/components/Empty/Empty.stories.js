@@ -39,13 +39,13 @@ import { Empty, Button  } from "@wfp/ui";
 >
   You haven't yet created an entry
 </Empty>
-`
-Regular.story={
-  parameters:{
-    docs:{
-      source:{
-        code: emptysourcecode
-      }
-    }
-  }
-}
+`;
+Regular.story = {
+  parameters: {
+    docs: {
+      source: {
+        code: emptysourcecode,
+      },
+    },
+  },
+};

@@ -155,7 +155,8 @@ storiesOf('Components|Form', module)
         <InputGroup
           onChange={action('onChange')}
           name="input-group"
-          defaultSelected="default-selected">
+          defaultSelected="default-selected"
+        >
           <RadioButton
             value="standard"
             id="radio-1"

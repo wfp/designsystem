@@ -10,22 +10,20 @@ const { prefix } = settings;
 const TextArea = React.forwardRef((props, ref) => {
   const {
     className,
-  formItemClassName,
-  id,
-  labelText,
-  hideLabel,
-  onChange,
-  onClick,
-  invalid,
-  invalidText,
-  inputRef = ref,
-  helperText,
-  fullWidth,
-  viewOnly,
-  ...other 
-} = props
-
-
+    formItemClassName,
+    id,
+    labelText,
+    hideLabel,
+    onChange,
+    onClick,
+    invalid,
+    invalidText,
+    inputRef = ref,
+    helperText,
+    fullWidth,
+    viewOnly,
+    ...other
+  } = props;
 
   const textareaProps = {
     id,
@@ -88,13 +86,12 @@ const TextArea = React.forwardRef((props, ref) => {
     <FormItem className={formItemClassName}>
       {label}
       {input}
-      
+
       {helper}
       {error}
     </FormItem>
   );
 });
-
 
 TextArea.propTypes = {
   /**

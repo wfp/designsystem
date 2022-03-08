@@ -65,7 +65,8 @@ export function MixBarChartChart() {
         right: 30,
         left: 20,
         bottom: 5,
-      }}>
+      }}
+    >
       <CartesianGrid strokeDasharray="3 3" />
       <XAxis dataKey="name" tick={{ fontSize: 12 }} />
       <YAxis tick={{ fontSize: 12 }} />

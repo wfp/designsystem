@@ -117,7 +117,6 @@ describe('TextInput', () => {
 
       const input = wrapper.children();
 
-
       it('should not invoke onClick', () => {
         input.simulate('click');
         expect(onClick).not.toBeCalled();
@@ -149,8 +148,6 @@ describe('TextInput', () => {
         inputt.simulate('click');
         expect(onClick).toBeCalled();
       });
-
-  
     });
   });
 });

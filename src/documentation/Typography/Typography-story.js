@@ -44,7 +44,8 @@ storiesOf('Design|Core', module)
         sets, which can be found on{' '}
         <Link
           href="https://fonts.google.com/specimen/Open+Sans"
-          target="_blank">
+          target="_blank"
+        >
           Open Sans on fonts.google.com
         </Link>
       </p>
@@ -52,7 +53,8 @@ storiesOf('Design|Core', module)
       <p>
         <Link
           href="https://newgo.wfp.org/documents/dns-conventions/"
-          target="_blank">
+          target="_blank"
+        >
           This guide
         </Link>{' '}
         explains rules for DNS namespace conventions.

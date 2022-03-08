@@ -44,9 +44,7 @@ export const Regular = (args) => (
   </SecondaryNavigation>
 );
 
-
-
-const sourcecode =(importstatement, additional)=>{
+const sourcecode = (importstatement, additional) => {
   return `
   
 ${importstatement}
@@ -70,8 +68,8 @@ ${importstatement}
   </SecondaryNavigationTitle>
   ${additional}
 </SecondaryNavigation>
-  `
-}
+  `;
+};
 
 const tabsection = `
   <Tabs customTabContent>
@@ -80,15 +78,17 @@ const tabsection = `
     <Tab label="Tab label 3" />
     <Tab label="Tab label 4" />
   </Tabs>
-`
+`;
 
 Regular.story = {
   parameters: {
     docs: {
       source: {
-        code: sourcecode(`import {SecondaryNavigation, SecondaryNavigationTitle, Breadcrumb, BreadcrumbHome, BreadcrumbItem, Tabs, Tab } from "@wfp/ui";`, 
-        tabsection)
-      }
+        code: sourcecode(
+          `import {SecondaryNavigation, SecondaryNavigationTitle, Breadcrumb, BreadcrumbHome, BreadcrumbItem, Tabs, Tab } from "@wfp/ui";`,
+          tabsection
+        ),
+      },
     },
   },
 };
@@ -117,8 +117,10 @@ HeadingOnly.story = {
     docs: {
       storyDescription: descriptionHeadingOnly,
       source: {
-        code: sourcecode(`import {SecondaryNavigation, SecondaryNavigationTitle, Breadcrumb, BreadcrumbHome, BreadcrumbItem } from "@wfp/ui";`)
-      }
+        code: sourcecode(
+          `import {SecondaryNavigation, SecondaryNavigationTitle, Breadcrumb, BreadcrumbHome, BreadcrumbItem } from "@wfp/ui";`
+        ),
+      },
     },
   },
 };

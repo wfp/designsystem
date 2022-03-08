@@ -28,7 +28,7 @@ const props = () => ({
       1234567
     </Unit>
   ),
-  onClick: (handler => evt => {
+  onClick: ((handler) => (evt) => {
     evt.preventDefault(); // Prevent link from being followed for demo purpose
     handler(evt);
   })(action('onClick')),

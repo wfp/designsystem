@@ -275,7 +275,8 @@ export default class Pagination extends Component {
                 inline
                 onChange={this.handleSizeChange}
                 // value={statePageSize}
-                value={this.state.pageSize}>
+                value={this.state.pageSize}
+              >
                 {pageSizes.map((size) => (
                   <SelectItem key={size} value={size} text={String(size)} />
                 ))}
@@ -308,7 +309,8 @@ export default class Pagination extends Component {
           <button
             className={backButtonClasses}
             onClick={this.decrementPage}
-            disabled={this.props.disabled || statePage === 1}>
+            disabled={this.props.disabled || statePage === 1}
+          >
             <Icon
               className="wfp--pagination__button-icon"
               icon={iconChevronLeft}
@@ -322,7 +324,8 @@ export default class Pagination extends Component {
               hideLabel
               inline
               onChange={this.handlePageInputChange}
-              value={statePage}>
+              value={statePage}
+            >
               {selectItems}
             </Select>
           )}
@@ -331,7 +334,8 @@ export default class Pagination extends Component {
             onClick={this.incrementPage}
             disabled={
               this.props.disabled || statePage === totalPages || isLastPage
-            }>
+            }
+          >
             <Icon
               className="wfp--pagination__button-icon"
               icon={iconChevronRight}

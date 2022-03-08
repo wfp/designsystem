@@ -5,8 +5,8 @@ import ContextMenu, { ContextMenuGroup, ContextMenuItem } from './ContextMenu';
 export default {
   title: 'Components/UI Elements/ContextMenu',
   component: ContextMenu,
-  subcomponents:{
-    ContextMenuGroup, 
+  subcomponents: {
+    ContextMenuGroup,
     ContextMenuItem,
   },
   parameters: {
@@ -30,7 +30,8 @@ export const Regular = (args) => (
         <ContextMenuItem>Item 2</ContextMenuItem>
         <ContextMenuItem>Item 3</ContextMenuItem>
       </>
-    }>
+    }
+  >
     <span>Open context menu</span>
   </ContextMenu>
 );
@@ -59,13 +60,13 @@ import { ContextMenu, ContextMenuGroup, ContextMenuItem } from "@wfp/ui";
     Open context menu
   </span>
 </ContextMenu>
-`
+`;
 Regular.story = {
   parameters: {
     docs: {
-      source:{
-        code: sourcecode
-      }
+      source: {
+        code: sourcecode,
+      },
     },
   },
 };
@@ -84,13 +85,15 @@ export const States = (args) => (
           onClick={() => {
             setVisibility(true);
             visibilityChange(true);
-          }}>
+          }}
+        >
           Hide ContextMenu
         </ContextMenuItem>
         <ContextMenuItem>Item 2</ContextMenuItem>
         <ContextMenuItem>Item 3</ContextMenuItem>
       </>
-    )}>
+    )}
+  >
     <span>Open context menu</span>
   </ContextMenu>
 );

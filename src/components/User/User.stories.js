@@ -85,15 +85,15 @@ import { User, List, ListItem } from "@wfp/ui";
     name="Albert Einstein"
     image="https://www.wfp.org/sites/default/files/styles/page_accordion/public/images/ourwork_humanitarian.jpg?itok=R0ymBwxH"
   />
-`
+`;
 
 ExtendedUser.story = {
   parameters: {
     docs: {
       storyDescription: extendedDescription,
-      source:{
-        code: extendedsourcecode
-      }
+      source: {
+        code: extendedsourcecode,
+      },
     },
   },
 };

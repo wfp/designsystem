@@ -88,12 +88,8 @@ Regular.parameters = {
 };
 
 export const Advanced = (args) => {
-  const {
-    acceptedFiles,
-    getRootProps,
-    getInputProps,
-    isDragActive,
-  } = useDropzone();
+  const { acceptedFiles, getRootProps, getInputProps, isDragActive } =
+    useDropzone();
 
   const files = acceptedFiles.map((file) => (
     <ListItem key={file.path}>

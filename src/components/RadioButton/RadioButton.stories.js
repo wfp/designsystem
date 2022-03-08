@@ -23,14 +23,14 @@ const regularsourcecode = `
 import { RadioButton  } from "@wfp/ui";
 
 <RadioButton labelText="Radio button" />
-`
+`;
 
 Regular.story = {
   parameters: {
     docs: {
-      source:{
-        code: regularsourcecode
-      }
+      source: {
+        code: regularsourcecode,
+      },
     },
   },
 };
@@ -47,7 +47,8 @@ export const VerticalGrouping = (args) => {
       name="input-group"
       helperText="select one"
       labelText="Please select your gender"
-      vertical>
+      vertical
+    >
       <RadioButton
         {...args}
         value="female"
@@ -120,22 +121,23 @@ const handleOnchange = (e) => {
     onChange={handleOnchange}
   />
 </InputGroup>
-`
-VerticalGrouping.story={
-  parameters:{
-    docs:{
-      source:{
-        code:verticalsourcecode
-      }
-    }
-  }
-}
+`;
+VerticalGrouping.story = {
+  parameters: {
+    docs: {
+      source: {
+        code: verticalsourcecode,
+      },
+    },
+  },
+};
 
 export const HorizontalGrouping = (args) => (
   <InputGroup
     name="input-group"
     helperText="select one"
-    labelText="Please select your age range">
+    labelText="Please select your age range"
+  >
     <RadioButton
       name="radiob"
       value="standard"
@@ -157,7 +159,7 @@ export const HorizontalGrouping = (args) => (
   </InputGroup>
 );
 
-const horizontalsourcecode= `
+const horizontalsourcecode = `
 import { RadioButton, InputGroup  } from "@wfp/ui";
 
 <InputGroup
@@ -183,14 +185,14 @@ import { RadioButton, InputGroup  } from "@wfp/ui";
     labelText="Above 50"
   />
 </InputGroup>
-`
+`;
 
-HorizontalGrouping.story={
-  parameters:{
-    docs:{
-      source:{
-        code:horizontalsourcecode
-      }
-    }
-  }
-}
+HorizontalGrouping.story = {
+  parameters: {
+    docs: {
+      source: {
+        code: horizontalsourcecode,
+      },
+    },
+  },
+};

@@ -21,7 +21,6 @@ Regular.args = {
   type: 'usd',
 };
 
-
 export const NumberFractionDigits = () => (
   <Table>
     <thead>
@@ -148,15 +147,15 @@ import { Unit, Table, Text } from "@wfp/ui";
       </tr>
     </tbody>
   </Table>
-`
+`;
 
 NumberFractionDigits.story = {
   parameters: {
     docs: {
       storyDescription: `You can customize the number of decimal places by changing the \`minimumFractionDigits\` and \`maximumFractionDigits\` prop. If \`value < 1\` is getting displayed the \`minimumFractionDigits\` will automatically adopt to display the significant decimal places.`,
-      source:{
-        code: sourcecode
-      }
+      source: {
+        code: sourcecode,
+      },
     },
   },
 };

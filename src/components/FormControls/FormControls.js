@@ -58,7 +58,10 @@ export default class FormControls extends React.Component {
       submitText,
     } = this.props;
 
-    const formControlsClasses = classNames(`${prefix}--form-controls`, className);
+    const formControlsClasses = classNames(
+      `${prefix}--form-controls`,
+      className
+    );
 
     return (
       <div className={formControlsClasses}>
@@ -69,7 +72,8 @@ export default class FormControls extends React.Component {
               kind="secondary"
               className={`${prefix}--form-controls__prev`}
               icon={previousIcon}
-              onClick={onPreviousClick}>
+              onClick={onPreviousClick}
+            >
               {previousText}
             </Button>
           )}
@@ -82,7 +86,8 @@ export default class FormControls extends React.Component {
               className={`${prefix}--form-controls__next`}
               icon={nextIcon}
               type="submit"
-              onClick={onNextClick}>
+              onClick={onNextClick}
+            >
               {nextText}
             </Button>
           )}
@@ -92,7 +97,8 @@ export default class FormControls extends React.Component {
               type="submit"
               className="next"
               icon={submitIcon}
-              onClick={onSubmitClick}>
+              onClick={onSubmitClick}
+            >
               {submitText}
             </Button>
           )}

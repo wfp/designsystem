@@ -27,11 +27,9 @@ export default {
     componentSubtitle: 'Component',
     status: 'released',
     mdx: markdown,
-    previewWidth: 'full'
-  }
+    previewWidth: 'full',
+  },
 };
-
-
 
 export const Regular = (args) => (
   <MainNavigation {...args}>
@@ -54,7 +52,7 @@ export const Regular = (args) => (
 
                   <SubNavigationFilter>
                     <Search
-                      kind='small'
+                      kind="small"
                       id="search-2"
                       labelText="Filter"
                       placeholder="Filter list"
@@ -76,7 +74,8 @@ export const Regular = (args) => (
                   </SubNavigationList>
                 </SubNavigationContent>
               </SubNavigation>
-            }>
+            }
+          >
             <Link href="http://manuals.wfp.org" target="_blank">
               Section 2
             </Link>
@@ -106,7 +105,7 @@ export const Regular = (args) => (
                 <SubNavigationHeader>
                   <SubNavigationTitle>Welcome Lorem!</SubNavigationTitle>
                   <SubNavigationLink>
-                    <Button kind='secondary' small>
+                    <Button kind="secondary" small>
                       Logout
                     </Button>
                   </SubNavigationLink>
@@ -118,7 +117,8 @@ export const Regular = (args) => (
                   <Link onClick={() => onChangeSub('close')}>Close Menu</Link>
                 </SubNavigationContent>
               </SubNavigation>
-            }>
+            }
+          >
             <User
               ellipsis
               name="Max Mustermann long name"
@@ -152,7 +152,8 @@ export const Regular = (args) => (
                   </SubNavigationList>
                 </SubNavigationContent>
               </SubNavigation>
-            }>
+            }
+          >
             <span>EN</span>
           </MainNavigationItem>
         </React.Fragment>
@@ -165,7 +166,7 @@ const description = `
 You can customize the content by using \`BannerNavigation\`.
 `;
 
-const sourcecode =(type)=>{
+const sourcecode = (type) => {
   return `import { Button,User, Search } from "@wfp/ui";
   import {
     MainNavigation,
@@ -304,11 +305,8 @@ const sourcecode =(type)=>{
     }
   
   export default Navigation;
-  `
-}
-
-
-
+  `;
+};
 
 Regular.story = {
   parameters: {
@@ -317,12 +315,11 @@ Regular.story = {
       source: {
         code: sourcecode(`<Link href="http://opweb.wfp.org" target="_blank">
             Section 4
-          </Link>`)
-      }
+          </Link>`),
+      },
     },
   },
 };
-
 
 export const RegularWithButton = (args) => (
   <MainNavigation {...args}>
@@ -345,7 +342,7 @@ export const RegularWithButton = (args) => (
 
                   <SubNavigationFilter>
                     <Search
-                      kind='small'
+                      kind="small"
                       id="search-2"
                       labelText="Filter"
                       placeholder="Filter list"
@@ -367,7 +364,8 @@ export const RegularWithButton = (args) => (
                   </SubNavigationList>
                 </SubNavigationContent>
               </SubNavigation>
-            }>
+            }
+          >
             <Link href="http://manuals.wfp.org" target="_blank">
               Section 2
             </Link>
@@ -397,7 +395,7 @@ export const RegularWithButton = (args) => (
                 <SubNavigationHeader>
                   <SubNavigationTitle>Welcome Lorem!</SubNavigationTitle>
                   <SubNavigationLink>
-                    <Button kind='secondary' small>
+                    <Button kind="secondary" small>
                       Logout
                     </Button>
                   </SubNavigationLink>
@@ -409,7 +407,8 @@ export const RegularWithButton = (args) => (
                   <Link onClick={() => onChangeSub('close')}>Close Menu</Link>
                 </SubNavigationContent>
               </SubNavigation>
-            }>
+            }
+          >
             <User
               ellipsis
               name="Max Mustermann long name"
@@ -443,7 +442,8 @@ export const RegularWithButton = (args) => (
                   </SubNavigationList>
                 </SubNavigationContent>
               </SubNavigation>
-            }>
+            }
+          >
             <span>EN</span>
           </MainNavigationItem>
         </React.Fragment>
@@ -459,8 +459,8 @@ RegularWithButton.story = {
       source: {
         code: sourcecode(`<Button kind="navigation" type="button">
             Button
-          </Button>`)
-      }
+          </Button>`),
+      },
     },
   },
 };

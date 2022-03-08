@@ -26,14 +26,14 @@ const sourcecode = `
   import { BannerNavigationWithContent } from "@wfp/ui";
         
   <BannerNavigationWithContent pageWidth="lg" />
-  `
+  `;
 
 RegularNavigation.story = {
   parameters: {
     docs: {
       source: {
-        code: sourcecode
-      }
+        code: sourcecode,
+      },
     },
   },
 };

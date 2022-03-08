@@ -36,7 +36,8 @@ const IconList = ({ icon }) => {
             justifyContent: 'center',
             flexDirection: 'column',
             alignItems: 'center',
-          }}>
+          }}
+        >
           <Icon
             icon={icon}
             description="WFP"
@@ -52,7 +53,8 @@ const IconList = ({ icon }) => {
               marginTop: '1rem',
               marginBottom: '1rem',
               fontWeight: 'bold',
-            }}>
+            }}
+          >
             {iconName}
           </div>
 
@@ -64,7 +66,8 @@ const IconList = ({ icon }) => {
               whiteSpace: 'pre',
               marginTop: '0.2rem',
               marginBottom: '1rem',
-            }}>
+            }}
+          >
             {`import
   {${camelCaseFromHyphnated('icon--' + iconName)}}
 from '@wfp/icons'`}
@@ -72,17 +75,20 @@ from '@wfp/icons'`}
           <Button
             icon={iconDownloadGlyph}
             href={`https://github.com/wfp/carbon-icons/blob/master/src/svg/${iconName}.svg`}
-            small>
+            small
+          >
             View on GitHub
           </Button>
         </div>
       }
       trigger="click"
-      {...tooltipStyle}>
+      {...tooltipStyle}
+    >
       <div
         style={{
           width: '12.5%',
-        }}>
+        }}
+      >
         <Module light withHover>
           <div
             style={{
@@ -92,7 +98,8 @@ from '@wfp/icons'`}
               flexDirection: 'column',
               width: '100%',
               height: '55px',
-            }}>
+            }}
+          >
             <Icon
               icon={icon}
               description="WFP"
@@ -108,7 +115,8 @@ from '@wfp/icons'`}
               alignItems: 'center',
               justifyContent: 'center',
               minHeight: '2rem',
-            }}>
+            }}
+          >
             <span>{iconName}</span>
           </ModuleFooter>
         </Module>
@@ -139,7 +147,8 @@ const IconsDocumentation = () => (
       . You can find additional information in the{' '}
       <Link
         href="http://www.carbondesignsystem.com/guidelines/iconography"
-        target="_blank">
+        target="_blank"
+      >
         Carbon Design System
       </Link>
     </Blockquote>
@@ -162,7 +171,8 @@ const IconsDocumentation = () => (
       NGOs.{' '}
       <Link
         href="https://www.unocha.org/story/iconography-part-un%E2%80%99s-humanitarian-efforts-ocha-releases-new-humanitarian-icons"
-        target="_blank">
+        target="_blank"
+      >
         Visit OCHA Icon Library
       </Link>
     </p>
@@ -170,7 +180,8 @@ const IconsDocumentation = () => (
       WFP has also created some{' '}
       <Link
         href="http://newgo.wfp.org/documents/humanitarian-thematic-icon-set-png"
-        target="_blank">
+        target="_blank"
+      >
         WFP specific icons
       </Link>{' '}
       to add to this set.
@@ -179,7 +190,8 @@ const IconsDocumentation = () => (
 
     <Link
       href="https://github.com/wfp/carbon-icons/tree/master/src/svg"
-      target="_blank">
+      target="_blank"
+    >
       Source svg files
     </Link>
 

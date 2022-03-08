@@ -15,19 +15,17 @@ export const List = ({ children, className, colon, kind, small, ...other }) => {
   });
   return (
     <>
-      {
-        kind == "ordered" ? (
-          <ol className={classNames} {...other}>
+      {kind == 'ordered' ? (
+        <ol className={classNames} {...other}>
           {children}
-          </ol>
-        ) : (
-          <ul className={classNames} {...other}>
+        </ol>
+      ) : (
+        <ul className={classNames} {...other}>
           {children}
-          </ul>
-          )
-      }  
+        </ul>
+      )}
     </>
-  )
+  );
 };
 
 List.propTypes = {

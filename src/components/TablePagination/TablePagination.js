@@ -74,7 +74,8 @@ const ReactTablePagination = ({
   return (
     <div
       className={classnames(paginationClassName, '-pagination')}
-      style={style}>
+      style={style}
+    >
       <div className={`${prefix}-pagination`}>
         <Pagination
           onChange={changePage}

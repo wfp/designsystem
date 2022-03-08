@@ -87,7 +87,8 @@ export default class FaviconGenerator extends Component {
           download={`wfp-favicon-${file}.${file.substring(0, 3)}`}
           kind="secondary"
           small
-          href={this.state.dataurl[file]}>
+          href={this.state.dataurl[file]}
+        >
           {file}
         </Button>{' '}
       </React.Fragment>
@@ -107,7 +108,8 @@ export default class FaviconGenerator extends Component {
                     style={{
                       display: 'flex',
                       justifyContent: 'space-between',
-                    }}>
+                    }}
+                  >
                     <div className="wfp--form-long">
                       <Field
                         name="name"

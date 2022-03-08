@@ -5,7 +5,8 @@ const CloseButton = ({ YouCanPassAnyProps, closeToast }) => (
   <button
     ariaLabel="close"
     className="Toastify__close-button"
-    onClick={closeToast}>
+    onClick={closeToast}
+  >
     <span></span>
   </button>
 );

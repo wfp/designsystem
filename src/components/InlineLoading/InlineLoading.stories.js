@@ -14,7 +14,6 @@ export default {
 
 export const Regular = (args) => <InlineLoading {...args}>Text</InlineLoading>;
 
-
 export const Description = (args) => (
   <InlineLoading {...args}>Text</InlineLoading>
 );

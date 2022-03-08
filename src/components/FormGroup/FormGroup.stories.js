@@ -39,7 +39,7 @@ Default.args = {
   legendText: 'FormGroup heading',
 };
 
-const defaultsourcecode=`
+const defaultsourcecode = `
 import { FormGroup, TextInput } from "@wfp/ui";
 
 <FormGroup
@@ -62,17 +62,17 @@ import { FormGroup, TextInput } from "@wfp/ui";
     placeholder="Placeholder text"
   />
 </FormGroup>
-`
+`;
 
-Default.story={
-  parameters:{
-    docs:{
-      source:{
-        code:defaultsourcecode
-      }
-    }
-  }
-}
+Default.story = {
+  parameters: {
+    docs: {
+      source: {
+        code: defaultsourcecode,
+      },
+    },
+  },
+};
 
 const options = [
   {
@@ -126,8 +126,7 @@ export const AddressDetails = (args) => {
     setcityoption(selectedCountry.cityoptions);
   };
 
-  const handleCityChange = (newValue) => {
-  };
+  const handleCityChange = (newValue) => {};
 
   return (
     <>
@@ -136,7 +135,8 @@ export const AddressDetails = (args) => {
         className="wfp--form-long"
         align="horizontal"
         legendText="Address Info"
-        style={{ marginTop: '1rem' }}>
+        style={{ marginTop: '1rem' }}
+      >
         <div className="wfp--form-item" style={{ minWidth: '100px' }}>
           <label htmlFor="country" className="wfp--label">
             Country*
@@ -178,7 +178,7 @@ export const AddressDetails = (args) => {
   );
 };
 
-const addressdetailesourcecode= `
+const addressdetailesourcecode = `
 import {FormGroup, NumberInput, TextInput } from '@wfp/ui';
 import CreatableSelect from 'react-select/creatable';
 
@@ -286,15 +286,15 @@ return(
 }
 
 export default AddressDetails;
-`
+`;
 
 AddressDetails.story = {
   name: 'Residence Address',
-  parameters:{
-    docs:{
-      source:{
-        code: addressdetailesourcecode
-      }
-    }
-  }
+  parameters: {
+    docs: {
+      source: {
+        code: addressdetailesourcecode,
+      },
+    },
+  },
 };

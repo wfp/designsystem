@@ -153,7 +153,7 @@ export default class Tab extends React.Component {
       role: 'tab',
       tabIndex,
       'aria-selected': selected,
-      ref: e => {
+      ref: (e) => {
         this.tabAnchor = e;
       },
     };
@@ -162,13 +162,13 @@ export default class Tab extends React.Component {
     const liProps = {
       tabIndex: -1,
       className: classes,
-      onClick: evt => {
+      onClick: (evt) => {
         if (!disabled) {
           handleTabClick(index, label, evt);
           onClick(evt);
         }
       },
-      onKeyDown: evt => {
+      onKeyDown: (evt) => {
         if (!disabled) {
           this.setTabFocus(evt);
           handleTabKeyDown(index, label, evt);

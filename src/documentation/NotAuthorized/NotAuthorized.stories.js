@@ -27,8 +27,7 @@ export const Regular = (args) => (
         width={100}
         height={100}
         style={{
-          marginBottom:
-            '3rem' /*,
+          marginBottom: '3rem' /*,
           filter:
             'drop-shadow(10px 6px 0px #f7b825)', transform: 'rotate(10deg)'*/,
         }}

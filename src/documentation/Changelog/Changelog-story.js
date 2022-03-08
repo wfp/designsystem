@@ -10,8 +10,6 @@ import Changelog from '../../../CHANGELOG.md';
 import ReactMarkdown from 'react-markdown';
 import './_changelog.scss';
 
-
-
 storiesOf('Getting started|Getting started', module)
   .addParameters({
     options: { showPanel: false, isToolshown: false, sort: 'zzz' },
@@ -26,7 +24,8 @@ storiesOf('Getting started|Getting started', module)
         now or read the{' '}
         <Link
           href="https://github.com/wfp/ui/blob/master/CHANGELOG.md"
-          target="_blank">
+          target="_blank"
+        >
           full changelog.
         </Link>
       </Blockquote>

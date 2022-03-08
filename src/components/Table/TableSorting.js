@@ -2,10 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import Icon from '../Icon';
-import {
-  iconCaretDown,
-  iconCaretUp,
-} from '@wfp/icons';
+import { iconCaretDown, iconCaretUp } from '@wfp/icons';
 
 export default function TableSorting({
   className,

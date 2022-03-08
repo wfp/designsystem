@@ -7,14 +7,14 @@ class ModalWithControls extends React.Component {
   state = { open: false };
 
   toggleModal = () => {
-    this.setState(state => ({
+    this.setState((state) => ({
       open: !state.open,
     }));
   };
 
   submitAndClose = () => {
     alert('Submit now and close the modal');
-    this.setState(state => ({
+    this.setState((state) => ({
       open: false,
     }));
   };
@@ -31,7 +31,8 @@ class ModalWithControls extends React.Component {
           onRequestSubmit={this.submitAndClose}
           secondaryButtonText="Cancel Modal"
           onSecondarySubmit={this.toggleModal}
-          onRequestClose={this.toggleModal}>
+          onRequestClose={this.toggleModal}
+        >
           <p className="wfp--modal-content__text">Nothing to see here</p>
         </Modal>
       </div>

@@ -55,8 +55,8 @@ const options = [
   { value: 'vanilla', label: 'Vanilla' },
 ];
 
-const required = value => (value ? undefined : 'Required');
-const maxLength = max => value =>
+const required = (value) => (value ? undefined : 'Required');
+const maxLength = (max) => (value) =>
   value && value.length > max ? `Must be ${max} characters or less` : undefined;
 const maxLength15 = maxLength(15);
 
@@ -93,7 +93,7 @@ const props = {
 
 storiesOf('Components|ReduxFormWrapper', module)
   .addDecorator(withKnobs)
-  .addDecorator(story => (
+  .addDecorator((story) => (
     <Provider store={store}>
       <FormWrapper>{story()}</FormWrapper>
     </Provider>

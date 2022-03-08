@@ -11,8 +11,8 @@ export default {
     componentSubtitle: 'Component',
     status: 'released',
     mdx: markdown,
-    twig: cardTwig
-  }
+    twig: cardTwig,
+  },
 };
 
 export const SimpleCard = (args) => <Card {...args} />;
@@ -23,8 +23,8 @@ SimpleCard.args = {
   title: 'The Climate Adaption Mangement and Innovation Initiative',
   kind: 'simple-card',
   metadata: 'Publication',
-  url:'https://www.wfp.org',
-  isExternal:true,
+  url: 'https://www.wfp.org',
+  isExternal: true,
 };
 
 export const SimpleCardWithImage = (args) => <Card {...args} />;
@@ -38,7 +38,6 @@ SimpleCardWithImage.args = {
   image: 'http://www1.wfp.org/sites/default/files/images/yemen-hero-min.jpg',
 };
 
-
 export const Overlay = (args) => <Card {...args} />;
 
 Overlay.args = {
@@ -51,4 +50,3 @@ Overlay.args = {
   cardWidth: '350px',
   cardHeight: '400px',
 };
-

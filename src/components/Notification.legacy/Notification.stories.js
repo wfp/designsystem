@@ -43,7 +43,7 @@ export const Regular = (args) => {
   );
 };
 
-const notificationsourcecode=`
+const notificationsourcecode = `
 import { ToastContainer, toast } from 'react-toastify';
 import notificationStyle from '@wfp/ui';
 import {Icon, Button} from '@wfp/ui';
@@ -76,14 +76,14 @@ const Notification = (args) => {
 };
 
 export default Notification;
-`
+`;
 
-Regular.story={
-  parameters:{
-    docs:{
-      source:{
-        code:notificationsourcecode
-      }
-    }
-  }
-}
+Regular.story = {
+  parameters: {
+    docs: {
+      source: {
+        code: notificationsourcecode,
+      },
+    },
+  },
+};

@@ -66,7 +66,8 @@ const Select = React.forwardRef((props, ref) => {
           disabled={disabled || undefined}
           data-invalid={invalid || undefined}
           aria-invalid={invalid || undefined}
-          ref={inputRef}>
+          ref={inputRef}
+        >
           {children}
         </select>
         <Icon

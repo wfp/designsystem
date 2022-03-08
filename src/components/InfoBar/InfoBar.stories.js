@@ -29,14 +29,14 @@ const infobarsourcecode = `
     </Link>
     {' '}to do Something.
   </InfoBar>
-`
+`;
 
 Regular.story = {
   parameters: {
     docs: {
-      source:{
-        code: infobarsourcecode
-      }
+      source: {
+        code: infobarsourcecode,
+      },
     },
   },
 };

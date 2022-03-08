@@ -131,22 +131,22 @@ CustomIcon.args = {
   icon: <Icon icon={iconAddOutline} height={48} width={48} />,
 };
 
-const customiconsourcecode=`
+const customiconsourcecode = `
 import { Blockquote,  Icon } from "@wfp/ui";
 import { iconAddOutline } from '@wfp/icons';
 
 <Blockquote icon={<Icon icon={iconAddOutline} height={48} width={48} />}>
  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
 </Blockquote>
-`
+`;
 
 CustomIcon.story = {
   parameters: {
     docs: {
       storyDescription: `Use \`icon\` to add custom icon to message`,
-      source:{
-        code: customiconsourcecode
-      }
+      source: {
+        code: customiconsourcecode,
+      },
     },
   },
 };
@@ -192,15 +192,15 @@ import { Blockquote, Button  } from "@wfp/ui";
   withIcon>
   Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
 </Blockquote>
-`
+`;
 
 WithButtons.story = {
   parameters: {
     docs: {
       storyDescription: `Use \`actionButtons\` for showing buttons for inline dialogs`,
-      source:{
-        code: withbuttonsourcecode
-      }
+      source: {
+        code: withbuttonsourcecode,
+      },
     },
   },
 };

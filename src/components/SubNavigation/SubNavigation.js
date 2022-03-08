@@ -15,9 +15,7 @@ SubNavigation.propTypes = {
 };
 
 const SubNavigationItem = ({ children, className, ...other }) => {
-  const classes = classNames(`${prefix}--sub-navigation__item`, 
-    className,
-  );
+  const classes = classNames(`${prefix}--sub-navigation__item`, className);
 
   return (
     <div className={classes} {...other}>
@@ -33,9 +31,7 @@ SubNavigationItem.propTypes = {
 };
 
 const SubNavigationHeader = ({ children, className, ...other }) => {
-  const classes = classNames(`${prefix}--sub-navigation__header`, 
-    className,
-  );
+  const classes = classNames(`${prefix}--sub-navigation__header`, className);
 
   return (
     <div className={classes} {...other}>
@@ -51,9 +47,7 @@ SubNavigationHeader.propTypes = {
 };
 
 const SubNavigationFilter = ({ children, className, ...other }) => {
-  const classes = classNames(`${prefix}--sub-navigation__filter`, 
-    className,
-  );
+  const classes = classNames(`${prefix}--sub-navigation__filter`, className);
 
   return (
     <div className={classes} {...other}>
@@ -68,9 +62,7 @@ SubNavigationFilter.propTypes = {
 };
 
 const SubNavigationList = ({ children, className, ...other }) => {
-  const classes = classNames(`${prefix}--sub-navigation__list`, 
-    className,
-  );
+  const classes = classNames(`${prefix}--sub-navigation__list`, className);
 
   return (
     <div className={classes} {...other}>
@@ -85,9 +77,7 @@ SubNavigationList.propTypes = {
 };
 
 const SubNavigationContent = ({ children, className, ...other }) => {
-  const classes = classNames(`${prefix}--sub-navigation__content`, 
-    className,
-  );
+  const classes = classNames(`${prefix}--sub-navigation__content`, className);
 
   return (
     <div className={classes} {...other}>
@@ -106,9 +96,7 @@ SubNavigationContent.propTypes = {
 };
 
 const SubNavigationTitle = ({ children, className, ...other }) => {
-  const classes = classNames(`${prefix}--sub-navigation__title`, 
-    className,
-  );
+  const classes = classNames(`${prefix}--sub-navigation__title`, className);
 
   return (
     <div className={classes} {...other}>
@@ -127,9 +115,7 @@ SubNavigationTitle.propTypes = {
 };
 
 const SubNavigationLink = ({ children, className, ...other }) => {
-  const classes = classNames(`${prefix}--sub-navigation__link`, 
-    className,
-  );
+  const classes = classNames(`${prefix}--sub-navigation__link`, className);
 
   return (
     <div className={classes} {...other}>
@@ -142,7 +128,11 @@ SubNavigationLink.propTypes = {
   /**
    * Provide the content of link
    */
-  children: PropTypes.oneOfType([PropTypes.node, PropTypes.string, PropTypes.object]),
+  children: PropTypes.oneOfType([
+    PropTypes.node,
+    PropTypes.string,
+    PropTypes.object,
+  ]),
 
   className: PropTypes.string,
 };
@@ -164,7 +154,9 @@ const SubNavigationGroup = ({
 
   return (
     <div className={classes} {...other}>
-      {title && <h3 className={`${prefix}--sub-navigation__group__title`}>{title}</h3>}
+      {title && (
+        <h3 className={`${prefix}--sub-navigation__group__title`}>{title}</h3>
+      )}
       <div>{children}</div>
     </div>
   );

@@ -1,1 +1,1 @@
-export { AuthLayout ,BackgroundContent } from './AuthLayout';
+export { AuthLayout, BackgroundContent } from './AuthLayout';

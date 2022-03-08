@@ -6,7 +6,7 @@ import FormControls from '../../components/FormControls';
 import StepNavigation from '../../components/StepNavigation';
 import StepNavigationItem from '../../components/StepNavigationItem';
 
-const handleValidation = props => {
+const handleValidation = (props) => {
   return null;
 };
 
@@ -24,20 +24,20 @@ export default class Wizardr extends React.Component {
     };
   }
 
-  handleTabClick = values =>
-    this.setState(state => ({
+  handleTabClick = (values) =>
+    this.setState((state) => ({
       page: values,
       values,
     }));
 
-  next = values =>
-    this.setState(state => ({
+  next = (values) =>
+    this.setState((state) => ({
       page: Math.min(state.page + 1, this.props.children.length - 1),
       values,
     }));
 
   previous = () =>
-    this.setState(state => ({
+    this.setState((state) => ({
       page: Math.max(state.page - 1, 0),
     }));
 
@@ -47,14 +47,14 @@ export default class Wizardr extends React.Component {
    * functions once the form has been defined.
    */
 
-  validate = values => {
+  validate = (values) => {
     const activePage = React.Children.toArray(this.props.children)[
       this.state.page
     ];
     return activePage.props.validate ? activePage.props.validate(values) : {};
   };
 
-  handleSubmit = values => {
+  handleSubmit = (values) => {
     const { children, onSubmit } = this.props;
     const { page } = this.state;
     const isLastPage = page === React.Children.count(children) - 1;
@@ -75,7 +75,8 @@ export default class Wizardr extends React.Component {
       <Form
         initialValues={values}
         validate={this.validate}
-        onSubmit={this.handleSubmit}>
+        onSubmit={this.handleSubmit}
+      >
         {({ handleSubmit, submitting, values }) => (
           <form onSubmit={handleSubmit}>
             <FormWizard
@@ -93,7 +94,8 @@ export default class Wizardr extends React.Component {
               sidebar={
                 <StepNavigation
                   selectedPage={page}
-                  handleTabClick={this.handleTabClick}>
+                  handleTabClick={this.handleTabClick}
+                >
                   {/* You may also generate these steps from the pages */}
 
                   {React.Children.map(children, (child, i) => {
@@ -129,7 +131,8 @@ export default class Wizardr extends React.Component {
                     status={'summary'}
                   />*/}
                 </StepNavigation>
-              }>
+              }
+            >
               {/* Adding the wfp--form-long class is important */}
               <div className="wfp--form-long">{activePage}</div>
             </FormWizard>

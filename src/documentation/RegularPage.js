@@ -60,7 +60,8 @@ const RegularPage = ({
     <div>
       <MainNavigation
         pageWidth={pageWidth}
-        logo={<a href="#">Application name</a>}>
+        logo={<a href="#">Application name</a>}
+      >
         <MainNavigationItem>
           <Link href="http://communities.wfp.org" target="_blank">
             Section 1
@@ -184,7 +185,8 @@ const RegularPage = ({
                 </SubNavigationList>
               </SubNavigationContent>
             </SubNavigation>
-          }>
+          }
+        >
           <Link href="http://manuals.wfp.org" target="_blank">
             Section 2
           </Link>
@@ -200,11 +202,7 @@ const RegularPage = ({
           </Link>
         </MainNavigationItem>
         <MainNavigationItem>
-          <Search
-            kind="main"
-            id="search-2"
-            placeholder="Search"
-          />
+          <Search kind="main" id="search-2" placeholder="Search" />
         </MainNavigationItem>
         <MainNavigationItem
           className="wfp--main-navigation__user"
@@ -217,7 +215,8 @@ const RegularPage = ({
                 aliquya.
               </p>
             </div>
-          }>
+          }
+        >
           <User ellipsis title="Max Mustermann long name" />
         </MainNavigationItem>
       </MainNavigation>
@@ -225,7 +224,8 @@ const RegularPage = ({
       {!withoutSecondary && (
         <SecondaryNavigation
           additional="additional Information"
-          pageWidth={pageWidth}>
+          pageWidth={pageWidth}
+        >
           <Breadcrumb>
             <BreadcrumbItem>
               <a href="/#">
@@ -272,7 +272,8 @@ const RegularPage = ({
       {children}
       <Footer
         pageWidth={pageWidth}
-        metaContent="WFP UI Kit version 1.0 – powered by RMT with full support of concerned divisions which are responsible for the accuracy of the content">
+        metaContent="WFP UI Kit version 1.0 – powered by RMT with full support of concerned divisions which are responsible for the accuracy of the content"
+      >
         <div className="wfp--footer__info">
           <div className="wfp--footer__info__item">
             <p className="wfp--footer__label">A label</p>

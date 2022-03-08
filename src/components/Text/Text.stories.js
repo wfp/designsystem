@@ -23,7 +23,8 @@ Regular.decorators = [
         display: 'flex',
         borderTop: '1px solid #EFEFEF',
         borderBottom: '2px solid #EFEFEF',
-      }}>
+      }}
+    >
       <Story />
     </div>
   ),
@@ -37,17 +38,17 @@ import { Text } from "@wfp/ui";
 <div>
   <Text kind='h1'>Content</Text>
 </div>
-`
+`;
 
-Regular.story={
-  parameters:{
-    docs:{
-      source:{
-        code:regularsourcecode
-      }
-    }
-  }
-}
+Regular.story = {
+  parameters: {
+    docs: {
+      source: {
+        code: regularsourcecode,
+      },
+    },
+  },
+};
 
 const headingText = [
   { kind: 'h1', text: 'Heading 1', styling: '29px, SemiBold' },
@@ -82,16 +83,16 @@ import { Text } from "@wfp/ui";
   <Text kind='h5'>Heading 5</Text>
   <Text kind='h6'>Heading 6</Text>
 </>
-`
-Headings.story={
-  parameters:{
-    docs:{
-      source:{
-        code:headingsourcecode
-      }
-    }
-  }
-}
+`;
+Headings.story = {
+  parameters: {
+    docs: {
+      source: {
+        code: headingsourcecode,
+      },
+    },
+  },
+};
 
 const Normaltext = [
   { kind: 'p', text: 'Body copy, paragraph', styling: '16px, Regular' },
@@ -127,16 +128,16 @@ import { Text } from "@wfp/ui";
   <Text kind='sup'>Sup</Text>
   <Text kind='inline-highlight'>Inline highlight</Text>
 </>
-`
-text.story={
-  parameters:{
-    docs:{
-      source:{
-        code:textsourcecode
-      }
-    }
-  }
-}
+`;
+text.story = {
+  parameters: {
+    docs: {
+      source: {
+        code: textsourcecode,
+      },
+    },
+  },
+};
 
 export const Pagetitle = (args) => (
   <>
@@ -154,17 +155,17 @@ import { Text, Link  } from "@wfp/ui";
   <Text kind="title">Title</Text>
   <Text kind="subtitle">Overline</Text>
 </>
-`
+`;
 
-Pagetitle.story={
-  parameters:{
-    docs:{
-      source:{
-        code:pagetitlesourcecode
-      }
-    }
-  }
-}
+Pagetitle.story = {
+  parameters: {
+    docs: {
+      source: {
+        code: pagetitlesourcecode,
+      },
+    },
+  },
+};
 
 export const Links = (args) => (
   <>
@@ -182,17 +183,17 @@ import { Text, Link  } from "@wfp/ui";
   <Text kind="a">Link</Text>
   <Link className="wfp--link--hover">Link</Link>
 </>
-`
+`;
 
-Links.story={
-  parameters:{
-    docs:{
-      source:{
-        code:linksourcecode
-      }
-    }
-  }
-}
+Links.story = {
+  parameters: {
+    docs: {
+      source: {
+        code: linksourcecode,
+      },
+    },
+  },
+};
 
 const emphasisText = [
   { kind: 'strong', text: 'Bold', styling: '16px, Bold' },
@@ -213,7 +214,7 @@ export const Emphasis = (args) => (
   </>
 );
 
-const emphasissourcecode=`
+const emphasissourcecode = `
 import { Text } from "@wfp/ui";
 
 <>
@@ -221,16 +222,16 @@ import { Text } from "@wfp/ui";
   <Text kind="bold">SemiBold</Text>
   <Text kind="i">Italic</Text>
 </>
-`
-Emphasis.story={
-  parameters:{
-    docs:{
-      source:{
-        code:emphasissourcecode
-      }
-    }
-  }
-}
+`;
+Emphasis.story = {
+  parameters: {
+    docs: {
+      source: {
+        code: emphasissourcecode,
+      },
+    },
+  },
+};
 
 const list = [
   { kind: 'simple', heading: 'Ordered lists' },
@@ -285,17 +286,17 @@ const Lists = () => {
 }
 
 export default Lists;
-`
+`;
 
 Lists.story = {
-  parameters:{
-    docs:{
-      source:{
-        code: listsourcecode
-      }
-    }
-  }
-}
+  parameters: {
+    docs: {
+      source: {
+        code: listsourcecode,
+      },
+    },
+  },
+};
 
 const colors = [
   { color: '#031C2D', text: '#text-01' },
@@ -320,7 +321,8 @@ export const textColors = (args) => (
             height: '50px',
             borderRadius: '50%',
             marginLeft: '1.5rem',
-          }}></div>
+          }}
+        ></div>
       </div>
     ))}
   </>
@@ -367,14 +369,14 @@ import { Text } from '@wfp/ui'
     </div>
   </div>  
 </>
-`
+`;
 
 textColors.story = {
-  parameters:{
-    docs:{
-      source:{
-        code: textcolorsourcecode
-      }
-    }
-  }
-}
+  parameters: {
+    docs: {
+      source: {
+        code: textcolorsourcecode,
+      },
+    },
+  },
+};

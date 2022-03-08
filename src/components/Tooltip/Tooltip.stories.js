@@ -13,12 +13,12 @@ export default {
   },
 };
 export const Regular = (args) => (
-    <Tooltip
+  <Tooltip
     // options
-    {...args}>
+    {...args}
+  >
     Hover here to show tooltip
   </Tooltip>
-  
 );
 
 Regular.args = {
@@ -30,7 +30,8 @@ export const Dark = (args) => (
   <Tooltip
     // options
     {...args}
-    trigger="click">
+    trigger="click"
+  >
     <span>Click here to show tooltip</span>
   </Tooltip>
 );
@@ -55,7 +56,8 @@ export const WithIcon = (args) => (
     trigger="click"
     placement={'bottom'}
     createRefWrapper={true}
-    content="Label Text">
+    content="Label Text"
+  >
     <Icon
       description="options"
       icon={iconOverflowMenu}
@@ -81,15 +83,15 @@ import { iconOverflowMenu } from '@wfp/icons';
     height="17px"
   />
 </Tooltip>
-`
+`;
 
 WithIcon.story = {
   parameters: {
     docs: {
       storyDescription: `By using the \`createRefWrapper\` prop a html element around the trigger will be added. This is useful for components without \`forwardRef\` support.`,
-      source:{
-        code:withiconsourcecode
-      }
+      source: {
+        code: withiconsourcecode,
+      },
     },
   },
 };

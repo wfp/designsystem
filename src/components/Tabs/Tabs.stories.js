@@ -7,7 +7,7 @@ export default {
   title: 'Components/Content Related/Tabs',
   component: Tabs,
   subcomponents: {
-    Tab
+    Tab,
   },
   parameters: {
     componentSubtitle: 'Component',
@@ -67,9 +67,9 @@ import { Tabs, Tab } from "@wfp/ui";
 Regular.story = {
   parameters: {
     docs: {
-      source:{
-        code:sourcecode
-      }
+      source: {
+        code: sourcecode,
+      },
     },
   },
 };
@@ -103,6 +103,3 @@ Regular.story = {
 //     },
 //   },
 // };
-
-
-

@@ -177,7 +177,8 @@ export class FileUploaderButton extends Component {
             }
           }}
           htmlFor={this.uid}
-          {...other}>
+          {...other}
+        >
           <span role={role}>{this.state.labelText}</span>
         </label>
         <input
@@ -425,7 +426,8 @@ export default class FileUploader extends Component {
                   key={index}
                   className={`${prefix}--file__selected-file`}
                   ref={(node) => (this.nodes[index] = node)} // eslint-disable-line
-                  {...other}>
+                  {...other}
+                >
                   <p className={`${prefix}--file-filename`}>{name}</p>
                   <span className={`${prefix}--file__state-container`}>
                     <Filename

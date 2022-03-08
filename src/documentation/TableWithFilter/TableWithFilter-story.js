@@ -137,7 +137,8 @@ const MyForm = ({ onSubmit }) => (
               name="select"
               component={ReduxFormWrapper}
               inputComponent={Select}
-              labelText="This is a select input">
+              labelText="This is a select input"
+            >
               <SelectItem value="option-1" text="Option 1" />
               <SelectItem value="option-2" text="Option 2" />
             </Field>
@@ -148,7 +149,8 @@ const MyForm = ({ onSubmit }) => (
               name="select"
               component={ReduxFormWrapper}
               inputComponent={Select}
-              labelText="Another amazing select">
+              labelText="Another amazing select"
+            >
               <SelectItem value="option-1" text="Option 1" />
               <SelectItem value="option-2" text="Option 2" />
             </Field>
@@ -178,13 +180,15 @@ const MyForm = ({ onSubmit }) => (
             display: 'flex',
             justifyContent: 'flex-end',
             marginTop: '1em',
-          }}>
+          }}
+        >
           <Button
             type="button"
             kind="ghost"
             onClick={form.reset}
             disabled={submitting || pristine}
-            style={{ marginRight: '0.5em' }}>
+            style={{ marginRight: '0.5em' }}
+          >
             Clear filters
           </Button>
           <Button type="submit">Apply</Button>
@@ -212,11 +216,11 @@ class TableWithFilter extends Component {
     this.setState({ filterActivated: !this.state.filterActivated });
   };
 
-  setSimpleSearch = event => {
+  setSimpleSearch = (event) => {
     this.setState({ simpleSearch: event.target.value });
   };
 
-  setSearch = event => {
+  setSearch = (event) => {
     this.setState({ search: event });
   };
 
@@ -237,11 +241,13 @@ class TableWithFilter extends Component {
                 onClick={this.toggleFilter}
                 icon={filterActivated ? iconSubtractGlyph : iconFilterAlt}
                 kind="secondary"
-                style={{ marginLeft: '1em' }}>
+                style={{ marginLeft: '1em' }}
+              >
                 {filterActivated ? 'Hide filters' : 'Advanced filters'}
               </Button>
             </React.Fragment>
-          }>
+          }
+        >
           Large table with filter
         </ModuleHeader>
         {filterActivated && (

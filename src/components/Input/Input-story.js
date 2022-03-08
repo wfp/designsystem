@@ -42,7 +42,7 @@ storiesOf('Components|Input', module)
   ))*/
   .add('Functional', () => (
     <Input {...TextInputProps()}>
-      {props => {
+      {(props) => {
         return <input {...props} />;
       }}
     </Input>

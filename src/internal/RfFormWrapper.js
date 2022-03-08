@@ -9,13 +9,8 @@ import { load as loadAccount } from './loadDefaultData';
 
 class FormEl extends Component {
   render() {
-    const {
-      handleSubmit,
-      pristine,
-      reset,
-      sampleData,
-      submitting,
-    } = this.props;
+    const { handleSubmit, pristine, reset, sampleData, submitting } =
+      this.props;
 
     const data = sampleData
       ? sampleData
@@ -39,14 +34,16 @@ class FormEl extends Component {
             type="button"
             kind="secondary"
             disabled={pristine || submitting}
-            onClick={reset}>
+            onClick={reset}
+          >
             Clear Values
           </Button>
           &nbsp;
           <Button
             type="button"
             kind="secondary"
-            onClick={() => this.props.load(data)}>
+            onClick={() => this.props.load(data)}
+          >
             Load Sample Data
           </Button>
           <Blockquote>{/*<Values form="SimpleForm" />*/}</Blockquote>
@@ -63,7 +60,7 @@ let Form = reduxForm({
 
 // You have to connect() to any reducers that you wish to connect to yourself
 Form = connect(
-  state => ({
+  (state) => ({
     initialValues: state.account.data, // pull initial values from account reducer
   }),
   { load: loadAccount } // bind account loading action creator

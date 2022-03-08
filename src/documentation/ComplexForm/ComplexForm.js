@@ -9,7 +9,13 @@ import Form from '../../components/Form';
 import Blockquote from '../../components/Blockquote/Blockquote';
 
 const ComplexForm = () => {
-  const { control, handleSubmit, register, reset, formState: { errors } } = useForm();
+  const {
+    control,
+    handleSubmit,
+    register,
+    reset,
+    formState: { errors },
+  } = useForm();
   const onSubmit = (values) => {
     setOutput(values);
   };
@@ -18,28 +24,28 @@ const ComplexForm = () => {
   return (
     <Form longForm onSubmit={handleSubmit(onSubmit)}>
       <TextInput
-        {...register("email", {required:true, pattern:{
-          value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-          message: 'invalid email address',
-        }})}
+        {...register('email', {
+          required: true,
+          pattern: {
+            value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+            message: 'invalid email address',
+          },
+        })}
         labelText="Email TextInput"
-        
       />
       {errors.email && <span role="alert"> {errors.username.message} </span>}
       <TextInput
-        {...register('textinput',{
+        {...register('textinput', {
           validate: (value) => value !== 'admin' || 'Nice try!',
         })}
         labelText="TextInput"
       />
-     
       <NumberInput
         {...register('numberinput')}
         labelText="Number input"
         step={1}
       />
-
-      <Select {...register("select")} labelText="Select">
+      <Select {...register('select')} labelText="Select">
         <SelectItem value="" text="not selected" />
         <SelectItem value="daily" text="daily" />
         <SelectItem value="weekly" text="weekly" />
@@ -50,7 +56,8 @@ const ComplexForm = () => {
       <Button
         type="submit"
         kind="secondary"
-        onClick={() => reset({ numberinput: 3 })}>
+        onClick={() => reset({ numberinput: 3 })}
+      >
         Reset
       </Button>
       <Blockquote title="Output">{JSON.stringify(output)}</Blockquote>

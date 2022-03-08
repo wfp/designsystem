@@ -29,7 +29,6 @@ export const Regular = (args) => (
   />
 );
 
-
 const valuesourcecode = `
 import { Value, Unit } from "@wfp/ui";
 
@@ -45,14 +44,14 @@ import { Value, Unit } from "@wfp/ui";
       </Unit>
     }
 />
-`
+`;
 
 Regular.story = {
   parameters: {
     docs: {
-      source:{
-        code: valuesourcecode
-      }
+      source: {
+        code: valuesourcecode,
+      },
     },
   },
 };

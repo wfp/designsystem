@@ -14,29 +14,23 @@ export default {
 
 export const Regular = (args) => <TextInput {...args} />;
 
-
-
 Regular.args = {
-  type:"text",
+  type: 'text',
   name: 'inputname',
   helperText: 'Optional helperText',
   labelText: 'The labelText',
   placeholder: 'placeholder',
 };
 
-export const PasswordInput = (args) => <TextInput  {...args} />;
-
-
+export const PasswordInput = (args) => <TextInput {...args} />;
 
 PasswordInput.args = {
-  type:"password",
+  type: 'password',
   name: 'password',
   labelText: 'Password Label',
 };
 
 export const withError = (args) => <TextInput {...args} />;
-
-
 
 withError.args = {
   name: 'inputname',

@@ -68,13 +68,15 @@ const renderActiveShape = (props) => {
         x={ex + (cos >= 0 ? 1 : -1) * 12}
         y={ey}
         textAnchor={textAnchor}
-        fill="#333">{`PV ${value}`}</text>
+        fill="#333"
+      >{`PV ${value}`}</text>
       <text
         x={ex + (cos >= 0 ? 1 : -1) * 12}
         y={ey}
         dy={18}
         textAnchor={textAnchor}
-        fill="#999">
+        fill="#999"
+      >
         {`(Rate ${(percent * 100).toFixed(2)}%)`}
       </text>
     </g>
@@ -107,7 +109,8 @@ export class PieChartExample extends PureComponent {
           outerRadius={80}
           fill="#8884d8"
           dataKey="value"
-          onMouseEnter={this.onPieEnter}>
+          onMouseEnter={this.onPieEnter}
+        >
           {data.map((entry, index) => (
             <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
           ))}

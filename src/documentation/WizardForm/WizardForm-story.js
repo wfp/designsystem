@@ -39,11 +39,13 @@ storiesOf('Design|Templates', module)
     <Wrapper background="lighter" pageWidth="lg" spacing="xl">
       <Wizard
         initialValues={{ employed: true, stooge: 'larry' }}
-        onSubmit={onSubmit}>
+        onSubmit={onSubmit}
+      >
         <Wizard.Page label="Name and last name">
           <Blockquote
             style={{ marginBottom: '2rem' }}
-            title="Regular Blockquote">
+            title="Regular Blockquote"
+          >
             Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
             nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
             erat, sed diam voluptua.{' '}
@@ -95,7 +97,8 @@ storiesOf('Design|Templates', module)
               className="wfp--input-group"
               name="input-group"
               defaultSelected="default-selected"
-              legend="Group Legend">
+              legend="Group Legend"
+            >
               <Field
                 name="sex"
                 component={ReduxFormWrapper}
@@ -133,7 +136,8 @@ storiesOf('Design|Templates', module)
               errors.newNotes = 'Required';
             }
             return errors;
-          }}>
+          }}
+        >
           <Field
             component={ReduxFormWrapper}
             inputComponent={TextArea}
@@ -154,7 +158,8 @@ storiesOf('Design|Templates', module)
         <Wizard.Page
           label="Summary"
           helperText="Check & validate"
-          status={'summary'}>
+          status={'summary'}
+        >
           <Field
             component={ReduxFormWrapper}
             inputComponent={TextArea}

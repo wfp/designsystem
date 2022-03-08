@@ -39,7 +39,8 @@ export const ButtonKind = (args) => (
           display: 'inline-block',
           background: e === 'inverse' || e === 'inverse--primary' ? '#ccc' : '',
           padding: '0.3rem',
-        }}>
+        }}
+      >
         <Button {...args} kind={e}>
           {e}
         </Button>
@@ -120,16 +121,16 @@ import { iconAddGlyph } from '@wfp/icons';
       With iconReverse
     </Button>
   </>
-`
+`;
 
 ButtonIcon.story = {
   name: 'Button with icon',
   parameters: {
     docs: {
       storyDescription: helloButtonIcon,
-      source:{
-        code: buttoniconsnippet
-      }
+      source: {
+        code: buttoniconsnippet,
+      },
     },
   },
 };
@@ -149,7 +150,7 @@ regular sized button. This issue is most found in tables. Small button should ha
 or less.
 `;
 
-const smallbuttonsnippet =`
+const smallbuttonsnippet = `
 import { Button } from '@wfp/ui';
 import { iconAddGlyph } from '@wfp/icons';
 
@@ -159,20 +160,19 @@ import { iconAddGlyph } from '@wfp/icons';
       With icon
     </Button>
   </>
-`
+`;
 
 Small.story = {
   name: 'small Button',
   parameters: {
     docs: {
       storyDescription: helloButtonSmall,
-      source:{
-        code:smallbuttonsnippet
-      }
+      source: {
+        code: smallbuttonsnippet,
+      },
     },
   },
 };
-
 
 export const Large = (args) => (
   <>
@@ -189,7 +189,7 @@ regular sized button. This issue is most found in tables. Small button should ha
 or less.
 `;
 
-const largebuttonsnippet =`
+const largebuttonsnippet = `
 import { Button } from '@wfp/ui';
 import { iconAddGlyph } from '@wfp/icons';
 
@@ -199,16 +199,16 @@ import { iconAddGlyph } from '@wfp/icons';
       With icon
     </Button>
   </>
-`
+`;
 
 Large.story = {
   name: 'large Button',
   parameters: {
     docs: {
       storyDescription: helloButtonLarge,
-      source:{
-        code:largebuttonsnippet
-      }
+      source: {
+        code: largebuttonsnippet,
+      },
     },
   },
 };

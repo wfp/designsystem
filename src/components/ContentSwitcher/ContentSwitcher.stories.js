@@ -119,7 +119,7 @@ import { iconAddGlyph } from '@wfp/icons';
   text="Third section"
   icon={<Icon icon={iconAddGlyph} />}
 />
-</ContentSwitcher>`
+</ContentSwitcher>`;
 
 withIcon.args = {
   children: 'ContentSwitcher',
@@ -131,9 +131,9 @@ withIcon.story = {
   parameters: {
     docs: {
       storyDescription: desc,
-      source:{
-        code: sourcecode
-      }
+      source: {
+        code: sourcecode,
+      },
     },
   },
 };

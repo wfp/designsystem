@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React, { useState } from 'react';
 
 import Search from '../../components/Search';
 import Button from '../../components/Button';
@@ -6,62 +6,67 @@ import Button from '../../components/Button';
 import { iconFilterAlt, iconSubtractGlyph } from '@wfp/icons';
 
 import { Module, ModuleHeader, ModuleBody } from '../../components/Module';
-import Table from './DataTable'
+import Table from './DataTable';
 import MyForm from './Form';
 
 function TableWithFilter() {
-    const [simpleSearch, setSimpleSearch] = useState();
-    const [filterActivated, setFilterActivated] = useState(false);
-    const [search, setSearch] = useState({})
+  const [simpleSearch, setSimpleSearch] = useState();
+  const [filterActivated, setFilterActivated] = useState(false);
+  const [search, setSearch] = useState({});
 
-    const handleOnFormSubmit = (formdata) => {
-      setSearch(formdata)
-    }
+  const handleOnFormSubmit = (formdata) => {
+    setSearch(formdata);
+  };
 
-    const handleClearFilters = () =>{
+  const handleClearFilters = () => {
+    setSearch({});
+  };
+
+  const handleSearchOnchange = (value) => {
+    setSimpleSearch(value);
+  };
+
+  const toggleFilter = () => {
+    if (filterActivated) {
       setSearch({});
     }
+    setFilterActivated(!filterActivated);
+  };
 
-    const handleSearchOnchange = (value) =>{
-        setSimpleSearch(value)
-    }
-
-    const toggleFilter = () => {
-        if (filterActivated) {
-          setSearch({})
+  return (
+    <Module noMargin>
+      <ModuleHeader
+        filter={
+          <>
+            <Search
+              id="tablewithfilter"
+              value={simpleSearch}
+              onChange={handleSearchOnchange}
+            />
+            <Button
+              onClick={toggleFilter}
+              icon={filterActivated ? iconSubtractGlyph : iconFilterAlt}
+              kind="secondary"
+              style={{ marginLeft: '1em' }}
+            >
+              {filterActivated ? 'Hide filters' : 'Advanced filters'}
+            </Button>
+          </>
         }
-        setFilterActivated(!filterActivated);
-    };
-
-    return (
-        <Module noMargin>
-        <ModuleHeader
-          filter={
-            <>
-              <Search
-                id="tablewithfilter"
-                value={simpleSearch}
-                onChange={handleSearchOnchange}
-              />
-              <Button
-                onClick={toggleFilter}
-                icon={filterActivated ? iconSubtractGlyph : iconFilterAlt}
-                kind="secondary"
-                style={{ marginLeft: '1em' }}>
-                {filterActivated ? 'Hide filters' : 'Advanced filters'}
-              </Button>
-            </>
-          }>
-          Large table with filter
-        </ModuleHeader>
-        {filterActivated && (
-          <ModuleBody>
-            <MyForm onFormChange={handleOnFormSubmit} clearFilters={handleClearFilters}/>
-          </ModuleBody>
-        )}
-        <Table filterText={simpleSearch} advanceFilter={search} /> 
-      </Module>
-    )
+      >
+        Large table with filter
+      </ModuleHeader>
+      {filterActivated && (
+        <ModuleBody>
+          <MyForm
+            onFormChange={handleOnFormSubmit}
+            clearFilters={handleClearFilters}
+          />
+        </ModuleBody>
+      )}
+      <Table filterText={simpleSearch} advanceFilter={search} />
+    </Module>
+  );
 }
 
-export default TableWithFilter
+export default TableWithFilter;

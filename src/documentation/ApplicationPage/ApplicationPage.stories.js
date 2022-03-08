@@ -11,7 +11,7 @@ export default {
     componentSubtitle: 'Example',
     mdx: markdown,
     status: 'released',
-    previewWidth: 'full'
+    previewWidth: 'full',
   },
 };
 

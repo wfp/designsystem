@@ -4,9 +4,7 @@ import { shallow } from 'enzyme';
 
 describe('Empty', () => {
   describe('Renders as expected', () => {
-    const wrapper = shallow(
-      <Empty title="title" kind="large" />
-    );
+    const wrapper = shallow(<Empty title="title" kind="large" />);
 
     const emptyWrapper = () => wrapper.find('div.wfp--empty');
 
@@ -39,17 +37,15 @@ describe('Empty', () => {
         expect(emptyText().length).toBe(1);
       });
       it('renders children as expected', () => {
-        expect(emptyText().props().children).toEqual(
-          [<h2>title</h2>, <p/>]
-        )
+        expect(emptyText().props().children).toEqual([<h2>title</h2>, <p />]);
       });
 
       it('renders title as expected', () => {
-        expect(emptyText().find("h2").length).toBe(1);
+        expect(emptyText().find('h2').length).toBe(1);
       });
 
       it('renders additional content as expected', () => {
-        expect(emptyText().find("p").length).toBe(1);
+        expect(emptyText().find('p').length).toBe(1);
       });
 
       it('has the expected classes', () => {
@@ -63,7 +59,6 @@ describe('Empty', () => {
       it('has the expected classes', () => {
         expect(emptyButton().hasClass('wfp--empty__button')).toEqual(true);
       });
-    })
-    
+    });
   });
 });

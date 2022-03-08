@@ -11,7 +11,11 @@ import markdown from './README.mdx';
 export default {
   title: 'Components/UI Elements/Notification',
   component: NotificationActionButton,
-  subcomponents: { ToastNotification, InlineNotification, NotificationActionButton, },
+  subcomponents: {
+    ToastNotification,
+    InlineNotification,
+    NotificationActionButton,
+  },
   parameters: {
     componentSubtitle: 'Component',
     status: 'released',
@@ -37,7 +41,7 @@ Toast.args = {
   hideCloseButton: false,
 };
 
-const toastsourcecode= `
+const toastsourcecode = `
 import { ToastNotification } from "@wfp/ui";
 
 <ToastNotification
@@ -51,16 +55,16 @@ import { ToastNotification } from "@wfp/ui";
   subtitle="Subtitle text goes here."
   title="Notification title"
 />
-`
-Toast.story={
-  parameters:{
-    docs:{
-      source:{
-        code:toastsourcecode
-      }
-    }
-  }
-}
+`;
+Toast.story = {
+  parameters: {
+    docs: {
+      source: {
+        code: toastsourcecode,
+      },
+    },
+  },
+};
 
 export const NotificationTypes = (args) => (
   <>
@@ -70,7 +74,8 @@ export const NotificationTypes = (args) => (
           display: 'inline-block',
           background: e === 'inverse' ? '#ccc' : '',
           padding: '0.3rem',
-        }}>
+        }}
+      >
         <ToastNotification
           {...args}
           kind={e}
@@ -122,31 +127,31 @@ NotificationTypes.story = {
 
 export const ToastLowContrast = (args) => (
   <>
-  <ToastNotification
-    {...args}
-    kind="success"
-    style={{ minWidth: '30rem', marginBottom: '.5rem' }}
-  />
-  <ToastNotification
-    {...args}
-    kind="error"
-    style={{ minWidth: '30rem', marginBottom: '.5rem' }}
-  />
-  <ToastNotification
-    {...args}
-    kind="warning"
-    style={{ minWidth: '30rem', marginBottom: '.5rem' }}
-  />
-  <ToastNotification
-    {...args}
-    kind="info"
-    style={{ minWidth: '30rem', marginBottom: '.5rem' }}
-  />
+    <ToastNotification
+      {...args}
+      kind="success"
+      style={{ minWidth: '30rem', marginBottom: '.5rem' }}
+    />
+    <ToastNotification
+      {...args}
+      kind="error"
+      style={{ minWidth: '30rem', marginBottom: '.5rem' }}
+    />
+    <ToastNotification
+      {...args}
+      kind="warning"
+      style={{ minWidth: '30rem', marginBottom: '.5rem' }}
+    />
+    <ToastNotification
+      {...args}
+      kind="info"
+      style={{ minWidth: '30rem', marginBottom: '.5rem' }}
+    />
   </>
 );
 ToastLowContrast.args = {
   lowContrast: true,
-  caption:'00:00:00 AM',
+  caption: '00:00:00 AM',
   role: 'alert',
   title: 'Notification title',
   subtitle: 'Subtitle text goes here.',
@@ -165,26 +170,26 @@ ToastLowContrast.story = {
 
 export const Inline = (args) => (
   <>
-  <InlineNotification
-    {...args}
-    kind="success"
-    actions={<NotificationActionButton>{'Action'}</NotificationActionButton>}
-  />
-  <InlineNotification
-    {...args}
-    kind="error"
-    actions={<NotificationActionButton>{'Action'}</NotificationActionButton>}
-  />
-  <InlineNotification
-    {...args}
-    kind="warning"
-    actions={<NotificationActionButton>{'Action'}</NotificationActionButton>}
-  />
-  <InlineNotification
-    {...args}
-    kind="info"
-    actions={<NotificationActionButton>{'Action'}</NotificationActionButton>}
-  />
+    <InlineNotification
+      {...args}
+      kind="success"
+      actions={<NotificationActionButton>{'Action'}</NotificationActionButton>}
+    />
+    <InlineNotification
+      {...args}
+      kind="error"
+      actions={<NotificationActionButton>{'Action'}</NotificationActionButton>}
+    />
+    <InlineNotification
+      {...args}
+      kind="warning"
+      actions={<NotificationActionButton>{'Action'}</NotificationActionButton>}
+    />
+    <InlineNotification
+      {...args}
+      kind="info"
+      actions={<NotificationActionButton>{'Action'}</NotificationActionButton>}
+    />
   </>
 );
 
@@ -206,26 +211,26 @@ Inline.story = {
 
 export const InlineLowContrast = (args) => (
   <>
-  <InlineNotification
-    {...args}
-    kind="success"
-    actions={<NotificationActionButton>{'Action'}</NotificationActionButton>}
-  />
-  <InlineNotification
-    {...args}
-    kind="error"
-    actions={<NotificationActionButton>{'Action'}</NotificationActionButton>}
-  />
-  <InlineNotification
-    {...args}
-    kind="warning"
-    actions={<NotificationActionButton>{'Action'}</NotificationActionButton>}
-  />
-  <InlineNotification
-    {...args}
-    kind="info"
-    actions={<NotificationActionButton>{'Action'}</NotificationActionButton>}
-  />
+    <InlineNotification
+      {...args}
+      kind="success"
+      actions={<NotificationActionButton>{'Action'}</NotificationActionButton>}
+    />
+    <InlineNotification
+      {...args}
+      kind="error"
+      actions={<NotificationActionButton>{'Action'}</NotificationActionButton>}
+    />
+    <InlineNotification
+      {...args}
+      kind="warning"
+      actions={<NotificationActionButton>{'Action'}</NotificationActionButton>}
+    />
+    <InlineNotification
+      {...args}
+      kind="info"
+      actions={<NotificationActionButton>{'Action'}</NotificationActionButton>}
+    />
   </>
 );
 

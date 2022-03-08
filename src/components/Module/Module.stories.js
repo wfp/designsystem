@@ -28,8 +28,6 @@ export const Regular = (args) => (
   </Module>
 );
 
-
-
 export const Dark = (args) => (
   <Module dark>
     <ModuleHeader>Dark module example</ModuleHeader>

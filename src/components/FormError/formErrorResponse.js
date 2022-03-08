@@ -1,8 +1,8 @@
-export const formErrorResponse = errorFields => {
+export const formErrorResponse = (errorFields) => {
   const errors = {};
   var generic = [];
   // Remove empty errors
-  Object.keys(errorFields).forEach(function(key) {
+  Object.keys(errorFields).forEach(function (key) {
     if (errorFields[key] === null) {
       delete errorFields[key];
     } else if (key === '_generic') {

@@ -6,7 +6,7 @@ import Hero from '.';
 import Button from '../Button';
 import Icon from '../Icon';
 import { iconWfpHumEmergencyResponsePos } from '@wfp/icons';
-import heroTwig from './Hero.twig'
+import heroTwig from './Hero.twig';
 
 export default {
   title: 'Components/Content Related/Hero',
@@ -15,11 +15,9 @@ export default {
     componentSubtitle: 'Component',
     status: 'released',
     mdx: markdown,
-    twig: heroTwig
+    twig: heroTwig,
   },
 };
-
-
 
 export const Regular = (args) => <Hero {...args} />;
 
@@ -140,9 +138,7 @@ Splash.args = {
   image: undefined,
 };
 
-
-const splashsourcecode =
-  `
+const splashsourcecode = `
   import { Hero, Button } from "@wfp/ui"; 
 
   <Hero
@@ -158,15 +154,15 @@ const splashsourcecode =
         }
     title="The Climate Adaption Mangement and Innovation Initiative"
   />
-`
+`;
 
 Splash.story = {
   parameters: {
     docs: {
       storyDescription: `Page middle content section.`,
-      source:{
-        code: splashsourcecode
-      }
+      source: {
+        code: splashsourcecode,
+      },
     },
   },
 };
@@ -211,15 +207,15 @@ const splashcompactcode = `
   kind="splash-compact"
   title={<><span style={{marginRight: '1rem'}}>Nulla consequat massa quis enim</span><Button kind="inverse--primary">Read more</Button></>}
   />
-`
+`;
 
 SplashCompact.story = {
   parameters: {
     docs: {
       storyDescription: `A card content section without space around title and subtitle.`,
-      source:{
-        code:splashcompactcode
-      }
+      source: {
+        code: splashcompactcode,
+      },
     },
   },
 };
@@ -252,7 +248,8 @@ Emergencies.args = {
         style={{ marginRight: '1rem' }}
       />
       <span>
-        Curabitur ullamcorper ultricies nisi. Proin magna. Etiam iaculis nunc ac metus
+        Curabitur ullamcorper ultricies nisi. Proin magna. Etiam iaculis nunc ac
+        metus
       </span>
     </>
   ),
@@ -282,15 +279,15 @@ import { iconWfpHumEmergencyResponsePos } from '@wfp/icons';
     }
 />
 
-`
+`;
 
 Emergencies.story = {
   parameters: {
     docs: {
       storyDescription: `A global card for highlighting important events, such as emergencies.`,
-      source:{
-        code: sourcecode
-      }
+      source: {
+        code: sourcecode,
+      },
     },
   },
 };

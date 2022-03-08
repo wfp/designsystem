@@ -40,7 +40,7 @@ const props = () => ({
 
 storiesOf('Components|Pagination', module)
   .addDecorator(withKnobs)
-  .addDecorator(story => <div style={{ width: '800px' }}>{story()}</div>)
+  .addDecorator((story) => <div style={{ width: '800px' }}>{story()}</div>)
   .add('default', () => <Pagination {...props()} />)
   .add('multipe pagination components', () => {
     return (

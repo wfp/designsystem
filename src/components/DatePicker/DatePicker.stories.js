@@ -67,9 +67,7 @@ SingleDatePickerDefault.story = {
   },
 };
 
-export const InvalidDatePicker = (args) => (
-  <SingleDatePickerInput {...args} />
-);
+export const InvalidDatePicker = (args) => <SingleDatePickerInput {...args} />;
 InvalidDatePicker.args = {
   datePicker: SingleDatePicker,
   labelText: 'Label text (labelText)',
@@ -90,16 +88,16 @@ const invaliddatepickersourcecode = `
   inputIconPosition= 'after'
   helperText= 'Optional helper text.' 
   />
-`
-InvalidDatePicker.story={
-  parameters:{
-    docs:{
-      source:{
-        code: invaliddatepickersourcecode
-      }
-    }
-  }
-}
+`;
+InvalidDatePicker.story = {
+  parameters: {
+    docs: {
+      source: {
+        code: invaliddatepickersourcecode,
+      },
+    },
+  },
+};
 
 export const SingleDatePickerNew = (args) => {
   const [date, setDate] = useState(moment());
@@ -107,7 +105,8 @@ export const SingleDatePickerNew = (args) => {
   return (
     <Input
       labelText="Input using SingleDatePicker by Airbnb"
-      helperText="HelperText">
+      helperText="HelperText"
+    >
       {(e) => (
         <SingleDatePicker
           showDefaultInputIcon={true}
@@ -121,7 +120,7 @@ export const SingleDatePickerNew = (args) => {
       )}
     </Input>
   );
-}
+};
 
 const singledatepickernewsourcecode = `
 import React, { useState } from 'react';
@@ -151,18 +150,17 @@ export const SingleDatePickerNew = () => {
     </Input>
   );
 }
-`
+`;
 
 SingleDatePickerNew.story = {
-  parameters:{
-    docs:{
-    source:{
-      code: singledatepickernewsourcecode
-    }
-  }
-  }
-}
-
+  parameters: {
+    docs: {
+      source: {
+        code: singledatepickernewsourcecode,
+      },
+    },
+  },
+};
 
 export const DateRangePickerDefault = (args) => (
   <DateRangePickerInput {...args} />

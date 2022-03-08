@@ -5,7 +5,8 @@ const a11yWarningIcon = (prefix, notificationType) => (
     className={`${prefix}--${notificationType}-notification__icon`}
     width="20"
     height="20"
-    xmlns="http://www.w3.org/2000/svg">
+    xmlns="http://www.w3.org/2000/svg"
+  >
     <defs>
       <path
         d="M18.05 15.95L9.925.95a.625.625 0 0 0-1.1 0L.7 15.95a.625.625 0 0 0 0 .625.625.625 0 0 0 .55.3H17.5a.625.625 0 0 0 .55-.925z"

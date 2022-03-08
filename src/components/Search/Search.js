@@ -84,7 +84,8 @@ function Search(props) {
     <Input
       {...props}
       formItemClassName={numberInputClasses}
-      inputWrapperClassName={`${prefix}--search-input__wrapper`}>
+      inputWrapperClassName={`${prefix}--search-input__wrapper`}
+    >
       {() => {
         return (
           <>
@@ -106,7 +107,8 @@ function Search(props) {
               className={clearClasses}
               onClick={clearSearch}
               type="button"
-              aria-label={closeButtonLabelText}>
+              aria-label={closeButtonLabelText}
+            >
               <Icon icon={iconCloseGlyph} description={closeButtonLabelText} />
             </button>
           </>

@@ -23,10 +23,17 @@ export default class StepNavigationItem extends React.Component {
      */
     className: PropTypes.string,
     /**
-     * Provide status one of these status prop type to your step to give more meaning. 
+     * Provide status one of these status prop type to your step to give more meaning.
      *
      */
-     status: PropTypes.oneOf(['not-stated', 'warning', 'complete', 'skip', 'disabled', 'locked']),
+    status: PropTypes.oneOf([
+      'not-stated',
+      'warning',
+      'complete',
+      'skip',
+      'disabled',
+      'locked',
+    ]),
     /**
      * Provide text that is used alongside the control label for additional help
      *
@@ -67,7 +74,7 @@ export default class StepNavigationItem extends React.Component {
     role: 'presentation',
     label: 'provide a label',
     tabIndex: 0,
-    selectedPage:0,
+    selectedPage: 0,
     onClick: () => {},
   };
 
@@ -88,7 +95,10 @@ export default class StepNavigationItem extends React.Component {
     const classes = classNames(
       `${prefix}--step-navigation__nav-item`,
       { [`${prefix}--step-navigation__nav-item--before`]: page < selectedPage },
-      { [`${prefix}--step-navigation__nav-item--selected`]: page === selectedPage },
+      {
+        [`${prefix}--step-navigation__nav-item--selected`]:
+          page === selectedPage,
+      },
       { [`${prefix}--step-navigation__nav-item--${status}`]: status },
       className
     );
@@ -120,7 +130,8 @@ export default class StepNavigationItem extends React.Component {
             onClick(evt);
           }
         }}
-        role="presentation">
+        role="presentation"
+      >
         {renderAnchor ? (
           renderAnchor(anchorProps)
         ) : (
@@ -142,7 +153,9 @@ export default class StepNavigationItem extends React.Component {
                 {label}
               </span>
               {helperText && (
-                <span className={`${prefix}--step-navigation__nav-item__helper-text`}>
+                <span
+                  className={`${prefix}--step-navigation__nav-item__helper-text`}
+                >
                   {helperText}
                 </span>
               )}

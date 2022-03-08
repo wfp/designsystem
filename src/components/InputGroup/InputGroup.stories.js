@@ -18,7 +18,8 @@ export const Regular = (args) => (
     defaultSelected="default-selected"
     labelText="Group labelText"
     helperText="Helper text"
-    {...args}>
+    {...args}
+  >
     <RadioButton
       name="radio"
       value="standard"
@@ -66,24 +67,25 @@ import { InputGroup, RadioButton  } from "@wfp/ui";
     labelText="Radio 1"
   />
 </InputGroup>
-`
+`;
 
 Regular.story = {
-  parameters:{
-    docs:{
-      source:{
-        code: regularsourcecode
-      }
-    }
-  }
-}
+  parameters: {
+    docs: {
+      source: {
+        code: regularsourcecode,
+      },
+    },
+  },
+};
 
 export const withCheckbox = (args) => (
   <InputGroup
     defaultSelected="default-selected"
     labelText="Group labelText"
     helperText="Helper text"
-    {...args}>
+    {...args}
+  >
     <Checkbox name="checkbox-1" value="standard" labelText="Checkbox label 1" />
     <Checkbox
       name="checkbox-2"
@@ -94,7 +96,7 @@ export const withCheckbox = (args) => (
   </InputGroup>
 );
 
-const withcheckboxsourcecode=`
+const withcheckboxsourcecode = `
 import { InputGroup, Checkbox } from "@wfp/ui";
         
 <InputGroup
@@ -118,15 +120,15 @@ import { InputGroup, Checkbox } from "@wfp/ui";
     value="disabled"
   />
 </InputGroup>
-`
+`;
 
 withCheckbox.story = {
   parameters: {
     docs: {
       storyDescription: 'The InputGroup can be used with checkboxes',
-      source:{
-        code: withcheckboxsourcecode
-      }
+      source: {
+        code: withcheckboxsourcecode,
+      },
     },
   },
 };
@@ -138,7 +140,8 @@ export const vertical = (args) => (
       labelText="Group labelText"
       helperText="Helper text"
       vertical
-      {...args}>
+      {...args}
+    >
       <Checkbox
         name="checkboxb-1"
         value="standard"
@@ -159,7 +162,8 @@ export const vertical = (args) => (
       defaultSelected="default-selected"
       legend="Group Legend"
       vertical
-      {...args}>
+      {...args}
+    >
       <RadioButton
         name="radiob"
         value="standard"
@@ -232,16 +236,16 @@ import { InputGroup, Checkbox, RadioButton  } from "@wfp/ui";
     />
   </InputGroup>
 </>
-`
+`;
 
 vertical.story = {
   parameters: {
     docs: {
       storyDescription:
         'Use the vertical alignment if the elements do not have enough horizontal space. Avoid wrapping InputGroupss',
-      source:{
-        code: verticalsourcecode
-      }
+      source: {
+        code: verticalsourcecode,
+      },
     },
   },
 };

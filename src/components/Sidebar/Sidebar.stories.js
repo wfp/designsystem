@@ -58,7 +58,8 @@ export const Regular = (args) => {
             </SidebarBackButton>
             <div>Detail page</div>
           </>
-        }>
+        }
+      >
         {active ? (
           <Item
             additional="Yesterday"
@@ -67,7 +68,8 @@ export const Regular = (args) => {
             showAdditionalIcon
             subContent="This is the subContent. Lorem ipsum dolor sit amet, consetetur sadipscing elitr.  At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. "
             title="A title is shown"
-            wrapper="button">
+            wrapper="button"
+          >
             nonumy eirmod tempor invidunt
           </Item>
         ) : (
@@ -141,17 +143,17 @@ const Phonebook = () => {
 }
 
 export default Phonebook;
-`
+`;
 
 Regular.story = {
-  parameters:{
-    docs:{
-      source:{
-        code: codesnippet
-      }
-    }
-  }
-}
+  parameters: {
+    docs: {
+      source: {
+        code: codesnippet,
+      },
+    },
+  },
+};
 
 export const Phonebook = (args) => {
   const [selectedUserId, setSelectedUserId] = useState(null);
@@ -206,13 +208,15 @@ export const Phonebook = (args) => {
               )}
             </SidebarScroll>
           </>
-        }>
+        }
+      >
         {selectedUserData ? (
           <div
             style={{
               backgroundColor: '#fff',
               padding: '1rem',
-            }}>
+            }}
+          >
             <User
               id={selectedUserData.staff_id}
               alt="avatar"
@@ -234,7 +238,8 @@ export const Phonebook = (args) => {
                 style={{
                   borderBottom: '1px solid #edf1f3',
                   padding: '1rem 0',
-                }}>
+                }}
+              >
                 <h4>Bio</h4>
                 <List small>
                   <ListItem>{selectedUserData.bio}</ListItem>
@@ -245,7 +250,8 @@ export const Phonebook = (args) => {
                 style={{
                   borderBottom: '1px solid #edf1f3',
                   padding: '1rem 0',
-                }}>
+                }}
+              >
                 <h4>Contact</h4>
                 <List small>
                   <ListItem>email: {selectedUserData.email}</ListItem>
@@ -268,8 +274,6 @@ export const Phonebook = (args) => {
     </div>
   );
 };
-
-
 
 const sourcecode = `
 import React, {useState} from 'react';
@@ -418,14 +422,14 @@ const Phonebook = () => {
   }
 
   export default Phonebook;
-`
+`;
 
 Phonebook.story = {
   parameters: {
     docs: {
       source: {
-        code: sourcecode
-      }
+        code: sourcecode,
+      },
     },
   },
 };

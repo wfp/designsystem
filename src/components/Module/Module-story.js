@@ -17,10 +17,11 @@ const props = () => ({
 
 storiesOf('Components|Module', module)
   .addDecorator(withKnobs)
-  .addDecorator(story => (
+  .addDecorator((story) => (
     <div
       className="wfp--module__background"
-      style={{ height: '100vh', width: '100%' }}>
+      style={{ height: '100vh', width: '100%' }}
+    >
       <Wrapper pageWidth="narrow">{story()}</Wrapper>
     </div>
   ))

@@ -61,7 +61,7 @@ describe('InputGroup', () => {
     const onChange = jest.fn();
     const wrapper = mount(
       <InputGroup onChange={onChange} name="gender">
-        <RadioButton labelText="Male" value="male" checked={false}/>
+        <RadioButton labelText="Male" value="male" checked={false} />
         <RadioButton labelText="Female" value="female" />
       </InputGroup>
     );

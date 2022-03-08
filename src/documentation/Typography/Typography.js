@@ -145,7 +145,8 @@ const Typography = () => {
                 height: '50px',
                 borderRadius: '50%',
                 marginLeft: '1.5rem',
-              }}></div>
+              }}
+            ></div>
           </div>
         ))}
       </div>

@@ -4,13 +4,34 @@ import '!style-loader!css-loader!../assets/css/styles.css';
 import { Button, Link, List, ListItem, Tooltip } from '../src';
 
 const legacyPreviousversions = [
-  { link: 'https://uikit.wfp.org/legacy-docs/1.20.3/index.html', title: 'v1.20.3' },
-  { link: 'https://uikit.wfp.org/legacy-docs/1.19.1/index.html', title: 'v1.19.1' },
-  { link: 'https://uikit.wfp.org/legacy-docs/1.18.2/index.html', title: 'v1.18.2' },
-  { link: 'https://uikit.wfp.org/legacy-docs/1.17.1/index.html?', title: 'v1.17.1' },
-  { link: 'https://uikit.wfp.org/legacy-docs/1.16.0/index.html?', title: 'v1.16.0' },
-  { link: 'https://uikit.wfp.org/legacy-docs/1.15.1/index.html?', title: 'v1.15.1' },
-  { link: 'https://uikit.wfp.org/legacy-docs/1.14.0/index.html?', title: 'v1.14.0' },
+  {
+    link: 'https://uikit.wfp.org/legacy-docs/1.20.3/index.html',
+    title: 'v1.20.3',
+  },
+  {
+    link: 'https://uikit.wfp.org/legacy-docs/1.19.1/index.html',
+    title: 'v1.19.1',
+  },
+  {
+    link: 'https://uikit.wfp.org/legacy-docs/1.18.2/index.html',
+    title: 'v1.18.2',
+  },
+  {
+    link: 'https://uikit.wfp.org/legacy-docs/1.17.1/index.html?',
+    title: 'v1.17.1',
+  },
+  {
+    link: 'https://uikit.wfp.org/legacy-docs/1.16.0/index.html?',
+    title: 'v1.16.0',
+  },
+  {
+    link: 'https://uikit.wfp.org/legacy-docs/1.15.1/index.html?',
+    title: 'v1.15.1',
+  },
+  {
+    link: 'https://uikit.wfp.org/legacy-docs/1.14.0/index.html?',
+    title: 'v1.14.0',
+  },
 ];
 export function StorybookLogo() {
   return (
@@ -32,14 +53,16 @@ export function StorybookLogo() {
           </List>
         }
         noPadding
-        trigger="click">
+        trigger="click"
+      >
         <span
           style={{
             fontWeight: '400',
             fontSize: '0.85em',
             color: 'grey',
             marginLeft: '0.5em',
-          }}>
+          }}
+        >
           v{process.env.STORYBOOK_NPM_VERSION}
         </span>
       </Tooltip>

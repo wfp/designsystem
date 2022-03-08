@@ -6,7 +6,6 @@ import settings from '../../globals/js/settings';
 import Icon from '../Icon';
 const { prefix } = settings;
 
-
 /** The item component to show entries inside a list, like a sidebar or an overview page. */
 export const Item = ({
   active,
@@ -40,7 +39,8 @@ export const Item = ({
         <div className={`${prefix}--item__image`}>{image}</div>
       ) : noImage ? (
         <div
-          className={`${prefix}--item__image ${prefix}--item__image-empty`}></div>
+          className={`${prefix}--item__image ${prefix}--item__image-empty`}
+        ></div>
       ) : null}
 
       <div className={`${prefix}--item__content`}>

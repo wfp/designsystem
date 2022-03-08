@@ -19,7 +19,10 @@ const FormGroup = ({
   messageText,
   ...other
 }) => {
-  const classNamesLegend = classnames(`${prefix}--form-group__title`, className);
+  const classNamesLegend = classnames(
+    `${prefix}--form-group__title`,
+    className
+  );
   const classNamesFieldset = classnames(
     `${prefix}--fieldset`,
     {
@@ -35,7 +38,8 @@ const FormGroup = ({
     <div
       {...(invalid && { 'data-invalid': '' })}
       className={classNamesFieldset}
-      {...other}>
+      {...other}
+    >
       <legend className={classNamesLegend}>{legendText}</legend>
       <div className={`${prefix}--fieldset__content`}>{children}</div>
       {message ? (

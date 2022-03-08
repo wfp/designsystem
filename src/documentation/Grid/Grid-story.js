@@ -25,7 +25,8 @@ storiesOf('Design|Core', module)
         <li>
           <Link
             href="https://roylee0704.github.io/react-flexbox-grid/"
-            target="_blank">
+            target="_blank"
+          >
             React-FlexBox-Grid
           </Link>{' '}
           The React module of Flexbox Grid

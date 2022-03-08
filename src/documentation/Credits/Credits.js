@@ -19,21 +19,24 @@ export default function Credits() {
         <li>
           <Link
             href="https://github.com/carbon-design-system/carbon-components"
-            target="_blank">
+            target="_blank"
+          >
             Carbon Design System by IBM
           </Link>
         </li>
         <li>
           <Link
             href="https://designsystem.digital.gov/page-templates"
-            target="_blank">
+            target="_blank"
+          >
             U.S. Webdesign System
           </Link>
         </li>
         <li>
           <Link
             href="https://github.com/frederik-jacques/sketch-favicon-exporter-template"
-            target="_blank">
+            target="_blank"
+          >
             Sketch Favicon Exporter Template
           </Link>
         </li>

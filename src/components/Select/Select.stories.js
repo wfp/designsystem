@@ -39,15 +39,15 @@ import { Select, SelectItem  } from "@wfp/ui";
   <SelectItem value="option-1" text="Option 1" />
   <SelectItem value="option-2" text="Option 2" />
 </Select>
-`
+`;
 
 SelectDefault.story = {
   parameters: {
     docs: {
       storyDescription: hello,
-      source:{
-        code: selectsourcecode
-      }
+      source: {
+        code: selectsourcecode,
+      },
     },
   },
 };

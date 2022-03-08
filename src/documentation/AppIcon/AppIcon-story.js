@@ -24,7 +24,8 @@ storiesOf('Design|Guidelines', module)
         For Android Apps please follow the{' '}
         <Link
           href="https://developer.android.com/google-play/resources/icon-design-specifications"
-          target="_blan">
+          target="_blan"
+        >
           Guidelines
         </Link>
       </p>
@@ -35,7 +36,8 @@ storiesOf('Design|Guidelines', module)
         than one is installed on a user device.{' '}
         <Link
           href="http://newgo.wfp.org/how-do-i/create-a-wfp-app-icon"
-          target="_blank">
+          target="_blank"
+        >
           More Information
         </Link>
       </p>
@@ -57,7 +59,8 @@ storiesOf('Design|Guidelines', module)
           small
           style={{ marginRight: '0.5em', fontSize: '0.7em' }}
           target="_blank"
-          href={`${process.env.STORYBOOK_ASSETS}app/WFP_APP_ICON_${fileSize}x${fileSize}.png`}>
+          href={`${process.env.STORYBOOK_ASSETS}app/WFP_APP_ICON_${fileSize}x${fileSize}.png`}
+        >
           {fileSize} x {fileSize}px
         </Link>
       ))}

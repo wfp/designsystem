@@ -23,8 +23,6 @@ Regular.args = {
   children: 'The hint text',
 };
 
-
-
 export const Input = (args) => (
   <TextInput
     labelText={
@@ -61,14 +59,14 @@ import { FormHint, TextInput  } from "@wfp/ui";
   }
   helperText="The helper text provides additional information"
 />
-`
+`;
 
-Input.story= {
-  parameters:{
-    docs:{
-      source:{
-        code: formhintsourcecode
-      }
-    }
-  }
-}
+Input.story = {
+  parameters: {
+    docs: {
+      source: {
+        code: formhintsourcecode,
+      },
+    },
+  },
+};

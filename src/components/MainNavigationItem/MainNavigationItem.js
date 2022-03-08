@@ -8,7 +8,7 @@ import settings from '../../globals/js/settings';
 const { prefix } = settings;
 
 class MainNavigationItem extends Component {
-  UNSAFE_componentWillReceiveProps = nextProps => {
+  UNSAFE_componentWillReceiveProps = (nextProps) => {
     if (nextProps.menuItem === nextProps.activeMenuItem) {
       document.addEventListener('mousedown', this.handleClickOutside);
     } else {
@@ -16,11 +16,11 @@ class MainNavigationItem extends Component {
     }
   };
 
-  setWrapperRef = node => {
+  setWrapperRef = (node) => {
     this.wrapperRef = node;
   };
 
-  handleClickOutside = e => {
+  handleClickOutside = (e) => {
     if (this.wrapperRef && !this.wrapperRef.contains(e.target)) {
       this.props.onChangeSub('close');
     }
@@ -46,7 +46,8 @@ class MainNavigationItem extends Component {
     const triggerClasses = classNames({
       [`${prefix}--main-navigation__trigger`]: true,
       [`${prefix}--main-navigation__trigger--has-sub`]: subNavigation,
-      [`${prefix}--main-navigation__trigger--open`]: menuItem === activeMenuItem,
+      [`${prefix}--main-navigation__trigger--open`]:
+        menuItem === activeMenuItem,
     });
 
     const childrenWithProps = subNavigation
@@ -62,7 +63,7 @@ class MainNavigationItem extends Component {
               />
             </React.Fragment>
           ),
-          onClick: e => onChangeSub('toggle', menuItem, e),
+          onClick: (e) => onChangeSub('toggle', menuItem, e),
         })
       : children;
 
@@ -77,7 +78,8 @@ class MainNavigationItem extends Component {
         {subNavigation && (
           <div
             className={subClasses}
-            open={menuItem === activeMenuItem ? true : false}>
+            open={menuItem === activeMenuItem ? true : false}
+          >
             {subNavigation}
           </div>
         )}
