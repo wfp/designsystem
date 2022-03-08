@@ -1,6 +1,6 @@
 import React from 'react';
 import markdown from './README.mdx';
-import AuthLayout,{BackgroundContent} from './AuthLayout';
+import {AuthLayout, BackgroundContent} from './AuthLayout';
 import Button from './../Button';
 import TextInput from './../TextInput';
 import Text from './../Text';

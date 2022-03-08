@@ -108,7 +108,9 @@ Using an Button with only an Icon while not beeing recommended can be achieved b
 `;
 
 const buttoniconsnippet = `
+import { Button } from '@wfp/ui';
 import { iconAddGlyph } from '@wfp/icons';
+
   <>
     <Button icon={iconAddGlyph}>
       Button with icon
@@ -148,7 +150,9 @@ or less.
 `;
 
 const smallbuttonsnippet =`
+import { Button } from '@wfp/ui';
 import { iconAddGlyph } from '@wfp/icons';
+
   <>
     <Button small>Small button</Button>{' '}
     <Button icon={iconAddGlyph} kind="tertiary" small>
@@ -186,7 +190,9 @@ or less.
 `;
 
 const largebuttonsnippet =`
+import { Button } from '@wfp/ui';
 import { iconAddGlyph } from '@wfp/icons';
+
   <>
     <Button large>Large button</Button>{' '}
     <Button icon={iconAddGlyph} kind="tertiary" large>

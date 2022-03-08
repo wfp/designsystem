@@ -37,6 +37,31 @@ Toast.args = {
   hideCloseButton: false,
 };
 
+const toastsourcecode= `
+import { ToastNotification } from "@wfp/ui";
+
+<ToastNotification
+  caption="00:00:00 AM"
+  iconDescription="describes the close button"
+  statusIconDescription="describes the status icon"
+  style={{
+    marginBottom: '.5rem',
+    minWidth: '30rem'
+  }}
+  subtitle="Subtitle text goes here."
+  title="Notification title"
+/>
+`
+Toast.story={
+  parameters:{
+    docs:{
+      source:{
+        code:toastsourcecode
+      }
+    }
+  }
+}
+
 export const NotificationTypes = (args) => (
   <>
     {notificationtypes.map((e) => (
