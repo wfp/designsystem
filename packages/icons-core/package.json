@@ -1,0 +1,33 @@
+{
+  "name": "@un/themes-core",
+  "description": "Themes for un core",
+  "version": "0.0.1",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/carbon-design-system/carbon.git",
+    "directory": "packages/styles"
+  },
+  "bugs": "https://github.com/carbon-design-system/carbon/issues",
+  "keywords": [
+    "colors",
+    "themes",
+    "un",
+    "un core",
+    "components",
+    "react"
+  ],
+  "scripts": {
+    "build": "node config.mjs",
+    "generate-icons": "node config.js"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "@svgr/core": "^6.2.1",
+    "@svgr/plugin-jsx": "^6.2.1",
+    "@svgr/plugin-prettier": "^6.1.2",
+    "@svgr/plugin-svgo": "^6.2.0"
+  }
+}
