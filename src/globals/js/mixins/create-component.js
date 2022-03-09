@@ -1,4 +1,4 @@
-export default function(ToMix) {
+export default function (ToMix) {
   class CreateComponent extends ToMix {
     /**
      * The component instances managed by this component.

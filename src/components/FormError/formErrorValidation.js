@@ -1,4 +1,4 @@
-export const validateEmail = email => {
+export const validateEmail = (email) => {
   if (!email) {
     return 'Required';
   } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(email)) {
@@ -8,7 +8,7 @@ export const validateEmail = email => {
   }
 };
 
-export const isRequired = field => {
+export const isRequired = (field) => {
   if (!field) {
     return 'Required';
   } else {
@@ -16,7 +16,7 @@ export const isRequired = field => {
   }
 };
 
-export const arrayIsRequired = field => {
+export const arrayIsRequired = (field) => {
   if (!field) {
     return 'Required';
   } else if (field.length === 0) {

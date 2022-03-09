@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 
 const wrapComponent = ({ name, className, type }) => {
-  const Component = props => {
+  const Component = (props) => {
     const componentClass = cx(className, props.className);
     return React.createElement(type, {
       ...props,

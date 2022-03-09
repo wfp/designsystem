@@ -22,6 +22,22 @@ export const RegularNavigation = (args) => (
   <BannerNavigationWithContent {...args} />
 );
 
+const sourcecode = `
+  import { BannerNavigationWithContent } from "@wfp/ui";
+        
+  <BannerNavigationWithContent pageWidth="lg" />
+  `;
+
+RegularNavigation.story = {
+  parameters: {
+    docs: {
+      source: {
+        code: sourcecode,
+      },
+    },
+  },
+};
+
 export const CustomContent = (args) => (
   <BannerNavigation {...args}>
     <BannerNavigationItem>

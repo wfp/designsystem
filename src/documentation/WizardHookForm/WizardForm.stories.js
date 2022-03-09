@@ -16,12 +16,12 @@ export default {
 };
 
 export const Regular = (args) => {
-  return(
-  <Wrapper background="lighter" pageWidth="lg" spacing="xl">
-      <WizardForm/>
-  </Wrapper>
-)
-}
+  return (
+    <Wrapper background="lighter" pageWidth="lg" spacing="xl">
+      <WizardForm />
+    </Wrapper>
+  );
+};
 
 Regular.decorators = [
   (Story) => (

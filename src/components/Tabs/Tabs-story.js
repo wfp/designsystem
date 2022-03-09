@@ -53,7 +53,8 @@ const listEl = ({ anchor, className, label, href }) => {
         }}
         onClick={() => {
           alert('Custom renderListElement');
-        }}>
+        }}
+      >
         {anchor.label} *
       </div>
     </li>
@@ -91,7 +92,8 @@ const listElReactRouter = ({ anchor, className, to, exact, match }) => (
       <li
         className={
           match ? className + ' wfp--tabs__nav-item--selected' : className
-        }>
+        }
+      >
         <FakeLink className={anchor.className} to={to}>
           {anchor.label}
         </FakeLink>

@@ -87,7 +87,8 @@ const Button = ({
       disabled={disabled}
       type={type}
       onClick={onClickAnimation}
-      ref={other.inputref}>
+      ref={other.inputref}
+    >
       {iconReverse && buttonImage}
       {children}
       {!iconReverse && buttonImage}
@@ -101,7 +102,8 @@ const Button = ({
       href={href}
       role="button"
       onClick={onClickAnimation}
-      ref={other.inputref}>
+      ref={other.inputref}
+    >
       {children}
       {buttonImage}
     </a>
@@ -137,7 +139,6 @@ Button.propTypes = {
    * Specify whether the Button should be a large variant
    */
   large: PropTypes.bool,
-
 
   /**
    * FOR DESIGNERS

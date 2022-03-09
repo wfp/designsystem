@@ -64,10 +64,36 @@ const extendedDescription = `
 You can show the avatar only without showing the username.
 `;
 
+const extendedsourcecode = `
+import { User, List, ListItem } from "@wfp/ui";
+
+<User
+    alt="Image Alt text"
+    description={
+      <List kind="simple" small>
+        <ListItem>Business Support Assistant G4</ListItem>
+        <ListItem>Fixed Term</ListItem>
+      </List>
+    }
+    extendedDescription={
+      <List kind="simple" small>
+        <ListItem title="First level supervisor">Marie Curie</ListItem>
+        <ListItem title="Mrc">Tanzania Country Office</ListItem>
+        <ListItem title="Head of unit">Max Planck</ListItem>
+      </List>
+    }
+    name="Albert Einstein"
+    image="https://www.wfp.org/sites/default/files/styles/page_accordion/public/images/ourwork_humanitarian.jpg?itok=R0ymBwxH"
+  />
+`;
+
 ExtendedUser.story = {
   parameters: {
     docs: {
       storyDescription: extendedDescription,
+      source: {
+        code: extendedsourcecode,
+      },
     },
   },
 };

@@ -80,7 +80,9 @@ describe('NumberInput', () => {
         wrapper.setProps({ invalid: true });
         const invalidText = wrapper.find('.wfp--form-requirement');
         expect(invalidText.length).toEqual(1);
-        expect(invalidText.text()).toEqual('Provide a description that will be used as the title invalid text');
+        expect(invalidText.text()).toEqual(
+          'Provide a description that will be used as the title invalid text'
+        );
       });
       it('should hide label as expected', () => {
         expect(numberInput.prop('min')).toEqual(0);
@@ -122,10 +124,8 @@ describe('NumberInput', () => {
           let numberInput = wrapper.find('input');
           expect(numberInput.prop('value')).toEqual(5);
         });
-
       });
     });
-
 
     describe('labelText', () => {
       it('renders a label', () => {
@@ -246,8 +246,6 @@ describe('NumberInput', () => {
         expect(wrapper.prop('value')).toEqual(0);
         expect(onClick).not.toBeCalled();
       });
-
-
 
       it('should not invoke onClick when down arrow is clicked and value is 0', () => {
         downArrow.simulate('click');

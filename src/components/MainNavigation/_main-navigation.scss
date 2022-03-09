@@ -200,7 +200,7 @@
         width: 25%;
         min-width: 250px;
         @include rtl {
-          left:0;
+          left: 0;
           right: inherit;
         }
       }

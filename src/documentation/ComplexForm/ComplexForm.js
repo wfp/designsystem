@@ -9,7 +9,13 @@ import Form from '../../components/Form';
 import Blockquote from '../../components/Blockquote/Blockquote';
 
 const ComplexForm = () => {
-  const { control, handleSubmit, register, errors, reset } = useForm();
+  const {
+    control,
+    handleSubmit,
+    register,
+    reset,
+    formState: { errors },
+  } = useForm();
   const onSubmit = (values) => {
     setOutput(values);
   };
@@ -18,62 +24,40 @@ const ComplexForm = () => {
   return (
     <Form longForm onSubmit={handleSubmit(onSubmit)}>
       <TextInput
-        labelText="Email TextInput"
-        name="email"
-        ref={register({
-          required: 'Required',
+        {...register('email', {
+          required: true,
           pattern: {
             value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
             message: 'invalid email address',
           },
         })}
+        labelText="Email TextInput"
       />
-      {errors.email && errors.email.message}
+      {errors.email && <span role="alert"> {errors.username.message} </span>}
       <TextInput
-        labelText="TextInput"
-        name="textinput"
-        ref={register({
+        {...register('textinput', {
           validate: (value) => value !== 'admin' || 'Nice try!',
         })}
+        labelText="TextInput"
       />
-      {/*<Checkbox
-      onBlur={onBlur}
-      onChange={e => onChange(e.target.checked)}
-      checked={value}
-      name={name}
-
-                 onChange={e => {console.log("waaaaa", e)}}
-
-                  onChange={(e, l) => {
-              console.log('wqqqqqqaaa', e, e.target.value, l);
-              props.onChange(e.target.value);
-            }}
-
-    />*/}
-      <Controller
-        control={control}
-        name="numberinput"
-        render={(props) => (
-          <NumberInput
-            {...props}
-            labelText="Number input"
-            name="numberinput"
-            step="0.1"
-          />
-        )}
+      <NumberInput
+        {...register('numberinput')}
+        labelText="Number input"
+        step={1}
       />
-      <Select name="select" inputRef={register} labelText="Select">
+      <Select {...register('select')} labelText="Select">
         <SelectItem value="" text="not selected" />
         <SelectItem value="daily" text="daily" />
         <SelectItem value="weekly" text="weekly" />
         <SelectItem value="monthly" text="monthly" />
       </Select>
-      {errors.username && errors.username.message}
+      {errors.username && <span role="alert"> {errors.username.message} </span>}
       <Button type="submit">Submit</Button>{' '}
       <Button
         type="submit"
         kind="secondary"
-        onClick={() => reset({ numberinput: 3 })}>
+        onClick={() => reset({ numberinput: 3 })}
+      >
         Reset
       </Button>
       <Blockquote title="Output">{JSON.stringify(output)}</Blockquote>

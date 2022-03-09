@@ -16,7 +16,8 @@ describe('Select', () => {
         labelText="Select"
         className="extra-class"
         helperText="Helper text"
-        required>
+        required
+      >
         <SelectItem />
         <SelectItem />
       </Select>

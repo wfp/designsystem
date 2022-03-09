@@ -37,7 +37,6 @@ const Footer = ({
     { [`${prefix}--footer--external`]: external },
     className
   );
-  const standardLogo = `${process.env.STORYBOOK_ASSETS}logos/latest/wfp-logo-standard-black-en.svg`
 
   const footer = (
     <footer className={classNames}>
@@ -91,10 +90,10 @@ const Footer = ({
               logoExtended
             ) : (
               <Icon
-              className={`${prefix}--footer__cta-logo`}	
-              icon={iconWfpLogoStandardBlackEn}
-              alt="WFP"
-            />
+                className={`${prefix}--footer__cta-logo`}
+                icon={iconWfpLogoStandardBlackEn}
+                alt="WFP"
+              />
             )}
 
             {logo && typeof logo === 'string' ? (
@@ -120,12 +119,13 @@ const Footer = ({
       </Wrapper>
 
       <Wrapper className={`${prefix}--footer__meta`} pageWidth={pageWidth}>
-        
         {metaLinks && (
           <div className={`${prefix}--footer__meta__links`}>{metaLinks}</div>
         )}
         {metaContent && (
-          <div className={`${prefix}--footer__meta__content`}>{metaContent}</div>
+          <div className={`${prefix}--footer__meta__content`}>
+            {metaContent}
+          </div>
         )}
       </Wrapper>
     </footer>

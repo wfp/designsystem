@@ -132,7 +132,7 @@ Icon.propTypes = {
   /**
    * The `svg` `height` attribute.
    */
-  height: PropTypes.string,
+  height: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 
   ...isRequiredOneOf({
     /**
@@ -171,7 +171,7 @@ Icon.propTypes = {
   /**
    * The `svg` `width` attribute.
    */
-  width: PropTypes.string,
+  width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 
   /**
    * The `ref` callback for the icon.

@@ -1,79 +1,74 @@
-import React from 'react'
-import { SecondaryNavigation , SecondaryNavigationTitle, Breadcrumb, BreadcrumbItem, BreadcrumbHome, Tabs, Tab,  } from "@wfp/ui";
-
+import React from 'react';
+import {
+  SecondaryNavigation,
+  SecondaryNavigationTitle,
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbHome,
+  Tabs,
+  Tab,
+} from '@wfp/ui';
 
 function NavigationSecondary() {
-    return (
-        <SecondaryNavigation
-  additional="additional Information"
-  pageWidth="lg"
->
-  <Breadcrumb>
-    <BreadcrumbItem>
-      <a href="/#">
-        <BreadcrumbHome />
-      </a>
-    </BreadcrumbItem>
-    <BreadcrumbItem href="#">
-      Breadcrumb 2
-    </BreadcrumbItem>
-    <BreadcrumbItem disableLink>
-      Breadcrumb 3
-    </BreadcrumbItem>
-  </Breadcrumb>
-  <SecondaryNavigationTitle>
-    The page title
-  </SecondaryNavigationTitle>
-  <Tabs
-    ariaLabel="listbox"
-    customTabContent
-    role="navigation"
-    selected={0}
-    triggerHref="#"
-  >
-    <Tab
-      href="#"
-      label="Tab label 1"
-      onClick={() => {}}
-      onKeyDown={function noRefCheck() {}}
-      role="presentation"
-      selected={false}
-      tabIndex={0}
+  return (
+    <SecondaryNavigation additional="additional Information" pageWidth="lg">
+      <Breadcrumb>
+        <BreadcrumbItem>
+          <a href="/#">
+            <BreadcrumbHome />
+          </a>
+        </BreadcrumbItem>
+        <BreadcrumbItem href="#">Breadcrumb 2</BreadcrumbItem>
+        <BreadcrumbItem disableLink>Breadcrumb 3</BreadcrumbItem>
+      </Breadcrumb>
+      <SecondaryNavigationTitle>The page title</SecondaryNavigationTitle>
+      <Tabs
+        ariaLabel="listbox"
+        customTabContent
+        role="navigation"
+        selected={0}
+        triggerHref="#"
       >
-          <div>
-          sbjbjhb
-          </div>
-          
-      </Tab>
-    <Tab
-      href="#"
-      label="Tab label 2"
-      onClick={function noRefCheck() {}}
-      onKeyDown={function noRefCheck() {}}
-      role="presentation"
-      selected={false}
-      tabIndex={1}
-    />
-    <Tab
-      href="#"
-      label="Tab label 3"
-      onClick={function noRefCheck() {}}
-      onKeyDown={function noRefCheck() {}}
-      role="presentation"
-      selected={false}
-      tabIndex={2}
-    />
-    <Tab
-      href="#"
-      label="Tab label 4"
-      onClick={function noRefCheck() {}}
-      onKeyDown={function noRefCheck() {}}
-      role="presentation"
-      selected={false}
-      tabIndex={3}
-    />
-  </Tabs>
-{/* </SecondaryNavigation>
+        <Tab
+          href="#"
+          label="Tab label 1"
+          onClick={() => {}}
+          onKeyDown={function noRefCheck() {}}
+          role="presentation"
+          selected={false}
+          tabIndex={0}
+        >
+          <div>sbjbjhb</div>
+        </Tab>
+        <Tab
+          href="#"
+          label="Tab label 2"
+          onClick={function noRefCheck() {}}
+          onKeyDown={function noRefCheck() {}}
+          role="presentation"
+          selected={false}
+          tabIndex={1}
+        />
+        <Tab
+          href="#"
+          label="Tab label 3"
+          onClick={function noRefCheck() {}}
+          onKeyDown={function noRefCheck() {}}
+          role="presentation"
+          selected={false}
+          tabIndex={2}
+        />
+        <Tab
+          href="#"
+          label="Tab label 4"
+          onClick={function noRefCheck() {}}
+          onKeyDown={function noRefCheck() {}}
+          role="presentation"
+          selected={false}
+          tabIndex={3}
+        />
+      </Tabs>
+      {/* </SecondaryNavigation>
         <SecondaryNavigation>
             <Breadcrumb>
                 <BreadcrumbItem>
@@ -126,9 +121,9 @@ function NavigationSecondary() {
                 </div>
             </Tab>
             </Tabs>
-           */} 
-        </SecondaryNavigation> 
-    )
+           */}
+    </SecondaryNavigation>
+  );
 }
 
 export default NavigationSecondary;

@@ -15,7 +15,8 @@ const LogoElement = ({ color, logoKind, src }) => {
           border: '1px solid #E5E5E5',
           backgroundColor: backgroundColor,
           padding: '0.7em',
-        }}>
+        }}
+      >
         <img
           alt="WFP Logo"
           className="storybook--logo\_\_element"
@@ -34,7 +35,8 @@ const LogoElement = ({ color, logoKind, src }) => {
             small
             style={{ marginRight: '0.5em', fontSize: '0.7em' }}
             target="\_blank"
-            href={`${process.env.STORYBOOK_ASSETS}${src}${fileType}`}>
+            href={`${process.env.STORYBOOK_ASSETS}${src}${fileType}`}
+          >
             {fileType.replace('.', '')}
           </Link>
         </span>
@@ -49,27 +51,24 @@ export default function Logos() {
     {
       key: 'standard',
       description: '',
-      link:
-        'http://brand.manuals.wfp.org/en/core-elements/logo/english-versions/',
+      link: 'https://multimedia.wfp.org/asset-management/20SIJQJHTQOC?WS=20SI40ER8SG',
     },
     {
       key: 'vertical',
       description: '',
-      link:
-        'http://brand.manuals.wfp.org/en/core-elements/logo/english-versions/',
+      link: 'https://multimedia.wfp.org/asset-management/20SIJQJHTQOC?WS=20SI40ER8SG',
     },
     {
       key: 'emblem',
       description:
         'The WFP emblem has been restyled to improve its legibility when it is reproduced on screen and in video, particularly at small sizes.',
-      link:
-        'http://brand.manuals.wfp.org/en/core-elements/logo/emblem-restyling-2018/',
+      link: 'https://multimedia.wfp.org/asset-management/20SIJQJHTQOC?WS=20SI40ER8SG',
     },
     {
       key: 'acronym',
       description:
         "The acronym WFP is used globally, and must not be translated. It is usually used as part of WFP's logo. However, where the upmost simplicity and immediate recognition are necessary, the acronym can be used alone if it will aid legibility.",
-      link: 'http://brand.manuals.wfp.org/en/core-elements/logo/acronym/',
+      link: 'https://multimedia.wfp.org/asset-management/20SIJQJHTQOC?WS=20SI40ER8SG',
     },
     // {
     //   key: 'sdg',

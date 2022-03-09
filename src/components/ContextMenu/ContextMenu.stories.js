@@ -1,11 +1,14 @@
 import React from 'react';
 import markdown from './README.mdx';
 import ContextMenu, { ContextMenuGroup, ContextMenuItem } from './ContextMenu';
-import Link from '../Link';
 
 export default {
   title: 'Components/UI Elements/ContextMenu',
-  component: Link,
+  component: ContextMenu,
+  subcomponents: {
+    ContextMenuGroup,
+    ContextMenuItem,
+  },
   parameters: {
     componentSubtitle: 'Component',
     status: 'released',
@@ -27,12 +30,46 @@ export const Regular = (args) => (
         <ContextMenuItem>Item 2</ContextMenuItem>
         <ContextMenuItem>Item 3</ContextMenuItem>
       </>
-    }>
+    }
+  >
     <span>Open context menu</span>
   </ContextMenu>
 );
 
 Regular.args = { children: 'WFP Homepage', href: 'https://www.wfp.org' };
+
+const sourcecode = `
+import { ContextMenu, ContextMenuGroup, ContextMenuItem } from "@wfp/ui";
+
+<ContextMenu
+  content={
+    <>
+    <ContextMenuGroup>
+      <ContextMenuItem>Itemgroup 1</ContextMenuItem>
+      <ContextMenuItem>Itemgroup 2</ContextMenuItem>
+      <ContextMenuItem>Itemgroup 3</ContextMenuItem>
+    </ContextMenuGroup>
+    <ContextMenuItem>Item 1</ContextMenuItem>
+    <ContextMenuItem>Item 2</ContextMenuItem>
+    <ContextMenuItem>Item 3</ContextMenuItem>
+    </>
+    }
+  href="https://www.wfp.org"
+>
+  <span>
+    Open context menu
+  </span>
+</ContextMenu>
+`;
+Regular.story = {
+  parameters: {
+    docs: {
+      source: {
+        code: sourcecode,
+      },
+    },
+  },
+};
 
 export const States = (args) => (
   <ContextMenu
@@ -46,16 +83,17 @@ export const States = (args) => (
         </ContextMenuGroup>
         <ContextMenuItem
           onClick={() => {
-            console.log('hide', setVisibility);
             setVisibility(true);
             visibilityChange(true);
-          }}>
+          }}
+        >
           Hide ContextMenu
         </ContextMenuItem>
         <ContextMenuItem>Item 2</ContextMenuItem>
         <ContextMenuItem>Item 3</ContextMenuItem>
       </>
-    )}>
+    )}
+  >
     <span>Open context menu</span>
   </ContextMenu>
 );

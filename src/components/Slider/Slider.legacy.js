@@ -416,7 +416,8 @@ export default class Slider extends Component {
             onKeyPress={this.updatePosition}
             role="presentation"
             tabIndex={-1}
-            {...other}>
+            {...other}
+          >
             <div
               className="wfp--slider__track"
               ref={(node) => {

@@ -1,3 +1,59 @@
+## [1.20.10](https://github.com/wfp/ui/compare/v1.20.9...v1.20.10) (2022-03-08)
+
+
+### Bug Fixes
+
+* **AuthLayout:** AuthLayout import and export correctly done ([0beb398](https://github.com/wfp/ui/commit/0beb3985a4a7b35a9582026e6749d7e93c0c6696))
+
+## [1.20.9](https://github.com/wfp/ui/compare/v1.20.8...v1.20.9) (2022-02-15)
+
+
+### Bug Fixes
+
+* **datepicker:** removed classname warning showing in datepicker ([c8b08a0](https://github.com/wfp/ui/commit/c8b08a0da937db2b9672df618da2121b2bf3a0bd))
+
+## [1.20.8](https://github.com/wfp/ui/compare/v1.20.7...v1.20.8) (2022-02-15)
+
+
+### Bug Fixes
+
+* **components:** console warnings and error and minor fixes ([e32e4b6](https://github.com/wfp/ui/commit/e32e4b627b794049d623d9204df871bbd6b94994))
+* **components:** fixed templates using react-hook-form that werent rending and updating table docs ([7af1036](https://github.com/wfp/ui/commit/7af103682e87e08382c18236e2b687c9f96d6825))
+* **components:** minor fixes to remove console errors and warnings ([ff6188f](https://github.com/wfp/ui/commit/ff6188f311618da7c4d616b2338b63daacdbef9e))
+* **react:** version bump to version 17 ([7e3744a](https://github.com/wfp/ui/commit/7e3744a85f2355dcb2ef88594e6d20ac999a060b))
+* **table:** fix error in tablewithfilter template with upgraded react-table version ([f1cfc89](https://github.com/wfp/ui/commit/f1cfc89201f82ab7346a72d33b3da9e9d39e4aed))
+
+## [1.20.7](https://github.com/wfp/ui/compare/v1.20.6...v1.20.7) (2022-01-26)
+
+
+### Bug Fixes
+
+* **components:** making sure azure release new version ([8263901](https://github.com/wfp/ui/commit/826390166f0d2c330f55846252a58fa88f5d907b))
+
+## [1.20.6](https://github.com/wfp/ui/compare/v1.20.5...v1.20.6) (2021-12-20)
+
+
+### Bug Fixes
+
+* **DatePicker:** removed old react-hook-form datepicker ([1ab3327](https://github.com/wfp/ui/commit/1ab33277c59f62738e622a1026754ccccdeefe1c))
+
+## [1.20.5](https://github.com/wfp/ui/compare/v1.20.4...v1.20.5) (2021-12-03)
+
+
+### Bug Fixes
+
+* **DatePicker:** input onChange handler updated ([#488](https://github.com/wfp/ui/issues/488)) ([e809fe5](https://github.com/wfp/ui/commit/e809fe5f73a955aa401dae793ebffd69d51659f4))
+* **DateRangerPicker:** removed console.log ([768136f](https://github.com/wfp/ui/commit/768136f2f92a77aee51012a7eae0f12d9ff0b497))
+
+## [1.20.4](https://github.com/wfp/ui/compare/v1.20.3...v1.20.4) (2021-12-03)
+
+
+### Bug Fixes
+
+* **Modal:** remove console log ([3680780](https://github.com/wfp/ui/commit/368078068b7faac8bbaf0f6263d557e9a83f5e23))
+* **Modal:** remove width assigned to subnavigation in MainNavigationstories ([932a3dc](https://github.com/wfp/ui/commit/932a3dc51483b11f430b6ead06a5b92978f49189))
+* **Modal:** Use onMouseDown instead of onClick for backdrop click detection ([ec923ea](https://github.com/wfp/ui/commit/ec923ea98569cced7e6f72df0466c636a10da0b3))
+
 ## [1.20.3](https://github.com/wfp/ui/compare/v1.20.2...v1.20.3) (2021-10-19)
 
 

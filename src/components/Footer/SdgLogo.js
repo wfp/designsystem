@@ -6,7 +6,8 @@ const sdgLogo = (
     width="46"
     height="46"
     viewBox="0 0 46 46"
-    className="wfp--footer__sdg">
+    className="wfp--footer__sdg"
+  >
     <g fill="none">
       <path
         fill="#56C02B"

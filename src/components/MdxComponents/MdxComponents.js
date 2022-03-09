@@ -23,7 +23,7 @@ const li = (props) => {
 
 const ul = (props) => {
   return (
-    <List {...props} kind="bullets">
+    <List {...props} kind="unordered">
       {props.children}
     </List>
   );

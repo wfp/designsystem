@@ -40,6 +40,11 @@ export class SingleDatePickerInput extends PureComponent {
       onBlur,
       onDragStart,
       onDrop,
+      showClearDate,
+      isDirty,
+      isTouched,
+      error,
+      date,
       ...other
     } = this.props;
 
@@ -74,7 +79,7 @@ export class SingleDatePickerInput extends PureComponent {
           hideKeyboardShortcutsPanel
           onDateChange={(value) => {
             if (onChange) {
-              onChange({ value });
+              onChange(value);
             }
             this.setState({ controlledValue: value }, () => {});
           }}
@@ -100,7 +105,7 @@ SingleDatePickerInput.propTypes = {
   /**
    * Provide the SingleDatePicker as a component
    */
-  datePicker: PropTypes.func.isRequired,
+  datePicker: PropTypes.oneOfType([PropTypes.func, PropTypes.object]),
 
   onFocus: PropTypes.func,
 

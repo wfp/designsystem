@@ -17,9 +17,9 @@ export default {
 export const Regular = (args) => <TableWithFilter />;
 
 Regular.decorators = [
-    (Story) => (
-      <RegularPage title="Table with filter" withoutSecondaryTabs pageWidth="lg">
-        <Story />
-      </RegularPage>
-    ),
+  (Story) => (
+    <RegularPage title="Table with filter" withoutSecondaryTabs pageWidth="lg">
+      <Story />
+    </RegularPage>
+  ),
 ];

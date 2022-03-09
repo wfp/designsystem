@@ -23,18 +23,20 @@ const formatJS = (symbol, options = {}) => {
     width: symbol.$.viewBox.split(' ')[2] || '',
     height: symbol.$.viewBox.split(' ')[3] || '',
     svgData: {
-      circles: symbol.circle ? symbol.circle.map(attrValue => attrValue.$) : '',
-      ellipses: symbol.ellipse
-        ? symbol.ellipse.map(attrValue => attrValue.$)
+      circles: symbol.circle
+        ? symbol.circle.map((attrValue) => attrValue.$)
         : '',
-      paths: symbol.path ? symbol.path.map(attrValue => attrValue.$) : '',
+      ellipses: symbol.ellipse
+        ? symbol.ellipse.map((attrValue) => attrValue.$)
+        : '',
+      paths: symbol.path ? symbol.path.map((attrValue) => attrValue.$) : '',
       polygons: symbol.polygon
-        ? symbol.polygon.map(attrValue => attrValue.$)
+        ? symbol.polygon.map((attrValue) => attrValue.$)
         : '',
       polylines: symbol.polyline
-        ? symbol.polyline.map(attrValue => attrValue.$)
+        ? symbol.polyline.map((attrValue) => attrValue.$)
         : '',
-      rects: symbol.rect ? symbol.rect.map(attrValue => attrValue.$) : '',
+      rects: symbol.rect ? symbol.rect.map((attrValue) => attrValue.$) : '',
     },
   };
 

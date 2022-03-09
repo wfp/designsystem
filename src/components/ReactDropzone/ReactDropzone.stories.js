@@ -52,6 +52,7 @@ Regular.parameters = {
   docs: {
     source: {
       code: ` import Dropzone from 'react-dropzone';
+      import { List, ListItem } from '@wfp/ui';
 
       export const Regular = (args) => {
         const [file, setfile] = useState([])
@@ -87,12 +88,8 @@ Regular.parameters = {
 };
 
 export const Advanced = (args) => {
-  const {
-    acceptedFiles,
-    getRootProps,
-    getInputProps,
-    isDragActive,
-  } = useDropzone();
+  const { acceptedFiles, getRootProps, getInputProps, isDragActive } =
+    useDropzone();
 
   const files = acceptedFiles.map((file) => (
     <ListItem key={file.path}>

@@ -5,8 +5,8 @@ import { List, ListItem } from '../../components/List';
 
 const list = [
   { kind: 'simple', heading: 'Ordered lists' },
-  { kind: 'bullets', heading: 'Bullet lists' },
-  { kind: 'ordered', heading: 'Unordered lists' },
+  { kind: 'unordered', heading: 'Bullet lists' },
+  { kind: 'ordered', heading: 'Ordered lists' },
 ];
 
 const Normaltext = [
@@ -112,7 +112,7 @@ const Typography = () => {
       <h3>Lists</h3>
       <p>
         Typographic scale for lists of items int he different variations:
-        ordered, unordered and bullets
+        ordered and unordered
       </p>
       <div className="wfp--card-box">
         {list.map((e) => (
@@ -145,7 +145,8 @@ const Typography = () => {
                 height: '50px',
                 borderRadius: '50%',
                 marginLeft: '1.5rem',
-              }}></div>
+              }}
+            ></div>
           </div>
         ))}
       </div>

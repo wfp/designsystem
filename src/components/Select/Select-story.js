@@ -49,7 +49,8 @@ storiesOf('Components|Select', module)
         <Select
           {...props.select()}
           id="select-1"
-          defaultValue="placeholder-item">
+          defaultValue="placeholder-item"
+        >
           <SelectItem
             disabled
             hidden

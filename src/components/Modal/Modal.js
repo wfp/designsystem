@@ -356,7 +356,8 @@ export default class Modal extends Component {
         className={`${prefix}--modal-close`}
         type="button"
         onClick={this.handleCloseButton}
-        ref={this.button}>
+        ref={this.button}
+      >
         <Icon
           icon={iconClose}
           className={`${prefix}--modal-close__icon`}
@@ -370,7 +371,8 @@ export default class Modal extends Component {
         ref={this.innerModal}
         role="dialog"
         className={`${prefix}--modal-container`}
-        aria-label={modalAriaLabel}>
+        aria-label={modalAriaLabel}
+      >
         <div className={`${prefix}--modal-header`}>
           {passiveModal && modalButton}
           <div>
@@ -393,7 +395,8 @@ export default class Modal extends Component {
                   <Button
                     kind={danger ? 'tertiary' : 'secondary'}
                     disabled={secondaryButtonDisabled}
-                    onClick={onSecondaryButtonClick}>
+                    onClick={onSecondaryButtonClick}
+                  >
                     {secondaryButtonText}
                   </Button>
                 )}
@@ -401,7 +404,8 @@ export default class Modal extends Component {
                   kind={danger ? 'danger--primary' : 'primary'}
                   disabled={primaryButtonDisabled}
                   onClick={onRequestSubmit}
-                  inputref={this.button}>
+                  inputref={this.button}
+                >
                   {primaryButtonText}
                 </Button>
               </div>
@@ -417,7 +421,9 @@ export default class Modal extends Component {
       <div
         {...other}
         onKeyDown={this.handleKeyDown}
-        onClick={this.handleClick}
+        // onClick={this.handleClick}
+        //using onMouseDown instead of onClick to prevent modal from closing when releasing mouse on background
+        onMouseDown={this.handleClick}
         onBlur={this.handleBlur}
         className={modalClasses}
         style={
@@ -428,7 +434,8 @@ export default class Modal extends Component {
         role="presentation"
         tabIndex={-1}
         onTransitionEnd={this.props.open ? this.handleTransitionEnd : undefined}
-        ref={this.outerModal}>
+        ref={this.outerModal}
+      >
         <div className={`${prefix}--modal-inner`}>{modalBody}</div>
       </div>
     );

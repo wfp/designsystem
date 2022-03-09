@@ -1,22 +1,13 @@
-
-import React from 'react'
+import React from 'react';
 import TextArea from '../../components/TextArea';
 
 function FormThree(props) {
-    return (
-        <>
-            <TextArea
-                labelText="Notes"
-                name="newnotes2"
-                inputRef={props.register}
-              />
-              <TextArea
-                labelText="Summary"
-                name="summary"
-                inputRef={props.register}
-              />
-        </>
-    )
+  return (
+    <>
+      <TextArea labelText="Notes" {...props.register('newnotes2')} />
+      <TextArea labelText="Summary" {...props.register('summary')} />
+    </>
+  );
 }
 
-export default FormThree
+export default FormThree;

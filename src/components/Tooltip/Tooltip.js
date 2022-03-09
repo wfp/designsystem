@@ -104,7 +104,8 @@ const Tooltip = ({
       {visible && (
         <div
           ref={setTooltipRef}
-          {...getTooltipProps({ className: classNames })}>
+          {...getTooltipProps({ className: classNames })}
+        >
           {typeof content === 'function'
             ? content({ setVisibility, visibilityChange })
             : content}

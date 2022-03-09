@@ -31,15 +31,22 @@ export const Regular = (args) => (
       />
       <h1 className="wfp--story__title">Under maintenance</h1>
       <p>
-        Apologies for the inconvenience; we are performing maintenance at the moment.
-        <br/> [Name of solution] should be back shortly. 
+        Apologies for the inconvenience; we are performing maintenance at the
+        moment.
+        <br /> [Name of solution] should be back shortly.
       </p>
-      <p>Please contact <Link href="mailto:IT.ServiceDesk@wfp.org"> IT.ServiceDesk@wfp.org </Link> if you have any questions or comments.</p>
+      <p>
+        Please contact{' '}
+        <Link href="mailto:IT.ServiceDesk@wfp.org">
+          {' '}
+          IT.ServiceDesk@wfp.org{' '}
+        </Link>{' '}
+        if you have any questions or comments.
+      </p>
       <p>[Name] Team</p>
     </Story>
   </Wrapper>
 );
-
 
 Regular.story = {
   parameters: {

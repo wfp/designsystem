@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Field } from 'react-final-form';
-import {Wizard,Page} from './Wizard';
+import { Wizard, Page } from './Wizard';
 import ReduxFormWrapper from '../../components/ReduxFormWrapper';
 import TextInput from '../../components/TextInput';
 import TextArea from '../../components/TextArea';
@@ -32,34 +32,33 @@ const renderError = ({ meta: { touched, error } }) =>
 
 export const Regular = (args) => (
   <Wrapper background="lighter" pageWidth="lg" spacing="xl">
-
     <Wizard initialValues={{ employed: true, stooge: 'larry' }}>
       <Page label="Name and last name">
-        <div style={{marginBottom:'2rem'}}>
-        <Blockquote title="Regular Blockquote">
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-          nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-          sed diam voluptua.
-        </Blockquote>
+        <div style={{ marginBottom: '2rem' }}>
+          <Blockquote title="Regular Blockquote">
+            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+            nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
+            erat, sed diam voluptua.
+          </Blockquote>
         </div>
-            <Field
-              id="firstName"
-              name="firstName"
-              helperText="Enter your full first name"
-              component={ReduxFormWrapper}
-              inputComponent={TextInput}
-              labelText="First Name"
-            />
-          
-            <Field
-              id="lastName"
-              name="lastName"
-              helperText="Some more requirements"
-              component={ReduxFormWrapper}
-              inputComponent={TextInput}
-              labelText="Last Name"
-            />
-        
+        <Field
+          id="firstName"
+          name="firstName"
+          helperText="Enter your full first name"
+          component={ReduxFormWrapper}
+          inputComponent={TextInput}
+          labelText="First Name"
+        />
+
+        <Field
+          id="lastName"
+          name="lastName"
+          helperText="Some more requirements"
+          component={ReduxFormWrapper}
+          inputComponent={TextInput}
+          labelText="Last Name"
+        />
+
         <Field
           component={ReduxFormWrapper}
           inputComponent={TextArea}
@@ -84,7 +83,8 @@ export const Regular = (args) => (
             className="wfp--input-group"
             name="input-group"
             defaultSelected="default-selected"
-            legend="Group Legend">
+            legend="Group Legend"
+          >
             <Field
               name="sex"
               component={ReduxFormWrapper}
@@ -106,8 +106,8 @@ export const Regular = (args) => (
             <Field
               component={ReduxFormWrapper}
               inputComponent={TextArea}
-              name="notes"
-              labelText="Notes"
+              name="notes2"
+              labelText="Notesnew"
               placeholder="Notes"
             />
           </FormGroup>
@@ -122,7 +122,8 @@ export const Regular = (args) => (
             errors.newNotes = 'Required';
           }
           return errors;
-        }}>
+        }}
+      >
         <Field
           component={ReduxFormWrapper}
           inputComponent={TextArea}
@@ -140,10 +141,7 @@ export const Regular = (args) => (
           placeholder="Notes"
         />
       </Page>
-      <Page
-        label="Summary"
-        helperText="Check & validate"
-        status={'summary'}>
+      <Page label="Summary" helperText="Check & validate" status={'summary'}>
         <Field
           component={ReduxFormWrapper}
           inputComponent={TextArea}
@@ -163,4 +161,3 @@ Regular.decorators = [
     </RegularPage>
   ),
 ];
-

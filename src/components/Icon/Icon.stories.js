@@ -1,7 +1,7 @@
 import React from 'react';
 import markdown from './README.mdx';
 import Icon from '.';
-import { iconAdd} from '@wfp/icons';
+import { iconAdd } from '@wfp/icons';
 
 export default {
   title: 'Components/UI Elements/Icon',
@@ -19,14 +19,19 @@ Regular.args = {
   icon: iconAdd,
 };
 
-const description = `
-You can customize the content by using \`BannerNavigation\`.
+const iconsourcecode = `
+import { Icon  } from "@wfp/ui";
+import { iconAdd} from '@wfp/icons';
+
+<Icon icon={iconAdd} />
 `;
 
 Regular.story = {
   parameters: {
     docs: {
-      storyDescription: description,
+      source: {
+        code: iconsourcecode,
+      },
     },
   },
 };

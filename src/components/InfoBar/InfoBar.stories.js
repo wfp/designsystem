@@ -19,14 +19,24 @@ export const Regular = (args) => (
   </InfoBar>
 );
 
-const description = `
-You can customize the content by using \`BannerNavigation\`.
+const infobarsourcecode = `
+  import { InfoBar, Link  } from "@wfp/ui";
+
+  <InfoBar>
+    InfoBar with content.{' '}
+    <Link href="#">
+        Click here
+    </Link>
+    {' '}to do Something.
+  </InfoBar>
 `;
 
 Regular.story = {
   parameters: {
     docs: {
-      storyDescription: description,
+      source: {
+        code: infobarsourcecode,
+      },
     },
   },
 };

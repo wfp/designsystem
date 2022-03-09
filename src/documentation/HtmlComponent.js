@@ -13,7 +13,8 @@ const SingleComponent = ({ children, html, pageWidth }) => {
         height: '100%',
       }}
       className="wfp--story"
-      pageWidth={pageWidth ? pageWidth : 'narrower'}>
+      pageWidth={pageWidth ? pageWidth : 'narrower'}
+    >
       <div contentEditable="true" dangerouslySetInnerHTML={{ __html: html }} />
       <div style={{ display: 'none' }}>{children}</div>
     </Wrapper>

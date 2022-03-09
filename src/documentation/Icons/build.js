@@ -4,7 +4,7 @@ const rsp = require('remove-svg-properties').stream;
 const dom = require('gulp-dom');
 const xmlEdit = require('gulp-edit-xml');
 
-const svgBuild = src => {
+const svgBuild = (src) => {
   return gulp
     .src(src)
     .pipe(
@@ -14,7 +14,7 @@ const svgBuild = src => {
       })
     )
     .pipe(
-      dom(function() {
+      dom(function () {
         this.querySelector('svg').setAttribute('fill-rule', 'evenodd');
         return this.querySelector('body').innerHTML;
       }, false)
@@ -29,26 +29,26 @@ const svgBuild = src => {
       })
     )
     .pipe(
-      xmlEdit(xml => {
+      xmlEdit((xml) => {
         if (xml.svg.circle !== undefined) {
           const convertedCircles = xml.svg.circle
-            .map(obj => obj.$)
-            .map(obj => {
+            .map((obj) => obj.$)
+            .map((obj) => {
               const { cx, cy, r } = obj;
               return {
                 $: {
-                  d: `M ${cx} ${cy} m -${r},0 a ${r},${r} 0 1,1 ${parseFloat(
-                    r
-                  ) * 2}, 0 a ${r},${r} 0 1,1 -${parseFloat(r) * 2}, 0`,
+                  d: `M ${cx} ${cy} m -${r},0 a ${r},${r} 0 1,1 ${
+                    parseFloat(r) * 2
+                  }, 0 a ${r},${r} 0 1,1 -${parseFloat(r) * 2}, 0`,
                 },
               };
             });
 
           if (xml.svg.path !== undefined) {
-            convertedCircles.forEach(circle => xml.svg.path.push(circle));
+            convertedCircles.forEach((circle) => xml.svg.path.push(circle));
           } else {
             xml.svg.path = [];
-            convertedCircles.forEach(circle => xml.svg.path.push(circle));
+            convertedCircles.forEach((circle) => xml.svg.path.push(circle));
           }
           delete xml.svg.circle;
         }

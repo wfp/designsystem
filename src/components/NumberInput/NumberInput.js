@@ -75,9 +75,8 @@ const NumberInput = React.forwardRef((props, ref) => {
     if (!disabled) {
       evt.persist();
       evt.imaginaryTarget = _inputRef;
-
       setValue(evt.target.value);
-      onChange(parseFloat(evt.target.value), evt);
+      onChange(evt, parseFloat(evt.target.value)); //Had to reverse the arguments passed because onChange accepts evt before the value
     }
   };
 
@@ -112,6 +111,10 @@ const NumberInput = React.forwardRef((props, ref) => {
     [`${prefix}--number--nocontrols`]: hideControls,
   });
 
+  const innerInputClasses = classNames(className, {
+    [`${prefix}--input--invalid`]: invalid,
+  });
+
   const newProps = {
     disabled,
     id,
@@ -135,13 +138,15 @@ const NumberInput = React.forwardRef((props, ref) => {
             <button
               className={`${prefix}--number__control-btn up-icon`}
               {...buttonProps}
-              onClick={(evt) => handleArrowClick(evt, 'up')}>
+              onClick={(evt) => handleArrowClick(evt, 'up')}
+            >
               +
             </button>
             <button
               className={`${prefix}--number__control-btn down-icon`}
               {...buttonProps}
-              onClick={(evt) => handleArrowClick(evt, 'down')}>
+              onClick={(evt) => handleArrowClick(evt, 'down')}
+            >
               −
             </button>
             <input
@@ -150,6 +155,7 @@ const NumberInput = React.forwardRef((props, ref) => {
               {...other}
               {...newProps}
               ref={_inputRef}
+              className={innerInputClasses}
             />
           </div>
         );
