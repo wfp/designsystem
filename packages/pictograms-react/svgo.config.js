@@ -12,6 +12,7 @@ module.exports = {
           // or disable plugins
           removeDoctype: false,
           convertColors: false,
+          removeViewBox: false,
         },
       },
     },
