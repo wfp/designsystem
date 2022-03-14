@@ -7,7 +7,7 @@ export default function DocsContainerWrapper(props) {
   return (
     <DocsContainer {...props}>
       <Title />
-      <Subtitle />
+      {/* <Subtitle />*/}
 
       {props.children}
     </DocsContainer>
