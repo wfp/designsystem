@@ -28,15 +28,3 @@ export const Regular = (args) => (
     }
   />
 );
-
-const description = `
-You can customize the content by using \`BannerNavigation\`.
-`;
-
-Regular.story = {
-  parameters: {
-    docs: {
-      storyDescription: description,
-    },
-  },
-};

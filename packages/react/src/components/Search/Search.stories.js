@@ -1,7 +1,7 @@
 import React from 'react';
 import markdown from './README.mdx';
 import Search from '.';
-import Button from "../Button";
+import Button from '../Button';
 
 export default {
   title: 'Components/UI Elements/Search',
@@ -17,50 +17,36 @@ export const Regular = (args) => <Search {...args} />;
 
 Regular.args = {
   name: 'search',
-  id:"search"
+  id: 'search',
 };
 
-const description = `
-You can customize the content by using \`BannerNavigation\`.
-`;
+export const SearchWithButton = (args) => (
+  <div style={{ width: '50%', display: 'flex' }}>
+    <Search {...args} />
+    <Button kind="primary" style={{ margin: '0 0.5rem' }}>
+      Apply search
+    </Button>
+  </div>
+);
 
-Regular.story = {
+SearchWithButton.args = {
+  name: 'search',
+  id: 'butonsearch',
+};
+
+SearchWithButton.story = {
   parameters: {
     docs: {
-      storyDescription: description,
+      storyDescription: `You can add a button to initate search action`,
     },
   },
 };
-
-
-export const SearchWithButton = (args) => (
-<div style={{width:'50%',display:'flex'}} >
-  <Search {...args} />
-  <Button kind="primary" style={{margin:'0 0.5rem'}}>Apply search</Button>
-</div>
-);
-
-
-  
-SearchWithButton.args = {
-    name: 'search',
-    id:"butonsearch"
-  };
-  
-  
-SearchWithButton.story = {
-    parameters: {
-      docs: {
-        storyDescription: `You can add a button to initate search action`,
-      },
-    },
-  };
 
 export const SmallSearch = (args) => <Search {...args} />;
 
 SmallSearch.args = {
   kind: 'small',
-  id:"smallsearch"
+  id: 'smallsearch',
 };
 
 SmallSearch.story = {
