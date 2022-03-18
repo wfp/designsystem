@@ -33,15 +33,3 @@ export const Regular = (args) => (
     likely to be undernourished than those living in countries without conflict.
   </Wrapper>
 );
-
-const description = `
-You can customize the content by using \`BannerNavigation\`.
-`;
-
-Regular.story = {
-  parameters: {
-    docs: {
-      storyDescription: description,
-    },
-  },
-};

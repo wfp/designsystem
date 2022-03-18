@@ -50,37 +50,40 @@ Regular.parameters = {
   html: false,
   docs: {
     source: {
-      code: ` import Dropzone from 'react-dropzone';
+      code: ` 
+import { Icon, List, ListItem } from '@un/react';
+import Dropzone from 'react-dropzone';
+import { UploadGlyph } from '@un/icons-react';
 
-      export const Regular = (args) => {
-        const [file, setfile] = useState([])
-      
-        const files = file.map((file) => (
-          <ListItem key={file.path}>
-            {file.path} - {Math.round(file.size / 1000)} kB
-          </ListItem>
-        ));
-      
-        return(
-        <>
-        <Dropzone onDrop={(acceptedFiles) => setfile(acceptedFiles)}>
-          {({ getRootProps, getInputProps }) => (
-            <section className="wfp--dropzone">
-              <div {...getRootProps({ className: 'wfp--dropzone__input' })}>
-                <input {...getInputProps()} />
-                <div>Drag 'n' drop some files here, or click to select files</div>
-              </div>
-            </section>
-          )}
-        </Dropzone>
-        <aside className="wfp--dropzone__file-list">
-              <h4>Files</h4>
-              <List>{files}</List>
-        </aside>
-        </>
-        
-      )
-      };`,
+export const Regular = (args) => {
+  const [file, setfile] = useState([])
+
+  const files = file.map((file) => (
+    <ListItem key={file.path}>
+      {file.path} - {Math.round(file.size / 1000)} kB
+    </ListItem>
+  ));
+
+  return(
+  <>
+  <Dropzone onDrop={(acceptedFiles) => setfile(acceptedFiles)}>
+    {({ getRootProps, getInputProps }) => (
+      <section className="wfp--dropzone">
+        <div {...getRootProps({ className: 'wfp--dropzone__input' })}>
+          <input {...getInputProps()} />
+          <div>Drag 'n' drop some files here, or click to select files</div>
+        </div>
+      </section>
+    )}
+  </Dropzone>
+  <aside className="wfp--dropzone__file-list">
+        <h4>Files</h4>
+        <List>{files}</List>
+  </aside>
+  </>
+  
+)
+};`,
     },
   },
 };
@@ -123,7 +126,7 @@ Advanced.parameters = {
       code: `
 import Dropzone, { useDropzone } from 'react-dropzone';
 import { Icon, List, ListItem } from '@un/react';
-import { Upload16 } from '@un/icons-react';
+import { UploadGlyph } from '@un/icons-react';
 import classNames from 'classnames';
 
 export const Advanced = (args) => {

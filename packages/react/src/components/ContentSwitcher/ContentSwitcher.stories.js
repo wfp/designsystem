@@ -32,6 +32,34 @@ Regular.args = {
   children: 'ContentSwitcher',
 };
 
+const regularsourcecode = `
+import { ContentSwitcher , Switch } from "@un/react";
+
+<ContentSwitcher onChange={() => {}}>
+  <Switch
+    name="one"
+    text="First section"
+  />
+  <Switch
+    name="two"
+    text="Second section"
+  />
+  <Switch
+    name="three"
+    text="Third section"
+  />
+</ContentSwitcher>
+`;
+Regular.story = {
+  parameters: {
+    docs: {
+      source: {
+        code: regularsourcecode,
+      },
+    },
+  },
+};
+
 export const ButtonSwitch = (args) => {
   const handleChange = () => {
     // console.log('handle any onChange here');

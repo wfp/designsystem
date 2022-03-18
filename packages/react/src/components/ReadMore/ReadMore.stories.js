@@ -46,15 +46,3 @@ Regular.args = {
   colon: true,
   maxHeight: 50,
 };
-
-const description = `
-You can customize the content by using \`BannerNavigation\`.
-`;
-
-Regular.story = {
-  parameters: {
-    docs: {
-      storyDescription: description,
-    },
-  },
-};

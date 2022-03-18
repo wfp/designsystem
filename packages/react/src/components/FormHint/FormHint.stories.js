@@ -23,18 +23,6 @@ Regular.args = {
   children: 'The hint text',
 };
 
-const description = `
-You can customize the content by using \`BannerNavigation\`.
-`;
-
-Regular.story = {
-  parameters: {
-    docs: {
-      storyDescription: description,
-    },
-  },
-};
-
 export const Input = (args) => (
   <TextInput
     labelText={
@@ -52,3 +40,33 @@ export const Input = (args) => (
     helperText="The helper text provides additional information"
   />
 );
+
+const formhintsourcecode = `
+import { FormHint, TextInput  } from "@un/react";
+
+<TextInput
+  labelText={
+    <>
+      The label
+      <FormHint>
+        A longer description. Lorem ipsum dolor sit amet, consetetur
+        sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
+        dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
+        et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
+        takimata sanctus est{' '}
+      </FormHint>
+    </>
+  }
+  helperText="The helper text provides additional information"
+/>
+`;
+
+Input.story = {
+  parameters: {
+    docs: {
+      source: {
+        code: formhintsourcecode,
+      },
+    },
+  },
+};

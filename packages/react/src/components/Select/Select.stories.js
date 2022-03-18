@@ -32,10 +32,22 @@ Imagine this to be a \`much\` longer block of text that spans
 several lines.
 `;
 
+const selectsourcecode = `
+import { Select, SelectItem  } from "@un/react";
+
+<Select>
+  <SelectItem value="option-1" text="Option 1" />
+  <SelectItem value="option-2" text="Option 2" />
+</Select>
+`;
+
 SelectDefault.story = {
   parameters: {
     docs: {
       storyDescription: hello,
+      source: {
+        code: selectsourcecode,
+      },
     },
   },
 };

@@ -152,9 +152,9 @@ class RadioButtonGroup extends React.Component {
       <div className="wfp--form__helper-text">{helperText}</div>
     ) : null;
 
-    // console.warn(
-    //   'RadioButtonGroup is depreciated and will be removed in the next versions. Use InputGroup instead'
-    // );
+    console.warn(
+      'RadioButtonGroup is depreciated and will be removed in the next versions. Use InputGroup instead'
+    );
 
     return (
       <div className={wrapperClasses}>

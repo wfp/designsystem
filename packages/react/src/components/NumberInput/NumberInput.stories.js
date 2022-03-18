@@ -18,6 +18,8 @@ Regular.args = {
   name: 'inputname',
   helperText: 'Optional helperText',
   labelText: 'The labelText',
+  // pattern: '[0-9]+([.,][0-9]+)?',
+  // step: 0.01,
 };
 
 export const disabled = (args) => <NumberInput {...args} />;

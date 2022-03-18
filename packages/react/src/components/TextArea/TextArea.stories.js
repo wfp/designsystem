@@ -14,18 +14,16 @@ export default {
 
 export const Regular = (args) => <TextArea {...args} />;
 
-const description = `
-You can customize the content by using \`BannerNavigation\`.
-`;
-
 Regular.args = {
   name: 'inputname',
   helperText: 'Optional helperText',
   labelText: 'The labelText',
-  cols:50
+  cols: 50,
 };
 
 export const withError = (args) => <TextArea {...args} />;
+
+const description = ` Textarea with error example`;
 
 withError.story = {
   parameters: {
