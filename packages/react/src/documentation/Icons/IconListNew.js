@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { Module, ModuleFooter } from '../../components/Module';
-import { DownloadGlyph } from '@un/icons-react';
+import { Download } from '@un/icons-react';
 
 import Button from '../../components/Button';
 
@@ -25,7 +25,7 @@ const IconPreview = ({ icon }) => {
             flexDirection: 'column',
             alignItems: 'center',
           }}>
-          <DownloadGlyph
+          <Download
             description="WFP"
             width="150"
             height="150"
@@ -57,7 +57,7 @@ const IconPreview = ({ icon }) => {
 from '@un/icons-react'`}
           </div>
           <Button
-            icon={DownloadGlyph}
+            icon={Download}
             href={`https://github.com/wfp/carbon-icons/blob/master/src/svg/${key}.svg`}
             small>
             View on GitHub
@@ -83,8 +83,9 @@ from '@un/icons-react'`}
             }}>
             {Icon && (
               <Icon
+                style={{ fontSize: '2em' }}
 
-              /* color="black"
+                /* color="black"
                 description="WFP"
                 width="39"
                 className="wfp--footer-cta-logo"*/

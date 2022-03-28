@@ -11,6 +11,9 @@ assets
 css
 dist
 build
+build/*
+**/build
+/build
 
 # Logs
 *.log

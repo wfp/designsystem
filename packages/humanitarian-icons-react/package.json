@@ -29,21 +29,14 @@
     "access": "public"
   },
   "scripts": {
-    "build": "yarn clean && node tasks/build.js",
-    "clean": "rimraf es lib umd",
-    "postinstall": "carbon-telemetry collect --install"
+    "build": "node config.mjs"
   },
   "peerDependencies": {
     "react": ">=16"
   },
-  "dependencies": {
-    "@carbon/icon-helpers": "^10.20.0",
-    "@carbon/telemetry": "0.0.0-alpha.6",
-    "prop-types": "^15.7.2"
-  },
   "devDependencies": {
-    "@un/icon-build-helpers": "^0.23.11",
-    "@un/pictograms": "^11.14.7"
+    "@un/pictograms": "^11.14.7",
+    "@un/icons-core": "0.0.1"
   },
   "sideEffects": false,
   "gitHead": "1f06c355bfc57d62c4516f9daed57564730537f5"

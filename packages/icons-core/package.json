@@ -9,6 +9,7 @@
     "directory": "packages/styles"
   },
   "bugs": "https://github.com/carbon-design-system/carbon/issues",
+  "main": "build/index.js",
   "keywords": [
     "colors",
     "themes",
@@ -19,7 +20,10 @@
   ],
   "scripts": {
     "build:legacy": "node config.mjs",
-    "generate-icons": "node exampleconfig.mjs"
+    "build": "babel -d ./build ./src -s",
+    "watch": "babel -d ./build ./src -s  --watch",
+    "generate-icons": "node exampleconfig.mjs",
+    "un-cli": "wfp-cli bundle ../pictograms-react/dist/jsx/index.js"
   },
   "publishConfig": {
     "access": "public"
@@ -28,8 +32,11 @@
     "@svgr/core": "^6.2.1",
     "@svgr/plugin-jsx": "^6.2.1",
     "@svgr/plugin-prettier": "^6.1.2",
+    "@un/cli": "^10.25.15",
     "@svgr/plugin-svgo": "^6.2.0",
-    "fs-readdir-recursive": "^1.1.0"
+    "camelcase": "^6.3.0",
+    "fs-readdir-recursive": "^1.1.0",
+    "rollup": "^2.70.1"
   },
   "dependencies": {
     "change-case": "^4.1.2"

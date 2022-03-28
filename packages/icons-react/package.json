@@ -3,7 +3,6 @@
   "description": "React components for icons in digital and software products using the Carbon Design System",
   "version": "10.34.20",
   "license": "Apache-2.0",
-  "main": "lib/index.js",
   "module": "es/index.js",
   "repository": {
     "type": "git",
@@ -30,9 +29,7 @@
     "access": "public"
   },
   "scripts": {
-    "build": "yarn clean && node tasks/build.js",
-    "clean": "rimraf es lib umd next",
-    "postinstall": "carbon-telemetry collect --install"
+    "build": "node config.mjs"
   },
   "peerDependencies": {
     "react": ">=16"
