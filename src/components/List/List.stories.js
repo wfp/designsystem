@@ -6,11 +6,11 @@ import { List, ListItem } from '../List';
 export default {
   title: 'Components/UI Elements/List',
   component: List,
+  subcomponents: { ListItem },
   parameters: {
     componentSubtitle: 'Component',
     status: 'released',
     mdx: markdown,
-    subcomponents: { ListItem },
   },
 };
 
@@ -182,7 +182,7 @@ const nestedItemDescription = ` \`unordered\` List with ListItems can have \`che
 NestedListItems.story = {
   parameters: {
     docs: {
-      storyDescription: listItemDescription,
+      storyDescription: nestedItemDescription,
     },
   },
 };
