@@ -105,8 +105,7 @@ export const SingleDatePickerNew = (args) => {
   return (
     <Input
       labelText="Input using SingleDatePicker by Airbnb"
-      helperText="HelperText"
-    >
+      helperText="HelperText">
       {(e) => (
         <SingleDatePicker
           showDefaultInputIcon={true}
@@ -127,7 +126,7 @@ import React, { useState } from 'react';
 import 'react-dates/initialize';
 import moment from 'moment';
 import { SingleDatePicker } from 'react-dates';
-import Input from '../Input';
+import {Input} from '@wfp/ui';
 
 export const SingleDatePickerNew = () => {
   const [date, setDate] = useState(moment());

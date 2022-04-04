@@ -18,8 +18,7 @@ export const Regular = (args) => (
     defaultSelected="default-selected"
     labelText="Group labelText"
     helperText="Helper text"
-    {...args}
-  >
+    {...args}>
     <RadioButton
       name="radio"
       value="standard"
@@ -84,8 +83,7 @@ export const withCheckbox = (args) => (
     defaultSelected="default-selected"
     labelText="Group labelText"
     helperText="Helper text"
-    {...args}
-  >
+    {...args}>
     <Checkbox name="checkbox-1" value="standard" labelText="Checkbox label 1" />
     <Checkbox
       name="checkbox-2"
@@ -140,8 +138,7 @@ export const vertical = (args) => (
       labelText="Group labelText"
       helperText="Helper text"
       vertical
-      {...args}
-    >
+      {...args}>
       <Checkbox
         name="checkboxb-1"
         value="standard"
@@ -162,8 +159,7 @@ export const vertical = (args) => (
       defaultSelected="default-selected"
       legend="Group Legend"
       vertical
-      {...args}
-    >
+      {...args}>
       <RadioButton
         name="radiob"
         value="standard"
@@ -190,7 +186,7 @@ const verticalsourcecode = `
 
 import { InputGroup, Checkbox, RadioButton  } from "@wfp/ui";
 
-<>
+
   <InputGroup
     defaultSelected="default-selected"
     labelText="Group labelText"
@@ -235,7 +231,7 @@ import { InputGroup, Checkbox, RadioButton  } from "@wfp/ui";
       labelText="Radio 1"
     />
   </InputGroup>
-</>
+
 `;
 
 vertical.story = {

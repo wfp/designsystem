@@ -30,8 +30,7 @@ export const Regular = (args) => (
         <ContextMenuItem>Item 2</ContextMenuItem>
         <ContextMenuItem>Item 3</ContextMenuItem>
       </>
-    }
-  >
+    }>
     <span>Open context menu</span>
   </ContextMenu>
 );
@@ -85,6 +84,34 @@ export const States = (args) => (
           onClick={() => {
             setVisibility(true);
             visibilityChange(true);
+          }}>
+          Hide ContextMenu
+        </ContextMenuItem>
+        <ContextMenuItem>Item 2</ContextMenuItem>
+        <ContextMenuItem>Item 3</ContextMenuItem>
+      </>
+    )}>
+    <span>Open context menu</span>
+  </ContextMenu>
+);
+
+States.args = { ...Regular.args, style: { marginRight: '1rem' } };
+
+const statesourcecode = `
+import { ContextMenu, ContextMenuGroup, ContextMenuItem } from "@wfp/ui";
+
+<ContextMenu
+    content={({ setVisibility, visibilityChange }) => (
+      <>
+        <ContextMenuGroup>
+          <ContextMenuItem>Itemgroup 1</ContextMenuItem>
+          <ContextMenuItem>Itemgroup 2</ContextMenuItem>
+          <ContextMenuItem>Itemgroup 3</ContextMenuItem>
+        </ContextMenuGroup>
+        <ContextMenuItem
+          onClick={() => {
+            setVisibility(true);
+            visibilityChange(true);
           }}
         >
           Hide ContextMenu
@@ -96,15 +123,15 @@ export const States = (args) => (
   >
     <span>Open context menu</span>
   </ContextMenu>
-);
-
-States.args = { ...Regular.args, style: { marginRight: '1rem' } };
+`;
 
 States.story = {
   parameters: {
     docs: {
-      storyDescription: `Content as function
-      `,
+      storyDescription: `Content as function`,
+      source: {
+        code: statesourcecode,
+      },
     },
   },
 };
