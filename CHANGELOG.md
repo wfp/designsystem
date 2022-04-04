@@ -1,3 +1,10 @@
+## [1.20.11](https://github.com/wfp/ui/compare/v1.20.10...v1.20.11) (2022-04-04)
+
+
+### Bug Fixes
+
+* **NumberInput:** NumberInput ttype definition covering both number and string for step prop [#513](https://github.com/wfp/ui/issues/513) ([95dc162](https://github.com/wfp/ui/commit/95dc1621cd50352aad38c11f26071b288cad9b7d))
+
 ## [1.20.10](https://github.com/wfp/ui/compare/v1.20.9...v1.20.10) (2022-03-08)
 
 
