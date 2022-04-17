@@ -3,7 +3,9 @@ $css--reset: true;
 
 @use './theme' as coretheme;
 @use '@un/themes-core/dist/scss/default-css-theme' as defaulttheme;
-@use './default-css-theme' as darkTheme;
+//@use './default-css-theme' as darkTheme;
+
+//@use '@un/themes-core/dist/scss/_variables.scss' as darkTheme;
 
 @use "@un/styles/scss/theme" /*with (
   $coretheme: coretheme
@@ -11,13 +13,13 @@ $css--reset: true;
 
 @import '@un/styles';
 
-@import '@un/themes/scss/themes';
+//@import '@un/themes/scss/themes';
 
 //@import '@un/themes-core/dist/scss/theme';
 
 //@import '@un/themes/scss/index.scss';
 
-$carbon--theme: $carbon--theme--wfp;
+//$carbon--theme: $carbon--theme--wfp;
 
 $color-corporate-09: 'green';
 
@@ -28,14 +30,14 @@ $color-corporate-09: 'green';
 :root {
   @include defaulttheme.theme-default();
 
-  @include carbon--theme($carbon--theme--wfp, true) {
+  /*@include carbon--theme($carbon--theme--wfp, true) {
     // @include emit-component-tokens($tag-colors);
     // @include emit-component-tokens($notification-colors);
-  }
+  }*/
 }
 
 .wfp--theme-dark {
-  @include darkTheme.theme-default();
+  // @include darkTheme.theme-default();
 }
 
 .docs-story {

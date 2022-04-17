@@ -37,7 +37,9 @@ export const ColourList = ({ tokens }) => {
           </Story>
         </td>
         <td>
-          <Text kind="code">{color.value}</Text>
+          <Text kind="code">
+            {typeof color.value === 'string' && color.value}
+          </Text>
           <br />
         </td>
         {color.attributes?.rgb && (

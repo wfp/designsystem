@@ -286,7 +286,7 @@
 
   .#{$prefix}--inline-notification--low-contrast.#{$prefix}--inline-notification--info,
   .#{$prefix}--inline-notification--low-contrast.#{$prefix}--inline-notification--info-square {
-    background: $layer; //var(--support-light-04);
+    background: $layer-primary; //var(--support-light-04);
     border-left: 3px solid $interactive;
   }
   .#{$prefix}--inline-notification--info

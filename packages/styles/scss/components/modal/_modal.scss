@@ -18,7 +18,6 @@
 @use '../../utilities/z-index' as *;
 @use '../../utilities/layer' as *;
 
-
 @use '../button';
 
 /// Modal styles
@@ -47,7 +46,7 @@ $modal-footer-background-color: var(--ui-02) !default; //TODO use $layer token
     content: '';
     opacity: 0;
     //background-color: rgba(var(--ui-07), 0.5);
-    background-color: rgba(#0B1923, 0.8);; // using current token of $overlay
+    background-color: rgba(#0b1923, 0.8); // using current token of $overlay
     transition: opacity 200ms, z-index 0s 200ms, visibility 0s 200ms;
     visibility: hidden;
 
@@ -86,7 +85,7 @@ $modal-footer-background-color: var(--ui-02) !default; //TODO use $layer token
     margin: auto;
     display: flex;
     flex-direction: column;
-    background-color: $background;
+    background-color: $background-main;
     overflow: hidden;
     &:before {
       position: absolute;

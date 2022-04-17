@@ -23,7 +23,7 @@
 /// @group select
 
 $input-height: 40px !default;
-$input-border: 1px solid var(--field-border-01); 
+$input-border: 1px solid var(--field-border-01);
 
 @mixin select {
   .#{$prefix}--select {
@@ -62,7 +62,6 @@ $input-border: 1px solid var(--field-border-01);
     &:focus {
       @include focus-outline('border');
     }
-
 
     &:focus ~ .#{$prefix}--label {
       color: $focus;
@@ -139,7 +138,7 @@ $input-border: 1px solid var(--field-border-01);
   // Override some Firefox user-agent styles
   @-moz-document url-prefix() {
     .#{$prefix}--select-option {
-      background-color: $background;
+      background-color: $background-main;
       color: $text-primary;
     }
 
@@ -186,7 +185,7 @@ $input-border: 1px solid var(--field-border-01);
       box-shadow: none;
 
       &:hover {
-        background-color: $background;
+        background-color: $background-main;
       }
 
       &:focus {

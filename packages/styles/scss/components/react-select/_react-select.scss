@@ -23,7 +23,7 @@
 /// @group react-select
 
 $input-height: 40px !default;
-$input-border: 1px solid var(--field-border-01); 
+$input-border: 1px solid var(--field-border-01);
 
 @mixin react-select {
   .#{$prefix}--react-select-container {
@@ -68,7 +68,7 @@ $input-border: 1px solid var(--field-border-01);
     }
 
     .#{$prefix}--react-select__option--is-focused {
-      background: $layer;
+      background: $layer-primary;
       color: $text-primary;
     }
 

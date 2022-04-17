@@ -19,12 +19,14 @@
   ],
   "scripts": {
     "build": "node config.js",
+    "build:legacy": "style-dictionary build --config ./config.js",
     "generate-theme": "node config.js"
   },
   "publishConfig": {
     "access": "public"
   },
   "dependencies": {
+    "change-case": "^4.1.2",
     "style-dictionary": "^3.7.0"
   }
 }

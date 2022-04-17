@@ -27,7 +27,7 @@
     min-width: 13rem;
     max-width: 18rem;
     padding: $spacing-02 0;
-    background-color: $layer;
+    background-color: $layer-primary;
     visibility: hidden;
   }
 
@@ -47,7 +47,7 @@
     position: relative;
     // $size-sm
     height: 2rem;
-    background-color: $layer;
+    background-color: $layer-primary;
     color: $text-primary;
     cursor: pointer;
     transition: background-color $duration-fast-01 motion(standard, productive);
@@ -81,7 +81,7 @@
   }
 
   .#{$prefix}--menu-option__content--disabled {
-    background-color: $layer;
+    background-color: $layer-primary;
     color: $text-disabled;
     cursor: not-allowed;
   }

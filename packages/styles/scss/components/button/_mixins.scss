@@ -14,7 +14,6 @@
 @use '../../utilities/component-reset';
 @use '../../utilities/convert' as *;
 @use '../../utilities/rtl' as *;
-@use 'tokens' as *;
 
 @mixin button-base {
   @include reset;

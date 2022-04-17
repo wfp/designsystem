@@ -10,7 +10,7 @@
   $nav-main-padding-bottom: $spacing-04;
 
   .#{$prefix}--main-navigation-ext {
-    background-color: $background;
+    background-color: $background-main;
     box-shadow: 0 5px 26px 0 rgb(21 41 53 / 8%); // TODO: Create new token for the shadow
     display: flex;
     position: relative;
@@ -136,7 +136,7 @@
     display: flex;
     user-select: none;
 
-    svg{
+    svg {
       margin-left: 0.3em;
     }
 
@@ -152,7 +152,7 @@
   }
 
   .#{$prefix}--language-ext__dropdown {
-    background-color: $background;
+    background-color: $background-main;
     border-bottom: 5px solid #0b77c2; // TODO: Use $brand token
     box-shadow: 0 1px 8px rgb(0 0 0 / 30%); // TODO: Create a token for this shadow
     display: none;
@@ -230,7 +230,7 @@
     text-transform: uppercase;
     user-select: none;
 
-    svg{
+    svg {
       margin-left: 0.3em;
     }
 
@@ -239,7 +239,6 @@
       font-size: 14px;
       padding: 1rem;
     }
-
   }
 
   .#{$prefix}--user-ext__chevron {
@@ -247,7 +246,7 @@
   }
 
   .#{$prefix}--user-ext__dropdown {
-    background-color: $background;
+    background-color: $background-main;
     border-bottom: 5px solid #0b77c2; // TODO: Use $brand token
     box-shadow: 0 1px 8px rgb(0 0 0 / 30%); // TODO: Create a token for this shadow
     display: none;

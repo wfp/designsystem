@@ -36,7 +36,7 @@
     overflow: hidden;
     width: mini-units(6);
     max-width: mini-units(32);
-    background-color: $background;
+    background-color: $background-main;
     color: $text-secondary;
     // TODO: sync with motion work
     transition: width 0.11s cubic-bezier(0.2, 0, 1, 0.9);

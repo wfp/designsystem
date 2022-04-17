@@ -114,7 +114,7 @@ $list-box-menu-width: rem(300px);
 
   // V11: Possibly deprecate
   .#{$prefix}--list-box--expanded:hover.#{$prefix}--list-box--light:hover {
-    background-color: $field-02;
+    //TODO: background-color: $field-02;
   }
 
   .#{$prefix}--list-box .#{$prefix}--text-input {
@@ -155,7 +155,7 @@ $list-box-menu-width: rem(300px);
   // V11: Possibly deprecate
   // Light variation for 'list-box'
   .#{$prefix}--list-box--light {
-    background-color: $field-02;
+    //TODO: background-color: $field-02;
 
     &:hover {
       background-color: $hover-light-ui;
@@ -183,7 +183,7 @@ $list-box-menu-width: rem(300px);
 
   // V11: Possibly deprecate
   .#{$prefix}--list-box--light.#{$prefix}--list-box--disabled {
-    background-color: $field-02;
+    //TODO: background-color: $field-02;
   }
 
   .#{$prefix}--list-box--disabled,
@@ -503,7 +503,7 @@ $list-box-menu-width: rem(300px);
     right: 0;
     left: 0;
     width: $list-box-width;
-    background-color: $layer;
+    background-color: $layer-primary;
     overflow-y: auto;
     transition: max-height $duration-fast-02 motion(standard, productive);
 

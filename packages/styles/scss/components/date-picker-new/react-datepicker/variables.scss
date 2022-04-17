@@ -11,7 +11,7 @@
 @use '../../utilities/placeholder-colors' as *;
 @use '../../utilities/skeleton' as *;*/
 
-$datepicker__background-color: $layer !default;
+$datepicker__background-color: $layer-primary !default;
 $datepicker__border-color: $border-strong !default;
 $datepicker__highlighted-color: #3dcc4a !default;
 $datepicker__muted-color: $interactive !default;

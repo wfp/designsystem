@@ -65,19 +65,19 @@
       cursor: pointer;
       border-bottom: 1px solid $border-subtle;
       &.#{$prefix}--item--active {
-        background: $layer;
+        background: $layer-primary;
       }
     }
     &--sidebar {
       cursor: pointer;
       border-bottom: 1px solid $border-subtle;
       &.#{$prefix}--item--active {
-        background: $layer;
+        background: $layer-primary;
       }
     }
     &--repeater {
       cursor: pointer;
-      background: $layer;
+      background: $layer-primary;
       margin-bottom: 0.3em;
       &.#{$prefix}--item--active {
         background: $layer-active;
@@ -86,7 +86,7 @@
     &--button {
       padding: 1em;
       &:hover {
-        background: $layer;
+        background: $layer-primary;
       }
     }
     &--horizontal {

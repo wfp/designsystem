@@ -33,7 +33,6 @@
   },
   "devDependencies": {
     "@un/figma-connect": "^0.0.8",
-    "@un/icon-build-helpers": "^0.23.11",
     "rimraf": "^3.0.2"
   },
   "gitHead": "1f06c355bfc57d62c4516f9daed57564730537f5"

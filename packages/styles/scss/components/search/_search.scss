@@ -94,11 +94,11 @@ $input-border: 1px solid var(--field-border-01);
     }
   }
   .#{$prefix}--search--light .#{$prefix}--search-input {
-    background: $field-02;
+    //TODO: background: $field-02;
   }
 
   .#{$prefix}--search--light .#{$prefix}--search-close::before {
-    background: $field-02;
+    //TODO:background: $field-02;
   }
 
   // Small styles

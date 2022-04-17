@@ -136,7 +136,7 @@
 
   // V11: Possibly deprecate
   .#{$prefix}--dropdown--light {
-    background-color: $field-02;
+    //TODO: background-color: $field-02;
 
     &:hover {
       background-color: $hover-light-ui;
@@ -196,7 +196,7 @@
     width: 100%;
     max-height: 0;
     flex-direction: column;
-    background-color: $layer;
+    background-color: $layer-primary;
     list-style: none;
     // NOTE: IE, Edge, and Safari do not support two value `overflow` shorthand.
     overflow-x: hidden;
@@ -206,7 +206,7 @@
 
   // V11: Possibly deprecate
   .#{$prefix}--dropdown--light .#{$prefix}--dropdown-list {
-    background-color: $field-02;
+    //TODO: background-color: $field-02;
   }
 
   .#{$prefix}--dropdown:not(.#{$prefix}--dropdown--open)
@@ -370,7 +370,7 @@
 
     // V11: Possibly deprecate
     &.#{$prefix}--dropdown--light:hover {
-      background-color: $field-02;
+      //TODO: background-color: $field-02;
     }
   }
 

@@ -171,7 +171,7 @@ $input-height: 40px !default;
     width: 100%;
   }
   .SingleDatePicker_picker__fullScreenPortal {
-    background-color: $background;
+    background-color: $background-main;
   }
   .SingleDatePicker_closeButton {
     background: 0 0;
@@ -280,7 +280,7 @@ $input-height: 40px !default;
   }
   .DayPickerKeyboardShortcuts_panel {
     overflow: auto;
-    background: $background;
+    background: $background-main;
     border: 1px solid #dbdbdb;
     border-radius: 2px;
     position: absolute;
@@ -338,7 +338,7 @@ $input-height: 40px !default;
   .CalendarDay__default {
     border: 1px solid $border-strong;
     color: #484848;
-    background: $background;
+    background: $background-main;
   }
   .CalendarDay__default:hover {
     background: #e4e7e7;
@@ -352,20 +352,20 @@ $input-height: 40px !default;
   }
   .CalendarDay__outside {
     border: 0;
-    background: $background;
+    background: $background-main;
     color: #484848;
   }
   .CalendarDay__outside:hover {
     border: 0;
   }
   .CalendarDay__blocked_minimum_nights {
-    background: $background;
+    background: $background-main;
     border: 1px solid #eceeee;
     color: #cacccd;
   }
   .CalendarDay__blocked_minimum_nights:active,
   .CalendarDay__blocked_minimum_nights:hover {
-    background: $background;
+    background: $background-main;
     color: #cacccd;
   }
   .CalendarDay__highlighted_calendar {
@@ -420,12 +420,12 @@ $input-height: 40px !default;
   .CalendarDay__blocked_out_of_range,
   .CalendarDay__blocked_out_of_range:active,
   .CalendarDay__blocked_out_of_range:hover {
-    background: $background;
+    background: $background-main;
     border: 1px solid #e4e7e7;
     color: #cacccd;
   }
   .CalendarMonth {
-    background: $background;
+    background: $background-main;
     text-align: center;
     vertical-align: top;
     user-select: none;
@@ -451,7 +451,7 @@ $input-height: 40px !default;
     padding-bottom: 7px;
   }
   .CalendarMonthGrid {
-    background: $background;
+    background: $background-main;
     text-align: left;
     z-index: 0;
   }
@@ -577,12 +577,12 @@ $input-height: 40px !default;
     fill: #f2f2f2;
   }
   .DayPicker {
-    background: $background;
+    background: $background-main;
     position: relative;
     text-align: left;
   }
   .DayPicker__horizontal {
-    background: $background;
+    background: $background-main;
   }
   .DayPicker__verticalScrollable {
     height: 100%;
@@ -631,7 +631,7 @@ $input-height: 40px !default;
     top: 0;
     display: table-row;
     border-bottom: 1px solid #dbdbdb;
-    background: $background;
+    background: $background-main;
     margin-left: 0;
     left: 0;
     width: 100%;
@@ -672,7 +672,7 @@ $input-height: 40px !default;
   .DateInput {
     margin: 0;
     padding: 0;
-    background: $background;
+    background: $background-main;
     position: relative;
     display: inline-block;
     vertical-align: middle;

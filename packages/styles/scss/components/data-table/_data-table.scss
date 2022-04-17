@@ -39,7 +39,7 @@
   //----------------------------------------------------------------------------
   .#{$prefix}--data-table-header {
     padding: $spacing-05 0 $spacing-06 $spacing-05;
-    background: $layer;
+    background: $layer-primary;
   }
 
   .#{$prefix}--data-table-header__title {
@@ -73,7 +73,7 @@
     @include type-style('body-short-01');
 
     width: 100%;
-    background-color: $layer;
+    background-color: $layer-primary;
   }
 
   .#{$prefix}--data-table tr {
@@ -132,9 +132,9 @@
   .#{$prefix}--data-table tbody th {
     padding-right: $spacing-05;
     padding-left: $spacing-05;
-    border-top: 1px solid $layer;
+    border-top: 1px solid $layer-primary;
     border-bottom: 1px solid $border-subtle;
-    background: $layer;
+    background: $layer-primary;
     color: $text-secondary;
 
     + td:first-of-type {
@@ -160,7 +160,7 @@
   .#{$prefix}--data-table .#{$prefix}--number__control-btn::after,
   .#{$prefix}--data-table .#{$prefix}--text-input,
   .#{$prefix}--data-table .#{$prefix}--select-input {
-    background-color: $field-02;
+    //TODO: background-color: $field-02;
   }
 
   // Overflow Menu Overrides
@@ -276,7 +276,7 @@
     tbody
     tr:not(.#{$prefix}--parent-row):nth-child(odd)
     td {
-    border-bottom: 1px solid $layer;
+    border-bottom: 1px solid $layer-primary;
   }
 
   .#{$prefix}--data-table--zebra

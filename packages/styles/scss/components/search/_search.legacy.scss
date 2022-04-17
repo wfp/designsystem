@@ -145,7 +145,7 @@
     width: rem(40px);
     min-width: rem(40px);
     margin-left: rem(4px);
-    background-color: $background;
+    background-color: $background-main;
     position: relative;
     padding: 0;
     outline: 1px solid transparent;
@@ -212,7 +212,7 @@
     @include focus-outline('reset');
     appearance: none;
     border: none;
-    background-color: $background;
+    background-color: $background-main;
     color: $text-primary;
     padding: 0 $spacing-08;
     text-overflow: ellipsis;

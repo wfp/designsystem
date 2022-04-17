@@ -12,7 +12,7 @@
 @mixin blockquote {
   // <button> elements cannot be used as flex containers
   .#{$prefix}--blockquote {
-    background-color: $layer;
+    background-color: $layer-primary;
     border-left: 5px solid $support-info;
     margin: $spacing-03 0;
     position: relative;

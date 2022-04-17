@@ -31,7 +31,6 @@
     "prepublishOnly": "yarn build"
   },
   "devDependencies": {
-    "@un/icon-build-helpers": "^0.23.11",
     "rimraf": "^3.0.0"
   },
   "gitHead": "1f06c355bfc57d62c4516f9daed57564730537f5"

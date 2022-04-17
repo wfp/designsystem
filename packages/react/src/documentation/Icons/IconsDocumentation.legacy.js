@@ -10,9 +10,6 @@ import { Module, ModuleFooter } from '../../components/Module';
 import metadata from '@un/icons/metadata.json';
 import * as Icons from '@un/icons-react';
 import { DownloadGlyph } from '@un/icons-react';
-/*import moduleInfo, {
-  getModuleName,
-} from '@un/icon-build-helpers/src/metadata/extensions/module-info';*/
 
 import Button from '../../components/Button';
 

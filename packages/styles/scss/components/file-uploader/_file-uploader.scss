@@ -98,7 +98,7 @@
   }
 
   .#{$prefix}--file-browse-btn--disabled .#{$prefix}--file__drop-container {
-    border: 1px dashed button.$button-disabled;
+    border: 1px dashed $button-disabled;
   }
 
   .#{$prefix}--label-description {
@@ -171,7 +171,6 @@
     }
   }
 
-
   // TODO: deprecate this block
   .#{$prefix}--file__selected-file--invalid__wrapper {
     @include focus-outline('invalid');
@@ -185,7 +184,7 @@
   .#{$prefix}--file__selected-file--invalid {
     @include focus-outline('invalid');
 
-    padding:$spacing-05 0;
+    padding: $spacing-05 0;
   }
 
   // .#{$prefix}--file__selected-file--invalid.#{$prefix}--file__selected-file--sm {

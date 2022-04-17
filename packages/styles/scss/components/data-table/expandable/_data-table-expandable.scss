@@ -271,7 +271,7 @@
   //----------------------------------------------------------------------------
   .#{$prefix}--data-table--zebra tbody tr[data-parent-row]:nth-child(4n + 3) td,
   .#{$prefix}--data-table--zebra tbody tr[data-child-row]:nth-child(4n + 4) td {
-    border-bottom: 1px solid $layer;
+    border-bottom: 1px solid $layer-primary;
   }
 
   .#{$prefix}--data-table--zebra tbody tr[data-parent-row]:nth-child(4n + 1) td,

@@ -27,7 +27,7 @@
     overflow: hidden;
     width: 0;
     border: none;
-    background-color: $layer;
+    background-color: $layer-primary;
     color: $text-secondary;
     transition: width $duration-fast-02 motion(exit, productive);
     will-change: width;

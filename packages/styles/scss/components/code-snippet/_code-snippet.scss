@@ -137,7 +137,7 @@ $copy-btn-feedback: $background-inverse !default;
   }
 
   .#{$prefix}--snippet--light.#{$prefix}--snippet--inline.#{$prefix}--snippet--no-copy:hover {
-    background-color: $field-02;
+    //TODO: background-color: $field-02;
     cursor: auto;
   }
 
@@ -387,7 +387,7 @@ $copy-btn-feedback: $background-inverse !default;
   .#{$prefix}--snippet--light .#{$prefix}--snippet-button,
   .#{$prefix}--snippet--light .#{$prefix}--btn.#{$prefix}--snippet-btn--expand,
   .#{$prefix}--snippet--light .#{$prefix}--copy-btn {
-    background-color: $field-02;
+    //TODO: background-color: $field-02;
   }
 
   .#{$prefix}--snippet--light.#{$prefix}--snippet--inline:hover,

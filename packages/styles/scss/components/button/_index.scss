@@ -7,7 +7,6 @@
 
 @forward 'vars';
 @forward 'button';
-@forward 'tokens';
 @use 'button';
 
 @include button.button;

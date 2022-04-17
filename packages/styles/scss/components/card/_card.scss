@@ -18,13 +18,13 @@
 @mixin card {
   .#{$prefix}--card-box {
     box-shadow: 0 1px 8px rgba(0, 0, 0, 0.15);
-  
+
     a {
-      color:$text-primary;
+      color: $text-primary;
       text-decoration: none;
     }
   }
-  
+
   .#{$prefix}--photo-cardnew--simple-card {
     .#{$prefix}--header-photo {
       width: 100%;
@@ -33,7 +33,7 @@
       margin: 0;
     }
     .#{$prefix}--photo-cardnew__info {
-      background: $background;
+      background: $background-main;
       padding: $spacing-05;
     }
     .#{$prefix}--photo-cardnew__info__background {
@@ -41,13 +41,13 @@
     }
     .#{$prefix}--photo-cardnew__info__title {
       color: $interactive;
-  
+
       &:hover {
         text-decoration: underline;
       }
     }
   }
-  
+
   .#{$prefix}--photo-cardnew__info__metadata {
     margin: 0;
     margin-bottom: $spacing-03;
@@ -56,19 +56,19 @@
     letter-spacing: 0.05em;
     // color: $text-primary;
   }
-  
+
   .#{$prefix}--photo-cardnew__info__subtitle {
     margin: 0;
     @include type-style('body-short-01');
   }
-  
+
   .#{$prefix}--photo-cardnew__info__title {
     margin: 0;
     & + .#{$prefix}--photo-cardnew__info__subtitle {
       margin-top: $spacing-03;
     }
   }
-  
+
   .#{$prefix}--photo-cardnew__background {
     position: absolute;
     top: 0;
@@ -80,7 +80,7 @@
     z-index: 100;
     overflow: hidden;
   }
-  
+
   .#{$prefix}--photo-cardnew--overlay {
     .#{$prefix}--photo-cardnew__info {
       position: absolute;
@@ -94,10 +94,10 @@
       align-items: center;
       justify-content: space-between;
       color: $text-on-color;
-      background: rgba(#0B1923, 0.9); // hex is for $overlay token
+      background: rgba(#0b1923, 0.9); // hex is for $overlay token
     }
     // .#{$prefix}--photo-cardnew__info {
-  
+
     // }
     .#{$prefix}--photo-cardnew__info__background {
       position: absolute;
@@ -125,7 +125,7 @@
       }
     }
   }
-  
+
   .#{$prefix}--photo-cardnew--overlay {
     height: rem(300px);
     @include breakpoint('lg') {

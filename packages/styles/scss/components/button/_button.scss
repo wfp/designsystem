@@ -18,12 +18,12 @@
 @use '../../utilities/rtl' as *;
 @use '../../utilities/tooltip' as *;
 @use '../../utilities/visually-hidden' as *;
-@use 'tokens' as *;
+//@use 'tokens' as *;
 
 @mixin button {
   // <button> elements cannot be used as flex containers
   button.#{$prefix}--btn {
-    background: $color-corporate-09 !important;
+    //background: $color-corporate-09 !important;
     // TODO: use inline-flex for all buttons
     // display: inline-block;
     /*vertical-align: middle;
@@ -250,7 +250,7 @@
       $field,
       $field,
       $button-primary,
-      $background,
+      $background-main,
       $text-primary
     );
 

@@ -72,14 +72,14 @@
     .#{$prefix}--overflow-menu__trigger {
     @include box-shadow;
 
-    background-color: $layer;
+    background-color: $layer-primary;
     transition: none;
   }
 
   .#{$prefix}--overflow-menu--light.#{$prefix}--overflow-menu--open,
   .#{$prefix}--overflow-menu--light.#{$prefix}--overflow-menu--open
     .#{$prefix}--overflow-menu__trigger {
-    background-color: $field-02;
+    //TODO: background-color: $field-02;
   }
 
   .#{$prefix}--overflow-menu__icon {
@@ -100,13 +100,13 @@
     width: rem(160px);
     flex-direction: column;
     align-items: flex-start;
-    background-color: $layer;
+    background-color: $layer-primary;
     list-style: none;
 
     &::after {
       position: absolute;
       display: block;
-      background-color: $layer;
+      background-color: $layer-primary;
       content: '';
       transition: background-color $duration-fast-02
         motion(entrance, productive);
@@ -114,18 +114,18 @@
   }
 
   .#{$prefix}--overflow-menu.#{$prefix}--overflow-menu--open:hover {
-    background-color: $layer;
+    background-color: $layer-primary;
   }
 
   .#{$prefix}--overflow-menu-options--light {
-    background-color: $field-02;
+    //TODO: background-color: $field-02;
     &::after {
-      background-color: $field-02;
+      //TODO: background-color: $field-02;
     }
   }
 
   .#{$prefix}--overflow-menu.#{$prefix}--overflow-menu--light.#{$prefix}--overflow-menu--open:hover {
-    background-color: $field-02;
+    //TODO: background-color: $field-02;
   }
 
   .#{$prefix}--overflow-menu-options[data-floating-menu-direction='bottom']::after {
@@ -305,7 +305,7 @@
   }
 
   .#{$prefix}--overflow-menu-options__option--disabled:hover {
-    background-color: $layer;
+    background-color: $layer-primary;
     cursor: not-allowed;
   }
 
@@ -319,7 +319,7 @@
     &:focus {
       @include focus-outline('reset');
 
-      background-color: $layer;
+      background-color: $layer-primary;
     }
   }
 

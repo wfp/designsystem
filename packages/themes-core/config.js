@@ -1,6 +1,8 @@
 const { formatHelpers } = require('style-dictionary');
 
-const StyleDictionary = require('style-dictionary').extend('config.json');
+const ChangeCase = require('change-case');
+
+const StyleDictionary = require('style-dictionary'); /*.extend('config.json')*/
 const { fileHeader, formattedVariables } = StyleDictionary.formatHelpers;
 
 StyleDictionary.registerFormat({
@@ -13,17 +15,6 @@ StyleDictionary.registerFormat({
       formattedVariables({ format: 'css', dictionary, outputReferences }) +
       '\n}\n'
     );
-  },
-});
-
-StyleDictionary.registerTransform({
-  type: `attribute`,
-  transitive: true,
-  name: `myTransitiveTransform`,
-  matcher: (token) => true,
-  transformer: (token) => {
-    console.log('token', token.attributes);
-    token.valueRgba = '123'; //formattedVariables({ format: 'css', dictionary, outputReferences }); //token.value;
   },
 });
 
@@ -69,11 +60,83 @@ StyleDictionary.registerFormat({
   },
 });
 
+StyleDictionary.registerTransform({
+  type: 'name',
+  transitive: true,
+  name: `name/scss`,
+  transformer: (token, options) => {
+    //return helloow;
+    console.log(token.path);
+
+    const tokenPath = token.path.filter(function (item, i) {
+      return !(
+        item === 'color' ||
+        (item === 'primary' && i === 1) ||
+        (item === 'form' && i === 1)
+      );
+    });
+
+    return ChangeCase.paramCase([options.prefix].concat(tokenPath).join(' '));
+    // token.value will be resolved and transformed at this point
+  },
+});
+
 StyleDictionary.extend({
+  parsers: [
+    {
+      pattern: /\.json$/,
+      parse: ({ contents, filePath }) => {
+        var content = JSON.parse(contents);
+        return content;
+        if (content.color) {
+          const { color, typography, ...other } = content;
+          const { primary, form, background, ...otherColors } = color;
+          //console.log(JSON.parse(color.background));
+          return {
+            ...otherColors,
+            //...color.background,
+            ...form,
+            ...typography,
+            ...primary,
+            background: background,
+            ...other,
+            //background: color.background.background,
+          };
+        }
+        return content;
+      },
+    },
+  ],
+  source: [`tokens/**/*.json`],
   platforms: {
+    figma: {
+      buildPath: 'dist/json/',
+      transforms: ['attribute/cti', 'attribute/color'],
+      files: [
+        {
+          destination: 'variables-full.json',
+          format: 'json',
+        },
+      ],
+    },
+    scss: {
+      transformGroup: 'scss',
+      buildPath: 'dist/scss/',
+      transforms: ['name/scss'],
+      files: [
+        {
+          destination: 'tokens.scss',
+          format: 'scss/variables',
+          options: {
+            themeable: true,
+          },
+        },
+      ],
+    },
     scssB: {
       transformGroup: 'css',
       buildPath: 'dist/scss/',
+      transforms: ['name/scss'],
       files: [
         {
           destination: 'default-css-theme.scss',
@@ -83,15 +146,49 @@ StyleDictionary.extend({
             theme: 'default',
           },
         },
-        {
-          destination: 'theme.scss',
+        /* {
+          destination: 'tokens.scss',
           format: 'scss/variables',
+          transforms: ['name/scss'],
           options: {
             outputReferences: true,
             theme: 'default',
           },
-        },
+        },*/
       ],
     },
   },
 }).buildAllPlatforms();
+
+/*
+module.exports = {
+  // Or you can add parsers directly on the configuration object here like this:
+  parsers: [
+    {
+      pattern: /\.json$/,
+      parse: ({ contents, filePath }) => {
+        var content = JSON.parse(contents);
+        if (content.color) {
+          const { color,typography, ...other } = content;
+          return {  ...color, ...typography...other,};
+        }
+        console.log('contents', content);
+        return content;
+      },
+    },
+  ],
+
+  platforms: {
+    css: {
+      transformGroup: 'css',
+      buildPath: 'build/',
+      files: [
+        {
+          destination: 'variables.css',
+          format: 'css/variables',
+        },
+      ],
+    },
+  },
+};
+*/
