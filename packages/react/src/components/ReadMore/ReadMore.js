@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React, { useRef, useState } from 'react';
 import classnames from 'classnames';
 import Link from '../Link';
-import { CaretUpGlyph, CaretDownGlyph } from '@un/icons-react';
+import { CaretUp, CaretDown } from '@un/icons-react';
 import useSettings from '../../hooks/useSettings';
 
 const MoreLink = ({ handleToggleClick, link, text, showMore }) => {
@@ -14,7 +14,7 @@ const MoreLink = ({ handleToggleClick, link, text, showMore }) => {
     });
     return clonedLink;
   } else {
-    const Icon = showMore ? CaretUpGlyph : CaretDownGlyph;
+    const Icon = showMore ? CaretUp : CaretDown;
     return (
       <Link
         className={`${prefix}--read-more__trigger`}

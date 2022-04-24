@@ -22,6 +22,7 @@
     "build:legacy": "node config.mjs",
     "build": "babel -d ./build ./src -s",
     "watch": "babel -d ./build ./src -s  --watch",
+    "rollup": "rollup --config ../pictograms-react/dist/jsx/index.js",
     "generate-icons": "node exampleconfig.mjs",
     "un-cli": "wfp-cli bundle ../pictograms-react/dist/jsx/index.js"
   },

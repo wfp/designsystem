@@ -32,7 +32,7 @@
     "access": "public"
   },
   "scripts": {
-    "build": "yarn clean && node tasks/build.js",
+    "build:legacy": "yarn clean && node tasks/build.js",
     "ci-check": "node tasks/ci-check.js",
     "create-iconlist": "node tasks/create-iconlist.js",
     "clean": "rimraf es lib metadata.json svg",

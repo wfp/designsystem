@@ -9,6 +9,7 @@ const path = require('path');
 const { rollup } = require('rollup');
 
 async function bundle(entrypoint, options = { name: 'Icon' }) {
+  console.log('bundle rollup', entrypoint);
   const globals = options.globals ? formatGlobals(options.globals) : {};
   const { name } = options;
   const packageFolder = await findPackageFolder(entrypoint);
@@ -17,6 +18,10 @@ async function bundle(entrypoint, options = { name: 'Icon' }) {
     {
       format: 'esm',
       directory: path.join(packageFolder, 'es'),
+    },
+    {
+      format: 'umd',
+      directory: path.join(packageFolder, 'umd'),
     },
   ];
 

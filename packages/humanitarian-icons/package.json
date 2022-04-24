@@ -25,7 +25,7 @@
     "access": "public"
   },
   "scripts": {
-    "build": "yarn clean && node tasks/build.js",
+    "build:legacy": "yarn clean && node tasks/build.js",
     "download-figma": "yarn clean && node tasks/download.js",
     "ci-check": "node tasks/ci-check.js",
     "clean": "rimraf es lib build-info.json metadata.json",

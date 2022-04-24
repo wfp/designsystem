@@ -3,16 +3,14 @@ import React, { useState, useRef, useEffect } from 'react';
 import classnames from 'classnames';
 import useSettings from '../../hooks/useSettings';
 import {
-  CloseGlyph,
-  ErrorGlyph,
-  CheckmarkCircleGlyph,
-  WarningSolidGlyph,
-  //WarningAltFilled20,
-  InfoCircleGlyph,
+  Close,
+  Error,
+  CheckmarkCircle,
+  WarningSolid,
+  InfoCircle,
 } from '@un/icons-react';
 
 import Button from '../Button';
-import Icon from '../Icon';
 
 /** Notifications are messages that communicate information to the user. The two main types of notifications are toast notifications and inline notifications. */
 export function NotificationActionButton({
@@ -139,7 +137,7 @@ NotificationButton.defaultProps = {
   notificationType: 'toast',
   type: 'button',
   iconDescription: 'close icon',
-  renderIcon: CloseGlyph,
+  renderIcon: Close,
 };
 
 export function NotificationTextDetails({
@@ -211,10 +209,10 @@ NotificationTextDetails.defaultProps = {
 };
 
 const iconTypes = {
-  error: ErrorGlyph,
-  success: CheckmarkCircleGlyph,
-  warning: WarningSolidGlyph,
-  info: InfoCircleGlyph,
+  error: Error,
+  success: CheckmarkCircle,
+  warning: WarningSolid,
+  info: InfoCircle,
 };
 
 export function NotificationIcon({ iconDescription, kind, notificationType }) {

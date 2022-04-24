@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import classNames from 'classnames';
-import { CloseGlyph } from '@un/icons-react';
+import { Close } from '@un/icons-react';
 import Button from '../Button';
 import { withUNCoreSettings } from '../UNCoreSettings';
 
@@ -356,7 +356,7 @@ class Modal extends Component {
         type="button"
         onClick={this.handleCloseButton}
         ref={this.button}>
-        <CloseGlyph
+        <Close
           className={`${prefix}--modal-close__icon`}
           description={iconDescription}
         />

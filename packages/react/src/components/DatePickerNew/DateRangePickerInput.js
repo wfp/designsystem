@@ -1,7 +1,7 @@
 import React from 'react';
 import DatePicker, { registerLocale } from 'react-datepicker';
 import useSettings from '../../hooks/useSettings';
-import { ArrowRightGlyph, CalendarAltRegularGlyph } from '@un/icons-react';
+import { ArrowRight, CalendarAltRegular } from '@un/icons-react';
 //import styles from './dateRangePicker.module.scss';
 
 export function DateRangePickerInput({
@@ -23,11 +23,9 @@ export function DateRangePickerInput({
           endDate={endDate}
           wrapperClassName={`${prefix}--date-picker__wrapper`}
         />
-        <CalendarAltRegularGlyph
-          className={`${prefix}--date-ranger-picker__icon`}
-        />
+        <CalendarAltRegular className={`${prefix}--date-ranger-picker__icon`} />
       </div>
-      <ArrowRightGlyph className={`${prefix}--date-ranger-picker__arrow`} />
+      <ArrowRight className={`${prefix}--date-ranger-picker__arrow`} />
       <div className={`${prefix}--date-ranger-picker__input`}>
         <DatePicker
           selected={endDate}
@@ -39,9 +37,7 @@ export function DateRangePickerInput({
           minDate={startDate}
           wrapperClassName={`${prefix}--date-picker__wrapper`}
         />
-        <CalendarAltRegularGlyph
-          className={`${prefix}--date-ranger-picker__icon`}
-        />
+        <CalendarAltRegular className={`${prefix}--date-ranger-picker__icon`} />
       </div>
     </div>
   );

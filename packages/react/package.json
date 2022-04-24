@@ -179,7 +179,9 @@
     "@typescript-eslint/parser": "^3.8.0",
     "@un/babel-preset-wfp": "^0.1.8",
     "@un/icons": "^10.34.20",
+    "@un/icons-react": "^10.34.20",
     "@un/themes-core": "0.0.1",
+    "@un/pictograms-react":"11.14.7",
     "add": "^2.0.6",
     "all-contributors-cli": "^6.17.0",
     "autoprefixer": "^9.8.6",
@@ -187,7 +189,6 @@
     "babel-loader": "^8.2.2",
     "babel-plugin-dev-expression": "^0.2.2",
     "browserslist-config-carbon": "^10.6.1",
-   
     "clean-webpack-plugin": "^3.0.0",
     "core-js": "^3.6.5",
     "css-loader": "^5.2.4",

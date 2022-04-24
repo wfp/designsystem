@@ -3,6 +3,7 @@
   "description": "React components for pictograms in digital and software products using the UN Core",
   "version": "11.14.7",
   "license": "Apache-2.0",
+  "main": "umd/index.js",
   "module": "es/index.js",
   "repository": {
     "type": "git",
@@ -27,7 +28,7 @@
   "scripts": {
     "build:react": "npx @svgr/cli --out-dir dist --replace-attr-values '#000000=currentColor' ../pictograms/src/svg --svgo-config ./svgo.config.js",
     "build:umd": "npx babel ./dist/svg/index.js --out-file umd/index.js",
-    "build:umdb": "npx babel ./dist/jsx/index.jsx --out-file umd/index.js",
+    "build:umdb": "npx babel ./dist/jsx/index.js --out-file umd/index.js",
     "build:legacy": "npm run build:react && npm build:umd",
     "build": "node config.mjs"
   },

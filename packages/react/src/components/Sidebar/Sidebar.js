@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 // import Icon from '../Icon';
 import classNames from 'classnames';
-import { ChevronLeft16 } from '@un/icons-react';
+import { ChevronLeft } from '@un/icons-react';
 import useSettings from '../../hooks/useSettings';
 
 export default function Sidebar({
@@ -149,7 +149,7 @@ export function SidebarBackButton({ children, ...other }) {
   const { prefix } = useSettings();
   return (
     <div className={`${prefix}--sidebar-content__back-button`} {...other}>
-      <ChevronLeft16 />
+      <ChevronLeft />
       {children}
     </div>
   );

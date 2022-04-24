@@ -3,7 +3,7 @@ import React from 'react';
 import classNames from 'classnames';
 import useSettings from '../../hooks/useSettings';
 import FormItem from '../FormItem';
-import { WarningSolidGlyph } from '@un/icons-react';
+import { WarningSolid } from '@un/icons-react';
 
 /**
  * Input is a wrapper for custom inputs providing the label, helperText and errors. */
@@ -71,7 +71,7 @@ const Input = ({
     [`${prefix}--form__helper-text--disabled`]: other.disabled,
   });
 
-  const errorIcon = <WarningSolidGlyph fill="#c5192d" />;
+  const errorIcon = <WarningSolid fill="#c5192d" />;
 
   const label = (
     <label htmlFor={calculatedId} className={labelClasses}>

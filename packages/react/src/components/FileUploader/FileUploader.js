@@ -9,7 +9,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { CheckmarkGlyph, CloseGlyph, WarningSolidGlyph } from '@un/icons-react';
+import { Checkmark, Close, WarningSolid } from '@un/icons-react';
 import { withUNCoreSettings } from '../UNCoreSettings';
 import useSettings from '../../hooks/useSettings';
 
@@ -202,10 +202,8 @@ function Filename({ iconDescription, status, invalid, ...other }) {
     case 'edit':
       return (
         <>
-          {invalid && (
-            <WarningSolidGlyph className={`${prefix}--file-invalid`} />
-          )}
-          <CloseGlyph
+          {invalid && <WarningSolid className={`${prefix}--file-invalid`} />}
+          <Close
             className={`${prefix}--file-close`}
             aria-label={iconDescription}
             {...other}
@@ -220,7 +218,7 @@ function Filename({ iconDescription, status, invalid, ...other }) {
       );
     case 'complete':
       return (
-        <CheckmarkGlyph
+        <Checkmark
           className={`${prefix}--file-complete`}
           aria-label={iconDescription}
           {...other}

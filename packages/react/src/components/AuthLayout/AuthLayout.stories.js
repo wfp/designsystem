@@ -7,7 +7,7 @@ import Text from './../Text';
 import Link from './../Link';
 import FormGroup from './../FormGroup';
 // import Icon from './../Icon';
-import { ArrowLeftGlyph, WfpLogoStandardBlackEnGlyph } from '@un/icons-react';
+import { ArrowLeft, WfpLogoStandardBlackEn } from '@un/icons-react';
 
 export default {
   title: 'Components/Content Related/AuthLayout',
@@ -45,7 +45,7 @@ export const RegularNoImage = (args) => (
   <AuthLayout {...args}>
     <FormGroup style={{ width: '80%' }}>
       <Button
-        icon={ArrowLeftGlyph}
+        icon={ArrowLeft}
         iconReverse
         kind="secondary"
         style={{ marginBottom: '3rem' }}>
@@ -84,7 +84,7 @@ RegularNoImage.args = {
         color: '#fff',
         padding: '3rem',
       }}>
-      <WfpLogoStandardBlackEnGlyph
+      <WfpLogoStandardBlackEn
         description="WFP"
         fill="#fff"
         style={{ marginBottom: '4rem' }}
@@ -103,7 +103,7 @@ export const WithImage = (args) => (
   <AuthLayout {...args}>
     <FormGroup style={{ width: '80%' }}>
       <Button
-        icon={ArrowLeftGlyph}
+        icon={ArrowLeft}
         iconReverse
         kind="secondary"
         style={{ marginBottom: '3rem' }}>

@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import classNames from 'classnames';
 import Icon from '../Icon';
-import { iconSearch, iconCloseGlyph } from '@un/icons-react';
+import { iconSearch, iconClose } from '@un/icons-react';
 import Input from '../Input/Input';
 
 /** Search enables users to specify a word or a phrase to find particular relevant pieces of content without the use of navigation. Search can be used as the primary means of discovering content, or as a filter to aid the user in finding content. */
@@ -137,10 +137,7 @@ export default class Search extends Component {
                 onClick={this.clearInput}
                 type="button"
                 aria-label={closeButtonLabelText}>
-                <Icon
-                  icon={iconCloseGlyph}
-                  description={closeButtonLabelText}
-                />
+                <Icon icon={iconClose} description={closeButtonLabelText} />
               </button>
             </>
           );

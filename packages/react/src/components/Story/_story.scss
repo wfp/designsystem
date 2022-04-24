@@ -343,7 +343,7 @@
     font-weight: 600;
   }
 
-  @each $size, $glyph in $spacing-map {
+  @each $size, $ in $spacing-map {
     .#{$prefix}--story__spacing-top-#{$size} {
       margin-top: map-get($spacing-map, $size);
     }
