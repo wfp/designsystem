@@ -9,7 +9,7 @@ import Button from '../../components/Button';
 import Tippy from '@tippy.js/react';
 import { tooltipStyle } from '../../components/Tooltip';
 
-const IconPreview = ({ icon }) => {
+const IconPreview = ({ icon, name }) => {
   const [key, Icon] = icon;
   return (
     <Tippy
@@ -54,11 +54,12 @@ const IconPreview = ({ icon }) => {
             }}>
             {`import
   {${key}}
-from '@un/icons-react'`}
+from '@un/${name}-react'`}
           </div>
           <Button
             icon={Download}
-            href={`https://github.com/wfp/carbon-icons/blob/master/src/svg/${key}.svg`}
+            href={`https://github.com/un-core/designsystem/tree/develop/packages/${name}/src/svg`}
+            target="_blank"
             small>
             View on GitHub
           </Button>
@@ -111,13 +112,12 @@ from '@un/icons-react'`}
 
 const wrapperStyle = { display: 'flex', flexWrap: 'wrap', margin: '0 -0.7em' };
 
-const IconList = ({ iconsReact, metadata }) => {
-  console.log(iconsReact, metadata);
+const IconList = ({ iconsReact, name }) => {
   console.log('metadata', Object.entries(iconsReact));
   return (
     <div style={wrapperStyle}>
       {Object.entries(iconsReact).map((icon) => {
-        return <IconPreview icon={icon} />;
+        return <IconPreview icon={icon} name={name} />;
       })}
     </div>
   );

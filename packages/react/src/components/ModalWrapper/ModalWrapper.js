@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import Modal from '../Modal';
 import Button from '../Button';
 import { ButtonTypes } from '../../prop-types/types';
@@ -20,13 +20,12 @@ const ModalWrapper = ({
   shouldCloseAfterSubmit, // eslint-disable-line no-unused-vars
   ...other
 }) => {
-
   const { prefix } = useSettings();
   const triggerButton = React.createRef();
   const [isOpen, setIsOpen] = useState(false);
 
   const handleOpen = () => {
-    setIsOpen(true)
+    setIsOpen(true);
   };
 
   const handleClose = () => {
@@ -35,7 +34,7 @@ const ModalWrapper = ({
       if (handleClose) {
         handleClose();
       }
-    })
+    });
   };
 
   const handleOnRequestSubmit = () => {
@@ -46,49 +45,48 @@ const ModalWrapper = ({
     }
   };
 
-    const props = {
-      ...other,
-      open: isOpen,
-      onRequestClose: handleClose,
-      onRequestSubmit: handleOnRequestSubmit,
-    };
+  const props = {
+    ...other,
+    open: isOpen,
+    onRequestClose: handleClose,
+    onRequestSubmit: handleOnRequestSubmit,
+  };
 
-    const customButtonEl = customButton
-      ? React.cloneElement(customButton, {
-          disabled: disabled,
-          onClick: handleOpen,
-          inputref: triggerButton,
-        })
-      : undefined;
+  const customButtonEl = customButton
+    ? React.cloneElement(customButton, {
+        disabled: disabled,
+        onClick: handleOpen,
+        inputref: triggerButton,
+      })
+    : undefined;
 
-    return (
-      <div
-        role="presentation"
-        className={`${prefix}--modal__wrapper`}
-        onKeyDown={(evt) => {
-          if (evt.which === 27) {
-            this.handleClose();
-            onKeyDown(evt);
-          }
-        }}>
-        {customButton ? (
-          <React.Fragment>{customButtonEl}</React.Fragment>
-        ) : (
-          <Button
-            id={id}
-            className={buttonTriggerClassName}
-            disabled={disabled}
-            kind={triggerButtonKind}
-            onClick={handleOpen}
-            inputref={triggerButton}>
-            {buttonTriggerText}
-          </Button>
-        )}
-        <Modal {...props}>{children}</Modal>
-      </div>
-    );
-  
-}
+  return (
+    <div
+      role="presentation"
+      className={`${prefix}--modal__wrapper`}
+      onKeyDown={(evt) => {
+        if (evt.which === 27) {
+          handleClose();
+          onKeyDown(evt);
+        }
+      }}>
+      {customButton ? (
+        <React.Fragment>{customButtonEl}</React.Fragment>
+      ) : (
+        <Button
+          id={id}
+          className={buttonTriggerClassName}
+          disabled={disabled}
+          kind={triggerButtonKind}
+          onClick={handleOpen}
+          inputref={triggerButton}>
+          {buttonTriggerText}
+        </Button>
+      )}
+      <Modal {...props}>{children}</Modal>
+    </div>
+  );
+};
 
 ModalWrapper.propTypes = {
   status: PropTypes.string,
@@ -129,8 +127,7 @@ ModalWrapper.propTypes = {
    * Specify if `Modal` should be closed after submitting.
    */
   shouldCloseAfterSubmit: PropTypes.bool,
-}
-
+};
 
 ModalWrapper.defaultProps = {
   primaryButtonText: 'Save',

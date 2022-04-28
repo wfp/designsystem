@@ -47,6 +47,11 @@
     margin-top: $spacing-06;
   }
 
+  .#{$prefix}--footer-ext__logo {
+    fill: $text-on-color;
+    font-size: 4em;
+  }
+
   .#{$prefix}--footer-ext__social-icons-list {
     align-items: center;
     display: flex;

@@ -31,6 +31,7 @@ export const ContextMenu = ({
 };
 
 export function ContextMenuGroup({ className, ...other }) {
+  const { prefix } = useSettings();
   const classNames = classnames(
     {
       [`${prefix}--context-menu__group`]: true,
@@ -42,6 +43,7 @@ export function ContextMenuGroup({ className, ...other }) {
 }
 
 export function ContextMenuItem({ className, ...other }) {
+  const { prefix } = useSettings();
   const classNames = classnames(
     {
       [`${prefix}--context-menu__item`]: true,

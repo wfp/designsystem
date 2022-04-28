@@ -50,3 +50,10 @@ $color-corporate-09: 'green';
 .docs-story > div:last-child {
   z-index: 0 !important;
 }
+
+.fullPage {
+  .sbdocs-content {
+    margin: 0;
+    max-width: inherit !important;
+  }
+}
