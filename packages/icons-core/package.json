@@ -1,7 +1,7 @@
 {
   "name": "@un/icons-core",
   "description": "Themes for un core",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
@@ -33,8 +33,8 @@
     "@svgr/core": "^6.2.1",
     "@svgr/plugin-jsx": "^6.2.1",
     "@svgr/plugin-prettier": "^6.1.2",
-    "@un/cli": "^10.25.15",
     "@svgr/plugin-svgo": "^6.2.0",
+    "@un/cli": "^10.25.15",
     "camelcase": "^6.3.0",
     "fs-readdir-recursive": "^1.1.0",
     "rollup": "^2.70.1"
