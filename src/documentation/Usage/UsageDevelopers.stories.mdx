@@ -30,6 +30,12 @@ You can use the [Codesandbox template](https://codesandbox.io/s/wfp-ui-template-
 
 An example implementation using `create-react-app` and `scss` can be found in our [GitHub repository](https://github.com/wfp/ui/tree/master/examples/create-react-app).
 
+To initiate a new application with create-react-app
+
+```bash
+npx create-react-app my-app
+```
+
 ## 2. Add the Kit as a dependency
 
 The next step is to **add the Kit to your project as a dependency**. You can choose to install it through `npm` or `yarn`: they are both valid package managers and we don't want to recommend one over the other, but once you pick your favourite tool, simply stick with it and avoid using them simultaneously.
@@ -50,7 +56,15 @@ yarn add @wfp/ui @wfp/icons
 
 This is a required step in case you want to load the full UI Kit stylesheet. If this is the case, you can choose between **importing it through React** or **through the CDN**. If this is not the case, you may then want to check the guidelines on [how to include only specific parts of the Kit CSS](https://uikit.wfp.org/docs/index.html?path=/story/getting-started-using-the-kit--page).
 
-To import the full CSS through React, first make sure to have a `scss` loader installed, then use the following code:
+To import the full CSS through React, first make sure to have a `scss` loader installed. Make sure `dart sass` is installed instead of `node sass`).
+
+a. To install dart sass now sass:
+
+```bash
+npm i sass
+```
+
+b. then add the following code:
 
 ```jsx
 // Import all stylesheets
