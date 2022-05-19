@@ -1,0 +1,55 @@
+//-----------------------------
+// Grid
+//-----------------------------
+
+@import '../../globals/scss/colors';
+@import '../../globals/scss/vars';
+@import '../../globals/scss/layout';
+@import '../../globals/scss/typography';
+@import '../../globals/scss/helper-mixins';
+@import '@carbon/import-once/scss/import-once';
+@import '../../globals/scss/css--reset';
+
+@include exports('grid') {
+  .#{$prefix}--grid {
+    display: flex;
+    flex-wrap: wrap;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    -webkit-box-align: stretch;
+    align-items: stretch;
+  }
+  .#{$prefix}--grid--spacing-xs {
+    margin: -$spacing-2xs;
+    > * {
+      padding: $spacing-2xs;
+    }
+  }
+  .#{$prefix}--grid--spacing-sm {
+    margin: -6px;
+    > * {
+      padding: 6px;
+    }
+  }
+
+  .#{$prefix}--grid--spacing-md {
+    margin: -$spacing-xs;
+    > * {
+      padding: $spacing-xs;
+    }
+  }
+
+  .#{$prefix}--grid--spacing-lg {
+    margin: -$spacing-sm;
+    > * {
+      padding: $spacing-sm;
+    }
+  }
+
+  .#{$prefix}--grid--spacing-xl {
+    margin: -$spacing-md;
+    > * {
+      padding: $spacing-md;
+    }
+  }
+}
