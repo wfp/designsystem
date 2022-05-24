@@ -1,7 +1,7 @@
 {
   "name": "@un/icons-react",
   "description": "React components for icons in digital and software products using the Carbon Design System",
-  "version": "10.34.21",
+  "version": "10.34.22",
   "license": "Apache-2.0",
   "main": "umd/index.js",
   "module": "es/index.js",
@@ -40,7 +40,7 @@
     "prop-types": "^15.7.2"
   },
   "devDependencies": {
-    "@un/icons": "^10.34.21"
+    "@un/icons": "^10.34.22"
   },
   "sideEffects": false,
   "gitHead": "bc951c75bc3293d5ec00d364fb544fb5eb260350"
