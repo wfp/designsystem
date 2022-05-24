@@ -20,13 +20,17 @@
   "scripts": {
     "build": "node config.js",
     "build:legacy": "style-dictionary build --config ./config.js",
-    "generate-theme": "node config.js"
+    "generate-theme": "node config.js",
+    "filter-theme": "node filterJson.js"
   },
   "publishConfig": {
     "access": "public"
   },
   "dependencies": {
     "change-case": "^4.1.2",
+    "deepdash": "^5.3.9",
+    "lodash": "^4.17.21",
     "style-dictionary": "^3.7.0"
-  }
+  },
+  "gitHead": "bc951c75bc3293d5ec00d364fb544fb5eb260350"
 }

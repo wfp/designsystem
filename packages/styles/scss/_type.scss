@@ -5,6 +5,15 @@
 // LICENSE file in the root directory of this source tree.
 //
 
+@mixin reset() {
+}
+
+@mixin font-family($family) {
+  font-family: 'Open Sans', Arial, sans-serif;
+}
+@mixin type-style($style) {
+}
+/*
 @use 'config';
 @forward '@un/type' show
   // Mixins
@@ -47,3 +56,4 @@
   $display-03,
   $display-04,
   $tokens;
+*/

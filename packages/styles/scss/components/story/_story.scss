@@ -1,10 +1,3 @@
-//
-// Copyright IBM Corp. 2016, 2018
-//
-// This source code is licensed under the Apache-2.0 license found in the
-// LICENSE file in the root directory of this source tree.
-//
-
 @use '../../config' as *;
 @use '../../spacing' as *;
 @use '../../motion' as *;
@@ -22,7 +15,7 @@
 /// @access public
 /// @group story
 @mixin text {
-  /* TODO: Apply changes
+  // TODO: Apply changes
   > code {
     @extend .#{$prefix}--story__code;
   }
@@ -36,6 +29,10 @@
 
   i {
     @extend .#{$prefix}--story__i;
+  }
+
+  h1 {
+    @extend .#{$prefix}--story__h1;
   }
 
   h3 {
@@ -61,7 +58,7 @@
   b,
   strong {
     @extend .#{$prefix}--story__b;
-  }*/
+  }
 
   /* All the line spacings */
 
@@ -115,21 +112,21 @@
     margin-top: $spacing-06;
   }
 
-  .wfp--story__h4 + div,
+  .#{$prefix}--story__h4 + div,
   h4 + div {
     margin-top: $spacing-05;
   }
 
-  h1 + .wfp--list,
-  h2 + .wfp--list,
-  h3 + .wfp--list,
-  h4 + .wfp--list,
-  h5 + .wfp--list,
-  .wfp--story__h1 + .wfp--list,
-  .wfp--story__h2 + .wfp--list,
-  .wfp--story__h3 + .wfp--list,
-  .wfp--story__h4 + .wfp--list,
-  .wfp--story__h5 + .wfp--list {
+  h1 + .#{$prefix}--list,
+  h2 + .#{$prefix}--list,
+  h3 + .#{$prefix}--list,
+  h4 + .#{$prefix}--list,
+  h5 + .#{$prefix}--list,
+  .#{$prefix}--story__h1 + .#{$prefix}--list,
+  .#{$prefix}--story__h2 + .#{$prefix}--list,
+  .#{$prefix}--story__h3 + .#{$prefix}--list,
+  .#{$prefix}--story__h4 + .#{$prefix}--list,
+  .#{$prefix}--story__h5 + .#{$prefix}--list {
     margin-top: $spacing-05;
   }
 
@@ -198,6 +195,17 @@
   }
 }
 
+@mixin typo($name) {
+  font-size: $typography-headings-heading-1-font-size;
+  text-decoration: $typography-headings-heading-1-text-decoration;
+  font-family: $typography-headings-heading-1-font-family;
+  font-weight: $typography-headings-heading-1-font-weight;
+  font-style: $typography-headings-heading-1-font-style;
+  font-stretch: $typography-headings-heading-1-font-stretch;
+  letter-spacing: $typography-headings-heading-1-letter-spacing;
+  line-height: $typography-headings-heading-1-line-height;
+}
+
 @mixin story {
   .#{$prefix}--story {
     @include reset;
@@ -225,7 +233,7 @@
     &:hover {
       text-decoration: underline;
     }
-    //@extend .wfp--link;
+    //@extend .#{$prefix}--link;
   }
 
   a.#{$prefix}--btn {
@@ -287,7 +295,23 @@
   .#{$prefix}--story__i {
     font-style: italic;
   }
+
+  .#{$prefix}--story__h1 {
+    font-size: $typography-headings-heading-1-font-size;
+    text-decoration: $typography-headings-heading-1-text-decoration;
+    font-family: $typography-headings-heading-1-font-family;
+    font-weight: $typography-headings-heading-1-font-weight;
+    font-style: $typography-headings-heading-1-font-style;
+    font-stretch: $typography-headings-heading-1-font-stretch;
+    letter-spacing: $typography-headings-heading-1-letter-spacing;
+    line-height: $typography-headings-heading-1-line-height;
+    //    paragraph-indent: $typography-headings-heading-1-paragraph-indent;
+    //    paragraph-spacing: $typography-headings-heading-1-paragraph-spacing;
+    //    text-case: $typography-headings-heading-1-text-case;
+  }
+
   .#{$prefix}--story__h2 {
+    @include typo('headings-heading-1');
     margin-top: $spacing-07;
 
     &.before--img {
@@ -297,6 +321,8 @@
 
   .#{$prefix}--story__h3 {
     margin-top: $spacing-07;
+    font-size: $typography-body-copy-16px-bold-font-weight;
+    font-weight: $typography-body-copy-16px-bold-font-weight;
   }
 
   .#{$prefix}--story__h4 {

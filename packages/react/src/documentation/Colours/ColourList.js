@@ -8,7 +8,6 @@ import Table from '../../components/Table';
 import Text from '../../components/Text';
 import Tag from '../../components/Tag';
 import Story from '../../components/Story';
-import { wfpColorsMeta } from '@un/themes';
 import { hex, score } from 'wcag-contrast';
 import './colours.scss';
 

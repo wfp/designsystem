@@ -1,8 +1,9 @@
 {
-  "name": "@un/type",
+  "name": "@un/typelegacy",
   "description": "Typography for digital and software products using the Carbon Design System",
   "version": "10.30.16",
   "license": "Apache-2.0",
+  "private": true,
   "main": "lib/index.js",
   "module": "es/index.js",
   "repository": {
@@ -33,7 +34,7 @@
     "access": "public"
   },
   "scripts": {
-    "build": "yarn clean && wfp-cli bundle src/index.js --name CarbonType && wfp-cli inline && wfp-cli check \"scss/*.scss\"",
+    "build:legacy": "yarn clean && wfp-cli bundle src/index.js --name CarbonType && wfp-cli inline && wfp-cli check \"scss/*.scss\"",
     "clean": "rimraf css es lib umd scss/_inlined scss/vendor"
   },
   "dependencies": {

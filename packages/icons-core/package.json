@@ -41,5 +41,6 @@
   },
   "dependencies": {
     "change-case": "^4.1.2"
-  }
+  },
+  "gitHead": "bc951c75bc3293d5ec00d364fb544fb5eb260350"
 }

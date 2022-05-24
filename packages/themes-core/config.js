@@ -81,6 +81,20 @@ StyleDictionary.registerTransform({
   },
 });
 
+StyleDictionary.registerTransform({
+  type: `value`,
+  name: `value/fontSizePxToRem`,
+  matcher: (token) => {
+    console.log(token);
+    return token.type === 'dimension';
+  },
+  transformer: (token) => {
+    //token.value = 1232132;
+    return token.value / 16 + 'em';
+    // token.value will be resolved and transformed at this point
+  },
+});
+
 StyleDictionary.extend({
   parsers: [
     {
@@ -122,7 +136,7 @@ StyleDictionary.extend({
     scss: {
       transformGroup: 'scss',
       buildPath: 'dist/scss/',
-      transforms: ['name/scss'],
+      transforms: ['name/scss', 'value/fontSizePxToRem'],
       files: [
         {
           destination: 'tokens.scss',
@@ -133,10 +147,38 @@ StyleDictionary.extend({
         },
       ],
     },
+    scss: {
+      transformGroup: 'scss',
+      buildPath: 'dist/scss/',
+      transforms: ['name/scss', 'value/fontSizePxToRem'],
+      files: [
+        {
+          destination: 'tokensMapFlat.scss',
+          format: 'scss/map-flat',
+          options: {
+            themeable: true,
+          },
+        },
+      ],
+    },
+    scss: {
+      transformGroup: 'scss',
+      buildPath: 'dist/scss/',
+      transforms: ['name/scss', 'value/fontSizePxToRem'],
+      files: [
+        {
+          destination: 'tokensMapDeep.scss',
+          format: 'scss/map-deep',
+          options: {
+            themeable: true,
+          },
+        },
+      ],
+    },
     scssB: {
       transformGroup: 'css',
       buildPath: 'dist/scss/',
-      transforms: ['name/scss'],
+      transforms: ['name/scss', 'value/fontSizePxToRem'],
       files: [
         {
           destination: 'default-css-theme.scss',

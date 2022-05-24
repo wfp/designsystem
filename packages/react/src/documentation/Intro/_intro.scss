@@ -1,5 +1,5 @@
 $css--reset: false;
-@import '../../globals/scss/vars';
+/*@import '../../globals/scss/vars';
 @import '../../globals/scss/spacing';
 @import '../../globals/scss/layout';
 @import '../../globals/scss/helper-mixins';
@@ -22,10 +22,6 @@ $easing: cubic-bezier(0.17, 0.89, 0.32, 1.1); //ease-in-out;
     padding-top: 10%;
   }
   position: relative;
-  /*color: var(--ui-01);
-  .wfp--link {
-    color: var(--ui-01);
-  }*/
   .wfp--blockquote {
     background: rgba(var(--brand-01), 0.1);
   }
@@ -265,3 +261,4 @@ $easing: cubic-bezier(0.17, 0.89, 0.32, 1.1); //ease-in-out;
     transition-timing-function: $easing;
   }
 }
+*/
