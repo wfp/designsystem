@@ -139,7 +139,9 @@ export default class ModalWrapper extends React.Component {
             {buttonTriggerText}
           </Button>
         )}
-        <Modal {...props}>{children}</Modal>
+        <Modal {...props} {...other}>
+          {children}
+        </Modal>
       </div>
     );
   }

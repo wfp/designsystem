@@ -59,6 +59,12 @@ export default class Modal extends Component {
      * Specify the content of the modal header label.
      */
     modalLabel: PropTypes.node,
+
+    /**
+     * Specify the content which renders on ther right side of modalLabel.
+     */
+    modalSecondaryAction: PropTypes.node,
+
     /**
      * Specify the a function which renders a custom ModalFooter.
      */
@@ -78,6 +84,11 @@ export default class Modal extends Component {
      * Specify the text for the primary button
      */
     primaryButtonText: PropTypes.string,
+
+    /**
+     * Specify the background image(url) for your modal
+     */
+    backgroundImage: PropTypes.string,
 
     /**
      * Specify whether the Modal is currently open
@@ -120,6 +131,11 @@ export default class Modal extends Component {
      * Specify whether the Modal is for dangerous actions
      */
     danger: PropTypes.bool,
+
+    /**
+     * Specify whether the Modal close button should be hidden or not
+     */
+    hideClose: PropTypes.bool,
 
     /**
      * Specify if Enter key should be used as "submit" action
@@ -356,8 +372,7 @@ export default class Modal extends Component {
         className={`${prefix}--modal-close`}
         type="button"
         onClick={this.handleCloseButton}
-        ref={this.button}
-      >
+        ref={this.button}>
         <Icon
           icon={iconClose}
           className={`${prefix}--modal-close__icon`}
@@ -371,8 +386,7 @@ export default class Modal extends Component {
         ref={this.innerModal}
         role="dialog"
         className={`${prefix}--modal-container`}
-        aria-label={modalAriaLabel}
-      >
+        aria-label={modalAriaLabel}>
         <div className={`${prefix}--modal-header`}>
           {passiveModal && modalButton}
           <div>
@@ -395,8 +409,7 @@ export default class Modal extends Component {
                   <Button
                     kind={danger ? 'tertiary' : 'secondary'}
                     disabled={secondaryButtonDisabled}
-                    onClick={onSecondaryButtonClick}
-                  >
+                    onClick={onSecondaryButtonClick}>
                     {secondaryButtonText}
                   </Button>
                 )}
@@ -404,8 +417,7 @@ export default class Modal extends Component {
                   kind={danger ? 'danger--primary' : 'primary'}
                   disabled={primaryButtonDisabled}
                   onClick={onRequestSubmit}
-                  inputref={this.button}
-                >
+                  inputref={this.button}>
                   {primaryButtonText}
                 </Button>
               </div>
@@ -434,8 +446,7 @@ export default class Modal extends Component {
         role="presentation"
         tabIndex={-1}
         onTransitionEnd={this.props.open ? this.handleTransitionEnd : undefined}
-        ref={this.outerModal}
-      >
+        ref={this.outerModal}>
         <div className={`${prefix}--modal-inner`}>{modalBody}</div>
       </div>
     );

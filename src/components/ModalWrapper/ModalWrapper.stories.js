@@ -100,13 +100,34 @@ Disabled.args = {
 };
 
 const disablemsg = `
- \`withLabel\` property set the modal trigger button to be disabled/non-interactive.
+ \`disabled\` property set the modal trigger button to be disabled/non-interactive.
 `;
 
 Disabled.story = {
   parameters: {
     docs: {
       storyDescription: disablemsg,
+    },
+  },
+};
+
+export const HideClose = (args) => (
+  <ModalWrapper {...args}>This section is the body</ModalWrapper>
+);
+
+HideClose.args = {
+  buttonTriggerText: 'Open modal',
+  hideClose: true,
+};
+
+const hideclosemsg = `
+ \`hideclose\` property set the modal close button to be hidden.
+`;
+
+Disabled.story = {
+  parameters: {
+    docs: {
+      storyDescription: hideclosemsg,
     },
   },
 };
