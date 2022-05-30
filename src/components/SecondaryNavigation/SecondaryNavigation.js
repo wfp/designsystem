@@ -31,20 +31,21 @@ const SecondaryNavigation = ({
   additional,
   children,
   className,
+  wrapperClassName,
   id,
   pageWidth,
 }) => {
   const wrapperClasses = classNames(
     `${prefix}--secondary-navigation`,
-    className
+    className,
+    wrapperClassName
   );
 
   return (
     <div id={id} className={wrapperClasses}>
       <Wrapper
         pageWidth={pageWidth}
-        className={`${prefix}--secondary-navigation__wrapper`}
-      >
+        className={`${prefix}--secondary-navigation__wrapper`}>
         <div className={`${prefix}--secondary-navigation__list`}>
           {children}
         </div>
@@ -70,6 +71,10 @@ SecondaryNavigation.propTypes = {
    */
   pageWidth: PropTypes.oneOf(['sm', 'md', 'lg', 'full']),
   wrapperClassName: PropTypes.string,
+  /**
+   * The additional prop is for any additional information tto be added at the right corner
+   */
+  additional: PropTypes.node,
 };
 
 SecondaryNavigation.defaultProps = {
