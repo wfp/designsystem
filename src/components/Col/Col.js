@@ -7,9 +7,13 @@ const { prefix } = settings;
 
 /** Credits are mostly used when a photo need a source attribution. */
 const Col = React.forwardRef(
-  ({ children, span, className, innerStyle, ...other }, ref) => {
+  (
+    { children, span, className, innerStyle, lg, md, sm, xs, ...other },
+    ref
+  ) => {
     const wrapperClasses = classnames(`${prefix}--grid-col`, {
       [`${prefix}--col--span-${span}`]: span,
+      [`${prefix}--col--lg--${lg}`]: lg,
       [`${className}`]: className,
     });
 

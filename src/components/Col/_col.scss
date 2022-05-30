@@ -16,48 +16,111 @@
     box-sizing: border-box;
     -webkit-box-flex: 0;
   }
-  .#{$prefix}--col--span-2 {
+  .#{$prefix}--col--span-2,
+  .#{$prefix}--col--lg--2 {
     flex: 0 0 (1/6 * 100%);
     max-width: (1/6 * 100%);
+    @include breakpointMax(bp--xs--major) {
+      // 4 columns on xtra-small(500) screen
+      flex: 0 0 (1/2 * 100%);
+      max-width: (1/2 * 100%);
+    }
   }
-  .#{$prefix}--col--span-3 {
+  .#{$prefix}--col--span-3,
+  .#{$prefix}--col--lg--3 {
     flex: 0 0 (1/4 * 100%);
     max-width: (1/4 * 100%);
   }
-  .#{$prefix}--col--span-4 {
+  .#{$prefix}--col--span-4,
+  .#{$prefix}--col--lg--4 {
     flex: 0 0 (1/3 * 100%);
     max-width: (1/3 * 100%);
   }
-  .#{$prefix}--col--span-5 {
+  .#{$prefix}--col--span-5,
+  .#{$prefix}--col--lg--5 {
     flex: 0 0 (5/12 * 100%);
     max-width: (5/12 * 100%);
   }
-  .#{$prefix}--col--span-6 {
+  .#{$prefix}--col--span-6,
+  .#{$prefix}--col--lg--6 {
     flex: 0 0 (1/2 * 100%);
     max-width: (1/2 * 100%);
   }
-  .#{$prefix}--col--span-7 {
+  .#{$prefix}--col--span-7,
+  .#{$prefix}--col--lg--7 {
     flex: 0 0 (7/12 * 100%);
     max-width: (7/12 * 100%);
   }
-  .#{$prefix}--col--span-8 {
+  .#{$prefix}--col--span-8,
+  .#{$prefix}--col--lg--8 {
     flex: 0 0 (2/3 * 100%);
     max-width: (2/3 * 100%);
   }
-  .#{$prefix}--col--span-9 {
+  .#{$prefix}--col--span-9,
+  .#{$prefix}--col--lg--9 {
     flex: 0 0 (3/4 * 100%);
     max-width: (3/4 * 100%);
+    @include breakpointMax(bp--sm--major) {
+      // 8 columns on small(768) screen
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
   }
-  .#{$prefix}--col--span-10 {
+  .#{$prefix}--col--span-10,
+  .#{$prefix}--col--lg--10 {
     flex: 0 0 (5/6 * 100%);
     max-width: (5/6 * 100%);
+    @include breakpointMax(bp--sm--major) {
+      // 8 columns on small(768) screen
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
   }
-  .#{$prefix}--col--span-11 {
+  .#{$prefix}--col--span-11,
+  .#{$prefix}--col--lg--11 {
     flex: 0 0 (11/12 * 100%);
     max-width: (11/12 * 100%);
+    @include breakpointMax(bp--sm--major) {
+      // 8 columns on small(768) screen
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
   }
-  .#{$prefix}--col--span-12 {
+  .#{$prefix}--col--span-12,
+  .#{$prefix}--col--lg--12 {
     flex: 0 0 100%;
     max-width: 100%;
+  }
+
+  // 8 columns on small(768) screen
+  @include breakpointMax(bp--sm--major) {
+    .#{$prefix}--col--sm--2 {
+      flex: 0 0 (1/4 * 100%);
+      max-width: (1/4 * 100%);
+    }
+    .#{$prefix}--col--sm--3 {
+      flex: 0 0 (3/8 * 100%);
+      max-width: (3/8 * 100%);
+    }
+    .#{$prefix}--col--sm--4 {
+      flex: 0 0 (1/2 * 100%);
+      max-width: (1/2 * 100%);
+    }
+    .#{$prefix}--col--sm--5 {
+      flex: 0 0 (5/8 * 100%);
+      max-width: (5/8 * 100%);
+    }
+    .#{$prefix}--col--sm--6 {
+      flex: 0 0 (3/6 * 100%);
+      max-width: (3/6 * 100%);
+    }
+    .#{$prefix}--col--sm--7 {
+      flex: 0 0 (7/8 * 100%);
+      max-width: (7/8 * 100%);
+    }
+    .#{$prefix}--col--sm--8 {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
   }
 }

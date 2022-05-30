@@ -17,6 +17,7 @@ const Grid = React.forwardRef(
       [`${prefix}--grid--spacing-md`]: gutter === 'md',
       [`${prefix}--grid--spacing-sm`]: gutter === 'sm',
       [`${prefix}--grid--spacing-xs`]: gutter === 'xs',
+      [`${prefix}--grid--spacing-none`]: gutter === 'none',
       [`${prefix}--grid--grow`]: grow,
       [`${className}`]: className,
     });
@@ -33,7 +34,7 @@ Grid.propTypes = {
   children: PropTypes.node,
 
   /** Spacing between columns predefined value from theme.spacing or number for gutter in px  */
-  gutter: PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl']),
+  gutter: PropTypes.oneOf(['none', 'xs', 'sm', 'md', 'lg', 'xl']),
 
   /** Should columns in the last row take 100% of grid width */
   grow: PropTypes.bool,

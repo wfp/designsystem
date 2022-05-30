@@ -19,6 +19,13 @@
     -webkit-box-align: stretch;
     align-items: stretch;
   }
+  .#{$prefix}--grid--spacing-none {
+    margin: 0;
+    > * {
+      padding: 0;
+    }
+  }
+
   .#{$prefix}--grid--spacing-xs {
     margin: -$spacing-2xs;
     > * {
