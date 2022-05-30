@@ -9,12 +9,14 @@ declare namespace Modal {
     passiveModal?: boolean;
     children?: React.ReactNode;
     modalAriaLabel?: string;
+    modalSecondaryAction?: React.ReactNode;
     secondaryButtonText?: string;
     secondaryButtonDisabled?: boolean;
     onSecondarySubmit?: () => {};
     primaryButtonText?: string;
     primaryButtonDisabled?: boolean;
     open?: boolean;
+    hideClose?: boolean;
     danger?: boolean;
     shouldSubmitOnEnter?: boolean;
     selectorsFloatingMenus?: string[];
@@ -26,6 +28,10 @@ declare namespace Modal {
     onRequestClose?: () => void;
     onRequestSubmit?: () => void;
     iconDescription?: string;
+    className?: string;
+    id?: string;
+    backgroundImage?: string;
+    onKeyDown?: () => void;
   }
 }
 
