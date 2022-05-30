@@ -1,3 +1,10 @@
+## [1.20.12](https://github.com/wfp/ui/compare/v1.20.11...v1.20.12) (2022-05-30)
+
+
+### Bug Fixes
+
+* **components:** typescript declaration bug fixes and proper Proptypes ([983ca60](https://github.com/wfp/ui/commit/983ca60aca09e8df1e24665fc69024764d07e009))
+
 ## [1.20.11](https://github.com/wfp/ui/compare/v1.20.10...v1.20.11) (2022-04-04)
 
 
