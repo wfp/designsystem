@@ -5,7 +5,6 @@
 // LICENSE file in the root directory of this source tree.
 //
 
-
 @use '../../config' as *;
 @use '../../spacing' as *;
 @use '../../theme' as *;
@@ -19,8 +18,7 @@
 @use '../../utilities/skeleton' as *;
 @use '../form';
 
-$input-border: 1px solid var(--field-border-01); // TODO
-
+$input-border: 1px solid $field-border; // TODO
 
 @mixin input {
   .#{$prefix}--input-wrapper {

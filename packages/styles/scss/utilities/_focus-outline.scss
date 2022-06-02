@@ -16,7 +16,7 @@
   @if ($type == 'border') {
     outline: 1px solid theme.$focus;
     border-color: theme.$focus;
-    box-shadow: 0px 2px 8px 0 var(--focus-01); //get new token
+    //box-shadow: 0px 2px 8px 0 theme.$focus; //get new token
 
     @media screen and (prefers-contrast) {
       outline-style: dotted;
@@ -24,12 +24,12 @@
   }
 
   @if ($type == 'blurred') {
-    box-shadow: 0 0 0 3px var(--focus-01);//get new token
+    box-shadow: 0 0 0 3px theme.$focus; //get new token
     outline: 1px solid transparent;
   }
 
   @if ($type == 'outline') {
-    outline: 2px solid theme.$focus; 
+    outline: 2px solid theme.$focus;
     outline-offset: -2px;
 
     @media screen and (prefers-contrast) {

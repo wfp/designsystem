@@ -53,7 +53,7 @@ $datepicker__triangle-size: 8px !default;
     width: 0.8em;
     height: auto;
     margin: 0 0.7em;
-    //color: $form-field-border; //var(--field-border-01);
+    //color: $form-field-border; //$field-border;
   }
   .#{$prefix}--date-ranger-picker__input {
     position: relative;

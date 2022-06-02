@@ -21,7 +21,7 @@
 @use '../form' as *;
 
 $input-height: 40px;
-$input-border: 1px solid var(--field-border-01);
+$input-border: 1px solid $field-border;
 
 /// Number input styles
 /// @access public

@@ -51,7 +51,7 @@
   }
 
   .#{$prefix}--wrapper--background-lighter {
-    background: var(--ui-02); //$color__navy-gray-9;
+    background: $layer-primary; //$color__navy-gray-9;
   }
 
   .#{$prefix}--wrapper--background-dark {

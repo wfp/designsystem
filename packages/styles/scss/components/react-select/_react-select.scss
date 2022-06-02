@@ -23,7 +23,7 @@
 /// @group react-select
 
 $input-height: 40px !default;
-$input-border: 1px solid var(--field-border-01);
+$input-border: 1px solid $field-border;
 
 @mixin react-select {
   .#{$prefix}--react-select-container {

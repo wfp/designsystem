@@ -169,7 +169,7 @@
   }
 
   .#{$prefix}--toast-notification--low-contrast.#{$prefix}--toast-notification--error {
-    background: var(--support-light-01);
+    background: $support-error-light;
     border-left: 3px solid $support-error;
   }
 
@@ -180,7 +180,7 @@
   }
 
   .#{$prefix}--toast-notification--low-contrast.#{$prefix}--toast-notification--success {
-    background: var(--support-light-02);
+    background: $support-success-light;
     border-left: 3px solid $support-success;
   }
 
@@ -197,7 +197,7 @@
 
   .#{$prefix}--toast-notification--low-contrast.#{$prefix}--toast-notification--warning,
   .#{$prefix}--toast-notification--low-contrast.#{$prefix}--toast-notification--warning-alt {
-    background: var(--support-light-03);
+    background: $support-warning-light;
     border-left: 3px solid $support-warning;
   }
   .#{$prefix}--toast-notification:first-child {
@@ -302,7 +302,7 @@
 
   .#{$prefix}--inline-notification--low-contrast.#{$prefix}--inline-notification--success,
   .#{$prefix}--inline-notification--low-contrast.#{$prefix}--inline-notification--success-square {
-    background: var(--support-light-02);
+    background: $support-success-light;
     border-left: 3px solid $support-success;
   }
 
@@ -319,7 +319,7 @@
 
   .#{$prefix}--inline-notification--low-contrast.#{$prefix}--inline-notification--error,
   .#{$prefix}--inline-notification--low-contrast.#{$prefix}--inline-notification--error-square {
-    background: var(--support-light-01);
+    background: $support-error-light;
     border-left: 3px solid $support-error;
   }
 
@@ -336,7 +336,7 @@
 
   .#{$prefix}--inline-notification--low-contrast.#{$prefix}--inline-notification--warning,
   .#{$prefix}--inline-notification--low-contrast.#{$prefix}--inline-notification--warning-square {
-    background: var(--support-light-03);
+    background: $support-warning-light;
     border-left: 3px solid $support-warning;
   }
 

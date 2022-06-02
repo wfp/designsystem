@@ -24,7 +24,7 @@
 /// @group date-picker
 
 $input-border-radius: 0px !default;
-$input-border: 1px solid var(--field-border-01) !default;
+$input-border: 1px solid $field-border !default;
 $input-height: 40px !default;
 
 @mixin date-picker {
@@ -131,7 +131,7 @@ $input-height: 40px !default;
     }
   }
   .SingleDatePickerInput_calendarIcon_svg {
-    fill: var(--field-border-01);
+    fill: $field-border;
     height: 15px;
     width: 14px;
     &:focus {
@@ -566,7 +566,7 @@ $input-height: 40px !default;
   .DayPickerNavigation_svg__horizontal {
     height: 19px;
     width: 19px;
-    fill: var(--field-border-01);
+    fill: $field-border;
     display: block;
   }
   .DayPickerNavigation_svg__vertical {
@@ -833,7 +833,7 @@ $input-height: 40px !default;
     margin: 0 5px 0 5px;
   }
   .DateRangePickerInput_calendarIcon_svg {
-    fill: var(--field-border-01);
+    fill: $field-border;
     height: 15px;
     width: 14px;
     vertical-align: middle;

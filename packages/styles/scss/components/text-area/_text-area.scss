@@ -21,10 +21,9 @@
 /// @access public
 /// @group text-area
 
-$input-border: 1px solid var(--field-border-01) !default; //TODO change to current token $field-border
+$input-border: 1px solid $field-border !default; //TODO change to current token $field-border
 $input-border-radius: 0px !default;
 $input-height: 40px !default;
-
 
 @mixin text-area {
   .#{$prefix}--text-area {
@@ -47,76 +46,75 @@ $input-height: 40px !default;
     resize: vertical;
     transition: background-color $duration-fast-01 motion(standard, productive),
       outline $duration-fast-01 motion(standard, productive);
-  
 
-  & ~ .#{$prefix}--label {
-    order: 1;
+    & ~ .#{$prefix}--label {
+      order: 1;
+    }
+
+    &:focus {
+      @include focus-outline('border');
+    }
+
+    &::placeholder {
+      @include placeholder-colors;
+    }
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    &:disabled:hover {
+      border: $input-border;
+    }
+    &:focus ~ .#{$prefix}--label {
+      color: $interactive;
+    }
+
+    &[data-invalid]:focus + .#{$prefix}--label {
+      color: $support-error; // TODO $text-error
+    }
+
+    &:read-only {
+      @include read-only('border');
+    }
   }
 
-  &:focus {
-    @include focus-outline('border');
+  .#{$prefix}--textarea-fullwidth {
+    width: 100%;
   }
 
-  &::placeholder {
-    @include placeholder-colors;
+  /*.#{$prefix}--text-area--light {
+    background: var(--field-02);
+  }*/
+
+  // Skeleton State
+  #{$prefix}--text-area.#{$prefix}--skeleton {
+    @include skeleton;
+    height: rem(100px);
+
+    &::-webkit-input-placeholder {
+      color: transparent;
+    }
   }
 
-  &:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
+  // Skeleton State
+  #{$prefix}--text-area.#{$prefix}--skeleton {
+    @include skeleton;
+    height: rem(100px);
+
+    &::-webkit-input-placeholder {
+      color: transparent;
+    }
   }
 
-  &:disabled:hover {
-    border: $input-border;
+  // Skeleton State
+  #{$prefix}--text-area.#{$prefix}--skeleton {
+    @include skeleton;
+    height: rem(100px);
+
+    &::-webkit-input-placeholder {
+      color: transparent;
+    }
   }
-  &:focus ~ .#{$prefix}--label {
-    color: $interactive;
-  }
-
-  &[data-invalid]:focus + .#{$prefix}--label {
-    color: $support-error; // TODO $text-error
-  }
-
-  &:read-only {
-    @include read-only('border');
-  }
-}
-
-.#{$prefix}--textarea-fullwidth {
-  width: 100%;
-}
-
-.#{$prefix}--text-area--light {
-  background: var(--field-02);
-}
-
-// Skeleton State
-#{$prefix}--text-area.#{$prefix}--skeleton {
-  @include skeleton;
-  height: rem(100px);
-
-  &::-webkit-input-placeholder {
-    color: transparent;
-  }
-}
-
-// Skeleton State
-#{$prefix}--text-area.#{$prefix}--skeleton {
-  @include skeleton;
-  height: rem(100px);
-
-  &::-webkit-input-placeholder {
-    color: transparent;
-  }
-}
-
-// Skeleton State
-#{$prefix}--text-area.#{$prefix}--skeleton {
-  @include skeleton;
-  height: rem(100px);
-
-  &::-webkit-input-placeholder {
-    color: transparent;
-  }
-}
 }

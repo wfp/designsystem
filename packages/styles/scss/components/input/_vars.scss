@@ -28,4 +28,4 @@ $page-padding: 1em;
 /// @type Value
 /// @access public
 /// @group input
-$input-border: 1px solid var(--field-border-01);
+$input-border: 1px solid $field-border;

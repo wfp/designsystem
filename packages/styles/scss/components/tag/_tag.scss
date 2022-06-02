@@ -44,7 +44,7 @@
   }
 
   .#{$prefix}--tag--info {
-    @include tag-theme( #d9ecf5, #005e8d); // TODO create token for these colors
+    @include tag-theme(#d9ecf5, #005e8d); // TODO create token for these colors
   }
 
   // .#{$prefix}--tag--beta {
@@ -54,15 +54,15 @@
   // TODO create new token for support-dark-color
 
   .#{$prefix}--tag--error {
-    @include tag-theme(var(--support-light-01), var(--support-dark-01));
+    @include tag-theme($support-error-light, var(--support-dark-01));
   }
 
   .#{$prefix}--tag--success {
-    @include tag-theme(var(--support-light-02), var(--support-dark-02));
+    @include tag-theme($support-success-light, var(--support-dark-02));
   }
 
   .#{$prefix}--tag--warning {
-    @include tag-theme(var(--support-light-03), var(--support-dark-03));
+    @include tag-theme($support-warning-light, var(--support-dark-03));
   }
 
   .#{$prefix}--tag--wrap {
@@ -110,7 +110,6 @@
   .#{$prefix}--tag--basic {
     @include tag-theme--x($ibm-colors__gray--10, $ibm-colors__gray--100);
   }
-
 
   // Skeleton state TODO
   // .#{$prefix}--tag.#{$prefix}--skeleton {

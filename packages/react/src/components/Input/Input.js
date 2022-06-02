@@ -23,6 +23,7 @@ const Input = ({
   onChange,
   onClick,
   hideLabel,
+  name,
   invalid,
   invalidText,
   helperText,

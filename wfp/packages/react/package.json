@@ -109,7 +109,7 @@
   "dependencies": {
     "@storybook/manager-webpack5": "^6.3.4",
     "@un/icons-react": "^10.34.22",
-    "@un/react": "^1.18.35",
+    "@un/react": "^1.18.36",
     "invariant": "^2.2.4",
     "lerna": "^4.0.0",
     "npm-which": "^3.0.1",
