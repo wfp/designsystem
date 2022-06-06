@@ -5,7 +5,7 @@ import settings from '../../globals/js/settings';
 
 const { prefix } = settings;
 
-/** Credits are mostly used when a photo need a source attribution. */
+/** Grid layout */
 const Grid = React.forwardRef(
   (
     { gutter, children, grow, justify, align, columns, className, ...other },
@@ -22,7 +22,11 @@ const Grid = React.forwardRef(
       [`${className}`]: className,
     });
     return (
-      <div ref={ref} className={wrapperClasses} {...other}>
+      <div
+        ref={ref}
+        className={wrapperClasses}
+        {...other}
+        style={{ justifyContent: justify, alignItems: align }}>
         {children}
       </div>
     );
@@ -40,15 +44,22 @@ Grid.propTypes = {
   grow: PropTypes.bool,
 
   /** Set grid justify-content property */
-  // justify: PropTypes.CSSProperties['justifyContent'],
+  justify: PropTypes.oneOf([
+    'flex-start',
+    'flex-end',
+    'center',
+    'space-between',
+    'space-around',
+  ]),
 
   /** Set grid align-content property */
-  // align: PropTypes.CSSProperties['alignContent'],
+  align: PropTypes.oneOf(['flex-start', 'flex-end', 'center', 'stretch']),
 };
 
 Grid.defaultProps = {
   gutter: 'xs',
-  columns: 3,
+  justify: 'flex-start',
+  align: 'flex-start',
 };
 
 export default Grid;
