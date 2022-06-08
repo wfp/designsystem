@@ -159,7 +159,7 @@
   .#{$prefix}--story__sub-heading {
     @include type-style('heading-01');
     font-weight: normal;
-    color: var(--ui-05);
+    color: $text-secondary;
     margin-top: $spacing-02 !important;
     margin-bottom: $spacing-02;
     font-style: italic;
@@ -327,12 +327,12 @@
 
   .#{$prefix}--story__h4 {
     margin-top: $spacing-06;
-    // @include typescale('epsilon');
+    @include typescale('epsilon');
   }
 
   .#{$prefix}--story__h5 {
     margin-top: $spacing-06;
-    // @include typescale('epsilon');
+    @include typescale('epsilon');
   }
 
   .#{$prefix}--story__caption {

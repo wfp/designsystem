@@ -13,7 +13,4 @@ let filtrate = filterDeep(json, (value, key, parent) => {
   return true;
 });
 
-writeFileSync(
-  './tokens/design-tokens.tokens.new.json',
-  JSON.stringify(filtrate)
-);
+writeFileSync('./tokens/design-tokens.tokens.json', JSON.stringify(filtrate));

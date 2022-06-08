@@ -177,7 +177,7 @@
     }
 
     .#{$prefix}--footer__info__item {
-      //@include typescale('delta');
+      @include typescale('delta');
       // @include line-height('body');
       line-height: 1.5;
       display: block;
@@ -208,7 +208,7 @@
     }
 
     .#{$prefix}--footer__meta {
-      // @include typescale('zeta');
+      @include typescale('zeta');
       font-size: rem(12px);
       // border-top: 1px solid $color__navy-gray-8;
       margin-top: $spacing-03;

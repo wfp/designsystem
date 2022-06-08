@@ -18,7 +18,7 @@
     "react"
   ],
   "scripts": {
-    "build": "node runTheme.js",
+    "build": "node --stack-size=9900 runTheme.js",
     "build:legacy": "style-dictionary build --config ./config.js",
     "generate-theme": "node config.js",
     "filter-theme": "node filterJson.js"
@@ -32,5 +32,5 @@
     "lodash": "^4.17.21",
     "style-dictionary": "^3.7.0"
   },
-  "gitHead": "8e50f8ea904362d331d4a6c5692837c59e7ce215"
+  "gitHead": "d56234ee5c04a5f6691c7377cd93abb01a71c57a"
 }

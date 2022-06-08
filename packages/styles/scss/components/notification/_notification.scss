@@ -218,7 +218,7 @@
     border: 0;
     position: relative;
     display: flex;
-    flex-wrap: wrap;
+    //flex-wrap: wrap;
     width: 100%;
     min-width: 18rem;
     max-width: 18rem;
@@ -230,7 +230,7 @@
     .#{$prefix}--inline-notification__details {
       display: flex;
       flex-grow: 1;
-      margin: 0 3rem 0 1rem;
+      margin: 0 1rem 0 1rem;
 
       .#{$prefix}--inline-notification__icon {
         flex-shrink: 0;
@@ -252,7 +252,7 @@
             --cds-productive-heading-01-letter-spacing,
             0.16px
           );
-          margin: 0 0.25rem 0 0;
+          margin: 0 0.25rem 0.1rem 0;
         }
 
         .#{$prefix}--inline-notification__subtitle {
@@ -431,10 +431,17 @@
       > * {
         margin-left: 0.5em;
       }
+      > :first-child {
+        margin-left: 0;
+      }
       .#{$prefix}--btn--tertiary {
         //background: rgba(255, 255, 255, 0.2);
       }
-      padding: 0.8em;
+      padding: 0.8em 0.8em 0.8em 0;
+      /*padding: 0em 0.8em 0.8em 0.8em;
+      @include breakpoint(md) {
+        padding: 0.8em 0.8em 0.8em 0;
+      }*/
       &.#{$prefix}--btn/*--ghost*/ {
         margin: 0.5em 0.4em;
       }

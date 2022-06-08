@@ -23,7 +23,7 @@
   .#{$prefix}--sidebar-content__header {
     padding: 1em;
     background-color: $layer-primary;
-    border-bottom: 1px solid $border-subtle;
+    border-bottom: 1px solid $border-strong;
     &.#{$prefix}--sidebar-content__header--no-padding {
       padding: 0;
     }

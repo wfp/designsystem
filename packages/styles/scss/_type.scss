@@ -5,14 +5,86 @@
 // LICENSE file in the root directory of this source tree.
 //
 
+@use '@un/themes-core/dist/scss/tokensMapDeep' as *;
+
 @mixin reset() {
+}
+
+@function map-deep-get($map, $keys...) {
+  @each $key in $keys {
+    $map: map-get($map, $key);
+  }
+  @return $map;
 }
 
 @mixin font-family($family) {
   font-family: 'Open Sans', Arial, sans-serif;
 }
+
 @mixin type-style($style) {
+  $maped: map-deep-get(
+    $tokens,
+    'typography',
+    'headings',
+    'heading 1',
+    fontSize
+  );
+  @warn 'This is  a step of the WFP Type Scale!', $maped;
+
+  @if map-has-key($tokens, 'typography' /*$style*/) {
+    $typographyMap: map-get($tokens, 'typography', 'headings', 'heading 1');
+
+    @if map-has-key($typographyMap, 'body-short-02' /*$style*/) {
+      @warn 'This is  a step of the WFP Type Scale!';
+      /*$elements: map-get($tokens, $style);
+      font-family: map-get($elements, 'fontFamily');
+      font-size: map-get($elements, 'fontSize');*/
+    } @else {
+      //@warn 'This is  a step of the WFP Type Scale!';
+      //@warn 'This is not a step of the WFP Type Scale!' + $style;
+    }
+  } @else {
+    @warn 'No typography step found!';
+  }
 }
+
+// TODO: Temporary type scale
+$typescale-map: (
+  'giga': 4.625rem,
+  'mega': 3.625rem,
+  'alpha': 2.25rem,
+  'beta': 1.75rem,
+  'omicron': 1.5625rem,
+  'sigma': 1.375rem,
+  'gamma': 1.25rem,
+  'delta': 1.125rem,
+  'epsilon': 1rem,
+  'zeta': 0.875rem,
+  'omega': 0.75rem,
+  'theta': 0.6875rem,
+);
+
+@mixin typescale($size) {
+  @if map-has-key($typescale-map, $size) {
+    font-size: map-get($typescale-map, $size);
+  } @else {
+    @warn 'This is not a step of the WFP Type Scale!';
+  }
+}
+/*
+ <Text fontSize="6xl">In love with React & Next</Text>
+  <Text fontSize="5xl">In love with React & Next</Text>
+  <Text fontSize="4xl">In love with React & Next</Text>
+  <Text fontSize="3xl">In love with React & Next</Text>
+  <Text fontSize="2xl">In love with React & Next</Text>
+  <Text fontSize="xl">In love with React & Next</Text>
+  <Text fontSize="lg">In love with React & Next</Text>
+  <Text fontSize="md">In love with React & Next</Text>
+  <Text fontSize="sm">In love with React & Next</Text>
+  <Text fontSize="xs">In love with React & Next</Text>
+
+  */
+
 /*
 @use 'config';
 @forward '@un/type' show

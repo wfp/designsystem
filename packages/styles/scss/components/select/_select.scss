@@ -112,7 +112,7 @@ $input-border: 1px solid $field-border;
     top: 0;
     right: 0.7em;
     height: 100%;
-    fill: $interactive;
+    color: $interactive;
     pointer-events: none;
 
     // Windows, Firefox HCM Fix
@@ -120,7 +120,7 @@ $input-border: 1px solid $field-border;
       screen and (prefers-contrast) {
       // `ButtonText` is a CSS2 system color to help improve colors in HCM
       path {
-        fill: ButtonText;
+        color: ButtonText;
       }
     }
   }

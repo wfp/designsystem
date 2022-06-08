@@ -27,7 +27,7 @@
 // Modal
 $modal-border-top: $background-brand 4px solid !default;
 $modal-border-radius: 6px;
-$modal-footer-background-color: var(--ui-02) !default; //TODO use $layer token
+$modal-footer-background-color: $layer-primary !default; //TODO use $layer token
 
 @mixin modal {
   .#{$prefix}--modal {

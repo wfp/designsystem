@@ -23,7 +23,7 @@
 @mixin tag {
   .#{$prefix}--tag {
     @include font-family('sans');
-    @include type-style('caption-01');
+    @include typescale('zeta');
     display: inline-flex;
     align-items: center;
     padding: 0 $spacing-03;
@@ -90,7 +90,7 @@
 @mixin tag--x {
   .#{$prefix}--tag {
     @include font-family('sans');
-    @include type-style('caption-01');
+    @include typescale('zeta');
     display: inline-flex;
     align-items: center;
     padding: 0 $spacing-03;

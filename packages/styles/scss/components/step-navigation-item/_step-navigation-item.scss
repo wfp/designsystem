@@ -1,4 +1,3 @@
-
 @use '../../breakpoint' as *;
 @use '../../config' as *;
 @use '../../motion' as *;
@@ -11,7 +10,7 @@
 @use '../../utilities/skeleton' as *;
 
 // TODO review why type-style is not applied line 16
-@mixin step-navigation-item{
+@mixin step-navigation-item {
   #{$prefix}--step-navigation__nav-item {
     @include type-style('body-short-01');
     margin: 0;
@@ -376,4 +375,3 @@
     }
   }
 }
-

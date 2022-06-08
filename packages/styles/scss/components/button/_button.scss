@@ -39,10 +39,10 @@
 
   // Vertically center icon inside <button>
   button.#{$prefix}--btn .#{$prefix}--btn__icon {
-    position: relative;
-    vertical-align: middle;
-    height: 1em;
-    width: 1em;
+    //position: relative;
+    //vertical-align: middle;
+    // height: 1em;
+    // width: 1em;
 
     // Targets IE10+ browsers: Reset <svg> position for vertical centering
     @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {

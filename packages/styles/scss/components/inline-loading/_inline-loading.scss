@@ -16,14 +16,13 @@
 /// @access private
 /// @group inline-loading
 
-
 /// Inline loading styles
 /// @access public
 /// @group inline-loading
 @mixin inline-loading {
   .#{$prefix}--inline-loading {
     display: flex;
-    width: 100%;
+    //width: 100%;
     align-items: center;
   }
 

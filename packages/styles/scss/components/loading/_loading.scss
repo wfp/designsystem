@@ -47,7 +47,7 @@
     height: 2rem;
 
     .#{$prefix}--loading__svg {
-      stroke: var(--ui-05);
+      stroke: $interactive;
     }
   }
 
@@ -131,9 +131,8 @@
   }
 }
 
-
-  @if feature-flag-enabled('components-x') {
-    @include loading--x;
-  } @else {
-    @include loading;
-  }
+@if feature-flag-enabled('components-x') {
+  @include loading--x;
+} @else {
+  @include loading;
+}
