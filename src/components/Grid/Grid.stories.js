@@ -20,13 +20,13 @@ export default {
 
 export const Basic = (args) => (
   <Grid {...args}>
-    <Col span={3} innerStyle={{ minHeight: '40px', backgroundColor: '#ccc' }}>
+    <Col span={3} innerStyle={styles}>
       1
     </Col>
-    <Col span={3} innerStyle={{ minHeight: '80px', backgroundColor: '#cee' }}>
+    <Col span={3} innerStyle={styles}>
       2
     </Col>
-    <Col span={3} innerStyle={{ backgroundColor: '#eec' }}>
+    <Col span={3} innerStyle={styles}>
       3
     </Col>
   </Grid>
@@ -34,43 +34,50 @@ export const Basic = (args) => (
 
 export const MultipleRow = (args) => (
   <Grid {...args}>
-    <Col span={4}>1</Col>
-    <Col span={4}>2</Col>
-    <Col span={4}>3</Col>
-    <Col span={3}>3</Col>
-    <Col span={3}>3</Col>
+    <Col span={4} innerStyle={styles}>
+      1
+    </Col>
+    <Col span={4} innerStyle={styles}>
+      2
+    </Col>
+    <Col span={4} innerStyle={styles}>
+      3
+    </Col>
+    <Col span={4} innerStyle={styles}>
+      4
+    </Col>
   </Grid>
 );
 
 export const simpleGridLayout = (args) => (
   <Grid {...args}>
-    <Col span={12} innerStyle={{ height: '80px', backgroundColor: '#ccc' }}>
+    <Col span={12} innerStyle={styles}>
       Header
     </Col>
-    <Col span={4} innerStyle={{ height: '80px', backgroundColor: '#cee' }}>
+    <Col span={4} innerStyle={styles}>
       Content one
     </Col>
-    <Col span={4} innerStyle={{ height: '80px', backgroundColor: '#cee' }}>
+    <Col span={4} innerStyle={styles}>
       Content two
     </Col>
-    <Col span={4} innerStyle={{ height: '80px', backgroundColor: '#cee' }}>
+    <Col span={4} innerStyle={styles}>
       Content three
     </Col>
-    <Col span={12} innerStyle={{ height: '80px', backgroundColor: '#eec' }}>
+    <Col span={12} innerStyle={styles}>
       Footer
     </Col>
   </Grid>
 );
 
-export const justifyContent = (args) => (
-  <Grid {...args} justify="center">
-    <Col span={3} innerStyle={{ height: '80px', backgroundColor: '#eec' }}>
+export const justifyAndAlign = (args) => (
+  <Grid {...args} justify="center" align="center">
+    <Col span={3} innerStyle={alignStyle}>
       1
     </Col>
-    <Col span={3} innerStyle={{ height: '80px', backgroundColor: '#eec' }}>
+    <Col span={3} innerStyle={styles}>
       2
     </Col>
-    <Col span={3} innerStyle={{ height: '80px', backgroundColor: '#eec' }}>
+    <Col span={3} innerStyle={{ backgroundColor: '#ccc' }}>
       3
     </Col>
   </Grid>
@@ -78,17 +85,27 @@ export const justifyContent = (args) => (
 
 export const responsiveGridLayout = (args) => (
   <Grid {...args}>
-    <Col lg={3} sm={4} innerStyle={{ height: '80px', backgroundColor: '#cee' }}>
+    <Col lg={3} sm={4} innerStyle={styles}>
       content one
     </Col>
-    <Col lg={3} sm={4} innerStyle={{ height: '80px', backgroundColor: '#cee' }}>
+    <Col lg={3} sm={4} innerStyle={styles}>
       Content two
     </Col>
-    <Col lg={3} sm={4} innerStyle={{ height: '80px', backgroundColor: '#cee' }}>
+    <Col lg={3} sm={4} innerStyle={styles}>
       Content three
     </Col>
-    <Col lg={3} sm={4} innerStyle={{ height: '80px', backgroundColor: '#cee' }}>
+    <Col lg={3} sm={4} innerStyle={styles}>
       Content four
     </Col>
   </Grid>
 );
+
+const styles = {
+  minHeight: '80px',
+  backgroundColor: '#ccc',
+};
+
+const alignStyle = {
+  minHeight: '40px',
+  backgroundColor: '#ccc',
+};
