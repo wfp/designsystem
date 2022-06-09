@@ -12,7 +12,7 @@ declare namespace Modal {
     modalSecondaryAction?: React.ReactNode;
     secondaryButtonText?: string;
     secondaryButtonDisabled?: boolean;
-    onSecondarySubmit?: () => {};
+    onSecondarySubmit?: () => void;
     primaryButtonText?: string;
     primaryButtonDisabled?: boolean;
     open?: boolean;
@@ -24,7 +24,7 @@ declare namespace Modal {
     type?: 'info' | 'warning' | 'danger';
     inPortal?: boolean;
     wide?: boolean;
-    modalFooter?: () => {};
+    modalFooter?: () => void;
     onRequestClose?: () => void;
     onRequestSubmit?: () => void;
     iconDescription?: string;
