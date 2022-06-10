@@ -226,7 +226,7 @@
     "rollup-plugin-strip-banner": "^2.0.0",
     "rollup-plugin-terser": "^6.1.0",
     "sass-loader": "^9.0.3",
-    "semantic-release": "^17.2.3",
+    "semantic-release": "^19.0.3",
     "semantic-release-ado": "^1.2.2",
     "story-description-loader": "^1.0.0",
     "style-loader": "^1.2.1",
