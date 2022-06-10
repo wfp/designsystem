@@ -1,3 +1,10 @@
+## [1.20.14](https://github.com/wfp/ui/compare/v1.20.13...v1.20.14) (2022-06-10)
+
+
+### Bug Fixes
+
+* **typescript:** type definition fixes ([d3f5575](https://github.com/wfp/ui/commit/d3f5575f4bed5a2718b9ebc34faa843413c7bad4))
+
 ## [1.20.13](https://github.com/wfp/ui/compare/v1.20.12...v1.20.13) (2022-05-30)
 
 
