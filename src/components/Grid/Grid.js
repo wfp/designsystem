@@ -12,12 +12,7 @@ const Grid = React.forwardRef(
     ref
   ) => {
     const wrapperClasses = classnames(`${prefix}--grid`, {
-      [`${prefix}--grid--spacing-xl`]: gutter === 'xl',
-      [`${prefix}--grid--spacing-lg`]: gutter === 'lg',
-      [`${prefix}--grid--spacing-md`]: gutter === 'md',
-      [`${prefix}--grid--spacing-sm`]: gutter === 'sm',
-      [`${prefix}--grid--spacing-xs`]: gutter === 'xs',
-      [`${prefix}--grid--spacing-none`]: gutter === 'none',
+      [`${prefix}--grid--spacing-${gutter}`]: gutter,
       [`${prefix}--grid--grow`]: grow,
       [`${className}`]: className,
     });

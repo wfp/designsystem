@@ -13,9 +13,6 @@ export default {
     status: 'released',
     mdx: markdown,
   },
-  /*argTypes: {
-      children: { control: 'text' },
-    },*/
 };
 
 export const Basic = (args) => (

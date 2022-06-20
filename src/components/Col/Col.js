@@ -30,6 +30,24 @@ const Col = React.forwardRef(
   }
 );
 
+function columnVariation(props, propName, componentName) {
+  componentName = componentName || 'ANONYMOUS';
+
+  if (props[propName]) {
+    let value = props[propName];
+    if (typeof value === 'number') {
+      return value >= 1 && value <= 12
+        ? null
+        : new Error(
+            propName + ' in ' + componentName + ' is not within 1 to 10'
+          );
+    }
+  }
+
+  // assume all ok
+  return null;
+}
+
 Col.propTypes = {
   children: PropTypes.node,
 
@@ -39,10 +57,10 @@ Col.propTypes = {
   innerStyle: PropTypes.object,
 
   /** Responsiveness on large(1200) screen will have 12 columns and calcuations will be based on this */
-  lg: PropTypes.oneOf([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]),
+  lg: columnVariation,
 
   /** Responsiveness on medium(992) screen will have 12 columns and calcuations will be based on this */
-  md: PropTypes.oneOf([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]),
+  md: columnVariation,
 
   /** Responsiveness on small(768) screen will have 8 columns and calcuations will be based on this */
   sm: PropTypes.oneOf([1, 2, 3, 4, 5, 6, 7, 8]),

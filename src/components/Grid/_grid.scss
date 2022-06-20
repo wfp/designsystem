@@ -20,6 +20,13 @@
     -webkit-box-align: stretch;
     align-items: stretch;
   }
+  .#{$prefix}--grid--grow {
+    .#{$prefix}--grid-col {
+      flex-grow: 1;
+      max-width: unset;
+    }
+  }
+
   .#{$prefix}--grid--spacing-none {
     margin: 0;
     > * {
