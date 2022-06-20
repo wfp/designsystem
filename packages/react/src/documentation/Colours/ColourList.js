@@ -12,8 +12,8 @@ import { hex, score } from 'wcag-contrast';
 import './colours.scss';
 
 export const ColourList = ({ tokens }) => {
-  /*console.log('tokens', tokens);
-
+  console.log('tokens', tokens);
+  /*
   const colors = tokens.color[filter];*/
   if (!tokens) return <>No tokens found</>;
 
@@ -30,9 +30,14 @@ export const ColourList = ({ tokens }) => {
             <p>
               <pre>{color.description}</pre>
             </p>
-            <p>
-              <Text kind="code">Former name: {color.former}</Text>
-            </p>
+            <ul>
+              <li>
+                <Text kind="code">scss: ${color.cssName}</Text>
+              </li>
+              <li>
+                <Text kind="code">css: var(--{color.cssName})</Text>
+              </li>
+            </ul>
           </Story>
         </td>
         <td>
@@ -114,5 +119,15 @@ export const ColourList = ({ tokens }) => {
     </Table>
   );
 };
+
+export function ColourLists({ tokens }) {
+  return (
+    <div>
+      {Object.values(tokens).map((t) => {
+        return <ColourList tokens={t} />;
+      })}
+    </div>
+  );
+}
 
 export default ColourList;

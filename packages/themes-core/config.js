@@ -60,6 +60,18 @@ const config = ({ source = `tokens/**/*.json`, buildPath = `dist` } = {}) => {
     },
   });
 
+  const scssTokenName = (token, options) => {
+    const tokenPath = token.path.filter(function (item, i) {
+      return !(
+        item === 'color' ||
+        (item === 'primary' && i === 1) ||
+        (item === 'form' && i === 1)
+      );
+    });
+
+    return ChangeCase.paramCase([options.prefix].concat(tokenPath).join(' '));
+  };
+
   StyleDictionary.registerTransform({
     type: 'name',
     transitive: true,
@@ -68,16 +80,7 @@ const config = ({ source = `tokens/**/*.json`, buildPath = `dist` } = {}) => {
       //return helloow;
       console.log(token.path);
 
-      const tokenPath = token.path.filter(function (item, i) {
-        return !(
-          item === 'color' ||
-          (item === 'primary' && i === 1) ||
-          (item === 'form' && i === 1)
-        );
-      });
-
-      return ChangeCase.paramCase([options.prefix].concat(tokenPath).join(' '));
-      // token.value will be resolved and transformed at this point
+      return scssTokenName(token, options);
     },
   });
 
@@ -91,6 +94,22 @@ const config = ({ source = `tokens/**/*.json`, buildPath = `dist` } = {}) => {
     transformer: (token) => {
       //token.value = 1232132;
       return token.value / 16 + 'em';
+      // token.value will be resolved and transformed at this point
+    },
+  });
+
+  StyleDictionary.registerTransform({
+    type: `attribute`,
+    name: `attribute/variablenames`,
+    matcher: (token) => {
+      console.log(token);
+      return true;
+      //return token.type === 'dimension';
+    },
+    transformer: (token, options) => {
+      //token.value = 1232132;
+      token.cssName = scssTokenName(token, options);
+      return token;
       // token.value will be resolved and transformed at this point
     },
   });
@@ -125,7 +144,11 @@ const config = ({ source = `tokens/**/*.json`, buildPath = `dist` } = {}) => {
     platforms: {
       figma: {
         buildPath: buildPath + '/json/',
-        transforms: ['attribute/cti', 'attribute/color'],
+        transforms: [
+          'attribute/cti',
+          'attribute/color',
+          'attribute/variablenames',
+        ],
         files: [
           {
             destination: 'variables-full.json',

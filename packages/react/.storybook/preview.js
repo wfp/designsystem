@@ -4,6 +4,7 @@ import './storybook.scss';
 //import './storybook-legacy.scss';
 import theme from './theme';
 import { UNCoreProvider } from '../src/components/UNCoreSettings';
+import MdxComponents from '../src/components/MdxComponents';
 
 /*import {
   Title,
@@ -26,6 +27,7 @@ addParameters({
 export const parameters = {
   controls: { expanded: true },
   docs: {
+    components: { ...MdxComponents },
     theme: theme,
   },
   previewTabs: {
