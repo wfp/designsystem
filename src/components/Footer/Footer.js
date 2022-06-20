@@ -4,7 +4,6 @@ import classnames from 'classnames';
 import Link from '../Link';
 import Wrapper from '../Wrapper';
 import Icon from '../Icon';
-import sdgIconStandard from './SdgLogo';
 import { iconWfpLogoStandardBlackEn, iconWfpLogoVerticalEn } from '@wfp/icons';
 import settings from '../../globals/js/settings';
 

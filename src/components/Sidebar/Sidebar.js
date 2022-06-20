@@ -100,12 +100,7 @@ SidebarContentHeader.propTypes = {
   children: PropTypes.node,
 };
 
-export function SidebarContentBody({
-  className,
-  children,
-  noPadding,
-  ...other
-}) {
+export function SidebarContentBody({ className, children, ...other }) {
   const classes = classNames(
     `${prefix}--sidebar-content__children`,
     className,

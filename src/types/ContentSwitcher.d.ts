@@ -1,11 +1,12 @@
 import * as React from 'react';
 
-declare namespace ContentSwitcher  {
+declare namespace ContentSwitcher {
   interface ContentSwitcherProps extends React.HTMLProps<ContentSwitcher> {
-    selectedIndex?: number
-    children?: React.ReactNode
+    selectedIndex?: number;
+    children?: React.ReactNode;
+    onChange?: () => void;
   }
 }
 
-declare class ContentSwitcher extends React.Component<ContentSwitcher.ContentSwitcherProps>{ }
-export = ContentSwitcher
+declare class ContentSwitcher extends React.Component<ContentSwitcher.ContentSwitcherProps> {}
+export = ContentSwitcher;

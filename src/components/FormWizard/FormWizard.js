@@ -57,6 +57,10 @@ FormWizard.propTypes = {
    * Sticky sidebar
    */
   stickySidebar: PropTypes.bool,
+  /**
+   * Specify the custom
+   */
+  formControls: PropTypes.node,
 };
 
 FormWizard.defaultProps = {};

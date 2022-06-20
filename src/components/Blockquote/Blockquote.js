@@ -3,15 +3,14 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import Icon from '../Icon';
 import settings from '../../globals/js/settings';
-
-const { prefix } = settings;
-
 import {
   iconCheckmark,
   iconWarning,
   iconWarningSolid,
   iconInfoSolid,
 } from '@wfp/icons';
+
+const { prefix } = settings;
 
 const iconLookup = {
   warning: {
@@ -100,8 +99,7 @@ class Blockquote extends React.Component {
 
     const iconElement = React.isValidElement(icon) ? (
       <div
-        className={`${prefix}--blockquote__icon ${prefix}--blockquote__icon--custom`}
-      >
+        className={`${prefix}--blockquote__icon ${prefix}--blockquote__icon--custom`}>
         {icon}
       </div>
     ) : withIcon || icon ? (
@@ -128,8 +126,7 @@ class Blockquote extends React.Component {
               onKeyDown={this.toggleBlockquote}
               className={`${prefix}--blockquote__title`}
               role="button"
-              tabIndex={0}
-            >
+              tabIndex={0}>
               {title
                 ? title
                 : this.state.open

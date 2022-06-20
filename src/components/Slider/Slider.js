@@ -278,7 +278,7 @@ Slider.propTypes = {
   /**
    * Message which is displayed if the value is invalid.
    */
-  invalidText: PropTypes.string,
+  invalidText: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
 
   /**
    * Provide additional component that is used alongside the input for customization

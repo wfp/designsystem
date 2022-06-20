@@ -6,8 +6,10 @@ declare namespace Input {
     helperText?: string;
     labelText?: string;
     defaultValue?: string | number;
+    disabled?: boolean;
     formItemClassName?: string;
     inputWrapperClassName?: string;
+    id?: string;
     hideLabel?: boolean;
     invalid?: boolean | HookForm.FieldError;
     invalidText?: string | React.ReactNode;

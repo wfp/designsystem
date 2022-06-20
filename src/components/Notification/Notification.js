@@ -35,8 +35,7 @@ export function NotificationActionButton({
       kind="ghost"
       onClick={onClick}
       size="small"
-      {...other}
-    >
+      {...other}>
       {children}
     </Button>
   );
@@ -85,8 +84,7 @@ export function NotificationButton({
       type={type}
       aria-label={iconDescription}
       title={iconDescription}
-      className={buttonClassName}
-    >
+      className={buttonClassName}>
       {renderIcon && (
         <Icon
           icon={renderIcon}
@@ -173,8 +171,7 @@ export function NotificationTextDetails({
     return (
       <div
         {...other}
-        className={`${prefix}--inline-notification__text-wrapper`}
-      >
+        className={`${prefix}--inline-notification__text-wrapper`}>
         <p className={`${prefix}--inline-notification__title`}>{title}</p>
         <div className={`${prefix}--inline-notification__subtitle`}>
           {subtitle}
@@ -231,8 +228,7 @@ function NotificationIcon({ iconDescription, kind, notificationType }) {
   return (
     <Icon
       icon={iconForKind}
-      className={`${prefix}--${notificationType}-notification__icon`}
-    >
+      className={`${prefix}--${notificationType}-notification__icon`}>
       <title>{iconDescription}</title>
     </Icon>
   );
@@ -311,8 +307,7 @@ export function ToastNotification({
         title={title}
         subtitle={subtitle}
         caption={caption}
-        notificationType={notificationType}
-      >
+        notificationType={notificationType}>
         {children}
       </NotificationTextDetails>
       {!hideCloseButton && (
@@ -464,8 +459,7 @@ export function InlineNotification({
         <NotificationTextDetails
           title={title}
           subtitle={subtitle}
-          notificationType={notificationType}
-        >
+          notificationType={notificationType}>
           {children}
         </NotificationTextDetails>
       </div>
@@ -525,10 +519,9 @@ InlineNotification.propTypes = {
   lowContrast: PropTypes.bool,
 
   /**
-   * By default, this value is "inline". You can also provide an alternate type
-   * if it makes sense for the underlying `<NotificationTextDetails>` and `<NotificationButton>`
+   * Specify the notification type
    */
-  notificationType: PropTypes.string,
+  notificationType: PropTypes.oneOf(['toast', 'inline']),
 
   /**
    * Provide a function that is called when menu is closed
@@ -555,6 +548,11 @@ InlineNotification.propTypes = {
    * Specify the title
    */
   title: PropTypes.string.isRequired,
+
+  /**
+   * Specify the timeout
+   */
+  timeout: PropTypes.number,
 };
 
 InlineNotification.defaultProps = {

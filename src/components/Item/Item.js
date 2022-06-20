@@ -39,8 +39,7 @@ export const Item = ({
         <div className={`${prefix}--item__image`}>{image}</div>
       ) : noImage ? (
         <div
-          className={`${prefix}--item__image ${prefix}--item__image-empty`}
-        ></div>
+          className={`${prefix}--item__image ${prefix}--item__image-empty`}></div>
       ) : null}
 
       <div className={`${prefix}--item__content`}>
@@ -113,6 +112,23 @@ Item.propTypes = {
    * Provide a wrap to use different borders.
    */
   wrapper: PropTypes.oneOf(['undefined', 'sidebar', 'repeater']),
+
+  /**
+   * Set to true of false if you want additional icon to be shown
+   */
+  showAdditionalIcon: PropTypes.bool,
+  /**
+   * Provide subcontent if needed
+   */
+  subContent: PropTypes.string,
+  /**
+   * Provide additional content if needed.
+   */
+  additional: PropTypes.string,
+  /**
+   * Provide hint to your item.
+   */
+  hint: PropTypes.node,
 };
 
 export default Item;

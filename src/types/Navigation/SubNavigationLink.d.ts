@@ -1,10 +1,10 @@
 import * as React from 'react';
 
-declare namespace SubNavigationLink  {
+declare namespace SubNavigationLink {
   interface SubNavigationLinkProps extends React.HTMLProps<SubNavigationLink> {
-    children?: React.ReactNode
+    children?: React.ReactNode | string;
   }
 }
 
-declare class SubNavigationLink extends React.Component<SubNavigationLink.SubNavigationLinkProps>{ }
-export = SubNavigationLink
+declare class SubNavigationLink extends React.Component<SubNavigationLink.SubNavigationLinkProps> {}
+export = SubNavigationLink;

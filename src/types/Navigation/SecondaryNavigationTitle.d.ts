@@ -4,7 +4,6 @@ declare namespace SecondaryNavigationTitle {
   interface SecondaryNavigationTitleProps
     extends React.HTMLProps<SecondaryNavigationTitle> {
     children: React.ReactNode;
-    className?: string;
   }
 }
 

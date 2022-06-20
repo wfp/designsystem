@@ -1,10 +1,11 @@
 import * as React from 'react';
 
-declare namespace FormLabel  {
+declare namespace FormLabel {
   interface FormLabelProps extends React.HTMLProps<FormLabel> {
-    children?: React.ReactNode
+    children?: React.ReactNode;
+    id?: string;
   }
 }
 
-declare class FormLabel extends React.Component<FormLabel.FormLabelProps>{ }
-export = FormLabel
+declare class FormLabel extends React.Component<FormLabel.FormLabelProps> {}
+export = FormLabel;

@@ -3,6 +3,8 @@ import * as React from 'react';
 declare namespace Toggle {
   interface ToggleProps extends React.HTMLProps<Toggle> {
     defaultToggled?: boolean;
+    id?: string;
+    name: string;
     toggled?: boolean;
     labelA: string;
     labelB: string;

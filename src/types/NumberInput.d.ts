@@ -7,6 +7,8 @@ declare namespace NumberInput {
     min?: number;
     step?: number | string;
     allowEmpty?: boolean;
+    additional?: React.ReactNode;
+    light?: boolean;
   }
 }
 

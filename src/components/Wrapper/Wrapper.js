@@ -76,6 +76,8 @@ Wrapper.propTypes = {
     `full` `sm` `md` `lg`:  Width on mobile devices `full`: `100%`      
   */
   spacing: PropTypes.string,
+
+  background: PropTypes.oneOf(['lighter', 'dark']),
 };
 
 export default Wrapper;

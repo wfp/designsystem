@@ -81,7 +81,7 @@ const Hero = ({
       target={isExternal ? '_blank' : ''}
       className={wrapperClasses}
       {...other}
-    >
+      rel="noopener noreferrer">
       {content}
     </a>
   ) : (

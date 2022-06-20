@@ -1,11 +1,12 @@
 import * as React from 'react';
 
-declare namespace Link  {
+declare namespace Link {
   interface LinkProps extends React.HTMLProps<Link> {
-    href?: string
-    inline?: boolean
+    href?: string;
+    inline?: boolean;
+    children?: React.ReactNode;
   }
 }
 
-declare class Link extends React.Component<Link.LinkProps>{ }
-export = Link
+declare class Link extends React.Component<Link.LinkProps> {}
+export = Link;

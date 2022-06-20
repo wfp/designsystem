@@ -1,16 +1,17 @@
 import * as React from 'react';
 
-declare namespace User  {
+declare namespace User {
   interface UserProps extends React.HTMLProps<User> {
-    alt?: string
-    ellipsis?: boolean
-    description?: React.ReactNode
-    extendedDescription?: React.ReactNode
-    missingImage?: 'avatar' | 'letter'
-    image?: string
-    showName?: boolean
+    alt?: string;
+    ellipsis?: boolean;
+    description?: React.ReactNode;
+    extendedDescription?: React.ReactNode;
+    missingImage?: 'avatar' | 'letter';
+    image?: string;
+    showName?: boolean;
+    name?: string;
   }
 }
 
-declare class User extends React.Component<User.UserProps>{ }
-export = User
+declare class User extends React.Component<User.UserProps> {}
+export = User;

@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import settings from '../../globals/js/settings';
-const { prefix } = settings;
-
 import Blockquote from '../Blockquote';
+
+const { prefix } = settings;
 
 const FormError = ({ className, message, submitFailed }) => {
   if (message && submitFailed === true) {
