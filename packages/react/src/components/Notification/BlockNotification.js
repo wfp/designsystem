@@ -142,7 +142,7 @@ BlockNotification.propTypes = {
   /**
    * Specify the title
    */
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
 };
 
 BlockNotification.defaultProps = {

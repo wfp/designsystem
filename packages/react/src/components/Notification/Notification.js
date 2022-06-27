@@ -153,7 +153,9 @@ export function NotificationTextDetails({
   if (notificationType === 'toast') {
     return (
       <div {...other} className={`${prefix}--toast-notification__details`}>
-        <h3 className={`${prefix}--toast-notification__title`}>{title}</h3>
+        {title && (
+          <h3 className={`${prefix}--toast-notification__title`}>{title}</h3>
+        )}
         <div className={`${prefix}--toast-notification__subtitle`}>
           {subtitle}
         </div>
@@ -170,11 +172,12 @@ export function NotificationTextDetails({
       <div
         {...other}
         className={`${prefix}--inline-notification__text-wrapper`}>
-        <p className={`${prefix}--inline-notification__title`}>{title}</p>
+        {title && (
+          <p className={`${prefix}--inline-notification__title`}>{title}</p>
+        )}
         <div className={`${prefix}--inline-notification__subtitle`}>
-          {subtitle}
+          {children || subtitle}
         </div>
-        {children}
       </div>
     );
   }
@@ -204,7 +207,7 @@ NotificationTextDetails.propTypes = {
 };
 
 NotificationTextDetails.defaultProps = {
-  title: 'title',
+  //title: 'title',
   notificationType: 'toast',
 };
 

@@ -1,7 +1,9 @@
 import Story from '../Story';
 import React from 'react';
 import { List, ListItem } from '../List';
-import Blockquote from '../Blockquote';
+import { BlockNotification } from '../Notification';
+import Table from '../Table';
+import useSettings from '../../hooks/useSettings';
 
 /** Links are used as navigational elements. They may appear on their own, within a sentence or paragraph, or directly following the content. */
 
@@ -61,20 +63,50 @@ const p = (props) => {
   return <p {...props}>{props.children}</p>;
 };
 
-const blockquote = (props) => {
-  if (
-    Array.isArray(props.children) &&
-    props.children.length >= 2 &&
-    props.children[0].props
-  )
+const table = (props) => {
+  return <Table {...props}>{props.children}</Table>;
+};
+
+const code = (props) => {
+  const settings = useSettings();
+  return (
+    <code className={`${settings.prefix}--story__code`} {...props}>
+      {props.children}
+    </code>
+  );
+};
+
+const pre = (props) => {
+  const settings = useSettings();
+  return (
+    <pre className={`${settings.prefix}--story__pre`} {...props}>
+      {props.children}
+    </pre>
+  );
+};
+
+const inlineCode = (props) => {
+  const settings = useSettings();
+  return (
+    <code className={`${settings.prefix}--story__inlinecode`} {...props}>
+      {props.children}
+    </code>
+  );
+};
+
+const blockquote = ({ children, ...other }) => {
+  if (Array.isArray(children) && children.length >= 2 && children[0].props)
     return (
-      <Blockquote {...props} title={props.children[0].props.children}>
-        {props.children.map((e, i) => {
+      <BlockNotification
+        kind="info"
+        {...other}
+        subtitle={children.map((e, i) => {
           if (i > 0) return e;
         })}
-      </Blockquote>
+        title={children[0].props.children}
+      />
     );
-  return <Blockquote {...props}>{props.children}</Blockquote>;
+  return <BlockNotification kind="info" {...other} subtitle={children} />;
 };
 
 /*const code = ({ children, className, ...other }) => {
@@ -102,6 +134,10 @@ export const MdxComponents = {
   li,
   ul,
   ol,
+  code,
+  pre,
+  inlineCode,
+  table,
   blockquote,
 };
 

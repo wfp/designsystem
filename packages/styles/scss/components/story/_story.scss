@@ -19,7 +19,7 @@
   > code {
     @extend .#{$prefix}--story__code;
   }
-  p {
+  > p {
     @extend .#{$prefix}--story__p;
   }
 
@@ -55,6 +55,9 @@
     @extend .#{$prefix}--story__sup;
   }
 
+  em {
+    @extend .#{$prefix}--story__i;
+  }
   b,
   strong {
     @extend .#{$prefix}--story__b;
@@ -85,6 +88,18 @@
     margin-top: $spacing-08;
   }
 
+  p + table {
+    margin-top: $spacing-05;
+  }
+
+  p + pre {
+    margin-top: $spacing-05;
+  }
+
+  p + div {
+    margin-top: $spacing-05;
+  }
+
   h1 + h2 {
     margin-top: $spacing-06;
   }
@@ -104,7 +119,7 @@
   }
 
   button + p {
-    margin-top: $spacing-04;
+    margin-top: $spacing-05;
   }
 
   div + h4,
@@ -273,14 +288,38 @@
     letter-spacing: 0.05em;
   }
 
+  .#{$prefix}--story__pre {
+    padding: 0.8em;
+    overflow: auto;
+    font-size: 85%;
+    line-height: 1.45;
+    background: $layer-primary;
+    border-radius: 6px;
+  }
+
   .#{$prefix}--story__code {
     @include type-style('code-02');
     @include font-family('code');
-    padding: 0.2em 0.4em;
+    display: inline;
+    max-width: auto;
+    padding: 0;
+    margin: 0;
+    overflow: visible;
+    line-height: inherit;
+    word-wrap: normal;
+    background-color: transparent;
+    border: 0;
+    font-size: 100%;
+  }
+
+  .#{$prefix}--story__inlinecode {
+    @include type-style('code-02');
+    @include font-family('code');
+    padding: 0.1em 0.4em;
     margin: 0;
     font-size: 85%;
     border-radius: 0.2em;
-    background: var(--ui-02);
+    background: $layer-primary;
   }
 
   .#{$prefix}--story__p {

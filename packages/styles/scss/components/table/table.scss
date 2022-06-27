@@ -36,10 +36,10 @@
 
     thead,
     th {
-      background: $layer-accent; //var(--ui-03);
+      background: $layer-primary; //var(--ui-03);
       border-bottom: 2px solid #dfe3e6;
       font-weight: 600;
-      font-size: 0.85em;
+      //font-size: 0.85em;
     }
 
     tbody {
