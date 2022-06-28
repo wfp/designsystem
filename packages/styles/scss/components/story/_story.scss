@@ -305,7 +305,8 @@
     line-height: 1.45;
     background: $layer-primary;
     border-radius: 6px;
-    .#{$prefix}--story__code {
+    .#{$prefix}--story__code,
+    code {
       @include type-style('code-02');
       @include font-family('code');
       display: inline;

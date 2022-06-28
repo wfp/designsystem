@@ -18,7 +18,11 @@
 }
 
 @mixin font-family($family) {
-  font-family: 'Open Sans', Arial, sans-serif;
+  @if $family == 'code' {
+    font-family: 'Lucida Console', Courier, monospace;
+  } @else {
+    font-family: 'Open Sans', Arial, sans-serif;
+  }
 }
 
 @mixin type-style($style) {
