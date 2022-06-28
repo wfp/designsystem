@@ -18706,12 +18706,16 @@ node-releases@^1.1.61, node-releases@^1.1.73:
   resolved "https://registry.yarnpkg.com/node-releases/-/node-releases-1.1.74.tgz#e5866488080ebaa70a93b91144ccde06f3c3463e"
   integrity sha512-caJBVempXZPepZoZAPCWRTNxYQ+xtG/KAi4ozTA5A+nJ7IU+kLQCbqaUjb5Rwy14M9upBWiQ4NutcmW04LJSRw==
 
+<<<<<<< HEAD
 node-releases@^2.0.2:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/node-releases/-/node-releases-2.0.2.tgz#7139fe71e2f4f11b47d4d2986aaf8c48699e0c01"
   integrity sha512-XxYDdcQ6eKqp/YjI+tb2C5WM2LgjnZrfYg4vgQt49EK268b6gYCHsBLrK2qvJo4FmCtqmKezb0WZFK4fkrZNsg==
 
 node-sass@^6.0.0:
+=======
+node-sass@^6.0.0, node-sass@^6.0.1:
+>>>>>>> 02a1d3b755dba242e121860fb9bc0e1e92e84f17
   version "6.0.1"
   resolved "https://registry.yarnpkg.com/node-sass/-/node-sass-6.0.1.tgz#cad1ccd0ce63e35c7181f545d8b986f3a9a887fe"
   integrity sha512-f+Rbqt92Ful9gX0cGtdYwjTrWAaGURgaK5rZCWOgCNyGWusFYHhbqCCBoFBeat+HKETOU02AyTxNhJV0YZf2jQ==
@@ -21114,7 +21118,11 @@ react-docgen@^5.0.0:
     node-dir "^0.1.10"
     strip-indent "^3.0.0"
 
+<<<<<<< HEAD
 react-dom@^16.14.0, react-dom@^16.4.0, react-dom@^16.8.3, react-dom@^16.8.6, react-dom@~16.9.0:
+=======
+react-dom@^16.14.0, react-dom@^16.4.0, react-dom@^16.6.0, react-dom@^16.8.3, react-dom@^16.8.6, react-dom@~16.9.0:
+>>>>>>> 02a1d3b755dba242e121860fb9bc0e1e92e84f17
   version "16.9.0"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.9.0.tgz#5e65527a5e26f22ae3701131bcccaee9fb0d3962"
   integrity sha512-YFT2rxO9hM70ewk9jq0y6sQk8cL02xm4+IzYBz75CQGlClQQ1Bxq0nhHF6OtSbit+AIahujJgb/CPRibFkMNJQ==
@@ -21567,7 +21575,11 @@ react-with-styles@^4.1.0:
     prop-types "^15.7.2"
     react-with-direction "^1.3.1"
 
+<<<<<<< HEAD
 react@^16.14.0, react@^16.4.0, react@^16.8.3, react@^16.8.6, react@~16.9.0:
+=======
+react@^16.14.0, react@^16.4.0, react@^16.6.0, react@^16.8.3, react@^16.8.6, react@~16.9.0:
+>>>>>>> 02a1d3b755dba242e121860fb9bc0e1e92e84f17
   version "16.9.0"
   resolved "https://registry.yarnpkg.com/react/-/react-16.9.0.tgz#40ba2f9af13bc1a38d75dbf2f4359a5185c4f7aa"
   integrity sha512-+7LQnFBwkiw+BobzOF6N//BdoNw0ouwmSJTEm9cglOOmsg/TMiFHZLe2sEoN5M7LgJTj9oHH0gxklfnQe66S1w==

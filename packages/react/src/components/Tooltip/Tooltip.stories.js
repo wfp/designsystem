@@ -70,3 +70,32 @@ WithIcon.args = {
   content: 'Label text',
   children: 'This is a helper text',
 };
+
+const withiconsourcecode = `
+import { Tooltip  } from "@un/react";
+import { iconOverflowMenu } from '@wfp/icons';
+
+<Tooltip
+  trigger="click"
+  placement={'bottom'}
+  createRefWrapper={true}
+  content="Label Text">
+  <Icon
+    description="options"
+    icon={iconOverflowMenu}
+    width="17px"
+    height="17px"
+  />
+</Tooltip>
+`;
+
+WithIcon.story = {
+  parameters: {
+    docs: {
+      storyDescription: `By using the \`createRefWrapper\` prop a html element around the trigger will be added. This is useful for components without \`forwardRef\` support.`,
+      source: {
+        code: withiconsourcecode,
+      },
+    },
+  },
+};

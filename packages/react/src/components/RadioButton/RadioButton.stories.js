@@ -17,18 +17,22 @@ export const Regular = (args) => <RadioButton {...args} />;
 
 Regular.args = {
   labelText: 'Radio button',
-  value:'radio0',
-  name:'radio0'
+  value: 'radio0',
+  name: 'radio0',
 };
 
-const description = `
-You can customize the content by using \`BannerNavigation\`.
+const regularsourcecode = `
+import { RadioButton  } from "@un/react";
+
+<RadioButton labelText="Radio button" />
 `;
 
 Regular.story = {
   parameters: {
     docs: {
-      storyDescription: description,
+      source: {
+        code: regularsourcecode,
+      },
     },
   },
 };
@@ -37,7 +41,6 @@ export const VerticalGrouping = (args) => {
   const [gender, setgender] = useState('female');
 
   const handleOnchange = (e) => {
-    
     setgender(e.target.value);
     console.log('eg', e.target.value);
   };
@@ -76,7 +79,59 @@ export const VerticalGrouping = (args) => {
   );
 };
 
-export const HorizontalGrouping = (args) => (
+const verticalsourcecode = `
+
+import { RadioButton, InputGroup  } from "@un/react";
+
+const [gender, setgender] = useState('');
+
+const handleOnchange = (e) => {
+  setgender(e);
+};
+
+
+<InputGroup
+  name="input-group"
+  helperText="select one"
+  labelText="Please select your gender"
+  vertical>
+  <RadioButton
+    value="female"
+    id="female"
+    labelText="Female"
+    name="female"
+    checked={gender === 'female'}
+    onChange={handleOnchange}
+  />
+  <RadioButton
+    value="male"
+    labelText="Male"
+    id="male"
+    name="male"
+    checked={gender === 'male'}
+    onChange={handleOnchange}
+  />
+  <RadioButton
+    value="other"
+    labelText="Other"
+    id="other"
+    name="other"
+    checked={gender === 'other'}
+    onChange={handleOnchange}
+  />
+</InputGroup>
+`;
+VerticalGrouping.story = {
+  parameters: {
+    docs: {
+      source: {
+        code: verticalsourcecode,
+      },
+    },
+  },
+};
+
+export const HorizontalGrouping = () => (
   <InputGroup
     name="input-group"
     helperText="select one"
@@ -101,3 +156,41 @@ export const HorizontalGrouping = (args) => (
     />
   </InputGroup>
 );
+
+const horizontalsourcecode = `
+import { RadioButton, InputGroup  } from "@un/react";
+
+<InputGroup
+  name="input-group"
+  helperText="select one"
+  labelText="Please select your age range">
+  <RadioButton
+    name="radiob"
+    value="standard"
+    id="radiob-1"
+    labelText="Below 20"
+  />
+  <RadioButton
+    name="radiob"
+    value="default-selected"
+    id="radiob-2"
+    labelText="20-50"
+  />
+  <RadioButton
+    name="radiob"
+    value="disabled"
+    id="radiob-3"
+    labelText="Above 50"
+  />
+</InputGroup>
+`;
+
+HorizontalGrouping.story = {
+  parameters: {
+    docs: {
+      source: {
+        code: horizontalsourcecode,
+      },
+    },
+  },
+};

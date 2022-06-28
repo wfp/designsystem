@@ -20,7 +20,6 @@
     "access": "public"
   },
   "dependencies": {
-    "@carbon/feature-flags": "^0.6.0",
     "@carbon/grid": "^10.39.0",
     "@carbon/motion": "^10.22.0",
     "@ibm/plex": "6.0.0-next.6",

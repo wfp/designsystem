@@ -136,6 +136,23 @@ Splash.args = {
   ),
   image: undefined,
 };
+const splashsourcecode = `
+  import { Hero, Button } from "@un/react"; 
+
+  <Hero
+    href="#"
+    kind="splash"
+    subTitle={
+        <>
+        <div style={{marginBottom: '1rem'}}>
+        Cras dapibus. Aenean ut eros et nisl sagittis vestibulum. Fusce risus nisl, viverra et, tempor et, pretium in.
+        </div>
+        <Button kind="inverse">Read more</Button>
+        </>
+        }
+    title="The Climate Adaption Mangement and Innovation Initiative"
+  />
+`;
 
 Splash.story = {
   parameters: {
@@ -156,6 +173,9 @@ SplashImage.story = {
   parameters: {
     docs: {
       storyDescription: `Page middle content section with background image.`,
+      source: {
+        code: splashsourcecode,
+      },
     },
   },
 };
@@ -177,10 +197,23 @@ SplashCompact.args = {
   image: undefined,
 };
 
+const splashcompactcode = `
+  import { Hero, Button } from "@un/react";
+
+  <Hero
+  href="#"
+  kind="splash-compact"
+  title={<><span style={{marginRight: '1rem'}}>Nulla consequat massa quis enim</span><Button kind="inverse--primary">Read more</Button></>}
+  />
+`;
+
 SplashCompact.story = {
   parameters: {
     docs: {
       storyDescription: `A card content section without space around title and subtitle.`,
+      source: {
+        code: splashcompactcode,
+      },
     },
   },
 };
@@ -219,10 +252,36 @@ Emergencies.args = {
   kind: 'emergencies',
 };
 
+const sourcecode = `
+import { Hero, Icon } from "@un/react";
+import { iconWfpHumEmergencyResponsePos } from '@un/icons-react';
+        
+<Hero
+  href="#"
+  kind="emergencies"
+  title={
+    <>
+    <Icon
+      icon={iconWfpHumEmergencyResponsePos}
+      fill="#FFF"
+      style={{ marginRight: '1rem' }}
+    />
+    <span>
+      Curabitur ullamcorper ultricies nisi. Proin magna. Etiam iaculis nunc ac metus
+    </span>
+    </>
+    }
+/>
+
+`;
+
 Emergencies.story = {
   parameters: {
     docs: {
       storyDescription: `A global card for highlighting important events, such as emergencies.`,
+      source: {
+        code: sourcecode,
+      },
     },
   },
 };
@@ -256,10 +315,42 @@ External.args = {
   image: 'http://www1.wfp.org/sites/default/files/images/yemen-hero-min.jpg',
 };
 
+const externalsourcecode = `
+import { HeroExternal, Button } from "@un/react";
+        
+
+<HeroExternal
+  image="http://www1.wfp.org/sites/default/files/images/yemen-hero-min.jpg"
+  subTitle={<>A description that can contain a{' '}<a>link</a>{' '}and{' '}<strong>a bold text</strong>{' '}to highlight important content. We have room for one or more sentences. Like this.</>}
+  title={<>A headline that can be used{' '}<br />{' '}for the value proposition</>}
+>
+  <div className="wfp--hero-ext__actions">
+    <Button
+      allCaps
+      kind="accent"
+      large
+    >
+      Accent action
+    </Button>
+    <Button
+      allCaps
+      kind="inverse"
+      large
+    >
+      Secondary action
+    </Button>
+  </div>
+</HeroExternal>
+
+`;
+
 External.story = {
   parameters: {
     docs: {
       storyDescription: 'Add a description',
+      source: {
+        code: externalsourcecode,
+      },
     },
   },
 };

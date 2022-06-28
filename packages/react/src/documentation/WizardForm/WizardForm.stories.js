@@ -94,8 +94,8 @@ export const Regular = (args) => {
               {/*<Field
               component={ReduxFormWrapper}
               inputComponent={TextArea}
-              name="notes"
-              labelText="Notes"
+              name="notes2"
+              labelText="Notes2"
               placeholder="Notes"
             />*/}
             </FormGroup>

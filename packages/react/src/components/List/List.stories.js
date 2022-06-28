@@ -1,16 +1,16 @@
 import React from 'react';
 import markdown from './README.mdx';
-import { action } from '@storybook/addon-actions';
-import { List, ListItem } from '../List';
+import { List } from './List';
+import { ListItem } from './ListItem';
 
 export default {
   title: 'Components/UI Elements/List',
   component: List,
+  subcomponents: { ListItem },
   parameters: {
     componentSubtitle: 'Component',
     status: 'released',
     mdx: markdown,
-    subcomponents: { ListItem },
   },
 };
 
@@ -162,18 +162,17 @@ ListitemBullets.story = {
   },
 };
 
-
 export const NestedListItems = (args) => (
   <List kind="unordered">
     <ListItem>Item label</ListItem>
     <ListItem>Item label</ListItem>
     <List kind="ordered">
-        <ListItem>Item label 2</ListItem>
-        <ListItem>Item label 2</ListItem>
-        <List>
-          <ListItem>Item label 3</ListItem>
-          <ListItem>Item label 3</ListItem>
-        </List>
+      <ListItem>Item label 2</ListItem>
+      <ListItem>Item label 2</ListItem>
+      <List>
+        <ListItem>Item label 3</ListItem>
+        <ListItem>Item label 3</ListItem>
+      </List>
     </List>
   </List>
 );
@@ -183,7 +182,7 @@ const nestedItemDescription = ` \`unordered\` List with ListItems can have \`che
 NestedListItems.story = {
   parameters: {
     docs: {
-      storyDescription: listItemDescription,
+      storyDescription: nestedItemDescription,
     },
   },
 };

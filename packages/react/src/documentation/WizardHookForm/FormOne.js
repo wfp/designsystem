@@ -4,7 +4,6 @@ import TextArea from '../../components/TextArea';
 import Blockquote from '../../components/Blockquote';
 
 function FormOne(props) {
-  console.log('propsme', props)
 
     return (
         <>

@@ -240,7 +240,11 @@ export const BlockNotificationElement = (args) => (
       {...args}
       kind="warning"
       icon={<div>Icon</div>}
-      actions={<NotificationActionButton>{'Action'}</NotificationActionButton>}
+      actions={
+        <Button small style={{ margin: 'auto' }}>
+          {'Action'}
+        </Button>
+      }
     />
   </>
 );

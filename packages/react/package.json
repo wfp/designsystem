@@ -143,7 +143,9 @@
     "react-datepicker": "^4.6.0",
     "react-popper-tooltip": "^4.1.0",
     "warning": "^4.0.3",
-    "window-or-global": "^1.0.1"
+    "window-or-global": "^1.0.1",
+    "@carbon/feature-flags": "^0.6.0",
+    "classnames": "2.2.6"
   },
   "devDependencies": {
     "@babel/cli": "^7.13.16",

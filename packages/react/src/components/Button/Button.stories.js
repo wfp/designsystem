@@ -114,11 +114,29 @@ To show the Icon on the left side use the \`iconReverse\` prop.
 Using an Button with only an Icon while not beeing recommended can be achieved by leaving the Button text blank.
 `;
 
+const buttoniconsnippet = `
+import { Button } from '@un/react';
+import { AddCircleGlyph } from '@un/icons-react';
+
+  <>
+  <Button icon={AddCircleGlyph} kind="primary">
+    Button with icon
+  </Button>{' '}
+  <Button kind="tertiary" icon={AddCircleGlyph}></Button>{' '}
+  <Button iconReverse kind="tertiary" icon={AddCircleGlyph}>
+    With iconReverse
+  </Button>
+  </>
+`;
+
 ButtonIcon.story = {
   name: 'Button with icon',
   parameters: {
     docs: {
       storyDescription: helloButtonIcon,
+      source: {
+        code: buttoniconsnippet,
+      },
     },
   },
 };
@@ -138,11 +156,26 @@ regular sized button. This issue is most found in tables. Small button should ha
 or less.
 `;
 
+const smallbuttonsnippet = `
+import { Button } from '@un/react';
+import { AddCircleGlyph } from '@un/icons-react';
+
+  <>
+    <Button small>Small button</Button>{' '}
+    <Button icon={AddCircleGlyph} kind="tertiary" small>
+      With icon
+    </Button>
+  </>
+`;
+
 Small.story = {
   name: 'small Button',
   parameters: {
     docs: {
       storyDescription: helloButtonSmall,
+      source: {
+        code: smallbuttonsnippet,
+      },
     },
   },
 };
@@ -162,11 +195,26 @@ regular sized button. This issue is most found in tables. Small button should ha
 or less.
 `;
 
+const largebuttonsnippet = `
+import { Button } from '@un/react';
+import { AddCircleGlyph } from '@un/icons-react';
+
+  <>
+    <Button large>Large button</Button>{' '}
+    <Button {...args} icon={AddCircleGlyph} kind="tertiary" large>
+      With icon
+    </Button>
+  </>
+`;
+
 Large.story = {
   name: 'large Button',
   parameters: {
     docs: {
       storyDescription: helloButtonLarge,
+      source: {
+        code: largebuttonsnippet,
+      },
     },
   },
 };

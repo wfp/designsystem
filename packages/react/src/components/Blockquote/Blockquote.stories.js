@@ -130,10 +130,22 @@ CustomIcon.args = {
   icon: <AddOutline height={48} width={48} />,
 };
 
+const customiconsourcecode = `
+import { Blockquote,  Icon } from "@un/react";
+import { AddOutlineGlyph } from '@un/icons-react';
+
+<Blockquote icon={<AddOutlineGlyph height={48} width={48} />}>
+ Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+</Blockquote>
+`;
+
 CustomIcon.story = {
   parameters: {
     docs: {
       storyDescription: `Use \`icon\` to add custom icon to message`,
+      source: {
+        code: customiconsourcecode,
+      },
     },
   },
 };
@@ -171,13 +183,27 @@ WithButtons.args = {
   withIcon: true,
 };
 
+const withbuttonsourcecode = `
+import { Blockquote, Button  } from "@un/react";
+
+<Blockquote
+  actionButtons={<><Button>Accept</Button><Button kind="danger--primary">Reject</Button></>}
+  withIcon>
+  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+</Blockquote>
+`;
+
 WithButtons.story = {
   parameters: {
     docs: {
       storyDescription: `Use \`actionButtons\` for showing buttons for inline dialogs`,
+      source: {
+        code: withbuttonsourcecode,
+      },
     },
   },
 };
+
 export const Code = (args) => <Blockquote {...args} />;
 
 Code.args = {

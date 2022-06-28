@@ -1,6 +1,6 @@
 import React from 'react';
 import markdown from './README.mdx';
-import { Module, ModuleHeader, ModuleBody, ModuleFooter } from '../Module';
+import { Module, ModuleHeader, ModuleBody, ModuleFooter } from './Module';
 
 export default {
   title: 'Components/Content Related/Module',

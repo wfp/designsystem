@@ -6,8 +6,6 @@ umd
 next
 source
 docs
-assets
-!src/assets
 css
 dist
 build
