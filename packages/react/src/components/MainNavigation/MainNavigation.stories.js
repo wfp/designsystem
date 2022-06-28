@@ -53,7 +53,7 @@ export const Regular = (args) => (
 
                   <SubNavigationFilter>
                     <Search
-                      small
+                      kind="main"
                       id="search-2"
                       labelText="Filter"
                       placeholder="Filter list"
@@ -200,7 +200,7 @@ const sourcecode = (type) => {
 
               <SubNavigationFilter>
                   <Search
-                  small
+                  kind="main"
                   id="search-2"
                   labelText="Filter"
                   placeholder="Filter list"

@@ -422,6 +422,7 @@ $input-border: 1px solid $field-border;
   }
 
   .#{$prefix}--search--main {
+    color: $text-primary;
     .#{$prefix}--search-close,
     ~ .#{$prefix}--search-button,
     &.#{$prefix}--search--expandable,

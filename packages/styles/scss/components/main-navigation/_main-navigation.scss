@@ -76,6 +76,7 @@ $main-navigation-menu-width: rem(300px);
     user-select: none;
     //vertical-align: middle;
     white-space: nowrap;
+
     a {
       color: $text-on-color; // TODO change to $link_on_color token
       @include type-style('body-short-02');
@@ -108,12 +109,13 @@ $main-navigation-menu-width: rem(300px);
   .#{$prefix}--main-navigation__trigger__icon {
     display: inline-block;
     position: relative;
-    top: rem(-1px);
-    vertical-align: middle;
-    margin-left: 0.3em;
+    top: rem(0px);
+    //vertical-align: middle;
+    margin-left: 0.5em;
+    font-size: 0.8em;
     @include rtl {
       margin-left: 0;
-      margin-right: 0.3em;
+      margin-right: 0.5em;
     }
   }
 

@@ -24,12 +24,11 @@ const MainNavigation = ({
     }
 
     if (action === 'close') {
-      setActiveMenuItem(undefined)
+      setActiveMenuItem(undefined);
     } else if (action === 'toggle') {
-      const newI = activeMenuItem === undefined || activeMenuItem !== i
-          ? i
-          : undefined;
-          setActiveMenuItem(newI);
+      const newI =
+        activeMenuItem === undefined || activeMenuItem !== i ? i : undefined;
+      setActiveMenuItem(newI);
     }
   };
 
@@ -45,59 +44,57 @@ const MainNavigation = ({
   //   setActiveMenuItem(undefined);
   // };
 
+  const wrapperClasses = classNames(`${prefix}--main-navigation`, className);
 
-    const wrapperClasses = classNames(`${prefix}--main-navigation`, className);
+  const listClasses = classNames(`${prefix}--main-navigation__list`, {
+    [`${prefix}--main-navigation__list--open`]: openMobile,
+  });
 
-    const listClasses = classNames(`${prefix}--main-navigation__list`, {
-      [`${prefix}--main-navigation__list--open`]: openMobile,
-    });
+  const parentProps = {
+    onChangeSub: onChangeSub,
+    toggleMenu: toggleMenu,
+  };
 
-    const parentProps = {
-      onChangeSub: onChangeSub,
-      toggleMenu: toggleMenu,
-    };
+  const childrenSelect =
+    typeof children === 'function'
+      ? children(parentProps).props.children
+      : children;
 
-    const childrenSelect =
-      typeof children === 'function'
-        ? children(parentProps).props.children
-        : children;
-
-    return (
-      <div id={id} className={wrapperClasses}>
-        <Wrapper
-          pageWidth={pageWidth}
-          mobilePageWidth={mobilePageWidth}
-          className={`${prefix}--main-navigation__wrapper`}>
-          <div className={`${prefix}--main-navigation__logo-wrapper`}>
-            <Button
-              className={`${prefix}--main-navigation__button`}
-              onClick={toggleMenu}>
-              Menu
-            </Button>
-            <div className={`${prefix}--main-navigation__logo`}>{logo}</div>
-          </div>
-          <ul className={listClasses}>
-            {React.Children.map(childrenSelect, (child, i) => {
-              if (child) {
-                return React.cloneElement(child, {
-                  activeMenuItem: activeMenuItem,
-                  menuItem: i,
-                  onChangeSub: onChangeSub,
-                });
-              } else return null;
-            })}
-          </ul>
-        </Wrapper>
-      </div>
-    );
-  
-}
+  return (
+    <div id={id} className={wrapperClasses}>
+      <Wrapper
+        pageWidth={pageWidth}
+        mobilePageWidth={mobilePageWidth}
+        className={`${prefix}--main-navigation__wrapper`}>
+        <div className={`${prefix}--main-navigation__logo-wrapper`}>
+          <Button
+            className={`${prefix}--main-navigation__button`}
+            onClick={toggleMenu}>
+            Menu
+          </Button>
+          <div className={`${prefix}--main-navigation__logo`}>{logo}</div>
+        </div>
+        <ul className={listClasses}>
+          {React.Children.map(childrenSelect, (child, i) => {
+            if (child) {
+              return React.cloneElement(child, {
+                activeMenuItem: activeMenuItem,
+                menuItem: i,
+                onChangeSub: onChangeSub,
+              });
+            } else return null;
+          })}
+        </ul>
+      </Wrapper>
+    </div>
+  );
+};
 
 MainNavigation.propTypes = {
   /**
    * Usually multiple `MainNavigationItem` elements
    */
-  children: PropTypes.node.isRequired,
+  children: PropTypes.oneOfType([PropTypes.func, PropTypes.node]).isRequired,
   /**
    * The CSS class name to be placed on the wrapping element.
    */
