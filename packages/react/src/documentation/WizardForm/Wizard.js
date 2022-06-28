@@ -4,43 +4,54 @@ import FormWizard from '../../components/FormWizard';
 import FormControls from '../../components/FormControls';
 import StepNavigation from '../../components/StepNavigation';
 import StepNavigationItem from '../../components/StepNavigationItem';
+import useWizard from '../../hooks/useWizard';
 
 const handleValidation = (props) => {
   return null;
 };
 
-const Page = ({children}) =>{
+const Page = ({ children }) => {
   return children;
-}
+};
 
+const Wizard = ({ children, initialValues, onSubmit, ...other }) => {
+  // const [page, setPage] = useState(0);
+  const [values, setValues] = useState(initialValues || {});
 
-const Wizard =({children, initialValues, onSubmit, ...other })=>{
-  
-  
-  const [page, setPage] = useState(0);
-  const [values, setValues] = useState(initialValues || {})
+  const submitCallback = (data) => {
+    setValues(data);
+  };
 
-  const handleTabClick = (values) =>{
-    
-    if(Object.keys(validate(values)).length > 0){
-      // console.log("not valid",validate(values))
-    }else{
-      setPage(values);
-      setValues(values);
-    }
-    
-  }
+  const { page, previous, handleTabClick, handleFormSubmit, isLastPage } =
+    useWizard({
+      currentData: values,
+      submitCallback,
+      content: React.Children.toArray(children).map((element) => {
+        return {
+          content: element,
+        };
+      }),
+    });
 
-  
-  const next = (values) =>{
-    setPage(Math.min(page + 1, children.length - 1));
-    setValues(values);
-  }
+  // const handleTabClick = (values) =>{
 
-  const previous = () => {
-    setPage(Math.max(page - 1, 0));
-  }
+  //   if(Object.keys(validate(values)).length > 0){
+  //     // console.log("not valid",validate(values))
+  //   }else{
+  //     setPage(values);
+  //     setValues(values);
+  //   }
 
+  // }
+
+  // const next = (values) =>{
+  //   setPage(Math.min(page + 1, children.length - 1));
+  //   setValues(values);
+  // }
+
+  // const previous = () => {
+  //   setPage(Math.max(page - 1, 0));
+  // }
 
   /**
    * NOTE: Both validate and handleSubmit switching are implemented
@@ -53,81 +64,73 @@ const Wizard =({children, initialValues, onSubmit, ...other })=>{
     return activePage.props.validate ? activePage.props.validate(values) : {};
   };
 
-  const handleFormSubmit = values => {
-    const isLastPage = page === React.Children.count(children) - 1;
-    if (isLastPage) {
-      setValues(values);
-    } else {
-      next(values);
-    }
-  };
+  // const handleFormSubmit = values => {
+  //   const isLastPage = page === React.Children.count(children) - 1;
+  //   if (isLastPage) {
+  //     setValues(values);
+  //   } else {
+  //     next(values);
+  //   }
+  // };
 
+  const activePage = React.Children.toArray(children)[page];
+  // const isLastPage = page === React.Children.count(children) - 1;
+  return (
+    <Form
+      initialValues={values}
+      validate={validate}
+      onSubmit={handleFormSubmit}>
+      {({ handleSubmit }) => (
+        <form onSubmit={handleSubmit}>
+          <FormWizard
+            stickySidebar
+            formHeader={`Step ${page}/4: ${activePage.props.label}`}
+            formControls={
+              <FormControls
+                onPreviousClick={previous}
+                previousHidden={page > 0 ? false : true}
+                nextHidden={isLastPage}
+                submitHidden={!isLastPage}
+              />
+            }
+            sidebar={
+              <StepNavigation
+                selectedPage={page}
+                onSelectionChange={handleTabClick}
+                handleTabClick={handleTabClick}>
+                {/* You may also generate these steps from the pages */}
 
-    const activePage = React.Children.toArray(children)[page];
-    const isLastPage = page === React.Children.count(children) - 1;
-    return (
-      <Form
-        initialValues={values}
-        validate={validate}
-        onSubmit={handleFormSubmit}>
-        {({ handleSubmit }) => (
-          <form onSubmit={handleSubmit}>
-            <FormWizard
-              stickySidebar
-              formHeader={`Step ${page}/4: ${activePage.props.label}`}
-              formControls={
-                <FormControls
-                  onPreviousClick={previous}
-                  previousHidden={page > 0 ? false : true}
-                  nextHidden={isLastPage}
-                  submitHidden={!isLastPage}
-                />
-              }
-              sidebar={
-                <StepNavigation
-                  selectedPage={page}
-                  onSelectionChange={handleTabClick}
-                  handleTabClick={handleTabClick}>
-                  {/* You may also generate these steps from the pages */}
+                {React.Children.map(children, (child, i) => {
+                  // Ignore the first child
+                  return (
+                    <StepNavigationItem
+                      page={i}
+                      status={page >= i ? 'complete' : 'not-started'}
+                      {...child.props}
+                    />
+                  );
+                })}
+              </StepNavigation>
+            }>
+            {/* Adding the wfp--form-long class is important */}
+            <div className="wfp--form-long">{activePage}</div>
+          </FormWizard>
 
-                  {React.Children.map(children, (child, i) => 
-                  {
-                    // Ignore the first child
-                    return (
-                      <StepNavigationItem
-                        page={i}
-                        status={page >= i ? 'complete' : 'not-started'}
-                        {...child.props}
-                      />
-                    );
-                  })}
-                </StepNavigation>
-              }>
-              {/* Adding the wfp--form-long class is important */}
-              <div className="wfp--form-long">{activePage}</div>
-            </FormWizard>
+          <FormSpy
+            subscription={{ active: true, values: true }}
+            component={handleValidation}
+          />
+          <br />
+          <br />
+          <pre>{JSON.stringify(values, 0, 2)}</pre>
+        </form>
+      )}
+    </Form>
+  );
+};
 
-            <FormSpy
-              subscription={{ active: true, values: true }}
-              component={handleValidation}
-            />
-            <br />
-            <br />
-            <pre>{JSON.stringify(values, 0, 2)}</pre>
-          </form>
-        )}
-      </Form>
-    );
-  
-}
-
-export {
-  Wizard,
-  Page
-}
-
+export { Wizard, Page };
 
 // static propTypes = {
 //   onSubmit: PropTypes.func.isRequired,
 // };
-
