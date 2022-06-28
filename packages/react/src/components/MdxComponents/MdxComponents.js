@@ -85,14 +85,14 @@ const pre = (props) => {
   );
 };
 
-const inlineCode = (props) => {
+/*const inlineCode = (props) => {
   const settings = useSettings();
   return (
     <code className={`${settings.prefix}--story__inlinecode`} {...props}>
       {props.children}
     </code>
   );
-};
+};*/
 
 const blockquote = ({ children, ...other }) => {
   if (Array.isArray(children) && children.length >= 2 && children[0].props)
@@ -136,7 +136,7 @@ export const MdxComponents = {
   ol,
   code,
   pre,
-  inlineCode,
+  // inlineCode,
   table,
   blockquote,
 };
