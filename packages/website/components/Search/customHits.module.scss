@@ -1,0 +1,46 @@
+@use "scss/meta" as *;
+
+.hits {
+  position: relative;
+  z-index: 10000;
+}
+.results {
+  position: absolute;
+  top: 0;
+  background: $background-main;
+  border-radius: 10px;
+  width: 100%;
+  box-shadow: 2px 2px 10px rgba(#000, 0.1);
+}
+
+.noResults {
+  padding: 2em;
+  text-align: center;
+}
+
+.hit,
+.hit:visited {
+  margin: 0.3em;
+  padding: 0.3em;
+  line-height: 1.5;
+  display: block;
+  color: $text-primary;
+  border-radius: 5px;
+  text-decoration: none;
+  &:hover {
+    background: $layer-primary;
+    color: $text-primary;
+    text-decoration: none;
+  }
+  h4 {
+    font-weight: 600;
+  }
+  p {
+    font-size: 0.8em;
+  }
+  :global(.ais-Highlight-highlighted),
+  :global(.ais-Snippet-highlighted) {
+    color: $interactive;
+    background: $layer-primary;
+  }
+}

@@ -71,27 +71,29 @@ $main-navigation-menu-width: rem(300px);
     display: none;
   }
 
-  .#{$prefix}--main-navigation__trigger {
-    cursor: pointer;
-    user-select: none;
-    //vertical-align: middle;
-    white-space: nowrap;
+  .#{$prefix}--main-navigation {
+    .#{$prefix}--main-navigation__trigger {
+      cursor: pointer;
+      user-select: none;
+      //vertical-align: middle;
+      white-space: nowrap;
 
-    a {
-      color: $text-on-color; // TODO change to $link_on_color token
-      @include type-style('body-short-02');
-      text-decoration: none;
-      &.active {
-        border-bottom: 3px solid rgba(var(--ui-01), 0.5);
-      }
-      &:hover,
-      &:visited,
-      &:active {
-        color: $text-on-color;
-        text-decoration: underline;
-      }
-      &:focus {
-        color: $text-on-color;
+      a {
+        color: $text-on-color; // TODO change to $link_on_color token
+        @include type-style('body-short-02');
+        text-decoration: none;
+        &.active {
+          border-bottom: 3px solid rgba(var(--ui-01), 0.5);
+        }
+        &:hover,
+        &:visited,
+        &:active {
+          color: $text-on-color;
+          text-decoration: underline;
+        }
+        &:focus {
+          color: $text-on-color;
+        }
       }
     }
   }

@@ -35,7 +35,13 @@ export FileUploader, {
   FileUploaderItem,
   FileUploaderDropContainer,
 } from './components/FileUploader';
-export { Footer } from './components/Footer';
+export {
+  Footer,
+  FooterExternal,
+  FooterMetaLink,
+  LinksColumn,
+} from './components/Footer';
+
 export Form from './components/Form';
 export FormControls from './components/FormControls';
 export FormError from './components/FormError';
@@ -48,7 +54,7 @@ export Icon from './components/Icon';
 export InfoBar from './components/InfoBar';
 export Link from './components/Link';
 export Loading from './components/Loading';
-export Input from './components/Input';
+export Input, { useInput } from './components/Input';
 export InlineLoading from './components/InlineLoading';
 export { List, ListItem } from './components/List';
 export {

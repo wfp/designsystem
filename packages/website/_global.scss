@@ -1,0 +1,131 @@
+$css--reset: true;
+$css--body: true;
+//@use "./meta" as meta;
+@use "@un/styles/scss/themes";
+@use "@un/styles/scss/theme" /*with (
+  $theme: meta.$carbon--theme--memo
+)*/;
+
+@use "@un/themes-core/dist/scss/default-css-theme" as defaulttheme;
+
+//@use "./dist/scss/default-css-theme" as memotheme;
+
+@use "@un/styles/scss/reset";
+@use "@un/styles/scss/components";
+
+@use "scss/meta" as *;
+//@import "./global.scss";
+
+//@import "~@un/react/src/globals/scss/colors";
+//@import "~@un/react/src/globals/scss/vars";
+//@import "~@un/react/src/globals/scss/layout";
+//@import "~@un/react/src/globals/scss/_typography";
+
+@import '@un/type/scss/font-face/mono';
+@import '@un/type/scss/font-face/sans';
+@import '@un/type/scss/font-face/serif';
+
+@include open-sans-font-face();
+
+:root {
+  @include defaulttheme.theme-default();
+  // @include memotheme.theme-default();
+}
+
+@mixin darkmode() {
+  @media (prefers-color-scheme: dark) {
+    @content;
+  }
+}
+
+@mixin landscapeOnly() {
+  @media (min-aspect-ratio: 8/5) {
+    @content;
+  }
+}
+
+.wfp--main-navigation {
+  background: #fff;
+  color: $text-primary;
+  font-size: 1.2em;
+}
+
+.wfp--main-navigation__list {
+  height: 5em;
+}
+
+body {
+  background: #fff;
+}
+
+.wfp--story {
+  word-break: break-word;
+
+  h2 {
+    line-height: 1.3em;
+  }
+}
+/*
+a,
+a:hover,
+a:visited {
+  color: $interactive;
+  text-decoration: none;
+}*/
+
+a:hover {
+  text-decoration: underline;
+}
+
+.wfp--main-navigation__item {
+  .wfp--btn {
+    display: flex;
+    @include breakpoint-up(md) {
+      display: none;
+    }
+    @include breakpoint-up(lg) {
+      display: flex;
+    }
+    /*justify-content: center;
+    align-items: center;
+    height: 4rem;
+    line-height: 4rem;*/
+  }
+}
+@include breakpoint-down(md) {
+  .wfp--main-navigation__trigger {
+    border: none;
+    background: $background-main !important;
+  }
+
+  .wfp--main-navigation__list {
+    position: absolute;
+    left: 0;
+    padding: 0.5em 0 !important;
+    height: auto;
+    background: $background-main !important;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .wfp--main-navigation__list--open {
+    z-index: 10000;
+  }
+
+  .wfp--main-navigation__logo-wrapper {
+    padding: 0;
+  }
+
+  .wfp--wrapper {
+    @include breakpoint-down(md) {
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+    }
+  }
+}
+
+@media screen and (min-width: 667px) {
+  .woot-widget--without-bubble.woot-widget-holder {
+    bottom: 60px !important;
+    right: 10px !important;
+  }
+}

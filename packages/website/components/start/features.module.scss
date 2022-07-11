@@ -1,0 +1,75 @@
+@use "scss/meta" as *;
+
+.features {
+  font-size: 1.2em;
+
+  @include breakpoint-up(md) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    max-width: 60rem;
+    margin: auto;
+    margin-bottom: 2em;
+    column-gap: 1.5em;
+    row-gap: 1.5em;
+  }
+  > * {
+    padding: 1.5em;
+    @include breakpoint-down(md) {
+      margin-bottom: 0.5em;
+      padding: 1.3em;
+    }
+
+    h3 {
+      font-size: 1.3em;
+      font-weight: 500;
+      margin-bottom: 1em;
+    }
+    p {
+      line-height: 1.5;
+      a {
+        color: $text-primary !important;
+        text-decoration: underline;
+      }
+    }
+    a {
+      color: $text-primary !important;
+    }
+    border-radius: 13px;
+
+    background: #dfeeff;
+  }
+  .professional {
+    grid-column: span 2;
+  }
+  .support {
+    background: #76b5ff;
+  }
+  .aboutUs {
+    background: #ff9f81;
+  }
+}
+
+.analogLink {
+  margin: 3em auto;
+  @include breakpoint-down(md) {
+    margin: 2em auto;
+  }
+  display: block;
+  text-align: center;
+  font-size: 2em;
+  line-height: 1.3em;
+  svg {
+    margin-left: 0.3em;
+  }
+}
+
+.more {
+  color: $text-primary;
+  display: block;
+  margin-top: 0.5em;
+  @include breakpoint-down(md) {
+    margin-top: 1em;
+    font-weight: 600;
+  }
+}

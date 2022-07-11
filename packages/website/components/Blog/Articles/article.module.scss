@@ -1,0 +1,49 @@
+@use "scss/meta" as *;
+
+.articles {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 4em;
+}
+
+.searchWrapper {
+  margin: 5em auto;
+  @include breakpoint-down(md) {
+    margin: 2em auto;
+  }
+  max-width: 40em;
+  display: flex;
+  flex-direction: column;
+}
+
+.search {
+  font-size: 1.5em;
+  input {
+    border-width: 3px;
+    border-radius: 7px;
+    height: 2.5em !important;
+  }
+  margin-bottom: 0.4em;
+}
+
+.status {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1em;
+}
+
+.subHeading {
+  &:first-child {
+    display: none;
+  }
+
+  font-size: 2.5em;
+  @include breakpoint-down(md) {
+    font-size: 1.5em;
+  }
+  font-weight: 600;
+  margin: 2em 0.2em 1em;
+  width: 100%;
+  //text-align: center;
+}

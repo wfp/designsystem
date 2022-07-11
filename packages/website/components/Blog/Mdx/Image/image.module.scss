@@ -1,0 +1,15 @@
+@use "scss/meta" as *;
+
+.video {
+  width: 100%;
+}
+
+.mediaWrapper {
+  max-width: calc(100% + 1em);
+  margin: 2rem -0.5em 0;
+
+  @include breakpoint-up(md) {
+    max-width: calc(100% + 200px);
+    margin: 2rem -100px 0;
+  }
+}

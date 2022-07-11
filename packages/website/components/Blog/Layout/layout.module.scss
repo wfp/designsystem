@@ -1,0 +1,14 @@
+.layout {
+  margin: auto;
+  //max-width: 1200px;
+  //padding: 0.5rem;
+}
+
+.chat {
+  position: fixed;
+  z-index: 10000;
+  right: 10px;
+  bottom: 10px;
+  border-radius: 20px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+}

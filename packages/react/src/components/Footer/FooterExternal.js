@@ -20,6 +20,7 @@ const FooterExternal = ({
   productName,
   children,
   metaContent,
+  pageWidth = 'lg',
   metaLinks,
 }) => {
   const { prefix } = useSettings();
@@ -27,7 +28,7 @@ const FooterExternal = ({
   const externalClasses = classnames(`${prefix}--footer-ext`, className);
   return (
     <footer className={externalClasses}>
-      <Wrapper pageWidth="lg">
+      <Wrapper pageWidth={pageWidth}>
         <div className={`${prefix}--footer-ext__content`}>
           <div className={`${prefix}--footer-ext__info`}>
             <div className={`${prefix}--footer-ext__branding`}>

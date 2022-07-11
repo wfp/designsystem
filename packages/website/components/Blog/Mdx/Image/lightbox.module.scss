@@ -1,0 +1,134 @@
+@use "scss/meta" as *;
+
+.imageContainer {
+  display: block;
+  position: relative;
+  z-index: 10000;
+  width: 100%;
+  background-color: $layer-primary;
+}
+
+.imageContainer {
+  cursor: zoom-in;
+}
+
+.imageWrapper {
+  display: block;
+}
+
+.aspectRatio {
+  display: block;
+}
+
+.imageContainer.open {
+  cursor: zoom-out;
+}
+
+.imageContainer .shade {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  opacity: 0;
+  background: rgba(0, 0, 0, 0.9);
+}
+
+.imageContainer.open .shade {
+  pointer-events: auto;
+  opacity: 1;
+}
+
+.lightboxCaption {
+  pointer-events: none;
+  //opacity: 0;
+  width: 100%;
+  opacity: 0;
+  transform: translateY(200%);
+  transition: all 0.5s;
+  z-index: 1000;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  > span {
+    padding: 0.1em 0.5em;
+    color: #fff;
+    background: rgba(#000, 0.7);
+  }
+  bottom: 1rem;
+  left: 0;
+}
+
+.imageContainer.open {
+  .lightboxCaption {
+    pointer-events: auto;
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+.closeOverlay {
+  //pointer-events: none;
+  //opacity: 0;
+  transform: translateY(-200%);
+  transition: all 0.5s;
+  position: fixed;
+  width: 1.5em;
+  height: 1.5em;
+  top: 1em;
+  left: 1.5em;
+  z-index: 100;
+  outline: 10px solid rgba(#fff, 0);
+  &:hover {
+    background: rgba(#fff, 0.1);
+    outline: 5px solid rgba(#fff, 0.1);
+  }
+  &:before,
+  &:after {
+    background: #fff;
+    display: block;
+    width: 2px;
+    height: 1.5em;
+    content: '';
+    position: absolute;
+    transform: translateX(0.75em) rotate(45deg);
+  }
+  &:after {
+    transform: translateX(0.75em) rotate(-45deg);
+  }
+}
+
+.imageContainer.open {
+  z-index: 100000;
+  .closeOverlay {
+    pointer-events: auto;
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+.backgroundImage {
+  width: 100%;
+  height: auto;
+  opacity: 0.3;
+}
+
+.imageContainer .activeImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: auto;
+}
+
+.imageContainer.open .activeImage {
+  position: fixed;
+  width: auto;
+  height: auto;
+  max-height: 100%;
+  max-width: 100%;
+  margin: auto;
+}

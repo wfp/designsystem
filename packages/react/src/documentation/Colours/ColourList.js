@@ -42,7 +42,20 @@ export const ColourList = ({ tokens }) => {
         </td>
         <td>
           <Text kind="code">
-            {typeof color.value === 'string' && color.value}
+            <p>
+              #
+              {color.attributes &&
+                typeof color.attributes.hex === 'string' &&
+                color.attributes.hex}
+            </p>
+            <p>
+              {color.attributes?.rgb && (
+                <>
+                  r: {color.attributes.rgb.r}, g:{color.attributes.rgb.g}, b:{' '}
+                  {color.attributes.rgb.b}
+                </>
+              )}
+            </p>
           </Text>
           <br />
         </td>
@@ -57,7 +70,7 @@ export const ColourList = ({ tokens }) => {
                   ? 'color__field__light'
                   : ''
               }`}
-              style={{ backgroundColor: color.value }}>
+              style={{ backgroundColor: `#${color.attributes?.hex}` }}>
               <div className="color__contrast">
                 <span>A</span>
                 <div>{score(hex(color.value, '#000000'))}</div>

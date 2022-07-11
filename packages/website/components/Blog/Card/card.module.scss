@@ -1,0 +1,144 @@
+@use "scss/meta" as *;
+
+.card {
+  width: 100%;
+  display: flex;
+  text-decoration: none;
+  font-size: 1.2em;
+  background: $layer-primary;
+  border-radius: 15px;
+  overflow: hidden;
+  &:hover {
+    text-decoration: none;
+  }
+  .body {
+    min-width: 50%;
+    padding: 0.75rem;
+    padding-right: 0.4em;
+    @include breakpoint-up(md) {
+      padding: 1rem;
+    }
+    //padding-top: 0;
+  }
+  margin-bottom: 0.5rem;
+  @include breakpoint-up(md) {
+    margin-bottom: 1.5rem;
+  }
+
+  /*@include breakpoint-up(md) {
+    width: 50%;
+    margin-bottom: 3rem;
+  }*/
+  &:hover {
+    @include breakpoint-up(md) {
+      .image,
+      .video {
+        @include darkmode {
+          transform: scale(1.02);
+        }
+      }
+      .imageWrapper {
+        box-shadow: 0 40px 90px -15px rgba(0, 0, 0, 0.2),
+          0 18px 36px -18px rgba(0, 0, 0, 0.23);
+        transform: translateY(-3px);
+        @include darkmode {
+          box-shadow: 0px 7px 15px -5px #000;
+        }
+      }
+    }
+    .body {
+      color: var(--interactive-01);
+    }
+  }
+}
+.subTitle {
+  color: $text-primary;
+  font-size: 0.9em;
+  margin-top: 0.3em;
+}
+
+.image,
+.video {
+  width: 50%;
+  height: 100%;
+  transition: all 0.3s;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.video {
+  display: none;
+}
+
+.imageWrapperVideo {
+  .video {
+    display: block;
+  }
+  @include breakpoint-up(md) {
+    .image {
+      display: none;
+    }
+  }
+}
+
+.imageWrapper {
+  width: 100%;
+
+  @include breakpoint-up(md) {
+    max-width: 5em;
+  }
+  transition: all 0.3s;
+  @include breakpoint-up(md) {
+    /* box-shadow: 0 30px 60px -10px rgba(0, 0, 0, 0.15),
+      0 18px 36px -18px rgba(0, 0, 0, 0.16);*/
+    @include darkmode {
+      box-shadow: 0px 5px 10px -5px rgba(#000, 0.3);
+    }
+  }
+
+  //padding-top: 50%;
+  padding-top: 150px;
+  position: relative;
+  overflow: hidden;
+}
+
+.body {
+  color: $text-primary;
+  margin-top: 0.1rem;
+  transition: all 0.3s;
+  //font-weight: 600;
+  line-height: 1.5;
+
+  @include breakpoint-down(md) {
+    font-size: 0.85em;
+    hyphens: auto;
+  }
+}
+
+.title {
+  font-weight: 600;
+  margin-bottom: 0.7em;
+}
+
+.moreLink {
+  display: block;
+  margin-top: 1.3em;
+
+  @include breakpoint-down(md) {
+    display: none;
+  }
+}
+
+.multimedia {
+  min-width: 13em;
+  max-width: 13em;
+
+  @include breakpoint-down(md) {
+    min-width: 7em;
+    max-width: 7em;
+  }
+}

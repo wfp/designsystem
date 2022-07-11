@@ -1,0 +1,54 @@
+@use "scss/meta" as *;
+
+.features {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  //align-items: center;
+  text-align: left;
+
+  h1 {
+    margin-top: 6rem;
+    font-size: 4em;
+    font-weight: 800;
+    line-height: 1.2em;
+
+    margin-bottom: 0.5rem;
+  }
+  h2 {
+    font-size: 2em;
+    line-height: 1.5em;
+    color: $text-secondary;
+    margin-top: 1rem;
+    margin-bottom: 0;
+  }
+}
+
+.buttons {
+  margin: 0;
+  margin: 4em 0;
+  display: flex;
+  > * {
+    margin-right: 0.7em;
+    padding: 0 1em;
+    font-size: 1em;
+    height: 3em;
+  }
+}
+.heroWrapper {
+  width: calc(100% + 1rem);
+  margin: 0;
+  @include breakpoint-down(md) {
+    overflow: hidden;
+  }
+}
+.hero {
+  position: relative;
+  margin-top: 7rem;
+  font-size: 2.5em;
+  padding-left: 8px;
+  border-left: 10px solid $interactive;
+
+  font-weight: 800;
+  text-transform: uppercase;
+}

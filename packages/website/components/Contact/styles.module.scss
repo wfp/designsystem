@@ -1,0 +1,85 @@
+@use "scss/meta" as *;
+
+.introWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300%;
+  position: relative;
+  font-size: 10rem;
+  &:before {
+    content: "";
+    position: absolute;
+    width: 200%;
+    height: 300%;
+    top: -100%;
+    left: -100%;
+    z-index: 1;
+    //background: url(background.png) 0 0 repeat;
+    background-color: $interactive-02;
+    background-image: url("/logo-pattern-b.png");
+    background-size: 10px auto;
+
+    transform: rotate(-40deg);
+    animation-name: MOVE-BG;
+    animation-duration: 100s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+}
+
+.isSecond {
+  &:before {
+    background-color: red;
+  }
+}
+
+.introText {
+  display: none;
+  font-size: 1vw;
+  position: relative;
+  font-weight: 800;
+  transform: rotate(-20deg);
+  //background: $interactive-02;
+  color: #812082; // #000;
+  margin-top: -18rem;
+  .organizedItems {
+    display: flex;
+    margin-left: 1rem;
+    &:nth-child(2n + 1) {
+      margin-left: 6rem;
+    }
+    > div {
+      padding: 1rem;
+      margin-right: 1rem;
+      position: relative;
+      &:after {
+        content: "";
+        display: block;
+        height: 0.1em;
+        width: 30%;
+        position: absolute;
+        top: 50%;
+        left: 90%;
+        z-index: -1;
+        background: #812082;
+      }
+    }
+  }
+  &:after {
+    content: "";
+    display: none;
+    height: 50%;
+    width: 70%;
+    position: absolute;
+    top: 3.5vw;
+    left: 1.5vw;
+    z-index: -1;
+    background: var(--interactive-01);
+  }
+}
+
+.last {
+  background: none;
+  overflow: hidden;
+}

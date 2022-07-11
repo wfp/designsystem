@@ -1,0 +1,112 @@
+@use "scss/meta" as *;
+
+.logo {
+  height: 2.3em;
+  width: auto;
+
+  @include breakpoint-up(md) {
+    height: 2.3em;
+  }
+
+  @include breakpoint-up(lg) {
+    height: 3.5rem;
+  }
+}
+
+.bannerNavigation {
+  text-align: center;
+  background: $support-error-light;
+  padding: 1.3em;
+  font-size: 1.2em;
+  ul {
+    justify-content: center !important;
+  }
+}
+
+.mainNavigation {
+  :global('.wfp--main-navigation__trigger') {
+    background: $layer-primary !important;
+  }
+  :global('.wfp--main-navigation__list wfp--main-navigation__list--open') {
+  }
+}
+
+.user {
+  a {
+    //color: $text-primary !important;
+  }
+  display: flex;
+  align-items: center;
+}
+
+.logout {
+  svg {
+    margin-left: 0.3em;
+  }
+}
+
+.user {
+  max-width: 30em;
+  font-weight: 500;
+
+  :global(.wfp--sub-navigation__title) {
+    display: block;
+  }
+
+  @include breakpoint-down(md) {
+    flex-direction: column;
+    > div {
+      width: 100%;
+    }
+  }
+
+  :global(.wfp--main-navigation__trigger) {
+    display: flex;
+    align-items: center;
+    > div {
+      display: flex;
+      align-items: center;
+    }
+    > * {
+      @include breakpoint-down(md) {
+        flex-grow: 1;
+      }
+    }
+  }
+  @include breakpoint-up(md) {
+    :global(.wfp--main-navigation__sub--open) {
+      left: inherit;
+      top: 5rem;
+      right: 0;
+      width: 20%;
+      min-width: 100px;
+      background: $background-main;
+    }
+    :global(.wfp--main-navigation__trigger__icon) {
+      font-size: 0.7em;
+      margin-left: 0.4em;
+      top: 0;
+    }
+  }
+}
+
+.language {
+  @include breakpoint-up(md) {
+    max-width: 5em;
+    :global(.wfp--main-navigation__sub--open) {
+      min-width: 120px;
+      width: 18%;
+    }
+  }
+}
+
+.languageMobile {
+  @include breakpoint-up(md) {
+    display: none;
+  }
+}
+.languageDesktop {
+  @include breakpoint-down(md) {
+    display: none;
+  }
+}

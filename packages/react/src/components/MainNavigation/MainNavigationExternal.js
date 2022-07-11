@@ -110,6 +110,8 @@ const MainNavigationExternal = ({
   primaryLanguage,
   languageList,
   username,
+  pageWidth = 'full',
+  components = {},
   userImage,
   userDetails,
   children,
@@ -137,10 +139,17 @@ const MainNavigationExternal = ({
     };
   }, [navTogglable.isOpen]);
 
+  const defaultComponents = {
+    LanguageExternal,
+    UserExternal,
+  };
+
+  const c = { ...defaultComponents, ...components };
+
   return (
     <header className={`${prefix}--main-navigation-ext`}>
       <Wrapper
-        pageWidth="lg"
+        pageWidth={pageWidth}
         className={`${prefix}--main-navigation-ext__wrapper`}>
         <div className={`${prefix}--main-navigation-ext__branding`}>
           <div className={`${prefix}--main-navigation-ext__wfp-logo`}>
@@ -156,12 +165,12 @@ const MainNavigationExternal = ({
         </div>
         <div className={`${prefix}--main-navigation-ext__main`}>
           <div className={`${prefix}--main-navigation-ext__settings`}>
-            <LanguageExternal primaryLanguage={primaryLanguage}>
+            <c.LanguageExternal primaryLanguage={primaryLanguage}>
               {languageList}
-            </LanguageExternal>
-            <UserExternal username={username} userImage={userImage}>
+            </c.LanguageExternal>
+            <c.UserExternal username={username} userImage={userImage}>
               {userDetails}
-            </UserExternal>
+            </c.UserExternal>
           </div>
           <div className={`${prefix}--main-navigation-ext__nav`} ref={ref}>
             <div

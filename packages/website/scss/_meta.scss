@@ -1,0 +1,48 @@
+@forward "@un/styles/scss/breakpoint";
+@forward "@un/styles/scss/motion";
+@forward "@un/styles/scss/spacing";
+@forward "@un/styles/scss/type";
+@forward "@un/styles/scss/breakpoint";
+//@forward "@un/styles/scss/utilities/component-reset";
+@forward "@un/styles/scss/utilities/convert";
+
+@forward "@un/themes-core/dist/scss/tokens";
+//@import "@un/themes/scss/themes";
+
+//@import "../themes";
+//@import "../themes/scss";
+
+//$carbon--theme: $carbon--theme--wfp;
+
+// Use the gray 10 theme
+//@include carbon--theme();
+
+$css--variables: false !default;
+
+$hover-secondary: var(--interactive-01);
+$hover-primary: #005ecb;
+$color__green: rgb(67, 194, 41);
+$support-error-light: #ffc369;
+//$input_border: 2px solid $field-border;
+$button_border_radius: 8px;
+$support-02: $color__green;
+
+$desktop-header-height: 55px;
+$mobile-detail-header-height: 60px;
+$mobile-header-height: 70px;
+$mobile-bottom-height: 60px;
+$mobile-bottom-swipe-height: 75px;
+
+$safe-area-inset-top: var(--safe-area-inset-top);
+
+@mixin darkmode() {
+  @media (prefers-color-scheme: dark) {
+    @content;
+  }
+}
+
+@mixin landscapeOnly() {
+  @media (min-aspect-ratio: 8/5) {
+    @content;
+  }
+}

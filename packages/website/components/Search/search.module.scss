@@ -1,0 +1,32 @@
+@use "scss/meta" as *;
+
+.search {
+  font-size: 1.5em;
+  input {
+    border-width: 3px;
+    border-radius: 7px;
+    padding-left: 2em !important;
+    padding-right: 0.8em !important;
+    height: 2.5em !important;
+  }
+  margin-bottom: 0.4em;
+  :global(.wfp--search-close) {
+    display: none;
+  }
+
+  :global(.wfp--search-input) {
+    &:focus {
+      outline: 3px solid var(--focus, "#0b77c2ff");
+      outline-offset: -3px;
+    }
+  }
+
+  :global(.wfp--search-magnifier-icon) {
+    color: $interactive;
+
+    top: 1.25em;
+    left: 0.8em;
+    width: 1em;
+    height: 1em;
+  }
+}
