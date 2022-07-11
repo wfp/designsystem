@@ -28,6 +28,162 @@ import { linkTo } from '@storybook/addon-links';
 
 <br />
 
+## March 2022
+
+#### v1.20.10
+
+### Bug fixes
+
+- Fixed Authlayout component responsiveness
+- Use onMouseDown instead of onClick to prevent modal from closing when releasing mouse on background
+- DatePicker updates and bug fixes
+- Minor bug fixes in NumberInput,RadioButton, Search, Select,Slider components and helper-mixins
+- Fixed error in tablewithfilter with upgraded react-table version
+- Removed classname warning showing in datepicker component
+- AuthLayout import and export correctly done
+
+### Documentation
+
+- Email templates: updated guidance, removed obsolete templates
+- Updated logos guidance link changed to new branding link multimedia.wfp.org
+- Updated documentation on recommended tools
+- Reviewed and corrected documentation on react code snippet for all components
+
+### Features
+
+- Added detailed type definitions to typescript structure
+- New emergency icons added
+
+### Package Upgrades
+
+- React-hook-form package updated
+- `@wfp/icons` package updated
+- React and react-dom upgraded up to v17.0.2
+
+<br />
+
+## October 2021
+
+#### v1.20.3
+
+### Bug fixes
+
+- Table component documentation fixed
+- Minor styling fixes on infoBar component
+- Layout fixes for ZeroHeight
+- Fixed color of selected item on react select
+
+### Documentation
+
+- BannerNavigation content updated
+- Accessibility page restored
+- Update cdn path to the current path on s3
+
+<br />
+
+## July 2021
+
+#### v1.19.1
+
+### Bug fixes
+
+- Wrong rendering of slider on firefox fixed
+- Wrong styling of MainNavigation on mobile view fixed
+- Fixed test failing in wrapper due to addition of large prop to default proptypes
+- ModalWrapper onSumit button handler failing resolved
+- Updated inputs for compatibility with latest version of react-hook-form
+- Fix datepicker calendar focus style
+- Url to repository has changed
+- Updated types definition for the components
+- Resolved sibling button issue in arabic
+- Arabic rendering components styling resolved for MainNavigation, RadioButton and Pagination
+
+### Documentation
+
+- figma preview added in storybook
+- Added a tajawal fonts for arabic
+- Minor changes to typographic scale
+- Added extended primary colors to theme tokens
+- Readme to using sass instead of node-sass
+- Documentation on color hex corrected
+
+### Features
+
+- Added new illustrations
+- Improved sidebar component responsiveness
+- Alignment to new version of sass
+- WFP brand color hex blue updated
+
+### Package Upgrade
+
+- Packages with vulnerabilities updated
+- Added dart-sass compatibility and loader for webpack
+- Upgrade to external importOnce dependency provided by carbon
+- Upgrade to new sass version
+
+<br />
+
+## March 2021
+
+#### v1.15.1
+
+### Bug fixes
+
+- Changed tag type `wfp` to `info` and removed types `custom` and `beta`
+- Fixed Text component export
+- Renamed kind proptypes from `simple` to `unstyled` and bullet to `unordered`
+- Tooltip - Removed old dependencies and minor fixes
+- Updated and added new test cases for all components
+- Slider double line and running track line not showing fixed
+
+### Documentation
+
+- Updated Notfound template
+- Added [TableWithFilter](https://uikit.wfp.org/docs/index.html?path=/docs/templates-tablewithfilter--regular) template using react hook form
+- Updated guidelines on usage of pictures in credit
+
+### Features
+
+- Converted sidebar template into a new component [sidebar](https://uikit.wfp.org/docs/index.html?path=/docs/components-content-related-sidebar--phonebook) out of sidebar template
+- Added [item](https://uikit.wfp.org/docs/index.html?path=/docs/components-ui-elements-item--horizontal) component to be used in the sidebar component
+
+### Package Upgrade
+
+- Upgrade of storybook version
+- Upgrade node-sass package to be compatible with more recent Intel Macs and node v15
+
+### Testing
+
+- Updated and added new test cases for all components
+
+<br />
+
+## January 2021
+
+#### v1.13.0
+
+### Bug fixes
+
+- Fixed onChange returning a wrong target value on Search component
+- FullWidth prop works now on Slider component
+- Footer component accepts custom components for Logos
+- Replaced div with span to fix placement issue on icon in tooltip component
+- Footer - sdg icon removed and standard WFP logo replaces extended logo previously used
+
+### Documentation
+
+- added another wizard form example using react hook form
+- sequential colors rearranged from lighter shade to deeper shades
+- Added sidebar page to templates
+
+### Features
+
+- Added right to left support
+- Added new [Empty](https://uikit.wfp.org/docs/index.html?path=/docs/components-ui-elements-empty--regular) component
+- Added new illustrations such as corn-bag, moving-van and notebook
+
+<br />
+
 ## December 2020
 
 #### v1.11.0
