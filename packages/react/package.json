@@ -1,6 +1,6 @@
 {
   "name": "@un/react",
-  "version": "1.18.43",
+  "version": "1.18.44",
   "description": "WFP UI Kit",
   "license": "Apache-2",
   "main": "lib/index.js",
@@ -138,14 +138,13 @@
     "react-dom": "^18.2.0"
   },
   "dependencies": {
+    "@carbon/feature-flags": "^0.6.0",
     "classnames": "2.2.6",
     "invariant": "^2.2.4",
     "react-datepicker": "^4.6.0",
     "react-popper-tooltip": "^4.1.0",
     "warning": "^4.0.3",
-    "window-or-global": "^1.0.1",
-    "@carbon/feature-flags": "^0.6.0",
-    "classnames": "2.2.6"
+    "window-or-global": "^1.0.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.13.16",
@@ -236,8 +235,8 @@
     "promise": "^8.1.0",
     "prop-types": "^15.7.2",
     "raw-loader": "^4.0.1",
-    "react-dates": "^21.8.0",
     "react": "18.2.0",
+    "react-dates": "^21.8.0",
     "react-dom": "18.2.0",
     "react-dropzone": "^11.0.2",
     "react-final-form": "^6.5.1",
