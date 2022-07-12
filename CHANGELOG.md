@@ -1,3 +1,10 @@
+## [1.20.15](https://github.com/wfp/ui/compare/v1.20.14...v1.20.15) (2022-07-12)
+
+
+### Bug Fixes
+
+* Added 'React.ReactNode' type to 'icon' prop of EmptyProps. ([e53308f](https://github.com/wfp/ui/commit/e53308f32ccaa51d94fbdd846aa554d25756d3c8))
+
 ## [1.20.14](https://github.com/wfp/ui/compare/v1.20.13...v1.20.14) (2022-06-10)
 
 
