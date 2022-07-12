@@ -1,12 +1,12 @@
 import * as React from 'react';
 import { IIcon } from './utils';
 
-declare namespace Empty  {
+declare namespace Empty {
   interface EmptyProps extends Omit<React.HTMLProps<Empty>, 'title'> {
     title: React.ReactNode
     children?: React.ReactNode
     kind?: 'undefined' | 'large'
-    icon?: IIcon
+    icon?: IIcon | React.ReactNode
     button?: React.ReactNode
   }
 }
