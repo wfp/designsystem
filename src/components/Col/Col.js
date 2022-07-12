@@ -16,6 +16,7 @@ const Col = React.forwardRef(
       [`${prefix}--col--lg--${lg}`]: lg,
       [`${prefix}--col--lg--${md}`]: md,
       [`${prefix}--col--sm--${sm}`]: sm,
+      [`${prefix}--col--xs--${xs}`]: xs,
       [`${className}`]: className,
     });
 
@@ -65,7 +66,7 @@ Col.propTypes = {
   /** Responsiveness on small(768) screen will have 8 columns and calcuations will be based on this */
   sm: PropTypes.oneOf([1, 2, 3, 4, 5, 6, 7, 8]),
 
-  /** Responsiveness on extra small(500) screen will have 8 columns and calcuations will be based on this */
+  /** Responsiveness on extra small(500) screen will have 4 columns and calcuations will be based on this */
   xs: PropTypes.oneOf([1, 2, 3, 4]),
 };
 
