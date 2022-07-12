@@ -122,4 +122,6 @@ export Value from './components/Value';
 export Wrapper, { pageWidths } from './components/Wrapper';
 export colors from './globals/data/colors';
 export useDetectPrint from './internal/useDetectPrint';
+export Grid from './components/Grid';
+export Col from './components/Col';
 export { uniqueId } from './tools/uniqueId';
