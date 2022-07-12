@@ -119,6 +119,16 @@
   }
 }
 
+.multimedia {
+  min-width: 8em;
+  max-width: 8em;
+
+  @include breakpoint-down(md) {
+    min-width: 5em;
+    max-width: 5em;
+  }
+}
+
 .title {
   font-weight: 600;
   margin-bottom: 0.7em;
@@ -130,15 +140,5 @@
 
   @include breakpoint-down(md) {
     display: none;
-  }
-}
-
-.multimedia {
-  min-width: 13em;
-  max-width: 13em;
-
-  @include breakpoint-down(md) {
-    min-width: 7em;
-    max-width: 7em;
   }
 }

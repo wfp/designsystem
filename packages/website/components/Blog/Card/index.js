@@ -6,9 +6,13 @@ import MultimediaElement from '../../Multimedia';
 import { Card } from '@un/react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/pro-solid-svg-icons';
+import Image from 'next/image';
 
 const CardWrapper = ({ article, multimedia, detail = 'posts' }) => {
-  const src = article.image?.image?.publicUrl;
+  const src = article.ogImage.url;
+  console.log('article', article);
+
+  const srcElement = require(`../../../_posts/${src}`);
 
   return (
     <Link href={`/${detail}/${article.slug}`}>
@@ -18,8 +22,7 @@ const CardWrapper = ({ article, multimedia, detail = 'posts' }) => {
         ) : (
           <MultimediaElement src={src} className={styles.multimedia} />
         )*/}
-
-        {article.slug}
+        {src && <Image src={srcElement} className={styles.multimedia} />}
 
         <span className={styles.body}>
           <p className={styles.title}>{article.title}</p>

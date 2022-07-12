@@ -1,6 +1,5 @@
 import React from 'react';
 import styles from './hero.module.scss';
-import memoCase from './memo-case.jpg';
 import Image from 'next/image';
 import { Button } from '@un/react';
 import Link from 'next/link';

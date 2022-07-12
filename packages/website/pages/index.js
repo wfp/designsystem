@@ -31,7 +31,7 @@ function Home() {
             description: 'Digital Design System',
             images: [
               {
-                url: `${process.env.NEXT_PUBLIC_DOMAIN}/public/memo-case.png`,
+                url: `${process.env.NEXT_PUBLIC_DOMAIN}/public/un-core-logo.png`,
                 alt: 'Foto',
               },
             ],
