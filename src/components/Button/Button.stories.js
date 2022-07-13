@@ -39,8 +39,7 @@ export const ButtonKind = (args) => (
           display: 'inline-block',
           background: e === 'inverse' || e === 'inverse--primary' ? '#ccc' : '',
           padding: '0.3rem',
-        }}
-      >
+        }}>
         <Button {...args} kind={e}>
           {e}
         </Button>
