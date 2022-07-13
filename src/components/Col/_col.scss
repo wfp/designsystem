@@ -18,163 +18,135 @@
   }
   .#{$prefix}--col--span-2,
   .#{$prefix}--col--lg--2 {
-    flex: 0 0 (1/6 * 100%);
-    max-width: (1/6 * 100%);
+    @include column-span(2) // flex: 0 0 (1/6 * 100%);
+      // max-width: (1/6 * 100%);
+;
   }
   .#{$prefix}--col--span-3,
   .#{$prefix}--col--lg--3 {
-    flex: 0 0 (1/4 * 100%);
-    max-width: (1/4 * 100%);
+    @include column-span(3) // flex: 0 0 (1/4 * 100%);
+      // max-width: (1/4 * 100%);
+;
   }
   .#{$prefix}--col--span-4,
   .#{$prefix}--col--lg--4 {
-    flex: 0 0 (1/3 * 100%);
-    max-width: (1/3 * 100%);
+    @include column-span(4);
   }
   .#{$prefix}--col--span-5,
   .#{$prefix}--col--lg--5 {
-    flex: 0 0 (5/12 * 100%);
-    max-width: (5/12 * 100%);
+    @include column-span(5);
   }
   .#{$prefix}--col--span-6,
   .#{$prefix}--col--lg--6 {
-    flex: 0 0 (1/2 * 100%);
-    max-width: (1/2 * 100%);
+    @include column-span(6);
   }
   .#{$prefix}--col--span-7,
   .#{$prefix}--col--lg--7 {
-    flex: 0 0 (7/12 * 100%);
-    max-width: (7/12 * 100%);
+    @include column-span(7);
   }
   .#{$prefix}--col--span-8,
   .#{$prefix}--col--lg--8 {
-    flex: 0 0 (2/3 * 100%);
-    max-width: (2/3 * 100%);
+    @include column-span(8);
   }
   .#{$prefix}--col--span-9,
   .#{$prefix}--col--lg--9 {
-    flex: 0 0 (3/4 * 100%);
-    max-width: (3/4 * 100%);
+    @include column-span(9);
   }
   .#{$prefix}--col--span-10,
   .#{$prefix}--col--lg--10 {
-    flex: 0 0 (5/6 * 100%);
-    max-width: (5/6 * 100%);
+    @include column-span(10);
   }
   .#{$prefix}--col--span-11,
   .#{$prefix}--col--lg--11 {
-    flex: 0 0 (11/12 * 100%);
-    max-width: (11/12 * 100%);
+    @include column-span(11);
   }
   .#{$prefix}--col--span-12,
   .#{$prefix}--col--lg--12 {
-    flex: 0 0 100%;
-    max-width: 100%;
+    @include column-span(12);
   }
 
   // 12 columns on medium(992) screen
   @include breakpointMax(bp--sm--major) {
     .#{$prefix}--col--md--2 {
-      flex: 0 0 (1/6 * 100%);
-      max-width: (1/6 * 100%);
+      @include column-span(2);
     }
 
     .#{$prefix}--col--md--3 {
-      flex: 0 0 (1/4 * 100%);
-      max-width: (1/4 * 100%);
+      @include column-span(3);
     }
     .#{$prefix}--col--span-4,
     .#{$prefix}--col--lg--4 {
-      flex: 0 0 (1/3 * 100%);
-      max-width: (1/3 * 100%);
+      @include column-span(4);
     }
 
     .#{$prefix}--col--md--5 {
-      flex: 0 0 (5/12 * 100%);
-      max-width: (5/12 * 100%);
+      @include column-span(5);
     }
 
     .#{$prefix}--col--md--6 {
-      flex: 0 0 (1/2 * 100%);
-      max-width: (1/2 * 100%);
+      @include column-span(6);
     }
 
     .#{$prefix}--col--md--7 {
-      flex: 0 0 (7/12 * 100%);
-      max-width: (7/12 * 100%);
+      @include column-span(7);
     }
 
     .#{$prefix}--col--md--8 {
-      flex: 0 0 (2/3 * 100%);
-      max-width: (2/3 * 100%);
+      @include column-span(8);
     }
 
     .#{$prefix}--col--md--9 {
-      flex: 0 0 (3/4 * 100%);
-      max-width: (3/4 * 100%);
+      @include column-span(9);
     }
 
     .#{$prefix}--col--md--10 {
-      flex: 0 0 (5/6 * 100%);
-      max-width: (5/6 * 100%);
+      @include column-span(10);
     }
 
     .#{$prefix}--col--md--11 {
-      flex: 0 0 (11/12 * 100%);
-      max-width: (11/12 * 100%);
+      @include column-span(11);
     }
 
     .#{$prefix}--col--md--12 {
-      flex: 0 0 100%;
-      max-width: 100%;
+      @include column-span(12);
     }
   }
 
   // 8 columns on small(768) screen
   @include breakpointMax(bp--sm--major) {
     .#{$prefix}--col--sm--2 {
-      flex: 0 0 (1/4 * 100%);
-      max-width: (1/4 * 100%);
+      @include column-span(2, 8);
     }
     .#{$prefix}--col--sm--3 {
-      flex: 0 0 (3/8 * 100%);
-      max-width: (3/8 * 100%);
+      @include column-span(3, 8);
     }
     .#{$prefix}--col--sm--4 {
-      flex: 0 0 (1/2 * 100%);
-      max-width: (1/2 * 100%);
+      @include column-span(4, 8);
     }
     .#{$prefix}--col--sm--5 {
-      flex: 0 0 (5/8 * 100%);
-      max-width: (5/8 * 100%);
+      @include column-span(5, 8);
     }
     .#{$prefix}--col--sm--6 {
-      flex: 0 0 (3/6 * 100%);
-      max-width: (3/6 * 100%);
+      @include column-span(6, 8);
     }
     .#{$prefix}--col--sm--7 {
-      flex: 0 0 (7/8 * 100%);
-      max-width: (7/8 * 100%);
+      @include column-span(7, 8);
     }
     .#{$prefix}--col--sm--8 {
-      flex: 0 0 100%;
-      max-width: 100%;
+      @include column-span(8, 8);
     }
   }
 
   // 8 columns on small(500) screen
   @include breakpointMax(bp--xs--major) {
     .#{$prefix}--col--xs--2 {
-      flex: 0 0 (1/4 * 100%);
-      max-width: (1/4 * 100%);
+      @include column-span(2, 4);
     }
     .#{$prefix}--col--xs--3 {
-      flex: 0 0 (1/2 * 100%);
-      max-width: (1/2 * 100%);
+      @include column-span(3, 4);
     }
     .#{$prefix}--col--xs--4 {
-      flex: 0 0 100%;
-      max-width: 100%;
+      @include column-span(4, 4);
     }
   }
 }

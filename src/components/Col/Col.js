@@ -52,15 +52,16 @@ function columnVariation(props, propName, componentName) {
 Col.propTypes = {
   children: PropTypes.node,
 
+  /** span set how wide each col block when placed next to each other fill 12 columns layout in a row eg: `span={3}`  */
   span: PropTypes.number,
 
   /** innerStyle represents style prop wrapping the inner container */
   innerStyle: PropTypes.object,
 
-  /** Responsiveness on large(1200) screen will have 12 columns and calcuations will be based on this */
+  /** Responsiveness on large(1200) screen will have 12 columns and calcuations will be based on this. range 1-12 */
   lg: columnVariation,
 
-  /** Responsiveness on medium(992) screen will have 12 columns and calcuations will be based on this */
+  /** Responsiveness on medium(992) screen will have 12 columns and calcuations will be based on this. range 1-12 */
   md: columnVariation,
 
   /** Responsiveness on small(768) screen will have 8 columns and calcuations will be based on this */
