@@ -74,8 +74,7 @@ export const Regular = (args) => (
                   </SubNavigationList>
                 </SubNavigationContent>
               </SubNavigation>
-            }
-          >
+            }>
             <Link href="http://manuals.wfp.org" target="_blank">
               Section 2
             </Link>
@@ -117,8 +116,7 @@ export const Regular = (args) => (
                   <Link onClick={() => onChangeSub('close')}>Close Menu</Link>
                 </SubNavigationContent>
               </SubNavigation>
-            }
-          >
+            }>
             <User
               ellipsis
               name="Max Mustermann long name"
@@ -152,8 +150,7 @@ export const Regular = (args) => (
                   </SubNavigationList>
                 </SubNavigationContent>
               </SubNavigation>
-            }
-          >
+            }>
             <span>EN</span>
           </MainNavigationItem>
         </React.Fragment>
@@ -364,8 +361,7 @@ export const RegularWithButton = (args) => (
                   </SubNavigationList>
                 </SubNavigationContent>
               </SubNavigation>
-            }
-          >
+            }>
             <Link href="http://manuals.wfp.org" target="_blank">
               Section 2
             </Link>
@@ -407,8 +403,7 @@ export const RegularWithButton = (args) => (
                   <Link onClick={() => onChangeSub('close')}>Close Menu</Link>
                 </SubNavigationContent>
               </SubNavigation>
-            }
-          >
+            }>
             <User
               ellipsis
               name="Max Mustermann long name"
@@ -442,8 +437,7 @@ export const RegularWithButton = (args) => (
                   </SubNavigationList>
                 </SubNavigationContent>
               </SubNavigation>
-            }
-          >
+            }>
             <span>EN</span>
           </MainNavigationItem>
         </React.Fragment>
