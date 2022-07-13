@@ -1,3 +1,17 @@
+# [1.21.0](https://github.com/wfp/ui/compare/v1.20.16...v1.21.0) (2022-07-13)
+
+
+### Bug Fixes
+
+* **grid:** added a mixin to do span calculations ([0bcc480](https://github.com/wfp/ui/commit/0bcc48090e5e4c2c13a0c02ded78a685b2e0fe79))
+* **Grid:** added another proptype feature grow to grid layout ([3439e33](https://github.com/wfp/ui/commit/3439e333b5587805fa691038855c711db6fe013c))
+
+
+### Features
+
+* **grid:** added justify and align prop and functionality to grid layout ([02f92b2](https://github.com/wfp/ui/commit/02f92b216d28cd8a4f0a0da25f1d6a947950a8d0))
+* **gridLayout:** implementing a grid layout feature ([cdf3fc4](https://github.com/wfp/ui/commit/cdf3fc48639edaa4298509d99e932742d98bcaa7))
+
 ## [1.20.16](https://github.com/wfp/ui/compare/v1.20.15...v1.20.16) (2022-07-13)
 
 
