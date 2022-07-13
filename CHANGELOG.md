@@ -1,3 +1,10 @@
+## [1.20.16](https://github.com/wfp/ui/compare/v1.20.15...v1.20.16) (2022-07-13)
+
+
+### Bug Fixes
+
+* **Empty:** added ReactNode type to icon prop ([b7698e5](https://github.com/wfp/ui/commit/b7698e532e0850cfa5235dc457dd02fac7d7472d))
+
 ## [1.20.15](https://github.com/wfp/ui/compare/v1.20.14...v1.20.15) (2022-07-12)
 
 
