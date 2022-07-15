@@ -3,6 +3,7 @@ import React from 'react';
 import classNames from 'classnames';
 import useSettings from '../../hooks/useSettings';
 import Input from '../Input/Input';
+import useInput from '../Input/useInput';
 
 /** Text inputs enable the user to interact with and input content and data. This component can be used for long and short form entries. */
 
@@ -40,21 +41,19 @@ const TextInput = React.forwardRef((props, ref) => {
     id,
   };
 
+  const input = useInput();
+
   return (
     <Input {...props} formItemClassName={formItemClassName}>
-      {(e) => {
-        return (
-          <input
-            pattern={pattern}
-            type={type}
-            {...other}
-            {...newProps}
-            ref={inputRef}
-            className={textInputClasses}
-            {...e}
-          />
-        );
-      }}
+      <input
+        pattern={pattern}
+        type={type}
+        {...other}
+        {...newProps}
+        ref={inputRef}
+        className={textInputClasses}
+        {...input}
+      />
     </Input>
   );
 });

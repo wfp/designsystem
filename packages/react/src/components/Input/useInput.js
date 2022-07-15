@@ -21,7 +21,7 @@ export const useInput = ({
   light,
   required,
   ...other
-}) => {
+} = {}) => {
   const { prefix } = useSettings();
 
   const calculatedId = id ? id : name;
