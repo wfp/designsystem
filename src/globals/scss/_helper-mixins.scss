@@ -12,6 +12,7 @@
 // Misc
 // ---------------------------------------------
 @use 'sass:math';
+@use 'sass:list';
 @import 'feature-flags';
 @import 'vars';
 @import 'css--reset';
@@ -174,12 +175,12 @@
 }
 
 @mixin column-span($span, $columns: false) {
-  flex: 0 0 (math.div($span, 12) * 100%);
-  max-width: (math.div($span, 12) * 100%);
+  flex: 0 0 math.percentage(calc($span / 12));
+  max-width: math.percentage(calc($span / 12));
 
   @if ($columns) {
-    flex: 0 0 (math.div($span, $columns) * 100%);
-    max-width: (math.div($span, $columns) * 100%);
+    flex: 0 0 math.percentage((calc($span / $columns)));
+    max-width: math.percentage((calc($span / $columns)));
   }
 }
 

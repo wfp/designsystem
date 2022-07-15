@@ -112,7 +112,7 @@ export default class ModalWrapper extends React.Component {
       ? React.cloneElement(customButton, {
           disabled: disabled,
           onClick: this.handleOpen,
-          inputref: this.triggerButton,
+          inputRef: this.triggerButton,
         })
       : undefined;
 
@@ -135,7 +135,7 @@ export default class ModalWrapper extends React.Component {
             disabled={disabled}
             kind={triggerButtonKind}
             onClick={this.handleOpen}
-            inputref={this.triggerButton}>
+            inputRef={this.triggerButton}>
             {buttonTriggerText}
           </Button>
         )}

@@ -5,6 +5,18 @@ import { Button, Link, List, ListItem, Tooltip } from '../src';
 
 const legacyPreviousversions = [
   {
+    link: 'https://uikit.wfp.org/legacy-docs/1.20.14/index.html',
+    title: 'v1.20.14',
+  },
+  {
+    link: 'https://uikit.wfp.org/legacy-docs/1.20.11/index.html',
+    title: 'v1.20.11',
+  },
+  {
+    link: 'https://uikit.wfp.org/legacy-docs/1.20.10/index.html',
+    title: 'v1.20.10',
+  },
+  {
     link: 'https://uikit.wfp.org/legacy-docs/1.20.3/index.html',
     title: 'v1.20.3',
   },
@@ -53,16 +65,14 @@ export function StorybookLogo() {
           </List>
         }
         noPadding
-        trigger="click"
-      >
+        trigger="click">
         <span
           style={{
             fontWeight: '400',
             fontSize: '0.85em',
             color: 'grey',
             marginLeft: '0.5em',
-          }}
-        >
+          }}>
           v{process.env.STORYBOOK_NPM_VERSION}
         </span>
       </Tooltip>
