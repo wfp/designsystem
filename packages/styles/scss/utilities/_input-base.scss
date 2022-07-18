@@ -19,6 +19,8 @@ $input-border-radius: 0px;
   padding: 0 $spacing-03;
   color: $text-primary;
   appearance: none;
+  //TODO: dynamic font-size
+  font-size: 1em;
   background-color: $field;
   order: 2;
   border: $input-border;

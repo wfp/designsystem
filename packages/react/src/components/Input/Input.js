@@ -124,7 +124,7 @@ const Input = ({
         {addonBefore && (
           <div className={`${prefix}--input-addon-before`}>{addonBefore}</div>
         )}
-        {React.isValidElement(children) ? children : children(elementProps)}
+        {typeof children === 'function' ? children(elementProps) : children}
         {addonAfter && (
           <div className={`${prefix}--input-addon-after`}>{addonAfter}</div>
         )}
