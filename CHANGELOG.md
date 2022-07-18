@@ -1,3 +1,59 @@
+# [1.21.0](https://github.com/wfp/ui/compare/v1.20.16...v1.21.0) (2022-07-13)
+
+
+### Bug Fixes
+
+* **grid:** added a mixin to do span calculations ([0bcc480](https://github.com/wfp/ui/commit/0bcc48090e5e4c2c13a0c02ded78a685b2e0fe79))
+* **Grid:** added another proptype feature grow to grid layout ([3439e33](https://github.com/wfp/ui/commit/3439e333b5587805fa691038855c711db6fe013c))
+
+
+### Features
+
+* **grid:** added justify and align prop and functionality to grid layout ([02f92b2](https://github.com/wfp/ui/commit/02f92b216d28cd8a4f0a0da25f1d6a947950a8d0))
+* **gridLayout:** implementing a grid layout feature ([cdf3fc4](https://github.com/wfp/ui/commit/cdf3fc48639edaa4298509d99e932742d98bcaa7))
+
+## [1.20.16](https://github.com/wfp/ui/compare/v1.20.15...v1.20.16) (2022-07-13)
+
+
+### Bug Fixes
+
+* **Empty:** added ReactNode type to icon prop ([b7698e5](https://github.com/wfp/ui/commit/b7698e532e0850cfa5235dc457dd02fac7d7472d))
+
+## [1.20.15](https://github.com/wfp/ui/compare/v1.20.14...v1.20.15) (2022-07-12)
+
+
+### Bug Fixes
+
+* Added 'React.ReactNode' type to 'icon' prop of EmptyProps. ([e53308f](https://github.com/wfp/ui/commit/e53308f32ccaa51d94fbdd846aa554d25756d3c8))
+
+## [1.20.14](https://github.com/wfp/ui/compare/v1.20.13...v1.20.14) (2022-06-10)
+
+
+### Bug Fixes
+
+* **typescript:** type definition fixes ([d3f5575](https://github.com/wfp/ui/commit/d3f5575f4bed5a2718b9ebc34faa843413c7bad4))
+
+## [1.20.13](https://github.com/wfp/ui/compare/v1.20.12...v1.20.13) (2022-05-30)
+
+
+### Bug Fixes
+
+* **typescript:** bug fixes with proper type definitions ([3b47ad9](https://github.com/wfp/ui/commit/3b47ad9ef643b30894b2c9bfc8af3031b876a43f))
+
+## [1.20.12](https://github.com/wfp/ui/compare/v1.20.11...v1.20.12) (2022-05-30)
+
+
+### Bug Fixes
+
+* **components:** typescript declaration bug fixes and proper Proptypes ([983ca60](https://github.com/wfp/ui/commit/983ca60aca09e8df1e24665fc69024764d07e009))
+
+## [1.20.11](https://github.com/wfp/ui/compare/v1.20.10...v1.20.11) (2022-04-04)
+
+
+### Bug Fixes
+
+* **NumberInput:** NumberInput ttype definition covering both number and string for step prop [#513](https://github.com/wfp/ui/issues/513) ([95dc162](https://github.com/wfp/ui/commit/95dc1621cd50352aad38c11f26071b288cad9b7d))
+
 ## [1.20.10](https://github.com/wfp/ui/compare/v1.20.9...v1.20.10) (2022-03-08)
 
 

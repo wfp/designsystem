@@ -125,6 +125,8 @@ $deprecations--message: 'Deprecated code was found, this code will be removed be
 @import '../../components/SecondaryNavigation/secondary-navigation';
 @import '../../components/Footer/footer';
 @import '../../components/AnchorNavigation/anchor-navigation';
+@import '../../components/Grid/grid';
+@import '../../components/Col/col';
 /*@import '../../components/fab/fab'; */
 
 // Cycle through all the deprecation reasons, if any exist, that have been

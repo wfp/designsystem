@@ -17,15 +17,3 @@ export const Regular = (args) => <Tag {...args}></Tag>;
 Regular.args = {
   children: 'Text',
 };
-
-const description = `
-You can customize the content by using \`BannerNavigation\`.
-`;
-
-Regular.story = {
-  parameters: {
-    docs: {
-      storyDescription: description,
-    },
-  },
-};

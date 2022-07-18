@@ -1,0 +1,46 @@
+//-----------------------------
+// Grid.col
+//-----------------------------
+
+@import '../../globals/scss/colors';
+@import '../../globals/scss/vars';
+@import '../../globals/scss/layout';
+@import '../../globals/scss/typography';
+@import '../../globals/scss/helper-mixins';
+@import '@carbon/import-once/scss/import-once';
+@import '../../globals/scss/css--reset';
+
+@include exports('grid-col') {
+  .#{$prefix}--grid-col {
+    height: 100%;
+    box-sizing: border-box;
+    -webkit-box-flex: 0;
+  }
+
+  @for $i from 1 through 12 {
+    .#{$prefix}--col--span-#{$i},
+    .#{$prefix}--col--lg--#{$i} {
+      @include column-span($i);
+    }
+  }
+
+  // 8 columns on small(768) screen
+  @include breakpointMax(bp--sm--major) {
+    @for $i from 1 through 8 {
+      .#{$prefix}--col--span-#{$i},
+      .#{$prefix}--col--lg--#{$i} {
+        @include column-span($i, 8);
+      }
+    }
+  }
+
+  // 8 columns on small(500) screen
+  @include breakpointMax(bp--xs--major) {
+    @for $i from 1 through 4 {
+      .#{$prefix}--col--span-#{$i},
+      .#{$prefix}--col--lg--#{$i} {
+        @include column-span($i, 4);
+      }
+    }
+  }
+}

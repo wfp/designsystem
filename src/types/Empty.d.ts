@@ -11,5 +11,5 @@ declare namespace Empty {
   }
 }
 
-declare class Empty extends React.Component<Empty.EmptyProps>{ }
-export = Empty
+declare class Empty extends React.Component<Empty.EmptyProps> {}
+export = Empty;

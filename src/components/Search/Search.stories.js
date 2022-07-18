@@ -46,18 +46,6 @@ RegularWithButton.story = {
   },
 };
 
-const description = `
-You can customize the content by using \`BannerNavigation\`.
-`;
-
-Regular.story = {
-  parameters: {
-    docs: {
-      storyDescription: description,
-    },
-  },
-};
-
 export const SmallSearch = (args) => <Search {...args} />;
 
 SmallSearch.args = {

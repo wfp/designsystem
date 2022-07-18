@@ -11,7 +11,8 @@
 //----------------------------------------------
 // Misc
 // ---------------------------------------------
-
+@use 'sass:math';
+@use 'sass:list';
 @import 'feature-flags';
 @import 'vars';
 @import 'css--reset';
@@ -170,6 +171,16 @@
 
   &::-moz-focus-inner {
     border: 0;
+  }
+}
+
+@mixin column-span($span, $columns: false) {
+  flex: 0 0 math.percentage(calc($span / 12));
+  max-width: math.percentage(calc($span / 12));
+
+  @if ($columns) {
+    flex: 0 0 math.percentage((calc($span / $columns)));
+    max-width: math.percentage((calc($span / $columns)));
   }
 }
 

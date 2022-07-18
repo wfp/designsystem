@@ -87,8 +87,7 @@ const Button = ({
       disabled={disabled}
       type={type}
       onClick={onClickAnimation}
-      ref={other.inputref}
-    >
+      ref={other.inputRef}>
       {iconReverse && buttonImage}
       {children}
       {!iconReverse && buttonImage}
@@ -102,8 +101,7 @@ const Button = ({
       href={href}
       role="button"
       onClick={onClickAnimation}
-      ref={other.inputref}
-    >
+      ref={other.inputRef}>
       {children}
       {buttonImage}
     </a>

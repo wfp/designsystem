@@ -310,6 +310,7 @@ export default class Pagination extends Component {
             className={backButtonClasses}
             onClick={this.decrementPage}
             disabled={this.props.disabled || statePage === 1}
+            type="button"
           >
             <Icon
               className="wfp--pagination__button-icon"
@@ -335,6 +336,7 @@ export default class Pagination extends Component {
             disabled={
               this.props.disabled || statePage === totalPages || isLastPage
             }
+            type="button"
           >
             <Icon
               className="wfp--pagination__button-icon"

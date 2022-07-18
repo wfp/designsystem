@@ -138,15 +138,13 @@ const NumberInput = React.forwardRef((props, ref) => {
             <button
               className={`${prefix}--number__control-btn up-icon`}
               {...buttonProps}
-              onClick={(evt) => handleArrowClick(evt, 'up')}
-            >
+              onClick={(evt) => handleArrowClick(evt, 'up')}>
               +
             </button>
             <button
               className={`${prefix}--number__control-btn down-icon`}
               {...buttonProps}
-              onClick={(evt) => handleArrowClick(evt, 'down')}
-            >
+              onClick={(evt) => handleArrowClick(evt, 'down')}>
               −
             </button>
             <input
@@ -220,7 +218,7 @@ NumberInput.propTypes = {
   /**
    * Specify how much the valus should increase/decrease upon clicking on up/down button
    */
-  step: PropTypes.number,
+  step: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
 
   /**
    * Specify the value of the input, if undefined or null the value is empty

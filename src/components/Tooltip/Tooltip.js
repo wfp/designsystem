@@ -104,8 +104,7 @@ const Tooltip = ({
       {visible && (
         <div
           ref={setTooltipRef}
-          {...getTooltipProps({ className: classNames })}
-        >
+          {...getTooltipProps({ className: classNames })}>
           {typeof content === 'function'
             ? content({ setVisibility, visibilityChange })
             : content}
@@ -125,7 +124,7 @@ Tooltip.propTypes = {
   /**
    * Provide the content for the tooltip
    */
-  content: PropTypes.node,
+  content: PropTypes.oneOfType([PropTypes.node, PropTypes.func]),
 
   /**
    * Provide a dark styled tooltip
