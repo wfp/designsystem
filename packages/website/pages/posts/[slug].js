@@ -15,6 +15,9 @@ import { MDXRemote } from 'next-mdx-remote';
 import { Wrapper } from '@un/react';
 import Image from 'next/image';
 import rehypeImgSize from 'rehype-img-size';
+import LinkBack from '../../components/LinkBack';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowLeft } from '@fortawesome/pro-solid-svg-icons';
 //import markdownToHtml from '../../lib/markdownToHtml';
 
 export default function Post({ post, morePosts, preview }) {
@@ -30,6 +33,18 @@ export default function Post({ post, morePosts, preview }) {
         ) : (
           <>
             <article>
+              {!router?.query?.app && (
+                <LinkBack
+                  href={process.env.NEXT_PUBLIC_BLOG_FOLDER}
+                  //hasBack={hasBack}
+                >
+                  <a className={styles.returnLinkTop}>
+                    <FontAwesomeIcon icon={faArrowLeft} />
+                    Back to overview
+                  </a>
+                </LinkBack>
+              )}
+
               {/*<Head>
                 <title>{post.title}</title> 
                 <meta property="og:image" content={post.ogImage?.url} />

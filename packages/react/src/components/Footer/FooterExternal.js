@@ -154,7 +154,7 @@ const FooterMetaLink = ({ className, href, children }) => {
   );
   return (
     <li className={wrapperClasses}>
-      <Link href={href}>{children}</Link>
+      <a href={href}>{children}</a>
     </li>
   );
 };

@@ -80,6 +80,10 @@
     margin-top: $spacing-08;
   }
 
+  p + iframe {
+    margin-top: $spacing-06;
+  }
+
   ul + h2 {
     margin-top: $spacing-07;
   }
@@ -245,6 +249,7 @@
   }
 
   .#{$prefix}--story__a {
+    color: $link-primary;
     &:hover {
       text-decoration: underline;
     }

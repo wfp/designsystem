@@ -120,8 +120,8 @@
 }
 
 .multimedia {
-  min-width: 8em;
-  max-width: 8em;
+  min-width: 12em;
+  max-width: 12em;
 
   @include breakpoint-down(md) {
     min-width: 5em;

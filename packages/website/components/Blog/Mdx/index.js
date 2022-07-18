@@ -11,6 +11,7 @@ import Contact from './Contact';
 import CodeBlock from './CodeBlock';
 import UsbcConnector from './Buttons/UsbcConnector';
 import ResetButton from './Buttons/ResetButton';
+import Logos from './Logos';
 import { MdxComponents, BlockNotification } from '@un/react';
 
 const { code, pre, ...mdxComponentsWithoutCode } = MdxComponents;
@@ -27,6 +28,7 @@ const components = {
   BigButton,
   BlockNotification,
   ResetButton,
+  Logos,
   UsbcConnector,
   ColorLed,
   Tray,

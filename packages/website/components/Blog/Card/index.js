@@ -9,11 +9,10 @@ import { faArrowRight } from '@fortawesome/pro-solid-svg-icons';
 import Image from 'next/image';
 
 const CardWrapper = ({ article, multimedia, detail = 'posts' }) => {
-  const src = article.ogImage.url;
-  console.log('article', article);
+  const src = article?.ogImage?.url;
+  if (!src) return null;
 
   const srcElement = require(`../../../_posts/${src}`);
-
   return (
     <Link href={`/${detail}/${article.slug}`}>
       <a className={styles.card}>
@@ -22,7 +21,11 @@ const CardWrapper = ({ article, multimedia, detail = 'posts' }) => {
         ) : (
           <MultimediaElement src={src} className={styles.multimedia} />
         )*/}
-        {src && <Image src={srcElement} className={styles.multimedia} />}
+        {src && (
+          <div className={styles.multimedia}>
+            <Image src={srcElement} sizes={'(max-width: 710px) 40vw, 300px'} />
+          </div>
+        )}
 
         <span className={styles.body}>
           <p className={styles.title}>{article.title}</p>

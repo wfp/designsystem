@@ -4,6 +4,7 @@ import React from 'react';
 import styles from './styles.module.scss';
 import { useTranslation } from 'next-i18next';
 import { Link, LinksColumn, FooterExternal, FooterMetaLink } from '@un/react';
+import NextLink from 'next/link';
 
 export default function FooterWrapper() {
   return (
@@ -11,44 +12,30 @@ export default function FooterWrapper() {
       className={styles.footer}
       metaLinks={
         <>
-          <FooterMetaLink href="hh.com">First legal link</FooterMetaLink>
-          <FooterMetaLink href="hh.com">Second legal link</FooterMetaLink>
+          <FooterMetaLink href="https://www.wfp.org/contact" target="_blank">
+            Contact
+          </FooterMetaLink>
         </>
       }>
       <>
-        <LinksColumn title="Title">
+        <LinksColumn title="UN Core">
           <li className={`wfp--links-column-link`}>
-            <Link>First link</Link>
+            <NextLink href="/posts">
+              <Link>Documentation</Link>
+            </NextLink>
           </li>
           <li className={`wfp--links-column-link`}>
-            <Link>Second link</Link>
-          </li>
-          <li className={`wfp--links-column-link`}>
-            <Link>Third link</Link>
-          </li>
-          <li className={`wfp--links-column-link`}>
-            <Link>Fourth link</Link>
-          </li>
-          <li className={`wfp--links-column-link`}>
-            <Link>Fifth link</Link>
+            <Link href="#">Storybook</Link>
           </li>
         </LinksColumn>
-
-        <LinksColumn title="Title 2">
+        <LinksColumn title="UN Core">
           <li className={`wfp--links-column-link`}>
-            <Link>First link 2</Link>
+            <Link href="https://github.com/un-core/designsystem">
+              GitHub Repository
+            </Link>
           </li>
           <li className={`wfp--links-column-link`}>
-            <Link>Second link 2</Link>
-          </li>
-          <li className={`wfp--links-column-link`}>
-            <Link>Third link 2</Link>
-          </li>
-          <li className={`wfp--links-column-link`}>
-            <Link>Fourth link 2</Link>
-          </li>
-          <li className={`wfp--links-column-link`}>
-            <Link>Fifth link 2</Link>
+            <Link href="#">Figma library</Link>
           </li>
         </LinksColumn>
       </>
