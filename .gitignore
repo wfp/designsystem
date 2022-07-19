@@ -1,7 +1,6 @@
 # Ignore generated folders
 node_modules
 es
-lib
 umd
 next
 source

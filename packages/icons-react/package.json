@@ -37,9 +37,11 @@
     "react": ">=16"
   },
   "dependencies": {
+
     "prop-types": "^15.7.2"
   },
   "devDependencies": {
+    "@un/icons-core": "^0.0.10",
     "@un/icons": "^10.34.29"
   },
   "sideEffects": false,
