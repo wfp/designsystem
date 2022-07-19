@@ -2,19 +2,29 @@ import path from 'path';
 import fs from 'fs';
 import read from 'fs-readdir-recursive';
 import rollup from './rollup';
-
+import del from 'del';
 const fsPromises = fs.promises;
 
-export function convertFolder(srcFolder, distFolder, convertFile, config) {
+export async function convertFolder(
+  srcFolder,
+  distFolder,
+  convertFile,
+  config
+) {
+  const deletedDirectoryPaths = del.sync([distFolder]);
+  fs.mkdirSync(distFolder, { recursive: true });
+
   const files = read(srcFolder);
-  console.log('convetFolder', srcFolder, distFolder);
-  files.forEach((fileName) => {
-    convertFile(
-      path.join(srcFolder, fileName),
-      path.join(distFolder, `${path.parse(fileName).name}`),
-      config
-    );
-  });
+
+  await Promise.all(
+    files.map(async (file) => {
+      await convertFile(
+        path.join(srcFolder, file),
+        path.join(distFolder, `${path.parse(file).name}`),
+        config
+      );
+    })
+  );
 
   function defaultIndexTemplate(filePaths) {
     const exportEntries = filePaths.map((filePath) => {
@@ -39,8 +49,7 @@ export function convertFolder(srcFolder, distFolder, convertFile, config) {
       console.error('Error occured while reading directory!', err);
     }
   }
-
-  writeIndex(distIndex);
+  await writeIndex(distIndex);
 
   console.log(`Generated index: ${distIndex}`);
 
