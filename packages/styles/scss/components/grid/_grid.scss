@@ -1,0 +1,80 @@
+//-----------------------------
+// Grid
+//-----------------------------
+
+// @use 'vars' as *;
+// @use 'mixins' as *;
+// @use '../../config' as *;
+// @use '../../spacing' as *;
+// @use '../../theme' as *;
+// @use '../../type' as *;
+@use "sass:math";
+@use '../../grid' as *;
+@use '../../breakpoint' as *;
+@use '../../config' as *;
+@use '../../spacing' as *;
+// @use '../../utilities/focus-outline';
+// @use '../../utilities/high-contrast-mode' as *;
+// @use '../../utilities/skeleton' as *;
+// @use '../../utilities/rtl' as *;
+// @use '../../utilities/tooltip' as *;
+// @use '../../utilities/visually-hidden' as *;
+
+@mixin grid {
+  .#{$prefix}--grid {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    -webkit-box-align: stretch;
+    align-items: stretch;
+  }
+  .#{$prefix}--grid--grow {
+    .#{$prefix}--grid-col {
+      flex-grow: 1;
+      max-width: unset;
+    }
+  }
+
+  .#{$prefix}--grid--spacing-none {
+    margin: 0;
+    > * {
+      padding: 0;
+    }
+  }
+
+  .#{$prefix}--grid--spacing-xs {
+    margin: -$spacing-02;
+    > * {
+      padding: $spacing-02;
+    }
+  }
+  .#{$prefix}--grid--spacing-sm {
+    margin: -0.375rem;
+    > * {
+      padding: 0.375rem;
+    }
+  }
+
+  .#{$prefix}--grid--spacing-md {
+    margin: -$spacing-03;
+    > * {
+      padding: $spacing-03;
+    }
+  }
+
+  .#{$prefix}--grid--spacing-lg {
+    margin: -$spacing-04;
+    > * {
+      padding: $spacing-04;
+    }
+  }
+
+  .#{$prefix}--grid--spacing-xl {
+    margin: -$spacing-05;
+    > * {
+      padding: $spacing-05;
+    }
+  }
+}
