@@ -16,9 +16,15 @@ export async function convertFolder(
 
   const files = read(srcFolder);
 
+  /*const results = await Promise.all(
+    filteredCalendarIntakeReminder.map(async (e) => {
+      return addMessages(e, agenda);
+    })
+  );*/
+
   await Promise.all(
     files.map(async (file) => {
-      await convertFile(
+      return convertFile(
         path.join(srcFolder, file),
         path.join(distFolder, `${path.parse(file).name}`),
         config
@@ -26,9 +32,14 @@ export async function convertFolder(
     })
   );
 
+  const exportEntries = read(distFolder).map((filePath) => {
+    console.log(filePath);
+  });
+
   function defaultIndexTemplate(filePaths) {
     const exportEntries = filePaths.map((filePath) => {
       const basename = path.basename(filePath, path.extname(filePath));
+      //console.log(filePath);
 
       const exportName = /^\d/.test(basename) ? `Svg${basename}` : basename;
       if (basename !== 'index')

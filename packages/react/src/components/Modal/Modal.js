@@ -354,6 +354,7 @@ class Modal extends Component {
       <button
         className={`${prefix}--modal-close`}
         type="button"
+        id="closeButton"
         onClick={this.handleCloseButton}
         ref={this.button}>
         <Close
@@ -391,6 +392,7 @@ class Modal extends Component {
                   <Button
                     kind={danger ? 'tertiary' : 'secondary'}
                     disabled={secondaryButtonDisabled}
+                    id="secondaryButton"
                     onClick={onSecondaryButtonClick}>
                     {secondaryButtonText}
                   </Button>
@@ -399,7 +401,8 @@ class Modal extends Component {
                   kind={danger ? 'danger--primary' : 'primary'}
                   disabled={primaryButtonDisabled}
                   onClick={onRequestSubmit}
-                  inputref={this.button}>
+                  id="primaryButton"
+                  ref={this.button}>
                   {primaryButtonText}
                 </Button>
               </div>
