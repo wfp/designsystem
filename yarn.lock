@@ -8008,6 +8008,13 @@
     "@typescript-eslint/types" "5.30.5"
     eslint-visitor-keys "^3.3.0"
 
+"@un/icons-react@^10.34.31":
+  version "10.34.31"
+  resolved "https://registry.yarnpkg.com/@un/icons-react/-/icons-react-10.34.31.tgz#9351f9b732ebaea996736f18e14dc9db1420bdde"
+  integrity sha512-G9eZsp2GnZaepK2fugjJlHOOTLZxhdAv4gQN6Blwa8XBrVv1Ss3HZLO9K1nWtk/ulbVboNUI7PDukoOHkn1i5g==
+  dependencies:
+    prop-types "^15.7.2"
+
 "@un/layout@^10.26.14":
   version "10.26.14"
   resolved "https://registry.yarnpkg.com/@un/layout/-/layout-10.26.14.tgz#eda408d766820144d66dd8fb2ad2eef297cc344d"

@@ -29,7 +29,7 @@ export default function Hero() {
         accessible, and robust design systems.
       </h2>
       <div className={styles.buttons}>
-        <Link href="#">
+        <Link href="./main">
           <Button>Get started</Button>
         </Link>
         <Link href="./posts">
