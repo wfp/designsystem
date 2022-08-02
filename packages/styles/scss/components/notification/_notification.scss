@@ -459,9 +459,10 @@
       .#{$prefix}--btn--tertiary {
         //background: rgba(255, 255, 255, 0.2);
       }
-      padding: 0 0 0.8em 0.8em;
+      padding: 0 0 0.8em 0;
       @include breakpoint(md) {
         padding-top: 0.8em;
+        padding-left: 0.8em;
         align-items: center;
       }
       /*padding: 0em 0.8em 0.8em 0.8em;
