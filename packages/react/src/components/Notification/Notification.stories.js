@@ -227,6 +227,19 @@ export const BlockNotificationElement = (args) => (
     <BlockNotification
       advancedActions
       {...args}
+      subtitle="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
+      kind="info"
+      icon={false}
+      actions={
+        <>
+          <Button>Accept</Button>
+          <Button kind="tertiary">Reject</Button>
+        </>
+      }
+    />
+    <BlockNotification
+      advancedActions
+      {...args}
       kind="info"
       icon={false}
       actions={
@@ -240,11 +253,7 @@ export const BlockNotificationElement = (args) => (
       {...args}
       kind="warning"
       icon={<div>Icon</div>}
-      actions={
-        <Button small style={{ margin: 'auto' }}>
-          {'Action'}
-        </Button>
-      }
+      actions={<Button small>{'Action'}</Button>}
     />
   </>
 );

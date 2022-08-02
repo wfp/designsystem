@@ -234,7 +234,7 @@
 
       .#{$prefix}--inline-notification__icon {
         flex-shrink: 0;
-        margin-top: 0.875rem;
+        margin-top: 0.9475rem;
         margin-right: 1rem;
         margin-bottom: 0.875rem;
       }
@@ -420,14 +420,36 @@
 
   .#{$prefix}--block-notification.#{$prefix}--inline-notification {
     max-width: inherit;
+
+    .#{$prefix}--inline-notification__details {
+      display: grid;
+      // grid-template-columns: min-content 0.9fr;
+      grid-template-columns: 0fr 1fr;
+      grid-template-areas:
+        'icon name'
+        'icon subject';
+
+      @include breakpoint(md) {
+        grid-template-columns: 0fr 1fr 0fr;
+        grid-template-areas: 'icon name subject';
+      }
+    }
+
+    .wfp--inline-notification__icon  {
+      grid-area: icon;
+    }
+
     @include breakpoint(md) {
       max-width: inherit;
     }
     width: 100%;
     .#{$prefix}--inline-notification__text-wrapper {
       flex-direction: column;
+      grid-area: name;
     }
     .#{$prefix}--inline-notification__actions-wrapper {
+      grid-area: subject;
+      display: flex;
       > * {
         margin-left: 0.5em;
       }
@@ -437,7 +459,11 @@
       .#{$prefix}--btn--tertiary {
         //background: rgba(255, 255, 255, 0.2);
       }
-      padding: 0.8em 0.8em 0.8em 0;
+      padding: 0 0 0.8em 0.8em;
+      @include breakpoint(md) {
+        padding-top: 0.8em;
+        align-items: center;
+      }
       /*padding: 0em 0.8em 0.8em 0.8em;
       @include breakpoint(md) {
         padding: 0.8em 0.8em 0.8em 0;
