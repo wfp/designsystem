@@ -1,3 +1,10 @@
+## [1.21.1](https://github.com/wfp/ui/compare/v1.21.0...v1.21.1) (2022-08-03)
+
+
+### Bug Fixes
+
+* **StepNavigation:** propTypes added and fixed ([8478b65](https://github.com/wfp/ui/commit/8478b65bf0eb75b589ae39d85d4300cb8e0391ae))
+
 # [1.21.0](https://github.com/wfp/ui/compare/v1.20.16...v1.21.0) (2022-07-13)
 
 
