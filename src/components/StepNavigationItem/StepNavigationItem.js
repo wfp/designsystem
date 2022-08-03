@@ -27,7 +27,7 @@ export default class StepNavigationItem extends React.Component {
      *
      */
     status: PropTypes.oneOf([
-      'not-stated',
+      'not-started',
       'warning',
       'complete',
       'skip',
@@ -58,6 +58,10 @@ export default class StepNavigationItem extends React.Component {
      * On click handler to change the currently active item.
      **/
     onClick: PropTypes.func.isRequired,
+    /**
+     * The page number of the step.
+     **/
+    page: PropTypes.number.isRequired,
     /**
      * Optionally provide an index for the currently selected <Tab>
      */
@@ -130,9 +134,8 @@ export default class StepNavigationItem extends React.Component {
             onClick(evt);
           }
         }}
-        role="presentation"
-      >
-        {renderAnchor ? (
+        role="presentation">
+        {typeof renderAnchor !== 'undefined' ? (
           renderAnchor(anchorProps)
         ) : (
           <React.Fragment>
@@ -154,8 +157,7 @@ export default class StepNavigationItem extends React.Component {
               </span>
               {helperText && (
                 <span
-                  className={`${prefix}--step-navigation__nav-item__helper-text`}
-                >
+                  className={`${prefix}--step-navigation__nav-item__helper-text`}>
                   {helperText}
                 </span>
               )}
