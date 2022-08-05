@@ -105,7 +105,7 @@ SingleDatePickerInput.propTypes = {
   /**
    * Provide the SingleDatePicker as a component
    */
-  datePicker: PropTypes.oneOfType([PropTypes.func, PropTypes.object]),
+  datePicker: PropTypes.oneOfType([PropTypes.node, PropTypes.func, PropTypes.object]),
 
   onFocus: PropTypes.func,
 
