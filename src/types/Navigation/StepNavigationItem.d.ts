@@ -7,7 +7,8 @@ declare namespace StepNavigationItem  {
     label?: string
     role: string
     selectedPage: number
-    renderAnchor: () => {}
+    page: number
+    renderAnchor?: () => {}
   }
 }
 
