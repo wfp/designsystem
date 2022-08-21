@@ -40,9 +40,9 @@ $input-border: 1px solid $field-border; // TODO
     appearance: none;
     background-color: $field;
     order: 2;
+    font-size: $typography-body-copy-16px-regular-font-size;
     border: $input-border;
     border-radius: $input-border-radius;
-
     &::-webkit-input-placeholder {
       @include placeholder-colors;
     }

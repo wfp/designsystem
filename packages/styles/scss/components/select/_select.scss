@@ -49,6 +49,7 @@ $input-border: 1px solid $field-border;
     order: 2;
     border-radius: 0;
     cursor: pointer;
+    font-size: $typography-body-copy-16px-regular-font-size;
 
     // Hide default select arrow in IE10+
     &::-ms-expand {
