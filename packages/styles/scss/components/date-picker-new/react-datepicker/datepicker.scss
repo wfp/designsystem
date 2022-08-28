@@ -1,3 +1,8 @@
+@use '../../../colors' as *;
+@use '../../../config' as *;
+@use '../../../motion' as *;
+@use '../../../theme' as *;
+
 @import 'variables.scss';
 @import 'mixins.scss';
 
@@ -9,7 +14,6 @@
 }
 
 .react-datepicker {
-  //font-family: $datepicker__font-family;
   font-size: $datepicker__font-size;
   background-color: #fff;
   color: $datepicker__text-color;
@@ -403,7 +407,7 @@
   &--in-range {
     border-radius: $datepicker__border-radius;
     background-color: $datepicker__selected-color;
-    color: #fff;
+    color: $text-inverse;
 
     &:hover {
       //background-color: darken($datepicker__selected-color, 5%);
@@ -439,7 +443,7 @@
   &--highlighted {
     border-radius: $datepicker__border-radius;
     background-color: $datepicker__highlighted-color;
-    color: #fff;
+    color: $text-inverse;
 
     &:hover {
       background-color: darken($datepicker__highlighted-color, 5%);
@@ -459,17 +463,17 @@
   &--in-range {
     border-radius: $datepicker__border-radius;
     background-color: $datepicker__selected-color;
-    color: #fff;
+    color: $text-inverse;
 
     &:hover {
-      //background-color: darken($datepicker__selected-color, 5%);
+      background-color: $datepicker__selected-color; //darken($datepicker__selected-color, 5%);
     }
   }
 
   &--keyboard-selected {
     border-radius: $datepicker__border-radius;
-    //background-color: lighten($datepicker__selected-color, 10%);
-    color: #fff;
+    background-color: $datepicker__selected-color; //lighten($datepicker__selected-color, 10%);
+    color: $text-inverse;
 
     &:hover {
       //background-color: darken($datepicker__selected-color, 5%);
@@ -477,7 +481,8 @@
   }
 
   &--in-selecting-range:not(&--in-range) {
-    //background-color: rgba($datepicker__selected-color, 0.5);
+    background-color: $interactive;
+    opacity: 0.5; //blue//rgba($datepicker__selected-color, 0.5);
   }
 
   &--in-range:not(&--in-selecting-range) {
@@ -624,7 +629,7 @@
   &::after {
     cursor: pointer;
     background-color: $datepicker__selected-color;
-    color: #fff;
+    color: $text-inverse;
     border-radius: 50%;
     height: 16px;
     width: 16px;

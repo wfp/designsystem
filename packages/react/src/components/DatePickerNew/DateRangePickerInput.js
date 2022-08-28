@@ -9,6 +9,8 @@ export function DateRangePickerInput({
   endDate,
   setStartDate,
   setEndDate,
+  fromProps = {},
+  toProps = {},
 }) {
   const { prefix } = useSettings();
   return (
@@ -22,6 +24,7 @@ export function DateRangePickerInput({
           startDate={startDate}
           endDate={endDate}
           wrapperClassName={`${prefix}--date-picker__wrapper`}
+          {...fromProps}
         />
         <CalendarAltRegular className={`${prefix}--date-ranger-picker__icon`} />
       </div>
@@ -36,6 +39,7 @@ export function DateRangePickerInput({
           endDate={endDate}
           minDate={startDate}
           wrapperClassName={`${prefix}--date-picker__wrapper`}
+          {...toProps}
         />
         <CalendarAltRegular className={`${prefix}--date-ranger-picker__icon`} />
       </div>

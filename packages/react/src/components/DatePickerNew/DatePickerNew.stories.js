@@ -24,7 +24,9 @@ export default {
 };
 
 export const SingleDatePickerDefault = (args) => (
-  <SingleDatePickerInput {...args} />
+  <div style={{ height: '300px' }}>
+    <SingleDatePickerInput {...args} />
+  </div>
 );
 SingleDatePickerDefault.args = {
   datePicker: SingleDatePicker,
@@ -121,17 +123,23 @@ export const DatePickerHookForm = (args) => {
 };
 
 export const DateRangePickerDefault = (args) => {
-  const [startDate, setStartDate] = useState(new Date('2022/02/08'));
-  const [endDate, setEndDate] = useState(new Date('2022/02/10'));
-
+  const [startDate, setStartDate] = useState(new Date());
+  const [endDate, setEndDate] = useState(new Date());
+  const date = new Date();
   return (
-    <DateRangePickerInput
-      {...args}
-      setStartDate={setStartDate}
-      startDate={startDate}
-      setEndDate={setEndDate}
-      endDate={endDate}
-    />
+    <div style={{ height: '300px' }}>
+      <DateRangePickerInput
+        {...args}
+        setStartDate={setStartDate}
+        startDate={startDate}
+        setEndDate={setEndDate}
+        endDate={endDate}
+        fromProps={{
+          minDate: new Date(),
+          maxDate: new Date(date.setMonth(date.getMonth() + 2)),
+        }}
+      />
+    </div>
   );
 };
 DateRangePickerDefault.args = {
