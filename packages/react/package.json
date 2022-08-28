@@ -1,6 +1,6 @@
 {
   "name": "@un/react",
-  "version": "1.18.50",
+  "version": "1.18.51",
   "description": "WFP UI Kit",
   "license": "Apache-2",
   "main": "lib/index.js",
