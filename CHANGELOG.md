@@ -1,3 +1,11 @@
+## [1.22.1](https://github.com/wfp/ui/compare/v1.22.0...v1.22.1) (2022-08-30)
+
+
+### Bug Fixes
+
+* **StepNavigationItem:** added status typescript interface ([9ff6446](https://github.com/wfp/ui/commit/9ff64463e8065383a22dde1544807e7e65dcd6a6))
+* **StepNavigationItem:** added typescript interface ([9e49ad1](https://github.com/wfp/ui/commit/9e49ad1fe2c006d5e6dcae4bfe20e11e64177450))
+
 # [1.22.0](https://github.com/wfp/ui/compare/v1.21.1...v1.22.0) (2022-08-06)
 
 
