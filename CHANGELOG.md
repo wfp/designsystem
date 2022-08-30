@@ -1,3 +1,23 @@
+# [1.22.0](https://github.com/wfp/ui/compare/v1.21.1...v1.22.0) (2022-08-06)
+
+
+### Bug Fixes
+
+* unexpected value in the types import ([45497e3](https://github.com/wfp/ui/commit/45497e31fb9070cbb89cb5f5475e8a97cc1a00ce))
+* update StepNavigationItem interface, resolves [#546](https://github.com/wfp/ui/issues/546) ([78a4f99](https://github.com/wfp/ui/commit/78a4f990ab0aef771ff3d72ee30d6fe8cb87a948))
+
+
+### Features
+
+* extend SingleDatePickerInput interface and propTypes, resolves [#548](https://github.com/wfp/ui/issues/548) ([8550f54](https://github.com/wfp/ui/commit/8550f54e95e2eb231257ded15b0a380b45c9795f))
+
+## [1.21.1](https://github.com/wfp/ui/compare/v1.21.0...v1.21.1) (2022-08-03)
+
+
+### Bug Fixes
+
+* **StepNavigation:** propTypes added and fixed ([8478b65](https://github.com/wfp/ui/commit/8478b65bf0eb75b589ae39d85d4300cb8e0391ae))
+
 # [1.21.0](https://github.com/wfp/ui/compare/v1.20.16...v1.21.0) (2022-07-13)
 
 
