@@ -19,7 +19,7 @@
     "contributors:add": "all-contributors add",
     "contributors:generate": "all-contributors generate",
     "lint": "eslint src",
-    "precommit:legacy": "lint-staged && npm run lint",
+    "precommit": "lint-staged && npm run lint",
     "prettier": "prettier --write \"**/*.{scss,css,js}\"",
     "prettier:staged": "prettier",
     "prettier:diff": "prettier --list-different \"**/*.{scss,css,js}\"",
