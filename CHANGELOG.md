@@ -1,3 +1,10 @@
+## [1.22.2](https://github.com/wfp/ui/compare/v1.22.1...v1.22.2) (2022-09-02)
+
+
+### Bug Fixes
+
+* added missing arguments type for 'onRequestClose' method in Modal.d.ts ([379d4c5](https://github.com/wfp/ui/commit/379d4c5a8e761d2a351c88d49d734e898f945513))
+
 ## [1.22.1](https://github.com/wfp/ui/compare/v1.22.0...v1.22.1) (2022-08-30)
 
 
