@@ -25,7 +25,7 @@ declare namespace Modal {
     inPortal?: boolean;
     wide?: boolean;
     modalFooter?: () => void;
-    onRequestClose?: () => void;
+    onRequestClose?: (evt: any, trigger: string) => void;
     onRequestSubmit?: () => void;
     iconDescription?: string;
     className?: string;
@@ -35,5 +35,5 @@ declare namespace Modal {
   }
 }
 
-declare class Modal extends React.Component<Modal.ModalProps> {}
+declare class Modal extends React.Component<Modal.ModalProps> { }
 export = Modal;
