@@ -1,9 +1,12 @@
 import { transform } from '@svgr/core';
 import fs from 'fs';
+
 import path from 'path';
 import { svgConfig as defaultSvgConfig } from './svgConfig';
 
 import { pascalCase } from 'change-case';
+
+const fsPromises = fs.promises;
 
 export async function jsx(fileName, distName, svgConfig = defaultSvgConfig) {
   const svgCode = fs.readFileSync(fileName, 'utf8');
@@ -20,8 +23,6 @@ export async function jsx(fileName, distName, svgConfig = defaultSvgConfig) {
   }
 
   const output = path.join(path.dirname(distName), name + '.js');
-  fs.writeFile(output, jsCode, function (err) {
-    //console.log(`${fileName} > ${output}`);
-    if (err) return console.log(err);
-  });
+  await fsPromises.writeFile(output, jsCode);
+  return output;
 }

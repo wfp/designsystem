@@ -16,8 +16,8 @@ const ModalWrapper = ({
   buttonTriggerClassName,
   triggerButtonKind,
   disabled,
-  handleSubmit, // eslint-disable-line no-unused-vars
-  shouldCloseAfterSubmit, // eslint-disable-line no-unused-vars
+  handleSubmit = () => {},
+  shouldCloseAfterSubmit = true,
   ...other
 }) => {
   const { prefix } = useSettings();
@@ -38,7 +38,8 @@ const ModalWrapper = ({
   };
 
   const handleOnRequestSubmit = () => {
-    if (handleSubmit && handleSubmit()) {
+    if (handleSubmit) {
+      handleSubmit({ handleClose });
       if (shouldCloseAfterSubmit) {
         handleClose();
       }

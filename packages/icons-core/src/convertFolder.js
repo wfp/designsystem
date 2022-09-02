@@ -2,23 +2,44 @@ import path from 'path';
 import fs from 'fs';
 import read from 'fs-readdir-recursive';
 import rollup from './rollup';
-
+import del from 'del';
 const fsPromises = fs.promises;
 
-export function convertFolder(srcFolder, distFolder, convertFile, config) {
+export async function convertFolder(
+  srcFolder,
+  distFolder,
+  convertFile,
+  config
+) {
+  const deletedDirectoryPaths = del.sync([distFolder]);
+  fs.mkdirSync(distFolder, { recursive: true });
+
   const files = read(srcFolder);
-  console.log('convetFolder', srcFolder, distFolder);
-  files.forEach((fileName) => {
-    convertFile(
-      path.join(srcFolder, fileName),
-      path.join(distFolder, `${path.parse(fileName).name}`),
-      config
-    );
+
+  /*const results = await Promise.all(
+    filteredCalendarIntakeReminder.map(async (e) => {
+      return addMessages(e, agenda);
+    })
+  );*/
+
+  await Promise.all(
+    files.map(async (file) => {
+      return convertFile(
+        path.join(srcFolder, file),
+        path.join(distFolder, `${path.parse(file).name}`),
+        config
+      );
+    })
+  );
+
+  const exportEntries = read(distFolder).map((filePath) => {
+    console.log(filePath);
   });
 
   function defaultIndexTemplate(filePaths) {
     const exportEntries = filePaths.map((filePath) => {
       const basename = path.basename(filePath, path.extname(filePath));
+      //console.log(filePath);
 
       const exportName = /^\d/.test(basename) ? `Svg${basename}` : basename;
       if (basename !== 'index')
@@ -39,8 +60,7 @@ export function convertFolder(srcFolder, distFolder, convertFile, config) {
       console.error('Error occured while reading directory!', err);
     }
   }
-
-  writeIndex(distIndex);
+  await writeIndex(distIndex);
 
   console.log(`Generated index: ${distIndex}`);
 

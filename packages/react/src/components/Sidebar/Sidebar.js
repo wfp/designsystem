@@ -82,14 +82,14 @@ export function SidebarContentHeader({
   ...other
 }) {
   const { prefix } = useSettings();
-  const classes = classNames(
+  const mobileClasses = classNames(
     `${prefix}--sidebar-content-mobile-header`,
     className,
     {}
   );
 
   return (
-    <div className={classes} {...other}>
+    <div className={mobileClasses} {...other}>
       {children}
     </div>
   );
@@ -100,6 +100,10 @@ SidebarContentHeader.propTypes = {
    The children of header of content area
  */
   children: PropTypes.node,
+  /**
+   Additional classname of the SidebarContentHeader
+ */
+  className: PropTypes.string,
 };
 
 export function SidebarContentBody({

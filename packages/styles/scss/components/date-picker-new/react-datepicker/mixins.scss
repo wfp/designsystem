@@ -1,5 +1,10 @@
+@use '../../../colors' as *;
+@use '../../../config' as *;
+@use '../../../motion' as *;
+@use '../../../theme' as *;
+
 %navigation-chevron {
-  border-color: $datepicker__muted-color;
+  border-color: $interactive;
   border-style: solid;
   border-width: 2px 2px 0 0;
   content: '';

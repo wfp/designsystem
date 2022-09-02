@@ -52,14 +52,12 @@ export function BlockNotification({
           notificationType={notificationType}>
           {children}
         </NotificationTextDetails>
-      </div>
-      {advancedActions ? (
+
+        {/*advancedActions && 1 == 1 ? (*/}
         <div className={`${prefix}--inline-notification__actions-wrapper`}>
           {actions}
         </div>
-      ) : (
-        actions
-      )}
+      </div>
     </div>
   );
 }

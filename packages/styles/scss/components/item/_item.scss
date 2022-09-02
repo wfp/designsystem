@@ -1,10 +1,3 @@
-//
-// Copyright IBM Corp. 2016, 2018
-//
-// This source code is licensed under the Apache-2.0 license found in the
-// LICENSE file in the root directory of this source tree.
-//
-
 //-----------------------------
 // List
 //-----------------------------
@@ -24,11 +17,14 @@
     padding: $spacing-06;
     margin: 0;
     text-decoration: none;
-    display: flex !important;
-    text-align: center;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: max-content 2fr auto min-content;
+    grid-template-rows: min-content min-content min-content;
+    gap: 0px 0px;
+    grid-template-areas:
+      'photo title additional unread'
+      'photo text hint unread'
+      'photo subcontent hint unread';
     color: $text-primary;
 
     &--section {
@@ -124,6 +120,7 @@
       margin-bottom: 0;
       font-size: 1em;
       display: flex;
+      grid-area: title;
       //justify-content: center;
 
       align-items: center;
@@ -132,6 +129,8 @@
       font-size: 0.9em;
       color: $text-secondary;
       margin-left: 1em;
+      grid-area: additional;
+      text-align: right;
     }
     .#{$prefix}--item__additional-icon {
       font-weight: normal;
@@ -146,6 +145,12 @@
     }
     .#{$prefix}--item__title {
       font-size: 1em;
+    }
+    .#{$prefix}--item__hint {
+      font-size: 1em;
+      grid-area: hint;
+      justify-self: end;
+      align-self: end;
     }
     .#{$prefix}--item__right {
       display: flex;
@@ -163,19 +168,35 @@
       flex: 1;
     }
     .#{$prefix}--item__text {
-      flex: 1;
+      grid-area: text;
       font-size: 0.85em;
       line-height: 1.5;
     }
     .#{$prefix}--item__sub-content {
       color: $text-secondary;
+      grid-area: subcontent;
       //margin-top: $spacing-3xs;
       line-height: 1.3;
       font-size: 0.85em;
     }
+    &--unread {
+      background-color: $layer-primary;
+      position: relative;
+    }
+  }
+
+  .#{$prefix}--item__unread {
+    width: 1em;
+    height: 1em;
+    grid-area: unread;
+    align-self: center;
+    background: $interactive;
+    border-radius: 1em;
   }
 
   .#{$prefix}--item__image {
+    grid-area: photo;
+    align-self: center;
     svg,
     .svg-inline--fa,
     img,
