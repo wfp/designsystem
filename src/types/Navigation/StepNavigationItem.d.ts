@@ -8,7 +8,7 @@ declare namespace StepNavigationItem {
     label?: string;
     role: string;
     selectedPage: number;
-    renderAnchor: () => {};
+    renderAnchor?: () => {};
     status?:
       | 'not-started'
       | 'warning'
