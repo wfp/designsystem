@@ -1,3 +1,10 @@
+## [1.22.3](https://github.com/wfp/ui/compare/v1.22.2...v1.22.3) (2022-09-05)
+
+
+### Bug Fixes
+
+* **StepNavigationItem:** renderAnchor optional ([2e662bf](https://github.com/wfp/ui/commit/2e662bffb1fd8e963b8309ba6d2571267108a580))
+
 ## [1.22.2](https://github.com/wfp/ui/compare/v1.22.1...v1.22.2) (2022-09-02)
 
 
