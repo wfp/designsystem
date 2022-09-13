@@ -1,3 +1,45 @@
+## [1.22.3](https://github.com/wfp/ui/compare/v1.22.2...v1.22.3) (2022-09-05)
+
+
+### Bug Fixes
+
+* **StepNavigationItem:** renderAnchor optional ([2e662bf](https://github.com/wfp/ui/commit/2e662bffb1fd8e963b8309ba6d2571267108a580))
+
+## [1.22.2](https://github.com/wfp/ui/compare/v1.22.1...v1.22.2) (2022-09-02)
+
+
+### Bug Fixes
+
+* added missing arguments type for 'onRequestClose' method in Modal.d.ts ([379d4c5](https://github.com/wfp/ui/commit/379d4c5a8e761d2a351c88d49d734e898f945513))
+
+## [1.22.1](https://github.com/wfp/ui/compare/v1.22.0...v1.22.1) (2022-08-30)
+
+
+### Bug Fixes
+
+* **StepNavigationItem:** added status typescript interface ([9ff6446](https://github.com/wfp/ui/commit/9ff64463e8065383a22dde1544807e7e65dcd6a6))
+* **StepNavigationItem:** added typescript interface ([9e49ad1](https://github.com/wfp/ui/commit/9e49ad1fe2c006d5e6dcae4bfe20e11e64177450))
+
+# [1.22.0](https://github.com/wfp/ui/compare/v1.21.1...v1.22.0) (2022-08-06)
+
+
+### Bug Fixes
+
+* unexpected value in the types import ([45497e3](https://github.com/wfp/ui/commit/45497e31fb9070cbb89cb5f5475e8a97cc1a00ce))
+* update StepNavigationItem interface, resolves [#546](https://github.com/wfp/ui/issues/546) ([78a4f99](https://github.com/wfp/ui/commit/78a4f990ab0aef771ff3d72ee30d6fe8cb87a948))
+
+
+### Features
+
+* extend SingleDatePickerInput interface and propTypes, resolves [#548](https://github.com/wfp/ui/issues/548) ([8550f54](https://github.com/wfp/ui/commit/8550f54e95e2eb231257ded15b0a380b45c9795f))
+
+## [1.21.1](https://github.com/wfp/ui/compare/v1.21.0...v1.21.1) (2022-08-03)
+
+
+### Bug Fixes
+
+* **StepNavigation:** propTypes added and fixed ([8478b65](https://github.com/wfp/ui/commit/8478b65bf0eb75b589ae39d85d4300cb8e0391ae))
+
 # [1.21.0](https://github.com/wfp/ui/compare/v1.20.16...v1.21.0) (2022-07-13)
 
 
