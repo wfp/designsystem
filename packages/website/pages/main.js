@@ -73,6 +73,7 @@ const Main = ({ newItems }) => {
         }>
         {content && (
           <>
+            Hello
             <MDXRemote {...content} components={components} />
           </>
         )}
