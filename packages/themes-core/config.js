@@ -9,6 +9,7 @@ const config = ({ source = `tokens/**/*.json`, buildPath = `dist` } = {}) => {
     name: 'css/variables-themed',
     formatter: function ({ dictionary, file, options }) {
       const { outputReferences, theme } = options;
+      //console.log(dictionary);
       return (
         fileHeader({ file }) +
         `@mixin theme-${theme} () {\n` +
@@ -77,10 +78,16 @@ const config = ({ source = `tokens/**/*.json`, buildPath = `dist` } = {}) => {
     transitive: true,
     name: `name/scss`,
     transformer: (token, options) => {
-      //return helloow;
-      console.log(token.path);
-
       return scssTokenName(token, options);
+    },
+  });
+
+  StyleDictionary.registerTransform({
+    type: 'name',
+    transitive: true,
+    name: `name/scssDarkName`,
+    transformer: (token, options) => {
+      return scssTokenName(token, options).replace('dark-', '');
     },
   });
 
@@ -88,7 +95,7 @@ const config = ({ source = `tokens/**/*.json`, buildPath = `dist` } = {}) => {
     type: `value`,
     name: `value/fontSizePxToRem`,
     matcher: (token) => {
-      console.log(token);
+      //console.log(token);
       return token.type === 'dimension';
     },
     transformer: (token) => {
@@ -102,7 +109,7 @@ const config = ({ source = `tokens/**/*.json`, buildPath = `dist` } = {}) => {
     type: `attribute`,
     name: `attribute/variablenames`,
     matcher: (token) => {
-      console.log(token);
+      //console.log(token);
       return true;
       //return token.type === 'dimension';
     },
@@ -221,6 +228,56 @@ const config = ({ source = `tokens/**/*.json`, buildPath = `dist` } = {}) => {
           },
         },*/
         ],
+      },
+      scssDark: {
+        transformGroup: 'css',
+        buildPath: buildPath + '/scss/',
+        transforms: ['name/scssDarkName', 'value/fontSizePxToRem'],
+        files: [
+          {
+            destination: 'dark-css-theme.scss',
+            format: 'css/variables-themed',
+            filter: function (token) {
+              return token.path[1] === 'dark';
+            },
+            options: {
+              outputReferences: true,
+              theme: 'dark',
+            },
+          },
+
+          /* {
+          destination: 'tokens.scss',
+          format: 'scss/variables',
+          transforms: ['name/scss'],
+          options: {
+            outputReferences: true,
+            theme: 'default',
+          },
+        },*/
+        ],
+
+        parse: ({ contents, filePath }) => {
+          var content = JSON.parse(contents);
+          return null;
+          // return content;
+          if (content.color) {
+            const { color, typography, ...other } = content;
+            const { primary, form, background, ...otherColors } = color;
+            //console.log(JSON.parse(color.background));
+            return {
+              // ...otherColors,
+              //...color.background,
+              //...form,
+              ...typography,
+              // ...primary,
+              //background: background,
+              // ...other,
+              //background: color.background.background,
+            };
+          }
+          return content;
+        },
       },
     },
   }).buildAllPlatforms();
