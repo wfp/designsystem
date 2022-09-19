@@ -14,7 +14,7 @@ const Layout = ({ children, categories, head }) => (
     <Head>{head}</Head>
     <Navigation />
     <div className={styles.layout}>{children}</div>
-    <ChevronDown />
+    {/* <ChevronDown /> */}
     <Footer />
   </>
 );

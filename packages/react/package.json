@@ -139,10 +139,15 @@
   },
   "dependencies": {
     "@carbon/feature-flags": "^0.6.0",
+    "@types/jest": "^29.0.3",
+    "@types/node": "^18.7.18",
+    "@types/react": "^18.0.20",
+    "@types/react-dom": "^18.0.6",
     "classnames": "2.2.6",
     "invariant": "^2.2.4",
     "react-datepicker": "^4.6.0",
     "react-popper-tooltip": "^4.1.0",
+    "typescript": "^4.8.3",
     "warning": "^4.0.3",
     "window-or-global": "^1.0.1"
   },

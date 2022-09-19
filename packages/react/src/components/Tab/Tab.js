@@ -178,7 +178,7 @@ class Tab extends React.Component {
       },
       role: 'presentation',
       selected: selected,
-      ...other
+      ...other,
     };
 
     return (

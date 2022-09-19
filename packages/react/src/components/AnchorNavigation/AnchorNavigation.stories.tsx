@@ -1,6 +1,6 @@
 import React from 'react';
 import markdown from './README.mdx';
-import AnchorNavigation from '.';
+import AnchorNavigation from './AnchorNavigation';
 import Link from '../Link';
 
 export default {

@@ -59,6 +59,7 @@ export default function Post({ post, morePosts, preview }) {
               {post.subtitle && (
                 <h2 className={styles.subTitle}>{post.subtitle}</h2>
               )}
+              {console.log('slug', post.mdxSource)}
               <MDXRemote {...post.mdxSource} components={components} />
             </article>
           </>
