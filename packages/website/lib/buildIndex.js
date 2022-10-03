@@ -1,6 +1,7 @@
 const dotenv = require("dotenv");
 const algoliasearch = require("algoliasearch/lite");
 const fetch = require("node-fetch");
+const { getAllPosts } = require("./getPost");
 
 async function fetchAPI(query, { variables } = {}) {
   const res = await fetch(`${process.env.NEXT_PUBLIC_API}/graphql`, {
@@ -23,26 +24,16 @@ async function fetchAPI(query, { variables } = {}) {
 }
 
 async function getAllBlogPosts() {
-  const data = await fetchAPI(`query {
-        posts(orderBy: {publishDate: desc}) {
-          id
-          title
-          slug
-          subtitle
-          excerpt
-          publishDate
-          tags {
-            id
-            name
-          }
-          content
-          image {
-            title
-            image { publicUrl }
-          }
-        }
-      }`);
-  return data.posts;
+  const data = await getAllPosts([
+    'title',
+    'date',
+    'slug',
+    'excerpt',
+    'author',
+    'ogImage',
+    'coverImage',
+    'content',
+  ]);
 }
 
 function transformPostsToSearchObjects(posts) {

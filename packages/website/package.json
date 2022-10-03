@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start -p 80",
-    "build:theme": "node buildTheme.js"
+    "build:theme": "node buildTheme.js",
+    "postinstall": "node lib/buildIndex.js"
   },
   "devDependencies": {
     "eslint": "8.19.0",
