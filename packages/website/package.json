@@ -41,6 +41,7 @@
     "cloudinary-core": "^2.12.3",
     "dotenv": "^16.0.1",
     "framer-motion": "^3.3.0",
+    "gray-matter": "^4.0.3",
     "hast-util-select": "^5.0.2",
     "i18next-chained-backend": "^3.0.2",
     "i18next-http-backend": "^1.4.1",

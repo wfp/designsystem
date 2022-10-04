@@ -11,33 +11,21 @@ class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
-          {/*
           <link rel="icon" href="/favicon.ico" />
 
           <link
-            rel="apple-touch-icon"
-            sizes="76x76"
-            href="/favicons/apple-icon-76x76.png"
-          />
-
-          <link
-            rel="apple-touch-icon"
-            sizes="192x192"
-            href="/favicons/android-icon-192x192.png"
-          />
-          <link
-            rel="apple-touch-icon"
-            sizes="512x512"
-            href="/favicons/android-chrome-512x512.png"
+            rel="icon"
+            sizes="32x32"
+            href="/favicons/wfp-favicon-png32.png"
           />
 
           <link
             rel="icon"
             type="image/png"
-            sizes="32x32"
-            href="/favicons/favicon-32x32.png"
+            sizes="512x512"
+            href="/favicons/wfp-favicon-png512.png"
           />
-
+          {/*
           <link rel="manifest" href="/favicons/manifest.json" />
           <meta name="msapplication-TileColor" content="#ffffff" />
           <meta

@@ -23,6 +23,7 @@ function PossibilitiesContainer({
   title,
   icon,
   content,
+  link = '',
   npmLink,
   figmaLink,
 }) {
@@ -35,15 +36,15 @@ function PossibilitiesContainer({
         <h4>
           {title}
           {npmLink && (
-            <Link href={`xsscxccxyx`}>
-              <a href={`xsscxccxyx`}>
+            <Link href={link}>
+              <a target="_blank" rel="noreferrer">
                 <FontAwesomeIcon className={styles.npmLink} icon={faNpm} />
               </a>
             </Link>
           )}
           {figmaLink && (
-            <Link href={`xsscxccxyx`}>
-              <a href={`xsscxccxyx`}>
+            <Link href={link}>
+              <a target="_blank" rel="noreferrer">
                 <FontAwesomeIcon className={styles.figmaLink} icon={faFigma} />
               </a>
             </Link>
@@ -65,67 +66,106 @@ export default function Tools() {
       <div className={styles.possibilitiesWrapper}>
         <PossibilitiesContainer
           title="Themes"
-          content="Exports the design tokens like colors, fonts, text styles, spacings directly into cross plattform design tokens using styled dictionary."
+          content={
+            <>
+              Exports the design tokens like colors, fonts, text styles,
+              spacings directly into cross plattform design tokens using{' '}
+              <a
+                href="https://amzn.github.io/style-dictionary"
+                target="_blank"
+                rel="noreferrer">
+                styled dictionary
+              </a>
+              .
+            </>
+          }
           background="#E7DFFF"
-          icon="🕸️"
           icon={faSatellite}
-          npmLink="@un/themes-core"
+          link="https://npmjs.com/package/@un/themes-core"
+          npmLink
         />
-        {/*<PossibilitiesContainer
-        title="Gerät autonom bedienbar"
-        content="Die integrierte Funkverbindung funktioniert ohne Internet, Bluetooth oder extra Sim-Karte direkt nach dem Auspacken."
-        background="#F1F3FA"
-        icon="📡"
-      />*/}
         <PossibilitiesContainer
           title="React"
           content="The core library includes all essential components and can be used with css only or react. Tokens can be also used with your favorite component library"
-          //background="#E7FFDF"
-          icon="🌿"
           icon={faLeaf}
-          npmLink="@un/react"
+          link="https://npmjs.com/package/@un/react"
+          npmLink
         />
         <PossibilitiesContainer
           title="Figma library"
           content="A Figma library providing the core for creating a design system with boilerplates for token generation and components."
-          //  background="#DFFDFF"
-          icon="🐜"
-          figmaLink="lorem"
+          link="lorem"
+          figmaLink
           icon={faHandshakeAlt}
         />
         <PossibilitiesContainer
           title="Styles"
           content="css and scss implementation of the core components ready to use with the react library or plain html"
           // background="#FFDFDF"
-          icon="⏰"
           icon={faBellPlus}
-          npmLink="@un/styles"
+          link="https://npmjs.com/package/@un/styles"
+          npmLink
         />
         <PossibilitiesContainer
           title="Icons"
-          content="Transforming your icons and pictograms into a component library ready to use in your application using svgr"
+          content={
+            <>
+              Transforming your icons and pictograms into a component library
+              ready to use in your application using{' '}
+              <a
+                href="https://github.com/gregberge/svgr"
+                target="_blank"
+                rel="noreferrer">
+                svgr
+              </a>
+              .
+            </>
+          }
           // background="#DFF0FF"
-          icon="💦"
           icon={faGlassWaterDroplet}
-          npmLink="@un/icons-core"
+          link="https://npmjs.com/package/@un/icons-core"
+          npmLink
         />
 
         <PossibilitiesContainer
           title="Pictograms"
-          content="Transforming your icons and pictograms into a component library ready to use in your application using svgr"
+          content={
+            <>
+              Transforming your icons and pictograms into a component library
+              ready to use in your application using{' '}
+              <a
+                href="https://github.com/gregberge/svgr"
+                target="_blank"
+                rel="noreferrer">
+                svgr
+              </a>
+              .
+            </>
+          }
           // background="#DFF0FF"
-          icon="💦"
           icon={faGlassWaterDroplet}
-          npmLink="@un/icons-core"
+          link="https://npmjs.com/package/@un/icons-core"
+          npmLink
         />
 
         <PossibilitiesContainer
           title="Humanitarian Icons"
-          content="Transforming your icons and pictograms into a component library ready to use in your application using svgr"
-          // background="#DFF0FF"
-          icon="💦"
+          content={
+            <>
+              Transforming your icons and pictograms into a component library
+              ready to use in your application using{' '}
+              <a
+                href="https://github.com/gregberge/svgr"
+                target="_blank"
+                rel="noreferrer">
+                svgr
+              </a>
+              .
+            </>
+          }
           icon={faGlassWaterDroplet}
-          npmLink="@un/icons-core"
+          link="https://npmjs.com/package/@un/icons-core"
+          npmLink
         />
       </div>
     </Wrapper>

@@ -8,7 +8,7 @@ const BannerNavigationWithContent = ({ searchOnChange, search, ...other }) => (
   <BannerNavigation {...other}>
     <BannerNavigationItem>
       <Link href="https://newgo.wfp.org" target="_blank">
-        WFPgo
+        WFP
       </Link>
     </BannerNavigationItem>
     <BannerNavigationItem>

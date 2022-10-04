@@ -24,8 +24,6 @@ import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import logo from './logo.svg';
 import Image from 'next/image';
 import styles from './styles.module.scss';
-
-import { UserNameNew } from '../UserName';
 import { useTranslation } from 'next-i18next';
 
 export default function Navigation({ children }) {

@@ -1,6 +1,9 @@
 $css--reset: true;
 $css--body: true;
 //@use "./meta" as meta;
+
+@use "./intern.scss";
+
 @use "@un/styles/scss/themes";
 @use "@un/styles/scss/theme" /*with (
   $theme: meta.$carbon--theme--memo
@@ -14,6 +17,7 @@ $css--body: true;
 @use "@un/styles/scss/components";
 
 @use "scss/meta" as *;
+
 //@import "./global.scss";
 
 //@import "~@un/react/src/globals/scss/colors";
@@ -65,17 +69,6 @@ body {
     line-height: 1.3em;
   }
 }
-/*
-a,
-a:hover,
-a:visited {
-  color: $interactive;
-  text-decoration: none;
-}*/
-
-a:hover {
-  text-decoration: underline;
-}
 
 .wfp--main-navigation__item {
   .wfp--btn {
@@ -120,13 +113,6 @@ a:hover {
       padding-left: 0.5rem;
       padding-right: 0.5rem;
     }
-  }
-}
-
-@media screen and (min-width: 667px) {
-  .woot-widget--without-bubble.woot-widget-holder {
-    bottom: 60px !important;
-    right: 10px !important;
   }
 }
 
