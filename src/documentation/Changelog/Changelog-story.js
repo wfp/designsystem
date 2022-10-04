@@ -7,10 +7,7 @@ import Blockquote from '../../components/Blockquote';
 import Link from '../../components/Link';
 import Changelog from '../../../CHANGELOG.md';
 
-import ReactMarkdown from 'react-markdown';
 import './_changelog.scss';
-
-
 
 storiesOf('Getting started|Getting started', module)
   .addParameters({
@@ -31,9 +28,7 @@ storiesOf('Getting started|Getting started', module)
         </Link>
       </Blockquote>
 
-      <div className="changelog">
-        <ReactMarkdown source={Changelog} />
-      </div>
+      <div className="changelog"></div>
       {/*<div dangerouslySetInnerHTML={createMarkup()} />*/}
     </Page>
   ));
