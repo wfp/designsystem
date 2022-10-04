@@ -3,8 +3,6 @@ import React from 'react';
 import classnames from 'classnames';
 import Link from '../Link';
 import Wrapper from '../Wrapper';
-// import Icon from '../Icon';
-import {FooterExternal} from './FooterExternal';
 import {
   WfpLogoStandardBlackEn,
   WfpLogoVerticalEn,
@@ -34,14 +32,9 @@ const Footer = ({
 }) => {
   const { prefix } = useSettings();
 
-  const classNames = classnames(
-    `${prefix}--footer`,
-    // { [`${prefix}--footer--external`]: external },
-    className
-  );
-  // const standardLogo = `${process.env.STORYBOOK_ASSETS}logos/standard/en/wfp-logo-standard-black-en.svg`;
+  const classNames = classnames(`${prefix}--footer`, className);
 
- return(
+  return (
     <footer className={classNames}>
       <Wrapper pageWidth={pageWidth}>
         <div className={`${prefix}--footer__content`}>
@@ -130,9 +123,7 @@ const Footer = ({
         )}
       </Wrapper>
     </footer>
-  
- )
-
+  );
 };
 
 Footer.propTypes = {
