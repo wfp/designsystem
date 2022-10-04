@@ -68,7 +68,7 @@ TODO: improve documentation
 Install the latest alpha versions to use the Design System Alpha within your project
 
 ```bash
-npm install @un/react@alpha @un/icons-react@alpha @un/layout@alpha @un/styles@alpha @un/themes-core@alpha @un/type@alpha 
+npm install @un/react@alpha @un/icons-react@alpha @un/layout@alpha @un/styles@alpha @un/themes-core@alpha @un/type@alpha
 ```
 
 ### Upgrade to 2.0 for existing solutions
@@ -156,9 +156,7 @@ All the logo files can be found in https://github.com/wfp/ui-assets.
 
 ## For Designers: Sketch Library
 
-The [Sketch App](https://www.sketchapp.com/) and [Adobe xD](https://www.adobe.com/en/products/xd.html) library can be used to easily create new User interfaces.
-
-The downloads are available here: [UI Design Kit on GitHub](https://github.com/wfp/ui-design-kit).
+COMING SOON
 
 ### Using the server
 
@@ -200,29 +198,23 @@ npm run test
 
 ### Deployment
 
-The UI Kit uses Azure Devops and [semantic-release](https://github.com/semantic-release/semantic-release) for automate versioning and CHANGELOG generation.
+The UN Core uses Azure Devops, yarn, lerna and [semver](https://github.com/lerna/lerna/tree/main/commands/version) for automated versioning and the deployment.
 
 #### npm release
 
 - Commits on the `master` branch will be released as `@lastest` if a relevant commit is included (e.g. feat, fix, perf, breaking)
 - Commits on `next` branch will be released as `@next` if a relevant commit is included
 
-### Generate alpha release
+### Generate alpha release from a local machine
 
 ```
-npm run release -- --prerelease alpha
-npm publish --tag alpha
+yarn publish:alpha-cli
 
 or
 git push --follow-tags origin next && npm publish --tag alpha
 ```
 
-### Generate full release
-
-```
-npm run release
-npm publish
-```
+To publish local changes directly to a alpha release on npm.
 
 ### Releasing Storybook (documentation) to AWS S3
 
