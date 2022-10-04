@@ -3,14 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@wfp/icons": "0.0.86",
+    "@wfp/icons": "0.2.1",
     "@wfp/ui": "^1.17.1",
     "moment": "^2.29.1",
-    "node-sass": "^4.14.1",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
+    "sass": "^1.55.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-final-form": "^6.5.2",
-    "react-scripts": "4.0.0",
+    "react-scripts": "5.0.1",
     "twig": "^1.15.2"
   },
   "scripts": {
