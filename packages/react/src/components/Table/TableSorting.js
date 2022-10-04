@@ -2,7 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import Icon from '../Icon';
-import { CaretDown16, CaretUp16 } from '@un/icons-react';
+import { CaretDown, CaretUp } from '@un/icons-react';
 
 export default function TableSorting({
   className,
@@ -17,7 +17,7 @@ export default function TableSorting({
   });
   return (
     <span className={classes}>
-      {isSorted ? isSortedDesc ? <CaretDown16 /> : <CaretUp16 /> : ''}
+      {isSorted ? isSortedDesc ? <CaretDown /> : <CaretUp /> : ''}
     </span>
   );
 }

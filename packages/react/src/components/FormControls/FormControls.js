@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
 import Button from '../Button';
-import { ArrowLeftGlyph, ArrowRightGlyph } from '@un/icons-react';
+import { ArrowLeft, ArrowRight } from '@un/icons-react';
 import useSettings from '../../hooks/useSettings';
 
 const FormControls = ({
@@ -21,86 +21,82 @@ const FormControls = ({
   submitDisabled,
   submitIcon,
   submitHidden,
-  submitText}) => {
+  submitText,
+}) => {
+  const { prefix } = useSettings();
+  const formControlsClasses = classNames(`${prefix}--form-controls`, className);
 
-    const { prefix } = useSettings();
-    const formControlsClasses = classNames(
-      `${prefix}--form-controls`,
-      className
-    )
-
-    return (
-      <div className={formControlsClasses}>
-        <div className={`${prefix}--form-controls__steps`}>
-          {!previousHidden && (
-            <Button
-              disabled={previousDisabled}
-              kind="secondary"
-              className={`${prefix}--form-controls__prev`}
-              icon={previousIcon}
-              onClick={onPreviousClick}>
-              {previousText}
-            </Button>
-          )}
-        </div>
-        <div>
-          {!nextHidden && (
-            <Button
-              disabled={nextDisabled}
-              kind="secondary"
-              className={`${prefix}--form-controls__next`}
-              icon={nextIcon}
-              type="submit"
-              onClick={onNextClick}>
-              {nextText}
-            </Button>
-          )}
-          {!submitHidden && (
-            <Button
-              disabled={submitDisabled}
-              type="submit"
-              className="next"
-              icon={submitIcon}
-              onClick={onSubmitClick}>
-              {submitText}
-            </Button>
-          )}
-        </div>
+  return (
+    <div className={formControlsClasses}>
+      <div className={`${prefix}--form-controls__steps`}>
+        {!previousHidden && (
+          <Button
+            disabled={previousDisabled}
+            kind="secondary"
+            className={`${prefix}--form-controls__prev`}
+            icon={previousIcon}
+            onClick={onPreviousClick}>
+            {previousText}
+          </Button>
+        )}
       </div>
-    );
-
-}
+      <div>
+        {!nextHidden && (
+          <Button
+            disabled={nextDisabled}
+            kind="secondary"
+            className={`${prefix}--form-controls__next`}
+            icon={nextIcon}
+            type="submit"
+            onClick={onNextClick}>
+            {nextText}
+          </Button>
+        )}
+        {!submitHidden && (
+          <Button
+            disabled={submitDisabled}
+            type="submit"
+            className="next"
+            icon={submitIcon}
+            onClick={onSubmitClick}>
+            {submitText}
+          </Button>
+        )}
+      </div>
+    </div>
+  );
+};
 
 FormControls.propTypes = {
-/**
-     * Specify the text to be read by screen-readers when visiting the <Tabs>
-     * component
-     */
-    className: PropTypes.string,
-    onNextClick: PropTypes.func,
-    nextDisabled: PropTypes.bool,
-    nextIcon: PropTypes.object,
-    nextHidden: PropTypes.bool,
-    nextText: PropTypes.node,
-    onPreviousClick: PropTypes.func,
-    prefix: PropTypes.string.isRequired,
-    previousDisabled: PropTypes.bool,
-    previousIcon: PropTypes.object,
-    previousHidden: PropTypes.bool,
-    previousText: PropTypes.node,
-    onSubmitClick: PropTypes.func,
-    submitDisabled: PropTypes.bool,
-    submitIcon: PropTypes.object,
-    submitHidden: PropTypes.bool,
-    submitText: PropTypes.node,
-}
+  /**
+   * Specify the text to be read by screen-readers when visiting the <Tabs>
+   * component
+   */
+  className: PropTypes.string,
+  onNextClick: PropTypes.func,
+  nextDisabled: PropTypes.bool,
+  nextIcon: PropTypes.object,
+  nextHidden: PropTypes.bool,
+  nextText: PropTypes.node,
+  onPreviousClick: PropTypes.func,
+  prefix: PropTypes.string.isRequired,
+  previousDisabled: PropTypes.bool,
+  previousIcon: PropTypes.object,
+  previousHidden: PropTypes.bool,
+  previousText: PropTypes.node,
+  onSubmitClick: PropTypes.func,
+  submitDisabled: PropTypes.bool,
+  submitIcon: PropTypes.object,
+  submitHidden: PropTypes.bool,
+  submitText: PropTypes.node,
+};
 
 FormControls.defaultProps = {
-  nextIcon: ArrowRightGlyph,
+  nextIcon: ArrowRight,
   nextText: 'Next',
-  previousIcon: ArrowLeftGlyph,
+  previousIcon: ArrowLeft,
   previousText: 'Previous',
   submitText: 'Submit',
-}
+};
 
 export default FormControls;

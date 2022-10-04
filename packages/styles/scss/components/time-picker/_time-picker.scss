@@ -62,7 +62,7 @@
 
   // V11: Possibly deprecate
   .#{$prefix}--time-picker--light .#{$prefix}--select-input {
-    background-color: $field-02;
+    //TODO: background-color: $field-02;
 
     &:hover {
       background-color: $field-hover;

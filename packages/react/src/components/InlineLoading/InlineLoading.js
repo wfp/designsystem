@@ -28,7 +28,7 @@ class InlineLoading extends React.Component {
     /**
      * Specify the description for the inline loading text
      */
-    description: PropTypes.string,
+    description: PropTypes.node,
 
     /**
      * Provide an optional handler to be invoked when <InlineLoading> is

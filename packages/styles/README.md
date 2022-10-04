@@ -121,7 +121,7 @@ the current theme. For example:
 @use '@carbon/styles/scss/theme';
 
 body {
-  background: theme.$background;
+  background: theme.$background-main;
 }
 ```
 

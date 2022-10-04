@@ -6,7 +6,7 @@
 
 @use '../../config' as *;
 @use '../../colors' as *;
-@use '../../compat/theme' as *;
+@use '../../theme' as *;
 @use '../../type' as *;
 @use '../../breakpoint' as *;
 @use '../../spacing' as *;
@@ -45,7 +45,6 @@ $main-navigation-menu-width: rem(300px);
 /// @access public
 /// @group main-navigation
 @mixin main-navigation {
-  
   // The overall container element for a `main-navigation`. Has two variants,
   // `disabled` and `inline`.
   .#{$prefix}--main-navigation {
@@ -72,26 +71,29 @@ $main-navigation-menu-width: rem(300px);
     display: none;
   }
 
-  .#{$prefix}--main-navigation__trigger {
-    cursor: pointer;
-    user-select: none;
-    //vertical-align: middle;
-    white-space: nowrap;
-    a {
-      color: $text-on-color; // TODO change to $link_on_color token
-      @include type-style('body-short-02');
-      text-decoration: none;
-      &.active {
-        border-bottom: 3px solid rgba(var(--ui-01), 0.5);
-      }
-      &:hover,
-      &:visited,
-      &:active {
-        color: $text-on-color;
-        text-decoration: underline;
-      }
-      &:focus {
-        color: $text-on-color;
+  .#{$prefix}--main-navigation {
+    .#{$prefix}--main-navigation__trigger {
+      cursor: pointer;
+      user-select: none;
+      //vertical-align: middle;
+      white-space: nowrap;
+
+      a {
+        color: $text-on-color; // TODO change to $link_on_color token
+        @include type-style('body-short-02');
+        text-decoration: none;
+        &.active {
+          border-bottom: 3px solid rgba(var(--ui-01), 0.5);
+        }
+        &:hover,
+        &:visited,
+        &:active {
+          color: $text-on-color;
+          text-decoration: underline;
+        }
+        &:focus {
+          color: $text-on-color;
+        }
       }
     }
   }
@@ -103,19 +105,19 @@ $main-navigation-menu-width: rem(300px);
       white-space: nowrap;
       padding-left: 0.3em;
       padding-right: 0.3em;
-
     }
   }
 
   .#{$prefix}--main-navigation__trigger__icon {
     display: inline-block;
     position: relative;
-    top: rem(-1px);
-    vertical-align: middle;
-    margin-left: 0.3em;
-    @include rtl { 
+    top: rem(0px);
+    //vertical-align: middle;
+    margin-left: 0.5em;
+    font-size: 0.8em;
+    @include rtl {
       margin-left: 0;
-      margin-right: 0.3em;
+      margin-right: 0.5em;
     }
   }
 
@@ -205,10 +207,12 @@ $main-navigation-menu-width: rem(300px);
       z-index: z('modal');
       color: var(--text-01);
       background: var(--ui-01);
-      box-shadow: rgba(desaturate(#0B77C2, 50%), 0.15) 0 3px 12px, //TODO - convert raw color hex into color token in figma
-        rgba(desaturate(#0B77C2, 40%), 0.15) 0 32px 78px;
+      box-shadow: rgba(desaturate(#0b77c2, 50%), 0.15) 0 3px 12px,
+        //TODO - convert raw color hex into color token in figma
+        rgba(desaturate(#0b77c2, 40%), 0.15) 0 32px 78px;
       .#{$prefix}--theme-dark & {
-        box-shadow: var(--modal-background-01) 0 3px 12px, //TODO - create token for this color
+        box-shadow: var(--modal-background-01) 0 3px 12px,
+          //TODO - create token for this color
           var(--modal-background-01) 0 32px 78px;
       }
       .#{$prefix}--main-navigation__user & {
@@ -251,7 +255,7 @@ $main-navigation-menu-width: rem(300px);
     .#{$prefix}--main-navigation__sub--open {
       display: block;
       color: $text-on-color;
-      background: $background;
+      background: $background-main;
     }
 
     .#{$prefix}--main-navigation__trigger {

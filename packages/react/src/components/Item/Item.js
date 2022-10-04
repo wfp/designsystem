@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import { ChevronRight16 } from '@un/icons-react';
+import { ChevronRight } from '@un/icons-react';
 import useSettings from '../../hooks/useSettings';
 
 /** The item component to show entries inside a list, like a sidebar or an overview page. */
@@ -16,6 +16,7 @@ export const Item = ({
   image,
   hint,
   noImage,
+  unread,
   showAdditionalIcon,
   title,
   kind = 'large',
@@ -30,6 +31,7 @@ export const Item = ({
       [`${prefix}--item--${kind}`]: kind,
       [`${prefix}--item--${wrapper}`]: wrapper,
       [`${prefix}--item--active`]: active,
+      [`${prefix}--item--unread`]: unread,
     },
     className
   );
@@ -42,36 +44,25 @@ export const Item = ({
           className={`${prefix}--item__image ${prefix}--item__image-empty`}></div>
       ) : null}
 
-      <div className={`${prefix}--item__content`}>
-        {title && (
-          <div className={`${prefix}--item__title-wrapper`}>
-            <h2 className={`${prefix}--item__title`}>{title}</h2>
-            {additional && (
-              <div className={`${prefix}--item__additional`}>
-                {additional}
-                {showAdditionalIcon && (
-                  <ChevronRight16
-                    className={`${prefix}--item__additional-icon`}
-                  />
-                )}
-              </div>
-            )}
-          </div>
-        )}
-        <div className={`${prefix}--item__text-wrapper`}>
-          <div className={`${prefix}--item__text-wrapper__inner`}>
-            {children && (
-              <div className={`${prefix}--item__text`}>{children}</div>
-            )}
-            {subContent && (
-              <div className={`${prefix}--item__sub-content`}>{subContent}</div>
-            )}
-          </div>
-          <div className={`${prefix}--item__right`}>
-            {hint && <div className={`${prefix}--item__hint`}>{hint}</div>}
-          </div>
+      {title && (
+        <div className={`${prefix}--item__title-wrapper`}>
+          <h2 className={`${prefix}--item__title`}>{title}</h2>
         </div>
-      </div>
+      )}
+      {additional && (
+        <div className={`${prefix}--item__additional`}>
+          {additional}
+          {showAdditionalIcon && (
+            <ChevronRight className={`${prefix}--item__additional-icon`} />
+          )}
+        </div>
+      )}
+      {children && <div className={`${prefix}--item__text`}>{children}</div>}
+      {subContent && (
+        <div className={`${prefix}--item__sub-content`}>{subContent}</div>
+      )}
+      {hint && <div className={`${prefix}--item__hint`}>{hint}</div>}
+      {unread && <div className={`${prefix}--item__unread`} />}
     </div>
   );
 };

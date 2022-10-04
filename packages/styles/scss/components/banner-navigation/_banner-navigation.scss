@@ -8,8 +8,7 @@
 @use '../../utilities/component-reset';
 @use '../../utilities/convert';
 
-
-@mixin banner-navigation{
+@mixin banner-navigation {
   .#{$prefix}--banner-navigation {
     background: $link-primary-hover; //TODO use a new background token for interactive-02
     @include reset;
@@ -45,7 +44,7 @@
       }
 
       &:focus {
-        color: $background;
+        color: $background-main;
       }
 
       &:visited,

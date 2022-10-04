@@ -2,20 +2,13 @@ import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
 import Button from '../../components/Button';
 import Blockquote from '../../components/Blockquote';
 import Link from '../../components/Link';
-import IconsComponent from './IconsDocumentation';
-import IconList from './IconList';
+import IconListNew from './IconListNew';
 
-import metadataIcons from '@un/icons/metadata.json';
 import * as icons from '@un/icons-react';
-
-import metadata from '@un/pictograms/metadata.json';
 import * as pictograms from '@un/pictograms-react';
 
-import metadataHumanitarianIcons from '@un/humanitarian-icons/metadata.json';
-import * as humanitarianIcons from '@un/humanitarian-icons-react';
-
 <Meta
-  title="Documentation/Core/Icons"
+  title="Documentation/Core/Icons/Icons"
   subTitle="Icons & Logos for User Interfaces"
   parameters={{
     previewTabs: {
@@ -25,10 +18,23 @@ import * as humanitarianIcons from '@un/humanitarian-icons-react';
 />
 
 <h3>Icons</h3>
-<IconList iconsReact={icons} metadata={metadataIcons} />
 
-<h3>Pictograms</h3>
-<IconList iconsReact={pictograms} metadata={metadata} />
+We only provide basic user interface icons. For more advanced icons please take a look at [FontAwesome](https://fontawesome.com).
 
-<h3>Humanitarian icons</h3>
-<IconList iconsReact={humanitarianIcons} metadata={metadataHumanitarianIcons} />
+### Installing the icons package
+
+```
+npm install @un/icons-react
+```
+
+### Using the icons in react
+
+```jsx
+import { AddIcon } from @un/icons-react;
+
+<AddIcon />
+```
+
+Click [here](#link) to create your own icon library.
+
+<IconListNew iconsReact={icons} name="icons" />

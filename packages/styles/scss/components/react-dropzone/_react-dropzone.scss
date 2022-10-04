@@ -23,7 +23,7 @@
       padding: $spacing-05;
       border: 2px dashed $border-inverse;
       border-radius: 4px;
-      background: $layer;
+      background: $layer-primary;
       text-align: center;
       cursor: pointer;
       &--drag-active {
@@ -37,7 +37,7 @@
       }
       &:focus {
         outline: none;
-        background: $layer;
+        background: $layer-primary;
       }
     }
     &__icon {

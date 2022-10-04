@@ -9,7 +9,7 @@
 @use '../../feature-flags' as *;
 @use "../../type" as *;
 @use '../../motion';
-@use '../../compat/theme' as *;
+@use '../../theme' as *;
 @use "../../utilities/focus-outline" as *;
 @use "../../utilities/skeleton" as *;
 @use "../../utilities/high-contrast-mode" as *;
@@ -119,7 +119,7 @@
     @if enabled('enable-v11-release') {
       border-top: 1px solid $border-subtle;
     } @else {
-      border-top: 1px solid $layer;
+      border-top: 1px solid $layer-primary;
     }
   }
 

@@ -1,10 +1,11 @@
 {
   "name": "@un/humanitarian-icons",
   "description": "Pictograms for digital and software products using the Carbon Design System",
-  "version": "11.14.7",
+  "version": "11.14.12",
   "license": "Apache-2.0",
   "main": "lib/index.js",
   "module": "es/index.js",
+  "private": true,
   "repository": {
     "type": "git",
     "url": "https://github.com/carbon-design-system/carbon.git",
@@ -25,16 +26,15 @@
     "access": "public"
   },
   "scripts": {
-    "build": "yarn clean && node tasks/build.js",
+    "build:legacy": "yarn clean && node tasks/build.js",
     "download-figma": "yarn clean && node tasks/download.js",
     "ci-check": "node tasks/ci-check.js",
     "clean": "rimraf es lib build-info.json metadata.json",
     "prepublishOnly": "yarn build"
   },
   "devDependencies": {
-    "@un/figma-connect": "^0.0.7",
-    "@un/icon-build-helpers": "^0.23.10",
+    "@un/figma-connect": "^0.0.8",
     "rimraf": "^3.0.2"
   },
-  "gitHead": "1f06c355bfc57d62c4516f9daed57564730537f5"
+  "gitHead": "d56234ee5c04a5f6691c7377cd93abb01a71c57a"
 }

@@ -5,7 +5,6 @@
 // LICENSE file in the root directory of this source tree.
 //
 
-
 @use '../../config' as *;
 @use '../../spacing' as *;
 @use '../../theme' as *;
@@ -19,8 +18,7 @@
 @use '../../utilities/skeleton' as *;
 @use '../form';
 
-$input-border: 1px solid var(--field-border-01); // TODO
-
+$input-border: 1px solid $field-border; // TODO
 
 @mixin input {
   .#{$prefix}--input-wrapper {
@@ -38,12 +36,13 @@ $input-border: 1px solid var(--field-border-01); // TODO
     min-width: 7rem;
     padding: 0 $spacing-03;
     color: $text-primary;
+    font-size: 1em;
     appearance: none;
     background-color: $field;
     order: 2;
+    font-size: $typography-body-copy-16px-regular-font-size;
     border: $input-border;
     border-radius: $input-border-radius;
-
     &::-webkit-input-placeholder {
       @include placeholder-colors;
     }

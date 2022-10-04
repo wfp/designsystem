@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import classNames from 'classnames';
-import { CloseGlyph } from '@un/icons-react';
+import { Close } from '@un/icons-react';
 import Button from '../Button';
 import { withUNCoreSettings } from '../UNCoreSettings';
 
@@ -14,6 +14,44 @@ const matchesFuncName =
 
 const modalRoot = typeof document !== 'undefined' ? document.body : undefined;
 
+export function ModalFooter({
+  passiveModal,
+  secondaryButtonText,
+  onSecondaryButtonClick,
+  primaryButtonText,
+  onRequestSubmit,
+  primaryButtonDisabled,
+  prefix,
+  secondaryButtonDisabled,
+  danger,
+  ref,
+}) {
+  if (passiveModal) return null;
+  return (
+    <div className={`${prefix}--modal-footer`}>
+      <div className={`${prefix}--modal__buttons-container`}>
+        {secondaryButtonText && (
+          <Button
+            kind={danger ? 'tertiary' : 'secondary'}
+            disabled={secondaryButtonDisabled}
+            id="secondaryButton"
+            onClick={onSecondaryButtonClick}>
+            {secondaryButtonText}
+          </Button>
+        )}
+        <Button
+          kind={danger ? 'danger--primary' : 'primary'}
+          disabled={primaryButtonDisabled}
+          onClick={onRequestSubmit}
+          id="primaryButton"
+          ref={ref}>
+          {primaryButtonText}
+        </Button>
+      </div>
+    </div>
+  );
+}
+
 /** Modals focus the user’s attention exclusively on one task or piece of information via a window that sits on top of the page content. */
 
 class Modal extends Component {
@@ -23,12 +61,14 @@ class Modal extends Component {
      * Provide the contents of your Modal
      */
     children: PropTypes.node,
-
     /**
      * Specify an optional className to be applied to the modal root node
      */
     className: PropTypes.string,
-
+    /**
+     * Specify component Overrides
+     */
+    components: PropTypes.object,
     /**
      * Specify whether the modals content should be only loaded when the `Modal` is `open`
      */
@@ -305,6 +345,7 @@ class Modal extends Component {
       modalHeading,
       modalLabel,
       modalFooter,
+      components,
       modalSecondaryAction,
       modalAriaLabel,
       passiveModal,
@@ -334,6 +375,8 @@ class Modal extends Component {
       return null;
     }
 
+    const customComponents = { ModalFooter, ...components };
+
     const onSecondaryButtonClick = onSecondarySubmit
       ? onSecondarySubmit
       : onRequestClose;
@@ -354,9 +397,10 @@ class Modal extends Component {
       <button
         className={`${prefix}--modal-close`}
         type="button"
+        id="closeButton"
         onClick={this.handleCloseButton}
         ref={this.button}>
-        <CloseGlyph
+        <Close
           className={`${prefix}--modal-close__icon`}
           description={iconDescription}
         />
@@ -383,31 +427,7 @@ class Modal extends Component {
           {!passiveModal && modalButton}
         </div>
         <div className={`${prefix}--modal-content`}>{this.props.children}</div>
-        {!passiveModal && (
-          <div className={`${prefix}--modal-footer`}>
-            {!modalFooter ? (
-              <div className={`${prefix}--modal__buttons-container`}>
-                {secondaryButtonText && (
-                  <Button
-                    kind={danger ? 'tertiary' : 'secondary'}
-                    disabled={secondaryButtonDisabled}
-                    onClick={onSecondaryButtonClick}>
-                    {secondaryButtonText}
-                  </Button>
-                )}
-                <Button
-                  kind={danger ? 'danger--primary' : 'primary'}
-                  disabled={primaryButtonDisabled}
-                  onClick={onRequestSubmit}
-                  inputref={this.button}>
-                  {primaryButtonText}
-                </Button>
-              </div>
-            ) : (
-              <div>{modalFooter(this.props)}</div>
-            )}
-          </div>
-        )}
+        <customComponents.ModalFooter {...this.props} ref={this.button} />
       </div>
     );
 

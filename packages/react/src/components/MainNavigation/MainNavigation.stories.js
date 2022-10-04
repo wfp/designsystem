@@ -53,7 +53,7 @@ export const Regular = (args) => (
 
                   <SubNavigationFilter>
                     <Search
-                      small
+                      kind="main"
                       id="search-2"
                       labelText="Filter"
                       placeholder="Filter list"
@@ -200,7 +200,7 @@ const sourcecode = (type) => {
 
               <SubNavigationFilter>
                   <Search
-                  small
+                  kind="main"
                   id="search-2"
                   labelText="Filter"
                   placeholder="Filter list"
@@ -462,12 +462,12 @@ RegularWithButton.story = {
 export const External = (args) => (
   <MainNavigationExternal {...args}>
     <>
-      <li className={`wfp--main-navigation-ext__site-link`}>
+      <MainNavigationItem external>
         <a>First link</a>
-      </li>
-      <li className={`wfp--main-navigation-ext__site-link`}>
+      </MainNavigationItem>
+      <MainNavigationItem external>
         <a>Second link</a>
-      </li>
+      </MainNavigationItem>
       {/* <li className={`wfp--main-navigation-ext__site-link`}>
     <Button kind="accent" small>
       Accent link

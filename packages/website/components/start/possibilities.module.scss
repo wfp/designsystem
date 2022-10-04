@@ -1,0 +1,103 @@
+@use "scss/meta" as *;
+
+.possibilities {
+  //display: flex;
+  margin: 3em auto;
+  //padding: 1.2em;
+  text-align: center;
+  @include breakpoint-up(md) {
+    margin: 5em -1.2em 8em;
+    width: calc(100% + 2 * 1.2em);
+  }
+
+  > h3 {
+    margin: 0;
+    margin-bottom: 1em;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    text-align: center;
+    font-size: 2.2em;
+    font-weight: 600;
+  }
+  h4 {
+    font-weight: 700;
+    font-size: 1.2em;
+    @include breakpoint-up(md) {
+      font-size: 1.7em;
+    }
+    margin-bottom: 0.5em;
+  }
+  p {
+    font-size: 1em;
+    @include breakpoint-up(md) {
+      font-size: 1.2em;
+    }
+    line-height: 1.5;
+  }
+  .icon {
+    font-size: 2em;
+    margin-bottom: 0.5rem;
+    width: 1.2em;
+    text-align: center;
+    //color: $interactive;
+    @include breakpoint-up(md) {
+      font-size: 4em;
+      margin-top: 1rem;
+      margin-bottom: 1.5rem;
+    }
+  }
+}
+.content {
+  flex: 1;
+}
+.container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background: $layer-primary;
+  border-radius: 10px;
+  padding: 1.2em;
+  //margin-bottom: 0.5em;
+  &:first-child {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    background: #d5e8f2;
+    .icon {
+      color: $interactive;
+    }
+    a {
+      color: $interactive;
+    }
+  }
+  @include breakpoint-up(md) {
+    margin-bottom: 0;
+    padding: 1.5em;
+  }
+}
+
+.possibilitiesWrapper {
+  display: grid;
+
+  column-gap: 0.5em;
+  row-gap: 0.5em;
+  @include breakpoint-up(md) {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 1em;
+    row-gap: 1em;
+  }
+}
+
+.link {
+  font-weight: 500;
+}
+
+.components {
+  h4 {
+    font-size: 2.5em;
+  }
+  .icon {
+    font-size: 13em;
+  }
+}

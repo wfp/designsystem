@@ -9,6 +9,7 @@ import { Controller, useForm } from 'react-hook-form';
 import 'react-dates/initialize';
 import { SingleDatePicker, DateRangePicker } from 'react-dates';
 import markdown from './README.mdx';
+import useInput from '../Input/useInput';
 
 export default {
   title: 'Components/UI Elements/DatePicker',
@@ -71,21 +72,22 @@ SingleDatePickerDefault.story = {
 export const SingleDatePickerNew = (args) => {
   const [date, setDate] = useState(moment());
   const [focused, setFocused] = useState(false);
+
+  const input = useInput();
   return (
     <Input
       labelText="Input using SingleDatePicker by Airbnb"
       helperText="HelperText">
-      {(e) => (
-        <SingleDatePicker
-          showDefaultInputIcon={true}
-          inputIconPosition="after"
-          onDateChange={(newDate) => setDate(newDate)}
-          focused={focused}
-          onFocusChange={({ focused }) => setFocused(focused)}
-          date={date}
-          id="your_unique_id"
-        />
-      )}
+      <SingleDatePicker
+        showDefaultInputIcon={true}
+        inputIconPosition="after"
+        onDateChange={(newDate) => setDate(newDate)}
+        focused={focused}
+        onFocusChange={({ focused }) => setFocused(focused)}
+        date={date}
+        {...input}
+        id="your_unique_id"
+      />
     </Input>
   );
 };

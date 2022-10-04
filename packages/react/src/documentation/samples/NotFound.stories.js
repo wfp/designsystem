@@ -23,7 +23,7 @@ export const Regular = (args) => (
   <Wrapper pageWidth="lg" spacing="md">
     <Story className="wfp--story__center wfp--story__full-height">
       <WfpHumEmergencyResponsePos
-        fill="#007DBC"
+        color="#007DBC"
         width={200}
         height={200}
         style={{ marginBottom: '3rem', transform: 'rotate(10deg)' }}

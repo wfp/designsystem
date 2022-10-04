@@ -11,6 +11,7 @@ const Wrapper = (props) => {
 
   const {
     background,
+    backgroundClassName,
     backgroundStyle,
     children,
     className,
@@ -35,7 +36,7 @@ const Wrapper = (props) => {
     [`${className}`]: className,
   });
   if (background || backgroundStyle) {
-    const backgroundClasses = classNames({
+    const backgroundClasses = classNames(backgroundClassName, {
       [`${prefix}--wrapper--background-lighter`]: background === 'lighter',
       [`${prefix}--wrapper--background-dark`]: background === 'dark',
     });

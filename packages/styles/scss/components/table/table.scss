@@ -8,9 +8,8 @@
 @use '../../config' as *;
 @use '../../motion' as *;
 @use '../../spacing' as *;
-@use '../../compat/theme' as *;
+@use '../../theme' as *;
 @use '../../type' as *;
-@use '../button/tokens' as button;
 @use '../../utilities/focus-outline' as *;
 @use '../../utilities/high-contrast-mode' as *;
 @use '../../utilities/visually-hidden' as *;
@@ -37,10 +36,10 @@
 
     thead,
     th {
-      background: $layer-accent; //var(--ui-03);
+      background: $layer-primary; //var(--ui-03);
       border-bottom: 2px solid #dfe3e6;
       font-weight: 600;
-      font-size: 0.85em;
+      //font-size: 0.85em;
     }
 
     tbody {

@@ -7,7 +7,7 @@
 
 @use '../../theme' as *;
 @use '../../config' as *;
-@use '../../compat/theme' as *;
+@use '../../theme' as *;
 @use '../../utilities/box-shadow' as *;
 @use '../../utilities/high-contrast-mode' as *;
 @use '../../utilities/focus-outline' as *;
@@ -63,7 +63,7 @@
   }
 
   .#{$prefix}--popover--light .#{$prefix}--popover-contents {
-    background-color: $background;
+    background-color: $background-main;
   }
 
   .#{$prefix}--popover--high-contrast .#{$prefix}--popover-contents {

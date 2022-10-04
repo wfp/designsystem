@@ -15,8 +15,8 @@ import IntroDescription from './IntroDescription';
 export default function DocsPage() {
   return (
     <>
-      <Title />
-      <Subtitle />
+      {/*<Title />
+      <Subtitle />*/}
       <IntroDescription />
       <Primary />
       <ArgsTable story={PRIMARY_STORY} />

@@ -8,27 +8,21 @@ import Table from '../../components/Table';
 import Text from '../../components/Text';
 import Tag from '../../components/Tag';
 import Story from '../../components/Story';
-import { wfpColorsMeta } from '@un/themes';
 import { hex, score } from 'wcag-contrast';
 import './colours.scss';
 
-export const ColourList = ({ filter }) => {
-  console.log(wfpColorsMeta);
+export const ColourList = ({ tokens }) => {
+  console.log('tokens', tokens);
+  /*
+  const colors = tokens.color[filter];*/
+  if (!tokens) return <>No tokens found</>;
 
-  const filteredColors = Object.values(wfpColorsMeta).filter(
-    (ui_colors) => ui_colors.category === filter
-  );
-
-  const list = filteredColors.map((color) => {
-    const computedColor = getComputedStyle(document.body).getPropertyValue(
-      `--${color.name}`
-    );
-
+  const list = Object.entries(tokens).map(([key, color]) => {
     return (
       <tr className="color__item" kind="horizontal">
         <td>
           <h5>
-            <Tag>${color.variable}</Tag>
+            <Tag>{color.name}</Tag>
           </h5>
         </td>
         <td>
@@ -36,39 +30,65 @@ export const ColourList = ({ filter }) => {
             <p>
               <pre>{color.description}</pre>
             </p>
-            <p>
-              <Text kind="code">Former name: {color.former}</Text>
-            </p>
+            <ul>
+              <li>
+                <Text kind="code">scss: ${color.cssName}</Text>
+              </li>
+              <li>
+                <Text kind="code">css: var(--{color.cssName})</Text>
+              </li>
+            </ul>
           </Story>
         </td>
         <td>
-          <Text kind="code">{color.hex}</Text>
+          <Text kind="code">
+            <p>
+              #
+              {color.attributes &&
+                typeof color.attributes.hex === 'string' &&
+                color.attributes.hex}
+            </p>
+            <p>
+              {color.attributes?.rgb && (
+                <>
+                  r: {color.attributes.rgb.r}, g:{color.attributes.rgb.g}, b:{' '}
+                  {color.attributes.rgb.b}
+                </>
+              )}
+            </p>
+          </Text>
           <br />
         </td>
-
-        <td>
-          <div
-            className={`color__field ${
-              color.rgba.r + color.rgba.g + color.rgba.b > 2.5
-                ? 'color__field__light'
-                : ''
-            }`}
-            style={{ backgroundColor: color.hex }}>
-            <div className="color__contrast">
-              <span>A</span>
-              {/*<div>{score(hex(color.hex, '#000000'))}</div>*/}
+        {color.attributes?.rgb && (
+          <td>
+            <div
+              className={`color__field ${
+                color.attributes.rgb.r +
+                  color.attributes.rgb.g +
+                  color.attributes.rgb.b >
+                2.5
+                  ? 'color__field__light'
+                  : ''
+              }`}
+              style={{ backgroundColor: `#${color.attributes?.hex}` }}>
+              <div className="color__contrast">
+                <span>A</span>
+                <div>{score(hex(color.value, '#000000'))}</div>
+              </div>
+              <div className="color__contrast color__contrast--light">
+                <span>A</span>
+                <div>{score(hex(color.value, '#FFFFFF'))}</div>
+              </div>
             </div>
-            <div className="color__contrast color__contrast--light">
-              <span>A</span>
-              {/*<div>{score(hex(color.hex, '#FFFFFF'))}</div> */}
-            </div>
-          </div>
 
-          <div className="color__field__description">
-            <div>>{score(hex(color.hex, '#000000'))}</div>
-            <div>{score(hex(color.hex, '#FFFFFF'))}</div>
-          </div>
-        </td>
+            {color.attributes.rgb && (
+              <div className="color__field__description">
+                <div>{score(hex(color.value, '#000000'))}</div>
+                <div>{score(hex(color.value, '#FFFFFF'))}</div>
+              </div>
+            )}
+          </td>
+        )}
 
         {/*<div
           style={{
@@ -112,5 +132,15 @@ export const ColourList = ({ filter }) => {
     </Table>
   );
 };
+
+export function ColourLists({ tokens }) {
+  return (
+    <div>
+      {Object.values(tokens).map((t) => {
+        return <ColourList tokens={t} />;
+      })}
+    </div>
+  );
+}
 
 export default ColourList;

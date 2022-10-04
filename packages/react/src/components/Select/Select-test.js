@@ -5,7 +5,7 @@ import Select from '../Select';
 import SelectItem from '../SelectItem';
 import SelectSkeleton from '../Select/Select.Skeleton';
 import { mount, shallow } from 'enzyme';
-import { CaretDown16 } from '@un/icons-react';
+import { CaretDown } from '@un/icons-react';
 
 describe('Select', () => {
   describe('Renders as expected', () => {
@@ -34,7 +34,6 @@ describe('Select', () => {
         debugger;
         expect(selectContainer.length).toEqual(1);
       });
-
 
       it('has the expected classes', () => {
         expect(selectWrapper.hasClass('wfp--select')).toEqual(true);

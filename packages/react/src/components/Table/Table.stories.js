@@ -11,8 +11,8 @@ export default {
   title: 'Components/UI Elements/Table',
   component: Table,
   subcomponents: {
-    TableSorting, 
-    Pagination 
+    TableSorting,
+    Pagination,
   },
   parameters: {
     componentSubtitle: 'Component',
@@ -23,16 +23,11 @@ export default {
 
 function ReactTable({ columns, data, withBorder }) {
   // Use the state and functions returned from useTable to build your UI
-  const {
-    getTableProps,
-    getTableBodyProps,
-    headerGroups,
-    rows,
-    prepareRow,
-  } = useTable({
-    columns,
-    data,
-  });
+  const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
+    useTable({
+      columns,
+      data,
+    });
 
   // Render the UI for your table
   return (
@@ -126,7 +121,7 @@ function ReactTablePagination({ columns, data, withBorder }) {
           ))}
         </thead>
         <tbody {...getTableBodyProps()}>
-          {page.map((row, i) => {
+          {page.map((row) => {
             prepareRow(row);
             return (
               <tr {...row.getRowProps()}>
@@ -156,27 +151,22 @@ function ReactTablePagination({ columns, data, withBorder }) {
 }
 
 function ReactTableSorting({ columns, data }) {
-  const {
-    getTableProps,
-    getTableBodyProps,
-    headerGroups,
-    rows,
-    prepareRow,
-  } = useTable(
-    {
-      columns,
-      data,
-      initialState: {
-        sortBy: [
-          {
-            id: 'age',
-            desc: false,
-          },
-        ],
+  const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
+    useTable(
+      {
+        columns,
+        data,
+        initialState: {
+          sortBy: [
+            {
+              id: 'age',
+              desc: false,
+            },
+          ],
+        },
       },
-    },
-    useSortBy
-  );
+      useSortBy
+    );
   return (
     <Table {...getTableProps()}>
       <thead>
@@ -195,7 +185,7 @@ function ReactTableSorting({ columns, data }) {
         ))}
       </thead>
       <tbody {...getTableBodyProps()}>
-        {rows.map((row, i) => {
+        {rows.map((row) => {
           prepareRow(row);
           return (
             <tr {...row.getRowProps()}>
@@ -249,8 +239,16 @@ UsingReactTable.story = {
   parameters: {
     docs: {
       storyDescription: text,
+
       source: {
         code: `
+import { Table } from "@un/react";
+
+// Use the state and functions returned from useTable to build your UI
+const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
+  useTable({
+      source: {
+        code: 
 function ReactTable({ columns, data, withBorder }) {
   // Use the state and functions returned from useTable to build your UI
   const {
@@ -264,6 +262,33 @@ function ReactTable({ columns, data, withBorder }) {
     data,
   });
 
+// Render the UI for your table
+return (
+<Table {...getTableProps()} withBorder={withBorder}>
+  <thead>
+    {headerGroups.map((headerGroup) => (
+      <tr {...headerGroup.getHeaderGroupProps()}>
+        {headerGroup.headers.map((column) => (
+          <th {...column.getHeaderProps()}>{column.render('Header')}</th>
+        ))}
+      </tr>
+    ))}
+    </thead>
+    <tbody {...getTableBodyProps()}>
+      {rows.map((row, i) => {
+        prepareRow(row);
+        return (
+        <tr {...row.getRowProps()}>
+          {row.cells.map((cell) => {
+            return <td {...cell.getCellProps()}>{cell.render('Cell')}</td>;
+          })}
+        </tr>
+      );
+    })}
+  </tbody>
+</Table>
+),
+      }, //ReactTable.toString(),
   // Render the UI for your table
   return (
     <Table {...getTableProps()} withBorder={withBorder}>

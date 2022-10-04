@@ -25,7 +25,7 @@
 @use '../../utilities/button-reset';
 
 $input-height: 40px !default;
-$input-border: 1px solid var(--field-border-01);
+$input-border: 1px solid $field-border;
 
 /// Search styles
 /// @access public
@@ -94,11 +94,11 @@ $input-border: 1px solid var(--field-border-01);
     }
   }
   .#{$prefix}--search--light .#{$prefix}--search-input {
-    background: $field-02;
+    //TODO: background: $field-02;
   }
 
   .#{$prefix}--search--light .#{$prefix}--search-close::before {
-    background: $field-02;
+    //TODO:background: $field-02;
   }
 
   // Small styles
@@ -422,6 +422,7 @@ $input-border: 1px solid var(--field-border-01);
   }
 
   .#{$prefix}--search--main {
+    color: $text-primary;
     .#{$prefix}--search-close,
     ~ .#{$prefix}--search-button,
     &.#{$prefix}--search--expandable,

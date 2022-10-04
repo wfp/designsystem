@@ -9,7 +9,7 @@
 @use '../../config' as *;
 @use '../../motion' as *;
 @use '../../spacing' as *;
-@use '../../compat/theme' as *;
+@use '../../theme' as *;
 @use '../../type' as *;
 @use '../../utilities/skeleton' as *;
 @use '../../utilities/button-reset';
@@ -20,9 +20,8 @@
 @use '../../utilities/input-base' as *;
 @use '../form' as *;
 
-
 $input-height: 40px;
-$input-border: 1px solid var(--field-border-01);
+$input-border: 1px solid $field-border;
 
 /// Number input styles
 /// @access public
@@ -49,13 +48,11 @@ $input-border: 1px solid var(--field-border-01);
       order: 1;
     }
 
-
     &:disabled ~ .#{$prefix}--number__controls {
       opacity: 0.5;
       cursor: not-allowed;
       pointer-events: none;
     }
-
 
     & ~ .#{$prefix}--form-requirement {
       order: 3;
@@ -143,7 +140,7 @@ $input-border: 1px solid var(--field-border-01);
     }
 
     &:hover svg {
-      fill: $hover-primary;
+      //TODO: fill: $hover-primary;
     }
     &:nth-child(1) {
       right: $input-height - 1px;
@@ -160,7 +157,7 @@ $input-border: 1px solid var(--field-border-01);
     // Hover styles for use with old HTML w/o button
     &:hover {
       cursor: pointer;
-      fill: $hover-primary;
+      //TODO: fill: $hover-primary;
     }
   }
 
@@ -200,6 +197,4 @@ $input-border: 1px solid var(--field-border-01);
       display: none;
     }
   }
-
-
 }

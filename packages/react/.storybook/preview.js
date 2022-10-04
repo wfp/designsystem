@@ -1,9 +1,10 @@
 import React, { FC } from 'react';
 import { addParameters } from '@storybook/react';
 import './storybook.scss';
-import './storybook-legacy.scss';
+//import './storybook-legacy.scss';
 import theme from './theme';
 import { UNCoreProvider } from '../src/components/UNCoreSettings';
+import MdxComponents from '../src/components/MdxComponents';
 
 /*import {
   Title,
@@ -14,11 +15,11 @@ import { UNCoreProvider } from '../src/components/UNCoreSettings';
 } from '@storybook/addon-docs/blocks';*/
 
 import DocsPage from './documentation/DocsPage';
-import { DocsContainer } from './blocks/DocsContainer';
+import DocsContainer from './documentation/DocsContainer';
 
 addParameters({
   docs: {
-    //container: DocsContainer,
+    container: DocsContainer,
     page: DocsPage,
   },
   viewMode: 'docs',
@@ -26,6 +27,7 @@ addParameters({
 export const parameters = {
   controls: { expanded: true },
   docs: {
+    components: { ...MdxComponents },
     theme: theme,
   },
   previewTabs: {

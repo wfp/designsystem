@@ -1,7 +1,9 @@
 import Story from '../Story';
 import React from 'react';
 import { List, ListItem } from '../List';
-import Blockquote from '../Blockquote';
+import { BlockNotification } from '../Notification';
+import Table from '../Table';
+import useSettings from '../../hooks/useSettings';
 
 /** Links are used as navigational elements. They may appear on their own, within a sentence or paragraph, or directly following the content. */
 
@@ -21,36 +23,90 @@ const li = (props) => {
   return <li {...props}>{props.children}</li>;
 };
 
-const ul = (props) => {
+const ul = ({ children, ...other }) => {
   return (
-    <List {...props} kind="bullets">
-      {props.children}
+    <List {...other} kind="bullets">
+      {children}
     </List>
   );
 };
 
-const ol = (props) => {
+const ol = ({ children, ...other }) => {
   return (
-    <List {...props} kind="ordered">
-      {props.children}
+    <List {...other} kind="ordered">
+      {children}
     </List>
   );
 };
 
-const blockquote = (props) => {
-  if (
-    Array.isArray(props.children) &&
-    props.children.length >= 2 &&
-    props.children[0].props
-  )
+const h1 = (props) => {
+  return <h1 {...props}>{props.children}</h1>;
+};
+
+const h2 = (props) => {
+  return <h2 {...props}>{props.children}</h2>;
+};
+
+const h3 = (props) => {
+  return <h3 {...props}>{props.children}</h3>;
+};
+
+const h4 = (props) => {
+  return <h4 {...props}>{props.children}</h4>;
+};
+
+const h5 = (props) => {
+  return <h5 {...props}>{props.children}</h5>;
+};
+
+const p = (props) => {
+  return <p {...props}>{props.children}</p>;
+};
+
+const table = (props) => {
+  return <Table {...props}>{props.children}</Table>;
+};
+
+const code = (props) => {
+  const settings = useSettings();
+  return (
+    <code className={`${settings.prefix}--story__code`} {...props}>
+      {props.children}
+    </code>
+  );
+};
+
+const pre = (props) => {
+  const settings = useSettings();
+  return (
+    <pre className={`${settings.prefix}--story__pre`} {...props}>
+      {props.children}
+    </pre>
+  );
+};
+
+/*const inlineCode = (props) => {
+  const settings = useSettings();
+  return (
+    <code className={`${settings.prefix}--story__inlinecode`} {...props}>
+      {props.children}
+    </code>
+  );
+};*/
+
+const blockquote = ({ children, ...other }) => {
+  if (Array.isArray(children) && children.length >= 2 && children[0].props)
     return (
-      <Blockquote {...props} title={props.children[0].props.children}>
-        {props.children.map((e, i) => {
+      <BlockNotification
+        kind="info"
+        {...other}
+        subtitle={children.map((e, i) => {
           if (i > 0) return e;
         })}
-      </Blockquote>
+        title={children[0].props.children}
+      />
     );
-  return <Blockquote {...props}>{props.children}</Blockquote>;
+  return <BlockNotification kind="info" {...other} subtitle={children} />;
 };
 
 /*const code = ({ children, className, ...other }) => {
@@ -69,9 +125,19 @@ const blockquote = (props) => {
 
 export const MdxComponents = {
   wrapper,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  p,
   li,
   ul,
   ol,
+  code,
+  pre,
+  // inlineCode,
+  table,
   blockquote,
 };
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import Blockquote from '.';
 import Button from '../Button';
-import { AddOutlineGlyph } from '@un/icons-react';
+import { AddOutline } from '@un/icons-react';
 import markdown from './README.mdx';
 import blockquoteTwig from './Blockquote.twig';
 
@@ -127,7 +127,7 @@ export const CustomIcon = (args) => <Blockquote {...args} />;
 
 CustomIcon.args = {
   ...props,
-  icon: <AddOutlineGlyph height={48} width={48} />,
+  icon: <AddOutline height={48} width={48} />,
 };
 
 const customiconsourcecode = `

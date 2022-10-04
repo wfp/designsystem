@@ -16,13 +16,12 @@
 /// @access public
 /// @group empty
 
-
 @mixin empty {
   .#{$prefix}--empty {
     padding: $spacing-06;
     margin: 0;
     display: flex !important;
-    background: $layer;
+    background: $layer-primary;
     text-align: center;
     flex-direction: column;
     align-items: center;

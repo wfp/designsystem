@@ -61,7 +61,7 @@
     border: 2px solid $border-subtle;
     background-color: $icon-secondary;
     text {
-      fill: $background; // TODO $text-on-color
+      fill: $background-main; // TODO $text-on-color
       font-weight: 600;
       font-family: 'Arial';
     }

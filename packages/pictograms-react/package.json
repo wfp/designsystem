@@ -1,27 +1,24 @@
 {
   "name": "@un/pictograms-react",
-  "description": "React components for pictograms in digital and software products using the Carbon Design System",
-  "version": "11.14.6",
+  "description": "React components for pictograms in digital and software products using the UN Core",
+  "version": "11.14.18",
   "license": "Apache-2.0",
-  "main": "lib/index.js",
+  "main": "umd/index.js",
   "module": "es/index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/carbon-design-system/carbon.git",
+    "url": "https://github.com/un/core.git",
     "directory": "packages/pictograms-react"
   },
-  "bugs": "https://github.com/carbon-design-system/carbon/issues",
+  "bugs": "https://github.com/un/core/issues",
   "files": [
     "es",
     "lib",
     "umd"
   ],
   "keywords": [
-    "ibm",
+    "pictograms",
     "elements",
-    "carbon",
-    "carbon-elements",
-    "carbon-design-system",
     "components",
     "react"
   ],
@@ -29,22 +26,19 @@
     "access": "public"
   },
   "scripts": {
-    "build": "yarn clean && node tasks/build.js",
-    "clean": "rimraf es lib umd",
-    "postinstall": "carbon-telemetry collect --install"
+    "build:react": "npx @svgr/cli --out-dir dist --replace-attr-values '#000000=currentColor' ../pictograms/src/svg --svgo-config ./svgo.config.js",
+    "build:umd": "npx babel ./dist/svg/index.js --out-file umd/index.js",
+    "build:umdb": "npx babel ./dist/jsx/index.js --out-file umd/index.js",
+    "build:legacy": "npm run build:react && npm build:umd",
+    "build": "node config.mjs"
   },
   "peerDependencies": {
     "react": ">=16"
   },
-  "dependencies": {
-    "@carbon/icon-helpers": "^10.20.0",
-    "@carbon/telemetry": "0.0.0-alpha.6",
-    "prop-types": "^15.7.2"
-  },
   "devDependencies": {
-    "@un/icon-build-helpers": "^0.23.10",
-    "@un/pictograms": "^11.14.6"
+    "@un/icons-core": "^0.0.12",
+    "@un/pictograms": "^11.14.16"
   },
   "sideEffects": false,
-  "gitHead": "1f06c355bfc57d62c4516f9daed57564730537f5"
+  "gitHead": "e3e297bd95e5d0812cc1844e1cd3db50d0d99428"
 }

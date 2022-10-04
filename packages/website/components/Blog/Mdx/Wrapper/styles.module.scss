@@ -1,0 +1,89 @@
+@use "scss/meta" as *;
+
+.wrapper {
+  line-height: 1.7em;
+  max-width: 700px;
+  margin: auto;
+  font-size: 1.1rem;
+  h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-top: 2rem;
+    margin-bottom: 1.2rem;
+  }
+  h2 {
+    font-size: 1.7rem;
+    font-weight: 700;
+    margin-top: 2rem;
+    margin-bottom: 0.8rem;
+  }
+  h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-top: 2rem;
+    margin-bottom: 0.8rem;
+  }
+  h4 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-top: 2rem;
+    margin-bottom: 0.8rem;
+  }
+  p {
+    margin-top: 1rem;
+  }
+
+  ul,
+  ol {
+    margin: 1em 0 1em 1.1em;
+    margin-left: 1.1em;
+  }
+  ul {
+    list-style-type: disc;
+  }
+  ol {
+    list-style-type: decimal;
+  }
+  em {
+    font-style: italic;
+  }
+  code,
+  pre {
+    font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace;
+    font-size: 0.9em;
+    padding: 0.3em;
+    border-radius: 0.3em;
+    background-color: var(--code-01);
+  }
+  strong {
+    font-weight: bold;
+  }
+  code {
+    margin: 0 0.2em;
+  }
+  pre {
+    overflow: auto;
+    line-height: 1.45;
+  }
+  i {
+    font-style: italic;
+  }
+  a {
+    color: var(--interactive-01);
+    text-decoration: underline;
+  }
+  .videoWrapper {
+    .video {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%; /* 16:9 */
+    }
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

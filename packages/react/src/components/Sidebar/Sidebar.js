@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 // import Icon from '../Icon';
 import classNames from 'classnames';
-import { ChevronLeft16 } from '@un/icons-react';
+import { ChevronLeft } from '@un/icons-react';
 import useSettings from '../../hooks/useSettings';
 
 export default function Sidebar({
@@ -82,14 +82,14 @@ export function SidebarContentHeader({
   ...other
 }) {
   const { prefix } = useSettings();
-  const classes = classNames(
+  const mobileClasses = classNames(
     `${prefix}--sidebar-content-mobile-header`,
     className,
     {}
   );
 
   return (
-    <div className={classes} {...other}>
+    <div className={mobileClasses} {...other}>
       {children}
     </div>
   );
@@ -100,6 +100,10 @@ SidebarContentHeader.propTypes = {
    The children of header of content area
  */
   children: PropTypes.node,
+  /**
+   Additional classname of the SidebarContentHeader
+ */
+  className: PropTypes.string,
 };
 
 export function SidebarContentBody({
@@ -149,7 +153,7 @@ export function SidebarBackButton({ children, ...other }) {
   const { prefix } = useSettings();
   return (
     <div className={`${prefix}--sidebar-content__back-button`} {...other}>
-      <ChevronLeft16 />
+      <ChevronLeft />
       {children}
     </div>
   );

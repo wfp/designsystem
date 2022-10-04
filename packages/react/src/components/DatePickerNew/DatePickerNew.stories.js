@@ -1,0 +1,195 @@
+import React, { useState } from 'react';
+
+import { SingleDatePickerInput } from '../DatePicker/SingleDatePickerInput';
+import { DateRangePickerInput } from '../DatePickerNew';
+import Input from '../Input';
+import moment from 'moment';
+import { Controller, useForm } from 'react-hook-form';
+
+import 'react-dates/initialize';
+import { SingleDatePicker, DateRangePicker } from 'react-dates';
+import markdown from './README.mdx';
+
+//import 'react-datepicker/dist/react-datepicker.css';
+
+export default {
+  title: 'Components/UI Elements/DatePickerNew',
+  component: SingleDatePickerInput,
+  markdown: 'hello',
+  parameters: {
+    componentSubtitle: 'Component',
+    status: 'experimental',
+    mdx: markdown,
+  },
+};
+
+export const SingleDatePickerDefault = (args) => (
+  <div style={{ height: '300px' }}>
+    <SingleDatePickerInput {...args} />
+  </div>
+);
+SingleDatePickerDefault.args = {
+  datePicker: SingleDatePicker,
+  labelText: 'Label text (labelText)',
+  placeholder: 'Placeholder text (placeholder)',
+  disabled: false,
+  hideLabel: false,
+  showClearDate: false,
+  invalid: false,
+  invalidText: 'A valid value is required',
+  showDefaultInputIcon: true,
+  inputIconPosition: 'after',
+  helperText: 'Optional helper text.',
+};
+
+const singleSourceCode = `
+import 'react-dates/initialize';
+import { SingleDatePickerInput } from "@un/react";
+import { SingleDatePicker } from 'react-dates';
+
+<SingleDatePickerInput
+  datePicker={SingleDatePicker}
+  helperText="Optional helper text."
+  inputIconPosition="after"
+  invalidText="A valid value is required"
+  labelText="Label datepicker"
+  onBlur={()=>{}}
+  onChange={()=>{}}
+  onFocus={()=>{}}
+  placeholder="Placeholder text (placeholder)"
+  showDefaultInputIcon
+
+/>
+`;
+
+SingleDatePickerDefault.story = {
+  parameters: {
+    docs: {
+      source: {
+        code: singleSourceCode,
+      },
+    },
+  },
+};
+
+export const SingleDatePickerNew = (args) => {
+  const [date, setDate] = useState(moment());
+  const [focused, setFocused] = useState(false);
+  return (
+    <Input
+      labelText="Input using SingleDatePicker by Airbnb"
+      helperText="HelperText">
+      {(e) => (
+        <SingleDatePicker
+          showDefaultInputIcon={true}
+          inputIconPosition="after"
+          onDateChange={(newDate) => setDate(newDate)}
+          focused={focused}
+          onFocusChange={({ focused }) => setFocused(focused)}
+          date={date}
+          id="your_unique_id"
+        />
+      )}
+    </Input>
+  );
+};
+
+export const DatePickerHookForm = (args) => {
+  const { control, watch } = useForm();
+  const input = watch('test');
+
+  return (
+    <>
+      {JSON.stringify(input)}
+      <Controller
+        control={control}
+        name="test"
+        render={({ field, fieldState, formState }) => (
+          <SingleDatePickerInput
+            {...field}
+            {...fieldState}
+            datePicker={SingleDatePicker}
+            helperText="Optional helper text."
+            inputIconPosition="after"
+            invalidText="A valid value is required"
+            labelText="Label datepicker"
+            placeholder="Placeholder text (placeholder)"
+            showDefaultInputIcon
+          />
+        )}
+      />
+    </>
+  );
+};
+
+export const DateRangePickerDefault = (args) => {
+  const [startDate, setStartDate] = useState(new Date());
+  const [endDate, setEndDate] = useState(new Date());
+  const date = new Date();
+  return (
+    <div style={{ height: '300px' }}>
+      <DateRangePickerInput
+        {...args}
+        setStartDate={setStartDate}
+        startDate={startDate}
+        setEndDate={setEndDate}
+        endDate={endDate}
+        fromProps={{
+          minDate: new Date(),
+          maxDate: new Date(date.setMonth(date.getMonth() + 2)),
+        }}
+      />
+    </div>
+  );
+};
+DateRangePickerDefault.args = {
+  labelText: 'Label text (labelText)',
+  placeholder: 'Placeholder text (placeholder)',
+  disabled: false,
+  hideLabel: false,
+  showClearDate: false,
+  invalid: false,
+  invalidText: 'A valid value is required',
+  helperText: 'Optional helper text.',
+};
+
+const dateRangeSourceCode = `
+dddd
+`;
+
+DateRangePickerDefault.story = {
+  parameters: {
+    docs: {
+      source: {
+        code: dateRangeSourceCode,
+      },
+    },
+  },
+};
+
+export const DatePickerRangeHookForm = (args) => {
+  const { control, watch } = useForm();
+  const datePickerRange = watch('datePickerRange');
+  return (
+    <>
+      {JSON.stringify(datePickerRange)}
+      <Controller
+        control={control}
+        name="datePickerRange"
+        render={({ field, fieldState, formState }) => (
+          <DateRangePickerInput
+            {...fieldState}
+            {...field}
+            datePicker={DateRangePicker}
+            helperText="Optional helper text."
+            inputIconPosition="after"
+            invalidText="A valid value is required"
+            labelText="Label datepicker"
+            placeholder="Placeholder text (placeholder)"
+            showDefaultInputIcon
+          />
+        )}
+      />
+    </>
+  );
+};

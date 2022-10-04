@@ -2,6 +2,7 @@ import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
 import ReactDOMServer from 'react-dom/server';
 import { Colour } from './ColourDocs';
 import { ColourList } from './ColourList';
+import tokens from '@un/themes-core/dist/json/variables-full';
 
 <Meta
   title="Documentation/Core/Colours"
@@ -35,7 +36,14 @@ non-interactive elements. **Interactive colours** are used for primary
 links and action items that can be clicked or touched, to emphasize important
 actions and highlight information in your application.
 
-<ColourList filter="Primary" />
+<div>
+  {Object.entries(tokens.color).map(([i, e]) => (
+    <div>
+      <h3>{i}</h3>
+      <ColourList tokens={e} />
+    </div>
+  ))}
+</div>
 
 <Colour color="brand-01" />
 <h4 className="wfp--story__sub-heading">WFP's corporate colour</h4>

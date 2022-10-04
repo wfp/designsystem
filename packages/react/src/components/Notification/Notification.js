@@ -3,16 +3,14 @@ import React, { useState, useRef, useEffect } from 'react';
 import classnames from 'classnames';
 import useSettings from '../../hooks/useSettings';
 import {
-  CloseGlyph,
-  ErrorGlyph,
-  CheckmarkCircleGlyph,
-  WarningSolidGlyph,
-  //WarningAltFilled20,
-  InfoCircleGlyph,
+  Close,
+  Error,
+  CheckmarkCircle,
+  WarningSolid,
+  InfoCircle,
 } from '@un/icons-react';
 
 import Button from '../Button';
-import Icon from '../Icon';
 
 /** Notifications are messages that communicate information to the user. The two main types of notifications are toast notifications and inline notifications. */
 export function NotificationActionButton({
@@ -139,7 +137,7 @@ NotificationButton.defaultProps = {
   notificationType: 'toast',
   type: 'button',
   iconDescription: 'close icon',
-  renderIcon: CloseGlyph,
+  renderIcon: Close,
 };
 
 export function NotificationTextDetails({
@@ -155,7 +153,9 @@ export function NotificationTextDetails({
   if (notificationType === 'toast') {
     return (
       <div {...other} className={`${prefix}--toast-notification__details`}>
-        <h3 className={`${prefix}--toast-notification__title`}>{title}</h3>
+        {title && (
+          <h3 className={`${prefix}--toast-notification__title`}>{title}</h3>
+        )}
         <div className={`${prefix}--toast-notification__subtitle`}>
           {subtitle}
         </div>
@@ -172,11 +172,12 @@ export function NotificationTextDetails({
       <div
         {...other}
         className={`${prefix}--inline-notification__text-wrapper`}>
-        <p className={`${prefix}--inline-notification__title`}>{title}</p>
+        {title && (
+          <p className={`${prefix}--inline-notification__title`}>{title}</p>
+        )}
         <div className={`${prefix}--inline-notification__subtitle`}>
-          {subtitle}
+          {children || subtitle}
         </div>
-        {children}
       </div>
     );
   }
@@ -206,18 +207,18 @@ NotificationTextDetails.propTypes = {
 };
 
 NotificationTextDetails.defaultProps = {
-  title: 'title',
+  //title: 'title',
   notificationType: 'toast',
 };
 
 const iconTypes = {
-  error: ErrorGlyph,
-  success: CheckmarkCircleGlyph,
-  warning: WarningSolidGlyph,
-  info: InfoCircleGlyph,
+  error: Error,
+  success: CheckmarkCircle,
+  warning: WarningSolid,
+  info: InfoCircle,
 };
 
-function NotificationIcon({ iconDescription, kind, notificationType }) {
+export function NotificationIcon({ iconDescription, kind, notificationType }) {
   const { prefix } = useSettings();
   const IconForKind = iconTypes[kind];
   if (!IconForKind) {

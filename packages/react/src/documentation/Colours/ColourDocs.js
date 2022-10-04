@@ -4,7 +4,7 @@ import { List, ListItem } from '../../components/List';
 import Page from '../Page';
 
 import { linkTo } from '@storybook/addon-links';
-import ColorList from './ColourList';
+import ColorList, { ColourLists } from './ColourList';
 //import './colours.scss';
 // import styles from './colours.module.scss';
 
@@ -49,6 +49,8 @@ const ColourDocs = () => {
         different hues of these colours. The colour reference codes are shown
         below.
       </p> */}
+
+      <ColourLists />
 
       <p>WFP online visual identity includes the following colours:</p>
       <List kind="bullet">

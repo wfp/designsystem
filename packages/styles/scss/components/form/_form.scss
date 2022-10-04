@@ -134,12 +134,12 @@ $input-label-weight: 400 !default;
   }
 
   .#{$prefix}--form__helper-text {
-    @include type-style('helper-text-01');
+    @include type-style('helperddddd');
     color: $text-helper;
     order: 1;
     line-height: 1.5;
     z-index: 0;
-    max-height: 3rem;
+    // max-height: 3rem;
     // opacity: 1;
     margin-bottom: $spacing-03;
   }

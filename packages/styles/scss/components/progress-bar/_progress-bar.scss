@@ -28,7 +28,7 @@
     position: relative;
     width: 100%;
     height: rem(8px);
-    background-color: $layer;
+    background-color: $layer-primary;
   }
 
   .#{$prefix}--progress-bar__bar {

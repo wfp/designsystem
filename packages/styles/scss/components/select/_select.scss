@@ -23,7 +23,7 @@
 /// @group select
 
 $input-height: 40px !default;
-$input-border: 1px solid var(--field-border-01); 
+$input-border: 1px solid $field-border;
 
 @mixin select {
   .#{$prefix}--select {
@@ -49,6 +49,7 @@ $input-border: 1px solid var(--field-border-01);
     order: 2;
     border-radius: 0;
     cursor: pointer;
+    font-size: $typography-body-copy-16px-regular-font-size;
 
     // Hide default select arrow in IE10+
     &::-ms-expand {
@@ -62,7 +63,6 @@ $input-border: 1px solid var(--field-border-01);
     &:focus {
       @include focus-outline('border');
     }
-
 
     &:focus ~ .#{$prefix}--label {
       color: $focus;
@@ -113,7 +113,7 @@ $input-border: 1px solid var(--field-border-01);
     top: 0;
     right: 0.7em;
     height: 100%;
-    fill: $interactive;
+    color: $interactive;
     pointer-events: none;
 
     // Windows, Firefox HCM Fix
@@ -121,7 +121,7 @@ $input-border: 1px solid var(--field-border-01);
       screen and (prefers-contrast) {
       // `ButtonText` is a CSS2 system color to help improve colors in HCM
       path {
-        fill: ButtonText;
+        color: ButtonText;
       }
     }
   }
@@ -139,7 +139,7 @@ $input-border: 1px solid var(--field-border-01);
   // Override some Firefox user-agent styles
   @-moz-document url-prefix() {
     .#{$prefix}--select-option {
-      background-color: $background;
+      background-color: $background-main;
       color: $text-primary;
     }
 
@@ -186,7 +186,7 @@ $input-border: 1px solid var(--field-border-01);
       box-shadow: none;
 
       &:hover {
-        background-color: $background;
+        background-color: $background-main;
       }
 
       &:focus {

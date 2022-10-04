@@ -3,7 +3,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import classNames from 'classnames';
 import useSettings from '../../hooks/useSettings';
 import Input from '../Input';
-import { SearchGlyph, CloseGlyph } from '@un/icons-react';
+import { Search as SearchIcon, Close } from '@un/icons-react';
 
 /** Search enables users to specify a word or a phrase to find relevant pieces of content without the use of navigation. */
 
@@ -87,7 +87,7 @@ function Search(props) {
       {() => {
         return (
           <>
-            <SearchGlyph
+            <SearchIcon
               description={labelText}
               className={`${prefix}--search-magnifier-icon`}
               onClick={onSearchIconClick}
@@ -105,7 +105,7 @@ function Search(props) {
               onClick={clearSearch}
               type="button"
               aria-label={closeButtonLabelText}>
-              <CloseGlyph description={closeButtonLabelText} />
+              <Close description={closeButtonLabelText} />
             </button>
           </>
         );

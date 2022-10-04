@@ -68,7 +68,7 @@ TODO: improve documentation
 Install the latest alpha versions to use the Design System Alpha within your project
 
 ```bash
-npm install @un/react@alpha @un/icons@alpha  @un/icons-react@alpha  @un/layout@alpha  @un/styles@alpha  @un/themes@alpha  @un/type@alpha
+npm install @un/react@alpha @un/icons-react@alpha @un/layout@alpha @un/styles@alpha @un/themes-core@alpha @un/type@alpha 
 ```
 
 ### Upgrade to 2.0 for existing solutions

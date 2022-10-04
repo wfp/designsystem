@@ -102,8 +102,9 @@ const Button = ({
       role="button"
       onClick={onClickAnimation}
       ref={other.inputref}>
+      {iconReverse && buttonImage}
       {children}
-      {buttonImage}
+      {!iconReverse && buttonImage}
     </a>
   );
   return href ? anchor : button;
@@ -179,7 +180,7 @@ Button.propTypes = {
   /**
    * Specify an `icon` to include in the Button through an object representing the SVG data of the icon, similar to the `Icon` component
    */
-  icon: PropTypes.component,
+  icon: PropTypes.node,
   /**
    * If specifying the `icon` prop, provide a description for that icon that can
    * be read by screen readers

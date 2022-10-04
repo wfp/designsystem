@@ -1,0 +1,52 @@
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+import Button from '../../components/Button';
+import Blockquote from '../../components/Blockquote';
+import Link from '../../components/Link';
+import IconListNew from './IconListNew';
+
+import * as icons from '@un/icons-react';
+import * as pictograms from '@un/pictograms-react';
+
+<Meta
+  title="Documentation/Core/Icons/Icons-Core"
+  subTitle="Icons-core tool"
+  parameters={{
+    previewTabs: {
+      canvas: { hidden: true },
+    },
+  }}
+/>
+
+`icons-core` allows you to create your own icon library and release it on npm. An example project can be found [here](https://github.com/un-core/designsystem/tree/feat/icons-and-tools/packages/icons-react).
+
+It uses [svgo](https://github.com/svg/svgo) and [react-svgr](https://react-svgr.com) to create optimized svg files and react components.
+
+Create a node script to run the build process:
+
+```js
+import path from 'path';
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
+
+import { convertFolder, jsx } from '@un/icons-core';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+const srcFolder = '../icons/src/svg';
+const distFolder = path.resolve(__dirname, 'dist');
+
+convertFolder(
+  srcFolder,
+  distFolder,
+  jsx /* The converter, can be jsx, svg or a custom converter */
+);
+```
+
+Starting the build script from package.json
+
+```json
+  "scripts": {
+    "build": "node config.mjs"
+  }
+```

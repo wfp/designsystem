@@ -47,6 +47,11 @@
     margin-top: $spacing-06;
   }
 
+  .#{$prefix}--footer-ext__logo {
+    fill: $text-on-color;
+    font-size: 4em;
+  }
+
   .#{$prefix}--footer-ext__social-icons-list {
     align-items: center;
     display: flex;
@@ -107,14 +112,6 @@
     & + .#{$prefix}--links-column-link {
       margin-top: $spacing-04;
     }
-
-    & > a {
-      color: $text-on-color;
-
-      &:hover {
-        color: $text-on-color;
-      }
-    }
   }
   /* End block LinksColumn */
 
@@ -137,11 +134,18 @@
     display: flex;
   }
 
-  .#{$prefix}--footer-ext__legal-link {
+  .#{$prefix}--footer-ext__legal-link,
+  .#{$prefix}--links-column-link {
     & > a {
       color: $text-on-color;
+      text-decoration: none;
 
       &:hover {
+        text-decoration: underline;
+        color: $text-on-color;
+      }
+      &:visited,
+      &:active {
         color: $text-on-color;
       }
     }

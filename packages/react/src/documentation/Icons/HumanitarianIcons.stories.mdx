@@ -1,0 +1,22 @@
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+import Button from '../../components/Button';
+import Blockquote from '../../components/Blockquote';
+import Link from '../../components/Link';
+import IconListNew from './IconListNew';
+
+import * as icons from '@un/icons-react';
+import * as pictograms from '@un/humanitarian-icons-react';
+
+<Meta
+  title="Documentation/Core/Icons/Humanitarian Icons"
+  subTitle="Icons & Logos for User Interfaces"
+  parameters={{
+    previewTabs: {
+      canvas: { hidden: true },
+    },
+  }}
+/>
+
+The WFP humanitarian icons are largly based on [UN OCHA Humanitarian Icons](https://brand.unocha.org/d/xEPytAUjC3sH/icons).
+
+<IconListNew iconsReact={pictograms} name="humanitarian-icons" />

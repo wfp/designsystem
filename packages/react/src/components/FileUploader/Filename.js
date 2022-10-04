@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Icon from '../Icon';
-import { iconCloseGlyph, iconCheckmarkGlyph } from '@un/icons-react';
+import { iconClose, iconCheckmark } from '@un/icons-react';
 import { withUNCoreSettings } from '../UNCoreSettings';
 
 class Filename extends Component {
@@ -50,7 +50,7 @@ class Filename extends Component {
         <Icon
           description={iconDescription}
           className={`${prefix}--file-close`}
-          icon={iconCloseGlyph}
+          icon={iconClose}
           style={style}
           {...other}
         />
@@ -60,7 +60,7 @@ class Filename extends Component {
         <Icon
           description={iconDescription}
           className={`${prefix}--file-complete`}
-          icon={iconCheckmarkGlyph}
+          icon={iconCheckmark}
           style={style}
           {...other}
         />

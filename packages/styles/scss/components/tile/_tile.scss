@@ -8,7 +8,7 @@
 @use '../../config' as *;
 @use '../../motion' as *;
 @use '../../spacing' as *;
-@use '../../compat/theme' as *;
+@use '../../theme' as *;
 @use '../../type' as *;
 @use '../button/tokens' as button;
 @use '../../utilities/focus-outline' as *;
@@ -29,7 +29,7 @@
     min-width: 8rem;
     min-height: 4rem;
     padding: $spacing-05;
-    background-color: $layer;
+    background-color: $layer-primary;
     outline: 2px solid transparent;
     outline-offset: -2px;
 
@@ -242,7 +242,7 @@
   }
 
   .#{$prefix}--tile--disabled.#{$prefix}--tile--selectable {
-    background-color: $layer;
+    background-color: $layer-primary;
     color: $text-disabled;
     cursor: not-allowed;
   }

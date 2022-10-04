@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
-import { User16 } from '@un/icons-react';
+import { User as UserIcon } from '@un/icons-react';
 import useSettings from '../../hooks/useSettings';
 
 /** The User is used inside the MainNavigation and form, and can display an avatar and username. */
@@ -24,7 +24,7 @@ const User = ({
   var avatar;
   if (!image && missingImage === 'avatar') {
     avatar = (
-      <User16
+      <UserIcon
         fill="#ffffff"
         width="14"
         height="14"

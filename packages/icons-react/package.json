@@ -1,9 +1,9 @@
 {
   "name": "@un/icons-react",
   "description": "React components for icons in digital and software products using the Carbon Design System",
-  "version": "10.34.19",
+  "version": "10.34.31",
   "license": "Apache-2.0",
-  "main": "lib/index.js",
+  "main": "umd/index.js",
   "module": "es/index.js",
   "repository": {
     "type": "git",
@@ -18,11 +18,12 @@
     "next"
   ],
   "keywords": [
-    "ibm",
+    "un",
     "elements",
-    "carbon",
-    "carbon-elements",
-    "carbon-design-system",
+    "icons",
+    "united-nations",
+    "wfp",
+    "world-food-programme",
     "components",
     "react"
   ],
@@ -30,24 +31,18 @@
     "access": "public"
   },
   "scripts": {
-    "build": "yarn clean && node tasks/build.js",
-    "clean": "rimraf es lib umd next",
-    "postinstall": "carbon-telemetry collect --install"
+    "build": "node config.mjs"
   },
   "peerDependencies": {
     "react": ">=16"
   },
   "dependencies": {
-    "@babel/core": "^7.14.6",
-    "@carbon/icon-helpers": "^10.19.0",
-    "@carbon/telemetry": "0.0.0-alpha.6",
     "prop-types": "^15.7.2"
   },
   "devDependencies": {
-    "@un/icon-build-helpers": "^0.23.10",
-    "@un/icons": "^10.34.19",
-    "rimraf": "^3.0.2"
+    "@un/icons": "^10.34.29",
+    "@un/icons-core": "^0.0.12"
   },
   "sideEffects": false,
-  "gitHead": "1f06c355bfc57d62c4516f9daed57564730537f5"
+  "gitHead": "e3e297bd95e5d0812cc1844e1cd3db50d0d99428"
 }

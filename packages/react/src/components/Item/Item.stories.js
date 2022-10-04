@@ -59,7 +59,33 @@ Regular.story = {
   },
 };
 
-export const Horizontal = (args) => <Item {...args} />;
+export const Horizontal = (args) => (
+  <>
+    <Item {...args} />
+    <Item {...args} unread />
+    <Item
+      {...args}
+      unread
+      additional={undefined}
+      hint={undefined}
+      image={
+        <img
+          alt="Moving van"
+          src="https://www.wfp.org/sites/default/files/styles/medium/public/images/publication/YiR_banner.jpg"
+        />
+      }
+    />
+    <Item
+      {...args}
+      image={
+        <img
+          alt="Moving van"
+          src="https://www.wfp.org/sites/default/files/styles/medium/public/images/publication/YiR_banner.jpg"
+        />
+      }
+    />
+  </>
+);
 
 Horizontal.args = {
   title: 'A title is shown',

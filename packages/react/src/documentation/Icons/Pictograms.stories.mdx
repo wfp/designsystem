@@ -1,0 +1,22 @@
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+import Button from '../../components/Button';
+import Blockquote from '../../components/Blockquote';
+import Link from '../../components/Link';
+import IconListNew from './IconListNew';
+
+import * as icons from '@un/icons-react';
+import * as pictograms from '@un/pictograms-react';
+
+<Meta
+  title="Documentation/Core/Icons/Pictograms"
+  subTitle="Icons & Logos for User Interfaces"
+  parameters={{
+    previewTabs: {
+      canvas: { hidden: true },
+    },
+  }}
+/>
+
+React components for pictograms and illustrations in digital and software products using the WFP Design System
+
+<IconListNew iconsReact={pictograms} name="pictograms" />

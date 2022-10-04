@@ -56,7 +56,7 @@
     width: rem(18px);
     border: 2px solid $border-inverse;
     border-radius: 4px;
-    background-color: $background;
+    background-color: $background-main;
   }
 
   // Checkmark
@@ -65,8 +65,8 @@
     width: 10px;
     height: 5px;
     background: none;
-    border-left: 2px solid $background;
-    border-bottom: 2px solid $background;
+    border-left: 2px solid $background-main;
+    border-bottom: 2px solid $background-main;
     transform: scale(0) rotate(-45deg);
     position: absolute;
     left: rem(3px);
@@ -103,8 +103,8 @@
   .#{$prefix}--checkbox:indeterminate + .#{$prefix}--checkbox-label::after,
   .#{$prefix}--checkbox-label[data-contained-checkbox-state='mixed']::after {
     transform: scale(1) rotate(0deg);
-    border-left: 0 solid $background;
-    border-bottom: 2px solid $background;
+    border-left: 0 solid $background-main;
+    border-bottom: 2px solid $background-main;
     opacity: 1;
     width: rem(12px);
     margin-top: rem(-6px);

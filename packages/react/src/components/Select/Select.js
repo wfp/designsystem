@@ -8,7 +8,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
-import { CaretDownGlyph } from '@un/icons-react';
+import { CaretDown } from '@un/icons-react';
 
 import useSettings from '../../hooks/useSettings';
 import Input from '../Input';
@@ -20,15 +20,15 @@ const Select = React.forwardRef((props, ref) => {
     className,
     id,
     inline,
-    labelText, // eslint-disable-line  
+    labelText, // eslint-disable-line
     disabled,
     children,
     iconDescription,
     // hideLabel,
     small,
     invalid,
-    invalidText,  // eslint-disable-line 
-    helperText,  // eslint-disable-line 
+    invalidText, // eslint-disable-line
+    helperText, // eslint-disable-line
     light,
     name,
     inputRef = ref,
@@ -69,7 +69,7 @@ const Select = React.forwardRef((props, ref) => {
           ref={inputRef}>
           {children}
         </select>
-        <CaretDownGlyph
+        <CaretDown
           className={`${prefix}--select__arrow`}
           description={iconDescription}
         />

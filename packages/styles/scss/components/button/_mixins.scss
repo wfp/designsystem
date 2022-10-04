@@ -14,7 +14,6 @@
 @use '../../utilities/component-reset';
 @use '../../utilities/convert' as *;
 @use '../../utilities/rtl' as *;
-@use 'tokens' as *;
 
 @mixin button-base {
   @include reset;
@@ -23,6 +22,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  vertical-align: bottom;
   flex-shrink: 0;
   font-size: $button-font-size;
   font-weight: $button-font-weight;
@@ -42,12 +42,12 @@
   }
 
   .#{$prefix}--btn__icon {
-    width: rem(16px);
-    height: rem(16px);
-    margin-left: 0.5rem;
+    //width: rem(16px);
+    //height: rem(16px);
+    margin-left: 0.5em;
     @include rtl {
       margin-left: initial;
-      margin-right: 0.5rem;
+      margin-right: 0.5em;
     }
     transition-duration: $transition--base;
     transition-timing-function: ease-in;
@@ -74,8 +74,6 @@
 
   &:focus {
     outline: none;
-    //border: $button-border-width solid var(--ui-02);
-    //outline: $button-border-width solid $hover-bg-color;
   }
 
   &:disabled:hover,

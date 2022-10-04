@@ -1,0 +1,58 @@
+{
+  "platforms": {
+    "scss": {
+      "transformGroup": "scss",
+      "buildPath": "dist/scss/",
+
+      "files": [
+        {
+          "destination": "_variables.scss",
+          "format": "scss/variables",
+          "options": {
+            "themeable": true
+          }
+        }
+      ]
+    },
+    "figma": {
+      "buildPath": "dist/figma/",
+      "transforms": ["attribute/cti"],
+      "files": [
+        {
+          "destination": "_variables.json",
+          "format": "json"
+        },
+        {
+          "destination": "figma2.tokens.json",
+          "format": "myCustomFormat"
+        }
+      ]
+    },
+    "json": {
+      "transforms": [
+        "attribute/cti",
+        "attribute/color",
+        "name/cti/kebab",
+        "size/px",
+        "color/css"
+      ],
+      "buildPath": "dist/json/",
+      "files": [
+        {
+          "destination": "variables.json",
+          "format": "json"
+        }
+      ]
+    },
+    "assets/embed/scss": {
+      "transforms": ["attribute/cti", "name/cti/kebab", "asset/base64"],
+      "buildPath": "dist/scss/",
+      "files": [
+        {
+          "destination": "assets_iconsss.scss",
+          "format": "json"
+        }
+      ]
+    }
+  }
+}

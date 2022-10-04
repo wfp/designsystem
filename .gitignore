@@ -1,7 +1,6 @@
 # Ignore generated folders
 node_modules
 es
-lib
 umd
 next
 source
@@ -9,6 +8,9 @@ docs
 css
 dist
 build
+build/*
+**/build
+/build
 
 # Logs
 *.log

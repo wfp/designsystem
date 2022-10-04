@@ -8,8 +8,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
-import { useFeatureFlag } from '../FeatureFlags';
-//import { settings } from 'carbon-components';
 import useSettings from '../../hooks/useSettings';
 
 const Checkbox = React.forwardRef(function Checkbox(
@@ -37,22 +35,16 @@ const Checkbox = React.forwardRef(function Checkbox(
     wrapperClassName
   );
 
-  const enabled = useFeatureFlag('enable-v11-release');
-
   return (
     <div className={wrapperClasses}>
       <input
         {...other}
         type="checkbox"
         onChange={(evt) => {
-          if (enabled) {
-            onChange(evt, { checked: evt.target.checked, id });
-          } else {
-            onChange(evt.target.checked, id, evt);
-          }
+          onChange(evt, { checked: evt.target.checked, id });
         }}
         className={`${prefix}--checkbox`}
-        id={id}
+        id={id || other.name}
         ref={(el) => {
           if (el) {
             el.indeterminate = indeterminate;
@@ -115,7 +107,7 @@ Checkbox.propTypes = {
 
   /**
    * Receives three arguments: true/false, the checkbox's id, and the dom event.
-   * `(value, id, event) => console.log({value, id, event})`
+   * `(evt, { checked: evt.target.checked, id }) => console.log(evt, checked, id)`
    */
   onChange: PropTypes.func,
 

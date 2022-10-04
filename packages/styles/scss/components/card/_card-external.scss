@@ -23,7 +23,7 @@
     padding: $spacing-02 $spacing-05;
 
     &.#{$prefix}--card-ext__label--neutral {
-      background-color: $layer; // Provide its own token
+      background-color: $layer-primary; // Provide its own token
       color: $text-secondary;
     }
 
@@ -116,7 +116,7 @@
 
     & .#{$prefix}--card-ext__tag {
       @include tag-theme(
-        $layer,
+        $layer-primary,
         $text-secondary
       ); // Provide its own token in replacement of 'layer'
 

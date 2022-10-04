@@ -1,6 +1,6 @@
 {
   "name": "@un/react",
-  "version": "1.18.28",
+  "version": "1.18.52",
   "description": "WFP UI Kit",
   "license": "Apache-2",
   "main": "lib/index.js",
@@ -134,16 +134,17 @@
     }
   },
   "peerDependencies": {
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "dependencies": {
+    "@carbon/feature-flags": "^0.6.0",
+    "classnames": "2.2.6",
     "invariant": "^2.2.4",
+    "react-datepicker": "^4.6.0",
     "react-popper-tooltip": "^4.1.0",
     "warning": "^4.0.3",
-    "window-or-global": "^1.0.1",
-    "@carbon/feature-flags": "^0.6.0",
-    "classnames": "2.2.6"
+    "window-or-global": "^1.0.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.13.16",
@@ -165,20 +166,23 @@
     "@semantic-release/git": "^9.0.0",
     "@semantic-release/npm": "^7.0.6",
     "@semantic-release/release-notes-generator": "^9.0.1",
-    "@storybook/addon-actions": "6.4.9",
-    "@storybook/addon-backgrounds": "6.4.9",
-    "@storybook/addon-docs": "6.4.9",
-    "@storybook/addon-links": "6.4.9",
-    "@storybook/addon-toolbars": "6.4.9",
-    "@storybook/addon-viewport": "^6.4.9",
-    "@storybook/addons": "6.4.9",
-    "@storybook/react": "6.4.9",
-    "@storybook/theming": "6.4.9",
+    "@storybook/addon-actions": "6.4.19",
+    "@storybook/addon-backgrounds": "6.4.19",
+    "@storybook/addon-docs": "6.4.19",
+    "@storybook/addon-links": "6.4.19",
+    "@storybook/addon-toolbars": "6.4.19",
+    "@storybook/addon-viewport": "^6.4.19",
+    "@storybook/addons": "6.4.19",
+    "@storybook/react": "6.5.9",
+    "@storybook/theming": "6.4.19",
     "@tippy.js/react": "^3.1.1",
     "@typescript-eslint/eslint-plugin": "^4.9.0",
     "@typescript-eslint/parser": "^3.8.0",
-    "@un/babel-preset-wfp": "^0.1.7",
-    "@un/icons": "^10.34.19",
+    "@un/babel-preset-wfp": "^0.1.8",
+    "@un/icons": "^10.34.29",
+    "@un/icons-react": "^10.34.31",
+    "@un/pictograms-react": "^11.14.18",
+    "@un/themes-core": "^0.0.3",
     "add": "^2.0.6",
     "all-contributors-cli": "^6.17.0",
     "autoprefixer": "^9.8.6",
@@ -231,9 +235,9 @@
     "promise": "^8.1.0",
     "prop-types": "^15.7.2",
     "raw-loader": "^4.0.1",
-    "react": "^16.14.0",
+    "react": "18.2.0",
     "react-dates": "^21.8.0",
-    "react-dom": "^16.14.0",
+    "react-dom": "18.2.0",
     "react-dropzone": "^11.0.2",
     "react-final-form": "^6.5.1",
     "react-hook-form": "^7.20.5",
@@ -368,5 +372,5 @@
     ]
   },
   "bundleSizeThreshold": 80000,
-  "gitHead": "1f06c355bfc57d62c4516f9daed57564730537f5"
+  "gitHead": "e3e297bd95e5d0812cc1844e1cd3db50d0d99428"
 }

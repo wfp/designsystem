@@ -6,7 +6,7 @@
 //
 
 @use 'vars' as *;
-@use '../form' as * ;
+@use '../form' as *;
 @use '../../config' as *;
 @use '../../spacing' as *;
 @use '../../theme' as *;
@@ -17,7 +17,6 @@
 @use '../../utilities/read-only' as *;
 @use '../../utilities/focus-outline' as *;
 @use '../../utilities/skeleton' as *;
-
 
 @mixin input {
   .#{$prefix}--input-wrapper {
@@ -38,7 +37,7 @@
     appearance: none;
     background-color: $field;
     order: 2;
-    border: $input-border; //var(--field-border-01);
+    border: $input-border; //$field-border;
     border-radius: $input-border-radius;
 
     &::-webkit-input-placeholder {

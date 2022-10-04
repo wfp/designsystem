@@ -1,0 +1,13 @@
+@use "scss/meta" as *;
+
+.title {
+  font-size: 2rem;
+  margin-top: 1em;
+  margin-bottom: 2rem;
+  line-height: 1.5;
+  font-weight: 400;
+  @include breakpoint-down(md) {
+    font-size: 1.2rem;
+    margin-bottom: 0rem;
+  }
+}

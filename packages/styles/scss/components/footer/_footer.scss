@@ -25,20 +25,20 @@
     bottom: 0;
     left: 0;
   }
-  
+
   .#{$prefix}--footer {
     @include reset;
     @include font-family('sans');
     border-top: 2px solid $border-subtle;
     color: $text-primary;
-    background-color: $background;
+    background-color: $background-main;
     z-index: z('footer');
     padding: rem(20px) 0;
     @media print {
       display: none;
     }
   }
-  
+
   .#{$prefix}--footer__content {
     box-sizing: border-box;
     display: flex;
@@ -46,22 +46,22 @@
     min-height: 3.5rem;
     width: 100%;
   }
-  
+
   .#{$prefix}--footer__info {
     display: flex;
-  
+
     @media screen and (max-width: 600px) {
       flex-direction: column;
     }
   }
-  
+
   .#{$prefix}--footer__sdg {
     //margin-top: 0.45rem;
-    margin-left: $spacing-01 ;//$spacing-xl;
+    margin-left: $spacing-01; //$spacing-xl;
     width: 50px;
     height: 50px;
   }
-  
+
   .#{$prefix}--footer__meta {
     @include type-style('body-short-01');
     margin-top: rem(20px);
@@ -70,7 +70,7 @@
       display: none;
     }
   }
-  
+
   .#{$prefix}--footer__info__item {
     line-height: 1.5;
     display: flex;
@@ -82,23 +82,23 @@
       margin-right: 0;
     }
   }
-  
+
   .#{$prefix}--footer__info__item > .#{$prefix}--link {
     font-weight: 600;
   }
-  
+
   .#{$prefix}--footer__info__item > .#{$prefix}--footer__label {
     // @include typescale('zeta');
     // @include line-height('body');
     @include type-style('label-02');
     font-weight: 600;
     margin: 0;
-  
+
     @media screen and (max-width: 600px) {
       display: none;
     }
   }
-  
+
   .#{$prefix}--footer__cta {
     margin-left: auto;
     display: flex;
@@ -109,52 +109,48 @@
       margin-right: auto;
     }
   }
-  
+
   .#{$prefix}--theme-dark {
     .#{$prefix}--footer__cta-logo,
     .#{$prefix}--footer__cta-logo-small {
       filter: invert(1);
     }
   }
-  
+
   @include breakpoint-down('md') {
     .#{$prefix}--footer__cta-logo {
-        display: none;
-      
+      display: none;
     }
     .#{$prefix}--footer__sdg {
-        display: none;
-    }
- }
-
-  //breakpoint
-  
-
-
-  
-  @include breakpoint('md') {
-    .#{$prefix}--footer__cta-logo-small {
-          display: none;
+      display: none;
     }
   }
-  
+
+  //breakpoint
+
+  @include breakpoint('md') {
+    .#{$prefix}--footer__cta-logo-small {
+      display: none;
+    }
+  }
+
   .#{$prefix}--footer__info {
     display: flex;
   }
-  
+
   .#{$prefix}--footer__info__item {
     margin-right: rem(20px);
   }
-  
+
   /* External */
-  
+
   .#{$prefix}--footer--external {
     @include breakpoint-down('md') {
       .#{$prefix}--footer__content {
         flex-direction: column;
       }
     }
-  
+
     .#{$prefix}--footer__info {
       order: 1;
       @include breakpoint('md') {
@@ -163,7 +159,7 @@
       // @include line-height('body');
       line-height: 1.5;
     }
-  
+
     .#{$prefix}--footer__cta {
       margin-left: inherit;
       @include breakpoint-down('md') {
@@ -179,9 +175,9 @@
         margin-right: auto;
       }
     }
-  
+
     .#{$prefix}--footer__info__item {
-      //@include typescale('delta');
+      @include typescale('delta');
       // @include line-height('body');
       line-height: 1.5;
       display: block;
@@ -192,7 +188,7 @@
         margin-right: 0;
       }
     }
-  
+
     .#{$prefix}--footer__info__item > .#{$prefix}--link {
       font-weight: 600;
       margin-right: rem(10px);
@@ -201,7 +197,7 @@
         display: block;
       }
     }
-  
+
     .#{$prefix}--footer__secondary {
       margin-top: rem(20px);
       font-weight: 600 !important;
@@ -210,9 +206,9 @@
         width: 100%;
       }
     }
-  
+
     .#{$prefix}--footer__meta {
-      // @include typescale('zeta');
+      @include typescale('zeta');
       font-size: rem(12px);
       // border-top: 1px solid $color__navy-gray-8;
       margin-top: $spacing-03;
@@ -221,12 +217,11 @@
       justify-content: space-between;
       font-style: normal;
     }
-  
+
     .#{$prefix}--footer__meta__links {
       .#{$prefix}--link {
         font-weight: 400;
       }
     }
   }
-  
 }

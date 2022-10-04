@@ -10,43 +10,49 @@ import React from 'react';
 import classnames from 'classnames';
 import useSettings from '../../hooks/useSettings';
 
-const Link = ({
-  children,
-  className,
-  href,
-  disabled,
-  inline,
-  visited,
-  renderIcon: Icon,
-  size,
-  ...other
-}) => {
-  const { prefix } = useSettings();
+const Link = React.forwardRef(
+  (
+    {
+      children,
+      className,
+      href,
+      disabled,
+      inline,
+      visited,
+      renderIcon: Icon,
+      size,
+      ...other
+    },
+    ref
+  ) => {
+    const { prefix } = useSettings();
 
-  const classNames = classnames(`${prefix}--link`, className, {
-    [`${prefix}--link--disabled`]: disabled,
-    [`${prefix}--link--inline`]: inline,
-    [`${prefix}--link--visited`]: visited,
-    [`${prefix}--link--${size}`]: size,
-  });
+    const classNames = classnames(`${prefix}--link`, className, {
+      [`${prefix}--link--disabled`]: disabled,
+      [`${prefix}--link--inline`]: inline,
+      [`${prefix}--link--visited`]: visited,
+      [`${prefix}--link--${size}`]: size,
+    });
 
-  const Tag = disabled ? 'p' : 'a';
-  const rel = other.target === '_blank' ? 'noopener' : null;
-  return (
-    <Tag
-      href={disabled ? null : href}
-      className={classNames}
-      rel={rel}
-      {...other}>
-      {children}
-      {!inline && Icon && (
-        <div className={`${prefix}--link__icon`}>
-          <Icon />
-        </div>
-      )}
-    </Tag>
-  );
-};
+    const Tag = disabled ? 'p' : 'a';
+    const rel = other.target === '_blank' ? 'noopener' : null;
+    return (
+      <Tag
+        href={disabled ? null : href}
+        className={classNames}
+        rel={rel}
+        ref={ref}
+        {...other}>
+        {children}
+        {!inline && Icon && (
+          <div className={`${prefix}--link__icon`}>
+            <Icon />
+          </div>
+        )}
+      </Tag>
+    );
+  }
+);
 
 Link.propTypes = {
   /**

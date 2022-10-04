@@ -18,13 +18,17 @@
 @use '../../utilities/rtl' as *;
 @use '../../utilities/tooltip' as *;
 @use '../../utilities/visually-hidden' as *;
-@use 'tokens' as *;
+//@use 'tokens' as *;
 
 @mixin button {
   // <button> elements cannot be used as flex containers
   button.#{$prefix}--btn {
-    display: inline-block;
-    line-height: initial;
+    //background: $color-corporate-09 !important;
+    // TODO: use inline-flex for all buttons
+    // display: inline-block;
+    /*vertical-align: middle;
+    display: inline-flex;
+    line-height: initial;*/
   }
 
   // Reset intrisic padding in Firefox (see #731)
@@ -35,11 +39,10 @@
 
   // Vertically center icon inside <button>
   button.#{$prefix}--btn .#{$prefix}--btn__icon {
-    position: relative;
-    vertical-align: middle;
-    top: -1px;
-    height: 1em;
-    width: 1em;
+    //position: relative;
+    //vertical-align: middle;
+    // height: 1em;
+    // width: 1em;
 
     // Targets IE10+ browsers: Reset <svg> position for vertical centering
     @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
@@ -47,7 +50,8 @@
     }
   }
 
-  button.#{$prefix}--btn--icon-reverse {
+  button.#{$prefix}--btn--icon-reverse,
+  a.#{$prefix}--btn--icon-reverse {
     .#{$prefix}--btn__icon {
       margin-left: 0;
       margin-right: $spacing-03;
@@ -58,7 +62,7 @@
     }
   }
 
-  a.#{$prefix}--btn--icon-reverse {
+  /*a.#{$prefix}--btn--icon-reverse {
     display: inline-flex;
     flex-direction: row-reverse;
 
@@ -71,7 +75,7 @@
         margin-right: 0;
       }
     }
-  }
+  }*/
 
   a,
   button {
@@ -99,6 +103,9 @@
       $button-primary-hover,
       $text-on-color
     );
+    &:hover {
+      color: $text-inverse;
+    }
   }
 
   .#{$prefix}--btn--accent {
@@ -246,7 +253,7 @@
       $field,
       $field,
       $button-primary,
-      $background,
+      $background-main,
       $text-primary
     );
 

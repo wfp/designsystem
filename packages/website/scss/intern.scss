@@ -1,0 +1,8 @@
+@use "scss/meta" as *;
+
+a,
+a:hover,
+a:visited {
+  color: $interactive;
+  text-decoration: none;
+}

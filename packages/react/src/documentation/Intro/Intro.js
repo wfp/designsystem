@@ -85,15 +85,14 @@ const Intro = () => (
     <div className="intro">
       <div className="intro__left">
         <h1>
-          WFP <span className="intro__name">Design System</span>
+          UN <span className="intro__name">Core</span>
           <span className="intro__version">
             v{process.env.STORYBOOK_NPM_VERSION}
           </span>
         </h1>
         <p>
-          The World Food Programme’s Design System <br />
-          provides you with guidelines, components and templates
-          <br /> to boost the user experience of your products.
+          The UN core provides you with guidelines, components and tools to
+          boost the user experience of your products.
         </p>
         <LinkTo kind="getting-started-installing-the-kit--page">
           <Button

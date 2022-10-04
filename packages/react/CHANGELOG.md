@@ -1,3 +1,14 @@
+# Change Log
+
+All notable changes to this project will be documented in this file.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+## [1.18.43](https://github.com/wfp/ui/compare/@un/react@1.18.42...@un/react@1.18.43) (2022-06-28)
+
+### Bug Fixes
+
+- **lerna:** changelog updated ([2367526](https://github.com/wfp/ui/commit/236752651f113088dc7bee3921e5c06213c1f72e))
+
 ## [1.19.1](https://github.com/wfp/ui/compare/v1.19.0...v1.19.1) (2021-07-29)
 
 ### Bug Fixes

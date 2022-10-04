@@ -1,14 +1,14 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import classnames from 'classnames';
-import { HomeGlyph } from '@un/icons-react';
+import { Home } from '@un/icons-react';
 import useSettings from '../../hooks/useSettings';
 
 const BreadcrumbHome = ({ className, hometext, ...other }) => {
   const { prefix } = useSettings();
   const classNames = classnames(`${prefix}--breadcrumb-home`, className);
   return (
-    <HomeGlyph
+    <Home
       //icon={iconHome}
       fill="#0b77c2"
       width="14"

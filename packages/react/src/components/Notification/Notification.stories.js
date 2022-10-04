@@ -3,6 +3,7 @@ import {
   ToastNotification,
   InlineNotification,
   NotificationActionButton,
+  BlockNotification,
 } from '../Notification';
 import Button from '../Button';
 import { notificationtypes } from '../../prop-types/types';
@@ -216,38 +217,49 @@ InlineLowContrast.args = {
   statusIconDescription: 'describes the status icon',
 };
 
-export const InlineBlockquote = (args) => (
+export const BlockNotificationElement = (args) => (
   <>
-    <InlineNotification
+    <BlockNotification
       {...args}
       kind="success"
       actions={<NotificationActionButton>{'Action'}</NotificationActionButton>}
     />
-    <InlineNotification
+    <BlockNotification
+      advancedActions
       {...args}
-      kind="error"
-      actions={<NotificationActionButton>{'Action'}</NotificationActionButton>}>
-      Lorem ipsum dolor sit amet, consectetur adipiscing
-    </InlineNotification>
-    <InlineNotification
-      {...args}
-      kind="warning"
+      subtitle="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
+      kind="info"
       icon={false}
-      actions={<NotificationActionButton>{'Action'}</NotificationActionButton>}
+      actions={
+        <>
+          <Button>Accept</Button>
+          <Button kind="tertiary">Reject</Button>
+        </>
+      }
     />
-    <InlineNotification
+    <BlockNotification
+      advancedActions
       {...args}
       kind="info"
+      icon={false}
+      actions={
+        <>
+          <Button>Accept</Button>
+          <Button kind="tertiary">Reject</Button>
+        </>
+      }
+    />
+    <BlockNotification
+      {...args}
+      kind="warning"
       icon={<div>Icon</div>}
-      actions={<Button small style={{margin:'auto'}}>{'Action'}</Button>}
+      actions={<Button small>{'Action'}</Button>}
     />
   </>
 );
 
-InlineBlockquote.args = {
+BlockNotificationElement.args = {
   role: 'alert',
-  lowContrast: true,
-  hideCloseButton: true,
   title: 'Notification title',
   subtitle: 'Subtitle text goes here.',
   iconDescription: 'describes the close button',

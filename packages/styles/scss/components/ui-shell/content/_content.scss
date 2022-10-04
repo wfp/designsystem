@@ -15,7 +15,7 @@
 @mixin content {
   .#{$prefix}--content {
     padding: 2rem;
-    background: $layer;
+    background: $layer-primary;
     color: $text-primary;
     will-change: margin-left;
   }

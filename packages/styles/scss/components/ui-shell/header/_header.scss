@@ -30,7 +30,7 @@
     height: mini-units(6);
     align-items: center;
     border-bottom: 1px solid $border-subtle;
-    background-color: $background;
+    background-color: $background-main;
   }
 
   .#{$prefix}--header__action {
@@ -63,7 +63,7 @@
     border-right: 1px solid $border-subtle;
     border-bottom: 1px solid transparent;
     border-left: 1px solid $border-subtle;
-    background: $layer;
+    background: $layer-primary;
   }
 
   .#{$prefix}--header__action--active > svg {
@@ -201,7 +201,7 @@
     padding: 0 mini-units(2);
     // Used for focus styles
     border: 2px solid transparent;
-    background-color: $background;
+    background-color: $background-main;
     color: $text-secondary;
     // Text styles
     font-size: rem(14px);
@@ -277,7 +277,7 @@
     // Note: needs to be higher than menu. Adding 1 here instead of moving to
     // the next level.
     z-index: #{z('header') + 1};
-    background-color: $layer;
+    background-color: $layer-primary;
     color: $text-secondary;
   }
 
@@ -302,7 +302,7 @@
     display: flex;
     width: mini-units(25);
     flex-direction: column;
-    background-color: $layer;
+    background-color: $layer-primary;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
     transform: translateY(100%);
   }
@@ -310,7 +310,7 @@
   .#{$prefix}--header__menu-title[aria-expanded='true']
     + .#{$prefix}--header__menu
     .#{$prefix}--header__menu-item {
-    background-color: $layer;
+    background-color: $layer-primary;
   }
 
   .#{$prefix}--header__menu-title[aria-expanded='true']
@@ -373,7 +373,7 @@
     align-items: center;
     padding: 0 1rem;
     border: 4px solid $focus;
-    background-color: $background;
+    background-color: $background-main;
     clip: auto;
     color: $text-secondary;
     //TO-DO: double check with design that these tokens are correct, missing spec for it

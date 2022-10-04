@@ -8,10 +8,9 @@
 @use '../../utilities/component-reset';
 @use '../../utilities/convert';
 
-
-@mixin secondary-navigation{
+@mixin secondary-navigation {
   .#{$prefix}--secondary-navigation {
-    background: $background;
+    background: $background-main;
     @include reset;
     display: flex;
     border-bottom: 2px solid $border-subtle;

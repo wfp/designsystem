@@ -11,7 +11,6 @@
 @use '../../spacing' as *;
 @use '../../theme' as *;
 @use '../../type' as *;
-@use '../button/tokens' as button;
 @use '../../utilities/convert' as *;
 @use '../../utilities/high-contrast-mode' as *;
 @use '../../utilities/visually-hidden' as *;
@@ -62,7 +61,7 @@
       top: -14px;
       width: rem(28px);
       height: rem(28px);
-      background-color: $background;
+      background-color: $background-main;
       border-radius: 50%;
       content: '';
       transition: $transition--base $standard-easing;
@@ -139,7 +138,7 @@
 
     &:after {
       transform: translateX(24px);
-      background-color: $background;
+      background-color: $background-main;
       box-shadow: none;
       border-color: $border-interactive;
     }
@@ -154,8 +153,8 @@
     }
 
     &:after {
-      background-color: $background;
-      border-color: $background;
+      background-color: $background-main;
+      border-color: $background-main;
       margin-left: 0px;
       transform: translateX(17px);
     }

@@ -1,5 +1,5 @@
 import React from 'react';
-import { AddCircleGlyph } from '@un/icons-react';
+import { AddCircle } from '@un/icons-react';
 import Button from '../Button';
 import ButtonSkeleton from '../Button/Button.Skeleton';
 import { shallow, mount } from 'enzyme';
@@ -92,12 +92,11 @@ describe('Button', () => {
 
   describe('Renders icon buttons', () => {
     const iconButton = shallow(
-      <Button icon={AddCircleGlyph} kind="tertiary" >
+      <Button icon={AddCircle} kind="tertiary">
         With icon
       </Button>
     );
-    
-    
+
     // it('should have the appropriate icon', () => {
     //   // const icon = iconButton.find('svg');
     //   expect(iconButton.find('svg')).toHaveLength(1);

@@ -169,7 +169,7 @@
   }
 
   .#{$prefix}--toast-notification--low-contrast.#{$prefix}--toast-notification--error {
-    background: var(--support-light-01);
+    background: $support-error-light;
     border-left: 3px solid $support-error;
   }
 
@@ -180,7 +180,7 @@
   }
 
   .#{$prefix}--toast-notification--low-contrast.#{$prefix}--toast-notification--success {
-    background: var(--support-light-02);
+    background: $support-success-light;
     border-left: 3px solid $support-success;
   }
 
@@ -197,7 +197,7 @@
 
   .#{$prefix}--toast-notification--low-contrast.#{$prefix}--toast-notification--warning,
   .#{$prefix}--toast-notification--low-contrast.#{$prefix}--toast-notification--warning-alt {
-    background: var(--support-light-03);
+    background: $support-warning-light;
     border-left: 3px solid $support-warning;
   }
   .#{$prefix}--toast-notification:first-child {
@@ -218,7 +218,7 @@
     border: 0;
     position: relative;
     display: flex;
-    flex-wrap: wrap;
+    //flex-wrap: wrap;
     width: 100%;
     min-width: 18rem;
     max-width: 18rem;
@@ -230,12 +230,13 @@
     .#{$prefix}--inline-notification__details {
       display: flex;
       flex-grow: 1;
-      margin: 0 3rem 0 1rem;
+      margin: 0 1rem 0 1rem;
 
       .#{$prefix}--inline-notification__icon {
         flex-shrink: 0;
-        margin-top: 0.875rem;
+        margin-top: 0.9475rem;
         margin-right: 1rem;
+        margin-bottom: 0.875rem;
       }
 
       .#{$prefix}--inline-notification__text-wrapper {
@@ -251,7 +252,7 @@
             --cds-productive-heading-01-letter-spacing,
             0.16px
           );
-          margin: 0 0.25rem 0 0;
+          margin: 0 0.25rem 0.1rem 0;
         }
 
         .#{$prefix}--inline-notification__subtitle {
@@ -285,7 +286,7 @@
 
   .#{$prefix}--inline-notification--low-contrast.#{$prefix}--inline-notification--info,
   .#{$prefix}--inline-notification--low-contrast.#{$prefix}--inline-notification--info-square {
-    background: var(--support-light-04);
+    background: $layer-primary; //var(--support-light-04);
     border-left: 3px solid $interactive;
   }
   .#{$prefix}--inline-notification--info
@@ -301,7 +302,7 @@
 
   .#{$prefix}--inline-notification--low-contrast.#{$prefix}--inline-notification--success,
   .#{$prefix}--inline-notification--low-contrast.#{$prefix}--inline-notification--success-square {
-    background: var(--support-light-02);
+    background: $support-success-light;
     border-left: 3px solid $support-success;
   }
 
@@ -318,7 +319,7 @@
 
   .#{$prefix}--inline-notification--low-contrast.#{$prefix}--inline-notification--error,
   .#{$prefix}--inline-notification--low-contrast.#{$prefix}--inline-notification--error-square {
-    background: var(--support-light-01);
+    background: $support-error-light;
     border-left: 3px solid $support-error;
   }
 
@@ -335,7 +336,7 @@
 
   .#{$prefix}--inline-notification--low-contrast.#{$prefix}--inline-notification--warning,
   .#{$prefix}--inline-notification--low-contrast.#{$prefix}--inline-notification--warning-square {
-    background: var(--support-light-03);
+    background: $support-warning-light;
     border-left: 3px solid $support-warning;
   }
 
@@ -414,6 +415,63 @@
 
     .#{$prefix}--inline-notification__close-button {
       position: static;
+    }
+  }
+
+  .#{$prefix}--block-notification.#{$prefix}--inline-notification {
+    max-width: inherit;
+
+    .#{$prefix}--inline-notification__details {
+      display: grid;
+      // grid-template-columns: min-content 0.9fr;
+      grid-template-columns: 0fr 1fr;
+      grid-template-areas:
+        'icon name'
+        'icon subject';
+
+      @include breakpoint(md) {
+        grid-template-columns: 0fr 1fr 0fr;
+        grid-template-areas: 'icon name subject';
+      }
+    }
+
+    .wfp--inline-notification__icon  {
+      grid-area: icon;
+    }
+
+    @include breakpoint(md) {
+      max-width: inherit;
+    }
+    width: 100%;
+    .#{$prefix}--inline-notification__text-wrapper {
+      flex-direction: column;
+      grid-area: name;
+    }
+    .#{$prefix}--inline-notification__actions-wrapper {
+      grid-area: subject;
+      display: flex;
+      > * {
+        margin-left: 0.5em;
+      }
+      > :first-child {
+        margin-left: 0;
+      }
+      .#{$prefix}--btn--tertiary {
+        //background: rgba(255, 255, 255, 0.2);
+      }
+      padding: 0 0 0.8em 0;
+      @include breakpoint(md) {
+        padding-top: 0.8em;
+        padding-left: 0.8em;
+        align-items: center;
+      }
+      /*padding: 0em 0.8em 0.8em 0.8em;
+      @include breakpoint(md) {
+        padding: 0.8em 0.8em 0.8em 0;
+      }*/
+      &.#{$prefix}--btn/*--ghost*/ {
+        margin: 0.5em 0.4em;
+      }
     }
   }
 }

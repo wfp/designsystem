@@ -17,7 +17,6 @@ export const Regular = (args) => <Search {...args} />;
 
 Regular.args = {
   name: 'search',
-  id: 'search',
 };
 
 export const SearchWithButton = (args) => (
@@ -53,6 +52,20 @@ SmallSearch.story = {
   parameters: {
     docs: {
       storyDescription: `There are diffent ways to render the \`Search\` input by changing the \`kind\` prop.`,
+    },
+  },
+};
+
+export const MainNavigationSearch = (args) => <Search {...args} />;
+
+MainNavigationSearch.args = {
+  kind: 'main',
+};
+
+MainNavigationSearch.story = {
+  parameters: {
+    docs: {
+      storyDescription: `The Search input for the mainnavigation`,
     },
   },
 };

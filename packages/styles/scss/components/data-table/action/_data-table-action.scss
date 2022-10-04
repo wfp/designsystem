@@ -29,7 +29,7 @@
     overflow: hidden;
     width: 100%;
     height: $spacing-09;
-    background-color: $layer;
+    background-color: $layer-primary;
   }
 
   .#{$prefix}--toolbar-content {
@@ -216,7 +216,7 @@
   }
 
   .#{$prefix}--toolbar-action:hover[aria-expanded='true'] {
-    background-color: $layer;
+    background-color: $layer-primary;
   }
 
   .#{$prefix}--toolbar-action[disabled] {
@@ -394,7 +394,7 @@
   }
 
   .#{$prefix}--action-list .#{$prefix}--btn--primary:focus {
-    outline: 2px solid $layer;
+    outline: 2px solid $layer-primary;
     outline-offset: rem(-2px);
   }
 

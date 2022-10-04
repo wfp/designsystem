@@ -4,24 +4,24 @@ import PropTypes from 'prop-types';
 import { withUNCoreSettings } from '../UNCoreSettings';
 
 import {
-  CheckmarkGlyph,
-  WarningAlt32,
-  WarningSolidGlyph,
-  InfoSolidGlyph,
+  Checkmark,
+  WarningAlt,
+  WarningSolid,
+  InfoSolid,
 } from '@un/icons-react';
 
 const iconLookup = {
   warning: {
-    icon: WarningAlt32,
+    icon: WarningAlt,
   },
   error: {
-    icon: WarningSolidGlyph,
+    icon: WarningSolid,
   },
   info: {
-    icon: InfoSolidGlyph,
+    icon: InfoSolid,
   },
   success: {
-    icon: CheckmarkGlyph,
+    icon: Checkmark,
   },
 };
 
@@ -63,7 +63,7 @@ class Blockquote extends React.Component {
       withIcon,
       info,
       kind,
-      testid
+      testid,
     } = this.props;
     const blockquoteClass = classNames({
       [`${prefix}--blockquote`]: true,
@@ -114,13 +114,13 @@ class Blockquote extends React.Component {
     ) : null;
 
     return (
-      <div data-testid={testid} className={blockquoteClass}> 
+      <div data-testid={testid} className={blockquoteClass}>
         {iconElement && (
           <div className={`${prefix}--blockquote__icon-wrapper`}>
             {iconElement}
           </div>
         )}
-        <div className={blockquoteContentClass} style={style} >
+        <div className={blockquoteContentClass} style={style}>
           {(title || toggleable) && (
             <div
               onClick={this.toggleBlockquote}

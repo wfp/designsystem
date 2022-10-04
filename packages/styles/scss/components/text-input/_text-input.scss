@@ -10,6 +10,7 @@
 //-----------------------------
 @use '../../config' as *;
 @use '../form';
+@use '../../theme' as *;
 
 /// Text input styles
 /// @access public
@@ -17,6 +18,5 @@
 @mixin text-input {
   .#{$prefix}--text--required label::after {
     content: ' *';
-    color: red;
   }
 }
