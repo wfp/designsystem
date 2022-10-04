@@ -134,6 +134,8 @@ export User from './components/User';
 export Unit from './components/Unit';
 export Value from './components/Value';
 export Wrapper, { pageWidths } from './components/Wrapper';
+export Grid from './components/Grid';
+export Col from './components/Col';
 export colors from './globals/data/colors';
 export useDetectPrint from './internal/useDetectPrint';
 export { uniqueId } from './tools/uniqueId';

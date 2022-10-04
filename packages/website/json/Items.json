@@ -1,0 +1,23 @@
+[
+  {
+    "header": "Getting Started",
+    "subItems": [
+      { "id": 1, "title": "Intro" },
+      { "id": 2, "title": "Installing the Kit" },
+      { "id": 3, "title": "Using the Kit" },
+      { "id": 4, "title": "Recommended libraries" },
+      { "id": 5, "title": "Supported Browsers" }
+    ]
+  },
+  {
+    "header": "Core",
+    "subItems": [
+      { "id": 11, "title": "Color" },
+      { "id": 12, "title": "Favicons" },
+      { "id": 13, "title": "Grid" },
+      { "id": 14, "title": "Icons" },
+      { "id": 15, "title": "Logos" },
+      { "id": 16, "title": "Typography" }
+    ]
+  }
+]

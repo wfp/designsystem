@@ -1,0 +1,54 @@
+//-----------------------------
+// Grid.col
+//-----------------------------
+
+// @use '../../config' as *;
+// @use '../../spacing' as *;
+// @use '../../theme' as *;
+// @use '../../type' as *;
+@use "sass:math";
+@use '../../grid' as *;
+@use '../../breakpoint' as *;
+@use '../../config' as *;
+
+// @use '../../utilities/focus-outline';
+// @use '../../utilities/high-contrast-mode' as *;
+// @use '../../utilities/skeleton' as *;
+// @use '../../utilities/rtl' as *;
+// @use '../../utilities/tooltip' as *;
+// @use '../../utilities/visually-hidden' as *;
+
+@mixin col {
+  .#{$prefix}--grid-col {
+    height: 100%;
+    box-sizing: border-box;
+    -webkit-box-flex: 0;
+  }
+
+  @for $i from 1 through 12 {
+    .#{$prefix}--col--span-#{$i},
+    .#{$prefix}--col--lg--#{$i} {
+      @include column-span($i);
+    }
+  }
+
+  // 8 columns on small(768) screen
+  @include breakpoint-down('md') {
+    @for $i from 1 through 8 {
+      .#{$prefix}--col--span-#{$i},
+      .#{$prefix}--col--lg--#{$i} {
+        @include column-span($i, 8);
+      }
+    }
+  }
+
+  // 8 columns on small(500) screen
+  @include breakpoint-down('sm') {
+    @for $i from 1 through 4 {
+      .#{$prefix}--col--span-#{$i},
+      .#{$prefix}--col--lg--#{$i} {
+        @include column-span($i, 4);
+      }
+    }
+  }
+}

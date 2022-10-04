@@ -106,7 +106,7 @@ module.exports = {
     });
 
     config.module.rules.push({
-      test: /-story\.jsx?$/,
+      test: /-story\.(js|ts)?(x)$/,
       loaders: [
         {
           loader: require.resolve('@storybook/source-loader'),
