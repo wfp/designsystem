@@ -12,7 +12,14 @@ import CodeBlock from './CodeBlock';
 import UsbcConnector from './Buttons/UsbcConnector';
 import ResetButton from './Buttons/ResetButton';
 import Logos from './Logos';
-import { MdxComponents, BlockNotification } from '@un/react';
+import {
+  Button,
+  MdxComponents,
+  BlockNotification,
+  Blockquote,
+} from '@un/react';
+
+//import FaviconGenerator from '../../../_posts/Favicons/FaviconGenerator';
 
 const { code, pre, ...mdxComponentsWithoutCode } = MdxComponents;
 const components = {
@@ -26,7 +33,9 @@ const components = {
   pre: CodeBlock,
   Meta: Flex,
   BigButton,
-  BlockNotification,
+  Blockquote,
+  Button,
+  Link,
   ResetButton,
   Logos,
   UsbcConnector,

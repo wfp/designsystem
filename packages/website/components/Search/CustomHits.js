@@ -43,7 +43,7 @@ function Hits({ searchState, searchResults, focus }) {
         {searchResults?.hits.length > 0 && validQuery && (
           <>
             {searchResults.hits.map((hit, index) => (
-              <Hit hit={hit} />
+              <Hit key={index} hit={hit} />
             ))}
           </>
         )}

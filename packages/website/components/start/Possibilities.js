@@ -64,38 +64,29 @@ export default function Possiblities() {
           background="#E7DFFF"
           icon={faReact}
         />
-        {/*<PossibilitiesContainer
-        title="Gerät autonom bedienbar"
-        content="Die integrierte Funkverbindung funktioniert ohne Internet, Bluetooth oder extra Sim-Karte direkt nach dem Auspacken."
-        background="#F1F3FA"
-        icon="📡"
-      />*/}
+
         <PossibilitiesContainer
           title="Build & maintain an icon library"
           content="A complete tool box to take advantage of using SVGs in your React applications."
           //background="#E7FFDF"
-          icon="🌿"
           icon={faVectorCircle}
         />
         <PossibilitiesContainer
           title="Style once – use everywhere"
           content="define styles once and use them in your web, Android, iOS or other projects"
           //  background="#DFFDFF"
-          icon="🐜"
           icon={faHandshakeAlt}
         />
         <PossibilitiesContainer
           title="Recommendations"
           content="Lorem ipsum dolor sit amet"
           // background="#FFDFDF"
-          icon="⏰"
           icon={faStarShooting}
         />
         <PossibilitiesContainer
           title="Legacy support"
           content="Lorem ipsum dolor sit dal."
           // background="#DFF0FF"
-          icon="💦"
           icon={faFloppyDisk}
         />
       </div>

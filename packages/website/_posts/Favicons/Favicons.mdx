@@ -1,27 +1,11 @@
 ---
-category: 'Getting Started'
+category: 'Documentation/Core/Favicons'
 title: 'Native Apps'
-excerpt: 'Guidelines to create native apps'
+excerpt: 'The new Logos in various sizes'
 coverImage: 'sample-image.jpg'
 ogImage:
   url: 'sample-image.jpg'
 ---
-
-import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
-import { Button, Blockquote, Link } from '@un/react';
-import FaviconGenerator from './FaviconGenerator';
-
-<Meta
-  title="Documentation/Core/Favicons"
-  subTitle="The new Logos in various sizes"
-  parameters={{
-    previewTabs: {
-      canvas: { hidden: true },
-    },
-  }}
-/>
-
-<hr />
 
 For the main favicon itself, it's best for cross-browser compatibility not to
 use any HTML. Just name the file favicon.ico and place it in the root of your
@@ -30,8 +14,6 @@ domain.
 ### Internal Applications: Generate Favicon
 
 Use the generator to create favicons with an acronym of applications name.
-
-<FaviconGenerator />
 
 ### External Applications: Usage with CDN
 

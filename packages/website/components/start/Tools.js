@@ -37,14 +37,14 @@ function PossibilitiesContainer({
           {title}
           {npmLink && (
             <Link href={link}>
-              <a target="_blank">
+              <a target="_blank" rel="noreferrer">
                 <FontAwesomeIcon className={styles.npmLink} icon={faNpm} />
               </a>
             </Link>
           )}
           {figmaLink && (
             <Link href={link}>
-              <a target="_blank">
+              <a target="_blank" rel="noreferrer">
                 <FontAwesomeIcon className={styles.figmaLink} icon={faFigma} />
               </a>
             </Link>
@@ -66,12 +66,14 @@ export default function Tools() {
       <div className={styles.possibilitiesWrapper}>
         <PossibilitiesContainer
           title="Themes"
-          content="Exports the design tokens like colors, fonts, text styles, spacings directly into cross plattform design tokens using styled dictionary."
           content={
             <>
               Exports the design tokens like colors, fonts, text styles,
               spacings directly into cross plattform design tokens using{' '}
-              <a href="https://amzn.github.io/style-dictionary" target="_blank">
+              <a
+                href="https://amzn.github.io/style-dictionary"
+                target="_blank"
+                rel="noreferrer">
                 styled dictionary
               </a>
               .
@@ -82,16 +84,9 @@ export default function Tools() {
           link="https://npmjs.com/package/@un/themes-core"
           npmLink
         />
-        {/*<PossibilitiesContainer
-        title="Gerät autonom bedienbar"
-        content="Die integrierte Funkverbindung funktioniert ohne Internet, Bluetooth oder extra Sim-Karte direkt nach dem Auspacken."
-        background="#F1F3FA"
-        icon="📡"
-      />*/}
         <PossibilitiesContainer
           title="React"
           content="The core library includes all essential components and can be used with css only or react. Tokens can be also used with your favorite component library"
-          //background="#E7FFDF"
           icon={faLeaf}
           link="https://npmjs.com/package/@un/react"
           npmLink
@@ -99,7 +94,6 @@ export default function Tools() {
         <PossibilitiesContainer
           title="Figma library"
           content="A Figma library providing the core for creating a design system with boilerplates for token generation and components."
-          //  background="#DFFDFF"
           link="lorem"
           figmaLink
           icon={faHandshakeAlt}
@@ -118,7 +112,10 @@ export default function Tools() {
             <>
               Transforming your icons and pictograms into a component library
               ready to use in your application using{' '}
-              <a href="https://github.com/gregberge/svgr" target="_blank">
+              <a
+                href="https://github.com/gregberge/svgr"
+                target="_blank"
+                rel="noreferrer">
                 svgr
               </a>
               .
@@ -136,14 +133,16 @@ export default function Tools() {
             <>
               Transforming your icons and pictograms into a component library
               ready to use in your application using{' '}
-              <a href="https://github.com/gregberge/svgr" target="_blank">
+              <a
+                href="https://github.com/gregberge/svgr"
+                target="_blank"
+                rel="noreferrer">
                 svgr
               </a>
               .
             </>
           }
           // background="#DFF0FF"
-          icon="💦"
           icon={faGlassWaterDroplet}
           link="https://npmjs.com/package/@un/icons-core"
           npmLink
@@ -155,14 +154,15 @@ export default function Tools() {
             <>
               Transforming your icons and pictograms into a component library
               ready to use in your application using{' '}
-              <a href="https://github.com/gregberge/svgr" target="_blank">
+              <a
+                href="https://github.com/gregberge/svgr"
+                target="_blank"
+                rel="noreferrer">
                 svgr
               </a>
               .
             </>
           }
-          // background="#DFF0FF"
-          icon="💦"
           icon={faGlassWaterDroplet}
           link="https://npmjs.com/package/@un/icons-core"
           npmLink

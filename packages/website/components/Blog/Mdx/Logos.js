@@ -28,8 +28,8 @@ const LogoElement = ({ color, logoKind, src }) => {
         />
       </div>
       <br />
-      {fileTypes.map((fileType) => (
-        <span>
+      {fileTypes.map((fileType, i) => (
+        <span key={i}>
           <Link
             small
             style={{ marginRight: '0.5em', fontSize: '0.7em' }}
@@ -80,15 +80,15 @@ export default function Logos() {
   const colorsSdg = ['colour'];
   const languages = ['en', 'es', 'fr', 'ar'];
 
-  const colorList = logoKinds.map((logoKind) => (
-    <div style={{ marginBottom: '1em' }}>
+  const colorList = logoKinds.map((logoKind, i) => (
+    <div key={i} style={{ marginBottom: '1em' }}>
       <div style={{ marginBottom: '1em' }} />
       <h2>{logoKind.title ? logoKind.title : logoKind.key}</h2>
       <p>{logoKind.description}</p>
       <Link href={logoKind.link}>Additional information</Link>
-      {(logoKind.key === 'sdg' ? colorsSdg : colors).map((color) => {
+      {(logoKind.key === 'sdg' ? colorsSdg : colors).map((color, i) => {
         return (
-          <div>
+          <div key={i}>
             <h4>{color}</h4>
 
             <div>
@@ -106,8 +106,9 @@ export default function Logos() {
                 />
               ) : (
                 <div>
-                  {languages.map((language) => (
+                  {languages.map((language, i) => (
                     <LogoElement
+                      key={i}
                       color={color}
                       logoKind={logoKind.key}
                       src={`logos/${logoKind.key}/${language}/wfp-logo-${logoKind.key}-${color}-${language}`}
