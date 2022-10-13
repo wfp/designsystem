@@ -8,7 +8,7 @@
 @use 'config';
 @use 'sass:math';
 @use 'sass:list';
-
+/*
 @forward '@carbon/grid'
   show css-grid,
        subgrid,
@@ -20,7 +20,7 @@
   );
 
 @use '@carbon/grid';
-
+*/
 @mixin column-span($span, $columns: false) {
   flex: 0 0 math.percentage(math.div($span, 12));
   max-width: math.percentage(math.div($span, 12));
