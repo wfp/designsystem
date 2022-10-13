@@ -5,7 +5,7 @@ import ErrorPage from 'next/error';
 //import Header from '../../components/header';
 //import PostHeader from '../../components/post-header';
 import Layout from '../../components/Blog/Layout';
-import { getPostBySlug, getAllPosts } from '../../lib/getPost';
+import { getPostByPath, getAllPosts, getPostSlugs } from '../../lib/getPost';
 //import PostTitle from '../../components/post-title';
 import styles from './article.module.scss';
 import Head from 'next/head';
@@ -22,6 +22,7 @@ import { faArrowLeft } from '@fortawesome/pro-solid-svg-icons';
 
 export default function Post({ post, posts, morePosts, preview }) {
   const router = useRouter();
+
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />;
   }
@@ -54,15 +55,15 @@ export default function Post({ post, posts, morePosts, preview }) {
                 date={post.date}
                 author={post.author}
         />*/}
-            <h1 className={styles.title}>{post.title}</h1>
-            {post.subtitle && (
-              <h2 className={styles.subTitle}>{post.subtitle}</h2>
-            )}
 
             <Sidebar
               posts={posts}
               content={
                 <Wrapper pageWidth="md" className={styles.content}>
+                  <h1 className={styles.title}>{post.title}</h1>
+                  {post.subtitle && (
+                    <h2 className={styles.subTitle}>{post.subtitle}</h2>
+                  )}
                   <MDXRemote {...post.mdxSource} components={components} />
                 </Wrapper>
               }
@@ -86,7 +87,10 @@ export async function getStaticProps({ params }) {
     'coverImage',
   ]);
 
-  const post = getPostBySlug(params.slug, [
+  const slugs = await getPostSlugs();
+  const foundSlug = slugs.find((f) => f.slug === params.slug.join('/'));
+
+  const post = getPostByPath(foundSlug.path, [
     'title',
     'date',
     'slug',
@@ -95,7 +99,7 @@ export async function getStaticProps({ params }) {
     'ogImage',
     'coverImage',
   ]);
-  const content = post.content; //await markdownToHtml(post.content || '');
+  const content = post.content;
 
   const mdxSource = await serialize(post.content, {
     components,
@@ -127,13 +131,11 @@ export async function getStaticProps({ params }) {
 export async function getStaticPaths() {
   const posts = await getAllPosts(['slug']);
 
-  console.log('posts', posts);
-
   return {
     paths: posts.map((post) => {
       return {
         params: {
-          slug: post.slug.replace('/', '-'),
+          slug: post.slug.split('/'),
         },
       };
     }),

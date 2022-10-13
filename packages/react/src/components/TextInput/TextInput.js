@@ -41,7 +41,7 @@ const TextInput = React.forwardRef((props, ref) => {
     id,
   };
 
-  const input = useInput();
+  const input = useInput(props);
 
   return (
     <Input {...props} formItemClassName={formItemClassName}>

@@ -18,7 +18,8 @@
     margin: 0;
     text-decoration: none;
     display: grid;
-    grid-template-columns: max-content 2fr auto min-content;
+    //grid-template-columns: max-content 2fr auto min-content;
+    grid-template-columns: max-content 2fr minmax(0, min-content) min-content;
     grid-template-rows: min-content min-content min-content;
     gap: 0px 0px;
     grid-template-areas:
@@ -119,6 +120,7 @@
     .#{$prefix}--item__title-wrapper {
       margin-bottom: 0;
       font-size: 1em;
+      line-break: anywhere;
       display: flex;
       grid-area: title;
       //justify-content: center;

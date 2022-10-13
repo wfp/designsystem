@@ -32,14 +32,6 @@ export default function Navigation({ children }) {
 
   const { locale, locales, asPath } = useRouter();
 
-  //if (router?.query?.app) return null;
-
-  const languageFull = {
-    de: 'deutsch',
-    en: 'englisch',
-    fr: 'französisch',
-  };
-
   return (
     <>
       <BannerNavigation className={styles.bannerNavigation}>

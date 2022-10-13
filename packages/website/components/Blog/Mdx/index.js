@@ -19,18 +19,20 @@ import {
   Blockquote,
 } from '@un/react';
 
-//import FaviconGenerator from '../../../_posts/Favicons/FaviconGenerator';
+import FaviconGenerator from '../../../_posts/Favicons/FaviconGenerator';
 
-const { code, pre, ...mdxComponentsWithoutCode } = MdxComponents;
+const { code, /*pre,*/ ...mdxComponentsWithoutCode } = MdxComponents;
 const components = {
   ...mdxComponentsWithoutCode,
   Video,
   Flex,
   img: Image,
   //a: Link,
+  FaviconsGenerator: FaviconGenerator,
   AnaboxSmart,
   Contact,
-  pre: CodeBlock,
+  code: code,
+  pre: (e) => <CodeBlock {...e} OrginalCode={code} />,
   Meta: Flex,
   BigButton,
   Blockquote,

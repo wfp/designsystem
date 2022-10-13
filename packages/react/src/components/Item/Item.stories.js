@@ -114,7 +114,19 @@ Horizontal.story = {
   },
 };
 
-export const HorizontalRepeater = (args) => <Item {...args} />;
+export const HorizontalRepeater = (args) => (
+  <>
+    <Item {...args} />{' '}
+    <Item
+      {...args}
+      title="A very long title title title title title title title title title title title title title title title title title title title title title title title title title title title title title title is shown"
+    />
+    <Item
+      {...args}
+      title="Averylongtitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitleisshown"
+    />
+  </>
+);
 
 HorizontalRepeater.args = {
   title: 'A title is shown',

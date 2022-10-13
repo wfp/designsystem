@@ -188,6 +188,14 @@ Make sure your commit does not produce any errors while checking:
 - jest tests
 - correct commit message
 
+### Installing the monorepo
+
+Requirements: `node.js 14.x`, `yarn`
+
+After cloning the repository to your local machine run `yarn` inside the main directory.
+
+Running `yarn build` will compile all the existing packages.
+
 ### Testing
 
 Use jest for testing the components. Once commited the branches will be also tested on [Travis CI](https://travis-ci.org/wfp/ui).
