@@ -23,5 +23,6 @@
   },
   "dependencies": {
     "prettier": "^2.2.1"
-  }
+  },
+  "gitHead": "6f6cd7801746d282fe789d2f86ff754857f52f15"
 }
