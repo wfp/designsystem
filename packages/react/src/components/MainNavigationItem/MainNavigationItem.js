@@ -86,6 +86,10 @@ class MainNavigationItem extends Component {
   }
 }
 
+MainNavigationItem.defaultProps = {
+  onChangeSub: () => {},
+};
+
 MainNavigationItem.propTypes = {
   /**
    * The CSS class name to be placed on the wrapping element.

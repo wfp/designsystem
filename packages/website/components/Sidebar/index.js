@@ -1,18 +1,47 @@
 import React from 'react';
 
-import { Sidebar, SidebarHeader, Item, Search, Button } from '@un/react';
+import {
+  Button,
+  Link,
+  Sidebar,
+  SidebarHeader,
+  Item,
+  Search,
+  Wrapper,
+} from '@un/react';
 import Accordion from '../Accordion';
 import { MDXRemote } from 'next-mdx-remote';
-import Link from 'next/link';
+import NextLink from 'next/link';
+import styles from './sidebar.module.scss';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faArrowRight,
+  faDash,
+  faMinus,
+} from '@fortawesome/pro-regular-svg-icons';
 
-function TreeBranch({ split }) {
+function TreeBranch({ split, level }) {
   return (
-    <li>
+    <li className={styles[`level-${level}`]}>
       {split?.children && (
         <>
-          {split.name}
+          {level > 1 ? (
+            <NextLink href={`/${split.path?.key}`}>
+              <Link className={styles.item}>
+                <FontAwesomeIcon icon={faMinus} className={styles.icon} />
+
+                {split.path?.title ? split.path?.title : split.name}
+              </Link>
+            </NextLink>
+          ) : level === 1 ? (
+            <span className={styles.sidebarTitle}>
+              {split.path?.title ? split.path?.title : split.name}
+            </span>
+          ) : null}
           {split.children.map((c) => (
-            <TreeBranch split={c} />
+            <ul>
+              <TreeBranch split={c} level={level + 1} />
+            </ul>
           ))}
         </>
       )}
@@ -30,7 +59,6 @@ export const createPathTree = (paths) => {
         currentLevel['<result>'].push({
           name,
           children: currentLevel[name]['<result>'],
-          /* Attach the path object to the leaf node. */
           path: index === array.length - 1 ? path : null,
         });
       }
@@ -43,66 +71,37 @@ export const createPathTree = (paths) => {
   return finalArray.length > 0 ? finalArray[0] : null;
 };
 
-export default function SidebarWrapper({ content, posts }) {
-  const coreCategory = posts.filter((item) => item.category === 'Core');
-  const startedCategory = posts.filter(
-    (item) => item.category === 'Getting Started'
-  );
-
+export default function SidebarWrapper({ content, post, posts }) {
   console.log('posts', posts);
 
   const postSplit = posts.map((p) => {
     return {
-      key: p.slug,
+      key: 'posts/' + p.slug,
+      title: p.title,
       directory: false,
     };
   });
 
   const split = createPathTree(postSplit);
-  console.log('sdaasdadsds', createPathTree(postSplit));
+
+  console.log('postssplit', posts, split);
 
   return (
-    <Sidebar
-      //active={active}
-      sidebar={
-        <>
-          <SidebarHeader style={{ paddingTop: '45px' }}>
-            <Search id="search22" />
-          </SidebarHeader>
+    <Wrapper className={styles.sidebarWrapper} pageWidth="lg">
+      <div className={styles.sidebar}>
+        <Search id="search22" />
 
-          <ul>
-            <TreeBranch split={split} />
-          </ul>
-          {/*<Accordion title="Getting Started">
-            {startedCategory.map((item) => {
-              return (
-                <Link href={`${item.slug}`}>
-                  <Item
-                    kind="horizontal"
-                    title={item.title}
-                    //  onClick={() => onItemClicked(item.mdxSource, item.content)}
-                  />
-                </Link>
-              );
-            })}
-          </Accordion>
+        <ul className={styles.sidebarList}>
+          <TreeBranch split={split} level={0} />
+        </ul>
+      </div>
 
-          <Accordion title="Core">
-            {coreCategory.map((item) => {
-              return (
-                <Link href={`${item.slug}`}>
-                  <Item
-                    kind="horizontal"
-                    title={item.title}
-                    //  onClick={() => onItemClicked(item.mdxSource, item.content)}
-                  />
-                </Link>
-              );
-            })}
-          </Accordion>*/}
-        </>
-      }>
-      {content}
-    </Sidebar>
+      <div className={styles.content}>
+        <h1 className={styles.title}>{post.title}</h1>
+        {post.subtitle && <h2 className={styles.subTitle}>{post.subtitle}</h2>}
+
+        {content}
+      </div>
+    </Wrapper>
   );
 }

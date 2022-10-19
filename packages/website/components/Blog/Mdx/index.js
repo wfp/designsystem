@@ -9,6 +9,7 @@ import Tray from './Buttons/Tray';
 import ColorLed from './Buttons/ColorLed';
 import Contact from './Contact';
 import CodeBlock from './CodeBlock';
+import Colors from './Colors';
 import UsbcConnector from './Buttons/UsbcConnector';
 import ResetButton from './Buttons/ResetButton';
 import Logos from './Logos';
@@ -28,6 +29,7 @@ const components = {
   Flex,
   img: Image,
   //a: Link,
+  Colors,
   FaviconsGenerator: FaviconGenerator,
   AnaboxSmart,
   Contact,

@@ -58,14 +58,11 @@ export default function Post({ post, posts, morePosts, preview }) {
 
             <Sidebar
               posts={posts}
+              post={post}
               content={
-                <Wrapper pageWidth="md" className={styles.content}>
-                  <h1 className={styles.title}>{post.title}</h1>
-                  {post.subtitle && (
-                    <h2 className={styles.subTitle}>{post.subtitle}</h2>
-                  )}
+                <>
                   <MDXRemote {...post.mdxSource} components={components} />
-                </Wrapper>
+                </>
               }
             />
           </article>

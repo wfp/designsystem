@@ -32,7 +32,7 @@
     "@un/react": "^1.18.55",
     "@un/styles": "^10.26.43",
     "@un/themes": "^10.40.13",
-    "@un/themes-core": "^0.0.4",
+    "@un/themes-core": "0.0.15",
     "@un/type": "^10.30.16",
     "@zeit/next-sass": "^1.0.1",
     "algoliasearch": "^4.13.1",
