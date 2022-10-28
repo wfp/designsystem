@@ -1,7 +1,7 @@
 {
   "name": "@un/pictograms-react",
   "description": "React components for pictograms in digital and software products using the UN Core",
-  "version": "11.14.21",
+  "version": "11.14.22",
   "license": "Apache-2.0",
   "main": "umd/index.js",
   "module": "es/index.js",
@@ -36,8 +36,8 @@
     "react": ">=16"
   },
   "devDependencies": {
-    "@un/icons-core": "^0.0.15",
-    "@un/pictograms": "^11.14.19"
+    "@un/icons-core": "^0.0.16",
+    "@un/pictograms": "^11.14.20"
   },
   "sideEffects": false,
   "gitHead": "298aef432462914c27f09ef5739f3b888f83ccea"

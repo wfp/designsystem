@@ -1,6 +1,6 @@
 {
   "name": "@un/logos",
-  "version": "0.0.16",
+  "version": "0.0.17",
   "description": "Logos of the World Food Programme",
   "main": "index.js",
   "scripts": {
