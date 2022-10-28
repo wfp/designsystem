@@ -14,9 +14,10 @@ export default function Hero() {
     <div className={styles.features}>
       <div className={styles.heroWrapper}>
         <div className={styles.hero}>
-          UN
+          Digital Design System
+          {/*UN
           <br />
-          core
+  core*/}
         </div>
       </div>
 

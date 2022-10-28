@@ -8078,16 +8078,6 @@
   resolved "https://registry.yarnpkg.com/@un/layout/-/layout-10.26.15.tgz#68a334070cccf6ce21daa6f0187d0a21695e89b1"
   integrity sha512-1CwNTA4MOTIVUYqM45q5S/6OSBGQ4NNiwt2jWevGDImXqmL1VThLD2ensefSNYTSWMDGhEAZcJM0SkoFPNkkuQ==
 
-"@un/themes-core@^0.0.3":
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/@un/themes-core/-/themes-core-0.0.3.tgz#1ec2050a1999dfcce75d48dd0c1a641037f13689"
-  integrity sha512-w2y8iETKLM7d/aZ911IKtR10/Q1bfijpyyt3GkavotfUyuzL5ZCy0JYcxFTlEilRbTw38fwNGd/VcNGWd2wLPA==
-  dependencies:
-    change-case "^4.1.2"
-    deepdash "^5.3.9"
-    lodash "^4.17.21"
-    style-dictionary "^3.7.0"
-
 "@un/themes@^10.40.13":
   version "10.40.13"
   resolved "https://registry.yarnpkg.com/@un/themes/-/themes-10.40.13.tgz#0b3213e50b0968d6edfdf5bd83d7a698c977d2f5"

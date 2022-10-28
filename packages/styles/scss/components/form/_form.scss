@@ -134,7 +134,7 @@ $input-label-weight: 400 !default;
   }
 
   .#{$prefix}--form__helper-text {
-    @include type-style('helperddddd');
+    @include type-style('caption');
     color: $text-helper;
     order: 1;
     line-height: 1.5;

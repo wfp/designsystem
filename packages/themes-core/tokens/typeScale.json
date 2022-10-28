@@ -1,0 +1,10 @@
+{
+  "typography": {
+    "caption": {
+      "description": "This is a description",
+      "type": "dimension",
+      "value": "12",
+      "blendMode": "normal"
+    }
+  }
+}

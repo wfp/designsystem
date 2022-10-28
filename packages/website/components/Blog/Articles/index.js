@@ -4,6 +4,8 @@ import styles from './article.module.scss';
 //import { Search } from "@un/react";
 import Link from 'next/link';
 
+import { Card as CardWfp, Hero } from '@un/react';
+
 import Search from '../../Search';
 import { useTranslation } from 'next-i18next';
 import { getCategories } from '../../../lib/api';
@@ -13,6 +15,7 @@ import {
   faPaperPlane,
   faScaleBalanced,
 } from '@fortawesome/pro-regular-svg-icons';
+import Image from 'next/image';
 
 const links = [
   { href: '#', label: 'Einrichten' },
@@ -24,11 +27,43 @@ const Articles = ({ articles }) => {
   // if (!categories) return null;
   const categories = [{ name: 'common' }];
 
+  const designers = articles.find((a) => a.slug === 'core/designers');
+
+  const src = designers?.ogImage?.url;
+  if (!src) return null;
+
+  const srcElement = require(`../../../_posts/${src}`);
+
+  const ImageOverride = ({ className }) => (
+    <div className={className}>
+      <Image src={srcElement} sizes={'(max-width: 710px) 40vw, 300px'} />
+    </div>
+  );
   return (
     <div>
       <div className={styles.searchWrapper}>
         <Search />
       </div>
+
+      <CardWfp
+        article={designers}
+        key={`article__${designers.id}`}
+        kind="split"
+        components={{ Image: ImageOverride }}
+        metadata="Climate Change, Publication"
+        subTitle="How to get started as a designer"
+        title="For designers"
+      />
+
+      <CardWfp
+        article={designers}
+        key={`article__${designers.id}`}
+        kind="split"
+        components={{ Image: ImageOverride }}
+        metadata="Climate Change, Publication"
+        subTitle="How to get started as a developer"
+        title="For developers"
+      />
       <div className={styles.articles}>
         {categories.map((category) => (
           <>

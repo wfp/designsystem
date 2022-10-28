@@ -117,7 +117,7 @@ const config = ({ source = `tokens/**/*.json`, buildPath = `dist` } = {}) => {
               //background: color.background.background,
             };
           }
-          //return content;
+          return content;
         },
       },
     ],

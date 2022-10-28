@@ -13,13 +13,14 @@ const searchClient = algoliasearch(
   process.env.NEXT_PUBLIC_ALGOLIA_SEARCH_API_KEY
 );
 
-export default function Search() {
+export default function Search({ kind }) {
   const [focus, setFocus] = useState(false);
+
   return (
     <>
       <InstantSearch searchClient={searchClient} indexName="un-core-website">
-        <CustomSearchBox setFocus={setFocus} />
-        <CustomHits focus={focus} />
+        <CustomSearchBox setFocus={setFocus} kind={kind} />
+        <CustomHits focus={focus} kind={kind} />
       </InstantSearch>
     </>
   );

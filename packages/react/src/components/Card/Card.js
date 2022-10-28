@@ -3,24 +3,59 @@ import React from 'react';
 import classNames from 'classnames';
 import useSettings from '../../hooks/useSettings';
 
+function Image({ image, title, kind, className }) {
+  if (image && kind === 'simple-card')
+    return <img src={image} alt={title} className={className} />;
+  return null;
+}
+
+function Metadata({ prefix, metadata }) {
+  if (metadata)
+    return (
+      <p className={`${prefix}--photo-cardnew__info__metadata`}>{metadata}</p>
+    );
+  return null;
+}
+
+function Title({ prefix, title }) {
+  if (title)
+    return <p className={`${prefix}--photo-cardnew__info__title`}>{title}</p>;
+  return null;
+}
+
+function SubTitle({ prefix, subTitle }) {
+  if (subTitle)
+    return (
+      <p className={`${prefix}--photo-cardnew__info__subtitle`}>{subTitle}</p>
+    );
+  return null;
+}
+
 /**
  * Cards are a convenient means of displaying content composed of different types of objects. It is a multi usage component which creates boxes that are usually teasing some kind of content. */
-const Card = ({
-  children,
-  className,
-  image,
-  isExternal,
-  isLink,
-  metadata,
-  subTitle,
-  title,
-  kind,
-  url,
-  cardWidth,
-  cardHeight,
-  ...other
-}) => {
+const Card = (props) => {
+  const {
+    children,
+    className,
+    image,
+    isExternal,
+    isLink,
+    title,
+    kind,
+    url,
+    cardWidth,
+    cardHeight,
+    components = {},
+    ...other
+  } = props;
   const { prefix } = useSettings();
+
+  const defaultComponents = { Image, Title, SubTitle, Metadata };
+
+  const allComponents = {
+    ...defaultComponents,
+    ...components,
+  };
   const style =
     kind == 'overlay'
       ? {
@@ -44,9 +79,12 @@ const Card = ({
         <div className={`${prefix}--photo-cardnew__background`} style={style} />
       ) : null}
 
-      {image && kind === 'simple-card' ? (
-        <img src={image} alt={title} className={`${prefix}--header-photo`} />
-      ) : null}
+      <allComponents.Image
+        src={image}
+        alt={title}
+        kind={kind}
+        className={`${prefix}--header-photo`}
+      />
 
       <div className={`${prefix}--photo-cardnew__info`}>
         <div>
@@ -56,19 +94,9 @@ const Card = ({
               style={style}
             />
           )}
-          {metadata && (
-            <p className={`${prefix}--photo-cardnew__info__metadata`}>
-              {metadata}
-            </p>
-          )}
-          {title && (
-            <h3 className={`${prefix}--photo-cardnew__info__title`}>{title}</h3>
-          )}
-          {subTitle && (
-            <p className={`${prefix}--photo-cardnew__info__subtitle`}>
-              {subTitle}
-            </p>
-          )}
+          <allComponents.Metadata prefix={prefix} {...props} />
+          <allComponents.Title prefix={prefix} {...props} />
+          <allComponents.SubTitle prefix={prefix} {...props} />
         </div>
       </div>
       {children}
@@ -106,6 +134,12 @@ Card.propTypes = {
    An optimized photograph
  */
   image: PropTypes.string,
+
+  /**
+   Additional components overriding the default ones
+ */
+  components: PropTypes.object,
+
   /**
   isExternal if true, opens link in a different window
 */

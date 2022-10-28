@@ -215,14 +215,14 @@
 }
 
 @mixin typo($name) {
-  font-size: $typography-headings-heading-1-font-size;
+  /*font-size: $typography-headings-heading-1-font-size;
   text-decoration: $typography-headings-heading-1-text-decoration;
   font-family: $typography-headings-heading-1-font-family;
   font-weight: $typography-headings-heading-1-font-weight;
   font-style: $typography-headings-heading-1-font-style;
   font-stretch: $typography-headings-heading-1-font-stretch;
   letter-spacing: $typography-headings-heading-1-letter-spacing;
-  line-height: $typography-headings-heading-1-line-height;
+  line-height: $typography-headings-heading-1-line-height;*/
 }
 
 @mixin story {
@@ -341,14 +341,14 @@
   }
 
   .#{$prefix}--story__h1 {
-    font-size: $typography-headings-heading-1-font-size;
+    /*font-size: $typography-headings-heading-1-font-size;
     text-decoration: $typography-headings-heading-1-text-decoration;
     font-family: $typography-headings-heading-1-font-family;
     font-weight: $typography-headings-heading-1-font-weight;
     font-style: $typography-headings-heading-1-font-style;
     font-stretch: $typography-headings-heading-1-font-stretch;
     letter-spacing: $typography-headings-heading-1-letter-spacing;
-    line-height: $typography-headings-heading-1-line-height;
+    line-height: $typography-headings-heading-1-line-height;*/
     //    paragraph-indent: $typography-headings-heading-1-paragraph-indent;
     //    paragraph-spacing: $typography-headings-heading-1-paragraph-spacing;
     //    text-case: $typography-headings-heading-1-text-case;
@@ -365,8 +365,8 @@
 
   .#{$prefix}--story__h3 {
     margin-top: $spacing-07;
-    font-size: $typography-body-copy-16px-bold-font-weight;
-    font-weight: $typography-body-copy-16px-bold-font-weight;
+    // font-size: $typography-body-copy-16px-bold-font-weight;
+    // font-weight: $typography-body-copy-16px-bold-font-weight;
   }
 
   .#{$prefix}--story__h4 {

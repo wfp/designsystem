@@ -18,6 +18,7 @@ import {
   MdxComponents,
   BlockNotification,
   Blockquote,
+  TextInput,
 } from '@un/react';
 
 import FaviconGenerator from '../../../_posts/Favicons/FaviconGenerator';
@@ -38,11 +39,13 @@ const components = {
   Meta: Flex,
   BigButton,
   Blockquote,
+  BlockNotification,
   Button,
   Link,
   ResetButton,
   Logos,
   UsbcConnector,
+  TextInput,
   ColorLed,
   Tray,
   //wrapper: Wrapper,

@@ -3,14 +3,54 @@ import React, { useRef } from 'react';
 import ReactDOM from 'react-dom';
 import classNames from 'classnames';
 import { Close } from '@un/icons-react';
+import Button from '../Button';
 import useSettings from '../../hooks/useSettings';
-import ModalFooter from './ModalFooter';
 
-const matchesFuncName =
+/*const matchesFuncName =
   typeof Element !== 'undefined' &&
   ['matches', 'webkitMatchesSelector', 'msMatchesSelector'].filter(
     (name) => typeof Element.prototype[name] === 'function'
-  )[0];
+  )[0];*/
+
+const modalRoot = typeof document !== 'undefined' ? document.body : undefined;
+
+export function ModalFooter({
+  passiveModal,
+  secondaryButtonText,
+  onSecondaryButtonClick,
+  primaryButtonText,
+  onRequestSubmit,
+  primaryButtonDisabled,
+  prefix,
+  secondaryButtonDisabled,
+  danger,
+  ref,
+}) {
+  if (passiveModal) return null;
+  return (
+    <div className={`${prefix}--modal-footer`}>
+      <div className={`${prefix}--modal__buttons-container`}>
+        {secondaryButtonText && (
+          <Button
+            kind={danger ? 'tertiary' : 'secondary'}
+            disabled={secondaryButtonDisabled}
+            id="secondaryButton"
+            onClick={onSecondaryButtonClick}>
+            {secondaryButtonText}
+          </Button>
+        )}
+        <Button
+          kind={danger ? 'danger--primary' : 'primary'}
+          disabled={primaryButtonDisabled}
+          onClick={onRequestSubmit}
+          id="primaryButton"
+          ref={ref}>
+          {primaryButtonText}
+        </Button>
+      </div>
+    </div>
+  );
+}
 
 /** Modals focus the user’s attention exclusively on one task or piece of information via a window that sits on top of the page content. */
 
@@ -35,24 +75,22 @@ function Modal(props) {
     hideClose,
     wide,
     type,
-    selectorPrimaryFocus,
-    shouldSubmitOnEnter,
+    selectorPrimaryFocus, // eslint-disable-line
+    selectorsFloatingMenus, // eslint-disable-line
+    shouldSubmitOnEnter, // eslint-disable-line
     ...other
   } = props;
 
   const { prefix } = useSettings();
+
+  //this.el = document.createElement('div');
+
   const button = useRef(null);
   const outerModal = useRef(null);
   const innerModal = useRef(null);
   const el = document.body;
-  const [beingOpen, setBeingOpen] = React.useState(false);
 
-  const handleKeyDown = (evt) => {
-    if (evt.which === 27) onRequestClose(evt, 'key');
-    if (evt.which === 13 && shouldSubmitOnEnter) onRequestSubmit(evt, 'key');
-  };
-
-  const elementOrParentIsFloatingMenu = (target) => {
+  /*const elementOrParentIsFloatingMenu = (target) => {
     const {
       selectorsFloatingMenus = [
         `.${prefix}--overflow-menu-options`,
@@ -81,19 +119,18 @@ function Modal(props) {
       }
       return false;
     }
+  };*/
+
+  const handleKeyDown = (evt) => {
+    if (evt.which === 27) onRequestClose(evt, 'key');
+    if (evt.which === 13 && shouldSubmitOnEnter) onRequestSubmit(evt, 'key');
   };
 
   const handleClick = (evt) => {
-    console.log(
-      'evt.target',
-      evt,
-      innerModal.current.contains(evt.target),
-      innerModal.current
-    );
     if (
       innerModal.current &&
-      !innerModal.current.contains(evt.target) &&
-      !elementOrParentIsFloatingMenu(evt.target)
+      innerModal.current.contains(evt.target) /* &&
+      !elementOrParentIsFloatingMenu(evt.target)*/
     ) {
       onRequestClose(evt, 'background');
     }
@@ -108,16 +145,25 @@ function Modal(props) {
   };
 
   const handleBlur = (evt) => {
+    // Keyboard trap
     if (
       innerModal.current &&
       open &&
       evt.relatedTarget &&
-      !innerModal.current.contains(evt.relatedTarget) &&
-      !elementOrParentIsFloatingMenu(evt.relatedTarget)
+      !innerModal.current.contains(evt.relatedTarget) /*&&
+      !elementOrParentIsFloatingMenu(evt.relatedTarget)*/
     ) {
       focusModal();
     }
   };
+
+  /*componentDidUpdate(prevProps) {
+    if (!prevProps.open && this.props.open) {
+      this.beingOpen = true;
+    } else if (prevProps.open && !this.props.open) {
+      this.beingOpen = false;
+    }
+  }*/
 
   const focusButton = (focusContainerElement) => {
     if (selectorPrimaryFocus === false) return;
@@ -132,6 +178,19 @@ function Modal(props) {
     }
   };
 
+  /*
+  componentDidMount() {
+    modalRoot.appendChild(this.el);
+    if (!props.open) {
+      return;
+    }
+    focusButton(innerModal.current);
+  }
+
+  componentWillUnmount() {
+    modalRoot.removeChild(this.el);
+  }*/
+
   const handleTransitionEnd = (evt) => {
     if (
       outerModal.current.offsetWidth &&
@@ -139,11 +198,13 @@ function Modal(props) {
       beingOpen
     ) {
       focusButton(evt.currentTarget);
-      setBeingOpen(false);
+      beingOpen = false;
     }
   };
 
-  if (open === false && lazyLoad) return null;
+  if (open === false && lazyLoad) {
+    return null;
+  }
 
   const customComponents = { ModalFooter, ...components };
 
@@ -208,7 +269,7 @@ function Modal(props) {
   const modal = (
     <div
       {...other}
-      // onKeyDown={handleKeyDown}
+      onKeyDown={handleKeyDown}
       onClick={handleClick}
       onBlur={handleBlur}
       className={modalClasses}
@@ -224,9 +285,11 @@ function Modal(props) {
       <div className={`${prefix}--modal-inner`}>{modalBody}</div>
     </div>
   );
-
-  if (inPortal) return ReactDOM.createPortal(modal, el);
-  else return modal;
+  if (inPortal) {
+    return ReactDOM.createPortal(modal, el);
+  } else {
+    return modal;
+  }
 }
 
 Modal.propTypes = {

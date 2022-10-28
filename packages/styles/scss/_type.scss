@@ -26,30 +26,27 @@
 }
 
 @mixin type-style($style) {
-  $maped: map-deep-get(
-    $tokens,
-    'typography',
-    'headings',
-    'heading 1',
-    fontSize
-  );
+  $maped: map-deep-get($tokens, 'typography', $style);
+
+  color: blue;
   @warn 'This is  a step of the WFP Type Scale!', $maped;
-
-  @if map-has-key($tokens, 'typography' /*$style*/) {
-    $typographyMap: map-get($tokens, 'typography', 'headings', 'heading 1');
-
-    @if map-has-key($typographyMap, 'body-short-02' /*$style*/) {
+  @if map-deep-get($tokens, 'typography', 'caption') {
+    $typographyMap: map-get($tokens, 'typography', $style);
+    font-size: map-get($tokens, 'typography', $style);
+    color: green;
+  }
+  /*@if map-has-key($typographyMap, 'body-short-02',$style) {
       @warn 'This is  a step of the WFP Type Scale!';
-      /*$elements: map-get($tokens, $style);
+      $elements: map-get($tokens, $style);
       font-family: map-get($elements, 'fontFamily');
-      font-size: map-get($elements, 'fontSize');*/
+      font-size: map-get($elements, 'fontSize');
     } @else {
       //@warn 'This is  a step of the WFP Type Scale!';
       //@warn 'This is not a step of the WFP Type Scale!' + $style;
     }
   } @else {
     @warn 'No typography step found!';
-  }
+  }*/
 }
 
 // TODO: Temporary type scale
