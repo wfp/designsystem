@@ -1,10 +1,38 @@
-import React, { useState } from 'react';
+import React, { PropsWithChildren, useState } from 'react';
 import ReactDOM from 'react-dom';
 import classnames from 'classnames';
-import PropTypes from 'prop-types';
 import { usePopperTooltip } from 'react-popper-tooltip';
+import { Placement } from '../../types/utils';
 
 import useSettings from '../../hooks/useSettings';
+
+interface TooltipProps {
+  children?: React.ReactNode;
+  content?:
+    | React.ReactNode
+    | ((options: {
+        setVisibility: React.Dispatch<React.SetStateAction<boolean>>;
+        visibilityChange: (state: boolean) => void;
+      }) => React.ReactNode);
+  dark?: boolean;
+  noPadding?: boolean;
+  placement?: Placement;
+  trigger?: 'hover' | 'click';
+  modifiers?: [];
+  usePortal?: boolean;
+  createRefWrapper?: boolean;
+  className: string;
+  closeOnOutsideClick?: boolean;
+  closeOnTriggerHidden?: boolean;
+  defaultVisible?: boolean;
+  delayHide?: number;
+  delayShow?: number;
+  followCursor?: boolean;
+  interactive?: boolean;
+  mutationObserverOptions?: MutationObserverInit | null;
+  offset?: [number, number];
+  onVisibleChange?: (state: boolean) => void;
+}
 
 export const tooltipStyle = {
   duration: 100,
@@ -21,7 +49,7 @@ export const tooltipStyleDark = {
 };
 
 /** Tooltips display additional information upon click, hover, or focus. The information should be contextual, useful, and nonessential. */
-const Tooltip = ({
+const Tooltip: React.FC<PropsWithChildren<TooltipProps>> = ({
   className,
   dark,
   noPadding,
@@ -116,62 +144,6 @@ const Tooltip = ({
       {visible && !usePortal && tooltip}
     </>
   );
-};
-
-Tooltip.propTypes = {
-  /**
-   * Provide the children on which the tooltip will show on
-   */
-  children: PropTypes.node,
-
-  /**
-   * Provide the content for the tooltip
-   */
-  content: PropTypes.node,
-
-  /**
-   * Provide a dark styled tooltip
-   */
-  dark: PropTypes.bool,
-  /**
-   * Disable the default inner padding of the tooltip
-   */
-  noPadding: PropTypes.bool,
-  /**
-   * Provide the placement of the tooltip
-   */
-  placement: PropTypes.oneOf([
-    'top',
-    'top-start',
-    'top-end',
-    'right',
-    'right-start',
-    'right-end',
-    'bottom',
-    'bottom-start',
-    'bottom-end',
-    'left',
-    'left-start',
-    'left-end',
-  ]),
-  /**
-   * Provide the placement of the tooltip
-   */
-  trigger: PropTypes.oneOf(['hover', 'click']),
-
-  /**
-   * Provide additional modifiers as an object https://popper.js.org/docs/v2/modifiers/
-   */
-  modifiers: PropTypes.array,
-
-  /**
-   * Whether to use React.createPortal for creating tooltip.
-   */
-  usePortal: PropTypes.bool,
-  /**
-   * Use a wrapper html element around the trigger. Useful for components without `forwardRef` support.
-   */
-  createRefWrapper: PropTypes.bool,
 };
 
 export default Tooltip;

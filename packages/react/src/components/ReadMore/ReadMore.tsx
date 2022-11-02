@@ -1,6 +1,6 @@
-import PropTypes from 'prop-types';
 import React, { useRef, useState } from 'react';
-import classnames from 'classnames';
+import type { PropsWithChildren } from 'react';
+import classnames, { Argument } from 'classnames';
 import Link from '../Link';
 import { CaretUp, CaretDown } from '@un/icons-react';
 import useSettings from '../../hooks/useSettings';
@@ -31,8 +31,19 @@ const MoreLink = ({ handleToggleClick, link, text, showMore }) => {
   }
 };
 
+type ReadMoreProps = PropsWithChildren<{
+  className?: Argument;
+  collapsed?: boolean;
+  collapseLink?: React.ReactNode;
+  collapseText?: React.ReactNode;
+  disableAutoscroll?: boolean;
+  expandLink?: React.ReactNode;
+  expandText?: React.ReactNode;
+  fade?: boolean;
+  maxHeight?: number;
+}>;
 /** ReadMore component is a simple way to keep longer content from cluttering up your page, giving you more control over how much content is displayed to visitor */
-const ReadMore = ({
+const ReadMore: React.FC<ReadMoreProps> = ({
   collapseLink,
   collapseText,
   children,
@@ -113,55 +124,6 @@ const ReadMore = ({
       />
     </div>
   );
-};
-
-ReadMore.propTypes = {
-  /**
-   * Specify an optional className to be applied to the wrapper node
-   */
-  className: PropTypes.string,
-  /**
-   * The content of the expanded element
-   */
-  children: PropTypes.node.isRequired,
-  /**
-   * The content of the collapsed content (optional)
-   */
-  collapsed: PropTypes.node,
-
-  /**
-   * A custom link for collapsing
-   */
-  collapseLink: PropTypes.node,
-  /**
-   * Custom text for collapsing
-   */
-  collapseText: PropTypes.node,
-  /**
-   * Disable the scroll into view on expanding
-   */
-  disableAutoscroll: PropTypes.bool,
-  /**
-   * A custom link for expanding
-   */
-  expandLink: PropTypes.node,
-  /**
-   * Custom text for expanding
-   */
-  expandText: PropTypes.node,
-  /**
-   * Enables the fade effect when the content is collapsed (optional) when enabled collapsed will be ignored
-   */
-  fade: PropTypes.bool,
-  /**
-   * The maximum height when the content is collapsed (optional)
-   */
-  maxHeight: PropTypes.number,
-};
-
-ReadMore.defaultProps = {
-  expandText: 'Read more',
-  collapseText: 'Read less',
 };
 
 export default ReadMore;

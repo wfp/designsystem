@@ -80,7 +80,7 @@ const CardExternal = ({
         </div>
       )}
       <figure className={`${prefix}--card-ext__media`}>
-        <img
+        <image
           className={`${prefix}--card-ext__image`}
           src={image}
           alt="Card picture"

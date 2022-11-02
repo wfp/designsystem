@@ -24,7 +24,19 @@ module.exports = {
     '@storybook/addon-toolbars',
     '@storybook/addon-viewport',
   ],
-  stories: ['../src/**/*.stories.@(js|mdx)', '../src/**/*-story.@(js|mdx)'],
+  stories: [
+    '../src/**/*.stories.@(js|tsx|mdx)',
+    '../src/**/*-story.@(js|tsx|mdx)',
+  ],
+  typescript: {
+    reactDocgen: 'react-docgen-typescript',
+    reactDocgenTypescriptOptions: {
+      compilerOptions: {
+        allowSyntheticDefaultImports: false,
+        esModuleInterop: false,
+      },
+    },
+  },
   managerWebpack: async (config, options) => {
     config.plugins.push(
       new webpack.NormalModuleReplacementPlugin(

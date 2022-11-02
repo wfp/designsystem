@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
-import React, { Component } from 'react';
-import { Info } from '@un/icons-react';
+import React from 'react';
+import { InfoSolid } from '@un/icons-react';
 import classNames from 'classnames';
 import useSettings from '../../hooks/useSettings';
 import Tooltip from '../Tooltip/Tooltip';
@@ -14,7 +14,7 @@ const FormHint = ({ className, children, description, icon, ...other }) => {
   return (
     <Tooltip content={children}>
       <div className={formHintClasses}>
-        <InfoSolid16 width="15" height="15" description={children} />
+        <InfoSolid width="15" height="15" description={children} />
       </div>
     </Tooltip>
   );
@@ -37,8 +37,8 @@ FormHint.propTypes = {
   icon: PropTypes.object,
 };
 
-FormHint.defaultProps = {
-  icon: Info,
-};
+// FormHint.defaultProps = {
+//   icon: InfoSolid16,
+// };
 
 export default FormHint;

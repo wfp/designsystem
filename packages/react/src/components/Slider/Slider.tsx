@@ -1,30 +1,63 @@
-import PropTypes from 'prop-types';
 import React, { useState, useRef, useEffect } from 'react';
-import classNames from 'classnames';
+import type { PropsWithChildren } from 'react';
+import classNames, { Argument } from 'classnames';
 import useSettings from '../../hooks/useSettings';
 import Input from '../Input';
 import TextInput from '../TextInput';
+
+type SliderProps = PropsWithChildren<{
+  hideTextInput?: boolean;
+  formItemClassName?: string;
+  disabled?: boolean;
+  hideLabel?: boolean;
+  id: string;
+  labelText: React.ReactNode | string;
+  min: number;
+  minLabel?: string;
+  max: number;
+  maxLabel?: string;
+  formatLabel?: () => void;
+  onChange?: (
+    value: number,
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => void;
+  onClick?: () => void;
+  name?: string;
+  inputType?: string;
+  ariaLabelInput?: string;
+  step?: number;
+  value?: '' | number;
+  invalid?: {} | boolean;
+  invalidText?: string;
+  additional?: React.ReactNode;
+  helperText?: React.ReactNode;
+  allowEmpty?: boolean;
+  fullWidth?: boolean;
+  className?: string;
+  hideControls?: boolean;
+  inputRef?: React.RefObject<HTMLInputElement>;
+}>;
 
 const defaultFormatLabel = (value, label) => {
   return typeof label === 'function' ? label(value) : `${value}${label}`;
 };
 
-function PropTypeEmptyString(props, propName, componentName) {
-  componentName = componentName || 'ANONYMOUS';
-  if (props[propName]) {
-    let value = props[propName];
-    if (typeof value === 'string' && value !== '') {
-      return new Error(
-        propName + ' in ' + componentName + ' is not an empty string'
-      );
-    }
-  }
-  return null;
-}
+// function PropTypeEmptyString(props, propName, componentName) {
+//   componentName = componentName || 'ANONYMOUS';
+//   if (props[propName]) {
+//     let value = props[propName];
+//     if (typeof value === 'string' && value !== '') {
+//       return new Error(
+//         propName + ' in ' + componentName + ' is not an empty string'
+//       );
+//     }
+//   }
+//   return null;
+// }
 
 /** Sliders provide a visual indication of adjustable content, where the user can move the handle along a horizontal track to increase or decrease the value. */
 
-const Slider = (props) => {
+const Slider: React.FC<SliderProps> = (props) => {
   const {
     additional,
     ariaLabelInput,
@@ -72,7 +105,7 @@ const Slider = (props) => {
       evt.imaginaryTarget = _inputRef;
       if (evt.target.value > max) {
         setValue(max);
-        onChange(parseFloat(max), evt);
+        onChange(max, evt);
       } /* else if (evt.target.value < min) {
         setValue(evt.target.value);
         onChange(parseFloat(min), evt);
@@ -169,147 +202,6 @@ const Slider = (props) => {
       }}
     </Input>
   );
-};
-
-Slider.propTypes = {
-  /**
-   * Specify an optional className to be applied to the wrapper node
-   */
-  className: PropTypes.string,
-
-  /**
-   * `true` to hide the number input box.
-   */
-  hideTextInput: PropTypes.bool,
-
-  /**
-   * Specify an optional className to be applied to the form-item node
-   */
-  formItemClassName: PropTypes.string,
-
-  /**
-   * Specify if the control should be disabled, or not
-   */
-  disabled: PropTypes.bool,
-
-  /**
-   * Specify whether you want the underlying label to be visually hidden
-   */
-  hideLabel: PropTypes.bool,
-
-  /**
-   * Specify a custom `id` for the input
-   */
-  id: PropTypes.string.isRequired,
-
-  /**
-   * Generic `label` that will be used as the textual representation of what
-   * this field is for
-   */
-  labelText: PropTypes.node,
-
-  /**
-   * The minimum value.
-   */
-  min: PropTypes.number.isRequired,
-
-  /**
-   * The label associated with the minimum value.
-   */
-  minLabel: PropTypes.string,
-
-  /**
-   * The maximum value.
-   */
-  max: PropTypes.number.isRequired,
-
-  /**
-   * The label associated with the maximum value.
-   */
-  maxLabel: PropTypes.string,
-
-  /**
-   * The callback to format the label associated with the minimum/maximum value.
-   */
-  formatLabel: PropTypes.func,
-
-  /**
-   * The new value is available in 'imaginaryTarget.value'
-   * i.e. to get the value: evt.imaginaryTarget.value
-   */
-  onChange: PropTypes.func,
-
-  /**
-   * Provide an optional function to be called when the up/down button is clicked
-   */
-  onClick: PropTypes.func,
-
-  /**
-   * The `name` attribute of the `<input>`.
-   */
-  name: PropTypes.string,
-
-  /**
-   * The `type` attribute of the `<input>`.
-   */
-  inputType: PropTypes.string,
-
-  /**
-   * The `ariaLabel` for the `<input>`.
-   */
-  ariaLabelInput: PropTypes.string,
-
-  /**
-   * A value determining how much the value should increase/decrease by moving the thumb by mouse.
-   */
-  step: PropTypes.number,
-
-  /**
-   * Specify the value of the input, if undefined or null the value is empty
-   */
-  value: PropTypes.oneOfType([PropTypeEmptyString, PropTypes.number]),
-
-  /**
-   * Specify whether the control is currently invalid.
-   * Either a boolean in combination with `invalidText` or an `object`( eg. { message: "Message", …otherErrorProperties }) can be passed.
-   */
-  invalid: PropTypes.oneOfType([PropTypes.object, PropTypes.bool]),
-
-  /**
-   * Message which is displayed if the value is invalid.
-   */
-  invalidText: PropTypes.string,
-
-  /**
-   * Provide additional component that is used alongside the input for customization
-   */
-  additional: PropTypes.node,
-
-  /**
-   * Provide text that is used alongside the control label for additional help
-   */
-  helperText: PropTypes.node,
-
-  /**
-   * `true` to allow empty string.
-   */
-  allowEmpty: PropTypes.bool,
-  /**
-   * Use the width of the parent element
-   */
-  fullWidth: PropTypes.bool,
-};
-
-Slider.defaultProps = {
-  fullWidth: false,
-  hideTextInput: false,
-  step: 1,
-  disabled: false,
-  minLabel: '',
-  maxLabel: '',
-  inputType: 'number',
-  ariaLabelInput: 'Slider number input',
-  min: 0,
 };
 
 export default Slider;

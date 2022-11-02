@@ -32,7 +32,7 @@ export default function Post({ post, posts, morePosts, preview }) {
       ) : (
         <>
           <article>
-            {!router?.query?.app && (
+            {/* {!router?.query?.app && (
               <LinkBack
                 href={process.env.NEXT_PUBLIC_BLOG_FOLDER}
                 //hasBack={hasBack}
@@ -42,7 +42,7 @@ export default function Post({ post, posts, morePosts, preview }) {
                   Back to overview
                 </a>
               </LinkBack>
-            )}
+            )} */}
 
             {/*<Head>
                 <title>{post.title}</title> 
@@ -54,10 +54,10 @@ export default function Post({ post, posts, morePosts, preview }) {
                 date={post.date}
                 author={post.author}
         />*/}
-            <h1 className={styles.title}>{post.title}</h1>
+            {/* <h1 className={styles.title}>{post.title}</h1>
             {post.subtitle && (
               <h2 className={styles.subTitle}>{post.subtitle}</h2>
-            )}
+            )} */}
 
             <Sidebar
               posts={posts}
