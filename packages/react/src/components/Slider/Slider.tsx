@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import type { PropsWithChildren } from 'react';
-import classNames, { Argument } from 'classnames';
+import classNames from 'classnames';
 import useSettings from '../../hooks/useSettings';
 import Input from '../Input';
 import TextInput from '../TextInput';
