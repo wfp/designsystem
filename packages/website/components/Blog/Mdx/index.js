@@ -13,6 +13,8 @@ import Colors from './Colors';
 import UsbcConnector from './Buttons/UsbcConnector';
 import ResetButton from './Buttons/ResetButton';
 import Logos from './Logos';
+import Typeset from './Typeset';
+
 import {
   Button,
   MdxComponents,
@@ -46,6 +48,7 @@ const components = {
   Logos,
   UsbcConnector,
   TextInput,
+  Typeset,
   ColorLed,
   Tray,
   //wrapper: Wrapper,

@@ -7,12 +7,20 @@ import { Card } from '@un/react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/pro-solid-svg-icons';
 import Image from 'next/image';
+import dynamic from 'next/dynamic';
 
 const CardWrapper = ({ article, multimedia, detail = 'posts' }) => {
-  const src = article?.ogImage?.url;
-  if (!src) return null;
+  const src = article?.coverImage;
 
-  const srcElement = require(`../../../_posts/${src}`);
+  console.log(article.coverImagePath);
+  //const srcElement = require(pathInclude);
+
+  const srcElement = dynamic(() => import(article.coverImagePath), {
+    suspense: true,
+  });
+
+  console.log(srcElement);
+
   return (
     <Link href={`/${detail}/${article.slug}`}>
       <a className={styles.card}>
@@ -21,7 +29,7 @@ const CardWrapper = ({ article, multimedia, detail = 'posts' }) => {
         ) : (
           <MultimediaElement src={src} className={styles.multimedia} />
         )*/}
-        {src && (
+        {srcElement && (
           <div className={styles.multimedia}>
             <Image src={srcElement} sizes={'(max-width: 710px) 40vw, 300px'} />
           </div>

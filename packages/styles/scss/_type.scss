@@ -28,12 +28,13 @@
 @mixin type-style($style) {
   $maped: map-deep-get($tokens, 'typography', $style);
 
-  color: blue;
-  @warn 'This is  a step of the WFP Type Scale!', $maped;
-  @if map-deep-get($tokens, 'typography', 'caption') {
+  //@warn 'This is  a step of the WFP Type Scale!', $maped;
+  @if map-deep-get($tokens, 'typography', $style) {
     $typographyMap: map-get($tokens, 'typography', $style);
-    font-size: map-get($tokens, 'typography', $style);
-    color: green;
+    font-size: map-get($typographyMap, 'fontSize');
+    font-weight: map-get($typographyMap, 'fontWeight');
+    letter-spacing: map-get($typographyMap, 'letterSpacing');
+    text-transform: map-get($typographyMap, 'textTransform');
   }
   /*@if map-has-key($typographyMap, 'body-short-02',$style) {
       @warn 'This is  a step of the WFP Type Scale!';
@@ -97,10 +98,10 @@ $typescale-map: (
   // Variables
   $caption-01,
   $caption-02,
-  $label-01,
+  $label,
   $label-02,
   $helper-text-01,
-  $body-short-01,
+  $body-short,
   $body-short-02,
   $body-long-01,
   $body-long-02,

@@ -63,7 +63,7 @@
   }
 
   .#{$prefix}--footer__meta {
-    @include type-style('body-short-01');
+    @include type-style('body-short');
     margin-top: rem(20px);
     font-style: italic;
     @include breakpoint-down(lg) {

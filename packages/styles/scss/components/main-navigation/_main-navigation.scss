@@ -99,6 +99,8 @@ $main-navigation-menu-width: rem(300px);
   }
 
   .#{$prefix}--main-navigation__trigger--has-sub {
+    display: flex;
+    align-items: center;
     > div,
     > a,
     > span {

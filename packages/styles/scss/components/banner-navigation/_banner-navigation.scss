@@ -20,7 +20,7 @@
   }
 
   .#{$prefix}--banner-navigation__item {
-    @include type-style('label-01');
+    @include type-style('label');
     @include font-family('sans');
     padding: 0 $spacing-03;
     font-weight: 600;
@@ -33,7 +33,7 @@
     }
 
     a {
-      @include type-style('label-01');
+      @include type-style('label');
       color: $text-on-color;
       text-decoration: none;
       font-weight: 600;

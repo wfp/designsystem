@@ -37,7 +37,7 @@ $input-border: 1px solid $field-border;
 
   .#{$prefix}--select-input {
     @include font-family('sans');
-    @include type-style('body-short-02');
+    @include type-style('input');
     height: $input-height;
     appearance: none;
     display: block;
@@ -110,10 +110,13 @@ $input-border: 1px solid $field-border;
 
   .#{$prefix}--select__arrow {
     position: absolute;
-    top: 0;
+    top: 0.1em;
     right: 0.7em;
     height: 100%;
     color: $interactive;
+    stroke: $interactive;
+    stroke-width: 0.8px;
+    overflow: visible;
     pointer-events: none;
 
     // Windows, Firefox HCM Fix

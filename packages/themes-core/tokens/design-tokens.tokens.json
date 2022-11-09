@@ -1,28 +1,5 @@
 {
   "color": {
-    "corporate": [
-      {
-        "description": "",
-        "type": "color",
-        "value": "#f47847",
-        "blendMode": "normal",
-        "attributes": { "category": "color" }
-      },
-      {
-        "description": "",
-        "type": "color",
-        "value": "#b79f8d",
-        "blendMode": "normal",
-        "attributes": { "category": "color" }
-      },
-      {
-        "description": "",
-        "type": "color",
-        "value": "#ecdfbb",
-        "blendMode": "normal",
-        "attributes": { "category": "color" }
-      }
-    ],
     "primary": {
       "brand": {
         "description": "This is a description",

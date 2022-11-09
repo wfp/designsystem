@@ -16,6 +16,7 @@ import {
   faScaleBalanced,
 } from '@fortawesome/pro-regular-svg-icons';
 import Image from 'next/image';
+import dynamic from 'next/dynamic';
 
 const links = [
   { href: '#', label: 'Einrichten' },
@@ -30,13 +31,15 @@ const Articles = ({ articles }) => {
   const designers = articles.find((a) => a.slug === 'core/designers');
 
   const src = designers?.ogImage?.url;
-  if (!src) return null;
+  //if (!src) return null;
 
-  const srcElement = require(`../../../_posts/${src}`);
+  /*const srcElement = dynamic(() => import(pathInclude), {
+    suspense: false,
+  });*/
 
   const ImageOverride = ({ className }) => (
     <div className={className}>
-      <Image src={srcElement} sizes={'(max-width: 710px) 40vw, 300px'} />
+      {/*<Image src={srcElement} sizes={'(max-width: 710px) 40vw, 300px'} />*/}
     </div>
   );
   return (

@@ -1,11 +1,12 @@
 import fs from 'fs'
-import { join } from 'path'
 import matter from 'gray-matter';
 
-import { extname,relative, resolve, parse }  from 'path';
+import { extname,relative, resolve, parse, join }  from 'path';
+
+
 const fsPromises = fs.promises;
 
-const postsDirectory = join(process.cwd(), '_posts');
+export const postsDirectory = join(process.cwd(), '_posts');
 
 async function getFiles(dir) {
   let dirents = await fsPromises.readdir(dir, { withFileTypes: true });
@@ -55,13 +56,12 @@ export function getPostByPath(path, fields = []) {
       items[field] = data[field]
     }
   })
-  return items
+  return {...items, path};
 }
 
 export async function getAllPosts(fields = []) {
 
   const slugs = await getPostSlugs();
-  console.log("ssdslluugggs", slugs);
   const posts = slugs
     .map((slug) => getPostByPath(slug.path, fields))
     .sort((post1, post2) => (post1.date > post2.date ? -1 : 1))

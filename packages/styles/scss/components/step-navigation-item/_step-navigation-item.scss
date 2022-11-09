@@ -12,7 +12,7 @@
 // TODO review why type-style is not applied line 16
 @mixin step-navigation-item {
   #{$prefix}--step-navigation__nav-item {
-    @include type-style('body-short-01');
+    @include type-style('body-short');
     margin: 0;
     padding: $spacing-04 0 $spacing-04;
     cursor: pointer;
@@ -40,7 +40,7 @@
   }
 
   .#{$prefix}--step-navigation__nav-item__helper-text {
-    @include type-style('label-01');
+    @include type-style('label');
     display: block;
     margin-top: $spacing-02;
     text-decoration: none;

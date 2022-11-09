@@ -36,13 +36,13 @@ $input-label-weight: 400 !default;
   .#{$prefix}--label {
     @include reset;
     @include font-family('sans');
-    @include type-style('body-short-01');
+    @include type-style('body-short');
     color: $text-primary;
     font-weight: $input-label-weight;
     font-weight: 600 !important;
     display: inline-block;
     vertical-align: baseline;
-    margin-bottom: $spacing-03;
+    margin-bottom: $spacing-02;
   }
 
   .#{$prefix}--form-item--inline {
@@ -134,7 +134,7 @@ $input-label-weight: 400 !default;
   }
 
   .#{$prefix}--form__helper-text {
-    @include type-style('caption');
+    @include type-style('helper');
     color: $text-helper;
     order: 1;
     line-height: 1.5;
@@ -162,7 +162,7 @@ $input-label-weight: 400 !default;
 //   .#{$prefix}--label {
 //     @include reset;
 //     @include font-family('sans');
-//     @include type-style('label-01');
+//     @include type-style('label');
 //     color: $text-primary;
 //     font-weight: $input-label-weight;
 //     display: inline-block;

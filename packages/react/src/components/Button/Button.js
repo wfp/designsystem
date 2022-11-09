@@ -20,6 +20,7 @@ const Button = ({
   useFlexbox,
   icon,
   iconDescription,
+  animation = 1500,
   onClick,
   ...other
 }) => {
@@ -27,7 +28,7 @@ const Button = ({
   const [count, setCount] = useState(0);
 
   useEffect(() => {
-    let timer = setTimeout(() => endAnimation(), 500);
+    let timer = setTimeout(() => endAnimation(), animation);
     return () => {
       clearTimeout(timer);
     };

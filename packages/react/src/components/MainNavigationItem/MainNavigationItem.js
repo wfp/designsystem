@@ -1,94 +1,103 @@
 import PropTypes from 'prop-types';
-import React, { Component } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 import classNames from 'classnames';
 import { Close, CaretDown } from '@un/icons-react';
 import { withUNCoreSettings } from '../UNCoreSettings';
+import MainNavigationContext from '../MainNavigation/MainNavigationContext';
+import useSettings from '../../hooks/useSettings';
 
-class MainNavigationItem extends Component {
-  UNSAFE_componentWillReceiveProps = (nextProps) => {
-    if (nextProps.menuItem === nextProps.activeMenuItem) {
-      document.addEventListener('mousedown', this.handleClickOutside);
+function MainNavigationItem({
+  className,
+  children,
+  subNavigation,
+  subNavWideAsContent,
+}) {
+  const { prefix } = useSettings();
+
+  const [menuItemId, setMenuItemId] = useState(Math.random().toString(36));
+
+  const wrapperRef = useRef(null);
+
+  const { onChangeSub, activeMenuItem, menuItem } = useContext(
+    MainNavigationContext
+  );
+
+  useEffect(() => {
+    if (menuItemId === activeMenuItem) {
+      document.addEventListener('mousedown', handleClickOutside);
     } else {
-      document.removeEventListener('mousedown', this.handleClickOutside);
+      document.removeEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [activeMenuItem]);
+
+  const handleClickOutside = (e) => {
+    if (wrapperRef && !wrapperRef.current.contains(e.target)) {
+      onChangeSub('close');
     }
   };
 
-  setWrapperRef = (node) => {
-    this.wrapperRef = node;
-  };
+  const wrapperClasses = classNames(className, {
+    [`${prefix}--main-navigation__item`]: true,
+    [`${prefix}--main-navigation__item--open`]: menuItemId === activeMenuItem,
+    [`${prefix}--content-width`]: subNavigation && subNavWideAsContent,
+  });
 
-  handleClickOutside = (e) => {
-    if (this.wrapperRef && !this.wrapperRef.contains(e.target)) {
-      this.props.onChangeSub('close');
-    }
-  };
+  const triggerClasses = classNames({
+    [`${prefix}--main-navigation__trigger`]: true,
+    [`${prefix}--main-navigation__trigger--has-sub`]: subNavigation,
+    [`${prefix}--main-navigation__trigger--open`]:
+      menuItemId === activeMenuItem,
+  });
 
-  render() {
-    const {
-      prefix,
-      activeMenuItem,
-      className,
-      children,
-      menuItem,
-      onChangeSub,
-      subNavigation,
-      subNavWideAsContent,
-    } = this.props;
+  const Icon = menuItemId === activeMenuItem ? Close : CaretDown;
 
-    const wrapperClasses = classNames(className, {
-      [`${prefix}--main-navigation__item`]: true,
-      [`${prefix}--main-navigation__item--open`]: menuItem === activeMenuItem,
-      [`${prefix}--content-width`]: subNavigation && subNavWideAsContent,
-    });
+  /*const childrenWithProps = subNavigation
+    ? React.cloneElement(children, {
+        children: (
+          <React.Fragment>
+            {children.props.children}
+            <Icon
+              className={`${prefix}--main-navigation__trigger__icon`}
+              fill="#FFFFFF"
+              description="expand icon"
+            />
+          </React.Fragment>
+        ),
+        onClick: (e) => onChangeSub('toggle', menuItem, e),
+      })
+    : children;*/
 
-    const triggerClasses = classNames({
-      [`${prefix}--main-navigation__trigger`]: true,
-      [`${prefix}--main-navigation__trigger--has-sub`]: subNavigation,
-      [`${prefix}--main-navigation__trigger--open`]:
-        menuItem === activeMenuItem,
-    });
+  const subClasses = classNames({
+    [`${prefix}--main-navigation__sub`]: true,
+    [`${prefix}--main-navigation__sub--open`]: menuItemId === activeMenuItem,
+  });
 
-    const Icon = menuItem === activeMenuItem ? Close : CaretDown;
-
-    const childrenWithProps = subNavigation
-      ? React.cloneElement(children, {
-          children: (
-            <React.Fragment>
-              {children.props.children}
-              <Icon
-                className={`${prefix}--main-navigation__trigger__icon`}
-                fill="#FFFFFF"
-                description="expand icon"
-              />
-            </React.Fragment>
-          ),
-          onClick: (e) => onChangeSub('toggle', menuItem, e),
-        })
-      : children;
-
-    const subClasses = classNames({
-      [`${prefix}--main-navigation__sub`]: true,
-      [`${prefix}--main-navigation__sub--open`]: menuItem === activeMenuItem,
-    });
-
-    return (
-      <li className={wrapperClasses} ref={this.setWrapperRef}>
-        <div className={triggerClasses}>{childrenWithProps}</div>
+  return (
+    <li className={wrapperClasses} ref={wrapperRef}>
+      <div
+        className={triggerClasses}
+        onClick={() => onChangeSub('toggle', menuItemId)}>
+        {children}
         {subNavigation && (
-          <div
-            className={subClasses}
-            open={menuItem === activeMenuItem ? true : false}>
-            {subNavigation}
-          </div>
+          <Icon
+            className={`${prefix}--main-navigation__trigger__icon`}
+            fill="#FFFFFF"
+            description="expand icon"
+          />
         )}
-      </li>
-    );
-  }
+      </div>
+      {subNavigation && (
+        <div className={subClasses}>
+          {subNavigation}><>{children.props.children}</>
+        </div>
+      )}
+    </li>
+  );
 }
-
-MainNavigationItem.defaultProps = {
-  onChangeSub: () => {},
-};
 
 MainNavigationItem.propTypes = {
   /**

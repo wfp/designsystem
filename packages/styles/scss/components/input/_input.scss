@@ -29,14 +29,13 @@ $input-border: 1px solid $field-border; // TODO
   .#{$prefix}--input {
     @include reset;
     @include font-family('sans');
-    @include type-style('body-short-01');
+    @include type-style('input');
     display: block;
     width: 100%;
     height: $input-height;
     min-width: 7rem;
     padding: 0 $spacing-03;
     color: $text-primary;
-    font-size: 1em;
     appearance: none;
     background-color: $field;
     order: 2;

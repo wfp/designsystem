@@ -51,7 +51,7 @@
   .#{$prefix}--photo-cardnew__info__metadata {
     margin: 0;
     margin-bottom: $spacing-03;
-    @include type-style('caption-01');
+    @include type-style('caption');
     text-transform: uppercase;
     letter-spacing: 0.05em;
     // color: $text-primary;
@@ -59,7 +59,7 @@
 
   .#{$prefix}--photo-cardnew__info__subtitle {
     margin: 0;
-    @include type-style('body-short-01');
+    @include type-style('body-short');
   }
 
   .#{$prefix}--photo-cardnew__info__title {

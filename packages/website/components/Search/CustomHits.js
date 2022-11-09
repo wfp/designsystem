@@ -35,9 +35,7 @@ function Hits({ searchState, searchResults, focus }) {
         )}
 
         {!validQuery && focus && (
-          <p className={styles.noResults}>
-            {t('Tippe um Ergebnisse anzuzeigen...')}
-          </p>
+          <p className={styles.noResults}>Type to show results...</p>
         )}
 
         {searchResults?.hits.length > 0 && validQuery && (

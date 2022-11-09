@@ -689,7 +689,7 @@ $input-height: 40px !default;
     color: #dbdbdb;
   }
   .DateInput_input {
-    @include type-style('body-short-01');
+    @include type-style('body-short');
     display: block;
     width: 100%;
     height: $input-height;

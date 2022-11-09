@@ -38,9 +38,9 @@ describe('@carbon/styles/scss/type', () => {
       Array [
         "caption-01",
         "caption-02",
-        "label-01",
+        "label",
         "helper-text-01",
-        "body-short-01",
+        "body-short",
         "body-short-02",
         "body-long-01",
         "body-long-02",

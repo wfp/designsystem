@@ -37,7 +37,7 @@
       }
       p {
         opacity: 0.6;
-        @include type-style('label-01');
+        @include type-style('label');
       }
       .#{$prefix}--empty__icon {
         margin-bottom: 1em;

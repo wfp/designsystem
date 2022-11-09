@@ -1583,10 +1583,10 @@ $caption-02: if(
 /// @type {Number}
 /// @access public
 /// @group @un/themes
-$label-01: if(
+$label: if(
   global-variable-exists('carbon--theme') and
-    map-has-key($carbon--theme, 'label-01'),
-  map-get($carbon--theme, 'label-01'),
+    map-has-key($carbon--theme, 'label'),
+  map-get($carbon--theme, 'label'),
   (
     font-size: 0.75rem,
     font-weight: 400,
@@ -1641,10 +1641,10 @@ $helper-text-02: if(
 /// @type {Number}
 /// @access public
 /// @group @un/themes
-$body-short-01: if(
+$body-short: if(
   global-variable-exists('carbon--theme') and
-    map-has-key($carbon--theme, 'body-short-01'),
-  map-get($carbon--theme, 'body-short-01'),
+    map-has-key($carbon--theme, 'body-short'),
+  map-get($carbon--theme, 'body-short'),
   (
     font-size: 0.875rem,
     font-weight: 400,
