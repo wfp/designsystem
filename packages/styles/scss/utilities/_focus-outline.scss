@@ -24,7 +24,7 @@
   }
 
   @if ($type == 'blurred') {
-    box-shadow: 0 0 0 3px theme.$focus; //get new token
+    box-shadow: 0 0 0 3px theme.$highlight; //theme.$focus; //get new token
     outline: 1px solid transparent;
   }
 

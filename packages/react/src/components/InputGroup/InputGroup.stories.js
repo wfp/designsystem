@@ -84,13 +84,24 @@ export const withCheckbox = (args) => (
     labelText="Group labelText"
     helperText="Helper text"
     {...args}>
-    <Checkbox name="checkbox-1" value="standard" labelText="Checkbox label 1" />
     <Checkbox
+      id="check-1"
+      name="checkbox-1"
+      value="standard"
+      labelText="Checkbox label 1"
+    />
+    <Checkbox
+      id="check-2"
       name="checkbox-2"
       value="default-selected"
       labelText="Checkbox label 2"
     />
-    <Checkbox name="checkbox-3" value="disabled" labelText="Checkbox label 3" />
+    <Checkbox
+      id="check-3"
+      name="checkbox-3"
+      value="disabled"
+      labelText="Checkbox label 3"
+    />
   </InputGroup>
 );
 
@@ -140,16 +151,19 @@ export const vertical = (args) => (
       vertical
       {...args}>
       <Checkbox
+        id="checkb-1"
         name="checkboxb-1"
         value="standard"
         labelText="Checkbox label 1"
       />
       <Checkbox
+        id="checkb-2"
         name="checkboxb-2"
         value="default-selected"
         labelText="Checkbox label 2"
       />
       <Checkbox
+        id="checkb-3"
         name="checkboxb-3"
         value="disabled"
         labelText="Checkbox label 3"

@@ -28,6 +28,11 @@ export const Basic = (args) => (
     </Col>
   </Grid>
 );
+Basic.args = {
+  gutter: 'xs',
+  justify: 'flex-start',
+  align: 'flex-start',
+};
 
 export const GutterAndGrow = (args) => (
   <Grid {...args} grow={true}>
@@ -46,6 +51,12 @@ export const GutterAndGrow = (args) => (
   </Grid>
 );
 
+GutterAndGrow.args = {
+  gutter: 'xs',
+  justify: 'flex-start',
+  align: 'flex-start',
+};
+
 const description = `**Gutter** prop is set to add spaces between columns in the Grid component.
 Use \`none\`, \`xs\`, \`sm\`, \`md\`, \`lg\`, \`xl\` values to set spacing \`0\`, \`0.25\`, \`0.375\`, \`0.5\`, \`0.75\` and \`1\` respectively in \`rem\`
 
@@ -62,7 +73,7 @@ GutterAndGrow.story = {
 };
 
 export const justifyAndAlign = (args) => (
-  <Grid {...args} justify="center" align="center">
+  <Grid {...args}>
     <Col span={3} innerStyle={alignStyle}>
       1
     </Col>
@@ -74,6 +85,12 @@ export const justifyAndAlign = (args) => (
     </Col>
   </Grid>
 );
+
+justifyAndAlign.args = {
+  gutter: 'xs',
+  justify: 'center',
+  align: 'center',
+};
 
 const aligndesciption = `The grid is a flexbox container hence you can control it bu using justify-content and align-items properties.
 This example set justify-content and align-content to \`center\`
@@ -103,6 +120,12 @@ export const responsiveGridLayout = (args) => (
     </Col>
   </Grid>
 );
+
+responsiveGridLayout.args = {
+  gutter: 'xs',
+  justify: 'flex-start',
+  align: 'flex-start',
+};
 
 const responsivedesciption = `The grid breakpoint has 4 breakpoints \`lg\`, \`md\`, \`sm\` and \`xs\`. <br/>
 By default it uses a \`lg\` breakpoint with screen 1200px and 12 columns layout. <br/> 

@@ -7,10 +7,7 @@ const { prefix } = settings;
 
 /** Grid layout */
 const Grid = React.forwardRef(
-  (
-    { gutter, children, grow, justify, align, columns, className, ...other },
-    ref
-  ) => {
+  ({ gutter, children, grow, justify, align, className, ...other }, ref) => {
     const wrapperClasses = classnames(`${prefix}--grid`, {
       [`${prefix}--grid--spacing-${gutter}`]: gutter,
       [`${prefix}--grid--grow`]: grow,

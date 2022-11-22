@@ -143,3 +143,5 @@ export {
   UNCoreProvider,
   withUNCoreSettings,
 } from './components/UNCoreSettings';
+
+export SkeletonText from './components/SkeletonText';

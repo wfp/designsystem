@@ -1,104 +1,111 @@
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { useState } from 'react';
 import classNames from 'classnames';
-import uid from '../../tools/uniqueId';
-import { withUNCoreSettings } from '../UNCoreSettings';
+import uId from '../../tools/uniqueId';
+import useSettings from '../../hooks/useSettings';
 
 /** Radio buttons represent a group of mutually exclusive choices */
 
-class RadioButton extends React.Component {
-  static propTypes = {
-    prefix: PropTypes.string.isRequired,
-    /**
-     * Specify whether the <RadioButton> is currently checked
-     */
-    checked: PropTypes.bool,
+const RadioButton = (props) => {
+  const [uid, setUid] = useState(id || uId());
 
-    /**
-     * Provide an optional className to be applied to the containing node
-     */
-    className: PropTypes.string,
+  const {
+    labelText,
+    inputRef,
+    id,
+    className,
+    value,
+    name,
+    onChange,
+    ...other
+  } = props;
+  const { prefix } = useSettings();
 
-    /**
-     * Specify whether the <RadioButton> should be checked by default
-     */
-    defaultChecked: PropTypes.bool,
+  //   UNSAFE_componentWillMount() {
+  //     this.uid = this.props.id || uid();
+  //   }
 
-    /**
-     * Specify whether the control is disabled
-     */
-    disabled: PropTypes.bool,
+  const wrapperClasses = classNames('radioButtonWrapper', className);
 
-    /**
-     * Provide a unique id for the underlying `input` node
-     */
-    id: PropTypes.string,
-
-    /**
-     * Provide label text to be read by screen readers when interacting with the
-     * control
-     */
-    labelText: PropTypes.node.isRequired,
-
-    /**
-     * Provide a name for the underlying `input` node
-     */
-    name: PropTypes.string,
-
-    /**
-     * Provide an optional `onChange` hook that is called each time the value of
-     * the underlying `input` changes
-     */
-    onChange: PropTypes.func,
-
-    /**
-     * Specify the value of the <RadioButton>
-     */
-    value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+  const handleOnChange = (evt) => {
+    onChange(evt, value, name);
   };
 
-  UNSAFE_componentWillMount() {
-    this.uid = this.props.id || uid();
-  }
+  const handleChange = props.onChange
+    ? {
+        onChange: handleOnChange,
+      }
+    : {};
 
-  handleChange = (evt) => {
-    this.props.onChange(evt, this.props.value, this.props.name);
-  };
+  return (
+    <div className={wrapperClasses}>
+      <input
+        {...other}
+        ref={inputRef}
+        type="radio"
+        className={`${prefix}--radio-button`}
+        {...handleChange}
+        id={uid}
+      />
+      <label htmlFor={uid} className={`${prefix}--radio-button__label`}>
+        <span className={`${prefix}--radio-button__appearance`} />
+        {labelText}
+      </label>
+    </div>
+  );
+};
 
-  render() {
-    const wrapperClasses = classNames(
-      'radioButtonWrapper',
-      this.props.className
-    );
+RadioButton.propTypes = {
+  prefix: PropTypes.string.isRequired,
+  /**
+   * Specify whether the <RadioButton> is currently checked
+   */
+  checked: PropTypes.bool,
 
-    const { prefix, labelText, inputRef, ...other } = this.props;
+  /**
+   * Provide an optional className to be applied to the containing node
+   */
+  className: PropTypes.string,
 
-    const handleChange = this.props.onChange
-      ? {
-          onChange: this.handleChange,
-        }
-      : {};
+  /**
+   * Specify whether the <RadioButton> should be checked by default
+   */
+  defaultChecked: PropTypes.bool,
 
-    return (
-      <div className={wrapperClasses}>
-        <input
-          {...other}
-          ref={inputRef}
-          type="radio"
-          className={`${prefix}--radio-button`}
-          {...handleChange}
-          id={this.uid}
-        />
-        <label htmlFor={this.uid} className={`${prefix}--radio-button__label`}>
-          <span className={`${prefix}--radio-button__appearance`} />
-          {labelText}
-        </label>
-      </div>
-    );
-  }
-}
+  /**
+   * Specify whether the control is disabled
+   */
+  disabled: PropTypes.bool,
 
-const WrappedRadioButton = withUNCoreSettings(RadioButton);
+  /**
+   * Provide a unique id for the underlying `input` node
+   */
+  id: PropTypes.string,
+
+  /**
+   * Provide label text to be read by screen readers when interacting with the
+   * control
+   */
+  labelText: PropTypes.node.isRequired,
+
+  /**
+   * Provide a name for the underlying `input` node
+   */
+  name: PropTypes.string,
+
+  /**
+   * Provide an optional `onChange` hook that is called each time the value of
+   * the underlying `input` changes
+   */
+  onChange: PropTypes.func,
+
+  /**
+   * Specify the value of the <RadioButton>
+   */
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+};
+
+const WrappedRadioButton = RadioButton;
 
 export default (() => {
   const forwardRef = (props, ref) => (

@@ -80,9 +80,9 @@ $radio-border-width: 2px !default;
 
   .#{$prefix}--radio-button__appearance {
     @include reset;
-    background-color: var(--inverse-01);
+    background-color: $background-main;
     border-radius: 50%;
-    border: $radio-border-width solid var(--ui-05);
+    border: $radio-border-width solid $border-inverse;
     flex-shrink: 0;
     height: rem(18px);
     width: rem(18px);
@@ -99,7 +99,7 @@ $radio-border-width: 2px !default;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-color: var(--interactive-01);
+    border-color: $interactive;
 
     &:before {
       content: '';
@@ -108,7 +108,7 @@ $radio-border-width: 2px !default;
       width: 0.5rem;
       height: 0.5rem;
       border-radius: 50%;
-      background-color: var(--interactive-01);
+      background-color: $interactive;
     }
   }
 
@@ -159,9 +159,9 @@ $radio-border-width: 2px !default;
 
   .#{$prefix}--radio-button__appearance {
     @include reset;
-    background-color: var(--inverse-01);
+    background-color: $background-main;
     border-radius: 50%;
-    border: $radio-border-width solid var(--ui-05);
+    border: $radio-border-width solid $border-inverse;
     flex-shrink: 0;
     height: rem(18px);
     width: rem(18px);
@@ -174,7 +174,7 @@ $radio-border-width: 2px !default;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-color: var(--ui-05);
+    border-color: $border-inverse;
 
     &:before {
       content: '';
@@ -183,7 +183,7 @@ $radio-border-width: 2px !default;
       width: 0.5rem;
       height: 0.5rem;
       border-radius: 50%;
-      background-color: var(--ui-05);
+      background-color: $border-inverse;
     }
   }
 
