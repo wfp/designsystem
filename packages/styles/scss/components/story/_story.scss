@@ -23,14 +23,14 @@
     @extend .#{$prefix}--story__p;
   }
 
-  /*> h2 {
+  > h2 {
     @extend .#{$prefix}--story__h2;
-  }*/
+  }
 
   i {
     @extend .#{$prefix}--story__i;
   }
-  /*
+
   h1 {
     @extend .#{$prefix}--story__h1;
   }
@@ -46,7 +46,7 @@
   h5 {
     @extend .#{$prefix}--story__h5;
   }
-*/
+
   a {
     @extend .#{$prefix}--story__a;
   }
@@ -268,7 +268,8 @@
     }
   }
 
-  .#{$prefix}--story__title {
+  .#{$prefix}--story__title,
+  .#{$prefix}--text__title {
     @include type-style('story-title');
     margin-bottom: $spacing-07;
     margin-left: -0.058em;
@@ -280,7 +281,8 @@
     margin-left: -0.058em;
   }
 
-  .#{$prefix}--story__subtitle {
+  .#{$prefix}--story__subtitle,
+  .#{$prefix}--text__subtitle {
     @include type-style('story-sub-title');
     color: $interactive;
     margin-top: $spacing-07;
@@ -407,13 +409,57 @@
     font-weight: 600;
   }
 
+  $spacing-baseline: 1rem !default;
+
+  $spacing-3xs: $spacing-baseline * 0.125 !default;
+  $spacing-2xs: $spacing-baseline * 0.25 !default;
+  $spacing-xs: $spacing-baseline * 0.5 !default;
+  $spacing-sm: $spacing-baseline * 0.75 !default;
+  $spacing-md: $spacing-baseline !default;
+  $spacing-lg: $spacing-baseline * 1.5 !default;
+  $spacing-xl: $spacing-baseline * 2 !default;
+  $spacing-2xl: $spacing-baseline * 2.5 !default;
+  $spacing-3xl: $spacing-baseline * 3 !default;
+  $spacing-4xl: $spacing-baseline * 4 !default;
+  $spacing-5xl: $spacing-baseline * 5 !default;
+  $spacing-6xl: $spacing-baseline * 6 !default;
+
+  $spacing-map: (
+    'none': 0,
+    '3xs': $spacing-3xs,
+    '2x': $spacing-2xs,
+    'xs': $spacing-xs,
+    'sm': $spacing-sm,
+    'md': $spacing-md,
+    'lg': $spacing-lg,
+    'xl': $spacing-xl,
+    '2xl': $spacing-2xl,
+    '3xl': $spacing-3xl,
+    '4xl': $spacing-4xl,
+    '5xl': $spacing-5xl,
+    '6xl': $spacing-6xl,
+  );
+
+  /*
+  @mixin spacing($size, $position) {
+    @if map-has-key($spacing-map, $size) {
+      @if $positon == 'bottom' {
+        margin-bottom: map-get($spacing-map, $size);
+      }
+    } @else {
+      @warn 'This is not a step of the WFP Spacing Scale!';
+    }
+  }
+*/
   // TODO Look into it later
-  // @each $size, $glyph in $spacing-map {
-  //   .#{$prefix}--story__spacing-top-#{$size} {
-  //     margin-top: map-get($spacing-map, $size);
-  //   }
-  //   .#{$prefix}--story__spacing-bottom-#{$size} {
-  //     margin-bottom: map-get($spacing-map, $size);
-  //   }
-  // }
+  @each $size, $glyph in $spacing-map {
+    .#{$prefix}--story__spacing-top-#{$size},
+    .#{$prefix}--text__spacing-top-#{$size} {
+      margin-top: map-get($spacing-map, $size) !important;
+    }
+    .#{$prefix}--story__spacing-bottom-#{$size},
+    .#{$prefix}--text__spacing-bottom-#{$size} {
+      margin-bottom: map-get($spacing-map, $size) !important;
+    }
+  }
 }

@@ -70,6 +70,7 @@ Text.propTypes = {
     Override spacing on top
   */
   spacingTop: PropTypes.oneOf([
+    'none',
     '3xs',
     '2xs',
     'xs',
@@ -84,6 +85,7 @@ Text.propTypes = {
   Override spacing on bottom
 */
   spacingBottom: PropTypes.oneOf([
+    'none',
     '3xs',
     '2xs',
     'xs',

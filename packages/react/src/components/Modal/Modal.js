@@ -33,6 +33,7 @@ function Modal(props) {
     iconDescription,
     inPortal,
     hideClose,
+    handleBlur,
     wide,
     type,
     selectorPrimaryFocus,
@@ -107,8 +108,16 @@ function Modal(props) {
     if (outerModal.current) outerModal.current.focus();
   };
 
-  const handleBlur = (evt) => {
-    if (
+  const handleBlurEvent = (evt) => {
+    if (handleBlur) {
+      handleBlur({
+        evt,
+        innerModal,
+        open,
+        elementOrParentIsFloatingMenu,
+        focusModal,
+      });
+    } else if (
       innerModal.current &&
       open &&
       evt.relatedTarget &&
@@ -209,8 +218,8 @@ function Modal(props) {
     <div
       {...other}
       // onKeyDown={handleKeyDown}
-      onClick={handleClick}
-      onBlur={handleBlur}
+      //onClick={handleClick}
+      onBlur={handleBlurEvent}
       className={modalClasses}
       style={
         backgroundImage

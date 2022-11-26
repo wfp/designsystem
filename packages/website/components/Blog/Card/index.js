@@ -31,7 +31,7 @@ const CardWrapper = ({ article, multimedia, detail = 'posts' }) => {
         )*/}
         {srcElement && (
           <div className={styles.multimedia}>
-            <Image src={srcElement} sizes={'(max-width: 710px) 40vw, 300px'} />
+            {/*<Image src={srcElement} sizes={'(max-width: 710px) 40vw, 300px'} />*/}
           </div>
         )}
 

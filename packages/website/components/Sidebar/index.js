@@ -8,6 +8,7 @@ import {
   Item,
   Search,
   Wrapper,
+  Text,
 } from '@un/react';
 import Accordion from '../Accordion';
 import { MDXRemote } from 'next-mdx-remote';
@@ -84,7 +85,7 @@ export default function SidebarWrapper({ content, post, posts }) {
 
   const split = createPathTree(postSplit);
 
-  console.log('postssplit', posts, split);
+  console.log('postssplit', post, posts, split);
 
   return (
     <Wrapper className={styles.sidebarWrapper} pageWidth="lg">
@@ -97,9 +98,12 @@ export default function SidebarWrapper({ content, post, posts }) {
       </div>
 
       <div className={styles.content}>
-        <h1 className={styles.title}>{post.title}</h1>
-        {post.subtitle && <h2 className={styles.subTitle}>{post.subtitle}</h2>}
-
+        {post.subtitle && (
+          <Text kind="subtitle" /*className={styles.subTitle}*/>
+            {post.subtitle}
+          </Text>
+        )}
+        <Text kind="title" /*className={styles.title}*/>{post.title}</Text>
         {content}
       </div>
     </Wrapper>

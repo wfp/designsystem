@@ -104,7 +104,7 @@ $input-label-weight: 400 !default;
 
   .#{$prefix}--form-requirement {
     @include reset;
-    @include type-style('caption-01');
+    @include type-style('caption');
     margin: $spacing-02 0 0;
     font-weight: 600;
     max-height: 0;
@@ -120,6 +120,9 @@ $input-label-weight: 400 !default;
     &.invalid {
       max-height: rem(200px);
       display: block;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     &::before {
@@ -144,119 +147,3 @@ $input-label-weight: 400 !default;
     margin-bottom: $spacing-03;
   }
 }
-
-// @mixin form--experimental {
-//   .#{$prefix}--fieldset {
-//     @include reset;
-//     //margin-bottom: $spacing-xl;
-//   }
-
-//   .#{$prefix}--form-item {
-//     @include font-family('sans');
-//     display: flex;
-//     flex-direction: column;
-//     flex: 1;
-//     align-items: flex-start;
-//   }
-
-//   .#{$prefix}--label {
-//     @include reset;
-//     @include font-family('sans');
-//     @include type-style('label');
-//     color: $text-primary;
-//     font-weight: $input-label-weight;
-//     display: inline-block;
-//     vertical-align: baseline;
-//     margin-bottom: $spacing-03;
-//   }
-
-//   .#{$prefix}--label__required {
-//     @include reset;
-//     display: inline-block;
-//     padding-left: $spacing-03;
-//     color: $support-error;
-//     font-weight: 600;
-
-//     &::before {
-//       content: '*';
-//       display: inline-block;
-//       color: $support-error;
-//     }
-//   }
-
-//   .#{$prefix}--label .#{$prefix}--tooltip__trigger {
-//     @include type-style('label-02');
-//   }
-
-//   .#{$prefix}--label--disabled {
-//     color: $text-disabled;
-//     cursor: not-allowed;
-//   }
-
-//   // Skeleton State
-//   .#{$prefix}--label.#{$prefix}--skeleton {
-//     @include skeleton;
-//     width: rem(75px);
-//     height: rem(14px);
-//   }
-
-//   input[data-invalid],
-//   textarea[data-invalid],
-//   select[data-invalid],
-//   .#{$prefix}--form-item--invalid,
-//   .#{$prefix}--list-box[data-invalid] {
-//     border-color: $support-error; // TODO $border-error
-//     //box-shadow: 0 2px 0px 0px var(--support-01);
-
-//     ~ .#{$prefix}--form-requirement {
-//       max-height: rem(200px);
-//       display: block;
-//       color: $support-error;
-//     }
-//   }
-
-//   // Fix for red ring when input is marked required in Firefox, refs #744
-//   input:not(output):not([data-invalid]):-moz-ui-invalid {
-//     box-shadow: none;
-//   }
-
-//   .#{$prefix}--form-requirement {
-//     @include reset;
-//     @include type-style('caption-01');
-//     margin: $spacing-02 0 0;
-//     max-height: 0;
-//     overflow: hidden;
-//     line-height: 1.5;
-//     display: none;
-//   }
-
-//   .#{$prefix}--form__helper-text {
-//     @include type-style('helper-text-01');
-//     color: $text-secondary;
-//     order: 1;
-//     line-height: 1.5;
-//     z-index: 0;
-//     max-height: 3rem;
-//     opacity: 1; //NA-form
-//     margin-top: $spacing-02; //NA-form
-//     margin-bottom: $spacing-03;
-//   }
-
-//   .#{prefix}--form__helper-text--disabled {
-//     opacity: 0.5;
-//   }
-// }
-
-// @include exports('form') {
-//   @if feature-flag-enabled('components-x') {
-//     @include form--experimental;
-//   } @else {
-//     @include form;
-//   }
-// }
-
-// @if feature-flag-enabled('components-x') {
-//     @include form--experimental;
-//   } @else {
-//     @include form;
-// }
