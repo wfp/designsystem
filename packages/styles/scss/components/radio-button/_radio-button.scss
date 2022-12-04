@@ -50,7 +50,7 @@ $radio-border-width: 2px !default;
   .#{$prefix}--input-group-inside {
     display: flex;
     flex-wrap: wrap;
-    margin-top: $spacing-03;
+    //margin-top: $spacing-03;
     order: 2;
     width: 100%;
     > * {
