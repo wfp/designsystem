@@ -1,8 +1,8 @@
 import React from 'react';
 import markdown from './README.mdx';
-import Empty from '.';
+import Empty from './Empty';
 import Button from '../Button';
-import { IllustrationsMovingVanWithBackground } from '@un/pictograms-react';
+//import { IllustrationsMovingVanWithBackground } from '@un/pictograms-react';
 
 export default {
   title: 'Components/UI Elements/Empty',
@@ -20,7 +20,7 @@ Regular.args = {
   title: 'No entries found',
   children: `You haven't yet created an entry`,
   kind: 'large',
-  icon: <IllustrationsMovingVanWithBackground alt="Moving van" width="25rem" />,
+  // icon: <IllustrationsMovingVanWithBackground alt="Moving van" width="25rem" />,
   button: <Button kind="accent">New entry</Button>,
 };
 
