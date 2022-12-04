@@ -1,7 +1,7 @@
 {
   "name": "@un/icons",
   "description": "Icons for digital and software products using the Carbon Design System",
-  "version": "10.34.35",
+  "version": "10.34.36",
   "license": "Apache-2.0",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -43,7 +43,7 @@
     "svgson": "^5.2.1"
   },
   "devDependencies": {
-    "@un/cli": "^10.25.21",
+    "@un/cli": "^10.25.22",
     "rimraf": "^3.0.2"
   },
   "gitHead": "612423f98ee3bf6de70d70015ff7f3e48ceee898"

@@ -1,7 +1,7 @@
 {
   "name": "@un/humanitarian-icons-react",
   "description": "React components for pictograms in digital and software products using the Carbon Design System",
-  "version": "11.14.24",
+  "version": "11.14.25",
   "license": "Apache-2.0",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -35,8 +35,8 @@
     "react": ">=16"
   },
   "devDependencies": {
-    "@un/icons-core": "^0.0.18",
-    "@un/pictograms": "^11.14.22"
+    "@un/icons-core": "^0.0.19",
+    "@un/pictograms": "^11.14.23"
   },
   "sideEffects": false,
   "gitHead": "612423f98ee3bf6de70d70015ff7f3e48ceee898"
