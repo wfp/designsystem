@@ -13,3 +13,7 @@ export default {
 };
 
 export const Basic = () => <SkeletonText />;
+
+export const MultipleLine = () => (
+  <SkeletonText paragraph={true} width="50%" heading={false} lineCount={3} />
+);

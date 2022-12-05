@@ -1,0 +1,27 @@
+**OVERVIEW**
+A Skeleton is an animated placeholder that simulates the layout of a page / screen while data is being loaded. It mitigates focus on the loading process and improves the user’s perceived load time.
+
+**HOW IT WORKS**
+Skeleton graphic elements appears in place of the content to be loaded and disappear all together when the content is fully loaded.
+
+**RULES**
+
+- A Skeleton should provide a close representation of the ultimate page layout and content once loaded.
+- All elements should have same colour and animation.
+- Alle elements should have the same size of the represented content.
+- Meant to be used specifically on a white background.
+
+**DOS**
+
+- ✓ Use for pages where all content loads at the same time.
+- ✓ Loading for dynamic content; use actual content when content doesn’t change (static content).
+- ✓ Use motion within the Skeleton to reinforce that the page is loading behind the scenes.
+- ✓ Ideal for pages that require longer initial load times.
+
+**DONTS**
+
+- ✗ Never use skeletons to give feedback for in-context actions such as saving a form or fetching search results. Instead use the progress or spinner component.
+- ✗ If the visual layout/format of the content being loaded is unknown; or you need to indicate processing or that change will occur on the page (rather than loading UI elements), consider using a loading dots instead.
+
+**ACCESSIBILITY**
+A Skeleton should announce to users using a screen reader that content or a page is being loaded.
