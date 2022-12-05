@@ -1,0 +1,71 @@
+---
+title: 'Recommendations'
+excerpt: 'Recommendations'
+subtitle: 'Tools & Libraries'
+coverImage: '../sample-image.jpg'
+slug: 'developers/Recommendations'
+---
+
+Make sure your application follows the mandatory [IT software solution quality standards](https://newgo.wfp.org/documents/it-solution-quality-standards).
+
+<BlockNotification title="Legacy libraries that we no longer recommend to use" kind="warning">
+
+- Forms: [react-final-form](https://github.com/final-form/react-final-form), [redux-form](https://github.com/erikras/redux-form)
+- Charts: [Victory](https://formidable.com/open-source/victory/)
+- State management: [redux-saga](https://github.com/redux-saga/redux-saga), [redux](https://redux.js.org), please use [rtk-query](https://redux-toolkit.js.org/rtk-query/overview) instead
+- Sass: [node-sass](https://www.npmjs.com/package/node-sass), deprecated in
+  favor of [dart-sass](https://sass-lang.com/dart-sass)
+
+</BlockNotification>
+
+Below, you’ll find a list of recommended libraries that are commonly used inside WFP. It's up to you to exchange them with your choices.
+
+## Create-React-App
+
+[create-react-app](https://create-react-app.dev) is a starting point to set up your React applications with no build configuration.
+
+## CSS Preprocessors
+
+[scss/sass](https://sass-lang.com) is a CSS pre-processor with syntax advancements and variable, functions, etc. [Learn more](https://create-react-app.dev/docs/adding-a-sass-stylesheet) about how to use scss with `create-react-app`.
+
+## Application state handling
+
+[redux-toolkit](https://redux-toolkit.js.org/) it the official, opinionated toolset for efficient Redux development by providing a standardized implementation of common redux tasks.
+
+[rtk-query](https://redux-toolkit.js.org/rtk-query/overview) `RTK Query` is a powerful data fetching and caching tool. It is designed to simplify common cases for loading data in a web application, eliminating the need to hand-write data fetching & caching logic yourself.
+
+## Maps
+
+[react-simple-maps](https://www.react-simple-maps.io) is a map component to generate simple political maps
+
+[react-map-gl](https://github.com/uber/react-map-gl) for maps using `mapbox.gl`
+
+[ArcGIS API for JavaScript](https://developers.arcgis.com/javascript) for complex maps with custom layers
+
+## Forms
+
+[react-hook-form](https://react-hook-form.com/) is a form library for react.
+
+[react-phone-input-2](https://www.npmjs.com/package/react-phone-input-2) is a customizable phone input library with auto formatting.
+
+## Microsoft Azure Authentication
+
+[microsoft-authentication-library-for-js msal-react](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-react) is a library which provides `Azure Active Directory Library (ADAL)` support for React.
+
+## Tables
+
+[react-table](https://github.com/react-tools/react-table) is a lightweight and fully customizable library to provide complex data tables.
+
+[ag-grid](https://ag-grid.com) is a grid library for complex tables with Excel-like features.
+
+## Linting & naming
+
+Airbnb provides a [useful styling guide](https://github.com/airbnb/javascriptuseful) on how to style JavaScript and react code.
+
+## Charts
+
+[Recharts](https://recharts.org/) is a set of modular charting components for React.
+
+## Polyfills
+
+Polyfills are needed for older browsers. We recommend [babel-preset-env](https://babeljs.io/docs/en/babel-preset-env) for it.

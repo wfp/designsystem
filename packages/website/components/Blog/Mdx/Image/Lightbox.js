@@ -16,8 +16,11 @@ const Lightbox = (props) => {
 
   const scale = useMotionValue(1);
 
+  /* const windowRef =useRef(window);
+
   if (typeof window != 'undefined')
     useDomEvent(useRef(window), 'scroll', () => isOpen && setOpen(false));
+    */
 
   useGesture(
     {

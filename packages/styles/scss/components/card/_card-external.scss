@@ -93,7 +93,7 @@
   }
 
   .#{$prefix}--card-ext__supportive-text {
-    @include type-style('body-short-01');
+    @include type-style('body-short');
 
     color: $text-secondary;
     flex-grow: 1;

@@ -147,7 +147,7 @@
 
   @if enabled('enable-v11-release') {
     .#{$prefix}--toast-notification__content {
-      @include type-style('body-short-01');
+      @include type-style('body-short');
 
       margin-top: $spacing-05;
       margin-right: $spacing-05;
@@ -214,7 +214,7 @@
     }
 
     .#{$prefix}--toast-notification__subtitle {
-      @include type-style('body-short-01');
+      @include type-style('body-short');
 
       margin-top: 0;
       margin-bottom: $spacing-05;
@@ -228,7 +228,7 @@
     }
 
     .#{$prefix}--toast-notification__caption {
-      @include type-style('body-short-01');
+      @include type-style('body-short');
 
       padding-top: $spacing-03;
       margin-bottom: $spacing-05;

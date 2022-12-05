@@ -8,7 +8,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
-import { CaretDown } from '@un/icons-react';
+import { ChevronDown } from '@un/icons-react';
 
 import useSettings from '../../hooks/useSettings';
 import Input from '../Input';
@@ -69,7 +69,7 @@ const Select = React.forwardRef((props, ref) => {
           ref={inputRef}>
           {children}
         </select>
-        <CaretDown
+        <ChevronDown
           className={`${prefix}--select__arrow`}
           description={iconDescription}
         />

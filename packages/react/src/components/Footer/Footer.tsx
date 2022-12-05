@@ -53,12 +53,7 @@ const Footer: React.FC<FooterProps> = ({
 }) => {
   const { prefix } = useSettings();
 
-  const classNames = classnames(
-    `${prefix}--footer`,
-    // { [`${prefix}--footer--external`]: external },
-    className
-  );
-  // const standardLogo = `${process.env.STORYBOOK_ASSETS}logos/standard/en/wfp-logo-standard-black-en.svg`;
+  const classNames = classnames(`${prefix}--footer`, className);
 
   return (
     <footer className={classNames}>

@@ -378,7 +378,7 @@
   }
 
   .flatpickr-weekday {
-    @include type-style('body-short-01');
+    @include type-style('body-short');
 
     flex: 1;
     color: $text-01;
@@ -416,7 +416,7 @@
   }
 
   .flatpickr-day {
-    @include type-style('body-short-01');
+    @include type-style('body-short');
 
     display: flex;
     width: rem(40px);

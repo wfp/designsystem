@@ -194,11 +194,11 @@
   $danger: map-get($theme, 'danger') !global;
   $caption-01: map-get($theme, 'caption-01') !global;
   $caption-02: map-get($theme, 'caption-02') !global;
-  $label-01: map-get($theme, 'label-01') !global;
+  $label: map-get($theme, 'label') !global;
   $label-02: map-get($theme, 'label-02') !global;
   $helper-text-01: map-get($theme, 'helper-text-01') !global;
   $helper-text-02: map-get($theme, 'helper-text-02') !global;
-  $body-short-01: map-get($theme, 'body-short-01') !global;
+  $body-short: map-get($theme, 'body-short') !global;
   $body-long-01: map-get($theme, 'body-long-01') !global;
   $body-short-02: map-get($theme, 'body-short-02') !global;
   $body-long-02: map-get($theme, 'body-long-02') !global;
@@ -2653,9 +2653,8 @@
       @include custom-property('caption-02', map-get($theme, 'caption-02'));
     }
 
-    @if should-emit($theme, $parent-carbon-theme, 'label-01', $emit-difference)
-    {
-      @include custom-property('label-01', map-get($theme, 'label-01'));
+    @if should-emit($theme, $parent-carbon-theme, 'label', $emit-difference) {
+      @include custom-property('label', map-get($theme, 'label'));
     }
 
     @if should-emit($theme, $parent-carbon-theme, 'label-02', $emit-difference)
@@ -2692,14 +2691,11 @@
     @if should-emit(
       $theme,
       $parent-carbon-theme,
-      'body-short-01',
+      'body-short',
       $emit-difference
     )
     {
-      @include custom-property(
-        'body-short-01',
-        map-get($theme, 'body-short-01')
-      );
+      @include custom-property('body-short', map-get($theme, 'body-short'));
     }
 
     @if should-emit(

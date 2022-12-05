@@ -27,7 +27,7 @@
   .#{$prefix}--input {
     @include reset;
     @include font-family('sans');
-    @include type-style('body-short-01');
+    @include type-style('body-short');
     display: block;
     width: 100%;
     height: $input-height;

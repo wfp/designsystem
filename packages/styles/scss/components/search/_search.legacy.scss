@@ -89,12 +89,12 @@
   }
 
   .#{$prefix}--search--sm .#{$prefix}--search-input {
-    @include type-style('body-short-01');
+    @include type-style('body-short');
     height: rem(32px);
   }
 
   .#{$prefix}--search--lg .#{$prefix}--search-input {
-    @include type-style('body-short-01');
+    @include type-style('body-short');
     height: rem(40px);
   }
 

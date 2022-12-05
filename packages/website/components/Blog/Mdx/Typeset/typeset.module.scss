@@ -1,0 +1,12 @@
+@use "scss/meta" as *;
+
+.typesetListItem {
+  background: $layer-primary;
+  margin-bottom: 1.5rem;
+  padding: 1em;
+  display: flex;
+}
+
+.description {
+  width: 50%;
+}

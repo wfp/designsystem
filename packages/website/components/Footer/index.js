@@ -30,12 +30,16 @@ export default function FooterWrapper() {
         </LinksColumn>
         <LinksColumn title="UN Core">
           <li className={`wfp--links-column-link`}>
-            <Link href="https://github.com/un-core/designsystem">
+            <Link
+              href="https://github.com/un-core/designsystem"
+              target="_blank">
               GitHub Repository
             </Link>
           </li>
           <li className={`wfp--links-column-link`}>
-            <Link href="#">Figma library</Link>
+            <NextLink href="/posts/core/designers/figma">
+              <Link>Figma library</Link>
+            </NextLink>
           </li>
         </LinksColumn>
       </>

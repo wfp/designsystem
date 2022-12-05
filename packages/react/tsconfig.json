@@ -1,9 +1,11 @@
 {
-  "include": ["src/*"],
+  "extends": "../tsconfig.json",
   "compilerOptions": {
     "target": "es5",
     "jsx": "react",
     "allowSyntheticDefaultImports": true,
-    "checkJs": true
+    "checkJs": true,
+    "declaration": true
   }
+  "include": ["./src"]
 }

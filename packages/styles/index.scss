@@ -8,7 +8,7 @@
 @forward 'scss/config';
 @forward 'scss/colors' hide $white;
 @forward 'scss/font-face';
-@forward 'scss/grid';
+//TODO: Check @forward 'scss/grid';
 @forward 'scss/motion';
 @forward 'scss/type';
 @forward 'scss/themes';

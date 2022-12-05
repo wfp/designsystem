@@ -2,8 +2,9 @@ import React from 'react';
 import Articles from '../components/Blog/Articles';
 import Layout from '../components/Blog/Layout';
 import { Wrapper } from '@un/react';
-import { getAllPosts } from '../lib/getPost';
+import { getAllPosts, postsDirectory } from '../lib/getPost';
 import styles from './index.module.scss';
+import path from 'path';
 
 const Posts = ({ articles }) => {
   return (
@@ -27,6 +28,17 @@ export async function getStaticProps() {
       'coverImage',
       'content',
     ])) || [];
+
+  articles.map((a) => {
+    const coverImagePath = path.join(
+      postsDirectory,
+      a.path,
+      '../',
+      a.coverImage
+    );
+    console.log(coverImagePath);
+    const coverImageFile = require('../_posts/sample-image.jpg');
+  });
 
   return {
     props: { articles },

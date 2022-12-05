@@ -27,7 +27,7 @@
   }
 
   .#{$prefix}--inline-loading__text {
-    @include type-style('body-short-01');
+    @include type-style('body-short');
   }
 
   .#{$prefix}--inline-loading__animation {
@@ -96,7 +96,7 @@
   }
 
   .#{$prefix}--inline-loading__text {
-    @include type-style('body-short-01');
+    @include type-style('body-short');
     color: $text-secondary;
   }
 

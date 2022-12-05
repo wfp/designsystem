@@ -1,11 +1,11 @@
-import { useTranslation } from "next-i18next";
-import Link from "next/link";
+import { useTranslation } from 'next-i18next';
+import Link from 'next/link';
 import {
   Highlight,
   Snippet,
   connectStateResults,
-} from "react-instantsearch-dom";
-import styles from "./customHits.module.scss";
+} from 'react-instantsearch-dom';
+import styles from './customHits.module.scss';
 
 function Hit({ hit }) {
   return (
@@ -23,7 +23,7 @@ function Hit({ hit }) {
 }
 
 function Hits({ searchState, searchResults, focus }) {
-  const { t } = useTranslation("website");
+  const { t } = useTranslation('website');
 
   const validQuery = searchState.query?.length >= 3; // 3 is the minimum query length
 
@@ -31,19 +31,17 @@ function Hits({ searchState, searchResults, focus }) {
     <div className={styles.hits}>
       <div className={styles.results}>
         {searchResults?.hits.length === 0 && validQuery && focus && (
-          <p className={styles.noResults}>{t("Keine Ergebnisse gefunden")}</p>
+          <p className={styles.noResults}>{t('Keine Ergebnisse gefunden')}</p>
         )}
 
         {!validQuery && focus && (
-          <p className={styles.noResults}>
-            {t("Tippe um Ergebnisse anzuzeigen...")}
-          </p>
+          <p className={styles.noResults}>Type to show results...</p>
         )}
 
         {searchResults?.hits.length > 0 && validQuery && (
           <>
             {searchResults.hits.map((hit, index) => (
-              <Hit hit={hit} />
+              <Hit key={index} hit={hit} />
             ))}
           </>
         )}

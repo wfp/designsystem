@@ -1,0 +1,134 @@
+{
+  "typography": {
+    "caption": {
+      "fontSize": {
+        "type": "dimension",
+        "value": 14
+      },
+      "fontWeight": {
+        "type": "string",
+        "value": "regular"
+      }
+    },
+    "helper": {
+      "fontSize": {
+        "type": "dimension",
+        "value": 14
+      },
+      "fontWeight": {
+        "type": "string",
+        "value": "regular"
+      }
+    },
+    "input": {
+      "fontSize": {
+        "type": "dimension",
+        "value": 16
+      },
+      "fontWeight": {
+        "type": "string",
+        "value": "regular"
+      }
+    },
+    "story-title": {
+      "fontSize": {
+        "type": "dimension",
+        "value": 50
+      },
+      "fontWeight": {
+        "type": "string",
+        "value": "300"
+      }
+    },
+    "story-h1": {
+      "fontSize": {
+        "type": "dimension",
+        "value": 29
+      },
+      "fontWeight": {
+        "type": "string",
+        "value": "600"
+      }
+    },
+    "story-h2": {
+      "fontSize": {
+        "type": "dimension",
+        "value": 25
+      },
+      "fontWeight": {
+        "type": "string",
+        "value": "600"
+      }
+    },
+    "story-h3": {
+      "fontSize": {
+        "type": "dimension",
+        "value": 22
+      },
+      "fontWeight": {
+        "type": "string",
+        "value": "600"
+      }
+    },
+    "story-h4": {
+      "fontSize": {
+        "type": "dimension",
+        "value": 20
+      },
+      "fontWeight": {
+        "type": "string",
+        "value": "600"
+      }
+    },
+    "story-h5": {
+      "fontSize": {
+        "type": "dimension",
+        "value": 18
+      },
+      "fontWeight": {
+        "type": "string",
+        "value": "600"
+      }
+    },
+    "story-h6": {
+      "fontSize": {
+        "type": "dimension",
+        "value": 16
+      },
+      "fontWeight": {
+        "type": "string",
+        "value": "600"
+      }
+    },
+    "story-sub-title": {
+      "fontSize": {
+        "type": "dimension",
+        "value": 12
+      },
+      "fontWeight": {
+        "type": "string",
+        "value": "500"
+      },
+      "letterSpacing": {
+        "type": "string",
+        "value": "0.05em"
+      },
+      "textTransform": {
+        "type": "string",
+        "value": "uppercase"
+      }
+    },
+    "body-regular": {
+      "fontSize": {
+        "description": "This is a description",
+        "type": "dimension",
+        "value": 12
+      },
+      "fontWeight": {
+        "description": "This is a description",
+        "type": "string",
+        "value": "regular"
+      }
+    }
+  }
+}

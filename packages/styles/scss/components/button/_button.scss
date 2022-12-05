@@ -103,6 +103,9 @@
       $button-primary-hover,
       $text-on-color
     );
+    &:hover {
+      color: $text-inverse;
+    }
   }
 
   .#{$prefix}--btn--accent {
@@ -349,7 +352,7 @@
 
   .#{$prefix}--btn--sm {
     padding: $button-padding-sm;
-    @include type-style('body-short-01');
+    @include type-style('body-short');
     letter-spacing: 0;
     font-weight: 700;
     height: 1.8rem;

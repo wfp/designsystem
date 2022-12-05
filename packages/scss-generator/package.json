@@ -1,6 +1,6 @@
 {
   "name": "@un/scss-generator",
-  "version": "10.13.8",
+  "version": "10.13.15",
   "license": "Apache-2.0",
   "main": "src/index.js",
   "repository": {
@@ -23,5 +23,6 @@
   },
   "dependencies": {
     "prettier": "^2.2.1"
-  }
+  },
+  "gitHead": "612423f98ee3bf6de70d70015ff7f3e48ceee898"
 }

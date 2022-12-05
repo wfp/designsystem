@@ -79,7 +79,7 @@
   .#{$prefix}--photo-card__info__metadata {
     margin: 0;
     margin-bottom: $spacing-02;
-    @include type.type-style('label-01');
+    @include type.type-style('label');
     text-transform: uppercase;
     letter-spacing: 0.05em;
   }

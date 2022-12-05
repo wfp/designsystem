@@ -33,7 +33,7 @@
 /// @group tabs
 @mixin tabs {
   .#{$prefix}--tabs {
-    @include type-style('body-short-01');
+    @include type-style('body-short');
     @include font-family('sans');
     color: $text-primary;
     font-weight: 600;
@@ -92,7 +92,7 @@
   }
 
   .#{$prefix}--tabs__nav-item {
-    @include type-style('body-short-01');
+    @include type-style('body-short');
     padding: 0;
     cursor: pointer;
     white-space: nowrap;

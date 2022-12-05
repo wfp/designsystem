@@ -20,12 +20,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRightFromBracket } from '@fortawesome/pro-regular-svg-icons';
 import { faRocketLaunch } from '@fortawesome/pro-solid-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import Search from '../Search';
 
 import logo from './logo.svg';
 import Image from 'next/image';
 import styles from './styles.module.scss';
-
-import { UserNameNew } from '../UserName';
 import { useTranslation } from 'next-i18next';
 
 export default function Navigation({ children }) {
@@ -33,14 +32,6 @@ export default function Navigation({ children }) {
   const { t } = useTranslation('website');
 
   const { locale, locales, asPath } = useRouter();
-
-  //if (router?.query?.app) return null;
-
-  const languageFull = {
-    de: 'deutsch',
-    en: 'englisch',
-    fr: 'französisch',
-  };
 
   return (
     <>
@@ -64,6 +55,9 @@ export default function Navigation({ children }) {
         </MainNavigationItem>
         <MainNavigationItem>
           <NextLink href="/posts">Documentation</NextLink>
+        </MainNavigationItem>
+        <MainNavigationItem>
+          <Search kind="main" id="search-2" placeholder="Search" />
         </MainNavigationItem>
         <NextLink
           href="https://github.com/un-core/designsystem"

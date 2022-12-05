@@ -49,7 +49,7 @@
   }
 
   .#{$prefix}--data-table-header__description {
-    @include type-style('body-short-01');
+    @include type-style('body-short');
 
     color: $text-secondary;
   }
@@ -70,7 +70,7 @@
   }
 
   .#{$prefix}--data-table tbody {
-    @include type-style('body-short-01');
+    @include type-style('body-short');
 
     width: 100%;
     background-color: $layer-primary;
@@ -686,7 +686,7 @@
   }
 
   .#{$prefix}--data-table--tall .#{$prefix}--data-table--cell-secondary-text {
-    @include type-style('label-01');
+    @include type-style('label');
   }
 
   //----------------------------------------------------------------------------
@@ -714,7 +714,7 @@
   }
 
   .#{$prefix}--data-table--xl .#{$prefix}--data-table--cell-secondary-text {
-    @include type-style('label-01');
+    @include type-style('label');
   }
 
   //----------------------------------------------------------------------------

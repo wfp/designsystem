@@ -1,10 +1,3 @@
-//
-// Copyright IBM Corp. 2016, 2018
-//
-// This source code is licensed under the Apache-2.0 license found in the
-// LICENSE file in the root directory of this source tree.
-//
-
 @use '../../config' as *;
 @use '../../spacing' as *;
 @use '../../theme' as *;
@@ -37,7 +30,7 @@
       }
       p {
         opacity: 0.6;
-        @include type-style('label-01');
+        @include type-style('label');
       }
       .#{$prefix}--empty__icon {
         margin-bottom: 1em;
@@ -64,6 +57,7 @@
       }
 
       h2 {
+        @include type-style('story-h4');
         margin-bottom: $spacing-03;
       }
 

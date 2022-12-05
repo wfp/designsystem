@@ -117,7 +117,7 @@
 
   .#{$prefix}--toggle__text--left,
   .#{$prefix}--toggle__text--right {
-    @include type-style('body-short-01');
+    @include type-style('body-short');
     position: relative;
   }
 

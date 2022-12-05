@@ -50,7 +50,7 @@ $radio-border-width: 2px !default;
   .#{$prefix}--input-group-inside {
     display: flex;
     flex-wrap: wrap;
-    margin-top: $spacing-03;
+    //margin-top: $spacing-03;
     order: 2;
     width: 100%;
     > * {
@@ -71,7 +71,7 @@ $radio-border-width: 2px !default;
   }
 
   .#{$prefix}--radio-button__label {
-    @include type.type-style('body-short-01');
+    @include type.type-style('body-short');
     @include type.font-family('sans');
     display: flex;
     align-items: center;

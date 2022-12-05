@@ -100,9 +100,15 @@
 .npmLink {
   margin-left: 0.5rem;
   color: #cc3534;
+  &:hover {
+    opacity: 0.7;
+  }
 }
 
 .figmaLink {
   margin-left: 0.5rem;
   color: #6bceff;
+  &:hover {
+    opacity: 0.7;
+  }
 }

@@ -35,7 +35,7 @@ $input-border: 1px solid $field-border;
   }
 
   .#{$prefix}--number input[type='number'] {
-    @include type-style('body-short-01');
+    @include type-style('body-short');
     @include font-family('sans');
     @include input-base;
     box-sizing: border-box;

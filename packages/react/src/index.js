@@ -59,6 +59,7 @@ export InlineLoading from './components/InlineLoading';
 export { List, ListItem } from './components/List';
 export {
   MainNavigation,
+  MainNavigationContext,
   MainNavigationExternal,
 } from './components/MainNavigation';
 export MainNavigationItem from './components/MainNavigationItem';

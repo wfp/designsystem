@@ -17,9 +17,7 @@ if (!String.prototype.endsWith) {
   });
 }
 
-const json = JSON.parse(
-  readFileSync('./tokens/design-tokens.tokens.json', 'utf8')
-);
+const json = JSON.parse(readFileSync('./tokens/tokens.json.raw', 'utf8'));
 
 let filtrate = filterDeep(json, (value, key, parent) => {
   console.log(key);
@@ -43,6 +41,19 @@ filtrate = mapValuesDeep(
       ? v.slice(0, -2)
       : v,
   { leavesOnly: true }
+);
+
+filtrate = mapValuesDeep(
+  filtrate,
+  (v) => {
+    if (typeof v === 'object' && v.type === 'color')
+      v.attributes = { category: 'color' };
+
+    return v;
+  },
+  /*  typeof v === 'object' && v.type === 'color'
+      ? (v.attributes.category = 'color')
+      : v*/ { leavesOnly: false }
 );
 
 writeFileSync('./tokens/design-tokens.tokens.json', JSON.stringify(filtrate));

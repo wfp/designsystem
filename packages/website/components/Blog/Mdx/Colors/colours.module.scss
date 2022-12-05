@@ -1,0 +1,92 @@
+@use "scss/meta" as *;
+
+.list {
+  text-align: left;
+  h4 {
+    margin: 0;
+  }
+
+  .wfp--story__sub-heading {
+    font-size: 0.9em;
+    margin-bottom: 0.5em;
+  }
+}
+
+.field {
+  width: 7.5rem;
+  height: 5.5rem;
+  margin-top: 0em;
+  margin-right: 1em;
+  border-radius: 6px;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 1rem;
+  position: relative;
+}
+
+.fieldLight {
+  box-shadow: inset 0 0 0 1px rgba(#000, 0.1);
+}
+
+.description {
+  width: 4.5rem;
+  margin-top: 0em;
+  margin-right: 1em;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  font-size: 0.7em;
+  padding: 0.7rem 1rem;
+  position: relative;
+  white-space: nowrap;
+  > * {
+    margin: 0 0.5em;
+  }
+}
+
+.color__check {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 30px;
+  height: 30px;
+}
+
+.contrast {
+  text-align: center;
+  margin: 0.2em;
+  min-width: 10%;
+  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  > span {
+    font-weight: 500;
+  }
+  &.contrastLight {
+    color: $text-inverse;
+  }
+  > div {
+    font-size: 0.5rem;
+    margin-top: 0.3em;
+    padding: 0.3em;
+    color: $text-inverse;
+    width: auto;
+    background: rgba(#000, 0.7);
+  }
+}
+
+.dodonot {
+  display: flex;
+  margin: 1rem 0;
+  > div {
+    width: 50%;
+  }
+}
+
+.content {
+  font-size: 0.8em;
+}

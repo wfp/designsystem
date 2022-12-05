@@ -17,7 +17,7 @@
 /// @group progress-bar
 @mixin progress-bar {
   .#{$prefix}--progress-bar__label {
-    @include type-style('body-short-01');
+    @include type-style('body-short');
 
     display: block;
     margin-bottom: $spacing-03;
@@ -63,7 +63,7 @@
   }
 
   .#{$prefix}--progress-bar__helper-text {
-    @include type-style('helper-text-01');
+    @include type-style('helper-text');
 
     margin-top: $spacing-02;
     color: $text-secondary;

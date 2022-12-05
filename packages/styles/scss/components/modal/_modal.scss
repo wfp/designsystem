@@ -144,7 +144,7 @@ $modal-footer-background-color: $layer-primary !default; //TODO use $layer token
 
   .#{$prefix}--modal-header__label {
     @include reset;
-    @include type-style('label-01');
+    @include type-style('label');
     color: $text-secondary;
     font-weight: 600;
     text-transform: uppercase;

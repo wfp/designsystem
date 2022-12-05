@@ -205,7 +205,7 @@
     padding: $spacing-03;
 
     @include breakpoint-down(md) {
-      @include type-style('body-short-01');
+      @include type-style('body-short');
 
       font-weight: 700;
       padding: $spacing-05 $spacing-03;
@@ -426,7 +426,7 @@
     }
 
     & > a {
-      @include type-style('body-short-01');
+      @include type-style('body-short');
 
       color: $text-primary;
       cursor: pointer;

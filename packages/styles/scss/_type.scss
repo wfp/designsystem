@@ -26,30 +26,28 @@
 }
 
 @mixin type-style($style) {
-  $maped: map-deep-get(
-    $tokens,
-    'typography',
-    'headings',
-    'heading 1',
-    fontSize
-  );
-  @warn 'This is  a step of the WFP Type Scale!', $maped;
+  $maped: map-deep-get($tokens, 'typography', $style);
 
-  @if map-has-key($tokens, 'typography' /*$style*/) {
-    $typographyMap: map-get($tokens, 'typography', 'headings', 'heading 1');
-
-    @if map-has-key($typographyMap, 'body-short-02' /*$style*/) {
+  //@warn 'This is  a step of the WFP Type Scale!', $maped;
+  @if map-deep-get($tokens, 'typography', $style) {
+    $typographyMap: map-get($tokens, 'typography', $style);
+    font-size: map-get($typographyMap, 'fontSize');
+    font-weight: map-get($typographyMap, 'fontWeight');
+    letter-spacing: map-get($typographyMap, 'letterSpacing');
+    text-transform: map-get($typographyMap, 'textTransform');
+  }
+  /*@if map-has-key($typographyMap, 'body-short-02',$style) {
       @warn 'This is  a step of the WFP Type Scale!';
-      /*$elements: map-get($tokens, $style);
+      $elements: map-get($tokens, $style);
       font-family: map-get($elements, 'fontFamily');
-      font-size: map-get($elements, 'fontSize');*/
+      font-size: map-get($elements, 'fontSize');
     } @else {
       //@warn 'This is  a step of the WFP Type Scale!';
       //@warn 'This is not a step of the WFP Type Scale!' + $style;
     }
   } @else {
     @warn 'No typography step found!';
-  }
+  }*/
 }
 
 // TODO: Temporary type scale
@@ -100,10 +98,10 @@ $typescale-map: (
   // Variables
   $caption-01,
   $caption-02,
-  $label-01,
+  $label,
   $label-02,
   $helper-text-01,
-  $body-short-01,
+  $body-short,
   $body-short-02,
   $body-long-01,
   $body-long-02,

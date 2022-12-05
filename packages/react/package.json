@@ -1,6 +1,6 @@
 {
   "name": "@un/react",
-  "version": "1.18.52",
+  "version": "1.18.59",
   "description": "WFP UI Kit",
   "license": "Apache-2",
   "main": "lib/index.js",
@@ -183,11 +183,11 @@
     "@tippy.js/react": "^3.1.1",
     "@typescript-eslint/eslint-plugin": "^4.9.0",
     "@typescript-eslint/parser": "^3.8.0",
-    "@un/babel-preset-wfp": "^0.1.8",
-    "@un/icons": "^10.34.29",
-    "@un/icons-react": "^10.34.31",
-    "@un/pictograms-react": "^11.14.18",
-    "@un/themes-core": "^0.0.3",
+    "@un/babel-preset-wfp": "^0.1.15",
+    "@un/icons": "^10.34.36",
+    "@un/icons-react": "^10.34.38",
+    "@un/pictograms-react": "^11.14.25",
+    "@un/themes-core": "^0.0.19",
     "add": "^2.0.6",
     "all-contributors-cli": "^6.17.0",
     "autoprefixer": "^9.8.6",
@@ -377,5 +377,5 @@
     ]
   },
   "bundleSizeThreshold": 80000,
-  "gitHead": "e3e297bd95e5d0812cc1844e1cd3db50d0d99428"
+  "gitHead": "612423f98ee3bf6de70d70015ff7f3e48ceee898"
 }

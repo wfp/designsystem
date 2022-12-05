@@ -29,13 +29,13 @@ $content-switcher-option-border: 2px solid $focus !default;
     height: rem(24px);
     .#{$prefix}--content-switcher-btn {
       padding: 0 $spacing-04 0 $spacing-04;
-      @include type-style('label-01');
+      @include type-style('label');
     }
   }
 
   .#{$prefix}--content-switcher-btn {
     @include reset;
-    @include type-style('body-short-01');
+    @include type-style('body-short');
     @include font-family('sans');
     background-color: transparent;
     display: flex;

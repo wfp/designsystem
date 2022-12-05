@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import type { PropsWithChildren } from 'react';
-import classNames, { Argument } from 'classnames';
+import classNames from 'classnames';
 import Button from '../Button';
 import Wrapper from '../Wrapper';
 import useSettings from '../../hooks/useSettings';
 import { ScreenSize } from '../../types/utils';
-
+import MainNavigationContext from './MainNavigationContext';
 /** The Main Navigation is a Horizontal Menu which consists of multiple clickable items placed at the top of the page. The navigation stays unchanged when browswing through the site and is present on every page. The currently selected item is usually highlighted. */
 
 type MainNavigationProps = PropsWithChildren<{
@@ -13,7 +13,7 @@ type MainNavigationProps = PropsWithChildren<{
   pageWidth?: ScreenSize;
   mobilePageWidth?: ScreenSize;
   wrapperClassName?: string;
-  className?: Argument;
+  className?: string;
   id?: string;
 }>;
 
@@ -30,6 +30,7 @@ const MainNavigation: React.FC<MainNavigationProps> = ({
   const [activeMenuItem, setActiveMenuItem] = useState(undefined);
 
   const onChangeSub = (action, i, e) => {
+    // console.log('unchange', action, i, e);
     if (e) {
       e.preventDefault();
     }
@@ -61,42 +62,25 @@ const MainNavigation: React.FC<MainNavigationProps> = ({
     [`${prefix}--main-navigation__list--open`]: openMobile,
   });
 
-  const parentProps = {
-    onChangeSub: onChangeSub,
-    toggleMenu: toggleMenu,
-  };
-
-  const childrenSelect =
-    typeof children === 'function'
-      ? children(parentProps).props.children
-      : children;
-
   return (
     <div id={id} className={wrapperClasses}>
-      <Wrapper
-        pageWidth={pageWidth}
-        mobilePageWidth={mobilePageWidth}
-        className={`${prefix}--main-navigation__wrapper`}>
-        <div className={`${prefix}--main-navigation__logo-wrapper`}>
-          <Button
-            className={`${prefix}--main-navigation__button`}
-            onClick={toggleMenu}>
-            Menu
-          </Button>
-          <div className={`${prefix}--main-navigation__logo`}>{logo}</div>
-        </div>
-        <ul className={listClasses}>
-          {React.Children.map(childrenSelect, (child, i) => {
-            if (child) {
-              return React.cloneElement(child, {
-                activeMenuItem: activeMenuItem,
-                menuItem: i,
-                onChangeSub: onChangeSub,
-              });
-            } else return null;
-          })}
-        </ul>
-      </Wrapper>
+      <MainNavigationContext.Provider
+        value={{ activeMenuItem, openMobile, toggleMenu, onChangeSub }}>
+        <Wrapper
+          pageWidth={pageWidth}
+          mobilePageWidth={mobilePageWidth}
+          className={`${prefix}--main-navigation__wrapper`}>
+          <div className={`${prefix}--main-navigation__logo-wrapper`}>
+            <Button
+              className={`${prefix}--main-navigation__button`}
+              onClick={toggleMenu}>
+              Menu
+            </Button>
+            <div className={`${prefix}--main-navigation__logo`}>{logo}</div>
+          </div>
+          <ul className={listClasses}>{children}</ul>
+        </Wrapper>
+      </MainNavigationContext.Provider>
     </div>
   );
 };
