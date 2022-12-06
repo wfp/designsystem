@@ -38,3 +38,5 @@ jest-test-results.json
 packages/icons/src/legacy/*
 packages/pictograms/es/*
 actions/copy-carbon/output/*
+
+.npmrc
