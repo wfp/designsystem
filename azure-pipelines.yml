@@ -4,7 +4,7 @@ variables:
   ${{ if startsWith(variables['Build.SourceBranch'], 'refs/pull/') }}:
     branchName: $[ replace(variables['System.PullRequest.SourceBranch'], 'refs/heads/', '') ]
 
-  trigger:
+trigger:
   - master
   - next
   - hotfix/*
