@@ -1,6 +1,6 @@
 {
   "name": "@un/scss-generator",
-  "version": "10.13.17",
+  "version": "10.13.18",
   "license": "Apache-2.0",
   "main": "src/index.js",
   "repository": {
