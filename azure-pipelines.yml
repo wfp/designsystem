@@ -82,8 +82,11 @@ jobs:
     - script: |
         lerna publish from-package --dist-tag alpha
       displayName: 'yarn build:alpha-cli'
-      condition: in(variables['Build.SourceBranch'], 'refs/heads/develop', 'refs/heads/next', 'refs/heads/un-core-v1')
+      #condition: in(variables['Build.SourceBranch'], 'refs/heads/develop', 'refs/heads/next', 'refs/heads/un-core-v1')
 
+    - script: |
+        yarn publish:alpha
+      displayName: 'yarn publish:alpha'
     - task: GitHubRelease@1
       inputs:
         gitHubConnection: 'Utzel-Butzel'
