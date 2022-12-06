@@ -1,4 +1,10 @@
-trigger:
+variables:
+  ${{ if startsWith(variables['Build.SourceBranch'], 'refs/heads/') }}:
+    branchName: $[ replace(variables['Build.SourceBranch'], 'refs/heads/', '') ]
+  ${{ if startsWith(variables['Build.SourceBranch'], 'refs/pull/') }}:
+    branchName: $[ replace(variables['System.PullRequest.SourceBranch'], 'refs/heads/', '') ]
+
+  trigger:
   - master
   - next
   - hotfix/*
@@ -17,6 +23,19 @@ jobs:
       nextRelease: unknown
 
     steps:
+      
+      - checkout: self
+      persistCredentials: true
+  
+      - script: |
+          git config --global user.name "Azure Devops Pipeline"
+          git config --global user.email "roberg.guehne@wfp.org"
+        displayName: Git config user
+      - task: CmdLine@2
+        displayName: Checkout $(branchName) Original $(Build.SourceBranch)
+        inputs:
+          script: "git checkout $(branchName)"
+
       - task: NodeTool@0
         inputs:
           versionSpec: '14.x'
@@ -68,6 +87,15 @@ jobs:
       - script: |
           yarn build
         displayName: 'yarn build'
+
+      - script: |
+          npm run lerna:versionNoPush
+          git push --follow-tags origin HEAD:$(branchName)
+        displayName: 'npm run lerna:version'
+
+      - script: |
+          npm run lerna:publishFromPackage
+        displayName: 'lerna publish'
 
       # - script: |
       #      yarn publish:cli
