@@ -4,7 +4,7 @@ trigger:
   - hotfix/*
   - bugfix/*
   - alpha/*
-  - feat/performance-optimization
+  - feat/*
   - un-core-v1
 
 jobs:
