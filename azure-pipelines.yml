@@ -98,10 +98,10 @@ jobs:
         echo "##vso[task.setvariable variable=versionNumber;isOutput=true]$(nextRelease)"
       name: setOutputVar
 
-    - script: |
-        npmVersionString=$(node -p "require('./packages/ui/package.json').version") 
-        echo "##vso[build.updatebuildnumber]$npmVersionString"
-      displayName: 'set build number'
+#    - script: |
+#        npmVersionString=$(node -p "require('./packages/ui/package.json').version") 
+#        echo "##vso[build.updatebuildnumber]$npmVersionString"
+#      displayName: 'set build number'
 
 # TODO: Needs to reimplemented, probably in it's own package
 #    - script: |
