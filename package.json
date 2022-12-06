@@ -16,7 +16,7 @@
     "build": "lerna run build --stream --prefix --npm-client yarn",
     "publish:alpha": "lerna publish --dist-tag alpha",
     "lerna:version": "lerna version --conventional-commits",
-    "publish:alpha-cli": "lerna publish --dist-tag alpha --no-verify-access --conventional-commits",
+    "publish:alpha-cli": "lerna publish --dist-tag alpha --no-verify-access --conventional-commits --yes",
     "publish:alpha-recover": "lerna exec -- \"npm publish --tag alpha || exit 0\"",
     "publish": "lerna publish",
     "test": "jest"
