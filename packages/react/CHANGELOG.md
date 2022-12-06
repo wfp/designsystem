@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 1.18.61 (2022-12-06)
+
+**Note:** Version bump only for package @un/react
+
+
+
+
+
 ## [1.18.60](https://github.com/wfp/ui/compare/@un/react@1.18.59...@un/react@1.18.60) (2022-12-06)
 
 

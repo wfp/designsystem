@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 11.14.27 (2022-12-06)
+
+**Note:** Version bump only for package @un/humanitarian-icons-react
+
+
+
+
+
 ## [11.14.26](https://github.com/carbon-design-system/carbon/compare/@un/humanitarian-icons-react@11.14.25...@un/humanitarian-icons-react@11.14.26) (2022-12-06)
 
 **Note:** Version bump only for package @un/humanitarian-icons-react
