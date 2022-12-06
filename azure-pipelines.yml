@@ -22,15 +22,15 @@ jobs:
         versionSpec: '14.x'
       displayName: 'Install Node.js'
 
-  - task: DownloadSecureFile@1
-    name: npmrcFile
-    displayName: "Download CA certificate"
-    inputs:
-      secureFile: "npmrc"
+    - task: DownloadSecureFile@1
+      name: npmrcFile
+      displayName: "Download CA certificate"
+      inputs:
+        secureFile: "npmrc"
 
-  - task: CmdLine@2
-    inputs:
-      script: cp $(npmrcFile.secureFilePath) ./.npmrc
+    - task: CmdLine@2
+      inputs:
+        script: cp $(npmrcFile.secureFilePath) ./.npmrc
 
 #    - task: CmdLine@2
 #      displayName: Checkout $(Build.SourceBranchName)
