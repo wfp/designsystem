@@ -35,7 +35,9 @@ jobs:
       - task: CmdLine@2
         displayName: Checkout $(branchName) Original $(Build.SourceBranch)
         inputs:
-          script: "git checkout $(branchName)"
+          script: |
+            git fetch --all
+            git checkout $(branchName)
 
       - task: NodeTool@0
         inputs:
