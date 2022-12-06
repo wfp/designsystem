@@ -29,7 +29,6 @@ jobs:
       secureFile: "npmrc"
 
   - task: CmdLine@2
-    name: Move .npmrc
     inputs:
       script: cp $(npmrcFile.secureFilePath) ./.npmrc
 
