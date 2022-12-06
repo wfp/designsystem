@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [10.34.37](https://github.com/carbon-design-system/carbon/compare/@un/icons@10.34.36...@un/icons@10.34.37) (2022-12-06)
+
+
+### Bug Fixes
+
+* **moved:** packages to private ([69095bb](https://github.com/carbon-design-system/carbon/commit/69095bb6ce7bdaf417a370ed73804d5493876999))
+
+
+
+
+
 ## [10.34.29](https://github.com/carbon-design-system/carbon/compare/@un/icons@10.34.28...@un/icons@10.34.29) (2022-06-28)
 
 
