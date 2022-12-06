@@ -23,14 +23,15 @@ jobs:
       nextRelease: unknown
 
     steps:
-      
+     
       - checkout: self
-      persistCredentials: true
+        persistCredentials: true
   
       - script: |
           git config --global user.name "Azure Devops Pipeline"
           git config --global user.email "roberg.guehne@wfp.org"
         displayName: Git config user
+
       - task: CmdLine@2
         displayName: Checkout $(branchName) Original $(Build.SourceBranch)
         inputs:
@@ -72,9 +73,7 @@ jobs:
       #          npm | "$(Agent.OS)"
       #          npm
       #      displayName: 'Cache NPM packages'
-
       #        mkdir -p $(NPM_CACHE_FOLDER)
-
       - script: |
           yarn -v
           yarn install
