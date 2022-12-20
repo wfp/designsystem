@@ -120,7 +120,6 @@
     },
     "body-regular": {
       "fontSize": {
-        "description": "This is a description",
         "type": "dimension",
         "value": 12
       },
