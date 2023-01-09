@@ -10,6 +10,8 @@ import useSettings from '../../hooks/useSettings';
  */
 
 const InputGroup = (props) => {
+  const { prefix } = useSettings();
+
   const {
     children,
     disabled,
@@ -23,8 +25,6 @@ const InputGroup = (props) => {
     valueSelected,
     defaultSelected,
   } = props;
-
-  const { prefix } = useSettings();
 
   const [prevValueSelected, setPrevValueSelected] = useState(
     valueSelected || defaultSelected
@@ -63,11 +63,11 @@ const InputGroup = (props) => {
       return (
         <RadioButton
           {...other}
-          name={this.props.name}
+          name={props.name}
           key={value}
           value={value}
           onChange={handleChange}
-          checked={value === this.state.selected}
+          checked={value === selected}
         />
       );
     });
@@ -113,7 +113,6 @@ const InputGroup = (props) => {
 };
 
 InputGroup.propTypes = {
-  prefix: PropTypes.string.isRequired,
   /**
    * Provide a collection of <RadioButton> components to render in the group
    */

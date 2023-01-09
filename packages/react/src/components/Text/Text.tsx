@@ -1,6 +1,6 @@
 import React from 'react';
 import type { PropsWithChildren } from 'react';
-import classnames, { Argument } from 'classnames';
+import classnames from 'classnames';
 import useSettings from '../../hooks/useSettings';
 import { Spacing, TextKind } from '../../types/utils';
 
@@ -9,7 +9,7 @@ type TextProps = PropsWithChildren<{
   children?: React.ReactNode;
   spacingTop?: Spacing;
   spacingBottom?: Spacing;
-  className?: Argument;
+  className?: string;
 }>;
 
 export const textLookup = {

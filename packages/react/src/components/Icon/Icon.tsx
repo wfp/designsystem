@@ -1,7 +1,7 @@
 import invariant from 'invariant';
 import React from 'react';
 import type { PropsWithChildren } from 'react';
-import classNames, { Argument } from 'classnames';
+import classNames from 'classnames';
 import { IIcon } from '../../types/utils';
 
 /**
@@ -52,7 +52,7 @@ export function isPrefixed(name) {
 
 /** Icons are visual representations of commands, devices, directories, or common actions. */
 type IconProps = PropsWithChildren<{
-  className?: Argument;
+  className?: string;
   description: string;
   fill?: string;
   fillRule?: string;

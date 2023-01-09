@@ -7,8 +7,6 @@ import useSettings from '../../hooks/useSettings';
 /** Radio buttons represent a group of mutually exclusive choices */
 
 const RadioButton = (props) => {
-  const [uid, setUid] = useState(id || uId());
-
   const {
     labelText,
     inputRef,
@@ -19,6 +17,9 @@ const RadioButton = (props) => {
     onChange,
     ...other
   } = props;
+
+  const [uid, setUid] = useState(id || uId());
+
   const { prefix } = useSettings();
 
   //   UNSAFE_componentWillMount() {

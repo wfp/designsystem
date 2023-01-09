@@ -8,7 +8,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
-import useSettings from '../../hooks/useSettings';
+//import useSettings from '../../hooks/useSettings';
 
 const Checkbox = React.forwardRef(function Checkbox(
   {
@@ -24,7 +24,7 @@ const Checkbox = React.forwardRef(function Checkbox(
   },
   ref
 ) {
-  const { prefix } = useSettings();
+  const prefix = 'wfp';
   const labelClasses = classNames(`${prefix}--checkbox-label`, className);
   const innerLabelClasses = classNames(`${prefix}--checkbox-label-text`, {
     [`${prefix}--visually-hidden`]: hideLabel,

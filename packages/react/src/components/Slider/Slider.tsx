@@ -26,7 +26,7 @@ type SliderProps = PropsWithChildren<{
   inputType?: string;
   ariaLabelInput?: string;
   step?: number;
-  value?: '' | number;
+  value?: number | '';
   invalid?: {} | boolean;
   invalidText?: string;
   additional?: React.ReactNode;

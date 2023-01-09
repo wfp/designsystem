@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import React, { useState } from 'react';
 import classNames from 'classnames';
 import useSettings from '../../hooks/useSettings';
@@ -23,42 +22,50 @@ interface DateRangePickerInputProps {
   endDatePlaceholderText?: string;
   startDateId?: string;
   endDateId?: string;
+  startDate?: string;
+  endDate?: string;
 }
 
-const DateRangePickerInput: React.FC<DateRangePickerInputProps> = ({
-  controlled,
-  datePicker,
-  labelText,
-  className,
-  id,
-  placeholder,
-  type,
-  onChange,
-  onClick,
-  hideLabel,
-  invalid,
-  invalidText,
-  helperText,
-  value,
-  startDateId,
-  startDatePlaceholderText,
-  endDateId,
-  endDatePlaceholderText,
-  name,
-  onBlur,
-  onDragStart,
-  onDrop,
-  onFocus,
-  showClearDate,
-  isDirty,
-  isTouched,
-  error,
-  ...other
-}) => {
+const DateRangePickerInput: React.FC<DateRangePickerInputProps> = (props) => {
+  const {
+    controlled,
+    datePicker,
+    labelText,
+    className,
+    id,
+    placeholder,
+    type,
+    onChange,
+    onClick,
+    hideLabel,
+    invalid,
+    invalidText,
+    helperText,
+    value,
+    startDate,
+    endDate,
+    startDateId,
+    startDatePlaceholderText,
+    endDateId,
+    endDatePlaceholderText,
+    name,
+    onBlur,
+    onDragStart,
+    onDrop,
+    onFocus,
+    showClearDate,
+    isDirty,
+    isTouched,
+    error,
+    ...other
+  } = props;
+
   const { prefix } = useSettings();
   const [focusedInput, setFocusedInput] = useState(null);
-  const [startDate, setStartDate] = useState(startDate ? startDate : null);
-  const [endDate, setEndDate] = useState(endDate ? endDate : null);
+  const [startDate, setStartDate] = useState(
+    props.startDate ? props.startDate : null
+  );
+  const [endDate, setEndDate] = useState(props.endDate ? props.endDate : null);
 
   // state = {
   //   focusedInput: null,
@@ -125,29 +132,29 @@ const DateRangePickerInput: React.FC<DateRangePickerInputProps> = ({
   );
 };
 
-DateRangePickerInput.defaultProps = {
-  startDateId: 'startDate',
-  endDateId: 'endDate',
-  startDatePlaceholderText: 'Start Date',
-  endDatePlaceholderText: 'End Date',
-};
+// DateRangePickerInput.defaultProps = {
+//   startDateId: 'startDate',
+//   endDateId: 'endDate',
+//   startDatePlaceholderText: 'Start Date',
+//   endDatePlaceholderText: 'End Date',
+// };
 
-DateRangePickerInput.propTypes = {
-  /**
-   * Provide the SingleDatePicker as a component
-   */
-  datePicker: PropTypes.oneOfType([
-    PropTypes.func.isRequired,
-    PropTypes.object.isRequired,
-  ]),
-  /**
-   * Provide the placeholder for the start input
-   */
-  startDatePlaceholderText: PropTypes.string,
-  /**
-   * Provide the placeholder for the end input
-   */
-  endDatePlaceholderText: PropTypes.string,
-};
+// DateRangePickerInput.propTypes = {
+//   /**
+//    * Provide the SingleDatePicker as a component
+//    */
+//   datePicker: PropTypes.oneOfType([
+//     PropTypes.func.isRequired,
+//     PropTypes.object.isRequired,
+//   ]),
+//   /**
+//    * Provide the placeholder for the start input
+//    */
+//   startDatePlaceholderText: PropTypes.string,
+//   /**
+//    * Provide the placeholder for the end input
+//    */
+//   endDatePlaceholderText: PropTypes.string,
+// };
 
 export { DateRangePickerInput };
