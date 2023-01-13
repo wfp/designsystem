@@ -8,8 +8,8 @@
   "main:scss": "source/globals/styles.scss",
   "sideEffects": false,
   "scripts": {
-    "build:legacy": "npm run copy-vendor-styles && npm run build:rollup && npm run build:script && npm run build:css && npm run build:cssmin",
-    "build": "yarn clean && node scripts/build.js && rollup -c",
+    "build:legacy": "npm run copy-vendor-styles && npm run build:rollup && npm run build:script && npm run build:css && npm run build:cssmin // node scripts/build.js",
+    "build": "yarn rollup -c --bundleConfigAsCjs",
     "clean": "rimraf es lib umd storybook-static build react-docgen.json",
     "copy-vendor-styles": "sh ./tasks/copy-vendor-styles.sh",
     "build:rollup": "rollup -c",
@@ -72,7 +72,7 @@
     "lib",
     "src",
     "umd",
-    "rollup.config.js",
+    "rollup.config.ts",
     "react-docgen.json"
   ],
   "eslintConfig": {
@@ -138,7 +138,11 @@
     "react-dom": "^18.2.0"
   },
   "dependencies": {
+    "@babel/preset-typescript": "^7.18.6",
     "@carbon/feature-flags": "^0.6.0",
+    "@rollup/plugin-commonjs": "^24.0.0",
+    "@rollup/plugin-node-resolve": "^15.0.1",
+    "@rollup/plugin-terser": "^0.3.0",
     "@types/jest": "^29.0.3",
     "@types/node": "^18.7.18",
     "@types/react": "^18.0.20",
@@ -147,6 +151,8 @@
     "invariant": "^2.2.4",
     "react-datepicker": "^4.6.0",
     "react-popper-tooltip": "^4.1.0",
+    "rollup": "3.9.1",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
     "typescript": "^4.8.3",
     "warning": "^4.0.3",
     "window-or-global": "^1.0.1"
@@ -166,6 +172,7 @@
     "@carbon/import-once": "^10.5.0",
     "@popperjs/core": "^2.4.4",
     "@rollup/plugin-babel": "^5.3.0",
+    "@rollup/plugin-typescript": "^11.0.0",
     "@semantic-release/commit-analyzer": "^8.0.1",
     "@semantic-release/exec": "^5.0.0",
     "@semantic-release/git": "^9.0.0",
@@ -178,7 +185,7 @@
     "@storybook/addon-toolbars": "6.4.19",
     "@storybook/addon-viewport": "^6.4.19",
     "@storybook/addons": "6.4.19",
-    "@storybook/react": "6.5.9",
+    "@storybook/react": "6.5.15",
     "@storybook/theming": "6.4.19",
     "@tippy.js/react": "^3.1.1",
     "@typescript-eslint/eslint-plugin": "^4.9.0",
@@ -263,14 +270,6 @@
     "regenerator-runtime": "^0.13.9",
     "requestanimationframe": "^0.0.23",
     "rimraf": "^3.0.2",
-    "rollup": "^2.23.0",
-    "rollup-plugin-analyzer": "^4.0.0",
-    "rollup-plugin-commonjs": "^10.1.0",
-    "rollup-plugin-node-resolve": "^5.2.0",
-    "rollup-plugin-replace": "^2.2.0",
-    "rollup-plugin-strip-banner": "^2.0.0",
-    "rollup-plugin-terser": "^6.1.0",
-    "rollup-plugin-visualizer": "^5.5.0",
     "rtlcss": "^3.3.0",
     "sass": "^1.33.0",
     "sass-loader": "10",
@@ -333,7 +332,7 @@
     "type": "git",
     "url": "https://github.com/wfp/ui.git"
   },
-  "types": "src/types/index.d.ts",
+  "types": "es/index.d.ts",
   "jest": {
     "collectCoverageFrom": [
       "src/components/**/*.js",

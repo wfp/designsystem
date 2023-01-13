@@ -3,7 +3,7 @@ import NextLink from 'next/link';
 import { useRouter } from 'next/router';
 import {
   Button,
-  MainNavigationExternal,
+  MainNavigation,
   MainNavigationItem,
   BannerNavigation,
   Link,
@@ -38,7 +38,7 @@ export default function Navigation({ children }) {
       <BannerNavigation className={styles.bannerNavigation}>
         <span>🚧 This website is work in progress 👷</span>
       </BannerNavigation>
-      <MainNavigationExternal
+      <MainNavigation
         logo={
           <NextLink href="./">
             <a>UN core</a>
@@ -68,7 +68,7 @@ export default function Navigation({ children }) {
             GitHub
           </Button>
         </NextLink>
-      </MainNavigationExternal>
+      </MainNavigation>
     </>
   );
 }

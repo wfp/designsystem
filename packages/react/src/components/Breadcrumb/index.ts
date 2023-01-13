@@ -1,2 +1,2 @@
 export * from './Breadcrumb.Skeleton';
-export default from './Breadcrumb';
+export { default } from './Breadcrumb';

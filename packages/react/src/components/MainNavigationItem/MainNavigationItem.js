@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import classNames from 'classnames';
 import { Close, CaretDown } from '@un/icons-react';
-import { withUNCoreSettings } from '../UNCoreSettings';
+// import { withUNCoreSettings } from '../UNCoreSettings';
 import MainNavigationContext from '../MainNavigation/MainNavigationContext';
 import useSettings from '../../hooks/useSettings';
 
@@ -112,4 +112,4 @@ MainNavigationItem.propTypes = {
   subNavigation: PropTypes.node,
 };
 
-export default withUNCoreSettings(MainNavigationItem);
+export default MainNavigationItem;

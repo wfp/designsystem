@@ -27,6 +27,7 @@ interface SelectProps extends React.SelectHTMLAttributes<HTMLSelectElement> {
   id?: string;
   disabled?: boolean;
   name?: string;
+  className?: Argument;
 }
 /** The select component allows users to choose one option from a list. It is used in forms for users to submit data. */
 

@@ -2,7 +2,7 @@ import React from 'react';
 import type { PropsWithChildren } from 'react';
 import classnames, { Argument } from 'classnames';
 import useSettings from '../../hooks/useSettings';
-import { Spacing, TextKind } from '../../types/utils';
+import { Spacing, TextKind } from '../../typesLegacy/utils';
 
 type TextProps = PropsWithChildren<{
   kind?: TextKind;

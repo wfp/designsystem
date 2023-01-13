@@ -225,7 +225,7 @@
     height: auto;
     min-height: 3rem;
     margin: 1rem 0;
-    color: var(--cds-inverse-01, var(--ui-01));
+    color: $text-primary; // var(--cds-inverse-01, var(--ui-01));
 
     .#{$prefix}--inline-notification__details {
       display: flex;
@@ -347,7 +347,7 @@
   }
 
   .#{$prefix}--inline-notification--low-contrast {
-    color: #161616;
+    //color: #161616;
   }
 
   .#{$prefix}--inline-notification--low-contrast

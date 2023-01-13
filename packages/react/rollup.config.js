@@ -8,8 +8,10 @@ const stripBanner = require('rollup-plugin-strip-banner');
 const { terser } = require('rollup-plugin-terser');
 const packageJson = require('./package.json');
 
+const typescript = require('@rollup/plugin-typescript');
+
 const baseConfig = {
-  input: './src/index.js',
+  input: './src/index.ts',
   external: [
     ...Object.keys(packageJson.peerDependencies),
     ...Object.keys(packageJson.dependencies),
@@ -19,6 +21,12 @@ const baseConfig = {
     nodeResolve(),
     commonjs({
       include: /node_modules/,
+    }),
+    typescript({
+      compilerOptions: {
+        declaration: true,
+      },
+      exclude: ['**/__tests__', '**/*.test.ts', '**/*.stories.tsx'],
     }),
     babel({
       babelrc: false,
@@ -34,6 +42,7 @@ const baseConfig = {
           },
         ],
         '@babel/preset-react',
+        '@babel/preset-typescript',
       ],
       plugins: [
         'dev-expression',
@@ -61,16 +70,21 @@ const umdBundleConfig = {
   },
   external: [...umdExternalDependencies, 'prop-types'],
   output: {
-    name: 'WfpUiReact',
-    format: 'umd',
-    globals: {
-      classnames: 'classNames',
-      'prop-types': 'PropTypes',
-      react: 'React',
-      'react-dom': 'ReactDOM',
-      //'@un/icons': 'WfpIcons',
-    },
+    file: 'es/index.js',
+    format: 'es',
+    exports: 'named',
   },
+  /*{
+      name: 'WfpUiReact',
+      format: 'umd',
+      globals: {
+        classnames: 'classNames',
+        'prop-types': 'PropTypes',
+        react: 'React',
+        'react-dom': 'ReactDOM',
+        //'@un/icons': 'WfpIcons',
+      },
+    },*/
 };
 
 module.exports = [
@@ -106,7 +120,21 @@ module.exports = [
     ],
     output: {
       ...umdBundleConfig.output,
-      file: 'umd/wfp-ui-react.js',
+      format: 'esm',
+      file: 'es/index.js',
+    },
+  },
+  {
+    ...umdBundleConfig,
+    plugins: [
+      ...baseConfig.plugins,
+      replace({
+        'process.env.NODE_ENV': JSON.stringify('development'),
+      }),
+    ],
+    output: {
+      ...umdBundleConfig.output,
+      file: 'umd/index.js',
     },
   },
 
@@ -123,7 +151,7 @@ module.exports = [
     ],
     output: {
       ...umdBundleConfig.output,
-      file: 'umd/wfp-ui-react.min.js',
+      file: 'umd/index.min.js',
     },
   },
 ];

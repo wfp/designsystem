@@ -1,6 +1,6 @@
-const { default: ModuleHeader } = require('./ModuleHeader');
+//const { default: ModuleHeader } = require('./ModuleHeader');
 
-export Module from './Module';
-export ModuleBody from './ModuleBody';
-export ModuleHeader from './ModuleHeader';
-export ModuleFooter from './ModuleFooter';
+export { default as Module } from './Module';
+export { default as ModuleBody } from './ModuleBody';
+export { default as ModuleHeader } from './ModuleHeader';
+export { default as ModuleFooter } from './ModuleFooter';

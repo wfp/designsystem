@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React, { useState } from 'react';
 import classnames from 'classnames';
 import useSettings from '../../hooks/useSettings';
-import { NotificationIcon, NotificationTextDetails } from '../Notification';
+import { NotificationIcon, NotificationTextDetails } from './Notification';
 export function BlockNotification({
   actions,
   advancedActions,

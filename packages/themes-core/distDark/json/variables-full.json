@@ -1,0 +1,2392 @@
+{
+  "description": "",
+  "type": "color",
+  "value": "#0779f1ff",
+  "blendMode": "normal",
+  "extensions": {
+    "org.lukasoppermann.figmaDesignTokens": {
+      "styleId": "S:a6cee0e73a344c92de9f7629ce3d14f6af789b51,",
+      "exportKey": "color"
+    }
+  },
+  "brand": {
+    "description": "Primary brand color",
+    "type": "color",
+    "value": "#007dbcff",
+    "blendMode": "normal",
+    "extensions": {
+      "org.lukasoppermann.figmaDesignTokens": {
+        "styleId": "S:4c0065c61a56db844258493f5c61c3213cea88f5,",
+        "exportKey": "color"
+      }
+    },
+    "filePath": "tokens/design-tokens.tokens.json",
+    "isSource": true,
+    "original": {
+      "description": "Primary brand color",
+      "type": "color",
+      "value": "#007dbcff",
+      "blendMode": "normal",
+      "extensions": {
+        "org.lukasoppermann.figmaDesignTokens": {
+          "styleId": "S:4c0065c61a56db844258493f5c61c3213cea88f5,",
+          "exportKey": "color"
+        }
+      }
+    },
+    "name": "brand",
+    "attributes": {
+      "description": "Primary brand color",
+      "type": "color",
+      "value": "#007dbcff",
+      "blendMode": "normal",
+      "extensions": {
+        "org.lukasoppermann.figmaDesignTokens": {
+          "styleId": "S:4c0065c61a56db844258493f5c61c3213cea88f5,",
+          "exportKey": "color"
+        }
+      },
+      "filePath": "tokens/design-tokens.tokens.json",
+      "isSource": true,
+      "original": {
+        "description": "Primary brand color",
+        "type": "color",
+        "value": "#007dbcff",
+        "blendMode": "normal",
+        "extensions": {
+          "org.lukasoppermann.figmaDesignTokens": {
+            "styleId": "S:4c0065c61a56db844258493f5c61c3213cea88f5,",
+            "exportKey": "color"
+          }
+        }
+      },
+      "name": "brand",
+      "attributes": {},
+      "path": [
+        "brand"
+      ],
+      "cssName": "brand"
+    },
+    "path": [
+      "brand"
+    ],
+    "cssName": "brand"
+  },
+  "field": {
+    "description": "",
+    "type": "color",
+    "value": "#262e34ff",
+    "blendMode": "normal",
+    "extensions": {
+      "org.lukasoppermann.figmaDesignTokens": {
+        "styleId": "S:47e779de51318f2e8837b6e6ba0a03c0c24d4ffd,",
+        "exportKey": "color"
+      }
+    },
+    "filePath": "tokens/design-tokens.tokens.json",
+    "isSource": true,
+    "original": {
+      "description": "",
+      "type": "color",
+      "value": "#262e34ff",
+      "blendMode": "normal",
+      "extensions": {
+        "org.lukasoppermann.figmaDesignTokens": {
+          "styleId": "S:47e779de51318f2e8837b6e6ba0a03c0c24d4ffd,",
+          "exportKey": "color"
+        }
+      }
+    },
+    "name": "field",
+    "attributes": {
+      "description": "",
+      "type": "color",
+      "value": "#262e34ff",
+      "blendMode": "normal",
+      "extensions": {
+        "org.lukasoppermann.figmaDesignTokens": {
+          "styleId": "S:47e779de51318f2e8837b6e6ba0a03c0c24d4ffd,",
+          "exportKey": "color"
+        }
+      },
+      "filePath": "tokens/design-tokens.tokens.json",
+      "isSource": true,
+      "original": {
+        "description": "",
+        "type": "color",
+        "value": "#262e34ff",
+        "blendMode": "normal",
+        "extensions": {
+          "org.lukasoppermann.figmaDesignTokens": {
+            "styleId": "S:47e779de51318f2e8837b6e6ba0a03c0c24d4ffd,",
+            "exportKey": "color"
+          }
+        }
+      },
+      "name": "field",
+      "attributes": {},
+      "path": [
+        "field"
+      ],
+      "cssName": "field"
+    },
+    "path": [
+      "field"
+    ],
+    "cssName": "field"
+  },
+  "field border": {
+    "description": "",
+    "type": "color",
+    "value": "#3e4c54ff",
+    "blendMode": "normal",
+    "extensions": {
+      "org.lukasoppermann.figmaDesignTokens": {
+        "styleId": "S:2064c8a51409415946236c9e60605fbb61703772,",
+        "exportKey": "color"
+      }
+    },
+    "filePath": "tokens/design-tokens.tokens.json",
+    "isSource": true,
+    "original": {
+      "description": "",
+      "type": "color",
+      "value": "#3e4c54ff",
+      "blendMode": "normal",
+      "extensions": {
+        "org.lukasoppermann.figmaDesignTokens": {
+          "styleId": "S:2064c8a51409415946236c9e60605fbb61703772,",
+          "exportKey": "color"
+        }
+      }
+    },
+    "name": "field border",
+    "attributes": {
+      "description": "",
+      "type": "color",
+      "value": "#3e4c54ff",
+      "blendMode": "normal",
+      "extensions": {
+        "org.lukasoppermann.figmaDesignTokens": {
+          "styleId": "S:2064c8a51409415946236c9e60605fbb61703772,",
+          "exportKey": "color"
+        }
+      },
+      "filePath": "tokens/design-tokens.tokens.json",
+      "isSource": true,
+      "original": {
+        "description": "",
+        "type": "color",
+        "value": "#3e4c54ff",
+        "blendMode": "normal",
+        "extensions": {
+          "org.lukasoppermann.figmaDesignTokens": {
+            "styleId": "S:2064c8a51409415946236c9e60605fbb61703772,",
+            "exportKey": "color"
+          }
+        }
+      },
+      "name": "field border",
+      "attributes": {},
+      "path": [
+        "field border"
+      ],
+      "cssName": "field-border"
+    },
+    "path": [
+      "field border"
+    ],
+    "cssName": "field-border"
+  },
+  "background": {
+    "main": {
+      "description": "",
+      "type": "color",
+      "value": "#121517ff",
+      "blendMode": "normal",
+      "extensions": {
+        "org.lukasoppermann.figmaDesignTokens": {
+          "styleId": "S:29c62288b9fe82e443f80126fd3a39c07b713e1c,",
+          "exportKey": "color"
+        }
+      },
+      "filePath": "tokens/design-tokens.tokens.json",
+      "isSource": true,
+      "original": {
+        "description": "",
+        "type": "color",
+        "value": "#121517ff",
+        "blendMode": "normal",
+        "extensions": {
+          "org.lukasoppermann.figmaDesignTokens": {
+            "styleId": "S:29c62288b9fe82e443f80126fd3a39c07b713e1c,",
+            "exportKey": "color"
+          }
+        }
+      },
+      "name": "main",
+      "attributes": {
+        "description": "",
+        "type": "color",
+        "value": "#121517ff",
+        "blendMode": "normal",
+        "extensions": {
+          "org.lukasoppermann.figmaDesignTokens": {
+            "styleId": "S:29c62288b9fe82e443f80126fd3a39c07b713e1c,",
+            "exportKey": "color"
+          }
+        },
+        "filePath": "tokens/design-tokens.tokens.json",
+        "isSource": true,
+        "original": {
+          "description": "",
+          "type": "color",
+          "value": "#121517ff",
+          "blendMode": "normal",
+          "extensions": {
+            "org.lukasoppermann.figmaDesignTokens": {
+              "styleId": "S:29c62288b9fe82e443f80126fd3a39c07b713e1c,",
+              "exportKey": "color"
+            }
+          }
+        },
+        "name": "main",
+        "attributes": {},
+        "path": [
+          "background",
+          "main"
+        ],
+        "cssName": "background-main"
+      },
+      "path": [
+        "background",
+        "main"
+      ],
+      "cssName": "background-main"
+    },
+    "inverse hover": {
+      "description": "",
+      "type": "color",
+      "value": "#222b32ff",
+      "blendMode": "normal",
+      "extensions": {
+        "org.lukasoppermann.figmaDesignTokens": {
+          "styleId": "S:30909d6deb1428a9f184aa0aa615e25cb89054c3,",
+          "exportKey": "color"
+        }
+      },
+      "filePath": "tokens/design-tokens.tokens.json",
+      "isSource": true,
+      "original": {
+        "description": "",
+        "type": "color",
+        "value": "#222b32ff",
+        "blendMode": "normal",
+        "extensions": {
+          "org.lukasoppermann.figmaDesignTokens": {
+            "styleId": "S:30909d6deb1428a9f184aa0aa615e25cb89054c3,",
+            "exportKey": "color"
+          }
+        }
+      },
+      "name": "inverse hover",
+      "attributes": {
+        "description": "",
+        "type": "color",
+        "value": "#222b32ff",
+        "blendMode": "normal",
+        "extensions": {
+          "org.lukasoppermann.figmaDesignTokens": {
+            "styleId": "S:30909d6deb1428a9f184aa0aa615e25cb89054c3,",
+            "exportKey": "color"
+          }
+        },
+        "filePath": "tokens/design-tokens.tokens.json",
+        "isSource": true,
+        "original": {
+          "description": "",
+          "type": "color",
+          "value": "#222b32ff",
+          "blendMode": "normal",
+          "extensions": {
+            "org.lukasoppermann.figmaDesignTokens": {
+              "styleId": "S:30909d6deb1428a9f184aa0aa615e25cb89054c3,",
+              "exportKey": "color"
+            }
+          }
+        },
+        "name": "inverse hover",
+        "attributes": {},
+        "path": [
+          "background",
+          "inverse hover"
+        ],
+        "cssName": "background-inverse-hover"
+      },
+      "path": [
+        "background",
+        "inverse hover"
+      ],
+      "cssName": "background-inverse-hover"
+    },
+    "inverse": {
+      "description": "",
+      "type": "color",
+      "value": "#121a1eff",
+      "blendMode": "normal",
+      "extensions": {
+        "org.lukasoppermann.figmaDesignTokens": {
+          "styleId": "S:e048e37488083ea8177a45a4ba1f5d2d55b576a1,",
+          "exportKey": "color"
+        }
+      },
+      "filePath": "tokens/design-tokens.tokens.json",
+      "isSource": true,
+      "original": {
+        "description": "",
+        "type": "color",
+        "value": "#121a1eff",
+        "blendMode": "normal",
+        "extensions": {
+          "org.lukasoppermann.figmaDesignTokens": {
+            "styleId": "S:e048e37488083ea8177a45a4ba1f5d2d55b576a1,",
+            "exportKey": "color"
+          }
+        }
+      },
+      "name": "inverse",
+      "attributes": {
+        "description": "",
+        "type": "color",
+        "value": "#121a1eff",
+        "blendMode": "normal",
+        "extensions": {
+          "org.lukasoppermann.figmaDesignTokens": {
+            "styleId": "S:e048e37488083ea8177a45a4ba1f5d2d55b576a1,",
+            "exportKey": "color"
+          }
+        },
+        "filePath": "tokens/design-tokens.tokens.json",
+        "isSource": true,
+        "original": {
+          "description": "",
+          "type": "color",
+          "value": "#121a1eff",
+          "blendMode": "normal",
+          "extensions": {
+            "org.lukasoppermann.figmaDesignTokens": {
+              "styleId": "S:e048e37488083ea8177a45a4ba1f5d2d55b576a1,",
+              "exportKey": "color"
+            }
+          }
+        },
+        "name": "inverse",
+        "attributes": {},
+        "path": [
+          "background",
+          "inverse"
+        ],
+        "cssName": "background-inverse"
+      },
+      "path": [
+        "background",
+        "inverse"
+      ],
+      "cssName": "background-inverse"
+    }
+  },
+  "text": {
+    "primary": {
+      "description": "",
+      "type": "color",
+      "value": "#ffffffff",
+      "blendMode": "normal",
+      "extensions": {
+        "org.lukasoppermann.figmaDesignTokens": {
+          "styleId": "S:c8bf447a25f037d5e9c683f6b766c8778b2bc78a,",
+          "exportKey": "color"
+        }
+      },
+      "filePath": "tokens/design-tokens.tokens.json",
+      "isSource": true,
+      "original": {
+        "description": "",
+        "type": "color",
+        "value": "#ffffffff",
+        "blendMode": "normal",
+        "extensions": {
+          "org.lukasoppermann.figmaDesignTokens": {
+            "styleId": "S:c8bf447a25f037d5e9c683f6b766c8778b2bc78a,",
+            "exportKey": "color"
+          }
+        }
+      },
+      "name": "primary",
+      "attributes": {
+        "description": "",
+        "type": "color",
+        "value": "#ffffffff",
+        "blendMode": "normal",
+        "extensions": {
+          "org.lukasoppermann.figmaDesignTokens": {
+            "styleId": "S:c8bf447a25f037d5e9c683f6b766c8778b2bc78a,",
+            "exportKey": "color"
+          }
+        },
+        "filePath": "tokens/design-tokens.tokens.json",
+        "isSource": true,
+        "original": {
+          "description": "",
+          "type": "color",
+          "value": "#ffffffff",
+          "blendMode": "normal",
+          "extensions": {
+            "org.lukasoppermann.figmaDesignTokens": {
+              "styleId": "S:c8bf447a25f037d5e9c683f6b766c8778b2bc78a,",
+              "exportKey": "color"
+            }
+          }
+        },
+        "name": "primary",
+        "attributes": {},
+        "path": [
+          "text",
+          "primary"
+        ],
+        "cssName": "text-primary"
+      },
+      "path": [
+        "text",
+        "primary"
+      ],
+      "cssName": "text-primary"
+    },
+    "on color": {
+      "description": "",
+      "type": "color",
+      "value": "#fafafaff",
+      "blendMode": "normal",
+      "extensions": {
+        "org.lukasoppermann.figmaDesignTokens": {
+          "styleId": "S:f3998ac53149eab02bc437d28432e8f9bd4dd633,",
+          "exportKey": "color"
+        }
+      },
+      "filePath": "tokens/design-tokens.tokens.json",
+      "isSource": true,
+      "original": {
+        "description": "",
+        "type": "color",
+        "value": "#fafafaff",
+        "blendMode": "normal",
+        "extensions": {
+          "org.lukasoppermann.figmaDesignTokens": {
+            "styleId": "S:f3998ac53149eab02bc437d28432e8f9bd4dd633,",
+            "exportKey": "color"
+          }
+        }
+      },
+      "name": "on color",
+      "attributes": {
+        "description": "",
+        "type": "color",
+        "value": "#fafafaff",
+        "blendMode": "normal",
+        "extensions": {
+          "org.lukasoppermann.figmaDesignTokens": {
+            "styleId": "S:f3998ac53149eab02bc437d28432e8f9bd4dd633,",
+            "exportKey": "color"
+          }
+        },
+        "filePath": "tokens/design-tokens.tokens.json",
+        "isSource": true,
+        "original": {
+          "description": "",
+          "type": "color",
+          "value": "#fafafaff",
+          "blendMode": "normal",
+          "extensions": {
+            "org.lukasoppermann.figmaDesignTokens": {
+              "styleId": "S:f3998ac53149eab02bc437d28432e8f9bd4dd633,",
+              "exportKey": "color"
+            }
+          }
+        },
+        "name": "on color",
+        "attributes": {},
+        "path": [
+          "text",
+          "on color"
+        ],
+        "cssName": "text-on-color"
+      },
+      "path": [
+        "text",
+        "on color"
+      ],
+      "cssName": "text-on-color"
+    },
+    "secondary": {
+      "description": "",
+      "type": "color",
+      "value": "#5a6872ff",
+      "blendMode": "normal",
+      "extensions": {
+        "org.lukasoppermann.figmaDesignTokens": {
+          "styleId": "S:60d668482301119620d453012aaef2225550da3d,",
+          "exportKey": "color"
+        }
+      },
+      "filePath": "tokens/design-tokens.tokens.json",
+      "isSource": true,
+      "original": {
+        "description": "",
+        "type": "color",
+        "value": "#5a6872ff",
+        "blendMode": "normal",
+        "extensions": {
+          "org.lukasoppermann.figmaDesignTokens": {
+            "styleId": "S:60d668482301119620d453012aaef2225550da3d,",
+            "exportKey": "color"
+          }
+        }
+      },
+      "name": "secondary",
+      "attributes": {
+        "description": "",
+        "type": "color",
+        "value": "#5a6872ff",
+        "blendMode": "normal",
+        "extensions": {
+          "org.lukasoppermann.figmaDesignTokens": {
+            "styleId": "S:60d668482301119620d453012aaef2225550da3d,",
+            "exportKey": "color"
+          }
+        },
+        "filePath": "tokens/design-tokens.tokens.json",
+        "isSource": true,
+        "original": {
+          "description": "",
+          "type": "color",
+          "value": "#5a6872ff",
+          "blendMode": "normal",
+          "extensions": {
+            "org.lukasoppermann.figmaDesignTokens": {
+              "styleId": "S:60d668482301119620d453012aaef2225550da3d,",
+              "exportKey": "color"
+            }
+          }
+        },
+        "name": "secondary",
+        "attributes": {},
+        "path": [
+          "text",
+          "secondary"
+        ],
+        "cssName": "text-secondary"
+      },
+      "path": [
+        "text",
+        "secondary"
+      ],
+      "cssName": "text-secondary"
+    }
+  },
+  "layer": {
+    "primary": {
+      "description": "",
+      "type": "color",
+      "value": "#1b2327ff",
+      "blendMode": "normal",
+      "extensions": {
+        "org.lukasoppermann.figmaDesignTokens": {
+          "styleId": "S:bc5d0ab77c26a0c5aee6ec64ff2ad994cdba30de,",
+          "exportKey": "color"
+        }
+      },
+      "filePath": "tokens/design-tokens.tokens.json",
+      "isSource": true,
+      "original": {
+        "description": "",
+        "type": "color",
+        "value": "#1b2327ff",
+        "blendMode": "normal",
+        "extensions": {
+          "org.lukasoppermann.figmaDesignTokens": {
+            "styleId": "S:bc5d0ab77c26a0c5aee6ec64ff2ad994cdba30de,",
+            "exportKey": "color"
+          }
+        }
+      },
+      "name": "primary",
+      "attributes": {
+        "description": "",
+        "type": "color",
+        "value": "#1b2327ff",
+        "blendMode": "normal",
+        "extensions": {
+          "org.lukasoppermann.figmaDesignTokens": {
+            "styleId": "S:bc5d0ab77c26a0c5aee6ec64ff2ad994cdba30de,",
+            "exportKey": "color"
+          }
+        },
+        "filePath": "tokens/design-tokens.tokens.json",
+        "isSource": true,
+        "original": {
+          "description": "",
+          "type": "color",
+          "value": "#1b2327ff",
+          "blendMode": "normal",
+          "extensions": {
+            "org.lukasoppermann.figmaDesignTokens": {
+              "styleId": "S:bc5d0ab77c26a0c5aee6ec64ff2ad994cdba30de,",
+              "exportKey": "color"
+            }
+          }
+        },
+        "name": "primary",
+        "attributes": {},
+        "path": [
+          "layer",
+          "primary"
+        ],
+        "cssName": "layer-primary"
+      },
+      "path": [
+        "layer",
+        "primary"
+      ],
+      "cssName": "layer-primary"
+    }
+  },
+  "button": {
+    "primary": {
+      "description": "",
+      "type": "color",
+      "value": "#0779f1ff",
+      "blendMode": "normal",
+      "extensions": {
+        "org.lukasoppermann.figmaDesignTokens": {
+          "styleId": "S:17e28eff9b80806f4b9cc4f470a12ca8fd39060b,",
+          "exportKey": "color"
+        }
+      },
+      "filePath": "tokens/design-tokens.tokens.json",
+      "isSource": true,
+      "original": {
+        "description": "",
+        "type": "color",
+        "value": "#0779f1ff",
+        "blendMode": "normal",
+        "extensions": {
+          "org.lukasoppermann.figmaDesignTokens": {
+            "styleId": "S:17e28eff9b80806f4b9cc4f470a12ca8fd39060b,",
+            "exportKey": "color"
+          }
+        }
+      },
+      "name": "primary",
+      "attributes": {
+        "description": "",
+        "type": "color",
+        "value": "#0779f1ff",
+        "blendMode": "normal",
+        "extensions": {
+          "org.lukasoppermann.figmaDesignTokens": {
+            "styleId": "S:17e28eff9b80806f4b9cc4f470a12ca8fd39060b,",
+            "exportKey": "color"
+          }
+        },
+        "filePath": "tokens/design-tokens.tokens.json",
+        "isSource": true,
+        "original": {
+          "description": "",
+          "type": "color",
+          "value": "#0779f1ff",
+          "blendMode": "normal",
+          "extensions": {
+            "org.lukasoppermann.figmaDesignTokens": {
+              "styleId": "S:17e28eff9b80806f4b9cc4f470a12ca8fd39060b,",
+              "exportKey": "color"
+            }
+          }
+        },
+        "name": "primary",
+        "attributes": {},
+        "path": [
+          "button",
+          "primary"
+        ],
+        "cssName": "button-primary"
+      },
+      "path": [
+        "button",
+        "primary"
+      ],
+      "cssName": "button-primary"
+    },
+    "primary hover": {
+      "description": "",
+      "type": "color",
+      "value": "#2889ccff",
+      "blendMode": "normal",
+      "extensions": {
+        "org.lukasoppermann.figmaDesignTokens": {
+          "styleId": "S:a4f0751811ca100afbe8b85da07e7c62228dad2f,",
+          "exportKey": "color"
+        }
+      },
+      "filePath": "tokens/design-tokens.tokens.json",
+      "isSource": true,
+      "original": {
+        "description": "",
+        "type": "color",
+        "value": "#2889ccff",
+        "blendMode": "normal",
+        "extensions": {
+          "org.lukasoppermann.figmaDesignTokens": {
+            "styleId": "S:a4f0751811ca100afbe8b85da07e7c62228dad2f,",
+            "exportKey": "color"
+          }
+        }
+      },
+      "name": "primary hover",
+      "attributes": {
+        "description": "",
+        "type": "color",
+        "value": "#2889ccff",
+        "blendMode": "normal",
+        "extensions": {
+          "org.lukasoppermann.figmaDesignTokens": {
+            "styleId": "S:a4f0751811ca100afbe8b85da07e7c62228dad2f,",
+            "exportKey": "color"
+          }
+        },
+        "filePath": "tokens/design-tokens.tokens.json",
+        "isSource": true,
+        "original": {
+          "description": "",
+          "type": "color",
+          "value": "#2889ccff",
+          "blendMode": "normal",
+          "extensions": {
+            "org.lukasoppermann.figmaDesignTokens": {
+              "styleId": "S:a4f0751811ca100afbe8b85da07e7c62228dad2f,",
+              "exportKey": "color"
+            }
+          }
+        },
+        "name": "primary hover",
+        "attributes": {},
+        "path": [
+          "button",
+          "primary hover"
+        ],
+        "cssName": "button-primary-hover"
+      },
+      "path": [
+        "button",
+        "primary hover"
+      ],
+      "cssName": "button-primary-hover"
+    },
+    "secondary hover": {
+      "description": "",
+      "type": "color",
+      "value": "#2889ccff",
+      "blendMode": "normal",
+      "extensions": {
+        "org.lukasoppermann.figmaDesignTokens": {
+          "styleId": "S:c104ba0d5e03dd67efe1e602af4f7bedefe573a4,",
+          "exportKey": "color"
+        }
+      },
+      "filePath": "tokens/design-tokens.tokens.json",
+      "isSource": true,
+      "original": {
+        "description": "",
+        "type": "color",
+        "value": "#2889ccff",
+        "blendMode": "normal",
+        "extensions": {
+          "org.lukasoppermann.figmaDesignTokens": {
+            "styleId": "S:c104ba0d5e03dd67efe1e602af4f7bedefe573a4,",
+            "exportKey": "color"
+          }
+        }
+      },
+      "name": "secondary hover",
+      "attributes": {
+        "description": "",
+        "type": "color",
+        "value": "#2889ccff",
+        "blendMode": "normal",
+        "extensions": {
+          "org.lukasoppermann.figmaDesignTokens": {
+            "styleId": "S:c104ba0d5e03dd67efe1e602af4f7bedefe573a4,",
+            "exportKey": "color"
+          }
+        },
+        "filePath": "tokens/design-tokens.tokens.json",
+        "isSource": true,
+        "original": {
+          "description": "",
+          "type": "color",
+          "value": "#2889ccff",
+          "blendMode": "normal",
+          "extensions": {
+            "org.lukasoppermann.figmaDesignTokens": {
+              "styleId": "S:c104ba0d5e03dd67efe1e602af4f7bedefe573a4,",
+              "exportKey": "color"
+            }
+          }
+        },
+        "name": "secondary hover",
+        "attributes": {},
+        "path": [
+          "button",
+          "secondary hover"
+        ],
+        "cssName": "button-secondary-hover"
+      },
+      "path": [
+        "button",
+        "secondary hover"
+      ],
+      "cssName": "button-secondary-hover"
+    },
+    "tertiary": {
+      "description": "",
+      "type": "color",
+      "value": "#263443ff",
+      "blendMode": "normal",
+      "extensions": {
+        "org.lukasoppermann.figmaDesignTokens": {
+          "styleId": "S:88093ef42999dcb3afa8d618481e3b0a6320aa2c,",
+          "exportKey": "color"
+        }
+      },
+      "filePath": "tokens/design-tokens.tokens.json",
+      "isSource": true,
+      "original": {
+        "description": "",
+        "type": "color",
+        "value": "#263443ff",
+        "blendMode": "normal",
+        "extensions": {
+          "org.lukasoppermann.figmaDesignTokens": {
+            "styleId": "S:88093ef42999dcb3afa8d618481e3b0a6320aa2c,",
+            "exportKey": "color"
+          }
+        }
+      },
+      "name": "tertiary",
+      "attributes": {
+        "description": "",
+        "type": "color",
+        "value": "#263443ff",
+        "blendMode": "normal",
+        "extensions": {
+          "org.lukasoppermann.figmaDesignTokens": {
+            "styleId": "S:88093ef42999dcb3afa8d618481e3b0a6320aa2c,",
+            "exportKey": "color"
+          }
+        },
+        "filePath": "tokens/design-tokens.tokens.json",
+        "isSource": true,
+        "original": {
+          "description": "",
+          "type": "color",
+          "value": "#263443ff",
+          "blendMode": "normal",
+          "extensions": {
+            "org.lukasoppermann.figmaDesignTokens": {
+              "styleId": "S:88093ef42999dcb3afa8d618481e3b0a6320aa2c,",
+              "exportKey": "color"
+            }
+          }
+        },
+        "name": "tertiary",
+        "attributes": {},
+        "path": [
+          "button",
+          "tertiary"
+        ],
+        "cssName": "button-tertiary"
+      },
+      "path": [
+        "button",
+        "tertiary"
+      ],
+      "cssName": "button-tertiary"
+    },
+    "tertiary hover": {
+      "description": "",
+      "type": "color",
+      "value": "#2e3e4fff",
+      "blendMode": "normal",
+      "extensions": {
+        "org.lukasoppermann.figmaDesignTokens": {
+          "styleId": "S:baf465c7de53abd5d62980adcfca92e2149c3c6b,",
+          "exportKey": "color"
+        }
+      },
+      "filePath": "tokens/design-tokens.tokens.json",
+      "isSource": true,
+      "original": {
+        "description": "",
+        "type": "color",
+        "value": "#2e3e4fff",
+        "blendMode": "normal",
+        "extensions": {
+          "org.lukasoppermann.figmaDesignTokens": {
+            "styleId": "S:baf465c7de53abd5d62980adcfca92e2149c3c6b,",
+            "exportKey": "color"
+          }
+        }
+      },
+      "name": "tertiary hover",
+      "attributes": {
+        "description": "",
+        "type": "color",
+        "value": "#2e3e4fff",
+        "blendMode": "normal",
+        "extensions": {
+          "org.lukasoppermann.figmaDesignTokens": {
+            "styleId": "S:baf465c7de53abd5d62980adcfca92e2149c3c6b,",
+            "exportKey": "color"
+          }
+        },
+        "filePath": "tokens/design-tokens.tokens.json",
+        "isSource": true,
+        "original": {
+          "description": "",
+          "type": "color",
+          "value": "#2e3e4fff",
+          "blendMode": "normal",
+          "extensions": {
+            "org.lukasoppermann.figmaDesignTokens": {
+              "styleId": "S:baf465c7de53abd5d62980adcfca92e2149c3c6b,",
+              "exportKey": "color"
+            }
+          }
+        },
+        "name": "tertiary hover",
+        "attributes": {},
+        "path": [
+          "button",
+          "tertiary hover"
+        ],
+        "cssName": "button-tertiary-hover"
+      },
+      "path": [
+        "button",
+        "tertiary hover"
+      ],
+      "cssName": "button-tertiary-hover"
+    }
+  },
+  "border": {
+    "subtle": {
+      "description": "",
+      "type": "color",
+      "value": "#1f262eff",
+      "blendMode": "normal",
+      "extensions": {
+        "org.lukasoppermann.figmaDesignTokens": {
+          "styleId": "S:146bb14b32673746c83f77bb9e711c99418e53a7,",
+          "exportKey": "color"
+        }
+      },
+      "filePath": "tokens/design-tokens.tokens.json",
+      "isSource": true,
+      "original": {
+        "description": "",
+        "type": "color",
+        "value": "#1f262eff",
+        "blendMode": "normal",
+        "extensions": {
+          "org.lukasoppermann.figmaDesignTokens": {
+            "styleId": "S:146bb14b32673746c83f77bb9e711c99418e53a7,",
+            "exportKey": "color"
+          }
+        }
+      },
+      "name": "subtle",
+      "attributes": {
+        "description": "",
+        "type": "color",
+        "value": "#1f262eff",
+        "blendMode": "normal",
+        "extensions": {
+          "org.lukasoppermann.figmaDesignTokens": {
+            "styleId": "S:146bb14b32673746c83f77bb9e711c99418e53a7,",
+            "exportKey": "color"
+          }
+        },
+        "filePath": "tokens/design-tokens.tokens.json",
+        "isSource": true,
+        "original": {
+          "description": "",
+          "type": "color",
+          "value": "#1f262eff",
+          "blendMode": "normal",
+          "extensions": {
+            "org.lukasoppermann.figmaDesignTokens": {
+              "styleId": "S:146bb14b32673746c83f77bb9e711c99418e53a7,",
+              "exportKey": "color"
+            }
+          }
+        },
+        "name": "subtle",
+        "attributes": {},
+        "path": [
+          "border",
+          "subtle"
+        ],
+        "cssName": "border-subtle"
+      },
+      "path": [
+        "border",
+        "subtle"
+      ],
+      "cssName": "border-subtle"
+    },
+    "strong": {
+      "description": "",
+      "type": "color",
+      "value": "#2f3943ff",
+      "blendMode": "normal",
+      "extensions": {
+        "org.lukasoppermann.figmaDesignTokens": {
+          "styleId": "S:19207528715f6403bfc2e8dee63dcf625c1bec14,",
+          "exportKey": "color"
+        }
+      },
+      "filePath": "tokens/design-tokens.tokens.json",
+      "isSource": true,
+      "original": {
+        "description": "",
+        "type": "color",
+        "value": "#2f3943ff",
+        "blendMode": "normal",
+        "extensions": {
+          "org.lukasoppermann.figmaDesignTokens": {
+            "styleId": "S:19207528715f6403bfc2e8dee63dcf625c1bec14,",
+            "exportKey": "color"
+          }
+        }
+      },
+      "name": "strong",
+      "attributes": {
+        "description": "",
+        "type": "color",
+        "value": "#2f3943ff",
+        "blendMode": "normal",
+        "extensions": {
+          "org.lukasoppermann.figmaDesignTokens": {
+            "styleId": "S:19207528715f6403bfc2e8dee63dcf625c1bec14,",
+            "exportKey": "color"
+          }
+        },
+        "filePath": "tokens/design-tokens.tokens.json",
+        "isSource": true,
+        "original": {
+          "description": "",
+          "type": "color",
+          "value": "#2f3943ff",
+          "blendMode": "normal",
+          "extensions": {
+            "org.lukasoppermann.figmaDesignTokens": {
+              "styleId": "S:19207528715f6403bfc2e8dee63dcf625c1bec14,",
+              "exportKey": "color"
+            }
+          }
+        },
+        "name": "strong",
+        "attributes": {},
+        "path": [
+          "border",
+          "strong"
+        ],
+        "cssName": "border-strong"
+      },
+      "path": [
+        "border",
+        "strong"
+      ],
+      "cssName": "border-strong"
+    }
+  },
+  "link": {
+    "primary hover": {
+      "description": "",
+      "type": "color",
+      "value": "#369ce3ff",
+      "blendMode": "normal",
+      "extensions": {
+        "org.lukasoppermann.figmaDesignTokens": {
+          "styleId": "S:e9c0157969b52cd958c6937b28972063ffdb2a80,",
+          "exportKey": "color"
+        }
+      },
+      "filePath": "tokens/design-tokens.tokens.json",
+      "isSource": true,
+      "original": {
+        "description": "",
+        "type": "color",
+        "value": "#369ce3ff",
+        "blendMode": "normal",
+        "extensions": {
+          "org.lukasoppermann.figmaDesignTokens": {
+            "styleId": "S:e9c0157969b52cd958c6937b28972063ffdb2a80,",
+            "exportKey": "color"
+          }
+        }
+      },
+      "name": "primary hover",
+      "attributes": {
+        "description": "",
+        "type": "color",
+        "value": "#369ce3ff",
+        "blendMode": "normal",
+        "extensions": {
+          "org.lukasoppermann.figmaDesignTokens": {
+            "styleId": "S:e9c0157969b52cd958c6937b28972063ffdb2a80,",
+            "exportKey": "color"
+          }
+        },
+        "filePath": "tokens/design-tokens.tokens.json",
+        "isSource": true,
+        "original": {
+          "description": "",
+          "type": "color",
+          "value": "#369ce3ff",
+          "blendMode": "normal",
+          "extensions": {
+            "org.lukasoppermann.figmaDesignTokens": {
+              "styleId": "S:e9c0157969b52cd958c6937b28972063ffdb2a80,",
+              "exportKey": "color"
+            }
+          }
+        },
+        "name": "primary hover",
+        "attributes": {},
+        "path": [
+          "link",
+          "primary hover"
+        ],
+        "cssName": "link-primary-hover"
+      },
+      "path": [
+        "link",
+        "primary hover"
+      ],
+      "cssName": "link-primary-hover"
+    },
+    "primary": {
+      "description": "",
+      "type": "color",
+      "value": "#0779f1ff",
+      "blendMode": "normal",
+      "extensions": {
+        "org.lukasoppermann.figmaDesignTokens": {
+          "styleId": "S:f08d9a61fb2771d2962dd075e7e45ac86f9cdfb3,",
+          "exportKey": "color"
+        }
+      },
+      "filePath": "tokens/design-tokens.tokens.json",
+      "isSource": true,
+      "original": {
+        "description": "",
+        "type": "color",
+        "value": "#0779f1ff",
+        "blendMode": "normal",
+        "extensions": {
+          "org.lukasoppermann.figmaDesignTokens": {
+            "styleId": "S:f08d9a61fb2771d2962dd075e7e45ac86f9cdfb3,",
+            "exportKey": "color"
+          }
+        }
+      },
+      "name": "primary",
+      "attributes": {
+        "description": "",
+        "type": "color",
+        "value": "#0779f1ff",
+        "blendMode": "normal",
+        "extensions": {
+          "org.lukasoppermann.figmaDesignTokens": {
+            "styleId": "S:f08d9a61fb2771d2962dd075e7e45ac86f9cdfb3,",
+            "exportKey": "color"
+          }
+        },
+        "filePath": "tokens/design-tokens.tokens.json",
+        "isSource": true,
+        "original": {
+          "description": "",
+          "type": "color",
+          "value": "#0779f1ff",
+          "blendMode": "normal",
+          "extensions": {
+            "org.lukasoppermann.figmaDesignTokens": {
+              "styleId": "S:f08d9a61fb2771d2962dd075e7e45ac86f9cdfb3,",
+              "exportKey": "color"
+            }
+          }
+        },
+        "name": "primary",
+        "attributes": {},
+        "path": [
+          "link",
+          "primary"
+        ],
+        "cssName": "link-primary"
+      },
+      "path": [
+        "link",
+        "primary"
+      ],
+      "cssName": "link-primary"
+    }
+  },
+  "support": {
+    "success light": {
+      "description": "",
+      "type": "color",
+      "value": "#143416ff",
+      "blendMode": "normal",
+      "extensions": {
+        "org.lukasoppermann.figmaDesignTokens": {
+          "styleId": "S:04dfdc07f128686d4624f32006b28f8700d72b06,",
+          "exportKey": "color"
+        }
+      },
+      "filePath": "tokens/design-tokens.tokens.json",
+      "isSource": true,
+      "original": {
+        "description": "",
+        "type": "color",
+        "value": "#143416ff",
+        "blendMode": "normal",
+        "extensions": {
+          "org.lukasoppermann.figmaDesignTokens": {
+            "styleId": "S:04dfdc07f128686d4624f32006b28f8700d72b06,",
+            "exportKey": "color"
+          }
+        }
+      },
+      "name": "success light",
+      "attributes": {
+        "description": "",
+        "type": "color",
+        "value": "#143416ff",
+        "blendMode": "normal",
+        "extensions": {
+          "org.lukasoppermann.figmaDesignTokens": {
+            "styleId": "S:04dfdc07f128686d4624f32006b28f8700d72b06,",
+            "exportKey": "color"
+          }
+        },
+        "filePath": "tokens/design-tokens.tokens.json",
+        "isSource": true,
+        "original": {
+          "description": "",
+          "type": "color",
+          "value": "#143416ff",
+          "blendMode": "normal",
+          "extensions": {
+            "org.lukasoppermann.figmaDesignTokens": {
+              "styleId": "S:04dfdc07f128686d4624f32006b28f8700d72b06,",
+              "exportKey": "color"
+            }
+          }
+        },
+        "name": "success light",
+        "attributes": {},
+        "path": [
+          "support",
+          "success light"
+        ],
+        "cssName": "support-success-light"
+      },
+      "path": [
+        "support",
+        "success light"
+      ],
+      "cssName": "support-success-light"
+    },
+    "error light": {
+      "description": "",
+      "type": "color",
+      "value": "#310d11ff",
+      "blendMode": "normal",
+      "extensions": {
+        "org.lukasoppermann.figmaDesignTokens": {
+          "styleId": "S:c6e7de40d0f4ff4f2d9106c268a90bc0e8abe712,",
+          "exportKey": "color"
+        }
+      },
+      "filePath": "tokens/design-tokens.tokens.json",
+      "isSource": true,
+      "original": {
+        "description": "",
+        "type": "color",
+        "value": "#310d11ff",
+        "blendMode": "normal",
+        "extensions": {
+          "org.lukasoppermann.figmaDesignTokens": {
+            "styleId": "S:c6e7de40d0f4ff4f2d9106c268a90bc0e8abe712,",
+            "exportKey": "color"
+          }
+        }
+      },
+      "name": "error light",
+      "attributes": {
+        "description": "",
+        "type": "color",
+        "value": "#310d11ff",
+        "blendMode": "normal",
+        "extensions": {
+          "org.lukasoppermann.figmaDesignTokens": {
+            "styleId": "S:c6e7de40d0f4ff4f2d9106c268a90bc0e8abe712,",
+            "exportKey": "color"
+          }
+        },
+        "filePath": "tokens/design-tokens.tokens.json",
+        "isSource": true,
+        "original": {
+          "description": "",
+          "type": "color",
+          "value": "#310d11ff",
+          "blendMode": "normal",
+          "extensions": {
+            "org.lukasoppermann.figmaDesignTokens": {
+              "styleId": "S:c6e7de40d0f4ff4f2d9106c268a90bc0e8abe712,",
+              "exportKey": "color"
+            }
+          }
+        },
+        "name": "error light",
+        "attributes": {},
+        "path": [
+          "support",
+          "error light"
+        ],
+        "cssName": "support-error-light"
+      },
+      "path": [
+        "support",
+        "error light"
+      ],
+      "cssName": "support-error-light"
+    },
+    "warning light": {
+      "description": "",
+      "type": "color",
+      "value": "#222d32ff",
+      "blendMode": "normal",
+      "extensions": {
+        "org.lukasoppermann.figmaDesignTokens": {
+          "styleId": "S:fd5732811bd63568f215701883dd7446c731065b,",
+          "exportKey": "color"
+        }
+      },
+      "filePath": "tokens/design-tokens.tokens.json",
+      "isSource": true,
+      "original": {
+        "description": "",
+        "type": "color",
+        "value": "#222d32ff",
+        "blendMode": "normal",
+        "extensions": {
+          "org.lukasoppermann.figmaDesignTokens": {
+            "styleId": "S:fd5732811bd63568f215701883dd7446c731065b,",
+            "exportKey": "color"
+          }
+        }
+      },
+      "name": "warning light",
+      "attributes": {
+        "description": "",
+        "type": "color",
+        "value": "#222d32ff",
+        "blendMode": "normal",
+        "extensions": {
+          "org.lukasoppermann.figmaDesignTokens": {
+            "styleId": "S:fd5732811bd63568f215701883dd7446c731065b,",
+            "exportKey": "color"
+          }
+        },
+        "filePath": "tokens/design-tokens.tokens.json",
+        "isSource": true,
+        "original": {
+          "description": "",
+          "type": "color",
+          "value": "#222d32ff",
+          "blendMode": "normal",
+          "extensions": {
+            "org.lukasoppermann.figmaDesignTokens": {
+              "styleId": "S:fd5732811bd63568f215701883dd7446c731065b,",
+              "exportKey": "color"
+            }
+          }
+        },
+        "name": "warning light",
+        "attributes": {},
+        "path": [
+          "support",
+          "warning light"
+        ],
+        "cssName": "support-warning-light"
+      },
+      "path": [
+        "support",
+        "warning light"
+      ],
+      "cssName": "support-warning-light"
+    }
+  },
+  "filePath": "tokens/design-tokens.tokens.json",
+  "isSource": true,
+  "typography": {
+    "caption": {
+      "fontSize": {
+        "type": "dimension",
+        "value": 14,
+        "filePath": "tokens/typeScale.json",
+        "isSource": true,
+        "original": {
+          "type": "dimension",
+          "value": 14
+        },
+        "name": "fontSize",
+        "attributes": {
+          "type": "dimension",
+          "value": 14,
+          "filePath": "tokens/typeScale.json",
+          "isSource": true,
+          "original": {
+            "type": "dimension",
+            "value": 14
+          },
+          "name": "fontSize",
+          "attributes": {},
+          "path": [
+            "typography",
+            "caption",
+            "fontSize"
+          ],
+          "cssName": "typography-caption-font-size"
+        },
+        "path": [
+          "typography",
+          "caption",
+          "fontSize"
+        ],
+        "cssName": "typography-caption-font-size"
+      },
+      "fontWeight": {
+        "type": "string",
+        "value": "regular",
+        "filePath": "tokens/typeScale.json",
+        "isSource": true,
+        "original": {
+          "type": "string",
+          "value": "regular"
+        },
+        "name": "fontWeight",
+        "attributes": {
+          "type": "string",
+          "value": "regular",
+          "filePath": "tokens/typeScale.json",
+          "isSource": true,
+          "original": {
+            "type": "string",
+            "value": "regular"
+          },
+          "name": "fontWeight",
+          "attributes": {},
+          "path": [
+            "typography",
+            "caption",
+            "fontWeight"
+          ],
+          "cssName": "typography-caption-font-weight"
+        },
+        "path": [
+          "typography",
+          "caption",
+          "fontWeight"
+        ],
+        "cssName": "typography-caption-font-weight"
+      }
+    },
+    "helper": {
+      "fontSize": {
+        "type": "dimension",
+        "value": 14,
+        "filePath": "tokens/typeScale.json",
+        "isSource": true,
+        "original": {
+          "type": "dimension",
+          "value": 14
+        },
+        "name": "fontSize",
+        "attributes": {
+          "type": "dimension",
+          "value": 14,
+          "filePath": "tokens/typeScale.json",
+          "isSource": true,
+          "original": {
+            "type": "dimension",
+            "value": 14
+          },
+          "name": "fontSize",
+          "attributes": {},
+          "path": [
+            "typography",
+            "helper",
+            "fontSize"
+          ],
+          "cssName": "typography-helper-font-size"
+        },
+        "path": [
+          "typography",
+          "helper",
+          "fontSize"
+        ],
+        "cssName": "typography-helper-font-size"
+      },
+      "fontWeight": {
+        "type": "string",
+        "value": "regular",
+        "filePath": "tokens/typeScale.json",
+        "isSource": true,
+        "original": {
+          "type": "string",
+          "value": "regular"
+        },
+        "name": "fontWeight",
+        "attributes": {
+          "type": "string",
+          "value": "regular",
+          "filePath": "tokens/typeScale.json",
+          "isSource": true,
+          "original": {
+            "type": "string",
+            "value": "regular"
+          },
+          "name": "fontWeight",
+          "attributes": {},
+          "path": [
+            "typography",
+            "helper",
+            "fontWeight"
+          ],
+          "cssName": "typography-helper-font-weight"
+        },
+        "path": [
+          "typography",
+          "helper",
+          "fontWeight"
+        ],
+        "cssName": "typography-helper-font-weight"
+      }
+    },
+    "input": {
+      "fontSize": {
+        "type": "dimension",
+        "value": 16,
+        "filePath": "tokens/typeScale.json",
+        "isSource": true,
+        "original": {
+          "type": "dimension",
+          "value": 16
+        },
+        "name": "fontSize",
+        "attributes": {
+          "type": "dimension",
+          "value": 16,
+          "filePath": "tokens/typeScale.json",
+          "isSource": true,
+          "original": {
+            "type": "dimension",
+            "value": 16
+          },
+          "name": "fontSize",
+          "attributes": {},
+          "path": [
+            "typography",
+            "input",
+            "fontSize"
+          ],
+          "cssName": "typography-input-font-size"
+        },
+        "path": [
+          "typography",
+          "input",
+          "fontSize"
+        ],
+        "cssName": "typography-input-font-size"
+      },
+      "fontWeight": {
+        "type": "string",
+        "value": "regular",
+        "filePath": "tokens/typeScale.json",
+        "isSource": true,
+        "original": {
+          "type": "string",
+          "value": "regular"
+        },
+        "name": "fontWeight",
+        "attributes": {
+          "type": "string",
+          "value": "regular",
+          "filePath": "tokens/typeScale.json",
+          "isSource": true,
+          "original": {
+            "type": "string",
+            "value": "regular"
+          },
+          "name": "fontWeight",
+          "attributes": {},
+          "path": [
+            "typography",
+            "input",
+            "fontWeight"
+          ],
+          "cssName": "typography-input-font-weight"
+        },
+        "path": [
+          "typography",
+          "input",
+          "fontWeight"
+        ],
+        "cssName": "typography-input-font-weight"
+      }
+    },
+    "story-title": {
+      "fontSize": {
+        "type": "dimension",
+        "value": 50,
+        "filePath": "tokens/typeScale.json",
+        "isSource": true,
+        "original": {
+          "type": "dimension",
+          "value": 50
+        },
+        "name": "fontSize",
+        "attributes": {
+          "type": "dimension",
+          "value": 50,
+          "filePath": "tokens/typeScale.json",
+          "isSource": true,
+          "original": {
+            "type": "dimension",
+            "value": 50
+          },
+          "name": "fontSize",
+          "attributes": {},
+          "path": [
+            "typography",
+            "story-title",
+            "fontSize"
+          ],
+          "cssName": "typography-story-title-font-size"
+        },
+        "path": [
+          "typography",
+          "story-title",
+          "fontSize"
+        ],
+        "cssName": "typography-story-title-font-size"
+      },
+      "fontWeight": {
+        "type": "string",
+        "value": "300",
+        "filePath": "tokens/typeScale.json",
+        "isSource": true,
+        "original": {
+          "type": "string",
+          "value": "300"
+        },
+        "name": "fontWeight",
+        "attributes": {
+          "type": "string",
+          "value": "300",
+          "filePath": "tokens/typeScale.json",
+          "isSource": true,
+          "original": {
+            "type": "string",
+            "value": "300"
+          },
+          "name": "fontWeight",
+          "attributes": {},
+          "path": [
+            "typography",
+            "story-title",
+            "fontWeight"
+          ],
+          "cssName": "typography-story-title-font-weight"
+        },
+        "path": [
+          "typography",
+          "story-title",
+          "fontWeight"
+        ],
+        "cssName": "typography-story-title-font-weight"
+      }
+    },
+    "story-h1": {
+      "fontSize": {
+        "type": "dimension",
+        "value": 29,
+        "filePath": "tokens/typeScale.json",
+        "isSource": true,
+        "original": {
+          "type": "dimension",
+          "value": 29
+        },
+        "name": "fontSize",
+        "attributes": {
+          "type": "dimension",
+          "value": 29,
+          "filePath": "tokens/typeScale.json",
+          "isSource": true,
+          "original": {
+            "type": "dimension",
+            "value": 29
+          },
+          "name": "fontSize",
+          "attributes": {},
+          "path": [
+            "typography",
+            "story-h1",
+            "fontSize"
+          ],
+          "cssName": "typography-story-h1-font-size"
+        },
+        "path": [
+          "typography",
+          "story-h1",
+          "fontSize"
+        ],
+        "cssName": "typography-story-h1-font-size"
+      },
+      "fontWeight": {
+        "type": "string",
+        "value": "600",
+        "filePath": "tokens/typeScale.json",
+        "isSource": true,
+        "original": {
+          "type": "string",
+          "value": "600"
+        },
+        "name": "fontWeight",
+        "attributes": {
+          "type": "string",
+          "value": "600",
+          "filePath": "tokens/typeScale.json",
+          "isSource": true,
+          "original": {
+            "type": "string",
+            "value": "600"
+          },
+          "name": "fontWeight",
+          "attributes": {},
+          "path": [
+            "typography",
+            "story-h1",
+            "fontWeight"
+          ],
+          "cssName": "typography-story-h1-font-weight"
+        },
+        "path": [
+          "typography",
+          "story-h1",
+          "fontWeight"
+        ],
+        "cssName": "typography-story-h1-font-weight"
+      }
+    },
+    "story-h2": {
+      "fontSize": {
+        "type": "dimension",
+        "value": 25,
+        "filePath": "tokens/typeScale.json",
+        "isSource": true,
+        "original": {
+          "type": "dimension",
+          "value": 25
+        },
+        "name": "fontSize",
+        "attributes": {
+          "type": "dimension",
+          "value": 25,
+          "filePath": "tokens/typeScale.json",
+          "isSource": true,
+          "original": {
+            "type": "dimension",
+            "value": 25
+          },
+          "name": "fontSize",
+          "attributes": {},
+          "path": [
+            "typography",
+            "story-h2",
+            "fontSize"
+          ],
+          "cssName": "typography-story-h2-font-size"
+        },
+        "path": [
+          "typography",
+          "story-h2",
+          "fontSize"
+        ],
+        "cssName": "typography-story-h2-font-size"
+      },
+      "fontWeight": {
+        "type": "string",
+        "value": "600",
+        "filePath": "tokens/typeScale.json",
+        "isSource": true,
+        "original": {
+          "type": "string",
+          "value": "600"
+        },
+        "name": "fontWeight",
+        "attributes": {
+          "type": "string",
+          "value": "600",
+          "filePath": "tokens/typeScale.json",
+          "isSource": true,
+          "original": {
+            "type": "string",
+            "value": "600"
+          },
+          "name": "fontWeight",
+          "attributes": {},
+          "path": [
+            "typography",
+            "story-h2",
+            "fontWeight"
+          ],
+          "cssName": "typography-story-h2-font-weight"
+        },
+        "path": [
+          "typography",
+          "story-h2",
+          "fontWeight"
+        ],
+        "cssName": "typography-story-h2-font-weight"
+      }
+    },
+    "story-h3": {
+      "fontSize": {
+        "type": "dimension",
+        "value": 22,
+        "filePath": "tokens/typeScale.json",
+        "isSource": true,
+        "original": {
+          "type": "dimension",
+          "value": 22
+        },
+        "name": "fontSize",
+        "attributes": {
+          "type": "dimension",
+          "value": 22,
+          "filePath": "tokens/typeScale.json",
+          "isSource": true,
+          "original": {
+            "type": "dimension",
+            "value": 22
+          },
+          "name": "fontSize",
+          "attributes": {},
+          "path": [
+            "typography",
+            "story-h3",
+            "fontSize"
+          ],
+          "cssName": "typography-story-h3-font-size"
+        },
+        "path": [
+          "typography",
+          "story-h3",
+          "fontSize"
+        ],
+        "cssName": "typography-story-h3-font-size"
+      },
+      "fontWeight": {
+        "type": "string",
+        "value": "600",
+        "filePath": "tokens/typeScale.json",
+        "isSource": true,
+        "original": {
+          "type": "string",
+          "value": "600"
+        },
+        "name": "fontWeight",
+        "attributes": {
+          "type": "string",
+          "value": "600",
+          "filePath": "tokens/typeScale.json",
+          "isSource": true,
+          "original": {
+            "type": "string",
+            "value": "600"
+          },
+          "name": "fontWeight",
+          "attributes": {},
+          "path": [
+            "typography",
+            "story-h3",
+            "fontWeight"
+          ],
+          "cssName": "typography-story-h3-font-weight"
+        },
+        "path": [
+          "typography",
+          "story-h3",
+          "fontWeight"
+        ],
+        "cssName": "typography-story-h3-font-weight"
+      }
+    },
+    "story-h4": {
+      "fontSize": {
+        "type": "dimension",
+        "value": 20,
+        "filePath": "tokens/typeScale.json",
+        "isSource": true,
+        "original": {
+          "type": "dimension",
+          "value": 20
+        },
+        "name": "fontSize",
+        "attributes": {
+          "type": "dimension",
+          "value": 20,
+          "filePath": "tokens/typeScale.json",
+          "isSource": true,
+          "original": {
+            "type": "dimension",
+            "value": 20
+          },
+          "name": "fontSize",
+          "attributes": {},
+          "path": [
+            "typography",
+            "story-h4",
+            "fontSize"
+          ],
+          "cssName": "typography-story-h4-font-size"
+        },
+        "path": [
+          "typography",
+          "story-h4",
+          "fontSize"
+        ],
+        "cssName": "typography-story-h4-font-size"
+      },
+      "fontWeight": {
+        "type": "string",
+        "value": "600",
+        "filePath": "tokens/typeScale.json",
+        "isSource": true,
+        "original": {
+          "type": "string",
+          "value": "600"
+        },
+        "name": "fontWeight",
+        "attributes": {
+          "type": "string",
+          "value": "600",
+          "filePath": "tokens/typeScale.json",
+          "isSource": true,
+          "original": {
+            "type": "string",
+            "value": "600"
+          },
+          "name": "fontWeight",
+          "attributes": {},
+          "path": [
+            "typography",
+            "story-h4",
+            "fontWeight"
+          ],
+          "cssName": "typography-story-h4-font-weight"
+        },
+        "path": [
+          "typography",
+          "story-h4",
+          "fontWeight"
+        ],
+        "cssName": "typography-story-h4-font-weight"
+      }
+    },
+    "story-h5": {
+      "fontSize": {
+        "type": "dimension",
+        "value": 18,
+        "filePath": "tokens/typeScale.json",
+        "isSource": true,
+        "original": {
+          "type": "dimension",
+          "value": 18
+        },
+        "name": "fontSize",
+        "attributes": {
+          "type": "dimension",
+          "value": 18,
+          "filePath": "tokens/typeScale.json",
+          "isSource": true,
+          "original": {
+            "type": "dimension",
+            "value": 18
+          },
+          "name": "fontSize",
+          "attributes": {},
+          "path": [
+            "typography",
+            "story-h5",
+            "fontSize"
+          ],
+          "cssName": "typography-story-h5-font-size"
+        },
+        "path": [
+          "typography",
+          "story-h5",
+          "fontSize"
+        ],
+        "cssName": "typography-story-h5-font-size"
+      },
+      "fontWeight": {
+        "type": "string",
+        "value": "600",
+        "filePath": "tokens/typeScale.json",
+        "isSource": true,
+        "original": {
+          "type": "string",
+          "value": "600"
+        },
+        "name": "fontWeight",
+        "attributes": {
+          "type": "string",
+          "value": "600",
+          "filePath": "tokens/typeScale.json",
+          "isSource": true,
+          "original": {
+            "type": "string",
+            "value": "600"
+          },
+          "name": "fontWeight",
+          "attributes": {},
+          "path": [
+            "typography",
+            "story-h5",
+            "fontWeight"
+          ],
+          "cssName": "typography-story-h5-font-weight"
+        },
+        "path": [
+          "typography",
+          "story-h5",
+          "fontWeight"
+        ],
+        "cssName": "typography-story-h5-font-weight"
+      }
+    },
+    "story-h6": {
+      "fontSize": {
+        "type": "dimension",
+        "value": 16,
+        "filePath": "tokens/typeScale.json",
+        "isSource": true,
+        "original": {
+          "type": "dimension",
+          "value": 16
+        },
+        "name": "fontSize",
+        "attributes": {
+          "type": "dimension",
+          "value": 16,
+          "filePath": "tokens/typeScale.json",
+          "isSource": true,
+          "original": {
+            "type": "dimension",
+            "value": 16
+          },
+          "name": "fontSize",
+          "attributes": {},
+          "path": [
+            "typography",
+            "story-h6",
+            "fontSize"
+          ],
+          "cssName": "typography-story-h6-font-size"
+        },
+        "path": [
+          "typography",
+          "story-h6",
+          "fontSize"
+        ],
+        "cssName": "typography-story-h6-font-size"
+      },
+      "fontWeight": {
+        "type": "string",
+        "value": "600",
+        "filePath": "tokens/typeScale.json",
+        "isSource": true,
+        "original": {
+          "type": "string",
+          "value": "600"
+        },
+        "name": "fontWeight",
+        "attributes": {
+          "type": "string",
+          "value": "600",
+          "filePath": "tokens/typeScale.json",
+          "isSource": true,
+          "original": {
+            "type": "string",
+            "value": "600"
+          },
+          "name": "fontWeight",
+          "attributes": {},
+          "path": [
+            "typography",
+            "story-h6",
+            "fontWeight"
+          ],
+          "cssName": "typography-story-h6-font-weight"
+        },
+        "path": [
+          "typography",
+          "story-h6",
+          "fontWeight"
+        ],
+        "cssName": "typography-story-h6-font-weight"
+      }
+    },
+    "story-sub-title": {
+      "fontSize": {
+        "type": "dimension",
+        "value": 12,
+        "filePath": "tokens/typeScale.json",
+        "isSource": true,
+        "original": {
+          "type": "dimension",
+          "value": 12
+        },
+        "name": "fontSize",
+        "attributes": {
+          "type": "dimension",
+          "value": 12,
+          "filePath": "tokens/typeScale.json",
+          "isSource": true,
+          "original": {
+            "type": "dimension",
+            "value": 12
+          },
+          "name": "fontSize",
+          "attributes": {},
+          "path": [
+            "typography",
+            "story-sub-title",
+            "fontSize"
+          ],
+          "cssName": "typography-story-sub-title-font-size"
+        },
+        "path": [
+          "typography",
+          "story-sub-title",
+          "fontSize"
+        ],
+        "cssName": "typography-story-sub-title-font-size"
+      },
+      "fontWeight": {
+        "type": "string",
+        "value": "500",
+        "filePath": "tokens/typeScale.json",
+        "isSource": true,
+        "original": {
+          "type": "string",
+          "value": "500"
+        },
+        "name": "fontWeight",
+        "attributes": {
+          "type": "string",
+          "value": "500",
+          "filePath": "tokens/typeScale.json",
+          "isSource": true,
+          "original": {
+            "type": "string",
+            "value": "500"
+          },
+          "name": "fontWeight",
+          "attributes": {},
+          "path": [
+            "typography",
+            "story-sub-title",
+            "fontWeight"
+          ],
+          "cssName": "typography-story-sub-title-font-weight"
+        },
+        "path": [
+          "typography",
+          "story-sub-title",
+          "fontWeight"
+        ],
+        "cssName": "typography-story-sub-title-font-weight"
+      },
+      "letterSpacing": {
+        "type": "string",
+        "value": "0.05em",
+        "filePath": "tokens/typeScale.json",
+        "isSource": true,
+        "original": {
+          "type": "string",
+          "value": "0.05em"
+        },
+        "name": "letterSpacing",
+        "attributes": {
+          "type": "string",
+          "value": "0.05em",
+          "filePath": "tokens/typeScale.json",
+          "isSource": true,
+          "original": {
+            "type": "string",
+            "value": "0.05em"
+          },
+          "name": "letterSpacing",
+          "attributes": {},
+          "path": [
+            "typography",
+            "story-sub-title",
+            "letterSpacing"
+          ],
+          "cssName": "typography-story-sub-title-letter-spacing"
+        },
+        "path": [
+          "typography",
+          "story-sub-title",
+          "letterSpacing"
+        ],
+        "cssName": "typography-story-sub-title-letter-spacing"
+      },
+      "textTransform": {
+        "type": "string",
+        "value": "uppercase",
+        "filePath": "tokens/typeScale.json",
+        "isSource": true,
+        "original": {
+          "type": "string",
+          "value": "uppercase"
+        },
+        "name": "textTransform",
+        "attributes": {
+          "type": "string",
+          "value": "uppercase",
+          "filePath": "tokens/typeScale.json",
+          "isSource": true,
+          "original": {
+            "type": "string",
+            "value": "uppercase"
+          },
+          "name": "textTransform",
+          "attributes": {},
+          "path": [
+            "typography",
+            "story-sub-title",
+            "textTransform"
+          ],
+          "cssName": "typography-story-sub-title-text-transform"
+        },
+        "path": [
+          "typography",
+          "story-sub-title",
+          "textTransform"
+        ],
+        "cssName": "typography-story-sub-title-text-transform"
+      }
+    },
+    "body-regular": {
+      "fontSize": {
+        "type": "dimension",
+        "value": 12,
+        "filePath": "tokens/typeScale.json",
+        "isSource": true,
+        "original": {
+          "type": "dimension",
+          "value": 12
+        },
+        "name": "fontSize",
+        "attributes": {
+          "type": "dimension",
+          "value": 12,
+          "filePath": "tokens/typeScale.json",
+          "isSource": true,
+          "original": {
+            "type": "dimension",
+            "value": 12
+          },
+          "name": "fontSize",
+          "attributes": {},
+          "path": [
+            "typography",
+            "body-regular",
+            "fontSize"
+          ],
+          "cssName": "typography-body-regular-font-size"
+        },
+        "path": [
+          "typography",
+          "body-regular",
+          "fontSize"
+        ],
+        "cssName": "typography-body-regular-font-size"
+      },
+      "fontWeight": {
+        "description": "This is a description",
+        "type": "string",
+        "value": "regular",
+        "filePath": "tokens/typeScale.json",
+        "isSource": true,
+        "original": {
+          "description": "This is a description",
+          "type": "string",
+          "value": "regular"
+        },
+        "name": "fontWeight",
+        "attributes": {
+          "description": "This is a description",
+          "type": "string",
+          "value": "regular",
+          "filePath": "tokens/typeScale.json",
+          "isSource": true,
+          "original": {
+            "description": "This is a description",
+            "type": "string",
+            "value": "regular"
+          },
+          "name": "fontWeight",
+          "attributes": {},
+          "path": [
+            "typography",
+            "body-regular",
+            "fontWeight"
+          ],
+          "cssName": "typography-body-regular-font-weight"
+        },
+        "path": [
+          "typography",
+          "body-regular",
+          "fontWeight"
+        ],
+        "cssName": "typography-body-regular-font-weight"
+      }
+    }
+  }
+}

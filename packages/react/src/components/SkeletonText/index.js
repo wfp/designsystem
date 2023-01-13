@@ -1,1 +1,1 @@
-export default from './SkeletonText';
+export { default } from './SkeletonText';

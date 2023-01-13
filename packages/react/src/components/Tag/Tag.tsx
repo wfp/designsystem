@@ -2,7 +2,7 @@ import React from 'react';
 import type { PropsWithChildren } from 'react';
 import classNames, { Argument } from 'classnames';
 import useSettings from '../../hooks/useSettings';
-import { TagType } from '../../types/utils';
+import { TagType } from '../../typesLegacy/utils';
 
 const TYPES = {
   info: 'Info',
@@ -20,7 +20,12 @@ type TagProps = PropsWithChildren<{
 
 /** Tag is used to label, categorize, or organize items using keywords that describe them. */
 
-const Tag: React.FC<TagProps> = ({ children, className, type, ...other }) => {
+const Tag: React.FC<TagProps> = ({
+  children,
+  className,
+  type = 'info',
+  ...other
+}) => {
   const { prefix } = useSettings();
   const tagClass = `${prefix}--tag--${type}`;
   const tagClasses = classNames(`${prefix}--tag`, tagClass, className);

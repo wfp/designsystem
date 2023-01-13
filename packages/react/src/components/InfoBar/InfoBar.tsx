@@ -3,7 +3,7 @@ import type { PropsWithChildren } from 'react';
 import classNames, { Argument } from 'classnames';
 import Wrapper from '../Wrapper';
 import useSettings from '../../hooks/useSettings';
-import { ScreenSize } from '../../types/utils';
+import { ScreenSize } from '../../typesLegacy/utils';
 
 /** The InfoBar shows very important information on top of the page. */
 type InfoBarProps = PropsWithChildren<{

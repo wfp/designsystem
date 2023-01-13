@@ -1,1 +1,1 @@
-export default from './InputGroup';
+export { default } from './InputGroup';

@@ -1,1 +1,1 @@
-export default from './ReduxFormWrapper';
+export { default } from './ReduxFormWrapper';

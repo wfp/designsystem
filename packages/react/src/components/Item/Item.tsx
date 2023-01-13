@@ -3,7 +3,7 @@ import type { PropsWithChildren } from 'react';
 import classnames, { Argument } from 'classnames';
 import { ChevronRight } from '@un/icons-react';
 import useSettings from '../../hooks/useSettings';
-import { IIcon } from '../../types/utils';
+import { IIcon } from '../../typesLegacy/utils';
 
 type ItemProps = PropsWithChildren<{
   title?: React.ReactNode;

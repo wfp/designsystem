@@ -2,7 +2,6 @@ import '../scss/style.scss';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 // Prevent fontawesome from adding its CSS since we did it manually above:
 import { config } from '@fortawesome/fontawesome-svg-core';
-import { UNCoreProvider } from '@un/react';
 
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';

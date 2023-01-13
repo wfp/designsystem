@@ -1,2 +1,2 @@
 export * from './Notification';
-export * from './BlockNotification';
+export { BlockNotification } from './BlockNotification';

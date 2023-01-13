@@ -2,7 +2,7 @@ import React, { CSSProperties, useState } from 'react';
 import type { PropsWithChildren } from 'react';
 import classNames, { Argument } from 'classnames';
 import useSettings from '../../hooks/useSettings';
-import { IIcon, StatusKind } from '../../types/utils';
+import { IIcon, StatusKind } from '../../typesLegacy/utils';
 
 import {
   Checkmark,

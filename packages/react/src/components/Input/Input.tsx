@@ -1,6 +1,6 @@
 import React from 'react';
 import type { PropsWithChildren } from 'react';
-import classNames, { Argument } from 'classnames';
+import classNames from 'classnames';
 import useSettings from '../../hooks/useSettings';
 import FormItem from '../FormItem';
 import { WarningSolid } from '@un/icons-react';
@@ -151,8 +151,7 @@ const Input: React.FC<PropsWithChildren<InputProps>> = ({
         {addonBefore && (
           <div className={`${prefix}--input-addon-before`}>{addonBefore}</div>
         )}
-        {/* {typeof children === 'function' ? children(elementProps) : children} */}
-        {children}
+        {typeof children === 'function' ? children(elementProps) : children}
         {addonAfter && (
           <div className={`${prefix}--input-addon-after`}>{addonAfter}</div>
         )}
