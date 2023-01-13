@@ -1,7 +1,7 @@
 {
     "name": "@un/cli",
     "description": "Task automation for working with the WFP Design System",
-    "version": "10.25.26",
+    "version": "10.25.27",
     "license": "Apache-2.0",
     "bin": {
         "wfp-cli": "./bin/wfp-cli.js"
@@ -33,7 +33,7 @@
         "@rollup/plugin-babel": "^5.3.0",
         "@rollup/plugin-commonjs": "^18.0.0",
         "@rollup/plugin-node-resolve": "^11.2.1",
-        "@un/figma-connect": "^0.0.19",
+        "@un/figma-connect": "^0.0.20",
         "@un/themes": "^10.40.14",
         "chalk": "^4.1.1",
         "change-case": "^4.1.2",

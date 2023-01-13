@@ -1,7 +1,7 @@
 {
   "name": "@un/pictograms",
   "description": "Pictograms for digital and software products using the Carbon Design System",
-  "version": "11.14.27",
+  "version": "11.14.28",
   "license": "Apache-2.0",
   "main": "lib/index.js",
   "module": "es/index.js",

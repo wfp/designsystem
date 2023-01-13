@@ -1,7 +1,7 @@
 {
   "name": "@un/humanitarian-icons",
   "description": "Pictograms for digital and software products using the Carbon Design System",
-  "version": "11.14.23",
+  "version": "11.14.24",
   "license": "Apache-2.0",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -33,7 +33,7 @@
     "prepublishOnly": "yarn build"
   },
   "devDependencies": {
-    "@un/figma-connect": "^0.0.19",
+    "@un/figma-connect": "^0.0.20",
     "rimraf": "^3.0.2"
   },
   "gitHead": "d56234ee5c04a5f6691c7377cd93abb01a71c57a"
