@@ -1,10 +1,43 @@
-import PropTypes from 'prop-types';
 import React, { useRef } from 'react';
 import ReactDOM from 'react-dom';
 import classNames from 'classnames';
 import { Close } from '@un/icons-react';
 import useSettings from '../../hooks/useSettings';
 import ModalFooter from './ModalFooter';
+
+interface ModalProps {
+  modalLabel?: React.ReactNode;
+  modalHeading?: string;
+  modalText?: string;
+  lazyLoad?: boolean;
+  passiveModal?: boolean;
+  children?: React.ReactNode;
+  modalAriaLabel?: string;
+  modalSecondaryAction?: React.ReactNode;
+  secondaryButtonText?: string;
+  secondaryButtonDisabled?: boolean;
+  onSecondarySubmit?: () => void;
+  primaryButtonText?: string;
+  primaryButtonDisabled?: boolean;
+  open?: boolean;
+  hideClose?: boolean;
+  danger?: boolean;
+  shouldSubmitOnEnter?: boolean;
+  selectorsFloatingMenus?: string[];
+  selectorPrimaryFocus?: boolean | string;
+  type?: 'info' | 'warning' | 'danger';
+  inPortal?: boolean;
+  wide?: boolean;
+  modalFooter?: () => void;
+  onRequestClose?: (evt?: any, value?: any) => void;
+  onRequestSubmit?: () => void;
+  iconDescription?: string;
+  className?: string;
+  id?: string;
+  backgroundImage?: string;
+  onKeyDown?: () => void;
+  handleBlur?: (obj?: any) => void;
+}
 
 const matchesFuncName =
   typeof Element !== 'undefined' &&
@@ -14,7 +47,7 @@ const matchesFuncName =
 
 /** Modals focus the user’s attention exclusively on one task or piece of information via a window that sits on top of the page content. */
 
-function Modal(props) {
+const Modal: React.FC<ModalProps> = (props) => {
   const {
     modalHeading,
     modalLabel,
@@ -48,10 +81,10 @@ function Modal(props) {
   const el = document.body;
   const [beingOpen, setBeingOpen] = React.useState(false);
 
-  const handleKeyDown = (evt) => {
-    if (evt.which === 27) onRequestClose(evt, 'key');
-    if (evt.which === 13 && shouldSubmitOnEnter) onRequestSubmit(evt, 'key');
-  };
+  //   const handleKeyDown = (evt) => {
+  //     if (evt.which === 27) onRequestClose(evt, 'key');
+  //     if (evt.which === 13 && shouldSubmitOnEnter) onRequestSubmit(evt, 'key');
+  //   };
 
   const elementOrParentIsFloatingMenu = (target) => {
     const {
@@ -84,21 +117,21 @@ function Modal(props) {
     }
   };
 
-  const handleClick = (evt) => {
-    console.log(
-      'evt.target',
-      evt,
-      innerModal.current.contains(evt.target),
-      innerModal.current
-    );
-    if (
-      innerModal.current &&
-      !innerModal.current.contains(evt.target) &&
-      !elementOrParentIsFloatingMenu(evt.target)
-    ) {
-      onRequestClose(evt, 'background');
-    }
-  };
+  //   const handleClick = (evt) => {
+  //     console.log(
+  //       'evt.target',
+  //       evt,
+  //       innerModal.current.contains(evt.target),
+  //       innerModal.current
+  //     );
+  //     if (
+  //       innerModal.current &&
+  //       !innerModal.current.contains(evt.target) &&
+  //       !elementOrParentIsFloatingMenu(evt.target)
+  //     ) {
+  //       onRequestClose(evt, 'background');
+  //     }
+  //   };
 
   const handleCloseButton = (evt) => {
     onRequestClose(evt, 'button');
@@ -236,158 +269,21 @@ function Modal(props) {
 
   if (inPortal) return ReactDOM.createPortal(modal, el);
   else return modal;
-}
-
-Modal.propTypes = {
-  prefix: PropTypes.string.isRequired,
-  /**
-   * Provide the contents of your Modal
-   */
-  children: PropTypes.node,
-  /**
-   * Specify an optional className to be applied to the modal root node
-   */
-  className: PropTypes.string,
-  /**
-   * Specify component Overrides
-   */
-  components: PropTypes.object,
-  /**
-   * Specify whether the modals content should be only loaded when the `Modal` is `open`
-   */
-  lazyLoad: PropTypes.bool,
-  /**
-   * Specify whether the modal should be button-less
-   */
-  passiveModal: PropTypes.bool,
-
-  /**
-   * Specify a handler for closing modal.
-   * The handler should care of closing modal, e.g. changing `open` prop.
-   */
-  onRequestClose: PropTypes.func,
-
-  /**
-   * Specify the DOM element ID of the top-level node.
-   */
-  id: PropTypes.string,
-
-  /**
-   * Specify the content of the modal header title.
-   */
-  modalHeading: PropTypes.string,
-  /**
-   * Specify the content of the modal header label.
-   */
-  modalLabel: PropTypes.node,
-  /**
-   * Specify the a function which renders a custom ModalFooter.
-   */
-  modalFooter: PropTypes.func,
-
-  /**
-   * Specify a label to be read by screen readers on the modal root node
-   */
-  modalAriaLabel: PropTypes.string,
-
-  /**
-   * Specify the text for the secondary button
-   */
-  secondaryButtonText: PropTypes.string,
-
-  /**
-   * Specify the text for the primary button
-   */
-  primaryButtonText: PropTypes.string,
-
-  /**
-   * Specify whether the Modal is currently open
-   */
-  open: PropTypes.bool,
-
-  /**
-   * Specify a handler for "submitting" modal.
-   * The handler should care of closing modal, e.g. changing `open` prop, if necessary.
-   */
-  onRequestSubmit: PropTypes.func,
-
-  /**
-   * Specify a handler for a key press modal
-   */
-  onKeyDown: PropTypes.func,
-
-  /**
-   * Provide a description for "close" icon that can be read by screen readers
-   */
-  iconDescription: PropTypes.string,
-
-  /**
-   * Specify whether the Button should be disabled, or not
-   */
-  primaryButtonDisabled: PropTypes.bool,
-
-  /**
-   * Specify whether the secondary Button should be disabled, or not
-   */
-  secondaryButtonDisabled: PropTypes.bool,
-
-  /**
-   * Specify a handler for the secondary button.
-   * Useful if separate handler from `onRequestClose` is desirable
-   */
-  onSecondarySubmit: PropTypes.func,
-
-  /**
-   * Specify whether the Modal is for dangerous actions
-   */
-  danger: PropTypes.bool,
-
-  /**
-   * Specify if Enter key should be used as "submit" action
-   */
-  shouldSubmitOnEnter: PropTypes.bool,
-
-  /**
-   * Specify CSS selectors that match DOM elements working as floating menus.
-   * Focusing on those elements won't trigger "focus-wrap" behavior
-   */
-  selectorsFloatingMenus: PropTypes.arrayOf(PropTypes.string),
-
-  /**
-   * Specify a CSS selector that matches the DOM element that should
-   * be focused when the Modal opens. If "false" no selector will be triggered
-   */
-  selectorPrimaryFocus: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
-
-  /**
-   *  Different styling options are available `info`, `warning`, `danger`
-   */
-  type: PropTypes.oneOf(['info', 'warning', 'danger']),
-
-  /**
-   * If true the Modal will be rendered inside a portal at the end of the
-   * body element, otherwise at the position it is placed.
-   */
-  inPortal: PropTypes.bool,
-  /**
-   * If true the Modal will be wider then the regular Modal
-   */
-  wide: PropTypes.bool,
 };
 
-Modal.defaultProps = {
-  onRequestClose: () => {},
-  onRequestSubmit: () => {},
-  primaryButtonDisabled: false,
-  secondaryButtonDisabled: false,
-  onKeyDown: () => {},
-  passiveModal: false,
-  iconDescription: 'close the modal',
-  inPortal: true,
-  lazyLoad: false,
-  modalHeading: '',
-  modalLabel: '',
-  selectorPrimaryFocus: '[data-modal-primary-focus]',
-};
+// Modal.defaultProps = {
+//   onRequestClose: () => {},
+//   onRequestSubmit: () => {},
+//   primaryButtonDisabled: false,
+//   secondaryButtonDisabled: false,
+//   onKeyDown: () => {},
+//   passiveModal: false,
+//   iconDescription: 'close the modal',
+//   inPortal: true,
+//   lazyLoad: false,
+//   modalHeading: '',
+//   modalLabel: '',
+//   selectorPrimaryFocus: '[data-modal-primary-focus]',
+// };
 
 export default Modal;

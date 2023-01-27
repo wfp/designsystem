@@ -1,96 +1,139 @@
+variables:
+  ${{ if startsWith(variables['Build.SourceBranch'], 'refs/heads/') }}:
+    branchName: $[ replace(variables['Build.SourceBranch'], 'refs/heads/', '') ]
+  ${{ if startsWith(variables['Build.SourceBranch'], 'refs/pull/') }}:
+    branchName: $[ replace(variables['System.PullRequest.SourceBranch'], 'refs/heads/', '') ]
+
 trigger:
   - master
   - next
   - hotfix/*
   - bugfix/*
   - alpha/*
-  - feat/performance-optimization
+  - feat/*
   - un-core-v1
 
 jobs:
-- job: WFP_Design_System_publish
-  pool:
-    vmImage: 'ubuntu-latest'
+  - job: WFP_Design_System_publish
+    pool:
+      vmImage: 'ubuntu-latest'
 
-  variables:
-    NPM_CACHE_FOLDER: $(Pipeline.Workspace)/.npm
-    nextRelease: unknown
+    variables:
+      NPM_CACHE_FOLDER: $(Pipeline.Workspace)/.npm
+      nextRelease: unknown
 
-  steps:
-    - task: NodeTool@0
-      inputs:
-        versionSpec: '14.x'
-      displayName: 'Install Node.js'
-    - task: CmdLine@2
-      displayName: Checkout $(Build.SourceBranchName)
-      inputs:
-        script: 'git checkout $(Build.SourceBranchName)'
+    steps:
+     
+      - checkout: self
+        persistCredentials: true
+  
+      - script: |
+          git config --global user.name "Azure Devops Pipeline"
+          git config --global user.email "roberg.guehne@wfp.org"
+        displayName: Git config user
 
+      - task: CmdLine@2
+        displayName: Checkout $(branchName) Original $(Build.SourceBranch)
+        inputs:
+          script: |
+            git fetch --all
+            git checkout $(branchName)
+
+      - task: NodeTool@0
+        inputs:
+          versionSpec: '14.x'
+        displayName: 'Install Node.js'
+
+      - task: DownloadSecureFile@1
+        name: npmrcFile
+        displayName: 'Download CA certificate'
+        inputs:
+          secureFile: 'npmrc'
+
+      - task: CmdLine@2
+        inputs:
+          script: cp $(npmrcFile.secureFilePath) ./.npmrc
+
+      #    - task: CmdLine@2
+      #      displayName: Checkout $(Build.SourceBranchName)
+      #      inputs:
+      #        script: 'git checkout $(Build.SourceBranchName)'
+
+      #    - script: |
+      #        npm config set '//registry.npmjs.org/:_authToken' "$(NPM_TOKEN)"
+      #      displayName: 'npm config set'
+
+      #    - task: npmAuthenticate@0
+      #      inputs:
+      #        workingFile: './.npmrc'
+
+      #    - task: Cache@2
+      #      inputs:
+      #        key: 'npm | "$(Agent.OS)" | package-lock.json'
+      #        path: "$(NPM_CACHE_FOLDER)"
+      #        restoreKeys: |
+      #          npm | "$(Agent.OS)"
+      #          npm
+      #      displayName: 'Cache NPM packages'
+      #        mkdir -p $(NPM_CACHE_FOLDER)
+      - script: |
+          yarn -v
+          yarn install
+        displayName: 'yarn install'
+
+      #    - script: |
+      #        yarn test
+      #      displayName: 'yarn test'
+
+      - script: |
+          yarn build
+        displayName: 'yarn build'
+
+      - script: |
+          npm run lerna:versionNoPush
+          git push --follow-tags origin HEAD:$(branchName)
+        displayName: 'npm run lerna:version'
+
+      - script: |
+          npm run lerna:publishFromPackage
+        displayName: 'lerna publish'
+
+      # - script: |
+      #      yarn publish:cli
+      #    displayName: 'yarn build:cli'
+      #    condition: eq(variables['Build.SourceBranch'], 'refs/heads/master')
+
+      #    - script: |
+      #        lerna version patch --yes
+      #      displayName: 'yarn build:alpha-cli'
+      #      condition: in(variables['Build.SourceBranch'], 'refs/heads/develop', 'refs/heads/next', 'refs/heads/un-core-v1')
+
+      # - script: |
+      #     lerna publish from-package --dist-tag alpha
+      #   displayName: 'yarn build:alpha-cli'
+      #condition: in(variables['Build.SourceBranch'], 'refs/heads/develop', 'refs/heads/next', 'refs/heads/un-core-v1')
+
+      - script: |
+          yarn publish:alpha-cli
+        displayName: 'yarn publish:alpha-cli'
+
+      - task: GitHubRelease@1
+        inputs:
+          gitHubConnection: 'Utzel-Butzel'
+          repositoryName: '$(Build.Repository.Name)'
+          action: 'create'
+          target: '$(Build.SourceVersion)'
+          tagSource: 'gitTag'
+          changeLogCompareToRelease: 'lastFullRelease'
+          changeLogType: 'commitBased'
+
+      - powershell: |
+          echo "##vso[task.setvariable variable=versionNumber;isOutput=true]$(nextRelease)"
+        name: setOutputVar
 #    - script: |
-#        npm config set '//registry.npmjs.org/:_authToken' "$(NPM_TOKEN)"
-#      displayName: 'npm config set'
-
-#    - task: npmAuthenticate@0
-#      inputs:
-#        workingFile: './.npmrc'
-
-#    - task: Cache@2
-#      inputs:
-#        key: 'npm | "$(Agent.OS)" | package-lock.json'
-#        path: "$(NPM_CACHE_FOLDER)"
-#        restoreKeys: |
-#          npm | "$(Agent.OS)"
-#          npm
-#      displayName: 'Cache NPM packages'
-
-#        mkdir -p $(NPM_CACHE_FOLDER)
-
-    - script: |
-        yarn -v
-        yarn install
-      displayName: 'yarn install'
-
-#    - script: |
-#        yarn test
-#      displayName: 'yarn test'
-
-    - script: |
-        yarn build
-      displayName: 'yarn build'
-
-    - script: |
-        yarn publish:cli
-      displayName: 'yarn build:cli'
-      condition: eq(variables['Build.SourceBranch'], 'refs/heads/master')
-
-#    - script: |
-#        lerna version patch --yes
-#      displayName: 'yarn build:alpha-cli'
-#      condition: in(variables['Build.SourceBranch'], 'refs/heads/develop', 'refs/heads/next', 'refs/heads/un-core-v1')
-    
-    - script: |
-        lerna publish from-package --dist-tag alpha
-      displayName: 'yarn build:alpha-cli'
-      condition: in(variables['Build.SourceBranch'], 'refs/heads/develop', 'refs/heads/next', 'refs/heads/un-core-v1')
-
-    - task: GitHubRelease@1
-      inputs:
-        gitHubConnection: 'Utzel-Butzel'
-        repositoryName: '$(Build.Repository.Name)'
-        action: 'create'
-        target: '$(Build.SourceVersion)'
-        tagSource: 'gitTag'
-        changeLogCompareToRelease: 'lastFullRelease'
-        changeLogType: 'commitBased'
-
-    - powershell: |
-        echo "##vso[task.setvariable variable=versionNumber;isOutput=true]$(nextRelease)"
-      name: setOutputVar
-
-    - script: |
-        npmVersionString=$(node -p "require('./packages/ui/package.json').version") 
-        echo "##vso[build.updatebuildnumber]$npmVersionString"
-      displayName: 'set build number'
+#        npmVersionString=$(node -p "require('./packages/ui/package.json').version")
+#        echo "##vso[build.updatebuildnumber]$npmVersionString"
+#      displayName: 'set build number'
 
 # TODO: Needs to reimplemented, probably in it's own package
 #    - script: |
@@ -98,7 +141,7 @@ jobs:
 #      workingDirectory: './packages/ui/'
 #      displayName: 'yarn build:storybook'
 #      env:
-#        STORYBOOK_INTERNAL_ASSETS: 
+#        STORYBOOK_INTERNAL_ASSETS:
 #        STORYBOOK_NPM_VERSION: $(nextRelease)
 #        STORYBOOK_ASSETS: https://cdn.wfp.org/guides/ui/assets/v0.0.1/
 

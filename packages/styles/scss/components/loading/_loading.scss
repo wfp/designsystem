@@ -57,7 +57,7 @@
     left: 0;
     height: 100%;
     width: 100%;
-    background-color: var(--modal-background-02);
+    background-color: rgba(255, 255, 255, 0.8); //TODO: replace with token
     display: flex;
     justify-content: center;
     align-items: center;

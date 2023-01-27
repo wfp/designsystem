@@ -8,7 +8,7 @@ const TabContent: React.FC<PropsWithChildren<TabContentProps>> = (props) => {
   const { selected, children, ...other } = props;
 
   return (
-    <div {...other} selected={selected} hidden={!selected}>
+    <div {...other} data-selected={selected} hidden={!selected}>
       {children}
     </div>
   );

@@ -1,18 +1,31 @@
 import React from 'react';
 import Button from '../Button/Button';
+import useSettings from '../../hooks/useSettings';
 
-export default function ModalFooter({
+interface ModalFooterProps {
+  passiveModal?: boolean;
+  secondaryButtonText?: string;
+  onSecondaryButtonClick?: () => void;
+  primaryButtonText?: string;
+  onRequestSubmit?: () => {};
+  primaryButtonDisabled?: boolean;
+  secondaryButtonDisabled?: boolean;
+  danger?: boolean;
+  ref?: React.RefObject<HTMLInputElement>;
+}
+
+const ModalFooter: React.FC<ModalFooterProps> = ({
   passiveModal,
   secondaryButtonText,
   onSecondaryButtonClick,
   primaryButtonText,
   onRequestSubmit,
   primaryButtonDisabled,
-  prefix,
   secondaryButtonDisabled,
   danger,
   ref,
-}) {
+}) => {
+  const { prefix } = useSettings();
   if (passiveModal) return null;
   return (
     <div className={`${prefix}--modal-footer`}>
@@ -37,4 +50,5 @@ export default function ModalFooter({
       </div>
     </div>
   );
-}
+};
+export default ModalFooter;

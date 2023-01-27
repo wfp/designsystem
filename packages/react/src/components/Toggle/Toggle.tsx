@@ -1,7 +1,6 @@
-import PropTypes from 'prop-types';
 import React from 'react';
 import type { PropsWithChildren } from 'react';
-import classNames, { Argument } from 'classnames';
+import classNames from 'classnames';
 import useSettings from '../../hooks/useSettings';
 
 /** A toggle is used to quickly switch between two possible states. They are commonly used for “on/off” switches */
@@ -15,7 +14,7 @@ type ToggleProps = PropsWithChildren<{
     htmlFor: string,
     event: React.ChangeEvent<HTMLInputElement>
   ) => void;
-  className?: Argument;
+  className?: string;
   id?: string;
   name: string;
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
@@ -40,13 +39,13 @@ const Toggle: React.FC<ToggleProps> = ({
     [className]: className,
   });
 
-  const checkedProps = {};
+  // const checkedProps = {};
 
-  if (typeof toggled !== 'undefined') {
-    checkedProps.checked = toggled;
-  } else {
-    checkedProps.defaultChecked = defaultToggled;
-  }
+  // if (typeof toggled !== 'undefined') {
+  //   checkedProps.checked = toggled;
+  // } else {
+  //   checkedProps.defaultChecked = defaultToggled;
+  // }
 
   const htmlFor = id ? id : name;
 
@@ -54,7 +53,8 @@ const Toggle: React.FC<ToggleProps> = ({
     <div className={wrapperClasses}>
       <input
         {...other}
-        {...checkedProps}
+        checked={toggled}
+        defaultChecked={defaultToggled}
         type="checkbox"
         id={htmlFor}
         className={`${prefix}--toggle`}
@@ -76,54 +76,54 @@ const Toggle: React.FC<ToggleProps> = ({
   );
 };
 
-Toggle.propTypes = {
-  /**
-   * Specify a custom className to apply to the form-item node
-   */
-  className: PropTypes.string,
+// Toggle.propTypes = {
+//   /**
+//    * Specify a custom className to apply to the form-item node
+//    */
+//   className: PropTypes.string,
 
-  /**
-   * Specify whether the toggle should be on by default
-   */
-  defaultToggled: PropTypes.bool,
+//   /**
+//    * Specify whether the toggle should be on by default
+//    */
+//   defaultToggled: PropTypes.bool,
 
-  /**
-   * Provide an optional hook that is called when the control is toggled
-   */
-  onToggle: PropTypes.func,
+//   /**
+//    * Provide an optional hook that is called when the control is toggled
+//    */
+//   onToggle: PropTypes.func,
 
-  /**
-   * Provide an id that unique represents the underlying `input`
-   */
-  id: PropTypes.string,
+//   /**
+//    * Provide an id that unique represents the underlying `input`
+//    */
+//   id: PropTypes.string,
 
-  /**
-   * Provide an name that unique represents the underlying `input`
-   */
-  name: PropTypes.string.isRequired,
+//   /**
+//    * Provide an name that unique represents the underlying `input`
+//    */
+//   name: PropTypes.string.isRequired,
 
-  /**
-   * Specify whether the control is toggled
-   */
-  toggled: PropTypes.bool,
+//   /**
+//    * Specify whether the control is toggled
+//    */
+//   toggled: PropTypes.bool,
 
-  /**
-   * Specify the label for the "off" position
-   */
-  labelA: PropTypes.string.isRequired,
+//   /**
+//    * Specify the label for the "off" position
+//    */
+//   labelA: PropTypes.string.isRequired,
 
-  /**
-   * Specify the label for the "on" position
-   */
-  labelB: PropTypes.string.isRequired,
-};
+//   /**
+//    * Specify the label for the "on" position
+//    */
+//   labelB: PropTypes.string.isRequired,
+// };
 
-Toggle.defaultProps = {
-  defaultToggled: false,
-  labelA: 'Off',
-  labelB: 'On',
-  name: 'toggle',
-  onToggle: () => {},
-};
+// Toggle.defaultProps = {
+//   defaultToggled: false,
+//   labelA: 'Off',
+//   labelB: 'On',
+//   name: 'toggle',
+//   onToggle: () => {},
+// };
 
 export default Toggle;
