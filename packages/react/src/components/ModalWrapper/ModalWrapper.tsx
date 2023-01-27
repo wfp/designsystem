@@ -3,7 +3,7 @@ import type { PropsWithChildren } from 'react';
 import Modal from '../Modal';
 import Button from '../Button';
 import useSettings from '../../hooks/useSettings';
-import { ButtonKind } from '../../types/utils';
+import { ButtonKind } from '../../typesLegacy/utils';
 
 /** Modal Wrapper component to encapsulate your Modal within a button. */
 type ModalWrapperProps = PropsWithChildren<{

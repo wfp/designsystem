@@ -1,2 +1,2 @@
 export * from './Tabs.Skeleton';
-export default from './Tabs';
+export { default } from './Tabs';

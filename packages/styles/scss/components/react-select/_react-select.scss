@@ -43,6 +43,7 @@ $input-border: 1px solid $field-border;
 
     .#{$prefix}--react-select__single-value {
       overflow: visible;
+      color: $text-primary;
     }
 
     .#{$prefix}--react-select__control--is-focused,
@@ -62,6 +63,7 @@ $input-border: 1px solid $field-border;
     .#{$prefix}--react-select__menu {
       margin-top: 2px;
       border-radius: 0;
+      background: $background-main;
       //box-shadow: none;
       box-shadow: 0px 2px 5px rgba(#000, 0.1);
       border: 1px solid $border-strong;

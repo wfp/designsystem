@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import type { PropsWithChildren } from 'react';
 import classNames, { Argument } from 'classnames';
 import useSettings from '../../hooks/useSettings';
-import { ButtonKind, IIcon } from '../../types/utils';
+import { ButtonKind, IIcon } from '../../typesLegacy/utils';
 
 type ButtonProps = PropsWithChildren<{
   className?: Argument;
@@ -32,7 +32,7 @@ const Button: React.FC<ButtonProps> = ({
   disabled,
   small,
   large,
-  kind,
+  kind = 'primary',
   allCaps,
   href,
   iconReverse,

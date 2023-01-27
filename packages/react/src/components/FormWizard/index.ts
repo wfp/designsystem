@@ -1,1 +1,1 @@
-export default from './FormWizard';
+export { default } from './FormWizard';

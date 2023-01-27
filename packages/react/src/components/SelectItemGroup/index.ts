@@ -1,1 +1,1 @@
-export default from './SelectItemGroup';
+export { default } from './SelectItemGroup';

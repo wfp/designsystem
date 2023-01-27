@@ -37,7 +37,7 @@ module.exports = withMDX({
       config.resolve.fallback = { fs: false };
     }
 
-    config.resolve.alias['react'] = path.resolve('./node_modules/react');
+    //config.resolve.alias['react'] = path.resolve('./node_modules/react');
     return config;
   },
   // Append the default value with md extensions

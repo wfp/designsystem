@@ -1,1 +1,1 @@
-export default from './ReadMore';
+export { default } from './ReadMore';

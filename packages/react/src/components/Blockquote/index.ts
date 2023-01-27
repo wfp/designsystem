@@ -1,1 +1,1 @@
-export default from './Blockquote';
+export { default } from './Blockquote';

@@ -1,2 +1,2 @@
-export Footer from './Footer';
-export {FooterExternal, LinksColumn, FooterMetaLink } from './FooterExternal';
+export * as Footer from './Footer';
+export { FooterExternal, LinksColumn, FooterMetaLink } from './FooterExternal';

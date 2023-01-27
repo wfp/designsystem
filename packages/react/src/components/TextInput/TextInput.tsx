@@ -5,7 +5,7 @@ import useSettings from '../../hooks/useSettings';
 import Input from '../Input/Input';
 import useInput from '../Input/useInput';
 import * as HookForm from 'react-hook-form';
-import { InputModes } from '../../types/utils';
+import { InputModes } from '../../typesLegacy/utils';
 
 /** Text inputs enable the user to interact with and input content and data. This component can be used for long and short form entries. */
 type TextInputProps = PropsWithChildren<{

@@ -2,7 +2,7 @@ import React from 'react';
 import type { PropsWithChildren } from 'react';
 import classNames, { Argument } from 'classnames';
 import useSettings from '../../hooks/useSettings';
-import { HeroKind } from '../../types/utils';
+import { HeroKind } from '../../typesLegacy/utils';
 /**
  * Hero are a convenient means of displaying content composed of different types of objects. It is a multi usage component which creates boxes that are usually teasing some kind of content. */
 type HeroProps = PropsWithChildren<{

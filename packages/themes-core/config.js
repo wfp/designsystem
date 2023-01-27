@@ -4,7 +4,11 @@ const ChangeCase = require('change-case');
 
 const { fileHeader, formattedVariables } = StyleDictionary.formatHelpers;
 
-const config = ({ source = `tokens/**/*.json`, buildPath = `dist` } = {}) => {
+const config = ({
+  source = `tokens/**/*.json`,
+  buildPath = `dist`,
+  themeName = 'default',
+} = {}) => {
   StyleDictionary.registerFormat({
     name: 'css/variables-theme',
     formatter: function ({ dictionary, file, options }) {
@@ -87,7 +91,6 @@ const config = ({ source = `tokens/**/*.json`, buildPath = `dist` } = {}) => {
     name: `attribute/variablenames`,
     matcher: (token) => true,
     transformer: (token, options) => {
-      console.log('dsddaadsadsdsaads', token);
       token.cssName = scssTokenName(token, options);
       return token;
     },
@@ -104,8 +107,21 @@ const config = ({ source = `tokens/**/*.json`, buildPath = `dist` } = {}) => {
           //return content;
           if (content.color) {
             const { color, typography, ...other } = content;
-            const { primary, form, background, ...otherColors } = color;
+            let { primary, form, background, dark, ...otherColors } = color;
+            console.log('color', color);
             //console.log(JSON.parse(color.background));
+            let {
+              primary: primaryDark,
+              form: formDark,
+              //background: backgroundDark,
+              ...otherDarkColors
+            } = dark;
+            return {
+              ...primaryDark,
+              ...formDark,
+              // ...backgroundDark,
+              ...otherDarkColors,
+            };
             return {
               ...otherColors,
               //...color.background,
@@ -189,7 +205,7 @@ const config = ({ source = `tokens/**/*.json`, buildPath = `dist` } = {}) => {
             format: 'css/variables-theme',
             options: {
               outputReferences: true,
-              theme: 'default',
+              theme: themeName,
             },
           },
         ],

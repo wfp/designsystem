@@ -1,0 +1,55 @@
+/**
+ * Do not edit directly
+ * Generated on Wed, 11 Jan 2023 21:42:26 GMT
+ */
+
+@mixin theme-dark () {
+  --typography-body-regular-font-weight: regular;
+  --typography-body-regular-font-size: 0.75em;
+  --typography-story-sub-title-text-transform: uppercase;
+  --typography-story-sub-title-letter-spacing: 0.05em;
+  --typography-story-sub-title-font-weight: 500;
+  --typography-story-sub-title-font-size: 0.75em;
+  --typography-story-h6-font-weight: 600;
+  --typography-story-h6-font-size: 1em;
+  --typography-story-h5-font-weight: 600;
+  --typography-story-h5-font-size: 1.125em;
+  --typography-story-h4-font-weight: 600;
+  --typography-story-h4-font-size: 1.25em;
+  --typography-story-h3-font-weight: 600;
+  --typography-story-h3-font-size: 1.375em;
+  --typography-story-h2-font-weight: 600;
+  --typography-story-h2-font-size: 1.5625em;
+  --typography-story-h1-font-weight: 600;
+  --typography-story-h1-font-size: 1.8125em;
+  --typography-story-title-font-weight: 300;
+  --typography-story-title-font-size: 3.125em;
+  --typography-input-font-weight: regular;
+  --typography-input-font-size: 1em;
+  --typography-helper-font-weight: regular;
+  --typography-helper-font-size: 0.875em;
+  --typography-caption-font-weight: regular;
+  --typography-caption-font-size: 0.875em;
+  --support-warning-light: #222d32ff;
+  --support-error-light: #310d11ff;
+  --support-success-light: #143416ff;
+  --link-primary: #0779f1ff;
+  --link-primary-hover: #369ce3ff;
+  --border-strong: #2f3943ff;
+  --border-subtle: #1f262eff;
+  --button-tertiary-hover: #2e3e4fff;
+  --button-tertiary: #263443ff;
+  --button-secondary-hover: #2889ccff;
+  --button-primary-hover: #2889ccff;
+  --button-primary: #0779f1ff;
+  --layer-primary: #1b2327ff;
+  --text-secondary: #5a6872ff;
+  --text-on-color: #fafafaff;
+  --text-primary: #ffffffff;
+  --background-inverse: #121a1eff;
+  --background-inverse-hover: #222b32ff;
+  --background-main: #121517ff;
+  --field-border: #3e4c54ff;
+  --field: #262e34ff;
+  --brand: #007dbcff;
+}

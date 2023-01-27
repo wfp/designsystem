@@ -1,1 +1,1 @@
-export default from './StepNavigationItem';
+export { default } from './StepNavigationItem';

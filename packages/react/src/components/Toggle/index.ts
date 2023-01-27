@@ -1,2 +1,2 @@
 export * from './Toggle.Skeleton';
-export default from './Toggle';
+export { default } from './Toggle';

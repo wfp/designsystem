@@ -1,1 +1,1 @@
-export default from './AnchorNavigation';
+export { default } from './AnchorNavigation';

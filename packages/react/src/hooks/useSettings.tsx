@@ -1,5 +1,7 @@
 import { useContext } from 'react';
-import { UNCoreContext, defaultUNContext } from '../components/UNCoreSettings';
+
+import { defaultUNContext } from '../components/UNCoreSettings/defaults';
+import { UNCoreContext } from '../components/UNCoreSettings/UNCoreProvider';
 
 export default function useSettings() {
   const settings = useContext(UNCoreContext);

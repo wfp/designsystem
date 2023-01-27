@@ -1,2 +1,2 @@
 export * from './StepNavigation.Skeleton';
-export default from './StepNavigation';
+export { default } from './StepNavigation';

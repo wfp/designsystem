@@ -11,7 +11,7 @@ import {
   Twitter,
   Instagram,
 } from '@un/icons-react';
-import { ScreenSize } from '../../types/utils';
+import { ScreenSize } from '../../typesLegacy/utils';
 
 import useSettings from '../../hooks/useSettings';
 

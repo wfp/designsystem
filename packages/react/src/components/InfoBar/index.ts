@@ -1,1 +1,1 @@
-export default from './InfoBar';
+export { default } from './InfoBar';

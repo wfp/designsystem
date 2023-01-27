@@ -3,7 +3,7 @@ import type { PropsWithChildren } from 'react';
 import classnames, { Argument } from 'classnames';
 import Link from '../Link';
 import Wrapper from '../Wrapper';
-import { ScreenSize } from '../../types/utils';
+import { ScreenSize } from '../../typesLegacy/utils';
 // import Icon from '../Icon';
 import {
   WfpLogoStandardBlackEn,

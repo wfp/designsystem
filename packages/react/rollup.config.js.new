@@ -1,0 +1,50 @@
+import { babel } from '@rollup/plugin-babel';
+import external from 'rollup-plugin-peer-deps-external';
+import resolve from '@rollup/plugin-node-resolve';
+import typescript from '@rollup/plugin-typescript';
+import terser from '@rollup/plugin-terser';
+const commonjs = require('@rollup/plugin-commonjs');
+const packageJson = require('./package.json');
+
+const umdExternalDependencies = Object.keys(
+  packageJson.peerDependencies
+).filter((dependency) => dependency !== 'carbon-components');
+
+export default [
+  {
+    input: './src/index.ts',
+    // external: [...umdExternalDependencies, 'prop-types'],
+    output: [
+      {
+        file: 'dist/index.js',
+        format: 'cjs',
+      },
+      /*  {
+        file: 'dist/index.es.js',
+        format: 'es',
+        exports: 'named',
+      },*/
+    ],
+    plugins: [
+      babel({
+        exclude: 'node_modules/**',
+        presets: ['@babel/preset-react'],
+        plugins: [
+          'dev-expression',
+          '@babel/plugin-syntax-dynamic-import',
+          '@babel/plugin-syntax-import-meta',
+          '@babel/plugin-proposal-class-properties',
+          '@babel/plugin-proposal-export-namespace-from',
+          '@babel/plugin-proposal-export-default-from',
+        ],
+      }),
+      external(),
+      resolve(),
+      commonjs({
+        include: /node_modules/,
+      }),
+      typescript({ tsconfig: './tsconfig.json' }),
+      terser(),
+    ],
+  },
+];

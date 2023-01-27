@@ -32,7 +32,7 @@ $input-height: 40px !default;
     @include type-style('body-long-01');
     //TODO: check why min-width was used
     //min-width: 10rem;
-    // width: 100%;
+    width: 100%;
     // min-width: 10rem;
     height: 100%;
     min-height: $input-height;

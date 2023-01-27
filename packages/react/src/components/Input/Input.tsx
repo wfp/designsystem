@@ -151,8 +151,7 @@ const Input: React.FC<PropsWithChildren<InputProps>> = ({
         {addonBefore && (
           <div className={`${prefix}--input-addon-before`}>{addonBefore}</div>
         )}
-        {/* {typeof children === 'function' ? children(elementProps) : children} */}
-        {children}
+        {typeof children === 'function' ? children(elementProps) : children}
         {addonAfter && (
           <div className={`${prefix}--input-addon-after`}>{addonAfter}</div>
         )}

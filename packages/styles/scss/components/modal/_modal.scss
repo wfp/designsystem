@@ -206,9 +206,10 @@ $modal-footer-background-color: $layer-primary !default; //TODO use $layer token
 
   .#{$prefix}--modal-close__icon {
     transition: 200ms;
-    fill: var(--ui-05); // TODO change $field-border
+    // fill: var(--ui-05); // TODO change $field-border
     width: rem(12px);
     height: rem(12px);
+    color: $text-primary;
   }
 
   .#{$prefix}--modal--background-image {

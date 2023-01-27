@@ -1,2 +1,2 @@
-export default from './Table';
-export TableSorting from './TableSorting';
+export { default } from './Table';
+export * as TableSorting from './TableSorting';

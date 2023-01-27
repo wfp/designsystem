@@ -74,10 +74,11 @@
   }
 
   .#{$prefix}--empty__icon {
+    color: $interactive;
     svg,
     .svg-inline--fa {
-      width: 5rem;
-      height: 5rem;
+      //width: 5rem;
+      //height: 5rem;
       path {
         //fill: $interactive-01;
       }
@@ -94,8 +95,9 @@
       }
       svg,
       .svg-inline--fa {
-        width: 15rem;
-        height: 15rem;
+        font-size: 6em;
+        //width: 15rem;
+        //height: 15rem;
       }
       margin-bottom: $spacing-06;
     }

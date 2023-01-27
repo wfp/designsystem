@@ -1,1 +1,1 @@
-export default from './BreadcrumbItem';
+export { default } from './BreadcrumbItem';
