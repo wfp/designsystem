@@ -31,11 +31,11 @@ jobs:
       displayName: 'npm run build'
 
     - script: >
-        npx -p semantic-release
+        npx -p semantic-release@17.4.7
         -p @semantic-release/git
         -p @semantic-release/changelog
         -p semantic-release-ado
-        semantic-release@17.4.7
+        semantic-release
       env: { GH_TOKEN: $(GitHubToken) }
       displayName: 'Semantic release'
 
