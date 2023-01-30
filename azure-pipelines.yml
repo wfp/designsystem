@@ -31,7 +31,7 @@ jobs:
       displayName: 'npm run build'
 
     - script: >
-        npx -p semantic-release@17.4.7
+        npx -p semantic-release
         -p @semantic-release/git
         -p @semantic-release/changelog
         -p semantic-release-ado
