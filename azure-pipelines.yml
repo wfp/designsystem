@@ -36,7 +36,7 @@ jobs:
         -p @semantic-release/changelog
         -p semantic-release-ado
         semantic-release
-      env: { GH_TOKEN: $(GitHubToken) }
+      env: { GH_TOKEN: $(GitHubToken), NPM_TOKEN: $(NPM_TOKEN) }
       displayName: 'Semantic release'
 
     - powershell: |
