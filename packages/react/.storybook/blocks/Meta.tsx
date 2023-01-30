@@ -1,10 +1,7 @@
 import React, { FC, useContext } from 'react';
 import { document } from 'global';
 import { Anchor } from './Anchor';
-import {
-  DocsContext,
-  DocsContextProps,
-} from '@storybook/addon-docs/dist/esm/blocks/DocsContext';
+import { DocsContext, DocsContextProps } from '@storybook/blocks';
 import { getDocsStories } from './utils';
 import { Component } from './types';
 

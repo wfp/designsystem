@@ -5,10 +5,7 @@ import { NAVIGATE_URL } from '@storybook/core-events';
 import { Code, components } from '@storybook/components';
 import { document } from 'global';
 import { styled } from '@storybook/theming';
-import {
-  DocsContext,
-  DocsContextProps,
-} from '@storybook/addon-docs/dist/esm/blocks/DocsContext';
+import { DocsContext, DocsContextProps } from '@storybook/blocks';
 
 // Hacky utility for asserting identifiers in MDX Story elements
 export const assertIsFn = (val: any) => {

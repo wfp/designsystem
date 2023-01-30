@@ -9,13 +9,13 @@ import { styled } from '@storybook/theming';
 import { darken } from 'polished';
 import { logger } from '@storybook/client-logger';
 
-import { getBlockBackgroundStyle } from '@storybook/components/dist/esm/blocks/BlockBackgroundStyles';
+import { getBlockBackgroundStyle } from '@storybook/blocks';
 import { Source, SourceProps } from './Source';
 import {
   ActionBar,
   ActionItem,
 } from '@storybook/components/dist/esm/ActionBar/ActionBar';
-import { Toolbar } from '@storybook/components/dist/esm/blocks/Toolbar';
+import { Toolbar } from '@storybook/blocks';
 
 import ReactDOMServer from 'react-dom/server';
 import pretty from 'pretty';

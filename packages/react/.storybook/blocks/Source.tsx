@@ -4,14 +4,8 @@ import {
   SourceError,
   SourceProps as PureSourceProps,
 } from '@storybook/components';
-import {
-  DocsContext,
-  DocsContextProps,
-} from '@storybook/addon-docs/dist/esm/blocks/DocsContext';
-import {
-  SourceContext,
-  SourceContextProps,
-} from '@storybook/addon-docs/dist/esm/blocks/SourceContainer';
+import { DocsContext, DocsContextProps } from '@storybook/blocks';
+import { SourceContext, SourceContextProps } from '@storybook/blocks';
 import { CURRENT_SELECTION } from './types';
 
 import { enhanceSource } from './enhanceSource';

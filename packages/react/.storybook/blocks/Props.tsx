@@ -22,10 +22,7 @@ import { Args } from '@storybook/addons';
 import { StoryStore } from '@storybook/client-api';
 import Events from '@storybook/core-events';
 
-import {
-  DocsContext,
-  DocsContextProps,
-} from '@storybook/addon-docs/dist/esm/blocks/DocsContext';
+import { DocsContext, DocsContextProps } from '@storybook/blocks';
 import { Component, CURRENT_SELECTION, PRIMARY_STORY } from './types';
 import { getComponentName, getDocsStories } from './utils';
 import { ArgTypesExtractor } from '@storybook/addon-docs/dist/esm/lib/docgen/types';
@@ -249,7 +246,7 @@ export const Props: FC<PropsProps> = (props) => {
 
   if (!components && !subcomponents) {
     let mainProps;
-    
+
     try {
       mainProps = {
         rows: extractComponentArgTypes(main, context, include, exclude),

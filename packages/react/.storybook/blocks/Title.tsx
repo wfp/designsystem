@@ -1,9 +1,6 @@
 import React, { useContext, FunctionComponent } from 'react';
 import { Title as PureTitle } from '@storybook/components';
-import {
-  DocsContext,
-  DocsContextProps,
-} from '@storybook/addon-docs/dist/esm/blocks/DocsContext';
+import { DocsContext, DocsContextProps } from '@storybook/blocks';
 import Text from '../../src/components/Text/Text';
 
 interface TitleProps {
@@ -15,7 +12,7 @@ export const extractTitle = ({ kind, parameters }: DocsContextProps) => {
   return (groups && groups[groups.length - 1]) || kind;
 };
 
-export const Title: FunctionComponent<TitleProps> = ({ children}) => {
+export const Title: FunctionComponent<TitleProps> = ({ children }) => {
   const context = useContext(DocsContext);
   let text: JSX.Element | string = children;
   if (!text) {

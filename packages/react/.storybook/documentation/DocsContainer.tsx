@@ -3,8 +3,6 @@ import { Title, DocsContainer } from '@storybook/addon-docs';
 import { themes } from '@storybook/theming';
 
 export default function DocsContainerWrapper(props) {
-  console.log('hello props', props);
-
   if (props.context.parameters.fullPage) {
     return (
       <div className="fullPage">

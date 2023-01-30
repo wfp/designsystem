@@ -18,6 +18,15 @@ export default {
   },
 };
 
+type Story = StoryObj<typeof Button>;
+
+export const Primary: Story = {
+  args: {
+    primary: true,
+    label: 'Button',
+  },
+};
+
 export const ButtonRegular = (args) => <Button {...args} />;
 
 ButtonRegular.args = {

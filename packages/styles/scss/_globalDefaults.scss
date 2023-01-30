@@ -1,0 +1,13 @@
+/*@use '../../breakpoint' as *;
+@use '../../config' as *;
+@use '../../motion' as *;*/
+@use './theme' as *;
+/*@use '../../spacing' as *;
+@use '../../type' as *;
+@use '../../utilities/component-reset';
+@use '../../utilities/convert';*/
+
+@mixin globalDefaults() {
+  color: $text-primary;
+  background: $background-main;
+}

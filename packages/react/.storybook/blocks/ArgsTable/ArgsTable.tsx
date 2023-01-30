@@ -6,12 +6,9 @@ import { Icons } from '@storybook/components';
 import { ArgRow } from './ArgRow';
 import { SectionRow } from './SectionRow';
 import { ArgType, ArgTypes, Args } from './types';
-import { EmptyBlock } from '@storybook/components/dist/esm/blocks';
+import { EmptyBlock } from '@storybook/blocks';
 
-import {
-  DocsContext,
-  DocsContextProps,
-} from '@storybook/addon-docs/dist/esm/blocks/DocsContext';
+import { DocsContext, DocsContextProps } from '@storybook/blocks';
 
 //import { Link } from '../../typography/link/link';
 //import { Link } from '@storybook/components';
@@ -117,18 +114,20 @@ export const TableWrapper = styled.table<{
     marginRight: inAddonPanel ? 0 : 1,
 
     [`tr:first-child${ignoreSsrWarning}`]: {
-      [`td:first-child${ignoreSsrWarning}, th:first-child${ignoreSsrWarning}`]: {
-        borderTopLeftRadius: inAddonPanel ? 0 : theme.appBorderRadius,
-      },
+      [`td:first-child${ignoreSsrWarning}, th:first-child${ignoreSsrWarning}`]:
+        {
+          borderTopLeftRadius: inAddonPanel ? 0 : theme.appBorderRadius,
+        },
       [`td:last-child${ignoreSsrWarning}, th:last-child${ignoreSsrWarning}`]: {
         borderTopRightRadius: inAddonPanel ? 0 : theme.appBorderRadius,
       },
     },
 
     [`tr:last-child${ignoreSsrWarning}`]: {
-      [`td:first-child${ignoreSsrWarning}, th:first-child${ignoreSsrWarning}`]: {
-        borderBottomLeftRadius: inAddonPanel ? 0 : theme.appBorderRadius,
-      },
+      [`td:first-child${ignoreSsrWarning}, th:first-child${ignoreSsrWarning}`]:
+        {
+          borderBottomLeftRadius: inAddonPanel ? 0 : theme.appBorderRadius,
+        },
       [`td:last-child${ignoreSsrWarning}, th:last-child${ignoreSsrWarning}`]: {
         borderBottomRightRadius: inAddonPanel ? 0 : theme.appBorderRadius,
       },

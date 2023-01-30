@@ -5,10 +5,7 @@ import { Story as PureStory } from '@storybook/components';
 import { toId, storyNameFromExport } from '@storybook/csf';
 import { CURRENT_SELECTION } from './types';
 
-import {
-  DocsContext,
-  DocsContextProps,
-} from '@storybook/addon-docs/dist/esm/blocks/DocsContext';
+import { DocsContext, DocsContextProps } from '@storybook/blocks';
 
 export const storyBlockIdFromId = (storyId: string) => `story--${storyId}`;
 

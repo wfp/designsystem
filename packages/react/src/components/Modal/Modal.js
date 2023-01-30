@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom';
 import classNames from 'classnames';
 import { Close } from '@un/icons-react';
 import useSettings from '../../hooks/useSettings';
+import ModalHeader from './ModalHeader';
 import ModalFooter from './ModalFooter';
 
 const matchesFuncName =
@@ -19,7 +20,7 @@ function Modal(props) {
     modalHeading,
     modalLabel,
     className,
-    components,
+    components: componentsOverride = {},
     modalSecondaryAction,
     modalAriaLabel,
     passiveModal,
@@ -35,6 +36,7 @@ function Modal(props) {
     hideClose,
     handleBlur,
     wide,
+    width,
     type,
     selectorPrimaryFocus,
     shouldSubmitOnEnter,
@@ -154,7 +156,7 @@ function Modal(props) {
 
   if (open === false && lazyLoad) return null;
 
-  const customComponents = { ModalFooter, ...components };
+  const components = { ModalHeader, ModalFooter, ...componentsOverride };
 
   const onSecondaryButtonClick = onSecondarySubmit
     ? onSecondarySubmit
@@ -164,6 +166,7 @@ function Modal(props) {
     {
       [`${prefix}--modal`]: true,
       [`${prefix}--modal--wide`]: wide,
+      [`${prefix}--modal--${width}`]: width,
       [`${prefix}--modal--tall`]: !passiveModal,
       [`${prefix}--modal--background-image`]: backgroundImage,
       'is-visible': open,
@@ -193,19 +196,9 @@ function Modal(props) {
       role="dialog"
       className={`${prefix}--modal-container`}
       aria-label={modalAriaLabel}>
-      <div className={`${prefix}--modal-header`}>
-        {passiveModal && modalButton}
-        <div>
-          {modalLabel && (
-            <h4 className={`${prefix}--modal-header__label`}>{modalLabel}</h4>
-          )}
-          <h2 className={`${prefix}--modal-header__heading`}>{modalHeading}</h2>
-        </div>
-        {modalSecondaryAction && <>{modalSecondaryAction}</>}
-        {!passiveModal && modalButton}
-      </div>
+      <components.ModalHeader {...props} prefix={prefix} />
       <div className={`${prefix}--modal-content`}>{children}</div>
-      <customComponents.ModalFooter
+      <components.ModalFooter
         {...props}
         prefix={prefix}
         onSecondaryButtonClick={onSecondaryButtonClick}

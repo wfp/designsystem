@@ -189,5 +189,3 @@ useInput.defaultProps = {
   helperText: '',
   light: false,
 };
-
-export default useInput;

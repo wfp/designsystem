@@ -10,6 +10,9 @@ type ModalWrapperProps = PropsWithChildren<{
   id?: string;
   status?: string;
   disabled?: boolean;
+  components?: {
+    Wrapper?: React.ReactNode;
+  };
   customButton?: React.ReactElement;
   buttonTriggerText?: React.ReactNode;
   buttonTriggerClassName?: string;
@@ -20,6 +23,7 @@ type ModalWrapperProps = PropsWithChildren<{
   withHeader?: boolean;
   modalBeforeContent?: boolean;
   primaryButtonText?: string;
+  width?: 'wide' | 'narrow';
   secondaryButtonText?: string;
   handleOpen?: () => void;
   handleSubmit?: (handle: () => void) => void;

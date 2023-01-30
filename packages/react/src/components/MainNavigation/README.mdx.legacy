@@ -1,5 +1,3 @@
-import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
-
 ### Usage
 
 The MainNavigation is used across all applications, it is the starting point of the application and offers the top level navigation items.

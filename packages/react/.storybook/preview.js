@@ -1,7 +1,6 @@
 import React, { FC } from 'react';
-import { addParameters } from '@storybook/react';
+//import { addParameters } from '@storybook/react';
 import './storybook.scss';
-//import './storybook-legacy.scss';
 import theme from './theme';
 import { UNCoreProvider } from '../src/components/UNCoreSettings';
 import MdxComponents from '../src/components/MdxComponents';
@@ -17,6 +16,9 @@ import MdxComponents from '../src/components/MdxComponents';
 import DocsPage from './documentation/DocsPage';
 import DocsContainer from './documentation/DocsContainer';
 
+import { themes, ensure } from '@storybook/theming';
+
+/*
 addParameters({
   docs: {
     container: DocsContainer,
@@ -24,11 +26,14 @@ addParameters({
   },
   viewMode: 'docs',
 }); // or global addParameters
+*/
 export const parameters = {
   controls: { expanded: true },
   docs: {
     components: { ...MdxComponents },
     theme: theme,
+    //theme: ensure(themes.dark),
+    page: DocsPage,
   },
   previewTabs: {
     'storybook/docs/panel': {

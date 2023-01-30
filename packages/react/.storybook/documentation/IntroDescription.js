@@ -1,10 +1,12 @@
 import React, { useContext } from 'react';
 import { Description } from '@storybook/components';
 import { MDXProvider } from '@mdx-js/react';
+/*
 import {
   DocsContext,
   DocsContextProps,
 } from '@storybook/addon-docs/dist/esm/blocks/DocsContext';
+*/
 
 import { getDocsStories } from '../blocks/utils';
 

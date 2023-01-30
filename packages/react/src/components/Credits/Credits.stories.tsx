@@ -1,5 +1,5 @@
 import React from 'react';
-import Credits from '../Credits';
+import Credits from '.';
 import markdown from './README.mdx';
 
 export default {

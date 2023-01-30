@@ -124,6 +124,9 @@ $modal-footer-background-color: $layer-primary !default; //TODO use $layer token
       .#{$prefix}--modal--wide & {
         max-width: 90%;
       }
+      .#{$prefix}--modal--narrow & {
+        max-width: 38rem;
+      }
     }
 
     @media (min-width: 1600px) {
@@ -132,6 +135,9 @@ $modal-footer-background-color: $layer-primary !default; //TODO use $layer token
 
       .#{$prefix}--modal--wide & {
         max-width: 80%;
+      }
+      .#{$prefix}--modal--narrow & {
+        max-width: 38rem;
       }
     }
   }

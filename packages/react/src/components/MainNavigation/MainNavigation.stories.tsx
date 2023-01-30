@@ -1,5 +1,5 @@
 import React from 'react';
-import markdown from './README.mdx';
+//import markdown from './README.mdx';
 import { action } from '@storybook/addon-actions';
 import { MainNavigation, MainNavigationExternal } from '.';
 import MainNavigationItem from '../MainNavigationItem';
@@ -27,7 +27,7 @@ export default {
   parameters: {
     componentSubtitle: 'Component',
     status: 'released',
-    mdx: markdown,
+    //mdx: markdown,
     previewWidth: 'full',
   },
 };

@@ -5,7 +5,6 @@ import useSettings from '../../hooks/useSettings';
 const NumberInputSkeleton = ({ hideLabel, id }) => {
   const { prefix } = useSettings();
   const label = hideLabel ? null : (
-    // eslint-disable-next-line jsx-a11y/label-has-for,jsx-a11y/label-has-associated-control
     <label className={`${prefix}--label ${prefix}--skeleton`} htmlFor={id} />
   );
 

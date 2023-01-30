@@ -8,7 +8,7 @@ export {
 
 export * from './Anchor';
 export * from './Description';
-export * from '@storybook/addon-docs/dist/esm/blocks/DocsContext';
+export * from '@storybook/blocks/dist/DocsContext';
 export * from './DocsPage';
 export * from './DocsContainer';
 export * from './DocsStory';

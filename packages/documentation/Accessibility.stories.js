@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import Link from '../components/Link';
+import Link from '../react/src/components/Link';
 import Page from './Page';
 
 storiesOf('Getting started/Design resources', module)

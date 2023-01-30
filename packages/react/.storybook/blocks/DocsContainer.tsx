@@ -6,14 +6,11 @@ import { MDXProvider } from '@mdx-js/react';
 import { ThemeProvider, ensure as ensureTheme } from '@storybook/theming';
 import { DocsWrapper, DocsContent } from '@storybook/components';
 import { components as htmlComponents } from '@storybook/components';
-import {
-  DocsContextProps,
-  DocsContext,
-} from '@storybook/addon-docs/dist/esm/blocks/DocsContext';
+import { DocsContextProps, DocsContext } from '@storybook/blocks';
 import { Code, components } from '@storybook/components';
 import { anchorBlockIdFromId } from './Anchor';
 import { storyBlockIdFromId } from './Story';
-import { SourceContainer } from '@storybook/addon-docs/dist/esm/blocks/SourceContainer';
+import { SourceContainer } from '@storybook/blocks';
 import { CodeOrSourceMdx, AnchorMdx, HeadersMdx } from './mdx';
 import { scrollToElement } from './utils';
 

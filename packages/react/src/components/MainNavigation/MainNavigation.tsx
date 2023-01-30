@@ -11,6 +11,9 @@ import MainNavigationContext from './MainNavigationContext';
 type MainNavigationProps = PropsWithChildren<{
   logo?: string | React.ReactNode;
   pageWidth?: ScreenSize;
+  components?: {
+    Wrapper?: React.ReactNode;
+  };
   mobilePageWidth?: ScreenSize;
   wrapperClassName?: string;
   className?: string;
@@ -19,6 +22,7 @@ type MainNavigationProps = PropsWithChildren<{
 
 const MainNavigation: React.FC<MainNavigationProps> = ({
   children,
+  components: componentsOverride = {},
   className,
   id,
   logo,
@@ -62,11 +66,13 @@ const MainNavigation: React.FC<MainNavigationProps> = ({
     [`${prefix}--main-navigation__list--open`]: openMobile,
   });
 
+  const components = { Wrapper, ...componentsOverride };
+
   return (
     <div id={id} className={wrapperClasses}>
       <MainNavigationContext.Provider
         value={{ activeMenuItem, openMobile, toggleMenu, onChangeSub }}>
-        <Wrapper
+        <components.Wrapper
           pageWidth={pageWidth}
           mobilePageWidth={mobilePageWidth}
           className={`${prefix}--main-navigation__wrapper`}>
@@ -79,7 +85,7 @@ const MainNavigation: React.FC<MainNavigationProps> = ({
             <div className={`${prefix}--main-navigation__logo`}>{logo}</div>
           </div>
           <ul className={listClasses}>{children}</ul>
-        </Wrapper>
+        </components.Wrapper>
       </MainNavigationContext.Provider>
     </div>
   );

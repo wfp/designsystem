@@ -126,11 +126,6 @@
       "git add"
     ]
   },
-  "eslintConfig": {
-    "extends": [
-      "eslint-config-carbon/internal"
-    ]
-  },
   "stylelint": {
     "extends": [
       "./config/stylelint-config-carbon"

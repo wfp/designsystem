@@ -106,6 +106,7 @@ module.exports = {
       use: 'yaml-loader',
     });
 
+    /*
     config.module.rules.push({
       test: /-story\.jsx?$/,
       loaders: [
@@ -125,7 +126,7 @@ module.exports = {
       ],
       enforce: 'pre',
     });
-
+*/
     /*config.module.rules.push({
       test: /\.tsx?$/,
       loaders: [
@@ -146,6 +147,7 @@ module.exports = {
       enforce: 'pre',
     });
 */
+    /*
     config.module.rules.push({
       test: /\.scss$/,
       sideEffects: true,
@@ -204,7 +206,7 @@ module.exports = {
 
     config.module.rules = config.module.rules.filter((e) => {
       return e.test !== '/.tsx?$/';
-    });
+    });*/
 
     return config;
   },

@@ -1,2 +1,2 @@
 export { default } from './Input';
-export useInput from './useInput';
+export { useInput } from './useInput';

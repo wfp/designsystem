@@ -13,14 +13,8 @@ import {
   PreviewProps as PurePreviewProps,
 } from '@storybook/components';
 import { Preview as PurePreview } from './PurePreview';
-import {
-  DocsContext,
-  DocsContextProps,
-} from '@storybook/addon-docs/dist/esm/blocks/DocsContext';
-import {
-  SourceContext,
-  SourceContextProps,
-} from '@storybook/addon-docs/dist/esm/blocks/SourceContainer';
+import { DocsContext, DocsContextProps } from '@storybook/blocks';
+import { SourceContext, SourceContextProps } from '@storybook/blocks';
 import { getSourceProps } from './Source';
 
 import ReactDOMServer from 'react-dom/server';
@@ -99,7 +93,7 @@ export const Preview: FC<PreviewProps> = (props) => {
   const sourceContext = useContext(SourceContext);
   const previewProps = getPreviewProps(props, docsContext, sourceContext);
   const { children } = props;
-  
+
   return (
     <MDXProvider components={resetComponents}>
       <PurePreview

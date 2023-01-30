@@ -15,24 +15,6 @@ import { List, ListItem } from '../List';
 - ✓ Use when you want to show additional information without losing the context of the parent page. Ex. showing larger images or videos.
 - ✓ Use when you want to show information that is not directly related to the parent page or other options that are “independent” from other pages. Ex. notifications.
 
-<!--
-#### Grab the user’s attention
-
-Use when you want to interrupt a user’s current task to catch the user’s full attention to something more important.
-
-#### Need user input
-
-Use when you want to get information from the user. Ex. sign up or login form.
-
-#### Show additional information in context.
-
-Use when you want to show additional information without losing the context of the parent page. Ex. showing larger images or videos.
-
-#### Show additional information (not in context)
-
-Use when you want to show information that is not directly related to the parent page or other options that are “independent” from other pages. Ex. notifications.
--->
-
 Source: [Best Practices for Modals / Overlays / Dialog Windows](https://uxplanet.org/best-practices-for-modals-overlays-dialog-windows-c00c66cddd8c), [Modal & Nonmodal Dialogs: When (& When Not) to Use Them](https://www.nngroup.com/articles/modal-nonmodal-dialog/)
 
 #### When not to use

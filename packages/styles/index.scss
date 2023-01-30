@@ -13,6 +13,7 @@
 @forward 'scss/type';
 @forward 'scss/themes';
 @forward 'scss/theme';
+@forward 'scss/globalDefaults';
 
 @use 'scss/reset';
 @use 'scss/components';

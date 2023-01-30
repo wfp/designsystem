@@ -3,7 +3,7 @@ import type { PropsWithChildren } from 'react';
 import classNames, { Argument } from 'classnames';
 import useSettings from '../../hooks/useSettings';
 import Input from '../Input/Input';
-import useInput from '../Input/useInput';
+import { useInput } from '../Input/useInput';
 import * as HookForm from 'react-hook-form';
 import { InputModes } from '../../typesLegacy/utils';
 
@@ -39,13 +39,12 @@ const TextInput: React.FC<TextInputProps> = React.forwardRef((props, ref) => {
     formItemClassName,
     placeholder,
     type,
-    onChange,
-    onClick,
+    //onChange,
+    //onClick,
     hideLabel,
     invalid,
     invalidText,
     helperText,
-    inputRef = ref,
     pattern,
     required,
     ...other
@@ -59,12 +58,7 @@ const TextInput: React.FC<TextInputProps> = React.forwardRef((props, ref) => {
     [`${prefix}--text--required`]: required,
   });
 
-  const newProps = {
-    disabled,
-    id,
-  };
-
-  const input = useInput();
+  const { onChange, onClick, ...input } = useInput(props);
 
   return (
     <Input {...props} formItemClassName={formItemClassName}>
@@ -72,9 +66,8 @@ const TextInput: React.FC<TextInputProps> = React.forwardRef((props, ref) => {
         pattern={pattern}
         type={type}
         {...other}
-        {...newProps}
-        ref={inputRef}
-        className={textInputClasses}
+        ref={ref}
+        classNames={textInputClasses}
         {...input}
       />
     </Input>

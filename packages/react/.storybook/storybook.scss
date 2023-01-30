@@ -3,11 +3,14 @@ $css--reset: true;
 
 @use './theme' as coretheme;
 @use '@un/themes-core/dist/scss/default-css-theme' as defaulttheme;
+@use '@un/themes-core/distDark/scss/default-css-theme' as darkTheme;
 //@use './default-css-theme' as darkTheme;
 
 //@use '@un/themes-core/dist/scss/_variables.scss' as darkTheme;
 
-@use "@un/styles/scss/theme" /*with (
+@use '@un/styles/scss/globalDefaults' as globalDefaults;
+
+@use '@un/styles/scss/theme' /*with (
   $coretheme: coretheme
 )*/;
 
@@ -36,8 +39,18 @@ $color-corporate-09: 'green';
   }*/
 }
 
+body,
+.sbdocs-wrapper.sbdocs {
+  @include globalDefaults.globalDefaults();
+}
+
+.sbdocs,
+.wfp--story > * {
+  color: $text-primary !important;
+}
+
 .wfp--theme-dark {
-  // @include darkTheme.theme-default();
+  @include darkTheme.theme-dark();
 }
 
 .docs-story {

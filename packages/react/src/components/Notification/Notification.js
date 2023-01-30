@@ -418,7 +418,7 @@ ToastNotification.propTypes = {
   /**
    * Specify the title
    */
-  title: PropTypes.string.isRequired,
+  title: PropTypes.node.isRequired,
 };
 
 ToastNotification.defaultProps = {

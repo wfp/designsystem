@@ -1,11 +1,11 @@
 import React from 'react';
 import markdown from './README.mdx';
 import { AuthLayout, BackgroundContent } from './AuthLayout';
-import Button from './../Button';
-import TextInput from './../TextInput';
-import Text from './../Text';
-import Link from './../Link';
-import FormGroup from './../FormGroup';
+import Button from '../Button';
+import TextInput from '../TextInput';
+import Text from '../Text';
+import Link from '../Link';
+import FormGroup from '../FormGroup';
 // import Icon from './../Icon';
 import { ArrowLeft, WfpLogoStandardBlackEn } from '@un/icons-react';
 

@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import Wrapper from '../components/Wrapper';
+import Wrapper from '../react/src/components/Wrapper';
 
 const Page = ({ children, pageWidth, subTitle, title }) => {
   return (

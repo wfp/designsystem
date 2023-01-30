@@ -3,7 +3,6 @@ import React from 'react';
 
 const SliderSkeleton = ({ hideLabel, id }) => {
   const label = hideLabel ? null : (
-    // eslint-disable-next-line jsx-a11y/label-has-for,jsx-a11y/label-has-associated-control
     <label className="wfp--label wfp--skeleton" htmlFor={id} />
   );
 

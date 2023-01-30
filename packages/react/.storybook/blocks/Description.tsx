@@ -3,10 +3,7 @@ import {
   Description,
   DescriptionProps as PureDescriptionProps,
 } from '@storybook/components';
-import {
-  DocsContext,
-  DocsContextProps,
-} from '@storybook/addon-docs/dist/esm/blocks/DocsContext';
+import { DocsContext, DocsContextProps } from '@storybook/blocks';
 import { Component, CURRENT_SELECTION } from './types';
 import { str } from '@storybook/addon-docs/dist/esm/lib/docgen';
 

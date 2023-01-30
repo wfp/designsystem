@@ -1,0 +1,65 @@
+$css--body: true;
+$css--reset: true;
+
+@use './theme' as coretheme;
+@use '@un/themes-core/dist/scss/default-css-theme' as defaulttheme;
+//@use './default-css-theme' as darkTheme;
+
+//@use '@un/themes-core/dist/scss/_variables.scss' as darkTheme;
+
+@use '@un/styles/scss/theme' /*with (
+  $coretheme: coretheme
+)*/;
+
+@import '@un/styles';
+
+//@import '@un/themes/scss/themes';
+
+//@import '@un/themes-core/dist/scss/theme';
+
+//@import '@un/themes/scss/index.scss';
+
+//$carbon--theme: $carbon--theme--wfp;
+
+$color-corporate-09: 'green';
+
+/*div {
+  background: $color-corporate-09 !important;
+}*/
+// Use the WFP theme
+:root {
+  @include defaulttheme.theme-default();
+
+  /*@include carbon--theme($carbon--theme--wfp, true) {
+    // @include emit-component-tokens($tag-colors);
+    // @include emit-component-tokens($notification-colors);
+  }*/
+}
+
+.wfp--theme-dark {
+  // @include darkTheme.theme-default();
+}
+
+.docs-story {
+  overflow: visible !important;
+}
+.docs-story > * {
+  overflow: visible !important;
+}
+
+.docs-story > div:last-child {
+  z-index: 0 !important;
+}
+
+.fullPage {
+  .sbdocs-content {
+    margin: 0;
+    max-width: inherit !important;
+  }
+}
+
+.sbdocs-h1,
+.sbdocs-title {
+  font-weight: 500 !important;
+  margin-bottom: 1em !important;
+}
