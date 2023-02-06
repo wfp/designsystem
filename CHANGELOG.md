@@ -1,3 +1,10 @@
+## [1.22.4](https://github.com/wfp/ui/compare/v1.22.3...v1.22.4) (2023-02-06)
+
+
+### Bug Fixes
+
+* **MainNavigationItem:** added default props ([d202e80](https://github.com/wfp/ui/commit/d202e8022cdb446f07da13e1a09a8320e722ed02))
+
 ## [1.22.3](https://github.com/wfp/ui/compare/v1.22.2...v1.22.3) (2022-09-05)
 
 
