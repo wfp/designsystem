@@ -78,8 +78,7 @@ class MainNavigationItem extends Component {
         {subNavigation && (
           <div
             className={subClasses}
-            open={menuItem === activeMenuItem ? true : false}
-          >
+            open={menuItem === activeMenuItem ? true : false}>
             {subNavigation}
           </div>
         )}
@@ -87,6 +86,10 @@ class MainNavigationItem extends Component {
     );
   }
 }
+
+MainNavigationItem.defaultProps = {
+  onChangeSub: () => {},
+};
 
 MainNavigationItem.propTypes = {
   /**

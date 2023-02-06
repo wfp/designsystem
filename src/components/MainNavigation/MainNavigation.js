@@ -80,13 +80,11 @@ class MainNavigation extends Component {
         <Wrapper
           pageWidth={pageWidth}
           mobilePageWidth={mobilePageWidth}
-          className={`${prefix}--main-navigation__wrapper`}
-        >
+          className={`${prefix}--main-navigation__wrapper`}>
           <div className={`${prefix}--main-navigation__logo-wrapper`}>
             <Button
               className={`${prefix}--main-navigation__button`}
-              onClick={this.toggleMenu}
-            >
+              onClick={this.toggleMenu}>
               Menu
             </Button>
             <div className={`${prefix}--main-navigation__logo`}>{logo}</div>
