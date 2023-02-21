@@ -21,6 +21,8 @@ build/*
 .idea
 .vscode
 .env
+.env.local
+.env.production
 
 # Coverage directory used by tools like Istanbul
 coverage
