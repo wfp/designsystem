@@ -12,7 +12,7 @@ export default {
   },
 };
 
-export const Basic = () => <SkeletonText />;
+export const Basic = () => <SkeletonText width="100%" />;
 
 export const MultipleLine = () => (
   <SkeletonText paragraph={true} width="50%" heading={false} lineCount={3} />

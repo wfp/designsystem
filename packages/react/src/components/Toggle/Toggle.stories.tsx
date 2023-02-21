@@ -13,3 +13,11 @@ export default {
 };
 
 export const Regular = (args) => <Toggle {...args} />;
+
+Regular.args = {
+  defaultToggled: false,
+  labelA: 'Off',
+  labelB: 'On',
+  name: 'toggle',
+  onToggle: () => {},
+};

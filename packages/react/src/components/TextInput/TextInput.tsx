@@ -1,6 +1,6 @@
 import React from 'react';
 import type { PropsWithChildren } from 'react';
-import classNames, { Argument } from 'classnames';
+import classNames from 'classnames';
 import useSettings from '../../hooks/useSettings';
 import Input from '../Input/Input';
 import { useInput } from '../Input/useInput';
@@ -9,7 +9,7 @@ import { InputModes } from '../../typesLegacy/utils';
 
 /** Text inputs enable the user to interact with and input content and data. This component can be used for long and short form entries. */
 type TextInputProps = PropsWithChildren<{
-  className?: Argument;
+  className?: string;
   helperText?: string;
   labelText?: string;
   defaultValue?: string | number;

@@ -21,6 +21,7 @@ type ButtonProps = PropsWithChildren<{
   type?: 'button' | 'reset' | 'submit';
   useFlexbox?: boolean;
   onClick?: (e: any) => void;
+  id?: string;
 }>;
 
 /**
@@ -41,6 +42,7 @@ const Button: React.FC<ButtonProps> = ({
   icon,
   iconDescription,
   onClick,
+  id,
   ...other
 }) => {
   const { prefix } = useSettings();
@@ -107,7 +109,8 @@ const Button: React.FC<ButtonProps> = ({
       disabled={disabled}
       type={type}
       onClick={onClickAnimation}
-      ref={other.inputref}>
+      ref={other.inputref}
+      id={id}>
       {iconReverse && buttonImage}
       {children}
       {!iconReverse && buttonImage}
@@ -121,7 +124,8 @@ const Button: React.FC<ButtonProps> = ({
       href={href}
       role="button"
       onClick={onClickAnimation}
-      ref={other.inputref}>
+      ref={other.inputref}
+      id={id}>
       {iconReverse && buttonImage}
       {children}
       {!iconReverse && buttonImage}

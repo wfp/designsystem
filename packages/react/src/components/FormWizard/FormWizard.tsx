@@ -1,6 +1,6 @@
 import React from 'react';
 import type { PropsWithChildren } from 'react';
-import classNames, { Argument } from 'classnames';
+import classNames from 'classnames';
 import { Module, ModuleBody, ModuleHeader, ModuleFooter } from '../Module';
 import useSettings from '../../hooks/useSettings';
 
@@ -9,7 +9,7 @@ type FormWizardProps = PropsWithChildren<{
   stickySidebar?: boolean;
   formHeader?: React.ReactNode;
   formControls?: React.ReactNode;
-  className?: Argument;
+  className?: string;
 }>;
 /** The FormWizard is a wrapper for creating Wizard forms. */
 

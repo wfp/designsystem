@@ -150,8 +150,12 @@ export const Regular = (args) => (
   </MainNavigation>
 );
 
+Regular.args = {
+  logo: 'WFP',
+};
+
 const description = `
-You can customize the content by using \`BannerNavigation\`.
+You can customize the content by using \`MainNavigation\`.
 `;
 
 const sourcecode = (type) => {
@@ -425,6 +429,10 @@ export const RegularWithButton = (args) => (
     </MainNavigationItem>
   </MainNavigation>
 );
+
+RegularWithButton.args = {
+  logo: 'WFP',
+};
 
 RegularWithButton.story = {
   parameters: {

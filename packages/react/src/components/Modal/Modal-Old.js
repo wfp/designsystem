@@ -15,7 +15,7 @@ const matchesFuncName =
 
 /** Modals focus the user’s attention exclusively on one task or piece of information via a window that sits on top of the page content. */
 
-function Modal(props) {
+const Modal = (props) => {
   const {
     modalHeading,
     modalLabel,
@@ -229,10 +229,10 @@ function Modal(props) {
 
   if (inPortal) return ReactDOM.createPortal(modal, el);
   else return modal;
-}
+};
 
 Modal.propTypes = {
-  prefix: PropTypes.string.isRequired,
+  prefix: PropTypes.string,
   /**
    * Provide the contents of your Modal
    */

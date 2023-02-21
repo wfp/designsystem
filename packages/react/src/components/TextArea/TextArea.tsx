@@ -15,6 +15,7 @@ type TextAreaProps = PropsWithChildren<{
   invalid?: boolean | HookForm.FieldError;
   invalidText?: string;
   helperText?: React.ReactNode;
+  inputRef?: React.RefObject<HTMLTextAreaElement>;
   hideLabel?: boolean;
   fullWidth?: boolean;
   viewOnly?: boolean;

@@ -18,6 +18,7 @@ export default {
   },
 };
 
+/*
 type Story = StoryObj<typeof Button>;
 
 export const Primary: Story = {
@@ -26,8 +27,8 @@ export const Primary: Story = {
     label: 'Button',
   },
 };
-
-export const ButtonRegular = (args) => <Button {...args} />;
+*/
+export const ButtonRegular = (args) => <Button {...args} kind="primary" />;
 
 ButtonRegular.args = {
   children: 'Button',
@@ -152,7 +153,9 @@ ButtonIcon.story = {
 
 export const Small = (args) => (
   <>
-    <Button small>Small button</Button>{' '}
+    <Button kind="primary" small>
+      Small button
+    </Button>{' '}
     <Button {...args} icon={AddCircle} kind="tertiary" small>
       With icon
     </Button>
@@ -191,7 +194,9 @@ Small.story = {
 
 export const Large = (args) => (
   <>
-    <Button large>Large button</Button>{' '}
+    <Button kind="primary" large>
+      Large button
+    </Button>{' '}
     <Button {...args} icon={AddCircle} kind="tertiary" large>
       With icon
     </Button>
@@ -236,17 +241,17 @@ export const CustomIcon = (args) => (
   </>
 );
 
-const CustomIconText = `
-Small buttons may be used when there is not enough space for a
-regular sized button. This issue is most found in tables. Small button should have three words
-or less.
-`;
+// const CustomIconText = `
+// Small buttons may be used when there is not enough space for a
+// regular sized button. This issue is most found in tables. Small button should have three words
+// or less.
+// `;
 
 CustomIcon.story = {
-  name: 'large Button',
+  name: 'Custom Button',
   parameters: {
     docs: {
-      storyDescription: CustomIconText,
+      // storyDescription: CustomIconText,
     },
   },
 };

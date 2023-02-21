@@ -15,6 +15,7 @@ export default {
 
 export const Regular = (args) => <Loading {...args}>Text</Loading>;
 Regular.args = {
+  active: true,
   withOverlay: false,
 };
 
@@ -23,14 +24,20 @@ export const overlay = (args) => {
 
   return (
     <>
-      <Button onClick={() => setLoading(true)}>Load with overlay </Button>
-      {loading && <Loading withOverlay={true}>Text</Loading>}
+      <Button kind="primary" onClick={() => setLoading(true)}>
+        Load with overlay{' '}
+      </Button>
+      {loading && (
+        <Loading withOverlay={loading} {...args}>
+          Text
+        </Loading>
+      )}
     </>
   );
 };
 
 overlay.args = {
-  withOverlay: false,
+  active: true,
 };
 
 const overlaysourcecode = `
@@ -43,7 +50,7 @@ export const overlay = () => {
     <>
       <Button onClick={()=>setLoading(true)}>Load with overlay </Button>
       {
-        loading && ( <Loading withOverlay={true} >Text</Loading> )
+        loading && ( <Loading withOverlay={loading} active={true}>Text</Loading> )
       }
     </>
   )
@@ -75,6 +82,7 @@ When loader has a \`small\` variant.
 small.args = {
   withOverlay: false,
   small: true,
+  active: true,
 };
 
 small.story = {

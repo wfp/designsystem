@@ -22,6 +22,13 @@ RegularSlider.args = {
   step: 1,
   labelText: 'Slider Label',
   helperText: 'Additional helper text',
+  fullWidth: false,
+  hideTextInput: false,
+  disabled: false,
+  minLabel: '',
+  maxLabel: '',
+  inputType: 'number',
+  ariaLabelInput: 'Slider number input',
 };
 
 export const hideTextInput = (args) => (
@@ -40,6 +47,8 @@ hideTextInput.args = {
   step: 1,
   labelText: 'Slider Label',
   helperText: 'Additional helper text',
+  minLabel: '',
+  maxLabel: '',
 };
 
 hideTextInput.story = {
@@ -67,6 +76,8 @@ Disabled.args = {
   step: 1,
   labelText: 'Slider Label',
   helperText: 'Additional helper text',
+  minLabel: '',
+  maxLabel: '',
 };
 
 Disabled.story = {
@@ -93,6 +104,8 @@ Fullwidth.args = {
   step: 1,
   labelText: 'Slider Label',
   helperText: 'Additional helper text',
+  minLabel: '',
+  maxLabel: '',
 };
 
 Fullwidth.story = {
