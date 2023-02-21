@@ -32,12 +32,12 @@ export {
   useFeatureFlags,
   useFeatureFlag,
 } from './components/FeatureFlags';
-export {
+/*export {
   default as FileUploader,
   FileUploaderButton,
   FileUploaderItem,
   FileUploaderDropContainer,
-} from './components/FileUploader';
+} from './components/FileUploader';*/
 export {
   Footer,
   FooterExternal,
@@ -78,7 +78,7 @@ export {
   SubNavigationItem,
 } from './components/SubNavigation';
 export { default as MdxComponents } from './components/MdxComponents';
-export { default as Modal } from './components/Modal';
+export { default as Modal, ModalFooter } from './components/Modal';
 export { default as ModalWrapper } from './components/ModalWrapper';
 export {
   Module,
@@ -150,7 +150,9 @@ export { default as useDetectPrint } from './internal/useDetectPrint';
 export { uniqueId } from './tools/uniqueId';
 export {
   UNCoreProvider,
+  UNCoreContext,
   withUNCoreSettings,
+  useTheme,
 } from './components/UNCoreSettings';
 
 export { default as SkeletonText } from './components/SkeletonText';

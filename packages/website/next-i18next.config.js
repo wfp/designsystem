@@ -1,11 +1,11 @@
 // next-i18next.config.js
-const LocizeBackend = require("i18next-locize-backend/cjs");
-const httpBackend = require("i18next-http-backend");
-const axios = require("axios");
+const LocizeBackend = require('i18next-locize-backend/cjs');
+const httpBackend = require('i18next-http-backend');
+const axios = require('axios');
 
-const isBrowser = typeof window !== "undefined";
+const isBrowser = typeof window !== 'undefined';
 
-const locales = ["en", "fr", "de" /*"it"*/];
+const locales = ['en', 'fr', 'de' /*"it"*/];
 /*const locizeOptions = {
   projectId: "63b1dcf8-5fc4-40d5-a80a-22844c993ae7",
   apiKey: "0a48781f-1d27-4c66-a50a-11dff66062e4",
@@ -15,10 +15,10 @@ const locales = ["en", "fr", "de" /*"it"*/];
 
 const loadResources = async (language, namespace, url, options, payload) => {
   const response = await axios({
-    method: "post",
+    method: 'post',
     url: `${process.env.NEXT_PUBLIC_API}/graphql`,
     headers: {
-      "Content-Type": "application/json",
+      'Content-Type': 'application/json',
     },
     data: {
       query: `query translations($namespace: String!) {
@@ -51,14 +51,12 @@ const loadResources = async (language, namespace, url, options, payload) => {
 };
 
 const updateResources = async (language, namespace, url, options, payload) => {
-  console.log("updateRsss", language, namespace, url, options, payload);
-
   // Find Translation
   const existingTranslation = await axios({
-    method: "post",
+    method: 'post',
     url: `${process.env.NEXT_PUBLIC_API}/graphql`,
     headers: {
-      "Content-Type": "application/json",
+      'Content-Type': 'application/json',
     },
     data: {
       query: `query translation($key: String!) {
@@ -83,10 +81,10 @@ const updateResources = async (language, namespace, url, options, payload) => {
 
   if (content === null) {
     const response = await axios({
-      method: "post",
+      method: 'post',
       url: `${process.env.NEXT_PUBLIC_API}/graphql`,
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
       data: {
         query: `mutation createTranslation($key: String! $changeDate: DateTime!) {
@@ -109,10 +107,10 @@ const updateResources = async (language, namespace, url, options, payload) => {
   }
   if (content.translationEntry.length === 1) {
     const response = await axios({
-      method: "post",
+      method: 'post',
       url: `${process.env.NEXT_PUBLIC_API}/graphql`,
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
       data: {
         query: `mutation ($data: TranslationUpdateInput!, $id: ID!) {
@@ -132,22 +130,18 @@ const updateResources = async (language, namespace, url, options, payload) => {
       },
     });
 
-    console.log(
-      "updateexistingTranslationexistingTranslationexistingTranslation",
-      response
-    );
     return response.data;
   }
 };
 
 const backendOptions = {
-  addPath: "{{lng}}|{{ns}}|add",
-  loadPath: "{{lng}}|{{ns}}",
+  addPath: '{{lng}}|{{ns}}|add',
+  loadPath: '{{lng}}|{{ns}}',
   request: (options, url, payload, callback) => {
     try {
-      const [lng, ns, add] = url.split("|");
-      console.log("uppdddate", lng, ns, url);
-      if (add === "add") {
+      const [lng, ns, add] = url.split('|');
+
+      if (add === 'add') {
         updateResources(lng, ns, url, options, payload).then((response) => {
           callback(null, {
             data: JSON.stringify(response),
@@ -174,7 +168,7 @@ const backendOptions = {
 module.exports = {
   // debug: true,
   i18n: {
-    defaultLocale: "de",
+    defaultLocale: 'de',
     locales,
   },
   debug: true,
@@ -183,7 +177,7 @@ module.exports = {
   serializeConfig: false,
 
   //reloadOnPrerender: true,
-  ns: ["common", "posts", "website"],
+  ns: ['common', 'posts', 'website'],
   //use: [Backend],
   serializeConfig: false,
 
@@ -195,6 +189,6 @@ module.exports = {
         require("locize-lastused/cjs"),*/
       ]
     : [httpBackend], // do not use locize-lastused on production
-  saveMissing: process.env.NODE_ENV === "production" ? false : true, // do not set saveMissing to true for production and also not when using the chained backend
+  saveMissing: process.env.NODE_ENV === 'production' ? false : true, // do not set saveMissing to true for production and also not when using the chained backend
   //appendNamespaceToMissingKey: true,
 };

@@ -85,7 +85,7 @@ export default function FaviconGenerator() {
     <React.Fragment>
       <Button
         download={`wfp-favicon-${file}.${file.substring(0, 3)}`}
-        kind="secondary"
+        kind="tertiary"
         small
         href={dataUrl[file]}>
         {file}
@@ -115,7 +115,9 @@ export default function FaviconGenerator() {
                   }}
                 />
                 <div className="wfp--form-item">
-                  <Button onClick={generateFiles}>Generate files</Button>
+                  <Button onClick={generateFiles} type="button">
+                    Generate files
+                  </Button>
                 </div>
                 <div style={{ marginBottom: '1rem' }}>
                   {Object.keys(dataUrl).length > 0 && (

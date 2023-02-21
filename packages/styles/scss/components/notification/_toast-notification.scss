@@ -5,7 +5,7 @@
 // LICENSE file in the root directory of this source tree.
 //
 
-@use 'mixins' as*;
+@use 'mixins' as *;
 //@use 'tokens' as *;
 @use '../../breakpoint' as *;
 @use '../../colors' as *;
@@ -41,12 +41,14 @@
       margin-top: $spacing-05;
     }
 
-    @include breakpoint(max) {
-      width: rem(352px);
+    @include breakpoint-up(md) {
+      width: rem(452px);
     }
   }
 
-  .#{$prefix}--toast-notification:not(.#{$prefix}--toast-notification--low-contrast)
+  .#{$prefix}--toast-notification:not(
+      .#{$prefix}--toast-notification--low-contrast
+    )
     a {
     color: $link-inverse;
   }

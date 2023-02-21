@@ -20,7 +20,7 @@ export default function FooterWrapper() {
       <>
         <LinksColumn title="UN Core">
           <li className={`wfp--links-column-link`}>
-            <NextLink href="/posts">
+            <NextLink href="/posts" legacyBehavior>
               <Link>Documentation</Link>
             </NextLink>
           </li>
@@ -37,7 +37,7 @@ export default function FooterWrapper() {
             </Link>
           </li>
           <li className={`wfp--links-column-link`}>
-            <NextLink href="/posts/core/designers/figma">
+            <NextLink href="/posts/core/designers/figma" legacyBehavior>
               <Link>Figma library</Link>
             </NextLink>
           </li>

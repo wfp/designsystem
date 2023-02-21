@@ -5,7 +5,6 @@ import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/pro-solid-svg-icons';
 import MoreLink from '../MoreLink';
-import AnaboxSmart from '../Blog/Mdx/Buttons/AnaboxSmart';
 import { Trans, useTranslation } from 'next-i18next';
 
 export default function Features() {
@@ -30,7 +29,6 @@ export default function Features() {
           <p>
             {t(`Hier finden Sie mehr Informationen und Unterstützung bei der
             Einrichtung und Benutzung der`)}{' '}
-            <AnaboxSmart />.
           </p>
 
           <MoreLink href="/posts" className={styles.more}>

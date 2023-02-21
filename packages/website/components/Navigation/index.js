@@ -15,6 +15,7 @@ import {
   SubNavigationGroup,
   SubNavigationTitle,
   User,
+  MainNavigationExternal,
 } from '@un/react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRightFromBracket } from '@fortawesome/pro-regular-svg-icons';
@@ -38,12 +39,8 @@ export default function Navigation({ children }) {
       <BannerNavigation className={styles.bannerNavigation}>
         <span>🚧 This website is work in progress 👷</span>
       </BannerNavigation>
-      <MainNavigation
-        logo={
-          <NextLink href="./">
-            <a>UN core</a>
-          </NextLink>
-        }
+      <MainNavigationExternal
+        logo={<NextLink href="./">UN core</NextLink>}
         components={{
           LanguageExternal: () => null,
           UserExternal: () => null,
@@ -61,14 +58,15 @@ export default function Navigation({ children }) {
         </MainNavigationItem>
         <NextLink
           href="https://github.com/un-core/designsystem"
-          target="_blank">
+          target="_blank"
+          legacyBehavior>
           <Button
             icon={<FontAwesomeIcon icon={faGithub} />}
             href="https://github.com/un-core/designsystem">
             GitHub
           </Button>
         </NextLink>
-      </MainNavigation>
+      </MainNavigationExternal>
     </>
   );
 }

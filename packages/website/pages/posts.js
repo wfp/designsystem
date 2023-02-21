@@ -36,7 +36,7 @@ export async function getStaticProps() {
       '../',
       a.coverImage
     );
-    console.log(coverImagePath);
+
     const coverImageFile = require('../_posts/sample-image.jpg');
   });
 

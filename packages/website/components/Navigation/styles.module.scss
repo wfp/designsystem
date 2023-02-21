@@ -1,4 +1,4 @@
-@use "scss/meta" as *;
+@use 'scss/meta' as *;
 
 .logo {
   height: 2.3em;
@@ -23,13 +23,14 @@
   }
 }
 
+/*
 .mainNavigation {
   :global('.wfp--main-navigation__trigger') {
     background: $layer-primary !important;
   }
   :global('.wfp--main-navigation__list wfp--main-navigation__list--open') {
   }
-}
+}*/
 
 .user {
   a {

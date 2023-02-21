@@ -9,15 +9,15 @@ import styles from './customHits.module.scss';
 
 function Hit({ hit }) {
   return (
-    <Link href={`/${process.env.NEXT_PUBLIC_BLOG_FOLDER}/${hit.slug}`}>
-      <a className={styles.hit}>
-        <h4>
-          <Highlight attribute="title" hit={hit} />
-        </h4>
-        <p>
-          <Snippet attribute="content" hit={hit} />
-        </p>
-      </a>
+    <Link
+      href={`/${process.env.NEXT_PUBLIC_BLOG_FOLDER}/${hit.slug}`}
+      className={styles.hit}>
+      <h4>
+        <Highlight attribute="title" hit={hit} />
+      </h4>
+      <p>
+        <Snippet attribute="content" hit={hit} />
+      </p>
     </Link>
   );
 }

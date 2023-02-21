@@ -27,21 +27,23 @@
 
   .#{$prefix}--user__icon {
     @include reset;
-    width: rem(25px);
-    height: rem(25px);
+    //width: rem(25px);
+    //height: rem(25px);
     border-radius: 50%;
-    margin-right: rem(10px);
+    //margin-right: rem(10px);
     overflow: hidden;
+    font-size: 1em;
 
     > img {
+      display: block;
       object-fit: cover;
-      width: 100%;
-      height: 100%;
+      width: 1em;
+      height: 1em;
     }
 
     .#{$prefix}--user--has-description & {
-      width: rem(60px);
-      height: rem(60px);
+      //width: rem(60px);
+      //height: rem(60px);
       margin-right: $spacing-06;
       @include rtl {
         margin-left: $spacing-06;

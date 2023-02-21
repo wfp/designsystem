@@ -36,17 +36,13 @@ function PossibilitiesContainer({
         <h4>
           {title}
           {npmLink && (
-            <Link href={link}>
-              <a target="_blank" rel="noreferrer">
-                <FontAwesomeIcon className={styles.npmLink} icon={faNpm} />
-              </a>
+            <Link href={link} target="_blank" rel="noreferrer">
+              <FontAwesomeIcon className={styles.npmLink} icon={faNpm} />
             </Link>
           )}
           {figmaLink && (
-            <Link href={link}>
-              <a target="_blank" rel="noreferrer">
-                <FontAwesomeIcon className={styles.figmaLink} icon={faFigma} />
-              </a>
+            <Link href={link} target="_blank" rel="noreferrer">
+              <FontAwesomeIcon className={styles.figmaLink} icon={faFigma} />
             </Link>
           )}
         </h4>

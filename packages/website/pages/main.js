@@ -17,7 +17,6 @@ const Main = ({ newItems }) => {
   );
 
   function onItemClicked(content, newContent) {
-    console.log('content', newItems);
     setActive(true);
     setContent(content);
     setContent2(newContent);

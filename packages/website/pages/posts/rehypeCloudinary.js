@@ -1,7 +1,7 @@
-import { Cloudinary } from "cloudinary-core";
-import { selectAll } from "hast-util-select";
-import { getImage } from "../../lib/api";
-import urlGenerator from "../../lib/cloudinaryHelper";
+import { Cloudinary } from 'cloudinary-core';
+import { selectAll } from 'hast-util-select';
+import { getImage } from '../../lib/api';
+import urlGenerator from '../../lib/cloudinaryHelper';
 //import probe from "probe-image-size";
 
 function searchTreeWrapper(element, matchingTitle) {
@@ -23,7 +23,6 @@ function searchTreeWrapper(element, matchingTitle) {
 }
 
 async function probeImage(id) {
-  console.log("dssdaasd");
   const res = await getImage(id);
   return res;
 }
@@ -33,13 +32,13 @@ async function probe(src) {
   var cl = new Cloudinary({ cloud_name: cloudName, secure: false });
 
   const url = cl.url(name, {
-    protocol: "https:",
+    protocol: 'https:',
     width: 300,
-    flags: ["getinfo"],
+    flags: ['getinfo'],
   });
 
   const res = await fetch(url, {
-    method: "GET",
+    method: 'GET',
   });
 
   const result = await res.json();
@@ -51,9 +50,9 @@ const rehypeImage = (options) => async (tree) => {
   const options_ = options || {};
   const baseUrl = options_.baseUrl;
 
-  const imageNodes = searchTreeWrapper(tree, "CloudinaryImage");
+  const imageNodes = searchTreeWrapper(tree, 'CloudinaryImage');
 
-  console.log("imagenodes", imageNodes);
+  console.log('imagenodes', imageNodes);
   const validImageNodes = imageNodes; /*.filter((node) => isImageNode(node));*/
 
   /*for (const node of validImageNodes) {
@@ -62,14 +61,9 @@ const rehypeImage = (options) => async (tree) => {
 
   await Promise.all(
     validImageNodes.map(async (node) => {
-      //try {
-      console.log(JSON.stringify(node.attributes));
+      const id = node.attributes.find((a) => a.name === 'id');
 
-      const id = node.attributes.find((a) => a.name === "id");
-
-      console.log("aatribuu", id.value);
       const info = await probeImage(id.value);
-      console.log("infoinfoinfoinfoinfo", info);
 
       const dimensions = (await probe(info.image.publicUrl, baseUrl)) || {};
 
@@ -81,7 +75,7 @@ const rehypeImage = (options) => async (tree) => {
 
       const newAttributes = Object.entries(attributes).map(([i, a]) => {
         return {
-          type: "mdxJsxAttribute",
+          type: 'mdxJsxAttribute',
           name: i,
           value: a,
         };

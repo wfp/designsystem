@@ -6,7 +6,7 @@ import { Link as LinkCore } from '@un/react';
 
 export default function MoreLink({ children, ...other }) {
   return (
-    <Link href={other.href}>
+    <Link href={other.href} legacyBehaviors>
       <LinkCore {...other}>
         {children} <FontAwesomeIcon icon={faArrowRight} />
       </LinkCore>

@@ -47,7 +47,7 @@
     @extend .#{$prefix}--story__h5;
   }
 
-  a {
+  > a {
     @extend .#{$prefix}--story__a;
   }
 

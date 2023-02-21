@@ -6,3 +6,9 @@
 //
 
 //@forward '@un/themes/scss/modules/themes' show $wfp, $white, $g10, $g90, $g100;
+
+@mixin theme($theme: auto) {
+  body:global(.wfp--theme--#{$theme}) & {
+    @content;
+  }
+}

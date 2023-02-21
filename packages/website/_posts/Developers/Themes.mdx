@@ -1,0 +1,68 @@
+---
+title: 'Themes'
+excerpt: 'Themes'
+subtitle: 'Themes (Dark Mode)'
+coverImage: '../sample-image.jpg'
+slug: 'developers/Themes'
+---
+
+<FigmaImage url="https://www.figma.com/file/wFEEbUEWrlfMhs2a1S2RTp/UN-core-website?node-id=1035%3A357" />
+
+A dark mode options can make your application more accessible and comfortable to use. It is a good practice to provide a dark mode option to your application.
+
+The `UNCoreProvider` component is the root component of the UN Core Design System. It provides the theme to all the components in the application.
+
+It specially benefits users in the field who are using phones with OLED displays by increasing the battery life of the device.
+
+### Initial theme
+
+The initial theme can be set by passing the `initialTheme` prop to the `UNCoreProvider` component. The default value is `auto`. The `auto` value will use the system theme if the browser supports it.
+
+```jsx
+<UNCoreProvider initialTheme="light">...</UNCoreProvider>
+```
+
+### Persistence
+
+By default the theme is persisted in the local storage. This means that the theme will be the same when the user opens the application again. If you don't want to persist the theme, you can pass the `persistTheme` prop to the `UNCoreProvider` component.
+
+### Changing the theme
+
+The theme can be used by the `useTheme` hook. The `useTheme` hook returns the current theme and a function to change the theme.
+
+```jsx
+const { theme, setTheme } = useTheme();
+
+return (
+  <>
+    <p>Current theme: {theme}</p>
+    <button onClick={() => setTheme('light')}>Light</button>
+    <button onClick={() => setTheme('dark')}>Dark</button>
+    <button onClick={() => setTheme('auto')}>Auto</button>
+  </>
+);
+```
+
+The `setTheme` function accepts a `Theme` value as an argument. The `Theme` type is defined as follows and can be extended by custom themes:
+
+```ts
+type Theme = 'auto' | 'light' | 'dark';
+```
+
+### CSS (sass)
+
+The `UNCoreProvider` will automatically inject css classes to the `body` element. The css classes are prefixed with `un-` and the theme name. If set to `dark` the class will be `un--theme--dark`. When the theme is set to `auto` the class will switch between `un--theme--light` and the `un--theme--dark` depending on the system theme.
+
+### Custom themes in CSS (sass)
+
+```scss
+@use '../theme/scss/dark-css-theme' as darktheme;
+
+body {
+  @include defaulttheme.theme-default();
+  &.wfp--theme--dark {
+    color-scheme: dark;
+    @include darktheme.theme-dark();
+  }
+}
+```

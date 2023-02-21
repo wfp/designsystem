@@ -16,6 +16,7 @@ import { MDXRemote } from 'next-mdx-remote';
 import { Wrapper } from '@un/react';
 import Image from 'next/image';
 import rehypeImgSize from 'rehype-img-size';
+import rehypeFigmaImage from './rehypeFigmaImage';
 import LinkBack from '../../components/LinkBack';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft } from '@fortawesome/pro-solid-svg-icons';
@@ -107,6 +108,7 @@ export async function getStaticProps({ params }) {
 
     mdxOptions: {
       rehypePlugins: [
+        rehypeFigmaImage,
         [
           rehypeImgSize,
           {

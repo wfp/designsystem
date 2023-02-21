@@ -57,11 +57,11 @@
     left: 0;
     height: 100%;
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.8); //TODO: replace with token
+    background-color: $background-main; //rgba(255, 255, 255, 0.8); TODO: replace with token
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: background-color 2000ms $standard-easing;
+    transition: background-color 1000ms $standard-easing;
     z-index: z('overlay');
   }
 
@@ -69,70 +69,4 @@
     display: none;
   }
 }
-
-@mixin loading--x {
-  .#{$prefix}--loading {
-    @include component-reset.reset;
-    @include animation__loading--spin;
-    width: $loading-size;
-    height: $loading-size;
-  }
-
-  // Animation (Spin by default)
-  .#{$prefix}--loading__svg {
-    fill: transparent;
-  }
-
-  .#{$prefix}--loading__svg circle {
-    stroke-width: 8;
-    stroke-linecap: butt;
-    stroke-dasharray: 240;
-  }
-
-  .#{$prefix}--loading__stroke {
-    stroke: $interactive;
-    stroke-dashoffset: $loading-gap;
-  }
-
-  .#{$prefix}--loading--stop {
-    @include animation__loading--stop;
-  }
-
-  .#{$prefix}--loading--small {
-    width: 2rem;
-    height: 2rem;
-  }
-
-  .#{$prefix}--loading--small .#{$prefix}--loading__svg {
-    stroke: $interactive;
-  }
-
-  .#{$prefix}--loading__background {
-    stroke: $border-subtle;
-    stroke-dashoffset: 0;
-  }
-
-  .#{$prefix}--loading-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-color: var(--modal-background-02);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: background-color 2000ms $standard-easing;
-    z-index: z('overlay');
-  }
-
-  .#{$prefix}--loading-overlay--stop {
-    display: none;
-  }
-}
-
-@if feature-flag-enabled('components-x') {
-  @include loading--x;
-} @else {
-  @include loading;
-}
+@include loading;

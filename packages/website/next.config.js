@@ -32,6 +32,16 @@ module.exports = withMDX({
       },
     ];
   },
+
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'figma-alpha-api.s3.us-west-2.amazonaws.com',
+      },
+    ],
+  },
+
   webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
     if (!isServer) {
       config.resolve.fallback = { fs: false };

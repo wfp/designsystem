@@ -12,6 +12,9 @@ interface ModalProps {
   lazyLoad?: boolean;
   passiveModal?: boolean;
   children?: React.ReactNode;
+  components?: {
+    Wrapper?: React.ReactNode;
+  };
   modalAriaLabel?: string;
   modalSecondaryAction?: React.ReactNode;
   secondaryButtonText?: string;
@@ -52,7 +55,7 @@ const Modal: React.FC<ModalProps> = (props) => {
     modalHeading,
     modalLabel,
     className,
-    components,
+    components: componentsOverride = {},
     modalSecondaryAction,
     modalAriaLabel,
     passiveModal,
@@ -187,7 +190,7 @@ const Modal: React.FC<ModalProps> = (props) => {
 
   if (open === false && lazyLoad) return null;
 
-  const customComponents = { ModalFooter, ...components };
+  const components = { ModalFooter, ...componentsOverride };
 
   const onSecondaryButtonClick = onSecondarySubmit
     ? onSecondarySubmit
@@ -238,7 +241,7 @@ const Modal: React.FC<ModalProps> = (props) => {
         {!passiveModal && modalButton}
       </div>
       <div className={`${prefix}--modal-content`}>{children}</div>
-      <customComponents.ModalFooter
+      <components.ModalFooter
         {...props}
         prefix={prefix}
         onSecondaryButtonClick={onSecondaryButtonClick}

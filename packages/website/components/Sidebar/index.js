@@ -27,7 +27,7 @@ function TreeBranch({ split, level }) {
       {split?.children && (
         <>
           {level > 1 ? (
-            <NextLink href={`/${split.path?.key}`}>
+            <NextLink href={`/${split.path?.key}`} legacyBehavior>
               <Link className={styles.item}>
                 <FontAwesomeIcon icon={faMinus} className={styles.icon} />
 
@@ -39,8 +39,8 @@ function TreeBranch({ split, level }) {
               {split.path?.title ? split.path?.title : split.name}
             </span>
           ) : null}
-          {split.children.map((c) => (
-            <ul>
+          {split.children.map((c, i) => (
+            <ul key={i}>
               <TreeBranch split={c} level={level + 1} />
             </ul>
           ))}
@@ -73,8 +73,6 @@ export const createPathTree = (paths) => {
 };
 
 export default function SidebarWrapper({ content, post, posts }) {
-  console.log('posts', posts);
-
   const postSplit = posts.map((p) => {
     return {
       key: 'posts/' + p.slug,
@@ -84,8 +82,6 @@ export default function SidebarWrapper({ content, post, posts }) {
   });
 
   const split = createPathTree(postSplit);
-
-  console.log('postssplit', post, posts, split);
 
   return (
     <Wrapper className={styles.sidebarWrapper} pageWidth="lg">

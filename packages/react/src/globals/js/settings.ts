@@ -36,6 +36,9 @@ const settings = {
     textarea:not([disabled]),
     iframe, object, embed, *[tabindex], *[contenteditable=true]
   `,
+  theme: `light`,
+  actualTheme: `light`,
+  setTheme: (theme: string) => {},
 };
 
 export default settings;

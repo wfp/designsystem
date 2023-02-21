@@ -7,16 +7,36 @@ import { ButtonKind, IIcon } from '../../typesLegacy/utils';
 type ButtonProps = PropsWithChildren<{
   className?: Argument;
   children?: React.ReactNode;
+  /**
+   * FOR DESIGNERS Specify whether the Button should be a small variant
+   */
   small?: boolean;
+  /**
+   * FOR DESIGNERS Specify whether the Button should be a large variant
+   */
   large?: boolean;
+  /**
+   * FOR DESIGNERS Specify the kind of Button you want to create
+   */
   kind?: ButtonKind | 'danger--secondary';
+  /**
+   * Optionally specify an href for your Button to become an element
+   */
   href?: string;
+  /**
+   * Specify an `icon` to include in the Button through an object representing the SVG data of the icon, similar to the `Icon` component
+   */
   icon?: IIcon | React.ReactNode;
+  /**
+   * Optionally specify an href for your Button to become an element
+   */
   iconReverse?: boolean;
   // todo: revise iconDescription
   iconDescription?: string;
+  /**
+   * Specify whether the Button should be disabled, or not
+   */
   disabled?: boolean;
-  allCaps?: boolean;
   tabIndex?: number;
   type?: 'button' | 'reset' | 'submit';
   useFlexbox?: boolean;
@@ -33,7 +53,6 @@ const Button: React.FC<ButtonProps> = ({
   small,
   large,
   kind = 'primary',
-  allCaps,
   href,
   iconReverse,
   tabIndex,
@@ -74,7 +93,6 @@ const Button: React.FC<ButtonProps> = ({
     [`${prefix}--btn--danger--secondary`]: kind === 'danger--secondary',
     [`${prefix}--btn--tertiary`]: kind === 'tertiary',
     [`${prefix}--btn--animating`]: count,
-    [`${prefix}--btn--all-caps`]: allCaps,
   });
 
   const commonProps = {

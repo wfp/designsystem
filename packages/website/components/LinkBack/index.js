@@ -13,7 +13,11 @@ const LinkBack = ({ children, href, hasBack }) => {
       },
     });
 
-  return <Link href={process.env.NEXT_PUBLIC_BLOG_FOLDER}>{children}</Link>;
+  return (
+    <Link href={process.env.NEXT_PUBLIC_BLOG_FOLDER} legacyBehavior>
+      {children}
+    </Link>
+  );
 };
 
 export default LinkBack;

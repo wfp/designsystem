@@ -44,8 +44,8 @@ body,
   @include globalDefaults.globalDefaults();
 }
 
-.sbdocs,
-.wfp--story > * {
+.sbdocs {
+  //.wfp--story > * {
   color: $text-primary !important;
 }
 

@@ -8,7 +8,7 @@ import * as HookForm from 'react-hook-form';
 import { InputModes } from '../../typesLegacy/utils';
 
 /** Text inputs enable the user to interact with and input content and data. This component can be used for long and short form entries. */
-type TextInputProps = PropsWithChildren<{
+interface TextInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   className?: string;
   helperText?: string;
   labelText?: string;
@@ -28,7 +28,7 @@ type TextInputProps = PropsWithChildren<{
   id?: string;
   required?: boolean;
   pattern?: string;
-}>;
+}
 
 const TextInput: React.FC<TextInputProps> = React.forwardRef((props, ref) => {
   const {

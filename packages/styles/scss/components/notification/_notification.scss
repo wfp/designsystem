@@ -27,7 +27,10 @@
     vertical-align: initial;
     border: 0;
     display: flex;
-    width: 18rem;
+    @include breakpoint-down(md) {
+      width: 100%;
+    }
+    max-width: 28rem;
     height: auto;
     margin: 0.5rem 1rem 0.5rem 0;
     padding: 0 0 0 0.875rem;
@@ -164,7 +167,7 @@
   }
   .#{$prefix}--toast-notification--low-contrast {
     .#{$prefix}--toast-notification__details {
-      color: #161616;
+      color: $text-primary;
     }
   }
 
@@ -352,7 +355,7 @@
 
   .#{$prefix}--inline-notification--low-contrast
     .#{$prefix}--inline-notification__action-button.#{$prefix}--btn--ghost {
-    color: var(--cds-link-01, #0f62fe);
+    color: $button-primary;
   }
   .#{$prefix}--inline-notification--low-contrast
     .#{$prefix}--inline-notification__action-button,
@@ -385,13 +388,13 @@
 
   .#{$prefix}--inline-notification__close-button
     .#{$prefix}--inline-notification__close-icon {
-    fill: var(--cds-inverse-01, var(--ui-01));
+    fill: $border-strong;
   }
 
   .#{$prefix}--inline-notification--low-contrast
     .#{$prefix}--inline-notification__close-button
     .#{$prefix}--inline-notification__close-icon {
-    fill: #161616;
+    fill: $border-strong;
   }
 
   .#{$prefix}--inline-notification__action-button.#{$prefix}--btn--ghost:hover {

@@ -4,6 +4,8 @@ import { List, ListItem } from '../List';
 import { BlockNotification } from '../Notification';
 import Table from '../Table';
 import useSettings from '../../hooks/useSettings';
+import Link from '../Link';
+import Button from '../Button';
 
 /** Links are used as navigational elements. They may appear on their own, within a sentence or paragraph, or directly following the content. */
 
@@ -65,6 +67,10 @@ const p = (props) => {
 
 const table = (props) => {
   return <Table {...props}>{props.children}</Table>;
+};
+
+const a = (props) => {
+  return <Link {...props}>{props.children}</Link>;
 };
 
 const code = (props) => {
@@ -132,6 +138,7 @@ export const MdxComponents = {
   h5,
   p,
   li,
+  a,
   ul,
   ol,
   code,
@@ -139,6 +146,7 @@ export const MdxComponents = {
   // inlineCode,
   table,
   blockquote,
+  Button,
 };
 
 export default MdxComponents;

@@ -3,16 +3,13 @@ import Image from './Image';
 import Link from './Link';
 import Video from './Video';
 import Wrapper from './Wrapper';
-import AnaboxSmart from './Buttons/AnaboxSmart';
-import BigButton from './Buttons/BigButton';
-import Tray from './Buttons/Tray';
-import ColorLed from './Buttons/ColorLed';
 import Contact from './Contact';
 import CodeBlock from './CodeBlock';
 import Colors from './Colors';
-import UsbcConnector from './Buttons/UsbcConnector';
-import ResetButton from './Buttons/ResetButton';
 import Logos from './Logos';
+import Figma from './Figma';
+import FigmaImage from './FigmaImage';
+import Storybook from './Storybook';
 import Typeset from './Typeset';
 
 import {
@@ -32,25 +29,22 @@ const components = {
   Flex,
   img: Image,
   //a: Link,
+  Figma,
+  FigmaImage,
   Colors,
+  Storybook,
   FaviconsGenerator: FaviconGenerator,
-  AnaboxSmart,
   Contact,
   code: code,
   pre: (e) => <CodeBlock {...e} OrginalCode={code} />,
   Meta: Flex,
-  BigButton,
   Blockquote,
   BlockNotification,
   Button,
   Link,
-  ResetButton,
   Logos,
-  UsbcConnector,
   TextInput,
   Typeset,
-  ColorLed,
-  Tray,
   //wrapper: Wrapper,
 };
 

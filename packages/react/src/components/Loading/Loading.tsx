@@ -14,8 +14,13 @@ interface LoadingProps {
 /** Loading spinners are used when retrieving data or performing slow computations, and help to notify users that loading is underway. */
 
 const Loading: React.FC<LoadingProps> = (props) => {
-  const { active, className, withOverlay, small, ...other } = props;
-
+  const {
+    active = true,
+    className,
+    withOverlay = true,
+    small = false,
+    ...other
+  } = props;
   const { prefix } = useSettings();
 
   const loadingClasses = classNames(`${prefix}--loading`, className, {
