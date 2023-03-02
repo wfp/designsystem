@@ -1,0 +1,26 @@
+@use 'scss/meta' as *;
+
+.typesetListItem {
+  background: $layer-primary;
+  margin-bottom: 1.5rem;
+  padding: 1em;
+  display: flex;
+}
+
+.description {
+  width: 50%;
+}
+
+.spacingPreview {
+  position: relative;
+  background-color: $text-secondary;
+}
+
+.spacingPreviewValue {
+  position: absolute;
+  bottom: -1.5rem;
+  width: 100%;
+  text-align: center;
+  white-space: nowrap;
+  font-size: 0.5em;
+}

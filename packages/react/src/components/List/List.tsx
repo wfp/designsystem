@@ -10,6 +10,7 @@ type ListProps = PropsWithChildren<{
   kind?:
     | 'unstyled'
     | 'simple-inline'
+    | 'simple'
     | 'details'
     | 'unordered'
     | 'ordered'

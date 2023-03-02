@@ -1,0 +1,109 @@
+---
+title: 'Writing the documentation'
+excerpt: 'How to edit and write the documentation'
+coverImage: '../sample-image.jpg'
+slug: 'Contributing/Writing the documentation'
+---
+
+## Editing pages
+
+The easiest way to edit a page is with the `Edit this page on Github` link that appears at the bottom of every page on the site. The link opens the specific Github page where you can edit the content and then propose the change with a pull request.
+
+Alternatively, if you have a specific fix or contribution, you can fork the repo and generate a pull request.
+
+## Content and style guidelines
+
+Before you get started, take a moment to review our content guidelines. Following these will help us ensure consistency of experience across the site.
+
+### Use Markdown
+
+The website is written in [Markdown](https://en.wikipedia.org/wiki/Markdown), which makes it easy for anyone to contribute content in a systematic way. If you don’t already have a Markdown editor installed, there are plenty of free editors available online.
+
+## Guidelines for writing content
+
+Please keep these things in mind when writing content for Carbon.
+
+Aim for a friendly and encouraging tone.
+Speak directly to the user. You can use the second person pronoun (“you”).
+Keep sentences and paragraphs short and focused.
+Be clear and concise by removing unnecessary words. The more concise the text, the easier it is for all users to understand.
+Use sentence case for everything, including component names, e.g. Content switcher and Data table.
+
+### Components
+
+Each file begins with a [frontmatter](https://jekyllrb.com/docs/front-matter/) section that contains metadata about the page. The frontmatter section is surrounded by three dashes on either side. The frontmatter section is written in YAML.
+
+```
+---
+title: 'Developers/Naming convention'
+subtitle: 'Naming convention & linting'
+excerpt: 'Colors for the UN design system'
+coverImage: './components.png'
+ogImage:
+  url: './components.png'
+---
+```
+
+#### BlockNotification
+
+```jsx
+<BlockNotification title="Note" kind="info">
+  If you are a designer working at WFP, please refer to our team to join the WFP
+  Figma organization.
+</BlockNotification>
+```
+
+#### Embeed Figma
+
+Embeed Figma files directly as interactive prototypes. You can also embed specific frames from a Figma file.
+
+```jsx
+<Figma
+  url="https://www.figma.com/file/wFEEbUEWrlfMhs2a1S2RTp/UN-core-website?node-id=0%3A1&t=ffaLsECV8p10ZEa4-1"
+  height="300"
+/>
+```
+
+Embeed a specific frame from a Figma file as image (loads faster).
+
+```jsx
+<FigmaImage document="wFEEbUEWrlfMhs2a1S2RTp" node="801:341" />
+```
+
+#### Storybook
+
+Embeed a Storybook component directly from the Storybook website.
+
+```jsx
+<Storybook path="?path=/story/components-ui-elements-button--button-regular&full=1&shortcuts=false&singleStory=true" />
+```
+
+#### Do and Don't
+
+Use the `DoUse` and `DoNotUse` components to show examples of good and bad practices.
+
+```jsx
+<DoUse>
+
+- Use accordions to organize information
+- Use accordions to reduce the amount of scrolling required
+- Use accordions to reduce the amount of information displayed on the screen at once
+
+</DoUse>
+
+<DoNotUse>
+
+- Do not use accordions to display information that is not related
+- Do not use accordions to display information that is not hierarchical
+- Do not use accordions to display information that is not collapsible
+
+</DoNotUse>
+```
+
+#### Typeset
+
+Embeed the different available Typefaces. Only used on the Typography page.
+
+```jsx
+<Typeset />
+```

@@ -19,7 +19,8 @@
 
 @mixin font-family($family) {
   @if $family == 'code' {
-    font-family: 'Lucida Console', Courier, monospace;
+    font-family: SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono',
+      'Courier New', monospace;
   } @else {
     font-family: 'Open Sans', Arial, sans-serif;
   }

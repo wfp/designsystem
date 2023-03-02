@@ -9,17 +9,24 @@ import { getPostByPath, getAllPosts, getPostSlugs } from '../../lib/getPost';
 //import PostTitle from '../../components/post-title';
 import styles from './article.module.scss';
 import Head from 'next/head';
-import components from '../../components/Blog/Mdx';
 import Sidebar from '../../components/Sidebar';
 import { serialize } from 'next-mdx-remote/serialize';
 import { MDXRemote } from 'next-mdx-remote';
-import { Wrapper } from '@un/react';
+import {
+  Breadcrumb,
+  BreadcrumbHome,
+  BreadcrumbItem,
+  Link,
+  Wrapper,
+} from '@un/react';
 import Image from 'next/image';
 import rehypeImgSize from 'rehype-img-size';
 import rehypeFigmaImage from './rehypeFigmaImage';
+import rehypeToC from './rehypeToC';
 import LinkBack from '../../components/LinkBack';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowLeft } from '@fortawesome/pro-solid-svg-icons';
+import { faArrowLeft, faArrowRight } from '@fortawesome/pro-solid-svg-icons';
+import components from '../../components/Blog/Mdx';
 
 export default function Post({ post, posts, morePosts, preview }) {
   const router = useRouter();
@@ -57,15 +64,7 @@ export default function Post({ post, posts, morePosts, preview }) {
                 author={post.author}
         />*/}
 
-            <Sidebar
-              posts={posts}
-              post={post}
-              content={
-                <>
-                  <MDXRemote {...post.mdxSource} components={components} />
-                </>
-              }
-            />
+            <Sidebar posts={posts} post={post} />
           </article>
         </>
       )}
@@ -100,12 +99,15 @@ export async function getStaticProps({ params }) {
     'content',
     'ogImage',
     'coverImage',
+    'excerpt',
+    'figma',
+    'github',
+    'storybook',
   ]);
   const content = post.content;
 
   const mdxSource = await serialize(post.content, {
     components,
-
     mdxOptions: {
       rehypePlugins: [
         rehypeFigmaImage,
@@ -119,6 +121,19 @@ export async function getStaticProps({ params }) {
     },
   });
 
+  const mdxToC = await serialize(post.content, {
+    components,
+    mdxOptions: {
+      rehypePlugins: [rehypeToC],
+    },
+  });
+
+  console.log('post.excerpt', post);
+
+  const mdxExcerptSource = await serialize(post.excerpt, {
+    components,
+  });
+
   return {
     props: {
       posts,
@@ -126,6 +141,8 @@ export async function getStaticProps({ params }) {
         ...post,
         content,
         mdxSource,
+        mdxToC,
+        mdxExcerptSource,
       },
     },
   };

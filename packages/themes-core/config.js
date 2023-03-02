@@ -87,6 +87,13 @@ const config = ({
   });
 
   StyleDictionary.registerTransform({
+    type: `value`,
+    name: `value/spacingPxToRem`,
+    matcher: (token) => token.type === 'spacing',
+    transformer: (token) => parseInt(token.value.replace('px', '')) / 16 + 'em',
+  });
+
+  StyleDictionary.registerTransform({
     type: `attribute`,
     name: `attribute/variablenames`,
     matcher: (token) => true,
@@ -110,7 +117,7 @@ const config = ({
             let { primary, form, background, dark, ...otherColors } = color;
             console.log('color', color);
             //console.log(JSON.parse(color.background));
-            let {
+            /*let {
               primary: primaryDark,
               form: formDark,
               //background: backgroundDark,
@@ -121,7 +128,7 @@ const config = ({
               ...formDark,
               // ...backgroundDark,
               ...otherDarkColors,
-            };
+            };*/
             return {
               ...otherColors,
               //...color.background,
@@ -145,6 +152,7 @@ const config = ({
           ///  'attribute/cti',
           'attribute/color',
           'attribute/variablenames',
+          'value/spacingPxToRem',
         ],
         files: [
           {
@@ -156,7 +164,11 @@ const config = ({
       scss: {
         transformGroup: 'scss',
         buildPath: buildPath + '/scss/',
-        transforms: ['name/scss', 'value/fontSizePxToRem'],
+        transforms: [
+          'name/scss',
+          'value/fontSizePxToRem',
+          'value/spacingPxToRem',
+        ],
         files: [
           {
             destination: 'tokens.scss',
@@ -170,7 +182,11 @@ const config = ({
       scssMapFlat: {
         transformGroup: 'scss',
         buildPath: buildPath + '/scss/',
-        transforms: ['name/scss', 'value/fontSizePxToRem'],
+        transforms: [
+          'name/scss',
+          'value/fontSizePxToRem',
+          'value/spacingPxToRem',
+        ],
         files: [
           {
             destination: 'tokensMapFlat.scss',
@@ -184,7 +200,11 @@ const config = ({
       scssMapDeep: {
         transformGroup: 'scss',
         buildPath: buildPath + '/scss/',
-        transforms: ['name/scss', 'value/fontSizePxToRem'],
+        transforms: [
+          'name/scss',
+          'value/fontSizePxToRem',
+          'value/spacingPxToRem',
+        ],
         files: [
           {
             destination: 'tokensMapDeep.scss',
@@ -198,7 +218,11 @@ const config = ({
       scssDefaultTheme: {
         transformGroup: 'css',
         buildPath: buildPath + '/scss/',
-        transforms: ['name/scss', 'value/fontSizePxToRem'],
+        transforms: [
+          'name/scss',
+          'value/fontSizePxToRem',
+          'value/spacingPxToRem',
+        ],
         files: [
           {
             destination: 'default-css-theme.scss',

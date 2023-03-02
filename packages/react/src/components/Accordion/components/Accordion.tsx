@@ -1,7 +1,10 @@
-import { forwardRef } from 'react';
+import React, { forwardRef } from 'react';
 import { AccordionProviderOptions } from '../utils/constants';
 import { useAccordionProvider } from '../hooks/useAccordionProvider';
-import { ControlledAccordion, ControlledAccordionProps } from './ControlledAccordion';
+import {
+  ControlledAccordion,
+  ControlledAccordionProps,
+} from './ControlledAccordion';
 
 interface AccordionProps
   extends AccordionProviderOptions,
@@ -28,9 +31,11 @@ const Accordion = forwardRef<HTMLDivElement, AccordionProps>(
       unmountOnExit,
       transition,
       transitionTimeout,
-      onStateChange
+      onStateChange,
     });
-    return <ControlledAccordion {...rest} ref={ref} providerValue={providerValue} />;
+    return (
+      <ControlledAccordion {...rest} ref={ref} providerValue={providerValue} />
+    );
   }
 );
 

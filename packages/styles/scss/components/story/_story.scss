@@ -149,6 +149,23 @@
     margin-top: $spacing-05;
   }
 
+  h1 + .prism-code,
+  h2 + .prism-code,
+  h3 + .prism-code,
+  h4 + .prism-code,
+  h5 + .prism-code,
+  .#{$prefix}--story__h1 + .prism-code,
+  .#{$prefix}--story__h2 + .prism-code,
+  .#{$prefix}--story__h3 + .prism-code,
+  .#{$prefix}--story__h4 + .prism-code,
+  .#{$prefix}--story__h5 + .prism-code {
+    margin-top: $spacing-05;
+  }
+
+  .prism-code + .prism-code {
+    margin-top: $spacing-05;
+  }
+
   h1 + iframe,
   h2 + iframe,
   h3 + iframe,
@@ -292,11 +309,12 @@
   .#{$prefix}--story__code {
     @include type-style('code-02');
     @include font-family('code');
-    padding: 0.1em 0.4em;
+    padding: 0.1rem 0.4em;
     margin: 0;
-    font-size: 85%;
+    font-size: 95%;
     border-radius: 0.2em;
     background: $layer-primary;
+    background: rgba(#111f30, 0.08);
   }
 
   .#{$prefix}--story__pre {

@@ -1,4 +1,9 @@
-import { RefObject, ForwardedRef, MemoExoticComponent, forwardRef } from 'react';
+import React, {
+  RefObject,
+  ForwardedRef,
+  MemoExoticComponent,
+  forwardRef,
+} from 'react';
 import { ItemState, ItemStateOptions } from '../utils/constants';
 import { useAccordionItemEffect } from '../hooks/useAccordionItemEffect';
 
@@ -7,16 +12,26 @@ interface ItemStateProps<E extends Element, T = E> extends ItemState {
   forwardedRef: ForwardedRef<T>;
 }
 
-const withAccordionItem = <P extends ItemStateOptions, E extends Element, T = E>(
+const withAccordionItem = <
+  P extends ItemStateOptions,
+  E extends Element,
+  T = E
+>(
   WrappedItem: MemoExoticComponent<(props: ItemStateProps<E, T>) => JSX.Element>
 ) => {
-  const WithAccordionItem = forwardRef<T, P>(({ itemKey, initialEntered, ...rest }, ref) => (
-    <WrappedItem
-      forwardedRef={ref}
-      {...rest}
-      {...useAccordionItemEffect<E>({ itemKey, initialEntered, disabled: rest.disabled })}
-    />
-  ));
+  const WithAccordionItem = forwardRef<T, P>(
+    ({ itemKey, initialEntered, ...rest }, ref) => (
+      <WrappedItem
+        forwardedRef={ref}
+        {...rest}
+        {...useAccordionItemEffect<E>({
+          itemKey,
+          initialEntered,
+          disabled: rest.disabled,
+        })}
+      />
+    )
+  );
 
   WithAccordionItem.displayName = 'WithAccordionItem';
   return WithAccordionItem;

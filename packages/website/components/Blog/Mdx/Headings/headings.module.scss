@@ -1,0 +1,19 @@
+@use "scss/meta" as *;
+
+.link {
+  position: relative;
+  .linkHandler {
+    color: $text-secondary;
+    opacity: 0;
+    position: absolute;
+    left: -1.7em;
+    font-size: 1rem;
+    padding-right: 1rem;
+    transition: all 0.2s;
+  }
+  &:hover {
+    .linkHandler {
+      opacity: 1;
+    }
+  }
+}

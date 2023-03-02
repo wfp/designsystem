@@ -20,7 +20,9 @@ const moveFocus = (moveUp: boolean, e: KeyboardEvent<Element>) => {
   )
     return;
 
-  const nodes = e.currentTarget.querySelectorAll<HTMLElement>(`[${ACCORDION_BTN_ATTR}]`);
+  const nodes = e.currentTarget.querySelectorAll<HTMLElement>(
+    `[${ACCORDION_BTN_ATTR}]`
+  );
   const { length } = nodes;
   for (let i = 0; i < length; i++) {
     if (nodes[i] === activeElement) {
@@ -40,10 +42,12 @@ const useAccordion = () => {
   const accordionProps: HTMLAttributes<Element> = {
     [ACCORDION_ATTR]: '',
     onKeyDown: (e) =>
-      e.key === 'ArrowUp' ? moveFocus(true, e) : e.key === 'ArrowDown' && moveFocus(false, e)
+      e.key === 'ArrowUp'
+        ? moveFocus(true, e)
+        : e.key === 'ArrowDown' && moveFocus(false, e),
   };
   return {
-    accordionProps
+    accordionProps,
   };
 };
 

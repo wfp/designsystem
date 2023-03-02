@@ -44,11 +44,17 @@ $content-padding: 0 0 0 $spacing-05 !default;
 
 @mixin accordion {
   .#{$prefix}--accordion--button {
-    margin-left: auto;
-    transition: transform 0.2s ease-in-out;
+    margin-right: 0.2em;
+
+    transition: transform 0.1s ease-in-out;
+    &__expanded {
+      transform: rotate(90deg);
+    }
   }
 
   .szh-accordion {
+    @include reset;
+    @include font-family('sans');
     border-bottom: 1px solid $border-strong;
     &__item {
       border-top: 1px solid $border-strong;

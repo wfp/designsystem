@@ -2,21 +2,21 @@ $css--reset: true;
 $css--body: true;
 //@use "./meta" as meta;
 
-@use "./intern.scss";
+@use './intern.scss';
 
-@use "@un/styles/scss/themes";
-@use "@un/styles/scss/theme" /*with (
+@use '@un/styles/scss/themes';
+@use '@un/styles/scss/theme' /*with (
   $theme: meta.$carbon--theme--memo
 )*/;
 
-@use "@un/themes-core/dist/scss/default-css-theme" as defaulttheme;
+@use '@un/themes-core/dist/scss/default-css-theme' as defaulttheme;
 
 //@use "./dist/scss/default-css-theme" as memotheme;
 
-@use "@un/styles/scss/reset";
-@use "@un/styles/scss/components";
+@use '@un/styles/scss/reset';
+@use '@un/styles/scss/components';
 
-@use "scss/meta" as *;
+@use 'scss/meta' as *;
 
 //@import "./global.scss";
 
@@ -60,6 +60,10 @@ $css--body: true;
 
 body {
   background: #fff;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 .wfp--story {
@@ -117,6 +121,9 @@ body {
 }
 
 .prism-code {
-  font-family: monospace;
+  font-family: SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono',
+    'Courier New', monospace;
   border-radius: 6px;
+  font-size: 0.9em;
+  line-height: 1.6em;
 }

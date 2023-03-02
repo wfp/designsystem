@@ -1,4 +1,4 @@
-import { ReactNode, ForwardedRef, memo } from 'react';
+import React, { ReactNode, ForwardedRef, memo } from 'react';
 import { TransitionState } from 'react-transition-state';
 import {
   ACCORDION_BLOCK,
@@ -12,7 +12,7 @@ import useSettings from '../../../hooks/useSettings';
 import { useAccordionItem } from '../hooks/useAccordionItem';
 import { useHeightTransition } from '../hooks/useHeightTransition';
 import { useMergeRef } from '../hooks/useMergeRef';
-import { ChevronUp, ChevronDown } from '@un/icons-react';
+import { ChevronUp, ChevronDown, ChevronRight } from '@un/icons-react';
 import { withAccordionItem, ItemStateProps } from './withAccordionItem';
 import classNames from 'classnames';
 
@@ -73,7 +73,7 @@ const WrappedItem = memo(
     const { prefix } = useSettings();
 
     const buttonClasses = classNames(`${prefix}--accordion--button`, {
-      [`${prefix}--accordion--${isEnter}`]: isEnter,
+      [`${prefix}--accordion--button__expanded`]: isEnter,
       //  [`${className}`]: className,
     });
 
@@ -99,9 +99,8 @@ const WrappedItem = memo(
               buttonProps && buttonProps.className,
               state
             )}>
+            <ChevronRight description="open" className={buttonClasses} />
             {getRenderNode(header, itemState)}
-
-            <ChevronDown description="open" className={buttonClasses} />
           </button>
         </Heading>
 

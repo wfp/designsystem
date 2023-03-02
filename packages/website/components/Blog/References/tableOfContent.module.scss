@@ -1,0 +1,27 @@
+@use 'scss/meta' as *;
+
+.tableOfContent {
+  margin: 1em 0;
+  //background-color: $layer-primary;
+  // padding: 1em;
+  display: inline-block;
+  li {
+    margin: 0.4em 0;
+  }
+  h3 {
+    font-weight: 600;
+    margin-bottom: 0.7em;
+  }
+}
+
+.figma {
+  color: #f24e1e;
+}
+
+.github {
+  color: black;
+}
+
+.storybook {
+  color: #f74c96;
+}

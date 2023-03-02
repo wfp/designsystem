@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import {
   Button,
@@ -9,6 +9,9 @@ import {
   Search,
   Wrapper,
   Text,
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbHome,
 } from '@un/react';
 import Accordion from '../Accordion';
 import { MDXRemote } from 'next-mdx-remote';
@@ -21,22 +24,37 @@ import {
   faMinus,
 } from '@fortawesome/pro-regular-svg-icons';
 
+import { faChevronRight } from '@fortawesome/pro-solid-svg-icons';
+
+import components from '../Blog/Mdx';
+import References from '../Blog/References';
+import TableOfContent from '../Blog/References/TableOfContent';
+
 function TreeBranch({ split, level }) {
+  const [open, setOpen] = useState(level === 0);
   return (
-    <li className={styles[`level-${level}`]}>
+    <li
+      className={`${styles[`level-${level}`]} ${
+        open ? styles[`level-open`] : styles[`level-closed`]
+      }`}>
       {split?.children && (
         <>
           {level > 1 ? (
             <NextLink href={`/${split.path?.key}`} legacyBehavior>
-              <Link className={styles.item}>
+              <Link className={styles.item} href={`/${split.path?.key}`}>
                 <FontAwesomeIcon icon={faMinus} className={styles.icon} />
 
                 {split.path?.title ? split.path?.title : split.name}
               </Link>
             </NextLink>
           ) : level === 1 ? (
-            <span className={styles.sidebarTitle}>
-              {split.path?.title ? split.path?.title : split.name}
+            <span
+              className={styles.sidebarTitle}
+              onClick={() => setOpen(!open)}>
+              <span className={styles.sidebarTitleText}>
+                {split.path?.title ? split.path?.title : split.name}
+              </span>
+              <FontAwesomeIcon icon={faChevronRight} className={styles.icon} />
             </span>
           ) : null}
           {split.children.map((c, i) => (
@@ -84,23 +102,47 @@ export default function SidebarWrapper({ content, post, posts }) {
   const split = createPathTree(postSplit);
 
   return (
-    <Wrapper className={styles.sidebarWrapper} pageWidth="lg">
+    <Wrapper className={styles.sidebarWrapper} pageWidth="xl">
       <div className={styles.sidebar}>
-        <Search id="search22" />
-
         <ul className={styles.sidebarList}>
           <TreeBranch split={split} level={0} />
         </ul>
       </div>
 
       <div className={styles.content}>
+        <Breadcrumb className={styles.breadcrumb}>
+          <BreadcrumbItem>
+            <a href="/#">
+              <BreadcrumbHome />
+            </a>
+          </BreadcrumbItem>
+          <BreadcrumbItem href="#">Breadcrumb 2</BreadcrumbItem>
+          <BreadcrumbItem disableLink>Breadcrumb 3</BreadcrumbItem>
+        </Breadcrumb>
+
         {post.subtitle && (
           <Text kind="subtitle" /*className={styles.subTitle}*/>
             {post.subtitle}
           </Text>
         )}
         <Text kind="title" /*className={styles.title}*/>{post.title}</Text>
-        {content}
+
+        <MDXRemote {...post.mdxExcerptSource} components={components} />
+
+        <MDXRemote {...post.mdxSource} components={components} />
+
+        <Link
+          href={`https://github.com/un-core/designsystem/tree/content/website-content/packages/website/${
+            post.path.split('packages/website/')[1]
+          }`}
+          target="_blank"
+          className={styles.editOnGitHub}>
+          Edit this page on GitHub <FontAwesomeIcon icon={faArrowRight} />
+        </Link>
+      </div>
+      <div className={styles.sidebarAddition}>
+        <TableOfContent content={post.mdxToC} />
+        <References post={post} />
       </div>
     </Wrapper>
   );

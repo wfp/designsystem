@@ -1449,6 +1449,404 @@
   },
   "filePath": "tokens/design-tokens.tokens.json",
   "isSource": true,
+  "spacing": {
+    "50": {
+      "value": "0.125em",
+      "type": "spacing",
+      "filePath": "tokens/spacings.json",
+      "isSource": true,
+      "original": {
+        "value": "2px",
+        "type": "spacing"
+      },
+      "name": "50",
+      "attributes": {
+        "value": "2px",
+        "type": "spacing",
+        "filePath": "tokens/spacings.json",
+        "isSource": true,
+        "original": {
+          "value": "2px",
+          "type": "spacing"
+        },
+        "name": "50",
+        "attributes": {},
+        "path": [
+          "spacing",
+          "50"
+        ],
+        "cssName": "spacing-50"
+      },
+      "path": [
+        "spacing",
+        "50"
+      ],
+      "cssName": "spacing-50"
+    },
+    "75": {
+      "value": "0.25em",
+      "type": "spacing",
+      "filePath": "tokens/spacings.json",
+      "isSource": true,
+      "original": {
+        "value": "4px",
+        "type": "spacing"
+      },
+      "name": "75",
+      "attributes": {
+        "value": "4px",
+        "type": "spacing",
+        "filePath": "tokens/spacings.json",
+        "isSource": true,
+        "original": {
+          "value": "4px",
+          "type": "spacing"
+        },
+        "name": "75",
+        "attributes": {},
+        "path": [
+          "spacing",
+          "75"
+        ],
+        "cssName": "spacing-75"
+      },
+      "path": [
+        "spacing",
+        "75"
+      ],
+      "cssName": "spacing-75"
+    },
+    "100": {
+      "value": "0.5em",
+      "type": "spacing",
+      "filePath": "tokens/spacings.json",
+      "isSource": true,
+      "original": {
+        "value": "8px",
+        "type": "spacing"
+      },
+      "name": "100",
+      "attributes": {
+        "value": "8px",
+        "type": "spacing",
+        "filePath": "tokens/spacings.json",
+        "isSource": true,
+        "original": {
+          "value": "8px",
+          "type": "spacing"
+        },
+        "name": "100",
+        "attributes": {},
+        "path": [
+          "spacing",
+          "100"
+        ],
+        "cssName": "spacing-100"
+      },
+      "path": [
+        "spacing",
+        "100"
+      ],
+      "cssName": "spacing-100"
+    },
+    "200": {
+      "value": "0.75em",
+      "type": "spacing",
+      "filePath": "tokens/spacings.json",
+      "isSource": true,
+      "original": {
+        "value": "12px",
+        "type": "spacing"
+      },
+      "name": "200",
+      "attributes": {
+        "value": "12px",
+        "type": "spacing",
+        "filePath": "tokens/spacings.json",
+        "isSource": true,
+        "original": {
+          "value": "12px",
+          "type": "spacing"
+        },
+        "name": "200",
+        "attributes": {},
+        "path": [
+          "spacing",
+          "200"
+        ],
+        "cssName": "spacing-200"
+      },
+      "path": [
+        "spacing",
+        "200"
+      ],
+      "cssName": "spacing-200"
+    },
+    "300": {
+      "value": "1em",
+      "type": "spacing",
+      "filePath": "tokens/spacings.json",
+      "isSource": true,
+      "original": {
+        "value": "16px",
+        "type": "spacing"
+      },
+      "name": "300",
+      "attributes": {
+        "value": "16px",
+        "type": "spacing",
+        "filePath": "tokens/spacings.json",
+        "isSource": true,
+        "original": {
+          "value": "16px",
+          "type": "spacing"
+        },
+        "name": "300",
+        "attributes": {},
+        "path": [
+          "spacing",
+          "300"
+        ],
+        "cssName": "spacing-300"
+      },
+      "path": [
+        "spacing",
+        "300"
+      ],
+      "cssName": "spacing-300"
+    },
+    "400": {
+      "value": "1.5em",
+      "type": "spacing",
+      "filePath": "tokens/spacings.json",
+      "isSource": true,
+      "original": {
+        "value": "24px",
+        "type": "spacing"
+      },
+      "name": "400",
+      "attributes": {
+        "value": "24px",
+        "type": "spacing",
+        "filePath": "tokens/spacings.json",
+        "isSource": true,
+        "original": {
+          "value": "24px",
+          "type": "spacing"
+        },
+        "name": "400",
+        "attributes": {},
+        "path": [
+          "spacing",
+          "400"
+        ],
+        "cssName": "spacing-400"
+      },
+      "path": [
+        "spacing",
+        "400"
+      ],
+      "cssName": "spacing-400"
+    },
+    "500": {
+      "value": "2em",
+      "type": "spacing",
+      "filePath": "tokens/spacings.json",
+      "isSource": true,
+      "original": {
+        "value": "32px",
+        "type": "spacing"
+      },
+      "name": "500",
+      "attributes": {
+        "value": "32px",
+        "type": "spacing",
+        "filePath": "tokens/spacings.json",
+        "isSource": true,
+        "original": {
+          "value": "32px",
+          "type": "spacing"
+        },
+        "name": "500",
+        "attributes": {},
+        "path": [
+          "spacing",
+          "500"
+        ],
+        "cssName": "spacing-500"
+      },
+      "path": [
+        "spacing",
+        "500"
+      ],
+      "cssName": "spacing-500"
+    },
+    "600": {
+      "value": "2.5em",
+      "type": "spacing",
+      "filePath": "tokens/spacings.json",
+      "isSource": true,
+      "original": {
+        "value": "40px",
+        "type": "spacing"
+      },
+      "name": "600",
+      "attributes": {
+        "value": "40px",
+        "type": "spacing",
+        "filePath": "tokens/spacings.json",
+        "isSource": true,
+        "original": {
+          "value": "40px",
+          "type": "spacing"
+        },
+        "name": "600",
+        "attributes": {},
+        "path": [
+          "spacing",
+          "600"
+        ],
+        "cssName": "spacing-600"
+      },
+      "path": [
+        "spacing",
+        "600"
+      ],
+      "cssName": "spacing-600"
+    },
+    "700": {
+      "value": "3em",
+      "type": "spacing",
+      "filePath": "tokens/spacings.json",
+      "isSource": true,
+      "original": {
+        "value": "48px",
+        "type": "spacing"
+      },
+      "name": "700",
+      "attributes": {
+        "value": "48px",
+        "type": "spacing",
+        "filePath": "tokens/spacings.json",
+        "isSource": true,
+        "original": {
+          "value": "48px",
+          "type": "spacing"
+        },
+        "name": "700",
+        "attributes": {},
+        "path": [
+          "spacing",
+          "700"
+        ],
+        "cssName": "spacing-700"
+      },
+      "path": [
+        "spacing",
+        "700"
+      ],
+      "cssName": "spacing-700"
+    },
+    "800": {
+      "value": "4em",
+      "type": "spacing",
+      "filePath": "tokens/spacings.json",
+      "isSource": true,
+      "original": {
+        "value": "64px",
+        "type": "spacing"
+      },
+      "name": "800",
+      "attributes": {
+        "value": "64px",
+        "type": "spacing",
+        "filePath": "tokens/spacings.json",
+        "isSource": true,
+        "original": {
+          "value": "64px",
+          "type": "spacing"
+        },
+        "name": "800",
+        "attributes": {},
+        "path": [
+          "spacing",
+          "800"
+        ],
+        "cssName": "spacing-800"
+      },
+      "path": [
+        "spacing",
+        "800"
+      ],
+      "cssName": "spacing-800"
+    },
+    "900": {
+      "value": "5em",
+      "type": "spacing",
+      "filePath": "tokens/spacings.json",
+      "isSource": true,
+      "original": {
+        "value": "80px",
+        "type": "spacing"
+      },
+      "name": "900",
+      "attributes": {
+        "value": "80px",
+        "type": "spacing",
+        "filePath": "tokens/spacings.json",
+        "isSource": true,
+        "original": {
+          "value": "80px",
+          "type": "spacing"
+        },
+        "name": "900",
+        "attributes": {},
+        "path": [
+          "spacing",
+          "900"
+        ],
+        "cssName": "spacing-900"
+      },
+      "path": [
+        "spacing",
+        "900"
+      ],
+      "cssName": "spacing-900"
+    },
+    "1000": {
+      "value": "6em",
+      "type": "spacing",
+      "filePath": "tokens/spacings.json",
+      "isSource": true,
+      "original": {
+        "value": "96px",
+        "type": "spacing"
+      },
+      "name": "1000",
+      "attributes": {
+        "value": "96px",
+        "type": "spacing",
+        "filePath": "tokens/spacings.json",
+        "isSource": true,
+        "original": {
+          "value": "96px",
+          "type": "spacing"
+        },
+        "name": "1000",
+        "attributes": {},
+        "path": [
+          "spacing",
+          "1000"
+        ],
+        "cssName": "spacing-1000"
+      },
+      "path": [
+        "spacing",
+        "1000"
+      ],
+      "cssName": "spacing-1000"
+    }
+  },
   "typography": {
     "caption": {
       "fontSize": {

@@ -6,6 +6,7 @@ import Table from '../Table';
 import useSettings from '../../hooks/useSettings';
 import Link from '../Link';
 import Button from '../Button';
+import { Accordion, AccordionItem } from '../Accordion';
 
 /** Links are used as navigational elements. They may appear on their own, within a sentence or paragraph, or directly following the content. */
 
@@ -70,7 +71,11 @@ const table = (props) => {
 };
 
 const a = (props) => {
-  return <Link {...props}>{props.children}</Link>;
+  return (
+    <Link inline {...props}>
+      {props.children}
+    </Link>
+  );
 };
 
 const code = (props) => {
@@ -147,6 +152,8 @@ export const MdxComponents = {
   table,
   blockquote,
   Button,
+  Accordion,
+  AccordionItem,
 };
 
 export default MdxComponents;

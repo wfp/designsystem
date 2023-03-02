@@ -1,3 +1,5 @@
+export { Accordion, AccordionItem } from './components/Accordion';
+
 export {
   BannerNavigation,
   BannerNavigationItem,

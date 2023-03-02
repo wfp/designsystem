@@ -24,6 +24,12 @@ export const textLookup = {
   p: 'p',
   caption: 'div',
   code: 'code',
+  i: 'i',
+  bold: 'b',
+  strong: 'strong',
+  a: 'a',
+  code: 'code',
+  'inline-highlight': 'code',
 };
 
 /**
@@ -38,7 +44,7 @@ const Text: React.FC<TextProps> = ({
   spacingBottom,
 }) => {
   const { prefix } = useSettings();
-  const tagName = { name: kind ? textLookup[kind] : 'div' };
+  const tagName = { name: kind && textLookup[kind] ? textLookup[kind] : 'div' };
   const classNames = classnames({
     [`${prefix}--text`]: true,
     [`${prefix}--text__${kind}`]: kind,

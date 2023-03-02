@@ -1,4 +1,4 @@
-@use "scss/meta" as *;
+@use 'scss/meta' as *;
 
 .hero {
   width: 100%;
@@ -105,7 +105,20 @@
   top: 0;
   margin: 2em;
   margin-top: 4em;
+  margin-right: 2em;
   padding-top: 1em;
+  overflow: auto;
+  max-height: 100vh;
+}
+
+.sidebarAddition {
+  position: sticky;
+  top: 0;
+  margin: 2em;
+  margin-top: 4em;
+  padding-top: 1em;
+  margin-left: 4em;
+  max-width: 10em;
 }
 
 .sidebarList {
@@ -119,21 +132,36 @@
     font-size: 0.95em;
   }
 }
+
+.level-closed {
+  ul {
+    display: none;
+  }
+}
 .item {
   display: flex;
 }
 .sidebarTitle {
   font-weight: 600;
+  display: flex;
+}
+
+.sidebarTitleText {
+  margin-right: 0.3em;
 }
 
 .icon {
   color: $interactive;
+  font-size: 0.8em;
+  margin-top: 0.1em;
   margin-right: 0.3em;
 }
 
 .sidebarWrapper {
   display: flex;
   align-items: flex-start;
+  justify-content: space-between;
+  max-width: 1500px;
 }
 
 .meta {
@@ -156,4 +184,14 @@
 
 .detailImage {
   width: 100%;
+}
+
+.breadcrumb {
+  margin-bottom: 2em;
+}
+
+.editOnGitHub {
+  margin-top: 2em;
+  display: inline-block;
+  font-size: 0.8em;
 }

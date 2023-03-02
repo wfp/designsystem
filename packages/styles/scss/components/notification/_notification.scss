@@ -261,7 +261,7 @@
         .#{$prefix}--inline-notification__subtitle {
           font-size: var(--cds-body-short-font-size, 0.875rem);
           font-weight: var(--cds-body-short-font-weight, 400);
-          line-height: var(--cds-body-short-line-height, 1.29);
+          line-height: 1.45; //var(--cds-body-short-line-height, 1.29);
           letter-spacing: var(--cds-body-short-letter-spacing, 0.16px);
           word-break: break-word;
           margin-top: 0.1rem;

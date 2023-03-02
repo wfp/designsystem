@@ -2,6 +2,6 @@ const { config } = require('./config');
 
 config({
   source: `tokens/**/*.json`,
-  buildPath: `distDark`,
-  themeName: 'dark',
+  buildPath: 'dist', //`distDark`,
+  //themeName: 'default', //'dark',
 });
