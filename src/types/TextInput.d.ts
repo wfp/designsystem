@@ -4,7 +4,7 @@ import { InputModes } from './utils';
 
 declare namespace TextInput {
   interface TextInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
-    helperText?: string;
+    helperText?: React.ReactNode;
     labelText?: string;
     defaultValue?: string | number;
     formItemClassName?: string;
