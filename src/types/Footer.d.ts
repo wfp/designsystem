@@ -11,6 +11,7 @@ declare namespace Footer  {
     pageWidth?: ScreenSize
     sdgLogo?: React.ReactNode
     subTitle?: string | React.ReactNode
+    secondary?: React.ReactNode
   }
 }
 
