@@ -17,6 +17,8 @@ export const Regular = (args) => <RadioButton {...args} />;
 
 Regular.args = {
   labelText: 'Radio button',
+  value:'radio0',
+  name:'radio0'
 };
 
 const regularsourcecode = `
@@ -36,10 +38,10 @@ Regular.story = {
 };
 
 export const VerticalGrouping = (args) => {
-  const [gender, setgender] = useState('');
+  const [gender, setgender] = useState('female');
 
   const handleOnchange = (e) => {
-    setgender(e);
+    setgender(e.target.value);
   };
 
   return (
@@ -51,29 +53,26 @@ export const VerticalGrouping = (args) => {
     >
       <RadioButton
         {...args}
-        value="female"
+        value={gender}
         id="female"
         labelText="Female"
-        name="female"
-        checked={gender === 'female'}
+        name="gender"
         onChange={handleOnchange}
       />
       <RadioButton
         {...args}
-        value="male"
+        value={gender}
         labelText="Male"
         id="male"
-        name="male"
-        checked={gender === 'male'}
+        name="gender"
         onChange={handleOnchange}
       />
       <RadioButton
         {...args}
-        value="other"
+        value={gender}
         labelText="Other"
         id="other"
-        name="other"
-        checked={gender === 'other'}
+        name="gender"
         onChange={handleOnchange}
       />
     </InputGroup>
