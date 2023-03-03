@@ -25,7 +25,10 @@ declare namespace Modal {
     inPortal?: boolean;
     wide?: boolean;
     modalFooter?: () => void;
-    onRequestClose?(evt: React.UIEvent, trigger: 'button' | 'key' | 'background'): void;
+    onRequestClose?: (
+      evt: React.UIEvent,
+      trigger: 'button' | 'key' | 'background'
+    ) => void;
     onRequestSubmit?: () => void;
     iconDescription?: string;
     className?: string;
