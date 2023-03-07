@@ -7,11 +7,21 @@ import Image from 'next/image';
 
 import components from '..';
 
-export default function FigmaImage({ url, img, width, height, ...props }) {
+export default function FigmaImage({
+  url,
+  img,
+  width,
+  height,
+  background,
+  ...props
+}) {
   const src = `https://www.figma.com/embed?embed_host=astra&url=${url}`;
 
   return (
-    <div className={styles.figmaImage}>
+    <div
+      className={`wfp--code-block ${styles.figmaImage} ${
+        background ? styles.background : styles.transparent
+      }`}>
       <Image src={img} width={width} height={height} alt="Figma file" />
     </div>
   );

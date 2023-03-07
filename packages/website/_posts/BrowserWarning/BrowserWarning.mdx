@@ -1,0 +1,65 @@
+---
+title: 'Browser Warning'
+excerpt: 'Tokens are used in our build system to allow us to define styles once. This way they can be consumed across all plattforms and keep the design system consistent.'
+coverImage: '../sample-image.jpg'
+slug: 'Templates/Browser Warning'
+figma: 'https://figma.com'
+github: 'https://github.com/component'
+storybook: 'https://uikit.wfp.org/next-docs/index.html?path=/docs/components-button--button-regular'
+---
+
+Use the browser warning to detect outdated browsers and advises users to upgrade to a new version. There is a **Modal** version available and a smaller warning using the **InfoBar** component.
+
+In cases the applications works with minor restrictions and you just want to inform the user you can show a `<InfoBar />`.
+
+```
+export const ErrorDialog = (args) => {
+  const [open, setOpen] = useState(true);
+
+  const isIE = () => {
+    var ua = window.navigator.userAgent; //Check the userAgent property of the window.navigator object
+    var msie = ua.indexOf('MSIE '); // IE 10 or older
+    var trident = ua.indexOf('Trident/'); //IE 11
+    //Remove this line in production and use second line
+    return true;
+    //return msie > 0 || trident > 0;
+  };
+
+  const toggleModal = () => {
+    setOpen(!open);
+  };
+
+  const submitAndClose = () => {
+    setOpen(false);
+  };
+
+  if (isIE())
+    return (
+      <>
+        <button onClick={toggleModal}>Manually open warning modal</button>
+        <Modal
+          open={open}
+          primaryButtonText="Continue with current browser"
+          onRequestSubmit={submitAndClose}
+          modalHeading="Outdated browser"
+          onRequestClose={toggleModal}
+          danger>
+          <p className="wfp--modal-content__text">
+            It looks like you are using Internet Explorer 11 or older as your
+            favourite browser. We recommend that you switch to a more modern
+            browser to ensure that you get the best experience out of this
+            application. <Link href="#">Learn more on go.wfp.org.</Link>
+          </p>
+        </Modal>
+      </>
+    );
+  return null;
+};
+
+export const Warning = (args) => (
+  <InfoBar>
+    Your browser version is outdated. <Link href="#">Please upgrade</Link>
+  </InfoBar>
+);
+
+```

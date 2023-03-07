@@ -10,6 +10,7 @@ async function getImage({ document, node }) {
       }
     );
 
+    console.log(' process.env.FIGMA_TOKEN', process.env.FIGMA_TOKEN);
     const responseDimensions = await fetch(
       `https://api.figma.com/v1/files/${document}/nodes?ids=${node}`,
       {
@@ -64,8 +65,6 @@ const rehypeImage = (options) => async (tree) => {
 
       const document = node.attributes.find((a) => a.name === 'document');
       const nodeEl = node.attributes.find((a) => a.name === 'node');
-
-      console.log('urlEl', urlEl.value);
 
       const documentValue = urlEl?.value
         ? urlEl.value.split('figma.com/file')[1].split('/')[1]

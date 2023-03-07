@@ -2,17 +2,30 @@
 title: 'Design Tokens'
 excerpt: 'Tokens are used in our build system to allow us to define styles once. This way they can be consumed across all plattforms and keep the design system consistent.'
 coverImage: '../sample-image.jpg'
-slug: 'Features/Tokens'
+slug: 'Guidelines/Tokens'
 figma: 'https://figma.com'
 github: 'https://github.com/component'
 storybook: 'https://uikit.wfp.org/next-docs/index.html?path=/docs/components-button--button-regular'
 ---
 
+### Introduction
+
+Tokens are used in our build system to allow us to define styles once. This way they can be consumed across all plattforms and keep the design system consistent.
+
+<FigmaImage document="wFEEbUEWrlfMhs2a1S2RTp" node="1100:357" background />
+
 ### The Pyramid Design Token Structure
 
-#### 1. Reference Tokens
+The Pyramid Design Token Structure layers and abstracts variables and design tokens so that we can keep foundational items ([colors](/Guidelines/colors), etc.) separately from design decisions.
+The three layers consist of global tokens, alias tokens, and component tokens — each with more decisions and granularity built in; all referencing from each other.
 
-Reference Tokens act as our base layer of property definitions. They are global tokens that will be called upon by the next layer. Reference tokens are first-level, meaning, they are directly tied to values (ex. HEX color value `#FFFFFF`, or pixel value of `16px`).
+<FigmaImage document="wFEEbUEWrlfMhs2a1S2RTp" node="1103:378" background />
+
+#### 1. Global Tokens
+
+<FigmaImage document="wFEEbUEWrlfMhs2a1S2RTp" node="1125:493" background />
+
+Global Tokens act as our base layer of property definitions. They are global tokens that will be called upon by the next layer. Reference tokens are first-level, meaning, they are directly tied to values (ex. HEX color value `#FFFFFF`, or pixel value of `16px`).
 
 This layer define tokens to cover areas such as `colors`, `shadows`, `borders`, `media-queries` and `typography`.
 
@@ -20,11 +33,13 @@ This layer define tokens to cover areas such as `colors`, `shadows`, `borders`, 
 wfp-blue-60: #2a4ff0;
 ```
 
-#### 2. System Tokens
+#### 2. Alias Tokens
+
+<FigmaImage document="wFEEbUEWrlfMhs2a1S2RTp" node="1125:521" background />
 
 These tokens reference the Reference Tokens directly to form the visual interpretation of our design system. This set of tokens make opinionated choices around base sizing, typography scales, main border radiuses, status colors, etc.
 
-System Tokens act as the foundational layer individual building blocks are constructed upon.
+Alias Tokens act as the foundational layer individual building blocks are constructed upon.
 
 ```scss
 primary-button-color: $wfp-blue-60;
@@ -32,7 +47,7 @@ primary-button-color: $wfp-blue-60;
 
 TODO: Check this, shall we call it Component level instead or would this add unnecessary complexity? https://uxplanet.org/design-tokens-a-design-system-superpower-dab07a5f0035
 
-System Tokens can also reference each other:
+Alias Tokens can also reference each other:
 
 ```scss
 primary-button-color: $interactive;
@@ -54,7 +69,7 @@ Usually they assign only one value, but they can also reference multiple tokens.
 
 #### 3. Components
 
-Here we are referencing your System Tokens to define the bits and pieces that make up your component, such as a button or an input field.
+Here we are referencing your Alias Tokens to define the bits and pieces that make up your component, such as a button or an input field.
 
 We are using `scss` to define the css/styles of the components. This level is no longer plattform independent.
 
@@ -119,7 +134,7 @@ const { colors } = defaultTheme;
 
 const App = () => (
   <ul>
-    {Object.keys(colors).entries(([i, color]) => (
+    {Object.entries(colors).map(([i, color]) => (
       <li key={i}>
         <span
           style={{

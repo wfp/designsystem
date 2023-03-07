@@ -149,20 +149,20 @@
     margin-top: $spacing-05;
   }
 
-  h1 + .prism-code,
-  h2 + .prism-code,
-  h3 + .prism-code,
-  h4 + .prism-code,
-  h5 + .prism-code,
-  .#{$prefix}--story__h1 + .prism-code,
-  .#{$prefix}--story__h2 + .prism-code,
-  .#{$prefix}--story__h3 + .prism-code,
-  .#{$prefix}--story__h4 + .prism-code,
-  .#{$prefix}--story__h5 + .prism-code {
+  h1 + .#{$prefix}--code-block,
+  h2 + .#{$prefix}--code-block,
+  h3 + .#{$prefix}--code-block,
+  h4 + .#{$prefix}--code-block,
+  h5 + .#{$prefix}--code-block,
+  .#{$prefix}--story__h1 + .#{$prefix}--code-block,
+  .#{$prefix}--story__h2 + .#{$prefix}--code-block,
+  .#{$prefix}--story__h3 + .#{$prefix}--code-block,
+  .#{$prefix}--story__h4 + .#{$prefix}--code-block,
+  .#{$prefix}--story__h5 + .#{$prefix}--code-block {
     margin-top: $spacing-05;
   }
 
-  .prism-code + .prism-code {
+  .#{$prefix}--code-block + .#{$prefix}--code-block {
     margin-top: $spacing-05;
   }
 

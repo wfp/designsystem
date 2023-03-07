@@ -31,7 +31,7 @@ const components = {
   Video,
   Flex,
   img: Image,
-  //a: Link,
+  a: Link,
   Figma,
   FigmaImage,
   Colors,

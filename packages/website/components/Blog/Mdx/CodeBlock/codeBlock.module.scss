@@ -1,3 +1,20 @@
 .codeBlock {
   overflow: auto;
 }
+
+.code {
+  position: relative;
+  &:hover {
+    .copyButton {
+      opacity: 1;
+    }
+  }
+}
+
+.copyButton {
+  position: absolute;
+  bottom: 0.5em;
+  right: 0.5em;
+  opacity: 0;
+  background-color: transparent;
+}

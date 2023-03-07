@@ -20,10 +20,10 @@ const rehypeToC = (options) => async (tree) => {
   const options_ = options || {};
   const baseUrl = options_.baseUrl;
 
-  const imageNodes = searchTreeWrapper(tree, 'h3');
+  //const imageNodes = searchTreeWrapper(tree, 'h3');
 
   tree.children = tree.children.filter(
-    (t) => t.type === 'element' && t.tagName === 'h3'
+    (t) => (t.type === 'element' && t.tagName === 'h2') || t.tagName === 'h3'
   );
 };
 

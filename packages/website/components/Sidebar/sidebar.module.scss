@@ -105,10 +105,11 @@
   top: 0;
   margin: 2em;
   margin-top: 4em;
-  margin-right: 2em;
+  margin-right: 0em;
   padding-top: 1em;
   overflow: auto;
   max-height: 100vh;
+  width: 220px;
 }
 
 .sidebarAddition {
@@ -117,13 +118,13 @@
   margin: 2em;
   margin-top: 4em;
   padding-top: 1em;
-  margin-left: 4em;
-  max-width: 10em;
+  margin-left: 2em;
+  width: 15em;
 }
 
 .sidebarList {
   li {
-    margin: 2em 0.3em;
+    margin: 1em 0.3em;
   }
   .level-1 {
     margin-left: 0;
@@ -138,12 +139,23 @@
     display: none;
   }
 }
+
+.level-open {
+  > .sidebarTitle {
+    > .iconOpen {
+      transform: rotate(90deg);
+    }
+  }
+}
 .item {
   display: flex;
 }
 .sidebarTitle {
   font-weight: 600;
   display: flex;
+  cursor: pointer;
+  margin: 1.5em 0;
+  display: block;
 }
 
 .sidebarTitleText {
@@ -151,6 +163,13 @@
 }
 
 .icon {
+  color: $interactive;
+  font-size: 0.8em;
+  margin-top: 0.1em;
+  margin-right: 0.3em;
+}
+
+.iconOpen {
   color: $interactive;
   font-size: 0.8em;
   margin-top: 0.1em;
@@ -194,4 +213,10 @@
   margin-top: 2em;
   display: inline-block;
   font-size: 0.8em;
+}
+
+.excerpt {
+  font-size: 1.1em;
+  color: $text-secondary;
+  font-style: italic;
 }

@@ -30,8 +30,13 @@ import components from '../Blog/Mdx';
 import References from '../Blog/References';
 import TableOfContent from '../Blog/References/TableOfContent';
 
-function TreeBranch({ split, level }) {
-  const [open, setOpen] = useState(level === 0);
+function TreeBranch({ slug, split, level }) {
+  const splitSlug = slug.split('/');
+  const found = split.children.find(
+    (e) => e.name === splitSlug[splitSlug.length - 1]
+  );
+
+  const [open, setOpen] = useState(level === 0 || found);
   return (
     <li
       className={`${styles[`level-${level}`]} ${
@@ -54,12 +59,15 @@ function TreeBranch({ split, level }) {
               <span className={styles.sidebarTitleText}>
                 {split.path?.title ? split.path?.title : split.name}
               </span>
-              <FontAwesomeIcon icon={faChevronRight} className={styles.icon} />
+              <FontAwesomeIcon
+                icon={faChevronRight}
+                className={styles.iconOpen}
+              />
             </span>
           ) : null}
           {split.children.map((c, i) => (
             <ul key={i}>
-              <TreeBranch split={c} level={level + 1} />
+              <TreeBranch split={c} level={level + 1} slug={slug} />
             </ul>
           ))}
         </>
@@ -105,7 +113,7 @@ export default function SidebarWrapper({ content, post, posts }) {
     <Wrapper className={styles.sidebarWrapper} pageWidth="xl">
       <div className={styles.sidebar}>
         <ul className={styles.sidebarList}>
-          <TreeBranch split={split} level={0} />
+          <TreeBranch split={split} level={0} slug={post.slug} />
         </ul>
       </div>
 
@@ -127,7 +135,9 @@ export default function SidebarWrapper({ content, post, posts }) {
         )}
         <Text kind="title" /*className={styles.title}*/>{post.title}</Text>
 
-        <MDXRemote {...post.mdxExcerptSource} components={components} />
+        <div className={styles.excerpt}>
+          <MDXRemote {...post.mdxExcerptSource} components={components} />
+        </div>
 
         <MDXRemote {...post.mdxSource} components={components} />
 

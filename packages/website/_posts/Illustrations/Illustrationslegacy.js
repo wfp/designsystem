@@ -1,5 +1,5 @@
 import React from 'react';
-import { Module, ModuleBody } from '../../components/Module';
+import { Module, ModuleBody } from '@un/react';
 
 const files = [
   { filename: 'carrot-with-background' },

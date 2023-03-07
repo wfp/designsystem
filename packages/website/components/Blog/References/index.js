@@ -6,6 +6,7 @@ import React from 'react';
 import styles from './tableOfContent.module.scss';
 
 export default function References({ post }) {
+  if (!post.figma && !post.storybook && !post.github) return null;
   return (
     <div className={styles.tableOfContent}>
       <h3>References</h3>
@@ -17,15 +18,15 @@ export default function References({ post }) {
             </Link>
           </ListItem>
         )}
-        {post.figma && (
+        {post.github && (
           <ListItem>
-            <Link href={post.figma} target="_blank">
+            <Link href={post.github} target="_blank">
               GitHub{' '}
               <FontAwesomeIcon icon={faGithub} className={styles.github} />
             </Link>
           </ListItem>
         )}
-        {post.figma && (
+        {post.storybook && (
           <ListItem>
             <Link href={post.storybook} target="_blank">
               Storybook{' '}
