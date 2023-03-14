@@ -6,6 +6,7 @@ import { getAllPosts } from '../lib/getPost';
 import { serialize } from 'next-mdx-remote/serialize';
 import { MDXRemote } from 'next-mdx-remote';
 import components from '../components/Blog/Mdx';
+import { contentWindow } from 'iframe-resizer';
 
 const Main = ({ newItems }) => {
   const [active, setActive] = useState(false);

@@ -48,6 +48,7 @@ const Articles = ({ articles }) => {
         <Search />
       </div>
 
+      {/*
       <CardWfp
         article={designers}
         key={`article__${designers.id}`}
@@ -66,7 +67,7 @@ const Articles = ({ articles }) => {
         metadata="Climate Change, Publication"
         subTitle="How to get started as a developer"
         title="For developers"
-      />
+  /> */}
       <div className={styles.articles}>
         {categories.map((category) => (
           <>

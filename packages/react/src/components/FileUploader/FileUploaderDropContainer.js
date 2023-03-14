@@ -11,7 +11,7 @@ import classNames from 'classnames';
 import useSettings from '../../hooks/useSettings'; //import { keys, matches } from '../../internal/keyboard';
 import uniqueId from '../../tools/uniqueId';
 
-export default function FileUploaderDropContainer(props) {
+export function FileUploaderDropContainer(props) {
   const { prefix } = useSettings();
 
   const inputRef = useRef();
@@ -188,3 +188,6 @@ FileUploaderDropContainer.defaultProps = {
   onAddFiles: () => {},
   accept: [],
 };
+
+// TODO: fix duplicated export of component
+export default FileUploaderDropContainer;

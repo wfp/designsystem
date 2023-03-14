@@ -13,7 +13,7 @@ import { Filename } from './FileUploader';
 //import { keys, matches } from '../../internal/keyboard';
 import uid from '../../tools/uniqueId';
 
-export default function FileUploaderItem({
+export function FileUploaderItem({
   uuid,
   name,
   status,
@@ -118,3 +118,5 @@ FileUploaderItem.defaultProps = {
   status: 'uploading',
   onDelete: () => {},
 };
+
+export default FileUploaderItem;

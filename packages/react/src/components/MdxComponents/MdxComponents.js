@@ -7,6 +7,7 @@ import useSettings from '../../hooks/useSettings';
 import Link from '../Link';
 import Button from '../Button';
 import { Accordion, AccordionItem } from '../Accordion';
+import Text from '../Text';
 
 /** Links are used as navigational elements. They may appear on their own, within a sentence or paragraph, or directly following the content. */
 
@@ -43,23 +44,43 @@ const ol = ({ children, ...other }) => {
 };
 
 const h1 = (props) => {
-  return <h1 {...props}>{props.children}</h1>;
+  return (
+    <Text kind="h1" {...props}>
+      {props.children}
+    </Text>
+  );
 };
 
 const h2 = (props) => {
-  return <h2 {...props}>{props.children}</h2>;
+  return (
+    <Text kind="h2" {...props}>
+      {props.children}
+    </Text>
+  );
 };
 
 const h3 = (props) => {
-  return <h3 {...props}>{props.children}</h3>;
+  return (
+    <Text kind="h3" {...props}>
+      {props.children}
+    </Text>
+  );
 };
 
 const h4 = (props) => {
-  return <h4 {...props}>{props.children}</h4>;
+  return (
+    <Text kind="h4" {...props}>
+      {props.children}
+    </Text>
+  );
 };
 
 const h5 = (props) => {
-  return <h5 {...props}>{props.children}</h5>;
+  return (
+    <Text kind="h5" {...props}>
+      {props.children}
+    </Text>
+  );
 };
 
 const p = (props) => {

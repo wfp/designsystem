@@ -16660,6 +16660,19 @@ iferr@^0.1.5:
   resolved "https://registry.yarnpkg.com/iferr/-/iferr-0.1.5.tgz#c60eed69e6d8fdb6b3104a1fcbca1c192dc5b501"
   integrity sha512-DUNFN5j7Tln0D+TxzloUjKB+CtVu6myn0JEFak6dG18mNt9YkQ6lzGCdafwofISZ1lLF3xRHJ98VKy9ynkcFaA==
 
+iframe-resizer-react@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/iframe-resizer-react/-/iframe-resizer-react-1.1.0.tgz#5009e019b7a5c7f1c009bff5bcdf0dbf33557465"
+  integrity sha512-FrytSq91AIJaDgE+6uK/Vdd6IR8CrwLoZ6eGmL2qQMPTzF0xlSV2jaSzRRUh5V2fttD7vzl21jvBl97bV40eBw==
+  dependencies:
+    iframe-resizer "^4.3.0"
+    warning "^4.0.3"
+
+iframe-resizer@^4.3.0, iframe-resizer@^4.3.6:
+  version "4.3.6"
+  resolved "https://registry.yarnpkg.com/iframe-resizer/-/iframe-resizer-4.3.6.tgz#61d92c1adefe5d416bff4fbf80c7f1f74be70ec0"
+  integrity sha512-wz0WodRIF6eP0oGQa5NIP1yrITAZ59ZJvVaVJqJRjaeCtfm461vy2C3us6CKx0e7pooqpIGLpVMSTzrfAjX9Sg==
+
 ignore-loader@0.1.2:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/ignore-loader/-/ignore-loader-0.1.2.tgz#d81f240376d0ba4f0d778972c3ad25874117a463"
@@ -25446,6 +25459,13 @@ react-moment@^1.1.1:
   resolved "https://registry.yarnpkg.com/react-moment/-/react-moment-1.1.2.tgz#a9b157c58ddd226a2f746e5ca43415b24a17b6af"
   integrity sha512-lfb+shYXI2tXlQrNUpNr05/1D/kzFj8Isbfp89DQrpZk0fs2JIAnLHWETR0hQS9zvtzwLWlVv0wKLffbue5HoA==
 
+react-oembed-container@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/react-oembed-container/-/react-oembed-container-1.0.1.tgz#28410da34351ece211b1c0ed222fcfdf7f5938ac"
+  integrity sha512-wU7s2Ql6LZp7bTbf7Hloy7ONDCSb+44iM4Ezdk36qqsVSxOefvN70DBuqf3Z/c7zQdYVwODHryMYawq6sxmG+A==
+  dependencies:
+    prop-types "^15.6.0"
+
 react-onclickoutside@^6.12.0:
   version "6.12.2"
   resolved "https://registry.yarnpkg.com/react-onclickoutside/-/react-onclickoutside-6.12.2.tgz#8e6cf80c7d17a79f2c908399918158a7b02dda01"
@@ -25677,6 +25697,14 @@ react-textarea-autosize@^7.1.0:
   dependencies:
     "@babel/runtime" "^7.1.2"
     prop-types "^15.6.0"
+
+react-tiny-oembed@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/react-tiny-oembed/-/react-tiny-oembed-1.1.0.tgz#2ede4b47fc3a64c4d798d8189a63baac5a31f62e"
+  integrity sha512-40FGS65ibD60Us2g6lk5XKu1YN/pr8fl60RqOIfR6wFbl3UPk2hxMevQu1lBW7pl/jPHmYnLQ3MJvHfNF2nz1A==
+  dependencies:
+    axios "^0.21.1"
+    minimatch "^3.0.4"
 
 react-toastify@^6.0.8:
   version "6.2.0"

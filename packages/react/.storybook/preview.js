@@ -18,6 +18,10 @@ import DocsContainer from './documentation/DocsContainer';
 
 import { themes, ensure } from '@storybook/theming';
 
+//import 'iframe-resizer';
+
+require('iframe-resizer/js/iframeResizer.contentWindow');
+
 /*
 addParameters({
   docs: {

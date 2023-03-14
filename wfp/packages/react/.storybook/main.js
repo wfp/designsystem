@@ -31,6 +31,9 @@ module.exports = {
     '@storybook/addon-viewport',
   ],
   stories: ['../src/**/*.stories.@(js|mdx)', '../src/**/*-story.@(js|mdx)'],
+  typescript: {
+    check: false,
+  },
   webpack(config) {
     const babelLoader = config.module.rules.find((rule) => {
       return rule.use.some(({ loader }) => {

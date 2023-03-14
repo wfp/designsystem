@@ -19,34 +19,37 @@ const CardWrapper = ({ article, multimedia, detail = 'posts' }) => {
     suspense: true,
   });
 
-  console.log(srcElement);
-
   return (
-    <Link href={`/${detail}/${article.slug}`} className={styles.card}>
-      {/*multimedia ? (
+    <Link
+      href={`/${detail}/${article.slug}`}
+      className={styles.card}
+      legacyBehavior>
+      <div>
+        {/*multimedia ? (
           multimedia
         ) : (
           <MultimediaElement src={src} className={styles.multimedia} />
         )*/}
-      {srcElement && (
-        <div className={styles.multimedia}>
-          {/*<Image src={srcElement} sizes={'(max-width: 710px) 40vw, 300px'} />*/}
-        </div>
-      )}
-
-      <span className={styles.body}>
-        <p className={styles.title}>{article.title}</p>
-        {(article.excerpt || article.subtitle) && (
-          <p className={styles.subTitle}>
-            {article.excerpt ? article.excerpt : article.subtitle}
-          </p>
+        {srcElement && (
+          <div className={styles.multimedia}>
+            {/*<Image src={srcElement} sizes={'(max-width: 710px) 40vw, 300px'} />*/}
+          </div>
         )}
-        {/*<Link href={`/${detail}/${article.slug}`}>
+
+        <span className={styles.body}>
+          <p className={styles.title}>{article.title}</p>
+          {(article.excerpt || article.subtitle) && (
+            <p className={styles.subTitle}>
+              {article.excerpt ? article.excerpt : article.subtitle}
+            </p>
+          )}
+          {/*<Link href={`/${detail}/${article.slug}`}>
             <a className={styles.moreLink}>
               Continue reading <FontAwesomeIcon icon={faArrowRight} />
             </a>
           </Link>*/}
-      </span>
+        </span>
+      </div>
     </Link>
   );
 };
