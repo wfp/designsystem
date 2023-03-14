@@ -8,7 +8,7 @@ $css--reset: true;
 
 //@use '@un/themes-core/dist/scss/_variables.scss' as darkTheme;
 
-@use '@un/styles/scss/globalDefaults' as globalDefaults;
+@use '@un/styles/scss/global-defaults' as globalDefaults;
 
 @use '@un/styles/scss/theme' /*with (
   $coretheme: coretheme
