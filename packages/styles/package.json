@@ -1,18 +1,19 @@
 {
   "name": "@un/styles",
-  "description": "Styles for the Carbon Design System",
+  "description": "Styles for the WFP Design System",
   "version": "10.26.56",
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/carbon-design-system/carbon.git",
+    "url": "https://github.com/wfp/designsystem.git",
     "directory": "packages/styles"
   },
-  "bugs": "https://github.com/carbon-design-system/carbon/issues",
+  "bugs": "https://github.com/wfp/designsystem/issues",
   "keywords": [
-    "ibm",
-    "carbon",
-    "carbon-design-system",
+    "styles",
+    "un",
+    "wfp",
+    "wfp-design-system",
     "components",
     "react"
   ],
@@ -20,6 +21,7 @@
     "access": "public"
   },
   "dependencies": {
+    "@carbon/feature-flags": "^0.6.0",
     "@carbon/grid": "^10.39.0",
     "@carbon/motion": "^10.22.0",
     "@ibm/plex": "6.0.0-next.6",
