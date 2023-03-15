@@ -28,9 +28,9 @@ const Articles = ({ articles }) => {
   // if (!categories) return null;
   const categories = [{ name: 'common' }];
 
-  const designers = articles.find((a) => a.slug === 'core/designers');
+  // const designers = articles.find((a) => a.slug === 'core/designers');
 
-  const src = designers?.ogImage?.url;
+  //  const src = designers?.ogImage?.url;
   //if (!src) return null;
 
   /*const srcElement = dynamic(() => import(pathInclude), {
@@ -42,6 +42,7 @@ const Articles = ({ articles }) => {
       {/*<Image src={srcElement} sizes={'(max-width: 710px) 40vw, 300px'} />*/}
     </div>
   );
+
   return (
     <div>
       <div className={styles.searchWrapper}>
@@ -67,22 +68,18 @@ const Articles = ({ articles }) => {
         metadata="Climate Change, Publication"
         subTitle="How to get started as a developer"
         title="For developers"
-  /> */}
+  />    /*.filter((article) =>
+                article.tags.find((tag) => tag.id === category.id)
+              )*/}
       <div className={styles.articles}>
         {categories.map((category) => (
           <>
             <h3 className={styles.subHeading}>
               <FontAwesomeIcon icon={faScaleBalanced} /> {category.name}
             </h3>
-            {articles
-              /*.filter((article) =>
-                article.tags.find((tag) => tag.id === category.id)
-              )*/
-              .map((article) => {
-                return (
-                  <Card article={article} key={`article__${article.id}`} />
-                );
-              })}
+            {articles.map((article) => {
+              return <Card article={article} key={`article__${article.id}`} />;
+            })}
           </>
         ))}
       </div>

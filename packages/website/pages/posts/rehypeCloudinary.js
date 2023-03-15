@@ -52,7 +52,6 @@ const rehypeImage = (options) => async (tree) => {
 
   const imageNodes = searchTreeWrapper(tree, 'CloudinaryImage');
 
-  console.log('imagenodes', imageNodes);
   const validImageNodes = imageNodes; /*.filter((node) => isImageNode(node));*/
 
   /*for (const node of validImageNodes) {

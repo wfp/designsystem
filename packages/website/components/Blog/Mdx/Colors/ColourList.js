@@ -26,7 +26,7 @@ export const ColourList = ({ tokens }) => {
 
   const list = Object.entries(tokens).map(([key, color]) => {
     return (
-      <tr className={styles.item} kind="horizontal">
+      <tr key={key} className={styles.item} kind="horizontal">
         <td>
           <h5>{color.name}</h5>
         </td>
@@ -128,7 +128,7 @@ export const ColourList = ({ tokens }) => {
         <tr>
           <th>Token</th>
           <th>Role</th>
-          <th colspan={2}>Value</th>
+          <th colSpan={2}>Value</th>
         </tr>
       </thead>
       <tbody>{list}</tbody>
@@ -141,8 +141,8 @@ export function ColourLists() {
 
   return (
     <div>
-      {Object.values(tokens).map((t) => {
-        return <ColourList tokens={t} />;
+      {Object.values(tokens).map((t, key) => {
+        return <ColourList key={key} tokens={t} />;
       })}
     </div>
   );

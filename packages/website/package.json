@@ -9,8 +9,7 @@
     "build:theme": "node buildTheme.js"
   },
   "devDependencies": {
-    "eslint": "8.19.0",
-    "eslint-config-next": "12.2.0"
+    "eslint": "8.19.0"
   },
   "dependencies": {
     "@fortawesome/fontawesome-pro": "^6.1.1",
@@ -40,6 +39,7 @@
     "classnames": "^2.3.1",
     "cloudinary-core": "^2.12.3",
     "dotenv": "^16.0.1",
+    "eslint-config-next": "^13.2.4",
     "framer-motion": "^3.3.0",
     "gray-matter": "^4.0.3",
     "hast-util-select": "^5.0.2",
@@ -58,7 +58,7 @@
     "locize-lastused": "^3.1.0",
     "markdown-to-jsx": "^7.1.7",
     "moment": "^2.29.1",
-    "next": "13.1.6",
+    "next": "^13.2.4",
     "next-compose-plugins": "^2.2.1",
     "next-i18next": "^11.0.0",
     "next-mdx-remote": "^4.0.3",
@@ -68,7 +68,7 @@
     "prism-react-renderer": "^1.3.5",
     "react": "^18.2.0",
     "react-device-detect": "^1.15.0",
-    "react-dom": "18.2.0",
+    "react-dom": "^18.2.0",
     "react-instantsearch-dom": "^6.26.0",
     "react-live-chat-loader": "^2.7.3",
     "react-moment": "^1.1.1",
@@ -78,6 +78,8 @@
     "rehype-img-size": "^1.0.1",
     "remark-gfm": "^3.0.1",
     "responsive-loader": "^2.1.1",
-    "sass": "^1.32.7"
+    "sass": "^1.32.7",
+    "slugify": "^1.6.5",
+    "wcag-contrast": "^3.0.0"
   }
 }

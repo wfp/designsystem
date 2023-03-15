@@ -97,16 +97,7 @@ const ColourDocs = () => {
         Use the <i>70–25–5</i> rule to create sense of balance and allow the eye
         to move comfortably from one focal point to the next.
       </p>
-      <img
-        alt="Brand colour"
-        style={{
-          width: '100%',
-          height: 'auto',
-          marginTop: '1em',
-          marginLeft: '0em',
-        }}
-        src={`${process.env.STORYBOOK_INTERNAL_ASSETS}internal/colors.png`}
-      />
+
       <h3 ref={linkRefs.primary}>Primary Colours</h3>
       <p>
         Primary colours are the base colours of the UI, the ones that are used
@@ -126,7 +117,7 @@ const ColourDocs = () => {
       <ColorList filter="brand" />
 
       <Colour color="brand-01" />
-      <h4 className="wfp--story__sub-heading">WFP's corporate colour</h4>
+      <h4 className="wfp--story__sub-heading">WFPs corporate colour</h4>
       <p>
         The brand-01 colour is WFP’s corporate blue which is used in all
         (non-interactive) branding elements. It is the colour displayed most
@@ -166,16 +157,6 @@ const ColourDocs = () => {
         touched. It is slightly lighter then the main WFP blue to communicate
         that an element is interactive and to be distinguishable from black.
       </p>
-      <img
-        alt="Brand colour"
-        style={{
-          width: '100%',
-          height: 'auto',
-          marginTop: '1em',
-          marginLeft: '0em',
-        }}
-        src={`${process.env.STORYBOOK_INTERNAL_ASSETS}internal/brand-color.png`}
-      />
 
       <Colour color="interactive-02" />
       <h4 className="wfp--story__sub-heading">
@@ -220,23 +201,14 @@ const ColourDocs = () => {
 
       <Colour color="accent-01" />
       <h4 className="wfp--story__sub-heading">Accent secondary colour</h4>
-      <img
-        alt="Brand colour"
-        style={{
-          width: '100%',
-          height: 'auto',
-          marginTop: '1em',
-          marginLeft: '0em',
-        }}
-        src={`${process.env.STORYBOOK_INTERNAL_ASSETS}internal/secondary-color.png`}
-      />
+
       <p>
         Use to emphasize important actions and highlighted information in your
         application.It can help encourage visitors to make more interactions
         with the elements of your design.
       </p>
       <p>
-        Be playful and crazy here but don't forget that the accent colour should
+        Be playful and crazy here but dont forget that the accent colour should
         be maximum 10 % of colour of the whole product. Yellow is the
         recommended accent colour. To use a different accent colour then yellow
         please contact{' '}

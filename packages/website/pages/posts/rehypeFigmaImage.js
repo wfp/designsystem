@@ -10,7 +10,6 @@ async function getImage({ document, node }) {
       }
     );
 
-    console.log(' process.env.FIGMA_TOKEN', process.env.FIGMA_TOKEN);
     const responseDimensions = await fetch(
       `https://api.figma.com/v1/files/${document}/nodes?ids=${node}`,
       {

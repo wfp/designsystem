@@ -27,6 +27,7 @@ import LinkBack from '../../components/LinkBack';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft, faArrowRight } from '@fortawesome/pro-solid-svg-icons';
 import components from '../../components/Blog/Mdx';
+import slugify from 'slugify';
 
 export default function Post({ post, posts, morePosts, preview }) {
   const router = useRouter();
@@ -58,11 +59,11 @@ export default function Post({ post, posts, morePosts, preview }) {
                 <meta property="og:image" content={post.ogImage?.url} />
               </Head>*/}
             {/*<PostHeader
-                title={post.title}
-                coverImage={post.coverImage}
-                date={post.date}
-                author={post.author}
-        />*/}
+              title={post.title}
+              coverImage={post.coverImage}
+              date={post.date}
+              author={post.author}
+            />*/}
 
             <Sidebar posts={posts} post={post} />
           </article>
@@ -87,7 +88,13 @@ export async function getStaticProps({ params }) {
   ]);
 
   const slugs = await getPostSlugs();
-  const foundSlug = slugs.find((f) => f.slug === params.slug.join('/'));
+  const foundSlug = slugs.find(
+    (f) =>
+      f.slug
+        .split('/')
+        .map((e) => slugify(e))
+        .join('/') === params.slug.join('/')
+  );
 
   const post = getPostByPath(foundSlug.path, [
     'title',
@@ -128,8 +135,6 @@ export async function getStaticProps({ params }) {
     },
   });
 
-  console.log('post.excerpt', post);
-
   const mdxExcerptSource = await serialize(post.excerpt, {
     components,
   });
@@ -153,9 +158,10 @@ export async function getStaticPaths() {
 
   return {
     paths: posts.map((post) => {
+      const slug = post.slug.split('/').map((e) => slugify(e));
       return {
         params: {
-          slug: post.slug.split('/'),
+          slug,
         },
       };
     }),

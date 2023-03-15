@@ -26,7 +26,7 @@ export default async function figmaImages(req, res) {
     );
 
     const content = await response.json();
-    console.log('ressssss', content);
+
     // const json = await res.json();
     //if (json.errors) {
     //console.error(json.errors[0].extensions.debug);

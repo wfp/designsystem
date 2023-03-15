@@ -120,9 +120,9 @@ export default function SidebarWrapper({ content, post, posts }) {
       <div className={styles.content}>
         <Breadcrumb className={styles.breadcrumb}>
           <BreadcrumbItem>
-            <a href="/#">
+            <Link href="/#">
               <BreadcrumbHome />
-            </a>
+            </Link>
           </BreadcrumbItem>
           <BreadcrumbItem href="#">Breadcrumb 2</BreadcrumbItem>
           <BreadcrumbItem disableLink>Breadcrumb 3</BreadcrumbItem>

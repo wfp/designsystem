@@ -5,13 +5,10 @@ import styles from './styles.module.scss';
 export function DoUse({ children, title = 'Do use', kind = 'checkmark' }) {
   const childrenWithProps = React.Children.map(children, (child) => {
     if (React.isValidElement(child)) {
-      console.log('child', child);
-
       const childrenListItemWithProps = React.Children.map(
         child.props.children,
         (childListItem) => {
           if (React.isValidElement(childListItem)) {
-            console.log('child', childListItem);
             return React.createElement(
               ListItem,
               { className: 'greeting', ...childListItem.props, kind }

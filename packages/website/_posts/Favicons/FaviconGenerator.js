@@ -110,7 +110,6 @@ export default function FaviconGenerator() {
                   helperText="Abbreviation of the applications name, like: WSS, WFP, INFO"
                   placeholder="WFP"
                   onChange={(e) => {
-                    console.log('asasddsaasddsaasd');
                     setName(e.target.value);
                   }}
                 />

@@ -29,7 +29,7 @@ export async function getStaticProps() {
       'content',
     ])) || [];
 
-  articles.map((a) => {
+  /*articles.map((a) => {
     const coverImagePath = path.join(
       postsDirectory,
       a.path,
@@ -38,7 +38,7 @@ export async function getStaticProps() {
     );
 
     const coverImageFile = require('../_posts/sample-image.jpg');
-  });
+  });*/
 
   return {
     props: { articles },

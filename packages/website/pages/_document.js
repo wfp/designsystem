@@ -1,8 +1,5 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 import Navigation from '../components/Navigation';
-
-require('iframe-resizer/js/iframeResizer.contentWindow');
-
 class MyDocument extends Document {
   static async getInitialProps(ctx) {
     const initialProps = await Document.getInitialProps(ctx);

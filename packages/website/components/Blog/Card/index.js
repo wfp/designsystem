@@ -15,9 +15,11 @@ const CardWrapper = ({ article, multimedia, detail = 'posts' }) => {
   console.log(article.coverImagePath);
   //const srcElement = require(pathInclude);
 
-  const srcElement = dynamic(() => import(article.coverImagePath), {
+  /*const srcElement = dynamic(() => import(article.coverImagePath), {
     suspense: true,
   });
+  
+   {/*<Image src={srcElement} sizes={'(max-width: 710px) 40vw, 300px'} />*/
 
   return (
     <Link
@@ -30,11 +32,11 @@ const CardWrapper = ({ article, multimedia, detail = 'posts' }) => {
         ) : (
           <MultimediaElement src={src} className={styles.multimedia} />
         )*/}
-        {srcElement && (
+        {/*srcElement && (
           <div className={styles.multimedia}>
-            {/*<Image src={srcElement} sizes={'(max-width: 710px) 40vw, 300px'} />*/}
+           
           </div>
-        )}
+        )*/}
 
         <span className={styles.body}>
           <p className={styles.title}>{article.title}</p>

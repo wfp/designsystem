@@ -33,9 +33,10 @@ const Main = ({ newItems }) => {
               <Search id="search22" />
             </SidebarHeader>
             <Accordion title="Getting Started">
-              {startedCategory.map((item) => {
+              {startedCategory.map((item, e) => {
                 return (
                   <Item
+                    key={e}
                     kind="horizontal"
                     title={item.title}
                     onClick={() => onItemClicked(item.mdxSource, item.content)}
@@ -48,9 +49,10 @@ const Main = ({ newItems }) => {
             </Accordion>
             <Accordion title="Guidelines"></Accordion>
             <Accordion title="Core">
-              {coreCategory.map((item) => {
+              {coreCategory.map((item, key) => {
                 return (
                   <Item
+                    key={key}
                     kind="horizontal"
                     title={item.title}
                     onClick={() => onItemClicked(item.mdxSource)}

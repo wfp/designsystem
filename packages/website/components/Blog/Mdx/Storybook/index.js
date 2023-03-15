@@ -4,7 +4,6 @@ import { Button, FormGroup, TextInput, TextArea } from '@un/react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/pro-solid-svg-icons';
 import Image from 'next/image';
-import Embed, { defaultProviders } from 'react-tiny-oembed';
 import IframeResizer from 'iframe-resizer-react';
 
 import components from '..';
