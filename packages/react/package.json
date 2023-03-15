@@ -1,6 +1,6 @@
 {
   "name": "@un/react",
-  "version": "1.18.68",
+  "version": "1.18.69",
   "description": "WFP UI Kit",
   "license": "Apache-2",
   "main": "lib/index.js",
@@ -120,7 +120,7 @@
     "@un/babel-preset-wfp": "^0.1.21",
     "@un/icons-react": "^10.34.44",
     "@un/pictograms-react": "^11.14.31",
-    "@un/themes-core": "^0.0.26",
+    "@un/themes-core": "^0.0.27",
     "add": "^2.0.6",
     "all-contributors-cli": "^6.17.0",
     "autoprefixer": "^9.8.6",
