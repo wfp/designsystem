@@ -12,6 +12,8 @@ declare namespace Tooltip  {
     modifiers?: []
     usePortal?: boolean
     createRefWrapper?: boolean
+    interactive?: boolean
+    delayHide?: number
   }
 }
 
