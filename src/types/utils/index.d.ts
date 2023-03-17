@@ -21,6 +21,7 @@ declare type InputModes = 'none'
  | 'numeric'
  | 'decimal'
  | 'search'
+ | 'password'
  | undefined
 
 declare interface IIcon  {
