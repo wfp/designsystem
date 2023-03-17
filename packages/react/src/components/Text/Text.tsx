@@ -47,7 +47,8 @@ const Text: React.FC<TextProps> = ({
   const tagName = { name: kind && textLookup[kind] ? textLookup[kind] : 'div' };
   const classNames = classnames({
     [`${prefix}--text`]: true,
-    [`${prefix}--story__${kind}`]: kind,
+    //    [`${prefix}--story__${kind}`]: kind,
+    [`${prefix}--text__${kind}`]: kind,
     [`${prefix}--text__spacing-top-${spacingTop}`]: spacingTop,
     [`${prefix}--text__spacing-bottom-${spacingBottom}`]: spacingBottom,
     [`${className}`]: className,

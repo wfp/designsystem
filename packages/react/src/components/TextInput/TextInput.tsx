@@ -10,8 +10,8 @@ import { InputModes } from '../../typesLegacy/utils';
 /** Text inputs enable the user to interact with and input content and data. This component can be used for long and short form entries. */
 interface TextInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   className?: string;
-  helperText?: string;
-  labelText?: string;
+  helperText?: React.ReactNode;
+  labelText?: React.ReactNode;
   defaultValue?: string | number;
   placeholder?: string;
   formItemClassName?: string;

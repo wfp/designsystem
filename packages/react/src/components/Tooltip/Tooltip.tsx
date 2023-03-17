@@ -21,6 +21,8 @@ interface TooltipProps {
   modifiers?: [];
   usePortal?: boolean;
   createRefWrapper?: boolean;
+  interactive?: boolean;
+  delayHide?: number;
   className?: string;
   closeOnOutsideClick?: boolean;
   closeOnTriggerHidden?: boolean;

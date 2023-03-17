@@ -24,27 +24,27 @@
   }
 
   > h2 {
-    @extend .#{$prefix}--story__h2;
+    @extend .#{$prefix}--text__story-h2;
   }
 
   i {
-    @extend .#{$prefix}--story__i;
+    @extend .#{$prefix}--text__story-italic;
   }
 
   h1 {
-    @extend .#{$prefix}--story__h1;
+    @extend .#{$prefix}--text__story-h1;
   }
 
   h3 {
-    @extend .#{$prefix}--story__h3;
+    @extend .#{$prefix}--text__story-h3;
   }
 
   h4 {
-    @extend .#{$prefix}--story__h4;
+    @extend .#{$prefix}--text__story-h4;
   }
 
   h5 {
-    @extend .#{$prefix}--story__h5;
+    @extend .#{$prefix}--text__story-h5;
   }
 
   > a {
@@ -56,7 +56,7 @@
   }
 
   em {
-    @extend .#{$prefix}--story__i;
+    @extend .#{$prefix}--text__story-italic;
   }
   b,
   strong {
@@ -285,11 +285,22 @@
     }
   }
 
-  .#{$prefix}--story__title,
-  .#{$prefix}--text__title {
+  .#{$prefix}--text__story-title {
     @include type-style('story-title');
     margin-bottom: $spacing-07;
     margin-left: -0.058em;
+  }
+
+  .#{$prefix}--helper {
+    @include type-style('helper');
+  }
+
+  .#{$prefix}--text__body-regular {
+    @include type-style('body-regular');
+  }
+
+  .#{$prefix}--text__input {
+    @include type-style('input');
   }
 
   .#{$prefix}--story__content-title {
@@ -298,8 +309,7 @@
     margin-left: -0.058em;
   }
 
-  .#{$prefix}--story__subtitle,
-  .#{$prefix}--text__subtitle {
+  .#{$prefix}--text__story-sub-title {
     @include type-style('story-sub-title');
     color: $interactive;
     margin-top: $spacing-07;
@@ -350,15 +360,15 @@
     }
   }
 
-  .#{$prefix}--story__i {
+  .#{$prefix}--text__story-italic {
     font-style: italic;
   }
 
-  .#{$prefix}--story__h1 {
+  .#{$prefix}--text__story-h1 {
     @include type-style('story-h1');
   }
 
-  .#{$prefix}--story__h2 {
+  .#{$prefix}--text__story-h2 {
     @include type-style('story-h2');
     margin-top: $spacing-07;
 
@@ -367,21 +377,26 @@
     }
   }
 
-  .#{$prefix}--story__h3 {
+  .#{$prefix}--text__story-h3 {
     margin-top: $spacing-07;
     @include type-style('story-h3');
     // font-size: $typography-body-copy-16px-bold-font-weight;
     // font-weight: $typography-body-copy-16px-bold-font-weight;
   }
 
-  .#{$prefix}--story__h4 {
+  .#{$prefix}--text__story-h4 {
     margin-top: $spacing-06;
     @include type-style('story-h4');
   }
 
-  .#{$prefix}--story__h5 {
+  .#{$prefix}--text__story-h5 {
     margin-top: $spacing-06;
     @include type-style('story-h5');
+  }
+
+  .#{$prefix}--text__story-h6 {
+    margin-top: $spacing-06;
+    @include type-style('story-h6');
   }
 
   .#{$prefix}--story__caption {

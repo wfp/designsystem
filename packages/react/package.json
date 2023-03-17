@@ -120,6 +120,7 @@
     "@un/babel-preset-wfp": "^0.1.21",
     "@un/icons-react": "^10.34.44",
     "@un/pictograms-react": "^11.14.31",
+    "@un/styles": "^10.26.57",
     "@un/themes-core": "^0.0.27",
     "add": "^2.0.6",
     "all-contributors-cli": "^6.17.0",

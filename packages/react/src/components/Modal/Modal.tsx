@@ -32,7 +32,10 @@ interface ModalProps {
   inPortal?: boolean;
   wide?: boolean;
   modalFooter?: () => void;
-  onRequestClose?: (evt?: any, value?: any) => void;
+  onRequestClose?: (
+    evt: React.UIEvent,
+    trigger: 'button' | 'key' | 'background'
+  ) => void;
   onRequestSubmit?: () => void;
   iconDescription?: string;
   className?: string;

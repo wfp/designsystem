@@ -4,49 +4,63 @@ import classNames, { Argument } from 'classnames';
 import useSettings from '../../hooks/useSettings';
 import { ButtonKind, IIcon } from '../../typesLegacy/utils';
 
-type ButtonProps = PropsWithChildren<{
-  className?: Argument;
-  children?: React.ReactNode;
-  /**
-   * FOR DESIGNERS Specify whether the Button should be a small variant
-   */
-  small?: boolean;
-  /**
-   * FOR DESIGNERS Specify whether the Button should be a large variant
-   */
-  large?: boolean;
-  /**
-   * FOR DESIGNERS Specify the kind of Button you want to create
-   */
-  kind?: ButtonKind | 'danger--secondary';
-  /**
-   * Optionally specify an href for your Button to become an element
-   */
-  href?: string;
-  /**
-   * Specify an `icon` to include in the Button through an object representing the SVG data of the icon, similar to the `Icon` component
-   */
-  icon?: IIcon | React.ReactNode;
-  /**
-   * Optionally specify an href for your Button to become an element
-   */
-  iconReverse?: boolean;
-  // todo: revise iconDescription
-  iconDescription?: string;
-  /**
-   * Specify whether the Button should be disabled, or not
-   */
-  disabled?: boolean;
-  tabIndex?: number;
-  type?: 'button' | 'reset' | 'submit';
-  useFlexbox?: boolean;
-  onClick?: (e: any) => void;
-  id?: string;
-}>;
+declare namespace Button {
+  interface ButtonBaseProps {
+    children?: React.ReactNode;
+    /**
+     * FOR DESIGNERS Specify whether the Button should be a small variant
+     */
+    small?: boolean;
+    /**
+     * FOR DESIGNERS Specify whether the Button should be a large variant
+     */
+    large?: boolean;
+    /**
+     * FOR DESIGNERS Specify the kind of Button you want to create
+     */
+    kind?: ButtonKind;
+    /**
+     * Optionally specify an href for your Button to become an element
+     */
+    href?: string;
+    /**
+     * Specify an `icon` to include in the Button through an object representing the SVG data of the icon, similar to the `Icon` component
+     */
+    icon?: IIcon | React.ReactNode;
+    /**
+     * Optionally specify an href for your Button to become an element
+     */
+    iconReverse?: boolean;
+    // todo: revise iconDescription
+    iconDescription?: string;
+    /**
+     * Specify whether the Button should be disabled, or not
+     */
+    disabled?: boolean;
+    tabIndex?: number;
+    type?: 'button' | 'reset' | 'submit';
+    useFlexbox?: boolean;
+    onClick?: (e: any) => void;
+    id?: string;
+  }
+
+  interface ButtonButtonProps
+    extends ButtonBaseProps,
+      React.ButtonHTMLAttributes<Button> {}
+
+  interface ButtonLinkProps
+    extends ButtonBaseProps,
+      React.LinkHTMLAttributes<Button> {
+    href?: string;
+    target?: string;
+  }
+
+  type ButtonProps = ButtonButtonProps | ButtonLinkProps;
+}
 
 /**
  * Buttons express what action will occur when the user clicks or touches it. Buttons are used to initialize an action, either in the background or foreground of an experience. */
-const Button: React.FC<ButtonProps> = ({
+const Button: React.FC<Button.ButtonProps> = ({
   children,
   className,
   disabled,

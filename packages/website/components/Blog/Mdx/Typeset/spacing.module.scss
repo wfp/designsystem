@@ -13,7 +13,9 @@
 
 .spacingPreview {
   position: relative;
-  background-color: $text-secondary;
+  // background-color: $text-secondary;
+  border: 1px solid $text-secondary;
+  background-color: rgba(#000, 0.03);
 }
 
 .spacingPreviewValue {

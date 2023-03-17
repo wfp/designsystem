@@ -22,6 +22,7 @@ type FooterProps = PropsWithChildren<{
   pageWidth?: ScreenSize;
   sdgLogo?: React.ReactNode;
   subTitle?: string | React.ReactNode;
+  secondary?: React.ReactNode;
   className?: Argument;
   labelOne?: string;
   labelTwo?: string;

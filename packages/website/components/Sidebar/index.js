@@ -129,11 +129,13 @@ export default function SidebarWrapper({ content, post, posts }) {
         </Breadcrumb>
 
         {post.subtitle && (
-          <Text kind="subtitle" /*className={styles.subTitle}*/>
+          <Text kind="story-subtitle" /*className={styles.subTitle}*/>
             {post.subtitle}
           </Text>
         )}
-        <Text kind="title" /*className={styles.title}*/>{post.title}</Text>
+        <Text kind="story-title" /*className={styles.title}*/>
+          {post.title}
+        </Text>
 
         <div className={styles.excerpt}>
           <MDXRemote {...post.mdxExcerptSource} components={components} />

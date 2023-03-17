@@ -3,7 +3,7 @@
     "caption": {
       "fontSize": {
         "type": "dimension",
-        "value": 14
+        "value": "{font.size.base.value}"
       },
       "fontWeight": {
         "type": "string",
@@ -38,6 +38,12 @@
       "fontWeight": {
         "type": "string",
         "value": "300"
+      },
+      "md": {
+        "fontSize": {
+          "type": "dimension",
+          "value": 30
+        }
       }
     },
     "story-h1": {

@@ -11,6 +11,7 @@ declare type ButtonKind =
   | 'inverse--primary'
   | 'inverse'
   | 'danger--primary'
+  | 'danger--secondary'
   | 'tertiary'
   | 'navigation';
 
@@ -23,6 +24,7 @@ declare type InputModes =
   | 'numeric'
   | 'decimal'
   | 'search'
+  | 'password'
   | undefined;
 
 declare interface IIcon {

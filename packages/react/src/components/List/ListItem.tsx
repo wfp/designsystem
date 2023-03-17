@@ -3,14 +3,15 @@ import type { PropsWithChildren } from 'react';
 import classnames, { Argument } from 'classnames';
 import Icon from '../Icon';
 
-type ListItemProps = PropsWithChildren<{
-  kind?: 'checkmark' | 'cross';
-  small?: boolean;
-  className?: Argument;
-  title?: string;
-}>;
+declare namespace ListItem {
+  interface ListItemProps extends Omit<React.HTMLProps<ListItem>, 'title'> {
+    kind?: 'checkmark' | 'cross';
+    small?: boolean;
+    title?: React.ReactNode;
+  }
+}
 
-const ListItem: React.FC<ListItemProps> = ({
+const ListItem: React.FC<ListItem.ListItemProps> = ({
   children,
   className,
   title,

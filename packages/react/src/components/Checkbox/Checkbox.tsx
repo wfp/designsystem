@@ -9,12 +9,17 @@ import React, { PropsWithChildren } from 'react';
 import classNames from 'classnames';
 import useSettings from '../../hooks/useSettings';
 
-interface CheckboxProps extends React.InputHTMLAttributes<HTMLInputElement> {
+interface CheckboxProps
+  extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'onChange'> {
   indeterminate?: boolean;
   labelText?: React.ReactNode;
   hideLabel?: boolean;
   wrapperClassName?: string;
-  title?: string;
+  onChange?(
+    event: React.ChangeEvent<HTMLInputElement>,
+    checked: boolean,
+    customId: string
+  ): void;
 }
 
 const Checkbox: React.FC<PropsWithChildren<CheckboxProps>> = React.forwardRef(

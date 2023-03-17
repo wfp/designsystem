@@ -6,6 +6,7 @@
 //
 
 @use '@un/themes-core/dist/scss/tokensMapDeep' as *;
+@use './breakpoint' as *;
 
 @mixin reset() {
 }
@@ -36,6 +37,15 @@
     font-weight: map-get($typographyMap, 'fontWeight');
     letter-spacing: map-get($typographyMap, 'letterSpacing');
     text-transform: map-get($typographyMap, 'textTransform');
+
+    @if map-deep-get($tokens, 'typography', $style, 'md') {
+      @include breakpoint-up('md') {
+        $typographyMapMd: map-get($tokens, 'typography', $style, 'md');
+        font-weight: map-get($typographyMapMd, 'fontWeight');
+        letter-spacing: map-get($typographyMapMd, 'letterSpacing');
+        text-transform: map-get($typographyMapMd, 'textTransform');
+      }
+    }
   }
   /*@if map-has-key($typographyMap, 'body-short-02',$style) {
       @warn 'This is  a step of the WFP Type Scale!';
