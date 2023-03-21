@@ -9,7 +9,7 @@ import IframeResizer from 'iframe-resizer-react';
 import components from '..';
 
 export default function Storybook({ path, img, width, height, ...props }) {
-  const src = `http://localhost:9000/${path}`;
+  const src = `http://localhost:9000/${path}&documentation=true`;
 
   const onResized = (data) => {
     console.log('newData', data);

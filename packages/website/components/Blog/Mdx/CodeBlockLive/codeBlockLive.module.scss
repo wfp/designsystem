@@ -1,0 +1,58 @@
+@use 'scss/meta' as *;
+
+.codeBlock {
+  overflow: auto;
+}
+
+.code {
+  position: relative;
+  &:hover {
+    .copyButton {
+      opacity: 1;
+    }
+  }
+}
+
+.copyButton {
+  position: absolute;
+  bottom: 0.5em;
+  right: 0.5em;
+  opacity: 0;
+  background-color: transparent;
+}
+
+.editor {
+}
+
+.liveEditor {
+  background: black;
+  border-radius: 0 0 10px 10px;
+  h3 {
+    color: $text-on-color;
+    opacity: 0.7;
+    text-align: center;
+    font-size: 0.6em;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  :global(.prism-code) {
+    font-family: SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono',
+      'Courier New', monospace !important;
+  }
+}
+
+.preview {
+  background: white;
+  padding: 1em;
+  margin-top: 1em;
+  border: 1px solid $border-strong;
+  //margin-bottom: 0.2em;
+  border-radius: 10px 10px 0 0;
+}
+
+.previewWithSource {
+  border-radius: 10px 10px 0 0;
+  :global(.prism-code) {
+    border-radius: 0 0 10px 10px;
+  }
+}

@@ -2,7 +2,7 @@ import { List, ListItem } from '@un/react';
 import React from 'react';
 import styles from './styles.module.scss';
 
-export function DoUse({ children, title = 'Do use', kind = 'checkmark' }) {
+export function DoUse({ children, title = 'When to use', kind = 'checkmark' }) {
   const childrenWithProps = React.Children.map(children, (child) => {
     if (React.isValidElement(child)) {
       const childrenListItemWithProps = React.Children.map(
@@ -39,6 +39,6 @@ export function DoUse({ children, title = 'Do use', kind = 'checkmark' }) {
   );
 }
 
-export function DoNotUse(props) {
-  return <DoUse {...props} kind="cross" title="Do not use" />;
+export function DoNotUse({ title = 'When not to use', ...props }) {
+  return <DoUse {...props} kind="cross" title={title} />;
 }

@@ -2,7 +2,7 @@
 title: 'Form Design'
 excerpt: 'How to use the UI Kit'
 coverImage: '../sample-image.jpg'
-slug: 'Guidelines/Guidelines/FormDesign'
+slug: 'Guidelines/FormDesign'
 ---
 
 ### Provide Autosave
@@ -17,13 +17,13 @@ always able to also save forms with an error.
 Placing labels above input fields is preferable since research show
 these are better trackable for users than left-aligned labels [read more](http://uxmovement.com/forms/why-infield-top-aligned-form-labels-are-quickest-to-scan/)
 
-<BlockNotification kind="info" title="Example">
-  <TextInput
-    labelText="Text Input label"
-    helperText="Optional helper text."
-    placeholder="Placeholder text"
-  />
-</BlockNotification>
+```jsx live
+<TextInput
+  labelText="Text Input label"
+  helperText="Optional helper text."
+  placeholder="Placeholder text"
+/>
+```
 
 ### Avoid placing inputs side-by-side.
 
@@ -36,7 +36,7 @@ elements like asking for dates (day, month, year) or time (hours and
 minutes), where multiple fields are expected to be on one line. Read
 more about [principles in form design](https://uxplanet.org/the-18-must-do-principles-in-the-form-design-fe89d0127c92).
 
-#### 2 columns layout exceptions apply to:
+2 columns layout exceptions apply to
 
 - ✓ dd – mm – yyyy (date picker)
 - ✓ amount – currency
@@ -94,20 +94,18 @@ It doesn’t matter what type of validation you use, you should always use
 inline errors. Use them ‘just right here’, in context. But not somewhere
 else on the pages. The natural mapping here is your best friend.
 
-<BlockNotification kind="info" title="Example">
-  <TextInput
-    type="password"
-    required
-    pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"
-    className="some-class"
-    id="test4"
-    labelText="Password"
-    invalid={true}
-    invalidText="Your password must be at least 6 characters."
-  />
-  <br />
-  <br />
-</BlockNotification>
+```jsx live
+<TextInput
+  type="password"
+  required
+  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"
+  className="some-class"
+  id="test4"
+  labelText="Password"
+  invalid={true}
+  invalidText="Your password must be at least 6 characters."
+/>
+```
 
 And, more importantly, always try to explain the root of the problem.
 Try to use a human language and explain what exactly the user/the system

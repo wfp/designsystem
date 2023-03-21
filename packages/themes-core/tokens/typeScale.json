@@ -44,6 +44,12 @@
           "type": "dimension",
           "value": 30
         }
+      },
+      "lg": {
+        "fontSize": {
+          "type": "dimension",
+          "value": 40
+        }
       }
     },
     "story-h1": {

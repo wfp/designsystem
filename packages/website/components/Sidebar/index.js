@@ -23,42 +23,48 @@ import {
   faDash,
   faMinus,
 } from '@fortawesome/pro-regular-svg-icons';
-
+import slugify from 'slugify';
 import { faChevronRight } from '@fortawesome/pro-solid-svg-icons';
 
 import components from '../Blog/Mdx';
 import References from '../Blog/References';
 import TableOfContent from '../Blog/References/TableOfContent';
+import slugifyWithSlashes from '../../lib/slugifyWithSlashes';
 
 function TreeBranch({ slug, split, level }) {
-  const splitSlug = slug.split('/');
+  const splitSlug = slugify(slug).split('/');
   const found = split.children.find(
     (e) => e.name === splitSlug[splitSlug.length - 1]
   );
 
   const [open, setOpen] = useState(level === 0 || found);
+
+  console.log('level', level, split);
   return (
     <li
       className={`${styles[`level-${level}`]} ${
-        open ? styles[`level-open`] : styles[`level-closed`]
+        open || split.children.length === 0
+          ? styles[`level-open`]
+          : styles[`level-closed`]
       }`}>
       {split?.children && (
         <>
-          {level > 1 ? (
-            <NextLink href={`/${split.path?.key}`} legacyBehavior>
-              <Link className={styles.item} href={`/${split.path?.key}`}>
+          {split.children.length === 0 && level > 0 ? (
+            <NextLink
+              href={`/${slugifyWithSlashes(split.path?.key)}`}
+              passHref
+              legacyBehavior>
+              <Link className={styles.item}>
                 <FontAwesomeIcon icon={faMinus} className={styles.icon} />
 
-                {split.path?.title ? split.path?.title : split.name}
+                {split.name}
               </Link>
             </NextLink>
-          ) : level === 1 ? (
+          ) : split.children.length > 0 && level > 0 ? (
             <span
               className={styles.sidebarTitle}
               onClick={() => setOpen(!open)}>
-              <span className={styles.sidebarTitleText}>
-                {split.path?.title ? split.path?.title : split.name}
-              </span>
+              <span className={styles.sidebarTitleText}>{split.name}</span>
               <FontAwesomeIcon
                 icon={faChevronRight}
                 className={styles.iconOpen}

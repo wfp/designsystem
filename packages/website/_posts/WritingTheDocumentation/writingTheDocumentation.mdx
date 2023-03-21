@@ -2,7 +2,7 @@
 title: 'Writing the documentation'
 excerpt: 'How to edit and write the documentation'
 coverImage: '../sample-image.jpg'
-slug: 'Contributing/Writing the documentation'
+slug: 'Contributing/Writing documentation'
 ---
 
 ## Editing pages
@@ -57,32 +57,56 @@ ogImage:
 
 Embeed Figma files directly as interactive prototypes. You can also embed specific frames from a Figma file.
 
-```jsx
+<CodeBlock language="jsx" source={`<Figma
+  url="https://www.figma.com/file/wFEEbUEWrlfMhs2a1S2RTp/UN-core-website?node-id=0%3A1&t=ffaLsECV8p10ZEa4-1"
+  height="300"
+/>`}>
+
 <Figma
   url="https://www.figma.com/file/wFEEbUEWrlfMhs2a1S2RTp/UN-core-website?node-id=0%3A1&t=ffaLsECV8p10ZEa4-1"
   height="300"
 />
-```
+
+</CodeBlock>
 
 Embeed a specific frame from a Figma file as image (loads faster).
 
-```jsx
+<CodeBlock language="jsx" source={`<FigmaImage document="wFEEbUEWrlfMhs2a1S2RTp" node="801:341" />`}>
+
 <FigmaImage document="wFEEbUEWrlfMhs2a1S2RTp" node="801:341" />
-```
+
+</CodeBlock>
 
 #### Storybook
 
-Embeed a Storybook component directly from the Storybook website.
+Embeed a Storybook component directly from the Storybook website. Define the `path` of the component.
 
-```jsx
-<Storybook path="?path=/story/components-ui-elements-button--button-regular&full=1&shortcuts=false&singleStory=true" />
+```md live
+<Storybook
+  path="iframe.html?viewMode=docs&id=components-ui-elements-button--documentation" 
+/>
 ```
 
 #### Do and Don't
 
 Use the `DoUse` and `DoNotUse` components to show examples of good and bad practices.
 
-```jsx
+<CodeBlock language="jsx" source={`<DoUse>
+
+- Use accordions to organize information
+- Use accordions to reduce the amount of scrolling required
+- Use accordions to reduce the amount of information displayed on the screen at once
+
+</DoUse>
+
+<DoNotUse>
+
+- Do not use accordions to display information that is not related
+- Do not use accordions to display information that is not hierarchical
+- Do not use accordions to display information that is not collapsible
+
+</DoNotUse>`}>
+
 <DoUse>
 
 - Use accordions to organize information
@@ -98,7 +122,8 @@ Use the `DoUse` and `DoNotUse` components to show examples of good and bad pract
 - Do not use accordions to display information that is not collapsible
 
 </DoNotUse>
-```
+
+</CodeBlock>
 
 #### Typeset
 

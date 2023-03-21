@@ -10,6 +10,7 @@ $css--body: true;
 )*/;
 
 @use '@un/themes-core/dist/scss/default-css-theme' as defaulttheme;
+@use '@un/themes-core/distDark/scss/default-css-theme' as darkTheme;
 
 //@use "./dist/scss/default-css-theme" as memotheme;
 
@@ -40,6 +41,10 @@ $css--body: true;
   @media (prefers-color-scheme: dark) {
     @content;
   }
+}
+
+.wfp--theme-dark {
+  @include darkTheme.theme-dark();
 }
 
 @mixin landscapeOnly() {
@@ -122,8 +127,9 @@ html {
 
 .prism-code {
   font-family: SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono',
-    'Courier New', monospace;
+    'Courier New', monospace !important;
   border-radius: 6px;
   font-size: 0.9em;
   line-height: 1.6em;
+  overflow: auto;
 }

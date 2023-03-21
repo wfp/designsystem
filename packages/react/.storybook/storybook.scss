@@ -54,7 +54,7 @@ body,
 }
 
 .docs-story {
-  overflow: visible !important;
+  //overflow: visible !important;
 }
 .docs-story > * {
   overflow: visible !important;
@@ -75,4 +75,19 @@ body,
 .sbdocs-title {
   font-weight: 500 !important;
   margin-bottom: 1em !important;
+}
+
+.sbdocs-wrapper {
+  margin: 3px !important;
+  padding: 0 !important;
+  min-height: 0 !important;
+}
+
+.documentation {
+  .docblock-argstable-body {
+    p,
+    span {
+      font-size: 0.8rem !important;
+    }
+  }
 }

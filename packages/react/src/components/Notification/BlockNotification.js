@@ -16,7 +16,7 @@ export function BlockNotification({
   className,
   subtitle,
   title,
-  kind,
+  kind = 'info',
   lowContrast,
   hideCloseButton,
   children,

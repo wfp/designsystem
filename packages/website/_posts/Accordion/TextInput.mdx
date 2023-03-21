@@ -1,0 +1,48 @@
+---
+category: 'Core'
+title: 'TextInput'
+excerpt: '**Text inputs** enable the user to interact with and input data. Use when the application requires long-form content from the user.'
+coverImage: '../sample-image.jpg'
+slug: 'Components/form/TextInput'
+---
+
+Text inputs enable users to enter free-form text data. The type of text field used should reflect the length of the content you expect the user to enter. The default text input is for short, one-line content, whereas text area is for longer, multi-line entries.
+
+<DoUse>
+- A user needs to input unique information that cannot be predicted with a preset of options.
+- A user needs to input memorable data that can be entered more quickly in a free-hand format versus a more complex control.
+
+</DoUse>
+
+<DoNotUse>
+  - If a user can only enter an option from a predefined list then avoid using a
+  free-form text input as it is likely to result in an error. Consider using a
+  selection control such as a dropdown, select, or radio button group instead.
+</DoNotUse>
+
+```jsx live
+<TextInput
+  type="text"
+  name="inputname"
+  helperText="Optional helperText"
+  labelText="The labelText"
+  placeholder="placeholder"
+/>
+```
+
+### Password input
+
+Password input is a sub-variant of text input. It is used to collect private data and will hide the characters as a user enters them. When using a password input be sure to provide detailed helper text listing any requirements related to the data format, such as types of characters allowed or date structure.
+
+```jsx live
+<TextInput
+  type="password"
+  name="inputname"
+  helperText="Password must contain at least 12 characters"
+  labelText="Password"
+/>
+```
+
+### Reference
+
+- [Carbon Design System Usage for text inputs](https://next.carbondesignsystem.com/components/text-input)

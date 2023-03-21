@@ -9,7 +9,7 @@ export default function LinkEl({ children, href, ...props }) {
   const isExternalURL = href.startsWith('https');
 
   return (
-    <Link target={isExternalURL ? '_blank' : ''} href={href} {...props}>
+    <Link inline target={isExternalURL ? '_blank' : ''} href={href} {...props}>
       {children}
       {isExternalURL && (
         <FontAwesomeIcon

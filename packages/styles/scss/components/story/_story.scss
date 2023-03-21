@@ -136,11 +136,19 @@
     margin-top: $spacing-05;
   }
 
-  h1 + .#{$prefix}--list,
-  h2 + .#{$prefix}--list,
-  h3 + .#{$prefix}--list,
-  h4 + .#{$prefix}--list,
-  h5 + .#{$prefix}--list,
+  > h1 + div,
+  > h2 + div,
+  > h3 + div,
+  > h4 + div,
+  > h5 + div {
+    margin-top: $spacing-05;
+  }
+
+  > h1 + .#{$prefix}--list,
+  > h2 + .#{$prefix}--list,
+  > h3 + .#{$prefix}--list,
+  > h4 + .#{$prefix}--list,
+  > h5 + .#{$prefix}--list,
   .#{$prefix}--story__h1 + .#{$prefix}--list,
   .#{$prefix}--story__h2 + .#{$prefix}--list,
   .#{$prefix}--story__h3 + .#{$prefix}--list,
@@ -149,11 +157,11 @@
     margin-top: $spacing-05;
   }
 
-  h1 + .#{$prefix}--code-block,
-  h2 + .#{$prefix}--code-block,
-  h3 + .#{$prefix}--code-block,
-  h4 + .#{$prefix}--code-block,
-  h5 + .#{$prefix}--code-block,
+  > h1 + .#{$prefix}--code-block,
+  > h2 + .#{$prefix}--code-block,
+  > h3 + .#{$prefix}--code-block,
+  > h4 + .#{$prefix}--code-block,
+  > h5 + .#{$prefix}--code-block,
   .#{$prefix}--story__h1 + .#{$prefix}--code-block,
   .#{$prefix}--story__h2 + .#{$prefix}--code-block,
   .#{$prefix}--story__h3 + .#{$prefix}--code-block,

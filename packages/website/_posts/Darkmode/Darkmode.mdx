@@ -18,8 +18,16 @@ To enable the automatic dark mode you can add the `wfp--theme-dark--auto` class 
 
 To enable the darkmode manually or only for a specific section addd the class `wfp--theme-dark`.
 
-```html
-<div class="wfp--theme-dark"></div>
+```jsx live
+<>
+  <div className="wfp--theme-dark">
+    <Button>Button Dark</Button>
+  </div>
+  <hr />
+  <div className="wfp--theme-light">
+    <Button>Button Light</Button>
+  </div>
+</>
 ```
 
 ## Override colors

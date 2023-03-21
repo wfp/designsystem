@@ -14,18 +14,32 @@ import IntroDescription from './IntroDescription';
 import Readme from './Readme';
 
 export default function DocsPage() {
+  const queryString = window.location.search;
+
+  const urlParams = new URLSearchParams(queryString);
+  const documentation = urlParams.has('documentation');
+  console.log('documentation', documentation);
+
   return (
-    <>
-      <Title />
-      <Subtitle />
+    <div className={documentation ? 'documentation' : 'no-documentation'}>
+      {!documentation && (
+        <>
+          <Title />
+          <Subtitle />
+        </>
+      )}
       {/*<IntroDescription />
        */}
       <Primary />
       <ArgsTable story={PRIMARY_STORY} />
-      <Stories />
-      <Description />
-      <Readme />
-      {/* <HelpUsImprove />*/}
-    </>
+      {!documentation && (
+        <>
+          <Stories />
+          <Description />
+          <Readme />
+          <HelpUsImprove />
+        </>
+      )}
+    </div>
   );
 }

@@ -12,6 +12,7 @@ import Head from 'next/head';
 import Sidebar from '../../components/Sidebar';
 import { serialize } from 'next-mdx-remote/serialize';
 import { MDXRemote } from 'next-mdx-remote';
+import rehypeCode from './rehypeCode';
 import {
   Breadcrumb,
   BreadcrumbHome,
@@ -26,8 +27,10 @@ import rehypeToC from './rehypeToC';
 import LinkBack from '../../components/LinkBack';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft, faArrowRight } from '@fortawesome/pro-solid-svg-icons';
+import remarkGfm from 'remark-gfm';
 import components from '../../components/Blog/Mdx';
 import slugify from 'slugify';
+import remarkMdxCodeMeta from 'remark-mdx-code-meta';
 
 export default function Post({ post, posts, morePosts, preview }) {
   const router = useRouter();
@@ -116,7 +119,9 @@ export async function getStaticProps({ params }) {
   const mdxSource = await serialize(post.content, {
     components,
     mdxOptions: {
+      remarkPlugins: [remarkMdxCodeMeta, remarkGfm],
       rehypePlugins: [
+        rehypeCode,
         rehypeFigmaImage,
         [
           rehypeImgSize,
