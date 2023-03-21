@@ -1,6 +1,6 @@
 {
   "name": "@un/react",
-  "version": "1.18.70",
+  "version": "1.18.71",
   "description": "WFP UI Kit",
   "license": "Apache-2",
   "main": "lib/index.js",
@@ -82,7 +82,6 @@
   "dependencies": {
     "@babel/preset-typescript": "^7.18.6",
     "@carbon/feature-flags": "^0.6.0",
-
     "@types/jest": "^29.0.3",
     "@types/node": "^18.7.18",
     "@types/react": "^18.0.20",
