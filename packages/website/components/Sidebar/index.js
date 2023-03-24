@@ -30,6 +30,7 @@ import components from '../Blog/Mdx';
 import References from '../Blog/References';
 import TableOfContent from '../Blog/References/TableOfContent';
 import slugifyWithSlashes from '../../lib/slugifyWithSlashes';
+import { NextSeo } from 'next-seo';
 
 function TreeBranch({ slug, split, level }) {
   const splitSlug = slugify(slug).split('/');
@@ -116,52 +117,71 @@ export default function SidebarWrapper({ content, post, posts }) {
   const split = createPathTree(postSplit);
 
   return (
-    <Wrapper className={styles.sidebarWrapper} pageWidth="xl">
-      <div className={styles.sidebar}>
-        <ul className={styles.sidebarList}>
-          <TreeBranch split={split} level={0} slug={post.slug} />
-        </ul>
-      </div>
-
-      <div className={styles.content}>
-        <Breadcrumb className={styles.breadcrumb}>
-          <BreadcrumbItem>
-            <Link href="/#">
-              <BreadcrumbHome />
-            </Link>
-          </BreadcrumbItem>
-          <BreadcrumbItem href="#">Breadcrumb 2</BreadcrumbItem>
-          <BreadcrumbItem disableLink>Breadcrumb 3</BreadcrumbItem>
-        </Breadcrumb>
-
-        {post.subtitle && (
-          <Text kind="story-subtitle" /*className={styles.subTitle}*/>
-            {post.subtitle}
-          </Text>
-        )}
-        <Text kind="story-title" /*className={styles.title}*/>
-          {post.title}
-        </Text>
-
-        <div className={styles.excerpt}>
-          <MDXRemote {...post.mdxExcerptSource} components={components} />
+    <>
+      <NextSeo
+        title={post.title}
+        description="Digital Design System"
+        openGraph={{
+          url: process.env.NEXT_PUBLIC_DOMAIN,
+          title: post.title,
+          description: 'Digital Design System',
+          images: [
+            {
+              url: `${process.env.NEXT_PUBLIC_DOMAIN}/public/un-core-logo.png`,
+              alt: 'Foto',
+            },
+          ],
+          type: 'product',
+          site_name: process.env.NEXT_PUBLIC_DOMAIN,
+        }}
+      />
+      <Wrapper className={styles.sidebarWrapper} pageWidth="xl">
+        <div className={styles.sidebar}>
+          <ul className={styles.sidebarList}>
+            <TreeBranch split={split} level={0} slug={post.slug} />
+          </ul>
         </div>
 
-        <MDXRemote {...post.mdxSource} components={components} />
+        <div className={styles.content}>
+          <Breadcrumb className={styles.breadcrumb}>
+            <BreadcrumbItem>
+              <Link href="/#">
+                <BreadcrumbHome />
+              </Link>
+            </BreadcrumbItem>
+            <BreadcrumbItem href="#">Breadcrumb 2</BreadcrumbItem>
+            <BreadcrumbItem disableLink>Breadcrumb 3</BreadcrumbItem>
+          </Breadcrumb>
 
-        <Link
-          href={`https://github.com/un-core/designsystem/tree/content/website-content/packages/website/${
-            post.path.split('packages/website/')[1]
-          }`}
-          target="_blank"
-          className={styles.editOnGitHub}>
-          Edit this page on GitHub <FontAwesomeIcon icon={faArrowRight} />
-        </Link>
-      </div>
-      <div className={styles.sidebarAddition}>
-        <TableOfContent content={post.mdxToC} />
-        <References post={post} />
-      </div>
-    </Wrapper>
+          {post.subtitle && (
+            <Text kind="story-subtitle" /*className={styles.subTitle}*/>
+              {post.subtitle}
+            </Text>
+          )}
+          <Text kind="story-title" /*className={styles.title}*/>
+            {post.title}
+          </Text>
+
+          <div className={styles.excerpt}>
+            <MDXRemote {...post.mdxExcerptSource} components={components} />
+          </div>
+
+          <MDXRemote {...post.mdxSource} components={components} />
+
+          <Link
+            href={`https://github.com/un-core/designsystem/tree/content/website-content/packages/website/${
+              post.path.split('packages/website/')[1]
+            }`}
+            target="_blank"
+            className={styles.editOnGitHub}>
+            Edit this page on GitHub <FontAwesomeIcon icon={faArrowRight} />
+          </Link>
+        </div>
+        <div className={styles.sidebarAddition}>
+          <TableOfContent content={post.mdxToC} />
+          <References post={post} />
+        </div>
+      </Wrapper>
+    </>
   );
 }

@@ -31,17 +31,6 @@ By default the theme is persisted in the [local storage](https://developer.mozil
 The theme can be used by the `useTheme` hook. The `useTheme` hook returns the current theme and a function to change the theme.
 
 ```jsx live noInline
-const Application = ({ children }) => (
-  <div
-    style={{
-      background: 'papayawhip',
-      width: '100%',
-      padding: '2rem',
-    }}>
-    {children}
-  </div>
-);
-
 const ChangeTheme = () => {
   const { theme, setTheme } = useTheme();
 
