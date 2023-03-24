@@ -24,22 +24,46 @@ The initial theme can be set by passing the `initialTheme` prop to the `UNCorePr
 
 ### Persistence
 
-By default the theme is persisted in the local storage. This means that the theme will be the same when the user opens the application again. If you don't want to persist the theme, you can pass the `persistTheme` prop to the `UNCoreProvider` component.
+By default the theme is persisted in the [local storage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage). This means that the theme will be the same when the user opens the application again. If you don't want to persist the theme, you can pass the `persistTheme` prop to the `UNCoreProvider` component.
 
 ### Changing the theme
 
 The theme can be used by the `useTheme` hook. The `useTheme` hook returns the current theme and a function to change the theme.
 
-```jsx
-const { theme, setTheme } = useTheme();
+```jsx live noInline
+const Application = ({ children }) => (
+  <div
+    style={{
+      background: 'papayawhip',
+      width: '100%',
+      padding: '2rem',
+    }}>
+    {children}
+  </div>
+);
 
-return (
-  <>
-    <p>Current theme: {theme}</p>
-    <button onClick={() => setTheme('light')}>Light</button>
-    <button onClick={() => setTheme('dark')}>Dark</button>
-    <button onClick={() => setTheme('auto')}>Auto</button>
-  </>
+const ChangeTheme = () => {
+  const { theme, setTheme } = useTheme();
+
+  return (
+    <>
+      <p>Current theme: {theme}</p>
+      <Button onClick={() => setTheme('light')}>Light</Button> <Button
+        onClick={() => setTheme('dark')}>
+        Dark
+      </Button> <Button onClick={() => setTheme('auto')}>Auto</Button>
+    </>
+  );
+};
+
+render(
+  <div id="rootEl">
+    <UNCoreProvider
+      initialTheme="light"
+      wrapperElements={document.getElementById('rootEl')}>
+      <ChangeTheme />
+    </UNCoreProvider>
+  </div>
 );
 ```
 

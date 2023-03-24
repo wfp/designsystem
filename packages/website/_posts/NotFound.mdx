@@ -1,0 +1,30 @@
+---
+title: 'Not Found (404)'
+excerpt: 'Not Found page is also known as an “error page” or “404” page.'
+coverImage: '../sample-image.jpg'
+slug: 'Templates/Not Found (404)'
+figma: 'https://figma.com'
+github: 'https://github.com/component'
+storybook: 'https://uikit.wfp.org/next-docs/index.html?path=/docs/components-button--button-regular'
+---
+
+This page indicates that the user reached the domain they requested, but the URL path provided no information.
+
+You can use custom illustrations, icons, and text to create a more personalized experience for your users.
+
+```jsx live
+<Empty
+  title="Under maintenance"
+  kind="large"
+  icon={
+    <EmergencyResponsePositive
+      style={{
+        transform: 'rotate(10deg)',
+      }}
+    />
+  }
+  button={<Button href="#">Contact support</Button>}>
+  Apologies for the inconvenience, we are performing maintenance at the moment.
+  [Name of solution] should be back shortly.
+</Empty>
+```

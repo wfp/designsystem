@@ -1,6 +1,6 @@
 ---
 title: 'Browser Warning'
-excerpt: 'Tokens are used in our build system to allow us to define styles once. This way they can be consumed across all plattforms and keep the design system consistent.'
+excerpt: 'Use the browser warning to detect outdated browsers and advises users to upgrade to a new version.'
 coverImage: '../sample-image.jpg'
 slug: 'Templates/Browser Warning'
 figma: 'https://figma.com'
@@ -8,13 +8,14 @@ github: 'https://github.com/component'
 storybook: 'https://uikit.wfp.org/next-docs/index.html?path=/docs/components-button--button-regular'
 ---
 
-Use the browser warning to detect outdated browsers and advises users to upgrade to a new version. There is a **Modal** version available and a smaller warning using the **InfoBar** component.
+There is a **Modal** version available and a smaller warning using the **InfoBar** component.
 
 In cases the applications works with minor restrictions and you just want to inform the user you can show a `<InfoBar />`.
 
-```
-export const ErrorDialog = (args) => {
-  const [open, setOpen] = useState(true);
+```jsx live
+() => {
+  const [open, setOpen] = useState(false);
+  // should be default true in production, use localstorage to persist
 
   const isIE = () => {
     var ua = window.navigator.userAgent; //Check the userAgent property of the window.navigator object
@@ -29,18 +30,14 @@ export const ErrorDialog = (args) => {
     setOpen(!open);
   };
 
-  const submitAndClose = () => {
-    setOpen(false);
-  };
-
   if (isIE())
     return (
       <>
-        <button onClick={toggleModal}>Manually open warning modal</button>
+        <Button onClick={toggleModal}>Manually open warning modal</Button>
         <Modal
           open={open}
           primaryButtonText="Continue with current browser"
-          onRequestSubmit={submitAndClose}
+          onRequestSubmit={() => submitAndClose()}
           modalHeading="Outdated browser"
           onRequestClose={toggleModal}
           danger>
@@ -55,11 +52,12 @@ export const ErrorDialog = (args) => {
     );
   return null;
 };
+```
 
-export const Warning = (args) => (
-  <InfoBar>
-    Your browser version is outdated. <Link href="#">Please upgrade</Link>
-  </InfoBar>
-);
+Use the **InfoBar** component to display a minor warning. Only display the warning if the user is still able to use the application with the current browser.
 
+```jsx live
+<InfoBar>
+  Your browser version is outdated. <Link href="#">Please upgrade</Link>
+</InfoBar>
 ```

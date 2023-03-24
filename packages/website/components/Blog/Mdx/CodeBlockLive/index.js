@@ -13,24 +13,28 @@ import components from '../';
 import vsDark, { styles } from 'prism-react-renderer/themes/vsDark';
 
 import * as unComponents from '@un/react';
-import { Button } from '@un/react';
+import * as unHumanitarianIcons from '@un/humanitarian-icons-react';
+import * as icons from '@un/icons-react';
+import { Button, Empty } from '@un/react';
 import { useMDXComponents } from '@mdx-js/react';
 import { MDXRemote } from 'next-mdx-remote';
 
+console.log('unHumanitarianIcons', unHumanitarianIcons);
+
 const CodeBlockLive = (props) => {
   const [compiledMdx, setCompiledMdx] = useState('');
-  const { children, className = '', live, source } = props;
+  const { children, className = '', live, noInline, source } = props;
   console.log('children', props, children);
 
-  const code = source || children.trim();
-  const compileMdx = async (code) => {
+  const code = source ? source : children ? children.trim() : '';
+  /*const compileMdx = async (code) => {
     const compiled = await compile(code);
     setCompiledMdx(compiled);
-  };
+  };*/
 
-  useEffect(() => {
+  /*useEffect(() => {
     compileMdx(code);
-  }, [code]);
+  }, [code]);*/
 
   const language = props.language || className.replace(/language-/, '');
 
@@ -54,7 +58,16 @@ const CodeBlockLive = (props) => {
   };
 
   if (live) {
-    const scope = { ...unComponents, useState, Storybook, DoUse, DoNotUse };
+    const scope = {
+      ...unComponents,
+      ...unHumanitarianIcons,
+      ...icons,
+      useState,
+      Storybook,
+      Empty,
+      DoUse,
+      DoNotUse,
+    };
 
     return (
       <div className={stylesModule.editor}>
@@ -62,6 +75,7 @@ const CodeBlockLive = (props) => {
           code={code}
           scope={scope}
           theme={vsDark}
+          noInline={noInline}
           transformCode={cleanCode}>
           {language === 'mdx' || language === 'md' ? (
             <div className={stylesModule.preview}>
@@ -117,11 +131,11 @@ const CodeBlockLive = (props) => {
 };
 export default CodeBlockLive;
 
-export function Pre({ live, children, ...props }) {
+export function Pre({ live, noInline, children, ...props }) {
   if (React.isValidElement(children) && children.type.name === 'code') {
     return (
       <div {...props}>
-        <CodeBlockLive live={live} {...children.props} />
+        <CodeBlockLive live={live} noInline={noInline} {...children.props} />
       </div>
     );
   }

@@ -1,0 +1,41 @@
+---
+title: 'Writing the documentation'
+excerpt: 'How to edit and write the documentation'
+coverImage: '../sample-image.jpg'
+slug: 'Templates/Login'
+---
+
+```jsx
+<Modal
+  open
+  hideClose
+  modalHeading="Login"
+  inPortal={false}
+  modalLabel="Sample Application"
+  primaryButtonText="Login"
+  secondaryButtonText="Forgot password?"
+  modalSecondaryAction={<Button kind="secondary">Sign in with WFP SSO</Button>}
+  modalFooter={({ primaryButtonText, secondaryButtonText }) => (
+    <div className="wfp--modal__buttons-container">
+      <Link>{secondaryButtonText}</Link>
+      <Button>{primaryButtonText}</Button>
+    </div>
+  )}
+  backgroundImage="https://password.go.wfp.org/images/MAU_20150202_WFP-Agron_Dragaj_0018.jpg">
+  <p className="wfp--modal-content__text wfp--form-long">
+    <TextInput
+      id="emailinput"
+      labelText="Your email adress"
+      placeholder="yourname@wfp.org"
+      helperText={`Enter the email adress you've used when you've registred`}
+    />
+    <TextInput
+      id="passportinput"
+      labelText="Your password"
+      type="password"
+      placeholder=""
+      helperText=""
+    />
+  </p>
+</Modal>
+```

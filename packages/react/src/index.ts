@@ -1,5 +1,6 @@
 export { Accordion, AccordionItem } from './components/Accordion';
 
+export { AuthLayout, BackgroundContent } from './components/AuthLayout';
 export {
   BannerNavigation,
   BannerNavigationItem,

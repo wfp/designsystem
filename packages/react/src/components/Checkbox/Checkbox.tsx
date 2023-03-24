@@ -28,7 +28,7 @@ const Checkbox: React.FC<PropsWithChildren<CheckboxProps>> = React.forwardRef(
       className,
       id,
       labelText,
-      onChange,
+      onChange = () => {},
       indeterminate,
       hideLabel,
       wrapperClassName,

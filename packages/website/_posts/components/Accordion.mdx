@@ -1,0 +1,291 @@
+---
+category: 'Core'
+title: 'Accordion'
+excerpt: 'The accordion component allows the user to show and hide sections of related content on a page.'
+coverImage: '../sample-image.jpg'
+slug: 'Components/UI elements/Accordion'
+---
+
+TODO: Change text color to black
+Use FontAwesome icon
+
+Chevron left of right, or both side?
+
+The accordion is a vertically stacked set of interactive headings that each contain a title representing a section of content.
+
+Accordions can also be a useful design element when dealing with complex interfaces or displaying large amounts of data.
+
+They can help to organize information Pby adding an additional layer of hierarchy to the page.
+
+<DoUse>
+
+- Use accordions to organize information
+- Use accordions to reduce the amount of scrolling required
+- Use accordions to reduce the amount of information displayed on the screen at once
+
+</DoUse>
+
+<DoNotUse>
+
+- Do not use accordions to display information that is not related
+- Do not use accordions to display information that is not hierarchical
+- Do not use accordions to display information that is not collapsible
+
+</DoNotUse>
+
+```jsx live
+import { Accordion, AccordionItem } from '@un/react';
+
+<Accordion>
+  <AccordionItem header="What is Lorem Ipsum?">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua.
+  </AccordionItem>
+
+  <AccordionItem header="Where does it come from?">
+    Quisque eget luctus mi, vehicula mollis lorem. Proin fringilla vel erat quis
+    sodales. Nam ex enim, eleifend venenatis lectus vitae, accumsan auctor mi.
+  </AccordionItem>
+
+  <AccordionItem header="Why do we use it?">
+    Suspendisse massa risus, pretium id interdum in, dictum sit amet ante. Fusce
+    vulputate purus sed tempus feugiat.
+  </AccordionItem>
+</Accordion>;
+```
+
+### Usage
+
+An accordion is created by wrapping any number of `AccordionItem` components inside an `Accordion` component.
+
+By default, only one accordion item can be expanded at one time.
+
+### Allowing multiple
+
+To allow multiple accordion items to expand at once, set the `allowMultiple` prop of the `Accordion` component.
+
+```jsx
+<Accordion allowMultiple>
+```
+
+### Expanding items initially
+
+You could use the `initialEntered` prop of `AccordionItem` to expand items when accordion first mounts. In the following example, the first and last item are expanded on mount.
+
+```jsx
+<AccordionItem header="What is Lorem Ipsum?" initialEntered>
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+  incididunt ut labore et dolore magna aliqua.
+</AccordionItem>
+```
+
+<BlockNotification title="Note" kind="info">
+The `Accordion` component also has an `initialEntered` prop which can make every accordion item expanded when initially mounted.
+
+When the `initialEntered` prop is specified on an individual `AccordionItem` at the same time, it overrides the `initialEntered` prop of `Accordion` component.
+
+</BlockNotification>
+
+### Customising header
+
+You may provide the `header` prop of `AccordionItem` with any JSX elements or React components, allowing the item header be to freely customised.
+
+```jsx
+<AccordionItem
+  header={
+    <div>
+      <p className={styles.title}>What is Lorem Ipsum?</p>
+      <p className={styles.description}>
+        Lorem ipsum is a placeholder text commonly used to demonstrate the
+        visual form of a document.
+      </p>
+    </div>
+  }>
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+  incididunt ut labore et dolore magna aliqua.
+</AccordionItem>
+```
+
+### Controlling state
+
+#### From above Accordion
+
+If you want to programmatically open or close accordion items from a component that is above `Accordion` in the React tree, you could use the `ControlledAccordion` and `useAccordionProvider`.
+
+The value returned from `useAccordionProvider` contains a `toggle` function which can be used to open or close any accordion items. This value should also be given to the `providerValue prop` of the `ControlledAccordion` component.
+
+The `toggle` function accepts two parameters. The first parameter is the `itemKey` prop of any accordion items to toggle. The second parameter specifies whether to open or close an item using a `boolean` value, or to toggle between the two states if the parameter is omitted.
+
+```jsx
+export default function Example() {
+  const providerValue = useAccordionProvider({
+    allowMultiple: true,
+    transition: true,
+    transitionTimeout: 200,
+  });
+  // Destructuring `toggle` and `toggleAll` from `providerValue`
+  const { toggle, toggleAll } = providerValue;
+
+  return (
+    <div>
+      <div className="buttons">
+        <button
+          className="btn"
+          // Toggle between open and close by omitting the second parameter
+          onClick={() => toggle('item-1')}>
+          Toogle the first item
+        </button>
+        <button
+          className="btn"
+          // Open rather than toggling
+          onClick={() => toggle('item-3', true)}>
+          Open the last item
+        </button>
+        <button className="btn" onClick={() => toggleAll(true)}>
+          Open all items
+        </button>
+        <button className="btn" onClick={() => toggleAll(false)}>
+          Close all items
+        </button>
+        <button
+          className="btn"
+          // Omitting the boolean parameter means toggling
+          onClick={() => toggleAll()}>
+          Toggle all items
+        </button>
+      </div>
+
+      <ControlledAccordion
+        // Forward the `providerValue` directly to `ControlledAccordion`
+        providerValue={providerValue}>
+        <AccordionItem
+          header="What is Lorem Ipsum?"
+          // Set an explicit `itemKey`
+          itemKey="item-1">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </p>
+          <button
+            className="btn"
+            // It also works within the `AccordionItem` children
+            onClick={() => toggle('item-3')}>
+            Toggle the last item
+          </button>
+        </AccordionItem>
+
+        <AccordionItem header="Where does it come from?">
+          Quisque eget luctus mi, vehicula mollis lorem. Proin fringilla vel
+          erat quis sodales. Nam ex enim, eleifend venenatis lectus vitae,
+          accumsan auctor mi.
+        </AccordionItem>
+
+        <AccordionItem
+          header="Why do we use it?"
+          // Set an explicit `itemKey`
+          itemKey="item-3">
+          Suspendisse massa risus, pretium id interdum in, dictum sit amet ante.
+          Fusce vulputate purus sed tempus feugiat.
+        </AccordionItem>
+      </ControlledAccordion>
+    </div>
+  );
+}
+```
+
+<BlockNotification kind="warning" title="Info">
+The `itemKey` prop of `AccordionItem` is not required to be globally unique, but it should be unique among its sibling `AccordionItem` components.
+
+Also, you don't need to specify the `itemKey` prop for an item if you don't want to programmatically toggle it.
+
+</BlockNotification>
+
+### From underneath Accordion
+
+To programmatically open or close accordion items or access the state from a component that is underneath `Accordion` in the React tree, use the `useAccordionState` hook.
+
+<BlockNotification kind="info" title="Info">
+  If you want to access and control state of the `current` item, there is a
+  simpler way to achieve it using the [render prop
+  pattern](#render-prop-pattern).
+</BlockNotification>
+
+### Item render prop
+
+Both the `header` and `children` props of `AccordionItem` component support the [render prop](./render-prop) pattern, which can be used to access item state, along with a `toggle` function to open or close the current item.
+
+```jsx
+<AccordionItem
+  // Accessing item state by giving a function to the `header` prop
+  header={({ state }) => `Item expanded: ${state.isEnter}`}>
+  {({ toggle }) => (
+    <>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua.
+      </p>
+
+      {/* `toggle` function is also available from the render prop */}
+      <button className="btn" onClick={() => toggle(false)}>
+        Close item
+      </button>
+    </>
+  )}
+</AccordionItem>
+```
+
+### Disabling items
+
+```jsx
+<AccordionItem header="Where does it come from?" disabled>
+```
+
+Accordion items can be made `disabled` by adding the disabled prop. Disabled items cannot be toggled by clicking the header and are excluded from keyboard navigation.
+
+### State changing event
+
+The `onStateChange` event of `Accordion` can be used to listen to item state updates. The event object has a `key` prop identifying which item's state has changed.
+
+```jsx
+<Accordion
+  onStateChange={({ key, current }) => {
+    if (current.isResolved)
+      console.log(`${key} is expanded: ${current.isEnter}`);
+  }}>
+  {items.map(({ header, content }, i) => (
+    <AccordionItem
+      key={i}
+      header={header}
+      // Explicitly set `itemKey` prop for each item
+      itemKey={`Item-${i + 1}`}>
+      {content}
+    </AccordionItem>
+  ))}
+</Accordion>
+```
+
+### Animation
+
+Accordion supports expanding and collapsing animation with full state transition cycle, thanks to the [react-transition-state](https://github.com/szhsin/react-transition-state) library. You can follow the steps below to enable animation:
+
+First, set `transition` and `transitionTimeout` props on the Accordion component.
+
+```jsx
+<Accordion transition transitionTimeout={200}>
+  {/* Accordion items... */}
+</Accordion>
+```
+
+Then, add the `height` transition css to the item content DOM element of each accordion item, which is the element with class selector `wfp-accordion__item-content`.
+
+```css
+transition: height 0.2s ease-in-out;
+```
+
+### Accessibility
+
+### Used in
+
+- [wfp.org](https://wfp.org)
+
+### Credits

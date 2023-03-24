@@ -1,0 +1,193 @@
+---
+category: 'Core'
+title: 'Button'
+excerpt: 'Buttons are clickable elements that are used to trigger actions.'
+coverImage: '../sample-image.jpg'
+slug: 'Components/UI elements/Button'
+---
+
+<Storybook path="iframe.html?viewMode=docs&id=components-ui-elements-button--documentation&args=" />
+
+### Usage
+
+They communicate calls to action to the user and allow users to interact with pages in a variety of ways. Button labels express what action will occur when the user interacts with it.
+
+<DoUse>
+
+- Buttons are used primarily on action items. Some examples include `Add`, `Save`, `Delete`, and `Sign up`. Each page can have one or two primary or accent buttons. Any remaining calls-to-action should be represented as secondary buttons.
+
+</DoUse>
+
+<DoNotUse>
+  - Do not use buttons as navigational elements. Instead, use links when the
+  desired action is to take the user to a new page.
+</DoNotUse>
+
+### Actions
+
+When an action required by the user has more than one option, always use a a negative action button (`secondary`) paired with a positive action button (`primary` or `accent`) in that order. Negative action buttons will be on the left. Positive action buttons should be on the right. When these two types buttons are paired in the correct order, they will automatically space themselves apart.
+
+```jsx live
+<Button kind="primary">Button</Button>
+```
+
+https://www.figma.com/file/jtKqyyMTOKgUTstiGvPZMl/?node-id=0%3A1
+
+```jsx live
+<>
+  {buttonKinds.map((e) => (
+    <div
+      style={{
+        display: 'inline-block',
+        background: e === 'inverse' || e === 'inverse--primary' ? '#ccc' : '',
+        padding: '0.3rem',
+      }}>
+      <Button {...args} kind={e}>
+        {e}
+      </Button>
+    </div>
+  ))}
+</>
+```
+
+By changing the `kind` prop you can use different styles of the button.
+
+| kind               | When to use                                                                              |
+| ------------------ | ---------------------------------------------------------------------------------------- |
+| `primary`          | the principle call to action on the page                                                 |
+| `secondary`        | secondary actions on each page                                                           |
+| `tertiary`         | simple actions on the page                                                               |
+| `accent`           | very important actions and only once or twice on each page                               |
+| `danger`           | a negative action (such as Delete) on the page                                           |
+| `danger--primary`  | a negative principle call to action (such as Delete) on the page                         |
+| `ghost`            | in places where a regular button would draw too much attention and look similar to links |
+| `inverse--primary` | should be used on dark backgrounds                                                       |
+| `inverse`          | should be used on dark backgrounds                                                       |
+| `navigation`       | should be only used in the main navigation                                               |
+
+```jsx live
+<>
+  <Button icon={AddCircle} kind="primary">
+    Button with icon
+  </Button>{' '}
+  <Button kind="tertiary" icon={AddCircle}></Button>
+  <Button iconReverse kind="tertiary" icon={AddCircle}>
+    With iconReverse
+  </Button>{' '}
+  <Button href="#" icon={AddCircle} kind="primary">
+    Button with icon link
+  </Button>{' '}
+  <Button href="#" kind="tertiary" icon={AddCircle}></Button> <Button
+    href="#"
+    iconReverse
+    kind="tertiary"
+    icon={AddCircle}>
+    With iconReverse link
+  </Button>
+</>
+```
+
+When words are not enough, icons can be used in buttons to better communicate what the button does. Icons should be
+always paired with text whenever possible.
+
+Use the `icon` and `iconDescription` prop to add an Icon to the Button. Refer to the [Icon](?selectedKind=Icon) documentation for usage.
+
+To show the Icon on the left side use the `iconReverse` prop.
+
+Using an Button with only an Icon while not beeing recommended can be achieved by leaving the Button text blank.
+
+```jsx live
+import { Button } from '@un/react';
+import { AddCircle } from '@un/icons-react';
+
+<>
+  <Button icon={AddCircle} kind="primary">
+    Button with icon
+  </Button>{' '}
+  <Button kind="tertiary" icon={AddCircle}></Button> <Button
+    iconReverse
+    kind="tertiary"
+    icon={AddCircle}>
+    With iconReverse
+  </Button>
+</>;
+```
+
+```jsx live
+<>
+  <Button kind="primary" small>
+    Small button
+  </Button>
+  <Button icon={AddCircle} kind="tertiary" small>
+    With icon
+  </Button>
+</>
+```
+
+Small buttons may be used when there is not enough space for a
+regular sized button. This issue is most found in tables. Small button should have three words
+or less.
+
+```jsx live
+import { Button } from '@un/react';
+import { AddCircle } from '@un/icons-react';
+
+<>
+  <Button small>Small button</Button>{' '}
+  <Button icon={AddCircle} kind="tertiary" small>
+    With icon
+  </Button>
+</>;
+```
+
+```jsx live
+<>
+  <Button kind="primary" large>
+    Large button
+  </Button>{' '}
+  <Button icon={AddCircle} kind="tertiary" large>
+    With icon
+  </Button>
+</>
+```
+
+Small buttons may be used when there is not enough space for a
+regular sized button. This issue is most found in tables. Small button should have three words
+or less.
+
+```jsx live
+import { Button } from '@un/react';
+import { AddCircle } from '@un/icons-react';
+
+<>
+  <Button large>Large button</Button>{' '}
+  <Button {...args} icon={AddCircle} kind="tertiary" large>
+    With icon
+  </Button>
+</>;
+```
+
+```jsx live
+<Button large icon={<div>Hello</div>}>
+  Large button
+</Button>
+```
+
+### html
+
+To use a button with plain html add `wfp--btn` and `wfp--btn--{kind}` as class to the `<a>` or `<button>` element.
+
+```html
+<a class="wfp--btn wfp--btn--primary" href="#">Link</a>
+<button class="wfp--btn wfp--btn--primary">Button</button>
+```
+
+All buttons can use icons. It's recommended to inline SVG icons when possible. Simply add the appropriate `svg` image to the button HTML with the `wfp--btn__icon` class. You can also include a `title` tag for better accessibility to describe what the button does.
+
+### Related
+
+[Link](?path=/docs/components-link--link-regular)
+
+### Reference
+
+[Carbon Design System Usage for Buttons](https://next.carbondesignsystem.com/components/button)

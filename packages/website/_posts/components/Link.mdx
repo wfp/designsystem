@@ -1,0 +1,95 @@
+---
+category: 'Core'
+title: 'Link'
+excerpt: 'Links are typically used as a means of navigation either within the application, to a place outside, or to a resource.'
+coverImage: '../sample-image.jpg'
+slug: 'Components/UI elements/Link'
+---
+
+For anything else, especially things that change data and actions, you should be using a `button`.
+Links can have the same properties as a regular `<a>`-element.
+
+<Storybook path="iframe.html?viewMode=docs&id=components-ui-elements-link--documentation&args=" />
+
+<DoUse>
+
+- Use text for links rather than graphics or icons.
+- Links should be three words or less.
+- Text should be consistent with the title of the intended destination.
+- Navigate to a different page within the application
+- Navigate to an entirely different site
+- Jump to an element on the same page
+- Link to emails or phone numbers
+
+</DoUse>
+
+<DoNotUse>
+
+- Avoid the term “click here“, “other links“ to “here,” or the web address itself. Instead, use a meaningful descriptive label for the link, and match the destination site name.
+- Use a button instead of a link for actions that will change data or manipulate how it is displayed, change a state, or trigger an action. Buttons should never be used for navigational actions.
+
+</DoNotUse>
+
+### Standalone link
+
+Standalone links are used on their own directly following content. They should not be used within sentences or paragraphs. Standalone links are the default link style for WFP and only have an underline in the hover state.
+
+The standalone link component can be paired with an icon. Use `FontAwesome` icons and place them to the right of the link. Icons should always be the same color as the link text.
+
+```jsx live
+<Link href="https://www.wfp.org">Link text</Link>
+```
+
+### Inline link
+
+Inline links are used in sentences or paragraphs of text. The inline link behaves the same as the standalone link but it is styled with an underline. This helps differentiate them from the text they are placed next to and makes it clear users can interact with them.
+
+Inline links should not be used on their own and should not be paired with icons.
+
+```jsx live
+<>
+  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed{' '}
+  <Link href="https://www.wfp.org" inline>
+    diam nonumy
+  </Link>{' '}
+  eirmod tempor invidunt ut labore et dolore magna aliquyam erat.
+</>
+```
+
+### Links that trigger actions
+
+Some links trigger actions to aid task completion in addition to navigation. These links should still serve a navigation purpose. A common example is linking phone numbers so clicking the website automatically opens and calls the phone number when clicked. The label and any accompanying icons should make it clear what action will be triggered and where the user will be directed.
+
+### CSS only use (react-router)
+
+Use the Link styling by adding the className `wfp--link` to `<NavLink />`
+
+```js
+<a className="wfp--link">Link</a>
+```
+
+### Use with next/link
+
+By passing `passHref` and `legacyBehavior` to the [next/link](https://nextjs.org/docs/api-reference/next/link) component, you can use the `Link` component from `@un/react` as a child of the `next/link` component.
+
+```jsx
+import NextLink from 'next/link';
+import { Link } from '@un/react';
+
+function MyComponent() {
+  return (
+    <NextLink href="/about" passHref legacyBehavior>
+      <Link>About</Link>
+    </NextLink>
+  );
+}
+```
+
+### Related
+
+[Button](?path=/docs/components-button--button-regular)
+
+### Reference
+
+- [Carbon Design System Usage for Link](https://www.carbondesignsystem.com/components/link/usage)
+- Links is based on a fork from [Carbon Components](https://www.carbondesignsystem.com/components/link/code)

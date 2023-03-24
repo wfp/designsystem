@@ -1,0 +1,35 @@
+---
+title: 'Replaceable Components'
+excerpt: 'The main feature of this library is providing consumers with the building blocks necessary to create their component.'
+subtitle: 'Tools & Libraries'
+coverImage: '../sample-image.jpg'
+slug: 'Developing/Replaceable Components'
+---
+
+Many components allow you to augment layout and functionality by replacing the default components with your own, using the components property. These components are given all the current props and state letting you achieve anything you dream up.
+
+When defining replacement components, it is important to do so _outside_ the scope of rendering the component. Defining a replacement component directly in the components prop can cause issues.
+
+```jsx live
+() => {
+  //Place outside the scope of the component
+  const Text = ({ children, title }) => (
+    <>
+      <h5>👍 {title}</h5>
+      <p>{children}</p>
+    </>
+  );
+
+  const Icon = () => <div style={{ fontSize: '3em' }}>🎬</div>;
+
+  return (
+    <Empty components={{ Icon, Text }} title="Example">
+      The content is here
+    </Empty>
+  );
+};
+```
+
+### Reference
+
+- [react-select replaceable components](https://react-select.com/components)
