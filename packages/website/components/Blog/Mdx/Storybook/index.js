@@ -12,7 +12,6 @@ export default function Storybook({ path, img, width, height, ...props }) {
   const src = `http://localhost:9000/${path}&documentation=true`;
 
   const onResized = (data) => {
-    console.log('newData', data);
     setMessageData(data);
   };
 

@@ -1,0 +1,44 @@
+---
+category: 'Core'
+title: 'Build Icons'
+excerpt: 'Colors for the UN design system'
+coverImage: '../sample-image.jpg'
+slug: 'Guidelines/Icons/Build icons'
+figma: 'https://www.figma.com/file/TjWIdoZQ8rdZbLzy5it4Hq/WFP-Logos?node-id=0%3A1&t=ErGHrrrmCgyzd3OH-1'
+github: 'https://github.com/un-core/designsystem/tree/develop/packages/logos'
+npm: '@un/pictograms'
+---
+
+`icons-core` allows you to create your own icon library and release it on npm. An example project can be found [here](https://github.com/un-core/designsystem/tree/feat/icons-and-tools/packages/icons-react).
+
+It uses [svgo](https://github.com/svg/svgo) and [react-svgr](https://react-svgr.com) to create optimized svg files and react components.
+
+Create a node script to run the build process:
+
+```js
+import path from 'path';
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
+
+import { convertFolder, jsx } from '@un/icons-core';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+const srcFolder = '../icons/src/svg';
+const distFolder = path.resolve(__dirname, 'dist');
+
+convertFolder(
+  srcFolder,
+  distFolder,
+  jsx /* The converter, can be jsx, svg or a custom converter */
+);
+```
+
+Starting the build script from package.json
+
+```json
+  "scripts": {
+    "build": "node config.mjs"
+  }
+```

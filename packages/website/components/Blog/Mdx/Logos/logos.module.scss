@@ -1,0 +1,25 @@
+@use 'scss/meta' as *;
+
+.logoWrapper {
+  //display: flex;
+  width: 25%;
+  margin: 0.3em;
+}
+
+.logoKind {
+  display: flex;
+  width: calc(100% + 0.6em);
+  margin: 0 -0.3em;
+}
+
+.logo {
+  border: 1px solid #e5e5e5;
+  padding: 1em;
+  width: 100%;
+}
+
+.logoImage {
+  width: 100% !important;
+  height: auto !important;
+  display: block;
+}

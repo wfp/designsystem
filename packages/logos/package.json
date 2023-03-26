@@ -2,25 +2,20 @@
   "name": "@un/logos",
   "version": "0.0.26",
   "description": "Logos of the World Food Programme",
-  "main": "index.js",
+  "main": "index.json",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "node optimize.js",
+    "build": "node optimize.js && npm run build:js",
+    "build:js": "node config.mjs",
     "semantic-release": "semantic-release"
   },
   "author": "World Food Programme",
-  "license": "ISC",
-  "dependencies": {
+  "gitHead": "7201da36cfb8dad97a91763abc2497f70c239243",
+  "devDependencies": {
     "@babel/core": "^7.14.6",
-    "@semantic-release/commit-analyzer": "^8.0.1",
-    "@semantic-release/exec": "^5.0.0",
-    "@semantic-release/git": "^9.0.0",
-    "@semantic-release/npm": "^7.0.6",
-    "@semantic-release/release-notes-generator": "^9.0.1",
-    "semantic-release": "^17.2.3",
-    "semantic-release-ado": "^1.2.2",
-    "semantic-release-monorepo": "^7.0.5",
-    "svgo": "^2.3.0"
+    "@un/icons-core": "^0.0.25"
   },
-  "gitHead": "7201da36cfb8dad97a91763abc2497f70c239243"
+  "dependencies": {
+
+  }
 }

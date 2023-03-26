@@ -4,8 +4,27 @@ title: 'TextArea'
 excerpt: 'Tags are used for items that need to be labeled, categorized, or organized using keywords that describe them.'
 coverImage: '../sample-image.jpg'
 slug: 'Components/form/TextArea'
+mainComponent: 'TextArea'
+defaultProps:
+  labelText: 'Text Area label'
+  placeholder: 'Placeholder text'
+  helperText: 'Optional helper text'
 ---
 
 **TextArea** represents a multi-line plain-text editing control, useful when you want to allow users to enter a sizeable amount of free-form text, for example a comment on a review or feedback form.
+
+<DoUse>
+  - A user needs to input unique information that cannot be predicted with a
+  preset of options. - A user needs to input memorable data that can be entered
+  more quickly in a free-hand format versus a more complex control.
+</DoUse>
+
+<DoNotUse>
+  - A user needs to input a short amount of text. Use a
+  [TextInput](/components/form/TextInput) instead. - If a user can only enter an
+  option from a predefined list then avoid using a free-form text input as it is
+  likely to result in an error. Consider using a selection control such as a
+  dropdown, select, or radio button group instead.
+</DoNotUse>
 
 [Carbon Design System Usage for text inputs](https://next.carbondesignsystem.com/components/text-input)

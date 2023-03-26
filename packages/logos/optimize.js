@@ -44,14 +44,22 @@ const config = {
 };
 var readmeCdnLinks = '';
 
-function optimizeFile(file) {
-  const filepath = PATH.resolve(__dirname, `src/logos/${file}`);
+var filesJson = {};
 
-  const newName = file
+function getNewName(file) {
+  const name = file
     .replace('Type=', '')
     .replace(', Color=', '')
     .replace(', Language=', '')
     .replace('@1x', '');
+
+  return name;
+}
+
+function optimizeFile(file) {
+  const filepath = PATH.resolve(__dirname, `src/logos/${file}`);
+
+  const newName = getNewName(file);
 
   FS.readFile(filepath, 'utf8', function (err, data) {
     if (err) {
@@ -75,17 +83,36 @@ if (FS.existsSync(PATH.resolve(__dirname, 'optimized'))) {
 
 FS.mkdirSync(PATH.resolve(__dirname, 'optimized'));
 
-FS.readdir(PATH.resolve(__dirname, 'src/logos'), function (err, files) {
-  if (err) {
-    console.error('Could not list the directory.', err);
-    process.exit(1);
-  }
+const files = FS.readdirSync(PATH.resolve(__dirname, 'src/logos'));
 
-  files.forEach(function (file, index) {
-    if (file.split('.').pop().toLowerCase() === 'svg') {
-      readmeCdnLinks = readmeCdnLinks + optimizeFile(file);
-    }
-  });
+files.forEach(function (file, index) {
+  if (file.split('.').pop().toLowerCase() === 'svg') {
+    readmeCdnLinks = readmeCdnLinks + optimizeFile(file);
+
+    const fileSplit = file
+      .replace('@1x.svg', '')
+      .split(', ')
+      .map((e) => e.split('='))
+      .reduce(
+        (acc, [key, value]) => ({
+          ...acc,
+          [key.toLocaleLowerCase()]: value.toLocaleLowerCase(),
+        }),
+        {}
+      );
+    filesJson[getNewName(file).replace('.svg', '')] = {
+      originalFile: file,
+      fileOptimized: getNewName(file).replace('.svg', ''),
+      ...fileSplit,
+    };
+  }
+});
+
+console.log('dssdadasdsa', filesJson);
+
+FS.writeFile(`index.json`, JSON.stringify(filesJson, null, 2), (err) => {
+  if (err) throw err;
+  console.log('index.json written!');
 });
 
 /* Update readme */

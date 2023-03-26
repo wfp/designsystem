@@ -32,10 +32,10 @@ export function DoUse({ children, title = 'When to use', kind = 'checkmark' }) {
   });
 
   return (
-    <>
+    <div className={styles.doUse}>
       <h3>{title}</h3>
       <List kind="bullets">{childrenWithProps}</List>
-    </>
+    </div>
   );
 }
 

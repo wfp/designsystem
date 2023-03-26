@@ -1,4 +1,7 @@
-import React, { useEffect, useState } from 'react';
+//import React, { useEffect, useState } from 'react';
+import * as React from 'react';
+import { useState, useEffect, Component } from 'react';
+
 import type { PropsWithChildren } from 'react';
 import classNames, { Argument } from 'classnames';
 import useSettings from '../../hooks/useSettings';
@@ -6,17 +9,20 @@ import { ButtonKind, IIcon } from '../../typesLegacy/utils';
 
 declare namespace Button {
   interface ButtonBaseProps {
+    /**
+     * Content of the Button @design
+     */
     children?: React.ReactNode;
     /**
-     * FOR DESIGNERS Specify whether the Button should be a small variant
+     * Specify whether the Button should be a small variant @design
      */
     small?: boolean;
     /**
-     * FOR DESIGNERS Specify whether the Button should be a large variant
+     * Specify whether the Button should be a large variant
      */
     large?: boolean;
     /**
-     * FOR DESIGNERS Specify the kind of Button you want to create
+     * Specify the kind of Button you want to create @design
      */
     kind?: ButtonKind;
     /**
@@ -24,11 +30,11 @@ declare namespace Button {
      */
     href?: string;
     /**
-     * Specify an `icon` to include in the Button through an object representing the SVG data of the icon, similar to the `Icon` component
+     * Specify an `icon` to include in the Button through an object representing the SVG data of the icon, similar to the `Icon` component @design
      */
     icon?: IIcon | React.ReactNode;
     /**
-     * Optionally specify an href for your Button to become an element
+     * Optionally specify an href for your Button to become an element @design
      */
     iconReverse?: boolean;
     // todo: revise iconDescription

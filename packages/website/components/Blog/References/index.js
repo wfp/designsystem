@@ -1,4 +1,9 @@
-import { faFigma, faGithub, faReact } from '@fortawesome/free-brands-svg-icons';
+import {
+  faFigma,
+  faGithub,
+  faNpm,
+  faReact,
+} from '@fortawesome/free-brands-svg-icons';
 import { faCode } from '@fortawesome/pro-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Button, Link, List, ListItem } from '@un/react';
@@ -31,6 +36,16 @@ export default function References({ post }) {
             <Link href={post.storybook} target="_blank">
               Storybook{' '}
               <FontAwesomeIcon icon={faCode} className={styles.storybook} />
+            </Link>
+          </ListItem>
+        )}
+
+        {post.npm && (
+          <ListItem>
+            <Link
+              href={`https://www.npmjs.com/package/${post.npm}`}
+              target="_blank">
+              npm <FontAwesomeIcon icon={faNpm} className={styles.npm} />
             </Link>
           </ListItem>
         )}

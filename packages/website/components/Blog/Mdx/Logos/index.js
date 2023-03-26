@@ -1,40 +1,53 @@
 import React from 'react';
 import { Link } from '@un/react';
+//import logo from '@un/logos/optimized/wfpLogoAcronymBlackAll.svg';
+import Image from 'next/image';
+import logos from '@un/logos/index.json';
 
-const LogoElement = ({ color, logoKind, src }) => {
+import dynamic from 'next/dynamic';
+import * as wfpLogos from '@un/logos/umd';
+import styles from './logos.module.scss';
+
+const capitalize = (word) => {
+  return word.charAt(0).toUpperCase() + word.slice(1);
+};
+
+const LogoElement = ({ color, logoKind, language, type, fileOptimized }) => {
   const fileTypes = ['.svg', /*'.png', '@4x.png',*/ '.png'];
   const backgroundColor = color === 'white' ? '#454646' : '#FFFFFF';
   const width =
     logoKind === 'standard' || logoKind === 'extended' ? 'auto' : 'auto';
   const height =
     logoKind === 'standard' || logoKind === 'extended' ? '40px' : '80px';
+
+  const LogoElement =
+    wfpLogos[
+      `Type${capitalize(type)}Color${capitalize(color)}Language${capitalize(
+        language
+      )}_1x`
+    ];
   return (
-    <div style={{ display: 'inline-block', marginRight: '10px' }}>
+    <div className={styles.logoWrapper}>
       <div
+        className={styles.logo}
         style={{
-          border: '1px solid #E5E5E5',
           backgroundColor: backgroundColor,
-          padding: '0.7em',
         }}>
-        <img
+        <LogoElement
           alt="WFP Logo"
-          className="storybook--logo\_\_element"
-          style={{
-            width: width,
-            height: height,
-            border: 'none',
-          }}
-          src={`${process.env.STORYBOOK_ASSETS}/${src}.svg`}
+          width="3em"
+          height="auto"
+          className={styles.logoImage}
         />
       </div>
-      <br />
+
       {fileTypes.map((fileType, i) => (
         <span key={i}>
           <Link
             small
             style={{ marginRight: '0.5em', fontSize: '0.7em' }}
             target="\_blank"
-            href={`${process.env.STORYBOOK_ASSETS}${src}${fileType}`}>
+            href={`${process.env.STORYBOOK_ASSETS}`}>
             {fileType.replace('.', '')}
           </Link>
         </span>
@@ -48,12 +61,12 @@ export default function Logos() {
   const logoKinds = [
     {
       key: 'standard',
-      description: '',
+      description: 'The Standard version of the WFP logo',
       link: 'http://brand.manuals.wfp.org/en/core-elements/logo/english-versions/',
     },
     {
       key: 'vertical',
-      description: '',
+      description: 'Vertical version of the WFP logo',
       link: 'http://brand.manuals.wfp.org/en/core-elements/logo/english-versions/',
     },
     {
@@ -80,47 +93,31 @@ export default function Logos() {
   const colorsSdg = ['colour'];
   const languages = ['en', 'es', 'fr', 'ar'];
 
+  console.log('logos', logos, Object.values(logos));
+
   const colorList = logoKinds.map((logoKind, i) => (
     <div key={i} style={{ marginBottom: '1em' }}>
       <div style={{ marginBottom: '1em' }} />
-      <h2>{logoKind.title ? logoKind.title : logoKind.key}</h2>
+      <h3>{logoKind.title ? logoKind.title : logoKind.key}</h3>
       <p>{logoKind.description}</p>
       <Link href={logoKind.link}>Additional information</Link>
       {(logoKind.key === 'sdg' ? colorsSdg : colors).map((color, i) => {
+        const filteredLogos = Object.values(logos).filter(
+          (l) => l.type === logoKind.key && l.color === color
+        );
         return (
-          <div key={i}>
+          <React.Fragment key={i}>
             <h4>{color}</h4>
 
-            <div>
-              {logoKind.key === 'sdg' ? (
-                <LogoElement
-                  color={color}
-                  logoKind={logoKind.key}
-                  src={`logos/${logoKind.key}/sdg-logo-circle`}
-                />
-              ) : logoKind.key === 'emblem' || logoKind.key === 'acronym' ? (
-                <LogoElement
-                  color={color}
-                  logoKind={logoKind.key}
-                  src={`logos/${logoKind.key}/wfp-logo-${logoKind.key}-${color}`}
-                />
-              ) : (
-                <div>
-                  {languages.map((language, i) => (
-                    <LogoElement
-                      key={i}
-                      color={color}
-                      logoKind={logoKind.key}
-                      src={`logos/${logoKind.key}/${language}/wfp-logo-${logoKind.key}-${color}-${language}`}
-                    />
-                  ))}
-                </div>
-              )}
+            <div key={i} className={styles.logoKind}>
+              {filteredLogos.map((logo, i) => (
+                <LogoElement {...logo} key={i} />
+              ))}
             </div>
-          </div>
+          </React.Fragment>
         );
       })}
     </div>
   ));
-  return <div>{colorList}</div>;
+  return <>{colorList}</>;
 }

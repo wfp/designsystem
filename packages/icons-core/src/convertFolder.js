@@ -14,7 +14,11 @@ export async function convertFolder(
   const deletedDirectoryPaths = del.sync([distFolder]);
   fs.mkdirSync(distFolder, { recursive: true });
 
-  const files = read(srcFolder);
+  var files = read(srcFolder);
+
+  files = files.filter((file) => path.extname(file) === '.svg');
+
+  console.log('files: ', files);
 
   /*const results = await Promise.all(
     filteredCalendarIntakeReminder.map(async (e) => {

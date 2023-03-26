@@ -6,21 +6,64 @@ import FormItem from '../FormItem';
 import { WarningSolid } from '@un/icons-react';
 import * as HookForm from 'react-hook-form';
 
-interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
+export interface InputProps
+  extends React.InputHTMLAttributes<HTMLInputElement> {
+  /**
+   * Provide text that is used alongside the control label for additional help
+   */
   helperText?: string;
+  /**
+   * Provide the text that will be read by a screen reader when visiting this
+   * control @design
+   */
   labelText?: string;
+  /**
+   * Optionally provide the default value of the input @design
+   */
   defaultValue?: string | number;
+  /**
+   * Provide a custom className that is applied directly to the underlying
+   * &lt;textarea&gt; node
+   */
   formItemClassName?: string;
+  /**
+   * Provide a custom className that is applied directly to the underlying
+   * &lt;textarea&gt; node
+   */
   inputWrapperClassName?: string;
+  /**
+   * Specify whether you want the underlying label to be visually hidden
+   */
   hideLabel?: boolean;
+  /**
+   * Specify whether the control is currently invalid.
+   * Either a boolean in combination with `invalidText` or an `object`( eg. { message: "Message", …otherErrorProperties }) can be passed.
+   */
   invalid?: boolean | HookForm.FieldError;
+  /**
+   * Provide the text that is displayed when the control is in an invalid state @design
+   */
   invalidText?: string | React.ReactNode;
+  /**
+   * Provide the content that will be shown in addition to the label
+   * (e.g. units, currency, etc.)
+   * This content will be placed after the label @design
+   */
   additional?: React.ReactNode;
-  children?: React.ReactNode;
+
   light?: boolean;
+  /**
+   * Specify the placeholder attribute for the input @design
+   */
   placeholder?: string;
   type?: string;
+  /**
+   * Provide a unique identifier for the control
+   */
   id?: string;
+  /**
+   * Provide a name for the control
+   */
   name?: string;
   required?: boolean;
   disabled?: boolean;
@@ -30,11 +73,17 @@ interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   addonAfter?: string | React.ReactNode;
 }
 
-// type InputProps = PropsWithChildren<InputPropsI>;
+interface InputPropsI extends InputProps {
+  /**
+   * Provide a custom className that is applied directly to the underlying
+   * &lt;textarea&gt; node
+   */
+  children?: React.ReactNode;
+}
 
 /**
  * Input is a wrapper for custom inputs providing the label, helperText and errors. */
-const Input: React.FC<PropsWithChildren<InputProps>> = ({
+const Input: React.FC<PropsWithChildren<InputPropsI>> = ({
   additional,
   addonBefore,
   addonAfter,

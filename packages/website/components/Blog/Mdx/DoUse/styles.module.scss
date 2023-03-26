@@ -20,5 +20,12 @@
 }
 */
 
-.list {
+.doUse {
+  background: $layer-primary;
+  padding: 1.5em;
+  border-radius: 10px;
+  margin-top: 1.5em;
+  h3 {
+    margin-top: 0;
+  }
 }

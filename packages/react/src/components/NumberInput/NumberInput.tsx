@@ -21,19 +21,6 @@ interface NumberInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   value?: '' | number;
 }
 
-// function PropTypeEmptyString(props, propName, componentName) {
-//   componentName = componentName || 'ANONYMOUS';
-//   if (props[propName]) {
-//     let value = props[propName];
-//     if (typeof value === 'string' && value !== '') {
-//       return new Error(
-//         propName + ' in ' + componentName + ' is not an empty string'
-//       );
-//     }
-//   }
-//   return null;
-// }
-
 const countDecimals = (value) => {
   if (Math.floor(value) === value) return 0;
 

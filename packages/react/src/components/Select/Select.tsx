@@ -1,10 +1,4 @@
-/**
- * Modified for WFP 2019 (forked from Carbon Components Copyright IBM Corp. 2016, 2018)
- *
- * This source code is licensed under the Apache-2.0 license found in the
- * LICENSE file in the root directory of this source tree.
- */
-import React from 'react';
+import * as React from 'react';
 import type { PropsWithChildren } from 'react';
 import classNames, { Argument } from 'classnames';
 import { CaretDown } from '@un/icons-react';
@@ -97,5 +91,7 @@ const Select: React.FC<PropsWithChildren<SelectProps>> = React.forwardRef(
     return <Input {...props}>{() => input}</Input>;
   }
 );
+
+Select.displayName = 'Select';
 
 export default Select;

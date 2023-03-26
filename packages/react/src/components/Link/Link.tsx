@@ -1,25 +1,34 @@
-/**
- * Copyright IBM Corp. 2016, 2018
- *
- * This source code is licensed under the Apache-2.0 license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
-import React, { PropsWithChildren } from 'react';
+import { PropsWithChildren } from 'react';
+import * as React from 'react';
 import classnames from 'classnames';
 import useSettings from '../../hooks/useSettings';
+import type { LinkHTMLAttributes } from 'react';
 
-interface LinkProps {
-  href?: string;
+export interface LinkProps extends React.LinkHTMLAttributes {
+  /**
+   * Adds an underline to the link element to better indicate that it is clickable in continuous text. @design
+   */
   inline?: boolean;
-  className?: string;
+  /**
+   * Disables the link element. @design
+   */
   disabled?: boolean;
+  /**
+   * Indicates that the link has been visited.
+   */
   visited?: boolean;
+  /**
+   * Choose a size for the link element @design
+   */
   size?: 'sm' | 'md' | 'lg';
-  renderIcon?: () => void | {};
+  /**
+   * Use an icon with the link element @design
+   */
+  icon?: React.node;
+  //write other extra props here...
 }
 
-const Link: React.FC<PropsWithChildren<LinkProps>> = React.forwardRef(
+const Link: React.FC<LinkProps> = React.forwardRef(
   (
     {
       children,
@@ -28,7 +37,7 @@ const Link: React.FC<PropsWithChildren<LinkProps>> = React.forwardRef(
       disabled,
       inline,
       visited,
-      renderIcon: Icon,
+      icon: Icon,
       size,
       ...other
     },
@@ -62,5 +71,7 @@ const Link: React.FC<PropsWithChildren<LinkProps>> = React.forwardRef(
     );
   }
 );
+
+Link.displayName = 'Link';
 
 export default Link;

@@ -12,7 +12,6 @@ import dynamic from 'next/dynamic';
 const CardWrapper = ({ article, multimedia, detail = 'posts' }) => {
   const src = article?.coverImage;
 
-  console.log(article.coverImagePath);
   //const srcElement = require(pathInclude);
 
   /*const srcElement = dynamic(() => import(article.coverImagePath), {

@@ -1,0 +1,212 @@
+{
+  "AcronymBlackAll": {
+    "originalFile": "Type=Acronym, Color=Black, Language=All@1x.svg",
+    "fileOptimized": "AcronymBlackAll",
+    "type": "acronym",
+    "color": "black",
+    "language": "all"
+  },
+  "AcronymBlueAll": {
+    "originalFile": "Type=Acronym, Color=Blue, Language=All@1x.svg",
+    "fileOptimized": "AcronymBlueAll",
+    "type": "acronym",
+    "color": "blue",
+    "language": "all"
+  },
+  "AcronymWhiteAll": {
+    "originalFile": "Type=Acronym, Color=White, Language=All@1x.svg",
+    "fileOptimized": "AcronymWhiteAll",
+    "type": "acronym",
+    "color": "white",
+    "language": "all"
+  },
+  "EmblemBlackAll": {
+    "originalFile": "Type=Emblem, Color=Black, Language=All@1x.svg",
+    "fileOptimized": "EmblemBlackAll",
+    "type": "emblem",
+    "color": "black",
+    "language": "all"
+  },
+  "EmblemBlueAll": {
+    "originalFile": "Type=Emblem, Color=Blue, Language=All@1x.svg",
+    "fileOptimized": "EmblemBlueAll",
+    "type": "emblem",
+    "color": "blue",
+    "language": "all"
+  },
+  "EmblemWhiteAll": {
+    "originalFile": "Type=Emblem, Color=White, Language=All@1x.svg",
+    "fileOptimized": "EmblemWhiteAll",
+    "type": "emblem",
+    "color": "white",
+    "language": "all"
+  },
+  "StandardBlackArabic": {
+    "originalFile": "Type=Standard, Color=Black, Language=Arabic@1x.svg",
+    "fileOptimized": "StandardBlackArabic",
+    "type": "standard",
+    "color": "black",
+    "language": "arabic"
+  },
+  "StandardBlackEnglish": {
+    "originalFile": "Type=Standard, Color=Black, Language=English@1x.svg",
+    "fileOptimized": "StandardBlackEnglish",
+    "type": "standard",
+    "color": "black",
+    "language": "english"
+  },
+  "StandardBlackFrench": {
+    "originalFile": "Type=Standard, Color=Black, Language=French@1x.svg",
+    "fileOptimized": "StandardBlackFrench",
+    "type": "standard",
+    "color": "black",
+    "language": "french"
+  },
+  "StandardBlackSpanish": {
+    "originalFile": "Type=Standard, Color=Black, Language=Spanish@1x.svg",
+    "fileOptimized": "StandardBlackSpanish",
+    "type": "standard",
+    "color": "black",
+    "language": "spanish"
+  },
+  "StandardBlueArabic": {
+    "originalFile": "Type=Standard, Color=Blue, Language=Arabic@1x.svg",
+    "fileOptimized": "StandardBlueArabic",
+    "type": "standard",
+    "color": "blue",
+    "language": "arabic"
+  },
+  "StandardBlueEnglish": {
+    "originalFile": "Type=Standard, Color=Blue, Language=English@1x.svg",
+    "fileOptimized": "StandardBlueEnglish",
+    "type": "standard",
+    "color": "blue",
+    "language": "english"
+  },
+  "StandardBlueFrench": {
+    "originalFile": "Type=Standard, Color=Blue, Language=French@1x.svg",
+    "fileOptimized": "StandardBlueFrench",
+    "type": "standard",
+    "color": "blue",
+    "language": "french"
+  },
+  "StandardBlueSpanish": {
+    "originalFile": "Type=Standard, Color=Blue, Language=Spanish@1x.svg",
+    "fileOptimized": "StandardBlueSpanish",
+    "type": "standard",
+    "color": "blue",
+    "language": "spanish"
+  },
+  "StandardWhiteArabic": {
+    "originalFile": "Type=Standard, Color=White, Language=Arabic@1x.svg",
+    "fileOptimized": "StandardWhiteArabic",
+    "type": "standard",
+    "color": "white",
+    "language": "arabic"
+  },
+  "StandardWhiteEnglish": {
+    "originalFile": "Type=Standard, Color=White, Language=English@1x.svg",
+    "fileOptimized": "StandardWhiteEnglish",
+    "type": "standard",
+    "color": "white",
+    "language": "english"
+  },
+  "StandardWhiteFrench": {
+    "originalFile": "Type=Standard, Color=White, Language=French@1x.svg",
+    "fileOptimized": "StandardWhiteFrench",
+    "type": "standard",
+    "color": "white",
+    "language": "french"
+  },
+  "StandardWhiteSpanish": {
+    "originalFile": "Type=Standard, Color=White, Language=Spanish@1x.svg",
+    "fileOptimized": "StandardWhiteSpanish",
+    "type": "standard",
+    "color": "white",
+    "language": "spanish"
+  },
+  "VerticalBlackArabic": {
+    "originalFile": "Type=Vertical, Color=Black, Language=Arabic@1x.svg",
+    "fileOptimized": "VerticalBlackArabic",
+    "type": "vertical",
+    "color": "black",
+    "language": "arabic"
+  },
+  "VerticalBlackEnglish": {
+    "originalFile": "Type=Vertical, Color=Black, Language=English@1x.svg",
+    "fileOptimized": "VerticalBlackEnglish",
+    "type": "vertical",
+    "color": "black",
+    "language": "english"
+  },
+  "VerticalBlackFrench": {
+    "originalFile": "Type=Vertical, Color=Black, Language=French@1x.svg",
+    "fileOptimized": "VerticalBlackFrench",
+    "type": "vertical",
+    "color": "black",
+    "language": "french"
+  },
+  "VerticalBlackSpanish": {
+    "originalFile": "Type=Vertical, Color=Black, Language=Spanish@1x.svg",
+    "fileOptimized": "VerticalBlackSpanish",
+    "type": "vertical",
+    "color": "black",
+    "language": "spanish"
+  },
+  "VerticalBlueArabic": {
+    "originalFile": "Type=Vertical, Color=Blue, Language=Arabic@1x.svg",
+    "fileOptimized": "VerticalBlueArabic",
+    "type": "vertical",
+    "color": "blue",
+    "language": "arabic"
+  },
+  "VerticalBlueEnglish": {
+    "originalFile": "Type=Vertical, Color=Blue, Language=English@1x.svg",
+    "fileOptimized": "VerticalBlueEnglish",
+    "type": "vertical",
+    "color": "blue",
+    "language": "english"
+  },
+  "VerticalBlueFrench": {
+    "originalFile": "Type=Vertical, Color=Blue, Language=French@1x.svg",
+    "fileOptimized": "VerticalBlueFrench",
+    "type": "vertical",
+    "color": "blue",
+    "language": "french"
+  },
+  "VerticalBlueSpanish": {
+    "originalFile": "Type=Vertical, Color=Blue, Language=Spanish@1x.svg",
+    "fileOptimized": "VerticalBlueSpanish",
+    "type": "vertical",
+    "color": "blue",
+    "language": "spanish"
+  },
+  "VerticalWhiteArabic": {
+    "originalFile": "Type=Vertical, Color=White, Language=Arabic@1x.svg",
+    "fileOptimized": "VerticalWhiteArabic",
+    "type": "vertical",
+    "color": "white",
+    "language": "arabic"
+  },
+  "VerticalWhiteEnglish": {
+    "originalFile": "Type=Vertical, Color=White, Language=English@1x.svg",
+    "fileOptimized": "VerticalWhiteEnglish",
+    "type": "vertical",
+    "color": "white",
+    "language": "english"
+  },
+  "VerticalWhiteFrench": {
+    "originalFile": "Type=Vertical, Color=White, Language=French@1x.svg",
+    "fileOptimized": "VerticalWhiteFrench",
+    "type": "vertical",
+    "color": "white",
+    "language": "french"
+  },
+  "VerticalWhiteSpanish": {
+    "originalFile": "Type=Vertical, Color=White, Language=Spanish@1x.svg",
+    "fileOptimized": "VerticalWhiteSpanish",
+    "type": "vertical",
+    "color": "white",
+    "language": "spanish"
+  }
+}

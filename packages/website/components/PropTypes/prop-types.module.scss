@@ -1,0 +1,35 @@
+@use 'scss/meta' as *;
+
+.preview {
+  border: 1px solid $border-strong;
+  position: relative;
+  margin: 2em 0;
+}
+
+.previewWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1em;
+  position: relative;
+}
+
+.propTable {
+  font-size: 0.8em;
+  line-height: 1.2;
+  border-top: 1px solid $border-strong;
+}
+
+.propTitle {
+  font-weight: 500;
+  margin-bottom: 0.3em;
+}
+
+.showAllPropsButton {
+  position: absolute;
+  top: 0.3em;
+  right: 0.3em;
+  font-size: 0.7em;
+  padding: 0.5em;
+  height: 2em;
+}

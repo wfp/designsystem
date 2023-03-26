@@ -14,7 +14,7 @@ import { CodeBlock, Pre } from './CodeBlockLive';
 import Typeset from './Typeset';
 import Spacing from './Typeset/Spacing';
 import { H1, H2, H3, H4, H5 } from './Headings';
-
+import IconList from './Icons/IconListNew';
 import {
   Button,
   MdxComponents,
@@ -55,6 +55,7 @@ const components = {
   BlockNotification,
   Button,
   CodeBlock,
+  IconList,
   Link,
   Logos,
   TextInput,

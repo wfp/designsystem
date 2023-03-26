@@ -71,7 +71,10 @@ const Checkbox: React.FC<PropsWithChildren<CheckboxProps>> = React.forwardRef(
             }
           }}
         />
-        <label htmlFor={id} className={labelClasses} title={title || null}>
+        <label
+          htmlFor={id || other.name}
+          className={labelClasses}
+          title={title || null}>
           <span className={innerLabelClasses}>{labelText}</span>
         </label>
       </div>

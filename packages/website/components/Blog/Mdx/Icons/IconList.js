@@ -1,0 +1,118 @@
+/* eslint-disable no-console */
+
+import React from 'react';
+import Blockquote from '../../components/Blockquote';
+import Link from '../../components/Link';
+import Icon from '../../components/Icon';
+import { Module, ModuleFooter } from '../../components/Module';
+import { DownloadGlyph } from '@un/icons-react';
+
+import Button from '../../components/Button';
+
+import IconConverter from './IconConverter';
+
+import * as icons from '@un/icons-react';
+import * as pictograms from '@un/pictograms-react';
+import * as humanitarianIcons from '@un/humanitarian-icons-react';
+import styles from './icon-list.module.scss';
+
+import Tippy from '@tippy.js/react';
+import { tooltipStyle } from '../../components/Tooltip';
+
+const IconPreview = ({ i, icon, iconsReact }) => {
+  const iconName = icon.name;
+
+  const name = icon.moduleInfo?.global
+    ? `${icon.moduleInfo.global}`
+    : icon.output[0].moduleName;
+  const Icon = iconsReact[name] ? iconsReact[name] : iconsReact[`${name}Glyph`];
+  return (
+    <Tippy
+      interactive
+      content={
+        <div className={styles.tooltip}>
+          <DownloadGlyph
+            description="WFP"
+            width="150"
+            height="150"
+            className="wfp--footer-cta-logo"
+          />
+          <div className={styles.name}>{iconName}</div>
+
+          <div
+            className="wfp--inline-highlight"
+            style={{
+              fontFamily: 'monospace',
+              display: 'block',
+              whiteSpace: 'pre',
+              marginTop: '0.2rem',
+              marginBottom: '1rem',
+            }}>
+            {`import
+  {${iconName}}
+from '@un/icons-react'`}
+          </div>
+          <Button
+            icon={DownloadGlyph}
+            href={`https://github.com/wfp/carbon-icons/blob/master/src/svg/${iconName}.svg`}
+            small>
+            View on GitHub
+          </Button>
+        </div>
+      }
+      trigger="click"
+      {...tooltipStyle}>
+      <div
+        style={{
+          width: '12.5%',
+        }}>
+        <Module light withHover>
+          <div
+            style={{
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              flexDirection: 'column',
+              width: '100%',
+              height: '55px',
+            }}>
+            {Icon && (
+              <Icon
+                color="black"
+                description="WFP"
+                width="39"
+                className="wfp--footer-cta-logo"
+              />
+            )}
+          </div>
+          <ModuleFooter
+            style={{
+              padding: '0.2em',
+              fontSize: '0.45em',
+              textAlign: 'center',
+              alignItems: 'center',
+              justifyContent: 'center',
+              minHeight: '2rem',
+            }}>
+            <span>{iconName}</span>
+          </ModuleFooter>
+        </Module>
+      </div>
+    </Tippy>
+  );
+};
+
+const IconList = ({ name }) => {
+  //console.log(iconsReact, metadata);
+  const iconsReact = pictograms;
+  console.log('metadata', iconsReact);
+  return (
+    <div className={styles.wrapper}>
+      {metadata.icons.map((icon, i) => {
+        return <IconPreview i={i} icon={icon} iconsReact={iconsReact} />;
+      })}
+    </div>
+  );
+};
+
+export default IconList;

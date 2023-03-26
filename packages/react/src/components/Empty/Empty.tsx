@@ -1,15 +1,31 @@
-import React from 'react';
+import * as React from 'react';
 import type { PropsWithChildren } from 'react';
 import classnames, { Argument } from 'classnames';
 import useSettings from '../../hooks/useSettings';
 import { IIcon } from '../../typesLegacy/utils';
 
 type EmptyProps = PropsWithChildren<{
+  /**
+   * The content to be rendered in the empty state. @design
+   */
+  children?: React.ReactNode;
+  /**
+   * The title to be rendered in the empty state.
+   */
   title: React.ReactNode;
+  /**
+   * The kind of empty state to be rendered. @design
+   */
   kind?: 'undefined' | 'large';
   icon?: IIcon | React.ReactNode;
+  /**
+   * The button to be rendered in the empty state. @design
+   */
   button?: React.ReactNode;
   className?: Argument;
+  /**
+   * The replaceable components to be used for the empty state.
+   */
   components?: { Icon: React.ReactNode; Text: React.ReactNode };
 }>;
 
@@ -33,7 +49,7 @@ const Empty: React.FC<EmptyProps> = ({
   button,
   children,
   className,
-  components = {},
+  components,
   icon,
   title,
   kind = 'large',

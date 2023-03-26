@@ -4,34 +4,50 @@ title: 'Empty'
 excerpt: 'Empty states are a way to improve the user experience of your product, from onboarding to encouraging users to interact with your app.'
 coverImage: '../sample-image.jpg'
 slug: 'Components/UI elements/Empty'
+mainComponent: 'Empty'
+defaultProps:
+  title: 'No results'
+  kind: 'large'
+  children: 'There are no results for your search'
+sampleCode: >
+  <Empty
+    button={<Button>Do something</Button>}
+    title="No results"
+    kind="large"
+    icon={<MovingVanBoxesWithBackground style={{ width: '3em' }} />} PROPS_HERE>
+    There are no results for your search
+  </Empty>
 ---
-
-<Storybook path="iframe.html?viewMode=docs&id=components-ui-elements-empty--documentation&args=" />
 
 They are screens in your UI that are not yet full of information. That is to say, they will eventually have content on them when the user populates them.
 
 The component should usually cover the whole area of the section and have a slightly darker background than the regular content. It can be also used for large notification messages.
 
 ```jsx live
-<Empty title="No results" kind="large">
+<Empty
+  title="No results"
+  kind="large"
+  icon={<NutritionClusterPositive style={{ width: '3em' }} />}>
   There are no results for your search
 </Empty>
 ```
 
 ### Types of empty states
 
-- **First use** – Occurs with a new product or service when there is still nothing to show, such as a new Evernote or Dropbox account.
+- **First use** – Occurs with a new product or service when there is still nothing to show.
 - **User cleared** – Occurs when users complete actions such as clearing their inbox or task list, and the result is an empty screen.
 - **Errors** – These occur when something goes wrong, or when there are issues such as a mobile phone going offline due to network problems.
 - **No results/No data** – Occurs when there is nothing to show. This can happen if someone performs a search and the query is empty or there isn’t data available to show (when filtering for a date-range that has no data for example).
 
-### When to use
+<DoUse>
 
-- ✓ Can be the case for a empty list table or search results
-- ✓ Cover the whole area where normally content would be displayed
-- ✓ Add personality by adding an illustration or icon (for example by using FontAwesome)
-- ✓ Tell your user to do something: provide a call-to-action button
-- ✓ Can be also used for large notification messages
+- Can be the case for a empty list table or search results
+- Cover the whole area where normally content would be displayed
+- Add personality by adding an illustration or icon (for example by using FontAwesome)
+- Tell your user to do something: provide a call-to-action button
+- Can be also used for large notification messages
+
+</DoUse>
 
 ### Related
 

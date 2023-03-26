@@ -1,31 +1,14 @@
-import React from 'react';
+import * as React from 'react';
 import type { PropsWithChildren } from 'react';
 import classNames, { Argument } from 'classnames';
 import FormItem from '../FormItem';
 import * as HookForm from 'react-hook-form';
-import useSettings from '../../hooks/useSettings'; //import useDetectPrint from '../../internal/useDetectPrint';
+import useSettings from '../../hooks/useSettings';
+import { InputProps } from '../Input';
 
-/** A textarea is an input dedicated for a large volume of text. It may be used in a variety of components like forms, comment sections, and forums. */
-type TextAreaProps = PropsWithChildren<{
-  defaultValue?: string | number;
-  labelText?: string;
-  rows?: number;
-  children?: React.ReactNode;
-  value?: string | number;
-  invalid?: boolean | HookForm.FieldError;
-  invalidText?: string;
-  helperText?: React.ReactNode;
-  inputRef?: React.RefObject<HTMLTextAreaElement>;
-  hideLabel?: boolean;
-  fullWidth?: boolean;
-  viewOnly?: boolean;
-  className?: Argument;
-  disabled?: boolean;
-  id?: string;
-  formItemClassName?: string;
-  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
-  onClick?: (event: React.ChangeEvent<HTMLInputElement>) => void;
-}>;
+interface TextAreaProps extends InputProps {
+  helperText?: string;
+}
 
 // TODO: Check forward ref
 const TextArea: React.FC<TextAreaProps> = React.forwardRef((props, ref) => {
@@ -121,5 +104,7 @@ const TextArea: React.FC<TextAreaProps> = React.forwardRef((props, ref) => {
     </FormItem>
   );
 });
+
+TextArea.displayName = 'TextArea';
 
 export default TextArea;

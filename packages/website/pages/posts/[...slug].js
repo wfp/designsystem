@@ -13,6 +13,8 @@ import Sidebar from '../../components/Sidebar';
 import { serialize } from 'next-mdx-remote/serialize';
 import { MDXRemote } from 'next-mdx-remote';
 import rehypeCode from './rehypeCode';
+import { parse } from 'react-docgen-typescript';
+import fs from 'fs';
 import {
   Breadcrumb,
   BreadcrumbHome,
@@ -31,9 +33,11 @@ import remarkGfm from 'remark-gfm';
 import components from '../../components/Blog/Mdx';
 import slugify from 'slugify';
 import remarkMdxCodeMeta from 'remark-mdx-code-meta';
+import path from 'path';
 
-export default function Post({ post, posts, morePosts, preview }) {
+export default function Post({ post, posts, propTypes, morePosts, preview }) {
   const router = useRouter();
+  console.log('propTypes ', propTypes);
 
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />;
@@ -68,7 +72,7 @@ export default function Post({ post, posts, morePosts, preview }) {
               author={post.author}
             />*/}
 
-            <Sidebar posts={posts} post={post} />
+            <Sidebar posts={posts} post={post} propTypes={propTypes} />
           </article>
         </>
       )}
@@ -109,9 +113,13 @@ export async function getStaticProps({ params }) {
     'content',
     'ogImage',
     'coverImage',
+    'mainComponent',
+    'defaultProps',
+    'sampleCode',
     'excerpt',
     'figma',
     'github',
+    'npm',
     'storybook',
   ]);
   const content = post.content;
@@ -144,8 +152,37 @@ export async function getStaticProps({ params }) {
     components,
   });
 
+  var propTypes = null;
+
+  if (post.mainComponent) {
+    var pathToModule = path.dirname(require.resolve('@un/react/README.md'));
+    const componentPath = `${pathToModule}/src/components/${post.mainComponent}/${post.mainComponent}.tsx`;
+    console.log('pathToModule', pathToModule, componentPath);
+    const options = {
+      savePropValueAsString: true,
+      propFilter: (prop, component) => {
+        if (prop.declarations !== undefined && prop.declarations.length > 0) {
+          const hasPropAdditionalDescription = prop.declarations.find(
+            (declaration) => {
+              return !declaration.fileName.includes('node_modules');
+            }
+          );
+
+          return Boolean(hasPropAdditionalDescription);
+        }
+
+        return true;
+      },
+    };
+
+    propTypes = JSON.parse(JSON.stringify(parse(componentPath, options)));
+
+    console.log('propTypes', propTypes[0].props.defaultValue);
+  }
+
   return {
     props: {
+      propTypes: propTypes,
       posts,
       post: {
         ...post,

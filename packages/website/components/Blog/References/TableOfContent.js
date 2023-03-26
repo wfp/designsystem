@@ -24,6 +24,8 @@ const MDXComponents = {
 };
 
 export default function TableOfContent({ content }) {
+  console.log('content', content);
+  if (content.length === 0) return null;
   return (
     <div className={styles.tableOfContent}>
       <h3>On this page</h3>

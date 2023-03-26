@@ -6,9 +6,15 @@ import Input from '../Input/Input';
 import { useInput } from '../Input/useInput';
 import * as HookForm from 'react-hook-form';
 import { InputModes } from '../../typesLegacy/utils';
+import { InputProps } from '../Input';
 
 /** Text inputs enable the user to interact with and input content and data. This component can be used for long and short form entries. */
-interface TextInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
+
+interface TextInputProps extends InputProps {
+  helperText?: string;
+}
+
+/*interface TextInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   className?: string;
   helperText?: React.ReactNode;
   labelText?: React.ReactNode;
@@ -28,7 +34,7 @@ interface TextInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   id?: string;
   required?: boolean;
   pattern?: string;
-}
+}*/
 
 const TextInput: React.FC<TextInputProps> = React.forwardRef((props, ref) => {
   const {

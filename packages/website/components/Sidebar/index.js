@@ -31,19 +31,26 @@ import References from '../Blog/References';
 import TableOfContent from '../Blog/References/TableOfContent';
 import slugifyWithSlashes from '../../lib/slugifyWithSlashes';
 import { NextSeo } from 'next-seo';
+import PropTypes from '../PropTypes';
 
 function TreeBranch({ slug, split, level }) {
-  const splitSlug = slugify(slug).split('/');
-  const found = split.children.find(
+  const splitSlug = slugifyWithSlashes(slug).split('/');
+  const found = split.name === splitSlug[level - 1]; /* split.children.find(
     (e) => e.name === splitSlug[splitSlug.length - 1]
-  );
+  )*/
+
+  console.log('splitSlug', split.name, splitSlug[level - 1]);
 
   const [open, setOpen] = useState(level === 0 || found);
 
-  console.log('level', level, split);
+  //console.log('level', level, split);
   return (
     <li
-      className={`${styles[`level-${level}`]} ${
+      className={`${styles[`level-${level}`]}  ${
+        found ? styles.active : styles.inActive
+      }  ${
+        split.children.length === 0 ? styles.lastLevel : styles.hasSubLevels
+      } ${
         open || split.children.length === 0
           ? styles[`level-open`]
           : styles[`level-closed`]
@@ -55,8 +62,8 @@ function TreeBranch({ slug, split, level }) {
               href={`/${slugifyWithSlashes(split.path?.key)}`}
               passHref
               legacyBehavior>
-              <Link className={styles.item}>
-                <FontAwesomeIcon icon={faMinus} className={styles.icon} />
+              <Link className={styles.item} onMouseUp={(e) => e.target.blur()}>
+                <div className={styles.icon} />
 
                 {split.name}
               </Link>
@@ -65,11 +72,11 @@ function TreeBranch({ slug, split, level }) {
             <span
               className={styles.sidebarTitle}
               onClick={() => setOpen(!open)}>
-              <span className={styles.sidebarTitleText}>{split.name}</span>
               <FontAwesomeIcon
                 icon={faChevronRight}
                 className={styles.iconOpen}
               />
+              <span className={styles.sidebarTitleText}>{split.name}</span>
             </span>
           ) : null}
           {split.children.map((c, i) => (
@@ -105,7 +112,7 @@ export const createPathTree = (paths) => {
   return finalArray.length > 0 ? finalArray[0] : null;
 };
 
-export default function SidebarWrapper({ content, post, posts }) {
+export default function SidebarWrapper({ content, post, posts, propTypes }) {
   const postSplit = posts.map((p) => {
     return {
       key: 'posts/' + p.slug,
@@ -149,8 +156,13 @@ export default function SidebarWrapper({ content, post, posts }) {
                 <BreadcrumbHome />
               </Link>
             </BreadcrumbItem>
-            <BreadcrumbItem href="#">Breadcrumb 2</BreadcrumbItem>
-            <BreadcrumbItem disableLink>Breadcrumb 3</BreadcrumbItem>
+            {post.slug.split('/').map((s, i) => {
+              return (
+                <BreadcrumbItem key={i} href="#" disableLink>
+                  {s}
+                </BreadcrumbItem>
+              );
+            })}
           </Breadcrumb>
 
           {post.subtitle && (
@@ -165,6 +177,15 @@ export default function SidebarWrapper({ content, post, posts }) {
           <div className={styles.excerpt}>
             <MDXRemote {...post.mdxExcerptSource} components={components} />
           </div>
+
+          {post.mainComponent && (
+            <PropTypes
+              propTypes={propTypes}
+              sampleCode={post.sampleCode}
+              mainComponent={post.mainComponent}
+              defaultProps={post.defaultProps}
+            />
+          )}
 
           <MDXRemote {...post.mdxSource} components={components} />
 

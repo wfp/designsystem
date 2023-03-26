@@ -14,17 +14,23 @@ import vsDark, { styles } from 'prism-react-renderer/themes/vsDark';
 
 import * as unComponents from '@un/react';
 import * as unHumanitarianIcons from '@un/humanitarian-icons-react';
+import * as unPictograms from '@un/pictograms-react';
 import * as icons from '@un/icons-react';
 import { Button, Empty } from '@un/react';
 import { useMDXComponents } from '@mdx-js/react';
 import { MDXRemote } from 'next-mdx-remote';
 
-console.log('unHumanitarianIcons', unHumanitarianIcons);
-
 const CodeBlockLive = (props) => {
   const [compiledMdx, setCompiledMdx] = useState('');
-  const { children, className = '', live, noInline, source } = props;
-  console.log('children', props, children);
+  const {
+    children,
+    className = '',
+    live,
+    hideWrapper,
+    noInline,
+    showEditor = true,
+    source,
+  } = props;
 
   const code = source ? source : children ? children.trim() : '';
   /*const compileMdx = async (code) => {
@@ -47,6 +53,8 @@ const CodeBlockLive = (props) => {
       .replaceAll(/: \S+ = /g, ' = '); // let a: string = "something"
   };
 
+  console.log('cleanCode', cleanCode(code));
+
   const handleCopyCode = (textToCopy) => {
     navigator.clipboard.writeText(textToCopy);
 
@@ -61,6 +69,7 @@ const CodeBlockLive = (props) => {
     const scope = {
       ...unComponents,
       ...unHumanitarianIcons,
+      ...unPictograms,
       ...icons,
       useState,
       Storybook,
@@ -70,7 +79,10 @@ const CodeBlockLive = (props) => {
     };
 
     return (
-      <div className={stylesModule.editor}>
+      <div
+        className={`${stylesModule.editor} ${
+          hideWrapper ? stylesModule.hideWrapper : stylesModule.showWrapper
+        }`}>
         <LiveProvider
           code={code}
           scope={scope}
@@ -86,10 +98,12 @@ const CodeBlockLive = (props) => {
           ) : (
             <LivePreview className={stylesModule.preview} />
           )}
-          <div className={stylesModule.liveEditor}>
-            <h3> Editable Example</h3>
-            <LiveEditor theme={vsDark} />
-          </div>
+          {showEditor && (
+            <div className={stylesModule.liveEditor}>
+              <h3> Editable Example</h3>
+              <LiveEditor theme={vsDark} />
+            </div>
+          )}
           <LiveError />
         </LiveProvider>
       </div>
@@ -139,12 +153,10 @@ export function Pre({ live, noInline, children, ...props }) {
       </div>
     );
   }
-  console.log('children', children);
   // wfp--story__code
   return <pre {...props}>{children}</pre>;
 }
 
 export function CodeBlock(params) {
-  console.log('paramsparamsparams', params);
   return <CodeBlockLive {...params} />;
 }
