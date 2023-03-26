@@ -1,6 +1,6 @@
 {
   "name": "@un/core-website",
-  "version": "0.1.32",
+  "version": "0.1.33",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -25,11 +25,11 @@
     "@next/mdx": "^12.1.6",
     "@react-hook/window-scroll": "^1.3.0",
     "@react-hook/window-size": "^3.0.7",
-    "@un/humanitarian-icons-react": "^11.14.32",
-    "@un/icons-react": "^10.34.44",
+    "@un/humanitarian-icons-react": "^11.14.33",
+    "@un/icons-react": "^10.34.45",
     "@un/layout": "^10.26.15",
-    "@un/pictograms-react": "^11.14.31",
-    "@un/react": "^1.18.72",
+    "@un/pictograms-react": "^11.14.32",
+    "@un/react": "^1.18.73",
     "@un/styles": "^10.26.58",
     "@un/themes": "^10.40.13",
     "@un/themes-core": "^0.0.28",
