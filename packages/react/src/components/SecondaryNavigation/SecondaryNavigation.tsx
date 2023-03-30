@@ -1,11 +1,11 @@
-import React from 'react';
+import * as React from 'react';
 import type { PropsWithChildren } from 'react';
-import classNames, { Argument } from 'classnames';
+import classNames from 'classnames';
 import Wrapper from '../Wrapper';
 import useSettings from '../../hooks/useSettings';
 
 type SecondaryNavigationTitleProps = PropsWithChildren<{
-  className?: Argument;
+  className?: string;
 }>;
 
 const SecondaryNavigationTitle: React.FC<SecondaryNavigationTitleProps> = ({
@@ -22,13 +22,14 @@ const SecondaryNavigationTitle: React.FC<SecondaryNavigationTitleProps> = ({
 };
 
 /** The SecondaryNavigation shows the page title and and optional tab navigation. */
-type SecondaryNavigationProps = PropsWithChildren<{
-  className?: Argument;
+export interface SecondaryNavigationProps
+  extends React.HTMLAttributes<HTMLSpanElement> {
+  className?: string;
   pageWidth?: 'sm' | 'md' | 'lg' | 'full';
-  wrapperClassName?: Argument;
+  wrapperClassName?: string;
   id?: string;
   additional?: React.ReactNode;
-}>;
+}
 
 const SecondaryNavigation: React.FC<SecondaryNavigationProps> = ({
   additional,
@@ -36,6 +37,7 @@ const SecondaryNavigation: React.FC<SecondaryNavigationProps> = ({
   className,
   id,
   pageWidth,
+  ...other
 }) => {
   const { prefix } = useSettings();
 
@@ -45,7 +47,7 @@ const SecondaryNavigation: React.FC<SecondaryNavigationProps> = ({
   );
 
   return (
-    <div id={id} className={wrapperClasses}>
+    <div id={id} className={wrapperClasses} {...other}>
       <Wrapper
         pageWidth={pageWidth}
         className={`${prefix}--secondary-navigation__wrapper`}>

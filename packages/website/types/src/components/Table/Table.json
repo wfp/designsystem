@@ -1,0 +1,49 @@
+[
+  {
+    "tags": {},
+    "filePath": "src/components/Table/Table.tsx",
+    "description": "Tables are used to make large volumes of data easy to understand and to access.",
+    "displayName": "Table",
+    "methods": [],
+    "props": {
+      "withBorder": {
+        "defaultValue": null,
+        "description": "",
+        "name": "withBorder",
+        "parent": {
+          "fileName": "src/components/Table/Table.tsx",
+          "name": "TableProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/Table/Table.tsx",
+            "name": "TableProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "responsive": {
+        "defaultValue": null,
+        "description": "",
+        "name": "responsive",
+        "parent": {
+          "fileName": "src/components/Table/Table.tsx",
+          "name": "TableProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/Table/Table.tsx",
+            "name": "TableProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      }
+    }
+  }
+]

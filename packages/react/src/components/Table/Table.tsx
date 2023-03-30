@@ -1,13 +1,11 @@
-import React from 'react';
-import type { PropsWithChildren } from 'react';
-import classNames, { Argument } from 'classnames';
+import * as React from 'react';
+import classNames from 'classnames';
 import useSettings from '../../hooks/useSettings';
 
-type TableProps = PropsWithChildren<{
+export interface TableProps extends React.HTMLAttributes<HTMLTableElement> {
   withBorder?: boolean;
   responsive?: boolean;
-  className?: Argument;
-}>;
+}
 
 /** Tables are used to make large volumes of data easy to understand and to access. */
 const Table: React.FC<TableProps> = ({

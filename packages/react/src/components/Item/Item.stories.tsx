@@ -27,7 +27,7 @@ Regular.args = {
   ),
   showAdditionalIcon: true,
   additional: 'Yesterday',
-  hint: <Tag kind="wfp">Hint</Tag>,
+  hint: <Tag type="wfp">Hint</Tag>,
   wrapper: 'button',
 };
 
@@ -36,7 +36,7 @@ import { Item, Tag } from "@un/react";
 
 <Item
   additional="Yesterday"
-  hint={<Tag kind="wfp">Hint</Tag>}
+  hint={<Tag type="wfp">Hint</Tag>}
   icon={<img alt="Moving van" src="https://www.wfp.org/sites/default/files/styles/medium/public/images/publication/YiR_banner.jpg"/>}
   kind=${kind}
   showAdditionalIcon
@@ -101,7 +101,7 @@ Horizontal.args = {
   ),
   showAdditionalIcon: true,
   additional: 'Yesterday',
-  hint: <Tag kind="wfp">Hint</Tag>,
+  hint: <Tag type="wfp">Hint</Tag>,
   wrapper: 'sidebar',
 };
 
@@ -142,7 +142,7 @@ HorizontalRepeater.args = {
   ),
   showAdditionalIcon: true,
   additional: 'Yesterday',
-  hint: <Tag kind="wfp">Hint</Tag>,
+  hint: <Tag type="wfp">Hint</Tag>,
   wrapper: 'repeater',
 };
 

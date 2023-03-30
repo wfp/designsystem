@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import type { PropsWithChildren } from 'react';
 import classNames from 'classnames';
 import useSettings from '../../hooks/useSettings';
@@ -6,21 +6,22 @@ import FormItem from '../FormItem';
 import { WarningSolid } from '@un/icons-react';
 import * as HookForm from 'react-hook-form';
 
-export interface InputProps
-  extends React.InputHTMLAttributes<HTMLInputElement> {
+/**
+   * Optionally provide the default value of the input @design
+ 
+  defaultValue?: string | number;  */
+
+export interface InputProps {
   /**
    * Provide text that is used alongside the control label for additional help
    */
-  helperText?: string;
+  helperText?: React.ReactNode;
   /**
    * Provide the text that will be read by a screen reader when visiting this
    * control @design
    */
-  labelText?: string;
-  /**
-   * Optionally provide the default value of the input @design
-   */
-  defaultValue?: string | number;
+  labelText?: React.ReactNode;
+
   /**
    * Provide a custom className that is applied directly to the underlying
    * &lt;textarea&gt; node
@@ -56,7 +57,6 @@ export interface InputProps
    * Specify the placeholder attribute for the input @design
    */
   placeholder?: string;
-  type?: string;
   /**
    * Provide a unique identifier for the control
    */
@@ -209,5 +209,6 @@ const Input: React.FC<PropsWithChildren<InputPropsI>> = ({
     </FormItem>
   );
 };
+Input.displayName = 'Input';
 
 export default Input;

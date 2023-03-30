@@ -1,0 +1,49 @@
+[
+  {
+    "tags": {},
+    "filePath": "src/components/BreadcrumbHome/BreadcrumbHome.tsx",
+    "description": "",
+    "displayName": "BreadcrumbHome",
+    "methods": [],
+    "props": {
+      "hometext": {
+        "defaultValue": null,
+        "description": "",
+        "name": "hometext",
+        "parent": {
+          "fileName": "src/components/BreadcrumbHome/BreadcrumbHome.tsx",
+          "name": "BreadcrumbHomeProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/BreadcrumbHome/BreadcrumbHome.tsx",
+            "name": "BreadcrumbHomeProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactNode"
+        }
+      },
+      "className": {
+        "defaultValue": null,
+        "description": "",
+        "name": "className",
+        "parent": {
+          "fileName": "src/components/BreadcrumbHome/BreadcrumbHome.tsx",
+          "name": "BreadcrumbHomeProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/BreadcrumbHome/BreadcrumbHome.tsx",
+            "name": "BreadcrumbHomeProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      }
+    }
+  }
+]

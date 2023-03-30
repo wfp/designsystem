@@ -42,6 +42,7 @@ const ModalWrapper: React.FC<ModalWrapperProps> = ({
   buttonTriggerClassName,
   triggerButtonKind,
   disabled,
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
   handleSubmit = () => {},
   shouldCloseAfterSubmit = true,
   ...other
@@ -107,7 +108,7 @@ const ModalWrapper: React.FC<ModalWrapperProps> = ({
           disabled={disabled}
           kind={triggerButtonKind}
           onClick={handleOpen}
-          inputref={triggerButton}>
+          ref={triggerButton}>
           {buttonTriggerText}
         </Button>
       )}

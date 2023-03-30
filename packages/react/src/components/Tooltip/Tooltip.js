@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
-import classnames from 'classnames';
+import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import { usePopperTooltip } from 'react-popper-tooltip';
 
@@ -46,7 +46,7 @@ const Tooltip = ({
 }) => {
   const { prefix } = useSettings();
   const [visibility, setVisibility] = useState(false);
-  const classNames = classnames(className, {
+  const classNames = classNames(className, {
     [`${prefix}--tooltip`]: true,
     [`${prefix}--tooltip--disable-padding`]: noPadding,
     [`${prefix}--tooltip--visible`]: visibility,
@@ -75,11 +75,11 @@ const Tooltip = ({
     trigger,
   });
 
-  const elementClassNames = classnames(children?.props?.className, {
+  const elementClassNames = classNames(children?.props?.className, {
     [`${prefix}--tooltip--trigger`]: true,
   });
 
-  const wrapperClassNames = classnames(className, {
+  const wrapperClassNames = classNames(className, {
     [`${prefix}--tooltip--trigger`]: true,
   });
 

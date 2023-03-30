@@ -1,9 +1,9 @@
-import React from 'react';
+import * as React from 'react';
 import classNames from 'classnames';
 import useSettings from '../../hooks/useSettings';
 
 interface SelectItemProps {
-  value: any;
+  value?: string | number;
   className?: string;
   disabled?: boolean;
   hidden?: boolean;
@@ -35,20 +35,5 @@ const SelectItem: React.FC<SelectItemProps> = ({
     </option>
   );
 };
-
-// SelectItem.propTypes = {
-//   value: PropTypes.any.isRequired,
-//   className: PropTypes.string,
-//   disabled: PropTypes.bool,
-//   hidden: PropTypes.bool,
-//   text: PropTypes.string.isRequired,
-// };
-
-// SelectItem.defaultProps = {
-//   disabled: false,
-//   hidden: false,
-//   value: '',
-//   text: '',
-// };
 
 export default SelectItem;

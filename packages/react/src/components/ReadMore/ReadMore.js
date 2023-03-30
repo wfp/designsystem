@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { useRef, useState } from 'react';
-import classnames from 'classnames';
+import classNames from 'classnames';
 import Link from '../Link';
 import { CaretUp, CaretDown } from '@un/icons-react';
 import useSettings from '../../hooks/useSettings';
@@ -66,7 +66,7 @@ const ReadMore = ({
     setInnerHeight(innerHeight);
   };
 
-  const classNames = classnames(className, {
+  const classNames = classNames(className, {
     [`${prefix}--read-more`]: true,
     [`${prefix}--read-more--expanded`]: showMore,
     [`${prefix}--read-more--fade`]: fade,

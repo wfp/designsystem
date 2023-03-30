@@ -1,32 +1,20 @@
 import React from 'react';
 
-import {
-  Item,
-  Module,
-  ModuleBody,
-  List,
-  ListItem,
-  Table,
-  Text,
-  Tag,
-  Tooltip,
-  Story,
-} from '@un/react';
+import { List, ListItem, Table, Text, Story } from '@un/react';
 
-import tokens from '@un/themes-core/dist/json/variables-full';
+import tokens from '@un/themes-core/dist/json/variables-full.json';
 
 import { hex, score } from 'wcag-contrast';
 import styles from './colours.module.scss';
 
-export const ColourList = ({ tokens }) => {
-  console.log('tokens', tokens);
+export const ColourList = ({ tokens }: any) => {
   /*
   const colors = tokens.color[filter];*/
   if (!tokens) return <>No tokens found</>;
 
-  const list = Object.entries(tokens).map(([key, color]) => {
+  const list = Object.entries(tokens).map(([key, color]: any) => {
     return (
-      <tr key={key} className={styles.item} kind="horizontal">
+      <tr key={key} className={styles.item}>
         <td>
           <h5>{color.name}</h5>
         </td>
@@ -137,8 +125,6 @@ export const ColourList = ({ tokens }) => {
 };
 
 export function ColourLists() {
-  console.log('tokenstokenstokens', tokens);
-
   return (
     <div>
       {Object.values(tokens).map((t, key) => {

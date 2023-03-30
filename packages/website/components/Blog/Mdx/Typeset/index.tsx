@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { InputGroup, Link, List, ListItem, RadioButton, Text } from '@un/react';
+import { InputGroup, List, ListItem, RadioButton, Text } from '@un/react';
 
-import tokens from '@un/themes-core/dist/json/variables-full';
+import tokens from '@un/themes-core/dist/json/variables-full.json';
 
 import styles from './typeset.module.scss';
 
@@ -25,13 +25,13 @@ export default function Typeset() {
             <ListItem title="font-weight"> {entry.fontWeight?.value}</ListItem>
     <ListItem title="line-height"> {entry.lineHeight?.value}</ListItem>*/}
 
-            {Object.entries(entry).map(([iKey, token]) => {
+            {Object.entries(entry).map(([iKey, token]: any) => {
               if (iKey === 'md') {
                 return (
                   <ListItem key={iKey}>
                     <h4>Breakpoint medium</h4>
                     {Object.entries(token).map(
-                      ([iKeyBreakpoint, tokenBreakpoint]) => (
+                      ([iKeyBreakpoint, tokenBreakpoint]: any) => (
                         <ListItem key={iKeyBreakpoint} title={iKeyBreakpoint}>
                           {tokenBreakpoint.value}{' '}
                           {tokenBreakpoint.value !==
@@ -65,9 +65,7 @@ export default function Typeset() {
           </List>
         </div>
         <div>
-          <Text kind={i} breakpoint={breakpoint}>
-            {breakpoint} Example text
-          </Text>
+          <Text kind={i}>{breakpoint} Example text</Text>
         </div>
       </div>
     );

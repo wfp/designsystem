@@ -2,22 +2,27 @@ import { List, ListItem } from '@un/react';
 import React from 'react';
 import styles from './styles.module.scss';
 
-export function DoUse({ children, title = 'When to use', kind = 'checkmark' }) {
+interface DoUseType {
+  children: React.ReactNode;
+  title?: string;
+  kind?: 'checkmark' | 'cross';
+}
+
+export function DoUse({
+  children,
+  title = 'When to use',
+  kind = 'checkmark',
+}: DoUseType) {
   const childrenWithProps = React.Children.map(children, (child) => {
     if (React.isValidElement(child)) {
       const childrenListItemWithProps = React.Children.map(
         child.props.children,
-        (childListItem) => {
+        (childListItem: { props: object }) => {
           if (React.isValidElement(childListItem)) {
-            return React.createElement(
-              ListItem,
-              { className: 'greeting', ...childListItem.props, kind }
-              //...childListItem.props
-            );
-            /*return React.cloneElement(childListItem, {
-              className: styles.list,
+            return React.createElement(ListItem, {
+              ...childListItem.props,
               kind,
-            });*/
+            });
           }
           return childListItem;
         }
@@ -39,6 +44,6 @@ export function DoUse({ children, title = 'When to use', kind = 'checkmark' }) {
   );
 }
 
-export function DoNotUse({ title = 'When not to use', ...props }) {
+export function DoNotUse({ title = 'When not to use', ...props }: any) {
   return <DoUse {...props} kind="cross" title={title} />;
 }

@@ -27,6 +27,7 @@ type SliderProps = PropsWithChildren<{
   ariaLabelInput?: string;
   step?: number;
   value?: number | '';
+  // eslint-disable-next-line @typescript-eslint/ban-types
   invalid?: {} | boolean;
   invalidText?: string;
   additional?: React.ReactNode;
@@ -59,30 +60,26 @@ const defaultFormatLabel = (value, label) => {
 
 const Slider: React.FC<SliderProps> = (props) => {
   const {
-    additional,
     ariaLabelInput,
     className,
     disabled,
     formatLabel = defaultFormatLabel,
-    formItemClassName,
     fullWidth,
     id,
     inputType,
     hideLabel,
     hideControls,
     hideTextInput,
-    labelText,
     min,
     minLabel,
     max,
     maxLabel,
     step = 1,
-    invalid,
-    invalidText,
+    // eslint-disable-next-line @typescript-eslint/no-empty-function
     onChange = () => {},
-    onClick = () => {},
+    // eslint-disable-next-line @typescript-eslint/no-empty-function
+    //onClick = () => {},
     helperText,
-    allowEmpty,
     inputRef,
     ...other
   } = props;
@@ -97,7 +94,7 @@ const Slider: React.FC<SliderProps> = (props) => {
   }, [props.value]);
 
   const newInputRef = useRef(null);
-  var _inputRef = inputRef ? inputRef : newInputRef;
+  const _inputRef = inputRef ? inputRef : newInputRef;
 
   const handleChange = (evt) => {
     if (!disabled) {
@@ -157,49 +154,45 @@ const Slider: React.FC<SliderProps> = (props) => {
     className
   );
 
-  const valueMinimal = value < min ? min : value;
+  const valueMinimal = value && value < min ? min : value;
   return (
     <Input {...props} formItemClassName={numberInputClasses}>
-      {() => {
-        return (
-          <div className={sliderContainerClasses}>
-            <span className={`${prefix}--slider__range-label`}>
-              {formatLabel(min, minLabel)}
-            </span>
+      <div className={sliderContainerClasses}>
+        <span className={`${prefix}--slider__range-label`}>
+          {formatLabel(min, minLabel)}
+        </span>
 
-            <div className={sliderRangeWrapperClasses}>
-              <div
-                className={`${prefix}--slider__range-before`}
-                style={{
-                  width: `${((valueMinimal - min) / (max - min)) * 100}%`,
-                }}
-              />
-              <input
-                className={sliderClasses}
-                type="range"
-                {...other}
-                {...newProps}
-                ref={_inputRef}
-              />
-            </div>
-            <span className={`${prefix}--slider__range-label`}>
-              {formatLabel(max, maxLabel)}
-            </span>
-            {!hideTextInput && (
-              <TextInput
-                disabled={disabled}
-                type={inputType}
-                id="input-for-slider"
-                className={inputClasses}
-                value={value}
-                onChange={handleChange}
-                labelText=""
-                aria-label={ariaLabelInput}
-              />
-            )}
-          </div>
-        );
-      }}
+        <div className={sliderRangeWrapperClasses}>
+          <div
+            className={`${prefix}--slider__range-before`}
+            style={{
+              width: `${((valueMinimal || 0 - min) / (max - min)) * 100}%`,
+            }}
+          />
+          <input
+            className={sliderClasses}
+            type="range"
+            {...other}
+            {...newProps}
+            ref={_inputRef}
+          />
+        </div>
+        <span className={`${prefix}--slider__range-label`}>
+          {formatLabel(max, maxLabel)}
+        </span>
+        {!hideTextInput && (
+          <TextInput
+            disabled={disabled}
+            type={inputType}
+            id="input-for-slider"
+            className={inputClasses}
+            value={value}
+            onChange={handleChange}
+            labelText=""
+            aria-label={ariaLabelInput}
+          />
+        )}
+      </div>
     </Input>
   );
 };

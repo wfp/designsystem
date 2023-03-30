@@ -30,14 +30,12 @@ const SingleDatePickerInput = ({
   error,
   ...other
 }) => {
-
   const { prefix } = useSettings();
   const [controlledValue, setControlledValue] = useState(value ? value : null);
-  const [focusedInput, setFocusedInput] = useState(null)
+  const [focusedInput, setFocusedInput] = useState(null);
 
   const handleDateChange = (value) => {
     if (onChange) {
-      
       onChange(value);
     }
     setControlledValue(value);
@@ -50,57 +48,56 @@ const SingleDatePickerInput = ({
     setFocusedInput(focusedInput);
   };
 
+  const SingleDatePicker = datePicker;
 
-    const SingleDatePicker = datePicker;
+  const labelClasses = classNames(`${prefix}--label`, {
+    [`${prefix}--visually-hidden`]: hideLabel,
+  });
 
-    const labelClasses = classNames(`${prefix}--label`, {
-      [`${prefix}--visually-hidden`]: hideLabel,
-    });
+  const label = labelText ? (
+    <label htmlFor={id} className={labelClasses}>
+      {labelText}
+    </label>
+  ) : null;
 
-    const label = labelText ? (
-      <label htmlFor={id} className={labelClasses}>
-        {labelText}
-      </label>
-    ) : null;
+  const errorMessage = invalid ? (
+    <div className={`${prefix}--form-requirement invalid`}>{invalidText}</div>
+  ) : null;
 
-    const errorMessage = invalid ? (
-      <div className={`${prefix}--form-requirement invalid`}>{invalidText}</div>
-    ) : null;
+  const helper = helperText ? (
+    <div className={`${prefix}--form__helper-text`}>{helperText}</div>
+  ) : null;
 
-    const helper = helperText ? (
-      <div className={`${prefix}--form__helper-text`}>{helperText}</div>
-    ) : null;
-
-    return (
-      <div className="wfp--form-item">
-        {label}
-        {helper}
-        <SingleDatePicker
-          date={onChange && value ? value : controlledValue}
-          focused={focusedInput}
-          hideKeyboardShortcutsPanel
-          onDateChange={(value)=>{
-            if (onChange) {
-              onChange(value);
-            }
-            setControlledValue({value}, ()=>{});
-          }}
-          onFocusChange={handleFocusChange}
-          {...other}
-        />
-        {errorMessage}
-      </div>
-    );
-  
-}
-
-
+  return (
+    <div className="wfp--form-item">
+      {label}
+      {helper}
+      <SingleDatePicker
+        date={onChange && value ? value : controlledValue}
+        focused={focusedInput}
+        hideKeyboardShortcutsPanel
+        onDateChange={(value) => {
+          if (onChange) {
+            onChange(value);
+          }
+          setControlledValue({ value }, () => {});
+        }}
+        onFocusChange={handleFocusChange}
+        {...other}
+      />
+      {errorMessage}
+    </div>
+  );
+};
 
 SingleDatePickerInput.propTypes = {
   /**
    * Provide the SingleDatePicker as a component
    */
-  datePicker: PropTypes.oneOfType([PropTypes.func.isRequired, PropTypes.object.isRequired]),
+  datePicker: PropTypes.oneOfType([
+    PropTypes.func.isRequired,
+    PropTypes.object.isRequired,
+  ]),
 
   onFocus: PropTypes.func,
 
@@ -180,4 +177,4 @@ SingleDatePickerInput.defaultProps = {
   onChange: () => {},
 };
 
-export {SingleDatePickerInput};
+export { SingleDatePickerInput };

@@ -7,7 +7,7 @@
 
 import React from 'react';
 import type { PropsWithChildren } from 'react';
-import classnames, { Argument } from 'classnames';
+import classNames from 'classnames';
 import useSettings from '../../hooks/useSettings';
 
 /** Value are typically used to show KPI values and additional information. */
@@ -15,7 +15,7 @@ type ValueProps = PropsWithChildren<{
   value?: React.ReactNode;
   secondaryValue?: React.ReactNode;
   title?: React.ReactNode;
-  className?: Argument;
+  className?: string;
 }>;
 
 const Value: React.FC<ValueProps> = ({
@@ -26,9 +26,9 @@ const Value: React.FC<ValueProps> = ({
   ...other
 }) => {
   const { prefix } = useSettings();
-  const classNames = classnames(`${prefix}--value`, className);
+  const classes = classNames(`${prefix}--value`, className);
   return (
-    <div className={classNames} {...other}>
+    <div className={classes} {...other}>
       <h4 className={`${prefix}--value__title`}>{title}</h4>
       <div className={`${prefix}--value__primary-value`}>{value}</div>
       <div className={`${prefix}--value__secondary-value`}>

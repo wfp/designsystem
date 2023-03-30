@@ -1,7 +1,7 @@
-import React from 'react';
+import * as React from 'react';
 // import Icon from '../Icon';
 import type { PropsWithChildren } from 'react';
-import classNames, { Argument } from 'classnames';
+import classNames from 'classnames';
 import { ChevronLeft } from '@un/icons-react';
 import useSettings from '../../hooks/useSettings';
 
@@ -9,7 +9,7 @@ type SidebarProps = PropsWithChildren<{
   active?: boolean | string | number;
   sidebar?: React.ReactNode;
   sidebarMobileHeader?: React.ReactNode;
-  className?: Argument;
+  className?: string;
 }>;
 
 const Sidebar: React.FC<SidebarProps> = ({
@@ -39,7 +39,7 @@ const Sidebar: React.FC<SidebarProps> = ({
 
 type SidebarHeaderProps = PropsWithChildren<{
   noPadding?: boolean;
-  className?: Argument;
+  className?: string;
 }>;
 
 const SidebarHeader: React.FC<SidebarHeaderProps> = ({
@@ -61,7 +61,7 @@ const SidebarHeader: React.FC<SidebarHeaderProps> = ({
 };
 
 type SidebarContentHeaderProps = PropsWithChildren<{
-  className?: Argument;
+  className?: string;
 }>;
 
 const SidebarContentHeader: React.FC<SidebarContentHeaderProps> = ({
@@ -84,7 +84,7 @@ const SidebarContentHeader: React.FC<SidebarContentHeaderProps> = ({
 };
 
 type SidebarContentBodyProps = PropsWithChildren<{
-  className?: Argument;
+  className?: string;
 }>;
 
 const SidebarContentBody: React.FC<SidebarContentBodyProps> = ({

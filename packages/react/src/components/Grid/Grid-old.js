@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import classnames from 'classnames';
+import classNames from 'classnames';
 import settings from '../../globals/js/settings';
 
 const { prefix } = settings;
@@ -8,7 +8,7 @@ const { prefix } = settings;
 /** Grid layout */
 const Grid = React.forwardRef(
   ({ gutter, children, grow, justify, align, className, ...other }, ref) => {
-    const wrapperClasses = classnames(`${prefix}--grid`, {
+    const wrapperClasses = classNames(`${prefix}--grid`, {
       [`${prefix}--grid--spacing-${gutter}`]: gutter,
       [`${prefix}--grid--grow`]: grow,
       [`${className}`]: className,

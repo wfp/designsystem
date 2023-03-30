@@ -1,16 +1,21 @@
-import React from 'react';
+import * as React from 'react';
 import Button from '../Button/Button';
 import useSettings from '../../hooks/useSettings';
 
 interface ModalFooterProps {
   passiveModal?: boolean;
   secondaryButtonText?: string;
-  onSecondaryButtonClick?: () => void;
+  onSecondaryButtonClick?: (
+    evt: Event,
+    trigger: 'button' | 'background' | 'key'
+  ) => void;
   primaryButtonText?: string;
+  // eslint-disable-next-line @typescript-eslint/ban-types
   onRequestSubmit?: () => {};
   primaryButtonDisabled?: boolean;
   secondaryButtonDisabled?: boolean;
   danger?: boolean;
+  prefix?: string;
   ref?: React.RefObject<HTMLInputElement>;
 }
 
@@ -27,6 +32,7 @@ const ModalFooter: React.FC<ModalFooterProps> = ({
 }) => {
   const { prefix } = useSettings();
   if (passiveModal) return null;
+
   return (
     <div className={`${prefix}--modal-footer`}>
       <div className={`${prefix}--modal__buttons-container`}>
@@ -35,7 +41,7 @@ const ModalFooter: React.FC<ModalFooterProps> = ({
             kind={danger ? 'tertiary' : 'secondary'}
             disabled={secondaryButtonDisabled}
             id="secondaryButton"
-            onClick={onSecondaryButtonClick}>
+            onClick={(e) => onSecondaryButtonClick(e, 'button')}>
             {secondaryButtonText}
           </Button>
         )}

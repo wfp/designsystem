@@ -2,7 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
-const RfFormItem = props => {
+const RfFormItem = (props) => {
   const showInvalid =
     props.meta &&
     ((props.meta.touched && props.meta.error) ||

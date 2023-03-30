@@ -1,11 +1,5 @@
-/**
- * Copyright IBM Corp. 2016, 2018
- *
- * This source code is licensed under the Apache-2.0 license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
-import React, { PropsWithChildren } from 'react';
+import * as React from 'react';
+import { PropsWithChildren } from 'react';
 import classNames from 'classnames';
 import useSettings from '../../hooks/useSettings';
 
@@ -28,6 +22,7 @@ const Checkbox: React.FC<PropsWithChildren<CheckboxProps>> = React.forwardRef(
       className,
       id,
       labelText,
+      // eslint-disable-next-line @typescript-eslint/no-empty-function
       onChange = () => {},
       indeterminate,
       hideLabel,
@@ -58,7 +53,8 @@ const Checkbox: React.FC<PropsWithChildren<CheckboxProps>> = React.forwardRef(
           }}
           className={`${prefix}--checkbox`}
           id={id || other.name}
-          ref={(el) => {
+          ref={
+            ref /*(el) => {
             if (el) {
               if (indeterminate) {
                 el.indeterminate = indeterminate;
@@ -69,7 +65,8 @@ const Checkbox: React.FC<PropsWithChildren<CheckboxProps>> = React.forwardRef(
             } else if (Object(ref) === ref) {
               ref.current = el;
             }
-          }}
+          }*/
+          }
         />
         <label
           htmlFor={id || other.name}

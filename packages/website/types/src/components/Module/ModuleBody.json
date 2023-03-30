@@ -1,0 +1,56 @@
+[
+  {
+    "tags": {},
+    "filePath": "src/components/Module/ModuleBody.tsx",
+    "description": "",
+    "displayName": "ModuleBody",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "src/components/Module/ModuleBody.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "centered": {
+        "defaultValue": null,
+        "description": "",
+        "name": "centered",
+        "declarations": [
+          {
+            "fileName": "src/components/Module/ModuleBody.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "noPadding": {
+        "defaultValue": null,
+        "description": "",
+        "name": "noPadding",
+        "declarations": [
+          {
+            "fileName": "src/components/Module/ModuleBody.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      }
+    }
+  }
+]

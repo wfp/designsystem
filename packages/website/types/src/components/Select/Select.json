@@ -1,0 +1,220 @@
+[
+  {
+    "tags": {},
+    "filePath": "src/components/Select/Select.tsx",
+    "description": "The select component allows users to choose one option from a list. It is used in forms for users to submit data.",
+    "displayName": "Select",
+    "methods": [],
+    "props": {
+      "inline": {
+        "defaultValue": null,
+        "description": "",
+        "name": "inline",
+        "parent": {
+          "fileName": "src/components/Select/Select.tsx",
+          "name": "SelectProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/Select/Select.tsx",
+            "name": "SelectProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "labelText": {
+        "defaultValue": null,
+        "description": "",
+        "name": "labelText",
+        "parent": {
+          "fileName": "src/components/Select/Select.tsx",
+          "name": "SelectProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/Select/Select.tsx",
+            "name": "SelectProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactNode"
+        }
+      },
+      "defaultValue": {
+        "defaultValue": null,
+        "description": "",
+        "name": "defaultValue",
+        "parent": {
+          "fileName": "src/components/Select/Select.tsx",
+          "name": "SelectProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/Select/Select.tsx",
+            "name": "SelectProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "iconDescription": {
+        "defaultValue": null,
+        "description": "",
+        "name": "iconDescription",
+        "parent": {
+          "fileName": "src/components/Select/Select.tsx",
+          "name": "SelectProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/Select/Select.tsx",
+            "name": "SelectProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "helperText": {
+        "defaultValue": null,
+        "description": "Provide text that is used alongside the control label for additional help",
+        "name": "helperText",
+        "parent": {
+          "fileName": "src/components/Select/Select.tsx",
+          "name": "SelectProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/Select/Select.tsx",
+            "name": "SelectProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactNode"
+        }
+      },
+      "light": {
+        "defaultValue": null,
+        "description": "Specify whether you want the light version of this control",
+        "name": "light",
+        "parent": {
+          "fileName": "src/components/Select/Select.tsx",
+          "name": "SelectProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/Select/Select.tsx",
+            "name": "SelectProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "small": {
+        "defaultValue": null,
+        "description": "Specify whether you want the small version of this control",
+        "name": "small",
+        "parent": {
+          "fileName": "src/components/Select/Select.tsx",
+          "name": "SelectProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/Select/Select.tsx",
+            "name": "SelectProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "id": {
+        "defaultValue": null,
+        "description": "",
+        "name": "id",
+        "parent": {
+          "fileName": "src/components/Select/Select.tsx",
+          "name": "SelectProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/Select/Select.tsx",
+            "name": "SelectProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "disabled": {
+        "defaultValue": null,
+        "description": "",
+        "name": "disabled",
+        "parent": {
+          "fileName": "src/components/Select/Select.tsx",
+          "name": "SelectProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/Select/Select.tsx",
+            "name": "SelectProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "name": {
+        "defaultValue": null,
+        "description": "",
+        "name": "name",
+        "parent": {
+          "fileName": "src/components/Select/Select.tsx",
+          "name": "SelectProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/Select/Select.tsx",
+            "name": "SelectProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "className": {
+        "defaultValue": null,
+        "description": "",
+        "name": "className",
+        "parent": {
+          "fileName": "src/components/Select/Select.tsx",
+          "name": "SelectProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/Select/Select.tsx",
+            "name": "SelectProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      }
+    }
+  }
+]

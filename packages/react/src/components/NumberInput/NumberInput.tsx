@@ -1,9 +1,11 @@
-import React, { useState, useRef, useEffect, PropsWithChildren } from 'react';
+/* eslint-disable @typescript-eslint/no-empty-function */
+import * as React from 'react';
+import { useState, useRef, useEffect } from 'react';
 import classNames from 'classnames';
 import useSettings from '../../hooks/useSettings';
-import Input from '../Input';
+import Input, { InputProps } from '../Input';
 
-interface NumberInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
+interface NumberInputProps extends InputProps {
   max?: number;
   min?: number;
   step?: number;
@@ -16,8 +18,17 @@ interface NumberInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   hideControls?: boolean;
   light?: boolean;
   inputRef?: React.RefObject<HTMLInputElement>;
-  onChange?: (evt?: any, value?: number, direction?: string) => void;
-  onClick?: (evt?: any, value?: number, direction?: string) => void;
+  pattern?: string;
+  onChange?: (
+    evt?: React.ChangeEvent,
+    value?: number,
+    direction?: string
+  ) => void;
+  onClick?: (
+    evt?: React.MouseEvent,
+    value?: number,
+    direction?: string
+  ) => void;
   value?: '' | number;
 }
 
@@ -38,27 +49,27 @@ const capMax = (max, value) =>
 
 /** The number input component is used for entering numeric values and includes controls for incrementally increasing or decreasing the value */
 
-const NumberInput: React.FC<PropsWithChildren<NumberInputProps>> =
-  React.forwardRef((props, ref) => {
+const NumberInput: React.FC<NumberInputProps> = React.forwardRef(
+  (props, ref) => {
     const {
-      additional,
+      // additional,
       className,
       disabled,
-      formItemClassName,
+      // formItemClassName,
       id,
       hideLabel,
       hideControls,
-      labelText,
+      //labelText,
       max,
       min,
       step = 1,
-      invalid,
-      invalidText,
+      //invalid,
+      //invalidText,
       onChange = () => {},
       onClick = () => {},
       helperText,
       light,
-      allowEmpty,
+      //allowEmpty,
       inputRef = ref,
       pattern = '[0-9]*',
       ...other
@@ -72,8 +83,8 @@ const NumberInput: React.FC<PropsWithChildren<NumberInputProps>> =
       setValue(props.value);
     }, [props.value]);
 
-    const newInputRef = useRef(null);
-    var _inputRef = inputRef ? inputRef : newInputRef;
+    const newInputRef = useRef<HTMLInputElement>(null);
+    const _inputRef = inputRef ? inputRef : newInputRef;
 
     const handleChange = (evt) => {
       if (!disabled) {
@@ -129,42 +140,34 @@ const NumberInput: React.FC<PropsWithChildren<NumberInputProps>> =
       value: value,
     };
 
-    // const buttonProps = {
-    //   disabled,
-    //   type: "button",
-    // };
-
     return (
       <Input {...props} formItemClassName={numberInputClasses}>
-        {() => {
-          return (
-            <div className={`${prefix}--number__controls`}>
-              <button
-                className={`${prefix}--number__control-btn up-icon`}
-                type="button"
-                disabled={disabled}
-                onClick={(evt) => handleArrowClick(evt, 'up')}>
-                +
-              </button>
-              <button
-                className={`${prefix}--number__control-btn down-icon`}
-                type="button"
-                disabled={disabled}
-                onClick={(evt) => handleArrowClick(evt, 'down')}>
-                −
-              </button>
-              <input
-                type="number"
-                pattern={pattern}
-                {...other}
-                {...newProps}
-                ref={_inputRef}
-              />
-            </div>
-          );
-        }}
+        <div className={`${prefix}--number__controls`}>
+          <button
+            className={`${prefix}--number__control-btn up-icon`}
+            type="button"
+            disabled={disabled}
+            onClick={(evt) => handleArrowClick(evt, 'up')}>
+            +
+          </button>
+          <button
+            className={`${prefix}--number__control-btn down-icon`}
+            type="button"
+            disabled={disabled}
+            onClick={(evt) => handleArrowClick(evt, 'down')}>
+            −
+          </button>
+          <input
+            type="number"
+            pattern={pattern}
+            {...other}
+            {...newProps}
+            ref={_inputRef}
+          />
+        </div>
       </Input>
     );
-  });
+  }
+);
 
 export default NumberInput;

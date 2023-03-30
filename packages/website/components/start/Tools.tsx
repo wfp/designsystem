@@ -1,7 +1,5 @@
 import React from 'react';
 import styles from './tools.module.scss';
-import Image from 'next/image';
-
 import Link from 'next/link';
 import MoreLink from '../MoreLink';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -14,19 +12,23 @@ import {
   faSatellite,
 } from '@fortawesome/pro-light-svg-icons';
 import { faFigma, faNpm } from '@fortawesome/free-brands-svg-icons';
-import { useTranslation } from 'next-i18next';
 
-import figmaLogo from './figma_logo.svg';
+/* interface PossibilitiesContainerProps {
+  title?: string;
+  background?: string;
+  content: string | JSX.Element;
+  link?: string;
+  npmLink?: boolean;
+  figmaLink?: boolean;
+} */
 
 function PossibilitiesContainer({
-  background,
   title,
-  icon,
   content,
   link = '',
   npmLink,
   figmaLink,
-}) {
+}: any) {
   return (
     <div className={styles.container} /*style={{ background }}*/>
       {/*<div className={styles.icon}>

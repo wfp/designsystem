@@ -1,0 +1,174 @@
+[
+  {
+    "tags": {},
+    "filePath": "src/components/Footer/FooterExternal.tsx",
+    "description": "",
+    "displayName": "FooterExternal",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "src/components/Footer/FooterExternal.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "productName": {
+        "defaultValue": null,
+        "description": "",
+        "name": "productName",
+        "declarations": [
+          {
+            "fileName": "src/components/Footer/FooterExternal.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactNode"
+        }
+      },
+      "metaContent": {
+        "defaultValue": null,
+        "description": "",
+        "name": "metaContent",
+        "declarations": [
+          {
+            "fileName": "src/components/Footer/FooterExternal.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactNode"
+        }
+      },
+      "metaLinks": {
+        "defaultValue": null,
+        "description": "",
+        "name": "metaLinks",
+        "declarations": [
+          {
+            "fileName": "src/components/Footer/FooterExternal.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactNode"
+        }
+      },
+      "pageWidth": {
+        "defaultValue": {
+          "value": "lg"
+        },
+        "description": "",
+        "name": "pageWidth",
+        "declarations": [
+          {
+            "fileName": "src/components/Footer/FooterExternal.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ScreenSize"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "src/components/Footer/FooterExternal.tsx",
+    "description": "",
+    "displayName": "LinksColumn",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "src/components/Footer/FooterExternal.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "title": {
+        "defaultValue": null,
+        "description": "",
+        "name": "title",
+        "declarations": [
+          {
+            "fileName": "src/components/Footer/FooterExternal.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "src/components/Footer/FooterExternal.tsx",
+    "description": "",
+    "displayName": "FooterMetaLink",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "",
+        "name": "className",
+        "parent": {
+          "fileName": "src/components/Footer/FooterExternal.tsx",
+          "name": "FooterMetaLinkProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/Footer/FooterExternal.tsx",
+            "name": "FooterMetaLinkProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "href": {
+        "defaultValue": null,
+        "description": "",
+        "name": "href",
+        "parent": {
+          "fileName": "src/components/Footer/FooterExternal.tsx",
+          "name": "FooterMetaLinkProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/Footer/FooterExternal.tsx",
+            "name": "FooterMetaLinkProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      }
+    }
+  }
+]

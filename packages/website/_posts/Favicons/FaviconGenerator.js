@@ -69,7 +69,6 @@ export default function FaviconGenerator() {
 
     const { Package } = await import('./favicon/favicon.js');
 
-    console.log('faviconMod:', Package);
     const dataurl = Package.generate(canvas);
     //const dataurl = ico.generate([16, 32, 48]);
     setDataUrl(dataurl);
@@ -82,7 +81,7 @@ export default function FaviconGenerator() {
   };
 
   const buttonElements = Object.keys(dataUrl).map((file, i) => (
-    <React.Fragment>
+    <React.Fragment key={i}>
       <Button
         download={`wfp-favicon-${file}.${file.substring(0, 3)}`}
         kind="tertiary"

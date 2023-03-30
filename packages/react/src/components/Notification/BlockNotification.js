@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { useState } from 'react';
-import classnames from 'classnames';
+import classNames from 'classnames';
 import useSettings from '../../hooks/useSettings';
 import { NotificationIcon, NotificationTextDetails } from './Notification';
 export function BlockNotification({
@@ -23,7 +23,7 @@ export function BlockNotification({
   ...other
 }) {
   const { prefix } = useSettings();
-  const containerClassName = classnames(className, {
+  const containerClassName = classNames(className, {
     [`${prefix}--inline-notification`]: true,
     [`${prefix}--block-notification`]: true,
     [`${prefix}--inline-notification--low-contrast`]: lowContrast,

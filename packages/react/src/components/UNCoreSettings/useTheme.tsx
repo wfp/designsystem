@@ -1,7 +1,7 @@
-import React, { useContext } from 'react';
-import { UNCoreContext } from './UNCoreProvider';
+import { useContext } from 'react';
+import { AppContextInterface, UNCoreContext } from './UNCoreProvider';
 
-export default function useTheme() {
+export default function useTheme(): AppContextInterface {
   const settings = useContext(UNCoreContext);
   return settings;
 }

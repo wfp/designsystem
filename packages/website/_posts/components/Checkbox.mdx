@@ -4,6 +4,9 @@ title: 'Checkbox'
 excerpt: 'Checkboxes are used for multiple choices, not for mutually exclusive choices.'
 coverImage: '../sample-image.jpg'
 slug: 'Components/form/Checkbox'
+mainComponent: 'Checkbox'
+defaultProps:
+  labelText: 'Checkbox label'
 ---
 
 ## Usage
@@ -31,6 +34,48 @@ Can be used in forms on a full page, in modals, or on side panels.
 #### When not to use
 
 If a user can select only one option from a list, radio buttons should be used instead of checkboxes. Checkboxes allow the user to select multiple items in a set whereas radio buttons allow the user to select only one option.
+
+### Grouping
+
+#### Horizontal
+
+```jsx live
+<InputGroup labelText="Input group" helperText="Describing the input group">
+  <Checkbox id="check-1" labelText="Option 1" />
+  <Checkbox id="check-2" labelText="Option 2" />
+  <Checkbox id="check-3" labelText="Option 3" />
+</InputGroup>
+```
+
+#### Vertical
+
+```jsx live
+<InputGroup
+  labelText="Input group"
+  helperText="Describing the input group"
+  vertical>
+  <Checkbox id="check-1" labelText="Option 1" />
+  <Checkbox id="check-2" labelText="Option 2" />
+  <Checkbox id="check-3" labelText="Option 3" />
+</InputGroup>
+```
+
+```jsx live reactHookForm
+<InputGroup labelText="Input group" helperText="Describing the input group">
+  <Checkbox
+    id="1"
+    name="check-1"
+    labelText="Option 1"
+    {...register('check-1')}
+  />
+  <Checkbox
+    id="2"
+    name="check-2"
+    labelText="Option 2"
+    {...register('check-2')}
+  />
+</InputGroup>
+```
 
 ## Behaviour
 

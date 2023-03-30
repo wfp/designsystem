@@ -1,10 +1,6 @@
 import React from 'react';
 import { Link } from '@un/react';
-//import logo from '@un/logos/optimized/wfpLogoAcronymBlackAll.svg';
-import Image from 'next/image';
 import logos from '@un/logos/index.json';
-
-import dynamic from 'next/dynamic';
 import * as wfpLogos from '@un/logos/umd';
 import styles from './logos.module.scss';
 
@@ -12,13 +8,13 @@ const capitalize = (word) => {
   return word.charAt(0).toUpperCase() + word.slice(1);
 };
 
-const LogoElement = ({ color, logoKind, language, type, fileOptimized }) => {
+const LogoElement = ({ color, type, language }: any) => {
   const fileTypes = ['.svg', /*'.png', '@4x.png',*/ '.png'];
   const backgroundColor = color === 'white' ? '#454646' : '#FFFFFF';
-  const width =
+  /*const width =
     logoKind === 'standard' || logoKind === 'extended' ? 'auto' : 'auto';
   const height =
-    logoKind === 'standard' || logoKind === 'extended' ? '40px' : '80px';
+    logoKind === 'standard' || logoKind === 'extended' ? '40px' : '80px';*/
 
   const LogoElement =
     wfpLogos[
@@ -44,7 +40,7 @@ const LogoElement = ({ color, logoKind, language, type, fileOptimized }) => {
       {fileTypes.map((fileType, i) => (
         <span key={i}>
           <Link
-            small
+            size="sm"
             style={{ marginRight: '0.5em', fontSize: '0.7em' }}
             target="\_blank"
             href={`${process.env.STORYBOOK_ASSETS}`}>
@@ -91,9 +87,6 @@ export default function Logos() {
   ];
   const colors = ['blue', 'black', 'white'];
   const colorsSdg = ['colour'];
-  const languages = ['en', 'es', 'fr', 'ar'];
-
-  console.log('logos', logos, Object.values(logos));
 
   const colorList = logoKinds.map((logoKind, i) => (
     <div key={i} style={{ marginBottom: '1em' }}>

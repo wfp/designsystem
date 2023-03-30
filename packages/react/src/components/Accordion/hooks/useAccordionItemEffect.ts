@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
+
 import { useEffect, useRef, useCallback } from 'react';
 import { ItemStateOptions } from '../utils/constants';
 import { useAccordionContext, getItemState } from './useAccordionContext';
@@ -5,9 +7,9 @@ import { useAccordionContext, getItemState } from './useAccordionContext';
 const useAccordionItemEffect = <E extends Element>({
   itemKey,
   initialEntered,
-  disabled
+  disabled,
 }: ItemStateOptions = {}) => {
-  const itemRef = useRef<E>(null);
+  const itemRef = useRef<HTMLInputElement>(null);
   const context = useAccordionContext();
   const key = itemKey ?? itemRef.current!;
   const state = getItemState(context, key, initialEntered);
@@ -23,7 +25,10 @@ const useAccordionItemEffect = <E extends Element>({
   return {
     itemRef,
     state,
-    toggle: useCallback((toEnter?: boolean) => toggle(key, toEnter), [toggle, key])
+    toggle: useCallback(
+      (toEnter?: boolean) => toggle(key, toEnter),
+      [toggle, key]
+    ),
   };
 };
 

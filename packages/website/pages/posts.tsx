@@ -2,11 +2,9 @@ import React from 'react';
 import Articles from '../components/Blog/Articles';
 import Layout from '../components/Blog/Layout';
 import { Wrapper } from '@un/react';
-import { getAllPosts, postsDirectory } from '../lib/getPost';
-import styles from './index.module.scss';
-import path from 'path';
+import { getAllPosts } from '../lib/getPost';
 
-const Posts = ({ articles }) => {
+const Posts = ({ articles }: any) => {
   return (
     <Layout>
       <Wrapper pageWidth="md">

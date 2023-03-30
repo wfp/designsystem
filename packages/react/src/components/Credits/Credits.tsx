@@ -1,11 +1,11 @@
-import React from 'react';
+import * as React from 'react';
 import type { PropsWithChildren } from 'react';
-import classnames, { Argument } from 'classnames';
+import classNames from 'classnames';
 import useSettings from '../../hooks/useSettings';
 
 type CreditsProps = PropsWithChildren<{
   info?: string;
-  className?: Argument;
+  className?: string;
 }>;
 /** Credits are mostly used when a photo need a source attribution. */
 const Credits: React.FC<CreditsProps> = ({
@@ -15,9 +15,9 @@ const Credits: React.FC<CreditsProps> = ({
   ...other
 }) => {
   const { prefix } = useSettings();
-  const classNames = classnames(`${prefix}--credits`, className);
+  const classes = classNames(`${prefix}--credits`, className);
   return (
-    <div className={classNames} {...other}>
+    <div className={classes} {...other}>
       <div className={`${prefix}--credits__info`}>{info}</div>
       {children}
     </div>

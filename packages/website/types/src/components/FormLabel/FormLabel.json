@@ -1,0 +1,41 @@
+[
+  {
+    "tags": {},
+    "filePath": "src/components/FormLabel/FormLabel.tsx",
+    "description": "",
+    "displayName": "FormLabel",
+    "methods": [],
+    "props": {
+      "id": {
+        "defaultValue": null,
+        "description": "",
+        "name": "id",
+        "declarations": [
+          {
+            "fileName": "src/components/FormLabel/FormLabel.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "className": {
+        "defaultValue": null,
+        "description": "",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "src/components/FormLabel/FormLabel.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      }
+    }
+  }
+]

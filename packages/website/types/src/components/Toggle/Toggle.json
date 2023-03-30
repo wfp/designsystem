@@ -1,0 +1,146 @@
+[
+  {
+    "tags": {},
+    "filePath": "src/components/Toggle/Toggle.tsx",
+    "description": "",
+    "displayName": "Toggle",
+    "methods": [],
+    "props": {
+      "defaultToggled": {
+        "defaultValue": null,
+        "description": "",
+        "name": "defaultToggled",
+        "declarations": [
+          {
+            "fileName": "src/components/Toggle/Toggle.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "toggled": {
+        "defaultValue": null,
+        "description": "",
+        "name": "toggled",
+        "declarations": [
+          {
+            "fileName": "src/components/Toggle/Toggle.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "labelA": {
+        "defaultValue": null,
+        "description": "",
+        "name": "labelA",
+        "declarations": [
+          {
+            "fileName": "src/components/Toggle/Toggle.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": true,
+        "type": {
+          "name": "string"
+        }
+      },
+      "labelB": {
+        "defaultValue": null,
+        "description": "",
+        "name": "labelB",
+        "declarations": [
+          {
+            "fileName": "src/components/Toggle/Toggle.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": true,
+        "type": {
+          "name": "string"
+        }
+      },
+      "onToggle": {
+        "defaultValue": null,
+        "description": "",
+        "name": "onToggle",
+        "declarations": [
+          {
+            "fileName": "src/components/Toggle/Toggle.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "(value: boolean, htmlFor: string, event: ChangeEvent<HTMLInputElement>) => void"
+        }
+      },
+      "className": {
+        "defaultValue": null,
+        "description": "",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "src/components/Toggle/Toggle.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "id": {
+        "defaultValue": null,
+        "description": "",
+        "name": "id",
+        "declarations": [
+          {
+            "fileName": "src/components/Toggle/Toggle.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "name": {
+        "defaultValue": null,
+        "description": "",
+        "name": "name",
+        "declarations": [
+          {
+            "fileName": "src/components/Toggle/Toggle.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": true,
+        "type": {
+          "name": "string"
+        }
+      },
+      "onChange": {
+        "defaultValue": null,
+        "description": "",
+        "name": "onChange",
+        "declarations": [
+          {
+            "fileName": "src/components/Toggle/Toggle.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": true,
+        "type": {
+          "name": "(event: ChangeEvent<HTMLInputElement>) => void"
+        }
+      }
+    }
+  }
+]

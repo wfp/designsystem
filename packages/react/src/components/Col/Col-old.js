@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import classnames from 'classnames';
+import classNames from 'classnames';
 import settings from '../../globals/js/settings';
 
 const { prefix } = settings;
@@ -11,7 +11,7 @@ const Col = React.forwardRef(
     { children, span, className, innerStyle, lg, md, sm, xs, ...other },
     ref
   ) => {
-    const wrapperClasses = classnames(`${prefix}--grid-col`, {
+    const wrapperClasses = classNames(`${prefix}--grid-col`, {
       [`${prefix}--col--span-${span}`]: span,
       [`${prefix}--col--lg--${lg}`]: lg,
       [`${prefix}--col--lg--${md}`]: md,
@@ -20,7 +20,7 @@ const Col = React.forwardRef(
       [`${className}`]: className,
     });
 
-    const innerClasses = classnames(`${prefix}--container-style`);
+    const innerClasses = classNames(`${prefix}--container-style`);
     return (
       <div ref={ref} className={wrapperClasses} {...other}>
         <div className={innerClasses} style={innerStyle}>

@@ -1,0 +1,41 @@
+[
+  {
+    "tags": {},
+    "filePath": "src/components/AnchorNavigation/AnchorNavigation.tsx",
+    "description": "",
+    "displayName": "AnchorNavigation",
+    "methods": [],
+    "props": {
+      "title": {
+        "defaultValue": null,
+        "description": "",
+        "name": "title",
+        "declarations": [
+          {
+            "fileName": "src/components/AnchorNavigation/AnchorNavigation.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "className": {
+        "defaultValue": null,
+        "description": "",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "src/components/AnchorNavigation/AnchorNavigation.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      }
+    }
+  }
+]

@@ -1,0 +1,106 @@
+[
+  {
+    "tags": {},
+    "filePath": "src/components/SelectItem/SelectItem.tsx",
+    "description": "",
+    "displayName": "SelectItem",
+    "methods": [],
+    "props": {
+      "value": {
+        "defaultValue": null,
+        "description": "",
+        "name": "value",
+        "parent": {
+          "fileName": "src/components/SelectItem/SelectItem.tsx",
+          "name": "SelectItemProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/SelectItem/SelectItem.tsx",
+            "name": "SelectItemProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | number"
+        }
+      },
+      "className": {
+        "defaultValue": null,
+        "description": "",
+        "name": "className",
+        "parent": {
+          "fileName": "src/components/SelectItem/SelectItem.tsx",
+          "name": "SelectItemProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/SelectItem/SelectItem.tsx",
+            "name": "SelectItemProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "disabled": {
+        "defaultValue": null,
+        "description": "",
+        "name": "disabled",
+        "parent": {
+          "fileName": "src/components/SelectItem/SelectItem.tsx",
+          "name": "SelectItemProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/SelectItem/SelectItem.tsx",
+            "name": "SelectItemProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "hidden": {
+        "defaultValue": null,
+        "description": "",
+        "name": "hidden",
+        "parent": {
+          "fileName": "src/components/SelectItem/SelectItem.tsx",
+          "name": "SelectItemProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/SelectItem/SelectItem.tsx",
+            "name": "SelectItemProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "text": {
+        "defaultValue": null,
+        "description": "",
+        "name": "text",
+        "parent": {
+          "fileName": "src/components/SelectItem/SelectItem.tsx",
+          "name": "SelectItemProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/SelectItem/SelectItem.tsx",
+            "name": "SelectItemProps"
+          }
+        ],
+        "required": true,
+        "type": {
+          "name": "string"
+        }
+      }
+    }
+  }
+]

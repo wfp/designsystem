@@ -1,0 +1,209 @@
+[
+  {
+    "tags": {},
+    "filePath": "src/components/TablePagination/TablePagination.tsx",
+    "description": "",
+    "displayName": "TablePagination",
+    "methods": [],
+    "props": {
+      "data": {
+        "defaultValue": null,
+        "description": "",
+        "name": "data",
+        "required": true,
+        "type": {
+          "name": "any"
+        }
+      },
+      "page": {
+        "defaultValue": null,
+        "description": "",
+        "name": "page",
+        "required": true,
+        "type": {
+          "name": "any"
+        }
+      },
+      "pageSizeOptions": {
+        "defaultValue": null,
+        "description": "",
+        "name": "pageSizeOptions",
+        "required": true,
+        "type": {
+          "name": "any"
+        }
+      },
+      "paginationClassName": {
+        "defaultValue": null,
+        "description": "",
+        "name": "paginationClassName",
+        "required": true,
+        "type": {
+          "name": "any"
+        }
+      },
+      "totalItems": {
+        "defaultValue": null,
+        "description": "",
+        "name": "totalItems",
+        "required": true,
+        "type": {
+          "name": "any"
+        }
+      },
+      "style": {
+        "defaultValue": null,
+        "description": "",
+        "name": "style",
+        "required": true,
+        "type": {
+          "name": "any"
+        }
+      },
+      "onPageChange": {
+        "defaultValue": null,
+        "description": "",
+        "name": "onPageChange",
+        "required": true,
+        "type": {
+          "name": "any"
+        }
+      },
+      "onPageSizeChange": {
+        "defaultValue": null,
+        "description": "",
+        "name": "onPageSizeChange",
+        "required": true,
+        "type": {
+          "name": "any"
+        }
+      },
+      "isLastPage": {
+        "defaultValue": null,
+        "description": "",
+        "name": "isLastPage",
+        "required": true,
+        "type": {
+          "name": "any"
+        }
+      },
+      "pages": {
+        "defaultValue": null,
+        "description": "",
+        "name": "pages",
+        "required": true,
+        "type": {
+          "name": "any"
+        }
+      },
+      "pageInputDisabled": {
+        "defaultValue": null,
+        "description": "",
+        "name": "pageInputDisabled",
+        "required": true,
+        "type": {
+          "name": "any"
+        }
+      },
+      "pageSize": {
+        "defaultValue": null,
+        "description": "",
+        "name": "pageSize",
+        "required": true,
+        "type": {
+          "name": "any"
+        }
+      },
+      "pagesUnknown": {
+        "defaultValue": null,
+        "description": "",
+        "name": "pagesUnknown",
+        "required": true,
+        "type": {
+          "name": "any"
+        }
+      },
+      "backwardText": {
+        "defaultValue": null,
+        "description": "",
+        "name": "backwardText",
+        "required": true,
+        "type": {
+          "name": "any"
+        }
+      },
+      "forwardText": {
+        "defaultValue": null,
+        "description": "",
+        "name": "forwardText",
+        "required": true,
+        "type": {
+          "name": "any"
+        }
+      },
+      "itemsPerPageText": {
+        "defaultValue": null,
+        "description": "",
+        "name": "itemsPerPageText",
+        "required": true,
+        "type": {
+          "name": "any"
+        }
+      },
+      "itemsPerPageFollowsText": {
+        "defaultValue": null,
+        "description": "",
+        "name": "itemsPerPageFollowsText",
+        "required": true,
+        "type": {
+          "name": "any"
+        }
+      },
+      "itemRangeText": {
+        "defaultValue": null,
+        "description": "",
+        "name": "itemRangeText",
+        "required": true,
+        "type": {
+          "name": "any"
+        }
+      },
+      "pageRangeText": {
+        "defaultValue": null,
+        "description": "",
+        "name": "pageRangeText",
+        "required": true,
+        "type": {
+          "name": "any"
+        }
+      },
+      "pageSizesDisabled": {
+        "defaultValue": null,
+        "description": "",
+        "name": "pageSizesDisabled",
+        "required": true,
+        "type": {
+          "name": "any"
+        }
+      },
+      "itemText": {
+        "defaultValue": null,
+        "description": "",
+        "name": "itemText",
+        "required": true,
+        "type": {
+          "name": "any"
+        }
+      },
+      "pageNumberText": {
+        "defaultValue": null,
+        "description": "",
+        "name": "pageNumberText",
+        "required": true,
+        "type": {
+          "name": "any"
+        }
+      }
+    }
+  }
+]

@@ -1,0 +1,130 @@
+[
+  {
+    "tags": {},
+    "filePath": "src/components/SecondaryNavigation/SecondaryNavigation.tsx",
+    "description": "",
+    "displayName": "SecondaryNavigationTitle",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "src/components/SecondaryNavigation/SecondaryNavigation.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "src/components/SecondaryNavigation/SecondaryNavigation.tsx",
+    "description": "",
+    "displayName": "SecondaryNavigation",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "",
+        "name": "className",
+        "parent": {
+          "fileName": "src/components/SecondaryNavigation/SecondaryNavigation.tsx",
+          "name": "SecondaryNavigationProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/SecondaryNavigation/SecondaryNavigation.tsx",
+            "name": "SecondaryNavigationProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "pageWidth": {
+        "defaultValue": null,
+        "description": "",
+        "name": "pageWidth",
+        "parent": {
+          "fileName": "src/components/SecondaryNavigation/SecondaryNavigation.tsx",
+          "name": "SecondaryNavigationProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/SecondaryNavigation/SecondaryNavigation.tsx",
+            "name": "SecondaryNavigationProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "\"sm\" | \"md\" | \"lg\" | \"full\""
+        }
+      },
+      "wrapperClassName": {
+        "defaultValue": null,
+        "description": "",
+        "name": "wrapperClassName",
+        "parent": {
+          "fileName": "src/components/SecondaryNavigation/SecondaryNavigation.tsx",
+          "name": "SecondaryNavigationProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/SecondaryNavigation/SecondaryNavigation.tsx",
+            "name": "SecondaryNavigationProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "id": {
+        "defaultValue": null,
+        "description": "",
+        "name": "id",
+        "parent": {
+          "fileName": "src/components/SecondaryNavigation/SecondaryNavigation.tsx",
+          "name": "SecondaryNavigationProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/SecondaryNavigation/SecondaryNavigation.tsx",
+            "name": "SecondaryNavigationProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "additional": {
+        "defaultValue": null,
+        "description": "",
+        "name": "additional",
+        "parent": {
+          "fileName": "src/components/SecondaryNavigation/SecondaryNavigation.tsx",
+          "name": "SecondaryNavigationProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/SecondaryNavigation/SecondaryNavigation.tsx",
+            "name": "SecondaryNavigationProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactNode"
+        }
+      }
+    }
+  }
+]

@@ -1,0 +1,315 @@
+[
+  {
+    "tags": {},
+    "filePath": "src/components/Footer/Footer.tsx",
+    "description": "",
+    "displayName": "Footer",
+    "methods": [],
+    "props": {
+      "external": {
+        "defaultValue": null,
+        "description": "",
+        "name": "external",
+        "parent": {
+          "fileName": "src/components/Footer/Footer.tsx",
+          "name": "FooterProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/Footer/Footer.tsx",
+            "name": "FooterProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "metaContent": {
+        "defaultValue": null,
+        "description": "",
+        "name": "metaContent",
+        "parent": {
+          "fileName": "src/components/Footer/Footer.tsx",
+          "name": "FooterProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/Footer/Footer.tsx",
+            "name": "FooterProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactNode"
+        }
+      },
+      "metaLinks": {
+        "defaultValue": null,
+        "description": "",
+        "name": "metaLinks",
+        "parent": {
+          "fileName": "src/components/Footer/Footer.tsx",
+          "name": "FooterProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/Footer/Footer.tsx",
+            "name": "FooterProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactNode"
+        }
+      },
+      "logo": {
+        "defaultValue": null,
+        "description": "",
+        "name": "logo",
+        "parent": {
+          "fileName": "src/components/Footer/Footer.tsx",
+          "name": "FooterProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/Footer/Footer.tsx",
+            "name": "FooterProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactNode"
+        }
+      },
+      "logoExtended": {
+        "defaultValue": null,
+        "description": "",
+        "name": "logoExtended",
+        "parent": {
+          "fileName": "src/components/Footer/Footer.tsx",
+          "name": "FooterProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/Footer/Footer.tsx",
+            "name": "FooterProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactNode"
+        }
+      },
+      "pageWidth": {
+        "defaultValue": null,
+        "description": "",
+        "name": "pageWidth",
+        "parent": {
+          "fileName": "src/components/Footer/Footer.tsx",
+          "name": "FooterProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/Footer/Footer.tsx",
+            "name": "FooterProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ScreenSize"
+        }
+      },
+      "sdgLogo": {
+        "defaultValue": null,
+        "description": "",
+        "name": "sdgLogo",
+        "parent": {
+          "fileName": "src/components/Footer/Footer.tsx",
+          "name": "FooterProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/Footer/Footer.tsx",
+            "name": "FooterProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactNode"
+        }
+      },
+      "subTitle": {
+        "defaultValue": null,
+        "description": "",
+        "name": "subTitle",
+        "parent": {
+          "fileName": "src/components/Footer/Footer.tsx",
+          "name": "FooterProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/Footer/Footer.tsx",
+            "name": "FooterProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactNode"
+        }
+      },
+      "secondary": {
+        "defaultValue": null,
+        "description": "",
+        "name": "secondary",
+        "parent": {
+          "fileName": "src/components/Footer/Footer.tsx",
+          "name": "FooterProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/Footer/Footer.tsx",
+            "name": "FooterProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactNode"
+        }
+      },
+      "className": {
+        "defaultValue": null,
+        "description": "",
+        "name": "className",
+        "parent": {
+          "fileName": "src/components/Footer/Footer.tsx",
+          "name": "FooterProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/Footer/Footer.tsx",
+            "name": "FooterProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "labelOne": {
+        "defaultValue": null,
+        "description": "",
+        "name": "labelOne",
+        "parent": {
+          "fileName": "src/components/Footer/Footer.tsx",
+          "name": "FooterProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/Footer/Footer.tsx",
+            "name": "FooterProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "labelTwo": {
+        "defaultValue": null,
+        "description": "",
+        "name": "labelTwo",
+        "parent": {
+          "fileName": "src/components/Footer/Footer.tsx",
+          "name": "FooterProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/Footer/Footer.tsx",
+            "name": "FooterProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "linkTextOne": {
+        "defaultValue": null,
+        "description": "",
+        "name": "linkTextOne",
+        "parent": {
+          "fileName": "src/components/Footer/Footer.tsx",
+          "name": "FooterProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/Footer/Footer.tsx",
+            "name": "FooterProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "linkHrefOne": {
+        "defaultValue": null,
+        "description": "",
+        "name": "linkHrefOne",
+        "parent": {
+          "fileName": "src/components/Footer/Footer.tsx",
+          "name": "FooterProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/Footer/Footer.tsx",
+            "name": "FooterProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "linkTextTwo": {
+        "defaultValue": null,
+        "description": "",
+        "name": "linkTextTwo",
+        "parent": {
+          "fileName": "src/components/Footer/Footer.tsx",
+          "name": "FooterProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/Footer/Footer.tsx",
+            "name": "FooterProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "linkHrefTwo": {
+        "defaultValue": null,
+        "description": "",
+        "name": "linkHrefTwo",
+        "parent": {
+          "fileName": "src/components/Footer/Footer.tsx",
+          "name": "FooterProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/Footer/Footer.tsx",
+            "name": "FooterProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      }
+    }
+  }
+]

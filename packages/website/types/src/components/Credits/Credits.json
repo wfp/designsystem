@@ -1,0 +1,41 @@
+[
+  {
+    "tags": {},
+    "filePath": "src/components/Credits/Credits.tsx",
+    "description": "Credits are mostly used when a photo need a source attribution.",
+    "displayName": "Credits",
+    "methods": [],
+    "props": {
+      "info": {
+        "defaultValue": null,
+        "description": "",
+        "name": "info",
+        "declarations": [
+          {
+            "fileName": "src/components/Credits/Credits.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "className": {
+        "defaultValue": null,
+        "description": "",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "src/components/Credits/Credits.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      }
+    }
+  }
+]

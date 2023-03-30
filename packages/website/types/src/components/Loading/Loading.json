@@ -1,0 +1,87 @@
+[
+  {
+    "tags": {},
+    "filePath": "src/components/Loading/Loading.tsx",
+    "description": "Loading spinners are used when retrieving data or performing slow computations, and help to notify users that loading is underway.",
+    "displayName": "Loading",
+    "methods": [],
+    "props": {
+      "active": {
+        "defaultValue": null,
+        "description": "",
+        "name": "active",
+        "parent": {
+          "fileName": "src/components/Loading/Loading.tsx",
+          "name": "LoadingProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/Loading/Loading.tsx",
+            "name": "LoadingProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "className": {
+        "defaultValue": null,
+        "description": "",
+        "name": "className",
+        "parent": {
+          "fileName": "src/components/Loading/Loading.tsx",
+          "name": "LoadingProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/Loading/Loading.tsx",
+            "name": "LoadingProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "withOverlay": {
+        "defaultValue": null,
+        "description": "Specify whether you want the loader to be applied with an overlay",
+        "name": "withOverlay",
+        "parent": {
+          "fileName": "src/components/Loading/Loading.tsx",
+          "name": "LoadingProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/Loading/Loading.tsx",
+            "name": "LoadingProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "small": {
+        "defaultValue": null,
+        "description": "Specify whether you would like the small variant of <Loading>",
+        "name": "small",
+        "parent": {
+          "fileName": "src/components/Loading/Loading.tsx",
+          "name": "LoadingProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/Loading/Loading.tsx",
+            "name": "LoadingProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      }
+    }
+  }
+]

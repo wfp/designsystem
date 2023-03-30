@@ -1,0 +1,315 @@
+[
+  {
+    "tags": {},
+    "filePath": "src/components/Tab/Tab.tsx",
+    "description": "",
+    "displayName": "Tab",
+    "methods": [],
+    "props": {
+      "handleTabClick": {
+        "defaultValue": null,
+        "description": "",
+        "name": "handleTabClick",
+        "parent": {
+          "fileName": "src/components/Tab/Tab.tsx",
+          "name": "TabProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/Tab/Tab.tsx",
+            "name": "TabProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "(index?: number, label?: ReactNode, evt?: ChangeEvent<HTMLInputElement>) => void"
+        }
+      },
+      "handleTabAnchorFocus": {
+        "defaultValue": null,
+        "description": "",
+        "name": "handleTabAnchorFocus",
+        "parent": {
+          "fileName": "src/components/Tab/Tab.tsx",
+          "name": "TabProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/Tab/Tab.tsx",
+            "name": "TabProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "(index?: number) => void"
+        }
+      },
+      "handleTabKeyDown": {
+        "defaultValue": null,
+        "description": "",
+        "name": "handleTabKeyDown",
+        "parent": {
+          "fileName": "src/components/Tab/Tab.tsx",
+          "name": "TabProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/Tab/Tab.tsx",
+            "name": "TabProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "(index?: number, label?: ReactNode, evt?: ChangeEvent<HTMLInputElement>) => void"
+        }
+      },
+      "href": {
+        "defaultValue": null,
+        "description": "",
+        "name": "href",
+        "parent": {
+          "fileName": "src/components/Tab/Tab.tsx",
+          "name": "TabProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/Tab/Tab.tsx",
+            "name": "TabProps"
+          }
+        ],
+        "required": true,
+        "type": {
+          "name": "string"
+        }
+      },
+      "index": {
+        "defaultValue": null,
+        "description": "",
+        "name": "index",
+        "parent": {
+          "fileName": "src/components/Tab/Tab.tsx",
+          "name": "TabProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/Tab/Tab.tsx",
+            "name": "TabProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "number"
+        }
+      },
+      "label": {
+        "defaultValue": null,
+        "description": "",
+        "name": "label",
+        "parent": {
+          "fileName": "src/components/Tab/Tab.tsx",
+          "name": "TabProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/Tab/Tab.tsx",
+            "name": "TabProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactNode"
+        }
+      },
+      "role": {
+        "defaultValue": null,
+        "description": "",
+        "name": "role",
+        "parent": {
+          "fileName": "src/components/Tab/Tab.tsx",
+          "name": "TabProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/Tab/Tab.tsx",
+            "name": "TabProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "selected": {
+        "defaultValue": null,
+        "description": "",
+        "name": "selected",
+        "parent": {
+          "fileName": "src/components/Tab/Tab.tsx",
+          "name": "TabProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/Tab/Tab.tsx",
+            "name": "TabProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "tabIndex": {
+        "defaultValue": null,
+        "description": "",
+        "name": "tabIndex",
+        "parent": {
+          "fileName": "src/components/Tab/Tab.tsx",
+          "name": "TabProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/Tab/Tab.tsx",
+            "name": "TabProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "number"
+        }
+      },
+      "renderAnchor": {
+        "defaultValue": null,
+        "description": "",
+        "name": "renderAnchor",
+        "parent": {
+          "fileName": "src/components/Tab/Tab.tsx",
+          "name": "TabProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/Tab/Tab.tsx",
+            "name": "TabProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "(props?: object) => ReactNode"
+        }
+      },
+      "renderContent": {
+        "defaultValue": null,
+        "description": "",
+        "name": "renderContent",
+        "parent": {
+          "fileName": "src/components/Tab/Tab.tsx",
+          "name": "TabProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/Tab/Tab.tsx",
+            "name": "TabProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "() => ReactNode"
+        }
+      },
+      "renderListElement": {
+        "defaultValue": null,
+        "description": "",
+        "name": "renderListElement",
+        "parent": {
+          "fileName": "src/components/Tab/Tab.tsx",
+          "name": "TabProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/Tab/Tab.tsx",
+            "name": "TabProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactNode | ((props?: object) => ReactNode)"
+        }
+      },
+      "className": {
+        "defaultValue": null,
+        "description": "",
+        "name": "className",
+        "parent": {
+          "fileName": "src/components/Tab/Tab.tsx",
+          "name": "TabProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/Tab/Tab.tsx",
+            "name": "TabProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "disabled": {
+        "defaultValue": null,
+        "description": "",
+        "name": "disabled",
+        "parent": {
+          "fileName": "src/components/Tab/Tab.tsx",
+          "name": "TabProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/Tab/Tab.tsx",
+            "name": "TabProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "onClick": {
+        "defaultValue": null,
+        "description": "",
+        "name": "onClick",
+        "parent": {
+          "fileName": "src/components/Tab/Tab.tsx",
+          "name": "TabProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/Tab/Tab.tsx",
+            "name": "TabProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "(evt?: Event) => void"
+        }
+      },
+      "onKeyDown": {
+        "defaultValue": null,
+        "description": "",
+        "name": "onKeyDown",
+        "parent": {
+          "fileName": "src/components/Tab/Tab.tsx",
+          "name": "TabProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/Tab/Tab.tsx",
+            "name": "TabProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "(evt?: Event) => void"
+        }
+      }
+    }
+  }
+]

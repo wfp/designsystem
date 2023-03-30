@@ -1,0 +1,41 @@
+[
+  {
+    "tags": {},
+    "filePath": "src/components/Form/Form.tsx",
+    "description": "A form is a group of related input controls that allows users to provide data or configure options.",
+    "displayName": "Form",
+    "methods": [],
+    "props": {
+      "longForm": {
+        "defaultValue": null,
+        "description": "",
+        "name": "longForm",
+        "declarations": [
+          {
+            "fileName": "src/components/Form/Form.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "className": {
+        "defaultValue": null,
+        "description": "",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "src/components/Form/Form.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      }
+    }
+  }
+]

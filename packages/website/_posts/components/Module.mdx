@@ -4,12 +4,31 @@ title: 'Module'
 excerpt: 'Modules are surfaces that display content and actions on a single topic.'
 coverImage: '../sample-image.jpg'
 slug: 'Components/UI elements/Module'
+mainComponent: 'Module'
+components: ['ModuleBody', 'ModuleHeader', ModuleFooter]
+sampleCode: >
+  <Module>
+    <ModuleHeader>Module example</ModuleHeader>
+    <ModuleBody>
+      <p>
+        Lorem Ipsum is dummy text of the printing and typesetting industry. Lorem
+        Ipsum has been the industry's standard dummy text ever since the 1500s,
+        when an unknown printer took a galley of type and scrambled it to make a
+        type specimen book.
+      </p>
+    </ModuleBody>
+    <ModuleFooter>Module footer</ModuleFooter>
+  </Module>
 ---
 
 They should be easy to scan for relevant and actionable information. Elements, like text and images, should be placed on them in a way that clearly indicates hierarchy.
 
+### Light version
+
+Use the light version of the Module when you want to use it on a white background.
+
 ```jsx live
-<Module>
+<Module light>
   <ModuleHeader>Module example</ModuleHeader>
   <ModuleBody>
     <p>
@@ -23,27 +42,21 @@ They should be easy to scan for relevant and actionable information. Elements, l
 </Module>
 ```
 
-#### Contained
+<DoUse>
 
-A Module is identifiable as a single, contained unit.
+- **Contained:** A Module is identifiable as a single, contained unit.
+- **Independent:** A Module can stand alone, without relying on surrounding elements for context.
+- **Individual:** A card cannot merge with another card, or divide into multiple cards. Put the name in the top left corner, align controls or actions to the top right corner of the Module and place the information in the content. The ModuleFooter can be used to show additional functionality like sharing or exporting. Using Modules has additional benefits of flexibility when it comes to responsive design.
 
-#### Independent
+</DoUse>
 
-A Module can stand alone, without relying on surrounding elements for context.
+<DoNotUse>
 
-#### Individual
+- Default Module on white background: Avoid using the `default` Module with white background. Use the light blue background or the `light` Module instead.
 
-A card cannot merge with another card, or divide into multiple cards.
+</DoNotUse>
 
-Source: https://material.io/design/components/cards.html#anatomy
-Put the name in the top left corner, align controls or actions to the top right corner of the Module and place the information in the content. The ModuleFooter can be used to show additional functionality like sharing or exporting.
+### Reference
 
-Using Modules has additional benefits of flexibility when it comes to responsive design.
-
-### Do not use
-
-#### Default Module on white background
-
-Avoid using the **default** Module with white background. Use the light blue background or the **light** Module instead.
-
-More information: [Elevation in Material UI](https://material.io/design/environment/elevation.html)
+- https://material.io/design/components/cards.html#anatomy
+- [Elevation in Material UI](https://material.io/design/environment/elevation.html)

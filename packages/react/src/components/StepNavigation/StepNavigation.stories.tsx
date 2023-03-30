@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import StepNavigation from './StepNavigation';
 import StepNavigationItem from '../StepNavigationItem';
-import markdown from './README.mdx';
 
 export default {
   title: 'Components/Navigations/StepNavigation',
@@ -10,7 +9,6 @@ export default {
   parameters: {
     componentSubtitle: 'Component',
     status: 'released',
-    mdx: markdown,
   },
 };
 

@@ -1,0 +1,87 @@
+[
+  {
+    "tags": {},
+    "filePath": "src/components/Text/Text.tsx",
+    "description": "Text is a component for displaying paragraphs. You can use Text to standardize text across your web app. For longer sections or full articles use the <Story /> component instead.",
+    "displayName": "Text",
+    "methods": [],
+    "props": {
+      "kind": {
+        "defaultValue": null,
+        "description": "",
+        "name": "kind",
+        "parent": {
+          "fileName": "src/components/Text/Text.tsx",
+          "name": "TextProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/Text/Text.tsx",
+            "name": "TextProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "TextKind"
+        }
+      },
+      "spacingTop": {
+        "defaultValue": null,
+        "description": "",
+        "name": "spacingTop",
+        "parent": {
+          "fileName": "src/components/Text/Text.tsx",
+          "name": "TextProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/Text/Text.tsx",
+            "name": "TextProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "Spacing"
+        }
+      },
+      "spacingBottom": {
+        "defaultValue": null,
+        "description": "",
+        "name": "spacingBottom",
+        "parent": {
+          "fileName": "src/components/Text/Text.tsx",
+          "name": "TextProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/Text/Text.tsx",
+            "name": "TextProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "Spacing"
+        }
+      },
+      "className": {
+        "defaultValue": null,
+        "description": "",
+        "name": "className",
+        "parent": {
+          "fileName": "src/components/Text/Text.tsx",
+          "name": "TextProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/Text/Text.tsx",
+            "name": "TextProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      }
+    }
+  }
+]

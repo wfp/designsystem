@@ -65,7 +65,7 @@ storiesOf('Components|MainNavigation', module)
             small
             id="search-2"
             labelText="بحث"
-            placeHolderText="بحث"
+            placeholder="بحث"
             onChange={action('onChange')}
           />
         </MainNavigationItem>

@@ -1,0 +1,174 @@
+[
+  {
+    "tags": {},
+    "filePath": "src/components/Sidebar/Sidebar.tsx",
+    "description": "",
+    "displayName": "Sidebar",
+    "methods": [],
+    "props": {
+      "active": {
+        "defaultValue": null,
+        "description": "",
+        "name": "active",
+        "declarations": [
+          {
+            "fileName": "src/components/Sidebar/Sidebar.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | number | boolean"
+        }
+      },
+      "sidebar": {
+        "defaultValue": null,
+        "description": "",
+        "name": "sidebar",
+        "declarations": [
+          {
+            "fileName": "src/components/Sidebar/Sidebar.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactNode"
+        }
+      },
+      "sidebarMobileHeader": {
+        "defaultValue": null,
+        "description": "",
+        "name": "sidebarMobileHeader",
+        "declarations": [
+          {
+            "fileName": "src/components/Sidebar/Sidebar.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactNode"
+        }
+      },
+      "className": {
+        "defaultValue": null,
+        "description": "",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "src/components/Sidebar/Sidebar.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "src/components/Sidebar/Sidebar.tsx",
+    "description": "",
+    "displayName": "SidebarHeader",
+    "methods": [],
+    "props": {
+      "noPadding": {
+        "defaultValue": null,
+        "description": "",
+        "name": "noPadding",
+        "declarations": [
+          {
+            "fileName": "src/components/Sidebar/Sidebar.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "className": {
+        "defaultValue": null,
+        "description": "",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "src/components/Sidebar/Sidebar.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "src/components/Sidebar/Sidebar.tsx",
+    "description": "",
+    "displayName": "SidebarContentHeader",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "src/components/Sidebar/Sidebar.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "src/components/Sidebar/Sidebar.tsx",
+    "description": "",
+    "displayName": "SidebarContentBody",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "src/components/Sidebar/Sidebar.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "src/components/Sidebar/Sidebar.tsx",
+    "description": "",
+    "displayName": "SidebarScroll",
+    "methods": [],
+    "props": {}
+  },
+  {
+    "tags": {},
+    "filePath": "src/components/Sidebar/Sidebar.tsx",
+    "description": "",
+    "displayName": "SidebarBackButton",
+    "methods": [],
+    "props": {}
+  }
+]

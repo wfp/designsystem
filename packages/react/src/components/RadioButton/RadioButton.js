@@ -6,10 +6,10 @@ import useSettings from '../../hooks/useSettings';
 
 /** Radio buttons represent a group of mutually exclusive choices */
 
-const RadioButton = (props) => {
+const RadioButton = React.forwardRef((props, ref) => {
   const {
     labelText,
-    inputRef,
+
     id,
     className,
     value,
@@ -18,13 +18,9 @@ const RadioButton = (props) => {
     ...other
   } = props;
 
-  const [uid, setUid] = useState(id || uId());
+  const [uid] = useState(id || uId());
 
   const { prefix } = useSettings();
-
-  //   UNSAFE_componentWillMount() {
-  //     this.uid = this.props.id || uid();
-  //   }
 
   const wrapperClasses = classNames('radioButtonWrapper', className);
 
@@ -42,7 +38,7 @@ const RadioButton = (props) => {
     <div className={wrapperClasses}>
       <input
         {...other}
-        ref={inputRef}
+        ref={ref}
         type="radio"
         className={`${prefix}--radio-button`}
         {...handleChange}
@@ -54,7 +50,7 @@ const RadioButton = (props) => {
       </label>
     </div>
   );
-};
+});
 
 RadioButton.propTypes = {
   prefix: PropTypes.string.isRequired,
@@ -105,13 +101,3 @@ RadioButton.propTypes = {
    */
   value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
 };
-
-const WrappedRadioButton = RadioButton;
-
-export default (() => {
-  const forwardRef = (props, ref) => (
-    <WrappedRadioButton {...props} inputRef={ref} />
-  );
-  forwardRef.displayName = 'RadioButton';
-  return React.forwardRef(forwardRef);
-})();

@@ -1,0 +1,106 @@
+[
+  {
+    "tags": {},
+    "filePath": "src/components/InlineLoading/InlineLoading.tsx",
+    "description": "",
+    "displayName": "InlineLoading",
+    "methods": [],
+    "props": {
+      "success": {
+        "defaultValue": null,
+        "description": "",
+        "name": "success",
+        "parent": {
+          "fileName": "src/components/InlineLoading/InlineLoading.tsx",
+          "name": "InlineLoadingProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/InlineLoading/InlineLoading.tsx",
+            "name": "InlineLoadingProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "description": {
+        "defaultValue": null,
+        "description": "",
+        "name": "description",
+        "parent": {
+          "fileName": "src/components/InlineLoading/InlineLoading.tsx",
+          "name": "InlineLoadingProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/InlineLoading/InlineLoading.tsx",
+            "name": "InlineLoadingProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "successDelay": {
+        "defaultValue": null,
+        "description": "",
+        "name": "successDelay",
+        "parent": {
+          "fileName": "src/components/InlineLoading/InlineLoading.tsx",
+          "name": "InlineLoadingProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/InlineLoading/InlineLoading.tsx",
+            "name": "InlineLoadingProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "number"
+        }
+      },
+      "onSuccess": {
+        "defaultValue": null,
+        "description": "",
+        "name": "onSuccess",
+        "parent": {
+          "fileName": "src/components/InlineLoading/InlineLoading.tsx",
+          "name": "InlineLoadingProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/InlineLoading/InlineLoading.tsx",
+            "name": "InlineLoadingProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "() => void"
+        }
+      },
+      "className": {
+        "defaultValue": null,
+        "description": "",
+        "name": "className",
+        "parent": {
+          "fileName": "src/components/InlineLoading/InlineLoading.tsx",
+          "name": "InlineLoadingProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/InlineLoading/InlineLoading.tsx",
+            "name": "InlineLoadingProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      }
+    }
+  }
+]

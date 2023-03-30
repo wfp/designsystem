@@ -1,0 +1,122 @@
+[
+  {
+    "tags": {},
+    "filePath": "src/components/Empty/Empty.tsx",
+    "description": "The Empty component can be used whenever a section should indicate that there is no content available. This can be the case for a empty list table or search results.",
+    "displayName": "Empty",
+    "methods": [],
+    "props": {
+      "children": {
+        "defaultValue": null,
+        "description": "The content to be rendered in the empty state. @design",
+        "name": "children",
+        "declarations": [
+          {
+            "fileName": "src/components/Empty/Empty.tsx",
+            "name": "TypeLiteral"
+          },
+          {
+            "fileName": "un-core-v1/node_modules/@types/react/index.d.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactNode"
+        }
+      },
+      "title": {
+        "defaultValue": null,
+        "description": "The title to be rendered in the empty state.",
+        "name": "title",
+        "declarations": [
+          {
+            "fileName": "src/components/Empty/Empty.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": true,
+        "type": {
+          "name": "ReactNode"
+        }
+      },
+      "kind": {
+        "defaultValue": {
+          "value": "large"
+        },
+        "description": "The kind of empty state to be rendered. @design",
+        "name": "kind",
+        "declarations": [
+          {
+            "fileName": "src/components/Empty/Empty.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "\"undefined\" | \"large\""
+        }
+      },
+      "icon": {
+        "defaultValue": null,
+        "description": "",
+        "name": "icon",
+        "declarations": [
+          {
+            "fileName": "src/components/Empty/Empty.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactNode | IIcon"
+        }
+      },
+      "button": {
+        "defaultValue": null,
+        "description": "The button to be rendered in the empty state. @design",
+        "name": "button",
+        "declarations": [
+          {
+            "fileName": "src/components/Empty/Empty.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactNode"
+        }
+      },
+      "className": {
+        "defaultValue": null,
+        "description": "",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "src/components/Empty/Empty.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "components": {
+        "defaultValue": null,
+        "description": "The replaceable components to be used for the empty state.",
+        "name": "components",
+        "declarations": [
+          {
+            "fileName": "src/components/Empty/Empty.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "{ Icon: ReactNode; Text: ReactNode; }"
+        }
+      }
+    }
+  }
+]

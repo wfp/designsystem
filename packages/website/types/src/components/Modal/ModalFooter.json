@@ -1,0 +1,201 @@
+[
+  {
+    "tags": {},
+    "filePath": "src/components/Modal/ModalFooter.tsx",
+    "description": "",
+    "displayName": "ModalFooter",
+    "methods": [],
+    "props": {
+      "passiveModal": {
+        "defaultValue": null,
+        "description": "",
+        "name": "passiveModal",
+        "parent": {
+          "fileName": "src/components/Modal/ModalFooter.tsx",
+          "name": "ModalFooterProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/Modal/ModalFooter.tsx",
+            "name": "ModalFooterProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "secondaryButtonText": {
+        "defaultValue": null,
+        "description": "",
+        "name": "secondaryButtonText",
+        "parent": {
+          "fileName": "src/components/Modal/ModalFooter.tsx",
+          "name": "ModalFooterProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/Modal/ModalFooter.tsx",
+            "name": "ModalFooterProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "onSecondaryButtonClick": {
+        "defaultValue": null,
+        "description": "",
+        "name": "onSecondaryButtonClick",
+        "parent": {
+          "fileName": "src/components/Modal/ModalFooter.tsx",
+          "name": "ModalFooterProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/Modal/ModalFooter.tsx",
+            "name": "ModalFooterProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "(evt: Event, trigger: \"button\" | \"background\" | \"key\") => void"
+        }
+      },
+      "primaryButtonText": {
+        "defaultValue": null,
+        "description": "",
+        "name": "primaryButtonText",
+        "parent": {
+          "fileName": "src/components/Modal/ModalFooter.tsx",
+          "name": "ModalFooterProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/Modal/ModalFooter.tsx",
+            "name": "ModalFooterProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "onRequestSubmit": {
+        "defaultValue": null,
+        "description": "",
+        "name": "onRequestSubmit",
+        "parent": {
+          "fileName": "src/components/Modal/ModalFooter.tsx",
+          "name": "ModalFooterProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/Modal/ModalFooter.tsx",
+            "name": "ModalFooterProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "() => {}"
+        }
+      },
+      "primaryButtonDisabled": {
+        "defaultValue": null,
+        "description": "",
+        "name": "primaryButtonDisabled",
+        "parent": {
+          "fileName": "src/components/Modal/ModalFooter.tsx",
+          "name": "ModalFooterProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/Modal/ModalFooter.tsx",
+            "name": "ModalFooterProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "secondaryButtonDisabled": {
+        "defaultValue": null,
+        "description": "",
+        "name": "secondaryButtonDisabled",
+        "parent": {
+          "fileName": "src/components/Modal/ModalFooter.tsx",
+          "name": "ModalFooterProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/Modal/ModalFooter.tsx",
+            "name": "ModalFooterProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "danger": {
+        "defaultValue": null,
+        "description": "",
+        "name": "danger",
+        "parent": {
+          "fileName": "src/components/Modal/ModalFooter.tsx",
+          "name": "ModalFooterProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/Modal/ModalFooter.tsx",
+            "name": "ModalFooterProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "prefix": {
+        "defaultValue": null,
+        "description": "",
+        "name": "prefix",
+        "parent": {
+          "fileName": "src/components/Modal/ModalFooter.tsx",
+          "name": "ModalFooterProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/Modal/ModalFooter.tsx",
+            "name": "ModalFooterProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "ref": {
+        "defaultValue": null,
+        "description": "",
+        "name": "ref",
+        "parent": {
+          "fileName": "src/components/Modal/ModalFooter.tsx",
+          "name": "ModalFooterProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/Modal/ModalFooter.tsx",
+            "name": "ModalFooterProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "RefObject<HTMLInputElement>"
+        }
+      }
+    }
+  }
+]

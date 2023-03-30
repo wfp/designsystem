@@ -1,28 +1,18 @@
 import React, { useState } from 'react';
 
 import {
-  Button,
   Link,
-  Sidebar,
-  SidebarHeader,
-  Item,
-  Search,
   Wrapper,
   Text,
   Breadcrumb,
   BreadcrumbItem,
   BreadcrumbHome,
 } from '@un/react';
-import Accordion from '../Accordion';
 import { MDXRemote } from 'next-mdx-remote';
 import NextLink from 'next/link';
 import styles from './sidebar.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faArrowRight,
-  faDash,
-  faMinus,
-} from '@fortawesome/pro-regular-svg-icons';
+import { faArrowRight } from '@fortawesome/pro-regular-svg-icons';
 import slugify from 'slugify';
 import { faChevronRight } from '@fortawesome/pro-solid-svg-icons';
 
@@ -33,13 +23,19 @@ import slugifyWithSlashes from '../../lib/slugifyWithSlashes';
 import { NextSeo } from 'next-seo';
 import PropTypes from '../PropTypes';
 
-function TreeBranch({ slug, split, level }) {
+interface SidebarProps {
+  slug: string;
+  level: number;
+  split: any;
+}
+
+function TreeBranch({ slug, split, level }: SidebarProps) {
   const splitSlug = slugifyWithSlashes(slug).split('/');
-  const found = split.name === splitSlug[level - 1]; /* split.children.find(
+  const found =
+    slugify(split.name, { lower: true }) ===
+    splitSlug[level - 1]; /* split.children.find(
     (e) => e.name === splitSlug[splitSlug.length - 1]
   )*/
-
-  console.log('splitSlug', split.name, splitSlug[level - 1]);
 
   const [open, setOpen] = useState(level === 0 || found);
 
@@ -62,7 +58,9 @@ function TreeBranch({ slug, split, level }) {
               href={`/${slugifyWithSlashes(split.path?.key)}`}
               passHref
               legacyBehavior>
-              <Link className={styles.item} onMouseUp={(e) => e.target.blur()}>
+              <Link
+                className={styles.item}
+                onMouseUp={(e: any) => e.target.blur()}>
                 <div className={styles.icon} />
 
                 {split.name}
@@ -112,7 +110,18 @@ export const createPathTree = (paths) => {
   return finalArray.length > 0 ? finalArray[0] : null;
 };
 
-export default function SidebarWrapper({ content, post, posts, propTypes }) {
+interface SidebarWrapperProps {
+  content?: any;
+  post: any;
+  posts: any;
+  propTypes: any;
+}
+
+export default function SidebarWrapper({
+  post,
+  posts,
+  propTypes,
+}: SidebarWrapperProps) {
   const postSplit = posts.map((p) => {
     return {
       key: 'posts/' + p.slug,
@@ -142,7 +151,7 @@ export default function SidebarWrapper({ content, post, posts, propTypes }) {
           site_name: process.env.NEXT_PUBLIC_DOMAIN,
         }}
       />
-      <Wrapper className={styles.sidebarWrapper} pageWidth="xl">
+      <Wrapper className={styles.sidebarWrapper} pageWidth="lg">
         <div className={styles.sidebar}>
           <ul className={styles.sidebarList}>
             <TreeBranch split={split} level={0} slug={post.slug} />

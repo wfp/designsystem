@@ -1,11 +1,11 @@
-import React from 'react';
+import * as React from 'react';
 import type { PropsWithChildren } from 'react';
-import classNames, { Argument } from 'classnames';
+import classNames from 'classnames';
 import Wrapper from '../Wrapper';
 import useSettings from '../../hooks/useSettings';
 
 type BannerNavigationItemProps = PropsWithChildren<{
-  className?: Argument;
+  className?: string;
 }>;
 
 const BannerNavigationItem: React.FC<BannerNavigationItemProps> = ({
@@ -21,14 +21,13 @@ const BannerNavigationItem: React.FC<BannerNavigationItemProps> = ({
 };
 
 type BannerNavigationProps = PropsWithChildren<{
-  className?: Argument;
+  className?: string;
   pageWidth?: 'sm' | 'md' | 'lg' | 'full';
 }>;
 
 const BannerNavigation: React.FC<BannerNavigationProps> = ({
   children,
   className,
-  pageWidth,
   ...props
 }) => {
   const { prefix } = useSettings();

@@ -1,0 +1,51 @@
+[
+  {
+    "tags": {},
+    "filePath": "src/components/Tag/Tag.tsx",
+    "description": "Tag is used to label, categorize, or organize items using keywords that describe them.",
+    "displayName": "Tag",
+    "methods": [],
+    "props": {
+      "type": {
+        "defaultValue": {
+          "value": "info"
+        },
+        "description": "Specify the type of Tag @design",
+        "name": "type",
+        "parent": {
+          "fileName": "src/components/Tag/Tag.tsx",
+          "name": "TagProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/Tag/Tag.tsx",
+            "name": "TagProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "wrap": {
+        "defaultValue": null,
+        "description": "LEGACY: Specify if the Tag should be wrapped if it is too long",
+        "name": "wrap",
+        "parent": {
+          "fileName": "src/components/Tag/Tag.tsx",
+          "name": "TagProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/Tag/Tag.tsx",
+            "name": "TagProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      }
+    }
+  }
+]

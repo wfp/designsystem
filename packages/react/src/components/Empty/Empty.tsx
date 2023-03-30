@@ -1,6 +1,6 @@
 import * as React from 'react';
 import type { PropsWithChildren } from 'react';
-import classnames, { Argument } from 'classnames';
+import classNames from 'classnames';
 import useSettings from '../../hooks/useSettings';
 import { IIcon } from '../../typesLegacy/utils';
 
@@ -22,7 +22,7 @@ type EmptyProps = PropsWithChildren<{
    * The button to be rendered in the empty state. @design
    */
   button?: React.ReactNode;
-  className?: Argument;
+  className?: string;
   /**
    * The replaceable components to be used for the empty state.
    */
@@ -57,7 +57,7 @@ const Empty: React.FC<EmptyProps> = ({
 }) => {
   const { prefix } = useSettings();
 
-  const classNames = classnames(
+  const classes = classNames(
     {
       [`${prefix}--empty`]: true,
       [`${prefix}--empty--${kind}`]: kind,
@@ -73,7 +73,7 @@ const Empty: React.FC<EmptyProps> = ({
   };
 
   return (
-    <div className={classNames} {...other}>
+    <div className={classes} {...other}>
       <allComponents.Icon icon={icon} />
       <allComponents.Text title={title} children={children} />
       <div className={`${prefix}--empty__button`}>{button}</div>

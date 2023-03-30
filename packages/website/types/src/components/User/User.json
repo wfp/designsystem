@@ -1,0 +1,220 @@
+[
+  {
+    "tags": {},
+    "filePath": "src/components/User/User.tsx",
+    "description": "The User is used inside the MainNavigation and form, and can display an avatar and username.",
+    "displayName": "User",
+    "methods": [],
+    "props": {
+      "alt": {
+        "defaultValue": null,
+        "description": "",
+        "name": "alt",
+        "parent": {
+          "fileName": "src/components/User/User.tsx",
+          "name": "UserProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/User/User.tsx",
+            "name": "UserProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "ellipsis": {
+        "defaultValue": null,
+        "description": "",
+        "name": "ellipsis",
+        "parent": {
+          "fileName": "src/components/User/User.tsx",
+          "name": "UserProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/User/User.tsx",
+            "name": "UserProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "description": {
+        "defaultValue": null,
+        "description": "",
+        "name": "description",
+        "parent": {
+          "fileName": "src/components/User/User.tsx",
+          "name": "UserProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/User/User.tsx",
+            "name": "UserProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactNode"
+        }
+      },
+      "components": {
+        "defaultValue": null,
+        "description": "",
+        "name": "components",
+        "parent": {
+          "fileName": "src/components/User/User.tsx",
+          "name": "UserProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/User/User.tsx",
+            "name": "UserProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "{ Icon: ReactNode; }"
+        }
+      },
+      "extendedDescription": {
+        "defaultValue": null,
+        "description": "",
+        "name": "extendedDescription",
+        "parent": {
+          "fileName": "src/components/User/User.tsx",
+          "name": "UserProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/User/User.tsx",
+            "name": "UserProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactNode"
+        }
+      },
+      "missingImage": {
+        "defaultValue": null,
+        "description": "",
+        "name": "missingImage",
+        "parent": {
+          "fileName": "src/components/User/User.tsx",
+          "name": "UserProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/User/User.tsx",
+            "name": "UserProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "\"avatar\" | \"letter\""
+        }
+      },
+      "image": {
+        "defaultValue": null,
+        "description": "",
+        "name": "image",
+        "parent": {
+          "fileName": "src/components/User/User.tsx",
+          "name": "UserProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/User/User.tsx",
+            "name": "UserProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "showName": {
+        "defaultValue": null,
+        "description": "",
+        "name": "showName",
+        "parent": {
+          "fileName": "src/components/User/User.tsx",
+          "name": "UserProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/User/User.tsx",
+            "name": "UserProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "className": {
+        "defaultValue": null,
+        "description": "",
+        "name": "className",
+        "parent": {
+          "fileName": "src/components/User/User.tsx",
+          "name": "UserProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/User/User.tsx",
+            "name": "UserProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "small": {
+        "defaultValue": null,
+        "description": "",
+        "name": "small",
+        "parent": {
+          "fileName": "src/components/User/User.tsx",
+          "name": "UserProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/User/User.tsx",
+            "name": "UserProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "name": {
+        "defaultValue": null,
+        "description": "",
+        "name": "name",
+        "parent": {
+          "fileName": "src/components/User/User.tsx",
+          "name": "UserProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/User/User.tsx",
+            "name": "UserProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      }
+    }
+  }
+]

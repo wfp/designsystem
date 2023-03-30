@@ -1,0 +1,108 @@
+[
+  {
+    "tags": {},
+    "filePath": "src/components/Checkbox/Checkbox.tsx",
+    "description": "",
+    "displayName": "Checkbox",
+    "methods": [],
+    "props": {
+      "indeterminate": {
+        "defaultValue": null,
+        "description": "",
+        "name": "indeterminate",
+        "parent": {
+          "fileName": "src/components/Checkbox/Checkbox.tsx",
+          "name": "CheckboxProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/Checkbox/Checkbox.tsx",
+            "name": "CheckboxProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "labelText": {
+        "defaultValue": null,
+        "description": "",
+        "name": "labelText",
+        "parent": {
+          "fileName": "src/components/Checkbox/Checkbox.tsx",
+          "name": "CheckboxProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/Checkbox/Checkbox.tsx",
+            "name": "CheckboxProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactNode"
+        }
+      },
+      "hideLabel": {
+        "defaultValue": null,
+        "description": "",
+        "name": "hideLabel",
+        "parent": {
+          "fileName": "src/components/Checkbox/Checkbox.tsx",
+          "name": "CheckboxProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/Checkbox/Checkbox.tsx",
+            "name": "CheckboxProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "wrapperClassName": {
+        "defaultValue": null,
+        "description": "",
+        "name": "wrapperClassName",
+        "parent": {
+          "fileName": "src/components/Checkbox/Checkbox.tsx",
+          "name": "CheckboxProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/Checkbox/Checkbox.tsx",
+            "name": "CheckboxProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "onChange": {
+        "defaultValue": {
+          "value": "() => {}"
+        },
+        "description": "",
+        "name": "onChange",
+        "parent": {
+          "fileName": "src/components/Checkbox/Checkbox.tsx",
+          "name": "CheckboxProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/Checkbox/Checkbox.tsx",
+            "name": "CheckboxProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "(event: ChangeEvent<HTMLInputElement>, checked: boolean, customId: string) => void"
+        }
+      }
+    }
+  }
+]

@@ -1,6 +1,6 @@
-import React from 'react';
+import * as React from 'react';
 import type { PropsWithChildren } from 'react';
-import classNames, { Argument } from 'classnames';
+import classNames from 'classnames';
 import useSettings from '../../hooks/useSettings';
 import { HeroKind } from '../../typesLegacy/utils';
 /**
@@ -16,7 +16,7 @@ type HeroProps = PropsWithChildren<{
   more?: React.ReactNode;
   kind?: HeroKind;
   url?: string;
-  className?: Argument;
+  className?: string;
 }>;
 
 const Hero: React.FC<HeroProps> = ({

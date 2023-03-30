@@ -1,0 +1,176 @@
+[
+  {
+    "tags": {},
+    "filePath": "src/components/Card/Card.tsx",
+    "description": "",
+    "displayName": "Card",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "src/components/Card/Card.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "image": {
+        "defaultValue": null,
+        "description": "",
+        "name": "image",
+        "declarations": [
+          {
+            "fileName": "src/components/Card/Card.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "isExternal": {
+        "defaultValue": null,
+        "description": "",
+        "name": "isExternal",
+        "declarations": [
+          {
+            "fileName": "src/components/Card/Card.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "isLink": {
+        "defaultValue": null,
+        "description": "",
+        "name": "isLink",
+        "declarations": [
+          {
+            "fileName": "src/components/Card/Card.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "subTitle": {
+        "defaultValue": null,
+        "description": "",
+        "name": "subTitle",
+        "declarations": [
+          {
+            "fileName": "src/components/Card/Card.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactNode"
+        }
+      },
+      "title": {
+        "defaultValue": null,
+        "description": "",
+        "name": "title",
+        "declarations": [
+          {
+            "fileName": "src/components/Card/Card.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactNode"
+        }
+      },
+      "metadata": {
+        "defaultValue": null,
+        "description": "",
+        "name": "metadata",
+        "declarations": [
+          {
+            "fileName": "src/components/Card/Card.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "kind": {
+        "defaultValue": null,
+        "description": "",
+        "name": "kind",
+        "declarations": [
+          {
+            "fileName": "src/components/Card/Card.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "CardKind"
+        }
+      },
+      "url": {
+        "defaultValue": null,
+        "description": "",
+        "name": "url",
+        "declarations": [
+          {
+            "fileName": "src/components/Card/Card.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "cardWidth": {
+        "defaultValue": null,
+        "description": "",
+        "name": "cardWidth",
+        "declarations": [
+          {
+            "fileName": "src/components/Card/Card.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "cardHeight": {
+        "defaultValue": null,
+        "description": "",
+        "name": "cardHeight",
+        "declarations": [
+          {
+            "fileName": "src/components/Card/Card.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      }
+    }
+  }
+]

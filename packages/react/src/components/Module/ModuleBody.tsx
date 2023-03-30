@@ -1,9 +1,9 @@
-import React from 'react';
+import * as React from 'react';
 import type { PropsWithChildren } from 'react';
-import classNames, { Argument } from 'classnames';
+import classNames from 'classnames';
 
 type ModuleBodyProps = PropsWithChildren<{
-  className?: Argument;
+  className?: string;
   centered?: boolean;
   noPadding?: boolean;
 }>;

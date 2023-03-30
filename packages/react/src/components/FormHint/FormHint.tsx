@@ -1,13 +1,13 @@
-import React from 'react';
+import * as React from 'react';
 import { InfoSolid } from '@un/icons-react';
 import type { PropsWithChildren } from 'react';
-import classNames, { Argument } from 'classnames';
+import classNames from 'classnames';
 import useSettings from '../../hooks/useSettings';
 import Tooltip from '../Tooltip/Tooltip';
 
 /** FormHint allows you to add a longer explanation to an input element. */
 type FormHintProps = PropsWithChildren<{
-  className?: Argument;
+  className?: string;
   description?: string;
 }>;
 
@@ -15,7 +15,6 @@ const FormHint: React.FC<FormHintProps> = ({
   className,
   children,
   description,
-  ...other
 }) => {
   const { prefix } = useSettings();
 

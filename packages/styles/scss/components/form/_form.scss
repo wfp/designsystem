@@ -30,7 +30,6 @@ $input-label-weight: 400 !default;
     flex-direction: column;
     flex: 1;
     align-items: flex-start;
-    //margin-bottom: 2rem;
   }
 
   .#{$prefix}--label {
@@ -43,6 +42,10 @@ $input-label-weight: 400 !default;
     display: inline-block;
     vertical-align: baseline;
     margin-bottom: $spacing-02;
+  }
+
+  .#{$prefix}--label + .#{$prefix}--form__helper-text {
+    margin-top: -$spacing-03;
   }
 
   .#{$prefix}--form-item--inline {

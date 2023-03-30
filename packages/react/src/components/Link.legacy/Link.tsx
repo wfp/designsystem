@@ -1,5 +1,5 @@
 import React, { PropsWithChildren } from 'react';
-import classnames from 'classnames';
+import classNames from 'classnames';
 import useSettings from '../../hooks/useSettings';
 
 /** Links are used as navigational elements. They may appear on their own, within a sentence or paragraph, or directly following the content. */
@@ -18,7 +18,7 @@ const Link: React.FC<PropsWithChildren<LinkProps>> = ({
 }) => {
   const { prefix } = useSettings();
 
-  const classNames = classnames(
+  const classes = classNames(
     {
       [`${prefix}--link`]: true,
       [`${prefix}--link--inline`]: inline,
@@ -26,7 +26,7 @@ const Link: React.FC<PropsWithChildren<LinkProps>> = ({
     className
   );
   return (
-    <a href={href} className={classNames} {...other}>
+    <a href={href} className={classes} {...other}>
       {children}
     </a>
   );

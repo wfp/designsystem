@@ -1,9 +1,8 @@
 import React, { PropsWithChildren } from 'react';
-import classnames from 'classnames';
+import classNames from 'classnames';
 import useSettings from '../../hooks/useSettings';
 
-interface FormItemProps {
-  className?: string;
+export interface FormItemProps extends React.AllHTMLAttributes<HTMLDivElement> {
   invalid?: boolean;
   inline?: boolean;
 }
@@ -17,7 +16,7 @@ const FormItem: React.FC<PropsWithChildren<FormItemProps>> = ({
 }) => {
   const { prefix } = useSettings();
 
-  const classNames = classnames(
+  const classes = classNames(
     `${prefix}--form-item`,
     {
       [`${prefix}--form-item--inline`]: inline,
@@ -27,7 +26,7 @@ const FormItem: React.FC<PropsWithChildren<FormItemProps>> = ({
   );
 
   return (
-    <div className={classNames} {...other}>
+    <div className={classes} {...other}>
       {children}
     </div>
   );

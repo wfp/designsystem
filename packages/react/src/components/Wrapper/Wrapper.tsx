@@ -1,20 +1,28 @@
-import React from 'react';
+import * as React from 'react';
 import type { PropsWithChildren } from 'react';
-import classNames, { Argument } from 'classnames';
+import classNames from 'classnames';
 import useSettings from '../../hooks/useSettings';
-import { ScreenSize, Spacing } from '../../typesLegacy/utils';
+import { ScreenSize } from '../../typesLegacy/utils';
 
 export const pageWidths = ['sm', 'md', 'lg', 'full'];
 
 /** Wrapper can wrap it's content in a specific width depending on if the application has a full or fixed width. */
 type WrapperProps = PropsWithChildren<{
-  pageWidth?: ScreenSize | 'xs' | 'narrow' | 'narrower' | 'narrowest';
+  pageWidth?:
+    | 'xs'
+    | 'sm'
+    | 'md'
+    | 'lg'
+    | 'full'
+    | 'narrow'
+    | 'narrower'
+    | 'narrowest';
   mobilePageWidth?: ScreenSize;
-  spacing?: Spacing;
+  spacing?: 'md' | 'xl';
   background?: 'lighter' | 'dark';
-  className?: Argument;
+  className?: string;
   backgroundClassName?: string;
-  backgroundStyle: any;
+  backgroundStyle?: React.CSSProperties;
 }>;
 
 const Wrapper: React.FC<WrapperProps> = (props) => {

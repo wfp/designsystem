@@ -1,0 +1,210 @@
+[
+  {
+    "tags": {},
+    "filePath": "src/components/Item/Item.tsx",
+    "description": "The item component to show entries inside a list, like a sidebar or an overview page.",
+    "displayName": "Item",
+    "methods": [],
+    "props": {
+      "title": {
+        "defaultValue": null,
+        "description": "",
+        "name": "title",
+        "declarations": [
+          {
+            "fileName": "src/components/Item/Item.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactNode"
+        }
+      },
+      "icon": {
+        "defaultValue": null,
+        "description": "",
+        "name": "icon",
+        "declarations": [
+          {
+            "fileName": "src/components/Item/Item.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactNode | IIcon"
+        }
+      },
+      "kind": {
+        "defaultValue": {
+          "value": "large"
+        },
+        "description": "",
+        "name": "kind",
+        "declarations": [
+          {
+            "fileName": "src/components/Item/Item.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "\"undefined\" | \"horizontal\" | \"large\""
+        }
+      },
+      "wrapper": {
+        "defaultValue": {
+          "value": "none"
+        },
+        "description": "",
+        "name": "wrapper",
+        "declarations": [
+          {
+            "fileName": "src/components/Item/Item.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "\"undefined\" | \"sidebar\" | \"repeater\""
+        }
+      },
+      "showAdditionalIcon": {
+        "defaultValue": null,
+        "description": "",
+        "name": "showAdditionalIcon",
+        "declarations": [
+          {
+            "fileName": "src/components/Item/Item.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "subContent": {
+        "defaultValue": null,
+        "description": "",
+        "name": "subContent",
+        "declarations": [
+          {
+            "fileName": "src/components/Item/Item.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "additional": {
+        "defaultValue": null,
+        "description": "",
+        "name": "additional",
+        "declarations": [
+          {
+            "fileName": "src/components/Item/Item.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "hint": {
+        "defaultValue": null,
+        "description": "",
+        "name": "hint",
+        "declarations": [
+          {
+            "fileName": "src/components/Item/Item.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactNode"
+        }
+      },
+      "className": {
+        "defaultValue": null,
+        "description": "",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "src/components/Item/Item.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "active": {
+        "defaultValue": null,
+        "description": "",
+        "name": "active",
+        "declarations": [
+          {
+            "fileName": "src/components/Item/Item.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "image": {
+        "defaultValue": null,
+        "description": "",
+        "name": "image",
+        "declarations": [
+          {
+            "fileName": "src/components/Item/Item.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactNode"
+        }
+      },
+      "noImage": {
+        "defaultValue": null,
+        "description": "",
+        "name": "noImage",
+        "declarations": [
+          {
+            "fileName": "src/components/Item/Item.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "unread": {
+        "defaultValue": null,
+        "description": "",
+        "name": "unread",
+        "declarations": [
+          {
+            "fileName": "src/components/Item/Item.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      }
+    }
+  }
+]

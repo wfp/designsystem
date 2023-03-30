@@ -1,10 +1,11 @@
-import { PropsWithChildren } from 'react';
 import * as React from 'react';
-import classnames from 'classnames';
+import classNames from 'classnames';
 import useSettings from '../../hooks/useSettings';
-import type { LinkHTMLAttributes } from 'react';
 
-export interface LinkProps extends React.LinkHTMLAttributes {
+export interface LinkProps
+  extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
+  //TODO: Fix extend
+  children: React.ReactNode;
   /**
    * Adds an underline to the link element to better indicate that it is clickable in continuous text. @design
    */
@@ -24,7 +25,7 @@ export interface LinkProps extends React.LinkHTMLAttributes {
   /**
    * Use an icon with the link element @design
    */
-  icon?: React.node;
+  icon?: React.ComponentType | React.ElementType;
   //write other extra props here...
 }
 
@@ -41,11 +42,11 @@ const Link: React.FC<LinkProps> = React.forwardRef(
       size,
       ...other
     },
-    ref
+    ref: React.ForwardedRef<Element>
   ) => {
     const { prefix } = useSettings();
 
-    const classNames = classnames(`${prefix}--link`, className, {
+    const classes = classNames(`${prefix}--link`, className, {
       [`${prefix}--link--disabled`]: disabled,
       [`${prefix}--link--inline`]: inline,
       [`${prefix}--link--visited`]: visited,
@@ -53,11 +54,11 @@ const Link: React.FC<LinkProps> = React.forwardRef(
     });
 
     const Tag = disabled ? 'p' : 'a';
-    const rel = other.target === '_blank' ? 'noopener' : null;
+    const rel = other.target === '_blank' ? 'noopener' : undefined;
     return (
       <Tag
-        href={disabled ? null : href}
-        className={classNames}
+        href={disabled ? undefined : href}
+        className={classes}
         rel={rel}
         ref={ref}
         {...other}>

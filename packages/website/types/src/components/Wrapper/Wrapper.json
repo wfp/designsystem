@@ -1,0 +1,116 @@
+[
+  {
+    "tags": {},
+    "filePath": "src/components/Wrapper/Wrapper.tsx",
+    "description": "",
+    "displayName": "Wrapper",
+    "methods": [],
+    "props": {
+      "pageWidth": {
+        "defaultValue": null,
+        "description": "",
+        "name": "pageWidth",
+        "declarations": [
+          {
+            "fileName": "src/components/Wrapper/Wrapper.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "\"sm\" | \"md\" | \"lg\" | \"full\" | \"xs\" | \"narrow\" | \"narrower\" | \"narrowest\""
+        }
+      },
+      "mobilePageWidth": {
+        "defaultValue": null,
+        "description": "",
+        "name": "mobilePageWidth",
+        "declarations": [
+          {
+            "fileName": "src/components/Wrapper/Wrapper.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ScreenSize"
+        }
+      },
+      "spacing": {
+        "defaultValue": null,
+        "description": "",
+        "name": "spacing",
+        "declarations": [
+          {
+            "fileName": "src/components/Wrapper/Wrapper.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "\"md\" | \"xl\""
+        }
+      },
+      "background": {
+        "defaultValue": null,
+        "description": "",
+        "name": "background",
+        "declarations": [
+          {
+            "fileName": "src/components/Wrapper/Wrapper.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "\"lighter\" | \"dark\""
+        }
+      },
+      "className": {
+        "defaultValue": null,
+        "description": "",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "src/components/Wrapper/Wrapper.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "backgroundClassName": {
+        "defaultValue": null,
+        "description": "",
+        "name": "backgroundClassName",
+        "declarations": [
+          {
+            "fileName": "src/components/Wrapper/Wrapper.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "backgroundStyle": {
+        "defaultValue": null,
+        "description": "",
+        "name": "backgroundStyle",
+        "declarations": [
+          {
+            "fileName": "src/components/Wrapper/Wrapper.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "CSSProperties"
+        }
+      }
+    }
+  }
+]

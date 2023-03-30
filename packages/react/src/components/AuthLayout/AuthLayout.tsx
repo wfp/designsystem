@@ -1,10 +1,10 @@
-import React from 'react';
+import * as React from 'react';
 import type { PropsWithChildren } from 'react';
-import classNames, { Argument } from 'classnames';
+import classNames from 'classnames';
 import useSettings from '../../hooks/useSettings';
 
 type AuthLayoutProps = PropsWithChildren<{
-  className?: Argument;
+  className?: string;
   image?: React.ReactNode;
   backgroundContent?: React.ReactNode;
 }>;
@@ -39,7 +39,7 @@ const AuthLayout: React.FC<AuthLayoutProps> = ({
 };
 
 type BackgroundContentProps = PropsWithChildren<{
-  className?: Argument;
+  className?: string;
 }>;
 
 const BackgroundContent: React.FC<BackgroundContentProps> = ({

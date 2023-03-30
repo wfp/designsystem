@@ -5,13 +5,11 @@ excerpt: 'Tags are used for items that need to be labeled, categorized, or organ
 coverImage: '../sample-image.jpg'
 slug: 'Components/UI elements/Tag'
 mainComponent: 'Tag'
+defaultProps:
+  children: 'Tag text'
 ---
 
-<Storybook path="iframe.html?viewMode=docs&id=components-ui-elements-tag--documentation&args=" />
-
-Multiple or single tags can be used to categorize items.
-
-Use short labels for easy scanning. Use two words only if necessary to describe the status and differentiate it from other tags.
+Multiple or single `Tags` can be used to categorize items. Use short labels for easy scanning. Use two words only if necessary to describe the status and differentiate it from other tags.
 
 <DoUse>
 
@@ -19,3 +17,33 @@ Use short labels for easy scanning. Use two words only if necessary to describe 
 - Tags can also be used as a method of filtering data, to show only items within that particular category.
 
 </DoUse>
+
+<DoNotUse>
+
+- Don’t use as a `button` or `link`
+
+</DoNotUse>
+
+### Types
+
+```jsx live
+<>
+  <Tag type="info">Info</Tag>
+  <Tag type="warning">Warning</Tag>
+  <Tag type="error">Error</Tag>
+  <Tag type="success">Success</Tag>
+  <Tag type="custom">Custom (without formatting)</Tag>
+</>
+```
+
+### Customize colors
+
+Customize the colors of the `Tag` by passing a `style` or `className` prop.
+
+```jsx live
+<>
+  <Tag type="custom" style={{ color: '#ff0000', background: 'yellow' }}>
+    Custom
+  </Tag>
+</>
+```

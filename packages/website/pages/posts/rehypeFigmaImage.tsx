@@ -30,13 +30,13 @@ async function getImage({ document, node }) {
 }
 
 function searchTreeWrapper(element, matchingTitle) {
-  var result = [];
+  const result = [];
 
   const searchTree = (element, matchingTitle) => {
     if (element.name == matchingTitle) {
       result.push(element);
     } else if (element.children != null) {
-      var i;
+      let i;
       for (i = 0; i < element.children.length; i++) {
         searchTree(element.children[i], matchingTitle);
       }
@@ -52,10 +52,7 @@ async function probeImage(props) {
   return res;
 }
 
-const rehypeImage = (options) => async (tree) => {
-  const options_ = options || {};
-  const baseUrl = options_.baseUrl;
-
+const rehypeImage = () => async (tree) => {
   const imageNodes = searchTreeWrapper(tree, 'FigmaImage');
 
   await Promise.all(

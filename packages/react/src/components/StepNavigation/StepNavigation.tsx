@@ -1,12 +1,12 @@
 import type { PropsWithChildren } from 'react';
 import React, { useState, createRef } from 'react';
-import classNames, { Argument } from 'classnames';
+import classNames from 'classnames';
 
 import useSettings from '../../hooks/useSettings';
 
 /** Step Navigation provide indications to help users reach their destination from their current position */
 type StepNavigationProps = PropsWithChildren<{
-  className?: Argument;
+  className?: string;
   small?: boolean;
   vertical?: boolean;
   inline?: boolean;
@@ -42,9 +42,7 @@ const StepNavigation: React.FC<StepNavigationProps> = ({
   React.useEffect(() => {
     // add or remove refs
     setElRefs((elRefs) =>
-      Array(arrLength)
-        .fill()
-        .map((_, i) => elRefs[i] || createRef())
+      Array(arrLength).map((_, i) => elRefs[i] || createRef())
     );
   }, [arrLength]);
 
@@ -92,17 +90,19 @@ const StepNavigation: React.FC<StepNavigationProps> = ({
     }
   };
 
-  const tabsWithProps = getTabs()?.map((tab, index) => {
-    const newTab = React.cloneElement(tab, {
-      index,
-      selectedPage: selectedPage,
-      handleTabClick: handleTabClick(onSelectionChange),
-      handleTabAnchorFocus: handleTabAnchorFocus(onSelectionChange),
-      ref: elRefs[index],
-    });
+  const tabsWithProps = getTabs()?.map(
+    (tab: React.ReactElement<any>, index: number) => {
+      const newTab = React.cloneElement(tab as React.ReactElement<any>, {
+        index,
+        selectedPage: selectedPage,
+        handleTabClick: handleTabClick(onSelectionChange),
+        handleTabAnchorFocus: handleTabAnchorFocus(onSelectionChange),
+        ref: elRefs[index],
+      });
 
-    return newTab;
-  });
+      return newTab;
+    }
+  );
 
   const classes = {
     tabs: classNames(className, {

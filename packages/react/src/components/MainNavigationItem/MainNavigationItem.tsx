@@ -10,8 +10,9 @@ interface MainNavigationItemProps {
   activeMenuItem?: number | string;
   menuItem?: number | string;
   subNavWideAsContent?: boolean;
-  onChangeSub?: () => void;
+  onChangeSub?: (e: string) => void;
   className?: string;
+  external?: boolean;
 }
 
 const MainNavigationItem: React.FC<
@@ -19,11 +20,12 @@ const MainNavigationItem: React.FC<
 > = ({ className, children, subNavigation, subNavWideAsContent }) => {
   const { prefix } = useSettings();
 
-  const [menuItemId, setMenuItemId] = useState(Math.random().toString(36));
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [menuItemId] = useState(Math.random().toString(36));
 
-  const wrapperRef = useRef(null);
+  const wrapperRef = useRef<HTMLInputElement>(null);
 
-  const { onChangeSub, activeMenuItem, menuItem } = useContext(
+  const { onChangeSub, activeMenuItem /*menuItem */ } = useContext(
     MainNavigationContext
   );
 

@@ -1,10 +1,9 @@
-import React from 'react';
-import type { PropsWithChildren } from 'react';
-import classNames, { Argument } from 'classnames';
+import * as React from 'react';
+import classNames from 'classnames';
 import { User as UserIcon } from '@un/icons-react';
 import useSettings from '../../hooks/useSettings';
 
-type AvatarProps = PropsWithChildren<{
+export interface AvatarProps extends React.HTMLAttributes<HTMLSpanElement> {
   alt?: string;
   ellipsis?: boolean;
   description?: React.ReactNode;
@@ -12,21 +11,13 @@ type AvatarProps = PropsWithChildren<{
   missingImage?: 'avatar' | 'letter';
   image?: string;
   showName?: boolean;
-  className?: Argument;
   small?: boolean;
   name?: string;
-}>;
+}
 
 const Avatar: React.FC<AvatarProps> = ({
   alt,
-  className,
-  children,
-  description,
-  ellipsis,
-  extendedDescription,
   image,
-  showName,
-  small,
   missingImage,
   name,
   ...other
@@ -61,7 +52,7 @@ const Avatar: React.FC<AvatarProps> = ({
     );
   } else {
     return (
-      <div className={`${prefix}--user__icon`}>
+      <div className={`${prefix}--user__icon`} {...other}>
         <img alt={alt} src={image} />
       </div>
     );
@@ -69,7 +60,7 @@ const Avatar: React.FC<AvatarProps> = ({
   return null;
 };
 
-type UserProps = PropsWithChildren<{
+export interface UserProps extends React.HTMLAttributes<HTMLSpanElement> {
   alt?: string;
   ellipsis?: boolean;
   description?: React.ReactNode;
@@ -78,24 +69,21 @@ type UserProps = PropsWithChildren<{
   missingImage?: 'avatar' | 'letter';
   image?: string;
   showName?: boolean;
-  className?: Argument;
+  className?: string;
   small?: boolean;
   name?: string;
-}>;
+}
 /** The User is used inside the MainNavigation and form, and can display an avatar and username. */
 const User: React.FC<UserProps> = (props) => {
   const {
-    alt,
     className,
     children,
     components = {},
     description,
     ellipsis,
     extendedDescription,
-    image,
     showName,
     small,
-    missingImage,
     name,
     ...other
   } = props;

@@ -47,10 +47,10 @@ export const RegularSubNavigation = (args) => (
       <SubNavigationFilter>
         <Search
           className="some-class"
-          small
+          kind="small"
           id="search-2"
           labelText="Filter"
-          placeHolderText="Filter"
+          placeholder="Filter"
           onChange={() => {
             alert('Apply Filter');
           }}
@@ -59,7 +59,7 @@ export const RegularSubNavigation = (args) => (
     </SubNavigationHeader>
     <SubNavigationContent>
       <SubNavigationList>
-        <SubNavigationGroup title="First List" columns>
+        <SubNavigationGroup title="First List">
           <SubNavigationItem>
             <Link href="https://go.docs.wfp.org" target="_blank">
               GoDocs

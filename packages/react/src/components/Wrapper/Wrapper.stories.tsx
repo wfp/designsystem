@@ -1,5 +1,4 @@
 import React from 'react';
-import markdown from './README.mdx';
 import Wrapper from '.';
 
 export default {
@@ -8,7 +7,6 @@ export default {
   parameters: {
     componentSubtitle: 'Component',
     status: 'released',
-    mdx: markdown,
   },
 };
 

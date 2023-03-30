@@ -1,0 +1,41 @@
+[
+  {
+    "tags": {},
+    "filePath": "src/components/Module/ModuleHeader.tsx",
+    "description": "",
+    "displayName": "ModuleHeader",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "src/components/Module/ModuleHeader.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "filter": {
+        "defaultValue": null,
+        "description": "",
+        "name": "filter",
+        "declarations": [
+          {
+            "fileName": "src/components/Module/ModuleHeader.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactNode"
+        }
+      }
+    }
+  }
+]

@@ -7,7 +7,6 @@ Only use with the official [Branding Guidelines](https://multimedia.wfp.org/Shar
 ### Versions & Languages
 
 <!---CDN Urls-->
-
 - https://uikit.wfp.org/cdn/logos/latest/wfpLogoAcronymBlackAll.svg
 - https://uikit.wfp.org/cdn/logos/latest/wfpLogoAcronymBlueAll.svg
 - https://uikit.wfp.org/cdn/logos/latest/wfpLogoAcronymWhiteAll.svg

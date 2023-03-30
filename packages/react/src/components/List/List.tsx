@@ -1,11 +1,11 @@
-import React from 'react';
+import * as React from 'react';
 import type { PropsWithChildren } from 'react';
-import classnames, { Argument } from 'classnames';
+import classNames from 'classnames';
 import useSettings from '../../hooks/useSettings';
 
 /** List component show a number of connected items written consecutively, typically one below the other. */
 type ListProps = PropsWithChildren<{
-  className?: Argument;
+  className?: string;
   colon?: boolean;
   kind?:
     | 'unstyled'
@@ -29,7 +29,7 @@ const List: React.FC<ListProps> = ({
 }) => {
   const { prefix } = useSettings();
 
-  const classNames = classnames(`${prefix}--list`, className, {
+  const classes = classNames(`${prefix}--list`, className, {
     [`${prefix}--list--${kind}`]: kind,
     [`${prefix}--list--small`]: small,
     [`${prefix}--list--colon`]: colon,
@@ -37,11 +37,11 @@ const List: React.FC<ListProps> = ({
   return (
     <>
       {kind == 'ordered' ? (
-        <ol className={classNames} {...other}>
+        <ol className={classes} {...other}>
           {children}
         </ol>
       ) : (
-        <ul className={classNames} {...other}>
+        <ul className={classes} {...other}>
           {children}
         </ul>
       )}

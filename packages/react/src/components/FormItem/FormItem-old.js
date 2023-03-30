@@ -1,12 +1,12 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import classnames from 'classnames';
+import classNames from 'classnames';
 import useSettings from '../../hooks/useSettings';
 
 const FormItem = ({ className, children, invalid, inline, ...other }) => {
   const { prefix } = useSettings();
 
-  const classNames = classnames(
+  const classNames = classNames(
     `${prefix}--form-item`,
     {
       [`${prefix}--form-item--inline`]: inline,

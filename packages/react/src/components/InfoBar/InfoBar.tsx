@@ -1,6 +1,6 @@
-import React from 'react';
+import * as React from 'react';
 import type { PropsWithChildren } from 'react';
-import classNames, { Argument } from 'classnames';
+import classNames from 'classnames';
 import Wrapper from '../Wrapper';
 import useSettings from '../../hooks/useSettings';
 import { ScreenSize } from '../../typesLegacy/utils';
@@ -9,7 +9,7 @@ import { ScreenSize } from '../../typesLegacy/utils';
 type InfoBarProps = PropsWithChildren<{
   pageWidth?: ScreenSize;
   wrapperClassName?: string;
-  className?: Argument;
+  className?: string;
   id?: string;
 }>;
 

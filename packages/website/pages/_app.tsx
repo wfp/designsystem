@@ -9,7 +9,7 @@ import Head from 'next/head';
 
 config.autoAddCss = false;
 
-const App = ({ Component, pageProps }) => {
+const App = ({ Component, pageProps }: any) => {
   const router = useRouter();
 
   useEffect(() => storePathValues, [router.asPath]);

@@ -1,0 +1,68 @@
+[
+  {
+    "tags": {},
+    "filePath": "src/components/SelectItemGroup/SelectItemGroup.tsx",
+    "description": "",
+    "displayName": "SelectItemGroup",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "",
+        "name": "className",
+        "parent": {
+          "fileName": "src/components/SelectItemGroup/SelectItemGroup.tsx",
+          "name": "SelectItemGroupProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/SelectItemGroup/SelectItemGroup.tsx",
+            "name": "SelectItemGroupProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "disabled": {
+        "defaultValue": null,
+        "description": "",
+        "name": "disabled",
+        "parent": {
+          "fileName": "src/components/SelectItemGroup/SelectItemGroup.tsx",
+          "name": "SelectItemGroupProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/SelectItemGroup/SelectItemGroup.tsx",
+            "name": "SelectItemGroupProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "label": {
+        "defaultValue": null,
+        "description": "",
+        "name": "label",
+        "parent": {
+          "fileName": "src/components/SelectItemGroup/SelectItemGroup.tsx",
+          "name": "SelectItemGroupProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/SelectItemGroup/SelectItemGroup.tsx",
+            "name": "SelectItemGroupProps"
+          }
+        ],
+        "required": true,
+        "type": {
+          "name": "string"
+        }
+      }
+    }
+  }
+]

@@ -1,6 +1,6 @@
-import React from 'react';
+import * as React from 'react';
 import type { PropsWithChildren } from 'react';
-import classNames, { Argument } from 'classnames';
+import classNames from 'classnames';
 import { CaretDown, CaretUp } from '@un/icons-react';
 
 type TableSortingProps = PropsWithChildren<{
@@ -8,7 +8,7 @@ type TableSortingProps = PropsWithChildren<{
   isSortedDesc?: boolean;
   sortType?: boolean;
   withBorder?: boolean;
-  className?: Argument;
+  className?: string;
 }>;
 
 const TableSorting: React.FC<TableSortingProps> = ({
@@ -16,7 +16,6 @@ const TableSorting: React.FC<TableSortingProps> = ({
   isSorted,
   isSortedDesc,
   sortType,
-  ...other
 }) => {
   const classes = classNames(className, 'wfp--table--sorting', {
     'wfp--table--is-sorted': isSorted,

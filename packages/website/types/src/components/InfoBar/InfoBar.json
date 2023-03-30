@@ -1,0 +1,71 @@
+[
+  {
+    "tags": {},
+    "filePath": "src/components/InfoBar/InfoBar.tsx",
+    "description": "",
+    "displayName": "InfoBar",
+    "methods": [],
+    "props": {
+      "pageWidth": {
+        "defaultValue": null,
+        "description": "",
+        "name": "pageWidth",
+        "declarations": [
+          {
+            "fileName": "src/components/InfoBar/InfoBar.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ScreenSize"
+        }
+      },
+      "wrapperClassName": {
+        "defaultValue": null,
+        "description": "",
+        "name": "wrapperClassName",
+        "declarations": [
+          {
+            "fileName": "src/components/InfoBar/InfoBar.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "className": {
+        "defaultValue": null,
+        "description": "",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "src/components/InfoBar/InfoBar.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "id": {
+        "defaultValue": null,
+        "description": "",
+        "name": "id",
+        "declarations": [
+          {
+            "fileName": "src/components/InfoBar/InfoBar.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      }
+    }
+  }
+]

@@ -1,27 +1,33 @@
 import * as React from 'react';
 import type { PropsWithChildren } from 'react';
-import classNames, { Argument } from 'classnames';
+import classNames from 'classnames';
 import { CaretDown } from '@un/icons-react';
 
 import useSettings from '../../hooks/useSettings';
 import Input from '../Input';
-import * as HookForm from 'react-hook-form';
 
-interface SelectProps extends React.SelectHTMLAttributes<HTMLSelectElement> {
+interface SelectProps extends React.AllHTMLAttributes<HTMLSelectElement> {
   inline?: boolean;
   labelText?: React.ReactNode;
-  defaultValue?: any;
+  defaultValue?: string;
   iconDescription?: string;
-  hideLabel?: boolean;
-  invalid?: boolean | HookForm.FieldError;
-  invalidText?: string;
+
+  /**
+   * Provide text that is used alongside the control label for additional help
+   */
   helperText?: React.ReactNode;
+  /**
+   * Specify whether you want the light version of this control
+   */
   light?: boolean;
+  /**
+   * Specify whether you want the small version of this control
+   */
   small?: boolean;
   id?: string;
   disabled?: boolean;
   name?: string;
-  className?: Argument;
+  className?: string;
 }
 /** The select component allows users to choose one option from a list. It is used in forms for users to submit data. */
 
@@ -42,7 +48,7 @@ const Select: React.FC<PropsWithChildren<SelectProps>> = React.forwardRef(
       helperText, // eslint-disable-line
       light,
       name,
-      inputRef = ref,
+
       ...other
     } = props;
 
@@ -50,15 +56,17 @@ const Select: React.FC<PropsWithChildren<SelectProps>> = React.forwardRef(
 
     const usedId = id ? id : name;
 
-    const selectClasses = classNames({
-      [`${prefix}--select`]: true,
-      [`${prefix}--select--inline`]: inline,
-      [`${prefix}--select--small`]: small,
-      [`${prefix}--select--light`]: light,
-      [`${prefix}--select--invalid`]: invalid,
-      [`${prefix}--select--disabled`]: disabled,
-      [className]: className,
-    });
+    const selectClasses = classNames(
+      {
+        [`${prefix}--select`]: true,
+        [`${prefix}--select--inline`]: inline,
+        [`${prefix}--select--small`]: small,
+        [`${prefix}--select--light`]: light,
+        [`${prefix}--select--invalid`]: invalid,
+        [`${prefix}--select--disabled`]: disabled,
+      },
+      className
+    );
 
     const ariaProps = {};
     if (invalid) {
@@ -77,7 +85,7 @@ const Select: React.FC<PropsWithChildren<SelectProps>> = React.forwardRef(
             disabled={disabled || undefined}
             data-invalid={invalid || undefined}
             aria-invalid={invalid || undefined}
-            ref={inputRef}>
+            ref={ref}>
             {children}
           </select>
           <CaretDown
@@ -88,7 +96,7 @@ const Select: React.FC<PropsWithChildren<SelectProps>> = React.forwardRef(
       );
     })();
 
-    return <Input {...props}>{() => input}</Input>;
+    return <Input {...props}>{input}</Input>;
   }
 );
 

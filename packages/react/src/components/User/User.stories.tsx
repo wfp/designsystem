@@ -1,5 +1,4 @@
 import React from 'react';
-import markdown from './README.mdx';
 import User from '.';
 import { List, ListItem } from '../List';
 
@@ -9,7 +8,6 @@ export default {
   parameters: {
     componentSubtitle: 'Component',
     status: 'released',
-    mdx: markdown,
   },
 };
 
@@ -41,7 +39,7 @@ AvatarOnly.story = {
   },
 };
 
-export const ExtendedUser = (args) => (
+export const ExtendedUser = (args: any) => (
   <User
     alt="Image Alt text"
     description={

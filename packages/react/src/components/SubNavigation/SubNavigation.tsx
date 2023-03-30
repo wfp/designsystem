@@ -1,6 +1,6 @@
-import React from 'react';
+import * as React from 'react';
 import type { PropsWithChildren } from 'react';
-import classNames, { Argument } from 'classnames';
+import classNames from 'classnames';
 import useSettings from '../../hooks/useSettings';
 
 /** The SubNavigation is a toogleable part of the MainNavigation */
@@ -9,7 +9,7 @@ const SubNavigation = ({ children, ...other }) => {
 };
 
 type SubNavigationItemProps = PropsWithChildren<{
-  className?: Argument;
+  className?: string;
 }>;
 
 const SubNavigationItem: React.FC<SubNavigationItemProps> = ({
@@ -28,7 +28,7 @@ const SubNavigationItem: React.FC<SubNavigationItemProps> = ({
 };
 
 type SubNavigationHeaderProps = PropsWithChildren<{
-  className?: Argument;
+  className?: string;
 }>;
 
 const SubNavigationHeader: React.FC<SubNavigationHeaderProps> = ({
@@ -47,7 +47,7 @@ const SubNavigationHeader: React.FC<SubNavigationHeaderProps> = ({
 };
 
 type SubNavigationFilterProps = PropsWithChildren<{
-  className?: Argument;
+  className?: string;
 }>;
 
 const SubNavigationFilter: React.FC<SubNavigationFilterProps> = ({
@@ -66,7 +66,7 @@ const SubNavigationFilter: React.FC<SubNavigationFilterProps> = ({
 };
 
 type SubNavigationListProps = PropsWithChildren<{
-  className?: Argument;
+  className?: string;
 }>;
 
 const SubNavigationList: React.FC<SubNavigationListProps> = ({
@@ -85,7 +85,7 @@ const SubNavigationList: React.FC<SubNavigationListProps> = ({
 };
 
 type SubNavigationContentProps = PropsWithChildren<{
-  className?: Argument;
+  className?: string;
 }>;
 
 const SubNavigationContent: React.FC<SubNavigationContentProps> = ({
@@ -103,11 +103,7 @@ const SubNavigationContent: React.FC<SubNavigationContentProps> = ({
   );
 };
 
-type SubNavigationTitleProps = PropsWithChildren<{
-  className?: Argument;
-}>;
-
-const SubNavigationTitle: React.FC<SubNavigationTitleProps> = ({
+const SubNavigationTitle: React.FC<React.AllHTMLAttributes<HTMLDivElement>> = ({
   children,
   className,
   ...other
@@ -122,9 +118,10 @@ const SubNavigationTitle: React.FC<SubNavigationTitleProps> = ({
   );
 };
 
-type SubNavigationLinkProps = PropsWithChildren<{
-  className?: Argument;
-}>;
+export interface SubNavigationLinkProps
+  extends React.AllHTMLAttributes<HTMLDivElement> {
+  className?: string;
+}
 
 const SubNavigationLink: React.FC<SubNavigationLinkProps> = ({
   children,
@@ -142,7 +139,7 @@ const SubNavigationLink: React.FC<SubNavigationLinkProps> = ({
 };
 
 type SubNavigationGroupProps = PropsWithChildren<{
-  className?: Argument;
+  className?: string;
   columns?: number;
   title?: React.ReactNode;
   image?: string;

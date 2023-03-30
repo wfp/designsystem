@@ -1,0 +1,283 @@
+[
+  {
+    "tags": {},
+    "filePath": "src/components/Button/Button.tsx",
+    "description": "Buttons express what action will occur when the user clicks or touches it. Buttons are used to initialize an action, either in the background or foreground of an experience.",
+    "displayName": "Button",
+    "methods": [],
+    "props": {
+      "children": {
+        "defaultValue": null,
+        "description": "Content of the Button @design",
+        "name": "children",
+        "parent": {
+          "fileName": "src/components/Button/Button.tsx",
+          "name": "ButtonBaseProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/Button/Button.tsx",
+            "name": "ButtonBaseProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactNode"
+        }
+      },
+      "small": {
+        "defaultValue": null,
+        "description": "Specify whether the Button should be a small variant @design",
+        "name": "small",
+        "parent": {
+          "fileName": "src/components/Button/Button.tsx",
+          "name": "ButtonBaseProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/Button/Button.tsx",
+            "name": "ButtonBaseProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "large": {
+        "defaultValue": null,
+        "description": "Specify whether the Button should be a large variant",
+        "name": "large",
+        "parent": {
+          "fileName": "src/components/Button/Button.tsx",
+          "name": "ButtonBaseProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/Button/Button.tsx",
+            "name": "ButtonBaseProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "kind": {
+        "defaultValue": {
+          "value": "primary"
+        },
+        "description": "Specify the kind of Button you want to create @design",
+        "name": "kind",
+        "parent": {
+          "fileName": "src/components/Button/Button.tsx",
+          "name": "ButtonBaseProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/Button/Button.tsx",
+            "name": "ButtonBaseProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ButtonKind"
+        }
+      },
+      "href": {
+        "defaultValue": null,
+        "description": "Optionally specify an href for your Button to become an element",
+        "name": "href",
+        "parent": {
+          "fileName": "src/components/Button/Button.tsx",
+          "name": "ButtonBaseProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/Button/Button.tsx",
+            "name": "ButtonBaseProps"
+          },
+          {
+            "fileName": "src/components/Button/Button.tsx",
+            "name": "ButtonLinkProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "icon": {
+        "defaultValue": null,
+        "description": "Specify an `icon` to include in the Button through an object representing the SVG data of the icon, similar to the `Icon` component @design",
+        "name": "icon",
+        "parent": {
+          "fileName": "src/components/Button/Button.tsx",
+          "name": "ButtonBaseProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/Button/Button.tsx",
+            "name": "ButtonBaseProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactNode | IIcon"
+        }
+      },
+      "iconReverse": {
+        "defaultValue": null,
+        "description": "Optionally specify an href for your Button to become an element @design",
+        "name": "iconReverse",
+        "parent": {
+          "fileName": "src/components/Button/Button.tsx",
+          "name": "ButtonBaseProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/Button/Button.tsx",
+            "name": "ButtonBaseProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "iconDescription": {
+        "defaultValue": null,
+        "description": "",
+        "name": "iconDescription",
+        "parent": {
+          "fileName": "src/components/Button/Button.tsx",
+          "name": "ButtonBaseProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/Button/Button.tsx",
+            "name": "ButtonBaseProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "disabled": {
+        "defaultValue": null,
+        "description": "Specify whether the Button should be disabled, or not",
+        "name": "disabled",
+        "parent": {
+          "fileName": "src/components/Button/Button.tsx",
+          "name": "ButtonBaseProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/Button/Button.tsx",
+            "name": "ButtonBaseProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "tabIndex": {
+        "defaultValue": null,
+        "description": "",
+        "name": "tabIndex",
+        "parent": {
+          "fileName": "src/components/Button/Button.tsx",
+          "name": "ButtonBaseProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/Button/Button.tsx",
+            "name": "ButtonBaseProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "number"
+        }
+      },
+      "type": {
+        "defaultValue": null,
+        "description": "",
+        "name": "type",
+        "parent": {
+          "fileName": "src/components/Button/Button.tsx",
+          "name": "ButtonBaseProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/Button/Button.tsx",
+            "name": "ButtonBaseProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "\"button\" | \"reset\" | \"submit\""
+        }
+      },
+      "useFlexbox": {
+        "defaultValue": null,
+        "description": "",
+        "name": "useFlexbox",
+        "parent": {
+          "fileName": "src/components/Button/Button.tsx",
+          "name": "ButtonBaseProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/Button/Button.tsx",
+            "name": "ButtonBaseProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "id": {
+        "defaultValue": null,
+        "description": "",
+        "name": "id",
+        "parent": {
+          "fileName": "src/components/Button/Button.tsx",
+          "name": "ButtonBaseProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/Button/Button.tsx",
+            "name": "ButtonBaseProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "target": {
+        "defaultValue": null,
+        "description": "",
+        "name": "target",
+        "parent": {
+          "fileName": "src/components/Button/Button.tsx",
+          "name": "ButtonLinkProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/Button/Button.tsx",
+            "name": "ButtonLinkProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      }
+    }
+  }
+]

@@ -1,16 +1,11 @@
-import {
-  faFigma,
-  faGithub,
-  faNpm,
-  faReact,
-} from '@fortawesome/free-brands-svg-icons';
+import { faFigma, faGithub, faNpm } from '@fortawesome/free-brands-svg-icons';
 import { faCode } from '@fortawesome/pro-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Button, Link, List, ListItem } from '@un/react';
+import { Link, List, ListItem } from '@un/react';
 import React from 'react';
 import styles from './tableOfContent.module.scss';
 
-export default function References({ post }) {
+export default function References({ post }: any) {
   if (!post.figma && !post.storybook && !post.github) return null;
   return (
     <div className={styles.tableOfContent}>

@@ -1,11 +1,11 @@
-import React from 'react';
+import * as React from 'react';
 import type { PropsWithChildren } from 'react';
-import classNames, { Argument } from 'classnames';
+import classNames from 'classnames';
 import useSettings from '../../hooks/useSettings';
 
 type AnchorNavigationProps = PropsWithChildren<{
   title?: string;
-  className?: Argument;
+  className?: string;
 }>;
 
 const AnchorNavigation: React.FC<AnchorNavigationProps> = ({

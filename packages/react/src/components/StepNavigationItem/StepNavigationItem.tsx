@@ -1,6 +1,8 @@
-import React from 'react';
+/* eslint-disable @typescript-eslint/no-empty-function */
+/* eslint-disable @typescript-eslint/ban-types */
+import * as React from 'react';
 import type { PropsWithChildren } from 'react';
-import classNames, { Argument } from 'classnames';
+import classNames from 'classnames';
 import {
   Ellipsis,
   WarningOutline,
@@ -13,29 +15,29 @@ import {
 import useSettings from '../../hooks/useSettings';
 
 type StepNavigationItemProps = PropsWithChildren<{
-  className?: Argument;
+  className?: string;
   helperText?: React.ReactNode;
   index?: number;
   label?: string;
-  role: string;
-  selectedPage: number;
-  page: number;
-  status?: string;
-  renderAnchor: (p: any) => {};
-  onClick: (e: any) => {};
-  handleTabClick: (ind: any, l: any, e: any) => {};
+  role?: string;
+  selectedPage?: number;
+  page?: number;
+  status: string;
+  renderAnchor?: (p: object) => {};
+  onClick?: (e: object) => {};
+  handleTabClick?: (e?: any, index?: number, label?: string) => {};
 }>;
 
 const StepNavigationItem: React.FC<StepNavigationItemProps> = ({
   className,
-  handleTabClick,
+  handleTabClick = () => {},
   index,
   label,
   status,
   helperText,
-  selectedPage,
-  onClick,
-  page,
+  selectedPage = 0,
+  onClick = () => {},
+  page = 0,
   renderAnchor,
 }) => {
   const { prefix } = useSettings();
@@ -52,9 +54,9 @@ const StepNavigationItem: React.FC<StepNavigationItemProps> = ({
 
   const anchorProps = {
     className: `${prefix}--step-navigation__nav-link`,
-    ref: (e) => {
+    /*ref: (e) => {
       this.tabAnchor = e;
-    },
+    },*/
   };
 
   const icon = {
@@ -67,14 +69,14 @@ const StepNavigationItem: React.FC<StepNavigationItemProps> = ({
     summary: { icon: Menu },
   };
 
-  const Icon = icon[status]?.icon;
+  const Icon: any = icon[status]?.icon ?? null;
   return (
     <li
       tabIndex={-1}
       className={classes}
       onClick={(evt) => {
         if (status !== 'locked') {
-          handleTabClick(index, label, evt);
+          handleTabClick(evt, index, label);
           onClick(evt);
         }
       }}

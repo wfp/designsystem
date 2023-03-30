@@ -1,0 +1,184 @@
+[
+  {
+    "tags": {},
+    "filePath": "src/components/StepNavigationItem/StepNavigationItem.tsx",
+    "description": "",
+    "displayName": "StepNavigationItem",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "src/components/StepNavigationItem/StepNavigationItem.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "helperText": {
+        "defaultValue": null,
+        "description": "",
+        "name": "helperText",
+        "declarations": [
+          {
+            "fileName": "src/components/StepNavigationItem/StepNavigationItem.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactNode"
+        }
+      },
+      "index": {
+        "defaultValue": null,
+        "description": "",
+        "name": "index",
+        "declarations": [
+          {
+            "fileName": "src/components/StepNavigationItem/StepNavigationItem.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "number"
+        }
+      },
+      "label": {
+        "defaultValue": null,
+        "description": "",
+        "name": "label",
+        "declarations": [
+          {
+            "fileName": "src/components/StepNavigationItem/StepNavigationItem.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "role": {
+        "defaultValue": null,
+        "description": "",
+        "name": "role",
+        "declarations": [
+          {
+            "fileName": "src/components/StepNavigationItem/StepNavigationItem.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "selectedPage": {
+        "defaultValue": {
+          "value": "0"
+        },
+        "description": "",
+        "name": "selectedPage",
+        "declarations": [
+          {
+            "fileName": "src/components/StepNavigationItem/StepNavigationItem.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "number"
+        }
+      },
+      "page": {
+        "defaultValue": {
+          "value": "0"
+        },
+        "description": "",
+        "name": "page",
+        "declarations": [
+          {
+            "fileName": "src/components/StepNavigationItem/StepNavigationItem.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "number"
+        }
+      },
+      "status": {
+        "defaultValue": null,
+        "description": "",
+        "name": "status",
+        "declarations": [
+          {
+            "fileName": "src/components/StepNavigationItem/StepNavigationItem.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": true,
+        "type": {
+          "name": "string"
+        }
+      },
+      "renderAnchor": {
+        "defaultValue": null,
+        "description": "",
+        "name": "renderAnchor",
+        "declarations": [
+          {
+            "fileName": "src/components/StepNavigationItem/StepNavigationItem.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "(p: object) => {}"
+        }
+      },
+      "onClick": {
+        "defaultValue": {
+          "value": "() => {}"
+        },
+        "description": "",
+        "name": "onClick",
+        "declarations": [
+          {
+            "fileName": "src/components/StepNavigationItem/StepNavigationItem.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "(e: object) => {}"
+        }
+      },
+      "handleTabClick": {
+        "defaultValue": {
+          "value": "() => {}"
+        },
+        "description": "",
+        "name": "handleTabClick",
+        "declarations": [
+          {
+            "fileName": "src/components/StepNavigationItem/StepNavigationItem.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "(e?: any, index?: number, label?: string) => {}"
+        }
+      }
+    }
+  }
+]

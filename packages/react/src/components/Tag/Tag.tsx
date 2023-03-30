@@ -1,8 +1,7 @@
-import React from 'react';
-import type { PropsWithChildren } from 'react';
-import classNames, { Argument } from 'classnames';
+import * as React from 'react';
+import classNames from 'classnames';
 import useSettings from '../../hooks/useSettings';
-import { TagType } from '../../typesLegacy/utils';
+//import { TagType } from '../../typesLegacy/utils';
 
 const TYPES = {
   info: 'Info',
@@ -12,11 +11,17 @@ const TYPES = {
   custom: 'Custom',
 };
 
-type TagProps = PropsWithChildren<{
-  type: TagType;
+export interface TagProps extends React.HTMLAttributes<HTMLSpanElement> {
+  /**
+   * Specify the type of Tag @design
+   */
+  type: 'wfp' | 'info' | 'error' | 'success' | 'warning' | 'custom' | string;
+
+  /**
+   * LEGACY: Specify if the Tag should be wrapped if it is too long
+   */
   wrap?: boolean;
-  className?: Argument;
-}>;
+}
 
 /** Tag is used to label, categorize, or organize items using keywords that describe them. */
 

@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { useState, useRef, useEffect } from 'react';
-import classnames from 'classnames';
+import classNames from 'classnames';
 import useSettings from '../../hooks/useSettings';
 import {
   Close,
@@ -21,7 +21,7 @@ export function NotificationActionButton({
 }) {
   const { prefix } = useSettings();
 
-  const className = classnames(
+  const className = classNames(
     customClassName,
     `${prefix}--inline-notification__action-button`
   );
@@ -67,11 +67,11 @@ export function NotificationButton({
 }) {
   const { prefix } = useSettings();
 
-  const buttonClassName = classnames(className, {
+  const buttonClassName = classNames(className, {
     [`${prefix}--${notificationType}-notification__close-button`]:
       notificationType,
   });
-  const iconClassName = classnames({
+  const iconClassName = classNames({
     [`${prefix}--${notificationType}-notification__close-icon`]:
       notificationType,
   });
@@ -265,7 +265,7 @@ export function ToastNotification({
 }) {
   const { prefix } = useSettings();
   const [isOpen, setIsOpen] = useState(true);
-  const containerClassName = classnames(className, {
+  const containerClassName = classNames(className, {
     [`${prefix}--toast-notification`]: true,
     [`${prefix}--toast-notification--low-contrast`]: lowContrast,
     [`${prefix}--toast-notification--${kind}`]: kind,
@@ -453,7 +453,7 @@ export function InlineNotification({
 }) {
   const { prefix } = useSettings();
   const [isOpen, setIsOpen] = useState(true);
-  const containerClassName = classnames(className, {
+  const containerClassName = classNames(className, {
     [`${prefix}--inline-notification`]: true,
     [`${prefix}--inline-notification--low-contrast`]: lowContrast,
     [`${prefix}--inline-notification--${kind}`]: kind,

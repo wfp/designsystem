@@ -4,9 +4,7 @@ import { Button, FormGroup, TextInput, TextArea } from '@un/react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/pro-solid-svg-icons';
 
-import components from '..';
-
-export default function Contact({ abc, children }) {
+export default function Contact({ children }: any) {
   return (
     <div className={styles.flex}>
       <FormGroup>

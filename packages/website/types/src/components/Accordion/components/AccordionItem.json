@@ -1,0 +1,220 @@
+[
+  {
+    "tags": {},
+    "filePath": "src/components/Accordion/components/AccordionItem.tsx",
+    "description": "",
+    "displayName": "AccordionItem",
+    "methods": [],
+    "props": {
+      "header": {
+        "defaultValue": null,
+        "description": "",
+        "name": "header",
+        "parent": {
+          "fileName": "src/components/Accordion/components/AccordionItem.tsx",
+          "name": "AccordionItemProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/Accordion/components/AccordionItem.tsx",
+            "name": "AccordionItemProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "NodeOrFunc"
+        }
+      },
+      "headingTag": {
+        "defaultValue": null,
+        "description": "",
+        "name": "headingTag",
+        "parent": {
+          "fileName": "src/components/Accordion/components/AccordionItem.tsx",
+          "name": "AccordionItemProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/Accordion/components/AccordionItem.tsx",
+            "name": "AccordionItemProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "\"h1\" | \"h2\" | \"h3\" | \"h4\" | \"h5\" | \"h6\""
+        }
+      },
+      "headingProps": {
+        "defaultValue": null,
+        "description": "",
+        "name": "headingProps",
+        "parent": {
+          "fileName": "src/components/Accordion/components/AccordionItem.tsx",
+          "name": "AccordionItemProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/Accordion/components/AccordionItem.tsx",
+            "name": "AccordionItemProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ItemElementProps<HTMLHeadingElement>"
+        }
+      },
+      "buttonProps": {
+        "defaultValue": null,
+        "description": "",
+        "name": "buttonProps",
+        "parent": {
+          "fileName": "src/components/Accordion/components/AccordionItem.tsx",
+          "name": "AccordionItemProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/Accordion/components/AccordionItem.tsx",
+            "name": "AccordionItemProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ItemElementProps<HTMLButtonElement>"
+        }
+      },
+      "contentProps": {
+        "defaultValue": null,
+        "description": "",
+        "name": "contentProps",
+        "parent": {
+          "fileName": "src/components/Accordion/components/AccordionItem.tsx",
+          "name": "AccordionItemProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/Accordion/components/AccordionItem.tsx",
+            "name": "AccordionItemProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ItemElementProps<HTMLDivElement>"
+        }
+      },
+      "panelProps": {
+        "defaultValue": null,
+        "description": "",
+        "name": "panelProps",
+        "parent": {
+          "fileName": "src/components/Accordion/components/AccordionItem.tsx",
+          "name": "AccordionItemProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/Accordion/components/AccordionItem.tsx",
+            "name": "AccordionItemProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ItemElementProps<HTMLDivElement>"
+        }
+      },
+      "itemKey": {
+        "defaultValue": null,
+        "description": "",
+        "name": "itemKey",
+        "parent": {
+          "fileName": "react/src/components/Accordion/utils/constants.ts",
+          "name": "ItemStateOptions"
+        },
+        "declarations": [
+          {
+            "fileName": "react/src/components/Accordion/utils/constants.ts",
+            "name": "ItemStateOptions"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | number"
+        }
+      },
+      "initialEntered": {
+        "defaultValue": null,
+        "description": "",
+        "name": "initialEntered",
+        "parent": {
+          "fileName": "react/src/components/Accordion/utils/constants.ts",
+          "name": "ItemStateOptions"
+        },
+        "declarations": [
+          {
+            "fileName": "react/src/components/Accordion/utils/constants.ts",
+            "name": "ItemStateOptions"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "disabled": {
+        "defaultValue": null,
+        "description": "",
+        "name": "disabled",
+        "parent": {
+          "fileName": "react/src/components/Accordion/utils/constants.ts",
+          "name": "ItemStateOptions"
+        },
+        "declarations": [
+          {
+            "fileName": "react/src/components/Accordion/utils/constants.ts",
+            "name": "ItemStateOptions"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "className": {
+        "defaultValue": null,
+        "description": "",
+        "name": "className",
+        "parent": {
+          "fileName": "react/src/components/Accordion/utils/constants.ts",
+          "name": "ElementProps"
+        },
+        "declarations": [
+          {
+            "fileName": "react/src/components/Accordion/utils/constants.ts",
+            "name": "ElementProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ClassNameProp<Readonly<{ status: TransitionStatus; isMounted: boolean; isEnter: boolean; isResolved: boolean; }>>"
+        }
+      },
+      "data-testid": {
+        "defaultValue": null,
+        "description": "",
+        "name": "data-testid",
+        "parent": {
+          "fileName": "react/src/components/Accordion/utils/constants.ts",
+          "name": "ElementProps"
+        },
+        "declarations": [
+          {
+            "fileName": "react/src/components/Accordion/utils/constants.ts",
+            "name": "ElementProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | number"
+        }
+      }
+    }
+  }
+]

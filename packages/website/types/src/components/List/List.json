@@ -1,0 +1,71 @@
+[
+  {
+    "tags": {},
+    "filePath": "src/components/List/List.tsx",
+    "description": "",
+    "displayName": "List",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "src/components/List/List.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "colon": {
+        "defaultValue": null,
+        "description": "",
+        "name": "colon",
+        "declarations": [
+          {
+            "fileName": "src/components/List/List.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "kind": {
+        "defaultValue": null,
+        "description": "",
+        "name": "kind",
+        "declarations": [
+          {
+            "fileName": "src/components/List/List.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "\"unstyled\" | \"simple-inline\" | \"simple\" | \"details\" | \"unordered\" | \"ordered\" | \"tooltip\" | \"bullets\""
+        }
+      },
+      "small": {
+        "defaultValue": null,
+        "description": "",
+        "name": "small",
+        "declarations": [
+          {
+            "fileName": "src/components/List/List.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      }
+    }
+  }
+]

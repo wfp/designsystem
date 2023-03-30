@@ -1,0 +1,176 @@
+[
+  {
+    "tags": {},
+    "filePath": "src/components/Hero/Hero.tsx",
+    "description": "",
+    "displayName": "Hero",
+    "methods": [],
+    "props": {
+      "href": {
+        "defaultValue": null,
+        "description": "",
+        "name": "href",
+        "declarations": [
+          {
+            "fileName": "src/components/Hero/Hero.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "image": {
+        "defaultValue": null,
+        "description": "",
+        "name": "image",
+        "declarations": [
+          {
+            "fileName": "src/components/Hero/Hero.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "isExternal": {
+        "defaultValue": null,
+        "description": "",
+        "name": "isExternal",
+        "declarations": [
+          {
+            "fileName": "src/components/Hero/Hero.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "isLink": {
+        "defaultValue": null,
+        "description": "",
+        "name": "isLink",
+        "declarations": [
+          {
+            "fileName": "src/components/Hero/Hero.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "subTitle": {
+        "defaultValue": null,
+        "description": "",
+        "name": "subTitle",
+        "declarations": [
+          {
+            "fileName": "src/components/Hero/Hero.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactNode"
+        }
+      },
+      "title": {
+        "defaultValue": null,
+        "description": "",
+        "name": "title",
+        "declarations": [
+          {
+            "fileName": "src/components/Hero/Hero.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactNode"
+        }
+      },
+      "metadata": {
+        "defaultValue": null,
+        "description": "",
+        "name": "metadata",
+        "declarations": [
+          {
+            "fileName": "src/components/Hero/Hero.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "more": {
+        "defaultValue": null,
+        "description": "",
+        "name": "more",
+        "declarations": [
+          {
+            "fileName": "src/components/Hero/Hero.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactNode"
+        }
+      },
+      "kind": {
+        "defaultValue": null,
+        "description": "",
+        "name": "kind",
+        "declarations": [
+          {
+            "fileName": "src/components/Hero/Hero.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "HeroKind"
+        }
+      },
+      "url": {
+        "defaultValue": null,
+        "description": "",
+        "name": "url",
+        "declarations": [
+          {
+            "fileName": "src/components/Hero/Hero.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "className": {
+        "defaultValue": null,
+        "description": "",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "src/components/Hero/Hero.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      }
+    }
+  }
+]

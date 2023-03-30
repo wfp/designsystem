@@ -10,7 +10,7 @@
     "esModuleInterop": true,
 
     "lib": ["ES5", "ES2015", "ES2016", "DOM", "ESNext"],
-    "types": ["node"],
+    "types": ["node", "mdx"],
 
     "noImplicitAny": false,
     "noUnusedLocals": true,
@@ -19,5 +19,17 @@
     "strict": true,
     "target": "ES6"
   },
-  "include": ["src"]
+  "typeRoots": ["./node_modules/@types", "./typings"],
+  "rules": {
+    "@typescript-eslint/no-explicit-any": "off"
+  },
+  "include": ["src"],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "src/typesLegacy",
+    "src/**/*.stories.tsx",
+    "src/**/*.test.tsx",
+    "src/**/*.test.ts"
+  ]
 }

@@ -1,0 +1,26 @@
+[
+  {
+    "tags": {},
+    "filePath": "src/components/Accordion/components/AccordionProvider.tsx",
+    "description": "",
+    "displayName": "AccordionProvider",
+    "methods": [],
+    "props": {
+      "value": {
+        "defaultValue": null,
+        "description": "",
+        "name": "value",
+        "declarations": [
+          {
+            "fileName": "src/components/Accordion/components/AccordionProvider.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": true,
+        "type": {
+          "name": "AccordionProviderValue"
+        }
+      }
+    }
+  }
+]

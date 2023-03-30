@@ -21,9 +21,6 @@
   background-color: transparent;
 }
 
-.editor {
-}
-
 .liveEditor {
   background: black;
 
@@ -46,9 +43,6 @@
   padding: 1em;
 }
 
-.previewWithSource {
-}
-
 .showWrapper {
   border-radius: 0 0 10px 10px;
   .preview {
@@ -62,5 +56,14 @@
     :global(.prism-code) {
       border-radius: 0 0 10px 10px;
     }
+  }
+}
+
+.center {
+  .preview {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 10em;
   }
 }

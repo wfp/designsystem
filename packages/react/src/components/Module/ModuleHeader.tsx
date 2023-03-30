@@ -1,10 +1,10 @@
-import React from 'react';
+import * as React from 'react';
 import type { PropsWithChildren } from 'react';
-import classNames, { Argument } from 'classnames';
+import classNames from 'classnames';
 
 type ModuleHeaderProps = PropsWithChildren<{
-  className?: Argument;
-  filter?: any;
+  className?: string;
+  filter?: React.ReactNode;
 }>;
 
 const ModuleHeader: React.FC<ModuleHeaderProps> = ({

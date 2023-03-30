@@ -1,0 +1,86 @@
+[
+  {
+    "tags": {},
+    "filePath": "src/components/Table/TableSorting.tsx",
+    "description": "",
+    "displayName": "TableSorting",
+    "methods": [],
+    "props": {
+      "isSorted": {
+        "defaultValue": null,
+        "description": "",
+        "name": "isSorted",
+        "declarations": [
+          {
+            "fileName": "src/components/Table/TableSorting.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "isSortedDesc": {
+        "defaultValue": null,
+        "description": "",
+        "name": "isSortedDesc",
+        "declarations": [
+          {
+            "fileName": "src/components/Table/TableSorting.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "sortType": {
+        "defaultValue": null,
+        "description": "",
+        "name": "sortType",
+        "declarations": [
+          {
+            "fileName": "src/components/Table/TableSorting.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "withBorder": {
+        "defaultValue": null,
+        "description": "",
+        "name": "withBorder",
+        "declarations": [
+          {
+            "fileName": "src/components/Table/TableSorting.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "className": {
+        "defaultValue": null,
+        "description": "",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "src/components/Table/TableSorting.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      }
+    }
+  }
+]

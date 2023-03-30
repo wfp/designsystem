@@ -1,7 +1,7 @@
-import React from 'react';
+import * as React from 'react';
 import Wrapper from '../Wrapper';
 import type { PropsWithChildren } from 'react';
-import classnames, { Argument } from 'classnames';
+import classNames from 'classnames';
 import { WfpLogoVerticalEn } from '@un/pictograms-react';
 import {
   LinkedIn,
@@ -16,7 +16,7 @@ import { ScreenSize } from '../../typesLegacy/utils';
 import useSettings from '../../hooks/useSettings';
 
 type FooterExternalProps = PropsWithChildren<{
-  className?: Argument;
+  className?: string;
   productName?: React.ReactNode;
   metaContent?: React.ReactNode;
   metaLinks?: React.ReactNode;
@@ -33,7 +33,7 @@ const FooterExternal: React.FC<FooterExternalProps> = ({
 }) => {
   const { prefix } = useSettings();
 
-  const externalClasses = classnames(`${prefix}--footer-ext`, className);
+  const externalClasses = classNames(`${prefix}--footer-ext`, className);
   return (
     <footer className={externalClasses}>
       <Wrapper pageWidth={pageWidth}>
@@ -121,7 +121,7 @@ const FooterExternal: React.FC<FooterExternalProps> = ({
 };
 
 type LinksColumnProps = PropsWithChildren<{
-  className?: Argument;
+  className?: string;
   title?: string;
 }>;
 
@@ -139,10 +139,11 @@ const LinksColumn: React.FC<LinksColumnProps> = ({ title, children }) => {
   );
 };
 
-type FooterMetaLinkProps = PropsWithChildren<{
-  className?: Argument;
+export interface FooterMetaLinkProps
+  extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
+  className?: string;
   href?: string;
-}>;
+}
 
 const FooterMetaLink: React.FC<FooterMetaLinkProps> = ({
   className,
@@ -151,7 +152,7 @@ const FooterMetaLink: React.FC<FooterMetaLinkProps> = ({
 }) => {
   const { prefix } = useSettings();
 
-  const wrapperClasses = classnames(
+  const wrapperClasses = classNames(
     `${prefix}--footer-ext__legal-link`,
     className
   );

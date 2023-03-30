@@ -1,19 +1,11 @@
 import React from 'react';
 import Link from 'next/link';
 import styles from './card.module.scss';
-import classnames from 'classnames';
-import MultimediaElement from '../../Multimedia';
-import { Card } from '@un/react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowRight } from '@fortawesome/pro-solid-svg-icons';
-import Image from 'next/image';
-import dynamic from 'next/dynamic';
+import slugifyWithSlashes from '../../../lib/slugifyWithSlashes';
 
-const CardWrapper = ({ article, multimedia, detail = 'posts' }) => {
-  const src = article?.coverImage;
-
+const CardWrapper = ({ article, detail = 'posts' }: any) => {
+  //const src = article?.coverImage;
   //const srcElement = require(pathInclude);
-
   /*const srcElement = dynamic(() => import(article.coverImagePath), {
     suspense: true,
   });
@@ -22,7 +14,7 @@ const CardWrapper = ({ article, multimedia, detail = 'posts' }) => {
 
   return (
     <Link
-      href={`/${detail}/${article.slug}`}
+      href={`/${detail}/${slugifyWithSlashes(article.slug)}`}
       className={styles.card}
       legacyBehavior>
       <div>

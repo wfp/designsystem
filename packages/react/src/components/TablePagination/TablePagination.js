@@ -1,5 +1,5 @@
-import React from 'react';
-import classnames from 'classnames';
+import * as React from 'react';
+import classNames from 'classnames';
 import Pagination from '../Pagination';
 import useSettings from '../../hooks/useSettings';
 
@@ -73,7 +73,7 @@ const ReactTablePagination = ({
 
   return (
     <div
-      className={classnames(paginationClassName, '-pagination')}
+      className={classNames(paginationClassName, '-pagination')}
       style={style}>
       <div className={`${prefix}-pagination`}>
         <Pagination

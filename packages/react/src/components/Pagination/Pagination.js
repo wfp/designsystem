@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import classnames from 'classnames';
+import classNames from 'classnames';
 import { ChevronLeft, ChevronRight } from '@un/icons-react';
 import Select from '../Select';
 import SelectItem from '../SelectItem';
@@ -247,8 +247,8 @@ export default class Pagination extends Component {
     const statePageSize = this.props.pageSize
       ? this.props.pageSize
       : this.state.pageSize;
-    const classNames = classnames('wfp--pagination', className);
-    const backButtonClasses = classnames(
+    const classNames = classNames('wfp--pagination', className);
+    const backButtonClasses = classNames(
       'wfp--pagination__button',
       'wfp--pagination__button--backward',
       {

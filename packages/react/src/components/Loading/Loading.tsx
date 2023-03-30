@@ -1,14 +1,19 @@
-import PropTypes from 'prop-types';
-import React from 'react';
+import * as React from 'react';
 import classNames from 'classnames';
 import { componentsX } from '../../internal/FeatureFlags';
 import useSettings from '../../hooks/useSettings';
 
 interface LoadingProps {
-  active: boolean;
-  className: string;
-  withOverlay: boolean;
-  small: boolean;
+  active?: boolean;
+  className?: string;
+  /**
+   * Specify whether you want the loader to be applied with an overlay
+   */
+  withOverlay?: boolean;
+  /**
+   * Specify whether you would like the small variant of <Loading>
+   */
+  small?: boolean;
 }
 
 /** Loading spinners are used when retrieving data or performing slow computations, and help to notify users that loading is underway. */
@@ -48,7 +53,7 @@ const Loading: React.FC<LoadingProps> = (props) => {
           />
         ) : null}
         <circle
-          className={componentsX ? `${prefix}--loading__stroke` : null}
+          className={componentsX ? `${prefix}--loading__stroke` : undefined}
           cx="0"
           cy="0"
           r="37.5"
@@ -64,29 +69,6 @@ const Loading: React.FC<LoadingProps> = (props) => {
   );
 };
 
-// Loading.propTypes = {
-//   active: PropTypes.bool,
-
-//   /**
-//    * Provide an optional className to be applied to the containing node
-//    */
-//   className: PropTypes.string,
-
-//   /**
-//    * Specify whether you want the loader to be applied with an overlay
-//    */
-//   withOverlay: PropTypes.bool,
-
-//   /**
-//    * Specify whether you would like the small variant of <Loading>
-//    */
-//   small: PropTypes.bool,
-// };
-
-// Loading.defaultProps = {
-//   active: true,
-//   withOverlay: true,
-//   small: false,
-// };
+Loading.displayName = 'Loading';
 
 export default Loading;

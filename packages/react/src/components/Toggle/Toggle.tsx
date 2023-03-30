@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import type { PropsWithChildren } from 'react';
 import classNames from 'classnames';
 import useSettings from '../../hooks/useSettings';
@@ -34,10 +34,12 @@ const Toggle: React.FC<ToggleProps> = ({
 }) => {
   const { prefix } = useSettings();
   let input;
-  const wrapperClasses = classNames({
-    [`${prefix}--form-item`]: true,
-    [className]: className,
-  });
+  const wrapperClasses = classNames(
+    {
+      [`${prefix}--form-item`]: true,
+    },
+    className
+  );
 
   // const checkedProps = {};
 

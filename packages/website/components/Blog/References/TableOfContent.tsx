@@ -4,7 +4,7 @@ import React from 'react';
 import { createSlug } from '../Mdx/Headings';
 import styles from './tableOfContent.module.scss';
 
-const Heading2 = ({ children }) => {
+const Heading2 = ({ children }: any) => {
   const idText = createSlug(children);
   return (
     <ListItem className={styles.heading2}>
@@ -23,8 +23,7 @@ const MDXComponents = {
   // ...
 };
 
-export default function TableOfContent({ content }) {
-  console.log('content', content);
+export default function TableOfContent({ content }: any) {
   if (content.length === 0) return null;
   return (
     <div className={styles.tableOfContent}>

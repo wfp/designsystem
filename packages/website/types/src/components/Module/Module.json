@@ -1,0 +1,135 @@
+[
+  {
+    "tags": {},
+    "filePath": "src/components/Module/Module.tsx",
+    "description": "",
+    "displayName": "Module",
+    "methods": [],
+    "props": {
+      "children": {
+        "defaultValue": null,
+        "description": "* Specify the content of the `Module`, usually a `ModuleHeader` `ModuleBody` and `ModuleFooter`component.",
+        "name": "children",
+        "declarations": [
+          {
+            "fileName": "src/components/Module/Module.tsx",
+            "name": "TypeLiteral"
+          },
+          {
+            "fileName": "un-core-v1/node_modules/@types/react/index.d.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactNode"
+        }
+      },
+      "className": {
+        "defaultValue": null,
+        "description": "The CSS class name for the slider.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "src/components/Module/Module.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "noMargin": {
+        "defaultValue": null,
+        "description": "Disables the default margin",
+        "name": "noMargin",
+        "declarations": [
+          {
+            "fileName": "src/components/Module/Module.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "fullHeight": {
+        "defaultValue": null,
+        "description": "Use 100% height of parent container",
+        "name": "fullHeight",
+        "declarations": [
+          {
+            "fileName": "src/components/Module/Module.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "light": {
+        "defaultValue": null,
+        "description": "Light appearance (for white backgrounds) @design",
+        "name": "light",
+        "declarations": [
+          {
+            "fileName": "src/components/Module/Module.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "dark": {
+        "defaultValue": null,
+        "description": "Dark appearance @design",
+        "name": "dark",
+        "declarations": [
+          {
+            "fileName": "src/components/Module/Module.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "withHover": {
+        "defaultValue": null,
+        "description": "Additional hover styling @design",
+        "name": "withHover",
+        "declarations": [
+          {
+            "fileName": "src/components/Module/Module.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "margin": {
+        "defaultValue": null,
+        "description": "",
+        "name": "margin",
+        "declarations": [
+          {
+            "fileName": "src/components/Module/Module.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "\"xs\" | \"md\" | \"lg\""
+        }
+      }
+    }
+  }
+]

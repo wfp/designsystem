@@ -4,7 +4,6 @@ import React from 'react';
 import { Button, Module, ModuleFooter, Tooltip, tooltipStyle } from '@un/react';
 import { Download } from '@un/icons-react';
 
-import Tippy from '@tippy.js/react';
 import styles from './icon-list.module.scss';
 
 import * as icons from '@un/icons-react';
@@ -19,7 +18,7 @@ const iconList = {
   humanitarianIcons,
 };
 
-const IconPreview = ({ icon, name }) => {
+const IconPreview = ({ icon, name }: any) => {
   const [key, Icon] = icon;
   return (
     <Tooltip
@@ -42,7 +41,7 @@ const IconPreview = ({ icon, name }) => {
           <Button
             icon={Download}
             href={`https://github.com/un-core/designsystem/tree/develop/packages/${name}/src/svg`}
-            target="_blank"
+            //target="_blank"
             small>
             View on GitHub
           </Button>
@@ -84,10 +83,7 @@ const IconPreview = ({ icon, name }) => {
   );
 };
 
-const wrapperStyle = { display: 'flex', flexWrap: 'wrap', margin: '0 -0.7em' };
-
-const IconList = ({ id, name }) => {
-  console.log('key', id);
+const IconList = ({ id, name }: any) => {
   if (!iconList[id]) return null;
   const iconsReact = iconList[id];
   return (

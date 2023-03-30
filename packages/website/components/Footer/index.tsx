@@ -1,8 +1,6 @@
 //import Link from 'next/link';
-import { useRouter } from 'next/router';
 import React from 'react';
 import styles from './styles.module.scss';
-import { useTranslation } from 'next-i18next';
 import { Link, LinksColumn, FooterExternal, FooterMetaLink } from '@un/react';
 import NextLink from 'next/link';
 

@@ -1,6 +1,5 @@
-import PropTypes from 'prop-types';
-import React from 'react';
-import classnames from 'classnames';
+import * as React from 'react';
+import classNames from 'classnames';
 import useSettings from '../../hooks/useSettings';
 
 interface SelectItemGroupProps {
@@ -18,13 +17,9 @@ const SelectItemGroup: React.FC<SelectItemGroupProps> = ({
   ...other
 }) => {
   const { prefix } = useSettings();
-  const classNames = classnames(`${prefix}--select-optgroup`, className);
+  const classes = classNames(`${prefix}--select-optgroup`, className);
   return (
-    <optgroup
-      className={classNames}
-      label={label}
-      disabled={disabled}
-      {...other}>
+    <optgroup className={classes} label={label} disabled={disabled} {...other}>
       {children}
     </optgroup>
   );

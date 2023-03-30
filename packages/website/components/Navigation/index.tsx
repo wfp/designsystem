@@ -1,38 +1,19 @@
 import React from 'react';
 import NextLink from 'next/link';
-import { useRouter } from 'next/router';
 import {
   Button,
-  MainNavigation,
   MainNavigationItem,
   BannerNavigation,
-  Link,
-  SubNavigation,
-  SubNavigationItem,
-  SubNavigationHeader,
-  SubNavigationContent,
-  SubNavigationList,
-  SubNavigationGroup,
-  SubNavigationTitle,
-  User,
   MainNavigationExternal,
 } from '@un/react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faRightFromBracket } from '@fortawesome/pro-regular-svg-icons';
-import { faRocketLaunch } from '@fortawesome/pro-solid-svg-icons';
+
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import Search from '../Search';
 
-import logo from './logo.svg';
-import Image from 'next/image';
 import styles from './styles.module.scss';
-import { useTranslation } from 'next-i18next';
-
-export default function Navigation({ children }) {
-  const router = useRouter();
-  const { t } = useTranslation('website');
-
-  const { locale, locales, asPath } = useRouter();
+export default function Navigation() {
+  //const { t } = useTranslation('website');
 
   return (
     <>
@@ -54,7 +35,7 @@ export default function Navigation({ children }) {
           <NextLink href="/posts">Documentation</NextLink>
         </MainNavigationItem>
         <MainNavigationItem>
-          <Search kind="main" id="search-2" placeholder="Search" />
+          <Search /*kind="main"placeholder="Search"*/ />
         </MainNavigationItem>
         <NextLink
           href="https://github.com/un-core/designsystem"

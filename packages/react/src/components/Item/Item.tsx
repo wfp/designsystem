@@ -1,6 +1,6 @@
-import React from 'react';
+import * as React from 'react';
 import type { PropsWithChildren } from 'react';
-import classnames, { Argument } from 'classnames';
+import classNames from 'classnames';
 import { ChevronRight } from '@un/icons-react';
 import useSettings from '../../hooks/useSettings';
 import { IIcon } from '../../typesLegacy/utils';
@@ -9,14 +9,14 @@ type ItemProps = PropsWithChildren<{
   title?: React.ReactNode;
   children?: React.ReactNode;
   icon?: React.ReactNode | IIcon;
-  button?: React.ReactNode;
+  // button?: React.ReactNode;
   kind?: 'undefined' | 'horizontal' | 'large';
   wrapper?: 'undefined' | 'sidebar' | 'repeater';
   showAdditionalIcon?: boolean;
   subContent?: string;
   additional?: string;
   hint?: React.ReactNode;
-  className?: Argument;
+  className?: string;
   active?: boolean;
   image?: React.ReactNode;
   noImage?: boolean;
@@ -26,10 +26,8 @@ type ItemProps = PropsWithChildren<{
 const Item: React.FC<ItemProps> = ({
   active,
   additional,
-  button,
   children,
   className,
-  href,
   subContent,
   image,
   hint,
@@ -43,7 +41,7 @@ const Item: React.FC<ItemProps> = ({
 }) => {
   const { prefix } = useSettings();
 
-  const classNames = classnames(
+  const classes = classNames(
     {
       [`${prefix}--item`]: true,
       [`${prefix}--item--${kind}`]: kind,
@@ -54,7 +52,7 @@ const Item: React.FC<ItemProps> = ({
     className
   );
   return (
-    <div className={classNames} {...other}>
+    <div className={classes} {...other}>
       {image ? (
         <div className={`${prefix}--item__image`}>{image}</div>
       ) : noImage ? (

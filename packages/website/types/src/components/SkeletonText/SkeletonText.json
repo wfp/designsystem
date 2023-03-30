@@ -1,0 +1,114 @@
+[
+  {
+    "tags": {},
+    "filePath": "src/components/SkeletonText/SkeletonText.tsx",
+    "description": "",
+    "displayName": "SkeletonText",
+    "methods": [],
+    "props": {
+      "paragraph": {
+        "defaultValue": {
+          "value": "false"
+        },
+        "description": "will generate multiple lines of text",
+        "name": "paragraph",
+        "parent": {
+          "fileName": "src/components/SkeletonText/SkeletonText.tsx",
+          "name": "SkeletonTextProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/SkeletonText/SkeletonText.tsx",
+            "name": "SkeletonTextProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "lineCount": {
+        "defaultValue": {
+          "value": "3"
+        },
+        "description": "the number of lines in a paragraph",
+        "name": "lineCount",
+        "parent": {
+          "fileName": "src/components/SkeletonText/SkeletonText.tsx",
+          "name": "SkeletonTextProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/SkeletonText/SkeletonText.tsx",
+            "name": "SkeletonTextProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "number"
+        }
+      },
+      "width": {
+        "defaultValue": {
+          "value": "100%"
+        },
+        "description": "width (in px or %) of single line of text or max-width of paragraph lines",
+        "name": "width",
+        "parent": {
+          "fileName": "src/components/SkeletonText/SkeletonText.tsx",
+          "name": "SkeletonTextProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/SkeletonText/SkeletonText.tsx",
+            "name": "SkeletonTextProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | number"
+        }
+      },
+      "heading": {
+        "defaultValue": {
+          "value": "false"
+        },
+        "description": "generates skeleton text at a larger size",
+        "name": "heading",
+        "parent": {
+          "fileName": "src/components/SkeletonText/SkeletonText.tsx",
+          "name": "SkeletonTextProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/SkeletonText/SkeletonText.tsx",
+            "name": "SkeletonTextProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "className": {
+        "defaultValue": null,
+        "description": "",
+        "name": "className",
+        "parent": {
+          "fileName": "src/components/SkeletonText/SkeletonText.tsx",
+          "name": "SkeletonTextProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/SkeletonText/SkeletonText.tsx",
+            "name": "SkeletonTextProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      }
+    }
+  }
+]

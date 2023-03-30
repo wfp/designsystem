@@ -1,23 +1,24 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { useState } from 'react';
 import classNames from 'classnames';
 import useSettings from '../../hooks/useSettings';
 import * as ReactHook from 'react-hook-form';
 
-interface DateRangePickerInputProps {
+interface DateRangePickerInputProps
+  extends React.HTMLAttributes<HTMLTextAreaElement> {
   datePicker: React.ElementType;
   labelText: string;
   placeholder?: string;
   hideLabel?: boolean;
   showClearDate?: boolean;
-  invalid?: boolean | ReactHook.FieldError;
+  invalid?: boolean | FieldError;
   invalidText?: string;
   showDefaultInputIcon?: boolean;
   inputIconPosition?: string;
   helperText?: string;
   onBlur?: () => void;
-  value?: string;
-  id?: string;
-  onChange?: (value: string) => void;
+  value?: { startDate: string; endDate: string };
+  onChange?: (value: { startDate: string; endDate: string }) => void;
   startDatePlaceholderText?: string;
   endDatePlaceholderText?: string;
   startDateId?: string;

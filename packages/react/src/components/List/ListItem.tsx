@@ -1,29 +1,27 @@
-import React from 'react';
-import type { PropsWithChildren } from 'react';
-import classnames, { Argument } from 'classnames';
+import * as React from 'react';
+import classNames from 'classnames';
 import Icon from '../Icon';
 
-declare namespace ListItem {
-  interface ListItemProps extends Omit<React.HTMLProps<ListItem>, 'title'> {
-    kind?: 'checkmark' | 'cross';
-    small?: boolean;
-    title?: React.ReactNode;
-  }
+export interface ListItemProps
+  extends Omit<React.LiHTMLAttributes<HTMLLIElement>, 'title'> {
+  kind?: 'checkmark' | 'cross';
+  small?: boolean;
+  title?: React.ReactNode;
 }
 
-const ListItem: React.FC<ListItem.ListItemProps> = ({
+const ListItem: React.FC<ListItemProps> = ({
   children,
   className,
   title,
   kind,
   ...other
 }) => {
-  const classNames = classnames('wfp--list__element', className, {
+  const classes = classNames('wfp--list__element', className, {
     'wfp--list-item--checkmark': kind === 'checkmark',
     'wfp--list-item--cross': kind === 'cross',
   });
   return (
-    <li className={classNames} {...other}>
+    <li className={classes} {...other}>
       {kind === 'cross' && (
         <Icon
           className="wfp--list-item__icon"

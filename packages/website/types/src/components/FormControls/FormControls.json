@@ -1,0 +1,315 @@
+[
+  {
+    "tags": {},
+    "filePath": "src/components/FormControls/FormControls.tsx",
+    "description": "",
+    "displayName": "FormControls",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "",
+        "name": "className",
+        "parent": {
+          "fileName": "src/components/FormControls/FormControls.tsx",
+          "name": "FormControlsProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/FormControls/FormControls.tsx",
+            "name": "FormControlsProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "onNextClick": {
+        "defaultValue": null,
+        "description": "",
+        "name": "onNextClick",
+        "parent": {
+          "fileName": "src/components/FormControls/FormControls.tsx",
+          "name": "FormControlsProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/FormControls/FormControls.tsx",
+            "name": "FormControlsProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "() => void"
+        }
+      },
+      "nextDisabled": {
+        "defaultValue": null,
+        "description": "",
+        "name": "nextDisabled",
+        "parent": {
+          "fileName": "src/components/FormControls/FormControls.tsx",
+          "name": "FormControlsProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/FormControls/FormControls.tsx",
+            "name": "FormControlsProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "nextIcon": {
+        "defaultValue": null,
+        "description": "",
+        "name": "nextIcon",
+        "parent": {
+          "fileName": "src/components/FormControls/FormControls.tsx",
+          "name": "FormControlsProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/FormControls/FormControls.tsx",
+            "name": "FormControlsProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "object"
+        }
+      },
+      "nextHidden": {
+        "defaultValue": null,
+        "description": "",
+        "name": "nextHidden",
+        "parent": {
+          "fileName": "src/components/FormControls/FormControls.tsx",
+          "name": "FormControlsProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/FormControls/FormControls.tsx",
+            "name": "FormControlsProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "nextText": {
+        "defaultValue": null,
+        "description": "",
+        "name": "nextText",
+        "parent": {
+          "fileName": "src/components/FormControls/FormControls.tsx",
+          "name": "FormControlsProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/FormControls/FormControls.tsx",
+            "name": "FormControlsProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactNode"
+        }
+      },
+      "onPreviousClick": {
+        "defaultValue": null,
+        "description": "",
+        "name": "onPreviousClick",
+        "parent": {
+          "fileName": "src/components/FormControls/FormControls.tsx",
+          "name": "FormControlsProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/FormControls/FormControls.tsx",
+            "name": "FormControlsProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "() => void"
+        }
+      },
+      "previousDisabled": {
+        "defaultValue": null,
+        "description": "",
+        "name": "previousDisabled",
+        "parent": {
+          "fileName": "src/components/FormControls/FormControls.tsx",
+          "name": "FormControlsProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/FormControls/FormControls.tsx",
+            "name": "FormControlsProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "previousIcon": {
+        "defaultValue": null,
+        "description": "",
+        "name": "previousIcon",
+        "parent": {
+          "fileName": "src/components/FormControls/FormControls.tsx",
+          "name": "FormControlsProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/FormControls/FormControls.tsx",
+            "name": "FormControlsProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "object"
+        }
+      },
+      "previousHidden": {
+        "defaultValue": null,
+        "description": "",
+        "name": "previousHidden",
+        "parent": {
+          "fileName": "src/components/FormControls/FormControls.tsx",
+          "name": "FormControlsProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/FormControls/FormControls.tsx",
+            "name": "FormControlsProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "previousText": {
+        "defaultValue": null,
+        "description": "",
+        "name": "previousText",
+        "parent": {
+          "fileName": "src/components/FormControls/FormControls.tsx",
+          "name": "FormControlsProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/FormControls/FormControls.tsx",
+            "name": "FormControlsProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactNode"
+        }
+      },
+      "onSubmitClick": {
+        "defaultValue": null,
+        "description": "",
+        "name": "onSubmitClick",
+        "parent": {
+          "fileName": "src/components/FormControls/FormControls.tsx",
+          "name": "FormControlsProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/FormControls/FormControls.tsx",
+            "name": "FormControlsProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "() => void"
+        }
+      },
+      "submitDisabled": {
+        "defaultValue": null,
+        "description": "",
+        "name": "submitDisabled",
+        "parent": {
+          "fileName": "src/components/FormControls/FormControls.tsx",
+          "name": "FormControlsProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/FormControls/FormControls.tsx",
+            "name": "FormControlsProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "submitIcon": {
+        "defaultValue": null,
+        "description": "",
+        "name": "submitIcon",
+        "parent": {
+          "fileName": "src/components/FormControls/FormControls.tsx",
+          "name": "FormControlsProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/FormControls/FormControls.tsx",
+            "name": "FormControlsProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "object"
+        }
+      },
+      "submitHidden": {
+        "defaultValue": null,
+        "description": "",
+        "name": "submitHidden",
+        "parent": {
+          "fileName": "src/components/FormControls/FormControls.tsx",
+          "name": "FormControlsProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/FormControls/FormControls.tsx",
+            "name": "FormControlsProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "submitText": {
+        "defaultValue": null,
+        "description": "",
+        "name": "submitText",
+        "parent": {
+          "fileName": "src/components/FormControls/FormControls.tsx",
+          "name": "FormControlsProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/FormControls/FormControls.tsx",
+            "name": "FormControlsProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactNode"
+        }
+      }
+    }
+  }
+]

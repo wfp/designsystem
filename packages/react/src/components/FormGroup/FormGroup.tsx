@@ -1,6 +1,6 @@
-import React from 'react';
+import * as React from 'react';
 import type { PropsWithChildren } from 'react';
-import classnames, { Argument } from 'classnames';
+import classNames from 'classnames';
 import useSettings from '../../hooks/useSettings';
 import * as HookForm from 'react-hook-form';
 
@@ -12,7 +12,7 @@ type FormGroupProps = PropsWithChildren<{
   messageText?: string;
   align?: 'vertical' | 'horizontal';
   inputSpacing?: 'none' | 'md' | 'lg';
-  className?: Argument;
+  className?: string;
   inline?: boolean;
 }>;
 /** A FormGroup element is used to group several controls as well as labels  within a web form. It uses  `<fieldset>` */
@@ -31,11 +31,11 @@ const FormGroup: React.FC<FormGroupProps> = ({
 }) => {
   const { prefix } = useSettings();
 
-  const classNamesLegend = classnames(
+  const classNamesLegend = classNames(
     `${prefix}--form-group__title`,
     className
   );
-  const classNamesFieldset = classnames(
+  const classNamesFieldset = classNames(
     `${prefix}--fieldset`,
     {
       [`${prefix}--fieldset__inline`]: inline,

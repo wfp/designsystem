@@ -1,38 +1,38 @@
 // src/components/CodeBlock.js
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import Highlight, { defaultProps } from 'prism-react-renderer';
 import stylesModule from './codeBlockLive.module.scss';
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
 import Storybook from '../Storybook';
 import { DoUse, DoNotUse } from '../DoUse';
 import { MDXProvider } from '@mdx-js/react';
-import compile from '@mdx-js/mdx';
+import { useForm } from 'react-hook-form';
+
 import MDX from '@mdx-js/runtime';
 import components from '../';
 
-import vsDark, { styles } from 'prism-react-renderer/themes/vsDark';
+import vsDark from 'prism-react-renderer/themes/vsDark';
 
 import * as unComponents from '@un/react';
 import * as unHumanitarianIcons from '@un/humanitarian-icons-react';
 import * as unPictograms from '@un/pictograms-react';
 import * as icons from '@un/icons-react';
 import { Button, Empty } from '@un/react';
-import { useMDXComponents } from '@mdx-js/react';
-import { MDXRemote } from 'next-mdx-remote';
 
-const CodeBlockLive = (props) => {
-  const [compiledMdx, setCompiledMdx] = useState('');
+const CodeBlockLive = (props: any) => {
   const {
     children,
     className = '',
     live,
+    center,
     hideWrapper,
     noInline,
     showEditor = true,
     source,
+    reactHookForm,
   } = props;
 
-  const code = source ? source : children ? children.trim() : '';
+  let code = source ? source : children ? children.trim() : '';
   /*const compileMdx = async (code) => {
     const compiled = await compile(code);
     setCompiledMdx(compiled);
@@ -41,6 +41,25 @@ const CodeBlockLive = (props) => {
   /*useEffect(() => {
     compileMdx(code);
   }, [code]);*/
+
+  if (reactHookForm)
+    code = `
+  const Counter = () => {
+    const { register, handleSubmit } = useForm({defaultValues: {"check-1":true}});
+    const [data, setData] = useState("");
+  
+    return (
+      <form onSubmit={handleSubmit((data) => setData(JSON.stringify(data)))}>
+
+        ${code}
+  
+        <p>{data}</p>
+        <input type="submit" />
+      </form>
+    );
+  }
+  
+  render(<Counter />)`;
 
   const language = props.language || className.replace(/language-/, '');
 
@@ -52,8 +71,6 @@ const CodeBlockLive = (props) => {
       .replaceAll(/^import \* as \S+ from .+$\n/gm, '') // import * as abc from "z"
       .replaceAll(/: \S+ = /g, ' = '); // let a: string = "something"
   };
-
-  console.log('cleanCode', cleanCode(code));
 
   const handleCopyCode = (textToCopy) => {
     navigator.clipboard.writeText(textToCopy);
@@ -71,6 +88,7 @@ const CodeBlockLive = (props) => {
       ...unHumanitarianIcons,
       ...unPictograms,
       ...icons,
+      useForm,
       useState,
       Storybook,
       Empty,
@@ -82,12 +100,12 @@ const CodeBlockLive = (props) => {
       <div
         className={`${stylesModule.editor} ${
           hideWrapper ? stylesModule.hideWrapper : stylesModule.showWrapper
-        }`}>
+        } ${center ? stylesModule.center : stylesModule.notCenter}`}>
         <LiveProvider
           code={code}
           scope={scope}
           theme={vsDark}
-          noInline={noInline}
+          noInline={noInline || reactHookForm}
           transformCode={cleanCode}>
           {language === 'mdx' || language === 'md' ? (
             <div className={stylesModule.preview}>
@@ -145,16 +163,41 @@ const CodeBlockLive = (props) => {
 };
 export default CodeBlockLive;
 
-export function Pre({ live, noInline, children, ...props }) {
-  if (React.isValidElement(children) && children.type.name === 'code') {
+interface PreProps {
+  live?: boolean;
+  noInline?: boolean;
+  reactHookForm?: boolean;
+  children?: /*| React.ReactElement<any, any>
+    | JSX.Element
+    | React.ReactFragment*/
+  JSX.Element | { type: { name: string }; props: any };
+  [x: string]: any;
+}
+
+export function Pre({
+  live,
+  noInline,
+  reactHookForm,
+  children,
+  ...props
+}: PreProps) {
+  if (React.isValidElement(children) /*&& children?.type?.name === 'code'*/) {
+    const childProps: any = children.props;
+
     return (
       <div {...props}>
-        <CodeBlockLive live={live} noInline={noInline} {...children.props} />
+        <CodeBlockLive
+          live={live}
+          noInline={noInline}
+          reactHookForm={reactHookForm}
+          {...childProps}
+        />
       </div>
     );
   }
   // wfp--story__code
-  return <pre {...props}>{children}</pre>;
+  const childObject: any = children;
+  return <pre {...props}>{childObject}</pre>;
 }
 
 export function CodeBlock(params) {

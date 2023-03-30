@@ -1,10 +1,9 @@
-import React from 'react';
-import type { PropsWithChildren } from 'react';
-import classNames, { Argument } from 'classnames';
+import * as React from 'react';
+import classNames from 'classnames';
 
-type ModuleFooterProps = PropsWithChildren<{
-  className?: Argument;
-}>;
+interface ModuleFooterProps extends React.AllHTMLAttributes<HTMLDivElement> {
+  className?: string;
+}
 
 const ModuleFooter: React.FC<ModuleFooterProps> = ({
   children,

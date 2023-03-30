@@ -2,7 +2,6 @@ import Flex from './Flex';
 import Image from './Image';
 import Link from './Link';
 import Video from './Video';
-import Wrapper from './Wrapper';
 import Contact from './Contact';
 import Colors from './Colors';
 import Logos from './Logos';

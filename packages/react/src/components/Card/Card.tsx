@@ -1,13 +1,13 @@
 import * as React from 'react';
 import type { PropsWithChildren } from 'react';
-import classNames, { Argument } from 'classnames';
+import classNames from 'classnames';
 import useSettings from '../../hooks/useSettings';
 import { CardKind } from '../../typesLegacy/utils';
 
 /**
  * Cards are a convenient means of displaying content composed of different types of objects. It is a multi usage component which creates boxes that are usually teasing some kind of content. */
 type CardProps = PropsWithChildren<{
-  className?: Argument;
+  className?: string;
   image?: string;
   isExternal?: boolean;
   isLink?: boolean;

@@ -1,0 +1,87 @@
+[
+  {
+    "tags": {},
+    "filePath": "src/components/Accordion/components/Accordion.tsx",
+    "description": "",
+    "displayName": "Accordion",
+    "methods": [],
+    "props": {
+      "transition": {
+        "defaultValue": null,
+        "description": "",
+        "name": "transition",
+        "parent": {
+          "fileName": "react/src/components/Accordion/utils/constants.ts",
+          "name": "AccordionProviderOptions"
+        },
+        "declarations": [
+          {
+            "fileName": "react/src/components/Accordion/utils/constants.ts",
+            "name": "AccordionProviderOptions"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "TransitionProp"
+        }
+      },
+      "transitionTimeout": {
+        "defaultValue": null,
+        "description": "",
+        "name": "transitionTimeout",
+        "parent": {
+          "fileName": "react/src/components/Accordion/utils/constants.ts",
+          "name": "AccordionProviderOptions"
+        },
+        "declarations": [
+          {
+            "fileName": "react/src/components/Accordion/utils/constants.ts",
+            "name": "AccordionProviderOptions"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "number | { enter?: number; exit?: number; }"
+        }
+      },
+      "className": {
+        "defaultValue": null,
+        "description": "",
+        "name": "className",
+        "parent": {
+          "fileName": "react/src/components/Accordion/utils/constants.ts",
+          "name": "ElementProps"
+        },
+        "declarations": [
+          {
+            "fileName": "react/src/components/Accordion/utils/constants.ts",
+            "name": "ElementProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "data-testid": {
+        "defaultValue": null,
+        "description": "",
+        "name": "data-testid",
+        "parent": {
+          "fileName": "react/src/components/Accordion/utils/constants.ts",
+          "name": "ElementProps"
+        },
+        "declarations": [
+          {
+            "fileName": "react/src/components/Accordion/utils/constants.ts",
+            "name": "ElementProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | number"
+        }
+      }
+    }
+  }
+]

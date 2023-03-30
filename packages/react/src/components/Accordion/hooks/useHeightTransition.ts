@@ -1,10 +1,15 @@
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
+
 import { CSSProperties, useState, useRef } from 'react';
 import { TransitionState } from 'react-transition-state';
 import { useLayoutEffect } from '../utils/useIsomorphicLayoutEffect';
 
-const useHeightTransition = <E extends Element>({ status, isResolved }: TransitionState) => {
+const useHeightTransition = <E extends Element>({
+  status,
+  isResolved,
+}: TransitionState) => {
   const [height, setHeight] = useState<number>();
-  const elementRef = useRef<E>(null);
+  const elementRef = useRef<HTMLInputElement>(null);
 
   useLayoutEffect(() => {
     (status === 'preEnter' || status === 'preExit') &&
@@ -18,7 +23,7 @@ const useHeightTransition = <E extends Element>({ status, isResolved }: Transiti
         : status === 'entering' || status === 'preExit'
         ? height
         : undefined,
-    overflow: isResolved ? undefined : 'hidden'
+    overflow: isResolved ? undefined : 'hidden',
   };
 
   return [style, elementRef] as const;

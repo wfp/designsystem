@@ -1,9 +1,3 @@
-const path = require('path');
-const withPlugins = require('next-compose-plugins');
-const withOptimizedImages = require('next-optimized-images');
-
-const { i18n } = require('./next-i18next.config');
-
 const securityHeaders = [
   {
     key: 'X-Frame-Options',
@@ -42,7 +36,7 @@ module.exports = withMDX({
     ],
   },
 
-  webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
+  webpack: (config, { isServer }) => {
     if (!isServer) {
       config.resolve.fallback = { fs: false };
     }
@@ -55,5 +49,8 @@ module.exports = withMDX({
   env: {
     NEXT_PUBLIC_API: process.env.NEXT_PUBLIC_API,
   },
-  experimental: { scrollRestoration: true, images: { layoutRaw: true } },
+  experimental: {
+    scrollRestoration: true,
+    images: { layoutRaw: true },
+  },
 });

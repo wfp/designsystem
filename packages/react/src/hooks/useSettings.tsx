@@ -1,9 +1,12 @@
 import { useContext } from 'react';
 
 import { defaultUNContext } from '../components/UNCoreSettings/defaults';
-import { UNCoreContext } from '../components/UNCoreSettings/UNCoreProvider';
+import {
+  AppContextInterface,
+  UNCoreContext,
+} from '../components/UNCoreSettings/UNCoreProvider';
 
-export default function useSettings() {
+export default function useSettings(): AppContextInterface {
   const settings = useContext(UNCoreContext);
 
   if (settings === undefined) {

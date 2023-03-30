@@ -1,6 +1,6 @@
 import React, { CSSProperties, useState } from 'react';
 import type { PropsWithChildren } from 'react';
-import classNames, { Argument } from 'classnames';
+import classNames from 'classnames';
 import useSettings from '../../hooks/useSettings';
 import { IIcon, StatusKind } from '../../typesLegacy/utils';
 
@@ -30,7 +30,7 @@ const iconLookup = {
  *  The Blockquote element indicates that the enclosed text is an extended quotation or information. It is rendered visually by a surrounding box. */
 
 type BlockquoteProps = PropsWithChildren<{
-  className?: Argument;
+  className?: string;
   contentClassName?: string;
   style?: CSSProperties;
   code?: boolean;

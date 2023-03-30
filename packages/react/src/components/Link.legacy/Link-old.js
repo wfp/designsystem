@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classnames from 'classnames';
+import classNames from 'classnames';
 import useSettings from '../../hooks/useSettings';
 
 /** Links are used as navigational elements. They may appear on their own, within a sentence or paragraph, or directly following the content. */
@@ -8,7 +8,7 @@ import useSettings from '../../hooks/useSettings';
 export const Link = ({ children, className, href, inline, ...other }) => {
   const { prefix } = useSettings();
 
-  const classNames = classnames(
+  const classNames = classNames(
     {
       [`${prefix}--link`]: true,
       [`${prefix}--link--inline`]: inline,

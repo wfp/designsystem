@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import DatePicker from 'react-datepicker';
 import useSettings from '../../hooks/useSettings';
 import { ArrowRight, CalendarAltRegular } from '@un/icons-react';

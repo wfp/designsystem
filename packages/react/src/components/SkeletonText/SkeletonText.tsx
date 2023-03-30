@@ -1,35 +1,48 @@
-import React from 'react';
+import * as React from 'react';
 import classNames from 'classnames';
 import useSettings from '../../hooks/useSettings';
 
 export interface SkeletonTextProps {
+  /**
+   * will generate multiple lines of text
+   */
   paragraph?: boolean;
-  lineCount?: number;
-  width?: string;
+  /**
+   * the number of lines in a paragraph
+   */
+  lineCount: number;
+  /**
+   * width (in px or %) of single line of text or max-width of paragraph lines
+   */
+  width?: string | number;
+  /**
+   * generates skeleton text at a larger size
+   */
   heading?: boolean;
   className?: string;
 }
 
 const SkeletonText: React.FC<SkeletonTextProps> = ({
-  paragraph,
-  lineCount,
-  width,
-  heading,
+  paragraph = false,
+  lineCount = 3,
+  width = '100%',
+  heading = false,
   className,
   ...other
 }) => {
   const { prefix } = useSettings();
 
-  const skeletonTextClasses = classNames({
-    [`${prefix}--skeleton__text`]: true,
-    [`${prefix}--skeleton__heading`]: heading,
-    [className]: className,
-  });
+  const skeletonTextClasses = classNames(
+    {
+      [`${prefix}--skeleton__text`]: true,
+      [`${prefix}--skeleton__heading`]: heading,
+    },
+    className
+  );
 
-  const widthNum = parseInt(width, 10);
+  const widthNum = typeof width === 'string' ? parseInt(width, 10) : width;
 
   const widthPx = width.includes('px');
-
   const widthPercent = width.includes('%');
 
   function getRandomInt(min, max) {
@@ -37,8 +50,8 @@ const SkeletonText: React.FC<SkeletonTextProps> = ({
   }
 
   if (widthPercent && paragraph) {
-    const lines = [];
-    for (var i = 0; i < lineCount; i++) {
+    const lines: JSX.Element[] = [];
+    for (let i = 0; i < lineCount; i++) {
       const randomWidth = getRandomInt(0, 75) + 'px';
       lines.push(
         <p
@@ -53,8 +66,8 @@ const SkeletonText: React.FC<SkeletonTextProps> = ({
   }
 
   if (widthPx && paragraph) {
-    const lines = [];
-    for (var j = 0; j < lineCount; j++) {
+    const lines: JSX.Element[] = [];
+    for (let j = 0; j < lineCount; j++) {
       const randomWidth = getRandomInt(widthNum - 75, widthNum) + 'px';
       lines.push(
         <p
@@ -71,33 +84,6 @@ const SkeletonText: React.FC<SkeletonTextProps> = ({
     <p className={skeletonTextClasses} style={{ width: width }} {...other} />
   );
 };
-
-// SkeletonText.propTypes = {
-//   /**
-//    * will generate multiple lines of text
-//    */
-//   paragraph: PropTypes.bool,
-//   /**
-//    * the number of lines in a paragraph
-//    */
-//   lineCount: PropTypes.number,
-//   /**
-//    * width (in px or %) of single line of text or max-width of paragraph lines
-//    */
-//   width: PropTypes.string,
-//   /**
-//    * generates skeleton text at a larger size
-//    */
-//   heading: PropTypes.bool,
-//   className: PropTypes.string,
-// };
-
-// SkeletonText.defaultProps = {
-//   paragraph: false,
-//   width: '100%',
-//   heading: false,
-//   lineCount: 3,
-// };
 
 SkeletonText.displayName = 'SkeletonText';
 

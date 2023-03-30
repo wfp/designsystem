@@ -1,15 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Head from 'next/head';
-import Link from 'next/link';
-import styles from './index.module.scss';
-import { MDXProvider } from '@mdx-js/react';
-import { Story, Button, Wrapper } from '@un/react';
-import Navigation from '../components/Navigation';
-
-import components from '../components/Blog/Mdx';
+import { Wrapper } from '@un/react';
 import Layout from '../components/Blog/Layout';
 import Hero from '../components/start/Hero';
-import Features from '../components/start/Features';
 import { NextSeo } from 'next-seo';
 import Possiblities from '../components/start/Possibilities';
 import Tools from '../components/start/Tools';

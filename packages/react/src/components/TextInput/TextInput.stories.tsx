@@ -1,5 +1,4 @@
 import React from 'react';
-import markdown from './README.mdx';
 import TextInput from '.';
 
 export default {
@@ -8,35 +7,28 @@ export default {
   parameters: {
     componentSubtitle: 'Component',
     status: 'released',
-    mdx: markdown,
   },
 };
 
 export const Regular = (args) => <TextInput {...args} />;
 
-
-
 Regular.args = {
-  type:"text",
+  type: 'text',
   name: 'inputname',
   helperText: 'Optional helperText',
   labelText: 'The labelText',
   placeholder: 'placeholder',
 };
 
-export const PasswordInput = (args) => <TextInput  {...args} />;
-
-
+export const PasswordInput = (args) => <TextInput {...args} />;
 
 PasswordInput.args = {
-  type:"password",
+  type: 'password',
   name: 'password',
   labelText: 'The labelText',
 };
 
 export const withError = (args) => <TextInput {...args} />;
-
-
 
 withError.args = {
   name: 'inputname',

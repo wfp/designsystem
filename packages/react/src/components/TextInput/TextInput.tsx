@@ -1,55 +1,26 @@
-import React from 'react';
-import type { PropsWithChildren } from 'react';
+import * as React from 'react';
 import classNames from 'classnames';
 import useSettings from '../../hooks/useSettings';
 import Input from '../Input/Input';
 import { useInput } from '../Input/useInput';
-import * as HookForm from 'react-hook-form';
-import { InputModes } from '../../typesLegacy/utils';
 import { InputProps } from '../Input';
 
 /** Text inputs enable the user to interact with and input content and data. This component can be used for long and short form entries. */
 
-interface TextInputProps extends InputProps {
+interface TextInputProps
+  extends InputProps,
+    React.InputHTMLAttributes<HTMLInputElement> {
   helperText?: string;
 }
 
-/*interface TextInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
-  className?: string;
-  helperText?: React.ReactNode;
-  labelText?: React.ReactNode;
-  defaultValue?: string | number;
-  placeholder?: string;
-  formItemClassName?: string;
-  inputWrapperClassName?: string;
-  hideLabel?: boolean;
-  invalid?: boolean | HookForm.FieldError;
-  invalidText?: string | React.ReactNode;
-  additional?: React.ReactNode;
-  children?: React.ReactNode;
-  light?: boolean;
-  type?: InputModes | string;
-  value?: string | number;
-  disabled?: boolean;
-  id?: string;
-  required?: boolean;
-  pattern?: string;
-}*/
-
 const TextInput: React.FC<TextInputProps> = React.forwardRef((props, ref) => {
   const {
-    disabled,
-    labelText,
     className,
-    id,
     formItemClassName,
-    placeholder,
     type,
     //onChange,
     //onClick,
     hideLabel,
-    invalid,
-    invalidText,
     helperText,
     pattern,
     required,
@@ -64,7 +35,7 @@ const TextInput: React.FC<TextInputProps> = React.forwardRef((props, ref) => {
     [`${prefix}--text--required`]: required,
   });
 
-  const { onChange, onClick, ...input } = useInput(props);
+  const input = useInput(props);
 
   return (
     <Input {...props} formItemClassName={formItemClassName}>

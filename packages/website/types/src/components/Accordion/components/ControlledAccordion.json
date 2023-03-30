@@ -1,0 +1,68 @@
+[
+  {
+    "tags": {},
+    "filePath": "src/components/Accordion/components/ControlledAccordion.tsx",
+    "description": "",
+    "displayName": "ControlledAccordion",
+    "methods": [],
+    "props": {
+      "providerValue": {
+        "defaultValue": null,
+        "description": "",
+        "name": "providerValue",
+        "parent": {
+          "fileName": "src/components/Accordion/components/ControlledAccordion.tsx",
+          "name": "ControlledAccordionProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/Accordion/components/ControlledAccordion.tsx",
+            "name": "ControlledAccordionProps"
+          }
+        ],
+        "required": true,
+        "type": {
+          "name": "AccordionProviderValue"
+        }
+      },
+      "className": {
+        "defaultValue": null,
+        "description": "",
+        "name": "className",
+        "parent": {
+          "fileName": "react/src/components/Accordion/utils/constants.ts",
+          "name": "ElementProps"
+        },
+        "declarations": [
+          {
+            "fileName": "react/src/components/Accordion/utils/constants.ts",
+            "name": "ElementProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "data-testid": {
+        "defaultValue": null,
+        "description": "",
+        "name": "data-testid",
+        "parent": {
+          "fileName": "react/src/components/Accordion/utils/constants.ts",
+          "name": "ElementProps"
+        },
+        "declarations": [
+          {
+            "fileName": "react/src/components/Accordion/utils/constants.ts",
+            "name": "ElementProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | number"
+        }
+      }
+    }
+  }
+]

@@ -1,0 +1,129 @@
+[
+  {
+    "tags": {},
+    "filePath": "src/components/DatePickerNew/DateRangePickerInput.tsx",
+    "description": "",
+    "displayName": "DateRangePickerInput",
+    "methods": [],
+    "props": {
+      "startDate": {
+        "defaultValue": null,
+        "description": "",
+        "name": "startDate",
+        "parent": {
+          "fileName": "src/components/DatePickerNew/DateRangePickerInput.tsx",
+          "name": "DateRangePickerInputProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/DatePickerNew/DateRangePickerInput.tsx",
+            "name": "DateRangePickerInputProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "endDate": {
+        "defaultValue": null,
+        "description": "",
+        "name": "endDate",
+        "parent": {
+          "fileName": "src/components/DatePickerNew/DateRangePickerInput.tsx",
+          "name": "DateRangePickerInputProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/DatePickerNew/DateRangePickerInput.tsx",
+            "name": "DateRangePickerInputProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "setStartDate": {
+        "defaultValue": null,
+        "description": "",
+        "name": "setStartDate",
+        "parent": {
+          "fileName": "src/components/DatePickerNew/DateRangePickerInput.tsx",
+          "name": "DateRangePickerInputProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/DatePickerNew/DateRangePickerInput.tsx",
+            "name": "DateRangePickerInputProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "setEndDate": {
+        "defaultValue": null,
+        "description": "",
+        "name": "setEndDate",
+        "parent": {
+          "fileName": "src/components/DatePickerNew/DateRangePickerInput.tsx",
+          "name": "DateRangePickerInputProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/DatePickerNew/DateRangePickerInput.tsx",
+            "name": "DateRangePickerInputProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "fromProps": {
+        "defaultValue": {
+          "value": "{}"
+        },
+        "description": "",
+        "name": "fromProps",
+        "parent": {
+          "fileName": "src/components/DatePickerNew/DateRangePickerInput.tsx",
+          "name": "DateRangePickerInputProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/DatePickerNew/DateRangePickerInput.tsx",
+            "name": "DateRangePickerInputProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "{}"
+        }
+      },
+      "toProps": {
+        "defaultValue": {
+          "value": "{}"
+        },
+        "description": "",
+        "name": "toProps",
+        "parent": {
+          "fileName": "src/components/DatePickerNew/DateRangePickerInput.tsx",
+          "name": "DateRangePickerInputProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/DatePickerNew/DateRangePickerInput.tsx",
+            "name": "DateRangePickerInputProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "{}"
+        }
+      }
+    }
+  }
+]

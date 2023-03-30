@@ -1,8 +1,8 @@
-import React from 'react';
+import * as React from 'react';
 import SvgUnit from './SvgUnit';
 import StringUnit from './StringUnit';
 
-const YearMonthGen = props => {
+const YearMonthGen = (props) => {
   const { children } = props;
 
   let value = children;
@@ -38,7 +38,7 @@ const YearMonthGen = props => {
 }*/
 
 // Format YYYYMM / from 201709  => Sep 2017
-export const YearMonthCalc = props => {
+export const YearMonthCalc = (props) => {
   const { className, string, svg, calcOnly } = props;
   const YearMonthgenerated = YearMonthGen(props);
 

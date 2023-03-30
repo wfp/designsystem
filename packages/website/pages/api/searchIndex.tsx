@@ -1,46 +1,42 @@
-import axios from 'axios';
-
 //import  dotenv = require("dotenv");
 import algoliasearch from 'algoliasearch/lite';
 //import  fetch = require("node-fetch");
 import { getAllPosts } from '../../lib/getPost';
 
-export default async function issues(req, res) {
+async function getAllBlogPosts() {
+  const data = await getAllPosts([
+    'title',
+    'date',
+    'slug',
+    'excerpt',
+    'author',
+    'ogImage',
+    'coverImage',
+    'content',
+  ]);
+  return data;
+}
+
+function transformPostsToSearchObjects(posts: any) {
+  return posts.map((post) => {
+    return {
+      objectID: post.slug,
+      title: post.title,
+      excerpt: post.excerpt,
+      slug: post.slug,
+      date: post.date,
+      content: post.content,
+    };
+  });
+}
+
+export default async function issues() {
   try {
-    async function getAllBlogPosts() {
-      const data = await getAllPosts([
-        'title',
-        'date',
-        'slug',
-        'excerpt',
-        'author',
-        'ogImage',
-        'coverImage',
-        'content',
-      ]);
-      return data;
-    }
-
-    function transformPostsToSearchObjects(posts) {
-      return posts.map((post) => {
-        return {
-          objectID: post.slug,
-          title: post.title,
-          excerpt: post.excerpt,
-          slug: post.slug,
-          date: post.date,
-          content: post.content,
-        };
-      });
-    }
-
     (async function () {
       //dotenv.config();
 
       try {
         const posts = await getAllBlogPosts();
-
-        console.log(posts[0]);
 
         const transformed = transformPostsToSearchObjects(posts);
 
@@ -51,7 +47,7 @@ export default async function issues(req, res) {
         );
 
         // initialize the index with your index name
-        const index = client.initIndex('un-core-website');
+        const index: any = client.initIndex('ui-docs');
 
         // save the objects!
         const algoliaResponse = await index.saveObjects(transformed);

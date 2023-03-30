@@ -1,5 +1,5 @@
 import invariant from 'invariant';
-import React from 'react';
+import * as React from 'react';
 import type { PropsWithChildren } from 'react';
 import { IIcon } from '../../typesLegacy/utils';
 
@@ -56,12 +56,17 @@ type IconProps = PropsWithChildren<{
   fill?: string;
   fillRule?: string;
   height?: string;
-  icon?: IIcon | React.ReactNode;
+  icon?:
+    | IIcon
+    | React.ReactNode
+    | { width?: number; height?: number; viewBox?: string };
+  iconTitle?: string;
   name?: string;
   role?: string;
   viewBox?: string;
   width?: string;
   iconRef?: () => void;
+  // eslint-disable-next-line @typescript-eslint/ban-types
   style?: {};
 }>;
 
@@ -72,6 +77,7 @@ const Icon: React.FC<IconProps> = ({
   fillRule,
   height,
   icon,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   iconTitle,
   role,
   style,
@@ -83,7 +89,7 @@ const Icon: React.FC<IconProps> = ({
     width = width ? width : icon.props.width;
     height = height ? height : icon.props.height;
 
-    var clonedIcon = React.cloneElement(icon, {
+    const clonedIcon = React.cloneElement(icon, {
       className,
       role,
       width,
@@ -105,8 +111,8 @@ const Icon: React.FC<IconProps> = ({
     //name: isPrefixed ? name : `icon--${name}`,
     role,
     style,
-    viewBox: icon.viewBox,
-    width: width || icon.width,
+    viewBox: icon?.viewBox,
+    width: width || icon?.width,
     ref: iconRef,
     ...other,
   };
@@ -114,7 +120,7 @@ const Icon: React.FC<IconProps> = ({
   const svgContent = icon ? svgShapes(icon.svgData) : '';
 
   return (
-    <svg {...props} aria-label={description} alt={description}>
+    <svg {...props} aria-label={description} /*alt={description}*/>
       <title>{description}</title>
       {svgContent}
     </svg>

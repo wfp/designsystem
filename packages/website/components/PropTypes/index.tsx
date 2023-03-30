@@ -16,34 +16,42 @@ import reactElementToJSXString from 'react-element-to-jsx-string';
 import styles from './prop-types.module.scss';
 import CodeBlockLive from '../Blog/Mdx/CodeBlockLive';
 
+/*
 const clean = (obj) => {
-  for (let propName in obj) obj[propName] ?? delete obj[propName];
+  for (const propName in obj) obj[propName] ?? delete obj[propName];
   return obj;
-};
+};*/
 
 export default function PropTypes({
   defaultProps,
   mainComponent,
   sampleCode,
   propTypes,
-}) {
-  const propList = propTypes[0].props;
+}: any) {
+  const [showAllProps, setShowAllProps] = useState(true);
+
+  const { register, watch, handleSubmit } = useForm({
+    defaultValues: defaultProps,
+  });
+
+  //if (!propTypes?.[0]) return null;
+  const propList = propTypes[0]?.props;
 
   /*Object.entries(propList).forEach((prop) => {
     componentProps[prop.name] =
       propValues[prop.name] || prop.defaultValue?.value;
   });*/
 
-  const [showAllProps, setShowAllProps] = useState(true);
-
-  const { register, watch, handleSubmit } = useForm({
-    defaultValues: defaultProps,
-  });
   const propValues = watch();
 
   const onSubmit = (data) => {
     console.log(data);
   };
+
+  const options = 'primary | secondary | dsaasdads | saddsa'.replaceAll(
+    ' ',
+    ''
+  );
 
   const renderInput = (prop) => {
     if (prop.type.name === 'ButtonKind') {
@@ -51,11 +59,9 @@ export default function PropTypes({
         <Select
           {...register(prop.name, { required: prop.required })}
           defaultValue={prop.defaultValue && prop.defaultValue.value}>
-          {/*Object.values(ButtonKind).map((kind) => (
-            <SelectItem value={kind} key={kind}>
-              hello
-            </SelectItem>
-          ))*/}
+          {Object.values(options.split('|')).map((kind, i) => (
+            <SelectItem key={i} value={kind} text={kind} />
+          ))}
         </Select>
       );
     }
@@ -85,21 +91,22 @@ export default function PropTypes({
   };
 
   const componentProps = {};
-  Object.values(propList).forEach((prop) => {
-    componentProps[prop.name] =
-      propValues[prop.name] || prop.defaultValue?.value;
+
+  console.log('propList', propList);
+  if (!propList) return null;
+  Object.values(propList).forEach(({ name, defaultValue }: any) => {
+    componentProps[name] = propValues[name] || defaultValue?.value;
   });
 
   const MyComponent = unComponents[mainComponent];
 
   const propsAsList = showAllProps
-    ? Object.values(propList).filter((e) => e.description.includes('@design'))
+    ? Object.values(propList).filter((e: any) =>
+        e.description.includes('@design')
+      )
     : Object.values(propList);
 
-  const content = <MyComponent {...defaultProps} {...clean(componentProps)} />;
-  console.log('content', content);
-
-  var code = reactElementToJSXString(
+  let code = reactElementToJSXString(
     <MyComponent {...defaultProps} {...componentProps} />,
     { filterProps: (val) => (val === undefined ? false : true) }
   );
@@ -130,6 +137,7 @@ ${code}`;
         source={code}
         live
         hideWrapper
+        center
         showEditor={!showAllProps}
       />
       {/*
@@ -157,7 +165,7 @@ ${code}`;
             </thead>
           )}
           <tbody>
-            {propsAsList.map((prop) => (
+            {propsAsList.map((prop: any) => (
               <tr key={prop.name}>
                 {!showAllProps && <td>{prop.name}</td>}
                 {!showAllProps && (

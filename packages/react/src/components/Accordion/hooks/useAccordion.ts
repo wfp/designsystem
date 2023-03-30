@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
+
 import { HTMLAttributes, KeyboardEvent } from 'react';
 import { ACCORDION_ATTR, ACCORDION_BTN_ATTR } from '../utils/constants';
 

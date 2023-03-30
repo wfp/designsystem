@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 import type { PropsWithChildren } from 'react';
-import classnames, { Argument } from 'classnames';
+import classNames from 'classnames';
 import Link from '../Link';
 import { CaretUp, CaretDown } from '@un/icons-react';
 import useSettings from '../../hooks/useSettings';
@@ -9,7 +9,7 @@ const MoreLink = ({ handleToggleClick, link, text, showMore }) => {
   const { prefix } = useSettings();
 
   if (link) {
-    var clonedLink = React.cloneElement(link, {
+    const clonedLink = React.cloneElement(link, {
       onClick: handleToggleClick,
     });
     return clonedLink;
@@ -18,7 +18,7 @@ const MoreLink = ({ handleToggleClick, link, text, showMore }) => {
     return (
       <Link
         className={`${prefix}--read-more__trigger`}
-        small
+        size="sm"
         onClick={handleToggleClick}>
         {text}
         <Icon
@@ -32,7 +32,7 @@ const MoreLink = ({ handleToggleClick, link, text, showMore }) => {
 };
 
 type ReadMoreProps = PropsWithChildren<{
-  className?: Argument;
+  className?: string;
   collapsed?: boolean;
   collapseLink?: React.ReactNode;
   collapseText?: React.ReactNode;
@@ -58,26 +58,29 @@ const ReadMore: React.FC<ReadMoreProps> = ({
   const { prefix } = useSettings();
   const [showMore, setShowMore] = useState(false);
   const [innerHeight, setInnerHeight] = useState(0);
-  const readMoreRef = useRef();
-  const readMoreFakeRef = useRef();
+  const readMoreRef = useRef<HTMLInputElement>(null);
+  const readMoreFakeRef = useRef<HTMLInputElement>(null);
 
   const handleToggleClick = (e) => {
     e.preventDefault();
-    const innerHeight = readMoreRef.current.clientHeight;
+    const innerHeight = readMoreRef?.current?.clientHeight;
 
     if (!showMore && !disableAutoscroll)
       setTimeout(() => {
-        readMoreFakeRef.current.scrollIntoView({
-          behavior: 'smooth',
-          block: 'end',
-        });
+        if (readMoreFakeRef?.current)
+          readMoreFakeRef.current.scrollIntoView({
+            behavior: 'smooth',
+            block: 'end',
+          });
       }, 50);
 
     setShowMore(!showMore);
-    setInnerHeight(innerHeight);
+    if (innerHeight) {
+      setInnerHeight(innerHeight);
+    }
   };
 
-  const classNames = classnames(className, {
+  const classes = classNames(className, {
     [`${prefix}--read-more`]: true,
     [`${prefix}--read-more--expanded`]: showMore,
     [`${prefix}--read-more--fade`]: fade,
@@ -105,7 +108,7 @@ const ReadMore: React.FC<ReadMoreProps> = ({
       };
 
   return (
-    <div className={classNames}>
+    <div className={classes}>
       <div className={`${prefix}--read-more__content`} style={contentStyle}>
         <div
           className={`${prefix}--read-more__fake-height`}

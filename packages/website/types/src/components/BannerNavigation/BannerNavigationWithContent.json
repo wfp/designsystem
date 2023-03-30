@@ -1,0 +1,41 @@
+[
+  {
+    "tags": {},
+    "filePath": "src/components/BannerNavigation/BannerNavigationWithContent.tsx",
+    "description": "",
+    "displayName": "BannerNavigationWithContent",
+    "methods": [],
+    "props": {
+      "searchOnChange": {
+        "defaultValue": null,
+        "description": "",
+        "name": "searchOnChange",
+        "declarations": [
+          {
+            "fileName": "src/components/BannerNavigation/BannerNavigationWithContent.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "() => {}"
+        }
+      },
+      "search": {
+        "defaultValue": null,
+        "description": "",
+        "name": "search",
+        "declarations": [
+          {
+            "fileName": "src/components/BannerNavigation/BannerNavigationWithContent.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      }
+    }
+  }
+]

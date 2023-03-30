@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
 import { ClassNameProp, Modifiers } from './constants';
 
 /**
@@ -13,10 +14,14 @@ const bem =
     modifiers &&
       Object.keys(modifiers).forEach((name) => {
         const value = modifiers[name];
-        if (value) classString += ` ${blockElement}--${value === true ? name : `${name}-${value}`}`;
+        if (value)
+          classString += ` ${blockElement}--${
+            value === true ? name : `${name}-${value}`
+          }`;
       });
 
-    let expandedClassName = typeof className === 'function' ? className(props!) : className;
+    let expandedClassName =
+      typeof className === 'function' ? className(props!) : className;
     if (typeof expandedClassName === 'string') {
       expandedClassName = expandedClassName.trim();
       if (expandedClassName) classString += ` ${expandedClassName}`;

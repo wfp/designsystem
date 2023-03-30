@@ -7,13 +7,14 @@ import React, {
 //import propTypes from 'prop-types';
 import { defaultUNContext } from './defaults';
 
-interface AppContextInterface {
+export interface AppContextInterface {
   prefix: string;
   selectorTabbable: string;
   selectorFocusable: string;
   theme: string;
-  setTheme: () => {};
-  wrapperElement: HTMLElement;
+  // eslint-disable-next-line @typescript-eslint/ban-types
+  setTheme: (theme: string) => void;
+  wrapperElement?: HTMLElement;
 }
 
 export const UNCoreContext =
@@ -23,6 +24,8 @@ export const UNCoreContext =
 type UNCoreProps = PropsWithChildren<{
   children?: React.ReactNode;
   initialTheme?: string;
+  prefix?: string;
+  wrapperElement?: HTMLElement;
 }>;
 
 // Detecting the default theme
@@ -81,14 +84,14 @@ export const UNCoreProvider: React.FC<UNCoreProps> = ({
     return () => darkThemeMq.removeListener(mqListener);
   }, []);
 
-  const mqListener = (e) => {
+  const mqListener = () => {
     if (themeState === 'auto') {
       const newTheme = setElementTheme('auto');
       setActualThemeState(newTheme);
     }
   };
 
-  const setTheme = (theme) => {
+  const setTheme = (theme: string) => {
     const newTheme = setElementTheme(theme);
     setActualThemeState(newTheme);
     localStorage.setItem('theme', theme);

@@ -1,0 +1,65 @@
+[
+  {
+    "tags": {},
+    "filePath": "src/components/BannerNavigation/BannerNavigation.tsx",
+    "description": "",
+    "displayName": "BannerNavigationItem",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "src/components/BannerNavigation/BannerNavigation.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "src/components/BannerNavigation/BannerNavigation.tsx",
+    "description": "",
+    "displayName": "BannerNavigation",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "src/components/BannerNavigation/BannerNavigation.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "pageWidth": {
+        "defaultValue": null,
+        "description": "",
+        "name": "pageWidth",
+        "declarations": [
+          {
+            "fileName": "src/components/BannerNavigation/BannerNavigation.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "\"sm\" | \"md\" | \"lg\" | \"full\""
+        }
+      }
+    }
+  }
+]

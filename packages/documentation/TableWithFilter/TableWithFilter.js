@@ -40,7 +40,7 @@ function TableWithFilter() {
           <>
             <Search
               id="tablewithfilter"
-              placeHolderText="Type to filter"
+              placeholder="Type to filter"
               value={simpleSearch}
               onChange={handleSearchOnchange}
             />

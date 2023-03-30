@@ -1,15 +1,11 @@
 import React from 'react';
 import styles from './hero.module.scss';
-import Image from 'next/image';
 import { Button } from '@un/react';
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/pro-solid-svg-icons';
-import { useTranslation } from 'next-i18next';
 
 export default function Hero() {
-  const { t } = useTranslation('website');
-
   return (
     <div className={styles.features}>
       <div className={styles.heroWrapper}>

@@ -1,15 +1,14 @@
 import fs from 'fs'
 import matter from 'gray-matter';
 
-import { extname,relative, resolve, parse, join }  from 'path';
-
+import { extname, resolve, join }  from 'path';
 
 const fsPromises = fs.promises;
 
 export const postsDirectory = join(process.cwd(), '_posts');
 
 async function getFiles(dir) {
-  let dirents = await fsPromises.readdir(dir, { withFileTypes: true });
+  const dirents = await fsPromises.readdir(dir, { withFileTypes: true });
 
   const files = await Promise.all(dirents.map((dirent) => {
     const res = resolve(dir, dirent.name);
@@ -20,14 +19,14 @@ async function getFiles(dir) {
 
 export async function getPostSlugs() {
 
-  let files = await getFiles(postsDirectory);
+  const files = await getFiles(postsDirectory);
 
   const filesFiltered = files.filter(el => extname(el) === '.mdx');
 
  const results = filesFiltered.map(f => {
 
   const fileContents = fs.readFileSync(f, 'utf8');
-  const { data, content } = matter(fileContents);
+  const { data } = matter(fileContents);
 
   return {slug: data.slug, path: f};
  });

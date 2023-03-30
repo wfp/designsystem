@@ -1,12 +1,12 @@
-import React from 'react';
+import * as React from 'react';
 import type { PropsWithChildren } from 'react';
-import classnames, { Argument } from 'classnames';
+import classNames from 'classnames';
 import useSettings from '../../hooks/useSettings';
 
 /** Form Label can be used whenever it is needed to show a label detached from a regular input. */
 type FormLabelProps = PropsWithChildren<{
   id?: string;
-  className?: Argument;
+  className?: string;
 }>;
 
 const FormLabel: React.FC<FormLabelProps> = ({
@@ -17,10 +17,10 @@ const FormLabel: React.FC<FormLabelProps> = ({
 }) => {
   const { prefix } = useSettings();
 
-  const classNames = classnames(`${prefix}--label`, className);
+  const classes = classNames(`${prefix}--label`, className);
 
   return (
-    <label htmlFor={id} className={classNames} {...other}>
+    <label htmlFor={id} className={classes} {...other}>
       {children}
     </label>
   );

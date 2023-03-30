@@ -1,13 +1,13 @@
 import React, { ReactNode } from 'react';
 import type { PropsWithChildren } from 'react';
-import classNames, { Argument } from 'classnames';
+import classNames from 'classnames';
 import Wrapper from '../Wrapper';
 
 import useSettings from '../../hooks/useSettings';
 
 type HeroExternalProps = PropsWithChildren<{
   title?: string | ReactNode;
-  className?: Argument;
+  className?: string;
   subTitle: React.ReactNode;
   image: string;
 }>;

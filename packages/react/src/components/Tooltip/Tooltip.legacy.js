@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { usePopper } from 'react-popper';
-import classnames from 'classnames';
+import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
 import useSettings from '../../hooks/useSettings';
@@ -69,7 +69,7 @@ const Tooltip = ({
     }
   );
 
-  const classNames = classnames(className, {
+  const classNames = classNames(className, {
     [`${prefix}--tooltip`]: true,
     [`${prefix}--tooltip--visible`]: isShown,
     [`${prefix}--tooltip--disable-padding`]: noPadding,

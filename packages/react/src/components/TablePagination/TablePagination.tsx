@@ -1,9 +1,12 @@
 import React from 'react';
-import classnames from 'classnames';
+import classNames from 'classnames';
 import Pagination from '../Pagination';
 import useSettings from '../../hooks/useSettings';
 
-interface ReactTablePaginationProps {}
+export interface TagProps extends React.HTMLAttributes<HTMLTableElement> {
+  withBorder?: boolean;
+  responsive?: boolean;
+}
 
 const ReactTablePagination = ({
   // Computed
@@ -18,7 +21,7 @@ const ReactTablePagination = ({
   // Props
   isLastPage,
   pages,
-  showPageSizeOptions,
+  // showPageSizeOptions,
   pageInputDisabled,
   pageSize,
   pagesUnknown,
@@ -75,7 +78,7 @@ const ReactTablePagination = ({
 
   return (
     <div
-      className={classnames(paginationClassName, '-pagination')}
+      className={classNames(paginationClassName, '-pagination')}
       style={style}>
       <div className={`${prefix}-pagination`}>
         <Pagination

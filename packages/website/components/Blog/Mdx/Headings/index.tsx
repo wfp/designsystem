@@ -3,14 +3,14 @@ import { faLink } from '@fortawesome/pro-regular-svg-icons';
 import styles from './headings.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-var convertToSlug = function (str) {
+const convertToSlug = function (str) {
   str = str.replace(/^\s+|\s+$/g, ''); // trim
   str = str.toLowerCase();
 
   // remove accents, swap ñ for n, etc
-  var from = 'ãàáäâẽèéëêìíïîõòóöôùúüûñç·/_,:;';
-  var to = 'aaaaaeeeeeiiiiooooouuuunc------';
-  for (var i = 0, l = from.length; i < l; i++) {
+  const from = 'ãàáäâẽèéëêìíïîõòóöôùúüûñç·/_,:;';
+  const to = 'aaaaaeeeeeiiiiooooouuuunc------';
+  for (let i = 0, l = from.length; i < l; i++) {
     str = str.replace(new RegExp(from.charAt(i), 'g'), to.charAt(i));
   }
 
@@ -28,7 +28,7 @@ export function createSlug(children) {
     : 'none';
 }
 
-export default function Heading({ level, ...other }) {
+export default function Heading({ level, ...other }: any) {
   const CustomTag = level;
   const anchorLink = createSlug(other.children);
 

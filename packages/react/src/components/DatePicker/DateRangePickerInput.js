@@ -31,14 +31,13 @@ const DateRangePickerInput = ({
   isDirty,
   isTouched,
   error,
-  ...other}) => {
-  
-    const { prefix } = useSettings();
-    const [focusedInput, setFocusedInput] = useState(null)
-    const [startDate, setStartDate] = useState(startDate ? startDate : null);
-    const [endDate, setEndDate] = useState(endDate ? endDate : null);
-    
-    
+  ...other
+}) => {
+  const { prefix } = useSettings();
+  const [focusedInput, setFocusedInput] = useState(null);
+  const [startDate, setStartDate] = useState(startDate ? startDate : null);
+  const [endDate, setEndDate] = useState(endDate ? endDate : null);
+
   // state = {
   //   focusedInput: null,
   //   startDate: this.props.startDate ? this.props.startDate : null,
@@ -52,59 +51,57 @@ const DateRangePickerInput = ({
     setFocusedInput(focusedInput);
   };
 
+  // const { focusedInput, startDate, endDate } = this.state;
 
-    // const { focusedInput, startDate, endDate } = this.state;
+  const DateRangePicker = datePicker;
 
-    const DateRangePicker = datePicker;
+  const labelClasses = classNames(`${prefix}--label`, {
+    [`${prefix}--visually-hidden`]: hideLabel,
+  });
 
-    const labelClasses = classNames(`${prefix}--label`, {
-      [`${prefix}--visually-hidden`]: hideLabel,
-    });
+  const label = labelText ? (
+    <label htmlFor={id} className={labelClasses}>
+      {labelText}
+    </label>
+  ) : null;
 
-    const label = labelText ? (
-      <label htmlFor={id} className={labelClasses}>
-        {labelText}
-      </label>
-    ) : null;
+  const errorMessage = invalid ? (
+    <div className={`${prefix}--form-requirement invalid`}>{invalidText}</div>
+  ) : null;
 
-    const errorMessage = invalid ? (
-      <div className={`${prefix}--form-requirement invalid`}>{invalidText}</div>
-    ) : null;
+  const helper = helperText ? (
+    <div className={`${prefix}--form__helper-text`}>{helperText}</div>
+  ) : null;
 
-    const helper = helperText ? (
-      <div className={`${prefix}--form__helper-text`}>{helperText}</div>
-    ) : null;
-
-    return (
-      <div className={`${prefix}--form-item`}>
-        {label}
-        {helper}
-        <DateRangePicker
-          endDateId={endDateId}
-          endDate={onChange && value ? value.endDate : endDate}
-          endDatePlaceholderText={endDatePlaceholderText}
-          focusedInput={focusedInput}
-          hideKeyboardShortcutsPanel
-          onDatesChange={({ startDate, endDate }) => {
-            // console.log('dates changed');
-            if (onChange) {
-              onChange({ startDate, endDate });
-            }
-            setStartDate(startDate);
-            setEndDate(endDate)
-            // this.setState({ startDate, endDate });
-          }}
-          onFocusChange={handleFocusChange}
-          startDateId={startDateId}
-          startDate={onChange && value ? value.startDate : startDate}
-          startDatePlaceholderText={startDatePlaceholderText}
-          {...other}
-        />
-        {errorMessage}
-      </div>
-    );
-  
-}
+  return (
+    <div className={`${prefix}--form-item`}>
+      {label}
+      {helper}
+      <DateRangePicker
+        endDateId={endDateId}
+        endDate={onChange && value ? value.endDate : endDate}
+        endDatePlaceholderText={endDatePlaceholderText}
+        focusedInput={focusedInput}
+        hideKeyboardShortcutsPanel
+        onDatesChange={({ startDate, endDate }) => {
+          // console.log('dates changed');
+          if (onChange) {
+            onChange({ startDate, endDate });
+          }
+          setStartDate(startDate);
+          setEndDate(endDate);
+          // this.setState({ startDate, endDate });
+        }}
+        onFocusChange={handleFocusChange}
+        startDateId={startDateId}
+        startDate={onChange && value ? value.startDate : startDate}
+        startDatePlaceholderText={startDatePlaceholderText}
+        {...other}
+      />
+      {errorMessage}
+    </div>
+  );
+};
 
 DateRangePickerInput.defaultProps = {
   startDateId: 'startDate',
@@ -117,7 +114,10 @@ DateRangePickerInput.propTypes = {
   /**
    * Provide the SingleDatePicker as a component
    */
-  datePicker: PropTypes.oneOfType([PropTypes.func.isRequired, PropTypes.object.isRequired]),
+  datePicker: PropTypes.oneOfType([
+    PropTypes.func.isRequired,
+    PropTypes.object.isRequired,
+  ]),
   /**
    * Provide the placeholder for the start input
    */
@@ -128,4 +128,4 @@ DateRangePickerInput.propTypes = {
   endDatePlaceholderText: PropTypes.string,
 };
 
-export {DateRangePickerInput};
+export { DateRangePickerInput };

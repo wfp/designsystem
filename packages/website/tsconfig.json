@@ -1,10 +1,6 @@
 {
   "compilerOptions": {
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": false,
@@ -18,12 +14,12 @@
     "isolatedModules": true,
     "jsx": "preserve"
   },
+  "typeRoots": ["./node_modules/@types", "./typings"],
   "include": [
     "next-env.d.ts",
     "**/*.ts",
-    "**/*.tsx"
+    "**/*.tsx",
+    "components/PropTypes/index.js"
   ],
-  "exclude": [
-    "node_modules"
-  ]
+  "exclude": ["node_modules", "*.sitemap.xml.tsx", "**/*.build.tsx"]
 }

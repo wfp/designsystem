@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-empty-function */
 import React, { useRef } from 'react';
 import ReactDOM from 'react-dom';
 import classNames from 'classnames';
@@ -24,6 +25,7 @@ interface ModalProps {
   primaryButtonDisabled?: boolean;
   open?: boolean;
   hideClose?: boolean;
+  warning?: boolean;
   danger?: boolean;
   shouldSubmitOnEnter?: boolean;
   selectorsFloatingMenus?: string[];
@@ -42,7 +44,7 @@ interface ModalProps {
   id?: string;
   backgroundImage?: string;
   onKeyDown?: () => void;
-  handleBlur?: (obj?: any) => void;
+  handleBlur?: (obj?: unknown) => void;
 }
 
 const matchesFuncName =
@@ -66,24 +68,24 @@ const Modal: React.FC<ModalProps> = (props) => {
     backgroundImage,
     open,
     lazyLoad,
-    onRequestClose,
-    onRequestSubmit,
+    onRequestClose = () => {},
+    // onRequestSubmit,
     onSecondarySubmit,
     iconDescription,
     inPortal,
     hideClose,
-    handleBlur,
+    handleBlur = () => {},
     wide,
     type,
     selectorPrimaryFocus,
-    shouldSubmitOnEnter,
+    // shouldSubmitOnEnter,
     ...other
   } = props;
 
   const { prefix } = useSettings();
-  const button = useRef(null);
-  const outerModal = useRef(null);
-  const innerModal = useRef(null);
+  const button = useRef<HTMLButtonElement>(null);
+  const outerModal = useRef<HTMLInputElement>(null);
+  const innerModal = useRef<HTMLInputElement>(null);
   const el = document.body;
   const [beingOpen, setBeingOpen] = React.useState(false);
 

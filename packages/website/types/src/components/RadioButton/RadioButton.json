@@ -1,0 +1,182 @@
+[
+  {
+    "tags": {},
+    "filePath": "src/components/RadioButton/RadioButton.tsx",
+    "description": "",
+    "displayName": "RadioButton",
+    "methods": [],
+    "props": {
+      "checked": {
+        "defaultValue": null,
+        "description": "Specify whether the <RadioButton> is currently checked",
+        "name": "checked",
+        "parent": {
+          "fileName": "src/components/RadioButton/RadioButton.tsx",
+          "name": "RadioButtonProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/RadioButton/RadioButton.tsx",
+            "name": "RadioButtonProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "className": {
+        "defaultValue": null,
+        "description": "Provide an optional className to be applied to the containing node",
+        "name": "className",
+        "parent": {
+          "fileName": "src/components/RadioButton/RadioButton.tsx",
+          "name": "RadioButtonProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/RadioButton/RadioButton.tsx",
+            "name": "RadioButtonProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "defaultChecked": {
+        "defaultValue": null,
+        "description": "Specify whether the <RadioButton> should be checked by default",
+        "name": "defaultChecked",
+        "parent": {
+          "fileName": "src/components/RadioButton/RadioButton.tsx",
+          "name": "RadioButtonProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/RadioButton/RadioButton.tsx",
+            "name": "RadioButtonProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "disabled": {
+        "defaultValue": null,
+        "description": "Specify whether the control is disabled",
+        "name": "disabled",
+        "parent": {
+          "fileName": "src/components/RadioButton/RadioButton.tsx",
+          "name": "RadioButtonProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/RadioButton/RadioButton.tsx",
+            "name": "RadioButtonProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "id": {
+        "defaultValue": null,
+        "description": "Provide a unique id for the underlying `input` node",
+        "name": "id",
+        "parent": {
+          "fileName": "src/components/RadioButton/RadioButton.tsx",
+          "name": "RadioButtonProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/RadioButton/RadioButton.tsx",
+            "name": "RadioButtonProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "labelText": {
+        "defaultValue": null,
+        "description": "Provide label text to be read by screen readers when interacting with the control",
+        "name": "labelText",
+        "parent": {
+          "fileName": "src/components/RadioButton/RadioButton.tsx",
+          "name": "RadioButtonProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/RadioButton/RadioButton.tsx",
+            "name": "RadioButtonProps"
+          }
+        ],
+        "required": true,
+        "type": {
+          "name": "ReactNode"
+        }
+      },
+      "name": {
+        "defaultValue": null,
+        "description": "Provide a name for the underlying `input` node",
+        "name": "name",
+        "parent": {
+          "fileName": "src/components/RadioButton/RadioButton.tsx",
+          "name": "RadioButtonProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/RadioButton/RadioButton.tsx",
+            "name": "RadioButtonProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "onChange": {
+        "defaultValue": null,
+        "description": "Provide an optional `onChange` hook that is called each time the value of\nthe underlying `input` changes",
+        "name": "onChange",
+        "parent": {
+          "fileName": "src/components/RadioButton/RadioButton.tsx",
+          "name": "RadioButtonProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/RadioButton/RadioButton.tsx",
+            "name": "RadioButtonProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "(event: ChangeEvent<HTMLInputElement>, value: string | number, name?: string) => void"
+        }
+      },
+      "value": {
+        "defaultValue": null,
+        "description": "Specify the value of the <RadioButton>",
+        "name": "value",
+        "parent": {
+          "fileName": "src/components/RadioButton/RadioButton.tsx",
+          "name": "RadioButtonProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/RadioButton/RadioButton.tsx",
+            "name": "RadioButtonProps"
+          }
+        ],
+        "required": true,
+        "type": {
+          "name": "string | number"
+        }
+      }
+    }
+  }
+]

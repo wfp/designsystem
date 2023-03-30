@@ -289,10 +289,10 @@ Emergencies.story = {
 export const External = (args) => (
   <HeroExternal {...args}>
     <div className={`wfp--hero-ext__actions`}>
-      <Button allCaps large kind="accent">
+      <Button large kind="accent">
         Accent action
       </Button>
-      <Button allCaps large kind="inverse">
+      <Button large kind="inverse">
         Secondary action
       </Button>
     </div>

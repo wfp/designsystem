@@ -2,29 +2,16 @@ import React from 'react';
 import Card from '../Card';
 import styles from './article.module.scss';
 //import { Search } from "@un/react";
-import Link from 'next/link';
-
-import { Card as CardWfp, Hero } from '@un/react';
 
 import Search from '../../Search';
-import { useTranslation } from 'next-i18next';
-import { getCategories } from '../../../lib/api';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faMicrochip,
-  faPaperPlane,
-  faScaleBalanced,
-} from '@fortawesome/pro-regular-svg-icons';
-import Image from 'next/image';
-import dynamic from 'next/dynamic';
 
-const links = [
-  { href: '#', label: 'Einrichten' },
-  { href: '#', label: 'App Download' },
-  { href: '#', label: 'Zurücksetzen' },
-];
+//import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+//import { faScaleBalanced } from '@fortawesome/pro-regular-svg-icons';
 
-const Articles = ({ articles }) => {
+interface articlesProps {
+  articles: any;
+}
+const Articles = ({ articles }: articlesProps) => {
   // if (!categories) return null;
   const categories = [{ name: 'common' }];
 
@@ -37,8 +24,9 @@ const Articles = ({ articles }) => {
     suspense: false,
   });*/
 
-  const ImageOverride = ({ className }) => (
-    <div className={className}>
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const ImageOverride = () => (
+    <div>
       {/*<Image src={srcElement} sizes={'(max-width: 710px) 40vw, 300px'} />*/}
     </div>
   );
@@ -75,7 +63,7 @@ const Articles = ({ articles }) => {
         {categories.map((category) => (
           <>
             <h3 className={styles.subHeading}>
-              <FontAwesomeIcon icon={faScaleBalanced} /> {category.name}
+              {/* <FontAwesomeIcon icon={faScaleBalanced} />*/} {category.name}
             </h3>
             {articles.map((article) => {
               return <Card article={article} key={`article__${article.id}`} />;

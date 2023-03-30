@@ -1,0 +1,30 @@
+[
+  {
+    "tags": {},
+    "filePath": "src/components/Module/ModuleFooter.tsx",
+    "description": "",
+    "displayName": "ModuleFooter",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "",
+        "name": "className",
+        "parent": {
+          "fileName": "src/components/Module/ModuleFooter.tsx",
+          "name": "ModuleFooterProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/Module/ModuleFooter.tsx",
+            "name": "ModuleFooterProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      }
+    }
+  }
+]

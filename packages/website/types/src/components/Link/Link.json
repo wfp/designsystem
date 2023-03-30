@@ -1,0 +1,106 @@
+[
+  {
+    "tags": {},
+    "filePath": "src/components/Link/Link.tsx",
+    "description": "",
+    "displayName": "Link",
+    "methods": [],
+    "props": {
+      "inline": {
+        "defaultValue": null,
+        "description": "Adds an underline to the link element to better indicate that it is clickable in continuous text. @design",
+        "name": "inline",
+        "parent": {
+          "fileName": "src/components/Link/Link.tsx",
+          "name": "LinkProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/Link/Link.tsx",
+            "name": "LinkProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "disabled": {
+        "defaultValue": null,
+        "description": "Disables the link element. @design",
+        "name": "disabled",
+        "parent": {
+          "fileName": "src/components/Link/Link.tsx",
+          "name": "LinkProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/Link/Link.tsx",
+            "name": "LinkProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "visited": {
+        "defaultValue": null,
+        "description": "Indicates that the link has been visited.",
+        "name": "visited",
+        "parent": {
+          "fileName": "src/components/Link/Link.tsx",
+          "name": "LinkProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/Link/Link.tsx",
+            "name": "LinkProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "size": {
+        "defaultValue": null,
+        "description": "Choose a size for the link element @design",
+        "name": "size",
+        "parent": {
+          "fileName": "src/components/Link/Link.tsx",
+          "name": "LinkProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/Link/Link.tsx",
+            "name": "LinkProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "\"sm\" | \"md\" | \"lg\""
+        }
+      },
+      "icon": {
+        "defaultValue": null,
+        "description": "Use an icon with the link element @design",
+        "name": "icon",
+        "parent": {
+          "fileName": "src/components/Link/Link.tsx",
+          "name": "LinkProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/Link/Link.tsx",
+            "name": "LinkProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ComponentType<{}> | ElementType<any>"
+        }
+      }
+    }
+  }
+]

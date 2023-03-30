@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import SvgUnit from './SvgUnit';
 import StringUnit from './StringUnit';
 

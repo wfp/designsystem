@@ -1,15 +1,37 @@
-import React from 'react';
+import * as React from 'react';
 import type { PropsWithChildren } from 'react';
-import classNames, { Argument } from 'classnames';
+import classNames from 'classnames';
 import useSettings from '../../hooks/useSettings';
 
 /** A Module is identifiable as a single, contained unit. */
 type ModuleProps = PropsWithChildren<{
-  className?: Argument;
+  /**
+   * * Specify the content of the `Module`, usually a `ModuleHeader` `ModuleBody` and `ModuleFooter`component.
+   */
+  children: React.ReactNode;
+  /**
+   * The CSS class name for the slider.
+   */
+  className?: string;
+  /**
+   * Disables the default margin
+   */
   noMargin?: boolean;
+  /**
+   * Use 100% height of parent container
+   */
   fullHeight?: boolean;
+  /**
+   * Light appearance (for white backgrounds) @design
+   */
   light?: boolean;
+  /**
+   * Dark appearance @design
+   */
   dark?: boolean;
+  /**
+   * Additional hover styling @design
+   */
   withHover?: boolean;
   margin?: 'xs' | 'md' | 'lg';
 }>;

@@ -1,33 +1,18 @@
 import React from 'react';
 import styles from './possibilities.module.scss';
-import Image from 'next/image';
-
-import Link from 'next/link';
 import MoreLink from '../MoreLink';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Wrapper } from '@un/react';
 import {
-  faBellPlus,
   faFloppyDisk,
-  faGlassWaterDroplet,
   faHandshakeAlt,
-  faLeaf,
-  faSatellite,
   faStarShooting,
   faVectorCircle,
-  faVectorPolygon,
 } from '@fortawesome/pro-light-svg-icons';
 
 import { faReact } from '@fortawesome/free-brands-svg-icons';
-import { useTranslation } from 'next-i18next';
 
-function PossibilitiesContainer({
-  className = '',
-  background,
-  title,
-  icon,
-  content,
-}) {
+function PossibilitiesContainer({ className = '', title, icon, content }: any) {
   return (
     <div
       className={`${styles.container} ${className}`} /*style={{ background }}*/

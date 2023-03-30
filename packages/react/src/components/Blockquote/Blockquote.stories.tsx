@@ -2,7 +2,6 @@ import React from 'react';
 import Blockquote from '.';
 import Button from '../Button';
 import { AddOutline } from '@un/icons-react';
-import markdown from './README.mdx';
 import blockquoteTwig from './Blockquote.twig';
 
 const props = {
@@ -22,7 +21,6 @@ export default {
   parameters: {
     componentSubtitle: 'Component',
     status: 'released',
-    mdx: markdown,
     twig: blockquoteTwig,
   },
 };

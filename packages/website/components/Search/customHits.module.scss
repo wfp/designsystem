@@ -1,16 +1,16 @@
-@use "scss/meta" as *;
+@use 'scss/meta' as *;
 
 .hits {
   position: relative;
   z-index: 10000;
 }
 .results {
-  position: absolute;
+  //position: absolute;
   top: 0;
-  background: $background-main;
+  //background: $background-main;
   border-radius: 10px;
   width: 100%;
-  box-shadow: 2px 2px 10px rgba(#000, 0.1);
+  //box-shadow: 2px 2px 10px rgba(#000, 0.1);
 }
 
 .noResults {

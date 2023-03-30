@@ -1,0 +1,146 @@
+[
+  {
+    "tags": {},
+    "filePath": "src/components/FormGroup/FormGroup.tsx",
+    "description": "A FormGroup element is used to group several controls as well as labels  within a web form. It uses  `<fieldset>`",
+    "displayName": "FormGroup",
+    "methods": [],
+    "props": {
+      "legendText": {
+        "defaultValue": null,
+        "description": "",
+        "name": "legendText",
+        "declarations": [
+          {
+            "fileName": "src/components/FormGroup/FormGroup.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "breakpoint": {
+        "defaultValue": null,
+        "description": "",
+        "name": "breakpoint",
+        "declarations": [
+          {
+            "fileName": "src/components/FormGroup/FormGroup.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "\"none\" | \"sm\" | \"md\" | \"lg\""
+        }
+      },
+      "invalid": {
+        "defaultValue": null,
+        "description": "",
+        "name": "invalid",
+        "declarations": [
+          {
+            "fileName": "src/components/FormGroup/FormGroup.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean | FieldError"
+        }
+      },
+      "message": {
+        "defaultValue": null,
+        "description": "",
+        "name": "message",
+        "declarations": [
+          {
+            "fileName": "src/components/FormGroup/FormGroup.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "messageText": {
+        "defaultValue": null,
+        "description": "",
+        "name": "messageText",
+        "declarations": [
+          {
+            "fileName": "src/components/FormGroup/FormGroup.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "align": {
+        "defaultValue": null,
+        "description": "",
+        "name": "align",
+        "declarations": [
+          {
+            "fileName": "src/components/FormGroup/FormGroup.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "\"vertical\" | \"horizontal\""
+        }
+      },
+      "inputSpacing": {
+        "defaultValue": null,
+        "description": "",
+        "name": "inputSpacing",
+        "declarations": [
+          {
+            "fileName": "src/components/FormGroup/FormGroup.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "\"none\" | \"md\" | \"lg\""
+        }
+      },
+      "className": {
+        "defaultValue": null,
+        "description": "",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "src/components/FormGroup/FormGroup.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "inline": {
+        "defaultValue": null,
+        "description": "",
+        "name": "inline",
+        "declarations": [
+          {
+            "fileName": "src/components/FormGroup/FormGroup.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      }
+    }
+  }
+]

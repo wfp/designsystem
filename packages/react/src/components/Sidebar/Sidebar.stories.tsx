@@ -43,7 +43,7 @@ export const Regular = (args) => {
             </SidebarHeader>
             <Item
               additional="Yesterday"
-              hint={<Tag kind="wfp">Hint</Tag>}
+              hint={<Tag type="wfp">Hint</Tag>}
               kind="horizontal"
               subContent="subcontent"
               title="A title is shown"
@@ -63,12 +63,12 @@ export const Regular = (args) => {
         {active ? (
           <Item
             additional="Yesterday"
-            hint={<Tag kind="wfp">Hint</Tag>}
+            hint={<Tag type="wfp">Hint</Tag>}
             kind="large"
             showAdditionalIcon
             subContent="This is the subContent. Lorem ipsum dolor sit amet, consetetur sadipscing elitr.  At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. "
             title="A title is shown"
-            wrapper="button">
+            wrapper="repeater">
             nonumy eirmod tempor invidunt
           </Item>
         ) : (
@@ -102,7 +102,7 @@ const Phonebook = () => {
            </SidebarHeader>
            <Item
              additional="Yesterday"
-             hint={<Tag kind="wfp">Hint</Tag>}
+             hint={<Tag type="wfp">Hint</Tag>}
              kind="horizontal"
              subContent="subcontent"
              title="A title is shown"
@@ -122,7 +122,7 @@ const Phonebook = () => {
        {active ? (
          <Item
            additional="Yesterday"
-           hint={<Tag kind="wfp">Hint</Tag>}
+           hint={<Tag type="wfp">Hint</Tag>}
            kind="large"
            showAdditionalIcon
            subContent="This is the subContent. Lorem ipsum dolor sit amet, consetetur sadipscing elitr.  At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. "
@@ -171,7 +171,7 @@ export const Phonebook = () => {
         active={selectedUserId}
         sidebarMobileHeader={
           <>
-            <SidebarBackButton onClick={() => setSelectedUserId()}>
+            <SidebarBackButton onClick={() => setSelectedUserId(null)}>
               Back
             </SidebarBackButton>
             <div>Detail page</div>

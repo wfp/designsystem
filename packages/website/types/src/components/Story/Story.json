@@ -1,0 +1,30 @@
+[
+  {
+    "tags": {},
+    "filePath": "src/components/Story/Story.tsx",
+    "description": "",
+    "displayName": "Story",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "",
+        "name": "className",
+        "parent": {
+          "fileName": "src/components/Story/Story.tsx",
+          "name": "StoryProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/Story/Story.tsx",
+            "name": "StoryProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      }
+    }
+  }
+]

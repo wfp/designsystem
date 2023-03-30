@@ -1,4 +1,5 @@
-import React from 'react';
+/* eslint-disable @typescript-eslint/no-empty-function */
+import * as React from 'react';
 import classNames from 'classnames';
 import useSettings from '../../hooks/useSettings';
 
@@ -7,8 +8,18 @@ interface SwitchProps {
   index?: number;
   kind: 'button' | 'anchor';
   name?: string | number;
-  onClick?: (index?: number, name?: string | number, text?: string) => void;
-  onKeyDown?: (index?: number, name?: string | number, text?: string) => void;
+  onClick?: (
+    e?: Event,
+    index?: number,
+    name?: string | number,
+    text?: string
+  ) => void;
+  onKeyDown: (
+    e?: Event,
+    index?: number,
+    name?: string | number,
+    text?: string
+  ) => void;
   selected?: boolean;
   text: string;
   icon: React.ReactElement;
@@ -22,8 +33,8 @@ const Switch: React.FC<SwitchProps> = (props) => {
     index,
     kind,
     name,
-    onClick,
-    onKeyDown,
+    onClick = () => {},
+    onKeyDown = () => {},
     selected,
     text,
     icon,
@@ -34,7 +45,7 @@ const Switch: React.FC<SwitchProps> = (props) => {
   const handleClick = (e) => {
     e.preventDefault();
     // ({ index, name, text }) => onClick(index, name, text);
-    onClick({ index, name, text });
+    onClick(e, index, name, text);
   };
 
   const handleKeyDown = (e) => {
@@ -42,7 +53,7 @@ const Switch: React.FC<SwitchProps> = (props) => {
 
     if (key === 'Enter' || key === 13 || key === ' ' || key === 32) {
       //   ({ index, name, text }) => onKeyDown(index, name, text);
-      onKeyDown({ index, name, text });
+      onKeyDown(e, index, name, text);
     }
   };
 

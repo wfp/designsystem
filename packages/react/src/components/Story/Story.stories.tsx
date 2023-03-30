@@ -1,5 +1,4 @@
 import React from 'react';
-import markdown from './README.mdx';
 import Story from '.';
 
 export default {
@@ -8,7 +7,6 @@ export default {
   parameters: {
     componentSubtitle: 'Component',
     status: 'released',
-    mdx: markdown,
   },
 };
 
@@ -96,12 +94,12 @@ const headingText = [
   { kind: 'h6', text: 'Heading 6', styling: '16px, SemiBold' },
 ];
 
-export const Headings = (args) => (
+export const Headings = () => (
   <>
     {headingText.map((e) => (
       <>
         <Story>
-          {e.kind === 'h1' ? (
+          {Element.kind === 'h1' ? (
             <e.kind className="wfp--story__title">{e.text}</e.kind>
           ) : (
             <e.kind>{e.text}</e.kind>

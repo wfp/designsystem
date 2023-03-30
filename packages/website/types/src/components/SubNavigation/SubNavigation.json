@@ -1,0 +1,235 @@
+[
+  {
+    "tags": {},
+    "filePath": "src/components/SubNavigation/SubNavigation.tsx",
+    "description": "The SubNavigation is a toogleable part of the MainNavigation",
+    "displayName": "SubNavigation",
+    "methods": [],
+    "props": {}
+  },
+  {
+    "tags": {},
+    "filePath": "src/components/SubNavigation/SubNavigation.tsx",
+    "description": "",
+    "displayName": "SubNavigationHeader",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "src/components/SubNavigation/SubNavigation.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "src/components/SubNavigation/SubNavigation.tsx",
+    "description": "",
+    "displayName": "SubNavigationTitle",
+    "methods": [],
+    "props": {}
+  },
+  {
+    "tags": {},
+    "filePath": "src/components/SubNavigation/SubNavigation.tsx",
+    "description": "",
+    "displayName": "SubNavigationLink",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "",
+        "name": "className",
+        "parent": {
+          "fileName": "src/components/SubNavigation/SubNavigation.tsx",
+          "name": "SubNavigationLinkProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/SubNavigation/SubNavigation.tsx",
+            "name": "SubNavigationLinkProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "src/components/SubNavigation/SubNavigation.tsx",
+    "description": "",
+    "displayName": "SubNavigationFilter",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "src/components/SubNavigation/SubNavigation.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "src/components/SubNavigation/SubNavigation.tsx",
+    "description": "",
+    "displayName": "SubNavigationContent",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "src/components/SubNavigation/SubNavigation.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "src/components/SubNavigation/SubNavigation.tsx",
+    "description": "",
+    "displayName": "SubNavigationList",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "src/components/SubNavigation/SubNavigation.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "src/components/SubNavigation/SubNavigation.tsx",
+    "description": "",
+    "displayName": "SubNavigationGroup",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "src/components/SubNavigation/SubNavigation.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "columns": {
+        "defaultValue": null,
+        "description": "",
+        "name": "columns",
+        "declarations": [
+          {
+            "fileName": "src/components/SubNavigation/SubNavigation.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "number"
+        }
+      },
+      "title": {
+        "defaultValue": null,
+        "description": "",
+        "name": "title",
+        "declarations": [
+          {
+            "fileName": "src/components/SubNavigation/SubNavigation.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactNode"
+        }
+      },
+      "image": {
+        "defaultValue": null,
+        "description": "",
+        "name": "image",
+        "declarations": [
+          {
+            "fileName": "src/components/SubNavigation/SubNavigation.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "src/components/SubNavigation/SubNavigation.tsx",
+    "description": "",
+    "displayName": "SubNavigationItem",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "src/components/SubNavigation/SubNavigation.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      }
+    }
+  }
+]

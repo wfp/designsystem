@@ -1,5 +1,5 @@
 import React from 'react';
-import markdown from './README.mdx';
+
 import Tag from '.';
 
 export default {
@@ -8,7 +8,6 @@ export default {
   parameters: {
     componentSubtitle: 'Component',
     status: 'released',
-    mdx: markdown,
   },
 };
 
@@ -17,4 +16,5 @@ export const Regular = (args) => <Tag {...args}></Tag>;
 Regular.args = {
   children: 'Text',
   type: 'info',
+  asdsadasd: 'adsasdads',
 };

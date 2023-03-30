@@ -1,17 +1,18 @@
 import * as React from 'react';
-import type { PropsWithChildren } from 'react';
-import classNames, { Argument } from 'classnames';
+import classNames from 'classnames';
 import FormItem from '../FormItem';
-import * as HookForm from 'react-hook-form';
 import useSettings from '../../hooks/useSettings';
 import { InputProps } from '../Input';
 
-interface TextAreaProps extends InputProps {
-  helperText?: string;
+interface TextAreaProps
+  extends InputProps,
+    React.InputHTMLAttributes<HTMLTextAreaElement> {
+  fullWidth?: boolean;
 }
 
-// TODO: Check forward ref
-const TextArea: React.FC<TextAreaProps> = React.forwardRef((props, ref) => {
+export type Ref = HTMLTextAreaElement;
+
+export const TextArea = React.forwardRef<Ref, TextAreaProps>((props, ref) => {
   const {
     className,
     formItemClassName,
@@ -22,10 +23,8 @@ const TextArea: React.FC<TextAreaProps> = React.forwardRef((props, ref) => {
     onClick,
     invalid,
     invalidText,
-    inputRef = ref,
     helperText,
     fullWidth,
-    viewOnly,
     ...other
   } = props;
   /* TODO: Implement print preview for inputs with automated overflow
@@ -73,14 +72,14 @@ const TextArea: React.FC<TextAreaProps> = React.forwardRef((props, ref) => {
     <textarea
       {...other}
       {...textareaProps}
-      ref={inputRef}
+      ref={ref}
       className={textareaClasses}
       data-invalid
     />
   ) : (
     <textarea
       {...other}
-      ref={inputRef}
+      ref={ref}
       {...textareaProps}
       className={textareaClasses}
     />

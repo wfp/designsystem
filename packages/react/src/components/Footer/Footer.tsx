@@ -1,10 +1,9 @@
-import React from 'react';
+import * as React from 'react';
 import type { PropsWithChildren } from 'react';
-import classnames, { Argument } from 'classnames';
+import classNames from 'classnames';
 import Link from '../Link';
 import Wrapper from '../Wrapper';
 import { ScreenSize } from '../../typesLegacy/utils';
-// import Icon from '../Icon';
 import {
   WfpLogoStandardBlackEn,
   WfpLogoVerticalEn,
@@ -12,7 +11,7 @@ import {
 import useSettings from '../../hooks/useSettings';
 
 /** A Footer is a section at the bottom of each page. It typically contains basic site information, copyright data or links to related pages. */
-type FooterProps = PropsWithChildren<{
+interface FooterProps extends React.HTMLAttributes<HTMLDivElement> {
   external?: boolean;
   children?: React.ReactNode;
   metaContent?: React.ReactNode;
@@ -23,18 +22,16 @@ type FooterProps = PropsWithChildren<{
   sdgLogo?: React.ReactNode;
   subTitle?: string | React.ReactNode;
   secondary?: React.ReactNode;
-  className?: Argument;
+  className?: string;
   labelOne?: string;
   labelTwo?: string;
   linkTextOne?: string;
   linkHrefOne?: string;
   linkTextTwo?: string;
   linkHrefTwo?: string;
-  secondary?: string | React.ReactNode;
-}>;
+}
 
 const Footer: React.FC<FooterProps> = ({
-  // buttonText,
   className,
   children,
   labelOne,
@@ -48,16 +45,14 @@ const Footer: React.FC<FooterProps> = ({
   metaContent,
   metaLinks,
   secondary,
-  // sdgLogo,
   pageWidth,
-  //...other
 }) => {
   const { prefix } = useSettings();
 
-  const classNames = classnames(`${prefix}--footer`, className);
+  const classes = classNames(`${prefix}--footer`, className);
 
   return (
-    <footer className={classNames}>
+    <footer className={classes}>
       <Wrapper pageWidth={pageWidth}>
         <div className={`${prefix}--footer__content`}>
           {/* <div className="wfp--footer__info-content"> */}

@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import classNames from 'classnames';
 import Button from '../Button';
 // import { ArrowLeft, ArrowRight } from '@un/icons-react';
@@ -8,17 +8,17 @@ interface FormControlsProps {
   className?: string;
   onNextClick?: () => void;
   nextDisabled?: boolean;
-  nextIcon?: {};
+  nextIcon?: object;
   nextHidden?: boolean;
   nextText?: React.ReactNode;
   onPreviousClick?: () => void;
   previousDisabled?: boolean;
-  previousIcon?: {};
+  previousIcon?: object;
   previousHidden?: boolean;
   previousText?: React.ReactNode;
   onSubmitClick?: () => void;
   submitDisabled?: boolean;
-  submitIcon?: {};
+  submitIcon?: object;
   submitHidden?: boolean;
   submitText?: React.ReactNode;
 }

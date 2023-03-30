@@ -7,16 +7,16 @@ import useSettings from '../../hooks/useSettings';
 /** Tabs allow users to navigate easily between views within the same context */
 const Tabs = (props) => {
   const {
-    ariaLabel,
+    //ariaLabel,
     disableAnimation,
     inline,
     className,
     customTabContent,
-    triggerHref,
+    //triggerHref,
     role,
     onSelectionChange,
     selected,
-    children,
+    // children,
     ...other
   } = props;
   const { prefix } = useSettings();
@@ -32,10 +32,15 @@ const Tabs = (props) => {
 
   useEffect(() => {
     getSizes();
-    window.addEventListener('resize', getSizes);
-    return () => {
-      window.removeEventListener('resize', getSizes);
-    };
+    // eslint-disable-next-line no-undef
+    if (window) {
+      // eslint-disable-next-line no-undef
+      window.addEventListener('resize', getSizes);
+      return () => {
+        // eslint-disable-next-line no-undef
+        window.removeEventListener('resize', getSizes);
+      };
+    }
   }, []);
 
   const classes = {

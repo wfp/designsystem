@@ -1,0 +1,68 @@
+@use 'scss/meta' as *;
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100000;
+
+  pointer-events: none;
+  transition: all 0.3s;
+}
+
+.overlayContent {
+  position: absolute;
+  top: 30vh;
+  left: 50%;
+  margin-left: -250px;
+  margin-top: -100px;
+  background: $background-main; //$layer-primary;
+  border-radius: 10px;
+  width: 500px;
+  transition: all 0.3s;
+  transform: translateY(-30px);
+  padding: 1em;
+  h3 {
+    text-align: center;
+    margin: 1em;
+    margin-top: 0;
+    font-size: 1.4em;
+  }
+}
+
+.overlayBackground {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(#000000, 0.7);
+  transition: all 0.3s;
+}
+
+.open {
+  opacity: 1;
+  pointer-events: all;
+  .overlayContent {
+    z-index: 100000;
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+.closed {
+  pointer-events: none;
+  opacity: 0;
+}
+
+.searchIcon {
+  font-size: 0.8em;
+}
+
+.searchLink {
+  &:hover {
+    text-decoration: underline;
+  }
+}

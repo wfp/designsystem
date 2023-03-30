@@ -56,7 +56,7 @@ export { default as FormHint } from './components/FormHint';
 export { default as FormItem } from './components/FormItem';
 export { default as FormLabel } from './components/FormLabel';
 export { default as FormWizard } from './components/FormWizard';
-export { default as Icon } from './components/Icon';
+//export { default as Icon } from './components/Icon/index.ts.legacy';
 export { default as InfoBar } from './components/InfoBar';
 export { default as Link } from './components/Link';
 export { default as Loading } from './components/Loading';

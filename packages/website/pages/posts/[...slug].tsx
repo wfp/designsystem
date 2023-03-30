@@ -1,43 +1,33 @@
+import React from 'react';
 import { useRouter } from 'next/router';
 import ErrorPage from 'next/error';
-//import Container from '../../components/container';
-//import PostBody from '../../components/post-body';
-//import Header from '../../components/header';
-//import PostHeader from '../../components/post-header';
 import Layout from '../../components/Blog/Layout';
 import { getPostByPath, getAllPosts, getPostSlugs } from '../../lib/getPost';
-//import PostTitle from '../../components/post-title';
-import styles from './article.module.scss';
-import Head from 'next/head';
 import Sidebar from '../../components/Sidebar';
 import { serialize } from 'next-mdx-remote/serialize';
-import { MDXRemote } from 'next-mdx-remote';
 import rehypeCode from './rehypeCode';
-import { parse } from 'react-docgen-typescript';
-import fs from 'fs';
-import {
-  Breadcrumb,
-  BreadcrumbHome,
-  BreadcrumbItem,
-  Link,
-  Wrapper,
-} from '@un/react';
-import Image from 'next/image';
 import rehypeImgSize from 'rehype-img-size';
 import rehypeFigmaImage from './rehypeFigmaImage';
 import rehypeToC from './rehypeToC';
-import LinkBack from '../../components/LinkBack';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowLeft, faArrowRight } from '@fortawesome/pro-solid-svg-icons';
 import remarkGfm from 'remark-gfm';
-import components from '../../components/Blog/Mdx';
 import slugify from 'slugify';
 import remarkMdxCodeMeta from 'remark-mdx-code-meta';
-import path from 'path';
 
-export default function Post({ post, posts, propTypes, morePosts, preview }) {
+interface Props {
+  post?: {
+    excerpt?: string;
+    content?: object;
+    mainComponent?: string;
+    slug?: string;
+  };
+  posts?: any;
+  morePosts: any;
+  preview: any;
+  propTypes: any;
+}
+
+export default function Post({ post, posts, preview, propTypes }: Props) {
   const router = useRouter();
-  console.log('propTypes ', propTypes);
 
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />;
@@ -49,29 +39,6 @@ export default function Post({ post, posts, propTypes, morePosts, preview }) {
       ) : (
         <>
           <article>
-            {/* {!router?.query?.app && (
-              <LinkBack
-                href={process.env.NEXT_PUBLIC_BLOG_FOLDER}
-                //hasBack={hasBack}
-              >
-                <a className={styles.returnLinkTop}>
-                  <FontAwesomeIcon icon={faArrowLeft} />
-                  Back to overview
-                </a>
-              </LinkBack>
-            )} */}
-
-            {/*<Head>
-                <title>{post.title}</title> 
-                <meta property="og:image" content={post.ogImage?.url} />
-              </Head>*/}
-            {/*<PostHeader
-              title={post.title}
-              coverImage={post.coverImage}
-              date={post.date}
-              author={post.author}
-            />*/}
-
             <Sidebar posts={posts} post={post} propTypes={propTypes} />
           </article>
         </>
@@ -94,38 +61,43 @@ export async function getStaticProps({ params }) {
     'coverImage',
   ]);
 
+  console.log('params.slug', params.slug);
   const slugs = await getPostSlugs();
-  const foundSlug = slugs.find(
-    (f) =>
-      f.slug
-        .split('/')
-        .map((e) => slugify(e))
-        .join('/') === params.slug.join('/')
-  );
+  const foundSlug = params.slug
+    ? slugs.find(
+        (f) =>
+          f.slug
+            .split('/')
+            .map((e) => slugify(e, { lower: true }))
+            .join('/') === params.slug.join('/')
+      )
+    : null;
 
-  const post = getPostByPath(foundSlug.path, [
-    'title',
-    'date',
-    'slug',
-    'intro',
-    'subtitle',
-    'author',
-    'content',
-    'ogImage',
-    'coverImage',
-    'mainComponent',
-    'defaultProps',
-    'sampleCode',
-    'excerpt',
-    'figma',
-    'github',
-    'npm',
-    'storybook',
-  ]);
-  const content = post.content;
+  const post: any = foundSlug?.path
+    ? getPostByPath(foundSlug.path, [
+        'title',
+        'date',
+        'slug',
+        'intro',
+        'subtitle',
+        'author',
+        'content',
+        'ogImage',
+        'coverImage',
+        'mainComponent',
+        'defaultProps',
+        'sampleCode',
+        'excerpt',
+        'figma',
+        'github',
+        'npm',
+        'storybook',
+      ])
+    : {};
+  const content = post?.content || '';
 
   const mdxSource = await serialize(post.content, {
-    components,
+    //components,
     mdxOptions: {
       remarkPlugins: [remarkMdxCodeMeta, remarkGfm],
       rehypePlugins: [
@@ -142,43 +114,28 @@ export async function getStaticProps({ params }) {
   });
 
   const mdxToC = await serialize(post.content, {
-    components,
+    //components,
     mdxOptions: {
       rehypePlugins: [rehypeToC],
     },
   });
 
   const mdxExcerptSource = await serialize(post.excerpt, {
-    components,
+    // components,
   });
 
-  var propTypes = null;
+  let propTypes = null;
 
   if (post.mainComponent) {
-    var pathToModule = path.dirname(require.resolve('@un/react/README.md'));
-    const componentPath = `${pathToModule}/src/components/${post.mainComponent}/${post.mainComponent}.tsx`;
-    console.log('pathToModule', pathToModule, componentPath);
-    const options = {
-      savePropValueAsString: true,
-      propFilter: (prop, component) => {
-        if (prop.declarations !== undefined && prop.declarations.length > 0) {
-          const hasPropAdditionalDescription = prop.declarations.find(
-            (declaration) => {
-              return !declaration.fileName.includes('node_modules');
-            }
-          );
+    // eslint-disable-next-line @typescript-eslint/no-var-requires
+    const file = require(`../../types/src/components/${post.mainComponent}/${post.mainComponent}.json`);
 
-          return Boolean(hasPropAdditionalDescription);
-        }
+    propTypes = file;
 
-        return true;
-      },
-    };
-
-    propTypes = JSON.parse(JSON.stringify(parse(componentPath, options)));
-
-    console.log('propTypes', propTypes[0].props.defaultValue);
+    console.log('propTypes', file);
   }
+
+  console.log('post', post);
 
   return {
     props: {
@@ -200,7 +157,7 @@ export async function getStaticPaths() {
 
   return {
     paths: posts.map((post) => {
-      const slug = post.slug.split('/').map((e) => slugify(e));
+      const slug = post.slug.split('/').map((e) => slugify(e, { lower: true }));
       return {
         params: {
           slug,

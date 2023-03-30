@@ -34,7 +34,7 @@ const Navigation = () => {
                   small
                   id="search-2"
                   labelText="Filter"
-                  placeHolderText="Filter list"
+                  placeholder="Filter list"
                   onChange={() => {
                     alert('Apply Filter');
                   }}
@@ -69,7 +69,7 @@ const Navigation = () => {
         </Link>
       </MainNavigationItem>
       <MainNavigationItem>
-        <Search kind="main" placeHolderText="Search" />
+        <Search kind="main" placeholder="Search" />
         {/* onChange={action('onChange')} */}
       </MainNavigationItem>
       <MainNavigationItem

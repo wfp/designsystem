@@ -1,11 +1,10 @@
-import { faArrowUpRight } from '@fortawesome/pro-regular-svg-icons';
 import { faArrowUpRightFromSquare } from '@fortawesome/pro-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from '@un/react';
 import React from 'react';
 import styles from './flex.module.scss';
 
-export default function LinkEl({ children, href, ...props }) {
+export default function LinkEl({ children, href, ...props }: any) {
   const isExternalURL = href.startsWith('https');
 
   return (

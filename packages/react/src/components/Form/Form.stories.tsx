@@ -193,7 +193,7 @@ export const DetailedForm = (args) => {
       </FormGroup>
 
       <FormGroup legendText="Radio Button heading">
-        <Search id="search-1" labelText="Search" placeHolderText="Search" />
+        <Search id="search-1" labelText="Search" placeholder="Search" />
       </FormGroup>
 
       <Select id="select-1" defaultValue="placeholder-item">

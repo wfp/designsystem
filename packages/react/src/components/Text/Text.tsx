@@ -1,18 +1,17 @@
-import React from 'react';
-import type { PropsWithChildren } from 'react';
-import classnames from 'classnames';
+import * as React from 'react';
+import classNames from 'classnames';
 import useSettings from '../../hooks/useSettings';
 import { Spacing, TextKind } from '../../typesLegacy/utils';
 
-type TextProps = PropsWithChildren<{
+interface TextProps extends React.AllHTMLAttributes<HTMLDivElement> {
   kind?: TextKind;
   children?: React.ReactNode;
   spacingTop?: Spacing;
   spacingBottom?: Spacing;
   className?: string;
-}>;
+}
 
-export const textLookup = {
+export const textLookup: Record<TextKind, keyof JSX.IntrinsicElements> = {
   h1: 'h1',
   h2: 'h2',
   h3: 'h3',
@@ -28,7 +27,6 @@ export const textLookup = {
   bold: 'b',
   strong: 'strong',
   a: 'a',
-  code: 'code',
   'inline-highlight': 'code',
 };
 
@@ -44,16 +42,21 @@ const Text: React.FC<TextProps> = ({
   spacingBottom,
 }) => {
   const { prefix } = useSettings();
-  const tagName = { name: kind && textLookup[kind] ? textLookup[kind] : 'div' };
-  const classNames = classnames({
-    [`${prefix}--text`]: true,
-    //    [`${prefix}--story__${kind}`]: kind,
-    [`${prefix}--text__${kind}`]: kind,
-    [`${prefix}--text__spacing-top-${spacingTop}`]: spacingTop,
-    [`${prefix}--text__spacing-bottom-${spacingBottom}`]: spacingBottom,
-    [`${className}`]: className,
-  });
-  return <tagName.name className={classNames}>{children}</tagName.name>;
+  const TagName: keyof JSX.IntrinsicElements =
+    kind && textLookup[kind] ? textLookup[kind] : 'div';
+  const classes = classNames(
+    {
+      [`${prefix}--text`]: true,
+      // [`${prefix}--story__${kind}`]: kind,
+      [`${prefix}--text__${kind}`]: kind,
+      [`${prefix}--text__spacing-top-${spacingTop}`]: spacingTop,
+      [`${prefix}--text__spacing-bottom-${spacingBottom}`]: spacingBottom,
+    },
+    className
+  );
+  return React.createElement(TagName, { className: classes }, children);
 };
+
+Text.displayName = 'Text';
 
 export default Text;

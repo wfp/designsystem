@@ -1,6 +1,5 @@
 import React from 'react';
 import Slider from '../Slider';
-import markdown from './README.mdx';
 
 export default {
   title: 'Components/Forms/Slider',
@@ -8,7 +7,6 @@ export default {
   parameters: {
     componentSubtitle: 'Component',
     status: 'released',
-    mdx: markdown,
   },
 };
 

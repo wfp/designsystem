@@ -1,15 +1,12 @@
 import React, { useState, useRef, useEffect } from 'react';
-import type { PropsWithChildren } from 'react';
 import classNames from 'classnames';
 import useSettings from '../../hooks/useSettings';
-import Input from '../Input';
+import Input, { InputProps } from '../Input';
 import { Search as SearchIcon, Close } from '@un/icons-react';
 import * as HookForm from 'react-hook-form';
 
 /** Search enables users to specify a word or a phrase to find relevant pieces of content without the use of navigation. */
-interface SearchProps {
-  helperText?: string;
-  labelText?: string;
+interface SearchProps extends InputProps {
   defaultValue?: string | number;
   formItemClassName?: string;
   inputWrapperClassName?: string;
@@ -20,21 +17,23 @@ interface SearchProps {
   children?: React.ReactNode | string;
   light?: boolean;
   closeButtonLabelText?: string;
+  placeholder?: string;
   disabled?: boolean;
   id?: string;
   hideControls?: boolean;
   kind?: 'large' | 'small' | 'main' | 'light' | 'banner';
   onChange?: (
-    value: string,
-    event?: React.ChangeEvent<HTMLInputElement>
+    event?: React.ChangeEvent<HTMLInputElement>,
+    value?: string
   ) => void;
   inputRef?: React.RefObject<HTMLInputElement>;
   onSearchIconClick?: () => void;
+  small?: boolean;
   value?: string;
   className?: string;
 }
 
-const Search: React.FC<PropsWithChildren<SearchProps>> = (props) => {
+const Search: React.FC<SearchProps> = (props) => {
   const { prefix } = useSettings();
 
   const {
@@ -46,7 +45,9 @@ const Search: React.FC<PropsWithChildren<SearchProps>> = (props) => {
     hideControls,
     labelText,
     kind = 'large',
+    // eslint-disable-next-line @typescript-eslint/no-empty-function
     onChange = () => {},
+    // eslint-disable-next-line @typescript-eslint/no-empty-function
     onSearchIconClick = () => {},
     helperText,
     light,
@@ -62,7 +63,7 @@ const Search: React.FC<PropsWithChildren<SearchProps>> = (props) => {
   }, [props.value]);
 
   const newInputRef = useRef(null);
-  var _inputRef = inputRef ? inputRef : newInputRef;
+  const _inputRef = inputRef ? inputRef : newInputRef;
 
   const handleChange = (evt) => {
     if (!disabled) {
@@ -77,7 +78,7 @@ const Search: React.FC<PropsWithChildren<SearchProps>> = (props) => {
   const clearSearch = () => {
     const valueState = '';
     setValue(valueState);
-    onChange(valueState); // TODO: why are we calling onChange
+    // onChange(valueState); // TODO: why are we calling onChange
   };
 
   const numberInputClasses = classNames(`${prefix}--number`, className, {
@@ -110,32 +111,26 @@ const Search: React.FC<PropsWithChildren<SearchProps>> = (props) => {
       {...props}
       formItemClassName={numberInputClasses}
       inputWrapperClassName={`${prefix}--search-input__wrapper`}>
-      {() => {
-        return (
-          <>
-            <SearchIcon
-              description={labelText}
-              className={`${prefix}--search-magnifier-icon`}
-              onClick={onSearchIconClick}
-            />
+      <SearchIcon
+        description={labelText}
+        className={`${prefix}--search-magnifier-icon`}
+        onClick={onSearchIconClick}
+      />
 
-            <input
-              className="wfp--search-input"
-              type="text"
-              {...other}
-              {...newProps}
-              ref={_inputRef}
-            />
-            <button
-              className={clearClasses}
-              onClick={clearSearch}
-              type="button"
-              aria-label={closeButtonLabelText}>
-              <Close description={closeButtonLabelText} />
-            </button>
-          </>
-        );
-      }}
+      <input
+        className="wfp--search-input"
+        type="text"
+        {...other}
+        {...newProps}
+        ref={_inputRef}
+      />
+      <button
+        className={clearClasses}
+        onClick={clearSearch}
+        type="button"
+        aria-label={closeButtonLabelText}>
+        <Close description={closeButtonLabelText} />
+      </button>
     </Input>
   );
 };

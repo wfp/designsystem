@@ -1,4 +1,4 @@
-async function fetchAPI(query, { variables } = {}) {
+async function fetchAPI(query, { variables }: { variables?: any } = { variables: {} }) {
   const res = await fetch(`${process.env.NEXT_PUBLIC_API}/graphql`, {
     method: "POST",
     headers: {

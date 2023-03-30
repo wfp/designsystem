@@ -1,7 +1,7 @@
-import React from 'react';
+import * as React from 'react';
 import Tooltip from '../Tooltip';
 import type { PropsWithChildren } from 'react';
-import classnames, { Argument } from 'classnames';
+import classNames from 'classnames';
 import useSettings from '../../hooks/useSettings';
 
 /** Context menu are used as navigational elements. They should contain commands that apply to the target object. */
@@ -9,20 +9,20 @@ type ContextMenuProps = PropsWithChildren<{
   content?: React.ReactNode;
   href?: string;
   inline?: boolean;
-  className?: Argument;
+  className?: string;
 }>;
 
 const ContextMenu: React.FC<ContextMenuProps> = ({
   children,
   className,
   content,
-  href,
+  /* href,
   inline,
   trigger = 'click',
-  ...other
+  ...other*/
 }) => {
   const { prefix } = useSettings();
-  const classNames = classnames(
+  const classes = classNames(
     {
       [`${prefix}--context-menu`]: true,
     },
@@ -30,14 +30,14 @@ const ContextMenu: React.FC<ContextMenuProps> = ({
   );
 
   return (
-    <Tooltip className={classNames} content={content} noPadding trigger="click">
+    <Tooltip className={classes} content={content} noPadding trigger="click">
       {children}
     </Tooltip>
   );
 };
 
 type ContextMenuGroupProps = PropsWithChildren<{
-  className?: Argument;
+  className?: string;
 }>;
 
 const ContextMenuGroup: React.FC<ContextMenuGroupProps> = ({
@@ -45,7 +45,7 @@ const ContextMenuGroup: React.FC<ContextMenuGroupProps> = ({
   ...other
 }) => {
   const { prefix } = useSettings();
-  const classNames = classnames(
+  const classNames = classNames(
     {
       [`${prefix}--context-menu__group`]: true,
     },
@@ -56,7 +56,7 @@ const ContextMenuGroup: React.FC<ContextMenuGroupProps> = ({
 };
 
 type ContextMenuItemProps = PropsWithChildren<{
-  className?: Argument;
+  className?: string;
 }>;
 
 const ContextMenuItem: React.FC<ContextMenuItemProps> = ({
@@ -64,7 +64,7 @@ const ContextMenuItem: React.FC<ContextMenuItemProps> = ({
   ...other
 }) => {
   const { prefix } = useSettings();
-  const classNames = classnames(
+  const classNames = classNames(
     {
       [`${prefix}--context-menu__item`]: true,
     },

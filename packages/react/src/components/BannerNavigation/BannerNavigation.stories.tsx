@@ -1,5 +1,4 @@
 import React from 'react';
-import markdown from './README.mdx';
 import { action } from '@storybook/addon-actions';
 import { BannerNavigation, BannerNavigationItem } from './BannerNavigation';
 import { BannerNavigationWithContent } from './BannerNavigationWithContent';
@@ -13,7 +12,6 @@ export default {
   parameters: {
     componentSubtitle: 'Component',
     status: 'released',
-    mdx: markdown,
     previewWidth: 'full',
   },
 };
@@ -64,7 +62,7 @@ export const CustomContent = (args) => (
       <Search
         id="search-2"
         kind="banner"
-        placeHolderText="Search"
+        placeholder="Search"
         onChange={action('onChange')}
       />
     </BannerNavigationItem>

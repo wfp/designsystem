@@ -1,5 +1,5 @@
 import React, { PropsWithChildren } from 'react';
-import classnames from 'classnames';
+import classNames from 'classnames';
 import Link from '../Link';
 import useSettings from '../../hooks/useSettings';
 
@@ -31,9 +31,9 @@ const BreadcrumbItem: React.FC<PropsWithChildren<BreadcrumbItemProps>> = ({
   ...other
 }) => {
   const { prefix } = useSettings();
-  const classNames = classnames(`${prefix}--breadcrumb-item`, className);
+  const classes = classNames(`${prefix}--breadcrumb-item`, className);
   return (
-    <div className={classNames} {...other}>
+    <div className={classes} {...other}>
       {newChild(children, disableLink, href)}
     </div>
   );

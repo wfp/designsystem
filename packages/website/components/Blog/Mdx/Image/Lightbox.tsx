@@ -1,5 +1,6 @@
-import React, { useEffect, useState, useRef } from 'react';
-import { motion, useDomEvent, useMotionValue } from 'framer-motion';
+/* eslint-disable @typescript-eslint/no-unused-vars */
+import React, { useState, useRef } from 'react';
+import { motion, useMotionValue } from 'framer-motion';
 import styles from './lightbox.module.scss';
 import { useGesture } from 'react-use-gesture';
 import Image from 'next/image';
@@ -10,7 +11,7 @@ const transition = {
   stiffness: 120,
 };
 
-const Lightbox = (props) => {
+const Lightbox = (props: any) => {
   const [isOpen, setOpen] = useState(false);
   const domTarget = useRef(null);
 
@@ -83,6 +84,7 @@ const Lightbox = (props) => {
             aspectRatio: `${props.width} / ${props.height}`,
           }}>
           <Image
+            alt={props.alt}
             {...props}
             sizes={isOpen ? ' 100vw' : '(max-width: 710px) 100vw, 868px'}
           />

@@ -1,13 +1,13 @@
 import React, { PropsWithChildren, useState } from 'react';
 import ReactDOM from 'react-dom';
-import classnames from 'classnames';
+import classNames from 'classnames';
 import { usePopperTooltip } from 'react-popper-tooltip';
 import { Placement } from '../../typesLegacy/utils';
 
 import useSettings from '../../hooks/useSettings';
 
 interface TooltipProps {
-  children?: React.ReactNode;
+  children: React.ReactNode;
   content?:
     | React.ReactNode
     | ((options: {
@@ -27,10 +27,8 @@ interface TooltipProps {
   closeOnOutsideClick?: boolean;
   closeOnTriggerHidden?: boolean;
   defaultVisible?: boolean;
-  delayHide?: number;
   delayShow?: number;
   followCursor?: boolean;
-  interactive?: boolean;
   mutationObserverOptions?: MutationObserverInit | null;
   offset?: [number, number];
   onVisibleChange?: (state: boolean) => void;
@@ -76,7 +74,7 @@ const Tooltip: React.FC<PropsWithChildren<TooltipProps>> = ({
 }) => {
   const { prefix } = useSettings();
   const [visibility, setVisibility] = useState(false);
-  const classNames = classnames(className, {
+  const classes = classNames(className, {
     [`${prefix}--tooltip`]: true,
     [`${prefix}--tooltip--disable-padding`]: noPadding,
     [`${prefix}--tooltip--visible`]: visibility,
@@ -105,17 +103,19 @@ const Tooltip: React.FC<PropsWithChildren<TooltipProps>> = ({
     trigger,
   });
 
-  const elementClassNames = classnames(children?.props?.className, {
-    [`${prefix}--tooltip--trigger`]: true,
-  });
+  const elementClassNames = classNames(
+    /*children?.props?.className, */ {
+      [`${prefix}--tooltip--trigger`]: true,
+    }
+  );
 
-  const wrapperClassNames = classnames(className, {
+  const wrapperClassNames = classNames(className, {
     [`${prefix}--tooltip--trigger`]: true,
   });
 
   const triggerElement =
     !createRefWrapper && typeof children !== 'string' ? (
-      React.cloneElement(children, {
+      React.cloneElement(children as React.ReactElement<any>, {
         ref: setTriggerRef,
         className: elementClassNames,
       })
@@ -131,7 +131,7 @@ const Tooltip: React.FC<PropsWithChildren<TooltipProps>> = ({
   };
 
   const tooltip = (
-    <div ref={setTooltipRef} {...getTooltipProps({ className: classNames })}>
+    <div ref={setTooltipRef} {...getTooltipProps({ className: classes })}>
       {typeof content === 'function'
         ? content({ setVisibility, visibilityChange })
         : content}

@@ -1,0 +1,68 @@
+[
+  {
+    "tags": {},
+    "filePath": "src/components/List/ListItem.tsx",
+    "description": "",
+    "displayName": "ListItem",
+    "methods": [],
+    "props": {
+      "kind": {
+        "defaultValue": null,
+        "description": "",
+        "name": "kind",
+        "parent": {
+          "fileName": "src/components/List/ListItem.tsx",
+          "name": "ListItemProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/List/ListItem.tsx",
+            "name": "ListItemProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "\"checkmark\" | \"cross\""
+        }
+      },
+      "small": {
+        "defaultValue": null,
+        "description": "",
+        "name": "small",
+        "parent": {
+          "fileName": "src/components/List/ListItem.tsx",
+          "name": "ListItemProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/List/ListItem.tsx",
+            "name": "ListItemProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "title": {
+        "defaultValue": null,
+        "description": "",
+        "name": "title",
+        "parent": {
+          "fileName": "src/components/List/ListItem.tsx",
+          "name": "ListItemProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/List/ListItem.tsx",
+            "name": "ListItemProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactNode"
+        }
+      }
+    }
+  }
+]

@@ -1,5 +1,4 @@
-import React, { useContext, useState } from 'react';
-import type { PropsWithChildren } from 'react';
+import React, { useState } from 'react';
 import classNames from 'classnames';
 import Button from '../Button';
 import Wrapper from '../Wrapper';
@@ -8,17 +7,17 @@ import { ScreenSize } from '../../typesLegacy/utils';
 import MainNavigationContext from './MainNavigationContext';
 /** The Main Navigation is a Horizontal Menu which consists of multiple clickable items placed at the top of the page. The navigation stays unchanged when browswing through the site and is present on every page. The currently selected item is usually highlighted. */
 
-type MainNavigationProps = PropsWithChildren<{
+interface MainNavigationProps {
   logo?: string | React.ReactNode;
   pageWidth?: ScreenSize;
   components?: {
-    Wrapper?: React.ReactNode;
+    Wrapper?: React.ComponentType<any>;
   };
   mobilePageWidth?: ScreenSize;
   wrapperClassName?: string;
   className?: string;
   id?: string;
-}>;
+}
 
 const MainNavigation: React.FC<MainNavigationProps> = ({
   children,
@@ -33,11 +32,8 @@ const MainNavigation: React.FC<MainNavigationProps> = ({
   const [openMobile, setOpenMobile] = useState(false);
   const [activeMenuItem, setActiveMenuItem] = useState(undefined);
 
-  const onChangeSub = (action, i, e) => {
-    // console.log('unchange', action, i, e);
-    if (e) {
-      e.preventDefault();
-    }
+  const onChangeSub = (action: function, i: number, e: any) => {
+    if (e) e.preventDefault();
 
     if (action === 'close') {
       setActiveMenuItem(undefined);
@@ -66,13 +62,13 @@ const MainNavigation: React.FC<MainNavigationProps> = ({
     [`${prefix}--main-navigation__list--open`]: openMobile,
   });
 
-  const components = { Wrapper, ...componentsOverride };
+  const Components = { Wrapper, ...componentsOverride };
 
   return (
     <div id={id} className={wrapperClasses}>
       <MainNavigationContext.Provider
         value={{ activeMenuItem, openMobile, toggleMenu, onChangeSub }}>
-        <components.Wrapper
+        <Components.Wrapper
           pageWidth={pageWidth}
           mobilePageWidth={mobilePageWidth}
           className={`${prefix}--main-navigation__wrapper`}>
@@ -85,7 +81,7 @@ const MainNavigation: React.FC<MainNavigationProps> = ({
             <div className={`${prefix}--main-navigation__logo`}>{logo}</div>
           </div>
           <ul className={listClasses}>{children}</ul>
-        </components.Wrapper>
+        </Components.Wrapper>
       </MainNavigationContext.Provider>
     </div>
   );

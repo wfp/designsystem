@@ -69,7 +69,12 @@ declare type TextKind =
   | 'h6'
   | 'title'
   | 'subtitle'
+  | 'bold'
+  | 'strong'
+  | 'inline-highlight'
+  | 'a'
   | 'p'
+  | 'i'
   | 'caption'
   | 'code';
 

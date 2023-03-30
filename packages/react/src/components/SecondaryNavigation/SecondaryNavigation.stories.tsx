@@ -44,7 +44,7 @@ export const Regular = (args) => (
   </SecondaryNavigation>
 );
 
-const sourcecode = (importstatement, additional) => {
+const sourcecode = (importstatement: string, additional?: string) => {
   return `
   
 ${importstatement}
@@ -93,7 +93,7 @@ Regular.story = {
   },
 };
 
-export const HeadingOnly = (args) => (
+export const HeadingOnly = () => (
   <SecondaryNavigation additional="additional Information">
     <Breadcrumb>
       <BreadcrumbItem>
