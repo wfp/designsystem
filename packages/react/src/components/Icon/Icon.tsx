@@ -1,7 +1,7 @@
 import invariant from 'invariant';
 import * as React from 'react';
 import type { PropsWithChildren } from 'react';
-import { IIcon } from '../../typesLegacy/utils';
+import { IIcon } from '../../typesLegacyBB/utils';
 
 /**
  * @param {Object} svgData - JSON Object for an SVG icon

@@ -3,7 +3,7 @@
     "tags": {},
     "filePath": "src/components/TablePagination/TablePagination.tsx",
     "description": "",
-    "displayName": "TablePagination",
+    "displayName": "ReactTablePagination",
     "methods": [],
     "props": {
       "data": {

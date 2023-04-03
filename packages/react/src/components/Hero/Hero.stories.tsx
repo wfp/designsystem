@@ -29,7 +29,7 @@ Regular.args = {
   kind: 'landscape',
 };
 
-export const HeroKinds = (args) => <></>;
+export const HeroKinds = () => <></>;
 
 const herokinds = `
 By changing the \`kind\` prop you can use different styles of the card.

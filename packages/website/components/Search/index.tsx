@@ -10,7 +10,7 @@ import { createPortal } from 'react-dom';
 import styles from './styles.module.scss';
 
 import { InstantSearch } from 'react-instantsearch-hooks-web';
-import { Button } from '@un/react';
+import { Search } from '@un/react';
 
 const searchClient = algoliasearch(
   process.env.NEXT_PUBLIC_ALGOLIA_APP_ID,
@@ -64,11 +64,15 @@ export default function SearchWrapper() {
 
   return (
     <>
-      <Button onClick={() => setOpen(true)}>Search</Button>
+      <Search
+        onClick={() => setOpen(true)}
+        className={styles.search}
+        placeholder="Search topic..."
+      />
       <Portal open={open}>
         <div ref={ref}>
           <InstantSearch indexName="ui-docs" searchClient={searchClient}>
-            <CustomSearchBox /*setFocus={setFocus} */ />
+            <CustomSearchBox /*setFocus={setFocus} */ open={open} />
             <CustomHits focus={focus} setOpen={setOpen} />
           </InstantSearch>
         </div>

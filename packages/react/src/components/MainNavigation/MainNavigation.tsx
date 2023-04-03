@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import Button from '../Button';
 import Wrapper from '../Wrapper';
 import useSettings from '../../hooks/useSettings';
-import { ScreenSize } from '../../typesLegacy/utils';
+import { ScreenSize } from '../../typesLegacyBB/utils';
 import MainNavigationContext from './MainNavigationContext';
 /** The Main Navigation is a Horizontal Menu which consists of multiple clickable items placed at the top of the page. The navigation stays unchanged when browswing through the site and is present on every page. The currently selected item is usually highlighted. */
 

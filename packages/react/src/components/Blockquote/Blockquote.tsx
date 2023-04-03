@@ -2,7 +2,7 @@ import React, { CSSProperties, useState } from 'react';
 import type { PropsWithChildren } from 'react';
 import classNames from 'classnames';
 import useSettings from '../../hooks/useSettings';
-import { IIcon, StatusKind } from '../../typesLegacy/utils';
+import { IIcon, StatusKind } from '../../typesLegacyBB/utils';
 
 import {
   Checkmark,

@@ -30,9 +30,10 @@
     position: relative;
     display: flex;
     align-items: center;
+    user-select: none;
     transition: $transition--base $standard-easing;
     cursor: pointer;
-    margin: $spacing-05 0;
+    //margin: $spacing-05 0;
   }
 
   .#{$prefix}--toggle__appearance {

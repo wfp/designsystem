@@ -113,7 +113,7 @@
         ],
         "required": false,
         "type": {
-          "name": "ReactNode | IIcon | { width?: number; height?: number; viewBox?: string; }"
+          "name": "any"
         }
       },
       "iconTitle": {

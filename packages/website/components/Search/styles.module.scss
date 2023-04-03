@@ -66,3 +66,11 @@
     text-decoration: underline;
   }
 }
+
+.search {
+  :global(.wfp--search-input) {
+    border-radius: 6px;
+    max-width: 11em;
+    padding-right: 0;
+  }
+}

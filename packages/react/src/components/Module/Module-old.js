@@ -8,7 +8,7 @@ import useSettings from '../../hooks/useSettings';
 const Module = ({
   dark,
   light,
-  centered,
+  // centered,
   children,
   className,
   margin,

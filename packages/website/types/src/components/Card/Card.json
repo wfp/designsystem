@@ -111,6 +111,21 @@
           "name": "string"
         }
       },
+      "alt": {
+        "defaultValue": null,
+        "description": "",
+        "name": "alt",
+        "declarations": [
+          {
+            "fileName": "src/components/Card/Card.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
       "kind": {
         "defaultValue": null,
         "description": "",

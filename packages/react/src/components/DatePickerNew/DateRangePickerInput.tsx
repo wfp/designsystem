@@ -10,8 +10,8 @@ interface DateRangePickerInputProps {
   endDate?: string;
   setStartDate?: string;
   setEndDate?: string;
-  fromProps?: {};
-  toProps?: {};
+  fromProps?: object;
+  toProps?: object;
 }
 
 const DateRangePickerInput: React.FC<DateRangePickerInputProps> = ({

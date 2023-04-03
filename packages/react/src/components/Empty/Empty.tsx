@@ -2,7 +2,7 @@ import * as React from 'react';
 import type { PropsWithChildren } from 'react';
 import classNames from 'classnames';
 import useSettings from '../../hooks/useSettings';
-import { IIcon } from '../../typesLegacy/utils';
+import { IIcon } from '../../typesLegacyBB/utils';
 
 type EmptyProps = PropsWithChildren<{
   /**
@@ -80,5 +80,7 @@ const Empty: React.FC<EmptyProps> = ({
     </div>
   );
 };
+
+Empty.displayName = 'Empty';
 
 export default Empty;

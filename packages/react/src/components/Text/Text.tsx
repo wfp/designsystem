@@ -1,7 +1,7 @@
 import * as React from 'react';
 import classNames from 'classnames';
 import useSettings from '../../hooks/useSettings';
-import { Spacing, TextKind } from '../../typesLegacy/utils';
+import { Spacing, TextKind } from '../../typesLegacyBB/utils';
 
 interface TextProps extends React.AllHTMLAttributes<HTMLDivElement> {
   kind?: TextKind;

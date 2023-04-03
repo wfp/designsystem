@@ -1,11 +1,14 @@
 import React, { useState, useRef, useEffect } from 'react';
-import type { PropsWithChildren } from 'react';
 import classNames from 'classnames';
 import useSettings from '../../hooks/useSettings';
-import Input from '../Input';
+import Input, { InputProps } from '../Input';
 import TextInput from '../TextInput';
 
-type SliderProps = PropsWithChildren<{
+/** Sliders provide a visual indication of adjustable content, where the user can move the handle along a horizontal track to increase or decrease the value. */
+
+interface SliderProps
+  extends InputProps,
+    React.InputHTMLAttributes<HTMLInputElement> {
   hideTextInput?: boolean;
   formItemClassName?: string;
   disabled?: boolean;
@@ -37,28 +40,13 @@ type SliderProps = PropsWithChildren<{
   className?: string;
   hideControls?: boolean;
   inputRef?: React.RefObject<HTMLInputElement>;
-}>;
+}
 
 const defaultFormatLabel = (value, label) => {
   return typeof label === 'function' ? label(value) : `${value}${label}`;
 };
 
-// function PropTypeEmptyString(props, propName, componentName) {
-//   componentName = componentName || 'ANONYMOUS';
-//   if (props[propName]) {
-//     let value = props[propName];
-//     if (typeof value === 'string' && value !== '') {
-//       return new Error(
-//         propName + ' in ' + componentName + ' is not an empty string'
-//       );
-//     }
-//   }
-//   return null;
-// }
-
-/** Sliders provide a visual indication of adjustable content, where the user can move the handle along a horizontal track to increase or decrease the value. */
-
-const Slider: React.FC<SliderProps> = (props) => {
+const Slider: React.FC<SliderProps> = React.forwardRef((props, ref) => {
   const {
     ariaLabelInput,
     className,
@@ -80,7 +68,6 @@ const Slider: React.FC<SliderProps> = (props) => {
     // eslint-disable-next-line @typescript-eslint/no-empty-function
     //onClick = () => {},
     helperText,
-    inputRef,
     ...other
   } = props;
 
@@ -94,7 +81,7 @@ const Slider: React.FC<SliderProps> = (props) => {
   }, [props.value]);
 
   const newInputRef = useRef(null);
-  const _inputRef = inputRef ? inputRef : newInputRef;
+  const _inputRef = ref ? ref : newInputRef;
 
   const handleChange = (evt) => {
     if (!disabled) {
@@ -195,6 +182,8 @@ const Slider: React.FC<SliderProps> = (props) => {
       </div>
     </Input>
   );
-};
+});
+
+Slider.displayName = 'Slider';
 
 export default Slider;

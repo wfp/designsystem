@@ -1,1 +1,562 @@
-[]
+[
+  {
+    "tags": {},
+    "filePath": "src/components/NumberInput/NumberInput.tsx",
+    "description": "The number input component is used for entering numeric values and includes controls for incrementally increasing or decreasing the value",
+    "displayName": "NumberInput",
+    "methods": [],
+    "props": {
+      "max": {
+        "defaultValue": null,
+        "description": "",
+        "name": "max",
+        "parent": {
+          "fileName": "src/components/NumberInput/NumberInput.tsx",
+          "name": "NumberInputProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/NumberInput/NumberInput.tsx",
+            "name": "NumberInputProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "number"
+        }
+      },
+      "min": {
+        "defaultValue": null,
+        "description": "",
+        "name": "min",
+        "parent": {
+          "fileName": "src/components/NumberInput/NumberInput.tsx",
+          "name": "NumberInputProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/NumberInput/NumberInput.tsx",
+            "name": "NumberInputProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "number"
+        }
+      },
+      "step": {
+        "defaultValue": null,
+        "description": "",
+        "name": "step",
+        "parent": {
+          "fileName": "src/components/NumberInput/NumberInput.tsx",
+          "name": "NumberInputProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/NumberInput/NumberInput.tsx",
+            "name": "NumberInputProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "number"
+        }
+      },
+      "allowEmpty": {
+        "defaultValue": null,
+        "description": "",
+        "name": "allowEmpty",
+        "parent": {
+          "fileName": "src/components/NumberInput/NumberInput.tsx",
+          "name": "NumberInputProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/NumberInput/NumberInput.tsx",
+            "name": "NumberInputProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "className": {
+        "defaultValue": null,
+        "description": "",
+        "name": "className",
+        "parent": {
+          "fileName": "src/components/NumberInput/NumberInput.tsx",
+          "name": "NumberInputProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/NumberInput/NumberInput.tsx",
+            "name": "NumberInputProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "disabled": {
+        "defaultValue": null,
+        "description": "",
+        "name": "disabled",
+        "parent": {
+          "fileName": "src/components/NumberInput/NumberInput.tsx",
+          "name": "NumberInputProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/NumberInput/NumberInput.tsx",
+            "name": "NumberInputProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "id": {
+        "defaultValue": null,
+        "description": "Provide a unique identifier for the control",
+        "name": "id",
+        "parent": {
+          "fileName": "src/components/NumberInput/NumberInput.tsx",
+          "name": "NumberInputProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/NumberInput/NumberInput.tsx",
+            "name": "NumberInputProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "helperText": {
+        "defaultValue": null,
+        "description": "Provide text that is used alongside the control label for additional help",
+        "name": "helperText",
+        "parent": {
+          "fileName": "src/components/NumberInput/NumberInput.tsx",
+          "name": "NumberInputProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/NumberInput/NumberInput.tsx",
+            "name": "NumberInputProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "hideLabel": {
+        "defaultValue": null,
+        "description": "Specify whether you want the underlying label to be visually hidden",
+        "name": "hideLabel",
+        "parent": {
+          "fileName": "src/components/NumberInput/NumberInput.tsx",
+          "name": "NumberInputProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/NumberInput/NumberInput.tsx",
+            "name": "NumberInputProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "hideControls": {
+        "defaultValue": null,
+        "description": "",
+        "name": "hideControls",
+        "parent": {
+          "fileName": "src/components/NumberInput/NumberInput.tsx",
+          "name": "NumberInputProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/NumberInput/NumberInput.tsx",
+            "name": "NumberInputProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "light": {
+        "defaultValue": null,
+        "description": "",
+        "name": "light",
+        "parent": {
+          "fileName": "src/components/NumberInput/NumberInput.tsx",
+          "name": "NumberInputProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/NumberInput/NumberInput.tsx",
+            "name": "NumberInputProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "inputRef": {
+        "defaultValue": null,
+        "description": "",
+        "name": "inputRef",
+        "parent": {
+          "fileName": "src/components/NumberInput/NumberInput.tsx",
+          "name": "NumberInputProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/NumberInput/NumberInput.tsx",
+            "name": "NumberInputProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "RefObject<HTMLInputElement>"
+        }
+      },
+      "pattern": {
+        "defaultValue": null,
+        "description": "",
+        "name": "pattern",
+        "parent": {
+          "fileName": "src/components/NumberInput/NumberInput.tsx",
+          "name": "NumberInputProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/NumberInput/NumberInput.tsx",
+            "name": "NumberInputProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "onChange": {
+        "defaultValue": null,
+        "description": "",
+        "name": "onChange",
+        "parent": {
+          "fileName": "src/components/NumberInput/NumberInput.tsx",
+          "name": "NumberInputProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/NumberInput/NumberInput.tsx",
+            "name": "NumberInputProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "(evt?: ChangeEvent<Element>, value?: number, direction?: string) => void"
+        }
+      },
+      "onClick": {
+        "defaultValue": null,
+        "description": "",
+        "name": "onClick",
+        "parent": {
+          "fileName": "src/components/NumberInput/NumberInput.tsx",
+          "name": "NumberInputProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/NumberInput/NumberInput.tsx",
+            "name": "NumberInputProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "(evt?: MouseEvent<Element, MouseEvent>, value?: number, direction?: string) => void"
+        }
+      },
+      "value": {
+        "defaultValue": null,
+        "description": "",
+        "name": "value",
+        "parent": {
+          "fileName": "src/components/NumberInput/NumberInput.tsx",
+          "name": "NumberInputProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/NumberInput/NumberInput.tsx",
+            "name": "NumberInputProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "number | \"\""
+        }
+      },
+      "labelText": {
+        "defaultValue": null,
+        "description": "Provide the text that will be read by a screen reader when visiting this\ncontrol @design",
+        "name": "labelText",
+        "parent": {
+          "fileName": "react/src/components/Input/Input.tsx",
+          "name": "InputProps"
+        },
+        "declarations": [
+          {
+            "fileName": "react/src/components/Input/Input.tsx",
+            "name": "InputProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactNode"
+        }
+      },
+      "formItemClassName": {
+        "defaultValue": null,
+        "description": "Provide a custom className that is applied directly to the underlying\n&lt;textarea&gt; node",
+        "name": "formItemClassName",
+        "parent": {
+          "fileName": "react/src/components/Input/Input.tsx",
+          "name": "InputProps"
+        },
+        "declarations": [
+          {
+            "fileName": "react/src/components/Input/Input.tsx",
+            "name": "InputProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "inputWrapperClassName": {
+        "defaultValue": null,
+        "description": "Provide a custom className that is applied directly to the underlying\n&lt;textarea&gt; node",
+        "name": "inputWrapperClassName",
+        "parent": {
+          "fileName": "react/src/components/Input/Input.tsx",
+          "name": "InputProps"
+        },
+        "declarations": [
+          {
+            "fileName": "react/src/components/Input/Input.tsx",
+            "name": "InputProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "invalid": {
+        "defaultValue": null,
+        "description": "Specify whether the control is currently invalid.\nEither a boolean in combination with `invalidText` or an `object`( eg. { message: \"Message\", …otherErrorProperties }) can be passed.",
+        "name": "invalid",
+        "parent": {
+          "fileName": "react/src/components/Input/Input.tsx",
+          "name": "InputProps"
+        },
+        "declarations": [
+          {
+            "fileName": "react/src/components/Input/Input.tsx",
+            "name": "InputProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean | FieldError"
+        }
+      },
+      "invalidText": {
+        "defaultValue": null,
+        "description": "Provide the text that is displayed when the control is in an invalid state @design",
+        "name": "invalidText",
+        "parent": {
+          "fileName": "react/src/components/Input/Input.tsx",
+          "name": "InputProps"
+        },
+        "declarations": [
+          {
+            "fileName": "react/src/components/Input/Input.tsx",
+            "name": "InputProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactNode"
+        }
+      },
+      "additional": {
+        "defaultValue": null,
+        "description": "Provide the content that will be shown in addition to the label\n(e.g. units, currency, etc.)\nThis content will be placed after the label @design",
+        "name": "additional",
+        "parent": {
+          "fileName": "react/src/components/Input/Input.tsx",
+          "name": "InputProps"
+        },
+        "declarations": [
+          {
+            "fileName": "react/src/components/Input/Input.tsx",
+            "name": "InputProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactNode"
+        }
+      },
+      "placeholder": {
+        "defaultValue": null,
+        "description": "Specify the placeholder attribute for the input @design",
+        "name": "placeholder",
+        "parent": {
+          "fileName": "react/src/components/Input/Input.tsx",
+          "name": "InputProps"
+        },
+        "declarations": [
+          {
+            "fileName": "react/src/components/Input/Input.tsx",
+            "name": "InputProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "name": {
+        "defaultValue": null,
+        "description": "Provide a name for the control",
+        "name": "name",
+        "parent": {
+          "fileName": "react/src/components/Input/Input.tsx",
+          "name": "InputProps"
+        },
+        "declarations": [
+          {
+            "fileName": "react/src/components/Input/Input.tsx",
+            "name": "InputProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "required": {
+        "defaultValue": null,
+        "description": "",
+        "name": "required",
+        "parent": {
+          "fileName": "react/src/components/Input/Input.tsx",
+          "name": "InputProps"
+        },
+        "declarations": [
+          {
+            "fileName": "react/src/components/Input/Input.tsx",
+            "name": "InputProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "readOnly": {
+        "defaultValue": null,
+        "description": "",
+        "name": "readOnly",
+        "parent": {
+          "fileName": "react/src/components/Input/Input.tsx",
+          "name": "InputProps"
+        },
+        "declarations": [
+          {
+            "fileName": "react/src/components/Input/Input.tsx",
+            "name": "InputProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "inline": {
+        "defaultValue": null,
+        "description": "",
+        "name": "inline",
+        "parent": {
+          "fileName": "react/src/components/Input/Input.tsx",
+          "name": "InputProps"
+        },
+        "declarations": [
+          {
+            "fileName": "react/src/components/Input/Input.tsx",
+            "name": "InputProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "addonBefore": {
+        "defaultValue": null,
+        "description": "",
+        "name": "addonBefore",
+        "parent": {
+          "fileName": "react/src/components/Input/Input.tsx",
+          "name": "InputProps"
+        },
+        "declarations": [
+          {
+            "fileName": "react/src/components/Input/Input.tsx",
+            "name": "InputProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactNode"
+        }
+      },
+      "addonAfter": {
+        "defaultValue": null,
+        "description": "",
+        "name": "addonAfter",
+        "parent": {
+          "fileName": "react/src/components/Input/Input.tsx",
+          "name": "InputProps"
+        },
+        "declarations": [
+          {
+            "fileName": "react/src/components/Input/Input.tsx",
+            "name": "InputProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactNode"
+        }
+      }
+    }
+  }
+]

@@ -3,7 +3,7 @@ import type { PropsWithChildren } from 'react';
 import classNames from 'classnames';
 import Wrapper from '../Wrapper';
 import useSettings from '../../hooks/useSettings';
-import { ScreenSize } from '../../typesLegacy/utils';
+import { ScreenSize } from '../../typesLegacyBB/utils';
 
 /** The InfoBar shows very important information on top of the page. */
 type InfoBarProps = PropsWithChildren<{
@@ -29,5 +29,7 @@ const InfoBar: React.FC<InfoBarProps> = ({
     </div>
   );
 };
+
+InfoBar.displayName = 'InfoBar';
 
 export default InfoBar;

@@ -3,7 +3,6 @@ import classNames from 'classnames';
 import useSettings from '../../hooks/useSettings';
 import Input, { InputProps } from '../Input';
 import { Search as SearchIcon, Close } from '@un/icons-react';
-import * as HookForm from 'react-hook-form';
 
 /** Search enables users to specify a word or a phrase to find relevant pieces of content without the use of navigation. */
 interface SearchProps extends InputProps {
@@ -11,29 +10,31 @@ interface SearchProps extends InputProps {
   formItemClassName?: string;
   inputWrapperClassName?: string;
   hideLabel?: boolean;
-  invalid?: boolean | HookForm.FieldError;
-  invalidText?: string | React.ReactNode;
-  additional?: React.ReactNode;
   children?: React.ReactNode | string;
   light?: boolean;
+  /**
+   * The text for the close Button
+   */
   closeButtonLabelText?: string;
-  placeholder?: string;
+  //  placeholder?: string;
   disabled?: boolean;
   id?: string;
   hideControls?: boolean;
+  /**
+   * Specify a style for the search input
+   */
   kind?: 'large' | 'small' | 'main' | 'light' | 'banner';
   onChange?: (
     event?: React.ChangeEvent<HTMLInputElement>,
     value?: string
   ) => void;
-  inputRef?: React.RefObject<HTMLInputElement>;
   onSearchIconClick?: () => void;
   small?: boolean;
   value?: string;
   className?: string;
 }
 
-const Search: React.FC<SearchProps> = (props) => {
+const Search: React.FC<SearchProps> = React.forwardRef((props, ref) => {
   const { prefix } = useSettings();
 
   const {
@@ -51,7 +52,6 @@ const Search: React.FC<SearchProps> = (props) => {
     onSearchIconClick = () => {},
     helperText,
     light,
-    inputRef,
     ...other
   } = props;
 
@@ -62,8 +62,9 @@ const Search: React.FC<SearchProps> = (props) => {
     setValue(props.value);
   }, [props.value]);
 
-  const newInputRef = useRef(null);
-  const _inputRef = inputRef ? inputRef : newInputRef;
+  const newInputRef = useRef<HTMLInputElement>(null);
+
+  const _inputRef = ref ? ref : newInputRef;
 
   const handleChange = (evt) => {
     if (!disabled) {
@@ -118,7 +119,7 @@ const Search: React.FC<SearchProps> = (props) => {
       />
 
       <input
-        className="wfp--search-input"
+        className={`${prefix}--search-input`}
         type="text"
         {...other}
         {...newProps}
@@ -133,6 +134,8 @@ const Search: React.FC<SearchProps> = (props) => {
       </button>
     </Input>
   );
-};
+});
+
+Search.displayName = 'Search';
 
 export default Search;

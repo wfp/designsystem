@@ -9,7 +9,7 @@ import Search from '../Search';
 import Link from '../Link';
 import User from '../User';
 
-storiesOf('Components|MainNavigation', module)
+storiesOf('Components|MainNavigation')
   .addDecorator((story) => <div style={{ direction: 'rtl' }}>{story()}</div>)
   .add(
     'Right to left',

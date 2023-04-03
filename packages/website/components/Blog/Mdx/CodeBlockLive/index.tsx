@@ -2,22 +2,53 @@
 import React, { useState } from 'react';
 import Highlight, { defaultProps } from 'prism-react-renderer';
 import stylesModule from './codeBlockLive.module.scss';
-import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
+import {
+  LiveProvider,
+  LiveEditor,
+  LiveError,
+  LivePreview,
+  withLive,
+} from 'react-live';
 import Storybook from '../Storybook';
 import { DoUse, DoNotUse } from '../DoUse';
 import { MDXProvider } from '@mdx-js/react';
-import { useForm } from 'react-hook-form';
+import { Controller, useForm } from 'react-hook-form';
 
 import MDX from '@mdx-js/runtime';
 import components from '../';
 
 import vsDark from 'prism-react-renderer/themes/vsDark';
+import * as ReactDOMServer from 'react-dom/server';
 
 import * as unComponents from '@un/react';
 import * as unHumanitarianIcons from '@un/humanitarian-icons-react';
 import * as unPictograms from '@un/pictograms-react';
 import * as icons from '@un/icons-react';
 import { Button, Empty } from '@un/react';
+import prettier from 'prettier/standalone';
+import babelParser from 'prettier/parser-babel';
+import htmlParser from 'prettier/parser-html';
+
+function LiveHtml({ live }: { live: Record<string, unknown> }) {
+  console.log('live', live);
+
+  const Result = live.element as React.ComponentType;
+  if (!Result) return null;
+  let htmlString = ReactDOMServer.renderToStaticMarkup(<Result />);
+
+  htmlString = htmlString.replace(
+    /<svg.*?>(.*?)<\/svg>/gm,
+    '<YOUR SVG IMAGE />'
+  ); // $1p
+
+  const formatedHtmlString = prettier.format(htmlString, {
+    parser: 'html',
+    plugins: [htmlParser],
+  });
+
+  return <CodeBlock language="html">{formatedHtmlString}</CodeBlock>;
+}
+const LiveHtmlHoc = withLive(LiveHtml);
 
 const CodeBlockLive = (props: any) => {
   const {
@@ -32,6 +63,7 @@ const CodeBlockLive = (props: any) => {
     reactHookForm,
   } = props;
 
+  const [showHtml, setShowHtml] = useState(false);
   let code = source ? source : children ? children.trim() : '';
   /*const compileMdx = async (code) => {
     const compiled = await compile(code);
@@ -45,23 +77,51 @@ const CodeBlockLive = (props: any) => {
   if (reactHookForm)
     code = `
   const Counter = () => {
-    const { register, handleSubmit } = useForm({defaultValues: {"check-1":true}});
+
+    const [defaultValues, setDefaultValues] = useState({"inputname":true});
+    const { control, register, handleSubmit, watch, reset } = useForm({defaultValues});
     const [data, setData] = useState("");
+
+    const setDefaultValuesFunc = (e) => {
+      console.log(e.target.value);
+      try {
+        const values = JSON.parse(e.target.value);
+        setDefaultValues(values);
+      } catch (e) {
+        console.log(e);
+      }
+    }
+
+    const resetInputs = () => {
+      reset(defaultValues);
+    }
+    const currentValues = watch();
   
     return (
+      <>
+      <TextInput name="default values" labelText="Default values" defaultValue={JSON.stringify(defaultValues)} onChange={setDefaultValuesFunc} /> 
       <form onSubmit={handleSubmit((data) => setData(JSON.stringify(data)))}>
 
         ${code}
   
+        <Button type="submit">Submit</Button>{" "}
+        <Button onClick={resetInputs} kind="tertiary">Reset</Button>
+
+        <h4>Submitted form data</h4>
         <p>{data}</p>
-        <input type="submit" />
+
+        <h4>Current values</h4>
+        <p>{JSON.stringify(currentValues)}</p>
+
       </form>
+      </>
     );
   }
   
   render(<Counter />)`;
 
-  const language = props.language || className.replace(/language-/, '');
+  const language =
+    props.language || className.replace(/language-/, '') || 'jsx';
 
   const [copiedCode, setCopiedCode] = useState('Copy code');
 
@@ -71,6 +131,15 @@ const CodeBlockLive = (props: any) => {
       .replaceAll(/^import \* as \S+ from .+$\n/gm, '') // import * as abc from "z"
       .replaceAll(/: \S+ = /g, ' = '); // let a: string = "something"
   };
+
+  const formatedCode =
+    language === 'jsx'
+      ? prettier.format(code, {
+          parser: 'babel',
+          plugins: [babelParser],
+          printWidth: 80,
+        })
+      : code;
 
   const handleCopyCode = (textToCopy) => {
     navigator.clipboard.writeText(textToCopy);
@@ -91,6 +160,7 @@ const CodeBlockLive = (props: any) => {
       useForm,
       useState,
       Storybook,
+      Controller,
       Empty,
       DoUse,
       DoNotUse,
@@ -102,7 +172,7 @@ const CodeBlockLive = (props: any) => {
           hideWrapper ? stylesModule.hideWrapper : stylesModule.showWrapper
         } ${center ? stylesModule.center : stylesModule.notCenter}`}>
         <LiveProvider
-          code={code}
+          code={formatedCode}
           scope={scope}
           theme={vsDark}
           noInline={noInline || reactHookForm}
@@ -116,11 +186,22 @@ const CodeBlockLive = (props: any) => {
           ) : (
             <LivePreview className={stylesModule.preview} />
           )}
+
           {showEditor && (
-            <div className={stylesModule.liveEditor}>
-              <h3> Editable Example</h3>
-              <LiveEditor theme={vsDark} />
-            </div>
+            <>
+              <div className={stylesModule.liveEditor}>
+                <Button
+                  className={stylesModule.htmlButton}
+                  small
+                  kind="ghost"
+                  onClick={() => setShowHtml(!showHtml)}>
+                  {showHtml ? 'Hide HTML' : 'Show HTML'}
+                </Button>
+                <h3> Editable Example</h3>
+                <LiveEditor theme={vsDark} />
+              </div>
+              {language === 'jsx' && showHtml && <LiveHtmlHoc />}
+            </>
           )}
           <LiveError />
         </LiveProvider>

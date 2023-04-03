@@ -69,7 +69,7 @@
         ],
         "required": false,
         "type": {
-          "name": "ReactNode | IIcon"
+          "name": "any"
         }
       },
       "button": {

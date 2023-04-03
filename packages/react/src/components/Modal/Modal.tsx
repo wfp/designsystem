@@ -294,4 +294,6 @@ const Modal: React.FC<ModalProps> = (props) => {
 //   selectorPrimaryFocus: '[data-modal-primary-focus]',
 // };
 
+Modal.displayName = 'Modal';
+
 export default Modal;

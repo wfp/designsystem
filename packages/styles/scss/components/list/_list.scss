@@ -40,7 +40,7 @@
 
     .#{$prefix}--list-item--cross {
       .#{$prefix}--list-item__icon {
-        top: 0.3em;
+        top: 0.45em;
         path {
           fill: $support-error;
         }
@@ -132,7 +132,7 @@
     .#{$prefix}--list__element__title {
       font-weight: 600;
       display: block;
-      @include type-style('heading-02'); //TODO previous font was 18, 
+      @include type-style('heading-02'); //TODO previous font was 18,
       margin-bottom: $spacing-03;
     }
 

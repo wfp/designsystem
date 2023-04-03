@@ -2,7 +2,7 @@ import React, { PropsWithChildren, useState } from 'react';
 import ReactDOM from 'react-dom';
 import classNames from 'classnames';
 import { usePopperTooltip } from 'react-popper-tooltip';
-import { Placement } from '../../typesLegacy/utils';
+import { Placement } from '../../typesLegacyBB/utils';
 
 import useSettings from '../../hooks/useSettings';
 

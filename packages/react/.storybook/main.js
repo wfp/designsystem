@@ -8,7 +8,6 @@ module.exports = {
     '@storybook/preset-create-react-app',
     '@storybook/addon-interactions',
   ],
-
   framework: {
     name: '@storybook/react-webpack5',
     options: {},
@@ -29,5 +28,8 @@ module.exports = {
       )
     );
     return config;
+  },
+  typescript: {
+    check: false,
   },
 };

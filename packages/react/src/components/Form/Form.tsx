@@ -29,4 +29,6 @@ const Form: React.FC<FormProps> = ({
   );
 };
 
+Form.displayName = 'Form';
+
 export default Form;

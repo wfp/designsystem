@@ -3,7 +3,7 @@ import type { PropsWithChildren } from 'react';
 import Modal from '../Modal';
 import Button from '../Button';
 import useSettings from '../../hooks/useSettings';
-import { ButtonKind } from '../../typesLegacy/utils';
+import { ButtonKind } from '../../typesLegacyBB/utils';
 
 /** Modal Wrapper component to encapsulate your Modal within a button. */
 type ModalWrapperProps = PropsWithChildren<{
@@ -116,5 +116,7 @@ const ModalWrapper: React.FC<ModalWrapperProps> = ({
     </div>
   );
 };
+
+ModalWrapper.displayName = 'ModalWrapper';
 
 export default ModalWrapper;

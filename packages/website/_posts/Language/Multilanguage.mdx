@@ -1,0 +1,42 @@
+---
+category: 'Guidelines'
+title: 'Multilingualism'
+subtitle: 'Naming convention & linting'
+excerpt: 'Colors for the UN design system'
+coverImage: './components.png'
+slug: 'Guidelines/Multilingualism'
+ogImage:
+  url: './components.png'
+---
+
+##
+
+Technical Considerations
+
+### Design
+
+Chinese, English, French, Russian and Spanish read Left-To-Right (LTR). Arabic reads Right-To-Left (RTL). Since all six official languages versions will be on the same site, the need to switch between LTR and RTL versions should be considered when designing the website.
+
+The line-height and width may also need to change between different languages and characters.
+
+### Encoding
+
+Unicode's success at unifying character sets has led to its widespread and predominant use in the internationalization and localization of computer software.
+
+### Banner
+
+Words in English are usually shorter than in other languages. Analyze which language contains more characters per word and design based on that particular language. Among the UN official languages, the Russian phrases are usually longer, while the Chinese language has much shorter characters.
+
+### CSS
+
+Keep content separated from a design by using Cascading Style Sheets (CSS). This separation can improve content accessibility, provide more flexibility and control in the specification of presentation characteristics and enable multiple pages to share formatting.
+
+When creating styles in CSS using LTR languages, consideration should be given to the ease of adapting it to the RTL language.
+
+### Naming of files
+
+The names of the website files should be in English for easy maintenance. Some servers may have difficulty handling Unicode characters. The general rule is to never use Unicode characters in the name of your web pages.
+
+### Reference
+
+- https://brand.unocha.org/d/xEPytAUjC3sH/web-design#/web-content-guideline/multilingualism

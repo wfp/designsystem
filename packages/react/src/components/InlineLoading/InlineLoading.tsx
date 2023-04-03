@@ -64,4 +64,6 @@ const InlineLoading: React.FC<InlineLoadingProps> = (props) => {
   );
 };
 
+InlineLoading.displayName = 'InlineLoading';
+
 export default InlineLoading;

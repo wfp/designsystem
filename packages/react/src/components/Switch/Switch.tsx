@@ -93,26 +93,6 @@ const Switch: React.FC<SwitchProps> = (props) => {
   );
 };
 
-// Switch.propTypes = {
-//   className: PropTypes.string,
-//   index: PropTypes.number,
-//   kind: PropTypes.oneOf(['button', 'anchor']).isRequired,
-//   name: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-//   onClick: PropTypes.func,
-//   onKeyDown: PropTypes.func,
-//   selected: PropTypes.bool,
-//   text: PropTypes.string.isRequired,
-//   icon: PropTypes.element,
-//   href: PropTypes.string,
-// };
-
-// Switch.defaultProps = {
-//   selected: false,
-//   kind: 'anchor',
-//   text: 'Provide text',
-//   href: '',
-//   onClick: () => {},
-//   onKeyDown: () => {},
-// };
+Switch.displayName = 'Switch';
 
 export default Switch;

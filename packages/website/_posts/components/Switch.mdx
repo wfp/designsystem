@@ -1,20 +1,22 @@
 ---
 category: 'Core'
-title: 'TextInput'
+title: 'Switch'
 excerpt: '**Text inputs** enable the user to interact with and input data. Use when the application requires long-form content from the user.'
 coverImage: '../sample-image.jpg'
-slug: 'Components/form/TextInput'
-mainComponent: 'TextArea'
+slug: 'Components/form/Switch'
+mainComponent: 'Switch'
 defaultProps:
-  labelText: 'Text Area label'
-  placeholder: 'Placeholder text'
-  helperText: 'Optional helper text'
+  name: 'checked'
+  labelText: 'Toggle label'
+  defaultValue: 'false'
+  labelA: 'Off'
+  labelB: 'On'
 ---
 
 Text inputs enable users to enter free-form text data. The type of text field used should reflect the length of the content you expect the user to enter. The default text input is for short, one-line content, whereas text area is for longer, multi-line entries.
 
 <DoUse>
-
+  
 - A user needs to input unique information that cannot be predicted with a preset of options.
 - A user needs to input memorable data that can be entered more quickly in a free-hand format versus a more complex control.
 
@@ -47,38 +49,6 @@ Password input is a sub-variant of text input. It is used to collect private dat
   helperText="Password must contain at least 12 characters"
   labelText="Password"
 />
-```
-
-### react-hook-form example
-
-```jsx live reactHookForm
-<>
-  <TextInput
-    labelText="The uncontrolled Input"
-    helperText="Optional helperText"
-    labelA="Off"
-    labelB="On"
-    {...register('inputname')}
-  />
-
-  <Controller
-    name="inputnameB"
-    control={control}
-    render={({ field }) => {
-      return (
-        <TextInput
-          labelText="The controlled Input"
-          helperText="Optional helperText"
-          labelA="Off"
-          labelB="On"
-          {...field}
-          onChange={(e) => field.onChange(e.target.value)}
-          value={field.value}
-        />
-      );
-    }}
-  />
-</>
 ```
 
 ### Reference

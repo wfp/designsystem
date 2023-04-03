@@ -2,9 +2,22 @@ import { Search } from '@un/react';
 import styles from './search.module.scss';
 
 import { useSearchBox } from 'react-instantsearch-hooks-web';
+import { useEffect, useRef } from 'react';
 
 function SearchBox(props: any) {
   const { refine } = useSearchBox(props);
+  const searchRef = useRef();
+
+  const setFocus = () => {
+    console.log('focus', searchRef.current);
+    searchRef.current && searchRef.current.focus();
+  };
+
+  useEffect(() => {
+    if (open) {
+      setFocus();
+    }
+  }, [props.open]);
 
   return (
     <form action="" role="search">
@@ -15,6 +28,7 @@ function SearchBox(props: any) {
         placeholder="Search topic..."
         /* onFocus={() => setFocus(true)}
         onBlur={() => setFocus(false)}*/
+        ref={searchRef}
         onChange={(i, e: any) => refine(e?.currentTarget?.value)}
       />
     </form>

@@ -36,4 +36,6 @@ const SelectItem: React.FC<SelectItemProps> = ({
   );
 };
 
+SelectItem.displayName = 'SelectItem';
+
 export default SelectItem;

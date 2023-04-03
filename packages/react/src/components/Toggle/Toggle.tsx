@@ -1,39 +1,63 @@
+/* eslint-disable @typescript-eslint/no-empty-function */
 import * as React from 'react';
-import type { PropsWithChildren } from 'react';
 import classNames from 'classnames';
 import useSettings from '../../hooks/useSettings';
+import Input, { InputProps, useInput } from '../Input';
 
 /** A toggle is used to quickly switch between two possible states. They are commonly used for “on/off” switches */
-type ToggleProps = PropsWithChildren<{
+
+interface ToggleProps
+  extends InputProps,
+    React.InputHTMLAttributes<HTMLInputElement> {
+  /**
+   * Specify whether the toggle should be on by default
+   */
   defaultToggled?: boolean;
   toggled?: boolean;
+  /**
+   * Specify the label for the "off" position
+   */
   labelA: string;
+  /**
+   * Specify the label for the "on" position
+   */
   labelB: string;
+  /**
+   * Provide an optional hook that is called when the control is toggled
+   */
   onToggle?: (
     value: boolean,
     htmlFor: string,
     event: React.ChangeEvent<HTMLInputElement>
   ) => void;
   className?: string;
+  /**
+   * Provide an id that unique represents the underlying `input`
+   */
   id?: string;
+  /**
+   * Provide an name that unique represents the underlying `input`
+   */
   name: string;
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
-}>;
+}
 
-const Toggle: React.FC<ToggleProps> = ({
-  className,
-  defaultToggled,
-  toggled,
-  onChange,
-  onToggle,
-  id,
-  name,
-  labelA,
-  labelB,
-  ...other
-}) => {
+export type Ref = HTMLTextAreaElement;
+
+const Toggle: React.FC<ToggleProps> = React.forwardRef((props, ref) => {
+  const {
+    className,
+    defaultToggled = false,
+    //    toggled,
+    //    onChange,
+    //    onToggle = () => {},
+    id,
+    labelA = 'Off',
+    labelB = 'On',
+    ...other
+  } = props;
   const { prefix } = useSettings();
-  let input;
+  //  let input;
   const wrapperClasses = classNames(
     {
       [`${prefix}--form-item`]: true,
@@ -49,24 +73,25 @@ const Toggle: React.FC<ToggleProps> = ({
   //   checkedProps.defaultChecked = defaultToggled;
   // }
 
-  const htmlFor = id ? id : name;
+  const htmlFor = id ? id : other.name;
+
+  const inputProps = useInput(props);
 
   return (
-    <div className={wrapperClasses}>
+    <Input className={wrapperClasses} {...props}>
       <input
         {...other}
-        checked={toggled}
+        {...inputProps}
+        //checked={toggled}
         defaultChecked={defaultToggled}
         type="checkbox"
         id={htmlFor}
         className={`${prefix}--toggle`}
-        onChange={(evt) => {
+        /*onChange={(evt) => {
           onChange && onChange(evt);
           onToggle && onToggle(input.checked, htmlFor, evt);
-        }}
-        ref={(el) => {
-          input = el;
-        }}
+        }}*/
+        ref={ref}
       />
 
       <label className={`${prefix}--toggle__label`} htmlFor={htmlFor}>
@@ -74,58 +99,10 @@ const Toggle: React.FC<ToggleProps> = ({
         <span className={`${prefix}--toggle__appearance`} />
         <span className={`${prefix}--toggle__text--right`}>{labelB}</span>
       </label>
-    </div>
+    </Input>
   );
-};
+});
 
-// Toggle.propTypes = {
-//   /**
-//    * Specify a custom className to apply to the form-item node
-//    */
-//   className: PropTypes.string,
-
-//   /**
-//    * Specify whether the toggle should be on by default
-//    */
-//   defaultToggled: PropTypes.bool,
-
-//   /**
-//    * Provide an optional hook that is called when the control is toggled
-//    */
-//   onToggle: PropTypes.func,
-
-//   /**
-//    * Provide an id that unique represents the underlying `input`
-//    */
-//   id: PropTypes.string,
-
-//   /**
-//    * Provide an name that unique represents the underlying `input`
-//    */
-//   name: PropTypes.string.isRequired,
-
-//   /**
-//    * Specify whether the control is toggled
-//    */
-//   toggled: PropTypes.bool,
-
-//   /**
-//    * Specify the label for the "off" position
-//    */
-//   labelA: PropTypes.string.isRequired,
-
-//   /**
-//    * Specify the label for the "on" position
-//    */
-//   labelB: PropTypes.string.isRequired,
-// };
-
-// Toggle.defaultProps = {
-//   defaultToggled: false,
-//   labelA: 'Off',
-//   labelB: 'On',
-//   name: 'toggle',
-//   onToggle: () => {},
-// };
+Toggle.displayName = 'Toggle';
 
 export default Toggle;

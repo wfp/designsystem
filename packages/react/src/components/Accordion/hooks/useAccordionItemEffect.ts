@@ -4,6 +4,7 @@ import { useEffect, useRef, useCallback } from 'react';
 import { ItemStateOptions } from '../utils/constants';
 import { useAccordionContext, getItemState } from './useAccordionContext';
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const useAccordionItemEffect = <E extends Element>({
   itemKey,
   initialEntered,

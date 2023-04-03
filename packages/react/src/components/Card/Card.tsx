@@ -2,7 +2,7 @@ import * as React from 'react';
 import type { PropsWithChildren } from 'react';
 import classNames from 'classnames';
 import useSettings from '../../hooks/useSettings';
-import { CardKind } from '../../typesLegacy/utils';
+import { CardKind } from '../../typesLegacyBB/utils';
 
 /**
  * Cards are a convenient means of displaying content composed of different types of objects. It is a multi usage component which creates boxes that are usually teasing some kind of content. */
@@ -14,6 +14,7 @@ type CardProps = PropsWithChildren<{
   subTitle?: React.ReactNode;
   title?: string | React.ReactNode;
   metadata?: string;
+  alt?: string;
   children?: React.ReactNode;
   kind?: CardKind;
   url?: string;
@@ -30,6 +31,7 @@ const Card: React.FC<CardProps> = ({
   metadata,
   subTitle,
   title,
+  alt,
   kind,
   url,
   cardWidth,
@@ -61,7 +63,7 @@ const Card: React.FC<CardProps> = ({
       ) : null}
 
       {image && kind === 'simple-card' ? (
-        <img src={image} alt={title} className={`${prefix}--header-photo`} />
+        <img src={image} alt={alt} className={`${prefix}--header-photo`} />
       ) : null}
 
       <div className={`${prefix}--photo-cardnew__info`}>
@@ -112,5 +114,7 @@ const Card: React.FC<CardProps> = ({
     </div>
   );
 };
+
+Card.displayName = 'Card';
 
 export default Card;

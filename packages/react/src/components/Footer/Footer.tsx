@@ -1,9 +1,8 @@
 import * as React from 'react';
-import type { PropsWithChildren } from 'react';
 import classNames from 'classnames';
 import Link from '../Link';
 import Wrapper from '../Wrapper';
-import { ScreenSize } from '../../typesLegacy/utils';
+import { ScreenSize } from '../../typesLegacyBB/utils';
 import {
   WfpLogoStandardBlackEn,
   WfpLogoVerticalEn,
@@ -128,5 +127,7 @@ const Footer: React.FC<FooterProps> = ({
     </footer>
   );
 };
+
+Footer.displayName = 'Footer';
 
 export default Footer;

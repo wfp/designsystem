@@ -1,12 +1,13 @@
 import * as React from 'react';
-import type { PropsWithChildren } from 'react';
 import classNames from 'classnames';
 import { CaretDown } from '@un/icons-react';
 
 import useSettings from '../../hooks/useSettings';
 import Input from '../Input';
 
-interface SelectProps extends React.AllHTMLAttributes<HTMLSelectElement> {
+interface SelectProps
+  extends InputProps,
+    React.InputHTMLAttributes<HTMLSelectElement> {
   inline?: boolean;
   labelText?: React.ReactNode;
   defaultValue?: string;
@@ -31,74 +32,72 @@ interface SelectProps extends React.AllHTMLAttributes<HTMLSelectElement> {
 }
 /** The select component allows users to choose one option from a list. It is used in forms for users to submit data. */
 
-const Select: React.FC<PropsWithChildren<SelectProps>> = React.forwardRef(
-  (props, ref) => {
-    const {
-      className,
-      id,
-      inline,
-      labelText, // eslint-disable-line
-      disabled,
-      children,
-      iconDescription,
-      // hideLabel,
-      small,
-      invalid,
-      invalidText, // eslint-disable-line
-      helperText, // eslint-disable-line
-      light,
-      name,
+const Select: React.FC<SelectProps> = React.forwardRef((props, ref) => {
+  const {
+    className,
+    id,
+    inline,
+    labelText, // eslint-disable-line
+    disabled,
+    children,
+    iconDescription,
+    // hideLabel,
+    small,
+    invalid,
+    invalidText, // eslint-disable-line
+    helperText, // eslint-disable-line
+    light,
+    name,
 
-      ...other
-    } = props;
+    ...other
+  } = props;
 
-    const { prefix } = useSettings();
+  const { prefix } = useSettings();
 
-    const usedId = id ? id : name;
+  const usedId = id ? id : name;
 
-    const selectClasses = classNames(
-      {
-        [`${prefix}--select`]: true,
-        [`${prefix}--select--inline`]: inline,
-        [`${prefix}--select--small`]: small,
-        [`${prefix}--select--light`]: light,
-        [`${prefix}--select--invalid`]: invalid,
-        [`${prefix}--select--disabled`]: disabled,
-      },
-      className
-    );
+  const selectClasses = classNames(
+    {
+      [`${prefix}--select`]: true,
+      [`${prefix}--select--inline`]: inline,
+      [`${prefix}--select--small`]: small,
+      [`${prefix}--select--light`]: light,
+      [`${prefix}--select--invalid`]: invalid,
+      [`${prefix}--select--disabled`]: disabled,
+    },
+    className
+  );
 
-    const ariaProps = {};
-    if (invalid) {
-      //TODO: check if correct
-      ariaProps['aria-describedby'] = usedId;
-    }
-    const input = (() => {
-      return (
-        <div className={selectClasses}>
-          <select
-            {...other}
-            {...ariaProps}
-            id={usedId}
-            name={name}
-            className={`${prefix}--select-input`}
-            disabled={disabled || undefined}
-            data-invalid={invalid || undefined}
-            aria-invalid={invalid || undefined}
-            ref={ref}>
-            {children}
-          </select>
-          <CaretDown
-            className={`${prefix}--select__arrow`}
-            description={iconDescription}
-          />
-        </div>
-      );
-    })();
-
-    return <Input {...props}>{input}</Input>;
+  const ariaProps = {};
+  if (invalid) {
+    //TODO: check if correct
+    ariaProps['aria-describedby'] = usedId;
   }
-);
+  const input = (() => {
+    return (
+      <div className={selectClasses}>
+        <select
+          {...other}
+          {...ariaProps}
+          id={usedId}
+          name={name}
+          className={`${prefix}--select-input`}
+          disabled={disabled || undefined}
+          data-invalid={invalid || undefined}
+          aria-invalid={invalid || undefined}
+          ref={ref}>
+          {children}
+        </select>
+        <CaretDown
+          className={`${prefix}--select__arrow`}
+          description={iconDescription}
+        />
+      </div>
+    );
+  })();
+
+  return <Input {...props}>{input}</Input>;
+});
 
 Select.displayName = 'Select';
 

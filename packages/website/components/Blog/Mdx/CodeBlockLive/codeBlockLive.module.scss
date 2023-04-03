@@ -21,8 +21,15 @@
   background-color: transparent;
 }
 
+.htmlButton {
+  position: absolute;
+  right: 0.3em;
+  bottom: 0.3em;
+}
+
 .liveEditor {
   background: black;
+  position: relative;
 
   h3 {
     color: $text-on-color;

@@ -2,7 +2,7 @@ import * as React from 'react';
 import type { PropsWithChildren } from 'react';
 import classNames from 'classnames';
 import useSettings from '../../hooks/useSettings';
-import { ScreenSize } from '../../typesLegacy/utils';
+import { ScreenSize } from '../../typesLegacyBB/utils';
 
 export const pageWidths = ['sm', 'md', 'lg', 'full'];
 

@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 
 import classNames from 'classnames';
 import useSettings from '../../hooks/useSettings';
-import { ButtonKind, IIcon } from '../../typesLegacy/utils';
+import { ButtonKind, IIcon } from '../../typesLegacyBB/utils';
 
 interface ButtonBaseProps {
   /**
@@ -49,11 +49,11 @@ interface ButtonBaseProps {
 
 interface ButtonButtonProps
   extends ButtonBaseProps,
-    React.ButtonHTMLAttributes<Button> {}
+    React.ButtonHTMLAttributes<HTMLButtonElement> {}
 
 interface ButtonLinkProps
   extends ButtonBaseProps,
-    React.LinkHTMLAttributes<Button> {
+    React.LinkHTMLAttributes<HTMLButtonElement> {
   href?: string;
   target?: string;
 }
@@ -175,5 +175,7 @@ const Button: React.FC<ButtonProps> = React.forwardRef(
     return href ? anchor : button;
   }
 );
+
+Button.displayName = 'Button';
 
 export default Button;

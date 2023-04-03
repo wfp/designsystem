@@ -100,7 +100,7 @@
         ],
         "required": false,
         "type": {
-          "name": "{}"
+          "name": "object"
         }
       },
       "toProps": {
@@ -121,7 +121,7 @@
         ],
         "required": false,
         "type": {
-          "name": "{}"
+          "name": "object"
         }
       }
     }

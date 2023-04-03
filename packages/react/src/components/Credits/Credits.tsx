@@ -24,4 +24,6 @@ const Credits: React.FC<CreditsProps> = ({
   );
 };
 
+Credits.displayName = 'Credits';
+
 export default Credits;

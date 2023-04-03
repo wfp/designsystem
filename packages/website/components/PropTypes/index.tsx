@@ -124,6 +124,8 @@ export default function PropTypes({
       .replace(`<${mainComponent}`, ``)
       .replace(`/>`, ``);
 
+    console.log('codeFiltered', codeFiltered);
+
     code = sampleCode.replace('PROPS_HERE', codeFiltered);
   }
   const componentList = [mainComponent].join(', ');

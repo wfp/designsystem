@@ -25,6 +25,7 @@ export const textLookup = {
 const Text = ({ children, className, kind, spacingTop, spacingBottom }) => {
   const { prefix } = useSettings();
   const tagName = { name: textLookup[kind] ? textLookup[kind] : 'div' };
+  const Tag = tagName.name;
   const classes = classNames({
     [`${prefix}--text`]: true,
     [`${prefix}--text__${kind}`]: kind,
@@ -32,7 +33,7 @@ const Text = ({ children, className, kind, spacingTop, spacingBottom }) => {
     [`${prefix}--text__spacing-bottom-${spacingBottom}`]: spacingBottom,
     [`${className}`]: className,
   });
-  return <tagName.name className={classes}>{children}</tagName.name>;
+  return <Tag className={classes}>{children}</Tag>;
 };
 
 Text.propTypes = {

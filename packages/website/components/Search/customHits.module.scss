@@ -3,6 +3,9 @@
 .hits {
   position: relative;
   z-index: 10000;
+  max-height: 50vh;
+  overflow: auto;
+  margin: 0 -1em;
 }
 .results {
   //position: absolute;
@@ -20,13 +23,14 @@
 
 .hit,
 .hit:visited {
-  margin: 0.3em;
-  padding: 0.3em;
+  //margin: 0.3em;
+  padding: 0.5em 1.2em;
   line-height: 1.5;
   display: block;
   color: $text-primary;
-  border-radius: 5px;
+  //border-radius: 5px;
   text-decoration: none;
+  border-bottom: 1px solid $border-strong;
   &:hover {
     background: $layer-primary;
     color: $text-primary;

@@ -170,4 +170,6 @@ const NumberInput: React.FC<NumberInputProps> = React.forwardRef(
   }
 );
 
+NumberInput.displayName = 'NumberInput';
+
 export default NumberInput;

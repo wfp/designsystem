@@ -93,4 +93,6 @@ const ReactTablePagination = ({
   );
 };
 
+ReactTablePagination.displayName = 'ReactTablePagination';
+
 export default ReactTablePagination;

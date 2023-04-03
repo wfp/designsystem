@@ -89,6 +89,7 @@
     "@types/react-dom": "^18.0.6",
     "classnames": "2.2.6",
     "invariant": "^2.2.4",
+    "prettier": "^2.8.7",
     "react-datepicker": "^4.6.0",
     "react-popper-tooltip": "^4.1.0",
     "react-scripts": "^5.0.1",

@@ -4,6 +4,7 @@ import { CSSProperties, useState, useRef } from 'react';
 import { TransitionState } from 'react-transition-state';
 import { useLayoutEffect } from '../utils/useIsomorphicLayoutEffect';
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const useHeightTransition = <E extends Element>({
   status,
   isResolved,

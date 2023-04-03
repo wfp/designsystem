@@ -24,6 +24,7 @@ const Checkbox: React.FC<PropsWithChildren<CheckboxProps>> = React.forwardRef(
       labelText,
       // eslint-disable-next-line @typescript-eslint/no-empty-function
       onChange = () => {},
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       indeterminate,
       hideLabel,
       wrapperClassName,

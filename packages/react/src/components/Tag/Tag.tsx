@@ -41,5 +41,6 @@ const Tag: React.FC<TagProps> = ({
   );
 };
 
-// export const types = Object.keys(TYPES);
+Tag.displayName = 'Tag';
+
 export default Tag;
