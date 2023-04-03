@@ -1,10 +1,14 @@
 ---
 category: 'Core'
 title: 'AuthLayout'
-excerpt: 'The accordion component allows the user to show and hide sections of related content on a page.'
+excerpt: 'The `AuthLayout` component is used to display a form in a layout with a background image or content.'
 coverImage: '../sample-image.jpg'
 slug: 'Components/UI elements/AuthLayout'
 ---
+
+It is used in the login, register pages and transactional content without much content.
+
+TODO: Write documentation
 
 ```jsx live
 <AuthLayout
@@ -59,27 +63,25 @@ slug: 'Components/UI elements/AuthLayout'
 
 ```jsx
 <BackgroundContent
-style={{
-        background: 'linear-gradient(0.13deg, #357DB6 0.17%, #5DB2C2 99.95%)',
-        color: '#fff',
-        padding: '3rem',
-      }}>
-<WfpLogoStandardBlackEn
-description="WFP"
-fill="#fff"
-style={{ marginBottom: '4rem' }}
-/>
-<Text kind="h1">
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr,diam nonumy
-eirmod.
-</Text>
+  style={{
+    background: 'linear-gradient(0.13deg, #357DB6 0.17%, #5DB2C2 99.95%)',
+    color: '#fff',
+    padding: '3rem',
+  }}>
+  <WfpLogoStandardBlackEn
+    description="WFP"
+    fill="#fff"
+    style={{ marginBottom: '4rem' }}
+  />
+  <Text kind="h1">
+    Lorem ipsum dolor sit amet, consetetur sadipscing elitr,diam nonumy eirmod.
+  </Text>
 
-      <p style={{ marginTop: '2rem' }}>- Author</p>
-    </BackgroundContent>
+  <p style={{ marginTop: '2rem' }}>- Author</p>
+</BackgroundContent>
+```
 
-),
-};
-
+```bash
 export const WithImage = (args) => (
   <AuthLayout {...args}>
     <FormGroup style={{ width: '80%' }}>

@@ -6,7 +6,7 @@ import { useEffect, useRef } from 'react';
 
 function SearchBox(props: any) {
   const { refine } = useSearchBox(props);
-  const searchRef = useRef();
+  const searchRef = useRef<HTMLInputElement | null>(null);
 
   const setFocus = () => {
     console.log('focus', searchRef.current);

@@ -143,7 +143,7 @@ export default function SidebarWrapper({
           description: 'Digital Design System',
           images: [
             {
-              url: `${process.env.NEXT_PUBLIC_DOMAIN}/public/un-core-logo.png`,
+              url: `${process.env.NEXT_PUBLIC_DOMAIN}api/og?title=${post.title}`,
               alt: 'Foto',
             },
           ],

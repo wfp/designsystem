@@ -5,7 +5,10 @@ import Input, { InputProps } from '../Input';
 import { Search as SearchIcon, Close } from '@un/icons-react';
 
 /** Search enables users to specify a word or a phrase to find relevant pieces of content without the use of navigation. */
-interface SearchProps extends InputProps {
+
+interface SearchProps
+  extends InputProps,
+    React.InputHTMLAttributes<HTMLInputElement> {
   defaultValue?: string | number;
   formItemClassName?: string;
   inputWrapperClassName?: string;

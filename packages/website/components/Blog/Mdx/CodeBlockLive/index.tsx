@@ -1,3 +1,4 @@
+/* eslint-disable no-irregular-whitespace */
 // src/components/CodeBlock.js
 import React, { useState } from 'react';
 import Highlight, { defaultProps } from 'prism-react-renderer';
@@ -29,9 +30,7 @@ import prettier from 'prettier/standalone';
 import babelParser from 'prettier/parser-babel';
 import htmlParser from 'prettier/parser-html';
 
-function LiveHtml({ live }: { live: Record<string, unknown> }) {
-  console.log('live', live);
-
+function LiveHtml({ live }: { live?: Record<string, unknown> }) {
   const Result = live.element as React.ComponentType;
   if (!Result) return null;
   let htmlString = ReactDOMServer.renderToStaticMarkup(<Result />);
@@ -41,10 +40,15 @@ function LiveHtml({ live }: { live: Record<string, unknown> }) {
     '<YOUR SVG IMAGE />'
   ); // $1p
 
-  const formatedHtmlString = prettier.format(htmlString, {
-    parser: 'html',
-    plugins: [htmlParser],
-  });
+  let formatedHtmlString = htmlString;
+  try {
+    formatedHtmlString = prettier.format(htmlString, {
+      parser: 'html',
+      plugins: [htmlParser],
+    });
+  } catch (e) {
+    console.log(e);
+  }
 
   return <CodeBlock language="html">{formatedHtmlString}</CodeBlock>;
 }
@@ -132,14 +136,20 @@ const CodeBlockLive = (props: any) => {
       .replaceAll(/: \S+ = /g, ' = '); // let a: string = "something"
   };
 
-  const formatedCode =
-    language === 'jsx'
-      ? prettier.format(code, {
-          parser: 'babel',
-          plugins: [babelParser],
-          printWidth: 80,
-        })
-      : code;
+  let formatedCode = code;
+
+  try {
+    formatedCode =
+      language === 'jsx'
+        ? prettier.format(code, {
+            parser: 'babel',
+            plugins: [babelParser],
+            printWidth: 80,
+          })
+        : code;
+  } catch (error) {
+    console.log('prettier not working');
+  }
 
   const handleCopyCode = (textToCopy) => {
     navigator.clipboard.writeText(textToCopy);
