@@ -1,6 +1,6 @@
 {
   "name": "@un/core-website",
-  "version": "0.1.35",
+  "version": "0.1.36",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -35,7 +35,7 @@
     "@un/layout": "^10.26.15",
     "@un/logos": "^0.0.28",
     "@un/pictograms-react": "^11.14.32",
-    "@un/react": "^1.18.75",
+    "@un/react": "^1.18.76",
     "@un/styles": "^10.26.60",
     "@un/themes": "^10.40.13",
     "@un/themes-core": "^0.0.28",
