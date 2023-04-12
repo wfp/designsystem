@@ -11,7 +11,7 @@ type StepNavigationProps = PropsWithChildren<{
   vertical?: boolean;
   inline?: boolean;
   role: string;
-  onSelectionChange?: React.FormEventHandler;
+  onSelectionChange?: React.SetStateAction<number>;
   selectedPage?: number;
 }>;
 
@@ -22,8 +22,8 @@ const StepNavigation: React.FC<StepNavigationProps> = ({
   vertical,
   className,
   role,
-  selectedPage,
-  onSelectionChange,
+  //selectedPage,
+  // onSelectionChange,
 }) => {
   const { prefix } = useSettings();
   const [dropdownHidden] = useState(true);
@@ -78,6 +78,7 @@ const StepNavigation: React.FC<StepNavigationProps> = ({
       }
     };
   };
+  console.log(handleTabAnchorFocus);
 
   // const handleDropdownClick = () => {
   //   setDropdownHidden(!dropdownHidden);
@@ -90,7 +91,7 @@ const StepNavigation: React.FC<StepNavigationProps> = ({
     }
   };
 
-  const tabsWithProps = getTabs()?.map(
+  const tabsWithProps = getTabs(); /* TODO: Use hook ?.map(
     (tab: React.ReactElement<any>, index: number) => {
       const newTab = React.cloneElement(tab as React.ReactElement<any>, {
         index,
@@ -102,7 +103,7 @@ const StepNavigation: React.FC<StepNavigationProps> = ({
 
       return newTab;
     }
-  );
+  );*/
 
   const classes = {
     tabs: classNames(className, {

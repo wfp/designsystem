@@ -1,0 +1,31 @@
+@use 'scss/meta' as *;
+
+.componentsSubList {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -0.5em;
+  position: relative;
+}
+
+.component {
+  position: relative;
+  background: $layer-primary;
+  width: calc(50% - 1.5em);
+  height: 10em;
+  margin: 0.2rem;
+  text-decoration: none;
+  color: $text-primary;
+  // padding: 0.3em;
+  overflow: hidden;
+  > * {
+    pointer-events: none;
+  }
+}
+
+.name {
+  position: absolute;
+  top: 0.3em;
+  left: 0.7em;
+  color: $text-primary;
+  font-size: 0.8em;
+}

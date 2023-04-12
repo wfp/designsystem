@@ -41,8 +41,10 @@ export default function Possiblities() {
               UI libraries
               <br />
               <br />
-              <MoreLink href="./posts/aktivierung" className={styles.link}>
-                Lorem Ipsum
+              <MoreLink
+                href="./posts/components/overview"
+                className={styles.link}>
+                Components
               </MoreLink>
             </>
           }

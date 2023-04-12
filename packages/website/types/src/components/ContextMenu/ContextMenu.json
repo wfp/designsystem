@@ -79,10 +79,14 @@
         "defaultValue": null,
         "description": "",
         "name": "className",
+        "parent": {
+          "fileName": "src/components/ContextMenu/ContextMenu.tsx",
+          "name": "ContextMenuItemProps"
+        },
         "declarations": [
           {
             "fileName": "src/components/ContextMenu/ContextMenu.tsx",
-            "name": "TypeLiteral"
+            "name": "ContextMenuItemProps"
           }
         ],
         "required": false,

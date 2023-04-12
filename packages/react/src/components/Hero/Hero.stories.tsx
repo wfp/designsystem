@@ -5,7 +5,7 @@ import markdown from './README.mdx';
 import { Hero, HeroExternal } from '.';
 import Button from '../Button';
 import { WfpHumEmergencyResponsePos } from '@un/pictograms-react';
-import heroTwig from './Hero.twig';
+//import heroTwig from './Hero.twig';
 
 export default {
   title: 'Components/Content Related/Hero',
@@ -14,7 +14,7 @@ export default {
     componentSubtitle: 'Component',
     status: 'released',
     mdx: markdown,
-    twig: heroTwig,
+    //twig: heroTwig,
   },
 };
 

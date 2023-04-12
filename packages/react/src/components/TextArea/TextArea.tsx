@@ -1,106 +1,37 @@
 import * as React from 'react';
 import classNames from 'classnames';
-import FormItem from '../FormItem';
 import useSettings from '../../hooks/useSettings';
-import { InputProps } from '../Input';
+import { InputProps, useInput } from '../Input';
+import Input from '../Input/Input';
+import { UseInputProps } from '../Input/useInput';
 
+/*
+ ** Represents a multi-line plain-text editing control, useful when you want to allow users to enter a sizeable amount of free-form text, for example a comment on a review or feedback form.
+ */
 interface TextAreaProps
   extends InputProps,
-    React.InputHTMLAttributes<HTMLTextAreaElement> {
+    React.ComponentPropsWithRef<'textarea'> {
   fullWidth?: boolean;
 }
 
 export type Ref = HTMLTextAreaElement;
 
 export const TextArea = React.forwardRef<Ref, TextAreaProps>((props, ref) => {
-  const {
-    className,
-    formItemClassName,
-    id,
-    labelText,
-    hideLabel,
-    onChange,
-    onClick,
-    invalid,
-    invalidText,
-    helperText,
-    fullWidth,
-    ...other
-  } = props;
-  /* TODO: Implement print preview for inputs with automated overflow
-  const isPrinting = useDetectPrint();
-  */
-  const { prefix } = useSettings();
+  const { className, fullWidth } = props;
 
-  const textareaProps = {
-    id,
-    onChange: (evt) => {
-      if (!other.disabled) {
-        onChange && onChange(evt);
-      }
-    },
-    onClick: (evt) => {
-      if (!other.disabled) {
-        onClick && onClick(evt);
-      }
-    },
-  };
+  const { prefix } = useSettings();
 
   const textareaClasses = classNames(`${prefix}--text-area`, className, {
     [`${prefix}--textarea-fullwidth`]: fullWidth,
   });
-  const labelClasses = classNames(`${prefix}--label`, {
-    [`${prefix}--visually-hidden`]: hideLabel,
-    [`${prefix}--label--disabled`]: other.disabled,
-  });
 
-  const label = labelText ? (
-    <label htmlFor={id} className={labelClasses}>
-      {labelText}
-    </label>
-  ) : null;
-
-  const helperTextClasses = classNames(`${prefix}--form__helper-text`, {
-    [`${prefix}--form__helper-text--disabled`]: other.disabled,
-  });
-
-  const error = invalid ? (
-    <div className="wfp--form-requirement">{invalidText}</div>
-  ) : null;
-
-  const input = invalid ? (
-    <textarea
-      {...other}
-      {...textareaProps}
-      ref={ref}
-      className={textareaClasses}
-      data-invalid
-    />
-  ) : (
-    <textarea
-      {...other}
-      ref={ref}
-      {...textareaProps}
-      className={textareaClasses}
-    />
-  );
-
-  const helper = helperText ? (
-    <div className={helperTextClasses}>{helperText}</div>
-  ) : null;
+  const useInputProps = props as UseInputProps;
+  const input = useInput(useInputProps);
 
   return (
-    <FormItem className={formItemClassName}>
-      {label}
-      {input}
-      {/*isPrinting && (
-        <div {...other} {...textareaProps} className={textareaClasses}>
-          {other.value}
-        </div>
-      )*/}
-      {helper}
-      {error}
-    </FormItem>
+    <Input {...input.wrapperProps}>
+      <textarea {...input.inputProps} ref={ref} className={textareaClasses} />
+    </Input>
   );
 });
 

@@ -3,18 +3,16 @@ import { useState, ChangeEventHandler } from 'react';
 import classNames from 'classnames';
 import uId from '../../tools/uniqueId';
 import useSettings from '../../hooks/useSettings';
+import { InputProps } from '../Input';
 
 interface RadioButtonProps
   extends InputProps,
-    React.InputHTMLAttributes<HTMLInputElement> {
+    Omit<React.ComponentPropsWithRef<'input'>, 'onChange'> {
   /**
    * Specify whether the <RadioButton> is currently checked
    */
   checked?: boolean;
-  /**
-   * Provide an optional className to be applied to the containing node
-   */
-  className?: string;
+
   /**
    * Specify whether the <RadioButton> should be checked by default
    */
@@ -23,18 +21,6 @@ interface RadioButtonProps
    * Specify whether the control is disabled
    */
   disabled?: boolean;
-  /**
-   * Provide a unique id for the underlying `input` node
-   */
-  id?: string;
-  /**
-   * Provide label text to be read by screen readers when interacting with the control
-   */
-  labelText: React.ReactNode;
-  /**
-   * Provide a name for the underlying `input` node
-   */
-  name?: string;
   /**
    * Provide an optional `onChange` hook that is called each time the value of
    * the underlying `input` changes
@@ -94,6 +80,6 @@ const RadioButton: React.FC<RadioButtonProps> = React.forwardRef(
   }
 );
 
-RadioButton.displayName = 'RadioButton';
+//RadioButton.displayName = 'RadioButton';
 
 export default RadioButton;

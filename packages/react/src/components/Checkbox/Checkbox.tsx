@@ -4,15 +4,15 @@ import classNames from 'classnames';
 import useSettings from '../../hooks/useSettings';
 
 interface CheckboxProps
-  extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'onChange'> {
+  extends Omit<React.ComponentPropsWithRef<'input'>, 'onChange'> {
   indeterminate?: boolean;
   labelText?: React.ReactNode;
   hideLabel?: boolean;
   wrapperClassName?: string;
   onChange?(
     event: React.ChangeEvent<HTMLInputElement>,
-    checked: boolean,
-    customId: string
+    checked?: boolean,
+    customId?: string
   ): void;
 }
 
@@ -50,7 +50,7 @@ const Checkbox: React.FC<PropsWithChildren<CheckboxProps>> = React.forwardRef(
           {...other}
           type="checkbox"
           onChange={(evt) => {
-            onChange(evt, { checked: evt.target.checked, id });
+            onChange(evt, evt.target.checked, id);
           }}
           className={`${prefix}--checkbox`}
           id={id || other.name}
@@ -72,7 +72,7 @@ const Checkbox: React.FC<PropsWithChildren<CheckboxProps>> = React.forwardRef(
         <label
           htmlFor={id || other.name}
           className={labelClasses}
-          title={title || null}>
+          title={title || undefined}>
           <span className={innerLabelClasses}>{labelText}</span>
         </label>
       </div>

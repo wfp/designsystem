@@ -60,7 +60,7 @@
         ],
         "required": false,
         "type": {
-          "name": "(evt: Event, trigger: \"button\" | \"background\" | \"key\") => void"
+          "name": "(evt: MouseEvent<HTMLButtonElement, MouseEvent>, trigger: \"button\" | \"background\" | \"key\") => void"
         }
       },
       "primaryButtonText": {
@@ -98,7 +98,7 @@
         ],
         "required": false,
         "type": {
-          "name": "() => {}"
+          "name": "() => void"
         }
       },
       "primaryButtonDisabled": {
@@ -177,10 +177,10 @@
           "name": "string"
         }
       },
-      "ref": {
+      "primaryButtonRef": {
         "defaultValue": null,
         "description": "",
-        "name": "ref",
+        "name": "primaryButtonRef",
         "parent": {
           "fileName": "src/components/Modal/ModalFooter.tsx",
           "name": "ModalFooterProps"
@@ -193,7 +193,26 @@
         ],
         "required": false,
         "type": {
-          "name": "RefObject<HTMLInputElement>"
+          "name": "RefObject<HTMLButtonElement>"
+        }
+      },
+      "secondaryButtonRef": {
+        "defaultValue": null,
+        "description": "",
+        "name": "secondaryButtonRef",
+        "parent": {
+          "fileName": "src/components/Modal/ModalFooter.tsx",
+          "name": "ModalFooterProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/Modal/ModalFooter.tsx",
+            "name": "ModalFooterProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "RefObject<HTMLButtonElement>"
         }
       }
     }

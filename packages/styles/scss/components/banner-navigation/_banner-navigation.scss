@@ -23,9 +23,10 @@
     @include type-style('label');
     @include font-family('sans');
     padding: 0 $spacing-03;
-    font-weight: 600;
+
+    font-size: 0.85rem; //TODO: use token
     @include breakpoint('xlg') {
-      padding: 0 $spacing-05;
+      padding: 0 $spacing-04;
     }
 
     &:last-child {
@@ -36,7 +37,7 @@
       @include type-style('label');
       color: $text-on-color;
       text-decoration: none;
-      font-weight: 600;
+      font-weight: 500;
 
       &:hover {
         color: $field-hover;

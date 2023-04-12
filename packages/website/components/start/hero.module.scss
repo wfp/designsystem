@@ -1,4 +1,4 @@
-@use "scss/meta" as *;
+@use 'scss/meta' as *;
 
 .features {
   display: flex;
@@ -28,6 +28,9 @@
   margin: 0;
   margin: 4em 0;
   display: flex;
+  a {
+    text-decoration: none;
+  }
   > * {
     margin-right: 0.7em;
     padding: 0 1em;

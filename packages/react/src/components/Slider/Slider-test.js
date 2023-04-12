@@ -1,6 +1,6 @@
 import React from 'react';
-import Slider from '../Slider';
-import SliderSkeleton from '../Slider/Slider.Skeleton';
+import Slider from '.';
+import SliderSkeleton from './Slider.Skeleton';
 import { mount, shallow } from 'enzyme';
 import 'requestanimationframe';
 
@@ -16,7 +16,6 @@ describe('Slider', () => {
         max={100}
         step={1}
         onChange={mockFn}
-
       />
     );
 
@@ -43,26 +42,26 @@ describe('Slider', () => {
       wrapper.setProps({ value: 55 });
       expect(wrapper.props().value).toEqual(55);
     });
-
   });
 
   describe('Supporting label', () => {
     it('concatenates the value and the label by default', () => {
       const wrapper = mount(
-        <Slider id="slider-1" min={0} minLabel="min" max={100} maxLabel="max" value={0} />
+        <Slider
+          id="slider-1"
+          min={0}
+          minLabel="min"
+          max={100}
+          maxLabel="max"
+          value={0}
+        />
       );
-      expect(
-        wrapper
-          .find('.wfp--slider__range-label')
-          .first()
-          .text()
-      ).toBe('0min');
-      expect(
-        wrapper
-          .find('.wfp--slider__range-label')
-          .last()
-          .text()
-      ).toBe('100max');
+      expect(wrapper.find('.wfp--slider__range-label').first().text()).toBe(
+        '0min'
+      );
+      expect(wrapper.find('.wfp--slider__range-label').last().text()).toBe(
+        '100max'
+      );
     });
 
     it('supports custom formatting of the label', () => {
@@ -77,18 +76,12 @@ describe('Slider', () => {
           value={0}
         />
       );
-      expect(
-        wrapper
-          .find('.wfp--slider__range-label')
-          .first()
-          .text()
-      ).toBe('0-min');
-      expect(
-        wrapper
-          .find('.wfp--slider__range-label')
-          .last()
-          .text()
-      ).toBe('100-max');
+      expect(wrapper.find('.wfp--slider__range-label').first().text()).toBe(
+        '0-min'
+      );
+      expect(wrapper.find('.wfp--slider__range-label').last().text()).toBe(
+        '100-max'
+      );
     });
   });
 

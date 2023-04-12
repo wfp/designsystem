@@ -45,6 +45,8 @@ interface ModalProps {
   backgroundImage?: string;
   onKeyDown?: () => void;
   handleBlur?: (obj?: unknown) => void;
+  primaryButtonRef?: React.RefObject<HTMLButtonElement>;
+  secondaryButtonRef?: React.RefObject<HTMLButtonElement>;
 }
 
 const matchesFuncName =
@@ -78,6 +80,8 @@ const Modal: React.FC<ModalProps> = (props) => {
     wide,
     type,
     selectorPrimaryFocus,
+    primaryButtonRef,
+    secondaryButtonRef,
     // shouldSubmitOnEnter,
     ...other
   } = props;
@@ -109,7 +113,7 @@ const Modal: React.FC<ModalProps> = (props) => {
     } else {
       // Alternative if closest does not exist.
       while (target) {
-        if (typeof target[matchesFuncName] === 'function') {
+        if (matchesFuncName && typeof target[matchesFuncName] === 'function') {
           if (
             // eslint-disable-next-line no-loop-func
             selectorsFloatingMenus.some((selector) =>
@@ -184,6 +188,7 @@ const Modal: React.FC<ModalProps> = (props) => {
 
   const handleTransitionEnd = (evt) => {
     if (
+      outerModal.current &&
       outerModal.current.offsetWidth &&
       outerModal.current.offsetHeight &&
       beingOpen
@@ -250,7 +255,8 @@ const Modal: React.FC<ModalProps> = (props) => {
         {...props}
         prefix={prefix}
         onSecondaryButtonClick={onSecondaryButtonClick}
-        ref={button}
+        primaryButtonRef={primaryButtonRef}
+        secondaryButtonRef={secondaryButtonRef}
       />
     </div>
   );

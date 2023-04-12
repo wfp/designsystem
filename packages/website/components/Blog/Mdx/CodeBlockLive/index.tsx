@@ -14,6 +14,7 @@ import Storybook from '../Storybook';
 import { DoUse, DoNotUse } from '../DoUse';
 import { MDXProvider } from '@mdx-js/react';
 import { Controller, useForm } from 'react-hook-form';
+import classNames from 'classnames';
 
 import MDX from '@mdx-js/runtime';
 import components from '../';
@@ -29,6 +30,7 @@ import { Button, Empty } from '@un/react';
 import prettier from 'prettier/standalone';
 import babelParser from 'prettier/parser-babel';
 import htmlParser from 'prettier/parser-html';
+import PropTypes from '../../../PropTypes';
 
 function LiveHtml({ live }: { live?: Record<string, unknown> }) {
   const Result = live.element as React.ComponentType;
@@ -60,23 +62,16 @@ const CodeBlockLive = (props: any) => {
     className = '',
     live,
     center,
+    forceFullWidth,
     hideWrapper,
     noInline,
     showEditor = true,
+    smallPreview,
     source,
     reactHookForm,
   } = props;
-
   const [showHtml, setShowHtml] = useState(false);
   let code = source ? source : children ? children.trim() : '';
-  /*const compileMdx = async (code) => {
-    const compiled = await compile(code);
-    setCompiledMdx(compiled);
-  };*/
-
-  /*useEffect(() => {
-    compileMdx(code);
-  }, [code]);*/
 
   if (reactHookForm)
     code = `
@@ -176,11 +171,20 @@ const CodeBlockLive = (props: any) => {
       DoNotUse,
     };
 
+    const codeBlockClasses = classNames(stylesModule.editor, {
+      btn: true,
+      [stylesModule.hideWrapper]: hideWrapper,
+      [stylesModule.showWrapper]: !hideWrapper,
+      [stylesModule.center]: center,
+      [stylesModule.notCenter]: !center,
+      [stylesModule.fullWidth]: forceFullWidth,
+      [stylesModule.normalWidth]: !forceFullWidth,
+      [stylesModule.smallPreview]: smallPreview,
+      [stylesModule.normalPreview]: !smallPreview,
+    });
+
     return (
-      <div
-        className={`${stylesModule.editor} ${
-          hideWrapper ? stylesModule.hideWrapper : stylesModule.showWrapper
-        } ${center ? stylesModule.center : stylesModule.notCenter}`}>
+      <div className={codeBlockClasses}>
         <LiveProvider
           code={formatedCode}
           scope={scope}
@@ -194,7 +198,11 @@ const CodeBlockLive = (props: any) => {
               </MDXProvider>
             </div>
           ) : (
-            <LivePreview className={stylesModule.preview} />
+            <div className={stylesModule.previewWrapper}>
+              <div className={stylesModule.previewInside}>
+                <LivePreview className={stylesModule.preview} />
+              </div>
+            </div>
           )}
 
           {showEditor && (
@@ -258,6 +266,7 @@ interface PreProps {
   live?: boolean;
   noInline?: boolean;
   reactHookForm?: boolean;
+  forceFullWidth?: boolean;
   children?: /*| React.ReactElement<any, any>
     | JSX.Element
     | React.ReactFragment*/
@@ -269,6 +278,7 @@ export function Pre({
   live,
   noInline,
   reactHookForm,
+  forceFullWidth,
   children,
   ...props
 }: PreProps) {
@@ -281,6 +291,7 @@ export function Pre({
           live={live}
           noInline={noInline}
           reactHookForm={reactHookForm}
+          forceFullWidth={forceFullWidth}
           {...childProps}
         />
       </div>

@@ -1,5 +1,5 @@
 import React from 'react';
-import Pagination from '../Pagination';
+import Pagination from '.';
 import Select from '../Select';
 import SelectItem from '../SelectItem';
 import { shallow, mount } from 'enzyme';

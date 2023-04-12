@@ -12,7 +12,7 @@ import Tabs from '../Tabs';
 import Tab from '../Tab';
 
 export default {
-  title: 'Components/Navigations/SecondaryNavigation',
+  title: 'Components/Navigation/SecondaryNavigation',
   component: SecondaryNavigation,
   subcomponents: { SecondaryNavigationTitle },
   parameters: {

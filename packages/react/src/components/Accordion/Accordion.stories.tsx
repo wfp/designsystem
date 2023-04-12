@@ -1,10 +1,9 @@
 import React from 'react';
 import markdown from './README.mdx';
-import { Accordion, AccordionItem } from '../Accordion';
-import Link from '../Link';
+import { Accordion, AccordionItem } from '.';
 
 export default {
-  title: 'Components/Navigations/Accordion',
+  title: 'Components/Navigation/Accordion',
   component: Accordion,
   parameters: {
     componentSubtitle: 'Component',

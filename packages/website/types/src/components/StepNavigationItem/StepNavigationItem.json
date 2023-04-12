@@ -125,7 +125,7 @@
             "name": "TypeLiteral"
           }
         ],
-        "required": true,
+        "required": false,
         "type": {
           "name": "string"
         }

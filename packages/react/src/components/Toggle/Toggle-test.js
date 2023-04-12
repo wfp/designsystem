@@ -1,6 +1,6 @@
 import React from 'react';
-import Toggle from '../Toggle';
-import ToggleSkeleton from '../Toggle/Toggle.Skeleton';
+import Toggle from '.';
+import ToggleSkeleton from './Toggle.Skeleton';
 import { mount, shallow } from 'enzyme';
 
 describe('Toggle', () => {
@@ -73,7 +73,7 @@ describe('Toggle', () => {
       wrapper.find('input').simulate('change');
 
       expect(
-        onChange.mock.calls.map(call =>
+        onChange.mock.calls.map((call) =>
           call.map((arg, i) => (i > 0 ? arg : arg.target))
         )
       ).toEqual([[inputElement]]);

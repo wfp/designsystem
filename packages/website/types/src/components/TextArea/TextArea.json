@@ -6,6 +6,120 @@
     "displayName": "TextArea",
     "methods": [],
     "props": {
+      "disabled": {
+        "defaultValue": null,
+        "description": "",
+        "name": "disabled",
+        "parent": {
+          "fileName": "react/src/components/Input/Input.tsx",
+          "name": "InputProps"
+        },
+        "declarations": [
+          {
+            "fileName": "react/src/components/Input/Input.tsx",
+            "name": "InputProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "name": {
+        "defaultValue": null,
+        "description": "Provide a name for the control",
+        "name": "name",
+        "parent": {
+          "fileName": "react/src/components/Input/Input.tsx",
+          "name": "InputProps"
+        },
+        "declarations": [
+          {
+            "fileName": "react/src/components/Input/Input.tsx",
+            "name": "InputProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "placeholder": {
+        "defaultValue": null,
+        "description": "Specify the placeholder attribute for the input @design",
+        "name": "placeholder",
+        "parent": {
+          "fileName": "react/src/components/Input/Input.tsx",
+          "name": "InputProps"
+        },
+        "declarations": [
+          {
+            "fileName": "react/src/components/Input/Input.tsx",
+            "name": "InputProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "readOnly": {
+        "defaultValue": null,
+        "description": "",
+        "name": "readOnly",
+        "parent": {
+          "fileName": "react/src/components/Input/Input.tsx",
+          "name": "InputProps"
+        },
+        "declarations": [
+          {
+            "fileName": "react/src/components/Input/Input.tsx",
+            "name": "InputProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "required": {
+        "defaultValue": null,
+        "description": "",
+        "name": "required",
+        "parent": {
+          "fileName": "react/src/components/Input/Input.tsx",
+          "name": "InputProps"
+        },
+        "declarations": [
+          {
+            "fileName": "react/src/components/Input/Input.tsx",
+            "name": "InputProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "id": {
+        "defaultValue": null,
+        "description": "Provide a unique identifier for the control",
+        "name": "id",
+        "parent": {
+          "fileName": "react/src/components/Input/Input.tsx",
+          "name": "InputProps"
+        },
+        "declarations": [
+          {
+            "fileName": "react/src/components/Input/Input.tsx",
+            "name": "InputProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
       "fullWidth": {
         "defaultValue": null,
         "description": "",
@@ -196,120 +310,6 @@
           "name": "boolean"
         }
       },
-      "placeholder": {
-        "defaultValue": null,
-        "description": "Specify the placeholder attribute for the input @design",
-        "name": "placeholder",
-        "parent": {
-          "fileName": "react/src/components/Input/Input.tsx",
-          "name": "InputProps"
-        },
-        "declarations": [
-          {
-            "fileName": "react/src/components/Input/Input.tsx",
-            "name": "InputProps"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "string"
-        }
-      },
-      "id": {
-        "defaultValue": null,
-        "description": "Provide a unique identifier for the control",
-        "name": "id",
-        "parent": {
-          "fileName": "react/src/components/Input/Input.tsx",
-          "name": "InputProps"
-        },
-        "declarations": [
-          {
-            "fileName": "react/src/components/Input/Input.tsx",
-            "name": "InputProps"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "string"
-        }
-      },
-      "name": {
-        "defaultValue": null,
-        "description": "Provide a name for the control",
-        "name": "name",
-        "parent": {
-          "fileName": "react/src/components/Input/Input.tsx",
-          "name": "InputProps"
-        },
-        "declarations": [
-          {
-            "fileName": "react/src/components/Input/Input.tsx",
-            "name": "InputProps"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "string"
-        }
-      },
-      "required": {
-        "defaultValue": null,
-        "description": "",
-        "name": "required",
-        "parent": {
-          "fileName": "react/src/components/Input/Input.tsx",
-          "name": "InputProps"
-        },
-        "declarations": [
-          {
-            "fileName": "react/src/components/Input/Input.tsx",
-            "name": "InputProps"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "boolean"
-        }
-      },
-      "disabled": {
-        "defaultValue": null,
-        "description": "",
-        "name": "disabled",
-        "parent": {
-          "fileName": "react/src/components/Input/Input.tsx",
-          "name": "InputProps"
-        },
-        "declarations": [
-          {
-            "fileName": "react/src/components/Input/Input.tsx",
-            "name": "InputProps"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "boolean"
-        }
-      },
-      "readOnly": {
-        "defaultValue": null,
-        "description": "",
-        "name": "readOnly",
-        "parent": {
-          "fileName": "react/src/components/Input/Input.tsx",
-          "name": "InputProps"
-        },
-        "declarations": [
-          {
-            "fileName": "react/src/components/Input/Input.tsx",
-            "name": "InputProps"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "boolean"
-        }
-      },
       "inline": {
         "defaultValue": null,
         "description": "",
@@ -365,6 +365,25 @@
         "required": false,
         "type": {
           "name": "ReactNode"
+        }
+      },
+      "components": {
+        "defaultValue": null,
+        "description": "",
+        "name": "components",
+        "parent": {
+          "fileName": "react/src/components/Input/Input.tsx",
+          "name": "InputProps"
+        },
+        "declarations": [
+          {
+            "fileName": "react/src/components/Input/Input.tsx",
+            "name": "InputProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "{ AddonBefore?: ReactNode; AddonAfter?: ReactNode; }"
         }
       }
     }

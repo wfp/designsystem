@@ -96,20 +96,23 @@ const headingText = [
 
 export const Headings = () => (
   <>
-    {headingText.map((e) => (
-      <>
-        <Story>
-          {Element.kind === 'h1' ? (
-            <e.kind className="wfp--story__title">{e.text}</e.kind>
-          ) : (
-            <e.kind>{e.text}</e.kind>
-          )}
+    {headingText.map((e) => {
+      const Element = e.kind as keyof JSX.IntrinsicElements;
+      return (
+        <>
+          <Story>
+            {e.kind === 'h1' ? (
+              <Element className="wfp--story__title">{e.text}</Element>
+            ) : (
+              <Element>{e.text}</Element>
+            )}
 
-          <div style={{ color: '#A9A9A9', marginBottom: '2rem' }}>
-            {e.styling}
-          </div>
-        </Story>
-      </>
-    ))}
+            <div style={{ color: '#A9A9A9', marginBottom: '2rem' }}>
+              {e.styling}
+            </div>
+          </Story>
+        </>
+      );
+    })}
   </>
 );

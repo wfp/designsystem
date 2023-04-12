@@ -9,13 +9,10 @@ export default function Image(props: any) {
     return <img {...props} />;
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-var-requires
-  const src = require(`../../../../_posts/${props.src}`);
-
   return (
-    <span className={styles.mediaWrapper}>
-      <Lightbox {...props} src={src} />
+    <div className={styles.mediaWrapper}>
+      <Lightbox {...props} /*src={src} */ />
       {props.title && <Caption>{props.title}</Caption>}
-    </span>
+    </div>
   );
 }

@@ -1,7 +1,7 @@
 import React, {
   RefObject,
   ForwardedRef,
-  MemoExoticComponent,
+  //  MemoExoticComponent,
   forwardRef,
 } from 'react';
 import { ItemState, ItemStateOptions } from '../utils/constants';
@@ -17,7 +17,7 @@ const withAccordionItem = <
   E extends Element,
   T = E
 >(
-  WrappedItem: MemoExoticComponent<(props: ItemStateProps<E, T>) => JSX.Element>
+  WrappedItem: any //TODO: MemoExoticComponent<(props: ItemStateProps<E, T>) => JSX.Element>
 ) => {
   const WithAccordionItem = forwardRef<T, P>(
     ({ itemKey, initialEntered, ...rest }, ref) => (

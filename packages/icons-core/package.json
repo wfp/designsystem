@@ -30,16 +30,16 @@
     "access": "public"
   },
   "devDependencies": {
-    "@svgr/core": "^6.2.1",
-    "@svgr/plugin-jsx": "^6.2.1",
-    "@svgr/plugin-prettier": "^6.1.2",
-    "@svgr/plugin-svgo": "^6.2.0",
-    "@un/cli": "^10.25.28",
-    "camelcase": "^6.3.0",
-    "fs-readdir-recursive": "^1.1.0",
     "rollup": "^2.70.1"
   },
   "dependencies": {
+    "@svgr/core": "^7.0.0",
+    "@svgr/plugin-jsx": "^7.0.0",
+    "@svgr/plugin-prettier": "^7.0.0",
+    "@svgr/plugin-svgo": "^7.0.0",
+    "@un/cli": "^10.25.28",
+    "camelcase": "^6.3.0",
+    "fs-readdir-recursive": "^1.1.0",
     "change-case": "^4.1.2",
     "del": "^6.1.1"
   },

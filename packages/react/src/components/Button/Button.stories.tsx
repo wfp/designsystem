@@ -2,8 +2,6 @@ import React from 'react';
 import { buttonKinds } from '../../prop-types/types';
 import { AddCircle } from '@un/icons-react';
 import markdown from './README.mdx';
-import buttonTwig from './Button.twig';
-import { twig } from 'twig';
 import Button from '.';
 
 export default {
@@ -18,17 +16,7 @@ export default {
   },
 };
 
-/*
-type Story = StoryObj<typeof Button>;
-
-export const Primary: Story = {
-  args: {
-    primary: true,
-    label: 'Button',
-  },
-};
-*/
-export const ButtonRegular = (args) => <Button {...args} kind="primary" />;
+export const ButtonRegular = (args) => <Button {...args} />;
 
 ButtonRegular.args = {
   children: 'Button',
@@ -57,6 +45,7 @@ export const ButtonKind = (args) => (
     ))}
   </>
 );
+
 ButtonKind.args = {
   children: 'Button',
 };
@@ -82,14 +71,12 @@ By changing the \`kind\` prop you can use different styles of the button.
 | \`navigation\`| should be only used in the main navigation |
 `;
 
-ButtonKind.story = {
-  name: 'Button kinds',
-  parameters: {
-    markdown: 'hello',
-    layout: 'centered',
-    docs: {
-      storyDescription: hello,
-    },
+ButtonKind.storyName = 'Button kinds';
+ButtonKind.parameters = {
+  markdown: 'hello',
+  layout: 'centered',
+  docs: {
+    storyDescription: hello,
   },
 };
 
@@ -139,17 +126,15 @@ import { AddCircleGlyph } from '@un/icons-react';
   </>
 `;
 
-ButtonIcon.story = {
-  name: 'Button with icon',
-  parameters: {
-    docs: {
-      storyDescription: helloButtonIcon,
-      source: {
-        code: buttoniconsnippet,
-      },
+ButtonIcon.parameters = {
+  docs: {
+    storyDescription: helloButtonIcon,
+    source: {
+      code: buttoniconsnippet,
     },
   },
 };
+ButtonIcon.storyName = 'Button with icon';
 
 export const Small = (args) => (
   <>
@@ -180,14 +165,12 @@ import { AddCircleGlyph } from '@un/icons-react';
   </>
 `;
 
-Small.story = {
-  name: 'small Button',
-  parameters: {
-    docs: {
-      storyDescription: helloButtonSmall,
-      source: {
-        code: smallbuttonsnippet,
-      },
+Small.storyName = 'small Button';
+Small.parameters = {
+  docs: {
+    storyDescription: helloButtonSmall,
+    source: {
+      code: smallbuttonsnippet,
     },
   },
 };
@@ -221,21 +204,21 @@ import { AddCircleGlyph } from '@un/icons-react';
   </>
 `;
 
-Large.story = {
-  name: 'large Button',
-  parameters: {
-    docs: {
-      storyDescription: helloButtonLarge,
-      source: {
-        code: largebuttonsnippet,
-      },
+Large.storyName = 'large Button';
+Large.parameters = {
+  docs: {
+    storyDescription: helloButtonLarge,
+    source: {
+      code: largebuttonsnippet,
     },
   },
 };
 
-export const CustomIcon = (args) => (
+const Icon = () => <div>Hello</div>;
+
+export const CustomIcon = () => (
   <>
-    <Button large icon={<div>Hello</div>}>
+    <Button large icon={Icon}>
       Large button
     </Button>
   </>
@@ -247,11 +230,4 @@ export const CustomIcon = (args) => (
 // or less.
 // `;
 
-CustomIcon.story = {
-  name: 'Custom Button',
-  parameters: {
-    docs: {
-      // storyDescription: CustomIconText,
-    },
-  },
-};
+CustomIcon.storyName = 'Custom Button';

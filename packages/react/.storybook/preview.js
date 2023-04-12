@@ -3,7 +3,7 @@ import React, { FC } from 'react';
 import './storybook.scss';
 import theme from './theme';
 import { UNCoreProvider } from '../src/components/UNCoreSettings';
-import MdxComponents from '../src/components/MdxComponents';
+//import MdxComponents from '../src/components/MdxComponents';
 
 /*import {
   Title,
@@ -12,9 +12,6 @@ import MdxComponents from '../src/components/MdxComponents';
   Stories,
   types,
 } from '@storybook/addon-docs/blocks';*/
-
-import DocsPage from './documentation/DocsPage';
-import DocsContainer from './documentation/DocsContainer';
 
 import { themes, ensure } from '@storybook/theming';
 
@@ -34,10 +31,10 @@ addParameters({
 export const parameters = {
   controls: { expanded: true },
   docs: {
-    components: { ...MdxComponents },
+    //components: { ...MdxComponents },
     theme: theme,
     //theme: ensure(themes.dark),
-    page: DocsPage,
+    //page: DocsPage,
   },
   previewTabs: {
     'storybook/docs/panel': {
@@ -69,9 +66,10 @@ export const parameters = {
   },
 };
 
+/*
 export const globalTypes = {
   theme: {
-    name: 'Theme',
+    title: 'Theme',
     description: 'Global theme for components',
     defaultValue: 'light',
     toolbar: {
@@ -80,7 +78,7 @@ export const globalTypes = {
     },
   },
   locale: {
-    name: 'Locale',
+    title: 'Locale',
     description: 'Internationalization locale',
     defaultValue: 'en',
     toolbar: {
@@ -91,7 +89,7 @@ export const globalTypes = {
       ],
     },
   },
-};
+};*/
 
 const withThemeProvider = (Story, context) => {
   const { locale, theme } = context.globals;

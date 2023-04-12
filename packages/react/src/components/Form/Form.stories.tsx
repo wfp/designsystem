@@ -2,7 +2,7 @@ import React from 'react';
 import Checkbox from '../Checkbox';
 import Form from './Form';
 import FormGroup from '../FormGroup';
-import FileUploader from '../FileUploader';
+//import FileUploader from '../FileUploader';
 import Dropzone from 'react-dropzone';
 import NumberInput from '../NumberInput';
 import RadioButton from '../RadioButton';
@@ -128,7 +128,6 @@ export const DetailedForm = (args) => {
 
       <NumberInput
         id="number-input-1"
-        label="Number Input"
         labelText="Text Input label"
         min={0}
         max={100}
@@ -143,12 +142,12 @@ export const DetailedForm = (args) => {
 
       <FormGroup legendText="File Upload Types">
         <p>Legacy FileUploader</p>
-        <FileUploader
+        {/* TODO: <FileUploader
           id="file-1"
           labelDescription="Choose Files..."
           buttonLabel="Add files"
           labelText="Legacy"
-        />
+  />*/}
 
         <p>Drag and Drop File Uploader</p>
 

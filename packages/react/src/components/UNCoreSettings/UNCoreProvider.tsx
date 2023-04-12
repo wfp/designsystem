@@ -30,22 +30,20 @@ type UNCoreProps = PropsWithChildren<{
 
 // Detecting the default theme
 const isBrowserDefaultDark = () =>
-  window ? window.matchMedia('(prefers-color-scheme: dark)').matches : false;
+  typeof window !== 'undefined'
+    ? window.matchMedia('(prefers-color-scheme: dark)').matches
+    : false;
 
 export const UNCoreProvider: React.FC<UNCoreProps> = ({
   children,
-  wrapperElement = document.body,
+  wrapperElement /* = document?.body*/,
   prefix = 'wfp',
   initialTheme = 'auto',
   ...props
 }) => {
   const setElementTheme = (theme: string) => {
     const prefixClass = `${prefix}--theme--`;
-    const classes = wrapperElement.className
-      .split(' ')
-      .filter((c) => !c.startsWith(prefixClass));
 
-    wrapperElement.className = classes.join(' ').trim();
     if (theme === 'auto') {
       isBrowserDefaultDark() ? 'dark' : 'light';
     }
@@ -56,7 +54,15 @@ export const UNCoreProvider: React.FC<UNCoreProps> = ({
         : theme === 'auto'
         ? 'light'
         : theme;
-    wrapperElement.classList.add(`${prefix}--theme--${newTheme}`);
+
+    if (wrapperElement) {
+      const classes = wrapperElement.className
+        .split(' ')
+        .filter((c) => !c.startsWith(prefixClass));
+
+      wrapperElement.className = classes.join(' ').trim();
+      wrapperElement.classList.add(`${prefix}--theme--${newTheme}`);
+    }
     return newTheme;
   };
 
@@ -69,7 +75,10 @@ export const UNCoreProvider: React.FC<UNCoreProps> = ({
   };
 
   const getDefaultTheme = (): string => {
-    const localStorageTheme = localStorage.getItem('theme');
+    const localStorageTheme =
+      typeof window !== 'undefined'
+        ? window.localStorage.getItem('theme')
+        : false;
     const defaultTheme = localStorageTheme || initialTheme;
     setElementTheme(defaultTheme);
     return defaultTheme;
@@ -92,11 +101,15 @@ export const UNCoreProvider: React.FC<UNCoreProps> = ({
   };
 
   const setTheme = (theme: string) => {
+    console.log('setTheme', theme);
     const newTheme = setElementTheme(theme);
     setActualThemeState(newTheme);
-    localStorage.setItem('theme', theme);
+    if (typeof window !== 'undefined')
+      window.localStorage.setItem('theme', theme);
     setThemeState(theme);
   };
+
+  console.log('setThemeState');
 
   const ctx = {
     ...defaultUNContext,
@@ -104,6 +117,7 @@ export const UNCoreProvider: React.FC<UNCoreProps> = ({
     prefix,
     theme: themeState,
     actualTheme: actualThemeState,
+    initialized: true,
     setTheme,
   };
   return (

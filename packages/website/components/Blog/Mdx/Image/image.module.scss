@@ -1,4 +1,4 @@
-@use "scss/meta" as *;
+@use 'scss/meta' as *;
 
 .video {
   width: 100%;
@@ -9,7 +9,7 @@
   margin: 2rem -0.5em 0;
 
   @include breakpoint-up(md) {
-    max-width: calc(100% + 200px);
-    margin: 2rem -100px 0;
+    max-width: calc(100%);
+    margin: 2rem 0 2rem 0;
   }
 }

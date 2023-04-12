@@ -370,6 +370,25 @@
         "type": {
           "name": "ReactNode"
         }
+      },
+      "components": {
+        "defaultValue": null,
+        "description": "",
+        "name": "components",
+        "parent": {
+          "fileName": "react/src/components/Input/Input.tsx",
+          "name": "InputProps"
+        },
+        "declarations": [
+          {
+            "fileName": "react/src/components/Input/Input.tsx",
+            "name": "InputProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "{ AddonBefore?: ReactNode; AddonAfter?: ReactNode; }"
+        }
       }
     }
   },
@@ -380,5 +399,440 @@
     "displayName": "InputProps",
     "methods": [],
     "props": {}
+  },
+  {
+    "tags": {},
+    "filePath": "src/components/Input/index.tsx",
+    "description": "Input is a wrapper for custom inputs providing the label, helperText and errors.",
+    "displayName": "useInput",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": {
+          "value": "wfp--input"
+        },
+        "description": "Specify an optional className to be applied to the <input> node",
+        "name": "className",
+        "parent": {
+          "fileName": "react/src/components/Input/useInput.tsx",
+          "name": "UseInputProps"
+        },
+        "declarations": [
+          {
+            "fileName": "react/src/components/Input/useInput.tsx",
+            "name": "UseInputProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "defaultValue": {
+        "defaultValue": null,
+        "description": "Optionally provide the default value of the <input>",
+        "name": "defaultValue",
+        "parent": {
+          "fileName": "react/src/components/Input/useInput.tsx",
+          "name": "UseInputProps"
+        },
+        "declarations": [
+          {
+            "fileName": "react/src/components/Input/useInput.tsx",
+            "name": "UseInputProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | number"
+        }
+      },
+      "disabled": {
+        "defaultValue": null,
+        "description": "Specify whether the <input> should be disabled",
+        "name": "disabled",
+        "parent": {
+          "fileName": "react/src/components/Input/useInput.tsx",
+          "name": "UseInputProps"
+        },
+        "declarations": [
+          {
+            "fileName": "react/src/components/Input/useInput.tsx",
+            "name": "UseInputProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "formItemClassName": {
+        "defaultValue": null,
+        "description": "Specify an optional className to be applied to the form-item node",
+        "name": "formItemClassName",
+        "parent": {
+          "fileName": "react/src/components/Input/useInput.tsx",
+          "name": "UseInputProps"
+        },
+        "declarations": [
+          {
+            "fileName": "react/src/components/Input/useInput.tsx",
+            "name": "UseInputProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "inputWrapperClassName": {
+        "defaultValue": null,
+        "description": "Specify an optional className to be applied to the input wrapper node",
+        "name": "inputWrapperClassName",
+        "parent": {
+          "fileName": "react/src/components/Input/useInput.tsx",
+          "name": "UseInputProps"
+        },
+        "declarations": [
+          {
+            "fileName": "react/src/components/Input/useInput.tsx",
+            "name": "UseInputProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "id": {
+        "defaultValue": null,
+        "description": "Specify a custom `id` for the <input>",
+        "name": "id",
+        "parent": {
+          "fileName": "react/src/components/Input/useInput.tsx",
+          "name": "UseInputProps"
+        },
+        "declarations": [
+          {
+            "fileName": "react/src/components/Input/useInput.tsx",
+            "name": "UseInputProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "labelText": {
+        "defaultValue": null,
+        "description": "Provide the text that will be read by a screen reader when visiting this\ncontrol",
+        "name": "labelText",
+        "parent": {
+          "fileName": "react/src/components/Input/useInput.tsx",
+          "name": "UseInputProps"
+        },
+        "declarations": [
+          {
+            "fileName": "react/src/components/Input/useInput.tsx",
+            "name": "UseInputProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "React.ReactNode"
+        }
+      },
+      "onChange": {
+        "defaultValue": {
+          "value": "() => {}"
+        },
+        "description": "Optionally provide an `onChange` handler that is called whenever <input>\nis updated",
+        "name": "onChange",
+        "parent": {
+          "fileName": "react/src/components/Input/useInput.tsx",
+          "name": "UseInputProps"
+        },
+        "declarations": [
+          {
+            "fileName": "react/src/components/Input/useInput.tsx",
+            "name": "UseInputProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "(event: React.ChangeEvent<HTMLInputElement>) => void"
+        }
+      },
+      "onClick": {
+        "defaultValue": {
+          "value": "() => {}"
+        },
+        "description": "Optionally provide an `onClick` handler that is called whenever the\n<input> is clicked",
+        "name": "onClick",
+        "parent": {
+          "fileName": "react/src/components/Input/useInput.tsx",
+          "name": "UseInputProps"
+        },
+        "declarations": [
+          {
+            "fileName": "react/src/components/Input/useInput.tsx",
+            "name": "UseInputProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "(event: React.MouseEvent<HTMLInputElement, MouseEvent>) => void"
+        }
+      },
+      "placeholder": {
+        "defaultValue": null,
+        "description": "Specify the placeholder attribute for the <input>",
+        "name": "placeholder",
+        "parent": {
+          "fileName": "react/src/components/Input/useInput.tsx",
+          "name": "UseInputProps"
+        },
+        "declarations": [
+          {
+            "fileName": "react/src/components/Input/useInput.tsx",
+            "name": "UseInputProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "type": {
+        "defaultValue": {
+          "value": "text"
+        },
+        "description": "Specify the type of the <input>",
+        "name": "type",
+        "parent": {
+          "fileName": "react/src/components/Input/useInput.tsx",
+          "name": "UseInputProps"
+        },
+        "declarations": [
+          {
+            "fileName": "react/src/components/Input/useInput.tsx",
+            "name": "UseInputProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "value": {
+        "defaultValue": null,
+        "description": "Specify the value of the <input>",
+        "name": "value",
+        "parent": {
+          "fileName": "react/src/components/Input/useInput.tsx",
+          "name": "UseInputProps"
+        },
+        "declarations": [
+          {
+            "fileName": "react/src/components/Input/useInput.tsx",
+            "name": "UseInputProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | number | object"
+        }
+      },
+      "hideLabel": {
+        "defaultValue": null,
+        "description": "Specify whether you want the underlying label to be visually hidden",
+        "name": "hideLabel",
+        "parent": {
+          "fileName": "react/src/components/Input/useInput.tsx",
+          "name": "UseInputProps"
+        },
+        "declarations": [
+          {
+            "fileName": "react/src/components/Input/useInput.tsx",
+            "name": "UseInputProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "invalid": {
+        "defaultValue": null,
+        "description": "Specify whether the control is currently invalid.\nEither a boolean in combination with `invalidText` or an `object`( eg. { message: \"Message\", …otherErrorProperties }) can be passed.",
+        "name": "invalid",
+        "parent": {
+          "fileName": "react/src/components/Input/useInput.tsx",
+          "name": "UseInputProps"
+        },
+        "declarations": [
+          {
+            "fileName": "react/src/components/Input/useInput.tsx",
+            "name": "UseInputProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean | object"
+        }
+      },
+      "invalidText": {
+        "defaultValue": null,
+        "description": "Provide the text that is displayed when the control is in an invalid state",
+        "name": "invalidText",
+        "parent": {
+          "fileName": "react/src/components/Input/useInput.tsx",
+          "name": "UseInputProps"
+        },
+        "declarations": [
+          {
+            "fileName": "react/src/components/Input/useInput.tsx",
+            "name": "UseInputProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "any"
+        }
+      },
+      "additional": {
+        "defaultValue": null,
+        "description": "Provide additional component that is used alongside the input for customization",
+        "name": "additional",
+        "parent": {
+          "fileName": "react/src/components/Input/useInput.tsx",
+          "name": "UseInputProps"
+        },
+        "declarations": [
+          {
+            "fileName": "react/src/components/Input/useInput.tsx",
+            "name": "UseInputProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "React.ReactNode"
+        }
+      },
+      "addonAfter": {
+        "defaultValue": null,
+        "description": "",
+        "name": "addonAfter",
+        "parent": {
+          "fileName": "react/src/components/Input/useInput.tsx",
+          "name": "UseInputProps"
+        },
+        "declarations": [
+          {
+            "fileName": "react/src/components/Input/useInput.tsx",
+            "name": "UseInputProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "React.ReactNode"
+        }
+      },
+      "helperText": {
+        "defaultValue": null,
+        "description": "Provide text that is used alongside the control label for additional help",
+        "name": "helperText",
+        "parent": {
+          "fileName": "react/src/components/Input/useInput.tsx",
+          "name": "UseInputProps"
+        },
+        "declarations": [
+          {
+            "fileName": "react/src/components/Input/useInput.tsx",
+            "name": "UseInputProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "React.ReactNode"
+        }
+      },
+      "light": {
+        "defaultValue": null,
+        "description": "`true` to use the light version.",
+        "name": "light",
+        "parent": {
+          "fileName": "react/src/components/Input/useInput.tsx",
+          "name": "UseInputProps"
+        },
+        "declarations": [
+          {
+            "fileName": "react/src/components/Input/useInput.tsx",
+            "name": "UseInputProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "readOnly": {
+        "defaultValue": null,
+        "description": "",
+        "name": "readOnly",
+        "parent": {
+          "fileName": "react/src/components/Input/useInput.tsx",
+          "name": "UseInputProps"
+        },
+        "declarations": [
+          {
+            "fileName": "react/src/components/Input/useInput.tsx",
+            "name": "UseInputProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "name": {
+        "defaultValue": null,
+        "description": "",
+        "name": "name",
+        "parent": {
+          "fileName": "react/src/components/Input/useInput.tsx",
+          "name": "UseInputProps"
+        },
+        "declarations": [
+          {
+            "fileName": "react/src/components/Input/useInput.tsx",
+            "name": "UseInputProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "components": {
+        "defaultValue": null,
+        "description": "",
+        "name": "components",
+        "parent": {
+          "fileName": "react/src/components/Input/useInput.tsx",
+          "name": "UseInputProps"
+        },
+        "declarations": [
+          {
+            "fileName": "react/src/components/Input/useInput.tsx",
+            "name": "UseInputProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "{ AddonAfter?: React.ReactNode; }"
+        }
+      }
+    }
   }
 ]

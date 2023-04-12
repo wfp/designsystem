@@ -6,6 +6,7 @@ import { config } from '@fortawesome/fontawesome-svg-core';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 import Head from 'next/head';
+import { UNCoreProvider } from '@un/react';
 
 config.autoAddCss = false;
 
@@ -29,7 +30,9 @@ const App = ({ Component, pageProps }: any) => {
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      <Component {...pageProps} />
+      <UNCoreProvider prefix="wfp">
+        <Component {...pageProps} />
+      </UNCoreProvider>
     </>
   );
 };

@@ -21,7 +21,7 @@
       //vertical-align: middle;
       white-space: nowrap;
 
-      a {
+      > a {
         color: $link-primary; // TODO change to $link_on_color token
         @include type-style('body-short-02');
         text-decoration: none;

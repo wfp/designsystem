@@ -10,7 +10,7 @@ export interface SkeletonTextProps {
   /**
    * the number of lines in a paragraph
    */
-  lineCount: number;
+  lineCount?: number;
   /**
    * width (in px or %) of single line of text or max-width of paragraph lines
    */
@@ -42,8 +42,8 @@ const SkeletonText: React.FC<SkeletonTextProps> = ({
 
   const widthNum = typeof width === 'string' ? parseInt(width, 10) : width;
 
-  const widthPx = width.includes('px');
-  const widthPercent = width.includes('%');
+  const widthPx = typeof width === 'string' && width.includes('px');
+  const widthPercent = typeof width === 'string' && width.includes('%');
 
   function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;

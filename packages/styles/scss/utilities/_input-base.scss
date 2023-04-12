@@ -3,6 +3,7 @@
 @use '../utilities/placeholder-colors' as *;
 @use '../utilities/focus-outline' as *;
 @use '../utilities/read-only' as *;
+@use '../type' as *;
 
 /// Adds placeholder text color
 /// @access public
@@ -14,6 +15,8 @@ $input-height: 40px;
 $input-border-radius: 0px;
 
 @mixin input-base {
+  @include font-family('sans');
+  @include type-style('input');
   height: $input-height;
   min-width: 10rem;
   padding: 0 $spacing-03;
@@ -51,7 +54,7 @@ $input-border-radius: 0px;
     border: $input-border;
   }
 
-  &:read-only {
+  /*&:read-only {
     @include read-only('border');
-  }
+  }*/
 }

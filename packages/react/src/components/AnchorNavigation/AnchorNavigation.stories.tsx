@@ -4,7 +4,7 @@ import AnchorNavigation from './AnchorNavigation';
 import Link from '../Link';
 
 export default {
-  title: 'Components/Navigations/AnchorNavigation',
+  title: 'Components/Navigation/AnchorNavigation',
   component: AnchorNavigation,
   parameters: {
     componentSubtitle: 'Component',

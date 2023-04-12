@@ -16,7 +16,7 @@ import Button from '../Button';
 import Link from '../Link';
 
 export default {
-  title: 'Components/Navigations/SubNavigation',
+  title: 'Components/Navigation/SubNavigation',
   component: SubNavigation,
   subcomponents: {
     SubNavigationHeader,

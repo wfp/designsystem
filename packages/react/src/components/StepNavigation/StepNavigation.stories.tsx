@@ -3,7 +3,7 @@ import StepNavigation from './StepNavigation';
 import StepNavigationItem from '../StepNavigationItem';
 
 export default {
-  title: 'Components/Navigations/StepNavigation',
+  title: 'Components/Navigation/StepNavigation',
   component: StepNavigation,
   subcomponents: { StepNavigationItem },
   parameters: {

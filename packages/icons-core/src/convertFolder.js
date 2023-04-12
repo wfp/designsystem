@@ -20,12 +20,6 @@ export async function convertFolder(
 
   console.log('files: ', files);
 
-  /*const results = await Promise.all(
-    filteredCalendarIntakeReminder.map(async (e) => {
-      return addMessages(e, agenda);
-    })
-  );*/
-
   await Promise.all(
     files.map(async (file) => {
       return convertFile(

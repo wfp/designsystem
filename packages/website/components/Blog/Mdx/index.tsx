@@ -12,8 +12,10 @@ import Storybook from './Storybook';
 import { CodeBlock, Pre } from './CodeBlockLive';
 import Typeset from './Typeset';
 import Spacing from './Typeset/Spacing';
+import ComponentsList from './ComponentsList';
 import { H1, H2, H3, H4, H5 } from './Headings';
 import IconList from './Icons/IconListNew';
+import PropTypes from '../../PropTypes';
 import {
   Button,
   MdxComponents,
@@ -48,11 +50,12 @@ const components = {
     console.log('ppppr', props);
     return <div {...props} />  */,
   code: code,
-
+  ComponentsList,
   Meta: Flex,
   Blockquote,
   BlockNotification,
   Button,
+  PropTypes,
   CodeBlock,
   IconList,
   Link,

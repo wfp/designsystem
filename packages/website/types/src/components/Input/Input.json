@@ -370,6 +370,25 @@
         "type": {
           "name": "ReactNode"
         }
+      },
+      "components": {
+        "defaultValue": null,
+        "description": "",
+        "name": "components",
+        "parent": {
+          "fileName": "src/components/Input/Input.tsx",
+          "name": "InputProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/Input/Input.tsx",
+            "name": "InputProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "{ AddonBefore?: ReactNode; AddonAfter?: ReactNode; }"
+        }
       }
     }
   }

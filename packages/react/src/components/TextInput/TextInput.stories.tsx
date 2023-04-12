@@ -1,5 +1,6 @@
 import React from 'react';
 import TextInput from '.';
+import reactHookFormDecorator from '../../../.storybook/reactHookFormDecorator';
 
 export default {
   title: 'Components/Forms/TextInput',
@@ -45,3 +46,14 @@ withDisabled.args = {
   labelText: 'Disabled labelText',
   disabled: true,
 };
+
+export const withReactHookForm = (args) => <TextInput {...args} />;
+
+withReactHookForm.args = {
+  name: 'inputname',
+  helperText: 'Optional helperText',
+  labelText: 'Disabled labelText',
+  disabled: true,
+};
+
+withReactHookForm.decorators = [reactHookFormDecorator];

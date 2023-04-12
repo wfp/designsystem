@@ -58,7 +58,7 @@
             "name": "ToggleProps"
           }
         ],
-        "required": true,
+        "required": false,
         "type": {
           "name": "string"
         }
@@ -77,7 +77,7 @@
             "name": "ToggleProps"
           }
         ],
-        "required": true,
+        "required": false,
         "type": {
           "name": "string"
         }
@@ -153,7 +153,7 @@
             "name": "ToggleProps"
           }
         ],
-        "required": true,
+        "required": false,
         "type": {
           "name": "string"
         }
@@ -172,7 +172,7 @@
             "name": "ToggleProps"
           }
         ],
-        "required": true,
+        "required": false,
         "type": {
           "name": "(event: ChangeEvent<HTMLInputElement>) => void"
         }
@@ -479,6 +479,25 @@
         "required": false,
         "type": {
           "name": "ReactNode"
+        }
+      },
+      "components": {
+        "defaultValue": null,
+        "description": "",
+        "name": "components",
+        "parent": {
+          "fileName": "react/src/components/Input/Input.tsx",
+          "name": "InputProps"
+        },
+        "declarations": [
+          {
+            "fileName": "react/src/components/Input/Input.tsx",
+            "name": "InputProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "{ AddonBefore?: ReactNode; AddonAfter?: ReactNode; }"
         }
       }
     }

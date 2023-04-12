@@ -2,7 +2,7 @@ import * as React from 'react';
 import type { PropsWithChildren } from 'react';
 import classNames from 'classnames';
 import useSettings from '../../hooks/useSettings';
-import { HeroKind } from '../../typesLegacyBB/utils';
+import { HeroKind } from '../../utils';
 /**
  * Hero are a convenient means of displaying content composed of different types of objects. It is a multi usage component which creates boxes that are usually teasing some kind of content. */
 type HeroProps = PropsWithChildren<{
@@ -52,7 +52,7 @@ const Hero: React.FC<HeroProps> = ({
   const content = (
     <React.Fragment>
       <div className={`${prefix}--photo-card__background`} style={style} />
-      {image && kind === 'related' && <img src={image} alt={title} />}
+      {image && kind === 'related' && <img src={image} /*TODO: alt={title}*/ />}
       <div className={`${prefix}--photo-card__info`}>
         <div>
           {(kind === 'landscape' || kind === 'hero') && (

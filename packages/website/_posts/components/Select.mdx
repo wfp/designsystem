@@ -3,7 +3,8 @@ category: 'Core'
 title: 'Select'
 excerpt: 'Select allows users to choose one option from a list of values.'
 coverImage: '../sample-image.jpg'
-slug: 'Components/form/Select'
+slug: 'Components/Form/Select'
+storybook: true
 mainComponent: 'Select'
 components: ['SelectItem', 'SelectItemGroup']
 defaultProps:
@@ -40,3 +41,37 @@ Use a dropdown list when the selected option is more important than the alternat
 - Avoid using `Select` for less then 3 entries. Try using a radio button instead.
 
 </DoNotUse>
+
+### react-hook-form example
+
+```jsx live reactHookForm
+<>
+  <Select
+    labelText="The uncontrolled Input"
+    helperText="Optional helperText"
+    {...register('inputname')}>
+    <SelectItem text="Option 1" value="1" />
+    <SelectItem text="Option 2" value="2" />
+    <SelectItem text="Option 3" value="3" />
+  </Select>
+
+  <Controller
+    name="inputnameB"
+    control={control}
+    render={({ field }) => {
+      return (
+        <Select
+          labelText="The controlled Input"
+          helperText="Optional helperText"
+          {...field}
+          onChange={(e) => field.onChange(e.target.value)}
+          value={field.value}>
+          <SelectItem text="Option 1" value="1" />
+          <SelectItem text="Option 2" value="2" />
+          <SelectItem text="Option 3" value="3" />
+        </Select>
+      );
+    }}
+  />
+</>
+```

@@ -4,6 +4,36 @@ title: 'Footer'
 excerpt: 'Links are typically used as a means of navigation either within the application, to a place outside, or to a resource.'
 coverImage: '../sample-image.jpg'
 slug: 'Components/Navigation/Footer'
+storybook: true
+previewScale: 0.4
+mainComponent: 'Footer'
+sampleCode: >
+  <Footer>
+       <div className="wfp--footer__info">
+         <div className="wfp--footer__info__item">
+           <p className="wfp--footer__label">A label</p>
+           <ul className="wfp--footer__list">
+             <li>
+               <Link href="http://www.wfp.org">First Link</Link>
+             </li>
+             <li>
+               <Link href="http://www.wfp.org">Second Link</Link>
+             </li>
+           </ul>
+         </div>
+         <div className="wfp--footer__info__item">
+           <p className="wfp--footer__label">Another label</p>
+           <ul className="wfp--footer__list">
+             <li>
+               <Link href="http://www.wfp.org">First Link</Link>
+             </li>
+             <li>
+               <Link href="http://www.wfp.org">Second Link</Link>
+             </li>
+           </ul>
+         </div>
+       </div>
+     </Footer>
 ---
 
 ## Usage
@@ -19,10 +49,63 @@ Use when you want to share information like contacts details, privacy policy, te
 
 The `Footer` component is not sectioning content and therefore shouldn't be used introduce a new section in the outline.
 
+### External footer
+
+```jsx live forceFullWidth
+import { FooterExternal, Link  } from "@un/react";
+
+<FooterExternal
+    metaContent="Via C. G. Viola 68 Parco dei Medici, 00148 Rome, Italy"
+    metaLinks={
+      <>
+        <FooterMetaLink href="hh.com">First legal link</FooterMetaLink>
+        <FooterMetaLink href="hh.com">Second legal link</FooterMetaLink>
+      </>
+    }
+    productName={<span>Service{' '}<br />{' '}Marketplace</span>
+    >
+    <>
+      <LinksColumn title="Title">
+        <li className="wfp--links-column-link">
+          <Link>First link</Link>
+        </li>
+        <li className="wfp--links-column-link">
+          <Link>Second link</Link>
+        </li>
+        <li className="wfp--links-column-link">
+          <Link>Third link</Link>
+        </li>
+        <li className="wfp--links-column-link">
+          <Link>Fourth link</Link>
+        </li>
+        <li className="wfp--links-column-link">
+          <Link>Fifth link</Link>
+        </li>
+      </LinksColumn>
+
+      <LinksColumn title="Title 2">
+        <li className="wfp--links-column-link">
+          <Link>First link 2</Link>
+        </li>
+        <li className="wfp--links-column-link">
+          <Link>Second link 2</Link>
+        </li>
+        <li className="wfp--links-column-link">
+          <Link>Third link 2</Link>
+        </li>
+        <li className="wfp--links-column-link">
+          <Link>Fourth link 2</Link>
+        </li>
+        <li className="wfp--links-column-link">
+          <Link>Fifth link 2</Link>
+        </li>
+      </LinksColumn>
+    </>
+  </FooterExternal>
+```
+
 ## Related
 
-[Link](?path=/docs/components-link--regular)
-
-[Form](?path=/docs/components-form--regular)
-
-[Button](?path=/docs/components-button--regular)
+- [Link](?path=/docs/components-link--regular)
+- [Form](?path=/docs/components-form--regular)
+- [Button](?path=/docs/components-button--regular)

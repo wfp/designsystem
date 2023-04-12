@@ -4,7 +4,7 @@ import {
   NotificationTextDetails,
   ToastNotification,
   InlineNotification,
-} from '../Notification';
+} from '.';
 
 import { shallow, mount } from 'enzyme';
 import { settings } from '../../globals/js';
@@ -19,14 +19,12 @@ describe('NotificationButton', () => {
       expect(wrapper.hasClass('some-class')).toBe(true);
     });
 
-
     describe('When notificationType equals "toast"', () => {
       it('button should have correct className by default', () => {
         expect(
           wrapper.hasClass(`${prefix}--toast-notification__close-button`)
         ).toBe(true);
       });
-
     });
 
     describe('When notificationType equals "inline"', () => {
@@ -36,7 +34,6 @@ describe('NotificationButton', () => {
           wrapper.hasClass(`${prefix}--inline-notification__close-button`)
         ).toBe(true);
       });
-
     });
   });
 });

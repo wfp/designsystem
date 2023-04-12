@@ -4,18 +4,29 @@ title: 'List'
 excerpt: 'Links are typically used as a means of navigation either within the application, to a place outside, or to a resource.'
 coverImage: '../sample-image.jpg'
 slug: 'Components/UI elements/List'
+storybook: true
 mainComponent: 'List'
 components: ['ListItem']
 defaultProps:
   kind: 'simple'
   colon: true
 sampleCode: >
-  <List PROPS_HERE>
+  <List PROPS_HERE >
     <ListItem title="Title">Option 1</ListItem>
     <ListItem title="Another Title">Option 2</ListItem>
     <ListItem title="One more Title">Option 3</ListItem>
   </List>
 ---
+
+<PropTypes mainComponent="List">
+  ```jsx
+  <List>
+    <ListItem title="Title">Option 1</ListItem>
+    <ListItem title="Another Title">Option 2</ListItem>
+    <ListItem title="One more Title">Option 3</ListItem>
+  </List>
+  ```
+</PropTypes>
 
 ## Usage
 

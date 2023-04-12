@@ -4,17 +4,14 @@
     "module": "es6",
     "moduleResolution": "node",
     "outDir": "./dist",
-
     "allowSyntheticDefaultImports": true,
     "declaration": true,
     "esModuleInterop": true,
-
     "lib": ["ES5", "ES2015", "ES2016", "DOM", "ESNext"],
     "types": ["node", "mdx"],
-
     "noImplicitAny": false,
     "noUnusedLocals": true,
-
+    "allowJs": true,
     "sourceMap": true,
     "strict": true,
     "target": "ES6"
@@ -28,7 +25,6 @@
     "node_modules",
     "dist",
     "src/typesLegacyBB",
-    "src/**/*.stories.tsx",
     "src/**/*.test.tsx",
     "src/**/*.test.ts"
   ]

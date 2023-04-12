@@ -1,5 +1,5 @@
 import React from 'react';
-import SelectItem from '../SelectItem';
+import SelectItem from '.';
 import { shallow } from 'enzyme';
 
 describe('SelectItem', () => {

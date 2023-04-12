@@ -1,5 +1,5 @@
 import React from 'react';
-import Value from '../Value';
+import Value from '.';
 import { shallow } from 'enzyme';
 
 describe('Value', () => {

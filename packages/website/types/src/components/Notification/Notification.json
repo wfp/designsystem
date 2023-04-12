@@ -1,0 +1,10 @@
+[
+  {
+    "tags": {},
+    "filePath": "src/components/Notification/Notification.tsx",
+    "description": "Notifications are messages that communicate information to the user. The two main types of notifications are toast notifications and inline notifications.",
+    "displayName": "NotificationActionButton",
+    "methods": [],
+    "props": {}
+  }
+]

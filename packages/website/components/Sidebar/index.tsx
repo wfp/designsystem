@@ -130,7 +130,13 @@ export default function SidebarWrapper({
     };
   });
 
+  console.log('post', post);
+
   const split = createPathTree(postSplit);
+
+  const splitSidebar = split.children.find(
+    (e) => e.name === post.slug.split('/')[0]
+  );
 
   return (
     <>
@@ -140,21 +146,21 @@ export default function SidebarWrapper({
         openGraph={{
           url: process.env.NEXT_PUBLIC_DOMAIN,
           title: post.title,
-          description: 'Digital Design System',
+          description: post.excerpt,
           images: [
             {
               url: `${process.env.NEXT_PUBLIC_DOMAIN}api/og?title=${post.title}`,
               alt: 'Foto',
             },
           ],
-          type: 'product',
+          type: 'website',
           site_name: process.env.NEXT_PUBLIC_DOMAIN,
         }}
       />
       <Wrapper className={styles.sidebarWrapper} pageWidth="lg">
         <div className={styles.sidebar}>
           <ul className={styles.sidebarList}>
-            <TreeBranch split={split} level={0} slug={post.slug} />
+            <TreeBranch split={splitSidebar} level={0} slug={post.slug} />
           </ul>
         </div>
 
@@ -165,13 +171,26 @@ export default function SidebarWrapper({
                 <BreadcrumbHome />
               </Link>
             </BreadcrumbItem>
-            {post.slug.split('/').map((s, i) => {
-              return (
-                <BreadcrumbItem key={i} href="#" disableLink>
-                  {s}
-                </BreadcrumbItem>
-              );
-            })}
+            {post.slug
+              .split('/')
+              .slice(0, -1)
+              .map((s, i) => {
+                const overviewLink = `${s}/Overview`;
+                if (posts.find((p) => p.slug.includes(overviewLink))) {
+                  return (
+                    <BreadcrumbItem key={i} href="#">
+                      <NextLink href={`${slugifyWithSlashes(overviewLink)}`}>
+                        {s}
+                      </NextLink>
+                    </BreadcrumbItem>
+                  );
+                }
+                return (
+                  <BreadcrumbItem key={i} href="#" disableLink>
+                    {s}
+                  </BreadcrumbItem>
+                );
+              })}
           </Breadcrumb>
 
           {post.subtitle && (
@@ -187,14 +206,7 @@ export default function SidebarWrapper({
             <MDXRemote {...post.mdxExcerptSource} components={components} />
           </div>
 
-          {post.mainComponent && (
-            <PropTypes
-              propTypes={propTypes}
-              sampleCode={post.sampleCode}
-              mainComponent={post.mainComponent}
-              defaultProps={post.defaultProps}
-            />
-          )}
+          {post.mainComponent && <PropTypes propTypes={propTypes} {...post} />}
 
           <MDXRemote {...post.mdxSource} components={components} />
 
@@ -208,7 +220,7 @@ export default function SidebarWrapper({
           </Link>
         </div>
         <div className={styles.sidebarAddition}>
-          <TableOfContent content={post.mdxToC} />
+          <TableOfContent headings={post.headings} />
           <References post={post} />
         </div>
       </Wrapper>

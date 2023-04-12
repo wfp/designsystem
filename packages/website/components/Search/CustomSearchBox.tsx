@@ -20,18 +20,18 @@ function SearchBox(props: any) {
   }, [props.open]);
 
   return (
-    <form action="" role="search">
-      <Search
-        id="algolia_search"
-        className={props.kind === 'main' ? styles.mainSearch : styles.search}
-        kind={props.kind}
-        placeholder="Search topic..."
-        /* onFocus={() => setFocus(true)}
+    //<form action="" role="search">
+    <Search
+      id="algolia_search"
+      className={props.kind === 'main' ? styles.mainSearch : styles.search}
+      kind={props.kind}
+      placeholder="Search topic..."
+      /* onFocus={() => setFocus(true)}
         onBlur={() => setFocus(false)}*/
-        ref={searchRef}
-        onChange={(i, e: any) => refine(e?.currentTarget?.value)}
-      />
-    </form>
+      ref={searchRef}
+      onChange={(e: any) => refine(e?.currentTarget?.value)}
+    />
+    // </form>
   );
 }
 

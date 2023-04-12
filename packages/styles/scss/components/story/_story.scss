@@ -297,6 +297,7 @@
     @include type-style('story-title');
     margin-bottom: $spacing-07;
     margin-left: -0.058em;
+    font-weight: 500;
   }
 
   .#{$prefix}--helper {

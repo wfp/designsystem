@@ -45,24 +45,20 @@
   }
 }
 
-.preview {
-  background: white;
+.previewInside {
   padding: 1em;
 }
 
-.showWrapper {
-  border-radius: 0 0 10px 10px;
-  .preview {
-    margin-top: 1em;
-    border: 1px solid $border-strong;
-    border-radius: 10px 10px 0 0;
+.smallPreview {
+  height: 100%;
+  .previewWrapper {
+    height: 100%;
   }
-
-  .previewWithSource {
-    border-radius: 10px 10px 0 0;
-    :global(.prism-code) {
-      border-radius: 0 0 10px 10px;
-    }
+  .previewInside {
+    height: 100%;
+  }
+  .preview {
+    height: 100%;
   }
 }
 
@@ -71,6 +67,60 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 10em;
+  }
+}
+
+.normalPreview {
+  .previewWrapper {
+    border: 1px solid $border-strong;
+    // margin-top: 1em;
+  }
+  .previewWithSource {
+    border-radius: 10px 10px 0 0;
+    :global(.prism-code) {
+      border-radius: 0 0 10px 10px;
+    }
+  }
+  .showWrapper {
+    border-radius: 0 0 10px 10px;
+  }
+  .previewWrapper {
+    background: $background-main;
+  }
+
+  &.center {
+    .preview {
+      min-height: 10em;
+    }
+  }
+}
+
+.fullWidth {
+  .previewWrapper {
+    position: relative;
+    &::after {
+      content: '';
+      display: block;
+      width: 5em;
+      bottom: 0;
+      position: absolute;
+      top: 0px;
+      right: 0;
+      border-radius: 0 10px 0 0;
+      pointer-events: none;
+      background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0) 0%,
+        rgb(246, 246, 246, 0.5) 100%
+      );
+      z-index: 100;
+      right: 0;
+    }
+  }
+  .previewInside {
+    overflow: auto;
+  }
+  .preview {
+    width: 1000px;
   }
 }

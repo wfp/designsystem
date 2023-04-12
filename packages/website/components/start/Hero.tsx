@@ -26,14 +26,15 @@ export default function Hero() {
         accessible, and robust design systems.
       </h2>
       <div className={styles.buttons}>
-        <Link href="./main">
-          <Button>Get started</Button>
+        <Link href="./posts/documentation/overview" legacyBehavior>
+          <Button href="./posts/documentation/overview">Get started</Button>
         </Link>
-        <Link href="./posts">
+        <Link href="./posts/components/overview" legacyBehavior>
           <Button
+            href="./posts/components/overview"
             kind="tertiary"
             icon={<FontAwesomeIcon icon={faArrowRight} />}>
-            More information
+            Components
           </Button>
         </Link>
       </div>

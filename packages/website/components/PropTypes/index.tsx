@@ -23,9 +23,13 @@ const clean = (obj) => {
 };*/
 
 export default function PropTypes({
-  defaultProps,
+  defaultProps = {},
   mainComponent,
-  sampleCode,
+  children,
+  components = [],
+  sampleCode: sampleCodeInput,
+  smallPreview,
+  previewScale,
   propTypes,
 }: any) {
   const [showAllProps, setShowAllProps] = useState(true);
@@ -34,8 +38,11 @@ export default function PropTypes({
     defaultValues: defaultProps,
   });
 
+  const sampleCode =
+    children?.props?.children?.props?.children || sampleCodeInput;
+
   //if (!propTypes?.[0]) return null;
-  const propList = propTypes[0]?.props;
+  const propList = propTypes?.[0]?.props;
 
   /*Object.entries(propList).forEach((prop) => {
     componentProps[prop.name] =
@@ -91,20 +98,23 @@ export default function PropTypes({
   };
 
   const componentProps = {};
-
-  console.log('propList', propList);
-  if (!propList) return null;
-  Object.values(propList).forEach(({ name, defaultValue }: any) => {
-    componentProps[name] = propValues[name] || defaultValue?.value;
-  });
+  if (propList) {
+    Object.values(propList).forEach(({ name, defaultValue }: any) => {
+      componentProps[name] = propValues[name] || defaultValue?.value;
+    });
+  }
 
   const MyComponent = unComponents[mainComponent];
+  if (!MyComponent) return null;
 
-  const propsAsList = showAllProps
-    ? Object.values(propList).filter((e: any) =>
-        e.description.includes('@design')
-      )
-    : Object.values(propList);
+  let propsAsList = [];
+  if (propList) {
+    propsAsList = showAllProps
+      ? Object.values(propList).filter((e: any) =>
+          e.description.includes('@design')
+        )
+      : Object.values(propList);
+  }
 
   let code = reactElementToJSXString(
     <MyComponent {...defaultProps} {...componentProps} />,
@@ -114,7 +124,7 @@ export default function PropTypes({
   if (sampleCode) {
     const codeFiltered = reactElementToJSXString(
       <MyComponent
-        {...defaultProps}
+        // {...defaultProps}
         {...componentProps}
         // eslint-disable-next-line react/no-children-prop
         children={undefined}
@@ -124,22 +134,45 @@ export default function PropTypes({
       .replace(`<${mainComponent}`, ``)
       .replace(`/>`, ``);
 
-    console.log('codeFiltered', codeFiltered);
-
     code = sampleCode.replace('PROPS_HERE', codeFiltered);
   }
-  const componentList = [mainComponent].join(', ');
+  const componentList = [mainComponent, ...components].join(', ');
   code = `import { ${componentList} } from "@un/react";
 
 ${code}`;
 
+  if (smallPreview) {
+    return (
+      <div
+        className={styles.smallPreviewWrapper}
+        style={{
+          width: `${(1 / previewScale) * 100}%`,
+          left: `-${(1 / previewScale) * 50 - 50}%`,
+          transform: ` scale(${previewScale})`,
+        }}>
+        <CodeBlockLive
+          source={code}
+          live
+          hideWrapper
+          center
+          smallPreview
+          showEditor={!showAllProps}
+        />
+      </div>
+    );
+  }
+
   return (
-    <div className={styles.preview}>
+    <div
+      className={`${styles.preview} ${
+        smallPreview ? styles.smallPreview : styles.normalPreview
+      }`}>
       <CodeBlockLive
         source={code}
         live
         hideWrapper
         center
+        smallPreview={smallPreview}
         showEditor={!showAllProps}
       />
       {/*
@@ -147,53 +180,56 @@ ${code}`;
           <MyComponent {...defaultProps} {...componentProps} />
         </div>
   )}*/}
-      <Button
-        className={styles.showAllPropsButton}
-        onClick={() => setShowAllProps(!showAllProps)}>
-        {showAllProps ? 'Show' : 'Hide'} all props
-      </Button>
-
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <Table className={styles.propTable}>
-          {!showAllProps && (
-            <thead>
-              <tr>
-                <th>Prop</th>
-                <th>Type</th>
-                <th>Default</th>
-                <th>Description</th>
-                <th>Value</th>
-              </tr>
-            </thead>
-          )}
-          <tbody>
-            {propsAsList.map((prop: any) => (
-              <tr key={prop.name}>
-                {!showAllProps && <td>{prop.name}</td>}
-                {!showAllProps && (
+      {!smallPreview && (
+        <Button
+          className={styles.showAllPropsButton}
+          onClick={() => setShowAllProps(!showAllProps)}>
+          {showAllProps ? 'Show' : 'Hide'} all props
+        </Button>
+      )}
+      {!smallPreview && (
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <Table className={styles.propTable}>
+            {!showAllProps && (
+              <thead>
+                <tr>
+                  <th>Prop</th>
+                  <th>Type</th>
+                  <th>Default</th>
+                  <th>Description</th>
+                  <th>Value</th>
+                </tr>
+              </thead>
+            )}
+            <tbody>
+              {propsAsList.map((prop: any) => (
+                <tr key={prop.name}>
+                  {!showAllProps && <td>{prop.name}</td>}
+                  {!showAllProps && (
+                    <td>
+                      <Text kind="code">{prop.type.name}</Text>
+                    </td>
+                  )}
+                  {!showAllProps && (
+                    <td>{prop.defaultValue && prop.defaultValue.value}</td>
+                  )}
                   <td>
-                    <Text kind="code">{prop.type.name}</Text>
-                  </td>
-                )}
-                {!showAllProps && (
-                  <td>{prop.defaultValue && prop.defaultValue.value}</td>
-                )}
-                <td>
-                  {showAllProps && (
-                    <h3 className={styles.propTitle}>{prop.name}</h3>
-                  )}
-                  {prop.description.replace('@design', '')}
+                    {showAllProps && (
+                      <h3 className={styles.propTitle}>{prop.name}</h3>
+                    )}
+                    {prop.description.replace('@design', '')}
 
-                  {prop.defaultValue && (
-                    <div>default: {prop.defaultValue.value}</div>
-                  )}
-                </td>
-                <td>{renderInput(prop)}</td>
-              </tr>
-            ))}
-          </tbody>
-        </Table>
-      </form>
+                    {prop.defaultValue && (
+                      <div>default: {prop.defaultValue.value}</div>
+                    )}
+                  </td>
+                  <td>{renderInput(prop)}</td>
+                </tr>
+              ))}
+            </tbody>
+          </Table>
+        </form>
+      )}
     </div>
   );
 }

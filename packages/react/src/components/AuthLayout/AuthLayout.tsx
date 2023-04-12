@@ -38,9 +38,7 @@ const AuthLayout: React.FC<AuthLayoutProps> = ({
   );
 };
 
-type BackgroundContentProps = PropsWithChildren<{
-  className?: string;
-}>;
+type BackgroundContentProps = React.ComponentPropsWithRef<'div'>;
 
 const BackgroundContent: React.FC<BackgroundContentProps> = ({
   children,

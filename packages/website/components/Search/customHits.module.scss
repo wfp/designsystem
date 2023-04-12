@@ -48,3 +48,6 @@
     background: $layer-primary;
   }
 }
+.hit:focus {
+  background: $interactive;
+}

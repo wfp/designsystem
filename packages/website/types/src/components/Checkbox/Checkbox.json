@@ -100,7 +100,7 @@
         ],
         "required": false,
         "type": {
-          "name": "(event: ChangeEvent<HTMLInputElement>, checked: boolean, customId: string) => void"
+          "name": "(event: ChangeEvent<HTMLInputElement>, checked?: boolean, customId?: string) => void"
         }
       }
     }

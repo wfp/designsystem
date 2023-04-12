@@ -1,45 +1,30 @@
 import React, { useState, useRef, useEffect } from 'react';
 import classNames from 'classnames';
 import useSettings from '../../hooks/useSettings';
-import Input, { InputProps } from '../Input';
+import Input, { InputProps, useInput } from '../Input';
 import TextInput from '../TextInput';
+import { UseInputProps } from '../Input/useInput';
 
 /** Sliders provide a visual indication of adjustable content, where the user can move the handle along a horizontal track to increase or decrease the value. */
 
-interface SliderProps
-  extends InputProps,
-    React.InputHTMLAttributes<HTMLInputElement> {
-  hideTextInput?: boolean;
+interface SliderProps extends InputProps, React.ComponentPropsWithRef<'input'> {
   formItemClassName?: string;
   disabled?: boolean;
   hideLabel?: boolean;
-  id: string;
-  labelText: React.ReactNode | string;
   min: number;
   minLabel?: string;
   max: number;
   maxLabel?: string;
   formatLabel?: () => void;
-  onChange?: (
-    value: number,
-    event: React.ChangeEvent<HTMLInputElement>
-  ) => void;
-  onClick?: () => void;
   name?: string;
   inputType?: string;
   ariaLabelInput?: string;
   step?: number;
   value?: number | '';
+  hideTextInput?: boolean;
   // eslint-disable-next-line @typescript-eslint/ban-types
-  invalid?: {} | boolean;
-  invalidText?: string;
-  additional?: React.ReactNode;
-  helperText?: React.ReactNode;
-  allowEmpty?: boolean;
   fullWidth?: boolean;
-  className?: string;
   hideControls?: boolean;
-  inputRef?: React.RefObject<HTMLInputElement>;
 }
 
 const defaultFormatLabel = (value, label) => {
@@ -89,13 +74,13 @@ const Slider: React.FC<SliderProps> = React.forwardRef((props, ref) => {
       evt.imaginaryTarget = _inputRef;
       if (evt.target.value > max) {
         setValue(max);
-        onChange(max, evt);
+        onChange(/*max, */ evt);
       } /* else if (evt.target.value < min) {
         setValue(evt.target.value);
         onChange(parseFloat(min), evt);
       }*/ else {
         setValue(evt.target.value);
-        onChange(parseFloat(evt.target.value), evt);
+        onChange(/*parseFloat(evt.target.value), */ evt);
       }
     }
   };
@@ -142,8 +127,12 @@ const Slider: React.FC<SliderProps> = React.forwardRef((props, ref) => {
   );
 
   const valueMinimal = value && value < min ? min : value;
+
+  const useInputProps = props as UseInputProps;
+  const input = useInput(useInputProps);
+
   return (
-    <Input {...props} formItemClassName={numberInputClasses}>
+    <Input {...input.wrapperProps} formItemClassName={numberInputClasses}>
       <div className={sliderContainerClasses}>
         <span className={`${prefix}--slider__range-label`}>
           {formatLabel(min, minLabel)}
@@ -175,7 +164,6 @@ const Slider: React.FC<SliderProps> = React.forwardRef((props, ref) => {
             className={inputClasses}
             value={value}
             onChange={handleChange}
-            labelText=""
             aria-label={ariaLabelInput}
           />
         )}

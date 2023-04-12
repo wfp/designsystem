@@ -22,7 +22,7 @@ type StepNavigationItemProps = PropsWithChildren<{
   role?: string;
   selectedPage?: number;
   page?: number;
-  status: string;
+  status?: string;
   renderAnchor?: (p: object) => {};
   onClick?: (e: object) => {};
   handleTabClick?: (e?: any, index?: number, label?: string) => {};
@@ -69,7 +69,7 @@ const StepNavigationItem: React.FC<StepNavigationItemProps> = ({
     summary: { icon: Menu },
   };
 
-  const Icon: any = icon[status]?.icon ?? null;
+  const Icon = status ? icon[status]?.icon : null;
   return (
     <li
       tabIndex={-1}

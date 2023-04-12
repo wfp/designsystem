@@ -1,5 +1,5 @@
 import React from 'react';
-import Form from '../Form';
+import Form from '.';
 import { shallow, mount } from 'enzyme';
 
 describe('Form', () => {

@@ -1,9 +1,9 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable jsx-a11y/href-no-hash */
 import React from 'react';
-import Select from '../Select';
+import Select from '.';
 import SelectItem from '../SelectItem';
-import SelectSkeleton from '../Select/Select.Skeleton';
+import SelectSkeleton from './Select.Skeleton';
 import { mount, shallow } from 'enzyme';
 import { CaretDown } from '@un/icons-react';
 

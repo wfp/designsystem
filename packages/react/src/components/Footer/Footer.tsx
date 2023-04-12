@@ -2,7 +2,7 @@ import * as React from 'react';
 import classNames from 'classnames';
 import Link from '../Link';
 import Wrapper from '../Wrapper';
-import { ScreenSize } from '../../typesLegacyBB/utils';
+import { ScreenSize } from '../../utils';
 import {
   WfpLogoStandardBlackEn,
   WfpLogoVerticalEn,

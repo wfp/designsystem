@@ -3,12 +3,11 @@ import * as React from 'react';
 import classNames from 'classnames';
 import useSettings from '../../hooks/useSettings';
 import Input, { InputProps, useInput } from '../Input';
+import { UseInputProps } from '../Input/useInput';
 
 /** A toggle is used to quickly switch between two possible states. They are commonly used for “on/off” switches */
 
-interface ToggleProps
-  extends InputProps,
-    React.InputHTMLAttributes<HTMLInputElement> {
+interface ToggleProps extends InputProps, React.ComponentPropsWithRef<'input'> {
   /**
    * Specify whether the toggle should be on by default
    */
@@ -17,11 +16,11 @@ interface ToggleProps
   /**
    * Specify the label for the "off" position
    */
-  labelA: string;
+  labelA?: string;
   /**
    * Specify the label for the "on" position
    */
-  labelB: string;
+  labelB?: string;
   /**
    * Provide an optional hook that is called when the control is toggled
    */
@@ -38,8 +37,8 @@ interface ToggleProps
   /**
    * Provide an name that unique represents the underlying `input`
    */
-  name: string;
-  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  name?: string;
+  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 export type Ref = HTMLTextAreaElement;
@@ -74,14 +73,17 @@ const Toggle: React.FC<ToggleProps> = React.forwardRef((props, ref) => {
   // }
 
   const htmlFor = id ? id : other.name;
+  const useInputProps = props as UseInputProps;
 
-  const inputProps = useInput(props);
+  const input = useInput(useInputProps);
+
+  const otherInputProps = other as React.ComponentPropsWithRef<'input'>;
 
   return (
     <Input className={wrapperClasses} {...props}>
       <input
-        {...other}
-        {...inputProps}
+        {...otherInputProps}
+        {...input.inputProps}
         //checked={toggled}
         defaultChecked={defaultToggled}
         type="checkbox"

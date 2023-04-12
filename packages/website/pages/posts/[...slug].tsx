@@ -12,6 +12,14 @@ import rehypeToC from './rehypeToC';
 import remarkGfm from 'remark-gfm';
 import slugify from 'slugify';
 import remarkMdxCodeMeta from 'remark-mdx-code-meta';
+import rehypeComponentsList from './rehypeComponentsList';
+import remarkHeadings from '@vcarl/remark-headings';
+
+//import remarkHeadings from './remarkHeadings';
+
+import { unified } from 'unified';
+import remarkParse from 'remark-parse';
+import remarkStringify from 'remark-stringify';
 
 interface Props {
   post?: {
@@ -32,6 +40,7 @@ export default function Post({ post, posts, preview, propTypes }: Props) {
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />;
   }
+
   return (
     <Layout preview={preview}>
       {router.isFallback ? (
@@ -59,9 +68,13 @@ export async function getStaticProps({ params }) {
     'author',
     'ogImage',
     'coverImage',
+    'previewScale',
+    'mainComponent',
+    'components',
+    'defaultProps',
+    'sampleCode',
   ]);
 
-  console.log('params.slug', params.slug);
   const slugs = await getPostSlugs();
   const foundSlug = params.slug
     ? slugs.find(
@@ -85,6 +98,7 @@ export async function getStaticProps({ params }) {
         'ogImage',
         'coverImage',
         'mainComponent',
+        'components',
         'defaultProps',
         'sampleCode',
         'excerpt',
@@ -103,6 +117,7 @@ export async function getStaticProps({ params }) {
       rehypePlugins: [
         rehypeCode,
         rehypeFigmaImage,
+        [rehypeComponentsList, posts],
         [
           rehypeImgSize,
           {
@@ -112,6 +127,13 @@ export async function getStaticProps({ params }) {
       ],
     },
   });
+
+  const processor = unified()
+    .use(remarkParse)
+    .use(remarkStringify)
+    .use(remarkHeadings);
+
+  const vfile = await processor.process(post.content);
 
   const mdxToC = await serialize(post.content, {
     //components,
@@ -129,13 +151,8 @@ export async function getStaticProps({ params }) {
   if (post.mainComponent) {
     // eslint-disable-next-line @typescript-eslint/no-var-requires
     const file = require(`../../types/src/components/${post.mainComponent}/${post.mainComponent}.json`);
-
     propTypes = file;
-
-    console.log('propTypes', file);
   }
-
-  console.log('post', post);
 
   return {
     props: {
@@ -143,6 +160,7 @@ export async function getStaticProps({ params }) {
       posts,
       post: {
         ...post,
+        headings: vfile.data.headings,
         content,
         mdxSource,
         mdxToC,

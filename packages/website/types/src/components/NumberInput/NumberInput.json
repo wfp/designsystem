@@ -82,25 +82,6 @@
           "name": "boolean"
         }
       },
-      "className": {
-        "defaultValue": null,
-        "description": "",
-        "name": "className",
-        "parent": {
-          "fileName": "src/components/NumberInput/NumberInput.tsx",
-          "name": "NumberInputProps"
-        },
-        "declarations": [
-          {
-            "fileName": "src/components/NumberInput/NumberInput.tsx",
-            "name": "NumberInputProps"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "string"
-        }
-      },
       "disabled": {
         "defaultValue": null,
         "description": "",
@@ -213,25 +194,6 @@
         "required": false,
         "type": {
           "name": "boolean"
-        }
-      },
-      "inputRef": {
-        "defaultValue": null,
-        "description": "",
-        "name": "inputRef",
-        "parent": {
-          "fileName": "src/components/NumberInput/NumberInput.tsx",
-          "name": "NumberInputProps"
-        },
-        "declarations": [
-          {
-            "fileName": "src/components/NumberInput/NumberInput.tsx",
-            "name": "NumberInputProps"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "RefObject<HTMLInputElement>"
         }
       },
       "pattern": {
@@ -555,6 +517,25 @@
         "required": false,
         "type": {
           "name": "ReactNode"
+        }
+      },
+      "components": {
+        "defaultValue": null,
+        "description": "",
+        "name": "components",
+        "parent": {
+          "fileName": "react/src/components/Input/Input.tsx",
+          "name": "InputProps"
+        },
+        "declarations": [
+          {
+            "fileName": "react/src/components/Input/Input.tsx",
+            "name": "InputProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "{ AddonBefore?: ReactNode; AddonAfter?: ReactNode; }"
         }
       }
     }

@@ -6,14 +6,41 @@
     "displayName": "List",
     "methods": [],
     "props": {
+      "small": {
+        "defaultValue": null,
+        "description": "",
+        "name": "small",
+        "parent": {
+          "fileName": "src/components/List/List.tsx",
+          "name": "ListBaseProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/List/List.tsx",
+            "name": "ListBaseProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
       "className": {
         "defaultValue": null,
         "description": "",
         "name": "className",
+        "parent": {
+          "fileName": "src/components/List/List.tsx",
+          "name": "ListBaseProps"
+        },
         "declarations": [
           {
             "fileName": "src/components/List/List.tsx",
-            "name": "TypeLiteral"
+            "name": "ListBaseProps"
+          },
+          {
+            "fileName": "un-core-v1/node_modules/@types/react/index.d.ts",
+            "name": "HTMLAttributes"
           }
         ],
         "required": false,
@@ -25,10 +52,14 @@
         "defaultValue": null,
         "description": "",
         "name": "colon",
+        "parent": {
+          "fileName": "src/components/List/List.tsx",
+          "name": "ListBaseProps"
+        },
         "declarations": [
           {
             "fileName": "src/components/List/List.tsx",
-            "name": "TypeLiteral"
+            "name": "ListBaseProps"
           }
         ],
         "required": false,
@@ -40,30 +71,19 @@
         "defaultValue": null,
         "description": "",
         "name": "kind",
+        "parent": {
+          "fileName": "src/components/List/List.tsx",
+          "name": "ListBaseProps"
+        },
         "declarations": [
           {
             "fileName": "src/components/List/List.tsx",
-            "name": "TypeLiteral"
+            "name": "ListBaseProps"
           }
         ],
         "required": false,
         "type": {
-          "name": "\"unstyled\" | \"simple-inline\" | \"simple\" | \"details\" | \"unordered\" | \"ordered\" | \"tooltip\" | \"bullets\""
-        }
-      },
-      "small": {
-        "defaultValue": null,
-        "description": "",
-        "name": "small",
-        "declarations": [
-          {
-            "fileName": "src/components/List/List.tsx",
-            "name": "TypeLiteral"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "boolean"
+          "name": "\"ordered\" | \"details\" | \"tooltip\" | \"unstyled\" | \"simple-inline\" | \"simple\" | \"unordered\" | \"bullets\""
         }
       }
     }

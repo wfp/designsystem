@@ -4,26 +4,28 @@ export function svgConfig() {
     replaceAttrValues: {
       '#000000': 'currentColor',
       '#000': 'currentColor',
+      //'#CCC': 'currentColor',
       //'url(#a)': 'undefined',
     },
-    /*svgoConfig: {
+    svgoConfig: {
       plugins: [
         {
           name: 'preset-default',
           params: {
             overrides: {
               // customize default plugin options
-              inlineStyles: {
+              /*inlineStyles: {
                 onlyMatchedOnce: false,
               },
               removeDoctype: false,
-              convertColors: false,
+              convertColors: false,*/
+              removeUnknownsAndDefaults: false,
               removeViewBox: false,
             },
           },
         },
       ],
-    },*/
+    },
     icon: true,
   };
 }

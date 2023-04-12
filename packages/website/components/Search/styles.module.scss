@@ -74,3 +74,21 @@
     padding-right: 0;
   }
 }
+
+.searchShortcuts {
+  position: absolute;
+  top: 0;
+  right: 0.3em;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  > span {
+    color: rgba(#000, 0.8);
+    background: rgba(#000, 0.05);
+    border-radius: 3px;
+    padding: 0.3em;
+    width: 1.6em;
+    text-align: center;
+    margin-left: 0.3em;
+  }
+}

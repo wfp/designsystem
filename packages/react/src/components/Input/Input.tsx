@@ -2,7 +2,7 @@ import * as React from 'react';
 import type { PropsWithChildren } from 'react';
 import classNames from 'classnames';
 import useSettings from '../../hooks/useSettings';
-import FormItem from '../FormItem';
+import FormItem from '../FormItem/FormItem';
 import { WarningSolid } from '@un/icons-react';
 import * as HookForm from 'react-hook-form';
 
@@ -71,15 +71,40 @@ export interface InputProps {
   inline?: boolean;
   addonBefore?: string | React.ReactNode;
   addonAfter?: string | React.ReactNode;
+  components?: { AddonBefore?: React.ReactNode; AddonAfter?: React.ReactNode };
 }
 
-interface InputPropsI extends InputProps {
+interface InputPropsI extends InputProps, React.ComponentPropsWithRef<'div'> {
   /**
    * Provide a custom className that is applied directly to the underlying
    * &lt;textarea&gt; node
    */
   children?: React.ReactNode;
 }
+
+interface AddonBeforeProps {
+  addonBefore?: React.ReactNode;
+  prefix?: string;
+}
+
+interface AddonAfterProps {
+  addonAfter?: React.ReactNode;
+  prefix?: string;
+}
+
+const AddonBefore: React.FC<AddonBeforeProps> = ({ addonBefore, prefix }) => {
+  if (addonBefore) {
+    return <div className={`${prefix}--input-addon-before`}>{addonBefore}</div>;
+  }
+  return null;
+};
+
+const AddonAfter: React.FC<AddonAfterProps> = ({ addonAfter, prefix }) => {
+  if (addonAfter) {
+    return <div className={`${prefix}--input-addon-after`}>{addonAfter}</div>;
+  }
+  return null;
+};
 
 /**
  * Input is a wrapper for custom inputs providing the label, helperText and errors. */
@@ -89,28 +114,29 @@ const Input: React.FC<PropsWithChildren<InputPropsI>> = ({
   addonAfter,
   labelText,
   children,
-  className,
+  components: componentsOverride = {},
+  //className,
   // iconDescription,
   id,
   formItemClassName,
   inputWrapperClassName,
-  placeholder,
-  type,
-  onChange,
-  onClick,
+  //placeholder,
+  //type,
+  //onChange,
+  //onClick,
   hideLabel,
   name,
   invalid,
   invalidText,
   helperText,
-  light,
+  //light,
   required,
   ...other
 }) => {
   const { prefix } = useSettings();
 
   const calculatedId = id ? id : name;
-  const inputProps = {
+  /* const inputProps = {
     id: calculatedId,
     onChange: (evt) => {
       if (!other.disabled && !other.readOnly) {
@@ -124,15 +150,15 @@ const Input: React.FC<PropsWithChildren<InputPropsI>> = ({
     },
     placeholder,
     type,
-  };
+  };*/
 
   const errorId = calculatedId + '-error-msg';
 
-  const inputClasses = classNames(`${prefix}--input`, className, {
+  /*const inputClasses = classNames(`${prefix}--input`, className, {
     [`${prefix}--input--light`]: light,
     [`${prefix}--input--invalid`]: invalid, // legacy className
   });
-
+*/
   const labelClasses = classNames(`${prefix}--label`, {
     [`${prefix}--visually-hidden`]: hideLabel || !labelText,
     [`${prefix}--label--disabled`]: other.disabled,
@@ -172,7 +198,7 @@ const Input: React.FC<PropsWithChildren<InputPropsI>> = ({
     </div>
   ) : null;
 
-  const elementProps = invalid
+  /*const elementProps = invalid
     ? {
         ...other,
         ...inputProps,
@@ -186,10 +212,16 @@ const Input: React.FC<PropsWithChildren<InputPropsI>> = ({
         ...inputProps,
         className: inputClasses,
       };
-
+*/
   const helper = helperText ? (
     <div className={helperTextClasses}>{helperText}</div>
   ) : null;
+
+  const components = { AddonAfter, AddonBefore, ...componentsOverride };
+  const AddOnAfter = components.AddonAfter as React.FC<AddonAfterProps>;
+  const AddOnBefore = components.AddonBefore as React.FC<AddonBeforeProps>;
+
+  console.log('componentsOverride', componentsOverride);
 
   return (
     <FormItem className={formItemClassName} inline={other.inline}>
@@ -197,13 +229,9 @@ const Input: React.FC<PropsWithChildren<InputPropsI>> = ({
       {helper}
       {additional}
       <div className={inputWrapperClasses}>
-        {addonBefore && (
-          <div className={`${prefix}--input-addon-before`}>{addonBefore}</div>
-        )}
-        {typeof children === 'function' ? children(elementProps) : children}
-        {addonAfter && (
-          <div className={`${prefix}--input-addon-after`}>{addonAfter}</div>
-        )}
+        <AddOnBefore addonBefore={addonBefore} prefix={prefix} />
+        {/*typeof children === 'function' ? children(elementProps) :*/ children}
+        <AddOnAfter addonAfter={addonAfter} prefix={prefix} />
       </div>
       {error}
     </FormItem>

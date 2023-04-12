@@ -5,7 +5,19 @@ export const config = {
   runtime: 'edge',
 };
 
-export default function handler(req: NextRequest) {
+// Make sure the font exists in the specified path:
+const font = fetch(
+  new URL('../../assets/fonts/OpenSans-SemiBold.ttf', import.meta.url)
+).then((res) => res.arrayBuffer());
+
+const fontLight = fetch(
+  new URL('../../assets/fonts/OpenSans-Light.ttf', import.meta.url)
+).then((res) => res.arrayBuffer());
+
+export default async function handler(req: NextRequest) {
+  const fontData = await font;
+  const fontDataLight = await fontLight;
+
   try {
     const { searchParams } = new URL(req.url);
 
@@ -19,7 +31,7 @@ export default function handler(req: NextRequest) {
       (
         <div
           style={{
-            backgroundColor: 'black',
+            backgroundColor: '#0b77c2',
             backgroundSize: '150px 150px',
             height: '100%',
             width: '100%',
@@ -37,18 +49,19 @@ export default function handler(req: NextRequest) {
               justifyContent: 'center',
               justifyItems: 'center',
             }}>
-            <img
+            {/*<img
               alt="Vercel"
               height={200}
               src="data:image/svg+xml,%3Csvg width='116' height='100' fill='white' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M57.5 0L115 100H0L57.5 0z' /%3E%3C/svg%3E"
               style={{ margin: '0 30px' }}
               width={232}
-            />
+        />*/}
           </div>
           <div
             style={{
-              fontSize: 60,
+              fontSize: 110,
               fontStyle: 'normal',
+              fontFamily: 'OpenSansLight',
               letterSpacing: '-0.025em',
               color: 'white',
               marginTop: 30,
@@ -58,9 +71,35 @@ export default function handler(req: NextRequest) {
             }}>
             {title}
           </div>
+          <div
+            style={{
+              fontSize: 50,
+              fontStyle: 'bold',
+              fontFamily: 'OpenSans',
+              letterSpacing: '-0.025em',
+              color: 'white',
+              marginTop: 30,
+              padding: '0 120px',
+              lineHeight: 1.4,
+              whiteSpace: 'pre-wrap',
+            }}>
+            WFP
+          </div>
         </div>
       ),
       {
+        fonts: [
+          {
+            name: 'OpenSans',
+            data: fontData,
+            style: 'normal',
+          },
+          {
+            name: 'OpenSansLight',
+            data: fontDataLight,
+            style: 'normal',
+          },
+        ],
         width: 1200,
         height: 630,
       }

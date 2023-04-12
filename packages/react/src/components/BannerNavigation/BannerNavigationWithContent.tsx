@@ -14,11 +14,6 @@ const BannerNavigationWithContent: React.FC<
 > = ({ searchOnChange, search, ...other }) => (
   <BannerNavigation {...other}>
     <BannerNavigationItem>
-      <Link href="https://newgo.wfp.org" target="_blank">
-        WFPgo
-      </Link>
-    </BannerNavigationItem>
-    <BannerNavigationItem>
       <Link href="http://communities.wfp.org" target="_blank">
         Communities
       </Link>
@@ -29,7 +24,7 @@ const BannerNavigationWithContent: React.FC<
       </Link>
     </BannerNavigationItem>
     <BannerNavigationItem>
-      <Link href="https://go.docs.wfp.org" target="_blank">
+      <Link href="https://newgo.docs.wfp.org" target="_blank">
         GoDocs
       </Link>
     </BannerNavigationItem>
@@ -51,6 +46,11 @@ const BannerNavigationWithContent: React.FC<
     <BannerNavigationItem>
       <Link href="https://selfservice.go.wfp.org" target="_blank">
         Self-Service
+      </Link>
+    </BannerNavigationItem>
+    <BannerNavigationItem>
+      <Link href="https://erpapps.wfp.org/fiori" target="_blank">
+        WeTravel
       </Link>
     </BannerNavigationItem>
     <BannerNavigationItem>

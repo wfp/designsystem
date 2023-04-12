@@ -6,6 +6,9 @@ import React from 'react';
 import styles from './tableOfContent.module.scss';
 
 export default function References({ post }: any) {
+  '?path=/story/components-navigations-bannernavigation';
+
+  console.log('post', post);
   if (!post.figma && !post.storybook && !post.github) return null;
   return (
     <div className={styles.tableOfContent}>
@@ -28,7 +31,13 @@ export default function References({ post }: any) {
         )}
         {post.storybook && (
           <ListItem>
-            <Link href={post.storybook} target="_blank">
+            <Link
+              href={`http://localhost:9001/?path=/story/${
+                post.storybook == true
+                  ? post.slug.replace(/[/]/g, '-')
+                  : post.storybook
+              }`}
+              target="_blank">
               Storybook{' '}
               <FontAwesomeIcon icon={faCode} className={styles.storybook} />
             </Link>

@@ -1,8 +1,9 @@
 import React, { useState, useRef, useEffect } from 'react';
 import classNames from 'classnames';
 import useSettings from '../../hooks/useSettings';
-import Input, { InputProps } from '../Input';
+import Input, { InputProps, useInput } from '../Input';
 import { Search as SearchIcon, Close } from '@un/icons-react';
+import { UseInputProps } from '../Input/useInput';
 
 /** Search enables users to specify a word or a phrase to find relevant pieces of content without the use of navigation. */
 
@@ -44,7 +45,7 @@ const Search: React.FC<SearchProps> = React.forwardRef((props, ref) => {
     className,
     closeButtonLabelText,
     disabled,
-    id,
+    // id,
     hideLabel,
     hideControls,
     labelText,
@@ -55,7 +56,6 @@ const Search: React.FC<SearchProps> = React.forwardRef((props, ref) => {
     onSearchIconClick = () => {},
     helperText,
     light,
-    ...other
   } = props;
 
   const initialValue = props.value;
@@ -75,7 +75,7 @@ const Search: React.FC<SearchProps> = React.forwardRef((props, ref) => {
       evt.imaginaryTarget = _inputRef;
       setValue(evt.target.value);
       //   onChange(evt.target.value);
-      onChange(evt.target.value, evt); //TODO: why are we passing evt as second arg
+      onChange(evt, evt.target.value); //TODO: why are we passing evt as second arg
     }
   };
 
@@ -98,21 +98,31 @@ const Search: React.FC<SearchProps> = React.forwardRef((props, ref) => {
     'wfp--search--light': kind === 'light',
   });
 
-  const newProps = {
+  /*const newProps = {
     disabled,
     id,
     onChange: handleChange,
     value: value,
-  };
+  };*/
 
   const clearClasses = classNames({
     'wfp--search-close': true,
     'wfp--search-close--hidden': !value,
   });
 
+  const useInputProps = props as UseInputProps;
+
+  const input = useInput({
+    ...useInputProps,
+    onChange: handleChange,
+    className: `${prefix}--search-input`,
+  });
+
+  console.log('useInputProps', input, useInputProps);
+
   return (
     <Input
-      {...props}
+      {...input.wrapperProps}
       formItemClassName={numberInputClasses}
       inputWrapperClassName={`${prefix}--search-input__wrapper`}>
       <SearchIcon
@@ -122,11 +132,11 @@ const Search: React.FC<SearchProps> = React.forwardRef((props, ref) => {
       />
 
       <input
-        className={`${prefix}--search-input`}
-        type="text"
-        {...other}
-        {...newProps}
-        ref={_inputRef}
+        // TODO: className={`${prefix}--search-input`}
+        //type="text"
+        //{...newProps}
+        {...input.inputProps}
+        ref={_inputRef as React.Ref<HTMLInputElement>}
       />
       <button
         className={clearClasses}

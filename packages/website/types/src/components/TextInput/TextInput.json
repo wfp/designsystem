@@ -11,18 +11,18 @@
         "description": "Provide text that is used alongside the control label for additional help",
         "name": "helperText",
         "parent": {
-          "fileName": "src/components/TextInput/TextInput.tsx",
-          "name": "TextInputProps"
+          "fileName": "react/src/components/Input/Input.tsx",
+          "name": "InputProps"
         },
         "declarations": [
           {
-            "fileName": "src/components/TextInput/TextInput.tsx",
-            "name": "TextInputProps"
+            "fileName": "react/src/components/Input/Input.tsx",
+            "name": "InputProps"
           }
         ],
         "required": false,
         "type": {
-          "name": "string"
+          "name": "ReactNode"
         }
       },
       "labelText": {
@@ -346,6 +346,25 @@
         "required": false,
         "type": {
           "name": "ReactNode"
+        }
+      },
+      "components": {
+        "defaultValue": null,
+        "description": "",
+        "name": "components",
+        "parent": {
+          "fileName": "react/src/components/Input/Input.tsx",
+          "name": "InputProps"
+        },
+        "declarations": [
+          {
+            "fileName": "react/src/components/Input/Input.tsx",
+            "name": "InputProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "{ AddonBefore?: ReactNode; AddonAfter?: ReactNode; }"
         }
       }
     }

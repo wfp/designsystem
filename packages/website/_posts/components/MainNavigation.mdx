@@ -1,0 +1,291 @@
+---
+category: 'Core'
+title: 'MainNavigation'
+excerpt: 'The MainNavigation is used across all applications, it is the starting point of the application and offers the top level navigation items.'
+coverImage: '../sample-image.jpg'
+slug: 'Components/Navigation/MainNavigation'
+previewScale: 0.3
+storybook: true
+mainComponent: 'MainNavigation'
+sampleCode: >
+  <MainNavigation>
+     <MainNavigationItem>
+       <Link href="http://communities.wfp.org" target="_blank">
+         Section 1
+       </Link>
+     </MainNavigationItem>
+     <MainNavigationItem
+       subNavigation={
+         <SubNavigation>
+           <SubNavigationHeader>
+             <SubNavigationTitle>The Title</SubNavigationTitle>
+             <SubNavigationLink>
+               <Button small>The SubPage Link</Button>
+             </SubNavigationLink>
+
+             <SubNavigationFilter>
+               <Search
+                 kind="main"
+                 id="search-2"
+                 labelText="Filter"
+                 placeholder="Filter list"
+               />
+             </SubNavigationFilter>
+           </SubNavigationHeader>
+           <SubNavigationContent>
+             <SubNavigationList>
+               <SubNavigationGroup title="First List" columns={1}>
+                 <SubNavigationItem>
+                   <Link href="https://go.docs.wfp.org" target="_blank">
+                     Lorem Ipsum et jomen
+                   </Link>
+                 </SubNavigationItem>
+               </SubNavigationGroup>
+             </SubNavigationList>
+           </SubNavigationContent>
+         </SubNavigation>
+       }>
+       <Link href="http://manuals.wfp.org" target="_blank">
+         Section 2
+       </Link>
+     </MainNavigationItem>
+     <MainNavigationItem>
+       <Link href="https://go.docs.wfp.org" target="_blank">
+         Section 3
+       </Link>
+     </MainNavigationItem>
+     <MainNavigationItem>
+       <Link href="http://opweb.wfp.org" target="_blank">
+         Section 4
+       </Link>
+     </MainNavigationItem>
+     <MainNavigationItem>
+       <Search
+         kind="main"
+         id="search-2"
+         placeholder="Search"
+       />
+     </MainNavigationItem>
+     <MainNavigationItem
+       className="wfp--main-navigation__user"
+       subNavigation={
+         <SubNavigation>
+           <SubNavigationHeader>
+             <SubNavigationTitle>Welcome Lorem!</SubNavigationTitle>
+             <SubNavigationLink>
+               <Button kind="secondary" small>
+                 Logout
+               </Button>
+             </SubNavigationLink>
+           </SubNavigationHeader>
+           <SubNavigationContent>
+             Additional content can be placed here.
+           </SubNavigationContent>
+         </SubNavigation>
+       }>
+       <User ellipsis name="Max Mustermann long name" missingImage="letter" />
+     </MainNavigationItem>
+     <MainNavigationItem
+       className="wfp--main-navigation__user"
+       subNavigation={
+         <SubNavigation>
+           <SubNavigationHeader>
+             <SubNavigationTitle>Choose language</SubNavigationTitle>
+           </SubNavigationHeader>
+           <SubNavigationContent>
+             <SubNavigationList>
+               <SubNavigationGroup>
+                 <SubNavigationItem>
+                   <Link href="#">English</Link>
+                 </SubNavigationItem>
+                 <SubNavigationItem>
+                   <Link href="#">
+                     French <i>(français)</i>
+                   </Link>
+                 </SubNavigationItem>
+                 <SubNavigationItem>
+                   <Link href="#">
+                     German <i>(deutsch)</i>
+                   </Link>
+                 </SubNavigationItem>
+               </SubNavigationGroup>
+             </SubNavigationList>
+           </SubNavigationContent>
+         </SubNavigation>
+       }>
+       <span>EN</span>
+     </MainNavigationItem>
+   </MainNavigation>
+---
+
+### Usage
+
+The MainNavigation is used across all applications, it is the starting point of the application and offers the top level navigation items.
+
+#### When to use
+
+- ✓ Internal and external applications
+- ✓ The MainNavigation can be used for both internal and external websites.
+
+#### When not to use
+
+- ✗ External websites (wfp.org, etc.): The header might not be the right solution for external websites. Please consult the #ux-ui channel on Slack.
+- ✗ Do not use WFP's logo inside the MainNavigation.
+
+```js
+import { MainNavigation, MainNavigationItem } from '@un/react';
+```
+
+### SubNavigation
+
+It can be combined with a Dropdown SubNavigation.
+
+```js
+import {
+  SubNavigation,
+  SubNavigationHeader,
+  SubNavigationTitle,
+  SubNavigationFilter,
+  SubNavigationContent,
+  SubNavigationList,
+  SubNavigationGroup,
+  SubNavigationItem,
+} from '@un/react';
+```
+
+The maximum number of items is 6 to 8 items depending on the average word length.
+
+### Closing the SubNavigation
+
+#### Using `refs`
+
+From outside (using react-router, etc.) using `refs` a function can be triggered every time a route changes.
+
+##### Using react-router (withRouter)
+
+```js
+import React from 'react';
+import PropTypes from 'prop-types';
+import { withRouter } from 'react-router';
+
+class Parent extends Component {
+  static propTypes = {
+    match: PropTypes.object.isRequired,
+    location: PropTypes.object.isRequired,
+    history: PropTypes.object.isRequired,
+  };
+
+  constructor(props) {
+    super(props);
+    this.child = React.createRef();
+  }
+
+  // Depending on your usecase/performance use getDerivedStateFromProps instead
+  componentDidUpdate(prevProps, prevState) {
+    if (!prevState.locaction && this.props.locaction) {
+      this.closeMenu();
+    }
+  }
+
+  openFirstMenu = () => {
+    this.child.current.onChangeSub('toggle', 0);
+  };
+
+  closeMenu = () => {
+    this.child.current.onChangeSub('close');
+  };
+
+  render() {
+    return (
+      <div>
+        <MainNavigation ref={this.child} />
+        <button onClick={this.openFirstMenu}>Open first menu</button>
+        <button onClick={this.closeMenu}>Close everything</button>
+      </div>
+    );
+  }
+}
+
+const ParentWithRouter = withRouter(Parent);
+```
+
+##### Trigger with external button
+
+```js
+class Parent extends Component {
+  constructor(props) {
+    super(props);
+    this.child = React.createRef();
+  }
+
+  closeMenu = () => {
+    this.child.current.onChangeSub('close');
+  };
+
+  render() {
+    return (
+      <div>
+        <MainNavigation ref={this.child} />
+        <button onClick={this.closeMenu}>Close everything</button>
+      </div>
+    );
+  }
+}
+```
+
+#### Using function inside `children`
+
+From the `children` any change can be manually triggered by a function
+
+```js
+ <MainNavigation>
+    {({ onChangeSub }) => {
+      return (
+        <React.Fragment>
+          <MainNavigationItem
+            subNavigation={
+              <div>
+                <Link
+                  onClick={() => onChangeSub('close')}>
+                  Close Demo
+                </Link>
+              </div>
+            }>
+            <User ellipsis title="Max Mustermann" />
+          </MainNavigationItem>
+        </React.Fragment>
+      );
+    }}
+  </MainNavigation>
+));
+```
+
+### SubNavigation for the User
+
+An `User` `MainNavigationItem` consists out of the `User` component and a `SubNavigation`.
+
+```html
+  <MainNavigationItem
+  className="wfp--main-navigation__user"
+  subNavigation={
+    <SubNavigation>
+      <SubNavigationHeader>
+        <SubNavigationTitle>Welcome Max!</SubNavigationTitle>
+        <SubNavigationLink>
+          <Button secondary small>Logout</Button>
+        </SubNavigationLink>
+      </SubNavigationHeader>
+      <SubNavigationContent>
+       {/* Additional content */}
+      </SubNavigationContent>
+    </SubNavigation>
+  }>
+  <User ellipsis title="Max Mustermann" />
+</MainNavigationItem>
+```
+
+### Usage with vanilla Java-Script
+
+Using the `MainNavigation` in applications not using `react.js` requires a custom implementation. An example can be found at [Codesandbox](https://codesandbox.io/s/mainnavigation-vanillajs-en5r4).
+
+[Source code of vanilla.js implementation on GitHub](https://github.com/wfp/ui/blob/master/src/components/MainNavigation/main-navigation.js)

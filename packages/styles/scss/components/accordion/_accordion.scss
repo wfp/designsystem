@@ -44,11 +44,13 @@ $content-padding: 0 0 0 $spacing-05 !default;
 
 @mixin accordion {
   .#{$prefix}--accordion--button {
-    margin-right: 0.2em;
+    margin-left: -0.2em;
+    margin-right: 0.5em;
+    transform: rotate(-90deg);
 
     transition: transform 0.1s ease-in-out;
     &__expanded {
-      transform: rotate(90deg);
+      transform: rotate(0deg);
     }
   }
 

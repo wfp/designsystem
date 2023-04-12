@@ -12,7 +12,7 @@ import useSettings from '../../../hooks/useSettings';
 import { useAccordionItem } from '../hooks/useAccordionItem';
 import { useHeightTransition } from '../hooks/useHeightTransition';
 import { useMergeRef } from '../hooks/useMergeRef';
-import { ChevronRight } from '@un/icons-react';
+import { ChevronDown } from '@un/icons-react';
 import { withAccordionItem, ItemStateProps } from './withAccordionItem';
 import classNames from 'classnames';
 
@@ -99,7 +99,7 @@ const WrappedItem = memo(
               buttonProps && buttonProps.className,
               state
             )}>
-            <ChevronRight description="open" className={buttonClasses} />
+            <ChevronDown description="open" className={buttonClasses} />
             {getRenderNode(header, itemState)}
           </button>
         </Heading>

@@ -57,6 +57,7 @@ const rehypeImage = () => async (tree) => {
 
   await Promise.all(
     imageNodes.map(async (node) => {
+      console.log('imagenode');
       const urlEl = node.attributes.find((a) => a.name === 'url');
 
       const document = node.attributes.find((a) => a.name === 'document');
@@ -69,6 +70,8 @@ const rehypeImage = () => async (tree) => {
       const nodeValue = urlEl?.value
         ? urlEl.value.split('?node-id=')[1].replace('%3A', ':')
         : nodeEl.value;
+
+      console.log('documentValue', documentValue, nodeValue);
 
       //www.figma.com/file/wFEEbUEWrlfMhs2a1S2RTp/UN-core-website?node-id=1035%3A357
 

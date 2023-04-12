@@ -1,9 +1,18 @@
 @use 'scss/meta' as *;
 
-.preview {
-  border: 1px solid $border-strong;
+.normalPreview {
   position: relative;
-  margin: 2em 0;
+  // border: 1px solid $border-strong;
+  border-radius: 10px;
+  .preview {
+    //border: 1px solid $border-strong;
+    position: relative;
+    margin: 2em 0;
+  }
+}
+
+.smallPreview {
+  height: 100%;
 }
 
 .previewWrapper {
@@ -17,7 +26,8 @@
 .propTable {
   font-size: 0.8em;
   line-height: 1.2;
-  border-top: 1px solid $border-strong;
+  border: 1px solid $border-strong;
+  border-top: 0;
 }
 
 .propTitle {
@@ -32,4 +42,10 @@
   font-size: 0.7em;
   padding: 0.5em;
   height: 2em;
+}
+
+.smallPreviewWrapper {
+  transform-origin: center;
+  position: relative;
+  height: 100%;
 }

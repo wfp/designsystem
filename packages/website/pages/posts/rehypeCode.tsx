@@ -33,7 +33,6 @@ function rehypeMetaAsAttributes() {
       while ((match = re.exec(child.data.meta))) {
         node.properties[match[1]] = match[2] || match[3] || match[4] || '';
       }
-      node.properties.dddd = 'assasdsad';
     });
   };
 }

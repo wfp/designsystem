@@ -47,6 +47,8 @@ export default async function handler(
   // initialize the index with your index name
   const index: any = client.initIndex('ui-docs');
 
+  await index.clearObjects();
+
   // save the objects!
   const algoliaResponse = await index.saveObjects(transformed);
 

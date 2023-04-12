@@ -4,20 +4,21 @@ import { useState, useRef, useEffect } from 'react';
 import classNames from 'classnames';
 import useSettings from '../../hooks/useSettings';
 import Input, { InputProps } from '../Input';
+import useInput, { UseInputProps } from '../Input/useInput';
 
-interface NumberInputProps extends InputProps {
+interface NumberInputProps
+  extends InputProps,
+    React.ComponentPropsWithRef<'input'> {
   max?: number;
   min?: number;
   step?: number;
   allowEmpty?: boolean;
-  className?: string;
   disabled?: boolean;
   id?: string;
   helperText?: string;
   hideLabel?: boolean;
   hideControls?: boolean;
   light?: boolean;
-  inputRef?: React.RefObject<HTMLInputElement>;
   pattern?: string;
   onChange?: (
     evt?: React.ChangeEvent,
@@ -70,9 +71,8 @@ const NumberInput: React.FC<NumberInputProps> = React.forwardRef(
       helperText,
       light,
       //allowEmpty,
-      inputRef = ref,
       pattern = '[0-9]*',
-      ...other
+      // ...other
     } = props;
     const { prefix } = useSettings();
 
@@ -84,7 +84,7 @@ const NumberInput: React.FC<NumberInputProps> = React.forwardRef(
     }, [props.value]);
 
     const newInputRef = useRef<HTMLInputElement>(null);
-    const _inputRef = inputRef ? inputRef : newInputRef;
+    const _inputRef = ref ? ref : newInputRef;
 
     const handleChange = (evt) => {
       if (!disabled) {
@@ -140,8 +140,11 @@ const NumberInput: React.FC<NumberInputProps> = React.forwardRef(
       value: value,
     };
 
+    const useInputProps = props as UseInputProps;
+    const input = useInput(useInputProps);
+
     return (
-      <Input {...props} formItemClassName={numberInputClasses}>
+      <Input {...input.wrapperProps} formItemClassName={numberInputClasses}>
         <div className={`${prefix}--number__controls`}>
           <button
             className={`${prefix}--number__control-btn up-icon`}
@@ -158,11 +161,12 @@ const NumberInput: React.FC<NumberInputProps> = React.forwardRef(
             −
           </button>
           <input
-            type="number"
+            // type="number"
             pattern={pattern}
-            {...other}
+            {...input.inputProps}
+            //{...other}
             {...newProps}
-            ref={_inputRef}
+            ref={ref}
           />
         </div>
       </Input>

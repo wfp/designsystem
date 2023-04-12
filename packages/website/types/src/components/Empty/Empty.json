@@ -35,7 +35,7 @@
             "name": "TypeLiteral"
           }
         ],
-        "required": true,
+        "required": false,
         "type": {
           "name": "ReactNode"
         }
@@ -69,7 +69,7 @@
         ],
         "required": false,
         "type": {
-          "name": "any"
+          "name": "ReactNode"
         }
       },
       "button": {

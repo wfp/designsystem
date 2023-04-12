@@ -1,4 +1,4 @@
-@use "scss/meta" as *;
+@use 'scss/meta' as *;
 
 .imageContainer {
   display: block;
@@ -122,6 +122,10 @@
   bottom: 0;
   width: 100%;
   height: auto;
+  > img {
+    width: 100%;
+    height: auto;
+  }
 }
 
 .imageContainer.open .activeImage {

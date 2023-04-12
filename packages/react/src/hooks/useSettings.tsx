@@ -8,6 +8,9 @@ import {
 
 export default function useSettings(): AppContextInterface {
   const settings = useContext(UNCoreContext);
+  if (settings?.initialized === false) {
+    console.warn('useSettings: UNCoreContext not initialized');
+  }
 
   if (settings === undefined) {
     return defaultUNContext;

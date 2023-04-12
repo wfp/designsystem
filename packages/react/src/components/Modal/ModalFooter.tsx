@@ -1,22 +1,23 @@
 import * as React from 'react';
-import Button from '../Button/Button';
+import Button from '../Button';
 import useSettings from '../../hooks/useSettings';
 
 interface ModalFooterProps {
   passiveModal?: boolean;
   secondaryButtonText?: string;
   onSecondaryButtonClick?: (
-    evt: Event,
+    evt: React.MouseEvent<HTMLButtonElement, MouseEvent>,
     trigger: 'button' | 'background' | 'key'
   ) => void;
   primaryButtonText?: string;
   // eslint-disable-next-line @typescript-eslint/ban-types
-  onRequestSubmit?: () => {};
+  onRequestSubmit?: () => void;
   primaryButtonDisabled?: boolean;
   secondaryButtonDisabled?: boolean;
   danger?: boolean;
   prefix?: string;
-  ref?: React.RefObject<HTMLInputElement>;
+  primaryButtonRef?: React.RefObject<HTMLButtonElement>;
+  secondaryButtonRef?: React.RefObject<HTMLButtonElement>;
 }
 
 const ModalFooter: React.FC<ModalFooterProps> = ({
@@ -28,7 +29,8 @@ const ModalFooter: React.FC<ModalFooterProps> = ({
   primaryButtonDisabled,
   secondaryButtonDisabled,
   danger,
-  ref,
+  primaryButtonRef,
+  secondaryButtonRef,
 }) => {
   const { prefix } = useSettings();
   if (passiveModal) return null;
@@ -41,7 +43,10 @@ const ModalFooter: React.FC<ModalFooterProps> = ({
             kind={danger ? 'tertiary' : 'secondary'}
             disabled={secondaryButtonDisabled}
             id="secondaryButton"
-            onClick={(e) => onSecondaryButtonClick(e, 'button')}>
+            onClick={(e) => {
+              if (onSecondaryButtonClick) onSecondaryButtonClick(e, 'button');
+            }}
+            ref={secondaryButtonRef as React.Ref<HTMLButtonElement>}>
             {secondaryButtonText}
           </Button>
         )}
@@ -50,7 +55,7 @@ const ModalFooter: React.FC<ModalFooterProps> = ({
           disabled={primaryButtonDisabled}
           onClick={onRequestSubmit}
           id="primaryButton"
-          ref={ref}>
+          ref={primaryButtonRef as React.Ref<HTMLButtonElement>}>
           {primaryButtonText}
         </Button>
       </div>

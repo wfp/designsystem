@@ -15,12 +15,12 @@ export const Regular = (args) => (
   <Value
     {...args}
     value={
-      <Unit type="Usd" input="thousand" output="million" showZero hideEmpty>
+      <Unit type="usd" input="thousand" output="million" showZero hideEmpty>
         1234567
       </Unit>
     }
     secondaryValue={
-      <Unit type="Usd" input="thousand" output="million" showZero hideEmpty>
+      <Unit type="usd" input="thousand" output="million" showZero hideEmpty>
         1234567
       </Unit>
     }

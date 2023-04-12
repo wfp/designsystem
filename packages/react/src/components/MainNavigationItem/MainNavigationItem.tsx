@@ -1,16 +1,16 @@
-import React, { useContext, useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import type { PropsWithChildren } from 'react';
 import classNames from 'classnames';
 import { Close, CaretDown } from '@un/icons-react';
-import MainNavigationContext from '../MainNavigation/MainNavigationContext';
 import useSettings from '../../hooks/useSettings';
+import useMainNavigation from '../MainNavigation/useMainNavigation';
 
 interface MainNavigationItemProps {
   subNavigation?: React.ReactNode;
-  activeMenuItem?: number | string;
-  menuItem?: number | string;
+  activeMenuItem?: string;
+  menuItem?: string;
   subNavWideAsContent?: boolean;
-  onChangeSub?: (e: string) => void;
+  onChangeSub?: (action: string, id?: number, e?: any) => void;
   className?: string;
   external?: boolean;
 }
@@ -20,14 +20,12 @@ const MainNavigationItem: React.FC<
 > = ({ className, children, subNavigation, subNavWideAsContent }) => {
   const { prefix } = useSettings();
 
+  const { /*onChangeSub,*/ activeMenuItem /*menuItem */ } = useMainNavigation();
+
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [menuItemId] = useState(Math.random().toString(36));
 
-  const wrapperRef = useRef<HTMLInputElement>(null);
-
-  const { onChangeSub, activeMenuItem /*menuItem */ } = useContext(
-    MainNavigationContext
-  );
+  const wrapperRef = useRef<HTMLLIElement>(null);
 
   useEffect(() => {
     if (menuItemId === activeMenuItem) {
@@ -42,8 +40,8 @@ const MainNavigationItem: React.FC<
   }, [activeMenuItem]);
 
   const handleClickOutside = (e) => {
-    if (wrapperRef && !wrapperRef.current.contains(e.target)) {
-      onChangeSub('close');
+    if (wrapperRef?.current && !wrapperRef.current.contains(e.target)) {
+      //onChangeSub('close');
     }
   };
 
@@ -84,10 +82,11 @@ const MainNavigationItem: React.FC<
   });
 
   return (
-    <li className={wrapperClasses} ref={wrapperRef}>
+    <li className={wrapperClasses} ref={wrapperRef as React.Ref<HTMLLIElement>}>
       <div
         className={triggerClasses}
-        onClick={() => onChangeSub('toggle', menuItemId)}>
+        //onClick={() => onChangeSub('toggle', menuItemId)}
+      >
         {children}
         {subNavigation && (
           <Icon

@@ -56,24 +56,53 @@ export const Portal = (props: any) => {
     : null;
 };
 
+function AddonAfter() {
+  return (
+    <div className={styles.searchShortcuts}>
+      <span>⌘</span> <span>K</span>
+    </div>
+  );
+}
+
 export default function SearchWrapper() {
   const [focus] = useState(false);
   const [open, setOpen] = useState(false);
   const ref = useRef();
   useOutsideAlerter({ ref, setOpen });
 
+  useEffect(() => {
+    const callback = (event: KeyboardEvent) => {
+      // event.metaKey - pressed Command key on Macs
+      // event.ctrlKey - pressed Control key on Linux or Windows
+      console.log('kkey', event);
+      if ((event.metaKey || event.ctrlKey) && event.code === 'KeyK') {
+        console.log('Pressed Command/Control + C');
+        setOpen(true);
+      }
+    };
+    document.addEventListener('keydown', callback);
+    return () => {
+      document.removeEventListener('keydown', callback);
+    };
+  }, []);
+
   return (
     <>
       <Search
         onClick={() => setOpen(true)}
         className={styles.search}
-        placeholder="Search topic..."
+        placeholder="Search..."
+        components={{ AddonAfter }}
       />
       <Portal open={open}>
         <div ref={ref}>
           <InstantSearch indexName="ui-docs" searchClient={searchClient}>
-            <CustomSearchBox /*setFocus={setFocus} */ open={open} />
-            <CustomHits focus={focus} setOpen={setOpen} />
+            {open && (
+              <>
+                <CustomSearchBox /*setFocus={setFocus} */ open={open} />
+                <CustomHits focus={focus} setOpen={setOpen} open={open} />
+              </>
+            )}
           </InstantSearch>
         </div>
       </Portal>

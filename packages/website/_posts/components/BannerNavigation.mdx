@@ -1,38 +1,56 @@
 ---
-category: 'Core'
 title: 'BannerNavigation'
 excerpt: 'Links are typically used as a means of navigation either within the application, to a place outside, or to a resource.'
 coverImage: '../sample-image.jpg'
 slug: 'Components/Navigation/BannerNavigation'
+mainComponent: 'BannerNavigation'
+previewScale: 0.3
+components: ['BannerNavigationItem', 'Link']
+storybook: true
+sampleCode: >
+  <BannerNavigationWithContent>
+    <BannerNavigationItem>
+      <Link href="http://communities.wfp.org" target="_blank">
+        Communities
+      </Link>
+    </BannerNavigationItem>
+    <BannerNavigationItem>
+      <Search banner id="search-2" labelText="Search" placeholder="Search" />
+    </BannerNavigationItem>
+  </BannerNavigationWithContent>
 ---
 
 ## Types
 
 There are two types of `BannerNavigation` that can be used:
 
-| Type           | React name                    | Description                                                                                                    |
-| -------------- | ----------------------------- | -------------------------------------------------------------------------------------------------------------- |
-| Default        | `BannerNavigationWithContent` | Used exclusively by specific applications which are actually listed on the bar only to crosslink between them. |
-| Custom content | `BannerNavigation`            | It allows you to use custom `BannerNavigationItem` components inside.                                          |
+### `BannerNavigationWithContent`
+
+Used exclusively by specific applications which are actually listed on the bar to crosslink between them.
+
+### `BannerNavigation`
+
+It allows you to use custom `BannerNavigationItem` components inside.
 
 ## Usage
 
-The default component is used mainly to crosslink among specific WFP applications for **internal use only**. Thus, **the default component does not have to be used for external facing products**. The internal applications are: [WFPgo](https://go.wfp.org), [Self-Service](https://selfservice.go.wf.org), [Communities](https://duckduckgo.com), [Manuals](https://duckduckgo.com), [GoDocs](https://duckduckgo.com), [Data](https://duckduckgo.com), [OPweb](https://duckduckgo.com), [WeLearn](https://duckduckgo.com)
+The default component is used mainly to crosslink among specific WFP applications for **internal use only**. Thus, **the default component does not have to be used for external facing products**.
+The internal applications are: [WFPgo](https://newgo.wfp.org), [Communities](https://communities.wfp.org), [Manuals](https://manuals.wfp.org), [GoDocs](https://go.docs.wfp.org), [WeLearn](https://welearn.wfp.org), [Dashboard](https://dashboard.wfp.org), [OPweb](https://opweb.wfp.org), [Self-Service](https://selfservice.go.wf.org), [UN Booking Hub](https://humanitarianbooking.wfp.org/), [WFP.org](https://wfp.org)
 
-The **custom version** is used when the application has multiple pages to be visited by the user. This component allows these different pages to be easily accessible. Do not use BannerNavigation when you have only one page.
+The **custom version** is used when the application has multiple pages to be visited by the user. This component allows these different pages to be easily accessible. Do not use `BannerNavigation` when you have only one page.
 
 ## Usage with React
 
 ### Default version
 
-```jsx live
+```jsx live forceFullWidth
 import { BannerNavigationWithContent } from '@un/react';
 <BannerNavigationWithContent pageWidth="lg" />;
 ```
 
 ### Custom version
 
-```jsx live
+```jsx live forceFullWidth
 import { BannerNavigation } from '@un/react';
 
 <BannerNavigation>
@@ -49,7 +67,7 @@ import { BannerNavigation } from '@un/react';
 
 ## Mobile
 
-The component is hidden when the viewport size is less than 768px.
+The component is hidden when the viewport size is less than `768px`.
 
 ## Related
 

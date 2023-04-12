@@ -5,6 +5,311 @@
     "description": "The Unit component method returns a component with a language and unit sensitive representation of this number based on [Numbers and Unit from the Editorial Guidelines](https://cdn.wfp.org/guides/editorial/content/numbers-and-units/) the [Numbers and Units Reference on developer.mozilla.org](http://cdn.wfp.org/guides/editorial/content/numbers-and-units).",
     "displayName": "Unit",
     "methods": [],
-    "props": {}
+    "props": {
+      "children": {
+        "defaultValue": null,
+        "description": "The value which should be displayed",
+        "name": "children",
+        "parent": {
+          "fileName": "src/components/Unit/Unit.tsx",
+          "name": "UnitProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/Unit/Unit.tsx",
+            "name": "UnitProps"
+          }
+        ],
+        "required": true,
+        "type": {
+          "name": "string | number"
+        }
+      },
+      "from": {
+        "defaultValue": null,
+        "description": "Only used for type Percentage will divide value/from string, float",
+        "name": "from",
+        "parent": {
+          "fileName": "src/components/Unit/Unit.tsx",
+          "name": "UnitProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/Unit/Unit.tsx",
+            "name": "UnitProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | number"
+        }
+      },
+      "input": {
+        "defaultValue": null,
+        "description": "The interface of the input value",
+        "name": "input",
+        "parent": {
+          "fileName": "src/components/Unit/Unit.tsx",
+          "name": "UnitProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/Unit/Unit.tsx",
+            "name": "UnitProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "showZero": {
+        "defaultValue": null,
+        "description": "Display zero values to be displayed",
+        "name": "showZero",
+        "parent": {
+          "fileName": "src/components/Unit/Unit.tsx",
+          "name": "UnitProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/Unit/Unit.tsx",
+            "name": "UnitProps"
+          }
+        ],
+        "required": true,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "hideEmpty": {
+        "defaultValue": null,
+        "description": "Hide the Unit if it's value is zero.",
+        "name": "hideEmpty",
+        "parent": {
+          "fileName": "src/components/Unit/Unit.tsx",
+          "name": "UnitProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/Unit/Unit.tsx",
+            "name": "UnitProps"
+          }
+        ],
+        "required": true,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "minimumFractionDigits": {
+        "defaultValue": null,
+        "description": "The minimum number of fraction digits to use. Possible values are from 0 to 20. Only used on numeric types",
+        "name": "minimumFractionDigits",
+        "parent": {
+          "fileName": "src/components/Unit/Unit.tsx",
+          "name": "UnitProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/Unit/Unit.tsx",
+            "name": "UnitProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "number"
+        }
+      },
+      "maximumSignificantDigits": {
+        "defaultValue": null,
+        "description": "A value between 1-21, The maximum number of significant digits to use. Possible values are from 1 to 21; the default is minimumSignificantDigits.",
+        "name": "maximumSignificantDigits",
+        "parent": {
+          "fileName": "src/components/Unit/Unit.tsx",
+          "name": "UnitProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/Unit/Unit.tsx",
+            "name": "UnitProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "number"
+        }
+      },
+      "output": {
+        "defaultValue": null,
+        "description": "",
+        "name": "output",
+        "parent": {
+          "fileName": "src/components/Unit/Unit.tsx",
+          "name": "UnitProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/Unit/Unit.tsx",
+            "name": "UnitProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "string": {
+        "defaultValue": null,
+        "description": "",
+        "name": "string",
+        "parent": {
+          "fileName": "src/components/Unit/Unit.tsx",
+          "name": "UnitProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/Unit/Unit.tsx",
+            "name": "UnitProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "localeStringLanguage": {
+        "defaultValue": null,
+        "description": "",
+        "name": "localeStringLanguage",
+        "parent": {
+          "fileName": "src/components/Unit/Unit.tsx",
+          "name": "UnitProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/Unit/Unit.tsx",
+            "name": "UnitProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "maximumFractionDigits": {
+        "defaultValue": null,
+        "description": "",
+        "name": "maximumFractionDigits",
+        "parent": {
+          "fileName": "src/components/Unit/Unit.tsx",
+          "name": "UnitProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/Unit/Unit.tsx",
+            "name": "UnitProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "number"
+        }
+      },
+      "textAnchor": {
+        "defaultValue": null,
+        "description": "",
+        "name": "textAnchor",
+        "parent": {
+          "fileName": "src/components/Unit/Unit.tsx",
+          "name": "UnitProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/Unit/Unit.tsx",
+            "name": "UnitProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "locale": {
+        "defaultValue": null,
+        "description": "A string with a BCP 47 language code, or an array of language codes. For the general form and interpretation of the locale argument see the [toLocaleString on developer.mozilla.org](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleString) page.",
+        "name": "locale",
+        "parent": {
+          "fileName": "src/components/Unit/Unit.tsx",
+          "name": "UnitProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/Unit/Unit.tsx",
+            "name": "UnitProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "setup": {
+        "defaultValue": null,
+        "description": "Setup the Unit",
+        "name": "setup",
+        "parent": {
+          "fileName": "src/components/Unit/Unit.tsx",
+          "name": "UnitProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/Unit/Unit.tsx",
+            "name": "UnitProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "svg": {
+        "defaultValue": null,
+        "description": "Render output as svg text",
+        "name": "svg",
+        "parent": {
+          "fileName": "src/components/Unit/Unit.tsx",
+          "name": "UnitProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/Unit/Unit.tsx",
+            "name": "UnitProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "type": {
+        "defaultValue": null,
+        "description": "The unit type",
+        "name": "type",
+        "parent": {
+          "fileName": "src/components/Unit/Unit.tsx",
+          "name": "UnitProps"
+        },
+        "declarations": [
+          {
+            "fileName": "src/components/Unit/Unit.tsx",
+            "name": "UnitProps"
+          }
+        ],
+        "required": true,
+        "type": {
+          "name": "\"none\" | \"usd\" | \"partners\" | \"beneficiaries\" | \"households\" | \"months\" | \"mt\" | \"metricTons\" | \"kg\" | \"num\" | \"yearMonth\" | \"level\" | \"people\" | \"countries\" | \"percentage\""
+        }
+      }
+    }
   }
 ]

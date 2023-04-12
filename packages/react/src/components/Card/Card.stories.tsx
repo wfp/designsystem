@@ -1,7 +1,7 @@
 import React from 'react';
 
 import markdown from './README.mdx';
-import cardTwig from './Card.twig';
+//import cardTwig from './Card.twig';
 import Button from '../Button';
 import { Card, CardExternal } from '.';
 
@@ -15,7 +15,7 @@ export default {
     componentSubtitle: 'Component',
     status: 'released',
     mdx: markdown,
-    twig: cardTwig,
+    //twig: cardTwig,
   },
 };
 

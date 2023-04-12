@@ -10,10 +10,14 @@
         "defaultValue": null,
         "description": "",
         "name": "legendText",
+        "parent": {
+          "fileName": "src/components/FormGroup/FormGroup.tsx",
+          "name": "FormGroupProps"
+        },
         "declarations": [
           {
             "fileName": "src/components/FormGroup/FormGroup.tsx",
-            "name": "TypeLiteral"
+            "name": "FormGroupProps"
           }
         ],
         "required": false,
@@ -25,10 +29,14 @@
         "defaultValue": null,
         "description": "",
         "name": "breakpoint",
+        "parent": {
+          "fileName": "src/components/FormGroup/FormGroup.tsx",
+          "name": "FormGroupProps"
+        },
         "declarations": [
           {
             "fileName": "src/components/FormGroup/FormGroup.tsx",
-            "name": "TypeLiteral"
+            "name": "FormGroupProps"
           }
         ],
         "required": false,
@@ -36,29 +44,18 @@
           "name": "\"none\" | \"sm\" | \"md\" | \"lg\""
         }
       },
-      "invalid": {
-        "defaultValue": null,
-        "description": "",
-        "name": "invalid",
-        "declarations": [
-          {
-            "fileName": "src/components/FormGroup/FormGroup.tsx",
-            "name": "TypeLiteral"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "boolean | FieldError"
-        }
-      },
       "message": {
         "defaultValue": null,
         "description": "",
         "name": "message",
+        "parent": {
+          "fileName": "src/components/FormGroup/FormGroup.tsx",
+          "name": "FormGroupProps"
+        },
         "declarations": [
           {
             "fileName": "src/components/FormGroup/FormGroup.tsx",
-            "name": "TypeLiteral"
+            "name": "FormGroupProps"
           }
         ],
         "required": false,
@@ -70,10 +67,14 @@
         "defaultValue": null,
         "description": "",
         "name": "messageText",
+        "parent": {
+          "fileName": "src/components/FormGroup/FormGroup.tsx",
+          "name": "FormGroupProps"
+        },
         "declarations": [
           {
             "fileName": "src/components/FormGroup/FormGroup.tsx",
-            "name": "TypeLiteral"
+            "name": "FormGroupProps"
           }
         ],
         "required": false,
@@ -85,10 +86,14 @@
         "defaultValue": null,
         "description": "",
         "name": "align",
+        "parent": {
+          "fileName": "src/components/FormGroup/FormGroup.tsx",
+          "name": "FormGroupProps"
+        },
         "declarations": [
           {
             "fileName": "src/components/FormGroup/FormGroup.tsx",
-            "name": "TypeLiteral"
+            "name": "FormGroupProps"
           }
         ],
         "required": false,
@@ -100,10 +105,14 @@
         "defaultValue": null,
         "description": "",
         "name": "inputSpacing",
+        "parent": {
+          "fileName": "src/components/FormGroup/FormGroup.tsx",
+          "name": "FormGroupProps"
+        },
         "declarations": [
           {
             "fileName": "src/components/FormGroup/FormGroup.tsx",
-            "name": "TypeLiteral"
+            "name": "FormGroupProps"
           }
         ],
         "required": false,
@@ -115,10 +124,14 @@
         "defaultValue": null,
         "description": "",
         "name": "className",
+        "parent": {
+          "fileName": "src/components/FormGroup/FormGroup.tsx",
+          "name": "FormGroupProps"
+        },
         "declarations": [
           {
             "fileName": "src/components/FormGroup/FormGroup.tsx",
-            "name": "TypeLiteral"
+            "name": "FormGroupProps"
           }
         ],
         "required": false,
@@ -130,10 +143,14 @@
         "defaultValue": null,
         "description": "",
         "name": "inline",
+        "parent": {
+          "fileName": "src/components/FormGroup/FormGroup.tsx",
+          "name": "FormGroupProps"
+        },
         "declarations": [
           {
             "fileName": "src/components/FormGroup/FormGroup.tsx",
-            "name": "TypeLiteral"
+            "name": "FormGroupProps"
           }
         ],
         "required": false,

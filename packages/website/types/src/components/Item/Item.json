@@ -10,10 +10,14 @@
         "defaultValue": null,
         "description": "",
         "name": "title",
+        "parent": {
+          "fileName": "src/components/Item/Item.tsx",
+          "name": "ItemProps"
+        },
         "declarations": [
           {
             "fileName": "src/components/Item/Item.tsx",
-            "name": "TypeLiteral"
+            "name": "ItemProps"
           }
         ],
         "required": false,
@@ -25,15 +29,19 @@
         "defaultValue": null,
         "description": "",
         "name": "icon",
+        "parent": {
+          "fileName": "src/components/Item/Item.tsx",
+          "name": "ItemProps"
+        },
         "declarations": [
           {
             "fileName": "src/components/Item/Item.tsx",
-            "name": "TypeLiteral"
+            "name": "ItemProps"
           }
         ],
         "required": false,
         "type": {
-          "name": "any"
+          "name": "ReactNode | IIcon"
         }
       },
       "kind": {
@@ -42,10 +50,14 @@
         },
         "description": "",
         "name": "kind",
+        "parent": {
+          "fileName": "src/components/Item/Item.tsx",
+          "name": "ItemProps"
+        },
         "declarations": [
           {
             "fileName": "src/components/Item/Item.tsx",
-            "name": "TypeLiteral"
+            "name": "ItemProps"
           }
         ],
         "required": false,
@@ -59,10 +71,14 @@
         },
         "description": "",
         "name": "wrapper",
+        "parent": {
+          "fileName": "src/components/Item/Item.tsx",
+          "name": "ItemProps"
+        },
         "declarations": [
           {
             "fileName": "src/components/Item/Item.tsx",
-            "name": "TypeLiteral"
+            "name": "ItemProps"
           }
         ],
         "required": false,
@@ -74,10 +90,14 @@
         "defaultValue": null,
         "description": "",
         "name": "showAdditionalIcon",
+        "parent": {
+          "fileName": "src/components/Item/Item.tsx",
+          "name": "ItemProps"
+        },
         "declarations": [
           {
             "fileName": "src/components/Item/Item.tsx",
-            "name": "TypeLiteral"
+            "name": "ItemProps"
           }
         ],
         "required": false,
@@ -89,10 +109,14 @@
         "defaultValue": null,
         "description": "",
         "name": "subContent",
+        "parent": {
+          "fileName": "src/components/Item/Item.tsx",
+          "name": "ItemProps"
+        },
         "declarations": [
           {
             "fileName": "src/components/Item/Item.tsx",
-            "name": "TypeLiteral"
+            "name": "ItemProps"
           }
         ],
         "required": false,
@@ -104,10 +128,14 @@
         "defaultValue": null,
         "description": "",
         "name": "additional",
+        "parent": {
+          "fileName": "src/components/Item/Item.tsx",
+          "name": "ItemProps"
+        },
         "declarations": [
           {
             "fileName": "src/components/Item/Item.tsx",
-            "name": "TypeLiteral"
+            "name": "ItemProps"
           }
         ],
         "required": false,
@@ -119,10 +147,14 @@
         "defaultValue": null,
         "description": "",
         "name": "hint",
+        "parent": {
+          "fileName": "src/components/Item/Item.tsx",
+          "name": "ItemProps"
+        },
         "declarations": [
           {
             "fileName": "src/components/Item/Item.tsx",
-            "name": "TypeLiteral"
+            "name": "ItemProps"
           }
         ],
         "required": false,
@@ -130,29 +162,18 @@
           "name": "ReactNode"
         }
       },
-      "className": {
-        "defaultValue": null,
-        "description": "",
-        "name": "className",
-        "declarations": [
-          {
-            "fileName": "src/components/Item/Item.tsx",
-            "name": "TypeLiteral"
-          }
-        ],
-        "required": false,
-        "type": {
-          "name": "string"
-        }
-      },
       "active": {
         "defaultValue": null,
         "description": "",
         "name": "active",
+        "parent": {
+          "fileName": "src/components/Item/Item.tsx",
+          "name": "ItemProps"
+        },
         "declarations": [
           {
             "fileName": "src/components/Item/Item.tsx",
-            "name": "TypeLiteral"
+            "name": "ItemProps"
           }
         ],
         "required": false,
@@ -164,10 +185,14 @@
         "defaultValue": null,
         "description": "",
         "name": "image",
+        "parent": {
+          "fileName": "src/components/Item/Item.tsx",
+          "name": "ItemProps"
+        },
         "declarations": [
           {
             "fileName": "src/components/Item/Item.tsx",
-            "name": "TypeLiteral"
+            "name": "ItemProps"
           }
         ],
         "required": false,
@@ -179,10 +204,14 @@
         "defaultValue": null,
         "description": "",
         "name": "noImage",
+        "parent": {
+          "fileName": "src/components/Item/Item.tsx",
+          "name": "ItemProps"
+        },
         "declarations": [
           {
             "fileName": "src/components/Item/Item.tsx",
-            "name": "TypeLiteral"
+            "name": "ItemProps"
           }
         ],
         "required": false,
@@ -194,10 +223,14 @@
         "defaultValue": null,
         "description": "",
         "name": "unread",
+        "parent": {
+          "fileName": "src/components/Item/Item.tsx",
+          "name": "ItemProps"
+        },
         "declarations": [
           {
             "fileName": "src/components/Item/Item.tsx",
-            "name": "TypeLiteral"
+            "name": "ItemProps"
           }
         ],
         "required": false,

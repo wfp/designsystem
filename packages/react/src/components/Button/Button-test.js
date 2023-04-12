@@ -1,7 +1,7 @@
 import React from 'react';
 import { AddCircle } from '@un/icons-react';
-import Button from '../Button';
-import ButtonSkeleton from '../Button/Button.Skeleton';
+import Button from '.';
+import ButtonSkeleton from './Button.Skeleton';
 import { shallow, mount } from 'enzyme';
 
 describe('Button', () => {

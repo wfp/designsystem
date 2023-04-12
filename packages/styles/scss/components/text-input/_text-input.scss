@@ -11,6 +11,7 @@
 @use '../../config' as *;
 @use '../form';
 @use '../../theme' as *;
+@use '../../utilities/input-base' as *;
 
 /// Text input styles
 /// @access public
@@ -18,5 +19,8 @@
 @mixin text-input {
   .#{$prefix}--text--required label::after {
     content: ' *';
+  }
+  .#{$prefix}--text-input {
+    @include input-base;
   }
 }

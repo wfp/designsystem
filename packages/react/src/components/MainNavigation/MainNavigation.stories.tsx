@@ -21,7 +21,7 @@ import Link from '../Link';
 import User from '../User';
 
 export default {
-  title: 'Components/Navigations/MainNavigation',
+  title: 'Components/Navigation/MainNavigation',
   component: MainNavigation,
   subcomponents: { MainNavigationExternal },
   parameters: {
@@ -111,7 +111,7 @@ export const Regular = (args) => (
             Additional content can be placed here.
             <br />
             Demo for internal close action:{' '}
-            <Link onClick={() => onChangeSub('close')}>Close Menu</Link>
+            <Link /*onClick={() => onChangeSub('close')}*/>Close Menu</Link>
           </SubNavigationContent>
         </SubNavigation>
       }>
@@ -391,7 +391,7 @@ export const RegularWithButton = (args) => (
             Additional content can be placed here.
             <br />
             Demo for internal close action:{' '}
-            <Link onClick={() => onChangeSub('close')}>Close Menu</Link>
+            <Link /*onClick={() => onChangeSub('close')}*/>Close Menu</Link>
           </SubNavigationContent>
         </SubNavigation>
       }>

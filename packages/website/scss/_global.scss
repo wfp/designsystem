@@ -43,7 +43,7 @@ $css--body: true;
   }
 }
 
-.wfp--theme-dark {
+.wfp--theme--dark {
   @include darkTheme.theme-dark();
 }
 
@@ -54,17 +54,18 @@ $css--body: true;
 }
 
 .wfp--main-navigation {
-  background: #fff;
+  //background: #fff;
   color: $text-primary;
   font-size: 1.2em;
 }
 
-.wfp--main-navigation__list {
-  height: 5em;
+body {
+  background: $background-main;
+  color: $text-primary;
 }
 
-body {
-  background: #fff;
+.wfp--main-navigation__list {
+  height: 5em;
 }
 
 html {

@@ -21,7 +21,7 @@ Regular.args = {
 
 export const SearchWithButton = (args) => (
   <div style={{ width: '50%', display: 'flex' }}>
-    <Search {...args} />
+    <Search {...args} addonAfter={<div>AddonAfter</div>} />
     <Button kind="primary" style={{ margin: '0 0.5rem' }}>
       Apply search
     </Button>
@@ -32,6 +32,29 @@ SearchWithButton.args = {
   name: 'search',
   id: 'butonsearch',
 };
+
+const AddonBefore = () => {
+  return <div>Before</div>;
+};
+
+const AddonAfter = () => {
+  return <div>After</div>;
+};
+
+export const SearchWithComponents = (args) => (
+  <div style={{ width: '50%', display: 'flex' }}>
+    <Search
+      {...args}
+      components={{ AddonBefore, AddonAfter }}
+      onChange={(e, value) => {
+        console.log('onChange', e, value);
+      }}
+    />
+    <Button kind="primary" style={{ margin: '0 0.5rem' }}>
+      Apply search
+    </Button>
+  </div>
+);
 
 SearchWithButton.story = {
   parameters: {

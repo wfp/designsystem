@@ -2,7 +2,7 @@ import React from 'react';
 
 import markdown from './README.mdx';
 
-import { Footer } from '.';
+import { Footer } from '../Footer';
 
 import { FooterExternal, FooterMetaLink, LinksColumn } from './FooterExternal';
 

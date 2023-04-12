@@ -10,10 +10,14 @@
         "defaultValue": null,
         "description": "",
         "name": "pageWidth",
+        "parent": {
+          "fileName": "src/components/InfoBar/InfoBar.tsx",
+          "name": "InfoBarProps"
+        },
         "declarations": [
           {
             "fileName": "src/components/InfoBar/InfoBar.tsx",
-            "name": "TypeLiteral"
+            "name": "InfoBarProps"
           }
         ],
         "required": false,
@@ -25,10 +29,14 @@
         "defaultValue": null,
         "description": "",
         "name": "wrapperClassName",
+        "parent": {
+          "fileName": "src/components/InfoBar/InfoBar.tsx",
+          "name": "InfoBarProps"
+        },
         "declarations": [
           {
             "fileName": "src/components/InfoBar/InfoBar.tsx",
-            "name": "TypeLiteral"
+            "name": "InfoBarProps"
           }
         ],
         "required": false,
@@ -40,10 +48,14 @@
         "defaultValue": null,
         "description": "",
         "name": "className",
+        "parent": {
+          "fileName": "src/components/InfoBar/InfoBar.tsx",
+          "name": "InfoBarProps"
+        },
         "declarations": [
           {
             "fileName": "src/components/InfoBar/InfoBar.tsx",
-            "name": "TypeLiteral"
+            "name": "InfoBarProps"
           }
         ],
         "required": false,
@@ -55,10 +67,14 @@
         "defaultValue": null,
         "description": "",
         "name": "id",
+        "parent": {
+          "fileName": "src/components/InfoBar/InfoBar.tsx",
+          "name": "InfoBarProps"
+        },
         "declarations": [
           {
             "fileName": "src/components/InfoBar/InfoBar.tsx",
-            "name": "TypeLiteral"
+            "name": "InfoBarProps"
           }
         ],
         "required": false,

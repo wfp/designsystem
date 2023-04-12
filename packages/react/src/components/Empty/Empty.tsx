@@ -2,7 +2,7 @@ import * as React from 'react';
 import type { PropsWithChildren } from 'react';
 import classNames from 'classnames';
 import useSettings from '../../hooks/useSettings';
-import { IIcon } from '../../typesLegacyBB/utils';
+// import { IIcon } from '../../utils';
 
 type EmptyProps = PropsWithChildren<{
   /**
@@ -12,12 +12,12 @@ type EmptyProps = PropsWithChildren<{
   /**
    * The title to be rendered in the empty state.
    */
-  title: React.ReactNode;
+  title?: React.ReactNode;
   /**
    * The kind of empty state to be rendered. @design
    */
   kind?: 'undefined' | 'large';
-  icon?: IIcon | React.ReactNode;
+  icon?: React.ReactNode;
   /**
    * The button to be rendered in the empty state. @design
    */
@@ -72,10 +72,13 @@ const Empty: React.FC<EmptyProps> = ({
     ...components,
   };
 
+  const IconComponent = allComponents.Icon as React.FC<EmptyProps>;
+  const TextComponent = allComponents.Text as React.FC<EmptyProps>;
+
   return (
     <div className={classes} {...other}>
-      <allComponents.Icon icon={icon} />
-      <allComponents.Text title={title} children={children} />
+      <IconComponent icon={icon} />
+      <TextComponent title={title} children={children} />
       <div className={`${prefix}--empty__button`}>{button}</div>
     </div>
   );

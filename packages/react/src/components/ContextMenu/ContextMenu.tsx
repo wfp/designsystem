@@ -45,33 +45,33 @@ const ContextMenuGroup: React.FC<ContextMenuGroupProps> = ({
   ...other
 }) => {
   const { prefix } = useSettings();
-  const classNames = classNames(
+  const classes = classNames(
     {
       [`${prefix}--context-menu__group`]: true,
     },
     className
   );
 
-  return <div className={classNames} {...other} />;
+  return <div className={classes} {...other} />;
 };
 
-type ContextMenuItemProps = PropsWithChildren<{
+interface ContextMenuItemProps extends React.ComponentPropsWithRef<'div'> {
   className?: string;
-}>;
+}
 
 const ContextMenuItem: React.FC<ContextMenuItemProps> = ({
   className,
   ...other
 }) => {
   const { prefix } = useSettings();
-  const classNames = classNames(
+  const classes = classNames(
     {
       [`${prefix}--context-menu__item`]: true,
     },
     className
   );
 
-  return <div className={classNames} {...other} />;
+  return <div className={classes} {...other} />;
 };
 
 export { ContextMenu, ContextMenuItem, ContextMenuGroup };

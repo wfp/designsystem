@@ -26,7 +26,7 @@ $input-border: 1px solid $field-border; // TODO
     order: 3;
     width: 100%;
   }
-  .#{$prefix}--input {
+  /* .#{$prefix}--input {
     @include reset;
     @include font-family('sans');
     @include type-style('input');
@@ -62,7 +62,7 @@ $input-border: 1px solid $field-border; // TODO
     &:read-only {
       @include read-only('border');
     }
-  }
+  }*/
   .#{$prefix}--input-addon-before,
   .#{$prefix}--input-addon-after {
     height: $input-height;

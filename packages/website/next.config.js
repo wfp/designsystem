@@ -51,6 +51,5 @@ module.exports = withMDX({
   },
   experimental: {
     scrollRestoration: true,
-    images: { layoutRaw: true },
   },
 });

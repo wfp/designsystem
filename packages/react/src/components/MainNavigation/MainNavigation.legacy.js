@@ -24,10 +24,10 @@ const MainNavigation = ({
     }
 
     if (action === 'close') {
-      setActiveMenuItem(undefined);
+      setActiveMenuItem(null);
     } else if (action === 'toggle') {
       const newI =
-        activeMenuItem === undefined || activeMenuItem !== i ? i : undefined;
+        activeMenuItem === null || activeMenuItem !== i ? i : undefined;
       setActiveMenuItem(newI);
     }
   };

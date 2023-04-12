@@ -3,11 +3,11 @@ import classNames from 'classnames';
 import Button from '../Button';
 import Wrapper from '../Wrapper';
 import useSettings from '../../hooks/useSettings';
-import { ScreenSize } from '../../typesLegacyBB/utils';
+import { ScreenSize } from '../../utils';
 import MainNavigationContext from './MainNavigationContext';
 /** The Main Navigation is a Horizontal Menu which consists of multiple clickable items placed at the top of the page. The navigation stays unchanged when browswing through the site and is present on every page. The currently selected item is usually highlighted. */
 
-interface MainNavigationProps {
+interface MainNavigationProps extends React.ComponentPropsWithRef<'div'> {
   logo?: string | React.ReactNode;
   pageWidth?: ScreenSize;
   components?: {
@@ -29,18 +29,17 @@ const MainNavigation: React.FC<MainNavigationProps> = ({
   pageWidth,
 }) => {
   const { prefix } = useSettings();
-  const [openMobile, setOpenMobile] = useState(false);
-  const [activeMenuItem, setActiveMenuItem] = useState(undefined);
+  const [openMobile, setOpenMobile] = useState<boolean>(false);
+  const [activeMenuItem, setActiveMenuItem] = useState<string | null>(null);
 
-  const onChangeSub = (action: function, i: number, e: any) => {
+  const onChangeSub = (action: string, i?: string, e?: any) => {
     if (e) e.preventDefault();
 
     if (action === 'close') {
-      setActiveMenuItem(undefined);
+      setActiveMenuItem(null);
     } else if (action === 'toggle') {
-      const newI =
-        activeMenuItem === undefined || activeMenuItem !== i ? i : undefined;
-      setActiveMenuItem(newI);
+      const newI = activeMenuItem === null || activeMenuItem !== i ? i : null;
+      if (newI) setActiveMenuItem(newI);
     }
   };
 
@@ -86,5 +85,7 @@ const MainNavigation: React.FC<MainNavigationProps> = ({
     </div>
   );
 };
+
+MainNavigation.displayName = 'MainNavigation';
 
 export default MainNavigation;

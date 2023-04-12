@@ -111,3 +111,19 @@
     display: none;
   }
 }
+
+.darkModeSwitch {
+  :global(.wfp--main-navigation__trigger) {
+    display: flex;
+    > * {
+      margin-left: 0.3em;
+    }
+  }
+}
+
+.meta {
+  display: flex;
+  > * {
+    margin-left: 0.5em;
+  }
+}

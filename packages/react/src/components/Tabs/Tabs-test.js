@@ -1,8 +1,8 @@
 import '@testing-library/jest-dom/extend-expect';
 import React from 'react';
-import Tabs from '../Tabs';
+import Tabs from '.';
 import Tab from '../Tab';
-import TabsSkeleton from '../Tabs/Tabs.Skeleton';
+import TabsSkeleton from './Tabs.Skeleton';
 import { shallow, mount } from 'enzyme';
 import { cleanup, render, screen } from '@testing-library/react';
 
@@ -14,11 +14,14 @@ describe('Tabs', () => {
       it('renders [role="navigation"] props on <nav> by default', () => {
         render(
           <Tabs className="extra-class" data-testid="tabs">
-          <Tab label="firstTab">content1</Tab>
-          <Tab label="lastTab">content2</Tab>
-        </Tabs>
-        )
-        expect(screen.getByTestId('tabs')).toHaveAttribute('role','navigation');
+            <Tab label="firstTab">content1</Tab>
+            <Tab label="lastTab">content2</Tab>
+          </Tabs>
+        );
+        expect(screen.getByTestId('tabs')).toHaveAttribute(
+          'role',
+          'navigation'
+        );
       });
 
       // it('renders [role="tablist"] props on <ul> by default', () => {
@@ -33,31 +36,34 @@ describe('Tabs', () => {
       it('renders extra classes on <nav> via className prop', () => {
         render(
           <Tabs className="extra-class" data-testid="tabs">
-          <Tab label="firstTab">content1</Tab>
-        </Tabs>
-        )
+            <Tab label="firstTab">content1</Tab>
+          </Tabs>
+        );
         expect(screen.getByTestId('tabs')).toHaveClass('extra-class');
       });
 
       it('renders expected classes on <nav> by default', () => {
         render(
           <Tabs className="extra-class" data-testid="tabs">
-          <Tab label="firstTab">content1</Tab>
-        </Tabs>
-        )
+            <Tab label="firstTab">content1</Tab>
+          </Tabs>
+        );
         expect(screen.getByTestId('tabs')).toHaveClass('wfp--tabs');
       });
     });
 
     describe('Children (<Tab>)', () => {
       afterEach(cleanup);
-      
 
       it('renders children as expected', () => {
         render(
           <Tabs data-testid="tabs">
-            <Tab data-testid="tab-one" label="firstTab">content1</Tab>
-            <Tab data-testid="tab-last" label="lastTab">content2</Tab>
+            <Tab data-testid="tab-one" label="firstTab">
+              content1
+            </Tab>
+            <Tab data-testid="tab-last" label="lastTab">
+              content2
+            </Tab>
           </Tabs>
         );
         expect(screen.getByText('content1')).toBeInTheDocument();
@@ -78,8 +84,12 @@ describe('Tabs', () => {
       it('renders selected prop (where firstTab is selected by default)', () => {
         render(
           <Tabs data-testid="tabs">
-            <Tab data-testid="tab-one" label="firstTab" selected>content1</Tab>
-            <Tab data-testid="tab-last" label="lastTab">content2</Tab>
+            <Tab data-testid="tab-one" label="firstTab" selected>
+              content1
+            </Tab>
+            <Tab data-testid="tab-last" label="lastTab">
+              content2
+            </Tab>
           </Tabs>
         );
         expect(screen.getByTestId('tab-one')).not.toBeEmptyDOMElement();

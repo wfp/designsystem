@@ -3,7 +3,7 @@ import type { PropsWithChildren } from 'react';
 import Modal from '../Modal';
 import Button from '../Button';
 import useSettings from '../../hooks/useSettings';
-import { ButtonKind } from '../../typesLegacyBB/utils';
+import { ButtonKind } from '../../utils';
 
 /** Modal Wrapper component to encapsulate your Modal within a button. */
 type ModalWrapperProps = PropsWithChildren<{
@@ -31,6 +31,8 @@ type ModalWrapperProps = PropsWithChildren<{
   triggerButtonKind?: ButtonKind;
   shouldCloseAfterSubmit?: boolean;
   onKeyDown?: (evt: KeyboardEvent<HTMLDivElement>) => void;
+  primaryButtonRef?: React.RefObject<HTMLButtonElement>;
+  secondaryButtonRef?: React.RefObject<HTMLButtonElement>;
 }>;
 
 const ModalWrapper: React.FC<ModalWrapperProps> = ({
