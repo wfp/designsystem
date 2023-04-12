@@ -19,8 +19,6 @@ function searchTreeWrapper(element, matchingTitle) {
 const rehypeComponentsList = (posts) => async (tree) => {
   const imageNodes = searchTreeWrapper(tree, 'ComponentsList');
 
-  console.log('posts', posts);
-
   await Promise.all(
     imageNodes.map(async (node) => {
       const attributes = {

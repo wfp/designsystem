@@ -30,7 +30,7 @@ interface ButtonBaseProps {
   /**
    * Specify an `icon` to include in the Button through an object representing the SVG data of the icon, similar to the `Icon` component @design
    */
-  icon?: React.ComponentType | React.ElementType;
+  icon?: React.ComponentType | React.ElementType | React.ReactNode;
   /**
    * Optionally specify an href for your Button to become an element @design
    */

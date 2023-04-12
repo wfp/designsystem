@@ -10,19 +10,16 @@ export interface Heading {
   data?: any;
 }
 
-export const hasHeadingsData = (
-  data: unknown
-): data is { headings: Heading[] } =>
+export const hasHeadingsData = (data: any): data is { headings: Heading[] } =>
   data instanceof Object &&
+  // eslint-disable-next-line no-prototype-builtins
   data.hasOwnProperty('headings') &&
-  // @ts-expect-error
   data.headings instanceof Array;
 
 export const headings = (root: Node) => {
   const headingList: Heading[] = [];
 
   visit(root, 'heading', (node: AstHeading) => {
-    console.log('node', node);
     const heading: Heading = {
       depth: node.depth,
       value: toString(node, { includeImageAlt: false }),

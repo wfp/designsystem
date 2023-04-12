@@ -11,8 +11,6 @@ function ComponentPreview({ component, componentsList }: any) {
     (e) => e.slug === component.path.slug
   );
 
-  console.log('search', componentData, component.path);
-
   if (!componentData) return null;
 
   return (
@@ -40,7 +38,6 @@ export default function ComponentsList(props: any) {
     (p) => p.name === 'Components'
   );
 
-  console.log('split', split);
   return (
     <div className={styles.componentsList}>
       {split.children.map((p, a) => {

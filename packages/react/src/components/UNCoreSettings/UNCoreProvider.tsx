@@ -101,15 +101,12 @@ export const UNCoreProvider: React.FC<UNCoreProps> = ({
   };
 
   const setTheme = (theme: string) => {
-    console.log('setTheme', theme);
     const newTheme = setElementTheme(theme);
     setActualThemeState(newTheme);
     if (typeof window !== 'undefined')
       window.localStorage.setItem('theme', theme);
     setThemeState(theme);
   };
-
-  console.log('setThemeState');
 
   const ctx = {
     ...defaultUNContext,

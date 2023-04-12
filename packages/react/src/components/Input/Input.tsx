@@ -71,7 +71,7 @@ export interface InputProps {
   inline?: boolean;
   addonBefore?: string | React.ReactNode;
   addonAfter?: string | React.ReactNode;
-  components?: { AddonBefore?: React.ReactNode; AddonAfter?: React.ReactNode };
+  components?: { AddonBefore?: React.Element; AddonAfter?: React.Element };
 }
 
 interface InputPropsI extends InputProps, React.ComponentPropsWithRef<'div'> {
@@ -220,8 +220,6 @@ const Input: React.FC<PropsWithChildren<InputPropsI>> = ({
   const components = { AddonAfter, AddonBefore, ...componentsOverride };
   const AddOnAfter = components.AddonAfter as React.FC<AddonAfterProps>;
   const AddOnBefore = components.AddonBefore as React.FC<AddonBeforeProps>;
-
-  console.log('componentsOverride', componentsOverride);
 
   return (
     <FormItem className={formItemClassName} inline={other.inline}>

@@ -13,15 +13,11 @@ import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import Search from '../Search';
 
 import styles from './styles.module.scss';
-import {
-  faMoonStars,
-  faSpaceStationMoonConstruction,
-} from '@fortawesome/pro-solid-svg-icons';
+import { faMoonStars } from '@fortawesome/pro-solid-svg-icons';
 import { faSun } from '@fortawesome/pro-regular-svg-icons';
 export default function Navigation() {
   //const { t } = useTranslation('website');
-  const theme = useTheme();
-  console.log('theme', theme);
+  const theme: any = useTheme();
 
   useEffect(() => {
     const wrapperElement = document.body;

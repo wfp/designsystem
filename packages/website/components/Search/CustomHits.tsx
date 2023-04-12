@@ -4,14 +4,11 @@ import { Highlight, Snippet, useHits } from 'react-instantsearch-hooks-web';
 import slugifyWithSlashes from '../../lib/slugifyWithSlashes';
 import styles from './customHits.module.scss';
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { faLoveseat } from '@fortawesome/pro-solid-svg-icons';
 
 function Hit({ hit, setOpen, count, index }: any) {
-  console.log('hit', hit);
   const ref = useRef<any>(null);
 
   useEffect(() => {
-    console.log('focus', count, index);
     if (count === index) {
       ref.current.focus();
       ref.current.scrollIntoViewIfNeeded({
@@ -75,8 +72,6 @@ function Hits(props: any) {
         case 40:
           handleUpdateCount(1);
           break;
-        default:
-          console.log('default');
       }
     };
 

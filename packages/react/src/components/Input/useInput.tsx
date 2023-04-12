@@ -101,7 +101,7 @@ export interface UseInputProps {
   light?: boolean;
   readOnly?: boolean;
   name?: string;
-  components?: { AddonAfter?: React.ReactNode };
+  components?: { AddonAfter?: React.Element };
 }
 
 /**

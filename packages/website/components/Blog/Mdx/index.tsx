@@ -16,13 +16,7 @@ import ComponentsList from './ComponentsList';
 import { H1, H2, H3, H4, H5 } from './Headings';
 import IconList from './Icons/IconListNew';
 import PropTypes from '../../PropTypes';
-import {
-  Button,
-  MdxComponents,
-  BlockNotification,
-  Blockquote,
-  TextInput,
-} from '@un/react';
+import { Button, MdxComponents, BlockNotification, TextInput } from '@un/react';
 
 import FaviconGenerator from '../../../_posts/Favicons/FaviconGenerator';
 
@@ -46,13 +40,10 @@ const components = {
   //pre: (e) => <CodeBlock {...e} OrginalCode={code} />,
   //code: CodeBlockLive,
 
-  pre: Pre /*(props) => {
-    console.log('ppppr', props);
-    return <div {...props} />  */,
+  pre: Pre,
   code: code,
   ComponentsList,
   Meta: Flex,
-  Blockquote,
   BlockNotification,
   Button,
   PropTypes,

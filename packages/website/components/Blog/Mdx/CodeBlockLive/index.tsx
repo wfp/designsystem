@@ -30,7 +30,6 @@ import { Button, Empty } from '@un/react';
 import prettier from 'prettier/standalone';
 import babelParser from 'prettier/parser-babel';
 import htmlParser from 'prettier/parser-html';
-import PropTypes from '../../../PropTypes';
 
 function LiveHtml({ live }: { live?: Record<string, unknown> }) {
   const Result = live.element as React.ComponentType;

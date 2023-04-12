@@ -1,5 +1,4 @@
 import { Link, List, ListItem } from '@un/react';
-import { MDXRemote } from 'next-mdx-remote';
 import React from 'react';
 import { createSlug } from '../Mdx/Headings';
 import styles from './tableOfContent.module.scss';

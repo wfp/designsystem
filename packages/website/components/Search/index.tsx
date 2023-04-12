@@ -74,7 +74,7 @@ export default function SearchWrapper() {
     const callback = (event: KeyboardEvent) => {
       // event.metaKey - pressed Command key on Macs
       // event.ctrlKey - pressed Control key on Linux or Windows
-      console.log('kkey', event);
+
       if ((event.metaKey || event.ctrlKey) && event.code === 'KeyK') {
         console.log('Pressed Command/Control + C');
         setOpen(true);

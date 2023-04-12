@@ -39,7 +39,6 @@ function TreeBranch({ slug, split, level }: SidebarProps) {
 
   const [open, setOpen] = useState(level === 0 || found);
 
-  //console.log('level', level, split);
   return (
     <li
       className={`${styles[`level-${level}`]}  ${
@@ -129,8 +128,6 @@ export default function SidebarWrapper({
       directory: false,
     };
   });
-
-  console.log('post', post);
 
   const split = createPathTree(postSplit);
 

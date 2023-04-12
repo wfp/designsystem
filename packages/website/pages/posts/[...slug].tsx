@@ -149,9 +149,13 @@ export async function getStaticProps({ params }) {
   let propTypes = null;
 
   if (post.mainComponent) {
-    // eslint-disable-next-line @typescript-eslint/no-var-requires
-    const file = require(`../../types/src/components/${post.mainComponent}/${post.mainComponent}.json`);
-    propTypes = file;
+    try {
+      // eslint-disable-next-line @typescript-eslint/no-var-requires
+      const file = require(`../../types/src/components/${post.mainComponent}/${post.mainComponent}.json`);
+      propTypes = file;
+    } catch (e) {
+      console.log("Can't load typescript definitions!");
+    }
   }
 
   return {

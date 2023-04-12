@@ -6,9 +6,6 @@ import React from 'react';
 import styles from './tableOfContent.module.scss';
 
 export default function References({ post }: any) {
-  '?path=/story/components-navigations-bannernavigation';
-
-  console.log('post', post);
   if (!post.figma && !post.storybook && !post.github) return null;
   return (
     <div className={styles.tableOfContent}>
