@@ -1,12 +1,14 @@
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { Button, TextInput } from '../src';
+import styles from './reactHookFormDecorator.module.scss';
 
 const reactHookFormDecorator = (Story) => {
   const [defaultValues, setDefaultValues] = useState({ inputname: true });
-  const { control, register, handleSubmit, watch, reset } = useForm({
+  const form = useForm({
     defaultValues,
   });
+  const { control, register, handleSubmit, watch, reset } = form;
   const [data, setData] = useState('');
 
   const setDefaultValuesFunc = (e) => {
@@ -33,7 +35,14 @@ const reactHookFormDecorator = (Story) => {
         onChange={setDefaultValuesFunc}
       />
       <form onSubmit={handleSubmit((data) => setData(JSON.stringify(data)))}>
-        <Story />
+        <div className={styles.preview}>
+          <Story
+            control={control}
+            aaaaaa="bbbbbbb"
+            register={register}
+            form={form}
+          />
+        </div>
         <Button type="submit">Submit</Button>{' '}
         <Button onClick={resetInputs} kind="tertiary">
           Reset

@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { ComponentType } from 'react';
 import type { PropsWithChildren } from 'react';
 import classNames from 'classnames';
 import useSettings from '../../hooks/useSettings';
@@ -40,11 +41,11 @@ export interface InputProps {
    * Specify whether the control is currently invalid.
    * Either a boolean in combination with `invalidText` or an `object`( eg. { message: "Message", …otherErrorProperties }) can be passed.
    */
-  invalid?: boolean | HookForm.FieldError;
+  invalid?: boolean | HookForm.FieldError | any;
   /**
    * Provide the text that is displayed when the control is in an invalid state @design
    */
-  invalidText?: string | React.ReactNode;
+  invalidText?: string | React.ReactNode | any;
   /**
    * Provide the content that will be shown in addition to the label
    * (e.g. units, currency, etc.)
@@ -71,7 +72,10 @@ export interface InputProps {
   inline?: boolean;
   addonBefore?: string | React.ReactNode;
   addonAfter?: string | React.ReactNode;
-  components?: { AddonBefore?: React.Element; AddonAfter?: React.Element };
+  components?: {
+    AddonBefore?: ComponentType<AddonBeforeProps>;
+    AddonAfter?: ComponentType<AddonAfterProps>;
+  };
 }
 
 interface InputPropsI extends InputProps, React.ComponentPropsWithRef<'div'> {
@@ -82,12 +86,12 @@ interface InputPropsI extends InputProps, React.ComponentPropsWithRef<'div'> {
   children?: React.ReactNode;
 }
 
-interface AddonBeforeProps {
+export interface AddonBeforeProps {
   addonBefore?: React.ReactNode;
   prefix?: string;
 }
 
-interface AddonAfterProps {
+export interface AddonAfterProps {
   addonAfter?: React.ReactNode;
   prefix?: string;
 }

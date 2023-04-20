@@ -21,7 +21,7 @@
     "lerna:publishFromPackage": "lerna publish from-package --yes",
     "lerna:version": "lerna version --conventional-commits",
     "lerna:versionNoPush": "lerna version --no-push --conventional-commits --yes",
-    "publish": "lerna publish",
+    "publish:main": "lerna publish",
     "test": "jest"
   },
   "keywords": [

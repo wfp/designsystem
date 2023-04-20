@@ -1,17 +1,24 @@
-import React, { useState } from 'react';
+import React, { ComponentType, useState } from 'react';
 import classNames from 'classnames';
-import Button from '../Button';
-import Wrapper from '../Wrapper';
+
+import WrapperDefault from '../Wrapper';
 import useSettings from '../../hooks/useSettings';
 import { ScreenSize } from '../../utils';
 import MainNavigationContext from './MainNavigationContext';
+import MobileButtonDefault, { MobileButtonProps } from './MobileButton';
+import { WrapperProps } from '../Wrapper/Wrapper';
+
 /** The Main Navigation is a Horizontal Menu which consists of multiple clickable items placed at the top of the page. The navigation stays unchanged when browswing through the site and is present on every page. The currently selected item is usually highlighted. */
 
 interface MainNavigationProps extends React.ComponentPropsWithRef<'div'> {
   logo?: string | React.ReactNode;
   pageWidth?: ScreenSize;
+  /*
+   * The replaceable components to be used for the main navigation. MobileButton(prefix, toggleMenu): accepts a React.ReactNode which will be used as the mobile button. Wrapper: accepts a React.ReactNode which will be used as the wrapper.
+   */
   components?: {
-    Wrapper?: React.ComponentType<any>;
+    Wrapper?: ComponentType<WrapperProps>;
+    MobileButton?: ComponentType<MobileButtonProps>;
   };
   mobilePageWidth?: ScreenSize;
   wrapperClassName?: string;
@@ -29,7 +36,7 @@ const MainNavigation: React.FC<MainNavigationProps> = ({
   pageWidth,
 }) => {
   const { prefix } = useSettings();
-  const [openMobile, setOpenMobile] = useState<boolean>(false);
+  const [openMobileMenu, setOpenMobileMenu] = useState<boolean>(false);
   const [activeMenuItem, setActiveMenuItem] = useState<string | null>(null);
 
   const onChangeSub = (action: string, i?: string, e?: any) => {
@@ -44,7 +51,7 @@ const MainNavigation: React.FC<MainNavigationProps> = ({
   };
 
   const toggleMenu = () => {
-    setOpenMobile(!openMobile);
+    setOpenMobileMenu(!openMobileMenu);
   };
 
   // const triggerSubNavigation = () => {
@@ -58,29 +65,37 @@ const MainNavigation: React.FC<MainNavigationProps> = ({
   const wrapperClasses = classNames(`${prefix}--main-navigation`, className);
 
   const listClasses = classNames(`${prefix}--main-navigation__list`, {
-    [`${prefix}--main-navigation__list--open`]: openMobile,
+    [`${prefix}--main-navigation__list--open`]: openMobileMenu,
   });
 
-  const Components = { Wrapper, ...componentsOverride };
+  const components = {
+    Wrapper: WrapperDefault,
+    MobileButton: MobileButtonDefault,
+    ...componentsOverride,
+  };
+
+  const Wrapper = components.Wrapper as React.FC<WrapperProps>;
+  const MobileButton = components.MobileButton as React.FC<MobileButtonProps>;
 
   return (
     <div id={id} className={wrapperClasses}>
       <MainNavigationContext.Provider
-        value={{ activeMenuItem, openMobile, toggleMenu, onChangeSub }}>
-        <Components.Wrapper
+        value={{ activeMenuItem, openMobileMenu, toggleMenu, onChangeSub }}>
+        <Wrapper
           pageWidth={pageWidth}
           mobilePageWidth={mobilePageWidth}
           className={`${prefix}--main-navigation__wrapper`}>
           <div className={`${prefix}--main-navigation__logo-wrapper`}>
-            <Button
-              className={`${prefix}--main-navigation__button`}
-              onClick={toggleMenu}>
+            <MobileButton
+              toggleMenu={toggleMenu}
+              prefix={prefix}
+              openMobileMenu={openMobileMenu}>
               Menu
-            </Button>
+            </MobileButton>
             <div className={`${prefix}--main-navigation__logo`}>{logo}</div>
           </div>
           <ul className={listClasses}>{children}</ul>
-        </Components.Wrapper>
+        </Wrapper>
       </MainNavigationContext.Provider>
     </div>
   );

@@ -35,16 +35,17 @@ const TextInput: React.FC<TextInputProps> = React.forwardRef((props, ref) => {
   );
 
   const useInputProps = props as UseInputProps;
-  const input = useInput(useInputProps);
+  const { inputProps, wrapperProps } = useInput(useInputProps);
+
+  console.log('input', inputProps, wrapperProps);
 
   return (
-    <Input {...input.wrapperProps} formItemClassName={formItemClassName}>
+    <Input {...wrapperProps} formItemClassName={formItemClassName}>
       <input
         pattern={pattern}
-        {...input.inputProps}
+        {...inputProps}
         ref={ref}
         className={textInputClasses}
-        {...input}
       />
     </Input>
   );

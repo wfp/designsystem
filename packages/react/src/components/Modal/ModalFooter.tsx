@@ -1,23 +1,16 @@
 import * as React from 'react';
 import Button from '../Button';
 import useSettings from '../../hooks/useSettings';
+import { ModalProps } from './Modal';
 
-interface ModalFooterProps {
-  passiveModal?: boolean;
-  secondaryButtonText?: string;
+export interface ModalFooterProps extends ModalProps {
+  /*passiveModal?: boolean;
+  secondaryButtonText?: string; */
   onSecondaryButtonClick?: (
     evt: React.MouseEvent<HTMLButtonElement, MouseEvent>,
     trigger: 'button' | 'background' | 'key'
   ) => void;
-  primaryButtonText?: string;
-  // eslint-disable-next-line @typescript-eslint/ban-types
-  onRequestSubmit?: () => void;
-  primaryButtonDisabled?: boolean;
-  secondaryButtonDisabled?: boolean;
-  danger?: boolean;
   prefix?: string;
-  primaryButtonRef?: React.RefObject<HTMLButtonElement>;
-  secondaryButtonRef?: React.RefObject<HTMLButtonElement>;
 }
 
 const ModalFooter: React.FC<ModalFooterProps> = ({

@@ -3,7 +3,7 @@ import React, { FC } from 'react';
 import './storybook.scss';
 import theme from './theme';
 import { UNCoreProvider } from '../src/components/UNCoreSettings';
-//import MdxComponents from '../src/components/MdxComponents';
+//import mdxComponents from '../src/components/mdxComponents';
 
 /*import {
   Title,
@@ -31,7 +31,7 @@ addParameters({
 export const parameters = {
   controls: { expanded: true },
   docs: {
-    //components: { ...MdxComponents },
+    //components: { ...mdxComponents },
     theme: theme,
     //theme: ensure(themes.dark),
     //page: DocsPage,

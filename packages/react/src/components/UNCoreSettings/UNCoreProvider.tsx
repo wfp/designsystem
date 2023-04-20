@@ -12,6 +12,7 @@ export interface AppContextInterface {
   selectorTabbable: string;
   selectorFocusable: string;
   theme: string;
+  initialized: boolean;
   // eslint-disable-next-line @typescript-eslint/ban-types
   setTheme: (theme: string) => void;
   wrapperElement?: HTMLElement;

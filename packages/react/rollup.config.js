@@ -12,6 +12,7 @@ const typescript = require('@rollup/plugin-typescript');
 
 const baseConfig = {
   input: './src/index.ts',
+
   external: [
     ...Object.keys(packageJson.peerDependencies),
     ...Object.keys(packageJson.dependencies),
@@ -23,6 +24,7 @@ const baseConfig = {
       include: /node_modules/,
     }),
     typescript({
+      sourceMap: true,
       compilerOptions: {
         declaration: true,
       },
@@ -73,6 +75,7 @@ const umdBundleConfig = {
     file: 'es/index.js',
     format: 'es',
     exports: 'named',
+    sourcemap: true,
   },
   /*{
       name: 'WfpUiReact',
@@ -115,6 +118,7 @@ module.exports = [
     plugins: [
       ...baseConfig.plugins,
       replace({
+        preventAssignment: true,
         'process.env.NODE_ENV': JSON.stringify('development'),
       }),
     ],
@@ -129,6 +133,7 @@ module.exports = [
     plugins: [
       ...baseConfig.plugins,
       replace({
+        preventAssignment: true,
         'process.env.NODE_ENV': JSON.stringify('development'),
       }),
     ],
@@ -145,6 +150,7 @@ module.exports = [
     plugins: [
       ...baseConfig.plugins,
       replace({
+        preventAssignment: true,
         'process.env.NODE_ENV': JSON.stringify('production'),
       }),
       terser(),

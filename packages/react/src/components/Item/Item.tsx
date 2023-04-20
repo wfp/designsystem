@@ -12,33 +12,36 @@ interface ItemProps extends Omit<React.ComponentPropsWithRef<'div'>, 'title'> {
   kind?: 'undefined' | 'horizontal' | 'large';
   wrapper?: 'undefined' | 'sidebar' | 'repeater';
   showAdditionalIcon?: boolean;
-  subContent?: string;
-  additional?: string;
+  subContent?: React.ReactNode;
   hint?: React.ReactNode;
   //className?: string;
   active?: boolean;
+  additional?: React.ReactNode;
   image?: React.ReactNode;
   noImage?: boolean;
   unread?: boolean;
 }
 /** The item component to show entries inside a list, like a sidebar or an overview page. */
 const Item: React.FC<ItemProps> = React.forwardRef(
-  ({
-    active,
-    additional,
-    children,
-    className,
-    subContent,
-    image,
-    hint,
-    noImage,
-    unread,
-    showAdditionalIcon,
-    title,
-    kind = 'large',
-    wrapper = 'none',
-    ...other
-  }) =>
+  (
+    {
+      active,
+      additional,
+      children,
+      className,
+      subContent,
+      image,
+      hint,
+      noImage,
+      unread,
+      showAdditionalIcon,
+      title,
+      kind = 'large',
+      wrapper = 'none',
+      ...other
+    },
+    ref
+  ) =>
     //TODO:  ref
     {
       const { prefix } = useSettings();
@@ -54,7 +57,7 @@ const Item: React.FC<ItemProps> = React.forwardRef(
         className
       );
       return (
-        <div className={classes} {...other}>
+        <div className={classes} {...other} ref={ref}>
           {image ? (
             <div className={`${prefix}--item__image`}>{image}</div>
           ) : noImage ? (

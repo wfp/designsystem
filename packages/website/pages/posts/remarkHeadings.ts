@@ -1,6 +1,6 @@
 import { Heading as AstHeading } from 'mdast';
 
-import { Node, visit } from 'unist-util-visit';
+import { visit } from 'unist-util-visit';
 import { toString } from 'mdast-util-to-string';
 import { VFileWithOutput } from 'unified';
 
@@ -16,7 +16,7 @@ export const hasHeadingsData = (data: any): data is { headings: Heading[] } =>
   data.hasOwnProperty('headings') &&
   data.headings instanceof Array;
 
-export const headings = (root: Node) => {
+export const headings = (root: any) => {
   const headingList: Heading[] = [];
 
   visit(root, 'heading', (node: AstHeading) => {
@@ -40,7 +40,7 @@ export const headings = (root: Node) => {
 };
 
 export default function remarkHeadings() {
-  return (node: Node, file: VFileWithOutput<any>) => {
+  return (node: any, file: VFileWithOutput<any>) => {
     file.data.headings = headings(node);
   };
 }

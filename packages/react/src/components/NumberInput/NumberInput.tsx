@@ -30,7 +30,7 @@ interface NumberInputProps
     value?: number,
     direction?: string
   ) => void;
-  value?: '' | number;
+  value?: '' | number | string;
 }
 
 const countDecimals = (value) => {

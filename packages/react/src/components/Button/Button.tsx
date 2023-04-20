@@ -1,10 +1,9 @@
-//import React, { useEffect, useState } from 'react';
 import * as React from 'react';
 import { useState, useEffect } from 'react';
 
 import classNames from 'classnames';
 import useSettings from '../../hooks/useSettings';
-import { ButtonKind /*, IIcon */ } from '../../utils';
+import { ButtonKind } from '../../utils';
 
 interface ButtonBaseProps {
   /**
@@ -27,10 +26,11 @@ interface ButtonBaseProps {
    * Optionally specify an href for your Button to become an element
    */
   href?: string;
+  //target?: string; // TODO: Remove
   /**
    * Specify an `icon` to include in the Button through an object representing the SVG data of the icon, similar to the `Icon` component @design
    */
-  icon?: React.ComponentType | React.ElementType | React.ReactNode;
+  icon?: React.ReactNode | React.ComponentType<any>;
   /**
    * Optionally specify an href for your Button to become an element @design
    */
@@ -49,27 +49,30 @@ interface ButtonBaseProps {
 
 interface ButtonButtonProps
   extends ButtonBaseProps,
-    React.ComponentPropsWithRef<'button'> {}
+    React.ComponentPropsWithoutRef<'button'> {}
 
 interface ButtonLinkProps
   extends ButtonBaseProps,
-    React.ComponentPropsWithRef<'a'> {}
-
-//type ButtonProps = ButtonButtonProps | ButtonLinkProps;
+    React.ComponentPropsWithoutRef<'a'> {}
 
 type ConditionalProps<T> = T extends { href: string }
   ? ButtonLinkProps
   : ButtonButtonProps;
 
-type ButtonProps<T extends { href?: string }> = ConditionalProps<T> &
-  React.ComponentPropsWithRef<T extends { href: string } ? 'a' : 'button'>;
-
 /**
  * Buttons express what action will occur when the user clicks or touches it. Buttons are used to initialize an action, either in the background or foreground of an experience. */
 
+export type ButtonRef<T extends React.ElementType> =
+  React.ComponentPropsWithRef<T>['ref'];
+
 export const Button = React.forwardRef(
   <T extends { href?: string }>(
-    {
+    props: ConditionalProps<T>,
+    ref: React.Ref<
+      T extends { href: string } ? HTMLLinkElement : HTMLButtonElement
+    >
+  ) => {
+    const {
       children,
       className,
       disabled,
@@ -79,16 +82,13 @@ export const Button = React.forwardRef(
       iconReverse,
       tabIndex,
       useFlexbox,
-      icon /*: Icon*/,
+      type = 'button',
+      icon,
       iconDescription,
       onClick,
       id,
       ...other
-    }: ButtonProps<T>,
-    ref: React.Ref<
-      T extends { href: string } ? HTMLAnchorElement : HTMLButtonElement
-    >
-  ) => {
+    } = props;
     const { prefix } = useSettings();
     const [count, setCount] = useState(false);
 
@@ -98,6 +98,7 @@ export const Button = React.forwardRef(
         clearTimeout(timer);
       };
     }, [count]);
+    console.log('ref: ', ref);
 
     const buttonClasses = classNames(className, {
       [`${prefix}--btn`]: true,
@@ -128,10 +129,6 @@ export const Button = React.forwardRef(
         />
       );
     }
-
-    /* const buttonImage = Icon ? (
-      <Icon description={iconDescription} className={`${prefix}--btn__icon`} />
-    ) : null;*/
 
     const endAnimation = () => {
       setCount(false);
@@ -175,7 +172,7 @@ export const Button = React.forwardRef(
         {...buttonProps}
         {...commonProps}
         disabled={disabled}
-        //  type={type}
+        type={type}
         onClick={onClickAnimation}
         ref={ref as React.Ref<HTMLButtonElement>}
         id={id}>
@@ -184,22 +181,6 @@ export const Button = React.forwardRef(
         {!iconReverse && buttonImage}
       </button>
     );
-
-    /*   const anchor = (
-      <a
-        {...other}
-        {...commonProps}
-        href={href}
-        role="button"
-        onClick={onClickAnimation}
-        ref={ref}
-        id={id}>
-        {iconReverse && buttonImage}
-        {children}
-        {!iconReverse && buttonImage}
-      </a>
-    );*/
-    // return href ? anchor : button;
   }
 );
 

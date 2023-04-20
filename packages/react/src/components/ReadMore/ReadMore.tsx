@@ -32,26 +32,53 @@ const MoreLink = ({ handleToggleClick, link, text, showMore }) => {
 };
 
 type ReadMoreProps = PropsWithChildren<{
+  /**
+   * Specify an optional className to be applied to the wrapper node
+   */
   className?: string;
+  /**
+   * The content of the collapsed content (optional)
+   */
   collapsed?: boolean;
+  /**
+   * A custom link for collapsing
+   */
   collapseLink?: React.ReactNode;
+  /**
+   * Custom text for collapsing
+   */
   collapseText?: React.ReactNode;
+  /**
+   * Disable the scroll into view on expanding
+   */
   disableAutoscroll?: boolean;
+  /**
+   * A custom link for expanding
+   */
   expandLink?: React.ReactNode;
+  /**
+   * Custom text for expanding
+   */
   expandText?: React.ReactNode;
+  /**
+   * Enables the fade effect when the content is collapsed (optional) when enabled collapsed will be ignored
+   */
   fade?: boolean;
+  /**
+   * The maximum height when the content is collapsed (optional)
+   */
   maxHeight?: number;
 }>;
 /** ReadMore component is a simple way to keep longer content from cluttering up your page, giving you more control over how much content is displayed to visitor */
 const ReadMore: React.FC<ReadMoreProps> = ({
   collapseLink,
-  collapseText,
+  collapseText = 'Show less',
   children,
   collapsed,
   className,
   disableAutoscroll,
   expandLink,
-  expandText,
+  expandText = 'Show more',
   fade,
   maxHeight,
 }) => {

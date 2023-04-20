@@ -2,11 +2,9 @@ import React from 'react';
 import classNames from 'classnames';
 import useSettings from '../../hooks/useSettings';
 import { NotificationIcon, NotificationTextDetails } from './Notification';
-import { InputProps } from '../Input';
 
 export interface BlockNotificationProps
-  extends InputProps,
-    React.ComponentPropsWithRef<'div'> {
+  extends Omit<React.ComponentPropsWithRef<'div'>, 'title'> {
   /**
    * Pass in the action nodes that will be rendered within the InlineNotification
    */
@@ -69,7 +67,7 @@ export interface BlockNotificationProps
   /**
    * Specify the title
    */
-  title?: string;
+  title?: React.ReactNode;
 }
 
 export const BlockNotification: React.FC<BlockNotificationProps> =

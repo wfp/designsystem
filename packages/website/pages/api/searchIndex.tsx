@@ -1,6 +1,4 @@
-//import  dotenv = require("dotenv");
 import algoliasearch from 'algoliasearch/lite';
-//import  fetch = require("node-fetch");
 import { getAllPosts } from '../../lib/getPost';
 
 async function getAllBlogPosts() {
@@ -33,11 +31,8 @@ function transformPostsToSearchObjects(posts: any) {
 export default async function issues() {
   try {
     (async function () {
-      //dotenv.config();
-
       try {
         const posts = await getAllBlogPosts();
-
         const transformed = transformPostsToSearchObjects(posts);
 
         // initialize the client with your environment variables

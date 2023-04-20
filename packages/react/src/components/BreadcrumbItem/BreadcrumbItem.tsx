@@ -17,9 +17,21 @@ const newChild = (children, disableLink, href) => {
 };
 
 interface BreadcrumbItemProps {
+  /**
+   * Specify an link for the `BreadcrumbItem`
+   */
   href?: string;
+  /**
+   * The children elements, usually a link
+   */
   children?: React.ReactNode;
+  /**
+   * Specify `BreadcrumbItem` to be interactive/enabled or non-interactive/disabled
+   */
   disableLink?: boolean;
+  /**
+   * Specify an optional className to be added to the `BreadcrumbItem` Icon
+   */
   className?: string;
 }
 

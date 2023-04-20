@@ -1,7 +1,8 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
-import React from 'react';
+import React, { ComponentType } from 'react';
 import classNames from 'classnames';
 import useSettings from '../../hooks/useSettings';
+import { AddonAfterProps } from './Input';
 
 export interface UseInputProps {
   /**
@@ -101,7 +102,7 @@ export interface UseInputProps {
   light?: boolean;
   readOnly?: boolean;
   name?: string;
-  components?: { AddonAfter?: React.Element };
+  components?: { AddonAfter?: ComponentType<AddonAfterProps> };
 }
 
 /**
@@ -122,8 +123,6 @@ export const useInput = ({
   invalid,
   labelText,
   helperText,
-  //invalidText = '',
-  //helperText = '',
   light,
   //required,
   ...other
@@ -139,6 +138,7 @@ export const useInput = ({
 
   const inputProps = {
     id: calculatedId,
+    name,
     className: inputClasses,
     onChange: (evt) => {
       if (!other.disabled && !other.readOnly) {

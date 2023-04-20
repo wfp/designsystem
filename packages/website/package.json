@@ -13,7 +13,8 @@
     "ts:watch": "yarn ts --watch"
   },
   "devDependencies": {
-    "eslint": "8.19.0"
+    "eslint": "8.19.0",
+    "typescript": "^5.0.4"
   },
   "dependencies": {
     "@fortawesome/fontawesome-pro": "^6.4.0",
@@ -93,9 +94,11 @@
     "rehype-img-size": "^1.0.1",
     "remark-gfm": "^3.0.1",
     "remark-mdx-code-meta": "^2.0.0",
+    "remark-stringify": "^10.0.2",
     "responsive-loader": "^2.1.1",
     "sass": "^1.32.7",
     "slugify": "^1.6.5",
+    "unist-util-visit": "^4.1.2",
     "wcag-contrast": "^3.0.0"
   }
 }

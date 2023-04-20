@@ -61,16 +61,43 @@ const Avatar: React.FC<AvatarProps> = ({
 };
 
 export interface UserProps extends React.HTMLAttributes<HTMLSpanElement> {
+  /**
+   * The alt-text of the avatar
+   */
   alt?: string;
+  /**
+   * Sets the max-width of the user name to 130px and shows an ellipsis
+   */
   ellipsis?: boolean;
+  /**
+   * Additional description under the Name will also increase the size
+   * of the Avatar use &lt;List kind="simple" small /&gt; as default content
+   */
   description?: React.ReactNode;
   components?: { Icon: React.ReactNode };
+  /**
+   * Extended Description column
+   */
   extendedDescription?: React.ReactNode;
+  /**
+   * Selects the generated empty icon if no image is provided.
+   * Can be `avatar` or `letter`.
+   */
   missingImage?: 'avatar' | 'letter';
+  /**
+   * Url to an avatar image The size of the image is 25px * 25px.
+   * Provide at least 50px * 50px to support HiDPI displays.
+   */
   image?: string;
+  /**
+   * Show the name next to the avatar
+   */
   showName?: boolean;
   className?: string;
   small?: boolean;
+  /**
+   * The username which will be displayed. Usually `Firstname Lastname`.
+   */
   name?: string;
 }
 /** The User is used inside the MainNavigation and form, and can display an avatar and username. */

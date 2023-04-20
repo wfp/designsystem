@@ -1,11 +1,18 @@
 import React, { PropsWithChildren } from 'react';
 
 interface TabContentProps {
-  selected?: boolean;
+  /**
+   * Specify whether the TabContent is selected
+   */
+  selected: boolean;
+  /**
+   * Pass in content to render inside of the TabContent
+   */
+  children?: React.ReactNode;
 }
 
 const TabContent: React.FC<PropsWithChildren<TabContentProps>> = (props) => {
-  const { selected, children, ...other } = props;
+  const { selected = false, children, ...other } = props;
 
   return (
     <div {...other} data-selected={selected} hidden={!selected}>
@@ -14,20 +21,6 @@ const TabContent: React.FC<PropsWithChildren<TabContentProps>> = (props) => {
   );
 };
 
-// TabContent.propTypes = {
-//   /**
-//    * Specify whether the TabContent is selected
-//    */
-//   selected: PropTypes.bool,
-
-//   /**
-//    * Pass in content to render inside of the TabContent
-//    */
-//   children: PropTypes.node,
-// };
-
-// TabContent.defaultProps = {
-//   selected: false,
-// };
+TabContent.displayName = 'TabContent';
 
 export default TabContent;

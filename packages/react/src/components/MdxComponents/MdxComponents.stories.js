@@ -3,11 +3,11 @@ import markdown from './README.mdx';
 import MarkdownContent from './markdown.mdx';
 
 import { MDXProvider } from '@mdx-js/react';
-import MdxComponents from './MdxComponents';
+import mdxComponents from './MdxComponentsNew';
 
 export default {
   title: 'Components/Content Related/Mdx components',
-  component: MdxComponents,
+  component: mdxComponents,
   parameters: {
     componentSubtitle: 'Component',
     mdx: markdown,
@@ -16,17 +16,17 @@ export default {
     docs: {
       source: {
         code: `
-import { MdxComponents } from '@un/react';
+import { mdxComponents } from '@un/react';
 import { MDXProvider } from '@mdx-js/react';
 
-<MDXProvider components={MdxComponents}>{children}</MDXProvider>`,
+<MDXProvider components={mdxComponents}>{children}</MDXProvider>`,
       },
     },
   },
 };
 
 export const Regular = (args) => (
-  <MDXProvider components={MdxComponents}>
+  <MDXProvider components={mdxComponents}>
     <MarkdownContent />
   </MDXProvider>
 );

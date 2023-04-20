@@ -7,9 +7,7 @@ import { UseInputProps } from '../Input/useInput';
 
 /** Search enables users to specify a word or a phrase to find relevant pieces of content without the use of navigation. */
 
-interface SearchProps
-  extends InputProps,
-    React.InputHTMLAttributes<HTMLInputElement> {
+interface SearchProps extends InputProps, React.ComponentPropsWithRef<'input'> {
   defaultValue?: string | number;
   formItemClassName?: string;
   inputWrapperClassName?: string;
@@ -117,8 +115,6 @@ const Search: React.FC<SearchProps> = React.forwardRef((props, ref) => {
     onChange: handleChange,
     className: `${prefix}--search-input`,
   });
-
-  console.log('useInputProps', input, useInputProps);
 
   return (
     <Input

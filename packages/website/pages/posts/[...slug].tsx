@@ -13,13 +13,13 @@ import remarkGfm from 'remark-gfm';
 import slugify from 'slugify';
 import remarkMdxCodeMeta from 'remark-mdx-code-meta';
 import rehypeComponentsList from './rehypeComponentsList';
-import remarkHeadings from '@vcarl/remark-headings';
+//import remarkHeadings from '@vcarl/remark-headings';
 
 //import remarkHeadings from './remarkHeadings';
 
-import { unified } from 'unified';
-import remarkParse from 'remark-parse';
-import remarkStringify from 'remark-stringify';
+//import { unified } from 'unified';
+//import remarkParse from 'remark-parse';
+//import remarkStringify from 'remark-stringify';
 
 interface Props {
   post?: {
@@ -128,12 +128,13 @@ export async function getStaticProps({ params }) {
     },
   });
 
+  /*
   const processor = unified()
     .use(remarkParse)
     .use(remarkStringify)
     .use(remarkHeadings);
 
-  const vfile = await processor.process(post.content);
+  const vfile = await processor.process(post.content);*/
 
   const mdxToC = await serialize(post.content, {
     //components,
@@ -164,7 +165,7 @@ export async function getStaticProps({ params }) {
       posts,
       post: {
         ...post,
-        headings: vfile.data.headings,
+        headings: {}, //vfile.data.headings,
         content,
         mdxSource,
         mdxToC,

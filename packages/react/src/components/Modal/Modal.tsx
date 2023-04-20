@@ -4,12 +4,12 @@ import ReactDOM from 'react-dom';
 import classNames from 'classnames';
 import { Close } from '@un/icons-react';
 import useSettings from '../../hooks/useSettings';
-import ModalFooter from './ModalFooter';
+import ModalFooterDefault, { ModalFooterProps } from './ModalFooter';
 
-interface ModalProps {
+export interface ModalProps {
   modalLabel?: React.ReactNode;
-  modalHeading?: string;
-  modalText?: string;
+  modalHeading?: React.ReactNode;
+  modalText?: React.ReactNode;
   lazyLoad?: boolean;
   passiveModal?: boolean;
   children?: React.ReactNode;
@@ -18,10 +18,10 @@ interface ModalProps {
   };
   modalAriaLabel?: string;
   modalSecondaryAction?: React.ReactNode;
-  secondaryButtonText?: string;
+  secondaryButtonText?: React.ReactNode;
   secondaryButtonDisabled?: boolean;
   onSecondarySubmit?: () => void;
-  primaryButtonText?: string;
+  primaryButtonText?: React.ReactNode;
   primaryButtonDisabled?: boolean;
   open?: boolean;
   hideClose?: boolean;
@@ -200,7 +200,8 @@ const Modal: React.FC<ModalProps> = (props) => {
 
   if (open === false && lazyLoad) return null;
 
-  const components = { ModalFooter, ...componentsOverride };
+  const components = { ModalFooter: ModalFooterDefault, ...componentsOverride };
+  const ModalFooter = components.ModalFooter as React.FC<ModalFooterProps>;
 
   const onSecondaryButtonClick = onSecondarySubmit
     ? onSecondarySubmit
@@ -251,7 +252,7 @@ const Modal: React.FC<ModalProps> = (props) => {
         {!passiveModal && modalButton}
       </div>
       <div className={`${prefix}--modal-content`}>{children}</div>
-      <components.ModalFooter
+      <ModalFooter
         {...props}
         prefix={prefix}
         onSecondaryButtonClick={onSecondaryButtonClick}

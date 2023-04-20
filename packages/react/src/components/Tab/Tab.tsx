@@ -3,7 +3,7 @@ import * as React from 'react';
 import classNames from 'classnames';
 import useSettings from '../../hooks/useSettings';
 
-interface TabProps {
+export interface TabProps extends React.ComponentPropsWithRef<'li'> {
   handleTabClick?: (
     index?: number,
     label?: string | React.ReactNode,
@@ -15,7 +15,7 @@ interface TabProps {
     label?: string | React.ReactNode,
     evt?: React.ChangeEvent<HTMLInputElement>
   ) => void;
-  href: string;
+  href?: string;
   index?: number;
   label?: React.ReactNode;
   role?: string;
@@ -26,8 +26,8 @@ interface TabProps {
   renderListElement?: ((props?: object) => React.ReactNode) | React.ReactNode;
   className?: string;
   disabled?: boolean;
-  onClick?: (evt?: Event) => void;
-  onKeyDown?: (evt?: Event) => void;
+  //onClick?: (evt?: Event) => void;
+  //onKeyDown?: (evt?: Event) => void;
 }
 
 const Tab: React.FC<TabProps> = (props) => {

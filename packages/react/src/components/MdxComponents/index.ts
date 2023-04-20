@@ -1,1 +1,1 @@
-export { default } from './MdxComponents';
+export { default } from './MdxComponentsNew';

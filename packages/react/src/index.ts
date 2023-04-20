@@ -62,6 +62,7 @@ export {
   MainNavigation,
   MainNavigationContext,
   MainNavigationExternal,
+  useMainNavigation,
 } from './components/MainNavigation';
 export { default as MainNavigationItem } from './components/MainNavigationItem';
 export {
@@ -75,7 +76,7 @@ export {
   SubNavigationGroup,
   SubNavigationItem,
 } from './components/SubNavigation';
-export { default as MdxComponents } from './components/MdxComponents';
+export { default as mdxComponents } from './components/MdxComponents';
 export { default as Modal, ModalFooter } from './components/Modal';
 export { default as ModalWrapper } from './components/ModalWrapper';
 export {

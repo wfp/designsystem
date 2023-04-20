@@ -12,7 +12,7 @@ import Loading from '../Loading';
 
 interface InlineLoadingProps {
   success?: boolean;
-  description?: string;
+  description?: React.ReactNode;
   successDelay?: number;
   onSuccess?: () => void;
   className?: string;

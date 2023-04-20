@@ -7,7 +7,7 @@ import { ScreenSize } from '../../utils';
 export const pageWidths = ['sm', 'md', 'lg', 'full'];
 
 /** Wrapper can wrap it's content in a specific width depending on if the application has a full or fixed width. */
-type WrapperProps = PropsWithChildren<{
+export type WrapperProps = PropsWithChildren<{
   pageWidth?:
     | 'xs'
     | 'sm'

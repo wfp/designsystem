@@ -48,6 +48,7 @@ const Lightbox = (props: any) => {
     <span className={`${styles.imageContainer} ${isOpen ? styles.open : ''}`}>
       <span className={`${styles.imageWrapper}`}>
         <span
+          suppressHydrationWarning
           className={`${styles.aspectRatio}`}
           style={{
             aspectRatio: `${props.width} / ${props.height}`,
@@ -55,8 +56,8 @@ const Lightbox = (props: any) => {
         />
 
         {props.title && (
-          <caption className={styles.lightboxCaption}>
-            <span>{props.title}</span>
+          <caption className={styles.lightboxCaption} suppressHydrationWarning>
+            <span suppressHydrationWarning>{props.title}</span>
           </caption>
         )}
         <span

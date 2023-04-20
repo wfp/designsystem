@@ -16,11 +16,11 @@ import ComponentsList from './ComponentsList';
 import { H1, H2, H3, H4, H5 } from './Headings';
 import IconList from './Icons/IconListNew';
 import PropTypes from '../../PropTypes';
-import { Button, MdxComponents, BlockNotification, TextInput } from '@un/react';
+import { Button, mdxComponents, BlockNotification, TextInput } from '@un/react';
 
 import FaviconGenerator from '../../../_posts/Favicons/FaviconGenerator';
 
-const { code, /*pre,*/ ...mdxComponentsWithoutCode } = MdxComponents;
+const { code, /*pre,*/ ...mdxComponentsWithoutCode } = mdxComponents;
 const components = {
   ...mdxComponentsWithoutCode,
   Video,

@@ -155,7 +155,8 @@ const blockquote = ({ children, ...other }) => {
   };
   */
 
-export const MdxComponents = {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const mdxComponents: any = {
   wrapper,
   h1,
   h2,
@@ -177,4 +178,4 @@ export const MdxComponents = {
   AccordionItem,
 };
 
-export default MdxComponents;
+export default mdxComponents;
