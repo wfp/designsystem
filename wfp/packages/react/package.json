@@ -1,6 +1,6 @@
 {
   "name": "@un/react-example",
-  "version": "1.18.81",
+  "version": "1.18.82",
   "description": "WFP UI Kit",
   "license": "Apache-2",
   "main": "lib/index.js",
@@ -109,7 +109,7 @@
   "dependencies": {
     "@storybook/manager-webpack5": "^6.3.4",
     "@un/icons-react": "^10.34.46",
-    "@un/react": "^1.18.78",
+    "@un/react": "^1.18.79",
     "invariant": "^2.2.4",
     "lerna": "^4.0.0",
     "npm-which": "^3.0.1",
@@ -149,7 +149,7 @@
     "@storybook/theming": "^6.3.6",
     "@testing-library/cypress": "^8.0.0",
     "@un/babel-preset-wfp": "^0.1.21",
-    "@un/styles": "^10.26.61",
+    "@un/styles": "^10.26.62",
     "@un/themes": "^10.40.14",
     "babel-loader": "^8.2.2",
     "babel-plugin-dev-expression": "^0.2.2",
