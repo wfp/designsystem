@@ -42,6 +42,7 @@ interface ButtonBaseProps {
    */
   disabled?: boolean;
   tabIndex?: number;
+  target?: any;
   // type?: 'button' | 'reset' | 'submit';
   useFlexbox?: boolean;
   id?: string;

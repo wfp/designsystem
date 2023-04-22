@@ -47,7 +47,7 @@ const Select: React.FC<SelectProps> = React.forwardRef((props, ref) => {
     ariaProps['aria-describedby'] = usedId;
   }*/
   const useInputProps = props as UseInputProps;
-  const input = useInput({ ...useInputProps, className: selectClasses });
+  const input = useInput({ ...useInputProps, inputClassName: selectClasses });
 
   return (
     <Input {...input.wrapperProps}>

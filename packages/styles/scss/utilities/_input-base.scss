@@ -19,6 +19,7 @@ $input-border-radius: 0px;
   @include type-style('input');
   height: $input-height;
   min-width: 10rem;
+  width: 100%;
   padding: 0 $spacing-03;
   color: $text-primary;
   appearance: none;

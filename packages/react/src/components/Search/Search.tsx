@@ -113,7 +113,7 @@ const Search: React.FC<SearchProps> = React.forwardRef((props, ref) => {
   const input = useInput({
     ...useInputProps,
     onChange: handleChange,
-    className: `${prefix}--search-input`,
+    inputClassName: `${prefix}--search-input`,
   });
 
   return (

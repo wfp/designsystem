@@ -21,9 +21,9 @@ export interface UseInputProps {
   disabled?: boolean;
 
   /**
-   * Specify an optional className to be applied to the form-item node
+   * Specify an optional className to be applied to the input node
    */
-  formItemClassName?: string;
+  inputClassName?: string;
 
   /**
    * Specify an optional className to be applied to the input wrapper node
@@ -110,7 +110,8 @@ export interface UseInputProps {
 export const useInput = ({
   //labelText,
   addonAfter,
-  className = 'wfp--input',
+  className,
+  inputClassName = 'wfp--input',
   components,
   // iconDescription,
   id,
@@ -131,7 +132,7 @@ export const useInput = ({
 
   const calculatedId = id ? id : name;
 
-  const inputClasses = classNames(`${prefix}--input`, className, {
+  const inputClasses = classNames(`${prefix}--input`, inputClassName, {
     [`${prefix}--input--light`]: light,
     [`${prefix}--input--invalid`]: invalid, // legacy className
   });
@@ -155,6 +156,7 @@ export const useInput = ({
   };
 
   const wrapperProps = {
+    className,
     addonAfter,
     labelText,
     helperText,

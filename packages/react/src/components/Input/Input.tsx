@@ -122,7 +122,7 @@ const Input: React.FC<PropsWithChildren<InputPropsI>> = ({
   //className,
   // iconDescription,
   id,
-  formItemClassName,
+  className,
   inputWrapperClassName,
   //placeholder,
   //type,
@@ -226,7 +226,7 @@ const Input: React.FC<PropsWithChildren<InputPropsI>> = ({
   const AddOnBefore = components.AddonBefore as React.FC<AddonBeforeProps>;
 
   return (
-    <FormItem className={formItemClassName} inline={other.inline}>
+    <FormItem className={className} inline={other.inline}>
       {label}
       {helper}
       {additional}
