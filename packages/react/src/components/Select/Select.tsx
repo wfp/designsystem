@@ -47,29 +47,30 @@ const Select: React.FC<SelectProps> = React.forwardRef((props, ref) => {
     ariaProps['aria-describedby'] = usedId;
   }*/
   const useInputProps = props as UseInputProps;
-  const input = useInput({ ...useInputProps, inputClassName: selectClasses });
+  const { inputProps, wrapperProps } = useInput({
+    ...useInputProps,
+    inputClassName: selectClasses,
+  });
 
   return (
-    <Input {...input.wrapperProps}>
-      <div className={`${prefix}--select`} /*className={selectClasses}*/>
-        <select
-          //{...other}
-          //{...ariaProps}
+    <Input {...wrapperProps} inputWrapperClassName={`${prefix}--select`}>
+      <select
+        //{...other}
+        //{...ariaProps}
 
-          //className={`${prefix}--select-input`}
-          {...input.inputProps}
-          /*disabled={disabled || undefined}
+        //className={`${prefix}--select-input`}
+        {...inputProps}
+        /*disabled={disabled || undefined}
           data-invalid={invalid || undefined}
           aria-invalid={invalid || undefined} */
-          ref={ref as React.Ref<HTMLSelectElement>}>
-          {children}
-        </select>
+        ref={ref as React.Ref<HTMLSelectElement>}>
+        {children}
+      </select>
 
-        <ChevronDown
-          className={`${prefix}--select__arrow`}
-          description={iconDescription}
-        />
-      </div>
+      <ChevronDown
+        className={`${prefix}--select__arrow`}
+        description={iconDescription}
+      />
     </Input>
   );
 });

@@ -26,11 +26,11 @@ export const TextArea = React.forwardRef<Ref, TextAreaProps>((props, ref) => {
   });
 
   const useInputProps = props as UseInputProps;
-  const input = useInput(useInputProps);
+  const input = useInput({ ...useInputProps, inputClassName: textareaClasses });
 
   return (
     <Input {...input.wrapperProps}>
-      <textarea {...input.inputProps} ref={ref} className={textareaClasses} />
+      <textarea {...input.inputProps} ref={ref} />
     </Input>
   );
 });

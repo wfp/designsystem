@@ -40,8 +40,6 @@ const TextInput: React.FC<TextInputProps> = React.forwardRef((props, ref) => {
     inputClassName,
   });
 
-  console.log('input', inputProps, wrapperProps);
-
   return (
     <Input {...wrapperProps} formItemClassName={formItemClassName}>
       <input pattern={pattern} {...inputProps} ref={ref} />
