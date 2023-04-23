@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [10.26.63](https://github.com/wfp/designsystem/compare/@un/styles@10.26.62...@un/styles@10.26.63) (2023-04-23)
+
+
+### Bug Fixes
+
+* **Input:** renamed className to inputClassname ([50e60d4](https://github.com/wfp/designsystem/commit/50e60d45c7b101c77e0f311f4d3b234820dd059d))
+
+
+
+
+
 ## 10.26.51 (2022-12-06)
 
 **Note:** Version bump only for package @un/styles

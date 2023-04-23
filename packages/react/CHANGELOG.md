@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.18.80](https://github.com/wfp/ui/compare/@un/react@1.18.79...@un/react@1.18.80) (2023-04-23)
+
+
+### Bug Fixes
+
+* **Input:** fixed input handlers ([e445e3e](https://github.com/wfp/ui/commit/e445e3e566abf0afab5eecf0d720387ae0a9f2ce))
+* **Input:** renamed className to inputClassname ([50e60d4](https://github.com/wfp/ui/commit/50e60d45c7b101c77e0f311f4d3b234820dd059d))
+
+
+
+
+
 ## 1.18.63 (2022-12-06)
 
 **Note:** Version bump only for package @un/react
