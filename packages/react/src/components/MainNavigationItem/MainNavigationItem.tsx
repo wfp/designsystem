@@ -20,7 +20,7 @@ const MainNavigationItem: React.FC<
 > = ({ className, children, subNavigation, subNavWideAsContent }) => {
   const { prefix } = useSettings();
 
-  const { /*onChangeSub,*/ activeMenuItem /*menuItem */ } = useMainNavigation();
+  const { onChangeSub, activeMenuItem /*menuItem */ } = useMainNavigation();
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [menuItemId] = useState(Math.random().toString(36));
@@ -41,7 +41,7 @@ const MainNavigationItem: React.FC<
 
   const handleClickOutside = (e) => {
     if (wrapperRef?.current && !wrapperRef.current.contains(e.target)) {
-      //onChangeSub('close');
+      onChangeSub('close');
     }
   };
 
@@ -85,8 +85,7 @@ const MainNavigationItem: React.FC<
     <li className={wrapperClasses} ref={wrapperRef as React.Ref<HTMLLIElement>}>
       <div
         className={triggerClasses}
-        //onClick={() => onChangeSub('toggle', menuItemId)}
-      >
+        onClick={() => onChangeSub('toggle', menuItemId)}>
         {children}
         {subNavigation && (
           <Icon

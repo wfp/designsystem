@@ -41,12 +41,13 @@ const MainNavigation: React.FC<MainNavigationProps> = ({
 
   const onChangeSub = (action: string, i?: string, e?: any) => {
     if (e) e.preventDefault();
+    console.log('action', action, 'i', i, 'e', e);
 
     if (action === 'close') {
       setActiveMenuItem(null);
     } else if (action === 'toggle') {
       const newI = activeMenuItem === null || activeMenuItem !== i ? i : null;
-      if (newI) setActiveMenuItem(newI);
+      /*if (newI) */ setActiveMenuItem(newI);
     }
   };
 
