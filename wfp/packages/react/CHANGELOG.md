@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.18.84](https://github.com/wfp/ui/compare/@un/react-example@1.18.83...@un/react-example@1.18.84) (2023-04-24)
+
+**Note:** Version bump only for package @un/react-example
+
+
+
+
+
 ## [1.18.83](https://github.com/wfp/ui/compare/@un/react-example@1.18.82...@un/react-example@1.18.83) (2023-04-23)
 
 **Note:** Version bump only for package @un/react-example

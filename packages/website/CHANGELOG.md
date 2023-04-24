@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.41](https://github.com/un-core/designsystem/compare/@un/core-website@0.1.40...@un/core-website@0.1.41) (2023-04-24)
+
+**Note:** Version bump only for package @un/core-website
+
+
+
+
+
 ## [0.1.40](https://github.com/un-core/designsystem/compare/@un/core-website@0.1.39...@un/core-website@0.1.40) (2023-04-23)
 
 **Note:** Version bump only for package @un/core-website

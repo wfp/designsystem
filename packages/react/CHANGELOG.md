@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.18.81](https://github.com/wfp/ui/compare/@un/react@1.18.80...@un/react@1.18.81) (2023-04-24)
+
+
+### Bug Fixes
+
+* **MainNavigation:** onSubMenu fixed ([1056328](https://github.com/wfp/ui/commit/1056328c6bf8468b7478244d3d5723c4d7d10bd0))
+
+
+
+
+
 ## [1.18.80](https://github.com/wfp/ui/compare/@un/react@1.18.79...@un/react@1.18.80) (2023-04-23)
 
 
