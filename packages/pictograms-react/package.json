@@ -1,7 +1,7 @@
 {
   "name": "@wfp/pictograms-react",
   "description": "React components for pictograms in digital and software products using the UN Core",
-  "version": "11.14.33",
+  "version": "11.14.34",
   "license": "Apache-2.0",
   "main": "umd/index.js",
   "module": "es/index.js",
@@ -36,8 +36,8 @@
     "react": ">=16"
   },
   "devDependencies": {
-    "@wfp/icons-core": "^0.0.27",
-    "@wfp/pictograms": "^11.14.29"
+    "@wfp/icons-core": "^0.0.28",
+    "@wfp/pictograms": "^11.14.30"
   },
   "sideEffects": false,
   "gitHead": "7201da36cfb8dad97a91763abc2497f70c239243"

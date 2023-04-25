@@ -1,6 +1,6 @@
 {
   "name": "@wfp/figma-connect",
-  "version": "0.0.21",
+  "version": "0.0.22",
   "description": "Export SVGs from Figma",
   "main": "src/index.js",
   "private": true,
