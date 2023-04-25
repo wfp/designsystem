@@ -9,25 +9,25 @@
 
 //@use './config' as *;
 
-/*@use '@un/themes/scss/modules/config' with (
+/*@use '@wfp/themes/scss/modules/config' with (
   $prefix: $prefix,
 );*/
 //@use './compat/themes' as compat;
 //@use './themes';
 
-//@use '@un/themes/scss/modules/tokens' as coretheme;
+//@use '@wfp/themes/scss/modules/tokens' as coretheme;
 //$coretheme: 'sdsadasd' !default;
 
-//@use '@un/themes-core/dist/scss/variables' as *;
-@forward '@un/themes-core/dist/scss/tokens';
+//@use '@wfp/themes-core/dist/scss/variables' as *;
+@forward '@wfp/themes-core/dist/scss/tokens';
 
-/*@forward '@un/themes/scss/modules/theme' with (
+/*@forward '@wfp/themes/scss/modules/theme' with (
   $fallback: themes.$wfp !default,
   $theme: compat.$wfp !default,
 );*/
 
-//@forward '@un/themes/scss/modules/tokens';
-// @use '@un/themes/scss/modules/tokens';
+//@forward '@wfp/themes/scss/modules/tokens';
+// @use '@wfp/themes/scss/modules/tokens';
 @use './utilities/custom-property';
 
 /*

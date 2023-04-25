@@ -45,7 +45,7 @@ StepNavigationRegular.story = {
     docs: {
       source: {
         code: `
-        import { StepNavigation , StepNavigationItem } from "@un/react";
+        import { StepNavigation , StepNavigationItem } from "@wfp/react";
         
 const StepNavigationExample = (args) => {
   const [step, setStep] = useState(0);

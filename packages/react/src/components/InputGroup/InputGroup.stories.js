@@ -41,7 +41,7 @@ export const Regular = (args) => (
 );
 
 const regularsourcecode = `
-import { InputGroup, RadioButton  } from "@un/react";
+import { InputGroup, RadioButton  } from "@wfp/react";
 
 <InputGroup
   defaultSelected="default-selected"
@@ -106,7 +106,7 @@ export const withCheckbox = (args) => (
 );
 
 const withcheckboxsourcecode = `
-import { InputGroup, Checkbox } from "@un/react";
+import { InputGroup, Checkbox } from "@wfp/react";
         
 <InputGroup
   defaultSelected="default-selected"
@@ -198,7 +198,7 @@ export const vertical = (args) => (
 
 const verticalsourcecode = `
 
-import { InputGroup, Checkbox, RadioButton  } from "@un/react";
+import { InputGroup, Checkbox, RadioButton  } from "@wfp/react";
 
 
   <InputGroup

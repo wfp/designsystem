@@ -42,7 +42,7 @@ export const Input = (args) => (
 );
 
 const formhintsourcecode = `
-import { FormHint, TextInput  } from "@un/react";
+import { FormHint, TextInput  } from "@wfp/react";
 
 <TextInput
   labelText={

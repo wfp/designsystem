@@ -7,7 +7,7 @@ This tool generates a optimized icon library from a folder of svg files using [s
 ### Usage with node.js
 
 ```js
-const iconGenerator = require('@un/icons-core');
+const iconGenerator = require('@wfp/icons-core');
 
 iconGenerator({ src: '/folder', output: '/outputFolder' });
 ```

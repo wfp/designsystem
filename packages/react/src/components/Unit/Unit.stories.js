@@ -85,7 +85,7 @@ export const NumberFractionDigits = () => (
 );
 
 const sourcecode = `
-import { Unit, Table, Text } from "@un/react";
+import { Unit, Table, Text } from "@wfp/react";
 
 <Table>
     <thead>

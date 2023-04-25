@@ -1,4 +1,4 @@
-import { List, ListItem } from '@un/react';
+import { List, ListItem } from '@wfp/react';
 import React from 'react';
 import styles from './styles.module.scss';
 

@@ -8,11 +8,11 @@ import Table from '../../components/Table';
 import Text from '../../components/Text';
 import Tag from '../../components/Tag';
 import Story from '../../components/Story';
-import { wfpColorsMeta } from '@un/themes';
+import { wfpColorsMeta } from '@wfp/themes';
 import { hex, score } from 'wcag-contrast';
 import './colours.scss';
 
-import tokens from '@un/themes-core/tokens/design-tokens.tokens.json';
+import tokens from '@wfp/themes-core/tokens/design-tokens.tokens.json';
 
 export const ColourList = ({ filter }) => {
   console.log(wfpColorsMeta);

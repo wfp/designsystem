@@ -4,7 +4,7 @@ import markdown from './README.mdx';
 
 import { Hero, HeroExternal } from '.';
 import Button from '../Button';
-import { WfpHumEmergencyResponsePos } from '@un/pictograms-react';
+import { WfpHumEmergencyResponsePos } from '@wfp/pictograms-react';
 //import heroTwig from './Hero.twig';
 
 export default {
@@ -137,7 +137,7 @@ Splash.args = {
   image: undefined,
 };
 const splashsourcecode = `
-  import { Hero, Button } from "@un/react"; 
+  import { Hero, Button } from "@wfp/react"; 
 
   <Hero
     href="#"
@@ -198,7 +198,7 @@ SplashCompact.args = {
 };
 
 const splashcompactcode = `
-  import { Hero, Button } from "@un/react";
+  import { Hero, Button } from "@wfp/react";
 
   <Hero
   href="#"
@@ -253,8 +253,8 @@ Emergencies.args = {
 };
 
 const sourcecode = `
-import { Hero, Icon } from "@un/react";
-import { iconWfpHumEmergencyResponsePos } from '@un/icons-react';
+import { Hero, Icon } from "@wfp/react";
+import { iconWfpHumEmergencyResponsePos } from '@wfp/icons-react';
         
 <Hero
   href="#"
@@ -316,7 +316,7 @@ External.args = {
 };
 
 const externalsourcecode = `
-import { HeroExternal, Button } from "@un/react";
+import { HeroExternal, Button } from "@wfp/react";
         
 
 <HeroExternal

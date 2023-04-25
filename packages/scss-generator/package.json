@@ -1,5 +1,5 @@
 {
-  "name": "@un/scss-generator",
+  "name": "@wfp/scss-generator",
   "version": "10.13.21",
   "license": "Apache-2.0",
   "main": "src/index.js",

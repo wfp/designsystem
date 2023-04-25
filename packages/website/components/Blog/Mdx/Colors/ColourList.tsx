@@ -1,8 +1,8 @@
 import React from 'react';
 
-import { List, ListItem, Table, Text, Story } from '@un/react';
+import { List, ListItem, Table, Text, Story } from '@wfp/react';
 
-import tokens from '@un/themes-core/dist/json/variables-full.json';
+import tokens from '@wfp/themes-core/dist/json/variables-full.json';
 
 import { hex, score } from 'wcag-contrast';
 import styles from './colours.module.scss';

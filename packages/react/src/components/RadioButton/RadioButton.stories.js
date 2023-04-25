@@ -22,7 +22,7 @@ Regular.args = {
 };
 
 const regularsourcecode = `
-import { RadioButton  } from "@un/react";
+import { RadioButton  } from "@wfp/react";
 
 <RadioButton labelText="Radio button" />
 `;
@@ -81,7 +81,7 @@ export const VerticalGrouping = (args) => {
 
 const verticalsourcecode = `
 
-import { RadioButton, InputGroup  } from "@un/react";
+import { RadioButton, InputGroup  } from "@wfp/react";
 
 const [gender, setgender] = useState('');
 
@@ -158,7 +158,7 @@ export const HorizontalGrouping = () => (
 );
 
 const horizontalsourcecode = `
-import { RadioButton, InputGroup  } from "@un/react";
+import { RadioButton, InputGroup  } from "@wfp/react";
 
 <InputGroup
   name="input-group"

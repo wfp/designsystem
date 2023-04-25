@@ -1,7 +1,7 @@
 import React from 'react';
 import Tooltip from './Tooltip';
 import markdown from './README.mdx';
-import { OverflowMenu, Menu } from '@un/icons-react';
+import { OverflowMenu, Menu } from '@wfp/icons-react';
 
 export default {
   title: 'Components/UI Elements/Tooltip',
@@ -72,7 +72,7 @@ WithIcon.args = {
 };
 
 const withiconsourcecode = `
-import { Tooltip  } from "@un/react";
+import { Tooltip  } from "@wfp/react";
 import { iconOverflowMenu } from '@wfp/icons';
 
 <Tooltip

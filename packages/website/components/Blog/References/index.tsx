@@ -1,7 +1,7 @@
 import { faFigma, faGithub, faNpm } from '@fortawesome/free-brands-svg-icons';
 import { faCode } from '@fortawesome/pro-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Link, List, ListItem } from '@un/react';
+import { Link, List, ListItem } from '@wfp/react';
 import React from 'react';
 import styles from './tableOfContent.module.scss';
 

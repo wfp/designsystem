@@ -1,4 +1,4 @@
-import { /* Link,*/ List /* ListItem*/ } from '@un/react';
+import { /* Link,*/ List /* ListItem*/ } from '@wfp/react';
 import React from 'react';
 //import { createSlug } from '../Mdx/Headings';
 import styles from './tableOfContent.module.scss';

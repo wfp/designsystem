@@ -6,10 +6,10 @@ import {
   Table,
   Text,
   TextInput,
-} from '@un/react';
+} from '@wfp/react';
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import * as unComponents from '@un/react';
+import * as unComponents from '@wfp/react';
 
 import reactElementToJSXString from 'react-element-to-jsx-string';
 
@@ -137,7 +137,7 @@ export default function PropTypes({
     code = sampleCode.replace('PROPS_HERE', codeFiltered);
   }
   const componentList = [mainComponent, ...components].join(', ');
-  code = `import { ${componentList} } from "@un/react";
+  code = `import { ${componentList} } from "@wfp/react";
 
 ${code}`;
 

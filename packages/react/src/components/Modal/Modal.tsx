@@ -2,7 +2,7 @@
 import React, { useRef } from 'react';
 import ReactDOM from 'react-dom';
 import classNames from 'classnames';
-import { Close } from '@un/icons-react';
+import { Close } from '@wfp/icons-react';
 import useSettings from '../../hooks/useSettings';
 import ModalFooterDefault, { ModalFooterProps } from './ModalFooter';
 

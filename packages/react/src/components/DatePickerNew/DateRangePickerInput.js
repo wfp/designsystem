@@ -1,7 +1,7 @@
 import React from 'react';
 import DatePicker, { registerLocale } from 'react-datepicker';
 import useSettings from '../../hooks/useSettings';
-import { ArrowRight, CalendarAltRegular } from '@un/icons-react';
+import { ArrowRight, CalendarAltRegular } from '@wfp/icons-react';
 //import styles from './dateRangePicker.module.scss';
 
 export function DateRangePickerInput({

@@ -40,7 +40,7 @@ SVG_OUTPUT_FOLDER=./svg/
 #### SVG export
 
 ```js
-const { svgExporter } = require('@un/figma-connect');
+const { svgExporter } = require('@wfp/figma-connect');
 
 svgExporter({ outputFolder: './outputFolder' });
 ```
@@ -50,7 +50,7 @@ Your SVGs will be generated in `src/svg` folder
 #### Color export
 
 ```js
-const { colorsExporter } = require('@un/figma-connect');
+const { colorsExporter } = require('@wfp/figma-connect');
 
 colorsExporter({
   fileName: './src/wfpColors.js',

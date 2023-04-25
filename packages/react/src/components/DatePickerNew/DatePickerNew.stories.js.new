@@ -44,7 +44,7 @@ SingleDatePickerDefault.args = {
 
 const singleSourceCode = `
 import 'react-dates/initialize';
-import { SingleDatePickerInput } from "@un/react";
+import { SingleDatePickerInput } from "@wfp/react";
 import { SingleDatePicker } from 'react-dates';
 
 <SingleDatePickerInput

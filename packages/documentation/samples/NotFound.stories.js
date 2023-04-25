@@ -4,7 +4,7 @@ import Link from '../../components/Link';
 import Story from '../../components/Story';
 //import Icon from '../../components/Icon';
 import Wrapper from '../../components/Wrapper';
-import { WfpHumEmergencyResponsePos } from '@un/pictograms-react';
+import { WfpHumEmergencyResponsePos } from '@wfp/pictograms-react';
 import markdown from './README.mdx';
 export default {
   title: 'Templates/Not found (404)',
@@ -53,8 +53,8 @@ Regular.story = {
       source: {
         code: `
 
-import { Wrapper, Story, Icon} from "@un/react";
-import { iconWfpHumEmergencyResponsePos } from '@un/icons-react';
+import { Wrapper, Story, Icon} from "@wfp/react";
+import { iconWfpHumEmergencyResponsePos } from '@wfp/icons-react';
 
 <Wrapper pageWidth="lg" spacing="md">
   <Story className="wfp--story__center wfp--story__full-height">

@@ -5,7 +5,7 @@
 // LICENSE file in the root directory of this source tree.
 //
 
-@import '../vendor/@un/layout/breakpoint';
+@import '../vendor/@wfp/layout/breakpoint';
 @import 'font-family';
 @import 'scale';
 
@@ -689,7 +689,7 @@ $tokens: (
 }
 
 // TODO move following variable and `custom-property` mixin into shared file for
-// both `@carbon/type` and `@un/themes`
+// both `@carbon/type` and `@wfp/themes`
 
 /// @access private
 /// @group @carbon/type

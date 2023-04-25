@@ -7,7 +7,7 @@ import Text from '../Text';
 import Link from '../Link';
 import FormGroup from '../FormGroup';
 // import Icon from './../Icon';
-import { ArrowLeft, WfpLogoStandardBlackEn } from '@un/icons-react';
+import { ArrowLeft, WfpLogoStandardBlackEn } from '@wfp/icons-react';
 
 export default {
   title: 'Components/Content Related/AuthLayout',

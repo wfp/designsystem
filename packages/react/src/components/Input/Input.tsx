@@ -4,7 +4,7 @@ import type { PropsWithChildren } from 'react';
 import classNames from 'classnames';
 import useSettings from '../../hooks/useSettings';
 import FormItem from '../FormItem/FormItem';
-import { WarningSolid } from '@un/icons-react';
+import { WarningSolid } from '@wfp/icons-react';
 import * as HookForm from 'react-hook-form';
 
 /**

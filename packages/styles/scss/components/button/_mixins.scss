@@ -65,6 +65,9 @@
   border-width: $button-border-width;
   border-style: solid;
   border-color: $border-color;
+  &a {
+    color: $font-color;
+  }
   color: $font-color;
 
   &:focus,

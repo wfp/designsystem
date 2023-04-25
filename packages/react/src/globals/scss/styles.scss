@@ -13,9 +13,9 @@ $css--reset: true !default;
 $css--typography: true !default;
 $css--variables: true !default;
 
-@use "sass:math";
+@use 'sass:math';
 //@use '../../../../styles/scss/components/button/button';
-//@import '~@un/styles/scss/components/button/button';
+//@import '~@wfp/styles/scss/components/button/button';
 //@import '~carbon-components/src/components/button/button';
 
 @import 'colors';
@@ -27,7 +27,7 @@ $css--variables: true !default;
 @import 'rtl';
 @import 'spacing';
 @import 'typography';
-@import './vendor/@un/import-once/scss/import-once';
+@import './vendor/@wfp/import-once/scss/import-once';
 @import 'css--reset';
 @import 'css--font-face';
 @import 'css--helpers';

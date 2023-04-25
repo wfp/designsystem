@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './hero.module.scss';
-import { Button } from '@un/react';
+import { Button } from '@wfp/react';
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/pro-solid-svg-icons';

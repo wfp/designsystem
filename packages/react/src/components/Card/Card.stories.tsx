@@ -5,7 +5,7 @@ import markdown from './README.mdx';
 import Button from '../Button';
 import { Card, CardExternal } from '.';
 
-import { StarSolid } from '@un/icons-react';
+import { StarSolid } from '@wfp/icons-react';
 
 export default {
   title: 'Components/Content Related/Card',

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import classNames from 'classnames';
-import { Cross, Check } from '@un/icons-react';
+import { Cross, Check } from '@wfp/icons-react';
 
 //export interface ListItemProps
 // extends Omit<React.LiHTMLAttributes<HTMLLIElement>, 'title'> {

@@ -1,6 +1,6 @@
 // import PropTypes from 'prop-types';
 // import React, { Component } from 'react';
-// import { iconCaretUp, iconCaretDown } from '@un/icons-react';
+// import { iconCaretUp, iconCaretDown } from '@wfp/icons-react';
 // import Icon from '../Icon';
 // import FormItem from '../FormItem';
 // import classNames from 'classnames';

@@ -2,7 +2,7 @@ import * as React from 'react';
 import Wrapper from '../Wrapper';
 import type { PropsWithChildren } from 'react';
 import classNames from 'classnames';
-import { WfpLogoVerticalEn } from '@un/pictograms-react';
+import { WfpLogoVerticalEn } from '@wfp/pictograms-react';
 import {
   LinkedIn,
   Facebook,
@@ -10,7 +10,7 @@ import {
   TikTok,
   Twitter,
   Instagram,
-} from '@un/icons-react';
+} from '@wfp/icons-react';
 import { ScreenSize } from '../../utils';
 
 import useSettings from '../../hooks/useSettings';

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, User, Search, Link } from '@un/react';
+import { Button, User, Search, Link } from '@wfp/react';
 import {
   MainNavigation,
   MainNavigationItem,
@@ -12,7 +12,7 @@ import {
   SubNavigationList,
   SubNavigationGroup,
   SubNavigationItem,
-} from '@un/react';
+} from '@wfp/react';
 
 const Navigation = () => {
   return (

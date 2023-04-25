@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { useEffect, useState } from 'react';
 import classNames from 'classnames';
-import settings from '@un/react/src/globals/js/settings';
+import settings from '@wfp/react/src/globals/js/settings';
 const { prefix } = settings;
 
 /**

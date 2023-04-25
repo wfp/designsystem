@@ -162,7 +162,7 @@ const sourcecode = `
 import {
   SubNavigation , SubNavigationHeader, SubNavigationTitle, SubNavigationLink, SubNavigationFilter, SubNavigationContent, SubNavigationList, SubNavigationGroup, SubNavigationItem,
   Button, Search, Link
-} from "@un/react";
+} from "@wfp/react";
 
 <SubNavigation>
   <SubNavigationHeader>

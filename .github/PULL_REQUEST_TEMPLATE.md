@@ -1,4 +1,4 @@
-Closes @un/react#
+Closes @wfp/react#
 
 {{short description}}
 

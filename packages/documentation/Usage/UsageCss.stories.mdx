@@ -25,7 +25,7 @@ There are **different ways you can use the Kit** in your applications.
 
 ```jsx
 // Import the Button component
-import { Button } from '@un/react';
+import { Button } from '@wfp/react';
 
 // Use the Button component
 <Button>Button label</Button>;
@@ -35,9 +35,9 @@ If you need to import the stylesheet of the component, here is the complete exam
 
 ```jsx
 // Import the Button component and its style
-import { Button } from '@un/react';
+import { Button } from '@wfp/react';
 // Import the stylesheet of the Button component
-import '@un/react/src/components/Button/button.scss';
+import '@wfp/react/src/components/Button/button.scss';
 
 // Use the Button component
 <Button>Button label</Button>;
@@ -54,7 +54,7 @@ Make sure you have embedded the CSS of the UI Kit in your project.
 
 ```js
 import ReactDOM from 'react-dom';
-import { Button } from '@un/react';
+import { Button } from '@wfp/react';
 
 const myContainerElement = document.getElementById('container');
 
@@ -102,5 +102,5 @@ $button-padding: 10px 25px;
 $css--reset==false
 
 // Only use variables
-@import "~@un/react/src/globals/scss/vars.scss";
+@import "~@wfp/react/src/globals/scss/vars.scss";
 ```

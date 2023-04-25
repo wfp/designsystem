@@ -7,9 +7,9 @@ import Blockquote from '../../components/Blockquote';
 import Link from '../../components/Link';
 import Icon from '../../components/Icon';
 import { Module, ModuleFooter } from '../../components/Module';
-import metadata from '@un/icons/metadata.json';
-import * as Icons from '@un/icons-react';
-import { DownloadGlyph } from '@un/icons-react';
+import metadata from '@wfp/icons/metadata.json';
+import * as Icons from '@wfp/icons-react';
+import { DownloadGlyph } from '@wfp/icons-react';
 
 import Button from '../../components/Button';
 
@@ -72,7 +72,7 @@ const IconList = ({ icon }) => {
             }}>
             {`import
   {${camelCaseFromHyphnated('icon--' + iconName)}}
-from '@un/icons-react'`}
+from '@wfp/icons-react'`}
           </div>
           <Button
             icon={DownloadGlyph}

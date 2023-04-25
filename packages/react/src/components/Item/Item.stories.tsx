@@ -32,7 +32,7 @@ Regular.args = {
 };
 
 const itemsourcecode = (kind, wrapper) => `
-import { Item, Tag } from "@un/react";
+import { Item, Tag } from "@wfp/react";
 
 <Item
   additional="Yesterday"

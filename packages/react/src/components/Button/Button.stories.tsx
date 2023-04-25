@@ -1,6 +1,6 @@
 import React from 'react';
 import { buttonKinds } from '../../prop-types/types';
-import { AddCircle } from '@un/icons-react';
+import { AddCircle } from '@wfp/icons-react';
 import markdown from './README.mdx';
 import Button from '.';
 
@@ -112,8 +112,8 @@ Using an Button with only an Icon while not beeing recommended can be achieved b
 `;
 
 const buttoniconsnippet = `
-import { Button } from '@un/react';
-import { AddCircleGlyph } from '@un/icons-react';
+import { Button } from '@wfp/react';
+import { AddCircleGlyph } from '@wfp/icons-react';
 
   <>
   <Button icon={AddCircleGlyph} kind="primary">
@@ -154,8 +154,8 @@ or less.
 `;
 
 const smallbuttonsnippet = `
-import { Button } from '@un/react';
-import { AddCircleGlyph } from '@un/icons-react';
+import { Button } from '@wfp/react';
+import { AddCircleGlyph } from '@wfp/icons-react';
 
   <>
     <Button small>Small button</Button>{' '}
@@ -193,8 +193,8 @@ or less.
 `;
 
 const largebuttonsnippet = `
-import { Button } from '@un/react';
-import { AddCircleGlyph } from '@un/icons-react';
+import { Button } from '@wfp/react';
+import { AddCircleGlyph } from '@wfp/icons-react';
 
   <>
     <Button large>Large button</Button>{' '}

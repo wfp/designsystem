@@ -1,5 +1,5 @@
 'use strict';
 
 module.exports = {
-  presets: ['@un/babel-preset-wfp'],
+  presets: ['@wfp/babel-preset-wfp'],
 };

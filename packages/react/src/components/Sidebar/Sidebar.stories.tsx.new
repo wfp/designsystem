@@ -84,7 +84,7 @@ export const Regular = (args) => {
 
 const codesnippet = `
 import { Sidebar , SidebarHeader, SidebarBackButton, Tag,
-  MainNavigation, Item, Search, Empty} from "@un/react";
+  MainNavigation, Item, Search, Empty} from "@wfp/react";
 
 
 const Phonebook = () => {
@@ -273,7 +273,7 @@ export const Phonebook = () => {
 const sourcecode = `
 import React, {useState} from 'react';
 import { Sidebar , SidebarHeader, SidebarBackButton, SidebarScroll,
-     MainNavigation, User, Item, Search, Empty, List, ListItem } from "@un/react";
+     MainNavigation, User, Item, Search, Empty, List, ListItem } from "@wfp/react";
 
 const phonebookdata = [
   {

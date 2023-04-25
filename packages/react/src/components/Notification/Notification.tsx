@@ -7,7 +7,7 @@ import {
   CheckmarkCircle,
   WarningSolid,
   InfoCircle,
-} from '@un/icons-react';
+} from '@wfp/icons-react';
 
 import Button from '../Button';
 import { InputProps } from '../Input';

@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import type { PropsWithChildren } from 'react';
 import classNames from 'classnames';
-import { Close, CaretDown } from '@un/icons-react';
+import { Close, CaretDown } from '@wfp/icons-react';
 import useSettings from '../../hooks/useSettings';
 import useMainNavigation from '../MainNavigation/useMainNavigation';
 

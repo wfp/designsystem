@@ -1,37 +1,37 @@
-# @un/cli
+# @wfp/cli
 
 > Task automation for working with the WFP Design System
 
 ## Getting started
 
-To install `@un/cli` in your project, you will need to run the following
+To install `@wfp/cli` in your project, you will need to run the following
 command using [npm](https://www.npmjs.com/):
 
 ```bash
-npm install -S @un/cli
+npm install -S @wfp/cli
 ```
 
 If you prefer [Yarn](https://yarnpkg.com/en/), use the following command
 instead:
 
 ```bash
-yarn add @un/cli
+yarn add @wfp/cli
 ```
 
 ## Usage
 
-You can install `@un/cli` in your project, or use a tool like
+You can install `@wfp/cli` in your project, or use a tool like
 [`npx`](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b)
 by running the following command in your project:
 
 ```bash
-npx @un/cli --help
+npx @wfp/cli --help
 ```
 
 The output of the `--help` option is:
 
 ```bash
-Usage: @un/cli [options]
+Usage: @wfp/cli [options]
 
 Commands:
   cli ci-check              run CI checks

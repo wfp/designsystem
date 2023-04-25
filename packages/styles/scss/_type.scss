@@ -1,4 +1,4 @@
-@use '@un/themes-core/dist/scss/tokensMapDeep' as *;
+@use '@wfp/themes-core/dist/scss/tokensMapDeep' as *;
 @use './breakpoint' as *;
 
 @mixin reset() {
@@ -98,7 +98,7 @@ $typescale-map: (
 
 /*
 @use 'config';
-@forward '@un/type' show
+@forward '@wfp/type' show
   // Mixins
   reset,
   type-style,

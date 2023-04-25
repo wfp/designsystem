@@ -21,7 +21,7 @@ export const RegularNavigation = (args) => (
 );
 
 const sourcecode = `
-  import { BannerNavigationWithContent } from "@un/react";
+  import { BannerNavigationWithContent } from "@wfp/react";
         
   <BannerNavigationWithContent pageWidth="lg" />
   `;

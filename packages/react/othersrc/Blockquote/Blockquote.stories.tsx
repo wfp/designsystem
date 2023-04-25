@@ -1,7 +1,7 @@
 import React from 'react';
 import Blockquote from '.';
 import Button from '../Button';
-import { AddOutline } from '@un/icons-react';
+import { AddOutline } from '@wfp/icons-react';
 import blockquoteTwig from './Blockquote.twig';
 
 const props = {
@@ -129,8 +129,8 @@ CustomIcon.args = {
 };
 
 const customiconsourcecode = `
-import { Blockquote,  Icon } from "@un/react";
-import { AddOutlineGlyph } from '@un/icons-react';
+import { Blockquote,  Icon } from "@wfp/react";
+import { AddOutlineGlyph } from '@wfp/icons-react';
 
 <Blockquote icon={<AddOutlineGlyph height={48} width={48} />}>
  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
@@ -182,7 +182,7 @@ WithButtons.args = {
 };
 
 const withbuttonsourcecode = `
-import { Blockquote, Button  } from "@un/react";
+import { Blockquote, Button  } from "@wfp/react";
 
 <Blockquote
   actionButtons={<><Button>Accept</Button><Button kind="danger--primary">Reject</Button></>}

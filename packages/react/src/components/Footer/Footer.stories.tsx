@@ -56,7 +56,7 @@ Regular.args = {
 };
 
 const regularsourcecode = `
-import { Footer, Link  } from "@un/react";
+import { Footer, Link  } from "@wfp/react";
         
 <Footer>
   <div className="wfp--footer__info">
@@ -167,7 +167,7 @@ External.args = {
 };
 
 const externalsourcecode = `
-import { FooterExternal, Link  } from "@un/react";
+import { FooterExternal, Link  } from "@wfp/react";
 
 <FooterExternal
     metaContent="Via C. G. Viola 68 Parco dei Medici, 00148 Rome, Italy"
@@ -261,7 +261,7 @@ export const Internal = (args) => (
 );
 
 const intersourcecode = `
-import { Footer, Link } from "@un/react";
+import { Footer, Link } from "@wfp/react";
 
 <Footer>
   <div className="wfp--footer__info">

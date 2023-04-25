@@ -7,7 +7,7 @@ import {
   Breadcrumb,
   BreadcrumbItem,
   BreadcrumbHome,
-} from '@un/react';
+} from '@wfp/react';
 import { MDXRemote } from 'next-mdx-remote';
 import NextLink from 'next/link';
 import styles from './sidebar.module.scss';

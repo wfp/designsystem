@@ -1,6 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
-import { Wrapper } from '@un/react';
+import { Wrapper } from '@wfp/react';
 import Layout from '../components/Blog/Layout';
 import Hero from '../components/start/Hero';
 import { NextSeo } from 'next-seo';

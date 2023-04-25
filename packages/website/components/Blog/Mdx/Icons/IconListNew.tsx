@@ -1,15 +1,21 @@
 /* eslint-disable no-console */
 
 import React from 'react';
-import { Button, Module, ModuleFooter, Tooltip, tooltipStyle } from '@un/react';
-import { Download } from '@un/icons-react';
+import {
+  Button,
+  Module,
+  ModuleFooter,
+  Tooltip,
+  tooltipStyle,
+} from '@wfp/react';
+import { Download } from '@wfp/icons-react';
 
 import styles from './icon-list.module.scss';
 
-import * as icons from '@un/icons-react';
-import * as pictograms from '@un/pictograms-react';
+import * as icons from '@wfp/icons-react';
+import * as pictograms from '@wfp/pictograms-react';
 
-import * as humanitarianIcons from '@un/humanitarian-icons-react';
+import * as humanitarianIcons from '@wfp/humanitarian-icons-react';
 import { CodeBlock } from '../CodeBlockLive';
 
 const iconList = {
@@ -35,7 +41,7 @@ const IconPreview = ({ icon, name }: any) => {
 
           <div className={styles.codeBlock}>
             <CodeBlock language="jsx">
-              {`import { ${key} } from '@un/${name}-react'`}
+              {`import { ${key} } from '@wfp/${name}-react'`}
             </CodeBlock>
           </div>
           <Button

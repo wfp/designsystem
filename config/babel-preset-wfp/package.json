@@ -1,5 +1,5 @@
 {
-  "name": "@un/babel-preset-wfp",
+  "name": "@wfp/babel-preset-wfp",
   "private": false,
   "version": "0.1.21",
   "license": "Apache-2.0",

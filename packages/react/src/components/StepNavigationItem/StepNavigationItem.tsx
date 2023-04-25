@@ -11,7 +11,7 @@ import {
   Checkmark,
   Menu,
   OverflowMenu,
-} from '@un/icons-react';
+} from '@wfp/icons-react';
 import useSettings from '../../hooks/useSettings';
 
 type StepNavigationItemProps = PropsWithChildren<{

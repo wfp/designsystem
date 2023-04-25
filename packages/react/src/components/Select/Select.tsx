@@ -1,6 +1,6 @@
 import * as React from 'react';
 import classNames from 'classnames';
-import { /* CaretDown, */ ChevronDown } from '@un/icons-react';
+import { /* CaretDown, */ ChevronDown } from '@wfp/icons-react';
 
 import useSettings from '../../hooks/useSettings';
 import Input, { InputProps, useInput } from '../Input';

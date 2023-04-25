@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './possibilities.module.scss';
 import MoreLink from '../MoreLink';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Wrapper } from '@un/react';
+import { Wrapper } from '@wfp/react';
 import {
   faFloppyDisk,
   faHandshakeAlt,

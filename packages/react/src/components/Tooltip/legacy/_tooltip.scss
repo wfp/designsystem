@@ -6,7 +6,7 @@
 @import '../../globals/scss/spacing';
 @import '../../globals/scss/helper-mixins';
 @import '../../globals/scss/typography';
-@import '../../globals/scss/vendor/@un/import-once/scss/import-once';
+@import '../../globals/scss/vendor/@wfp/import-once/scss/import-once';
 @import 'mixins';
 
 @include exports('tooltip') {

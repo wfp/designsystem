@@ -5,7 +5,7 @@ import {
   Module,
   ModuleBody,
   ReduxFormWrapper,
-} from '@un/react';
+} from '@wfp/react';
 
 import dynamic from 'next/dynamic';
 
@@ -17,7 +17,7 @@ import centerjs from './favicon/center';
   ssr: false,
 });*/
 
-//import colors from '@un/themes-Guidelines/dist/variables-full.json';
+//import colors from '@wfp/themes-Guidelines/dist/variables-full.json';
 
 const canvas = {
   width: 128,

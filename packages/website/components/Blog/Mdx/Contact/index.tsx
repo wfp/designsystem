@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './contact.module.scss';
-import { Button, FormGroup, TextInput, TextArea } from '@un/react';
+import { Button, FormGroup, TextInput, TextArea } from '@wfp/react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/pro-solid-svg-icons';
 

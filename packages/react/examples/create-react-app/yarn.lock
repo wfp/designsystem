@@ -2078,9 +2078,9 @@
     "@typescript-eslint/types" "5.15.0"
     eslint-visitor-keys "^3.0.0"
 
-"@un/icons-react@10.34.19":
+"@wfp/icons-react@10.34.19":
   version "10.34.19"
-  resolved "https://registry.yarnpkg.com/@un/icons-react/-/icons-react-10.34.19.tgz#1e1ec303fec1c13cf231dedeba9b113405e4c3dc"
+  resolved "https://registry.yarnpkg.com/@wfp/icons-react/-/icons-react-10.34.19.tgz#1e1ec303fec1c13cf231dedeba9b113405e4c3dc"
   integrity sha512-HAtlDU00zpBBe3unwjR95i4JwIbd8zn3mjgMGtigkyNnYYQ3hBs0z/XcA/yxKOnUzQMZFFzzxaosY2whzjoawA==
   dependencies:
     "@babel/core" "^7.14.6"
@@ -2088,9 +2088,9 @@
     "@carbon/telemetry" "0.0.0-alpha.6"
     prop-types "^15.7.2"
 
-"@un/react@1.18.27":
+"@wfp/react@1.18.27":
   version "1.18.27"
-  resolved "https://registry.yarnpkg.com/@un/react/-/react-1.18.27.tgz#5878b350e5e48dbd6e1446a9f7d307c323e0821c"
+  resolved "https://registry.yarnpkg.com/@wfp/react/-/react-1.18.27.tgz#5878b350e5e48dbd6e1446a9f7d307c323e0821c"
   integrity sha512-G24r58sK/u3kye0Uorql8q+C6j33PL1bklvaRzJMGT6GF5cvN2WklK0pCrBf14omdKwX604ManWtsFVrAfAR+g==
   dependencies:
     invariant "^2.2.4"

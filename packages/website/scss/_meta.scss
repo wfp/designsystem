@@ -1,13 +1,13 @@
-@forward "@un/styles/scss/breakpoint";
-@forward "@un/styles/scss/motion";
-@forward "@un/styles/scss/spacing";
-@forward "@un/styles/scss/type";
-@forward "@un/styles/scss/breakpoint";
-//@forward "@un/styles/scss/utilities/component-reset";
-@forward "@un/styles/scss/utilities/convert";
+@forward '@wfp/styles/scss/breakpoint';
+@forward '@wfp/styles/scss/motion';
+@forward '@wfp/styles/scss/spacing';
+@forward '@wfp/styles/scss/type';
+@forward '@wfp/styles/scss/breakpoint';
+//@forward "@wfp/styles/scss/utilities/component-reset";
+@forward '@wfp/styles/scss/utilities/convert';
 
-@forward "@un/themes-core/dist/scss/tokens";
-//@import "@un/themes/scss/themes";
+@forward '@wfp/themes-core/dist/scss/tokens';
+//@import "@wfp/themes/scss/themes";
 
 //@import "../themes";
 //@import "../themes/scss";

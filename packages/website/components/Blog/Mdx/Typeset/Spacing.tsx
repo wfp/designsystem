@@ -1,7 +1,7 @@
 import React from 'react';
-import { List, ListItem, Text } from '@un/react';
+import { List, ListItem, Text } from '@wfp/react';
 
-import tokens from '@un/themes-core/dist/json/variables-full.json';
+import tokens from '@wfp/themes-core/dist/json/variables-full.json';
 
 import styles from './spacing.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

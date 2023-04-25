@@ -5,7 +5,7 @@ Create Design System is a tool to initialize a design-system boilerplate with no
 ## Quick Overview
 
 ```sh
-npx @un/create-design-system my-design-system
+npx @wfp/create-design-system my-design-system
 cd my-design-system
 yarn react:start
 ```
@@ -13,7 +13,7 @@ yarn react:start
 ### Alpha releases
 
 ```sh
-npx @un/create-design-system@alpha my-design-system
+npx @wfp/create-design-system@alpha my-design-system
 ```
 
 _([npx](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b) comes with npm 5.2+ and higher, see [instructions for older npm versions](https://gist.github.com/gaearon/4064d3c23a77c74a3614c498a8bb1c5f))_
@@ -32,7 +32,7 @@ To create a new app, you may choose one of the following methods:
 ### npx
 
 ```sh
-npx @un/create-design-system my-design-system
+npx @wfp/create-design-system my-design-system
 ```
 
 _([npx](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b) is a package runner tool that comes with npm 5.2+ and higher, see [instructions for older npm versions](https://gist.github.com/gaearon/4064d3c23a77c74a3614c498a8bb1c5f))_
@@ -40,7 +40,7 @@ _([npx](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7
 ### Yarn
 
 ```sh
-yarn create @un/design-system my-design-system
+yarn create @wfp/design-system my-design-system
 ```
 
 _[`yarn create <starter-kit-package>`](https://yarnpkg.com/lang/en/docs/cli/create/) is available in Yarn 0.25+_

@@ -1,6 +1,6 @@
 # `examples/html-handlebars`
 
-> How to integrate `@un/react` and `@un/icons` into a project
+> How to integrate `@wfp/react` and `@wfp/icons` into a project
 
 > using plain html
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import Card from '../Card';
 import styles from './article.module.scss';
-//import { Search } from "@un/react";
+//import { Search } from "@wfp/react";
 
 import Search from '../../Search';
 

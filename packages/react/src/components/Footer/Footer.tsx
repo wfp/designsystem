@@ -6,7 +6,7 @@ import { ScreenSize } from '../../utils';
 import {
   WfpLogoStandardBlackEn,
   WfpLogoVerticalEn,
-} from '@un/pictograms-react';
+} from '@wfp/pictograms-react';
 import useSettings from '../../hooks/useSettings';
 
 /** A Footer is a section at the bottom of each page. It typically contains basic site information, copyright data or links to related pages. */

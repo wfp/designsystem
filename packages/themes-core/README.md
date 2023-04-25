@@ -8,7 +8,7 @@ Generate tokens
 ### Using existing theme
 
 TODO: Add paragraph
-import variables from @un/themes-core/scss/variables;
+import variables from @wfp/themes-core/scss/variables;
 
 ## Building a theme
 
@@ -28,7 +28,7 @@ scripts: {
 ```jsx
 // buildTheme.js configuration
 
-const { config } = require('@un/themes-core/config.js');
+const { config } = require('@wfp/themes-core/config.js');
 
 /* config() can be configured
 

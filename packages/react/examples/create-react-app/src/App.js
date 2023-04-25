@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, BannerNavigationWithContent } from '@un/react';
+import { Button, BannerNavigationWithContent } from '@wfp/react';
 
 import './App.scss';
 

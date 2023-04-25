@@ -1,4 +1,4 @@
-import { Search } from '@un/react';
+import { Search } from '@wfp/react';
 import styles from './search.module.scss';
 
 import { useSearchBox } from 'react-instantsearch-hooks-web';

@@ -1,7 +1,7 @@
 import invariant from 'invariant';
 import PropTypes from 'prop-types';
 import React from 'react';
-//import icons from '@un/icons-react';
+//import icons from '@wfp/icons-react';
 import isRequiredOneOf from '../../prop-types/isRequiredOneOf';
 
 /**

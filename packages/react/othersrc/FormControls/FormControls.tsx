@@ -1,7 +1,7 @@
 import * as React from 'react';
 import classNames from 'classnames';
 import Button from '../Button';
-// import { ArrowLeft, ArrowRight } from '@un/icons-react';
+// import { ArrowLeft, ArrowRight } from '@wfp/icons-react';
 import useSettings from '../../hooks/useSettings';
 
 interface FormControlsProps {

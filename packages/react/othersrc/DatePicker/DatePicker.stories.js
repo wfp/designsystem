@@ -41,7 +41,7 @@ SingleDatePickerDefault.args = {
 
 const singleSourceCode = `
 import 'react-dates/initialize';
-import { SingleDatePickerInput } from "@un/react";
+import { SingleDatePickerInput } from "@wfp/react";
 import { SingleDatePicker } from 'react-dates';
 
 <SingleDatePickerInput
@@ -97,7 +97,7 @@ import React, { useState } from 'react';
 import 'react-dates/initialize';
 import moment from 'moment';
 import { SingleDatePicker } from 'react-dates';
-import { Input } from '@un/react';
+import { Input } from '@wfp/react';
 
 export const SingleDatePickerNew = () => {
   const [date, setDate] = useState(moment());
@@ -162,7 +162,7 @@ export const DatePickerHookForm = (args) => {
 
 const datePickerHookSourceCode = `
 import 'react-dates/initialize';
-import { SingleDatePickerInput } from "@un/react";
+import { SingleDatePickerInput } from "@wfp/react";
 import { SingleDatePicker } from 'react-dates';
 import { Controller, useForm } from 'react-hook-form';
 
@@ -222,7 +222,7 @@ DateRangePickerDefault.args = {
 };
 const dateRangeSourceCode = `
 import 'react-dates/initialize';
-import { DateRangePickerInput } from "@un/react";
+import { DateRangePickerInput } from "@wfp/react";
 import { DateRangePicker } from 'react-dates';
 
 <DateRangePickerInput
@@ -279,7 +279,7 @@ export const DatePickerRangeHookForm = (args) => {
 
 const datePickerRangeHookFormSourceCode = `
 import 'react-dates/initialize';
-import { DateRangePickerInput } from "@un/react";
+import { DateRangePickerInput } from "@wfp/react";
 import { DateRangePicker } from 'react-dates';
 import { Controller, useForm } from 'react-hook-form';
 

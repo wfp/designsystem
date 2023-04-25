@@ -20,7 +20,7 @@ Regular.args = {
   id: 'check-1',
 };
 const regularsourcecode = `
-import { Checkbox } from "@un/react";
+import { Checkbox } from "@wfp/react";
 
 <Checkbox
   id="check-1"
@@ -133,7 +133,7 @@ export const VerticalGrouping = (args) => (
 );
 
 const verticalsourcecode = `
-import { Checkbox, InputGroup  } from "@un/react";
+import { Checkbox, InputGroup  } from "@wfp/react";
 
 <InputGroup
   helperText="select any that apply"
@@ -170,7 +170,7 @@ export const HorizontalGrouping = (args) => (
 );
 
 const horizontalsourcecode = `
-import { Checkbox, InputGroup  } from "@un/react";
+import { Checkbox, InputGroup  } from "@wfp/react";
 
 <InputGroup
   helperText="select any that apply"

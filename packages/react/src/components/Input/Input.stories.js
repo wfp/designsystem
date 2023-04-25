@@ -25,7 +25,7 @@ Regular.args = {
 };
 
 const inputsourcecode = `
-import { Input  } from "@un/react";
+import { Input  } from "@wfp/react";
 
 <Input
   helperText="Optional helperText"

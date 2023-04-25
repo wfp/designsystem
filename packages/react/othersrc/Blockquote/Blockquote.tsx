@@ -9,7 +9,7 @@ import {
   WarningAlt,
   WarningSolid,
   InfoSolid,
-} from '@un/icons-react';
+} from '@wfp/icons-react';
 
 const iconLookup = {
   warning: {

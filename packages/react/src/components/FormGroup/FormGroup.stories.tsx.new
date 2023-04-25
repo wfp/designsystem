@@ -40,7 +40,7 @@ Default.args = {
 };
 
 const defaultsourcecode = `
-import { FormGroup, TextInput } from "@un/react";
+import { FormGroup, TextInput } from "@wfp/react";
 
 <FormGroup
   className="wfp--form-long"
@@ -185,7 +185,7 @@ AddressDetails.story = {
 };
 
 const addressdetailsourcecode = `
-import {FormGroup, NumberInput, TextInput } from '@un/react';
+import {FormGroup, NumberInput, TextInput } from '@wfp/react';
 import CreatableSelect from 'react-select/creatable';
 
 const options = [

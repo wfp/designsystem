@@ -1,7 +1,7 @@
 import * as React from 'react';
 import type { PropsWithChildren } from 'react';
 import classNames from 'classnames';
-import { CaretDown, CaretUp } from '@un/icons-react';
+import { CaretDown, CaretUp } from '@wfp/icons-react';
 
 type TableSortingProps = PropsWithChildren<{
   isSorted?: boolean;

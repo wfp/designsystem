@@ -3,7 +3,7 @@
 ### Usage with react
 
 ```js
-import { FormControls } from '@un/react';
+import { FormControls } from '@wfp/react';
 ```
 
 | Setting          | Default        | Options         | Role                               |

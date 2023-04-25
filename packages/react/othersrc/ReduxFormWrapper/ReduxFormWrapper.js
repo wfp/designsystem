@@ -23,7 +23,7 @@ const ReduxFormWrapper = ({
     warningMesssage(
       didWarnAboutDeprecation,
       'The `InputComponent` prop of ReduxFormWrapper has been deprecated and will be removed ' +
-        'in the next major release of `@un/react`. Please use ' +
+        'in the next major release of `@wfp/react`. Please use ' +
         '`children` instead.'
     );
     didWarnAboutDeprecation = true;
@@ -74,7 +74,10 @@ ReduxFormWrapper.propTypes = {
   /**
    * Specify the input component which is getting connected
    */
-  inputComponent: PropTypes.oneOfType([PropTypes.func.isRequired, PropTypes.object.isRequired]),
+  inputComponent: PropTypes.oneOfType([
+    PropTypes.func.isRequired,
+    PropTypes.object.isRequired,
+  ]),
   /**
    * Specify whether the control is disabled
    */

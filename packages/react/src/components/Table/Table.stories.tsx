@@ -242,7 +242,7 @@ UsingReactTable.story = {
 
       source: {
         code: `
-import { Table } from "@un/react";
+import { Table } from "@wfp/react";
 
 // Use the state and functions returned from useTable to build your UI
 const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =

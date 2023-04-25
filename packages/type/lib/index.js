@@ -2,7 +2,7 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var layout = require('@un/layout');
+var layout = require('@wfp/layout');
 
 /**
  * Copyright IBM Corp. 2018, 2018
