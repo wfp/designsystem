@@ -3,6 +3,7 @@
   "version": "0.0.21",
   "description": "Export SVGs from Figma",
   "main": "src/index.js",
+  "private": true,
   "scripts": {
     "build:images": "node src/index.js",
     "extract:colors": "node src/colors.js",
