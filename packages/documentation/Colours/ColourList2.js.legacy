@@ -4,7 +4,7 @@ import Tooltip from '../../components/Tooltip';
 
 import { Module, ModuleBody } from '../../components/Module';
 import Item from '../../components/Item';
-import { wfpColorsMeta } from '@wfp/themes';
+import { wfpColorsMeta } from '@un/themes';
 import { hex, score } from 'wcag-contrast';
 import './colours.scss';
 

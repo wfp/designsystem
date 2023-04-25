@@ -17,7 +17,7 @@ import centerjs from './favicon/center';
   ssr: false,
 });*/
 
-//import colors from '@wfp/themes-Guidelines/dist/variables-full.json';
+//import colors from '@un/themes-Guidelines/dist/variables-full.json';
 
 const canvas = {
   width: 128,

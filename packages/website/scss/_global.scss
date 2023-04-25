@@ -9,8 +9,8 @@ $css--body: true;
   $theme: meta.$carbon--theme--memo
 )*/;
 
-@use '@wfp/themes-core/dist/scss/default-css-theme' as defaulttheme;
-@use '@wfp/themes-core/distDark/scss/default-css-theme' as darkTheme;
+@use '@un/themes-core/dist/scss/default-css-theme' as defaulttheme;
+@use '@un/themes-core/distDark/scss/default-css-theme' as darkTheme;
 
 //@use "./dist/scss/default-css-theme" as memotheme;
 
@@ -26,9 +26,9 @@ $css--body: true;
 //@import "~@wfp/react/src/globals/scss/layout";
 //@import "~@wfp/react/src/globals/scss/_typography";
 
-@import '@wfp/type/scss/font-face/mono';
-@import '@wfp/type/scss/font-face/sans';
-@import '@wfp/type/scss/font-face/serif';
+@import '@un/type/scss/font-face/mono';
+@import '@un/type/scss/font-face/sans';
+@import '@un/type/scss/font-face/serif';
 
 @include open-sans-font-face();
 

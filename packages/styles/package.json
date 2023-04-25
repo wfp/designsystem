@@ -25,10 +25,10 @@
     "@carbon/grid": "^10.39.0",
     "@carbon/motion": "^10.22.0",
     "@ibm/plex": "6.0.0-next.6",
-    "@wfp/layout": "^10.26.15",
-    "@wfp/themes": "^10.40.14",
-    "@wfp/themes-core": "^0.0.28",
-    "@wfp/type": "^10.30.16"
+    "@un/layout": "^10.26.15",
+    "@un/themes": "^10.40.14",
+    "@un/themes-core": "^0.0.28",
+    "@un/type": "^10.30.16"
   },
   "devDependencies": {
     "@carbon/test-utils": "^10.3.0",

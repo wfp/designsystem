@@ -5,7 +5,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ## 0.0.23 (2022-12-06)
 
-**Note:** Version bump only for package @wfp/themes-core
+**Note:** Version bump only for package @un/themes-core
 
 ## 0.0.22 (2022-12-06)
 
@@ -15,13 +15,13 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ## 0.0.21 (2022-12-06)
 
-**Note:** Version bump only for package @wfp/themes-core
+**Note:** Version bump only for package @un/themes-core
 
-## [0.0.20](https://github.com/carbon-design-system/carbon/compare/@wfp/themes-core@0.0.19...@wfp/themes-core@0.0.20) (2022-12-06)
+## [0.0.20](https://github.com/carbon-design-system/carbon/compare/@un/themes-core@0.0.19...@un/themes-core@0.0.20) (2022-12-06)
 
-**Note:** Version bump only for package @wfp/themes-core
+**Note:** Version bump only for package @un/themes-core
 
-## [0.0.11](https://github.com/carbon-design-system/carbon/compare/@wfp/themes-core@0.0.10...@wfp/themes-core@0.0.11) (2022-06-28)
+## [0.0.11](https://github.com/carbon-design-system/carbon/compare/@un/themes-core@0.0.10...@un/themes-core@0.0.11) (2022-06-28)
 
 ### Bug Fixes
 

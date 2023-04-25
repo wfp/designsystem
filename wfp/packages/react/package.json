@@ -150,7 +150,7 @@
     "@testing-library/cypress": "^8.0.0",
     "@wfp/babel-preset-wfp": "^0.1.21",
     "@wfp/styles": "^10.26.63",
-    "@wfp/themes": "^10.40.14",
+    "@un/themes": "^10.40.14",
     "babel-loader": "^8.2.2",
     "babel-plugin-dev-expression": "^0.2.2",
     "babel-plugin-react-docgen": "^4.2.1",

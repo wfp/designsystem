@@ -2,11 +2,11 @@ $css--body: true;
 $css--reset: true;
 
 @use './theme' as coretheme;
-@use '@wfp/themes-core/dist/scss/default-css-theme' as defaulttheme;
-@use '@wfp/themes-core/distDark/scss/default-css-theme' as darkTheme;
+@use '@un/themes-core/dist/scss/default-css-theme' as defaulttheme;
+@use '@un/themes-core/distDark/scss/default-css-theme' as darkTheme;
 //@use './default-css-theme' as darkTheme;
 
-//@use '@wfp/themes-core/dist/scss/_variables.scss' as darkTheme;
+//@use '@un/themes-core/dist/scss/_variables.scss' as darkTheme;
 
 @use '@wfp/styles/scss/global-defaults' as globalDefaults;
 
@@ -16,11 +16,11 @@ $css--reset: true;
 
 @import '@wfp/styles';
 
-//@import '@wfp/themes/scss/themes';
+//@import '@un/themes/scss/themes';
 
-//@import '@wfp/themes-core/dist/scss/theme';
+//@import '@un/themes-core/dist/scss/theme';
 
-//@import '@wfp/themes/scss/index.scss';
+//@import '@un/themes/scss/index.scss';
 
 //$carbon--theme: $carbon--theme--wfp;
 

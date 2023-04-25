@@ -1,3 +1,3 @@
-const { config } = require('@wfp/themes-core/config.js');
+const { config } = require('@un/themes-core/config.js');
 
 config();

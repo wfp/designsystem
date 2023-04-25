@@ -120,7 +120,7 @@
     "@wfp/icons-react": "^10.34.46",
     "@wfp/pictograms-react": "^11.14.33",
     "@wfp/styles": "^10.26.63",
-    "@wfp/themes-core": "^0.0.28",
+    "@un/themes-core": "^0.0.28",
     "add": "^2.0.6",
     "all-contributors-cli": "^6.17.0",
     "autoprefixer": "^9.8.6",

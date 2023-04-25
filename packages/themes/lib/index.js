@@ -4,8 +4,8 @@ Object.defineProperty(exports, '__esModule', { value: true });
 
 var Color = require('color');
 var colors$1 = require('@carbon/colors');
-var type = require('@wfp/type');
-var layout = require('@wfp/layout');
+var type = require('@un/type');
+var layout = require('@un/layout');
 
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
