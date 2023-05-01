@@ -13,7 +13,6 @@
   ],
   "scripts": {
     "start:react": "cd packages/react && yarn start",
-    "dev": "cd packages/react && yarn dev",
     "build": "lerna run build --stream --prefix --npm-client yarn",
     "publish:alpha": "lerna publish --dist-tag alpha",
     "publish:alpha-cli": "lerna publish --dist-tag alpha --no-verify-access --conventional-commits --yes",
@@ -73,11 +72,25 @@
     "hooks": {}
   },
   "commitlint": {
-    "extends": ["@commitlint/config-conventional"],
+    "extends": [
+      "@commitlint/config-conventional"
+    ],
     "rules": {
-      "header-max-length": [2, "always", 72],
-      "body-max-line-length": [2, "always", 80],
-      "scope-case": [0, "always", "lower-case"],
+      "header-max-length": [
+        2,
+        "always",
+        72
+      ],
+      "body-max-line-length": [
+        2,
+        "always",
+        80
+      ],
+      "scope-case": [
+        0,
+        "always",
+        "lower-case"
+      ],
       "type-enum": [
         2,
         "always",
@@ -98,16 +111,25 @@
     }
   },
   "lint-staged": {
-    "**/*.js": ["prettier --write", "eslint", "git add"],
+    "**/*.js": [
+      "prettier --write",
+      "eslint",
+      "git add"
+    ],
     "**/*.scss": [
       "prettier --write",
       "stylelint --report-needless-disables --report-invalid-scope-disables --allow-empty-input",
       "git add"
     ],
-    "!(*sass).md": ["prettier --write", "git add"]
+    "!(*sass).md": [
+      "prettier --write",
+      "git add"
+    ]
   },
   "stylelint": {
-    "extends": ["./config/stylelint-config-carbon"]
+    "extends": [
+      "./config/stylelint-config-carbon"
+    ]
   },
   "prettier": {
     "jsxBracketSameLine": true,
@@ -148,8 +170,13 @@
       "!src/components/**/*-story.js"
     ],
     "coverageDirectory": "coverage",
-    "coverageReporters": ["text", "html"],
-    "setupFiles": ["<rootDir>/config/jest/setup.js"],
+    "coverageReporters": [
+      "text",
+      "html"
+    ],
+    "setupFiles": [
+      "<rootDir>/config/jest/setup.js"
+    ],
     "testMatch": [
       "<rootDir>/**/__tests__/**/*.js?(x)",
       "<rootDir>/**/?(*-)(spec|test).js?(x)"
@@ -168,9 +195,16 @@
       "/es/",
       "/cjs/"
     ],
-    "transformIgnorePatterns": ["[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"],
-    "moduleFileExtensions": ["js", "json"],
-    "snapshotSerializers": ["enzyme-to-json/serializer"]
+    "transformIgnorePatterns": [
+      "[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"
+    ],
+    "moduleFileExtensions": [
+      "js",
+      "json"
+    ],
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ]
   },
   "bundleSizeThreshold": 80000
 }
