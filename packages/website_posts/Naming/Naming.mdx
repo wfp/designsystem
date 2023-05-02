@@ -1,0 +1,38 @@
+---
+category: Guidelines
+title: Naming conventions
+subtitle: Naming convention & linting
+excerpt: Colors for the UN design system
+coverImage: ./components.png
+slug: Documentation/Developing/Naming convention
+ogImage:
+  url: ./components.png
+---
+
+The UI Kit uses the [BEM naming convention](http://getbem.com/naming) for `scss/css`.
+
+### Namespacing
+
+The Components are built to be included individually and not clobber global
+styles - all class attributes are prefixed by the `wfp--` prefix.
+
+### Language
+
+The names of the variables functions, etc. should be in English for easy maintenance. Some servers may have difficulty handling Unicode characters. The general rule is to never use Unicode characters in the name of your web pages.
+
+### Linting
+
+Use [ES-Lint](https://eslint.org) which is a linting utility for JavaScript and JSX while building your React
+Application to analyze source code to flag programming errors, bugs, stylistic
+errors and suspicious constructs.
+
+If you want to use the ESLint configuration in a project you can install it
+with the [eslint-config-react-app](https://www.npmjs.com/package/eslint-config-react-app). It also includes the `eslint-plugin-jsx-a11y` accessibility rules by default. When
+using Create React App no action is needed since it already includes the configuration.
+
+### Basic rules used when building the UI Kit
+
+* ECMAScript 6 features
+* no require statements
+* spaces (2 space indentation)
+* Semicolon is required at the end of a line
