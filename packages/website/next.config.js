@@ -38,7 +38,13 @@ module.exports = withMDX({
 
   webpack: (config, { isServer }) => {
     if (!isServer) {
-      config.resolve.fallback = { fs: false };
+      config.resolve.fallback = {
+        ...config.resolve.fallback,
+        '@fortawesome/pro-regular-svg-icons': false,
+        '@fortawesome/pro-light-svg-icons': false,
+        '@fortawesome/pro-solid-svg-icons': false,
+        fs: false,
+      };
     }
 
     //config.resolve.alias['react'] = path.resolve('./node_modules/react');

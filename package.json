@@ -110,6 +110,7 @@
       ]
     }
   },
+  "installDependencies":false,
   "lint-staged": {
     "**/*.js": [
       "prettier --write",
