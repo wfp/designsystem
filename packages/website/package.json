@@ -1,6 +1,6 @@
 {
   "name": "@un/core-website",
-  "version": "0.1.43",
+  "version": "0.1.44",
   "private": true,
   "scripts": {
     "dev": "tinacms dev -c \"next dev\"",
@@ -43,7 +43,7 @@
     "@un/layout": "^10.26.15",
     "@un/logos": "^0.0.31",
     "@un/pictograms-react": "^11.14.35",
-    "@un/react": "^1.18.83",
+    "@un/react": "^1.18.84",
     "@un/styles": "^10.26.65",
     "@un/themes": "^10.40.13",
     "@un/themes-core": "^0.0.28",
