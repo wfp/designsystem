@@ -3,7 +3,7 @@
     "jsx": "react",
     "module": "es6",
     "moduleResolution": "node",
-    "outDir": "./dist",
+    "outDir": "./",
     "allowSyntheticDefaultImports": true,
     "declaration": true,
     "esModuleInterop": true,
@@ -21,11 +21,5 @@
     "@typescript-eslint/no-explicit-any": "off"
   },
   "include": ["src"],
-  "exclude": [
-    "node_modules",
-    "dist",
-    "src/typesLegacyBB",
-    "src/**/*.test.tsx",
-    "src/**/*.test.ts"
-  ]
+  "exclude": ["node_modules", "dist", "src/**/*.test.tsx", "src/**/*.test.ts"]
 }

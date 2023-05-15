@@ -1,5 +1,5 @@
 import type { PropsWithChildren } from 'react';
-import React, { useState, createRef } from 'react';
+import React, { useState /*createRef */ } from 'react';
 import classNames from 'classnames';
 
 import useSettings from '../../hooks/useSettings';
@@ -27,24 +27,24 @@ const StepNavigation: React.FC<StepNavigationProps> = ({
 }) => {
   const { prefix } = useSettings();
   const [dropdownHidden] = useState(true);
-  const [elRefs, setElRefs] = useState({});
+  // const [elRefs, setElRefs] = useState({});
 
-  const getTabAt = (index) => {
+  /*const getTabAt = (index) => {
     return elRefs[`tab${index}`] || React.Children.toArray(children)[index];
   };
-
+*/
   const getTabs = () => {
     return React.Children.map(children, (tab) => tab);
   };
 
-  const arrLength = getTabs()?.length;
+  //const arrLength = getTabs()?.length;
 
-  React.useEffect(() => {
+  /* React.useEffect(() => {
     // add or remove refs
     setElRefs((elRefs) =>
       Array(arrLength).map((_, i) => elRefs[i] || createRef())
     );
-  }, [arrLength]);
+  }, [arrLength]);*/
 
   // const setTabAt = (index, tabRef) => {
   //   //setElRefs({ ...elRefs, [`tab${index}`]: tabRef });
@@ -57,7 +57,7 @@ const StepNavigation: React.FC<StepNavigationProps> = ({
     };
   };
 
-  const handleTabAnchorFocus = (onSelectionChange) => {
+  /*const handleTabAnchorFocus = (onSelectionChange) => {
     return (index) => {
       const tabCount = React.Children.count(children) - 1;
       let tabIndex = index;
@@ -78,7 +78,7 @@ const StepNavigation: React.FC<StepNavigationProps> = ({
       }
     };
   };
-
+*/
   // const handleDropdownClick = () => {
   //   setDropdownHidden(!dropdownHidden);
   // };

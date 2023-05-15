@@ -43,7 +43,10 @@ export default [
       commonjs({
         include: /node_modules/,
       }),
-      typescript({ tsconfig: './tsconfig.json' }),
+      typescript({
+        tsconfig: './tsconfig.json',
+        exclude: ['**/__tests__', '**/*.test.ts', '**/*.stories.tsx'],
+      }),
       terser(),
     ],
   },

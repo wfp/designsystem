@@ -1,14 +1,13 @@
 ('use strict');
 
-const { babel } = require('@rollup/plugin-babel');
-const commonjs = require('@rollup/plugin-commonjs');
-const { nodeResolve } = require('@rollup/plugin-node-resolve');
-const replace = require('@rollup/plugin-replace');
-const stripBanner = require('rollup-plugin-strip-banner');
-const { terser } = require('rollup-plugin-terser');
-const packageJson = require('./package.json');
-
-const typescript = require('@rollup/plugin-typescript');
+import { babel } from '@rollup/plugin-babel';
+import commonjs from '@rollup/plugin-commonjs';
+import { nodeResolve } from '@rollup/plugin-node-resolve';
+import replace from '@rollup/plugin-replace';
+import stripBanner from 'rollup-plugin-strip-banner';
+import { terser } from 'rollup-plugin-terser';
+import packageJson from './package.json';
+import typescript from '@rollup/plugin-typescript';
 
 const baseConfig = {
   input: './src/index.ts',
@@ -77,7 +76,6 @@ const umdBundleConfig = {
     exports: 'named',
     sourcemap: true,
   },
-
   /*{
       name: 'WfpUiReact',
       format: 'umd',
@@ -86,7 +84,7 @@ const umdBundleConfig = {
         'prop-types': 'PropTypes',
         react: 'React',
         'react-dom': 'ReactDOM',
-        //'@un/icons': 'WfpIcons',
+        //'@wfp/icons': 'WfpIcons',
       },
     },*/
 };

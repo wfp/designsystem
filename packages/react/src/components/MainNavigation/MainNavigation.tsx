@@ -46,7 +46,7 @@ const MainNavigation: React.FC<MainNavigationProps> = ({
       setActiveMenuItem(null);
     } else if (action === 'toggle') {
       const newI = activeMenuItem === null || activeMenuItem !== i ? i : null;
-      /*if (newI) */ setActiveMenuItem(newI);
+      if (newI !== undefined) setActiveMenuItem(newI);
     }
   };
 

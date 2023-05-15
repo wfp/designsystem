@@ -34,7 +34,8 @@ interface NumberInputProps
 }
 
 const countDecimals = (value: string) => {
-  if (Math.floor(value) === value) return 0;
+  const valueFloat = parseFloat(value);
+  if (Math.floor(valueFloat) === valueFloat) return 0;
   return value.split('.')[1].length || 0;
 };
 
