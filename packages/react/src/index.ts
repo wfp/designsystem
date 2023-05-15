@@ -144,7 +144,7 @@ export { default as Value } from './components/Value';
 export { default as Wrapper, pageWidths } from './components/Wrapper';
 //export { default as Grid } from './components/Grid';
 //export { default as Col } from './components/Col';
-export { default as colors } from './globals/data/colors';
+
 // export { default as useDetectPrint } from './internal/useDetectPrint.js.legacy';
 export { uniqueId } from './tools/uniqueId';
 export {
@@ -155,3 +155,5 @@ export {
 } from './components/UNCoreSettings';
 
 export { default as SkeletonText } from './components/SkeletonText';
+
+export { default as colors } from './globals/data/colors';

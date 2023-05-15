@@ -19,5 +19,5 @@ export type {
   AccordionProviderValue,
   ItemState,
   ItemStateOptions,
-  TransitionProp
+  TransitionProp,
 } from './utils/constants';
