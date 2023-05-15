@@ -1,7 +1,7 @@
 {
   "name": "@un/icons-core",
   "description": "Themes for un core",
-  "version": "0.0.28",
+  "version": "0.0.29",
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
@@ -50,7 +50,7 @@
     "@svgr/plugin-jsx": "^7.0.0",
     "@svgr/plugin-prettier": "^7.0.0",
     "@svgr/plugin-svgo": "^7.0.0",
-    "@un/cli": "^10.25.29",
+    "@un/cli": "^10.25.30",
     "babel-cli": "^6.26.0",
     "camelcase": "^6.3.0",
     "change-case": "^4.1.2",
