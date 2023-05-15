@@ -5,7 +5,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ## 11.14.23 (2022-12-06)
 
-**Note:** Version bump only for package @wfp/humanitarian-icons
+**Note:** Version bump only for package @un/humanitarian-icons
 
 ## 11.14.22 (2022-12-06)
 
@@ -15,8 +15,8 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ## 11.14.21 (2022-12-06)
 
-**Note:** Version bump only for package @wfp/humanitarian-icons
+**Note:** Version bump only for package @un/humanitarian-icons
 
-## [11.14.20](https://github.com/carbon-design-system/carbon/compare/@wfp/humanitarian-icons@11.14.19...@wfp/humanitarian-icons@11.14.20) (2022-12-06)
+## [11.14.20](https://github.com/carbon-design-system/carbon/compare/@un/humanitarian-icons@11.14.19...@un/humanitarian-icons@11.14.20) (2022-12-06)
 
-**Note:** Version bump only for package @wfp/humanitarian-icons
+**Note:** Version bump only for package @un/humanitarian-icons

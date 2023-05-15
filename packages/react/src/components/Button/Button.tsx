@@ -99,7 +99,6 @@ export const Button = React.forwardRef(
         clearTimeout(timer);
       };
     }, [count]);
-    console.log('ref: ', ref);
 
     const buttonClasses = classNames(className, {
       [`${prefix}--btn`]: true,

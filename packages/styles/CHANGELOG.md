@@ -3,7 +3,7 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-## [10.26.63](https://github.com/wfp/designsystem/compare/@wfp/styles@10.26.62...@wfp/styles@10.26.63) (2023-04-23)
+## [10.26.63](https://github.com/wfp/designsystem/compare/@un/styles@10.26.62...@un/styles@10.26.63) (2023-04-23)
 
 ### Bug Fixes
 
@@ -11,7 +11,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ## 10.26.51 (2022-12-06)
 
-**Note:** Version bump only for package @wfp/styles
+**Note:** Version bump only for package @un/styles
 
 ## 10.26.50 (2022-12-06)
 
@@ -21,13 +21,13 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ## 10.26.49 (2022-12-06)
 
-**Note:** Version bump only for package @wfp/styles
+**Note:** Version bump only for package @un/styles
 
-## [10.26.48](https://github.com/carbon-design-system/carbon/compare/@wfp/styles@10.26.47...@wfp/styles@10.26.48) (2022-12-06)
+## [10.26.48](https://github.com/carbon-design-system/carbon/compare/@un/styles@10.26.47...@un/styles@10.26.48) (2022-12-06)
 
-**Note:** Version bump only for package @wfp/styles
+**Note:** Version bump only for package @un/styles
 
-## [10.26.32](https://github.com/carbon-design-system/carbon/compare/@wfp/styles@10.26.31...@wfp/styles@10.26.32) (2022-06-28)
+## [10.26.32](https://github.com/carbon-design-system/carbon/compare/@un/styles@10.26.31...@un/styles@10.26.32) (2022-06-28)
 
 ### Bug Fixes
 

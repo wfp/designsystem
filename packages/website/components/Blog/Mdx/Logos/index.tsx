@@ -1,7 +1,7 @@
 import React from 'react';
-import { Link } from '@wfp/react';
-import logos from '@wfp/logos/index.json';
-import * as wfpLogos from '@wfp/logos/umd';
+import { Link } from '@un/react';
+import logos from '@un/logos/index.json';
+import * as wfpLogos from '@un/logos/umd';
 import styles from './logos.module.scss';
 
 const capitalize = (word) => {

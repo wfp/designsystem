@@ -66,7 +66,7 @@ export interface UseInputProps {
   /**
    * Specify the value of the <input>
    */
-  value?: string | number | object;
+  value?: string | number | readonly string[] | undefined; //string | number | object;
 
   /**
    * Specify whether you want the underlying label to be visually hidden
@@ -125,6 +125,7 @@ export const useInput = ({
   labelText,
   helperText,
   light,
+  value = undefined,
   //required,
   ...other
 }: UseInputProps) => {
@@ -152,6 +153,7 @@ export const useInput = ({
       }
     },
     placeholder,
+    value,
     type,
   };
 

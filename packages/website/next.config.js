@@ -57,5 +57,6 @@ module.exports = withMDX({
   },
   experimental: {
     scrollRestoration: true,
+    appDir: true,
   },
 });

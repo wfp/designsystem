@@ -31,7 +31,7 @@ $input-border: 1px solid $field-border;
     @include reset;
     position: relative;
     display: flex;
-    flex-direction: column;
+    //flex-direction: column;
   }
 
   .#{$prefix}--number input[type='number'] {

@@ -6,7 +6,7 @@ import {
   BannerNavigation,
   MainNavigationExternal,
   useTheme,
-} from '@wfp/react';
+} from '@un/react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { faGithub } from '@fortawesome/free-brands-svg-icons';

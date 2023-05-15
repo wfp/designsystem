@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { InputGroup, List, ListItem, RadioButton, Text } from '@wfp/react';
+import { InputGroup, List, ListItem, RadioButton, Text } from '@un/react';
 
 import tokens from '@un/themes-core/dist/json/variables-full.json';
 

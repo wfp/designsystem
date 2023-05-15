@@ -6,7 +6,7 @@ import { config } from '@fortawesome/fontawesome-svg-core';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 import Head from 'next/head';
-import { UNCoreProvider } from '@wfp/react';
+import { UNCoreProvider } from '@un/react';
 
 config.autoAddCss = false;
 

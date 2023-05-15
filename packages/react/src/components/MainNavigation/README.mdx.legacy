@@ -15,7 +15,7 @@ import { List, ListItem } from '../List';
 - ✗ Do not use WFP's logo inside the MainNavigation.
 
 ```js
-import { MainNavigation, MainNavigationItem } from '@wfp/react';
+import { MainNavigation, MainNavigationItem } from '@un/react';
 ```
 
 ### SubNavigation
@@ -32,7 +32,7 @@ import {
   SubNavigationList,
   SubNavigationGroup,
   SubNavigationItem,
-} from '@wfp/react';
+} from '@un/react';
 ```
 
 The maximum number of items is 6 to 8 items depending on the average word length.

@@ -16,12 +16,7 @@ import ComponentsList from './ComponentsList';
 import { H1, H2, H3, H4, H5 } from './Headings';
 import IconList from './Icons/IconListNew';
 import PropTypes from '../../PropTypes';
-import {
-  Button,
-  mdxComponents,
-  BlockNotification,
-  TextInput,
-} from '@wfp/react';
+import { Button, mdxComponents, BlockNotification, TextInput } from '@un/react';
 
 import FaviconGenerator from '../../../_posts/Favicons/FaviconGenerator';
 

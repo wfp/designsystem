@@ -12,7 +12,7 @@ import useSettings from '../../../hooks/useSettings';
 import { useAccordionItem } from '../hooks/useAccordionItem';
 import { useHeightTransition } from '../hooks/useHeightTransition';
 import { useMergeRef } from '../hooks/useMergeRef';
-import { ChevronDown } from '@wfp/icons-react';
+import { ChevronDown } from '@un/icons-react';
 import { withAccordionItem, ItemStateProps } from './withAccordionItem';
 import classNames from 'classnames';
 

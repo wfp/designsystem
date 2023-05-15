@@ -5,7 +5,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ## 11.14.29 (2022-12-06)
 
-**Note:** Version bump only for package @wfp/pictograms-react
+**Note:** Version bump only for package @un/pictograms-react
 
 ## 11.14.28 (2022-12-06)
 
@@ -15,13 +15,13 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ## 11.14.27 (2022-12-06)
 
-**Note:** Version bump only for package @wfp/pictograms-react
+**Note:** Version bump only for package @un/pictograms-react
 
-## [11.14.26](https://github.com/un/core/compare/@wfp/pictograms-react@11.14.25...@wfp/pictograms-react@11.14.26) (2022-12-06)
+## [11.14.26](https://github.com/un/core/compare/@un/pictograms-react@11.14.25...@un/pictograms-react@11.14.26) (2022-12-06)
 
-**Note:** Version bump only for package @wfp/pictograms-react
+**Note:** Version bump only for package @un/pictograms-react
 
-## [11.14.16](https://github.com/un/core/compare/@wfp/pictograms-react@11.14.15...@wfp/pictograms-react@11.14.16) (2022-06-28)
+## [11.14.16](https://github.com/un/core/compare/@un/pictograms-react@11.14.15...@un/pictograms-react@11.14.16) (2022-06-28)
 
 ### Bug Fixes
 

@@ -41,7 +41,7 @@ overlay.args = {
 };
 
 const overlaysourcecode = `
-import { Loading, Button  } from "@wfp/react";
+import { Loading, Button  } from "@un/react";
 
 export const overlay = () => {
   const [loading, setLoading] = useState(false);

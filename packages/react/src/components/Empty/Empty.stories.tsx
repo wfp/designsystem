@@ -2,7 +2,7 @@ import React from 'react';
 import markdown from './README.mdx';
 import Empty from './Empty';
 import Button from '../Button';
-//import { IllustrationsMovingVanWithBackground } from '@wfp/pictograms-react';
+//import { IllustrationsMovingVanWithBackground } from '@un/pictograms-react';
 
 export default {
   title: 'Components/UI Elements/Empty',
@@ -25,8 +25,8 @@ Regular.args = {
 };
 
 const emptysourcecode = `
-import { Empty, Button  } from "@wfp/react";
-import { IllustrationsMovingVanWithBackground } from '@wfp/pictograms-react';
+import { Empty, Button  } from "@un/react";
+import { IllustrationsMovingVanWithBackground } from '@un/pictograms-react';
 
 <Empty
   button={<Button kind="accent">New entry</Button>}

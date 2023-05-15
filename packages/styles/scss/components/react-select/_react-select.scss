@@ -60,6 +60,10 @@ $input-border: 1px solid $field-border;
       cursor: not-allowed;
     }
 
+    .#{$prefix}--react-select__input {
+      color: $text-primary !important;
+    }
+
     .#{$prefix}--react-select__menu {
       margin-top: 2px;
       border-radius: 0;
@@ -76,6 +80,11 @@ $input-border: 1px solid $field-border;
 
     .#{$prefix}--react-select__dropdown-indicator {
       color: $interactive;
+    }
+
+    //TODO: Check
+    .#{$prefix}--react-select__indicator-separator {
+      display: none;
     }
   }
 }

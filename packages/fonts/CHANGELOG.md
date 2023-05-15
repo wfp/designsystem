@@ -5,7 +5,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ## 1.0.23 (2022-12-06)
 
-**Note:** Version bump only for package @wfp/fonts
+**Note:** Version bump only for package @un/fonts
 
 ## 1.0.22 (2022-12-06)
 
@@ -15,8 +15,8 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ## 1.0.21 (2022-12-06)
 
-**Note:** Version bump only for package @wfp/fonts
+**Note:** Version bump only for package @un/fonts
 
-## [1.0.20](https://github.com/un-core/designsystem/compare/@wfp/fonts@1.0.19...@wfp/fonts@1.0.20) (2022-12-06)
+## [1.0.20](https://github.com/un-core/designsystem/compare/@un/fonts@1.0.19...@un/fonts@1.0.20) (2022-12-06)
 
-**Note:** Version bump only for package @wfp/fonts
+**Note:** Version bump only for package @un/fonts

@@ -78,7 +78,6 @@ const StepNavigation: React.FC<StepNavigationProps> = ({
       }
     };
   };
-  console.log(handleTabAnchorFocus);
 
   // const handleDropdownClick = () => {
   //   setDropdownHidden(!dropdownHidden);

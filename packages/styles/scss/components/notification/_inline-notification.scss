@@ -52,7 +52,9 @@
     }
   }
 
-  .#{$prefix}--inline-notification:not(.#{$prefix}--inline-notification--low-contrast)
+  .#{$prefix}--inline-notification:not(
+      .#{$prefix}--inline-notification--low-contrast
+    )
     a {
     color: $link-inverse;
   }
@@ -193,7 +195,7 @@
 
   .#{$prefix}--inline-notification__text-wrapper {
     flex-wrap: wrap;
-    padding: rem(15px) 0;
+    padding: rem(13px) 0;
   }
 
   @if enabled('enable-v11-release') {
@@ -226,7 +228,9 @@
     }
   }
 
-  .#{$prefix}--inline-notification:not(.#{$prefix}--inline-notification--low-contrast)
+  .#{$prefix}--inline-notification:not(
+      .#{$prefix}--inline-notification--low-contrast
+    )
     .#{$prefix}--inline-notification__action-button.#{$prefix}--btn--ghost {
     color: $link-inverse;
   }

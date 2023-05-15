@@ -42,7 +42,7 @@ RegularAnchorNavigation.args = {
 };
 
 const anchorsourcecode = `
-import { AnchorNavigation, Link } from "@wfp/ui";
+import { AnchorNavigation, Link } from "@un/ui";
 
 <AnchorNavigation title="Title">
   <Link href="#">

@@ -1,5 +1,5 @@
 {
-  "name": "@wfp/icons-core",
+  "name": "@un/icons-core",
   "description": "Themes for un core",
   "version": "0.0.28",
   "license": "Apache-2.0",
@@ -20,11 +20,15 @@
   ],
   "scripts": {
     "build:legacy": "node config.mjs",
-    "build": "babel -d ./build ./src -s",
+    "build:old": "babel -d ./build ./src -s",
     "watch": "babel -d ./build ./src -s  --watch",
     "rollup": "rollup --config ../pictograms-react/dist/jsx/index.js",
     "generate-icons": "node exampleconfig.mjs",
-    "un-cli": "wfp-cli bundle ../pictograms-react/dist/jsx/index.js"
+    "un-cli": "wfp-cli bundle ../pictograms-react/dist/jsx/index.js",
+    "_clear": "rimraf build/compiled/*",
+    "_tsc": "tsc",
+    "_make-bundle": "rollup --config",
+    "build": "npm run _clear && npm run _tsc && npm run _make-bundle"
   },
   "publishConfig": {
     "access": "public"
@@ -37,7 +41,8 @@
     "@svgr/plugin-jsx": "^7.0.0",
     "@svgr/plugin-prettier": "^7.0.0",
     "@svgr/plugin-svgo": "^7.0.0",
-    "@wfp/cli": "^10.25.29",
+    "@un/cli": "^10.25.29",
+    "babel-cli": "^6.26.0",
     "camelcase": "^6.3.0",
     "change-case": "^4.1.2",
     "del": "^6.1.1",

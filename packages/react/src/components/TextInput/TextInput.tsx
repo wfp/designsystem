@@ -13,8 +13,8 @@ interface TextInputProps
 
 const TextInput: React.FC<TextInputProps> = React.forwardRef((props, ref) => {
   const {
-    className,
-    formItemClassName,
+    //className,
+    //formItemClassName,
     hideLabel,
     helperText,
     pattern,
@@ -26,7 +26,7 @@ const TextInput: React.FC<TextInputProps> = React.forwardRef((props, ref) => {
   const inputClassName = classNames(
     `${prefix}--input`,
     `${prefix}--text-input`,
-    className,
+    //className,
     {
       [`${prefix}--text--helpertext`]: helperText,
       [`${prefix}--text--nolabel`]: hideLabel,
@@ -41,7 +41,7 @@ const TextInput: React.FC<TextInputProps> = React.forwardRef((props, ref) => {
   });
 
   return (
-    <Input {...wrapperProps} formItemClassName={formItemClassName}>
+    <Input {...wrapperProps} /*formItemClassName={formItemClassName} */>
       <input pattern={pattern} {...inputProps} ref={ref} />
     </Input>
   );

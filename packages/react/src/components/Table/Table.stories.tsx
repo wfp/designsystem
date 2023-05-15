@@ -242,7 +242,7 @@ UsingReactTable.story = {
 
       source: {
         code: `
-import { Table } from "@wfp/react";
+import { Table } from "@un/react";
 
 // Use the state and functions returned from useTable to build your UI
 const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
@@ -405,7 +405,7 @@ To add Pagination to your table, you can use the Pagination sub component. Pagin
 For more details please visit [React-Table](https://github.com/react-tools/react-table);
 
 \`\`\`js
-import { Pagination } from '@wfp/ui';
+import { Pagination } from '@un/ui';
 
 
 <Pagination

@@ -20,7 +20,7 @@ export const Regular = (args) => (
 );
 
 const infobarsourcecode = `
-  import { InfoBar, Link  } from "@wfp/react";
+  import { InfoBar, Link  } from "@un/react";
 
   <InfoBar>
     InfoBar with content. 

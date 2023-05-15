@@ -5,7 +5,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ## 0.1.19 (2022-12-06)
 
-**Note:** Version bump only for package @wfp/babel-preset-wfp
+**Note:** Version bump only for package @un/babel-preset-wfp
 
 ## 0.1.18 (2022-12-06)
 
@@ -15,8 +15,8 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ## 0.1.17 (2022-12-06)
 
-**Note:** Version bump only for package @wfp/babel-preset-wfp
+**Note:** Version bump only for package @un/babel-preset-wfp
 
-## [0.1.16](https://github.com/wfp-design-system/wfp/compare/@wfp/babel-preset-wfp@0.1.15...@wfp/babel-preset-wfp@0.1.16) (2022-12-06)
+## [0.1.16](https://github.com/wfp-design-system/wfp/compare/@un/babel-preset-wfp@0.1.15...@un/babel-preset-wfp@0.1.16) (2022-12-06)
 
-**Note:** Version bump only for package @wfp/babel-preset-wfp
+**Note:** Version bump only for package @un/babel-preset-wfp

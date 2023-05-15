@@ -159,7 +159,7 @@ You can customize the content by using \`MainNavigation\`.
 `;
 
 const sourcecode = (type) => {
-  return `import { Button,User, Search } from "@wfp/react";
+  return `import { Button,User, Search } from "@un/react";
   import {
     MainNavigationExternal,
     MainNavigationItem,
@@ -172,7 +172,7 @@ const sourcecode = (type) => {
     SubNavigationList,
     SubNavigationGroup,
     SubNavigationItem
-  } from "@wfp/react";
+  } from "@un/react";
 
   const Navigation = () => {
     return (

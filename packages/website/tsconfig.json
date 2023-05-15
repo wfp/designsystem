@@ -1,6 +1,10 @@
 {
   "compilerOptions": {
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": false,
@@ -12,14 +16,28 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve"
+    "jsx": "preserve",
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "strictNullChecks": true
   },
-  "typeRoots": ["./node_modules/@types", "./typings"],
+  "typeRoots": [
+    "./node_modules/@types",
+    "./typings"
+  ],
   "include": [
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "components/PropTypes/index.js"
+    "components/PropTypes/index.js",
+    ".next/types/**/*.ts"
   ],
-  "exclude": ["node_modules", "*.sitemap.xml.tsx", "**/*.build.tsx"]
+  "exclude": [
+    "node_modules",
+    "*.sitemap.xml.tsx",
+    "**/*.build.tsx"
+  ]
 }

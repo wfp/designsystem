@@ -8,13 +8,13 @@ $css--reset: true;
 
 //@use '@un/themes-core/dist/scss/_variables.scss' as darkTheme;
 
-@use '@wfp/styles/scss/global-defaults' as globalDefaults;
+@use '@un/styles/scss/global-defaults' as globalDefaults;
 
-@use '@wfp/styles/scss/theme' /*with (
+@use '@un/styles/scss/theme' /*with (
   $coretheme: coretheme
 )*/;
 
-@import '@wfp/styles';
+@import '@un/styles';
 
 //@import '@un/themes/scss/themes';
 

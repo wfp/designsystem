@@ -35,7 +35,7 @@ export const Regular = (args) => (
 );
 
 const sourcecode = `
-import { Tabs, Tab } from "@wfp/ui";
+import { Tabs, Tab } from "@un/ui";
 
 <Tabs>
   <Tab label="Label 1">

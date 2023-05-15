@@ -5,7 +5,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ## 10.34.42 (2022-12-06)
 
-**Note:** Version bump only for package @wfp/icons-react
+**Note:** Version bump only for package @un/icons-react
 
 ## 10.34.41 (2022-12-06)
 
@@ -15,13 +15,13 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ## 10.34.40 (2022-12-06)
 
-**Note:** Version bump only for package @wfp/icons-react
+**Note:** Version bump only for package @un/icons-react
 
-## [10.34.39](https://github.com/carbon-design-system/carbon/compare/@wfp/icons-react@10.34.38...@wfp/icons-react@10.34.39) (2022-12-06)
+## [10.34.39](https://github.com/carbon-design-system/carbon/compare/@un/icons-react@10.34.38...@un/icons-react@10.34.39) (2022-12-06)
 
-**Note:** Version bump only for package @wfp/icons-react
+**Note:** Version bump only for package @un/icons-react
 
-## [10.34.29](https://github.com/carbon-design-system/carbon/compare/@wfp/icons-react@10.34.28...@wfp/icons-react@10.34.29) (2022-06-28)
+## [10.34.29](https://github.com/carbon-design-system/carbon/compare/@un/icons-react@10.34.28...@un/icons-react@10.34.29) (2022-06-28)
 
 ### Bug Fixes
 

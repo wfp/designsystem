@@ -12,21 +12,21 @@ import {
 } from 'react-live';
 import Storybook from '../Storybook';
 import { DoUse, DoNotUse } from '../DoUse';
-import { MDXProvider } from '@mdx-js/react';
+//import { MDXProvider } from '@mdx-js/react';
 import { Controller, useForm } from 'react-hook-form';
 import classNames from 'classnames';
 
-import MDX from '@mdx-js/runtime';
+//import MDX from '@mdx-js/runtime';
 import components from '../';
 
 import vsDark from 'prism-react-renderer/themes/vsDark';
 import * as ReactDOMServer from 'react-dom/server';
 
-import * as unComponents from '@wfp/react';
-import * as unHumanitarianIcons from '@wfp/humanitarian-icons-react';
-import * as unPictograms from '@wfp/pictograms-react';
-import * as icons from '@wfp/icons-react';
-import { Button, Empty } from '@wfp/react';
+import * as unComponents from '@un/react';
+import * as unHumanitarianIcons from '@un/humanitarian-icons-react';
+import * as unPictograms from '@un/pictograms-react';
+import * as icons from '@un/icons-react';
+import { Button, Empty } from '@un/react';
 import prettier from 'prettier/standalone';
 import babelParser from 'prettier/parser-babel';
 import htmlParser from 'prettier/parser-html';
@@ -192,9 +192,9 @@ const CodeBlockLive = (props: any) => {
           transformCode={cleanCode}>
           {language === 'mdx' || language === 'md' ? (
             <div className={stylesModule.preview}>
-              <MDXProvider components={components}>
+              {/*<MDXProvider components={components}>
                 <MDX>{code}</MDX>
-              </MDXProvider>
+          </MDXProvider> */}
             </div>
           ) : (
             <div className={stylesModule.previewWrapper}>

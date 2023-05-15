@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { List, ListItem, Table, Text, Story } from '@wfp/react';
+import { List, ListItem, Table, Text, Story } from '@un/react';
 
 import tokens from '@un/themes-core/dist/json/variables-full.json';
 

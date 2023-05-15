@@ -12,6 +12,7 @@ export interface AppContextInterface {
   selectorTabbable: string;
   selectorFocusable: string;
   theme: string;
+  actualTheme: string;
   initialized: boolean;
   // eslint-disable-next-line @typescript-eslint/ban-types
   setTheme: (theme: string) => void;
@@ -21,7 +22,7 @@ export interface AppContextInterface {
 export const UNCoreContext =
   createContext<AppContextInterface>(defaultUNContext);
 
-/** A toggle is used to quickly switch between two possible states. They are commonly used for “on/off” switches */
+/** The UN Core props are basic properties for the provider */
 type UNCoreProps = PropsWithChildren<{
   children?: React.ReactNode;
   initialTheme?: string;
