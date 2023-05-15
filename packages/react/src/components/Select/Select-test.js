@@ -5,7 +5,7 @@ import Select from '.';
 import SelectItem from '../SelectItem';
 import SelectSkeleton from './Select.Skeleton';
 import { mount, shallow } from 'enzyme';
-import { CaretDown } from '@wfp/icons-react';
+import { CaretDown } from '@un/icons-react';
 
 describe('Select', () => {
   describe('Renders as expected', () => {

@@ -5,7 +5,7 @@ import Blockquote from '../../components/Blockquote';
 import Link from '../../components/Link';
 import Icon from '../../components/Icon';
 import { Module, ModuleFooter } from '../../components/Module';
-import { DownloadGlyph } from '@wfp/icons-react';
+import { DownloadGlyph } from '@un/icons-react';
 
 import Button from '../../components/Button';
 
@@ -64,7 +64,7 @@ const IconPreview = ({ i, icon, iconsReact }) => {
             }}>
             {`import
   {${iconName}}
-from '@wfp/icons-react'`}
+from '@un/icons-react'`}
           </div>
           <Button
             icon={DownloadGlyph}

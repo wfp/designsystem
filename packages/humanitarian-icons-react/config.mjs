@@ -10,7 +10,7 @@ const __dirname = dirname(__filename);
 const srcFolder = '../humanitarian-icons/src'; // path.resolve(__dirname, '@un/humanitarian-icons/src');
 const distFolder = path.resolve(__dirname, 'dist');
 
-convertFolder(srcFolder, distFolder, jsx, (defaultConfig) => {
+const config = (defaultConfig) => {
   return {
     ...defaultConfig,
     replaceAttrValues: {
@@ -18,7 +18,9 @@ convertFolder(srcFolder, distFolder, jsx, (defaultConfig) => {
       'url(#a)': 'undefined',
     },
   };
-});
+};
+
+convertFolder(srcFolder, distFolder, jsx /* TODO: Check config */);
 /*convertFolder(
   srcFolder,
   path.resolve(__dirname, 'dist/svg'),

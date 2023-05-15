@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { Module, ModuleFooter } from '../../components/Module';
-import { Download } from '@wfp/icons-react';
+import { Download } from '@un/icons-react';
 
 import Button from '../../components/Button';
 
@@ -54,7 +54,7 @@ const IconPreview = ({ icon, name }) => {
             }}>
             {`import
   {${key}}
-from '@wfp/${name}-react'`}
+from '@un/${name}-react'`}
           </div>
           <Button
             icon={Download}

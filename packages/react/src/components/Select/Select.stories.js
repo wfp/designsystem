@@ -33,7 +33,7 @@ several lines.
 `;
 
 const selectsourcecode = `
-import { Select, SelectItem  } from "@wfp/react";
+import { Select, SelectItem  } from "@un/react";
 
 <Select>
   <SelectItem value="option-1" text="Option 1" />

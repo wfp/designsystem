@@ -8,7 +8,10 @@ const fs = require('fs-extra');
 const path = require('path');
 const { rollup } = require('rollup');
 
-async function bundle(entrypoint, options = { name: 'Icon' }) {
+async function bundle(
+  entrypoint,
+  options = { name: 'Icon', globals: undefined }
+) {
   console.log('bundle rollup', entrypoint);
   const globals = options.globals ? formatGlobals(options.globals) : {};
   const { name } = options;
@@ -70,6 +73,8 @@ async function bundle(entrypoint, options = { name: 'Icon' }) {
         format,
         file,
         exports: 'auto',
+        name: 'not used',
+        globals: undefined,
       };
 
       if (format === 'umd') {
@@ -128,4 +133,4 @@ async function findPackageFolder(entrypoint) {
   return packageFolder;
 }
 
-module.exports = bundle;
+export default bundle;

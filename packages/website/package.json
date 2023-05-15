@@ -11,7 +11,7 @@
     "dev:ts": "yarn dev & yarn ts:watch",
     "ts": "tsc --noEmit --incremental",
     "ts:watch": "yarn ts --watch",
-    "build": "tinacms build && next build"
+    "buildac": "tinacms build && next build"
   },
   "devDependencies": {
     "eslint": "8.19.0",

@@ -23,7 +23,7 @@ const ReduxFormWrapper = ({
     warningMesssage(
       didWarnAboutDeprecation,
       'The `InputComponent` prop of ReduxFormWrapper has been deprecated and will be removed ' +
-        'in the next major release of `@wfp/react`. Please use ' +
+        'in the next major release of `@un/react`. Please use ' +
         '`children` instead.'
     );
     didWarnAboutDeprecation = true;

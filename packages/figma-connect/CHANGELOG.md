@@ -5,7 +5,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ## 0.0.19 (2022-12-06)
 
-**Note:** Version bump only for package @wfp/figma-connect
+**Note:** Version bump only for package @un/figma-connect
 
 ## 0.0.18 (2022-12-06)
 
@@ -15,8 +15,8 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ## 0.0.17 (2022-12-06)
 
-**Note:** Version bump only for package @wfp/figma-connect
+**Note:** Version bump only for package @un/figma-connect
 
-## [0.0.16](https://github.com/un-core/designsystem/compare/@wfp/figma-connect@0.0.15...@wfp/figma-connect@0.0.16) (2022-12-06)
+## [0.0.16](https://github.com/un-core/designsystem/compare/@un/figma-connect@0.0.15...@un/figma-connect@0.0.16) (2022-12-06)
 
-**Note:** Version bump only for package @wfp/figma-connect
+**Note:** Version bump only for package @un/figma-connect

@@ -9,7 +9,8 @@
     "directory": "packages/styles"
   },
   "bugs": "https://github.com/carbon-design-system/carbon/issues",
-  "main": "build/index.js",
+  "main": "build/bundle.js",
+  "module": "build/bundle.js",
   "keywords": [
     "colors",
     "themes",
@@ -34,9 +35,17 @@
     "access": "public"
   },
   "devDependencies": {
+    "@babel/cli": "^7.19.3",
+    "@babel/core": "^7.20.2",
+    "@babel/node": "^7.20.2",
+    "@babel/plugin-proposal-export-default-from": "^7.18.10",
+    "@babel/preset-env": "^7.20.2",
+    "@rollup/plugin-babel": "^6.0.2",
+    "@rollup/plugin-node-resolve": "^15.0.1",
     "rollup": "^2.70.1"
   },
   "dependencies": {
+    "@rollup/plugin-typescript": "^11.1.1",
     "@svgr/core": "^7.0.0",
     "@svgr/plugin-jsx": "^7.0.0",
     "@svgr/plugin-prettier": "^7.0.0",
@@ -46,7 +55,8 @@
     "camelcase": "^6.3.0",
     "change-case": "^4.1.2",
     "del": "^6.1.1",
-    "fs-readdir-recursive": "^1.1.0"
+    "fs-readdir-recursive": "^1.1.0",
+    "rollup-plugin-dts": "^5.3.0"
   },
   "gitHead": "7201da36cfb8dad97a91763abc2497f70c239243"
 }

@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "moduleResolution": "node",
+    "removeComments": false,
+    "sourceMap": true,
+    "target": "es2018",
+    "outDir": "build/compiled",
+    "baseUrl": "./src",
+    "declaration": true,
+    "strict": false,
+    "module": "esnext",
+    "noEmitOnError": true,
+    "lib": ["es2017"],
+    "esModuleInterop": false,
+    "skipLibCheck": true,
+    "allowSyntheticDefaultImports": true
+  },
+  "include": ["src/*"],
+  "exclude": [
+    "../../node_modules/**",
+    "build",
+    "dist",
+    "src/**/*.test.ts",
+    "../../node_modules/@types/web-bluetooth/*"
+  ]
+}

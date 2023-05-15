@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import markdown from './README.mdx';
 import { List, ListItem } from '../List';
 import Dropzone, { useDropzone } from 'react-dropzone';
-import { Upload } from '@wfp/icons-react';
+import { Upload } from '@un/icons-react';
 import classNames from 'classnames';
 
 export default {
@@ -51,9 +51,9 @@ Regular.parameters = {
   docs: {
     source: {
       code: ` 
-import { Icon, List, ListItem } from '@wfp/react';
+import { Icon, List, ListItem } from '@un/react';
 import Dropzone from 'react-dropzone';
-import { UploadGlyph } from '@wfp/icons-react';
+import { UploadGlyph } from '@un/icons-react';
 
 export const Regular = (args) => {
   const [file, setfile] = useState([])
@@ -125,8 +125,8 @@ Advanced.parameters = {
     source: {
       code: `
 import Dropzone, { useDropzone } from 'react-dropzone';
-import { Icon, List, ListItem } from '@wfp/react';
-import { UploadGlyph } from '@wfp/icons-react';
+import { Icon, List, ListItem } from '@un/react';
+import { UploadGlyph } from '@un/icons-react';
 import classNames from 'classnames';
 
 export const Advanced = (args) => {

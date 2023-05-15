@@ -5,7 +5,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ## 1.0.28 (2022-12-06)
 
-**Note:** Version bump only for package @wfp/create-design-system
+**Note:** Version bump only for package @un/create-design-system
 
 ## 1.0.27 (2022-12-06)
 
@@ -15,8 +15,8 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ## 1.0.26 (2022-12-06)
 
-**Note:** Version bump only for package @wfp/create-design-system
+**Note:** Version bump only for package @un/create-design-system
 
-## [1.0.25](https://github.com/un-core/designsystem/compare/@wfp/create-design-system@1.0.24...@wfp/create-design-system@1.0.25) (2022-12-06)
+## [1.0.25](https://github.com/un-core/designsystem/compare/@un/create-design-system@1.0.24...@un/create-design-system@1.0.25) (2022-12-06)
 
-**Note:** Version bump only for package @wfp/create-design-system
+**Note:** Version bump only for package @un/create-design-system

@@ -1,5 +1,5 @@
 import React from 'react';
-import { AddCircle } from '@wfp/icons-react';
+import { AddCircle } from '@un/icons-react';
 import Button from '.';
 import ButtonSkeleton from './Button.Skeleton';
 import { shallow, mount } from 'enzyme';

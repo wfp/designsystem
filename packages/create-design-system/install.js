@@ -26,7 +26,7 @@ async function main() {
     const project = await prompts({
       type: 'text',
       name: 'value',
-      hint: 'For example: npx @wfp/create-my-design-system my-design-system',
+      hint: 'For example: npx @un/create-my-design-system my-design-system',
       message: `You have to provide a name to your design system. What's your project name?`,
       onCancel,
     });
