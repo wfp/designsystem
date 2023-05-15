@@ -77,6 +77,7 @@ const umdBundleConfig = {
     exports: 'named',
     sourcemap: true,
   },
+
   /*{
       name: 'WfpUiReact',
       format: 'umd',
@@ -97,19 +98,19 @@ module.exports = [
   // Generates the following bundles:
   // ESM:       es/index.js
   // CommonJS: lib/index.js
-  /*{
+  {
     ...baseConfig,
     output: [
-      {
+      /*{
         format: 'esm',
         file: 'es/index.js',
-      },
+      },*/
       {
         format: 'cjs',
         file: 'lib/index.js',
       },
     ],
-  },*/
+  },
 
   // Generate the development UMD bundle:
   // UMD: umd/carbon-components-react.js
