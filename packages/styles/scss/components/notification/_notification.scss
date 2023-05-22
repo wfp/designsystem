@@ -238,14 +238,14 @@
       .#{$prefix}--inline-notification__icon {
         flex-shrink: 0;
         margin-top: 0.9475rem;
-        margin-right: 1rem;
+        margin-right: 0.7rem;
         margin-bottom: 0.875rem;
       }
 
       .#{$prefix}--inline-notification__text-wrapper {
         display: flex;
         flex-wrap: wrap;
-        padding: 0.9375rem 0;
+        padding: 0.86rem 0;
 
         .#{$prefix}--inline-notification__title {
           font-size: var(--cds-productive-heading-01-font-size, 0.875rem);

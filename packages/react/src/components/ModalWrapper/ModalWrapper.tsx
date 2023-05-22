@@ -3,19 +3,23 @@ import Modal from '../Modal';
 import Button from '../Button';
 import useSettings from '../../hooks/useSettings';
 import { ButtonKind } from '../../utils';
+import { ModalProps } from '../Modal/Modal';
 
 /** Modal Wrapper component to encapsulate your Modal within a button. */
-interface ModalWrapperProps extends React.ComponentPropsWithRef<'div'> {
+interface ModalWrapperProps
+  extends ModalProps,
+    React.ComponentPropsWithRef<'div'> {
   id?: string;
-  status?: string;
-  disabled?: boolean;
+  /*status?: string;
+   */
+  disabled?: boolean /*
   components?: {
     Wrapper?: React.ReactNode;
-  };
+  };*/;
   customButton?: React.ReactElement;
   buttonTriggerText?: React.ReactNode;
   buttonTriggerClassName?: string;
-  modalLabel?: React.ReactNode;
+  /*modalLabel?: React.ReactNode;
   modalHeading?: React.ReactNode;
   modalText?: React.ReactNode;
   passiveModal?: boolean;
@@ -25,6 +29,7 @@ interface ModalWrapperProps extends React.ComponentPropsWithRef<'div'> {
   primaryButtonText?: React.ReactNode;
   width?: 'wide' | 'narrow';
   secondaryButtonText?: React.ReactNode;
+  */
   handleOpen?: () => void;
   handleSubmit?: (handle: () => void) => void;
   handleClose?: () => void;
@@ -32,8 +37,8 @@ interface ModalWrapperProps extends React.ComponentPropsWithRef<'div'> {
   shouldCloseAfterSubmit?: boolean;
   primaryButtonDisabled?: boolean;
   onKeyDown?: (evt: KeyboardEvent<HTMLDivElement>) => void;
-  primaryButtonRef?: React.RefObject<HTMLButtonElement>;
-  secondaryButtonRef?: React.RefObject<HTMLButtonElement>;
+  /*primaryButtonRef?: React.RefObject<HTMLButtonElement>;
+  secondaryButtonRef?: React.RefObject<HTMLButtonElement>*/
 }
 
 const ModalWrapper: React.FC<ModalWrapperProps> = ({

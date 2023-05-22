@@ -32,6 +32,7 @@ export interface ModalProps {
   selectorPrimaryFocus?: boolean | string;
   type?: 'info' | 'warning' | 'danger';
   inPortal?: boolean;
+  width?: 'narrow' | 'wide' | 'full'; // TODO: Check
   wide?: boolean;
   modalFooter?: () => void;
   onRequestClose?: (
@@ -43,7 +44,7 @@ export interface ModalProps {
   className?: string;
   id?: string;
   backgroundImage?: string;
-  onKeyDown?: () => void;
+  //onKeyDown?: () => void;
   handleBlur?: (obj?: unknown) => void;
   primaryButtonRef?: React.RefObject<HTMLButtonElement>;
   secondaryButtonRef?: React.RefObject<HTMLButtonElement>;
@@ -74,7 +75,7 @@ const Modal: React.FC<ModalProps> = (props) => {
     // onRequestSubmit,
     onSecondarySubmit,
     iconDescription,
-    inPortal,
+    inPortal = true,
     hideClose,
     handleBlur = () => {},
     wide,
@@ -285,21 +286,6 @@ const Modal: React.FC<ModalProps> = (props) => {
   if (inPortal) return ReactDOM.createPortal(modal, el);
   else return modal;
 };
-
-// Modal.defaultProps = {
-//   onRequestClose: () => {},
-//   onRequestSubmit: () => {},
-//   primaryButtonDisabled: false,
-//   secondaryButtonDisabled: false,
-//   onKeyDown: () => {},
-//   passiveModal: false,
-//   iconDescription: 'close the modal',
-//   inPortal: true,
-//   lazyLoad: false,
-//   modalHeading: '',
-//   modalLabel: '',
-//   selectorPrimaryFocus: '[data-modal-primary-focus]',
-// };
 
 Modal.displayName = 'Modal';
 
