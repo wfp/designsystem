@@ -5,11 +5,11 @@
 
 $datepicker__background-color: $layer-primary !default;
 $datepicker__border-color: $border-strong !default;
-$datepicker__highlighted-color: #3dcc4a !default;
+$datepicker__highlighted-color: $interactive !default;
 $datepicker__muted-color: $text-secondary !default;
 $datepicker__selected-color: $interactive !default;
-$datepicker__text-color: #000 !default;
-$datepicker__header-color: #000 !default;
+$datepicker__text-color: $text-primary !default;
+$datepicker__header-color: $text-primary !default;
 $datepicker__navigation-disabled-color: $layer-accent-active;
 
 $datepicker__border-radius: 0.3rem !default;

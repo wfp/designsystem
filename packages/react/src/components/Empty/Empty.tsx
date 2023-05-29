@@ -31,6 +31,7 @@ type EmptyProps = PropsWithChildren<{
 
 const Icon: React.FC<EmptyProps> = ({ icon }) => {
   const { prefix } = useSettings();
+  if (!icon) return null;
   return <div className={`${prefix}--empty__icon`}>{icon}</div>;
 };
 

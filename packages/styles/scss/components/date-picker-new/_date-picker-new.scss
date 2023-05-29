@@ -24,13 +24,13 @@
 /// @access public
 /// @group date-picker
 
-$datepicker__background-color: #f0f0f0 !default;
+$datepicker__background-color: $background !default;
 $datepicker__border-color: #aeaeae !default;
 $datepicker__highlighted-color: #3dcc4a !default;
-$datepicker__muted-color: #ccc !default;
+$datepicker__muted-color: $text-secondary !default;
 $datepicker__selected-color: #216ba5 !default;
-$datepicker__text-color: #000 !default;
-$datepicker__header-color: #000 !default;
+$datepicker__text-color: $text-primary !default;
+$datepicker__header-color: $text-primary !default;
 $datepicker__navigation-disabled-color: lighten(
   $datepicker__muted-color,
   10%

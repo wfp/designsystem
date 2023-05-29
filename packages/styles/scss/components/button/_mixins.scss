@@ -65,11 +65,16 @@
   border-width: $button-border-width;
   border-style: solid;
   border-color: $border-color;
-  &a {
-    color: $font-color;
-  }
+
   color: $font-color;
 
+  // TODO: Check if link override is still needed
+  &[role='button'] {
+    color: $font-color;
+  }
+  /* @at-root a {
+    color: $font-color !important;
+  } */
   &:focus,
   &:hover {
     background-color: $hover-bg-color;

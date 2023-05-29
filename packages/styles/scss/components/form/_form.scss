@@ -108,8 +108,9 @@ $input-label-weight: 400 !default;
   .#{$prefix}--form-requirement {
     @include reset;
     @include type-style('caption');
-    margin: $spacing-02 0 0;
+    margin: $spacing-01 0 0;
     font-weight: 600;
+    font-size: 0.8em;
     max-height: 0;
     line-height: 1.5;
     display: none;

@@ -15,7 +15,7 @@
 
 .react-datepicker {
   font-size: $datepicker__font-size;
-  background-color: #fff;
+  //background-color: #fff;
   color: $datepicker__text-color;
   border: 1px solid $datepicker__border-color;
   border-radius: $datepicker__border-radius;
@@ -410,6 +410,7 @@
     color: $text-inverse;
 
     &:hover {
+      background-color: $datepicker__selected-color;
       //background-color: darken($datepicker__selected-color, 5%);
     }
   }
@@ -446,7 +447,8 @@
     color: $text-inverse;
 
     &:hover {
-      background-color: darken($datepicker__highlighted-color, 5%);
+      background-color: $datepicker__selected-color;
+      // background-color: darken($datepicker__highlighted-color, 5%);
     }
 
     &-custom-1 {
@@ -466,7 +468,8 @@
     color: $text-inverse;
 
     &:hover {
-      background-color: $datepicker__selected-color; //darken($datepicker__selected-color, 5%);
+      background-color: $datepicker__selected-color;
+      // background-color: $datepicker__selected-color; //darken($datepicker__selected-color, 5%);
     }
   }
 
@@ -476,6 +479,7 @@
     color: $text-inverse;
 
     &:hover {
+      background-color: $datepicker__selected-color;
       //background-color: darken($datepicker__selected-color, 5%);
     }
   }

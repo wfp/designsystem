@@ -122,6 +122,7 @@ export const useInput = ({
   //hideLabel,
   name,
   invalid,
+  invalidText,
   labelText,
   helperText,
   light,
@@ -142,6 +143,7 @@ export const useInput = ({
     id: calculatedId,
     name,
     className: inputClasses,
+    ...other,
     onChange: (evt) => {
       if (!other.disabled && !other.readOnly) {
         onChange(evt);
@@ -163,6 +165,8 @@ export const useInput = ({
     labelText,
     helperText,
     components,
+    invalid,
+    invalidText,
   };
 
   const errorId = calculatedId + '-error-msg';

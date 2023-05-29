@@ -92,6 +92,10 @@
     margin-top: $spacing-08;
   }
 
+  > p + .#{$prefix}--btn {
+    margin-top: $spacing-05;
+  }
+
   p + table {
     margin-top: $spacing-05;
   }
