@@ -17,6 +17,7 @@ export interface ModalProps {
     Wrapper?: React.ReactNode;
   };
   modalAriaLabel?: string;
+  elementToAppend?: HTMLElement | null;
   modalSecondaryAction?: React.ReactNode;
   secondaryButtonText?: React.ReactNode;
   secondaryButtonDisabled?: boolean;
@@ -68,6 +69,7 @@ const Modal: React.FC<ModalProps> = (props) => {
     modalAriaLabel,
     passiveModal,
     children,
+    elementToAppend,
     backgroundImage,
     open,
     lazyLoad,
@@ -91,7 +93,13 @@ const Modal: React.FC<ModalProps> = (props) => {
   const button = useRef<HTMLButtonElement>(null);
   const outerModal = useRef<HTMLInputElement>(null);
   const innerModal = useRef<HTMLInputElement>(null);
-  const el = document.body;
+
+  const el = elementToAppend
+    ? elementToAppend
+    : typeof document !== 'undefined'
+    ? document.body
+    : undefined;
+
   const [beingOpen, setBeingOpen] = React.useState(false);
 
   //   const handleKeyDown = (evt) => {
@@ -283,7 +291,7 @@ const Modal: React.FC<ModalProps> = (props) => {
     </div>
   );
 
-  if (inPortal) return ReactDOM.createPortal(modal, el);
+  if (inPortal && el) return ReactDOM.createPortal(modal, el);
   else return modal;
 };
 
