@@ -1,6 +1,6 @@
 import { NextApiHandler } from 'next';
 //import { isUserAuthorized } from "@tinacms/auth";
-import { databaseRequest } from '../../lib/databaseConnection';
+import { databaseRequest } from '../../lib/databaseConnection.ts.new';
 
 const nextApiHandler: NextApiHandler = async (req, res) => {
   // Use your own authentication logic here

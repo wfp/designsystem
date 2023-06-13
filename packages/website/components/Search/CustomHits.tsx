@@ -37,7 +37,7 @@ function Hit({ hit, setOpen, count, index }: any) {
 
 function Hits(props: any) {
   const { results } = useHits();
-  const validQuery = results.query?.length >= 3; // 3 is the minimum query length
+  const validQuery = results && results.query?.length >= 3; // 3 is the minimum query length
 
   const [count, setCount] = useState(-1);
 
@@ -45,6 +45,7 @@ function Hits(props: any) {
     (value) => {
       setCount((prevCount) => {
         if (
+          results &&
           prevCount + value >= 0 &&
           prevCount + value < results.hits?.length
         ) {
@@ -91,7 +92,7 @@ function Hits(props: any) {
           <p className={styles.noResults}>Type to show results...</p>
         )}
 
-        {results?.hits.length > 0 && validQuery && (
+        {results && results.hits.length > 0 && validQuery && (
           <>
             {results.hits.map((hit, index) => (
               <Hit

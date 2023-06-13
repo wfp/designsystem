@@ -7,7 +7,7 @@ import {
   Breadcrumb,
   BreadcrumbItem,
   BreadcrumbHome,
-  Story,
+  // Story,
 } from '@un/react';
 import { MDXRemote } from 'next-mdx-remote';
 import NextLink from 'next/link';
@@ -21,7 +21,7 @@ import components from '../Blog/Mdx';
 import References from '../Blog/References';
 import TableOfContent from '../Blog/References/TableOfContent';
 import slugifyWithSlashes from '../../lib/slugifyWithSlashes';
-import { TinaMarkdown } from 'tinacms/dist/rich-text';
+// import { TinaMarkdown } from 'tinacms/dist/rich-text';
 import { NextSeo } from 'next-seo';
 import PropTypes from '../PropTypes';
 
@@ -89,7 +89,7 @@ function TreeBranch({ slug, split, level }: SidebarProps) {
   );
 }
 
-export const createPathTree = (paths) => {
+export const createPathTree = (paths: any) => {
   const level = { ['<result>']: [] };
 
   paths.forEach((path) => {
@@ -116,7 +116,7 @@ interface SidebarWrapperProps {
   post: any;
   posts: any;
   propTypes: any;
-  data: any;
+  data?: any;
 }
 
 export default function SidebarWrapper({
@@ -133,7 +133,7 @@ export default function SidebarWrapper({
     };
   });
 
-  const split = createPathTree(postSplit);
+  const split: any = createPathTree(postSplit) || [];
 
   const splitSidebar = split.children.find(
     (e) => e.name === post.slug.split('/')[0]
@@ -209,10 +209,10 @@ export default function SidebarWrapper({
 
           {post.mainComponent && <PropTypes propTypes={propTypes} {...post} />}
 
-          <Story>
+          {/* <Story>
             <TinaMarkdown components={components} content={data?.post?.body} />
-          </Story>
-          {/*<MDXRemote {...post.mdxSource} components={components} />*/}
+          </Story> */}
+          <MDXRemote {...post.mdxSource} components={components} />
 
           <Link
             href={`https://github.com/un-core/designsystem/tree/content/website-content/packages/website/${

@@ -1,6 +1,6 @@
 import React from 'react';
 import { getAllPosts, getPostByPath, getPostSlugs } from '../../lib/getPost';
-import { dbConnection } from '../../lib/databaseConnection';
+import { dbConnection } from '../../lib/databaseConnection.ts.new';
 
 export default async function Post() {
   return <div>Post Content</div>;

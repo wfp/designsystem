@@ -17,7 +17,7 @@ import { Controller, useForm } from 'react-hook-form';
 import classNames from 'classnames';
 
 //import MDX from '@mdx-js/runtime';
-import components from '../';
+//import components from '../';
 
 import vsDark from 'prism-react-renderer/themes/vsDark';
 import * as ReactDOMServer from 'react-dom/server';
@@ -31,7 +31,7 @@ import prettier from 'prettier/standalone';
 import babelParser from 'prettier/parser-babel';
 import htmlParser from 'prettier/parser-html';
 
-function LiveHtml({ live }: { live?: Record<string, unknown> }) {
+function LiveHtml({ live }: any /* { live?: Record<string, unknown> } */) {
   const Result = live.element as React.ComponentType;
   if (!Result) return null;
   let htmlString = ReactDOMServer.renderToStaticMarkup(<Result />);

@@ -1,10 +1,6 @@
 {
   "compilerOptions": {
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": false,
@@ -24,20 +20,17 @@
     ],
     "strictNullChecks": true
   },
-  "typeRoots": [
-    "./node_modules/@types",
-    "./typings"
-  ],
+  "typeRoots": ["./node_modules/@types", "./typings"],
   "include": [
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
     "components/PropTypes/index.js",
-    ".next/types/**/*.ts"
+    ".next/types/**/*.ts",
+    "components/Post/index.tsx.new",
+    "tina/database.ts.new",
+    "appnew/postsnew/[...slug]/page.tsx.new",
+    "lib/databaseConnection.ts.new"
   ],
-  "exclude": [
-    "node_modules",
-    "*.sitemap.xml.tsx",
-    "**/*.build.tsx"
-  ]
+  "exclude": ["node_modules", "*.sitemap.xml.tsx", "**/*.build.tsx"]
 }

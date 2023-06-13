@@ -12,10 +12,11 @@ import styles from './styles.module.scss';
 import { InstantSearch } from 'react-instantsearch-hooks-web';
 import { Search } from '@un/react';
 
-const searchClient = algoliasearch(
-  process.env.NEXT_PUBLIC_ALGOLIA_APP_ID,
-  process.env.NEXT_PUBLIC_ALGOLIA_SEARCH_API_KEY
-);
+const appId: string = process.env.NEXT_PUBLIC_ALGOLIA_APP_ID || '';
+const searchApiKey: string =
+  process.env.NEXT_PUBLIC_ALGOLIA_SEARCH_API_KEY || '';
+
+const searchClient: any = algoliasearch(appId, searchApiKey);
 
 export const useOutsideAlerter = ({ ref, setOpen }) => {
   useEffect(() => {
@@ -67,7 +68,7 @@ function AddonAfter() {
 export default function SearchWrapper() {
   const [focus] = useState(false);
   const [open, setOpen] = useState(false);
-  const ref = useRef();
+  const ref = useRef<HTMLDivElement>(null);
   useOutsideAlerter({ ref, setOpen });
 
   useEffect(() => {

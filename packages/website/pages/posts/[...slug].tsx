@@ -2,7 +2,7 @@ import React from 'react';
 import { useRouter } from 'next/router';
 import ErrorPage from 'next/error';
 import Layout from '../../components/Blog/Layout';
-import { getPostByPath, getAllPosts, getPostSlugs } from '../../lib/getPost';
+import { getAllPosts } from '../../lib/getPost';
 import Sidebar from '../../components/Sidebar';
 import slugify from 'slugify';
 import getPostContent from '../../components/Post/getPostContent';
@@ -44,6 +44,7 @@ export default function Post({ post, posts, preview, propTypes }: Props) {
 
 export async function getStaticProps({ params }) {
   const postContent = await getPostContent(params);
+  console.log('postContent', postContent);
   return postContent;
 }
 

@@ -107,7 +107,7 @@ export default function PropTypes({
   const MyComponent = unComponents[mainComponent];
   if (!MyComponent) return null;
 
-  let propsAsList = [];
+  let propsAsList: any = [];
   if (propList) {
     propsAsList = showAllProps
       ? Object.values(propList).filter((e: any) =>

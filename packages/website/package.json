@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "tinacms dev -c \"next dev\"",
-    "buildna": "next build",
+    "build:website": "next build",
     "start": "tinacms build && next start -p 80",
     "build:theme": "node buildTheme.js",
     "lint": "next lint",

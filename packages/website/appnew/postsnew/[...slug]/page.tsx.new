@@ -14,10 +14,10 @@ import remarkGfm from 'remark-gfm';
 import slugify from 'slugify';
 import remarkMdxCodeMeta from 'remark-mdx-code-meta';
 import rehypeComponentsList from '../../../lib/rehypeComponentsList';
-import PostServer from '../../../components/Post';
+import PostServer from '../../../components/Post/index.tsx.new';
 
 import { useTina } from 'tinacms/dist/react';
-import { dbConnection } from '../../../lib/databaseConnection';
+import { dbConnection } from '../../../lib/databaseConnection.ts.new';
 
 interface Props {
   post?: {

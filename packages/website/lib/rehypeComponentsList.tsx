@@ -1,7 +1,7 @@
-function searchTreeWrapper(element, matchingTitle) {
-  const result = [];
+function searchTreeWrapper(element:any, matchingTitle:any) {
+  const result :any= [];
 
-  const searchTree = (element, matchingTitle) => {
+  const searchTree = (element:any, matchingTitle:any) => {
     if (element.name == matchingTitle) {
       result.push(element);
     } else if (element.children != null) {

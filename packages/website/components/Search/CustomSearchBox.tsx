@@ -14,7 +14,7 @@ function SearchBox(props: any) {
   };
 
   useEffect(() => {
-    if (open) {
+    if (props.open) {
       setFocus();
     }
   }, [props.open]);

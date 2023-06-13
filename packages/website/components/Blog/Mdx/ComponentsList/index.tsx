@@ -23,9 +23,9 @@ function ComponentPreview({ component, componentsList }: any) {
 }
 
 export default function ComponentsList(props: any) {
-  const componentsList = JSON.parse(props.components);
+  const componentsList = JSON.parse(props.components) || [];
 
-  const postSplit = componentsList.map((p) => {
+  const postSplit: any = componentsList.map((p) => {
     return {
       key: 'posts/' + p.slug,
       title: p.title,
@@ -34,13 +34,14 @@ export default function ComponentsList(props: any) {
     };
   });
 
-  const split = createPathTree(postSplit).children.find(
-    (p) => p.name === 'Components'
-  );
+  const split: any = createPathTree(postSplit);
+  if (split === null) return null;
+
+  const components = split.children.find((e) => e.name === 'Components');
 
   return (
     <div className={styles.componentsList}>
-      {split.children.map((p, a) => {
+      {components.children.map((p, a) => {
         if (p.name === 'Overview') return null;
         return (
           <div key={a}>

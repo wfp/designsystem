@@ -34,7 +34,7 @@ export async function getPostSlugs() {
 }
 
 
-export function getPostByPath(path, fields = []) {
+export function getPostByPath(path:any, fields:any = []) {
 
   //const realSlug = slug.replace(/\.mdx$/, '')
  // const fullPath = foundSlug.path // join(postsDirectory, `${slug.joi}.mdx`);
@@ -58,7 +58,7 @@ export function getPostByPath(path, fields = []) {
   return {...items, path};
 }
 
-export async function getAllPosts(fields = []) {
+export async function getAllPosts(fields :any= []) {
 
   const slugs = await getPostSlugs();
   const posts = slugs

@@ -5,7 +5,7 @@ async function getImage({ document, node }) {
       {
         headers: {
           'Content-Type': 'application/json',
-          'X-Figma-Token': process.env.FIGMA_TOKEN,
+          'X-Figma-Token': process.env.FIGMA_TOKEN || '',
         },
       }
     );
@@ -15,7 +15,7 @@ async function getImage({ document, node }) {
       {
         headers: {
           'Content-Type': 'application/json',
-          'X-Figma-Token': process.env.FIGMA_TOKEN,
+          'X-Figma-Token': process.env.FIGMA_TOKEN || '',
         },
       }
     );
@@ -29,10 +29,10 @@ async function getImage({ document, node }) {
   }
 }
 
-function searchTreeWrapper(element, matchingTitle) {
-  const result = [];
+function searchTreeWrapper(element:any, matchingTitle:any) {
+  const result :any= [];
 
-  const searchTree = (element, matchingTitle) => {
+  const searchTree = (element:any, matchingTitle:any) => {
     if (element.name == matchingTitle) {
       result.push(element);
     } else if (element.children != null) {

@@ -1,6 +1,5 @@
-import React from 'react';
 import { getAllPosts, getPostByPath, getPostSlugs } from '../../lib/getPost';
-import { dbConnection } from '../../lib/databaseConnection';
+// import { dbConnection } from '../../lib/databaseConnection.ts.new';
 import slugify from 'slugify';
 import { serialize } from 'next-mdx-remote/serialize';
 import remarkMdxCodeMeta from 'remark-mdx-code-meta';
@@ -10,7 +9,6 @@ import rehypeImgSize from 'rehype-img-size';
 import rehypeFigmaImage from '../../lib/rehypeFigmaImage';
 import rehypeToC from '../../lib/rehypeToC';
 import rehypeComponentsList from '../../lib/rehypeComponentsList';
-import getPostContent from '../../components/Post/getPostContent';
 
 export default async function getPostContent(params: any) {
   const posts = await getAllPosts([
@@ -107,25 +105,25 @@ export default async function getPostContent(params: any) {
     }
   }
 
-  let data = {};
-  let query = {};
+  //let data = {};
+  //let query = {};
 
-  const filename = 'Naming/Naming';
-  let variables = { relativePath: `${filename}.mdx` };
+  //const filename = 'Naming/Naming';
+  //let variables = { relativePath: `${filename}.mdx` };
   //try {
-  const res = await dbConnection.queries.post(variables);
-  query = res.query;
-  data = res.data;
-  variables = res.variables;
+  // const res = await dbConnection.queries.post(variables);
+  //query = res.query;
+  // data = res.data;
+  //  variables = res.variables;
   //} catch {
   // swallow errors related to document creation
   // }
 
   return {
     props: {
-      variables: variables,
-      data: data,
-      query: query,
+      // variables: variables,
+      // data: data,
+      // query: query,
       propTypes: propTypes,
       posts,
       post: {

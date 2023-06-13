@@ -37,8 +37,8 @@ export default async function issues() {
 
         // initialize the client with your environment variables
         const client = algoliasearch(
-          process.env.NEXT_PUBLIC_ALGOLIA_APP_ID,
-          process.env.ALGOLIA_SEARCH_ADMIN_KEY
+          process.env.NEXT_PUBLIC_ALGOLIA_APP_ID as string,
+          process.env.ALGOLIA_SEARCH_ADMIN_KEY as string
         );
 
         // initialize the index with your index name
