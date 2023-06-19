@@ -1,7 +1,7 @@
 {
   "name": "@un/styles",
   "description": "Styles for the WFP Design System",
-  "version": "10.26.67",
+  "version": "10.26.68",
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
