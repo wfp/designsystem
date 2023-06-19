@@ -182,6 +182,7 @@ ${code}`;
   )}*/}
       {!smallPreview && (
         <Button
+          kind="ghost"
           className={styles.showAllPropsButton}
           onClick={() => setShowAllProps(!showAllProps)}>
           {showAllProps ? 'Show' : 'Hide'} all props

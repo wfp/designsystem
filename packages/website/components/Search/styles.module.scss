@@ -71,7 +71,9 @@
   :global(.wfp--search-input) {
     border-radius: 6px;
     max-width: 11em;
-    padding-right: 0;
+    @include ltr() {
+      padding-right: 0;
+    }
   }
 }
 
@@ -79,6 +81,10 @@
   position: absolute;
   top: 0;
   right: 0.3em;
+  @include rtl() {
+    left: 0.3em;
+    right: inherit;
+  }
   display: flex;
   align-items: center;
   height: 100%;

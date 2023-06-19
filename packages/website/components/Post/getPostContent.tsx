@@ -6,9 +6,13 @@ import remarkMdxCodeMeta from 'remark-mdx-code-meta';
 import remarkGfm from 'remark-gfm';
 import rehypeCode from '../../lib/rehypeCode';
 import rehypeImgSize from 'rehype-img-size';
+import { unified } from 'unified';
 import rehypeFigmaImage from '../../lib/rehypeFigmaImage';
 import rehypeToC from '../../lib/rehypeToC';
 import rehypeComponentsList from '../../lib/rehypeComponentsList';
+import remarkHeadings from '../../lib/remarkHeadings';
+import remarkParse from 'remark-parse';
+import remarkStringify from 'remark-stringify';
 
 export default async function getPostContent(params: any) {
   const posts = await getAllPosts([
@@ -119,6 +123,13 @@ export default async function getPostContent(params: any) {
   // swallow errors related to document creation
   // }
 
+  const processor = unified()
+    .use(remarkParse)
+    .use(remarkStringify)
+    .use(remarkHeadings);
+
+  const vfile = await processor.process(post.content);
+
   return {
     props: {
       // variables: variables,
@@ -128,7 +139,7 @@ export default async function getPostContent(params: any) {
       posts,
       post: {
         ...post,
-        headings: {}, //vfile.data.headings,
+        headings: vfile.data.headings,
         content,
         mdxSource,
         mdxToC,

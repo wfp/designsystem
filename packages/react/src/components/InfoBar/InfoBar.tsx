@@ -6,9 +6,11 @@ import { ScreenSize } from '../../utils';
 
 /** The InfoBar shows very important information on top of the page. */
 interface InfoBarProps extends React.HTMLAttributes<HTMLDivElement> {
+  /**
+   * pageWidth of the container
+   */
   pageWidth?: ScreenSize;
   wrapperClassName?: string;
-  className?: string;
   id?: string;
 }
 

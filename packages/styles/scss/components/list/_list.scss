@@ -14,6 +14,7 @@
 @use '../../theme' as *;
 @use '../../type' as *;
 @use '../../breakpoint' as *;
+@use '../../utilities/rtl' as *;
 @use '../../utilities/convert' as *;
 
 /// List styles
@@ -31,6 +32,10 @@
       .#{$prefix}--list-item__icon {
         position: absolute;
         left: -1.4rem;
+        @include rtl() {
+          left: initial;
+          right: -1.4rem;
+        }
         top: 0.35em;
         color: $support-success;
       }
@@ -63,7 +68,7 @@
 
     .#{$prefix}--list__element__title {
       font-weight: 700;
-      margin-right: rem(5px);
+      margin-inline-end: rem(5px);
     }
   }
 
@@ -72,10 +77,10 @@
   .#{$prefix}--list--ordered {
     line-height: 1.6em;
     list-style-type: disc;
-    margin-left: 1.5em;
+    margin-inline-start: 1.5em;
     .#{$prefix}--list__element__title {
       font-weight: 700;
-      margin-right: rem(5px);
+      margin-inline-end: rem(5px);
     }
     li {
       margin-bottom: 0.4em;
@@ -108,7 +113,7 @@
 
     .#{$prefix}--list__element__title {
       font-weight: 700;
-      margin-right: rem(5px);
+      margin-inline-end: rem(5px);
     }
   }
 

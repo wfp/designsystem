@@ -23,7 +23,6 @@ export interface LinkProps extends React.ComponentPropsWithRef<'a'> {
    * Use an icon with the link element @design
    */
   icon?: React.ComponentType | React.ElementType;
-  //write other extra props here...
 }
 
 export const Link = React.forwardRef<HTMLAnchorElement, LinkProps>(

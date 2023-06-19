@@ -1,12 +1,13 @@
 import * as React from 'react';
-import type { PropsWithChildren } from 'react';
 import classNames from 'classnames';
 import useSettings from '../../hooks/useSettings';
 
-type AnchorNavigationProps = PropsWithChildren<{
+interface AnchorNavigationProps extends React.ComponentPropsWithRef<'div'> {
+  /*
+   * The title of the anchor navigation
+   */
   title?: string;
-  className?: string;
-}>;
+}
 
 const AnchorNavigation: React.FC<AnchorNavigationProps> = ({
   title,

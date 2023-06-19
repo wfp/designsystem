@@ -200,7 +200,7 @@ export default function SidebarWrapper({
             </Text>
           )}
           <Text kind="story-title" /*className={styles.title}*/>
-            {data?.post?.title}
+            {post?.title}
           </Text>
 
           <div className={styles.excerpt}>

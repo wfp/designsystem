@@ -7,6 +7,10 @@
     border-radius: 7px;
     padding-left: 2em !important;
     padding-right: 0.8em !important;
+    @include rtl() {
+      padding-left: 0.8em !important;
+      padding-right: 2em !important;
+    }
     height: 2.5em !important;
   }
   margin-bottom: 0.4em;

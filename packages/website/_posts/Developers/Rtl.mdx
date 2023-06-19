@@ -1,0 +1,114 @@
+---
+title: 'Right-to-Left (RTL) Support'
+excerpt: 'Themes'
+subtitle: 'Themes (Dark Mode)'
+coverImage: '../sample-image.jpg'
+slug: 'Documentation/Guidelines/Right-to-left'
+---
+
+<BlockNotification title="Draft" kind="warning">
+  This page is currently a draft. Please let us know if you have any feedback.
+</BlockNotification>
+Our design system supports right-to-left (RTL) languages. This document provides
+guidelines for implementing RTL support, enabling the design system to adapt to languages
+such as Arabic, Hebrew, Persian, and Urdu.
+
+## Overview
+
+When working with RTL languages, the layout direction changes from left-to-right (LTR) to right-to-left. This means all UI elements, text, and interactions should mirror to provide a natural reading and usage flow for RTL languages users. Our design system has built-in RTL support to ease this transition.
+
+Click here to test rtl on this page:
+
+<Button
+  large
+  onClick={() =>
+    document.body.getAttribute('dir') === 'rtl'
+      ? document.body.setAttribute('dir', 'ltr')
+      : document.body.setAttribute('dir', 'rtl')
+  }>
+  Try right-to-left on this page
+</Button>
+## Implementation
+
+### Text Direction
+
+Switch the text direction by adding the attribute `dir="rtl"` to the root HTML element.
+
+```html
+<html dir="rtl"></html>
+```
+
+### Components
+
+The components automatically switch there behaviour based on the `dir` attribute of the parent.
+
+### CSS/SCSS
+
+If CSS needs to be updated to support RTL layout, you should use logical properties and values. Logical properties allow you to control layout through logical, rather than physical, direction and dimension mappings.
+
+For example, instead of using `margin-left` in your CSS, use `margin-inline-start`.
+
+```css
+.element {
+  /* LTR style */
+  margin-left: 10px;
+
+  /* RTL Compatible */
+  margin-inline-start: 10px;
+}
+```
+
+The `rtl` and `ltr` scss helper mixin helps changing the direction in `scss`. It is used like this:
+
+```scss
+// Import the entire components library
+@use '@un/styles/scss/components' as *;
+
+// Or only import the rtl mixin
+@use '@un/styles/scss/utilities/_rtl.scss' as *;
+
+.element {
+  @include ltr {
+    color: blue;
+  }
+  @include rtl {
+    color: green;
+  }
+}
+```
+
+### Images and Icons
+
+Icons and images with directional cues should also be mirrored. For instance, an arrow that points to the next item in LTR languages should point to the previous item in RTL languages.
+
+```css
+.rtl {
+  transform: scaleX(-1);
+}
+```
+
+### Flex and Grid
+
+For flex and grid layouts, replace `row` and `row-reverse` with `row` and `row-reverse`, respectively, for the `flex-direction` property.
+
+```css
+.element {
+  /* LTR style */
+  flex-direction: row;
+
+  /* RTL Compatible */
+  flex-direction: row-reverse;
+}
+```
+
+### References
+
+- [Noto Sans – font support for non-Latin characters](/documentation/guidelines/typography)
+
+### Further Resources
+
+For further reading on RTL support and the use of logical properties, please refer to these resources:
+
+- [Understanding Logical Properties and Values](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Logical_Properties)
+- [CSS Logical Properties and Values Level 1](https://www.w3.org/TR/css-logical-1/)
+- [Designing for RTL languages](https://material.io/design/usability/bidirectionality.html)
