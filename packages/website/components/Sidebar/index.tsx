@@ -116,11 +116,11 @@ interface SidebarWrapperProps {
   post: any;
   posts: any;
   propTypes: any;
-  data?: any;
+  // data?: any;
 }
 
 export default function SidebarWrapper({
-  data,
+  // data,
   post,
   posts,
   propTypes,

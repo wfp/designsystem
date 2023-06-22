@@ -9,7 +9,9 @@ slug: 'Documentation/Developing/Installation'
 >
 > The WFP UI Kit uses [React](https://reactjs.org/) as the underlying JS framework, in line with the [WFP official guidelines for software development](https://newgo.wfp.org/documents/software-solutions-technology-stack). Therefore, **all WFP applications should use it**, together with the UI Kit. The only **exceptions** are off-the-shelf solutions (e.g. Saas) and/or non-apps (e.g. the external corporate website, and/or basic landing pages used for fundraising, etc).
 
-## 1. Create a React app
+## Create a React app
+
+TODO: This section is not updated yet
 
 To kickstart your new project with the Kit, we do recommend to **generate a boilerplate React app** with the official [create-react-app](https://github.com/facebook/create-react-app) tool or other bootstraping tools: you will be provided with a solid build setup with zero effort (that is, no configuration needed on your part). An example using the UI-Kit and `create-react-app` can be found [here](https://github.com/wfp/ui/tree/master/examples/create-react-app).
 
@@ -17,23 +19,31 @@ You can use the [Codesandbox template](https://codesandbox.io/s/wfp-ui-template-
 
 An example implementation using `create-react-app` and `scss` can be found in our [GitHub repository](https://github.com/wfp/ui/tree/master/examples/create-react-app).
 
-## 2. Add the Kit as a dependency
+## Add the Kit as a dependency
 
 The next step is to **add the Kit to your project as a dependency**. You can choose to install it through `npm` or `yarn`: they are both valid package managers and we don't want to recommend one over the other, but once you pick your favourite tool, simply stick with it and avoid using them simultaneously.
 
 To install the Kit through `npm`, run:
 
 ```bash
-npm install @un/react @un/icons --save
+npm install @un/react @un/react-icons @un/style @un/themes-core --save
 ```
 
 To install the Kit through `yarn`, run:
 
 ```bash
-yarn add @un/react @un/icons
+yarn add @un/react @un/react-icons @un/style @un/themes-core
 ```
 
-## 3. Load the CSS
+## Install the latest features 🌱
+
+Install this package with the `@alpha` tag to get access to the latest features.
+
+```
+npm install @un/react@alpha @un/react-icons@alpha @un/style@alpha @un/themes-core@alpha
+```
+
+## Load the CSS
 
 This is a required step in case you want to load the full UI Kit stylesheet. If this is the case, you can choose between **importing it through React** or **through the CDN**. If this is not the case, you may then want to check the guidelines on [how to include only specific parts of the Kit CSS](https://uikit.wfp.org/docs/index.html?path=/story/getting-started-using-the-kit--page).
 
@@ -41,8 +51,24 @@ To import the full CSS through React, first make sure to have a `scss` loader in
 
 ```jsx
 // Import all stylesheets
-import '@un/react/src/globals/scss/styles.scss';
+import '@un/styles';
+
+// Import only the stylesheets you need
+@use "@un/styles/scss/themes";
+@use "@un/styles/scss/theme";
+@use "@un/styles/scss/reset";
+@use "@un/styles/scss/components";
+
+
+// Use a theme
+@use "@un/themes-core/dist/scss/default-css-theme" as defaulttheme;
+
+:root {
+  @include defaulttheme.theme-default();
+}
 ```
+
+TODO: This are is not updated yet
 
 The css file can be directly embedded in the `<head/>` section of your application.
 
