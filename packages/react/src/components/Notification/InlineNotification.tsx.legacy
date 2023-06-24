@@ -1,0 +1,142 @@
+import React, { useState } from 'react';
+import classNames from 'classnames';
+import useSettings from '../../hooks/useSettings';
+import { NotificationButton } from './NotificationButton';
+import { NotificationTextDetails } from './NotificationTextDetails';
+import { NotificationIcon } from './NotificationIcon';
+import { BlockNotificationProps } from './BlockNotification';
+
+interface InlineNotificationProps extends BlockNotificationProps {
+  /**
+   * Pass in the action nodes that will be rendered within the InlineNotification
+   */
+  // actions?: React.ReactNode;
+  /**
+   * Pass in the children that will be rendered within the InlineNotification
+   */
+  // children?: React.ReactNode;
+  /**
+   * Specify an optional className to be applied to the notification box
+   */
+  //className?: string;
+  /**
+   * Specify the close button should be disabled, or not
+   */
+  //hideCloseButton?: boolean;
+  /**
+   * Pass in the icon that will be rendered within the ToastNotification or set icon to false to hide
+   */
+  // icon?: React.ReactNode; // PropTypes.oneOf([PropTypes.node, PropTypes.bool]),
+  /**
+   * Provide a description for "close" icon that can be read by screen readers
+   */
+  //iconDescription?: string;
+  /**
+   * Specify whether you are using the low contrast variant of the InlineNotification.
+   */
+  //lowContrast?: boolean;
+  /**
+   * By default, this value is "inline". You can also provide an alternate type
+   * if it makes sense for the underlying `<NotificationTextDetails>` and `<NotificationButton>`
+   */
+  //notificationType?: 'toast' | 'inline';
+  /**
+   * Provide a function that is called when menu is closed
+   */
+  // onCloseButtonClick?: any;
+  /**
+   * By default, this value is "alert". You can also provide an alternate
+   * role if it makes sense from the accessibility-side
+   */
+  //role?: string;
+  /**
+   * Provide a description for "status" icon that can be read by screen readers
+   */
+  // statusIconDescription?: string;
+  /**
+   * Specify the sub-title
+   */
+  //subtitle?: React.ReactNode;
+  /**
+   * Specify the title
+   */
+  //title?: string;
+  //onClose?: any;
+}
+
+export const InlineNotification: React.FC<InlineNotificationProps> = ({
+  actions,
+  role = 'alert',
+  notificationType = 'inline',
+  onClose,
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
+  onCloseButtonClick = () => {},
+  icon,
+  iconDescription = 'closes notification',
+  statusIconDescription,
+  className,
+  subtitle,
+  title,
+  kind = 'info',
+  lowContrast,
+  hideCloseButton = false,
+  children,
+  ...other
+}) => {
+  const { prefix } = useSettings();
+  const [isOpen, setIsOpen] = useState(true);
+  const containerClassName = classNames(className, {
+    [`${prefix}--inline-notification`]: true,
+    [`${prefix}--inline-notification--low-contrast`]: lowContrast,
+    [`${prefix}--inline-notification--${kind}`]: kind,
+    [`${prefix}--inline-notification--hide-close-button`]: hideCloseButton,
+  });
+
+  const handleClose = (evt) => {
+    if (!onClose || onClose(evt) !== false) {
+      setIsOpen(false);
+    }
+  };
+
+  function handleCloseButtonClick(event) {
+    onCloseButtonClick(event);
+    handleClose(event);
+  }
+
+  if (!isOpen) {
+    return null;
+  }
+
+  return (
+    <div {...other} role={role} /*kind={kind} */ className={containerClassName}>
+      <div className={`${prefix}--inline-notification__details`}>
+        {icon === undefined && (
+          <NotificationIcon
+            notificationType={notificationType}
+            kind={kind}
+            iconDescription={statusIconDescription || `${kind} icon`}
+          />
+        )}
+        {icon && (
+          <div className={`${prefix}--${notificationType}-notification__icon`}>
+            {icon}
+          </div>
+        )}
+        <NotificationTextDetails
+          title={title}
+          subtitle={subtitle}
+          notificationType={notificationType}>
+          {children}
+        </NotificationTextDetails>
+      </div>
+      {actions}
+      {!hideCloseButton && (
+        <NotificationButton
+          iconDescription={iconDescription}
+          notificationType={notificationType}
+          onClick={handleCloseButtonClick}
+        />
+      )}
+    </div>
+  );
+};

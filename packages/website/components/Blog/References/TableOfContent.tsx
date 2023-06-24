@@ -13,7 +13,6 @@ const Heading2 = ({ value }: any) => {
 };
 
 export default function TableOfContent({ headings = [] }: any) {
-  console.log('headings', headings);
   if (headings.length === 0) return null;
   return (
     <div className={styles.tableOfContent}>

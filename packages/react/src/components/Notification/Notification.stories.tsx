@@ -1,7 +1,7 @@
 import React from 'react';
 import {
   ToastNotification,
-  InlineNotification,
+  //InlineNotification,
   NotificationActionButton,
   BlockNotification,
 } from '.';
@@ -13,7 +13,7 @@ import markdown from './README.mdx';
 export default {
   title: 'Components/UI Elements/Notification',
   component: NotificationActionButton,
-  subcomponents: { ToastNotification, InlineNotification },
+  subcomponents: { ToastNotification /*, InlineNotification*/ },
   parameters: {
     componentSubtitle: 'Component',
     status: 'released',
@@ -144,22 +144,22 @@ ToastLowContrast.story = {
 
 export const Inline = (args) => (
   <>
-    <InlineNotification
+    <BlockNotification
       {...args}
       kind="success"
       actions={<NotificationActionButton>{'Action'}</NotificationActionButton>}
     />
-    <InlineNotification
+    <BlockNotification
       {...args}
       kind="error"
       actions={<NotificationActionButton>{'Action'}</NotificationActionButton>}
     />
-    <InlineNotification
+    <BlockNotification
       {...args}
       kind="warning"
       actions={<NotificationActionButton>{'Action'}</NotificationActionButton>}
     />
-    <InlineNotification
+    <BlockNotification
       {...args}
       kind="info"
       actions={<NotificationActionButton>{'Action'}</NotificationActionButton>}
@@ -185,22 +185,22 @@ Inline.story = {
 
 export const InlineLowContrast = (args) => (
   <>
-    <InlineNotification
+    <BlockNotification
       {...args}
       kind="success"
       actions={<NotificationActionButton>{'Action'}</NotificationActionButton>}
     />
-    <InlineNotification
+    <BlockNotification
       {...args}
       kind="error"
       actions={<NotificationActionButton>{'Action'}</NotificationActionButton>}
     />
-    <InlineNotification
+    <BlockNotification
       {...args}
       kind="warning"
       actions={<NotificationActionButton>{'Action'}</NotificationActionButton>}
     />
-    <InlineNotification
+    <BlockNotification
       {...args}
       kind="info"
       actions={<NotificationActionButton>{'Action'}</NotificationActionButton>}

@@ -88,7 +88,7 @@ export {
 // export notificationStyle from './components/Notification/Notification.legacy';
 export {
   ToastNotification,
-  InlineNotification,
+  // InlineNotification,
   NotificationActionButton,
   NotificationButton,
   NotificationTextDetails,
