@@ -54,19 +54,9 @@ const Select: React.FC<SelectProps> = React.forwardRef((props, ref) => {
 
   return (
     <Input {...wrapperProps} inputWrapperClassName={`${prefix}--select`}>
-      <select
-        //{...other}
-        //{...ariaProps}
-
-        //className={`${prefix}--select-input`}
-        {...inputProps}
-        /*disabled={disabled || undefined}
-          data-invalid={invalid || undefined}
-          aria-invalid={invalid || undefined} */
-        ref={ref as React.Ref<HTMLSelectElement>}>
+      <select {...inputProps} ref={ref as React.Ref<HTMLSelectElement>}>
         {children}
       </select>
-
       <ChevronDown
         className={`${prefix}--select__arrow`}
         description={iconDescription}

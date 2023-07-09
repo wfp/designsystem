@@ -44,7 +44,6 @@ export default function Post({ post, posts, preview, propTypes }: Props) {
 
 export async function getStaticProps({ params }) {
   const postContent = await getPostContent(params);
-  console.log('postContent', postContent);
   return postContent;
 }
 

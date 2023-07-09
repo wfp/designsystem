@@ -66,24 +66,84 @@ export interface InputProps {
    * Provide a name for the control
    */
   name?: string;
+  /**
+   * Specify if the control is required @design
+   * (sets aria-invalid as well)
+   */
   required?: boolean;
+  /**
+   * Specify if the control is disabled @design
+   * (sets aria-disabled as well)
+   */
   disabled?: boolean;
+  /**
+   * If the input is read-only, the user cannot change its value but focus
+   * and tabIndex are still applied @design
+   * (sets aria-readonly as well)
+   */
   readOnly?: boolean;
+  /**
+   * Renders the input as inline element for horizontal forms
+   */
   inline?: boolean;
+  /**
+   * Additional helper in front of the input, e.g. a currency symbol @design
+   * (sets aria-describedby as well)
+   */
   addonBefore?: string | React.ReactNode;
+  /**
+   * Additional helper behind the input, e.g. a currency symbol @design
+   * (sets aria-describedby as well)
+   */
   addonAfter?: string | React.ReactNode;
+  /**
+   * Replacement component: supports AddonBefore and AddonAfter as replacement components
+   * @example
+   * ```jsx
+   * <Input
+   *  components={{
+   *   AddonBefore: <div>€</div>,
+   *  AddonAfter: <div>EUR</div>,
+   * }}
+   * />
+   * ```
+   */
   components?: {
-    AddonBefore?: ComponentType<AddonBeforeProps>;
-    AddonAfter?: ComponentType<AddonAfterProps>;
+    AddonBefore?: ComponentType<InputPropsForReplacementComponents>;
+    AddonAfter?: ComponentType<InputPropsForReplacementComponents>;
+    Label?: ComponentType<InputPropsForReplacementComponents>;
+    HelperText?: ComponentType<InputPropsForReplacementComponents>;
+    Error?: ComponentType<InputPropsForReplacementComponents>;
   };
 }
 
-interface InputPropsI extends InputProps, React.ComponentPropsWithRef<'div'> {
+export interface InputPropsForReplacementComponents
+  extends InputProps,
+    React.ComponentPropsWithRef<'div'> {
   /**
-   * Provide a custom className that is applied directly to the underlying
-   * &lt;textarea&gt; node
+   * The classes for the label
    */
-  children?: React.ReactNode;
+  labelClasses?: string;
+  /**
+   * The the ID of the element, uses the `name` prop if no `id` is provided. Make sure it is unique on the page.
+   */
+  calculatedId?: string;
+  /**
+   * The classes for the helper element
+   */
+  helperTextClasses?: string;
+  /**
+   * The classes for the error element
+   */
+  errorClasses?: string;
+  /**
+   * The id of the error. calculatedId + '-error-msg'
+   */
+  errorId?: string;
+  /**
+   * An icon for the error element
+   */
+  errorIcon?: React.ReactNode;
 }
 
 export interface AddonBeforeProps {
@@ -91,24 +151,88 @@ export interface AddonBeforeProps {
   prefix?: string;
 }
 
-export interface AddonAfterProps {
-  addonAfter?: React.ReactNode;
-  prefix?: string;
-}
-
-const AddonBefore: React.FC<AddonBeforeProps> = ({ addonBefore, prefix }) => {
+function AddonBefore({
+  addonBefore,
+  prefix,
+}: InputPropsForReplacementComponents) {
   if (addonBefore) {
     return <div className={`${prefix}--input-addon-before`}>{addonBefore}</div>;
   }
   return null;
-};
+}
 
-const AddonAfter: React.FC<AddonAfterProps> = ({ addonAfter, prefix }) => {
+function AddonAfter({
+  addonAfter,
+  prefix,
+}: InputPropsForReplacementComponents) {
   if (addonAfter) {
     return <div className={`${prefix}--input-addon-after`}>{addonAfter}</div>;
   }
   return null;
-};
+}
+
+/**
+ * Shows the error message underneath the element */
+function Error({
+  errorId,
+  errorClasses,
+  invalid,
+  invalidText,
+}: InputPropsForReplacementComponents) {
+  if (invalid) {
+    const errorIcon = <WarningSolid fill="#c5192d" />;
+    return (
+      <div className={errorClasses} id={errorId}>
+        {errorIcon}{' '}
+        <span>
+          {typeof invalid === 'object' && invalid.message
+            ? invalid.message
+            : typeof invalid === 'string'
+            ? invalid
+            : invalidText
+            ? invalidText
+            : 'required'}
+        </span>
+      </div>
+    );
+  }
+  return null;
+}
+
+/**
+ * Shows a helper text under the label */
+export function Label({
+  labelClasses,
+  calculatedId,
+  labelText,
+  required,
+  hideLabel,
+}: InputPropsForReplacementComponents) {
+  if (hideLabel) return null;
+  return (
+    <label htmlFor={calculatedId} className={labelClasses}>
+      {labelText && labelText}
+      {required && '*'}
+    </label>
+  );
+}
+
+/**
+ * Shows a helper text under the label */
+export function Helper({
+  helperTextClasses,
+  helperText,
+}: InputPropsForReplacementComponents) {
+  if (helperText) return <div className={helperTextClasses}>{helperText}</div>;
+  return null;
+}
+
+interface InputPropsI extends InputProps, React.ComponentPropsWithRef<'div'> {
+  /**
+   * Provide a children to the input
+   */
+  children?: React.ReactNode;
+}
 
 /**
  * Input is a wrapper for custom inputs providing the label, helperText and errors. */
@@ -133,7 +257,6 @@ const Input: React.FC<PropsWithChildren<InputPropsI>> = ({
   invalid,
   invalidText,
   helperText,
-  //light,
   required,
   ...other
 }) => {
@@ -158,12 +281,8 @@ const Input: React.FC<PropsWithChildren<InputPropsI>> = ({
 
   const errorId = calculatedId + '-error-msg';
 
-  /*const inputClasses = classNames(`${prefix}--input`, className, {
-    [`${prefix}--input--light`]: light,
-    [`${prefix}--input--invalid`]: invalid, // legacy className
-  });
-*/
   const labelClasses = classNames(`${prefix}--label`, {
+    // [`${prefix}--input--light`]: light,
     [`${prefix}--visually-hidden`]: hideLabel || !labelText,
     [`${prefix}--label--disabled`]: other.disabled,
   });
@@ -178,64 +297,54 @@ const Input: React.FC<PropsWithChildren<InputPropsI>> = ({
     [`${prefix}--form__helper-text--disabled`]: other.disabled,
   });
 
-  const errorIcon = <WarningSolid fill="#c5192d" />;
+  const errorClasses = `${prefix}--form-requirement`;
 
-  const label = (
-    <label htmlFor={calculatedId} className={labelClasses}>
-      {labelText && labelText}
-      {required && '*'}
-    </label>
-  );
+  const components = {
+    AddonAfter,
+    AddonBefore,
+    Label,
+    Helper,
+    Error,
+    ...componentsOverride,
+  };
+  const AddOnAfterComponent =
+    components.AddonAfter as React.FC<InputPropsForReplacementComponents>;
+  const AddOnBeforeComponent =
+    components.AddonBefore as React.FC<InputPropsForReplacementComponents>;
+  const LabelComponent =
+    components.Label as React.FC<InputPropsForReplacementComponents>;
+  const HelperComponent =
+    components.Helper as React.FC<InputPropsForReplacementComponents>;
+  const ErrorComponent =
+    components.Error as React.FC<InputPropsForReplacementComponents>;
 
-  const error = invalid ? (
-    <div className={`${prefix}--form-requirement`} id={errorId}>
-      {errorIcon}{' '}
-      <span>
-        {typeof invalid === 'object' && invalid.message
-          ? invalid.message
-          : typeof invalid === 'string'
-          ? invalid
-          : invalidText
-          ? invalidText
-          : 'required'}
-      </span>
-    </div>
-  ) : null;
-
-  /*const elementProps = invalid
-    ? {
-        ...other,
-        ...inputProps,
-        'data-invalid': true,
-        'aria-invalid': true,
-        'aria-describedby': errorId,
-        className: inputClasses,
-      }
-    : {
-        ...other,
-        ...inputProps,
-        className: inputClasses,
-      };
-*/
-  const helper = helperText ? (
-    <div className={helperTextClasses}>{helperText}</div>
-  ) : null;
-
-  const components = { AddonAfter, AddonBefore, ...componentsOverride };
-  const AddOnAfter = components.AddonAfter as React.FC<AddonAfterProps>;
-  const AddOnBefore = components.AddonBefore as React.FC<AddonBeforeProps>;
+  const componentProps = {
+    labelText,
+    labelClasses,
+    calculatedId,
+    required,
+    helperTextClasses,
+    helperText,
+    errorClasses,
+    errorId,
+    invalid,
+    invalidText,
+    addonAfter,
+    addonBefore,
+    hideLabel,
+  };
 
   return (
     <FormItem className={className} inline={other.inline}>
-      {label}
-      {helper}
+      <LabelComponent {...componentProps} />
+      <HelperComponent {...componentProps} />
       {additional}
       <div className={inputWrapperClasses}>
-        <AddOnBefore addonBefore={addonBefore} prefix={prefix} />
-        {/*typeof children === 'function' ? children(elementProps) :*/ children}
-        <AddOnAfter addonAfter={addonAfter} prefix={prefix} />
+        <AddOnBeforeComponent {...componentProps} />
+        {children}
+        <AddOnAfterComponent {...componentProps} />
       </div>
-      {error}
+      <ErrorComponent {...componentProps} />
     </FormItem>
   );
 };

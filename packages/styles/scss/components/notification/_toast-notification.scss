@@ -26,7 +26,6 @@
 @mixin toast-notification {
   .#{$prefix}--toast-notification {
     @include reset;
-
     display: flex;
     width: rem(288px);
     height: auto;

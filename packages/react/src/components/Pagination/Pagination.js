@@ -247,7 +247,7 @@ export default class Pagination extends Component {
     const statePageSize = this.props.pageSize
       ? this.props.pageSize
       : this.state.pageSize;
-    const classNames = classNames('wfp--pagination', className);
+    const classes = classNames('wfp--pagination', className);
     const backButtonClasses = classNames(
       'wfp--pagination__button',
       'wfp--pagination__button--backward',
@@ -260,7 +260,7 @@ export default class Pagination extends Component {
     const selectItems = this.renderSelectItems(totalPages);
 
     return (
-      <div className={classNames} {...other}>
+      <div className={classes} {...other}>
         <div className="wfp--pagination__left">
           {!pageSizesDisabled && (
             <React.Fragment>

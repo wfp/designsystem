@@ -1,0 +1,89 @@
+---
+category: 'Core'
+title: 'useInput hook'
+excerpt: 'The `useInput` hook is used to provide a simple way to manage state and callbacks for input elements.'
+coverImage: '../sample-image.jpg'
+slug: 'Components/Form/useInput'
+storybook: true
+mainComponent: 'useInput'
+sampleCode: >
+  () => {
+     const { inputProps, wrapperProps } = useInput({
+       labelText: 'Email',
+       helperText: 'Please enter your email address',
+       onChange: (event) => console.log(event.target.value),
+     });
+
+     return (
+       <div {...wrapperProps}>
+         <input {...inputProps} />
+       </div>
+     );
+  }
+---
+
+## Usage
+
+The `useInput` hook returns an object containing `inputProps` and `wrapperProps` that can be spread over the respective elements in your component.
+The wrapping element should be the `Input` component, and the input element should be a child of the `Input` component.
+
+```jsx
+const MyComponent = () => {
+  const { inputProps, wrapperProps } = useInput({
+    labelText: 'Email',
+    helperText: 'Please enter your email address',
+    onChange: (event) => console.log(event.target.value),
+  });
+
+  return (
+    <Input {...wrapperProps}>
+      <input {...inputProps} />
+    </Input>
+  );
+};
+```
+
+In this example, `inputProps` contains all the props that should be passed to the `input` element, and `wrapperProps` contains all the props that should be passed to the wrapping `Input` component.
+
+```jsx
+const inputProps = {
+  id: calculatedId,
+  name,
+  className: inputClasses,
+  ...other,
+  onChange,
+  onClick,
+  placeholder,
+  value,
+  type,
+};
+
+const wrapperProps = {
+  className,
+  addonAfter,
+  labelText,
+  helperText,
+  hideLabel,
+  invalid,
+  invalidText,
+};
+```
+
+TODO: Check
+
+Please note that if you want to add your own `onChange` or `onClick` handlers, they will not be overridden by the ones provided by `useInput`. Instead, they will be called only when the input is not disabled and not read-only.
+
+### Used by
+
+- [Form](/components/form)
+- [Search](/components/search)
+- [Select](/components/select)
+- [TextInput](/components/textinput)
+- [Textarea](/components/textarea)
+- [Toggle](/components/toggle)
+
+and all other Input components
+
+### Reference
+
+- [Input](/components/Form/Input)

@@ -1,0 +1,108 @@
+---
+category: 'Core'
+title: 'Input'
+excerpt: 'The Input component is a comprehensive and customizable form input wrapper that provides options for labels, helper text, error messages, and additional child content.'
+coverImage: '../sample-image.jpg'
+slug: 'Components/Form/Input'
+storybook: true
+mainComponent: 'Input'
+defaultProps:
+  labelText: 'No results'
+  helperText: 'large'
+  children: '<input />'
+---
+
+## Usage
+
+Here is an example of how to use the Input component:
+
+```jsx
+<Input
+  labelText="Email"
+  helperText="Please enter your email address"
+  invalidText="This email address is not valid"
+  required={true}
+  name="email"
+  components={{
+    AddonBefore,
+  }}>
+  <input type="email" />
+</Input>
+```
+
+The above example will render an input field with an email `label`, a `helperText`, and custom AddonBefore component. The field is marked as required and contains invalid text to display if the input is invalid.
+
+### Components
+
+Note that you can provide any custom components to replace the default ones. Just provide them in the `components` prop.
+
+```jsx
+const Error = ({ errorId }) => <div id={errorId}>Error found</div>;
+
+<Input component={{ AddonAfter, AddonBefore, Label, Helper, Error }}>
+  <textarea />
+</Input>;
+```
+
+This component allows you to augment layout and functionality by replacing the default components with your own, using the components property.
+
+When defining replacement components, it is important to do so outside the scope of rendering the Select. Defining a replacement component directly in the components prop can cause issues.
+
+The following components are customisable and switchable:
+
+### `AddonAfter` ➡️
+
+An additional component that will be rendered after the input field.
+
+### `AddonBefore` ⬅️
+
+An additional component that will be rendered before the input field.
+
+### `Label`
+
+The label component that will be rendered before the input field.
+
+### `Helper`
+
+The helper component that will be rendered after the label and before the input field.
+
+### `Error` ⚠️
+
+The error component that will be rendered after the input field and shows any inline form errors..
+
+The above example will render a textarea inside the input wrapper.
+
+#### Common props
+
+Every component will receive the following props:
+
+```
+labelText,
+labelClasses,
+calculatedId,
+required,
+helperTextClasses,
+helperText,
+errorClasses,
+errorId,
+invalid,
+invalidText,
+addonAfter,
+addonBefore,
+hideLabel
+```
+
+### Used by
+
+- [Form](/components/form)
+- [Search](/components/search)
+- [Select](/components/select)
+- [TextInput](/components/textinput)
+- [Textarea](/components/textarea)
+- [Toggle](/components/toggle)
+
+and all other Input components.
+
+### Reference
+
+- [useInput hook](/components/Form/useInput)

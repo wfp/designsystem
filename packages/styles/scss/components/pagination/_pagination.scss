@@ -145,9 +145,7 @@
       }
     }
 
-    .#{$prefix}--select--inline
-      .#{$prefix}--select-input
-      ~ .#{$prefix}--select__arrow {
+    .#{$prefix}--select .#{$prefix}--select-input ~ .#{$prefix}--select__arrow {
       right: 0.3rem;
       top: 0;
     }

@@ -1,8 +1,7 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
-import React, { ComponentType } from 'react';
+import React from 'react';
 import classNames from 'classnames';
 import useSettings from '../../hooks/useSettings';
-import { AddonAfterProps } from './Input';
 
 export interface UseInputProps {
   /**
@@ -102,24 +101,20 @@ export interface UseInputProps {
   light?: boolean;
   readOnly?: boolean;
   name?: string;
-  components?: { AddonAfter?: ComponentType<AddonAfterProps> };
 }
 
 /**
  * Input is a wrapper for custom inputs providing the label, helperText and errors. */
 export const useInput = ({
-  //labelText,
   addonAfter,
   className,
   inputClassName = 'wfp--input',
-  components,
-  // iconDescription,
   id,
   placeholder,
   type = 'text',
   onChange = () => {},
   onClick = () => {},
-  //hideLabel,
+  hideLabel,
   name,
   invalid,
   invalidText,
@@ -164,7 +159,7 @@ export const useInput = ({
     addonAfter,
     labelText,
     helperText,
-    components,
+    hideLabel,
     invalid,
     invalidText,
   };

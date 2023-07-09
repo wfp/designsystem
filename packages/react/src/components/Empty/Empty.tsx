@@ -40,7 +40,7 @@ const Text: React.FC<EmptyProps> = ({ title, children }) => {
   return (
     <div className={`${prefix}--empty__text`}>
       {title && <h2>{title}</h2>}
-      <p>{children}</p>
+      <div>{children}</div>
     </div>
   );
 };
