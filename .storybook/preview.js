@@ -115,8 +115,7 @@ const withThemeProvider = (Story, context) => {
   return (
     <div
       className={`wfp--theme-${theme} wfp--theme-${locale}`}
-      dir={locale === 'rtl' ? 'rtl' : null}
-    >
+      dir={locale === 'rtl' ? 'rtl' : null}>
       <Story {...context} />
     </div>
   );
