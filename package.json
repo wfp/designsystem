@@ -30,6 +30,11 @@
     "test-ssr": "npm run build && node ssr-tests/*.js",
     "jest-w": "jest --watch"
   },
+  "overrides": {
+    "@storybook/addon-docs": {
+        "@mdx-js/react": "1.6.22"
+    }
+  },
   "sass": {
     "includePaths": [
       "./node_modules"
@@ -103,8 +108,8 @@
   },
   "peerDependencies": {
     "@wfp/icons": "0.2.2",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "dependencies": {
     "@carbon/import-once": "^10.5.0",
@@ -141,10 +146,10 @@
     "@storybook/addon-links": "6.2.3",
     "@storybook/addon-toolbars": "6.2.3",
     "@storybook/addon-viewport": "^6.0.28",
-    "@storybook/addons": "6.2.3",
+    "@storybook/addons": "7.6.17",
     "@storybook/builder-webpack5": "^6.2.3",
     "@storybook/react": "6.2.3",
-    "@storybook/theming": "6.2.3",
+    "@storybook/theming": "8.0.4",
     "@tippy.js/react": "^3.1.1",
     "@typescript-eslint/eslint-plugin": "^4.9.0",
     "@typescript-eslint/parser": "^3.8.0",
@@ -198,9 +203,9 @@
     "promise": "^8.1.0",
     "prop-types": "^15.7.2",
     "raw-loader": "^4.0.1",
-    "react": "^17.0.2",
+    "react": "^18.2.0",
     "react-dates": "^21.8.0",
-    "react-dom": "^17.0.2",
+    "react-dom": "^18.2.0",
     "react-dropzone": "^11.0.2",
     "react-final-form": "^6.5.1",
     "react-hook-form": "^7.20.5",
