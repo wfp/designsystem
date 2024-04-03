@@ -13,8 +13,8 @@ import {
   //DocsContainer,
 } from '@storybook/addon-docs/blocks';
 
-// import { DocsPage } from './blocks/DocsPage';
-// import { DocsContainer } from './blocks/DocsContainer'; /*
+import { DocsPage } from './blocks/DocsPage';
+import { DocsContainer } from './blocks/DocsContainer'; /*
 import { Subtitle } from './blocks/Subtitle';
 import Description from './blocks/Description'; /*/
 
@@ -30,10 +30,10 @@ const githubPath = resultReadme
   : undefined;*/
 
 addParameters({
-  // docs: {
-  //   container: DocsContainer,
-  //   page: DocsPage,
-  // },
+  docs: {
+    container: DocsContainer,
+    page: DocsPage,
+  },
   viewMode: 'docs',
 });
 
